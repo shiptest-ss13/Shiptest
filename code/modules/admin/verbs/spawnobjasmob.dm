@@ -1,7 +1,7 @@
 /datum/admins/proc/spawn_objasmob(object as text)
-	set category = "Debug"
-	set desc = "(obj path) Spawn object-mob"
-	set name = "Spawn object-mob"
+	set category = "Event.Spawning"
+	set desc = "(obj path) Spawn object-mob from Object"
+	set name = "Spawn Living Mob"
 
 	if(!check_rights(R_SPAWN))
 		return

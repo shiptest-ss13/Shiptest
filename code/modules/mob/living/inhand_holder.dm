@@ -7,7 +7,8 @@
 	icon_state = ""
 	slot_flags = NONE
 	moth_edible = FALSE
-	w_class = 20 // so that only one can fit in a duffel bag
+	w_class = WEIGHT_CLASS_BULKY
+	w_volume = ITEM_VOLUME_MOB// so that only one can fit in a duffel bag
 	var/mob/living/held_mob
 
 /obj/item/clothing/head/mob_holder/Initialize(mapload, mob/living/M, worn_state, head_icon, lh_icon, rh_icon, worn_slot_flags = NONE)

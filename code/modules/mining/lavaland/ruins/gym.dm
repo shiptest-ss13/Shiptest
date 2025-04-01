@@ -7,6 +7,47 @@
 	layer = WALL_OBJ_LAYER
 	var/list/hit_sounds = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg',\
 	'sound/weapons/punch1.ogg', 'sound/weapons/punch2.ogg', 'sound/weapons/punch3.ogg', 'sound/weapons/punch4.ogg')
+	var/buildstacktype = /obj/item/stack/sheet/cotton/cloth
+	var/buildstackamount = 5
+
+/obj/structure/punching_bag/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(buildstacktype)
+			new buildstacktype(loc,buildstackamount)
+	return..()
+
+/obj/structure/punching_bag/wrench_act(mob/living/user, obj/item/W)
+	if(..())
+		return TRUE
+	add_fingerprint(user)
+	var/action = anchored ? "unbolts [src] from" : "bolts [src] to"
+	var/uraction = anchored ? "unbolt [src] from" : "bolt [src] to"
+	user.visible_message(span_warning("[user] [action] the floor."), span_notice("You start to [uraction] the floor..."), span_hear("You hear rustling noises."))
+	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
+		set_anchored(!anchored)
+		to_chat(user, span_notice("You [anchored ? "bolt" : "unbolt"] [src] from the floor."))
+	return TRUE
+
+/obj/structure/punching_bag/wirecutter_act(mob/living/user, obj/item/W)
+	. = ..()
+	if(!anchored)
+		user.visible_message(span_warning("[user] cuts apart [src]."), span_notice("You start to cut apart [src]."), span_hear("You hear cutting."))
+		if(W.use_tool(src, user, 50, volume=100))
+			if(anchored)
+				return TRUE
+			to_chat(user, span_notice("You cut apart [src]."))
+			deconstruct(TRUE)
+		return TRUE
+
+/obj/structure/punching_bag/proc/check_anchored_state(check_anchored)
+	return anchored == check_anchored
+
+/obj/structure/punching_bag/examine(mob/user)
+	. = ..()
+	if(anchored)
+		. += span_notice("[src] is <b>bolted</b> to the floor.")
+	else
+		. += span_notice("[src] is no longer <i>bolted</i> to the floor, and the seams can be <b>cut</b> apart.")
 
 /obj/structure/punching_bag/attack_hand(mob/user as mob)
 	. = ..()
@@ -25,6 +66,8 @@
 	icon = 'icons/obj/gym_equipment.dmi'
 	density = TRUE
 	anchored = TRUE
+	var/buildstacktype = /obj/item/stack/sheet/metal
+	var/buildstackamount = 5
 
 /obj/structure/weightmachine/proc/AnimateMachine(mob/living/user)
 	return
@@ -32,6 +75,45 @@
 /obj/structure/weightmachine/update_icon_state()
 	. = ..()
 	icon_state = (obj_flags & IN_USE) ? "[base_icon_state]-u" : base_icon_state
+
+/obj/structure/weightmachine/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(buildstacktype)
+			new buildstacktype(loc,buildstackamount)
+	return..()
+
+/obj/structure/weightmachine/wrench_act(mob/living/user, obj/item/W)
+	if(..())
+		return TRUE
+	add_fingerprint(user)
+	var/action = anchored ? "unbolts [src] from" : "bolts [src] to"
+	var/uraction = anchored ? "unbolt [src] from" : "bolt [src] to"
+	user.visible_message(span_warning("[user] [action] the floor."), span_notice("You start to [uraction] the floor..."), span_hear("You hear rustling noises."))
+	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
+		set_anchored(!anchored)
+		to_chat(user, span_notice("You [anchored ? "bolt" : "unbolt"] [src] from the floor."))
+	return TRUE
+
+/obj/structure/weightmachine/screwdriver_act(mob/living/user, obj/item/W)
+	. = ..()
+	if(!anchored)
+		user.visible_message(span_warning("[user] screws apart [src]."), span_notice("You start to screw apart [src]."), span_hear("You hear screwing."))
+		if(W.use_tool(src, user, 50, volume=100))
+			if(anchored)
+				return TRUE
+			to_chat(user, span_notice("You screw apart [src]."))
+			deconstruct(TRUE)
+		return TRUE
+
+/obj/structure/weightmachine/proc/check_anchored_state(check_anchored)
+	return anchored == check_anchored
+
+/obj/structure/weightmachine/examine(mob/user)
+	. = ..()
+	if(anchored)
+		. += span_notice("[src] is <b>bolted</b> to the floor.")
+	else
+		. += span_notice("[src] is no longer <i>bolted</i> to the floor, and the <b>screws</b> are exposed.")
 
 /obj/structure/weightmachine/update_overlays()
 	. = ..()
@@ -44,7 +126,7 @@
 	if(.)
 		return
 	if(obj_flags & IN_USE)
-		to_chat(user, "<span class='warning'>It's already in use - wait a bit!</span>")
+		to_chat(user, span_warning("It's already in use - wait a bit!"))
 		return
 	else
 		obj_flags |= IN_USE
@@ -100,3 +182,4 @@
 	sleep(3)
 	animate(user, pixel_y = 2, time = 3)
 	sleep(3)
+

@@ -46,7 +46,7 @@
 /datum/species/zombie/infectious/spec_stun(mob/living/carbon/human/H,amount)
 	. = min(20, amount)
 
-/datum/species/zombie/infectious/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE)
+/datum/species/zombie/infectious/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, sharpness = FALSE)
 	. = ..()
 	if(.)
 		regen_cooldown = world.time + REGENERATION_DELAY
@@ -85,22 +85,5 @@
 	if(!infection)
 		infection = new()
 		infection.Insert(C)
-
-// Your skin falls off
-/datum/species/human/krokodil_addict
-	name = "\improper Human"
-	id = SPECIES_GOOFZOMBIE
-	examine_limb_id = SPECIES_HUMAN
-	sexes = 0
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
-	mutanttongue = /obj/item/organ/tongue/zombie
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
-
-	species_chest = /obj/item/bodypart/chest/zombie
-	species_head = /obj/item/bodypart/head/zombie
-	species_l_arm = /obj/item/bodypart/l_arm/zombie
-	species_r_arm = /obj/item/bodypart/r_arm/zombie
-	species_l_leg = /obj/item/bodypart/leg/left/zombie
-	species_r_leg = /obj/item/bodypart/leg/right/zombie
 
 #undef REGENERATION_DELAY

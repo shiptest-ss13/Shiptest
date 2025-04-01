@@ -49,8 +49,6 @@
 		else
 			sclera_color = human_owner.sclera_color
 
-		if(HAS_TRAIT(human_owner, TRAIT_NIGHT_VISION) && !lighting_alpha)
-			lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	M.update_tint()
 	owner.update_sight()
 	if(M.has_dna() && ishuman(M))
@@ -148,6 +146,9 @@
 
 /obj/item/organ/eyes/robotic/lizard
 	eye_icon_state = "eyes_synth"
+
+/obj/item/organ/eyes/robotic/kepori
+	eye_icon_state = "eyes_kepori_synth"
 
 /obj/item/organ/eyes/robotic/emp_act(severity)
 	. = ..()

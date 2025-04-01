@@ -22,7 +22,6 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		/datum/material/diamond,
 		/datum/material/plasma,
 		/datum/material/uranium,
-		/datum/material/bananium,
 		/datum/material/titanium,
 		/datum/material/bluespace,
 		/datum/material/plastic,
@@ -36,6 +35,9 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 
 	connected = null
 
+	return ..()
+
+/obj/machinery/ore_silo/on_deconstruction()
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.retrieve_all()
 

@@ -7,6 +7,7 @@
 	luminosity = 1
 	light_power = 1
 	light_range = 1.6
+	light_system = MOVABLE_LIGHT
 
 /obj/item/radio/weather_monitor/update_overlays()
 	. = ..()

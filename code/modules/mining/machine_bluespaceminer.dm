@@ -7,7 +7,7 @@
 	circuit = /obj/item/circuitboard/machine/bluespace_miner
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
-	idle_power_usage = 50000
+	idle_power_usage = ACTIVE_DRAW_EXTREME * 10
 
 	var/powered = FALSE
 	var/active = FALSE
@@ -106,7 +106,7 @@
 		to_chat(user, "<span class='warning'>[src] needs to be firmly secured to the floor first!</span>")
 		return TRUE
 
-/obj/machinery/power/bluespace_miner/process()
+/obj/machinery/power/bluespace_miner/process(seconds_per_tick)
 	if(!materials?.silo || materials?.on_hold())
 		active = FALSE
 		return

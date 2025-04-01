@@ -9,8 +9,8 @@
 	use_power = IDLE_POWER_USE
 	anchored = TRUE
 	density = TRUE
-	idle_power_usage = 50
-	active_power_usage = 300
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_HIGH
 
 	var/locked = FALSE
 	var/breakout_time = 1200

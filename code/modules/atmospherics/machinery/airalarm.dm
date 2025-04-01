@@ -65,8 +65,8 @@
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "alarm"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 4
-	active_power_usage = 1200
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	power_channel = AREA_USAGE_ENVIRON
 	//req_access = list(ACCESS_ATMOSPHERICS)
 	max_integrity = 250
@@ -106,6 +106,11 @@
 	var/alarm_frequency = FREQ_ATMOS_ALARMS
 	var/datum/radio_frequency/radio_connection
 
+	//anything outright hazardous (flammable, toxic, generally Weird)
+	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_CO, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
+	//anything that isn't o2 or n2.
+	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_CO, GAS_ARGON, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
+
 	var/list/TLV = list( // Breathable air.
 		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
 		"temperature"				= new/datum/tlv(T0C, T0C+10, T0C+40, T0C+66),
@@ -115,13 +120,18 @@
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
-		GAS_HYPERNOB				= new/datum/tlv(-1, -1, 1000, 1000), // Hyper-Noblium is inert and nontoxic
 		GAS_H2O						= new/datum/tlv/dangerous,
 		GAS_TRITIUM					= new/datum/tlv/dangerous,
-		GAS_STIMULUM				= new/datum/tlv/dangerous,
-		GAS_NITRYL					= new/datum/tlv/dangerous,
-		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 5, 6), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
-		GAS_FREON 					= new/datum/tlv/dangerous
+		GAS_FREON 					= new/datum/tlv/dangerous,
+		GAS_HYDROGEN				= new/datum/tlv/dangerous,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000), //inert and nontoxic
+		GAS_AMMONIA					= new/datum/tlv/dangerous,
+		GAS_METHANE					= new/datum/tlv/dangerous,
+		GAS_SO2						= new/datum/tlv/dangerous,
+		GAS_O3						= new/datum/tlv/dangerous,
 	)
 
 /obj/machinery/airalarm/server // No checks here.
@@ -134,13 +144,18 @@
 		GAS_PLASMA					= new/datum/tlv/no_checks,
 		GAS_NITROUS					= new/datum/tlv/no_checks,
 		GAS_BZ						= new/datum/tlv/no_checks,
-		GAS_HYPERNOB				= new/datum/tlv/no_checks,
 		GAS_H2O						= new/datum/tlv/no_checks,
 		GAS_TRITIUM					= new/datum/tlv/no_checks,
-		GAS_STIMULUM				= new/datum/tlv/no_checks,
-		GAS_NITRYL					= new/datum/tlv/no_checks,
-		GAS_PLUOXIUM				= new/datum/tlv/no_checks,
-		GAS_FREON					= new/datum/tlv/no_checks
+		GAS_FREON					= new/datum/tlv/no_checks,
+		GAS_HYDROGEN				= new/datum/tlv/no_checks,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv/no_checks,
+		GAS_AMMONIA					= new/datum/tlv/no_checks,
+		GAS_METHANE					= new/datum/tlv/no_checks,
+		GAS_SO2						= new/datum/tlv/no_checks,
+		GAS_O3						= new/datum/tlv/no_checks,
 	)
 	heating_manage = FALSE
 
@@ -154,13 +169,18 @@
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
-		GAS_HYPERNOB				= new/datum/tlv(-1, -1, 1000, 1000), // Hyper-Noblium is inert and nontoxic
 		GAS_H2O						= new/datum/tlv/dangerous,
 		GAS_TRITIUM					= new/datum/tlv/dangerous,
-		GAS_STIMULUM				= new/datum/tlv/dangerous,
-		GAS_NITRYL					= new/datum/tlv/dangerous,
-		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 1000, 1000), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
-		GAS_FREON					=  new/datum/tlv/dangerous
+		GAS_FREON					= new/datum/tlv/dangerous,
+		GAS_HYDROGEN				= new/datum/tlv/dangerous,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000), //inert and nontoxic
+		GAS_AMMONIA					= new/datum/tlv/dangerous,
+		GAS_METHANE					= new/datum/tlv/dangerous,
+		GAS_SO2						= new/datum/tlv/dangerous,
+		GAS_O3						= new/datum/tlv/dangerous,
 	)
 	heating_manage = FALSE
 
@@ -225,8 +245,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 /obj/machinery/airalarm/Destroy()
 	SSradio.remove_object(src, frequency)
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	var/area/ourarea = get_area(src)
 	ourarea.atmosalert(FALSE, src)
 	return ..()
@@ -244,6 +263,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			. += "<span class='notice'>It is missing wiring.</span>"
 		if(2)
 			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] the interface.</span>"
+
+/obj/machinery/airalarm/examine_more(mob/user)
+	. = ..()
+	if(buildstage == 2)
+		ui_interact(user)
+
 
 /obj/machinery/airalarm/ui_status(mob/user)
 	if(user.has_unlimited_silicon_privilege && aidisabled)
@@ -539,7 +564,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(GAS_CO2, GAS_BZ),
+					"set_filters" = filter_basic,
 					"scrubbing" = 1,
 					"widenet" = 0
 				), signal_source)
@@ -553,19 +578,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(
-						GAS_CO2,
-						GAS_PLASMA,
-						GAS_H2O,
-						GAS_HYPERNOB,
-						GAS_NITROUS,
-						GAS_NITRYL,
-						GAS_TRITIUM,
-						GAS_BZ,
-						GAS_STIMULUM,
-						GAS_PLUOXIUM,
-						GAS_FREON
-					),
+					"set_filters" = filter_extra,
 					"scrubbing" = 1,
 					"widenet" = 1
 				), signal_source)
@@ -592,7 +605,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(GAS_CO2, GAS_BZ),
+					"set_filters" = filter_basic,
 					"scrubbing" = 1,
 					"widenet" = 0
 				), signal_source)
@@ -684,7 +697,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		. += mutable_appearance(icon, "alarm_sign")
 		. += mutable_appearance(icon, "alarm_sign", layer, EMISSIVE_PLANE)
 
-/obj/machinery/airalarm/process()
+/obj/machinery/airalarm/process(seconds_per_tick)
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
 		return
 
@@ -753,14 +766,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		visible_message("<span class='notice'>The air alarm makes a quiet click as it stops heating the area</span>")
 		playsound(src, 'sound/machines/terminal_off.ogg', 40)
 		heating_current_mode = "Idle"
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		return
 
 	if(wanted_mode == "Heat" & heating_current_mode == "Idle")
 		visible_message("<span class='notice'>The air alarm makes a quiet click as it starts heating the area</span>")
 		playsound(src, 'sound/machines/terminal_on.ogg', 40)
 		heating_current_mode = "Heat"
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 
 	if(heating_current_mode == "Heat")
 		var/temperature = environment.return_temperature()

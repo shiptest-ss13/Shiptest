@@ -1,7 +1,7 @@
 /obj/machinery/chem_press
 	name = "pill press"
 	desc = "A press operated by hand to produce pills in a variety of forms."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/chem_machines.dmi'
 	icon_state = "press"
 	pass_flags = PASSTABLE
 	use_power = FALSE
@@ -26,17 +26,17 @@
 /obj/machinery/chem_press/Initialize()
 	. = ..()
 	beaker = new /obj/item/reagent_containers/glass/beaker/large(src)
-	beaker_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "press_beaker")
-	bottle_overlay = image(icon = 'icons/obj/chemical.dmi', icon_state = "press_bottle")
+	beaker_overlay = image(icon = 'icons/obj/chemical/chem_machines.dmi', icon_state = "press_beaker")
+	bottle_overlay = image(icon = 'icons/obj/chemical/chem_machines.dmi', icon_state = "press_bottle") //shouldn't this use mutable_appearance...?
 
 /obj/machinery/chem_press/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There's a <b>small screw</b> that can <b>help</b> to adjust the pill size.</span>"
-	. += "<span class='notice'>There's a small dial you could <b>push</b> with a <b>screwdriver</b> to adjust the pill color.</span>"
+	. += span_notice("There's a <b>small screw</b> that can <b>help</b> to adjust the pill size.")
+	. += span_notice("There's a small dial you could <b>push</b> with a <b>screwdriver</b> to adjust the pill color.")
 	if(!bottle)
-		. += "<span class='notice'>The <b>pill bottle</b> slot is empty.</span>"
+		. += span_notice("The <b>pill bottle</b> slot is empty.")
 	if(!beaker)
-		. += "<span class='notice'>The <b>beaker</b> slot is empty.</span>"
+		. += span_notice("The <b>beaker</b> slot is empty.")
 
 /obj/machinery/chem_press/attack_hand(mob/user)
 	. = ..()

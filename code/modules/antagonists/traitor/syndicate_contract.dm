@@ -143,13 +143,13 @@
 			// Pay contractor their portion of ransom
 			if (status == CONTRACT_STATUS_COMPLETE)
 				var/mob/living/carbon/human/H
-				var/obj/item/card/id/C
+				var/obj/item/card/bank/C
 				if(ishuman(contract.owner.current))
 					H = contract.owner.current
-					C = H.get_idcard(TRUE)
+					C = H.get_bankcard()
 
 				if(C && C.registered_account)
-					C.registered_account.adjust_money(ransom * 0.35, "syndicate_contract")
+					C.registered_account.adjust_money(ransom * 0.35, CREDIT_LOG_SYNDICATE_CONTRACT)
 
 					C.registered_account.bank_card_talk("We've processed the ransom, agent. Here's your cut - your balance is now \
 					[C.registered_account.account_balance] cr.", TRUE)

@@ -40,7 +40,7 @@
 	active = TRUE
 	return TRUE
 
-/datum/effect_system/trail_follow/process()
+/datum/effect_system/trail_follow/process(seconds_per_tick)
 	generate_effect()
 
 /datum/effect_system/trail_follow/generate_effect()
@@ -80,6 +80,9 @@
 
 /datum/effect_system/trail_follow/proc/set_dir(obj/effect/particle_effect/ion_trails/I)
 	I.setDir(holder.dir)
+
+/datum/effect_system/trail_follow/ion/grav_allowed
+	nograv_required = FALSE
 
 //Reagent-based explosion effect
 

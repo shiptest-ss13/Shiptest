@@ -5,18 +5,6 @@
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
 
-/obj/item/clothing/head/beret/vintage
-	name = "vintage beret"
-	desc = "A well-worn beret."
-	icon_state = "vintageberet"
-	dog_fashion = null
-
-/obj/item/clothing/head/beret/archaic
-	name = "archaic beret"
-	desc = "An absolutely ancient beret."
-	icon_state = "archaicberet"
-	dog_fashion = null
-
 /obj/item/clothing/head/beret/black
 	name = "black beret"
 	desc = "A black beret."
@@ -32,9 +20,118 @@
 
 /obj/item/clothing/head/beret/durathread
 	name = "durathread beret"
-	desc =  "A beret made from durathread, its resilient fibres provide some protection to the wearer."
+	desc =  "A beret made from durathread, its resilient fibres provide a modicum of fire protection to the wearer."
 	icon_state = "beretdurathread"
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 15, "energy" = 25, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 5)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 5)
+
+//Color (I'll find a better solution later)
+/obj/item/clothing/head/beret/color
+	name = "beret"
+	desc = "A stylish beret that can be worn in a variety of charming colors!"
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	icon_state = "beretwhite"
+	item_state = "beretwhite"
+	custom_price = 60
+	unique_reskin = list("white beret" = "beretwhite",
+						"grey beret" = "beretgrey",
+						"black beret" = "beretblack",
+						"red beret" = "beretred",
+						"maroon beret" = "beretmaroon",
+						"orange beret" = "beretorange",
+						"yellow beret" = "beretyellow",
+						"green beret" = "beretgreen",
+						"dark green beret" = "beretdarkgreen",
+						"teal beret" = "beretteal",
+						"blue beret" = "beretblue",
+						"dark blue beret" = "beretdarkblue",
+						"purple beret" = "beretpurple",
+						"pink beret" = "beretpink",
+						"brown beret" = "beretbrown",
+						"light brown beret" = "beretlightbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/head/beret/color/white
+	name = "white beret"
+	icon_state = "beretwhite"
+	current_skin = "white beret"
+
+/obj/item/clothing/head/beret/color/grey
+	name = "grey beret"
+	icon_state = "beretgrey"
+	current_skin = "grey beret"
+
+/obj/item/clothing/head/beret/color/black
+	name = "black beret"
+	icon_state = "beretblack"
+	current_skin = "black beret"
+
+/obj/item/clothing/head/beret/color/red
+	name = "red beret"
+	icon_state = "beretred"
+	current_skin = "red beret"
+
+/obj/item/clothing/head/beret/color/maroon
+	name = "maroon beret"
+	icon_state = "beretmaroon"
+	current_skin = "maroon beret"
+
+/obj/item/clothing/head/beret/color/orange
+	name = "orange beret"
+	icon_state = "beretorange"
+	current_skin = "orange beret"
+
+/obj/item/clothing/head/beret/color/yellow
+	name = "yellow beret"
+	icon_state = "beretyellow"
+	current_skin = "yellow beret"
+
+/obj/item/clothing/head/beret/color/green
+	name = "green beret"
+	icon_state = "beretgreen"
+	current_skin = "green beret"
+
+/obj/item/clothing/head/beret/color/darkgreen
+	name = "dark green beret"
+	icon_state = "beretdarkgreen"
+	current_skin = "dark green beret"
+
+/obj/item/clothing/head/beret/color/teal
+	name = "teal beret"
+	icon_state = "beretteal"
+	current_skin = "teal beret"
+
+/obj/item/clothing/head/beret/color/blue
+	name = "blue beret"
+	icon_state = "beretblue"
+	current_skin = "blue beret"
+
+/obj/item/clothing/head/beret/color/darkblue
+	name = "dark blue beret"
+	icon_state = "beretdarkblue"
+	current_skin = "dark blue beret"
+
+/obj/item/clothing/head/beret/color/purple
+	name = "purple beret"
+	icon_state = "beretpurple"
+	current_skin = "purple beret"
+
+/obj/item/clothing/head/beret/color/pink
+	name = "pink beret"
+	icon_state = "beretpink"
+	current_skin = "pink beret"
+
+/obj/item/clothing/head/beret/color/brown
+	name = "brown beret"
+	icon_state = "beretbrown"
+	current_skin = "brown beret"
+
+/obj/item/clothing/head/beret/color/lightbrown
+	name = "light brown beret"
+	icon_state = "beretlightbrown"
+	current_skin = "light brown beret"
 
 //Civilian
 /obj/item/clothing/head/beret/grey
@@ -56,7 +153,6 @@
 	name = "quartermaster beret"
 	desc =  "A cargo beret with a faded medal haphazardly stitched into it. Worn by a true cargonian, it commands respect from everyone."
 	icon_state = "beret_qm"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5)
 
 /obj/item/clothing/head/beret/cargo
 	name = "cargo beret"
@@ -65,30 +161,25 @@
 
 /obj/item/clothing/head/beret/mining
 	name = "mining beret"
-	desc =  "A grey beret with a pickaxe insignia sewn into it. Seems to be padded and fireproofed to offer the wearer some protection."
+	desc =  "A grey beret with a pickaxe insignia sewn into it."
 	icon_state = "beret_mining"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
 
 //Sec
 /obj/item/clothing/head/beret/sec
 	name = "security beret"
-	desc = "A robust beret with the security insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
+	desc = "A robust beret with the security insignia emblazoned on it."
 	icon_state = "beret_sec"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 60
 	dog_fashion = null
 
 /obj/item/clothing/head/beret/sec/hos
 	name = "head of security's black beret"
 	desc = "A black beret with the Head of Security's insignia emblazoned on it. A symbol of excellence, a badge of courage, a mark of distinction."
 	icon_state = "beret_hos"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 
 /obj/item/clothing/head/beret/sec/warden
 	name = "warden's beret"
 	desc = "A beret made with black reinforced fabric with the Warden's insignia emblazoned on it. For wardens with class."
 	icon_state = "beret_warden"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/beret/sec/officer
 	desc = "A beret made out of black reinforced fabric with the security insignia emblazoned on it. For officers with class."
@@ -103,7 +194,7 @@
 	name = "engineering beret"
 	desc = "A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety."
 	icon_state = "beret_engineering"
-	armor = list("rad" = 10, "fire" = 10)
+	armor = list("rad" = 5, "fire" = 10)
 
 /obj/item/clothing/head/beret/eng/hazard
 	name = "engineering hazardberet"
@@ -114,13 +205,13 @@
 	name = "atmospherics beret"
 	desc = "A beret for those who have shown immaculate proficienty in piping. Or plumbing. Mostly piping."
 	icon_state = "beret_atmospherics"
-	armor = list("rad" = 10, "fire" = 10)
+	armor = list("rad" = 5, "fire" = 10)
 
 /obj/item/clothing/head/beret/ce
 	name = "chief engineer beret"
 	desc = "A white beret with the engineering insignia emblazoned on it. Its owner knows what they're doing. Probably."
 	icon_state = "beret_ce"
-	armor = list("rad" = 20, "fire" = 30)
+	armor = list("rad" = 10, "fire" = 30)
 
 //Science
 /obj/item/clothing/head/beret/sci
@@ -170,22 +261,16 @@
 	name = "captain beret"
 	desc = "A lovely blue Captain beret with a gold and white insignia. Truly fit for only the finest officers."
 	icon_state = "beret_captain"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 90
 
 /obj/item/clothing/head/beret/hop
 	name = "head of personnel beret"
 	desc = "A lovely blue Head of Personnel's beret with a silver and white insignia. It smells faintly of paper and dogs."
 	icon_state = "beret_hop"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 90
 
 /obj/item/clothing/head/beret/command
 	name = "command beret"
 	desc = "A modest blue command beret with a silver rank insignia. Smells of power and the sweat of assistants."
 	icon_state = "beret_com"
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
-	strip_delay = 90
 
 // SolGov
 
@@ -193,7 +278,6 @@
 	name = "\improper SolGov beret"
 	desc = "A beret with SolGov's emblem emblazoned on it. Colored in SolGov blue."
 	icon_state = "beret_solgov"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/beret/solgov/plain
 	name = "\improper SolGov beret"
@@ -226,26 +310,14 @@
 	name = "honorable vanguard beret"
 	desc = "A snow white beret with an air of distinction around it, emblazoned with the golden shield of the IRMG as the badge."
 	icon_state = "inteq_honorable_beret"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
-
-// Frontier
-
-/obj/item/clothing/head/beret/sec/frontier
-	name = "\improper Frontiersmen beret"
-	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."
-	icon_state = "frontier_beret"
-
-/obj/item/clothing/head/beret/sec/frontier/officer
-	name = "\improper Frontiersmen officer beret"
-	desc = "A scratchy olive green beret emblazoned with the Frontiersmen insignia, worn by Frontiersmen who want to look good while intimidating freighter captains."
-	icon_state = "frontier_officer_beret"
-
 
 // CentCom
 
 /obj/item/clothing/head/beret/centcom_formal
 	name = "\improper CentCom Formal Beret"
 	desc = "Sometimes, a compromise between fashion and defense needs to be made. Thanks to Nanotrasen's most recent nano-fabric durability enhancements, this time, it's not the case."
+	icon = 'icons/obj/clothing/head/spacesuits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/spacesuits.dmi'
 	icon_state = "beret_badge"
 	greyscale_colors = "#46b946#f2c42e"
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 50, "bomb" = 100, "bio" = 100, "fire" = 100, "acid" = 90)

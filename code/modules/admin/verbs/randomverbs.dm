@@ -20,7 +20,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Everything") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_subtle_message(mob/M in GLOB.mob_list)
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Subtle Message"
 
 	if(!ismob(M))
@@ -46,7 +46,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Subtle Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_headset_message(mob/M in GLOB.mob_list)
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Headset Message"
 
 	admin_headset_message(M)
@@ -70,9 +70,9 @@
 			return
 		switch(sender)
 			if (RADIO_CHANNEL_SYNDICATE)
-				sender = input("From what branch?", "Syndicate") as null|anything in list("Syndicate High Command", "The Anti-Corporation Liberation Front", "The Gorlex Marauders", "Donk! Corporation", "Cybersun Virtual Solutions", "The Galactic Engineer's Concordat", "The Naturalienwissenschaftlicher Studentenverbindungs-Verband")
+				sender = input("From what faction?", "Syndicate") as null|anything in list("Liberation Front Leadership", "Gorlex Republic Military Command", "Cybersun Industries", "the Student-Union of Naturalistic Sciences")
 			if (RADIO_CHANNEL_MINUTEMEN)
-				sender = input("From what division?", "Minutemen") as null|anything in list("CLIP Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
+				sender = input("From what division?", "Minutemen") as null|anything in list("the Colonial League Minutemen", "the Galactic Optium Labor Divison", "the Biohazard Assesment and Removal Division")
 			if (RADIO_CHANNEL_INTEQ)
 				sender = "Inteq Risk Management"
 			if ("Outpost")
@@ -92,7 +92,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_world_narrate()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Global Narrate"
 
 	if(!check_rights(R_ADMIN))
@@ -108,7 +108,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Global Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_direct_narrate(mob/M)
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Direct Narrate"
 
 	if(!check_rights(R_ADMIN))
@@ -133,7 +133,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Direct Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_local_narrate(atom/A)
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Local Narrate"
 
 	if(!check_rights(R_ADMIN))
@@ -295,7 +295,7 @@
 	return 1
 
 /client/proc/cmd_admin_add_freeform_ai_law()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Add Custom AI law"
 
 	if(!check_rights(R_ADMIN))
@@ -318,7 +318,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Add Custom AI Law") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_create_centcom_report()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Create Command Report"
 
 	if(!check_rights(R_FUN))
@@ -347,7 +347,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Create Command Report") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_change_command_name()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Change Command Name"
 
 	if(!check_rights(R_FUN))
@@ -360,6 +360,20 @@
 	message_admins("[key_name_admin(src)] has changed Central Command's name to [input]")
 	log_admin("[key_name(src)] has changed the Central Command name to: [input]")
 
+/client/proc/cmd_admin_distress_signal(datum/overmap/overmap_location as anything in SSovermap.overmap_objects)
+	set category = "Event"
+	set name = "Create Distress Signal"
+
+	if(!istype(overmap_location)) // Sanity check
+		return
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name]", "Distress Signal", "Yes", "No")
+
+	switch(confirm)
+		if("Yes")
+			create_distress_beacon(overmap_location)
+		if("No")
+			return
+
 /client/proc/cmd_admin_delete(atom/A as obj|mob|turf in world)
 	set category = "Debug"
 	set name = "Delete"
@@ -370,7 +384,7 @@
 	admin_delete(A)
 
 /client/proc/cmd_admin_explosion(atom/O as obj|mob|turf in world)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Explosion"
 
 	if(!check_rights(R_ADMIN))
@@ -406,7 +420,7 @@
 		return
 
 /client/proc/cmd_admin_emp(atom/O as obj|mob|turf in world)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "EM Pulse"
 
 	if(!check_rights(R_ADMIN))
@@ -431,7 +445,7 @@
 		return
 
 /client/proc/cmd_admin_gib(mob/M in GLOB.mob_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Gib"
 
 	if(!check_rights(R_ADMIN))
@@ -458,7 +472,7 @@
 
 /client/proc/cmd_admin_gib_self()
 	set name = "Gibself"
-	set category = "Fun"
+	set category = "Event.Fun"
 
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm == "Yes")
@@ -492,7 +506,7 @@
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Change View Range", "[view]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/admin_initiate_jump()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Initiate Jump"
 	if(!check_rights(R_ADMIN))
 		return
@@ -510,7 +524,7 @@
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] admin-initiated a bluespace jump.</span>")
 
 /client/proc/admin_cancel_jump()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Cancel Jump"
 	if(!check_rights(0))
 		return
@@ -528,7 +542,7 @@
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] admin-cancelled a bluespace jump.</span>")
 
 /client/proc/everyone_random()
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Make Everyone Random"
 	set desc = "Make everyone have a random appearance. You can only use this before rounds!"
 
@@ -576,7 +590,7 @@
 
 
 /client/proc/admin_change_sec_level()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Set Security Level"
 	set desc = "Changes the security level. Announcement only, i.e. setting to Delta won't activate nuke"
 
@@ -593,7 +607,7 @@
 
 /client/proc/toggle_nuke(obj/machinery/nuclearbomb/N in GLOB.nuke_list)
 	set name = "Toggle Nuke"
-	set category = "Admin.Events"
+	set category = "Event"
 	set popup_menu = 0
 	if(!check_rights(R_DEBUG))
 		return
@@ -646,7 +660,7 @@
 
 
 /client/proc/run_weather()
-	set category = "Admin.Events"
+	set category = "Event"
 	set name = "Run Weather"
 	set desc = "Triggers a weather on the z-level you choose."
 
@@ -669,7 +683,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
 
 /client/proc/mass_zombie_infection()
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Mass Zombie Infection"
 	set desc = "Infects all humans with a latent organ that will zombify \
 		them on death."
@@ -690,7 +704,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Mass Zombie Infection")
 
 /client/proc/mass_zombie_cure()
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Mass Zombie Cure"
 	set desc = "Removes the zombie infection from all humans, returning them to normal."
 	if(!check_rights(R_ADMIN))
@@ -708,7 +722,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Mass Zombie Cure")
 
 /client/proc/polymorph_all()
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Polymorph All"
 	set desc = "Applies the effects of the bolt of change to every single mob."
 
@@ -734,8 +748,6 @@
 
 		M.audible_message("<span class='hear'>...wabbajack...wabbajack...</span>")
 		playsound(M.loc, 'sound/magic/staff_change.ogg', 50, TRUE, -1)
-
-		wabbajack(M)
 
 	message_admins("Mass polymorph started by [who_did_it] is complete.")
 
@@ -819,7 +831,7 @@
 
 /client/proc/spawn_ruin()
 	set name = "Spawn Planet/Ruin"
-	set category = "Fun"
+	set category = "Event.Overmap"
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
@@ -841,7 +853,7 @@
 
 		switch(ruin_force)
 			if("Random")
-				//Can't use pickweight as it might be from "everything"
+				//Can't use pick_weight as it might be from "everything"
 				ruin_target = select_from[pick(select_from)]
 			else
 				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
@@ -860,27 +872,26 @@
 	else
 		position = SSovermap.get_unused_overmap_square()
 
-	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
+	var/admin_load_instant = FALSE
+	if(tgui_alert(usr, "Instant admin load?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) == "Yes")
+		admin_load_instant = TRUE
+
+	message_admins("Creating a new Planet with ruin: [ruin_target].")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
 	var/datum/overmap/dynamic/encounter = new(position, FALSE)
+	message_admins("new Planet token: [ADMIN_JMP(encounter.token)]. new Planet datum: [ADMIN_VV(encounter)]")
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
 		encounter.ruin_type = null
-	encounter.preserve_level = TRUE
-	encounter.load_level()
-
-	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
-	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
-	for(var/ruin in encounter.ruin_turfs)
-		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
-		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+	if(admin_load_instant)
+		encounter.admin_load()
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
-	set category = "Fun"
+	set category = "Event.Fun"
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
 		return
 
@@ -1068,8 +1079,8 @@
 			REMOVE_TRAIT(D,chosen_trait,source)
 
 /datum/admins/proc/gift(mob/living/carbon/human/target as mob, object as text)
-	set name = "Gift"
-	set category = "Fun"
+	set name = "Gift a mob"
+	set category = "Event.Spawning"
 	set desc = "Give a mob an item directly."
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
 		return

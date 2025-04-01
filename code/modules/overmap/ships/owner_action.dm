@@ -101,6 +101,7 @@
 	.["joinMode"] = parent_ship.join_mode
 	.["cooldown"] = COOLDOWN_TIMELEFT(parent_ship, job_slot_adjustment_cooldown)
 	.["isAdmin"] = !!user.client?.holder
+	.["crew_share"] = parent_ship.crew_share
 	.["applications"] = list()
 	for(var/a_key as anything in parent_ship.applications)
 		var/datum/ship_application/app = parent_ship.applications[a_key]
@@ -176,6 +177,13 @@
 				parent_ship.memo = memo_result
 				check_blinking()
 			return TRUE
+
+		if("adjustshare")
+			var/value = params["adjust"]
+			if(value)
+				parent_ship.crew_share = round(value) / 100
+			return TRUE
+
 
 		if("setApplication")
 			var/datum/ship_application/target_app = locate(params["ref"])

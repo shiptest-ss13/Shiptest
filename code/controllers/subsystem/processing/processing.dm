@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(processing)
 	name = "Processing"
 	priority = FIRE_PRIORITY_PROCESS
 	flags = SS_BACKGROUND|SS_POST_FIRE_TIMING|SS_NO_INIT
-	wait = 10
+	wait = 1 SECONDS
 
 	var/stat_tag = "P" //Used for logging
 	var/list/processing = list()
@@ -20,7 +20,7 @@ SUBSYSTEM_DEF(processing)
 	cust["processing"] = length(processing)
 	.["custom"] = cust
 
-/datum/controller/subsystem/processing/fire(resumed = 0)
+/datum/controller/subsystem/processing/fire(resumed = FALSE)
 	if (!resumed)
 		currentrun = processing.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -31,12 +31,26 @@ SUBSYSTEM_DEF(processing)
 		current_run.len--
 		if(QDELETED(thing))
 			processing -= thing
-		else if(thing.process(wait) == PROCESS_KILL)
+		else if(thing.process(wait * 0.1) == PROCESS_KILL)
 			// fully stop so that a future START_PROCESSING will work
 			STOP_PROCESSING(src, thing)
 		if (MC_TICK_CHECK)
 			return
 
-/datum/proc/process()
+/**
+ * This proc is called on a datum on every "cycle" if it is being processed by a subsystem. The time between each cycle is determined by the subsystem's "wait" setting.
+ * You can start and stop processing a datum using the START_PROCESSING and STOP_PROCESSING defines.
+ *
+ * Since the wait setting of a subsystem can be changed at any time, it is important that any rate-of-change that you implement in this proc is multiplied by the seconds_per_tick that is sent as a parameter,
+ * Additionally, any "prob" you use in this proc should instead use the SPT_PROB define to make sure that the final probability per second stays the same even if the subsystem's wait is altered.
+ * Examples where this must be considered:
+ * - Implementing a cooldown timer, use `mytimer -= seconds_per_tick`, not `mytimer -= 1`. This way, `mytimer` will always have the unit of seconds
+ * - Damaging a mob, do `L.adjustFireLoss(20 * seconds_per_tick)`, not `L.adjustFireLoss(20)`. This way, the damage per second stays constant even if the wait of the subsystem is changed
+ * - Probability of something happening, do `if(SPT_PROB(25, seconds_per_tick))`, not `if(prob(25))`. This way, if the subsystem wait is e.g. lowered, there won't be a higher chance of this event happening per second
+ *
+ * If you override this do not call parent, as it will return PROCESS_KILL. This is done to prevent objects that dont override process() from staying in the processing list
+ */
+
+/datum/proc/process(seconds_per_tick)
 	set waitfor = 0
 	return PROCESS_KILL

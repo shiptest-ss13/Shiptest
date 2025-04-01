@@ -5,7 +5,7 @@
 	var/area/ai_monitored/area_motion = null
 	var/alarm_delay = 30 // Don't forget, there's another 3 seconds in queueAlarm()
 
-/obj/machinery/camera/process()
+/obj/machinery/camera/process(seconds_per_tick)
 	// motion camera event loop
 	if(!isMotion())
 		. = PROCESS_KILL
@@ -95,7 +95,7 @@
 			TV.notify(TRUE)
 	detectTime = world.time + 30 SECONDS
 
-/obj/machinery/camera/motion/thunderdome/process()
+/obj/machinery/camera/motion/thunderdome/process(seconds_per_tick)
 	if (!detectTime)
 		return
 

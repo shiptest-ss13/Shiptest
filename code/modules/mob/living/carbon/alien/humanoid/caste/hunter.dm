@@ -100,8 +100,7 @@
 		return
 
 	else //Maybe uses plasma in the future, although that wouldn't make any sense...
-		leaping = 1
-		weather_immunities += "lava"
+		leaping = TRUE
 		update_icons()
 		throw_at(leap_target, MAX_ALIEN_LEAP_DIST, 2, src, FALSE, TRUE, callback = CALLBACK(src, PROC_REF(leap_end)))
 
@@ -115,7 +114,6 @@
  * the icons of the hunter.
  */
 /mob/living/carbon/alien/humanoid/hunter/proc/leap_end()
-	leaping = 0
-	LAZYREMOVE(weather_immunities, "lava")
+	leaping = FALSE
 	update_icons()
 

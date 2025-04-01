@@ -31,7 +31,7 @@
 	slippery_foam = FALSE
 	var/absorbed_plasma = 0
 
-/obj/effect/particle_effect/foam/firefighting/process()
+/obj/effect/particle_effect/foam/firefighting/process(seconds_per_tick)
 	..()
 
 	var/turf/open/T = get_turf(src)
@@ -48,13 +48,11 @@
 
 /obj/effect/particle_effect/foam/firefighting/kill_foam()
 	STOP_PROCESSING(SSfastprocess, src)
-
 	if(absorbed_plasma)
 		var/obj/effect/decal/cleanable/plasma/P = (locate(/obj/effect/decal/cleanable/plasma) in get_turf(src))
 		if(!P)
 			P = new(loc)
 		P.reagents.add_reagent(/datum/reagent/stable_plasma, absorbed_plasma)
-
 	flick("[icon_state]-disolve", src)
 	QDEL_IN(src, 5)
 
@@ -66,6 +64,33 @@
 
 /obj/effect/particle_effect/foam/firefighting/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return
+
+
+/obj/effect/particle_effect/foam/antirad
+	name = "antiradiation foam"
+	lifetime = 80
+	amount = 0 //no spread
+	slippery_foam = FALSE
+	color = "#A6FAFF55"
+
+
+/obj/effect/particle_effect/foam/antirad/process(seconds_per_tick)
+	..()
+
+	var/turf/open/T = get_turf(src)
+	var/obj/effect/radiation/rads = (locate(/obj/effect/radiation) in T)
+	if(rads && istype(T))
+		rads.rad_power = rads.rad_power * rand(0.8, 0.95)
+		if (rads.rad_power <= RAD_BACKGROUND_RADIATION)
+			new /obj/effect/decal/cleanable/greenglow/filled(loc)
+			qdel(rads)
+	for(var/obj/things in get_turf(src))
+		things.wash(CLEAN_TYPE_RADIATION)
+
+/obj/effect/particle_effect/foam/antirad/kill_foam()
+	STOP_PROCESSING(SSfastprocess, src)
+	flick("[icon_state]-disolve", src)
+	QDEL_IN(src, 5)
 
 /obj/effect/particle_effect/foam/metal
 	name = "aluminium foam"
@@ -129,7 +154,7 @@
 	flick("[icon_state]-disolve", src)
 	QDEL_IN(src, 5)
 
-/obj/effect/particle_effect/foam/process()
+/obj/effect/particle_effect/foam/process(seconds_per_tick)
 	lifetime--
 	if(lifetime < 1)
 		kill_foam()
@@ -327,6 +352,22 @@
 			L.ExtinguishMob()
 		for(var/obj/item/Item in O)
 			Item.extinguish()
+
+/obj/structure/foamedmetal/forcewine
+	name = "resin"
+	desc = "It's rapidly decaying!"
+	opacity = FALSE
+	icon_state = "atmos_resin"
+	alpha = 120
+	max_integrity = 10
+	var/timeleft = 50
+
+/obj/structure/foamedmetal/forcewine/Initialize(mapload, new_timeleft)
+	. = ..()
+	if(new_timeleft)
+		timeleft = new_timeleft
+	if(timeleft)
+		QDEL_IN(src, timeleft)
 
 #undef ALUMINIUM_FOAM
 #undef IRON_FOAM

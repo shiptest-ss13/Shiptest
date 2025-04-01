@@ -24,7 +24,6 @@
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_FACE_ACT, PROC_REF(clean_face))
 	AddComponent(/datum/component/personal_crafting)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, -6)
-	AddComponent(/datum/component/bloodysoles/feet)
 	GLOB.human_list += src
 
 /mob/living/carbon/human/proc/setup_human_dna()
@@ -42,6 +41,8 @@
 	QDEL_NULL(physiology)
 	QDEL_LIST(bioware)
 	GLOB.human_list -= src
+	if(blood_particle)
+		QDEL_NULL(blood_particle)
 	return ..()
 
 
@@ -52,8 +53,6 @@
 	sec_hud_set_ID()
 	sec_hud_set_implants()
 	sec_hud_set_security_status()
-	//...fan gear
-	fan_hud_set_fandom()
 	//...and display them.
 	add_to_all_human_data_huds()
 
@@ -247,7 +246,7 @@
 		else
 			return
 
-		if(do_mob(usr, src, POCKET_STRIP_DELAY/delay_denominator)) //placing an item into the pocket is 4 times faster
+		if(do_after(usr, POCKET_STRIP_DELAY/delay_denominator, src, hidden = TRUE)) //placing an item into the pocket is 4 times faster
 			if(pocket_item)
 				if(pocket_item == (pocket_id == ITEM_SLOT_RPOCKET ? r_store : l_store)) //item still in the pocket we search
 					dropItemToGround(pocket_item)
@@ -265,7 +264,7 @@
 	if(href_list["toggle_uniform"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		var/obj/item/clothing/under/U = get_item_by_slot(ITEM_SLOT_ICLOTHING)
 		to_chat(src, "<span class='notice'>[usr.name] is trying to adjust your [U].</span>")
-		if(do_mob(usr, src, U.strip_delay/2))
+		if(do_after(usr, U.strip_delay/2, src))
 			to_chat(src, "<span class='notice'>[usr.name] successfully adjusted your [U].</span>")
 			U.toggle_jumpsuit_adjust()
 			update_inv_w_uniform()
@@ -570,10 +569,6 @@
 				if("Paroled")
 					threatcount += 2
 
-	//Check for dresscode violations
-	if(istype(head, /obj/item/clothing/head/wizard) || istype(head, /obj/item/clothing/head/helmet/space/hardsuit/wizard))
-		threatcount += 2
-
 	//Check for nonhuman scum
 	if(dna && dna.species.id && dna.species.id != SPECIES_HUMAN)
 		threatcount += 1
@@ -614,10 +609,13 @@
 /mob/living/carbon/human/proc/do_cpr(mob/living/carbon/target)
 	var/panicking = FALSE
 
+	if(target == src) //Sanity check, in case spacetime crumbles and allows us to perform cpr on ourselves
+		return
+
 	do
 		CHECK_DNA_AND_SPECIES(target)
 
-		if (INTERACTING_WITH(src, target))
+		if (DOING_INTERACTION_WITH_TARGET(src,target))
 			return FALSE
 
 		if (target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH))
@@ -643,7 +641,7 @@
 		visible_message("<span class='notice'>[src] is trying to perform CPR on [target.name]!</span>", \
 						"<span class='notice'>You try to perform CPR on [target.name]... Hold still!</span>")
 
-		if (!do_mob(src, target, time = panicking ? CPR_PANIC_SPEED : (3 SECONDS)))
+		if (!do_after(src, delay = panicking ? CPR_PANIC_SPEED : (3 SECONDS), target = target))
 			to_chat(src, "<span class='warning'>You fail to perform CPR on [target]!</span>")
 			return FALSE
 
@@ -876,6 +874,21 @@
 						icon_num = 0
 					if(icon_num)
 						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[BP.body_zone][icon_num]"))
+					if (BP.uses_integrity) // Same, but for integrity
+						var/integ_loss = max(0,BP.integrity_loss-BP.integrity_ignored)
+						var/integ_icon_num
+						if(integ_loss)
+							integ_icon_num = 1
+						if(integ_loss > (comparison))
+							integ_icon_num = 2
+						if(integ_loss > (comparison*2))
+							integ_icon_num = 3
+						if(integ_loss > (comparison*3))
+							integ_icon_num = 4
+						//no 100% integ loss icon as it'd be visually indistinguishable from limb removal
+						if(integ_icon_num)
+							hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[BP.body_zone]_integ[integ_icon_num]"))
+
 				for(var/t in get_missing_limbs()) //Missing limbs
 					hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[t]6"))
 				for(var/t in get_disabled_limbs()) //Disabled limbs
@@ -898,11 +911,6 @@
 			dna.remove_mutation(HM.name)
 	..()
 
-/mob/living/carbon/human/check_weakness(obj/item/weapon, mob/living/attacker)
-	. = ..()
-	if (dna && dna.species)
-		. += dna.species.check_species_weakness(weapon, attacker)
-
 /mob/living/carbon/human/is_literate()
 	return TRUE
 
@@ -917,10 +925,10 @@
 /mob/living/carbon/human/vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = 1, message = TRUE, toxic = FALSE, harm = TRUE, force = FALSE, purge = FALSE)
 	if(blood && (NOBLOOD in dna.species.species_traits) && !HAS_TRAIT(src, TRAIT_TOXINLOVER))
 		if(message)
-			visible_message("<span class='warning'>[src] dry heaves!</span>", \
-							"<span class='userdanger'>You try to throw up, but there's nothing in your stomach!</span>")
+			visible_message(span_warning("[src] dry heaves!"), \
+							span_userdanger("You try to throw up, but there's nothing in your stomach!"))
 		if(stun)
-			Paralyze(200)
+			Immobilize(30)
 		return 1
 	..()
 
@@ -1057,6 +1065,12 @@
 	else if(can_be_firemanned(target))
 		fireman_carry(target)
 
+/mob/living/carbon/human/limb_attack_self()
+	var/obj/item/bodypart/arm = hand_bodyparts[active_hand_index]
+	if(arm)
+		arm.attack_self(src)
+	return ..()
+
 /mob/living/carbon/human/MouseDrop(mob/over)
 	. = ..()
 	if(ishuman(over))
@@ -1064,7 +1078,7 @@
 		if(!src.is_busy && (src.zone_selected == BODY_ZONE_HEAD || src.zone_selected == BODY_ZONE_PRECISE_GROIN) && get_turf(src) == get_turf(T) && !(T.mobility_flags & MOBILITY_STAND) && src.a_intent != INTENT_HELP) //all the stars align, time to curbstomp
 			src.is_busy = TRUE
 
-			if (!do_mob(src,T,25) || get_turf(src) != get_turf(T) || (T.mobility_flags & MOBILITY_STAND) || src.a_intent == INTENT_HELP || src == T) //wait 30ds and make sure the stars still align (Body zone check removed after PR #958)
+			if (!do_after(src, 2.5 SECONDS, T) || get_turf(src) != get_turf(T) || (T.mobility_flags & MOBILITY_STAND) || src.a_intent == INTENT_HELP || src == T) //wait 30ds and make sure the stars still align (Body zone check removed after PR #958)
 				src.is_busy = FALSE
 				return
 
@@ -1152,7 +1166,7 @@
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
 		"<span class='notice'>[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
 		//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
-		if(do_after(src, carrydelay, TRUE, target))
+		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
 			if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
@@ -1175,7 +1189,7 @@
 		//Joe Medic starts quickly/expertly scooping Grey Tider into their arms..
 		"<span class='notice'>[carrydelay < 11 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to scoop [target] into your arms[carrydelay == 15 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to scoop Grey Tider into your arms(, while assisted by the nanochips in your gloves../...)
-		if(do_after(src, carrydelay, TRUE, target))
+		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
 			if(!incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
@@ -1231,7 +1245,7 @@
 
 /mob/living/carbon/human/do_after_coefficent()
 	. = ..()
-	. *= physiology.do_after_speed
+	return max(. *= physiology.do_after_speed, 0.1)
 
 /mob/living/carbon/human/updatehealth()
 	. = ..()
@@ -1258,6 +1272,26 @@
 		return FALSE
 	return ..()
 
+/mob/living/carbon/human/CtrlShiftClick(mob/user)
+	. = ..()
+	if(isobserver(user) || !user.mind?.guestbook)
+		return
+	INVOKE_ASYNC(user.mind.guestbook, TYPE_PROC_REF(/datum/guestbook, try_add_guest), user, src, FALSE)
+
+/mob/living/carbon/human/get_screentip_name(client/hovering_client)
+	. = ..()
+	var/mob/hovering_mob = hovering_client?.mob
+	if(!hovering_mob?.mind?.guestbook)
+		return .
+	var/face_name = get_face_name("")
+	var/known_name = hovering_mob.mind.guestbook.get_known_name(hovering_mob, src, face_name)
+	if(known_name)
+		return known_name
+	return .
+
+/mob/living/carbon/human/monkeybrain
+	ai_controller = /datum/ai_controller/monkey
+
 /mob/living/carbon/human/species
 	var/race = null
 
@@ -1275,7 +1309,7 @@
 	race = /datum/species/dullahan
 
 /mob/living/carbon/human/species/ethereal
-	race = /datum/species/ethereal
+	race = /datum/species/elzuose
 
 /mob/living/carbon/human/species/fly
 	race = /datum/species/fly
@@ -1333,9 +1367,6 @@
 
 /mob/living/carbon/human/species/zombie/infectious
 	race = /datum/species/zombie/infectious
-
-/mob/living/carbon/human/species/zombie/krokodil_addict
-	race = /datum/species/human/krokodil_addict
 
 /mob/living/carbon/human/species/ipc
 	race = /datum/species/ipc

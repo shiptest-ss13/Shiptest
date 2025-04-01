@@ -17,7 +17,7 @@ LINEN BINS
 	throwforce = 0
 	throw_speed = 1
 	throw_range = 2
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 	dying_key = DYE_REGISTRY_BEDSHEET
 	greyscale_icon_state = "bedsheet"
@@ -28,7 +28,7 @@ LINEN BINS
 
 /obj/item/bedsheet/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/bed_tuckable, 0, 0, 0)
+	AddElement(/datum/element/bed_tuckable, 0, 0, 0, TRUE, TRUE)
 
 /obj/item/bedsheet/attack_self(mob/user)
 	if(!user.CanReach(src))		//No telekenetic grabbing.
@@ -132,7 +132,7 @@ LINEN BINS
 	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
 	icon_state = "sheetrd"
 	item_state = "sheetrd"
-	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
+	dream_messages = list("authority", "a silvery ID", "a bomb", "an exosuit", "a facehugger", "maniacal laughter", "the research director")
 
 /obj/item/bedsheet/medical
 	name = "medical blanket"
@@ -209,7 +209,7 @@ LINEN BINS
 
 /obj/item/bedsheet/cult
 	name = "cultist's bedsheet"
-	desc = "You might dream of Nar'Sie if you sleep with this. It seems rather tattered and glows of an eldritch presence."
+	desc = "You might dream of elder gods if you sleep with this. It seems rather tattered."
 	icon_state = "sheetcult"
 	item_state = "sheetcult"
 	dream_messages = list("a tome", "a floating red crystal", "a glowing sword", "a bloody symbol", "a massive humanoid figure")
@@ -234,6 +234,13 @@ LINEN BINS
 	icon_state = "sheetsolgov"
 	item_state = "sheetsolgov"
 	dream_messages = list("bureaucracy", "laws", "papers", "writing")
+
+/obj/item/bedsheet/suns
+	name = "\improper SUNS bedsheet"
+	desc = "A gold and purple bedsheet with the SUNS icon on it."
+	icon_state = "sheetsuns"
+	item_state = "sheetsuns"
+	dream_messages = list("learning", "science", "geology", "studying a day before an exam")
 
 /obj/item/bedsheet/ian
 	icon_state = "sheetian"
@@ -346,7 +353,7 @@ LINEN BINS
 	name = "double research director's bedsheet"
 	icon_state = "double_sheetrd"
 	item_state = "sheetrd"
-	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
+	dream_messages = list("authority", "a silvery ID", "a bomb", "an exosuit", "a facehugger", "maniacal laughter", "the research director")
 	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
 
 /obj/item/bedsheet/double/solgov
@@ -355,6 +362,13 @@ LINEN BINS
 	item_state = "double_sheetsolgov"
 	dream_messages = list("bureaucracy", "laws", "papers", "writing")
 	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
+
+/obj/item/bedsheet/double/suns
+	name = "double SUNS bedsheet"
+	desc = "A large gold and purple bedsheet with the SUNS icon on it."
+	icon_state = "double_sheetsuns"
+	item_state = "double_sheetsuns"
+	dream_messages = list("learning", "science", "geology", "studying a day before an exam")
 
 /obj/item/bedsheet/random/Initialize()
 	..()
@@ -369,7 +383,7 @@ LINEN BINS
 
 /obj/item/bedsheet/dorms/Initialize()
 	..()
-	var/type = pickweight(list("Colors" = 80, "Special" = 20))
+	var/type = pick_weight(list("Colors" = 80, "Special" = 20))
 	switch(type)
 		if("Colors")
 			type = pick(list(/obj/item/bedsheet,
@@ -394,7 +408,7 @@ LINEN BINS
 
 /obj/item/bedsheet/dorms/double/Initialize()
 	..()
-	var/type = pickweight(list("Colors" = 80, "Special" = 20))
+	var/type = pick_weight(list("Colors" = 80, "Special" = 20))
 	switch(type)
 		if("Colors")
 			type = pick(list(/obj/item/bedsheet/double,

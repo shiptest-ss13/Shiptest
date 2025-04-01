@@ -26,8 +26,8 @@
 	var/power_draw_dynamic_kpa_coeff = 0.5
 	var/broken = FALSE
 	var/broken_message = "ERROR"
-	idle_power_usage = 150
-	active_power_usage = 2000
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_HIGH
 
 /obj/machinery/atmospherics/miner/Initialize()
 	. = ..()
@@ -120,21 +120,21 @@
 		on_overlay.color = overlay_color
 		. += on_overlay
 
-/obj/machinery/atmospherics/miner/process_atmos() //TODO figure out delta_time for this
+/obj/machinery/atmospherics/miner/process_atmos(seconds_per_tick) //TODO figure out seconds_per_tick for this
 	update_power()
 	check_operation()
 	if(active && !broken)
 		if(isnull(spawn_id))
 			return FALSE
 		if(do_use_power(active_power_usage))
-			mine_gas()
+			mine_gas(seconds_per_tick)
 
-/obj/machinery/atmospherics/miner/proc/mine_gas()
+/obj/machinery/atmospherics/miner/proc/mine_gas(seconds_per_tick = 2)
 	var/turf/open/O = get_turf(src)
 	if(!isopenturf(O))
 		return FALSE
 	var/datum/gas_mixture/merger = new
-	merger.set_moles(spawn_id, spawn_mol)
+	merger.set_moles(spawn_id, spawn_mol * seconds_per_tick)
 	merger.set_temperature(spawn_temp)
 	O.assume_air(merger)
 	O.air_update_turf(TRUE)
@@ -178,3 +178,8 @@
 	name = "\improper Water Vapor Gas Miner"
 	overlay_color = "#99928E"
 	spawn_id = GAS_H2O
+
+/obj/machinery/atmospherics/miner/hydrogen
+	name = "\improper Hydrogen Gas Miner"
+	overlay_color = "#ffffffda"
+	spawn_id = GAS_HYDROGEN

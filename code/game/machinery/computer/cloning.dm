@@ -65,7 +65,7 @@
 /proc/grow_clone_from_record(obj/machinery/clonepod/pod, datum/data/record/R, empty)
 	return pod.growclone(R.fields["name"], R.fields["UI"], R.fields["SE"], R.fields["mindref"], R.fields["last_death"], R.fields["blood_type"], R.fields["mrace"], R.fields["features"], R.fields["factions"], R.fields["quirks"], R.fields["bank_account"], R.fields["traumas"], empty)
 
-/obj/machinery/computer/cloning/process()
+/obj/machinery/computer/cloning/process(seconds_per_tick)
 	if(!(scanner && LAZYLEN(pods) && autoprocess))
 		return
 
@@ -534,9 +534,7 @@
 
 	if(ishuman(mob_occupant))
 		dna = C.has_dna()
-		var/obj/item/card/id/I = C.get_idcard(TRUE)
-		if(I)
-			has_bank_account = I.registered_account
+		has_bank_account = C.get_bank_account()
 	if(isbrain(mob_occupant))
 		dna = B.stored_dna
 

@@ -66,7 +66,7 @@
 	icon_state = "[base_icon]_[active]"
 	return ..()
 
-/obj/machinery/power/port_gen/process()
+/obj/machinery/power/port_gen/process(seconds_per_tick)
 	if(active)
 		if(!HasFuel() || !anchored)
 			TogglePower()
@@ -106,7 +106,7 @@
 	var/obj/S = sheet_path
 	sheet_name = initial(S.name)
 
-/obj/machinery/power/port_gen/pacman/Destroy()
+/obj/machinery/power/port_gen/pacman/deconstruct(disassembled)
 	DropFuel()
 	return ..()
 
@@ -291,7 +291,6 @@
 	circuit = /obj/item/circuitboard/machine/pacman/super
 	sheet_path = /obj/item/stack/sheet/mineral/uranium
 	power_gen = 15000
-	time_per_sheet = 85
 
 /obj/machinery/power/port_gen/pacman/super/overheat()
 	. =..()
@@ -304,7 +303,6 @@
 	circuit = /obj/item/circuitboard/machine/pacman/mrs
 	sheet_path = /obj/item/stack/sheet/mineral/diamond
 	power_gen = 40000
-	time_per_sheet = 80
 
 /obj/machinery/power/port_gen/pacman/mrs/overheat()
 	. =..()

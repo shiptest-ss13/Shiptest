@@ -71,10 +71,10 @@
 
 	var/emitterhealth = 20
 	var/emittermaxhealth = 20
-	var/emitterregen = 0.25
+	var/emitterregen = 0.125
 	var/emittercd = 50
 	var/emitteroverloadcd = 100
-	var/emittersemicd = FALSE
+	var/emittercurrent_cooldown = FALSE
 
 	var/overload_ventcrawl = 0
 	var/overload_bulletblock = 0	//Why is this a good idea?
@@ -125,7 +125,7 @@
 
 	. = ..()
 
-	emittersemicd = TRUE
+	emittercurrent_cooldown = TRUE
 	addtimer(CALLBACK(src, PROC_REF(emittercool)), 600)
 
 	if(!holoform)
@@ -286,8 +286,8 @@
 	set_health(maxHealth - getBruteLoss() - getFireLoss())
 	update_stat()
 
-/mob/living/silicon/pai/process()
-	emitterhealth = clamp((emitterhealth + emitterregen), -50, emittermaxhealth)
+/mob/living/silicon/pai/process(seconds_per_tick)
+	emitterhealth = clamp((emitterhealth + emitterregen * seconds_per_tick), -50, emittermaxhealth)
 
 /obj/item/paicard/attackby(obj/item/W, mob/user, params)
 	..()

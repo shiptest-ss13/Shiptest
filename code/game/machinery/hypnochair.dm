@@ -6,6 +6,8 @@
 	base_icon_state = "hypnochair"
 	circuit = /obj/item/circuitboard/machine/hypnochair
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	opacity = FALSE
 
 	var/mob/living/carbon/victim = null ///Keeps track of the victim to apply effects if it teleports away
@@ -100,12 +102,12 @@
 	update_appearance()
 	timerid = addtimer(CALLBACK(src, PROC_REF(finish_interrogation)), 450, TIMER_STOPPABLE)
 
-/obj/machinery/hypnochair/process()
+/obj/machinery/hypnochair/process(seconds_per_tick)
 	var/mob/living/carbon/C = occupant
 	if(!istype(C) || C != victim)
 		interrupt_interrogation()
 		return
-	if(prob(10) && !(C.get_eye_protection() > 0))
+	if(SPT_PROB(5, seconds_per_tick) && !(C.get_eye_protection() > 0))
 		to_chat(C, "<span class='hypnophrase'>[pick(\
 			"...blue... red... green... blue, red, green, blueredgreen<span class='small'>blueredgreen</span>",\
 			"...pretty colors...",\

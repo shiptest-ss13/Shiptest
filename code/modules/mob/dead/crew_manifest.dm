@@ -4,7 +4,7 @@
 	return GLOB.always_state
 
 /datum/crew_manifest/ui_status(mob/user, datum/ui_state/state)
-	return (isnewplayer(user) || isobserver(user) || isAI(user) || ispAI(user)) ? UI_INTERACTIVE : UI_CLOSE
+	return (ismob(user)) ? UI_INTERACTIVE : UI_CLOSE
 
 /datum/crew_manifest/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -19,5 +19,5 @@
 
 /datum/crew_manifest/ui_static_data(mob/user)
 	return list(
-		"manifest" = SSovermap.get_manifest()
+		"manifest" = SSovermap.get_fancy_manifest()
 	)

@@ -52,7 +52,7 @@
 	if(length(contents))
 		. += span_notice("It has [contents[1]] sitting on it.")
 
-/obj/item/cutting_board/Destroy()
+/obj/item/cutting_board/deconstruct(disassembled)
 	drop_everything_contained()
 	return ..()
 

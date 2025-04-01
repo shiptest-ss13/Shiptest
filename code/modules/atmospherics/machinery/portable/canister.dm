@@ -43,16 +43,16 @@
 		"co2" = /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 		"plasma" = /obj/machinery/portable_atmospherics/canister/toxins,
 		"n2o" = /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
-		"no2" = /obj/machinery/portable_atmospherics/canister/nitryl,
 		"bz" = /obj/machinery/portable_atmospherics/canister/bz,
 		"air" = /obj/machinery/portable_atmospherics/canister/air,
 		"water vapor" = /obj/machinery/portable_atmospherics/canister/water_vapor,
 		"tritium" = /obj/machinery/portable_atmospherics/canister/tritium,
-		"hyper-noblium" = /obj/machinery/portable_atmospherics/canister/nob,
-		"stimulum" = /obj/machinery/portable_atmospherics/canister/stimulum,
-		"pluoxium" = /obj/machinery/portable_atmospherics/canister/pluoxium,
 		"caution" = /obj/machinery/portable_atmospherics/canister,
-		"freon" = /obj/machinery/portable_atmospherics/canister/freon
+		"freon" = /obj/machinery/portable_atmospherics/canister/freon,
+		"hydrogen" = /obj/machinery/portable_atmospherics/canister/hydrogen,
+		"fuel mix" = /obj/machinery/portable_atmospherics/canister/fuel,
+		"cl2" = /obj/machinery/portable_atmospherics/canister/chlorine,
+		"hcl" =/obj/machinery/portable_atmospherics/canister/hydrogen_chloride,
 	)
 
 /obj/machinery/portable_atmospherics/canister/interact(mob/user)
@@ -74,11 +74,23 @@
 	icon_state = "blue"
 	gas_type = GAS_O2
 
+/obj/machinery/portable_atmospherics/canister/ozone
+	name = "ozone canister"
+	desc = "Ozone. Sometimes called as 'pure air', this is far from the truth; ozone is not good for your lungs nor heart."
+	icon_state = "darkblue"
+	gas_type = GAS_O3
+
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide
 	name = "co2 canister"
 	desc = "Carbon dioxide. What the fuck is carbon dioxide?"
 	icon_state = "black"
 	gas_type = GAS_CO2
+
+/obj/machinery/portable_atmospherics/canister/carbon_monoxide
+	name = "co canister"
+	desc = "Carbon Monoxide. Highly dangerous and invisible to the naked eye."
+	icon_state = "black"
+	gas_type = GAS_CO
 
 /obj/machinery/portable_atmospherics/canister/toxins
 	name = "plasma canister"
@@ -109,29 +121,11 @@
 	icon_state = "green"
 	gas_type = GAS_TRITIUM
 
-/obj/machinery/portable_atmospherics/canister/nob
-	name = "hyper-noblium canister"
-	desc = "Hyper-Noblium. More noble than all other gases."
-	icon_state = "nob"
-	gas_type = GAS_HYPERNOB
-
-/obj/machinery/portable_atmospherics/canister/nitryl
-	name = "nitryl canister"
-	desc = "Nitryl gas. Feels great 'til the acid eats your lungs."
-	icon_state = "brown"
-	gas_type = GAS_NITRYL
-
-/obj/machinery/portable_atmospherics/canister/stimulum
-	name = "stimulum canister"
-	desc = "Stimulum. High energy gas, high energy people."
-	icon_state = "darkpurple"
-	gas_type = GAS_STIMULUM
-
-/obj/machinery/portable_atmospherics/canister/pluoxium
-	name = "pluoxium canister"
-	desc = "Pluoxium. Like oxygen, but more bang for your buck."
-	icon_state = "darkblue"
-	gas_type = GAS_PLUOXIUM
+/obj/machinery/portable_atmospherics/canister/argon
+	name = "argon canister"
+	desc = "Argon. A noble gas that prevents other gases from reacting."
+	icon_state = "purple"
+	gas_type = GAS_ARGON
 
 /obj/machinery/portable_atmospherics/canister/water_vapor
 	name = "water vapor canister"
@@ -147,6 +141,59 @@
 	gas_type = GAS_FREON
 	filled = 1
 
+/obj/machinery/portable_atmospherics/canister/hydrogen
+	name = "hydrogen canister"
+	desc = "Hydrogen. Used in thruster fuel."
+	icon_state = "orangews"
+	gas_type = GAS_HYDROGEN
+
+/obj/machinery/portable_atmospherics/canister/methane
+	name = "methane canister"
+	desc = "Methane. Used in thruster fuel along with kitchen stoves."
+	icon_state = "methane"
+	gas_type = GAS_METHANE
+
+/obj/machinery/portable_atmospherics/canister/ammonia
+	name = "ammonia canister"
+	desc = "Ammonia. Used in industrial processes."
+	icon_state = "brown"
+	gas_type = GAS_AMMONIA
+
+/obj/machinery/portable_atmospherics/canister/sulfur_dioxide
+	name = "sulfur dioxide canister"
+	desc = "Sulfur Dioxide. Produced naturally by volcanos."
+	icon_state = "sulfurdioxide"
+	gas_type = GAS_SO2
+
+/obj/machinery/portable_atmospherics/canister/fuel
+	name = "fuel canister"
+	desc = "A highly volatile mix of hydrogen and oxygen."
+	icon_state = "orangewshaz"
+
+/obj/machinery/portable_atmospherics/canister/fuel_test
+	name = "test canister"
+	desc = "Hydrogen. Used in thruster fuel."
+	icon_state = "orangewshaz"
+
+/obj/machinery/portable_atmospherics/canister/fuel_test/create_gas()
+	air_contents.set_moles(GAS_O2, 500)
+	air_contents.set_moles(GAS_HYDROGEN, 1000)
+	air_contents.set_temperature(T20C)
+
+/obj/machinery/portable_atmospherics/canister/chlorine
+	name = "chlorine canister"
+	desc = "chlorine"
+	icon_state = "greenys"
+	gas_type = GAS_CHLORINE
+	filled = 1
+
+/obj/machinery/portable_atmospherics/canister/hydrogen_chloride
+	name = "hydrogen chloride canister"
+	desc = "awful"
+	icon_state = "greenyshaz"
+	gas_type = GAS_HYDROGEN_CHLORIDE
+	filled = 1
+
 /obj/machinery/portable_atmospherics/canister/fusion_test
 	name = "fusion test canister"
 	desc = "Don't be a badmin."
@@ -155,7 +202,6 @@
 	air_contents.set_moles(GAS_CO2,300)
 	air_contents.set_moles(GAS_PLASMA,1000)
 	air_contents.set_moles(GAS_TRITIUM,100.61)
-	air_contents.set_moles(GAS_NITRYL,1)
 	air_contents.set_temperature(15000)
 
 /obj/machinery/portable_atmospherics/canister/proc/get_time_left()
@@ -215,6 +261,11 @@
 	air_contents.set_temperature(starter_temp)
 	air_contents.set_moles(GAS_O2, (O2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
 	air_contents.set_moles(GAS_N2, (N2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
+
+/obj/machinery/portable_atmospherics/canister/fuel/create_gas()
+	air_contents.set_temperature(starter_temp)
+	air_contents.set_moles(GAS_HYDROGEN, (2/3 * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
+	air_contents.set_moles((GAS_O2), (1/3 * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
 
 /obj/machinery/portable_atmospherics/canister/update_icon_state()
 	if(machine_stat & BROKEN)
@@ -299,7 +350,7 @@
 		else if(valve_open && holding)
 			investigate_log("[key_name(user)] started a transfer into [holding].", INVESTIGATE_ATMOS)
 
-/obj/machinery/portable_atmospherics/canister/process_atmos()
+/obj/machinery/portable_atmospherics/canister/process_atmos(seconds_per_tick)
 	..()
 	if(machine_stat & BROKEN)
 		return PROCESS_KILL

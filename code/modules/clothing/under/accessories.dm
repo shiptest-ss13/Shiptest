@@ -92,10 +92,11 @@
 		if(initial(above_suit))
 			above_suit = !above_suit
 			to_chat(user, "[src] will be worn [above_suit ? "above" : "below"] your suit.")
+		return ..()
 
 /obj/item/clothing/accessory/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>\The [src] can be attached to a uniform. Alt-click to remove it once attached.</span>"
+	. += "<span class='notice'>\The [src] can be attached to a uniform. Ctrl-click to remove it once attached.</span>"
 	if(initial(above_suit))
 		. += "<span class='notice'>\The [src] can be worn above or below your suit. Alt-click to toggle.</span>"
 
@@ -103,7 +104,7 @@
 	name = "waistcoat"
 	desc = "For some classy, murderous fun."
 	icon_state = "waistcoat"
-	item_state = "waistcoat"
+	item_state = "det_suit"
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
@@ -115,18 +116,6 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
-/obj/item/clothing/accessory/maidapron/syndicate
-	name = "syndicate maid apron"
-	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
-	icon_state = "maidapronsynd"
-	item_state = "maidapronsynd"
-
-/obj/item/clothing/accessory/maidapron/inteq
-	name = "inteq maid apron"
-	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
-	icon_state = "inteqmaidapron"
-	item_state = "inteqmaidapron"
-
 //////////
 //Medals//
 //////////
@@ -137,6 +126,7 @@
 	icon_state = "bronze"
 	custom_materials = list(/datum/material/iron=1000)
 	resistance_flags = FIRE_PROOF
+	attachment_slot = null
 	var/medaltype = "medal" //Sprite used for medalbox
 	var/commended = FALSE
 
@@ -184,7 +174,7 @@
 
 /obj/item/clothing/accessory/medal/conduct
 	name = "distinguished conduct medal"
-	desc = "A bronze medal awarded for distinguished conduct. Whilst a great honor, this is the most basic award given by Nanotrasen. It is often awarded by a captain to a member of his crew."
+	desc = "A bronze medal awarded for distinguished conduct. While an honor to be awarded, it is one of the most common medals next to the bronze heart."
 
 /obj/item/clothing/accessory/medal/bronze_heart
 	name = "bronze heart medal"
@@ -198,7 +188,7 @@
 
 /obj/item/clothing/accessory/medal/ribbon/cargo
 	name = "\"cargo tech of the shift\" award"
-	desc = "An award bestowed only upon those cargotechs who have exhibited devotion to their duty in keeping with the highest traditions of Cargonia."
+	desc = "A common award bestowed by cargo quartermasters everywhere to their outperforming employees. Often paired with Unpaid Time Off."
 
 /obj/item/clothing/accessory/medal/silver
 	name = "silver medal"
@@ -212,8 +202,8 @@
 	desc = "A silver medal awarded for acts of exceptional valor."
 
 /obj/item/clothing/accessory/medal/silver/security
-	name = "robust security award"
-	desc = "An award for distinguished combat and sacrifice in defence of Nanotrasen's commercial interests. Often awarded to security staff."
+	name = "exceptional service award"
+	desc = "A silver medal awarded for exceptional service within one's roles, often ranging from combat operations to triage and first aid."
 
 /obj/item/clothing/accessory/medal/silver/excellence
 	name = "\proper the head of personnel award for outstanding achievement in the field of excellence"
@@ -221,7 +211,7 @@
 
 /obj/item/clothing/accessory/medal/silver/bureaucracy
 	name = "\improper Excellence in Bureaucracy Medal"
-	desc = "Awarded for exemplary managerial services rendered while under contract with Nanotrasen."
+	desc = "An award for excellent bureaucratic work, often seen pinned to the uniforms of middle-managers."
 
 /obj/item/clothing/accessory/medal/gold
 	name = "gold medal"
@@ -266,7 +256,7 @@
 
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"
-	desc = "An extremely rare golden medal awarded only by CentCom. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
+	desc = "An extremely rare golden medal awarded only by the highest echelons of military service. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded."
 
 /obj/item/clothing/accessory/medal/plasma
 	name = "plasma medal"
@@ -376,64 +366,16 @@
 	for(var/i in 1 to 3)
 		new /obj/item/lipstick/random(src)
 
-////////////////
-//REAL BIG FAN//
-////////////////
-
-/obj/item/clothing/accessory/fan_clown_pin
-	name = "Clown Pin"
-	desc = "A pin to show off your appreciation for clowns and clowning"
-	icon_state = "fan_clown_pin"
-	above_suit = FALSE
-	minimize_when_attached = TRUE
-	attachment_slot = CHEST
-
-/obj/item/clothing/accessory/fan_clown_pin/on_uniform_equip(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(HAS_TRAIT(L, TRAIT_FAN_CLOWN))
-		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "fan_clown_pin", /datum/mood_event/fan_clown_pin)
-
-/obj/item/clothing/accessory/fan_clown_pin/on_uniform_dropped(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(HAS_TRAIT(L, TRAIT_FAN_CLOWN))
-		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "fan_clown_pin")
-
-/obj/item/clothing/accessory/fan_mime_pin
-	name = "Mime Pin"
-	desc = "A pin to show off your appreciation for mimes and miming"
-	icon_state = "fan_mime_pin"
-	above_suit = FALSE
-	minimize_when_attached = TRUE
-	attachment_slot = CHEST
-
-/obj/item/clothing/accessory/fan_mime_pin/on_uniform_equip(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(HAS_TRAIT(L, TRAIT_FAN_MIME))
-		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "fan_mime_pin", /datum/mood_event/fan_mime_pin)
-
-/obj/item/clothing/accessory/fan_mime_pin/on_uniform_dropped(obj/item/clothing/under/U, user)
-	var/mob/living/L = user
-	if(HAS_TRAIT(L, TRAIT_FAN_MIME))
-		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "fan_mime_pin")
 
 ////////////////
 //OONGA BOONGA//
 ////////////////
 
-/obj/item/clothing/accessory/talisman
-	name = "bone talisman"
-	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
-	icon_state = "talisman"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
+/obj/item/clothing/accessory/bonearmlet
+	name = "bone armlet"
+	desc = "An armlet made out of animal bone and sinew. According to a common Frontier superstition, it brings good luck to its wearer."
+	icon_state = "bone_armlet"
 	attachment_slot = ARMS
-	above_suit = TRUE
-
-/obj/item/clothing/accessory/wolftalisman
-	name = "hunter's necklace"
-	desc = "A thick necklace woven from sinew and bits of wolfhide, adorned with a carved fang. Slaying such beasts is rumoured to elate the gods of old, and such an item proves your worth."
-	icon_state = "wolf_talisman"
-	armor = list("melee" = 15	, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 25, "acid" = 25)
-	attachment_slot = CHEST
 	above_suit = TRUE
 
 /obj/item/clothing/accessory/skullcodpiece
@@ -441,7 +383,6 @@
 	desc = "A legion skull fitted to a codpiece, intended to protect the important things in life."
 	icon_state = "skull"
 	above_suit = TRUE
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 40, "acid" = 40)
 	attachment_slot = GROIN
 
 /obj/item/clothing/accessory/skilt
@@ -450,15 +391,14 @@
 	icon_state = "skilt"
 	above_suit = TRUE
 	minimize_when_attached = FALSE
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
 	attachment_slot = GROIN
 
 /obj/item/clothing/accessory/holster
 	name = "shoulder holster"
 	desc = "A holster to carry a handgun and ammo. WARNING: Badasses only."
 	icon_state = "holster"
-	item_state = "holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster
+	attachment_slot = null
 
 /obj/item/clothing/accessory/holster/detective
 	name = "detective's shoulder holster"
@@ -482,7 +422,6 @@
 	name = "syndicate holster"
 	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
 	var/datum/action/item_action/chameleon/change/chameleon_action
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
 
 /obj/item/clothing/accessory/holster/chameleon/Initialize()
 	. = ..()
@@ -491,6 +430,10 @@
 	chameleon_action.chameleon_type = /obj/item/clothing/accessory
 	chameleon_action.chameleon_name = "Accessory"
 	chameleon_action.initialize_disguises()
+
+/obj/item/clothing/accessory/holster/chameleon/Destroy()
+	QDEL_NULL(chameleon_action)
+	return ..()
 
 /obj/item/clothing/accessory/holster/chameleon/emp_act(severity)
 	. = ..()
@@ -527,7 +470,7 @@
 	icon_state = "rilena_pin"
 	above_suit = FALSE
 	minimize_when_attached = TRUE
-	attachment_slot = CHEST
+	attachment_slot = null
 
 /obj/item/clothing/accessory/rilena_pin/on_uniform_equip(obj/item/clothing/under/U, user)
 	var/mob/living/L = user

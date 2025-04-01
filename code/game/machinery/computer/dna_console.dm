@@ -43,8 +43,8 @@
 	circuit = /obj/item/circuitboard/computer/scan_consolenew
 
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 10
-	active_power_usage = 400
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	light_color = LIGHT_COLOR_BLUE
 
 	/// Link to the techweb's stored research. Used to retrieve stored mutations
@@ -133,7 +133,7 @@
 	/// State of tgui view, i.e. which tab is currently active, or which genome we're currently looking at.
 	var/list/list/tgui_view_state = list()
 
-/obj/machinery/computer/scan_consolenew/process()
+/obj/machinery/computer/scan_consolenew/process(seconds_per_tick)
 	. = ..()
 
 	// This is for pulsing the UI element with radiation as part of genetic makeup

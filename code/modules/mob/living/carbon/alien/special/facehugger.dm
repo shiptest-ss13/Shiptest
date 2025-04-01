@@ -27,7 +27,7 @@
 	attack_verb_simple = "flail at"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	faction = list(ROLE_ALIEN)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	verb_say = "squeaks"
 	verb_ask = "squeaks"
 	verb_exclaim = "shrieks"
@@ -35,7 +35,6 @@
 	initial_language_holder = /datum/language_holder/alien
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1
 	footstep_type = FOOTSTEP_MOB_CLAW
-	gold_core_spawnable = NO_SPAWN
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -47,7 +46,7 @@
 	/// Whether or not this facehugger can actually impregnate targets
 	var/sterile = FALSE
 	/// How long it takes for a facehugger to impregnate a target once attached
-	var/pregnation_time = 10 SECONDS
+	var/pregnation_time = 5 SECONDS
 	/// How long it takes between coupling attempts
 	var/couple_retry_time = 15 SECONDS
 	/// The mob's internal mask version, stored within the mob when the facehugger isn't being used as an item.

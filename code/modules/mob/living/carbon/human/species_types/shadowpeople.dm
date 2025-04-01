@@ -12,7 +12,6 @@
 	inherent_factions = list("faithless")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	mutanteyes = /obj/item/organ/eyes/night_vision
-	species_language_holder = /datum/language_holder/shadowpeople
 
 	species_chest = /obj/item/bodypart/chest/shadow
 	species_head = /obj/item/bodypart/head/shadow
@@ -190,7 +189,7 @@
 		return
 	if(isliving(AM))
 		var/mob/living/L = AM
-		if(isethereal(AM))
+		if(iselzuose(AM))
 			AM.emp_act(EMP_LIGHT)
 
 		else if(iscyborg(AM))

@@ -413,10 +413,10 @@
 		return
 
 	if(patient && path.len == 0 && (get_dist(src,patient) > 1))
-		path = get_path_to(src, get_turf(patient), /turf/proc/Distance_cardinal, 0, 30,id=access_card)
+		path = get_path_to(src, patient, 30,id=access_card)
 		mode = BOT_MOVING
 		if(!path.len) //try to get closer if you can't reach the patient directly
-			path = get_path_to(src, get_turf(patient), /turf/proc/Distance_cardinal, 0, 30,1,id=access_card)
+			path = get_path_to(src, patient, 30,1,id=access_card)
 			if(!path.len) //Do not chase a patient we cannot reach.
 				soft_reset()
 
@@ -488,6 +488,9 @@
 		return TRUE
 
 /mob/living/simple_animal/bot/medbot/attack_hand(mob/living/carbon/human/H)
+	if(DOING_INTERACTION_WITH_TARGET(H, src))
+		to_chat(H, "<span class='warning'>You're already interacting with [src].</span>")
+		return
 
 	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
 		H.visible_message("<span class='danger'>[H] begins tipping over [src].</span>", "<span class='warning'>You begin tipping over [src]...</span>")
@@ -574,7 +577,7 @@
 			C.visible_message("<span class='danger'>[src] is trying to tend the wounds of [patient]!</span>", \
 				"<span class='userdanger'>[src] is trying to tend your wounds!</span>")
 
-			if(do_mob(src, patient, 20)) //Slightly faster than default tend wounds, but does less HPS
+			if(do_after(src, 2 SECONDS, patient)) //Slightly faster than default tend wounds, but does less HPS
 				if((get_dist(src, patient) <= 1) && (on) && assess_patient(patient))
 					var/healies = heal_amount
 					var/obj/item/storage/firstaid/FA = firstaid

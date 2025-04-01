@@ -1,9 +1,9 @@
 /obj/effect/anomaly/sparkler
 	name = "sparkler"
 	icon_state = "sparkler"
-	desc = "A mysterious anomaly, constantly throwing sparks into its vicinity."
+	desc = "A series of shimmering sparks flying to and fro. They try to spread, yet fail."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/sparkler
+	core = /obj/item/assembly/signaler/anomaly/sparkler
 	effectrange = 4
 	pulse_delay = 1 SECONDS
 

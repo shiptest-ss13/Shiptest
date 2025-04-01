@@ -62,7 +62,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	z_original = z
 	destination = end
 	special_target = aimed_at
-	GLOB.poi_list += src
+	SSpoints_of_interest.make_point_of_interest(src)
 
 	var/special_target_valid = FALSE
 	if(special_target)
@@ -81,7 +81,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 			ghost.ManualFollow(src)
 
 /obj/effect/immovablerod/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/effect/immovablerod/Moved()

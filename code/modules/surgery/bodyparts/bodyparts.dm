@@ -50,6 +50,26 @@
 	/// Is it fine, broken, splinted, or just straight up fucking gone
 	var/bone_status = BONE_FLAG_NO_BONES
 	var/bone_break_threshold = 30
+	/// Threshold at which the limb will start bleeding if damaged by sharp items or projectiles
+	var/bleed_threshold = 10
+	/// Threshold at which the limb will start bleeding if damaged by blunt items
+	var/bleed_threshold_blunt = 25
+	/// Minimum damage of an incoming attack for it to cause bleeding
+	var/bleed_damage_min = 5
+	/// Minimum damage of an incoming blunt attack for it to cause bleeding
+	var/bleed_damage_min_blunt = 10
+	/// Current limb bleeding, increased when the limb takes brute damage over certain thresholds, decreased through bandages and cauterization
+	var/bleeding = 0
+
+	/// Whether this limb can decay, limiting its' ability to heal
+	var/uses_integrity = FALSE
+	/// How many hit points worth of integrity this limb has lost. 10 integrity = 10 HP
+	var/integrity_loss = 0
+	/// The amount of integrity_loss that this limb can have without any effects.
+	var/integrity_ignored = 20
+	/// If the limb has lost less than this amount of health, integrity loss should not be accrued.
+	/// Ignored if this is is greater or equal to the remaining health of the limb.
+	var/integrity_threshold = 15
 
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed
@@ -99,8 +119,11 @@
 	var/px_y = 0
 
 	var/species_flags_list = list()
+
 	///the type of damage overlay (if any) to use when this bodypart is bruised/burned.
 	var/dmg_overlay_type
+	///the path for dmg overlay icons.
+	var/dmg_overlay_icon = 'icons/mob/dam_mob.dmi'
 
 	//Damage messages used by help_shake_act()
 	var/light_brute_msg = "bruised"
@@ -110,6 +133,13 @@
 	var/light_burn_msg = "numb"
 	var/medium_burn_msg = "blistered"
 	var/heavy_burn_msg = "peeling away"
+
+	var/light_integrity_msg = "misaligned"
+	var/medium_integrity_msg = "twisted"
+	var/heavy_integrity_msg = "falling apart"
+
+//band-aid for blood overlays & other external overlays until they get refactored
+	var/stored_icon_state
 
 /obj/item/bodypart/Initialize()
 	. = ..()
@@ -142,11 +172,6 @@
 		. += "<span class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>"
 	if(burn_dam > DAMAGE_PRECISION)
 		. += "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>"
-
-
-/obj/item/bodypart/blob_act()
-	take_damage(max_damage)
-
 
 /obj/item/bodypart/attack(mob/living/carbon/C, mob/user)
 	if(ishuman(C))
@@ -202,11 +227,13 @@
 	if(stamina_dam > DAMAGE_PRECISION && owner.stam_regen_start_time <= world.time)					//DO NOT update health here, it'll be done in the carbon's life.
 		heal_damage(0, 0, INFINITY, null, FALSE)
 		. |= BODYPART_LIFE_UPDATE_HEALTH
+	if(brute_dam < DAMAGE_PRECISION && bleeding)
+		adjust_bleeding(-0.2) //slowly stop bleeding if there's no damage left
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
-/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, break_modifier = 1)
+/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, break_modifier = 1, sharpness = FALSE)
 	var/hit_percent = (100-blocked)/100
 	if((!brute && !burn && !stamina) || hit_percent <= 0)
 		return FALSE
@@ -232,8 +259,12 @@
 			burn *= 2
 
 	// Is the damage greater than the threshold, and if so, probability of damage + item force
-	if((brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
+	if(brute && (brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
 		break_bone()
+
+	// Bleeding is applied here
+	if(brute_dam+brute >= (sharpness ? bleed_threshold : bleed_threshold_blunt) && brute >= (sharpness ? bleed_damage_min : bleed_damage_min_blunt))
+		adjust_bleeding(brute * BLOOD_LOSS_DAMAGE_BASE, BLOOD_LOSS_DAMAGE_MAXIMUM)
 
 	var/can_inflict = max_damage - get_damage()
 	if(can_inflict <= 0)
@@ -264,6 +295,18 @@
 				. = TRUE
 	return update_bodypart_damage_state() || .
 
+
+// Removes integrity from the limb, if it uses integrity.
+/obj/item/bodypart/proc/take_integrity_damage(loss)
+	if (uses_integrity)
+		integrity_loss = clamp(integrity_loss + loss, 0, max_damage+integrity_ignored)
+
+
+// Heals integrity for the limb, if it uses integrity.
+/obj/item/bodypart/proc/heal_integrity(amount)
+	if (uses_integrity)
+		integrity_loss = clamp(integrity_loss - amount, 0, max_damage)
+
 //Heals brute and burn damage for the organ. Returns 1 if the damage-icon states changed at all.
 //Damage cannot go below zero.
 //Cannot remove negative damage (i.e. apply damage)
@@ -272,13 +315,19 @@
 	if(required_status && !(bodytype & required_status)) //So we can only heal certain kinds of limbs, ie robotic vs organic.
 		return
 
+	if (uses_integrity && (burn > 0 || brute > 0))
+		var/max_heal = max(0, burn_dam + brute_dam - max(0,integrity_loss-integrity_ignored))
+		var/total_heal = min(brute,brute_dam)+min(burn,burn_dam) //in case we're trying to heal nonexistent dmg
+		var/heal_mult = min(1,max_heal/total_heal)
+		brute *= heal_mult
+		burn *= heal_mult
 	if(brute)
 		set_brute_dam(round(max(brute_dam - brute, 0), DAMAGE_PRECISION))
+		adjust_bleeding(-BLOOD_LOSS_DAMAGE_MAXIMUM * brute / max_damage)
 	if(burn)
 		set_burn_dam(round(max(burn_dam - burn, 0), DAMAGE_PRECISION))
 	if(stamina)
 		set_stamina_dam(round(max(stamina_dam - stamina, 0), DAMAGE_PRECISION))
-
 	if(owner)
 		if(can_be_disabled)
 			update_disabled()
@@ -315,6 +364,30 @@
 	. = stamina_dam
 	stamina_dam = new_value
 
+/// Adjusts bodypart bleeding,  value = amount of change, maximum = maximum current bloodloss amount this can modify
+/obj/item/bodypart/proc/adjust_bleeding(value, maximum = BLOOD_LOSS_MAXIMUM)
+	if(bleeding > maximum)
+		return
+	if(owner.dna && (NOBLOOD in owner.dna.species.species_traits))
+		return
+	bleeding = round(clamp(bleeding+value, 0, maximum), 0.001)
+
+/// Checks if the bodypart is viable for bandaging, if it isn't, tells the person trying (if present) what's stopping it
+/obj/item/bodypart/proc/can_bandage(user)
+	. = TRUE
+	if(is_pseudopart)
+		return FALSE
+	if(!bleeding)
+		if(user)
+			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] isn't bleeding!"))
+		return FALSE
+	if(GetComponent(/datum/component/bandage))
+		if(user)
+			to_chat(user, span_warning("[owner]'s [parse_zone(body_zone)] has already been dressed!"))
+		return FALSE
+
+/obj/item/bodypart/proc/apply_bandage(bleed_reduction, lifespan, name)
+	AddComponent(/datum/component/bandage, bleed_reduction, lifespan, name)
 
 //Returns total damage.
 /obj/item/bodypart/proc/get_damage(include_stamina = FALSE)
@@ -323,6 +396,11 @@
 		total = max(total, stamina_dam)
 	return total
 
+///Returns damage that can be healed on a limb.
+/// integrity_cost: Optional, returns how much damage can be healed after losing X integrity
+/obj/item/bodypart/proc/get_curable_damage(integrity_cost=0)
+	var/total = brute_dam + burn_dam - max(0,(integrity_loss+integrity_cost)-integrity_ignored)
+	return total
 
 //Checks disabled status thresholds
 /obj/item/bodypart/proc/update_disabled()
@@ -337,7 +415,7 @@
 
 	if(total_damage >= max_damage * disable_threshold) //Easy limb disable disables the limb at 40% health instead of 0%
 		if(!last_maxed)
-			if(owner.stat < UNCONSCIOUS)
+			if(owner.stat < UNCONSCIOUS && !HAS_TRAIT(owner, TRAIT_ANALGESIA))
 				INVOKE_ASYNC(owner, TYPE_PROC_REF(/mob, emote), "scream")
 			last_maxed = TRUE
 		set_disabled(TRUE)
@@ -475,8 +553,8 @@
 //Updates an organ's brute/burn states for use by update_damage_overlays()
 //Returns 1 if we need to update overlays. 0 otherwise.
 /obj/item/bodypart/proc/update_bodypart_damage_state()
-	var/tbrute	= round((brute_dam/max_damage)*3, 1)
-	var/tburn	= round((burn_dam/max_damage)*3, 1)
+	var/tbrute = min(round((brute_dam/max_damage)*6, 1), 3)
+	var/tburn = min(round((burn_dam/max_damage)*6, 1), 3)
 	if((tbrute != brutestate) || (tburn != burnstate))
 		brutestate = tbrute
 		burnstate = tburn
@@ -528,10 +606,10 @@
 			no_update = FALSE
 
 	if(HAS_TRAIT(C, TRAIT_HUSK) && IS_ORGANIC_LIMB(src))
-		dmg_overlay_type = "" //no damage overlay shown when husked
+		//dmg_overlay_type = "" //no damage overlay shown when husked
 		is_husked = TRUE
 	else
-		dmg_overlay_type = initial(dmg_overlay_type)
+		//dmg_overlay_type = initial(dmg_overlay_type)
 		is_husked = FALSE
 
 	if(!dropping_limb && C.dna?.check_mutation(HULK)) //Please remove hulk from the game. I beg you.
@@ -545,6 +623,11 @@
 		draw_color = (species_color) || (skin_tone && skintone2hex(skin_tone))
 	else
 		draw_color = null
+
+	if(C?.dna?.blood_type?.color)
+		damage_color = C.dna.blood_type.color
+	else
+		damage_color = COLOR_BLOOD
 
 	if(no_update)
 		return
@@ -582,7 +665,6 @@
 		else
 			bone_status = BONE_FLAG_NORMAL
 			RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
-
 
 		draw_color = mutation_color
 		if(should_draw_greyscale) //Should the limb be colored?
@@ -622,12 +704,12 @@
 		image_dir = SOUTH
 		if(dmg_overlay_type)
 			if(brutestate)
-				var/image/bruteoverlay = image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[body_zone]_[brutestate]0", -DAMAGE_LAYER, image_dir)
+				var/image/bruteoverlay = image(dmg_overlay_icon, "[dmg_overlay_type]_[body_zone]_[brutestate]0", -DAMAGE_LAYER, image_dir)
 				if(use_damage_color)
 					bruteoverlay.color = damage_color
 				. += bruteoverlay
 			if(burnstate)
-				. += image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[body_zone]_0[burnstate]", -DAMAGE_LAYER, image_dir)
+				. += image(dmg_overlay_icon, "[dmg_overlay_type]_[body_zone]_0[burnstate]", -DAMAGE_LAYER, image_dir)
 
 	var/image/limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
 	var/image/aux
@@ -719,6 +801,8 @@
 						limb_gender,
 					)*/
 
+	stored_icon_state = limb.icon_state
+
 	return
 
 /obj/item/bodypart/deconstruct(disassembled = TRUE)
@@ -736,7 +820,11 @@
 	if (bone_status == BONE_FLAG_NORMAL && body_part & LEGS) // Because arms are not legs
 		owner.set_broken_legs(owner.broken_legs + 1)
 	bone_status = BONE_FLAG_BROKEN
-	addtimer(CALLBACK(owner, TYPE_PROC_REF(/atom, visible_message), "<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>"), 1 SECONDS)
+//	addtimer(CALLBACK(src, PROC_REF(break_bone_feedback), 1 SECONDS)) testing sommething
+
+///obj/item/bodypart/proc/break_bone_feedback()
+	owner.visible_message("<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>")
+	playsound(owner, pick(list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg')), 100, FALSE, -1)
 
 /obj/item/bodypart/proc/fix_bone()
 	// owner.update_inv_splints() breaks
@@ -745,12 +833,16 @@
 	bone_status = BONE_FLAG_NORMAL
 
 /obj/item/bodypart/proc/on_mob_move()
-	// Dont trigger if it isn't broken or if it has no owner
-	if(bone_status != BONE_FLAG_BROKEN || !owner)
+	// Dont trigger if it isn't broken or if it has no owner or is buckled to a rollerbed
+	if(bone_status != BONE_FLAG_BROKEN || !owner || istype(owner?.buckled, /obj/structure/bed/roller))
 		return
 
-	if(prob(5))
-		to_chat(owner, "<span class='danger'>[pick("You feel broken bones moving around in your [name]!", "There are broken bones moving around in your [name]!", "The bones in your [name] are moving around!")]</span>")
+	if(prob(owner.m_intent == MOVE_INTENT_RUN ? 5 : 1))
+		if(HAS_TRAIT(owner, TRAIT_ANALGESIA))
+			to_chat(owner, span_notice("[pick("You feel something shifting inside your [name].", "There is something moving inside [name].", "Something inside your [name] slips.")]"))
+		else
+			to_chat(owner, "<span class='danger'>[pick("You feel broken bones moving around in your [name]!", "There are broken bones moving around in your [name]!", "The bones in your [name] are moving around!")]</span>")
 		receive_damage(rand(1, 3))
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit
+

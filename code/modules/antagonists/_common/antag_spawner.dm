@@ -292,7 +292,7 @@
 /obj/item/antag_spawner/syndi_borer
 	name = "syndicate brain-slug container"
 	desc = "Releases a modified cortical borer to assist the user."
-	icon = 'icons/obj/chemical.dmi' //Temporary? //The most permanent type of solution lol
+	icon = 'icons/obj/chemical/hypovial.dmi'
 	icon_state = "hypoviallarge-b"
 	var/polling = FALSE
 

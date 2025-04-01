@@ -187,7 +187,6 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized, FALSE)
 	return copy
 
 /datum/gas_mixture/copy_from_turf(turf/model)
-	set_temperature(initial(model.initial_temperature))
 	parse_gas_string(model.initial_gas_mix)
 	return 1
 
@@ -209,8 +208,6 @@ get_true_breath_pressure(pp) --> gas_pp = pp/breath_pp*total_moles()
 10/20*5 = 2.5
 10 = 2.5/5*20
 */
-
-/datum/gas_mixture/turf
 
 /// Releases gas from src to output air. This means that it can not transfer air to gas mixture with higher pressure.
 /datum/gas_mixture/proc/release_gas_to(datum/gas_mixture/output_air, target_pressure)

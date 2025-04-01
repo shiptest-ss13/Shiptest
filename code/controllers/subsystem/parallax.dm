@@ -17,7 +17,7 @@ SUBSYSTEM_DEF(parallax)
 	planet_y_offset = rand(100, 160)
 	planet_x_offset = rand(100, 160)
 
-/datum/controller/subsystem/parallax/fire(resumed = 0)
+/datum/controller/subsystem/parallax/fire(resumed = FALSE)
 	if (!resumed)
 		src.currentrun = GLOB.clients.Copy()
 

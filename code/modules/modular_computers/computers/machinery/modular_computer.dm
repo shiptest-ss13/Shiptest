@@ -40,6 +40,11 @@
 	. = ..()
 	. += get_modular_computer_parts_examine(user)
 
+/obj/machinery/modular_computer/examine_more(mob/user)
+	. = ..()
+	if(cpu.enabled)
+		interact(user)
+
 /obj/machinery/modular_computer/attack_ghost(mob/dead/observer/user)
 	. = ..()
 	if(.)
@@ -57,10 +62,6 @@
 	. = ..()
 	set_light(cpu?.enabled ? light_strength : 0)
 
-/obj/machinery/modular_computer/update_icon_state()
-	icon_state = (cpu?.enabled || (!(machine_stat & NOPOWER) && cpu?.use_power())) ? icon_state_powered : icon_state_unpowered
-	return ..()
-
 /obj/machinery/modular_computer/update_overlays()
 	. = ..()
 	if(!cpu?.enabled)
@@ -71,7 +72,7 @@
 
 	if(cpu && cpu.obj_integrity <= cpu.integrity_failure * cpu.max_integrity)
 		. += "bsod"
-		. += "broken"
+		. += "computer_broken"
 
 /obj/machinery/modular_computer/AltClick(mob/user)
 	if(cpu)
@@ -86,11 +87,11 @@
 		return ..()
 
 // Process currently calls handle_power(), may be expanded in future if more things are added.
-/obj/machinery/modular_computer/process()
+/obj/machinery/modular_computer/process(seconds_per_tick)
 	if(cpu)
 		// Keep names in sync.
 		cpu.name = name
-		cpu.process()
+		cpu.process(seconds_per_tick)
 
 // Used in following function to reduce copypaste
 /obj/machinery/modular_computer/proc/power_failure(malfunction = 0)

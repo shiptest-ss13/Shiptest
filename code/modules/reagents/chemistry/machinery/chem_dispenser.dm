@@ -1,12 +1,12 @@
 /proc/translate_legacy_chem_id(id)
-	switch (id)
-		if ("sacid")
+	switch(id)
+		if("sacid")
 			return "sulphuricacid"
-		if ("facid")
+		if("facid")
 			return "fluorosulfuricacid"
-		if ("co2")
+		if("co2")
 			return "carbondioxide"
-		if ("mine_salve")
+		if("mine_salve")
 			return "minerssalve"
 		else
 			return ckey(id)
@@ -15,11 +15,11 @@
 	name = "chem dispenser"
 	desc = "Creates and dispenses chemicals."
 	density = TRUE
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/chem_machines.dmi'
 	icon_state = "dispenser"
 	base_icon_state = "dispenser"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 40
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	interaction_flags_machine = INTERACT_MACHINE_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OFFLINE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_dispenser
@@ -118,14 +118,14 @@
 		begin_processing()
 
 
-/obj/machinery/chem_dispenser/process()
-	if (recharge_counter >= 4)
+/obj/machinery/chem_dispenser/process(seconds_per_tick)
+	if (recharge_counter >= 8)
 		var/usedpower = cell.give(recharge_amount)
 		if(usedpower)
 			use_power(250*recharge_amount)
 		recharge_counter = 0
 		return
-	recharge_counter++
+	recharge_counter += seconds_per_tick
 
 /obj/machinery/chem_dispenser/proc/display_beaker()
 	var/mutable_appearance/b_o = beaker_overlay || mutable_appearance(icon, "disp_beaker")
@@ -451,7 +451,7 @@
 /obj/machinery/chem_dispenser/drinks
 	name = "soda dispenser"
 	desc = "Contains a large reservoir of soft drinks."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/chem_machines.dmi'
 	icon_state = "soda_dispenser"
 	base_icon_state = "soda_dispenser"
 	has_panel_overlay = FALSE
@@ -470,14 +470,14 @@
 		/datum/reagent/consumable/tea,
 		/datum/reagent/consumable/icetea,
 		/datum/reagent/consumable/space_cola,
-		/datum/reagent/consumable/spacemountainwind,
-		/datum/reagent/consumable/dr_gibb,
+		/datum/reagent/consumable/comet_trail,
+		/datum/reagent/consumable/tadrixx,
 		/datum/reagent/consumable/space_up,
 		/datum/reagent/consumable/tonic,
 		/datum/reagent/consumable/sodawater,
 		/datum/reagent/consumable/lemon_lime,
-		/datum/reagent/consumable/pwr_game,
-		/datum/reagent/consumable/shamblers,
+		/datum/reagent/consumable/pacfuel,
+		/datum/reagent/consumable/shoal_punch,
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/consumable/pineapplejuice,
 		/datum/reagent/consumable/orangejuice,
@@ -489,7 +489,7 @@
 	)
 	upgrade_reagents = null
 	emagged_reagents = list(
-		/datum/reagent/consumable/ethanol/thirteenloko,
+		/datum/reagent/consumable/ethanol/vimukti,
 		/datum/reagent/consumable/ethanol/whiskey_cola,
 		/datum/reagent/toxin/mindbreaker,
 		/datum/reagent/toxin/staminatoxin
@@ -509,7 +509,7 @@
 	name = "booze dispenser"
 	desc = "Contains a large reservoir of the good stuff."
 	base_icon_state = "booze_dispenser"
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/chem_machines.dmi'
 	icon_state = "booze_dispenser"
 	circuit = /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
 	dispensable_reagents = list(

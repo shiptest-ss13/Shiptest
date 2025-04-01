@@ -1,12 +1,12 @@
 /obj/machinery/recharge_station
 	name = "cyborg recharging station"
 	desc = "This device recharges cyborgs and resupplies them with materials."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'icons/obj/machines/borgcharger.dmi'
 	icon_state = "borgcharger0"
 	density = FALSE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 1000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	req_access = list(ACCESS_ROBOTICS)
 	state_open = TRUE
 	circuit = /obj/item/circuitboard/machine/cyborgrecharger
@@ -48,9 +48,9 @@
 		begin_processing()
 
 
-/obj/machinery/recharge_station/process()
+/obj/machinery/recharge_station/process(seconds_per_tick)
 	if(occupant)
-		process_occupant()
+		process_occupant(seconds_per_tick)
 	return 1
 
 /obj/machinery/recharge_station/relaymove(mob/living/user, direction)
@@ -90,12 +90,12 @@
 
 /obj/machinery/recharge_station/open_machine()
 	. = ..()
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 
 /obj/machinery/recharge_station/close_machine()
 	. = ..()
 	if(occupant)
-		use_power = ACTIVE_POWER_USE //It always tries to charge, even if it can't.
+		set_active_power() //It always tries to charge, even if it can't.
 		add_fingerprint(occupant)
 
 /obj/machinery/recharge_station/update_icon_state()
@@ -105,7 +105,7 @@
 	icon_state = "borgcharger[state_open ? 0 : (occupant ? 1 : 2)]"
 	return ..()
 
-/obj/machinery/recharge_station/proc/process_occupant()
+/obj/machinery/recharge_station/proc/process_occupant(seconds_per_tick)
 	if(!occupant)
 		return
-	SEND_SIGNAL(occupant, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, recharge_speed, repairs)
+	SEND_SIGNAL(occupant, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, recharge_speed * seconds_per_tick / 2, repairs)

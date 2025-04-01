@@ -217,16 +217,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	mine_experience = 10
 	scan_state = "rock_Diamond"
 
-/obj/item/stack/ore/bananium
-	name = "bananium ore"
-	icon_state = "Bananium ore"
-	item_state = "Bananium ore"
-	singular_name = "bananium ore chunk"
-	points = 60
-	custom_materials = list(/datum/material/bananium=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/bananium
-	mine_experience = 15
-	scan_state = "rock_Bananium"
 
 /obj/item/stack/ore/titanium
 	name = "titanium ore"
@@ -240,12 +230,33 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	scan_state = "rock_Titanium"
 	spreadChance = 5
 
+/obj/item/stack/ore/hellstone
+	name = "hellstone ore"
+	icon_state = "hellstone-ore"
+	item_state = "hellstone-ore"
+	singular_name = "hellstone ore chunk"
+	resistance_flags = LAVA_PROOF
+	points = 50
+	custom_materials = list(/datum/material/hellstone=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/hidden/hellstone
+
 /obj/item/stack/ore/slag
 	name = "slag"
 	desc = "Completely useless."
 	icon_state = "slag"
 	item_state = "slag"
 	singular_name = "slag chunk"
+
+/obj/item/stack/ore/ice
+	name = "ice crystals"
+	desc = "Used in an electrolyzer to produce hydrogen and oxygen."
+	icon_state = "Ice ore"
+	item_state = "Ice ore"
+	singular_name = "ice chunk"
+	scan_state = "rock_Ice"
+	mine_experience = 2
+	grind_results = list(/datum/reagent/consumable/ice = 10)
+	spreadChance = 10
 
 /obj/item/gibtonite
 	name = "gibtonite ore"
@@ -458,20 +469,11 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/titanium
 	custom_materials = list(/datum/material/titanium = 400)
 
-/obj/item/coin/bananium
-	custom_materials = list(/datum/material/bananium = 400)
-
-/obj/item/coin/adamantine
-	custom_materials = list(/datum/material/adamantine = 400)
-
-/obj/item/coin/mythril
-	custom_materials = list(/datum/material/mythril = 400)
-
 /obj/item/coin/plastic
 	custom_materials = list(/datum/material/plastic = 400)
 
-/obj/item/coin/runite
-	custom_materials = list(/datum/material/runite = 400)
+/obj/item/coin/hellstone
+	custom_materials = list(/datum/material/hellstone = 400)
 
 /obj/item/coin/twoheaded
 	desc = "Hey, this coin's the same on both sides!"

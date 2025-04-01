@@ -61,15 +61,15 @@
 	density = TRUE
 	max_integrity = 100
 	integrity_failure = 0.8
-	idle_power_usage = 100
-	active_power_usage = 1000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	anchored = FALSE
 	light_power = 1.75
-	var/list/light_setting_list = list(0, 5, 10, 15)
+	var/list/light_setting_list = list(0, 10, 15, 20)
 	var/light_power_coefficient = 200
 	var/setting = FLOODLIGHT_OFF
 
-/obj/machinery/power/floodlight/process()
+/obj/machinery/power/floodlight/process(seconds_per_tick)
 	var/turf/T = get_turf(src)
 	var/obj/structure/cable/C = locate() in T
 	if(!C && powernet)

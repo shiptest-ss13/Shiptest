@@ -79,7 +79,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	mob_size = MOB_SIZE_SMALL
 	faction = list("creature")
 	ventcrawler = VENTCRAWLER_ALWAYS
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500
 
@@ -422,7 +422,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 							"<span class='userdanger'>[src] tears [H.ears] off of your ear!</span>") //coz, you know, they go in the ear holes
 
 	to_chat(src, "<span class='warning'>You slither up [H] and begin probing at their ear canal...</span>")
-	if(!do_mob(src, H, 30))
+	if(!do_after(src, 3 SECONDS, H))
 		to_chat(src, "<span class='warning'>As [H] moves away, you are dislodged and fall to the ground.</span>")
 		return
 
@@ -573,7 +573,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	if(src.mind.language_holder)
 		var/datum/language_holder/language_holder = src.mind.language_holder
 		language_holder.remove_all_languages()
-		language_holder.grant_language(/datum/language/common)
+		language_holder.grant_language(/datum/language/galactic_common)
 
 	GrantBorerActions()
 	RemoveInfestActions()
@@ -637,7 +637,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		to_chat(src, "<span class='notice'>You send a jolt of energy to your host, reviving them!</span>")
 		victim.grab_ghost(force = TRUE) //brings the host back, no eggscape
 		C.emote("gasp")
-		C.Jitter(100)
+		C.set_jitter(100)
 
 /mob/living/simple_animal/borer/verb/bond_brain()
 	set category = "Borer"
@@ -683,10 +683,6 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	if(docile)
 		to_chat(src, "<span class='warning'>You are feeling far too docile to do that.</span>")
 		return
-	if(iscultist(victim) || HAS_TRAIT(victim, TRAIT_MINDSHIELD))
-		to_chat(src, "<span class='warning'>[victim]'s mind seems to be blocked by some unknown force!</span>")
-		return
-
 	else
 
 		log_game("[src]/([src.ckey]) assumed control of [victim]/([victim.ckey] with borer powers.")
@@ -1053,7 +1049,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 /datum/action/innate/borer/make_chems
 	name = "Secrete Chemicals"
 	desc = "Push some chemicals into your host's bloodstream."
-	icon_icon = 'icons/obj/chemical.dmi'
+	icon_icon = 'icons/obj/chemical/chem_machines.dmi'
 	button_icon_state = "minidispenser"
 
 /datum/action/innate/borer/make_chems/Activate()

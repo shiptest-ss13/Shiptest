@@ -58,18 +58,11 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/proc/considered_escaped(datum/mind/M)
 	if(!considered_alive(M))
 		return FALSE
-	if(considered_exiled(M))
-		return FALSE
-	if(M.force_escaped)
-		return TRUE
-	if(SSticker.force_ending || SSticker.mode.station_was_nuked) // Just let them win.
+	if(SSticker.force_ending) // Just let them win.
 		return TRUE
 	if(SSshuttle.jump_mode != BS_JUMP_COMPLETED)
 		return FALSE
-	var/turf/location = get_turf(M.current)
-	if(!location || istype(location, /turf/open/floor/mineral/plastitanium/red/brig)) // Fails if they are in the shuttle brig
-		return FALSE
-	return location.onCentCom() || location.onSyndieBase()
+	return TRUE
 
 /datum/objective/proc/check_completion()
 	return completed
@@ -233,7 +226,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	..()
 
 /datum/objective/maroon/check_completion()
-	return !target || !considered_alive(target) || (!target.current.onCentCom() && !target.current.onSyndieBase())
+	return !target || !considered_alive(target)
 
 /datum/objective/maroon/update_explanation_text()
 	if(target && target.current)
@@ -334,7 +327,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "detain"
 
 /datum/objective/jailbreak/detain/check_completion()
-	return completed || (!considered_escaped(target) && (considered_alive(target) && target.current.onCentCom()))
+	return completed || (!considered_escaped(target) && (considered_alive(target)))
 
 /datum/objective/jailbreak/detain/update_explanation_text()
 	..()
@@ -882,31 +875,6 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	name = "steal guns"
 	explanation_text = "Steal at least five guns!"
 	wanted_items = list(/obj/item/gun)
-
-/datum/objective/steal_five_of_type/summon_magic
-	name = "steal magic"
-	explanation_text = "Steal at least five magical artefacts!"
-	wanted_items = list()
-
-/datum/objective/steal_five_of_type/summon_magic/New()
-	wanted_items = GLOB.summoned_magic_objectives
-	..()
-
-/datum/objective/steal_five_of_type/summon_magic/check_completion()
-	var/list/datum/mind/owners = get_owners()
-	var/stolen_count = 0
-	for(var/datum/mind/M in owners)
-		if(!isliving(M.current))
-			continue
-		var/list/all_items = M.current.GetAllContents()	//this should get things in cheesewheels, books, etc.
-		for(var/obj/I in all_items) //Check for wanted items
-			if(istype(I, /obj/item/book/granter/spell))
-				var/obj/item/book/granter/spell/spellbook = I
-				if(!spellbook.used || !spellbook.oneuse) //if the book still has powers...
-					stolen_count++ //it counts. nice.
-			else if(is_type_in_typecache(I, wanted_items))
-				stolen_count++
-	return stolen_count >= 5
 
 //Created by admin tools
 /datum/objective/custom

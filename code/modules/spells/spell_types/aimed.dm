@@ -2,7 +2,7 @@
 /obj/effect/proc_holder/spell/aimed
 	name = "aimed projectile spell"
 	base_icon_state = "projectile"
-	var/projectile_type = /obj/projectile/magic/teleport
+	var/projectile_type = /obj/projectile
 	var/deactive_msg = "You discharge your projectile..."
 	var/active_msg = "You charge your projectile!"
 	var/active_icon_state = "projectile"
@@ -106,7 +106,7 @@
 	projectile_var_overrides = list("zap_range" = 15, "zap_power" = 20000, "zap_flags" = ZAP_MOB_DAMAGE)
 	active_msg = "You energize your hands with arcane lightning!"
 	deactive_msg = "You let the energy flow out of your hands back into yourself..."
-	projectile_type = /obj/projectile/magic/aoe/lightning
+	projectile_type = /obj/projectile/magic
 
 /obj/effect/proc_holder/spell/aimed/fireball
 	name = "Fireball"
@@ -118,7 +118,7 @@
 	invocation_type = INVOCATION_SHOUT
 	range = 20
 	cooldown_min = 20 //10 deciseconds reduction per rank
-	projectile_type = /obj/projectile/magic/aoe/fireball
+	projectile_type = /obj/projectile/magic
 	base_icon_state = "fireball"
 	action_icon_state = "fireball0"
 	sound = 'sound/magic/fireball.ogg'
@@ -130,60 +130,3 @@
 	var/range = 6 + 2*spell_level
 	projectile_var_overrides = list("range" = range)
 	return ..()
-
-/obj/effect/proc_holder/spell/aimed/spell_cards
-	name = "Spell Cards"
-	desc = "Blazing hot rapid-fire homing cards. Send your foes to the shadow realm with their mystical power!"
-	school = "evocation"
-	charge_max = 50
-	clothes_req = FALSE
-	invocation = "Sigi'lu M'Fan 'Tasia"
-	invocation_type = INVOCATION_SHOUT
-	range = 40
-	cooldown_min = 10
-	projectile_amount = 5
-	projectiles_per_fire = 7
-	projectile_type = /obj/projectile/spellcard
-	base_icon_state = "spellcard"
-	action_icon_state = "spellcard0"
-	var/datum/weakref/current_target_weakref
-	var/projectile_turnrate = 10
-	var/projectile_pixel_homing_spread = 32
-	var/projectile_initial_spread_amount = 30
-	var/projectile_location_spread_amount = 12
-	var/datum/component/lockon_aiming/lockon_component
-	ranged_clickcd_override = TRUE
-
-/obj/effect/proc_holder/spell/aimed/spell_cards/on_activation(mob/M)
-	QDEL_NULL(lockon_component)
-	lockon_component = M.AddComponent(/datum/component/lockon_aiming, 5, typecacheof(list(/mob/living)), 1, null, CALLBACK(src, PROC_REF(on_lockon_component)))
-
-/obj/effect/proc_holder/spell/aimed/spell_cards/proc/on_lockon_component(list/locked_weakrefs)
-	if(!length(locked_weakrefs))
-		current_target_weakref = null
-		return
-	current_target_weakref = locked_weakrefs[1]
-	var/atom/A = current_target_weakref.resolve()
-	if(A)
-		var/mob/M = lockon_component.parent
-		M.face_atom(A)
-
-/obj/effect/proc_holder/spell/aimed/spell_cards/on_deactivation(mob/M)
-	QDEL_NULL(lockon_component)
-
-/obj/effect/proc_holder/spell/aimed/spell_cards/ready_projectile(obj/projectile/P, atom/target, mob/user, iteration)
-	if(current_target_weakref)
-		var/atom/A = current_target_weakref.resolve()
-		if(A && get_dist(A, user) < 7)
-			P.homing_turn_speed = projectile_turnrate
-			P.homing_inaccuracy_min = projectile_pixel_homing_spread
-			P.homing_inaccuracy_max = projectile_pixel_homing_spread
-			P.set_homing_target(current_target_weakref.resolve())
-	var/rand_spr = rand()
-	var/total_angle = projectile_initial_spread_amount * 2
-	var/adjusted_angle = total_angle - ((projectile_initial_spread_amount / projectiles_per_fire) * 0.5)
-	var/one_fire_angle = adjusted_angle / projectiles_per_fire
-	var/current_angle = iteration * one_fire_angle * rand_spr - (projectile_initial_spread_amount / 2)
-	P.pixel_x = rand(-projectile_location_spread_amount, projectile_location_spread_amount)
-	P.pixel_y = rand(-projectile_location_spread_amount, projectile_location_spread_amount)
-	P.preparePixelProjectile(target, user, null, current_angle)

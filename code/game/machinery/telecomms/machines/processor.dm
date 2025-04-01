@@ -12,7 +12,7 @@
 	desc = "This machine is used to process large quantities of information."
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 30
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/telecomms/processor
 	var/process_mode = 1 // 1 = Uncompress Signals, 0 = Compress Signals
 
@@ -64,7 +64,7 @@
 	autolinkers = list("processor6")
 
 /obj/machinery/telecomms/processor/preset_seven
-	id = "Solgov Communications Processor"
+	id = "SolGov Communications Processor"
 	network = "tcommsat"
 	autolinkers = list("processor7")
 

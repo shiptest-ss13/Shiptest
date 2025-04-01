@@ -85,7 +85,7 @@
 				pai.master_dna = M.dna.unique_enzymes
 				to_chat(pai, "<span class='notice'>You have been bound to a new master.</span>")
 				pai.laws.set_zeroth_law("Serve your master.")
-				pai.emittersemicd = FALSE
+				pai.emittercurrent_cooldown = FALSE
 		if(href_list["wipe"])
 			var/confirm = input("Are you CERTAIN you wish to delete the current personality? This action cannot be undone.", "Personality Wipe") in list("Yes", "No")
 			if(confirm == "Yes")

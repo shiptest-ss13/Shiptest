@@ -1,7 +1,7 @@
 /obj/item/dnainjector
 	name = "\improper DNA injector"
 	desc = "This injects the person with DNA."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "dnainjector"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -62,7 +62,7 @@
 	if(target != user)
 		target.visible_message("<span class='danger'>[user] is trying to inject [target] with [src]!</span>", \
 			"<span class='userdanger'>[user] is trying to inject you with [src]!</span>")
-		if(!do_mob(user, target) || used)
+		if(!do_after(user, target = target) || used)
 			return
 		target.visible_message("<span class='danger'>[user] injects [target] with the syringe with [src]!</span>", \
 						"<span class='userdanger'>[user] injects you with the syringe with [src]!</span>")
@@ -89,11 +89,6 @@
 	name = "\improper DNA injector (Hulk)"
 	desc = "This will make you big and strong, but give you a bad skin condition."
 	add_mutations = list(HULK)
-
-/obj/item/dnainjector/firebreath
-	name = "\improper DNA injector (Fire Breath)"
-	desc = "Restores the dragon ancestry."
-	add_mutations = list(FIREBREATH)
 
 /obj/item/dnainjector/xraymut
 	name = "\improper DNA injector (X-ray)"
@@ -251,30 +246,6 @@
 /obj/item/dnainjector/antiunintelligible
 	name = "\improper DNA injector (Anti-Unintelligible)"
 	remove_mutations = list(UNINTELLIGIBLE)
-
-/obj/item/dnainjector/swedishmut
-	name = "\improper DNA injector (Swedish)"
-	add_mutations = list(SWEDISH)
-
-/obj/item/dnainjector/antiswedish
-	name = "\improper DNA injector (Anti-Swedish)"
-	remove_mutations = list(SWEDISH)
-
-/obj/item/dnainjector/chavmut
-	name = "\improper DNA injector (Chav)"
-	add_mutations = list(CHAV)
-
-/obj/item/dnainjector/antichav
-	name = "\improper DNA injector (Anti-Chav)"
-	remove_mutations = list(CHAV)
-
-/obj/item/dnainjector/elvismut
-	name = "\improper DNA injector (Elvis)"
-	add_mutations = list(ELVIS)
-
-/obj/item/dnainjector/antielvis
-	name = "\improper DNA injector (Anti-Elvis)"
-	remove_mutations = list(ELVIS)
 
 /obj/item/dnainjector/lasereyesmut
 	name = "\improper DNA injector (Laser Eyes)"

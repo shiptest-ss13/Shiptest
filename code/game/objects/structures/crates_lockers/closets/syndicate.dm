@@ -12,7 +12,7 @@
 	new /obj/item/clothing/under/syndicate/skirt(src)
 	new /obj/item/clothing/shoes/sneakers/black(src)
 	new /obj/item/radio/headset/syndicate(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/crowbar/syndie(src)
 	new /obj/item/clothing/glasses/night(src)
@@ -23,7 +23,7 @@
 
 /obj/structure/closet/syndicate/nuclear/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/ammo_box/magazine/m10mm(src)
+		new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/box/teargas(src)
 	new /obj/item/storage/backpack/duffelbag/syndie/med(src)
@@ -105,7 +105,7 @@
 	/obj/item/stack/sheet/mineral/plasma,
 	/obj/item/stack/sheet/mineral/uranium,
 	/obj/item/stack/sheet/mineral/diamond,
-	/obj/item/stack/sheet/mineral/bananium,
+	/obj/item/stack/sheet/mineral/hidden/hellstone,
 	/obj/item/stack/sheet/plasteel,
 	/obj/item/stack/sheet/mineral/titanium,
 	/obj/item/stack/sheet/mineral/plastitanium,

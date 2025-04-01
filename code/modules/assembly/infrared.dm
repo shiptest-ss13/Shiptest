@@ -78,7 +78,7 @@
 	else
 		refreshBeam()
 
-/obj/item/assembly/infra/process()
+/obj/item/assembly/infra/process(seconds_per_tick)
 	if(!on || !secured)
 		refreshBeam()
 		return
