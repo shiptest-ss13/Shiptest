@@ -231,3 +231,6 @@
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		return TRUE
 	return ..()
+
+/datum/species/plasmaman/check_roundstart_eligible()
+	return TRUE
