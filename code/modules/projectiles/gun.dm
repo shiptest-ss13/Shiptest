@@ -65,7 +65,7 @@
 	///Incompatible magazines with the gun
 	var/blacklisted_ammo_types
 	///Whether the gun alarms when empty or not.
-	var/empty_alarm = FALSE
+	var/empty_alarm = TRUE
 	///Do we eject the magazine upon runing out of ammo?
 	var/empty_autoeject = FALSE
 	///Whether the gun supports multiple special mag types
@@ -186,7 +186,7 @@
 	///empty alarm volume sound
 	var/empty_alarm_volume = 70
 	///whether empty alarm sound varies
-	var/empty_alarm_vary = TRUE
+	var/empty_alarm_vary = FALSE
 
 /*
  *  Stats
