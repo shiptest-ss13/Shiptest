@@ -769,14 +769,13 @@
 	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22 LR. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
 	contains = list(/obj/item/disk/design_disk/disposable_gun)
 
-	cost = 1500
 	cost = 2500
 
 /datum/supply_pack/gun/himehabu
 	name = "Himehabu Pistol"
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	contains = list(/obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag, /obj/item/ammo_box/magazine/m22lr_himehabu/empty, /obj/item/ammo_box/magazine/m22lr_himehabu/empty)
-
+	faction = /datum/faction/syndicate
 	cost = 600
 
 
@@ -784,6 +783,7 @@
 	name = "E-10 Laser Pistol"
 	desc = "Sharplite letting you down? Try these classic Eoehoma Firearms E-10 Laser Pistols."
 	contains = list(/obj/item/gun/energy/laser/e10)
+	faction = /datum/faction/frontiersmen
 
 
 	cost = 750
@@ -800,6 +800,7 @@
 	name = "E-40 Hybrid Assault Rifle"
 	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	contains = list(/obj/item/gun/ballistic/automatic/assault/e40, /obj/item/ammo_box/magazine/e40/empty, /obj/item/ammo_box/magazine/e40/empty)
+	faction = /datum/faction/frontiersmen
 
 	cost = 9001
 
@@ -808,6 +809,7 @@
 	name = "E-50 Energy Emitter"
 	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
 	contains = list(/obj/item/gun/energy/laser/e50)
+	faction = /datum/faction/frontiersmen
 
 	cost = 5000
 
@@ -815,6 +817,7 @@
 	name = "Underbarrel Energy Cannon"
 	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor<i> chance of painfully burning your hands."
 	contains = list(/obj/item/attachment/gun/energy/e50)
+	faction = /datum/faction/frontiersmen
 
 	cost = 5000
 
@@ -822,6 +825,7 @@
 	name = "E-60 Disabler"
 	desc = "Looking for a live capture? This Eoehoma Firearms E-60 disabler will get your man."
 	contains = list(/obj/item/gun/energy/disabler/e60)
+	faction = /datum/faction/frontiersmen
 
 	cost = 750
 
@@ -829,12 +833,14 @@
 	name = "Saber 9mm SMG"
 	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
 	contains = list(/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber)
+	faction = /datum/faction/frontiersmen
 	cost = 3250
 
 /datum/supply_pack/gun/larker
 	name = "Model 13 \"Larker\""
 	desc = "Not offically approved or sold by Serene Sporting."
 	contains = list(/obj/item/storage/guncase/m13)
+	faction = /datum/faction/frontiersmen
 
 	cost = 1000
 
@@ -864,6 +870,7 @@
 	name = "Mauler Machine Pistol"
 	desc = "This gun's got teeth! Twelve 9mm teeth to be exact. Hardly a full smile, and you'll be losing the rest pretty quick with this thing's rate of fire."
 	contains = list(/obj/item/gun/ballistic/automatic/pistol/mauler)
+	faction = /datum/faction/frontiersmen
 
 	cost = 1500
 	cost = 2000
@@ -872,6 +879,7 @@
 	name = "Spitter Submachine Gun"
 	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9mm."
 	contains = list(/obj/item/gun/ballistic/automatic/pistol/spitter)
+	faction = /datum/faction/frontiersmen
 
 	cost = 2050
 
@@ -879,6 +887,7 @@
 	name = "Pounder Submachine Gun"
 	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
 	contains = list(/obj/item/gun/ballistic/automatic/smg/pounder)
+	faction = /datum/faction/frontiersmen
 	cost = 2000
 
 /datum/supply_pack/gun/polymer
@@ -913,6 +922,7 @@
 	name = "SKM-24u Light Machinegun"
 	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machinegun, ready to blow away whatever you point it at. Increased firerate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
 	contains = list(/obj/item/gun/ballistic/automatic/hmg/skm_lmg)
+	faction = /datum/faction/frontiersmen
 
 	cost = 6000
 
@@ -922,6 +932,7 @@
 	cost = 10000
 	contains = list(/obj/item/gun/ballistic/automatic/marksman/taipan)
 	crate_name = "rifle crate"
+	faction = /datum/faction/syndicate
 
 /datum/supply_pack/ammo/amr
 	name = ".50 BMG Taipan AMR Magazine Crate"
@@ -935,18 +946,21 @@
 	cost = 7500
 	contains = list(/obj/item/gun/ballistic/automatic/hmg/shredder)
 	crate_name = "auto rifle crate"
+	faction = /datum/faction/frontiersmen
 
 /datum/supply_pack/ammo/shredder
 	name = "Shredder 12g Magazine Crate"
 	desc = "Contains a 12g magazine for the Shredder, containing 40 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m12_shredder)
 	cost = 2000
+	faction = /datum/faction/frontiersmen
 
 /datum/supply_pack/ammo/shredder_slug
 	name = "Shredder slug Magazine Crate"
 	desc = "Contains a slug magazine for the Shredder, containing 40 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m12_shredder/slug)
 	cost = 2000
+	faction = /datum/faction/frontiersmen
 
 /datum/supply_pack/gun/swiss
 	name = "Swiss Cheese Crate"
@@ -967,6 +981,7 @@
 	desc = "Contains a fucking elephant gun. Chambered in two bore"
 	cost = 7000
 	contains = list(/obj/item/gun/ballistic/shotgun/doublebarrel/twobore)
+	faction = /datum/faction/srm
 
 /datum/supply_pack/ammo/huntsman
 	name = "Two Bore Ammo Crate"
@@ -980,6 +995,7 @@
 					/obj/item/ammo_casing/shotgun/buckshot/twobore,
 					/obj/item/ammo_casing/shotgun/buckshot/twobore,
 					/obj/item/ammo_casing/shotgun/buckshot/twobore)
+	faction = /datum/faction/srm
 
 /datum/supply_pack/gun/laser/hb7
 	name = "Etherbor HBG-7 Crate"
@@ -987,3 +1003,4 @@
 	cost = 6000
 	contains = list(/obj/item/gun/energy/kalix/pgf/heavy)
 	crate_name = "laser crate"
+	faction = /datum/faction/pgf

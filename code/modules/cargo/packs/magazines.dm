@@ -438,6 +438,7 @@
 	name = "Extended SKM Magazine"
 	desc = "An extended 40 round 7.62x40mm CLIP magazine for the SKM family of assault rifles. Extra curves mean extra ammo."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended)
+	faction = /datum/faction/frontiersmen
 
 	cost = 2000
 
@@ -447,6 +448,7 @@
 	Do you want them to be absolutely suppressed for the next 15 seconds? \
 	This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/drum)
+	faction = /datum/faction/frontiersmen
 
 	cost = 3000
 
@@ -455,6 +457,7 @@
 	name = "Extra Large Weapon Power Cells"
 	desc = "We're way past double A now. These extra-large power cells (in both charge and size!) are purpose built for the most heavy duty energy weapons."
 	contains = list(/obj/item/stock_parts/cell/gun/large)
+	faction = /datum/faction/frontiersmen
 
 	cost = 3000
 
@@ -463,6 +466,7 @@
 	name = "Mauler Magazine"
 	desc = "A 12 round 9mm magazine for the Mauler Machine Pistol."
 	contains = list(/obj/item/ammo_box/magazine/m9mm_mauler)
+	faction = /datum/faction/frontiersmen
 	cost = 400
 
 
@@ -470,6 +474,7 @@
 	name = "Spitter Magazine"
 	desc = "A 30 round 9mm magazine for the Spitter submachine gun."
 	contains = list(/obj/item/ammo_box/magazine/spitter_9mm)
+	faction = /datum/faction/frontiersmen
 
 	cost = 650
 
@@ -477,5 +482,6 @@
 	name = "Pounder Pan Magazine"
 	desc = "A 50 round pan magazine for the Pounder submachine gun. Heavy enough to double as an emergency melee weapon to beat off your enemies in a pinch."
 	contains = list(/obj/item/ammo_box/magazine/c22lr_pounder_pan)
+	faction = /datum/faction/frontiersmen
 
-	cost = 750
+	cost = 700

@@ -187,7 +187,6 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/obj/item/gun/ballistic/automatic/assault/hydra/lmg,
 		/obj/item/gun/ballistic/automatic/marksman/boomslang,
 		/obj/item/gun/ballistic/automatic/hmg,
-		/obj/item/gun/ballistic/automatic/pistol/m20_auto_elite,
 		/obj/item/gun/energy/laser/e50,
 		/obj/item/gun/energy/pulse
 		)
@@ -245,19 +244,17 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/gun/ssg669,
 		/datum/supply_pack/gun/scout,
 //		/datum/supply_pack/gun/illestren_scoped,
-		/datum/supply_pack/gun/huntsman,
 		/datum/supply_pack/gun/m12,
 		/datum/supply_pack/gun/cm15,
 		/datum/supply_pack/gun/mastiff,
 		/datum/supply_pack/gun/bulldog,
 		/datum/supply_pack/gun/laser/hb7,
+		/datum/supply_pack/gun/laser/bgc10,
 		/datum/supply_pack/gun/laser/bg16,
 		/datum/supply_pack/gun/e40,
 		/datum/supply_pack/gun/hades,
 		/datum/supply_pack/gun/e50,
 		/datum/supply_pack/gun/model_h,
-		/datum/supply_pack/gun/ashhand,
-		/datum/supply_pack/gun/m20_auto_elite,
 //		/datum/supply_pack/gun/commander_2,
 		/datum/supply_pack/gun/cm70,
 		/datum/supply_pack/gun/ion,
@@ -325,6 +322,7 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/vendor_refill,
 		/datum/supply_pack/animal,
 		/datum/supply_pack/civilian,
+		/datum/supply_pack/chemistry,
 		/datum/supply_pack/food
 		)
 	for(var/datum/supply_pack/checked_datum as anything in bad_subtypes)
@@ -344,7 +342,6 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/obj/item/gun/ballistic/automatic/marksman/taipan,
 		/obj/item/gun/ballistic/automatic/hmg,
 		/obj/item/gun/ballistic/automatic/assault/hydra/lmg,
-		/obj/item/gun/ballistic/automatic/pistol/m20_auto_elite,
 		/obj/item/gun/energy/laser/e50,
 		/obj/item/gun/energy/pulse
 		)
@@ -415,6 +412,7 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/gun/brimstone_shotgun,
 		/datum/supply_pack/gun/winchester,
 		/datum/supply_pack/gun/absolution,
+		/datum/supply_pack/gun/m20_auto_elite,
 		/datum/supply_pack/gun/oneshot,
 		/datum/supply_pack/gun/oneshot/hedp
 		)
