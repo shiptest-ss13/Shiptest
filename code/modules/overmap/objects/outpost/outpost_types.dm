@@ -166,3 +166,16 @@
 	main_template = null
 	elevator_template = /datum/map_template/outpost/elevator_test
 	// Uses "test" hangars.
+
+
+/datum/overmap/outpost/brightwood
+	name = "Brightwood"
+	token_icon_state = "station_planet"
+	main_template = /datum/map_template/outpost/brightwood
+	elevator_template = /datum/map_template/outpost/elevator_indie
+	faction = FACTION_INDEPENDENT
+	// Uses "default" hangars (indie_space).
+
+
+/datum/map_template/outpost/brightwood
+	name = "brightwood"

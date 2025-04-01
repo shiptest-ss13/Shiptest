@@ -784,6 +784,8 @@
 	desc = "Sharplite letting you down? Try these classic Eoehoma Firearms E-10 Laser Pistols."
 	contains = list(/obj/item/gun/energy/laser/e10)
 	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
 
 
 	cost = 750
@@ -801,6 +803,8 @@
 	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	contains = list(/obj/item/gun/ballistic/automatic/assault/e40, /obj/item/ammo_box/magazine/e40/empty, /obj/item/ammo_box/magazine/e40/empty)
 	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
 
 	cost = 9001
 
@@ -810,6 +814,8 @@
 	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
 	contains = list(/obj/item/gun/energy/laser/e50)
 	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
 
 	cost = 5000
 
@@ -819,6 +825,8 @@
 	contains = list(/obj/item/attachment/gun/energy/e50)
 	faction = /datum/faction/frontiersmen
 
+	faction_discount = 0
+	faction_locked = TRUE
 	cost = 5000
 
 /datum/supply_pack/gun/e60
@@ -826,7 +834,8 @@
 	desc = "Looking for a live capture? This Eoehoma Firearms E-60 disabler will get your man."
 	contains = list(/obj/item/gun/energy/disabler/e60)
 	faction = /datum/faction/frontiersmen
-
+	faction_discount = 0
+	faction_locked = TRUE
 	cost = 750
 
 /datum/supply_pack/gun/saber_smg
@@ -835,12 +844,16 @@
 	contains = list(/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber)
 	faction = /datum/faction/frontiersmen
 	cost = 3250
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/larker
 	name = "Model 13 \"Larker\""
 	desc = "Not offically approved or sold by Serene Sporting."
 	contains = list(/obj/item/storage/guncase/m13)
 	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
 
 	cost = 1000
 /*
@@ -874,6 +887,8 @@
 
 	cost = 1500
 	cost = 2000
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/spitter
 	name = "Spitter Submachine Gun"
@@ -882,6 +897,8 @@
 	faction = /datum/faction/frontiersmen
 
 	cost = 2050
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/pounder
 	name = "Pounder Submachine Gun"
@@ -889,7 +906,8 @@
 	contains = list(/obj/item/gun/ballistic/automatic/smg/pounder, /obj/item/ammo_box/magazine/c22lr_pounder_pan/empty, /obj/item/ammo_box/magazine/c22lr_pounder_pan/empty)
 	faction = /datum/faction/frontiersmen
 	cost = 2000
-
+	faction_discount = 0
+	faction_locked = TRUE
 /datum/supply_pack/gun/polymer
 	name = "Polymer Survivor Rifle"
 	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
@@ -923,6 +941,8 @@
 	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machinegun, ready to blow away whatever you point it at. Increased firerate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
 	contains = list(/obj/item/gun/ballistic/automatic/hmg/skm_lmg)
 	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
 
 	cost = 6000
 
@@ -947,6 +967,8 @@
 	contains = list(/obj/item/gun/ballistic/automatic/hmg/shredder)
 	crate_name = "auto rifle crate"
 	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/ammo/shredder
 	name = "Shredder 12g Magazine Crate"
@@ -954,6 +976,8 @@
 	contains = list(/obj/item/ammo_box/magazine/m12_shredder)
 	cost = 2000
 	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/ammo/shredder_slug
 	name = "Shredder slug Magazine Crate"
@@ -961,6 +985,8 @@
 	contains = list(/obj/item/ammo_box/magazine/m12_shredder/slug)
 	cost = 2000
 	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/gun/swiss
 	name = "Swiss Cheese Crate"
@@ -968,6 +994,7 @@
 	cost = 5000
 	contains = list(/obj/item/gun/ballistic/automatic/assault/swiss_cheese)
 	crate_name = "auto rifle crate"
+
 
 /datum/supply_pack/ammo/swiss_ammo
 	name = "Swiss Cheese 5.56mm Magazine Crate"

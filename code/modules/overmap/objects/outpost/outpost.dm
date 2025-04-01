@@ -10,6 +10,8 @@
 	// Set to an instance of the singleton for its type in New.
 	var/datum/map_template/outpost/main_template = null
 
+	var/list/obj/docking_port/stationary/reserve_docks
+
 	var/datum/map_template/outpost/elevator_template = null
 	/// List of hangar templates. This list should contain hangar templates sufficient for any ship to dock within one,
 	/// allowing it to dock with the outpost. This list is sorted on outpost initialization, in ascending order,
@@ -262,6 +264,8 @@
 		for(var/obj/docking_port/stationary/h_dock as anything in h_shaft.hangar_docks)
 			if(!h_dock.docked && !h_dock.current_docking_ticket)
 				LAZYADD(docks, h_dock)
+	for(var/list/obj/docking_port/stationary/reserve_dock as anything in reserve_docks)
+		LAZYADD(docks, reserve_dock)
 	return docks
 
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
