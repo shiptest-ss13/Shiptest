@@ -95,7 +95,7 @@
 #define SPECIES_KOBOLD "kobold"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MOTH "moth"
-#define SPECIES_PLASMAMAN "plasmaman"
+#define SPECIES_PLASMAMAN "plasma gnome"
 #define SPECIES_POD "pod"
 #define SPECIES_SHADOW "shadow"
 #define SPECIES_SKELETON "skeleton"
