@@ -166,7 +166,7 @@
 		span_danger("You [damage_verb] [src] with [attacking_item][damage ? "." : ", without leaving a mark!"]"), null, COMBAT_MESSAGE_RANGE)
 	log_combat(user, src, "attacked", attacking_item)
 
-/mob/living/attacked_by(obj/item/attacking_item, mob/living/user)
+/mob/living/attacked_by(obj/item/attacking_item, mob/living/user, modifier = 1)
 	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = attacking_item.armour_penetration)		//WS Edit - Simplemobs can have armor
 	send_item_attack_message(attacking_item, user)
 	if(!attacking_item.force)

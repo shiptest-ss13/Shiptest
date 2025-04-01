@@ -9,6 +9,7 @@
 	force = 10
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
+	swing_type = SWINGABLE_THRUST
 	throwforce = 20
 	throw_speed = 4
 	embedding = list("impact_pain_mult" = 3)

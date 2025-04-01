@@ -54,6 +54,7 @@
 	SIGNAL_HANDLER
 
 	sharpness = IS_SHARP
+	swing_type = SWINGABLE_SWING
 	w_class = active_w_class
 	hitsound = 'sound/weapons/blade1.ogg'
 	START_PROCESSING(SSobj, src)
@@ -67,6 +68,7 @@
 
 	sharpness = initial(sharpness)
 	w_class = initial(w_class)
+	swing_type = null
 	hitsound = "swing_hit"
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)
