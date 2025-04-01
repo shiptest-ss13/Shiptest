@@ -761,6 +761,8 @@
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_removed : (atom/old_poi)
 #define COMSIG_REMOVED_POINT_OF_INTEREST "removed_point_of_interest"
 
+///Send from overmap areas to their turfs when they need to update their light, might be useful for events?: (light_range, light_power, light_color)
+#define COMSIG_OVERMAPTURF_UPDATE_LIGHT "overmapturf_update_light"
 // Power signals
 /// Sent when an obj/item calls item_use_power: (use_amount, user, check_only)
 #define COMSIG_ITEM_POWER_USE "item_use_power"

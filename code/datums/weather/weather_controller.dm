@@ -87,8 +87,22 @@
 			/datum/weather/hailstorm = 20
 			)
 
+/datum/weather_controller/chill
+		possible_weathers = list(
+			/datum/weather/snowfall = 20
+			)
+
+/datum/weather_controller/snow_planet/severe
+		possible_weathers = list(
+			/datum/weather/snow_storm = 50,
+			/datum/weather/hailstorm = 10
+			)
+
 /datum/weather_controller/desert
 	possible_weathers = list(/datum/weather/sandstorm = 100)
+
+/datum/weather_controller/desert_yellow
+	possible_weathers = list(/datum/weather/sandstorm/desert = 100)
 
 /datum/weather_controller/lush
 	possible_weathers = list(
@@ -99,9 +113,17 @@
 
 /datum/weather_controller/chlorine
 	possible_weathers = list(
-		/datum/weather/acid_rain = 30,
+		/datum/weather/rain/toxic = 20,
+		/datum/weather/rain/toxic/heavy = 10,
 		/datum/weather/nuclear_fallout = 40,
 		/datum/weather/nuclear_fallout/normal = 10,
+	)
+
+/datum/weather_controller/toxic
+	possible_weathers = list(
+		/datum/weather/rain/toxic = 60,
+		/datum/weather/rain/toxic/heavy = 40,
+		/datum/weather/rain/toxic/heavy/blocking = 20,
 	)
 
 /datum/weather_controller/shrouded
@@ -113,3 +135,43 @@
 		/datum/weather/sandstorm/rockplanet = 20,
 		/datum/weather/snowfall = 5,
 	)
+
+/datum/weather_controller/rockplanet_safe
+	possible_weathers = list(
+		/datum/weather/sandstorm/rockplanet/harmless = 50,
+		/datum/weather/snowfall = 5,
+	)
+
+/datum/weather_controller/rockplanet/severe
+	possible_weathers = list(
+		/datum/weather/sandstorm/rockplanet = 100,
+	)
+
+/datum/weather_controller/waterplanet
+	possible_weathers = list(
+		/datum/weather/rain/heavy/storm = 50,
+		/datum/weather/rain/heavy/storm/blocking = 30,
+	)
+
+/datum/weather_controller/fallout
+	possible_weathers = list(
+		/datum/weather/nuclear_fallout = 90,
+		/datum/weather/nuclear_fallout/normal = 10,
+	)
+
+/datum/weather_controller/waterplanet/severe
+	possible_weathers = list(
+		/datum/weather/rain/heavy/storm_intense = 100,
+	)
+
+/datum/weather_controller/random
+	possible_weathers = list()
+
+/datum/weather_controller/random/New(datum/map_zone/passed_mapzone)
+	. = ..()
+	possible_weathers = subtypesof(/datum/weather)
+	for(var/datum/weather/cur_weather in possible_weathers)
+		possible_weathers[cur_weather] = round(rand(10,80))
+		if(prob(95) && possible_weathers.len > 1)
+			qdel(cur_weather)
+	roll_next_weather()

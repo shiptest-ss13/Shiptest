@@ -31,9 +31,9 @@
 	custom_price = 800
 	speak_emote = list("states")
 	wanted_objects = list(
-		/obj/item/stack/ore/diamond, /obj/item/stack/ore/gold, /obj/item/stack/ore/silver,
-		/obj/item/stack/ore/plasma, /obj/item/stack/ore/uranium, /obj/item/stack/ore/iron,
-		/obj/item/stack/ore/hellstone, /obj/item/stack/ore/titanium)
+		/obj/item/stack/ore/diamond, /obj/item/stack/ore/gold, /obj/item/stack/ore/galena,
+		/obj/item/stack/ore/plasma, /obj/item/stack/ore/autunite, /obj/item/stack/ore/hematite,
+		/obj/item/stack/ore/hellstone, /obj/item/stack/ore/rutile)
 	healable = 0
 	loot = list(/obj/effect/decal/cleanable/robot_debris)
 	del_on_death = TRUE

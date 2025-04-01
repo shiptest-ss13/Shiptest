@@ -16,10 +16,18 @@
 	. = ..()
 	AddComponent(/datum/component/chasm, below())
 
+/turf/open/chasm/examine(mob/user)
+	. = ..()
+	. += "<span class='warning'>You WILL fucking die if you step on this!!!</span>"
+
 /// Lets people walk into chasms.
 /turf/open/chasm/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	return TRUE
+	if(!isliving(mover))
+		return TRUE
+	if(mover.movement_type & (FLOATING|FLYING))
+		return TRUE
+	return FALSE
 
 /turf/open/chasm/proc/set_target(turf/target)
 	var/datum/component/chasm/chasm_component = GetComponent(/datum/component/chasm)
