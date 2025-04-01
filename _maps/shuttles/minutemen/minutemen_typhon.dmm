@@ -32,6 +32,7 @@
 "ba" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "bf" = (
@@ -1372,7 +1373,13 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
-/obj/structure/closet/firecloset/wall/directional/west,
+/obj/structure/closet/crate/bin{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
+/obj/item/reagent_containers/food/snacks/badrecipe,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "qQ" = (
@@ -1589,18 +1596,9 @@
 	dir = 10
 	},
 /obj/machinery/light/small/directional/west,
-/obj/structure/closet/crate/bin{
-	pixel_y = 0;
-	pixel_x = -6;
-	dense_when_open = 0;
-	density = 0
-	},
 /obj/structure/sign/poster/clip/random{
 	pixel_y = -29
 	},
-/obj/item/reagent_containers/food/snacks/badrecipe,
-/obj/effect/spawner/random/trash/garbage,
-/obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "sR" = (
@@ -1885,7 +1883,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/west,
+/obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "vK" = (
