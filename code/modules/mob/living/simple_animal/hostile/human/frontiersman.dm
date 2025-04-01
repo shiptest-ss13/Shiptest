@@ -22,15 +22,17 @@
 
 /mob/living/simple_animal/hostile/human/frontier/ranged
 	name = "Frontiersman Quickdraw"
-	desc = "A member of the brutal Frontiersman terrorist fleet! This one thumbs a slender revolver, stained chrome and a malicious smile glinting in the light."
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one thumbs a slender pistol, stained chrome and a malicious smile glinting in the light."
 	icon_state = "frontiersmanranged"
 	ranged = 1
+	rapid = 2
+	rapid_fire_delay = 1.5
 	retreat_distance = 5
 	minimum_distance = 5
-	projectilesound = 'sound/weapons/gun/revolver/cattleman.ogg'
-	casingtype = /obj/item/ammo_casing/a44roum
+	projectilesound = 'sound/weapons/gun/pistol/mauler.ogg'
+	casingtype = /obj/item/ammo_casing/c9mm
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged
-	r_hand = /obj/item/gun/ballistic/revolver/shadow
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/mauler/regular
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals
 	icon_state = "frontiersmanranged_mask"
