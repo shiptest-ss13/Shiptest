@@ -578,6 +578,10 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 		)
 	)
 
+/obj/item/gun/ballistic/automatic/marksman/boomslang/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
+
 NO_MAG_GUN_HELPER(automatic/marksman/boomslang)
 
 /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
@@ -661,6 +665,10 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	slot_available = list()
 
 NO_MAG_GUN_HELPER(automatic/marksman/taipan)
+
+/obj/item/gun/ballistic/automatic/marksman/taipan/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
 
 
 //########### RIFLES ###########//

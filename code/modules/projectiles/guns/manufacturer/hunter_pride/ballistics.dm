@@ -688,6 +688,11 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	gun_firemodes = list(FIREMODE_SEMIAUTO) //no dual burst for you
 	default_firemode = FIREMODE_SEMIAUTO
 
+/obj/item/gun/ballistic/shotgun/doublebarrel/twobore/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY)
+
+
 /// Rifles
 
 /obj/item/gun/ballistic/rifle/illestren

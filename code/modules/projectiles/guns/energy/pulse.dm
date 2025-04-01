@@ -27,6 +27,10 @@
 	muzzleflash_iconstate = "muzzle_flash_pulse"
 	light_color = COLOR_BRIGHT_BLUE
 
+/obj/item/gun/energy/pulse/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
+
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
 

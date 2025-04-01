@@ -52,6 +52,7 @@
 /obj/item/gun/ballistic/automatic/hmg/ComponentInitialize()
 	. = ..()
 	RegisterSignal(src, list(COMSIG_ITEM_EQUIPPED,COMSIG_MOVABLE_MOVED), PROC_REF(retract_bipod))
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
 
 /datum/action/item_action/deploy_bipod //TODO: Make this an accessory when that's added
 	name = "Deploy Bipod"

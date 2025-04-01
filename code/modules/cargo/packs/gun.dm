@@ -869,7 +869,7 @@
 /datum/supply_pack/gun/mauler
 	name = "Mauler Machine Pistol"
 	desc = "This gun's got teeth! Twelve 9mm teeth to be exact. Hardly a full smile, and you'll be losing the rest pretty quick with this thing's rate of fire."
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/mauler)
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/mauler, /obj/item/ammo_box/magazine/m9mm_mauler/empty, /obj/item/ammo_box/magazine/m9mm_mauler/empty)
 	faction = /datum/faction/frontiersmen
 
 	cost = 1500
@@ -878,7 +878,7 @@
 /datum/supply_pack/gun/spitter
 	name = "Spitter Submachine Gun"
 	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9mm."
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/spitter)
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/spitter, /obj/item/ammo_box/magazine/spitter_9mm/empty, /obj/item/ammo_box/magazine/spitter_9mm/empty)
 	faction = /datum/faction/frontiersmen
 
 	cost = 2050
@@ -886,7 +886,7 @@
 /datum/supply_pack/gun/pounder
 	name = "Pounder Submachine Gun"
 	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
-	contains = list(/obj/item/gun/ballistic/automatic/smg/pounder)
+	contains = list(/obj/item/gun/ballistic/automatic/smg/pounder, /obj/item/ammo_box/magazine/c22lr_pounder_pan/empty, /obj/item/ammo_box/magazine/c22lr_pounder_pan/empty)
 	faction = /datum/faction/frontiersmen
 	cost = 2000
 
@@ -930,14 +930,14 @@
 	name = "Taipan AMR Crate"
 	desc = "Contains a semi auto TaipanAMR. Chambered in .50 BMG."
 	cost = 10000
-	contains = list(/obj/item/gun/ballistic/automatic/marksman/taipan)
+	contains = list(/obj/item/gun/ballistic/automatic/marksman/taipan/no_mag, /obj/item/ammo_box/magazine/sniper_rounds)
 	crate_name = "rifle crate"
 	faction = /datum/faction/syndicate
 
 /datum/supply_pack/ammo/amr
 	name = ".50 BMG Taipan AMR Magazine Crate"
 	desc = "Contains a box magazine for the .50 BMG AMR, containing six rounds."
-	contains = list(/obj/item/ammo_box/magazine/sniper_rounds)
+	contains = list(/obj/item/ammo_box/magazine/sniper_rounds/empty)
 	cost = 3500
 
 /datum/supply_pack/gun/shredder
@@ -1001,6 +1001,6 @@
 	name = "Etherbor HBG-7 Crate"
 	desc = "Contains a high-powered, automatic laser rifle. Somehow you get this."
 	cost = 6000
-	contains = list(/obj/item/gun/energy/kalix/pgf/heavy)
+	contains = list(/obj/item/gun/energy/kalix/pgf/heavy, /obj/item/ammo_casing/energy/pgf/assault, /obj/item/ammo_casing/energy/pgf/assault,)
 	crate_name = "laser crate"
 	faction = /datum/faction/pgf

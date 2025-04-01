@@ -11,3 +11,7 @@
 	min_recoil = 0.1
 
 	light_range = 2
+
+/obj/item/gun/ballistic/automatic/marksman/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY)

@@ -164,3 +164,30 @@
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
+
+
+/datum/supply_pack/armor/bullet_armor_frontier
+	name = "Frontiersmen Bulletproof Armor Crate"
+	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
+	cost = 1750
+	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof/frontier,
+					/obj/item/clothing/head/helmet/bulletproof/x11/frontier,
+					/obj/item/clothing/glasses/sunglasses/ballistic)
+	crate_name = "bulletproof armor crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+
+	faction = /datum/faction/frontiersmen
+	faction_discount = 5
+	faction_locked = TRUE
+
+/datum/supply_pack/armor/heavy_marine_armor
+	name = "Heavy Reinforced Frontiersmen Armor Crate"
+	desc = "One set of well-rounded medium tactical body armor. Plates are attached to the vest and cover the limbs. The set includes a helmet and chestpiece."
+	cost = 4500
+	contains = list(/obj/item/clothing/suit/armor/vest/marine/frontier,
+					/obj/item/clothing/head/helmet/heavy_frontier)
+	crate_name = "armor crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/frontiersmen
+	faction_discount = 5
+	faction_locked = TRUE

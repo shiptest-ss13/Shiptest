@@ -81,6 +81,7 @@
 		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
+
 /obj/item/gun/energy/disabler/e60
 	name = "E-60"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."

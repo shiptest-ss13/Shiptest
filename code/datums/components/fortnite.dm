@@ -192,7 +192,18 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		)
 	if(!thing_to_check)
 		return
-	for(var/obj/item/gun/gun_to_check in thing_to_check.contents)
+	var/list/guns = list()
+
+	for(var/obj/item/item_to_check in thing_to_check.contents)
+		if(istype(item_to_check, /obj/item/gun))
+			guns += item_to_check
+		if(istype(item_to_check, /obj/item/storage/guncase))
+			var/obj/item/gun/found_gun = locate(/obj/item/gun) in item_to_check
+			if(!istype(found_gun))
+				continue
+			guns += found_gun
+
+	for(var/obj/item/gun/gun_to_check in guns)
 		if(!gun_to_check)
 			continue
 		for(var/obj/currently_looking as anything in  ignore_these)
@@ -259,12 +270,54 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/gun/cm70,
 		/datum/supply_pack/gun/ion,
 		/datum/supply_pack/gun/oneshot,
+		/datum/supply_pack/gun/huntsman,
 		/datum/supply_pack/gun/oneshot/hedp,
+		/datum/supply_pack/spacesuits/armored_spacesuit,
+		/datum/supply_pack/spacesuits/spacesuit/inteq,
+		/datum/supply_pack/spacesuits/spacesuit/solgov,
+		/datum/supply_pack/spacesuits/spacesuit/pgf,
+		/datum/supply_pack/spacesuits/mining_hardsuit_heavy,
+		/datum/supply_pack/spacesuits/heavy_sec_hardsuit,
+		/datum/supply_pack/spacesuits/neutron_hardsuit,
+		/datum/supply_pack/spacesuits/cmt_hardsuit,
+		/datum/supply_pack/spacesuits/pointman_hardsuit,
+		/datum/supply_pack/spacesuits/inteq_hardsuit,
+		/datum/supply_pack/spacesuits/solar_hardsuit,
+		/datum/supply_pack/spacesuits/patroller_hardsuit,
+		/datum/supply_pack/spacesuits/spotter_hardsuit,
+		/datum/supply_pack/spacesuits/white_red_hardsuit,
+		/datum/supply_pack/spacesuits/beige_red_hardsuit,
+		/datum/supply_pack/spacesuits/roumain_hardsuit,
 		)
+	var/list/bad_subtypes = list(
+		/datum/supply_pack/costumes_toys,
+		/datum/supply_pack/vendor_refill,
+		/datum/supply_pack/animal,
+		/datum/supply_pack/civilian,
+		/datum/supply_pack/chemistry,
+		/datum/supply_pack/food,
+		/datum/supply_pack/mech,
+		/datum/supply_pack/food/trickwine
+		)
+
+	for(var/datum/supply_pack/checked_datum as anything in bad_subtypes)
+		bad_types += subtypesof(checked_datum)
+
 	for(var/datum/checked_datum as anything in bad_types)
 		if(checking.type == checked_datum)
 			return FALSE
+
+	for(var/datum/checked_datum as anything in bad_subtypes)
+		if(istype(checking,checked_datum))
+			return FALSE
 	return TRUE
+
+/obj/effect/battle_royale/proc/fill_ammo(obj/thing_to_check)
+	for(var/obj/item/item_to_check in thing_to_check.contents)
+		var/obj/item/ammo_box/our_mag = item_to_check
+		if(istype(our_mag))
+			our_mag.top_off(starting = TRUE)
+		our_mag.update_appearance()
 
 /obj/effect/battle_royale/common
 	name = "common battle royale loot spawner"
@@ -347,7 +400,19 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		)
 	if(!thing_to_check)
 		return
-	for(var/obj/item/gun/gun_to_check in thing_to_check.contents)
+	var/list/guns = list()
+	for(var/obj/item/item_to_check in thing_to_check.contents)
+		if(istype(item_to_check, /obj/item/gun))
+			guns += item_to_check
+		if(istype(item_to_check, /obj/item/storage/guncase))
+			var/obj/item/gun/found_gun = locate(/obj/item/gun) in item_to_check
+			if(!istype(found_gun))
+				continue
+			fill_ammo(thing_to_check)
+			fill_ammo(item_to_check)
+			guns += found_gun
+
+	for(var/obj/item/gun/gun_to_check in guns)
 		if(!gun_to_check)
 			continue
 		for(var/obj/currently_looking as anything in  ignore_these)
@@ -440,7 +505,19 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 /obj/effect/battle_royale/legendary/extra_changes(obj/thing_to_check)
 	if(!thing_to_check)
 		return
-	for(var/obj/item/gun/gun_to_check in thing_to_check.contents)
+	var/list/guns = list()
+	for(var/obj/item/item_to_check in thing_to_check.contents)
+		if(istype(item_to_check, /obj/item/gun))
+			guns += item_to_check
+		if(istype(item_to_check, /obj/item/storage/guncase))
+			var/obj/item/gun/found_gun = locate(/obj/item/gun) in item_to_check
+			if(!istype(found_gun))
+				continue
+			fill_ammo(thing_to_check)
+			fill_ammo(item_to_check)
+			guns += found_gun
+
+	for(var/obj/item/gun/gun_to_check in guns)
 		if(!gun_to_check)
 			continue
 		gun_to_check.AddComponent(/datum/component/fortnite,force_rarity=FORTNITE_RARITY_LEGENDARY)
@@ -448,10 +525,12 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 			var/obj/item/gun/ballistic/ballistic_to_check = gun_to_check
 			if(!ballistic_to_check.internal_magazine)
 				for(var/i in 1 to 2)
-					new ballistic_to_check.default_ammo_type(thing_to_check)
+					var/ammo_type = ballistic_to_check.allowed_ammo_types[1]
+					new ammo_type(thing_to_check)
 		else if(istype(gun_to_check,/obj/item/gun/energy))
 			var/obj/item/gun/energy/energy_to_check = gun_to_check
 			if(!energy_to_check.internal_cell)
 				for(var/i in 1 to 2)
-					new energy_to_check.default_ammo_type(thing_to_check)
+					var/ammo_type = energy_to_check.allowed_ammo_types[1]
+					new ammo_type(thing_to_check)
 

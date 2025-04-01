@@ -290,6 +290,10 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 EMPTY_GUN_HELPER(automatic/marksman/woodsman)
 NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 
+/obj/item/gun/ballistic/automatic/marksman/woodsman/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
+
 /obj/item/ammo_box/magazine/m23
 	name = "Model 23 magazine (8x50mmR)"
 	desc = "A 5-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
