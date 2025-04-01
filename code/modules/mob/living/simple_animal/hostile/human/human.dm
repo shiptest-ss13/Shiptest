@@ -55,6 +55,29 @@
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
 	if(mob_spawner)
+		var/mob/living/carbon/human/ai_boarder/simplemob/newhuman = new(loc)
+		newhuman.faction = faction.Copy()
+
+		var/obj/effect/mob_spawn/human/new_spawner = mob_spawner
+		var/outfit_path = new_spawner.outfit
+		var/datum/outfit/O = new outfit_path
+		O.r_hand = r_hand
+		var/spare_ammo_count = rand(1,2)
+		if(!O.backpack_contents)
+			O.backpack_contents = list()
+		if(ispath(r_hand,/obj/item/gun))
+			var/obj/item/gun/our_gun = r_hand
+			for(var/i in 1 to spare_ammo_count)
+				O.backpack_contents += our_gun.default_ammo_type
+		O.l_hand = l_hand
+		if(ispath(l_hand,/obj/item/gun))
+			var/obj/item/gun/our_gun = r_hand
+			for(var/i in 1 to spare_ammo_count)
+				O.backpack_contents += our_gun.default_ammo_type
+		O.equip(newhuman)
+
+		return INITIALIZE_HINT_QDEL
+/*
 		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
 		if(ispath(r_hand,/obj/item/gun))
 			var/obj/item/gun/our_gun = r_hand
@@ -62,7 +85,7 @@
 		else if(ispath(l_hand, /obj/item/gun))
 			var/obj/item/gun/our_gun = l_hand
 			spread = our_gun.spread
-
+*/
 	if(ispath(armor_base, /obj/item/clothing))
 		//sigh. if only we could get the initial() value of list vars
 		var/obj/item/clothing/instance = new armor_base()

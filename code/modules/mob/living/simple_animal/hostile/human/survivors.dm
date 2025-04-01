@@ -26,6 +26,12 @@
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor
 	)
 
+/mob/living/simple_animal/hostile/asteroid/whitesands/survivor/Initialize(mapload)
+	. = ..()
+	var/mob/living/carbon/human/ai_boarder/hermit/survivor/newhermit = new(loc)
+	newhermit.faction = faction.Copy()
+	return INITIALIZE_HINT_QDEL
+
 /mob/living/simple_animal/hostile/human/hermit/ranged
 	icon_state = "survivor_hunter"
 	icon_living = "survivor_hunter"
@@ -44,6 +50,12 @@
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/hunter,
 	)
 
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter/Initialize(mapload)
+	. = ..()
+	var/mob/living/carbon/human/ai_boarder/hermit/hunter/newhermit = new(loc)
+	newhermit.faction = faction.Copy()
+	return INITIALIZE_HINT_QDEL
+
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger
 	name = "Hermit Soldier"
 	desc = "The miner's rebellion, though mostly underground, recieved a few good weapon shipments from an off-sector source. You should probably start running."
@@ -58,6 +70,12 @@
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger,
 	)
 
+/mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger/Initialize(mapload)
+	. = ..()
+	var/mob/living/carbon/human/ai_boarder/hermit/gunslinger/newhermit = new(loc)
+	newhermit.faction = faction.Copy()
+	return INITIALIZE_HINT_QDEL
+
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11
 	name = "Hermit Trooper"
 	desc = "Quality weapons are hard to get by in the sandworlds, which forces many survivors to improvise with that they have. This one is hoping that an E-11 of all things will save their life."
@@ -71,6 +89,12 @@
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/e11,
 	)
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11/Initialize(mapload)
+	. = ..()
+	var/mob/living/carbon/human/ai_boarder/hermit/e11/newhermit = new(loc)
+	newhermit.faction = faction.Copy()
+	return INITIALIZE_HINT_QDEL
 
 //survivor corpses
 

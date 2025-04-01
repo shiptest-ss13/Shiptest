@@ -25,6 +25,7 @@
 	back = /obj/item/storage/backpack
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/effect/mob_spawn/human/corpse/ramzi/space
 	name = "Ramzi Hardsuit"

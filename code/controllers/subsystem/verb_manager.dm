@@ -86,9 +86,9 @@ SUBSYSTEM_DEF(verb_manager)
 #endif
 
 	//debatable whether this is needed, this is just to try and ensure that you dont use this to queue stuff that isnt from player input.
-	if(QDELETED(usr))
-		stack_trace("_queue_verb() returned false because it wasnt called from player input!")
-		return FALSE
+//	if(QDELETED(usr))
+//		stack_trace("_queue_verb() returned false because it wasnt called from player input!")
+//		return FALSE
 
 	if(!istype(subsystem_to_use))
 		stack_trace("_queue_verb() returned false because it was given an invalid subsystem to queue for!")
