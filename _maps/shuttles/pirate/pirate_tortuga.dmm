@@ -47,6 +47,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"bn" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
 "bu" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -136,15 +141,25 @@
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
 "bJ" = (
-/obj/machinery/door/airlock/grunge{
-	req_one_access = list(1)
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plating,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 4
+	},
+/obj/machinery/door/airlock/grunge{
+	req_one_access = list(1)
+	},
+/turf/open/floor/plating/rust,
 /area/ship/security/armory)
 "bN" = (
 /obj/machinery/holopad/emergency/command,
@@ -580,6 +595,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "hh" = (
@@ -653,9 +669,9 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/automatic/assault/skm/pirate,
-/obj/item/gun/ballistic/rifle/illestren,
-/obj/item/gun/ballistic/rifle/illestren,
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg{
+	spawn_no_ammo = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "hT" = (
@@ -667,38 +683,13 @@
 /area/ship/security/armory)
 "hU" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/c45,
 /obj/item/storage/toolbox/ammo/a762_40{
 	pixel_x = 5;
 	pixel_y = 6
 	},
-/obj/item/storage/toolbox/ammo/a850r{
+/obj/item/storage/toolbox/ammo/c9mm{
 	pixel_x = -6;
 	pixel_y = 2
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/skm_762_40{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/skm_762_40{
-	pixel_y = -3
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
@@ -1068,13 +1059,17 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/grunge,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/siding/wideplating/corner,
 /obj/effect/turf_decal/siding/wideplating/corner{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "mE" = (
@@ -1214,6 +1209,7 @@
 	},
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/twenty,
+/obj/structure/crate_shelf/built,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "nV" = (
@@ -1251,6 +1247,7 @@
 "oq" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "ov" = (
@@ -1379,6 +1376,7 @@
 /obj/item/storage/toolbox/electrical{
 	pixel_y = 14
 	},
+/obj/item/gear_pack/anglegrinder,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "pE" = (
@@ -1409,7 +1407,9 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "qu" = (
-/obj/machinery/door/window/brigdoor/eastleft,
+/obj/machinery/door/window/brigdoor/eastleft{
+	req_ship_access = 1
+	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
 "qy" = (
@@ -1435,6 +1435,13 @@
 /area/ship/maintenance)
 "qI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
+"qL" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "qM" = (
@@ -1946,6 +1953,7 @@
 	pixel_x = -6;
 	pixel_y = 12
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "yl" = (
@@ -2079,6 +2087,7 @@
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "AZ" = (
@@ -2129,6 +2138,11 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
+"BW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/mineral/titanium,
+/area/ship/security/armory)
 "Ca" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2634,18 +2648,15 @@
 	pixel_y = 32
 	},
 /obj/structure/table/wood,
-/obj/item/gun/ballistic/derringer{
-	pixel_x = 5;
-	pixel_y = 6
-	},
-/obj/item/ammo_casing/c38{
-	pixel_x = 9
-	},
-/obj/item/ammo_casing/c38{
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/pistol/mauler,
+/obj/item/ammo_casing/c9mm{
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/c9mm{
+	pixel_x = 9
+	},
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "Je" = (
@@ -3138,8 +3149,9 @@
 /obj/item/clothing/shoes/jackboots{
 	pixel_y = -13
 	},
-/obj/item/storage/box/ammo/c38_surplus,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/magazine/m9mm_mauler,
+/obj/item/ammo_box/magazine/m9mm_mauler,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
 "OF" = (
@@ -3213,6 +3225,7 @@
 	pixel_x = -7;
 	pixel_y = 10
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Pb" = (
@@ -3269,9 +3282,9 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol/candor,
-/obj/item/gun/ballistic/automatic/pistol/candor,
-/obj/item/gun/ballistic/automatic/pistol/candor,
+/obj/item/gun/ballistic/automatic/pistol/mauler,
+/obj/item/gun/ballistic/automatic/pistol/spitter,
+/obj/item/gun/ballistic/automatic/smg/pounder,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "PC" = (
@@ -3618,6 +3631,7 @@
 /area/ship/crew)
 "UQ" = (
 /obj/item/stack/tile/plasteel/tech/techmaint,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "UT" = (
@@ -3890,6 +3904,7 @@
 /obj/structure/closet/crate{
 	icon_state = "o2crate"
 	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Xu" = (
@@ -4294,7 +4309,7 @@ Ek
 Ek
 Ek
 tq
-lh
+qL
 Uo
 LH
 Fy
@@ -4304,7 +4319,7 @@ Fy
 Fy
 wp
 ld
-Td
+bn
 tq
 Ek
 Ek
@@ -4863,7 +4878,7 @@ MC
 Gx
 qD
 lY
-dm
+BW
 dm
 FQ
 qD
