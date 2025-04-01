@@ -64,459 +64,6 @@ DEFINE_BITFIELD(knpc_traits, list(
 		if(SOUTHWEST)
 			return list(SOUTH, WEST)
 
-//heap.dm
-//////////////////////
-//datum/heap object
-//////////////////////
-
-/datum/heap
-	var/list/L
-	var/cmp
-
-/datum/heap/New(compare)
-	L = new()
-	cmp = compare
-
-/datum/heap/Destroy(force, ...)
-	for(var/i in L) // because this is before the list helpers are loaded
-		qdel(i)
-	L = null
-	return ..()
-
-/datum/heap/proc/is_empty()
-	return !length(L)
-
-//insert and place at its position a new node in the heap
-/datum/heap/proc/insert(atom/A)
-
-	L.Add(A)
-	swim(length(L))
-
-//removes and returns the first element of the heap
-//(i.e the max or the min dependant on the comparison function)
-/datum/heap/proc/pop()
-	if(!length(L))
-		return 0
-	. = L[1]
-
-	L[1] = L[length(L)]
-	L.Cut(length(L))
-	if(length(L))
-		sink(1)
-
-//Get a node up to its right position in the heap
-/datum/heap/proc/swim(index)
-	var/parent = round(index * 0.5)
-
-	while(parent > 0 && (call(cmp)(L[index],L[parent]) > 0))
-		L.Swap(index,parent)
-		index = parent
-		parent = round(index * 0.5)
-
-//Get a node down to its right position in the heap
-/datum/heap/proc/sink(index)
-	var/g_child = get_greater_child(index)
-
-	while(g_child > 0 && (call(cmp)(L[index],L[g_child]) < 0))
-		L.Swap(index,g_child)
-		index = g_child
-		g_child = get_greater_child(index)
-
-//Returns the greater (relative to the comparison proc) of a node children
-//or 0 if there's no child
-/datum/heap/proc/get_greater_child(index)
-	if(index * 2 > length(L))
-		return 0
-
-	if(index * 2 + 1 > length(L))
-		return index * 2
-
-	if(call(cmp)(L[index * 2],L[index * 2 + 1]) < 0)
-		return index * 2 + 1
-	else
-		return index * 2
-
-//Replaces a given node so it verify the heap condition
-/datum/heap/proc/resort(atom/A)
-	var/index = L.Find(A)
-
-	swim(index)
-	sink(index)
-
-/datum/heap/proc/List()
-	. = L.Copy()
-//heap.dm end
-
-//path.dm
-/**
- * This file contains the stuff you need for using JPS (Jump Point Search) pathing, an alternative to A* that skips
- * over large numbers of uninteresting tiles resulting in much quicker pathfinding solutions. Mind that diagonals
- * cost the same as cardinal moves currently, so paths may look a bit strange, but should still be optimal.
- */
-
-/**
- * This is the proc you use whenever you want to have pathfinding more complex than "try stepping towards the thing".
- * If no path was found, returns an empty list, which is important for bots like medibots who expect an empty list rather than nothing.
- *
- * Arguments:
- * * caller: The movable atom that's trying to find the path
- * * end: What we're trying to path to. It doesn't matter if this is a turf or some other atom, we're gonna just path to the turf it's on anyway
- * * max_distance: The maximum number of steps we can take in a given path to search (default: 30, 0 = infinite)
- * * mintargetdistance: Minimum distance to the target before path returns, could be used to get near a target, but not right to it - for an AI mob with a gun, for example.
- * * id: An ID card representing what access we have and what doors we can open. Its location relative to the pathing atom is irrelevant
- * * simulated_only: Whether we consider turfs without atmos simulation (AKA do we want to ignore space)
- * * exclude: If we want to avoid a specific turf, like if we're a mulebot who already got blocked by some turf
- * * skip_first: Whether or not to delete the first item in the path. This would be done because the first item is the starting tile, which can break movement for some creatures.
- */
-/proc/jps_get_path_to(caller, end, max_distance = 30, mintargetdist, id=null, simulated_only = TRUE, turf/exclude, skip_first = TRUE)
-	if(!caller || !get_turf(end))
-		return
-
-	var/l = SSpathfinder.mobs.getfree(caller)
-	while(!l)
-		stoplag(3)
-		l = SSpathfinder.mobs.getfree(caller)
-
-	var/list/path
-	var/datum/pathfind/pathfind_datum = new(caller, end, id, max_distance, mintargetdist, simulated_only, exclude)
-	path = pathfind_datum.search()
-	qdel(pathfind_datum)
-
-	SSpathfinder.mobs.found(l)
-	if(!path)
-		path = list()
-	if(length(path) > 0 && skip_first)
-		path.Cut(1,2)
-	return path
-
-/**
- * A helper macro to see if it's possible to step from the first turf into the second one, minding things like door access and directional windows.
- * Note that this can only be used inside the [datum/pathfind][pathfind datum] since it uses variables from said datum.
- * If you really want to optimize things, optimize this, cuz this gets called a lot.
- */
-#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type]) && !cur_turf.jps_LinkBlockedWithAccess(next,caller, id) && (next != avoid))
-/// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
-#define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
-
-/// The JPS Node datum represents a turf that we find interesting enough to add to the open list and possibly search for new tiles from
-/datum/jps_node
-	/// The turf associated with this node
-	var/turf/tile
-	/// The node we just came from
-	var/datum/jps_node/previous_node
-	/// The A* node weight (f_value = number_of_tiles + heuristic)
-	var/f_value
-	/// The A* node heuristic (a rough estimate of how far we are from the goal)
-	var/heuristic
-	/// How many steps it's taken to get here from the start (currently pulling double duty as steps taken & cost to get here, since all moves incl diagonals cost 1 rn)
-	var/number_tiles
-	/// How many steps it took to get here from the last node
-	var/jumps
-	/// Nodes store the endgoal so they can process their heuristic without a reference to the pathfind datum
-	var/turf/node_goal
-
-/datum/jps_node/New(turf/our_tile, datum/jps_node/incoming_previous_node, jumps_taken, turf/incoming_goal)
-	tile = our_tile
-	jumps = jumps_taken
-	if(incoming_goal) // if we have the goal argument, this must be the first/starting node
-		node_goal = incoming_goal
-	else if(incoming_previous_node) // if we have the parent, this is from a direct lateral/diagonal scan, we can fill it all out now
-		previous_node = incoming_previous_node
-		number_tiles = previous_node.number_tiles + jumps
-		node_goal = previous_node.node_goal
-		heuristic = get_dist(tile, node_goal)
-		f_value = number_tiles + heuristic
-	// otherwise, no parent node means this is from a subscan lateral scan, so we just need the tile for now until we call [datum/jps/proc/update_parent] on it
-
-/datum/jps_node/Destroy(force, ...)
-	previous_node = null
-	return ..()
-
-/datum/jps_node/proc/update_parent(datum/jps_node/new_parent)
-	previous_node = new_parent
-	node_goal = previous_node.node_goal
-	jumps = get_dist(tile, previous_node.tile)
-	number_tiles = previous_node.number_tiles + jumps
-	heuristic = get_dist(tile, node_goal)
-	f_value = number_tiles + heuristic
-
-/// TODO: Macro this to reduce proc overhead
-/proc/jps_HeapPathWeightCompare(datum/jps_node/a, datum/jps_node/b)
-	return b.f_value - a.f_value
-
-/// The datum used to handle the JPS pathfinding, completely self-contained
-/datum/pathfind
-	/// The thing that we're actually trying to path for
-	var/atom/movable/caller
-	/// The turf where we started at
-	var/turf/start
-	/// The turf we're trying to path to (note that this won't track a moving target)
-	var/turf/end
-	/// The open list/stack we pop nodes out from (TODO: make this a normal list and macro-ize the heap operations to reduce proc overhead)
-	var/datum/heap/open
-	///An assoc list that serves as the closed list & tracks what turfs came from where. Key is the turf, and the value is what turf it came from
-	var/list/sources
-	/// The list we compile at the end if successful to pass back
-	var/list/path
-
-	// general pathfinding vars/args
-	/// An ID card representing what access we have and what doors we can open. Its location relative to the pathing atom is irrelevant
-	var/obj/item/card/id/id
-	/// How far away we have to get to the end target before we can call it quits
-	var/mintargetdist = 0
-	/// I don't know what this does vs , but they limit how far we can search before giving up on a path
-	var/max_distance = 30
-	/// Space is big and empty, if this is TRUE then we ignore pathing through unsimulated tiles
-	var/simulated_only
-	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
-	var/turf/avoid
-	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
-	var/list/turfs_to_avoid = list(/turf/open/water/acid,/turf/open/lava)
-
-/datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, avoid_mobs)
-	src.caller = caller
-	end = get_turf(goal)
-	open = new /datum/heap(GLOBAL_PROC_REF(jps_HeapPathWeightCompare))
-	sources = new()
-	src.id = id
-	src.max_distance = max_distance
-	src.mintargetdist = mintargetdist
-	src.simulated_only = simulated_only
-	src.avoid = avoid
-
-/**
- * search() is the proc you call to kick off and handle the actual pathfinding, and kills the pathfind datum instance when it's done.
- *
- * If a valid path was found, it's returned as a list. If invalid or cross-z-level params are entered, or if there's no valid path found, we
- * return null, which [/proc/jps_get_path_to] translates to an empty list (notable for simple bots, who need empty lists)
- */
-/datum/pathfind/proc/search()
-	start = get_turf(caller)
-	if(!start || !end)
-		stack_trace("Invalid A* start or destination")
-		return
-	if(start.z != end.z || start == end ) //no pathfinding between z levels
-		return
-	if(max_distance && (max_distance < get_dist(start, end))) //if start turf is farther than max_distance from end turf, no need to do anything
-		return
-
-	//initialization
-	var/datum/jps_node/current_processed_node = new (start, -1, 0, end)
-	open.insert(current_processed_node)
-	sources[start] = start // i'm sure this is fine
-
-	//then run the main loop
-	while(!open.is_empty() && !path)
-		if(!caller)
-			return
-		current_processed_node = open.pop() //get the lower f_value turf in the open list
-		if(max_distance && (current_processed_node.number_tiles > max_distance))//if too many steps, don't process that path
-			continue
-
-		var/turf/current_turf = current_processed_node.tile
-		for(var/scan_direction in list(EAST, WEST, NORTH, SOUTH))
-			lateral_scan_spec(current_turf, scan_direction, current_processed_node)
-
-		for(var/scan_direction in list(NORTHEAST, SOUTHEAST, NORTHWEST, SOUTHWEST))
-			diag_scan_spec(current_turf, scan_direction, current_processed_node)
-
-		CHECK_TICK
-
-	//we're done! reverse the path to get it from start to finish
-	if(path)
-		for(var/i = 1 to round(0.5 * length(path)))
-			path.Swap(i, length(path) - i + 1)
-
-	sources = null
-	qdel(open)
-	return path
-
-/// Called when we've hit the goal with the node that represents the last tile, then sets the path var to that path so it can be returned by [datum/pathfind/proc/search]
-/datum/pathfind/proc/unwind_path(datum/jps_node/unwind_node)
-	path = new()
-	var/turf/iter_turf = unwind_node.tile
-	path.Add(iter_turf)
-
-	while(unwind_node.previous_node)
-		var/dir_goal = get_dir(iter_turf, unwind_node.previous_node.tile)
-		for(var/i = 1 to unwind_node.jumps)
-			iter_turf = get_step(iter_turf,dir_goal)
-			path.Add(iter_turf)
-		unwind_node = unwind_node.previous_node
-
-/**
- * For performing lateral scans from a given starting turf.
- *
- * These scans are called from both the main search loop, as well as subscans for diagonal scans, and they treat finding interesting turfs slightly differently.
- * If we're doing a normal lateral scan, we already have a parent node supplied, so we just create the new node and immediately insert it into the heap, ezpz.
- * If we're part of a subscan, we still need for the diagonal scan to generate a parent node, so we return a node datum with just the turf and let the diag scan
- * proc handle transferring the values and inserting them into the heap.
- *
- * Arguments:
- * * original_turf: What turf did we start this scan at?
- * * heading: What direction are we going in? Obviously, should be cardinal
- * * parent_node: Only given for normal lateral scans, if we don't have one, we're a diagonal subscan.
-*/
-/datum/pathfind/proc/lateral_scan_spec(turf/original_turf, heading, datum/jps_node/parent_node)
-	var/steps_taken = 0
-
-	var/turf/current_turf = original_turf
-	var/turf/lag_turf = original_turf
-
-	while(TRUE)
-		if(path)
-			return
-		lag_turf = current_turf
-		current_turf = get_step(current_turf, heading)
-		steps_taken++
-		if(!CAN_STEP(lag_turf, current_turf))
-			return
-		for(var/turf/checked_turf as anything in turfs_to_avoid)
-			if(istype(current_turf,checked_turf))
-				return
-
-		if(current_turf == end || (mintargetdist && (get_dist(current_turf, end) <= mintargetdist)))
-			var/datum/jps_node/final_node = new(current_turf, parent_node, steps_taken)
-			sources[current_turf] = original_turf
-			if(parent_node) // if this is a direct lateral scan we can wrap up, if it's a subscan from a diag, we need to let the diag make their node first, then finish
-				unwind_path(final_node)
-			return final_node
-		else if(sources[current_turf]) // already visited, essentially in the closed list
-			return
-		else
-			sources[current_turf] = original_turf
-
-		if(parent_node && parent_node.number_tiles + steps_taken > max_distance)
-			return
-
-		var/interesting = FALSE // have we found a forced neighbor that would make us add this turf to the open list?
-
-		switch(heading)
-			if(NORTH)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST))
-					interesting = TRUE
-			if(SOUTH)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST))
-					interesting = TRUE
-			if(EAST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
-					interesting = TRUE
-			if(WEST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
-					interesting = TRUE
-
-		if(interesting)
-			var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
-			if(parent_node) // if we're a diagonal subscan, we'll handle adding ourselves to the heap in the diag
-				open.insert(newnode)
-			return newnode
-
-/**
- * For performing diagonal scans from a given starting turf.
- *
- * Unlike lateral scans, these only are called from the main search loop, so we don't need to worry about returning anything,
- * though we do need to handle the return values of our lateral subscans of course.
- *
- * Arguments:
- * * original_turf: What turf did we start this scan at?
- * * heading: What direction are we going in? Obviously, should be diagonal
- * * parent_node: We should always have a parent node for diagonals
-*/
-/datum/pathfind/proc/diag_scan_spec(turf/original_turf, heading, datum/jps_node/parent_node)
-	var/steps_taken = 0
-	var/turf/current_turf = original_turf
-	var/turf/lag_turf = original_turf
-
-	while(TRUE)
-		if(path)
-			return
-		lag_turf = current_turf
-		current_turf = get_step(current_turf, heading)
-		steps_taken++
-		if(!CAN_STEP(lag_turf, current_turf))
-			return
-		for(var/turf/checked_turf as anything in turfs_to_avoid)
-			if(istype(current_turf,checked_turf))
-				return
-
-		if(current_turf == end || (mintargetdist && (get_dist(current_turf, end) <= mintargetdist)))
-			var/datum/jps_node/final_node = new(current_turf, parent_node, steps_taken)
-			sources[current_turf] = original_turf
-			unwind_path(final_node)
-			return
-		else if(sources[current_turf]) // already visited, essentially in the closed list
-			return
-		else
-			sources[current_turf] = original_turf
-
-		if(parent_node.number_tiles + steps_taken > max_distance)
-			return
-
-		var/interesting = FALSE // have we found a forced neighbor that would make us add this turf to the open list?
-		var/datum/jps_node/possible_child_node // otherwise, did one of our lateral subscans turn up something?
-
-		switch(heading)
-			if(NORTHWEST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
-					interesting = TRUE
-				else
-					possible_child_node = (lateral_scan_spec(current_turf, WEST) || lateral_scan_spec(current_turf, NORTH))
-			if(NORTHEAST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
-					interesting = TRUE
-				else
-					possible_child_node = (lateral_scan_spec(current_turf, EAST) || lateral_scan_spec(current_turf, NORTH))
-			if(SOUTHWEST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST))
-					interesting = TRUE
-				else
-					possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, WEST))
-			if(SOUTHEAST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST))
-					interesting = TRUE
-				else
-					possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, EAST))
-
-		if(interesting || possible_child_node)
-			var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
-			open.insert(newnode)
-			if(possible_child_node)
-				possible_child_node.update_parent(newnode)
-				open.insert(possible_child_node)
-				if(possible_child_node.tile == end || (mintargetdist && (get_dist(possible_child_node.tile, end) <= mintargetdist)))
-					unwind_path(possible_child_node)
-			return
-
-/**
- * For seeing if we can actually move between 2 given turfs while accounting for our access and the caller's pass_flags
- *
- * Arguments:
- * * caller: The movable, if one exists, being used for mobility checks to see what tiles it can reach
- * * ID: An ID card that decides if we can gain access to doors that would otherwise block a turf
- * * simulated_only: Do we only worry about turfs with simulated atmos, most notably things that aren't space?
-*/
-/turf/proc/jps_LinkBlockedWithAccess(turf/destination_turf, caller, ID)
-	var/actual_dir = get_dir(src, destination_turf)
-
-	for(var/obj/structure/window/iter_window in src)
-		if(!iter_window.CanAStarPass(ID, actual_dir))
-			return TRUE
-
-	for(var/obj/machinery/door/window/iter_windoor in src)
-		if(!iter_windoor.CanAStarPass(ID, actual_dir))
-			return TRUE
-
-	var/reverse_dir = get_dir(destination_turf, src)
-	for(var/obj/iter_object in destination_turf)
-		if(!iter_object.CanAStarPass(ID, reverse_dir, caller))
-			return TRUE
-
-	return FALSE
-
-#undef CAN_STEP
-#undef STEP_NOT_HERE_BUT_THERE
-//end path.dm
-
 GLOBAL_LIST_EMPTY(knpcs)
 
 /datum/component/knpc
@@ -556,6 +103,11 @@ GLOBAL_LIST_EMPTY(knpcs)
 
 	var/shut_up = TRUE
 
+/mob/living/carbon/human/ai_boarder/simplemob
+	outfit = list (
+		/datum/outfit
+	)
+
 /mob/living/carbon/human/ai_boarder/Initialize(mapload)
 	. = ..()
 	randomize_human(src)
@@ -592,6 +144,9 @@ GLOBAL_LIST_EMPTY(knpcs)
 /mob/living/carbon/human/ai_boarder/hermit/commando
 	survivor_type = "commando"
 
+/mob/living/carbon/human/ai_boarder/hermit/e11
+	survivor_type = "e11"
+
 /mob/living/carbon/human/ai_boarder/hermit/Initialize(mapload)
 	if(!survivor_type)
 		survivor_type = pick("survivor","hunter","gunslinger")
@@ -600,7 +155,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 		if(istype(searching, /obj/item/gun))
 			searching.safety = FALSE
 
-	var/mob_species = pickweight(list(
+	var/mob_species = pick_weight(list(
 			/datum/species/human = 50,
 			/datum/species/lizard = 25,
 			/datum/species/elzuose = 10,
@@ -613,7 +168,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 
 	var/obj/item/clothing/suit/hooded/survivor_hood = wear_suit
 	if(survivor_hood)
-		survivor_hood.ToggleHood()
+		survivor_hood.toggle_hood()
 
 /datum/outfit/whitesands/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	var/mob/living/carbon/human/ai_boarder/hermit/hermit = H
@@ -621,18 +176,17 @@ GLOBAL_LIST_EMPTY(knpcs)
 	var/picked
 	//to-do: learn how to make mobsprites for other survivors
 		//w_uniforms are random to show varied backgrounds, but similar goal
-	if(survivor_type == "survivor")
-		picked = pickweight(list(
+	if(survivor_type == "survivor" || survivor_type == "e11")
+		picked = pick_weight(list(
 			/obj/item/clothing/under/color/random = 65,
 			/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
 			/obj/item/clothing/under/rank/prisoner = 10,
 			/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
-			/obj/item/clothing/under/color/khaki/buster = 5,
 			/obj/item/clothing/under/rank/cargo/miner = 5
 			)
 		)
 	else if (survivor_type == "hunter")
-		picked = pickweight(list(
+		picked = pick_weight(list(
 			/obj/item/clothing/under/color/random = 50,
 			/obj/item/clothing/under/rank/cargo/miner/lavaland = 25,
 			/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
@@ -641,7 +195,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 			)
 		)
 	else if (survivor_type == "gunslinger" || survivor_type == "commando")
-		picked = pickweight(list(
+		picked = pick_weight(list(
 			/obj/item/clothing/under/rank/cargo/miner/lavaland = 35,
 			/obj/item/clothing/under/color/random = 25,
 			/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 15,
@@ -657,7 +211,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 
 	//storage is semi-randomized, giving some variety
 	if(survivor_type == "survivor")
-		picked = 	pickweight(list(
+		picked = 	pick_weight(list(
 			/obj/item/storage/belt/fannypack = 40,
 			/obj/item/storage/belt/mining = 20,
 			/obj/item/storage/belt/mining/alt = 15,
@@ -667,8 +221,8 @@ GLOBAL_LIST_EMPTY(knpcs)
 			/obj/item/storage/belt/chameleon= 1,
 			)
 		)
-	else if(survivor_type == "hunter")
-		picked = 	pickweight(list(
+	else if(survivor_type == "hunter" || survivor_type == "e11")
+		picked = 	pick_weight(list(
 			/obj/item/storage/belt/mining = 30,
 			/obj/item/storage/belt/fannypack = 20,
 			/obj/item/storage/belt/mining/alt = 15,
@@ -679,7 +233,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 			)
 		)
 	else if(survivor_type == "gunslinger" || survivor_type == "commando")
-		picked = pickweight(list(
+		picked = pick_weight(list(
 			/obj/item/storage/belt/mining = 30,
 			/obj/item/storage/belt/bandolier = 30,
 			/obj/item/storage/belt/military = 20,
@@ -707,7 +261,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	shoes = picked
 
 	//gloves are a tossup
-	picked = pickweight(list(
+	picked = pick_weight(list(
 			/obj/item/clothing/gloves/color/black = 60,
 			/obj/item/clothing/gloves/explorer = 30,
 			/obj/item/clothing/gloves/explorer/old = 10
@@ -717,7 +271,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	gloves = picked
 
 	//bags are semi-random.
-	picked = pickweight(list(
+	picked = pick_weight(list(
 			/obj/item/storage/backpack = 20,
 			/obj/item/storage/backpack/explorer = 20,
 			/obj/item/storage/backpack/satchel = 20,
@@ -731,7 +285,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	//as are bag contents
 
 	backpack_contents = list()
-	backpack_contents += pickweight(list( //fallback in case of no weapons
+	backpack_contents += pick_weight(list( //fallback in case of no weapons
 		/obj/item/wrench = 10,
 		/obj/item/crowbar = 15,
 		/obj/item/screwdriver = 5,
@@ -740,12 +294,12 @@ GLOBAL_LIST_EMPTY(knpcs)
 		/obj/item/flashlight/seclite = 10,
 		))
 	if(prob(70))
-		backpack_contents += pickweight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
+		backpack_contents += pick_weight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
 			/obj/item/soap = 10,
 			/obj/item/stack/marker_beacon/ten = 15,
 			/obj/item/mining_scanner = 5,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat = 5,
+			/obj/item/melee/knife/combat = 5,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 10,
 			/obj/item/stack/sheet/bone = 5,
@@ -756,33 +310,33 @@ GLOBAL_LIST_EMPTY(knpcs)
 			)
 		)
 	if(prob(70))
-		backpack_contents += pickweight(list(
+		backpack_contents += pick_weight(list(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 20,
 			/obj/item/stack/marker_beacon/ten = 10,
 			/obj/item/mining_scanner = 20,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat/survival = 10,
+			/obj/item/melee/knife/survival = 10,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 10,
 			/obj/item/stack/sheet/bone = 10
 			)
 		)
 	if(prob(70))
-		backpack_contents += pickweight(list(
+		backpack_contents += pick_weight(list(
 			/obj/item/stack/sheet/animalhide/goliath_hide = 5,
 			/obj/item/stack/marker_beacon/ten = 5,
 			/obj/item/mining_scanner = 5,
 			/obj/item/extinguisher/mini = 10,
-			/obj/item/kitchen/knife/combat/survival = 12,
+			/obj/item/melee/knife/survival = 12,
 			/obj/item/flashlight/seclite = 10,
 			/obj/item/stack/sheet/sinew = 5,
 			/obj/item/stack/sheet/bone = 5,
-			/obj/item/kitchen/knife/combat = 3,
-			/obj/item/reagent_containers/food/snacks/rationpack = 30
+			/obj/item/melee/knife/combat = 3,
+			/obj/item/reagent_containers/food/snacks/ration/pack = 30
 			)
 		)
 	if (prob(25)) //mayhaps a medkit
-		backpack_contents += pickweight(list(
+		backpack_contents += pick_weight(list(
 			/obj/item/storage/firstaid/regular = 50,
 			/obj/item/storage/firstaid/brute = 15,
 			/obj/item/storage/firstaid/medical = 15,
@@ -803,14 +357,14 @@ GLOBAL_LIST_EMPTY(knpcs)
 		else
 			l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
-	if(survivor_type == "hunter")
+	if(survivor_type == "hunter" || survivor_type == "e11")
 		l_pocket = /obj/item/tank/internals/emergency_oxygen/double
 		if (prob(20))
 			l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
 
 	if(survivor_type == "gunslinger" || survivor_type == "commando")
 		if(prob(50))
-			l_pocket = /obj/item/ammo_box/magazine/skm_545_39
+			l_pocket = /obj/item/ammo_box/magazine/skm_46_30
 		r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
 	else
@@ -818,7 +372,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 		l_pocket = /obj/item/radio
 
 	//masks
-	picked = pickweight(list(
+	picked = pick_weight(list(
 		/obj/item/clothing/mask/gas = 40,
 		/obj/item/clothing/mask/gas/explorer = 20,
 		/obj/item/clothing/mask/gas/explorer/old = 20,
@@ -827,8 +381,8 @@ GLOBAL_LIST_EMPTY(knpcs)
 		/obj/item/clothing/mask/breath/medical = 5,
 		/obj/item/clothing/mask/breath/suns = 5,
 		/obj/item/clothing/mask/gas/sechailer = 10,
-		/obj/item/clothing/mask/gas/sechailer/balaclava = 10,
-		/obj/item/clothing/mask/gas/sechailer/balaclava/inteq = 10,
+		/obj/item/clothing/mask/balaclava = 10,
+		/obj/item/clothing/mask/balaclava/inteq = 10,
 		/obj/item/clothing/mask/gas/sechailer/swat = 1,
 		/obj/item/clothing/mask/gas/sechailer/swat/spacepol = 1,
 		)
@@ -838,7 +392,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 
 	//the eyes are the window into the soul. I don't think these things have souls but whatever.
 	if(prob(70))
-		picked = pickweight(list(
+		picked = pick_weight(list(
 			/obj/item/clothing/glasses/heat = 20,
 			/obj/item/clothing/glasses/cold = 20,
 			/obj/item/clothing/glasses/meson = 40,
@@ -853,7 +407,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	if(prob(1)) //oh my god they can't hear the sandstorm coming they've got airpods in
 		picked = /obj/item/instrument/piano_synth/headphones/spacepods
 	else
-		picked = pickweight(list(
+		picked = pick_weight(list(
 			/obj/item/radio/headset = 50,
 			/obj/item/radio/headset/alt = 50
 			)
@@ -870,19 +424,25 @@ GLOBAL_LIST_EMPTY(knpcs)
 		for(var/i in 1 to spare_ammo_count)
 			backpack_contents += /obj/item/ammo_box/a762_stripper
 
+	if (survivor_type == "e11")
+		r_hand = /obj/item/gun/energy/e_gun/e11
+		spare_ammo_count = rand(1,4)
+		for(var/i in 1 to spare_ammo_count)
+			backpack_contents += /obj/item/stock_parts/cell/gun
+
 	if(survivor_type == "gunslinger" || survivor_type == "commando")
 		if(prob(7) || survivor_type == "commando") //cause fuck you, thats why
 			uniform = /obj/item/clothing/under/rank/security/officer/camo
 
-			suit =	pickweight(list(
+			suit =	pick_weight(list(
 				/obj/item/clothing/suit/armor/vest/bulletproof = 35,
 				/obj/item/clothing/suit/armor/vest/syndie = 20,
 				/obj/item/clothing/suit/armor/gezena = 20,
 				/obj/item/clothing/suit/armor/vest/marine = 1,
 				/obj/item/clothing/suit/armor/vest/marine/heavy = 1,
-				/obj/item/clothing/suit/armor/vest/marine = 1,
+				/obj/item/clothing/suit/armor/vest/marine/medium = 1,
 			))
-			head =	pickweight(list(
+			head =	pick_weight(list(
 				/obj/item/clothing/head/helmet/bulletproof/x11 = 40,
 				/obj/item/clothing/head/helmet/bulletproof/m10 = 40,
 
@@ -890,8 +450,6 @@ GLOBAL_LIST_EMPTY(knpcs)
 				/obj/item/clothing/head/helmet/swat/nanotrasen = 20,
 				/obj/item/clothing/head/helmet/gezena = 20,
 
-				/obj/item/clothing/head/helmet/marine = 1,
-				/obj/item/clothing/head/helmet/marine/security = 1,
 			))
 			spare_ammo_count = rand(2,3)
 			if(prob(10))
@@ -906,7 +464,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 				else
 					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40
 		else
-			picked = pickweight(list(
+			picked = pick_weight(list(
 				/obj/item/gun/ballistic/automatic/smg/skm_carbine = 70,
 				/obj/item/gun/ballistic/automatic/pistol/spitter = 20,
 				/obj/item/gun/ballistic/automatic/smg/pounder = 4,
@@ -915,14 +473,15 @@ GLOBAL_LIST_EMPTY(knpcs)
 				/obj/item/gun/ballistic/automatic/smg/cm5 = 4,
 				/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq = 4,
 				/obj/item/gun/ballistic/automatic/smg/cobra = 4,
-				/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto = 4,
+				/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber = 4,
 				/obj/item/gun/ballistic/automatic/pistol/rattlesnake = 4,
+				/obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq = 4,
 				/obj/item/gun/ballistic/automatic/pistol/mauler = 4,
 				))
 			r_hand = picked
 			var/obj/item/gun/ballistic/current_gun = picked
 			for(var/i in 1 to spare_ammo_count)
-				backpack_contents += current_gun.mag_type
+				backpack_contents += current_gun.default_ammo_type
 
 	internals_slot = ITEM_SLOT_RPOCKET
 
@@ -976,7 +535,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	var/obj/item/card/id/access_card = H.wear_id
 	if(target)
 		dest = get_turf(target)
-		path = jps_get_path_to(H, dest, 120, 0, access_card, !(H.wear_suit?.clothing_flags & STOPSPRESSUREDAMAGE && H.head?.clothing_flags & STOPSPRESSUREDAMAGE), avoid)
+		path = get_path_to(H, dest, 120, 0, access_card, !(H.wear_suit?.clothing_flags & STOPSPRESSUREDAMAGE && H.head?.clothing_flags & STOPSPRESSUREDAMAGE), avoid)
 	//There's no valid path, try run against the wall.
 	if(!length(path) && !H.incapacitated())
 		pathfind_timeout += KNPC_TIMEOUT_BASE * (1 + timeout_stacks)
@@ -1315,7 +874,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 					A.forceMove(S)
 			if(istype(target_item, /obj/item/gun/ballistic))
 				var/obj/item/gun/ballistic/B = target_item
-				var/obj/item/ammo_box/magazine/M = locate(B.mag_type) in oview(3, target_item)
+				var/obj/item/ammo_box/magazine/M = locate(B.default_ammo_type) in oview(3, target_item)
 				if(M && S) //If they have a backpack, put the ammo in the backpack.
 					H.put_in_hands(M)
 					M.forceMove(S)
@@ -1355,7 +914,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 		return FALSE
 	if(istype(gun, /obj/item/gun/ballistic))
 		var/obj/item/gun/ballistic/B = gun
-		if(istype(B.mag_type, /obj/item/ammo_box/magazine/internal))
+		if(istype(B.default_ammo_type, /obj/item/ammo_box/magazine/internal))
 			if(!istype(B, /obj/item/gun/ballistic/rifle/polymer) || !istype(B, /obj/item/gun/ballistic/rifle/illestren))
 				//Not dealing with this. They'll just ditch the revolver when they're done with it.
 				B.forceMove(get_turf(H))
@@ -1366,7 +925,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 		var/list/expanded_contents = H.contents
 		if(S)
 			expanded_contents = S.contents + H.contents
-		var/obj/item/ammo_box/target_mag = locate(B.mag_type) in expanded_contents
+		var/obj/item/ammo_box/target_mag = locate(B.default_ammo_type) in expanded_contents
 		if(istype(B, /obj/item/gun/ballistic/rifle/polymer))
 			target_mag = locate(/obj/item/ammo_box/a762_stripper) in expanded_contents
 		if(istype(B, /obj/item/gun/ballistic/rifle))
@@ -1452,7 +1011,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 			//Okay, we have a line of sight, shoot!
 			if(B && !(B.semi_auto) && !G.chambered)
 				//Pump the shotty
-				G.attack_self(H)
+				G.unique_action(H)
 			//Let's help them use E-Guns....
 			if(istype(G, /obj/item/gun/energy/e_gun))
 				var/obj/item/gun/energy/e_gun/E = G
