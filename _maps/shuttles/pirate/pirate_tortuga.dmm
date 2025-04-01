@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
 "ah" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/bridge)
@@ -47,11 +54,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"bn" = (
-/obj/effect/turf_decal/borderfloor,
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
 "bu" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -162,8 +164,10 @@
 /turf/open/floor/plating/rust,
 /area/ship/security/armory)
 "bN" = (
-/obj/machinery/holopad/emergency/command,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "bP" = (
@@ -413,8 +417,14 @@
 	pixel_x = -22;
 	pixel_y = -10
 	},
-/obj/structure/salvageable/computer{
-	dir = 4
+/obj/structure/table,
+/obj/item/folder{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/folder{
+	pixel_x = -2;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -672,6 +682,8 @@
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg{
 	spawn_no_ammo = 1
 	},
+/obj/item/gun/ballistic/rifle/illestren,
+/obj/item/gun/ballistic/rifle/illestren,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "hT" = (
@@ -1132,6 +1144,11 @@
 	pixel_x = -4;
 	pixel_y = -11
 	},
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/item/melee/knife/survival,
+/obj/item/attachment/long_scope,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mZ" = (
@@ -1437,13 +1454,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"qL" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/cargo)
 "qM" = (
 /obj/effect/decal/cleanable/garbage{
 	pixel_y = 7;
@@ -1480,6 +1490,11 @@
 /area/ship/bridge)
 "rd" = (
 /turf/closed/wall/r_wall,
+/area/ship/cargo)
+"ru" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "rU" = (
 /turf/closed/wall/r_wall,
@@ -1626,6 +1641,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "uh" = (
@@ -2102,6 +2118,11 @@
 "Bp" = (
 /turf/closed/wall/rust,
 /area/ship/maintenance)
+"Bw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/mineral/titanium,
+/area/ship/security/armory)
 "BA" = (
 /obj/structure/cable/yellow{
 	icon_state = "5-10"
@@ -2138,11 +2159,6 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
-"BW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/mineral/titanium,
-/area/ship/security/armory)
 "Ca" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2294,6 +2310,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/item/modular_computer/laptop/preset/civilian/rilena,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "EB" = (
@@ -2385,27 +2402,27 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/cargo)
 "FB" = (
-/obj/structure/rack,
-/obj/item/melee/knife/survival{
-	pixel_y = 8;
-	pixel_x = -9
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_state = "sec_wall";
+	name = "ammo closet"
 	},
-/obj/item/melee/knife/survival{
-	pixel_y = 7;
-	pixel_x = 5
-	},
-/obj/item/melee/knife/survival{
-	pixel_y = 7;
-	pixel_x = -4
-	},
-/obj/item/melee/knife/survival{
-	pixel_y = 7;
-	pixel_x = 1
-	},
-/obj/item/melee/baton/boomerang/loaded{
-	pixel_y = -14;
-	pixel_x = 3
-	},
+/obj/item/ammo_box/magazine/skm_762_40/drum,
+/obj/item/ammo_box/magazine/skm_762_40/drum,
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/illestren_a850r/empty,
+/obj/item/ammo_box/magazine/illestren_a850r/empty,
+/obj/item/ammo_box/magazine/illestren_a850r/empty,
+/obj/item/ammo_box/magazine/illestren_a850r/empty,
+/obj/item/ammo_box/magazine/illestren_a850r/empty,
+/obj/item/ammo_box/magazine/illestren_a850r/empty,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "FL" = (
@@ -3282,9 +3299,9 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol/mauler,
 /obj/item/gun/ballistic/automatic/pistol/spitter,
 /obj/item/gun/ballistic/automatic/smg/pounder,
+/obj/item/gun/ballistic/automatic/pistol/spitter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "PC" = (
@@ -3752,14 +3769,8 @@
 /area/ship/cargo)
 "VH" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/table,
-/obj/item/folder{
-	pixel_x = -6;
-	pixel_y = 12
-	},
-/obj/item/folder{
-	pixel_x = -2;
-	pixel_y = 7
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -4309,7 +4320,7 @@ Ek
 Ek
 Ek
 tq
-qL
+aa
 Uo
 LH
 Fy
@@ -4319,7 +4330,7 @@ Fy
 Fy
 wp
 ld
-bn
+ru
 tq
 Ek
 Ek
@@ -4878,7 +4889,7 @@ MC
 Gx
 qD
 lY
-BW
+Bw
 dm
 FQ
 qD
