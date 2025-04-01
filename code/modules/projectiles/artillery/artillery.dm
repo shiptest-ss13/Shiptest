@@ -257,7 +257,6 @@
 
 /obj/machinery/artillery/mortar/CtrlClick(mob/user)
 	. = ..()
-	var/mob/living/user = usr
 	if(!istype(user) || user.incapacitated() || !Adjacent(user))
 		return
 
