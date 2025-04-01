@@ -43,7 +43,7 @@
 
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"
-	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."
+	desc = "Looks like they'd provide some measure of arm protection, but they're too flimsy to offer anything beside their \"stylish\" looks."
 	icon_state = "bracers"
 	transfer_prints = TRUE
 	strip_delay = 40
@@ -53,7 +53,6 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list("melee" = 15, "bullet" = 25, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/rapid
 	name = "Gloves of the North Star"

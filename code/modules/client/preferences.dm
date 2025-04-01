@@ -869,7 +869,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					mutant_category = 0
 
 			if("Smoker" in all_quirks)
-				dat += "<h3>Smoker</h3>"
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+				dat += "<h3>Favorite Smokes</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=preferred_smoke_brand;task=input'>[preferred_smoke_brand]</a><BR>"
 
@@ -1388,7 +1390,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					<font color='[font_color]'>[initial(quirk_datum.name)]</font> - [initial(quirk_datum.desc)]<br>"
 		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
 
-	var/datum/browser/popup = new(user, "mob_trait", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/popup = new(user, "mob_trait", "<div align='center'>Quirk Preferences</div>", 900, 650) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -2126,11 +2128,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						pda_color = pickedPDAColor
 
 				if("phobia")
-					var/phobiaType = input(user, "What are you scared of?", "Character Preference", phobia) as null|anything in SStraumas.phobia_types
+					var/phobiaType = input(user, "What is your character scared of?", "Quirk Preference", phobia) as null|anything in SStraumas.phobia_types
 					if(phobiaType)
 						phobia = phobiaType
+
 				if("preferred_smoke_brand")
-					var/smokeBrand = input(user, "What cigarettes are your favorite?", "Character Preference", preferred_smoke_brand) as null|anything in GLOB.valid_smoke_types
+					var/smokeBrand = input(user, "What are your character's favorite smokes?", "Quirk Preference", preferred_smoke_brand) as null|anything in GLOB.valid_smoke_types
 					if(smokeBrand)
 						preferred_smoke_brand = smokeBrand
 
