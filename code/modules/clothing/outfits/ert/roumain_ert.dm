@@ -42,7 +42,7 @@
 
 	l_pocket = /obj/item/ammo_box/magazine/m45
 
-	backpack_contents = list(/obj/item/ammo_box/vickland_a308 = 6, /obj/item/storage/box/ammo/a308, /obj/item/ammo_box/magazine/m45 = 2)
+	backpack_contents = list(/obj/item/ammo_box/vickland_a8_50r = 6, /obj/item/storage/box/ammo/a8_50r, /obj/item/ammo_box/magazine/m45 = 2)
 
 /datum/outfit/job/roumain/ert/scout
 	name = "ERT - Saint-Roumain Hunter (Scout)" // scout and detective special
