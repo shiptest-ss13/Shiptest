@@ -11,7 +11,7 @@
 
 /obj/item/reagent_containers/food/drinks/coffee/empty
 	name = "empty paper coffee cup"
-	desc = "A cup for coffee. Comes with a cup lid!"
+	desc = "A cup for coffee. Comes with a free lid!"
 	icon = 'icons/obj/item/coffee.dmi'
 	icon_state = "coffee_empty"
 	list_reagents = null

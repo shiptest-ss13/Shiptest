@@ -14,6 +14,8 @@
 	brew_time = 15 SECONDS			//industrial grade, its faster than the regular one
 	density = TRUE
 	pass_flags = PASSTABLE
+	coffeemaker_particle = /particles/smoke/steam/mild/coffeemaker_premium
+
 
 	var/coffee_amount = 0
 	//this type of coffeemaker takes fresh whole beans insted of cartidges
@@ -42,7 +44,7 @@
 /obj/machinery/coffeemaker/premium/examine(mob/user)
 	. = ..()
 	if(coffee)
-		. += span_notice("The internal grinder conatins [coffee.len] scoop\s of coffee beans.")
+		. += span_notice("The internal grinder contains [coffee.len] scoop\s of coffee beans.")
 	return
 
 /obj/machinery/coffeemaker/premium/update_overlays()

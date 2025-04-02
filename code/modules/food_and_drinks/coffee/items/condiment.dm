@@ -49,7 +49,7 @@
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to toggle the pump cap.</span>"
+	. += span_notice("Alt-click to toggle the pump cap.")
 	return
 
 //when you attack the syrup bottle with a container it refills it
@@ -63,14 +63,14 @@
 
 	if(attacking_item.is_refillable())
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, span_warning("[src] is empty!</span>"))
 			return
 
 		if(attacking_item.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[attacking_item] is full.</span>")
+			to_chat(user, span_warning("[attacking_item] is full.</span>"))
 
 		var/trans = reagents.trans_to(attacking_item, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice>You transfer [trans] unit\s of the solution to [attacking_item].</span>")
+		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [attacking_item]."))
 		flick("syrup_anim", src)
 	attacking_item.update_icon()
 	return TRUE
@@ -83,10 +83,10 @@
 	cap_on = !cap_on
 	if(!cap_on)
 		icon_state = "syrup_open"
-		to_chat(user, "<span class='notice'>You remove the pump cap.</span>")
+		to_chat(user, span_notice("You remove the pump cap."))
 	else
 		icon_state = "syrup"
-		to_chat(user, "<span class='notice'>You put the pump cap on.</span>")
+		to_chat(user, span_notice("You put the pump cap on."))
 	update_icon_state()
 	return ..()
 
@@ -94,35 +94,35 @@
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel
 	name = "bottle of caramel syrup"
-	desc = "A pump bottle containing caramelized sugar, also known as caramel. Do not lick."
+	desc = "A pump bottle containing a syrup made of caramelized sugar."
 	list_reagents = list(/datum/reagent/consumable/caramel = 50)
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/liqueur
 	name = "bottle of coffee liqueur syrup"
-	desc = "A pump bottle containing mexican coffee-flavoured liqueur syrup. In production since 1936, HONK."
+	desc = "A pump bottle containing coffee-flavoured liqueur."
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 50)
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/honey
 	name = "bottle of honey syrup"
-	desc = "A pump bottle containing honey, very sticky. Do not lick."
+	desc = "A pump bottle containing honey, very sticky."
 	list_reagents = list(/datum/reagent/consumable/honey = 50)
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/vanilla
 	name = "bottle of vanilla syrup"
-	desc = "A pump bottle containing vanilla syrup. Do not lick."
+	desc = "A pump bottle containing vanilla syrup."
 	list_reagents = list(/datum/reagent/consumable/vanilla = 50)
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/tea
 	name = "bottle of tea-flavored syrup"
-	desc = "A pump bottle containing tea-flavored syrup. Don't you dare."
+	desc = "A pump bottle containing tea-flavored syrup."
 	list_reagents = list(/datum/reagent/consumable/tea = 50)
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/creme_de_cacao
 	name = "bottle of Creme de Cacao syrup"
-	desc = "A pump bottle containing Creme de Cacao. Do not lick."
+	desc = "A pump bottle containing Creme de Cacao."
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 50)
 
 /obj/item/reagent_containers/glass/bottle/syrup_bottle/creme_de_menthe
 	name = "bottle of Creme de Menthe syrup"
-	desc = "A pump bottle containing Creme de Menthe. Do not lick."
+	desc = "A pump bottle containing Creme de Menthe."
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 50)

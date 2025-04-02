@@ -11,9 +11,9 @@
 /obj/item/coffee_cartridge/examine(mob/user)
 	. = ..()
 	if(charges)
-		. += "<span class='warning'>The cartridge has [charges] portions of grounds remaining.</span>"
+		. += span_warning("The cartridge has [charges] portions of grounds remaining.")
 	else
-		. += "<span class='warning'>The cartridge has no unspent grounds remaining.</span>"
+		. += span_warning("The cartridge has no unspent grounds remaining.")
 
 /obj/item/coffee_cartridge/fancy
 	name = "coffeemaker cartridge - Solar's Bestest"
