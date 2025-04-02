@@ -18,6 +18,7 @@
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
 	light_color = COLOR_ICEPLANET_LIGHT
+	flammability = -5
 	// footprint vars
 	var/entered_dirs
 	var/exited_dirs

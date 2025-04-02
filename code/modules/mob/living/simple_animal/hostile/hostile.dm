@@ -724,7 +724,7 @@
 		new /obj/effect/hotspot(T)
 		T.hotspot_expose(700,50,1)
 		if(ignite_turfs)
-			T.IgniteTurf(power,flame_color)
+			T.ignite_turf(power,flame_color)
 		for(var/mob/living/L in T.contents)
 			if((L in hit_list) || L == source)
 				continue

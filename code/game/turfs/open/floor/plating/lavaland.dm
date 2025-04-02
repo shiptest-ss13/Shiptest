@@ -80,6 +80,7 @@
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
 	gender = PLURAL
+	flammability = 0.5 // a little bit flammable, but not enough to sustain a fire
 
 /turf/open/floor/plating/grass/lava/orange
 	icon = 'icons/turf/floors/lava_grass_orange.dmi'
