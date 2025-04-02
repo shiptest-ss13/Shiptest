@@ -221,6 +221,7 @@
 	if(prob(40))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.hallucination += 5
+	..()
 	. = 1
 
 /datum/reagent/drug/mammoth/overdose_process(mob/living/M)
@@ -587,14 +588,14 @@
 	if(iscarbon(L))
 		var/mob/living/carbon/drugged = L
 		ADD_TRAIT(drugged, TRAIT_CLOUDED, type)
-		ADD_TRAIT(drugged, TRAIT_CHEMICAL_NIGHTVISION, type)
+		ADD_TRAIT(drugged, vision_trait, type)
 		drugged.update_sight()
 
 
 /datum/reagent/drug/stardrop/on_mob_end_metabolize(mob/living/L)
 	if(iscarbon(L))
 		var/mob/living/carbon/drugged = L
-		REMOVE_TRAIT(drugged, TRAIT_CHEMICAL_NIGHTVISION, type)
+		REMOVE_TRAIT(drugged, vision_trait, type)
 		REMOVE_TRAIT(drugged, TRAIT_CLOUDED, type)
 		drugged.update_sight()
 
