@@ -108,6 +108,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define LETPASSTHROW (1<<6)
 #define PASSDOORHATCH (1<<7)
 #define PASSPLATFORM (1<<8)
+/// Do not intercept click attempts during Adjacent() checks. See [turf/proc/ClickCross]. **ONLY MEANINGFUL ON pass_flags_self!**
+#define LETPASSCLICKS (1<<9)
 
 //Movement Types
 #define GROUND (1<<0)

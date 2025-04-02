@@ -305,7 +305,7 @@
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
 		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
-		/obj/item/ammo_box/vickland_a308,
+		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips

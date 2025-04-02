@@ -234,7 +234,7 @@
 			customise = alert(user, "Do you want to customize the photo?", "Customization", "Yes", "No")
 		if(customise == "Yes")
 			var/name1 = stripped_input(user, "Set a name for this photo, or leave blank. 32 characters max.", "Name", max_length = 32)
-			var/desc1 = stripped_input(user, "Set a description to add to photo, or leave blank. 128 characters max.", "Caption", max_length = 128)
+			var/desc1 = stripped_input(user, "Set a description to add to photo, or leave blank. 256 characters max.", "Description", max_length = 256)
 			var/caption = stripped_input(user, "Set a caption for this photo, or leave blank. 256 characters max.", "Caption", max_length = 256)
 			if(name1)
 				picture.picture_name = name1

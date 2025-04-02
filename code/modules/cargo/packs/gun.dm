@@ -242,19 +242,29 @@
 	faction = /datum/faction/pgf
 
 /datum/supply_pack/gun/laser/kalix
-	name = "Etherbor BG-12 Beam Rifle Crate"
-	desc = "Contains a single BG-12 Beam Rifle, a civilian-grade semi-automatic developed in the PGF, manufactured by Etherbor Industries."
+	name = "Etherbor BG-12 Beam Gun Crate"
+	desc = "Contains a single BG-12 Beam Gun, a civilian-grade semi-automatic developed in the PGF, manufactured by Etherbor Industries."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/kalixrifle)
-	crate_name = "beam rifle crate"
+	crate_name = "beam gun crate"
 	faction = /datum/faction/pgf
 
 /datum/supply_pack/gun/laser/bg16
-	name = "Etherbor BG-16 Beam Rifle Crate"
-	desc = "Contains a single BG-16 Beam Rifle, a military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
-	cost = 3500
+	name = "Etherbor BG-16 Beam Gun Crate"
+	desc = "Contains a single BG-16 Beam Gun, a military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/bg16)
-	crate_name = "beam rifle crate"
+	crate_name = "beam gun crate"
+	faction = /datum/faction/pgf
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/laser/bgc10
+	name = "Etherbor BGC-10 Beam Carbine Crate"
+	desc = "Contains a single BGC-10 Beam Carbine, an intermediate military-grade automatic developed in the PGF and manufactured by Etherbor Industries for use within the Marine Corps."
+	cost = 5000
+	contains = list(/obj/item/storage/guncase/energy/bgc10)
+	crate_name = "beam carbine crate"
 	faction = /datum/faction/pgf
 	faction_discount = 0
 	faction_locked = TRUE
@@ -594,7 +604,7 @@
 	name = "CM-24 Surplus Stockpile Rifle"
 	desc = "Contains a higher-powered rifle chambered in 7.62x40 CLIP based on the SKM-24 platform, formerly the main service rifle of the CMM. This one has been pulled from reservist stockpiles."
 	cost = 5000
-	contains = list(/obj/item/storage/guncase/cm82)
+	contains = list(/obj/item/storage/guncase/cm24)
 	crate_name = "rifle crate"
 	faction = /datum/faction/clip
 	faction_discount = 0
@@ -663,7 +673,7 @@
 
 /datum/supply_pack/gun/vickland
 	name = "Vickland Battle Rifle"
-	desc = "Contains a high-powered semi-automatic battle rifle chambered in .308 and produced by Hunter's Pride. Fed via stripper clips with a 10 round capacity."
+	desc = "Contains a high-powered semi-automatic battle rifle chambered in 8x50mmR and produced by Hunter's Pride. Fed via stripper clips with an 8 round capacity."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/vickland)
 	crate_name = "dmr crate"
