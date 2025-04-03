@@ -11,6 +11,8 @@
 
 	bounce_sfx_override = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg'
 
+	wear_modifier = 0.5
+
 /obj/item/ammo_casing/shotgun/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? "" : "-spent"]"
 	return ..()
@@ -22,6 +24,8 @@
 	projectile_type = /obj/projectile/bullet/pellet/buckshot
 	pellets = 8
 	variance = 25
+
+	wear_modifier = 1
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"
@@ -38,6 +42,8 @@
 	pellets = 8
 	variance = 25
 	custom_materials = list(/datum/material/iron=4000)
+
+	wear_modifier = 1
 
 /obj/item/ammo_casing/shotgun/incendiary
 	name = "incendiary slug"
@@ -61,6 +67,8 @@
 	custom_materials = list(/datum/material/iron=250)
 	pellets = 10
 	variance = 25
+
+	wear_modifier = 1
 
 /obj/item/ammo_casing/shotgun/incapacitate
 	name = "custom incapacitating shot"
@@ -121,17 +129,23 @@
 	pellets = 8
 	variance = 45
 
+	wear_modifier = 1
+
 /obj/item/ammo_casing/shotgun/meteorslug
 	name = "meteorslug shell"
 	desc = "A shotgun shell rigged with CMC technology, which launches a massive slug when fired."
 	icon_state = "meteor"
 	projectile_type = /obj/projectile/bullet/slug/meteor
 
+	wear_modifier = 1
+
 /obj/item/ammo_casing/shotgun/frag12
 	name = "FRAG-12 slug"
 	desc = "A high explosive breaching round for a 12 gauge shotgun."
 	icon_state = "frag12"
 	projectile_type = /obj/projectile/bullet/slug/frag12
+
+	wear_modifier = 1
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"
@@ -142,6 +156,8 @@
 	pellets = 8
 	variance = 25
 
+	wear_modifier = 1
+
 /obj/item/ammo_casing/shotgun/laserscatter
 	name = "scatter laser shell"
 	desc = "An advanced shotgun shell that uses a micro laser to replicate the effects of a scatter laser weapon in a ballistic package."
@@ -149,6 +165,8 @@
 	projectile_type = /obj/projectile/beam/weak
 	pellets = 8
 	variance = 25
+
+	wear_modifier = 1
 
 /obj/item/ammo_casing/shotgun/pulseslug
 	name = "pulse slug"
@@ -166,3 +184,5 @@
 	pellets = 6
 	variance = 20
 	transform = matrix(2, 0, 0, 0, 2, 0)
+
+	wear_modifier = 1
