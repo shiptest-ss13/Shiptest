@@ -54,7 +54,7 @@
 			officers += crew[job]
 		output += crew[job]
 
-	return "[crew] ([officers] officer[length(officers) != 1 ? "s" : ""])"
+	return "[length(crew)] ([officers] officer[length(officers) != 1 ? "s" : ""])"
 
 /datum/autowiki/ship/proc/format_crew_list(list/crew)
 	var/output = ""
@@ -99,7 +99,7 @@
 
 	//Make all icons 32x32 for wiki sizing consistency
 	if(wiki_icon.Height() != 32 || wiki_icon.Width() != 32)
-		wiki_icon.Crop(0, 0, 32, 32)
+		wiki_icon.Crop(1, 1, 32, 32)
 
 	return wiki_icon
 
@@ -109,6 +109,6 @@
 
 	var/icon/hudicon = icon('icons/mob/hud.dmi', "hud[initial(to_equip.outfit.faction_icon)]")
 	hudicon.Blend(icon('icons/mob/hud.dmi', "hud[initial(to_equip.outfit.job_icon)]"), ICON_OVERLAY)
-	hudicon.Crop(0, 16, 9, 24)
+	hudicon.Crop(1, 17, 8, 24)
 
 	return hudicon
