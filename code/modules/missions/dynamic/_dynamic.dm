@@ -68,10 +68,12 @@
 	return
 
 /datum/mission/ruin/can_turn_in(atom/movable/item_to_check)
-	if(istype(required_item) && specific_item)
+	if(specific_item)
+		if(!istype(required_item))
+			return FALSE
 		if(item_to_check == required_item)
 			return TRUE
-	else if (!specific_item)
+	else
 		if(istype(item_to_check, setpiece_item))
 			return TRUE
 		else if(istype(required_item) && istype(item_to_check, required_item.type))
