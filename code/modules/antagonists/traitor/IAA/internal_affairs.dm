@@ -34,7 +34,7 @@
 /datum/antagonist/traitor/internal_affairs/on_removal()
 	STOP_PROCESSING(SSprocessing,src)
 	.=..()
-/datum/antagonist/traitor/internal_affairs/process()
+/datum/antagonist/traitor/internal_affairs/process(seconds_per_tick)
 	iaa_process()
 
 

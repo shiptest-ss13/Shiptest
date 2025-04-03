@@ -359,7 +359,7 @@ Possible to do for anyone motivated enough:
 	else//If there is a hologram, remove it.
 		clear_holo(user)
 
-/obj/machinery/holopad/process()
+/obj/machinery/holopad/process(seconds_per_tick)
 	if(LAZYLEN(masters))
 		for(var/I in masters)
 			var/mob/living/master = I

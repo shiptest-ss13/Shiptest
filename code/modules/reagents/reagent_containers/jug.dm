@@ -172,3 +172,23 @@
 /obj/item/reagent_containers/glass/chem_jug/hexacrete
 	name = "chemical jug (hexacrete)"
 	list_reagents = list(/datum/reagent/concrete/hexacrete = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/eznutriment
+	name = "chemical jug (E-Z-Nutrient)"
+	list_reagents = list(/datum/reagent/plantnutriment/eznutriment = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/left4zednutriment
+	name = "chemical jug (Left 4 Zed)"
+	list_reagents = list(/datum/reagent/plantnutriment/left4zednutriment = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/robustharvestnutriment
+	name = "chemical jug (Robust Harvest)"
+	list_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/endurogrow
+	name = "chemical jug (Enduro Grow)"
+	list_reagents = list(/datum/reagent/plantnutriment/endurogrow = 150)
+
+/obj/item/reagent_containers/glass/chem_jug/liquidearthquake
+	name = "chemical jug (Liquid Earthquake)"
+	list_reagents = list(/datum/reagent/plantnutriment/liquidearthquake = 150)

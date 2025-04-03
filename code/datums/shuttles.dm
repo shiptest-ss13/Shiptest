@@ -21,10 +21,8 @@
 	var/prefix = "ISV"
 	/// The name of the ship's manufacturer.
 	var/manufacturer = "Unknown"
-	/// The full name of the ship's faction.
-	var/faction_name = "Independent"
-	var/faction_path = /datum/faction/independent
-	var/datum/faction/faction_datum
+	/// The faction this ship belongs to.
+	var/datum/faction/faction
 	/// Whether or not players from other ships can open airlocks.
 	var/unique_ship_access = TRUE
 	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
@@ -47,7 +45,7 @@
 /datum/map_template/shuttle/New(path, rename, cache)
 	if(path)
 		mappath = path
-	else
+	else if(category && file_name)
 		mappath = "_maps/shuttles/[category]/[file_name].dmm"
 	. = ..()
 

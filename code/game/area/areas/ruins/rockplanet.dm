@@ -97,3 +97,52 @@
 
 /area/ruin/rockplanet/mining_base/rig_two
 	name = "Mining Platform #2"
+
+// Rust Base
+
+/area/ruin/rockplanet/rust_base
+	name = "Crashed Ship"
+
+/area/ruin/rockplanet/rust_base/hallway
+	name = "ISV Rust Base Hallway"
+	icon_state = "hallA"
+
+/area/ruin/rockplanet/rust_base/engine_one
+	name = "ISV Rust Base Port Engine"
+	icon_state = "engine"
+
+/area/ruin/rockplanet/rust_base/engine_two
+	name = "ISV Rust Base Starboard Engine"
+	icon_state = "engine"
+
+/area/ruin/rockplanet/rust_base/slop
+	name = "ISV Rust Base Canteen"
+	icon_state = "bar"
+
+/area/ruin/rockplanet/rust_base/dorms
+	name = "ISV Rust Base Dorms"
+	icon_state = "crew_quarters"
+
+/area/ruin/rockplanet/rust_base/cryo
+	name = "ISV Rust Base Cryo"
+	icon_state = "cryo"
+
+/area/ruin/rockplanet/rust_base/mechbay
+	name = "ISV Rust Base Mech Bay"
+	icon_state = "medresearch"
+
+/area/ruin/rockplanet/rust_base/hallway2
+	name = "ISV Rust Base Port Primary Hallway"
+	icon_state = "hallP"
+
+/area/ruin/rockplanet/rust_base/bridge
+	name = "ISV Rust Base Bridge"
+	icon_state = "bridge"
+
+/area/ruin/rockplanet/rust_base/armory
+	name = "ISV Rust Base Armory"
+	icon_state = "armory"
+
+/area/ruin/rockplanet/rust_base/tanto2
+	name = "Crashed Moonshiner"
+	icon_state = "green"

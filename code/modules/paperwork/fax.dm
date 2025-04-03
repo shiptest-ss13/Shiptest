@@ -121,9 +121,9 @@
 		. += "<span class='notice'>Its output port is jammed and needs cleaning.</span>"
 
 
-/obj/machinery/fax/process(delta_time)
+/obj/machinery/fax/process(seconds_per_tick)
 	if(seconds_electrified > MACHINE_NOT_ELECTRIFIED)
-		seconds_electrified -= delta_time
+		seconds_electrified -= seconds_per_tick
 
 /obj/machinery/fax/attack_hand(mob/user)
 	if(seconds_electrified && !(machine_stat & NOPOWER))
@@ -322,11 +322,8 @@
 				var/obj/item/paper/fax_paper = loaded
 				fax_paper.request_state = TRUE
 				thing_to_send = fax_paper
-			else if(istype(loaded, /obj/item/photo))
-				thing_to_send = loaded
 			else
-				to_chat(usr, icon2html(src.icon, usr) + "<span class='warning'>ERROR: Failed to send fax.</span>")
-				return
+				thing_to_send = loaded
 
 			if(!thing_to_send)
 				return
@@ -335,7 +332,13 @@
 			history_add("Send", params["name"])
 
 			GLOB.requests.fax_request(usr.client, "sent a fax message from [fax_name]/[fax_id] to [params["name"]]", thing_to_send)
-			to_chat(GLOB.admins, "<span class='adminnotice'>[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])]</span> [istype(thing_to_send, /obj/item/paper) ? ADMIN_SHOW_PAPER(thing_to_send) : ADMIN_SHOW_PHOTO(thing_to_send)]")
+			var/to_show = ""
+			if(istype(thing_to_send, /obj/item/paper) || istype(thing_to_send, /obj/item/photo))
+				to_show = "[istype(thing_to_send, /obj/item/paper) ? ADMIN_SHOW_PAPER(thing_to_send) : ADMIN_SHOW_PHOTO(thing_to_send)]"
+			else
+				to_show = ". They sent [thing_to_send.name]"
+
+			to_chat(GLOB.admins, "<span class='adminnotice'>[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])][to_show]</span>")
 			log_fax(thing_to_send, params["id"], params["name"])
 			loaded_item_ref = null
 

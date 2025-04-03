@@ -59,7 +59,7 @@
 	..()
 
 
-/obj/singularity/energy_ball/process()
+/obj/singularity/energy_ball/process(seconds_per_tick)
 	if(!orbiting)
 		handle_energy()
 

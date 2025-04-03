@@ -40,7 +40,7 @@
 	active = TRUE
 	return TRUE
 
-/datum/effect_system/trail_follow/process()
+/datum/effect_system/trail_follow/process(seconds_per_tick)
 	generate_effect()
 
 /datum/effect_system/trail_follow/generate_effect()

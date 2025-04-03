@@ -67,7 +67,7 @@
 		return
 	return ..()
 
-/obj/item/hot_potato/process()
+/obj/item/hot_potato/process(seconds_per_tick)
 	if(stimulant)
 		if(isliving(loc))
 			var/mob/living/L = loc

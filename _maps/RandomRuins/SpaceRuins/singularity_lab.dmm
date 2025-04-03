@@ -9134,7 +9134,6 @@
 /obj/effect/gibspawner,
 /obj/item/gun/energy/lasercannon{
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
-	icon_state = "lasercannon";
 	name = "NT-LS-1013"
 	},
 /turf/open/floor/plating/asteroid,
@@ -10945,7 +10944,6 @@
 /obj/machinery/light/directional/north,
 /obj/item/gun/energy/lasercannon{
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
-	icon_state = "lasercannon";
 	name = "NT-LS-1013"
 	},
 /obj/item/gun/energy/laser/iot,
@@ -11643,7 +11641,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/flippedtable{
-	dir = 2;
 	icon_state = ""
 	},
 /turf/open/floor/carpet/nanoweave/purple,
@@ -12489,6 +12486,10 @@
 "Vn" = (
 /obj/machinery/the_singularitygen{
 	anchored = 1
+	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	type_to_spawn = /obj/machinery/the_singularitygen
 	},
 /turf/open/floor/plating,
 /area/space/nearstation)

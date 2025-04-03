@@ -38,7 +38,7 @@
 	check_parts = TRUE
 
 /obj/item/grenade/iedcasing/spawned/Initialize()
-	new /obj/item/reagent_containers/food/drinks/soda_cans/random(src)
+	new /obj/effect/spawner/random/food_or_drink/soda_can(src)
 	return ..()
 
 /obj/item/grenade/iedcasing/CheckParts(list/parts_list)

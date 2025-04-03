@@ -315,6 +315,16 @@
 		/obj/item/dnainjector/m2h = 3)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/smokebombs
+	name = "box of smoke grenades (WARNING)"
+	desc = "<B>WARNING: Do not use in enclosed areas. Protective mask must be worn when in smoke cloud.</B>"
+	icon_state = "secbox"
+	illustration = "flashbang"
+
+/obj/item/storage/box/smokebombs/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/grenade/smokebomb(src)
+
 /obj/item/storage/box/flashbangs
 	name = "box of flashbangs (WARNING)"
 	desc = "<B>WARNING: These devices are extremely dangerous and can cause blindness or deafness in repeated use.</B>"
@@ -762,15 +772,6 @@
 /obj/item/storage/box/deputy/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/clothing/accessory/armband/deputy(src)
-
-/obj/item/storage/box/smokebombs
-	name = "box of smoke grenades"
-	desc = "Used for rapidly laying cover."
-	illustration = "grenade"
-
-/obj/item/storage/box/smokebombs/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/grenade/smokebomb(src)
 
 /obj/item/storage/box/metalfoam
 	name = "box of metal foam grenades"
@@ -1268,6 +1269,41 @@
 		/obj/item/stock_parts/matter_bin/adv = 2)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/stockparts/t2/capacitor
+
+/obj/item/storage/box/stockparts/t2/capacitor/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/adv = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/scan
+
+/obj/item/storage/box/stockparts/t2/scan/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/scanning_module/adv = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/manipulator
+
+/obj/item/storage/box/stockparts/t2/manipulator/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/manipulator/nano = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/laser
+
+/obj/item/storage/box/stockparts/t2/laser/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/micro_laser/high = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/matter
+
+/obj/item/storage/box/stockparts/t2/matter/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/matter_bin/adv = 10)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/stockparts/t3
 	name = "box of T3 stock parts"
 	desc = "Contains a variety of super stock parts."
@@ -1279,6 +1315,41 @@
 		/obj/item/stock_parts/manipulator/pico = 2,
 		/obj/item/stock_parts/micro_laser/ultra = 2,
 		/obj/item/stock_parts/matter_bin/super = 2)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/capacitor
+
+/obj/item/storage/box/stockparts/t3/capacitor/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/super = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/scan
+
+/obj/item/storage/box/stockparts/t3/scan/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/scanning_module/phasic = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/manipulator
+
+/obj/item/storage/box/stockparts/t3/manipulator/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/manipulator/pico = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/laser
+
+/obj/item/storage/box/stockparts/t3/laser/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/micro_laser/ultra = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/matter
+
+/obj/item/storage/box/stockparts/t3/matter/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/matter_bin/super = 10)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/stockparts/deluxe

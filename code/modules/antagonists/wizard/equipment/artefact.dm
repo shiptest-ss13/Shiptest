@@ -49,7 +49,7 @@
 	START_PROCESSING(SSobj, src)
 	return
 
-/obj/effect/rend/process()
+/obj/effect/rend/process(seconds_per_tick)
 	if(!spawn_fast)
 		if(locate(/mob) in loc)
 			return
@@ -88,7 +88,7 @@
 	current_size = STAGE_FOUR
 	allowed_size = STAGE_FOUR
 
-/obj/singularity/wizard/process()
+/obj/singularity/wizard/process(seconds_per_tick)
 	move()
 	eat()
 	return
@@ -139,7 +139,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/scrying/process()
+/obj/item/scrying/process(seconds_per_tick)
 	var/mob/holder = get(loc, /mob)
 	if(current_owner && current_owner != holder)
 

@@ -165,7 +165,7 @@
 				user.visible_message("<span class='notice'>[user] deactivates [user.p_their()] scanner.</span>", "<span class='notice'>You deactivate your scanner.</span>")
 			playsound(src, 'sound/items/screwdriver2.ogg', 50, TRUE)
 
-/obj/item/pinpointer/mineral/process()
+/obj/item/pinpointer/mineral/process(seconds_per_tick)
 	switch(scanmode)
 		if(SCANMODE_SUBSURFACE)
 			if(active && target && target.loc == null)

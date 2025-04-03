@@ -109,9 +109,9 @@
 /datum/component/embedded/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL, COMSIG_PARENT_EXAMINE))
 
-/datum/component/embedded/process()
+/datum/component/embedded/process(seconds_per_tick)
 	if(iscarbon(parent))
-		processCarbon()
+		processCarbon(seconds_per_tick)
 
 /datum/component/embedded/Destroy()
 	if(weapon)
@@ -271,7 +271,7 @@
 
 /// Items embedded/stuck to carbons both check whether they randomly fall out (if applicable), as well as if the target mob and limb still exists.
 /// Items harmfully embedded in carbons have an additional check for random pain (if applicable)
-/datum/component/embedded/proc/processCarbon()
+/datum/component/embedded/proc/processCarbon(seconds_per_tick)
 	var/mob/living/carbon/victim = parent
 
 	if(!victim || !limb) // in case the victim and/or their limbs exploded (say, due to a sticky bomb)
@@ -282,7 +282,7 @@
 		return
 
 	var/damage = weapon.w_class * pain_mult
-	var/chance = pain_chance
+	var/chance = SPT_PROB_RATE(pain_chance / 100, seconds_per_tick) * 100
 	if(pain_stam_pct && HAS_TRAIT_FROM(victim, TRAIT_INCAPACITATED, STAMINA)) //if it's a less-lethal embed, give them a break if they're already stamcritted
 		chance *= 0.3
 		damage *= 0.7
@@ -291,7 +291,9 @@
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage)
 		to_chat(victim, "<span class='userdanger'>[weapon] embedded in your [limb.name] hurts!</span>")
 
-	if(prob(fall_chance))
+	var/fall_chance_current = SPT_PROB_RATE(fall_chance / 100, seconds_per_tick) * 100
+
+	if(prob(fall_chance_current))
 		fallOutCarbon()
 
 

@@ -109,8 +109,8 @@
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
 	var/selfcharge = FALSE
-	var/charge_tick = 0
-	var/charge_delay = 4
+	var/charge_timer = 0
+	var/charge_delay = 8
 	//whether the gun's cell drains the cyborg user's cell to recharge
 	var/use_cyborg_cell = FALSE
 	//Time it takes to unscrew the cell
@@ -366,6 +366,8 @@
 /obj/item/gun/proc/do_wield(mob/user)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
+	if(azoom)
+		azoom.Grant(user)
 	if(wield_time > 0)
 		if(do_after(
 			user,
@@ -389,6 +391,8 @@
 	wielded_fully = FALSE
 	zoom(user, forced_zoom = FALSE)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
+	if(azoom)
+		azoom.Remove(user)
 
 /obj/item/gun/proc/is_wielded()
 	return wielded
@@ -412,14 +416,17 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
+	if(manufacturer)
+		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+
+/obj/item/gun/examine_more(mob/user)
+	. = ..()
 	if(has_safety)
 		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
 
 	if(gun_firemodes.len > 1)
 		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
-	if(manufacturer)
-		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
 
 /obj/item/gun/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
@@ -678,7 +685,7 @@
 		simulate_recoil(user, recoil, actual_angle)
 	else if(!wielded_fully)
 		var/recoil_temp = recoil_unwielded
-		var/obj/item/shield/riot/shield = user.get_inactive_held_item()
+		var/obj/item/shield/shield = user.get_inactive_held_item()
 		if(istype(shield))
 			recoil_temp += shield.recoil_bonus
 		simulate_recoil(user, recoil_temp, actual_angle)
@@ -755,14 +762,10 @@
 /obj/item/gun/pickup(mob/user)
 	. = ..()
 	update_appearance()
-	if(azoom)
-		azoom.Grant(user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	update_appearance()
-	if(azoom)
-		azoom.Remove(user)
 	if(zoomed)
 		zoom(user, user.dir)
 

@@ -86,9 +86,9 @@
 	update_appearance()
 	QDEL_LIST(deployed_shields)
 
-/obj/machinery/shieldgen/process()
+/obj/machinery/shieldgen/process(seconds_per_tick)
 	if((machine_stat & BROKEN) && active)
-		if(deployed_shields.len && prob(5))
+		if(deployed_shields.len && SPT_PROB(2.5, seconds_per_tick))
 			qdel(pick(deployed_shields))
 
 
@@ -241,7 +241,7 @@
 /obj/machinery/power/shieldwallgen/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	id = "[REF(port)][id]"
 
-/obj/machinery/power/shieldwallgen/process()
+/obj/machinery/power/shieldwallgen/process(seconds_per_tick)
 	if(active)
 		if(active == ACTIVE_SETUPFIELDS)
 			var/fields = 0
@@ -598,7 +598,7 @@
 	gen_secondary = null
 	return ..()
 
-/obj/machinery/shieldwall/process()
+/obj/machinery/shieldwall/process(seconds_per_tick)
 	if(needs_power)
 		if(!gen_primary || !gen_primary.active || !gen_secondary || !gen_secondary.active)
 			qdel(src)
@@ -607,7 +607,7 @@
 		drain_power(50)
 
 //Atmos shields suck more power
-/obj/machinery/shieldwall/atmos/process()
+/obj/machinery/shieldwall/atmos/process(seconds_per_tick)
 	if(needs_power)
 		if(!gen_primary || !gen_primary.active || !gen_secondary || !gen_secondary.active)
 			qdel(src)

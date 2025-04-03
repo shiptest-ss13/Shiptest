@@ -99,6 +99,7 @@
 	var/atom/movable/screen/ammo_counter/hud
 	/// The prefix used for the hud
 	var/prefix = ""
+	var/indicator = ""
 	var/backing_color = "#FFFFFF" // why was this hardcoded dlfhakhjdfj
 
 /datum/component/ammo_hud/Initialize()
@@ -172,7 +173,6 @@
 		hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]empty_flash")
 		return
 
-	var/indicator
 	var/rounds = num2text(get_accurate_ammo_count(pew))
 	var/oth_o
 	var/oth_t
@@ -205,7 +205,6 @@
 		hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]empty_flash")
 		return
 
-	var/indicator
 	var/rounds = num2text(get_accurate_laser_count(pew))
 	var/oth_o
 	var/oth_t
@@ -293,7 +292,6 @@
 	hud.maptext = null
 	hud.icon_state = "[prefix]backing"
 
-	var/indicator
 	var/rounds = num2text(get_accurate_ammo_count(pew))
 	var/oth_o
 	var/oth_t
@@ -335,3 +333,8 @@
 			oth_t = "[prefix]t9"
 			oth_h = "[prefix]h9"
 	hud.set_hud(backing_color, oth_o, oth_t, oth_h, indicator)
+
+/datum/component/ammo_hud/counter
+	backing_color = "#ff0000ff"
+	prefix = null
+	indicator = "bullet"

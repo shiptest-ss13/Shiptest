@@ -47,7 +47,7 @@
 	history["supply"] = list()
 	history["demand"] = list()
 
-/obj/machinery/computer/monitor/process()
+/obj/machinery/computer/monitor/process(seconds_per_tick)
 	if(!get_powernet())
 		if(use_static_power != IDLE_POWER_USE)
 			set_idle_power()

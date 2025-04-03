@@ -58,7 +58,7 @@
 	target_layer = new_layer
 	PIPING_LAYER_DOUBLE_SHIFT(src, target_layer)
 
-/obj/machinery/meter/process_atmos()
+/obj/machinery/meter/process_atmos(seconds_per_tick)
 	if(!(target?.flags_1 & INITIALIZED_1))
 		icon_state = "meterX"
 		return 0

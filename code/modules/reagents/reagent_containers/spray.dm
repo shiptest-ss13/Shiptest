@@ -240,7 +240,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/item/reagent_containers/spray/waterflower/cyborg/process()
+/obj/item/reagent_containers/spray/waterflower/cyborg/process(seconds_per_tick)
 	if(world.time < last_generate + generate_delay)
 		return
 	last_generate = world.time
@@ -317,7 +317,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/item/reagent_containers/spray/chemsprayer/janitor/process()
+/obj/item/reagent_containers/spray/chemsprayer/janitor/process(seconds_per_tick)
 	if(world.time < last_generate + generate_delay)
 		return
 	last_generate = world.time

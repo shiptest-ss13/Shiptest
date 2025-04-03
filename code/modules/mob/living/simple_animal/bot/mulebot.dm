@@ -533,7 +533,7 @@
 	num_steps = round(10/speed) //10, 5, or 3 steps, depending on how many wires we have cut
 	START_PROCESSING(SSfastprocess, src)
 
-/mob/living/simple_animal/bot/mulebot/process()
+/mob/living/simple_animal/bot/mulebot/process(seconds_per_tick)
 	if(!on || client || (num_steps <= 0) || !has_power())
 		return PROCESS_KILL
 	num_steps--

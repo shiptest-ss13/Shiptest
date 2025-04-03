@@ -294,7 +294,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /obj/machinery/doomsday_device/proc/seconds_remaining()
 	. = max(0, (round((detonation_timer - world.time) / 10)))
 
-/obj/machinery/doomsday_device/process()
+/obj/machinery/doomsday_device/process(seconds_per_tick)
 	if(!timing)
 		STOP_PROCESSING(SSfastprocess, src)
 		return

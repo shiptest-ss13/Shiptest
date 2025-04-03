@@ -1923,6 +1923,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
+/obj/item/documents/syndicate{
+	pixel_y = 4
+	},
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "wc" = (
@@ -3094,7 +3098,7 @@
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "KH" = (
 /obj/machinery/porta_turret/ruin/ramzi/light{
-	dir = 9;
+	dir = 9
 	},
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
@@ -3480,7 +3484,14 @@
 "PW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/innards,
-/obj/mecha/combat/gygax/dark,
+/obj/structure/mecha_wreckage/gygax/dark{
+	name = "515 EX 'Lucky #2'"
+	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	type_to_spawn = /obj/structure/mecha_wreckage/gygax/dark;
+	mission_index = 2
+	},
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Qe" = (

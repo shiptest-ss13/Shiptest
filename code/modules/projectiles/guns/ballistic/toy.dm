@@ -19,7 +19,7 @@
 	burst_size = 3
 	item_flags = NONE
 	casing_ejector = FALSE
-	manufacturer = MANUFACTURER_NANOTRASEN
+	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
@@ -71,6 +71,7 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	item_flags = NONE
 	casing_ejector = FALSE
+	manufacturer = MANUFACTURER_DONKCO
 	pb_knockback = 0
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
@@ -92,6 +93,5 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
-	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10

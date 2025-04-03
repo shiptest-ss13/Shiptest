@@ -328,7 +328,7 @@
 	on = FALSE
 	update_appearance()
 
-/obj/item/borg/upgrade/selfrepair/process()
+/obj/item/borg/upgrade/selfrepair/process(seconds_per_tick)
 	if(!repair_tick)
 		repair_tick = 1
 		return

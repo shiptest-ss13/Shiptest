@@ -83,7 +83,7 @@
 		/obj/item/ammo_box/c38,
 		/obj/item/ammo_box/a357,
 		/obj/item/ammo_box/a858,
-		/obj/item/ammo_box/vickland_a308,
+		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris,
@@ -173,5 +173,6 @@
 		/obj/item/geiger_counter,
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/stack/marker_beacon,
-		/obj/item/reagent_containers/glass/rag
+		/obj/item/reagent_containers/glass/rag,
+		/obj/item/taperecorder
 		))

@@ -101,7 +101,7 @@
 				spawnee.new_player_panel()
 				return
 			SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name)
-			SSblackbox.record_feedback("tally", "faction_ship_purchased", 1, template.faction_datum.name)
+			SSblackbox.record_feedback("tally", "faction_ship_purchased", 1, template.faction.name)
 			// Try to spawn as the first listed job in the job slots (usually captain)
 			// Playtime checks are overridden, to ensure the player gets to join the ship they spawned.
 			if(!spawnee.AttemptLateSpawn(target.job_slots[1], target, FALSE))
@@ -147,7 +147,7 @@
 
 		var/list/ship_data = list(
 			"name" = S.name,
-			"faction" = S.source_template.faction_name,
+			"faction" = S.source_template.faction.name,
 			"class" = S.source_template.short_name,
 			"desc" = S.source_template.description,
 			"tags" = S.source_template.tags,
@@ -167,7 +167,7 @@
 			continue
 		var/list/ship_data = list(
 			"name" = T.name,
-			"faction" = T.faction_name,
+			"faction" = T.faction.name,
 			"desc" = T.description,
 			"tags" = T.tags,
 			"crewCount" = length(T.job_slots),

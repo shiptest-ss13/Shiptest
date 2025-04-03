@@ -72,18 +72,18 @@
 /datum/quirk/proc/add() //special "on add" effects
 /datum/quirk/proc/on_spawn() //these should only trigger when the character is being created for the first time, i.e. roundstart/latejoin
 /datum/quirk/proc/remove() //special "on remove" effects
-/datum/quirk/proc/on_process() //process() has some special checks, so this is the actual process
+/datum/quirk/proc/on_process(seconds_per_tick) //process() has some special checks, so this is the actual process
 /datum/quirk/proc/post_add() //for text, disclaimers etc. given after you spawn in with the trait
 /datum/quirk/proc/on_transfer() //code called when the trait is transferred to a new mob
 
-/datum/quirk/process()
+/datum/quirk/process(seconds_per_tick)
 	if(QDELETED(quirk_holder))
 		quirk_holder = null
 		qdel(src)
 		return
 	if(quirk_holder.stat == DEAD)
 		return
-	on_process()
+	on_process(seconds_per_tick)
 
 /mob/living/proc/get_trait_string(medical) //helper string. gets a string of all the traits the mob has
 	var/list/dat = list()

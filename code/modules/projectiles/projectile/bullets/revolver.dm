@@ -36,9 +36,9 @@
 	bullet_identifier = "small rubber bullet"
 
 /obj/projectile/bullet/c38/dumdum
-	name = ".38 dum-dum bullet"
+	name = ".38 prism bullet"
 	damage = 20
-	armour_penetration = -40
+	armour_penetration = -30
 	ricochets_max = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/c38/dumdum
 
@@ -70,11 +70,49 @@
 		var/mob/living/M = target
 		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))
 
+/obj/projectile/bullet/c38/ashwine
+	name = ".38 hallucinogenic bullet"
+	ricochets_max = 0
+
+/obj/projectile/bullet/c38/ashwine/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		M.adjust_jitter(5)
+		M.Dizzy(5)
+		M.adjust_drugginess(10)
+
+/obj/projectile/bullet/c38/shock
+	name = ".38 shock bullet"
+	ricochets_max = 0
+	var/zap_flags = ZAP_MOB_DAMAGE
+
+/obj/projectile/bullet/c38/shock/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		do_sparks(5, FALSE, M)
+		M.electrocute_act(5, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
+	else
+		tesla_zap(target, 5, 2000, zap_flags)
+
+/obj/projectile/bullet/c38/force
+	name = ".38 force bullet"
+	armour_penetration = 10
+	ricochets_max = 0
+
+/obj/projectile/bullet/c38/force/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(ismovable(target) && isliving(target))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+		M.safe_throw_at(throw_target, 2, 2)
+
 // .357 (Syndicate Revolver)
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
-	damage = 30
+	damage = 35
 
 	speed = BULLET_SPEED_REVOLVER
 	bullet_identifier = "medium bullet"
@@ -92,7 +130,7 @@
 
 /obj/projectile/bullet/a357/hp
 	name = ".357 hollow point bullet"
-	damage = 45
+	damage = 50
 	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 	ricochet_chance = 0

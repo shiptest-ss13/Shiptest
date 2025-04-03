@@ -122,7 +122,7 @@
 	newKey += pick("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
 	return newKey
 
-/obj/machinery/telecomms/message_server/process()
+/obj/machinery/telecomms/message_server/process(seconds_per_tick)
 	. = ..()
 	if(calibrating && calibrating <= world.time)
 		calibrating = 0

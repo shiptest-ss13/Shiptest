@@ -401,10 +401,10 @@ Contains:
 	. = ..()
 	. += "<span class='notice'>Berserk mode is [berserk_charge]% charged.</span>"
 
-/obj/item/clothing/head/helmet/space/hardsuit/berserker/process(delta_time)
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/process(seconds_per_tick)
 	. = ..()
 	if(berserk_active)
-		berserk_charge = clamp(berserk_charge - CHARGE_DRAINED_PER_SECOND * delta_time, 0, MAX_BERSERK_CHARGE)
+		berserk_charge = clamp(berserk_charge - CHARGE_DRAINED_PER_SECOND * seconds_per_tick, 0, MAX_BERSERK_CHARGE)
 	if(!berserk_charge)
 		if(ishuman(loc))
 			end_berserk(loc)

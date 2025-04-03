@@ -48,7 +48,7 @@ GENE SCANNER
 		return
 	toggle_on()
 
-/obj/item/t_scanner/process()
+/obj/item/t_scanner/process(seconds_per_tick)
 	if(!on)
 		STOP_PROCESSING(SSobj, src)
 		return null
@@ -311,12 +311,17 @@ GENE SCANNER
 		if(advanced && H.has_dna())
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
 
-		var/list/broken_stuff = list()		//WS Edit Begin - Adds bone breakage
+		var/list/broken_stuff = list()
+		var/list/damaged_structure = list()
 		for(var/obj/item/bodypart/B in H.bodyparts)
 			if(B.bone_status >= BONE_FLAG_BROKEN)		// Checks if bone is broken or splinted
-				broken_stuff += B.name
+				broken_stuff += B.plaintext_zone
+			if(B.integrity_loss)
+				damaged_structure += B.plaintext_zone
 		if(broken_stuff.len)
-			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"		//WS Edit End
+			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"
+		if(damaged_structure.len)
+			render_list+= "\t<span class='alert'>Structure rod damage detected. Subject's [english_list(damaged_structure)] [damaged_structure.len > 1 ? "rod require" : "rods requires"] replacement!</span>\n"
 
 		// Species and body temperature
 		var/datum/species/S = H.dna.species

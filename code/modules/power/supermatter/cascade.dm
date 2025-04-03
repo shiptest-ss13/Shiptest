@@ -29,7 +29,7 @@
 		START_PROCESSING(SSobj, reactivate_turfs)
 	. = ..()
 
-/turf/open/indestructible/supermatter_cascade/process(delta_time)
+/turf/open/indestructible/supermatter_cascade/process(seconds_per_tick)
 	if(!COOLDOWN_FINISHED(src, spreading_cooldown))
 		return
 	COOLDOWN_START(src, spreading_cooldown, 3 SECONDS)

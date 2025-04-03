@@ -182,13 +182,13 @@
 		begin_processing()
 
 
-/obj/machinery/defibrillator_mount/charging/process()
+/obj/machinery/defibrillator_mount/charging/process(seconds_per_tick)
 	var/obj/item/stock_parts/cell/C = get_cell()
 	if(!C || !is_operational)
 		return PROCESS_KILL
 	if(C.charge < C.maxcharge)
-		use_power(100)
-		C.give(80)
+		use_power(50 * seconds_per_tick)
+		C.give(40 * seconds_per_tick)
 		update_appearance()
 
 //wallframe, for attaching the mounts easily
