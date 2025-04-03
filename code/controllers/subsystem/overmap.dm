@@ -444,6 +444,8 @@ SUBSYSTEM_DEF(overmap)
 	return 0
 
 /datum/controller/subsystem/overmap/proc/ship_locking_percentage()
+	if(world.time < 30 MINUTES)
+		return 0
 	return round(clamp(world.time / (1 MINUTES), 25, 0) + TRANSFER_FACTOR * 100)
 
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
