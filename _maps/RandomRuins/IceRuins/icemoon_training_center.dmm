@@ -40,6 +40,8 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
+/obj/structure/hazard/spray/steam/cough,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/central_hall)
 "ao" = (
@@ -1331,6 +1333,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-5"
+	},
+/obj/structure/disposalpipe/broken{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/central_hall)
@@ -4521,6 +4526,7 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/central_hall)
 "wi" = (
