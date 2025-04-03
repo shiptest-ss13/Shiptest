@@ -332,7 +332,9 @@
 				to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump preperations!</span>")
 				return
 			var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE, empty_if_src_docked = FALSE)
-			say(current_ship.show_interaction_menu(usr, to_act))
+			var/feedback_text = current_ship.show_interaction_menu(usr, to_act)
+			if(feedback_text)
+				say(feedback_text)
 			return
 
 	if(jump_state != JUMP_STATE_OFF)

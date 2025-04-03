@@ -325,7 +325,7 @@
 				return "ERROR: No open ports on [interact_target]."
 			choice = tgui_input_list(usr, "Select docking location at [interact_target]?", "Dock at", dockables)
 			if(!choice)
-				return "WARNING: Interaction aborted."
+				return "Interaction canceled."
 			return Dock(interact_target, choice)
 		if(INTERACTION_OVERMAP_QUICKDOCK)
 			if(docked_to || docking)
@@ -344,7 +344,7 @@
 				return "ERROR: No open ports on [src]."
 			choice = tgui_input_list(usr, "Select where to dock [interact_target]?", "Dock at", dockables)
 			if(!choice)
-				return "WARNING: Interaction aborted."
+				return "Interaction canceled."
 			return interact_target.Dock(src, choice)
 	//if nothing returns, return choice?
 	return choice
@@ -444,6 +444,7 @@
 		docking = FALSE
 		return ticket_error || "Unknown docking error!"
 	if(!pre_dock(dock_target, ticket))
+		ticket_error = ticket?.docking_error
 		qdel(ticket)
 		docking = FALSE
 		return ticket_error

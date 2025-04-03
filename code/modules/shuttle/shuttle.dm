@@ -645,7 +645,7 @@
 
 	return SHUTTLE_CAN_DOCK
 
-/obj/docking_port/mobile/proc/check_dock(obj/docking_port/stationary/S, silent=FALSE, intention_to_dock = TRUE)
+/obj/docking_port/mobile/proc/check_dock(obj/docking_port/stationary/S, silent=FALSE, intention_to_dock = TRUE, datum/docking_ticket/ticket)
 	var/status = canDock(S, intention_to_dock)
 	if(status == SHUTTLE_CAN_DOCK)
 		return TRUE
@@ -655,6 +655,8 @@
 			message_admins(msg)
 		// We're already docked there, don't need to do anything.
 		// Triggering shuttle movement code in place is weird
+		if(ticket)
+			ticket.docking_error = "WARNING: Unable to dock at [S]: [status]"
 		return FALSE
 
 //call the shuttle to destination S
