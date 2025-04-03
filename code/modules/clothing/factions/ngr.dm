@@ -129,9 +129,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 	hardsuit_type = "ngr"
 
-	kepori_override_icon = 
-	supports_variations = KEPORI_VARIATION
-
 /obj/item/clothing/suit/space/hardsuit/syndi/ngr
 	name = "beige-red hardsuit"
 	desc = "A standardized dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by beige. It is in EVA mode. Manufactured by Second Battlegroup."
@@ -144,8 +141,6 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
 	jetpack = null
 	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
-
-	kepori_override_icon = 
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/plasmaman/ngr
