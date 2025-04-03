@@ -221,6 +221,7 @@
 	if(prob(40))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.hallucination += 5
+	..()
 	. = 1
 
 /datum/reagent/drug/mammoth/overdose_process(mob/living/M)
