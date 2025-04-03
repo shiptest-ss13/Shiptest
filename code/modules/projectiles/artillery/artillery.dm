@@ -318,13 +318,13 @@
 	name = "\improper 150mm artillery shell"
 	desc = "An unlabeled 150mm shell, probably a casing."
 	icon = 'icons/obj/machines/howitzer.dmi'
-	icon_state = "howitzer"
+	icon_state = "howitzer_ammo"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/mortal_shell/howitzer/incendiary
 	name = "\improper 150mm incendiary artillery shell"
 	desc = "An 150mm artillery shell, loaded with explosives to punch through light structures then burn out whatever is on the other side. Will ruin their day and skin."
-	icon_state = "howitzer_incend"
+	icon_state = "howitzer_ammo_incend"
 	ammo_type = /obj/projectile/bullet/mortar/howi/incend
 
 /obj/projectile/bullet/mortar
