@@ -188,15 +188,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/killship)
-"aT" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "shutter";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/icemoon/training_facility/classroom)
 "aV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -362,13 +353,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/mech_garage)
 "bL" = (
-/obj/effect/turf_decal/techfloor/orange,
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/techfloor/corner,
-/obj/effect/decal/cleanable/blood/gibs/down,
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/office_2)
 "bM" = (
@@ -577,7 +562,8 @@
 	dir = 5
 	},
 /obj/structure/filingcabinet/double/grey{
-	pixel_y = 14
+	pixel_y = 14;
+	density = 0
 	},
 /obj/machinery/button/door{
 	dir = 8;
@@ -1025,19 +1011,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/central_hall)
 "ff" = (
-/obj/effect/turf_decal/techfloor/orange{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor/corner{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 10
-	},
 /obj/effect/turf_decal/corner/transparent/syndiered,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
 "fg" = (
@@ -1650,6 +1630,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/dorms)
+"ia" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility)
 "id" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -2020,6 +2004,14 @@
 	pixel_x = -11;
 	pixel_y = -16
 	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility/range)
+"jT" = (
+/obj/structure/fence/door/opened,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/range)
 "jU" = (
@@ -3019,6 +3011,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
+"ph" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility/range)
 "pi" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -3342,11 +3339,7 @@
 "qx" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_x = -11;
-	pixel_y = -16
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/office_2)
 "qy" = (
@@ -3647,6 +3640,12 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/training_facility/garage)
+"rH" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility/range)
 "rK" = (
 /obj/structure/flippedtable,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -3677,7 +3676,8 @@
 "rO" = (
 /obj/structure/filingcabinet/double{
 	dir = 4;
-	pixel_x = -13
+	pixel_x = -13;
+	density = 0
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -4802,6 +4802,13 @@
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/ruin/icemoon/training_facility/course)
+"xs" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility)
 "xx" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
@@ -5763,10 +5770,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/training_facility/dorms)
-"Cg" = (
-/obj/structure/fence/door/opened,
-/turf/open/floor/plating,
-/area/ruin/icemoon/training_facility/range)
 "Ch" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/icemoon/training_facility/garage)
@@ -5832,16 +5835,29 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/cafeteria)
 "Cz" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = 7;
+	pixel_y = 5
+	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility)
 "CD" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
-	icon_state = "5-6"
+	icon_state = "1-6"
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
@@ -6339,6 +6355,16 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/dorms)
+"Fb" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/syndiered/border,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/icemoon/training_facility/range)
 "Ff" = (
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/dorms)
@@ -6700,13 +6726,18 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/icemoon/training_facility)
 "Hf" = (
-/obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner,
+/obj/effect/decal/cleanable/blood/gibs/down,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/office_2)
 "Hg" = (
@@ -6818,16 +6849,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/dorms)
-"HO" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 2
-	},
-/obj/machinery/door/airlock/security/glass,
-/obj/structure/cable{
-	icon_state = "9-10"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/icemoon/training_facility/range)
 "HQ" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/dark,
@@ -7617,6 +7638,12 @@
 /obj/structure/platform/wood/corner,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility/course)
+"Lk" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility/range)
 "Ln" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -8137,7 +8164,8 @@
 "Ok" = (
 /obj/structure/filingcabinet/double{
 	dir = 4;
-	pixel_x = -13
+	pixel_x = -13;
+	density = 0
 	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -8176,10 +8204,15 @@
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/locker_room)
 "Os" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 2
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/machinery/door/airlock/security,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/range)
 "Ow" = (
@@ -9309,6 +9342,13 @@
 	},
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/ruin/icemoon/training_facility/course)
+"Tf" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = -14;
+	pixel_y = 0
+	},
+/turf/open/floor/plating/asteroid/icerock/cracked,
+/area/ruin/icemoon/training_facility)
 "Tg" = (
 /obj/machinery/door/airlock/security,
 /turf/open/floor/plating,
@@ -9910,6 +9950,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/icemoon/training_facility/medbay)
+"Wk" = (
+/obj/effect/decal/cleanable/blood/old{
+	pixel_x = 13;
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility/range)
 "Wl" = (
 /obj/effect/spawner/bunk_bed,
 /obj/effect/turf_decal/techfloor{
@@ -10481,6 +10531,13 @@
 /obj/item/kirbyplants/photosynthetic,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/lobby)
+"YO" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = -2;
+	pixel_y = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/icemoon/training_facility)
 "YS" = (
 /obj/structure/mecha_wreckage/ripley/clip,
 /turf/open/floor/plating/asteroid/snow/lit,
@@ -10629,7 +10686,8 @@
 "Zz" = (
 /obj/structure/filingcabinet/double/grey{
 	dir = 4;
-	pixel_x = -9
+	pixel_x = -9;
+	density = 0
 	},
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
@@ -12918,7 +12976,7 @@ lq
 cH
 bM
 bL
-HO
+Gh
 ff
 od
 cV
@@ -12993,7 +13051,7 @@ ik
 oi
 qx
 Gh
-rt
+Fb
 iw
 hE
 mG
@@ -13951,9 +14009,9 @@ bx
 AZ
 Dj
 ok
-EE
-RY
-bx
+ph
+jT
+rH
 JI
 Yf
 Hd
@@ -14027,7 +14085,7 @@ qm
 EU
 UE
 RY
-bx
+Lk
 JI
 pp
 sE
@@ -14101,7 +14159,7 @@ Dj
 Ag
 EE
 RY
-bx
+Lk
 JI
 eV
 sE
@@ -14174,8 +14232,8 @@ bx
 Dj
 Dj
 EE
-Cg
-bx
+RY
+Lk
 JI
 OE
 dK
@@ -14249,7 +14307,7 @@ Dj
 MJ
 UE
 RY
-bx
+Wk
 JI
 JI
 JI
@@ -14397,7 +14455,7 @@ bx
 xj
 xj
 Gh
-Cz
+ia
 Gh
 xj
 xj
@@ -14471,7 +14529,7 @@ xj
 xj
 xj
 Gh
-Cz
+xs
 Cz
 xj
 xj
@@ -14493,8 +14551,8 @@ KG
 NO
 qP
 vB
-aT
-aT
+vB
+vB
 qP
 cI
 kW
@@ -14546,7 +14604,7 @@ xj
 Gh
 Gh
 xj
-Cz
+YO
 zT
 xj
 xj
@@ -14620,7 +14678,7 @@ xj
 Gh
 xj
 xj
-kk
+Tf
 kk
 CZ
 xj
