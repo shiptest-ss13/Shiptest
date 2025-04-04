@@ -29,7 +29,7 @@
 	if(isnull(mission_index))
 		stack_trace("[src] does not have a mission index!")
 	for(var/datum/weakref/poi_ref in planet.spawned_mission_pois)
-		var/obj/effect/landmark/mission_poi/mission_poi = poi_ref.resolve() 
+		var/obj/effect/landmark/mission_poi/mission_poi = poi_ref.resolve()
 		use_poi(mission_poi, planet)
 		if(QDELETED(mission_poi))
 			planet.spawned_mission_pois -= poi_ref
