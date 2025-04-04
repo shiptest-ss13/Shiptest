@@ -58,6 +58,12 @@
 		if(isatom(poi_result))
 			poi_result.AddComponent(/datum/component/mission_important, MISSION_IMPORTANCE_RELEVENT, src)
 
+/datum/mission/ruin/on_planet_load(datum/overmap/dynamic/planet)
+	. = ..()
+	if(!length(bound_atoms))
+		if(specific_item)
+			stack_trace("Somehow [src] ran on_planet_load and has no bound atoms still, this likely means its failed to find any valid pois to spawn? Contact Fallcon.")
+
 /datum/mission/ruin/proc/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)
 	required_item =	mission_poi.use_poi(setpiece_item, src)
 	if(isatom(required_item))
