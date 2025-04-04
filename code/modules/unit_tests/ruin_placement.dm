@@ -1,21 +1,24 @@
+/datum/overmap/dynamic/ruin_tester
+
 /datum/unit_test/ruin_placement/Run()
-	var/datum/map_zone/mapzone = SSmapping.create_map_zone("Ruin Testing Zone")
 	for(var/planet_name as anything in SSmapping.planet_types)
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
 		for(var/ruin_name as anything in SSmapping.ruin_types_list[planet_type.ruin_type])
-			log_test("Testing [ruin_name]")
+			log_test("Testing Ruin: [ruin_name]")
 			var/datum/map_template/ruin/ruin = SSmapping.ruin_types_list[planet_type.ruin_type][ruin_name]
 
-			var/datum/overmap/dynamic/dummy_overmap = new(null, FALSE)
+			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, FALSE)
 			dummy_overmap.set_planet_type(planet_type)
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 
+			dummy_overmap.mapgen
 			dummy_overmap.selected_ruin = ruin
 
 			for(var/mission_type in ruin.ruin_mission_types)
 				var/datum/mission/ruin/ruin_mission = new mission_type(dummy_overmap, 1 + length(dummy_overmap.dynamic_missions))
 				dummy_overmap.dynamic_missions += ruin_mission
 				ruin_mission.start_mission()
+				log_test("Testing Mission: [ruin_mission.name]")
 
 			dummy_overmap.load_level()
 
@@ -27,8 +30,6 @@
 
 			//qdel(vlevel)
 			qdel(dummy_overmap)
-
-	qdel(mapzone)
 
 /* Slow, and usually unecessary
 /datum/unit_test/direct_tmpl_placement/Run()
