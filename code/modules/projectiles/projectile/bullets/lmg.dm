@@ -53,7 +53,7 @@
 /obj/projectile/bullet/p50/penetrator/sabot/on_hit(atom/target, blocked = FALSE)
 	..()
 	if(pierces >= 3)
-		qdel_self
+		qdel(src)
 	if(ismecha(target))
 		var/obj/mecha/M = target
 		M.take_damage(anti_armour_damage)
