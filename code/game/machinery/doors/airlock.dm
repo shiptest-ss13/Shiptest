@@ -1165,7 +1165,7 @@
 		return FALSE
 	var/obj/item/door_seal/airlockseal = seal
 	if(!ishuman(user))
-		to_chat(user, text(span_warning("You don't have the dexterity to remove the seal!") ))
+		to_chat(user, span_warning("You don't have the dexterity to remove the seal!"))
 		return TRUE
 	user.visible_message(span_notice("[user] begins removing the seal from [src].") , span_notice("You begin removing [src]'s pneumatic seal.") )
 	playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE)
@@ -1703,9 +1703,9 @@
 	if(!user_allowed(user))
 		return
 	if(welded)
-		to_chat(user, text(span_warning("The airlock has been welded shut!") ))
+		to_chat(user, span_warning("The airlock has been welded shut!"))
 	else if(locked)
-		to_chat(user, text(span_warning("The door bolts are down!") ))
+		to_chat(user, span_warning("The door bolts are down!"))
 	else if(!density)
 		close()
 	else

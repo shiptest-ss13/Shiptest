@@ -211,10 +211,10 @@
 			return 1
 		if (A.amount_left < (7 - src.bullets))
 			src.bullets += A.amount_left
-			to_chat(user, text(span_notice("You reload [] cap\s.") , A.amount_left))
+			to_chat(user, span_notice("You reload [A.amount_left] cap\s."))
 			A.amount_left = 0
 		else
-			to_chat(user, text(span_notice("You reload [] cap\s."), 7 - src.bullets))
+			to_chat(user, span_notice("You reload [7 - src.bullets] cap\s."))
 			A.amount_left -= 7 - src.bullets
 			src.bullets = 7
 		A.update_appearance()
@@ -239,7 +239,7 @@
 	user.visible_message(
 		span_danger("[user] fires [src] at [target]!") ,
 		span_danger("You fire [src] at [target]!") ,
-		span_hear("You hear a gunshot!")
+		span_hear("You hear a gunshot!") 
 	)
 
 /obj/item/toy/ammo/gun
@@ -816,7 +816,7 @@
 		if(cardUser.is_holding(src))
 			cardUser.visible_message(span_notice("[cardUser] checks [cardUser.p_their()] card.") , span_notice("The card reads: [cardname].") )
 		else
-			. += span_warning("You need to have the card in your hand to check it!")
+			. += span_warning("You need to have the card in your hand to check it!") 
 
 
 /obj/item/toy/cards/singlecard/verb/Flip()
@@ -1066,7 +1066,7 @@
 
 /obj/item/toy/clockwork_watch/examine(mob/user)
 	. = ..()
-	. += span_info("Station Time: [station_time_timestamp()]")
+	. += span_info("Station Time: [station_time_timestamp()]") 
 
 /*
  * Toy Dagger
