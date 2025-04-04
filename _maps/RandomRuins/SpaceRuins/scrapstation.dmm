@@ -6721,7 +6721,9 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 8
 	},
-/obj/structure/closet/body_bag,
+/obj/structure/closet/body_bag{
+	opened = 1
+	},
 /obj/effect/mob_spawn/human/corpse/pgf/captain,
 /obj/item/storage/belt/sabre/pgf,
 /obj/effect/landmark/mission_poi/main{
