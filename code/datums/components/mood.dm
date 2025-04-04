@@ -49,7 +49,7 @@
 
 /datum/component/mood/proc/print_mood(mob/user)
 	var/msg = "[span_info("<EM>My current mental status:</EM>")]\n"
-	msg += span_notice("My current sanity: ")  //Long term
+	msg += span_notice("My current sanity: ") //Long term
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
 			msg += "[span_nicegreen("My mind feels like a temple!")]\n"
@@ -64,7 +64,7 @@
 		if(SANITY_INSANE to SANITY_CRAZY)
 			msg += "[span_boldwarning("AHAHAHAHAHAHAHAHAHAH!!")]\n"
 
-	msg += span_notice("My current mood: ")  //Short term
+	msg += span_notice("My current mood: ") //Short term
 	switch(mood_level)
 		if(1)
 			msg += "[span_boldwarning("I wish I was dead!")]\n"
@@ -85,7 +85,7 @@
 		if(9)
 			msg += "[span_nicegreen("I love life!")]\n"
 
-	msg += span_notice("Moodlets:\n") //All moodlets
+	msg += span_notice("Moodlets:\n")//All moodlets
 	if(mood_events.len)
 		for(var/i in mood_events)
 			var/datum/mood_event/event = mood_events[i]

@@ -77,7 +77,7 @@
 /datum/component/label/proc/Examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
-	examine_list += span_notice("It has a label with some words written on it. Use a hand labeler to remove it.") 
+	examine_list += span_notice("It has a label with some words written on it. Use a hand labeler to remove it.")
 
 /// Applies a label to the name of the parent in the format of: "parent_name (label)"
 /datum/component/label/proc/apply_label()

@@ -725,7 +725,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	else
 		user.visible_message( \
 			span_danger("[user] stabs [user.p_them()]self in the eyes with [src]!"), \
-			span_userdanger("You stab yourself in the eyes with [src]!")  \
+			span_userdanger("You stab yourself in the eyes with [src]!") \
 		)
 	if(is_human_victim)
 		var/mob/living/carbon/human/U = M

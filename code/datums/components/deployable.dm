@@ -36,7 +36,7 @@
 /datum/component/deployable/proc/examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
-	examine_list += span_notice("[source.p_they()] look[source.p_s()] like [source.p_they()] can be deployed into \a [deployed_name].") 
+	examine_list += span_notice("[source.p_they()] look[source.p_s()] like [source.p_they()] can be deployed into \a [deployed_name].")
 
 /datum/component/deployable/proc/on_attack_hand(datum/source, mob/user, location, direction)
 	SIGNAL_HANDLER

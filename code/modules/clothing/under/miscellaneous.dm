@@ -74,7 +74,7 @@
 
 /obj/item/clothing/under/plasmaman/examine(mob/user)
 	. = ..()
-	. += span_notice("There are [extinguishes_left] extinguisher charges left in this suit.") 
+	. += span_notice("There are [extinguishes_left] extinguisher charges left in this suit.")
 
 /obj/item/clothing/under/plasmaman/proc/Extinguish(mob/living/carbon/human/H)
 	if(!istype(H))

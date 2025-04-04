@@ -137,11 +137,11 @@ Borg Hypospray
 	for(var/datum/reagents/RS in reagent_list)
 		var/datum/reagent/R = locate() in RS.reagent_list
 		if(R)
-			. += span_notice("It currently has [R.volume] unit\s of [R.name] stored.") 
+			. += span_notice("It currently has [R.volume] unit\s of [R.name] stored.")
 			empty = FALSE
 
 	if(empty)
-		. += span_warning("It is currently empty! Allow some time for the internal synthesizer to produce more.") 
+		. += span_warning("It is currently empty! Allow some time for the internal synthesizer to produce more.")
 
 /obj/item/reagent_containers/borghypo/hacked
 	icon_state = "borghypo_s"
@@ -236,9 +236,9 @@ Borg Shaker
 	var/datum/reagents/RS = reagent_list[mode]
 	var/datum/reagent/R = locate() in RS.reagent_list
 	if(R)
-		return span_notice("It currently has [R.volume] unit\s of [R.name] stored.") 
+		return span_notice("It currently has [R.volume] unit\s of [R.name] stored.")
 	else
-		return span_warning("It is currently empty! Please allow some time for the synthesizer to produce more.") 
+		return span_warning("It is currently empty! Please allow some time for the synthesizer to produce more.")
 
 /obj/item/reagent_containers/borghypo/borgshaker/hacked
 	name = "cyborg shaker"

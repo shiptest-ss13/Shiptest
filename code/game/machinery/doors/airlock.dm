@@ -752,7 +752,7 @@
 /obj/machinery/door/airlock/examine(mob/user)
 	. = ..()
 	if(obj_flags & EMAGGED)
-		. += span_warning("Its access panel is smoking slightly.") 
+		. += span_warning("Its access panel is smoking slightly.")
 	if(note)
 		if(!in_range(user, src))
 			. += "There's a [note.name] pinned to the front. You can't read it from here."
@@ -784,10 +784,10 @@
 			. += "It looks very robust."
 
 	if(issilicon(user) && !(machine_stat & BROKEN))
-		. += span_notice("Shift-click [src] to [ density ? "open" : "close"] it.") 
-		. += span_notice("Ctrl-click [src] to [ locked ? "raise" : "drop"] its bolts.") 
-		. += span_notice("Alt-click [src] to [ secondsElectrified ? "un-electrify" : "permanently electrify"] it.") 
-		. += span_notice("Ctrl-Shift-click [src] to [ emergency ? "disable" : "enable"] emergency access.") 
+		. += span_notice("Shift-click [src] to [ density ? "open" : "close"] it.")
+		. += span_notice("Ctrl-click [src] to [ locked ? "raise" : "drop"] its bolts.")
+		. += span_notice("Alt-click [src] to [ secondsElectrified ? "un-electrify" : "permanently electrify"] it.")
+		. += span_notice("Ctrl-Shift-click [src] to [ emergency ? "disable" : "enable"] emergency access.")
 
 /obj/machinery/door/airlock/attack_ai(mob/user)
 	if(!canAIControl(user))
@@ -1188,7 +1188,7 @@
 		if(!security_level && (beingcrowbarred && panel_open && ((obj_flags & EMAGGED) || (density && welded && !operating && !hasPower() && !locked))))
 			user.visible_message(
 				span_notice("[user] removes the electronics from the airlock assembly."),
-				span_notice("You start to remove electronics from the airlock assembly...") 
+				span_notice("You start to remove electronics from the airlock assembly...")
 			)
 			if(I.use_tool(src, user, 40, volume=100))
 				deconstruct(TRUE, user)

@@ -57,7 +57,7 @@
 	remove_tape()
 
 /datum/component/taped/proc/examine_tape(datum/source, mob/user, list/examine_list)
-	examine_list += span_warning("A bunch of [taped_name] is holding this thing together!") 
+	examine_list += span_warning("A bunch of [taped_name] is holding this thing together!")
 
 /datum/component/taped/proc/remove_tape()
 	var/obj/item/I = parent

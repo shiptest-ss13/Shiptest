@@ -38,8 +38,8 @@
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.") 
-	. += span_notice("Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.") 
+	. += span_notice("Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.")
+	. += span_notice("Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.")
 
 /obj/item/kinetic_crusher/attack(mob/living/target, mob/living/carbon/user)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
@@ -162,7 +162,7 @@
 
 /obj/item/kinetic_crusher/old/examine(mob/user)
 	. = ..()
-	. += span_notice("This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...") 
+	. += span_notice("This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...")
 
 /obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params)
 	..()

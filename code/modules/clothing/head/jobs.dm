@@ -59,9 +59,9 @@
 /obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
 	. = ..()
 	if(!in_range(src, user) || !isobserver(user)) //hide the easter egg a little more
-		. += span_warning("You try to examine [src] closer, but you're too far away.") 
+		. += span_warning("You try to examine [src] closer, but you're too far away.")
 		return
-	. += span_notice("Alt-click to take a candy corn.") 
+	. += span_notice("Alt-click to take a candy corn.")
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

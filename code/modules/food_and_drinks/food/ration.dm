@@ -78,7 +78,7 @@
 /obj/item/reagent_containers/food/snacks/ration/examine(mob/user)
 	. = ..()
 	if(cookable && !cooked)
-		. += span_notice("It can be cooked in a microwave or warmed using a flameless ration heater.") 
+		. += span_notice("It can be cooked in a microwave or warmed using a flameless ration heater.")
 
 /obj/item/reagent_containers/food/snacks/ration/entree
 	icon_state = "ration_main"
@@ -123,7 +123,7 @@
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("[target] is too full!")  )
+			to_chat(user, span_warning("[target] is too full!") )
 			return
 		else
 			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
@@ -155,7 +155,7 @@
 		return
 	if(istype(target, /obj/item/reagent_containers))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("[target] is too full!")  )
+			to_chat(user, span_warning("[target] is too full!") )
 			return
 		else
 			to_chat(user, span_notice("You pour the [src] into [target] and shake."))

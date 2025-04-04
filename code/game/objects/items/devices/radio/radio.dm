@@ -364,13 +364,13 @@
 /obj/item/radio/examine(mob/user)
 	. = ..()
 	if (frequency && in_range(src, user))
-		. += span_notice("It is set to broadcast over the [frequency/10] frequency.") 
+		. += span_notice("It is set to broadcast over the [frequency/10] frequency.")
 	if (unscrewed)
-		. += span_notice("It can be attached and modified.") 
+		. += span_notice("It can be attached and modified.")
 	else
-		. += span_notice("It cannot be modified or attached.") 
+		. += span_notice("It cannot be modified or attached.")
 	if (in_range(src, user)&& !headset)
-		. += span_info("Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.") 
+		. += span_info("Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.")
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)

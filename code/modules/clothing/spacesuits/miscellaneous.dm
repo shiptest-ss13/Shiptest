@@ -399,7 +399,7 @@ Contains:
 
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/examine()
 	. = ..()
-	. += span_notice("Berserk mode is [berserk_charge]% charged.") 
+	. += span_notice("Berserk mode is [berserk_charge]% charged.")
 
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/process(seconds_per_tick)
 	. = ..()

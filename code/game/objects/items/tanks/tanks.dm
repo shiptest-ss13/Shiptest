@@ -88,10 +88,10 @@
 		icon = src.loc
 	if(!in_range(src, user) && !isobserver(user))
 		if(icon == src)
-			. += span_notice("If you want any more information you'll need to get closer.") 
+			. += span_notice("If you want any more information you'll need to get closer.")
 		return
 
-	. += span_notice("The gauge reads [round(air_contents.total_moles(), 0.01)] mol at [round(src.air_contents.return_pressure(),0.01)] kPa.") 	//yogs can read mols
+	. += span_notice("The gauge reads [round(air_contents.total_moles(), 0.01)] mol at [round(src.air_contents.return_pressure(),0.01)] kPa.")	//yogs can read mols
 
 	var/celsius_temperature = src.air_contents.return_temperature()-T0C
 	var/descriptive
@@ -109,7 +109,7 @@
 	else
 		descriptive = "furiously hot"
 
-	. += span_notice("It feels [descriptive].") 
+	. += span_notice("It feels [descriptive].")
 
 /obj/item/tank/deconstruct(disassembled = TRUE)
 	if(!disassembled)

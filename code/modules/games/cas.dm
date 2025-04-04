@@ -112,12 +112,12 @@
 /obj/item/toy/cards/singlecard/cas/examine(mob/user)
 	. = ..()
 	if (flipped)
-		. += span_notice("The card is face down.") 
+		. += span_notice("The card is face down.")
 	else if (blank)
-		. += span_notice("The card is blank. Write on it with a pen.") 
+		. += span_notice("The card is blank. Write on it with a pen.")
 	else
-		. += span_notice("The card reads: [name]") 
-	. += span_notice("Alt-click to flip it.") 
+		. += span_notice("The card reads: [name]")
+	. += span_notice("Alt-click to flip it.")
 
 /obj/item/toy/cards/singlecard/cas/Flip()
 	set name = "Flip Card"

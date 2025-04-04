@@ -1,4 +1,4 @@
-#define PAI_MISSING_SOFTWARE_MESSAGE span_warning("You must download the required software to use this.") 
+#define PAI_MISSING_SOFTWARE_MESSAGE span_warning("You must download the required software to use this.")
 
 /atom/movable/screen/pai
 	icon = 'icons/hud/screen_pai.dmi'

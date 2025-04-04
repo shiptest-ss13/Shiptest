@@ -288,7 +288,7 @@
 
 /obj/item/weldingtool/ignition_effect(atom/A, mob/user)
 	if(use_tool(A, user, 0, amount=1))
-		return span_notice("[user] casually lights [A] with [src], what a badass.") 
+		return span_notice("[user] casually lights [A] with [src], what a badass.")
 	else
 		return ""
 

@@ -11,7 +11,7 @@
 /obj/item/assembly/control/examine(mob/user)
 	. = ..()
 	if(id)
-		. += span_notice("Its channel ID is '[id]'.") 
+		. += span_notice("Its channel ID is '[id]'.")
 
 /obj/item/assembly/control/multitool_act(mob/living/user)
 	var/change_id = input("Set [src] ID. It must be a number between 1 and 100.", "ID", id) as num|null

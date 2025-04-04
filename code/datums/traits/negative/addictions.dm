@@ -2,8 +2,8 @@
 	name = "Junkie"
 	desc = "You can't get enough of hard drugs."
 	value = -2
-	gain_text = span_danger("You suddenly feel the craving for drugs.") 
-	lose_text = span_notice("You feel like you should kick your drug habit.") 
+	gain_text = span_danger("You suddenly feel the craving for drugs.")
+	lose_text = span_notice("You feel like you should kick your drug habit.")
 	medical_record_text = "Patient has a history of hard drugs."
 	var/drug_list = list(/datum/reagent/drug/crank, /datum/reagent/medicine/morphine, /datum/reagent/drug/happiness, /datum/reagent/drug/methamphetamine) //List of possible IDs
 	var/datum/reagent/reagent_type //!If this is defined, reagent_id will be unused and the defined reagent type will be instead.
@@ -69,8 +69,8 @@
 	name = "Smoker"
 	desc = "Sometimes you just really want a smoke. Probably not great for your lungs."
 	value = -1
-	gain_text = span_danger("You could really go for a smoke right about now.") 
-	lose_text = span_notice("You feel like you should quit smoking.") 
+	gain_text = span_danger("You could really go for a smoke right about now.")
+	lose_text = span_notice("You feel like you should quit smoking.")
 	medical_record_text = "Patient is a current smoker."
 	reagent_type = /datum/reagent/drug/nicotine
 	accessory_type = /obj/item/lighter/greyscale

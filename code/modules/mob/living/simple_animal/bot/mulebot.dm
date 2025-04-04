@@ -90,12 +90,12 @@
 	. = ..()
 	if(open)
 		if(cell)
-			. += span_notice("It has \a [cell] installed.") 
-			. += span_info("You can use a <b>crowbar</b> to remove it.") 
+			. += span_notice("It has \a [cell] installed.")
+			. += span_info("You can use a <b>crowbar</b> to remove it.")
 		else
-			. += span_notice("It has an empty compartment where a <b>power cell</b> can be installed.") 
+			. += span_notice("It has an empty compartment where a <b>power cell</b> can be installed.")
 	if(load) //observer check is so we don't show the name of the ghost that's sitting on it to prevent metagaming who's ded.
-		. += span_notice("\A [isobserver(load) ? "ghostly figure" : load] is on its load platform.") 
+		. += span_notice("\A [isobserver(load) ? "ghostly figure" : load] is on its load platform.")
 
 
 /mob/living/simple_animal/bot/mulebot/Destroy()
@@ -344,17 +344,17 @@
 	dat += "<div class='statusDisplay'>"
 	switch(mode)
 		if(BOT_IDLE)
-			dat += span_good("Ready") 
+			dat += span_good("Ready")
 		if(BOT_DELIVER)
-			dat += span_good("[mode_name[BOT_DELIVER]]") 
+			dat += span_good("[mode_name[BOT_DELIVER]]")
 		if(BOT_GO_HOME)
-			dat += span_good("[mode_name[BOT_GO_HOME]]") 
+			dat += span_good("[mode_name[BOT_GO_HOME]]")
 		if(BOT_BLOCKED)
-			dat += span_average("[mode_name[BOT_BLOCKED]]") 
+			dat += span_average("[mode_name[BOT_BLOCKED]]")
 		if(BOT_NAV,BOT_WAIT_FOR_NAV)
-			dat += span_average("[mode_name[BOT_NAV]]") 
+			dat += span_average("[mode_name[BOT_NAV]]")
 		if(BOT_NO_ROUTE)
-			dat += span_bad("[mode_name[BOT_NO_ROUTE]]") 
+			dat += span_bad("[mode_name[BOT_NO_ROUTE]]")
 	dat += "</div>"
 
 	dat += "<b>Current Load:</b> [isobserver(load) ? "<i>Unknown</i>" : (load ? load.name : "<i>None</i>")]<BR>"

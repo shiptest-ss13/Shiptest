@@ -107,11 +107,11 @@
 		else
 			return "<b>Autonomous</b>"
 	else if(!on)
-		return span_bad("Inactive") 
+		return span_bad("Inactive")
 	else if(!mode)
-		return span_good("Idle") 
+		return span_good("Idle")
 	else
-		return span_average("[mode_name[mode]]") 
+		return span_average("[mode_name[mode]]")
 
 /**
  * Returns a status string about the bot's current status, if it's moving, manually controlled, or idle.
@@ -233,17 +233,17 @@
 			. += "[src]'s parts look very loose!"
 	else
 		. += "[src] is in pristine condition."
-	. += span_notice("Its maintenance panel is [open ? "open" : "closed"].") 
-	. += span_info("You can use a <b>screwdriver</b> to [open ? "close" : "open"] it.") 
+	. += span_notice("Its maintenance panel is [open ? "open" : "closed"].")
+	. += span_info("You can use a <b>screwdriver</b> to [open ? "close" : "open"] it.")
 	if(open)
-		. += span_notice("Its control panel is [locked ? "locked" : "unlocked"].") 
+		. += span_notice("Its control panel is [locked ? "locked" : "unlocked"].")
 		var/is_sillycone = issilicon(user)
 		if(!emagged && (is_sillycone || user.Adjacent(src)))
-			. += span_info("Alt-click [is_sillycone ? "" : "or use your ID on "]it to [locked ? "un" : ""]lock its control panel.") 
+			. += span_info("Alt-click [is_sillycone ? "" : "or use your ID on "]it to [locked ? "un" : ""]lock its control panel.")
 	if(paicard)
-		. += span_notice("It has a pAI device installed.") 
+		. += span_notice("It has a pAI device installed.")
 		if(!open)
-			. += span_info("You can use a <b>hemostat</b> to remove it.") 
+			. += span_info("You can use a <b>hemostat</b> to remove it.")
 
 /mob/living/simple_animal/bot/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	if(amount>0 && prob(10))
@@ -592,7 +592,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 	var/success = bot_move(ai_waypoint, 3)
 	if(!success)
 		if(calling_ai)
-			to_chat(calling_ai, "[icon2html(src, calling_ai)] [get_turf(src) == ai_waypoint ? span_notice("[src] successfully arrived to waypoint.")  : span_danger("[src] failed to reach waypoint.") ]")
+			to_chat(calling_ai, "[icon2html(src, calling_ai)] [get_turf(src) == ai_waypoint ? span_notice("[src] successfully arrived to waypoint.") : span_danger("[src] failed to reach waypoint.")]")
 			calling_ai = null
 		bot_reset()
 
@@ -922,7 +922,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 	var/hack
 	if(issilicon(user) || isAdminGhostAI(user)) //Allows silicons or admins to toggle the emag status of a bot.
 		hack += "[emagged == 2 ? "Software compromised! Unit may exhibit dangerous or erratic behavior." : "Unit operating normally. Release safety lock?"]<BR>"
-		hack += "Harm Prevention Safety System: <A href='?src=[REF(src)];operation=hack'>[emagged ? span_bad("DANGER")  : "Engaged"]</A><BR>"
+		hack += "Harm Prevention Safety System: <A href='?src=[REF(src)];operation=hack'>[emagged ? span_bad("DANGER") : "Engaged"]</A><BR>"
 	else if(!locked) //Humans with access can use this option to hide a bot from the AI's remote control panel and PDA control.
 		hack += "Remote network control radio: <A href='?src=[REF(src)];operation=remote'>[remote_disabled ? "Disconnected" : "Connected"]</A><BR>"
 	return hack

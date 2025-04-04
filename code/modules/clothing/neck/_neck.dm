@@ -177,19 +177,19 @@
 		if(user.a_intent == INTENT_HELP)
 			var/body_part = parse_zone(user.zone_selected)
 
-			var/heart_strength = span_danger("no") 
-			var/lung_strength = span_danger("no") 
+			var/heart_strength = span_danger("no")
+			var/lung_strength = span_danger("no")
 
 			var/obj/item/organ/heart/heart = M.getorganslot(ORGAN_SLOT_HEART)
 			var/obj/item/organ/lungs/lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
 
 			if(!(M.stat == DEAD || (HAS_TRAIT(M, TRAIT_FAKEDEATH))))
 				if(heart && istype(heart))
-					heart_strength = span_danger("an unstable") 
+					heart_strength = span_danger("an unstable")
 					if(heart.beating)
 						heart_strength = "a healthy"
 				if(lungs && istype(lungs))
-					lung_strength = span_danger("strained") 
+					lung_strength = span_danger("strained")
 					if(!(M.failed_last_breath || M.losebreath))
 						lung_strength = "healthy"
 
@@ -461,7 +461,7 @@
 		if(25 to 50)
 			. += "It appears heavily damaged."
 		if(0 to 25)
-			. += span_warning("It's falling apart!") 
+			. += span_warning("It's falling apart!")
 
 /obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
 	. = ..()

@@ -212,7 +212,7 @@
 
 /obj/item/circuitboard/machine/circulator/examine()
 	. = ..()
-	. += span_notice("It is set to layer [pipe_layer].") 
+	. += span_notice("It is set to layer [pipe_layer].")
 
 /obj/item/circuitboard/machine/emitter
 	name = "Emitter (Machine Board)"
@@ -390,7 +390,7 @@
 
 /obj/item/circuitboard/machine/thermomachine/examine()
 	. = ..()
-	. += span_notice("It is set to layer [pipe_layer].") 
+	. += span_notice("It is set to layer [pipe_layer].")
 
 /obj/item/circuitboard/machine/thermomachine/heater
 	name = "Heater (Machine Board)"
@@ -593,7 +593,7 @@
 
 /obj/item/circuitboard/machine/smartfridge/examine(mob/user)
 	. = ..()
-	. += span_info("[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.") 
+	. += span_info("[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.")
 
 
 /obj/item/circuitboard/machine/space_heater
@@ -1202,8 +1202,8 @@
 
 /obj/item/circuitboard/machine/dish_drive/examine(mob/user)
 	. = ..()
-	. += span_notice("Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.") 
-	. += span_notice("Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.") 
+	. += span_notice("Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.")
+	. += span_notice("Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.")
 
 /obj/item/circuitboard/machine/dish_drive/attack_self(mob/living/user)
 	suction = !suction
@@ -1446,7 +1446,7 @@
 
 /obj/item/circuitboard/machine/shuttle/heater/examine()
 	. = ..()
-	. += span_notice("It is set to layer [pipe_layer].") 
+	. += span_notice("It is set to layer [pipe_layer].")
 
 /obj/item/circuitboard/machine/shuttle/fire_heater
 	name = "Combustion Engine Heater (Machine Board)"
@@ -1466,7 +1466,7 @@
 
 /obj/item/circuitboard/machine/shuttle/fire_heater/examine()
 	. = ..()
-	. += span_notice("It is set to layer [pipe_layer].") 
+	. += span_notice("It is set to layer [pipe_layer].")
 
 /obj/item/circuitboard/machine/shuttle/smes
 	name = "Electric Engine Precharger (Machine Board)"

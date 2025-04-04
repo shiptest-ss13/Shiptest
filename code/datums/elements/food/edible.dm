@@ -329,14 +329,14 @@ Behavior that's still missing from this component that original food items had t
 		if(fullness <= (600 * (1 + eater.overeatduration / 1000)))
 			eater.visible_message(
 				span_danger("[feeder] attempts to feed [eater] [parent]."), \
-				span_userdanger("[feeder] attempts to feed you [parent].") 
+				span_userdanger("[feeder] attempts to feed you [parent].")
 			)
 			if(eater.is_blind())
 				to_chat(eater, span_userdanger("You feel someone trying to feed you something!"))
 		else
 			eater.visible_message(
 				span_warning("[feeder] cannot force any more of [parent] down [eater]'s throat!"), \
-				span_warning("[feeder] cannot force any more of [parent] down your throat!") 
+				span_warning("[feeder] cannot force any more of [parent] down your throat!")
 			)
 			if(eater.is_blind())
 				to_chat(eater, span_userdanger("You're too full to eat what's being fed to you!"))
@@ -348,7 +348,7 @@ Behavior that's still missing from this component that original food items had t
 		log_combat(feeder, eater, "fed", owner.reagents.log_list())
 		eater.visible_message(
 			span_danger("[feeder] forces [eater] to eat [parent]!"), \
-			span_userdanger("[feeder] forces you to eat [parent]!") 
+			span_userdanger("[feeder] forces you to eat [parent]!")
 		)
 		if(eater.is_blind())
 			to_chat(eater, span_userdanger("You're forced to eat something!"))

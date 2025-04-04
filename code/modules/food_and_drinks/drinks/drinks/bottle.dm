@@ -627,7 +627,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/examine(mob/user)
 	. = ..()
 	if(!is_drainable())
-		. += span_info("The cap is still sealed.") 
+		. += span_info("The cap is still sealed.")
 
 /obj/item/sandstar
 	name = "SandBlast Sarsaparilla star"
@@ -678,7 +678,7 @@
 /obj/item/storage/bottles/examine(mob/user)
 	. = ..()
 	if(sealed)
-		. += span_info("It is sealed. You could pry it open with a <i>crowbar</i> to access its contents.") 
+		. += span_info("It is sealed. You could pry it open with a <i>crowbar</i> to access its contents.")
 
 /obj/item/storage/bottles/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()

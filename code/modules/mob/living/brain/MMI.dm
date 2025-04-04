@@ -239,15 +239,15 @@
 /obj/item/mmi/examine(mob/user)
 	. = ..()
 	if(radio)
-		. += span_notice("There is a switch to toggle the radio system [radio.on ? "off" : "on"].[brain ? " It is currently being covered by [brain]." : null]") 
+		. += span_notice("There is a switch to toggle the radio system [radio.on ? "off" : "on"].[brain ? " It is currently being covered by [brain]." : null]")
 	if(brainmob)
 		var/mob/living/brain/B = brainmob
 		if(!B.key || !B.mind || B.stat == DEAD)
-			. += span_warning("\The [src] indicates that the brain is completely unresponsive.") 
+			. += span_warning("\The [src] indicates that the brain is completely unresponsive.")
 		else if(!B.client)
-			. += span_warning("\The [src] indicates that the brain is currently inactive; it might change.") 
+			. += span_warning("\The [src] indicates that the brain is currently inactive; it might change.")
 		else
-			. += span_notice("\The [src] indicates that the brain is active.") 
+			. += span_notice("\The [src] indicates that the brain is active.")
 
 /obj/item/mmi/relaymove(mob/living/user, direction)
 	return //so that the MMI won't get a warning about not being able to move if it tries to move

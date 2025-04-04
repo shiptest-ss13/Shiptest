@@ -45,7 +45,7 @@
 				verb = "mediocre"
 		if(!verb)
 			return
-		. += span_notice("Those could work as a [verb] throwing weapon.") 
+		. += span_notice("Those could work as a [verb] throwing weapon.")
 
 
 /obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
@@ -72,7 +72,7 @@
 				user.visible_message(
 					span_notice("[user.name] shaped [src] into metal with the welding tool."),
 					span_notice("You shaped [src] into metal with the welding tool."),
-					span_hear("You hear welding.") 
+					span_hear("You hear welding.")
 				)
 				var/obj/item/stack/rods/R = src
 				src = null
@@ -87,7 +87,7 @@
 				user.visible_message(
 					span_notice("[user.name] shaped [src] into a sheet with the welding tool."),
 					span_notice("You shaped [src] into a sheet with the welding tool."),
-					span_hear("You hear welding.") 
+					span_hear("You hear welding.")
 				)
 				var/obj/item/stack/rods/R = src
 				src = null

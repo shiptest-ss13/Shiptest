@@ -82,42 +82,42 @@
 	name = "Swift Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "rift"
-	chosen_message = span_colossus("You will now dash forward for a short distance.") 
+	chosen_message = span_colossus("You will now dash forward for a short distance.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/swift_dash_long
 	name = "Long Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "plasmasoul"
-	chosen_message = span_colossus("You will now dash forward for a long distance.") 
+	chosen_message = span_colossus("You will now dash forward for a long distance.")
 	chosen_attack_num = 2
 //PHASE TWO
 /datum/action/innate/megafauna_attack/emp_pulse
 	name = "Dissonant Shriek"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "emppulse"
-	chosen_message = span_colossus("You will now create a EMP pulse.") 
+	chosen_message = span_colossus("You will now create a EMP pulse.")
 	chosen_attack_num = 3
 
 /datum/action/innate/megafauna_attack/tentacle
 	name = "Tentacle"
 	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
 	button_icon_state = "tentacle"
-	chosen_message = span_colossus("You will now shoot your tentacle, bringing mobs ever so closer.") 
+	chosen_message = span_colossus("You will now shoot your tentacle, bringing mobs ever so closer.")
 	chosen_attack_num = 4
 
 /datum/action/innate/megafauna_attack/summon_creatures
 	name = "Lie Spider"
 	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
 	button_icon_state = "plasmasoul"
-	chosen_message = span_colossus("You will now summon a weak spider.") 
+	chosen_message = span_colossus("You will now summon a weak spider.")
 	chosen_attack_num = 5
 
 /datum/action/innate/megafauna_attack/sting_attack
 	name = "Sting shotgun"
 	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
 	button_icon_state = "sting_cryo"
-	chosen_message = span_colossus("You stop, and telegraph a shotgun of stings.") 
+	chosen_message = span_colossus("You stop, and telegraph a shotgun of stings.")
 	chosen_attack_num = 6
 
 /mob/living/simple_animal/hostile/megafauna/claw/phase2/Initialize()

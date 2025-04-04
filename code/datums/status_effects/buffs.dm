@@ -284,7 +284,7 @@
 	status_type = STATUS_EFFECT_UNIQUE
 	duration = -1
 	tick_interval = 25
-	examine_text = span_notice("They seem to have an aura of healing and helpfulness about them.") 
+	examine_text = span_notice("They seem to have an aura of healing and helpfulness about them.")
 	alert_type = null
 	var/hand
 	var/deathTick = 0
@@ -419,7 +419,7 @@
 /datum/status_effect/antimagic
 	id = "antimagic"
 	duration = 10 SECONDS
-	examine_text = span_notice("They seem to be covered in a dull, grey aura.") 
+	examine_text = span_notice("They seem to be covered in a dull, grey aura.")
 
 /datum/status_effect/antimagic/on_apply()
 	owner.visible_message(span_notice("[owner] is coated with a dull aura!"))

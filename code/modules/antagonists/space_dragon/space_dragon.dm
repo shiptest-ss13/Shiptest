@@ -47,6 +47,6 @@
 		parts += "<span class='greentext big'>The [name] was successful!</span>"
 	else
 		parts += "<span class='redtext big'>The [name] has failed!</span>"
-	parts += span_header("The [name] was assisted by:") 
+	parts += span_header("The [name] was assisted by:")
 	parts += printplayerlist(carp)
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

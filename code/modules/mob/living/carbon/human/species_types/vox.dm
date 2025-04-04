@@ -188,7 +188,7 @@
 /datum/action/innate/tail_hold/proc/on_examine(datum/source, mob/user, list/examine_list)
 	var/mob/living/carbon/human/H = owner
 	if(held_item)
-		examine_list += span_notice("[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.") 
+		examine_list += span_notice("[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.")
 
 /datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, olddir, newdir, force = FALSE)
 	if(!held_item)

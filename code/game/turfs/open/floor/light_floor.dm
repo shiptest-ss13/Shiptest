@@ -26,10 +26,10 @@
 
 /turf/open/floor/light/examine(mob/user)
 	. = ..()
-	. += span_notice("There's a <b>small crack</b> on the edge of it.") 
-	. += span_notice("Use a multitool on it to change colors.") 
+	. += span_notice("There's a <b>small crack</b> on the edge of it.")
+	. += span_notice("Use a multitool on it to change colors.")
 	if(state) ///check if broken
-		. += span_danger("The light bulb seems fried!") 
+		. += span_danger("The light bulb seems fried!")
 
 ///create radial menu
 /turf/open/floor/light/proc/populate_lighttile_designs()

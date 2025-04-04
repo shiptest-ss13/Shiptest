@@ -133,6 +133,6 @@
 /obj/machinery/paystand/examine(mob/user)
 	. = ..()
 	if(force_fee)
-		. += span_warning("This paystand forces a payment of <b>[force_fee]</b> credit\s per swipe instead of a variable amount.") 
+		. += span_warning("This paystand forces a payment of <b>[force_fee]</b> credit\s per swipe instead of a variable amount.")
 	if(user.get_active_held_item() == my_card)
-		. += span_notice("Paystands can be edited through swiping your card with different intents. <b>Disarm</b> allows editing the name while <b>Grab</b> changes payment functionality.") 
+		. += span_notice("Paystands can be edited through swiping your card with different intents. <b>Disarm</b> allows editing the name while <b>Grab</b> changes payment functionality.")

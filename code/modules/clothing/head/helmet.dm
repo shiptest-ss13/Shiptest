@@ -52,7 +52,7 @@
 	if(attached_light)
 		. += "It has \a [attached_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight)
-			. += span_info("[attached_light] looks like it can be unclipped from [src]. You can <b>Alt-Click</b> to detatch it.") 
+			. += span_info("[attached_light] looks like it can be unclipped from [src]. You can <b>Alt-Click</b> to detatch it.")
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
 

@@ -189,12 +189,12 @@
 					objective.stolen = TRUE
 			else
 				if(objective.stolen)
-					var/fail_msg = span_userdanger("Your sensors tell you that [objective.target.current.real_name], one of the targets you were meant to have killed, pulled one over on you, and is still alive - do the job properly this time! ") 
+					var/fail_msg = span_userdanger("Your sensors tell you that [objective.target.current.real_name], one of the targets you were meant to have killed, pulled one over on you, and is still alive - do the job properly this time! ")
 					if(last_man_standing)
 						if(syndicate)
-							fail_msg += span_userdanger(" You no longer have permission to die. ") 
+							fail_msg += span_userdanger(" You no longer have permission to die. ")
 						else
-							fail_msg += span_userdanger(" The truth could still slip out!</font><B><font size=5 color=red> Cease any terrorist actions as soon as possible, unneeded property damage or loss of employee life will lead to your contract being terminated.") 
+							fail_msg += span_userdanger(" The truth could still slip out!</font><B><font size=5 color=red> Cease any terrorist actions as soon as possible, unneeded property damage or loss of employee life will lead to your contract being terminated.")
 						reinstate_escape_objective(owner)
 						last_man_standing = FALSE
 					to_chat(owner.current, fail_msg)

@@ -2,8 +2,8 @@
 	name = "Phobia"
 	desc = "Patient is unreasonably afraid of something."
 	scan_desc = "phobia"
-	gain_text = span_warning("You start finding default values very unnerving...") 
-	lose_text = span_notice("You no longer feel afraid of default values.") 
+	gain_text = span_warning("You start finding default values very unnerving...")
+	lose_text = span_notice("You no longer feel afraid of default values.")
 	var/phobia_type
 	var/next_check = 0
 	var/next_scare = 0
@@ -21,8 +21,8 @@
 	if(!phobia_type)
 		phobia_type = pick(SStraumas.phobia_types)
 
-	gain_text = span_warning("You start finding [phobia_type] very unnerving...") 
-	lose_text = span_notice("You no longer feel afraid of [phobia_type].") 
+	gain_text = span_warning("You start finding [phobia_type] very unnerving...")
+	lose_text = span_notice("You no longer feel afraid of [phobia_type].")
 	scan_desc += " of [phobia_type]"
 	trigger_regex = SStraumas.phobia_regexes[phobia_type]
 	trigger_mobs = SStraumas.phobia_mobs[phobia_type]

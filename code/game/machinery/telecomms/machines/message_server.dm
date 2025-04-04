@@ -113,7 +113,7 @@
 /obj/machinery/telecomms/message_server/examine(mob/user)
 	. = ..()
 	if(calibrating)
-		. += span_warning("It's still calibrating.") 
+		. += span_warning("It's still calibrating.")
 
 /obj/machinery/telecomms/message_server/proc/GenerateKey()
 	var/newKey

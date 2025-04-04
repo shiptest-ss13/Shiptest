@@ -21,9 +21,9 @@
 /obj/item/gun/ballistic/automatic/powered/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += span_notice("[src]'s cell is [round(cell.charge / cell.maxcharge, 0.1) * 100]% full.") 
+		. += span_notice("[src]'s cell is [round(cell.charge / cell.maxcharge, 0.1) * 100]% full.")
 	else
-		. += span_notice("[src] doesn't seem to have a cell!") 
+		. += span_notice("[src] doesn't seem to have a cell!")
 
 /obj/item/gun/ballistic/automatic/powered/can_shoot()
 	if(QDELETED(cell))

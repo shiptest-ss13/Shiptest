@@ -51,7 +51,7 @@
 
 /turf/open/chasm/reebe_void/examine(mob/user)
 	. = ..()
-	. += span_warning("You WILL fucking die if you step on this!!!") 
+	. += span_warning("You WILL fucking die if you step on this!!!")
 
 /turf/open/chasm/reebe_void/Initialize(mapload, inherited_virtual_z)
 	. = ..()

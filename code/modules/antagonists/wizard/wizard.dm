@@ -289,9 +289,9 @@
 		count++
 
 	if(wizardwin)
-		parts += span_greentext("The wizard was successful!") 
+		parts += span_greentext("The wizard was successful!")
 	else
-		parts += span_redtext("The wizard has failed!") 
+		parts += span_redtext("The wizard has failed!")
 
 	if(owner.spell_list.len>0)
 		parts += "<B>[owner.name] used the following spells: </B>"
@@ -306,10 +306,10 @@
 /datum/team/wizard/roundend_report()
 	var/list/parts = list()
 
-	parts += span_header("Wizards/witches of [master_wizard.owner.name] team were:") 
+	parts += span_header("Wizards/witches of [master_wizard.owner.name] team were:")
 	parts += master_wizard.roundend_report()
 	parts += " "
-	parts += span_header("[master_wizard.owner.name] apprentices were:") 
+	parts += span_header("[master_wizard.owner.name] apprentices were:")
 	parts += printplayerlist(members - master_wizard.owner)
 
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

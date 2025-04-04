@@ -76,11 +76,11 @@
 /obj/item/computer_hardware/examine(mob/user)
 	. = ..()
 	if(damage > damage_failure)
-		. += span_danger("It seems to be severely damaged!") 
+		. += span_danger("It seems to be severely damaged!")
 	else if(damage > damage_malfunction)
-		. += span_warning("It seems to be damaged!") 
+		. += span_warning("It seems to be damaged!")
 	else if(damage)
-		. += span_notice("It seems to be slightly damaged.") 
+		. += span_notice("It seems to be slightly damaged.")
 
 // Component-side compatibility check.
 /obj/item/computer_hardware/proc/can_install(obj/item/modular_computer/M, mob/living/user = null)

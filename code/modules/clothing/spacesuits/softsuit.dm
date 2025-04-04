@@ -79,7 +79,7 @@
 
 /obj/item/clothing/head/helmet/space/pilot/attack_self(mob/user) //pilot helmet toggle
 	if(!isturf(user.loc))
-		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!")  )
+		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
 		return
 	up = !up
 	if(!up || force)

@@ -154,9 +154,9 @@
 /obj/item/modular_computer/examine(mob/user)
 	. = ..()
 	if(obj_integrity <= integrity_failure * max_integrity)
-		. += span_danger("It is heavily damaged!") 
+		. += span_danger("It is heavily damaged!")
 	else if(obj_integrity < max_integrity)
-		. += span_warning("It is damaged.") 
+		. += span_warning("It is damaged.")
 
 	. += get_modular_computer_parts_examine(user)
 

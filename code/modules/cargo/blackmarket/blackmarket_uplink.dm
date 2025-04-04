@@ -58,7 +58,7 @@
 
 /obj/item/blackmarket_uplink/examine(mob/user)
 	. = ..()
-	. += span_notice("It's LTSRBT link [target ? "contains a [target]." : "is empty."]") 
+	. += span_notice("It's LTSRBT link [target ? "contains a [target]." : "is empty."]")
 
 /obj/item/blackmarket_uplink/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

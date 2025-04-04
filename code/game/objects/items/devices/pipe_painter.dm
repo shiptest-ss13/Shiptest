@@ -27,4 +27,4 @@
 
 /obj/item/pipe_painter/examine(mob/user)
 	. = ..()
-	. += span_notice("It is set to [paint_color].") 
+	. += span_notice("It is set to [paint_color].")

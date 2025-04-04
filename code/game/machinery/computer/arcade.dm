@@ -361,7 +361,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 /obj/machinery/computer/arcade/battle/examine_more(mob/user)
 	. = ..()
-	. += span_notice("<i>You notice some writing scribbled on the side of [src]...</i>") 
+	. += span_notice("<i>You notice some writing scribbled on the side of [src]...</i>")
 	. += "\t[span_info("smart -> defend, defend, light attack")]"
 	. += "\t[span_info("shotgun -> defend, defend, power attack")]"
 	. += "\t[span_info("short temper -> counter, counter, counter")]"
@@ -658,7 +658,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 							maxSeverity = 2 //part of gitting gud is rng mitigation
 						var/severity = rand(1,maxSeverity) //pray to RNGesus. PRAY, PIGS
 						if(severity == 1)
-							to_chat(M, span_userdanger("You suddenly feel slightly nauseated.")  )
+							to_chat(M, span_userdanger("You suddenly feel slightly nauseated.") )
 						if(severity == 2)
 							to_chat(usr, span_userdanger("You suddenly feel extremely nauseated and hunch over until it passes."))
 							M.Stun(60)
@@ -1248,9 +1248,9 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 	if(!(in_range(user, src)))
 		return
 	if(!active)
-		. += span_notice("There's a little switch on the bottom. It's flipped down.") 
+		. += span_notice("There's a little switch on the bottom. It's flipped down.")
 	else
-		. += span_notice("There's a little switch on the bottom. It's flipped up.") 
+		. += span_notice("There's a little switch on the bottom. It's flipped up.")
 
 /obj/item/orion_ship/attack_self(mob/user) //Minibomb-level explosion. Should probably be more because of how hard it is to survive the machine! Also, just over a 5-second fuse
 	if(active)

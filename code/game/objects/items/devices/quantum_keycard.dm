@@ -13,9 +13,9 @@
 	. = ..()
 	if(qpad)
 		. += "It's currently linked to a quantum pad."
-		. += span_notice("Alt-click to unlink the keycard.") 
+		. += span_notice("Alt-click to unlink the keycard.")
 	else
-		. += span_notice("Insert [src] into an active quantum pad to link it.") 
+		. += span_notice("Insert [src] into an active quantum pad to link it.")
 
 /obj/item/quantum_keycard/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

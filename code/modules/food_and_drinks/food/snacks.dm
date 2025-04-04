@@ -241,12 +241,12 @@ All foods are distributed among various categories. Use common sense.
 	if (accuracy >= IS_SHARP_ACCURATE)
 		user.visible_message( \
 			"[user] slices [src].", \
-			span_notice("You slice [src].")  \
+			span_notice("You slice [src].") \
 		)
 	else
 		user.visible_message( \
 			"[user] inaccurately slices [src] with [W]!", \
-			span_notice("You inaccurately slice [src] with your [W]!")  \
+			span_notice("You inaccurately slice [src] with your [W]!") \
 		)
 		slices_lost = rand(1,min(1,round(slices_num/2)))
 

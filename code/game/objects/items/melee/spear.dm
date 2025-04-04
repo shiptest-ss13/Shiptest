@@ -97,7 +97,7 @@
 
 /obj/item/melee/spear/explosive/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to set your war cry.") 
+	. += span_notice("Alt-click to set your war cry.")
 
 /obj/item/melee/spear/explosive/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE))

@@ -135,13 +135,13 @@
 	. = ..()
 	if((brainmob && (brainmob.client || brainmob.get_ghost())) || decoy_override)
 		if(organ_flags & ORGAN_FAILING)
-			. += span_info("It seems to still have a bit of energy within it, but it's rather damaged... You may be able to restore it with some <b>mannitol</b>.") 
+			. += span_info("It seems to still have a bit of energy within it, but it's rather damaged... You may be able to restore it with some <b>mannitol</b>.")
 		else if(damage >= BRAIN_DAMAGE_DEATH*0.5)
-			. += span_info("You can feel the small spark of life still left in this one, but it's got some bruises. You may be able to restore it with some <b>mannitol</b>.") 
+			. += span_info("You can feel the small spark of life still left in this one, but it's got some bruises. You may be able to restore it with some <b>mannitol</b>.")
 		else
-			. += span_info("You can feel the small spark of life still left in this one.") 
+			. += span_info("You can feel the small spark of life still left in this one.")
 	else
-		. += span_info("This one is completely devoid of life.") 
+		. += span_info("This one is completely devoid of life.")
 
 /obj/item/organ/brain/attack(mob/living/carbon/C, mob/user)
 	if(!istype(C))
@@ -174,7 +174,7 @@
 			to_chat(C, span_notice("[user] inserts [src] into your head."))
 			to_chat(user, span_notice("You insert [src] into [C]'s head."))
 		else
-			to_chat(user, span_notice("You insert [src] into your head.") 	)
+			to_chat(user, span_notice("You insert [src] into your head.")	)
 
 		Insert(C)
 	else
@@ -216,11 +216,11 @@
 		if(owner.stat < UNCONSCIOUS) //conscious or soft-crit
 			var/brain_message
 			if(prev_damage < BRAIN_DAMAGE_MILD && damage >= BRAIN_DAMAGE_MILD)
-				brain_message = span_warning("You feel lightheaded.") 
+				brain_message = span_warning("You feel lightheaded.")
 			else if(prev_damage < BRAIN_DAMAGE_SEVERE && damage >= BRAIN_DAMAGE_SEVERE)
-				brain_message = span_warning("You feel less in control of your thoughts.") 
+				brain_message = span_warning("You feel less in control of your thoughts.")
 			else if(prev_damage < (BRAIN_DAMAGE_DEATH - 20) && damage >= (BRAIN_DAMAGE_DEATH - 20))
-				brain_message = span_warning("You can feel your mind flickering on and off...") 
+				brain_message = span_warning("You can feel your mind flickering on and off...")
 
 			if(.)
 				. += "\n[brain_message]"

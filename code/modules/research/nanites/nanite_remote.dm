@@ -23,7 +23,7 @@
 /obj/item/nanite_remote/examine(mob/user)
 	. = ..()
 	if(locked)
-		. += span_notice("Alt-click to unlock.") 
+		. += span_notice("Alt-click to unlock.")
 
 /obj/item/nanite_remote/AltClick(mob/user)
 	. = ..()

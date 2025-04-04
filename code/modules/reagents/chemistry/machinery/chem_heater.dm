@@ -56,7 +56,7 @@
 /obj/machinery/chem_heater/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Heating reagents at <b>[heater_coefficient*1000]%</b> speed.") 
+		. += span_notice("The status display reads: Heating reagents at <b>[heater_coefficient*1000]%</b> speed.")
 
 /obj/machinery/chem_heater/process(seconds_per_tick)
 	..()

@@ -14,7 +14,7 @@
 
 /obj/item/computer_hardware/printer/examine(mob/user)
 	. = ..()
-	. += span_notice("Paper level: [stored_paper]/[max_paper].") 
+	. += span_notice("Paper level: [stored_paper]/[max_paper].")
 
 
 /obj/item/computer_hardware/printer/proc/print_text(text_to_print, paper_title = "")

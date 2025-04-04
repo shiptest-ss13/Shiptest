@@ -61,27 +61,27 @@
 /obj/machinery/reagentgrinder/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += span_warning("You're too far away to examine [src]'s contents and display!") 
+		. += span_warning("You're too far away to examine [src]'s contents and display!")
 		return
 
 	if(operating)
-		. += span_warning("\The [src] is operating.") 
+		. += span_warning("\The [src] is operating.")
 		return
 
 	if(beaker || length(holdingitems))
-		. += span_notice("\The [src] contains:") 
+		. += span_notice("\The [src] contains:")
 		if(beaker)
-			. += span_notice("- \A [beaker].") 
+			. += span_notice("- \A [beaker].")
 		for(var/i in holdingitems)
 			var/obj/item/O = i
-			. += span_notice("- \A [O.name].") 
+			. += span_notice("- \A [O.name].")
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
 		. += "[span_notice("The status display reads:")]\n"+\
-		span_notice("- Grinding reagents at <b>[speed*100]%</b>.") 
+		span_notice("- Grinding reagents at <b>[speed*100]%</b>.")
 		if(beaker)
 			for(var/datum/reagent/R in beaker.reagents.reagent_list)
-				. += span_notice("- [R.volume] units of [R.name].") 
+				. += span_notice("- [R.volume] units of [R.name].")
 
 /obj/machinery/reagentgrinder/AltClick(mob/user)
 	. = ..()

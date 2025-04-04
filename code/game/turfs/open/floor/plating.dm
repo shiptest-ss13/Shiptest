@@ -26,12 +26,12 @@
 /turf/open/floor/plating/examine(mob/user)
 	. = ..()
 	if(broken || burnt)
-		. += span_notice("It looks like the dents could be <i>welded</i> smooth.") 
+		. += span_notice("It looks like the dents could be <i>welded</i> smooth.")
 		return
 	if(attachment_holes)
-		. += span_notice("There are a few attachment holes for a new <i>tile</i>, catwalk <i>rods</i>, or reinforcement <i>sheets</i>.") 
+		. += span_notice("There are a few attachment holes for a new <i>tile</i>, catwalk <i>rods</i>, or reinforcement <i>sheets</i>.")
 	else
-		. += span_notice("You might be able to build ontop of it with some <i>tiles</i>...") 
+		. += span_notice("You might be able to build ontop of it with some <i>tiles</i>...")
 
 /turf/open/floor/plating/Initialize(mapload, inherited_virtual_z)
 	if (!broken_states)

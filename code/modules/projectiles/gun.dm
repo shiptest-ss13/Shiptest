@@ -422,7 +422,7 @@
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
 	if(has_safety)
-		. += "The safety is [safety ? span_green("ON")  : span_red("OFF") ]. Ctrl-Click to toggle the safety."
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Ctrl-Click to toggle the safety."
 
 	if(gun_firemodes.len > 1)
 		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
@@ -749,8 +749,8 @@
 	if(!silent)
 		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 		user.visible_message(
-			span_notice("[user] turns the [safety_wording] on [src] [safety ? span_green("ON")  : span_red("OFF") ]."),
-			span_notice("You turn the [safety_wording] on [src] [safety ? span_green("ON")  : span_red("OFF") ]."),
+			span_notice("[user] turns the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
+			span_notice("You turn the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
 		)
 
 	update_appearance()

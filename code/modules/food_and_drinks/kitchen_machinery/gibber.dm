@@ -33,10 +33,10 @@
 /obj/machinery/gibber/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Outputting <b>[meat_produced]</b> meat slab(s) after <b>[gibtime*0.1]</b> seconds of processing.") 
+		. += span_notice("The status display reads: Outputting <b>[meat_produced]</b> meat slab(s) after <b>[gibtime*0.1]</b> seconds of processing.")
 		for(var/obj/item/stock_parts/manipulator/M in component_parts)
 			if(M.rating >= 2)
-				. += span_notice("Gibber has been upgraded to process inorganic materials.") 
+				. += span_notice("Gibber has been upgraded to process inorganic materials.")
 
 /obj/machinery/gibber/update_overlays()
 	. = ..()

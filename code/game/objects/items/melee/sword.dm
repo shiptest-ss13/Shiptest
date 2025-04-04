@@ -452,7 +452,7 @@
 	. = ..()
 	if(length(contents))
 		. += "<span class='notice'>Use [src] in-hand to prime for an opening strike."
-		. += span_info("Alt-click it to quickly draw the blade.") 
+		. += span_info("Alt-click it to quickly draw the blade.")
 
 /obj/item/storage/belt/weebstick/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)) || primed)

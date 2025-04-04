@@ -161,7 +161,7 @@
 	if(!message)
 		return
 	src.log_talk(message, LOG_SAY)
-	var/rendered = span_revennotice("<b>[src]</b> says, \"[message]\"") 
+	var/rendered = span_revennotice("<b>[src]</b> says, \"[message]\"")
 	for(var/mob/M in GLOB.mob_list)
 		if(isrevenant(M))
 			to_chat(M, rendered)
@@ -365,7 +365,7 @@
 		return ..()
 	user.visible_message(
 		span_notice("[user] scatters [src] in all directions."),
-		span_notice("You scatter [src] across the area. The particles slowly fade away.") 
+		span_notice("You scatter [src] across the area. The particles slowly fade away.")
 	)
 	user.dropItemToGround(src)
 	scatter()
@@ -380,9 +380,9 @@
 /obj/item/ectoplasm/revenant/examine(mob/user)
 	. = ..()
 	if(inert)
-		. += span_revennotice("It seems inert.") 
+		. += span_revennotice("It seems inert.")
 	else if(reforming)
-		. += span_revenwarning("It is shifting and distorted. It would be wise to destroy this.") 
+		. += span_revenwarning("It is shifting and distorted. It would be wise to destroy this.")
 
 /obj/item/ectoplasm/revenant/proc/reform()
 	if(QDELETED(src) || QDELETED(revenant) || inert)

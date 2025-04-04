@@ -642,7 +642,7 @@
 
 /obj/item/reagent_containers/food/snacks/butter/examine(mob/user)
 	. = ..()
-	. += span_notice("If you had a rod you could make <b>butter on a stick</b>. But... why would you?") 
+	. += span_notice("If you had a rod you could make <b>butter on a stick</b>. But... why would you?")
 
 /obj/item/reagent_containers/food/snacks/butter/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/rods))

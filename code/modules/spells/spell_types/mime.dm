@@ -5,7 +5,7 @@
 	panel = "Mime"
 	summon_type = list(/obj/effect/forcefield/mime)
 	invocation_type = INVOCATION_EMOTE
-	invocation_emote_self = span_notice("You form a wall in front of yourself.") 
+	invocation_emote_self = span_notice("You form a wall in front of yourself.")
 	summon_lifespan = 300
 	charge_max = 300
 	clothes_req = FALSE
@@ -35,7 +35,7 @@
 	panel = "Mime"
 	summon_type = list(/obj/structure/chair/mime)
 	invocation_type = INVOCATION_EMOTE
-	invocation_emote_self = span_notice("You conjure an invisible chair and sit down.") 
+	invocation_emote_self = span_notice("You conjure an invisible chair and sit down.")
 	summon_lifespan = 250
 	charge_max = 300
 	clothes_req = FALSE
@@ -73,7 +73,7 @@
 	panel = "Mime"
 	summon_type = list(/obj/item/storage/box/mime)
 	invocation_type = INVOCATION_EMOTE
-	invocation_emote_self = span_notice("You conjure up an invisible box, large enough to store a few things.") 
+	invocation_emote_self = span_notice("You conjure up an invisible box, large enough to store a few things.")
 	summon_lifespan = 500
 	charge_max = 300
 	clothes_req = FALSE
@@ -128,9 +128,9 @@
 		return
 	var/mob/living/carbon/human/H = usr
 	if(H.mind.miming)
-		still_recharging_msg = span_warning("You can't break your vow of silence that fast!") 
+		still_recharging_msg = span_warning("You can't break your vow of silence that fast!")
 	else
-		still_recharging_msg = span_warning("You'll have to wait before you can give your vow of silence again!") 
+		still_recharging_msg = span_warning("You'll have to wait before you can give your vow of silence again!")
 	..()
 
 /obj/effect/proc_holder/spell/targeted/mime/speak/cast(list/targets,mob/user = usr)
@@ -152,7 +152,7 @@
 	panel = "Mime"
 	wall_type = /obj/effect/forcefield/mime/advanced
 	invocation_type = INVOCATION_EMOTE
-	invocation_emote_self = span_notice("You form a blockade in front of yourself.") 
+	invocation_emote_self = span_notice("You form a blockade in front of yourself.")
 	charge_max = 600
 	sound =  null
 	clothes_req = FALSE

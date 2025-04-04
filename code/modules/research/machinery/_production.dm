@@ -278,7 +278,7 @@
 		t = check_mat(D, M)
 		temp_material += " | "
 		if (t < 1)
-			temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]") 
+			temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]")
 		else
 			temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 		c = min(c,t)

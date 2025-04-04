@@ -148,7 +148,7 @@
 		to_chat(user, span_danger("You aren't HARMFUL enough to rip the poster off the wall.")) //preventing accidental ripping posters off wall if not on harm intent
 		return
 
-	visible_message(span_danger("[user] rips [src] in a single, decisive motion!")  )
+	visible_message(span_danger("[user] rips [src] in a single, decisive motion!") )
 	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 
 	var/obj/structure/sign/poster/ripped/R = new(loc)
@@ -190,7 +190,7 @@
 			to_chat(user, span_warning("The wall is far too cluttered to place a poster!"))
 			return
 
-	to_chat(user, span_notice("You start placing the poster on the wall...") 	)
+	to_chat(user, span_notice("You start placing the poster on the wall...")	)
 
 	var/obj/structure/sign/poster/D = P.poster_structure
 

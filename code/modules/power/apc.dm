@@ -473,7 +473,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				to_chat(user, span_warning("Disconnect the wires first!"))
 				return
 			W.play_tool_sound(src)
-			to_chat(user, span_notice("You attempt to remove the power control board...")  )
+			to_chat(user, span_notice("You attempt to remove the power control board...") )
 			if(W.use_tool(src, user, 50))
 				if (has_electronics == APC_ELECTRONICS_INSTALLED)
 					has_electronics = APC_ELECTRONICS_MISSING
@@ -1153,7 +1153,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return
 	malfhackhide = 0
 	malfhackhidecooldown = 0
-	to_chat(malf, span_notice("The [src.area.name] APC has recovered from your masking and has returned to normal operating status.")  )
+	to_chat(malf, span_notice("The [src.area.name] APC has recovered from your masking and has returned to normal operating status.") )
 
 // EndWS Edit - Malf AI Rework
 
@@ -1212,7 +1212,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		to_chat(user, span_warning("[occupier] is either inactive or destroyed!"))
 		return
 	if(!occupier.parent.stat)
-		to_chat(user, span_warning("[occupier] is refusing all attempts at transfer!")  )
+		to_chat(user, span_warning("[occupier] is refusing all attempts at transfer!") )
 		return
 	if(transfer_in_progress)
 		to_chat(user, span_warning("There's already a transfer in progress!"))

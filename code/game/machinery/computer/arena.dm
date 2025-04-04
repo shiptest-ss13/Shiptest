@@ -326,7 +326,7 @@
 /obj/machinery/computer/arena/ui_interact(mob/user)
 	. = ..()
 	var/list/dat = list()
-	dat += "<div>Spawning is currently [ready_to_spawn ? span_good("enabled")  : span_bad("disabled") ] <a href='?src=[REF(src)];toggle_spawn=1'>Toggle</a></div>"
+	dat += "<div>Spawning is currently [ready_to_spawn ? span_good("enabled") : span_bad("disabled")] <a href='?src=[REF(src)];toggle_spawn=1'>Toggle</a></div>"
 	dat += "<div><a href='?src=[REF(src)];start=1'>[start_time ? "Stop countdown" : "Start!"]</a></div>"
 	for(var/team in teams)
 		dat += "<h2>[capitalize(team)] team:</h2>"

@@ -198,7 +198,7 @@
 	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
 		to_chat(user, span_warning("You can't possibly handle the responsibility of more than one rod!"))
 		return
-	var/failText = span_warning("The snake seems unsatisfied with your incomplete oath and returns to its previous place on the rod, returning to its dormant, wooden state. You must stand still while completing your oath!") 
+	var/failText = span_warning("The snake seems unsatisfied with your incomplete oath and returns to its previous place on the rod, returning to its dormant, wooden state. You must stand still while completing your oath!")
 	to_chat(itemUser, span_notice("The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong..."))
 	if(do_after(itemUser, 40, target = itemUser))
 		itemUser.say("I swear to fulfill, to the best of my ability and judgment, this covenant:", forced = "hippocratic oath")
@@ -447,7 +447,7 @@
 
 /obj/item/immortality_talisman/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to set your activation wail.") 
+	. += span_notice("Alt-click to set your activation wail.")
 
 /obj/item/immortality_talisman/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE))
@@ -840,7 +840,7 @@
 
 /obj/item/gun/energy/spur/examine(mob/user)
 	. = ..()
-	. += span_notice("This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.") 
+	. += span_notice("This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.")
 
 /obj/item/gun/energy/spur/update_appearance()
 	if(!cell)
@@ -1018,7 +1018,7 @@
 
 /obj/item/clothing/suit/armor/ascetic/examine(mob/user)
 	. = ..()
-	. += span_notice("The ascetic's magic woven into this robe increases the owner's speed and deflects harm from their person- however, once it's mirages have melted away, it causes significantly more damage to be taken. The magic can withstand three attacks before it must recover, but it begins regenerating quickly.") 
+	. += span_notice("The ascetic's magic woven into this robe increases the owner's speed and deflects harm from their person- however, once it's mirages have melted away, it causes significantly more damage to be taken. The magic can withstand three attacks before it must recover, but it begins regenerating quickly.")
 
 /obj/item/clothing/suit/armor/ascetic/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	recharge_cooldown = world.time + recharge_delay
@@ -1322,7 +1322,7 @@
 
 /obj/item/hierophant_club/examine(mob/user)
 	. = ..()
-	. += span_hierophant_warning("The[beacon ? " beacon is not currently":"re is a beacon"] attached.") 
+	. += span_hierophant_warning("The[beacon ? " beacon is not currently":"re is a beacon"] attached.")
 
 /obj/item/hierophant_club/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
@@ -1350,7 +1350,7 @@
 				INVOKE_ASYNC(src, PROC_REF(cardinal_blasts), T, user) //otherwise, just do cardinal blast
 				log_combat(user, target, "fired cardinal blast at", src)
 		else
-			to_chat(user, span_warning("That target is out of range!")  )
+			to_chat(user, span_warning("That target is out of range!") )
 			timer = world.time
 	INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 

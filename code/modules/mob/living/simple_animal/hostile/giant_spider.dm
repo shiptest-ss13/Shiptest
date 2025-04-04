@@ -409,10 +409,10 @@
 /obj/effect/proc_holder/wrap/proc/activate(mob/living/user)
 	var/message
 	if(active)
-		message = span_notice("You no longer prepare to wrap something in a cocoon.") 
+		message = span_notice("You no longer prepare to wrap something in a cocoon.")
 		remove_ranged_ability(message)
 	else
-		message = span_notice("You prepare to wrap something in a cocoon. <B>Left-click your target to start wrapping!</B>") 
+		message = span_notice("You prepare to wrap something in a cocoon. <B>Left-click your target to start wrapping!</B>")
 		add_ranged_ability(user, message, TRUE)
 		return 1
 
@@ -537,7 +537,7 @@
 	if(!message)
 		return
 	var/my_message
-	my_message = span_spider("<b>Command from [user]:</b> [message]") 
+	my_message = span_spider("<b>Command from [user]:</b> [message]")
 	for(var/mob/living/simple_animal/hostile/poison/giant_spider/M in GLOB.spidermobs)
 		to_chat(M, my_message)
 	for(var/M in GLOB.dead_mob_list)

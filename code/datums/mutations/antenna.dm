@@ -2,8 +2,8 @@
 	name = "Antenna"
 	desc = "The affected person sprouts an antenna. This is known to allow them to access common radio channels passively."
 	quality = POSITIVE
-	text_gain_indication = span_notice("You feel an antenna sprout from your forehead.") 
-	text_lose_indication = span_notice("Your antenna shrinks back down.") 
+	text_gain_indication = span_notice("You feel an antenna sprout from your forehead.")
+	text_lose_indication = span_notice("Your antenna shrinks back down.")
 	instability = 5
 	difficulty = 8
 	var/obj/item/implant/radio/antenna/linked_radio
@@ -42,8 +42,8 @@
 	name = "Mind Reader"
 	desc = "The affected person can look into the recent memories of others."
 	quality = POSITIVE
-	text_gain_indication = span_notice("You hear distant voices at the corners of your mind.") 
-	text_lose_indication = span_notice("The distant voices fade.") 
+	text_gain_indication = span_notice("You hear distant voices at the corners of your mind.")
+	text_lose_indication = span_notice("The distant voices fade.")
 	power = /obj/effect/proc_holder/spell/targeted/mindread
 	instability = 40
 	difficulty = 8

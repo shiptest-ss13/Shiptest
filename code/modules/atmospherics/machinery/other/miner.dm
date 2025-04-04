@@ -43,25 +43,25 @@
 		return FALSE
 	var/turf/T = get_turf(src)
 	if(!isopenturf(T))
-		broken_message = span_boldnotice("VENT BLOCKED") 
+		broken_message = span_boldnotice("VENT BLOCKED")
 		set_broken(TRUE)
 		return FALSE
 	var/turf/open/OT = T
 	if(OT.planetary_atmos)
-		broken_message = span_boldwarning("DEVICE NOT ENCLOSED IN A PRESSURIZED ENVIRONMENT") 
+		broken_message = span_boldwarning("DEVICE NOT ENCLOSED IN A PRESSURIZED ENVIRONMENT")
 		set_broken(TRUE)
 		return FALSE
 	if(isspaceturf(T))
-		broken_message = span_boldnotice("AIR VENTING TO SPACE") 
+		broken_message = span_boldnotice("AIR VENTING TO SPACE")
 		set_broken(TRUE)
 		return FALSE
 	var/datum/gas_mixture/G = OT.return_air()
 	if(G.return_pressure() > (max_ext_kpa - ((spawn_mol*spawn_temp*R_IDEAL_GAS_EQUATION)/(CELL_VOLUME))))
-		broken_message = span_boldwarning("EXTERNAL PRESSURE OVER THRESHOLD") 
+		broken_message = span_boldwarning("EXTERNAL PRESSURE OVER THRESHOLD")
 		set_broken(TRUE)
 		return FALSE
 	if(G.total_moles() > max_ext_mol)
-		broken_message = span_boldwarning("EXTERNAL AIR CONCENTRATION OVER THRESHOLD") 
+		broken_message = span_boldwarning("EXTERNAL AIR CONCENTRATION OVER THRESHOLD")
 		set_broken(TRUE)
 		return FALSE
 	if(broken)

@@ -51,7 +51,7 @@
 	return ..()
 
 /obj/item/sparkler/ignition_effect(atom/A, mob/user)
-	. = span_notice("[user] gracefully lights [A] with [src].") 
+	. = span_notice("[user] gracefully lights [A] with [src].")
 
 /obj/item/sparkler/get_temperature()
 	return lit * heat

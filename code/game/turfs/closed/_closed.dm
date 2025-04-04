@@ -87,7 +87,7 @@
 		if(0.25 to 0.5)
 			return "[p_they(TRUE)] appear[p_s()] heavily damaged."
 		if(0 to 0.25)
-			return span_warning("[p_theyre(TRUE)] falling apart!") 
+			return span_warning("[p_theyre(TRUE)] falling apart!")
 	return
 
 /turf/closed/AfterChange()

@@ -193,10 +193,10 @@ Doesn't work on other aliens/AI.*/
 /obj/effect/proc_holder/alien/neurotoxin/fire(mob/living/carbon/user)
 	var/message
 	if(active)
-		message = span_notice("You empty your neurotoxin gland.") 
+		message = span_notice("You empty your neurotoxin gland.")
 		remove_ranged_ability(message)
 	else
-		message = span_notice("You prepare your neurotoxin gland. <B>Left-click to fire at a target!</B>") 
+		message = span_notice("You prepare your neurotoxin gland. <B>Left-click to fire at a target!</B>")
 		add_ranged_ability(user, message, TRUE)
 
 /obj/effect/proc_holder/alien/neurotoxin/update_icon()

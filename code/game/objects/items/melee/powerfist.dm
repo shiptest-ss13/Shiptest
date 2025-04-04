@@ -21,10 +21,10 @@
 /obj/item/melee/powerfist/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src))
-		. += span_notice("You'll need to get closer to see any more.") 
+		. += span_notice("You'll need to get closer to see any more.")
 		return
 	if(tank)
-		. += span_notice("[icon2html(tank, user)] It has \a [tank] mounted onto it.") 
+		. += span_notice("[icon2html(tank, user)] It has \a [tank] mounted onto it.")
 
 
 /obj/item/melee/powerfist/attackby(obj/item/W, mob/user, params)

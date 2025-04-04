@@ -35,7 +35,7 @@
 
 /obj/item/bodycamera/examine(mob/user)
 	. += ..()
-	. += "The camera is currently [status ? span_green("ON")  : span_red("OFF") ]. Alt-Click to toggle its status."
+	. += "The camera is currently [status ? span_green("ON") : span_red("OFF")]. Alt-Click to toggle its status."
 	if(in_range(src, user))
 		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
 		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
@@ -54,8 +54,8 @@
 			icon_state = "bodycamera-off"
 			playsound(user, 'sound/items/bodycamera_off.ogg', 23, FALSE)
 		user.visible_message(
-			span_notice("[user] turns [src] [status ? span_green("ON")  : span_red("OFF") ]."),
-			span_notice("You turn [src] [status ? span_green("ON")  : span_red("OFF") ]."),
+			span_notice("[user] turns [src] [status ? span_green("ON") : span_red("OFF")]."),
+			span_notice("You turn [src] [status ? span_green("ON") : span_red("OFF")]."),
 		update_appearance()
 		)
 

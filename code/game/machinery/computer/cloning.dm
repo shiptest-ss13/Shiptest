@@ -177,7 +177,7 @@
 		else
 			dat += "<a href='byond://?src=[REF(src)];task=stopautoprocess'>Stop autoprocess</a>"
 	else
-		dat += span_linkoff("Autoprocess") 
+		dat += span_linkoff("Autoprocess")
 	dat += "<h3>Cloning Pod Status</h3>"
 	dat += "<div class='statusDisplay'>[temp]&nbsp;</div>"
 	switch(menu)
@@ -214,7 +214,7 @@
 					dat += "<a href='byond://?src=[REF(src)];scan=1;body_only=1'>Body-Only Scan</a>"
 					dat += "<br><a href='byond://?src=[REF(src)];lock=1'>[scanner.locked ? "Unlock Scanner" : "Lock Scanner"]</a>"
 				else
-					dat += span_linkoff("Start Scan") 
+					dat += span_linkoff("Start Scan")
 
 			// Database
 			dat += "<h3>Database Functions</h3>"
@@ -282,7 +282,7 @@
 					if(can_load)
 						dat += "<br /><a href='byond://?src=[REF(src)];disk=load'>Load From Disk</a>"
 					else
-						dat += span_linkoff("Cannot Load From Disk: Access Denied") 
+						dat += span_linkoff("Cannot Load From Disk: Access Denied")
 					if(diskette.fields["SE"])
 						if(!include_se)
 							dat += "<br /><a href='byond://?src=[REF(src)];task=include_se'>Currently Excluding SE</a>"

@@ -27,11 +27,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
-	. += span_notice("Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.") 
+	. += span_notice("Use [MODE_TOKEN_INTERCOM] when nearby to speak into it.")
 	if(!unscrewed)
-		. += span_notice("It's <b>screwed</b> and secured to the wall.") 
+		. += span_notice("It's <b>screwed</b> and secured to the wall.")
 	else
-		. += span_notice("It's <i>unscrewed</i> from the wall, and can be <b>detached</b>.") 
+		. += span_notice("It's <i>unscrewed</i> from the wall, and can be <b>detached</b>.")
 
 /obj/item/radio/intercom/wideband/examine_more(mob/user)
 	. = ..()

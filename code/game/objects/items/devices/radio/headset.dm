@@ -44,12 +44,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 					avail_chans += "use [MODE_TOKEN_DEPARTMENT] or [GLOB.channel_tokens[channels[i]]] for [lowertext(channels[i])]"
 				else
 					avail_chans += "use [GLOB.channel_tokens[channels[i]]] for [lowertext(channels[i])]"
-		. += span_notice("A small screen on the headset displays the following available frequencies:\n[english_list(avail_chans)].") 
+		. += span_notice("A small screen on the headset displays the following available frequencies:\n[english_list(avail_chans)].")
 
 		if(command)
-			. += span_info("Alt-click to toggle the high-volume mode.") 
+			. += span_info("Alt-click to toggle the high-volume mode.")
 	else
-		. += span_notice("A small screen on the headset flashes, it's too small to read without holding or wearing the headset.") 
+		. += span_notice("A small screen on the headset flashes, it's too small to read without holding or wearing the headset.")
 
 /obj/item/radio/headset/Initialize()
 	. = ..()

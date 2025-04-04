@@ -879,7 +879,7 @@
 	AI.remote_control = src
 	REMOVE_TRAIT(AI, TRAIT_HANDS_BLOCKED, ROUNDSTART_TRAIT)
 	AI.can_shunt = 0 //ONE AI ENTERS. NO AI LEAVES.
-	to_chat(AI, AI.can_dominate_mechs ? span_announce("Takeover of [name] complete! You are now loaded onto the onboard computer. Attempting to leave your transmission region will result in connection loss!")  :\
+	to_chat(AI, AI.can_dominate_mechs ? span_announce("Takeover of [name] complete! You are now loaded onto the onboard computer. Attempting to leave your transmission region will result in connection loss!") :\
 		span_notice("You have been uploaded to a mech's onboard computer."))
 	to_chat(AI, "<span class='reallybig boldnotice'>Use Middle-Mouse to activate mech functions and equipment. Click normally for AI interactions.</span>")
 	if(interaction == AI_TRANS_FROM_CARD)

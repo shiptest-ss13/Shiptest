@@ -150,10 +150,10 @@ GENE SCANNER
 	var/tox_loss = M.getToxLoss()
 	var/fire_loss = M.getFireLoss()
 	var/brute_loss = M.getBruteLoss()
-	var/mob_status = (M.stat == DEAD ? span_alert("<b>Deceased</b>")  : "<b>[round(M.health/M.maxHealth,0.01)*100]% healthy</b>")
+	var/mob_status = (M.stat == DEAD ? span_alert("<b>Deceased</b>") : "<b>[round(M.health/M.maxHealth,0.01)*100]% healthy</b>")
 
 	if(HAS_TRAIT(M, TRAIT_FAKEDEATH) && !advanced)
-		mob_status = span_alert("<b>Deceased</b>") 
+		mob_status = span_alert("<b>Deceased</b>")
 		oxy_loss = max(rand(1, 40), oxy_loss, (300 - (tox_loss + fire_loss + brute_loss))) // Random oxygen loss
 
 	if(ishuman(M))
@@ -455,7 +455,7 @@ GENE SCANNER
 
 /obj/item/analyzer/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click [src] to activate the barometer function.") 
+	. += span_notice("Alt-click [src] to activate the barometer function.")
 
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)
@@ -583,12 +583,12 @@ GENE SCANNER
 	var/render_list = list()
 	if(!silent && isliving(user))
 		user.visible_message(span_notice("[user] uses the analyzer on [icon2html(icon, viewers(user))] [target]."), span_notice("You use the analyzer on [icon2html(icon, user)] [target]."))
-	render_list += span_boldnotice("Results of analysis of [icon2html(icon, user)] [target].") 
+	render_list += span_boldnotice("Results of analysis of [icon2html(icon, user)] [target].")
 
 	var/list/airs = islist(mixture) ? mixture : list(mixture)
 	for(var/g in airs)
 		if(airs.len > 1) //not a unary gas mixture
-			render_list += span_boldnotice("Node [airs.Find(g)]") 
+			render_list += span_boldnotice("Node [airs.Find(g)]")
 		var/datum/gas_mixture/air_contents = g
 
 		var/total_moles = air_contents.total_moles()
@@ -607,10 +607,10 @@ GENE SCANNER
 
 			for(var/id in air_contents.get_gases())
 				var/gas_concentration = air_contents.get_moles(id)/total_moles
-				render_list += span_notice("[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)")   //WS Edit -- Atmos Analyzer Reformat (Issue #419)
+				render_list += span_notice("[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(air_contents.get_moles(id), 0.01)] mol)")  //WS Edit -- Atmos Analyzer Reformat (Issue #419)
 
 		else
-			render_list += airs.len > 1 ? span_notice("This node is empty!")  : span_notice("[target] is empty!") 
+			render_list += airs.len > 1 ? span_notice("This node is empty!") : span_notice("[target] is empty!")
 
 		if(cached_scan_results && cached_scan_results["fusion"]) //notify the user if a fusion reaction was detected
 			render_list += "[span_boldnotice("Large amounts of free neutrons detected in the air indicate that a fusion reaction took place.")]\

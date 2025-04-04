@@ -12,7 +12,7 @@
 
 /turf/open/indestructible/supermatter_cascade/examine(mob/user)
 	. = ..()
-	. += span_warning("Run away! Touching this will result in dusting!") 
+	. += span_warning("Run away! Touching this will result in dusting!")
 
 /turf/open/indestructible/supermatter_cascade/Initialize(mapload, inherited_virtual_z)
 	. = ..()

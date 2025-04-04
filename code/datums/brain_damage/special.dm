@@ -7,8 +7,8 @@
 	name = "Godwoken Syndrome"
 	desc = "Patient occasionally and uncontrollably channels an eldritch god when speaking."
 	scan_desc = "god delusion"
-	gain_text = span_notice("You feel a higher power inside your mind...") 
-	lose_text = span_warning("The divine presence leaves your head, no longer interested.") 
+	gain_text = span_notice("You feel a higher power inside your mind...")
+	lose_text = span_warning("The divine presence leaves your head, no longer interested.")
 
 /datum/brain_trauma/special/godwoken/on_life()
 	..()
@@ -51,8 +51,8 @@
 	name = "Bluespace Prophecy"
 	desc = "Patient can sense the bob and weave of bluespace around them, showing them passageways no one else can see."
 	scan_desc = "bluespace attunement"
-	gain_text = span_notice("You feel the bluespace pulsing around you...") 
-	lose_text = span_warning("The faint pulsing of bluespace fades into silence.") 
+	gain_text = span_notice("You feel the bluespace pulsing around you...")
+	lose_text = span_warning("The faint pulsing of bluespace fades into silence.")
 	var/next_portal = 0
 
 /datum/brain_trauma/special/bluespace_prophet/on_life()
@@ -124,8 +124,8 @@
 	name = "Quantum Alignment"
 	desc = "Patient is prone to frequent spontaneous quantum entanglement, against all odds, causing spatial anomalies."
 	scan_desc = "quantum alignment"
-	gain_text = span_notice("You feel faintly connected to everything around you...") 
-	lose_text = span_warning("You no longer feel connected to your surroundings.") 
+	gain_text = span_notice("You feel faintly connected to everything around you...")
+	lose_text = span_warning("You no longer feel connected to your surroundings.")
 	var/atom/linked_target = null
 	var/linked = FALSE
 	var/returning = FALSE
@@ -205,8 +205,8 @@
 	name = "Violent Psychosis"
 	desc = "Patient fights in unpredictable ways due to re-arranged neural pathways."
 	scan_desc = "violent psychosis"
-	gain_text = span_warning("You feel unhinged...") 
-	lose_text = span_notice("You feel more balanced.") 
+	gain_text = span_warning("You feel unhinged...")
+	lose_text = span_notice("You feel more balanced.")
 	var/datum/martial_art/psychotic_brawling/psychotic_brawling
 
 /datum/brain_trauma/special/psychotic_brawling/on_gain()
@@ -228,8 +228,8 @@
 	name = "Tenacity"
 	desc = "Patient is psychologically unaffected by pain and injuries, and can remain standing far longer than a normal person."
 	scan_desc = "traumatic neuropathy"
-	gain_text = span_warning("You suddenly stop feeling pain.") 
-	lose_text = span_warning("You realize you can feel pain again.") 
+	gain_text = span_warning("You suddenly stop feeling pain.")
+	lose_text = span_warning("You realize you can feel pain again.")
 
 /datum/brain_trauma/special/tenacity/on_gain()
 	ADD_TRAIT(owner, TRAIT_NOSOFTCRIT, TRAUMA_TRAIT)
@@ -247,8 +247,8 @@
 	name = "Functional Cerebral Necrosis"
 	desc = "Patient's brain is stuck in a functional near-death state, causing occasional moments of lucid hallucinations, which are often interpreted as the voices of the dead."
 	scan_desc = "chronic functional necrosis"
-	gain_text = span_warning("You feel dead inside.") 
-	lose_text = span_notice("You feel alive again.") 
+	gain_text = span_warning("You feel dead inside.")
+	lose_text = span_notice("You feel alive again.")
 	var/active = FALSE
 
 /datum/brain_trauma/special/death_whispers/on_life()
@@ -274,8 +274,8 @@
 	name = "Existential Crisis"
 	desc = "Patient's hold on reality becomes faint, causing occasional bouts of non-existence."
 	scan_desc = "existential crisis"
-	gain_text = span_notice("You feel less real.") 
-	lose_text = span_warning("You feel more substantial again.") 
+	gain_text = span_notice("You feel less real.")
+	lose_text = span_warning("You feel more substantial again.")
 	var/obj/effect/abstract/sync_holder/veil/veil
 	var/next_crisis = 0
 
@@ -324,8 +324,8 @@
 	name = "Criminal"
 	desc = "Patient seems to be a criminal."
 	scan_desc = "criminal mind"
-	gain_text = span_warning("Justice is coming for you.") 
-	lose_text = span_notice("You were absolved for your crimes.") 
+	gain_text = span_warning("Justice is coming for you.")
+	lose_text = span_notice("You were absolved for your crimes.")
 	random_gain = FALSE
 	var/obj/effect/hallucination/simple/securitron/beepsky
 

@@ -4,6 +4,6 @@
 	value = 2
 	mood_quirk = TRUE
 	mob_traits = list(TRAIT_EMPATH)
-	gain_text = span_notice("You feel in tune with those around you.") 
-	lose_text = span_danger("You feel isolated from others.") 
+	gain_text = span_notice("You feel in tune with those around you.")
+	lose_text = span_danger("You feel isolated from others.")
 	medical_record_text = "Patient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed."

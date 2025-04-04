@@ -1,18 +1,18 @@
 /mob/living/silicon/ai/examine(mob/user)
 	. = list("<span class='info'>This is [icon2html(src, user)] <EM>[src]</EM>!")
 	if (stat == DEAD)
-		. += span_deadsay("It appears to be powered-down.") 
+		. += span_deadsay("It appears to be powered-down.")
 	else
 		if (getBruteLoss())
 			if (getBruteLoss() < 30)
-				. += span_warning("It looks slightly dented.") 
+				. += span_warning("It looks slightly dented.")
 			else
-				. += span_warning("<B>It looks severely dented!</B>") 
+				. += span_warning("<B>It looks severely dented!</B>")
 		if (getFireLoss())
 			if (getFireLoss() < 30)
-				. += span_warning("It looks slightly charred.") 
+				. += span_warning("It looks slightly charred.")
 			else
-				. += span_warning("<B>Its casing is melted and heat-warped!</B>") 
+				. += span_warning("<B>Its casing is melted and heat-warped!</B>")
 		if(deployed_shell)
 			. += "The wireless networking light is blinking."
 		else if (!shunted && !client)

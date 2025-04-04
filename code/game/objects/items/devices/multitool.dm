@@ -34,7 +34,7 @@
 
 /obj/item/multitool/examine(mob/user)
 	. = ..()
-	. += span_notice("Its buffer [buffer ? "contains [buffer]." : "is empty."]") 
+	. += span_notice("Its buffer [buffer ? "contains [buffer]." : "is empty."]")
 
 // Syndicate device disguised as a multitool; it will turn red when an AI camera is nearby.
 

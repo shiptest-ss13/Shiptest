@@ -82,20 +82,20 @@
 /obj/machinery/power/emitter/examine(mob/user)
 	. = ..()
 	if(welded)
-		. += span_info("It's moored firmly to the floor. You can unsecure its moorings with a <b>welder</b>.") 
+		. += span_info("It's moored firmly to the floor. You can unsecure its moorings with a <b>welder</b>.")
 	else if(anchored)
-		. += span_info("It's currently anchored to the floor. You can secure its moorings with a <b>welder</b>, or remove it with a <b>wrench</b>.") 
+		. += span_info("It's currently anchored to the floor. You can secure its moorings with a <b>welder</b>, or remove it with a <b>wrench</b>.")
 	else
-		. += span_info("It's not anchored to the floor. You can secure it in place with a <b>wrench</b>.") 
+		. += span_info("It's not anchored to the floor. You can secure it in place with a <b>wrench</b>.")
 
 	if(in_range(user, src) || isobserver(user))
 		if(!active)
-			. += span_notice("Its status display is currently turned off.") 
+			. += span_notice("Its status display is currently turned off.")
 		else if(!powered)
-			. += span_notice("Its status display is glowing faintly.") 
+			. += span_notice("Its status display is glowing faintly.")
 		else
-			. += span_notice("Its status display reads: Emitting one beam every <b>[DisplayTimeText(fire_delay)]</b>.") 
-			. += span_notice("Power consumption at <b>[DisplayPower(active_power_usage)]</b>.") 
+			. += span_notice("Its status display reads: Emitting one beam every <b>[DisplayTimeText(fire_delay)]</b>.")
+			. += span_notice("Power consumption at <b>[DisplayPower(active_power_usage)]</b>.")
 
 /obj/machinery/power/emitter/ComponentInitialize()
 	. = ..()

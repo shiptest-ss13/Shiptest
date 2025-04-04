@@ -31,9 +31,9 @@
 /obj/item/desynchronizer/examine(mob/user)
 	. = ..()
 	if(world.time < next_use)
-		. += span_warning("Time left to recharge: [DisplayTimeText(next_use - world.time)]") 
-	. += span_notice("Alt-click to customize the duration. Current duration: [DisplayTimeText(duration)].") 
-	. += span_notice("Can be used again to interrupt the effect early. The recharge time is the same as the time spent in desync.") 
+		. += span_warning("Time left to recharge: [DisplayTimeText(next_use - world.time)]")
+	. += span_notice("Alt-click to customize the duration. Current duration: [DisplayTimeText(duration)].")
+	. += span_notice("Can be used again to interrupt the effect early. The recharge time is the same as the time spent in desync.")
 
 /obj/item/desynchronizer/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

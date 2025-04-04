@@ -57,9 +57,9 @@
 	var/special_role_text = lowertext(name)
 
 	if(win)
-		result += span_greentext("The [special_role_text] was successful!") 
+		result += span_greentext("The [special_role_text] was successful!")
 	else
-		result += span_redtext("The [special_role_text] has failed!") 
+		result += span_redtext("The [special_role_text] has failed!")
 
 	if(istype(owner.current, /mob/camera/disease))
 		var/mob/camera/disease/D = owner.current

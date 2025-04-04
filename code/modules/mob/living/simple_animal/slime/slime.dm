@@ -358,10 +358,10 @@
 /mob/living/simple_animal/slime/examine(mob/user)
 	. = list("<span class='info'>This is [icon2html(src, user)] \a <EM>[src]</EM>!")
 	if (stat == DEAD)
-		. += span_deadsay("It is limp and unresponsive.") 
+		. += span_deadsay("It is limp and unresponsive.")
 	else
 		if (stat == UNCONSCIOUS || stat == HARD_CRIT) // Slime stasis
-			. += span_deadsay("It appears to be alive but unresponsive.") 
+			. += span_deadsay("It appears to be alive but unresponsive.")
 		if (getBruteLoss())
 			. += "<span class='warning'>"
 			if (getBruteLoss() < 40)
@@ -378,10 +378,10 @@
 				. += "It is glowing gently with moderate levels of electrical activity."
 
 			if(6 to 9)
-				. += span_warning("It is glowing brightly with high levels of electrical activity.") 
+				. += span_warning("It is glowing brightly with high levels of electrical activity.")
 
 			if(10)
-				. += span_warning("<B>It is radiating with massive levels of electrical activity!</B>") 
+				. += span_warning("<B>It is radiating with massive levels of electrical activity!</B>")
 
 	. += "</span>"
 

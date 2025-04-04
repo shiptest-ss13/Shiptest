@@ -86,17 +86,17 @@
 				if(haslightstep)
 					H.visible_message(
 						span_danger("[H] carefully steps on [A]."),
-						span_danger("You carefully step on [A], but it still hurts!") 
+						span_danger("You carefully step on [A], but it still hurts!")
 					)
 				else
 					H.visible_message(
 						span_danger("[H] steps on [A]."),
-						span_userdanger("You step on [A]!") 
+						span_userdanger("You step on [A]!")
 					)
 			else
 				H.visible_message(
 					span_danger("[H] slides on [A]!"),
-					span_userdanger("You slide on [A]!") 
+					span_userdanger("You slide on [A]!")
 				)
 
 			cooldown = world.time

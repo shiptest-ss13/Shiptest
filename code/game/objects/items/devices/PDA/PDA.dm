@@ -89,13 +89,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 		return
 
 	if(id)
-		. += span_notice("Alt-click to remove the ID.")  //won't name ID on examine in case it's stolen
+		. += span_notice("Alt-click to remove the ID.") //won't name ID on examine in case it's stolen
 
 	if(inserted_item && (!isturf(loc)))
-		. += span_notice("Ctrl-click to remove [inserted_item].")  //traitor pens are disguised so we're fine naming them on examine
+		. += span_notice("Ctrl-click to remove [inserted_item].") //traitor pens are disguised so we're fine naming them on examine
 
 	if((!isnull(cartridge)))
-		. += span_notice("Ctrl+Shift-click to remove the cartridge.")  //won't name cart on examine in case it's Detomatix
+		. += span_notice("Ctrl+Shift-click to remove the cartridge.") //won't name cart on examine in case it's Detomatix
 
 /obj/item/pda/Initialize()
 	. = ..()
@@ -485,7 +485,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				var/alert_s = input(U,"Alert severity level","Ping Drones",null) as null|anything in list("Low","Medium","High","Critical")
 				var/area/A = get_area(U)
 				if(A && alert_s && !QDELETED(U))
-					var/msg = span_boldnotice("NON-DRONE PING: [U.name]: [alert_s] priority alert in [A.name]!") 
+					var/msg = span_boldnotice("NON-DRONE PING: [U.name]: [alert_s] priority alert in [A.name]!")
 					_alert_drones(msg, TRUE, U)
 					to_chat(U, msg)
 
@@ -686,7 +686,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	// Log it in our logs
 	tnote += "<i><b>&rarr; To [target_text]:</b></i><br>[signal.format_message()]<br>"
 	// Show it to ghosts
-	var/ghost_message = span_name("[owner] </span><span class='game say'>PDA Message</span> --> [span_name("[target_text]")]: <span class='message'>[signal.format_message()]") 
+	var/ghost_message = span_name("[owner] </span><span class='game say'>PDA Message</span> --> [span_name("[target_text]")]: <span class='message'>[signal.format_message()]")
 	for(var/mob/M in GLOB.player_list)
 		if(isobserver(M) && (M.client.prefs.chat_toggles & CHAT_GHOSTPDA))
 			to_chat(M, "[FOLLOW_LINK(M, user)] [ghost_message]")
@@ -984,7 +984,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		note = replacetext(note, "</ul>", "\[/list\]")
 		note = html_encode(note)
 		notescanned = TRUE
-		to_chat(user, span_notice("Paper scanned. Saved to PDA's notekeeper.")  )
+		to_chat(user, span_notice("Paper scanned. Saved to PDA's notekeeper.") )
 
 
 /obj/item/pda/proc/explode() //This needs tuning.

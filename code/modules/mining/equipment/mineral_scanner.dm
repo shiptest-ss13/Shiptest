@@ -125,7 +125,7 @@
 
 /obj/item/pinpointer/mineral/examine(mob/user)
 	. = ..()
-	. += span_notice("It is currently set to [scanmode ? "scan underground" : "scan the surface"].") 
+	. += span_notice("It is currently set to [scanmode ? "scan underground" : "scan the surface"].")
 	. += span_notice("You can use the scanner on an vein on harm intent to mark them as sites of no interest, causing them to no longer show up on scans.")
 
 /obj/item/pinpointer/mineral/AltClick(mob/user) //switching modes

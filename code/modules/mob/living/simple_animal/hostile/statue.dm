@@ -187,7 +187,7 @@
 	name = "Blindness"
 	desc = "Your prey will be momentarily blind for you to advance on them."
 
-	message = span_notice("You glare your eyes.") 
+	message = span_notice("You glare your eyes.")
 	charge_max = 600
 	clothes_req = 0
 	range = 10
@@ -207,7 +207,7 @@
 	charge_max = 10
 	clothes_req = 0
 
-	message = span_notice("You toggle your night vision!") 
+	message = span_notice("You toggle your night vision!")
 	range = -1
 	include_user = 1
 

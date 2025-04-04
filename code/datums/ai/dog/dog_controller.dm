@@ -120,9 +120,9 @@
 
 	var/obj/item/carried_item = blackboard[BB_SIMPLE_CARRY_ITEM]
 	if(carried_item)
-		examine_text += span_notice("[pawn.p_they(TRUE)] [pawn.p_are()] carrying [carried_item.get_examine_string(user)] in [pawn.p_their()] mouth.") 
+		examine_text += span_notice("[pawn.p_they(TRUE)] [pawn.p_are()] carrying [carried_item.get_examine_string(user)] in [pawn.p_their()] mouth.")
 	if(blackboard[BB_DOG_FRIENDS][user])
-		examine_text += span_notice("[pawn.p_they(TRUE)] seem[pawn.p_s()] happy to see you!") 
+		examine_text += span_notice("[pawn.p_they(TRUE)] seem[pawn.p_s()] happy to see you!")
 
 /// If we died, drop anything we were carrying
 /datum/ai_controller/dog/proc/on_death(mob/living/ol_yeller)

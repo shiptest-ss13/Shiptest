@@ -60,9 +60,9 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!diode)
-			. += span_notice("The diode is missing.") 
+			. += span_notice("The diode is missing.")
 		else
-			. += span_notice("A class <b>[diode.rating]</b> laser diode is installed. It is <i>screwed</i> in place.") 
+			. += span_notice("A class <b>[diode.rating]</b> laser diode is installed. It is <i>screwed</i> in place.")
 
 /obj/item/laser_pointer/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
@@ -103,10 +103,10 @@
 
 			//chance to actually hit the eyes depends on internal component
 			if(prob(effectchance * diode.rating) && C.flash_act(severity))
-				outmsg = span_notice("You blind [C] by shining [src] in [C.p_their()] eyes.") 
+				outmsg = span_notice("You blind [C] by shining [src] in [C.p_their()] eyes.")
 				log_combat(user, C, "blinded with a laser pointer",src)
 			else
-				outmsg = span_warning("You fail to blind [C] by shining [src] at [C.p_their()] eyes!") 
+				outmsg = span_warning("You fail to blind [C] by shining [src] at [C.p_their()] eyes!")
 				log_combat(user, C, "attempted to blind with a laser pointer",src)
 
 	//robots
@@ -118,19 +118,19 @@
 			S.flash_act(affect_silicon = 1)
 			S.Paralyze(rand(100,200))
 			to_chat(S, span_danger("Your sensors were overloaded by a laser!"))
-			outmsg = span_notice("You overload [S] by shining [src] at [S.p_their()] sensors.") 
+			outmsg = span_notice("You overload [S] by shining [src] at [S.p_their()] sensors.")
 		else
-			outmsg = span_warning("You fail to overload [S] by shining [src] at [S.p_their()] sensors!") 
+			outmsg = span_warning("You fail to overload [S] by shining [src] at [S.p_their()] sensors!")
 
 	//cameras
 	else if(istype(target, /obj/machinery/camera))
 		var/obj/machinery/camera/C = target
 		if(prob(effectchance * diode.rating))
 			C.emp_act(EMP_HEAVY)
-			outmsg = span_notice("You hit the lens of [C] with [src], temporarily disabling the camera!") 
+			outmsg = span_notice("You hit the lens of [C] with [src], temporarily disabling the camera!")
 			log_combat(user, C, "EMPed", src)
 		else
-			outmsg = span_warning("You miss the lens of [C] with [src]!") 
+			outmsg = span_warning("You miss the lens of [C] with [src]!")
 
 	//cats!
 	for(var/mob/living/simple_animal/pet/cat/C in view(1,targloc))

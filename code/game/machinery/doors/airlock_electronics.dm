@@ -15,7 +15,7 @@
 
 /obj/item/electronics/airlock/examine(mob/user)
 	. = ..()
-	. += span_notice("Has a neat <i>selection menu</i> for modifying airlock access levels.") 
+	. += span_notice("Has a neat <i>selection menu</i> for modifying airlock access levels.")
 
 /obj/item/electronics/airlock/ui_state(mob/user)
 	return GLOB.hands_state

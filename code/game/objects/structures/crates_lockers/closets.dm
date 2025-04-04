@@ -110,13 +110,13 @@
 /obj/structure/closet/examine(mob/user)
 	. = ..()
 	if(welded)
-		. += span_notice("It's welded shut.") 
+		. += span_notice("It's welded shut.")
 	if(anchored)
-		. += span_notice("It is <b>bolted</b> to the ground.") 
+		. += span_notice("It is <b>bolted</b> to the ground.")
 	if(opened)
-		. += span_notice("The parts are <b>welded</b> together.") 
+		. += span_notice("The parts are <b>welded</b> together.")
 	else if(secure && !opened)
-		. += span_notice("Alt-click to [locked ? "unlock" : "lock"].") 
+		. += span_notice("Alt-click to [locked ? "unlock" : "lock"].")
 
 /obj/structure/closet/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
@@ -132,7 +132,7 @@
 	for(var/mob/living/L in T)
 		if(L.anchored || horizontal && L.mob_size > MOB_SIZE_TINY && L.density)
 			if(user)
-				to_chat(user, span_danger("There's something large on top of [src], preventing it from opening.")  )
+				to_chat(user, span_danger("There's something large on top of [src], preventing it from opening.") )
 			return FALSE
 	return TRUE
 

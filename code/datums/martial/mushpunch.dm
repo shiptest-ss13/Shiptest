@@ -31,7 +31,7 @@
 /obj/item/mushpunch/attack_self(mob/living/carbon/human/user)
 	if(!istype(user) || !user)
 		return
-	var/message = span_spider("You devour [src], and a confluence of skill and power from the mushroom enhances your punches! You do need a short moment to charge these powerful punches.") 
+	var/message = span_spider("You devour [src], and a confluence of skill and power from the mushroom enhances your punches! You do need a short moment to charge these powerful punches.")
 	to_chat(user, message)
 	var/datum/martial_art/mushpunch/mush = new(null)
 	mush.teach(user)

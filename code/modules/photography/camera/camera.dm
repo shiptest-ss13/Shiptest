@@ -51,7 +51,7 @@
 
 /obj/item/camera/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to change its focusing, allowing you to set how big of an area it will capture.") 
+	. += span_notice("Alt-click to change its focusing, allowing you to set how big of an area it will capture.")
 
 /obj/item/camera/proc/adjust_zoom(mob/user)
 	var/desired_x = input(user, "How high do you want the camera to shoot, between [picture_size_x_min] and [picture_size_x_max]?", "Zoom", picture_size_x) as num|null

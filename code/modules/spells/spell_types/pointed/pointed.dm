@@ -17,14 +17,14 @@
 		return
 	var/msg
 	if(!can_cast(user))
-		msg = span_warning("You can no longer cast [name]!") 
+		msg = span_warning("You can no longer cast [name]!")
 		remove_ranged_ability(msg)
 		return
 	if(active)
-		msg = span_notice("[deactive_msg]") 
+		msg = span_notice("[deactive_msg]")
 		remove_ranged_ability(msg)
 	else
-		msg = span_notice("[active_msg] <B>Left-click to activate spell on a target!</B>") 
+		msg = span_notice("[active_msg] <B>Left-click to activate spell on a target!</B>")
 		add_ranged_ability(user, msg, TRUE)
 
 /obj/effect/proc_holder/spell/pointed/on_lose(mob/living/user)

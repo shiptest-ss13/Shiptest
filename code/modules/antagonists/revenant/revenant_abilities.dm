@@ -10,7 +10,7 @@
 
 	if(ishuman(A))
 		if(A in drained_mobs)
-			to_chat(src, span_revenwarning("[A]'s soul is dead and empty.")  )
+			to_chat(src, span_revenwarning("[A]'s soul is dead and empty.") )
 		else if(in_range(src, A))
 			Harvest(A)
 
@@ -107,7 +107,7 @@
 /obj/effect/proc_holder/spell/targeted/night_vision/revenant
 	charge_max = 0
 	panel = "Revenant Abilities"
-	message = span_revennotice("You toggle your night vision.") 
+	message = span_revennotice("You toggle your night vision.")
 	action_icon = 'icons/mob/actions/actions_revenant.dmi'
 	action_icon_state = "r_nightvision"
 	action_background_icon_state = "bg_revenant"

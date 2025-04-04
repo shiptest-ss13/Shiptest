@@ -392,7 +392,7 @@
 /datum/chemical_reaction/bacchus_blessing
 	results = list(/datum/reagent/consumable/ethanol/bacchus_blessing = 4)
 	required_reagents = list(/datum/reagent/consumable/ethanol/hooch = 1, /datum/reagent/consumable/ethanol/absinthe = 1, /datum/reagent/consumable/ethanol/manly_dorf = 1, /datum/reagent/consumable/ethanol/syndicatebomb = 1)
-	mix_message = span_warning("The mixture turns to a sickening froth.") 
+	mix_message = span_warning("The mixture turns to a sickening froth.")
 
 /datum/chemical_reaction/lemonade
 	results = list(/datum/reagent/consumable/lemonade = 5)

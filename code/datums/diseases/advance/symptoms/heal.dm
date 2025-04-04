@@ -54,7 +54,7 @@
 	stage_speed = 0
 	transmittable = 1
 	level = 6
-	passive_message = span_notice("You miss the feeling of starlight on your skin.") 
+	passive_message = span_notice("You miss the feeling of starlight on your skin.")
 	var/nearspace_penalty = 0.3
 	threshold_descs = list(
 		"Stage Speed 6" = "Increases healing speed.",
@@ -178,7 +178,7 @@
 	stage_speed = -2
 	transmittable = -1
 	level = 6
-	passive_message = span_notice("You feel tingling on your skin as light passes over it.") 
+	passive_message = span_notice("You feel tingling on your skin as light passes over it.")
 	threshold_descs = list(
 		"Stage Speed 8" = "Doubles healing speed.",
 	)
@@ -227,7 +227,7 @@
 	stage_speed = -3
 	transmittable = -2
 	level = 8
-	passive_message = span_notice("The pain from your wounds makes you feel oddly sleepy...") 
+	passive_message = span_notice("The pain from your wounds makes you feel oddly sleepy...")
 	var/deathgasp = FALSE
 	var/stabilize = FALSE
 	var/active_coma = FALSE //to prevent multiple coma procs
@@ -322,7 +322,7 @@
 	stage_speed = 0
 	transmittable = 1
 	level = 6
-	passive_message = span_notice("Your skin feels oddly dry...") 
+	passive_message = span_notice("Your skin feels oddly dry...")
 	var/absorption_coeff = 1
 	threshold_descs = list(
 		"Resistance 5" = "Water is consumed at a much slower rate.",
@@ -380,7 +380,7 @@
 	stage_speed = -2
 	transmittable = -2
 	level = 8
-	passive_message = span_notice("You feel an odd attraction to plasma.") 
+	passive_message = span_notice("You feel an odd attraction to plasma.")
 	var/temp_rate = 1
 	threshold_descs = list(
 		"Transmission 6" = "Increases temperature adjustment rate.",
@@ -447,7 +447,7 @@
 	level = 6
 	symptom_delay_min = 1
 	symptom_delay_max = 1
-	passive_message = span_notice("Your skin glows faintly for a moment.") 
+	passive_message = span_notice("Your skin glows faintly for a moment.")
 	var/cellular_damage = FALSE
 	threshold_descs = list(
 		"Transmission 6" = "Additionally heals cellular damage.",

@@ -23,14 +23,14 @@
 	//Sparks effect - For emag
 	var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread
 	//Messages - Saves me time if I want to change something.
-	var/noserver = span_alert("ALERT: No server detected.") 
-	var/incorrectkey = span_warning("ALERT: Incorrect decryption key!") 
-	var/defaultmsg = span_notice("Welcome. Please select an option.") 
-	var/rebootmsg = span_warning("%$&(£: Critical %$$@ Error // !RestArting! <lOadiNg backUp iNput ouTput> - ?pLeaSe wAit!") 
+	var/noserver = span_alert("ALERT: No server detected.")
+	var/incorrectkey = span_warning("ALERT: Incorrect decryption key!")
+	var/defaultmsg = span_notice("Welcome. Please select an option.")
+	var/rebootmsg = span_warning("%$&(£: Critical %$$@ Error // !RestArting! <lOadiNg backUp iNput ouTput> - ?pLeaSe wAit!")
 	//Computer properties
 	var/screen = MSG_MON_SCREEN_MAIN 		// 0 = Main menu, 1 = Message Logs, 2 = Hacked screen, 3 = Custom Message
 	var/hacking = FALSE		// Is it being hacked into by the AI/Cyborg
-	var/message = span_notice("System bootup complete. Please select an option.") 	// The message that shows on the main menu.
+	var/message = span_notice("System bootup complete. Please select an option.")	// The message that shows on the main menu.
 	var/auth = FALSE // Are they authenticated?
 	var/optioncount = 7
 	// Custom Message Properties
@@ -293,10 +293,10 @@
 
 			if(message_servers.len > 1)
 				linkedServer = input(usr, "Please select a server.", "Select a server.", null) as null|anything in message_servers
-				message = span_alert("NOTICE: Server selected.") 
+				message = span_alert("NOTICE: Server selected.")
 			else if(message_servers.len > 0)
 				linkedServer = message_servers[1]
-				message =  span_notice("NOTICE: Only Single Server Detected - Server selected.") 
+				message =  span_notice("NOTICE: Only Single Server Detected - Server selected.")
 			else
 				message = noserver
 
@@ -313,14 +313,14 @@
 				message = noserver
 			else if(auth)
 				linkedServer.pda_msgs = list()
-				message = span_notice("NOTICE: Logs cleared.") 
+				message = span_notice("NOTICE: Logs cleared.")
 		//Clears the request console logs - KEY REQUIRED
 		if (href_list["clear_requests"])
 			if(LINKED_SERVER_NONRESPONSIVE)
 				message = noserver
 			else if(auth)
 				linkedServer.rc_msgs = list()
-				message = span_notice("NOTICE: Logs cleared.") 
+				message = span_notice("NOTICE: Logs cleared.")
 		//Change the password - KEY REQUIRED
 		if (href_list["pass"])
 			if(LINKED_SERVER_NONRESPONSIVE)
@@ -331,12 +331,12 @@
 					if(linkedServer.decryptkey == dkey)
 						var/newkey = stripped_input(usr,"Please enter the new key (3 - 16 characters max):")
 						if(length(newkey) <= 3)
-							message = span_notice("NOTICE: Decryption key too short!") 
+							message = span_notice("NOTICE: Decryption key too short!")
 						else if(length(newkey) > 16)
-							message = span_notice("NOTICE: Decryption key too long!") 
+							message = span_notice("NOTICE: Decryption key too long!")
 						else if(newkey && newkey != "")
 							linkedServer.decryptkey = newkey
-						message = span_notice("NOTICE: Decryption key set.") 
+						message = span_notice("NOTICE: Decryption key set.")
 					else
 						message = incorrectkey
 
@@ -357,7 +357,7 @@
 					message = noserver
 				else //if(istype(href_list["delete_logs"], /datum/data_pda_msg))
 					linkedServer.pda_msgs -= locate(href_list["delete_logs"]) in linkedServer.pda_msgs
-					message = span_notice("NOTICE: Log Deleted!") 
+					message = span_notice("NOTICE: Log Deleted!")
 		//Delete the request console log.
 		if (href_list["delete_requests"])
 			//Are they on the view logs screen?
@@ -366,7 +366,7 @@
 					message = noserver
 				else //if(istype(href_list["delete_logs"], /datum/data_pda_msg))
 					linkedServer.rc_msgs -= locate(href_list["delete_requests"]) in linkedServer.rc_msgs
-					message = span_notice("NOTICE: Log Deleted!") 
+					message = span_notice("NOTICE: Log Deleted!")
 		//Create a custom message
 		if (href_list["msg"])
 			if(LINKED_SERVER_NONRESPONSIVE)
@@ -412,11 +412,11 @@
 							customsender = "UNKNOWN"
 
 						if(isnull(customrecepient))
-							message = span_notice("NOTICE: No recepient selected!") 
+							message = span_notice("NOTICE: No recepient selected!")
 							return attack_hand(usr)
 
 						if(isnull(custommessage) || custommessage == "")
-							message = span_notice("NOTICE: No message entered!") 
+							message = span_notice("NOTICE: No message entered!")
 							return attack_hand(usr)
 
 						var/datum/signal/subspace/messaging/pda/signal = new(src, list(

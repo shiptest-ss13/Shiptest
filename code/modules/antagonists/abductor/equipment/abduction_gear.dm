@@ -579,7 +579,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 			playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
 			C.visible_message(
 				span_danger("[user] begins restraining [C] with [src]!"), \
-				span_userdanger("[user] begins shaping an energy field around your hands!") 
+				span_userdanger("[user] begins shaping an energy field around your hands!")
 				)
 			if(do_after(user, time_to_cuff, C) && C.canBeHandcuffed())
 				if(!C.handcuffed)
@@ -596,22 +596,22 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	L.visible_message(span_danger("[user] probes [L] with [src]!"), \
 						span_userdanger("[user] probes you!"))
 
-	var/species = span_warning("Unknown species") 
-	var/helptext = span_warning("Species unsuitable for experiments.") 
+	var/species = span_warning("Unknown species")
+	var/helptext = span_warning("Species unsuitable for experiments.")
 
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		species = span_notice("[H.dna.species.name]") 
+		species = span_notice("[H.dna.species.name]")
 		if(L.mind && L.mind.has_antag_datum(/datum/antagonist/changeling))
-			species = span_warning("Changeling lifeform") 
+			species = span_warning("Changeling lifeform")
 		var/obj/item/organ/heart/gland/temp = locate() in H.internal_organs
 		if(temp)
-			helptext = span_warning("Experimental gland detected!") 
+			helptext = span_warning("Experimental gland detected!")
 		else
 			if (L.getorganslot(ORGAN_SLOT_HEART))
-				helptext = span_notice("Subject suitable for experiments.") 
+				helptext = span_notice("Subject suitable for experiments.")
 			else
-				helptext = span_warning("Subject unsuitable for experiments.") 
+				helptext = span_warning("Subject unsuitable for experiments.")
 
 	to_chat(user, "[span_notice("Probing result:")][species]")
 	to_chat(user, "[helptext]")
@@ -642,13 +642,13 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(AbductorCheck(user))
 		switch(mode)
 			if(BATON_STUN)
-				. += span_warning("The baton is in stun mode.") 
+				. += span_warning("The baton is in stun mode.")
 			if(BATON_SLEEP)
-				. += span_warning("The baton is in sleep inducement mode.") 
+				. += span_warning("The baton is in sleep inducement mode.")
 			if(BATON_CUFF)
-				. += span_warning("The baton is in restraining mode.") 
+				. += span_warning("The baton is in restraining mode.")
 			if(BATON_PROBE)
-				. += span_warning("The baton is in probing mode.") 
+				. += span_warning("The baton is in probing mode.")
 
 /obj/item/radio/headset/abductor
 	name = "alien headset"

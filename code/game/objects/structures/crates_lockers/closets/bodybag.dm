@@ -103,7 +103,7 @@
 			to_chat(usr, span_warning("There are too many things inside of [src] to fold it up!"))
 			return
 		for(var/obj/item/bodybag/bluespace/B in src)
-			to_chat(usr, span_warning("You can't recursively fold bluespace body bags!")  )
+			to_chat(usr, span_warning("You can't recursively fold bluespace body bags!") )
 			return
 		visible_message(span_notice("[usr] folds up [src]."))
 		var/obj/item/bodybag/B = foldedbag_instance || new foldedbag_path

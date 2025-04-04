@@ -68,42 +68,42 @@
 	name = "Blood Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "rift"
-	chosen_message = span_colossus("You are now dashing through your enemies, piercing everyone caught in your path.") 
+	chosen_message = span_colossus("You are now dashing through your enemies, piercing everyone caught in your path.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/runic_blast
 	name = "Runic Blast"
 	icon_icon = 'icons/obj/rune.dmi'
 	button_icon_state = "4"
-	chosen_message = span_colossus("You are now setting up a big explosion, with a delay.") 
+	chosen_message = span_colossus("You are now setting up a big explosion, with a delay.")
 	chosen_attack_num = 2
 
 /datum/action/innate/megafauna_attack/blast
 	name = "Blast"
 	icon_icon = 'icons/obj/guns/projectile.dmi'
 	button_icon_state = "arg"
-	chosen_message = span_colossus("You are now shooting at your enemy with explosive bullets.") 
+	chosen_message = span_colossus("You are now shooting at your enemy with explosive bullets.")
 	chosen_attack_num = 3
 
 /datum/action/innate/megafauna_attack/infernal_summon
 	name = "Infernal Summon"
 	icon_icon = 'icons/mob/mob.dmi'
 	button_icon_state = "imp"
-	chosen_message = span_colossus("You will now summon demons to assist you.") 
+	chosen_message = span_colossus("You will now summon demons to assist you.")
 	chosen_attack_num = 4
 
 /datum/action/innate/megafauna_attack/teleport_b
 	name = "Teleport"
 	icon_icon = 'icons/obj/projectiles.dmi'
 	button_icon_state = "bluespace"
-	chosen_message = span_colossus("You will now teleport next to your target.") 
+	chosen_message = span_colossus("You will now teleport next to your target.")
 	chosen_attack_num = 5
 
 /datum/action/innate/megafauna_attack/rapid_fire
 	name = "Rapid Fire"
 	icon_icon = 'icons/obj/guns/projectile.dmi'
 	button_icon_state = "arg"
-	chosen_message = span_colossus("You are now rapidly shooting at your enemy with explosive bullets (5).") 
+	chosen_message = span_colossus("You are now rapidly shooting at your enemy with explosive bullets (5).")
 	chosen_attack_num = 6
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/AttackingTarget()

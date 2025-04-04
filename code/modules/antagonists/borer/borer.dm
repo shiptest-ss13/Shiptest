@@ -1128,7 +1128,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	else
 		parts += "<span class='redtext big'>The [name] have failed.</span>"
 
-	parts += span_header("The [name] were:") 
+	parts += span_header("The [name] were:")
 	for(var/mob/living/simple_animal/borer/B in GLOB.borers)
 		var/borertext
 		if(B.is_team_borer && (B.key || B.controlling) && B.stat != DEAD)
@@ -1138,11 +1138,11 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 			var/turf/location = get_turf(B)
 			if(B.stat != DEAD)
 				if(is_centcom_level(location) && B.victim)
-					borertext += span_greentext("escaped with a host") 
+					borertext += span_greentext("escaped with a host")
 				else
-					borertext += span_redtext("failed to find a host") 
+					borertext += span_redtext("failed to find a host")
 			else
-				borertext += span_redtext("died") 
+				borertext += span_redtext("died")
 			parts += borertext
 	parts += printobjectives(objectives)
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

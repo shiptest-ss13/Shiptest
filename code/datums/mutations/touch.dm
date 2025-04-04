@@ -4,8 +4,8 @@
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
-	text_gain_indication = span_notice("You feel power flow through your hands.") 
-	text_lose_indication = span_notice("The energy in your hands subsides.") 
+	text_gain_indication = span_notice("You feel power flow through your hands.")
+	text_lose_indication = span_notice("The energy in your hands subsides.")
 	power = /obj/effect/proc_holder/spell/targeted/touch/shock
 	instability = 30
 

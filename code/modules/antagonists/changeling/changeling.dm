@@ -563,9 +563,9 @@
 			count++
 
 	if(changelingwin)
-		parts += span_greentext("The changeling was successful!") 
+		parts += span_greentext("The changeling was successful!")
 	else
-		parts += span_redtext("The changeling has failed.") 
+		parts += span_redtext("The changeling has failed.")
 
 	return parts.Join("<br>")
 

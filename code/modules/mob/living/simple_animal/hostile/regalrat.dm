@@ -77,11 +77,11 @@
 	if(istype(user,/mob/living/basic/mouse/rat))
 		var/mob/living/basic/mouse/rat/ratself = user
 		if(ratself.faction_check_mob(src, TRUE))
-			. += span_notice("This is your king. Long live his majesty!") 
+			. += span_notice("This is your king. Long live his majesty!")
 		else
-			. += span_warning("This is a false king! Strike him down!") 
+			. += span_warning("This is a false king! Strike him down!")
 	else if(istype(user,/mob/living/simple_animal/hostile/regalrat))
-		. += span_warning("Who is this foolish false king? This will not stand!") 
+		. += span_warning("Who is this foolish false king? This will not stand!")
 
 /**
  *This action creates trash, money, dirt, and cheese.

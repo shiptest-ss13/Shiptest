@@ -85,7 +85,7 @@
 				else
 					user.visible_message(
 						span_warning("[user] directs [src] to [M]'s eyes."),
-						span_danger("You direct [src] to [M]'s eyes.") 
+						span_danger("You direct [src] to [M]'s eyes.")
 					)
 					if(M.stat == DEAD || (M.is_blind()) || !M.flash_act(visual = 1)) //mob is dead or fully blind
 						to_chat(user, span_warning("[M]'s pupils don't react to the light!"))
@@ -152,7 +152,7 @@
 				else
 					user.visible_message(
 						span_notice("[user] directs [src] to [M]'s mouth."),
-						span_notice("You direct [src] to [M]'s mouth.") 
+						span_notice("You direct [src] to [M]'s mouth.")
 					)
 					if(organ_count)
 						to_chat(user, span_notice("Inside [their] mouth [organ_count > 1 ? "are" : "is"] [organ_list]."))
@@ -297,7 +297,7 @@
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/flare/ignition_effect(atom/A, mob/user)
-	. = fuel && on ? span_notice("[user] lights [A] with [src] like a real badass.")  : ""
+	. = fuel && on ? span_notice("[user] lights [A] with [src] like a real badass.") : ""
 
 /obj/item/flashlight/flare/proc/turn_off()
 	on = FALSE

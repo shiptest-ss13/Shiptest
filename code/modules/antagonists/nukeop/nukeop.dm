@@ -288,7 +288,7 @@
 
 /datum/team/nuclear/roundend_report()
 	var/list/parts = list()
-	parts += span_header("[syndicate_name] Operatives:") 
+	parts += span_header("[syndicate_name] Operatives:")
 
 	switch(get_result())
 		if(NUKE_RESULT_FLUKE)

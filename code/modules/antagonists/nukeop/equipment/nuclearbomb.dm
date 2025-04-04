@@ -658,7 +658,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 		return
 
 	if(isobserver(user) || HAS_TRAIT(user.mind, TRAIT_DISK_VERIFIER))
-		. += span_warning("The serial numbers on [src] are incorrect.") 
+		. += span_warning("The serial numbers on [src] are incorrect.")
 
 /obj/item/disk/nuclear/Destroy(force=FALSE)
 	// respawning is handled in /obj/Destroy()

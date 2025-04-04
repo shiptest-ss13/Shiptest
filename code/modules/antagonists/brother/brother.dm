@@ -119,7 +119,7 @@
 /datum/team/brother_team/roundend_report()
 	var/list/parts = list()
 
-	parts += span_header("The blood brothers of [name] were:") 
+	parts += span_header("The blood brothers of [name] were:")
 	for(var/datum/mind/M in members)
 		parts += printplayer(M)
 	var/win = TRUE
@@ -132,9 +132,9 @@
 			win = FALSE
 		objective_count++
 	if(win)
-		parts += span_greentext("The blood brothers were successful!") 
+		parts += span_greentext("The blood brothers were successful!")
 	else
-		parts += span_redtext("The blood brothers have failed!") 
+		parts += span_redtext("The blood brothers have failed!")
 
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"
 

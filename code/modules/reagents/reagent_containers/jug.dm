@@ -34,11 +34,11 @@
 	. = ..()
 	if(tamper)
 		if(!cap_on)
-			. += span_info("The tamper seal hasn't been applied yet.") 
+			. += span_info("The tamper seal hasn't been applied yet.")
 			return
-		. += span_green("The tamper seal is <b>intact</b>.") 
+		. += span_green("The tamper seal is <b>intact</b>.")
 	else
-		. += span_warning("The tamper seal is <b>broken</b>.") 
+		. += span_warning("The tamper seal is <b>broken</b>.")
 
 
 /obj/item/reagent_containers/glass/chem_jug/SplashReagents(atom/target, thrown = FALSE)

@@ -63,7 +63,7 @@
 // we use this to show integrity + drying percentage
 /turf/closed/wall/concrete/deconstruction_hints(mob/user)
 	. = list()
-	. += span_notice("[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].") 
+	. += span_notice("[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].")
 	switch(harden_lvl)
 		if(0.8 to 0.99)
 			. += "[p_they(TRUE)] look[p_s()] nearly dry."

@@ -13,7 +13,7 @@
 
 /obj/item/assembly/mousetrap/examine(mob/user)
 	. = ..()
-	. += span_notice("The pressure plate is [armed?"primed":"safe"].") 
+	. += span_notice("The pressure plate is [armed?"primed":"safe"].")
 
 /obj/item/assembly/mousetrap/activate()
 	if(..())
@@ -80,7 +80,7 @@
 			triggered(user, which_hand)
 			user.visible_message(
 				span_warning("[user] accidentally sets off [src], breaking their fingers."),
-				span_warning("You accidentally trigger [src]!") 
+				span_warning("You accidentally trigger [src]!")
 			)
 			return
 		to_chat(user, span_notice("You disarm [src]."))
@@ -99,7 +99,7 @@
 			triggered(user, which_hand)
 			user.visible_message(
 				span_warning("[user] accidentally sets off [src], breaking their fingers."),
-				span_warning("You accidentally trigger [src]!") 
+				span_warning("You accidentally trigger [src]!")
 			)
 			return
 	return ..()
@@ -117,7 +117,7 @@
 						INVOKE_ASYNC(src, PROC_REF(triggered), H)
 						H.visible_message(
 							span_warning("[H] accidentally steps on [src]."),
-							span_warning("You accidentally step on [src]") 
+							span_warning("You accidentally step on [src]")
 						)
 				else if(ismouse(MM))
 					INVOKE_ASYNC(src, PROC_REF(triggered), MM)
@@ -130,7 +130,7 @@
 		if(finder)
 			finder.visible_message(
 				span_warning("[finder] accidentally sets off [src], breaking their fingers."),
-				span_warning("You accidentally trigger [src]!") 
+				span_warning("You accidentally trigger [src]!")
 			)
 			triggered(finder, (finder.active_hand_index % 2 == 0) ? BODY_ZONE_PRECISE_R_HAND : BODY_ZONE_PRECISE_L_HAND)
 			return TRUE	//end the search!

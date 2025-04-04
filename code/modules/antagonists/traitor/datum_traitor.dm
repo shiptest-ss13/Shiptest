@@ -345,9 +345,9 @@
 		result += contractor_round_end()
 
 	if(traitorwin)
-		result += span_greentext("The [special_role_text] was successful!") 
+		result += span_greentext("The [special_role_text] was successful!")
 	else
-		result += span_redtext("The [special_role_text] has failed!") 
+		result += span_redtext("The [special_role_text] has failed!")
 		SEND_SOUND(owner.current, 'sound/ambience/ambifailure.ogg')
 
 	return result.Join("<br>")

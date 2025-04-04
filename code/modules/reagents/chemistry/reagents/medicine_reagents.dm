@@ -401,7 +401,7 @@
 				S.speed_modifier = max(0.1, S.speed_modifier)
 
 			if(show_message)
-				to_chat(M, span_danger("You feel your wounds fade away to nothing!")  )
+				to_chat(M, span_danger("You feel your wounds fade away to nothing!") )
 	..()
 
 /datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/L)

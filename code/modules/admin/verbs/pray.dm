@@ -34,7 +34,7 @@
 
 	var/msg_tmp = msg
 	GLOB.requests.pray(usr.client, msg, usr.job == "Chaplain")
-	msg = span_adminnotice("[icon2html(cross, GLOB.admins)]<b><font color=[font_color]>[prayer_type][deity ? " (to [deity])" : ""]: </font>[ADMIN_FULLMONTY(src)] [ADMIN_SC(src)]:</b> [span_linkify("[msg]")]") 
+	msg = span_adminnotice("[icon2html(cross, GLOB.admins)]<b><font color=[font_color]>[prayer_type][deity ? " (to [deity])" : ""]: </font>[ADMIN_FULLMONTY(src)] [ADMIN_SC(src)]:</b> [span_linkify("[msg]")]")
 
 	for(var/client/C in GLOB.admins)
 		if(C.prefs.chat_toggles & CHAT_PRAYER)
@@ -48,7 +48,7 @@
 /proc/message_centcom(text, mob/sender)
 	var/msg = copytext_char(sanitize(text), 1, MAX_MESSAGE_LEN)
 	GLOB.requests.message_centcom(sender.client, msg)
-	msg = span_adminnotice("<b><font color=orange>CENTCOM:</font>[ADMIN_FULLMONTY(sender)] [ADMIN_CENTCOM_REPLY(sender)]:</b> [msg]") 
+	msg = span_adminnotice("<b><font color=orange>CENTCOM:</font>[ADMIN_FULLMONTY(sender)] [ADMIN_CENTCOM_REPLY(sender)]:</b> [msg]")
 	to_chat(GLOB.admins, msg, confidential = TRUE)
 	for(var/obj/machinery/computer/communications/console in GLOB.machines)
 		console.override_cooldown()
@@ -57,7 +57,7 @@
 /proc/message_syndicate(text, mob/sender)
 	var/msg = copytext_char(sanitize(text), 1, MAX_MESSAGE_LEN)
 	GLOB.requests.message_syndicate(sender.client, msg)
-	msg = span_adminnotice("<b><font color=crimson>SYNDICATE:</font>[ADMIN_FULLMONTY(sender)] [ADMIN_SYNDICATE_REPLY(sender)]:</b> [msg]") 
+	msg = span_adminnotice("<b><font color=crimson>SYNDICATE:</font>[ADMIN_FULLMONTY(sender)] [ADMIN_SYNDICATE_REPLY(sender)]:</b> [msg]")
 	to_chat(GLOB.admins, msg, confidential = TRUE)
 	for(var/obj/machinery/computer/communications/console in GLOB.machines)
 		console.override_cooldown()
@@ -66,7 +66,7 @@
 /proc/nuke_request(text, mob/sender)
 	var/msg = copytext_char(sanitize(text), 1, MAX_MESSAGE_LEN)
 	GLOB.requests.nuke_request(sender.client, msg)
-	msg = span_adminnotice("<b><font color=orange>NUKE CODE REQUEST:</font>[ADMIN_FULLMONTY(sender)] [ADMIN_CENTCOM_REPLY(sender)] [ADMIN_SET_SD_CODE]:</b> [msg]") 
+	msg = span_adminnotice("<b><font color=orange>NUKE CODE REQUEST:</font>[ADMIN_FULLMONTY(sender)] [ADMIN_CENTCOM_REPLY(sender)] [ADMIN_SET_SD_CODE]:</b> [msg]")
 	to_chat(GLOB.admins, msg, confidential = TRUE)
 	for(var/obj/machinery/computer/communications/console in GLOB.machines)
 		console.override_cooldown()

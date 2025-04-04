@@ -52,9 +52,9 @@
 /mob/living/simple_animal/pet/gondola/gondolapod/examine(mob/user)
 	. = ..()
 	if (contents.len)
-		. += span_notice("It looks like it hasn't made its delivery yet.</b>") 
+		. += span_notice("It looks like it hasn't made its delivery yet.</b>")
 	else
-		. += span_notice("It looks like it has already made its delivery.</b>") 
+		. += span_notice("It looks like it has already made its delivery.</b>")
 
 /mob/living/simple_animal/pet/gondola/gondolapod/verb/check()
 	set name = "Count Contents"

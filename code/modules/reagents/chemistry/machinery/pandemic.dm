@@ -35,7 +35,7 @@
 			is_close = TRUE
 		else
 			. += "It has a beaker inside it."
-		. += span_info("Alt-click to eject [is_close ? beaker : "the beaker"].") 
+		. += span_info("Alt-click to eject [is_close ? beaker : "the beaker"].")
 
 /obj/machinery/computer/pandemic/AltClick(mob/user)
 	. = ..()

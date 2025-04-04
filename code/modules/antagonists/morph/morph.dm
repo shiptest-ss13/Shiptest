@@ -55,7 +55,7 @@
 	if(morphed)
 		. = form.examine(user)
 		if(get_dist(user,src)<=3)
-			. += span_warning("It doesn't look quite right...") 
+			. += span_warning("It doesn't look quite right...")
 	else
 		. = ..()
 

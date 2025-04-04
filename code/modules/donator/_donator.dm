@@ -339,10 +339,10 @@ GLOBAL_PROTECT(donators)
 	if(!donator_key) // Github I demand you run the checks on this PR
 		return .
 	if(check_donator(user))
-		. += span_notice("<ul>This is one of your donator items, to <b>[(donator_allow_other_usage ? "allow" : "disallow")]</b> sharing <b>CtrlShiftClick</b> it.</ul>") 
+		. += span_notice("<ul>This is one of your donator items, to <b>[(donator_allow_other_usage ? "allow" : "disallow")]</b> sharing <b>CtrlShiftClick</b> it.</ul>")
 	else
 		if(!donator_allow_other_usage)
-			. += span_warning("A strange force prevents you from making eye contact with it.") 
+			. += span_warning("A strange force prevents you from making eye contact with it.")
 
 /obj/item/clothing/proc/check_donator(mob/user)
 	return ckey(user.key) == ckey(donator_key)

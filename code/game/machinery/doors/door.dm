@@ -50,13 +50,13 @@
 	. = ..()
 	if(red_alert_access)
 		if(GLOB.security_level >= SEC_LEVEL_RED)
-			. += span_notice("Due to a security threat, its access requirements have been lifted!") 
+			. += span_notice("Due to a security threat, its access requirements have been lifted!")
 		else
-			. += span_notice("In the event of a red alert, its access requirements will automatically lift.") 
+			. += span_notice("In the event of a red alert, its access requirements will automatically lift.")
 	if(!poddoor)
-		. += span_notice("Its maintenance panel is <b>screwed</b> in place.") 
+		. += span_notice("Its maintenance panel is <b>screwed</b> in place.")
 	if(safety_mode)
-		. += span_notice("It has labels indicating that it has an emergency mechanism to open it with <b>just your hands</b> if there's no power.") 
+		. += span_notice("It has labels indicating that it has an emergency mechanism to open it with <b>just your hands</b> if there's no power.")
 
 /obj/machinery/door/check_access_list(list/access_list)
 	if(red_alert_access && GLOB.security_level >= SEC_LEVEL_RED)

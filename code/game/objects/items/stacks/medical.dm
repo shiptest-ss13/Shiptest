@@ -193,7 +193,7 @@
 		user.visible_message(
 			span_notice("[user] cuts [src] into pieces of cloth with [I]."),
 			span_notice("You cut [src] into pieces of cloth with [I]."),
-			span_hear("You hear cutting.") 
+			span_hear("You hear cutting.")
 		)
 		use(2)
 	else

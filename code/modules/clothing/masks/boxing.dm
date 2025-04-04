@@ -36,7 +36,7 @@
 
 /obj/item/clothing/mask/balaclava/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click [src] to adjust it.") 
+	. += span_notice("Alt-click [src] to adjust it.")
 
 /obj/item/clothing/mask/infiltrator
 	name = "infiltrator balaclava"

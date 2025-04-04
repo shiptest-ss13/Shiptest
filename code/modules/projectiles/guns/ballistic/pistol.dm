@@ -138,7 +138,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 /obj/item/gun/ballistic/automatic/pistol/commissar/examine(mob/user)
 	. = ..()
 	if(funnysounds)
-		. += span_info("Alt-click to use \the [src] vox hailer.") 
+		. += span_info("Alt-click to use \the [src] vox hailer.")
 
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
