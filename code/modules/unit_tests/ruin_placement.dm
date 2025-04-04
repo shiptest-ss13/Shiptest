@@ -13,6 +13,11 @@
 			)
 
 			log_test("Testing [ruin_name]")
+			
+			var/datum/overmap/dynamic/dummy_overmap = new(null, FALSE)
+			for(var/mission_type in used_ruin.ruin_mission_types)
+				dummy_overmap.dynamic_missions += new mission_type(dummy_overmap, 1 + length(dummy_overmap.dynamic_missions))
+
 			ruin.load(vlevel.get_unreserved_bottom_left_turf())
 
 			var/list/errors = atmosscan(TRUE, TRUE)
@@ -23,6 +28,7 @@
 
 			vlevel.clear_reservation()
 			qdel(vlevel)
+			qdel(dummy_overmap)
 
 	qdel(mapzone)
 
