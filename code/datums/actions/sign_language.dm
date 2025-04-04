@@ -14,7 +14,7 @@
 /datum/action/innate/sign_language
 	name = "Sign Language"
 	icon_icon = 'icons/mob/actions.dmi'
-	button_icon_state = "sign_language"
+	button_icon_state = "sign_language_0"
 	desc = "Allows you to communicate via sign language."
 
 /datum/action/innate/sign_language/UpdateButtonIcon(atom/movable/screen/movable/action_button/button, status_only = FALSE, force)
@@ -22,9 +22,9 @@
 	if(!. || !button)
 		return
 	if(HAS_TRAIT(owner, TRAIT_SIGN_LANG))
-		button.icon_state = "template_active"
+		button_icon_state = "sign_language_1"
 	else
-		button.icon_state = "template"
+		button_icon_state = "sign_language_0"
 
 /datum/action/innate/sign_language/Grant(mob/living/carbon/grant_to)
 	..()
@@ -52,11 +52,14 @@
 	active = TRUE
 	ADD_TRAIT(owner, TRAIT_SIGN_LANG, TRAIT_GENERIC)
 	to_chat(owner, span_green("You are now communicating with sign language."))
+	UpdateButtonIcon()
+
 
 /datum/action/innate/sign_language/Deactivate()
 	active = FALSE
 	REMOVE_TRAIT(owner, TRAIT_SIGN_LANG, TRAIT_GENERIC)
 	to_chat(owner, span_green("You have stopped using sign language."))
+	UpdateButtonIcon()
 
 /// Shows the linked action to the owner Carbon.
 /datum/action/innate/sign_language/proc/show_action()
