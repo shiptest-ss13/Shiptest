@@ -11,8 +11,9 @@
 			dummy_overmap.set_planet_type(planet_type)
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 
-			dummy_overmap.vlevel_height = ruin.height
-			dummy_overmap.vlevel_width = ruin.width
+			//12 is since it pads 6 and i dont feel like fixing that rn
+			dummy_overmap.vlevel_height = ruin.height+12
+			dummy_overmap.vlevel_width = ruin.width+12
 			
 			dummy_overmap.populate_turfs = FALSE
 			dummy_overmap.selected_ruin = ruin
