@@ -70,6 +70,11 @@
 /datum/mission/ruin/proc/spawn_custom_details(datum/overmap/dynamic/planet)
 	return
 
+/datum/mission/ruin/remove_bound(atom/movable/bound)
+	if(bound == required_item)
+		required_item = null
+	return ..()
+
 /datum/mission/ruin/can_turn_in(atom/movable/item_to_check)
 	if(istype(required_item) && specific_item)
 		if(item_to_check == required_item)
