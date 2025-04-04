@@ -362,6 +362,22 @@
 /obj/item/ammo_casing/spent/mecha/umg
 	name = "UMG 7.5x50mm bullet"
 
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
+	name = "\improper PR-05 Mounted Plasma Railgun"
+	desc = "A plasma railgun manufactured by Cybersun after taking inspiration from a NT-funded project that, unfortunately, lost said funding just before the ICW took place. Shoots super-heated high-density iron-tungsten rods at ludicrous speeds."
+	icon_state = "mecha_railgun"
+	equip_cooldown = 25
+	projectile = /obj/projectile/bullet/p50/penetrator/sabot
+	projectiles = 15
+	projectiles_cache = 30
+	projectiles_cache_max = 90
+	ammo_type = "railgun"
+	fire_sound = 'sound/weapons/blastcannon.ogg'
+	full_auto = FALSE
+	scoped = TRUE
+	zoom_mod = 10
+	zoom_out_mod = 3
+
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/mounted
 	name = "\improper Mounted Heavy Machine Gun"
 	desc = "A heavy calibre machine gun commonly used by motorized forces, famed for it's ability to give people on the recieving end more holes than normal. It is modified to be attached to vehicles"

@@ -381,6 +381,14 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
 	)
 
+/datum/supply_pack/mech/weapon/railgun
+	name = "PR-05 kit"
+	desc = "Contains a plasma railgun to mount on combat exosuits. Be sure to not overcharge it."
+	cost = 3500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
+	)
+
 /datum/supply_pack/mech/weapon/missile_rack
 	name = "BRM-6 kit"
 	desc = "Contains a low-explosive missile launcher, excellent for breaching through obstacles."
@@ -412,6 +420,14 @@ ammo
 	cost = 500
 	contains = list(
 		/obj/item/mecha_ammo/lmg
+	)
+
+/datum/supply_pack/mech/ammo/railgun_ammo
+	name = "Railgun ammo box"
+	desc = "A box containing thirty iron-tungsten rods for the PR-05 Plasma Railgun."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_ammo/railgun_ammo
 	)
 
 /datum/supply_pack/mech/ammo/missile_rack_ammo

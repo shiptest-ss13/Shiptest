@@ -40,6 +40,17 @@
 /obj/projectile/bullet/incendiary/fnx99
 	damage = 25
 
+// Mech Railgun
+
+/obj/projectile/bullet/p50/penetrator/sabot
+	name = "Iron-tungsten rod"
+	icon_state = "redtrac"
+	projectile_piercing = ALL // Intended to deal damage to EVERYTHING it pierces through, doesn't seem to pierce properly through specific objects
+	projectile_phasing = NONE// Might need adjusting to allow it to pierce things such as computers and what not, uncertain though
+	var/anti_armour_damage = 50
+	ricochet_chance = 0 // Superheated tungsten rod - I'd like to imagine it's impossible for it to ricochet
+	speed = 0.4 // Railgun, go fast
+
 // Turrets
 
 /obj/projectile/bullet/manned_turret
