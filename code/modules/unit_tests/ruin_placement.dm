@@ -4,6 +4,8 @@
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
 		for(var/ruin_name as anything in SSmapping.ruin_types_list[planet_type.ruin_type])
 			var/datum/map_template/ruin/ruin = SSmapping.ruin_types_list[planet_type.ruin_type][ruin_name]
+			
+			/*
 			var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 				ruin.name,
 				list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = planet_type.default_baseturf),
@@ -11,16 +13,19 @@
 				ruin.width,
 				ruin.height
 			)
+			*/
 
-			log_test("Testing [ruin_name]")
-			
 			var/datum/overmap/dynamic/dummy_overmap = new(null, FALSE)
+			dummy_overmap.set_planet_type(planet_type)
+			dummy_overmap.name = "Ruin Test: [ruin_name]"
+			dummy_overmap.ruin_type = ruin
+
 			for(var/mission_type in ruin.ruin_mission_types)
 				var/datum/mission/ruin/ruin_mission = new mission_type(dummy_overmap, 1 + length(dummy_overmap.dynamic_missions))
 				dummy_overmap.dynamic_missions += ruin_mission
 				ruin_mission.start_mission()
 
-			ruin.load(vlevel.get_unreserved_bottom_left_turf())
+			dummy_overmap.load_level()
 
 			var/list/errors = atmosscan(TRUE, TRUE)
 			//errors += powerdebug(TRUE)
@@ -28,8 +33,8 @@
 			for(var/error in errors)
 				Fail("Mapping error in [ruin_name]: [error]", ruin.mappath, 1)
 
-			vlevel.clear_reservation()
-			qdel(vlevel)
+			//vlevel.clear_reservation()
+			//qdel(vlevel)
 			qdel(dummy_overmap)
 
 	qdel(mapzone)
