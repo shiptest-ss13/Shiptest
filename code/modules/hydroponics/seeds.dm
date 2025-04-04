@@ -431,7 +431,7 @@
 
 /obj/item/seeds/attackby(obj/item/O, mob/user, params)
 	if (istype(O, /obj/item/plant_analyzer))
-		var/msg = "This is \a <span class='name'>[src]</span>."
+		var/msg = "This is \a [span_name("[src]")]."
 		var/text
 		var/obj/item/plant_analyzer/P_analyzer = O
 		if(P_analyzer.scan_mode == PLANT_SCANMODE_STATS)
@@ -442,7 +442,7 @@
 			msg += "\n- Plant Reagents -"
 			msg += "\n*---------*"
 			for(var/datum/plant_gene/reagent/Gene in genes)
-				msg += "\n<span class='notice'>- [Gene.get_name()] -</span>"
+				msg += "\n[span_notice("- [Gene.get_name()] -")]"
 			msg += "\n*---------*"
 		to_chat(user, boxed_message(msg))
 

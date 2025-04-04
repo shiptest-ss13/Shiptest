@@ -71,15 +71,15 @@
 	if(nobomb)
 		return
 	if(!hasclient)
-		to_chat(A, span_warning("Taking this plasma energy for your </span><span class='notice'>Apotheosis</span><span class='warning'> would bring dishonor to the clan!") )
+		to_chat(A, span_warning("Taking this plasma energy for your </span>[span_notice("Apotheosis")]<span class='warning'> would bring dishonor to the clan!") )
 		new /obj/effect/temp_visual/plasma_soul(Dturf)//doesn't beam to you, so it just hangs around and poofs.
 		return
 	else if(plasma_power >= plasma_cap)
-		to_chat(A, span_warning("You cannot power up your </span><span class='notice'>Apotheosis</span><span class='warning'> any more!") )
+		to_chat(A, span_warning("You cannot power up your </span>[span_notice("Apotheosis")]<span class='warning'> any more!") )
 		new /obj/effect/temp_visual/plasma_soul(Dturf)//doesn't beam to you, so it just hangs around and poofs.
 	else
 		plasma_power += plasma_increment
-		to_chat(A, span_nicegreen("Power increasing! Your </span><span class='notice'>Apotheosis</span><span class='nicegreen'> is now at power level [plasma_power]!") )
+		to_chat(A, span_nicegreen("Power increasing! Your </span>[span_notice("Apotheosis")]<span class='nicegreen'> is now at power level [plasma_power]!") )
 		new /obj/effect/temp_visual/plasma_soul(Dturf, A)
 		var/oldcolor = A.color
 		A.color = "#9C00FF"
@@ -146,11 +146,11 @@
 	var/mob/living/carbon/human/H = usr
 	var/datum/martial_art/plasma_fist/martial = H.mind.martial_art
 	to_chat(usr, "<b><i>You clench your fists and have a flashback of knowledge...</i></b>")
-	to_chat(usr, "<span class='notice'>Tornado Sweep</span>: Harm Harm Disarm. Repulses opponent and everyone back.")
-	to_chat(usr, "<span class='notice'>Throwback</span>: Disarm Harm Disarm. Throws the opponent and an item at them.")
-	to_chat(usr, "<span class='notice'>The Plasma Fist</span>: Harm Disarm Disarm Disarm Harm. Instantly gibs an opponent.[martial.nobomb ? "" : " Each kill with this grows your <span class='notice'>Apotheosis</span> explosion size."]")
+	to_chat(usr, "[span_notice("Tornado Sweep")]: Harm Harm Disarm. Repulses opponent and everyone back.")
+	to_chat(usr, "[span_notice("Throwback")]: Disarm Harm Disarm. Throws the opponent and an item at them.")
+	to_chat(usr, "[span_notice("The Plasma Fist")]: Harm Disarm Disarm Disarm Harm. Instantly gibs an opponent.[martial.nobomb ? "" : " Each kill with this grows your [span_notice("Apotheosis")] explosion size."]")
 	if(!martial.nobomb)
-		to_chat(usr, "<span class='notice'>Apotheosis</span>: Use <span class='notice'>The Plasma Fist</span> on yourself. Sends you away in a glorious explosion.")
+		to_chat(usr, "[span_notice("Apotheosis")]: Use [span_notice("The Plasma Fist")] on yourself. Sends you away in a glorious explosion.")
 
 
 /obj/effect/temp_visual/plasma_soul

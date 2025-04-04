@@ -455,7 +455,7 @@
 			new /obj/item/research_notes(drop_location(src), points, "experimentation")
 			visible_message(span_notice(" This discovery netted [points] points for research.") )
 		R.reveal()
-		investigate_log("Experimentor has revealed a relic with <span class='danger'>[R.realProc]</span> effect.", INVESTIGATE_EXPERIMENTOR)
+		investigate_log("Experimentor has revealed a relic with [span_danger("[R.realProc]")] effect.", INVESTIGATE_EXPERIMENTOR)
 		ejectItem()
 
 	//Global reactions

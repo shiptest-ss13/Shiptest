@@ -917,7 +917,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!isAdminObserver(user))
 		return ..()
 	. += span_notice("<i>You examine [src] closer, and note the following...</i>") 
-	. += "\t><span class='admin'>[ADMIN_FULLMONTY(src)]</span>"
+	. += "\t>[span_admin("[ADMIN_FULLMONTY(src)]")]"
 
 /mob/dead/observer/proc/set_invisibility(value)
 	invisibility = value

@@ -174,7 +174,7 @@
 		sent_message = message_setting.get_value()
 	if(host_mob.stat == DEAD)
 		return
-	to_chat(host_mob, "<i>You hear a strange, robotic voice in your head...</i> \"<span class='robot'>[sent_message]</span>\"")
+	to_chat(host_mob, "<i>You hear a strange, robotic voice in your head...</i> \"[span_robot("[sent_message]")]\"")
 
 /datum/nanite_program/comm/hallucination
 	name = "Hallucination"

@@ -23,8 +23,8 @@
 			return say_dead(message)
 
 		var/mob/living/simple_animal/borer/B = loc
-		to_chat(src, "<i><span class='borer'>You whisper silently, \"[message]\"</span></i>")
-		to_chat(B.victim, "<i><span class='borer'>The captive mind of [src] whispers, \"[message]\"</span></i>")
+		to_chat(src, "<i>[span_borer("You whisper silently, \"[message]\"")]</i>")
+		to_chat(B.victim, "<i>[span_borer("The captive mind of [src] whispers, \"[message]\"")]</i>")
 
 		for (var/mob/M in GLOB.player_list)
 			if(isnewplayer(M))

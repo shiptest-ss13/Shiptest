@@ -199,7 +199,7 @@
 	. = ..()
 	if(cell)
 		. += {"It has a [cell] inserted.\n
-		<span class='info'>You can use a <b>screwdriver</b> to remove [cell].</span>"}
+		[span_info("You can use a <b>screwdriver</b> to remove [cell].")]"}
 	else
 		. += span_info("It has an empty port for a <b>power cell</b>.")
 	if(wired)
@@ -267,7 +267,7 @@
 		if(!flash1 || !flash2)
 			single_flash = TRUE
 			. += {"One of its eye sockets is currently occupied by a flash.\n
-			<span class='info'>It has an empty eye socket for another <b>flash</b>.</span>"}
+			[span_info("It has an empty eye socket for another <b>flash</b>.")]"}
 		else
 			. += "It has two eye sockets occupied by flashes."
 		. += span_notice("You can remove the seated flash[single_flash ? "":"es"] with a <b>crowbar</b>.")

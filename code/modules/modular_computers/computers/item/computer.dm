@@ -267,7 +267,7 @@
 	visible_message(span_notice("The [src] displays a [caller.filedesc] notification: [alerttext]") )
 	var/mob/living/holder = loc
 	if(istype(holder))
-		to_chat(holder, "[icon2html(src)] <span class='notice'>The [src] displays a [caller.filedesc] notification: [alerttext]</span>")
+		to_chat(holder, "[icon2html(src)] [span_notice("The [src] displays a [caller.filedesc] notification: [alerttext]")]")
 
 // Function used by NanoUI's to obtain data for header. All relevant entries begin with "PC_"
 /obj/item/modular_computer/proc/get_header_data()

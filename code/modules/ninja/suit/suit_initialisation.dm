@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 /obj/item/clothing/suit/space/space_ninja/proc/toggle_on_off()
 	. = TRUE
 	if(s_busy)
-		to_chat(loc, "<span class='warning'>ERROR</span>: You cannot use this function at this time.")
+		to_chat(loc, "[span_warning("ERROR")]: You cannot use this function at this time.")
 		return FALSE
 	s_busy = TRUE
 	if(s_initialized)

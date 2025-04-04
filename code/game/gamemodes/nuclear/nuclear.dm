@@ -13,8 +13,8 @@
 
 	announce_span = "danger"
 	announce_text = "Syndicate forces are approaching the station in an attempt to destroy it!\n\
-	<span class='danger'>Operatives</span>: Secure the nuclear authentication disk and use your nuke to destroy the station.\n\
-	<span class='notice'>Crew</span>: Defend the nuclear authentication disk and ensure that it leaves with you on the emergency shuttle."
+	[span_danger("Operatives")]: Secure the nuclear authentication disk and use your nuke to destroy the station.\n\
+	[span_notice("Crew")]: Defend the nuclear authentication disk and ensure that it leaves with you on the emergency shuttle."
 
 	title_icon = "nukeops"
 

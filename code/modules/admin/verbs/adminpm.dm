@@ -80,7 +80,7 @@
 				confidential = TRUE)
 			to_chat(src,
 				type = MESSAGE_TYPE_ADMINPM,
-				html = "<span class='danger'><b>Message not sent:</b></span><br>[msg]",
+				html = "[span_danger("<b>Message not sent:</b>")]<br>[msg]",
 				confidential = TRUE)
 			AH.add_interaction("<b>No client found, message not sent:</b><br>[msg]")
 			return
@@ -166,7 +166,7 @@
 						confidential = TRUE)
 					to_chat(src,
 						type = MESSAGE_TYPE_ADMINPM,
-						html = "<span class='danger'><b>Message not sent:</b></span><br>[msg]",
+						html = "[span_danger("<b>Message not sent:</b>")]<br>[msg]",
 						confidential = TRUE)
 					if(recipient_ticket)
 						recipient_ticket.add_interaction("<b>No client found, message not sent:</b><br>[msg]")
@@ -202,7 +202,7 @@
 	if(external)
 		to_chat(src,
 			type = MESSAGE_TYPE_ADMINPM,
-			html = span_notice("PM to-<b>Admins</b>: <span class='linkify'>[rawmsg]</span>") ,
+			html = span_notice("PM to-<b>Admins</b>: [span_linkify("[rawmsg]")]") ,
 			confidential = TRUE)
 		var/datum/admin_help/AH = admin_ticket_log(src, "<font color='red'>Reply PM from-<b>[key_name(src, TRUE, TRUE)]</b> to <i>External</i>: [keywordparsedmsg]</font>")
 		externalreplyamount--
@@ -217,11 +217,11 @@
 			if(holder)
 				to_chat(recipient,
 					type = MESSAGE_TYPE_ADMINPM,
-					html = span_danger("Admin PM from-<b>[key_name(src, recipient, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span>") ,
+					html = span_danger("Admin PM from-<b>[key_name(src, recipient, 1)]</b>: [span_linkify("[keywordparsedmsg]")]") ,
 					confidential = TRUE)
 				to_chat(src,
 					type = MESSAGE_TYPE_ADMINPM,
-					html = span_notice("Admin PM to-<b>[key_name(recipient, src, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span>") ,
+					html = span_notice("Admin PM to-<b>[key_name(recipient, src, 1)]</b>: [span_linkify("[keywordparsedmsg]")]") ,
 					confidential = TRUE)
 				//omg this is dumb, just fill in both their tickets
 				var/interaction_message = "<font color='purple'>PM from-<b>[key_name(src, recipient, 1)]</b> to-<b>[key_name(recipient, src, 1)]</b>: [keywordparsedmsg]</font>"
@@ -230,7 +230,7 @@
 					admin_ticket_log(recipient, interaction_message)
 				SSblackbox.log_ahelp(current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
 			else		//recipient is an admin but sender is not
-				var/replymsg = "Reply PM from-<b>[key_name(src, recipient, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span>"
+				var/replymsg = "Reply PM from-<b>[key_name(src, recipient, 1)]</b>: [span_linkify("[keywordparsedmsg]")]"
 				admin_ticket_log(src, "<font color='red'>[replymsg]</font>")
 				to_chat(recipient,
 					type = MESSAGE_TYPE_ADMINPM,
@@ -238,7 +238,7 @@
 					confidential = TRUE)
 				to_chat(src,
 					type = MESSAGE_TYPE_ADMINPM,
-					html = span_notice("PM to-<b>Admins</b>: <span class='linkify'>[msg]</span>") ,
+					html = span_notice("PM to-<b>Admins</b>: [span_linkify("[msg]")]") ,
 					confidential = TRUE)
 				SSblackbox.log_ahelp(current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
 
@@ -259,7 +259,7 @@
 					confidential = TRUE)
 				to_chat(recipient,
 					type = MESSAGE_TYPE_ADMINPM,
-					html = span_adminsay("Admin PM from-<b>[key_name(src, recipient, 0)]</b>: <span class='linkify'>[msg]</span>") ,
+					html = span_adminsay("Admin PM from-<b>[key_name(src, recipient, 0)]</b>: [span_linkify("[msg]")]") ,
 					confidential = TRUE)
 				to_chat(recipient,
 					type = MESSAGE_TYPE_ADMINPM,
@@ -267,7 +267,7 @@
 					confidential = TRUE)
 				to_chat(src,
 					type = MESSAGE_TYPE_ADMINPM,
-					html = span_notice("Admin PM to-<b>[key_name(recipient, src, 1)]</b>: <span class='linkify'>[msg]</span>") ,
+					html = span_notice("Admin PM to-<b>[key_name(recipient, src, 1)]</b>: [span_linkify("[msg]")]") ,
 					confidential = TRUE)
 
 				admin_ticket_log(recipient, "<font color='purple'>PM From [key_name_admin(src)]: [keywordparsedmsg]</font>")

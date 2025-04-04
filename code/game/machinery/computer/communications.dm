@@ -138,7 +138,7 @@
 			// Only notify people if an actual change happened
 			log_game("[key_name(usr)] has changed the security level to [params["newSecurityLevel"]] with [src] at [AREACOORD(usr)].")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] has changed the security level to [params["newSecurityLevel"]] with [src] at [AREACOORD(usr)].")
-			deadchat_broadcast(" has changed the security level to [params["newSecurityLevel"]] with [src] at <span class='name'>[get_area_name(usr, TRUE)]</span>.", span_name("[usr.real_name]") , usr, message_type=DEADCHAT_ANNOUNCEMENT)
+			deadchat_broadcast(" has changed the security level to [params["newSecurityLevel"]] with [src] at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]") , usr, message_type=DEADCHAT_ANNOUNCEMENT)
 
 			alert_level_tick += 1
 		if ("deleteMessage")
@@ -171,7 +171,7 @@
 
 			var/associates = emagged ? "the Syndicate": "CentCom"
 			usr.log_talk(message, LOG_SAY, tag = "message to [associates]")
-			deadchat_broadcast(" has messaged [associates], \"[message]\" at <span class='name'>[get_area_name(usr, TRUE)]</span>.", span_name("[usr.real_name]") , usr, message_type = DEADCHAT_ANNOUNCEMENT)
+			deadchat_broadcast(" has messaged [associates], \"[message]\" at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]") , usr, message_type = DEADCHAT_ANNOUNCEMENT)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("requestNukeCodes")
 			if (!authenticated_as_non_silicon_captain(usr))
@@ -276,12 +276,12 @@
 				revoke_maint_all_access()
 				log_game("[key_name(usr)] disabled emergency maintenance access.")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] disabled emergency maintenance access.")
-				deadchat_broadcast(" disabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.", span_name("[usr.real_name]") , usr, message_type = DEADCHAT_ANNOUNCEMENT)
+				deadchat_broadcast(" disabled emergency maintenance access at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]") , usr, message_type = DEADCHAT_ANNOUNCEMENT)
 			else
 				make_maint_all_access()
 				log_game("[key_name(usr)] enabled emergency maintenance access.")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
-				deadchat_broadcast(" enabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.", span_name("[usr.real_name]") , usr, message_type = DEADCHAT_ANNOUNCEMENT)
+				deadchat_broadcast(" enabled emergency maintenance access at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]") , usr, message_type = DEADCHAT_ANNOUNCEMENT)
 
 /obj/machinery/computer/communications/ui_data(mob/user)
 	var/list/data = list(
@@ -397,7 +397,7 @@
 	else
 		input = user.treat_message(input) //Adds slurs and so on. Someone should make this use languages too.
 	SScommunications.make_announcement(user, is_ai, input, authorize_name) //WS Edit - Make cap's announcement use logged-in name
-	deadchat_broadcast(" made a priority announcement from <span class='name'>[get_area_name(usr, TRUE)]</span>.", span_name("[user.real_name]") , user, message_type=DEADCHAT_ANNOUNCEMENT)
+	deadchat_broadcast(" made a priority announcement from [span_name("[get_area_name(usr, TRUE)]")].", span_name("[user.real_name]") , user, message_type=DEADCHAT_ANNOUNCEMENT)
 
 /obj/machinery/computer/communications/proc/post_status(command, data1, data2)
 

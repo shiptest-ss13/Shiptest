@@ -534,7 +534,7 @@ block( \
 	if(!SSticker.IsRoundInProgress() || QDELETED(character))
 		return
 	var/area/A = get_area(character)
-	deadchat_broadcast(span_game(" has arrived on the <span class='name'>[ship.name]</span> at <span class='name'>[A.name]</span>.") , span_game("<span class='name'>[character.real_name]</span> ([rank])") , follow_target = character, message_type=DEADCHAT_ARRIVALRATTLE)
+	deadchat_broadcast(span_game(" has arrived on the [span_name("[ship.name]")] at [span_name("[A.name]")].") , span_game("[span_name("[character.real_name]")] ([rank])") , follow_target = character, message_type=DEADCHAT_ARRIVALRATTLE)
 	if((!GLOB.announcement_systems.len) || (!character.mind))
 		return
 	if((character.mind.assigned_role == "Cyborg") || (character.mind.assigned_role == character.mind.special_role))

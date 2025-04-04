@@ -112,7 +112,7 @@
 	/// Flavor text announced to drones on [/mob/proc/Login]
 	var/flavortext = \
 	"\n<big><span class='warning'>Do not use your small size to grief, and follow the role your laws give you.</span></big>\n"+\
-	span_warning("<u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u>") 
+	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>"
 
 /mob/living/simple_animal/drone/Initialize()
 	. = ..()

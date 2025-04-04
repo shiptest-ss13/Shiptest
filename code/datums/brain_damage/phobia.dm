@@ -84,13 +84,13 @@
 		return
 	if(trigger_regex.Find(hearing_args[HEARING_RAW_MESSAGE]) != 0)
 		addtimer(CALLBACK(src, PROC_REF(freak_out), null, trigger_regex.group[2]), 10) //to react AFTER the chat message
-		hearing_args[HEARING_RAW_MESSAGE] = trigger_regex.Replace(hearing_args[HEARING_RAW_MESSAGE], "<span class='phobia'>$2</span>$3")
+		hearing_args[HEARING_RAW_MESSAGE] = trigger_regex.Replace(hearing_args[HEARING_RAW_MESSAGE], "[span_phobia("$2")]$3")
 
 /datum/brain_trauma/mild/phobia/handle_speech(datum/source, list/speech_args)
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
 		return
 	if(trigger_regex.Find(speech_args[SPEECH_MESSAGE]) != 0)
-		to_chat(owner, span_warning("You can't bring yourself to say the word \"<span class='phobia'>[trigger_regex.group[2]]</span>\"!") )
+		to_chat(owner, span_warning("You can't bring yourself to say the word \"[span_phobia("[trigger_regex.group[2]]")]\"!") )
 		speech_args[SPEECH_MESSAGE] = ""
 
 /datum/brain_trauma/mild/phobia/proc/freak_out(atom/reason, trigger_word)

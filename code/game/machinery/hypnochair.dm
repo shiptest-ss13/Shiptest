@@ -109,7 +109,7 @@
 		return
 	if(SPT_PROB(5, seconds_per_tick) && !(C.get_eye_protection() > 0))
 		to_chat(C, "<span class='hypnophrase'>[pick(\
-			"...blue... red... green... blue, red, green, blueredgreen<span class='small'>blueredgreen</span>",\
+			"...blue... red... green... blue, red, green, blueredgreen[span_small("blueredgreen")]",\
 			"...pretty colors...",\
 			"...you keep hearing words, but you can't seem to understand them...",\
 			"...so peaceful...",\

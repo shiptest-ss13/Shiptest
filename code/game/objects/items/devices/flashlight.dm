@@ -63,7 +63,7 @@
 			return
 
 		if(light_power < 0.3)
-			to_chat(user, "<span class='warning'>\The [src] isn't bright enough to see anything!</span> ")
+			to_chat(user, "[span_warning("\The [src] isn't bright enough to see anything!")] ")
 			return
 
 		switch(user.zone_selected)

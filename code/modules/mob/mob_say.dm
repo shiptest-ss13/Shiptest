@@ -90,8 +90,8 @@
 			alt_name = " (died as [real_name])"
 
 	var/spanned = say_quote(say_emphasis(message))
-	var/source = "<span class='game'><span class='prefix'>DEAD:</span> <span class='name'>[(src.client.prefs.chat_toggles & CHAT_GHOSTCKEY) ? "([src.key]) " : ""][name]</span>[alt_name]"
-	var/rendered = " <span class='message'>[emoji_parse(spanned)]</span></span>"
+	var/source = "[span_game("<span class='prefix'>DEAD:")] [span_name("[(src.client.prefs.chat_toggles & CHAT_GHOSTCKEY) ? "([src.key]) " : ""][name]")][alt_name]"
+	var/rendered = " [span_message("[emoji_parse(spanned)]")]</span>"
 	log_talk(message, LOG_SAY, tag="DEAD")
 	if(SEND_SIGNAL(src, COMSIG_MOB_DEADSAY, message) & MOB_DEADSAY_SIGNAL_INTERCEPT)
 		return

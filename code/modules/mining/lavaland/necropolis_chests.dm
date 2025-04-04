@@ -662,7 +662,7 @@
 	M.set_species(/datum/species/skeleton, icon_update=0)
 	M.revive(full_heal = TRUE, admin_revive = TRUE)
 	skeletons |= M
-	to_chat(M, "<span class='userdanger'>You have been returned from death by </span><B>[user.real_name]!</B>")
+	to_chat(M, "[span_userdanger("You have been returned from death by ")]<B>[user.real_name]!</B>")
 	to_chat(M, span_userdanger("[user.p_theyre(TRUE)] technically your master now, I guess. Help [user.p_them()] or something? I don't know. I'm not your dad. ") )
 
 	arm_skeleton(M)
@@ -1399,8 +1399,8 @@
 				beacon = new/obj/effect/hierophant(T)
 				user.update_action_buttons_icon()
 				user.visible_message(span_hierophant_warning("[user] places a strange machine beneath [user.p_their()] feet!") , \
-				"<span class='hierophant'>You detach the hierophant beacon, allowing you to teleport yourself and any allies to it at any time!</span>\n\
-				<span class='notice'>You can remove the beacon to place it again by striking it with the club.</span>")
+				"[span_hierophant("You detach the hierophant beacon, allowing you to teleport yourself and any allies to it at any time!")]\n\
+				[span_notice("You can remove the beacon to place it again by striking it with the club.")]")
 			else
 				timer = world.time
 				INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))

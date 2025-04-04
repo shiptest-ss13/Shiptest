@@ -126,7 +126,7 @@
 	animate(M, transform = m180, time = 3)
 	M.pixel_y = M.base_pixel_y + M.get_standard_pixel_y_offset(TRUE)
 	M.adjustBruteLoss(30)
-	src.visible_message(text("<span class='danger'>[M] falls free of [src]!</span>"))
+	src.visible_message(text("[span_danger("[M] falls free of [src]!")]"))
 	unbuckle_mob(M,force=1)
 	M.force_scream()
 	M.AdjustParalyzed(20)

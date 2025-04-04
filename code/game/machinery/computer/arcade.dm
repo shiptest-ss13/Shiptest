@@ -362,11 +362,11 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 /obj/machinery/computer/arcade/battle/examine_more(mob/user)
 	. = ..()
 	. += span_notice("<i>You notice some writing scribbled on the side of [src]...</i>") 
-	. += "\t<span class='info'>smart -> defend, defend, light attack</span>"
-	. += "\t<span class='info'>shotgun -> defend, defend, power attack</span>"
-	. += "\t<span class='info'>short temper -> counter, counter, counter</span>"
-	. += "\t<span class='info'>poisonous -> light attack, light attack, light attack</span>"
-	. += "\t<span class='info'>chonker -> power attack, power attack, power attack</span>"
+	. += "\t[span_info("smart -> defend, defend, light attack")]"
+	. += "\t[span_info("shotgun -> defend, defend, power attack")]"
+	. += "\t[span_info("short temper -> counter, counter, counter")]"
+	. += "\t[span_info("poisonous -> light attack, light attack, light attack")]"
+	. += "\t[span_info("chonker -> power attack, power attack, power attack")]"
 
 /obj/machinery/computer/arcade/battle/emag_act(mob/user)
 	if(obj_flags & EMAGGED)

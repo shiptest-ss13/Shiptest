@@ -612,7 +612,7 @@
 			dissectionmsg = " via Experimental Dissection"
 		else if(HAS_TRAIT_FROM(src, TRAIT_DISSECTED,"Thorough Dissection"))
 			dissectionmsg = " via Thorough Dissection"
-		. += "<span class='notice'>This body has been dissected and analyzed[dissectionmsg].</span><br>"
+		. += "[span_notice("This body has been dissected and analyzed[dissectionmsg].")]<br>"
 
 /**
  * Get the list of keywords for policy config

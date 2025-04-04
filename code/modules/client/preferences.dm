@@ -974,7 +974,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				else
 					dat += " |"
 				if(category == gear_tab)
-					dat += " <span class='linkOff'>[category]</span> "
+					dat += " [span_linkoff("[category]")] "
 				else
 					dat += " <a href='?_src_=prefs;preference=gear;select_category=[category]'>[category]</a> "
 			dat += "</b></center></td></tr>"

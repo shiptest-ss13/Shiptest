@@ -120,10 +120,10 @@ GENE SCANNER
 	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
 		user.visible_message(span_warning("[user] analyzes the floor's vitals!") , \
 							span_notice("You stupidly try to analyze the floor's vitals!") )
-		to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
-					\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
-					\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
-					\n<span class='info'>Body temperature: ???</span>")
+		to_chat(user, "[span_info("Analyzing results for The floor:\n\tOverall status: <b>Healthy</b>")]\
+					\n[span_info("Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font>")]\
+					\n[span_info("\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font>")]\
+					\n[span_info("Body temperature: ???")]")
 		return
 
 	user.visible_message(span_notice("[user] analyzes [M]'s vitals.") , \
@@ -159,16 +159,16 @@ GENE SCANNER
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.undergoing_cardiac_arrest() && H.stat != DEAD)
-			render_list += "<span class='alert'>Subject suffering from heart attack: Apply defibrillation or other electric shock immediately!</span>\n"
+			render_list += "[span_alert("Subject suffering from heart attack: Apply defibrillation or other electric shock immediately!")]\n"
 
 	//WS begin - Borers
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(C.has_brain_worms() && (!C.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
-			render_list += "<span class='danger'>Foreign organism detected in subject's cranium. Recommended treatment: Dosage of sucrose solution and removal of object via surgery.</span>\n"
+			render_list += "[span_danger("Foreign organism detected in subject's cranium. Recommended treatment: Dosage of sucrose solution and removal of object via surgery.")]\n"
 	//WS end
 
-	render_list += "<span class='info'>Analyzing results for [M]:</span>\n<span class='info ml-1'>Overall status: [mob_status]</span>\n"
+	render_list += "[span_info("Analyzing results for [M]:")]\n<span class='info ml-1'>Overall status: [mob_status]</span>\n"
 
 	// Damage descriptions
 	if(brute_loss > 10)
@@ -176,7 +176,7 @@ GENE SCANNER
 	if(fire_loss > 10)
 		render_list += "<span class='alert ml-1'>[fire_loss > 50 ? "Severe" : "Minor"] burn damage detected.</span>\n"
 	if(oxy_loss > 10)
-		render_list += "<span class='info ml-1'><span class='alert'>[oxy_loss > 50 ? "Severe" : "Minor"] oxygen deprivation detected.</span>\n"
+		render_list += "<span class='info ml-1'>[span_alert("[oxy_loss > 50 ? "Severe" : "Minor"] oxygen deprivation detected.")]\n"
 	if(tox_loss > 10)
 		render_list += "<span class='alert ml-1'>[tox_loss > 50 ? "Severe" : "Minor"] amount of toxin damage detected.</span>\n"
 	if(M.getStaminaLoss())
@@ -319,9 +319,9 @@ GENE SCANNER
 			if(B.integrity_loss)
 				damaged_structure += B.plaintext_zone
 		if(broken_stuff.len)
-			render_list += "\t<span class='alert'>Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!</span>\n"
+			render_list += "\t[span_alert("Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!")]\n"
 		if(damaged_structure.len)
-			render_list+= "\t<span class='alert'>Structure rod damage detected. Subject's [english_list(damaged_structure)] [damaged_structure.len > 1 ? "rod require" : "rods requires"] replacement!</span>\n"
+			render_list+= "\t[span_alert("Structure rod damage detected. Subject's [english_list(damaged_structure)] [damaged_structure.len > 1 ? "rod require" : "rods requires"] replacement!")]\n"
 
 		// Species and body temperature
 		var/datum/species/S = H.dna.species
@@ -369,9 +369,9 @@ GENE SCANNER
 				var/datum/reagent/R = GLOB.chemical_reagents_list[blood_id]
 				blood_type = R ? R.name : blood_id
 			if(C.blood_volume <= BLOOD_VOLUME_SAFE && C.blood_volume > BLOOD_VOLUME_OKAY)
-				render_list += "<span class='alert ml-1'>Blood level: LOW [blood_percent] %, [C.blood_volume] cl,</span> <span class='info'>type: [blood_type]</span>\n"
+				render_list += "<span class='alert ml-1'>Blood level: LOW [blood_percent] %, [C.blood_volume] cl,</span> [span_info("type: [blood_type]")]\n"
 			else if(C.blood_volume <= BLOOD_VOLUME_OKAY)
-				render_list += "<span class='alert ml-1'>Blood level: <b>CRITICAL [blood_percent] %</b>, [C.blood_volume] cl,</span> <span class='info'>type: [blood_type]</span>\n"
+				render_list += "<span class='alert ml-1'>Blood level: <b>CRITICAL [blood_percent] %</b>, [C.blood_volume] cl,</span> [span_info("type: [blood_type]")]\n"
 			else
 				render_list += "<span class='info ml-1'>Blood level: [blood_percent] %, [C.blood_volume] cl, type: [blood_type]</span>\n"
 
@@ -394,7 +394,7 @@ GENE SCANNER
 		if(M.reagents.reagent_list.len)
 			render_list += "<span class='notice ml-1'>Subject contains the following reagents:</span>\n"
 			for(var/datum/reagent/R in M.reagents.reagent_list)
-				render_list += "<span class='notice ml-2'>[round(R.volume, 0.001)] units of [R.name][R.overdosed == 1 ? "</span> - <span class='boldannounce'>OVERDOSING</span>" : ".</span>"]\n"
+				render_list += "<span class='notice ml-2'>[round(R.volume, 0.001)] units of [R.name][R.overdosed == 1 ? "</span> - [span_boldannounce("OVERDOSING")]" : ".</span>"]\n"
 		else
 			render_list += "<span class='notice ml-1'>Subject contains no reagents.</span>\n"
 		if(M.reagents.addiction_list.len)
@@ -472,7 +472,7 @@ GENE SCANNER
 	var/pressure = environment.return_pressure()
 	var/total_moles = environment.total_moles()
 
-	render_list += "<span class='info'><B>Results:</B></span>\
+	render_list += "[span_info("<B>Results:</B>")]\
 		\n<span class='[abs(pressure - ONE_ATMOSPHERE) < 10 ? "info" : "alert"]'>Pressure: [round(pressure, 0.01)] kPa</span>\n"
 	if(total_moles)
 		var/o2_concentration = environment.get_moles(GAS_O2)/total_moles
@@ -599,10 +599,10 @@ GENE SCANNER
 
 		if(total_moles > 0)
 			//WS Start -- Atmos Analyzer Reformat (Issue #419)
-			render_list += "<span class='notice'>Moles: [round(total_moles, 0.01)] mol</span>\
-							\n<span class='notice'>Volume: [volume] L</span>\
-							\n<span class='notice'>Pressure: [round(pressure,0.01)] kPa</span>\
-							\n<span class='notice'>Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)</span>"
+			render_list += "[span_notice("Moles: [round(total_moles, 0.01)] mol")]\
+							\n[span_notice("Volume: [volume] L")]\
+							\n[span_notice("Pressure: [round(pressure,0.01)] kPa")]\
+							\n[span_notice("Temperature: [round(temperature - T0C,0.01)] &deg;C ([round(temperature, 0.01)] K)")]"
 			//WS End
 
 			for(var/id in air_contents.get_gases())
@@ -613,8 +613,8 @@ GENE SCANNER
 			render_list += airs.len > 1 ? span_notice("This node is empty!")  : span_notice("[target] is empty!") 
 
 		if(cached_scan_results && cached_scan_results["fusion"]) //notify the user if a fusion reaction was detected
-			render_list += "<span class='boldnotice'>Large amounts of free neutrons detected in the air indicate that a fusion reaction took place.</span>\
-						\n<span class='notice'>Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].</span>"
+			render_list += "[span_boldnotice("Large amounts of free neutrons detected in the air indicate that a fusion reaction took place.")]\
+						\n[span_notice("Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].")]"
 
 	// we let the join apply newlines so we do need handholding
 	to_chat(user, boxed_message(jointext(render_list, "\n")), type = MESSAGE_TYPE_INFO)
@@ -734,7 +734,7 @@ GENE SCANNER
 					display += "-"
 				display += copytext_char(sequence, 1 + i*DNA_MUTATION_BLOCKS, DNA_MUTATION_BLOCKS*(1+i) + 1)
 
-			to_chat(user, "<span class='boldnotice'>[display]</span><br>")
+			to_chat(user, "[span_boldnotice("[display]")]<br>")
 
 		ready = FALSE
 		icon_state = "[icon_state]_recharging"

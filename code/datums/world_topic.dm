@@ -248,16 +248,16 @@
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC)
 			if(GLOB.OOC_COLOR)
-				to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span></b></font>")
+				to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b>[span_prefix("OOC:")] <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span></b></font>")
 			else
-				to_chat(C, span_ooc("<span class='prefix'>OOC:</span> <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span>") )
+				to_chat(C, span_ooc("[span_prefix("OOC:")] <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span>") )
 
 /datum/world_topic/asay_relay
 	keyword = "asay_send"
 	require_comms_key = TRUE
 
 /datum/world_topic/asay_relay/Run(list/input)
-	var/message = span_adminsay("<span class='prefix'>ADMIN:</span> <EM>[input["sender"]]</EM>: <span class='message linkify'>[input["message"]]</span>")
+	var/message = span_adminsay("[span_prefix("ADMIN:")] <EM>[input["sender"]]</EM>: <span class='message linkify'>[input["message"]]</span>")
 	message = emoji_parse(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 	message = keywords_lookup(message)
 	to_chat(GLOB.admins, message)

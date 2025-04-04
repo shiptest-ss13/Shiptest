@@ -911,7 +911,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	switch(message)
 		if("blob alert")
 			to_chat(target, "<h1 class='alert'>Biohazard Alert</h1>")
-			to_chat(target, "<br><br><span class='alert'>Confirmed outbreak of level 5 biohazard aboard the ship. All personnel must contain the outbreak.</span><br><br>")
+			to_chat(target, "<br><br>[span_alert("Confirmed outbreak of level 5 biohazard aboard the ship. All personnel must contain the outbreak.")]<br><br>")
 			SEND_SOUND(target, 'sound/ai/outbreak5.ogg')
 		if("supermatter")
 			SEND_SOUND(target, 'sound/magic/charge.ogg')

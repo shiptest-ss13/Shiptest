@@ -961,22 +961,22 @@
 				adjustKarma(10)
 
 /datum/mood_event/good_tree
-	description = "<span class='nicegreen'>I feel closer to my soul.</span>\n"
+	description = span_nicegreen("I feel closer to my soul.")
 	mood_change = 3
 	timeout = 5 MINUTES
 
 /datum/mood_event/bad_tree
-	description = "<span class='warning'>I should stop gardening.</span>\n"
+	description = span_warning("I should stop gardening.")
 	mood_change = -3
 	timeout = 5 MINUTES
 
 /datum/mood_event/better_tree
-	description = "<span class='nicegreen'>I feel blessed by the gods!</span>\n"
+	description = span_nicegreen("I feel blessed by the gods!")
 	mood_change = 6
 	timeout = 5 MINUTES
 
 /datum/mood_event/worse_tree
-	description = "<span class='warning'>It's like a root is digging into my heart.</span>\n"
+	description = span_warning("It's like a root is digging into my heart.")
 	mood_change = -6
 	timeout = 5 MINUTES
 

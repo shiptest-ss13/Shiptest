@@ -72,23 +72,23 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			if(holder)
 				if(!holder.fakekey || C.holder)
 					if(check_rights_for(src, R_ADMIN))
-						to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>", MESSAGE_TYPE_OOC)
+						to_chat(C, "[span_adminooc("[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:")] <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>", MESSAGE_TYPE_OOC)
 					else
-						to_chat(C, span_adminobserverooc("<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span>") , MESSAGE_TYPE_OOC)
+						to_chat(C, span_adminobserverooc("[span_prefix("OOC:")] <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span>") , MESSAGE_TYPE_OOC)
 				else
 					if(GLOB.OOC_COLOR)
-						to_chat(C, span_oocplain("<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>") , MESSAGE_TYPE_OOC)
+						to_chat(C, span_oocplain("<font color='[GLOB.OOC_COLOR]'><b>[span_prefix("OOC:")] <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>") , MESSAGE_TYPE_OOC)
 					else
-						to_chat(C, span_ooc("<span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span>") , MESSAGE_TYPE_OOC)
+						to_chat(C, span_ooc("[span_prefix("OOC:")] <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span>") , MESSAGE_TYPE_OOC)
 
 			else if(!(key in C.prefs.ignoring))
 				if(GLOB.OOC_COLOR)
 					if(check_mentor())
-						to_chat(C, span_oocplain("<font color='["#00b40f"]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>") , MESSAGE_TYPE_OOC)
+						to_chat(C, span_oocplain("<font color='["#00b40f"]'><b>[span_prefix("OOC:")] <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>") , MESSAGE_TYPE_OOC)
 					else
-						to_chat(C, span_oocplain("<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>") , MESSAGE_TYPE_OOC)
+						to_chat(C, span_oocplain("<font color='[GLOB.OOC_COLOR]'><b>[span_prefix("OOC:")] <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>") , MESSAGE_TYPE_OOC)
 				else
-					to_chat(C, span_ooc("<span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span>") , MESSAGE_TYPE_OOC)
+					to_chat(C, span_ooc("[span_prefix("OOC:")] <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span>") , MESSAGE_TYPE_OOC)
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
@@ -155,7 +155,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc ="Check the admin notice if it has been set"
 
 	if(GLOB.admin_notice)
-		to_chat(src, "<span class='boldnotice'>Admin Notice:</span>\n \t [GLOB.admin_notice]")
+		to_chat(src, "[span_boldnotice("Admin Notice:")]\n \t [GLOB.admin_notice]")
 	else
 		to_chat(src, span_notice("There are no admin notices at the moment.") )
 
@@ -407,9 +407,9 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	var/message
 
-	message += "<span class='big'>You can add emphasis to your text by surrounding words or sentences in certain characters.</span>\n"
+	message += "[span_big("You can add emphasis to your text by surrounding words or sentences in certain characters.")]\n"
 	message += "+bold+, _underline_, and |italics| are supported.\n\n"
-	message += "<span class='big'>You can made custom saymods by doing <i>say 'screams*HELP IM DYING!'</i>. This works over the radio, and can be used to emote over the radio.</span>\n"
+	message += "[span_big("You can made custom saymods by doing <i>say 'screams*HELP IM DYING!'</i>. This works over the radio, and can be used to emote over the radio.")]\n"
 	message += "Example: say ';laughs maniacally!*' >> \[Common] Joe Schmoe laughs maniacally!"
 
 	to_chat(usr, span_notice("[message]") )

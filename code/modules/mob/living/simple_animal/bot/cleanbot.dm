@@ -92,7 +92,7 @@
 /mob/living/simple_animal/bot/cleanbot/examine(mob/user)
 	. = ..()
 	if(weapon)
-		. += " <span class='warning'>Is that \a [weapon] taped to it...?</span>"
+		. += " [span_warning("Is that \a [weapon] taped to it...?")]"
 
 		if(ascended && user.stat == CONSCIOUS && user.client)
 			user.client.give_award(/datum/award/achievement/misc/cleanboss, user)

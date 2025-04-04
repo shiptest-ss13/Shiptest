@@ -84,7 +84,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	dat += "<A href='?_src_=holder;[HrefToken()];ahelp_tickets=[state]'>Refresh</A><br><br>"
 	for(var/I in l2b)
 		var/datum/admin_help/AH = I
-		dat += "<span class='adminnotice'><span class='adminhelp'>Ticket #[AH.id]</span>: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
+		dat += "[span_adminnotice("<span class='adminhelp'>Ticket #[AH.id]")]: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
 
 	usr << browse(dat.Join(), "window=ahelp_list[state];size=600x480")
 
@@ -288,7 +288,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /datum/admin_help/proc/message_no_recipient(msg)
 	var/ref_src = "[REF(src)]"
 	//Message to be sent to all admins
-	var/admin_msg = span_adminnotice("<span class='adminhelp'>Ticket [ticket_href("#[id]", ref_src)]</span><b>: [linked_reply_name(ref_src)] [full_monty(ref_src)]:</b> <span class='linkify'>[keywords_lookup(msg)]</span>") 
+	var/admin_msg = span_adminnotice("[span_adminhelp("Ticket [ticket_href("#[id]", ref_src)]")]<b>: [linked_reply_name(ref_src)] [full_monty(ref_src)]:</b> [span_linkify("[keywords_lookup(msg)]")]") 
 
 	add_interaction("<font color='red'>[linked_reply_name(ref_src)]: [msg]</font>")
 	log_admin_private("Ticket #[id]: [key_name(initiator)]: [msg]")
@@ -306,7 +306,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	//show it to the person adminhelping too
 	to_chat(initiator,
 		type = MESSAGE_TYPE_ADMINPM,
-		html = span_adminnotice("PM to-<b>Admins</b>: <span class='linkify'>[msg]</span>") ,
+		html = span_adminnotice("PM to-<b>Admins</b>: [span_linkify("[msg]")]") ,
 		confidential = TRUE)
 	SSblackbox.log_ahelp(id, "Ticket Opened", msg, null, initiator.ckey)
 

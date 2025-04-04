@@ -69,7 +69,7 @@
 /obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/O, mob/user, params)
 	..()
 	if (istype(O, /obj/item/plant_analyzer))
-		var/msg = "This is \a <span class='name'>[src]</span>.\n"
+		var/msg = "This is \a [span_name("[src]")].\n"
 		if(seed)
 			msg += "[seed.get_analyzer_text()]\n"
 		var/reag_txt = ""
@@ -77,7 +77,7 @@
 			for(var/reagent_id in seed.reagents_add)
 				var/datum/reagent/R  = GLOB.chemical_reagents_list[reagent_id]
 				var/amt = reagents.get_reagent_amount(reagent_id)
-				reag_txt += "<span class='info'>- [R.name]: [amt]</span>\n"
+				reag_txt += "[span_info("- [R.name]: [amt]")]\n"
 
 		if(reag_txt)
 			msg += reag_txt

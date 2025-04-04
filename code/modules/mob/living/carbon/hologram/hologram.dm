@@ -223,9 +223,9 @@
 	set name = "Show Laws"
 	set desc = "Show the laws you're required to follow."
 	var/formatted_laws = "<b>Hologram law:</b>\n"
-	formatted_laws += flavortext ? "<big><span class='warning'>[flavortext]</span></big>" : "<big>No laws set!</big>" //If flavortext set, show it, else show "No laws set!"
-	formatted_laws += "\n<span class='notice'>Emergency holograms are ghost spawns that can majorly affect the round due to their versatility. Act with common sense.</span>\n"+\
-					"<span class='notice'>Using the role to grief or metagame against your set laws will be met with a silicon ban.</span>\n"
+	formatted_laws += flavortext ? "<big>[span_warning("[flavortext]")]</big>" : "<big>No laws set!</big>" //If flavortext set, show it, else show "No laws set!"
+	formatted_laws += "\n[span_notice("Emergency holograms are ghost spawns that can majorly affect the round due to their versatility. Act with common sense.")]\n"+\
+					"[span_notice("Using the role to grief or metagame against your set laws will be met with a silicon ban.")]\n"
 
 	var/policy = get_policy(ROLE_POSIBRAIN) //if we need something different than the use of posibrains for policy and bans, ping mark and he'll add a new define for it
 	if(policy)

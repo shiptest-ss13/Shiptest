@@ -373,7 +373,7 @@
 						span_notice(" [src] collapses!") , null, COMBAT_MESSAGE_RANGE)
 		attacker.say("[pick(winlines)]")
 		attacker_controller.visible_message(span_notice(" [attacker] demolishes [src] and walks away victorious!") , \
-							"<span class='notice'> You raise up [attacker] proudly over [src]</span>!")
+							"[span_notice(" You raise up [attacker] proudly over [src]")]!")
 	else //both win?
 		say("NEXT TIME.")
 		//don't want to make this a one sided conversation
