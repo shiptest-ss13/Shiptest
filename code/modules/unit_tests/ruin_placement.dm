@@ -4,16 +4,6 @@
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
 		for(var/ruin_name as anything in SSmapping.ruin_types_list[planet_type.ruin_type])
 			var/datum/map_template/ruin/ruin = SSmapping.ruin_types_list[planet_type.ruin_type][ruin_name]
-			
-			/*
-			var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
-				ruin.name,
-				list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = planet_type.default_baseturf),
-				mapzone,
-				ruin.width,
-				ruin.height
-			)
-			*/
 
 			var/datum/overmap/dynamic/dummy_overmap = new(null, FALSE)
 			dummy_overmap.set_planet_type(planet_type)
@@ -33,7 +23,6 @@
 			for(var/error in errors)
 				Fail("Mapping error in [ruin_name]: [error]", ruin.mappath, 1)
 
-			//vlevel.clear_reservation()
 			//qdel(vlevel)
 			qdel(dummy_overmap)
 
