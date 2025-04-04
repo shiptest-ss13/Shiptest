@@ -15,6 +15,7 @@
 	name = "Sign Language"
 	icon_icon = 'icons/mob/actions.dmi'
 	button_icon_state = "sign_language_0"
+	background_icon_state = "bg_default"
 	desc = "Allows you to communicate via sign language."
 
 /datum/action/innate/sign_language/UpdateButtonIcon(atom/movable/screen/movable/action_button/button, status_only = FALSE, force)
@@ -23,8 +24,10 @@
 		return
 	if(HAS_TRAIT(owner, TRAIT_SIGN_LANG))
 		button_icon_state = "sign_language_1"
+		background_icon_state = "bg_default_on"
 	else
 		button_icon_state = "sign_language_0"
+		background_icon_state = "bg_default"
 
 /datum/action/innate/sign_language/Grant(mob/living/carbon/grant_to)
 	..()
