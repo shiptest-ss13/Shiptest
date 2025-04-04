@@ -431,7 +431,7 @@ SUBSYSTEM_DEF(overmap)
 	var/counted_ships = 0
 	for(var/datum/overmap/ship/controlled/ship_datum in controlled_ships)
 		var/slot_count = 0
-		if(!ship_datum.source_template)
+		if(!ship_datum.source_template || ship_datum.source_template.category != "subshuttles")
 			continue
 		for(var/job_slot in ship_datum.source_template.job_slots)
 			slot_count += ship_datum.source_template.job_slots[job_slot]
@@ -444,15 +444,13 @@ SUBSYSTEM_DEF(overmap)
 	return 0
 
 /datum/controller/subsystem/overmap/proc/ship_locking_percentage()
-	if(world.time < 30 MINUTES)
-		return 0
-	return round(clamp(world.time / (1 MINUTES), 25, 0) + TRANSFER_FACTOR * 100)
+	return round(clamp(clamp(((world.time - CONFIG_GET(number/ship_locking_starts)) / (1 MINUTES)), 0, 25) + TRANSFER_FACTOR * 100, 0, 50))
 
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
 	if(!(GLOB.ship_spawn_enabled) || (get_num_cap_ships() >= CONFIG_GET(number/max_shuttle_count)))
 		return FALSE
-	if((length(controlled_ships) && GLOB.auto_ship_spawn_locking) && ship_crew_percentage() < ship_locking_percentage())
+	if((length(controlled_ships) < 2 && CONFIG_GET(flag/auto_ship_spawn_locking)) && ship_crew_percentage() < ship_locking_percentage())
 		return FALSE
 	return TRUE
 

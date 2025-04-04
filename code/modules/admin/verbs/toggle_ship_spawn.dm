@@ -27,13 +27,13 @@
 		to_chat(src, "Only administrators may use this command.", confidential = TRUE)
 		return
 	if(check_rights(R_ADMIN, 1))
-		GLOB.auto_ship_spawn_locking ^= TRUE
+		CONFIG_SET(flag/auto_ship_spawn_locking, !CONFIG_GET(flag/auto_ship_spawn_locking))
 		var/message
-		if(GLOB.auto_ship_spawn_locking)
+		if(CONFIG_GET(flag/auto_ship_spawn_locking))
 			message = "[key_name_admin(usr)] enabled auto ship spawning locking."
-			to_chat(world, "<B>Ship Spawning is now enabled.</B>", confidential = TRUE)
+			to_chat(world, "<B>Ship Automatic Locking is now enabled.</B>", confidential = TRUE)
 		else
 			message = "[key_name_admin(usr)] disabled auto ship spawning locking."
-			to_chat(world, "<B>Ship Spawning is now disabled.</B>", confidential = TRUE)
+			to_chat(world, "<B>Ship Automatic Locking is now disabled.</B>", confidential = TRUE)
 		message_admins(message)
 		log_game(message)
