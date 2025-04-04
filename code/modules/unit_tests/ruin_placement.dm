@@ -8,7 +8,8 @@
 			var/datum/overmap/dynamic/dummy_overmap = new(null, FALSE)
 			dummy_overmap.set_planet_type(planet_type)
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
-			dummy_overmap.ruin_type = ruin
+
+			dummy_overmap.selected_ruin = ruin
 
 			for(var/mission_type in ruin.ruin_mission_types)
 				var/datum/mission/ruin/ruin_mission = new mission_type(dummy_overmap, 1 + length(dummy_overmap.dynamic_missions))
