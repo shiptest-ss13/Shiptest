@@ -762,12 +762,12 @@
 	build_path = /obj/item/wallframe/newscaster
 	category = list("initial", "Construction")
 
-/datum/design/bounty_board_frame
+/datum/design/mission_board_frame
 	name = "Bounty Board Frame"
 	id = "bountyboard_frame"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
-	build_path = /obj/item/wallframe/bounty_board
+	build_path = /obj/item/wallframe/mission_viewer
 	category = list("initial", "Construction")
 
 /datum/design/syringe
@@ -1213,12 +1213,12 @@
 	build_path = /obj/item/ammo_box/a762_stripper/empty
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/vickland_a308clip
-	name = ".308 Stripper Clip"
+/datum/design/vickland_a8_50rclip
+	name = "8x50mmR Stripper Clip"
 	id = "VicklandStripClip"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
-	build_path = /obj/item/ammo_box/vickland_a308/empty
+	build_path = /obj/item/ammo_box/vickland_a8_50r/empty
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/a858clip
@@ -1227,6 +1227,22 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a858/empty
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase
+	name = "Guncase"
+	id = "guncase"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/storage/guncase
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase_pistol
+	name = "Pistol Guncase"
+	id = "guncase-pitol"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/plastic = 1500)
+	build_path = /obj/item/storage/guncase/pistol
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/control

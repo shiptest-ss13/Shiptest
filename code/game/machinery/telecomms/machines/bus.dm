@@ -84,7 +84,7 @@
 	autolinkers = list("processor6", "pirate", "receiverB", "messaging")
 
 /obj/machinery/telecomms/bus/preset_seven
-	id = "Solgov Communications Bus"
+	id = "SolGov Communications Bus"
 	network = "tcommsat"
 	freq_listening = list(FREQ_SOLGOV, FREQ_COMMON)
 	autolinkers = list("processor7", "solgov", "receiverA", "messaging")

@@ -10,9 +10,9 @@
 	/// Theme name for the MOD.
 	var/name = "standard"
 	/// Description added to the MOD.
-	var/desc = "A MOD suit. Placeholder Desc"
+	var/desc = "A civilian class MODsuit, it doesn't offer much. The minimalist design does however mean it's more lightweight then specialized models."
 	/// Extended description on examine_more
-	var/extended_desc = "Placeholder Desc"
+	var/extended_desc
 	/// Default skin of the MOD.
 	var/default_skin = "standard"
 	/// The slot this mod theme fits on
@@ -34,9 +34,9 @@
 	/// How much battery power the MOD uses by just being on
 	var/charge_drain = DEFAULT_CHARGE_DRAIN
 	/// Slowdown of the MOD when not active.
-	var/slowdown_inactive = 1.25
+	var/slowdown_inactive = 0.75
 	/// Slowdown of the MOD when active.
-	var/slowdown_active = 0.75
+	var/slowdown_active = 0.5
 	/// Theme used by the MOD TGUI.
 	var/ui_theme = "ntos"
 	/// List of inbuilt modules. These are different from the pre-equipped suits, you should mainly use these for unremovable modules with 0 complexity.
@@ -102,12 +102,13 @@
 
 /datum/mod_theme/engineering
 	name = "engineering"
+	desc = "A special MODsuit that protects against hazardous, low pressure environments. Offers protection against most industrial hazards and features built in insulation."
 	default_skin = "engineering"
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 10, "bio" = 100, "fire" = 100, "acid" = 25)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 75)
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
-	slowdown_inactive = 1.5
+	slowdown_inactive = 1.25
 	slowdown_active = 1
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -145,11 +146,12 @@
 
 /datum/mod_theme/atmospheric
 	name = "atmospheric"
+	desc = "A special MODsuit designed for work in a hazardous, low-pressure environment. Features high grade thermal shielding capable of surviving any manmade hellfire."
 	default_skin = "atmospheric"
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 15, "bomb" = 10, "bio" = 100, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 25, "fire" = 100, "acid" = 75)
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	slowdown_inactive = 1.5
+	slowdown_inactive = 1.25
 	slowdown_active = 1
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -189,13 +191,14 @@
 
 /datum/mod_theme/advanced
 	name = "advanced"
+	desc = "An advanced suit that protects against hazardous, low pressure environments. Shines with a high polish."
 	default_skin = "advanced"
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 15, "bomb" = 50, "bio" = 100, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 40, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 90)
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
-	slowdown_inactive = 1
-	slowdown_active = 0.5
+	slowdown_inactive = 1.25
+	slowdown_active = 1
 	inbuilt_modules = list(/obj/item/mod/module/magboot/advanced)
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -237,12 +240,15 @@
 
 /datum/mod_theme/mining
 	name = "mining"
+	desc = "A recently developed MODsuit design, featurning integrated mining tools and impact plates to protect against Frontier fauna."
 	default_skin = "mining"
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 30, "bio" = 100, "fire" = 100, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 30, "bio" = 100, "fire" = 100, "acid" = 75)
 	resistance_flags = FIRE_PROOF|LAVA_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	complexity_max = DEFAULT_MAX_COMPLEXITY - 5
-	charge_drain = DEFAULT_CHARGE_DRAIN * 2
+	complexity_max = DEFAULT_MAX_COMPLEXITY - 2
+	charge_drain = DEFAULT_CHARGE_DRAIN
+	slowdown_inactive = 1
+	slowdown_active = 0.7
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
 		/obj/item/tank/internals,
@@ -310,6 +316,7 @@
 
 /datum/mod_theme/loader
 	name = "loader"
+	desc = "A motorized cargo loading harness based off the MODsuit system. It features powerful loading arms and additional storage space, though the modifications make it no longer space worthy."
 	default_skin = "loader"
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 10, "bio" = 10, "fire" = 25, "acid" = 25)
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
@@ -323,7 +330,7 @@
 		/obj/item/tank/internals,
 		/obj/item/paper
 	)
-	inbuilt_modules = list(/obj/item/mod/module/clamp/loader, /obj/item/mod/module/magnet)
+	inbuilt_modules = list(/obj/item/mod/module/clamp/loader, /obj/item/mod/module/magnet,/obj/item/mod/module/storage/large_capacity)
 	skins = list(
 		"loader" = list(
 			HELMET_FLAGS = list(
@@ -349,11 +356,12 @@
 
 /datum/mod_theme/medical
 	name = "medical"
+	desc = "An advanced MODsuit that protects against hazardous, low pressure environments. Built with lightweight materials for easier movement."
 	default_skin = "medical"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 10, "bio" = 100, "fire" = 60, "acid" = 75)
+	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
 	charge_drain = DEFAULT_CHARGE_DRAIN * 1.5
-	slowdown_inactive = 1
-	slowdown_active = 0.5
+	slowdown_inactive = 0.5
+	slowdown_active = 0.3
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
 		/obj/item/tank/internals,
@@ -425,12 +433,13 @@
 
 /datum/mod_theme/rescue
 	name = "rescue"
+	desc = "An upgraded version of the medical MODsuit, with secondgen rescue modules and constructed from advanced materials."
 	default_skin = "rescue"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 5, "energy" = 5, "bomb" = 10, "bio" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
 	resistance_flags = FIRE_PROOF|ACID_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	charge_drain = DEFAULT_CHARGE_DRAIN * 1.5
-	slowdown_inactive = 0.75
+	slowdown_inactive = 0.5
 	slowdown_active = 0.25
 	inbuilt_modules = list(/obj/item/mod/module/quick_carry/advanced)
 	allowed_suit_storage = list(
@@ -480,14 +489,15 @@
 
 /datum/mod_theme/research
 	name = "research"
+	desc = "An advanced MODsuit that protects against hazardous, low pressure environments. Fitted with extensive plating for handling explosives and dangerous research materials."
 	default_skin = "research"
-	armor = list("melee" = 20, "bullet" = 15, "laser" = 5, "energy" = 5, "bomb" = 100, "bio" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
 	resistance_flags = FIRE_PROOF|ACID_PROOF
 	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	complexity_max = DEFAULT_MAX_COMPLEXITY + 5
-	slowdown_inactive = 1.75
-	slowdown_active = 1.25
+	slowdown_inactive = 1.25
+	slowdown_active = 1
 	inbuilt_modules = list(/obj/item/mod/module/reagent_scanner/advanced)
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
@@ -526,21 +536,23 @@
 
 /datum/mod_theme/security
 	name = "security"
+	desc = "A lightweight MODsuit that protects against hazardous, low pressure environments. Has an additional layer of armor at the cost of module capacity."
 	default_skin = "security"
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 100, "fire" = 75, "acid" = 75)
-	complexity_max = DEFAULT_MAX_COMPLEXITY - 3
-	slowdown_inactive = 1
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	complexity_max = DEFAULT_MAX_COMPLEXITY - 5
+	slowdown_inactive = 0.75
 	slowdown_active = 0.5
 	allowed_suit_storage = list(
-		/obj/item/flashlight,
-		/obj/item/tank/internals,
-		/obj/item/ammo_box,
-		/obj/item/ammo_casing,
-		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/restraints/handcuffs,
-		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
-	)
+	/obj/item/ammo_box,
+	/obj/item/ammo_casing,
+	/obj/item/flashlight,
+	/obj/item/gun/ballistic,
+	/obj/item/gun/energy,
+	/obj/item/gun/grenadelauncher,
+	/obj/item/melee/baton,
+	/obj/item/reagent_containers/spray/pepper,
+	/obj/item/restraints/handcuffs,
+	/obj/item/tank/internals)
 	skins = list(
 		"security" = list(
 			HELMET_FLAGS = list(
@@ -572,12 +584,13 @@
 
 /datum/mod_theme/safeguard
 	name = "safeguard"
+	desc = "A special MODsuit that protects against hazardous, low pressure environments. Has an additional layer of reinforced armor."
 	default_skin = "safeguard"
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 40, "bio" = 100, "fire" = 100, "acid" = 95)
+	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	slowdown_inactive = 0.75
-	slowdown_active = 0.25
+	slowdown_active = 0.5
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
 		/obj/item/tank/internals,
@@ -617,23 +630,26 @@
 
 /datum/mod_theme/magnate
 	name = "magnate"
+	desc = "A fancy, very protective suit for Nanotrasen's captains. Shock, fire and acid-proof while also having a large capacity and high speed."
 	default_skin = "magnate"
-	armor = list("melee" = 20, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 50, "bio" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 60, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF|ACID_PROOF
 	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	siemens_coefficient = 0
 	complexity_max = DEFAULT_MAX_COMPLEXITY + 5
 	slowdown_inactive = 0.75
-	slowdown_active = 0.25
+	slowdown_active = 0.5
 	allowed_suit_storage = list(
-		/obj/item/flashlight,
-		/obj/item/tank/internals,
 		/obj/item/ammo_box,
 		/obj/item/ammo_casing,
-		/obj/item/restraints/handcuffs,
-		/obj/item/assembly/flash,
+		/obj/item/flashlight,
+		/obj/item/gun/ballistic,
+		/obj/item/gun/energy,
+		/obj/item/gun/grenadelauncher,
 		/obj/item/melee/baton,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/restraints/handcuffs,
+		/obj/item/tank/internals
 	)
 	skins = list(
 		"magnate" = list(
@@ -664,16 +680,16 @@
 	)
 
 /datum/mod_theme/syndicate
-	name = "syndicate"
+	name = "Blood-Red"
+	desc = "An experimental combat hardsuit designed for special combat operation. Initially developed to replace the original Blood-Red Hardsuit model, the ICW ended before any widespread adoption of this MODsuit among Coallition forces could take place."
 	default_skin = "syndicate"
-	armor = list("melee" = 15, "bullet" = 20, "laser" = 15, "energy" = 15, "bomb" = 35, "bio" = 100, "fire" = 50, "acid" = 90)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	siemens_coefficient = 0
-	slowdown_inactive = 1
+	slowdown_inactive = 0.75
 	slowdown_active = 0.5
 	ui_theme = "syndicate"
-	inbuilt_modules = list(/obj/item/mod/module/armor_booster)
+	inbuilt_modules = list(/obj/item/mod/module/armor_assist)
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
 		/obj/item/tank/internals,
@@ -715,16 +731,16 @@
 
 /datum/mod_theme/elite
 	name = "elite"
+	desc = "An experimental elite combat hardsuit designed for special combat operation. Initially developed to replace the original Blood-Red Hardsuit model, the ICW ended before any widespread adoption of this MODsuit among Coalition forces could take place."
 	default_skin = "elite"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 35, "energy" = 35, "bomb" = 55, "bio" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 60, "bomb" = 55, "bio" = 100, "rad" = 70, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF|ACID_PROOF
 	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	siemens_coefficient = 0
-	slowdown_inactive = 1
+	slowdown_inactive = 0.25
 	slowdown_active = 0.5
 	ui_theme = "syndicate"
-	inbuilt_modules = list(/obj/item/mod/module/armor_booster)
+	inbuilt_modules = list(/obj/item/mod/module/armor_assist)
 	allowed_suit_storage = list(
 		/obj/item/flashlight,
 		/obj/item/tank/internals,

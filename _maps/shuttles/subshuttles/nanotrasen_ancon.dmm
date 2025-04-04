@@ -8,14 +8,15 @@
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "aW" = (
-/obj/machinery/computer/card/centcom{
-	dir = 8
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
+	},
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -184,9 +185,7 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "xZ" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/eastleft,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ancon_engine";
@@ -230,9 +229,7 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "zJ" = (
-/obj/machinery/power/shuttle/engine/electric/premium{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric/premium,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Ct" = (
@@ -252,9 +249,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/corner/opaque/green/half,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -377,16 +372,14 @@
 /obj/effect/turf_decal/corner/opaque/green/border{
 	dir = 4
 	},
-/obj/structure/chair/comfy{
+/obj/effect/landmark/ert_shuttle_spawn,
+/obj/structure/chair/comfy/blue{
 	dir = 4
 	},
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "Th" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/machinery/door/window/eastright,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ancon_engine";
@@ -409,7 +402,8 @@
 /area/ship/bridge)
 "Vu" = (
 /obj/machinery/computer/helm{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4

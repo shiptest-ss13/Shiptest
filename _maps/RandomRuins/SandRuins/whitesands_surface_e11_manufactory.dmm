@@ -59,10 +59,10 @@
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
 "aD" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
-/obj/structure/fluff/paper/stack{
-	dir = 2
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
 	},
+/obj/structure/fluff/paper/stack,
 /obj/structure/fluff/paper/stack{
 	dir = 1
 	},
@@ -254,9 +254,7 @@
 /turf/open/floor/carpet,
 /area/ruin/whitesands/e11manufactory/barracks)
 "bz" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /obj/effect/turf_decal/weather/whitesands{
 	dir = 10
 	},
@@ -353,7 +351,9 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "ch" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "cm" = (
@@ -503,7 +503,9 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
@@ -662,9 +664,7 @@
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "eG" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /obj/effect/turf_decal/weather/whitesands{
 	dir = 9
 	},
@@ -887,7 +887,9 @@
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "hb" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -1105,7 +1107,9 @@
 /obj/structure/sign/poster/official/work_for_a_future{
 	pixel_y = 32
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -1354,7 +1358,6 @@
 "km" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	dir = 2;
 	id = "e11_manufactory_manager_window"
 	},
 /turf/open/floor/plating,
@@ -1536,9 +1539,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
@@ -1952,9 +1953,7 @@
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "oE" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /obj/effect/turf_decal/weather/whitesands{
 	dir = 6
 	},
@@ -2138,7 +2137,7 @@
 /obj/structure/filingcabinet{
 	dir = 4
 	},
-/obj/item/documents/eoehoma,
+/obj/item/folder/documents/eoehoma,
 /obj/item/pen/fourcolor,
 /obj/item/clothing/neck/stethoscope{
 	w_class = 2
@@ -2167,9 +2166,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "6-10"
 	},
-/obj/machinery/power/terminal{
-	dir = 2
-	},
+/obj/machinery/power/terminal,
 /obj/structure/cable/yellow{
 	icon_state = "0-10"
 	},
@@ -2390,9 +2387,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-10"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
@@ -2541,9 +2536,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
 "tu" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "tv" = (
@@ -2607,9 +2600,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "tN" = (
@@ -2876,7 +2867,9 @@
 /obj/effect/turf_decal/corner/opaque/red/diagonal{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -3055,9 +3048,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/whitesands/e11manufactory/barracks)
 "xF" = (
-/obj/structure/fence/door{
-	dir = 2
-	},
+/obj/structure/fence/door,
 /obj/effect/turf_decal/weather/whitesands/corner{
 	dir = 8
 	},
@@ -3284,9 +3275,7 @@
 /obj/item/solar_assembly,
 /obj/effect/turf_decal/solarpanel,
 /obj/item/shard,
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "zZ" = (
@@ -3403,9 +3392,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/e11manufactory/warehouse)
 "AM" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /obj/effect/turf_decal/weather/whitesands/corner{
 	dir = 8
 	},
@@ -3567,9 +3554,7 @@
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
 "BY" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "BZ" = (
@@ -3697,7 +3682,7 @@
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "CY" = (
-/mob/living/simple_animal/hostile/human/hermit/survivor/random,
+/obj/effect/spawner/random/hermit,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Da" = (
@@ -4125,7 +4110,9 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "GA" = (
 /obj/effect/turf_decal/corner/opaque/red/diagonal,
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/sign/poster/official/bless_this_spess{
 	pixel_y = 32
@@ -4149,7 +4136,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -4569,9 +4556,7 @@
 /turf/open/floor/concrete/pavement,
 /area/ruin/whitesands/e11manufactory/warehouse)
 "KA" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /obj/effect/turf_decal/weather/whitesands{
 	dir = 8
 	},
@@ -4677,9 +4662,7 @@
 /obj/item/solar_assembly,
 /obj/effect/turf_decal/solarpanel,
 /obj/item/shard,
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -4854,14 +4837,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"Mv" = (
-/obj/machinery/power/solar,
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/yellow{
-	icon_state = "0-1"
-	},
-/turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Mz" = (
 /obj/effect/turf_decal/road{
 	dir = 4
@@ -4884,7 +4859,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
 "MC" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
@@ -4925,7 +4902,9 @@
 /turf/closed/wall/rust,
 /area/ruin/whitesands/e11manufactory/security)
 "MY" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -5358,9 +5337,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
 "Qg" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /obj/effect/turf_decal/weather/whitesands{
 	dir = 4
 	},
@@ -5416,7 +5393,9 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Qu" = (
@@ -5511,9 +5490,7 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "Ri" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable/orange{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/orange,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Rl" = (
@@ -5907,13 +5884,13 @@
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "TX" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ub" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
 "Ug" = (
@@ -5923,9 +5900,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
 "Ui" = (
-/obj/structure/fence{
-	dir = 2
-	},
+/obj/structure/fence,
 /obj/effect/turf_decal/weather/whitesands{
 	dir = 5
 	},
@@ -6263,9 +6238,7 @@
 /obj/structure/chair/office/dark{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/whitesands/e11manufactory/security)
@@ -9152,7 +9125,7 @@ gl
 Pg
 Pg
 yd
-Mv
+UM
 Pg
 Pg
 gM

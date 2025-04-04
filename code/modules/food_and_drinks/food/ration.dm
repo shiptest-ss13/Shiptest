@@ -164,107 +164,107 @@
 
 /obj/item/reagent_containers/food/snacks/ration/entree/vegan_chili
 	name = "vegan chili with beans"
-	desc = "A hearty and flavorful vegan chili made with beans. It's so delicious, you won't believe it's not meat!"
+	desc = "A vegan chili made with beans, onions, and peppers. Its consistency hasn't survived being made shelf-stable..."
 	filling_color = "#B22222"
-	tastes = list("beans" = 1, "off" = 1)
+	tastes = list("mushy beans" = 1, "soft onions" = 1)
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/entree/shredded_beef
 	name = "shredded beef in barbecue sauce"
-	desc = "Tender, juicy shredded beef coated in smoky barbecue sauce. A savory treat that satisfies your hunger."
+	desc = "Stiff shredded beef, coated in a watery barbecue sauce. It's very filling, and the flavor lingers in your mouth."
 	filling_color = "#7a3c19"
-	tastes = list("beef" = 1)
+	tastes = list("tough beef" = 1, "barbeque aftertaste" = 1)
 	foodtype = MEAT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/entree/pork_spaghetti
-	name = "spaghetti with pork and sauce"
-	desc = "A hearty dish of spaghetti with tender pork and a savory sauce. A ration_overlay and delicious meal to satisfy your hunger."
+	name = "spaghetti with pork and marinara sauce"
+	desc = "A dish of reconstituted spaghetti with ground pork and marinara sauce, which is left unfortunately watery after being reheated."
 	filling_color = "#b82121"
-	tastes = list("pork" = 1, "spaghetti" = 1, "sauce" = 1)
+	tastes = list("pork" = 1, "soft spaghetti" = 1, "thin tomato sauce" = 1)
 	foodtype = MEAT | GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/entree/fried_fish
 	name = "fried fish chunks"
-	desc = "Crispy and delicious fried fish chunks, perfect for seafood lovers. Satisfy your cravings with this delightful fried treat."
+	desc = "Breaded, fried chunks of fish. While crisp at one point, the breading has gone soft after some time."
 	filling_color = "#f08934"
-	tastes = list("fish" = 1, "fried" = 1)
+	tastes = list("warm fish" = 1, "soggy breading" = 1)
 	foodtype = FRIED
 
 /obj/item/reagent_containers/food/snacks/ration/entree/beef_strips
 	name = "beef strips in tomato sauce"
-	desc = "Tender beef strips cooked in a rich tomato sauce, creating a delightful and comforting combination. A hearty and delicious meal to enjoy."
+	desc = "Strips of beef cooked in a tomato-based sauce, served at a chili-esque consistency. The beef is particularly lean."
 	filling_color = "#644815"
-	tastes = list("beef" = 1, "tomato" = 1)
+	tastes = list("lean beef" = 1, "heavily spiced tomato" = 1)
 	foodtype = MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/entree/chili_macaroni
 	name = "chili macaroni"
-	desc = "A comforting dish of macaroni combined with flavorful chili, providing a hearty and satisfying meal."
+	desc = "A bag of macaroni, served in chili. The consistency of the pasta is beginning to come undone by the time it finishes heating..."
 	filling_color = "#994d00"
-	tastes = list("chili" = 1, "macaroni" = 1)
+	tastes = list("mild chili" = 1, "soggy macaroni" = 1)
 	foodtype = MEAT | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/entree/chicken_wings_hot_sauce
 	name = "chicken wings with hot sauce"
-	desc = "Crispy and flavorful chicken wings tossed in a spicy hot sauce, delivering a bold and satisfying taste."
+	desc = "Chicken wings and thighs, coated in a hot sauce. The chicken itself has become waterlogged over time."
 	filling_color = "#ff3300"
-	tastes = list("chicken" = 1, "hot sauce" = 1)
+	tastes = list("wet chicken" = 1, "thin hot sauce" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/fish_stew
 	name = "fish stew"
-	desc = "A hearty fish stew featuring a rich broth and tender pieces of fish, creating a flavorful and comforting meal."
+	desc = "A ration pack of fish stew, with thickened broth and noticeably sparse chunks of fish."
 	filling_color = "#336699"
-	tastes = list("fish" = 1)
+	tastes = list("fish" = 1, "gritty broth" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/lemon_pepper_chicken
 	name = "lemon pepper chicken"
-	desc = "Tender chicken seasoned with zesty lemon and fragrant pepper, offering a flavorful and satisfying dish."
+	desc = "A hunk of chicken, cooked and seasoned with lemon flavoring and ground pepper."
 	filling_color = "#ffff66"
-	tastes = list("lemon" = 1, "pepper" = 1, "chicken" = 1)
+	tastes = list("lemon flavoring" = 1, "pepper" = 1, "chicken" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/sausage_peppers_onions
 	name = "sausage with peppers and onions"
-	desc = "Grilled sausage served with sautéed peppers and onions, creating a flavorful and satisfying dish."
+	desc = "Cubes of sausage, served with sautéed peppers and onions. The peppers and onions have absorbed enough water to go soft, and the fat on the sausages have since congealed."
 	filling_color = "#cc3300"
-	tastes = list("sausage" = 1, "peppers" = 1, "onions" = 1)
+	tastes = list("sausage" = 1, "soft peppers" = 1, "mushy onions" = 1)
 	foodtype = MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/entree/dumplings_chili_sauce
 	name = "dumplings with chili sauce"
-	desc = "Delicious dumplings served with a flavorful chili sauce, providing a hearty and satisfying meal."
+	desc = "Small buckwheat dumplings, served in a heavily flavored chili sauce."
 	filling_color = "#b8711b"
-	tastes = list("dumplings" = 1, "chili sauce" = 1)
+	tastes = list("heavy dumplings" = 1, "overspiced chili sauce" = 1)
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/battered_fish_sticks
 	name = "battered fish sticks"
-	desc = "Crispy battered fish sticks, deep-fried to perfection and offering a delicious seafood snack."
+	desc = "Battered fish sticks, deep-fried before being dehydrated. They've gone and dried over time..."
 	filling_color = "#336699"
-	tastes = list("fish" = 1)
+	tastes = list("dry fish" = 1, "breading" = 2)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/assorted_salted_offal
 	name = "assorted salted offal"
-	desc = "A mix of various salted offal, providing a unique and flavorful snack for those with adventurous tastes."
+	desc = "A ration pack filled with various slabs of offal, salted heavily and left to sit and congeal in its packaging."
 	filling_color = "#cc3300"
-	tastes = list("assorted offal" = 1)
+	tastes = list("assorted offal" = 1, "salt" = 1)
 	foodtype = MEAT | GORE //its literally entrails
 
 /obj/item/reagent_containers/food/snacks/ration/entree/maple_pork_sausage_patty
 	name = "maple pork sausage patty"
-	desc = "Juicy pork sausage patty infused with the sweetness of maple, offering a hearty and flavorful snack."
+	desc = "A pork sausage puck flavored with a maple-based syrup. It's cloyingly sweet."
 	filling_color = "#b8711b"
-	tastes = list("maple" = 1, "pork sausage" = 1)
+	tastes = list("maple" = 2, "pork sausage" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/pepper_jack_beef_patty
 	name = "jalapeno pepper jack beef patty"
-	desc = "Spicy jalapeno and pepper jack-infused beef patty, offering a bold and flavorful snack option."
+	desc = "A jalapeno and pepper jack-smothered beef puck, which has seemingly lost its bite over its shelf life. The cheese forms a thick pool when heated."
 	filling_color = "#ff9900"
-	tastes = list("jalapeno" = 1, "pepper jack" = 1, "beef patty" = 1)
+	tastes = list("mild jalapeno" = 1, "pepper jack" = 1, "beef patty" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/entree/beef_goulash
@@ -276,7 +276,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/entree/pepperoni_pizza_slice
 	name = "pepperoni pizza slice"
-	desc = "A classic pepperoni pizza slice topped with melted cheese and savory pepperoni, offering a delicious snack."
+	desc = "A small pizza slice topped with surprisingly high quality melted cheese and pepperoni. It's kept its own consistency and flavor."
 	filling_color = "#cc3300"
 	tastes = list("pepperoni" = 1, "pizza" = 1)
 	foodtype = GRAIN | DAIRY | MEAT
@@ -290,23 +290,23 @@
 
 /obj/item/reagent_containers/food/snacks/ration/entree/elbow_macaroni
 	name = "elbow macaroni"
-	desc = "A classic dish of elbow macaroni, offering a simple and satisfying meal."
+	desc = "A packet of plain elbow macaroni. It's your decision to mix it with something or eat it straight."
 	filling_color = "#ffcc00"
-	tastes = list("macaroni" = 1)
+	tastes = list("soft macaroni" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/entree/cheese_pizza_slice
 	name = "cheese pizza slice"
-	desc = "A classic cheese pizza slice topped with melted cheese, offering a simple and satisfying snack."
+	desc = "A small pizza slice, topped with melted cheese. It lacks the pepperoni of its better-liked cousin."
 	filling_color = "#ffcc00"
 	tastes = list("cheese" = 1, "pizza" = 1)
 	foodtype = GRAIN | DAIRY
 
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers
 	name = "vegetable 'crackers'"
-	desc = "Delicious vegetable-based crackers that are the perfect crunchy and nutritious snack."
+	desc = "Vegetable-based, dry crackers. A good few of them have gone stale or been reduced to a powder over time."
 	filling_color = "#9ED41B"
-	tastes = list("cracker" = 1)
+	tastes = list("tough cracker" = 1)
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers/open_ration(mob/user)
@@ -315,23 +315,23 @@
 
 /obj/item/reagent_containers/food/snacks/ration/side/cornbread
 	name = "cornbread"
-	desc = "Deliciously crumbly cornbread, a delightful blend of sweet and savory flavors."
+	desc = "Crumbly cornbread, which has since been flattened and dried over the long course of its life."
 	filling_color = "#DDB63B"
-	tastes = list("corn" = 1)
+	tastes = list("dry cornbread" = 1)
 	foodtype = VEGETABLES | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/jerky_wrap
 	name = "jerky wraps"
-	desc = "Thin slices of flavorful beef jerky, carefully wrapped to create a portable and protein-packed snack. Ideal for satisfying your hunger on the go."
+	desc = "Thin slices of beef-based jerky, not too disimilar to what you'd find in convenience stores. The smokiness is almost strong enough to hurt your nose."
 	filling_color = "#532d0e"
-	tastes = list("dry" = 1, "jerky" = 1, "beef" = 1)
+	tastes = list("thick spices" = 1, "tough, chewy beef" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/side/bread_sticks
 	name = "seasoned bread sticks"
-	desc = "Crunchy and flavorful seasoned bread sticks, a delightful accompaniment to your meal or a satisfying snack on their own."
+	desc = "Crunchy, seasoned bread sticks, often softened with being dipped in the entree. Sometimes hard enough to better act as kindling."
 	filling_color = "#e2904d"
-	tastes = list("bread" = 1, "seasoned" = 1)
+	tastes = list("dry bread" = 1, "mild seasonings" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/tortilla
@@ -343,408 +343,408 @@
 
 /obj/item/reagent_containers/food/snacks/ration/side/wheat_bread
 	name = "white wheat snack bread"
-	desc = "Soft and fluffy white wheat snack bread, a versatile snack or accompaniment to your meals. Enjoy the wholesome goodness of wheat."
+	desc = "A dense rectangle of white bread, with perforation lines for you to tear along. You'll want to serve it with something else."
 	filling_color = "#8d5a30"
-	tastes = list("wheat" = 1, "bread" = 1)
+	tastes = list("dense bread" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/beef_sticks
 	name = "teriyaki beef sticks"
-	desc = "Savory teriyaki-flavored beef sticks, a protein-packed snack that satisfies your taste buds. Ideal for meat lovers."
+	desc = "Beef sticks, coated in a teriyaki-based flavoring. The flavoring coats the interior of the packet it's served in."
 	filling_color = "#664a20"
-	tastes = list("beef" = 1, "teriyaki" = 1)
+	tastes = list("beef" = 1, "powdery teriyaki" = 1)
 	foodtype = MEAT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/side/garlic_mashed_potatoes
 	name = "garlic mashed potatoes"
-	desc = "Creamy mashed potatoes infused with aromatic garlic, creating a comforting and savory side dish."
+	desc = "Silty mashed potatoes, mixed with garlic flavoring."
 	filling_color = "#e6e600"
-	tastes = list("garlic" = 1, "potatoes" = 1)
+	tastes = list("garlic powder" = 1, "silty potatoes" = 1)
 	foodtype = GRAIN | VEGETABLES
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/soup_crackers
 	name = "soup crackers"
-	desc = "Crunchy and satisfying crackers, perfect for dipping into a warm bowl of soup or enjoying on their own."
+	desc = "Dry soda crackers, thin enough to not waterlog itself when dipped in an entree. Most of them have been reduced to crumbs."
 	filling_color = "#663300"
 	tastes = list("crackers" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/griddled_mushrooms_chili
 	name = "griddled mushrooms with chili"
-	desc = "Savory mushrooms griddled to perfection and topped with a spicy chili sauce, offering a delightful burst of flavors."
+	desc = "Little pieces of grilled mushrooms mixed in a very mild chili. It's closer to being chili with mushrooms in it than vice versa."
 	filling_color = "#b82121"
-	tastes = list("mushrooms" = 1, "chili" = 1)
+	tastes = list("mushrooms" = 1, "chili" = 2)
 	foodtype = VEGETABLES | MEAT
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/white_sandwich_bread
 	name = "white sandwich bread"
-	desc = "Soft and fluffy white bread, perfect for making sandwiches or enjoying as a quick and simple snack."
+	desc = "Small white bread slabs, intended to be made into sandwiches or have a spread placed across them."
 	filling_color = "#ffffff"
 	tastes = list("bread" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/baked_cheddarcheese_chips
 	name = "baked cheddar cheese chips"
-	desc = "Crispy and savory cheddar cheese chips, baked to perfection for a flavorful and satisfying snack."
+	desc = "A small packet of thin cheddar cheese chips, though some of them have gone soft."
 	filling_color = "#ffcc00"
-	tastes = list("cheddar cheese" = 1, "chips" = 1)
+	tastes = list("artificial cheddar cheese" = 1, "chips" = 1)
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/snacks/ration/side/fried_potato_curls
 	name = "fried potato curls"
-	desc = "Crispy and golden potato curls, fried to perfection and seasoned for a delightful and savory snack."
+	desc = "A packet of fried potato curls, coated in salt and sealed. Most have gone soft."
 	filling_color = "#ffcc00"
 	tastes = list("potato" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/stewed_asparagus_butter
 	name = "stewed asparagus with butter"
-	desc = "Tender stewed asparagus served with a generous drizzle of melted butter, creating a delightful and savory side."
+	desc = "Stewed asparagus served with melted butter, thoroughly waterlogged by now."
 	filling_color = "#99cc00"
-	tastes = list("asparagus" = 1, "butter" = 1)
+	tastes = list("soft asparagus" = 1, "butter" = 1)
 	foodtype = VEGETABLES
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/broth_tuna_rice
 	name = "bone broth with tuna and rice"
-	desc = "A warm and comforting broth with tender tuna and rice, offering a nourishing and satisfying meal."
+	desc = "A thin broth with sparse pieces of tuna and a helping of rice."
 	filling_color = "#669999"
-	tastes = list("broth" = 1, "tuna" = 1, "rice" = 1)
+	tastes = list("watery broth" = 2, "tuna" = 1, "rice" = 1)
 	foodtype = MEAT | GRAIN
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/trail_crackers
 	name = "trail crackers"
-	desc = "Nutritious and energy-packed crackers, perfect for on-the-go snacking during outdoor adventures."
+	desc = "Crackers baked with dried fruit and seeds, which have become robust enough to be difficult to break apart and chew."
 	filling_color = "#ffcc00"
-	tastes = list("crackers" = 1)
+	tastes = list("tough crackers" = 1, "fruit raisins" = 1)
 	foodtype = GRAIN | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/side/hash_brown_bacon
 	name = "hash brown potatoes with bacon, peppers and onions"
-	desc = "Crispy hash brown paired with savory bacon, creating a satisfying and indulgent snack option."
+	desc = "Dry hash browns paired with equally dry strips of bacon, salted heavily."
 	filling_color = "#ffcc00"
-	tastes = list("hash brown" = 1, "bacon" = 1)
-	foodtype = GRAIN | MEAT
+	tastes = list("stiff hash brown" = 1, "crumbly bacon" = 1)
+	foodtype = GRAIN | MEAT | VEGETABLES
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/granola_milk_blueberries
 	name = "granola with milk and blueberries"
-	desc = "Nutrient-rich granola served with creamy milk and plump blueberries, providing a wholesome and delicious snack."
+	desc = "Dense granola served with milk powder and blueberry raisins."
 	filling_color = "#6699ff"
-	tastes = list("granola" = 1, "milk" = 1, "blueberries" = 1)
+	tastes = list("granola" = 1, "milk powder" = 1, "blueberry raisins" = 1)
 	foodtype = GRAIN | DAIRY
 
 /obj/item/reagent_containers/food/snacks/ration/side/maple_muffin
 	name = "maple muffin"
-	desc = "A delightful muffin infused with the rich flavor of maple, offering a sweet and satisfying treat."
+	desc = "A maple-flavored muffin, dense enough to knock on a table with."
 	filling_color = "#b8711b"
-	tastes = list("maple" = 1, "muffin" = 1)
+	tastes = list("maple" = 1, "tough muffin" = 1)
 	foodtype = SUGAR | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/au_gratin_potatoes
 	name = "au gratin potatoes"
-	desc = "Creamy au gratin potatoes topped with a golden cheesy crust, providing a comforting and satisfying side dish."
+	desc = "A shallow bowl of au gratin potatoes with a crust of melted cheese. It might take some heating to make the cheese surface softer."
 	filling_color = "#ffcc00"
-	tastes = list("au gratin potatoes" = 1)
+	tastes = list("potatoes" = 1, "thick cheeses" = 1)
 	foodtype = GRAIN | DAIRY | VEGETABLES
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/applesauce_carb_enhanced
 	name = "carb-enhanced applesauce"
-	desc = "Applesauce enriched with carbohydrates, providing a quick and energy-boosting snack option."
+	desc = "Grainy applesauce, reinforced with carbohydrates to keep the consumer going. The reinforcement has imparted a starchy aftertaste."
 	filling_color = "#ff9900"
-	tastes = list("applesauce" = 1)
+	tastes = list("starchy applesauce" = 1)
 	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/side/white_bread_mini_loaf
 	name = "mini loaf of white bread"
-	desc = "A small loaf of soft and fluffy white bread, perfect for making sandwiches or enjoying as a simple snack."
+	desc = "A miniature loaf of dense, compressed white bread. Despite the perforation lines, it's hard to tear."
 	filling_color = "#ffffff"
 	tastes = list("bread" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/apples_in_spiced_sauce
 	name = "apples in spiced sauce"
-	desc = "Tender apple slices coated in a spiced sauce, creating a flavorful and comforting snack option."
+	desc = "Mushy apple slices in a spiced sauce."
 	filling_color = "#ff3300"
-	tastes = list("apples" = 1, "spiced sauce" = 1)
+	tastes = list("mushy apples" = 1, "cinnamon-esque sauce" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/side/pretzel_sticks_honey_mustard
 	name = "pretzel sticks with honey mustard"
-	desc = "Crunchy pretzel sticks served with a delectable honey mustard dipping sauce, creating a delightful snack."
+	desc = "Pretzel sticks served with packet of honey mustard sauce. The lip of the sauce packet is almost impossible to peel with."
 	filling_color = "#996633"
 	tastes = list("pretzel" = 1, "honey mustard" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/jellied_eels
 	name = "jellied eels"
-	desc = "A classic dish of jellied eels, offering a unique combination of flavors and textures for a nostalgic treat."
+	desc = "A plastic tin of jellied eels, usually found in PGF rations. It's particularly oversalted."
 	filling_color = "#669999"
-	tastes = list("jellied eels" = 1)
+	tastes = list("jellied eels" = 1, "salty jelly" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/side/trail_mix_beef_jerky
 	name = "trail mix with beef jerky"
-	desc = "A hearty trail mix featuring a blend of nuts, seeds, and dried fruit, with savory beef jerky for a protein-packed snack."
+	desc = "A dry trail mix consisting of various nuts, seeds, and fruit raisins. Precious few sticks of beef jerky are served beside it."
 	filling_color = "#996633"
-	tastes = list("trail mix" = 1, "beef jerky" = 1)
+	tastes = list("slightly meaty trail mix" = 1, "tough beef jerky" = 1)
 	foodtype = MEAT | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/side/crackers
 	name = "crackers"
-	desc = "Crunchy and satisfying crackers, perfect for dipping into a warm bowl of soup or enjoying on their own."
+	desc = "Semi-crushed crackers, intended to be eaten with a spread or with an entree."
 	filling_color = "#663300"
 	tastes = list("crackers" = 1)
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/side/barbecue_fried_pork_rinds
 	name = "barbecue fried pork rinds"
-	desc = "Crispy and flavorful fried pork rinds coated in a savory barbecue seasoning, creating a satisfying snack option."
+	desc = "Dry pork rinds coated in a barbecue-flavored seasoning."
 	filling_color = "#b82121"
-	tastes = list("pork rinds" = 1, "barbecue" = 1)
+	tastes = list("pork rinds" = 1, "powdery barbecue" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/side/applesauce_mango_peach_puree
 	name = "applesauce with mango and peach puree"
-	desc = "A delightful blend of applesauce with mango and peach puree, creating a sweet and satisfying snack option."
+	desc = "A packet of applesauce with desiccated mango and peach puree-flavored powder."
 	filling_color = "#ff9900"
-	tastes = list("applesauce" = 1, "mango" = 1, "peach" = 1)
+	tastes = list("applesauce" = 1, "powdered mango" = 1, "powdered peach" = 1)
 	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/pizza_crackers
 	name = "pepperoni pizza cheese filled crackers"
-	desc = "Irresistible cheese-filled crackers with a savory pepperoni pizza flavor. A delicious and addictive snack."
+	desc = "Cheese-filled crackers, flavored with marinara sauce and pepperoni."
 	filling_color = "#b82121"
-	tastes = list("pizza" = 3, "pepperoni" = 1, "cheese" = 1)
+	tastes = list("cheese crackers" = 3, "pepperoni" = 1, "marinara flavoring" = 1)
 	foodtype = MEAT | DAIRY | GRAIN | JUNKFOOD
 
 /obj/item/reagent_containers/food/snacks/ration/snack/fruit_puree
 	name = "apple, strawberry, and carrot fruit puree squeeze"
-	desc = "A delightful blend of fresh apple, succulent strawberry, and nutritious carrot, all pureed into a convenient squeeze pouch. A burst of fruity goodness in every bite."
+	desc = "A plastic pack with a straw neck, dispensing a puree of various fruits and bits of carrot. The carrot is the most noticeable flavor."
 	filling_color = "#cc3131"
-	tastes = list("apple" = 1, "strawberry" = 1, "carrot" = 1)
+	tastes = list("apple" = 1, "strawberry" = 1, "carrot" = 3)
 	foodtype = VEGETABLES | FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/cinnamon_bun
 	name = "cinnamon bun"
-	desc = "A delectable pastry swirled with cinnamon and drizzled with a sweet glaze. Warm and fluffy, this cinnamon bun is a delightful treat to enjoy with your favorite beverage."
+	desc = "A plastic-shrouded cinnamon bun, kept shelf stable but left unfortunately dry. The glaze has long since hardened"
 	filling_color = "#b18d40"
-	tastes = list("cinnamon" = 3, "airy" = 1, "sweet" = 1)
+	tastes = list("cinnamon" = 3, "dense, sweet bread" = 1)
 	foodtype = GRAIN | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/toaster_pastry
 	name = "chocolate chip toaster pastry"
-	desc = "A delicious chocolate chip toaster pastry, perfect for a quick breakfast or a tasty snack. Indulge in the delightful blend of chocolate and pastry."
+	desc = "A dry chocolate chip-flavored toaster pastry. The front-facing side has a thin layer of icing."
 	filling_color = "#e2a054"
-	tastes = list("chocolate" = 1, "pastry" = 1, "sweet" = 1)
+	tastes = list("chocolate" = 1, "dry pastry" = 1, "sweet" = 1)
 	foodtype = SUGAR | GRAIN | JUNKFOOD | BREAKFAST
 	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/snack/dried_raisins
 	name = "dried raisins"
-	desc = "Sweet and chewy dried raisins, a natural and healthy snack option. Packed with natural sugars and nutrients for a burst of energy."
+	desc = "A small plastic packet containing a handful of dried raisins."
 	filling_color = "#1b1146"
 	tastes = list("raisins" = 1, "sweet" = 1)
 	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/corn_kernels
 	name = "toasted corn kernels, barbecue"
-	desc = "Toasted corn kernels with a savory barbecue flavor. A crunchy and flavorful snack to enjoy anytime."
+	desc = "Toasted corn kernels, coated in a dusting of barbecue flavor."
 	filling_color = "#836b1d"
-	tastes = list("corn" = 1, "barbecue" = 1)
+	tastes = list("corn" = 1, "barbecue" = 1, "something getting stuck between your teeth" = 1)
 	foodtype = SUGAR | VEGETABLES | JUNKFOOD
 
 /obj/item/reagent_containers/food/snacks/ration/snack/chocolate_pudding
 	name = "chocolate pudding"
-	desc = "Creamy and decadent chocolate pudding, a delightful dessert to indulge your sweet tooth."
+	desc = "A packet of chocolate pudding, left strikingly chemical-esque with a chocolate flavoring for stability."
 	filling_color = "#3b2406"
-	tastes = list("chocolate" = 3, "pudding" = 1, "sweet" = 1)
+	tastes = list("chocolate" = 2, "pudding" = 1, "chemical-y taste" = 3)
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/snacks/ration/snack/blackberry_preserves
 	name = "blackberry preserves"
-	desc = "Sweet and tangy blackberry preserves, perfect for spreading on toast or pairing with your favorite snacks."
+	desc = "Thick blackberry preserves in a sealed bag, intended to be spread across another component of the MRE."
 	filling_color = "#26133b"
-	tastes = list("blackberry" = 1, "sweet" = 1)
+	tastes = list("blackberry" = 1, "sugar" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/candy_rings
 	name = "peppermint candy rings"
-	desc = "Colorful and refreshing peppermint candy rings, a sweet and delightful treat that brings a burst of coolness to your taste buds."
+	desc = "Red and white candy rings that are peppermint-flavored. They're difficult to crunch into."
 	filling_color = "#ecafaf"
-	tastes = list("peppermint" = 3, "sweet" = 1)
+	tastes = list("peppermint" = 3, "sugar" = 1)
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/snacks/ration/snack/lemon_pound_cake
 	name = "lemon pound cake"
-	desc = "A zesty and moist lemon pound cake that delivers a burst of citrus flavor in every bite. A delightful dessert to enjoy."
+	desc = "A square of lemon-flavored dense pound cake. It's begun to go dry."
 	filling_color = "#ffff99"
-	tastes = list("lemon" = 1, "cake" = 1)
+	tastes = list("lemon" = 1, "drying cake" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/cherry_snackers
 	name = "cherry snackers"
-	desc = "Juicy and plump cherries, perfectly preserved and packed for a delightful and refreshing snack."
+	desc = "Preserved cherries with their seeds removed beforehand, mildly coated in with a sticky syrup."
 	filling_color = "#ff0066"
 	tastes = list("cherry" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/mint_chocolate_snack_cake
 	name = "mint chocolate snack cake"
-	desc = "A delectable snack cake featuring the perfect blend of refreshing mint and rich chocolate flavors."
+	desc = "A small chocolate snack cake square, imparted with a very artificial mint flavoring."
 	filling_color = "#00cc66"
 	tastes = list("mint" = 1, "chocolate" = 1, "cake" = 1)
-	foodtype = SUGAR
+	foodtype = SUGAR | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/snack/strawberry_preserves
 	name = "strawberry preserves"
-	desc = "Sweet and luscious strawberry preserves, perfect for spreading on bread or enjoying as a tasty topping."
+	desc = "A packet of strawberry preserves intended to be used as a spread for another portion of the MRE, or eaten straight."
 	filling_color = "#ff3300"
 	tastes = list("strawberry" = 1)
 	foodtype = SUGAR | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/sour_gummy_worms
 	name = "sour gummy worms"
-	desc = "Tangy and chewy gummy worms coated in a sour sugar blend, providing a fun and flavorful snacking experience."
+	desc = "Lengths of colored, slightly stiff gummy strips, coated in a mildly sour powder."
 	filling_color = "#ff9900"
-	tastes = list("sour" = 1, "gummy" = 1)
+	tastes = list("slight sourness" = 1, "stiff gummy" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/blue_raspberry_candies
 	name = "blue raspberry candies"
-	desc = "Sweet and vibrant blue raspberry-flavored candies, perfect for indulging your sweet tooth."
+	desc = "Blue raspberry-flavored candies, individually wrapped and mostly reduced to smaller fragments by this point."
 	filling_color = "#3399ff"
-	tastes = list("blue raspberry" = 1)
+	tastes = list("blue raspberry shards" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/peanut_cranberry_mix
 	name = "peanut cranberry mix"
-	desc = "A satisfying mix of crunchy peanuts and tangy dried cranberries, offering a balanced and flavorful snack."
+	desc = "A simple trailmix of salted peanuts and dried cranberries."
 	filling_color = "#cc3300"
 	tastes = list("peanut" = 1, "cranberry" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/channeler_meat_candy
 	name = "channeler meat candy"
-	desc = "A traditional meat-candy from the Antechannel League on Kalixcis, offering an unusual and captivating flavor experience."
+	desc = "A traditional sugary meat confection from the Antechannel League. Each piece of candied channeler is thoroughly wrapped to preserve it for longer."
 	filling_color = "#9933ff"
 	tastes = list("channeler meat" = 1, "candy" = 1)
 	foodtype = MEAT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/chocolate_orange_snack_cake
 	name = "chocolate orange snack cake"
-	desc = "A delightful snack cake combining rich chocolate and zesty orange flavors for a mouthwatering treat."
+	desc = "A small chocolate snack cake square of orange flavoring."
 	filling_color = "#ff6600"
 	tastes = list("chocolate" = 1, "orange" = 1, "cake" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/pick_me_up_energy_gum
 	name = "Pick-Me-Up energy gum"
-	desc = "Energy-boosting gum that provides a quick and refreshing burst of vitality when you need it the most."
+	desc = "Individually wrapped sticks of energy gum, leaving your mouth coated with sour flavorings. Not nicotine!"
 	filling_color = "#00cc66"
 	tastes = list("energy gum" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/apple_slices
 	name = "apple slices"
-	desc = "Fresh and crisp apple slices, perfect for a refreshing and healthy snack option."
+	desc = "A packet of shrink-wrapped apple slices."
 	filling_color = "#ff3300"
 	tastes = list("apple" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/candied_pineapple_chunks
 	name = "candied pineapple chunks"
-	desc = "Sweet and chewy candied pineapple chunks, offering a burst of tropical flavor in every bite."
+	desc = "A small bag of candied pineapple chunks."
 	filling_color = "#ff6600"
 	tastes = list("candied pineapple" = 1)
 	foodtype = SUGAR | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/smoked_almonds
 	name = "smoked almonds"
-	desc = "Savory smoked almonds, offering a flavorful and protein-packed snack option."
+	desc = "A packet of smoked almonds with a slightly sticky coating of seasoning and salt crystals."
 	filling_color = "#663300"
 	tastes = list("smoked almonds" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/chocolate_chunk_oatmeal_cookie
 	name = "chocolate chunk oatmeal cookie"
-	desc = "A scrumptious oatmeal cookie studded with rich chocolate chunks for a delightful and indulgent treat."
+	desc = "A dry oatmeal cookie with dark chocolate chips. It's pre-snapped in two."
 	filling_color = "#663300"
-	tastes = list("chocolate" = 1, "oatmeal cookie" = 1)
+	tastes = list("chocolate" = 1, "sweet oatmeal" = 1)
 	foodtype = SUGAR | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/snack/peanut_candies
 	name = "peanut candies"
-	desc = "Sweet and nutty peanut candies, providing a delightful and energy-boosting snack."
+	desc = "A packet of sticky, candied peanuts. They tend to get everywhere."
 	filling_color = "#ff9900"
 	tastes = list("peanut" = 1)
 	foodtype = SUGAR | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/patriotic_sugar_cookies
 	name = "patriotic sugar cookies"
-	desc = "Colorful sugar cookies with patriotic designs, providing a festive and sweet treat for special occasions."
+	desc = "Sugar cookies with patriotic designs, of which are dependent on their manufacturer's country of origin. The amount of sugar and food coloring needed to make each design makes it less appetizing."
 	filling_color = "#ffcc00"
 	tastes = list("sugar cookies" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/snack/oatmeal_cookie
 	name = "oatmeal cookie"
-	desc = "A delicious oatmeal cookie, offering a wholesome and satisfying treat for any time of day."
+	desc = "A small sleeve of equally small oatmeal cookies."
 	filling_color = "#663300"
-	tastes = list("oatmeal cookie" = 1)
+	tastes = list("dry, sweet oatmeal" = 1)
 	foodtype = SUGAR | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/snack/dried_cranberries
 	name = "dried cranberries"
-	desc = "Tangy and chewy dried cranberries, a healthy and nutritious snack option."
+	desc = "A packet of dried cranberries."
 	filling_color = "#cc3300"
 	tastes = list("cranberries" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/dry_roasted_peanuts
 	name = "dry roasted peanuts"
-	desc = "Crunchy and flavorful dry roasted peanuts, a satisfying and protein-packed snack option."
+	desc = "A packet of dried, roasted peanuts."
 	filling_color = "#663300"
 	tastes = list("peanuts" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/snack/jalapeno_cashews
 	name = "jalapeno cashews"
-	desc = "Savory cashews coated in a spicy jalapeno seasoning, creating a flavorful and satisfying snack option."
+	desc = "A baggie of cashews coated in a jalapeno-based seasoning."
 	filling_color = "#663300"
 	tastes = list("jalapeno" = 1, "cashews" = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/bar/energy_bar
 	name = "quik-energy bar, apple-cinnamon"
-	desc = "A power-packed quik-energy bar infused with the flavors of apple and cinnamon. Ideal for a quick energy boost on the go."
+	desc = "A thick, grainy energy bar, flavored with nigh-unbearably artificial apple and cinnamon flavorings."
 	filling_color = "#ee3e1f"
-	tastes = list("apple" = 1, "cinnamon" = 1)
+	tastes = list("artificial apple" = 1, "cloying cinnamon" = 1)
 	foodtype = FRUIT | GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/bar/tropical_energy_bar
 	name = "tropical energy bar"
-	desc = "An energy-boosting bar packed with tropical flavors and essential nutrients for sustained vitality."
+	desc = "A sugar and caffeine-laced jelly bar with tropical fruit flavorings. It offers a good bit of chew."
 	filling_color = "#ff9900"
 	tastes = list("tropical" = 1, "energy bar" = 1)
 	foodtype = SUGAR | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/bar/rationers_guild_chocolate_bar
 	name = "Rationer's Guild chocolate bar"
-	desc = "A chocolate bar made by the Rationer's Guild, offering a rich and indulgent treat for a quick pick-me-up."
+	desc = "A shelf-stable chocolate bar made by the Rationer's Guild, often considered the supreme bar option out of all the MRE options."
 	filling_color = "#663300"
 	tastes = list("chocolate" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/bar/quik_energy_bar_chocolate
 	name = "quik-energy bar chocolate"
-	desc = "A power-packed quik-energy bar infused with the rich flavor of chocolate. Ideal for a quick energy boost on the go."
+	desc = "A thick, grainy energy bar, flavored with nigh-unbearably artificial chocolate flavoring."
 	filling_color = "#663300"
-	tastes = list("chocolate" = 1)
+	tastes = list("artificial chocolate" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread

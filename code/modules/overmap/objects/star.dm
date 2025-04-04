@@ -6,11 +6,15 @@
 
 /datum/overmap/star/Initialize(position, ...)
 	var/name = gen_star_name()
+	SSpoints_of_interest.make_point_of_interest(token)
 	Rename(name)
 	set_station_name(name)
 	token.desc = token_desc
 	alter_token_appearance()
 
+/datum/overmap/star/Destroy(force)
+	SSpoints_of_interest.remove_point_of_interest(token)
+	. = ..()
 
 /datum/overmap/star/proc/gen_star_name()
 	return "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
