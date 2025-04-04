@@ -54,7 +54,6 @@
 	to_chat(owner, span_green("You are now communicating with sign language."))
 	UpdateButtonIcon()
 
-
 /datum/action/innate/sign_language/Deactivate()
 	active = FALSE
 	REMOVE_TRAIT(owner, TRAIT_SIGN_LANG, TRAIT_GENERIC)
