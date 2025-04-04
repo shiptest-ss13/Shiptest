@@ -47,7 +47,7 @@
 	/// Path of the left hand held item we give to the mob's visuals.
 	var/obj/l_hand
 	// Prob of us dropping l/r hand loot.
-	var/weapon_drop_chance = 30
+	var/weapon_drop_chance = 10
 
 	///Steals the armor datum from this type of armor
 	var/obj/item/clothing/armor_base
