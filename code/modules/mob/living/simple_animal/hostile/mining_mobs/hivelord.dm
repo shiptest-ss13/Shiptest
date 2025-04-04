@@ -384,7 +384,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	visible_message(span_userwarning("[src] falls over with a mighty crash, the remaining legions within it falling apart!") )
+	visible_message(span_userwarning("[src] falls over with a mighty crash, the remaining legions within it falling apart!"))
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)

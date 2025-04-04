@@ -191,7 +191,7 @@ GLOBAL_PROTECT(donators)
 	resp += "<span class='fakespan4'>----------</span>"
 
 	for(var/line in resp)
-		to_chat(user, span_donator("[line]") )
+		to_chat(user, "<span class='donator'>[line]</span>")
 
 /datum/donator/proc/handle_redemption(mob/user)
 	var/client/user_client = user?.client

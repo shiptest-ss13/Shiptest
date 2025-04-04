@@ -53,7 +53,7 @@
 	if(!I.tool_behaviour == TOOL_WIRECUTTER || !I.sharpness >= IS_SHARP)
 		return
 	playsound(parent, 'sound/items/poster_ripped.ogg', 30, TRUE, -2)
-	user.visible_message(span_notice("[user] cuts and tears [taped_name] off \the [parent].", "<span class='notice'>You finish peeling away all the [taped_name] from \the [parent].") )
+	user.visible_message(span_notice("[user] cuts and tears [taped_name] off \the [parent]."), span_notice("You finish peeling away all the [taped_name] from \the [parent]."))
 	remove_tape()
 
 /datum/component/taped/proc/examine_tape(datum/source, mob/user, list/examine_list)

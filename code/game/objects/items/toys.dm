@@ -214,7 +214,7 @@
 			to_chat(user, text(span_notice("You reload [] cap\s.") , A.amount_left))
 			A.amount_left = 0
 		else
-			to_chat(user, text(span_notice("You reload [] cap\s.") , 7 - src.bullets))
+			to_chat(user, text(span_notice("You reload [] cap\s."), 7 - src.bullets))
 			A.amount_left -= 7 - src.bullets
 			src.bullets = 7
 		A.update_appearance()

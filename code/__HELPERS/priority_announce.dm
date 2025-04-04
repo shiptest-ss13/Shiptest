@@ -70,7 +70,7 @@
 		if(zlevel && (M.virtual_z() != zlevel)) // If a z-level is specified and the mob's z does not equal it
 			continue
 
-		to_chat(M, span_minorannounce("<font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])")  : null]")
+		to_chat(M, "<span class='minorannounce'><font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])</span>" : null]")
 		if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
 			SEND_SOUND(M, S)
 
