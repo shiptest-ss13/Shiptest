@@ -25,6 +25,6 @@
 		name = id
 
 	mappath = prefix + suffix
-	if(!findText(mappath, ".dmm"))
+	if(!findtext(mappath, ".dmm"))
 		stack_trace("[src] has a mappath with no .dmm in it. Its mappath is: [mappath].")
 	..(path = mappath)
