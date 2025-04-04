@@ -326,7 +326,8 @@ SUBSYSTEM_DEF(overmap)
 	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
 	// and ALSO prevents the ruin from being spaced when it spawns in
 	// WITHOUT needing to fill the reservation with a bunch of dummy turfs
-	mapgen.populate_turfs(vlevel.get_unreserved_block())
+	if(dynamic_datum.populate_turfs)
+		mapgen.populate_turfs(vlevel.get_unreserved_block())
 
 	if(dynamic_datum.weather_controller_type)
 		new dynamic_datum.weather_controller_type(mapzone)
@@ -396,12 +397,12 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.dwidth = 0
 		docking_ports += quaternary_dock
 
-	var/list/spawned_mission_pois = list()
+	var/list/datum/weakref/spawned_mission_pois = list()
 	for(var/obj/effect/landmark/mission_poi/mission_poi in SSmissions.unallocated_pois)
 		if(!vlevel.is_in_bounds(mission_poi))
 			continue
 
-		spawned_mission_pois += mission_poi
+		spawned_mission_pois += WEAKREF(mission_poi)
 		SSmissions.unallocated_pois -= mission_poi
 
 

@@ -11,7 +11,7 @@
 			dummy_overmap.set_planet_type(planet_type)
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 
-			dummy_overmap.mapgen
+			dummy_overmap.populate_turfs = FALSE
 			dummy_overmap.selected_ruin = ruin
 
 			for(var/mission_type in ruin.ruin_mission_types)

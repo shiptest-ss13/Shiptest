@@ -32,13 +32,16 @@
 	///Fetched before anything is loaded from the ruin datum
 	var/dynamic_missions = list()
 	///The list of mission pois once the planet has acctually loaded the ruin
-	var/list/obj/effect/landmark/mission_poi/spawned_mission_pois
+	var/list/list/datum/weakref/spawned_mission_pois
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
 	/// list of ruin templates currently spawned on the planet.
 	var/list/spawned_ruins
 	/// Whether or not the level is currently loading.
 	var/loading = FALSE
+
+	/// Whether or not we populate turfs, primarly to save some time in the ruin unit test
+	var/populate_turfs = TRUE
 
 	/// The mapgenerator itself. SHOULD NOT BE NULL if the datum ever creates an encounter
 	var/datum/map_generator/mapgen = /datum/map_generator/single_turf/space

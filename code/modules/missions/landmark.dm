@@ -36,7 +36,7 @@
 /obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn, datum/mission/mission)
 	var/atom/item_of_interest
 	use_count--
-	NOTICE("[src] was used!")
+	log_world("[src] was used for [mission.name]!")
 	if(!ispath(type_to_spawn))
 		type_to_spawn = _type_to_spawn
 	if(!ispath(type_to_spawn))
