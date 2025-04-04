@@ -31,7 +31,7 @@
 
 	shooter.visible_message(span_danger("[shooter] aims [weapon] point blank at [target]!") , \
 		span_danger("You aim [weapon] point blank at [target]!") , target)
-	to_chat(target, span_userdanger("[shooter] aims [weapon] point blank at you!") )
+	to_chat(target, span_userdanger("[shooter] aims [weapon] point blank at you!"))
 
 	shooter.apply_status_effect(STATUS_EFFECT_HOLDUP)
 	target.apply_status_effect(STATUS_EFFECT_HELDUP)
@@ -72,7 +72,7 @@
 		var/mob/living/shooter = parent
 		shooter.visible_message(span_danger("[shooter] bumps into [target] and fumbles [shooter.p_their()] aim!") , \
 			span_danger("You bump into [target] and fumble your aim!") , target)
-		to_chat(target, span_userdanger("[shooter] bumps into you and fumbles [shooter.p_their()] aim!") )
+		to_chat(target, span_userdanger("[shooter] bumps into you and fumbles [shooter.p_their()] aim!"))
 		qdel(src)
 
 /datum/component/gunpoint/proc/check_shove(mob/living/carbon/shooter, mob/shooter_again, mob/living/T)
@@ -81,20 +81,20 @@
 	if(T == target && (shooter.a_intent == INTENT_DISARM || shooter.a_intent == INTENT_GRAB))
 		shooter.visible_message(span_danger("[shooter] bumps into [target] and fumbles [shooter.p_their()] aim!") , \
 			span_danger("You bump into [target] and fumble your aim!") , target)
-		to_chat(target, span_userdanger("[shooter] bumps into you and fumbles [shooter.p_their()] aim!") )
+		to_chat(target, span_userdanger("[shooter] bumps into you and fumbles [shooter.p_their()] aim!"))
 		qdel(src)
 
 // if you're gonna try to break away from a holdup, better to do it right away
 /datum/component/gunpoint/proc/update_stage(new_stage)
 	stage = new_stage
 	if(stage == 2)
-		to_chat(parent, span_danger("You steady [weapon] on [target].") )
-		to_chat(target, span_userdanger("[parent] has steadied [weapon] on you!") )
+		to_chat(parent, span_danger("You steady [weapon] on [target]."))
+		to_chat(target, span_userdanger("[parent] has steadied [weapon] on you!"))
 		damage_mult = GUNPOINT_MULT_STAGE_2
 		addtimer(CALLBACK(src, PROC_REF(update_stage), 3), GUNPOINT_DELAY_STAGE_3)
 	else if(stage == 3)
-		to_chat(parent, span_danger("You have fully steadied [weapon] on [target].") )
-		to_chat(target, span_userdanger("[parent] has fully steadied [weapon] on you!") )
+		to_chat(parent, span_danger("You have fully steadied [weapon] on [target]."))
+		to_chat(target, span_userdanger("[parent] has fully steadied [weapon] on you!"))
 		damage_mult = GUNPOINT_MULT_STAGE_3
 
 /datum/component/gunpoint/proc/check_deescalate()
@@ -119,7 +119,7 @@
 	if(!weapon.can_shoot() || !weapon.can_trigger_gun(shooter) || (weapon.weapon_weight == WEAPON_HEAVY && shooter.get_inactive_held_item()))
 		shooter.visible_message(span_danger("[shooter] fumbles [weapon]!") , \
 			span_danger("You fumble [weapon] and fail to fire at [target]!") , target)
-		to_chat(target, span_userdanger("[shooter] fumbles [weapon] and fails to fire at you!") )
+		to_chat(target, span_userdanger("[shooter] fumbles [weapon] and fails to fire at you!"))
 		qdel(src)
 		return
 
@@ -135,7 +135,7 @@
 	var/mob/living/shooter = parent
 	shooter.visible_message(span_danger("[shooter] breaks [shooter.p_their()] aim on [target]!") , \
 		span_danger("You are no longer aiming [weapon] at [target].") , target)
-	to_chat(target, span_userdanger("[shooter] breaks [shooter.p_their()] aim on you!") )
+	to_chat(target, span_userdanger("[shooter] breaks [shooter.p_their()] aim on you!"))
 	SEND_SIGNAL(target, COMSIG_CLEAR_MOOD_EVENT, "gunpoint")
 	qdel(src)
 
@@ -155,7 +155,7 @@
 
 	if(prob(flinch_chance))
 		shooter.visible_message(span_danger("[shooter] flinches!") , \
-			span_danger("You flinch!") )
+			span_danger("You flinch!"))
 		trigger_reaction()
 
 #undef GUNPOINT_SHOOTER_STRAY_RANGE

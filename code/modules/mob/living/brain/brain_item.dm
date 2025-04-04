@@ -62,7 +62,7 @@
 			var/mob/living/simple_animal/borer/B = C.has_brain_worms()
 			if(B.controlling)
 				B.victim.release_control()
-				to_chat(B, span_userdanger("Your probiscis is ripped out as your host's brain is removed!") )
+				to_chat(B, span_userdanger("Your probiscis is ripped out as your host's brain is removed!"))
 				B.apply_damage(15)
 			B.leave_victim()		//WS End
 	..()
@@ -94,7 +94,7 @@
 			LAZYSET(brainmob.status_traits, TRAIT_BADDNA, L.status_traits[TRAIT_BADDNA])
 	if(L.mind && L.mind.current)
 		L.mind.transfer_to(brainmob)
-	to_chat(brainmob, span_notice("You feel slightly disoriented. That's normal when you're just a brain.") )
+	to_chat(brainmob, span_notice("You feel slightly disoriented. That's normal when you're just a brain."))
 
 /obj/item/organ/brain/attackby(obj/item/O, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -105,19 +105,19 @@
 	if((organ_flags & ORGAN_FAILING) && O.is_drainable() && O.reagents.has_reagent(/datum/reagent/medicine/mannitol)) //attempt to heal the brain
 		. = TRUE //don't do attack animation.
 		if(brainmob?.health <= HEALTH_THRESHOLD_DEAD) //if the brain is fucked anyway, do nothing
-			to_chat(user, span_warning("[src] is far too damaged, there's nothing else we can do for it!") )
+			to_chat(user, span_warning("[src] is far too damaged, there's nothing else we can do for it!"))
 			return
 
 		if(!O.reagents.has_reagent(/datum/reagent/medicine/mannitol, 10))
-			to_chat(user, span_warning("There's not enough mannitol in [O] to restore [src]!") )
+			to_chat(user, span_warning("There's not enough mannitol in [O] to restore [src]!"))
 			return
 
-		user.visible_message(span_notice("[user] starts to pour the contents of [O] onto [src].") , span_notice("You start to slowly pour the contents of [O] onto [src].") )
+		user.visible_message(span_notice("[user] starts to pour the contents of [O] onto [src].") , span_notice("You start to slowly pour the contents of [O] onto [src]."))
 		if(!do_after(user, 60, src))
-			to_chat(user, span_warning("You failed to pour [O] onto [src]!") )
+			to_chat(user, span_warning("You failed to pour [O] onto [src]!"))
 			return
 
-		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink.") , span_notice("You pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink.") )
+		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink.") , span_notice("You pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
 		var/healby = O.reagents.get_reagent_amount(/datum/reagent/medicine/mannitol)
 		setOrganDamage(damage - healby*2)	//heals 2 damage per unit of mannitol, and by using "setorgandamage", we clear the failing variable if that was up
 		O.reagents.clear_reagents()
@@ -128,8 +128,8 @@
 
 	if(O.force != 0 && !(O.item_flags & NOBLUDGEON))
 		setOrganDamage(maxHealth) //fails the brain as the brain was attacked, they're pretty fragile.
-		visible_message(span_danger("[user] hits [src] with [O]!") )
-		to_chat(user, span_danger("You hit [src] with [O]!") )
+		visible_message(span_danger("[user] hits [src] with [O]!"))
+		to_chat(user, span_danger("You hit [src] with [O]!"))
 
 /obj/item/organ/brain/examine(mob/user)
 	. = ..()
@@ -155,7 +155,7 @@
 	var/target_has_brain = C.getorgan(/obj/item/organ/brain)
 
 	if(!target_has_brain && C.is_eyes_covered())
-		to_chat(user, span_warning("You're going to need to remove [C.p_their()] head cover first!") )
+		to_chat(user, span_warning("You're going to need to remove [C.p_their()] head cover first!"))
 		return
 
 //since these people will be dead M != usr
@@ -168,11 +168,11 @@
 			msg = "[user] inserts [src] into [user.p_their()] head!"
 
 		C.visible_message(span_danger("[msg]") ,
-						span_userdanger("[msg]") )
+						span_userdanger("[msg]"))
 
 		if(C != user)
-			to_chat(C, span_notice("[user] inserts [src] into your head.") )
-			to_chat(user, span_notice("You insert [src] into [C]'s head.") )
+			to_chat(C, span_notice("[user] inserts [src] into your head."))
+			to_chat(user, span_notice("You insert [src] into [C]'s head."))
 		else
 			to_chat(user, span_notice("You insert [src] into your head.") 	)
 
@@ -191,7 +191,7 @@
 
 /obj/item/organ/brain/on_life()
 	if(damage >= BRAIN_DAMAGE_DEATH) //rip
-		to_chat(owner, span_userdanger("The last spark of life in your brain fizzles out...") )
+		to_chat(owner, span_userdanger("The last spark of life in your brain fizzles out..."))
 		owner.death()
 
 /obj/item/organ/brain/check_damage_thresholds(mob/M)

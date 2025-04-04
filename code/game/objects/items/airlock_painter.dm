@@ -53,10 +53,10 @@
 //because you're expecting user input.
 /obj/item/airlock_painter/proc/can_use(mob/user)
 	if(!ink)
-		to_chat(user, span_warning("There is no toner cartridge installed in [src]!") )
+		to_chat(user, span_warning("There is no toner cartridge installed in [src]!"))
 		return 0
 	else if(ink.charges < 1)
-		to_chat(user, span_warning("[src] is out of ink!") )
+		to_chat(user, span_warning("[src] is out of ink!"))
 		return 0
 	else
 		return 1
@@ -79,11 +79,11 @@
 /obj/item/airlock_painter/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/toner))
 		if(ink)
-			to_chat(user, span_warning("[src] already contains \a [ink]!") )
+			to_chat(user, span_warning("[src] already contains \a [ink]!"))
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
-		to_chat(user, span_notice("You install [W] into [src].") )
+		to_chat(user, span_notice("You install [W] into [src]."))
 		ink = W
 		playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
 	else
@@ -94,7 +94,7 @@
 		playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
 		ink.forceMove(user.drop_location())
 		user.put_in_hands(ink)
-		to_chat(user, span_notice("You remove [ink] from [src].") )
+		to_chat(user, span_notice("You remove [ink] from [src]."))
 		ink = null
 
 /*WS edit - no toner
@@ -126,14 +126,14 @@
 	. = ..()
 	var/turf/open/floor/F = target
 	if(!proximity)
-		to_chat(user, span_notice("You need to get closer!") )
+		to_chat(user, span_notice("You need to get closer!"))
 		return
 	if(use_paint(user) && isturf(F))
 		F.AddComponent(/datum/component/decal, 'icons/turf/decals.dmi', stored_decal_total, stored_dir, CLEAN_TYPE_PAINT, color, null, null, alpha)
 
 /obj/item/airlock_painter/decal/attack_self(mob/user)
 	if((ink) && (ink.charges >= 1))
-		to_chat(user, span_notice("[src] beeps to prevent you from removing the toner until out of charges.") )
+		to_chat(user, span_notice("[src] beeps to prevent you from removing the toner until out of charges."))
 		return
 	. = ..()
 

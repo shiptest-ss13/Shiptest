@@ -139,44 +139,44 @@
 /obj/item/clothing/suit/space/hardsuit/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/tank/jetpack/suit))
 		if(jetpack)
-			to_chat(user, span_warning("[src] already has a jetpack installed.") )
+			to_chat(user, span_warning("[src] already has a jetpack installed."))
 			return
 		if(src == user.get_item_by_slot(ITEM_SLOT_OCLOTHING)) //Make sure the player is not wearing the suit before applying the upgrade.
-			to_chat(user, span_warning("You cannot install the upgrade to [src] while wearing it.") )
+			to_chat(user, span_warning("You cannot install the upgrade to [src] while wearing it."))
 			return
 
 		if(user.transferItemToLoc(I, src))
 			jetpack = I
-			to_chat(user, span_notice("You successfully install the jetpack into [src].") )
+			to_chat(user, span_notice("You successfully install the jetpack into [src]."))
 			return
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!jetpack)
-			to_chat(user, span_warning("[src] has no jetpack installed.") )
+			to_chat(user, span_warning("[src] has no jetpack installed."))
 			return
 		if(src == user.get_item_by_slot(ITEM_SLOT_OCLOTHING))
-			to_chat(user, span_warning("You cannot remove the jetpack from [src] while wearing it.") )
+			to_chat(user, span_warning("You cannot remove the jetpack from [src] while wearing it."))
 			return
 
 		jetpack.turn_off(user)
 		jetpack.forceMove(drop_location())
 		jetpack = null
-		to_chat(user, span_notice("You successfully remove the jetpack from [src].") )
+		to_chat(user, span_notice("You successfully remove the jetpack from [src]."))
 		return
 	else if(istype(I, /obj/item/light) && helmettype)
 		if(src == user.get_item_by_slot(ITEM_SLOT_OCLOTHING))
-			to_chat(user, span_warning("You cannot replace the bulb in the helmet of [src] while wearing it.") )
+			to_chat(user, span_warning("You cannot replace the bulb in the helmet of [src] while wearing it."))
 			return
 		if(helmet)
-			to_chat(user, span_warning("The helmet of [src] does not require a new bulb.") )
+			to_chat(user, span_warning("The helmet of [src] does not require a new bulb."))
 			return
 		var/obj/item/light/L = I
 		if(L.status)
-			to_chat(user, span_warning("This bulb is too damaged to use as a replacement!") )
+			to_chat(user, span_warning("This bulb is too damaged to use as a replacement!"))
 			return
 		if(do_after(user, 50, src))
 			qdel(I)
 			helmet = new helmettype(src)
-			to_chat(user, span_notice("You have successfully repaired [src]'s helmet.") )
+			to_chat(user, span_notice("You have successfully repaired [src]'s helmet."))
 			new /obj/item/light/bulb/broken(drop_location())
 	return ..()
 
@@ -355,7 +355,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/toggle_mode(mob/user) //Toggle Helmet
 	if(!isturf(user.loc))
-		to_chat(user, span_notice("You cannot toggle your helmet while in this [user.loc]!") )
+		to_chat(user, span_notice("You cannot toggle your helmet while in this [user.loc]!"))
 		return
 	eva_mode = !eva_mode
 	if(eva_mode || force)
@@ -801,12 +801,12 @@
 		var/datum/effect_system/spark_spread/s = new
 		s.set_up(2, 1, src)
 		s.start()
-		owner.visible_message(span_danger("[owner]'s shields deflect [attack_text] in a shower of sparks!") )
+		owner.visible_message(span_danger("[owner]'s shields deflect [attack_text] in a shower of sparks!"))
 		current_charges--
 		if(recharge_rate)
 			START_PROCESSING(SSobj, src)
 		if(current_charges <= 0)
-			owner.visible_message(span_warning("[owner]'s shield overloads!") )
+			owner.visible_message(span_warning("[owner]'s shield overloads!"))
 			shield_state = "broken"
 			owner.update_inv_wear_suit()
 		return 1
@@ -913,18 +913,18 @@
 /obj/item/clothing/suit/space/hardsuit/shielded/syndi/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(shield_state == "broken")
-		to_chat(user, span_warning("You can't interface with the hardsuit's software if the shield's broken!") )
+		to_chat(user, span_warning("You can't interface with the hardsuit's software if the shield's broken!"))
 		return
 
 	if(shield_state == "shield-red")
 		shield_state = "shield-old"
 		shield_on = "shield-old"
-		to_chat(user, span_warning("You roll back the hardsuit's software, changing the shield's color!") )
+		to_chat(user, span_warning("You roll back the hardsuit's software, changing the shield's color!"))
 
 	else
 		shield_state = "shield-red"
 		shield_on = "shield-red"
-		to_chat(user, span_warning("You update the hardsuit's hardware, changing back the shield's color to red.") )
+		to_chat(user, span_warning("You update the hardsuit's hardware, changing back the shield's color to red."))
 	user.update_inv_wear_suit()
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi

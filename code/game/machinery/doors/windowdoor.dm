@@ -237,11 +237,11 @@
 	if(!(flags_1&NODECONSTRUCT_1))
 		if(I.tool_behaviour == TOOL_SCREWDRIVER)
 			if(density || operating)
-				to_chat(user, span_warning("You need to open the door to access the maintenance panel!") )
+				to_chat(user, span_warning("You need to open the door to access the maintenance panel!"))
 				return
 			I.play_tool_sound(src)
 			panel_open = !panel_open
-			to_chat(user, span_notice("You [panel_open ? "open":"close"] the maintenance panel of the [name].") )
+			to_chat(user, span_notice("You [panel_open ? "open":"close"] the maintenance panel of the [name]."))
 			return
 
 		if(I.tool_behaviour == TOOL_CROWBAR)
@@ -271,11 +271,11 @@
 						WA.created_name = name
 
 						if(obj_flags & EMAGGED)
-							to_chat(user, span_warning("You discard the damaged electronics.") )
+							to_chat(user, span_warning("You discard the damaged electronics."))
 							qdel(src)
 							return
 
-						to_chat(user, span_notice("You remove the airlock electronics.") )
+						to_chat(user, span_notice("You remove the airlock electronics."))
 
 						var/obj/item/electronics/airlock/ae
 						if(!electronics)
@@ -308,7 +308,7 @@
 		else
 			close(2)
 	else
-		to_chat(user, span_warning("The door's motors resist your efforts to force it!") )
+		to_chat(user, span_warning("The door's motors resist your efforts to force it!"))
 
 /obj/machinery/door/window/do_animate(animation)
 	switch(animation)

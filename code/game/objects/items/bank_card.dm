@@ -32,7 +32,7 @@
 		var/money_added = mass_insert_money(money_contained, user)
 
 		if (money_added)
-			to_chat(user, span_notice("You stuff the contents into the card! They disappear in a puff of bluespace smoke, adding [money_added] worth of credits to the linked account.") )
+			to_chat(user, span_notice("You stuff the contents into the card! They disappear in a puff of bluespace smoke, adding [money_added] worth of credits to the linked account."))
 		return
 	else
 		return ..()
@@ -40,22 +40,22 @@
 /obj/item/card/bank/proc/insert_money(obj/item/I, mob/user, physical_currency)
 	var/cash_money = I.get_item_credit_value()
 	if(!cash_money)
-		to_chat(user, span_warning("[I] doesn't seem to be worth anything!") )
+		to_chat(user, span_warning("[I] doesn't seem to be worth anything!"))
 		return
 
 	if(!registered_account)
-		to_chat(user, span_warning("[src] doesn't have a linked account to deposit [I] into!") )
+		to_chat(user, span_warning("[src] doesn't have a linked account to deposit [I] into!"))
 		return
 
 	registered_account.adjust_money(cash_money, CREDIT_LOG_DEPOSIT)
 	SSblackbox.record_feedback("amount", "credits_inserted", cash_money)
 	log_econ("[cash_money] credits were inserted into [src] owned by [src.registered_name]")
 	if(physical_currency)
-		to_chat(user, span_notice("You stuff [I] into [src]. It disappears in a small puff of bluespace smoke, adding [cash_money] credits to the linked account.") )
+		to_chat(user, span_notice("You stuff [I] into [src]. It disappears in a small puff of bluespace smoke, adding [cash_money] credits to the linked account."))
 	else
-		to_chat(user, span_notice("You insert [I] into [src], adding [cash_money] credits to the linked account.") )
+		to_chat(user, span_notice("You insert [I] into [src], adding [cash_money] credits to the linked account."))
 
-	to_chat(user, span_notice("The linked account now reports a balance of [registered_account.account_balance] cr.") )
+	to_chat(user, span_notice("The linked account now reports a balance of [registered_account.account_balance] cr."))
 	qdel(I)
 
 /obj/item/card/bank/proc/mass_insert_money(list/money, mob/user)
@@ -97,10 +97,10 @@
 	if(!alt_click_can_use_id(user))
 		return
 	if(!new_bank_id || new_bank_id < 111111 || new_bank_id > 999999)
-		to_chat(user, span_warning("The account ID number needs to be between 111111 and 999999.") )
+		to_chat(user, span_warning("The account ID number needs to be between 111111 and 999999."))
 		return
 	if (registered_account && registered_account.account_id == new_bank_id)
-		to_chat(user, span_warning("The account ID was already assigned to this card.") )
+		to_chat(user, span_warning("The account ID was already assigned to this card."))
 		return
 
 	for(var/A in SSeconomy.bank_accounts)
@@ -111,11 +111,11 @@
 
 			B.bank_cards += src
 			registered_account = B
-			to_chat(user, span_notice("The provided account has been linked to this ID card.") )
+			to_chat(user, span_notice("The provided account has been linked to this ID card."))
 
 			return TRUE
 
-	to_chat(user, span_warning("The account ID number provided is invalid.") )
+	to_chat(user, span_warning("The account ID number provided is invalid."))
 	return
 
 /obj/item/card/bank/AltClick(mob/living/user)
@@ -135,7 +135,7 @@
 	if(registered_account.adjust_money(-amount_to_remove, CREDIT_LOG_WITHDRAW))
 		var/obj/item/holochip/holochip = new (user.drop_location(), amount_to_remove)
 		user.put_in_hands(holochip)
-		to_chat(user, span_notice("You withdraw [amount_to_remove] credits into a holochip.") )
+		to_chat(user, span_notice("You withdraw [amount_to_remove] credits into a holochip."))
 		SSblackbox.record_feedback("amount", "credits_removed", amount_to_remove)
 		log_econ("[amount_to_remove] credits were removed from [src] owned by [registered_account.account_holder]")
 		return

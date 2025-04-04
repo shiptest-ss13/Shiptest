@@ -74,7 +74,7 @@
 	var/obj/item/multitool/M = I
 	if(M.buffer != null)
 		network = M.buffer
-		to_chat(user, span_notice("You input network '[M.buffer]' from the multitool's buffer into [src].") )
+		to_chat(user, span_notice("You input network '[M.buffer]' from the multitool's buffer into [src]."))
 	return
 
 /obj/machinery/computer/security/ui_interact(mob/user, datum/tgui/ui)

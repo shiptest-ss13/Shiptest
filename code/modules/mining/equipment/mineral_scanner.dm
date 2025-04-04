@@ -20,7 +20,7 @@
 
 /obj/item/mining_scanner/AltClick(mob/user)
 	speaker = !speaker
-	to_chat(user, span_notice("You toggle [src]'s speaker to [speaker ? "<b>ON</b>" : "<b>OFF</b>"].") )
+	to_chat(user, span_notice("You toggle [src]'s speaker to [speaker ? "<b>ON</b>" : "<b>OFF</b>"]."))
 
 /obj/item/mining_scanner/attack_self(mob/user)
 	if(!user.client)
@@ -59,7 +59,7 @@
 
 /obj/item/t_scanner/adv_mining_scanner/AltClick(mob/user)
 	speaker = !speaker
-	to_chat(user, span_notice("You toggle [src]'s speaker to [speaker ? "<b>ON</b>" : "<b>OFF</b>"].") )
+	to_chat(user, span_notice("You toggle [src]'s speaker to [speaker ? "<b>ON</b>" : "<b>OFF</b>"]."))
 
 /obj/item/t_scanner/adv_mining_scanner/cyborg/Initialize()
 	. = ..()
@@ -132,26 +132,26 @@
 	..()
 	if(user.canUseTopic(src, BE_CLOSE))
 		if(scanning_surface||active) //prevents swithcing modes when active
-			to_chat(user, span_warning("You have to turn the [src] off first before switching modes!") )
+			to_chat(user, span_warning("You have to turn the [src] off first before switching modes!"))
 		else
 			scanmode = !scanmode
-			to_chat(user, span_notice("You switch the [src] to [scanmode ? "scan underground " : "scan the surface"].") )
+			to_chat(user, span_notice("You switch the [src] to [scanmode ? "scan underground " : "scan the surface"]."))
 
 /obj/item/pinpointer/mineral/attack_self(mob/living/user)
 	switch(scanmode)
 		if(SCANMODE_SUBSURFACE)
 			if(active)
 				toggle_on()
-				user.visible_message(span_notice("[user] deactivates [user.p_their()] scanner.") , span_notice("You deactivate your scanner.") )
+				user.visible_message(span_notice("[user] deactivates [user.p_their()] scanner.") , span_notice("You deactivate your scanner."))
 				return
 
 			var/vein = scan_for_target()
 			if(!vein)
-				user.visible_message(span_notice("[user]'s scanner fails to detect any material.") , span_notice("Your scanner fails to detect any material.") )
+				user.visible_message(span_notice("[user]'s scanner fails to detect any material.") , span_notice("Your scanner fails to detect any material."))
 				return
 
 			toggle_on()
-			user.visible_message(span_notice("[user] activates [user.p_their()] scanner.") , span_notice("You activate your scanner.") )
+			user.visible_message(span_notice("[user] activates [user.p_their()] scanner.") , span_notice("You activate your scanner."))
 			update_icon()
 
 		if(SCANMODE_SURFACE)
@@ -159,10 +159,10 @@
 			update_icon()
 			if(scanning_surface)
 				START_PROCESSING(SSobj, src)
-				user.visible_message(span_notice("[user] activates [user.p_their()] scanner.") , span_notice("You activate your scanner.") )
+				user.visible_message(span_notice("[user] activates [user.p_their()] scanner.") , span_notice("You activate your scanner."))
 			else
 				STOP_PROCESSING(SSobj, src)
-				user.visible_message(span_notice("[user] deactivates [user.p_their()] scanner.") , span_notice("You deactivate your scanner.") )
+				user.visible_message(span_notice("[user] deactivates [user.p_their()] scanner.") , span_notice("You deactivate your scanner."))
 			playsound(src, 'sound/items/screwdriver2.ogg', 50, TRUE)
 
 /obj/item/pinpointer/mineral/process(seconds_per_tick)
@@ -235,8 +235,8 @@
 			return
 
 	if(our_vein.vein_contents.len > 0)
-		to_chat(user, span_notice("Class [our_vein.vein_class] ore vein with [our_vein.mining_charges] possible ore lodes found.") )
+		to_chat(user, span_notice("Class [our_vein.vein_class] ore vein with [our_vein.mining_charges] possible ore lodes found."))
 		for(var/our_ore in our_vein.vein_contents)
-			to_chat(user, span_notice("\tExtractable amounts of [our_ore?:name].") )
+			to_chat(user, span_notice("\tExtractable amounts of [our_ore?:name]."))
 	else
-		to_chat(user, span_notice("No notable mineral deposits found in [our_vein].") )
+		to_chat(user, span_notice("No notable mineral deposits found in [our_vein]."))

@@ -72,16 +72,16 @@
 		broken = 0
 		burnt = 0
 		if(user && !silent)
-			to_chat(user, span_notice("You remove the broken planks.") )
+			to_chat(user, span_notice("You remove the broken planks."))
 	else
 		if(make_tile)
 			if(user && !silent)
-				to_chat(user, span_notice("You unscrew the planks.") )
+				to_chat(user, span_notice("You unscrew the planks."))
 			if(floor_tile)
 				new floor_tile(src)
 		else
 			if(user && !silent)
-				to_chat(user, span_notice("You forcefully pry off the planks, destroying them in the process.") )
+				to_chat(user, span_notice("You forcefully pry off the planks, destroying them in the process."))
 	return make_plating()
 
 /turf/open/floor/wood/airless
@@ -113,7 +113,7 @@
 /turf/open/floor/grass/attackby(obj/item/C, mob/user, params)
 	if((C.tool_behaviour == TOOL_SHOVEL) && params)
 		new ore_type(src, 2)
-		user.visible_message(span_notice("[user] digs up [src].") , span_notice("You [turfverb] [src].") )
+		user.visible_message(span_notice("[user] digs up [src].") , span_notice("You [turfverb] [src]."))
 		playsound(src, 'sound/effects/shovel_dig.ogg', 50, TRUE)
 		make_plating()
 	if(..())

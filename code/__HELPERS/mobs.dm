@@ -296,7 +296,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		CRASH("do_after was passed a non-number delay: [delay || "null"].")
 
 	if(target && DOING_INTERACTION_WITH_TARGET(user, target))
-		to_chat(user, span_warning("You're already interacting with [target]!") )
+		to_chat(user, span_warning("You're already interacting with [target]!"))
 		return
 
 	if(!interaction_key && target)

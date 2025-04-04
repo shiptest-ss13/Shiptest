@@ -71,7 +71,7 @@
 	obj_flags |= EMAGGED
 	if (authenticated)
 		authorize_access = get_all_accesses()
-	to_chat(user, span_danger("You scramble the communication routing circuits!") )
+	to_chat(user, span_danger("You scramble the communication routing circuits!"))
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 
 /obj/machinery/computer/communications/ui_act(action, list/params)
@@ -116,11 +116,11 @@
 				var/obj/item/held_item = usr.get_active_held_item()
 				var/obj/item/card/id/id_card = held_item?.GetID()
 				if (!istype(id_card))
-					to_chat(usr, span_warning("You need to swipe your ID!") )
+					to_chat(usr, span_warning("You need to swipe your ID!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 				if (!(ACCESS_CAPTAIN in id_card.access))
-					to_chat(usr, span_warning("You are not authorized to do this!") )
+					to_chat(usr, span_warning("You are not authorized to do this!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 
@@ -132,7 +132,7 @@
 
 			set_security_level(new_sec_level)
 
-			to_chat(usr, span_notice("Authorization confirmed. Modifying security level.") )
+			to_chat(usr, span_notice("Authorization confirmed. Modifying security level."))
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 			// Only notify people if an actual change happened
@@ -164,10 +164,10 @@
 			var/emagged = obj_flags & EMAGGED
 			if (emagged)
 				message_syndicate(message, usr)
-				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO SYNDICATE COMMAND.") )
+				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO SYNDICATE COMMAND."))
 			else
 				message_centcom(message, usr)
-				to_chat(usr, span_notice("Message transmitted to Central Command.") )
+				to_chat(usr, span_notice("Message transmitted to Central Command."))
 
 			var/associates = emagged ? "the Syndicate": "CentCom"
 			usr.log_talk(message, LOG_SAY, tag = "message to [associates]")
@@ -180,7 +180,7 @@
 				return
 			var/reason = trim(html_encode(params["reason"]), MAX_MESSAGE_LEN)
 			nuke_request(reason, usr)
-			to_chat(usr, span_notice("Request sent.") )
+			to_chat(usr, span_notice("Request sent."))
 			usr.log_message("has requested the nuclear codes from CentCom with reason \"[reason]\"", LOG_SAY)
 			priority_announce("The codes for the on-station nuclear self-destruct have been requested by [usr]. Confirmation or denial of this request will be sent shortly.", "Nuclear Self-Destruct Codes Requested", 'sound/ai/commandreport.ogg')
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
@@ -190,7 +190,7 @@
 				return
 			if (!(obj_flags & EMAGGED))
 				return
-			to_chat(usr, span_notice("Backup routing data restored.") )
+			to_chat(usr, span_notice("Backup routing data restored."))
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			obj_flags &= ~EMAGGED
 		if ("sendToOtherSector")
@@ -258,7 +258,7 @@
 				authenticated = TRUE
 				authorize_access = get_all_accesses()
 				authorize_name = "Unknown"
-				to_chat(usr, span_warning("[src] lets out a quiet alarm as its login is overridden.") )
+				to_chat(usr, span_warning("[src] lets out a quiet alarm as its login is overridden."))
 				playsound(src, 'sound/machines/terminal_alert.ogg', 25, FALSE)
 			else
 				var/obj/item/card/id/id_card = usr.get_idcard(hand_first = TRUE)
@@ -386,14 +386,14 @@
 /obj/machinery/computer/communications/proc/make_announcement(mob/living/user)
 	var/is_ai = issilicon(user)
 	if(!SScommunications.can_announce(user, is_ai))
-		to_chat(user, span_alert("Intercomms recharging. Please stand by.") )
+		to_chat(user, span_alert("Intercomms recharging. Please stand by."))
 		return
 	var/input = stripped_input(user, "Please choose a message to announce to the station crew.", "What?")
 	if(!input || !user.canUseTopic(src, !issilicon(usr)))
 		return
 	if(!(user.can_speak())) //No more cheating, mime/random mute guy!
 		input = "..."
-		to_chat(user, span_warning("You find yourself unable to speak.") )
+		to_chat(user, span_warning("You find yourself unable to speak."))
 	else
 		input = user.treat_message(input) //Adds slurs and so on. Someone should make this use languages too.
 	SScommunications.make_announcement(user, is_ai, input, authorize_name) //WS Edit - Make cap's announcement use logged-in name

@@ -28,12 +28,12 @@
 	if(istype(I, /obj/item/swapper))
 		var/obj/item/swapper/other_swapper = I
 		if(other_swapper.linked_swapper)
-			to_chat(user, span_warning("[other_swapper] is already linked. Break the current link to establish a new one.") )
+			to_chat(user, span_warning("[other_swapper] is already linked. Break the current link to establish a new one."))
 			return
 		if(linked_swapper)
-			to_chat(user, span_warning("[src] is already linked. Break the current link to establish a new one.") )
+			to_chat(user, span_warning("[src] is already linked. Break the current link to establish a new one."))
 			return
-		to_chat(user, span_notice("You establish a quantum link between the two devices.") )
+		to_chat(user, span_notice("You establish a quantum link between the two devices."))
 		linked_swapper = other_swapper
 		other_swapper.linked_swapper = src
 		update_appearance()
@@ -43,17 +43,17 @@
 
 /obj/item/swapper/attack_self(mob/living/user)
 	if(world.time < next_use)
-		to_chat(user, span_warning("[src] is still recharging.") )
+		to_chat(user, span_warning("[src] is still recharging."))
 		return
 	if(QDELETED(linked_swapper))
-		to_chat(user, span_warning("[src] is not linked with another swapper.") )
+		to_chat(user, span_warning("[src] is not linked with another swapper."))
 		return
 	playsound(src, 'sound/weapons/flash.ogg', 25, TRUE)
-	to_chat(user, span_notice("You activate [src].") )
+	to_chat(user, span_notice("You activate [src]."))
 	playsound(linked_swapper, 'sound/weapons/flash.ogg', 25, TRUE)
 	if(ismob(linked_swapper.loc))
 		var/mob/holder = linked_swapper.loc
-		to_chat(holder, span_notice("[linked_swapper] starts buzzing.") )
+		to_chat(holder, span_notice("[linked_swapper] starts buzzing."))
 	next_use = world.time + cooldown //only the one used goes on cooldown
 	addtimer(CALLBACK(src, PROC_REF(swap), user), 25)
 
@@ -69,7 +69,7 @@
 /obj/item/swapper/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
-	to_chat(user, span_notice("You break the current quantum link.") )
+	to_chat(user, span_notice("You break the current quantum link."))
 	if(!QDELETED(linked_swapper))
 		linked_swapper.linked_swapper = null
 		linked_swapper.update_appearance()
@@ -108,4 +108,4 @@
 		do_teleport(B, target_A, channel = TELEPORT_CHANNEL_QUANTUM)
 		if(ismob(B))
 			var/mob/M = B
-			to_chat(M, span_warning("[linked_swapper] activates, and you find yourself somewhere else.") )
+			to_chat(M, span_warning("[linked_swapper] activates, and you find yourself somewhere else."))

@@ -369,7 +369,7 @@
 			qdel(W)
 		else
 			if(!disable_warning)
-				to_chat(src, span_warning("You are unable to equip that!") )
+				to_chat(src, span_warning("You are unable to equip that!"))
 		return FALSE
 	equip_to_slot(W, slot, initial, redraw_mob, swap) //This proc should not ever fail.
 	return TRUE
@@ -512,7 +512,7 @@
 		for(var/i in 1 to (length(result) - 1))
 			result[i] += "\n"
 
-	to_chat(src, boxed_message(span_infoplain("[result.Join()]") ))
+	to_chat(src, boxed_message(span_infoplain("[result.Join()]")))
 
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, examinify)
 
@@ -524,18 +524,18 @@
 /mob/living/blind_examine_check(atom/examined_thing)
 	//need to be next to something and awake
 	if(!in_range(examined_thing, src) || incapacitated())
-		to_chat(src, span_warning("Something is there, but you can't see it!") )
+		to_chat(src, span_warning("Something is there, but you can't see it!"))
 		return FALSE
 	//also neeed an empty hand, and you can only initiate as many examines as you have hands
 	if(LAZYLEN(do_afters) >= usable_hands || get_active_held_item())
-		to_chat(src, span_warning("You don't have a free hand to examine this!") )
+		to_chat(src, span_warning("You don't have a free hand to examine this!"))
 		return FALSE
 	//can only queue up one examine on something at a time
 	if(DOING_INTERACTION_WITH_TARGET(src, examined_thing))
 		return FALSE
 
-	to_chat(src, span_notice("You start feeling around for something...") )
-	visible_message(span_notice(" [name] begins feeling around for \the [examined_thing.name]...") )
+	to_chat(src, span_notice("You start feeling around for something..."))
+	visible_message(span_notice(" [name] begins feeling around for \the [examined_thing.name]..."))
 
 	/// how long it takes for the blind person to find the thing they're examining
 	var/examine_delay_length = rand(0.5 SECONDS, 1 SECONDS)
@@ -547,7 +547,7 @@
 		examine_delay_length *= 2
 
 	if(examine_delay_length > 0 && !do_after(src, examine_delay_length, target = examined_thing))
-		to_chat(src, span_notice("You can't get a good feel for what is there.") )
+		to_chat(src, span_notice("You can't get a good feel for what is there."))
 		return FALSE
 
 	//now we touch the thing we're examining
@@ -784,7 +784,7 @@
 	set category = "OOC"
 
 	if ((stat != DEAD || !(SSticker)) || !isobserver(usr))
-		to_chat(usr, span_boldnotice("You must be dead to use this!") )
+		to_chat(usr, span_boldnotice("You must be dead to use this!"))
 		return
 
 	var/respawn_timer = CONFIG_GET(number/respawn_timer)
@@ -809,14 +809,14 @@
 	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
 		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - REALTIMEOFDAY
 		if(time_left > 0)
-			to_chat(usr, span_boldnotice("You still have [DisplayTimeText(time_left)] left before you can respawn.") )
+			to_chat(usr, span_boldnotice("You still have [DisplayTimeText(time_left)] left before you can respawn."))
 			return
 
 	GLOB.respawn_timers -= usrkey
 
 	log_game("[key_name(usr)] used abandon mob.")
 
-	to_chat(usr, span_boldnotice("Please roleplay correctly!") )
+	to_chat(usr, span_boldnotice("Please roleplay correctly!"))
 
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")
@@ -1053,7 +1053,7 @@
 /mob/proc/swap_hand()
 	var/obj/item/held_item = get_active_held_item()
 	if(SEND_SIGNAL(src, COMSIG_MOB_SWAP_HANDS, held_item) & COMPONENT_BLOCK_SWAP)
-		to_chat(src, span_warning("Your other hand is too busy holding [held_item].") )
+		to_chat(src, span_warning("Your other hand is too busy holding [held_item]."))
 		return FALSE
 	return TRUE
 
@@ -1330,10 +1330,10 @@
 ///Can this mob read (is literate and not blind)
 /mob/proc/can_read(obj/O)
 	if(is_blind())
-		to_chat(src, span_warning("As you are trying to read [O], you suddenly feel very stupid!") )
+		to_chat(src, span_warning("As you are trying to read [O], you suddenly feel very stupid!"))
 		return
 	if(!is_literate())
-		to_chat(src, span_notice("You try to read [O], but can't comprehend any of it.") )
+		to_chat(src, span_notice("You try to read [O], but can't comprehend any of it."))
 		return
 	return TRUE
 

@@ -45,7 +45,7 @@
 		return
 	paper.forceMove(user.loc)
 	user.put_in_hands(paper)
-	to_chat(user, span_notice("You remove [paper] from [src].") )
+	to_chat(user, span_notice("You remove [paper] from [src]."))
 	var/obj/item/paper/toppaper = toppaper_ref?.resolve()
 	if(paper == toppaper)
 		toppaper_ref = null
@@ -59,7 +59,7 @@
 /obj/item/clipboard/proc/remove_pen(mob/user)
 	pen.forceMove(user.loc)
 	user.put_in_hands(pen)
-	to_chat(user, span_notice("You remove [pen] from [src].") )
+	to_chat(user, span_notice("You remove [pen] from [src]."))
 	pen = null
 	update_icon()
 
@@ -90,13 +90,13 @@
 		if(!user.transferItemToLoc(weapon, src))
 			return
 		toppaper_ref = WEAKREF(weapon)
-		to_chat(user, span_notice("You clip [weapon] onto [src].") )
+		to_chat(user, span_notice("You clip [weapon] onto [src]."))
 	else if(istype(weapon, /obj/item/pen) && !pen)
 		//Add a pen into the clipboard, attack (write) if there is already one
 		if(!usr.transferItemToLoc(weapon, src))
 			return
 		pen = weapon
-		to_chat(usr, span_notice("You slot [weapon] into [src].") )
+		to_chat(usr, span_notice("You slot [weapon] into [src]."))
 	else if(toppaper)
 		toppaper.attackby(user.get_active_held_item(), user)
 	update_appearance()
@@ -163,7 +163,7 @@
 			var/obj/item/paper/paper = locate(params["ref"]) in src
 			if(istype(paper))
 				toppaper_ref = WEAKREF(paper)
-				to_chat(usr, span_notice("You move [paper] to the top.") )
+				to_chat(usr, span_notice("You move [paper] to the top."))
 				update_icon()
 				. = TRUE
 		// Rename the paper (it's a verb)

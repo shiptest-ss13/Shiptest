@@ -20,9 +20,9 @@
 /obj/item/quantum_keycard/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
-	to_chat(user, span_notice("You start pressing [src]'s unlink button...") )
+	to_chat(user, span_notice("You start pressing [src]'s unlink button..."))
 	if(do_after(user, 40, target = src))
-		to_chat(user, span_notice("The keycard beeps twice and disconnects the quantum link.") )
+		to_chat(user, span_notice("The keycard beeps twice and disconnects the quantum link."))
 		qpad = null
 
 /obj/item/quantum_keycard/update_icon_state()

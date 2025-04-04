@@ -12,7 +12,7 @@
 				var/renderedAI = span_binarysay("Robotic Talk, <a href='?src=[REF(M)];track=[html_encode(name)]'>[span_name("[name] ([desig])")]</a> [span_message("[message_a]")]") 
 				to_chat(M, renderedAI)
 			else
-				to_chat(M, span_binarysay("[rendered]") )
+				to_chat(M, span_binarysay("[rendered]"))
 		if(isobserver(M))
 			var/following = src
 			// If the AI talks on binary chat, we still want to follow
@@ -21,7 +21,7 @@
 				var/mob/living/silicon/ai/ai = src
 				following = ai.eyeobj
 			var/link = FOLLOW_LINK(M, following)
-			to_chat(M, span_binarysay("[link] [rendered]") )
+			to_chat(M, span_binarysay("[link] [rendered]"))
 
 /mob/living/silicon/binarycheck()
 	return 1

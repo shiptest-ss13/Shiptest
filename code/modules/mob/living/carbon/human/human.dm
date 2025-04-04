@@ -226,7 +226,7 @@
 	if(href_list["item"]) //canUseTopic check for this is handled by mob/Topic()
 		var/slot = text2num(href_list["item"])
 		if(slot in check_obscured_slots(TRUE))
-			to_chat(usr, span_warning("You can't reach that! Something is covering it.") )
+			to_chat(usr, span_warning("You can't reach that! Something is covering it."))
 			return
 
 	if(href_list["pockets"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY)) //TODO: Make it match (or intergrate it into) strippanel so you get 'item cannot fit here' warnings if mob_can_equip fails
@@ -238,10 +238,10 @@
 		var/delay_denominator = 1
 		if(pocket_item && !(pocket_item.item_flags & ABSTRACT))
 			if(HAS_TRAIT(pocket_item, TRAIT_NODROP))
-				to_chat(usr, span_warning("You try to empty [src]'s [pocket_side] pocket, it seems to be stuck!") )
-			to_chat(usr, span_notice("You try to empty [src]'s [pocket_side] pocket.") )
+				to_chat(usr, span_warning("You try to empty [src]'s [pocket_side] pocket, it seems to be stuck!"))
+			to_chat(usr, span_notice("You try to empty [src]'s [pocket_side] pocket."))
 		else if(place_item && place_item.mob_can_equip(src, usr, pocket_id, 1) && !(place_item.item_flags & ABSTRACT))
-			to_chat(usr, span_notice("You try to place [place_item] into [src]'s [pocket_side] pocket.") )
+			to_chat(usr, span_notice("You try to place [place_item] into [src]'s [pocket_side] pocket."))
 			delay_denominator = 4
 		else
 			return
@@ -259,13 +259,13 @@
 				//updating inv screen after handled by living/Topic()
 		else
 			// Display a warning if the user mocks up
-			to_chat(src, span_warning("You feel your [pocket_side] pocket being fumbled with!") )
+			to_chat(src, span_warning("You feel your [pocket_side] pocket being fumbled with!"))
 
 	if(href_list["toggle_uniform"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		var/obj/item/clothing/under/U = get_item_by_slot(ITEM_SLOT_ICLOTHING)
-		to_chat(src, span_notice("[usr.name] is trying to adjust your [U].") )
+		to_chat(src, span_notice("[usr.name] is trying to adjust your [U]."))
 		if(do_after(usr, U.strip_delay/2, src))
-			to_chat(src, span_notice("[usr.name] successfully adjusted your [U].") )
+			to_chat(src, span_notice("[usr.name] successfully adjusted your [U]."))
 			U.toggle_jumpsuit_adjust()
 			update_inv_w_uniform()
 			update_body()
@@ -339,15 +339,15 @@
 						if(burndamage)
 							to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
 				if(getOxyLoss())
-					to_chat(usr, span_danger("Patient has signs of suffocation, emergency treatment may be required!") )
+					to_chat(usr, span_danger("Patient has signs of suffocation, emergency treatment may be required!"))
 				if(getToxLoss() > 20)
-					to_chat(usr, span_danger("Gathered data is inconsistent with the analysis, possible cause: poisoning.") )
+					to_chat(usr, span_danger("Gathered data is inconsistent with the analysis, possible cause: poisoning."))
 			if(!H.wear_id) //You require access from here on out.
-				to_chat(H, span_warning("ERROR: Invalid access") )
+				to_chat(H, span_warning("ERROR: Invalid access"))
 				return
 			var/list/access = H.wear_id.GetAccess()
 			if(!(ACCESS_MEDICAL in access))
-				to_chat(H, span_warning("ERROR: Invalid access") )
+				to_chat(H, span_warning("ERROR: Invalid access"))
 				return
 			if(href_list["p_stat"])
 				var/health_status = input(usr, "Specify a new physical status for this person.", "Medical HUD", R.fields["p_stat"]) in list("Active", "Physically Unfit", "*Unconscious*", "*Deceased*", "Cancel")
@@ -390,15 +390,15 @@
 						allowed_access = H.get_authentification_name()
 
 			if(!allowed_access)
-				to_chat(H, span_warning("ERROR: Invalid access.") )
+				to_chat(H, span_warning("ERROR: Invalid access."))
 				return
 
 			if(!perpname)
-				to_chat(H, span_warning("ERROR: Can not identify target.") )
+				to_chat(H, span_warning("ERROR: Can not identify target."))
 				return
 			R = find_record("name", perpname, GLOB.data_core.security)
 			if(!R)
-				to_chat(usr, span_warning("ERROR: Unable to locate data core entry for target.") )
+				to_chat(usr, span_warning("ERROR: Unable to locate data core entry for target."))
 				return
 			if(href_list["status"])
 				var/setcriminal = input(usr, "Specify a new criminal status for this person.", "Security HUD", R.fields["criminal"]) in list("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged", "Cancel")
@@ -442,7 +442,7 @@
 				var/crime = GLOB.data_core.createCrimeEntry(t1, null, allowed_access, station_time_timestamp())
 				GLOB.data_core.addCrime(R.fields["id"], crime)
 				investigate_log("New Crime: <strong>[t1]</strong> | Added to [R.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-				to_chat(usr, span_notice("Successfully added a crime.") )
+				to_chat(usr, span_notice("Successfully added a crime."))
 				return
 
 			if(href_list["add_details"])
@@ -456,7 +456,7 @@
 				if(href_list["cdataid"])
 					GLOB.data_core.addCrimeDetails(R.fields["id"], href_list["cdataid"], t1)
 					investigate_log("New Crime details: [t1] | Added to [R.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-					to_chat(usr, span_notice("Successfully added details.") )
+					to_chat(usr, span_notice("Successfully added details."))
 				return
 
 			if(href_list["view_comment"])
@@ -484,7 +484,7 @@
 				while(R.fields[text("com_[]", counter)])
 					counter++
 				R.fields[text("com_[]", counter)] = text("Made by [] on [], []<BR>[]", allowed_access, station_time_timestamp(), sector_datestamp(shortened = TRUE), t1)
-				to_chat(usr, span_notice("Successfully added comment.") )
+				to_chat(usr, span_notice("Successfully added comment."))
 				return
 
 	..() //end of this massive fucking chain. TODO: make the hud chain not spooky. - Yeah, great job doing that.
@@ -514,7 +514,7 @@
 					. = 0
 	if(!. && error_msg && user)
 		// Might need re-wording.
-		to_chat(user, span_alert("There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"].") )
+		to_chat(user, span_alert("There is no exposed flesh or thin material [above_neck(target_zone) ? "on [p_their()] head" : "on [p_their()] body"]."))
 
 /mob/living/carbon/human/assess_threat(judgement_criteria, lasercolor = "", datum/callback/weaponcheck=null)
 	if(judgement_criteria & JUDGE_EMAGGED)
@@ -601,7 +601,7 @@
 		for(var/obj/item/hand in held_items)
 			if(prob(current_size * 5) && hand.w_class >= ((11-current_size)/2)  && dropItemToGround(hand))
 				step_towards(hand, src)
-				to_chat(src, span_warning("\The [S] pulls \the [hand] from your grip!") )
+				to_chat(src, span_warning("\The [S] pulls \the [hand] from your grip!"))
 	rad_act(current_size * 3)
 
 #define CPR_PANIC_SPEED (0.8 SECONDS)
@@ -619,50 +619,50 @@
 			return FALSE
 
 		if (target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH))
-			to_chat(src, span_warning("[target.name] is dead!") )
+			to_chat(src, span_warning("[target.name] is dead!"))
 			return FALSE
 
 		if (is_mouth_covered())
-			to_chat(src, span_warning("Remove your mask first!") )
+			to_chat(src, span_warning("Remove your mask first!"))
 			return FALSE
 
 		if (target.is_mouth_covered())
-			to_chat(src, span_warning("Remove [p_their()] mask first!") )
+			to_chat(src, span_warning("Remove [p_their()] mask first!"))
 			return FALSE
 
 		if (!getorganslot(ORGAN_SLOT_LUNGS))
-			to_chat(src, span_warning("You have no lungs to breathe with, so you cannot perform CPR!") )
+			to_chat(src, span_warning("You have no lungs to breathe with, so you cannot perform CPR!"))
 			return FALSE
 
 		if (HAS_TRAIT(src, TRAIT_NOBREATH))
-			to_chat(src, span_warning("You do not breathe, so you cannot perform CPR!") )
+			to_chat(src, span_warning("You do not breathe, so you cannot perform CPR!"))
 			return FALSE
 
 		visible_message(span_notice("[src] is trying to perform CPR on [target.name]!") , \
-						span_notice("You try to perform CPR on [target.name]... Hold still!") )
+						span_notice("You try to perform CPR on [target.name]... Hold still!"))
 
 		if (!do_after(src, delay = panicking ? CPR_PANIC_SPEED : (3 SECONDS), target = target))
-			to_chat(src, span_warning("You fail to perform CPR on [target]!") )
+			to_chat(src, span_warning("You fail to perform CPR on [target]!"))
 			return FALSE
 
 		if (target.health > target.crit_threshold)
 			return FALSE
 
-		visible_message(span_notice("[src] performs CPR on [target.name]!") , span_notice("You perform CPR on [target.name].") )
+		visible_message(span_notice("[src] performs CPR on [target.name]!") , span_notice("You perform CPR on [target.name]."))
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "perform_cpr", /datum/mood_event/perform_cpr)
 		log_combat(src, target, "CPRed")
 
 		if (HAS_TRAIT(target, TRAIT_NOBREATH))
-			to_chat(target, span_unconscious("You feel a breath of fresh air... which is a sensation you don't recognise...") )
+			to_chat(target, span_unconscious("You feel a breath of fresh air... which is a sensation you don't recognise..."))
 		else if (!target.getorganslot(ORGAN_SLOT_LUNGS))
-			to_chat(target, span_unconscious("You feel a breath of fresh air... but you don't feel any better...") )
+			to_chat(target, span_unconscious("You feel a breath of fresh air... but you don't feel any better..."))
 		else
 			target.adjustOxyLoss(-min(target.getOxyLoss(), 7))
-			to_chat(target, span_unconscious("You feel a breath of fresh air enter your lungs... It feels good...") )
+			to_chat(target, span_unconscious("You feel a breath of fresh air enter your lungs... It feels good..."))
 
 		if (target.health <= target.crit_threshold)
 			if (!panicking)
-				to_chat(src, span_warning("[target] still isn't up! You try harder!") )
+				to_chat(src, span_warning("[target] still isn't up! You try harder!"))
 			panicking = TRUE
 		else
 			panicking = FALSE
@@ -797,12 +797,12 @@
 
 /mob/living/carbon/human/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE, floor_okay=FALSE)
 	if(!(mobility_flags & MOBILITY_UI) && !floor_okay)
-		to_chat(src, span_warning("You can't do that right now!") )
+		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(!Adjacent(M) && (M.loc != src))
 		if((be_close == FALSE) || (!no_tk && (dna.check_mutation(TK) && tkMaxRangeCheck(src, M))))
 			return TRUE
-		to_chat(src, span_warning("You are too far away!") )
+		to_chat(src, span_warning("You are too far away!"))
 		return FALSE
 	return TRUE
 
@@ -821,8 +821,8 @@
 	if(!I.loc || buckled)
 		return FALSE
 	if(I == wear_suit)
-		visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!") )
-		to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I].") )
+		visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!"))
+		to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I]."))
 		return TRUE
 
 /mob/living/carbon/human/replace_records_name(oldname,newname) // Only humans have records right now, move this up if changed.
@@ -1104,7 +1104,7 @@
 				if(BP)
 					BP.receive_damage(36) //so 3 toolbox hits
 
-				T.visible_message(span_warning("[src] curbstomps [T]!") , span_warning("[src] curbstomps you!") )
+				T.visible_message(span_warning("[src] curbstomps [T]!") , span_warning("[src] curbstomps you!"))
 
 				log_combat(src, T, "curbstomped")
 
@@ -1164,16 +1164,16 @@
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
 		visible_message(span_notice("[src] starts [skills_space] lifting [target] onto their back..") ,
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
-		span_notice("[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]") )
+		span_notice("[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
 		//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
 		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
 			if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
 				return
-		visible_message(span_warning("[src] fails to fireman carry [target]!") )
+		visible_message(span_warning("[src] fails to fireman carry [target]!"))
 	else
-		to_chat(src, span_warning("You can't fireman carry [target] while they're standing!") )
+		to_chat(src, span_warning("You can't fireman carry [target] while they're standing!"))
 
 /mob/living/carbon/human/proc/scoop(mob/living/carbon/target)
 	var/carrydelay = 20 //if you have latex you are faster at grabbing
@@ -1187,34 +1187,34 @@
 	if(!incapacitated(FALSE, TRUE))
 		visible_message(span_notice("[src] starts [skills_space] scooping [target] into their arms..") ,
 		//Joe Medic starts quickly/expertly scooping Grey Tider into their arms..
-		span_notice("[carrydelay < 11 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to scoop [target] into your arms[carrydelay == 15 ? ", while assisted by the nanochips in your gloves.." : "..."]") )
+		span_notice("[carrydelay < 11 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to scoop [target] into your arms[carrydelay == 15 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to scoop Grey Tider into your arms(, while assisted by the nanochips in your gloves../...)
 		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
 			if(!incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
 				return TRUE
-		visible_message(span_warning("[src] fails to scoop [target]!") )
+		visible_message(span_warning("[src] fails to scoop [target]!"))
 
 /mob/living/carbon/human/proc/piggyback(mob/living/carbon/target)
 	if(can_piggyback(target))
-		visible_message(span_notice("[target] starts to climb onto [src]...") )
+		visible_message(span_notice("[target] starts to climb onto [src]..."))
 		if(do_after(target, 15, target = src))
 			if(can_piggyback(target))
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
-					target.visible_message(span_warning("[target] can't hang onto [src]!") )
+					target.visible_message(span_warning("[target] can't hang onto [src]!"))
 					return
 				buckle_mob(target, TRUE, TRUE, FALSE, 0, 2)
 		else
-			visible_message(span_warning("[target] fails to climb onto [src]!") )
+			visible_message(span_warning("[target] fails to climb onto [src]!"))
 	else
-		to_chat(target, span_warning("You can't piggyback ride [src] right now!") )
+		to_chat(target, span_warning("You can't piggyback ride [src] right now!"))
 
 /mob/living/carbon/human/buckle_mob(mob/living/target, force = FALSE, check_loc = TRUE, lying_buckle = FALSE, hands_needed = 0, target_hands_needed = 0)
 	if(!force)//humans are only meant to be ridden through piggybacking and special cases
 		return
 	if(!is_type_in_typecache(target, can_ride_typecache))
-		target.visible_message(span_warning("[target] really can't seem to mount [src]...") )
+		target.visible_message(span_warning("[target] really can't seem to mount [src]..."))
 		return
 	buckle_lying = lying_buckle
 	var/datum/component/riding/human/riding_datum = LoadComponent(/datum/component/riding/human)
@@ -1232,11 +1232,11 @@
 	if(hands_needed || target_hands_needed)
 		if(hands_needed && !equipped_hands_self)
 			src.visible_message(span_warning("[src] can't get a grip on [target] because their hands are full!") ,
-				span_warning("You can't get a grip on [target] because your hands are full!") )
+				span_warning("You can't get a grip on [target] because your hands are full!"))
 			return
 		else if(target_hands_needed && !equipped_hands_target)
 			target.visible_message(span_warning("[target] can't get a grip on [src] because their hands are full!") ,
-				span_warning("You can't get a grip on [src] because your hands are full!") )
+				span_warning("You can't get a grip on [src] because your hands are full!"))
 			return
 
 	stop_pulling()

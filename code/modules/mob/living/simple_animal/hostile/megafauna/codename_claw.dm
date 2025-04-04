@@ -216,7 +216,7 @@
 /////DISSONANT SHREK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/emp_pulse()
 	shake_animation(0.5)
-	visible_message(span_danger("[src] stops and shudders for a moment... ") )
+	visible_message(span_danger("[src] stops and shudders for a moment... "))
 	shouldnt_move = TRUE
 	addtimer(CALLBACK(src, PROC_REF(emp_pulse2)), 1 SECONDS)
 
@@ -237,7 +237,7 @@
 /////STING ATTACK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack(target)
 	shouldnt_move = TRUE
-	visible_message(span_danger("[src] stops suddenly and spikes apear all over it's body!") )
+	visible_message(span_danger("[src] stops suddenly and spikes apear all over it's body!"))
 	icon_state = "claw-phase2_sting_attack"
 	flick("claw-phase2_sting_attack_transform", src)
 	projectiletype = /obj/projectile/claw_projectille
@@ -245,7 +245,7 @@
 	addtimer(CALLBACK(src, PROC_REF(sting_attack2), target), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack2(target)
-	visible_message(span_danger("[src] shoots all the spikes!") )
+	visible_message(span_danger("[src] shoots all the spikes!"))
 	icon_state = "claw-phase2"
 	shoot_projectile(Get_Angle(src,target) + 10)
 	shoot_projectile(Get_Angle(src,target) + 5)
@@ -267,14 +267,14 @@
 /////LIE SPIDER
 /mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures()
 	shake_animation(20)
-	visible_message(span_danger("[src] shudders violently and starts to split a flesh spider from it's body!") )
+	visible_message(span_danger("[src] shudders violently and starts to split a flesh spider from it's body!"))
 	shouldnt_move = TRUE
 	addtimer(CALLBACK(src, PROC_REF(summon_creatures2)), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures2()
 	shake_animation(5)
 	var/mob/living/summoned_spider = new /mob/living/simple_animal/hostile/poison/giant_spider/hunter(get_turf(src))
-	visible_message(span_danger("[summoned_spider] violently tears apart from [src]!") )
+	visible_message(span_danger("[summoned_spider] violently tears apart from [src]!"))
 	shouldnt_move = FALSE
 
 /////LIE SPIDER END
@@ -347,7 +347,7 @@
 	if(H.Adjacent(C))
 		for(var/obj/item/I in H.held_items)
 			if(I.get_sharpness())
-				C.visible_message(span_danger("[H] impales [C] with [H.p_their()] [I.name]!") , span_userdanger("[H] impales you with [H.p_their()] [I.name]!") )
+				C.visible_message(span_danger("[H] impales [C] with [H.p_their()] [I.name]!") , span_userdanger("[H] impales you with [H.p_their()] [I.name]!"))
 				C.apply_damage(I.force, BRUTE, BODY_ZONE_CHEST)
 				H.do_item_attack_animation(C, used_item = I)
 				H.add_mob_blood(C)
@@ -361,7 +361,7 @@
 	if(isitem(target))
 		var/obj/item/I = target
 		if(!I.anchored)
-			to_chat(firer, span_notice("You pull [I] towards yourself.") )
+			to_chat(firer, span_notice("You pull [I] towards yourself."))
 			H.throw_mode_on()
 			I.throw_at(H, 10, 2)
 			. = BULLET_ACT_HIT
@@ -377,7 +377,7 @@
 					firer_intent = M.a_intent
 				switch(firer_intent)
 					if(INTENT_HELP)
-						C.visible_message(span_danger("[L] is pulled by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!") )
+						C.visible_message(span_danger("[L] is pulled by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
 						C.throw_at(get_step_towards(H,C), 8, 2)
 						return BULLET_ACT_HIT
 
@@ -385,27 +385,27 @@
 						var/obj/item/I = C.get_active_held_item()
 						if(I)
 							if(C.dropItemToGround(I))
-								C.visible_message(span_danger("[I] is yanked off [C]'s hand by [src]!") ,span_userdanger("A tentacle pulls [I] away from you!") )
+								C.visible_message(span_danger("[I] is yanked off [C]'s hand by [src]!") ,span_userdanger("A tentacle pulls [I] away from you!"))
 								on_hit(I) //grab the item as if you had hit it directly with the tentacle
 								return BULLET_ACT_HIT
 							else
-								to_chat(firer, span_warning("You can't seem to pry [I] off [C]'s hands!") )
+								to_chat(firer, span_warning("You can't seem to pry [I] off [C]'s hands!"))
 								return BULLET_ACT_BLOCK
 						else
-							to_chat(firer, span_danger("[C] has nothing in hand to disarm!") )
+							to_chat(firer, span_danger("[C] has nothing in hand to disarm!"))
 							return BULLET_ACT_HIT
 
 					if(INTENT_GRAB)
-						C.visible_message(span_danger("[L] is grabbed by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!") )
+						C.visible_message(span_danger("[L] is grabbed by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
 						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(tentacle_grab), H, C))
 						return BULLET_ACT_HIT
 
 					if(INTENT_HARM)
-						C.visible_message(span_danger("[L] is thrown towards [H] by a tentacle!") ,span_userdanger("A tentacle grabs you and throws you towards [H]!") )
+						C.visible_message(span_danger("[L] is thrown towards [H] by a tentacle!") ,span_userdanger("A tentacle grabs you and throws you towards [H]!"))
 						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(tentacle_stab), H, C))
 						return BULLET_ACT_HIT
 			else
-				L.visible_message(span_danger("[L] is pulled by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!") )
+				L.visible_message(span_danger("[L] is pulled by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
 				L.throw_at(get_step_towards(H,L), 8, 2)
 				. = BULLET_ACT_HIT
 

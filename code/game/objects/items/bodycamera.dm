@@ -69,19 +69,19 @@
 		if("Modify the camera tag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
 			set_name(c_tag_addition)
-			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'.") )
+			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
 
 		if("Change the camera network")
 			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are case sensitive.", "Network Tuning", max_length = 32)
-			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network.") )
+			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network."))
 
 		if("Save the network to the multitool buffer")
 			M.buffer = network[1]
-			to_chat(user, span_notice("You add network '[network[1]]' to the multitool's buffer.") )
+			to_chat(user, span_notice("You add network '[network[1]]' to the multitool's buffer."))
 
 		if("Transfer the buffered network to the camera")
 			network[1] = M.buffer
-			to_chat(user, span_notice("You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer.") )
+			to_chat(user, span_notice("You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer."))
 
 	return TRUE
 
@@ -116,7 +116,7 @@
 		if (O.client.eye == src)
 			O.unset_machine()
 			O.reset_perspective(null)
-			to_chat(O, span_warning("The screen bursts into static!") )
+			to_chat(O, span_warning("The screen bursts into static!"))
 
 /obj/item/bodycamera/proc/can_use()
 	if(!status)

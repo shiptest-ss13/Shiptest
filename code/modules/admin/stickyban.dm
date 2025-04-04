@@ -50,7 +50,7 @@
 			SSstickyban.cache[ckey] = ban
 
 			log_admin_private("[key_name(usr)] has stickybanned [ckey].\nReason: [ban["message"]]")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has stickybanned [ckey].\nReason: [ban["message"]]") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] has stickybanned [ckey].\nReason: [ban["message"]]"))
 
 		if ("remove")
 			if (!data["ckey"])
@@ -79,7 +79,7 @@
 
 
 			log_admin_private("[key_name(usr)] removed [ckey]'s stickyban")
-			message_admins(span_adminnotice("[key_name_admin(usr)] removed [ckey]'s stickyban") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] removed [ckey]'s stickyban"))
 
 		if ("remove_alt")
 			if (!data["ckey"])
@@ -127,7 +127,7 @@
 				qdel(query_remove_stickyban_alt)
 
 			log_admin_private("[key_name(usr)] has disassociated [alt] from [ckey]'s sticky ban")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has disassociated [alt] from [ckey]'s sticky ban") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] has disassociated [alt] from [ckey]'s sticky ban"))
 
 		if ("edit")
 			if (!data["ckey"])
@@ -161,7 +161,7 @@
 				qdel(query_edit_stickyban)
 
 			log_admin_private("[key_name(usr)] has edited [ckey]'s sticky ban reason from [oldreason] to [reason]")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has edited [ckey]'s sticky ban reason from [oldreason] to [reason]") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] has edited [ckey]'s sticky ban reason from [oldreason] to [reason]"))
 
 		if ("exempt")
 			if (!data["ckey"])
@@ -211,7 +211,7 @@
 				qdel(query_exempt_stickyban_alt)
 
 			log_admin_private("[key_name(usr)] has exempted [alt] from [ckey]'s sticky ban")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has exempted [alt] from [ckey]'s sticky ban") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] has exempted [alt] from [ckey]'s sticky ban"))
 
 		if ("unexempt")
 			if (!data["ckey"])
@@ -261,7 +261,7 @@
 				qdel(query_unexempt_stickyban_alt)
 
 			log_admin_private("[key_name(usr)] has unexempted [alt] from [ckey]'s sticky ban")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has unexempted [alt] from [ckey]'s sticky ban") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] has unexempted [alt] from [ckey]'s sticky ban"))
 
 		if ("timeout")
 			if (!data["ckey"])
@@ -288,7 +288,7 @@
 				cachedban["timeout"] = TRUE
 
 			log_admin_private("[key_name(usr)] has put [ckey]'s sticky ban on timeout.")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has put [ckey]'s sticky ban on timeout.") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] has put [ckey]'s sticky ban on timeout."))
 
 		if ("untimeout")
 			if (!data["ckey"])
@@ -316,7 +316,7 @@
 			world.SetConfig("ban",ckey,list2stickyban(ban))
 
 			log_admin_private("[key_name(usr)] has taken [ckey]'s sticky ban off of timeout.")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has taken [ckey]'s sticky ban off of timeout.") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] has taken [ckey]'s sticky ban off of timeout."))
 
 
 		if ("revert")
@@ -335,7 +335,7 @@
 			world.SetConfig("ban",ckey,null)
 
 			log_admin_private("[key_name(usr)] has reverted [ckey]'s sticky ban to its state at round start.")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has reverted [ckey]'s sticky ban to its state at round start.") )
+			message_admins(span_adminnotice("[key_name_admin(usr)] has reverted [ckey]'s sticky ban to its state at round start."))
 			//revert is mostly used when shit goes rouge, so we have to set it to null
 			//	and wait a byond tick before assigning it to ensure byond clears its shit.
 			sleep(world.tick_lag)

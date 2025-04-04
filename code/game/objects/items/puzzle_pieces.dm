@@ -92,14 +92,14 @@
 	if(istype(I,/obj/item/keycard))
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
-			to_chat(user, span_notice("The door rattles, and slides opens.") )
+			to_chat(user, span_notice("The door rattles, and slides opens."))
 			open()
 			return
 		else if(puzzle_id != key.puzzle_id)
-			to_chat(user, span_notice("[src] shakes. This must not be the right key.") )
+			to_chat(user, span_notice("[src] shakes. This must not be the right key."))
 			return
 		else
-			to_chat(user, span_notice("This door doesn't appear to close.") )
+			to_chat(user, span_notice("This door doesn't appear to close."))
 			return
 
 //Test doors. Gives admins a few doors to use quickly should they so choose.

@@ -90,12 +90,12 @@
 		return
 	if(det_time)
 		det_time -= 10
-		to_chat(user, span_notice("You shorten the fuse of [src] with [I].") )
+		to_chat(user, span_notice("You shorten the fuse of [src] with [I]."))
 		playsound(src, 'sound/items/wirecutter.ogg', 20, TRUE)
 		icon_state = initial(icon_state) + "_[det_time]"
 		update_appearance()
 	else
-		to_chat(user, span_danger("You've already removed all of the fuse!") )
+		to_chat(user, span_danger("You've already removed all of the fuse!"))
 
 /obj/item/grenade/firecracker/preprime(mob/user, delayoverride, msg = TRUE, volume = 80)
 	var/turf/T = get_turf(src)
@@ -103,7 +103,7 @@
 	if(user)
 		add_fingerprint(user)
 		if(msg)
-			to_chat(user, span_warning("You prime [src]! [capitalize(DisplayTimeText(det_time))]!") )
+			to_chat(user, span_warning("You prime [src]! [capitalize(DisplayTimeText(det_time))]!"))
 	playsound(src, 'sound/effects/fuse.ogg', volume, TRUE)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"

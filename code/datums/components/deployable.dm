@@ -55,7 +55,7 @@
 			source.balloon_alert(user, "there's no room to deploy here.")
 			return
 		new_direction = user.dir //Gets the direction for thing_to_be_deployed if there is a user
-		to_chat(user, span_notice("You start deploying the [parent].") )
+		to_chat(user, span_notice("You start deploying the [parent]."))
 		source.balloon_alert(user, "deploying...")
 		playsound(source, 'sound/items/ratchet.ogg', 50, TRUE)
 		if(!do_after(user, deploy_time))

@@ -30,13 +30,13 @@
 
 /obj/item/autosurgeon/attack_self(mob/user)//when the object it used...
 	if(!uses)
-		to_chat(user, span_alert("[src] has already been used. The tools are dull and won't reactivate.") )
+		to_chat(user, span_alert("[src] has already been used. The tools are dull and won't reactivate."))
 		return
 	else if(!storedorgan)
-		to_chat(user, span_alert("[src] currently has no implant stored.") )
+		to_chat(user, span_alert("[src] currently has no implant stored."))
 		return
 	storedorgan.Insert(user)//insert stored organ into the user
-	user.visible_message(span_notice("[user] presses a button on [src], and you hear a short mechanical noise.") , span_notice("You feel a sharp sting as [src] plunges into your body.") )
+	user.visible_message(span_notice("[user] presses a button on [src], and you hear a short mechanical noise.") , span_notice("You feel a sharp sting as [src] plunges into your body."))
 	playsound(get_turf(user), 'sound/weapons/circsawhit.ogg', 50, TRUE)
 	storedorgan = null
 	name = initial(name)
@@ -51,15 +51,15 @@
 /obj/item/autosurgeon/attackby(obj/item/I, mob/user, params)
 	if(istype(I, organ_type))
 		if(storedorgan)
-			to_chat(user, span_alert("[src] already has an implant stored.") )
+			to_chat(user, span_alert("[src] already has an implant stored."))
 			return
 		else if(!uses)
-			to_chat(user, span_alert("[src] has already been used up.") )
+			to_chat(user, span_alert("[src] has already been used up."))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 		storedorgan = I
-		to_chat(user, span_notice("You insert the [I] into [src].") )
+		to_chat(user, span_notice("You insert the [I] into [src]."))
 	else
 		return ..()
 
@@ -67,13 +67,13 @@
 	if(..())
 		return TRUE
 	if(!storedorgan)
-		to_chat(user, span_warning("There's no implant in [src] for you to remove!") )
+		to_chat(user, span_warning("There's no implant in [src] for you to remove!"))
 	else
 		var/atom/drop_loc = user.drop_location()
 		for(var/atom/movable/AM as anything in src)
 			AM.forceMove(drop_loc)
 
-		to_chat(user, span_notice("You remove the [storedorgan] from [src].") )
+		to_chat(user, span_notice("You remove the [storedorgan] from [src]."))
 		I.play_tool_sound(src)
 		storedorgan = null
 		if(uses != INFINITE)

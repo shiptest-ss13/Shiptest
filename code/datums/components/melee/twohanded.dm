@@ -127,19 +127,19 @@
 	if(wielded)
 		return
 	if(ismonkey(user))
-		to_chat(user, span_warning("It's too heavy for you to wield fully.") )
+		to_chat(user, span_warning("It's too heavy for you to wield fully."))
 		return
 	if(user.get_inactive_held_item())
 		if(require_twohands)
-			to_chat(user, span_notice("[parent] is too cumbersome to carry in one hand!") )
+			to_chat(user, span_notice("[parent] is too cumbersome to carry in one hand!"))
 			user.dropItemToGround(parent, force=TRUE)
 		else
-			to_chat(user, span_warning("You need your other hand to be empty!") )
+			to_chat(user, span_warning("You need your other hand to be empty!"))
 		return
 	if(user.usable_hands < 2)
 		if(require_twohands)
 			user.dropItemToGround(parent, force=TRUE)
-		to_chat(user, span_warning("You don't have enough intact hands.") )
+		to_chat(user, span_warning("You don't have enough intact hands."))
 		return
 
 	// wield update status
@@ -161,9 +161,9 @@
 	parent_item.update_appearance()
 
 	if(iscyborg(user))
-		to_chat(user, span_notice("You dedicate your module to [parent].") )
+		to_chat(user, span_notice("You dedicate your module to [parent]."))
 	else
-		to_chat(user, span_notice("You grab [parent] with both hands.") )
+		to_chat(user, span_notice("You grab [parent] with both hands."))
 
 	// Play sound if one is set
 	if(wieldsound)
@@ -224,11 +224,11 @@
 	// Show message if requested
 	if(show_message)
 		if(iscyborg(user))
-			to_chat(user, span_notice("You free up your module.") )
+			to_chat(user, span_notice("You free up your module."))
 		else if(require_twohands)
-			to_chat(user, span_notice("You drop [parent].") )
+			to_chat(user, span_notice("You drop [parent]."))
 		else
-			to_chat(user, span_notice("You are now carrying [parent] with one hand.") )
+			to_chat(user, span_notice("You are now carrying [parent] with one hand."))
 
 	// Play sound if set
 	if(unwieldsound)

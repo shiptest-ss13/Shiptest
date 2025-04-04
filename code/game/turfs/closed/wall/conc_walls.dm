@@ -159,4 +159,4 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
-		to_chat(M, span_warning("This wall is far too strong for you to destroy.") )
+		to_chat(M, span_warning("This wall is far too strong for you to destroy."))

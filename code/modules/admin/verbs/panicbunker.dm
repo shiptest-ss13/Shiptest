@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(bunker_passthrough)
 	set name = "Add PB Bypass"
 	set desc = "Allows a given ckey to connect despite the panic bunker for a given round."
 	if(!CONFIG_GET(flag/sql_enabled))
-		to_chat(usr, span_adminnotice("The Database is not enabled!") )
+		to_chat(usr, span_adminnotice("The Database is not enabled!"))
 		return
 
 	GLOB.bunker_passthrough |= ckey(ckeytobypass)
@@ -59,7 +59,7 @@ GLOBAL_LIST_EMPTY(bunker_passthrough)
 	set desc = "Revoke's a ckey's permission to bypass the panic bunker for a given round."
 
 	if(!CONFIG_GET(flag/sql_enabled))
-		to_chat(usr, span_adminnotice("The Database is not enabled!") )
+		to_chat(usr, span_adminnotice("The Database is not enabled!"))
 		return
 
 	GLOB.bunker_passthrough -= ckey(ckeytobypass)

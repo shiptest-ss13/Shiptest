@@ -54,7 +54,7 @@
 		for(var/mob/M in GLOB.player_list)
 			var/area/mob_area = get_area(M)
 			if(istype(mob_area, /area/ctf))
-				to_chat(M, span_userdanger("\The [src] has been returned to base!") )
+				to_chat(M, span_userdanger("\The [src] has been returned to base!"))
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/ctf/proc/reset_flag(capture = FALSE)
@@ -68,7 +68,7 @@
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
 			if(!capture)
-				to_chat(M, span_userdanger("[src] has been returned to the base!") )
+				to_chat(M, span_userdanger("[src] has been returned to the base!"))
 	STOP_PROCESSING(SSobj, src)
 	return TRUE //so if called by a signal, it doesn't delete
 
@@ -76,10 +76,10 @@
 /obj/item/ctf/attack_hand(mob/living/user, list/modifiers)
 	//pre normal check item stuff, this is for our special flag checks
 	if(!is_ctf_target(user) && !anyonecanpickup)
-		to_chat(user, span_warning("Non-players shouldn't be moving the flag!") )
+		to_chat(user, span_warning("Non-players shouldn't be moving the flag!"))
 		return
 	if(team in user.faction)
-		to_chat(user, span_warning("You can't move your own flag!") )
+		to_chat(user, span_warning("You can't move your own flag!"))
 		return
 	if(loc == user)
 		if(!user.dropItemToGround(src))
@@ -94,7 +94,7 @@
 	for(var/mob/M in GLOB.player_list)
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
-			to_chat(M, span_userdanger("\The [src] has been taken!") )
+			to_chat(M, span_userdanger("\The [src] has been taken!"))
 	STOP_PROCESSING(SSobj, src)
 	..()
 
@@ -107,7 +107,7 @@
 	for(var/mob/M in GLOB.player_list)
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
-			to_chat(M, span_userdanger("\The [src] has been dropped!") )
+			to_chat(M, span_userdanger("\The [src] has been dropped!"))
 	anchored = TRUE
 
 
@@ -247,7 +247,7 @@
 			people_who_want_to_play.Cut()
 			toggle_all_ctf()
 		else
-			to_chat(user, span_notice("CTF has been requested. [num]/[CTF_REQUIRED_PLAYERS] have readied up.") )
+			to_chat(user, span_notice("CTF has been requested. [num]/[CTF_REQUIRED_PLAYERS] have readied up."))
 
 		return
 
@@ -255,7 +255,7 @@
 		return
 	if(user.ckey in team_members)
 		if(user.ckey in recently_dead_ckeys)
-			to_chat(user, span_warning("It must be more than [DisplayTimeText(respawn_cooldown)] from your last death to respawn!") )
+			to_chat(user, span_warning("It must be more than [DisplayTimeText(respawn_cooldown)] from your last death to respawn!"))
 			return
 		var/client/new_team_member = user.client
 		if(user.mind && user.mind.current)
@@ -267,10 +267,10 @@
 		if(CTF == src || CTF.ctf_enabled == FALSE)
 			continue
 		if(user.ckey in CTF.team_members)
-			to_chat(user, span_warning("No switching teams while the round is going!") )
+			to_chat(user, span_warning("No switching teams while the round is going!"))
 			return
 		if(CTF.team_members.len < src.team_members.len)
-			to_chat(user, span_warning("[src.team] has more team members than [CTF.team]! Try joining [CTF.team] team to even things up.") )
+			to_chat(user, span_warning("[src.team] has more team members than [CTF.team]! Try joining [CTF.team] team to even things up."))
 			return
 	team_members |= user.ckey
 	var/client/new_team_member = user.client
@@ -322,7 +322,7 @@
 		var/area/mob_area = get_area(M)
 		if(istype(mob_area, /area/ctf))
 			to_chat(M, "<span class='narsie [team_span]'>[team] team wins!</span>")
-			to_chat(M, span_userdanger("Teams have been cleared. Click on the machines to vote to begin another round.") )
+			to_chat(M, span_userdanger("Teams have been cleared. Click on the machines to vote to begin another round."))
 			for(var/obj/item/ctf/W in M)
 				M.dropItemToGround(W)
 			M.dust()
@@ -603,7 +603,7 @@
 	if(!is_ctf_target(L))
 		return
 	if(!(src.team in L.faction))
-		to_chat(L, span_danger("<B>Stay out of the enemy spawn!</B>") )
+		to_chat(L, span_danger("<B>Stay out of the enemy spawn!</B>"))
 		L.death()
 
 /obj/structure/trap/ctf/red
@@ -668,7 +668,7 @@
 			for(var/obj/item/gun/G in M)
 				qdel(G)
 			O.equip(M)
-			to_chat(M, span_notice("Ammunition reloaded!") )
+			to_chat(M, span_notice("Ammunition reloaded!"))
 			playsound(get_turf(M), 'sound/weapons/gun/shotgun/rack.ogg', 50, TRUE, -1)
 			qdel(src)
 			break
@@ -731,7 +731,7 @@
 				for(var/mob/M in GLOB.player_list)
 					var/area/mob_area = get_area(M)
 					if(istype(mob_area, /area/ctf))
-						to_chat(M, span_userdanger("[user.real_name] has captured \the [src], claiming it for [CTF.team]! Go take it back!") )
+						to_chat(M, span_userdanger("[user.real_name] has captured \the [src], claiming it for [CTF.team]! Go take it back!"))
 				break
 
 #undef WHITE_TEAM

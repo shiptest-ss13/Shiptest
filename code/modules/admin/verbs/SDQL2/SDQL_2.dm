@@ -203,7 +203,7 @@
 /client/proc/SDQL2_query(query_text as message)
 	set category = "Debug"
 	if(!check_rights(R_DEBUG))  //Shouldn't happen... but just to be safe.
-		message_admins(span_danger("ERROR: Non-admin [key_name(usr)] attempted to execute a SDQL query!") )
+		message_admins(span_danger("ERROR: Non-admin [key_name(usr)] attempted to execute a SDQL query!"))
 		log_admin("Non-admin [key_name(usr)] attempted to execute a SDQL query!")
 		return FALSE
 	var/list/results = world.SDQL2_query(query_text, key_name_admin(usr), "[key_name(usr)]")
@@ -306,7 +306,7 @@
 	var/end_time_total = REALTIMEOFDAY - start_time_total
 	return list(span_admin("SDQL query combined results: [query_text]") ,\
 		span_admin("SDQL query completed: [objs_all] objects selected by path, and [selectors_used ? objs_eligible : objs_all] objects executed on after WHERE filtering/MAPping if applicable.") ,\
-		span_admin("SDQL combined querys took [DisplayTimeText(end_time_total)] to complete.") ) + combined_refs
+		span_admin("SDQL combined querys took [DisplayTimeText(end_time_total)] to complete.")) + combined_refs
 
 GLOBAL_LIST_INIT(sdql2_queries, GLOB.sdql2_queries || list())
 GLOBAL_DATUM_INIT(sdql2_vv_statobj, /obj/effect/statclick/SDQL2_VV_all, new(null, "VIEW VARIABLES (all)", null))

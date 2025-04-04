@@ -13,7 +13,7 @@
 /datum/surgery_step/insert_pill/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to wedge [tool] in [target]'s [parse_zone(target_zone)]...") ,
 			span_notice("[user] begins to wedge \the [tool] in [target]'s [parse_zone(target_zone)].") ,
-			span_notice("[user] begins to wedge something in [target]'s [parse_zone(target_zone)].") )
+			span_notice("[user] begins to wedge something in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/insert_pill/success(mob/user, mob/living/carbon/target, target_zone, obj/item/reagent_containers/pill/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(!istype(tool))
@@ -28,7 +28,7 @@
 
 	display_results(user, target, span_notice("You wedge [tool] into [target]'s [parse_zone(target_zone)].") ,
 			span_notice("[user] wedges \the [tool] into [target]'s [parse_zone(target_zone)]!") ,
-			span_notice("[user] wedges something into [target]'s [parse_zone(target_zone)]!") )
+			span_notice("[user] wedges something into [target]'s [parse_zone(target_zone)]!"))
 	return ..()
 
 /datum/action/item_action/hands_free/activate_pill
@@ -37,7 +37,7 @@
 /datum/action/item_action/hands_free/activate_pill/Trigger()
 	if(!..())
 		return FALSE
-	to_chat(owner, span_notice("You grit your teeth and burst the implanted [target.name]!") )
+	to_chat(owner, span_notice("You grit your teeth and burst the implanted [target.name]!"))
 	log_combat(owner, null, "swallowed an implanted pill", target)
 	if(target.reagents.total_volume)
 		target.reagents.trans_to(owner, target.reagents.total_volume, transfered_by = owner, method = INGEST)

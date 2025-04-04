@@ -35,7 +35,7 @@
 
 /obj/item/folder/proc/rename(mob/user)
 	if(!user.is_literate())
-		to_chat(user, span_notice("You scribble illegibly on the cover of [src]!") )
+		to_chat(user, span_notice("You scribble illegibly on the cover of [src]!"))
 		return
 
 	var/inputvalue = stripped_input(user, "What would you like to label the folder?", "Folder Labelling", "", MAX_NAME_LEN)
@@ -50,7 +50,7 @@
 	if(istype(Item))
 		Item.forceMove(user.loc)
 		user.put_in_hands(Item)
-		to_chat(user, span_notice("You remove [Item] from [src].") )
+		to_chat(user, span_notice("You remove [Item] from [src]."))
 		update_icon()
 
 /obj/item/folder/AltClick(mob/user)
@@ -70,7 +70,7 @@
 		/// Add paper, photo or documents into the folder
 		if(!user.transferItemToLoc(weapon, src))
 			return
-		to_chat(user, span_notice("You put [weapon] into [src].") )
+		to_chat(user, span_notice("You put [weapon] into [src]."))
 		update_appearance()
 	else if(istype(weapon, /obj/item/pen))
 		rename(user)

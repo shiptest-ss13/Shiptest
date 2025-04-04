@@ -141,21 +141,21 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			id_eject(user, target)
 
 	user.visible_message(span_notice("[user] inserts \the [card_to_insert] into \the [src].") ,
-						span_notice("You insert \the [card_to_insert] into \the [src].") )
+						span_notice("You insert \the [card_to_insert] into \the [src]."))
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	updateUsrDialog()
 	return TRUE
 
 /obj/machinery/computer/card/proc/id_eject(mob/user, obj/target)
 	if(!target)
-		to_chat(user, span_warning("That slot is empty!") )
+		to_chat(user, span_warning("That slot is empty!"))
 		return FALSE
 	else
 		target.forceMove(drop_location())
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
 		user.visible_message(span_notice("[user] gets \the [target] from \the [src].") , \
-							span_notice("You get \the [target] from \the [src].") )
+							span_notice("You get \the [target] from \the [src]."))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		updateUsrDialog()
 		return TRUE
@@ -355,7 +355,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						if(region_access)
 							authenticated = AUTHENTICATED_DEPARTMENT
 			else if ((!(authenticated) && issilicon(usr)) && (!inserted_modify_id))
-				to_chat(usr, span_warning("You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in.") )
+				to_chat(usr, span_warning("You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in."))
 		if ("logout")
 			region_access = null
 			authenticated = 0
@@ -416,7 +416,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 							updateUsrDialog()
 							break
 					if(!jobdatum)
-						to_chat(usr, span_alert("No log exists for this job.") )
+						to_chat(usr, span_alert("No log exists for this job."))
 						updateUsrDialog()
 						return
 
@@ -429,7 +429,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				inserted_modify_id.assignment = "Unassigned"
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			else
-				to_chat(usr, span_alert("You are not authorized to demote this position.") )
+				to_chat(usr, span_alert("You are not authorized to demote this position."))
 		if ("reg")
 			if (authenticated)
 				var/t2 = inserted_modify_id
@@ -439,7 +439,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						inserted_modify_id.registered_age = newAge
 						playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 					else if(!isnull(newAge))
-						to_chat(usr, span_alert("Invalid age entered- age not updated.") )
+						to_chat(usr, span_alert("Invalid age entered- age not updated."))
 						updateUsrDialog()
 
 					var/newName = reject_bad_name(href_list["reg"])
@@ -447,7 +447,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						inserted_modify_id.registered_name = newName
 						playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 					else
-						to_chat(usr, span_alert("Invalid name entered.") )
+						to_chat(usr, span_alert("Invalid name entered."))
 						updateUsrDialog()
 						return
 		if ("mode")

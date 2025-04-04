@@ -192,14 +192,14 @@
 	if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	to_chat(user, span_notice("You push \the [src] but nothing happens!") )
+	to_chat(user, span_notice("You push \the [src] but nothing happens!"))
 	playsound(src, 'sound/weapons/genhit.ogg', 25, TRUE)
 	add_fingerprint(user)
 
 /turf/closed/attackby(obj/item/W, mob/user, params)
 	user.changeNext_move(W.attack_cooldown)
 	if (!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!") )
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return
 
 	//get the user's location
@@ -225,7 +225,7 @@
 	var/total_damage = get_item_damage(used_item)
 	user.do_attack_animation(src)
 	if(total_damage <= 0)
-		to_chat(user, span_warning("[used_item] isn't strong enough to damage [src]!") )
+		to_chat(user, span_warning("[used_item] isn't strong enough to damage [src]!"))
 		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 		return TRUE
 	log_combat(user, src, "attacked", used_item)
@@ -245,10 +245,10 @@
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
-		to_chat(user, span_notice("You begin slicing through the outer plating...") )
+		to_chat(user, span_notice("You begin slicing through the outer plating..."))
 		while(I.use_tool(src, user, act_duration, volume=50))
 			if(iswallturf(src))
-				to_chat(user, span_notice("You slice through some of the outer plating...") )
+				to_chat(user, span_notice("You slice through some of the outer plating..."))
 				if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
 					return TRUE
 			else
@@ -263,10 +263,10 @@
 		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
-	to_chat(user, span_notice("You begin slicing through the outer plating...") )
+	to_chat(user, span_notice("You begin slicing through the outer plating..."))
 	while(I.use_tool(src, user, act_duration, volume=100))
 		if(iswallturf(src))
-			to_chat(user, span_notice("You slice through some of the outer plating...") )
+			to_chat(user, span_notice("You slice through some of the outer plating..."))
 			if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
 				return TRUE
 		else
@@ -303,7 +303,7 @@
 	alter_integrity(-250,user)
 	user.visible_message(span_danger("[user] smashes \the [src]!") , \
 				span_danger("You smash \the [src]!") , \
-				span_hear("You hear a booming smash!") )
+				span_hear("You hear a booming smash!"))
 	return TRUE
 
 /turf/closed/attack_animal(mob/living/simple_animal/M)

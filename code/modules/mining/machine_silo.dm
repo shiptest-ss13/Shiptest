@@ -51,11 +51,11 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 	if(I.item_flags & ABSTRACT)
 		return
 	if(!istype(I) || (I.flags_1 & HOLOGRAM_1) || (I.item_flags & NO_MAT_REDEMPTION))
-		to_chat(user, span_warning("[M] won't accept [I]!") )
+		to_chat(user, span_warning("[M] won't accept [I]!"))
 		return
 	var/item_mats = I.custom_materials & materials.materials
 	if(!length(item_mats))
-		to_chat(user, span_warning("[I] does not contain sufficient materials to be accepted by [M].") )
+		to_chat(user, span_warning("[I] does not contain sufficient materials to be accepted by [M]."))
 		return
 	// assumes unlimited space...
 	var/amount = I.amount
@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 /obj/machinery/ore_silo/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I))
-		to_chat(user, span_notice("You log [src] in the multitool's buffer.") )
+		to_chat(user, span_notice("You log [src] in the multitool's buffer."))
 		I.buffer = src
 		return TRUE
 

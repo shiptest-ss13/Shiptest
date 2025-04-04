@@ -67,15 +67,15 @@ GLOBAL_LIST_INIT(skill_types, subtypesof(/datum/skill))
 	if (new_level != SKILL_LEVEL_LEGENDARY)
 		return
 	if (!ispath(skill_cape_path))
-		to_chat(mind.current, span_nicegreen("My legendary [name] skill is quite impressive, though it seems the Professional [title] Association doesn't have any status symbols to commemorate my abilities with. I should let Centcom know of this travesty, maybe they can do something about it.") )
+		to_chat(mind.current, span_nicegreen("My legendary [name] skill is quite impressive, though it seems the Professional [title] Association doesn't have any status symbols to commemorate my abilities with. I should let Centcom know of this travesty, maybe they can do something about it."))
 		return
 	if (LAZYFIND(mind.skills_rewarded, src.type))
-		to_chat(mind.current, span_nicegreen("It seems the Professional [title] Association won't send me another status symbol.") )
+		to_chat(mind.current, span_nicegreen("It seems the Professional [title] Association won't send me another status symbol."))
 		return
 	var/obj/structure/closet/supplypod/bluespacepod/pod = new()
 	pod.delays = list(POD_TRANSIT = 15, POD_FALLING = 4, POD_OPENING = 30, POD_LEAVING = 30)
 	pod.explosionSize = list(0,0,0,0)
-	to_chat(mind.current, span_nicegreen("My legendary skill has attracted the attention of the Professional [title] Association. It seems they are sending me a status symbol to commemorate my abilities.") )
+	to_chat(mind.current, span_nicegreen("My legendary skill has attracted the attention of the Professional [title] Association. It seems they are sending me a status symbol to commemorate my abilities."))
 	var/turf/T = get_turf(mind.current)
 	new /obj/effect/pod_landingzone(T, pod , new skill_cape_path(T))
 	LAZYADD(mind.skills_rewarded, src.type)

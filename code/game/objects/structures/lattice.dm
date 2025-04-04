@@ -34,7 +34,7 @@
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
 	if(C.tool_behaviour == TOOL_WIRECUTTER)
-		to_chat(user, span_notice("Slicing [name] joints ...") )
+		to_chat(user, span_notice("Slicing [name] joints ..."))
 		deconstruct()
 	else
 		var/turf/T = get_turf(src)
@@ -47,7 +47,7 @@
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 1 SECONDS, volume=0))
-		to_chat(user, span_warning("You cut apart \the [src].") , span_notice("You cut apart \the [src].") )
+		to_chat(user, span_warning("You cut apart \the [src].") , span_notice("You cut apart \the [src]."))
 		deconstruct()
 		return TRUE
 
@@ -62,7 +62,7 @@
 
 /obj/structure/lattice/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	if(passed_mode == RCD_FLOORWALL)
-		to_chat(user, span_notice("You build a floor.") )
+		to_chat(user, span_notice("You build a floor."))
 		var/turf/T = src.loc
 		if(isspaceturf(T))
 			T.PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
@@ -121,9 +121,9 @@
 	if(istype(C, /obj/item/stack/tile/plasteel))
 		var/obj/item/stack/tile/plasteel/P = C
 		if(P.use(1))
-			to_chat(user, span_notice("You construct a floor plating, as lava settles around the rods.") )
+			to_chat(user, span_notice("You construct a floor plating, as lava settles around the rods."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			new /turf/open/floor/plating(locate(x, y, z))
 		else
-			to_chat(user, span_warning("You need one floor tile to build atop [src].") )
+			to_chat(user, span_warning("You need one floor tile to build atop [src]."))
 		return

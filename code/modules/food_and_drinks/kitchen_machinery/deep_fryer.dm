@@ -86,20 +86,20 @@
 /obj/machinery/deepfryer/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/reagent_containers/pill))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("There's nothing to dissolve [I] in!") )
+			to_chat(user, span_warning("There's nothing to dissolve [I] in!"))
 			return
-		user.visible_message(span_notice("[user] drops [I] into [src].") , span_notice("You dissolve [I] in [src].") )
+		user.visible_message(span_notice("[user] drops [I] into [src].") , span_notice("You dissolve [I] in [src]."))
 		I.reagents.trans_to(src, I.reagents.total_volume, transfered_by = user)
 		qdel(I)
 		return
 	if(!reagents.has_reagent(/datum/reagent/consumable/cooking_oil))
-		to_chat(user, span_warning("[src] has no cooking oil to fry with!") )
+		to_chat(user, span_warning("[src] has no cooking oil to fry with!"))
 		return
 	if(I.resistance_flags & INDESTRUCTIBLE)
-		to_chat(user, span_warning("You don't feel it would be wise to fry [I]...") )
+		to_chat(user, span_warning("You don't feel it would be wise to fry [I]..."))
 		return
 	if(istype(I, /obj/item/food/deepfryholder))
-		to_chat(user, span_userdanger("Your cooking skills are not up to the legendary Doublefry technique.") )
+		to_chat(user, span_userdanger("Your cooking skills are not up to the legendary Doublefry technique."))
 		return
 	if(default_unfasten_wrench(user, I))
 		return
@@ -109,7 +109,7 @@
 		if(is_type_in_typecache(I, deepfry_blacklisted_items) || HAS_TRAIT(I, TRAIT_NODROP) || (I.item_flags & (ABSTRACT | DROPDEL)))
 			return ..()
 		else if(!frying && user.transferItemToLoc(I, src))
-			to_chat(user, span_notice("You put [I] into [src].") )
+			to_chat(user, span_notice("You put [I] into [src]."))
 			frying = new/obj/item/food/deepfryholder(src, I)
 			icon_state = "fryer_on"
 			fry_loop.start()
@@ -126,10 +126,10 @@
 		if(cook_time >= DEEPFRYER_COOKTIME && !frying_fried)
 			frying_fried = TRUE //frying... frying... fried
 			playsound(src.loc, 'sound/machines/ding.ogg', 50, TRUE)
-			audible_message(span_notice("[src] dings!") )
+			audible_message(span_notice("[src] dings!"))
 		else if (cook_time >= DEEPFRYER_BURNTIME && !frying_burnt)
 			frying_burnt = TRUE
-			visible_message(span_warning("[src] emits an acrid smell!") )
+			visible_message(span_warning("[src] emits an acrid smell!"))
 
 
 /obj/machinery/deepfryer/attack_ai(mob/user)
@@ -138,7 +138,7 @@
 /obj/machinery/deepfryer/attack_hand(mob/user)
 	if(frying)
 		if(frying.loc == src)
-			to_chat(user, span_notice("You eject [frying] from [src].") )
+			to_chat(user, span_notice("You eject [frying] from [src]."))
 			frying.fry(cook_time)
 			icon_state = "fryer_off"
 			frying.forceMove(drop_location())
@@ -152,10 +152,10 @@
 			return
 	else if(user.pulling && user.a_intent == "grab" && iscarbon(user.pulling) && reagents.total_volume)
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("You need a better grip to do that!") )
+			to_chat(user, span_warning("You need a better grip to do that!"))
 			return
 		var/mob/living/carbon/C = user.pulling
-		user.visible_message(span_danger("[user] dunks [C]'s face in [src]!") )
+		user.visible_message(span_danger("[user] dunks [C]'s face in [src]!"))
 		reagents.expose(C, TOUCH)
 		var/permeability = 1 - C.get_permeability_protection(list(HEAD))
 		C.apply_damage(min(30 * permeability, reagents.total_volume), BURN, BODY_ZONE_HEAD)

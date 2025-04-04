@@ -72,8 +72,8 @@
 		free_backseat = stranger_backseat
 
 	log_game("[key_name(current_backseat)] assumed control of [key_name(owner)] due to [src]. (Original owner: [current_controller == OWNER ? owner.key : current_backseat.key])")
-	to_chat(owner, span_userdanger("You feel your control being taken away... your other personality is in charge now!") )
-	to_chat(current_backseat, span_userdanger("You manage to take control of your body!") )
+	to_chat(owner, span_userdanger("You feel your control being taken away... your other personality is in charge now!"))
+	to_chat(current_backseat, span_userdanger("You manage to take control of your body!"))
 
 	//WS begin - Cortical Borers
 
@@ -136,11 +136,11 @@
 	. = ..()
 	if(!. || !client)
 		return FALSE
-	to_chat(src, span_notice("As a split personality, you cannot do anything but observe. However, you will eventually gain control of your body, switching places with the current personality.") )
-	to_chat(src, span_warning("<b>Do not commit suicide or put the body in a deadly position. Behave like you care about it as much as the owner.</b>") )
+	to_chat(src, span_notice("As a split personality, you cannot do anything but observe. However, you will eventually gain control of your body, switching places with the current personality."))
+	to_chat(src, span_warning("<b>Do not commit suicide or put the body in a deadly position. Behave like you care about it as much as the owner.</b>"))
 
 /mob/living/split_personality/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
-	to_chat(src, span_warning("You cannot speak, your other self is controlling your body!") )
+	to_chat(src, span_warning("You cannot speak, your other self is controlling your body!"))
 	return FALSE
 
 /mob/living/split_personality/emote(act, m_type = null, message = null, intentional = FALSE)
@@ -197,7 +197,7 @@
 		return
 	var/message = hearing_args[HEARING_RAW_MESSAGE]
 	if(findtext(message, codeword))
-		hearing_args[HEARING_RAW_MESSAGE] = replacetext(message, codeword, span_warning("[codeword]") )
+		hearing_args[HEARING_RAW_MESSAGE] = replacetext(message, codeword, span_warning("[codeword]"))
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/brain_trauma/severe/split_personality, switch_personalities)), 10)
 
 /datum/brain_trauma/severe/split_personality/brainwashing/handle_speech(datum/source, list/speech_args)
@@ -214,10 +214,10 @@
 	. = ..()
 	if(!. || !client)
 		return FALSE
-	to_chat(src, span_notice("As a brainwashed personality, you cannot do anything yet but observe. However, you may gain control of your body if you hear the special codeword, switching places with the current personality.") )
-	to_chat(src, span_notice("Your activation codeword is: <b>[codeword]</b>") )
+	to_chat(src, span_notice("As a brainwashed personality, you cannot do anything yet but observe. However, you may gain control of your body if you hear the special codeword, switching places with the current personality."))
+	to_chat(src, span_notice("Your activation codeword is: <b>[codeword]</b>"))
 	if(objective)
-		to_chat(src, span_notice("Your master left you an objective: <b>[objective]</b>. Follow it at all costs when in control.") )
+		to_chat(src, span_notice("Your master left you an objective: <b>[objective]</b>. Follow it at all costs when in control."))
 
 #undef OWNER
 #undef STRANGER

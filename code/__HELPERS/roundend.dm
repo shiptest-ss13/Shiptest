@@ -209,7 +209,7 @@
 
 	CHECK_TICK
 
-	set_observer_default_invisibility(0, span_warning("The round is over! You are now visible to the living.") )
+	set_observer_default_invisibility(0, span_warning("The round is over! You are now visible to the living."))
 
 	CHECK_TICK
 

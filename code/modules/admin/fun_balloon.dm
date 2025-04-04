@@ -27,7 +27,7 @@
 	return
 
 /obj/effect/fun_balloon/proc/pop()
-	visible_message(span_notice("[src] pops!") )
+	visible_message(span_notice("[src] pops!"))
 	playsound(get_turf(src), 'sound/items/party_horn.ogg', 50, TRUE, -1)
 	qdel(src)
 

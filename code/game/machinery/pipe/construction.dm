@@ -136,12 +136,12 @@ Buildable meters
 	var/flags = initial(fakeA.pipe_flags)
 	for(var/obj/machinery/atmospherics/M in loc)
 		if((M.pipe_flags & flags & PIPING_ONE_PER_TURF))	//Only one dense/requires density object per tile, eg connectors/cryo/heater/coolers.
-			to_chat(user, span_warning("Something is hogging the tile!") )
+			to_chat(user, span_warning("Something is hogging the tile!"))
 			return TRUE
 		if((M.piping_layer != piping_layer) && !((M.pipe_flags | flags) & PIPING_ALL_LAYER)) //don't continue if either pipe goes across all layers
 			continue
 		if(M.GetInitDirections() & SSair.get_init_dirs(pipe_type, fixed_dir()))	// matches at least one direction on either type of pipe
-			to_chat(user, span_warning("There is already a pipe at that location!") )
+			to_chat(user, span_warning("There is already a pipe at that location!"))
 			return TRUE
 	// no conflicts found
 
@@ -154,7 +154,7 @@ Buildable meters
 	user.visible_message( \
 		"[user] fastens \the [src].", \
 		span_notice("You fasten \the [src].") , \
-		span_hear("You hear ratcheting.") )
+		span_hear("You hear ratcheting."))
 
 	qdel(src)
 
@@ -191,11 +191,11 @@ Buildable meters
 			pipe = P
 			break
 	if(!pipe)
-		to_chat(user, span_warning("You need to fasten it to a pipe!") )
+		to_chat(user, span_warning("You need to fasten it to a pipe!"))
 		return TRUE
 	new /obj/machinery/meter(loc, piping_layer)
 	W.play_tool_sound(src)
-	to_chat(user, span_notice("You fasten the meter to the pipe.") )
+	to_chat(user, span_notice("You fasten the meter to the pipe."))
 	qdel(src)
 
 /obj/item/pipe_meter/screwdriver_act(mob/living/user, obj/item/S)
@@ -204,12 +204,12 @@ Buildable meters
 		return TRUE
 
 	if(!isturf(loc))
-		to_chat(user, span_warning("You need to fasten it to the floor!") )
+		to_chat(user, span_warning("You need to fasten it to the floor!"))
 		return TRUE
 
 	new /obj/machinery/meter/turf(loc, piping_layer)
 	S.play_tool_sound(src)
-	to_chat(user, span_notice("You fasten the meter to the [loc.name].") )
+	to_chat(user, span_notice("You fasten the meter to the [loc.name]."))
 	qdel(src)
 
 /obj/item/pipe_meter/dropped()

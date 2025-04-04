@@ -66,16 +66,16 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 				return
 
 			if(!allowed(user))
-				to_chat(user, span_warning("Access Denied.") )
+				to_chat(user, span_warning("Access Denied."))
 				return
 
 			if(frozen_items.len == 0)
-				to_chat(user, span_notice("There is nothing to recover from storage.") )
+				to_chat(user, span_notice("There is nothing to recover from storage."))
 				return
 
 			var/obj/item/I = tgui_input_list(user, "Select an item to recover.", name, frozen_items)
 
-			visible_message(span_notice("The console beeps happily as it disgorges \the [I].") )
+			visible_message(span_notice("The console beeps happily as it disgorges \the [I]."))
 
 			I.forceMove(get_turf(src))
 			frozen_items -= I
@@ -86,14 +86,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 				return
 
 			if(!allowed(user))
-				to_chat(user, span_warning("Access Denied.") )
+				to_chat(user, span_warning("Access Denied."))
 				return
 
 			if(frozen_items.len == 0)
-				to_chat(user, span_notice("There is nothing to recover from storage.") )
+				to_chat(user, span_notice("There is nothing to recover from storage."))
 				return
 
-			visible_message(span_notice("The console beeps happily as it disgorges the desired objects.") )
+			visible_message(span_notice("The console beeps happily as it disgorges the desired objects."))
 
 			for(var/obj/item/I as anything in frozen_items)
 				I.forceMove(get_turf(src))
@@ -211,7 +211,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 			return
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
-			to_chat(occupant, span_boldnotice("You feel cool air surround you. You go numb as your senses turn inward.") )
+			to_chat(occupant, span_boldnotice("You feel cool air surround you. You go numb as your senses turn inward."))
 			addtimer(CALLBACK(src, PROC_REF(try_despawn_occupant), mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = close_state
 	if(close_sound)
@@ -219,7 +219,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/cryopod/proc/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	sleepyhead.set_sleeping(50)
-	to_chat(sleepyhead, span_boldnotice("You begin to wake from cryosleep...") )
+	to_chat(sleepyhead, span_boldnotice("You begin to wake from cryosleep..."))
 
 /obj/machinery/cryopod/open_machine()
 	..()
@@ -232,7 +232,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
 	visible_message(span_notice("[occupant] emerges from [src]!") ,
-		span_notice("You climb out of [src]!") )
+		span_notice("You climb out of [src]!"))
 	open_machine()
 
 /obj/machinery/cryopod/relaymove(mob/user)
@@ -355,7 +355,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 	if(GLOB.announcement_systems.len)
 		var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
 		announcer.announce("CRYOSTORAGE", mob_occupant.real_name, announce_rank, list())
-		visible_message(span_notice("\The [src] hums and hisses as it moves [mob_occupant.real_name] into storage.") )
+		visible_message(span_notice("\The [src] hums and hisses as it moves [mob_occupant.real_name] into storage."))
 
 	for(var/obj/item/W as anything in mob_occupant.GetAllContents())
 		if(W.loc.loc && ((W.loc.loc == loc) || (W.loc.loc == control_computer_obj)))
@@ -398,18 +398,18 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		return
 
 	if(occupant)
-		to_chat(user, span_boldnotice("The cryo pod is already occupied!") )
+		to_chat(user, span_boldnotice("The cryo pod is already occupied!"))
 		return
 
 	if(target.stat == DEAD)
-		to_chat(user, span_notice("Dead people can not be put into cryo.") )
+		to_chat(user, span_notice("Dead people can not be put into cryo."))
 		return
 
 	if(target.client && user != target)
 		if(iscyborg(target))
-			to_chat(user, span_danger("You can't put [target] into [src]. They're online.") )
+			to_chat(user, span_danger("You can't put [target] into [src]. They're online."))
 		else
-			to_chat(user, span_danger("You can't put [target] into [src]. They're conscious.") )
+			to_chat(user, span_danger("You can't put [target] into [src]. They're conscious."))
 		return
 	else if(target.client)
 		if(tgui_alert(target, "Would you like to enter cryosleep?", "Cryopod", list("Yes","No")) != "Yes")
@@ -425,13 +425,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		visible_message("[user] starts putting [target] into [src].")
 
 	if(occupant)
-		to_chat(user, span_boldnotice("\The [src] is in use.") )
+		to_chat(user, span_boldnotice("\The [src] is in use."))
 		return
 	close_machine(target)
 
-	to_chat(target, span_boldnotice("If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.") )
+	to_chat(target, span_boldnotice("If you ghost, log out or close your client now, your character will shortly be permanently removed from the round."))
 	name = "[name] ([occupant.name])"
-	log_admin(span_notice("[key_name(target)] entered a stasis pod.") )
+	log_admin(span_notice("[key_name(target)] entered a stasis pod."))
 	message_admins("[key_name_admin(target)] entered a stasis pod. (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
 	add_fingerprint(target)
 

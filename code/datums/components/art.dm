@@ -47,7 +47,7 @@
 
 /datum/component/art/proc/examine(datum/source, mob/M)
 
-	to_chat(M, span_notice("You start examining [parent]...") )
+	to_chat(M, span_notice("You start examining [parent]..."))
 	if(!do_after(M, 20, target = parent))
 		return
 	on_obj_examine(source, M)

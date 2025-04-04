@@ -160,16 +160,16 @@
 	..()
 	if(isdrone(user) || issilicon(user))
 		if(user.has_language(/datum/language/drone))
-			to_chat(user, span_boldannounce("You start skimming through [src], but you already know dronespeak.") )
+			to_chat(user, span_boldannounce("You start skimming through [src], but you already know dronespeak."))
 		else
-			to_chat(user, span_boldannounce("You start skimming through [src], and suddenly the drone chittering makes sense.") )
+			to_chat(user, span_boldannounce("You start skimming through [src], and suddenly the drone chittering makes sense."))
 			user.grant_language(/datum/language/drone, TRUE, TRUE, LANGUAGE_MIND)
 		return
 
 	if(user.has_language(/datum/language/drone))
-		to_chat(user, span_boldannounce("You start skimming through [src], but you already know dronespeak.") )
+		to_chat(user, span_boldannounce("You start skimming through [src], but you already know dronespeak."))
 	else
-		to_chat(user, span_boldannounce("You start skimming through [src], but you can't make any sense of the contents.") )
+		to_chat(user, span_boldannounce("You start skimming through [src], but you can't make any sense of the contents."))
 
 /obj/item/dronespeak_manual/attack(mob/living/M, mob/living/user)
 	if(!istype(M) || !istype(user))
@@ -181,9 +181,9 @@
 	playsound(loc, "punch", 25, TRUE, -1)
 	if(isdrone(M) || issilicon(M))
 		if(M.has_language(/datum/language/drone))
-			M.visible_message(span_danger("[user] beats [M] over the head with [src]!") , span_userdanger("[user] beats you over the head with [src]!") , span_hear("You hear smacking.") )
+			M.visible_message(span_danger("[user] beats [M] over the head with [src]!") , span_userdanger("[user] beats you over the head with [src]!") , span_hear("You hear smacking."))
 		else
-			M.visible_message(span_notice("[user] teaches [M] by beating [M.p_them()] over the head with [src]!") , span_boldnotice("As [user] hits you with [src], chitters resonate in your mind.") , span_hear("You hear smacking.") )
+			M.visible_message(span_notice("[user] teaches [M] by beating [M.p_them()] over the head with [src]!") , span_boldnotice("As [user] hits you with [src], chitters resonate in your mind.") , span_hear("You hear smacking."))
 			M.grant_language(/datum/language/drone, TRUE, TRUE, LANGUAGE_MIND)
 		return
 

@@ -30,7 +30,7 @@ In all, this is a lot like the monkey code. /N
 			AdjustParalyzed(-60)
 			AdjustUnconscious(-60)
 			AdjustSleeping(-100)
-			visible_message(span_notice("[M.name] nuzzles [src] trying to wake [p_them()] up!") )
+			visible_message(span_notice("[M.name] nuzzles [src] trying to wake [p_them()] up!"))
 
 		if ("grab")
 			grabbedby(M)
@@ -41,12 +41,12 @@ In all, this is a lot like the monkey code. /N
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
 				visible_message(span_danger("[M.name] bites [src]!") , \
 								span_userdanger("[M.name] bites you!") , span_hear("You hear a chomp!") , COMBAT_MESSAGE_RANGE, M)
-				to_chat(M, span_danger("You bite [src]!") )
+				to_chat(M, span_danger("You bite [src]!"))
 				adjustBruteLoss(1)
 				log_combat(M, src, "attacked")
 				updatehealth()
 			else
-				to_chat(M, span_warning("[name] is too injured for that.") )
+				to_chat(M, span_warning("[name] is too injured for that."))
 
 
 /mob/living/carbon/alien/attack_larva(mob/living/carbon/alien/larva/L)

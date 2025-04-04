@@ -56,10 +56,10 @@
 	if(.)
 		return
 	if(C.tool_behaviour == TOOL_MINING)
-		to_chat(user, span_notice("You start smashing [src]...") )
+		to_chat(user, span_notice("You start smashing [src]..."))
 		var/adj_time = (broken || burnt) ? smash_time/2 : smash_time
 		if(C.use_tool(src, user, adj_time, volume=30))
-			to_chat(user, span_notice("You break [src].") )
+			to_chat(user, span_notice("You break [src]."))
 			playsound(src, 'sound/effects/break_stone.ogg', 30, TRUE)
 			remove_tile()
 			return TRUE

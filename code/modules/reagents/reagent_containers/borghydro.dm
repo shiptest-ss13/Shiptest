@@ -98,16 +98,16 @@ Borg Hypospray
 /obj/item/reagent_containers/borghypo/attack(mob/living/carbon/M, mob/user)
 	var/datum/reagents/R = reagent_list[mode]
 	if(!R.total_volume)
-		to_chat(user, span_warning("The injector is empty!") )
+		to_chat(user, span_warning("The injector is empty!"))
 		return
 	if(!istype(M))
 		return
 	if(R.total_volume && M.can_inject(user, 1, user.zone_selected,bypass_protection))
-		to_chat(M, span_warning("You feel a tiny prick!") )
-		to_chat(user, span_notice("You inject [M] with the injector.") )
+		to_chat(M, span_warning("You feel a tiny prick!"))
+		to_chat(user, span_notice("You inject [M] with the injector."))
 		if(M.reagents)
 			var/trans = R.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = INJECT)
-			to_chat(user, span_notice("[trans] unit\s injected. [R.total_volume] unit\s remaining.") )
+			to_chat(user, span_notice("[trans] unit\s injected. [R.total_volume] unit\s remaining."))
 
 	var/list/injected = list()
 	for(var/datum/reagent/RG in R.reagent_list)
@@ -121,7 +121,7 @@ Borg Hypospray
 	mode = chosen_reagent
 	playsound(loc, 'sound/effects/pop.ogg', 50, FALSE)
 	var/datum/reagent/R = GLOB.chemical_reagents_list[reagent_ids[mode]]
-	to_chat(user, span_notice("[src] is now dispensing '[R.name]'.") )
+	to_chat(user, span_notice("[src] is now dispensing '[R.name]'."))
 	return
 
 /obj/item/reagent_containers/borghypo/examine(mob/user)
@@ -222,15 +222,15 @@ Borg Shaker
 	else if(target.is_refillable())
 		var/datum/reagents/R = reagent_list[mode]
 		if(!R.total_volume)
-			to_chat(user, span_warning("[src] is currently out of this ingredient! Please allow some time for the synthesizer to produce more.") )
+			to_chat(user, span_warning("[src] is currently out of this ingredient! Please allow some time for the synthesizer to produce more."))
 			return
 
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_notice("[target] is full.") )
+			to_chat(user, span_notice("[target] is full."))
 			return
 
 		var/trans = R.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target].") )
+		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
 
 /obj/item/reagent_containers/borghypo/borgshaker/DescribeContents()
 	var/datum/reagents/RS = reagent_list[mode]

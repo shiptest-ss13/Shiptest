@@ -74,25 +74,25 @@
 //whether the machine can have an item inserted in its current state.
 /obj/machinery/rnd/proc/is_insertion_ready(mob/user)
 	if(panel_open)
-		to_chat(user, span_warning("You can't load [src] while it's opened!") )
+		to_chat(user, span_warning("You can't load [src] while it's opened!"))
 		return FALSE
 	if(disabled)
-		to_chat(user, span_warning("The insertion belts of [src] won't engage!") )
+		to_chat(user, span_warning("The insertion belts of [src] won't engage!"))
 		return FALSE
 	if(requires_console && !linked_console)
-		to_chat(user, span_warning("[src] must be linked to an R&D console first!") )
+		to_chat(user, span_warning("[src] must be linked to an R&D console first!"))
 		return FALSE
 	if(busy)
-		to_chat(user, span_warning("[src] is busy right now.") )
+		to_chat(user, span_warning("[src] is busy right now."))
 		return FALSE
 	if(machine_stat & BROKEN)
-		to_chat(user, span_warning("[src] is broken.") )
+		to_chat(user, span_warning("[src] is broken."))
 		return FALSE
 	if(machine_stat & NOPOWER)
-		to_chat(user, span_warning("[src] has no power.") )
+		to_chat(user, span_warning("[src] has no power."))
 		return FALSE
 	if(loaded_item)
-		to_chat(user, span_warning("[src] is already loaded.") )
+		to_chat(user, span_warning("[src] is already loaded."))
 		return FALSE
 	return TRUE
 

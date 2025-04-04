@@ -293,7 +293,7 @@ All the important duct code:
 		user.visible_message( \
 		"[user] [anchored ? null : "un"]fastens \the [src].", \
 		span_notice("You [anchored ? null : "un"]fasten \the [src].") , \
-		span_hear("You hear ratcheting.") )
+		span_hear("You hear ratcheting."))
 	return TRUE
 ///collection of all the sanity checks to prevent us from stacking ducts that shouldnt be stacked
 /obj/machinery/duct/proc/can_anchor(turf/T)
@@ -322,7 +322,7 @@ All the important duct code:
 	var/obj/machinery/duct/D = A
 	var/obj/item/I = user.get_active_held_item()
 	if(I?.tool_behaviour != TOOL_WRENCH)
-		to_chat(user, span_warning("You need to be holding a wrench in your active hand to do that!") )
+		to_chat(user, span_warning("You need to be holding a wrench in your active hand to do that!"))
 		return
 	if(get_dist(src, D) != 1)
 		return

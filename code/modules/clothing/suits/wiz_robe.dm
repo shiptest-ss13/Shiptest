@@ -83,8 +83,8 @@
 	if(!proximity)
 		return
 	if(!istype(W))
-		to_chat(user, span_warning("The rune can only be used on battlemage armour!") )
+		to_chat(user, span_warning("The rune can only be used on battlemage armour!"))
 		return
 	W.current_charges += 8
-	to_chat(user, span_notice("You charge \the [W]. It can now absorb [W.current_charges] hits.") )
+	to_chat(user, span_notice("You charge \the [W]. It can now absorb [W.current_charges] hits."))
 	qdel(src)

@@ -275,7 +275,7 @@
 	. = ..()
 	if(rand(1,100) > hit_reaction_chance)
 		return
-	owner.visible_message(span_danger("[owner]'s [src] emits a loud noise as [owner] is struck!") )
+	owner.visible_message(span_danger("[owner]'s [src] emits a loud noise as [owner] is struck!"))
 	var/static/list/directional_shot_angles = list(0, 45, 90, 135, 180, 225, 270, 315)
 	playsound(get_turf(owner), 'sound/magic/clockwork/invoke_general.ogg', 20, TRUE)
 	addtimer(CALLBACK(src, PROC_REF(reactionshot), owner), 10)

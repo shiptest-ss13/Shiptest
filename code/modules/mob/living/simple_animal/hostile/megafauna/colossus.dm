@@ -107,7 +107,7 @@ Difficulty: Very Hard
 
 	if(enrage(target))
 		if(move_to_delay == initial(move_to_delay))
-			visible_message(span_colossus("\"<b>You can't dodge.</b>\"") )
+			visible_message(span_colossus("\"<b>You can't dodge.</b>\""))
 		ranged_cooldown = world.time + 30
 		telegraph()
 		dir_shots(GLOB.alldirs)
@@ -147,11 +147,11 @@ Difficulty: Very Hard
 	telegraph()
 	if(health < maxHealth/3)
 		return double_spiral()
-	visible_message(span_colossus("\"<b>Judgement.</b>\"") )
+	visible_message(span_colossus("\"<b>Judgement.</b>\""))
 	return spiral_shoot()
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/double_spiral()
-	visible_message(span_colossus("\"<b>Die.</b>\"") )
+	visible_message(span_colossus("\"<b>Die.</b>\""))
 
 	SLEEP_CHECK_DEATH(10)
 	INVOKE_ASYNC(src, PROC_REF(spiral_shoot), FALSE)
@@ -221,7 +221,7 @@ Difficulty: Very Hard
 
 
 /mob/living/simple_animal/hostile/megafauna/colossus/devour(mob/living/L)
-	visible_message(span_colossus("[src] disintegrates [L]!") )
+	visible_message(span_colossus("[src] disintegrates [L]!"))
 	L.dust()
 
 /obj/effect/temp_visual/at_shield
@@ -293,7 +293,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	if(!istype(O))
 		return FALSE
 	if(blacklist[O])
-		visible_message(span_boldwarning("[src] ripples as it rejects [O]. The device will not accept items that have been removed from it.") )
+		visible_message(span_boldwarning("[src] ripples as it rejects [O]. The device will not accept items that have been removed from it."))
 		return FALSE
 	return TRUE
 
@@ -689,7 +689,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 		if(L.stat != DEAD)
 			L.heal_overall_damage(melee_damage_upper, melee_damage_upper)
 			new /obj/effect/temp_visual/heal(get_turf(target), "#80F5FF")
-			visible_message(span_notice("[src] mends the wounds of [target].") ,span_notice("You mend the wounds of [target].") )
+			visible_message(span_notice("[src] mends the wounds of [target].") ,span_notice("You mend the wounds of [target]."))
 
 /mob/living/simple_animal/hostile/lightgeist/ghost()
 	. = ..()

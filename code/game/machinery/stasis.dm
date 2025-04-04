@@ -53,7 +53,7 @@
 		playsound(src, 'sound/machines/click.ogg', 60, TRUE)
 		user.visible_message(span_notice("\The [src] [stasis_enabled ? "powers on" : "shuts down"].") , \
 					span_notice("You [stasis_enabled ? "power on" : "shut down"] \the [src].") , \
-					span_hear("You hear a nearby machine [stasis_enabled ? "power on" : "shut down"].") )
+					span_hear("You hear a nearby machine [stasis_enabled ? "power on" : "shut down"]."))
 		play_power_sound()
 		update_appearance()
 

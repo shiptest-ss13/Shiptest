@@ -92,7 +92,7 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, !ismonkey(user)) || !can_interact(user))
 		return
 	if(holding)
-		to_chat(user, span_notice("You remove [holding] from [src].") )
+		to_chat(user, span_notice("You remove [holding] from [src]."))
 		replace_tank(user, TRUE)
 
 /obj/machinery/portable_atmospherics/examine(mob/user)
@@ -118,7 +118,7 @@
 			var/obj/item/tank/T = W
 			if(!user.transferItemToLoc(T, src))
 				return
-			to_chat(user, span_notice("[holding ? "In one smooth motion you pop [holding] out of [src]'s connector and replace it with [T]" : "You insert [T] into [src]"].") )
+			to_chat(user, span_notice("[holding ? "In one smooth motion you pop [holding] out of [src]'s connector and replace it with [T]" : "You insert [T] into [src]"]."))
 			investigate_log("had its internal [holding] swapped with [T] by [key_name(user)].", INVESTIGATE_ATMOS)
 			replace_tank(user, FALSE, T)
 			update_appearance()
@@ -131,22 +131,22 @@
 				user.visible_message( \
 					"[user] disconnects [src].", \
 					span_notice("You unfasten [src] from the port.") , \
-					span_hear("You hear a ratchet.") )
+					span_hear("You hear a ratchet."))
 				update_appearance()
 				return
 			else
 				var/obj/machinery/atmospherics/components/unary/portables_connector/possible_port = locate(/obj/machinery/atmospherics/components/unary/portables_connector) in loc
 				if(!possible_port)
-					to_chat(user, span_notice("Nothing happens.") )
+					to_chat(user, span_notice("Nothing happens."))
 					return
 				if(!connect(possible_port))
-					to_chat(user, span_notice("[name] failed to connect to the port.") )
+					to_chat(user, span_notice("[name] failed to connect to the port."))
 					return
 				W.play_tool_sound(src)
 				user.visible_message( \
 					"[user] connects [src].", \
 					span_notice("You fasten [src] to the port.") , \
-					span_hear("You hear a ratchet.") )
+					span_hear("You hear a ratchet."))
 				update_appearance()
 				investigate_log("was connected to [possible_port] by [key_name(user)].", INVESTIGATE_ATMOS)
 	else

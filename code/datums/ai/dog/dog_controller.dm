@@ -103,7 +103,7 @@
 	if(friends[new_friend])
 		return
 	if(in_range(pawn, new_friend))
-		new_friend.visible_message("<b>[pawn]</b> licks at [new_friend] in a friendly manner!", span_notice("[pawn] licks at you in a friendly manner!") )
+		new_friend.visible_message("<b>[pawn]</b> licks at [new_friend] in a friendly manner!", span_notice("[pawn] licks at you in a friendly manner!"))
 	friends[new_friend] = TRUE
 	RegisterSignal(new_friend, COMSIG_MOB_POINTED, PROC_REF(check_point))
 	RegisterSignal(new_friend, COMSIG_MOB_SAY, PROC_REF(check_verbal_command))
@@ -204,17 +204,17 @@
 	switch(command)
 		// heel: stop what you're doing, relax and try not to do anything for a little bit
 		if(COMMAND_HEEL)
-			pawn.visible_message(span_notice("[pawn]'s ears prick up at [commander]'s command, and [pawn.p_they()] sit[pawn.p_s()] down obediently, awaiting further orders.") )
+			pawn.visible_message(span_notice("[pawn]'s ears prick up at [commander]'s command, and [pawn.p_they()] sit[pawn.p_s()] down obediently, awaiting further orders."))
 			blackboard[BB_DOG_ORDER_MODE] = DOG_COMMAND_NONE
 			COOLDOWN_START(src, heel_cooldown, AI_DOG_HEEL_DURATION)
 			CancelActions()
 		// fetch: whatever the commander points to, try and bring it back
 		if(COMMAND_FETCH)
-			pawn.visible_message(span_notice("[pawn]'s ears prick up at [commander]'s command, and [pawn.p_they()] bounce[pawn.p_s()] slightly in anticipation.") )
+			pawn.visible_message(span_notice("[pawn]'s ears prick up at [commander]'s command, and [pawn.p_they()] bounce[pawn.p_s()] slightly in anticipation."))
 			blackboard[BB_DOG_ORDER_MODE] = DOG_COMMAND_FETCH
 		// attack: harass whoever the commander points to
 		if(COMMAND_ATTACK)
-			pawn.visible_message(span_danger("[pawn]'s ears prick up at [commander]'s command, and [pawn.p_they()] growl[pawn.p_s()] intensely.") ) // imagine getting intimidated by a corgi
+			pawn.visible_message(span_danger("[pawn]'s ears prick up at [commander]'s command, and [pawn.p_they()] growl[pawn.p_s()] intensely.")) // imagine getting intimidated by a corgi
 			blackboard[BB_DOG_ORDER_MODE] = DOG_COMMAND_ATTACK
 		if(COMMAND_DIE)
 			blackboard[BB_DOG_ORDER_MODE] = DOG_COMMAND_NONE
@@ -238,13 +238,13 @@
 		if(DOG_COMMAND_FETCH)
 			if(ismob(pointed_movable) || pointed_movable.anchored)
 				return
-			pawn.visible_message(span_notice("[pawn] follows [pointing_friend]'s gesture towards [pointed_movable] and barks excitedly!") )
+			pawn.visible_message(span_notice("[pawn] follows [pointing_friend]'s gesture towards [pointed_movable] and barks excitedly!"))
 			current_movement_target = pointed_movable
 			blackboard[BB_FETCH_TARGET] = pointed_movable
 			blackboard[BB_FETCH_DELIVER_TO] = pointing_friend
 			current_behaviors += GET_AI_BEHAVIOR(/datum/ai_behavior/fetch)
 		if(DOG_COMMAND_ATTACK)
-			pawn.visible_message(span_notice("[pawn] follows [pointing_friend]'s gesture towards [pointed_movable] and growls intensely!") )
+			pawn.visible_message(span_notice("[pawn] follows [pointing_friend]'s gesture towards [pointed_movable] and growls intensely!"))
 			current_movement_target = pointed_movable
 			blackboard[BB_DOG_HARASS_TARGET] = pointed_movable
 			current_behaviors += GET_AI_BEHAVIOR(/datum/ai_behavior/harass)

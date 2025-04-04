@@ -70,19 +70,19 @@
 		return
 
 	else if(trapped == SPOOKY_SKELETON)
-		visible_message(span_userdanger("<font size='5'>BOO!</font>") )
+		visible_message(span_userdanger("<font size='5'>BOO!</font>"))
 		playsound(loc, 'sound/spookoween/girlscream.ogg', 300, TRUE)
 		trapped = 0
 		QDEL_IN(trapped_mob, 90)
 
 	else if(trapped == HOWLING_GHOST)
-		visible_message(span_userdanger("<font size='5'>[pick("OooOOooooOOOoOoOOooooOOOOO", "BooOOooOooooOOOO", "BOO!", "WoOOoOoooOooo")]</font>") )
+		visible_message(span_userdanger("<font size='5'>[pick("OooOOooooOOOoOoOOooooOOOOO", "BooOOooOooooOOOO", "BOO!", "WoOOoOoooOooo")]</font>"))
 		playsound(loc, 'sound/spookoween/ghosty_wind.ogg', 300, TRUE)
 		new /mob/living/simple_animal/shade/howling_ghost(loc)
 		trapped = 0
 
 	else if(trapped == SCARY_BATS)
-		visible_message(span_userdanger("<font size='5'>Protect your hair!</font>") )
+		visible_message(span_userdanger("<font size='5'>Protect your hair!</font>"))
 		playsound(loc, 'sound/spookoween/bats.ogg', 300, TRUE)
 		var/number = rand(1,3)
 		for(var/i=0,i < number,i++)
@@ -90,8 +90,8 @@
 		trapped = 0
 
 	else if(trapped == ANGRY_FAITHLESS)
-		visible_message(span_userdanger("The closet bursts open!") )
-		visible_message(span_userdanger("<font size='5'>THIS BEING RADIATES PURE EVIL! YOU BETTER RUN!!!</font>") )
+		visible_message(span_userdanger("The closet bursts open!"))
+		visible_message(span_userdanger("<font size='5'>THIS BEING RADIATES PURE EVIL! YOU BETTER RUN!!!</font>"))
 		playsound(loc, 'sound/hallucinations/wail.ogg', 300, TRUE)
 		var/mob/living/simple_animal/hostile/faithless/F = new(loc)
 		trapped = 0

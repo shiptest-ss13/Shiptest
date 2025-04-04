@@ -104,14 +104,14 @@
 	for(var/obj/item/I in src)
 		if(I == brain)
 			if(user)
-				user.visible_message(span_warning("[user] saws [src] open and pulls out a brain!") , span_notice("You saw [src] open and pull out a brain.") )
+				user.visible_message(span_warning("[user] saws [src] open and pulls out a brain!") , span_notice("You saw [src] open and pull out a brain."))
 			if(brainmob)
 				brainmob.container = null
 				brainmob.forceMove(brain)
 				brain.brainmob = brainmob
 				brainmob = null
 			if(violent_removal && prob(rand(80, 100))) //ghetto surgery can damage the brain.
-				to_chat(user, span_warning("[brain] was damaged in the process!") )
+				to_chat(user, span_warning("[brain] was damaged in the process!"))
 				brain.setOrganDamage(brain.maxHealth)
 			brain.forceMove(T)
 			brain = null

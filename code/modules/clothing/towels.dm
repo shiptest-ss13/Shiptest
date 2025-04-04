@@ -88,7 +88,7 @@
 			transfer_fingerprints_to(shreds)
 			shreds.add_fingerprint(user)
 		qdel(src)
-		to_chat(user, span_notice("You tear [src] up.") )
+		to_chat(user, span_notice("You tear [src] up."))
 	else
 		return ..()
 

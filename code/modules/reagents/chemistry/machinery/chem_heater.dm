@@ -81,7 +81,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, span_notice("You add [B] to [src].") )
+		to_chat(user, span_notice("You add [B] to [src]."))
 		updateUsrDialog()
 		update_appearance()
 		return

@@ -90,17 +90,17 @@
 	playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
 	if(tool_behaviour == NONE)
 		tool_behaviour = TOOL_SCREWDRIVER
-		to_chat(user, span_notice("You extend the screwdriver within the [src].") )
+		to_chat(user, span_notice("You extend the screwdriver within the [src]."))
 		icon_state = "inf_screwdriver"
 		emag_on = FALSE
 	else if(tool_behaviour == TOOL_SCREWDRIVER)
 		tool_behaviour = TOOL_MULTITOOL
-		to_chat(user, span_notice("You prime the multitool attachment of the [src].") )
+		to_chat(user, span_notice("You prime the multitool attachment of the [src]."))
 		icon_state = "inf_multi"
 		emag_on = FALSE
 	else
 		tool_behaviour = NONE
-		to_chat(user, span_notice("You enable the electromagnetic hacking system of the [src].") )
+		to_chat(user, span_notice("You enable the electromagnetic hacking system of the [src]."))
 		icon_state = "inf_emag"
 		emag_on = TRUE
 
@@ -321,7 +321,7 @@ update_label()
 		src.access |= I.access
 		if(isliving(user) && user.mind)
 			if(user.mind.special_role || anyone)
-				to_chat(usr, span_notice("The card's microscanners activate as you pass it over the ID, copying its access.") )
+				to_chat(usr, span_notice("The card's microscanners activate as you pass it over the ID, copying its access."))
 
 /obj/item/card/id/syndicate/attack_self(mob/user)
 	if(isliving(user) && user.mind)
@@ -359,7 +359,7 @@ update_label()
 			assignment = target_occupation
 			update_label()
 			forged = TRUE
-			to_chat(user, span_notice("You successfully forge the ID card.") )
+			to_chat(user, span_notice("You successfully forge the ID card."))
 			log_game("[key_name(user)] has forged \the [initial(name)] with name \"[registered_name]\" and occupation \"[assignment]\".")
 
 			return
@@ -371,7 +371,7 @@ update_label()
 			log_game("[key_name(user)] has reset \the [initial(name)] named \"[src]\" to default.")
 			update_label()
 			forged = FALSE
-			to_chat(user, span_notice("You successfully reset the ID card.") )
+			to_chat(user, span_notice("You successfully reset the ID card."))
 			return
 	return ..()
 
@@ -537,7 +537,7 @@ update_label()
 	registered_age = null
 
 /obj/item/card/id/prisoner/attack_self(mob/user)
-	to_chat(usr, span_notice("You have accumulated [points] out of the [goal] points you need for freedom.") )
+	to_chat(usr, span_notice("You have accumulated [points] out of the [goal] points you need for freedom."))
 
 /obj/item/card/id/prisoner/one
 	name = "Prisoner #13-001"

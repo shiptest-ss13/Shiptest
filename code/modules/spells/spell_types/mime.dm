@@ -21,7 +21,7 @@
 /obj/effect/proc_holder/spell/aoe_turf/conjure/mime_wall/Click()
 	if(usr && usr.mind)
 		if(!usr.mind.miming)
-			to_chat(usr, span_warning("You must dedicate yourself to silence first!") )
+			to_chat(usr, span_warning("You must dedicate yourself to silence first!"))
 			return
 		invocation = "<B>[usr.real_name]</B> looks as if a wall is in front of [usr.p_them()]."
 	else
@@ -51,7 +51,7 @@
 /obj/effect/proc_holder/spell/aoe_turf/conjure/mime_chair/Click()
 	if(usr && usr.mind)
 		if(!usr.mind.miming)
-			to_chat(usr, span_warning("You must dedicate yourself to silence first!") )
+			to_chat(usr, span_warning("You must dedicate yourself to silence first!"))
 			return
 		invocation = "<B>[usr.real_name]</B> pulls out an invisible chair and sits down."
 	else
@@ -97,7 +97,7 @@
 /obj/effect/proc_holder/spell/aoe_turf/conjure/mime_box/Click()
 	if(usr && usr.mind)
 		if(!usr.mind.miming)
-			to_chat(usr, span_warning("You must dedicate yourself to silence first!") )
+			to_chat(usr, span_warning("You must dedicate yourself to silence first!"))
 			return
 		invocation = "<B>[usr.real_name]</B> moves [usr.p_their()] hands in the shape of a cube, pressing a box out of the air."
 	else
@@ -137,11 +137,11 @@
 	for(var/mob/living/carbon/human/H in targets)
 		H.mind.miming=!H.mind.miming
 		if(H.mind.miming)
-			to_chat(H, span_notice("You make a vow of silence.") )
+			to_chat(H, span_notice("You make a vow of silence."))
 			SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "vow")
 		else
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "vow", /datum/mood_event/broken_vow)
-			to_chat(H, span_notice("You break your vow of silence.") )
+			to_chat(H, span_notice("You break your vow of silence."))
 
 // These spells can only be gotten from the "Guide for Advanced Mimery series" for Mime Traitors.
 
@@ -167,7 +167,7 @@
 /obj/effect/proc_holder/spell/targeted/forcewall/mime/Click()
 	if(usr && usr.mind)
 		if(!usr.mind.miming)
-			to_chat(usr, span_warning("You must dedicate yourself to silence first!") )
+			to_chat(usr, span_warning("You must dedicate yourself to silence first!"))
 			return
 		invocation = "<B>[usr.real_name]</B> looks as if a blockade is in front of [usr.p_them()]."
 	else

@@ -570,9 +570,9 @@
 		return
 	if(prob(15))
 		new /datum/hallucination/oh_yeah(victim)
-		to_chat(victim, span_colossus("<b>[pick("I AM IMMORTAL.","I SHALL TAKE YOUR WORLD.","I SEE YOU.","YOU CANNOT ESCAPE ME FOREVER.","NOTHING CAN HOLD ME.")]</b>") )
+		to_chat(victim, span_colossus("<b>[pick("I AM IMMORTAL.","I SHALL TAKE YOUR WORLD.","I SEE YOU.","YOU CANNOT ESCAPE ME FOREVER.","NOTHING CAN HOLD ME.")]</b>"))
 	else
-		to_chat(victim, span_warning("[pick("You hear faint whispers.","You smell ash.","You feel hot.","You hear a roar in the distance.")]") )
+		to_chat(victim, span_warning("[pick("You hear faint whispers.","You smell ash.","You feel hot.","You hear a roar in the distance.")]"))
 
 /obj/item/reagent_containers/food/snacks/gumball
 	name = "gumball"
@@ -648,9 +648,9 @@
 	if(istype(W, /obj/item/stack/rods))
 		var/obj/item/stack/rods/R = W
 		if(!R.use(1))//borgs can still fail this if they have no metal
-			to_chat(user, span_warning("You do not have enough metal to put [src] on a stick!") )
+			to_chat(user, span_warning("You do not have enough metal to put [src] on a stick!"))
 			return ..()
-		to_chat(user, span_notice("You stick the rod into the stick of butter.") )
+		to_chat(user, span_notice("You stick the rod into the stick of butter."))
 		var/obj/item/reagent_containers/food/snacks/butter/on_a_stick/new_item = new(usr.loc)
 		var/replace = (user.get_inactive_held_item() == R)
 		if(!R && replace)
@@ -708,7 +708,7 @@
 	volume = 30
 
 /obj/item/reagent_containers/food/snacks/canned/proc/open_can(mob/user)
-	to_chat(user, span_notice("You pull back the tab of \the [src].") )
+	to_chat(user, span_notice("You pull back the tab of \the [src]."))
 	playsound(user.loc, 'sound/items/foodcanopen.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	spillable = TRUE
@@ -721,7 +721,7 @@
 
 /obj/item/reagent_containers/food/snacks/canned/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, span_warning("[src]'s lid hasn't been opened!") )
+		to_chat(user, span_warning("[src]'s lid hasn't been opened!"))
 		return 0
 	return ..()
 

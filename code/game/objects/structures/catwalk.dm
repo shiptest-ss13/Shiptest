@@ -58,24 +58,24 @@
 
 /obj/structure/catwalk/attackby(obj/item/C, mob/user, params)
 	if((C.tool_behaviour == TOOL_WELDER || C.tool_behaviour == TOOL_DECONSTRUCT) && !(resistance_flags & INDESTRUCTIBLE))
-		to_chat(user, span_notice("You slice off [src]") )
+		to_chat(user, span_notice("You slice off [src]"))
 		deconstruct()
 		return
 	if(C.tool_behaviour == TOOL_CROWBAR && plated_tile)
 		hatch_open = !hatch_open
 		if(hatch_open)
 			C.play_tool_sound(src, 100)
-			to_chat(user, span_notice("You pry open \the [src]'s maintenance hatch.") )
+			to_chat(user, span_notice("You pry open \the [src]'s maintenance hatch."))
 		else
 			playsound(src, 'sound/items/Deconstruct.ogg', 100, 2)
-			to_chat(user, span_notice("You shut \the [src]'s maintenance hatch.") )
+			to_chat(user, span_notice("You shut \the [src]'s maintenance hatch."))
 		update_appearance()
 		return
 	if(istype(C, /obj/item/stack/tile) && !plated_tile)
 		var/obj/item/stack/tile/plasteel/ST = C
-		to_chat(user, span_notice("Placing tile...") )
+		to_chat(user, span_notice("Placing tile..."))
 		if(do_after(user, 30, target = src))
-			to_chat(user, span_notice("You plate \the [src]") )
+			to_chat(user, span_notice("You plate \the [src]"))
 			name = "plated catwalk"
 			src.add_fingerprint(user)
 			if(ST.use(1))

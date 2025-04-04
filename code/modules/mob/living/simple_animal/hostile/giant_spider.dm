@@ -76,10 +76,10 @@
 	if(!. || !client)
 		return FALSE
 	if(directive)
-		to_chat(src, span_spider("Your mother left you a directive! Follow it at all costs.") )
-		to_chat(src, span_spider("<b>[directive]</b>") )
+		to_chat(src, span_spider("Your mother left you a directive! Follow it at all costs."))
+		to_chat(src, span_spider("<b>[directive]</b>"))
 		if(mind)
-			mind.store_memory(span_spider("<b>[directive]</b>") )
+			mind.store_memory(span_spider("<b>[directive]</b>"))
 
 /mob/living/simple_animal/hostile/poison/giant_spider/proc/humanize_spider(mob/user)
 	if(key || !playable_spider || stat)//Someone is in it, it's dead, or the fun police are shutting it down
@@ -88,7 +88,7 @@
 	if(spider_ask == "No" || !src || QDELETED(src))
 		return 1
 	if(key)
-		to_chat(user, span_warning("Someone else already took this spider!") )
+		to_chat(user, span_warning("Someone else already took this spider!"))
 		return 1
 	key = user.key
 	if(directive)
@@ -305,19 +305,19 @@
 	var/mob/living/cocoon_target = cocoon_target_ref?.resolve()
 	if(stat != DEAD && cocoon_target && !cocoon_target.anchored)
 		if(cocoon_target == src)
-			to_chat(src, span_warning("You can't wrap yourself!") )
+			to_chat(src, span_warning("You can't wrap yourself!"))
 			return
 		if(istype(cocoon_target, /mob/living/simple_animal/hostile/poison/giant_spider))
-			to_chat(src, span_warning("You can't wrap other spiders!") )
+			to_chat(src, span_warning("You can't wrap other spiders!"))
 			return
 		if(!Adjacent(cocoon_target))
-			to_chat(src, span_warning("You can't reach [cocoon_target]!") )
+			to_chat(src, span_warning("You can't reach [cocoon_target]!"))
 			return
 		if(busy == SPINNING_COCOON)
-			to_chat(src, span_warning("You're already spinning a cocoon!") )
+			to_chat(src, span_warning("You're already spinning a cocoon!"))
 			return //we're already doing this, don't cancel out or anything
 		busy = SPINNING_COCOON
-		visible_message(span_notice("[src] begins to secrete a sticky substance around [cocoon_target].") ,span_notice("You begin wrapping [cocoon_target] into a cocoon.") )
+		visible_message(span_notice("[src] begins to secrete a sticky substance around [cocoon_target].") ,span_notice("You begin wrapping [cocoon_target] into a cocoon."))
 		stop_automated_movement = TRUE
 		walk(src,0)
 		if(do_after(src, 50, target = cocoon_target))
@@ -329,10 +329,10 @@
 						consumed_mobs[REF(L)] = TRUE
 						fed++
 						lay_eggs.UpdateButtonIcon(TRUE)
-						visible_message(span_danger("[src] sticks a proboscis into [L] and sucks a viscous substance out.") ,span_notice("You suck the nutriment out of [L], feeding you enough to lay a cluster of eggs.") )
+						visible_message(span_danger("[src] sticks a proboscis into [L] and sucks a viscous substance out.") ,span_notice("You suck the nutriment out of [L], feeding you enough to lay a cluster of eggs."))
 						L.death() //you just ate them, they're dead.
 					else
-						to_chat(src, span_warning("[L] cannot sate your hunger!") )
+						to_chat(src, span_warning("[L] cannot sate your hunger!"))
 				cocoon_target.forceMove(C)
 
 				if(cocoon_target.density || ismob(cocoon_target))
@@ -362,12 +362,12 @@
 
 	var/obj/structure/spider/stickyweb/W = locate() in T
 	if(W)
-		to_chat(S, span_warning("There's already a web here!") )
+		to_chat(S, span_warning("There's already a web here!"))
 		return
 
 	if(S.busy != SPINNING_WEB)
 		S.busy = SPINNING_WEB
-		S.visible_message(span_notice("[S] begins to secrete a sticky substance.") ,span_notice("You begin to lay a web.") )
+		S.visible_message(span_notice("[S] begins to secrete a sticky substance.") ,span_notice("You begin to lay a web."))
 		S.stop_automated_movement = TRUE
 		if(do_after(S, 40, target = T))
 			if(S.busy == SPINNING_WEB && S.loc == T)
@@ -375,7 +375,7 @@
 		S.busy = SPIDER_IDLE
 		S.stop_automated_movement = FALSE
 	else
-		to_chat(S, span_warning("You're already spinning a web!") )
+		to_chat(S, span_warning("You're already spinning a web!"))
 
 /obj/effect/proc_holder/wrap
 	name = "Wrap"
@@ -459,12 +459,12 @@
 
 	var/obj/structure/spider/eggcluster/E = locate() in get_turf(S)
 	if(E)
-		to_chat(S, span_warning("There is already a cluster of eggs here!") )
+		to_chat(S, span_warning("There is already a cluster of eggs here!"))
 	else if(!S.fed)
-		to_chat(S, span_warning("You are too hungry to do this!") )
+		to_chat(S, span_warning("You are too hungry to do this!"))
 	else if(S.busy != LAYING_EGGS)
 		S.busy = LAYING_EGGS
-		S.visible_message(span_notice("[S] begins to lay a cluster of eggs.") ,span_notice("You begin to lay a cluster of eggs.") )
+		S.visible_message(span_notice("[S] begins to lay a cluster of eggs.") ,span_notice("You begin to lay a cluster of eggs."))
 		S.stop_automated_movement = TRUE
 		if(do_after(S, 50, target = get_turf(S)))
 			if(S.busy == LAYING_EGGS)

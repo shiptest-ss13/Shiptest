@@ -36,7 +36,7 @@
 	update_appearance()
 	if(reagents.chem_temp >= max_temp)
 		change_power_status(FALSE)
-		audible_message(span_notice("The Mauna Mug lets out a happy beep and turns off!") )
+		audible_message(span_notice("The Mauna Mug lets out a happy beep and turns off!"))
 		playsound(src, 'sound/machines/chime.ogg', 50)
 
 /obj/item/reagent_containers/glass/maunamug/Destroy()
@@ -65,7 +65,7 @@
 /obj/item/reagent_containers/glass/maunamug/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
 	open = !open
-	to_chat(user, span_notice("You screw the battery case on [src] [open ? "open" : "closed"] .") )
+	to_chat(user, span_notice("You screw the battery case on [src] [open ? "open" : "closed"] ."))
 	update_appearance()
 
 /obj/item/reagent_containers/glass/maunamug/attackby(obj/item/I, mob/user, params)
@@ -73,15 +73,15 @@
 	if(!istype(I, /obj/item/stock_parts/cell))
 		return ..()
 	if(!open)
-		to_chat(user, span_warning("The battery case must be open to insert a power cell!") )
+		to_chat(user, span_warning("The battery case must be open to insert a power cell!"))
 		return FALSE
 	if(cell)
-		to_chat(user, span_warning("There is already a power cell inside!") )
+		to_chat(user, span_warning("There is already a power cell inside!"))
 		return FALSE
 	else if(!user.transferItemToLoc(I, src))
 		return
 	cell = I
-	user.visible_message(span_notice("[user] inserts a power cell into [src].") , span_notice("You insert the power cell into [src].") )
+	user.visible_message(span_notice("[user] inserts a power cell into [src].") , span_notice("You insert the power cell into [src]."))
 	update_appearance()
 
 /obj/item/reagent_containers/glass/maunamug/attack_hand(mob/living/user)
@@ -89,7 +89,7 @@
 		cell.update_appearance()
 		user.put_in_hands(cell)
 		cell = null
-		to_chat(user, span_notice("You remove the power cell from [src].") )
+		to_chat(user, span_notice("You remove the power cell from [src]."))
 		on = FALSE
 		update_appearance()
 		return TRUE

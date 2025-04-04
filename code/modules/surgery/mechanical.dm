@@ -64,7 +64,7 @@
 		if(!the_surgery.antispam)
 			display_results(user, target, span_notice("You attempt to fix some of [target]'s [repairtype].") ,
 		span_notice("[user] attempts to fix some of [target]'s [repairtype].") ,
-		span_notice("[user] attempts to fix some of [target]'s [repairtype].") )
+		span_notice("[user] attempts to fix some of [target]'s [repairtype]."))
 
 /datum/surgery_step/heal/mechanic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/umsg = "You succeed in fixing some of [target]'s damages" //no period, add initial space to "addons"
@@ -147,19 +147,19 @@
 /datum/surgery_step/repair_structure/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/stack/rods = tool
 	if(!tool || rods.get_amount() < 2)
-		to_chat(user, span_warning("You need at least two rods to do this!") )
+		to_chat(user, span_warning("You need at least two rods to do this!"))
 		return -1
 	if(target_zone == BODY_ZONE_HEAD)
-		user.visible_message("[user] begins to reinforce [target]'s skull with [tool]...", span_notice("You begin to reinforce [target]'s skull with [tool]...") )
+		user.visible_message("[user] begins to reinforce [target]'s skull with [tool]...", span_notice("You begin to reinforce [target]'s skull with [tool]..."))
 	else
-		user.visible_message("[user] begins to replace the rods in [target]'s [parse_zone(target_zone)]...", span_notice("You begin replacing the rods in [target]'s [parse_zone(target_zone)]...") )
+		user.visible_message("[user] begins to replace the rods in [target]'s [parse_zone(target_zone)]...", span_notice("You begin replacing the rods in [target]'s [parse_zone(target_zone)]..."))
 
 /datum/surgery_step/repair_structure/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/stack/rods = tool
 	if(!tool || rods.get_amount() < 2)
-		to_chat(user, span_warning("You need at least two rods to do this!") )
+		to_chat(user, span_warning("You need at least two rods to do this!"))
 		return FALSE
-	user.visible_message("[user] successfully restores integrity to [target]'s [parse_zone(target_zone)]!", span_notice("You successfully restore integrity to [target]'s [parse_zone(target_zone)].") )
+	user.visible_message("[user] successfully restores integrity to [target]'s [parse_zone(target_zone)]!", span_notice("You successfully restore integrity to [target]'s [parse_zone(target_zone)]."))
 	//restore all integrity-induced damage, so that they don't just weld themselves into a mess again
 	var/integ_heal = surgery.operated_bodypart.integrity_loss //ignore integrity_ignored as a little surgery bonus
 	var/brute_heal = min(surgery.operated_bodypart.brute_dam,integ_heal)

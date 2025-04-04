@@ -124,7 +124,7 @@
 	H.equipOutfit(outfit_type)
 
 /datum/antagonist/wizard/greet()
-	to_chat(owner, span_boldannounce("You are the Space Wizard!") )
+	to_chat(owner, span_boldannounce("You are the Space Wizard!"))
 	to_chat(owner, "<B>The Space Wizards Federation has given you the following tasks:</B>")
 	owner.announce_objectives()
 	to_chat(owner, "You will find a list of available spells in your spell book. Choose your magic arsenal carefully.")
@@ -133,7 +133,7 @@
 	to_chat(owner,"<B>Remember:</B> do not forget to prepare your spells.")
 
 /datum/antagonist/wizard/farewell()
-	to_chat(owner, span_userdanger("You have been brainwashed! You are no longer a wizard!") )
+	to_chat(owner, span_userdanger("You have been brainwashed! You are no longer a wizard!"))
 
 /datum/antagonist/wizard/proc/rename_wizard()
 	set waitfor = FALSE

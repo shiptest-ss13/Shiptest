@@ -56,7 +56,7 @@
 	R.transfer_fingerprints_to(TP)
 	TP.add_fingerprint(user)
 	TP.setDir(turn(src.dir, -90))
-	user.visible_message(span_notice("[user] inserts [R].") , span_notice("You insert [R].") )
+	user.visible_message(span_notice("[user] inserts [R].") , span_notice("You insert [R]."))
 	qdel(R)
 
 
@@ -70,10 +70,10 @@
 				var/mob/living/GM = user.pulling
 				if(user.grab_state >= GRAB_AGGRESSIVE)
 					if(GM.buckled || GM.has_buckled_mobs())
-						to_chat(user, span_warning("[GM] is attached to something!") )
+						to_chat(user, span_warning("[GM] is attached to something!"))
 						return
 					for(var/obj/structure/transit_tube_pod/pod in loc)
-						pod.visible_message(span_warning("[user] starts putting [GM] into the [pod]!") )
+						pod.visible_message(span_warning("[user] starts putting [GM] into the [pod]!"))
 						if(do_after(user, 15, target = src))
 							if(open_status == STATION_TUBE_OPEN && GM && user.grab_state >= GRAB_AGGRESSIVE && user.pulling == GM && !GM.buckled && !GM.has_buckled_mobs())
 								GM.Paralyze(100)
@@ -87,7 +87,7 @@
 
 					else if(open_status == STATION_TUBE_OPEN)
 						if(pod.contents.len && user.loc != pod)
-							user.visible_message(span_notice("[user] starts emptying [pod]'s contents onto the floor.") , span_notice("You start emptying [pod]'s contents onto the floor...") )
+							user.visible_message(span_notice("[user] starts emptying [pod]'s contents onto the floor.") , span_notice("You start emptying [pod]'s contents onto the floor..."))
 							if(do_after(user, 10, target = src)) //So it doesn't default to close_animation() on fail
 								if(pod && pod.loc == loc)
 									for(var/atom/movable/AM in pod)
@@ -245,7 +245,7 @@
 	if(!(istype(AM) && AM.dir == boarding_dir))
 		return
 	var/obj/structure/transit_tube_pod/dispensed/pod = new(loc)
-	AM.visible_message(span_notice("[pod] forms around [AM].") , span_notice("[pod] materializes around you.") )
+	AM.visible_message(span_notice("[pod] forms around [AM].") , span_notice("[pod] materializes around you."))
 	playsound(src, 'sound/weapons/emitter2.ogg', 50, TRUE)
 	pod.setDir(turn(src.dir, -90))
 	AM.forceMove(pod)

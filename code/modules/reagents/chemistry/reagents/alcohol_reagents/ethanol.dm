@@ -58,14 +58,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(istype(O, /obj/item/paper))
 		var/obj/item/paper/paperaffected = O
 		paperaffected.clear_paper()
-		to_chat(usr, span_notice("[paperaffected]'s ink washes away.") )
+		to_chat(usr, span_notice("[paperaffected]'s ink washes away."))
 	if(istype(O, /obj/item/book))
 		if(reac_volume >= 5)
 			var/obj/item/book/affectedbook = O
 			affectedbook.dat = null
-			O.visible_message(span_notice("[O]'s writing is washed away by [name]!") )
+			O.visible_message(span_notice("[O]'s writing is washed away by [name]!"))
 		else
-			O.visible_message(span_warning("[O]'s ink is smeared by [name], but doesn't wash away!") )
+			O.visible_message(span_warning("[O]'s ink is smeared by [name], but doesn't wash away!"))
 	return
 
 /datum/reagent/consumable/ethanol/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with ethanol isn't quite as good as fuel.

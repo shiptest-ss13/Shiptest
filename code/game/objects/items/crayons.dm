@@ -139,12 +139,12 @@
 	if(charges == -1)
 		. = FALSE
 	else if(!charges_left)
-		to_chat(user, span_warning("There is no more of [src] left!") )
+		to_chat(user, span_warning("There is no more of [src] left!"))
 		if(self_contained)
 			qdel(src)
 		. = TRUE
 	else if(charges_left < amount && requires_full)
-		to_chat(user, span_warning("There is not enough of [src] left!") )
+		to_chat(user, span_warning("There is not enough of [src] left!"))
 		. = TRUE
 
 /obj/item/toy/crayon/ui_state(mob/user)
@@ -162,7 +162,7 @@
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(has_cap)
 			is_capped = !is_capped
-			to_chat(user, span_notice("The cap on [src] is now [is_capped ? "on" : "off"].") )
+			to_chat(user, span_notice("The cap on [src] is now [is_capped ? "on" : "off"]."))
 			update_appearance()
 
 /obj/item/toy/crayon/CtrlClick(mob/user)
@@ -340,10 +340,10 @@
 		clicky = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 
 	if(!instant)
-		to_chat(user, span_notice("You start drawing a [temp] on the	[target.name]...") )
+		to_chat(user, span_notice("You start drawing a [temp] on the	[target.name]..."))
 
 	if(pre_noise)
-		audible_message(span_notice("You hear spraying.") )
+		audible_message(span_notice("You hear spraying."))
 		playsound(user.loc, 'sound/effects/spray.ogg', 5, TRUE, 5)
 
 	var/wait_time = 50
@@ -376,22 +376,22 @@
 					affected_turfs += right
 					affected_turfs += target
 				else
-					to_chat(user, span_warning("There isn't enough space to paint!") )
+					to_chat(user, span_warning("There isn't enough space to paint!"))
 					return
 		C.add_hiddenprint(user)
 		C.AddComponent(/datum/component/art, GOOD_ART)
 
 	if(!instant)
-		to_chat(user, span_notice("You finish drawing \the [temp].") )
+		to_chat(user, span_notice("You finish drawing \the [temp]."))
 	else
-		to_chat(user, span_notice("You spray a [temp] on \the [target.name]") )
+		to_chat(user, span_notice("You spray a [temp] on \the [target.name]"))
 
 	if(length(text_buffer) > 1)
 		text_buffer = copytext(text_buffer, length(text_buffer[1]) + 1)
 		SStgui.update_uis(src)
 
 	if(post_noise)
-		audible_message(span_hear("You hear spraying.") )
+		audible_message(span_hear("You hear spraying."))
 		playsound(user.loc, 'sound/effects/spray.ogg', 5, TRUE, 5)
 
 	var/fraction = min(1, . / reagents.maximum_volume)
@@ -411,9 +411,9 @@
 			else if(C.is_mouth_covered(mask_only = 1))
 				covered = "mask"
 			if(covered)
-				to_chat(C, span_warning("You have to remove your [covered] first!") )
+				to_chat(C, span_warning("You have to remove your [covered] first!"))
 				return
-		to_chat(user, span_notice("You take a bite of the [src.name]. Delicious!") )
+		to_chat(user, span_notice("You take a bite of the [src.name]. Delicious!"))
 		var/eaten = use_charges(user, 5, FALSE)
 		if(check_empty(user)) //Prevents divsion by zero
 			return
@@ -425,7 +425,7 @@
 /obj/item/toy/crayon/proc/can_claim_for_gang(mob/user, atom/target)
 	var/area/A = get_area(target)
 	if(!A)
-		to_chat(user, span_warning("[A] is unsuitable for tagging.") )
+		to_chat(user, span_warning("[A] is unsuitable for tagging."))
 		return FALSE
 
 	var/spraying_over = FALSE
@@ -433,12 +433,12 @@
 		spraying_over = TRUE
 
 	for(var/obj/machinery/power/apc in target)
-		to_chat(user, span_warning("You can't tag an APC.") )
+		to_chat(user, span_warning("You can't tag an APC."))
 		return FALSE
 
 	var/occupying_gang = territory_claimed(A, user)
 	if(occupying_gang && !spraying_over)
-		to_chat(user, span_danger("[A] has already been tagged by a gang! You must find and spray over the old tag first!") )
+		to_chat(user, span_danger("[A] has already been tagged by a gang! You must find and spray over the old tag first!"))
 		return FALSE
 
 	// stolen from oldgang lmao
@@ -564,13 +564,13 @@
 		var/obj/item/toy/crayon/C = W
 		switch(C.crayon_color)
 			if("mime")
-				to_chat(usr, span_warning("This crayon is too sad to be contained in this box!") )
+				to_chat(usr, span_warning("This crayon is too sad to be contained in this box!"))
 				return
 			if("rainbow")
-				to_chat(usr, span_warning("This crayon is too powerful to be contained in this box!") )
+				to_chat(usr, span_warning("This crayon is too powerful to be contained in this box!"))
 				return
 		if(istype(W, /obj/item/toy/crayon/spraycan))
-			to_chat(user, span_warning("Spraycans are not crayons!") )
+			to_chat(user, span_warning("Spraycans are not crayons!"))
 			return
 	return ..()
 
@@ -630,7 +630,7 @@
 		return
 
 	if(is_capped)
-		to_chat(user, span_warning("Take the cap off first!") )
+		to_chat(user, span_warning("Take the cap off first!"))
 		return
 
 	if(check_empty(user))
@@ -645,8 +645,8 @@
 			playsound(user.loc, 'sound/effects/spray.ogg', 25, TRUE, 5)
 
 		var/mob/living/carbon/C = target
-		user.visible_message(span_danger("[user] sprays [src] into the face of [target]!") )
-		to_chat(target, span_userdanger("[user] sprays [src] into your face!") )
+		user.visible_message(span_danger("[user] sprays [src] into the face of [target]!"))
+		to_chat(target, span_userdanger("[user] sprays [src] into your face!"))
 
 		if(C.client)
 			C.blur_eyes(3)
@@ -667,7 +667,7 @@
 	if(isobj(target) && !istype(target, /obj/effect/decal/cleanable/crayon/gang))
 		if(actually_paints)
 			if(color_hex2num(paint_color) < 350 && !istype(target, /obj/structure/window) && !istype(target, /obj/effect/decal/cleanable/crayon)) //Colors too dark are rejected
-				to_chat(usr, span_warning("A color that dark on an object like this? Surely not...") )
+				to_chat(usr, span_warning("A color that dark on an object like this? Surely not..."))
 				return FALSE
 
 			target.add_atom_colour(paint_color, WASHABLE_COLOUR_PRIORITY)
@@ -683,7 +683,7 @@
 
 		if(pre_noise || post_noise)
 			playsound(user.loc, 'sound/effects/spray.ogg', 5, TRUE, 5)
-		user.visible_message(span_notice("[user] coats [target] with spray paint!") , span_notice("You coat [target] with spray paint.") )
+		user.visible_message(span_notice("[user] coats [target] with spray paint!") , span_notice("You coat [target] with spray paint."))
 		return
 
 	. = ..()
@@ -707,7 +707,7 @@
 /obj/item/toy/crayon/spraycan/borg/afterattack(atom/target,mob/user,proximity, params)
 	var/diff = ..()
 	if(!iscyborg(user))
-		to_chat(user, span_notice("How did you get this?") )
+		to_chat(user, span_notice("How did you get this?"))
 		qdel(src)
 		return FALSE
 

@@ -69,7 +69,7 @@
 		playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
 		H.visible_message(
 			span_warning("[H] steps on [src] causing the handle to hit [H.p_them()] right in the face!") , \
-			span_userdanger("You step on [src] causing the handle to hit you right in the face!") )
+			span_userdanger("You step on [src] causing the handle to hit you right in the face!"))
 
 /obj/item/hatchet
 	name = "hatchet"

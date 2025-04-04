@@ -45,7 +45,7 @@
 
 /obj/machinery/processor/attackby(obj/item/O, mob/user, params)
 	if(processing)
-		to_chat(user, span_warning("[src] is in the process of processing!") )
+		to_chat(user, span_warning("[src] is in the process of processing!"))
 		return TRUE
 	if(default_deconstruction_screwdriver(user, "processor", "processor1", O))
 		return
@@ -69,42 +69,42 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("You insert [loaded] items into [src].") )
+			to_chat(user, span_notice("You insert [loaded] items into [src]."))
 		return
 
 	var/datum/food_processor_process/P = select_recipe(O)
 	if(P)
 		user.visible_message(span_notice("[user] put [O] into [src].") , \
-			span_notice("You put [O] into [src].") )
+			span_notice("You put [O] into [src]."))
 		user.transferItemToLoc(O, src, TRUE)
 		return 1
 	else
 		if(user.a_intent != INTENT_HARM)
-			to_chat(user, span_warning("That probably won't blend!") )
+			to_chat(user, span_warning("That probably won't blend!"))
 			return 1
 		else
 			return ..()
 
 /obj/machinery/processor/interact(mob/user)
 	if(processing)
-		to_chat(user, span_warning("[src] is in the process of processing!") )
+		to_chat(user, span_warning("[src] is in the process of processing!"))
 		return TRUE
 	if(user.a_intent == INTENT_GRAB && ismob(user.pulling) && select_recipe(user.pulling))
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("You need a better grip to do that!") )
+			to_chat(user, span_warning("You need a better grip to do that!"))
 			return
 		var/mob/living/pushed_mob = user.pulling
-		visible_message(span_warning("[user] stuffs [pushed_mob] into [src]!") )
+		visible_message(span_warning("[user] stuffs [pushed_mob] into [src]!"))
 		pushed_mob.forceMove(src)
 		user.stop_pulling()
 		return
 	if(contents.len == 0)
-		to_chat(user, span_warning("[src] is empty!") )
+		to_chat(user, span_warning("[src] is empty!"))
 		return TRUE
 	processing = TRUE
 	user.visible_message(span_notice("[user] turns on [src].") , \
 		span_notice("You turn on [src].") , \
-		span_hear("You hear a food processor.") )
+		span_hear("You hear a food processor."))
 	playsound(src.loc, 'sound/machines/blender.ogg', 50, TRUE)
 	use_power(500)
 	var/total_time = 0
@@ -125,7 +125,7 @@
 		process_food(P, O)
 	pixel_x = base_pixel_x //return to its spot after shaking
 	processing = FALSE
-	visible_message(span_notice("\The [src] finishes processing.") )
+	visible_message(span_notice("\The [src] finishes processing."))
 
 /obj/machinery/processor/verb/eject()
 	set category = "Object"
@@ -142,7 +142,7 @@
 
 /obj/machinery/processor/container_resist_act(mob/living/user)
 	user.forceMove(drop_location())
-	user.visible_message(span_notice("[user] crawls free of the processor!") )
+	user.visible_message(span_notice("[user] crawls free of the processor!"))
 
 /obj/machinery/processor/proc/empty()
 	for (var/obj/O in src)

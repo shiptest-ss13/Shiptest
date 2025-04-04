@@ -131,10 +131,10 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(turbine)
-			to_chat(user, span_notice("Turbine connected.") )
+			to_chat(user, span_notice("Turbine connected."))
 			set_machine_stat(machine_stat & ~BROKEN)
 		else
-			to_chat(user, span_alert("Turbine not connected.") )
+			to_chat(user, span_alert("Turbine not connected."))
 		return
 
 	default_deconstruction_crowbar(I)
@@ -310,9 +310,9 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(compressor)
-			to_chat(user, span_notice("Compressor connected.") )
+			to_chat(user, span_notice("Compressor connected."))
 		else
-			to_chat(user, span_alert("Compressor not connected.") )
+			to_chat(user, span_alert("Compressor not connected."))
 			obj_break()
 		return
 

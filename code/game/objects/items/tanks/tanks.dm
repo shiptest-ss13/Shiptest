@@ -31,7 +31,7 @@
 		return
 
 	if(breather.internal == src)
-		to_chat(breather, span_notice("You close [src] valve.") )
+		to_chat(breather, span_notice("You close [src] valve."))
 		breather.internal = null
 		breather.update_internals_hud_icon(0)
 	else
@@ -51,13 +51,13 @@
 					internals = TRUE
 
 			if(!internals)
-				to_chat(breather, span_warning("You are not wearing an internals mask!") )
+				to_chat(breather, span_warning("You are not wearing an internals mask!"))
 				return
 
 		if(breather.internal)
-			to_chat(breather, span_notice("You switch your internals to [src].") )
+			to_chat(breather, span_notice("You switch your internals to [src]."))
 		else
-			to_chat(breather, span_notice("You open [src] valve.") )
+			to_chat(breather, span_notice("You open [src] valve."))
 		breather.internal = src
 		breather.update_internals_hud_icon(1)
 	breather.update_action_buttons_icon()

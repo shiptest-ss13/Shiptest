@@ -43,12 +43,12 @@
 	var/obj/item/reagent_containers/food/snacks/grown/fruit = I
 	if(istype(fruit))
 		if(!fruit.can_distill)
-			to_chat(user, span_warning("You can't distill this into anything...") )
+			to_chat(user, span_warning("You can't distill this into anything..."))
 			return TRUE
 		else if(!user.transferItemToLoc(I,src))
-			to_chat(user, span_warning("[I] is stuck to your hand!") )
+			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return TRUE
-		to_chat(user, span_notice("You place [I] into [src] to start the fermentation process.") )
+		to_chat(user, span_notice("You place [I] into [src] to start the fermentation process."))
 		addtimer(CALLBACK(src, PROC_REF(makeWine), fruit), rand(80, 120) * speed_multiplier)
 		return TRUE
 	if(I)
@@ -62,11 +62,11 @@
 	if(open)
 		reagents.flags &= ~(DRAINABLE)
 		reagents.flags |= REFILLABLE
-		to_chat(user, span_notice("You open [src], letting you fill it.") )
+		to_chat(user, span_notice("You open [src], letting you fill it."))
 	else
 		reagents.flags |= DRAINABLE
 		reagents.flags &= ~(REFILLABLE)
-		to_chat(user, span_notice("You close [src], letting you draw from its tap.") )
+		to_chat(user, span_notice("You close [src], letting you draw from its tap."))
 	update_appearance()
 
 /obj/structure/fermenting_barrel/update_icon_state()

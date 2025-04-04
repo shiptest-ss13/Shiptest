@@ -27,27 +27,27 @@
 	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
 	if(W.GetID())
 		if(broken)
-			to_chat(user, span_danger("It appears to be broken.") )
+			to_chat(user, span_danger("It appears to be broken."))
 			return
 		if(allowed(user))
 			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, !locked)
 			locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
 			if(locked)
 				icon_state = icon_locked
-				to_chat(user, span_danger("You lock the [src.name]!") )
+				to_chat(user, span_danger("You lock the [src.name]!"))
 				SEND_SIGNAL(src, COMSIG_TRY_STORAGE_HIDE_ALL)
 				return
 			else
 				icon_state = icon_closed
-				to_chat(user, span_danger("You unlock the [src.name]!") )
+				to_chat(user, span_danger("You unlock the [src.name]!"))
 				return
 		else
-			to_chat(user, span_danger("Access Denied.") )
+			to_chat(user, span_danger("Access Denied."))
 			return
 	if(!locked)
 		return ..()
 	else
-		to_chat(user, span_danger("It's locked!") )
+		to_chat(user, span_danger("It's locked!"))
 
 /obj/item/storage/lockbox/emag_act(mob/user)
 	if(!broken)
@@ -56,7 +56,7 @@
 		desc += "It appears to be broken."
 		icon_state = src.icon_broken
 		if(user)
-			visible_message(span_warning("\The [src] is broken by [user] with an electromagnetic card!") )
+			visible_message(span_warning("\The [src] is broken by [user] with an electromagnetic card!"))
 			return
 
 /obj/item/storage/lockbox/Entered()

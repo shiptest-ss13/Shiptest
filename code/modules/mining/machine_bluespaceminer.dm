@@ -87,23 +87,23 @@
 	add_fingerprint(user)
 	if(anchored)
 		if(!powernet)
-			to_chat(user, span_warning("\The [src] isn't connected to a wire!") )
+			to_chat(user, span_warning("\The [src] isn't connected to a wire!"))
 			return TRUE
 		if(panel_open)
-			to_chat(user, span_warning("\The maintenence hatch for the [src] is exposed!") )
+			to_chat(user, span_warning("\The maintenence hatch for the [src] is exposed!"))
 			return TRUE
 		if(active)
 			active = FALSE
-			to_chat(user, span_notice("You turn off the [src].") )
+			to_chat(user, span_notice("You turn off the [src]."))
 		else
 			if(!materials?.silo || materials?.on_hold())
-				to_chat(user, span_warning("ERROR CONNECTING TO ORE SILO! Please check your connection, and try again.") )
+				to_chat(user, span_warning("ERROR CONNECTING TO ORE SILO! Please check your connection, and try again."))
 				return TRUE
 			active = TRUE
-			to_chat(user, span_notice("You turn on the [src].") )
+			to_chat(user, span_notice("You turn on the [src]."))
 		update_appearance()
 	else
-		to_chat(user, span_warning("[src] needs to be firmly secured to the floor first!") )
+		to_chat(user, span_warning("[src] needs to be firmly secured to the floor first!"))
 		return TRUE
 
 /obj/machinery/power/bluespace_miner/process(seconds_per_tick)
@@ -135,7 +135,7 @@
 
 /obj/machinery/power/bluespace_miner/can_be_unfasten_wrench(mob/user, silent)
 	if(active)
-		to_chat(user, span_warning("Turn \the [src] off first!") )
+		to_chat(user, span_warning("Turn \the [src] off first!"))
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -152,7 +152,7 @@
 	if(..())
 		return TRUE
 	if(active)
-		to_chat(user, span_warning("Turn \the [src] off first!") )
+		to_chat(user, span_warning("Turn \the [src] off first!"))
 		return TRUE
 	default_deconstruction_screwdriver(user, "bsm_t", "bsm_off", I)
 	update_icon_state()

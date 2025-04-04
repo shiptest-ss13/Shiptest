@@ -24,7 +24,7 @@
 		if(isanimal(target))
 			var/mob/living/simple_animal/M = target
 			if(M.sentience_type != revive_type)
-				to_chat(user, span_info("[src] does not work on this sort of creature.") )
+				to_chat(user, span_info("[src] does not work on this sort of creature."))
 				return
 			if(M.stat == DEAD)
 				M.faction = list("neutral")
@@ -40,16 +40,16 @@
 					else
 						H.attack_same = 0
 				loaded = 0
-				user.visible_message(span_notice("[user] injects [M] with [src], reviving it.") )
+				user.visible_message(span_notice("[user] injects [M] with [src], reviving it."))
 				SSblackbox.record_feedback("tally", "lazarus_injector", 1, M.type)
 				playsound(src,'sound/effects/refill.ogg',50,TRUE)
 				icon_state = "lazarus_empty"
 				return
 			else
-				to_chat(user, span_info("[src] is only effective on the dead.") )
+				to_chat(user, span_info("[src] is only effective on the dead."))
 				return
 		else
-			to_chat(user, span_info("[src] is only effective on lesser beings.") )
+			to_chat(user, span_info("[src] is only effective on lesser beings."))
 			return
 
 /obj/item/lazarus_injector/emp_act()

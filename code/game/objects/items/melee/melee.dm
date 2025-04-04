@@ -9,7 +9,7 @@
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_block())
 		target.visible_message(span_danger("[target.name] blocks [src] and twists [user]'s arm behind [user.p_their()] back!") ,
-					span_userdanger("You block the attack!") )
+					span_userdanger("You block the attack!"))
 		user.Stun(40)
 		return TRUE
 
@@ -62,7 +62,7 @@
 	if(ishuman(target) && proximity_flag)
 		var/mob/living/carbon/human/H = target
 		H.drop_all_held_items()
-		H.visible_message(span_danger("[user] disarms [H]!") , span_userdanger("[user] disarmed you!") )
+		H.visible_message(span_danger("[user] disarms [H]!") , span_userdanger("[user] disarmed you!"))
 
 /obj/item/melee/cleric_mace
 	name = "cleric mace"
@@ -111,13 +111,13 @@
 		..()
 		return
 	if(homerun_ready)
-		to_chat(user, span_warning("You're already ready to do a home run!") )
+		to_chat(user, span_warning("You're already ready to do a home run!"))
 		..()
 		return
-	to_chat(user, span_warning("You begin gathering strength...") )
+	to_chat(user, span_warning("You begin gathering strength..."))
 	playsound(get_turf(src), 'sound/magic/lightning_chargeup.ogg', 65, TRUE)
 	if(do_after(user, 90, target = src))
-		to_chat(user, span_userdanger("You gather power! Time for a home run!") )
+		to_chat(user, span_userdanger("You gather power! Time for a home run!"))
 		homerun_ready = 1
 	..()
 
@@ -125,7 +125,7 @@
 	. = ..()
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
 	if(homerun_ready)
-		user.visible_message(span_userdanger("It's a home run!") )
+		user.visible_message(span_userdanger("It's a home run!"))
 		target.throw_at(throw_target, rand(8,10), 14, user)
 		SSexplosions.medturf += throw_target
 		playsound(get_turf(src), 'sound/weapons/homerun.ogg', 100, TRUE)
@@ -184,7 +184,7 @@
 	if(proximity_flag)
 		if(is_type_in_typecache(target, strong_against))
 			new /obj/effect/decal/cleanable/insectguts(target.drop_location())
-			to_chat(user, span_warning("You easily splat the [target].") )
+			to_chat(user, span_warning("You easily splat the [target]."))
 			if(istype(target, /mob/living/))
 				var/mob/living/bug = target
 				bug.death(1)
@@ -215,14 +215,14 @@
 		qdel(src)
 
 		user.put_in_hands(S)
-		to_chat(user, span_notice("You fasten the glass shard to the top of the rod with the cable.") )
+		to_chat(user, span_notice("You fasten the glass shard to the top of the rod with the cable."))
 
 	else if(istype(I, /obj/item/assembly/igniter) && !(HAS_TRAIT(I, TRAIT_NODROP)))
 		var/obj/item/melee/baton/cattleprod/P = new /obj/item/melee/baton/cattleprod
 
 		remove_item_from_storage(user)
 
-		to_chat(user, span_notice("You fasten [I] to the top of the rod with the cable.") )
+		to_chat(user, span_notice("You fasten [I] to the top of the rod with the cable."))
 
 		qdel(I)
 		qdel(src)

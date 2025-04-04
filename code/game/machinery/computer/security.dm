@@ -300,7 +300,7 @@ What a mess.*/
 					rank = I.assignment
 					screen = 1
 				else
-					to_chat(usr, span_danger("Unauthorized Access.") )
+					to_chat(usr, span_danger("Unauthorized Access."))
 				playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 
 //RECORD FUNCTIONS

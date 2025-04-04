@@ -86,12 +86,12 @@
 
 	if(!attacker) //if there's no attacker, then attacker_controller IS the attacker
 		if(!in_range(src, attacker_controller))
-			attacker_controller.visible_message(span_suicide("[attacker_controller] is running from [src]! The coward!") )
+			attacker_controller.visible_message(span_suicide("[attacker_controller] is running from [src]! The coward!"))
 			return FALSE
 	else // if there's an attacker, we can procede as normal
 		if(!in_range(src, attacker)) //and the two toys aren't next to each other, the battle ends
 			attacker_controller.visible_message(span_notice(" [attacker] and [src] separate, ending the battle. ") , \
-								span_notice(" [attacker] and [src] separate, ending the battle. ") )
+								span_notice(" [attacker] and [src] separate, ending the battle. "))
 			return FALSE
 
 		//dead men tell no tales, incapacitated men fight no fights
@@ -100,7 +100,7 @@
 		//if the attacker_controller isn't next to the attacking toy (and doesn't have telekinesis), the battle ends
 		if(!in_range(attacker, attacker_controller) && !(attacker_controller.dna.check_mutation(TK)))
 			attacker_controller.visible_message(span_notice(" [attacker_controller.name] seperates from [attacker], ending the battle.") , \
-								span_notice(" You separate from [attacker], ending the battle. ") )
+								span_notice(" You separate from [attacker], ending the battle. "))
 			return FALSE
 
 		//if it's PVP and the opponent is not next to the defending(src) toy (and doesn't have telekinesis), the battle ends
@@ -109,13 +109,13 @@
 				return FALSE
 			if(!in_range(src, opponent) && !(opponent.dna.check_mutation(TK)))
 				opponent.visible_message(span_notice(" [opponent.name] seperates from [src], ending the battle.") , \
-							span_notice(" You separate from [src], ending the battle. ") )
+							span_notice(" You separate from [src], ending the battle. "))
 				return FALSE
 		//if it's not PVP and the attacker_controller isn't next to the defending toy (and doesn't have telekinesis), the battle ends
 		else
 			if (!in_range(src, attacker_controller) && !(attacker_controller.dna.check_mutation(TK)))
 				attacker_controller.visible_message(span_notice(" [attacker_controller.name] seperates from [src] and [attacker], ending the battle.") , \
-									span_notice(" You separate [attacker] and [src], ending the battle. ") )
+									span_notice(" You separate [attacker] and [src], ending the battle. "))
 				return FALSE
 
 	//if all that is good, then we can sleep peacefully
@@ -125,7 +125,7 @@
 //all credit to skasi for toy mech fun ideas
 /obj/item/toy/prize/attack_self(mob/user)
 	if(timer < world.time)
-		to_chat(user, span_notice("You play with [src].") )
+		to_chat(user, span_notice("You play with [src]."))
 		timer = world.time + cooldown
 		if(!quiet)
 			playsound(user, 'sound/mecha/mechstep.ogg', 20, TRUE)
@@ -154,11 +154,11 @@
  */
 /obj/item/toy/prize/attack(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target == user)
-		to_chat(user, span_notice("Target another toy mech if you want to start a battle with yourself.") )
+		to_chat(user, span_notice("Target another toy mech if you want to start a battle with yourself."))
 		return
 	else if(user.a_intent != INTENT_HARM)
 		if(wants_to_battle) //prevent spamming someone with offers
-			to_chat(user, span_notice("You already are offering battle to someone!") )
+			to_chat(user, span_notice("You already are offering battle to someone!"))
 			return
 		if(!check_battle_start(user)) //if the user's mech isn't ready, don't bother checking
 			return
@@ -176,8 +176,8 @@
 					return
 
 		//extend the offer of battle to the other mech
-		to_chat(user, span_notice("You offer battle to [target.name]!") )
-		to_chat(target, span_notice("<b>[user.name] wants to battle with [user.p_their()] [name]!</b> <i>Attack them with a toy mech to initiate combat.</i>") )
+		to_chat(user, span_notice("You offer battle to [target.name]!"))
+		to_chat(target, span_notice("<b>[user.name] wants to battle with [user.p_their()] [name]!</b> <i>Attack them with a toy mech to initiate combat.</i>"))
 		wants_to_battle = TRUE
 		addtimer(CALLBACK(src, PROC_REF(withdraw_offer), user), 6 SECONDS)
 		return
@@ -189,7 +189,7 @@
  */
 /obj/item/toy/prize/attack_tk(mob/user)
 	if(timer < world.time)
-		to_chat(user, span_notice("You telekinetically play with [src].") )
+		to_chat(user, span_notice("You telekinetically play with [src]."))
 		timer = world.time + cooldown
 		if(!quiet)
 			playsound(user, 'sound/mecha/mechstep.ogg', 20, TRUE)
@@ -204,7 +204,7 @@
 /obj/item/toy/prize/proc/withdraw_offer(mob/living/carbon/user)
 	if(wants_to_battle)
 		wants_to_battle = FALSE
-		to_chat(user, span_notice("You get the feeling they don't want to battle.") )
+		to_chat(user, span_notice("You get the feeling they don't want to battle."))
 
 /obj/item/toy/prize/examine()
 	. = ..()
@@ -265,12 +265,12 @@
 		//before we do anything - deal with charged attacks
 		if(special_attack_charged)
 			src_controller.visible_message(span_danger(" [src] unleashes its special attack!! ") , \
-							span_danger(" You unleash [src]'s special attack! ") )
+							span_danger(" You unleash [src]'s special attack! "))
 			special_attack_move(attacker)
 		else if(attacker.special_attack_charged)
 
 			attacker_controller.visible_message(span_danger(" [attacker] unleashes its special attack!! ") , \
-								span_danger(" You unleash [attacker]'s special attack! ") )
+								span_danger(" You unleash [attacker]'s special attack! "))
 			attacker.special_attack_move(src)
 		else
 			//process the cooldowns
@@ -285,7 +285,7 @@
 					if(attacker.special_attack_cooldown == 0 && attacker.combat_health <= round(attacker.max_combat_health/3)) //if health is less than 1/3 and special off CD, use it
 						attacker.special_attack_charged = TRUE
 						attacker_controller.visible_message(span_danger(" [attacker] begins charging its special attack!! ") , \
-											span_danger(" You begin charging [attacker]'s special attack! ") )
+											span_danger(" You begin charging [attacker]'s special attack! "))
 					else //just attack
 						attacker.SpinAnimation(5, 0)
 						playsound(attacker, 'sound/mecha/mechstep.ogg', 30, TRUE)
@@ -329,7 +329,7 @@
 					if(special_attack_cooldown == 0 && combat_health <= round(max_combat_health/3)) //if health is less than 1/3 and special off CD, use it
 						special_attack_charged = TRUE
 						src_controller.visible_message(span_danger(" [src] begins charging its special attack!! ") , \
-										span_danger(" You begin charging [src]'s special attack! ") )
+										span_danger(" You begin charging [src]'s special attack! "))
 					else //just attack
 						SpinAnimation(5, 0)
 						playsound(src, 'sound/mecha/mechstep.ogg', 30, TRUE)
@@ -344,7 +344,7 @@
 											span_boldwarning(" ...and you land a CRIPPLING blow on [attacker]! ") , null, COMBAT_MESSAGE_RANGE)
 				else
 					attacker_controller.visible_message(span_notice(" [src] and [attacker] stand around awkwardly.") , \
-										span_notice(" You don't know what to do next.") )
+										span_notice(" You don't know what to do next."))
 
 		battle_length++
 		sleep(0.5 SECONDS)
@@ -355,7 +355,7 @@
 	if(attacker.combat_health <= 0 && combat_health <= 0) //both lose
 		playsound(src, 'sound/machines/warning-buzzer.ogg', 20, TRUE)
 		attacker_controller.visible_message(span_boldnotice(" MUTUALLY ASSURED DESTRUCTION!! [src] and [attacker] both end up destroyed!") , \
-							span_boldnotice(" Both [src] and [attacker] are destroyed!") )
+							span_boldnotice(" Both [src] and [attacker] are destroyed!"))
 	else if(attacker.combat_health <= 0) //src wins
 		wins++
 		attacker.losses++
@@ -364,7 +364,7 @@
 							span_notice(" [attacker] falls apart!") , null, COMBAT_MESSAGE_RANGE)
 		say("[pick(winlines)]")
 		src_controller.visible_message(span_notice(" [src] destroys [attacker] and walks away victorious!") , \
-						span_notice(" You raise up [src] victoriously over [attacker]!") )
+						span_notice(" You raise up [src] victoriously over [attacker]!"))
 	else if (combat_health <= 0) //attacker wins
 		attacker.wins++
 		losses++
@@ -400,20 +400,20 @@
  */
 /obj/item/toy/prize/proc/check_battle_start(mob/living/carbon/user, obj/item/toy/prize/attacker, mob/living/carbon/target)
 	if(attacker && attacker.in_combat)
-		to_chat(user, span_notice("[target?target.p_their() : "Your" ] [attacker.name] is in combat.") )
-		target && to_chat(target, span_notice("Your [attacker.name] is in combat.") )
+		to_chat(user, span_notice("[target?target.p_their() : "Your" ] [attacker.name] is in combat."))
+		target && to_chat(target, span_notice("Your [attacker.name] is in combat."))
 		return FALSE
 	if(in_combat)
-		to_chat(user, span_notice("Your [name] is in combat.") )
-		target && to_chat(target, span_notice("[target.p_their()] [name] is in combat.") )
+		to_chat(user, span_notice("Your [name] is in combat."))
+		target && to_chat(target, span_notice("[target.p_their()] [name] is in combat."))
 		return FALSE
 	if(attacker && attacker.timer > world.time)
-		to_chat(user, span_notice("[target?target.p_their() : "Your" ] [attacker.name] isn't ready for battle.") )
-		target && to_chat(target, span_notice("Your [attacker.name] isn't ready for battle.") )
+		to_chat(user, span_notice("[target?target.p_their() : "Your" ] [attacker.name] isn't ready for battle."))
+		target && to_chat(target, span_notice("Your [attacker.name] isn't ready for battle."))
 		return FALSE
 	if(timer > world.time)
-		to_chat(user, span_notice("Your [name] isn't ready for battle.") )
-		target && to_chat(target, span_notice("[target.p_their()] [name] isn't ready for battle.") )
+		to_chat(user, span_notice("Your [name] isn't ready for battle."))
+		target && to_chat(target, span_notice("[target.p_their()] [name] isn't ready for battle."))
 		return FALSE
 
 	return TRUE
@@ -455,7 +455,7 @@
  * * victim - the toy being hit by the super special move (doesn't necessarily need to be used)
  */
 /obj/item/toy/prize/proc/super_special_attack(obj/item/toy/prize/victim)
-	visible_message(span_notice(" [src] does a cool flip.") )
+	visible_message(span_notice(" [src] does a cool flip."))
 
 /obj/item/toy/prize/ripley
 	name = "toy Ripley"

@@ -103,7 +103,7 @@
 		new /obj/effect/temp_visual/dragon_swoop/legionnaire(T)
 		T = get_step(T, dir_to_target)
 	playsound(src,'sound/magic/demon_attack1.ogg', 200, 1)
-	visible_message(span_boldwarning("[src] prepares to charge!") )
+	visible_message(span_boldwarning("[src] prepares to charge!"))
 	addtimer(CALLBACK(src, PROC_REF(legionnaire_charge_2), dir_to_target, 0), 5)
 
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/legionnaire_charge_2(move_dir, times_ran)
@@ -127,8 +127,8 @@
 		if(faction_check_mob(L))
 			return
 		hit_things += L
-		visible_message(span_boldwarning("[src] attacks [L] with much force!") )
-		to_chat(L, span_userdanger("[src] grabs you and throws you with much force!") )
+		visible_message(span_boldwarning("[src] attacks [L] with much force!"))
+		to_chat(L, span_userdanger("[src] grabs you and throws you with much force!"))
 		L.safe_throw_at(throwtarget, 10, 1, src)
 		L.Paralyze(20)
 		L.adjustBruteLoss(50)
@@ -144,7 +144,7 @@
 		icon_state = "legionnaire_headless"
 		icon_living = "legionnaire_headless"
 		icon_aggro = "legionnaire_headless"
-		visible_message(span_boldwarning("[src]'s head flies off!") )
+		visible_message(span_boldwarning("[src]'s head flies off!"))
 		var/mob/living/simple_animal/hostile/asteroid/elite/legionnairehead/newhead = new /mob/living/simple_animal/hostile/asteroid/elite/legionnairehead(loc)
 		newhead.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
 		newhead.GiveTarget(target)
@@ -169,7 +169,7 @@
 	icon_state = "legionnaire"
 	icon_living = "legionnaire"
 	icon_aggro = "legionnaire"
-	visible_message(span_boldwarning("The top of [src]'s spine leaks a black liquid, forming into a skull!") )
+	visible_message(span_boldwarning("The top of [src]'s spine leaks a black liquid, forming into a skull!"))
 
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/bonfire_teleport()
 	ranged_cooldown = world.time + 5
@@ -178,7 +178,7 @@
 		mypile = newpile
 		mypile.myowner = src
 		playsound(get_turf(src),'sound/items/fultext_deploy.ogg', 200, 1)
-		visible_message(span_boldwarning("[src] summons a bonfire on [get_turf(src)]!") )
+		visible_message(span_boldwarning("[src] summons a bonfire on [get_turf(src)]!"))
 		return
 	else
 		var/turf/legionturf = get_turf(src)
@@ -189,9 +189,9 @@
 			return
 		playsound(pileturf,'sound/items/fultext_deploy.ogg', 200, 1)
 		playsound(legionturf,'sound/items/fultext_deploy.ogg', 200, 1)
-		visible_message(span_boldwarning("[src] melts down into a burning pile of bones!") )
+		visible_message(span_boldwarning("[src] melts down into a burning pile of bones!"))
 		forceMove(pileturf)
-		visible_message(span_boldwarning("[src] forms from the bonfire!") )
+		visible_message(span_boldwarning("[src] forms from the bonfire!"))
 		mypile.forceMove(legionturf)
 
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/spew_smoke()
@@ -202,11 +202,11 @@
 	else
 		T = get_turf(src)
 	if(myhead != null)
-		myhead.visible_message(span_boldwarning("[myhead] spews smoke from its maw!") )
+		myhead.visible_message(span_boldwarning("[myhead] spews smoke from its maw!"))
 	else if(!has_head)
-		visible_message(span_boldwarning("[src] spews smoke from the tip of their spine!") )
+		visible_message(span_boldwarning("[src] spews smoke from the tip of their spine!"))
 	else
-		visible_message(span_boldwarning("[src] spews smoke from its maw!") )
+		visible_message(span_boldwarning("[src] spews smoke from its maw!"))
 	var/datum/effect_system/smoke_spread/smoke = new
 	smoke.set_up(2, T)
 	smoke.start()

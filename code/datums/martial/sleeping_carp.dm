@@ -34,11 +34,11 @@
 	var/crit_damage = 0
 	D.visible_message(span_danger("[A] [atk_verb]s [D]!") , \
 					span_userdanger("[A] [atk_verb]s you!") , null, null, A)
-	to_chat(A, span_danger("You [atk_verb] [D]!") )
+	to_chat(A, span_danger("You [atk_verb] [D]!"))
 	if(prob(10))
 		crit_damage += 20
 		playsound(get_turf(D), 'sound/weapons/bite.ogg', 50, TRUE, -1)
-		D.visible_message(span_warning("[D] is sent reeling as the blow strikes them with inhuman force!") , span_userdanger("You are struck with incredible precision by [A]!") )
+		D.visible_message(span_warning("[D] is sent reeling as the blow strikes them with inhuman force!") , span_userdanger("You are struck with incredible precision by [A]!"))
 		log_combat(A, D, "critcal strong punched (Sleeping Carp)")//log it here because a critical can swing for 40 force and it's important for the sake of how hard they hit
 	else
 		playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
@@ -93,7 +93,7 @@
 	var/atk_verb = pick("kicks", "chops", "hits", "slams")
 	D.visible_message(span_danger("[A] [atk_verb] [D]!") , \
 					span_userdanger("[A] [atk_verb]s you!") , null, null, A)
-	to_chat(A, span_danger("You [atk_verb] [D]!") )
+	to_chat(A, span_danger("You [atk_verb] [D]!"))
 	D.apply_damage(rand(10,15), BRUTE, affecting)
 	playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
 	log_combat(A, D, "punched (Sleeping Carp)")
@@ -117,7 +117,7 @@
 	if(!isturf(A.loc)) //NO MOTHERFLIPPIN MECHS!
 		return BULLET_ACT_HIT
 	if(A.throw_mode)
-		A.visible_message(span_danger("[A] effortlessly swats the projectile aside! They can block bullets with their bare hands!") , span_userdanger("You deflect the projectile!") )
+		A.visible_message(span_danger("[A] effortlessly swats the projectile aside! They can block bullets with their bare hands!") , span_userdanger("You deflect the projectile!"))
 		playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
 		P.firer = A
 		P.setAngle(rand(0, 360))//SHING
@@ -168,4 +168,4 @@
 	to_chat(usr, "[span_notice("Gnashing Teeth")]: Harm Harm. Deal additional damage every second punch, with a chance for even more damage!")
 	to_chat(usr, "[span_notice("Crashing Wave Kick")]: Harm Disarm. Launch people brutally across rooms, and away from you.")
 	to_chat(usr, "[span_notice("Keelhaul")]: Harm Grab. Kick opponents to the floor. Against prone targets, deal additional stamina damage and disarm them.")
-	to_chat(usr, span_notice("In addition, your body has become incredibly resilient to most forms of attack. Weapons cannot readily pierce your hardened skin, and you are highly resistant to stuns and knockdowns, and can block all projectiles in Throw Mode. However, you are not invincible, and sustained damage will take it's toll. Avoid heat at all costs!") )
+	to_chat(usr, span_notice("In addition, your body has become incredibly resilient to most forms of attack. Weapons cannot readily pierce your hardened skin, and you are highly resistant to stuns and knockdowns, and can block all projectiles in Throw Mode. However, you are not invincible, and sustained damage will take it's toll. Avoid heat at all costs!"))

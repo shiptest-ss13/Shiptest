@@ -208,13 +208,13 @@
 	..()
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
-	to_chat(user, span_notice("You begin welding the vent...") )
+	to_chat(user, span_notice("You begin welding the vent..."))
 	if(I.use_tool(src, user, 20, volume=50))
 		if(!welded)
-			user.visible_message(span_notice("[user] welds the vent shut.") , span_notice("You weld the vent shut.") , span_hear("You hear welding.") )
+			user.visible_message(span_notice("[user] welds the vent shut.") , span_notice("You weld the vent shut.") , span_hear("You hear welding."))
 			welded = TRUE
 		else
-			user.visible_message(span_notice("[user] unwelded the vent.") , span_notice("You unweld the vent.") , span_hear("You hear welding.") )
+			user.visible_message(span_notice("[user] unwelded the vent.") , span_notice("You unweld the vent.") , span_hear("You hear welding."))
 			welded = FALSE
 		update_appearance()
 		pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
@@ -226,7 +226,7 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational)
-		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!") )
+		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
 		return FALSE
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/examine(mob/user)
@@ -244,7 +244,7 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/attack_alien(mob/user)
 	if(!welded || !(do_after(user, 20, target = src)))
 		return
-	user.visible_message(span_warning("[user] furiously claws at [src]!") , span_notice("You manage to clear away the stuff blocking the vent.") , span_hear("You hear loud scraping noises.") )
+	user.visible_message(span_warning("[user] furiously claws at [src]!") , span_notice("You manage to clear away the stuff blocking the vent.") , span_hear("You hear loud scraping noises."))
 	welded = FALSE
 	update_appearance()
 	pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)

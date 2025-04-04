@@ -54,20 +54,20 @@
 		H.set_machine(src)
 		if(href_list["school"])
 			if(used)
-				to_chat(H, span_warning("You already used this contract!") )
+				to_chat(H, span_warning("You already used this contract!"))
 				return
 			var/list/candidates = pollCandidatesForMob("Do you want to play as a wizard's [href_list["school"]] apprentice?", ROLE_WIZARD, null, ROLE_WIZARD, 150, src)
 			if(LAZYLEN(candidates))
 				if(QDELETED(src))
 					return
 				if(used)
-					to_chat(H, span_warning("You already used this contract!") )
+					to_chat(H, span_warning("You already used this contract!"))
 					return
 				used = TRUE
 				var/mob/dead/observer/C = pick(candidates)
 				spawn_antag(C.client, get_turf(src), href_list["school"],H.mind)
 			else
-				to_chat(H, span_warning("Unable to reach your apprentice! You can either attack the spellbook with the contract to refund your points, or wait and try again later.") )
+				to_chat(H, span_warning("Unable to reach your apprentice! You can either attack the spellbook with the contract to refund your points, or wait and try again later."))
 
 /obj/item/antag_spawner/contract/spawn_antag(client/C, turf/T, kind ,datum/mind/user)
 	new /obj/effect/particle_effect/smoke(T)
@@ -107,11 +107,11 @@
 
 /obj/item/antag_spawner/nuke_ops/proc/check_usability(mob/user)
 	if(used)
-		to_chat(user, span_warning("[src] is out of power!") )
+		to_chat(user, span_warning("[src] is out of power!"))
 		return FALSE
 	if(locked)
 		if(!user.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE))
-			to_chat(user, span_danger("AUTHENTICATION FAILURE. ACCESS DENIED.") )
+			to_chat(user, span_danger("AUTHENTICATION FAILURE. ACCESS DENIED."))
 			return FALSE
 	return TRUE
 
@@ -120,7 +120,7 @@
 	if(!(check_usability(user)))
 		return
 
-	to_chat(user, span_notice("You activate [src] and wait for confirmation.") )
+	to_chat(user, span_notice("You activate [src] and wait for confirmation."))
 	var/list/nuke_candidates = pollGhostCandidates("Do you want to play as a syndicate [borg_to_spawn ? "[lowertext(borg_to_spawn)] cyborg":"operative"]?", ROLE_OPERATIVE, null, ROLE_OPERATIVE, 150, POLL_IGNORE_SYNDICATE)
 	if(LAZYLEN(nuke_candidates))
 		if(QDELETED(src) || !check_usability(user))
@@ -131,7 +131,7 @@
 		do_sparks(4, TRUE, src)
 		qdel(src)
 	else
-		to_chat(user, span_warning("Unable to connect to Syndicate command. Please wait and try again later or use the teleporter on your uplink to get your points refunded.") )
+		to_chat(user, span_warning("Unable to connect to Syndicate command. Please wait and try again later or use the teleporter on your uplink to get your points refunded."))
 
 /obj/item/antag_spawner/nuke_ops/spawn_antag(client/C, turf/T, kind, datum/mind/user)
 	var/mob/living/carbon/human/M = new/mob/living/carbon/human(T)
@@ -263,7 +263,7 @@
 		playsound(user.loc, 'sound/effects/glassbr1.ogg', 100, TRUE)
 		qdel(src)
 	else
-		to_chat(user, span_warning("You can't seem to work up the nerve to shatter the bottle! Perhaps you should try again later.") )
+		to_chat(user, span_warning("You can't seem to work up the nerve to shatter the bottle! Perhaps you should try again later."))
 
 
 /obj/item/antag_spawner/slaughter_demon/spawn_antag(client/C, turf/T, kind = "", datum/mind/user)
@@ -320,10 +320,10 @@
 
 /obj/item/antag_spawner/syndi_borer/proc/check_usability(mob/user)
 	if(used)
-		to_chat(user, span_warning("[src] appears to be empty!") )
+		to_chat(user, span_warning("[src] appears to be empty!"))
 		return 0
 	if(polling == TRUE)
-		to_chat(user, span_warning("[src] is busy activating!") )
+		to_chat(user, span_warning("[src] is busy activating!"))
 		return 0
 	return 1
 
@@ -345,4 +345,4 @@
 		qdel(src)
 	else
 		polling = FALSE
-		to_chat(user, span_warning("Unable to connect to release specimen. Please wait and try again later or use the container on your uplink to get your points refunded.") )
+		to_chat(user, span_warning("Unable to connect to release specimen. Please wait and try again later or use the container on your uplink to get your points refunded."))

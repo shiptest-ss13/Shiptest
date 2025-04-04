@@ -58,7 +58,7 @@
 
 /mob/living/simple_animal/pet/mothroach/attackby(obj/item/I, mob/user, params)
 	if(isclothing(I))
-		to_chat(user, span_notice("You feed [I] to [src].") )
+		to_chat(user, span_notice("You feed [I] to [src]."))
 		visible_message("[src] chitters happily!")
 		qdel(I) // this sucks
 	else

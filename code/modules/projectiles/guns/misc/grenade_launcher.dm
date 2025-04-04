@@ -34,11 +34,11 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			grenades += I
-			to_chat(user, span_notice("You put the grenade in the grenade launcher.") )
-			to_chat(user, span_notice("[grenades.len] / [max_grenades] Grenades.") )
+			to_chat(user, span_notice("You put the grenade in the grenade launcher."))
+			to_chat(user, span_notice("[grenades.len] / [max_grenades] Grenades."))
 			playsound(src,'sound/weapons/gun/shotgun/insert_shell.ogg',100)
 		else
-			to_chat(usr, span_warning("The grenade launcher cannot hold more grenades!") )
+			to_chat(usr, span_warning("The grenade launcher cannot hold more grenades!"))
 
 /obj/item/gun/grenadelauncher/can_shoot()
 	return grenades.len
@@ -47,7 +47,7 @@
 	if(!can_shoot())
 		return
 	user.visible_message(span_danger("[user] fired a grenade!") , \
-						span_danger("You fire the grenade launcher!") )
+						span_danger("You fire the grenade launcher!"))
 	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!
 	grenades -= F
 	F.forceMove(user.loc)

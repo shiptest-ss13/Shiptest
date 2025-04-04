@@ -21,10 +21,10 @@
 /obj/item/mecha_ammo/attack_self(mob/user)
 	..()
 	if(rounds)
-		to_chat(user, span_warning("You cannot flatten the ammo box until it's empty!") )
+		to_chat(user, span_warning("You cannot flatten the ammo box until it's empty!"))
 		return
 
-	to_chat(user, span_notice("You fold [src] flat.") )
+	to_chat(user, span_notice("You fold [src] flat."))
 	var/I = new /obj/item/stack/sheet/metal(user.loc)
 	qdel(src)
 	user.put_in_hands(I)

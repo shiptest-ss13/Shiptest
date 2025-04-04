@@ -254,7 +254,7 @@
 		if(buckled)
 			Feedstop(silent = TRUE)
 			visible_message(span_danger("[M] pulls [src] off!") , \
-				span_danger("You pull [src] off!") )
+				span_danger("You pull [src] off!"))
 			return
 		attacked += 5
 		if(nutrition >= 100) //steal some nutrition. negval handled in life()
@@ -290,12 +290,12 @@
 		if(buckled == M)
 			if(prob(60))
 				M.visible_message(span_warning("[M] attempts to wrestle \the [name] off!") , \
-					span_danger("You attempt to wrestle \the [name] off!") )
+					span_danger("You attempt to wrestle \the [name] off!"))
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, TRUE, -1)
 
 			else
 				M.visible_message(span_warning("[M] manages to wrestle \the [name] off!") , \
-					span_notice("You manage to wrestle \the [name] off!") )
+					span_notice("You manage to wrestle \the [name] off!"))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 
 				discipline_slime(M)
@@ -303,12 +303,12 @@
 		else
 			if(prob(30))
 				buckled.visible_message(span_warning("[M] attempts to wrestle \the [name] off of [buckled]!") , \
-					span_warning("[M] attempts to wrestle \the [name] off of you!") )
+					span_warning("[M] attempts to wrestle \the [name] off of you!"))
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, TRUE, -1)
 
 			else
 				buckled.visible_message(span_warning("[M] manages to wrestle \the [name] off of [buckled]!") , \
-					span_notice("[M] manage to wrestle \the [name] off of you!") )
+					span_notice("[M] manage to wrestle \the [name] off of you!"))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 
 				discipline_slime(M)
@@ -325,7 +325,7 @@
 
 	if(istype(W, /obj/item/stack/sheet/mineral/plasma) && !stat) //Let's you feed slimes plasma.
 		add_friendship(user, 1)
-		to_chat(user, span_notice("You feed the slime the plasma. It chirps happily.") )
+		to_chat(user, span_notice("You feed the slime the plasma. It chirps happily."))
 		var/obj/item/stack/sheet/mineral/plasma/S = W
 		S.use(1)
 		return
@@ -334,7 +334,7 @@
 		if(prob(25))
 			user.do_attack_animation(src)
 			user.changeNext_move(CLICK_CD_MELEE)
-			to_chat(user, span_danger("[W] passes right through [src]!") )
+			to_chat(user, span_danger("[W] passes right through [src]!"))
 			return
 		if(Discipline && prob(50)) // wow, buddy, why am I getting attacked??
 			Discipline = 0

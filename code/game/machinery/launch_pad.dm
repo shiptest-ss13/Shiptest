@@ -64,7 +64,7 @@
 					return
 				var/obj/item/multitool/M = I
 				M.buffer = src
-				to_chat(user, span_notice("You save the data in the [I.name]'s buffer.") )
+				to_chat(user, span_notice("You save the data in the [I.name]'s buffer."))
 				return 1
 
 		if(default_deconstruction_crowbar(I))
@@ -110,13 +110,13 @@
 
 /obj/machinery/launchpad/proc/doteleport(mob/user, sending)
 	if(teleporting)
-		to_chat(user, span_warning("ERROR: Launchpad busy.") )
+		to_chat(user, span_warning("ERROR: Launchpad busy."))
 		return
 
 	var/turf/dest = get_turf(src)
 
 	if(dest && (is_centcom_level(dest) || (dest.virtual_z() != virtual_z())))
-		to_chat(user, span_warning("ERROR: Launchpad not operative. Heavy area shielding makes teleporting impossible.") )
+		to_chat(user, span_warning("ERROR: Launchpad not operative. Heavy area shielding makes teleporting impossible."))
 		return
 
 	var/target_x = x + x_offset
@@ -250,7 +250,7 @@
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
 			return
-		usr.visible_message(span_notice("[usr] starts closing [src]...") , span_notice("You start closing [src]...") )
+		usr.visible_message(span_notice("[usr] starts closing [src]...") , span_notice("You start closing [src]..."))
 		if(do_after(usr, 30, target = usr))
 			usr.put_in_hands(briefcase)
 			moveToNullspace() //hides it from suitcase contents
@@ -263,7 +263,7 @@
 		if(L.pad == WEAKREF(src)) //do not attempt to link when already linked
 			return ..()
 		L.pad = WEAKREF(src)
-		to_chat(user, span_notice("You link [src] to [L].") )
+		to_chat(user, span_notice("You link [src] to [L]."))
 	else
 		return ..()
 
@@ -303,7 +303,7 @@
 		if(L.pad == WEAKREF(src.pad)) //do not attempt to link when already linked
 			return ..()
 		L.pad = WEAKREF(src.pad)
-		to_chat(user, span_notice("You link [pad] to [L].") )
+		to_chat(user, span_notice("You link [pad] to [L]."))
 	else
 		return ..()
 
@@ -324,7 +324,7 @@
 /obj/item/launchpad_remote/attack_self(mob/user)
 	. = ..()
 	ui_interact(user)
-	to_chat(user, span_notice("[src] projects a display onto your retina.") )
+	to_chat(user, span_notice("[src] projects a display onto your retina."))
 
 
 /obj/item/launchpad_remote/ui_state(mob/user)
@@ -354,10 +354,10 @@
 
 /obj/item/launchpad_remote/proc/teleport(mob/user, obj/machinery/launchpad/pad)
 	if(QDELETED(pad))
-		to_chat(user, span_warning("ERROR: Launchpad not responding. Check launchpad integrity.") )
+		to_chat(user, span_warning("ERROR: Launchpad not responding. Check launchpad integrity."))
 		return
 	if(!pad.isAvailable())
-		to_chat(user, span_warning("ERROR: Launchpad not operative. Make sure the launchpad is ready and powered.") )
+		to_chat(user, span_warning("ERROR: Launchpad not operative. Make sure the launchpad is ready and powered."))
 		return
 	pad.doteleport(user, sending)
 

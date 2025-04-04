@@ -28,7 +28,7 @@
 		tamper = FALSE
 		cap_overlay = mutable_appearance(icon, tamper_cap_icon_state)
 		playsound(src, 'sound/items/poster_ripped.ogg', 50, 1)
-		to_chat(user, span_notice("You rip the tamper seal off of [src].") )
+		to_chat(user, span_notice("You rip the tamper seal off of [src]."))
 
 /obj/item/reagent_containers/glass/chem_jug/examine(mob/user)
 	. = ..()
@@ -52,7 +52,7 @@
 		var/R
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 		target.visible_message(span_danger("[M] is splashed with something!") , \
-						span_userdanger("[M] is splashed with something!") )
+						span_userdanger("[M] is splashed with something!"))
 		for(var/datum/reagent/A in reagents.reagent_list)
 			R += "[A.type]  ([num2text(A.volume)]),"
 
@@ -61,7 +61,7 @@
 		reagents.expose(target, TOUCH, 0.3)
 
 	else if(bartender_check(target) && thrown)
-		visible_message(span_notice("[src] lands onto the [target.name] without spilling a single drop.") )
+		visible_message(span_notice("[src] lands onto the [target.name] without spilling a single drop."))
 		return
 
 	else
@@ -70,7 +70,7 @@
 			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		visible_message(span_notice("[src] spills its contents all over [target].") )
+		visible_message(span_notice("[src] spills its contents all over [target]."))
 		reagents.expose(target, TOUCH, 0.3)
 		if(QDELETED(src))
 			return

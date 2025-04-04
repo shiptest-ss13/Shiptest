@@ -186,7 +186,7 @@
 			mind.transfer_to(mmi.brainmob)
 			mmi.update_appearance()
 		else
-			to_chat(src, span_boldannounce("Oops! Something went very wrong, your MMI was unable to receive your mind. You have been ghosted. Please make a bug report so we can fix this bug.") )
+			to_chat(src, span_boldannounce("Oops! Something went very wrong, your MMI was unable to receive your mind. You have been ghosted. Please make a bug report so we can fix this bug."))
 			ghostize()
 			stack_trace("Borg MMI lacked a brainmob")
 		mmi = null
@@ -222,7 +222,7 @@
 		return
 
 	if(wires.is_cut(WIRE_RESET_MODULE))
-		to_chat(src,span_userdanger("ERROR: Module installer reply timeout. Please check internal connections.") )
+		to_chat(src,span_userdanger("ERROR: Module installer reply timeout. Please check internal connections."))
 		return
 
 	var/list/modulelist = list("Standard" = /obj/item/robot_module/standard, \
@@ -307,7 +307,7 @@
 
 /mob/living/silicon/robot/proc/toggle_ionpulse()
 	if(!ionpulse)
-		to_chat(src, span_notice("No thrusters are installed!") )
+		to_chat(src, span_notice("No thrusters are installed!"))
 		return
 
 	if(!ion_trail)
@@ -315,7 +315,7 @@
 		ion_trail.set_up(src)
 
 	ionpulse_on = !ionpulse_on
-	to_chat(src, span_notice("You [ionpulse_on ? null :"de"]activate your ion thrusters.") )
+	to_chat(src, span_notice("You [ionpulse_on ? null :"de"]activate your ion thrusters."))
 	if(ionpulse_on)
 		ion_trail.start()
 	else
@@ -554,7 +554,7 @@
 	lamp_functional = FALSE
 	playsound(src, 'sound/effects/glass_step.ogg', 50)
 	toggle_headlamp(TRUE)
-	to_chat(src, span_danger("Your headlamp is broken! You'll need a human to help replace it.") )
+	to_chat(src, span_danger("Your headlamp is broken! You'll need a human to help replace it."))
 
 /**
  * Handles headlamp toggling, disabling, and color setting.
@@ -774,10 +774,10 @@
 
 /mob/living/silicon/robot/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
 	if(stat || lockcharge || low_power_mode)
-		to_chat(src, span_warning("You can't do that right now!") )
+		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, span_warning("You are too far away!") )
+		to_chat(src, span_warning("You are too far away!"))
 		return FALSE
 	return TRUE
 
@@ -786,17 +786,17 @@
 	if(health < maxHealth*0.5) //Gradual break down of modules as more damage is sustained
 		if(uneq_module(held_items[3]))
 			playsound(loc, 'sound/machines/warning-buzzer.ogg', 50, TRUE, TRUE)
-			audible_message(span_warning("[src] sounds an alarm! \"SYSTEM ERROR: Module 3 OFFLINE.\"") )
-			to_chat(src, span_userdanger("SYSTEM ERROR: Module 3 OFFLINE.") )
+			audible_message(span_warning("[src] sounds an alarm! \"SYSTEM ERROR: Module 3 OFFLINE.\""))
+			to_chat(src, span_userdanger("SYSTEM ERROR: Module 3 OFFLINE."))
 		if(health < 0)
 			if(uneq_module(held_items[2]))
-				audible_message(span_warning("[src] sounds an alarm! \"SYSTEM ERROR: Module 2 OFFLINE.\"") )
-				to_chat(src, span_userdanger("SYSTEM ERROR: Module 2 OFFLINE.") )
+				audible_message(span_warning("[src] sounds an alarm! \"SYSTEM ERROR: Module 2 OFFLINE.\""))
+				to_chat(src, span_userdanger("SYSTEM ERROR: Module 2 OFFLINE."))
 				playsound(loc, 'sound/machines/warning-buzzer.ogg', 60, TRUE, TRUE)
 			if(health < -maxHealth*0.5)
 				if(uneq_module(held_items[1]))
-					audible_message(span_warning("[src] sounds an alarm! \"CRITICAL ERROR: All modules OFFLINE.\"") )
-					to_chat(src, span_userdanger("CRITICAL ERROR: All modules OFFLINE.") )
+					audible_message(span_warning("[src] sounds an alarm! \"CRITICAL ERROR: All modules OFFLINE.\""))
+					to_chat(src, span_userdanger("CRITICAL ERROR: All modules OFFLINE."))
 					playsound(loc, 'sound/machines/warning-buzzer.ogg', 75, TRUE, TRUE)
 
 /mob/living/silicon/robot/update_sight()
@@ -1058,7 +1058,7 @@
 
 /mob/living/silicon/robot/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
 	if(!is_type_in_typecache(M, can_ride_typecache))
-		M.visible_message(span_warning("[M] really can't seem to mount [src]...") )
+		M.visible_message(span_warning("[M] really can't seem to mount [src]..."))
 		return
 	var/datum/component/riding/riding_datum = LoadComponent(/datum/component/riding/cyborg)
 	if(buckled_mobs)
@@ -1072,16 +1072,16 @@
 		return
 	if(module)
 		if(!module.allow_riding)
-			M.visible_message(span_boldwarning("Unfortunately, [M] just can't seem to hold onto [src]!") )
+			M.visible_message(span_boldwarning("Unfortunately, [M] just can't seem to hold onto [src]!"))
 			return
-	M.visible_message(span_boldwarning("[M] is being loaded onto [src]!") )//if you have better flavor text for this by all means change it
+	M.visible_message(span_boldwarning("[M] is being loaded onto [src]!"))//if you have better flavor text for this by all means change it
 	if(!do_after(src, 5, target = M))
 		return
 	if(iscarbon(M) && !M.incapacitated() && !riding_datum.equip_buckle_inhands(M, 1))
 		if(M.usable_hands == 0)
-			M.visible_message(span_boldwarning("[M] can't climb onto [src] because [M.p_they()] don't have any usable arms!") )
+			M.visible_message(span_boldwarning("[M] can't climb onto [src] because [M.p_they()] don't have any usable arms!"))
 		else
-			M.visible_message(span_boldwarning("[M] can't climb onto [src] because [M.p_their()] hands are full!") )
+			M.visible_message(span_boldwarning("[M] can't climb onto [src] because [M.p_their()] hands are full!"))
 		return
 	. = ..(M, force, check_loc)
 

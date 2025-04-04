@@ -48,7 +48,7 @@
 		if(!stat)
 			Aggro()
 		if(T.throwforce <= throw_deflection)		//WS Edit - Whitesands
-			visible_message(span_notice("The [T.name] [throw_message] [src.name]!") )
+			visible_message(span_notice("The [T.name] [throw_message] [src.name]!"))
 			return
 	..()
 

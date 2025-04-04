@@ -9,7 +9,7 @@
 	if(!msg || !mob)
 		return
 	if(prefs.muted & MUTE_MENTORHELP)
-		to_chat(src, span_warning("You are unable to use mentorhelp (muted).") )
+		to_chat(src, span_warning("You are unable to use mentorhelp (muted)."))
 		return
 	var/show_char = CONFIG_GET(flag/mentors_mobname_only)
 	var/mentor_msg = span_mentornotice("<b>[span_info("MENTORHELP:</b> <b>[key_name_mentor(src, 1, 0, 1, show_char)]</b>:")] [msg]") 
@@ -19,7 +19,7 @@
 		SEND_SOUND(X, 'sound/items/bikehorn.ogg')
 		to_chat(X, mentor_msg)
 
-	to_chat(src, span_mentornotice("PM to-<b>Mentors</b>: [msg]") )
+	to_chat(src, span_mentornotice("PM to-<b>Mentors</b>: [msg]"))
 
 	//spam prevention, 60 second delay
 	remove_verb(src, /client/verb/mentorhelp)

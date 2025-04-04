@@ -183,7 +183,7 @@
 	var/datum/species/kepori/kep = H.dna.species
 	if(H.GetComponent(/datum/component/tackler))
 		qdel(H.GetComponent(/datum/component/tackler))
-		to_chat(H, span_notice("You relax, no longer ready to pounce.") )
+		to_chat(H, span_notice("You relax, no longer ready to pounce."))
 		return
 	H.AddComponent(/datum/component/tackler, stamina_cost= kep.tackle_stam_cost, base_knockdown= kep.base_knockdown, range= kep.tackle_range, speed= kep.tackle_speed, skill_mod= kep.skill_mod, min_distance= kep.min_distance)
 	H.visible_message(span_notice("[H] gets ready to pounce!") , \

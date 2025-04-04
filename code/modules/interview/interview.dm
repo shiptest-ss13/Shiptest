@@ -60,7 +60,7 @@
 	GLOB.interviews.approved_ckeys |= owner_ckey
 	GLOB.interviews.close_interview(src)
 	log_admin_private("[key_name(approved_by)] has approved interview #[id] for [owner_ckey][!owner ? "(DC)": ""].")
-	message_admins(span_adminnotice("[key_name(approved_by)] has approved [link_self()] for [owner_ckey][!owner ? "(DC)": ""].") )
+	message_admins(span_adminnotice("[key_name(approved_by)] has approved [link_self()] for [owner_ckey][!owner ? "(DC)": ""]."))
 	if (owner)
 		SEND_SOUND(owner, sound('sound/effects/adminhelp.ogg'))
 		to_chat(owner, "<font color='red' size='4'><b>-- Interview Update --</b></font>" \
@@ -79,7 +79,7 @@
 	GLOB.interviews.close_interview(src)
 	GLOB.interviews.cooldown_ckeys |= owner_ckey
 	log_admin_private("[key_name(denied_by)] has denied interview #[id] for [owner_ckey][!owner ? "(DC)": ""].")
-	message_admins(span_adminnotice("[key_name(denied_by)] has denied [link_self()] for [owner_ckey][!owner ? "(DC)": ""].") )
+	message_admins(span_adminnotice("[key_name(denied_by)] has denied [link_self()] for [owner_ckey][!owner ? "(DC)": ""]."))
 	addtimer(CALLBACK(GLOB.interviews, TYPE_PROC_REF(/datum/interview_manager, release_from_cooldown), owner_ckey), 180)
 	if (owner)
 		SEND_SOUND(owner, sound('sound/effects/adminhelp.ogg'))

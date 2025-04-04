@@ -51,7 +51,7 @@
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 
 /datum/quirk/junkie/proc/announce_drugs()
-	to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] of [initial(reagent_type.name)] [where_drug]. Better hope you don't run out...") )
+	to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] of [initial(reagent_type.name)] [where_drug]. Better hope you don't run out..."))
 
 /datum/quirk/junkie/on_process(seconds_per_tick)
 	var/mob/living/carbon/human/H = quirk_holder
@@ -63,7 +63,7 @@
 			else
 				reagent_instance.addiction_stage = 0
 			H.reagents.addiction_list += reagent_instance
-			to_chat(quirk_holder, span_danger("You thought you kicked it, but you suddenly feel like you need [reagent_instance.name] again...") )
+			to_chat(quirk_holder, span_danger("You thought you kicked it, but you suddenly feel like you need [reagent_instance.name] again..."))
 
 /datum/quirk/junkie/smoker
 	name = "Smoker"
@@ -100,9 +100,9 @@
 
 /datum/quirk/junkie/smoker/announce_drugs()
 	if(accessory_type == null)
-		to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] [where_drug], Make sure you get a refill soon.") )
+		to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] [where_drug], Make sure you get a refill soon."))
 		return
-	to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] [where_drug], and a [initial(accessory_type.name)] [where_accessory]. Make sure you get your favorite brand when you run out.") )
+	to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] [where_drug], and a [initial(accessory_type.name)] [where_accessory]. Make sure you get your favorite brand when you run out."))
 
 /datum/quirk/junkie/smoker/on_process(seconds_per_tick)
 	. = ..()

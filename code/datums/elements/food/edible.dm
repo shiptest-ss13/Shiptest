@@ -304,18 +304,18 @@ Behavior that's still missing from this component that original food items had t
 		var/eatverb = pick(eatverbs)
 
 		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS))
-			to_chat(eater, span_warning("You don't feel like eating any more junk food at the moment!") )
+			to_chat(eater, span_warning("You don't feel like eating any more junk food at the moment!"))
 			return
 		else if(fullness <= 50)
-			eater.visible_message(span_notice("[eater] hungrily [eatverb]s \the [parent], gobbling it down!") , span_notice("You hungrily [eatverb] \the [parent], gobbling it down!") )
+			eater.visible_message(span_notice("[eater] hungrily [eatverb]s \the [parent], gobbling it down!") , span_notice("You hungrily [eatverb] \the [parent], gobbling it down!"))
 		else if(fullness > 50 && fullness < 150)
-			eater.visible_message(span_notice("[eater] hungrily [eatverb]s \the [parent].") , span_notice("You hungrily [eatverb] \the [parent].") )
+			eater.visible_message(span_notice("[eater] hungrily [eatverb]s \the [parent].") , span_notice("You hungrily [eatverb] \the [parent]."))
 		else if(fullness > 150 && fullness < 500)
-			eater.visible_message(span_notice("[eater] [eatverb]s \the [parent].") , span_notice("You [eatverb] \the [parent].") )
+			eater.visible_message(span_notice("[eater] [eatverb]s \the [parent].") , span_notice("You [eatverb] \the [parent]."))
 		else if(fullness > 500 && fullness < 600)
-			eater.visible_message(span_notice("[eater] unwillingly [eatverb]s a bit of \the [parent].") , span_notice("You unwillingly [eatverb] a bit of \the [parent].") )
+			eater.visible_message(span_notice("[eater] unwillingly [eatverb]s a bit of \the [parent].") , span_notice("You unwillingly [eatverb] a bit of \the [parent]."))
 		else if(fullness > (600 * (1 + eater.overeatduration / 2000)))	// The more you eat - the more you can eat
-			eater.visible_message(span_warning("[eater] cannot force any more of \the [parent] to go down [eater.p_their()] throat!") , span_warning("You cannot force any more of \the [parent] to go down your throat!") )
+			eater.visible_message(span_warning("[eater] cannot force any more of \the [parent] to go down [eater.p_their()] throat!") , span_warning("You cannot force any more of \the [parent] to go down your throat!"))
 			return
 
 
@@ -324,7 +324,7 @@ Behavior that's still missing from this component that original food items had t
 
 	else //If you're feeding it to someone else.
 		if(isbrain(eater))
-			to_chat(feeder, span_warning("[eater] doesn't seem to have a mouth!") )
+			to_chat(feeder, span_warning("[eater] doesn't seem to have a mouth!"))
 			return
 		if(fullness <= (600 * (1 + eater.overeatduration / 1000)))
 			eater.visible_message(
@@ -332,14 +332,14 @@ Behavior that's still missing from this component that original food items had t
 				span_userdanger("[feeder] attempts to feed you [parent].") 
 			)
 			if(eater.is_blind())
-				to_chat(eater, span_userdanger("You feel someone trying to feed you something!") )
+				to_chat(eater, span_userdanger("You feel someone trying to feed you something!"))
 		else
 			eater.visible_message(
 				span_warning("[feeder] cannot force any more of [parent] down [eater]'s throat!") , \
 				span_warning("[feeder] cannot force any more of [parent] down your throat!") 
 			)
 			if(eater.is_blind())
-				to_chat(eater, span_userdanger("You're too full to eat what's being fed to you!") )
+				to_chat(eater, span_userdanger("You're too full to eat what's being fed to you!"))
 			return
 		if(!do_after(feeder, delay = time_to_eat, target = eater)) //Wait 3 seconds before you can feed
 			return
@@ -351,7 +351,7 @@ Behavior that's still missing from this component that original food items had t
 			span_userdanger("[feeder] forces you to eat [parent]!") 
 		)
 		if(eater.is_blind())
-			to_chat(eater, span_userdanger("You're forced to eat something!") )
+			to_chat(eater, span_userdanger("You're forced to eat something!"))
 
 	TakeBite(eater, feeder)
 
@@ -407,7 +407,7 @@ Behavior that's still missing from this component that original food items had t
 		covered = "mask"
 	if(covered)
 		var/who = (isnull(feeder) || eater == feeder) ? "your" : "[eater.p_their()]"
-		to_chat(feeder, span_warning("You have to remove [who] [covered] first!") )
+		to_chat(feeder, span_warning("You have to remove [who] [covered] first!"))
 		return FALSE
 	return TRUE
 
@@ -423,19 +423,19 @@ Behavior that's still missing from this component that original food items had t
 		SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "breakfast", /datum/mood_event/breakfast)
 	if(HAS_TRAIT(human_eater, TRAIT_AGEUSIA))
 		if(foodtypes & tongue.toxic_food)
-			to_chat(human_eater, span_warning("You don't feel so good...") )
+			to_chat(human_eater, span_warning("You don't feel so good..."))
 			human_eater.adjust_disgust(25 + 30 * fraction)
 	else
 		if(foodtypes & tongue.toxic_food)
-			to_chat(human_eater,span_warning("What the hell was that thing?!") )
+			to_chat(human_eater,span_warning("What the hell was that thing?!"))
 			human_eater.adjust_disgust(25 + 30 * fraction)
 			SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "toxic_food", /datum/mood_event/disgusting_food)
 		else if(foodtypes & tongue.disliked_food)
-			to_chat(human_eater,span_notice("That didn't taste very good...") )
+			to_chat(human_eater,span_notice("That didn't taste very good..."))
 			human_eater.adjust_disgust(11 + 15 * fraction)
 			SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "gross_food", /datum/mood_event/gross_food)
 		else if(foodtypes & tongue.liked_food)
-			to_chat(human_eater,span_notice("I love this taste!") )
+			to_chat(human_eater,span_notice("I love this taste!"))
 			human_eater.adjust_disgust(-5 + -2.5 * fraction)
 			SEND_SIGNAL(human_eater, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
 	last_check_time = world.time

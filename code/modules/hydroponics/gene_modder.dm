@@ -78,23 +78,23 @@
 
 	if(istype(I, /obj/item/seeds))
 		if (operation)
-			to_chat(user, span_notice("Please complete current operation.") )
+			to_chat(user, span_notice("Please complete current operation."))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 		eject_seed()
 		insert_seed(I)
-		to_chat(user, span_notice("You add [I] to the machine.") )
+		to_chat(user, span_notice("You add [I] to the machine."))
 		interact(user)
 	else if(istype(I, /obj/item/disk/plantgene))
 		if (operation)
-			to_chat(user, span_notice("Please complete current operation.") )
+			to_chat(user, span_notice("Please complete current operation."))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 		eject_disk()
 		disk = I
-		to_chat(user, span_notice("You add [I] to the machine.") )
+		to_chat(user, span_notice("You add [I] to the machine."))
 		interact(user)
 	else
 		..()
@@ -262,7 +262,7 @@
 				return
 			eject_seed()
 			insert_seed(I)
-			to_chat(usr, span_notice("You add [I] to the machine.") )
+			to_chat(usr, span_notice("You add [I] to the machine."))
 		else
 			eject_seed()
 	else if(href_list["eject_disk"] && !operation)
@@ -272,7 +272,7 @@
 				return
 			eject_disk()
 			disk = I
-			to_chat(usr, span_notice("You add [I] to the machine.") )
+			to_chat(usr, span_notice("You add [I] to the machine."))
 		else
 			eject_disk()
 	else if(href_list["op"] == "insert" && disk && disk.gene && seed)
@@ -447,7 +447,7 @@
 
 /obj/item/disk/plantgene/attack_self(mob/user)
 	read_only = !read_only
-	to_chat(user, span_notice("You flip the write-protect tab to [src.read_only ? "protected" : "unprotected"].") )
+	to_chat(user, span_notice("You flip the write-protect tab to [src.read_only ? "protected" : "unprotected"]."))
 
 /obj/item/disk/plantgene/examine(mob/user)
 	. = ..()

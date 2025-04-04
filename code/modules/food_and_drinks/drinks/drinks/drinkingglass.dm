@@ -131,9 +131,9 @@
 		var/obj/item/reagent_containers/food/snacks/egg/E = I
 		if(reagents)
 			if(reagents.total_volume >= reagents.maximum_volume)
-				to_chat(user, span_notice("[src] is full.") )
+				to_chat(user, span_notice("[src] is full."))
 			else
-				to_chat(user, span_notice("You break [E] in [src].") )
+				to_chat(user, span_notice("You break [E] in [src]."))
 				reagents.add_reagent(/datum/reagent/consumable/eggyolk, 5)
 				qdel(E)
 			return
@@ -143,7 +143,7 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/attack(mob/target, mob/user)
 	if(user.a_intent == INTENT_HARM && ismob(target) && target.reagents && reagents.total_volume)
 		target.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!") , \
-						span_userdanger("[user] splashes the contents of [src] onto you!") )
+						span_userdanger("[user] splashes the contents of [src] onto you!"))
 		log_combat(user, target, "splashed", src)
 		reagents.expose(target, TOUCH)
 		reagents.clear_reagents()

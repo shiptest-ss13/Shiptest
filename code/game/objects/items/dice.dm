@@ -208,7 +208,7 @@
 			span_hear("You hear [src] rolling, it sounds like a [fake_result].")
 		)
 	else if(!src.throwing) //Dice was thrown and is coming to rest
-		visible_message(span_notice("[src] rolls to a stop, landing on [result]. [comment]") )
+		visible_message(span_notice("[src] rolls to a stop, landing on [result]. [comment]"))
 
 /obj/item/dice/update_overlays()
 	. = ..()

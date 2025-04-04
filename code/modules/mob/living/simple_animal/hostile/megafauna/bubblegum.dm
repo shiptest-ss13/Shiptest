@@ -244,7 +244,7 @@ Difficulty: Hard
 	SLEEP_CHECK_DEATH(4)
 	for(var/mob/living/L in T)
 		if(!faction_check_mob(L))
-			to_chat(L, span_userdanger("[src] rends you!") )
+			to_chat(L, span_userdanger("[src] rends you!"))
 			playsound(T, attack_sound, 100, TRUE, -1)
 			var/limb_to_hit = L.get_bodypart(pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))
 			L.apply_damage(10, BRUTE, limb_to_hit, L.run_armor_check(limb_to_hit, "melee", armour_penetration, silent = TRUE))
@@ -261,7 +261,7 @@ Difficulty: Hard
 	for(var/mob/living/L in T)
 		if(!faction_check_mob(L))
 			if(L.stat != CONSCIOUS)
-				to_chat(L, span_userdanger("[src] drags you through the blood!") )
+				to_chat(L, span_userdanger("[src] drags you through the blood!"))
 				playsound(T, 'sound/magic/enter_blood.ogg', 100, TRUE, -1)
 				var/turf/targetturf = get_step(src, dir)
 				L.forceMove(targetturf)
@@ -298,11 +298,11 @@ Difficulty: Hard
 		shuffle_inplace(pools)
 		found_bloodpool = pick(pools)
 	if(found_bloodpool)
-		visible_message(span_danger("[src] sinks into the blood...") )
+		visible_message(span_danger("[src] sinks into the blood..."))
 		playsound(get_turf(src), 'sound/magic/enter_blood.ogg', 100, TRUE, -1)
 		forceMove(get_turf(found_bloodpool))
 		playsound(get_turf(src), 'sound/magic/exit_blood.ogg', 100, TRUE, -1)
-		visible_message(span_danger("And springs back out!") )
+		visible_message(span_danger("And springs back out!"))
 		blood_enrage()
 		return TRUE
 	return FALSE
@@ -412,7 +412,7 @@ Difficulty: Hard
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/bullet_act(obj/projectile/P)
 	if(BUBBLEGUM_IS_ENRAGED)
-		visible_message(span_danger("[src] deflects the projectile; [p_they()] can't be hit with ranged weapons while enraged!") , span_userdanger("You deflect the projectile!") )
+		visible_message(span_danger("[src] deflects the projectile; [p_they()] can't be hit with ranged weapons while enraged!") , span_userdanger("You deflect the projectile!"))
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 300, TRUE)
 		return BULLET_ACT_BLOCK
 	return ..()
@@ -463,7 +463,7 @@ Difficulty: Hard
 		DestroySurroundings()
 		if(isliving(A))
 			var/mob/living/L = A
-			L.visible_message(span_danger("[src] slams into [L]!") , span_userdanger("[src] tramples you into the ground!") )
+			L.visible_message(span_danger("[src] slams into [L]!") , span_userdanger("[src] tramples you into the ground!"))
 			src.forceMove(get_turf(L))
 			L.apply_damage(istype(src, /mob/living/simple_animal/hostile/megafauna/bubblegum/hallucination) ? 15 : 30, BRUTE)
 			playsound(get_turf(L), 'sound/effects/meteorimpact.ogg', 100, TRUE)

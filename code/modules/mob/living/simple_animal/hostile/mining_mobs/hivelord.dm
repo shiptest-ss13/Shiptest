@@ -133,7 +133,7 @@
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(15))
 		new /obj/item/mob_trophy/legion_skull(loc)
-		visible_message(span_warning("One of the [src]'s skulls looks intact.") )
+		visible_message(span_warning("One of the [src]'s skulls looks intact."))
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
@@ -159,7 +159,7 @@
 	dwarf_mob = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
-	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!") )
+	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)

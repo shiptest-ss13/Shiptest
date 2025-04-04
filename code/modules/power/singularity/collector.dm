@@ -79,18 +79,18 @@
 		if(!src.locked)
 			toggle_power()
 			user.visible_message(span_notice("[user.name] turns the [src.name] [active? "on":"off"].") , \
-			span_notice("You turn the [src.name] [active? "on":"off"].") )
+			span_notice("You turn the [src.name] [active? "on":"off"]."))
 			var/fuel = loaded_tank?.air_contents.get_moles(GAS_PLASMA)
 			investigate_log("turned [active?"<font color='green'>on</font>":"<font color='red'>off</font>"] by [key_name(user)]. [loaded_tank?"Fuel: [round(fuel/0.29)]%":"<font color='red'>It is empty</font>"].", INVESTIGATE_SUPERMATTER)
 			return
 		else
-			to_chat(user, span_warning("The controls are locked!") )
+			to_chat(user, span_warning("The controls are locked!"))
 			return
 
 /obj/machinery/power/rad_collector/can_be_unfasten_wrench(mob/user, silent)
 	if(loaded_tank)
 		if(!silent)
-			to_chat(user, span_warning("Remove the plasma tank first!") )
+			to_chat(user, span_warning("Remove the plasma tank first!"))
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -106,13 +106,13 @@
 /obj/machinery/power/rad_collector/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/tank/internals/plasma))
 		if(!anchored)
-			to_chat(user, span_warning("[src] needs to be secured to the floor first!") )
+			to_chat(user, span_warning("[src] needs to be secured to the floor first!"))
 			return TRUE
 		if(loaded_tank)
-			to_chat(user, span_warning("There's already a plasma tank loaded!") )
+			to_chat(user, span_warning("There's already a plasma tank loaded!"))
 			return TRUE
 		if(panel_open)
-			to_chat(user, span_warning("Close the maintenance panel first!") )
+			to_chat(user, span_warning("Close the maintenance panel first!"))
 			return TRUE
 		if(!user.transferItemToLoc(W, src))
 			return
@@ -122,11 +122,11 @@
 		if(allowed(user))
 			if(active)
 				locked = !locked
-				to_chat(user, span_notice("You [locked ? "lock" : "unlock"] the controls.") )
+				to_chat(user, span_notice("You [locked ? "lock" : "unlock"] the controls."))
 			else
-				to_chat(user, span_warning("The controls can only be locked when \the [src] is active!") )
+				to_chat(user, span_warning("The controls can only be locked when \the [src] is active!"))
 		else
-			to_chat(user, span_danger("Access denied.") )
+			to_chat(user, span_danger("Access denied."))
 			return TRUE
 	else
 		return ..()
@@ -146,7 +146,7 @@
 	if(..())
 		return TRUE
 	if(loaded_tank)
-		to_chat(user, span_warning("Remove the plasma tank first!") )
+		to_chat(user, span_warning("Remove the plasma tank first!"))
 	else
 		default_deconstruction_screwdriver(user, icon_state, icon_state, I)
 	return TRUE
@@ -154,21 +154,21 @@
 /obj/machinery/power/rad_collector/crowbar_act(mob/living/user, obj/item/I)
 	if(loaded_tank)
 		if(locked)
-			to_chat(user, span_warning("The controls are locked!") )
+			to_chat(user, span_warning("The controls are locked!"))
 			return TRUE
 		eject()
 		return TRUE
 	if(default_deconstruction_crowbar(I))
 		return TRUE
-	to_chat(user, span_warning("There isn't a tank loaded!") )
+	to_chat(user, span_warning("There isn't a tank loaded!"))
 	return TRUE
 
 /obj/machinery/power/rad_collector/multitool_act(mob/living/user, obj/item/I)
 	if(locked)
-		to_chat(user, span_warning("[src] is locked!") )
+		to_chat(user, span_warning("[src] is locked!"))
 		return TRUE
 	if(active)
-		to_chat(user, span_warning("[src] is currently active, producing [bitcoinmining ? "research points":"power"].") )
+		to_chat(user, span_warning("[src] is currently active, producing [bitcoinmining ? "research points":"power"]."))
 		return TRUE
 	var/obj/item/multitool/multi = I
 	if(istype(multi.buffer, /obj/machinery/rnd/server))
@@ -177,7 +177,7 @@
 		visible_message("Linked to Server!")
 		return
 	bitcoinmining = !bitcoinmining
-	to_chat(user, span_warning("You [bitcoinmining ? "enable":"disable"] the research point production feature of [src].") )
+	to_chat(user, span_warning("You [bitcoinmining ? "enable":"disable"] the research point production feature of [src]."))
 	return TRUE
 
 /obj/machinery/power/rad_collector/return_analyzable_air()

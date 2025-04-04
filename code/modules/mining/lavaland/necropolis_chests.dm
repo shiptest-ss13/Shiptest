@@ -191,15 +191,15 @@
 	if(activated)
 		return
 	if(!iscarbon(user))
-		to_chat(user, span_warning("The snake carving seems to come alive, if only for a moment, before returning to its dormant state, almost as if it finds you incapable of holding its oath.") )
+		to_chat(user, span_warning("The snake carving seems to come alive, if only for a moment, before returning to its dormant state, almost as if it finds you incapable of holding its oath."))
 		return
 	var/mob/living/carbon/itemUser = user
 	usedHand = itemUser.get_held_index_of_item(src)
 	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
-		to_chat(user, span_warning("You can't possibly handle the responsibility of more than one rod!") )
+		to_chat(user, span_warning("You can't possibly handle the responsibility of more than one rod!"))
 		return
 	var/failText = span_warning("The snake seems unsatisfied with your incomplete oath and returns to its previous place on the rod, returning to its dormant, wooden state. You must stand still while completing your oath!") 
-	to_chat(itemUser, span_notice("The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong...") )
+	to_chat(itemUser, span_notice("The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong..."))
 	if(do_after(itemUser, 40, target = itemUser))
 		itemUser.say("I swear to fulfill, to the best of my ability and judgment, this covenant:", forced = "hippocratic oath")
 	else
@@ -220,7 +220,7 @@
 	else
 		to_chat(itemUser, failText)
 		return
-	to_chat(itemUser, span_notice("The snake, satisfied with your oath, attaches itself and the rod to your forearm with an inseparable grip. Your thoughts seem to only revolve around the core idea of helping others, and harm is nothing more than a distant, wicked memory...") )
+	to_chat(itemUser, span_notice("The snake, satisfied with your oath, attaches itself and the rod to your forearm with an inseparable grip. Your thoughts seem to only revolve around the core idea of helping others, and harm is nothing more than a distant, wicked memory..."))
 	var/datum/status_effect/hippocraticOath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH)
 	effect.hand = usedHand
 	activated()
@@ -258,9 +258,9 @@
 	return ..()
 
 /obj/item/clothing/neck/memento_mori/proc/memento(mob/living/carbon/human/user)
-	to_chat(user, span_warning("You feel your life being drained by the pendant...") )
+	to_chat(user, span_warning("You feel your life being drained by the pendant..."))
 	if(do_after(user, 40, target = user))
-		to_chat(user, span_notice("Your lifeforce is now linked to the pendant! You feel like removing it would kill you, and yet you instinctively know that until then, you won't die.") )
+		to_chat(user, span_notice("Your lifeforce is now linked to the pendant! You feel like removing it would kill you, and yet you instinctively know that until then, you won't die."))
 		ADD_TRAIT(user, TRAIT_NODEATH, "memento_mori")
 		ADD_TRAIT(user, TRAIT_NOHARDCRIT, "memento_mori")
 		ADD_TRAIT(user, TRAIT_NOCRITDAMAGE, "memento_mori")
@@ -273,7 +273,7 @@
 		return
 	var/mob/living/carbon/human/H = active_owner //to avoid infinite looping when dust unequips the pendant
 	active_owner = null
-	to_chat(H, span_userdanger("You feel your life rapidly slipping away from you!") )
+	to_chat(H, span_userdanger("You feel your life rapidly slipping away from you!"))
 	H.dust(TRUE, TRUE)
 
 /datum/action/item_action/hands_free/memento_mori
@@ -301,19 +301,19 @@
 
 /obj/item/wisp_lantern/attack_self(mob/user)
 	if(!wisp)
-		to_chat(user, span_warning("The wisp has gone missing!") )
+		to_chat(user, span_warning("The wisp has gone missing!"))
 		icon_state = "lantern"
 		return
 
 	if(wisp.loc == src)
-		to_chat(user, span_notice("You release the wisp. It begins to bob around your head.") )
+		to_chat(user, span_notice("You release the wisp. It begins to bob around your head."))
 		icon_state = "lantern"
 		wisp.orbit(user, 20)
 		ADD_TRAIT(user, ORBITED_TRAIT, "orbited")
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Freed")
 
 	else
-		to_chat(user, span_notice("You return the wisp to the lantern.") )
+		to_chat(user, span_notice("You return the wisp to the lantern."))
 		icon_state = "lantern-blue"
 		wisp.forceMove(src)
 		REMOVE_TRAIT(user, ORBITED_TRAIT, "orbited")
@@ -328,7 +328,7 @@
 		if(wisp.loc == src)
 			qdel(wisp)
 		else
-			wisp.visible_message(span_notice("[wisp] has a sad feeling for a moment, then it passes.") )
+			wisp.visible_message(span_notice("[wisp] has a sad feeling for a moment, then it passes."))
 	return ..()
 
 /obj/effect/wisp
@@ -349,13 +349,13 @@
 		RegisterSignal(thing, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(update_user_sight))
 		var/mob/being = thing
 		being.update_sight()
-		to_chat(thing, span_notice("The wisp enhances your vision.") )
+		to_chat(thing, span_notice("The wisp enhances your vision."))
 
 /obj/effect/wisp/stop_orbit(datum/component/orbiter/orbits)
 	. = ..()
 	if(ismob(orbits.parent))
 		UnregisterSignal(orbits.parent, COMSIG_MOB_UPDATE_SIGHT)
-		to_chat(orbits.parent, span_notice("Your vision returns to normal.") )
+		to_chat(orbits.parent, span_notice("Your vision returns to normal."))
 
 /obj/effect/wisp/proc/update_user_sight(mob/user)
 	user.sight |= sight_flags
@@ -382,7 +382,7 @@
 	var/turf/current_location = get_turf(user)
 	var/area/current_area = current_location.loc
 	if(!linked || (current_area.area_flags & NOTELEPORT))
-		to_chat(user, span_warning("[src] fizzles uselessly.") )
+		to_chat(user, span_warning("[src] fizzles uselessly."))
 		return
 	if(teleporting)
 		return
@@ -467,7 +467,7 @@
 		user.say("[warcry]!!!", forced="talisman warcry")
 		new /obj/effect/immortality_talisman(get_turf(user), user)
 	else
-		to_chat(user, span_warning("[src] is not ready yet!") )
+		to_chat(user, span_warning("[src] is not ready yet!"))
 
 /obj/effect/immortality_talisman
 	name = "hole in reality"
@@ -483,7 +483,7 @@
 		vanish(new_user)
 
 /obj/effect/immortality_talisman/proc/vanish(mob/user)
-	user.visible_message(span_danger("[user] [vanish_description], leaving a hole in [user.p_their()] place!") )
+	user.visible_message(span_danger("[user] [vanish_description], leaving a hole in [user.p_their()] place!"))
 
 	desc = "It's shaped an awful lot like [user.name]."
 	setDir(user.dir)
@@ -501,7 +501,7 @@
 	user.notransform = FALSE
 	user.forceMove(get_turf(src))
 
-	user.visible_message(span_danger("[user] pops back into reality!") )
+	user.visible_message(span_danger("[user] pops back into reality!"))
 	can_destroy = TRUE
 	qdel(src)
 
@@ -567,7 +567,7 @@
 /obj/item/book_of_babel/attack_self(mob/user)
 	if(!user.can_read(src))
 		return FALSE
-	to_chat(user, span_notice("You flip through the pages of the book, quickly and conveniently learning every language in existence. Somewhat less conveniently, the aging book crumbles to dust in the process. Whoops.") )
+	to_chat(user, span_notice("You flip through the pages of the book, quickly and conveniently learning every language in existence. Somewhat less conveniently, the aging book crumbles to dust in the process. Whoops."))
 	user.grant_all_languages()
 	new /obj/effect/decal/cleanable/ash(get_turf(user))
 	qdel(src)
@@ -602,16 +602,16 @@
 		var/holycheck = ishumanbasic(C)
 		if(reac_volume < 5 || !(holycheck || islizard(C) || isipc(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
 			if(method == INGEST && show_message)
-				to_chat(C, span_notice("<i>You feel nothing but a terrible aftertaste.</i>") )
+				to_chat(C, span_notice("<i>You feel nothing but a terrible aftertaste.</i>"))
 			return ..()
 		if(C.dna.species.has_innate_wings)
-			to_chat(C, span_userdanger("A terrible pain travels down your back as your wings change shape!") )
+			to_chat(C, span_userdanger("A terrible pain travels down your back as your wings change shape!"))
 			C.dna.features["moth_wings"] = "None"
 		else
-			to_chat(C, span_userdanger("A terrible pain travels down your back as wings burst out!") )
+			to_chat(C, span_userdanger("A terrible pain travels down your back as wings burst out!"))
 		C.dna.species.GiveSpeciesFlight(C)
 		if(holycheck)
-			to_chat(C, span_notice("You feel blessed!") )
+			to_chat(C, span_notice("You feel blessed!"))
 			ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT)
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
@@ -642,7 +642,7 @@
 		return
 
 	if(M.stat != DEAD)
-		to_chat(user, span_warning("This artifact can only affect the dead! Come on. Look, you're going to have to do that part yourself.") )
+		to_chat(user, span_warning("This artifact can only affect the dead! Come on. Look, you're going to have to do that part yourself."))
 		return
 
 	for(var/mob/dead/observer/ghost in GLOB.dead_mob_list) //excludes new players
@@ -651,19 +651,19 @@
 			break
 
 	if(!M.mind || !M.client)
-		to_chat(user, span_warning("There is no soul connected to this body... Could you put me in it? Just for a day. I swear I'll come back.") )
+		to_chat(user, span_warning("There is no soul connected to this body... Could you put me in it? Just for a day. I swear I'll come back."))
 		return
 
 	check_skele()//clean out/refresh the list
 	if(skeletons.len >= 5 && !nolimit)
-		to_chat(user, span_warning("This artifact can only affect five undead at a time! Greedy guts.") )
+		to_chat(user, span_warning("This artifact can only affect five undead at a time! Greedy guts."))
 		return
 
 	M.set_species(/datum/species/skeleton, icon_update=0)
 	M.revive(full_heal = TRUE, admin_revive = TRUE)
 	skeletons |= M
 	to_chat(M, "[span_userdanger("You have been returned from death by ")]<B>[user.real_name]!</B>")
-	to_chat(M, span_userdanger("[user.p_theyre(TRUE)] technically your master now, I guess. Help [user.p_them()] or something? I don't know. I'm not your dad. ") )
+	to_chat(M, span_userdanger("[user.p_theyre(TRUE)] technically your master now, I guess. Help [user.p_them()] or something? I don't know. I'm not your dad. "))
 
 	arm_skeleton(M)
 
@@ -735,7 +735,7 @@
 	if(isobj(hit_atom))
 		var/obj/hit_object = hit_atom
 		if(hit_object.resistance_flags & FREEZE_PROOF)
-			hit_object.visible_message(span_warning("[hit_object] is freeze-proof! ") )
+			hit_object.visible_message(span_warning("[hit_object] is freeze-proof! "))
 			return
 		if(!(hit_object.obj_flags & FROZEN))
 			hit_object.make_frozen_visual()
@@ -760,7 +760,7 @@
 /datum/status_effect/ice_block_talisman/on_apply()
 	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
 	if(!owner.stat)
-		to_chat(owner, span_userdanger("You become frozen in a cube!") )
+		to_chat(owner, span_userdanger("You become frozen in a cube!"))
 	cube = icon('icons/effects/freeze.dmi', "ice_cube")
 	var/icon/size_check = icon(owner.icon, owner.icon_state)
 	cube.Scale(size_check.Width(), size_check.Height())
@@ -773,7 +773,7 @@
 
 /datum/status_effect/ice_block_talisman/on_remove()
 	if(!owner.stat)
-		to_chat(owner, span_notice("The cube melts!") )
+		to_chat(owner, span_notice("The cube melts!"))
 	owner.cut_overlay(cube)
 	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)
 
@@ -1026,14 +1026,14 @@
 		var/datum/effect_system/spark_spread/s = new
 		s.set_up(2, 1, src)
 		s.start()
-		owner.visible_message(span_danger("The air seems to shift and boil around [owner]'s body, causing the [attack_text] to fly uselessly past!") )
+		owner.visible_message(span_danger("The air seems to shift and boil around [owner]'s body, causing the [attack_text] to fly uselessly past!"))
 		current_charges--
 		if(recharge_rate)
 			START_PROCESSING(SSobj, src)
 		if(current_charges <= 1)
-			to_chat(owner, span_warning("The defensive wind is faltering!") )
+			to_chat(owner, span_warning("The defensive wind is faltering!"))
 		if(current_charges <= 0)
-			owner.visible_message(span_warning("The desert storm protecting [owner] fades away, leaving only ionized sparks!") )
+			owner.visible_message(span_warning("The desert storm protecting [owner] fades away, leaving only ionized sparks!"))
 			playsound(loc, 'sound/weather/ashstorm/inside/weak_end.ogg', 100, TRUE)
 			shield_state = "broken"
 			owner.update_inv_wear_suit()
@@ -1049,7 +1049,7 @@
 		current_charges = clamp((current_charges + recharge_rate), 0, max_charges)
 		playsound(loc, 'sound/effects/magic.ogg', 40, TRUE)
 		if(current_charges == max_charges)
-			visible_message(span_warning("The strange wind returns to full strength!") )
+			visible_message(span_warning("The strange wind returns to full strength!"))
 			STOP_PROCESSING(SSobj, src)
 		shield_state = "[shield_on]"
 		if(ishuman(loc))
@@ -1097,20 +1097,20 @@
 
 	switch(random)
 		if(1)
-			to_chat(user, span_danger("Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a dragon without the cool abilities.") )
+			to_chat(user, span_danger("Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a dragon without the cool abilities."))
 			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", "legs" = "Digitigrade Legs")
 			H.eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
 		if(2)
-			to_chat(user, span_danger("Your flesh begins to melt! Miraculously, you seem fine otherwise.") )
+			to_chat(user, span_danger("Your flesh begins to melt! Miraculously, you seem fine otherwise."))
 			H.set_species(/datum/species/skeleton)
 		if(3)
-			to_chat(user, span_danger("Power courses through you! You can now shift your form at will.") )
+			to_chat(user, span_danger("Power courses through you! You can now shift your form at will."))
 			if(user.mind)
 				var/obj/effect/proc_holder/spell/targeted/shapeshift/dragon/D = new
 				user.mind.AddSpell(D)
 		if(4)
-			to_chat(user, span_danger("You feel like you could walk straight through lava now.") )
+			to_chat(user, span_danger("You feel like you could walk straight through lava now."))
 			H.weather_immunities |= "lava"
 
 	playsound(user.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
@@ -1127,9 +1127,9 @@
 	visibility_flags = 0
 	stage1	= list("Your bones ache.")
 	stage2	= list("Your skin feels scaly.")
-	stage3	= list(span_danger("You have an overwhelming urge to terrorize some peasants.") , span_danger("Your teeth feel sharper.") )
-	stage4	= list(span_danger("Your blood burns.") )
-	stage5	= list(span_danger("You're a fucking dragon. However, any previous allegiances you held still apply. It'd be incredibly rude to eat your still human friends for no reason.") )
+	stage3	= list(span_danger("You have an overwhelming urge to terrorize some peasants.") , span_danger("Your teeth feel sharper."))
+	stage4	= list(span_danger("Your blood burns."))
+	stage5	= list(span_danger("You're a fucking dragon. However, any previous allegiances you held still apply. It'd be incredibly rude to eat your still human friends for no reason."))
 	new_form = /mob/living/simple_animal/hostile/megafauna/dragon/lesser
 
 
@@ -1176,12 +1176,12 @@
 			var/obj/effect/temp_visual/lavastaff/L = new /obj/effect/temp_visual/lavastaff(T)
 			L.alpha = 0
 			animate(L, alpha = 255, time = create_delay)
-			user.visible_message(span_danger("[user] points [src] at [T]!") )
+			user.visible_message(span_danger("[user] points [src] at [T]!"))
 			timer = world.time + create_delay + 1
 			if(do_after(user, create_delay, target = T))
 				var/old_name = T.name
 				if(T.TerraformTurf(turf_type, flags = CHANGETURF_INHERIT_AIR))
-					user.visible_message(span_danger("[user] turns \the [old_name] into [transform_string]!") )
+					user.visible_message(span_danger("[user] turns \the [old_name] into [transform_string]!"))
 					message_admins("[ADMIN_LOOKUPFLW(user)] fired the lava staff at [ADMIN_VERBOSEJMP(T)]")
 					log_game("[key_name(user)] fired the lava staff at [AREACOORD(T)].")
 					timer = world.time + create_cooldown
@@ -1192,7 +1192,7 @@
 		else
 			var/old_name = T.name
 			if(T.TerraformTurf(reset_turf_type, flags = CHANGETURF_INHERIT_AIR))
-				user.visible_message(span_danger("[user] turns \the [old_name] into [reset_string]!") )
+				user.visible_message(span_danger("[user] turns \the [old_name] into [reset_string]!"))
 				timer = world.time + reset_cooldown
 				playsound(T,'sound/magic/fireball.ogg', 200, TRUE)
 
@@ -1224,9 +1224,9 @@
 	for(var/mob/living/carbon/human/H in range(7,user))
 		var/obj/item/mine/pressure/pickup/bloodbath/B = new(H)
 		INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/item/mine/pressure/pickup/bloodbath, mine_effect), H)
-	to_chat(user, span_notice("You shatter the bottle!") )
+	to_chat(user, span_notice("You shatter the bottle!"))
 	playsound(user.loc, 'sound/effects/glassbr1.ogg', 100, TRUE)
-	message_admins(span_adminnotice("[ADMIN_LOOKUPFLW(user)] has activated a bottle of mayhem!") )
+	message_admins(span_adminnotice("[ADMIN_LOOKUPFLW(user)] has activated a bottle of mayhem!"))
 	log_combat(user, null, "activated a bottle of mayhem", src)
 	qdel(src)
 
@@ -1256,17 +1256,17 @@
 		used = FALSE
 		return
 	if(!(isliving(choice)))
-		to_chat(user, span_warning("[choice] is already dead!") )
+		to_chat(user, span_warning("[choice] is already dead!"))
 		used = FALSE
 		return
 	if(choice == user)
-		to_chat(user, span_warning("You feel like writing your own name into a cursed death warrant would be unwise.") )
+		to_chat(user, span_warning("You feel like writing your own name into a cursed death warrant would be unwise."))
 		used = FALSE
 		return
 
 	var/mob/living/L = choice
 
-	message_admins(span_adminnotice("[ADMIN_LOOKUPFLW(L)] has been marked for death by [ADMIN_LOOKUPFLW(user)]!") )
+	message_admins(span_adminnotice("[ADMIN_LOOKUPFLW(L)] has been marked for death by [ADMIN_LOOKUPFLW(user)]!"))
 
 	var/datum/antagonist/blood_contract/A = new
 	L.mind.add_antag_datum(A)
@@ -1379,17 +1379,17 @@
 /obj/item/hierophant_club/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_unfriendly_fire)) //toggle friendly fire...
 		friendly_fire_check = !friendly_fire_check
-		to_chat(user, span_warning("You toggle friendly fire [friendly_fire_check ? "off":"on"]!") )
+		to_chat(user, span_warning("You toggle friendly fire [friendly_fire_check ? "off":"on"]!"))
 		return
 	if(timer > world.time)
 		return
 	if(!user.is_holding(src)) //you need to hold the staff to teleport
-		to_chat(user, span_warning("You need to hold the club in your hands to [beacon ? "teleport with it":"detach the beacon"]!") )
+		to_chat(user, span_warning("You need to hold the club in your hands to [beacon ? "teleport with it":"detach the beacon"]!"))
 		return
 	if(!beacon || QDELETED(beacon))
 		if(isturf(user.loc))
 			user.visible_message(span_hierophant_warning("[user] starts fiddling with [src]'s pommel...") , \
-			span_notice("You start detaching the hierophant beacon...") )
+			span_notice("You start detaching the hierophant beacon..."))
 			timer = world.time + 51
 			INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 			if(do_after(user, 50, target = user) && !beacon)
@@ -1405,21 +1405,21 @@
 				timer = world.time
 				INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 		else
-			to_chat(user, span_warning("You need to be on solid ground to detach the beacon!") )
+			to_chat(user, span_warning("You need to be on solid ground to detach the beacon!"))
 		return
 	if(get_dist(user, beacon) <= 2) //beacon too close abort
-		to_chat(user, span_warning("You are too close to the beacon to teleport to it!") )
+		to_chat(user, span_warning("You are too close to the beacon to teleport to it!"))
 		return
 	var/turf/beacon_turf = get_turf(beacon)
 	if(beacon_turf?.is_blocked_turf(TRUE))
-		to_chat(user, span_warning("The beacon is blocked by something, preventing teleportation!") )
+		to_chat(user, span_warning("The beacon is blocked by something, preventing teleportation!"))
 		return
 	if(!isturf(user.loc))
-		to_chat(user, span_warning("You don't have enough space to teleport from here!") )
+		to_chat(user, span_warning("You don't have enough space to teleport from here!"))
 		return
 	teleporting = TRUE //start channel
 	user.update_action_buttons_icon()
-	user.visible_message(span_hierophant_warning("[user] starts to glow faintly...") )
+	user.visible_message(span_hierophant_warning("[user] starts to glow faintly..."))
 	timer = world.time + 50
 	INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 	beacon.icon_state = "hierophant_tele_on"
@@ -1430,7 +1430,7 @@
 		var/turf/source = get_turf(user)
 		if(T.is_blocked_turf(TRUE))
 			teleporting = FALSE
-			to_chat(user, span_warning("The beacon is blocked by something, preventing teleportation!") )
+			to_chat(user, span_warning("The beacon is blocked by something, preventing teleportation!"))
 			user.update_action_buttons_icon()
 			timer = world.time
 			INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
@@ -1451,7 +1451,7 @@
 			return
 		if(T.is_blocked_turf(TRUE))
 			teleporting = FALSE
-			to_chat(user, span_warning("The beacon is blocked by something, preventing teleportation!") )
+			to_chat(user, span_warning("The beacon is blocked by something, preventing teleportation!"))
 			user.update_action_buttons_icon()
 			timer = world.time
 			INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
@@ -1490,7 +1490,7 @@
 	sleep(1)
 	if(!M)
 		return
-	M.visible_message(span_hierophant_warning("[M] fades out!") )
+	M.visible_message(span_hierophant_warning("[M] fades out!"))
 	sleep(2)
 	if(!M)
 		return
@@ -1502,7 +1502,7 @@
 	sleep(1)
 	if(!M)
 		return
-	M.visible_message(span_hierophant_warning("[M] fades in!") )
+	M.visible_message(span_hierophant_warning("[M] fades in!"))
 	if(user != M)
 		log_combat(user, M, "teleported", null, "from [AREACOORD(source)]")
 

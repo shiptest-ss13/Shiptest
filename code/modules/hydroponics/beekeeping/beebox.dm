@@ -148,12 +148,12 @@
 	if(istype(I, /obj/item/honey_frame))
 		var/obj/item/honey_frame/HF = I
 		if(honey_frames.len < BEEBOX_MAX_FRAMES)
-			visible_message(span_notice("[user] adds a frame to the apiary.") )
+			visible_message(span_notice("[user] adds a frame to the apiary."))
 			if(!user.transferItemToLoc(HF, src))
 				return
 			honey_frames += HF
 		else
-			to_chat(user, span_warning("There's no room for any more frames in the apiary!") )
+			to_chat(user, span_warning("There's no room for any more frames in the apiary!"))
 		return
 
 	if(I.tool_behaviour == TOOL_WRENCH)
@@ -162,7 +162,7 @@
 
 	if(istype(I, /obj/item/queen_bee))
 		if(queen_bee)
-			to_chat(user, span_warning("This hive already has a queen!") )
+			to_chat(user, span_warning("This hive already has a queen!"))
 			return
 
 		var/obj/item/queen_bee/qb = I
@@ -174,7 +174,7 @@
 		qb.queen = null
 
 		if(queen_bee)
-			visible_message(span_notice("[user] sets [qb] down inside the apiary, making it their new home.") )
+			visible_message(span_notice("[user] sets [qb] down inside the apiary, making it their new home."))
 			var/relocated = 0
 			for(var/b in bees)
 				var/mob/living/simple_animal/hostile/poison/bees/B = b
@@ -185,10 +185,10 @@
 						B.forceMove(drop_location())
 					relocated++
 			if(relocated)
-				to_chat(user, span_warning("This queen has a different reagent to some of the bees who live here, those bees will not return to this apiary!") )
+				to_chat(user, span_warning("This queen has a different reagent to some of the bees who live here, those bees will not return to this apiary!"))
 
 		else
-			to_chat(user, span_warning("The queen bee disappeared! Disappearing bees have been in the news lately...") )
+			to_chat(user, span_warning("The queen bee disappeared! Disappearing bees have been in the news lately..."))
 
 		qdel(qb)
 		return
@@ -209,9 +209,9 @@
 			B.GiveTarget(user)
 			bees = TRUE
 		if(bees)
-			visible_message(span_danger("[user] disturbs the bees!") )
+			visible_message(span_danger("[user] disturbs the bees!"))
 		else
-			visible_message(span_danger("[user] disturbs the [name] to no effect!") )
+			visible_message(span_danger("[user] disturbs the [name] to no effect!"))
 	else
 		var/option = alert(user, "What action do you wish to perform?","Apiary","Remove a Honey Frame","Remove the Queen Bee", "Cancel")
 		if(!Adjacent(user))
@@ -219,14 +219,14 @@
 		switch(option)
 			if("Remove a Honey Frame")
 				if(!honey_frames.len)
-					to_chat(user, span_warning("There are no honey frames to remove!") )
+					to_chat(user, span_warning("There are no honey frames to remove!"))
 					return
 
 				var/obj/item/honey_frame/HF = pick_n_take(honey_frames)
 				if(HF)
 					if(!user.put_in_active_hand(HF))
 						HF.forceMove(drop_location())
-					visible_message(span_notice("[user] removes a frame from the apiary.") )
+					visible_message(span_notice("[user] removes a frame from the apiary."))
 
 					var/amtH = HF.honeycomb_capacity
 					var/fallen = 0
@@ -238,11 +238,11 @@
 							fallen++
 					if(fallen)
 						var/multiple = fallen > 1
-						visible_message(span_notice("[user] scrapes [multiple ? "[fallen]" : "a"] honeycomb[multiple ? "s" : ""] off of the frame.") )
+						visible_message(span_notice("[user] scrapes [multiple ? "[fallen]" : "a"] honeycomb[multiple ? "s" : ""] off of the frame."))
 
 			if("Remove the Queen Bee")
 				if(!queen_bee || queen_bee.loc != src)
-					to_chat(user, span_warning("There is no queen bee to remove!") )
+					to_chat(user, span_warning("There is no queen bee to remove!"))
 					return
 				var/obj/item/queen_bee/QB = new()
 				queen_bee.forceMove(QB)
@@ -251,7 +251,7 @@
 				QB.name = queen_bee.name
 				if(!user.put_in_active_hand(QB))
 					QB.forceMove(drop_location())
-				visible_message(span_notice("[user] removes the queen from the apiary.") )
+				visible_message(span_notice("[user] removes the queen from the apiary."))
 				queen_bee = null
 
 /obj/structure/beebox/deconstruct(disassembled = TRUE)

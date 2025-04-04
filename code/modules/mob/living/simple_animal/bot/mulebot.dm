@@ -137,16 +137,16 @@
 			update_appearance() //this is also handled by turn_off(), so no need to call this twice.
 	else if(istype(I, /obj/item/stock_parts/cell) && open)
 		if(cell)
-			to_chat(user, span_warning("[src] already has a power cell!") )
+			to_chat(user, span_warning("[src] already has a power cell!"))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 		cell = I
 		visible_message(span_notice("[user] inserts \a [cell] into [src].") ,
-						span_notice("You insert [cell] into [src].") )
+						span_notice("You insert [cell] into [src]."))
 	else if(I.tool_behaviour == TOOL_CROWBAR && open && user.a_intent != INTENT_HARM)
 		if(!cell)
-			to_chat(user, span_warning("[src] doesn't have a power cell!") )
+			to_chat(user, span_warning("[src] doesn't have a power cell!"))
 			return
 		cell.add_fingerprint(user)
 		if(Adjacent(user) && !issilicon(user))
@@ -154,7 +154,7 @@
 		else
 			cell.forceMove(drop_location())
 		visible_message(span_notice("[user] crowbars [cell] out from [src].") ,
-						span_notice("You pry [cell] out of [src].") )
+						span_notice("You pry [cell] out of [src]."))
 		cell = null
 	else if(is_wire_tool(I) && open)
 		return attack_hand(user)
@@ -162,9 +162,9 @@
 		if(prob(1 + I.force * 2))
 			unload(0)
 			user.visible_message(span_danger("[user] knocks [load] off [src] with \the [I]!") ,
-									span_danger("You knock [load] off [src] with \the [I]!") )
+									span_danger("You knock [load] off [src] with \the [I]!"))
 		else
-			to_chat(user, span_warning("You hit [src] with \the [I] but to no effect!") )
+			to_chat(user, span_warning("You hit [src] with \the [I] but to no effect!"))
 			return ..()
 	else
 		return ..()
@@ -174,7 +174,7 @@
 		emagged = TRUE
 	if(!open)
 		locked = !locked
-		to_chat(user, span_notice("You [locked ? "lock" : "unlock"] [src]'s controls!") )
+		to_chat(user, span_notice("You [locked ? "lock" : "unlock"] [src]'s controls!"))
 	flick("[base_icon]-emagged", src)
 	playsound(src, "sparks", 100, FALSE, SHORT_RANGE_SOUND_EXTRARANGE)
 
@@ -210,7 +210,7 @@
 		if(prob(50) && !isnull(load))
 			unload(0)
 		if(prob(25))
-			visible_message(span_danger("Something shorts out inside [src]!") )
+			visible_message(span_danger("Something shorts out inside [src]!"))
 			wires.cut_random()
 
 /mob/living/simple_animal/bot/mulebot/interact(mob/user)
@@ -269,11 +269,11 @@
 			if(on)
 				turn_off()
 			else if(open)
-				to_chat(usr, span_warning("[name]'s maintenance panel is open!") )
+				to_chat(usr, span_warning("[name]'s maintenance panel is open!"))
 				return
 			else if(cell)
 				if(!turn_on())
-					to_chat(usr, span_warning("You can't switch on [src]!") )
+					to_chat(usr, span_warning("You can't switch on [src]!"))
 					return
 			. = TRUE
 		else
@@ -385,16 +385,16 @@
 /mob/living/simple_animal/bot/mulebot/proc/buzz(type)
 	switch(type)
 		if(SIGH)
-			audible_message(span_hear("[src] makes a sighing buzz.") )
+			audible_message(span_hear("[src] makes a sighing buzz."))
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
 		if(ANNOYED)
-			audible_message(span_hear("[src] makes an annoyed buzzing sound.") )
+			audible_message(span_hear("[src] makes an annoyed buzzing sound."))
 			playsound(src, 'sound/machines/buzz-two.ogg', 50, FALSE)
 		if(DELIGHT)
-			audible_message(span_hear("[src] makes a delighted ping!") )
+			audible_message(span_hear("[src] makes a delighted ping!"))
 			playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
 		if(CHIME)
-			audible_message(span_hear("[src] makes a chiming sound!") )
+			audible_message(span_hear("[src] makes a chiming sound!"))
 			playsound(src, 'sound/machines/chime.ogg', 50, FALSE)
 	flick("[base_icon]1", src)
 
@@ -654,7 +654,7 @@
 		if(pathset) //The AI called us here, so notify it of our arrival.
 			loaddir = dir //The MULE will attempt to load a crate in whatever direction the MULE is "facing".
 			if(calling_ai)
-				to_chat(calling_ai, span_notice("[icon2html(src, calling_ai)] [src] wirelessly plays a chiming sound!") )
+				to_chat(calling_ai, span_notice("[icon2html(src, calling_ai)] [src] wirelessly plays a chiming sound!"))
 				calling_ai.playsound_local(calling_ai, 'sound/machines/chime.ogg', 40, FALSE)
 				calling_ai = null
 
@@ -693,10 +693,10 @@
 	var/mob/living/L = M
 	if(wires.is_cut(WIRE_AVOIDANCE)) // usually just bumps, but if the avoidance wire is cut, knocks them over.
 		if(iscyborg(L))
-			visible_message(span_danger("[src] bumps into [L]!") )
+			visible_message(span_danger("[src] bumps into [L]!"))
 		else if(L.Knockdown(8 SECONDS))
 			log_combat(src, L, "knocked down")
-			visible_message(span_danger("[src] knocks over [L]!") )
+			visible_message(span_danger("[src] knocks over [L]!"))
 	return ..()
 
 // called from mob/living/carbon/human/Crossed()
@@ -704,7 +704,7 @@
 /mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/human/H)
 	log_combat(src, H, "run over", null, "(DAMTYPE: [uppertext(BRUTE)])")
 	H.visible_message(span_danger("[src] drives over [H]!") , \
-					span_userdanger("[src] drives over you!") )
+					span_userdanger("[src] drives over you!"))
 	playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 
 	var/damage = rand(5,15)
@@ -757,7 +757,7 @@
 
 
 /mob/living/simple_animal/bot/mulebot/explode()
-	visible_message(span_boldannounce("[src] blows apart!") )
+	visible_message(span_boldannounce("[src] blows apart!"))
 	var/atom/Tsec = drop_location()
 
 	new /obj/item/assembly/prox_sensor(Tsec)
@@ -788,7 +788,7 @@
 /mob/living/simple_animal/bot/mulebot/insertpai(mob/user, obj/item/paicard/card)
 	. = ..()
 	if(.)
-		visible_message(span_notice("[src]'s safeties are locked on.") )
+		visible_message(span_notice("[src]'s safeties are locked on."))
 
 /mob/living/simple_animal/bot/mulebot/paranormal//allows ghosts only unless hacked to actually be useful
 	name = "paranormal MULEbot"
@@ -816,7 +816,7 @@
 		return
 
 	if(isobserver(AM))
-		visible_message(span_warning("A ghostly figure appears on [src]!") )
+		visible_message(span_warning("A ghostly figure appears on [src]!"))
 		RegisterSignal(AM, COMSIG_MOVABLE_MOVED, PROC_REF(ghostmoved))
 		AM.forceMove(src)
 
@@ -860,7 +860,7 @@
 	return data
 
 /mob/living/simple_animal/bot/mulebot/paranormal/proc/ghostmoved()
-	visible_message(span_notice("The ghostly figure vanishes...") )
+	visible_message(span_notice("The ghostly figure vanishes..."))
 	UnregisterSignal(load, COMSIG_MOVABLE_MOVED)
 	unload(0)
 

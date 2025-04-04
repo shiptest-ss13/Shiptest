@@ -144,7 +144,7 @@
 	for(var/mob/living/L in T)
 		if(L.anchored || horizontal && L.mob_size > MOB_SIZE_TINY && L.density)
 			if(user)
-				to_chat(user, span_danger("There's something too large in [src], preventing it from closing.") )
+				to_chat(user, span_danger("There's something too large in [src], preventing it from closing."))
 			return FALSE
 	return TRUE
 
@@ -279,13 +279,13 @@
 			if(!W.tool_start_check(user, amount=0))
 				return
 
-			to_chat(user, span_notice("You begin cutting \the [src] apart...") )
+			to_chat(user, span_notice("You begin cutting \the [src] apart..."))
 			if(W.use_tool(src, user, 40, volume=50))
 				if(!opened)
 					return
 				user.visible_message(span_notice("[user] slices apart \the [src].") ,
 								span_notice("You cut \the [src] apart with \the [W].") ,
-								span_hear("You hear cutting.") )
+								span_hear("You hear cutting."))
 				deconstruct(TRUE)
 			return
 		if(user.transferItemToLoc(W, drop_location())) // so we put in unlit welder too
@@ -295,7 +295,7 @@
 		if(!W.tool_start_check(user, amount=0))
 			return
 
-		to_chat(user, span_notice("You begin [welded ? "unwelding":"welding"] \the [src]...") )
+		to_chat(user, span_notice("You begin [welded ? "unwelding":"welding"] \the [src]..."))
 		if(W.use_tool(src, user, 40, volume=50))
 			if(opened)
 				return
@@ -303,7 +303,7 @@
 			after_weld(welded)
 			user.visible_message(span_notice("[user] [welded ? "welds shut" : "unwelded"] \the [src].") ,
 							span_notice("You [welded ? "weld" : "unwelded"] \the [src] with \the [W].") ,
-							span_hear("You hear welding.") )
+							span_hear("You hear welding."))
 			update_appearance()
 	else if(W.tool_behaviour == TOOL_WRENCH && anchorable)
 		if(isinspace() && !anchored)
@@ -312,13 +312,13 @@
 		W.play_tool_sound(src, 75)
 		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.") , \
 						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.") , \
-						span_hear("You hear a ratchet.") )
+						span_hear("You hear a ratchet."))
 
 	else if(W.tool_behaviour == TOOL_DECONSTRUCT && locked)
-		user.visible_message(span_warning("[user] is cutting \the [src] open !") , span_notice("You begin to cut \the [src] open.") )
+		user.visible_message(span_warning("[user] is cutting \the [src] open !") , span_notice("You begin to cut \the [src] open."))
 		if (W.use_tool(src, user, 10 SECONDS, volume=0))
 			bust_open()
-			user.visible_message(span_warning("[user] busted \the [src] open !") ,  span_notice("You finish cutting \the [src] open.") )
+			user.visible_message(span_warning("[user] busted \the [src] open !") ,  span_notice("You finish cutting \the [src] open."))
 
 	else if(user.a_intent != INTENT_HARM)
 		var/item_is_id = W.GetID()
@@ -357,13 +357,13 @@
 	user.visible_message(
 		span_warning("[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].") , \
 		span_warning("You [actuallyismob ? "try to ":""]stuff [O] into [src].") , \
-		span_hear("You hear clanging.") )
+		span_hear("You hear clanging."))
 	if(actuallyismob)
 		if(do_after(user, 40, targets))
 			user.visible_message(
 				span_notice("[user] stuffs [O] into [src].") , \
 				span_notice("You stuff [O] into [src].") , \
-				span_hear("You hear a loud metal bang.") )
+				span_hear("You hear a loud metal bang."))
 			var/mob/living/L = O
 			if(!issilicon(L))
 				L.Paralyze(40)
@@ -384,7 +384,7 @@
 	if(locked)
 		if(message_cooldown <= world.time)
 			message_cooldown = world.time + 50
-			to_chat(user, span_warning("[src]'s door won't budge!") )
+			to_chat(user, span_warning("[src]'s door won't budge!"))
 		return
 	container_resist_act(user)
 
@@ -422,7 +422,7 @@
 	if(iscarbon(usr) || issilicon(usr) || isdrone(usr))
 		return toggle(usr)
 	else
-		to_chat(usr, span_warning("This mob type can't use this verb.") )
+		to_chat(usr, span_warning("This mob type can't use this verb."))
 
 // Objects that try to exit a locker by stepping were doing so successfully,
 // and due to an oversight in turf/Enter() were going through walls.  That
@@ -451,17 +451,17 @@
 	user.last_special = world.time + CLICK_CD_BREAKOUT
 	user.visible_message(span_warning("[src] begins to shake violently!") , \
 		span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)") , \
-		span_hear("You hear banging from [src].") )
+		span_hear("You hear banging from [src]."))
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || opened || (!locked && !welded))
 			return
 		//we check after a while whether there is a point of resisting anymore and whether the user is capable of resisting
 		user.visible_message(span_danger("[user] successfully broke out of [src]!") ,
-							span_notice("You successfully break out of [src]!") )
+							span_notice("You successfully break out of [src]!"))
 		bust_open()
 	else
 		if(user.loc == src) //so we don't get the message if we resisted multiple times and succeeded.
-			to_chat(user, span_warning("You fail to break out of [src]!") )
+			to_chat(user, span_warning("You fail to break out of [src]!"))
 
 /obj/structure/closet/proc/bust_open()
 	welded = FALSE //applies to all lockers
@@ -485,19 +485,19 @@
 				add_fingerprint(user)
 			locked = !locked
 			user.visible_message(span_notice("[user] [locked ? null : "un"]locks [src].") ,
-							span_notice("You [locked ? null : "un"]lock [src].") )
+							span_notice("You [locked ? null : "un"]lock [src]."))
 			update_appearance()
 		else if(!silent)
-			to_chat(user, span_alert("Access Denied.") )
+			to_chat(user, span_alert("Access Denied."))
 	else if(secure && broken)
-		to_chat(user, span_warning("\The [src] is broken!") )
+		to_chat(user, span_warning("\The [src] is broken!"))
 
 /obj/structure/closet/emag_act(mob/user)
 	if(secure && !broken)
 		if(user)
 			user.visible_message(span_warning("Sparks fly from [src]!") ,
 							span_warning("You scramble [src]'s lock, breaking it open!") ,
-							span_hear("You hear a faint electrical spark.") )
+							span_hear("You hear a faint electrical spark."))
 		playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		broken = TRUE
 		locked = FALSE
@@ -553,19 +553,19 @@
 		if(locked)
 			togglelock(user, TRUE)
 		if(!open(user))
-			to_chat(user, span_warning("It won't budge!") )
+			to_chat(user, span_warning("It won't budge!"))
 			return
 	step_towards(user, T2)
 	T1 = get_turf(user)
 	if(T1 == T2)
 		user.set_resting(TRUE) //so people can jump into crates without slamming the lid on their head
 		if(!close(user))
-			to_chat(user, span_warning("You can't get [src] to close!") )
+			to_chat(user, span_warning("You can't get [src] to close!"))
 			user.set_resting(FALSE)
 			return
 		user.set_resting(FALSE)
 		togglelock(user)
-		T1.visible_message(span_warning("[user] dives into [src]!") )
+		T1.visible_message(span_warning("[user] dives into [src]!"))
 
 /obj/structure/closet/on_object_saved(depth = 0)
 	if(depth >= 10)

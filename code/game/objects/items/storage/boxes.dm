@@ -57,12 +57,12 @@
 	if(!foldable)
 		return
 	if(contents.len)
-		to_chat(user, span_warning("You can't fold this box with items still inside!") )
+		to_chat(user, span_warning("You can't fold this box with items still inside!"))
 		return
 	if(!ispath(foldable))
 		return
 
-	to_chat(user, span_notice("You fold [src] flat.") )
+	to_chat(user, span_notice("You fold [src] flat."))
 	var/obj/item/I = new foldable
 	qdel(src)
 	user.put_in_hands(I)
@@ -802,7 +802,7 @@
 	..()
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, "rustle", 50, TRUE, -5)
-	user.visible_message(span_notice("[user] hugs \the [src].") ,span_notice("You hug \the [src].") )
+	user.visible_message(span_notice("[user] hugs \the [src].") ,span_notice("You hug \the [src]."))
 
 //////
 /obj/item/storage/box/hug/medical/PopulateContents()
@@ -929,7 +929,7 @@
 				desc = "A paper sack with a crude smile etched onto the side."
 			else
 				return FALSE
-		to_chat(user, span_notice("You make some modifications to [src] using your pen.") )
+		to_chat(user, span_notice("You make some modifications to [src] using your pen."))
 		icon_state = "paperbag_[choice]"
 		item_state = "paperbag_[choice]"
 		return FALSE
@@ -960,10 +960,10 @@
 	if(user.incapacitated())
 		return FALSE
 	if(contents.len)
-		to_chat(user, span_warning("You can't modify [src] with items still inside!") )
+		to_chat(user, span_warning("You can't modify [src] with items still inside!"))
 		return FALSE
 	if(!P || !user.is_holding(P))
-		to_chat(user, span_warning("You need a pen to modify [src]!") )
+		to_chat(user, span_warning("You need a pen to modify [src]!"))
 		return FALSE
 	return TRUE
 

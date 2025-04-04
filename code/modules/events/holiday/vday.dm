@@ -68,7 +68,7 @@
 	..()
 	if(istype(W, /obj/item/pen) || istype(W, /obj/item/toy/crayon))
 		if(!user.is_literate())
-			to_chat(user, span_notice("You scribble illegibly on [src]!") )
+			to_chat(user, span_notice("You scribble illegibly on [src]!"))
 			return
 		var/recipient = stripped_input(user, "Who is receiving this valentine?", "To:", null , 20)
 		var/sender = stripped_input(user, "Who is sending this valentine?", "From:", null , 20)

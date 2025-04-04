@@ -112,9 +112,9 @@
 	alternate_magazine = current_mag
 	toggled = !toggled
 	if(toggled)
-		to_chat(user, span_notice("You switch to tube B.") )
+		to_chat(user, span_notice("You switch to tube B."))
 	else
-		to_chat(user, span_notice("You switch to tube A.") )
+		to_chat(user, span_notice("You switch to tube A."))
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -169,11 +169,11 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		var/obj/item/stack/cable_coil/C = A
 		if(C.use(10))
 			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling.") )
+			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_appearance()
 		else
-			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!") )
+			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/update_icon_state()
 	. = ..()

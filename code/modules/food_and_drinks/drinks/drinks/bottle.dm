@@ -42,7 +42,7 @@
 		return ..()
 
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm [target]!") )
+		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return
 
 	var/obj/item/bodypart/affecting = user.zone_selected //Find what the player is aiming at
@@ -86,10 +86,10 @@
 	//Display an attack message.
 	if(target != user)
 		target.visible_message(span_danger("[user] hits [target][head_attack_message] with a bottle of [src.name]!") , \
-				span_userdanger("[user] hits you [head_attack_message] with a bottle of [src.name]!") )
+				span_userdanger("[user] hits you [head_attack_message] with a bottle of [src.name]!"))
 	else
 		target.visible_message(span_danger("[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!") , \
-				span_userdanger("You hit yourself with a bottle of [src.name][head_attack_message]!") )
+				span_userdanger("You hit yourself with a bottle of [src.name][head_attack_message]!"))
 
 	//Attack logs
 	log_combat(user, target, "attacked", src)
@@ -516,7 +516,7 @@
 		active = TRUE
 		log_bomber(user, "has primed a", src, "for detonation")
 
-		to_chat(user, span_info("You light [src] on fire.") )
+		to_chat(user, span_info("You light [src] on fire."))
 		add_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 		if(!isGlass)
 			addtimer(CALLBACK(src, PROC_REF(explode)), 5 SECONDS)
@@ -536,9 +536,9 @@
 /obj/item/reagent_containers/food/drinks/molotov/attack_self(mob/user)
 	if(active)
 		if(!isGlass)
-			to_chat(user, span_danger("The flame's spread too far on it!") )
+			to_chat(user, span_danger("The flame's spread too far on it!"))
 			return
-		to_chat(user, span_info("You snuff out the flame on [src].") )
+		to_chat(user, span_info("You snuff out the flame on [src]."))
 		cut_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 		active = 0
 
@@ -594,7 +594,7 @@
 	desc = "Fermented prison wine made from fruit, sugar, and despair."
 	icon_state = "trashbag1" // pruno releases air as it ferments, we don't want to simulate this in atmos, but we can make it look like it did
 	for (var/mob/living/M in view(2, get_turf(src))) // letting people and/or narcs know when the pruno is done
-		to_chat(M, span_info("A pungent smell emanates from [src], like fruit puking out its guts.") )
+		to_chat(M, span_info("A pungent smell emanates from [src], like fruit puking out its guts."))
 		playsound(get_turf(src), 'sound/effects/bubbles2.ogg', 25, TRUE)
 
 /obj/item/reagent_containers/food/drinks/colocup/lean
@@ -615,12 +615,12 @@
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
 	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
 		playsound(src, 'sound/items/openbottle.ogg', 30, 1)
-		user.visible_message(span_notice("[user] takes the cap off \the [src].") , span_notice("You take the cap off [src].") )
+		user.visible_message(span_notice("[user] takes the cap off \the [src].") , span_notice("You take the cap off [src]."))
 		reagents.flags |= OPENCONTAINER //Cap's off
 		if(prob(1)) //Lucky you
 			var/S = new /obj/item/sandstar(src)
 			user.put_in_hands(S)
-			to_chat(user, span_notice("You found a Sandblast Star!") )
+			to_chat(user, span_notice("You found a Sandblast Star!"))
 	else
 		. = ..()
 

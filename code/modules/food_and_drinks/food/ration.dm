@@ -38,7 +38,7 @@
 	add_overlay(ration_overlay)
 
 /obj/item/reagent_containers/food/snacks/ration/proc/open_ration(mob/user)
-	to_chat(user, span_notice("You tear open \the [src].") )
+	to_chat(user, span_notice("You tear open \the [src]."))
 	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	desc += "\nIt's been opened."
@@ -52,7 +52,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, span_warning("The [src] is sealed shut!") )
+		to_chat(user, span_warning("The [src] is sealed shut!"))
 		return 0
 	return ..()
 
@@ -107,16 +107,16 @@
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, span_warning("[src] is sealed shut!") )
+		to_chat(user, span_warning("[src] is sealed shut!"))
 		return 0
 	else
-		to_chat(user, span_warning("[src] cant be eaten like that!") )
+		to_chat(user, span_warning("[src] cant be eaten like that!"))
 		return 0
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/afterattack(obj/target, mob/user , proximity)
 	. = ..()
 	if(!is_drainable())
-		to_chat(user, span_warning("[src] is sealed shut!") )
+		to_chat(user, span_warning("[src] is sealed shut!"))
 		return
 	if(!proximity)
 		return
@@ -126,7 +126,7 @@
 			to_chat(user, span_warning("[target] is too full!")  )
 			return
 		else
-			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it.") )
+			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
 
@@ -140,16 +140,16 @@
 
 /obj/item/reagent_containers/food/snacks/ration/pack/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, span_warning("[src] is sealed shut!") )
+		to_chat(user, span_warning("[src] is sealed shut!"))
 		return 0
 	else
-		to_chat(user, span_warning("[src] cant be eaten like that!") )
+		to_chat(user, span_warning("[src] cant be eaten like that!"))
 		return 0
 
 /obj/item/reagent_containers/food/snacks/ration/pack/afterattack(obj/target, mob/user , proximity)
 	. = ..()
 	if(!is_drainable())
-		to_chat(user, span_warning("[src] is sealed shut!") )
+		to_chat(user, span_warning("[src] is sealed shut!"))
 		return
 	if(!proximity)
 		return
@@ -158,7 +158,7 @@
 			to_chat(user, span_warning("[target] is too full!")  )
 			return
 		else
-			to_chat(user, span_notice("You pour the [src] into [target] and shake.") )
+			to_chat(user, span_notice("You pour the [src] into [target] and shake."))
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
 
@@ -311,7 +311,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers/open_ration(mob/user)
 	.=..()
-	to_chat(user, span_notice("\the [src] makes a nice hiss.") )
+	to_chat(user, span_notice("\the [src] makes a nice hiss."))
 
 /obj/item/reagent_containers/food/snacks/ration/side/cornbread
 	name = "cornbread"

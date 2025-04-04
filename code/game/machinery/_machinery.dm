@@ -416,7 +416,7 @@ Class Procs:
 	. = !(state_open || panel_open || is_operational || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message(span_notice("[usr] pries open \the [src].") , span_notice("You pry open \the [src].") )
+		visible_message(span_notice("[usr] pries open \the [src].") , span_notice("You pry open \the [src]."))
 		open_machine()
 
 /obj/machinery/proc/default_deconstruction_crowbar(obj/item/I, ignore_panel = 0)
@@ -503,11 +503,11 @@ Class Procs:
 		if(!panel_open)
 			panel_open = TRUE
 			icon_state = icon_state_open
-			to_chat(user, span_notice("You open the maintenance hatch of [src].") )
+			to_chat(user, span_notice("You open the maintenance hatch of [src]."))
 		else
 			panel_open = FALSE
 			icon_state = icon_state_closed
-			to_chat(user, span_notice("You close the maintenance hatch of [src].") )
+			to_chat(user, span_notice("You close the maintenance hatch of [src]."))
 		return TRUE
 	return FALSE
 
@@ -515,13 +515,13 @@ Class Procs:
 	if(panel_open && I.tool_behaviour == TOOL_WRENCH)
 		I.play_tool_sound(src, 50)
 		setDir(turn(dir,-90))
-		to_chat(user, span_notice("You rotate [src].") )
+		to_chat(user, span_notice("You rotate [src]."))
 		return 1
 	return 0
 
 /obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
 	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
-		to_chat(user, span_warning("[src] needs to be on the floor to be secured!") )
+		to_chat(user, span_warning("[src] needs to be on the floor to be secured!"))
 		return FAILED_UNFASTEN
 	return SUCCESSFUL_UNFASTEN
 
@@ -529,21 +529,21 @@ Class Procs:
 	if(!(flags_1 & NODECONSTRUCT_1) && I.tool_behaviour == TOOL_WRENCH)
 		var/turf/ground = get_turf(src)
 		if(!anchored && ground.is_blocked_turf(exclude_mobs = TRUE, source_atom = src))
-			to_chat(user, span_notice("You fail to secure [src].") )
+			to_chat(user, span_notice("You fail to secure [src]."))
 			return CANT_UNFASTEN
 		var/can_be_unfasten = can_be_unfasten_wrench(user)
 		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
 			return can_be_unfasten
 		if(time)
-			to_chat(user, span_notice("You begin [anchored ? "un" : ""]securing [src]...") )
+			to_chat(user, span_notice("You begin [anchored ? "un" : ""]securing [src]..."))
 		I.play_tool_sound(src, 50)
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
 		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, PROC_REF(unfasten_wrench_check), prev_anchored, user)))
 			if(!anchored && ground.is_blocked_turf(exclude_mobs = TRUE, source_atom = src))
-				to_chat(user, span_notice("You fail to secure [src].") )
+				to_chat(user, span_notice("You fail to secure [src]."))
 				return CANT_UNFASTEN
-			to_chat(user, span_notice("You [anchored ? "un" : ""]secure [src].") )
+			to_chat(user, span_notice("You [anchored ? "un" : ""]secure [src]."))
 			set_anchored(!anchored)
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			SEND_SIGNAL(src, COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH, anchored)
@@ -592,7 +592,7 @@ Class Procs:
 									B.moveToNullspace()
 							SEND_SIGNAL(W, COMSIG_TRY_STORAGE_INSERT, A, null, null, TRUE)
 							component_parts -= A
-							to_chat(user, span_notice("[capitalize(A.name)] replaced with [B.name].") )
+							to_chat(user, span_notice("[capitalize(A.name)] replaced with [B.name]."))
 							shouldplaysound = 1 //Only play the sound when parts are actually replaced!
 							break
 			RefreshParts()

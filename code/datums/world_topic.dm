@@ -84,7 +84,7 @@
 	require_comms_key = TRUE
 
 /datum/world_topic/ahelp_relay/Run(list/input)
-	relay_msg_admins(span_adminnotice("<b><font color=red>HELP: </font> [input["source"]] [input["message_sender"]]: [input["message"]]</b>") )
+	relay_msg_admins(span_adminnotice("<b><font color=red>HELP: </font> [input["source"]] [input["message_sender"]]: [input["message"]]</b>"))
 
 /datum/world_topic/comms_console
 	keyword = "Comms_Console"
@@ -250,7 +250,7 @@
 			if(GLOB.OOC_COLOR)
 				to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b>[span_prefix("OOC:")] <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span></b></font>")
 			else
-				to_chat(C, span_ooc("[span_prefix("OOC:")] <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span>") )
+				to_chat(C, span_ooc("[span_prefix("OOC:")] <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span>"))
 
 /datum/world_topic/asay_relay
 	keyword = "asay_send"

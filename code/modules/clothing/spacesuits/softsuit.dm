@@ -83,7 +83,7 @@
 		return
 	up = !up
 	if(!up || force)
-		to_chat(user, span_notice("You close your helmet's visor and breathing mask.") )
+		to_chat(user, span_notice("You close your helmet's visor and breathing mask."))
 		gas_transfer_coefficient = initial(gas_transfer_coefficient)
 		permeability_coefficient = initial(permeability_coefficient)
 		clothing_flags |= visor_flags
@@ -91,7 +91,7 @@
 		flags_inv |= visor_flags_inv
 		cold_protection |= HEAD
 	else
-		to_chat(user, span_notice("You open your helmet's visor and breathing mask.") )
+		to_chat(user, span_notice("You open your helmet's visor and breathing mask."))
 		gas_transfer_coefficient = null
 		permeability_coefficient = null
 		clothing_flags &= ~visor_flags

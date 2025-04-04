@@ -10,7 +10,7 @@
 	if(!has_active_hand()) //can't attack without a hand.
 		var/obj/item/bodypart/check_arm = get_active_hand()
 		if(check_arm?.bodypart_disabled)
-			to_chat(src, span_warning("Your [check_arm.name] is in no condition to be used.") )
+			to_chat(src, span_warning("Your [check_arm.name] is in no condition to be used."))
 			return
 
 	// Special glove functions:
@@ -47,7 +47,7 @@
 	if(!user.can_interact_with(src))
 		return FALSE
 	if((interaction_flags_atom & INTERACT_ATOM_REQUIRES_DEXTERITY) && !user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!") )
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return FALSE
 	if(!(interaction_flags_atom & INTERACT_ATOM_IGNORE_INCAPACITATED) && user.incapacitated((interaction_flags_atom & INTERACT_ATOM_IGNORE_RESTRAINED), !(interaction_flags_atom & INTERACT_ATOM_CHECK_GRAB)))
 		return FALSE
@@ -112,7 +112,7 @@
 		if(prob(25))
 			victim.visible_message(span_danger("[src]'s bite misses [victim]!") ,
 				span_danger("You avoid [src]'s bite!") , span_hear("You hear jaws snapping shut!") , COMBAT_MESSAGE_RANGE, src)
-			to_chat(src, span_danger("Your bite misses [victim]!") )
+			to_chat(src, span_danger("Your bite misses [victim]!"))
 			return
 
 		if(ishuman(victim))
@@ -123,7 +123,7 @@
 		victim.apply_damage(rand(1, 3), BRUTE, affecting, armor)
 		victim.visible_message(span_danger("[name] bites [victim]!") ,
 			span_userdanger("[name] bites you!") , span_hear("You hear a chomp!") , COMBAT_MESSAGE_RANGE, name)
-		to_chat(name, span_danger("You bite [victim]!") )
+		to_chat(name, span_danger("You bite [victim]!"))
 		if(armor >= 2)
 			return
 		for(var/d in diseases)

@@ -33,10 +33,10 @@
 							to_chat(M, msg)
 						if(LINGHIVE_OUTSIDER)
 							if(prob(40))
-								to_chat(M, span_changeling("We can faintly sense an outsider trying to communicate through the hivemind...") )
+								to_chat(M, span_changeling("We can faintly sense an outsider trying to communicate through the hivemind..."))
 		if(LINGHIVE_LING)
 			if (HAS_TRAIT(user, CHANGELING_HIVEMIND_MUTE))
-				to_chat(user, span_warning("The poison in the air hinders our ability to interact with the hivemind.") )
+				to_chat(user, span_warning("The poison in the air hinders our ability to interact with the hivemind."))
 				return FALSE
 			var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 			var/msg = span_changeling("<b>[changeling.changelingID]:</b> [message]")
@@ -56,9 +56,9 @@
 								to_chat(M, msg)
 						if(LINGHIVE_OUTSIDER)
 							if(prob(40))
-								to_chat(M, span_changeling("We can faintly sense another of our kind trying to communicate through the hivemind...") )
+								to_chat(M, span_changeling("We can faintly sense another of our kind trying to communicate through the hivemind..."))
 		if(LINGHIVE_OUTSIDER)
-			to_chat(user, span_changeling("Our senses have not evolved enough to be able to communicate this way...") )
+			to_chat(user, span_changeling("Our senses have not evolved enough to be able to communicate this way..."))
 	return FALSE
 
 

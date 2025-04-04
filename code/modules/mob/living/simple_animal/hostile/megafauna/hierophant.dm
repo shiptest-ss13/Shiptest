@@ -205,7 +205,7 @@ Difficulty: Hard
 /mob/living/simple_animal/hostile/megafauna/hierophant/proc/blink_spam(blink_counter, target_slowness, cross_counter)
 	ranged_cooldown = world.time + max(5, major_attack_cooldown - anger_modifier * 0.75)
 	if(health < maxHealth * 0.5 && blink_counter > 1)
-		visible_message(span_hierophant("\"Mx ampp rsx iwgeti.\"") )
+		visible_message(span_hierophant("\"Mx ampp rsx iwgeti.\""))
 		var/oldcolor = color
 		animate(src, color = "#660099", time = 6)
 		SLEEP_CHECK_DEATH(6)
@@ -226,7 +226,7 @@ Difficulty: Hard
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/proc/cross_blast_spam(blink_counter, target_slowness, cross_counter)
 	ranged_cooldown = world.time + max(5, major_attack_cooldown - anger_modifier * 0.75)
-	visible_message(span_hierophant("\"Piezi mx rsalivi xs vyr.\"") )
+	visible_message(span_hierophant("\"Piezi mx rsalivi xs vyr.\""))
 	blinking = TRUE
 	var/oldcolor = color
 	animate(src, color = "#660099", time = 6)
@@ -246,7 +246,7 @@ Difficulty: Hard
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/proc/chaser_swarm(blink_counter, target_slowness, cross_counter)
 	ranged_cooldown = world.time + max(5, major_attack_cooldown - anger_modifier * 0.75)
-	visible_message(span_hierophant("\"Mx gerrsx lmhi.\"") )
+	visible_message(span_hierophant("\"Mx gerrsx lmhi.\""))
 	blinking = TRUE
 	var/oldcolor = color
 	animate(src, color = "#660099", time = 6)
@@ -343,7 +343,7 @@ Difficulty: Hard
 		B.damage = 30
 	animate(src, alpha = 0, time = 2, easing = EASE_OUT) //fade out
 	SLEEP_CHECK_DEATH(1)
-	visible_message(span_hierophant_warning("[src] fades out!") )
+	visible_message(span_hierophant_warning("[src] fades out!"))
 	density = FALSE
 	SLEEP_CHECK_DEATH(2)
 	forceMove(T)
@@ -351,7 +351,7 @@ Difficulty: Hard
 	animate(src, alpha = 255, time = 2, easing = EASE_IN) //fade IN
 	SLEEP_CHECK_DEATH(1)
 	density = TRUE
-	visible_message(span_hierophant_warning("[src] fades in!") )
+	visible_message(span_hierophant_warning("[src] fades in!"))
 	SLEEP_CHECK_DEATH(1) //at this point the blasts we made detonate
 	blinking = FALSE
 
@@ -393,14 +393,14 @@ Difficulty: Hard
 			timeout_time--
 		if(timeout_time <= 0 && !did_reset)
 			did_reset = TRUE
-			visible_message(span_hierophant_warning("\"Vixyvrmrk xs fewi...\"") )
+			visible_message(span_hierophant_warning("\"Vixyvrmrk xs fewi...\""))
 			blink(spawned_beacon)
 			adjustHealth(min((health - maxHealth) * 0.5, -250)) //heal for 50% of our missing health, minimum 10% of maximum health
 			wander = FALSE
 			if(health > maxHealth * 0.9)
-				visible_message(span_hierophant("\"Vitemvw gsqtpixi. Stivexmrk ex qebmqyq ijjmgmirgc.\"") )
+				visible_message(span_hierophant("\"Vitemvw gsqtpixi. Stivexmrk ex qebmqyq ijjmgmirgc.\""))
 			else
-				visible_message(span_hierophant("\"Vitemvw gsqtpixi. Stivexmsrep ijjmgmirgc gsqtvsqmwih.\"") )
+				visible_message(span_hierophant("\"Vitemvw gsqtpixi. Stivexmsrep ijjmgmirgc gsqtvsqmwih.\""))
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/death()
 	if(health > 0 || stat == DEAD)
@@ -408,8 +408,8 @@ Difficulty: Hard
 	else
 		set_stat(DEAD)
 		blinking = TRUE //we do a fancy animation, release a huge burst(), and leave our staff.
-		visible_message(span_hierophant("\"Mrmxmexmrk wipj-hiwxvygx wiuyirgi...\"") )
-		visible_message(span_hierophant_warning("[src] shrinks, releasing a massive burst of energy!") )
+		visible_message(span_hierophant("\"Mrmxmexmrk wipj-hiwxvygx wiuyirgi...\""))
+		visible_message(span_hierophant_warning("[src] shrinks, releasing a massive burst of energy!"))
 		var/list/stored_nearby = list()
 		for(var/mob/living/L in view(7,src))
 			stored_nearby += L // store the people to grant the achievements to once we die
@@ -421,8 +421,8 @@ Difficulty: Hard
 	for(var/obj/item/W in L)
 		if(!L.dropItemToGround(W))
 			qdel(W)
-	visible_message(span_hierophant_warning("\"[pick(kill_phrases)]\"") )
-	visible_message(span_hierophant_warning("[src] annihilates [L]!") ,span_userdanger("You annihilate [L], restoring your health!") )
+	visible_message(span_hierophant_warning("\"[pick(kill_phrases)]\""))
+	visible_message(span_hierophant_warning("[src] annihilates [L]!") ,span_userdanger("You annihilate [L], restoring your health!"))
 	adjustHealth(-L.maxHealth*0.5)
 	L.dust()
 
@@ -435,7 +435,7 @@ Difficulty: Hard
 	var/targets_the_same = (new_target == target)
 	. = ..()
 	if(. && target && !targets_the_same)
-		visible_message(span_hierophant_warning("\"[pick(target_phrases)]\"") )
+		visible_message(span_hierophant_warning("\"[pick(target_phrases)]\""))
 		if(spawned_beacon && loc == spawned_beacon.loc && did_reset)
 			arena_trap(src)
 
@@ -685,7 +685,7 @@ Difficulty: Hard
 		if(L.client)
 			flash_color(L.client, "#660099", 1)
 		playsound(L,'sound/weapons/sear.ogg', 50, TRUE, -4)
-		to_chat(L, span_userdanger("You're struck by a [name]!") )
+		to_chat(L, span_userdanger("You're struck by a [name]!"))
 		var/limb_to_hit = L.get_bodypart(pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))
 		var/armor = L.run_armor_check(limb_to_hit, "melee", 50, FALSE, "Your armor absorbs [src]!", "Your armor blocks part of [src]!", "Your armor was penetrated by [src]!")
 		L.apply_damage(damage, BURN, limb_to_hit, armor)
@@ -706,7 +706,7 @@ Difficulty: Hard
 		if(M.occupant)
 			if(friendly_fire_check && caster && caster.faction_check_mob(M.occupant))
 				continue
-			to_chat(M.occupant, span_userdanger("Your [M.name] is struck by a [name]!") )
+			to_chat(M.occupant, span_userdanger("Your [M.name] is struck by a [name]!"))
 		playsound(M,'sound/weapons/sear.ogg', 50, TRUE, -4)
 		M.take_damage(damage, BURN, 0, 0)
 
@@ -728,13 +728,13 @@ Difficulty: Hard
 		if(H.timer > world.time)
 			return
 		if(H.beacon == src)
-			to_chat(user, span_notice("You start removing your hierophant beacon...") )
+			to_chat(user, span_notice("You start removing your hierophant beacon..."))
 			H.timer = world.time + 51
 			INVOKE_ASYNC(H, TYPE_PROC_REF(/obj/item/hierophant_club, prepare_icon_update))
 			if(do_after(user, 50, target = src))
 				playsound(src,'sound/magic/blind.ogg', 200, TRUE, -4)
 				new /obj/effect/temp_visual/hierophant/telegraph/teleport(get_turf(src), user)
-				to_chat(user, span_hierophant_warning("You collect [src], reattaching it to the club!") )
+				to_chat(user, span_hierophant_warning("You collect [src], reattaching it to the club!"))
 				H.beacon = null
 				user.update_action_buttons_icon()
 				qdel(src)
@@ -742,6 +742,6 @@ Difficulty: Hard
 				H.timer = world.time
 				INVOKE_ASYNC(H, TYPE_PROC_REF(/obj/item/hierophant_club, prepare_icon_update))
 		else
-			to_chat(user, span_hierophant_warning("You touch the beacon with the club, but nothing happens.") )
+			to_chat(user, span_hierophant_warning("You touch the beacon with the club, but nothing happens."))
 	else
 		return ..()

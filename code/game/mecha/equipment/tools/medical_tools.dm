@@ -55,8 +55,8 @@
 		return
 	if(!patient_insertion_check(target))
 		return
-	occupant_message(span_notice("You start putting [target] into [src]...") )
-	chassis.visible_message(span_warning("[chassis] starts putting [target] into \the [src].") )
+	occupant_message(span_notice("You start putting [target] into [src]..."))
+	chassis.visible_message(span_warning("[chassis] starts putting [target] into \the [src]."))
 	if(do_after_cooldown(target))
 		if(!patient_insertion_check(target))
 			return
@@ -64,19 +64,19 @@
 		patient = target
 		START_PROCESSING(SSobj, src)
 		update_equip_info()
-		occupant_message(span_notice("[target] successfully loaded into [src]. Life support functions engaged.") )
-		chassis.visible_message(span_warning("[chassis] loads [target] into [src].") )
+		occupant_message(span_notice("[target] successfully loaded into [src]. Life support functions engaged."))
+		chassis.visible_message(span_warning("[chassis] loads [target] into [src]."))
 		log_message("[target] loaded. Life support functions engaged.", LOG_MECHA)
 
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper/proc/patient_insertion_check(mob/living/carbon/target)
 	if(target.buckled)
-		occupant_message(span_warning("[target] will not fit into the sleeper because [target.p_theyre()] buckled to [target.buckled]!") )
+		occupant_message(span_warning("[target] will not fit into the sleeper because [target.p_theyre()] buckled to [target.buckled]!"))
 		return
 	if(target.has_buckled_mobs())
-		occupant_message(span_warning("[target] will not fit into the sleeper because of the creatures attached to it!") )
+		occupant_message(span_warning("[target] will not fit into the sleeper because of the creatures attached to it!"))
 		return
 	if(patient)
-		occupant_message(span_warning("The sleeper is already occupied!") )
+		occupant_message(span_warning("The sleeper is already occupied!"))
 		return
 	return 1
 
@@ -84,7 +84,7 @@
 	if(!patient)
 		return
 	patient.forceMove(get_turf(src))
-	occupant_message(span_notice("[patient] ejected. Life support functions disabled.") )
+	occupant_message(span_notice("[patient] ejected. Life support functions disabled."))
 	log_message("[patient] ejected. Life support functions disabled.", LOG_MECHA)
 	STOP_PROCESSING(SSobj, src)
 	patient = null
@@ -92,7 +92,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper/detach()
 	if(patient)
-		occupant_message(span_warning("Unable to detach [src] - equipment occupied!") )
+		occupant_message(span_warning("Unable to detach [src] - equipment occupied!"))
 		return
 	STOP_PROCESSING(SSobj, src)
 	return ..()
@@ -193,7 +193,7 @@
 		return 0
 	var/to_inject = min(R.volume, inject_amount)
 	if(to_inject && patient.reagents.get_reagent_amount(R.type) + to_inject <= inject_amount*2)
-		occupant_message(span_notice("Injecting [patient] with [to_inject] units of [R.name].") )
+		occupant_message(span_notice("Injecting [patient] with [to_inject] units of [R.name]."))
 		log_message("Injecting [patient] with [to_inject] units of [R.name].", LOG_MECHA)
 		log_combat(chassis.occupant, patient, "injected", "[name] ([R] - [to_inject] units)")
 		SG.reagents.trans_id_to(patient,R.type,to_inject)
@@ -218,7 +218,7 @@
 	if(!chassis.has_charge(energy_drain))
 		set_ready_state(1)
 		log_message("Deactivated.", LOG_MECHA)
-		occupant_message(span_warning("[src] deactivated - no power.") )
+		occupant_message(span_warning("[src] deactivated - no power."))
 		STOP_PROCESSING(SSobj, src)
 		return
 	var/mob/living/carbon/M = patient
@@ -370,7 +370,7 @@
 			message += " added to production"
 			START_PROCESSING(SSobj, src)
 			occupant_message(message)
-			occupant_message(span_notice("Reagent processing started.") )
+			occupant_message(span_notice("Reagent processing started."))
 			log_message("Reagent processing started.", LOG_MECHA)
 		return
 	if (href_list["show_reagents"])
@@ -445,31 +445,31 @@
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/proc/load_syringe(obj/item/reagent_containers/syringe/S, mob/user)
 	if(length(syringes) >= max_syringes)
-		occupant_message(span_warning("[src]'s syringe chamber is full!") )
+		occupant_message(span_warning("[src]'s syringe chamber is full!"))
 		return FALSE
 	if(!chassis.Adjacent(S))
-		occupant_message(span_warning("Unable to load syringe!") )
+		occupant_message(span_warning("Unable to load syringe!"))
 		return FALSE
 	S.reagents.trans_to(src, S.reagents.total_volume, transfered_by = user)
 	S.forceMove(src)
 	syringes += S
-	occupant_message(span_notice("Syringe loaded.") )
+	occupant_message(span_notice("Syringe loaded."))
 	update_equip_info()
 	return TRUE
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/proc/analyze_reagents(atom/A)
 	if(get_dist(src,A) >= 4)
-		occupant_message(span_notice("The object is too far away!") )
+		occupant_message(span_notice("The object is too far away!"))
 		return 0
 	if(!A.reagents || ismob(A))
-		occupant_message(span_warning("No reagent info gained from [A].") )
+		occupant_message(span_warning("No reagent info gained from [A]."))
 		return 0
-	occupant_message(span_notice("Analyzing reagents...") )
+	occupant_message(span_notice("Analyzing reagents..."))
 	for(var/datum/reagent/R in A.reagents.reagent_list)
 		if(R.can_synth && add_known_reagent(R.type,R.name))
-			occupant_message(span_notice("Reagent analyzed, identified as [R.name] and added to database.") )
+			occupant_message(span_notice("Reagent analyzed, identified as [R.name] and added to database."))
 			send_byjax(chassis.occupant,"msyringegun.browser","reagents_form",get_reagents_form())
-	occupant_message(span_notice("Analyzis complete.") )
+	occupant_message(span_notice("Analyzis complete."))
 	return 1
 
 /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/proc/add_known_reagent(r_id,r_name)
@@ -494,7 +494,7 @@
 	if(..())
 		return
 	if(!processed_reagents.len || reagents.total_volume >= reagents.maximum_volume || !chassis.has_charge(energy_drain))
-		occupant_message(span_alert("Reagent processing stopped.") )
+		occupant_message(span_alert("Reagent processing stopped."))
 		log_message("Reagent processing stopped.", LOG_MECHA)
 		STOP_PROCESSING(SSobj, src)
 		return

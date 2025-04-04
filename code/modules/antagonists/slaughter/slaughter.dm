@@ -87,16 +87,16 @@
 		return ..()
 	user.visible_message(
 		span_warning("[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!") , \
-		span_danger("An unnatural hunger consumes you. You raise [src] your mouth and devour it!") )
+		span_danger("An unnatural hunger consumes you. You raise [src] your mouth and devour it!"))
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
 		if(knownspell.type == /obj/effect/proc_holder/spell/bloodcrawl)
-			to_chat(user, span_warning("...and you don't feel any different.") )
+			to_chat(user, span_warning("...and you don't feel any different."))
 			qdel(src)
 			return
 	user.visible_message(
 		span_warning("[user]'s eyes flare a deep crimson!") , \
-		span_userdanger("You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!") )
+		span_userdanger("You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!"))
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	src.Insert(user) //Consuming the heart literally replaces your heart with a demon heart. H A R D C O R E
 
@@ -184,7 +184,7 @@
 		if(M.revive(full_heal = TRUE, admin_revive = TRUE))
 			M.grab_ghost(force = TRUE)
 			playsound(T, feast_sound, 50, TRUE, -1)
-			to_chat(M, span_clown("You leave [src]'s warm embrace,	and feel ready to take on the world.") )
+			to_chat(M, span_clown("You leave [src]'s warm embrace,	and feel ready to take on the world."))
 
 /mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(mob/living/victim)
 	if(consumed_mobs)
@@ -194,4 +194,4 @@
 		// Be safe and just eject the corpse
 		victim.forceMove(get_turf(victim))
 		victim.exit_blood_effect()
-		victim.visible_message(span_warning("[victim] falls out of the air, covered in blood, looking highly confused. And dead.") )
+		victim.visible_message(span_warning("[victim] falls out of the air, covered in blood, looking highly confused. And dead."))

@@ -196,17 +196,17 @@
 		return
 
 	if(recharging_time > world.time)
-		to_chat(user, span_warning("The boot's internal propulsion needs to recharge still!") )
+		to_chat(user, span_warning("The boot's internal propulsion needs to recharge still!"))
 		return
 
 	var/atom/target = get_edge_target_turf(user, user.dir) //gets the user's direction
 
 	if (user.throw_at(target, jumpdistance, jumpspeed, spin = FALSE, diagonals_first = TRUE))
 		playsound(src, 'sound/effects/stealthoff.ogg', 50, TRUE, TRUE)
-		user.visible_message(span_warning("[usr] dashes forward into the air!") )
+		user.visible_message(span_warning("[usr] dashes forward into the air!"))
 		recharging_time = world.time + recharging_rate
 	else
-		to_chat(user, span_warning("Something prevents you from dashing forward!") )
+		to_chat(user, span_warning("Something prevents you from dashing forward!"))
 
 /obj/item/clothing/shoes/kindleKicks
 	name = "Kindle Kicks"
@@ -273,7 +273,7 @@
 	if(slot == ITEM_SLOT_FEET)
 		for(var/mob/living/occupant in occupants)
 			occupant.forceMove(user.drop_location())
-			user.visible_message(span_warning("[user] recoils as something slithers out of [src].") , span_userdanger("You feel a sudden stabbing pain in your [pick("foot", "toe", "ankle")]!") )
+			user.visible_message(span_warning("[user] recoils as something slithers out of [src].") , span_userdanger("You feel a sudden stabbing pain in your [pick("foot", "toe", "ankle")]!"))
 			user.Knockdown(20) //Is one second paralyze better here? I feel you would fall on your ass in some fashion.
 			user.apply_damage(5, BRUTE, pick(BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))
 			if(istype(occupant, /mob/living/simple_animal/hostile/retaliate/poison))
@@ -285,12 +285,12 @@
 	if(!(user.mobility_flags & MOBILITY_USE) || user.stat != CONSCIOUS || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) || !Adjacent(user) || !user.Adjacent(target) || target.stat == DEAD)
 		return
 	if(occupants.len >= max_occupants)
-		to_chat(user, span_warning("[src] are full!") )
+		to_chat(user, span_warning("[src] are full!"))
 		return
 	if(istype(target, /mob/living/simple_animal/hostile/retaliate/poison/snake) || istype(target, /mob/living/simple_animal/hostile/headcrab) || istype(target, /mob/living/carbon/alien/larva))
 		occupants += target
 		target.forceMove(src)
-		to_chat(user, span_notice("[target] slithers into [src].") )
+		to_chat(user, span_notice("[target] slithers into [src]."))
 
 /obj/item/clothing/shoes/cowboy/container_resist_act(mob/living/user)
 	if(!do_after(user, 10, target = user))

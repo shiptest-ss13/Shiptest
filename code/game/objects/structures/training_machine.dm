@@ -83,7 +83,7 @@
 	if(.)
 		return
 	if (moving && obj_flags & EMAGGED)
-		visible_message(span_warning("The [src]'s control panel fizzles slightly.") )
+		visible_message(span_warning("The [src]'s control panel fizzles slightly."))
 		return
 	switch(action)
 		if("toggle")
@@ -113,10 +113,10 @@
 	if (!istype(target, /obj/item/training_toolbox) && !istype(target, /obj/item/target))
 		return ..()
 	if (obj_flags & EMAGGED)
-		to_chat(user, span_warning("The toolbox is somehow stuck on! It won't budge!") )
+		to_chat(user, span_warning("The toolbox is somehow stuck on! It won't budge!"))
 		return
 	attach_item(target)
-	to_chat(user, span_notice("You attach \the [attached_item] to the training device.") )
+	to_chat(user, span_notice("You attach \the [attached_item] to the training device."))
 	playsound(src, "rustle", 50, TRUE)
 
 /**
@@ -177,9 +177,9 @@
 	if (!attached_item)
 		return
 	if (obj_flags & EMAGGED)
-		to_chat(user, span_warning("The toolbox is somehow stuck on! It won't budge!") )
+		to_chat(user, span_warning("The toolbox is somehow stuck on! It won't budge!"))
 		return
-	to_chat(user, span_notice("You remove \the [attached_item] from the training device.") )
+	to_chat(user, span_notice("You remove \the [attached_item] from the training device."))
 	remove_attached_item(user)
 	playsound(src, "rustle", 50, TRUE)
 
@@ -314,7 +314,7 @@
 	obj_flags |= EMAGGED
 	remove_attached_item(throwing = TRUE) //Toss out the old attached item!
 	attach_item(new /obj/item/storage/toolbox/syndicate(src))
-	to_chat(user, span_warning("You override the training machine's safety protocols, and activate its realistic combat feature. A toolbox pops out of a slot on the top.") )
+	to_chat(user, span_warning("You override the training machine's safety protocols, and activate its realistic combat feature. A toolbox pops out of a slot on the top."))
 	playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 	add_overlay("evil_trainer")
 
@@ -386,7 +386,7 @@
 
 /obj/item/training_toolbox/AltClick(mob/user)
 	. = ..()
-	to_chat(user, span_notice("You push the 'Lap' button on the toolbox's display.") )
+	to_chat(user, span_notice("You push the 'Lap' button on the toolbox's display."))
 	lap_hits = initial(lap_hits)
 
 /obj/item/training_toolbox/examine(mob/user)

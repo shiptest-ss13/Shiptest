@@ -104,7 +104,7 @@
 		return
 	to_chat(world, "[msg]", confidential = TRUE)
 	log_admin("GlobalNarrate: [key_name(usr)] : [msg]")
-	message_admins(span_adminnotice("[key_name_admin(usr)] Sent a global narrate") )
+	message_admins(span_adminnotice("[key_name_admin(usr)] Sent a global narrate"))
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Global Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_direct_narrate(mob/M)
@@ -150,7 +150,7 @@
 		to_chat(M, msg, confidential = TRUE)
 
 	log_admin("LocalNarrate: [key_name(usr)] at [AREACOORD(A)]: [msg]")
-	message_admins(span_adminnotice("<b> LocalNarrate: [key_name_admin(usr)] at [ADMIN_VERBOSEJMP(A)]:</b> [msg]<BR>") )
+	message_admins(span_adminnotice("<b> LocalNarrate: [key_name_admin(usr)] at [ADMIN_VERBOSEJMP(A)]:</b> [msg]<BR>"))
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Local Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_godmode(mob/M in GLOB.mob_list)
@@ -477,7 +477,7 @@
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm == "Yes")
 		log_admin("[key_name(usr)] used gibself.")
-		message_admins(span_adminnotice("[key_name_admin(usr)] used gibself.") )
+		message_admins(span_adminnotice("[key_name_admin(usr)] used gibself."))
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Gib Self") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		mob.gib(1, 1, 1)
 
@@ -521,7 +521,7 @@
 	SSshuttle.request_jump()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Call Shuttle") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] admin-initiated a bluespace jump.")
-	message_admins(span_adminnotice("[key_name_admin(usr)] admin-initiated a bluespace jump.") )
+	message_admins(span_adminnotice("[key_name_admin(usr)] admin-initiated a bluespace jump."))
 
 /client/proc/admin_cancel_jump()
 	set category = "Event"
@@ -539,7 +539,7 @@
 	SSshuttle.cancel_jump()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Cancel Shuttle") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] admin-cancelled a bluespace jump.")
-	message_admins(span_adminnotice("[key_name_admin(usr)] admin-cancelled a bluespace jump.") )
+	message_admins(span_adminnotice("[key_name_admin(usr)] admin-cancelled a bluespace jump."))
 
 /client/proc/everyone_random()
 	set category = "Event.Fun"
@@ -746,7 +746,7 @@
 		if(!M)
 			continue
 
-		M.audible_message(span_hear("...wabbajack...wabbajack...") )
+		M.audible_message(span_hear("...wabbajack...wabbajack..."))
 		playsound(M.loc, 'sound/magic/staff_change.ogg', 50, TRUE, -1)
 
 	message_admins("Mass polymorph started by [who_did_it] is complete.")
@@ -968,7 +968,7 @@
 			immerse_player(target)
 		if(ADMIN_PUNISHMENT_NYA)
 			if(!iscarbon(target))
-				to_chat(usr,span_warning("This must be used on a carbon mob.") )
+				to_chat(usr,span_warning("This must be used on a carbon mob."))
 				return
 			to_chat(target, span_userdanger("You do nyat feew vewy good!") , confidential = TRUE)
 			var/mob/living/carbon/dude = target

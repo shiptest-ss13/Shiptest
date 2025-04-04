@@ -42,7 +42,7 @@
 	experience_given = 0 //experience recieved scales with what's being dissected + which step you're doing.
 
 /datum/surgery_step/dissection/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message(span_notice("[user] starts dissecting [target].") , span_notice("You start dissecting [target].") )
+	user.visible_message(span_notice("[user] starts dissecting [target].") , span_notice("You start dissecting [target]."))
 
 /datum/surgery_step/dissection/proc/check_value(mob/living/target, datum/surgery/advanced/experimental_dissection/ED)
 	var/cost = 0
@@ -91,7 +91,7 @@
 
 /datum/surgery_step/dissection/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/points_earned = check_value(target, surgery)
-	user.visible_message(span_notice("[user] dissects [target], discovering [points_earned] point\s of data!") , span_notice("You dissect [target], finding [points_earned] point\s worth of discoveries, you also write a few notes.") )
+	user.visible_message(span_notice("[user] dissects [target], discovering [points_earned] point\s of data!") , span_notice("You dissect [target], finding [points_earned] point\s worth of discoveries, you also write a few notes."))
 
 	var/obj/item/research_notes/the_dossier =new /obj/item/research_notes(user.loc, points_earned, "biology")
 	if(!user.put_in_hands(the_dossier) && istype(user.get_inactive_held_item(), /obj/item/research_notes))

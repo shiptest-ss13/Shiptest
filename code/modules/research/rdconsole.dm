@@ -128,17 +128,17 @@ Nothing else in the console has ID requirements.
 		if(!plant_already_researched[E.type])
 			if(!E.research)
 				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-				visible_message(span_warning("[src] buzzes and displays a message: Sample quality error! Sample is either too common to be of value or too full of bugs to be of use!") )
+				visible_message(span_warning("[src] buzzes and displays a message: Sample quality error! Sample is either too common to be of value or too full of bugs to be of use!"))
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message(span_notice("[user] inserts [E] into a slot on the [src]!") , span_notice("You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!") )
+				visible_message(span_notice("[user] inserts [E] into a slot on the [src]!") , span_notice("You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!"))
 				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
 				plant_already_researched[E.type] = TRUE
 				qdel(D)
 				return
 		else
-			visible_message(span_notice("[src] buzzes and displays a message: Genetic data already researched!") )
+			visible_message(span_notice("[src] buzzes and displays a message: Genetic data already researched!"))
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
 			return
 	if(istype(D, /obj/item/assembly/signaler/anomaly))
@@ -149,7 +149,7 @@ Nothing else in the console has ID requirements.
 			return
 
 		playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-		visible_message(span_notice("[user] inserts [anomaly] into a slot on the [src]!") , span_notice("You insert [anomaly] into a slot on the [src], producting [anomaly.research] points!") )
+		visible_message(span_notice("[user] inserts [anomaly] into a slot on the [src]!") , span_notice("You insert [anomaly] into a slot on the [src], producting [anomaly.research] points!"))
 		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = anomaly.research))
 		qdel(anomaly)
 		return
@@ -182,25 +182,25 @@ Nothing else in the console has ID requirements.
 	if(istype(D, /obj/item/disk))
 		if(istype(D, /obj/item/disk/tech_disk))
 			if(t_disk)
-				to_chat(user, span_warning("A technology disk is already loaded!") )
+				to_chat(user, span_warning("A technology disk is already loaded!"))
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, span_warning("[D] is stuck to your hand!") )
+				to_chat(user, span_warning("[D] is stuck to your hand!"))
 				return
 			t_disk = D
 		else if (istype(D, /obj/item/disk/design_disk))
 			if(d_disk)
-				to_chat(user, span_warning("A design disk is already loaded!") )
+				to_chat(user, span_warning("A design disk is already loaded!"))
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, span_warning("[D] is stuck to your hand!") )
+				to_chat(user, span_warning("[D] is stuck to your hand!"))
 				return
 			d_disk = D
 		else
-			to_chat(user, span_warning("Machine cannot accept disks in that format.") )
+			to_chat(user, span_warning("Machine cannot accept disks in that format."))
 			return
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
-		to_chat(user, span_notice("You insert [D] into \the [src]!") )
+		to_chat(user, span_notice("You insert [D] into \the [src]!"))
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
 
@@ -276,7 +276,7 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/emag_act(mob/user)
 	if(!(obj_flags & EMAGGED))
-		to_chat(user, span_notice("You disable the security protocols[locked? " and unlock the console":""].") )
+		to_chat(user, span_notice("You disable the security protocols[locked? " and unlock the console":""]."))
 		playsound(src, "sparks", 75, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		obj_flags |= EMAGGED
 		locked = FALSE
@@ -945,17 +945,17 @@ Nothing else in the console has ID requirements.
 		ui_mode = text2num(ls["ui_mode"])
 	if(ls["lock_console"])
 		if(obj_flags & EMAGGED)
-			to_chat(usr, span_boldwarning("Security protocol error: Unable to lock.") )
+			to_chat(usr, span_boldwarning("Security protocol error: Unable to lock."))
 			return
 		if(allowed(usr))
 			lock_console(usr)
 		else
-			to_chat(usr, span_boldwarning("Unauthorized Access.") )
+			to_chat(usr, span_boldwarning("Unauthorized Access."))
 	if(ls["unlock_console"])
 		if(allowed(usr))
 			unlock_console(usr)
 		else
-			to_chat(usr, span_boldwarning("Unauthorized Access.") )
+			to_chat(usr, span_boldwarning("Unauthorized Access."))
 	if(ls["find_device"])
 		SyncRDevices()
 		say("Resynced with nearby devices.")
@@ -1129,7 +1129,7 @@ Nothing else in the console has ID requirements.
 			say("No Destructive Analyzer Linked!")
 			return
 		if(linked_destroy.busy)
-			to_chat(usr, span_danger("The destructive analyzer is busy at the moment.") )
+			to_chat(usr, span_danger("The destructive analyzer is busy at the moment."))
 		else if(linked_destroy.loaded_item)
 			linked_destroy.unload_item()
 			screen = RDSCREEN_MENU

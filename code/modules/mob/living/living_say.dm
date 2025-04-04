@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(ic_blocked)
 		//The filter warning message shows the sanitized message though.
-		to_chat(src, span_warning("That message contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[message]\"</span>") )
+		to_chat(src, span_warning("That message contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[message]\"</span>"))
 		SSblackbox.record_feedback("tally", "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
 		return
 	var/list/message_mods = list()
@@ -155,7 +155,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		language = get_selected_language()
 
 	if(!can_speak_vocal(message))
-		to_chat(src, span_warning("You find yourself unable to speak!") )
+		to_chat(src, span_warning("You find yourself unable to speak!"))
 		return
 
 	var/message_range = 7
@@ -324,7 +324,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 /mob/living/proc/can_speak_basic(message, ignore_spam = FALSE, forced = FALSE) //Check BEFORE handling of xeno and ling channels
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, span_danger("You cannot speak in IC (muted).") )
+			to_chat(src, span_danger("You cannot speak in IC (muted)."))
 			return FALSE
 		if(!(ignore_spam || forced) && client.handle_spam_prevention(message,MUTE_IC))
 			return FALSE

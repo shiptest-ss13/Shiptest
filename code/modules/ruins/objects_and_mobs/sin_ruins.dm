@@ -15,14 +15,14 @@
 	if(obj_flags & IN_USE)
 		return
 	if(isipc(user))
-		user.visible_message(span_warning(" As [user] tries to pull \the [src]'s lever, the machine seems to hesitate a bit.") , span_warning("You feel as if you are trying to put at stake something you don't even have...\ You suddenly feel your mind... Suboptimal?") )
+		user.visible_message(span_warning(" As [user] tries to pull \the [src]'s lever, the machine seems to hesitate a bit.") , span_warning("You feel as if you are trying to put at stake something you don't even have...\ You suddenly feel your mind... Suboptimal?"))
 		user.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	else
 		user.adjustCloneLoss(20)
 	obj_flags |= IN_USE
 
 	if(user.stat)
-		to_chat(user, span_userdanger("No... just one more try...") )
+		to_chat(user, span_userdanger("No... just one more try..."))
 		user.gib()
 	else
 		user.visible_message(span_warning("[user] pulls [src]'s lever with a glint in [user.p_their()] eyes!") , "<span class='warning'>You feel a draining as you pull the lever, but you \
@@ -38,11 +38,11 @@
 		playsound(src, 'sound/lavaland/cursed_slot_machine_jackpot.ogg', 50, FALSE)
 		new/obj/structure/cursed_money(get_turf(src))
 		if(user)
-			to_chat(user, span_boldwarning("You've hit jackpot. Laughter echoes around you as your reward appears in the machine's place.") )
+			to_chat(user, span_boldwarning("You've hit jackpot. Laughter echoes around you as your reward appears in the machine's place."))
 		qdel(src)
 	else
 		if(user)
-			to_chat(user, span_boldwarning("Fucking machine! Must be rigged. Still... one more try couldn't hurt, right?") )
+			to_chat(user, span_boldwarning("Fucking machine! Must be rigged. Still... one more try couldn't hurt, right?"))
 
 
 /obj/structure/cursed_money
@@ -90,7 +90,7 @@
 
 /obj/structure/mirror/magic/pride/curse(mob/user)
 	user.visible_message(span_danger("<B>The ground splits beneath [user] as [user.p_their()] hand leaves the mirror!</B>") , \
-	span_notice("Perfect. Much better! Now <i>nobody</i> will be able to resist yo-") )
+	span_notice("Perfect. Much better! Now <i>nobody</i> will be able to resist yo-"))
 
 	var/turf/T = get_turf(user)
 	var/datum/virtual_level/vlevel = pick(SSmapping.virtual_levels_by_trait(ZTRAIT_SPACE_RUINS))

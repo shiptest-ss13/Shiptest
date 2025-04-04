@@ -122,7 +122,7 @@
 	if(!tool_start_check(user, amount = 1))
 		return TRUE
 	user.visible_message(span_notice("[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)].") ,
-			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].") )
+			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
 	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
@@ -144,7 +144,7 @@
 
 	if(!status && O.is_refillable())
 		reagents.trans_to(O, reagents.total_volume, transfered_by = user)
-		to_chat(user, span_notice("You empty [src]'s fuel tank into [O].") )
+		to_chat(user, span_notice("You empty [src]'s fuel tank into [O]."))
 		update_appearance()
 
 /obj/item/weldingtool/attack_qdeleted(atom/O, mob/user, proximity)
@@ -219,12 +219,12 @@
 //Switches the welder on
 /obj/item/weldingtool/proc/switched_on(mob/user)
 	if(!status)
-		to_chat(user, span_warning("[src] can't be turned on while unsecured!") )
+		to_chat(user, span_warning("[src] can't be turned on while unsecured!"))
 		return
 	set_welding(!welding)
 	if(welding)
 		if(get_fuel() >= 1)
-			to_chat(user, span_notice("You switch [src] on.") )
+			to_chat(user, span_notice("You switch [src] on."))
 			playsound(loc, acti_sound, 50, TRUE)
 			force = 15
 			damtype = "fire"
@@ -232,10 +232,10 @@
 			update_appearance()
 			START_PROCESSING(SSobj, src)
 		else
-			to_chat(user, span_warning("You need more fuel!") )
+			to_chat(user, span_warning("You need more fuel!"))
 			switched_off(user)
 	else
-		to_chat(user, span_notice("You switch [src] off.") )
+		to_chat(user, span_notice("You switch [src] off."))
 		playsound(loc, deac_sound, 50, TRUE)
 		switched_off(user)
 
@@ -263,26 +263,26 @@
 // If welding tool ran out of fuel during a construction task, construction fails.
 /obj/item/weldingtool/tool_use_check(mob/living/user, amount)
 	if(!isOn() || !check_fuel())
-		to_chat(user, span_warning("[src] has to be on to complete this task!") )
+		to_chat(user, span_warning("[src] has to be on to complete this task!"))
 		return FALSE
 
 	if(get_fuel() >= amount)
 		return TRUE
 	else
-		to_chat(user, span_warning("You need more welding fuel to complete this task!") )
+		to_chat(user, span_warning("You need more welding fuel to complete this task!"))
 		return FALSE
 
 
 /obj/item/weldingtool/proc/flamethrower_screwdriver(obj/item/I, mob/user)
 	if(welding)
-		to_chat(user, span_warning("Turn it off first!") )
+		to_chat(user, span_warning("Turn it off first!"))
 		return
 	status = !status
 	if(status)
-		to_chat(user, span_notice("You resecure [src] and close the fuel tank.") )
+		to_chat(user, span_notice("You resecure [src] and close the fuel tank."))
 		reagents.flags &= ~(OPENCONTAINER)
 	else
-		to_chat(user, span_notice("[src] can now be refuelled.") )
+		to_chat(user, span_notice("[src] can now be refuelled."))
 		reagents.flags |= OPENCONTAINER
 	add_fingerprint(user)
 

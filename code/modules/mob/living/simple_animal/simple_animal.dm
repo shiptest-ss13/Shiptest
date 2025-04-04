@@ -190,7 +190,7 @@
 		..()
 		return
 	else
-		user.visible_message(span_notice("[user] hand-feeds [O] to [src].") , span_notice("You hand-feed [O] to [src].") )
+		user.visible_message(span_notice("[user] hand-feeds [O] to [src].") , span_notice("You hand-feed [O] to [src]."))
 		qdel(O)
 		if(tame)
 			return
@@ -486,13 +486,13 @@
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
 	if(incapacitated())
-		to_chat(src, span_warning("You can't do that right now!") )
+		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, span_warning("You are too far away!") )
+		to_chat(src, span_warning("You are too far away!"))
 		return FALSE
 	if(!(no_dexterity || dextrous))
-		to_chat(src, span_warning("You don't have the dexterity to do this!") )
+		to_chat(src, span_warning("You don't have the dexterity to do this!"))
 		return FALSE
 	return TRUE
 

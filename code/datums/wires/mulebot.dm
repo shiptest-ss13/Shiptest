@@ -22,13 +22,13 @@
 		return //logically mulebots can't flash and beep if they don't have power.
 	switch(wire)
 		if(WIRE_POWER1, WIRE_POWER2)
-			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] The charge light flickers.") )
+			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] The charge light flickers."))
 		if(WIRE_AVOIDANCE)
-			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] The external warning lights flash briefly.") )
+			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] The external warning lights flash briefly."))
 			flick("[M.base_icon]1", M)
 		if(WIRE_LOADCHECK)
-			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] The load platform clunks.") )
+			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] The load platform clunks."))
 		if(WIRE_MOTOR1, WIRE_MOTOR2)
-			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] The drive motor whines briefly.") )
+			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] The drive motor whines briefly."))
 		else
-			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] You hear a radio crackle.") )
+			holder.visible_message(span_notice("[icon2html(M, viewers(holder))] You hear a radio crackle."))

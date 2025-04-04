@@ -59,7 +59,7 @@
 	if(iscarbon(living_mob))
 		var/mob/living/carbon/carbon = living_mob
 		carbon.adjustBruteLoss(6)
-		to_chat(carbon, span_danger("You are battered by the coarse sand!") )
+		to_chat(carbon, span_danger("You are battered by the coarse sand!"))
 		if(HAS_TRAIT(carbon, TRAIT_NOBREATH))
 			return
 		if(carbon.is_mouth_covered())

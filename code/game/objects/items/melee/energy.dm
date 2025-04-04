@@ -151,7 +151,7 @@
 		var/obj/item/stock_parts/cell/C = R.cell
 		if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE) && !(C.use(hitcost)))
 			attack_self(R)
-			to_chat(R, span_notice("It's out of charge!") )
+			to_chat(R, span_notice("It's out of charge!"))
 			return
 		return ..()
 
@@ -211,13 +211,13 @@
 		if(!hacked)
 			hacked = TRUE
 			sword_color = "rainbow"
-			to_chat(user, span_warning("RNBW_ENGAGE") )
+			to_chat(user, span_warning("RNBW_ENGAGE"))
 
 			if(HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 				icon_state = "[base_icon_state]rainbow"
 				user.update_inv_hands()
 		else
-			to_chat(user, span_warning("It's already fabulous!") )
+			to_chat(user, span_warning("It's already fabulous!"))
 	else
 		return ..()
 
@@ -303,7 +303,7 @@
 	if(active)
 		icon_state = "plasmasword_on"
 	playsound(user, active ? 'sound/weapons/SolGov_sword_arm.ogg' : 'sound/weapons/saberoff.ogg', 35, TRUE)
-	to_chat(user, span_notice("[src] [active ? "is now active":"can now be concealed"].") )
+	to_chat(user, span_notice("[src] [active ? "is now active":"can now be concealed"]."))
 	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/melee/energy/ctf/solgov

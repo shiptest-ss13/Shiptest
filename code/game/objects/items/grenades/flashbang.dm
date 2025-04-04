@@ -62,7 +62,7 @@
 		var/mob/living/carbon/C = loc
 		var/obj/item/bodypart/B = C.get_holding_bodypart_of_item(src)
 		if(B)
-			C.visible_message("<b>[span_danger("[src] goes off in [C]'s hand, blowing [C.p_their()] [B.name] to bloody shreds!")]</b>", span_userdanger("[src] goes off in your hand, blowing your [B.name] to bloody shreds!") )
+			C.visible_message("<b>[span_danger("[src] goes off in [C]'s hand, blowing [C.p_their()] [B.name] to bloody shreds!")]</b>", span_userdanger("[src] goes off in your hand, blowing your [B.name] to bloody shreds!"))
 			B.dismember()
 
 	. = ..()
@@ -93,7 +93,7 @@
 		M.Knockdown(200)
 		M.soundbang_act(1, 200, 10, 15)
 		if(M.apply_damages(10, 10))
-			to_chat(M, span_userdanger("The blast from \the [src] bruises and burns you!") )
+			to_chat(M, span_userdanger("The blast from \the [src] bruises and burns you!"))
 
 	// only checking if they're on top of the tile, cause being one tile over will be its own punishment
 

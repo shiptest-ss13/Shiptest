@@ -62,9 +62,9 @@
 	set desc = "Take a deep look inside youself, and count up what's inside"
 	var/total = contents.len
 	if (total)
-		to_chat(src, span_notice("You detect [total] object\s within your incredibly vast belly.") )
+		to_chat(src, span_notice("You detect [total] object\s within your incredibly vast belly."))
 	else
-		to_chat(src, span_notice("A closer look inside yourself reveals... nothing.") )
+		to_chat(src, span_notice("A closer look inside yourself reveals... nothing."))
 
 /mob/living/simple_animal/pet/gondola/gondolapod/setOpened()
 	opened = TRUE

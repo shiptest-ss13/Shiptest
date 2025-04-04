@@ -56,7 +56,7 @@
 		if(P.reflectable & REFLECT_NORMAL)
 			if(check_reflect(def_zone)) // Checks if you've passed a reflection% check
 				visible_message(span_danger("The [P.name] gets reflected by [src]!") , \
-								span_userdanger("The [P.name] gets reflected by [src]!") )
+								span_userdanger("The [P.name] gets reflected by [src]!"))
 				// Find a turf near or on the original location to bounce to
 				if(!isturf(loc)) //Open canopy mech (ripley) check. if we're inside something and still got hit
 					P.force_hit = TRUE //The thing we're in passed the bullet to us. Pass it back, and tell it to take the damage.
@@ -213,7 +213,7 @@
 	playsound(loc, user.dna.species.attack_sound, 25, TRUE, -1)
 	visible_message(span_danger("[user] [hulk_verb]ed [src]!") , \
 					span_userdanger("[user] [hulk_verb]ed [src]!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , null, user)
-	to_chat(user, span_danger("You [hulk_verb] [src]!") )
+	to_chat(user, span_danger("You [hulk_verb] [src]!"))
 	adjustBruteLoss(15)
 
 /mob/living/carbon/human/attack_hand(mob/user)
@@ -238,7 +238,7 @@
 			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
 			visible_message(span_danger("[M] disarmed [src]!") , \
 							span_userdanger("[M] disarmed you!") , span_hear("You hear aggressive shuffling!") , null, M)
-			to_chat(M, span_danger("You disarm [src]!") )
+			to_chat(M, span_danger("You disarm [src]!"))
 		else if(!M.client || prob(5)) // only natural monkeys get to stun reliably, (they only do it occasionaly)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
 			if (src.IsKnockdown() && !src.IsParalyzed())
@@ -246,13 +246,13 @@
 				log_combat(M, src, "pinned")
 				visible_message(span_danger("[M] pins [src] down!") , \
 								span_userdanger("[M] pins you down!") , span_hear("You hear shuffling and a muffled groan!") , null, M)
-				to_chat(M, span_danger("You pin [src] down!") )
+				to_chat(M, span_danger("You pin [src] down!"))
 			else
 				Knockdown(30)
 				log_combat(M, src, "tackled")
 				visible_message(span_danger("[M] tackles [src] down!") , \
 								span_userdanger("[M] tackles you down!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , null, M)
-				to_chat(M, span_danger("You tackle [src] down!") )
+				to_chat(M, span_danger("You tackle [src] down!"))
 
 	if(M.limb_destroyer)
 		dismembering_strike(M, affecting.body_zone)
@@ -272,7 +272,7 @@
 	if(check_shields(M, 0, "the M.name"))
 		visible_message(span_danger("[M] attempts to touch [src]!") , \
 						span_danger("[M] attempts to touch you!") , span_hear("You hear a swoosh!") , null, M)
-		to_chat(M, span_warning("You attempt to touch [src]!") )
+		to_chat(M, span_warning("You attempt to touch [src]!"))
 		return FALSE
 	. = ..()
 	if(!.)
@@ -285,7 +285,7 @@
 			playsound(loc, 'sound/weapons/slashmiss.ogg', 50, TRUE, -1)
 			visible_message(span_danger("[M] lunges at [src]!") , \
 							span_userdanger("[M] lunges at you!") , span_hear("You hear a swoosh!") , null, M)
-			to_chat(M, span_danger("You lunge at [src]!") )
+			to_chat(M, span_danger("You lunge at [src]!"))
 			return FALSE
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
 		if(!affecting)
@@ -295,7 +295,7 @@
 		playsound(loc, 'sound/weapons/slice.ogg', 25, TRUE, -1)
 		visible_message(span_danger("[M] slashes at [src]!") , \
 						span_userdanger("[M] slashes at you!") , span_hear("You hear a sickening sound of a slice!") , null, M)
-		to_chat(M, span_danger("You slash at [src]!") )
+		to_chat(M, span_danger("You slash at [src]!"))
 		log_combat(M, src, "attacked")
 		if(!dismembering_strike(M, M.zone_selected)) //Dismemberment successful
 			return TRUE
@@ -307,7 +307,7 @@
 			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
 			visible_message(span_danger("[M] disarms [src]!") , \
 							span_userdanger("[M] disarms you!") , span_hear("You hear aggressive shuffling!") , null, M)
-			to_chat(M, span_danger("You disarm [src]!") )
+			to_chat(M, span_danger("You disarm [src]!"))
 		else if(get_dist(src, M) != 0)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
 			var/shovetarget = get_edge_target_turf(M, get_dir(M, get_step_away(src, M)))
@@ -316,14 +316,14 @@
 			log_combat(M, src, "shoved")
 			visible_message(span_danger("[M] tackles [src] down!") , \
 							span_userdanger("[M] shoves you with great force!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , null, M)
-			to_chat(M, span_danger("You shove [src] with great force!") )
+			to_chat(M, span_danger("You shove [src] with great force!"))
 		else
 			Paralyze(1 SECONDS)
 			adjustBruteLoss(5)
 			playsound(loc, 'sound/weapons/punch3.ogg', 25, TRUE, -1)
 			visible_message(span_danger("[M] slams [src] into the floor!") , \
 							span_userdanger("[M] slams you into the ground!") , span_hear("You hear something slam loudly onto the floor!") , null, M)
-			to_chat(M, span_danger("You slam [src] into the floor beneath you!") )
+			to_chat(M, span_danger("You slam [src] into the floor beneath you!"))
 			log_combat(M, src, "slammed into the ground")
 
 /mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/L)
@@ -401,7 +401,7 @@
 
 	if(M.occupant.a_intent == INTENT_HARM)
 		if(HAS_TRAIT(M.occupant, TRAIT_PACIFISM))
-			to_chat(M.occupant, span_warning("You don't want to harm other living beings!") )
+			to_chat(M.occupant, span_warning("You don't want to harm other living beings!"))
 			return
 		M.do_attack_animation(src)
 		if(M.damtype == "brute")
@@ -431,7 +431,7 @@
 
 		visible_message(span_danger("[M.name] hits [src]!") , \
 						span_userdanger("[M.name] hits you!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , COMBAT_MESSAGE_RANGE, M)
-		to_chat(M, span_danger("You hit [src]!") )
+		to_chat(M, span_danger("You hit [src]!"))
 		log_combat(M.occupant, src, "attacked", M, "(INTENT: [uppertext(M.occupant.a_intent)]) (DAMTYPE: [uppertext(M.damtype)])")
 
 	else
@@ -541,7 +541,7 @@
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
 			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 			if(heart.Restart() && stat == CONSCIOUS)
-				to_chat(src, span_notice("You feel your heart beating again!") )
+				to_chat(src, span_notice("You feel your heart beating again!"))
 	//WS - Bootleg IPC revival
 	if(stat == DEAD && isipc(src) && can_be_revived())
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
@@ -593,7 +593,7 @@
 				update_inv_neck()
 				update_inv_head()
 			else
-				to_chat(src, span_notice("Your [head_clothes.name] protects your head and face from the acid!") )
+				to_chat(src, span_notice("Your [head_clothes.name] protects your head and face from the acid!"))
 		else
 			. = get_bodypart(BODY_ZONE_HEAD)
 			if(.)
@@ -614,7 +614,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [chest_clothes.name] protects your body from the acid!") )
+				to_chat(src, span_notice("Your [chest_clothes.name] protects your body from the acid!"))
 		else
 			. = get_bodypart(BODY_ZONE_CHEST)
 			if(.)
@@ -646,7 +646,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [arm_clothes.name] protects your arms and hands from the acid!") )
+				to_chat(src, span_notice("Your [arm_clothes.name] protects your arms and hands from the acid!"))
 		else
 			. = get_bodypart(BODY_ZONE_R_ARM)
 			if(.)
@@ -672,7 +672,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [leg_clothes.name] protects your legs and feet from the acid!") )
+				to_chat(src, span_notice("Your [leg_clothes.name] protects your legs and feet from the acid!"))
 		else
 			. = get_bodypart(BODY_ZONE_R_LEG)
 			if(.)

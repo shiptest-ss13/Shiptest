@@ -257,7 +257,7 @@
 				toggle_on()
 				return TRUE
 			else
-				to_chat(usr, span_warning("It has to be secured first!") )
+				to_chat(usr, span_warning("It has to be secured first!"))
 		if("manual")
 			if(!issilicon(usr))
 				return
@@ -308,33 +308,33 @@
 	if(machine_stat & BROKEN && I.tool_behaviour == TOOL_CROWBAR)
 		//If the turret is destroyed, you can remove it with a crowbar to
 		//try and salvage its components
-		to_chat(user, span_notice("You begin prying the metal coverings off...") )
+		to_chat(user, span_notice("You begin prying the metal coverings off..."))
 		if(I.use_tool(src, user, 20))
 			if(prob(70))
 				var/obj/item/gun/stored_gun = locate() in component_parts
 				if(stored_gun)
 					stored_gun.forceMove(loc)
-				to_chat(user, span_notice("You remove the turret and salvage some components.") )
+				to_chat(user, span_notice("You remove the turret and salvage some components."))
 				if(prob(50))
 					new /obj/item/stack/sheet/metal(loc, rand(1,4))
 				if(prob(50))
 					new /obj/item/assembly/prox_sensor(loc)
 			else
-				to_chat(user, span_notice("You remove the turret but did not manage to salvage anything.") )
+				to_chat(user, span_notice("You remove the turret but did not manage to salvage anything."))
 			qdel(src)
 		return
 
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
 		if(obj_integrity >= max_integrity)
-			to_chat(user, span_warning("[src] is already in good condition!") )
+			to_chat(user, span_warning("[src] is already in good condition!"))
 			return
 
-		to_chat(user, span_notice("You begin repairing [src]...") )
+		to_chat(user, span_notice("You begin repairing [src]..."))
 		while(obj_integrity < max_integrity)
 			if(!I.use_tool(src, user, 4 SECONDS, 2, 50))
 				break
 			obj_integrity = max(obj_integrity + 20, max_integrity)
-			to_chat(user, span_notice("You repair [src].") )
+			to_chat(user, span_notice("You repair [src]."))
 
 			if(obj_integrity > (max_integrity * integrity_failure) && (machine_stat & BROKEN))
 				obj_integrity = max_integrity
@@ -350,10 +350,10 @@
 		if(!anchored && !isinspace())
 			set_anchored(TRUE)
 			update_appearance(UPDATE_ICON_STATE)
-			to_chat(user, span_notice("You secure the exterior bolts on the turret.") )
+			to_chat(user, span_notice("You secure the exterior bolts on the turret."))
 		else if(anchored)
 			set_anchored(FALSE)
-			to_chat(user, span_notice("You unsecure the exterior bolts on the turret.") )
+			to_chat(user, span_notice("You unsecure the exterior bolts on the turret."))
 			power_change()
 		return
 
@@ -365,7 +365,7 @@
 			return
 		var/obj/item/multitool/M = I
 		M.buffer = src
-		to_chat(user, span_notice("You add [src] to multitool buffer.") )
+		to_chat(user, span_notice("You add [src] to multitool buffer."))
 		return
 
 	if(istype(I, /obj/item/card/id))
@@ -395,8 +395,8 @@
 /obj/machinery/porta_turret/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, span_warning("You short out [src]'s threat assessment circuits.") )
-	audible_message(span_hear("[src] hums oddly...") )
+	to_chat(user, span_warning("You short out [src]'s threat assessment circuits."))
+	audible_message(span_hear("[src] hums oddly..."))
 	obj_flags |= EMAGGED
 	locked = TRUE
 	toggle_on(FALSE) //turns off the turret temporarily

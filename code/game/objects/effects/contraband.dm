@@ -132,10 +132,10 @@
 	if(I.tool_behaviour == TOOL_WIRECUTTER)
 		I.play_tool_sound(src, 100)
 		if(ruined)
-			to_chat(user, span_notice("You remove the remnants of the poster.") )
+			to_chat(user, span_notice("You remove the remnants of the poster."))
 			qdel(src)
 		else
-			to_chat(user, span_notice("You carefully remove the poster from the wall.") )
+			to_chat(user, span_notice("You carefully remove the poster from the wall."))
 			roll_and_drop(user.loc)
 
 /obj/structure/sign/poster/attack_hand(mob/user)
@@ -145,7 +145,7 @@
 	if(ruined)
 		return
 	if(user.a_intent != INTENT_HARM)
-		to_chat(user, span_danger("You aren't HARMFUL enough to rip the poster off the wall.") ) //preventing accidental ripping posters off wall if not on harm intent
+		to_chat(user, span_danger("You aren't HARMFUL enough to rip the poster off the wall.")) //preventing accidental ripping posters off wall if not on harm intent
 		return
 
 	visible_message(span_danger("[user] rips [src] in a single, decisive motion!")  )
@@ -170,7 +170,7 @@
 //separated to reduce code duplication. Moved here for ease of reference and to unclutter r_wall/attackby()
 /turf/closed/wall/proc/place_poster(obj/item/poster/P, mob/user)
 	if(!P.poster_structure)
-		to_chat(user, span_warning("[P] has no poster... inside it? Inform a coder!") )
+		to_chat(user, span_warning("[P] has no poster... inside it? Inform a coder!"))
 		return
 
 	// Deny placing posters on currently-diagonal walls, although the wall may change in the future.
@@ -183,11 +183,11 @@
 	var/stuff_on_wall = 0
 	for(var/obj/O in contents) //Let's see if it already has a poster on it or too much stuff
 		if(istype(O, /obj/structure/sign/poster))
-			to_chat(user, span_warning("The wall is far too cluttered to place a poster!") )
+			to_chat(user, span_warning("The wall is far too cluttered to place a poster!"))
 			return
 		stuff_on_wall++
 		if(stuff_on_wall == 3)
-			to_chat(user, span_warning("The wall is far too cluttered to place a poster!") )
+			to_chat(user, span_warning("The wall is far too cluttered to place a poster!"))
 			return
 
 	to_chat(user, span_notice("You start placing the poster on the wall...") 	)
@@ -205,10 +205,10 @@
 			return
 
 		if(iswallturf(src) && user && user.loc == temp_loc)	//Let's check if everything is still there
-			to_chat(user, span_notice("You place the poster!") )
+			to_chat(user, span_notice("You place the poster!"))
 			return
 
-	to_chat(user, span_notice("The poster falls down!") )
+	to_chat(user, span_notice("The poster falls down!"))
 	D.roll_and_drop(temp_loc)
 
 // Various possible posters follow

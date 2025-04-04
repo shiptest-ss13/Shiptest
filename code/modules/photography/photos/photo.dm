@@ -48,7 +48,7 @@
 		return
 	if(istype(P, /obj/item/pen) || istype(P, /obj/item/toy/crayon))
 		if(!user.is_literate())
-			to_chat(user, span_notice("You scribble illegibly on [src]!") )
+			to_chat(user, span_notice("You scribble illegibly on [src]!"))
 			return
 		var/txt = stripped_input(user, "What would you like to write on the back?", "Photo Writing", "", 128)
 		if(txt && user.canUseTopic(src, BE_CLOSE))
@@ -66,7 +66,7 @@
 
 /obj/item/photo/proc/show(mob/user)
 	if(!istype(picture) || !picture.picture_image)
-		to_chat(user, span_warning("[src] seems to be blank...") )
+		to_chat(user, span_warning("[src] seems to be blank..."))
 		return
 	user << browse_rsc(picture.picture_image, "tmp_photo.png")
 	user << browse("<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>[name]</title></head>" \

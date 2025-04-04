@@ -180,14 +180,14 @@
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				if(!attach_limb(C))
-					to_chat(user, span_warning("[H]'s body rejects [src]!") )
+					to_chat(user, span_warning("[H]'s body rejects [src]!"))
 					forceMove(H.loc)
 				if(H == user)
 					H.visible_message(span_warning("[H] jams [src] into [H.p_their()] empty socket!") ,\
-					span_notice("You force [src] into your empty socket, and it locks into place!") )
+					span_notice("You force [src] into your empty socket, and it locks into place!"))
 				else
 					H.visible_message(span_warning("[user] jams [src] into [H]'s empty socket!") ,\
-					span_notice("[user] forces [src] into your empty socket, and it locks into place!") )
+					span_notice("[user] forces [src] into your empty socket, and it locks into place!"))
 				return
 	..()
 
@@ -195,11 +195,11 @@
 	if(W.get_sharpness())
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, span_warning("There is nothing left inside [src]!") )
+			to_chat(user, span_warning("There is nothing left inside [src]!"))
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
 		user.visible_message(span_warning("[user] begins to cut open [src].") ,\
-			span_notice("You begin to cut open [src]...") )
+			span_notice("You begin to cut open [src]..."))
 		if(do_after(user, 54, target = src))
 			drop_organs(user, TRUE)
 	else
@@ -823,7 +823,7 @@
 //	addtimer(CALLBACK(src, PROC_REF(break_bone_feedback), 1 SECONDS)) testing sommething
 
 ///obj/item/bodypart/proc/break_bone_feedback()
-	owner.visible_message(span_danger("You hear a cracking sound coming from [owner]'s [name].") , span_userdanger("You feel something crack in your [name]!") , span_danger("You hear an awful cracking sound.") )
+	owner.visible_message(span_danger("You hear a cracking sound coming from [owner]'s [name].") , span_userdanger("You feel something crack in your [name]!") , span_danger("You hear an awful cracking sound."))
 	playsound(owner, pick(list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg')), 100, FALSE, -1)
 
 /obj/item/bodypart/proc/fix_bone()
@@ -841,7 +841,7 @@
 		if(HAS_TRAIT(owner, TRAIT_ANALGESIA))
 			to_chat(owner, span_notice("[pick("You feel something shifting inside your [name].", "There is something moving inside [name].", "Something inside your [name] slips.")]"))
 		else
-			to_chat(owner, span_danger("[pick("You feel broken bones moving around in your [name]!", "There are broken bones moving around in your [name]!", "The bones in your [name] are moving around!")]") )
+			to_chat(owner, span_danger("[pick("You feel broken bones moving around in your [name]!", "There are broken bones moving around in your [name]!", "The bones in your [name] are moving around!")]"))
 		receive_damage(rand(1, 3))
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit

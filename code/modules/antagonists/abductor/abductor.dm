@@ -56,15 +56,15 @@
 
 /datum/antagonist/abductor/on_removal()
 	if(owner.current)
-		to_chat(owner.current,span_userdanger("You are no longer the [owner.special_role]!") )
+		to_chat(owner.current,span_userdanger("You are no longer the [owner.special_role]!"))
 	owner.special_role = null
 	REMOVE_TRAIT(owner, TRAIT_ABDUCTOR_TRAINING, ABDUCTOR_ANTAGONIST)
 	return ..()
 
 /datum/antagonist/abductor/greet()
-	to_chat(owner.current, span_notice("You are the [owner.special_role]!") )
-	to_chat(owner.current, span_notice("With the help of your teammate, kidnap and experiment on unsuspecting sapient lifeforms!") )
-	to_chat(owner.current, span_notice("[greet_text]") )
+	to_chat(owner.current, span_notice("You are the [owner.special_role]!"))
+	to_chat(owner.current, span_notice("With the help of your teammate, kidnap and experiment on unsuspecting sapient lifeforms!"))
+	to_chat(owner.current, span_notice("[greet_text]"))
 	owner.announce_objectives()
 
 /datum/antagonist/abductor/proc/finalize_abductor()
@@ -116,7 +116,7 @@
 
 /datum/antagonist/abductor/proc/admin_equip(mob/admin)
 	if(!ishuman(owner.current))
-		to_chat(admin, span_warning("This only works on humans!") )
+		to_chat(admin, span_warning("This only works on humans!"))
 		return
 	var/mob/living/carbon/human/H = owner.current
 	var/gear = alert(admin,"Agent or Scientist Gear","Gear","Agent","Scientist")
@@ -177,7 +177,7 @@
 	. = ..()
 
 /datum/antagonist/abductee/greet()
-	to_chat(owner, span_warning("<b>Your mind snaps!</b>") )
+	to_chat(owner, span_warning("<b>Your mind snaps!</b>"))
 	to_chat(owner, "<big>[span_warning("<b>You can't remember how you got here...</b>")]</big>")
 	owner.announce_objectives()
 

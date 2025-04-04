@@ -43,12 +43,12 @@
 /datum/surgery_step/lobotomize/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to perform a lobotomy on [target]'s brain...") ,
 		span_notice("[user] begins to perform a lobotomy on [target]'s brain.") ,
-		span_notice("[user] begins to perform surgery on [target]'s brain.") )
+		span_notice("[user] begins to perform surgery on [target]'s brain."))
 
 /datum/surgery_step/lobotomize/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(user, target, span_notice("You succeed in lobotomizing [target].") ,
 			span_notice("[user] successfully lobotomizes [target]!") ,
-			span_notice("[user] completes the surgery on [target]'s brain.") )
+			span_notice("[user] completes the surgery on [target]'s brain."))
 	target.cure_all_traumas(TRAUMA_RESILIENCE_LOBOTOMY)
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/brainwashed))
 		target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
@@ -72,7 +72,7 @@
 	if(B)
 		display_results(user, target, span_warning("You remove the wrong part, causing more damage!") ,
 			span_notice("[user] successfully lobotomizes [target]!") ,
-			span_notice("[user] completes the surgery on [target]'s brain.") )
+			span_notice("[user] completes the surgery on [target]'s brain."))
 		B.applyOrganDamage(80)
 		switch(rand(1,3))
 			if(1)
@@ -85,5 +85,5 @@
 			if(3)
 				target.gain_trauma_type(BRAIN_TRAUMA_SPECIAL, TRAUMA_RESILIENCE_MAGIC)
 	else
-		user.visible_message(span_warning("[user] suddenly notices that the brain [user.p_they()] [user.p_were()] working on is not there anymore.") , span_warning("You suddenly notice that the brain you were working on is not there anymore.") )
+		user.visible_message(span_warning("[user] suddenly notices that the brain [user.p_they()] [user.p_were()] working on is not there anymore.") , span_warning("You suddenly notice that the brain you were working on is not there anymore."))
 	return FALSE

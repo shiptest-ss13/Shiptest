@@ -90,7 +90,7 @@
 		return
 
 	if(!wielded_fully)
-		to_chat(user, span_warning("You need to fully grip [src] to deploy it's bipod!") )
+		to_chat(user, span_warning("You need to fully grip [src] to deploy it's bipod!"))
 		return
 
 	if(wielder.body_position != LYING_DOWN) //are we braced against the ground? if not, we check for objects to brace against
@@ -106,13 +106,13 @@
 
 
 	if(!can_deploy)
-		to_chat(user, span_warning("You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!") )
+		to_chat(user, span_warning("You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!"))
 		return
 	if(!do_after(user, deploy_time, src, NONE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
-		to_chat(user, span_warning("You need to hold still to deploy [src]'s bipod!") )
+		to_chat(user, span_warning("You need to hold still to deploy [src]'s bipod!"))
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
-	to_chat(user, span_notice("You deploy [src]'s bipod.") )
+	to_chat(user, span_notice("You deploy [src]'s bipod."))
 	bipod_deployed = TRUE
 
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(retract_bipod))
@@ -125,7 +125,7 @@
 	if(!user || !ismob(user))
 		user = loc
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
-	to_chat(user, span_notice("The bipod undeploys itself.") )
+	to_chat(user, span_notice("The bipod undeploys itself."))
 	bipod_deployed = FALSE
 
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)

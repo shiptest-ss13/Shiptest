@@ -40,7 +40,7 @@
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.do_attack_animation(src)
 		structureclimber.Paralyze(40)
-		structureclimber.visible_message(span_warning("[structureclimber] is knocked off [src].") , span_warning("You're knocked off [src]!") , span_warning("You see [structureclimber] get knocked off [src].") )
+		structureclimber.visible_message(span_warning("[structureclimber] is knocked off [src].") , span_warning("You're knocked off [src]!") , span_warning("You see [structureclimber] get knocked off [src]."))
 
 /obj/structure/ui_act(action, params)
 	add_fingerprint(usr)
@@ -84,7 +84,7 @@
 /obj/structure/proc/climb_structure(mob/living/user)
 	src.add_fingerprint(user)
 	user.visible_message(span_warning("[user] starts climbing onto [src].") , \
-								span_notice("You start climbing onto [src]...") )
+								span_notice("You start climbing onto [src]..."))
 	var/adjusted_climb_time = climb_time
 	if(HAS_TRAIT(user, TRAIT_HANDS_BLOCKED)) //climbing takes twice as long without help from the hands.
 		adjusted_climb_time *= 2
@@ -97,11 +97,11 @@
 		if(src.loc) //Checking if structure has been destroyed
 			if(do_climb(user))
 				user.visible_message(span_warning("[user] climbs onto [src].") , \
-									span_notice("You climb onto [src].") )
+									span_notice("You climb onto [src]."))
 				log_combat(user, src, "climbed onto")
 				. = 1
 			else
-				to_chat(user, span_warning("You fail to climb onto [src].") )
+				to_chat(user, span_warning("You fail to climb onto [src]."))
 	structureclimber = null
 
 /obj/structure/examine(mob/user)

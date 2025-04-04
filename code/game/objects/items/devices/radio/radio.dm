@@ -122,7 +122,7 @@
 		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		broadcasting = !broadcasting
-		to_chat(user, span_notice("You toggle broadcasting [broadcasting ? "on" : "off"].") )
+		to_chat(user, span_notice("You toggle broadcasting [broadcasting ? "on" : "off"]."))
 
 /obj/item/radio/CtrlShiftClick(mob/user)
 	if(headset)
@@ -131,7 +131,7 @@
 		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		listening = !listening
-		to_chat(user, span_notice("You toggle speaker [listening ? "on" : "off"].") )
+		to_chat(user, span_notice("You toggle speaker [listening ? "on" : "off"]."))
 
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
@@ -377,9 +377,9 @@
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		unscrewed = !unscrewed
 		if(unscrewed)
-			to_chat(user, span_notice("The radio can now be attached and modified!") )
+			to_chat(user, span_notice("The radio can now be attached and modified!"))
 		else
-			to_chat(user, span_notice("The radio can no longer be modified or attached!") )
+			to_chat(user, span_notice("The radio can no longer be modified or attached!"))
 	else
 		return ..()
 
@@ -390,7 +390,7 @@
 	emped++ //There's been an EMP; better count it
 	var/curremp = emped //Remember which EMP this was
 	if (listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-		to_chat(loc, span_warning("\The [src] overloads.") )
+		to_chat(loc, span_warning("\The [src] overloads."))
 	broadcasting = FALSE
 	listening = FALSE
 	for (var/ch_name in channels)
@@ -446,14 +446,14 @@
 					keyslot = null
 
 			recalculateChannels()
-			to_chat(user, span_notice("You pop out the encryption key in the radio.") )
+			to_chat(user, span_notice("You pop out the encryption key in the radio."))
 
 		else
-			to_chat(user, span_warning("This radio doesn't have any encryption keys!") )
+			to_chat(user, span_warning("This radio doesn't have any encryption keys!"))
 
 	else if(istype(W, /obj/item/encryptionkey/))
 		if(keyslot)
-			to_chat(user, span_warning("The radio can't hold another key!") )
+			to_chat(user, span_warning("The radio can't hold another key!"))
 			return
 
 		if(!keyslot)

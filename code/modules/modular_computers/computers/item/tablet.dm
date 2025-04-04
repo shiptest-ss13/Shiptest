@@ -52,9 +52,9 @@
 
 /obj/item/modular_computer/tablet/nukeops/emag_act(mob/user)
 	if(!enabled)
-		to_chat(user, span_warning("You'd need to turn the [src] on first.") )
+		to_chat(user, span_warning("You'd need to turn the [src] on first."))
 		return FALSE
-	to_chat(user, span_notice("You swipe \the [src]. It's screen briefly shows a message reading \"MEMORY CODE INJECTION DETECTED AND SUCCESSFULLY QUARANTINED\".") )
+	to_chat(user, span_notice("You swipe \the [src]. It's screen briefly shows a message reading \"MEMORY CODE INJECTION DETECTED AND SUCCESSFULLY QUARANTINED\"."))
 	return FALSE
 
 /// Borg Built-in tablet interface
@@ -146,7 +146,7 @@
 				if(!new_color || QDELETED(borgo))
 					return
 				if(color_hex2num(new_color) < 200) //Colors too dark are rejected
-					to_chat(user, span_warning("That color is too dark! Choose a lighter one.") )
+					to_chat(user, span_warning("That color is too dark! Choose a lighter one."))
 					new_color = null
 			borgo.lamp_color = new_color
 			borgo.toggle_headlamp(FALSE, TRUE)
@@ -157,7 +157,7 @@
 	if(!caller || !caller.alert_able || caller.alert_silenced || !alerttext) //Yeah, we're checking alert_able. No, you don't get to make alerts that the user can't silence.
 		return
 	borgo.playsound_local(src, sound, 50, TRUE)
-	to_chat(borgo, span_notice("The [src] displays a [caller.filedesc] notification: [alerttext]") )
+	to_chat(borgo, span_notice("The [src] displays a [caller.filedesc] notification: [alerttext]"))
 
 
 /obj/item/modular_computer/tablet/integrated/syndicate

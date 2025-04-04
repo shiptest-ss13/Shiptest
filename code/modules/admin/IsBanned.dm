@@ -39,8 +39,8 @@
 			if (admin)
 				log_admin("The admin [key] has been allowed to bypass the whitelist")
 				if (message)
-					message_admins(span_adminnotice("The admin [key] has been allowed to bypass the whitelist") )
-					addclientmessage(ckey,span_adminnotice("You have been allowed to bypass the whitelist") )
+					message_admins(span_adminnotice("The admin [key] has been allowed to bypass the whitelist"))
+					addclientmessage(ckey,span_adminnotice("You have been allowed to bypass the whitelist"))
 			else
 				log_access("Failed Login: [key] - Not on whitelist")
 				return list("reason"="whitelist", "desc" = "\nReason: You are not on the white list for this server")
@@ -83,7 +83,7 @@
 						log_admin(msg)
 						if (message)
 							message_admins(msg)
-							addclientmessage(ckey,span_adminnotice("Admin [key] has been allowed to bypass a matching non-admin ban on [i["key"]] [i["ip"]]-[i["computerid"]].") )
+							addclientmessage(ckey,span_adminnotice("Admin [key] has been allowed to bypass a matching non-admin ban on [i["key"]] [i["ip"]]-[i["computerid"]]."))
 						continue
 				var/expires = "This is a permanent ban."
 				if(i["expiration_time"])
@@ -216,8 +216,8 @@
 		if (admin)
 			log_admin("The admin [key] has been allowed to bypass a matching host/sticky ban on [bannedckey]")
 			if (message)
-				message_admins(span_adminnotice("The admin [key] has been allowed to bypass a matching host/sticky ban on [bannedckey]") )
-				addclientmessage(ckey,span_adminnotice("You have been allowed to bypass a matching host/sticky ban on [bannedckey]") )
+				message_admins(span_adminnotice("The admin [key] has been allowed to bypass a matching host/sticky ban on [bannedckey]"))
+				addclientmessage(ckey,span_adminnotice("You have been allowed to bypass a matching host/sticky ban on [bannedckey]"))
 			return null
 
 		if (C) //user is already connected!.

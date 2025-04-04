@@ -169,7 +169,7 @@
 
 /datum/reagent/consumable/superlaughter/on_mob_life(mob/living/carbon/M)
 	if(prob(30))
-		M.visible_message(span_danger("[M] bursts out into a fit of uncontrollable laughter!") , span_userdanger("You burst out in a fit of uncontrollable laughter!") )
+		M.visible_message(span_danger("[M] bursts out into a fit of uncontrollable laughter!") , span_userdanger("You burst out in a fit of uncontrollable laughter!"))
 		M.Stun(5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_superlaughter)
 	..()
@@ -307,7 +307,7 @@
 
 /datum/reagent/consumable/tea/arnold_palmer/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		to_chat(M, span_notice("[pick("You remember to square your shoulders.","You remember to keep your head down.","You can't decide between squaring your shoulders and keeping your head down.","You remember to relax.","You think about how someday you'll get two strokes off your golf game... whatever that is.")]") )
+		to_chat(M, span_notice("[pick("You remember to square your shoulders.","You remember to keep your head down.","You can't decide between squaring your shoulders and keeping your head down.","You remember to relax.","You think about how someday you'll get two strokes off your golf game... whatever that is.")]"))
 	..()
 	. = 1
 

@@ -98,7 +98,7 @@
 	. = ..()
 	if(!. || !client)
 		return FALSE
-	to_chat(src, span_deadsay("<span class='big bold'>You are a revenant.</span>") )
+	to_chat(src, span_deadsay("<span class='big bold'>You are a revenant.</span>"))
 	to_chat(src, "<b>Your formerly mundane spirit has been infused with alien energies and empowered into a revenant.</b>")
 	to_chat(src, "<b>You are not dead, not alive, but somewhere in between. You are capable of limited interaction with both worlds.</b>")
 	to_chat(src, "<b>You are invincible and invisible to everyone but other ghosts. Most abilities will reveal you, rendering you vulnerable.</b>")
@@ -123,11 +123,11 @@
 		revealed = FALSE
 		incorporeal_move = INCORPOREAL_MOVE_JAUNT
 		invisibility = INVISIBILITY_REVENANT
-		to_chat(src, span_revenboldnotice("You are once more concealed.") )
+		to_chat(src, span_revenboldnotice("You are once more concealed."))
 	if(unstun_time && world.time >= unstun_time)
 		unstun_time = 0
 		notransform = FALSE
-		to_chat(src, span_revenboldnotice("You can move again!") )
+		to_chat(src, span_revenboldnotice("You can move again!"))
 	if(essence_regenerating && !inhibited && essence < essence_regen_cap) //While inhibited, essence will not regenerate
 		essence = min(essence_regen_cap, essence+essence_regen_amount)
 		update_action_buttons_icon() //because we update something required by our spells in life, we need to update our buttons
@@ -211,17 +211,17 @@
 	if(!revealed || stasis) //Revenants cannot die if they aren't revealed //or are already dead
 		return 0
 	stasis = TRUE
-	to_chat(src, span_revendanger("NO! No... it's too late, you can feel your essence [pick("breaking apart", "drifting away")]...") )
+	to_chat(src, span_revendanger("NO! No... it's too late, you can feel your essence [pick("breaking apart", "drifting away")]..."))
 	notransform = TRUE
 	revealed = TRUE
 	invisibility = 0
 	playsound(src, 'sound/effects/screech.ogg', 100, TRUE)
-	visible_message(span_warning("[src] lets out a waning screech as violet mist swirls around its dissolving body!") )
+	visible_message(span_warning("[src] lets out a waning screech as violet mist swirls around its dissolving body!"))
 	icon_state = "revenant_draining"
 	for(var/i = alpha, i > 0, i -= 10)
 		stoplag()
 		alpha = i
-	visible_message(span_danger("[src]'s body breaks apart into a fine pile of blue dust.") )
+	visible_message(span_danger("[src]'s body breaks apart into a fine pile of blue dust."))
 	var/reforming_essence = essence_regen_cap //retain the gained essence capacity
 	var/obj/item/ectoplasm/revenant/R = new(get_turf(src))
 	R.essence = max(reforming_essence - 15 * perfectsouls, 75) //minus any perfect souls
@@ -242,10 +242,10 @@
 	invisibility = 0
 	incorporeal_move = FALSE
 	if(!unreveal_time)
-		to_chat(src, span_revendanger("You have been revealed!") )
+		to_chat(src, span_revendanger("You have been revealed!"))
 		unreveal_time = world.time + time
 	else
-		to_chat(src, span_revenwarning("You have been revealed!") )
+		to_chat(src, span_revenwarning("You have been revealed!"))
 		unreveal_time = unreveal_time + time
 	update_spooky_icon()
 
@@ -256,10 +256,10 @@
 		return
 	notransform = TRUE
 	if(!unstun_time)
-		to_chat(src, span_revendanger("You cannot move!") )
+		to_chat(src, span_revendanger("You cannot move!"))
 		unstun_time = world.time + time
 	else
-		to_chat(src, span_revenwarning("You cannot move!") )
+		to_chat(src, span_revenwarning("You cannot move!"))
 		unstun_time = unstun_time + time
 	update_spooky_icon()
 
@@ -280,17 +280,17 @@
 		return
 	var/turf/T = get_turf(src)
 	if(isclosedturf(T))
-		to_chat(src, span_revenwarning("You cannot use abilities from inside of a wall.") )
+		to_chat(src, span_revenwarning("You cannot use abilities from inside of a wall."))
 		return FALSE
 	for(var/obj/O in T)
 		if(O.density && !O.CanPass(src, get_dir(T, src)))
 			to_chat(src, span_revenwarning("You cannot use abilities inside of a dense object."))
 			return FALSE
 	if(inhibited)
-		to_chat(src, span_revenwarning("Your powers have been suppressed by nulling energy!") )
+		to_chat(src, span_revenwarning("Your powers have been suppressed by nulling energy!"))
 		return FALSE
 	if(!change_essence_amount(essence_cost, TRUE))
-		to_chat(src, span_revenwarning("You lack the essence to use that ability.") )
+		to_chat(src, span_revenwarning("You lack the essence to use that ability."))
 		return FALSE
 	return TRUE
 
@@ -314,9 +314,9 @@
 	update_action_buttons_icon()
 	if(!silent)
 		if(essence_amt > 0)
-			to_chat(src, span_revennotice("Gained [essence_amt]E[source ? " from [source]":""].") )
+			to_chat(src, span_revennotice("Gained [essence_amt]E[source ? " from [source]":""]."))
 		else
-			to_chat(src, span_revenminor("Lost [essence_amt]E[source ? " from [source]":""].") )
+			to_chat(src, span_revenminor("Lost [essence_amt]E[source ? " from [source]":""]."))
 	return 1
 
 /mob/living/simple_animal/revenant/proc/death_reset()
@@ -358,7 +358,7 @@
 		reform()
 	else
 		inert = TRUE
-		visible_message(span_warning("[src] settles down and seems lifeless.") )
+		visible_message(span_warning("[src] settles down and seems lifeless."))
 
 /obj/item/ectoplasm/revenant/attack_self(mob/user)
 	if(!reforming || inert)
@@ -374,7 +374,7 @@
 	..()
 	if(inert)
 		return
-	visible_message(span_notice("[src] breaks into particles upon impact, which fade away to nothingness.") )
+	visible_message(span_notice("[src] breaks into particles upon impact, which fade away to nothingness."))
 	scatter()
 
 /obj/item/ectoplasm/revenant/examine(mob/user)
@@ -403,7 +403,7 @@
 			qdel(revenant)
 			message_admins("No candidates were found for the new revenant. Oh well!")
 			inert = TRUE
-			visible_message(span_revenwarning("[src] settles down and seems lifeless.") )
+			visible_message(span_revenwarning("[src] settles down and seems lifeless."))
 			return
 		var/mob/dead/observer/C = pick(candidates)
 		key_of_revenant = C.key
@@ -411,12 +411,12 @@
 			qdel(revenant)
 			message_admins("No ckey was found for the new revenant. Oh well!")
 			inert = TRUE
-			visible_message(span_revenwarning("[src] settles down and seems lifeless.") )
+			visible_message(span_revenwarning("[src] settles down and seems lifeless."))
 			return
 
 	message_admins("[key_of_revenant] has been [old_key == key_of_revenant ? "re":""]made into a revenant by reforming ectoplasm.")
 	log_game("[key_of_revenant] was [old_key == key_of_revenant ? "re":""]made as a revenant by reforming ectoplasm.")
-	visible_message(span_revenboldnotice("[src] suddenly rises into the air before fading away.") )
+	visible_message(span_revenboldnotice("[src] suddenly rises into the air before fading away."))
 
 	revenant.essence = essence
 	revenant.essence_regen_cap = essence

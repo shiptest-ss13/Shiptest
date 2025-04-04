@@ -138,7 +138,7 @@
 			if (!user.transferItemToLoc(W,src))
 				return
 			diskette = W
-			to_chat(user, span_notice("You insert [W].") )
+			to_chat(user, span_notice("You insert [W]."))
 			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 			updateUsrDialog()
 	else if(W.tool_behaviour == TOOL_MULTITOOL)

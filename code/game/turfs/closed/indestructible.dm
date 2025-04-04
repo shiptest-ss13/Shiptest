@@ -29,7 +29,7 @@
 
 /turf/closed/indestructible/try_destroy(obj/item/W, mob/user, turf/T)
 	user.do_attack_animation(src)
-	to_chat(user, span_warning("[W] isn't strong enough to damage [src]!") )
+	to_chat(user, span_warning("[W] isn't strong enough to damage [src]!"))
 	playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 	return TRUE
 

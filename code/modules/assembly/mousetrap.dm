@@ -22,7 +22,7 @@
 			if(ishuman(usr))
 				var/mob/living/carbon/human/user = usr
 				if((HAS_TRAIT(user, TRAIT_DUMB) || HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
-					to_chat(user, span_warning("Your hand slips, setting off the trigger!") )
+					to_chat(user, span_warning("Your hand slips, setting off the trigger!"))
 					pulse(FALSE)
 		update_appearance()
 		playsound(src, 'sound/weapons/handcuffs.ogg', 30, TRUE, -3)
@@ -61,7 +61,7 @@
 				H.update_damage_overlays()
 	else if(ismouse(target))
 		var/mob/living/basic/mouse/M = target
-		visible_message(span_boldannounce("SPLAT!") )
+		visible_message(span_boldannounce("SPLAT!"))
 		M.splat()
 	playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 	armed = FALSE
@@ -71,7 +71,7 @@
 
 /obj/item/assembly/mousetrap/attack_self(mob/living/carbon/human/user)
 	if(!armed)
-		to_chat(user, span_notice("You arm [src].") )
+		to_chat(user, span_notice("You arm [src]."))
 	else
 		if((HAS_TRAIT(user, TRAIT_DUMB) || HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
 			var/which_hand = BODY_ZONE_PRECISE_L_HAND
@@ -83,7 +83,7 @@
 				span_warning("You accidentally trigger [src]!") 
 			)
 			return
-		to_chat(user, span_notice("You disarm [src].") )
+		to_chat(user, span_notice("You disarm [src]."))
 	armed = !armed
 	update_appearance()
 	playsound(src, 'sound/weapons/handcuffs.ogg', 30, TRUE, -3)
@@ -135,7 +135,7 @@
 			triggered(finder, (finder.active_hand_index % 2 == 0) ? BODY_ZONE_PRECISE_R_HAND : BODY_ZONE_PRECISE_L_HAND)
 			return TRUE	//end the search!
 		else
-			visible_message(span_warning("[src] snaps shut!") )
+			visible_message(span_warning("[src] snaps shut!"))
 			triggered(loc)
 			return FALSE
 	return FALSE
@@ -144,7 +144,7 @@
 /obj/item/assembly/mousetrap/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(!armed)
 		return ..()
-	visible_message(span_warning("[src] is triggered by [AM].") )
+	visible_message(span_warning("[src] is triggered by [AM]."))
 	triggered(null)
 
 

@@ -59,20 +59,20 @@
 			return
 		if(!O.anchored)
 			if(cargo_holder.cargo.len < cargo_holder.cargo_capacity)
-				chassis.visible_message(span_notice("[chassis] lifts [target] and starts to load it into cargo compartment.") )
+				chassis.visible_message(span_notice("[chassis] lifts [target] and starts to load it into cargo compartment."))
 				O.set_anchored(TRUE)
 				if(do_after_cooldown(target))
 					cargo_holder.cargo += O
 					O.forceMove(chassis)
 					O.set_anchored(FALSE)
-					occupant_message(span_notice("[target] successfully loaded.") )
+					occupant_message(span_notice("[target] successfully loaded."))
 					log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]", LOG_MECHA)
 				else
 					O.set_anchored(initial(O.anchored))
 			else
-				occupant_message(span_warning("Not enough room in cargo compartment!") )
+				occupant_message(span_warning("Not enough room in cargo compartment!"))
 		else
-			occupant_message(span_warning("[target] is firmly secured!") )
+			occupant_message(span_warning("[target] is firmly secured!"))
 
 	else if(isliving(target))
 		var/mob/living/M = target
@@ -86,12 +86,12 @@
 			M.updatehealth()
 			target.visible_message(span_danger("[chassis] squeezes [target]!") , \
 								span_userdanger("[chassis] squeezes you!") ,\
-								span_hear("You hear something crack.") )
+								span_hear("You hear something crack."))
 			log_combat(chassis.occupant, M, "attacked", "[name]", "(INTENT: [uppertext(chassis.occupant.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 		else
 			step_away(M,chassis)
-			occupant_message(span_notice("You push [target] out of the way.") )
-			chassis.visible_message(span_notice("[chassis] pushes [target] out of the way.") )
+			occupant_message(span_notice("You push [target] out of the way."))
+			chassis.visible_message(span_notice("[chassis] pushes [target] out of the way."))
 		return 1
 
 
@@ -119,20 +119,20 @@
 		var/obj/O = target
 		if(!O.anchored)
 			if(cargo_holder.cargo.len < cargo_holder.cargo_capacity)
-				chassis.visible_message(span_notice("[chassis] lifts [target] and starts to load it into cargo compartment.") )
+				chassis.visible_message(span_notice("[chassis] lifts [target] and starts to load it into cargo compartment."))
 				O.set_anchored(TRUE)
 				if(do_after_cooldown(target))
 					cargo_holder.cargo += O
 					O.forceMove(chassis)
 					O.set_anchored(FALSE)
-					occupant_message(span_notice("[target] successfully loaded.") )
+					occupant_message(span_notice("[target] successfully loaded."))
 					log_message("Loaded [O]. Cargo compartment capacity: [cargo_holder.cargo_capacity - cargo_holder.cargo.len]", LOG_MECHA)
 				else
 					O.set_anchored(initial(O.anchored))
 			else
-				occupant_message(span_warning("Not enough room in cargo compartment!") )
+				occupant_message(span_warning("Not enough room in cargo compartment!"))
 		else
-			occupant_message(span_warning("[target] is firmly secured!") )
+			occupant_message(span_warning("[target] is firmly secured!"))
 
 	else if(isliving(target))
 		var/mob/living/M = target
@@ -146,11 +146,11 @@
 				M.adjustOxyLoss(round(dam_force/2))
 				M.updatehealth()
 				target.visible_message(span_danger("[chassis] destroys [target] in an unholy fury!") , \
-									span_userdanger("[chassis] destroys you in an unholy fury!") )
+									span_userdanger("[chassis] destroys you in an unholy fury!"))
 				log_combat(chassis.occupant, M, "attacked", "[name]", "(INTENT: [uppertext(chassis.occupant.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 			else
 				target.visible_message(span_danger("[chassis] destroys [target] in an unholy fury!") , \
-									span_userdanger("[chassis] destroys you in an unholy fury!") )
+									span_userdanger("[chassis] destroys you in an unholy fury!"))
 		else if(chassis.occupant.a_intent == INTENT_DISARM)
 			if(real_clamp)
 				var/mob/living/carbon/C = target
@@ -208,7 +208,7 @@
 	if(istype(target, /obj/structure/reagent_dispensers/watertank) && get_dist(chassis,target) <= 1)
 		var/obj/structure/reagent_dispensers/watertank/WT = target
 		WT.reagents.trans_to(src, 1000)
-		occupant_message(span_notice("Extinguisher refilled.") )
+		occupant_message(span_notice("Extinguisher refilled."))
 		playsound(chassis, 'sound/effects/refill.ogg', 50, TRUE, -6)
 	else
 		if(reagents.total_volume > 0)
@@ -287,20 +287,20 @@
 		if(0)
 			if(iswallturf(target))
 				var/turf/closed/wall/W = target
-				occupant_message(span_notice("Deconstructing [W]...") )
+				occupant_message(span_notice("Deconstructing [W]..."))
 				if(do_after_cooldown(W))
 					chassis.spark_system.start()
 					W.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 					playsound(W, 'sound/items/deconstruct.ogg', 50, TRUE)
 			else if(isfloorturf(target))
 				var/turf/open/floor/F = target
-				occupant_message(span_notice("Deconstructing [F]...") )
+				occupant_message(span_notice("Deconstructing [F]..."))
 				if(do_after_cooldown(target))
 					chassis.spark_system.start()
 					F.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 					playsound(F, 'sound/items/deconstruct.ogg', 50, TRUE)
 			else if (istype(target, /obj/machinery/door/airlock))
-				occupant_message(span_notice("Deconstructing [target]...") )
+				occupant_message(span_notice("Deconstructing [target]..."))
 				if(do_after_cooldown(target))
 					chassis.spark_system.start()
 					qdel(target)
@@ -308,21 +308,21 @@
 		if(1)
 			if(isspaceturf(target))
 				var/turf/open/space/S = target
-				occupant_message(span_notice("Building Floor...") )
+				occupant_message(span_notice("Building Floor..."))
 				if(do_after_cooldown(S))
 					S.PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 					playsound(S, 'sound/items/deconstruct.ogg', 50, TRUE)
 					chassis.spark_system.start()
 			else if(isfloorturf(target))
 				var/turf/open/floor/F = target
-				occupant_message(span_notice("Building Wall...") )
+				occupant_message(span_notice("Building Wall..."))
 				if(do_after_cooldown(F))
 					F.PlaceOnTop(/turf/closed/wall)
 					playsound(F, 'sound/items/deconstruct.ogg', 50, TRUE)
 					chassis.spark_system.start()
 		if(2)
 			if(isfloorturf(target))
-				occupant_message(span_notice("Building Airlock...") )
+				occupant_message(span_notice("Building Airlock..."))
 				if(do_after_cooldown(target))
 					chassis.spark_system.start()
 					var/obj/machinery/door/airlock/T = new /obj/machinery/door/airlock(target)
@@ -341,13 +341,13 @@
 		mode = text2num(href_list["mode"])
 		switch(mode)
 			if(0)
-				occupant_message(span_notice("Switched RCD to Deconstruct.") )
+				occupant_message(span_notice("Switched RCD to Deconstruct."))
 				energy_drain = initial(energy_drain)
 			if(1)
-				occupant_message(span_notice("Switched RCD to Construct.") )
+				occupant_message(span_notice("Switched RCD to Construct."))
 				energy_drain = 2*initial(energy_drain)
 			if(2)
-				occupant_message(span_notice("Switched RCD to Construct Airlock.") )
+				occupant_message(span_notice("Switched RCD to Construct Airlock."))
 				energy_drain = 2*initial(energy_drain)
 	return
 
@@ -401,12 +401,12 @@
 				cable = new(src, 0)
 			cable.amount += to_load
 			target.use(to_load)
-			occupant_message(span_notice("[to_load] meters of cable successfully loaded.") )
+			occupant_message(span_notice("[to_load] meters of cable successfully loaded."))
 			send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 		else
-			occupant_message(span_warning("Reel is full.") )
+			occupant_message(span_warning("Reel is full."))
 	else
-		occupant_message(span_warning("Unable to load [target] - no cable found.") )
+		occupant_message(span_warning("Unable to load [target] - no cable found."))
 
 
 /obj/item/mecha_parts/mecha_equipment/cable_layer/Topic(href,href_list)
@@ -549,7 +549,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/proc/saw_mob(mob/living/target, mob/user)
 	target.visible_message(span_danger("[chassis] is sawing [target] with [src]!") , \
-						span_userdanger("[chassis] is sawing you with [src]!") )
+						span_userdanger("[chassis] is sawing you with [src]!"))
 	if(!do_after_cooldown(target))
 		return
 	log_combat(user, target, "sawed", "[name]", "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
@@ -585,21 +585,21 @@
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/can_attach(obj/mecha/M)
 	if (!(M.type in source_mech))
-		to_chat(loc, span_warning("This conversion kit can not be applied to this model.") )
+		to_chat(loc, span_warning("This conversion kit can not be applied to this model."))
 		return FALSE
 	if(M.type == /obj/mecha/working/ripley)
 		var/obj/mecha/working/ripley/R = M
 		if(R.cargo.len)
-			to_chat(loc, span_warning("[R]'s cargo hold must be empty before this conversion kit can be applied.") )
+			to_chat(loc, span_warning("[R]'s cargo hold must be empty before this conversion kit can be applied."))
 			return FALSE
 	if(!M.maint_access) //non-removable upgrade, so lets make sure the pilot or owner has their say.
-		to_chat(loc, span_warning("[M] must have maintenance protocols active in order to allow this conversion kit.") )
+		to_chat(loc, span_warning("[M] must have maintenance protocols active in order to allow this conversion kit."))
 		return FALSE
 	if(M.occupant) //We're actually making a new mech and swapping things over, it might get weird if players are involved
-		to_chat(loc, span_warning("[M] must be unoccupied before this conversion kit can be applied.") )
+		to_chat(loc, span_warning("[M] must be unoccupied before this conversion kit can be applied."))
 		return FALSE
 	if(!M.cell) //Turns out things break if the cell is missing
-		to_chat(loc, span_warning("The conversion process requires a cell installed.") )
+		to_chat(loc, span_warning("The conversion process requires a cell installed."))
 		return FALSE
 	return TRUE
 

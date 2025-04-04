@@ -47,15 +47,15 @@
 
 /obj/item/inducer/proc/cantbeused(mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to use [src]!") )
+		to_chat(user, span_warning("You don't have the dexterity to use [src]!"))
 		return TRUE
 
 	if(!cell)
-		to_chat(user, span_warning("[src] doesn't have a power cell installed!") )
+		to_chat(user, span_warning("[src] doesn't have a power cell installed!"))
 		return TRUE
 
 	if(!cell.charge)
-		to_chat(user, span_warning("[src]'s battery is dead!") )
+		to_chat(user, span_warning("[src]'s battery is dead!"))
 		return TRUE
 	return FALSE
 
@@ -64,12 +64,12 @@
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		W.play_tool_sound(src)
 		if(!opened)
-			to_chat(user, span_notice("You unscrew the battery compartment.") )
+			to_chat(user, span_notice("You unscrew the battery compartment."))
 			opened = TRUE
 			update_appearance()
 			return
 		else
-			to_chat(user, span_notice("You close the battery compartment.") )
+			to_chat(user, span_notice("You close the battery compartment."))
 			opened = FALSE
 			update_appearance()
 			return
@@ -78,12 +78,12 @@
 			if(!cell)
 				if(!user.transferItemToLoc(W, src))
 					return
-				to_chat(user, span_notice("You insert [W] into [src].") )
+				to_chat(user, span_notice("You insert [W] into [src]."))
 				cell = W
 				update_appearance()
 				return
 			else
-				to_chat(user, span_warning("[src] already has \a [cell] installed!") )
+				to_chat(user, span_warning("[src] already has \a [cell] installed!"))
 				return
 
 	if(cantbeused(user))
@@ -105,17 +105,17 @@
 	var/obj/O
 	var/coefficient = 1
 	if(istype(A, /obj/item/gun/energy))
-		to_chat(user, span_alert("Error unable to interface with device.") )
+		to_chat(user, span_alert("Error unable to interface with device."))
 		return FALSE
 	if(istype(A, /obj))
 		O = A
 	if(C)
 		var/done_any = FALSE
 		if(C.charge >= C.maxcharge)
-			to_chat(user, span_notice("[A] is fully charged!") )
+			to_chat(user, span_notice("[A] is fully charged!"))
 			recharging = FALSE
 			return TRUE
-		user.visible_message(span_notice("[user] starts recharging [A] with [src].") , span_notice("You start recharging [A] with [src].") )
+		user.visible_message(span_notice("[user] starts recharging [A] with [src].") , span_notice("You start recharging [A] with [src]."))
 		while(C.charge < C.maxcharge)
 			if(do_after(user, 10, target = user) && cell.charge)
 				done_any = TRUE
@@ -126,7 +126,7 @@
 			else
 				break
 		if(done_any) // Only show a message if we succeeded at least once
-			user.visible_message(span_notice("[user] recharged [A]!") , span_notice("You recharged [A]!") )
+			user.visible_message(span_notice("[user] recharged [A]!") , span_notice("You recharged [A]!"))
 		recharging = FALSE
 		return TRUE
 	recharging = FALSE
@@ -146,7 +146,7 @@
 
 /obj/item/inducer/attack_self(mob/user)
 	if(opened && cell)
-		user.visible_message(span_notice("[user] removes [cell] from [src]!") , span_notice("You remove [cell].") )
+		user.visible_message(span_notice("[user] removes [cell] from [src]!") , span_notice("You remove [cell]."))
 		cell.update_appearance()
 		user.put_in_hands(cell)
 		cell = null

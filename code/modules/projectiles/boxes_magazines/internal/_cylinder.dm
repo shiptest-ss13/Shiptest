@@ -92,5 +92,5 @@
 
 	if(num_loaded)
 		if(!silent)
-			to_chat(user, span_notice("You load [num_loaded] cartridge\s into \the [src]!") )
+			to_chat(user, span_notice("You load [num_loaded] cartridge\s into \the [src]!"))
 	return num_loaded

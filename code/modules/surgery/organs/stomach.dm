@@ -35,12 +35,12 @@
 	if(Nutri)
 		if(prob((damage/40) * Nutri.volume * Nutri.volume))
 			H.vomit(damage)
-			to_chat(H, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!") )
+			to_chat(H, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 
 	else if(Nutri && damage > high_threshold)
 		if(prob((damage/10) * Nutri.volume * Nutri.volume))
 			H.vomit(damage)
-			to_chat(H, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!") )
+			to_chat(H, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 
 /obj/item/organ/stomach/get_availability(datum/species/S)
 	return !(NOSTOMACH in S.species_traits)
@@ -141,7 +141,7 @@
 	if(flags & SHOCK_ILLUSION)
 		return
 	adjust_charge(shock_damage * siemens_coeff * 2)
-	to_chat(owner, span_notice("You absorb some of the shock into your body!") )
+	to_chat(owner, span_notice("You absorb some of the shock into your body!"))
 
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
 	crystal_charge = clamp(crystal_charge + amount, ELZUOSE_CHARGE_NONE, ELZUOSE_CHARGE_DANGEROUS)
@@ -196,9 +196,9 @@
 	switch(severity)
 		if(1)
 			owner.nutrition = 50
-			to_chat(owner, span_warning("Alert: Heavy EMP Detected. Rebooting power cell to prevent damage.") )
+			to_chat(owner, span_warning("Alert: Heavy EMP Detected. Rebooting power cell to prevent damage."))
 		if(2)
 			owner.nutrition = 250
-			to_chat(owner, span_warning("Alert: EMP Detected. Cycling battery.") )
+			to_chat(owner, span_warning("Alert: EMP Detected. Cycling battery."))
 
 //WS End

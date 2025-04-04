@@ -157,7 +157,7 @@ Difficulty: Medium
 		var/mob/living/L = target
 		if(L.stat == DEAD)
 			visible_message(span_danger("[src] butchers [L]!") ,
-			span_userdanger("You butcher [L], restoring your health!") )
+			span_userdanger("You butcher [L], restoring your health!"))
 			if(guidance)
 				adjustHealth(-L.maxHealth)
 			else
@@ -188,7 +188,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/shoot_ka()
 	if(ranged_cooldown <= world.time && get_dist(src, target) <= MINER_DASH_RANGE && !Adjacent(target))
 		ranged_cooldown = world.time + ranged_cooldown_time
-		visible_message(span_danger("[src] fires the proto-kinetic accelerator!") )
+		visible_message(span_danger("[src] fires the proto-kinetic accelerator!"))
 		face_atom(target)
 		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
 		Shoot(target)

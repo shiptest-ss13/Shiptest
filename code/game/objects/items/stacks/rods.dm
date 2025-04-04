@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 /obj/item/stack/rods/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_WELDER)
 		if(get_amount() < 2)
-			to_chat(user, span_warning("You need at least two rods to do this!") )
+			to_chat(user, span_warning("You need at least two rods to do this!"))
 			return
 
 		if(W.use_tool(src, user, 0, volume=40))
@@ -62,7 +62,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 			user.visible_message(
 				span_notice("[user.name] shaped [src] into metal with [W].") , \
 				span_notice("You shape [src] into metal with [W].") , \
-				span_hear("You hear welding.") )
+				span_hear("You hear welding."))
 			var/obj/item/stack/rods/R = src
 			src = null
 			var/replace = (user.get_inactive_held_item()==R)
@@ -73,9 +73,9 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	else if(istype(W, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = W
 		if(amount != 1)
-			to_chat(user, span_warning("You must use a single rod!") )
+			to_chat(user, span_warning("You must use a single rod!"))
 		else if(S.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, span_warning("The ingredient is too big for [src]!") )
+			to_chat(user, span_warning("The ingredient is too big for [src]!"))
 		else
 			var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/kebab(get_turf(src))
 			A.initialize_custom_food(src, S, user)

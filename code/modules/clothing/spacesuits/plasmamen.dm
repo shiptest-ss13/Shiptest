@@ -29,7 +29,7 @@
 				return
 			next_extinguish = world.time + extinguish_cooldown
 			extinguishes_left--
-			H.visible_message(span_warning("[H]'s suit automatically extinguishes [H.p_them()]!") ,span_warning("Your suit automatically extinguishes you.") )
+			H.visible_message(span_warning("[H]'s suit automatically extinguishes [H.p_them()]!") ,span_warning("Your suit automatically extinguishes you."))
 			H.ExtinguishMob()
 			new /obj/effect/particle_effect/water(get_turf(H))
 
@@ -83,7 +83,7 @@
 /obj/item/clothing/head/helmet/space/plasmaman/proc/toggle_welding_screen(mob/living/user)
 	if(weldingvisortoggle(user))
 		if(helmet_on)
-			to_chat(user, span_notice("Your helmet's torch can't pass through your welding visor!") )
+			to_chat(user, span_notice("Your helmet's torch can't pass through your welding visor!"))
 			helmet_on = FALSE
 			playsound(src, 'sound/mecha/mechmove03.ogg', 50, TRUE) //Visors don't just come from nothing
 			update_appearance()
@@ -100,14 +100,14 @@
 	if(istype(C, /obj/item/toy/crayon))
 		if(smile == FALSE)
 			var/obj/item/toy/crayon/CR = C
-			to_chat(user, span_notice("You start drawing a smiley face on the helmet's visor..") )
+			to_chat(user, span_notice("You start drawing a smiley face on the helmet's visor.."))
 			if(do_after(user, 25, target = src))
 				smile = TRUE
 				smile_color = CR.paint_color
 				to_chat(user, "You draw a smiley on the helmet visor.")
 				update_appearance()
 		else
-			to_chat(user, span_warning("Seems like someone already drew something on this helmet's visor!") )
+			to_chat(user, span_warning("Seems like someone already drew something on this helmet's visor!"))
 
 /obj/item/clothing/head/helmet/space/plasmaman/worn_overlays(isinhands)
 	. = ..()
@@ -135,7 +135,7 @@
 
 	if(helmet_on)
 		if(!up)
-			to_chat(user, span_notice("Your helmet's torch can't pass through your welding visor!") )
+			to_chat(user, span_notice("Your helmet's torch can't pass through your welding visor!"))
 			set_light_on(FALSE)
 		else
 			set_light_on(TRUE)

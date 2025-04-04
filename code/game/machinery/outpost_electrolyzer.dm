@@ -93,7 +93,7 @@
 	if(istype(item, /obj/item/multitool))
 		var/obj/item/multitool/multi = item
 		multi.buffer = src
-		to_chat(user, span_notice("[src] stored in [multi].") )
+		to_chat(user, span_notice("[src] stored in [multi]."))
 		return
 	return ..()
 
@@ -110,7 +110,7 @@
 
 /obj/machinery/mineral/electrolyzer/proc/electrolyze(atom/movable/electrolyze_target, sound=TRUE)
 	if(!find_electrolyzer())
-		visible_message(span_danger("[src] doesn't have a linked console!") )
+		visible_message(span_danger("[src] doesn't have a linked console!"))
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE, 1)
 		return
 	if(istype(electrolyze_target, /obj/effect) || !linked_console || !isturf(electrolyze_target.loc) || (machine_stat & (BROKEN|NOPOWER)))
@@ -182,7 +182,7 @@
 		return
 	if(!merit || air.return_pressure() > H2_PUMP_SHUTOFF_PRESSURE)
 		on = FALSE
-		visible_message(span_danger("[src] shuts off!") )
+		visible_message(span_danger("[src] shuts off!"))
 		playsound(src, 'sound/machines/switch2.ogg', 10, FALSE)
 		return
 	var/meritused
@@ -201,7 +201,7 @@
 	if(istype(I, /obj/item/merit/bundle))
 		var/obj/item/merit/bundle/C = I
 		merit += C.value
-		to_chat(user, span_notice("You deposit [I], for a total of [merit] merits.") )
+		to_chat(user, span_notice("You deposit [I], for a total of [merit] merits."))
 		qdel(I)
 		return
 	return ..()
@@ -213,7 +213,7 @@
 	if(on)
 		SSair.start_processing_machine(src)
 	playsound(src, 'sound/machines/switch3.ogg', 10, FALSE)
-	to_chat(user, span_notice("You toggle the pump [on ? "on" : "off"].") )
+	to_chat(user, span_notice("You toggle the pump [on ? "on" : "off"]."))
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 	update_appearance()
 
@@ -222,9 +222,9 @@
 		new /obj/item/merit/bundle(drop_location(), merit)
 		merit = FALSE
 		playsound(src, 'sound/items/poster_being_created.ogg', 10, FALSE)
-		to_chat(user, span_notice("You retrieve the hydrogen merits.") )
+		to_chat(user, span_notice("You retrieve the hydrogen merits."))
 	else
-		to_chat(user, span_notice("There were no merits left to retrieve.") )
+		to_chat(user, span_notice("There were no merits left to retrieve."))
 
 
 //Hydrogen exchange
@@ -249,13 +249,13 @@
 		value = H.credits
 	if(value)
 		credits += value
-		to_chat(user, span_notice("You deposit [I], for a total of [credits] credits.") )
+		to_chat(user, span_notice("You deposit [I], for a total of [credits] credits."))
 		qdel(I)
 		return
 	if(istype(I, /obj/item/merit/bundle))
 		var/obj/item/merit/bundle/C = I
 		merits += C.value
-		to_chat(user, span_notice("You deposit [I], for a total of [merits] merits.") )
+		to_chat(user, span_notice("You deposit [I], for a total of [merits] merits."))
 		qdel(I)
 		return
 	return ..()
@@ -303,7 +303,7 @@
 
 /obj/machinery/computer/hydrogen_exchange/AltClick(mob/user)
 	dispense_funds()
-	to_chat(user, span_notice("You force the credits and merits out of the machine.") )
+	to_chat(user, span_notice("You force the credits and merits out of the machine."))
 
 /obj/machinery/computer/hydrogen_exchange/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -381,7 +381,7 @@
 		H.dropItemToGround(src)
 		H.dropItemToGround(bundle)
 		H.put_in_hands(bundle)
-	to_chat(user, span_notice("You add [value] merits worth of money to the bundle.<br>It now holds [bundle.value] merits.") )
+	to_chat(user, span_notice("You add [value] merits worth of money to the bundle.<br>It now holds [bundle.value] merits."))
 	qdel(src)
 
 /obj/item/merit/Destroy()
@@ -454,7 +454,7 @@
 
 /obj/item/merit/bundle/attack_self(mob/user)
 	if(!Adjacent(user))
-		to_chat(user, span_warning("You need to be in arm's reach for that!") )
+		to_chat(user, span_warning("You need to be in arm's reach for that!"))
 		return
 
 	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
@@ -475,7 +475,7 @@
 
 /obj/item/merit/bundle/AltClick(mob/living/user)
 	if(!Adjacent(user))
-		to_chat(user, span_warning("You need to be in arm's reach for that!") )
+		to_chat(user, span_warning("You need to be in arm's reach for that!"))
 		return
 
 	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num

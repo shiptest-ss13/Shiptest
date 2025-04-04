@@ -21,7 +21,7 @@
 
 /obj/item/desynchronizer/attack_self(mob/living/user)
 	if(world.time < next_use)
-		to_chat(user, span_warning("[src] is still recharging.") )
+		to_chat(user, span_warning("[src] is still recharging."))
 		return
 	if(!sync_holder)
 		desync(user)
@@ -43,14 +43,14 @@
 		new_duration = new_duration SECONDS
 		new_duration = clamp(new_duration, 50, max_duration)
 		duration = new_duration
-		to_chat(user, span_notice("You set the duration to [DisplayTimeText(duration)].") )
+		to_chat(user, span_notice("You set the duration to [DisplayTimeText(duration)]."))
 
 /obj/item/desynchronizer/proc/desync(mob/living/user)
 	if(sync_holder)
 		return
 	sync_holder = new(drop_location())
 	new desync_effect(drop_location())
-	to_chat(user, span_notice("You activate [src], desynchronizing yourself from the present. You can still see your surroundings, but you feel eerily dissociated from reality.") )
+	to_chat(user, span_notice("You activate [src], desynchronizing yourself from the present. You can still see your surroundings, but you feel eerily dissociated from reality."))
 	user.forceMove(sync_holder)
 	SEND_SIGNAL(user, COMSIG_MOVABLE_SECLUDED_LOCATION)
 	for(var/thing in user)

@@ -61,9 +61,9 @@
 	M.buckling = src
 	if(!M.can_buckle() && !force)
 		if(M == usr)
-			to_chat(M, span_warning("You are unable to buckle yourself to [src]!") )
+			to_chat(M, span_warning("You are unable to buckle yourself to [src]!"))
 		else
-			to_chat(usr, span_warning("You are unable to buckle [M] to [src]!") )
+			to_chat(usr, span_warning("You are unable to buckle [M] to [src]!"))
 		M.buckling = null
 		return FALSE
 
@@ -191,7 +191,7 @@
 	// If the person attempting to buckle is stood on this atom's turf and they're not buckling themselves,
 	// buckling shouldn't be possible as they're blocking it.
 	if((target != user) && (get_turf(user) == get_turf(src)))
-		to_chat(target, span_warning("You are unable to buckle [target] to [src] while it is blocked!") )
+		to_chat(target, span_warning("You are unable to buckle [target] to [src] while it is blocked!"))
 		return FALSE
 
 	return TRUE
@@ -209,7 +209,7 @@
 	if(M != user && (get_turf(M) != get_turf(src)))
 		M.visible_message(span_warning("[user] starts buckling [M] to [src]!") ,\
 			span_userdanger("[user] starts buckling you to [src]!") ,\
-			span_hear("You hear metal clanking.") )
+			span_hear("You hear metal clanking."))
 		if(!do_after(user, 2 SECONDS, M))
 			return FALSE
 
@@ -223,11 +223,11 @@
 		if(M == user)
 			M.visible_message(span_notice("[M] buckles [M.p_them()]self to [src].") ,\
 				span_notice("You buckle yourself to [src].") ,\
-				span_hear("You hear metal clanking.") )
+				span_hear("You hear metal clanking."))
 		else
 			M.visible_message(span_warning("[user] buckles [M] to [src]!") ,\
 				span_warning("[user] buckles you to [src]!") ,\
-				span_hear("You hear metal clanking.") )
+				span_hear("You hear metal clanking."))
 
 /atom/movable/proc/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
 	var/mob/living/M = unbuckle_mob(buckled_mob)
@@ -235,11 +235,11 @@
 		if(M != user)
 			M.visible_message(span_notice("[user] unbuckles [M] from [src].") ,\
 				span_notice("[user] unbuckles you from [src].") ,\
-				span_hear("You hear metal clanking.") )
+				span_hear("You hear metal clanking."))
 		else
 			M.visible_message(span_notice("[M] unbuckles [M.p_them()]self from [src].") ,\
 				span_notice("You unbuckle yourself from [src].") ,\
-				span_hear("You hear metal clanking.") )
+				span_hear("You hear metal clanking."))
 		add_fingerprint(user)
 		if(isliving(M.pulledby))
 			var/mob/living/L = M.pulledby

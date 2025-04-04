@@ -69,7 +69,7 @@
 /obj/item/reagent_containers/condiment/attack(mob/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, span_warning("None of [src] left, oh no!") )
+		to_chat(user, span_warning("None of [src] left, oh no!"))
 		return 0
 
 	if(!canconsume(M, user))
@@ -77,16 +77,16 @@
 
 	if(M == user)
 		user.visible_message(span_notice("[user] swallows some of the contents of \the [src].") , \
-			span_notice("You swallow some of the contents of \the [src].") )
+			span_notice("You swallow some of the contents of \the [src]."))
 	else
 		M.visible_message(span_warning("[user] attempts to feed [M] from [src].") , \
-			span_warning("[user] attempts to feed you from [src].") )
+			span_warning("[user] attempts to feed you from [src]."))
 		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The condiment might be empty after the delay.
 		M.visible_message(span_warning("[user] fed [M] from [src].") , \
-			span_warning("[user] fed you from [src].") )
+			span_warning("[user] fed you from [src]."))
 		log_combat(user, M, "fed", reagents.log_list())
 	reagents.trans_to(M, 10, transfered_by = user, method = INGEST)
 	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
@@ -99,26 +99,26 @@
 	if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
 
 		if(!target.reagents.total_volume)
-			to_chat(user, span_warning("[target] is empty!") )
+			to_chat(user, span_warning("[target] is empty!"))
 			return
 
 		if(reagents.total_volume >= reagents.maximum_volume)
-			to_chat(user, span_warning("[src] is full!") )
+			to_chat(user, span_warning("[src] is full!"))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target].") )
+		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || istype(target, /obj/item/reagent_containers/food/snacks))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("[src] is empty!") )
+			to_chat(user, span_warning("[src] is empty!"))
 			return
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("you can't add anymore to [target]!") )
+			to_chat(user, span_warning("you can't add anymore to [target]!"))
 			return
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, span_notice("You transfer [trans] units of the condiment to [target].") )
+		to_chat(user, span_notice("You transfer [trans] units of the condiment to [target]."))
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 /obj/item/reagent_containers/condiment/on_reagent_change(changetype)
@@ -153,9 +153,9 @@
 		return
 	if(isturf(target))
 		if(!reagents.has_reagent(/datum/reagent/consumable/sodiumchloride, 2))
-			to_chat(user, span_warning("You don't have enough salt to make a pile!") )
+			to_chat(user, span_warning("You don't have enough salt to make a pile!"))
 			return
-		user.visible_message(span_notice("[user] shakes some salt onto [target].") , span_notice("You shake some salt onto [target].") )
+		user.visible_message(span_notice("[user] shakes some salt onto [target].") , span_notice("You shake some salt onto [target]."))
 		reagents.remove_reagent(/datum/reagent/consumable/sodiumchloride, 2)
 		new/obj/effect/decal/cleanable/food/salt(target)
 		return
@@ -260,7 +260,7 @@
 			qdel(src)
 			return
 		else
-			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it.") )
+			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
 

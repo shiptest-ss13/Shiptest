@@ -264,12 +264,12 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		if(flags & FALL_STOP_INTERCEPTING)
 			break
 	if(prev_turf && !(flags & FALL_NO_MESSAGE))
-		prev_turf.visible_message(span_danger("[mov_name] falls through [prev_turf]!") )
+		prev_turf.visible_message(span_danger("[mov_name] falls through [prev_turf]!"))
 	if(flags & FALL_INTERCEPTED)
 		return
 	if(zFall(A, ++levels))
 		return FALSE
-	A.visible_message(span_danger("[A] crashes into [src]!") )
+	A.visible_message(span_danger("[A] crashes into [src]!"))
 	A.onZImpact(src, levels)
 	return TRUE
 
@@ -457,7 +457,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(.)
 		return
 	if(length(src_object.contents()))
-		to_chat(usr, span_notice("You start dumping out the contents...") )
+		to_chat(usr, span_notice("You start dumping out the contents..."))
 		if(!do_after(usr, 20, target=src_object.parent))
 			return FALSE
 

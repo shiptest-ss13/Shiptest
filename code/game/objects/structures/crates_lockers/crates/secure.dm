@@ -28,7 +28,7 @@
 
 /obj/structure/closet/crate/secure/proc/boom(mob/user)
 	if(user)
-		to_chat(user, span_danger("The crate's anti-tamper system activates!") )
+		to_chat(user, span_danger("The crate's anti-tamper system activates!"))
 		log_bomber(user, "has detonated a", src)
 	for(var/atom/movable/AM as anything in src)
 		qdel(AM)
@@ -91,17 +91,17 @@
 							add_fingerprint(user)
 						locked = !locked
 						user.visible_message(span_notice("[user] unlocks [src]'s privacy lock.") ,
-										span_notice("You unlock [src]'s privacy lock.") )
+										span_notice("You unlock [src]'s privacy lock."))
 						privacy_lock = FALSE
 						update_appearance()
 					else if(!silent)
-						to_chat(user, span_notice("Bank account does not match with buyer!") )
+						to_chat(user, span_notice("Bank account does not match with buyer!"))
 				else if(!silent)
-					to_chat(user, span_notice("No linked bank account detected!") )
+					to_chat(user, span_notice("No linked bank account detected!"))
 			else if(!silent)
-				to_chat(user, span_notice("No ID detected!") )
+				to_chat(user, span_notice("No ID detected!"))
 		else if(!silent)
-			to_chat(user, span_warning("[src] is broken!") )
+			to_chat(user, span_warning("[src] is broken!"))
 	else ..()
 
 /obj/structure/closet/crate/secure/exo

@@ -114,7 +114,7 @@
 		var/mob/living/L = target
 		if(L.health <= HEALTH_THRESHOLD_DEAD || L.stat == DEAD) //To prevent memento mori limbo
 			visible_message(span_danger("[src] butchers [L]!") ,
-			span_userdanger("You butcher [L], restoring your health!") )
+			span_userdanger("You butcher [L], restoring your health!"))
 //			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
 			adjustHealth(-(L.maxHealth * 0.5))
 			L.gib()
@@ -260,8 +260,8 @@
 	playsound(src,"sound/effects/footstep/heavy[pick(1,2)].ogg", 200, 1)
 	for(var/mob/living/L in T.contents - src)
 		if(!faction_check_mob(L))
-			visible_message(span_boldwarning("[src] runs through [L]!") )
-			to_chat(L, span_userdanger("[src] pierces you with a longsword!") )
+			visible_message(span_boldwarning("[src] runs through [L]!"))
+			to_chat(L, span_userdanger("[src] pierces you with a longsword!"))
 			explosion(L, -1, 0, 0, 0, 0, flame_range = 2)
 			shake_camera(L, 4, 3)
 			L.adjustBruteLoss(30)
@@ -302,7 +302,7 @@
 /mob/living/simple_animal/hostile/megafauna/cult_templar/proc/blast()
 	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
 		ranged_cooldown = world.time + ranged_cooldown_time
-		visible_message(span_danger("[src] fires with bolter gun!") )
+		visible_message(span_danger("[src] fires with bolter gun!"))
 		face_atom(target)
 		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
 		Shoot(target)
@@ -312,7 +312,7 @@
 	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
 		ranged_cooldown = world.time + ranged_cooldown_time
 		charging = TRUE
-		visible_message(span_danger("[src] rapidly fires with bolter gun!") )
+		visible_message(span_danger("[src] rapidly fires with bolter gun!"))
 		face_atom(target)
 		for(var/i = 1 to 5)
 			new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
@@ -424,7 +424,7 @@
 	if(istype(C) && prob(4))
 		if(prob(25))
 			C.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 60)
-			to_chat(C, span_danger("[pick("Voices... Voices everywhere", "Your mind shatters.", "Voices echo inside your head.")].") )
+			to_chat(C, span_danger("[pick("Voices... Voices everywhere", "Your mind shatters.", "Voices echo inside your head.")]."))
 		SEND_SOUND(C, sound(pick('sound/hallucinations/over_here3.ogg', 'sound/hallucinations/behind_you2.ogg', 'sound/magic/exit_blood.ogg', 'sound/hallucinations/im_here1.ogg', 'sound/hallucinations/turn_around1.ogg', 'sound/hallucinations/turn_around2.ogg')))
 
 //DEMONS

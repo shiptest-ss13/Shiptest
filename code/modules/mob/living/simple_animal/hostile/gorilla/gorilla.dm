@@ -98,7 +98,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/gorilla/can_use_guns(obj/item/G)
-	to_chat(src, span_warning("Your meaty finger is much too large for the trigger guard!") )
+	to_chat(src, span_warning("Your meaty finger is much too large for the trigger guard!"))
 	return FALSE
 
 

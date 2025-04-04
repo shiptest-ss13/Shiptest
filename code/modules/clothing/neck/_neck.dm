@@ -194,7 +194,7 @@
 						lung_strength = "healthy"
 
 			var/diagnosis = (body_part == BODY_ZONE_CHEST ? "You hear [heart_strength] pulse and [lung_strength] respiration." : "You faintly hear [heart_strength] pulse.")
-			user.visible_message(span_notice("[user] places [src] against [M]'s [body_part] and listens attentively.") , span_notice("You place [src] against [M]'s [body_part]. [diagnosis]") )
+			user.visible_message(span_notice("[user] places [src] against [M]'s [body_part] and listens attentively.") , span_notice("You place [src] against [M]'s [body_part]. [diagnosis]"))
 			return
 	return ..(M,user)
 
@@ -406,7 +406,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.get_item_by_slot(ITEM_SLOT_NECK) == src)
-			to_chat(user, span_warning("You can't untie [src] while wearing it!") )
+			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
 			return
 		if(user.is_holding(src))
 			var/obj/item/clothing/mask/bandana/newBand = new sourceBandanaType(user)
@@ -414,9 +414,9 @@
 			var/oldName = src.name
 			qdel(src)
 			user.put_in_hand(newBand, currentHandIndex)
-			user.visible_message(span_notice("You untie [oldName] back into a [newBand.name].") , span_notice("[user] unties [oldName] back into a [newBand.name].") )
+			user.visible_message(span_notice("You untie [oldName] back into a [newBand.name].") , span_notice("[user] unties [oldName] back into a [newBand.name]."))
 		else
-			to_chat(user, span_warning("You must be holding [src] in order to untie it!") )
+			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
 
 /obj/item/clothing/neck/beads
 	name = "plastic bead necklace"
@@ -447,7 +447,7 @@
 	var/datum/effect_system/spark_spread/quantum/spark_creator = new
 	spark_creator.set_up(2, 1, src)
 	spark_creator.start()
-	owner.visible_message(span_danger("[owner]'s shields deflect [attack_text] in a shower of sparks!") )
+	owner.visible_message(span_danger("[owner]'s shields deflect [attack_text] in a shower of sparks!"))
 	take_damage(damage_to_take_on_hit)
 	playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 	return TRUE
@@ -469,7 +469,7 @@
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 
 /obj/item/clothing/neck/crystal_amulet/obj_destruction(damage_flag)
-	visible_message(span_danger("[src] shatters into a million pieces!") )
+	visible_message(span_danger("[src] shatters into a million pieces!"))
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 	return ..()

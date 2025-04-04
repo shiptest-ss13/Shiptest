@@ -20,13 +20,13 @@
 		return armor
 
 	if(armor >= 100)
-		to_chat(src, span_notice("[absorb_text || "Your armor absorbs the blow!"]") )
+		to_chat(src, span_notice("[absorb_text || "Your armor absorbs the blow!"]"))
 	else if(armour_penetration <= 0)
 		// armor has to be > 0 due to early return, and no armor pen, so blow was softened
-		to_chat(src, span_warning("[soften_text || "Your armor softens the blow!"]") )
+		to_chat(src, span_warning("[soften_text || "Your armor softens the blow!"]"))
 	else
 		// historic present
-		to_chat(src, span_userdanger("[penetrated_text || "Your armor is penetrated!"]") )
+		to_chat(src, span_userdanger("[penetrated_text || "Your armor is penetrated!"]"))
 	return armor
 
 /mob/living/proc/getarmor(def_zone, type)
@@ -85,7 +85,7 @@
 		dtype = I.damtype
 		if(!blocked)
 			visible_message(span_danger("[src] is hit by [I]!") , \
-							span_userdanger("You're hit by [I]!") )
+							span_userdanger("You're hit by [I]!"))
 			if(!I.throwforce)
 				return
 			var/armor = run_armor_check(
@@ -111,7 +111,7 @@
 /mob/living/mech_melee_attack(obj/mecha/M)
 	if(M.occupant.a_intent == INTENT_HARM)
 		if(HAS_TRAIT(M.occupant, TRAIT_PACIFISM))
-			to_chat(M.occupant, span_warning("You don't want to harm other living beings!") )
+			to_chat(M.occupant, span_warning("You don't want to harm other living beings!"))
 			return
 		M.do_attack_animation(src)
 		if(M.damtype == "brute")
@@ -131,14 +131,14 @@
 		updatehealth()
 		visible_message(span_danger("[M.name] hits [src]!") , \
 						span_userdanger("[M.name] hits you!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , COMBAT_MESSAGE_RANGE, M)
-		to_chat(M, span_danger("You hit [src]!") )
+		to_chat(M, span_danger("You hit [src]!"))
 		log_combat(M.occupant, src, "attacked", M, "(INTENT: [uppertext(M.occupant.a_intent)]) (DAMTYPE: [uppertext(M.damtype)])")
 	else
 		step_away(src,M)
 		log_combat(M.occupant, src, "pushed", M)
 		visible_message(span_warning("[M] pushes [src] out of the way.") , \
 						span_warning("[M] pushes you out of the way.") , span_hear("You hear aggressive shuffling!") , 5, M)
-		to_chat(M, span_danger("You push [src] out of the way.") )
+		to_chat(M, span_danger("You push [src] out of the way."))
 
 /mob/living/fire_act()
 	adjust_fire_stacks(3)
@@ -152,11 +152,11 @@
 		return
 
 	if(!(status_flags & CANPUSH) || HAS_TRAIT(src, TRAIT_PUSHIMMUNE))
-		to_chat(user, span_warning("[src] can't be grabbed more aggressively!") )
+		to_chat(user, span_warning("[src] can't be grabbed more aggressively!"))
 		return FALSE
 
 	if(user.grab_state >= GRAB_AGGRESSIVE && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to risk hurting [src]!") )
+		to_chat(user, span_warning("You don't want to risk hurting [src]!"))
 		return FALSE
 	grippedby(user)
 
@@ -176,7 +176,7 @@
 			var/grab_upgrade_time = instant ? 0 : 30
 			visible_message(span_danger("[user] starts to tighten [user.p_their()] grip on [src]!") , \
 							span_userdanger("[user] starts to tighten [user.p_their()] grip on you!") , span_hear("You hear aggressive shuffling!") , null, user)
-			to_chat(user, span_danger("You start to tighten your grip on [src]!") )
+			to_chat(user, span_danger("You start to tighten your grip on [src]!"))
 			switch(user.grab_state)
 				if(GRAB_AGGRESSIVE)
 					log_combat(user, src, "attempted to neck grab", addition="neck grab")
@@ -187,7 +187,7 @@
 			if(!user.pulling || user.pulling != src || user.grab_state != old_grab_state)
 				return 0
 			if(user.a_intent != INTENT_GRAB)
-				to_chat(user, span_warning("You must be on grab intent to upgrade your grab further!") )
+				to_chat(user, span_warning("You must be on grab intent to upgrade your grab further!"))
 				return 0
 		user.setGrabState(user.grab_state + 1)
 		switch(user.grab_state)
@@ -196,12 +196,12 @@
 				if(HAS_TRAIT(user, TRAIT_PACIFISM))
 					visible_message(span_danger("[user] firmly grips [src]!") ,
 									span_danger("[user] firmly grips you!") , span_hear("You hear aggressive shuffling!") , null, user)
-					to_chat(user, span_danger("You firmly grip [src]!") )
+					to_chat(user, span_danger("You firmly grip [src]!"))
 					add_log = " (pacifist)"
 				else
 					visible_message(span_danger("[user] grabs [src] aggressively!") , \
 									span_userdanger("[user] grabs you aggressively!") , span_hear("You hear aggressive shuffling!") , null, user)
-					to_chat(user, span_danger("You grab [src] aggressively!") )
+					to_chat(user, span_danger("You grab [src] aggressively!"))
 				drop_all_held_items()
 				stop_pulling()
 				log_combat(user, src, "grabbed", addition="aggressive grab[add_log]")
@@ -209,14 +209,14 @@
 				log_combat(user, src, "grabbed", addition="neck grab")
 				visible_message(span_danger("[user] grabs [src] by the neck!") ,\
 								span_userdanger("[user] grabs you by the neck!") , span_hear("You hear aggressive shuffling!") , null, user)
-				to_chat(user, span_danger("You grab [src] by the neck!") )
+				to_chat(user, span_danger("You grab [src] by the neck!"))
 				if(!buckled && !density)
 					Move(user.loc)
 			if(GRAB_KILL)
 				log_combat(user, src, "strangled", addition="kill grab")
 				visible_message(span_danger("[user] is strangling [src]!") , \
 								span_userdanger("[user] is strangling you!") , span_hear("You hear aggressive shuffling!") , null, user)
-				to_chat(user, span_danger("You're strangling [src]!") )
+				to_chat(user, span_danger("You're strangling [src]!"))
 				if(!buckled && !density)
 					Move(user.loc)
 		user.set_pull_offsets(src, grab_state)
@@ -234,7 +234,7 @@
 		return // can't attack while eating!
 
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
-		to_chat(M, span_warning("You don't want to hurt anyone!") )
+		to_chat(M, span_warning("You don't want to hurt anyone!"))
 		return FALSE
 
 	if (stat != DEAD)
@@ -242,7 +242,7 @@
 		M.do_attack_animation(src)
 		visible_message(span_danger("\The [M.name] glomps [src]!") , \
 						span_userdanger("\The [M.name] glomps you!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , COMBAT_MESSAGE_RANGE, M)
-		to_chat(M, span_danger("You glomp [src]!") )
+		to_chat(M, span_danger("You glomp [src]!"))
 		return TRUE
 
 /mob/living/attack_basic_mob(mob/living/basic/user, list/modifiers)
@@ -270,10 +270,10 @@
 	if(M.melee_damage_upper == 0)
 		visible_message(span_notice("\The [M] [M.friendly_verb_continuous] [src]!") , \
 						span_notice("\The [M] [M.friendly_verb_continuous] you!") , null, COMBAT_MESSAGE_RANGE, M)
-		to_chat(M, span_notice("You [M.friendly_verb_simple] [src]!") )
+		to_chat(M, span_notice("You [M.friendly_verb_simple] [src]!"))
 		return FALSE
 	if(HAS_TRAIT(M, TRAIT_PACIFISM))
-		to_chat(M, span_warning("You don't want to hurt anyone!") )
+		to_chat(M, span_warning("You don't want to hurt anyone!"))
 		return FALSE
 
 	if(M.attack_sound)
@@ -281,7 +281,7 @@
 	M.do_attack_animation(src)
 	visible_message(span_danger("\The [M] [M.attack_verb_continuous] [src]!") , \
 					span_userdanger("\The [M] [M.attack_verb_continuous] you!") , null, COMBAT_MESSAGE_RANGE, M)
-	to_chat(M, span_danger("You [M.attack_verb_simple] [src]!") )
+	to_chat(M, span_danger("You [M.attack_verb_simple] [src]!"))
 	log_combat(M, src, "attacked")
 	return TRUE
 
@@ -293,11 +293,11 @@
 
 	if (M.a_intent == INTENT_HARM)
 		if(HAS_TRAIT(M, TRAIT_PACIFISM))
-			to_chat(M, span_warning("You don't want to hurt anyone!") )
+			to_chat(M, span_warning("You don't want to hurt anyone!"))
 			return FALSE
 
 		if(M.is_muzzled() || M.is_mouth_covered(FALSE, TRUE))
-			to_chat(M, span_warning("You can't bite with your mouth covered!") )
+			to_chat(M, span_warning("You can't bite with your mouth covered!"))
 			return FALSE
 		M.do_attack_animation(src, ATTACK_EFFECT_BITE)
 		if (prob(75))
@@ -305,12 +305,12 @@
 			playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
 			visible_message(span_danger("[M.name] bites [src]!") , \
 							span_userdanger("[M.name] bites you!") , span_hear("You hear a chomp!") , COMBAT_MESSAGE_RANGE, M)
-			to_chat(M, span_danger("You bite [src]!") )
+			to_chat(M, span_danger("You bite [src]!"))
 			return TRUE
 		else
 			visible_message(span_danger("[M.name]'s bite misses [src]!") , \
 							span_danger("You avoid [M.name]'s bite!") , span_hear("You hear the sound of jaws snapping shut!") , COMBAT_MESSAGE_RANGE, M)
-			to_chat(M, span_warning("Your bite misses [src]!") )
+			to_chat(M, span_warning("Your bite misses [src]!"))
 	return FALSE
 
 /mob/living/attack_larva(mob/living/carbon/alien/larva/L)
@@ -318,12 +318,12 @@
 		if("help")
 			visible_message(span_notice("[L.name] rubs its head against [src].") , \
 							span_notice("[L.name] rubs its head against you.") , null, null, L)
-			to_chat(L, span_notice("You rub your head against [src].") )
+			to_chat(L, span_notice("You rub your head against [src]."))
 			return FALSE
 
 		else
 			if(HAS_TRAIT(L, TRAIT_PACIFISM))
-				to_chat(L, span_warning("You don't want to hurt anyone!") )
+				to_chat(L, span_warning("You don't want to hurt anyone!"))
 				return
 
 			L.do_attack_animation(src)
@@ -331,13 +331,13 @@
 				log_combat(L, src, "attacked")
 				visible_message(span_danger("[L.name] bites [src]!") , \
 								span_userdanger("[L.name] bites you!") , span_hear("You hear a chomp!") , COMBAT_MESSAGE_RANGE, L)
-				to_chat(L, span_danger("You bite [src]!") )
+				to_chat(L, span_danger("You bite [src]!"))
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
 				return TRUE
 			else
 				visible_message(span_danger("[L.name]'s bite misses [src]!") , \
 								span_danger("You avoid [L.name]'s bite!") , span_hear("You hear the sound of jaws snapping shut!") , COMBAT_MESSAGE_RANGE, L)
-				to_chat(L, span_warning("Your bite misses [src]!") )
+				to_chat(L, span_warning("Your bite misses [src]!"))
 	return FALSE
 
 /mob/living/attack_alien(mob/living/carbon/alien/humanoid/M)
@@ -345,14 +345,14 @@
 		if ("help")
 			visible_message(span_notice("[M] caresses [src] with its scythe-like arm.") , \
 							span_notice("[M] caresses you with its scythe-like arm.") , null, null, M)
-			to_chat(M, span_notice("You caress [src] with your scythe-like arm.") )
+			to_chat(M, span_notice("You caress [src] with your scythe-like arm."))
 			return FALSE
 		if ("grab")
 			grabbedby(M)
 			return FALSE
 		if("harm")
 			if(HAS_TRAIT(M, TRAIT_PACIFISM))
-				to_chat(M, span_warning("You don't want to hurt anyone!") )
+				to_chat(M, span_warning("You don't want to hurt anyone!"))
 				return FALSE
 			M.do_attack_animation(src)
 			return TRUE
@@ -363,7 +363,7 @@
 /mob/living/attack_hulk(mob/living/carbon/human/user)
 	..()
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to hurt [src]!") )
+		to_chat(user, span_warning("You don't want to hurt [src]!"))
 		return FALSE
 	return TRUE
 

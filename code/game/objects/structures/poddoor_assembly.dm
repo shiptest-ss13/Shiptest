@@ -70,25 +70,25 @@
 
 		else if(!anchored)
 			user.visible_message(span_warning("[user] cuts apart [src].") , \
-								span_notice("You start to slice apart [src]...") )
+								span_notice("You start to slice apart [src]..."))
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
-				to_chat(user, span_notice("You disassemble [src].") )
+				to_chat(user, span_notice("You disassemble [src]."))
 				deconstruct(TRUE)
 		else if(!welded)
 			user.visible_message(span_warning("[user] welds [src].") , \
-								span_notice("You start to weld [src] to the floor...") )
+								span_notice("You start to weld [src] to the floor..."))
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				if(!anchored || welded)
 					return
-				to_chat(user, span_notice("You weld [src] to the floor.") )
+				to_chat(user, span_notice("You weld [src] to the floor."))
 				welded = TRUE
 		else
 			user.visible_message(span_warning("[user] welds [src].") , \
-								span_notice("You start to weld [src] free from the floor...") )
+								span_notice("You start to weld [src] free from the floor..."))
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				if(!welded)
 					return
-				to_chat(user, span_notice("You weld [src] from the floor.") )
+				to_chat(user, span_notice("You weld [src] from the floor."))
 				welded = FALSE
 
 	else if(item_used.tool_behaviour == TOOL_WRENCH)
@@ -108,7 +108,7 @@
 				if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 					if(anchored)
 						return
-					to_chat(user, span_notice("You secure [src].") )
+					to_chat(user, span_notice("You secure [src]."))
 					set_anchored(TRUE)
 			else
 				to_chat(user, "There is another [base_name] here!")
@@ -122,7 +122,7 @@
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 				if(!anchored)
 					return
-				to_chat(user, span_notice("You unsecure [src].") )
+				to_chat(user, span_notice("You unsecure [src]."))
 				name = "airlock assembly"
 				set_anchored(FALSE)
 
@@ -131,46 +131,46 @@
 			return
 
 		user.visible_message(span_notice("[user] wires [src].") , \
-							span_notice("You start to wire [src]...") )
+							span_notice("You start to wire [src]..."))
 		if(item_used.use_tool(src, user, 4 SECONDS, amount=1))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_WIRES)
 				return
 			state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
-			to_chat(user, span_notice("You wire [src].") )
+			to_chat(user, span_notice("You wire [src]."))
 
 	else if(item_used.tool_behaviour == TOOL_WIRECUTTER && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 		user.visible_message(span_notice("[user] cuts the wires from [src].") , \
-							span_notice("You start to cut the wires from [src]...") )
+							span_notice("You start to cut the wires from [src]..."))
 
 		if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 				return
-			to_chat(user, span_notice("You cut the wires from the [src].") )
+			to_chat(user, span_notice("You cut the wires from the [src]."))
 			new/obj/item/stack/cable_coil(get_turf(user), 1)
 			state = AIRLOCK_ASSEMBLY_NEEDS_WIRES
 
 	else if(istype(item_used, /obj/item/electronics/airlock) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 		item_used.play_tool_sound(src, 100)
 		user.visible_message(span_notice("[user] installs the electronics into [src].") , \
-							span_notice("You start to install electronics into [src]...") )
+							span_notice("You start to install electronics into [src]..."))
 		if(do_after(user, 4 SECONDS, target = src))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 				return
 			if(!user.transferItemToLoc(item_used, src))
 				return
 
-			to_chat(user, span_notice("You install the electronics.") )
+			to_chat(user, span_notice("You install the electronics."))
 			state = AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER
 			electronics = item_used
 
 	else if((item_used.tool_behaviour == TOOL_CROWBAR) && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
 		user.visible_message(span_notice("[user] removes the electronics from [src].") , \
-							span_notice("You start to remove electronics from [src]...") )
+							span_notice("You start to remove electronics from [src]..."))
 
 		if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
 				return
-			to_chat(user, span_notice("You remove the electronics.") )
+			to_chat(user, span_notice("You remove the electronics."))
 			state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
 			var/obj/item/electronics/airlock/airlock_electronics
 			if (!electronics)
@@ -189,7 +189,7 @@
 			if(!welded)
 				return
 			if(loc && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
-				to_chat(user, span_notice("You finish [src].") )
+				to_chat(user, span_notice("You finish [src]."))
 				var/obj/machinery/door/poddoor/door = new poddoor_type(loc)
 				door.setDir(dir)
 				if(created_name)

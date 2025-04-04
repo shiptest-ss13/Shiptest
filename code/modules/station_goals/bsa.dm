@@ -42,7 +42,7 @@
 		return
 	var/obj/item/multitool/M = I
 	M.buffer = src
-	to_chat(user, span_notice("You store linkage information in [I]'s buffer.") )
+	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	return TRUE
 
 /obj/machinery/bsa/front
@@ -55,7 +55,7 @@
 		return
 	var/obj/item/multitool/M = I
 	M.buffer = src
-	to_chat(user, span_notice("You store linkage information in [I]'s buffer.") )
+	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	return TRUE
 
 /obj/machinery/bsa/middle
@@ -73,13 +73,13 @@
 		if(istype(M.buffer, /obj/machinery/bsa/back))
 			back = M.buffer
 			M.buffer = null
-			to_chat(user, span_notice("You link [src] with [back].") )
+			to_chat(user, span_notice("You link [src] with [back]."))
 		else if(istype(M.buffer, /obj/machinery/bsa/front))
 			front = M.buffer
 			M.buffer = null
-			to_chat(user, span_notice("You link [src] with [front].") )
+			to_chat(user, span_notice("You link [src] with [front]."))
 	else
-		to_chat(user, span_warning("[I]'s data buffer is empty!") )
+		to_chat(user, span_warning("[I]'s data buffer is empty!"))
 	return TRUE
 
 /obj/machinery/bsa/middle/proc/check_completion()

@@ -109,7 +109,7 @@
 	update_appearance()
 	if(user)
 		user.visible_message(span_warning("Sparks fly out of [src]!") ,
-							span_notice("You emag [src], disabling its thermal sensors.") )
+							span_notice("You emag [src], disabling its thermal sensors."))
 	playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 
 /obj/machinery/firealarm/temperature_expose(datum/gas_mixture/air, temperature, volume)
@@ -158,7 +158,7 @@
 	if(W.tool_behaviour == TOOL_SCREWDRIVER && buildstage == 2)
 		W.play_tool_sound(src)
 		panel_open = !panel_open
-		to_chat(user, span_notice("The wires have been [panel_open ? "exposed" : "unexposed"].") )
+		to_chat(user, span_notice("The wires have been [panel_open ? "exposed" : "unexposed"]."))
 		update_appearance()
 		return
 
@@ -169,12 +169,12 @@
 				if(!W.tool_start_check(user, amount=0))
 					return
 
-				to_chat(user, span_notice("You begin repairing [src]...") )
+				to_chat(user, span_notice("You begin repairing [src]..."))
 				if(W.use_tool(src, user, 40, volume=50))
 					obj_integrity = max_integrity
-					to_chat(user, span_notice("You repair [src].") )
+					to_chat(user, span_notice("You repair [src]."))
 			else
-				to_chat(user, span_warning("[src] is already in good condition!") )
+				to_chat(user, span_warning("[src] is already in good condition!"))
 			return
 
 		switch(buildstage)
@@ -182,16 +182,16 @@
 				if(W.tool_behaviour == TOOL_MULTITOOL)
 					detecting = !detecting
 					if (src.detecting)
-						user.visible_message(span_notice("[user] reconnects [src]'s detecting unit!") , span_notice("You reconnect [src]'s detecting unit.") )
+						user.visible_message(span_notice("[user] reconnects [src]'s detecting unit!") , span_notice("You reconnect [src]'s detecting unit."))
 					else
-						user.visible_message(span_notice("[user] disconnects [src]'s detecting unit!") , span_notice("You disconnect [src]'s detecting unit.") )
+						user.visible_message(span_notice("[user] disconnects [src]'s detecting unit!") , span_notice("You disconnect [src]'s detecting unit."))
 					return
 
 				else if(W.tool_behaviour == TOOL_WIRECUTTER)
 					buildstage = 1
 					W.play_tool_sound(src)
 					new /obj/item/stack/cable_coil(user.loc, 5)
-					to_chat(user, span_notice("You cut the wires from \the [src].") )
+					to_chat(user, span_notice("You cut the wires from \the [src]."))
 					update_appearance()
 					return
 
@@ -206,31 +206,31 @@
 				if(istype(W, /obj/item/stack/cable_coil))
 					var/obj/item/stack/cable_coil/coil = W
 					if(coil.get_amount() < 5)
-						to_chat(user, span_warning("You need more cable for this!") )
+						to_chat(user, span_warning("You need more cable for this!"))
 					else
 						coil.use(5)
 						buildstage = 2
-						to_chat(user, span_notice("You wire \the [src].") )
+						to_chat(user, span_notice("You wire \the [src]."))
 						update_appearance()
 					return
 
 				else if(W.tool_behaviour == TOOL_CROWBAR)
 					user.visible_message(span_notice("[user.name] removes the electronics from [src.name].") , \
-										span_notice("You start prying out the circuit...") )
+										span_notice("You start prying out the circuit..."))
 					if(W.use_tool(src, user, 20, volume=50))
 						if(buildstage == 1)
 							if(machine_stat & BROKEN)
-								to_chat(user, span_notice("You remove the destroyed circuit.") )
+								to_chat(user, span_notice("You remove the destroyed circuit."))
 								set_machine_stat(machine_stat & ~BROKEN)
 							else
-								to_chat(user, span_notice("You pry out the circuit.") )
+								to_chat(user, span_notice("You pry out the circuit."))
 								new /obj/item/electronics/firealarm(user.loc)
 							buildstage = 0
 							update_appearance()
 					return
 			if(0)
 				if(istype(W, /obj/item/electronics/firealarm))
-					to_chat(user, span_notice("You insert the circuit.") )
+					to_chat(user, span_notice("You insert the circuit."))
 					qdel(W)
 					buildstage = 1
 					update_appearance()

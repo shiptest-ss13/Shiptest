@@ -112,13 +112,13 @@
 		"is pulled into an invisible vortex, vanishing from sight")
 	var/slip_out_message = pick("silently fades in", "leaps out of thin air","appears", "walks out of an invisible doorway",\
 		"slides out of a fold in spacetime")
-	to_chat(user, span_notice("You try to align with the bluespace stream...") )
+	to_chat(user, span_notice("You try to align with the bluespace stream..."))
 	if(do_after(user, 20, target = src))
 		new /obj/effect/temp_visual/bluespace_fissure(get_turf(src))
 		new /obj/effect/temp_visual/bluespace_fissure(get_turf(linked_to))
 		user.forceMove(get_turf(linked_to))
 		user.visible_message(span_warning("[user] [slip_in_message].") , null, null, null, user)
-		user.visible_message(span_warning("[user] [slip_out_message].") , span_notice("...and find your way to the other side.") )
+		user.visible_message(span_warning("[user] [slip_out_message].") , span_notice("...and find your way to the other side."))
 
 /datum/brain_trauma/special/quantum_alignment
 	name = "Quantum Alignment"
@@ -173,7 +173,7 @@
 	entangle(get_turf(owner))
 
 /datum/brain_trauma/special/quantum_alignment/proc/entangle(atom/target)
-	to_chat(owner, span_notice("You start feeling a strong sense of connection to [target].") )
+	to_chat(owner, span_notice("You start feeling a strong sense of connection to [target]."))
 	linked_target = target
 	linked = TRUE
 	snapback_time = world.time + rand(450, 6000)
@@ -183,7 +183,7 @@
 		linked_target = null
 		linked = FALSE
 		return
-	to_chat(owner, span_warning("Your connection to [linked_target] suddenly feels extremely strong... you can feel it pulling you!") )
+	to_chat(owner, span_warning("Your connection to [linked_target] suddenly feels extremely strong... you can feel it pulling you!"))
 	owner.playsound_local(owner, 'sound/magic/lightning_chargeup.ogg', 75, FALSE)
 	returning = TRUE
 	addtimer(CALLBACK(src, PROC_REF(snapback)), 100)
@@ -191,11 +191,11 @@
 /datum/brain_trauma/special/quantum_alignment/proc/snapback()
 	returning = FALSE
 	if(QDELETED(linked_target))
-		to_chat(owner, span_notice("The connection fades abruptly, and the pull with it.") )
+		to_chat(owner, span_notice("The connection fades abruptly, and the pull with it."))
 		linked_target = null
 		linked = FALSE
 		return
-	to_chat(owner, span_warning("You're pulled through spacetime!") )
+	to_chat(owner, span_warning("You're pulled through spacetime!"))
 	do_teleport(owner, get_turf(linked_target), null, channel = TELEPORT_CHANNEL_QUANTUM)
 	owner.playsound_local(owner, 'sound/magic/repulse.ogg', 100, FALSE)
 	linked_target = null
@@ -213,7 +213,7 @@
 	..()
 	psychotic_brawling = new(null)
 	if(!psychotic_brawling.teach(owner, TRUE))
-		to_chat(owner, span_notice("But your martial knowledge keeps you grounded.") )
+		to_chat(owner, span_notice("But your martial knowledge keeps you grounded."))
 		qdel(src)
 
 /datum/brain_trauma/special/psychotic_brawling/on_lose()
@@ -312,7 +312,7 @@
 
 /datum/brain_trauma/special/existential_crisis/proc/fade_in()
 	QDEL_NULL(veil)
-	to_chat(owner, span_notice("You fade back into reality.") )
+	to_chat(owner, span_notice("You fade back into reality."))
 	next_crisis = world.time + 600
 
 //base sync holder is in desynchronizer.dm
@@ -358,7 +358,7 @@
 		return
 	if(get_dist(owner, beepsky) <= 1)
 		owner.playsound_local(owner, 'sound/weapons/egloves.ogg', 50)
-		owner.visible_message(span_warning("[owner]'s body jerks as if it was shocked.") , span_userdanger("You feel the fist of the LAW.") )
+		owner.visible_message(span_warning("[owner]'s body jerks as if it was shocked.") , span_userdanger("You feel the fist of the LAW."))
 		owner.take_bodypart_damage(0,0,rand(40, 70))
 		QDEL_NULL(beepsky)
 	if(prob(20) && get_dist(owner, beepsky) <= 8)
@@ -381,7 +381,7 @@
 	if(prob(60))
 		forceMove(get_step_towards(src, victim))
 		if(prob(5))
-			to_chat(victim, span_name("[name]</span> exclaims, \"<span class='robotic'>Level 10 infraction alert!\"") )
+			to_chat(victim, span_name("[name]</span> exclaims, \"<span class='robotic'>Level 10 infraction alert!\""))
 
 /obj/effect/hallucination/simple/securitron/Destroy()
 	STOP_PROCESSING(SSfastprocess,src)

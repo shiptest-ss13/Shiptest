@@ -20,10 +20,10 @@
 /turf/open/lava/plasma/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/glass/C = I
 	if(C.reagents.total_volume >= C.volume)
-		to_chat(user, span_danger("[C] is full.") )
+		to_chat(user, span_danger("[C] is full."))
 		return
 	C.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
-	user.visible_message(span_notice("[user] scoops some plasma from the [src] with \the [C].") , span_notice("You scoop out some plasma from the [src] using \the [C].") )
+	user.visible_message(span_notice("[user] scoops some plasma from the [src] with \the [C].") , span_notice("You scoop out some plasma from the [src] using \the [C]."))
 	return TRUE
 
 /turf/open/lava/plasma/burn_stuff(AM)
@@ -94,17 +94,17 @@
 							if(!HAS_TRAIT(PP, TRAIT_ANALGESIA))
 								PP.visible_message(
 									span_warning("[L] screams in pain as [L.p_their()] [NB] melts down to the bone!") ,
-									span_userdanger("You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!") )
+									span_userdanger("You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
 							else
 								PP.visible_message(
 									span_warning("[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!") ,
-									span_userdanger("You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!") )
+									span_userdanger("You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
 						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
 							PP.IgniteMob()
 							PP.set_species(/datum/species/plasmaman)
 							PP.visible_message(
 								span_warning("[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!") ,
-								span_userdanger("Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!") )
+								span_userdanger("Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!"))
 
 
 /obj/vehicle/ridden/lavaboat/plasma

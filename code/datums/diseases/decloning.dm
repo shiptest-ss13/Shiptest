@@ -32,7 +32,7 @@
 			if(prob(3))
 				affected_mob.adjustCloneLoss(1)
 			if(prob(2))
-				to_chat(affected_mob, span_danger("Your skin feels strange.") )
+				to_chat(affected_mob, span_danger("Your skin feels strange."))
 
 		if(4)
 			if(prob(2))
@@ -50,7 +50,7 @@
 			if(prob(2))
 				affected_mob.emote("drool")
 			if(prob(5))
-				to_chat(affected_mob, span_danger("Your skin starts degrading!") )
+				to_chat(affected_mob, span_danger("Your skin starts degrading!"))
 			if(prob(10))
 				affected_mob.adjustCloneLoss(5)
 				affected_mob.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, 170)

@@ -48,10 +48,10 @@
 
 /obj/item/dnainjector/attack(mob/target, mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!") )
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return
 	if(used)
-		to_chat(user, span_warning("This injector is used up!") )
+		to_chat(user, span_warning("This injector is used up!"))
 		return
 	if(ishuman(target))
 		var/mob/living/carbon/human/humantarget = target
@@ -61,19 +61,19 @@
 
 	if(target != user)
 		target.visible_message(span_danger("[user] is trying to inject [target] with [src]!") , \
-			span_userdanger("[user] is trying to inject you with [src]!") )
+			span_userdanger("[user] is trying to inject you with [src]!"))
 		if(!do_after(user, target = target) || used)
 			return
 		target.visible_message(span_danger("[user] injects [target] with the syringe with [src]!") , \
-						span_userdanger("[user] injects you with the syringe with [src]!") )
+						span_userdanger("[user] injects you with the syringe with [src]!"))
 
 	else
-		to_chat(user, span_notice("You inject yourself with [src].") )
+		to_chat(user, span_notice("You inject yourself with [src]."))
 
 	log_combat(user, target, "injected", src)
 
 	if(!inject(target, user))	//Now we actually do the heavy lifting.
-		to_chat(user, span_notice("It appears that [target] does not have compatible DNA.") )
+		to_chat(user, span_notice("It appears that [target] does not have compatible DNA."))
 
 	used = 1
 	icon_state = "dnainjector0"
@@ -403,7 +403,7 @@
 
 /obj/item/dnainjector/timed/inject(mob/living/carbon/M, mob/user)
 	if(M.stat == DEAD)	//prevents dead people from having their DNA changed
-		to_chat(user, span_notice("You can't modify [M]'s DNA while [M.p_theyre()] dead.") )
+		to_chat(user, span_notice("You can't modify [M]'s DNA while [M.p_theyre()] dead."))
 		return FALSE
 
 	if(M.has_dna() && !(HAS_TRAIT(M, TRAIT_BADDNA)))

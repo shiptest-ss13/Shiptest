@@ -254,10 +254,10 @@
 					return
 				if(construction_state == MECHA_LOCKED)
 					construction_state = MECHA_SECURE_BOLTS
-					to_chat(usr, span_notice("The securing bolts are now exposed.") )
+					to_chat(usr, span_notice("The securing bolts are now exposed."))
 				else if(construction_state == MECHA_SECURE_BOLTS)
 					construction_state = MECHA_LOCKED
-					to_chat(usr, span_notice("The securing bolts are now hidden.") )
+					to_chat(usr, span_notice("The securing bolts are now hidden."))
 				output_maintenance_dialog(id_card,usr)
 				return
 			if(href_list["drop_cell"])
@@ -306,7 +306,7 @@
 			if(isnull(new_pressure) || usr.incapacitated() || !construction_state)
 				return
 			internal_tank_valve = new_pressure
-			to_chat(usr, span_notice("The internal pressure valve has been set to [internal_tank_valve]kPa.") )
+			to_chat(usr, span_notice("The internal pressure valve has been set to [internal_tank_valve]kPa."))
 			return
 
 	//Start of all internal topic stuff.
@@ -325,8 +325,8 @@
 		selected = equip
 		// enable autofire
 		equipment_check()
-		occupant_message(span_notice("You switch to [equip].") )
-		visible_message(span_notice("[src] raises [equip].") )
+		occupant_message(span_notice("You switch to [equip]."))
+		visible_message(span_notice("[src] raises [equip]."))
 		send_byjax(usr, "exosuit.browser", "eq_list", get_equipment_list())
 		return
 
@@ -366,7 +366,7 @@
 	//Toggles main access.
 	if(href_list["toggle_maint_access"])
 		if(construction_state)
-			occupant_message(span_danger("Maintenance protocols in effect") )
+			occupant_message(span_danger("Maintenance protocols in effect"))
 			return
 		maint_access = !maint_access
 		send_byjax(usr,"exosuit.browser","t_maint_access","[maint_access?"Forbid":"Permit"] maintenance protocols")
@@ -376,18 +376,18 @@
 	if (href_list["toggle_port_connection"])
 		if(internal_tank.connected_port)
 			if(internal_tank.disconnect())
-				occupant_message(span_notice("Disconnected from the air system port.") )
+				occupant_message(span_notice("Disconnected from the air system port."))
 				log_message("Disconnected from gas port.", LOG_MECHA)
 			else
-				occupant_message(span_warning("Unable to disconnect from the air system port!") )
+				occupant_message(span_warning("Unable to disconnect from the air system port!"))
 				return
 		else
 			var/obj/machinery/atmospherics/components/unary/portables_connector/possible_port = locate() in loc
 			if(internal_tank.connect(possible_port))
-				occupant_message(span_notice("Connected to the air system port.") )
+				occupant_message(span_notice("Connected to the air system port."))
 				log_message("Connected to gas port.", LOG_MECHA)
 			else
-				occupant_message(span_warning("Unable to connect with air system port!") )
+				occupant_message(span_warning("Unable to connect with air system port!"))
 				return
 		send_byjax(occupant,"exosuit.browser","t_port_connection","[internal_tank.connected_port?"Disconnect from":"Connect to"] gas port")
 		return
@@ -395,10 +395,10 @@
 	//Turns on the DNA lock
 	if(href_list["dna_lock"])
 		if(!iscarbon(occupant) || !occupant.dna)
-			occupant_message(span_notice("You feel a prick as the needle takes your DNA sample.") )
+			occupant_message(span_notice("You feel a prick as the needle takes your DNA sample."))
 			return
 		dna_lock = occupant.dna.unique_enzymes
-		occupant_message(span_notice("You feel a prick as the needle takes your DNA sample.") )
+		occupant_message(span_notice("You feel a prick as the needle takes your DNA sample."))
 		return
 
 	//Resets the DNA lock
@@ -408,7 +408,7 @@
 
 	//Repairs internal damage
 	if(href_list["repair_int_control_lost"])
-		occupant_message(span_notice("Recalibrating coordination system...") )
+		occupant_message(span_notice("Recalibrating coordination system..."))
 		log_message("Recalibration of coordination system started.", LOG_MECHA)
 		addtimer(CALLBACK(src, PROC_REF(stationary_repair), loc), 100, TIMER_UNIQUE)
 
@@ -416,8 +416,8 @@
 /obj/mecha/proc/stationary_repair(location)
 	if(location == loc)
 		clearInternalDamage(MECHA_INT_CONTROL_LOST)
-		occupant_message(span_notice("Recalibration successful.") )
+		occupant_message(span_notice("Recalibration successful."))
 		log_message("Recalibration of coordination system finished with 0 errors.", LOG_MECHA)
 	else
-		occupant_message(span_warning("Recalibration failed!") )
+		occupant_message(span_warning("Recalibration failed!"))
 		log_message("Recalibration of coordination system failed with 1 error.", LOG_MECHA, color="red")

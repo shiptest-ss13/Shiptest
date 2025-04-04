@@ -77,14 +77,14 @@
 			if(allowed(user))
 				locked = FALSE
 				req_access = list()
-				to_chat(user, span_notice("You unlock [src].") )
+				to_chat(user, span_notice("You unlock [src]."))
 		else if(!(obj_flags & EMAGGED))
-			to_chat(user, span_notice("You lock [src] with [W].") )
+			to_chat(user, span_notice("You lock [src] with [W]."))
 			var/list/access = W.GetAccess()
 			req_access = access
 			locked = TRUE
 		else
-			to_chat(user, span_warning("You try to lock [src] with [W], but nothing happens.") )
+			to_chat(user, span_warning("You try to lock [src] with [W], but nothing happens."))
 	else
 		return ..()
 
@@ -94,7 +94,7 @@
 	locked = FALSE
 	req_access = list()
 	obj_flags |= EMAGGED
-	to_chat(user, span_notice("You fry the ID checking system.") )
+	to_chat(user, span_notice("You fry the ID checking system."))
 
 /obj/machinery/scanner_gate/proc/perform_scan(mob/living/M)
 	var/beep = FALSE

@@ -25,14 +25,14 @@
 
 /obj/item/cartridge/virus/clown/send_virus(obj/item/pda/target, mob/living/U)
 	if(charges <= 0)
-		to_chat(U, span_notice("Out of charges.") )
+		to_chat(U, span_notice("Out of charges."))
 		return
 	if(!isnull(target) && !target.toff)
 		charges--
-		to_chat(U, span_notice("Virus Sent!") )
+		to_chat(U, span_notice("Virus Sent!"))
 		target.honkamt = (rand(15,20))
 	else
-		to_chat(U, span_alert("PDA not found.") )
+		to_chat(U, span_alert("PDA not found."))
 
 /obj/item/cartridge/virus/mime
 	name = "\improper Gestur-O 1000 cartridge"
@@ -41,15 +41,15 @@
 
 /obj/item/cartridge/virus/mime/send_virus(obj/item/pda/target, mob/living/U)
 	if(charges <= 0)
-		to_chat(U, span_alert("Out of charges.") )
+		to_chat(U, span_alert("Out of charges."))
 		return
 	if(!isnull(target) && !target.toff)
 		charges--
-		to_chat(U, span_notice("Virus Sent!") )
+		to_chat(U, span_notice("Virus Sent!"))
 		target.silent = TRUE
 		target.ttone = "silence"
 	else
-		to_chat(U, span_alert("PDA not found.") )
+		to_chat(U, span_alert("PDA not found."))
 
 /obj/item/cartridge/virus/syndicate
 	name = "\improper Detomatix cartridge"
@@ -60,7 +60,7 @@
 
 /obj/item/cartridge/virus/syndicate/send_virus(obj/item/pda/target, mob/living/U)
 	if(charges <= 0)
-		to_chat(U, span_notice("Out of charges.") )
+		to_chat(U, span_notice("Out of charges."))
 		return
 	if(!isnull(target) && !target.toff)
 		charges--
@@ -72,7 +72,7 @@
 			U.show_message(span_notice("Success!") , MSG_VISUAL)
 			target.explode()
 	else
-		to_chat(U, span_alert("PDA not found.") )
+		to_chat(U, span_alert("PDA not found."))
 
 /obj/item/cartridge/virus/frame
 	name = "\improper F.R.A.M.E. cartridge"
@@ -81,12 +81,12 @@
 
 /obj/item/cartridge/virus/frame/send_virus(obj/item/pda/target, mob/living/U)
 	if(charges <= 0)
-		to_chat(U, span_alert("Out of charges.") )
+		to_chat(U, span_alert("Out of charges."))
 		return
 	if(!isnull(target) && !target.toff)
 		charges--
 		var/lock_code = "[rand(100,999)] [pick(GLOB.phonetic_alphabet)]"
-		to_chat(U, span_notice("Virus Sent! The unlock code to the target is: [lock_code]") )
+		to_chat(U, span_notice("Virus Sent! The unlock code to the target is: [lock_code]"))
 		var/datum/component/uplink/hidden_uplink = target.GetComponent(/datum/component/uplink)
 		if(!hidden_uplink)
 			hidden_uplink = target.AddComponent(/datum/component/uplink)
@@ -98,15 +98,15 @@
 		hidden_uplink.locked = FALSE
 		hidden_uplink.active = TRUE
 	else
-		to_chat(U, span_alert("PDA not found.") )
+		to_chat(U, span_alert("PDA not found."))
 
 /obj/item/cartridge/virus/frame/attackby(obj/item/I, mob/user, params)
 	. = ..()
 	if(istype(I, /obj/item/stack/telecrystal))
 		if(!charges)
-			to_chat(user, span_notice("[src] is out of charges, it's refusing to accept [I].") )
+			to_chat(user, span_notice("[src] is out of charges, it's refusing to accept [I]."))
 			return
 		var/obj/item/stack/telecrystal/telecrystalStack = I
 		telecrystals += telecrystalStack.amount
-		to_chat(user, span_notice("You slot [telecrystalStack] into [src]. The next time it's used, it will also give telecrystals.") )
+		to_chat(user, span_notice("You slot [telecrystalStack] into [src]. The next time it's used, it will also give telecrystals."))
 		telecrystalStack.use(telecrystalStack.amount)

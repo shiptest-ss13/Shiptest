@@ -56,7 +56,7 @@
 	if(istype(T))
 		var/light_amount = T.get_lumcount()
 		if(light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD)
-			H.visible_message(span_danger("[H] dances in the shadows, evading [P]!") )
+			H.visible_message(span_danger("[H] dances in the shadows, evading [P]!"))
 			playsound(T, "bullet_miss", 75, TRUE)
 			return BULLET_ACT_FORCE_PIERCE
 	return ..()
@@ -76,7 +76,7 @@
 	..()
 	if(M.dna.species.id != "nightmare")
 		M.set_species(/datum/species/shadow/nightmare)
-		visible_message(span_warning("[M] thrashes as [src] takes root in [M.p_their()] body!") )
+		visible_message(span_warning("[M] thrashes as [src] takes root in [M.p_their()] body!"))
 	var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
 	M.AddSpell(SW)
 	shadowwalk = SW
@@ -108,13 +108,13 @@
 		return ..()
 	user.visible_message(
 		span_warning("[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!") , \
-		span_danger("[src] feels unnaturally cold in your hands. You raise [src] your mouth and devour it!") )
+		span_danger("[src] feels unnaturally cold in your hands. You raise [src] your mouth and devour it!"))
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
 
 
 	user.visible_message(
 		span_warning("Blood erupts from [user]'s arm as it reforms into a weapon!") , \
-		span_userdanger("Icy blood pumps through your veins as your arm reforms itself!") )
+		span_userdanger("Icy blood pumps through your veins as your arm reforms itself!"))
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	Insert(user)
 
@@ -127,7 +127,7 @@
 /obj/item/organ/heart/nightmare/Remove(mob/living/carbon/M, special = 0)
 	respawn_progress = 0
 	if(blade && special != HEART_SPECIAL_SHADOWIFY)
-		M.visible_message(span_warning("\The [blade] disintegrates!") )
+		M.visible_message(span_warning("\The [blade] disintegrates!"))
 		QDEL_NULL(blade)
 	..()
 
@@ -150,9 +150,9 @@
 			Remove(owner, HEART_SPECIAL_SHADOWIFY)
 			old_owner.set_species(/datum/species/shadow)
 			Insert(old_owner, HEART_SPECIAL_SHADOWIFY)
-			to_chat(owner, span_userdanger("You feel the shadows invade your skin, leaping into the center of your chest! You're alive!") )
+			to_chat(owner, span_userdanger("You feel the shadows invade your skin, leaping into the center of your chest! You're alive!"))
 			SEND_SOUND(owner, sound('sound/effects/ghost.ogg'))
-		owner.visible_message(span_warning("[owner] staggers to [owner.p_their()] feet!") )
+		owner.visible_message(span_warning("[owner] staggers to [owner.p_their()] feet!"))
 		playsound(owner, 'sound/hallucinations/far_noise.ogg', 50, TRUE)
 		respawn_progress = 0
 
@@ -213,9 +213,9 @@
 		PDA.set_light_on(FALSE)
 		PDA.set_light_range(0) //It won't be turning on again.
 		PDA.update_appearance()
-		visible_message(span_danger("The light in [PDA] shorts out!") )
+		visible_message(span_danger("The light in [PDA] shorts out!"))
 	else
-		visible_message(span_danger("[O] is disintegrated by [src]!") )
+		visible_message(span_danger("[O] is disintegrated by [src]!"))
 		O.burn()
 	playsound(src, 'sound/items/welder.ogg', 50, TRUE)
 

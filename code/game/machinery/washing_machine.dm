@@ -149,10 +149,10 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(busy)
 		return
 	if(state_open)
-		to_chat(user, span_warning("Close the door first!") )
+		to_chat(user, span_warning("Close the door first!"))
 		return
 	if(bloody_mess)
-		to_chat(user, span_warning("[src] must be cleaned up first!") )
+		to_chat(user, span_warning("[src] must be cleaned up first!"))
 		return
 	busy = TRUE
 	update_appearance()
@@ -296,19 +296,19 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	else if(user.a_intent != INTENT_HARM)
 		if (!state_open)
-			to_chat(user, span_warning("Open the door first!") )
+			to_chat(user, span_warning("Open the door first!"))
 			return TRUE
 
 		if(bloody_mess)
-			to_chat(user, span_warning("[src] must be cleaned up first!") )
+			to_chat(user, span_warning("[src] must be cleaned up first!"))
 			return TRUE
 
 		if(contents.len >= max_wash_capacity)
-			to_chat(user, span_warning("The washing machine is full!") )
+			to_chat(user, span_warning("The washing machine is full!"))
 			return TRUE
 
 		if(!user.transferItemToLoc(W, src))
-			to_chat(user, span_warning("\The [W] is stuck to your hand, you cannot put it in the washing machine!") )
+			to_chat(user, span_warning("\The [W] is stuck to your hand, you cannot put it in the washing machine!"))
 			return TRUE
 		if(W.dye_color)
 			color_source = W
@@ -322,7 +322,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(.)
 		return
 	if(busy)
-		to_chat(user, span_warning("[src] is busy!") )
+		to_chat(user, span_warning("[src] is busy!"))
 		return
 
 	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))

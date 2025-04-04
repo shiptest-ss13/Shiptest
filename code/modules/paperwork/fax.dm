@@ -141,7 +141,7 @@
 		return TRUE
 	if(!(obj_flags & EMAGGED))
 		obj_flags |= EMAGGED
-		to_chat(user, span_warning("The screen of the [src] flickers!") )
+		to_chat(user, span_warning("The screen of the [src] flickers!"))
 
 /**
  * EMP Interaction
@@ -184,7 +184,7 @@
 		if(fax_name_exist(new_fax_name))
 			// Being able to set the same name as another fax machine will give a lot of gimmicks for the traitor.
 			if(frontier_network != TRUE && obj_flags != EMAGGED)
-				to_chat(user, span_warning("There is already a fax machine with this name on the network.") )
+				to_chat(user, span_warning("There is already a fax machine with this name on the network."))
 				return
 		user.log_message("renamed [fax_name] (fax machine) to [new_fax_name]", LOG_GAME)
 		fax_name = new_fax_name
@@ -216,7 +216,7 @@
 			return FALSE
 		clean_spray.reagents.remove_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this, 1)
 		playsound(loc, 'sound/effects/spray3.ogg', 50, TRUE, -5)
-		user.visible_message(span_notice("[user] cleans \the [src].") , span_notice("You clean \the [src].") )
+		user.visible_message(span_notice("[user] cleans \the [src].") , span_notice("You clean \the [src]."))
 		jammed = FALSE
 		return TRUE
 	if(istype(item, /obj/item/soap) || istype(item, /obj/item/reagent_containers/glass/rag))
@@ -224,9 +224,9 @@
 		if(istype(item, /obj/item/soap))
 			var/obj/item/soap/used_soap = item
 			cleanspeed = used_soap.cleanspeed
-		user.visible_message(span_notice("[user] starts to clean \the [src].") , span_notice("You start to clean \the [src]...") )
+		user.visible_message(span_notice("[user] starts to clean \the [src].") , span_notice("You start to clean \the [src]..."))
 		if(do_after(user, cleanspeed, target = src))
-			user.visible_message(span_notice("[user] cleans \the [src].") , span_notice("You clean \the [src].") )
+			user.visible_message(span_notice("[user] cleans \the [src].") , span_notice("You clean \the [src]."))
 			jammed = FALSE
 		return TRUE
 	return FALSE
@@ -338,7 +338,7 @@
 			else
 				to_show = ". They sent [thing_to_send.name]"
 
-			to_chat(GLOB.admins, span_adminnotice("[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])][to_show]") )
+			to_chat(GLOB.admins, span_adminnotice("[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])][to_show]"))
 			log_fax(thing_to_send, params["id"], params["name"])
 			loaded_item_ref = null
 

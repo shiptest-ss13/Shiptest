@@ -51,42 +51,42 @@
 				if(prints[md5(C.dna.uni_identity)])
 					possible |= C
 		if(!length(possible))
-			to_chat(user,span_warning("Despite your best efforts, there are no scents to be found on [sniffed]...") )
+			to_chat(user,span_warning("Despite your best efforts, there are no scents to be found on [sniffed]..."))
 			return
 		tracking_target = input(user, "Choose a scent to remember.", "Scent Tracking") as null|anything in sortNames(possible)
 		if(!tracking_target)
 			if(!old_target)
-				to_chat(user,span_warning("You decide against remembering any scents. Instead, you notice your own nose in your peripheral vision. This goes on to remind you of that one time you started breathing manually and couldn't stop. What an awful day that was.") )
+				to_chat(user,span_warning("You decide against remembering any scents. Instead, you notice your own nose in your peripheral vision. This goes on to remind you of that one time you started breathing manually and couldn't stop. What an awful day that was."))
 				return
 			tracking_target = old_target
 			on_the_trail(user)
 			return
-		to_chat(user,span_notice("You pick up the scent of [tracking_target]. The hunt begins.") )
+		to_chat(user,span_notice("You pick up the scent of [tracking_target]. The hunt begins."))
 		on_the_trail(user)
 		return
 
 	if(!tracking_target)
-		to_chat(user,span_warning("You're not holding anything to smell, and you haven't smelled anything you can track. You smell your skin instead; it's kinda salty.") )
+		to_chat(user,span_warning("You're not holding anything to smell, and you haven't smelled anything you can track. You smell your skin instead; it's kinda salty."))
 		return
 
 	on_the_trail(user)
 
 /obj/effect/proc_holder/spell/targeted/olfaction/proc/on_the_trail(mob/living/user)
 	if(!tracking_target)
-		to_chat(user,span_warning("You're not tracking a scent, but the game thought you were. Something's gone wrong! Report this as a bug.") )
+		to_chat(user,span_warning("You're not tracking a scent, but the game thought you were. Something's gone wrong! Report this as a bug."))
 		return
 	if(tracking_target == user)
-		to_chat(user,span_warning("You smell out the trail to yourself. Yep, it's you.") )
+		to_chat(user,span_warning("You smell out the trail to yourself. Yep, it's you."))
 		return
 	if(usr.virtual_z() < tracking_target.virtual_z())
-		to_chat(user,span_warning("The trail leads... way up above you? Huh. They must be really, really far away.") )
+		to_chat(user,span_warning("The trail leads... way up above you? Huh. They must be really, really far away."))
 		return
 	else if(usr.virtual_z() > tracking_target.virtual_z())
-		to_chat(user,span_warning("The trail leads... way down below you? Huh. They must be really, really far away.") )
+		to_chat(user,span_warning("The trail leads... way down below you? Huh. They must be really, really far away."))
 		return
 	var/direction_text = "[dir2text(get_dir(usr, tracking_target))]"
 	if(direction_text)
-		to_chat(user,span_notice("You consider [tracking_target]'s scent. The trail leads <b>[direction_text].</b>") )
+		to_chat(user,span_notice("You consider [tracking_target]'s scent. The trail leads <b>[direction_text].</b>"))
 
 /datum/mutation/human/void
 	name = "Void Magnet"
@@ -156,7 +156,7 @@
 			if(BP.dismemberable)
 				parts += BP
 	if(!parts.len)
-		to_chat(usr, span_notice("You can't shed any more limbs!") )
+		to_chat(usr, span_notice("You can't shed any more limbs!"))
 		return
 
 	var/obj/item/bodypart/BP = pick(parts)
@@ -197,7 +197,7 @@
 			break
 
 	if(!tongue)
-		to_chat(C, span_notice("You don't have a tongue to shoot!") )
+		to_chat(C, span_notice("You don't have a tongue to shoot!"))
 		return
 
 	tongue.Remove(C, special = TRUE)
@@ -234,7 +234,7 @@
 
 /obj/item/hardened_spike/unembedded()
 	var/turf/T = get_turf(src)
-	visible_message(span_warning("[src] cracks and twists, changing shape!") )
+	visible_message(span_warning("[src] cracks and twists, changing shape!"))
 	for(var/i in contents)
 		var/obj/o = i
 		o.forceMove(T)
@@ -273,11 +273,11 @@
 	chems = new
 	chems.transfered = embedded_mob
 	chems.spikey = src
-	to_chat(fired_by, span_notice("Link established! Use the \"Transfer Chemicals\" ability to send your chemicals to the linked target!") )
+	to_chat(fired_by, span_notice("Link established! Use the \"Transfer Chemicals\" ability to send your chemicals to the linked target!"))
 	chems.Grant(fired_by)
 
 /obj/item/hardened_spike/chem/unembedded()
-	to_chat(fired_by, span_warning("Link lost!") )
+	to_chat(fired_by, span_warning("Link lost!"))
 	QDEL_NULL(chems)
 	..()
 
@@ -296,14 +296,14 @@
 		return
 	var/mob/living/carbon/human/transferer = owner
 
-	to_chat(transfered, span_warning("You feel a tiny prick!") )
+	to_chat(transfered, span_warning("You feel a tiny prick!"))
 	transferer.reagents.trans_to(transfered, transferer.reagents.total_volume, 1, 1, 0, transfered_by = transferer)
 
 	var/obj/item/bodypart/L = spikey.checkembedded()
 
 	//this is where it would deal damage, if it transfers chems it removes itself so no damage
 	spikey.forceMove(get_turf(L))
-	transfered.visible_message(span_notice("[spikey] falls out of [transfered]!") )
+	transfered.visible_message(span_notice("[spikey] falls out of [transfered]!"))
 
 //spider webs
 /datum/mutation/human/webbing
@@ -326,20 +326,20 @@
 /obj/effect/proc_holder/spell/self/lay_genetic_web/cast(list/targets, mob/user = usr)
 	var/failed = FALSE
 	if(!isturf(user.loc))
-		to_chat(user, span_warning("You can't lay webs here!") )
+		to_chat(user, span_warning("You can't lay webs here!"))
 		failed = TRUE
 	var/turf/T = get_turf(user)
 	var/obj/structure/spider/stickyweb/genetic/W = locate() in T
 	if(W)
-		to_chat(user, span_warning("There's already a web here!") )
+		to_chat(user, span_warning("There's already a web here!"))
 		failed = TRUE
 	if(failed)
 		revert_cast(user)
 		return FALSE
 
-	user.visible_message(span_notice("[user] begins to secrete a sticky substance.") ,span_notice("You begin to lay a web.") )
+	user.visible_message(span_notice("[user] begins to secrete a sticky substance.") ,span_notice("You begin to lay a web."))
 	if(!do_after(user, 4 SECONDS, target = T))
-		to_chat(user, span_warning("Your web spinning was interrupted!") )
+		to_chat(user, span_warning("Your web spinning was interrupted!"))
 		return
 	else
 		new /obj/structure/spider/stickyweb/genetic(T, user)

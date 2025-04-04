@@ -50,7 +50,7 @@
 		potential_stack.attackby(cotton, user)
 
 	if(cotton.amount > old_cotton_amount)
-		to_chat(user, span_notice("You add the newly-formed [cotton_name] to the stack. It now contains [cotton.amount] [cotton_name].") )
+		to_chat(user, span_notice("You add the newly-formed [cotton_name] to the stack. It now contains [cotton.amount] [cotton_name]."))
 	qdel(src)
 
 //reinforced mutated variant

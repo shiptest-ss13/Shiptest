@@ -118,13 +118,13 @@
  */
 /obj/item/udder/proc/milk(obj/item/reagent_containers/glass/milk_holder, mob/user)
 	if(milk_holder.reagents.total_volume >= milk_holder.volume)
-		to_chat(user, span_warning("[milk_holder] is full.") )
+		to_chat(user, span_warning("[milk_holder] is full."))
 		return
 	var/transfered = reagents.trans_to(milk_holder, rand(5,10))
 	if(transfered)
-		user.visible_message(span_notice("[user] milks the [src] using \the [milk_holder].") , span_notice("You milk the [src] using \the [milk_holder].") )
+		user.visible_message(span_notice("[user] milks the [src] using \the [milk_holder].") , span_notice("You milk the [src] using \the [milk_holder]."))
 	else
-		to_chat(user, span_warning("The [src] is dry. Wait a bit longer...") )
+		to_chat(user, span_warning("The [src] is dry. Wait a bit longer..."))
 
 /**
  * # gutlunch udder subtype
@@ -158,7 +158,7 @@
 /obj/item/udder/proc/on_mob_attacking(mob/living/simple_animal/hostile/gutlunch, atom/target)
 	if(is_type_in_typecache(target, gutlunch.wanted_objects)) //we eats
 		generate()
-		gutlunch.visible_message(span_notice("[udder_mob] slurps up [target].") )
+		gutlunch.visible_message(span_notice("[udder_mob] slurps up [target]."))
 		qdel(target)
 
 /obj/item/udder/gutlunch/generate()

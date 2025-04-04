@@ -148,7 +148,7 @@ Difficulty: Extremely Hard
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/ex_act(severity, target)
 	adjustBruteLoss(30 * severity - 120)
-	visible_message(span_danger("[src] absorbs the explosion!") , span_userdanger("You absorb the explosion!") )
+	visible_message(span_danger("[src] absorbs the explosion!") , span_userdanger("You absorb the explosion!"))
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/Goto(target, delay, minimum_distance)
 	if(enraging)
@@ -293,7 +293,7 @@ Difficulty: Extremely Hard
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/ui_action_click(mob/user)
 	on = !on
-	to_chat(user, span_notice("You [on ? "activate" : "deactivate"] [src].") )
+	to_chat(user, span_notice("You [on ? "activate" : "deactivate"] [src]."))
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/examine(mob/user)
 	. = ..()

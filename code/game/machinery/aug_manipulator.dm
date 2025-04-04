@@ -66,13 +66,13 @@
 	else if(istype(O, /obj/item/bodypart))
 		var/obj/item/bodypart/B = O
 		if(IS_ORGANIC_LIMB(B))
-			to_chat(user, span_warning("The machine only accepts cybernetics!") )
+			to_chat(user, span_warning("The machine only accepts cybernetics!"))
 			return
 		if(!(O.type in type_whitelist)) //Kepori won't break my system damn it
-			to_chat(user, span_warning("The machine doesn't accept that type of prosthetic!") )
+			to_chat(user, span_warning("The machine doesn't accept that type of prosthetic!"))
 			return
 		if(storedpart)
-			to_chat(user, span_warning("There is already something inside!") )
+			to_chat(user, span_warning("There is already something inside!"))
 			return
 		else
 			O = user.get_active_held_item()
@@ -89,17 +89,17 @@
 
 			user.visible_message(span_notice("[user] begins repairing [src].") , \
 				span_notice("You begin repairing [src]...") , \
-				span_hear("You hear welding.") )
+				span_hear("You hear welding."))
 
 			if(O.use_tool(src, user, 40, volume=50))
 				if(!(machine_stat & BROKEN))
 					return
-				to_chat(user, span_notice("You repair [src].") )
+				to_chat(user, span_notice("You repair [src]."))
 				set_machine_stat(machine_stat & ~BROKEN)
 				obj_integrity = max(obj_integrity, max_integrity)
 				update_appearance()
 		else
-			to_chat(user, span_notice("[src] does not need repairs.") )
+			to_chat(user, span_notice("[src] does not need repairs."))
 	else
 		return ..()
 
@@ -123,7 +123,7 @@
 		eject_part(user)
 
 	else
-		to_chat(user, span_warning("\The [src] is empty!") )
+		to_chat(user, span_warning("\The [src] is empty!"))
 
 /obj/machinery/aug_manipulator/proc/eject_part(mob/living/user)
 	if(storedpart)
@@ -131,7 +131,7 @@
 		storedpart = null
 		update_appearance()
 	else
-		to_chat(user, span_warning("[src] is empty!") )
+		to_chat(user, span_warning("[src] is empty!"))
 
 /obj/machinery/aug_manipulator/AltClick(mob/living/user)
 	..()

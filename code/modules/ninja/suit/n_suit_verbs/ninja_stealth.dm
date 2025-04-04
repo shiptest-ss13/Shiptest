@@ -15,12 +15,12 @@ Contents:
 		cancel_stealth()
 	else
 		if(cell.charge <= 0)
-			to_chat(U, span_warning("You don't have enough power to enable Stealth!") )
+			to_chat(U, span_warning("You don't have enough power to enable Stealth!"))
 			return
 		stealth = !stealth
 		animate(U, alpha = 50,time = 15)
 		U.visible_message(span_warning("[U.name] vanishes into thin air!") , \
-						span_notice("You are now mostly invisible to normal detection.") )
+						span_notice("You are now mostly invisible to normal detection."))
 
 
 /obj/item/clothing/suit/space/space_ninja/proc/cancel_stealth()
@@ -31,7 +31,7 @@ Contents:
 		stealth = !stealth
 		animate(U, alpha = 255, time = 15)
 		U.visible_message(span_warning("[U.name] appears from thin air!") , \
-						span_notice("You are now visible.") )
+						span_notice("You are now visible."))
 		return 1
 	return 0
 
@@ -40,4 +40,4 @@ Contents:
 	if(!s_busy)
 		toggle_stealth()
 	else
-		to_chat(affecting, span_danger("Stealth does not appear to work!") )
+		to_chat(affecting, span_danger("Stealth does not appear to work!"))

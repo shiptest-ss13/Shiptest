@@ -123,25 +123,25 @@
 	var/tturf = get_turf(target)
 	if(!isturf(tturf))
 		return
-	visible_message(span_warning("[src] digs its tentacles under [target]!") )
+	visible_message(span_warning("[src] digs its tentacles under [target]!"))
 	new /obj/effect/temp_visual/goliath_tentacle/broodmother/patch(tturf, src)
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/spawn_children(target)
 	ranged_cooldown = world.time + 40
-	visible_message(span_boldwarning("The ground churns behind [src]!") )
+	visible_message(span_boldwarning("The ground churns behind [src]!"))
 	for(var/i in 1 to 2)
 		if(children_list.len >= 8)
 			return
 		var/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/newchild = new /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child(loc, src)
 		newchild.GiveTarget(target)
 		newchild.faction = faction.Copy()
-		visible_message(span_boldwarning("[newchild] appears below [src]!") )
+		visible_message(span_boldwarning("[newchild] appears below [src]!"))
 		children_list += newchild
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/rage()
 	ranged_cooldown = world.time + 70
 	playsound(src,'sound/spookoween/insane_low_laugh.ogg', 200, 1)
-	visible_message(span_warning("[src] starts picking up speed!") )
+	visible_message(span_warning("[src] starts picking up speed!"))
 	color = "#FF0000"
 	set_varspeed(0)
 	move_to_delay = 3
@@ -154,7 +154,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/call_children()
 	ranged_cooldown = world.time + 60
-	visible_message(span_warning("The ground shakes near [src]!") )
+	visible_message(span_warning("The ground shakes near [src]!"))
 	var/list/directions = GLOB.cardinals.Copy() + GLOB.diagonals.Copy()
 	for(var/mob/child in children_list)
 		var/spawndir = pick_n_take(directions)
@@ -206,12 +206,12 @@
 	if(!isturf(tturf))
 		return
 	if(get_dist(src, target) <= 7)//Screen range check, so it can't attack people off-screen
-		visible_message(span_warning("[src] digs one of its tentacles under [target]!") )
+		visible_message(span_warning("[src] digs one of its tentacles under [target]!"))
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(tturf, src)
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/death()
 	. = ..()
-	visible_message(span_warning("[src] explodes!") )
+	visible_message(span_warning("[src] explodes!"))
 	explosion(get_turf(loc),0,0,0,flame_range = 3, adminlog = FALSE)
 	gib()
 
@@ -221,7 +221,7 @@
 	for(var/mob/living/L in loc)
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
-		visible_message(span_danger("[src] grabs hold of [L]!") )
+		visible_message(span_danger("[src] grabs hold of [L]!"))
 		L.Stun(10)
 		L.adjustBruteLoss(rand(30,35))
 		latched = TRUE

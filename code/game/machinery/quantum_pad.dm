@@ -61,7 +61,7 @@
 				return
 			var/obj/item/multitool/M = I
 			M.buffer = src
-			to_chat(user, span_notice("You save the data in [I]'s buffer. It can now be saved to pads with closed panels.") )
+			to_chat(user, span_notice("You save the data in [I]'s buffer. It can now be saved to pads with closed panels."))
 			return TRUE
 	else if(I.tool_behaviour == TOOL_MULTITOOL)
 		if(!multitool_check_buffer(user, I))
@@ -69,25 +69,25 @@
 		var/obj/item/multitool/M = I
 		if(istype(M.buffer, /obj/machinery/quantumpad))
 			if(M.buffer == src)
-				to_chat(user, span_warning("You cannot link a pad to itself!") )
+				to_chat(user, span_warning("You cannot link a pad to itself!"))
 				return TRUE
 			else
 				linked_pad = M.buffer
-				to_chat(user, span_notice("You link [src] to the one in [I]'s buffer.") )
+				to_chat(user, span_notice("You link [src] to the one in [I]'s buffer."))
 				return TRUE
 		else
-			to_chat(user, span_warning("There is no quantum pad data saved in [I]'s buffer!") )
+			to_chat(user, span_warning("There is no quantum pad data saved in [I]'s buffer!"))
 			return TRUE
 
 	else if(istype(I, /obj/item/quantum_keycard))
 		var/obj/item/quantum_keycard/K = I
 		if(K.qpad)
-			to_chat(user, span_notice("You insert [K] into [src]'s card slot, activating it.") )
+			to_chat(user, span_notice("You insert [K] into [src]'s card slot, activating it."))
 			interact(user, K.qpad)
 		else
-			to_chat(user, span_notice("You insert [K] into [src]'s card slot, initiating the link procedure.") )
+			to_chat(user, span_notice("You insert [K] into [src]'s card slot, initiating the link procedure."))
 			if(do_after(user, 40, target = src))
-				to_chat(user, span_notice("You complete the link between [K] and [src].") )
+				to_chat(user, span_notice("You complete the link between [K] and [src]."))
 				K.qpad = src
 
 	if(default_deconstruction_crowbar(I))
@@ -98,23 +98,23 @@
 /obj/machinery/quantumpad/interact(mob/user, obj/machinery/quantumpad/target_pad = linked_pad)
 	if(!target_pad || QDELETED(target_pad))
 		if(!map_pad_link_id || !initMappedLink())
-			to_chat(user, span_warning("Target pad not found!") )
+			to_chat(user, span_warning("Target pad not found!"))
 			return
 
 	if(world.time < last_teleport + teleport_cooldown)
-		to_chat(user, span_warning("[src] is recharging power. Please wait [DisplayTimeText(last_teleport + teleport_cooldown - world.time)].") )
+		to_chat(user, span_warning("[src] is recharging power. Please wait [DisplayTimeText(last_teleport + teleport_cooldown - world.time)]."))
 		return
 
 	if(teleporting)
-		to_chat(user, span_warning("[src] is charging up. Please wait.") )
+		to_chat(user, span_warning("[src] is charging up. Please wait."))
 		return
 
 	if(target_pad.teleporting)
-		to_chat(user, span_warning("Target pad is busy. Please wait.") )
+		to_chat(user, span_warning("Target pad is busy. Please wait."))
 		return
 
 	if(target_pad.machine_stat & NOPOWER)
-		to_chat(user, span_warning("Target pad is not responding to ping.") )
+		to_chat(user, span_warning("Target pad is not responding to ping."))
 		return
 	add_fingerprint(user)
 	doteleport(user, target_pad)
@@ -143,11 +143,11 @@
 				teleporting = FALSE
 				return
 			if(machine_stat & NOPOWER)
-				to_chat(user, span_warning("[src] is unpowered!") )
+				to_chat(user, span_warning("[src] is unpowered!"))
 				teleporting = FALSE
 				return
 			if(!target_pad || QDELETED(target_pad) || target_pad.machine_stat & NOPOWER)
-				to_chat(user, span_warning("Linked pad is not responding to ping. Teleport aborted.") )
+				to_chat(user, span_warning("Linked pad is not responding to ping. Teleport aborted."))
 				teleporting = FALSE
 				return
 

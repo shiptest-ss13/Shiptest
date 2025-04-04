@@ -291,12 +291,12 @@
 
 	if(istype(O, /obj/item/disk/design_disk))
 		if(d_disk)
-			to_chat(user, span_warning("A design disk is already loaded!") )
+			to_chat(user, span_warning("A design disk is already loaded!"))
 			return TRUE
 		if(!user.transferItemToLoc(O, src))
-			to_chat(user, span_warning("[O] is stuck to your hand!") )
+			to_chat(user, span_warning("[O] is stuck to your hand!"))
 			return TRUE
-		to_chat(user, span_notice("You insert [O] into \the [src]!") )
+		to_chat(user, span_notice("You insert [O] into \the [src]!"))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		d_disk = O
 		categories += d_disk.name
@@ -314,7 +314,7 @@
 
 /obj/machinery/autolathe/AltClick(mob/user)
 	if(d_disk && user.canUseTopic(src, !issilicon(user)))
-		to_chat(user, span_notice("You take out [d_disk] from [src].") )
+		to_chat(user, span_notice("You take out [d_disk] from [src]."))
 		playsound(src, 'sound/machines/click.ogg', 50, FALSE)
 		eject(user)
 	return

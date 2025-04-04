@@ -102,7 +102,7 @@
 		return
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm other living beings!") )
+		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
 
 	if(item_flags & EYE_STAB && user.zone_selected == BODY_ZONE_PRECISE_EYES)

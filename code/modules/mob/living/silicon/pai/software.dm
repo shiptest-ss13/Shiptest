@@ -291,7 +291,7 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 					if(iscarbon(card.loc))
 						CheckDNA(card.loc, src) //you should only be able to check when directly in hand, muh immersions?
 					else
-						to_chat(src, span_warning("You are not being carried by anyone!") )
+						to_chat(src, span_warning("You are not being carried by anyone!"))
 						return 0 // FALSE ? If you return here you won't call paiinterface() below
 
 			if("pdamessage")
@@ -371,7 +371,7 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 				if(href_list["cable"])
 					var/turf/T = get_turf(loc)
 					cable = new /obj/item/pai_cable(T)
-					T.visible_message(span_warning("A port on [src] opens to reveal [cable], which promptly falls to the floor.") , span_hear("You hear the soft click of something light and hard falling to the ground.") )
+					T.visible_message(span_warning("A port on [src] opens to reveal [cable], which promptly falls to the floor.") , span_hear("You hear the soft click of something light and hard falling to the ground."))
 
 			if("loudness")
 				if(subscreen == 1) // Open Instrument
@@ -491,7 +491,7 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 	if(answer == "Yes")
 		M.visible_message(span_notice("[M] presses [M.p_their()] thumb against [P].") ,\
 						span_notice("You press your thumb against [P].") ,\
-						span_notice("[P] makes a sharp clicking sound as it extracts DNA material from [M].") )
+						span_notice("[P] makes a sharp clicking sound as it extracts DNA material from [M]."))
 		if(!M.has_dna())
 			to_chat(P, "<b>No DNA detected</b>")
 			return
@@ -501,7 +501,7 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 		else
 			to_chat(P, "<b>DNA does not match stored Master DNA.</b>")
 	else
-		to_chat(P, span_warning("[M] does not seem like [M.p_theyre()] going to provide a DNA sample willingly.") )
+		to_chat(P, span_warning("[M] does not seem like [M.p_theyre()] going to provide a DNA sample willingly."))
 
 // -=-=-=-= Software =-=-=-=-=- //
 

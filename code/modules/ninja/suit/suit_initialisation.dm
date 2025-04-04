@@ -56,7 +56,7 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 		s_busy = FALSE
 		return
 	if (phase > NINJA_LOCK_PHASE && (U.stat == DEAD || U.health <= 0))
-		to_chat(U, span_danger("<B>FÄAL ï¿½Rrï¿½R</B>: 344--93#ï¿½&&21 BRï¿½ï¿½N |/|/aVï¿½ PATT$RN <B>RED</B>\nA-A-aBï¿½rTï¿½NG...") )
+		to_chat(U, span_danger("<B>FÄAL ï¿½Rrï¿½R</B>: 344--93#ï¿½&&21 BRï¿½ï¿½N |/|/aVï¿½ PATT$RN <B>RED</B>\nA-A-aBï¿½rTï¿½NG..."))
 		unlock_suit()
 		s_busy = FALSE
 		return
@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 			s_initialized = TRUE
 			s_busy = FALSE
 
-	to_chat(U, span_notice("[message]") )
+	to_chat(U, span_notice("[message]"))
 	playsound(U, 'sound/effects/sparks1.ogg', 10, TRUE)
 
 	if (phase < NINJA_COMPLETE_PHASE)
@@ -106,7 +106,7 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 			message = "Logging off, [U.real_name]. " + message
 		if(NINJA_DEINIT_STEALTH_PHASE)
 			cancel_stealth()
-	to_chat(U, span_notice("[message]") )
+	to_chat(U, span_notice("[message]"))
 	playsound(U, 'sound/items/deconstruct.ogg', 10, TRUE)
 
 	if (phase < NINJA_COMPLETE_PHASE)

@@ -48,7 +48,7 @@
 /datum/mutation/human/hulk/on_life()
 	if(owner.health < 0)
 		on_losing(owner)
-		to_chat(owner, span_danger("You suddenly feel very weak.") )
+		to_chat(owner, span_danger("You suddenly feel very weak."))
 
 /datum/mutation/human/hulk/on_losing(mob/living/carbon/human/owner)
 	if(..())

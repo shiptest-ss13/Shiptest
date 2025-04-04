@@ -119,7 +119,7 @@ GENE SCANNER
 	// Clumsiness/brain damage check
 	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
 		user.visible_message(span_warning("[user] analyzes the floor's vitals!") , \
-							span_notice("You stupidly try to analyze the floor's vitals!") )
+							span_notice("You stupidly try to analyze the floor's vitals!"))
 		to_chat(user, "[span_info("Analyzing results for The floor:\n\tOverall status: <b>Healthy</b>")]\
 					\n[span_info("Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font>")]\
 					\n[span_info("\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font>")]\
@@ -127,7 +127,7 @@ GENE SCANNER
 		return
 
 	user.visible_message(span_notice("[user] analyzes [M]'s vitals.") , \
-						span_notice("You analyze [M]'s vitals.") )
+						span_notice("You analyze [M]'s vitals."))
 
 	if(scanmode == SCANMODE_HEALTH)
 		healthscan(user, M, mode, advanced)
@@ -481,43 +481,43 @@ GENE SCANNER
 		var/plasma_concentration = environment.get_moles(GAS_PLASMA)/total_moles
 
 		//WS Start -- Atmos Analyzer Reformat (Issue #419)
-		to_chat(user, span_boldnotice("Results of analysis.") )
-		to_chat(user, span_info("Pressure: [round(pressure,0.01)] kPa") )
-		to_chat(user, span_info("Temperature: [round(environment.return_temperature()-T0C, 0.01)] &deg;C ([round(environment.return_temperature(), 0.01)] K)") )
+		to_chat(user, span_boldnotice("Results of analysis."))
+		to_chat(user, span_info("Pressure: [round(pressure,0.01)] kPa"))
+		to_chat(user, span_info("Temperature: [round(environment.return_temperature()-T0C, 0.01)] &deg;C ([round(environment.return_temperature(), 0.01)] K)"))
 		//WS End
 
 		if(abs(n2_concentration - N2STANDARD) < 20)
-			to_chat(user, span_info("Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)") )
+			to_chat(user, span_info("Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)"))
 		else
-			to_chat(user, span_alert("Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)") )
+			to_chat(user, span_alert("Nitrogen: [round(n2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_N2), 0.01)] mol)"))
 
 		if(abs(o2_concentration - O2STANDARD) < 2)
-			to_chat(user, span_info("Oxygen: [round(o2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_O2), 0.01)] mol)") )
+			to_chat(user, span_info("Oxygen: [round(o2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_O2), 0.01)] mol)"))
 		else
-			to_chat(user, span_alert("Oxygen: [round(o2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_O2), 0.01)] mol)") )
+			to_chat(user, span_alert("Oxygen: [round(o2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_O2), 0.01)] mol)"))
 
 		if(co2_concentration > 0.01)
-			to_chat(user, span_alert("CO2: [round(co2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_CO2), 0.01)] mol)") )
+			to_chat(user, span_alert("CO2: [round(co2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_CO2), 0.01)] mol)"))
 		else
-			to_chat(user, span_info("CO2: [round(co2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_CO2), 0.01)] mol)") )
+			to_chat(user, span_info("CO2: [round(co2_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_CO2), 0.01)] mol)"))
 
 		if(plasma_concentration > 0.005)
-			to_chat(user, span_alert("Plasma: [round(plasma_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_PLASMA), 0.01)] mol)") )
+			to_chat(user, span_alert("Plasma: [round(plasma_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_PLASMA), 0.01)] mol)"))
 		else
-			to_chat(user, span_info("Plasma: [round(plasma_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_PLASMA), 0.01)] mol)") )
+			to_chat(user, span_info("Plasma: [round(plasma_concentration*100, 0.01)] % ([round(environment.get_moles(GAS_PLASMA), 0.01)] mol)"))
 
 		for(var/id in environment.get_gases())
 			if(id in GLOB.hardcoded_gases)
 				continue
 			var/gas_concentration = environment.get_moles(id)/total_moles
-			to_chat(user, span_alert("[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(environment.get_moles(id), 0.01)] mol)") )
+			to_chat(user, span_alert("[GLOB.gas_data.names[id]]: [round(gas_concentration*100, 0.01)] % ([round(environment.get_moles(id), 0.01)] mol)"))
 
 /obj/item/analyzer/AltClick(mob/user) //Barometer output for measuring when the next storm happens
 	..()
 
 	if(user.canUseTopic(src, BE_CLOSE))
 		if(cooldown)
-			to_chat(user, span_warning("[src]'s barometer function is preparing itself.") )
+			to_chat(user, span_warning("[src]'s barometer function is preparing itself."))
 			return
 
 		var/turf/T = get_turf(user)
@@ -530,7 +530,7 @@ GENE SCANNER
 		var/datum/weather/ongoing_weather = null
 
 		if(!user_area.outdoors)
-			to_chat(user, span_warning("[src]'s barometer function won't work indoors!") )
+			to_chat(user, span_warning("[src]'s barometer function won't work indoors!"))
 			return
 
 		if(weather_controller.current_weathers)
@@ -541,25 +541,25 @@ GENE SCANNER
 
 		if(ongoing_weather)
 			if((ongoing_weather.stage == MAIN_STAGE) || (ongoing_weather.stage == WIND_DOWN_STAGE))
-				to_chat(user, span_warning("[src]'s barometer function can't trace anything while the storm is [ongoing_weather.stage == MAIN_STAGE ? "already here!" : "winding down."]") )
+				to_chat(user, span_warning("[src]'s barometer function can't trace anything while the storm is [ongoing_weather.stage == MAIN_STAGE ? "already here!" : "winding down."]"))
 				return
 
 			if(ongoing_weather.aesthetic)
-				to_chat(user, span_warning("[src]'s barometer function says that the next storm will breeze on by.") )
+				to_chat(user, span_warning("[src]'s barometer function says that the next storm will breeze on by."))
 		else
 			var/next_hit = weather_controller.next_weather
 			var/fixed = next_hit - world.time
 			if(fixed <= 0)
-				to_chat(user, span_warning("[src]'s barometer function was unable to trace any weather patterns.") )
+				to_chat(user, span_warning("[src]'s barometer function was unable to trace any weather patterns."))
 			else
-				to_chat(user, span_warning("[src]'s barometer function says a storm will land in approximately [butchertime(fixed)].") )
+				to_chat(user, span_warning("[src]'s barometer function says a storm will land in approximately [butchertime(fixed)]."))
 		cooldown = TRUE
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/analyzer, ping)), cooldown_time)
 
 /obj/item/analyzer/proc/ping()
 	if(isliving(loc))
 		var/mob/living/L = loc
-		to_chat(L, span_notice("[src]'s barometer function is ready!") )
+		to_chat(L, span_notice("[src]'s barometer function is ready!"))
 	playsound(src, 'sound/machines/click.ogg', 100)
 	cooldown = FALSE
 
@@ -582,7 +582,7 @@ GENE SCANNER
 	var/icon = target
 	var/render_list = list()
 	if(!silent && isliving(user))
-		user.visible_message(span_notice("[user] uses the analyzer on [icon2html(icon, viewers(user))] [target].") , span_notice("You use the analyzer on [icon2html(icon, user)] [target].") )
+		user.visible_message(span_notice("[user] uses the analyzer on [icon2html(icon, viewers(user))] [target].") , span_notice("You use the analyzer on [icon2html(icon, user)] [target]."))
 	render_list += span_boldnotice("Results of analysis of [icon2html(icon, user)] [target].") 
 
 	var/list/airs = islist(mixture) ? mixture : list(mixture)
@@ -641,13 +641,13 @@ GENE SCANNER
 
 /obj/item/nanite_scanner/attack(mob/living/M, mob/living/carbon/human/user)
 	user.visible_message(span_notice("[user] analyzes [M]'s nanites.") , \
-						span_notice("You analyze [M]'s nanites.") )
+						span_notice("You analyze [M]'s nanites."))
 
 	add_fingerprint(user)
 
 	var/response = SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, TRUE)
 	if(!response)
-		to_chat(user, span_info("No nanites detected in the subject.") )
+		to_chat(user, span_info("No nanites detected in the subject."))
 
 /obj/item/sequence_scanner
 	name = "genetic sequence scanner"
@@ -676,12 +676,12 @@ GENE SCANNER
 	add_fingerprint(user)
 	if (!HAS_TRAIT(M, TRAIT_GENELESS) && !HAS_TRAIT(M, TRAIT_BADDNA)) //no scanning if its a husk or DNA-less Species
 		user.visible_message(span_notice("[user] analyzes [M]'s genetic sequence.") , \
-							span_notice("You analyze [M]'s genetic sequence.") )
+							span_notice("You analyze [M]'s genetic sequence."))
 		gene_scan(M, user)
 		playsound(src, 'sound/effects/fastbeep.ogg', 20)
 
 	else
-		user.visible_message(span_notice("[user] fails to analyze [M]'s genetic sequence.") , span_warning("[M] has no readable genetic sequence!") )
+		user.visible_message(span_notice("[user] fails to analyze [M]'s genetic sequence.") , span_warning("[M] has no readable genetic sequence!"))
 
 /obj/item/sequence_scanner/attack_self(mob/user)
 	display_sequence(user)
@@ -697,19 +697,19 @@ GENE SCANNER
 	if(istype(O, /obj/machinery/computer/scan_consolenew))
 		var/obj/machinery/computer/scan_consolenew/C = O
 		if(C.stored_research)
-			to_chat(user, span_notice("[name] linked to central research database.") )
+			to_chat(user, span_notice("[name] linked to central research database."))
 			discovered = C.stored_research.discovered_mutations
 		else
-			to_chat(user,span_warning("No database to update from.") )
+			to_chat(user,span_warning("No database to update from."))
 
 /obj/item/sequence_scanner/proc/gene_scan(mob/living/carbon/C, mob/living/user)
 	if(!iscarbon(C) || !C.has_dna())
 		return
 	buffer = C.dna.mutation_index
-	to_chat(user, span_notice("Subject [C.name]'s DNA sequence has been saved to buffer.") )
+	to_chat(user, span_notice("Subject [C.name]'s DNA sequence has been saved to buffer."))
 	if(LAZYLEN(buffer))
 		for(var/A in buffer)
-			to_chat(user, span_notice("[get_display_name(A)]") )
+			to_chat(user, span_notice("[get_display_name(A)]"))
 
 
 /obj/item/sequence_scanner/proc/display_sequence(mob/living/user)
@@ -771,22 +771,22 @@ GENE SCANNER
 
 	if((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(25))
 		user.visible_message(span_warning("[user] targets himself for scanning.") , \
-		to_chat(user, span_info("You try scanning [M], before realizing you're holding the scanner backwards. Whoops.") ))
+		to_chat(user, span_info("You try scanning [M], before realizing you're holding the scanner backwards. Whoops.")))
 		selected_target = user
 		return
 
 	if(!ishuman(M))
-		to_chat(user, span_info("You can only scan human-like, non-robotic beings.") )
+		to_chat(user, span_info("You can only scan human-like, non-robotic beings."))
 		selected_target = null
 		return
 
 	user.visible_message(span_notice("[user] targets [M] for scanning.") , \
-						span_notice("You target [M] vitals.") )
+						span_notice("You target [M] vitals."))
 	selected_target = M
 	return
 
 /obj/item/scanner_wand/attack_self(mob/user)
-	to_chat(user, span_info("You clear the scanner's target.") )
+	to_chat(user, span_info("You clear the scanner's target."))
 	selected_target = null
 
 /obj/item/scanner_wand/proc/return_patient()

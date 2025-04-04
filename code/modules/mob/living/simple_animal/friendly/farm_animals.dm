@@ -49,7 +49,7 @@
 		if(enemies.len && prob(10))
 			enemies = list()
 			LoseTarget()
-			src.visible_message(span_notice("[src] calms down.") )
+			src.visible_message(span_notice("[src] calms down."))
 	if(stat == CONSCIOUS)
 		eat_plants()
 		if(!pulledby)
@@ -61,7 +61,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/Retaliate()
 	..()
-	src.visible_message(span_danger("[src] gets an evil-looking gleam in [p_their()] eye.") )
+	src.visible_message(span_danger("[src] gets an evil-looking gleam in [p_their()] eye."))
 
 /mob/living/simple_animal/hostile/retaliate/goat/Move()
 	. = ..()
@@ -91,7 +91,7 @@
 			var/obj/item/bodypart/NB = pick(H.bodyparts)
 			H.visible_message(
 				span_warning("[src] takes a big chomp out of [H]!") , \
-				span_userdanger("[src] takes a big chomp out of your [NB]!") )
+				span_userdanger("[src] takes a big chomp out of your [NB]!"))
 			NB.dismember()
 //cow
 /mob/living/simple_animal/cow
@@ -147,8 +147,8 @@
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
 		M.visible_message(span_warning("[M] tips over [src].") ,
-			span_notice("You tip over [src].") )
-		to_chat(src, span_userdanger("You are tipped over by [M]!") )
+			span_notice("You tip over [src]."))
+		to_chat(src, span_userdanger("You are tipped over by [M]!"))
 		Paralyze(60, ignore_canstun = TRUE)
 		icon_state = icon_dead
 		addtimer(CALLBACK(src, PROC_REF(cow_tipped), M), rand(20,50))
@@ -171,7 +171,7 @@
 		external = "[src] seems resigned to its fate."
 		internal = "You resign yourself to your fate."
 	visible_message(span_notice("[external]") ,
-		span_revennotice("[internal]") )
+		span_revennotice("[internal]"))
 
 ///Wisdom cow, gives XP to a random skill and speaks wisdoms
 /mob/living/simple_animal/cow/wisdom
@@ -188,7 +188,7 @@
 ///Give intense wisdom to the attacker if they're being friendly about it
 /mob/living/simple_animal/cow/wisdom/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_HELP)
-		to_chat(M, span_nicegreen("[src] whispers you some intense wisdoms and then disappears!") )
+		to_chat(M, span_nicegreen("[src] whispers you some intense wisdoms and then disappears!"))
 		M.mind?.adjust_experience(pick(GLOB.skill_types), 500)
 		do_smoke(1, get_turf(src))
 		qdel(src)
@@ -313,7 +313,7 @@
 			qdel(O)
 			eggsleft += rand(1, 4)
 		else
-			to_chat(user, span_warning("[name] doesn't seem hungry!") )
+			to_chat(user, span_warning("[name] doesn't seem hungry!"))
 	else
 		..()
 
@@ -322,7 +322,7 @@
 	if(!.)
 		return
 	if((!stat && prob(3) && eggsleft > 0) && egg_type)
-		visible_message(span_alertalien("[src] [pick(layMessage)]") )
+		visible_message(span_alertalien("[src] [pick(layMessage)]"))
 		eggsleft--
 		var/obj/item/E = new egg_type(get_turf(src))
 		E.pixel_x = E.base_pixel_x + rand(-6,6)
@@ -336,7 +336,7 @@
 	if(isturf(loc))
 		amount_grown += rand(1,2) * seconds_per_tick
 		if(amount_grown >= 200)
-			visible_message(span_notice("[src] hatches with a quiet cracking sound.") )
+			visible_message(span_notice("[src] hatches with a quiet cracking sound."))
 			new /mob/living/simple_animal/chick(get_turf(src))
 			STOP_PROCESSING(SSobj, src)
 			qdel(src)
@@ -411,7 +411,7 @@
 			qdel(O)
 			eggsleft += rand(1, 4)
 		else
-			to_chat(user, span_warning("[name] doesn't seem hungry!") )
+			to_chat(user, span_warning("[name] doesn't seem hungry!"))
 	else
 		..()
 
@@ -420,7 +420,7 @@
 	if(!.)
 		return
 	if((!stat && prob(3) && eggsleft > 0) && egg_type)
-		visible_message(span_alertalien("[src] [pick(layMessage)]") )
+		visible_message(span_alertalien("[src] [pick(layMessage)]"))
 		eggsleft--
 		var/obj/item/E = new egg_type(get_turf(src))
 		E.pixel_x = E.base_pixel_x + rand(-6,6)

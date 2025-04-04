@@ -117,16 +117,16 @@
 /obj/item/geiger_counter/attack_self(mob/user)
 	scanning = !scanning
 	update_appearance()
-	to_chat(user, span_notice("[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src].") )
+	to_chat(user, span_notice("[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src]."))
 
 /obj/item/geiger_counter/afterattack(atom/target, mob/user)
 	. = ..()
 	if(user.a_intent == INTENT_HELP)
 		if(!(obj_flags & EMAGGED))
-			user.visible_message(span_notice("[user] scans [target] with [src].") , span_notice("You scan [target]'s radiation levels with [src]...") )
+			user.visible_message(span_notice("[user] scans [target] with [src].") , span_notice("You scan [target]'s radiation levels with [src]..."))
 			addtimer(CALLBACK(src, PROC_REF(scan), target, user), 20, TIMER_UNIQUE) // Let's not have spamming GetAllContents
 		else
-			user.visible_message(span_notice("[user] scans [target] with [src].") , span_danger("You project [src]'s stored radiation into [target]!") )
+			user.visible_message(span_notice("[user] scans [target] with [src].") , span_danger("You project [src]'s stored radiation into [target]!"))
 			target.rad_act(radiation_count)
 			radiation_count = 0
 		return TRUE
@@ -137,24 +137,24 @@
 	if(isliving(A))
 		var/mob/living/M = A
 		if(!M.radiation)
-			to_chat(user, span_notice("[icon2html(src, user)] Radiation levels within normal boundaries.") )
+			to_chat(user, span_notice("[icon2html(src, user)] Radiation levels within normal boundaries."))
 		else
-			to_chat(user, span_boldannounce("[icon2html(src, user)] Subject is irradiated. Radiation levels: [M.radiation].") )
+			to_chat(user, span_boldannounce("[icon2html(src, user)] Subject is irradiated. Radiation levels: [M.radiation]."))
 
 	if(rad_strength)
-		to_chat(user, span_boldannounce("[icon2html(src, user)] Target contains radioactive contamination. Radioactive strength: [rad_strength]") )
+		to_chat(user, span_boldannounce("[icon2html(src, user)] Target contains radioactive contamination. Radioactive strength: [rad_strength]"))
 	else
-		to_chat(user, span_notice("[icon2html(src, user)] Target is free of radioactive contamination.") )
+		to_chat(user, span_notice("[icon2html(src, user)] Target is free of radioactive contamination."))
 
 /obj/item/geiger_counter/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER && (obj_flags & EMAGGED))
 		if(scanning)
-			to_chat(user, span_warning("Turn off [src] before you perform this action!") )
+			to_chat(user, span_warning("Turn off [src] before you perform this action!"))
 			return 0
-		user.visible_message(span_notice("[user] unscrews [src]'s maintenance panel and begins fiddling with its innards...") , span_notice("You begin resetting [src]...") )
+		user.visible_message(span_notice("[user] unscrews [src]'s maintenance panel and begins fiddling with its innards...") , span_notice("You begin resetting [src]..."))
 		if(!I.use_tool(src, user, 40, volume=50))
 			return 0
-		user.visible_message(span_notice("[user] refastens [src]'s maintenance panel!") , span_notice("You reset [src] to its factory settings!") )
+		user.visible_message(span_notice("[user] refastens [src]'s maintenance panel!") , span_notice("You reset [src] to its factory settings!"))
 		obj_flags &= ~EMAGGED
 		radiation_count = 0
 		update_appearance()
@@ -166,19 +166,19 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return ..()
 	if(!scanning)
-		to_chat(usr, span_warning("[src] must be on to reset its radiation level!") )
+		to_chat(usr, span_warning("[src] must be on to reset its radiation level!"))
 		return 0
 	radiation_count = 0
-	to_chat(usr, span_notice("You flush [src]'s radiation counts, resetting it to normal.") )
+	to_chat(usr, span_notice("You flush [src]'s radiation counts, resetting it to normal."))
 	update_appearance()
 
 /obj/item/geiger_counter/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
 	if(scanning)
-		to_chat(user, span_warning("Turn off [src] before you perform this action!") )
+		to_chat(user, span_warning("Turn off [src] before you perform this action!"))
 		return 0
-	to_chat(user, span_warning("You override [src]'s radiation storing protocols. It will now generate small doses of radiation, and stored rads are now projected into creatures you scan.") )
+	to_chat(user, span_warning("You override [src]'s radiation storing protocols. It will now generate small doses of radiation, and stored rads are now projected into creatures you scan."))
 	obj_flags |= EMAGGED
 
 

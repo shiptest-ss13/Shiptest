@@ -76,7 +76,7 @@
 		safety_mode = FALSE
 		update_appearance()
 	playsound(src, "sparks", 75, TRUE, SILENCED_SOUND_EXTRARANGE)
-	to_chat(user, span_notice("You use the cryptographic sequencer on [src].") )
+	to_chat(user, span_notice("You use the cryptographic sequencer on [src]."))
 
 /obj/machinery/recycler/update_icon_state()
 	var/is_powered = !(machine_stat & (BROKEN|NOPOWER))

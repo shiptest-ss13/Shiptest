@@ -151,38 +151,38 @@
 	if(I.tool_behaviour != TOOL_MINING)
 		return
 	. = TRUE
-	to_chat(user, span_notice("You start digging [src]...") )
+	to_chat(user, span_notice("You start digging [src]..."))
 	if(I.use_tool(src, user, 40, volume=50))
-		to_chat(user, span_notice("You finish digging.") )
+		to_chat(user, span_notice("You finish digging."))
 		deconstruct(TRUE)
 
 /obj/structure/mineral_door/welder_act(mob/living/user, obj/item/I) //override if the door is supposed to be flammable.
 	..()
 	. = TRUE
 	if(anchored)
-		to_chat(user, span_warning("[src] is still firmly secured to the ground!") )
+		to_chat(user, span_warning("[src] is still firmly secured to the ground!"))
 		return
 
-	user.visible_message(span_notice("[user] starts to weld apart [src]!") , span_notice("You start welding apart [src].") )
+	user.visible_message(span_notice("[user] starts to weld apart [src]!") , span_notice("You start welding apart [src]."))
 	if(!I.use_tool(src, user, 60, 5, 50))
-		to_chat(user, span_warning("You failed to weld apart [src]!") )
+		to_chat(user, span_warning("You failed to weld apart [src]!"))
 		return
 
-	user.visible_message(span_notice("[user] welded [src] into pieces!") , span_notice("You welded apart [src]!") )
+	user.visible_message(span_notice("[user] welded [src] into pieces!") , span_notice("You welded apart [src]!"))
 	deconstruct(TRUE)
 
 /obj/structure/mineral_door/proc/crowbar_door(mob/living/user, obj/item/I) //if the door is flammable, call this in crowbar_act() so we can still decon it
 	. = TRUE
 	if(anchored)
-		to_chat(user, span_warning("[src] is still firmly secured to the ground!") )
+		to_chat(user, span_warning("[src] is still firmly secured to the ground!"))
 		return
 
-	user.visible_message(span_notice("[user] starts to pry apart [src]!") , span_notice("You start prying apart [src].") )
+	user.visible_message(span_notice("[user] starts to pry apart [src]!") , span_notice("You start prying apart [src]."))
 	if(!I.use_tool(src, user, 60, volume = 50))
-		to_chat(user, span_warning("You failed to pry apart [src]!") )
+		to_chat(user, span_warning("You failed to pry apart [src]!"))
 		return
 
-	user.visible_message(span_notice("[user] pried [src] into pieces!") , span_notice("You pried apart [src]!") )
+	user.visible_message(span_notice("[user] pried [src] into pieces!") , span_notice("You pried apart [src]!"))
 	deconstruct(TRUE)
 
 
@@ -335,11 +335,11 @@
 		return
 
 	if((user.a_intent != INTENT_HARM) && istype(I, /obj/item/paper) && (obj_integrity < max_integrity))
-		user.visible_message(span_notice("[user] starts to patch the holes in [src].") , span_notice("You start patching some of the holes in [src]!") )
+		user.visible_message(span_notice("[user] starts to patch the holes in [src].") , span_notice("You start patching some of the holes in [src]!"))
 		if(do_after(user, 20, src))
 			obj_integrity = min(obj_integrity+4,max_integrity)
 			qdel(I)
-			user.visible_message(span_notice("[user] patches some of the holes in [src].") , span_notice("You patch some of the holes in [src]!") )
+			user.visible_message(span_notice("[user] patches some of the holes in [src].") , span_notice("You patch some of the holes in [src]!"))
 			return TRUE
 
 	return ..()

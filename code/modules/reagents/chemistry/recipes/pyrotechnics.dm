@@ -149,7 +149,7 @@
 				deity = GLOB.deity
 			else
 				deity = "Christ"
-			to_chat(R, span_userdanger("The power of [deity] compels you!") )
+			to_chat(R, span_userdanger("The power of [deity] compels you!"))
 			R.stun(20)
 			R.reveal(100)
 			R.adjustHealth(50)

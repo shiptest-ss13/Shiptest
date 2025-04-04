@@ -479,14 +479,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 				keyslot2 = null
 
 			recalculateChannels()
-			to_chat(user, span_notice("You pop out the encryption keys in the headset.") )
+			to_chat(user, span_notice("You pop out the encryption keys in the headset."))
 
 		else
-			to_chat(user, span_warning("This headset doesn't have any unique encryption keys! How useless...") )
+			to_chat(user, span_warning("This headset doesn't have any unique encryption keys! How useless..."))
 
 	else if(istype(W, /obj/item/encryptionkey))
 		if(keyslot && keyslot2)
-			to_chat(user, span_warning("The headset can't hold another key!") )
+			to_chat(user, span_warning("The headset can't hold another key!"))
 			return
 
 		if(!keyslot)
@@ -525,4 +525,4 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		return
 	if (command)
 		use_command = !use_command
-		to_chat(user, span_notice("You toggle high-volume mode [use_command ? "on" : "off"].") )
+		to_chat(user, span_notice("You toggle high-volume mode [use_command ? "on" : "off"]."))

@@ -37,12 +37,12 @@ LINEN BINS
 		return
 	if(layer == initial(layer))
 		layer = ABOVE_MOB_LAYER
-		to_chat(user, span_notice("You cover yourself with [src].") )
+		to_chat(user, span_notice("You cover yourself with [src]."))
 		pixel_x = 0
 		pixel_y = 0
 	else
 		layer = initial(layer)
-		to_chat(user, span_notice("You smooth [src] out beneath you.") )
+		to_chat(user, span_notice("You smooth [src] out beneath you."))
 	add_fingerprint(user)
 	return
 
@@ -53,7 +53,7 @@ LINEN BINS
 			transfer_fingerprints_to(shreds)
 			shreds.add_fingerprint(user)
 		qdel(src)
-		to_chat(user, span_notice("You tear [src] up.") )
+		to_chat(user, span_notice("You tear [src] up."))
 	else
 		return ..()
 
@@ -476,7 +476,7 @@ LINEN BINS
 			return
 		sheets.Add(I)
 		amount++
-		to_chat(user, span_notice("You put [I] in [src].") )
+		to_chat(user, span_notice("You put [I] in [src]."))
 		update_appearance()
 
 	else if(default_unfasten_wrench(user, I, 5))
@@ -495,10 +495,10 @@ LINEN BINS
 
 	else if(amount && !hidden && I.w_class < WEIGHT_CLASS_BULKY)	//make sure there's sheets to hide it among, make sure nothing else is hidden in there.
 		if(!user.transferItemToLoc(I, src))
-			to_chat(user, span_warning("\The [I] is stuck to your hand, you cannot hide it among the sheets!") )
+			to_chat(user, span_warning("\The [I] is stuck to your hand, you cannot hide it among the sheets!"))
 			return
 		hidden = I
-		to_chat(user, span_notice("You hide [I] among the sheets.") )
+		to_chat(user, span_notice("You hide [I] among the sheets."))
 
 
 /obj/structure/bedsheetbin/attack_paw(mob/user)
@@ -525,12 +525,12 @@ LINEN BINS
 
 		B.forceMove(drop_location())
 		user.put_in_hands(B)
-		to_chat(user, span_notice("You take [B] out of [src].") )
+		to_chat(user, span_notice("You take [B] out of [src]."))
 		update_appearance()
 
 		if(hidden)
 			hidden.forceMove(drop_location())
-			to_chat(user, span_notice("[hidden] falls out of [B]!") )
+			to_chat(user, span_notice("[hidden] falls out of [B]!"))
 			hidden = null
 
 
@@ -548,7 +548,7 @@ LINEN BINS
 			B = new /obj/item/bedsheet(loc)
 
 		B.forceMove(drop_location())
-		to_chat(user, span_notice("You telekinetically remove [B] from [src].") )
+		to_chat(user, span_notice("You telekinetically remove [B] from [src]."))
 		update_appearance()
 
 		if(hidden)

@@ -43,7 +43,7 @@
 /obj/machinery/computer/message_monitor/attackby(obj/item/O, mob/living/user, params)
 	if(O.tool_behaviour == TOOL_SCREWDRIVER && (obj_flags & EMAGGED))
 		//Stops people from just unscrewing the monitor and putting it back to get the console working again.
-		to_chat(user, span_warning("It is too hot to mess with!") )
+		to_chat(user, span_warning("It is too hot to mess with!"))
 	else
 		return ..()
 
@@ -62,7 +62,7 @@
 		addtimer(CALLBACK(src, PROC_REF(UnmagConsole)), time)
 		message = rebootmsg
 	else
-		to_chat(user, span_notice("A no server error appears on the screen.") )
+		to_chat(user, span_notice("A no server error appears on the screen."))
 
 /obj/machinery/computer/message_monitor/New()
 	..()
@@ -243,10 +243,10 @@
 
 /obj/machinery/computer/message_monitor/proc/BruteForce(mob/user)
 	if(isnull(linkedServer))
-		to_chat(user, span_warning("Could not complete brute-force: Linked Server Disconnected!") )
+		to_chat(user, span_warning("Could not complete brute-force: Linked Server Disconnected!"))
 	else
 		var/currentKey = linkedServer.decryptkey
-		to_chat(user, span_warning("Brute-force completed! The key is '[currentKey]'.") )
+		to_chat(user, span_warning("Brute-force completed! The key is '[currentKey]'."))
 	hacking = FALSE
 	screen = MSG_MON_SCREEN_MAIN // Return the screen back to normal
 

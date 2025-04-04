@@ -150,7 +150,7 @@ Difficulty: Hard
 			for(var/mob/living/L in T)
 				if(L == src || L.throwing)
 					continue
-				to_chat(L, span_userdanger("[src]'s ground slam shockwave sends you flying!") )
+				to_chat(L, span_userdanger("[src]'s ground slam shockwave sends you flying!"))
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
 				L.throw_at(thrownat, 8, 2, src, TRUE, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
 				L.apply_damage(20, BRUTE)
@@ -185,7 +185,7 @@ Difficulty: Hard
 	animate(pixel_z = 0, time = 1)
 	for(var/mob/living/L in get_hearers_in_view(7, src) - src)
 		L.Dizzy(6)
-		to_chat(L, span_danger("[capitalize(src)] screams loudly!") )
+		to_chat(L, span_danger("[capitalize(src)] screams loudly!"))
 	SetRecoveryTime(30, 0)
 	SLEEP_CHECK_DEATH(12)
 	can_move = TRUE
@@ -212,7 +212,7 @@ Difficulty: Hard
 	var/mob/living/carbon/human/H = user
 	if(!H.mind)
 		return
-	to_chat(H, span_danger("Power courses through you! You can now shift your form at will.") )
+	to_chat(H, span_danger("Power courses through you! You can now shift your form at will."))
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/polar_bear/P = new
 	H.mind.AddSpell(P)
 	playsound(H.loc,'sound/items/drink.ogg', rand(10,50), TRUE)

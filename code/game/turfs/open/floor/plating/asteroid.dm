@@ -50,7 +50,7 @@
 	if(!dug)
 		return TRUE
 	if(user)
-		to_chat(user, span_warning("You can't dig here!") )
+		to_chat(user, span_warning("You can't dig here!"))
 
 /turf/open/floor/plating/asteroid/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
@@ -95,13 +95,13 @@
 				return
 			var/obj/item/stack/sheet/mineral/M = W
 			if (M.get_amount() < 5)
-				to_chat(user, span_warning("You need at least five sheets for that!") )
+				to_chat(user, span_warning("You need at least five sheets for that!"))
 				return
 			var/turf/dest_turf = get_turf(src)
 			if(locate(/obj/structure/closet/crate/grave) in dest_turf)
-				to_chat(user, span_warning("There is already a grave there!") )
+				to_chat(user, span_warning("There is already a grave there!"))
 				return
-			to_chat(user, span_notice("You start piling the dirt...") )
+			to_chat(user, span_notice("You start piling the dirt..."))
 			if(do_after(user, 30, target = src))
 				if(locate(/obj/structure/closet/crate/grave) in dest_turf)
 					return
@@ -110,7 +110,7 @@
 				else if(istype(W, /obj/item/stack/sheet/mineral/sandstone))
 					new /obj/structure/closet/crate/grave/stone(dest_turf)
 				M.use(5)
-				to_chat(user, span_notice("You place burial mound on [src].") )
+				to_chat(user, span_notice("You place burial mound on [src]."))
 			return
 
 /turf/open/floor/plating/asteroid/ex_act(severity, target)

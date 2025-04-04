@@ -90,7 +90,7 @@
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
 		return
 	if(trigger_regex.Find(speech_args[SPEECH_MESSAGE]) != 0)
-		to_chat(owner, span_warning("You can't bring yourself to say the word \"[span_phobia("[trigger_regex.group[2]]")]\"!") )
+		to_chat(owner, span_warning("You can't bring yourself to say the word \"[span_phobia("[trigger_regex.group[2]]")]\"!"))
 		speech_args[SPEECH_MESSAGE] = ""
 
 /datum/brain_trauma/mild/phobia/proc/freak_out(atom/reason, trigger_word)
@@ -99,15 +99,15 @@
 		return
 	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
 	if(reason)
-		to_chat(owner, span_userdanger("Seeing [reason] [message]!") )
+		to_chat(owner, span_userdanger("Seeing [reason] [message]!"))
 	else if(trigger_word)
-		to_chat(owner, span_userdanger("Hearing \"[trigger_word]\" [message]!") )
+		to_chat(owner, span_userdanger("Hearing \"[trigger_word]\" [message]!"))
 	else
-		to_chat(owner, span_userdanger("Something [message]!") )
+		to_chat(owner, span_userdanger("Something [message]!"))
 	var/reaction = rand(1,4)
 	switch(reaction)
 		if(1)
-			to_chat(owner, span_warning("You are paralyzed with fear!") )
+			to_chat(owner, span_warning("You are paralyzed with fear!"))
 			owner.Stun(70)
 			owner.set_jitter(8)
 		if(2)
@@ -117,7 +117,7 @@
 			if(reason)
 				owner.pointed(reason)
 		if(3)
-			to_chat(owner, span_warning("You shut your eyes in terror!") )
+			to_chat(owner, span_warning("You shut your eyes in terror!"))
 			owner.set_jitter(5)
 			owner.blind_eyes(10)
 		if(4)

@@ -49,7 +49,7 @@
 
 /obj/machinery/teleport/hub/Bumped(atom/movable/AM)
 	if(is_centcom_level(src))
-		to_chat(AM, span_warning("You can't use this here!") )
+		to_chat(AM, span_warning("You can't use this here!"))
 		return
 	if(is_ready())
 		teleport(AM)
@@ -70,7 +70,7 @@
 		return
 	if (QDELETED(com.target))
 		com.target = null
-		visible_message(span_alert("Cannot authenticate locked on coordinates. Please reinstate coordinate matrix.") )
+		visible_message(span_alert("Cannot authenticate locked on coordinates. Please reinstate coordinate matrix."))
 		return
 	if (ismovable(M))
 		if(do_teleport(M, com.target, channel = TELEPORT_CHANNEL_BLUESPACE, restrain_vlevel = FALSE))
@@ -79,7 +79,7 @@
 				if(ishuman(M))//don't remove people from the round randomly you jerks
 					var/mob/living/carbon/human/human = M
 					if(human.dna && human.dna.species.id == "human")
-						to_chat(M, span_hear("You hear a buzzing in your ears.") )
+						to_chat(M, span_hear("You hear a buzzing in your ears."))
 						human.set_species(/datum/species/fly)
 						log_game("[human] ([key_name(human)]) was turned into a fly person")
 
@@ -165,15 +165,15 @@
 		var/obj/item/multitool/M = W
 		if(panel_open)
 			M.buffer = src
-			to_chat(user, span_notice("You download the data to the [W.name]'s buffer.") )
+			to_chat(user, span_notice("You download the data to the [W.name]'s buffer."))
 		else
 			if(M.buffer && istype(M.buffer, /obj/machinery/teleport/station) && M.buffer != src)
 				if(linked_stations.len < efficiency)
 					linked_stations.Add(M.buffer)
 					M.buffer = null
-					to_chat(user, span_notice("You upload the data from the [W.name]'s buffer.") )
+					to_chat(user, span_notice("You upload the data from the [W.name]'s buffer."))
 				else
-					to_chat(user, span_alert("This station can't hold more information, try to use better parts.") )
+					to_chat(user, span_alert("This station can't hold more information, try to use better parts."))
 		return
 	else if(default_deconstruction_screwdriver(user, "controller-o", "controller", W))
 		update_appearance()
@@ -192,13 +192,13 @@
 		return
 	if (teleporter_console.target)
 		if(teleporter_hub.panel_open || teleporter_hub.machine_stat & (BROKEN|NOPOWER))
-			to_chat(user, span_alert("The teleporter hub isn't responding.") )
+			to_chat(user, span_alert("The teleporter hub isn't responding."))
 		else
 			engaged = !engaged
 			use_power(5000)
-			to_chat(user, span_notice("Teleporter [engaged ? "" : "dis"]engaged!") )
+			to_chat(user, span_notice("Teleporter [engaged ? "" : "dis"]engaged!"))
 	else
-		to_chat(user, span_alert("No target detected.") )
+		to_chat(user, span_alert("No target detected."))
 		engaged = FALSE
 	teleporter_hub.update_appearance()
 	add_fingerprint(user)

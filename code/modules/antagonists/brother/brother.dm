@@ -29,7 +29,7 @@
 /datum/antagonist/brother/on_removal()
 	SSticker.mode.brothers -= owner
 	if(owner.current)
-		to_chat(owner.current,span_userdanger("You are no longer the [special_role]!") )
+		to_chat(owner.current,span_userdanger("You are no longer the [special_role]!"))
 	owner.special_role = null
 	return ..()
 
@@ -64,7 +64,7 @@
 
 /datum/antagonist/brother/greet()
 	var/brother_text = get_brother_names()
-	to_chat(owner.current, span_alertsyndie("You are the [owner.special_role] of [brother_text].") )
+	to_chat(owner.current, span_alertsyndie("You are the [owner.special_role] of [brother_text]."))
 	to_chat(owner.current, "The Syndicate only accepts those that have proven themselves. Prove yourself and prove your [team.member_name]s by completing your objectives together!")
 	owner.announce_objectives()
 	give_meeting_area()

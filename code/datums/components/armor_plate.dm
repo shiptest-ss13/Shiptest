@@ -55,14 +55,14 @@
 	if(!istype(I,upgrade_item))
 		return
 	if(amount >= maxamount)
-		to_chat(user, span_warning("You can't improve [parent] any further!") )
+		to_chat(user, span_warning("You can't improve [parent] any further!"))
 		return
 
 	if(istype(I,/obj/item/stack))
 		I.use(1)
 	else
 		if(length(I.contents))
-			to_chat(user, span_warning("[I] cannot be used for armoring while there's something inside!") )
+			to_chat(user, span_warning("[I] cannot be used for armoring while there's something inside!"))
 			return
 		qdel(I)
 
@@ -73,9 +73,9 @@
 	if(ismecha(O))
 		var/obj/mecha/R = O
 		R.update_appearance()
-		to_chat(user, span_info("You strengthen [R], improving its resistance against melee, bullet and laser damage.") )
+		to_chat(user, span_info("You strengthen [R], improving its resistance against melee, bullet and laser damage."))
 	else
-		to_chat(user, span_info("You strengthen [O], improving its resistance against melee attacks.") )
+		to_chat(user, span_info("You strengthen [O], improving its resistance against melee attacks."))
 
 
 /datum/component/armor_plate/proc/dropplates(datum/source, force)

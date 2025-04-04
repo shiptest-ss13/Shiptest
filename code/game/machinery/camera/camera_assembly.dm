@@ -127,7 +127,7 @@
 		if(STATE_WRENCHED)
 			if(W.tool_behaviour == TOOL_WELDER)
 				if(weld(W, user))
-					to_chat(user, span_notice("You weld [src] securely into place.") )
+					to_chat(user, span_notice("You weld [src] securely into place."))
 					set_anchored(TRUE)
 					state = STATE_WELDED
 				return
@@ -136,17 +136,17 @@
 			if(istype(W, /obj/item/stack/cable_coil))
 				var/obj/item/stack/cable_coil/C = W
 				if(C.use(2))
-					to_chat(user, span_notice("You add wires to [src].") )
+					to_chat(user, span_notice("You add wires to [src]."))
 					state = STATE_WIRED
 				else
-					to_chat(user, span_warning("You need two lengths of cable to wire a camera!") )
+					to_chat(user, span_warning("You need two lengths of cable to wire a camera!"))
 					return
 				return
 
 			else if(W.tool_behaviour == TOOL_WELDER)
 
 				if(weld(W, user))
-					to_chat(user, span_notice("You unweld [src] from its place.") )
+					to_chat(user, span_notice("You unweld [src] from its place."))
 					state = STATE_WRENCHED
 					set_anchored(TRUE)
 				return
@@ -154,7 +154,7 @@
 		if(STATE_WIRED)	// Upgrades!
 			if(istype(W, /obj/item/stack/sheet/mineral/plasma)) //emp upgrade
 				if(emp_module)
-					to_chat(user, span_warning("[src] already contains a [emp_module]!") )
+					to_chat(user, span_warning("[src] already contains a [emp_module]!"))
 					return
 				if(!W.use_tool(src, user, 0, amount=1)) //only use one sheet, otherwise the whole stack will be consumed.
 					return
@@ -162,16 +162,16 @@
 				if(malf_xray_firmware_active)
 					malf_xray_firmware_active = FALSE //flavor reason: MALF AI Upgrade Camera Network ability's firmware is incompatible with the new part
 														//real reason: make it a normal upgrade so the finished camera's icons and examine texts are restored.
-				to_chat(user, span_notice("You attach [W] into [src]'s inner circuits.") )
+				to_chat(user, span_notice("You attach [W] into [src]'s inner circuits."))
 				return
 
 			else if(istype(W, /obj/item/analyzer)) //xray upgrade
 				if(xray_module)
-					to_chat(user, span_warning("[src] already contains a [xray_module]!") )
+					to_chat(user, span_warning("[src] already contains a [xray_module]!"))
 					return
 				if(!user.transferItemToLoc(W, src))
 					return
-				to_chat(user, span_notice("You attach [W] into [src]'s inner circuits.") )
+				to_chat(user, span_notice("You attach [W] into [src]'s inner circuits."))
 				xray_module = W
 				if(malf_xray_firmware_active)
 					malf_xray_firmware_active = FALSE //flavor reason: MALF AI Upgrade Camera Network ability's firmware is incompatible with the new part
@@ -181,11 +181,11 @@
 
 			else if(istype(W, /obj/item/assembly/prox_sensor)) //motion sensing upgrade
 				if(proxy_module)
-					to_chat(user, span_warning("[src] already contains a [proxy_module]!") )
+					to_chat(user, span_warning("[src] already contains a [proxy_module]!"))
 					return
 				if(!user.transferItemToLoc(W, src))
 					return
-				to_chat(user, span_notice("You attach [W] into [src]'s inner circuits.") )
+				to_chat(user, span_notice("You attach [W] into [src]'s inner circuits."))
 				proxy_module = W
 				return
 
@@ -206,7 +206,7 @@
 	var/obj/item/choice = input(user, "Select a part to remove:", src) as null|obj in sortNames(droppable_parts)
 	if(!choice || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	to_chat(user, span_notice("You remove [choice] from [src].") )
+	to_chat(user, span_notice("You remove [choice] from [src]."))
 	drop_upgrade(choice)
 	tool.play_tool_sound(src)
 	return TRUE
@@ -221,11 +221,11 @@
 	tool.play_tool_sound(src)
 	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: SS13,Security,Secret ", "Set Network", "SS13")
 	if(!input)
-		to_chat(user, span_warning("No input found, please hang up and try your call again!") )
+		to_chat(user, span_warning("No input found, please hang up and try your call again!"))
 		return
 	var/list/tempnetwork = splittext(input, ",")
 	if(tempnetwork.len < 1)
-		to_chat(user, span_warning("No network found, please hang up and try your call again!") )
+		to_chat(user, span_warning("No network found, please hang up and try your call again!"))
 		return
 	for(var/i in tempnetwork)
 		tempnetwork -= i
@@ -247,7 +247,7 @@
 
 	new /obj/item/stack/cable_coil(drop_location(), 2)
 	I.play_tool_sound(src)
-	to_chat(user, span_notice("You cut the wires from the circuits.") )
+	to_chat(user, span_notice("You cut the wires from the circuits."))
 	state = STATE_WELDED
 	return TRUE
 
@@ -256,7 +256,7 @@
 	if(state != STATE_WRENCHED)
 		return
 	I.play_tool_sound(src)
-	to_chat(user, span_notice("You detach [src] from its place.") )
+	to_chat(user, span_notice("You detach [src] from its place."))
 	new /obj/item/wallframe/camera(drop_location())
 	//drop upgrades
 	if(xray_module)
@@ -272,7 +272,7 @@
 /obj/structure/camera_assembly/proc/weld(obj/item/weldingtool/W, mob/living/user)
 	if(!W.tool_start_check(user, amount=3))
 		return FALSE
-	to_chat(user, span_notice("You start to weld [src]...") )
+	to_chat(user, span_notice("You start to weld [src]..."))
 	if(W.use_tool(src, user, 20, amount=3, volume = 50))
 		return TRUE
 	return FALSE

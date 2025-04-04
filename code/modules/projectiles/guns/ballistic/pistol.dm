@@ -124,7 +124,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 /obj/item/gun/ballistic/automatic/pistol/commissar/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	funnysounds = !funnysounds
-	to_chat(user, span_notice("You toggle [src]'s vox audio functions.") )
+	to_chat(user, span_notice("You toggle [src]'s vox audio functions."))
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/AltClick(mob/user)
 	. = ..()
@@ -157,11 +157,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	safety = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user, display_message = TRUE)
-	to_chat(user, span_warning("Theres no magazine to eject!") )
+	to_chat(user, span_warning("Theres no magazine to eject!"))
 	return
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/insert_magazine(mob/user)
-	to_chat(user, span_warning("Theres no magazine to replace!") )
+	to_chat(user, span_warning("Theres no magazine to replace!"))
 	return
 
 //not technically a pistol but whatever

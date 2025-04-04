@@ -20,7 +20,7 @@
 		var/light_amount = T.get_lumcount()
 		if(light_amount > SHADOW_SPECIES_LIGHT_THRESHOLD) //if there's enough light, start dying
 			if(world.time > next_damage_warning)
-				to_chat(owner, span_warning("<b>The light burns you!</b>") )
+				to_chat(owner, span_warning("<b>The light burns you!</b>"))
 				next_damage_warning = world.time + 100 //Avoid spamming
 			owner.take_overall_damage(0,3)
 
@@ -93,7 +93,7 @@
 
 	if(get_dist(owner, stalker) <= 1)
 		playsound(owner, 'sound/magic/demon_attack1.ogg', 50)
-		owner.visible_message(span_warning("[owner] is torn apart by invisible claws!") , span_userdanger("Ghostly claws tear your body apart!") )
+		owner.visible_message(span_warning("[owner] is torn apart by invisible claws!") , span_userdanger("Ghostly claws tear your body apart!"))
 		owner.take_bodypart_damage(rand(20, 45))
 	else if(prob(50))
 		stalker.forceMove(get_step_towards(stalker, owner))

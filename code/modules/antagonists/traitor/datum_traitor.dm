@@ -38,14 +38,14 @@
 		QDEL_NULL(A.malf_picker)
 	SSticker.mode.traitors -= owner
 	if(!silent && owner.current)
-		to_chat(owner.current,span_userdanger("You are no longer the [special_role]!") )
+		to_chat(owner.current,span_userdanger("You are no longer the [special_role]!"))
 	owner.special_role = null
 	return ..()
 
 /datum/antagonist/traitor/proc/handle_hearing(datum/source, list/hearing_args)
 	var/message = hearing_args[HEARING_RAW_MESSAGE]
-	message = GLOB.syndicate_code_phrase_regex.Replace(message, span_blue("$1") )
-	message = GLOB.syndicate_code_response_regex.Replace(message, span_red("$1") )
+	message = GLOB.syndicate_code_phrase_regex.Replace(message, span_blue("$1"))
+	message = GLOB.syndicate_code_response_regex.Replace(message, span_red("$1"))
 	hearing_args[HEARING_RAW_MESSAGE] = message
 
 /datum/antagonist/traitor/proc/add_objective(datum/objective/O)
@@ -195,7 +195,7 @@
 		// EndWS Edit - Malf AI rework
 
 /datum/antagonist/traitor/greet()
-	to_chat(owner.current, span_alertsyndie("You are the [owner.special_role].") )
+	to_chat(owner.current, span_alertsyndie("You are the [owner.special_role]."))
 	owner.announce_objectives()
 	if(should_give_codewords)
 		give_codewords()
@@ -247,7 +247,7 @@
 	antag_memory += "<b>Code Response</b>: [span_red("[responses]")]<br>"
 
 	to_chat(traitor_mob, "Use the codewords during regular conversation to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
-	to_chat(traitor_mob, span_alertwarning("You memorize the codewords, allowing you to recognise them when heard.") )
+	to_chat(traitor_mob, span_alertwarning("You memorize the codewords, allowing you to recognise them when heard."))
 
 /datum/antagonist/traitor/proc/add_law_zero()
 	var/mob/living/silicon/ai/killer = owner.current

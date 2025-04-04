@@ -49,13 +49,13 @@
 
 /obj/machinery/shower/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_ANALYZER)
-		to_chat(user, span_notice("The water temperature seems to be [current_temperature].") )
+		to_chat(user, span_notice("The water temperature seems to be [current_temperature]."))
 	else
 		return ..()
 
 /obj/machinery/shower/wrench_act(mob/living/user, obj/item/I)
 	..()
-	to_chat(user, span_notice("You begin to adjust the temperature valve with \the [I]...") )
+	to_chat(user, span_notice("You begin to adjust the temperature valve with \the [I]..."))
 	if(I.use_tool(src, user, 50))
 		switch(current_temperature)
 			if(SHOWER_NORMAL)
@@ -64,7 +64,7 @@
 				current_temperature = SHOWER_BOILING
 			if(SHOWER_BOILING)
 				current_temperature = SHOWER_NORMAL
-		user.visible_message(span_notice("[user] adjusts the shower with \the [I].") , span_notice("You adjust the shower with \the [I] to [current_temperature] temperature.") )
+		user.visible_message(span_notice("[user] adjusts the shower with \the [I].") , span_notice("You adjust the shower with \the [I] to [current_temperature] temperature."))
 		user.log_message("has wrenched a shower at [AREACOORD(src)] to [current_temperature].", LOG_ATTACK)
 		add_hiddenprint(user)
 	handle_mist()
@@ -136,10 +136,10 @@
 		switch(current_temperature)
 			if(SHOWER_FREEZING)
 				C.adjust_bodytemperature(-3, 280)
-				to_chat(L, span_warning("[src] is cold!") )
+				to_chat(L, span_warning("[src] is cold!"))
 			if(SHOWER_BOILING)
 				C.adjust_bodytemperature(3, 0, 330)
-				to_chat(L, span_danger("[src] is hot!") )
+				to_chat(L, span_danger("[src] is hot!"))
 			if(SHOWER_NORMAL)
 				if(C.bodytemperature >= HUMAN_BODYTEMP_NORMAL)
 					C.adjust_bodytemperature(-2, HUMAN_BODYTEMP_NORMAL)

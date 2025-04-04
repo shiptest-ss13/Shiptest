@@ -120,7 +120,7 @@
 					emh.set_holo(src, src)
 					holopad = emh
 					forceMove(get_turf(emh.loc))
-					to_chat(src, span_danger("Your current holoprojector stops working, and you reset to your primary one!") )
+					to_chat(src, span_danger("Your current holoprojector stops working, and you reset to your primary one!"))
 	if(holopad)
 		holopad.update_holoray(src, get_turf(newloc))
 		if(!holopad.validate_location(get_turf(newloc), FALSE, FALSE))
@@ -136,7 +136,7 @@
 					holopad = another
 					return
 			forceMove(get_turf(holopad.loc))
-			to_chat(src, span_danger("You've gone too far from your holoprojector!") )
+			to_chat(src, span_danger("You've gone too far from your holoprojector!"))
 
 /mob/living/simple_animal/hologram/emag_act(mob/user)
 	. = ..()
@@ -148,10 +148,10 @@
 			flavortext = str
 		else
 			flavortext = "Serve [user]."
-		to_chat(user, span_notice("You [density ? "poke [src] with your card" : "slide your card through the air where [src] is"], and set their laws to [str].") )
+		to_chat(user, span_notice("You [density ? "poke [src] with your card" : "slide your card through the air where [src] is"], and set their laws to [str]."))
 	src.visible_message(span_danger("[src] starts flickering!") ,
 						span_userdanger("You start flickering, and detect an unauthorized law change!") ,
-						span_danger("You hear a strange buzzing noise!") )
+						span_danger("You hear a strange buzzing noise!"))
 	possible_a_intents |= list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	show_laws()
 	disco(src)

@@ -158,7 +158,7 @@
 	return !AM.anchored
 
 /datum/component/simple_rotation/proc/default_after_rotation(mob/user, rotation_type)
-	to_chat(user,span_notice("You [rotation_type == ROTATION_FLIP ? "flip" : "rotate"] [parent].") )
+	to_chat(user,span_notice("You [rotation_type == ROTATION_FLIP ? "flip" : "rotate"] [parent]."))
 
 /atom/movable/proc/simple_rotate_clockwise()
 	set name = "Rotate Clockwise"

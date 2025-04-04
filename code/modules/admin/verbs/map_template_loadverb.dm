@@ -21,7 +21,7 @@
 	images += preview
 	if(alert(src,"Confirm location.","Template Confirm","Yes","No") == "Yes")
 		if(template.load(T, centered = TRUE))
-			message_admins(span_adminnotice("[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]") )
+			message_admins(span_adminnotice("[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]"))
 		else
 			to_chat(src, "Failed to place map", confidential = TRUE)
 	images -= preview
@@ -70,5 +70,5 @@
 		shuttle_template.category = "uploaded"
 		SSmapping.shuttle_templates["[map]"] = shuttle_template
 		shuttle_template.ui_interact(usr)
-	message_admins(span_adminnotice("[key_name_admin(src)] has uploaded a map template '[map]' ([M.width]x[M.height])[report_link].") )
+	message_admins(span_adminnotice("[key_name_admin(src)] has uploaded a map template '[map]' ([M.width]x[M.height])[report_link]."))
 	to_chat(src, span_notice("Map template '[map]' ready to place ([M.width]x[M.height])") , confidential = TRUE)

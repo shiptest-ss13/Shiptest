@@ -75,11 +75,11 @@
 	if(W.tool_behaviour == TOOL_MULTITOOL)
 		if(!hacked)
 			hacked = TRUE
-			to_chat(user, span_warning("[hack_flavor_text]") )
+			to_chat(user, span_warning("[hack_flavor_text]"))
 			sword_color = "rainbow"
 			update_appearance()
 		else
-			to_chat(user, span_warning("It's starting to look like a triple rainbow - no, nevermind.") )
+			to_chat(user, span_warning("It's starting to look like a triple rainbow - no, nevermind."))
 	else
 		return ..()
 
@@ -124,7 +124,7 @@
 	add_fingerprint(user)
 
 /obj/item/melee/duelenergy/proc/impale(mob/living/user)
-	to_chat(user, span_warning("You [impale_flavor_text] around a bit before losing your balance and impaling yourself on [src].") )
+	to_chat(user, span_warning("You [impale_flavor_text] around a bit before losing your balance and impaling yourself on [src]."))
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		user.take_bodypart_damage(20,25,check_armor = TRUE)
 	else

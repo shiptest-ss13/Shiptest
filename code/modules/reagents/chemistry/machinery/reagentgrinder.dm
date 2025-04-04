@@ -141,12 +141,12 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, span_notice("You add [B] to [src].") )
+		to_chat(user, span_notice("You add [B] to [src]."))
 		update_appearance()
 		return TRUE //no afterattack
 
 	if(holdingitems.len >= limit)
-		to_chat(user, span_warning("[src] is filled to capacity!") )
+		to_chat(user, span_warning("[src] is filled to capacity!"))
 		return TRUE
 
 	//Fill machine with a bag!
@@ -156,23 +156,23 @@
 			for(var/i in inserted)
 				holdingitems[i] = TRUE
 			if(!I.contents.len)
-				to_chat(user, span_notice("You empty [I] into [src].") )
+				to_chat(user, span_notice("You empty [I] into [src]."))
 			else
-				to_chat(user, span_notice("You fill [src] to the brim.") )
+				to_chat(user, span_notice("You fill [src] to the brim."))
 		return TRUE
 
 	if(!I.grind_results && !I.juice_results)
 		if(user.a_intent == INTENT_HARM)
 			return ..()
 		else
-			to_chat(user, span_warning("You cannot grind [I] into reagents!") )
+			to_chat(user, span_warning("You cannot grind [I] into reagents!"))
 			return TRUE
 
 	if(!I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
 
 	if(user.transferItemToLoc(I, src))
-		to_chat(user, span_notice("You add [I] to [src].") )
+		to_chat(user, span_notice("You add [I] to [src]."))
 		holdingitems[I] = TRUE
 		return FALSE
 
@@ -276,7 +276,7 @@
 
 /obj/machinery/reagentgrinder/proc/juice_item(obj/item/I) //Juicing results can be found in respective object definitions
 	if(I.on_juice(src) == -1)
-		to_chat(usr, span_danger("[src] shorts out as it tries to juice up [I], and transfers it back to storage.") )
+		to_chat(usr, span_danger("[src] shorts out as it tries to juice up [I], and transfers it back to storage."))
 		return
 	beaker.reagents.add_reagent_list(I.juice_results)
 	remove_object(I)
@@ -297,7 +297,7 @@
 
 /obj/machinery/reagentgrinder/proc/grind_item(obj/item/I, mob/user) //Grind results can be found in respective object definitions
 	if(I.on_grind(src) == -1) //Call on_grind() to change amount as needed, and stop grinding the item if it returns -1
-		to_chat(usr, span_danger("[src] shorts out as it tries to grind up [I], and transfers it back to storage.") )
+		to_chat(usr, span_danger("[src] shorts out as it tries to grind up [I], and transfers it back to storage."))
 		return
 	beaker.reagents.add_reagent_list(I.grind_results)
 	if(I.reagents)

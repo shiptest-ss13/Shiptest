@@ -52,18 +52,18 @@
 
 	if (W.tool_behaviour == TOOL_WELDER)
 		if(get_amount() < 4)
-			to_chat(user, span_warning("You need at least four tiles to do this!") )
+			to_chat(user, span_warning("You need at least four tiles to do this!"))
 			return
 
 		if(!mineralType)
-			to_chat(user, span_warning("You can not reform this!") )
+			to_chat(user, span_warning("You can not reform this!"))
 			return
 
 		if(W.use_tool(src, user, 0, volume=40))
 			if(mineralType == "plasma")
 				atmos_spawn_air("plasma=5;TEMP=1000")
 				user.visible_message(span_warning("[user.name] sets the plasma tiles on fire!") , \
-									span_warning("You set the plasma tiles on fire!") )
+									span_warning("You set the plasma tiles on fire!"))
 				qdel(src)
 				return
 

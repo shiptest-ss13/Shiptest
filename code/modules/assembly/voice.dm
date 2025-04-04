@@ -81,7 +81,7 @@
 	..()
 	mode %= modes.len
 	mode++
-	to_chat(user, span_notice("You set [src] into [modes[mode]] mode.") )
+	to_chat(user, span_notice("You set [src] into [modes[mode]] mode."))
 	listening = FALSE
 	recorded = ""
 	return TRUE

@@ -73,7 +73,7 @@
 		J.mybag=src
 		J.update_appearance()
 	else
-		to_chat(user, span_warning("You are unable to fit your [name] into the [J.name].") )
+		to_chat(user, span_warning("You are unable to fit your [name] into the [J.name]."))
 		return
 
 /obj/item/storage/bag/trash/bluespace
@@ -151,17 +151,17 @@
 				show_message = TRUE
 			else
 				if(!spam_protection)
-					to_chat(user, span_warning("Your [name] is full and can't hold any more!") )
+					to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
 					spam_protection = TRUE
 					continue
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
 		if (box)
 			user.visible_message(span_notice("[user] offloads the ores beneath [user.p_them()] into [box].") , \
-			span_notice("You offload the ores beneath you into your [box].") )
+			span_notice("You offload the ores beneath you into your [box]."))
 		else
 			user.visible_message(span_notice("[user] scoops up the ores beneath [user.p_them()].") , \
-				span_notice("You scoop up the ores beneath you with your [name].") )
+				span_notice("You scoop up the ores beneath you with your [name]."))
 	spam_protection = FALSE
 
 /obj/item/storage/bag/ore/cyborg

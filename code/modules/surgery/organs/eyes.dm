@@ -156,7 +156,7 @@
 		return
 	if(prob(10 * severity))
 		return
-	to_chat(owner, span_warning("Static obfuscates your vision!") )
+	to_chat(owner, span_warning("Static obfuscates your vision!"))
 	owner.flash_act(visual = 1)
 
 /obj/item/organ/eyes/robotic/xray
@@ -316,14 +316,14 @@
 /obj/item/organ/eyes/robotic/glow/proc/activate(silent = FALSE)
 	start_visuals()
 	if(!silent)
-		to_chat(owner, span_warning("Your [src] clicks and makes a whining noise, before shooting out a beam of light!") )
+		to_chat(owner, span_warning("Your [src] clicks and makes a whining noise, before shooting out a beam of light!"))
 	active = TRUE
 	cycle_mob_overlay()
 
 /obj/item/organ/eyes/robotic/glow/proc/deactivate(silent = FALSE)
 	clear_visuals()
 	if(!silent)
-		to_chat(owner, span_warning("Your [src] shuts off!") )
+		to_chat(owner, span_warning("Your [src] shuts off!"))
 	active = FALSE
 	remove_mob_overlay()
 

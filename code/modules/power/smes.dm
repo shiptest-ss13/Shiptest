@@ -100,10 +100,10 @@
 			if(term && term.dir == turn(dir, 180))
 				terminal = term
 				terminal.master = src
-				to_chat(user, span_notice("Terminal found.") )
+				to_chat(user, span_notice("Terminal found."))
 				break
 		if(!terminal)
-			to_chat(user, span_alert("No power terminal found.") )
+			to_chat(user, span_alert("No power terminal found."))
 			return
 		set_machine_stat(machine_stat & ~BROKEN)
 		update_appearance()
@@ -116,25 +116,25 @@
 			return
 
 		if(terminal) //is there already a terminal ?
-			to_chat(user, span_warning("This SMES already has a power terminal!") )
+			to_chat(user, span_warning("This SMES already has a power terminal!"))
 			return
 
 		if(!panel_open) //is the panel open ?
-			to_chat(user, span_warning("You must open the maintenance panel first!") )
+			to_chat(user, span_warning("You must open the maintenance panel first!"))
 			return
 
 		var/turf/T = get_turf(user)
 		if (T.intact) //is the floor plating removed ?
-			to_chat(user, span_warning("You must first remove the floor plating!") )
+			to_chat(user, span_warning("You must first remove the floor plating!"))
 			return
 
 
 		var/obj/item/stack/cable_coil/C = I
 		if(C.get_amount() < 10)
-			to_chat(user, span_warning("You need more wires!") )
+			to_chat(user, span_warning("You need more wires!"))
 			return
 
-		to_chat(user, span_notice("You start building the power terminal...") )
+		to_chat(user, span_notice("You start building the power terminal..."))
 		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 
 		if(do_after(user, 20, target = src))
@@ -147,7 +147,7 @@
 			if(!terminal)
 				C.use(10)
 				user.visible_message(span_notice("[user.name] builds a power terminal.") ,\
-					span_notice("You build the power terminal.") )
+					span_notice("You build the power terminal."))
 
 				//build the terminal and link it to the network
 				make_terminal(T)
@@ -177,7 +177,7 @@
 
 /obj/machinery/power/smes/default_deconstruction_crowbar(obj/item/crowbar/C)
 	if(istype(C) && terminal)
-		to_chat(usr, span_warning("You must first remove the power terminal!") )
+		to_chat(usr, span_warning("You must first remove the power terminal!"))
 		return FALSE
 
 	return ..()

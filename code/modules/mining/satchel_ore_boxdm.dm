@@ -14,7 +14,7 @@
 		user.transferItemToLoc(W, src)
 	else if(SEND_SIGNAL(W, COMSIG_CONTAINS_STORAGE))
 		SEND_SIGNAL(W, COMSIG_TRY_STORAGE_TAKE_TYPE, /obj/item/stack/ore, src)
-		to_chat(user, span_notice("You empty the ore in [W] into \the [src].") )
+		to_chat(user, span_notice("You empty the ore in [W] into \the [src]."))
 	else
 		return ..()
 
@@ -26,7 +26,7 @@
 	if(I.use_tool(src, user, 50, volume=50))
 		user.visible_message(span_notice("[user] pries \the [src] apart.") ,
 			span_notice("You pry apart \the [src].") ,
-			span_hear("You hear splitting wood.") )
+			span_hear("You hear splitting wood."))
 		deconstruct(TRUE, user)
 	return TRUE
 
@@ -89,7 +89,7 @@
 	switch(action)
 		if("removeall")
 			dump_box_contents()
-			to_chat(usr, span_notice("You open the release hatch on the box..") )
+			to_chat(usr, span_notice("You open the release hatch on the box.."))
 
 /obj/structure/ore_box/deconstruct(disassembled = TRUE, mob/user)
 	var/obj/item/stack/sheet/mineral/wood/WD = new (loc, 4)

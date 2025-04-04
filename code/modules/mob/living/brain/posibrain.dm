@@ -67,7 +67,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	if(input_seed)
-		to_chat(user, span_notice("You set the personality seed to \"[input_seed]\".") )
+		to_chat(user, span_notice("You set the personality seed to \"[input_seed]\"."))
 		ask_role = input_seed
 		update_appearance()
 
@@ -130,7 +130,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	if(QDELETED(brainmob))
 		return
 	if(is_occupied()) //Prevents hostile takeover if two ghosts get the prompt or link for the same brain.
-		to_chat(candidate, span_warning("This [name] was taken over before you could get to it! Perhaps it might be available later?") )
+		to_chat(candidate, span_warning("This [name] was taken over before you could get to it! Perhaps it might be available later?"))
 		return FALSE
 	if(candidate.mind && !isobserver(candidate))
 		candidate.mind.transfer_to(brainmob)

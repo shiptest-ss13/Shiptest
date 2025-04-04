@@ -16,7 +16,7 @@
 	return
 
 /datum/action/changeling/sting/proc/set_sting(mob/user)
-	to_chat(user, span_notice("We prepare our sting. Alt+click or click the middle mouse button on a target to sting them.") )
+	to_chat(user, span_notice("We prepare our sting. Alt+click or click the middle mouse button on a target to sting them."))
 	var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 	changeling.chosen_sting = src
 
@@ -24,7 +24,7 @@
 	user.hud_used.lingstingdisplay.invisibility = 0
 
 /datum/action/changeling/sting/proc/unset_sting(mob/user)
-	to_chat(user, span_warning("We retract our sting, we can't sting anyone for now.") )
+	to_chat(user, span_warning("We retract our sting, we can't sting anyone for now."))
 	var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 	changeling.chosen_sting = null
 
@@ -57,9 +57,9 @@
 /datum/action/changeling/sting/sting_feedback(mob/user, mob/target)
 	if(!target)
 		return
-	to_chat(user, span_notice("We stealthily sting [target.name].") )
+	to_chat(user, span_notice("We stealthily sting [target.name]."))
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/changeling))
-		to_chat(target, span_warning("You feel a tiny prick.") )
+		to_chat(target, span_warning("You feel a tiny prick."))
 	return 1
 
 
@@ -82,7 +82,7 @@
 	if(!selected_dna)
 		return
 	if(NOTRANSSTING in selected_dna.dna.species.species_traits)
-		to_chat(user, span_notice("That DNA is not compatible with changeling retrovirus!") )
+		to_chat(user, span_notice("That DNA is not compatible with changeling retrovirus!"))
 		return
 	..()
 
@@ -90,7 +90,7 @@
 	if(!..())
 		return
 	if((HAS_TRAIT(target, TRAIT_HUSK)) || !iscarbon(target) || (NOTRANSSTING in target.dna.species.species_traits))
-		to_chat(user, span_warning("Our sting appears ineffective against its DNA.") )
+		to_chat(user, span_warning("Our sting appears ineffective against its DNA."))
 		return 0
 	return 1
 
@@ -98,7 +98,7 @@
 	log_combat(user, target, "stung", "transformation sting", " new identity is '[selected_dna.dna.real_name]'")
 	var/datum/dna/NewDNA = selected_dna.dna
 	if(ismonkey(target))
-		to_chat(user, span_notice("Our genes cry out as we sting [target.name]!") )
+		to_chat(user, span_notice("Our genes cry out as we sting [target.name]!"))
 
 	var/mob/living/carbon/C = target
 	. = TRUE
@@ -129,7 +129,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if((HAS_TRAIT(L, TRAIT_HUSK)) || !L.has_dna())
-			to_chat(user, span_warning("Our sting appears ineffective against its DNA.") )
+			to_chat(user, span_warning("Our sting appears ineffective against its DNA."))
 			return 0
 	return 1
 
@@ -138,15 +138,15 @@
 
 	var/obj/item/held = target.get_active_held_item()
 	if(held && !target.dropItemToGround(held))
-		to_chat(user, span_warning("[held] is stuck to [target.p_their()] hand, you cannot grow a false armblade over it!") )
+		to_chat(user, span_warning("[held] is stuck to [target.p_their()] hand, you cannot grow a false armblade over it!"))
 		return
 	..()
 	if(ismonkey(target))
-		to_chat(user, span_notice("Our genes cry out as we sting [target.name]!") )
+		to_chat(user, span_notice("Our genes cry out as we sting [target.name]!"))
 
 	var/obj/item/melee/arm_blade/false/blade = new(target,1)
 	target.put_in_hands(blade)
-	target.visible_message(span_warning("A grotesque blade forms around [target.name]\'s arm!") , span_userdanger("Your arm twists and mutates, transforming into a horrific monstrosity!") , span_hear("You hear organic matter ripping and tearing!") )
+	target.visible_message(span_warning("A grotesque blade forms around [target.name]\'s arm!") , span_userdanger("Your arm twists and mutates, transforming into a horrific monstrosity!") , span_hear("You hear organic matter ripping and tearing!"))
 	playsound(target, 'sound/effects/blobattack.ogg', 30, TRUE)
 
 	addtimer(CALLBACK(src, PROC_REF(remove_fake), target, blade), 600)
@@ -205,7 +205,7 @@
 
 /datum/action/changeling/sting/blind/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "blind sting")
-	to_chat(target, span_danger("Your eyes burn horrifically!") )
+	to_chat(target, span_danger("Your eyes burn horrifically!"))
 	target.become_nearsighted(EYE_DAMAGE)
 	target.blind_eyes(20)
 	target.blur_eyes(40)

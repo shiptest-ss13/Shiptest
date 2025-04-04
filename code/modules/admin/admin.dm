@@ -655,7 +655,7 @@
 		to_chat(world, "<B>You may now respawn.</B>", confidential = TRUE)
 	else
 		to_chat(world, "<B>You may no longer respawn :(</B>", confidential = TRUE)
-	message_admins(span_adminnotice("[key_name_admin(usr)] toggled respawn to [!new_nores ? "On" : "Off"].") )
+	message_admins(span_adminnotice("[key_name_admin(usr)] toggled respawn to [!new_nores ? "On" : "Off"]."))
 	log_admin("[key_name(usr)] toggled respawn to [!new_nores ? "On" : "Off"].")
 	world.update_status()
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Respawn", "[!new_nores ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -826,7 +826,7 @@
 	else
 		to_chat(world, "<B>Guests may now enter the game.</B>", confidential = TRUE)
 	log_admin("[key_name(usr)] toggled guests game entering [!new_guest_ban ? "" : "dis"]allowed.")
-	message_admins(span_adminnotice("[key_name_admin(usr)] toggled guests game entering [!new_guest_ban ? "" : "dis"]allowed.") )
+	message_admins(span_adminnotice("[key_name_admin(usr)] toggled guests game entering [!new_guest_ban ? "" : "dis"]allowed."))
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Guests", "[!new_guest_ban ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/output_ai_laws()
@@ -950,7 +950,7 @@
 			if(tomob.mind == ghost.mind)
 				ghost.mind = null
 
-	message_admins(span_adminnotice("[key_name_admin(usr)] has put [frommob.key] in control of [tomob.name].") )
+	message_admins(span_adminnotice("[key_name_admin(usr)] has put [frommob.key] in control of [tomob.name]."))
 	log_admin("[key_name(usr)] stuffed [frommob.key] into [tomob.name].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Ghost Drag Control")
 

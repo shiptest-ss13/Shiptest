@@ -44,4 +44,4 @@
 		var/mob/living/carbon/C = target
 		C.Paralyze(60)
 		C.visible_message(span_danger("\The [src] knocks down \the [C]!") , \
-				span_userdanger("\The [src] knocks you down!") )
+				span_userdanger("\The [src] knocks you down!"))

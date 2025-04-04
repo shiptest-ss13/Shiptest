@@ -42,7 +42,7 @@
 		if(prob(damage / 30) && (damage > low_threshold))
 			adjustEarDamage(0, 4)
 			SEND_SOUND(C, sound('sound/weapons/flash_ring.ogg'))
-			to_chat(C, span_warning("The ringing in your ears grows louder, blocking out any external noises for a moment.") )
+			to_chat(C, span_warning("The ringing in your ears grows louder, blocking out any external noises for a moment."))
 	else if((organ_flags & ORGAN_FAILING) && (deaf == 0))
 		deaf = 1	//stop being not deaf you deaf idiot
 
@@ -117,13 +117,13 @@
 /obj/item/organ/ears/penguin/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	. = ..()
 	if(istype(ear_owner))
-		to_chat(ear_owner, span_notice("You suddenly feel like you've lost your balance.") )
+		to_chat(ear_owner, span_notice("You suddenly feel like you've lost your balance."))
 		ear_owner.AddElement(/datum/element/waddling)
 
 /obj/item/organ/ears/penguin/Remove(mob/living/carbon/human/ear_owner,  special = 0)
 	. = ..()
 	if(istype(ear_owner))
-		to_chat(ear_owner, span_notice("Your sense of balance comes back to you.") )
+		to_chat(ear_owner, span_notice("Your sense of balance comes back to you."))
 		ear_owner.RemoveElement(/datum/element/waddling)
 
 /obj/item/organ/ears/cat/slime //Not adding insert code since only slimepeople should ever get this through change_form()
@@ -294,9 +294,9 @@
 			owner.Dizzy(30)
 			owner.Knockdown(200)
 			deaf = 30
-			to_chat(owner, span_warning("Your robotic ears are ringing, uselessly.") )
+			to_chat(owner, span_warning("Your robotic ears are ringing, uselessly."))
 		if(2)
 			owner.adjust_jitter(15)
 			owner.Dizzy(15)
 			owner.Knockdown(100)
-			to_chat(owner, span_warning("Your robotic ears buzz.") )
+			to_chat(owner, span_warning("Your robotic ears buzz."))

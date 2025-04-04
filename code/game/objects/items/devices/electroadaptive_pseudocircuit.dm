@@ -26,16 +26,16 @@
 	if(QDELETED(R) || !istype(R))
 		return
 	if(!R.cell)
-		to_chat(R, span_warning("You need a power cell installed for that.") )
+		to_chat(R, span_warning("You need a power cell installed for that."))
 		return
 	if(!R.cell.use(circuit_cost))
-		to_chat(R, span_warning("You don't have the energy for that (you need [DisplayEnergy(circuit_cost)].)") )
+		to_chat(R, span_warning("You don't have the energy for that (you need [DisplayEnergy(circuit_cost)].)"))
 		return
 	if(recharging)
-		to_chat(R, span_warning("[src] needs some time to recharge first.") )
+		to_chat(R, span_warning("[src] needs some time to recharge first."))
 		return
 	if(!circuits)
-		to_chat(R, span_warning("You need more material. Use [src] on existing simple circuits to break them down.") )
+		to_chat(R, span_warning("You need more material. Use [src] on existing simple circuits to break them down."))
 		return
 	playsound(R, 'sound/items/rped.ogg', 50, TRUE)
 	recharging = TRUE
@@ -55,7 +55,7 @@
 	circuits++
 	maptext = "[circuits]"
 	user.visible_message(span_notice("User breaks down [target] with [src].") , \
-	span_notice("You recycle [target] into [src]. It now has material for <b>[circuits]</b> circuits.") )
+	span_notice("You recycle [target] into [src]. It now has material for <b>[circuits]</b> circuits."))
 	playsound(user, 'sound/items/deconstruct.ogg', 50, TRUE)
 	qdel(target)
 

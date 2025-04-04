@@ -225,6 +225,6 @@
 	human_target.regenerate_icons()
 
 	log_admin("[key_name(usr)] changed the equipment of [key_name(human_target)] to [dresscode].")
-	message_admins(span_adminnotice("[key_name_admin(usr)] changed the equipment of [ADMIN_LOOKUPFLW(human_target)] to [dresscode].") )
+	message_admins(span_adminnotice("[key_name_admin(usr)] changed the equipment of [ADMIN_LOOKUPFLW(human_target)] to [dresscode]."))
 
 	return dresscode

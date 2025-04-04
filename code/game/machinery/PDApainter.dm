@@ -71,11 +71,11 @@
 				return
 			user.visible_message(span_notice("[user] is repairing [src].") , \
 							span_notice("You begin repairing [src]...") , \
-							span_hear("You hear welding.") )
+							span_hear("You hear welding."))
 			if(O.use_tool(src, user, 40, volume=50))
 				if(!(machine_stat & BROKEN))
 					return
-				to_chat(user, span_notice("You repair [src].") )
+				to_chat(user, span_notice("You repair [src]."))
 				set_machine_stat(machine_stat & ~BROKEN)
 				obj_integrity = max_integrity
 				update_appearance()
@@ -89,7 +89,7 @@
 
 	else if(istype(O, /obj/item/pda))
 		if(storedpda)
-			to_chat(user, span_warning("There is already a PDA inside!") )
+			to_chat(user, span_warning("There is already a PDA inside!"))
 			return
 		else if(!user.transferItemToLoc(O, src))
 			return
@@ -111,7 +111,7 @@
 	if(storedpda)
 		if(machine_stat & BROKEN)	//otherwise the PDA is stuck until repaired
 			ejectpda()
-			to_chat(user, span_info("You manage to eject the loaded PDA.") )
+			to_chat(user, span_info("You manage to eject the loaded PDA."))
 		else
 			var/obj/item/pda/P
 			P = input(user, "Select your color!", "PDA Painting") as null|anything in sortNames(colorlist)
@@ -126,7 +126,7 @@
 			ejectpda()
 
 	else
-		to_chat(user, span_warning("[src] is empty!") )
+		to_chat(user, span_warning("[src] is empty!"))
 
 
 /obj/machinery/pdapainter/verb/ejectpda()
@@ -142,4 +142,4 @@
 		storedpda = null
 		update_appearance()
 	else
-		to_chat(usr, span_warning("[src] is empty!") )
+		to_chat(usr, span_warning("[src] is empty!"))

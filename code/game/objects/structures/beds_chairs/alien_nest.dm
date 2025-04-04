@@ -30,20 +30,20 @@
 			if(M != user)
 				M.visible_message(span_notice("[user.name] pulls [M.name] free from the sticky nest!") ,\
 					span_notice("[user.name] pulls you free from the gelatinous resin.") ,\
-					span_hear("You hear squelching...") )
+					span_hear("You hear squelching..."))
 			else
 				M.visible_message(span_warning("[M.name] struggles to break free from the gelatinous resin!") ,\
 					span_notice("You struggle to break free from the gelatinous resin... (Stay still for two minutes.)") ,\
-					span_hear("You hear squelching...") )
+					span_hear("You hear squelching..."))
 				if(!do_after(M, 1200, target = src, hidden = TRUE))
 					if(M && M.buckled)
-						to_chat(M, span_warning("You fail to unbuckle yourself!") )
+						to_chat(M, span_warning("You fail to unbuckle yourself!"))
 					return
 				if(!M.buckled)
 					return
 				M.visible_message(span_warning("[M.name] breaks free from the gelatinous resin!") ,\
 					span_notice("You break free from the gelatinous resin!") ,\
-					span_hear("You hear squelching...") )
+					span_hear("You hear squelching..."))
 
 			unbuckle_mob(M)
 			add_fingerprint(user)
@@ -63,7 +63,7 @@
 	if(buckle_mob(M))
 		M.visible_message(span_notice("[user.name] secretes a thick vile goo, securing [M.name] into [src]!") ,\
 			span_danger("[user.name] drenches you in a foul-smelling resin, trapping you in [src]!") ,\
-			span_hear("You hear squelching...") )
+			span_hear("You hear squelching..."))
 
 /obj/structure/bed/nest/post_buckle_mob(mob/living/M)
 	M.pixel_y = M.base_pixel_y

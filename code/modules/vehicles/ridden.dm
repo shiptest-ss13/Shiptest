@@ -39,21 +39,21 @@
 /obj/vehicle/ridden/attackby(obj/item/I, mob/user, params)
 	if(key_type && !is_key(inserted_key) && is_key(I))
 		if(user.transferItemToLoc(I, src))
-			to_chat(user, span_notice("You insert \the [I] into \the [src].") )
+			to_chat(user, span_notice("You insert \the [I] into \the [src]."))
 			if(inserted_key)	//just in case there's an invalid key
 				inserted_key.forceMove(drop_location())
 			inserted_key = I
 		else
-			to_chat(user, span_warning("[I] seems to be stuck to your hand!") )
+			to_chat(user, span_warning("[I] seems to be stuck to your hand!"))
 		return
 	return ..()
 
 /obj/vehicle/ridden/AltClick(mob/user)
 	if(inserted_key && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(!is_occupant(user))
-			to_chat(user, span_warning("You must be riding the [src] to remove [src]'s key!") )
+			to_chat(user, span_warning("You must be riding the [src] to remove [src]'s key!"))
 			return
-		to_chat(user, span_notice("You remove \the [inserted_key] from \the [src].") )
+		to_chat(user, span_notice("You remove \the [inserted_key] from \the [src]."))
 		inserted_key.forceMove(drop_location())
 		user.put_in_hands(inserted_key)
 		inserted_key = null
@@ -62,13 +62,13 @@
 /obj/vehicle/ridden/driver_move(mob/living/user, direction)
 	if(key_type && !is_key(inserted_key))
 		if(message_cooldown < world.time)
-			to_chat(user, span_warning("[src] has no key inserted!") )
+			to_chat(user, span_warning("[src] has no key inserted!"))
 			message_cooldown = world.time + 5 SECONDS
 		return FALSE
 	if(legs_required)
 		if(user.usable_legs < legs_required)
 			if(message_cooldown < world.time)
-				to_chat(user, span_warning("You can't seem to manage that with[user.usable_legs ? " your leg[user.usable_legs > 1 ? "s" : null]" : "out legs"]...") )
+				to_chat(user, span_warning("You can't seem to manage that with[user.usable_legs ? " your leg[user.usable_legs > 1 ? "s" : null]" : "out legs"]..."))
 				message_cooldown = world.time + 5 SECONDS
 			return FALSE
 	if(arms_required)
@@ -76,14 +76,14 @@
 			if(fall_off_if_missing_arms)
 				unbuckle_mob(user, TRUE)
 				user.visible_message(span_danger("[user] falls off \the [src].") ,\
-				span_danger("You fall off \the [src] while trying to operate it without [arms_required ? "both arms":"an arm"]!") )
+				span_danger("You fall off \the [src] while trying to operate it without [arms_required ? "both arms":"an arm"]!"))
 				if(isliving(user))
 					var/mob/living/L = user
 					L.Stun(30)
 				return FALSE
 
 			if(message_cooldown < world.time)
-				to_chat(user, span_warning("You can't seem to manage that with[user.usable_hands ? " your arm[user.usable_hands > 1 ? "s" : null]" : "out arms"]...") )
+				to_chat(user, span_warning("You can't seem to manage that with[user.usable_hands ? " your arm[user.usable_hands > 1 ? "s" : null]" : "out arms"]..."))
 				message_cooldown = world.time + 5 SECONDS
 			return FALSE
 	var/datum/component/riding/R = GetComponent(/datum/component/riding)

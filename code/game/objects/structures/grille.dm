@@ -70,7 +70,7 @@
 		if(RCD_DECONSTRUCT)
 			if(resistance_flags & INDESTRUCTIBLE)
 				return FALSE
-			to_chat(user, span_notice("You deconstruct the grille.") )
+			to_chat(user, span_notice("You deconstruct the grille."))
 			qdel(src)
 			return TRUE
 		if(RCD_WINDOWGRILLE)
@@ -82,7 +82,7 @@
 			var/obj/structure/window/window_path = the_rcd.window_type
 			if(!valid_window_location(T, user.dir, is_fulltile = initial(window_path.fulltile)))
 				return FALSE
-			to_chat(user, span_notice("You construct the window.") )
+			to_chat(user, span_notice("You construct the window."))
 			var/obj/structure/window/WD = new the_rcd.window_type(T, user.dir)
 			WD.set_anchored(TRUE)
 			return TRUE
@@ -153,14 +153,14 @@
 			set_anchored(!anchored)
 			user.visible_message(
 				span_notice("[user] [anchored ? "fastens" : "unfastens"] [src].") , \
-				span_notice("You [anchored ? "fasten [src] to" : "unfasten [src] from"] the floor.") )
+				span_notice("You [anchored ? "fasten [src] to" : "unfasten [src] from"] the floor."))
 			return
 	else if(istype(W, /obj/item/stack/rods) && broken)
 		var/obj/item/stack/rods/R = W
 		if(!shock(user, 90))
 			user.visible_message(
 				span_notice("[user] rebuilds the broken grille.") , \
-				span_notice("You rebuild the broken grille.") )
+				span_notice("You rebuild the broken grille."))
 			new grille_type(src.loc)
 			R.use(1)
 			qdel(src)
@@ -171,16 +171,16 @@
 		if (!broken)
 			var/obj/item/stack/ST = W
 			if (ST.get_amount() < 2)
-				to_chat(user, span_warning("You need at least two sheets of glass for that!") )
+				to_chat(user, span_warning("You need at least two sheets of glass for that!"))
 				return
 			var/dir_to_set = SOUTHWEST
 			if(!anchored)
-				to_chat(user, span_warning("[src] needs to be fastened to the floor first!") )
+				to_chat(user, span_warning("[src] needs to be fastened to the floor first!"))
 				return
 			for(var/obj/structure/window/WINDOW in loc)
-				to_chat(user, span_warning("There is already a window there!") )
+				to_chat(user, span_warning("There is already a window there!"))
 				return
-			to_chat(user, span_notice("You start placing the window...") )
+			to_chat(user, span_notice("You start placing the window..."))
 			if(do_after(user,20, target = src))
 				if(!src.loc || !anchored) //Grille broken or unanchored while waiting
 					return
@@ -203,7 +203,7 @@
 				WD.set_anchored(FALSE)
 				WD.state = 0
 				ST.use(2)
-				to_chat(user, span_notice("You place [WD] on [src].") )
+				to_chat(user, span_notice("You place [WD] on [src]."))
 			return
 //window placing end
 
@@ -237,7 +237,7 @@
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, 1 SECONDS, volume=100))
-		to_chat(user, span_warning("You slice [src] apart.") )
+		to_chat(user, span_warning("You slice [src] apart."))
 		deconstruct(FALSE)
 		return TRUE
 

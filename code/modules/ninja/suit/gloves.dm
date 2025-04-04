@@ -63,16 +63,16 @@
 
 	if(isnum(.)) //Numerical values of drained handle their feedback here, Alpha values handle it themselves (Research hacking)
 		if(.)
-			to_chat(H, span_notice("Gained <B>[DisplayEnergy(.)]</B> of energy from [A].") )
+			to_chat(H, span_notice("Gained <B>[DisplayEnergy(.)]</B> of energy from [A]."))
 		else
-			to_chat(H, span_danger("\The [A] has run dry of energy, you must find another source!") )
+			to_chat(H, span_danger("\The [A] has run dry of energy, you must find another source!"))
 	else
 		. = FALSE	//as to not cancel attack_hand()
 
 
 /obj/item/clothing/gloves/space_ninja/proc/toggledrain()
 	var/mob/living/carbon/human/U = loc
-	to_chat(U, span_notice("You [candrain?"disable":"enable"] special interaction.") )
+	to_chat(U, span_notice("You [candrain?"disable":"enable"] special interaction."))
 	candrain=!candrain
 
 /obj/item/clothing/gloves/space_ninja/examine(mob/user)

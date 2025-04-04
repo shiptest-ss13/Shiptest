@@ -97,10 +97,10 @@
 /obj/machinery/door/proc/try_safety_unlock(mob/user, closing = FALSE)
 	if(safety_mode && !hasPower() && (closing || density))
 		if(locked)
-			to_chat(user, span_notice("You begin to lift [src]'s bolt with the safety mechanism...") )
+			to_chat(user, span_notice("You begin to lift [src]'s bolt with the safety mechanism..."))
 			if(do_after(user, 20 SECONDS, target = src)) //unbolting takes 20 seconds
 				unlock()
-		to_chat(user, span_notice("You begin [density ? "opening" : "closing"] [src] with the safety mechanism...") )
+		to_chat(user, span_notice("You begin [density ? "opening" : "closing"] [src] with the safety mechanism..."))
 		if((!density && do_after(user, 5 SECONDS, target = src)) || do_after(user, 15 SECONDS, target = src)) //closing takes 5 seconds, opening takes 15
 			try_to_crowbar(null, user)
 			return TRUE
@@ -392,7 +392,7 @@
 
 /obj/machinery/door/proc/crush()
 	for(var/mob/living/L in get_turf(src))
-		L.visible_message(span_warning("[src] closes on [L], crushing [L.p_them()]!") , span_userdanger("[src] closes on you and crushes you!") )
+		L.visible_message(span_warning("[src] closes on [L], crushing [L.p_them()]!") , span_userdanger("[src] closes on you and crushes you!"))
 		if(isalien(L))  //For xenos
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE * 1.5) //Xenos go into crit after aproximately the same amount of crushes as humans.
 			L.manual_emote("roar")
