@@ -422,7 +422,7 @@
 
 		if(method == INGEST)
 			if(show_message)
-				to_chat(M, "<span class='notice'>That tasted horrible.</span>")
+				to_chat(M, span_notice("That tasted horrible.") )
 	..()
 
 /datum/reagent/mulligan
@@ -436,7 +436,7 @@
 	..()
 	if (!istype(H))
 		return
-	to_chat(H, "<span class='warning'><b>You grit your teeth in pain as your body rapidly mutates!</b></span>")
+	to_chat(H, span_warning("<b>You grit your teeth in pain as your body rapidly mutates!</b>") )
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
 
@@ -882,7 +882,7 @@
 
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
-		to_chat(M, "<span class='warning'>You feel unstable...</span>")
+		to_chat(M, span_warning("You feel unstable...") )
 		M.adjust_jitter(2)
 		current_cycle = 1
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
@@ -1785,7 +1785,7 @@
 			var/mob/living/carbon/human/H = M
 			var/datum/sprite_accessory/hair/picked_hair = pick(GLOB.hairstyles_list)
 			var/datum/sprite_accessory/facial_hair/picked_beard = pick(GLOB.facial_hairstyles_list)
-			to_chat(H, "<span class='notice'>Hair starts sprouting from your scalp.</span>")
+			to_chat(H, span_notice("Hair starts sprouting from your scalp.") )
 			H.hairstyle = picked_hair
 			H.facial_hairstyle = picked_beard
 			H.update_hair()
@@ -1801,7 +1801,7 @@
 	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='notice'>Your hair starts growing at an incredible speed!</span>")
+			to_chat(H, span_notice("Your hair starts growing at an incredible speed!") )
 			H.hairstyle = "Very Long Hair"
 			H.facial_hairstyle = "Beard (Very Long)"
 			H.update_hair()
@@ -1817,7 +1817,7 @@
 	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='danger'>Your hair is falling out in clumps!</span>")
+			to_chat(H, span_danger("Your hair is falling out in clumps!") )
 			H.hairstyle = "Bald"
 			H.facial_hairstyle = "Shaved"
 			H.update_hair()
@@ -2107,7 +2107,7 @@
 			var/dread = pick("Something is moving in your stomach...", \
 				"A wet growl echoes from your stomach...", \
 				"For a moment you feel like your surroundings are moving, but it's your stomach...")
-			to_chat(C, "<span class='userdanger'>[dread]</span>")
+			to_chat(C, span_userdanger("[dread]") )
 			yuck_cycle = current_cycle
 	else
 		var/yuck_cycles = current_cycle - yuck_cycle
@@ -2255,7 +2255,7 @@
 
 
 		if(prob(33))
-			to_chat(H,"<span class='danger'>Your body is trying to give up, but your heart is still beating!</span>")
+			to_chat(H,span_danger("Your body is trying to give up, but your heart is still beating!") )
 	. = ..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/M)
@@ -2263,7 +2263,7 @@
 	. = ..()
 
 /datum/reagent/determination/overdose_process(mob/living/carbon/human/H)
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	to_chat(H,span_danger("You feel your heart rupturing in two!") )
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
@@ -2287,7 +2287,7 @@
 	. = 1
 
 /datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H) //TODO port bee's regen cores legioning miners, and make it only do that if overdosed on crystal
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	to_chat(H,span_danger("You feel your heart rupturing in two!") )
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
@@ -2350,8 +2350,8 @@
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
-		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
-		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
+		L.visible_message(span_danger("<font size = 6>Grips their head and dances around, collapsing to the floor!</font>") , \
+		span_danger("<font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font>") )
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
@@ -2371,7 +2371,7 @@
 		H.seizure()
 		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
 	if(prob(7))
-		to_chat(M, "<span class='warning'><font size = [rand(1,3)]>[pick(dose_messages)]</font></span>")
+		to_chat(M, span_warning("<font size = [rand(1,3)]>[pick(dose_messages)]</font>") )
 
 /datum/reagent/three_eye/overdose_start(mob/living/M)
 	on_mob_metabolize(M) //set worthy
@@ -2392,13 +2392,13 @@
 		var/mob/living/carbon/C = M
 		C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 2))
 	if(prob(7))
-		to_chat(M, "<span class='danger'><font size = [rand(2,4)]>[pick(overdose_messages)]</font></span>")
+		to_chat(M, span_danger("<font size = [rand(2,4)]>[pick(overdose_messages)]</font>") )
 
 /datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
-		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
+		to_chat(L, span_danger("<font size = 6>Your mind reels and the world begins to fade away...</font>") )
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain

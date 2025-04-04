@@ -59,7 +59,7 @@
 
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
-	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
+	. += span_info("You can use the revolver with your <b>other empty hand</b> to empty the cylinder.") 
 
 /obj/item/gun/ballistic/revolver/update_overlays()
 	. = ..()
@@ -79,7 +79,7 @@
 	if(loc == user && user.is_holding(src))
 		var/num_unloaded = unload_all_ammo(user)
 		if (num_unloaded)
-			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
+			to_chat(user, span_notice("You unload [num_unloaded] [cartridge_wording]\s from [src].") )
 			if(!gate_loaded)
 				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
 			SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
@@ -133,7 +133,7 @@
 		casing_to_eject = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
 	if(!casing_to_eject) //if theres STILL nothing, we cancel this
 		if(user)
-			to_chat(user, "<span class='warning'>There's nothing in the gate to eject from [src]!</span>")
+			to_chat(user, span_warning("There's nothing in the gate to eject from [src]!") )
 		return FALSE
 	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
 	casing_to_eject.forceMove(drop_location())
@@ -151,7 +151,7 @@
 
 
 	if(user)
-		to_chat(user, "<span class='notice'>You eject the [cartridge_wording] from [src].</span>")
+		to_chat(user, span_notice("You eject the [cartridge_wording] from [src].") )
 	return TRUE
 
 /obj/item/gun/ballistic/revolver/proc/insert_casing(mob/living/user, obj/item/ammo_casing/casing_to_insert, allow_ejection)
@@ -160,7 +160,7 @@
 
 // Check if the bullet's caliber matches the magazine's caliber.If not, send a warning message to the user and return FALSE.
 	if(casing_to_insert.caliber != magazine.caliber)
-		to_chat(user, "<span class='warning'>\The [casing_to_insert] is not suitable for [src].</span>")
+		to_chat(user, span_warning("\The [casing_to_insert] is not suitable for [src].") )
 		return FALSE
 
 	var/list/rounds = magazine.ammo_list()
@@ -190,7 +190,7 @@
 		rounds = magazine.ammo_list()
 		slot = rounds[gate_offset+1] //check again
 		if(slot)
-			to_chat(user, "<span class='warning'>There's already a casing in the gate of [src]!</span>")
+			to_chat(user, span_warning("There's already a casing in the gate of [src]!") )
 			return FALSE
 
 		magazine.stored_ammo[gate_offset+1] = casing_to_insert
@@ -200,7 +200,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 	if(user)
-		to_chat(user, "<span class='notice'>You load the [cartridge_wording] into [src].</span>")
+		to_chat(user, span_notice("You load the [cartridge_wording] into [src].") )
 	return TRUE
 
 /obj/item/gun/ballistic/revolver/attackby(obj/item/attacking_obj, mob/user, params)
@@ -215,7 +215,7 @@
 			listclearnulls(ammo_list_no_empty)
 
 			if(ammo_list_no_empty.len >= num_to_load)
-				to_chat(user, "<span class='warning'>There's no empty space in [src]!</span>")
+				to_chat(user, span_warning("There's no empty space in [src]!") )
 				return TRUE
 
 			if(!gate_loaded) //"normal" revolvers
@@ -263,7 +263,7 @@
 						break
 
 			if(num_loaded)
-				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into [src].</span>")
+				to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into [src].") )
 				attacking_box.update_appearance()
 				update_appearance()
 			return TRUE
@@ -280,7 +280,7 @@
 		if(safety && toggle_hammer)
 			toggle_safety(user, FALSE, FALSE)
 		else if(toggle_hammer)
-			to_chat(user, "<span class='warning'>The [safety_wording] is already [safety ? "<span class='green'>UP</span>" : "<span class='red'>DOWN</span>"]! Use Ctrl-Click to disengage the [safety_wording]!</span>")
+			to_chat(user, span_warning("The [safety_wording] is already [safety ? "<span class='green'>UP")  : span_red("DOWN") ]! Use Ctrl-Click to disengage the [safety_wording]!</span>")
 			return
 	else if(!semi_auto)
 		if(safety && toggle_hammer)
@@ -288,7 +288,7 @@
 		else if (toggle_hammer)
 			return
 	if(user && semi_auto)
-		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
+		to_chat(user, span_notice("You rack the [bolt_wording] of \the [src].") )
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 
 	if(!safety && !semi_auto)
@@ -376,7 +376,7 @@
 
 	if(do_spin())
 		playsound(usr, "revolver_spin", 30, FALSE)
-		usr.visible_message("<span class='notice'>[usr] spins [src]'s chamber.</span>", "<span class='notice'>You spin [src]'s chamber.</span>")
+		usr.visible_message(span_notice("[usr] spins [src]'s chamber.") , span_notice("You spin [src]'s chamber.") )
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
 
@@ -404,8 +404,8 @@
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		if(user)
 			user.visible_message(
-				span_notice("[user] pulls the [safety_wording] on [src] [safety ? "<span class='green'>UP</span>" : "<span class='red'>DOWN</span>"]."),
-				span_notice("You pull the [safety_wording] on [src] [safety ? "<span class='green'>UP</span>" : "<span class='red'>DOWN</span>"]."),
+				span_notice("[user] pulls the [safety_wording] on [src] [safety ? span_green("UP")  : span_red("DOWN") ]."),
+				span_notice("You pull the [safety_wording] on [src] [safety ? span_green("UP")  : span_red("DOWN") ]."),
 			)
 
 	update_appearance()
@@ -440,12 +440,12 @@
 
 /obj/item/gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	if(!safety)
-		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
+		to_chat(user, span_danger("*[dry_fire_text]*") )
 		playsound(src, dry_fire_sound, 30, TRUE)
 		if(!semi_auto)
 			toggle_safety(silent = TRUE, rack_gun = FALSE)
 		return
-	to_chat(user, "<span class='danger'>The hammer is up on [src]! Pull it down to fire!</span>")
+	to_chat(user, span_danger("The hammer is up on [src]! Pull it down to fire!") )
 
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
@@ -456,7 +456,7 @@
 		if(COOLDOWN_FINISHED(src, flip_cooldown))
 			COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
 			SpinAnimation(5,1)
-			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
+			user.visible_message(span_notice("[user] spins the [src] around their finger by the trigger. That’s pretty badass.") )
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
 

@@ -77,7 +77,7 @@
 		var/obj/item/multitool/M = I
 		if(M.buffer && istype(M.buffer, /obj/machinery/porta_turret))
 			turret_refs |= WEAKREF(M.buffer)
-			to_chat(user, "<span class='notice'>You link \the [M.buffer] with \the [src].</span>")
+			to_chat(user, span_notice("You link \the [M.buffer] with \the [src].") )
 			return
 
 	if(issilicon(user))

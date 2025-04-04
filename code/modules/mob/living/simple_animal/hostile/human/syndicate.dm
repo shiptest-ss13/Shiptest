@@ -71,7 +71,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/bullet_act(obj/projectile/Proj)
 	if(prob(projectile_deflect_chance))
-		visible_message("<span class='danger'>[src] blocks [Proj] with its shield!</span>")
+		visible_message(span_danger("[src] blocks [Proj] with its shield!") )
 		return BULLET_ACT_BLOCK
 	return ..()
 

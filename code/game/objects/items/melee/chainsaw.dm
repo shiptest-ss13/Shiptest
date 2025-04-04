@@ -56,13 +56,13 @@
 
 /obj/item/chainsaw/doomslayer
 	name = "THE GREAT COMMUNICATOR"
-	desc = "<span class='warning'>VRRRRRRR!!!</span>"
+	desc = span_warning("VRRRRRRR!!!") 
 	armour_penetration = 100
 	active_force = 30
 
 /obj/item/chainsaw/doomslayer/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
-		owner.visible_message("<span class='danger'>Ranged attacks just make [owner] angrier!</span>")
+		owner.visible_message(span_danger("Ranged attacks just make [owner] angrier!") )
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
 		return 1
 	return 0

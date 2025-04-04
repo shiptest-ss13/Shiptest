@@ -152,4 +152,4 @@
 	spread_unwielded = 15
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	to_chat(user, "<span class='danger'>You hear a strange sound from the DMA unit. It doesn't appear to be operational.</span>")
+	to_chat(user, span_danger("You hear a strange sound from the DMA unit. It doesn't appear to be operational.") )

@@ -107,7 +107,7 @@
 		if(QDELETED(src))
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
-		to_chat(user, "<span class='notice'>You cut the [src] into strips with [tool].</span>")
+		to_chat(user, span_notice("You cut the [src] into strips with [tool].") )
 		var/obj/item/stack/sheet/cotton/cloth/cloth = new (get_turf(src), clothamnt)
 		user.put_in_hands(cloth)
 		qdel(src)
@@ -115,11 +115,11 @@
 	if(damaged_clothes && istype(tool, /obj/item/stack/sheet/cotton/cloth))
 		var/obj/item/stack/sheet/cotton/cloth/cloth = tool
 		if(!cloth.use(1))
-			to_chat(user, "<span class='notice'>You fail to fix the damage on [src].</span>")
+			to_chat(user, span_notice("You fail to fix the damage on [src].") )
 			return TRUE
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damage on [src] with [cloth].</span>")
+		to_chat(user, span_notice("You fix the damage on [src] with [cloth].") )
 		return TRUE
 	return ..()
 
@@ -186,7 +186,7 @@
 		if (1601 to 35000)
 			. += "[src] offers the wearer robust protection from fire."
 	if(damaged_clothes)
-		. += "<span class='warning'>It looks damaged!</span>"
+		. += span_warning("It looks damaged!") 
 	var/datum/component/storage/pockets = GetComponent(/datum/component/storage)
 	if(pockets)
 		var/list/how_cool_are_your_threads = list("<span class='notice'>")
@@ -232,7 +232,7 @@
 		durability_list += list("ACID" = armor.acid)
 
 	if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
-		. += "<span class='notice'>It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.</span>"
+		. += span_notice("It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.") 
 
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()
@@ -291,7 +291,7 @@
 		update_clothes_damaged_state(TRUE)
 	if(ismob(loc)) //It's not important enough to warrant a message if nobody's wearing it
 		var/mob/M = loc
-		to_chat(M, "<span class='warning'>Your [name] starts to fall apart!</span>")
+		to_chat(M, span_warning("Your [name] starts to fall apart!") )
 
 //This mostly exists so subtypes can call appriopriate update icon calls on the wearer.
 /obj/item/clothing/proc/update_clothes_damaged_state(damaging = TRUE)
@@ -396,20 +396,20 @@
 	var/list/modes = list("Off", "Binary vitals", "Exact vitals", "Tracking beacon")
 	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
 	if(get_dist(usr, src) > 1)
-		to_chat(usr, "<span class='warning'>You have moved too far away!</span>")
+		to_chat(usr, span_warning("You have moved too far away!") )
 		return
 	sensor_mode = modes.Find(switchMode) - 1
 
 	if (src.loc == usr)
 		switch(sensor_mode)
 			if(0)
-				to_chat(usr, "<span class='notice'>You disable your suit's remote sensing equipment.</span>")
+				to_chat(usr, span_notice("You disable your suit's remote sensing equipment.") )
 			if(1)
-				to_chat(usr, "<span class='notice'>Your suit will now only report whether you are alive or dead.</span>")
+				to_chat(usr, span_notice("Your suit will now only report whether you are alive or dead.") )
 			if(2)
-				to_chat(usr, "<span class='notice'>Your suit will now only report your exact vital lifesigns.</span>")
+				to_chat(usr, span_notice("Your suit will now only report your exact vital lifesigns.") )
 			if(3)
-				to_chat(usr, "<span class='notice'>Your suit will now report your exact vital lifesigns as well as your coordinate position.</span>")
+				to_chat(usr, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position.") )
 
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
@@ -452,12 +452,12 @@
 	if(!can_use(usr))
 		return
 	if(!can_adjust)
-		to_chat(usr, "<span class='warning'>You cannot wear this suit any differently!</span>")
+		to_chat(usr, span_warning("You cannot wear this suit any differently!") )
 		return
 	if(toggle_jumpsuit_adjust())
-		to_chat(usr, "<span class='notice'>You adjust the suit to wear it more casually.</span>")
+		to_chat(usr, span_notice("You adjust the suit to wear it more casually.") )
 	else
-		to_chat(usr, "<span class='notice'>You adjust the suit back to normal.</span>")
+		to_chat(usr, span_notice("You adjust the suit back to normal.") )
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		H.update_inv_w_uniform()
@@ -481,7 +481,7 @@
 
 	visor_toggling()
 
-	to_chat(user, "<span class='notice'>You adjust \the [src] [up ? "up" : "down"].</span>")
+	to_chat(user, span_notice("You adjust \the [src] [up ? "up" : "down"].") )
 
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user

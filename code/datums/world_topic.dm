@@ -75,7 +75,7 @@
 		if(PRcounts[id] > PR_ANNOUNCEMENTS_PER_ROUND)
 			return
 
-	var/final_composed = "<span class='announce'>PR: [input[keyword]]</span>"
+	var/final_composed = span_announce("PR: [input[keyword]]")
 	for(var/client/C in GLOB.clients)
 		C.AnnouncePR(final_composed)
 
@@ -84,7 +84,7 @@
 	require_comms_key = TRUE
 
 /datum/world_topic/ahelp_relay/Run(list/input)
-	relay_msg_admins("<span class='adminnotice'><b><font color=red>HELP: </font> [input["source"]] [input["message_sender"]]: [input["message"]]</b></span>")
+	relay_msg_admins(span_adminnotice("<b><font color=red>HELP: </font> [input["source"]] [input["message_sender"]]: [input["message"]]</b>") )
 
 /datum/world_topic/comms_console
 	keyword = "Comms_Console"
@@ -250,14 +250,14 @@
 			if(GLOB.OOC_COLOR)
 				to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span></b></font>")
 			else
-				to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span></span>")
+				to_chat(C, span_ooc("<span class='prefix'>OOC:</span> <EM>[input["sender"]]:</EM> <span class='message linkify'>[message]</span>") )
 
 /datum/world_topic/asay_relay
 	keyword = "asay_send"
 	require_comms_key = TRUE
 
 /datum/world_topic/asay_relay/Run(list/input)
-	var/message = "<span class='adminsay'><span class='prefix'>ADMIN:</span> <EM>[input["sender"]]</EM>: <span class='message linkify'>[input["message"]]</span></span>"
+	var/message = span_adminsay("<span class='prefix'>ADMIN:</span> <EM>[input["sender"]]</EM>: <span class='message linkify'>[input["message"]]</span>")
 	message = emoji_parse(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 	message = keywords_lookup(message)
 	to_chat(GLOB.admins, message)

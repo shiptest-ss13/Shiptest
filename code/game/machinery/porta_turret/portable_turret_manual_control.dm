@@ -48,7 +48,7 @@
 		return FALSE
 	if(remote_controller)
 		if(warning_message)
-			to_chat(remote_controller, "<span class='warning'>Your uplink to [src] has been severed!</span>")
+			to_chat(remote_controller, span_warning("Your uplink to [src] has been severed!") )
 		quit_action.Remove(remote_controller)
 		toggle_action.Remove(remote_controller)
 		remote_controller.click_intercept = null

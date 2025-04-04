@@ -40,7 +40,7 @@
 		rapid_melee = initial(rapid_melee)
 		return
 	if(!aggressive_message_said && target)
-		visible_message("<span class='danger'>The [name] looks at [target] with an expression of rage!</span>")
+		visible_message(span_danger("The [name] looks at [target] with an expression of rage!") )
 		aggressive_message_said = TRUE
 	rapid_melee = 2
 	speed = 7

@@ -78,11 +78,11 @@
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/lighter/liz/N = new(H)
 	if(H.put_in_hands(N))
-		to_chat(H, "<span class='notice'>You ignite a small flame in your mouth.</span>")
+		to_chat(H, span_notice("You ignite a small flame in your mouth.") )
 		H.reagents.del_reagent(/datum/reagent/fuel,4)
 	else
 		qdel(N)
-		to_chat(H, "<span class='warning'>You don't have any free hands.</span>")
+		to_chat(H, span_warning("You don't have any free hands.") )
 
 /datum/action/innate/liz_lighter/IsAvailable()
 	if(..())

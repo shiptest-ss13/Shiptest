@@ -81,9 +81,9 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/AttackingTarget()
 	. = ..()
 	if(lava_drinker && !warmed_up && istype(target, /turf/open/lava))
-		visible_message("<span class='warning'>[src] begins to drink from [target]...</span>")
+		visible_message(span_warning("[src] begins to drink from [target]...") )
 		if(do_after(src, 70, target = target))
-			visible_message("<span class='warning'>[src] begins to fire up!</span>")
+			visible_message(span_warning("[src] begins to fire up!") )
 			fully_heal()
 			icon_state = "Basilisk_alert"
 			set_varspeed(0)
@@ -92,7 +92,7 @@
 			addtimer(CALLBACK(src, PROC_REF(cool_down)), 3000)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
-	visible_message("<span class='warning'>[src] appears to be cooling down...</span>")
+	visible_message(span_warning("[src] appears to be cooling down...") )
 	if(stat != DEAD)
 		icon_state = "Basilisk"
 	set_varspeed(3)
@@ -130,7 +130,7 @@
 				new l(loc)
 			if(!shell_snap_message)
 				playsound(src, "shatter", 80, FALSE)
-				audible_message("<span class='danger'>[src]'s shell violently cracks as it's armor is shattered!</span>")
+				audible_message(span_danger("[src]'s shell violently cracks as it's armor is shattered!") )
 				throw_message = "bounces off of"
 				shell_snap_message = TRUE //so it doesnt repeat
 		update_appearance()
@@ -159,7 +159,7 @@
 	shell_damage(P.damage/4)
 	if(has_shell)
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 85, TRUE)
-		visible_message("<span class='notice'>The [P] is absorbed by the [src]'s shell, dealing minimal damage!</span>") //make it less confusing when bullets do no damage
+		visible_message(span_notice("The [P] is absorbed by the [src]'s shell, dealing minimal damage!") ) //make it less confusing when bullets do no damage
 	return ..()
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
@@ -237,7 +237,7 @@
 
 	if(prob(5))
 		new /obj/item/gem/fdiamond(loc)
-		visible_message("<span class='warning'>The focusing diamond in [src]'s eye looks intact!</span>")
+		visible_message(span_warning("The focusing diamond in [src]'s eye looks intact!") )
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/Life()
