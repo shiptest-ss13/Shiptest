@@ -69,7 +69,7 @@
 			difficulty += BitCount(target.cartridge.access&(CART_MEDICAL | CART_SECURITY | CART_ENGINE | CART_CLOWN | CART_JANITOR))
 		else
 			log_bomber(U, "triggered a PDA explosion on", target, "[!is_special_character(U) ? "(TRIGGED BY NON-ANTAG)" : ""]")
-			U.show_message(span_notice("Success!") , MSG_VISUAL)
+			U.show_message(span_notice("Success!"), MSG_VISUAL)
 			target.explode()
 	else
 		to_chat(U, span_alert("PDA not found."))

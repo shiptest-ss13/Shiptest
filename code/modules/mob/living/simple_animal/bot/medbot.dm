@@ -282,7 +282,7 @@
 /mob/living/simple_animal/bot/medbot/proc/tip_over(mob/user)
 	ADD_TRAIT(src, TRAIT_IMMOBILIZED, BOT_TIPPED_OVER)
 	playsound(src, 'sound/machines/warning-buzzer.ogg', 50)
-	user.visible_message(span_danger("[user] tips over [src]!") , span_danger("You tip [src] over!"))
+	user.visible_message(span_danger("[user] tips over [src]!"), span_danger("You tip [src] over!"))
 	mode = BOT_TIPPED
 	var/matrix/mat = transform
 	transform = mat.Turn(180)
@@ -293,7 +293,7 @@
 	var/list/messagevoice
 
 	if(user)
-		user.visible_message(span_notice("[user] sets [src] right-side up!") , span_green("You set [src] right-side up!"))
+		user.visible_message(span_notice("[user] sets [src] right-side up!"), span_green("You set [src] right-side up!"))
 		if(user.name == tipper_name)
 			messagevoice = list("I forgive you." = 'sound/voice/medbot/forgive.ogg')
 		else
@@ -493,7 +493,7 @@
 		return
 
 	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
-		H.visible_message(span_danger("[H] begins tipping over [src].") , span_warning("You begin tipping over [src]..."))
+		H.visible_message(span_danger("[H] begins tipping over [src]."), span_warning("You begin tipping over [src]..."))
 
 		if(world.time > last_tipping_action_voice + 15 SECONDS)
 			last_tipping_action_voice = world.time // message for tipping happens when we start interacting, message for righting comes after finishing
@@ -506,7 +506,7 @@
 			tip_over(H)
 
 	else if(H.a_intent == INTENT_HELP && mode == BOT_TIPPED)
-		H.visible_message(span_notice("[H] begins righting [src].") , span_notice("You begin righting [src]..."))
+		H.visible_message(span_notice("[H] begins righting [src]."), span_notice("You begin righting [src]..."))
 		if(do_after(H, 3 SECONDS, target=src))
 			set_right(H)
 	else
@@ -574,7 +574,7 @@
 			bot_reset()
 			tending = FALSE
 		else if(patient)
-			C.visible_message(span_danger("[src] is trying to tend the wounds of [patient]!") , \
+			C.visible_message(span_danger("[src] is trying to tend the wounds of [patient]!"), \
 				span_userdanger("[src] is trying to tend your wounds!"))
 
 			if(do_after(src, 2 SECONDS, patient)) //Slightly faster than default tend wounds, but does less HPS
@@ -590,7 +590,7 @@
 					else
 						patient.apply_damage_type((healies*-1),treatment_method) //don't need to check treatment_method since we know by this point that they were actually damaged.
 						log_combat(src, patient, "tended the wounds of", "internal tools", "([uppertext(treatment_method)])")
-					C.visible_message(span_notice("[src] tends the wounds of [patient]!") , \
+					C.visible_message(span_notice("[src] tends the wounds of [patient]!"), \
 						span_green("[src] tends your wounds!"))
 					ADD_TRAIT(patient,TRAIT_MEDIBOTCOMINGTHROUGH,tag)
 					addtimer(TRAIT_CALLBACK_REMOVE(patient, TRAIT_MEDIBOTCOMINGTHROUGH, tag), (30 SECONDS))

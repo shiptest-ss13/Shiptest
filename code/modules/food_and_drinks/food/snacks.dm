@@ -114,32 +114,32 @@ All foods are distributed among various categories. Use common sense.
 				to_chat(M, span_warning("You don't feel like eating any more junk food at the moment!"))
 				return FALSE
 			else if(fullness <= 50)
-				user.visible_message(span_notice("[user] hungrily [eatverb]s \the [src], gobbling it down!") , span_notice("You hungrily [eatverb] \the [src], gobbling it down!"))
+				user.visible_message(span_notice("[user] hungrily [eatverb]s \the [src], gobbling it down!"), span_notice("You hungrily [eatverb] \the [src], gobbling it down!"))
 			else if(fullness > 50 && fullness < 150)
-				user.visible_message(span_notice("[user] hungrily [eatverb]s \the [src].") , span_notice("You hungrily [eatverb] \the [src]."))
+				user.visible_message(span_notice("[user] hungrily [eatverb]s \the [src]."), span_notice("You hungrily [eatverb] \the [src]."))
 			else if(fullness > 150 && fullness < 500)
-				user.visible_message(span_notice("[user] [eatverb]s \the [src].") , span_notice("You [eatverb] \the [src]."))
+				user.visible_message(span_notice("[user] [eatverb]s \the [src]."), span_notice("You [eatverb] \the [src]."))
 			else if(fullness > 500 && fullness < 600)
-				user.visible_message(span_notice("[user] unwillingly [eatverb]s a bit of \the [src].") , span_notice("You unwillingly [eatverb] a bit of \the [src]."))
+				user.visible_message(span_notice("[user] unwillingly [eatverb]s a bit of \the [src]."), span_notice("You unwillingly [eatverb] a bit of \the [src]."))
 			else if(fullness > (600 * (1 + M.overeatduration / 2000)))	// The more you eat - the more you can eat
-				user.visible_message(span_warning("[user] cannot force any more of \the [src] to go down [user.p_their()] throat!") , span_warning("You cannot force any more of \the [src] to go down your throat!"))
+				user.visible_message(span_warning("[user] cannot force any more of \the [src] to go down [user.p_their()] throat!"), span_warning("You cannot force any more of \the [src] to go down your throat!"))
 				return FALSE
 			if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 				M.changeNext_move(CLICK_CD_MELEE * 0.5) //nom nom nom
 		else
 			if(!isbrain(M))		//If you're feeding it to someone else.
 				if(fullness <= (600 * (1 + M.overeatduration / 1000)))
-					M.visible_message(span_danger("[user] attempts to feed [M] [src].") , \
+					M.visible_message(span_danger("[user] attempts to feed [M] [src]."), \
 										span_userdanger("[user] attempts to feed you [src]."))
 				else
-					M.visible_message(span_warning("[user] cannot force any more of [src] down [M]'s throat!") , \
+					M.visible_message(span_warning("[user] cannot force any more of [src] down [M]'s throat!"), \
 										span_warning("[user] cannot force any more of [src] down your throat!"))
 					return FALSE
 
 				if(!do_after(user, target = M))
 					return
 				log_combat(user, M, "fed", reagents.log_list())
-				M.visible_message(span_danger("[user] forces [M] to eat [src]!") , \
+				M.visible_message(span_danger("[user] forces [M] to eat [src]!"), \
 									span_userdanger("[user] forces you to eat [src]!"))
 
 			else

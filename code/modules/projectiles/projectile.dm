@@ -287,8 +287,8 @@
 		else
 			if(hitsound)
 				playsound(get_turf(L), hitsound, 100, TRUE, -1)
-			L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!") , \
-					span_userdanger("You're hit by \a [src][organ_hit_text]!") , null, COMBAT_MESSAGE_RANGE)
+			L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), \
+					span_userdanger("You're hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
 		L.on_hit(src)
 
 	var/reagent_note

@@ -117,8 +117,8 @@
 		return
 
 	if(istype(user_item, /obj/item/disk/design_disk/limbs))
-		user.visible_message(span_notice("[user] begins to load \the [user_item] in \the [src]...") ,
-			span_notice("You begin to load designs from \the [user_item]...") ,
+		user.visible_message(span_notice("[user] begins to load \the [user_item] in \the [src]..."),
+			span_notice("You begin to load designs from \the [user_item]..."),
 			span_hear("You hear the clatter of a floppy drive."))
 		busy = TRUE
 		var/obj/item/disk/design_disk/limbs/limb_design_disk = user_item

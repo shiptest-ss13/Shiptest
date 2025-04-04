@@ -75,7 +75,7 @@
 		if(user.usable_hands < arms_required)
 			if(fall_off_if_missing_arms)
 				unbuckle_mob(user, TRUE)
-				user.visible_message(span_danger("[user] falls off \the [src].") ,\
+				user.visible_message(span_danger("[user] falls off \the [src]."),\
 				span_danger("You fall off \the [src] while trying to operate it without [arms_required ? "both arms":"an arm"]!"))
 				if(isliving(user))
 					var/mob/living/L = user

@@ -231,7 +231,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
-	visible_message(span_notice("[occupant] emerges from [src]!") ,
+	visible_message(span_notice("[occupant] emerges from [src]!"),
 		span_notice("You climb out of [src]!"))
 	open_machine()
 

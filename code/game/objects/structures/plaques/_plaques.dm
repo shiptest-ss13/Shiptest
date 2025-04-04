@@ -37,14 +37,14 @@
 /obj/structure/plaque/wrench_act(mob/living/user, obj/item/wrench/I)
 	. = ..()
 	user.visible_message(
-		span_notice("[user] starts removing [src]...") , \
+		span_notice("[user] starts removing [src]..."), \
 		span_notice("You start unfastening [src]."))
 	I.play_tool_sound(src)
 	if(!I.use_tool(src, user, 4 SECONDS))
 		return TRUE
 	playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 	user.visible_message(
-		span_notice("[user] unfastens [src].") , \
+		span_notice("[user] unfastens [src]."), \
 		span_notice("You unfasten [src]."))
 	var/obj/item/plaque/unwrenched_plaque = new (get_turf(user))
 	if(engraved) //If it's still just a basic unengraved plaque, we can (and should) skip some of the below variable transfers.
@@ -66,12 +66,12 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 	user.visible_message(
-		span_notice("[user] starts repairing [src]...") , \
+		span_notice("[user] starts repairing [src]..."), \
 		span_notice("You start repairing [src]."))
 	if(!I.use_tool(src, user, 4 SECONDS, volume = 50))
 		return TRUE
 	user.visible_message(
-		span_notice("[user] finishes repairing [src].") , \
+		span_notice("[user] finishes repairing [src]."), \
 		span_notice("You finish repairing [src]."))
 	obj_integrity = max_integrity
 	return TRUE
@@ -86,12 +86,12 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 	user.visible_message(
-		span_notice("[user] starts repairing [src]...") , \
+		span_notice("[user] starts repairing [src]..."), \
 		span_notice("You start repairing [src]."))
 	if(!I.use_tool(src, user, 4 SECONDS, volume = 50))
 		return TRUE
 	user.visible_message(
-		span_notice("[user] finishes repairing [src].") , \
+		span_notice("[user] finishes repairing [src]."), \
 		span_notice("You finish repairing [src]."))
 	obj_integrity = max_integrity
 	return TRUE
@@ -111,7 +111,7 @@
 			to_chat(user, span_warning("You need to stand next to the plaque to engrave it!"))
 			return
 		user.visible_message(
-			span_notice("[user] begins engraving [src].") , \
+			span_notice("[user] begins engraving [src]."), \
 			span_notice("You begin engraving [src]."))
 		if(!do_after(user, 4 SECONDS, target = src)) //This spits out a visible message that somebody is engraving a plaque, then has a delay.
 			return
@@ -119,7 +119,7 @@
 		desc = "The plaque reads: '[descriptionchoice]'"
 		engraved = TRUE //The plaque now has a name, description, and can't be altered again.
 		user.visible_message(
-			span_notice("[user] engraves [src].") , \
+			span_notice("[user] engraves [src]."), \
 			span_notice("You engrave [src]."))
 		return
 	if(istype(I, /obj/item/pen))
@@ -145,7 +145,7 @@
 			to_chat(user, span_warning("You need to stand next to the plaque to engrave it!"))
 			return
 		user.visible_message(
-			span_notice("[user] begins engraving [src].") , \
+			span_notice("[user] begins engraving [src]."), \
 			span_notice("You begin engraving [src]."))
 		if(!do_after(user, 40, target = src)) //This spits out a visible message that somebody is engraving a plaque, then has a delay.
 			return
@@ -153,7 +153,7 @@
 		desc = "The plaque reads: '[descriptionchoice]'"
 		engraved = TRUE //The plaque now has a name, description, and can't be altered again.
 		user.visible_message(
-			span_notice("[user] engraves [src].") , \
+			span_notice("[user] engraves [src]."), \
 			span_notice("You engrave [src]."))
 		return
 	if(istype(I, /obj/item/pen))
@@ -182,7 +182,7 @@
 	else if(dir & WEST)
 		placed_plaque.pixel_x = -32
 	user.visible_message(
-		span_notice("[user] fastens [src] to [target_turf].") , \
+		span_notice("[user] fastens [src] to [target_turf]."), \
 		span_notice("You attach [src] to [target_turf]."))
 	playsound(target_turf, 'sound/items/deconstruct.ogg', 50, TRUE)
 	if(engraved)

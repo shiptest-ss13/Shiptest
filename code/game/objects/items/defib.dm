@@ -449,7 +449,7 @@
 	if(!req_defib && !combat)
 		return
 	busy = TRUE
-	M.visible_message(span_danger("[user] touches [M] with [src]!") , \
+	M.visible_message(span_danger("[user] touches [M] with [src]!"), \
 			span_userdanger("[user] touches [M] with [src]!"))
 	M.adjustStaminaLoss(60)
 	M.Knockdown(75)
@@ -474,12 +474,12 @@
 		return
 	if(!req_defib && !combat)
 		return
-	user.visible_message(span_warning("[user] begins to place [src] on [H]'s chest.") ,
+	user.visible_message(span_warning("[user] begins to place [src] on [H]'s chest."),
 		span_warning("You overcharge the paddles and begin to place them onto [H]'s chest..."))
 	busy = TRUE
 	update_appearance()
 	if(do_after(user, 15, target = H))
-		user.visible_message(span_notice("[user] places [src] on [H]'s chest.") ,
+		user.visible_message(span_notice("[user] places [src] on [H]'s chest."),
 			span_warning("You place [src] on [H]'s chest and begin to charge them."))
 		var/turf/T = get_turf(defib)
 		playsound(src, 'sound/machines/defib_charge.ogg', 50, FALSE)
@@ -498,14 +498,14 @@
 				busy = FALSE
 				update_appearance()
 				return
-			user.visible_message(span_boldannounce("<i>[user] shocks [H] with \the [src]!") , span_warning("You shock [H] with \the [src]!"))
+			user.visible_message(span_boldannounce("<i>[user] shocks [H] with \the [src]!"), span_warning("You shock [H] with \the [src]!"))
 			playsound(src, 'sound/machines/defib_zap.ogg', 100, TRUE, -1)
 			playsound(src, 'sound/weapons/egloves.ogg', 100, TRUE, -1)
 			H.force_scream()
 			shock_touching(45, H)
 			if(H.can_heartattack() && !H.undergoing_cardiac_arrest())
 				if(!H.stat)
-					H.visible_message(span_warning("[H] thrashes wildly, clutching at [H.p_their()] chest!") ,
+					H.visible_message(span_warning("[H] thrashes wildly, clutching at [H.p_their()] chest!"),
 						span_userdanger("You feel a horrible agony in your chest!"))
 				H.set_heartattack(TRUE)
 			H.apply_damage(50, BURN, BODY_ZONE_CHEST)
@@ -525,11 +525,11 @@
 	update_appearance()
 
 /obj/item/shockpaddles/proc/do_help(mob/living/carbon/H, mob/living/user)
-	user.visible_message(span_warning("[user] begins to place [src] on [H]'s chest.") , span_warning("You begin to place [src] on [H]'s chest..."))
+	user.visible_message(span_warning("[user] begins to place [src] on [H]'s chest."), span_warning("You begin to place [src] on [H]'s chest..."))
 	busy = TRUE
 	update_appearance()
 	if(do_after(user, 30, target = H)) //beginning to place the paddles on patient's chest to allow some time for people to move away to stop the process
-		user.visible_message(span_notice("[user] places [src] on [H]'s chest.") , span_warning("You place [src] on [H]'s chest."))
+		user.visible_message(span_notice("[user] places [src] on [H]'s chest."), span_warning("You place [src] on [H]'s chest."))
 		playsound(src, 'sound/machines/defib_charge.ogg', 75, FALSE)
 		var/total_burn	= 0
 		var/total_brute	= 0

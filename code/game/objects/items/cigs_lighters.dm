@@ -528,7 +528,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette/pipe/attack_self(mob/user)
 	var/turf/location = get_turf(user)
 	if(lit)
-		user.visible_message(span_notice("[user] puts out [src].") , span_notice("You put out [src]."))
+		user.visible_message(span_notice("[user] puts out [src]."), span_notice("You put out [src]."))
 		lit = 0
 		icon_state = icon_off
 		item_state = icon_off
@@ -634,7 +634,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(!lit)
 			set_lit(TRUE)
 			if(fancy)
-				user.visible_message(span_notice("Without even breaking stride, [user] flips open and lights [src] in one smooth movement.") , span_notice("Without even breaking stride, you flip open and light [src] in one smooth movement."))
+				user.visible_message(span_notice("Without even breaking stride, [user] flips open and lights [src] in one smooth movement."), span_notice("Without even breaking stride, you flip open and light [src] in one smooth movement."))
 				playsound(src.loc, 'sound/items/zippo_on.ogg', 100, 1)
 			else
 				var/prot = FALSE
@@ -648,21 +648,21 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 					prot = TRUE
 
 				if(prot || prob(75))
-					user.visible_message(span_notice("After a few attempts, [user] manages to light [src].") , span_notice("After a few attempts, you manage to light [src]."))
+					user.visible_message(span_notice("After a few attempts, [user] manages to light [src]."), span_notice("After a few attempts, you manage to light [src]."))
 				else
 					var/hitzone = user.held_index_to_dir(user.active_hand_index) == "r" ? BODY_ZONE_PRECISE_R_HAND : BODY_ZONE_PRECISE_L_HAND
 					user.apply_damage(5, BURN, hitzone)
-					user.visible_message(span_warning("After a few attempts, [user] manages to light [src] - however, [user.p_they()] burn [user.p_their()] finger in the process.") , span_warning("You burn yourself while lighting the lighter!"))
+					user.visible_message(span_warning("After a few attempts, [user] manages to light [src] - however, [user.p_they()] burn [user.p_their()] finger in the process."), span_warning("You burn yourself while lighting the lighter!"))
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "burnt_thumb", /datum/mood_event/burnt_thumb)
 				playsound(src.loc, 'sound/items/lighter_on.ogg', 100, 1)
 
 		else
 			set_lit(FALSE)
 			if(fancy)
-				user.visible_message(span_notice("You hear a quiet click, as [user] shuts off [src] without even looking at what [user.p_theyre()] doing. Wow.") , span_notice("You quietly shut off [src] without even looking at what you're doing. Wow."))
+				user.visible_message(span_notice("You hear a quiet click, as [user] shuts off [src] without even looking at what [user.p_theyre()] doing. Wow."), span_notice("You quietly shut off [src] without even looking at what you're doing. Wow."))
 				playsound(src.loc, 'sound/items/zippo_off.ogg', 100, 1)
 			else
-				user.visible_message(span_notice("[user] quietly shuts off [src].") , span_notice("You quietly shut off [src]."))
+				user.visible_message(span_notice("[user] quietly shuts off [src]."), span_notice("You quietly shut off [src]."))
 				playsound(src.loc, 'sound/items/lighter_off.ogg', 100, 1)
 	else
 		. = ..()
@@ -898,7 +898,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		on = !on
 		if(on)
 			user.visible_message(
-				span_notice("[user] turns on [user.p_their()] [src] with a holographic flame from [user.p_their()] [O].") ,
+				span_notice("[user] turns on [user.p_their()] [src] with a holographic flame from [user.p_their()] [O]."),
 				span_notice("You turn on your [src] with a holographic flame from your [O].")
 			)
 			reagents.flags |= NO_REACT
@@ -909,7 +909,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 		else
 			user.visible_message(
-				span_notice("[user] turns off [user.p_their()] [src] with a holographic gust from [user.p_their()] [O].") ,
+				span_notice("[user] turns off [user.p_their()] [src] with a holographic gust from [user.p_their()] [O]."),
 				span_notice("You turn off your [src] with a holographic gust from your [O].")
 			)
 			reagents.flags &= NO_REACT
@@ -929,7 +929,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	on = !on
 	if(on)
 		user.visible_message(
-			span_notice("[user] turns on [user.p_their()] [src] with a holographic flame from the APC.") ,
+			span_notice("[user] turns on [user.p_their()] [src] with a holographic flame from the APC."),
 			span_notice("You turn on your [src] with a holographic flame from the APC.")
 		)
 		reagents.flags |= NO_REACT
@@ -937,7 +937,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		item_state = "[vapecolor]_vape"
 	else
 		user.visible_message(
-			span_notice("[user] turns off [user.p_their()] [src] with a holographic gust from the APC.") ,
+			span_notice("[user] turns off [user.p_their()] [src] with a holographic gust from the APC."),
 			span_notice("You turn off your [src] with a holographic gust from the APC.")
 		)
 		reagents.flags &= NO_REACT

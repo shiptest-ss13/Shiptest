@@ -70,7 +70,7 @@
 			to_chat(user, span_warning("This fence has too much cut out of it already!"))
 			return
 
-		user.visible_message(span_danger("\The [user] starts cutting through \the [src] with \the [W].") ,\
+		user.visible_message(span_danger("\The [user] starts cutting through \the [src] with \the [W]."),\
 		span_danger("You start cutting through \the [src] with \the [W]."))
 
 		if(do_after(user, CUT_TIME*W.toolspeed, target = src))

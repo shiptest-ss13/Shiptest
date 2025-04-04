@@ -85,7 +85,7 @@
 		if(!user.transferItemToLoc(W, src))
 			to_chat(user, span_warning("For some reason, you can't attach [W]!"))
 			return
-		user.visible_message(span_notice("[user] attaches [W] to [src].") , span_notice("You attach [W] to [src]."))
+		user.visible_message(span_notice("[user] attaches [W] to [src]."), span_notice("You attach [W] to [src]."))
 		note = W
 		var/overlaystring = "[icon_state]_note"
 		if(giftwrapped)
@@ -103,7 +103,7 @@
 		if(tagger.paper_count <= 0)
 			to_chat(user, span_warning("[tagger] is out of paper!"))
 			return
-		user.visible_message(span_notice("[user] attaches a barcode to [src].") , span_notice("You attach a barcode to [src]."))
+		user.visible_message(span_notice("[user] attaches a barcode to [src]."), span_notice("You attach a barcode to [src]."))
 		tagger.paper_count -= 1
 		sticker = new /obj/item/barcode(src)
 		sticker.payments_acc = tagger.payments_acc	//new tag gets the tagger's current account.
@@ -262,7 +262,7 @@
 		if(!user.transferItemToLoc(W, src))
 			to_chat(user, span_warning("For some reason, you can't attach [W]!"))
 			return
-		user.visible_message(span_notice("[user] attaches [W] to [src].") , span_notice("You attach [W] to [src]."))
+		user.visible_message(span_notice("[user] attaches [W] to [src]."), span_notice("You attach [W] to [src]."))
 		note = W
 		var/overlaystring = "[icon_state]_note"
 		if(giftwrapped)
@@ -280,7 +280,7 @@
 		if(tagger.paper_count <= 0)
 			to_chat(user, span_warning("[tagger] is out of paper!"))
 			return
-		user.visible_message(span_notice("[user] attaches a barcode to [src].") , span_notice("You attach a barcode to [src]."))
+		user.visible_message(span_notice("[user] attaches a barcode to [src]."), span_notice("You attach a barcode to [src]."))
 		tagger.paper_count -= 1
 		sticker = new /obj/item/barcode(src)
 		sticker.payments_acc = tagger.payments_acc	//new tag gets the tagger's current account.

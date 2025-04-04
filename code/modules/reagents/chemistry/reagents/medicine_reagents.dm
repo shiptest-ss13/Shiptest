@@ -697,7 +697,7 @@
 
 /datum/reagent/medicine/ephedrine/addiction_act_stage1(mob/living/M)
 	if(prob(3) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!") , span_userdanger("You have a seizure!"))
+		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		M.Unconscious(100)
 		M.set_jitter(200)
 
@@ -709,7 +709,7 @@
 
 /datum/reagent/medicine/ephedrine/addiction_act_stage2(mob/living/M)
 	if(prob(6) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!") , span_userdanger("You have a seizure!"))
+		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		M.Unconscious(100)
 		M.set_jitter(400)
 
@@ -721,7 +721,7 @@
 
 /datum/reagent/medicine/ephedrine/addiction_act_stage3(mob/living/M)
 	if(prob(12) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!") , span_userdanger("You have a seizure!"))
+		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		M.Unconscious(100)
 		M.set_jitter(600)
 
@@ -733,7 +733,7 @@
 
 /datum/reagent/medicine/ephedrine/addiction_act_stage4(mob/living/M)
 	if(prob(24) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!") , span_userdanger("You have a seizure!"))
+		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 		M.Unconscious(100)
 		M.set_jitter(1000)
 
@@ -2216,7 +2216,7 @@
 		var/selected_part = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 		var/obj/item/bodypart/bp = M.get_bodypart(selected_part)
 		if(bp)
-			M.visible_message(span_warning("[M] feels a spike of pain!!") , span_danger("You feel a spike of pain!!"))
+			M.visible_message(span_warning("[M] feels a spike of pain!!"), span_danger("You feel a spike of pain!!"))
 			bp.receive_damage(0, 0, 200)
 		else	//SUCH A LUST FOR REVENGE!!!
 			to_chat(M, span_warning("A phantom limb hurts!"))

@@ -106,7 +106,7 @@
 	if(user.client && ((target in user.client.screen) && !user.is_holding(target)))
 		to_chat(user, span_warning("You need to take that [target.name] off before cleaning it!"))
 	else if(istype(target, /obj/effect/decal/cleanable))
-		user.visible_message(span_notice("[user] begins to scrub \the [target.name] out with [src].") , span_warning("You begin to scrub \the [target.name] out with [src]..."))
+		user.visible_message(span_notice("[user] begins to scrub \the [target.name] out with [src]."), span_warning("You begin to scrub \the [target.name] out with [src]..."))
 		if(do_after(user, clean_speedies, target = target))
 			to_chat(user, span_notice("You scrub \the [target.name] out."))
 			var/obj/effect/decal/cleanable/cleanies = target
@@ -116,13 +116,13 @@
 
 	else if(ishuman(target) && user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		var/mob/living/carbon/human/H = user
-		user.visible_message(span_warning("\the [user] washes \the [target]'s mouth out with [src.name]!") , span_notice("You wash \the [target]'s mouth out with [src.name]!")) //washes mouth out with soap sounds better than 'the soap' here			if(user.zone_selected == "mouth")
+		user.visible_message(span_warning("\the [user] washes \the [target]'s mouth out with [src.name]!"), span_notice("You wash \the [target]'s mouth out with [src.name]!")) //washes mouth out with soap sounds better than 'the soap' here			if(user.zone_selected == "mouth")
 		if(H.lip_style)
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			H.update_lips(null)
 		decreaseUses(user)
 	else if(istype(target, /obj/structure/window))
-		user.visible_message(span_notice("[user] begins to clean \the [target.name] with [src]...") , span_notice("You begin to clean \the [target.name] with [src]..."))
+		user.visible_message(span_notice("[user] begins to clean \the [target.name] with [src]..."), span_notice("You begin to clean \the [target.name] with [src]..."))
 		if(do_after(user, clean_speedies, target = target))
 			to_chat(user, span_notice("You clean \the [target.name]."))
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
@@ -130,7 +130,7 @@
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			decreaseUses(user)
 	else
-		user.visible_message(span_notice("[user] begins to clean \the [target.name] with [src]...") , span_notice("You begin to clean \the [target.name] with [src]..."))
+		user.visible_message(span_notice("[user] begins to clean \the [target.name] with [src]..."), span_notice("You begin to clean \the [target.name] with [src]..."))
 		if(do_after(user, clean_speedies, target = target))
 			to_chat(user, span_notice("You clean \the [target.name]."))
 			if(user && isturf(target))

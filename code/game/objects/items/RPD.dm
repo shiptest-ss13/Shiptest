@@ -365,7 +365,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 			playsound(get_turf(src), 'sound/machines/click.ogg', 50, TRUE)
 			if(do_after(user, paint_speed, target = A))
 				P.paint(GLOB.pipe_paint_colors[paint_color]) //paint the pipe
-				user.visible_message(span_notice("[user] paints \the [P] [paint_color].") ,span_notice("You paint \the [P] [paint_color]."))
+				user.visible_message(span_notice("[user] paints \the [P] [paint_color]."),span_notice("You paint \the [P] [paint_color]."))
 			return
 		var/obj/item/pipe/P = A
 		if(istype(P) && findtext("[P.pipe_type]", "/obj/machinery/atmospherics/pipe") && !findtext("[P.pipe_type]", "layer_manifold"))
@@ -373,7 +373,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 			playsound(get_turf(src), 'sound/machines/click.ogg', 50, TRUE)
 			if(do_after(user, paint_speed, target = A))
 				A.add_atom_colour(GLOB.pipe_paint_colors[paint_color], FIXED_COLOUR_PRIORITY) //paint the pipe
-				user.visible_message(span_notice("[user] paints \the [A] [paint_color].") ,span_notice("You paint \the [A] [paint_color]."))
+				user.visible_message(span_notice("[user] paints \the [A] [paint_color]."),span_notice("You paint \the [A] [paint_color]."))
 			return
 
 	if(mode & BUILD_MODE)

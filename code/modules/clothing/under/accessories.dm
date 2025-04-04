@@ -146,7 +146,7 @@
 				delay = 0
 			else
 				user.visible_message(
-					span_notice("[user] is trying to pin [src] on [M]'s chest.") , \
+					span_notice("[user] is trying to pin [src] on [M]'s chest."), \
 					span_notice("You try to pin [src] on [M]'s chest."))
 			var/input
 			if(!commended && user != M)
@@ -157,7 +157,7 @@
 						to_chat(user, span_notice("You attach [src] to [U]."))
 					else
 						user.visible_message(
-							span_notice("[user] pins \the [src] on [M]'s chest.") , \
+							span_notice("[user] pins \the [src] on [M]'s chest."), \
 							span_notice("You pin \the [src] on [M]'s chest."))
 						if(input)
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
@@ -269,7 +269,7 @@
 /obj/item/clothing/accessory/medal/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
 		atmos_spawn_air("plasma=20;TEMP=[exposed_temperature]")
-		visible_message(span_danger("\The [src] bursts into flame!") , span_userdanger("Your [src] bursts into flame!"))
+		visible_message(span_danger("\The [src] bursts into flame!"), span_userdanger("Your [src] bursts into flame!"))
 		qdel(src)
 
 /obj/item/clothing/accessory/medal/plasma/nobel_science
@@ -334,7 +334,7 @@
 /obj/item/clothing/accessory/lawyers_badge/attack_self(mob/user)
 	if(prob(1))
 		user.say("The testimony contradicts the evidence!", forced = "attorney's badge")
-	user.visible_message(span_notice("[user] shows [user.p_their()] attorney's badge.") , span_notice("You show your attorney's badge."))
+	user.visible_message(span_notice("[user] shows [user.p_their()] attorney's badge."), span_notice("You show your attorney's badge."))
 
 /obj/item/clothing/accessory/lawyers_badge/on_uniform_equip(obj/item/clothing/under/U, user)
 	var/mob/living/L = user

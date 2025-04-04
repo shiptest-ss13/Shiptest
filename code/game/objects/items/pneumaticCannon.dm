@@ -157,7 +157,7 @@
 		return
 	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(75) && clumsyCheck && iscarbon(user))
 		var/mob/living/carbon/C = user
-		C.visible_message(span_warning("[C] loses [C.p_their()] grip on [src], causing it to go off!") , span_userdanger("[src] slips out of your hands and goes off!"))
+		C.visible_message(span_warning("[C] loses [C.p_their()] grip on [src], causing it to go off!"), span_userdanger("[src] slips out of your hands and goes off!"))
 		C.dropItemToGround(src, TRUE)
 		if(prob(10))
 			target = get_turf(user)
@@ -167,7 +167,7 @@
 		discharge = 1
 	if(!discharge)
 		user.visible_message(
-			span_danger("[user] fires \the [src]!") ,
+			span_danger("[user] fires \the [src]!"),
 			span_danger("You fire \the [src]!")
 		)
 	log_combat(user, target, "fired at", src)
@@ -176,7 +176,7 @@
 	fire_items(T, user)
 	if(pressureSetting >= 3 && iscarbon(user))
 		var/mob/living/carbon/C = user
-		C.visible_message(span_warning("[C] is thrown down by the force of the cannon!") , span_userdanger("[src] slams into your shoulder, knocking you down!"))
+		C.visible_message(span_warning("[C] is thrown down by the force of the cannon!"), span_userdanger("[src] slams into your shoulder, knocking you down!"))
 		C.Paralyze(60)
 
 /obj/item/pneumatic_cannon/proc/fire_items(turf/target, mob/user)

@@ -164,7 +164,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 // attack with item, place item on conveyor
 /obj/machinery/conveyor/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_CROWBAR)
-		user.visible_message(span_notice("[user] struggles to pry up \the [src] with \the [I].") , \
+		user.visible_message(span_notice("[user] struggles to pry up \the [src] with \the [I]."), \
 		span_notice("You struggle to pry up \the [src] with \the [I]."))
 		if(I.use_tool(src, user, 40, volume=40))
 			if(!(machine_stat & BROKEN))

@@ -118,7 +118,7 @@ GENE SCANNER
 
 	// Clumsiness/brain damage check
 	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
-		user.visible_message(span_warning("[user] analyzes the floor's vitals!") , \
+		user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
 							span_notice("You stupidly try to analyze the floor's vitals!"))
 		to_chat(user, "[span_info("Analyzing results for The floor:\n\tOverall status: <b>Healthy</b>")]\
 					\n[span_info("Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font>")]\
@@ -126,7 +126,7 @@ GENE SCANNER
 					\n[span_info("Body temperature: ???")]")
 		return
 
-	user.visible_message(span_notice("[user] analyzes [M]'s vitals.") , \
+	user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
 						span_notice("You analyze [M]'s vitals."))
 
 	if(scanmode == SCANMODE_HEALTH)
@@ -582,7 +582,7 @@ GENE SCANNER
 	var/icon = target
 	var/render_list = list()
 	if(!silent && isliving(user))
-		user.visible_message(span_notice("[user] uses the analyzer on [icon2html(icon, viewers(user))] [target].") , span_notice("You use the analyzer on [icon2html(icon, user)] [target]."))
+		user.visible_message(span_notice("[user] uses the analyzer on [icon2html(icon, viewers(user))] [target]."), span_notice("You use the analyzer on [icon2html(icon, user)] [target]."))
 	render_list += span_boldnotice("Results of analysis of [icon2html(icon, user)] [target].") 
 
 	var/list/airs = islist(mixture) ? mixture : list(mixture)
@@ -640,7 +640,7 @@ GENE SCANNER
 	custom_materials = list(/datum/material/iron=200)
 
 /obj/item/nanite_scanner/attack(mob/living/M, mob/living/carbon/human/user)
-	user.visible_message(span_notice("[user] analyzes [M]'s nanites.") , \
+	user.visible_message(span_notice("[user] analyzes [M]'s nanites."), \
 						span_notice("You analyze [M]'s nanites."))
 
 	add_fingerprint(user)
@@ -675,13 +675,13 @@ GENE SCANNER
 /obj/item/sequence_scanner/attack(mob/living/M, mob/living/carbon/human/user)
 	add_fingerprint(user)
 	if (!HAS_TRAIT(M, TRAIT_GENELESS) && !HAS_TRAIT(M, TRAIT_BADDNA)) //no scanning if its a husk or DNA-less Species
-		user.visible_message(span_notice("[user] analyzes [M]'s genetic sequence.") , \
+		user.visible_message(span_notice("[user] analyzes [M]'s genetic sequence."), \
 							span_notice("You analyze [M]'s genetic sequence."))
 		gene_scan(M, user)
 		playsound(src, 'sound/effects/fastbeep.ogg', 20)
 
 	else
-		user.visible_message(span_notice("[user] fails to analyze [M]'s genetic sequence.") , span_warning("[M] has no readable genetic sequence!"))
+		user.visible_message(span_notice("[user] fails to analyze [M]'s genetic sequence."), span_warning("[M] has no readable genetic sequence!"))
 
 /obj/item/sequence_scanner/attack_self(mob/user)
 	display_sequence(user)
@@ -770,7 +770,7 @@ GENE SCANNER
 	flick("[icon_state]_active", src)	//nice little visual flash when scanning someone else.
 
 	if((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(25))
-		user.visible_message(span_warning("[user] targets himself for scanning.") , \
+		user.visible_message(span_warning("[user] targets himself for scanning."), \
 		to_chat(user, span_info("You try scanning [M], before realizing you're holding the scanner backwards. Whoops.")))
 		selected_target = user
 		return
@@ -780,7 +780,7 @@ GENE SCANNER
 		selected_target = null
 		return
 
-	user.visible_message(span_notice("[user] targets [M] for scanning.") , \
+	user.visible_message(span_notice("[user] targets [M] for scanning."), \
 						span_notice("You target [M] vitals."))
 	selected_target = M
 	return

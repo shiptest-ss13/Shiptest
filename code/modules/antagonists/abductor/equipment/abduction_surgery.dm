@@ -27,11 +27,11 @@
 		if(A.type in organ_types)
 			IC = A
 			break
-	user.visible_message(span_notice("[user] starts to remove [target]'s organs.") , span_notice("You start to remove [target]'s organs..."))
+	user.visible_message(span_notice("[user] starts to remove [target]'s organs."), span_notice("You start to remove [target]'s organs..."))
 
 /datum/surgery_step/extract_organ/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(IC)
-		user.visible_message(span_notice("[user] pulls [IC] out of [target]'s [target_zone]!") , span_notice("You pull [IC] out of [target]'s [target_zone]."))
+		user.visible_message(span_notice("[user] pulls [IC] out of [target]'s [target_zone]!"), span_notice("You pull [IC] out of [target]'s [target_zone]."))
 		user.put_in_hands(IC)
 		IC.Remove(target)
 		return 1
@@ -46,10 +46,10 @@
 	time = 32
 
 /datum/surgery_step/gland_insert/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message(span_notice("[user] starts to insert [tool] into [target].") , span_notice("You start to insert [tool] into [target]..."))
+	user.visible_message(span_notice("[user] starts to insert [tool] into [target]."), span_notice("You start to insert [tool] into [target]..."))
 
 /datum/surgery_step/gland_insert/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message(span_notice("[user] inserts [tool] into [target].") , span_notice("You insert [tool] into [target]."))
+	user.visible_message(span_notice("[user] inserts [tool] into [target]."), span_notice("You insert [tool] into [target]."))
 	user.temporarilyRemoveItemFromInventory(tool, TRUE)
 	var/obj/item/organ/heart/gland/gland = tool
 	gland.Insert(target, 2)

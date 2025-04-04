@@ -247,7 +247,7 @@
 		if(I.tool_behaviour == TOOL_CROWBAR)
 			if(panel_open && !density && !operating)
 				user.visible_message(
-					span_notice("[user] removes the electronics from the [name].") ,
+					span_notice("[user] removes the electronics from the [name]."),
 					span_notice("You start to remove electronics from the [name]...") 
 				)
 				if(I.use_tool(src, user, 40, volume=50))

@@ -79,12 +79,12 @@
 
 				if(M == user)	//they're using it on themselves
 					if(M.flash_act(visual = 1))
-						M.visible_message(span_notice("[M] directs [src] to [M.p_their()] eyes.") , span_notice("You wave the light in front of your eyes! Trippy!"))
+						M.visible_message(span_notice("[M] directs [src] to [M.p_their()] eyes."), span_notice("You wave the light in front of your eyes! Trippy!"))
 					else
-						M.visible_message(span_notice("[M] directs [src] to [M.p_their()] eyes.") , span_notice("You wave the light in front of your eyes."))
+						M.visible_message(span_notice("[M] directs [src] to [M.p_their()] eyes."), span_notice("You wave the light in front of your eyes."))
 				else
 					user.visible_message(
-						span_warning("[user] directs [src] to [M]'s eyes.") ,
+						span_warning("[user] directs [src] to [M]'s eyes."),
 						span_danger("You direct [src] to [M]'s eyes.") 
 					)
 					if(M.stat == DEAD || (M.is_blind()) || !M.flash_act(visual = 1)) //mob is dead or fully blind
@@ -137,7 +137,7 @@
 								if(WEST)
 									can_use_mirror = mirror.pixel_x < 0
 
-					M.visible_message(span_notice("[M] directs [src] to [their] mouth.") , \
+					M.visible_message(span_notice("[M] directs [src] to [their] mouth."), \
 					span_notice("You point [src] into your mouth."))
 					if(!can_use_mirror)
 						to_chat(user, span_notice("You can't see anything without a mirror."))
@@ -151,7 +151,7 @@
 
 				else
 					user.visible_message(
-						span_notice("[user] directs [src] to [M]'s mouth.") ,
+						span_notice("[user] directs [src] to [M]'s mouth."),
 						span_notice("You direct [src] to [M]'s mouth.") 
 					)
 					if(organ_count)
@@ -329,7 +329,7 @@
 	. = ..()
 	// All good, turn it on.
 	if(.)
-		user.visible_message(span_notice("[user] lights \the [src].") , span_notice("You light \the [src]!"))
+		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("You light \the [src]!"))
 		force = on_damage
 		damtype = "fire"
 		START_PROCESSING(SSobj, src)
@@ -452,7 +452,7 @@
 		if(ismob(A))
 			var/mob/M = A
 			log_combat(user, M, "attacked", "EMP-light")
-			M.visible_message(span_danger("[user] blinks \the [src] at \the [A].") , \
+			M.visible_message(span_danger("[user] blinks \the [src] at \the [A]."), \
 								span_userdanger("[user] blinks \the [src] at you."))
 		else
 			A.visible_message(span_danger("[user] blinks \the [src] at \the [A]."))
@@ -543,7 +543,7 @@
 
 	. = ..()
 	if(.)
-		user.visible_message(span_notice("[user] cracks and shakes [src].") , span_notice("You crack and shake [src], turning it on!"))
+		user.visible_message(span_notice("[user] cracks and shakes [src]."), span_notice("You crack and shake [src], turning it on!"))
 		START_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/glowstick/red

@@ -279,7 +279,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 		GLOB.news_network.SubmitArticle(message, department, "Station Announcements", null)
 		usr.log_talk(message, LOG_SAY, tag="station announcement from [src]")
 		message_admins("[ADMIN_LOOKUPFLW(usr)] has made a station announcement from [src] at [AREACOORD(usr)].")
-		deadchat_broadcast(" made a station announcement from [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]") , usr, message_type=DEADCHAT_ANNOUNCEMENT)
+		deadchat_broadcast(" made a station announcement from [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type=DEADCHAT_ANNOUNCEMENT)
 		announceAuth = FALSE
 		message = ""
 		screen = REQ_SCREEN_MAIN

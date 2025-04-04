@@ -42,7 +42,7 @@
 				affected_mob.adjustStaminaLoss(70)
 			if(prob(10))
 				affected_mob.adjustStaminaLoss(100)
-				affected_mob.visible_message(span_warning("[affected_mob] faints!") , span_userdanger("You surrender yourself and feel at peace..."))
+				affected_mob.visible_message(span_warning("[affected_mob] faints!"), span_userdanger("You surrender yourself and feel at peace..."))
 				affected_mob.AdjustSleeping(100)
 			if(prob(2))
 				to_chat(affected_mob, span_userdanger("You feel your mind relax and your thoughts drift!"))

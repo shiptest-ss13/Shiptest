@@ -496,7 +496,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				var/crit_rebate = 0 // lessen the normal damage we deal for some of the crits
 
 				if(crit_case != 5) // the head asplode case has its own description
-					C.visible_message(span_danger("[C] is crushed by [src]!") , \
+					C.visible_message(span_danger("[C] is crushed by [src]!"), \
 						span_userdanger("You are crushed by [src]!"))
 
 				switch(crit_case) // only carbons can have the fun crits
@@ -510,12 +510,12 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						if(r)
 							r.receive_damage(brute=200, updating_health=TRUE)
 						if(l || r)
-							C.visible_message(span_danger("[C]'s legs shatter with a sickening crunch!") , \
+							C.visible_message(span_danger("[C]'s legs shatter with a sickening crunch!"), \
 								span_userdanger("Your legs shatter with a sickening crunch!"))
 					if(2) // pin them beneath the machine until someone untilts it
 						forceMove(get_turf(C))
 						buckle_mob(C, force=TRUE)
-						C.visible_message(span_danger("[C] is pinned underneath [src]!") , \
+						C.visible_message(span_danger("[C] is pinned underneath [src]!"), \
 							span_userdanger("You are pinned down by [src]!"))
 					if(3) // glass candy
 						crit_rebate = 50
@@ -528,12 +528,12 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 							shard.updateEmbedding()
 					if(4) // paralyze this binch
 						// the new paraplegic gets like 4 lines of losing their legs so skip them
-						visible_message(span_danger("[C]'s spinal cord is obliterated with a sickening crunch!") , ignored_mobs = list(C))
+						visible_message(span_danger("[C]'s spinal cord is obliterated with a sickening crunch!"), ignored_mobs = list(C))
 						C.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic)
 					if(5) // skull squish!
 						var/obj/item/bodypart/head/O = C.get_bodypart(BODY_ZONE_HEAD)
 						if(O)
-							C.visible_message(span_danger("[O] explodes in a shower of gore beneath [src]!") , \
+							C.visible_message(span_danger("[O] explodes in a shower of gore beneath [src]!"), \
 								span_userdanger("Oh f-"))
 							O.dismember()
 							O.drop_organs()
@@ -543,7 +543,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				C.apply_damage(max(0, squish_damage - crit_rebate), forced=TRUE, spread_damage=TRUE)
 				C.AddElement(/datum/element/squish, 80 SECONDS)
 			else
-				L.visible_message(span_danger("[L] is crushed by [src]!") , \
+				L.visible_message(span_danger("[L] is crushed by [src]!"), \
 				span_userdanger("You are crushed by [src]!"))
 				L.apply_damage(squish_damage, forced=TRUE)
 				if(crit_case)
@@ -565,7 +565,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		throw_at(get_turf(fatty), 1, 1, spin=FALSE)
 
 /obj/machinery/vending/proc/untilt(mob/user)
-	user.visible_message(span_notice("[user] rights [src].") , \
+	user.visible_message(span_notice("[user] rights [src]."), \
 		span_notice("You right [src]."))
 
 	unbuckle_all_mobs(TRUE)

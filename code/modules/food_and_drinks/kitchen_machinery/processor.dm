@@ -74,7 +74,7 @@
 
 	var/datum/food_processor_process/P = select_recipe(O)
 	if(P)
-		user.visible_message(span_notice("[user] put [O] into [src].") , \
+		user.visible_message(span_notice("[user] put [O] into [src]."), \
 			span_notice("You put [O] into [src]."))
 		user.transferItemToLoc(O, src, TRUE)
 		return 1
@@ -102,8 +102,8 @@
 		to_chat(user, span_warning("[src] is empty!"))
 		return TRUE
 	processing = TRUE
-	user.visible_message(span_notice("[user] turns on [src].") , \
-		span_notice("You turn on [src].") , \
+	user.visible_message(span_notice("[user] turns on [src]."), \
+		span_notice("You turn on [src]."), \
 		span_hear("You hear a food processor."))
 	playsound(src.loc, 'sound/machines/blender.ogg', 50, TRUE)
 	use_power(500)

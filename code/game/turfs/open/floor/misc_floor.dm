@@ -204,7 +204,7 @@
 /turf/open/floor/ship/dirt/attackby(obj/item/C, mob/user, params)
 	if((C.tool_behaviour == TOOL_SHOVEL) && params)
 		new ore_type(src, 2)
-		user.visible_message(span_notice("[user] digs up [src].") , span_notice("You [turfverb] [src]."))
+		user.visible_message(span_notice("[user] digs up [src]."), span_notice("You [turfverb] [src]."))
 		playsound(src, 'sound/effects/shovel_dig.ogg', 50, TRUE)
 		make_plating()
 	if(..())
@@ -268,7 +268,7 @@
 		to_chat(user, span_danger("[container] is full."))
 		return
 	container.reagents.add_reagent(reagent_to_extract, rand(5, 10))
-	user.visible_message(span_notice("[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container].") , span_notice("You scoop out [extracted_reagent_visible_name] from the [src] using \the [container]."))
+	user.visible_message(span_notice("[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container]."), span_notice("You scoop out [extracted_reagent_visible_name] from the [src] using \the [container]."))
 	return TRUE
 
 /turf/open/floor/plating/ship/water/can_have_cabling()

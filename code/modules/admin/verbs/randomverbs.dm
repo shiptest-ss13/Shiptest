@@ -87,7 +87,7 @@
 
 	log_directed_talk(mob, H, input, LOG_ADMIN, "reply")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, span_hear("You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\"") , confidential = TRUE)		//WS Edit - SolGov Rep
+	to_chat(H, span_hear("You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\""), confidential = TRUE)		//WS Edit - SolGov Rep
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -160,7 +160,7 @@
 		return
 
 	M.status_flags ^= GODMODE
-	to_chat(usr, span_adminnotice("Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]") , confidential = TRUE)
+	to_chat(usr, span_adminnotice("Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]"), confidential = TRUE)
 
 	log_admin("[key_name(usr)] has toggled [key_name(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]")
 	var/msg = "[key_name_admin(usr)] has toggled [ADMIN_LOOKUPFLW(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]"
@@ -265,7 +265,7 @@
 		if(candidates.len)
 			ckey = input("Pick the player you want to respawn as a xeno.", "Suitable Candidates") as null|anything in sortKey(candidates)
 		else
-			to_chat(usr, span_danger("Error: create_xeno(): no suitable candidates.") , confidential = TRUE)
+			to_chat(usr, span_danger("Error: create_xeno(): no suitable candidates."), confidential = TRUE)
 	if(!istext(ckey))
 		return 0
 
@@ -566,7 +566,7 @@
 	message_admins("Admin [key_name_admin(usr)] has forced the players to have random appearances.")
 
 	if(notifyplayers == "Yes")
-		to_chat(world, span_adminnotice("Admin [usr.key] has forced the players to have completely random identities!") , confidential = TRUE)
+		to_chat(world, span_adminnotice("Admin [usr.key] has forced the players to have completely random identities!"), confidential = TRUE)
 
 	to_chat(usr, "<i>Remember: you can always disable the randomness by using the verb again, assuming the round hasn't started yet</i>.", confidential = TRUE)
 
@@ -914,7 +914,7 @@
 			if(ishuman(target))
 				var/mob/living/carbon/human/H = target
 				H.electrocution_animation(40)
-			to_chat(target, span_userdanger("The gods have punished you for your sins!") , confidential = TRUE)
+			to_chat(target, span_userdanger("The gods have punished you for your sins!"), confidential = TRUE)
 		if(ADMIN_PUNISHMENT_BRAINDAMAGE)
 			target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 199, 199)
 		if(ADMIN_PUNISHMENT_GIB)
@@ -962,7 +962,7 @@
 			return //We return here because punish_log() is handled by the centcom_podlauncher datum
 		if(ADMIN_PUNISHMENT_MAZING)
 			if(!puzzle_imprison(target))
-				to_chat(usr,span_warning("Imprisonment failed!") , confidential = TRUE)
+				to_chat(usr,span_warning("Imprisonment failed!"), confidential = TRUE)
 				return
 		if(ADMIN_PUNISHMENT_IMMERSE)
 			immerse_player(target)
@@ -970,7 +970,7 @@
 			if(!iscarbon(target))
 				to_chat(usr,span_warning("This must be used on a carbon mob."))
 				return
-			to_chat(target, span_userdanger("You do nyat feew vewy good!") , confidential = TRUE)
+			to_chat(target, span_userdanger("You do nyat feew vewy good!"), confidential = TRUE)
 			var/mob/living/carbon/dude = target
 			var/obj/item/organ/tongue/uwuspeak/tonje = new
 			tonje.Insert(dude, TRUE, FALSE)
@@ -990,7 +990,7 @@
 		return
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, span_warning("Tracking is disabled in the server configuration file.") , confidential = TRUE)
+		to_chat(usr, span_warning("Tracking is disabled in the server configuration file."), confidential = TRUE)
 		return
 
 	var/list/msg = list()
@@ -1004,10 +1004,10 @@
 	if(!check_rights(R_ADMIN))
 		return
 	if(!client_to_check)
-		to_chat(usr, span_danger("ERROR: Client not found.") , confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Client not found."), confidential = TRUE)
 		return
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, span_warning("Tracking is disabled in the server configuration file.") , confidential = TRUE)
+		to_chat(usr, span_warning("Tracking is disabled in the server configuration file."), confidential = TRUE)
 		return
 
 	new /datum/job_report_menu(client_to_check, usr)
@@ -1016,11 +1016,11 @@
 	if(!check_rights(R_ADMIN))
 		return
 	if(!C)
-		to_chat(usr, span_danger("ERROR: Client not found.") , confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Client not found."), confidential = TRUE)
 		return
 
 	if(!C.set_db_player_flags())
-		to_chat(usr, span_danger("ERROR: Unable read player flags from database. Please check logs.") , confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Unable read player flags from database. Please check logs."), confidential = TRUE)
 	var/dbflags = C.prefs.db_flags
 	var/newstate = FALSE
 	if(dbflags & DB_FLAG_EXEMPT)
@@ -1029,7 +1029,7 @@
 		newstate = TRUE
 
 	if(C.update_flag_db(DB_FLAG_EXEMPT, newstate))
-		to_chat(usr, span_danger("ERROR: Unable to update player flags. Please check logs.") , confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Unable to update player flags. Please check logs."), confidential = TRUE)
 	else
 		message_admins("[key_name_admin(usr)] has [newstate ? "activated" : "deactivated"] job exp exempt status on [key_name_admin(C)]")
 		log_admin("[key_name(usr)] has [newstate ? "activated" : "deactivated"] job exp exempt status on [key_name(C)]")
@@ -1105,7 +1105,7 @@
 	if(put_in_hands(I))
 		update_inv_hands()
 		if(prompted)
-			to_chat(src, span_adminnotice("Your prayers have been answered!! You received the <b>best [I.name]!</b>") , confidential = TRUE)
+			to_chat(src, span_adminnotice("Your prayers have been answered!! You received the <b>best [I.name]!</b>"), confidential = TRUE)
 			SEND_SOUND(src, sound('sound/effects/pray_chaplain.ogg'))
 		return TRUE
 	else

@@ -23,11 +23,11 @@
 	. = ..()
 	if(user.a_intent == INTENT_HARM)
 		return FALSE
-	user.visible_message(span_notice("[user] starts dismantling [src].") , \
+	user.visible_message(span_notice("[user] starts dismantling [src]."), \
 					span_notice("You start salvaging anything useful from [src]..."))
 	tool.play_tool_sound(src, 100)
 	if(do_after(user, 8 SECONDS, target = src))
-		user.visible_message(span_notice("[user] dismantles [src].") , \
+		user.visible_message(span_notice("[user] dismantles [src]."), \
 						span_notice("You salvage [src]."))
 		dismantle(user)
 		tool.play_tool_sound(src, 100)
@@ -38,10 +38,10 @@
 	. = ..()
 	if(.)
 		return FALSE
-	user.visible_message(span_notice("[user] starts slicing [src].") , \
+	user.visible_message(span_notice("[user] starts slicing [src]."), \
 					span_notice("You start salvaging anything useful from [src]..."))
 	if(tool.use_tool(src, user, 6 SECONDS))
-		user.visible_message(span_notice("[user] dismantles [src].") , \
+		user.visible_message(span_notice("[user] dismantles [src]."), \
 						span_notice("You salvage [src]."))
 		dismantle(user)
 		qdel(src)

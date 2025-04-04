@@ -89,7 +89,7 @@
 	if((ride_check_rider_restrained && HAS_TRAIT(M, TRAIT_RESTRAINED)) || (ride_check_rider_incapacitated && M.incapacitated(TRUE, TRUE)))
 		kick_us_off = TRUE
 	if(kick_us_off || (istype(AMM) && ((ride_check_ridden_restrained && HAS_TRAIT(AMM, TRAIT_RESTRAINED)) || (ride_check_ridden_incapacitated && AMM.incapacitated(TRUE, TRUE)))))
-		M.visible_message(span_warning("[M] falls off of [AM]!") , \
+		M.visible_message(span_warning("[M] falls off of [AM]!"), \
 						span_warning("You fall off of [AM]!"))
 		AM.unbuckle_mob(M)
 	return TRUE
@@ -102,11 +102,11 @@
 		var/turf/targetm = get_step(get_turf(AM), AM.dir)
 		M.Move(targetm)
 		if(gentle)
-			M.visible_message(span_warning("[M] is thrown clear of [AM]!") , \
+			M.visible_message(span_warning("[M] is thrown clear of [AM]!"), \
 			span_warning("You're thrown clear of [AM]!"))
 			M.throw_at(target, 8, 3, AM, gentle = TRUE)
 		else
-			M.visible_message(span_warning("[M] is thrown violently from [AM]!") , \
+			M.visible_message(span_warning("[M] is thrown violently from [AM]!"), \
 			span_warning("You're thrown violently from [AM]!"))
 			M.throw_at(target, 14, 5, AM, gentle = FALSE)
 		M.Knockdown(3 SECONDS)
@@ -285,7 +285,7 @@
 	var/atom/movable/AM = parent
 	AM.unbuckle_mob(user)
 	user.Paralyze(60)
-	user.visible_message(span_warning("[AM] pushes [user] off of [AM.p_them()]!") , \
+	user.visible_message(span_warning("[AM] pushes [user] off of [AM.p_them()]!"), \
 						span_warning("[AM] pushes you off of [AM.p_them()]!"))
 
 /datum/component/riding/cyborg

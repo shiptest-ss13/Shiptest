@@ -13,6 +13,6 @@
 		if(!user.put_in_hands(I))
 			to_chat(user, span_notice("You fumble for [I] and it falls on the floor."))
 			return
-		user.visible_message(span_warning("[user] draws [I] from [parent]!") , span_notice("You draw [I] from [parent]."))
+		user.visible_message(span_warning("[user] draws [I] from [parent]!"), span_notice("You draw [I] from [parent]."))
 		return
 	..()

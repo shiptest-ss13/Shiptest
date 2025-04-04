@@ -13,8 +13,8 @@
 	success_sound = 'sound/surgery/scalpel2.ogg'
 
 /datum/surgery_step/incise/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to make an incision in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to make an incision in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to make an incision in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to make an incision in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to make an incision in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/incise/tool_check(mob/user, obj/item/tool)
@@ -27,8 +27,8 @@
 	if ishuman(target)
 		var/mob/living/carbon/human/H = target
 		if (!(NOBLOOD in H.dna.species.species_traits))
-			display_results(user, target, span_notice("Blood pools around the incision in [H]'s [parse_zone(target_zone)].") ,
-				span_notice("Blood pools around the incision in [H]'s [parse_zone(target_zone)].") ,
+			display_results(user, target, span_notice("Blood pools around the incision in [H]'s [parse_zone(target_zone)]."),
+				span_notice("Blood pools around the incision in [H]'s [parse_zone(target_zone)]."),
 				"")
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
 		if(BP)
@@ -38,8 +38,8 @@
 /datum/surgery_step/incise/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		display_results(user, target, span_warning("You screw up, cutting too deeply!") ,
-			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]") ,
+		display_results(user, target, span_warning("You screw up, cutting too deeply!"),
+			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"))
 		target.apply_damage(15, BRUTE, "[target_zone]")
 
@@ -48,8 +48,8 @@
 	fuckup_damage = 0
 
 /datum/surgery_step/incise/nobleed/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/incise/nobleed/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
@@ -68,8 +68,8 @@
 	preop_sound = 'sound/surgery/hemostat1.ogg'
 
 /datum/surgery_step/clamp_bleeders/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to clamp bleeders in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to clamp bleeders in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to clamp bleeders in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to clamp bleeders in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to clamp bleeders in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/clamp_bleeders/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
@@ -85,8 +85,8 @@
 /datum/surgery_step/clamp_bleeders/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		display_results(user, target, span_warning("You screw up, letting go of a vein!") ,
-			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]") ,
+		display_results(user, target, span_warning("You screw up, letting go of a vein!"),
+			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"))
 		target.apply_damage(15, BRUTE, "[target_zone]")
 
@@ -102,15 +102,15 @@
 	success_sound = 'sound/surgery/retractor2.ogg'
 
 /datum/surgery_step/retract_skin/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to retract the skin in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to retract the skin in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to retract the skin in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to retract the skin in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to retract the skin in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/retract_skin/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		display_results(user, target, span_warning("You screw up, losing grip on the tissue!") ,
-			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]") ,
+		display_results(user, target, span_warning("You screw up, losing grip on the tissue!"),
+			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"))
 		target.apply_damage(10, BRUTE, "[target_zone]")
 
@@ -128,8 +128,8 @@
 	fuckup_damage_type = BURN
 
 /datum/surgery_step/close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to mend the incision in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to mend the incision in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to mend the incision in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to mend the incision in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to mend the incision in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/close/tool_check(mob/user, obj/item/tool)
@@ -175,8 +175,8 @@
 	fuckup_damage = 15
 
 /datum/surgery_step/saw/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to saw through the bone in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to saw through the bone in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to saw through the bone in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to saw through the bone in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to saw through the bone in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/saw/tool_check(mob/user, obj/item/tool)
@@ -186,8 +186,8 @@
 
 /datum/surgery_step/saw/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	target.apply_damage(20, BRUTE, "[target_zone]")
-	display_results(user, target, span_notice("You saw [target]'s [parse_zone(target_zone)] open.") ,
-		span_notice("[user] saws [target]'s [parse_zone(target_zone)] open!") ,
+	display_results(user, target, span_notice("You saw [target]'s [parse_zone(target_zone)] open."),
+		span_notice("[user] saws [target]'s [parse_zone(target_zone)] open!"),
 		span_notice("[user] saws [target]'s [parse_zone(target_zone)] open!"))
 	return ..()
 
@@ -195,8 +195,8 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		var/obj/item/bodypart/affected = target.get_bodypart(check_zone(target_zone))
-		display_results(user, target, span_warning("You screw up, breaking the bone!") ,
-			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]") ,
+		display_results(user, target, span_warning("You screw up, breaking the bone!"),
+			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"))
 		affected.break_bone()
 		target.apply_damage(25, BRUTE, "[target_zone]")
@@ -213,12 +213,12 @@
 	fuckup_damage = 5
 
 /datum/surgery_step/drill/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to drill into the bone in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to drill into the bone in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to drill into the bone in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to drill into the bone in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to drill into the bone in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/drill/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
-	display_results(user, target, span_notice("You drill into [target]'s [parse_zone(target_zone)].") ,
-		span_notice("[user] drills into [target]'s [parse_zone(target_zone)]!") ,
+	display_results(user, target, span_notice("You drill into [target]'s [parse_zone(target_zone)]."),
+		span_notice("[user] drills into [target]'s [parse_zone(target_zone)]!"),
 		span_notice("[user] drills into [target]'s [parse_zone(target_zone)]!"))
 	return ..()

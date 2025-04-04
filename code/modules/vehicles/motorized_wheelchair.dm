@@ -79,7 +79,7 @@
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		I.play_tool_sound(src)
 		panel_open = !panel_open
-		user.visible_message(span_notice("[user] [panel_open ? "opens" : "closes"] the maintenance panel on [src].") , span_notice("You [panel_open ? "open" : "close"] the maintenance panel."))
+		user.visible_message(span_notice("[user] [panel_open ? "opens" : "closes"] the maintenance panel on [src]."), span_notice("You [panel_open ? "open" : "close"] the maintenance panel."))
 		return
 	if(panel_open)
 		if(istype(I, /obj/item/stock_parts/cell))
@@ -103,7 +103,7 @@
 					if(B.get_part_rating() > A.get_part_rating())
 						B.forceMove(src)
 						user.put_in_hands(A)
-						user.visible_message(span_notice("[user] replaces [A] with [B] in [src].") , span_notice("You replace [A] with [B]."))
+						user.visible_message(span_notice("[user] replaces [A] with [B] in [src]."), span_notice("You replace [A] with [B]."))
 						break
 			refresh_parts()
 			return

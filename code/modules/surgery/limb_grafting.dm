@@ -56,15 +56,15 @@
 					organ_rejection_dam = 30
 
 		if(target_zone == BP.body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
-			display_results(user, target, span_notice("You begin to replace [target]'s [parse_zone(target_zone)] with [tool]...") ,
-				span_notice("[user] begins to replace [target]'s [parse_zone(target_zone)] with [tool].") ,
+			display_results(user, target, span_notice("You begin to replace [target]'s [parse_zone(target_zone)] with [tool]..."),
+				span_notice("[user] begins to replace [target]'s [parse_zone(target_zone)] with [tool]."),
 				span_notice("[user] begins to replace [target]'s [parse_zone(target_zone)]."))
 		else
 			to_chat(user, span_warning("[tool] isn't the right type for [parse_zone(target_zone)]."))
 			return -1
 	else if(target_zone == BODY_ZONE_L_ARM || target_zone == BODY_ZONE_R_ARM)
-		display_results(user, target, span_notice("You begin to attach [tool] onto [target]...") ,
-			span_notice("[user] begins to attach [tool] onto [target]'s [parse_zone(target_zone)].") ,
+		display_results(user, target, span_notice("You begin to attach [tool] onto [target]..."),
+			span_notice("[user] begins to attach [tool] onto [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] begins to attach something onto [target]'s [parse_zone(target_zone)]."))
 	else
 		to_chat(user, span_warning("[tool] must be installed onto an arm."))
@@ -80,30 +80,30 @@
 	if(istype(tool, /obj/item/bodypart) && user.temporarilyRemoveItemFromInventory(tool))
 		var/obj/item/bodypart/L = tool
 		if(!L.attach_limb(target))
-			display_results(user, target, span_warning("You fail in replacing [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!") ,
-				span_warning("[user] fails to replace [target]'s [parse_zone(target_zone)]!") ,
+			display_results(user, target, span_warning("You fail in replacing [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!"),
+				span_warning("[user] fails to replace [target]'s [parse_zone(target_zone)]!"),
 				span_warning("[user] fails to replaces [target]'s [parse_zone(target_zone)]!"))
 			L.forceMove(target.loc)
 			return
 		if(organ_rejection_dam)
 			target.adjustToxLoss(organ_rejection_dam)
 			experience_given -= (round(organ_rejection_dam/10))
-		display_results(user, target, span_notice("You succeed in replacing [target]'s [parse_zone(target_zone)].") ,
-			span_notice("[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!") ,
+		display_results(user, target, span_notice("You succeed in replacing [target]'s [parse_zone(target_zone)]."),
+			span_notice("[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!"),
 			span_notice("[user] successfully replaces [target]'s [parse_zone(target_zone)]!"))
 		return
 	else
 		var/obj/item/bodypart/L = target.new_body_part(target_zone, FALSE, FALSE)
 		L.is_pseudopart = TRUE
 		if(!L.attach_limb(target))
-			display_results(user, target, span_warning("You fail in attaching [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!") ,
-				span_warning("[user] fails to attach [target]'s [parse_zone(target_zone)]!") ,
+			display_results(user, target, span_warning("You fail in attaching [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!"),
+				span_warning("[user] fails to attach [target]'s [parse_zone(target_zone)]!"),
 				span_warning("[user] fails to attach [target]'s [parse_zone(target_zone)]!"))
 			L.forceMove(target.loc)
 			return
-		user.visible_message(span_notice("[user] finishes attaching [tool]!") , span_notice("You attach [tool]."))
-		display_results(user, target, span_notice("You attach [tool].") ,
-			span_notice("[user] finishes attaching [tool]!") ,
+		user.visible_message(span_notice("[user] finishes attaching [tool]!"), span_notice("You attach [tool]."))
+		display_results(user, target, span_notice("You attach [tool]."),
+			span_notice("[user] finishes attaching [tool]!"),
 			span_notice("[user] finishes the attachment procedure!"))
 		qdel(tool)
 		if(istype(tool, /obj/item/chainsaw))

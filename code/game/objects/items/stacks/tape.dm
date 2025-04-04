@@ -24,7 +24,7 @@
 		to_chat(user, span_warning("[I] is already coated in [src]!"))
 		return
 
-	user.visible_message(span_notice("[user] begins wrapping [I] with [src].") , span_notice("You begin wrapping [I] with [src]."))
+	user.visible_message(span_notice("[user] begins wrapping [I] with [src]."), span_notice("You begin wrapping [I] with [src]."))
 
 	if(do_after(user, 30, target=I))
 		use(1)
@@ -117,7 +117,7 @@
 				playsound(loc, usesound, 30, TRUE, -2)
 				if(do_after(user, other_delay, C) && (!C.is_mouth_covered() || !C.is_muzzled()))
 					apply_gag(C, user)
-					C.visible_message(span_notice("[user] tapes [C]s mouth shut.") , \
+					C.visible_message(span_notice("[user] tapes [C]s mouth shut."), \
 										span_userdanger("[user] taped your mouth shut!"))
 					log_combat(user, C, "gags")
 				else
@@ -131,13 +131,13 @@
 				return
 			if(C.canBeHandcuffed())
 				if(use(5))
-					C.visible_message(span_danger("[user] is trying to put [src.name] on [C]!") , \
+					C.visible_message(span_danger("[user] is trying to put [src.name] on [C]!"), \
 										span_userdanger("[user] is trying to put [src.name] on you!"))
 
 					playsound(loc, usesound, 30, TRUE, -2)
 					if(do_after(user, self_delay, C) && (C.canBeHandcuffed()))
 						apply_tapecuffs(C, user)
-						C.visible_message(span_notice("[user] tapecuffs [C].") , \
+						C.visible_message(span_notice("[user] tapecuffs [C]."), \
 											span_userdanger("[user] tapecuffs you."))
 						SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 
@@ -152,11 +152,11 @@
 /obj/item/stack/tape/proc/try_heal(mob/living/carbon/C, mob/user)
 	if(C == user)
 		playsound(loc, usesound, 30, TRUE, -2)
-		user.visible_message(span_notice("[user] starts to apply \the [src] on [user.p_them()]self...") , span_notice("You begin applying \the [src] on yourself..."))
+		user.visible_message(span_notice("[user] starts to apply \the [src] on [user.p_them()]self..."), span_notice("You begin applying \the [src] on yourself..."))
 		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 	else if(other_delay)
-		user.visible_message(span_notice("[user] starts to apply \the [src] on [C].") , span_notice("You begin applying \the [src] on [C]..."))
+		user.visible_message(span_notice("[user] starts to apply \the [src] on [C]."), span_notice("You begin applying \the [src] on [C]..."))
 		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 
@@ -176,7 +176,7 @@
 		return
 	if(IS_ROBOTIC_LIMB(affecting)) //Robotic patch-up
 		if(affecting.brute_dam)
-			user.visible_message(span_notice("[user] applies \the [src] on [C]'s [affecting.name].") , span_green("You apply \the [src] on [C]'s [affecting.name]."))
+			user.visible_message(span_notice("[user] applies \the [src] on [C]'s [affecting.name]."), span_green("You apply \the [src] on [C]'s [affecting.name]."))
 			if(affecting.heal_damage(nonorganic_heal))
 				C.update_damage_overlays()
 			return TRUE
@@ -208,7 +208,7 @@
 		if(I.embedding && I.embedding == conferred_embed)
 			to_chat(user, span_warning("[I] is already coated in [src]!"))
 			return
-		user.visible_message(span_notice("[user] begins wrapping [I] with [src].") , span_notice("You begin wrapping [I] with [src]."))
+		user.visible_message(span_notice("[user] begins wrapping [I] with [src]."), span_notice("You begin wrapping [I] with [src]."))
 		if(do_after(user, 30, target=I))
 			use(1)
 			wrap_item(I, user)
@@ -240,7 +240,7 @@
 /obj/item/clothing/mask/muzzle/tape/equipped(mob/M, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_HANDS)
-		M.visible_message(span_danger("[M] rips off the tape around [M.p_their()] face!") , \
+		M.visible_message(span_danger("[M] rips off the tape around [M.p_their()] face!"), \
 							span_userdanger("You tear off the [src] and can speak again!"))
 		M.dropItemToGround(src, TRUE, TRUE)
 
@@ -260,7 +260,7 @@
 
 /obj/item/restraints/handcuffs/tape/used/dropped(mob/user)
 	playsound(loc, 'sound/items/poster_ripped.ogg', 30, TRUE, -2)
-	user.visible_message(span_danger("[user] rips off the tape around [user.p_their()] hands!") , \
+	user.visible_message(span_danger("[user] rips off the tape around [user.p_their()] hands!"), \
 							span_userdanger("You tear off the [src] and free yourself!"))
 	. = ..()
 

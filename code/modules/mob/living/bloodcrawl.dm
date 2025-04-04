@@ -73,13 +73,13 @@
 	var/kidnapped = FALSE
 
 	if(victim.stat == CONSCIOUS)
-		visible_message(span_warning("[victim] kicks free of the blood pool just before entering it!") , null, span_notice("You hear splashing and struggling."))
+		visible_message(span_warning("[victim] kicks free of the blood pool just before entering it!"), null, span_notice("You hear splashing and struggling."))
 	else if(victim.reagents && victim.reagents.has_reagent(/datum/reagent/consumable/ethanol/demonsblood, needs_metabolizing = TRUE))
-		visible_message(span_warning("Something prevents [victim] from entering the pool!") , span_warning("A strange force is blocking [victim] from entering!") , span_notice("You hear a splash and a thud."))
+		visible_message(span_warning("Something prevents [victim] from entering the pool!"), span_warning("A strange force is blocking [victim] from entering!"), span_notice("You hear a splash and a thud."))
 	else
 		victim.forceMove(src)
 		victim.emote("scream")
-		visible_message(span_warning("<b>[src] drags [victim] into the pool of blood!</b>") , null, span_notice("You hear a splash."))
+		visible_message(span_warning("<b>[src] drags [victim] into the pool of blood!</b>"), null, span_notice("You hear a splash."))
 		kidnapped = TRUE
 
 	if(kidnapped)

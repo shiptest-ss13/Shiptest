@@ -99,7 +99,7 @@
 			if(!isfloorturf(T))
 				to_chat(user, span_warning("[src] bolts must be tightened on the floor!"))
 				return
-			user.visible_message(span_notice("[user] tightens some bolts on the wall.") , span_notice("You tighten the bolts on the wall."))
+			user.visible_message(span_notice("[user] tightens some bolts on the wall."), span_notice("You tighten the bolts on the wall."))
 			ChangeToWall()
 		else
 			to_chat(user, span_warning("You can't reach, close it first!"))
@@ -111,7 +111,7 @@
 		return ..()
 
 /obj/structure/falsewall/proc/dismantle(mob/user, disassembled=TRUE, obj/item/tool = null)
-	user.visible_message(span_notice("[user] dismantles the false wall.") , span_notice("You dismantle the false wall."))
+	user.visible_message(span_notice("[user] dismantles the false wall."), span_notice("You dismantle the false wall."))
 	if(tool)
 		tool.play_tool_sound(src, 100)
 	else

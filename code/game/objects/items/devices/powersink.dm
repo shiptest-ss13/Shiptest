@@ -74,7 +74,7 @@
 					set_mode(CLAMPED_OFF)
 					user.visible_message( \
 						"[user] attaches \the [src] to the cable.", \
-						span_notice("You bolt \the [src] into the floor and connect it to the cable.") ,
+						span_notice("You bolt \the [src] into the floor and connect it to the cable."),
 						span_hear("You hear some wires being connected to something."))
 			else
 				to_chat(user, span_warning("\The [src] must be placed over an exposed, powered cable node!"))
@@ -82,7 +82,7 @@
 			set_mode(DISCONNECTED)
 			user.visible_message( \
 				"[user] detaches \the [src] from the cable.", \
-				span_notice("You unbolt \the [src] from the floor and detach it from the cable.") ,
+				span_notice("You unbolt \the [src] from the floor and detach it from the cable."),
 				span_hear("You hear some wires being disconnected from something."))
 
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -109,7 +109,7 @@
 		if(CLAMPED_OFF)
 			user.visible_message( \
 				"[user] activates \the [src]!", \
-				span_notice("You activate \the [src].") ,
+				span_notice("You activate \the [src]."),
 				span_hear("You hear a click."))
 			message_admins("Power sink activated by [ADMIN_LOOKUPFLW(user)] at [ADMIN_VERBOSEJMP(src)]")
 			log_game("Power sink activated by [key_name(user)] at [AREACOORD(src)]")
@@ -118,7 +118,7 @@
 		if(OPERATING)
 			user.visible_message( \
 				"[user] deactivates \the [src]!", \
-				span_notice("You deactivate \the [src].") ,
+				span_notice("You deactivate \the [src]."),
 				span_hear("You hear a click."))
 			set_mode(CLAMPED_OFF)
 

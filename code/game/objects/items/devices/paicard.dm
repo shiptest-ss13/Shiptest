@@ -151,7 +151,7 @@
 
 
 /obj/item/paicard/proc/alertUpdate()
-	audible_message(span_info("[src] flashes a message across its screen, \"Additional personalities available for download.\"") , span_notice("[src] vibrates with an alert."))
+	audible_message(span_info("[src] flashes a message across its screen, \"Additional personalities available for download.\""), span_notice("[src] vibrates with an alert."))
 
 /obj/item/paicard/emp_act(severity)
 	. = ..()

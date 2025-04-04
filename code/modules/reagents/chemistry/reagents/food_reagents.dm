@@ -134,7 +134,7 @@
 		oil_damage *= 1 - M.get_permeability_protection()
 	var/FryLoss = round(min(38, oil_damage * reac_volume))
 	if(!HAS_TRAIT(M, TRAIT_OIL_FRIED))
-		M.visible_message(span_warning("The boiling oil sizzles as it covers [M]!") , \
+		M.visible_message(span_warning("The boiling oil sizzles as it covers [M]!"), \
 		span_userdanger("You're covered in boiling oil!"))
 		if(FryLoss)
 			M.force_scream()

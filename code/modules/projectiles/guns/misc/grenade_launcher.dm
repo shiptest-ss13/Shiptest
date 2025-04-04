@@ -46,7 +46,7 @@
 /obj/item/gun/grenadelauncher/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(!can_shoot())
 		return
-	user.visible_message(span_danger("[user] fired a grenade!") , \
+	user.visible_message(span_danger("[user] fired a grenade!"), \
 						span_danger("You fire the grenade launcher!"))
 	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!
 	grenades -= F

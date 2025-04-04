@@ -69,7 +69,7 @@
 
 			if(S.ignore_clothes || get_location_accessible(M, selected_zone))
 				var/datum/surgery/procedure = new S.type(M, selected_zone, affecting)
-				user.visible_message(span_notice("[user] prepares to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)].") , \
+				user.visible_message(span_notice("[user] prepares to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)]."), \
 					span_notice("You prepare to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)]."))
 				playsound(get_turf(M), 'sound/items/handling/cloth_drop.ogg', 30, TRUE)
 
@@ -90,7 +90,7 @@
 
 	if(S.status == 1)
 		M.surgeries -= S
-		user.visible_message(span_notice("[user] stops the surgery on [M]'s [parse_zone(selected_zone)].") , \
+		user.visible_message(span_notice("[user] stops the surgery on [M]'s [parse_zone(selected_zone)]."), \
 			span_notice("You stop the surgery on [M]'s [parse_zone(selected_zone)]."))
 		qdel(S)
 		return
@@ -119,7 +119,7 @@
 			if(BP)
 				BP.adjust_bleeding(-3)
 		M.surgeries -= S
-		user.visible_message(span_notice("[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery.") , \
+		user.visible_message(span_notice("[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery."), \
 			span_notice("You close [M]'s [parse_zone(selected_zone)] with [close_tool] and stop the surgery."))
 		qdel(S)
 

@@ -19,7 +19,7 @@
 			else
 				blocked = 100
 				target.visible_message(
-					span_danger("\The [src] is deflected!") , \
+					span_danger("\The [src] is deflected!"), \
 					span_userdanger("You are protected against \the [src]!"))
 
 	..(target, blocked)

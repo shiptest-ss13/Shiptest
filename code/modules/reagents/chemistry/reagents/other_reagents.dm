@@ -2350,7 +2350,7 @@
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
-		L.visible_message(span_danger("<font size = 6>Grips their head and dances around, collapsing to the floor!</font>") , \
+		L.visible_message(span_danger("<font size = 6>Grips their head and dances around, collapsing to the floor!</font>"), \
 		span_danger("<font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font>"))
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)

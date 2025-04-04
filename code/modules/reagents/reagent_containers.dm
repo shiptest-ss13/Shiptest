@@ -212,7 +212,7 @@
 		var/mob/M = target
 		var/R
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		target.visible_message(span_danger("[M] is splashed with something!") , \
+		target.visible_message(span_danger("[M] is splashed with something!"), \
 						span_userdanger("[M] is splashed with something!"))
 		for(var/datum/reagent/A in reagents.reagent_list)
 			R += "[A.type]  ([num2text(A.volume)]),"

@@ -735,8 +735,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster/security_unit, 30)
 		if(machine_stat & BROKEN)
 			if(!I.tool_start_check(user, amount=0))
 				return
-			user.visible_message(span_notice("[user] is repairing [src].") , \
-							span_notice("You begin repairing [src]...") , \
+			user.visible_message(span_notice("[user] is repairing [src]."), \
+							span_notice("You begin repairing [src]..."), \
 							span_hear("You hear welding."))
 			if(I.use_tool(src, user, 40, volume=50))
 				if(!(machine_stat & BROKEN))

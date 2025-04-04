@@ -67,7 +67,7 @@
 		to_chat(user, span_warning("\the [inserted_item] is stuck to your hand, you can't put into \the [parent]!"))
 		return
 
-	user.visible_message(span_notice("[user.name] begins inserting [inserted_item.name] into \the [parent].") , \
+	user.visible_message(span_notice("[user.name] begins inserting [inserted_item.name] into \the [parent]."), \
 					span_notice("You start to insert the [inserted_item.name] into \the [parent]."))
 
 	INVOKE_ASYNC(src, PROC_REF(insert_item), inserted_item, user)
@@ -94,7 +94,7 @@
 	if(!food.can_interact(user))
 		return
 
-	user.visible_message(span_notice("[user.name] begins tearing at \the [parent].") , \
+	user.visible_message(span_notice("[user.name] begins tearing at \the [parent]."), \
 					span_notice("You start to rip into \the [parent]."))
 
 	INVOKE_ASYNC(src, PROC_REF(begin_remove_item), user)
@@ -131,7 +131,7 @@
  */
 /datum/component/food_storage/proc/remove_item(mob/user)
 	if(user.put_in_hands(stored_item))
-		user.visible_message(span_warning("[user.name] slowly pulls [stored_item.name] out of \the [parent].") , \
+		user.visible_message(span_warning("[user.name] slowly pulls [stored_item.name] out of \the [parent]."), \
 							span_warning("You slowly pull [stored_item.name] out of \the [parent]."))
 	else
 		stored_item.dropped()

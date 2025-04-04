@@ -638,7 +638,7 @@
 			to_chat(src, span_warning("You do not breathe, so you cannot perform CPR!"))
 			return FALSE
 
-		visible_message(span_notice("[src] is trying to perform CPR on [target.name]!") , \
+		visible_message(span_notice("[src] is trying to perform CPR on [target.name]!"), \
 						span_notice("You try to perform CPR on [target.name]... Hold still!"))
 
 		if (!do_after(src, delay = panicking ? CPR_PANIC_SPEED : (3 SECONDS), target = target))
@@ -648,7 +648,7 @@
 		if (target.health > target.crit_threshold)
 			return FALSE
 
-		visible_message(span_notice("[src] performs CPR on [target.name]!") , span_notice("You perform CPR on [target.name]."))
+		visible_message(span_notice("[src] performs CPR on [target.name]!"), span_notice("You perform CPR on [target.name]."))
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "perform_cpr", /datum/mood_event/perform_cpr)
 		log_combat(src, target, "CPRed")
 
@@ -1104,7 +1104,7 @@
 				if(BP)
 					BP.receive_damage(36) //so 3 toolbox hits
 
-				T.visible_message(span_warning("[src] curbstomps [T]!") , span_warning("[src] curbstomps you!"))
+				T.visible_message(span_warning("[src] curbstomps [T]!"), span_warning("[src] curbstomps you!"))
 
 				log_combat(src, T, "curbstomped")
 
@@ -1131,7 +1131,7 @@
 					else
 						BP.receive_damage(15)
 
-				T.visible_message(span_warning("[src] kicks [T] in the groin!") , "<span class='warning'>[src] kicks you in the groin!</span")
+				T.visible_message(span_warning("[src] kicks [T] in the groin!"), "<span class='warning'>[src] kicks you in the groin!</span")
 
 				log_combat(src, T, "groinkicked")
 
@@ -1162,7 +1162,7 @@
 		carrydelay = 40
 		skills_space = "quickly"
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
-		visible_message(span_notice("[src] starts [skills_space] lifting [target] onto their back..") ,
+		visible_message(span_notice("[src] starts [skills_space] lifting [target] onto their back.."),
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
 		span_notice("[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
 		//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
@@ -1185,7 +1185,7 @@
 		carrydelay = 15
 		skills_space = "quickly"
 	if(!incapacitated(FALSE, TRUE))
-		visible_message(span_notice("[src] starts [skills_space] scooping [target] into their arms..") ,
+		visible_message(span_notice("[src] starts [skills_space] scooping [target] into their arms.."),
 		//Joe Medic starts quickly/expertly scooping Grey Tider into their arms..
 		span_notice("[carrydelay < 11 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to scoop [target] into your arms[carrydelay == 15 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to scoop Grey Tider into your arms(, while assisted by the nanochips in your gloves../...)
@@ -1231,11 +1231,11 @@
 
 	if(hands_needed || target_hands_needed)
 		if(hands_needed && !equipped_hands_self)
-			src.visible_message(span_warning("[src] can't get a grip on [target] because their hands are full!") ,
+			src.visible_message(span_warning("[src] can't get a grip on [target] because their hands are full!"),
 				span_warning("You can't get a grip on [target] because your hands are full!"))
 			return
 		else if(target_hands_needed && !equipped_hands_target)
-			target.visible_message(span_warning("[target] can't get a grip on [src] because their hands are full!") ,
+			target.visible_message(span_warning("[target] can't get a grip on [src] because their hands are full!"),
 				span_warning("You can't get a grip on [src] because your hands are full!"))
 			return
 

@@ -27,8 +27,8 @@
 			return
 		to_chat(user, span_notice("You begin cutting \the [src] apart..."))
 		if(I.use_tool(src, user, 50, volume=50))
-			visible_message(span_notice("[user] slices apart \the [src].") ,
-				span_notice("You cut \the [src] apart with \the [I].") ,
+			visible_message(span_notice("[user] slices apart \the [src]."),
+				span_notice("You cut \the [src] apart with \the [I]."),
 				span_hear("You hear welding."))
 			new /obj/item/stack/sheet/metal(src.loc, 4)
 			qdel(src)
@@ -72,7 +72,7 @@
 			if(user.pulling != L)
 				return
 			playsound(src.loc, 'sound/effects/splat.ogg', 25, TRUE)
-			L.visible_message(span_danger("[user] slams [L] onto the meat spike!") , span_userdanger("[user] slams you onto the meat spike!") , span_hear("You hear a squishy wet noise."))
+			L.visible_message(span_danger("[user] slams [L] onto the meat spike!"), span_userdanger("[user] slams you onto the meat spike!"), span_hear("You hear a squishy wet noise."))
 			L.forceMove(drop_location())
 			L.force_scream()
 			L.add_splatter_floor()
@@ -98,18 +98,18 @@
 	if(buckled_mob)
 		var/mob/living/M = buckled_mob
 		if(M != user)
-			M.visible_message(span_notice("[user] tries to pull [M] free of [src]!") ,\
-				span_notice("[user] is trying to pull you off [src], opening up fresh wounds!") ,\
+			M.visible_message(span_notice("[user] tries to pull [M] free of [src]!"),\
+				span_notice("[user] is trying to pull you off [src], opening up fresh wounds!"),\
 				span_hear("You hear a squishy wet noise."))
 			if(!do_after(user, 300, target = src))
 				if(M && M.buckled)
-					M.visible_message(span_notice("[user] fails to free [M]!") ,\
+					M.visible_message(span_notice("[user] fails to free [M]!"),\
 					span_notice("[user] fails to pull you off of [src]."))
 				return
 
 		else
-			M.visible_message(span_warning("[M] struggles to break free from [src]!") ,\
-			span_notice("You struggle to break free from [src], exacerbating your wounds! (Stay still for two minutes.)") ,\
+			M.visible_message(span_warning("[M] struggles to break free from [src]!"),\
+			span_notice("You struggle to break free from [src], exacerbating your wounds! (Stay still for two minutes.)"),\
 			span_hear("You hear a wet squishing noise.."))
 			M.adjustBruteLoss(30)
 			if(!do_after(M, 1200, target = src, hidden = TRUE))

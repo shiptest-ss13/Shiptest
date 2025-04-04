@@ -140,7 +140,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		else
 			id_eject(user, target)
 
-	user.visible_message(span_notice("[user] inserts \the [card_to_insert] into \the [src].") ,
+	user.visible_message(span_notice("[user] inserts \the [card_to_insert] into \the [src]."),
 						span_notice("You insert \the [card_to_insert] into \the [src]."))
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	updateUsrDialog()
@@ -154,7 +154,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		target.forceMove(drop_location())
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
-		user.visible_message(span_notice("[user] gets \the [target] from \the [src].") , \
+		user.visible_message(span_notice("[user] gets \the [target] from \the [src]."), \
 							span_notice("You get \the [target] from \the [src]."))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		updateUsrDialog()

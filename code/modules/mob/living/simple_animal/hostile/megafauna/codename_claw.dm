@@ -347,7 +347,7 @@
 	if(H.Adjacent(C))
 		for(var/obj/item/I in H.held_items)
 			if(I.get_sharpness())
-				C.visible_message(span_danger("[H] impales [C] with [H.p_their()] [I.name]!") , span_userdanger("[H] impales you with [H.p_their()] [I.name]!"))
+				C.visible_message(span_danger("[H] impales [C] with [H.p_their()] [I.name]!"), span_userdanger("[H] impales you with [H.p_their()] [I.name]!"))
 				C.apply_damage(I.force, BRUTE, BODY_ZONE_CHEST)
 				H.do_item_attack_animation(C, used_item = I)
 				H.add_mob_blood(C)
@@ -377,7 +377,7 @@
 					firer_intent = M.a_intent
 				switch(firer_intent)
 					if(INTENT_HELP)
-						C.visible_message(span_danger("[L] is pulled by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
+						C.visible_message(span_danger("[L] is pulled by [H]'s tentacle!"),span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
 						C.throw_at(get_step_towards(H,C), 8, 2)
 						return BULLET_ACT_HIT
 
@@ -385,7 +385,7 @@
 						var/obj/item/I = C.get_active_held_item()
 						if(I)
 							if(C.dropItemToGround(I))
-								C.visible_message(span_danger("[I] is yanked off [C]'s hand by [src]!") ,span_userdanger("A tentacle pulls [I] away from you!"))
+								C.visible_message(span_danger("[I] is yanked off [C]'s hand by [src]!"),span_userdanger("A tentacle pulls [I] away from you!"))
 								on_hit(I) //grab the item as if you had hit it directly with the tentacle
 								return BULLET_ACT_HIT
 							else
@@ -396,16 +396,16 @@
 							return BULLET_ACT_HIT
 
 					if(INTENT_GRAB)
-						C.visible_message(span_danger("[L] is grabbed by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
+						C.visible_message(span_danger("[L] is grabbed by [H]'s tentacle!"),span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
 						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(tentacle_grab), H, C))
 						return BULLET_ACT_HIT
 
 					if(INTENT_HARM)
-						C.visible_message(span_danger("[L] is thrown towards [H] by a tentacle!") ,span_userdanger("A tentacle grabs you and throws you towards [H]!"))
+						C.visible_message(span_danger("[L] is thrown towards [H] by a tentacle!"),span_userdanger("A tentacle grabs you and throws you towards [H]!"))
 						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(tentacle_stab), H, C))
 						return BULLET_ACT_HIT
 			else
-				L.visible_message(span_danger("[L] is pulled by [H]'s tentacle!") ,span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
+				L.visible_message(span_danger("[L] is pulled by [H]'s tentacle!"),span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
 				L.throw_at(get_step_towards(H,L), 8, 2)
 				. = BULLET_ACT_HIT
 

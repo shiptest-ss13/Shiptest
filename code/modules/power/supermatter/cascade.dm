@@ -82,8 +82,8 @@
 	else
 		murder = user.attack_verb_continuous
 	dust_mob(user, \
-	span_danger("[user] unwisely [murder] [src], and [user.p_their()] body burns brilliantly before flashing into ash!") , \
-	span_userdanger("You unwisely touch [src], and your vision glows brightly as your body crumbles to dust. Oops.") , \
+	span_danger("[user] unwisely [murder] [src], and [user.p_their()] body burns brilliantly before flashing into ash!"), \
+	span_userdanger("You unwisely touch [src], and your vision glows brightly as your body crumbles to dust. Oops."), \
 	"simple animal attack")
 
 /turf/open/indestructible/supermatter_cascade/attack_robot(mob/user)
@@ -114,8 +114,8 @@
 	if(!user.is_mouth_covered())
 		if(user.a_intent == INTENT_HARM)
 			dust_mob(user,
-				span_danger("As [user] tries to take a bite out of [src] everything goes silent before [user.p_their()] body starts to glow and burst into flames before flashing to ash.") ,
-				span_userdanger("You try to take a bite out of [src], but find [p_them()] far too hard to get anywhere before everything starts burning and your ears fill with ringing!") ,
+				span_danger("As [user] tries to take a bite out of [src] everything goes silent before [user.p_their()] body starts to glow and burst into flames before flashing to ash."),
+				span_userdanger("You try to take a bite out of [src], but find [p_them()] far too hard to get anywhere before everything starts burning and your ears fill with ringing!"),
 				"attempted bite"
 			)
 			return
@@ -123,15 +123,15 @@
 	var/obj/item/bodypart/head/forehead = user.get_bodypart(BODY_ZONE_HEAD)
 	if(forehead)
 		dust_mob(user,
-			span_danger("As [user]'s forehead bumps into [src], inducing a resonance... Everything goes silent before [user.p_their()] [forehead] flashes to ash!") ,
-			span_userdanger("You feel your forehead bump into [src] and everything suddenly goes silent. As your head fills with ringing you come to realize that that was not a wise decision.") ,
+			span_danger("As [user]'s forehead bumps into [src], inducing a resonance... Everything goes silent before [user.p_their()] [forehead] flashes to ash!"),
+			span_userdanger("You feel your forehead bump into [src] and everything suddenly goes silent. As your head fills with ringing you come to realize that that was not a wise decision."),
 			"failed lick"
 		)
 		return
 
 	dust_mob(user,
-		span_danger("[user] leans in and tries to lick [src], inducing a resonance... [user.p_their()] body starts to glow and burst into flames before flashing into dust!") ,
-		span_userdanger("You lean in and try to lick [src]. Everything starts burning and all you can hear is ringing. Your last thought is \"That was not a wise decision.\"") ,
+		span_danger("[user] leans in and tries to lick [src], inducing a resonance... [user.p_their()] body starts to glow and burst into flames before flashing into dust!"),
+		span_userdanger("You lean in and try to lick [src]. Everything starts burning and all you can hear is ringing. Your last thought is \"That was not a wise decision.\""),
 		"failed lick"
 	)
 

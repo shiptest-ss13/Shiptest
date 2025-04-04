@@ -86,7 +86,7 @@
 		return
 
 	C.grab_ghost()
-	C.visible_message(span_danger("[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!") , span_alien("You HUNGER!"))
+	C.visible_message(span_danger("[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!"), span_alien("You HUNGER!"))
 	playsound(C.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
 	C.do_jitter_animation(living_transformation_time)
 	C.Stun(living_transformation_time)

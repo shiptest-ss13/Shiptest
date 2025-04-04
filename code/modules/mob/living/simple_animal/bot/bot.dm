@@ -345,7 +345,7 @@
 			to_chat(user, span_notice("You attempt to pull [paicard] free..."))
 			if(do_after(user, 30, target = src))
 				if (paicard)
-					user.visible_message(span_notice("[user] uses [W] to pull [paicard] out of [bot_name]!") ,span_notice("You pull [paicard] out of [bot_name] with [W]."))
+					user.visible_message(span_notice("[user] uses [W] to pull [paicard] out of [bot_name]!"),span_notice("You pull [paicard] out of [bot_name] with [W]."))
 					ejectpai(user)
 	else
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -359,7 +359,7 @@
 
 			if(W.use_tool(src, user, 0, volume=40))
 				adjustHealth(-10)
-				user.visible_message(span_notice("[user] repairs [src]!") ,span_notice("You repair [src]."))
+				user.visible_message(span_notice("[user] repairs [src]!"),span_notice("You repair [src]."))
 		else
 			if(W.force) //if force is non-zero
 				do_sparks(5, TRUE, src)
@@ -380,7 +380,7 @@
 	new /obj/effect/temp_visual/emp(loc)
 	if(paicard)
 		paicard.emp_act(severity)
-		src.visible_message(span_notice("[paicard] is flies out of [bot_name]!") ,span_warning("You are forcefully ejected from [bot_name]!"))
+		src.visible_message(span_notice("[paicard] is flies out of [bot_name]!"),span_warning("You are forcefully ejected from [bot_name]!"))
 		ejectpai(0)
 	if(on)
 		turn_off()
@@ -954,7 +954,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 				if(!user.transferItemToLoc(card, src))
 					return
 				paicard = card
-				user.visible_message(span_notice("[user] inserts [card] into [src]!") , span_notice("You insert [card] into [src]."))
+				user.visible_message(span_notice("[user] inserts [card] into [src]!"), span_notice("You insert [card] into [src]."))
 				paicard.pai.mind.transfer_to(src)
 				to_chat(src, span_notice("You sense your form change as you are uploaded into [src]."))
 				bot_name = name

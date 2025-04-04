@@ -992,9 +992,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	if(ismob(loc))
 		var/mob/M = loc
-		M.show_message(span_userdanger("Your [src] explodes!") , MSG_VISUAL, span_warning("You hear a loud *pop*!") , MSG_AUDIBLE)
+		M.show_message(span_userdanger("Your [src] explodes!"), MSG_VISUAL, span_warning("You hear a loud *pop*!"), MSG_AUDIBLE)
 	else
-		visible_message(span_danger("[src] explodes!") , span_warning("You hear a loud *pop*!"))
+		visible_message(span_danger("[src] explodes!"), span_warning("You hear a loud *pop*!"))
 
 	if(T)
 		T.hotspot_expose(700,125)

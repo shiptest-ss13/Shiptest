@@ -840,7 +840,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 				return
 		if(1)
 			if(W.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message(span_notice("[user.name] removes the electronics from [src.name].") , \
+				user.visible_message(span_notice("[user.name] removes the electronics from [src.name]."), \
 									span_notice("You start prying out the circuit..."))
 				W.play_tool_sound(src)
 				if (W.use_tool(src, user, 20))
@@ -857,7 +857,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 				if(cable.get_amount() < 5)
 					to_chat(user, span_warning("You need five lengths of cable to wire the air alarm!"))
 					return
-				user.visible_message(span_notice("[user.name] wires the air alarm.") , \
+				user.visible_message(span_notice("[user.name] wires the air alarm."), \
 									span_notice("You start wiring the air alarm..."))
 				if (do_after(user, 20, target = src))
 					if (cable.get_amount() >= 5 && buildstage == 1)
@@ -885,7 +885,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 				var/obj/item/electroadaptive_pseudocircuit/P = W
 				if(!P.adapt_circuit(user, 25))
 					return
-				user.visible_message(span_notice("[user] fabricates a circuit and places it into [src].") , \
+				user.visible_message(span_notice("[user] fabricates a circuit and places it into [src]."), \
 				span_notice("You adapt an air alarm circuit and slot it into the assembly."))
 				buildstage = 1
 				update_appearance()
@@ -908,7 +908,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 /obj/machinery/airalarm/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_UPGRADE_SIMPLE_CIRCUITS)
-			user.visible_message(span_notice("[user] fabricates a circuit and places it into [src].") , \
+			user.visible_message(span_notice("[user] fabricates a circuit and places it into [src]."), \
 			span_notice("You adapt an air alarm circuit and slot it into the assembly."))
 			buildstage = 1
 			update_appearance()
@@ -938,7 +938,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	visible_message(span_warning("Sparks fly out of [src]!") , span_notice("You emag [src], disabling its safeties."))
+	visible_message(span_warning("Sparks fly out of [src]!"), span_notice("You emag [src], disabling its safeties."))
 	playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 
 /obj/machinery/airalarm/deconstruct(disassembled = TRUE)

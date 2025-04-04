@@ -84,8 +84,8 @@
 				return
 			M.adjustOxyLoss(round(dam_force/2))
 			M.updatehealth()
-			target.visible_message(span_danger("[chassis] squeezes [target]!") , \
-								span_userdanger("[chassis] squeezes you!") ,\
+			target.visible_message(span_danger("[chassis] squeezes [target]!"), \
+								span_userdanger("[chassis] squeezes you!"),\
 								span_hear("You hear something crack."))
 			log_combat(chassis.occupant, M, "attacked", "[name]", "(INTENT: [uppertext(chassis.occupant.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 		else
@@ -145,11 +145,11 @@
 					return
 				M.adjustOxyLoss(round(dam_force/2))
 				M.updatehealth()
-				target.visible_message(span_danger("[chassis] destroys [target] in an unholy fury!") , \
+				target.visible_message(span_danger("[chassis] destroys [target] in an unholy fury!"), \
 									span_userdanger("[chassis] destroys you in an unholy fury!"))
 				log_combat(chassis.occupant, M, "attacked", "[name]", "(INTENT: [uppertext(chassis.occupant.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 			else
-				target.visible_message(span_danger("[chassis] destroys [target] in an unholy fury!") , \
+				target.visible_message(span_danger("[chassis] destroys [target] in an unholy fury!"), \
 									span_userdanger("[chassis] destroys you in an unholy fury!"))
 		else if(chassis.occupant.a_intent == INTENT_DISARM)
 			if(real_clamp)
@@ -169,19 +169,19 @@
 				if(play_sound)
 					playsound(src, get_dismember_sound(), 80, TRUE)
 					target.visible_message(
-						span_danger("[chassis] rips [target]'s arms off!") ,
+						span_danger("[chassis] rips [target]'s arms off!"),
 						span_userdanger("[chassis] rips your arms off!")
 					)
 					log_combat(chassis.occupant, M, "dismembered of[limbs_gone],", "[name]", "(INTENT: [uppertext(chassis.occupant.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 			else
 				target.visible_message(
-					span_danger("[chassis] rips [target]'s arms off!") ,
+					span_danger("[chassis] rips [target]'s arms off!"),
 					span_userdanger("[chassis] rips your arms off!")
 				)
 		else
 			step_away(M,chassis)
 			target.visible_message(
-				span_danger("[chassis] tosses [target] like a piece of paper!") ,
+				span_danger("[chassis] tosses [target] like a piece of paper!"),
 				span_userdanger("[chassis] tosses you like a piece of paper!")
 			)
 		return 1
@@ -548,7 +548,7 @@
 	return TRUE
 
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/proc/saw_mob(mob/living/target, mob/user)
-	target.visible_message(span_danger("[chassis] is sawing [target] with [src]!") , \
+	target.visible_message(span_danger("[chassis] is sawing [target] with [src]!"), \
 						span_userdanger("[chassis] is sawing you with [src]!"))
 	if(!do_after_cooldown(target))
 		return

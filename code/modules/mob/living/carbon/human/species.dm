@@ -1471,8 +1471,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/grab(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	if(target.check_block())
-		target.visible_message(span_warning("[target] blocks [user]'s grab!") , \
-						span_userdanger("You block [user]'s grab!") , span_hear("You hear a swoosh!") , COMBAT_MESSAGE_RANGE, user)
+		target.visible_message(span_warning("[target] blocks [user]'s grab!"), \
+						span_userdanger("You block [user]'s grab!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, user)
 		to_chat(user, span_warning("Your grab at [target] was blocked!"))
 		return FALSE
 	if(attacker_style && attacker_style.grab_act(user,target))
@@ -1481,14 +1481,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		//Steal them shoes
 		if(target.body_position == LYING_DOWN && (user.zone_selected == BODY_ZONE_L_LEG || user.zone_selected == BODY_ZONE_R_LEG) && user.a_intent == INTENT_GRAB && target.shoes)
 			var/obj/item/I = target.shoes
-			user.visible_message(span_warning("[user] starts stealing [target]'s [I.name]!") ,
-							span_danger("You start stealing [target]'s [I.name]...") , null, null, target)
+			user.visible_message(span_warning("[user] starts stealing [target]'s [I.name]!"),
+							span_danger("You start stealing [target]'s [I.name]..."), null, null, target)
 			to_chat(target, span_userdanger("[user] starts stealing your [I.name]!"))
 			if(do_after(user, I.strip_delay, target))
 				target.dropItemToGround(I, TRUE)
 				user.put_in_hands(I)
-				user.visible_message(span_warning("[user] stole [target]'s [I.name]!") ,
-								span_notice("You stole [target]'s [I.name]!") , null, null, target)
+				user.visible_message(span_warning("[user] stole [target]'s [I.name]!"),
+								span_notice("You stole [target]'s [I.name]!"), null, null, target)
 				to_chat(target, span_userdanger("[user] stole your [I.name]!"))
 		target.grabbedby(user)
 		return TRUE
@@ -1499,8 +1499,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return FALSE
 	if(target.check_block())
-		target.visible_message(span_warning("[target] blocks [user]'s attack!") , \
-						span_userdanger("You block [user]'s attack!") , span_hear("You hear a swoosh!") , COMBAT_MESSAGE_RANGE, user)
+		target.visible_message(span_warning("[target] blocks [user]'s attack!"), \
+						span_userdanger("You block [user]'s attack!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, user)
 		to_chat(user, span_warning("Your attack at [target] was blocked!"))
 		return FALSE
 	if(attacker_style && attacker_style.harm_act(user,target))
@@ -1534,8 +1534,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		if(!damage || !affecting || prob(miss_chance))//future-proofing for species that have 0 damage/weird cases where no zone is targeted
 			playsound(target.loc, user.dna.species.miss_sound, 25, TRUE, -1)
-			target.visible_message(span_danger("[user]'s [atk_verb] misses [target]!") , \
-							span_danger("You avoid [user]'s [atk_verb]!") , span_hear("You hear a swoosh!") , COMBAT_MESSAGE_RANGE, user)
+			target.visible_message(span_danger("[user]'s [atk_verb] misses [target]!"), \
+							span_danger("You avoid [user]'s [atk_verb]!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, user)
 			to_chat(user, span_warning("Your [atk_verb] misses [target]!"))
 			log_combat(user, target, "attempted to punch")
 			return FALSE
@@ -1544,8 +1544,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		playsound(target.loc, user.dna.species.attack_sound, 25, TRUE, -1)
 
-		target.visible_message(span_danger("[user] [atk_verb]ed [target]!") , \
-						span_userdanger("You're [atk_verb]ed by [user]!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , COMBAT_MESSAGE_RANGE, user)
+		target.visible_message(span_danger("[user] [atk_verb]ed [target]!"), \
+						span_userdanger("You're [atk_verb]ed by [user]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, user)
 		to_chat(user, span_danger("You [atk_verb] [target]!"))
 
 		target.lastattacker = user.real_name
@@ -1564,8 +1564,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			log_combat(user, target, "punched")
 
 		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
-			target.visible_message(span_danger("[user] knocks [target] down!") , \
-							span_userdanger("You're knocked down by [user]!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , COMBAT_MESSAGE_RANGE, user)
+			target.visible_message(span_danger("[user] knocks [target] down!"), \
+							span_userdanger("You're knocked down by [user]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, user)
 			to_chat(user, span_danger("You knock [target] down!"))
 			var/knockdown_duration = 40 + (target.getStaminaLoss() + (target.getBruteLoss()*0.5))*0.8 //50 total damage = 40 base stun + 40 stun modifier = 80 stun duration, which is the old base duration
 			target.apply_effect(knockdown_duration, EFFECT_KNOCKDOWN, armor_block)
@@ -1576,8 +1576,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	if(target.check_block())
-		target.visible_message(span_warning("[user]'s shove is blocked by [target]!") , \
-						span_danger("You block [user]'s shove!") , span_hear("You hear a swoosh!") , COMBAT_MESSAGE_RANGE, user)
+		target.visible_message(span_warning("[user]'s shove is blocked by [target]!"), \
+						span_danger("You block [user]'s shove!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, user)
 		to_chat(user, span_warning("Your shove at [target] was blocked!"))
 		return FALSE
 	if(attacker_style && attacker_style.disarm_act(user,target))
@@ -1606,8 +1606,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		attacker_style = M.mind.martial_art
 	if((M != H) && M.a_intent != INTENT_HELP && H.check_shields(M, 0, M.name, attack_type = UNARMED_ATTACK))
 		log_combat(M, H, "attempted to touch")
-		H.visible_message(span_warning("[M] attempts to touch [H]!") , \
-						span_danger("[M] attempts to touch you!") , span_hear("You hear a swoosh!") , COMBAT_MESSAGE_RANGE, M)
+		H.visible_message(span_warning("[M] attempts to touch [H]!"), \
+						span_danger("[M] attempts to touch you!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, M)
 		to_chat(M, span_warning("You attempt to touch [H]!"))
 		return 0
 	SEND_SIGNAL(M, COMSIG_MOB_ATTACK_HAND, M, H, attacker_style)
@@ -1630,7 +1630,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(H.check_shields(I, I.force, "the [I.name]", MELEE_ATTACK, I.armour_penetration))
 			return 0
 	if(H.check_block())
-		H.visible_message(span_warning("[H] blocks [I]!") , \
+		H.visible_message(span_warning("[H] blocks [I]!"), \
 						span_userdanger("You block [I]!"))
 		return 0
 
@@ -1641,7 +1641,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	hit_area = affecting.name
 	var/def_zone = affecting.body_zone
 
-	var/armor_block = H.run_armor_check(affecting, "melee", I.armour_penetration, FALSE, span_notice("Your armor has protected your [hit_area]!") , span_warning("Your armor has softened a hit to your [hit_area]!"))
+	var/armor_block = H.run_armor_check(affecting, "melee", I.armour_penetration, FALSE, span_notice("Your armor has protected your [hit_area]!"), span_warning("Your armor has softened a hit to your [hit_area]!"))
 	armor_block = min(90,armor_block) //cap damage reduction at 90%
 
 	apply_damage(I.force, I.damtype, def_zone, armor_block, H, sharpness = I.get_sharpness())
@@ -1676,7 +1676,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					if(prob(I.force))
 						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
 						if(H.stat == CONSCIOUS)
-							H.visible_message(span_danger("[H] is knocked senseless!") , \
+							H.visible_message(span_danger("[H] is knocked senseless!"), \
 											span_userdanger("You're knocked senseless!"))
 							H.confused = max(H.confused, 20)
 							H.adjust_blurriness(10)
@@ -1699,7 +1699,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(BODY_ZONE_CHEST)
 				if(H.stat == CONSCIOUS && !I.get_sharpness() && armor_block < 50)
 					if(prob(I.force))
-						H.visible_message(span_danger("[H] is knocked down!") , \
+						H.visible_message(span_danger("[H] is knocked down!"), \
 									span_userdanger("You're knocked down!"))
 						H.apply_effect(60, EFFECT_KNOCKDOWN, armor_block)
 

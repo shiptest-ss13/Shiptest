@@ -93,7 +93,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 
 /obj/structure/light_construct/attack_hand(mob/user)
 	if(cell)
-		user.visible_message(span_notice("[user] removes [cell] from [src]!") , span_notice("You remove [cell]."))
+		user.visible_message(span_notice("[user] removes [cell] from [src]!"), span_notice("You remove [cell]."))
 		user.put_in_hands(cell)
 		cell.update_appearance()
 		cell = null
@@ -118,7 +118,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 		if(cell)
 			to_chat(user, span_warning("There is a power cell already installed!"))
 		else if(user.temporarilyRemoveItemFromInventory(W))
-			user.visible_message(span_notice("[user] hooks up [W] to [src].") , \
+			user.visible_message(span_notice("[user] hooks up [W] to [src]."), \
 			span_notice("You add [W] to [src]."))
 			playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 			W.forceMove(src)
@@ -139,8 +139,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 					to_chat(user, span_notice("You begin deconstructing [src]..."))
 					if (W.use_tool(src, user, 30, volume=50))
 						new /obj/item/stack/sheet/metal(drop_location(), sheets_refunded)
-						user.visible_message(span_notice("[user.name] deconstructs [src].") , \
-							span_notice("You deconstruct [src].") , span_hear("You hear a ratchet."))
+						user.visible_message(span_notice("[user.name] deconstructs [src]."), \
+							span_notice("You deconstruct [src]."), span_hear("You hear a ratchet."))
 						playsound(src, 'sound/items/deconstruct.ogg', 75, TRUE)
 						qdel(src)
 					return
@@ -150,7 +150,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 				if(coil.use(1))
 					icon_state = "[fixture_type]-construct-stage2"
 					stage = 2
-					user.visible_message(span_notice("[user.name] adds wires to [src].") , \
+					user.visible_message(span_notice("[user.name] adds wires to [src]."), \
 						span_notice("You add wires to [src]."))
 				else
 					to_chat(user, span_warning("You need one length of cable to wire [src]!"))
@@ -164,14 +164,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 				stage = 1
 				icon_state = "[fixture_type]-construct-stage1"
 				new /obj/item/stack/cable_coil(drop_location(), 1, "red")
-				user.visible_message(span_notice("[user.name] removes the wiring from [src].") , \
-					span_notice("You remove the wiring from [src].") , span_hear("You hear clicking."))
+				user.visible_message(span_notice("[user.name] removes the wiring from [src]."), \
+					span_notice("You remove the wiring from [src]."), span_hear("You hear clicking."))
 				W.play_tool_sound(src, 100)
 				return
 
 			if(W.tool_behaviour == TOOL_SCREWDRIVER)
-				user.visible_message(span_notice("[user.name] closes [src]'s casing.") , \
-					span_notice("You close [src]'s casing.") , span_hear("You hear screwing."))
+				user.visible_message(span_notice("[user.name] closes [src]'s casing."), \
+					span_notice("You close [src]'s casing."), span_hear("You hear screwing."))
 				W.play_tool_sound(src, 75)
 				switch(fixture_type)
 					if("tube")
@@ -533,8 +533,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	else if(status == LIGHT_EMPTY)
 		if(W.tool_behaviour == TOOL_SCREWDRIVER) //If it's a screwdriver open it.
 			W.play_tool_sound(src, 75)
-			user.visible_message(span_notice("[user.name] opens [src]'s casing.") , \
-				span_notice("You open [src]'s casing.") , span_hear("You hear a noise."))
+			user.visible_message(span_notice("[user.name] opens [src]'s casing."), \
+				span_notice("You open [src]'s casing."), span_hear("You hear a noise."))
 			deconstruct()
 		else
 			to_chat(user, span_userdanger("You stick \the [W] into the light socket!"))
@@ -919,7 +919,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 
 /obj/item/light/proc/shatter()
 	if(status == LIGHT_OK || status == LIGHT_BURNED)
-		visible_message(span_danger("[src] shatters.") ,span_hear("You hear a small glass object shatter."))
+		visible_message(span_danger("[src] shatters."),span_hear("You hear a small glass object shatter."))
 		status = LIGHT_BROKEN
 		force = 5
 		playsound(src.loc, 'sound/effects/glasshit.ogg', 75, TRUE)

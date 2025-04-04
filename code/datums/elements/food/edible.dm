@@ -307,15 +307,15 @@ Behavior that's still missing from this component that original food items had t
 			to_chat(eater, span_warning("You don't feel like eating any more junk food at the moment!"))
 			return
 		else if(fullness <= 50)
-			eater.visible_message(span_notice("[eater] hungrily [eatverb]s \the [parent], gobbling it down!") , span_notice("You hungrily [eatverb] \the [parent], gobbling it down!"))
+			eater.visible_message(span_notice("[eater] hungrily [eatverb]s \the [parent], gobbling it down!"), span_notice("You hungrily [eatverb] \the [parent], gobbling it down!"))
 		else if(fullness > 50 && fullness < 150)
-			eater.visible_message(span_notice("[eater] hungrily [eatverb]s \the [parent].") , span_notice("You hungrily [eatverb] \the [parent]."))
+			eater.visible_message(span_notice("[eater] hungrily [eatverb]s \the [parent]."), span_notice("You hungrily [eatverb] \the [parent]."))
 		else if(fullness > 150 && fullness < 500)
-			eater.visible_message(span_notice("[eater] [eatverb]s \the [parent].") , span_notice("You [eatverb] \the [parent]."))
+			eater.visible_message(span_notice("[eater] [eatverb]s \the [parent]."), span_notice("You [eatverb] \the [parent]."))
 		else if(fullness > 500 && fullness < 600)
-			eater.visible_message(span_notice("[eater] unwillingly [eatverb]s a bit of \the [parent].") , span_notice("You unwillingly [eatverb] a bit of \the [parent]."))
+			eater.visible_message(span_notice("[eater] unwillingly [eatverb]s a bit of \the [parent]."), span_notice("You unwillingly [eatverb] a bit of \the [parent]."))
 		else if(fullness > (600 * (1 + eater.overeatduration / 2000)))	// The more you eat - the more you can eat
-			eater.visible_message(span_warning("[eater] cannot force any more of \the [parent] to go down [eater.p_their()] throat!") , span_warning("You cannot force any more of \the [parent] to go down your throat!"))
+			eater.visible_message(span_warning("[eater] cannot force any more of \the [parent] to go down [eater.p_their()] throat!"), span_warning("You cannot force any more of \the [parent] to go down your throat!"))
 			return
 
 
@@ -328,14 +328,14 @@ Behavior that's still missing from this component that original food items had t
 			return
 		if(fullness <= (600 * (1 + eater.overeatduration / 1000)))
 			eater.visible_message(
-				span_danger("[feeder] attempts to feed [eater] [parent].") , \
+				span_danger("[feeder] attempts to feed [eater] [parent]."), \
 				span_userdanger("[feeder] attempts to feed you [parent].") 
 			)
 			if(eater.is_blind())
 				to_chat(eater, span_userdanger("You feel someone trying to feed you something!"))
 		else
 			eater.visible_message(
-				span_warning("[feeder] cannot force any more of [parent] down [eater]'s throat!") , \
+				span_warning("[feeder] cannot force any more of [parent] down [eater]'s throat!"), \
 				span_warning("[feeder] cannot force any more of [parent] down your throat!") 
 			)
 			if(eater.is_blind())
@@ -347,7 +347,7 @@ Behavior that's still missing from this component that original food items had t
 			return
 		log_combat(feeder, eater, "fed", owner.reagents.log_list())
 		eater.visible_message(
-			span_danger("[feeder] forces [eater] to eat [parent]!") , \
+			span_danger("[feeder] forces [eater] to eat [parent]!"), \
 			span_userdanger("[feeder] forces you to eat [parent]!") 
 		)
 		if(eater.is_blind())

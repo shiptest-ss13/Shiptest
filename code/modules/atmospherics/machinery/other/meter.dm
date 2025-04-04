@@ -123,7 +123,7 @@
 	if (I.use_tool(src, user, 40, volume=50))
 		user.visible_message(
 			"[user] unfastens \the [src].",
-			span_notice("You unfasten \the [src].") ,
+			span_notice("You unfasten \the [src]."),
 			span_hear("You hear ratchet."))
 		deconstruct()
 	return TRUE

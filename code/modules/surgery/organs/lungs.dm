@@ -531,7 +531,7 @@
 		if(do_i_cough)
 			owner.emote("cough")
 	if(organ_flags & ORGAN_FAILING && owner.stat == CONSCIOUS)
-		owner.visible_message(span_danger("[owner] grabs [owner.p_their()] throat, struggling for breath!") , span_userdanger("You suddenly feel like you can't breathe!"))
+		owner.visible_message(span_danger("[owner] grabs [owner.p_their()] throat, struggling for breath!"), span_userdanger("You suddenly feel like you can't breathe!"))
 		failed = TRUE
 
 /obj/item/organ/lungs/get_availability(datum/species/S)

@@ -275,17 +275,17 @@
 	balanced = 0
 
 /obj/item/melee/sword/supermatter/ex_act(severity, target)
-	visible_message(span_danger("The blast wave smacks into [src] and rapidly flashes to ash.") ,\
+	visible_message(span_danger("The blast wave smacks into [src] and rapidly flashes to ash."),\
 	span_hear("You hear a loud crack as you are washed with a wave of heat."))
 	consume_everything()
 
 /obj/item/melee/sword/supermatter/acid_act()
-	visible_message(span_danger("The acid smacks into [src] and rapidly flashes to ash.") ,\
+	visible_message(span_danger("The acid smacks into [src] and rapidly flashes to ash."),\
 	span_hear("You hear a loud crack as you are washed with a wave of heat."))
 	consume_everything()
 
 /obj/item/melee/sword/supermatter/bullet_act(obj/projectile/P)
-	visible_message(span_danger("[P] smacks into [src] and rapidly flashes to ash.") ,\
+	visible_message(span_danger("[P] smacks into [src] and rapidly flashes to ash."),\
 	span_hear("You hear a loud crack as you are washed with a wave of heat."))
 	consume_everything(P)
 	return BULLET_ACT_HIT
@@ -305,7 +305,7 @@
 	if(newT.type == oldtype)
 		return
 	playsound(T, 'sound/effects/supermatter.ogg', 50, TRUE)
-	T.visible_message(span_danger("[T] smacks into [src] and rapidly flashes to ash.") ,\
+	T.visible_message(span_danger("[T] smacks into [src] and rapidly flashes to ash."),\
 	span_hear("You hear a loud crack as you are washed with a wave of heat."))
 	shard.Consume()
 
@@ -343,7 +343,7 @@
 		var/mob/living/carbon/C = target
 		var/datum/reagent/R = pick(prick_chems)
 		C.reagents.add_reagent(R, prick_chems[R])
-		C.visible_message(span_danger("[user] is pricked!") , \
+		C.visible_message(span_danger("[user] is pricked!"), \
 								span_userdanger("You've been pricked by the [src]!"))
 		log_combat(user, C, "pricked", src.name, "with [prick_chems[R]]u of [R]")
 	return ..()
@@ -460,7 +460,7 @@
 	if(length(contents))
 		var/obj/item/I = contents[1]
 		playsound(user, dash_sound, 25, TRUE)
-		user.visible_message(span_notice("[user] swiftly draws \the [I].") , span_notice("You draw \the [I]."))
+		user.visible_message(span_notice("[user] swiftly draws \the [I]."), span_notice("You draw \the [I]."))
 		user.put_in_hands(I)
 		update_appearance()
 	else
@@ -480,7 +480,7 @@
 		else
 			CP.locked = TRUE //Prevents normal removal of the blade while primed
 			playsound(user, 'sound/items/unsheath.ogg', 25, TRUE)
-			user.visible_message(span_warning("[user] grips the blade within [src] and primes to attack.") , span_warning("You take an opening stance...") , span_warning("You hear a weapon being drawn..."))
+			user.visible_message(span_warning("[user] grips the blade within [src] and primes to attack."), span_warning("You take an opening stance..."), span_warning("You hear a weapon being drawn..."))
 			primed = TRUE
 			update_appearance()
 	else
@@ -531,7 +531,7 @@
 	playsound(start, dash_sound, 35, TRUE)
 	var/obj/spot2 = new phasein(end, user.dir)
 	spot1.Beam(spot2, beam_effect, time=20)
-	user.visible_message(span_warning("In a flash of red, [user] draws [user.p_their()] blade!") , span_notice("You dash forward while drawing your weapon!") , span_warning("You hear a blade slice through the air at impossible speeds!"))
+	user.visible_message(span_warning("In a flash of red, [user] draws [user.p_their()] blade!"), span_notice("You dash forward while drawing your weapon!"), span_warning("You hear a blade slice through the air at impossible speeds!"))
 
 /obj/item/storage/belt/weebstick/update_icon_state()
 	icon_state = "weeb_sheath"

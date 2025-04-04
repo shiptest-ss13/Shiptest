@@ -39,8 +39,8 @@ In all, this is a lot like the monkey code. /N
 			if(health > 0)
 				M.do_attack_animation(src, ATTACK_EFFECT_BITE)
 				playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
-				visible_message(span_danger("[M.name] bites [src]!") , \
-								span_userdanger("[M.name] bites you!") , span_hear("You hear a chomp!") , COMBAT_MESSAGE_RANGE, M)
+				visible_message(span_danger("[M.name] bites [src]!"), \
+								span_userdanger("[M.name] bites you!"), span_hear("You hear a chomp!"), COMBAT_MESSAGE_RANGE, M)
 				to_chat(M, span_danger("You bite [src]!"))
 				adjustBruteLoss(1)
 				log_combat(M, src, "attacked")

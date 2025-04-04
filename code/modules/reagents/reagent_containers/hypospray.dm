@@ -480,7 +480,7 @@
 		if(!user.transferItemToLoc(V,src))
 			return FALSE
 		vial = V
-		user.visible_message(span_notice("[user] has loaded a vial into [src].") ,span_notice("You have loaded [vial] into [src]."))
+		user.visible_message(span_notice("[user] has loaded a vial into [src]."),span_notice("You have loaded [vial] into [src]."))
 		update_appearance()
 		playsound(loc, 'sound/weapons/autoguninsert.ogg', 35, 1)
 		return TRUE
@@ -554,7 +554,7 @@
 			if(HYPO_INJECT)
 				if(L) //living mob
 					if(L != user)
-						L.visible_message(span_danger("[user] is trying to inject [L] with [src]!") , \
+						L.visible_message(span_danger("[user] is trying to inject [L] with [src]!"), \
 										span_userdanger("[user] is trying to inject [L] with [src]!"))
 						if(!do_after(user, inject_wait, L))
 							return
@@ -564,7 +564,7 @@
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
 							return
-						L.visible_message(span_danger("[user] uses the [src] on [L]!") , \
+						L.visible_message(span_danger("[user] uses the [src] on [L]!"), \
 										span_userdanger("[user] uses the [src] on [L]!"))
 					else
 						if(!do_after(user, inject_self, L))
@@ -590,7 +590,7 @@
 			if(HYPO_SPRAY)
 				if(L) //living mob
 					if(L != user)
-						L.visible_message(span_danger("[user] is trying to spray [L] with [src]!") , \
+						L.visible_message(span_danger("[user] is trying to spray [L] with [src]!"), \
 										span_userdanger("[user] is trying to spray [L] with [src]!"))
 						if(!do_after(user, spray_wait, L))
 							return
@@ -600,7 +600,7 @@
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
 							return
-						L.visible_message(span_danger("[user] uses the [src] on [L]!") , \
+						L.visible_message(span_danger("[user] uses the [src] on [L]!"), \
 										span_userdanger("[user] uses the [src] on [L]!"))
 					else
 						if(!do_after(user, spray_self, L))

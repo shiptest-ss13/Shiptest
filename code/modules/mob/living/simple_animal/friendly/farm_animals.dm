@@ -90,7 +90,7 @@
 		if(istype(H.dna.species, /datum/species/pod))
 			var/obj/item/bodypart/NB = pick(H.bodyparts)
 			H.visible_message(
-				span_warning("[src] takes a big chomp out of [H]!") , \
+				span_warning("[src] takes a big chomp out of [H]!"), \
 				span_userdanger("[src] takes a big chomp out of your [NB]!"))
 			NB.dismember()
 //cow
@@ -146,7 +146,7 @@
 
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
-		M.visible_message(span_warning("[M] tips over [src].") ,
+		M.visible_message(span_warning("[M] tips over [src]."),
 			span_notice("You tip over [src]."))
 		to_chat(src, span_userdanger("You are tipped over by [M]!"))
 		Paralyze(60, ignore_canstun = TRUE)
@@ -170,7 +170,7 @@
 	else
 		external = "[src] seems resigned to its fate."
 		internal = "You resign yourself to your fate."
-	visible_message(span_notice("[external]") ,
+	visible_message(span_notice("[external]"),
 		span_revennotice("[internal]"))
 
 ///Wisdom cow, gives XP to a random skill and speaks wisdoms

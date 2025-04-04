@@ -551,23 +551,23 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(L.incapacitated(TRUE, TRUE))
 		if(L.anti_magic_check(FALSE, FALSE, TRUE))
 			to_chat(user, span_warning("The specimen's tinfoil protection is interfering with the sleep inducement!"))
-			L.visible_message(span_danger("[user] tried to induced sleep in [L] with [src], but [L.p_their()] tinfoil protection [L.p_them()]!") , \
+			L.visible_message(span_danger("[user] tried to induced sleep in [L] with [src], but [L.p_their()] tinfoil protection [L.p_them()]!"), \
 								span_userdanger("You feel a strange wave of heavy drowsiness wash over you, but your tinfoil protection deflects most of it!"))
 			L.drowsyness += 2
 			return
-		L.visible_message(span_danger("[user] induces sleep in [L] with [src]!") , \
+		L.visible_message(span_danger("[user] induces sleep in [L] with [src]!"), \
 							span_userdanger("You suddenly feel very drowsy!"))
 		L.Sleeping(sleep_time)
 		log_combat(user, L, "put to sleep")
 	else
 		if(L.anti_magic_check(FALSE, FALSE, TRUE, 0))
 			to_chat(user, span_warning("The specimen's tinfoil protection is completely blocking our sleep inducement methods!"))
-			L.visible_message(span_danger("[user] tried to induce sleep in [L] with [src], but [L.p_their()] tinfoil protection completely protected [L.p_them()]!") , \
+			L.visible_message(span_danger("[user] tried to induce sleep in [L] with [src], but [L.p_their()] tinfoil protection completely protected [L.p_them()]!"), \
 								span_userdanger("Any sense of drowsiness is quickly diminished as your tinfoil protection deflects the effects!"))
 			return
 		L.drowsyness += 1
 		to_chat(user, span_warning("Sleep inducement works fully only on stunned specimens! "))
-		L.visible_message(span_danger("[user] tried to induce sleep in [L] with [src]!") , \
+		L.visible_message(span_danger("[user] tried to induce sleep in [L] with [src]!"), \
 							span_userdanger("You suddenly feel drowsy!"))
 
 /obj/item/melee/baton/abductor/proc/CuffAttack(mob/living/L,mob/living/user)
@@ -578,7 +578,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 		if(C.canBeHandcuffed())
 			playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
 			C.visible_message(
-				span_danger("[user] begins restraining [C] with [src]!") , \
+				span_danger("[user] begins restraining [C] with [src]!"), \
 				span_userdanger("[user] begins shaping an energy field around your hands!") 
 				)
 			if(do_after(user, time_to_cuff, C) && C.canBeHandcuffed())
@@ -593,7 +593,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 			to_chat(user, span_warning("[C] doesn't have two hands..."))
 
 /obj/item/melee/baton/abductor/proc/ProbeAttack(mob/living/L,mob/living/user)
-	L.visible_message(span_danger("[user] probes [L] with [src]!") , \
+	L.visible_message(span_danger("[user] probes [L] with [src]!"), \
 						span_userdanger("[user] probes you!"))
 
 	var/species = span_warning("Unknown species") 
@@ -630,7 +630,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	item_flags = DROPDEL
 
 /obj/item/restraints/handcuffs/energy/used/dropped(mob/user)
-	user.visible_message(span_danger("[user]'s [name] breaks in a discharge of energy!") , \
+	user.visible_message(span_danger("[user]'s [name] breaks in a discharge of energy!"), \
 							span_userdanger("[user]'s [name] breaks in a discharge of energy!"))
 	var/datum/effect_system/spark_spread/S = new
 	S.set_up(4,0,user.loc)
@@ -677,7 +677,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 
 /obj/item/abductor_machine_beacon/attack_self(mob/user)
 	..()
-	user.visible_message(span_notice("[user] places down [src] and activates it.") , span_notice("You place down [src] and activate it."))
+	user.visible_message(span_notice("[user] places down [src] and activates it."), span_notice("You place down [src] and activate it."))
 	user.dropItemToGround(src)
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50)
 	addtimer(CALLBACK(src, PROC_REF(try_spawn_machine)), 30)

@@ -137,11 +137,11 @@
 		if(prob(effectchance * diode.rating))
 			if(C.resting)
 				C.set_resting(FALSE, instant = TRUE)
-			C.visible_message(span_notice("[C] pounces on the light!") ,span_warning("LIGHT!"))
+			C.visible_message(span_notice("[C] pounces on the light!"),span_warning("LIGHT!"))
 			C.Move(targloc)
 			C.Immobilize(1 SECONDS)
 		else
-			C.visible_message(span_notice("[C] looks uninterested in your games.") ,span_warning("You spot [user] shining [src] at you. How insulting!"))
+			C.visible_message(span_notice("[C] looks uninterested in your games."),span_warning("You spot [user] shining [src] at you. How insulting!"))
 
 	//laser pointer image
 	icon_state = "pointer_[pointer_icon_state]"

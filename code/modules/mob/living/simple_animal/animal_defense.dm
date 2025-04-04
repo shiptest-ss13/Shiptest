@@ -5,8 +5,8 @@
 	switch(M.a_intent)
 		if("help")
 			if (health > 0)
-				visible_message(span_notice("[M] [response_help_continuous] [src].") , \
-								span_notice("[M] [response_help_continuous] you.") , null, null, M)
+				visible_message(span_notice("[M] [response_help_continuous] [src]."), \
+								span_notice("[M] [response_help_continuous] you."), null, null, M)
 				to_chat(M, span_notice("You [response_help_simple] [src]."))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 
@@ -18,8 +18,8 @@
 				to_chat(M, span_warning("You don't want to hurt [src]!"))
 				return
 			M.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-			visible_message(span_danger("[M] [response_harm_continuous] [src]!") ,\
-							span_userdanger("[M] [response_harm_continuous] you!") , null, COMBAT_MESSAGE_RANGE, M)
+			visible_message(span_danger("[M] [response_harm_continuous] [src]!"),\
+							span_userdanger("[M] [response_harm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, M)
 			to_chat(M, span_danger("You [response_harm_simple] [src]!"))
 			playsound(loc, attacked_sound, 25, TRUE, -1)
 			attack_threshold_check(harm_intent_damage)
@@ -32,8 +32,8 @@
 	if(!.)
 		return
 	playsound(loc, "punch", 25, TRUE, -1)
-	visible_message(span_danger("[user] punches [src]!") , \
-					span_userdanger("You're punched by [user]!") , null, COMBAT_MESSAGE_RANGE, user)
+	visible_message(span_danger("[user] punches [src]!"), \
+					span_userdanger("You're punched by [user]!"), null, COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_danger("You punch [src]!"))
 	adjustBruteLoss(15)
 
@@ -45,8 +45,8 @@
 			return 1
 	if (M.a_intent == INTENT_HELP)
 		if (health > 0)
-			visible_message(span_notice("[M.name] [response_help_continuous] [src].") , \
-							span_notice("[M.name] [response_help_continuous] you.") , null, COMBAT_MESSAGE_RANGE, M)
+			visible_message(span_notice("[M.name] [response_help_continuous] [src]."), \
+							span_notice("[M.name] [response_help_continuous] you."), null, COMBAT_MESSAGE_RANGE, M)
 			to_chat(M, span_notice("You [response_help_simple] [src]."))
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 
@@ -55,14 +55,14 @@
 	if(..()) //if harm or disarm intent.
 		if(M.a_intent == INTENT_DISARM)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[M] [response_disarm_continuous] [name]!") , \
-							span_userdanger("[M] [response_disarm_continuous] you!") , null, COMBAT_MESSAGE_RANGE, M)
+			visible_message(span_danger("[M] [response_disarm_continuous] [name]!"), \
+							span_userdanger("[M] [response_disarm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, M)
 			to_chat(M, span_danger("You [response_disarm_simple] [name]!"))
 			log_combat(M, src, "disarmed")
 		else
 			var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
-			visible_message(span_danger("[M] slashes at [src]!") , \
-							span_userdanger("You're slashed at by [M]!") , null, COMBAT_MESSAGE_RANGE, M)
+			visible_message(span_danger("[M] slashes at [src]!"), \
+							span_userdanger("You're slashed at by [M]!"), null, COMBAT_MESSAGE_RANGE, M)
 			to_chat(M, span_danger("You slash at [src]!"))
 			playsound(loc, 'sound/weapons/slice.ogg', 25, TRUE, -1)
 			attack_threshold_check(damage)

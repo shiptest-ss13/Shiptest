@@ -232,7 +232,7 @@
 		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I]!"
 	if(user == src)
 		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
-	visible_message(span_danger("[attack_message]") ,\
-		span_userdanger("[attack_message_local]") , null, COMBAT_MESSAGE_RANGE)
+	visible_message(span_danger("[attack_message]"),\
+		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE)
 	return 1
 

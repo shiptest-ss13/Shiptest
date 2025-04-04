@@ -1127,7 +1127,7 @@
 	visibility_flags = 0
 	stage1	= list("Your bones ache.")
 	stage2	= list("Your skin feels scaly.")
-	stage3	= list(span_danger("You have an overwhelming urge to terrorize some peasants.") , span_danger("Your teeth feel sharper."))
+	stage3	= list(span_danger("You have an overwhelming urge to terrorize some peasants."), span_danger("Your teeth feel sharper."))
 	stage4	= list(span_danger("Your blood burns."))
 	stage5	= list(span_danger("You're a fucking dragon. However, any previous allegiances you held still apply. It'd be incredibly rude to eat your still human friends for no reason."))
 	new_form = /mob/living/simple_animal/hostile/megafauna/dragon/lesser
@@ -1388,7 +1388,7 @@
 		return
 	if(!beacon || QDELETED(beacon))
 		if(isturf(user.loc))
-			user.visible_message(span_hierophant_warning("[user] starts fiddling with [src]'s pommel...") , \
+			user.visible_message(span_hierophant_warning("[user] starts fiddling with [src]'s pommel..."), \
 			span_notice("You start detaching the hierophant beacon..."))
 			timer = world.time + 51
 			INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
@@ -1398,7 +1398,7 @@
 				new /obj/effect/temp_visual/hierophant/telegraph/teleport(T, user)
 				beacon = new/obj/effect/hierophant(T)
 				user.update_action_buttons_icon()
-				user.visible_message(span_hierophant_warning("[user] places a strange machine beneath [user.p_their()] feet!") , \
+				user.visible_message(span_hierophant_warning("[user] places a strange machine beneath [user.p_their()] feet!"), \
 				"[span_hierophant("You detach the hierophant beacon, allowing you to teleport yourself and any allies to it at any time!")]\n\
 				[span_notice("You can remove the beacon to place it again by striking it with the club.")]")
 			else

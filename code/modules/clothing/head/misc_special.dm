@@ -178,7 +178,7 @@
 		return
 	if(new_style && new_style != hairstyle)
 		hairstyle = new_style
-		user.visible_message(span_notice("[user] changes \the [src]'s hairstyle to [new_style].") , span_notice("You change \the [src]'s hairstyle to [new_style]."))
+		user.visible_message(span_notice("[user] changes \the [src]'s hairstyle to [new_style]."), span_notice("You change \the [src]'s hairstyle to [new_style]."))
 	if(newcolor && newcolor != color) // only update if necessary
 		add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	update_appearance()

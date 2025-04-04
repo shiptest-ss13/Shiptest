@@ -71,7 +71,7 @@
 				if(target.anti_magic_check(FALSE, TRUE))
 					to_chat(src, span_revenminor("Something's wrong! [target] seems to be resisting the siphoning, leaving you vulnerable!"))
 					target.visible_message(
-						span_warning("[target] slumps onto the ground.") , \
+						span_warning("[target] slumps onto the ground."), \
 						span_revenwarning("Violet lights, dancing in your vision, receding--"))
 					draining = FALSE
 					return
@@ -87,7 +87,7 @@
 						to_chat(src, span_revenboldnotice("The perfection of [target]'s soul has increased your maximum essence level. Your new maximum essence is [essence_regen_cap]."))
 					to_chat(src, span_revennotice("[target]'s soul has been considerably weakened and will yield no more essence for the time being."))
 					target.visible_message(
-						span_warning("[target] slumps onto the ground.") , \
+						span_warning("[target] slumps onto the ground."), \
 						span_revenwarning("Violets lights, dancing in your vision, getting clo--"))
 					drained_mobs.Add(target)
 					target.death(0)
@@ -95,7 +95,7 @@
 					to_chat(src, span_revenwarning("[target ? "[target] has":"[target.p_theyve(TRUE)]"] been drawn out of your grasp. The link has been broken."))
 					if(target) //Wait, target is WHERE NOW?
 						target.visible_message(
-							span_warning("[target] slumps onto the ground.") , \
+							span_warning("[target] slumps onto the ground."), \
 							span_revenwarning("Violets lights, dancing in your vision, receding--"))
 				qdel(B)
 			else

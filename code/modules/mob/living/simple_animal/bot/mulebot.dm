@@ -142,7 +142,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 		cell = I
-		visible_message(span_notice("[user] inserts \a [cell] into [src].") ,
+		visible_message(span_notice("[user] inserts \a [cell] into [src]."),
 						span_notice("You insert [cell] into [src]."))
 	else if(I.tool_behaviour == TOOL_CROWBAR && open && user.a_intent != INTENT_HARM)
 		if(!cell)
@@ -153,7 +153,7 @@
 			user.put_in_hands(cell)
 		else
 			cell.forceMove(drop_location())
-		visible_message(span_notice("[user] crowbars [cell] out from [src].") ,
+		visible_message(span_notice("[user] crowbars [cell] out from [src]."),
 						span_notice("You pry [cell] out of [src]."))
 		cell = null
 	else if(is_wire_tool(I) && open)
@@ -161,7 +161,7 @@
 	else if(load && ismob(load))  // chance to knock off rider
 		if(prob(1 + I.force * 2))
 			unload(0)
-			user.visible_message(span_danger("[user] knocks [load] off [src] with \the [I]!") ,
+			user.visible_message(span_danger("[user] knocks [load] off [src] with \the [I]!"),
 									span_danger("You knock [load] off [src] with \the [I]!"))
 		else
 			to_chat(user, span_warning("You hit [src] with \the [I] but to no effect!"))
@@ -703,7 +703,7 @@
 // when mulebot is in the same loc
 /mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/human/H)
 	log_combat(src, H, "run over", null, "(DAMTYPE: [uppertext(BRUTE)])")
-	H.visible_message(span_danger("[src] drives over [H]!") , \
+	H.visible_message(span_danger("[src] drives over [H]!"), \
 					span_userdanger("[src] drives over you!"))
 	playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 

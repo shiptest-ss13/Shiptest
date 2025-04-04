@@ -449,18 +449,18 @@
 		return
 	add_fingerprint(user)
 	if(target == user)
-		user.visible_message(span_notice("[user] starts climbing onto the photocopier!") , span_notice("You start climbing onto the photocopier..."))
+		user.visible_message(span_notice("[user] starts climbing onto the photocopier!"), span_notice("You start climbing onto the photocopier..."))
 	else
-		user.visible_message(span_warning("[user] starts putting [target] onto the photocopier!") , span_notice("You start putting [target] onto the photocopier..."))
+		user.visible_message(span_warning("[user] starts putting [target] onto the photocopier!"), span_notice("You start putting [target] onto the photocopier..."))
 
 	if(do_after(user, 20, target = src))
 		if(!target || QDELETED(target) || QDELETED(src) || !Adjacent(target)) //check if the photocopier/target still exists.
 			return
 
 		if(target == user)
-			user.visible_message(span_notice("[user] climbs onto the photocopier!") , span_notice("You climb onto the photocopier."))
+			user.visible_message(span_notice("[user] climbs onto the photocopier!"), span_notice("You climb onto the photocopier."))
 		else
-			user.visible_message(span_warning("[user] puts [target] onto the photocopier!") , span_notice("You put [target] onto the photocopier."))
+			user.visible_message(span_warning("[user] puts [target] onto the photocopier!"), span_notice("You put [target] onto the photocopier."))
 
 		target.forceMove(get_turf(src))
 		ass = target

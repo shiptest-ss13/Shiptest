@@ -47,7 +47,7 @@
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 1 SECONDS, volume=0))
-		to_chat(user, span_warning("You cut apart \the [src].") , span_notice("You cut apart \the [src]."))
+		to_chat(user, span_warning("You cut apart \the [src]."), span_notice("You cut apart \the [src]."))
 		deconstruct()
 		return TRUE
 

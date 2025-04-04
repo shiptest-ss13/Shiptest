@@ -54,7 +54,7 @@
 		update_appearance()
 	if(ismob(loc))
 		var/mob/M = loc
-		M.visible_message(span_danger("[src] burns out!") ,span_userdanger("[src] burns out!"))
+		M.visible_message(span_danger("[src] burns out!"),span_userdanger("[src] burns out!"))
 	else
 		var/turf/T = get_turf(src)
 		T.visible_message(span_danger("[src] burns out!"))
@@ -155,10 +155,10 @@
 		var/diff = 5 * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
 		R.confused += min(5, diff)
 		R.flash_act(affect_silicon = 1)
-		user.visible_message(span_warning("[user] overloads [R]'s sensors with the flash!") , span_danger("You overload [R]'s sensors with the flash!"))
+		user.visible_message(span_warning("[user] overloads [R]'s sensors with the flash!"), span_danger("You overload [R]'s sensors with the flash!"))
 		return TRUE
 
-	user.visible_message(span_warning("[user] fails to blind [M] with the flash!") , span_warning("You fail to blind [M] with the flash!"))
+	user.visible_message(span_warning("[user] fails to blind [M] with the flash!"), span_warning("You fail to blind [M] with the flash!"))
 
 /obj/item/assembly/flash/attack_self(mob/living/carbon/user, flag = 0, emp = 0)
 	if(holder)
@@ -261,7 +261,7 @@
 			if(M.hypnosis_vulnerable())
 				hypnosis = TRUE
 			if(user)
-				user.visible_message(span_danger("[user] blinds [M] with the flash!") , span_danger("You hypno-flash [M]!"))
+				user.visible_message(span_danger("[user] blinds [M] with the flash!"), span_danger("You hypno-flash [M]!"))
 
 			if(!hypnosis)
 				to_chat(M, span_hypnophrase("The light makes you feel oddly relaxed..."))
@@ -273,7 +273,7 @@
 				M.apply_status_effect(/datum/status_effect/trance, 200, TRUE)
 
 		else if(user)
-			user.visible_message(span_warning("[user] fails to blind [M] with the flash!") , span_warning("You fail to hypno-flash [M]!"))
+			user.visible_message(span_warning("[user] fails to blind [M] with the flash!"), span_warning("You fail to hypno-flash [M]!"))
 		else
 			to_chat(M, span_danger("[src] fails to blind you!"))
 

@@ -78,7 +78,7 @@
 			take_bodypart_damage(10,check_armor = TRUE)
 			victim.Paralyze(20)
 			Paralyze(20)
-			visible_message(span_danger("[src] crashes into [victim], knocking them both over!") ,\
+			visible_message(span_danger("[src] crashes into [victim], knocking them both over!"),\
 				span_userdanger("You violently crash into [victim]!"))
 		playsound(src,'sound/weapons/punch1.ogg',50,TRUE)
 
@@ -142,7 +142,7 @@
 				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
 		do_attack_animation(target, no_effect = 1)
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1)
-		visible_message(span_danger("[src] throws [thrown_thing].") , \
+		visible_message(span_danger("[src] throws [thrown_thing]."), \
 						span_danger("You throw [thrown_thing]."))
 		log_message("has thrown [thrown_thing]", LOG_ATTACK)
 		newtonian_move(get_dir(target, src))
@@ -200,8 +200,8 @@
 		var/slot = text2num(href_list["internal"])
 		var/obj/item/ITEM = get_item_by_slot(slot)
 		if(ITEM && istype(ITEM, /obj/item/tank) && wear_mask && (wear_mask.clothing_flags & ALLOWINTERNALS))
-			visible_message(span_danger("[usr] tries to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name].") , \
-							span_userdanger("[usr] tries to [internal ? "close" : "open"] the valve on your [ITEM.name].") , null, null, usr)
+			visible_message(span_danger("[usr] tries to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]."), \
+							span_userdanger("[usr] tries to [internal ? "close" : "open"] the valve on your [ITEM.name]."), null, null, usr)
 			to_chat(usr, span_notice("You try to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]..."))
 			if(do_after(usr, POCKET_STRIP_DELAY, src))
 				if(internal)
@@ -212,8 +212,8 @@
 						internal = ITEM
 						update_internals_hud_icon(1)
 
-				visible_message(span_danger("[usr] [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name].") , \
-								span_userdanger("[usr] [internal ? "opens" : "closes"] the valve on your [ITEM.name].") , null, null, usr)
+				visible_message(span_danger("[usr] [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name]."), \
+								span_userdanger("[usr] [internal ? "opens" : "closes"] the valve on your [ITEM.name]."), null, null, usr)
 				to_chat(usr, span_notice("You [internal ? "open" : "close"] the valve on [src]'s [ITEM.name]."))
 
 	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
@@ -254,7 +254,7 @@
 		if(handcuffed)
 			var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 			buckle_cd = O.breakouttime
-		visible_message(span_warning("[src] attempts to unbuckle [p_them()]self!") , \
+		visible_message(span_warning("[src] attempts to unbuckle [p_them()]self!"), \
 					span_notice("You attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)"))
 		if(do_after(src, buckle_cd, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			if(!buckled)
@@ -270,11 +270,11 @@
 	adjust_fire_stacks(-5)
 	Paralyze(60, ignore_canstun = TRUE)
 	spin(32,2)
-	visible_message(span_danger("[src] rolls on the floor, trying to put [p_them()]self out!") , \
+	visible_message(span_danger("[src] rolls on the floor, trying to put [p_them()]self out!"), \
 		span_notice("You stop, drop, and roll!"))
 	sleep(30)
 	if(fire_stacks <= 0 && !QDELETED(src))
-		visible_message(span_danger("[src] successfully extinguishes [p_them()]self!") , \
+		visible_message(span_danger("[src] successfully extinguishes [p_them()]self!"), \
 			span_notice("You extinguish yourself."))
 		ExtinguishMob()
 	return
@@ -436,7 +436,7 @@
 
 	if(nutrition < 100 && !blood)
 		if(message)
-			visible_message(span_warning("[src] dry heaves!") , \
+			visible_message(span_warning("[src] dry heaves!"), \
 							span_userdanger("You try to throw up, but there's nothing in your stomach!"))
 		if(stun)
 			Immobilize(30)
@@ -444,13 +444,13 @@
 
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 		if(message)
-			visible_message(span_danger("[src] throws up all over [p_them()]self!") , \
+			visible_message(span_danger("[src] throws up all over [p_them()]self!"), \
 							span_userdanger("You throw up all over yourself!"))
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomitself)
 		distance = 0
 	else
 		if(message)
-			visible_message(span_danger("[src] throws up!") , span_userdanger("You throw up!"))
+			visible_message(span_danger("[src] throws up!"), span_userdanger("You throw up!"))
 			if(!isflyperson(src))
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomit)
 

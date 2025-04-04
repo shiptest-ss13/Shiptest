@@ -85,10 +85,10 @@
 
 	//Display an attack message.
 	if(target != user)
-		target.visible_message(span_danger("[user] hits [target][head_attack_message] with a bottle of [src.name]!") , \
+		target.visible_message(span_danger("[user] hits [target][head_attack_message] with a bottle of [src.name]!"), \
 				span_userdanger("[user] hits you [head_attack_message] with a bottle of [src.name]!"))
 	else
-		target.visible_message(span_danger("[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!") , \
+		target.visible_message(span_danger("[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!"), \
 				span_userdanger("You hit yourself with a bottle of [src.name][head_attack_message]!"))
 
 	//Attack logs
@@ -615,7 +615,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
 	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
 		playsound(src, 'sound/items/openbottle.ogg', 30, 1)
-		user.visible_message(span_notice("[user] takes the cap off \the [src].") , span_notice("You take the cap off [src]."))
+		user.visible_message(span_notice("[user] takes the cap off \the [src]."), span_notice("You take the cap off [src]."))
 		reagents.flags |= OPENCONTAINER //Cap's off
 		if(prob(1)) //Lucky you
 			var/S = new /obj/item/sandstar(src)
@@ -684,7 +684,7 @@
 	. = ..()
 	if(sealed)
 		var/datum/component/storage/S = GetComponent(/datum/component/storage)
-		user.visible_message(span_notice("[user] pries open \the [src].") , "You pry open \the [src]")
+		user.visible_message(span_notice("[user] pries open \the [src]."), "You pry open \the [src]")
 		playsound(src, 'sound/machines/wooden_closet_close.ogg', 20, 1)
 		sealed = FALSE
 		S.locked = FALSE

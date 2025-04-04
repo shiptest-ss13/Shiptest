@@ -32,7 +32,7 @@
 	var/cotton_name = "raw cotton"
 
 /obj/item/grown/cotton/attack_self(mob/user)
-	user.show_message(span_notice("You pull some [cotton_name] out of the [name]!") , MSG_VISUAL)
+	user.show_message(span_notice("You pull some [cotton_name] out of the [name]!"), MSG_VISUAL)
 	var/seed_modifier = 0
 	if(seed)
 		seed_modifier = round(seed.potency / 25)

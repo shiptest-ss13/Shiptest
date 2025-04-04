@@ -149,8 +149,8 @@
 		else
 			flavortext = "Serve [user]."
 		to_chat(user, span_notice("You [density ? "poke [src] with your card" : "slide your card through the air where [src] is"], and set their laws to [str]."))
-	src.visible_message(span_danger("[src] starts flickering!") ,
-						span_userdanger("You start flickering, and detect an unauthorized law change!") ,
+	src.visible_message(span_danger("[src] starts flickering!"),
+						span_userdanger("You start flickering, and detect an unauthorized law change!"),
 						span_danger("You hear a strange buzzing noise!"))
 	possible_a_intents |= list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	show_laws()

@@ -531,7 +531,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/advanced_airlock_controller/internal,
 				var/obj/item/electroadaptive_pseudocircuit/P = W
 				if(!P.adapt_circuit(user, 25))
 					return
-				user.visible_message(span_notice("[user] fabricates a circuit and places it into [src].") , \
+				user.visible_message(span_notice("[user] fabricates a circuit and places it into [src]."), \
 				span_notice("You adapt an airlock controller circuit and slot it into the assembly."))
 				buildstage = BUILD_NO_WIRES
 				update_appearance()
@@ -821,7 +821,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/advanced_airlock_controller/internal,
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	visible_message(span_warning("Sparks fly out of [src]!") , span_notice("You emag [src], disabling its safeties."))
+	visible_message(span_warning("Sparks fly out of [src]!"), span_notice("You emag [src], disabling its safeties."))
 	playsound(src, "sparks", 50, 1)
 
 /obj/machinery/advanced_airlock_controller/obj_break(damage_flag)

@@ -88,7 +88,7 @@
 		if(!reagents.total_volume)
 			to_chat(user, span_warning("There's nothing to dissolve [I] in!"))
 			return
-		user.visible_message(span_notice("[user] drops [I] into [src].") , span_notice("You dissolve [I] in [src]."))
+		user.visible_message(span_notice("[user] drops [I] into [src]."), span_notice("You dissolve [I] in [src]."))
 		I.reagents.trans_to(src, I.reagents.total_volume, transfered_by = user)
 		qdel(I)
 		return

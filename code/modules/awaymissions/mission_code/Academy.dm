@@ -317,7 +317,7 @@
 	AddElement(/datum/element/update_icon_blocker)
 
 /obj/structure/ladder/unbreakable/rune/show_fluff_message(up,mob/user)
-	user.visible_message(span_notice("[user] activates \the [src].") , span_notice("You activate \the [src]."))
+	user.visible_message(span_notice("[user] activates \the [src]."), span_notice("You activate \the [src]."))
 
 /obj/structure/ladder/unbreakable/rune/use(mob/user, is_ghost=FALSE)
 	if(is_ghost || !(user.mind in SSticker.mode.wizards))

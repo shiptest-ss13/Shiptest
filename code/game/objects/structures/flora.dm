@@ -34,9 +34,9 @@
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.get_sharpness() && W.force > 0)
 			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100, FALSE, FALSE)
-			user.visible_message(span_notice("[user] begins to cut down [src] with [W].") ,span_notice("You begin to cut down [src] with [W].") , span_hear("You hear the sound of sawing."))
+			user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
 			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
-				user.visible_message(span_notice("[user] fells [src] with the [W].") ,span_notice("You fell [src] with the [W].") , span_hear("You hear the sound of a tree falling."))
+				user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 				playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
 				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
 				for(var/i=1 to log_amount)
@@ -870,7 +870,7 @@
 	else if(I.get_sharpness() && I.force > 0)
 		if(I.hitsound)
 			playsound(get_turf(src), I.hitsound, 100, FALSE, FALSE)
-		user.visible_message(span_notice("[user] begins to cut down [src] with [I].") ,span_notice("You begin to cut down [src] with [I].") , span_hear("You hear the sound of sawing."))
+		user.visible_message(span_notice("[user] begins to cut down [src] with [I]."),span_notice("You begin to cut down [src] with [I]."), span_hear("You hear the sound of sawing."))
 		if(do_after(user, 1000/I.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
 			//Regret.dm
 			to_chat(user, span_danger("As you pierce the bark, a supernatural shock jolts through your body..."))

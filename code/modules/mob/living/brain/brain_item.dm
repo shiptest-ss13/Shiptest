@@ -112,12 +112,12 @@
 			to_chat(user, span_warning("There's not enough mannitol in [O] to restore [src]!"))
 			return
 
-		user.visible_message(span_notice("[user] starts to pour the contents of [O] onto [src].") , span_notice("You start to slowly pour the contents of [O] onto [src]."))
+		user.visible_message(span_notice("[user] starts to pour the contents of [O] onto [src]."), span_notice("You start to slowly pour the contents of [O] onto [src]."))
 		if(!do_after(user, 60, src))
 			to_chat(user, span_warning("You failed to pour [O] onto [src]!"))
 			return
 
-		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink.") , span_notice("You pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
+		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."), span_notice("You pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
 		var/healby = O.reagents.get_reagent_amount(/datum/reagent/medicine/mannitol)
 		setOrganDamage(damage - healby*2)	//heals 2 damage per unit of mannitol, and by using "setorgandamage", we clear the failing variable if that was up
 		O.reagents.clear_reagents()
@@ -167,7 +167,7 @@
 		if(C == user)
 			msg = "[user] inserts [src] into [user.p_their()] head!"
 
-		C.visible_message(span_danger("[msg]") ,
+		C.visible_message(span_danger("[msg]"),
 						span_userdanger("[msg]"))
 
 		if(C != user)

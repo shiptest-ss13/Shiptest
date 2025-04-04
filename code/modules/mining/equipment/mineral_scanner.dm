@@ -142,16 +142,16 @@
 		if(SCANMODE_SUBSURFACE)
 			if(active)
 				toggle_on()
-				user.visible_message(span_notice("[user] deactivates [user.p_their()] scanner.") , span_notice("You deactivate your scanner."))
+				user.visible_message(span_notice("[user] deactivates [user.p_their()] scanner."), span_notice("You deactivate your scanner."))
 				return
 
 			var/vein = scan_for_target()
 			if(!vein)
-				user.visible_message(span_notice("[user]'s scanner fails to detect any material.") , span_notice("Your scanner fails to detect any material."))
+				user.visible_message(span_notice("[user]'s scanner fails to detect any material."), span_notice("Your scanner fails to detect any material."))
 				return
 
 			toggle_on()
-			user.visible_message(span_notice("[user] activates [user.p_their()] scanner.") , span_notice("You activate your scanner."))
+			user.visible_message(span_notice("[user] activates [user.p_their()] scanner."), span_notice("You activate your scanner."))
 			update_icon()
 
 		if(SCANMODE_SURFACE)
@@ -159,10 +159,10 @@
 			update_icon()
 			if(scanning_surface)
 				START_PROCESSING(SSobj, src)
-				user.visible_message(span_notice("[user] activates [user.p_their()] scanner.") , span_notice("You activate your scanner."))
+				user.visible_message(span_notice("[user] activates [user.p_their()] scanner."), span_notice("You activate your scanner."))
 			else
 				STOP_PROCESSING(SSobj, src)
-				user.visible_message(span_notice("[user] deactivates [user.p_their()] scanner.") , span_notice("You deactivate your scanner."))
+				user.visible_message(span_notice("[user] deactivates [user.p_their()] scanner."), span_notice("You deactivate your scanner."))
 			playsound(src, 'sound/items/screwdriver2.ogg', 50, TRUE)
 
 /obj/item/pinpointer/mineral/process(seconds_per_tick)

@@ -376,7 +376,7 @@ Class Procs:
 	else
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-		user.visible_message(span_danger("[user.name] smashes against \the [src.name] with its paws.") , null, null, COMBAT_MESSAGE_RANGE)
+		user.visible_message(span_danger("[user.name] smashes against \the [src.name] with its paws."), null, null, COMBAT_MESSAGE_RANGE)
 		take_damage(4, BRUTE, "melee", 1)
 
 /obj/machinery/attack_robot(mob/user)
@@ -416,7 +416,7 @@ Class Procs:
 	. = !(state_open || panel_open || is_operational || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message(span_notice("[usr] pries open \the [src].") , span_notice("You pry open \the [src]."))
+		visible_message(span_notice("[usr] pries open \the [src]."), span_notice("You pry open \the [src]."))
 		open_machine()
 
 /obj/machinery/proc/default_deconstruction_crowbar(obj/item/I, ignore_panel = 0)

@@ -164,7 +164,7 @@
 	. = !(state_open || panel_open || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR //We removed is_operational here
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message(span_notice("[usr] pries open \the [src].") , span_notice("You pry open [src]."))
+		visible_message(span_notice("[usr] pries open \the [src]."), span_notice("You pry open [src]."))
 		open_machine()
 
 /obj/machinery/harvester/emag_act(mob/user)
@@ -176,7 +176,7 @@
 
 /obj/machinery/harvester/container_resist_act(mob/living/user)
 	if(!harvesting)
-		visible_message(span_notice("[occupant] emerges from [src]!") ,
+		visible_message(span_notice("[occupant] emerges from [src]!"),
 			span_notice("You climb out of [src]!"))
 		open_machine()
 	else

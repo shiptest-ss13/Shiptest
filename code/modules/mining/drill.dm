@@ -177,7 +177,7 @@
 					break
 			return
 		if(tool.tool_behaviour == TOOL_MULTITOOL && malfunction == MALF_CALIBRATE)
-			user.visible_message(span_notice("[user] begins recalibrating [src].") , \
+			user.visible_message(span_notice("[user] begins recalibrating [src]."), \
 				span_notice("You begin recalibrating [src]..."))
 			if(tool.use_tool(src, user, 100, volume=50))
 				malfunction = null
@@ -186,8 +186,8 @@
 		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
 			if(!tool.tool_start_check(user, amount=0))
 				return
-			user.visible_message(span_notice("[user] begins repairing [src].") , \
-				span_notice("You begin repairing [src]...") , \
+			user.visible_message(span_notice("[user] begins repairing [src]."), \
+				span_notice("You begin repairing [src]..."), \
 				span_hear("You hear welding."))
 			if(tool.use_tool(src, user, 100, volume=50))
 				malfunction = null
@@ -249,7 +249,7 @@
 		playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 		user.visible_message( \
 					"[user] activates [src].", \
-					span_notice("You hit the ignition button to activate [src].") , \
+					span_notice("You hit the ignition button to activate [src]."), \
 					span_hear("You hear a drill churn to life."))
 		start_mining()
 	else

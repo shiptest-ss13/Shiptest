@@ -117,8 +117,8 @@
 		new /obj/effect/temp_visual/bluespace_fissure(get_turf(src))
 		new /obj/effect/temp_visual/bluespace_fissure(get_turf(linked_to))
 		user.forceMove(get_turf(linked_to))
-		user.visible_message(span_warning("[user] [slip_in_message].") , null, null, null, user)
-		user.visible_message(span_warning("[user] [slip_out_message].") , span_notice("...and find your way to the other side."))
+		user.visible_message(span_warning("[user] [slip_in_message]."), null, null, null, user)
+		user.visible_message(span_warning("[user] [slip_out_message]."), span_notice("...and find your way to the other side."))
 
 /datum/brain_trauma/special/quantum_alignment
 	name = "Quantum Alignment"
@@ -358,7 +358,7 @@
 		return
 	if(get_dist(owner, beepsky) <= 1)
 		owner.playsound_local(owner, 'sound/weapons/egloves.ogg', 50)
-		owner.visible_message(span_warning("[owner]'s body jerks as if it was shocked.") , span_userdanger("You feel the fist of the LAW."))
+		owner.visible_message(span_warning("[owner]'s body jerks as if it was shocked."), span_userdanger("You feel the fist of the LAW."))
 		owner.take_bodypart_damage(0,0,rand(40, 70))
 		QDEL_NULL(beepsky)
 	if(prob(20) && get_dist(owner, beepsky) <= 8)

@@ -689,7 +689,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 		if(L.stat != DEAD)
 			L.heal_overall_damage(melee_damage_upper, melee_damage_upper)
 			new /obj/effect/temp_visual/heal(get_turf(target), "#80F5FF")
-			visible_message(span_notice("[src] mends the wounds of [target].") ,span_notice("You mend the wounds of [target]."))
+			visible_message(span_notice("[src] mends the wounds of [target]."),span_notice("You mend the wounds of [target]."))
 
 /mob/living/simple_animal/hostile/lightgeist/ghost()
 	. = ..()

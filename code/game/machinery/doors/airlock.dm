@@ -362,7 +362,7 @@
 		return
 	locked = TRUE
 	playsound(src, boltDown, 30, FALSE, 3, mono_adj = TRUE)
-	audible_message(span_hear("You hear a click from the bottom of the door.") , null, 1)
+	audible_message(span_hear("You hear a click from the bottom of the door."), null, 1)
 	update_appearance()
 
 /obj/machinery/door/airlock/unlock()
@@ -373,7 +373,7 @@
 		return
 	locked = FALSE
 	playsound(src, boltUp, 30, FALSE, 3, mono_adj = TRUE)
-	audible_message(span_hear("You hear a click from the bottom of the door.") , null, 1)
+	audible_message(span_hear("You hear a click from the bottom of the door."), null, 1)
 	update_appearance()
 
 /obj/machinery/door/airlock/Destroy()
@@ -862,7 +862,7 @@
 
 /obj/machinery/door/airlock/attack_hand(mob/user)
 	if(user.a_intent == INTENT_GRAB && note) //WS edit - Grabbing notes off doors
-		user.visible_message(span_notice("[user] grabs [note] from [src].") , span_notice("You remove [note] from [src]."))
+		user.visible_message(span_notice("[user] grabs [note] from [src]."), span_notice("You remove [note] from [src]."))
 		user.put_in_hands(note)
 		note = null
 		update_appearance() //WS end
@@ -884,7 +884,7 @@
 		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
 			playsound(src, 'sound/effects/bang.ogg', 25, TRUE)
 			if(!istype(H.head, /obj/item/clothing/head/helmet))
-				H.visible_message(span_danger("[user] headbutts the airlock.") , \
+				H.visible_message(span_danger("[user] headbutts the airlock."), \
 									span_userdanger("You headbutt the airlock!"))
 				H.Paralyze(100)
 				H.apply_damage(10, BRUTE, BODY_ZONE_HEAD)
@@ -950,7 +950,7 @@
 					if(do_after(user, 20, src))
 						if(!panel_open || !S.use(2))
 							return
-						user.visible_message(span_notice("[user] reinforces \the [src] with metal.") ,
+						user.visible_message(span_notice("[user] reinforces \the [src] with metal."),
 											span_notice("You reinforce \the [src] with metal."))
 						security_level = AIRLOCK_SECURITY_METAL
 						update_appearance()
@@ -964,7 +964,7 @@
 					if(do_after(user, 20, src))
 						if(!panel_open || !S.use(2))
 							return
-						user.visible_message(span_notice("[user] reinforces \the [src] with plasteel.") ,
+						user.visible_message(span_notice("[user] reinforces \the [src] with plasteel."),
 											span_notice("You reinforce \the [src] with plasteel."))
 						security_level = AIRLOCK_SECURITY_PLASTEEL
 						modify_max_integrity(max_integrity * AIRLOCK_INTEGRITY_MULTIPLIER)
@@ -979,8 +979,8 @@
 					if(C.use_tool(src, user, 40, volume=50, amount = 2))
 						if(!panel_open)
 							return
-						user.visible_message(span_notice("[user] cuts through \the [src]'s shielding.") ,
-										span_notice("You cut through \the [src]'s shielding.") ,
+						user.visible_message(span_notice("[user] cuts through \the [src]'s shielding."),
+										span_notice("You cut through \the [src]'s shielding."),
 										span_hear("You hear welding."))
 						security_level = AIRLOCK_SECURITY_NONE
 						spawn_atom_to_turf(/obj/item/stack/sheet/metal, user.loc, 2)
@@ -995,7 +995,7 @@
 							return
 						if(security_level != AIRLOCK_SECURITY_PLASTEEL_I_S)
 							return
-						user.visible_message(span_notice("[user] remove \the [src]'s shielding.") ,
+						user.visible_message(span_notice("[user] remove \the [src]'s shielding."),
 											span_notice("You remove \the [src]'s inner shielding."))
 						security_level = AIRLOCK_SECURITY_NONE
 						modify_max_integrity(max_integrity / AIRLOCK_INTEGRITY_MULTIPLIER)
@@ -1011,8 +1011,8 @@
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
 						if(!panel_open)
 							return
-						user.visible_message(span_notice("[user] cuts through \the [src]'s shielding.") ,
-										span_notice("You cut through \the [src]'s shielding.") ,
+						user.visible_message(span_notice("[user] cuts through \the [src]'s shielding."),
+										span_notice("You cut through \the [src]'s shielding."),
 										span_hear("You hear welding."))
 						security_level = AIRLOCK_SECURITY_PLASTEEL_I_S
 					return
@@ -1024,7 +1024,7 @@
 							return
 						if(security_level != AIRLOCK_SECURITY_PLASTEEL_O_S)
 							return
-						user.visible_message(span_notice("[user] remove \the [src]'s shielding.") ,
+						user.visible_message(span_notice("[user] remove \the [src]'s shielding."),
 											span_notice("You remove \the [src]'s shielding."))
 						security_level = AIRLOCK_SECURITY_PLASTEEL_I
 						spawn_atom_to_turf(/obj/item/stack/sheet/plasteel, user.loc, 1)
@@ -1037,8 +1037,8 @@
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
 						if(!panel_open)
 							return
-						user.visible_message(span_notice("[user] cuts through \the [src]'s shielding.") ,
-										span_notice("You cut through \the [src]'s shielding.") ,
+						user.visible_message(span_notice("[user] cuts through \the [src]'s shielding."),
+										span_notice("You cut through \the [src]'s shielding."),
 										span_hear("You hear welding."))
 						security_level = AIRLOCK_SECURITY_PLASTEEL_O_S
 					return
@@ -1050,7 +1050,7 @@
 					if(C.use_tool(src, user, 10, volume=100))
 						if(!panel_open)
 							return
-						user.visible_message(span_notice("[user] cut through \the [src]'s outer grille.") ,
+						user.visible_message(span_notice("[user] cut through \the [src]'s outer grille."),
 											span_notice("You cut through \the [src]'s outer grille."))
 						security_level = AIRLOCK_SECURITY_PLASTEEL_O
 					return
@@ -1063,7 +1063,7 @@
 		C.play_tool_sound(src)
 		update_appearance()
 	else if((C.tool_behaviour == TOOL_WIRECUTTER) && note)
-		user.visible_message(span_notice("[user] cuts down [note] from [src].") , span_notice("You remove [note] from [src]."))
+		user.visible_message(span_notice("[user] cuts down [note] from [src]."), span_notice("You remove [note] from [src]."))
 		C.play_tool_sound(src)
 		note.forceMove(get_turf(user))
 		note = null
@@ -1084,7 +1084,7 @@
 		if(seal)
 			to_chat(user, span_warning("[src] has already been sealed!"))
 			return
-		user.visible_message(span_notice("[user] begins sealing [src].") , span_notice("You begin sealing [src]."))
+		user.visible_message(span_notice("[user] begins sealing [src]."), span_notice("You begin sealing [src]."))
 		playsound(src, 'sound/items/jaws_pry.ogg', 30, TRUE)
 		if(!do_after(user, airlockseal.seal_time, target = src))
 			return
@@ -1098,7 +1098,7 @@
 			to_chat(user, span_warning("For some reason, you can't attach [airlockseal]!"))
 			return
 		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE)
-		user.visible_message(span_notice("[user] finishes sealing [src].") , span_notice("You finish sealing [src]."))
+		user.visible_message(span_notice("[user] finishes sealing [src]."), span_notice("You finish sealing [src]."))
 		seal = airlockseal
 		modify_max_integrity(max_integrity * AIRLOCK_SEAL_MULTIPLIER)
 		update_appearance()
@@ -1110,7 +1110,7 @@
 		if(!user.transferItemToLoc(C, src))
 			to_chat(user, span_warning("For some reason, you can't attach [C]!"))
 			return
-		user.visible_message(span_notice("[user] pins [C] to [src].") , span_notice("You pin [C] to [src]."))
+		user.visible_message(span_notice("[user] pins [C] to [src]."), span_notice("You pin [C] to [src]."))
 		note = C
 		update_appearance()
 	else
@@ -1125,25 +1125,25 @@
 		if(user.a_intent != INTENT_HELP)
 			if(!W.tool_start_check(user, amount=0))
 				return
-			user.visible_message(span_notice("[user] begins [welded ? "unwelding":"welding"] the airlock.") , \
-							span_notice("You begin [welded ? "unwelding":"welding"] the airlock...") , \
+			user.visible_message(span_notice("[user] begins [welded ? "unwelding":"welding"] the airlock."), \
+							span_notice("You begin [welded ? "unwelding":"welding"] the airlock..."), \
 							span_hear("You hear welding."))
 			if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, PROC_REF(weld_checks), W, user)))
 				welded = !welded
-				user.visible_message(span_notice("[user] [welded? "welds shut":"unwelds"] [src].") , \
+				user.visible_message(span_notice("[user] [welded? "welds shut":"unwelds"] [src]."), \
 									span_notice("You [welded ? "weld the airlock shut":"unweld the airlock"]."))
 				update_appearance()
 		else
 			if(obj_integrity < max_integrity)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				user.visible_message(span_notice("[user] begins welding the airlock.") , \
-								span_notice("You begin repairing the airlock...") , \
+				user.visible_message(span_notice("[user] begins welding the airlock."), \
+								span_notice("You begin repairing the airlock..."), \
 								span_hear("You hear welding."))
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, PROC_REF(weld_checks), W, user)))
 					obj_integrity = max_integrity
 					set_machine_stat(machine_stat & ~BROKEN)
-					user.visible_message(span_notice("[user] finishes welding [src].") , \
+					user.visible_message(span_notice("[user] finishes welding [src]."), \
 										span_notice("You finish repairing the airlock."))
 					update_appearance()
 			else
@@ -1167,7 +1167,7 @@
 	if(!ishuman(user))
 		to_chat(user, span_warning("You don't have the dexterity to remove the seal!"))
 		return TRUE
-	user.visible_message(span_notice("[user] begins removing the seal from [src].") , span_notice("You begin removing [src]'s pneumatic seal."))
+	user.visible_message(span_notice("[user] begins removing the seal from [src]."), span_notice("You begin removing [src]'s pneumatic seal."))
 	playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE)
 	if(!do_after(user, airlockseal.unseal_time, target = src))
 		return TRUE
@@ -1175,7 +1175,7 @@
 		return TRUE
 	playsound(src, 'sound/items/jaws_pry.ogg', 30, TRUE)
 	airlockseal.forceMove(get_turf(user))
-	user.visible_message(span_notice("[user] finishes removing the seal from [src].") , span_notice("You finish removing [src]'s pneumatic seal."))
+	user.visible_message(span_notice("[user] finishes removing the seal from [src]."), span_notice("You finish removing [src]'s pneumatic seal."))
 	seal = null
 	modify_max_integrity(max_integrity / AIRLOCK_SEAL_MULTIPLIER)
 	update_appearance()
@@ -1187,7 +1187,7 @@
 		var/beingcrowbarred = (I.tool_behaviour == TOOL_CROWBAR)
 		if(!security_level && (beingcrowbarred && panel_open && ((obj_flags & EMAGGED) || (density && welded && !operating && !hasPower() && !locked))))
 			user.visible_message(
-				span_notice("[user] removes the electronics from the airlock assembly.") ,
+				span_notice("[user] removes the electronics from the airlock assembly."),
 				span_notice("You start to remove electronics from the airlock assembly...") 
 			)
 			if(I.use_tool(src, user, 40, volume=100))
@@ -1411,8 +1411,8 @@
 		to_chat(user, span_warning("[src] refuses to budge!"))
 		return
 	add_fingerprint(user)
-	user.visible_message(span_warning("[user] begins prying open [src].") ,\
-						span_noticealien("You begin digging your claws into [src] with all your might!") ,\
+	user.visible_message(span_warning("[user] begins prying open [src]."),\
+						span_noticealien("You begin digging your claws into [src] with all your might!"),\
 						span_warning("You hear groaning metal..."))
 	var/time_to_open = 5 //half a second
 	if(hasPower())

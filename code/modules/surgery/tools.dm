@@ -206,7 +206,7 @@
 		to_chat(user, span_warning("[src] can only hold body parts!"))
 		return
 
-	user.visible_message(span_notice("[user] puts [I] into [src].") , span_notice("You put [I] inside [src]."))
+	user.visible_message(span_notice("[user] puts [I] into [src]."), span_notice("You put [I] inside [src]."))
 	icon_state = "evidence"
 	var/xx = I.pixel_x
 	var/yy = I.pixel_y
@@ -225,7 +225,7 @@
 /obj/item/organ_storage/attack_self(mob/user)
 	if(contents.len)
 		var/obj/item/I = contents[1]
-		user.visible_message(span_notice("[user] dumps [I] from [src].") , span_notice("You dump [I] from [src]."))
+		user.visible_message(span_notice("[user] dumps [I] from [src]."), span_notice("You dump [I] from [src]."))
 		cut_overlays()
 		I.forceMove(get_turf(src))
 		icon_state = "evidenceobj"
@@ -402,7 +402,7 @@
 
 	var/amputation_speed_mod
 
-	patient.visible_message(span_danger("[user] begins to secure [src] around [patient]'s [candidate_name].") , span_userdanger("[user] begins to secure [src] around your [candidate_name]!"))
+	patient.visible_message(span_danger("[user] begins to secure [src] around [patient]'s [candidate_name]."), span_userdanger("[user] begins to secure [src] around your [candidate_name]!"))
 	playsound(get_turf(patient), 'sound/items/ratchet.ogg', 20, TRUE)
 	if(patient.stat >= UNCONSCIOUS || patient.IsStun()) //Stun is used by paralytics like curare it should not be confused with the more common paralyze.
 		amputation_speed_mod = 0.5
@@ -418,5 +418,5 @@
 			tail_snip_candidate.forceMove(get_turf(patient))
 		else
 			limb_snip_candidate.dismember()
-		user.visible_message(span_danger("[src] violently slams shut, amputating [patient]'s [candidate_name].") , span_notice("You amputate [patient]'s [candidate_name] with [src]."))
+		user.visible_message(span_danger("[src] violently slams shut, amputating [patient]'s [candidate_name]."), span_notice("You amputate [patient]'s [candidate_name] with [src]."))
 

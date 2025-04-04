@@ -85,5 +85,5 @@
 	if(!do_after(user, 200, target = src))
 		to_chat(loc, span_warning("The pressure subsides. It seems that they've stopped resisting..."))
 		return
-	loc.visible_message(span_warning("[user] suddenly appears in front of [loc]!") , span_userdanger("[user] breaks free of [src]!"))
+	loc.visible_message(span_warning("[user] suddenly appears in front of [loc]!"), span_userdanger("[user] breaks free of [src]!"))
 	qdel(src)

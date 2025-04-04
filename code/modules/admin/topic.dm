@@ -44,7 +44,7 @@
 			return
 		var/mob/M = locate(href_list["getplaytimewindow"]) in GLOB.mob_list
 		if(!M)
-			to_chat(usr, span_danger("ERROR: Mob not found.") , confidential = TRUE)
+			to_chat(usr, span_danger("ERROR: Mob not found."), confidential = TRUE)
 			return
 		cmd_show_exp_panel(M.client)
 
@@ -53,7 +53,7 @@
 			return
 		var/client/C = locate(href_list["toggleexempt"]) in GLOB.clients
 		if(!C)
-			to_chat(usr, span_danger("ERROR: Client not found.") , confidential = TRUE)
+			to_chat(usr, span_danger("ERROR: Client not found."), confidential = TRUE)
 			return
 		toggle_exempt_status(C)
 
@@ -61,7 +61,7 @@
 		if(!check_rights(R_ADMIN))
 			return
 		if (!SSticker.mode)
-			to_chat(usr, span_danger("Not until the round starts!") , confidential = TRUE)
+			to_chat(usr, span_danger("Not until the round starts!"), confidential = TRUE)
 			return
 		switch(href_list["makeAntag"])
 			if("traitors")
@@ -350,17 +350,17 @@
 		var/mob/M = locate(href_list["boot2"])
 		if(ismob(M))
 			if(!check_if_greater_rights_than(M.client))
-				to_chat(usr, span_danger("Error: They have more rights than you do.") , confidential = TRUE)
+				to_chat(usr, span_danger("Error: They have more rights than you do."), confidential = TRUE)
 				return
 			if(alert(usr, "Kick [key_name(M)]?", "Confirm", "Yes", "No") != "Yes")
 				return
 			if(!M)
-				to_chat(usr, span_danger("Error: [M] no longer exists!") , confidential = TRUE)
+				to_chat(usr, span_danger("Error: [M] no longer exists!"), confidential = TRUE)
 				return
 			if(!M.client)
-				to_chat(usr, span_danger("Error: [M] no longer has a client!") , confidential = TRUE)
+				to_chat(usr, span_danger("Error: [M] no longer has a client!"), confidential = TRUE)
 				return
-			to_chat(M, span_danger("You have been kicked from the server by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"].") , confidential = TRUE)
+			to_chat(M, span_danger("You have been kicked from the server by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"]."), confidential = TRUE)
 			log_admin("[key_name(usr)] kicked [key_name(M)].")
 			message_admins(span_adminnotice("[key_name_admin(usr)] kicked [key_name_admin(M)]."))
 			qdel(M.client)
@@ -781,7 +781,7 @@
 		GLOB.master_mode = href_list["c_mode2"]
 		log_admin("[key_name(usr)] set the mode as [GLOB.master_mode].")
 		message_admins(span_adminnotice("[key_name_admin(usr)] set the mode as [GLOB.master_mode]."))
-		to_chat(world, span_adminnotice("<b>The mode is now: [GLOB.master_mode]</b>") , confidential = TRUE)
+		to_chat(world, span_adminnotice("<b>The mode is now: [GLOB.master_mode]</b>"), confidential = TRUE)
 		Game() // updates the main game menu
 		if (tgui_alert(usr, "Would you like to save this as the default mode for the server?", "Save mode", list("Yes", "No"), timeout = 0) == "Yes")
 			SSticker.save_mode(GLOB.master_mode)
@@ -873,7 +873,7 @@
 			return
 
 		M.forceMove(pick(GLOB.prisonwarp))
-		to_chat(M, span_adminnotice("You have been sent to Prison!") , confidential = TRUE)
+		to_chat(M, span_adminnotice("You have been sent to Prison!"), confidential = TRUE)
 
 		log_admin("[key_name(usr)] has sent [key_name(M)] to Prison!")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(M)] to Prison!")
@@ -885,11 +885,11 @@
 		var/mob/M = locate(href_list["sendbacktolobby"])
 
 		if(!isobserver(M))
-			to_chat(usr, span_notice("You can only send ghost players back to the Lobby.") , confidential = TRUE)
+			to_chat(usr, span_notice("You can only send ghost players back to the Lobby."), confidential = TRUE)
 			return
 
 		if(!M.client)
-			to_chat(usr, span_warning("[M] doesn't seem to have an active client.") , confidential = TRUE)
+			to_chat(usr, span_warning("[M] doesn't seem to have an active client."), confidential = TRUE)
 			return
 
 		if(alert(usr, "Send [key_name(M)] back to Lobby?", "Message", "Yes", "No") != "Yes")
@@ -1797,7 +1797,7 @@
 			if(alert("Are you sure you want to kick all [afkonly ? "AFK" : ""] clients from the lobby??","Message","Yes","Cancel") != "Yes")
 				to_chat(usr, "Kick clients from lobby aborted", confidential = TRUE)
 				return
-			var/list/listkicked = kick_clients_in_lobby(span_danger("You were kicked from the lobby by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"].") , afkonly)
+			var/list/listkicked = kick_clients_in_lobby(span_danger("You were kicked from the lobby by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"]."), afkonly)
 
 			var/strkicked = ""
 			for(var/name in listkicked)
@@ -1892,7 +1892,7 @@
 	else if(href_list["viewruntime"])
 		var/datum/error_viewer/error_viewer = locate(href_list["viewruntime"])
 		if(!istype(error_viewer))
-			to_chat(usr, span_warning("That runtime viewer no longer exists.") , confidential = TRUE)
+			to_chat(usr, span_warning("That runtime viewer no longer exists."), confidential = TRUE)
 			return
 
 		if(href_list["viewruntime_backto"])

@@ -24,7 +24,7 @@
 	M.Paralyze(100)
 	M.apply_effect(EFFECT_STUTTER, 5)
 
-	M.visible_message(span_danger("[user] prods [M] with [src]!") , \
+	M.visible_message(span_danger("[user] prods [M] with [src]!"), \
 					span_userdanger("[user] prods you with [src]!"))
 
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, TRUE, -1)
@@ -70,40 +70,40 @@
 		if(0)
 			if(M.health >= 0)
 				if(user.zone_selected == BODY_ZONE_HEAD)
-					user.visible_message(span_notice("[user] playfully boops [M] on the head!") , \
+					user.visible_message(span_notice("[user] playfully boops [M] on the head!"), \
 									span_notice("You playfully boop [M] on the head!"))
 					user.do_attack_animation(M, ATTACK_EFFECT_BOOP)
 					playsound(loc, 'sound/weapons/tap.ogg', 50, TRUE, -1)
 				else if(ishuman(M))
 					if(user.body_position == LYING_DOWN)
-						user.visible_message(span_notice("[user] shakes [M] trying to get [M.p_them()] up!") , \
+						user.visible_message(span_notice("[user] shakes [M] trying to get [M.p_them()] up!"), \
 										span_notice("You shake [M] trying to get [M.p_them()] up!"))
 					else
-						user.visible_message(span_notice("[user] hugs [M] to make [M.p_them()] feel better!") , \
+						user.visible_message(span_notice("[user] hugs [M] to make [M.p_them()] feel better!"), \
 								span_notice("You hug [M] to make [M.p_them()] feel better!"))
 					if(M.resting)
 						M.set_resting(FALSE, TRUE)
 				else
-					user.visible_message(span_notice("[user] pets [M]!") , \
+					user.visible_message(span_notice("[user] pets [M]!"), \
 							span_notice("You pet [M]!"))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		if(1)
 			if(M.health >= 0)
 				if(ishuman(M))
 					if(M.body_position == LYING_DOWN)
-						user.visible_message(span_notice("[user] shakes [M] trying to get [M.p_them()] up!") , \
+						user.visible_message(span_notice("[user] shakes [M] trying to get [M.p_them()] up!"), \
 										span_notice("You shake [M] trying to get [M.p_them()] up!"))
 					else if(user.zone_selected == BODY_ZONE_HEAD)
-						user.visible_message(span_warning("[user] bops [M] on the head!") , \
+						user.visible_message(span_warning("[user] bops [M] on the head!"), \
 										span_warning("You bop [M] on the head!"))
 						user.do_attack_animation(M, ATTACK_EFFECT_PUNCH)
 					else
-						user.visible_message(span_warning("[user] hugs [M] in a firm bear-hug! [M] looks uncomfortable...") , \
+						user.visible_message(span_warning("[user] hugs [M] in a firm bear-hug! [M] looks uncomfortable..."), \
 								span_warning("You hug [M] firmly to make [M.p_them()] feel better! [M] looks uncomfortable..."))
 					if(M.resting)
 						M.set_resting(FALSE, TRUE)
 				else
-					user.visible_message(span_warning("[user] bops [M] on the head!") , \
+					user.visible_message(span_warning("[user] bops [M] on the head!"), \
 							span_warning("You bop [M] on the head!"))
 				playsound(loc, 'sound/weapons/tap.ogg', 50, TRUE, -1)
 		if(2)
@@ -111,15 +111,15 @@
 				if(M.health >= 0)
 					if(ishuman(M)||ismonkey(M))
 						M.electrocute_act(5, "[user]", flags = SHOCK_NOGLOVES)
-						user.visible_message(span_userdanger("[user] electrocutes [M] with [user.p_their()] touch!") , \
+						user.visible_message(span_userdanger("[user] electrocutes [M] with [user.p_their()] touch!"), \
 							span_danger("You electrocute [M] with your touch!"))
 					else
 						if(!iscyborg(M))
 							M.adjustFireLoss(10)
-							user.visible_message(span_userdanger("[user] shocks [M]!") , \
+							user.visible_message(span_userdanger("[user] shocks [M]!"), \
 								span_danger("You shock [M]!"))
 						else
-							user.visible_message(span_userdanger("[user] shocks [M]. It does not seem to have an effect") , \
+							user.visible_message(span_userdanger("[user] shocks [M]. It does not seem to have an effect"), \
 								span_danger("You shock [M] to no effect."))
 					playsound(loc, 'sound/effects/sparks2.ogg', 50, TRUE, -1)
 					user.cell.charge -= 500
@@ -128,10 +128,10 @@
 			if(ccooldown < world.time)
 				if(M.health >= 0)
 					if(ishuman(M))
-						user.visible_message(span_userdanger("[user] crushes [M] in [user.p_their()] grip!") , \
+						user.visible_message(span_userdanger("[user] crushes [M] in [user.p_their()] grip!"), \
 							span_danger("You crush [M] in your grip!"))
 					else
-						user.visible_message(span_userdanger("[user] crushes [M]!") , \
+						user.visible_message(span_userdanger("[user] crushes [M]!"), \
 								span_danger("You crush [M]!"))
 					playsound(loc, 'sound/weapons/smash.ogg', 50, TRUE, -1)
 					M.adjustBruteLoss(15)
@@ -298,7 +298,7 @@
 
 	if(safety == TRUE)
 		user.visible_message("<font color='red' size='2'>[user] blares out a near-deafening siren from its speakers!</font>", \
-			span_userdanger("The siren pierces your hearing and confuses you!") , \
+			span_userdanger("The siren pierces your hearing and confuses you!"), \
 			span_danger("The siren pierces your hearing!"))
 		for(var/mob/living/carbon/M in get_hearers_in_view(9, user))
 			if(M.get_ear_protection() == FALSE)
@@ -405,9 +405,9 @@
 	check_amount()
 
 	if(into_hands)
-		user.visible_message(span_notice("[user] dispenses a treat into the hands of [A].") , span_notice("You dispense a treat into the hands of [A].") , span_hear("You hear a click."))
+		user.visible_message(span_notice("[user] dispenses a treat into the hands of [A]."), span_notice("You dispense a treat into the hands of [A]."), span_hear("You hear a click."))
 	else
-		user.visible_message(span_notice("[user] dispenses a treat.") , span_notice("You dispense a treat.") , span_hear("You hear a click."))
+		user.visible_message(span_notice("[user] dispenses a treat."), span_notice("You dispense a treat."), span_hear("You hear a click."))
 
 	playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
 	return TRUE

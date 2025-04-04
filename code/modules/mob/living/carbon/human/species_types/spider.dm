@@ -166,7 +166,7 @@
 		if(istype(A, /obj/effect))
 			to_chat(H, span_warning("You cannot wrap this."))
 			return
-		H.visible_message(span_danger("[H] starts to wrap [A] into a cocoon!") ,span_warning("You start to wrap [A] into a cocoon."))
+		H.visible_message(span_danger("[H] starts to wrap [A] into a cocoon!"),span_warning("You start to wrap [A] into a cocoon."))
 		if(!do_after(H, 10 SECONDS, A, hidden = TRUE))
 			to_chat(H, span_warning("Your web spinning was interrupted!"))
 			return

@@ -13,7 +13,7 @@
 		to_chat(imp_in, span_warning("You're in no state to do that!"))
 		return
 
-	imp_in.visible_message(span_danger("\The [imp_in] flourishes their wings rapidly!") , span_danger("You flourish your wings!"))
+	imp_in.visible_message(span_danger("\The [imp_in] flourishes their wings rapidly!"), span_danger("You flourish your wings!"))
 	imp_in.emote("spin")
 	imp_in.emote("flip")
 	playsound(loc, 'sound/weapons/slashmiss.ogg', 50, TRUE)

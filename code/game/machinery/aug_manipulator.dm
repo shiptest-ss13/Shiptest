@@ -87,8 +87,8 @@
 			if(!O.tool_start_check(user, amount=0))
 				return
 
-			user.visible_message(span_notice("[user] begins repairing [src].") , \
-				span_notice("You begin repairing [src]...") , \
+			user.visible_message(span_notice("[user] begins repairing [src]."), \
+				span_notice("You begin repairing [src]..."), \
 				span_hear("You hear welding."))
 
 			if(O.use_tool(src, user, 40, volume=50))

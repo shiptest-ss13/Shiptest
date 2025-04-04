@@ -47,8 +47,8 @@
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
 
-			user.visible_message(span_notice("[user.name] starts to weld the [name] to the floor.") , \
-				span_notice("You start to weld \the [src] to the floor...") , \
+			user.visible_message(span_notice("[user.name] starts to weld the [name] to the floor."), \
+				span_notice("You start to weld \the [src] to the floor..."), \
 				span_hear("You hear welding."))
 
 			if(I.use_tool(src, user, ENGINE_WELDTIME, volume=50))
@@ -59,8 +59,8 @@
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
 
-			user.visible_message(span_notice("[user.name] starts to cut the [name] free from the floor.") , \
-				span_notice("You start to cut \the [src] free from the floor...") , \
+			user.visible_message(span_notice("[user.name] starts to cut the [name] free from the floor."), \
+				span_notice("You start to cut \the [src] free from the floor..."), \
 				span_hear("You hear welding."))
 
 			if(I.use_tool(src, user, ENGINE_WELDTIME, volume=50))

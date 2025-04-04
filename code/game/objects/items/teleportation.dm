@@ -180,7 +180,7 @@
 	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
 		to_chat(user, span_notice("\The [src] is malfunctioning."))
 		return
-	user.show_message(span_notice("Locked In.") , MSG_AUDIBLE)
+	user.show_message(span_notice("Locked In."), MSG_AUDIBLE)
 	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(current_location, get_turf(T), 0, FALSE), 300, 1, null, atmos_link_override)
 	if(!(LAZYLEN(created) == 2))
 		return

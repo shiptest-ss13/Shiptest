@@ -145,8 +145,8 @@
 	return advance
 
 /datum/surgery_step/proc/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to perform surgery on [target]...") ,
-		span_notice("[user] begins to perform surgery on [target].") ,
+	display_results(user, target, span_notice("You begin to perform surgery on [target]..."),
+		span_notice("[user] begins to perform surgery on [target]."),
 		span_notice("[user] begins to perform surgery on [target]."))
 
 /datum/surgery_step/proc/play_preop_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -164,8 +164,8 @@
 
 /datum/surgery_step/proc/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = TRUE)
 	if(default_display_results)
-		display_results(user, target, span_notice("You succeed.") ,
-				span_notice("[user] succeeds!") ,
+		display_results(user, target, span_notice("You succeed."),
+				span_notice("[user] succeeds!"),
 				span_notice("[user] finishes."))
 	user?.mind.adjust_experience(/datum/skill/healing, round(experience_given))
 	return TRUE
@@ -193,9 +193,9 @@
 		if(75 to 99)
 			screwedmessage = " This is practically impossible in these conditions..."
 
-	display_results(user, target, span_warning("You screw up![screwedmessage]") ,
-		span_warning("[user] screws up!") ,
-		span_notice("[user] finishes.") , TRUE) //By default the patient will notice if the wrong thing has been cut
+	display_results(user, target, span_warning("You screw up![screwedmessage]"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] finishes."), TRUE) //By default the patient will notice if the wrong thing has been cut
 	return FALSE
 
 /datum/surgery_step/proc/play_failure_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

@@ -26,11 +26,11 @@
 		return -1
 	L = surgery.operated_bodypart
 	if(L)
-		display_results(user, target, span_notice("You begin to augment [target]'s [parse_zone(user.zone_selected)]...") ,
-			span_notice("[user] begins to augment [target]'s [parse_zone(user.zone_selected)] with [aug].") ,
+		display_results(user, target, span_notice("You begin to augment [target]'s [parse_zone(user.zone_selected)]..."),
+			span_notice("[user] begins to augment [target]'s [parse_zone(user.zone_selected)] with [aug]."),
 			span_notice("[user] begins to augment [target]'s [parse_zone(user.zone_selected)]."))
 	else
-		user.visible_message(span_notice("[user] looks for [target]'s [parse_zone(user.zone_selected)].") , span_notice("You look for [target]'s [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] looks for [target]'s [parse_zone(user.zone_selected)]."), span_notice("You look for [target]'s [parse_zone(user.zone_selected)]..."))
 
 //ACTUAL SURGERIES
 
@@ -52,13 +52,13 @@
 			tool = tool.contents[1]
 		if(istype(tool) && user.temporarilyRemoveItemFromInventory(tool))
 			if(!tool.replace_limb(target, TRUE))
-				display_results(user, target, span_warning("You fail in replacing [target]'s [parse_zone(target_zone)]! Their body has rejected [tool]!") ,
-				span_warning("[user] fails to replace [target]'s [parse_zone(target_zone)]!") ,
+				display_results(user, target, span_warning("You fail in replacing [target]'s [parse_zone(target_zone)]! Their body has rejected [tool]!"),
+				span_warning("[user] fails to replace [target]'s [parse_zone(target_zone)]!"),
 				span_warning("[user] fails to replaces [target]'s [parse_zone(target_zone)]!"))
 				tool.forceMove(target.loc)
 				return
-		display_results(user, target, span_notice("You successfully augment [target]'s [parse_zone(target_zone)].") ,
-			span_notice("[user] successfully augments [target]'s [parse_zone(target_zone)] with [tool]!") ,
+		display_results(user, target, span_notice("You successfully augment [target]'s [parse_zone(target_zone)]."),
+			span_notice("[user] successfully augments [target]'s [parse_zone(target_zone)] with [tool]!"),
 			span_notice("[user] successfully augments [target]'s [parse_zone(target_zone)]!"))
 		log_combat(user, target, "augmented", addition="by giving him new [parse_zone(target_zone)] INTENT: [uppertext(user.a_intent)]")
 	else

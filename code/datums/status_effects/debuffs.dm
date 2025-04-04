@@ -567,7 +567,7 @@
 	if(prob(40))
 		var/obj/item/I = H.get_active_held_item()
 		if(I && H.dropItemToGround(I))
-			H.visible_message(span_notice("[H]'s hand convulses, and they drop their [I.name]!") ,span_userdanger("Your hand convulses violently, and you drop what you were holding!"))
+			H.visible_message(span_notice("[H]'s hand convulses, and they drop their [I.name]!"),span_userdanger("Your hand convulses violently, and you drop what you were holding!"))
 			H.adjust_jitter(5)
 
 /atom/movable/screen/alert/status_effect/convulsing
@@ -635,24 +635,24 @@
 	switch(msg_stage)
 		if(0 to 300)
 			if(prob(1))
-				fake_msg = pick(span_warning("[pick("Your head hurts.", "Your head pounds.")]") ,
-				span_warning("[pick("You're having difficulty breathing.", "Your breathing becomes heavy.")]") ,
-				span_warning("[pick("You feel dizzy.", "Your head spins.")]") ,
+				fake_msg = pick(span_warning("[pick("Your head hurts.", "Your head pounds.")]"),
+				span_warning("[pick("You're having difficulty breathing.", "Your breathing becomes heavy.")]"),
+				span_warning("[pick("You feel dizzy.", "Your head spins.")]"),
 				"<span notice='warning'>[pick("You swallow excess mucus.", "You lightly cough.")]</span>",
-				span_warning("[pick("Your head hurts.", "Your mind blanks for a moment.")]") ,
+				span_warning("[pick("Your head hurts.", "Your mind blanks for a moment.")]"),
 				span_warning("[pick("Your throat hurts.", "You clear your throat.")]"))
 		if(301 to 600)
 			if(prob(2))
-				fake_msg = pick(span_warning("[pick("Your head hurts a lot.", "Your head pounds incessantly.")]") ,
-				span_warning("[pick("Your windpipe feels like a straw.", "Your breathing becomes tremendously difficult.")]") ,
-				span_warning("You feel very [pick("dizzy","woozy","faint")].") ,
-				span_warning("[pick("You hear a ringing in your ear.", "Your ears pop.")]") ,
+				fake_msg = pick(span_warning("[pick("Your head hurts a lot.", "Your head pounds incessantly.")]"),
+				span_warning("[pick("Your windpipe feels like a straw.", "Your breathing becomes tremendously difficult.")]"),
+				span_warning("You feel very [pick("dizzy","woozy","faint")]."),
+				span_warning("[pick("You hear a ringing in your ear.", "Your ears pop.")]"),
 				span_warning("You nod off for a moment."))
 		else
 			if(prob(3))
 				if(prob(50))// coin flip to throw a message or an emote
-					fake_msg = pick(span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]") ,
-					span_userdanger("[pick("Your lungs hurt!", "It hurts to breathe!")]") ,
+					fake_msg = pick(span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"),
+					span_userdanger("[pick("Your lungs hurt!", "It hurts to breathe!")]"),
 					span_warning("[pick("You feel nauseated.", "You feel like you're going to throw up!")]"))
 				else
 					fake_emote = pick("cough", "sniff", "sneeze")

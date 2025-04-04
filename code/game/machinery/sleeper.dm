@@ -80,7 +80,7 @@
 	return ..()
 
 /obj/machinery/sleeper/container_resist_act(mob/living/user)
-	visible_message(span_notice("[occupant] emerges from [src]!") ,
+	visible_message(span_notice("[occupant] emerges from [src]!"),
 		span_notice("You climb out of [src]!"))
 	open_machine()
 
@@ -217,7 +217,7 @@
 	. = !(state_open || panel_open || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message(span_notice("[usr] pries open [src].") , span_notice("You pry open [src]."))
+		visible_message(span_notice("[usr] pries open [src]."), span_notice("You pry open [src]."))
 		open_machine()
 
 /obj/machinery/sleeper/ui_interact(mob/user, datum/tgui/ui)

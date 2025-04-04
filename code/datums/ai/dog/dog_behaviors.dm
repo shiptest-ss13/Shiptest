@@ -202,7 +202,7 @@
 	if(!istype(living_pawn))
 		return
 	living_pawn.do_attack_animation(living_target, ATTACK_EFFECT_BITE)
-	living_target.visible_message(span_danger("[living_pawn] bites at [living_target]!") , span_userdanger("[living_pawn] bites at you!") , vision_distance = COMBAT_MESSAGE_RANGE)
+	living_target.visible_message(span_danger("[living_pawn] bites at [living_target]!"), span_userdanger("[living_pawn] bites at you!"), vision_distance = COMBAT_MESSAGE_RANGE)
 	if(istype(living_target))
 		living_target.take_bodypart_damage(rand(5, 10))
 		log_combat(living_pawn, living_target, "bit (AI)")

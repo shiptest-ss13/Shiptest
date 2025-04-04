@@ -114,13 +114,13 @@
 			return
 		last_act = world.time
 		if(anchored)	//Getting here effectively just toggles the anchored bool, with some added flavor.
-			user.visible_message(span_warning("[user] starts to cut the [src]'s roots free!") , \
-				span_warning("You start cutting the [src]'s roots from the ground...") , \
+			user.visible_message(span_warning("[user] starts to cut the [src]'s roots free!"), \
+				span_warning("You start cutting the [src]'s roots from the ground..."), \
 				span_hear("You hear grotesque cutting."))
 			if(I.use_tool(src, user, 50, volume=100))
 				playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, FALSE, 50, TRUE, TRUE)
-				user.visible_message(span_danger("The [src] writhes and screams as it's cut from the ground before finally settling down.") , \
-					span_danger("You cut the [src]'s from the ground, causing it to scream and writhe!") , \
+				user.visible_message(span_danger("The [src] writhes and screams as it's cut from the ground before finally settling down."), \
+					span_danger("You cut the [src]'s from the ground, causing it to scream and writhe!"), \
 					span_warning("The ground shakes violently beneath you!"))
 				anchored = FALSE
 			return
@@ -128,12 +128,12 @@
 			if(src.z != init_zlevel)
 				user.show_message(span_warning("The [src] refuses to settle down in this area! You can't secure it!"))
 				return
-			user.visible_message(span_notice("[user] starts to plant the [src]'s roots into the ground!") , \
-				span_notice("You start threading the [src]'s roots back into the ground...") , \
+			user.visible_message(span_notice("[user] starts to plant the [src]'s roots into the ground!"), \
+				span_notice("You start threading the [src]'s roots back into the ground..."), \
 				span_hear("You hear grotesque cutting."))
 			if(I.use_tool(src, user, 50, volume=100))
-				user.visible_message(span_notice("The [src] seems to settle down as [user] finishest securing it firmly to the ashy plains.") , \
-					span_notice("You finish planting the [src]! It seems to calm down...") , \
+				user.visible_message(span_notice("The [src] seems to settle down as [user] finishest securing it firmly to the ashy plains."), \
+					span_notice("You finish planting the [src]! It seems to calm down..."), \
 					span_notice("The ground seems to settle a bit..."))
 				anchored = TRUE
 			return

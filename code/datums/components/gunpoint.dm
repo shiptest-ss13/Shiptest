@@ -29,8 +29,8 @@
 
 	RegisterSignal(weapon, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED), PROC_REF(cancel))
 
-	shooter.visible_message(span_danger("[shooter] aims [weapon] point blank at [target]!") , \
-		span_danger("You aim [weapon] point blank at [target]!") , target)
+	shooter.visible_message(span_danger("[shooter] aims [weapon] point blank at [target]!"), \
+		span_danger("You aim [weapon] point blank at [target]!"), target)
 	to_chat(target, span_userdanger("[shooter] aims [weapon] point blank at you!"))
 
 	shooter.apply_status_effect(STATUS_EFFECT_HOLDUP)
@@ -70,8 +70,8 @@
 	var/mob/living/T = A
 	if(T && T == target)
 		var/mob/living/shooter = parent
-		shooter.visible_message(span_danger("[shooter] bumps into [target] and fumbles [shooter.p_their()] aim!") , \
-			span_danger("You bump into [target] and fumble your aim!") , target)
+		shooter.visible_message(span_danger("[shooter] bumps into [target] and fumbles [shooter.p_their()] aim!"), \
+			span_danger("You bump into [target] and fumble your aim!"), target)
 		to_chat(target, span_userdanger("[shooter] bumps into you and fumbles [shooter.p_their()] aim!"))
 		qdel(src)
 
@@ -79,8 +79,8 @@
 	SIGNAL_HANDLER
 
 	if(T == target && (shooter.a_intent == INTENT_DISARM || shooter.a_intent == INTENT_GRAB))
-		shooter.visible_message(span_danger("[shooter] bumps into [target] and fumbles [shooter.p_their()] aim!") , \
-			span_danger("You bump into [target] and fumble your aim!") , target)
+		shooter.visible_message(span_danger("[shooter] bumps into [target] and fumbles [shooter.p_their()] aim!"), \
+			span_danger("You bump into [target] and fumble your aim!"), target)
 		to_chat(target, span_userdanger("[shooter] bumps into you and fumbles [shooter.p_their()] aim!"))
 		qdel(src)
 
@@ -117,8 +117,8 @@
 	var/mob/living/shooter = parent
 
 	if(!weapon.can_shoot() || !weapon.can_trigger_gun(shooter) || (weapon.weapon_weight == WEAPON_HEAVY && shooter.get_inactive_held_item()))
-		shooter.visible_message(span_danger("[shooter] fumbles [weapon]!") , \
-			span_danger("You fumble [weapon] and fail to fire at [target]!") , target)
+		shooter.visible_message(span_danger("[shooter] fumbles [weapon]!"), \
+			span_danger("You fumble [weapon] and fail to fire at [target]!"), target)
 		to_chat(target, span_userdanger("[shooter] fumbles [weapon] and fails to fire at you!"))
 		qdel(src)
 		return
@@ -133,8 +133,8 @@
 	SIGNAL_HANDLER
 
 	var/mob/living/shooter = parent
-	shooter.visible_message(span_danger("[shooter] breaks [shooter.p_their()] aim on [target]!") , \
-		span_danger("You are no longer aiming [weapon] at [target].") , target)
+	shooter.visible_message(span_danger("[shooter] breaks [shooter.p_their()] aim on [target]!"), \
+		span_danger("You are no longer aiming [weapon] at [target]."), target)
 	to_chat(target, span_userdanger("[shooter] breaks [shooter.p_their()] aim on you!"))
 	SEND_SIGNAL(target, COMSIG_CLEAR_MOOD_EVENT, "gunpoint")
 	qdel(src)
@@ -154,7 +154,7 @@
 		flinch_chance = 80
 
 	if(prob(flinch_chance))
-		shooter.visible_message(span_danger("[shooter] flinches!") , \
+		shooter.visible_message(span_danger("[shooter] flinches!"), \
 			span_danger("You flinch!"))
 		trigger_reaction()
 

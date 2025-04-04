@@ -96,9 +96,9 @@
 		add_fingerprint(user)
 		src.disable = !src.disable
 		if (src.disable)
-			user.visible_message(span_notice("[user] disables \the [src]!") , span_notice("You disable the connection to \the [src]."))
+			user.visible_message(span_notice("[user] disables \the [src]!"), span_notice("You disable the connection to \the [src]."))
 		if (!src.disable)
-			user.visible_message(span_notice("[user] reconnects \the [src]!") , span_notice("You fix the connection to \the [src]."))
+			user.visible_message(span_notice("[user] reconnects \the [src]!"), span_notice("You fix the connection to \the [src]."))
 		update_appearance()
 	else
 		return ..()

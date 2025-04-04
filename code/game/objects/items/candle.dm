@@ -101,7 +101,7 @@
 		if (do_after(user, 20, target=src))
 			qdel(src)
 			new /obj/structure/destructible/tribal_torch(get_turf(user))
-			user.visible_message(span_notice("[user] plants \the [src] firmly in the ground.") , span_notice("You plant \the [src] firmly in the ground."))
+			user.visible_message(span_notice("[user] plants \the [src] firmly in the ground."), span_notice("You plant \the [src] firmly in the ground."))
 			return
 	return ..()
 

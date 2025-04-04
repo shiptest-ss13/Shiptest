@@ -162,7 +162,7 @@
 			return
 
 /obj/item/apc_powercord/proc/powerdraw_loop(atom/target, mob/living/carbon/human/H, apc_target)
-	H.visible_message(span_notice("[H] inserts a power connector into the [target].") , span_notice("You begin to draw power from the [target]."))
+	H.visible_message(span_notice("[H] inserts a power connector into the [target]."), span_notice("You begin to draw power from the [target]."))
 	var/obj/item/organ/stomach/cell/battery = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(apc_target)
 		var/obj/machinery/power/apc/A = target
@@ -210,7 +210,7 @@
 				to_chat(H, span_notice("You are now fully charged."))
 				break
 
-	H.visible_message(span_notice("[H] unplugs from the [target].") , span_notice("You unplug from the [target]."))
+	H.visible_message(span_notice("[H] unplugs from the [target]."), span_notice("You unplug from the [target]."))
 	return
 
 /datum/species/ipc/spec_life(mob/living/carbon/human/H)

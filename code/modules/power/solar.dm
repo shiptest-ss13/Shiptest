@@ -71,10 +71,10 @@
 
 /obj/machinery/power/solar/crowbar_act(mob/user, obj/item/I)
 	playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
-	user.visible_message(span_notice("[user] begins to take the glass off [src].") , span_notice("You begin to take the glass off [src]..."))
+	user.visible_message(span_notice("[user] begins to take the glass off [src]."), span_notice("You begin to take the glass off [src]..."))
 	if(I.use_tool(src, user, 50))
 		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
-		user.visible_message(span_notice("[user] takes the glass off [src].") , span_notice("You take the glass off [src]."))
+		user.visible_message(span_notice("[user] takes the glass off [src]."), span_notice("You take the glass off [src]."))
 		deconstruct(TRUE)
 	return TRUE
 
@@ -269,12 +269,12 @@
 			return
 		set_anchored(!anchored)
 		if(anchored)
-			user.visible_message(span_notice("[user] wrenches the solar assembly into place.") , span_notice("You wrench the solar assembly into place."))
+			user.visible_message(span_notice("[user] wrenches the solar assembly into place."), span_notice("You wrench the solar assembly into place."))
 			W.play_tool_sound(src, 75)
 			pixel_x = 0
 			pixel_y = 0
 		else
-			user.visible_message(span_notice("[user] unwrenches the solar assembly from its place.") , span_notice("You unwrench the solar assembly from its place."))
+			user.visible_message(span_notice("[user] unwrenches the solar assembly from its place."), span_notice("You unwrench the solar assembly from its place."))
 			W.play_tool_sound(src, 75)
 			randomise_offset(random_offset)
 		return 1
@@ -287,7 +287,7 @@
 		if(S.use(2))
 			glass_type = W.type
 			playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
-			user.visible_message(span_notice("[user] places the glass on the solar assembly.") , span_notice("You place the glass on the solar assembly."))
+			user.visible_message(span_notice("[user] places the glass on the solar assembly."), span_notice("You place the glass on the solar assembly."))
 			if(tracker)
 				new /obj/machinery/power/tracker(get_turf(src), src)
 			else
@@ -303,13 +303,13 @@
 				return
 			tracker = 1
 			qdel(W)
-			user.visible_message(span_notice("[user] inserts the electronics into the solar assembly.") , span_notice("You insert the electronics into the solar assembly."))
+			user.visible_message(span_notice("[user] inserts the electronics into the solar assembly."), span_notice("You insert the electronics into the solar assembly."))
 			return 1
 	else
 		if(W.tool_behaviour == TOOL_CROWBAR)
 			new /obj/item/electronics/tracker(src.loc)
 			tracker = 0
-			user.visible_message(span_notice("[user] takes out the electronics from the solar assembly.") , span_notice("You take out the electronics from the solar assembly."))
+			user.visible_message(span_notice("[user] takes out the electronics from the solar assembly."), span_notice("You take out the electronics from the solar assembly."))
 			return 1
 	return ..()
 

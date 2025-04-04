@@ -219,7 +219,7 @@
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 3 SECONDS, volume=0))
-		to_chat(user, span_warning("You cut apart \the [src].") , span_notice("You cut apart \the [src]."))
+		to_chat(user, span_warning("You cut apart \the [src]."), span_notice("You cut apart \the [src]."))
 		deconstruct()
 		return TRUE
 
@@ -231,8 +231,8 @@
 	. = FALSE
 	if(state == GIRDER_DISPLACED)
 		user.visible_message(
-			span_warning("[user] disassembles the girder.") ,
-			span_notice("You start to disassemble the girder...") ,
+			span_warning("[user] disassembles the girder."),
+			span_notice("You start to disassemble the girder..."),
 			span_hear("You hear clanking and banging noises.")
 		)
 		if(tool.use_tool(src, user, 40, volume=100))
@@ -382,11 +382,11 @@
 		if(B.get_amount() < 2)
 			to_chat(user, span_warning("You need at least two bronze sheets to build a bronze wall!"))
 			return 0
-		user.visible_message(span_notice("[user] begins plating [src] with bronze...") , span_notice("You begin constructing a bronze wall..."))
+		user.visible_message(span_notice("[user] begins plating [src] with bronze..."), span_notice("You begin constructing a bronze wall..."))
 		if(do_after(user, 50, target = src))
 			if(B.get_amount() < 2)
 				return
-			user.visible_message(span_notice("[user] plates [src] with bronze!") , span_notice("You construct a bronze wall."))
+			user.visible_message(span_notice("[user] plates [src] with bronze!"), span_notice("You construct a bronze wall."))
 			B.use(2)
 			var/turf/T = get_turf(src)
 			T.PlaceOnTop(/turf/closed/wall/mineral/bronze)

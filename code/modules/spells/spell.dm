@@ -305,7 +305,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	before_cast(targets)
 	invocation(user)
 	if(user && user.ckey)
-		user.log_message(span_danger("cast the spell [name].") , LOG_ATTACK)
+		user.log_message(span_danger("cast the spell [name]."), LOG_ATTACK)
 	if(recharge)
 		recharging = TRUE
 	if(sound)
@@ -570,6 +570,6 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 /obj/effect/proc_holder/spell/self/basic_heal/cast(list/targets, mob/living/carbon/human/user) //Note the lack of "list/targets" here. Instead, use a "user" var depending on mob requirements.
 	//Also, notice the lack of a "for()" statement that looks through the targets. This is, again, because the spell can only have a single target.
-	user.visible_message(span_warning("A wreath of gentle light passes over [user]!") , span_notice("You wreath yourself in healing light!"))
+	user.visible_message(span_warning("A wreath of gentle light passes over [user]!"), span_notice("You wreath yourself in healing light!"))
 	user.adjustBruteLoss(-10)
 	user.adjustFireLoss(-10)

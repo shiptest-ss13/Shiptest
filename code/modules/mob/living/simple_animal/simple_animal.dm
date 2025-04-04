@@ -190,7 +190,7 @@
 		..()
 		return
 	else
-		user.visible_message(span_notice("[user] hand-feeds [O] to [src].") , span_notice("You hand-feed [O] to [src]."))
+		user.visible_message(span_notice("[user] hand-feeds [O] to [src]."), span_notice("You hand-feed [O] to [src]."))
 		qdel(O)
 		if(tame)
 			return

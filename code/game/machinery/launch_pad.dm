@@ -250,7 +250,7 @@
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
 			return
-		usr.visible_message(span_notice("[usr] starts closing [src]...") , span_notice("You start closing [src]..."))
+		usr.visible_message(span_notice("[usr] starts closing [src]..."), span_notice("You start closing [src]..."))
 		if(do_after(usr, 30, target = usr))
 			usr.put_in_hands(briefcase)
 			moveToNullspace() //hides it from suitcase contents

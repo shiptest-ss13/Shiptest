@@ -670,9 +670,9 @@
 		if(M == viewing)
 			to_chat(usr, span_notice("You put [I] [insert_preposition]to [parent]."))
 		else if(in_range(M, viewing)) //If someone is standing close enough, they can tell what it is...
-			viewing.show_message(span_notice("[M] puts [I] [insert_preposition]to [parent].") , MSG_VISUAL)
+			viewing.show_message(span_notice("[M] puts [I] [insert_preposition]to [parent]."), MSG_VISUAL)
 		else if(I && I.w_class >= 3) //Otherwise they can only see large or normal items from a distance...
-			viewing.show_message(span_notice("[M] puts [I] [insert_preposition]to [parent].") , MSG_VISUAL)
+			viewing.show_message(span_notice("[M] puts [I] [insert_preposition]to [parent]."), MSG_VISUAL)
 
 /datum/component/storage/proc/update_icon()
 	if(isobj(parent))
@@ -841,7 +841,7 @@
 	if(!user.put_in_hands(I))
 		to_chat(user, span_notice("You fumble for [I] and it falls on the floor."))
 		return
-	user.visible_message(span_warning("[user] draws [I] from [parent]!") , span_notice("You draw [I] from [parent]."))
+	user.visible_message(span_warning("[user] draws [I] from [parent]!"), span_notice("You draw [I] from [parent]."))
 
 /datum/component/storage/proc/action_trigger(datum/signal_source, datum/action/source)
 	SIGNAL_HANDLER

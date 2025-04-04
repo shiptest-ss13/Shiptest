@@ -62,8 +62,8 @@
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)
-			display_results(user, target, span_notice("You attempt to fix some of [target]'s [repairtype].") ,
-		span_notice("[user] attempts to fix some of [target]'s [repairtype].") ,
+			display_results(user, target, span_notice("You attempt to fix some of [target]'s [repairtype]."),
+		span_notice("[user] attempts to fix some of [target]'s [repairtype]."),
 		span_notice("[user] attempts to fix some of [target]'s [repairtype]."))
 
 /datum/surgery_step/heal/mechanic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -81,7 +81,7 @@
 		umsg += " as best as you can while they have clothing on"
 		tmsg += " as best as they can while [target] has clothing on"
 	experience_given = CEILING((target.heal_bodypart_damage(urhealedamt_brute,urhealedamt_burn)/5),1)
-	display_results(user, target, span_notice("[umsg].") ,
+	display_results(user, target, span_notice("[umsg]."),
 		"[tmsg].",
 		"[tmsg].")
 	if(istype(surgery, /datum/surgery/healing))
@@ -90,9 +90,9 @@
 	return TRUE
 
 /datum/surgery_step/heal/mechanic/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob)
-	display_results(user, target, span_warning("You screwed up!") ,
-		span_warning("[user] screws up!") ,
-		span_notice("[user] fixes some of [target]'s damages.") , TRUE)
+	display_results(user, target, span_warning("You screwed up!"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] fixes some of [target]'s damages."), TRUE)
 	var/urdamageamt_burn = brutehealing * 0.8
 	var/urdamageamt_brute = burnhealing * 0.8
 	//Reset heal checks

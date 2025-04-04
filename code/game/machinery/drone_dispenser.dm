@@ -200,14 +200,14 @@
 			return
 
 		user.visible_message(
-			span_notice("[user] begins patching up [src] with [I].") ,
+			span_notice("[user] begins patching up [src] with [I]."),
 			span_notice("You begin restoring the damage to [src]..."))
 
 		if(!I.use_tool(src, user, 40, volume=50, amount=1))
 			return
 
 		user.visible_message(
-			span_notice("[user] fixes [src]!") ,
+			span_notice("[user] fixes [src]!"),
 			span_notice("You restore [src] to operation."))
 
 		set_machine_stat(machine_stat & ~BROKEN)

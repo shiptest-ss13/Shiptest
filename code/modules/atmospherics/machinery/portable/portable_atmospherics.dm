@@ -130,7 +130,7 @@
 				W.play_tool_sound(src)
 				user.visible_message( \
 					"[user] disconnects [src].", \
-					span_notice("You unfasten [src] from the port.") , \
+					span_notice("You unfasten [src] from the port."), \
 					span_hear("You hear a ratchet."))
 				update_appearance()
 				return
@@ -145,7 +145,7 @@
 				W.play_tool_sound(src)
 				user.visible_message( \
 					"[user] connects [src].", \
-					span_notice("You fasten [src] to the port.") , \
+					span_notice("You fasten [src] to the port."), \
 					span_hear("You hear a ratchet."))
 				update_appearance()
 				investigate_log("was connected to [possible_port] by [key_name(user)].", INVESTIGATE_ATMOS)

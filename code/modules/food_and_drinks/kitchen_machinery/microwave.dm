@@ -161,7 +161,7 @@
 			return FALSE
 
 		ingredients += O
-		user.visible_message(span_notice("[user] adds \a [O] to \the [src].") , span_notice("You add [O] to \the [src]."))
+		user.visible_message(span_notice("[user] adds \a [O] to \the [src]."), span_notice("You add [O] to \the [src]."))
 		return
 
 	..()
@@ -169,9 +169,9 @@
 /obj/machinery/microwave/welder_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(broken == 1)
-		user.visible_message(span_notice("[user] starts to fix part of \the [src].") , span_notice("You start to fix part of \the [src]..."))
+		user.visible_message(span_notice("[user] starts to fix part of \the [src]."), span_notice("You start to fix part of \the [src]..."))
 		if(I.use_tool(src, user, 20))
-			user.visible_message(span_notice("[user] fixes \the [src].") , span_notice("You fix \the [src]."))
+			user.visible_message(span_notice("[user] fixes \the [src]."), span_notice("You fix \the [src]."))
 			broken = 0
 			update_appearance()
 			return TRUE
@@ -179,9 +179,9 @@
 /obj/machinery/microwave/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(broken == 2)
-		user.visible_message(span_notice("[user] starts to fix part of \the [src].") , span_notice("You start to fix part of \the [src]..."))
+		user.visible_message(span_notice("[user] starts to fix part of \the [src]."), span_notice("You start to fix part of \the [src]..."))
 		if(I.use_tool(src, user, 20))
-			user.visible_message(span_notice("[user] fixes part of \the [src].") , span_notice("You fix part of \the [src]."))
+			user.visible_message(span_notice("[user] fixes part of \the [src]."), span_notice("You fix part of \the [src]."))
 			broken = 1
 			update_appearance()
 			return TRUE
@@ -259,7 +259,7 @@
 	start()
 
 /obj/machinery/microwave/proc/wzhzhzh()
-	visible_message(span_notice("\The [src] turns on.") , null, span_hear("You hear a microwave humming."))
+	visible_message(span_notice("\The [src] turns on."), null, span_hear("You hear a microwave humming."))
 	operating = TRUE
 
 	set_light(1.5)

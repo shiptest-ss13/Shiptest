@@ -478,23 +478,23 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				if (has_electronics == APC_ELECTRONICS_INSTALLED)
 					has_electronics = APC_ELECTRONICS_MISSING
 					if (machine_stat & BROKEN)
-						user.visible_message(span_notice("[user.name] breaks the power control board inside [src.name]!") ,\
-							span_notice("You break the charred power control board and remove the remains.") ,
+						user.visible_message(span_notice("[user.name] breaks the power control board inside [src.name]!"),\
+							span_notice("You break the charred power control board and remove the remains."),
 							span_hear("You hear a crack."))
 						return
 					else if (obj_flags & EMAGGED)
 						obj_flags &= ~EMAGGED
-						user.visible_message(span_notice("[user.name] discards an emagged power control board from [src.name]!") ,\
+						user.visible_message(span_notice("[user.name] discards an emagged power control board from [src.name]!"),\
 							span_notice("You discard the emagged power control board."))
 						return
 					else if (malfhack)
-						user.visible_message(span_notice("[user.name] discards a strangely programmed power control board from [src.name]!") ,\
+						user.visible_message(span_notice("[user.name] discards a strangely programmed power control board from [src.name]!"),\
 							span_notice("You discard the strangely programmed board."))
 						malfai = null
 						malfhack = 0
 						return
 					else
-						user.visible_message(span_notice("[user.name] removes the power control board from [src.name]!") ,\
+						user.visible_message(span_notice("[user.name] removes the power control board from [src.name]!"),\
 							span_notice("You remove the power control board."))
 						new /obj/item/electronics/apc(loc)
 						return
@@ -521,7 +521,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	. = TRUE
 	if(opened)
 		if(cell)
-			user.visible_message(span_notice("[user] removes \the [cell] from [src]!") , span_notice("You remove \the [cell]."))
+			user.visible_message(span_notice("[user] removes \the [cell] from [src]!"), span_notice("You remove \the [cell]."))
 			var/turf/T = get_turf(user)
 			cell.forceMove(T)
 			cell.update_appearance()
@@ -565,17 +565,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if (opened && !has_electronics && !terminal)
 		if(!W.tool_start_check(user, amount=3))
 			return
-		user.visible_message(span_notice("[user.name] welds [src].") , \
-							span_notice("You start welding the APC frame...") , \
+		user.visible_message(span_notice("[user.name] welds [src]."), \
+							span_notice("You start welding the APC frame..."), \
 							span_hear("You hear welding."))
 		if(W.use_tool(src, user, 50, volume=50, amount=3))
 			if ((machine_stat & BROKEN) || opened==APC_COVER_REMOVED)
 				new /obj/item/stack/sheet/metal(loc)
-				user.visible_message(span_notice("[user.name] cuts [src] apart with [W].") ,\
+				user.visible_message(span_notice("[user.name] cuts [src] apart with [W]."),\
 					span_notice("You disassembled the broken APC frame."))
 			else
 				new /obj/item/wallframe/apc(loc)
-				user.visible_message(span_notice("[user.name] cuts [src] from the wall with [W].") ,\
+				user.visible_message(span_notice("[user.name] cuts [src] from the wall with [W]."),\
 					span_notice("You cut the APC frame from the wall."))
 			qdel(src)
 			return TRUE
@@ -596,7 +596,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			user.visible_message(span_notice("[user.name] inserts the power cell to [src.name]!") ,\
+			user.visible_message(span_notice("[user.name] inserts the power cell to [src.name]!"),\
 				span_notice("You insert the power cell."))
 			chargecount = 0
 			update_appearance()
@@ -620,7 +620,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		if(C.get_amount() < 10)
 			to_chat(user, span_warning("You need ten lengths of cable for APC!"))
 			return
-		user.visible_message(span_notice("[user.name] adds cables to the APC frame.") , \
+		user.visible_message(span_notice("[user.name] adds cables to the APC frame."), \
 							span_notice("You start adding cables to the APC frame..."))
 		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 		if(do_after(user, 20, target = src))
@@ -644,7 +644,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			to_chat(user, span_warning("You cannot put the board inside, the frame is damaged!"))
 			return
 
-		user.visible_message(span_notice("[user.name] inserts the power control board into [src].") , \
+		user.visible_message(span_notice("[user.name] inserts the power control board into [src]."), \
 							span_notice("You start to insert the power control board into the frame..."))
 		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 		if(do_after(user, 10, target = src))
@@ -661,7 +661,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				return
 			if(!P.adapt_circuit(user, 50))
 				return
-			user.visible_message(span_notice("[user] fabricates a circuit and places it into [src].") , \
+			user.visible_message(span_notice("[user] fabricates a circuit and places it into [src]."), \
 			span_notice("You adapt a power control board and click it into place in [src]'s guts."))
 			has_electronics = APC_ELECTRONICS_INSTALLED
 			locked = FALSE
@@ -675,7 +675,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			C.forceMove(src)
 			cell = C
 			chargecount = 0
-			user.visible_message(span_notice("[user] fabricates a weak power cell and places it into [src].") , \
+			user.visible_message(span_notice("[user] fabricates a weak power cell and places it into [src]."), \
 			span_warning("Your [P.name] whirrs with strain as you create a weak power cell and place it into [src]!"))
 			update_appearance()
 		else
@@ -686,7 +686,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			to_chat(user, span_warning("You found no reason for repairing this APC!"))
 			return
 		if (!(machine_stat & BROKEN) && opened==APC_COVER_REMOVED) // Cover is the only thing broken, we do not need to remove elctronicks to replace cover
-			user.visible_message(span_notice("[user.name] replaces missing APC's cover.") , \
+			user.visible_message(span_notice("[user.name] replaces missing APC's cover."), \
 							span_notice("You begin to replace APC's cover..."))
 			if(do_after(user, 20, target = src)) // replacing cover is quicker than replacing whole frame
 				to_chat(user, span_notice("You replace missing APC's cover."))
@@ -697,7 +697,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		if (has_electronics)
 			to_chat(user, span_warning("You cannot repair this APC until you remove the electronics still inside!"))
 			return
-		user.visible_message(span_notice("[user.name] replaces the damaged APC frame with a new one.") , \
+		user.visible_message(span_notice("[user.name] replaces the damaged APC frame with a new one."), \
 							span_notice("You begin to replace the damaged APC frame..."))
 		if(do_after(user, 50, target = src))
 			to_chat(user, span_notice("You replace the damaged APC frame with a new one."))
@@ -739,7 +739,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				if(machine_stat & BROKEN)
 					to_chat(user, span_warning("[src]'s frame is too damaged to support a circuit."))
 					return
-				user.visible_message(span_notice("[user] fabricates a circuit and places it into [src].") , \
+				user.visible_message(span_notice("[user] fabricates a circuit and places it into [src]."), \
 				span_notice("You adapt a power control board and click it into place in [src]'s guts."))
 				has_electronics = TRUE
 				locked = TRUE
@@ -752,7 +752,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 				C.forceMove(src)
 				cell = C
 				chargecount = 0
-				user.visible_message(span_notice("[user] fabricates a weak power cell and places it into [src].") , \
+				user.visible_message(span_notice("[user] fabricates a weak power cell and places it into [src]."), \
 				span_warning("Your [the_rcd.name] whirrs with strain as you create a weak power cell and place it into [src]!"))
 				update_appearance()
 				return TRUE
@@ -888,7 +888,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 	if(opened && (!issilicon(user)))
 		if(cell)
-			user.visible_message(span_notice("[user] removes \the [cell] from [src]!") , span_notice("You remove \the [cell]."))
+			user.visible_message(span_notice("[user] removes \the [cell] from [src]!"), span_notice("You remove \the [cell]."))
 			user.put_in_hands(cell)
 			cell.update_appearance()
 			src.cell = null
@@ -1223,7 +1223,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(!T)
 		return
 	transfer_in_progress = TRUE
-	user.visible_message(span_notice("[user] slots [card] into [src]...") , span_notice("Transfer process initiated. Sending request for AI approval..."))
+	user.visible_message(span_notice("[user] slots [card] into [src]..."), span_notice("Transfer process initiated. Sending request for AI approval..."))
 	playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 	SEND_SOUND(occupier, sound('sound/misc/notice2.ogg')) //To alert the AI that someone's trying to card them if they're tabbed out
 	if(alert(occupier, "[user] is attempting to transfer you to \a [card.name]. Do you consent to this?", "APC Transfer", "Yes - Transfer Me", "No - Keep Me Here") == "No - Keep Me Here")
@@ -1245,7 +1245,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(!occupier || !card)
 		transfer_in_progress = FALSE
 		return
-	user.visible_message(span_notice("[user] transfers [occupier] to [card]!") , span_notice("Transfer complete! [occupier] is now stored in [card]."))
+	user.visible_message(span_notice("[user] transfers [occupier] to [card]!"), span_notice("Transfer complete! [occupier] is now stored in [card]."))
 	to_chat(occupier, span_notice("Transfer complete! You've been stored in [user]'s [card.name]."))
 	occupier.forceMove(card)
 	card.AI = occupier

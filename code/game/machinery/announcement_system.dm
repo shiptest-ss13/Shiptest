@@ -117,7 +117,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	if(!usr.canUseTopic(src, !issilicon(usr)))
 		return
 	if(machine_stat & BROKEN)
-		visible_message(span_warning("[src] buzzes.") , span_hear("You hear a faint buzz."))
+		visible_message(span_warning("[src] buzzes."), span_hear("You hear a faint buzz."))
 		playsound(src.loc, 'sound/machines/buzz-two.ogg', 50, TRUE)
 		return
 	switch(action)

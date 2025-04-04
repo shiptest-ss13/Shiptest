@@ -79,8 +79,8 @@ field_generator power level display
 				to_chat(user, span_warning("You are unable to turn off [src] once it is online!"))
 				return 1
 			else
-				user.visible_message(span_notice("[user] turns on [src].") , \
-					span_notice("You turn on [src].") , \
+				user.visible_message(span_notice("[user] turns on [src]."), \
+					span_notice("You turn on [src]."), \
 					span_hear("You hear heavy droning."))
 				turn_on()
 				investigate_log("<font color='green'>activated</font> by [key_name(user)].", INVESTIGATE_SINGULO)
@@ -136,8 +136,8 @@ field_generator power level display
 		if(FG_SECURED)
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
-			user.visible_message(span_notice("[user] starts to weld [src] to the floor.") , \
-				span_notice("You start to weld \the [src] to the floor...") , \
+			user.visible_message(span_notice("[user] starts to weld [src] to the floor."), \
+				span_notice("You start to weld \the [src] to the floor..."), \
 				span_hear("You hear welding."))
 			if(I.use_tool(src, user, 20, volume=50) && state == FG_SECURED)
 				state = FG_WELDED
@@ -146,8 +146,8 @@ field_generator power level display
 		if(FG_WELDED)
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
-			user.visible_message(span_notice("[user] starts to cut [src] free from the floor.") , \
-				span_notice("You start to cut \the [src] free from the floor...") , \
+			user.visible_message(span_notice("[user] starts to cut [src] free from the floor."), \
+				span_notice("You start to cut \the [src] free from the floor..."), \
 				span_hear("You hear welding."))
 			if(I.use_tool(src, user, 20, volume=50) && state == FG_WELDED)
 				state = FG_SECURED
@@ -221,7 +221,7 @@ field_generator power level display
 		check_power_level()
 		return 1
 	else
-		visible_message(span_danger("The [name] shuts down!") , span_hear("You hear something shutting down."))
+		visible_message(span_danger("The [name] shuts down!"), span_hear("You hear something shutting down."))
 		turn_off()
 		investigate_log("ran out of power and <font color='red'>deactivated</font>", INVESTIGATE_SINGULO)
 		power = 0

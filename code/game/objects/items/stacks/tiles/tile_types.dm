@@ -62,7 +62,7 @@
 		if(W.use_tool(src, user, 0, volume=40))
 			if(mineralType == "plasma")
 				atmos_spawn_air("plasma=5;TEMP=1000")
-				user.visible_message(span_warning("[user.name] sets the plasma tiles on fire!") , \
+				user.visible_message(span_warning("[user.name] sets the plasma tiles on fire!"), \
 									span_warning("You set the plasma tiles on fire!"))
 				qdel(src)
 				return
@@ -70,8 +70,8 @@
 			if (mineralType == "metal")
 				var/obj/item/stack/sheet/metal/new_item = new(user.loc)
 				user.visible_message(
-					span_notice("[user.name] shaped [src] into metal with the welding tool.") ,
-					span_notice("You shaped [src] into metal with the welding tool.") ,
+					span_notice("[user.name] shaped [src] into metal with the welding tool."),
+					span_notice("You shaped [src] into metal with the welding tool."),
 					span_hear("You hear welding.") 
 				)
 				var/obj/item/stack/rods/R = src
@@ -85,8 +85,8 @@
 				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
 				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
 				user.visible_message(
-					span_notice("[user.name] shaped [src] into a sheet with the welding tool.") ,
-					span_notice("You shaped [src] into a sheet with the welding tool.") ,
+					span_notice("[user.name] shaped [src] into a sheet with the welding tool."),
+					span_notice("You shaped [src] into a sheet with the welding tool."),
 					span_hear("You hear welding.") 
 				)
 				var/obj/item/stack/rods/R = src

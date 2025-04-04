@@ -143,7 +143,7 @@
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.do_attack_animation(src)
 		if(prob(I.force * 20 - 25))
-			user.visible_message(span_danger("[user] smashes through [src]!") , \
+			user.visible_message(span_danger("[user] smashes through [src]!"), \
 							span_danger("You smash through [src] with [I]!"))
 			ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 		else

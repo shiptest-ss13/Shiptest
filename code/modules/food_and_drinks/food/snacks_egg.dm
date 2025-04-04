@@ -126,7 +126,7 @@
 			to_chat(user, span_warning("You already have omelette on your fork!"))
 		else
 			F.icon_state = "forkloaded"
-			user.visible_message(span_notice("[user] takes a piece of omelette with [user.p_their()] fork!") , \
+			user.visible_message(span_notice("[user] takes a piece of omelette with [user.p_their()] fork!"), \
 				span_notice("You take a piece of omelette with your fork."))
 
 			var/datum/reagent/R = pick(reagents.reagent_list)

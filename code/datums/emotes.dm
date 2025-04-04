@@ -76,9 +76,9 @@
 			M.show_message("[FOLLOW_LINK(M, user)] [dchatmsg]")
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, deaf_message = span_emote("You see how <b>[user]</b> [msg]") , audible_message_flags = EMOTE_MESSAGE)
+		user.audible_message(msg, deaf_message = span_emote("You see how <b>[user]</b> [msg]"), audible_message_flags = EMOTE_MESSAGE)
 	else
-		user.visible_message(msg, blind_message = span_emote("You hear how <b>[user]</b> [msg]") , visible_message_flags = EMOTE_MESSAGE)
+		user.visible_message(msg, blind_message = span_emote("You hear how <b>[user]</b> [msg]"), visible_message_flags = EMOTE_MESSAGE)
 
 /// For handling emote cooldown, return true to allow the emote to happen
 /datum/emote/proc/check_cooldown(mob/user, intentional)

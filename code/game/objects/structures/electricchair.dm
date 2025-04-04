@@ -43,7 +43,7 @@
 			buckled_mob.electrocute_act(85, src, 1)
 			to_chat(buckled_mob, span_userdanger("You feel a deep shock course through your body!"))
 			addtimer(CALLBACK(buckled_mob, TYPE_PROC_REF(/mob/living, electrocute_act), 85, src, 1), 1)
-	visible_message(span_danger("The electric chair went off!") , span_hear("You hear a deep sharp shock!"))
+	visible_message(span_danger("The electric chair went off!"), span_hear("You hear a deep sharp shock!"))
 
 /obj/structure/chair/e_chair/post_buckle_mob(mob/living/L)
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "dying", /datum/mood_event/deaths_door)

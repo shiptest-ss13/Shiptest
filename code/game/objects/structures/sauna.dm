@@ -45,11 +45,11 @@
 	if(lit)
 		lit = FALSE
 		STOP_PROCESSING(SSobj, src)
-		user.visible_message(span_notice("[user] turns off [src].") , span_notice("You turn on [src]."))
+		user.visible_message(span_notice("[user] turns off [src]."), span_notice("You turn on [src]."))
 	else if (fuel_amount)
 		lit = TRUE
 		START_PROCESSING(SSobj, src)
-		user.visible_message(span_notice("[user] turns on [src].") , span_notice("You turn off [src]."))
+		user.visible_message(span_notice("[user] turns on [src]."), span_notice("You turn off [src]."))
 	update_icon()
 
 /obj/structure/sauna_oven/update_overlays()

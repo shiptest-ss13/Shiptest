@@ -86,7 +86,7 @@
 	if(M != user)
 		return ..()
 	user.visible_message(
-		span_warning("[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!") , \
+		span_warning("[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!"), \
 		span_danger("An unnatural hunger consumes you. You raise [src] your mouth and devour it!"))
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
@@ -95,7 +95,7 @@
 			qdel(src)
 			return
 	user.visible_message(
-		span_warning("[user]'s eyes flare a deep crimson!") , \
+		span_warning("[user]'s eyes flare a deep crimson!"), \
 		span_userdanger("You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!"))
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	src.Insert(user) //Consuming the heart literally replaces your heart with a demon heart. H A R D C O R E

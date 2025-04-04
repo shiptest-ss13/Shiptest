@@ -103,11 +103,11 @@
 		new_xeno.invisibility = 0
 
 	if(gib_on_success)
-		new_xeno.visible_message(span_danger("[new_xeno] bursts out of [owner] in a shower of gore!") , span_userdanger("You exit [owner], your previous host.") , span_hear("You hear organic matter ripping and tearing!"))
+		new_xeno.visible_message(span_danger("[new_xeno] bursts out of [owner] in a shower of gore!"), span_userdanger("You exit [owner], your previous host."), span_hear("You hear organic matter ripping and tearing!"))
 		owner.adjustBruteLoss(200)
 		owner.cut_overlay(overlay)
 	else
-		new_xeno.visible_message(span_danger("[new_xeno] wriggles out of [owner]!") , span_userdanger("You exit [owner], your previous host."))
+		new_xeno.visible_message(span_danger("[new_xeno] wriggles out of [owner]!"), span_userdanger("You exit [owner], your previous host."))
 		owner.adjustBruteLoss(40)
 		owner.cut_overlay(overlay)
 	qdel(src)

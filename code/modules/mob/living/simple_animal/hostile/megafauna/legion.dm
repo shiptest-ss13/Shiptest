@@ -294,7 +294,7 @@
 			if(A.stage == WIND_DOWN_STAGE)
 				to_chat(user, span_warning("The storm is already ending! It would be a waste to use the staff now."))
 				return
-			user.visible_message(span_warning("[user] holds [src] skywards as an orange beam travels into the sky!") , \
+			user.visible_message(span_warning("[user] holds [src] skywards as an orange beam travels into the sky!"), \
 			span_notice("You hold [src] skyward, dispelling the storm!"))
 			playsound(user, 'sound/magic/staff_change.ogg', 200, FALSE)
 			A.wind_down()
@@ -310,7 +310,7 @@
 		A.telegraph_duration = storm_telegraph_duration
 		A.end_duration = storm_duration
 
-	user.visible_message(span_warning("[user] holds [src] skywards as red lightning crackles into the sky!") , \
+	user.visible_message(span_warning("[user] holds [src] skywards as red lightning crackles into the sky!"), \
 	span_notice("You hold [src] skyward, calling down a terrible storm!"))
 	playsound(user, 'sound/magic/staff_change.ogg', 200, FALSE)
 	A.telegraph()

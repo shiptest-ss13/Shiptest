@@ -67,7 +67,7 @@
 	var/mob/living/carbon/current = target
 	if(current.anti_magic_check())
 		playsound(get_turf(current), 'sound/magic/lightningshock.ogg', 50, TRUE, -1)
-		current.visible_message(span_warning("[current] absorbs the spell, remaining unharmed!") , span_userdanger("You absorb the spell, remaining unharmed!"))
+		current.visible_message(span_warning("[current] absorbs the spell, remaining unharmed!"), span_userdanger("You absorb the spell, remaining unharmed!"))
 	else if(bounces < 1)
 		current.electrocute_act(bolt_energy,"Lightning Bolt",flags = SHOCK_NOGLOVES)
 		playsound(get_turf(current), 'sound/magic/lightningshock.ogg', 50, TRUE, -1)

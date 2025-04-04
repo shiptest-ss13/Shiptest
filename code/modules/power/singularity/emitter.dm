@@ -257,8 +257,8 @@
 	if(welded)
 		if(!I.tool_start_check(user, amount=0))
 			return TRUE
-		user.visible_message(span_notice("[user.name] starts to cut the [name] free from the floor.") , \
-			span_notice("You start to cut [src] free from the floor...") , \
+		user.visible_message(span_notice("[user.name] starts to cut the [name] free from the floor."), \
+			span_notice("You start to cut [src] free from the floor..."), \
 			span_hear("You hear welding."))
 		if(I.use_tool(src, user, 20, volume=50) && welded)
 			welded = FALSE
@@ -269,8 +269,8 @@
 	else if(anchored)
 		if(!I.tool_start_check(user, amount=0))
 			return TRUE
-		user.visible_message(span_notice("[user.name] starts to weld the [name] to the floor.") , \
-			span_notice("You start to weld [src] to the floor...") , \
+		user.visible_message(span_notice("[user.name] starts to weld the [name] to the floor."), \
+			span_notice("You start to weld [src] to the floor..."), \
 			span_hear("You hear welding."))
 		if(I.use_tool(src, user, 20, volume=50) && anchored)
 			welded = TRUE
@@ -356,7 +356,7 @@
 	locked = FALSE
 	obj_flags |= EMAGGED
 	if(user)
-		user.visible_message(span_warning("[user.name] emags [src].") , span_notice("You short out the lock."))
+		user.visible_message(span_warning("[user.name] emags [src]."), span_notice("You short out the lock."))
 
 /obj/machinery/power/emitter/welded/Initialize()
 	welded = TRUE

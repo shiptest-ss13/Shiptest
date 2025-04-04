@@ -69,7 +69,7 @@
 		if(HAS_TRAIT(O, TRAIT_NODROP) || !user.transferItemToLoc(O, src))
 			to_chat(user, span_warning("[O] is stuck to your hand!"))
 			return
-		user.visible_message(span_notice("[user] snaps [O] onto [src]!") , \
+		user.visible_message(span_notice("[user] snaps [O] onto [src]!"), \
 		span_notice("You press [O] into the side of [src], clicking into place."))
 		//This will be the scanner returning scanner_wand's selected_target variable and assigning it to the altPatient var
 		if(W.selected_target)
@@ -93,7 +93,7 @@
 		to_chat(user, span_warning("The scanner wand falls to the floor."))
 		scanner_wand = null
 		return
-	user.visible_message(span_notice("[user] unhooks the [scanner_wand] from [src].") , \
+	user.visible_message(span_notice("[user] unhooks the [scanner_wand] from [src]."), \
 	span_notice("You detach the [scanner_wand] from [src]."))
 	playsound(src, 'sound/machines/click.ogg', 60, TRUE)
 	scanner_wand = null
@@ -107,7 +107,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	if(user)
-		user.visible_message(span_warning("[user] waves a suspicious card by the [src]'s biometric scanner!") ,
+		user.visible_message(span_warning("[user] waves a suspicious card by the [src]'s biometric scanner!"),
 	span_notice("You overload the sensory electronics, the diagnostic readouts start jittering across the screen.."))
 	obj_flags |= EMAGGED
 	var/obj/item/circuitboard/computer/cargo/board = circuit

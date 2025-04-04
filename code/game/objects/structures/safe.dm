@@ -76,10 +76,10 @@ FLOOR SAFES
 			return
 
 		else if(I.tool_behaviour == TOOL_DECONSTRUCT)
-			user.visible_message(span_warning("[user] begin to cut through the lock of \the [src].") ,span_notice("You start cutting trough the lock of [src]."))
+			user.visible_message(span_warning("[user] begin to cut through the lock of \the [src]."),span_notice("You start cutting trough the lock of [src]."))
 			if(I.use_tool(src, user, 45 SECONDS))
 				broken = TRUE
-				user.visible_message(span_warning("[user] successfully cuts trough the lock of \the [src].") ,span_notice("You successfully cut trough the lock of [src]."))
+				user.visible_message(span_warning("[user] successfully cuts trough the lock of \the [src]."),span_notice("You successfully cut trough the lock of [src]."))
 
 		else
 			to_chat(user, span_warning("You can't put [I] into the safe while it is closed!"))

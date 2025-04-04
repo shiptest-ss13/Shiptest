@@ -11,8 +11,8 @@
 		if (prob(90))
 			log_combat(M, src, "attacked")
 			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[M] slashes at [src]!") , \
-							span_userdanger("[M] slashes at you!") , null, null, M)
+			visible_message(span_danger("[M] slashes at [src]!"), \
+							span_userdanger("[M] slashes at you!"), null, null, M)
 			to_chat(M, span_danger("You slash at [src]!"))
 			if(prob(8))
 				flash_act(affect_silicon = 1)
@@ -21,8 +21,8 @@
 			updatehealth()
 		else
 			playsound(loc, 'sound/weapons/slashmiss.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[M]'s swipe misses [src]!") , \
-							span_danger("You avoid [M]'s swipe!") , null, null, M)
+			visible_message(span_danger("[M]'s swipe misses [src]!"), \
+							span_danger("You avoid [M]'s swipe!"), null, null, M)
 			to_chat(M, span_warning("Your swipe misses [src]!"))
 
 /mob/living/silicon/attack_animal(mob/living/simple_animal/M)
@@ -33,8 +33,8 @@
 			for(var/mob/living/N in buckled_mobs)
 				N.Paralyze(20)
 				unbuckle_mob(N)
-				N.visible_message(span_danger("[N] is knocked off of [src] by [M]!") , \
-								span_userdanger("You're knocked off of [src] by [M]!") , null, null, M)
+				N.visible_message(span_danger("[N] is knocked off of [src] by [M]!"), \
+								span_userdanger("You're knocked off of [src] by [M]!"), null, null, M)
 				to_chat(M, span_danger("You knock [N] off of [src]!"))
 		switch(M.melee_damage_type)
 			if(BRUTE)
@@ -63,8 +63,8 @@
 		return
 	adjustBruteLoss(rand(10, 15))
 	playsound(loc, "punch", 25, TRUE, -1)
-	visible_message(span_danger("[user] punches [src]!") , \
-					span_userdanger("[user] punches you!") , null, COMBAT_MESSAGE_RANGE, user)
+	visible_message(span_danger("[user] punches [src]!"), \
+					span_userdanger("[user] punches you!"), null, COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_danger("You punch [src]!"))
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
@@ -74,8 +74,8 @@
 		. = TRUE
 	switch(M.a_intent)
 		if ("help")
-			visible_message(span_notice("[M] pets [src].") , \
-							span_notice("[M] pets you.") , null, null, M)
+			visible_message(span_notice("[M] pets [src]."), \
+							span_notice("[M] pets you."), null, null, M)
 			to_chat(M, span_notice("You pet [src]."))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT_RND, "pet_borg", /datum/mood_event/pet_borg)
 		if("grab")
@@ -83,8 +83,8 @@
 		else
 			M.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 			playsound(src.loc, 'sound/effects/bang.ogg', 10, TRUE)
-			visible_message(span_danger("[M] punches [src], but doesn't leave a dent!") , \
-							span_warning("[M] punches you, but doesn't leave a dent!") , null, COMBAT_MESSAGE_RANGE, M)
+			visible_message(span_danger("[M] punches [src], but doesn't leave a dent!"), \
+							span_warning("[M] punches you, but doesn't leave a dent!"), null, COMBAT_MESSAGE_RANGE, M)
 			to_chat(M, span_danger("You punch [src], but don't leave a dent!"))
 
 /mob/living/silicon/attack_drone(mob/living/simple_animal/drone/M)

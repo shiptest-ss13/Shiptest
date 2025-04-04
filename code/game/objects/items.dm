@@ -720,11 +720,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	user.do_attack_animation(M)
 
 	if(M != user)
-		M.visible_message(span_danger("[user] stabs [M] in the eye with [src]!") , \
+		M.visible_message(span_danger("[user] stabs [M] in the eye with [src]!"), \
 							span_userdanger("[user] stabs you in the eye with [src]!"))
 	else
 		user.visible_message( \
-			span_danger("[user] stabs [user.p_them()]self in the eyes with [src]!") , \
+			span_danger("[user] stabs [user.p_them()]self in the eyes with [src]!"), \
 			span_userdanger("You stab yourself in the eyes with [src]!")  \
 		)
 	if(is_human_victim)
@@ -1310,7 +1310,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
 		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, force_scream))
-		victim.visible_message(span_warning("[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!") , \
+		victim.visible_message(span_warning("[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!"), \
 							span_boldwarning("OH GOD! Was that a crunch? That didn't feel good at all!!"))
 
 		victim.apply_damage(max(15, force), BRUTE, BODY_ZONE_HEAD)
@@ -1355,7 +1355,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 		victim.adjust_disgust(33)
 		victim.visible_message(
-			span_warning("[victim] looks like [victim.p_theyve()] just bitten into something hard.") , \
+			span_warning("[victim] looks like [victim.p_theyve()] just bitten into something hard."), \
 			span_warning("Eugh! Did I just bite into something?"))
 
 	else if(w_class == WEIGHT_CLASS_TINY) //small items like soap or toys that don't have mat datums

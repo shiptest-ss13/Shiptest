@@ -259,5 +259,5 @@ They *could* go in their appropriate files, but this is supposed to be modular
 		var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread()
 		spark_system.set_up(5, 0, loc)
 		playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
-		visible_message(span_danger("[H] electrocutes [src] with [H.p_their()] touch!") , span_userdanger("[H] electrocutes you with [H.p_their()] touch!"))
+		visible_message(span_danger("[H] electrocutes [src] with [H.p_their()] touch!"), span_userdanger("[H] electrocutes you with [H.p_their()] touch!"))
 		electrocute_act(25, H)

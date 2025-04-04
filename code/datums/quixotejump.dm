@@ -45,7 +45,7 @@
 		else      CRASH("Invalid direction!")
 	var/turf/T = locate(newx, newy, holder.z)
 	holder.throw_at(T, 5, 3, spin = FALSE)
-	holder.visible_message(span_warning("[holder] suddenly dashes forward!") , span_notice("The Quixote dash mechanisms propel you forward!"))
+	holder.visible_message(span_warning("[holder] suddenly dashes forward!"), span_notice("The Quixote dash mechanisms propel you forward!"))
 	playsound(T, dash_sound, 25, TRUE)
 	charges--
 	holder.update_action_buttons_icon()

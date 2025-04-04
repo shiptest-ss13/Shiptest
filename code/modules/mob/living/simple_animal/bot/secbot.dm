@@ -251,7 +251,7 @@ Auto Patrol: []"},
 /mob/living/simple_animal/bot/secbot/proc/cuff(mob/living/carbon/C)
 	mode = BOT_ARREST
 	playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
-	C.visible_message(span_danger("[src] is trying to put zipties on [C]!") ,\
+	C.visible_message(span_danger("[src] is trying to put zipties on [C]!"),\
 						span_userdanger("[src] is trying to put zipties on you!"))
 	addtimer(CALLBACK(src, PROC_REF(attempt_handcuff), C), 60)
 
@@ -287,7 +287,7 @@ Auto Patrol: []"},
 	if(declare_arrests)
 		var/area/location = get_area(src)
 		speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in [location].", radio_channel)
-	C.visible_message(span_danger("[src] stuns [C]!") ,\
+	C.visible_message(span_danger("[src] stuns [C]!"),\
 							span_userdanger("[src] stuns you!"))
 
 /mob/living/simple_animal/bot/secbot/handle_automated_action()

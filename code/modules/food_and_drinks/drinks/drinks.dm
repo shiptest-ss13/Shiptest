@@ -31,19 +31,19 @@
 		return FALSE
 
 	if(M == user)
-		user.visible_message(span_notice("[user] swallows a gulp of [src].") , \
+		user.visible_message(span_notice("[user] swallows a gulp of [src]."), \
 			span_notice("You swallow a gulp of [src]."))
 		if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 			M.changeNext_move(CLICK_CD_MELEE * 0.5) //chug! chug! chug!
 
 	else
-		M.visible_message(span_danger("[user] attempts to feed [M] the contents of [src].") , \
+		M.visible_message(span_danger("[user] attempts to feed [M] the contents of [src]."), \
 			span_userdanger("[user] attempts to feed you the contents of [src]."))
 		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The drink might be empty after the delay, such as by spam-feeding
-		M.visible_message(span_danger("[user] fed [M] the contents of [src].") , \
+		M.visible_message(span_danger("[user] fed [M] the contents of [src]."), \
 			span_userdanger("[user] fed you the contents of [src]."))
 		log_combat(user, M, "fed", reagents.log_list())
 
@@ -102,7 +102,7 @@
 			if(INTENT_HELP)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!") , \
+				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
 									span_notice("You splash the contents of [src] onto [target]."))
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
@@ -562,9 +562,9 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
 	if(istype(M, /mob/living/carbon) && !reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
 		if(M == user)
-			user.visible_message(span_warning("[user] crushes the can of [src] on [user.p_their()] forehead!") , span_notice("You crush the can of [src] on your forehead."))
+			user.visible_message(span_warning("[user] crushes the can of [src] on [user.p_their()] forehead!"), span_notice("You crush the can of [src] on your forehead."))
 		else
-			user.visible_message(span_warning("[user] crushes the can of [src] on [M]'s forehead!") , span_notice("You crush the can of [src] on [M]'s forehead."))
+			user.visible_message(span_warning("[user] crushes the can of [src] on [M]'s forehead!"), span_notice("You crush the can of [src] on [M]'s forehead."))
 		playsound(M,'sound/weapons/pierce.ogg', rand(10,50), TRUE)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(M.loc)
 		crushed_can.icon_state = icon_state

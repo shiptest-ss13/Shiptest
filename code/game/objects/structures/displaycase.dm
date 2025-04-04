@@ -180,7 +180,7 @@
 		if (user.a_intent == INTENT_HELP)
 			user.examinate(src)
 			return
-		user.visible_message(span_danger("[user] kicks the display case.") , null, null, COMBAT_MESSAGE_RANGE)
+		user.visible_message(span_danger("[user] kicks the display case."), null, null, COMBAT_MESSAGE_RANGE)
 		log_combat(user, src, "kicks")
 		user.do_attack_animation(src, ATTACK_EFFECT_KICK)
 		take_damage(2)

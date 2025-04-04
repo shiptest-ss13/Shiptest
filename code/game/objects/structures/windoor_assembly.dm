@@ -101,7 +101,7 @@
 				if(!W.tool_start_check(user, amount=0))
 					return
 
-				user.visible_message(span_notice("[user] disassembles the windoor assembly.") ,
+				user.visible_message(span_notice("[user] disassembles the windoor assembly."),
 					span_notice("You start to disassemble the windoor assembly..."))
 
 				if(W.use_tool(src, user, 40, volume=50))
@@ -120,7 +120,7 @@
 					if(WD.dir == dir)
 						to_chat(user, span_warning("There is already a windoor in that location!"))
 						return
-				user.visible_message(span_notice("[user] secures the windoor assembly to the floor.") ,
+				user.visible_message(span_notice("[user] secures the windoor assembly to the floor."),
 					span_notice("You start to secure the windoor assembly to the floor..."))
 
 				if(W.use_tool(src, user, 40, volume=100))
@@ -139,7 +139,7 @@
 
 			//Unwrenching an unsecure assembly un-anchors it. Step 4 undone
 			else if(W.tool_behaviour == TOOL_WRENCH && anchored)
-				user.visible_message(span_notice("[user] unsecures the windoor assembly to the floor.") ,
+				user.visible_message(span_notice("[user] unsecures the windoor assembly to the floor."),
 					span_notice("You start to unsecure the windoor assembly to the floor..."))
 
 				if(W.use_tool(src, user, 40, volume=100))
@@ -174,7 +174,7 @@
 
 			//Adding cable to the assembly. Step 5 complete.
 			else if(istype(W, /obj/item/stack/cable_coil) && anchored)
-				user.visible_message(span_notice("[user] wires the windoor assembly.") , span_notice("You start to wire the windoor assembly..."))
+				user.visible_message(span_notice("[user] wires the windoor assembly."), span_notice("You start to wire the windoor assembly..."))
 
 				if(do_after(user, 40, target = src))
 					if(!src || !anchored || src.state != "01")
@@ -196,7 +196,7 @@
 
 			//Removing wire from the assembly. Step 5 undone.
 			if(W.tool_behaviour == TOOL_WIRECUTTER)
-				user.visible_message(span_notice("[user] cuts the wires from the airlock assembly.") , span_notice("You start to cut the wires from airlock assembly..."))
+				user.visible_message(span_notice("[user] cuts the wires from the airlock assembly."), span_notice("You start to cut the wires from airlock assembly..."))
 
 				if(W.use_tool(src, user, 40, volume=100))
 					if(state != "02")
@@ -215,7 +215,7 @@
 				if(!user.transferItemToLoc(W, src))
 					return
 				W.play_tool_sound(src, 100)
-				user.visible_message(span_notice("[user] installs the electronics into the airlock assembly.") ,
+				user.visible_message(span_notice("[user] installs the electronics into the airlock assembly."),
 					span_notice("You start to install electronics into the airlock assembly..."))
 
 				if(do_after(user, 40, target = src))
@@ -233,7 +233,7 @@
 				if(!electronics)
 					return
 
-				user.visible_message(span_notice("[user] removes the electronics from the airlock assembly.") ,
+				user.visible_message(span_notice("[user] removes the electronics from the airlock assembly."),
 					span_notice("You start to uninstall electronics from the airlock assembly..."))
 
 				if(W.use_tool(src, user, 40, volume=100) && electronics)
@@ -261,7 +261,7 @@
 					to_chat(usr, span_warning("The assembly is missing electronics!"))
 					return
 				user << browse(null, "window=windoor_access")
-				user.visible_message(span_notice("[user] pries the windoor into the frame.") ,
+				user.visible_message(span_notice("[user] pries the windoor into the frame."),
 					span_notice("You start prying the windoor into the frame..."))
 
 				if(W.use_tool(src, user, 40, volume=100) && electronics)

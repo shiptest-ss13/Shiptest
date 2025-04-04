@@ -164,7 +164,7 @@
 	if(!can_be_reached(user))
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message(span_notice("[user] knocks on [src].") , \
+	user.visible_message(span_notice("[user] knocks on [src]."), \
 		span_notice("You knock on [src]."))
 	add_fingerprint(user)
 	playsound(src, 'sound/effects/Glassknock.ogg', 50, TRUE)
@@ -226,7 +226,7 @@
 			if(!istype(src, /obj/structure/window))
 				return TRUE
 			I.play_tool_sound(src)
-			visible_message(span_warning("[user] smashes through [src] with [I]!") , span_italics("You hear the shattering of glass."))
+			visible_message(span_warning("[user] smashes through [src] with [I]!"), span_italics("You hear the shattering of glass."))
 			playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE)
 			deconstruct(FALSE)
 			return TRUE
@@ -426,7 +426,7 @@
 	switch(state)
 		if(RWINDOW_SECURE)
 			if((I.tool_behaviour == TOOL_WELDER) && user.a_intent == INTENT_HARM)
-				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]...") ,
+				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]..."),
 										span_notice("You begin heating the security screws on \the [src]..."))
 				if(I.use_tool(src, user, 150, volume = 100))
 					to_chat(user, span_notice("The security bolts are glowing white hot and look ready to be removed."))
@@ -435,7 +435,7 @@
 				return
 		if(RWINDOW_BOLTS_HEATED)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER)
-				user.visible_message(span_notice("[user] digs into the heated security screws and starts removing them...") ,
+				user.visible_message(span_notice("[user] digs into the heated security screws and starts removing them..."),
 										span_notice("You dig into the heated screws hard and they start turning..."))
 				if(I.use_tool(src, user, 50, volume = 50))
 					state = RWINDOW_BOLTS_OUT
@@ -443,7 +443,7 @@
 				return
 		if(RWINDOW_BOLTS_OUT)
 			if(I.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message(span_notice("[user] wedges \the [I] into the gap in the frame and starts prying...") ,
+				user.visible_message(span_notice("[user] wedges \the [I] into the gap in the frame and starts prying..."),
 										span_notice("You wedge \the [I] into the gap in the frame and start prying..."))
 				if(I.use_tool(src, user, 40, volume = 50))
 					state = RWINDOW_POPPED
@@ -451,7 +451,7 @@
 				return
 		if(RWINDOW_POPPED)
 			if(I.tool_behaviour == TOOL_WIRECUTTER)
-				user.visible_message(span_notice("[user] starts cutting the exposed bars on \the [src]...") ,
+				user.visible_message(span_notice("[user] starts cutting the exposed bars on \the [src]..."),
 										span_notice("You start cutting the exposed bars on \the [src]"))
 				if(I.use_tool(src, user, 20, volume = 50))
 					state = RWINDOW_BARS_CUT
@@ -459,7 +459,7 @@
 				return
 		if(RWINDOW_BARS_CUT)
 			if(I.tool_behaviour == TOOL_WRENCH)
-				user.visible_message(span_notice("[user] starts unfastening \the [src] from the frame...") ,
+				user.visible_message(span_notice("[user] starts unfastening \the [src] from the frame..."),
 					span_notice("You start unfastening the bolts from the frame..."))
 				if(I.use_tool(src, user, 40, volume = 50))
 					to_chat(user, span_notice("You unscrew the bolts from the frame and the window pops loose."))
@@ -556,7 +556,7 @@
 	switch(state)
 		if(RWINDOW_SECURE)
 			if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HARM)
-				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]...") ,
+				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]..."),
 										span_notice("You begin heating the security screws on \the [src]..."))
 				if(I.use_tool(src, user, 180, volume = 100))
 					to_chat(user, span_notice("The security screws are glowing white hot and look ready to be removed."))
@@ -565,7 +565,7 @@
 				return
 		if(RWINDOW_BOLTS_HEATED)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER)
-				user.visible_message(span_notice("[user] digs into the heated security screws and starts removing them...") ,
+				user.visible_message(span_notice("[user] digs into the heated security screws and starts removing them..."),
 										span_notice("You dig into the heated screws hard and they start turning..."))
 				if(I.use_tool(src, user, 80, volume = 50))
 					state = RWINDOW_BOLTS_OUT
@@ -573,7 +573,7 @@
 				return
 		if(RWINDOW_BOLTS_OUT)
 			if(I.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message(span_notice("[user] wedges \the [I] into the gap in the frame and starts prying...") ,
+				user.visible_message(span_notice("[user] wedges \the [I] into the gap in the frame and starts prying..."),
 										span_notice("You wedge \the [I] into the gap in the frame and start prying..."))
 				if(I.use_tool(src, user, 50, volume = 50))
 					state = RWINDOW_POPPED
@@ -581,7 +581,7 @@
 				return
 		if(RWINDOW_POPPED)
 			if(I.tool_behaviour == TOOL_WIRECUTTER)
-				user.visible_message(span_notice("[user] starts cutting the exposed bars on \the [src]...") ,
+				user.visible_message(span_notice("[user] starts cutting the exposed bars on \the [src]..."),
 										span_notice("You start cutting the exposed bars on \the [src]"))
 				if(I.use_tool(src, user, 30, volume = 50))
 					state = RWINDOW_BARS_CUT
@@ -589,7 +589,7 @@
 				return
 		if(RWINDOW_BARS_CUT)
 			if(I.tool_behaviour == TOOL_WRENCH)
-				user.visible_message(span_notice("[user] starts unfastening \the [src] from the frame...") ,
+				user.visible_message(span_notice("[user] starts unfastening \the [src] from the frame..."),
 					span_notice("You start unfastening the bolts from the frame..."))
 				if(I.use_tool(src, user, 50, volume = 50))
 					to_chat(user, span_notice("You unfasten the bolts from the frame and the window pops loose."))

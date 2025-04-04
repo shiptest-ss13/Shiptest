@@ -80,7 +80,7 @@
 				else
 					tablepush(user, pushed_mob)
 			if(user.a_intent == INTENT_HELP)
-				pushed_mob.visible_message(span_notice("[user] begins to place [pushed_mob] onto [src]...") , \
+				pushed_mob.visible_message(span_notice("[user] begins to place [pushed_mob] onto [src]..."), \
 									span_userdanger("[user] begins to place [pushed_mob] onto [src]..."))
 				if(do_after(user, 35, target = pushed_mob))
 					tableplace(user, pushed_mob)
@@ -90,7 +90,7 @@
 		else if(user.pulling.pass_flags & PASSTABLE)
 			user.Move_Pulled(src)
 			if (user.pulling.loc == loc)
-				user.visible_message(span_notice("[user] places [user.pulling] onto [src].") ,
+				user.visible_message(span_notice("[user] places [user.pulling] onto [src]."),
 					span_notice("You place [user.pulling] onto [src]."))
 				user.stop_pulling()
 	return ..()
@@ -118,7 +118,7 @@
 /obj/structure/table/proc/tableplace(mob/living/user, mob/living/pushed_mob)
 	pushed_mob.forceMove(loc)
 	pushed_mob.set_resting(TRUE, TRUE)
-	pushed_mob.visible_message(span_notice("[user] places [pushed_mob] onto [src].") , \
+	pushed_mob.visible_message(span_notice("[user] places [pushed_mob] onto [src]."), \
 								span_notice("[user] places [pushed_mob] onto [src]."))
 	log_combat(user, pushed_mob, "places", null, "onto [src]")
 
@@ -141,7 +141,7 @@
 	if(user.mind?.martial_art.smashes_tables && user.mind?.martial_art.can_use(user))
 		deconstruct(FALSE)
 	playsound(pushed_mob, 'sound/effects/tableslam.ogg', 90, TRUE)
-	pushed_mob.visible_message(span_danger("[user] slams [pushed_mob] onto \the [src]!") , \
+	pushed_mob.visible_message(span_danger("[user] slams [pushed_mob] onto \the [src]!"), \
 								span_userdanger("[user] slams you onto \the [src]!"))
 	log_combat(user, pushed_mob, "tabled", null, "onto [src]")
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
@@ -154,7 +154,7 @@
 	if(user.mind?.martial_art.smashes_tables && user.mind?.martial_art.can_use(user))
 		deconstruct(FALSE)
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 90, TRUE)
-	pushed_mob.visible_message(span_danger("[user] smashes [pushed_mob]'s head against \the [src]!") ,
+	pushed_mob.visible_message(span_danger("[user] smashes [pushed_mob]'s head against \the [src]!"),
 								span_userdanger("[user] smashes your head against \the [src]"))
 	log_combat(user, pushed_mob, "head slammed", null, "against [src]")
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table_headsmash)
@@ -204,7 +204,7 @@
 				else if(HAS_TRAIT(user, TRAIT_QUICK_CARRY))
 					tableplace_delay = 2.75 SECONDS
 					skills_space = " quickly"
-				carried_mob.visible_message(span_notice("[user] begins to[skills_space] place [carried_mob] onto [src]...") ,
+				carried_mob.visible_message(span_notice("[user] begins to[skills_space] place [carried_mob] onto [src]..."),
 					span_userdanger("[user] begins to[skills_space] place [carried_mob] onto [src]..."))
 				if(do_after(user, tableplace_delay, target = carried_mob))
 					user.unbuckle_mob(carried_mob)
@@ -246,7 +246,7 @@
 	if(!istype(user) || !user.can_interact_with(src))
 		return
 	if(can_flip)
-		user.visible_message(span_danger("[user] starts flipping [src]!") , span_notice("You start flipping over the [src]!"))
+		user.visible_message(span_danger("[user] starts flipping [src]!"), span_notice("You start flipping over the [src]!"))
 		if(do_after(user, max_integrity/4))
 			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
 			flipped.name = "flipped [src.name]"
@@ -259,7 +259,7 @@
 			flipped.max_integrity = src.max_integrity
 			flipped.obj_integrity = src.obj_integrity
 			flipped.table_type = src.type
-			user.visible_message(span_danger("[user] flips over the [src]!") , span_notice("You flip over the [src]!"))
+			user.visible_message(span_danger("[user] flips over the [src]!"), span_notice("You flip over the [src]!"))
 			playsound(src, 'sound/items/trayhit2.ogg', 100)
 			qdel(src)
 
@@ -389,7 +389,7 @@
 		table_shatter(M)
 
 /obj/structure/table/glass/proc/table_shatter(mob/living/L)
-	visible_message(span_warning("[src] breaks!") ,
+	visible_message(span_warning("[src] breaks!"),
 		span_danger("You hear breaking glass."))
 	var/turf/T = get_turf(src)
 	playsound(T, "shatter", 50, TRUE)

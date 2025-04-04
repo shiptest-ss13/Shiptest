@@ -286,7 +286,7 @@
 				if(queen && queen.beegent)
 					qb.queen.assign_reagent(queen.beegent) //Bees use the global singleton instances of reagents, so we don't need to worry about one bee being deleted and her copies losing their reagents.
 				user.put_in_active_hand(qb)
-				user.visible_message(span_notice("[user] injects [src] with royal bee jelly, causing it to split into two bees, MORE BEES!") ,span_warning("You inject [src] with royal bee jelly, causing it to split into two bees, MORE BEES!"))
+				user.visible_message(span_notice("[user] injects [src] with royal bee jelly, causing it to split into two bees, MORE BEES!"),span_warning("You inject [src] with royal bee jelly, causing it to split into two bees, MORE BEES!"))
 			else
 				to_chat(user, span_warning("You don't have enough royal bee jelly to split a bee in two!"))
 		else
@@ -294,7 +294,7 @@
 			if(R && S.reagents.has_reagent(R.type, 5))
 				S.reagents.remove_reagent(R.type,5)
 				queen.assign_reagent(R)
-				user.visible_message(span_warning("[user] injects [src]'s genome with [R.name], mutating its DNA!") ,span_warning("You inject [src]'s genome with [R.name], mutating its DNA!"))
+				user.visible_message(span_warning("[user] injects [src]'s genome with [R.name], mutating its DNA!"),span_warning("You inject [src]'s genome with [R.name], mutating its DNA!"))
 				name = queen.name
 			else
 				to_chat(user, span_warning("You don't have enough units of that chemical to modify the bee's DNA!"))

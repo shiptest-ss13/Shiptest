@@ -202,7 +202,7 @@
 		if(!W.tool_start_check(user, amount=1))
 			return
 
-		user.visible_message(span_notice("[user] wires the airlock assembly.") , \
+		user.visible_message(span_notice("[user] wires the airlock assembly."), \
 							span_notice("You start to wire the airlock assembly..."))
 		if(W.use_tool(src, user, 40, amount=1))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_WIRES)
@@ -214,7 +214,7 @@
 
 	else if(istype(W, /obj/item/electronics/airlock) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 		W.play_tool_sound(src, 100)
-		user.visible_message(span_notice("[user] installs the electronics into the airlock assembly.") , \
+		user.visible_message(span_notice("[user] installs the electronics into the airlock assembly."), \
 							span_notice("You start to install electronics into the airlock assembly..."))
 		if(do_after(user, 40, target = src))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
@@ -236,7 +236,7 @@
 					if(!glass)
 						if(istype(G, /obj/item/stack/sheet/rglass) || istype(G, /obj/item/stack/sheet/glass))
 							playsound(src, 'sound/items/crowbar.ogg', 100, TRUE)
-							user.visible_message(span_notice("[user] adds [G.name] to the airlock assembly.") , \
+							user.visible_message(span_notice("[user] adds [G.name] to the airlock assembly."), \
 												span_notice("You start to install [G.name] into the airlock assembly..."))
 							if(do_after(user, 40, target = src))
 								if(G.get_amount() < 1 || glass)
@@ -256,7 +256,7 @@
 							if(G.get_amount() >= 2)
 								playsound(src, 'sound/items/crowbar.ogg', 100, TRUE)
 								user.visible_message(
-									span_notice("[user] adds [G.name] to the airlock assembly.") ,
+									span_notice("[user] adds [G.name] to the airlock assembly."),
 									span_notice("You start to install [G.name] into the airlock assembly...")
 								)
 								if(do_after(user, 40, target = src))

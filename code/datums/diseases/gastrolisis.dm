@@ -34,7 +34,7 @@
 			if(!eyes && prob(5))
 				var/obj/item/organ/eyes/snail/new_eyes = new()
 				new_eyes.Insert(affected_mob, drop_if_replaced = TRUE)
-				affected_mob.visible_message(span_warning("[affected_mob]'s eyes fall out, with snail eyes taking its place!") , \
+				affected_mob.visible_message(span_warning("[affected_mob]'s eyes fall out, with snail eyes taking its place!"), \
 				span_userdanger("You scream in pain as your eyes are pushed out by your new snail eyes!"))
 				affected_mob.force_scream()
 				return
@@ -47,7 +47,7 @@
 			if(eyes && tongue && prob(5))
 				affected_mob.set_species(/datum/species/snail)
 				affected_mob.client?.give_award(/datum/award/achievement/misc/snail, affected_mob)
-				affected_mob.visible_message(span_warning("[affected_mob] turns into a snail!") , \
+				affected_mob.visible_message(span_warning("[affected_mob] turns into a snail!"), \
 				span_boldnotice("You turned into a snail person! You feel an urge to cccrrraaawwwlll..."))
 				cure()
 			if(prob(10))

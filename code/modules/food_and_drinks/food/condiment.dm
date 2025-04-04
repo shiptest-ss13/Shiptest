@@ -76,16 +76,16 @@
 		return 0
 
 	if(M == user)
-		user.visible_message(span_notice("[user] swallows some of the contents of \the [src].") , \
+		user.visible_message(span_notice("[user] swallows some of the contents of \the [src]."), \
 			span_notice("You swallow some of the contents of \the [src]."))
 	else
-		M.visible_message(span_warning("[user] attempts to feed [M] from [src].") , \
+		M.visible_message(span_warning("[user] attempts to feed [M] from [src]."), \
 			span_warning("[user] attempts to feed you from [src]."))
 		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The condiment might be empty after the delay.
-		M.visible_message(span_warning("[user] fed [M] from [src].") , \
+		M.visible_message(span_warning("[user] fed [M] from [src]."), \
 			span_warning("[user] fed you from [src]."))
 		log_combat(user, M, "fed", reagents.log_list())
 	reagents.trans_to(M, 10, transfered_by = user, method = INGEST)
@@ -155,7 +155,7 @@
 		if(!reagents.has_reagent(/datum/reagent/consumable/sodiumchloride, 2))
 			to_chat(user, span_warning("You don't have enough salt to make a pile!"))
 			return
-		user.visible_message(span_notice("[user] shakes some salt onto [target].") , span_notice("You shake some salt onto [target]."))
+		user.visible_message(span_notice("[user] shakes some salt onto [target]."), span_notice("You shake some salt onto [target]."))
 		reagents.remove_reagent(/datum/reagent/consumable/sodiumchloride, 2)
 		new/obj/effect/decal/cleanable/food/salt(target)
 		return

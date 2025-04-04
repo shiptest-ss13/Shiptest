@@ -156,7 +156,7 @@ Difficulty: Medium
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.stat == DEAD)
-			visible_message(span_danger("[src] butchers [L]!") ,
+			visible_message(span_danger("[src] butchers [L]!"),
 			span_userdanger("You butcher [L], restoring your health!"))
 			if(guidance)
 				adjustHealth(-L.maxHealth)

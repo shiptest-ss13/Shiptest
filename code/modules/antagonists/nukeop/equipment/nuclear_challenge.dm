@@ -84,7 +84,7 @@
 			if (C.stat != DEAD)
 				var/obj/item/stack/telecrystal/TC = new(C.drop_location(), tc_to_distribute)
 				TC.throw_at(get_step(C, C.dir), 3, 3)
-				C.visible_message(span_notice("[C] coughs up a half-digested telecrystal") ,span_notice("You cough up a half-digested telecrystal!"))
+				C.visible_message(span_notice("[C] coughs up a half-digested telecrystal"),span_notice("You cough up a half-digested telecrystal!"))
 				break
 
 	SSblackbox.record_feedback("amount", "nuclear_challenge_mode", 1)

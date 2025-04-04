@@ -42,7 +42,7 @@
 		var/mob/living/carbon/human/H = M
 		if((user.pulling == H && user.grab_state >= GRAB_AGGRESSIVE) && user.zone_selected == BODY_ZONE_HEAD) // Only aggressive grabbed can be sliced.
 			if(H.has_status_effect(/datum/status_effect/neck_slice))
-				user.show_message(span_warning("[H]'s neck has already been already cut, you can't make the bleeding any worse!") , MSG_VISUAL, \
+				user.show_message(span_warning("[H]'s neck has already been already cut, you can't make the bleeding any worse!"), MSG_VISUAL, \
 								span_warning("Their neck has already been already cut, you can't make the bleeding any worse!"))
 				return COMPONENT_ITEM_NO_ATTACK
 			INVOKE_ASYNC(src, PROC_REF(startNeckSlice), source, H, user)
@@ -59,27 +59,27 @@
 		to_chat(user, "<span class = 'warning'>You're already interacting with [H]!</span>")
 		return
 
-	user.visible_message(span_danger("[user] is slitting [H]'s throat!") , \
-					span_danger("You start slicing [H]'s throat!") , \
-					span_hear("You hear a cutting noise!") , ignored_mobs = H)
-	H.show_message(span_userdanger("Your throat is being slit by [user]!") , MSG_VISUAL, \
+	user.visible_message(span_danger("[user] is slitting [H]'s throat!"), \
+					span_danger("You start slicing [H]'s throat!"), \
+					span_hear("You hear a cutting noise!"), ignored_mobs = H)
+	H.show_message(span_userdanger("Your throat is being slit by [user]!"), MSG_VISUAL, \
 					"<span class = 'userdanger'>Something is cutting into your neck!</span>", NONE)
 	log_combat(user, H, "starts slicing the throat of")
 
 	playsound(H.loc, butcher_sound, 50, TRUE, -1)
 	if(do_after(user, clamp(500 / source.force, 30, 100), H) && H.Adjacent(source))
 		if(H.has_status_effect(/datum/status_effect/neck_slice))
-			user.show_message(span_warning("[H]'s neck has already been already cut, you can't make the bleeding any worse!") , MSG_VISUAL, \
+			user.show_message(span_warning("[H]'s neck has already been already cut, you can't make the bleeding any worse!"), MSG_VISUAL, \
 							span_warning("Their neck has already been already cut, you can't make the bleeding any worse!"))
 			return
 
 		var/obj/item/bodypart/throat_in_question = H.get_bodypart(BODY_ZONE_HEAD)
 		if(!throat_in_question)
-			user.show_message(span_warning("[H]... doesn't have a neck.") , MSG_VISUAL, \
+			user.show_message(span_warning("[H]... doesn't have a neck."), MSG_VISUAL, \
 							span_warning("They don't seem to have a neck to cut."))
 			return
 
-		H.visible_message(span_danger("[user] slits [H]'s throat!") , \
+		H.visible_message(span_danger("[user] slits [H]'s throat!"), \
 					span_userdanger("[user] slits your throat..."))
 		log_combat(user, H, "finishes slicing the throat of")
 		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD)
@@ -112,7 +112,7 @@
 			new sinew (T)
 		meat.guaranteed_butcher_results.Remove(sinew)
 	if(butcher)
-		butcher.visible_message(span_notice("[butcher] butchers [meat].") , \
+		butcher.visible_message(span_notice("[butcher] butchers [meat]."), \
 								span_notice("You butcher [meat]."))
 	ButcherEffects(meat)
 	meat.harvest(butcher)

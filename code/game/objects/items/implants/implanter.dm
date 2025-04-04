@@ -33,7 +33,7 @@
 					if (M == user)
 						to_chat(user, span_notice("You implant yourself."))
 					else
-						M.visible_message(span_notice("[user] implants [M].") , span_notice("[user] implants you."))
+						M.visible_message(span_notice("[user] implants [M]."), span_notice("[user] implants you."))
 					imp = null
 					update_appearance()
 				else

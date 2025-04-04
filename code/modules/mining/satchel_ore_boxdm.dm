@@ -24,8 +24,8 @@
 
 /obj/structure/ore_box/crowbar_act(mob/living/user, obj/item/I)
 	if(I.use_tool(src, user, 50, volume=50))
-		user.visible_message(span_notice("[user] pries \the [src] apart.") ,
-			span_notice("You pry apart \the [src].") ,
+		user.visible_message(span_notice("[user] pries \the [src] apart."),
+			span_notice("You pry apart \the [src]."),
 			span_hear("You hear splitting wood."))
 		deconstruct(TRUE, user)
 	return TRUE

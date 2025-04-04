@@ -183,10 +183,10 @@
 					to_chat(user, span_warning("[H]'s body rejects [src]!"))
 					forceMove(H.loc)
 				if(H == user)
-					H.visible_message(span_warning("[H] jams [src] into [H.p_their()] empty socket!") ,\
+					H.visible_message(span_warning("[H] jams [src] into [H.p_their()] empty socket!"),\
 					span_notice("You force [src] into your empty socket, and it locks into place!"))
 				else
-					H.visible_message(span_warning("[user] jams [src] into [H]'s empty socket!") ,\
+					H.visible_message(span_warning("[user] jams [src] into [H]'s empty socket!"),\
 					span_notice("[user] forces [src] into your empty socket, and it locks into place!"))
 				return
 	..()
@@ -198,7 +198,7 @@
 			to_chat(user, span_warning("There is nothing left inside [src]!"))
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message(span_warning("[user] begins to cut open [src].") ,\
+		user.visible_message(span_warning("[user] begins to cut open [src]."),\
 			span_notice("You begin to cut open [src]..."))
 		if(do_after(user, 54, target = src))
 			drop_organs(user, TRUE)
@@ -823,7 +823,7 @@
 //	addtimer(CALLBACK(src, PROC_REF(break_bone_feedback), 1 SECONDS)) testing sommething
 
 ///obj/item/bodypart/proc/break_bone_feedback()
-	owner.visible_message(span_danger("You hear a cracking sound coming from [owner]'s [name].") , span_userdanger("You feel something crack in your [name]!") , span_danger("You hear an awful cracking sound."))
+	owner.visible_message(span_danger("You hear a cracking sound coming from [owner]'s [name]."), span_userdanger("You feel something crack in your [name]!"), span_danger("You hear an awful cracking sound."))
 	playsound(owner, pick(list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg')), 100, FALSE, -1)
 
 /obj/item/bodypart/proc/fix_bone()

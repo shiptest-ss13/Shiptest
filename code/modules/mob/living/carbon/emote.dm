@@ -217,7 +217,7 @@
 	var/message_others = "[prefix_desc] noogie[affix_desc]"
 	var/message_target = "[prefix_desc] noogie[affix_desc_target]"
 
-	user.visible_message(span_danger("[user] begins giving [target] a [message_others]!") , span_warning("You start giving [target] a [message_others]!") , vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=target)
+	user.visible_message(span_danger("[user] begins giving [target] a [message_others]!"), span_warning("You start giving [target] a [message_others]!"), vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=target)
 	to_chat(target, span_userdanger("[user] starts giving you a [message_target]!"))
 
 	if(!do_after(user, 1.5 SECONDS, target))
@@ -256,7 +256,7 @@
 	playsound(get_turf(user), "rustle", 50)
 
 	if(prob(33))
-		user.visible_message(span_danger("[user] continues noogie'ing [target]!") , span_warning("You continue giving [target] a noogie!") , vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=target)
+		user.visible_message(span_danger("[user] continues noogie'ing [target]!"), span_warning("You continue giving [target] a noogie!"), vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=target)
 		to_chat(target, span_userdanger("[user] continues giving you a noogie!"))
 
 	if(!do_after(user, 1 SECONDS + (iteration * 2), target))
@@ -559,7 +559,7 @@
 		return
 
 	playsound(get_turf(owner), 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
-	owner.visible_message(span_danger("[owner] shamefully bops [owner.p_them()]self with [owner.p_their()] [src.name].") , span_userdanger("You shamefully bop yourself with your [src.name].") , \
+	owner.visible_message(span_danger("[owner] shamefully bops [owner.p_them()]self with [owner.p_their()] [src.name]."), span_userdanger("You shamefully bop yourself with your [src.name]."), \
 		span_hear("You hear a dull thud!"))
 	log_combat(owner, owner, "bopped", src.name, "(self)")
 	owner.do_attack_animation(owner)
@@ -591,8 +591,8 @@
 	owner.do_attack_animation(sucker)
 
 	if(HAS_TRAIT(owner, TRAIT_HULK))
-		owner.visible_message(span_danger("[owner] bops [sucker] with [owner.p_their()] [src.name] much harder than intended, sending [sucker.p_them()] flying!") , \
-			span_danger("You bop [sucker] with your [src.name] much harder than intended, sending [sucker.p_them()] flying!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , ignored_mobs=list(sucker))
+		owner.visible_message(span_danger("[owner] bops [sucker] with [owner.p_their()] [src.name] much harder than intended, sending [sucker.p_them()] flying!"), \
+			span_danger("You bop [sucker] with your [src.name] much harder than intended, sending [sucker.p_them()] flying!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), ignored_mobs=list(sucker))
 		to_chat(sucker, span_userdanger("[owner] bops you incredibly hard with [owner.p_their()] [src.name], sending you flying!"))
 		sucker.apply_damage(50, STAMINA)
 		sucker.Knockdown(50)
@@ -600,8 +600,8 @@
 		var/atom/throw_target = get_edge_target_turf(sucker, owner.dir)
 		sucker.throw_at(throw_target, 6, 3, owner)
 	else
-		owner.visible_message(span_danger("[owner] bops [sucker] with [owner.p_their()] [src.name]!") , span_danger("You bop [sucker] with your [src.name]!") , \
-			span_hear("You hear a dull thud!") , ignored_mobs=list(sucker))
+		owner.visible_message(span_danger("[owner] bops [sucker] with [owner.p_their()] [src.name]!"), span_danger("You bop [sucker] with your [src.name]!"), \
+			span_hear("You hear a dull thud!"), ignored_mobs=list(sucker))
 		sucker.apply_damage(15, STAMINA)
 		log_combat(owner, sucker, "bopped", src.name, "(setup)")
 		to_chat(sucker, span_userdanger("[owner] bops you with [owner.p_their()] [src.name]!"))

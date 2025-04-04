@@ -109,7 +109,7 @@
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		open = !open
 
-		user.visible_message(span_notice("[user] [open ? "opens" : "closes"] the beacon's cover.") , span_notice("You [open ? "open" : "close"] the beacon's cover."))
+		user.visible_message(span_notice("[user] [open ? "opens" : "closes"] the beacon's cover."), span_notice("You [open ? "open" : "close"] the beacon's cover."))
 
 		update_appearance()
 

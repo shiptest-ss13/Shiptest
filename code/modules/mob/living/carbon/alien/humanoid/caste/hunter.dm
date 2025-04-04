@@ -38,7 +38,7 @@
 		return
 	if(!isliving(hit_atom))
 		if(hit_atom.density && !hit_atom.CanPass(src, get_dir(hit_atom, src)))
-			visible_message(span_danger("[src] smashes into [hit_atom]!") , span_alertalien("[src] smashes into [hit_atom]!"))
+			visible_message(span_danger("[src] smashes into [hit_atom]!"), span_alertalien("[src] smashes into [hit_atom]!"))
 			Paralyze(40, ignore_canstun = TRUE)
 		return
 	var/mob/living/living_target = hit_atom
@@ -48,7 +48,7 @@
 		if(H.check_shields(src, FALSE, "the [name]", attack_type = LEAP_ATTACK))
 			blocked = TRUE
 	if(!blocked)
-		living_target.visible_message(span_danger("[src] pounces on [living_target]!") , span_userdanger("[src] pounces on you!"))
+		living_target.visible_message(span_danger("[src] pounces on [living_target]!"), span_userdanger("[src] pounces on you!"))
 		living_target.Paralyze(100)
 		var/turf/hit_target_turf = get_turf(living_target)
 		if(living_target.CanPass(src, hit_target_turf))

@@ -518,7 +518,7 @@
 				if(!parrot_perch || parrot_interest.loc != parrot_perch.loc)
 					held_item = parrot_interest
 					parrot_interest.forceMove(src)
-					visible_message(span_notice("[src] grabs [held_item]!") , span_notice("You grab [held_item]!") , span_hear("You hear the sounds of wings flapping furiously."))
+					visible_message(span_notice("[src] grabs [held_item]!"), span_notice("You grab [held_item]!"), span_hear("You hear the sounds of wings flapping furiously."))
 
 			set_interest(null)
 			parrot_state = PARROT_SWOOP | PARROT_RETURN
@@ -711,7 +711,7 @@
 
 			held_item = I
 			I.forceMove(src)
-			visible_message(span_notice("[src] grabs [held_item]!") , span_notice("You grab [held_item]!") , span_hear("You hear the sounds of wings flapping furiously."))
+			visible_message(span_notice("[src] grabs [held_item]!"), span_notice("You grab [held_item]!"), span_hear("You hear the sounds of wings flapping furiously."))
 			return held_item
 
 	to_chat(src, span_warning("There is nothing of interest to take!"))
@@ -740,7 +740,7 @@
 		if(stolen_item)
 			C.transferItemToLoc(stolen_item, src, TRUE)
 			held_item = stolen_item
-			visible_message(span_notice("[src] grabs [held_item] out of [C]'s hand!") , span_notice("You snag [held_item] out of [C]'s hand!") , span_hear("You hear the sounds of wings flapping furiously."))
+			visible_message(span_notice("[src] grabs [held_item] out of [C]'s hand!"), span_notice("You snag [held_item] out of [C]'s hand!"), span_hear("You hear the sounds of wings flapping furiously."))
 			return held_item
 
 	to_chat(src, span_warning("There is nothing of interest to take!"))
@@ -1024,4 +1024,4 @@
 	forceMove(H)
 	H.ForceContractDisease(P)
 	parrot_interest = null
-	H.visible_message(span_danger("[src] dive bombs into [H]'s chest and vanishes!") , span_userdanger("[src] dive bombs into your chest, vanishing! This can't be good!"))
+	H.visible_message(span_danger("[src] dive bombs into [H]'s chest and vanishes!"), span_userdanger("[src] dive bombs into your chest, vanishing! This can't be good!"))

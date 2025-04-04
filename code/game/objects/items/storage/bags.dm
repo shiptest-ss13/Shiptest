@@ -157,10 +157,10 @@
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
 		if (box)
-			user.visible_message(span_notice("[user] offloads the ores beneath [user.p_them()] into [box].") , \
+			user.visible_message(span_notice("[user] offloads the ores beneath [user.p_them()] into [box]."), \
 			span_notice("You offload the ores beneath you into your [box]."))
 		else
-			user.visible_message(span_notice("[user] scoops up the ores beneath [user.p_them()].") , \
+			user.visible_message(span_notice("[user] scoops up the ores beneath [user.p_them()]."), \
 				span_notice("You scoop up the ores beneath you with your [name]."))
 	spam_protection = FALSE
 

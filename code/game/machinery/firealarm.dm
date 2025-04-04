@@ -108,7 +108,7 @@
 	obj_flags |= EMAGGED
 	update_appearance()
 	if(user)
-		user.visible_message(span_warning("Sparks fly out of [src]!") ,
+		user.visible_message(span_warning("Sparks fly out of [src]!"),
 							span_notice("You emag [src], disabling its thermal sensors."))
 	playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 
@@ -182,9 +182,9 @@
 				if(W.tool_behaviour == TOOL_MULTITOOL)
 					detecting = !detecting
 					if (src.detecting)
-						user.visible_message(span_notice("[user] reconnects [src]'s detecting unit!") , span_notice("You reconnect [src]'s detecting unit."))
+						user.visible_message(span_notice("[user] reconnects [src]'s detecting unit!"), span_notice("You reconnect [src]'s detecting unit."))
 					else
-						user.visible_message(span_notice("[user] disconnects [src]'s detecting unit!") , span_notice("You disconnect [src]'s detecting unit."))
+						user.visible_message(span_notice("[user] disconnects [src]'s detecting unit!"), span_notice("You disconnect [src]'s detecting unit."))
 					return
 
 				else if(W.tool_behaviour == TOOL_WIRECUTTER)
@@ -215,7 +215,7 @@
 					return
 
 				else if(W.tool_behaviour == TOOL_CROWBAR)
-					user.visible_message(span_notice("[user.name] removes the electronics from [src.name].") , \
+					user.visible_message(span_notice("[user.name] removes the electronics from [src.name]."), \
 										span_notice("You start prying out the circuit..."))
 					if(W.use_tool(src, user, 20, volume=50))
 						if(buildstage == 1)
@@ -241,7 +241,7 @@
 					if(!P.adapt_circuit(user, 15))
 						return
 					user.visible_message(
-						span_notice("[user] fabricates a circuit and places it into [src].") ,
+						span_notice("[user] fabricates a circuit and places it into [src]."),
 						span_notice("You adapt a fire alarm circuit and slot it into the assembly.")
 					)
 					buildstage = 1
@@ -250,7 +250,7 @@
 
 				else if(W.tool_behaviour == TOOL_WRENCH)
 					user.visible_message(
-						span_notice("[user] removes the fire alarm assembly from the wall.") ,
+						span_notice("[user] removes the fire alarm assembly from the wall."),
 						span_notice("You remove the fire alarm assembly from the wall.")
 					)
 					var/obj/item/wallframe/firealarm/frame = new /obj/item/wallframe/firealarm()
@@ -270,7 +270,7 @@
 	switch(passed_mode)
 		if(RCD_UPGRADE_SIMPLE_CIRCUITS)
 			user.visible_message(
-				span_notice("[user] fabricates a circuit and places it into [src].") ,
+				span_notice("[user] fabricates a circuit and places it into [src]."),
 				span_notice("You adapt a fire alarm circuit and slot it into the assembly.")
 			)
 			buildstage = 1

@@ -55,7 +55,7 @@
 				H.stop_sound_channel(CHANNEL_HEARTBEAT)
 				H.playsound_local(affected_mob, 'sound/effects/singlebeat.ogg', 100, FALSE, use_reverb = FALSE)
 				if(H.stat == CONSCIOUS)
-					H.visible_message(span_danger("[H] clutches at [H.p_their()] chest as if [H.p_their()] heart is stopping!") , \
+					H.visible_message(span_danger("[H] clutches at [H.p_their()] chest as if [H.p_their()] heart is stopping!"), \
 						span_userdanger("You feel a terrible pain in your chest, as if your heart has stopped!"))
 				H.adjustStaminaLoss(60)
 				H.set_heartattack(TRUE)

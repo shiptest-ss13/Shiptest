@@ -364,7 +364,7 @@
 	if(!reforming || inert)
 		return ..()
 	user.visible_message(
-		span_notice("[user] scatters [src] in all directions.") ,
+		span_notice("[user] scatters [src] in all directions."),
 		span_notice("You scatter [src] across the area. The particles slowly fade away.") 
 	)
 	user.dropItemToGround(src)

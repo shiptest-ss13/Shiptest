@@ -422,7 +422,7 @@ Difficulty: Hard
 		if(!L.dropItemToGround(W))
 			qdel(W)
 	visible_message(span_hierophant_warning("\"[pick(kill_phrases)]\""))
-	visible_message(span_hierophant_warning("[src] annihilates [L]!") ,span_userdanger("You annihilate [L], restoring your health!"))
+	visible_message(span_hierophant_warning("[src] annihilates [L]!"),span_userdanger("You annihilate [L], restoring your health!"))
 	adjustHealth(-L.maxHealth*0.5)
 	L.dust()
 

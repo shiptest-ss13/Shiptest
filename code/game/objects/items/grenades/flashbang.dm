@@ -22,7 +22,7 @@
 /obj/item/grenade/flashbang/proc/bang(turf/T , mob/living/M)
 	if(M.stat == DEAD)	//They're dead!
 		return
-	M.show_message(span_warning("BANG") , MSG_AUDIBLE)
+	M.show_message(span_warning("BANG"), MSG_AUDIBLE)
 	var/distance = max(0,get_dist(get_turf(src),T))
 
 //Flash
@@ -80,7 +80,7 @@
 /obj/item/grenade/stingbang/proc/pop(turf/T , mob/living/M)
 	if(M.stat == DEAD)	//They're dead!
 		return
-	M.show_message(span_warning("POP") , MSG_AUDIBLE)
+	M.show_message(span_warning("POP"), MSG_AUDIBLE)
 	var/distance = max(0,get_dist(get_turf(src),T))
 //Flash
 	if(M.flash_act(affect_silicon = 1))

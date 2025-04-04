@@ -42,8 +42,8 @@
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 		if(TOX)
 			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
-	M.visible_message(span_danger("[M.name] hits [src] and doesn't even leave a mark!") , \
-					span_danger("You hit [src] and fail to damage it.") , null, COMBAT_MESSAGE_RANGE)
+	M.visible_message(span_danger("[M.name] hits [src] and doesn't even leave a mark!"), \
+					span_danger("You hit [src] and fail to damage it."), null, COMBAT_MESSAGE_RANGE)
 
 /turf/closed/indestructible/attack_hulk(mob/living/carbon/user)
 	return FALSE

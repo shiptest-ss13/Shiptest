@@ -328,8 +328,8 @@
 
 /datum/nanite_program/dermal_button/proc/press()
 	if(activated)
-		host_mob.visible_message(span_notice("[host_mob] presses a button on [host_mob.p_their()] forearm.") ,
-								span_notice("You press the nanite button on your forearm.") , null, 2)
+		host_mob.visible_message(span_notice("[host_mob] presses a button on [host_mob.p_their()] forearm."),
+								span_notice("You press the nanite button on your forearm."), null, 2)
 		var/datum/nanite_extra_setting/sent_code = extra_settings[NES_SENT_CODE]
 		SEND_SIGNAL(host_mob, COMSIG_NANITE_SIGNAL, sent_code.get_value(), "a [name] program")
 

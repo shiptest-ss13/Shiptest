@@ -21,7 +21,7 @@
 
 	if(user.a_intent == INTENT_HARM)
 		var/R
-		M.visible_message(span_danger("[user] splashes the contents of [src] onto [M]!") , \
+		M.visible_message(span_danger("[user] splashes the contents of [src] onto [M]!"), \
 						span_userdanger("[user] splashes the contents of [src] onto you!"))
 		if(reagents)
 			for(var/datum/reagent/A in reagents.reagent_list)
@@ -38,13 +38,13 @@
 		if(!canconsume(M, user))
 			return
 		if(M != user)
-			M.visible_message(span_danger("[user] attempts to feed [M] something from [src].") , \
+			M.visible_message(span_danger("[user] attempts to feed [M] something from [src]."), \
 						span_userdanger("[user] attempts to feed you something from [src]."))
 			if(!do_after(user, target = M))
 				return
 			if(!reagents || !reagents.total_volume)
 				return // The drink might be empty after the delay, such as by spam-feeding
-			M.visible_message(span_danger("[user] feeds [M] something from [src].") , \
+			M.visible_message(span_danger("[user] feeds [M] something from [src]."), \
 						span_userdanger("[user] feeds you something from [src]."))
 			log_combat(user, M, "fed", reagents.log_list())
 		else
@@ -90,7 +90,7 @@
 			if(INTENT_DISARM)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!") , \
+				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
 									span_notice("You splash the contents of [src] onto [target]."))
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
@@ -347,7 +347,7 @@
 			if(INTENT_HELP)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!") , \
+				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
 									span_notice("You splash the contents of [src] onto [target]."))
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()

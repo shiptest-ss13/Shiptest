@@ -142,8 +142,8 @@
 				to_chat(user, span_info("You put [O.name] in [src.name]"))
 		return TRUE //no afterattack
 	else if (istype(O, /obj/item/disk/design_disk))
-		user.visible_message(span_notice("[user] begins to load \the [O] in \the [src]...") ,
-			span_notice("You begin to load a design from \the [O]...") ,
+		user.visible_message(span_notice("[user] begins to load \the [O] in \the [src]..."),
+			span_notice("You begin to load a design from \the [O]..."),
 			span_hear("You hear the chatter of a floppy drive."))
 		processing = TRUE
 		var/obj/item/disk/design_disk/D = O

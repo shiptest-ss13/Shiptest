@@ -67,7 +67,7 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 					to_chat(src, span_warning("You can't crawl around in the ventilation ducts with items!"))
 					return
 
-			visible_message(span_notice("[src] scrambles into the ventilation ducts!") ,span_notice("You climb into the ventilation ducts."))
+			visible_message(span_notice("[src] scrambles into the ventilation ducts!"),span_notice("You climb into the ventilation ducts."))
 			forceMove(vent_found)
 	else
 		to_chat(src, span_warning("This ventilation duct is not connected to anything!"))

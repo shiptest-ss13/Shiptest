@@ -113,7 +113,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.health <= HEALTH_THRESHOLD_DEAD || L.stat == DEAD) //To prevent memento mori limbo
-			visible_message(span_danger("[src] butchers [L]!") ,
+			visible_message(span_danger("[src] butchers [L]!"),
 			span_userdanger("You butcher [L], restoring your health!"))
 //			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
 			adjustHealth(-(L.maxHealth * 0.5))

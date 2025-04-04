@@ -371,7 +371,7 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 				if(href_list["cable"])
 					var/turf/T = get_turf(loc)
 					cable = new /obj/item/pai_cable(T)
-					T.visible_message(span_warning("A port on [src] opens to reveal [cable], which promptly falls to the floor.") , span_hear("You hear the soft click of something light and hard falling to the ground."))
+					T.visible_message(span_warning("A port on [src] opens to reveal [cable], which promptly falls to the floor."), span_hear("You hear the soft click of something light and hard falling to the ground."))
 
 			if("loudness")
 				if(subscreen == 1) // Open Instrument
@@ -489,8 +489,8 @@ GLOBAL_LIST_INIT(pai_faces_icons, list(
 		return
 	var/answer = input(M, "[P] is requesting a DNA sample from you. Will you allow it to confirm your identity?", "[P] Check DNA", "No") in list("Yes", "No")
 	if(answer == "Yes")
-		M.visible_message(span_notice("[M] presses [M.p_their()] thumb against [P].") ,\
-						span_notice("You press your thumb against [P].") ,\
+		M.visible_message(span_notice("[M] presses [M.p_their()] thumb against [P]."),\
+						span_notice("You press your thumb against [P]."),\
 						span_notice("[P] makes a sharp clicking sound as it extracts DNA material from [M]."))
 		if(!M.has_dna())
 			to_chat(P, "<b>No DNA detected</b>")

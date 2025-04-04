@@ -16,7 +16,7 @@
 	SIGNAL_HANDLER
 
 	M.visible_message(
-		span_notice("[M] stops and looks intently at [parent].") ,
+		span_notice("[M] stops and looks intently at [parent]."),
 		span_notice("You stop to take in [parent].") 
 	)
 	switch(impress)
@@ -62,6 +62,6 @@
 	else
 		msg = "You don't get it. At least it's not ugly."
 	user.visible_message(
-		span_notice("[user] stops and looks intently at [parent].") ,
+		span_notice("[user] stops and looks intently at [parent]."),
 		span_notice("You stop to take in [parent]. [msg]") 
 	)

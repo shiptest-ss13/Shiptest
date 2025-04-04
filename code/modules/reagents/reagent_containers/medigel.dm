@@ -56,13 +56,13 @@
 
 	else
 		log_combat(user, M, "attempted to apply", src, reagents.log_list())
-		M.visible_message(span_danger("[user] attempts to [apply_method] [src] on [M].") , \
+		M.visible_message(span_danger("[user] attempts to [apply_method] [src] on [M]."), \
 							span_userdanger("[user] attempts to [apply_method] [src] on you."))
 		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return
-		M.visible_message(span_danger("[user] [apply_method]s [M] down with [src].") , \
+		M.visible_message(span_danger("[user] [apply_method]s [M] down with [src]."), \
 							span_userdanger("[user] [apply_method]s you down with [src]."))
 
 	if(!reagents || !reagents.total_volume)

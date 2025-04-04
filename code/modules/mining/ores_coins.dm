@@ -152,7 +152,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		return
 	var/mob/living/carbon/human/C = hit_atom
 	if(C.is_eyes_covered())
-		C.visible_message(span_danger("[C]'s eye protection blocks the sand!") , span_warning("Your eye protection blocks the sand!"))
+		C.visible_message(span_danger("[C]'s eye protection blocks the sand!"), span_warning("Your eye protection blocks the sand!"))
 		return
 	C.adjust_blurriness(6)
 	C.adjustStaminaLoss(15)//the pain from your eyes burning does stamina damage
@@ -283,7 +283,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 /obj/item/gibtonite/attackby(obj/item/I, mob/user, params)
 	if(!wires && istype(I, /obj/item/assembly/igniter))
-		user.visible_message(span_notice("[user] attaches [I] to [src].") , span_notice("You attach [I] to [src]."))
+		user.visible_message(span_notice("[user] attaches [I] to [src]."), span_notice("You attach [I] to [src]."))
 		wires = new /datum/wires/explosive/gibtonite(src)
 		attacher = key_name(user)
 		qdel(I)
@@ -303,7 +303,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 			primed = FALSE
 			if(det_timer)
 				deltimer(det_timer)
-			user.visible_message(span_notice("The chain reaction stopped! ...The ore's quality looks diminished.") , span_notice("You stopped the chain reaction. ...The ore's quality looks diminished."))
+			user.visible_message(span_notice("The chain reaction stopped! ...The ore's quality looks diminished."), span_notice("You stopped the chain reaction. ...The ore's quality looks diminished."))
 			icon_state = "Gibtonite ore"
 			quality = GIBTONITE_QUALITY_LOW
 			return
@@ -341,7 +341,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 			log_game(bomb_message)
 			GLOB.bombers += bomb_message
 		else
-			user.visible_message(span_warning("[user] strikes \the [src], causing a chain reaction!") , span_danger("You strike \the [src], causing a chain reaction."))
+			user.visible_message(span_warning("[user] strikes \the [src], causing a chain reaction!"), span_danger("You strike \the [src], causing a chain reaction."))
 			log_bomber(user, "has primed a", src, "for detonation", notify_admins)
 		det_timer = addtimer(CALLBACK(src, PROC_REF(detonate), notify_admins), det_time, TIMER_STOPPABLE)
 
@@ -446,8 +446,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		sleep(15)
 		if(loc == oldloc && user && !user.incapacitated())
 			user.visible_message(
-				span_notice("[user] flips [src]. It lands on [coinflip].") , \
-				span_notice("You flip [src]. It lands on [coinflip].") , \
+				span_notice("[user] flips [src]. It lands on [coinflip]."), \
+				span_notice("You flip [src]. It lands on [coinflip]."), \
 				span_hear("You hear the clattering of loose change."))
 	return TRUE//did the coin flip?
 

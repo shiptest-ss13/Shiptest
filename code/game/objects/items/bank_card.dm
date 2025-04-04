@@ -141,7 +141,7 @@
 		return
 	else
 		var/difference = amount_to_remove - registered_account.account_balance
-		registered_account.bank_card_talk(span_warning("ERROR: The linked account requires [difference] more credit\s to perform that withdrawal.") , TRUE)
+		registered_account.bank_card_talk(span_warning("ERROR: The linked account requires [difference] more credit\s to perform that withdrawal."), TRUE)
 
 /obj/item/card/bank/examine(mob/user)
 	. = ..()

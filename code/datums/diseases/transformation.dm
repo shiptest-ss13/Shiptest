@@ -104,8 +104,8 @@
 	visibility_flags = 0
 	stage1	= list()
 	stage2	= list("Your joints feel stiff.", span_danger("Beep...boop.."))
-	stage3	= list(span_danger("Your joints feel very stiff.") , "Your skin feels loose.", span_danger("You can feel something move...inside."))
-	stage4	= list(span_danger("Your skin feels very loose.") , span_danger("You can feel... something...inside you."))
+	stage3	= list(span_danger("Your joints feel very stiff."), "Your skin feels loose.", span_danger("You can feel something move...inside."))
+	stage4	= list(span_danger("Your skin feels very loose."), span_danger("You can feel... something...inside you."))
 	stage5	= list(span_danger("Your skin feels as if it's about to burst off!"))
 	new_form = /mob/living/silicon/robot
 	infectable_biotypes = MOB_ORGANIC|MOB_UNDEAD|MOB_ROBOTIC
@@ -137,8 +137,8 @@
 	visibility_flags = 0
 	stage1	= list()
 	stage2	= list("Your throat feels scratchy.", span_danger("Kill..."))
-	stage3	= list(span_danger("Your throat feels very scratchy.") , "Your skin feels tight.", span_danger("You can feel something move...inside."))
-	stage4	= list(span_danger("Your skin feels very tight.") , span_danger("Your blood boils!") , span_danger("You can feel... something...inside you."))
+	stage3	= list(span_danger("Your throat feels very scratchy."), "Your skin feels tight.", span_danger("You can feel something move...inside."))
+	stage4	= list(span_danger("Your skin feels very tight."), span_danger("Your blood boils!"), span_danger("You can feel... something...inside you."))
 	stage5	= list(span_danger("Your skin feels as if it's about to burst off!"))
 	new_form = /mob/living/carbon/alien/humanoid/hunter
 	bantype = ROLE_ALIEN
@@ -166,7 +166,7 @@
 	visibility_flags = 0
 	stage1	= list("You don't feel very well.")
 	stage2	= list("Your skin feels a little slimy.")
-	stage3	= list(span_danger("Your appendages are melting away.") , span_danger("Your limbs begin to lose their shape."))
+	stage3	= list(span_danger("Your appendages are melting away."), span_danger("Your limbs begin to lose their shape."))
 	stage4	= list(span_danger("You are turning into a slime."))
 	stage5	= list(span_danger("You have become a slime."))
 	new_form = /mob/living/simple_animal/slime/random
@@ -194,7 +194,7 @@
 	visibility_flags = 0
 	stage1	= list("BARK.")
 	stage2	= list("You feel the need to wear silly hats.")
-	stage3	= list(span_danger("Must... eat... chocolate....") , span_danger("YAP"))
+	stage3	= list(span_danger("Must... eat... chocolate...."), span_danger("YAP"))
 	stage4	= list(span_danger("Visions of washing machines assail your mind!"))
 	stage5	= list(span_danger("AUUUUUU!!!"))
 	new_form = /mob/living/simple_animal/pet/dog/corgi
@@ -220,7 +220,7 @@
 	visibility_flags = 0
 	stage1	= list("Your stomach rumbles.")
 	stage2	= list("Your skin feels saggy.")
-	stage3	= list(span_danger("Your appendages are melting away.") , span_danger("Your limbs begin to lose their shape."))
+	stage3	= list(span_danger("Your appendages are melting away."), span_danger("Your limbs begin to lose their shape."))
 	stage4	= list(span_danger("You're ravenous."))
 	stage5	= list(span_danger("You have become a morph."))
 	new_form = /mob/living/simple_animal/hostile/morph

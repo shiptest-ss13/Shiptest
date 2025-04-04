@@ -110,8 +110,8 @@
 		var/mob/living/carbon/victim = A
 		var/obj/item/bodypart/affecting
 		if(prob(25))
-			victim.visible_message(span_danger("[src]'s bite misses [victim]!") ,
-				span_danger("You avoid [src]'s bite!") , span_hear("You hear jaws snapping shut!") , COMBAT_MESSAGE_RANGE, src)
+			victim.visible_message(span_danger("[src]'s bite misses [victim]!"),
+				span_danger("You avoid [src]'s bite!"), span_hear("You hear jaws snapping shut!"), COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, span_danger("Your bite misses [victim]!"))
 			return
 
@@ -121,8 +121,8 @@
 		var/armor = victim.run_armor_check(affecting, "melee")
 
 		victim.apply_damage(rand(1, 3), BRUTE, affecting, armor)
-		victim.visible_message(span_danger("[name] bites [victim]!") ,
-			span_userdanger("[name] bites you!") , span_hear("You hear a chomp!") , COMBAT_MESSAGE_RANGE, name)
+		victim.visible_message(span_danger("[name] bites [victim]!"),
+			span_userdanger("[name] bites you!"), span_hear("You hear a chomp!"), COMBAT_MESSAGE_RANGE, name)
 		to_chat(name, span_danger("You bite [victim]!"))
 		if(armor >= 2)
 			return

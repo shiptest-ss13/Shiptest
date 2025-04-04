@@ -86,8 +86,8 @@
 	..()
 	if(!can_be_disabled)
 		return
-	user.visible_message(span_warning("[user] cuts power to [src].") ,
-		span_notice("You start to cut power to [src].") , span_hear("You hear cutting."))
+	user.visible_message(span_warning("[user] cuts power to [src]."),
+		span_notice("You start to cut power to [src]."), span_hear("You hear cutting."))
 	if(!disabled)
 		if(I.use_tool(src, user, time_to_disable, volume=100))
 			to_chat(user, span_notice("You disable [src]."))

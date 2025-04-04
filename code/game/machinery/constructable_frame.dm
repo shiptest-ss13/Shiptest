@@ -28,7 +28,7 @@
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 3 SECONDS, volume=0))
-		to_chat(user, span_warning("You cut apart \the [src].") , span_notice("You cut apart \the [src]."))
+		to_chat(user, span_warning("You cut apart \the [src]."), span_notice("You cut apart \the [src]."))
 		deconstruct()
 		return TRUE
 
@@ -102,8 +102,8 @@
 
 				return
 			if(P.tool_behaviour == TOOL_SCREWDRIVER && !anchored)
-				user.visible_message(span_warning("[user] disassembles the frame.") , \
-									span_notice("You start to disassemble the frame...") , span_hear("You hear banging and clanking."))
+				user.visible_message(span_warning("[user] disassembles the frame."), \
+									span_notice("You start to disassemble the frame..."), span_hear("You hear banging and clanking."))
 				if(P.use_tool(src, user, 40, volume=50))
 					if(state == 1)
 						to_chat(user, span_notice("You disassemble the frame."))

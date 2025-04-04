@@ -675,8 +675,8 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	if(istype(landmark))
 		var/datum/map_template/ruin/template = landmark.ruin_template
 		usr.forceMove(get_turf(landmark))
-		to_chat(usr, span_name("[template.name]") , confidential = TRUE)
-		to_chat(usr, span_italics("[template.description]") , confidential = TRUE)
+		to_chat(usr, span_name("[template.name]"), confidential = TRUE)
+		to_chat(usr, span_italics("[template.description]"), confidential = TRUE)
 
 /client/proc/fucky_wucky()
 	set category = "Event.Fun"

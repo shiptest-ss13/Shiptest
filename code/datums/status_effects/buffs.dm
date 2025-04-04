@@ -11,7 +11,7 @@
 	icon_state = "shadow_mend"
 
 /datum/status_effect/shadow_mend/on_apply()
-	owner.visible_message(span_notice("Violet light wraps around [owner]'s body!") , span_notice("Violet light wraps around your body!"))
+	owner.visible_message(span_notice("Violet light wraps around [owner]'s body!"), span_notice("Violet light wraps around your body!"))
 	playsound(owner, 'sound/magic/teleport_app.ogg', 50, TRUE)
 	return ..()
 
@@ -20,7 +20,7 @@
 	owner.adjustFireLoss(-15)
 
 /datum/status_effect/shadow_mend/on_remove()
-	owner.visible_message(span_warning("The violet light around [owner] glows black!") , span_warning("The tendrils around you cinch tightly and reap their toll..."))
+	owner.visible_message(span_warning("The violet light around [owner] glows black!"), span_warning("The tendrils around you cinch tightly and reap their toll..."))
 	playsound(owner, 'sound/magic/teleport_diss.ogg', 50, TRUE)
 	owner.apply_status_effect(STATUS_EFFECT_VOID_PRICE)
 
@@ -77,7 +77,7 @@
 
 /datum/status_effect/wish_granters_gift/on_remove()
 	owner.revive(full_heal = TRUE, admin_revive = TRUE)
-	owner.visible_message(span_warning("[owner] appears to wake from the dead, having healed all wounds!") , span_notice("You have regenerated."))
+	owner.visible_message(span_warning("[owner] appears to wake from the dead, having healed all wounds!"), span_notice("You have regenerated."))
 
 
 /atom/movable/screen/alert/status_effect/wish_granters_gift

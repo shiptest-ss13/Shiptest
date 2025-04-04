@@ -194,7 +194,7 @@
 						lung_strength = "healthy"
 
 			var/diagnosis = (body_part == BODY_ZONE_CHEST ? "You hear [heart_strength] pulse and [lung_strength] respiration." : "You faintly hear [heart_strength] pulse.")
-			user.visible_message(span_notice("[user] places [src] against [M]'s [body_part] and listens attentively.") , span_notice("You place [src] against [M]'s [body_part]. [diagnosis]"))
+			user.visible_message(span_notice("[user] places [src] against [M]'s [body_part] and listens attentively."), span_notice("You place [src] against [M]'s [body_part]. [diagnosis]"))
 			return
 	return ..(M,user)
 
@@ -414,7 +414,7 @@
 			var/oldName = src.name
 			qdel(src)
 			user.put_in_hand(newBand, currentHandIndex)
-			user.visible_message(span_notice("You untie [oldName] back into a [newBand.name].") , span_notice("[user] unties [oldName] back into a [newBand.name]."))
+			user.visible_message(span_notice("You untie [oldName] back into a [newBand.name]."), span_notice("[user] unties [oldName] back into a [newBand.name]."))
 		else
 			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
 

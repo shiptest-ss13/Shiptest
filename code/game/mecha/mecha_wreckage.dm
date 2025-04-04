@@ -63,7 +63,7 @@
 		return
 	var/type = pick(welder_salvage)
 	var/N = new type(get_turf(user))
-	user.visible_message(span_notice("[user] cuts [N] from [src].") , span_notice("You cut [N] from [src]."))
+	user.visible_message(span_notice("[user] cuts [N] from [src]."), span_notice("You cut [N] from [src]."))
 	if(!istype(N, /obj/item/stack))
 		welder_salvage -= type
 	salvage_num--
@@ -75,7 +75,7 @@
 		to_chat(user, span_notice("You don't see anything that can be cut with [I]!"))
 		return
 	var/N = new /obj/item/stack/cable_coil(get_turf(user), rand(1,3))
-	user.visible_message(span_notice("[user] cuts [N] from [src].") , span_notice("You cut [N] from [src]."))
+	user.visible_message(span_notice("[user] cuts [N] from [src]."), span_notice("You cut [N] from [src]."))
 	wires_removed = TRUE
 
 /obj/structure/mecha_wreckage/crowbar_act(mob/living/user, obj/item/I)
@@ -84,7 +84,7 @@
 	if(crowbar_salvage.len)
 		var/obj/S = pick(crowbar_salvage)
 		S.forceMove(user.drop_location())
-		user.visible_message(span_notice("[user] pries [S] from [src].") , span_notice("You pry [S] from [src]."))
+		user.visible_message(span_notice("[user] pries [S] from [src]."), span_notice("You pry [S] from [src]."))
 		crowbar_salvage -= S
 		return
 	to_chat(user, span_notice("You don't see anything that can be cut with [I]!"))

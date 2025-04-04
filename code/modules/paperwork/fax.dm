@@ -216,7 +216,7 @@
 			return FALSE
 		clean_spray.reagents.remove_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this, 1)
 		playsound(loc, 'sound/effects/spray3.ogg', 50, TRUE, -5)
-		user.visible_message(span_notice("[user] cleans \the [src].") , span_notice("You clean \the [src]."))
+		user.visible_message(span_notice("[user] cleans \the [src]."), span_notice("You clean \the [src]."))
 		jammed = FALSE
 		return TRUE
 	if(istype(item, /obj/item/soap) || istype(item, /obj/item/reagent_containers/glass/rag))
@@ -224,9 +224,9 @@
 		if(istype(item, /obj/item/soap))
 			var/obj/item/soap/used_soap = item
 			cleanspeed = used_soap.cleanspeed
-		user.visible_message(span_notice("[user] starts to clean \the [src].") , span_notice("You start to clean \the [src]..."))
+		user.visible_message(span_notice("[user] starts to clean \the [src]."), span_notice("You start to clean \the [src]..."))
 		if(do_after(user, cleanspeed, target = src))
-			user.visible_message(span_notice("[user] cleans \the [src].") , span_notice("You clean \the [src]."))
+			user.visible_message(span_notice("[user] cleans \the [src]."), span_notice("You clean \the [src]."))
 			jammed = FALSE
 		return TRUE
 	return FALSE

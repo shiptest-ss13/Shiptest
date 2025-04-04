@@ -337,7 +337,7 @@
 		revert_cast(user)
 		return FALSE
 
-	user.visible_message(span_notice("[user] begins to secrete a sticky substance.") ,span_notice("You begin to lay a web."))
+	user.visible_message(span_notice("[user] begins to secrete a sticky substance."),span_notice("You begin to lay a web."))
 	if(!do_after(user, 4 SECONDS, target = T))
 		to_chat(user, span_warning("Your web spinning was interrupted!"))
 		return

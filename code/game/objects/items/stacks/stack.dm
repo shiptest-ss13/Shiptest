@@ -215,7 +215,7 @@
 				return
 			if(recipe.time)
 				var/adjusted_time = 0
-				usr.visible_message(span_notice("[usr] starts building \a [recipe.title].") , span_notice("You start building \a [recipe.title]..."))
+				usr.visible_message(span_notice("[usr] starts building \a [recipe.title]."), span_notice("You start building \a [recipe.title]..."))
 				if(HAS_TRAIT(usr, recipe.trait_booster))
 					adjusted_time = (recipe.time * recipe.trait_modifier)
 				else

@@ -35,7 +35,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 				adjustFireLoss(-30)
 				adjustToxLoss(-30)
 				updatehealth()
-				user.visible_message(span_notice("[user] fixes some of the burnt wires on [src].") , span_notice("You fix some of the burnt wires on [src]."))
+				user.visible_message(span_notice("[user] fixes some of the burnt wires on [src]."), span_notice("You fix some of the burnt wires on [src]."))
 			else
 				to_chat(user, span_warning("You need more cable to repair [src]!"))
 		else
@@ -98,7 +98,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 			return
 		to_chat(user, span_notice("You start to unfasten [src]'s securing bolts..."))
 		if(W.use_tool(src, user, 50, volume=50) && !cell)
-			user.visible_message(span_notice("[user] deconstructs [src]!") , span_notice("You unfasten the securing bolts, and [src] falls to pieces!"))
+			user.visible_message(span_notice("[user] deconstructs [src]!"), span_notice("You unfasten the securing bolts, and [src] falls to pieces!"))
 			deconstruct()
 		return
 
@@ -254,15 +254,15 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 			var/obj/item/I = get_active_held_item()
 			if(I)
 				uneq_active()
-				visible_message(span_danger("[M] disarmed [src]!") , \
-					span_userdanger("[M] has disabled [src]'s active module!") , null, COMBAT_MESSAGE_RANGE)
+				visible_message(span_danger("[M] disarmed [src]!"), \
+					span_userdanger("[M] has disabled [src]'s active module!"), null, COMBAT_MESSAGE_RANGE)
 				log_combat(M, src, "disarmed", "[I ? " removing \the [I]" : ""]")
 			else
 				Stun(40)
 				step(src,get_dir(M,src))
 				log_combat(M, src, "pushed")
-				visible_message(span_danger("[M] forces back [src]!") , \
-					span_userdanger("[M] forces back [src]!") , null, COMBAT_MESSAGE_RANGE)
+				visible_message(span_danger("[M] forces back [src]!"), \
+					span_userdanger("[M] forces back [src]!"), null, COMBAT_MESSAGE_RANGE)
 			playsound(loc, 'sound/weapons/pierce.ogg', 50, TRUE, -1)
 	else
 		..()

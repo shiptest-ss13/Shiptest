@@ -62,9 +62,9 @@
 	add_fingerprint(user)
 	if (W.tool_behaviour == TOOL_WIRECUTTER)
 		if (bulb)
-			user.visible_message(span_notice("[user] begins to disconnect [src]'s flashbulb.") , span_notice("You begin to disconnect [src]'s flashbulb..."))
+			user.visible_message(span_notice("[user] begins to disconnect [src]'s flashbulb."), span_notice("You begin to disconnect [src]'s flashbulb..."))
 			if(W.use_tool(src, user, 30, volume=50) && bulb)
-				user.visible_message(span_notice("[user] disconnects [src]'s flashbulb!") , span_notice("You disconnect [src]'s flashbulb."))
+				user.visible_message(span_notice("[user] disconnects [src]'s flashbulb!"), span_notice("You disconnect [src]'s flashbulb."))
 				bulb.forceMove(loc)
 				bulb = null
 				power_change()
@@ -73,7 +73,7 @@
 		if (!bulb)
 			if(!user.transferItemToLoc(W, src))
 				return
-			user.visible_message(span_notice("[user] installs [W] into [src].") , span_notice("You install [W] into [src]."))
+			user.visible_message(span_notice("[user] installs [W] into [src]."), span_notice("You install [W] into [src]."))
 			bulb = W
 			power_change()
 		else

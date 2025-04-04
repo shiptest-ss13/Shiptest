@@ -40,7 +40,7 @@
 		return
 
 	playsound(src,'sound/weapons/resonator_fire.ogg',50,TRUE)
-	user.visible_message(span_warning("[user] projects a forcefield!") ,span_notice("You project a forcefield."))
+	user.visible_message(span_warning("[user] projects a forcefield!"),span_notice("You project a forcefield."))
 	var/obj/structure/projected_forcefield/F = new(T, src)
 	current_fields += F
 	user.changeNext_move(CLICK_CD_MELEE)

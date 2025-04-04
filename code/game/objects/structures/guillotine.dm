@@ -85,7 +85,7 @@
 			if (LAZYLEN(buckled_mobs))
 				if (user.a_intent == INTENT_HARM)
 					user.visible_message(
-						span_warning("[user] begins to pull the lever!") ,
+						span_warning("[user] begins to pull the lever!"),
 						span_warning("You begin to the pull the lever."))
 					current_action = GUILLOTINE_ACTION_INUSE
 
@@ -174,7 +174,7 @@
 				if(do_after(user, 7, target = src))
 					blade_status = GUILLOTINE_BLADE_RAISED
 					user.visible_message(
-						span_notice("[user] sharpens the large blade of the guillotine.") ,
+						span_notice("[user] sharpens the large blade of the guillotine."),
 						span_notice("You sharpen the large blade of the guillotine."))
 					blade_sharpness += 1
 					playsound(src, 'sound/items/unsheath.ogg', 100, TRUE)

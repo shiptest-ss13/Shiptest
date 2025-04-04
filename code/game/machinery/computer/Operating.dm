@@ -42,8 +42,8 @@
 
 /obj/machinery/computer/operating/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/disk/surgery))
-		user.visible_message(span_notice("[user] begins to load \the [O] in \the [src]...") , \
-			span_notice("You begin to load a surgery protocol from \the [O]...") , \
+		user.visible_message(span_notice("[user] begins to load \the [O] in \the [src]..."), \
+			span_notice("You begin to load a surgery protocol from \the [O]..."), \
 			span_hear("You hear the chatter of a floppy drive."))
 		var/obj/item/disk/surgery/D = O
 		if(do_after(user, 10, target = src))

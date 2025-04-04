@@ -54,7 +54,7 @@
 	if(T)
 		target.add_overlay(GLOB.cleaning_bubbles)
 		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
-		user.visible_message(span_notice("[user] begins to clean \the [T] with [src].") , span_notice("You begin to clean \the [T] with [src]..."))
+		user.visible_message(span_notice("[user] begins to clean \the [T] with [src]."), span_notice("You begin to clean \the [T] with [src]..."))
 		var/clean_speedies = user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)
 		if(do_after(user, mopspeed*clean_speedies, target = T))
 			to_chat(user, span_notice("You finish mopping."))

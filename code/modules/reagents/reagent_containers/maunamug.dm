@@ -81,7 +81,7 @@
 	else if(!user.transferItemToLoc(I, src))
 		return
 	cell = I
-	user.visible_message(span_notice("[user] inserts a power cell into [src].") , span_notice("You insert the power cell into [src]."))
+	user.visible_message(span_notice("[user] inserts a power cell into [src]."), span_notice("You insert the power cell into [src]."))
 	update_appearance()
 
 /obj/item/reagent_containers/glass/maunamug/attack_hand(mob/living/user)

@@ -69,13 +69,13 @@
 			return
 
 		else if(!anchored)
-			user.visible_message(span_warning("[user] cuts apart [src].") , \
+			user.visible_message(span_warning("[user] cuts apart [src]."), \
 								span_notice("You start to slice apart [src]..."))
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				to_chat(user, span_notice("You disassemble [src]."))
 				deconstruct(TRUE)
 		else if(!welded)
-			user.visible_message(span_warning("[user] welds [src].") , \
+			user.visible_message(span_warning("[user] welds [src]."), \
 								span_notice("You start to weld [src] to the floor..."))
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				if(!anchored || welded)
@@ -83,7 +83,7 @@
 				to_chat(user, span_notice("You weld [src] to the floor."))
 				welded = TRUE
 		else
-			user.visible_message(span_warning("[user] welds [src].") , \
+			user.visible_message(span_warning("[user] welds [src]."), \
 								span_notice("You start to weld [src] free from the floor..."))
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
 				if(!welded)
@@ -100,8 +100,8 @@
 
 			if(door_check)
 				user.visible_message(
-					span_notice("[user] secures [src] to the floor.") ,
-					span_notice("You start to secure [src] to the floor...") ,
+					span_notice("[user] secures [src] to the floor."),
+					span_notice("You start to secure [src] to the floor..."),
 					span_hear("You hear wrenching.")
 				)
 
@@ -115,8 +115,8 @@
 
 		else
 			user.visible_message(
-				span_notice("[user] unsecures [src] from the floor.") ,
-				span_notice("You start to free [src] from the floor...") ,
+				span_notice("[user] unsecures [src] from the floor."),
+				span_notice("You start to free [src] from the floor..."),
 				span_hear("You hear wrenching.")
 			)
 			if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
@@ -130,7 +130,7 @@
 		if(!item_used.tool_start_check(user, amount=1))
 			return
 
-		user.visible_message(span_notice("[user] wires [src].") , \
+		user.visible_message(span_notice("[user] wires [src]."), \
 							span_notice("You start to wire [src]..."))
 		if(item_used.use_tool(src, user, 4 SECONDS, amount=1))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_WIRES)
@@ -139,7 +139,7 @@
 			to_chat(user, span_notice("You wire [src]."))
 
 	else if(item_used.tool_behaviour == TOOL_WIRECUTTER && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
-		user.visible_message(span_notice("[user] cuts the wires from [src].") , \
+		user.visible_message(span_notice("[user] cuts the wires from [src]."), \
 							span_notice("You start to cut the wires from [src]..."))
 
 		if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
@@ -151,7 +151,7 @@
 
 	else if(istype(item_used, /obj/item/electronics/airlock) && state == AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
 		item_used.play_tool_sound(src, 100)
-		user.visible_message(span_notice("[user] installs the electronics into [src].") , \
+		user.visible_message(span_notice("[user] installs the electronics into [src]."), \
 							span_notice("You start to install electronics into [src]..."))
 		if(do_after(user, 4 SECONDS, target = src))
 			if(state != AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS)
@@ -164,7 +164,7 @@
 			electronics = item_used
 
 	else if((item_used.tool_behaviour == TOOL_CROWBAR) && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER)
-		user.visible_message(span_notice("[user] removes the electronics from [src].") , \
+		user.visible_message(span_notice("[user] removes the electronics from [src]."), \
 							span_notice("You start to remove electronics from [src]..."))
 
 		if(item_used.use_tool(src, user, 4 SECONDS, volume=100))
@@ -182,7 +182,7 @@
 
 	else if((item_used.tool_behaviour == TOOL_SCREWDRIVER) && state == AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER && welded)
 		user.visible_message(
-			span_notice("[user] finishes [src].") ,
+			span_notice("[user] finishes [src]."),
 			span_notice("You start finishing [src]...")
 		)
 		if(item_used.use_tool(src, user, 4 SECONDS, volume=100))

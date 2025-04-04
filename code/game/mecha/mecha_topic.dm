@@ -90,9 +90,9 @@
 /obj/mecha/proc/report_internal_damage()
 	. = ""
 	var/list/dam_reports = list(
-		"[MECHA_INT_FIRE]" = span_userdanger("INTERNAL FIRE") ,
-		"[MECHA_INT_TEMP_CONTROL]" = span_userdanger("LIFE SUPPORT SYSTEM MALFUNCTION") ,
-		"[MECHA_INT_TANK_BREACH]" = span_userdanger("GAS TANK BREACH") ,
+		"[MECHA_INT_FIRE]" = span_userdanger("INTERNAL FIRE"),
+		"[MECHA_INT_TEMP_CONTROL]" = span_userdanger("LIFE SUPPORT SYSTEM MALFUNCTION"),
+		"[MECHA_INT_TANK_BREACH]" = span_userdanger("GAS TANK BREACH"),
 		"[MECHA_INT_CONTROL_LOST]" = "[span_userdanger("COORDINATION SYSTEM CALIBRATION FAILURE")] - <a href='?src=[REF(src)];repair_int_control_lost=1'>Recalibrate</a>",
 		"[MECHA_INT_SHORT_CIRCUIT]" = span_userdanger("SHORT CIRCUIT")
 								)

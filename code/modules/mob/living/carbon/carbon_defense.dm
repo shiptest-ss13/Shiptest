@@ -84,7 +84,7 @@
 				if(isturf(I.loc))
 					I.attack_hand(src)
 					if(get_active_held_item() == I) //if our attack_hand() picks up the item...
-						visible_message(span_warning("[src] catches [I]!") , \
+						visible_message(span_warning("[src] catches [I]!"), \
 										span_userdanger("You catch [I] in mid-air!"))
 						throw_mode_off(THROW_MODE_TOGGLE)
 						return 1
@@ -195,7 +195,7 @@
 				if(M.powerlevel < 0)
 					M.powerlevel = 0
 
-				visible_message(span_danger("The [M.name] shocks [src]!") , \
+				visible_message(span_danger("The [M.name] shocks [src]!"), \
 				span_userdanger("The [M.name] shocks you!"))
 
 				do_sparks(5, TRUE, src)
@@ -272,8 +272,8 @@
 
 	if(target.IsKnockdown() && !target.IsParalyzed())
 		target.Paralyze(SHOVE_CHAIN_PARALYZE)
-		target.visible_message(span_danger("[name] kicks [target.name] onto [target.p_their()] side!") ,
-						span_userdanger("You're kicked onto your side by [name]!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , COMBAT_MESSAGE_RANGE, src)
+		target.visible_message(span_danger("[name] kicks [target.name] onto [target.p_their()] side!"),
+						span_userdanger("You're kicked onto your side by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
 		to_chat(src, span_danger("You kick [target.name] onto [target.p_their()] side!"))
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, SetKnockdown), 0), SHOVE_CHAIN_PARALYZE)
 		log_combat(src, target, "kicks", "onto their side (paralyzing)")
@@ -293,34 +293,34 @@
 						break
 		if((!target_table && !target_collateral_carbon && !target_disposal_bin) || directional_blocked)
 			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
-			target.visible_message(span_danger("[name] shoves [target.name], knocking [target.p_them()] down!") ,
-							span_userdanger("You're knocked down from a shove by [name]!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , COMBAT_MESSAGE_RANGE, src)
+			target.visible_message(span_danger("[name] shoves [target.name], knocking [target.p_them()] down!"),
+							span_userdanger("You're knocked down from a shove by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, span_danger("You shove [target.name], knocking [target.p_them()] down!"))
 			log_combat(src, target, "shoved", "knocking them down")
 		else if(target_table)
 			target.Knockdown(SHOVE_KNOCKDOWN_TABLE)
-			target.visible_message(span_danger("[name] shoves [target.name] onto \the [target_table]!") ,
-							span_userdanger("You're shoved onto \the [target_table] by [name]!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , COMBAT_MESSAGE_RANGE, src)
+			target.visible_message(span_danger("[name] shoves [target.name] onto \the [target_table]!"),
+							span_userdanger("You're shoved onto \the [target_table] by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, span_danger("You shove [target.name] onto \the [target_table]!"))
 			target.throw_at(target_table, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
 			log_combat(src, target, "shoved", "onto [target_table] (table)")
 		else if(target_collateral_carbon)
 			target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
 			target_collateral_carbon.Knockdown(SHOVE_KNOCKDOWN_COLLATERAL)
-			target.visible_message(span_danger("[name] shoves [target.name] into [target_collateral_carbon.name]!") ,
-				span_userdanger("You're shoved into [target_collateral_carbon.name] by [name]!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , COMBAT_MESSAGE_RANGE, src)
+			target.visible_message(span_danger("[name] shoves [target.name] into [target_collateral_carbon.name]!"),
+				span_userdanger("You're shoved into [target_collateral_carbon.name] by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, span_danger("You shove [target.name] into [target_collateral_carbon.name]!"))
 			log_combat(src, target, "shoved", "into [target_collateral_carbon.name]")
 		else if(target_disposal_bin)
 			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
 			target.forceMove(target_disposal_bin)
-			target.visible_message(span_danger("[name] shoves [target.name] into \the [target_disposal_bin]!") ,
-							span_userdanger("You're shoved into \the [target_disposal_bin] by [target.name]!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , COMBAT_MESSAGE_RANGE, src)
+			target.visible_message(span_danger("[name] shoves [target.name] into \the [target_disposal_bin]!"),
+							span_userdanger("You're shoved into \the [target_disposal_bin] by [target.name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, span_danger("You shove [target.name] into \the [target_disposal_bin]!"))
 			log_combat(src, target, "shoved", "into [target_disposal_bin] (disposal bin)")
 	else
-		target.visible_message(span_danger("[name] shoves [target.name]!") ,
-						span_userdanger("You're shoved by [name]!") , span_hear("You hear aggressive shuffling!") , COMBAT_MESSAGE_RANGE, src)
+		target.visible_message(span_danger("[name] shoves [target.name]!"),
+						span_userdanger("You're shoved by [name]!"), span_hear("You hear aggressive shuffling!"), COMBAT_MESSAGE_RANGE, src)
 		to_chat(src, span_danger("You shove [target.name]!"))
 		var/target_held_item = target.get_active_held_item()
 		var/knocked_item = FALSE
@@ -329,14 +329,14 @@
 		if(!target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
 			target.add_movespeed_modifier(/datum/movespeed_modifier/shove)
 			if(target_held_item)
-				target.visible_message(span_danger("[target.name]'s grip on \the [target_held_item] loosens!") ,
-					span_warning("Your grip on \the [target_held_item] loosens!") , null, COMBAT_MESSAGE_RANGE)
+				target.visible_message(span_danger("[target.name]'s grip on \the [target_held_item] loosens!"),
+					span_warning("Your grip on \the [target_held_item] loosens!"), null, COMBAT_MESSAGE_RANGE)
 			addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
 		else if(target_held_item)
 			target.dropItemToGround(target_held_item)
 			knocked_item = TRUE
-			target.visible_message(span_danger("[target.name] drops \the [target_held_item]!") ,
-				span_warning("You drop \the [target_held_item]!") , null, COMBAT_MESSAGE_RANGE)
+			target.visible_message(span_danger("[target.name] drops \the [target_held_item]!"),
+				span_warning("You drop \the [target_held_item]!"), null, COMBAT_MESSAGE_RANGE)
 		var/append_message = ""
 		if(target_held_item)
 			if(knocked_item)
@@ -355,7 +355,7 @@
 	remove_movespeed_modifier(/datum/movespeed_modifier/shove)
 	var/active_item = get_active_held_item()
 	if(is_type_in_typecache(active_item, GLOB.shove_disarming_types))
-		visible_message(span_warning("[name] regains their grip on \the [active_item]!") , span_warning("You regain your grip on \the [active_item]") , null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_warning("[name] regains their grip on \the [active_item]!"), span_warning("You regain your grip on \the [active_item]"), null, COMBAT_MESSAGE_RANGE)
 
 /mob/living/carbon/emp_act(severity)
 	. = ..()
@@ -425,8 +425,8 @@
 		if(buckled)
 			to_chat(M, span_warning("You need to unbuckle [src] first to do that!"))
 			return
-		M.visible_message(span_notice("[M] shakes [src] trying to get [p_them()] up!") , \
-						null, span_hear("You hear the rustling of clothes.") , DEFAULT_MESSAGE_RANGE, list(M, src))
+		M.visible_message(span_notice("[M] shakes [src] trying to get [p_them()] up!"), \
+						null, span_hear("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
 		to_chat(M, span_notice("You shake [src] trying to pick [p_them()] up!"))
 		to_chat(src, span_notice("[M] shakes you to get you up!"))
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
@@ -451,8 +451,8 @@
 
 	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD) //Headpats!
 		SEND_SIGNAL(src, COMSIG_CARBON_HEADPAT, M)
-		M.visible_message(span_notice("[M] gives [src] a pat on the head to make [p_them()] feel better!") , \
-					null, span_hear("You hear a soft patter.") , DEFAULT_MESSAGE_RANGE, list(M, src))
+		M.visible_message(span_notice("[M] gives [src] a pat on the head to make [p_them()] feel better!"), \
+					null, span_hear("You hear a soft patter."), DEFAULT_MESSAGE_RANGE, list(M, src))
 		to_chat(M, span_notice("You give [src] a pat on the head to make [p_them()] feel better!"))
 		to_chat(src, span_notice("[M] gives you a pat on the head to make you feel better! "))
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
@@ -491,7 +491,7 @@
 			to_chat(M, span_notice("You wrap [src] into a tight bear hug!"))
 			to_chat(src, span_notice("[M] squeezes you super tightly in a firm bear hug!"))
 		else
-			M.visible_message(span_notice("[M] hugs [src] to make [p_them()] feel better!") , \
+			M.visible_message(span_notice("[M] hugs [src] to make [p_them()] feel better!"), \
 					span_notice("You hug [src] to make [p_them()] feel better!"))
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 15;
@@ -540,13 +540,13 @@
 		if(!get_bodypart(check_zone(M.zone_selected)))
 			to_chat(M, span_warning("[src] does not have a [M.zone_selected == BODY_ZONE_L_ARM ? "left" : "right"] arm!"))
 		else
-			M.visible_message(span_notice("[M] shakes [src]'s hand.") , \
+			M.visible_message(span_notice("[M] shakes [src]'s hand."), \
 						span_notice("You shake [src]'s hand."))
 	else if((M.zone_selected == BODY_ZONE_L_LEG) || (M.zone_selected == BODY_ZONE_R_LEG))
 		if(!get_bodypart(check_zone(M.zone_selected)))
 			to_chat(M, span_warning("[src] does not have a [M.zone_selected == BODY_ZONE_L_LEG ? "left" : "right"] leg!"))
 		else
-			M.visible_message(span_notice("[M] pokes [src]'s leg.") , \
+			M.visible_message(span_notice("[M] pokes [src]'s leg."), \
 						span_notice("You poke [src]'s leg."))		//WS Edit End
 	AdjustStun(-60)
 	AdjustKnockdown(-60)
@@ -578,7 +578,7 @@
 			if(!embeds)
 				embeds = TRUE
 				// this way, we only visibly try to examine ourselves if we have something embedded, otherwise we'll still hug ourselves :)
-				visible_message(span_notice("[src] examines [p_them()]self.") , \
+				visible_message(span_notice("[src] examines [p_them()]self."), \
 					span_notice("You check yourself for shrapnel."))
 			if(I.isEmbedHarmless())
 				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>")

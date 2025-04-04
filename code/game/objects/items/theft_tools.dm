@@ -146,8 +146,8 @@
 	if(!iscarbon(user))
 		return FALSE
 	var/mob/ded = user
-	user.visible_message(span_danger("[ded] reaches out and tries to pick up [src]. [ded.p_their()] body starts to glow and bursts into flames before flashing into dust!") ,\
-			span_userdanger("You reach for [src] with your hands. That was dumb.") ,\
+	user.visible_message(span_danger("[ded] reaches out and tries to pick up [src]. [ded.p_their()] body starts to glow and bursts into flames before flashing into dust!"),\
+			span_userdanger("You reach for [src] with your hands. That was dumb."),\
 			span_hear("Everything suddenly goes silent."))
 	radiation_pulse(user, 500, 2)
 	playsound(get_turf(user), 'sound/effects/supermatter.ogg', 50, TRUE)
@@ -248,8 +248,8 @@
 		investigate_log("has consumed [AM].", "supermatter")
 		qdel(AM)
 	if (user)
-		user.visible_message(span_danger("As [user] touches [AM] with \the [src], both flash into dust and silence fills the room...") ,\
-			span_userdanger("You touch [AM] with [src], and everything suddenly goes silent.\n[AM] and [sliver] flash into dust, and soon as you can register this, you do as well.") ,\
+		user.visible_message(span_danger("As [user] touches [AM] with \the [src], both flash into dust and silence fills the room..."),\
+			span_userdanger("You touch [AM] with [src], and everything suddenly goes silent.\n[AM] and [sliver] flash into dust, and soon as you can register this, you do as well."),\
 			span_hear("Everything suddenly goes silent."))
 		user.dust()
 	radiation_pulse(src, 500, 2)

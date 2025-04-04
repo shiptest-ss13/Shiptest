@@ -53,7 +53,7 @@
 				return
 
 			charging = W
-			user.visible_message(span_notice("[user] inserts a cell into [src].") , span_notice("You insert a cell into [src]."))
+			user.visible_message(span_notice("[user] inserts a cell into [src]."), span_notice("You insert a cell into [src]."))
 			update_appearance()
 	else
 		if(!charging && default_deconstruction_screwdriver(user, icon_state, icon_state, W))
@@ -88,7 +88,7 @@
 	user.put_in_hands(charging)
 	charging.add_fingerprint(user)
 
-	user.visible_message(span_notice("[user] removes [charging] from [src].") , span_notice("You remove [charging] from [src]."))
+	user.visible_message(span_notice("[user] removes [charging] from [src]."), span_notice("You remove [charging] from [src]."))
 
 	removecell()
 

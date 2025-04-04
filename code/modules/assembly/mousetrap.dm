@@ -79,7 +79,7 @@
 				which_hand = BODY_ZONE_PRECISE_R_HAND
 			triggered(user, which_hand)
 			user.visible_message(
-				span_warning("[user] accidentally sets off [src], breaking their fingers.") ,
+				span_warning("[user] accidentally sets off [src], breaking their fingers."),
 				span_warning("You accidentally trigger [src]!") 
 			)
 			return
@@ -98,7 +98,7 @@
 				which_hand = BODY_ZONE_PRECISE_R_HAND
 			triggered(user, which_hand)
 			user.visible_message(
-				span_warning("[user] accidentally sets off [src], breaking their fingers.") ,
+				span_warning("[user] accidentally sets off [src], breaking their fingers."),
 				span_warning("You accidentally trigger [src]!") 
 			)
 			return
@@ -116,7 +116,7 @@
 					if(H.m_intent == MOVE_INTENT_RUN)
 						INVOKE_ASYNC(src, PROC_REF(triggered), H)
 						H.visible_message(
-							span_warning("[H] accidentally steps on [src].") ,
+							span_warning("[H] accidentally steps on [src]."),
 							span_warning("You accidentally step on [src]") 
 						)
 				else if(ismouse(MM))
@@ -129,7 +129,7 @@
 	if(armed)
 		if(finder)
 			finder.visible_message(
-				span_warning("[finder] accidentally sets off [src], breaking their fingers.") ,
+				span_warning("[finder] accidentally sets off [src], breaking their fingers."),
 				span_warning("You accidentally trigger [src]!") 
 			)
 			triggered(finder, (finder.active_hand_index % 2 == 0) ? BODY_ZONE_PRECISE_R_HAND : BODY_ZONE_PRECISE_L_HAND)

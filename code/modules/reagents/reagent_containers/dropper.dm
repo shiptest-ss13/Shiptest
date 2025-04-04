@@ -40,7 +40,7 @@
 
 					trans = reagents.trans_to(safe_thing, amount_per_transfer_from_this, transfered_by = user, method = TOUCH)
 
-					target.visible_message(span_danger("[user] tries to squirt something into [target]'s eyes, but fails!") , \
+					target.visible_message(span_danger("[user] tries to squirt something into [target]'s eyes, but fails!"), \
 											span_userdanger("[user] tries to squirt something into your eyes, but fails!"))
 
 					to_chat(user, span_notice("You transfer [trans] unit\s of the solution."))
@@ -50,7 +50,7 @@
 				to_chat(target, span_danger("[target] does not seem to have any eyes!"))
 				return
 
-			target.visible_message(span_danger("[user] squirts something into [target]'s eyes!") , \
+			target.visible_message(span_danger("[user] squirts something into [target]'s eyes!"), \
 									span_userdanger("[user] squirts something into your eyes!"))
 
 			reagents.expose(target, TOUCH, fraction)

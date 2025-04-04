@@ -77,7 +77,7 @@
 	src.cards -= choice
 	H.pickup(user)
 	user.put_in_hands(H)
-	user.visible_message(span_notice("[user] draws a card from the deck.") , span_notice("You draw a card from the deck."))
+	user.visible_message(span_notice("[user] draws a card from the deck."), span_notice("You draw a card from the deck."))
 	update_appearance()
 
 /obj/item/toy/cards/deck/cas/attackby(obj/item/I, mob/living/user, params)
@@ -91,7 +91,7 @@
 		RC.name = "[SC.name]"
 		RC.card_icon = SC.card_face
 		cards += RC
-		user.visible_message(span_notice("[user] adds a card to the bottom of the deck.") ,span_notice("You add the card to the bottom of the deck."))
+		user.visible_message(span_notice("[user] adds a card to the bottom of the deck."),span_notice("You add the card to the bottom of the deck."))
 		qdel(SC)
 	update_appearance()
 

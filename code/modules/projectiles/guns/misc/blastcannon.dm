@@ -91,7 +91,7 @@
 	var/heavy = power * 0.25
 	var/medium = power * 0.5
 	var/light = power
-	user.visible_message(span_danger("[user] opens [bomb] on [user.p_their()] [name] and fires a blast wave at [target]!") ,span_danger("You open [bomb] on your [name] and fire a blast wave at [target]!"))
+	user.visible_message(span_danger("[user] opens [bomb] on [user.p_their()] [name] and fires a blast wave at [target]!"),span_danger("You open [bomb] on your [name] and fire a blast wave at [target]!"))
 	playsound(user, "explosion", 100, TRUE)
 	var/turf/starting = get_turf(user)
 	var/turf/targturf = get_turf(target)

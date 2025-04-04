@@ -139,7 +139,7 @@
 	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(byeItemCarbon))
 
 	if(harmful)
-		victim.visible_message(span_danger("[weapon] embeds itself in [victim]'s [limb.name]!") ,ignored_mobs=victim)
+		victim.visible_message(span_danger("[weapon] embeds itself in [victim]'s [limb.name]!"),ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[weapon] embeds itself in your [limb.name]!"))
 		victim.throw_alert("embeddedobject", /atom/movable/screen/alert/embeddedobject)
 		playsound(victim,'sound/weapons/bladeslice.ogg', 40)
@@ -148,7 +148,7 @@
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage)
 		SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 	else
-		victim.visible_message(span_danger("[weapon] sticks itself to [victim]'s [limb.name]!") ,ignored_mobs=victim)
+		victim.visible_message(span_danger("[weapon] sticks itself to [victim]'s [limb.name]!"),ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[weapon] sticks itself to your [limb.name]!"))
 
 /// Called every time a carbon with a harmful embed moves, rolling a chance for the item to cause pain. The chance is halved if the carbon is crawling or walking.
@@ -177,10 +177,10 @@
 	if(harmful)
 		var/damage = weapon.w_class * remove_pain_mult
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage)
-		victim.visible_message(span_danger("[weapon] falls out of [victim.name]'s [limb.name]!") , ignored_mobs=victim)
+		victim.visible_message(span_danger("[weapon] falls out of [victim.name]'s [limb.name]!"), ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[weapon] falls out of your [limb.name]!"))
 	else
-		victim.visible_message(span_danger("[weapon] falls off of [victim.name]'s [limb.name]!") , ignored_mobs=victim)
+		victim.visible_message(span_danger("[weapon] falls off of [victim.name]'s [limb.name]!"), ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[weapon] falls off of your [limb.name]!"))
 
 	safeRemoveCarbon()
@@ -199,7 +199,7 @@
 
 /// everything async that ripOut used to do
 /datum/component/embedded/proc/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, time_taken)
-	victim.visible_message(span_warning("[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name].") ,span_notice("You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)"))
+	victim.visible_message(span_warning("[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name]."),span_notice("You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)"))
 	if(do_after(victim, time_taken, target = victim))
 		if(!weapon || !limb || weapon.loc != victim || !(weapon in limb.embedded_objects))
 			qdel(src)
@@ -209,9 +209,9 @@
 			var/damage = weapon.w_class * remove_pain_mult
 			limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage) //It hurts to rip it out, get surgery you dingus.
 			victim.force_scream()
-			victim.visible_message(span_notice("[victim] successfully rips [weapon] out of [victim.p_their()] [limb.name]!") , span_notice("You successfully remove [weapon] from your [limb.name]."))
+			victim.visible_message(span_notice("[victim] successfully rips [weapon] out of [victim.p_their()] [limb.name]!"), span_notice("You successfully remove [weapon] from your [limb.name]."))
 		else
-			victim.visible_message(span_notice("[victim] successfully rips [weapon] off of [victim.p_their()] [limb.name]!") , span_notice("You successfully remove [weapon] from your [limb.name]."))
+			victim.visible_message(span_notice("[victim] successfully rips [weapon] off of [victim.p_their()] [limb.name]!"), span_notice("You successfully remove [weapon] from your [limb.name]."))
 
 		safeRemoveCarbon(TRUE)
 
@@ -362,9 +362,9 @@
 	var/mob/living/us = usr
 	if(in_range(us, parent) && locate(href_list["embedded_object"]) == weapon)
 		if(harmful)
-			us.visible_message(span_notice("[us] begins unwedging [weapon] from [parent].") , span_notice("You begin unwedging [weapon] from [parent]..."))
+			us.visible_message(span_notice("[us] begins unwedging [weapon] from [parent]."), span_notice("You begin unwedging [weapon] from [parent]..."))
 		else
-			us.visible_message(span_notice("[us] begins unsticking [weapon] from [parent].") , span_notice("You begin unsticking [weapon] from [parent]..."))
+			us.visible_message(span_notice("[us] begins unsticking [weapon] from [parent]."), span_notice("You begin unsticking [weapon] from [parent]..."))
 
 		if(do_after(us, 30, target = parent))
 			us.put_in_hands(weapon)

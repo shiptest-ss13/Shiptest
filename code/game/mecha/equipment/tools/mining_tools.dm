@@ -33,8 +33,8 @@
 		if(target_obj.resistance_flags & UNACIDABLE)
 			return
 	target.visible_message(
-		span_warning("[chassis] starts to drill [target].") ,
-		span_userdanger("[chassis] starts to drill [target]...") ,
+		span_warning("[chassis] starts to drill [target]."),
+		span_userdanger("[chassis] starts to drill [target]..."),
 		span_hear("You hear drilling.")
 	)
 
@@ -131,7 +131,7 @@
 	..()
 
 /obj/item/mecha_parts/mecha_equipment/drill/proc/drill_mob(mob/living/target, mob/user)
-	target.visible_message(span_danger("[chassis] is drilling [target] with [src]!") , \
+	target.visible_message(span_danger("[chassis] is drilling [target] with [src]!"), \
 						span_userdanger("[chassis] is drilling you with [src]!"))
 	log_combat(user, target, "drilled", "[name]", "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	if(target.stat == DEAD && target.getBruteLoss() >= 200)

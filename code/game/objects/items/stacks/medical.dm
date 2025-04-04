@@ -35,14 +35,14 @@
 	if(target == user)
 		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		if(!silent)
-			user.visible_message(span_notice("[user] starts to apply \the [src] on [user.p_them()]self...") , span_notice("You begin applying \the [src] on yourself..."))
+			user.visible_message(span_notice("[user] starts to apply \the [src] on [user.p_them()]self..."), span_notice("You begin applying \the [src] on yourself..."))
 		if(!do_after(user, self_delay, target, extra_checks=CALLBACK(target, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 
 	else if(other_delay)
 		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		if(!silent)
-			user.visible_message(span_notice("[user] starts to apply \the [src] on [target].") , span_notice("You begin applying \the [src] on [target]..."))
+			user.visible_message(span_notice("[user] starts to apply \the [src] on [target]."), span_notice("You begin applying \the [src] on [target]..."))
 		if(!do_after(user, other_delay, target, extra_checks=CALLBACK(target, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 
@@ -72,7 +72,7 @@
 
 	//WS begin - failure chance
 	if(prob(failure_chance))
-		user.visible_message(span_warning("[user] tries to apply \the [src] on [C]'s [affecting.name], but fails!") , "<span class='warning'>You try to apply \the [src] on  on [C]'s [affecting.name], but fail!")
+		user.visible_message(span_warning("[user] tries to apply \the [src] on [C]'s [affecting.name], but fails!"), "<span class='warning'>You try to apply \the [src] on  on [C]'s [affecting.name], but fail!")
 		return
 	//WS end
 	var/successful_heal = FALSE //Has this item healed anywhere it could?
@@ -119,7 +119,7 @@
 
 
 	if (successful_heal)
-		user.visible_message(span_green("[user] applies \the [src] on [C]'s [affecting.name].") , span_green("You apply \the [src] on [C]'s [affecting.name]."))
+		user.visible_message(span_green("[user] applies \the [src] on [C]'s [affecting.name]."), span_green("You apply \the [src] on [C]'s [affecting.name]."))
 		return TRUE
 	to_chat(user, span_warning("[C]'s [affecting.name] can not be healed with \the [src]!"))
 
@@ -145,7 +145,7 @@
 		else if (critter.health == critter.maxHealth)
 			to_chat(user, span_notice("[target] is at full health."))
 			return FALSE
-		user.visible_message(span_green("[user] applies \the [src] on [target].") , span_green("You apply \the [src] on [target]."))
+		user.visible_message(span_green("[user] applies \the [src] on [target]."), span_green("You apply \the [src] on [target]."))
 		target.heal_bodypart_damage((heal_brute/2))
 		return TRUE
 	if(iscarbon(target))
@@ -191,8 +191,8 @@
 			return
 		new /obj/item/stack/sheet/cotton/cloth(user.drop_location())
 		user.visible_message(
-			span_notice("[user] cuts [src] into pieces of cloth with [I].") ,
-			span_notice("You cut [src] into pieces of cloth with [I].") ,
+			span_notice("[user] cuts [src] into pieces of cloth with [I]."),
+			span_notice("You cut [src] into pieces of cloth with [I]."),
 			span_hear("You hear cutting.") 
 		)
 		use(2)
@@ -264,7 +264,7 @@
 		else if (critter.health == critter.maxHealth)
 			to_chat(user, span_notice("[target] is at full health."))
 			return FALSE
-		user.visible_message(span_green("[user] applies \the [src] on [target].") , span_green("You apply \the [src] on [target]."))
+		user.visible_message(span_green("[user] applies \the [src] on [target]."), span_green("You apply \the [src] on [target]."))
 		target.heal_bodypart_damage(heal_brute)
 		return TRUE
 
@@ -374,7 +374,7 @@
 		else if (critter.health == critter.maxHealth)
 			to_chat(user, span_notice("[target] is at full health."))
 			return FALSE
-		user.visible_message(span_green("[user] applies \the [src] on [target].") , span_green("You apply \the [src] on [target]."))
+		user.visible_message(span_green("[user] applies \the [src] on [target]."), span_green("You apply \the [src] on [target]."))
 		target.heal_bodypart_damage(heal, heal)
 		return TRUE
 

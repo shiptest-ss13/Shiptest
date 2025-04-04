@@ -412,7 +412,7 @@ Difficulty: Hard
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/bullet_act(obj/projectile/P)
 	if(BUBBLEGUM_IS_ENRAGED)
-		visible_message(span_danger("[src] deflects the projectile; [p_they()] can't be hit with ranged weapons while enraged!") , span_userdanger("You deflect the projectile!"))
+		visible_message(span_danger("[src] deflects the projectile; [p_they()] can't be hit with ranged weapons while enraged!"), span_userdanger("You deflect the projectile!"))
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 300, TRUE)
 		return BULLET_ACT_BLOCK
 	return ..()
@@ -463,7 +463,7 @@ Difficulty: Hard
 		DestroySurroundings()
 		if(isliving(A))
 			var/mob/living/L = A
-			L.visible_message(span_danger("[src] slams into [L]!") , span_userdanger("[src] tramples you into the ground!"))
+			L.visible_message(span_danger("[src] slams into [L]!"), span_userdanger("[src] tramples you into the ground!"))
 			src.forceMove(get_turf(L))
 			L.apply_damage(istype(src, /mob/living/simple_animal/hostile/megafauna/bubblegum/hallucination) ? 15 : 30, BRUTE)
 			playsound(get_turf(L), 'sound/effects/meteorimpact.ogg', 100, TRUE)

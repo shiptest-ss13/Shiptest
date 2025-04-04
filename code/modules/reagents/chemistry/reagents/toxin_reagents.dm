@@ -985,7 +985,7 @@
 		var/obj/item/bodypart/bp = M.get_bodypart(selected_part)
 		if(bp)
 			playsound(M, get_sfx("desceration"), 50, TRUE, -1)
-			M.visible_message(span_warning("[M]'s bones hurt too much!!") , span_danger("Your bones hurt too much!!"))
+			M.visible_message(span_warning("[M]'s bones hurt too much!!"), span_danger("Your bones hurt too much!!"))
 			M.say("OOF!!", forced = /datum/reagent/toxin/bonehurtingjuice)
 			bp.receive_damage(0, 0, 200)
 		else //SUCH A LUST FOR REVENGE!!!

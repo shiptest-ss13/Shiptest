@@ -802,7 +802,7 @@
 	..()
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, "rustle", 50, TRUE, -5)
-	user.visible_message(span_notice("[user] hugs \the [src].") ,span_notice("You hug \the [src]."))
+	user.visible_message(span_notice("[user] hugs \the [src]."),span_notice("You hug \the [src]."))
 
 //////
 /obj/item/storage/box/hug/medical/PopulateContents()
@@ -936,12 +936,12 @@
 	else if(W.get_sharpness())
 		if(!contents.len)
 			if(item_state == "paperbag_None")
-				user.show_message(span_notice("You cut eyeholes into [src].") , MSG_VISUAL)
+				user.show_message(span_notice("You cut eyeholes into [src]."), MSG_VISUAL)
 				new /obj/item/clothing/head/papersack(user.loc)
 				qdel(src)
 				return FALSE
 			else if(item_state == "paperbag_SmileyFace")
-				user.show_message(span_notice("You cut eyeholes into [src] and modify the design.") , MSG_VISUAL)
+				user.show_message(span_notice("You cut eyeholes into [src] and modify the design."), MSG_VISUAL)
 				new /obj/item/clothing/head/papersack/smiley(user.loc)
 				qdel(src)
 				return FALSE

@@ -144,7 +144,7 @@
 	if(!dam)
 		return
 	if(P.suppressed != SUPPRESSED_VERY)
-		visible_message(span_danger("[src] is hit by \a [P]!") , null, null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_danger("[src] is hit by \a [P]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
 		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
@@ -286,13 +286,13 @@
 
 
 	if(prob(hardness + M.force) && M.force > 20)
-		M.visible_message(span_danger("[M.name] hits [src] with great force!") , \
-					span_danger("You hit [src] with incredible force!") , null, COMBAT_MESSAGE_RANGE)
+		M.visible_message(span_danger("[M.name] hits [src] with great force!"), \
+					span_danger("You hit [src] with incredible force!"), null, COMBAT_MESSAGE_RANGE)
 		dismantle_wall(TRUE)
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
-		M.visible_message(span_danger("[M.name] hits [src]!") , \
-					span_danger("You hit [src]!") , null, COMBAT_MESSAGE_RANGE)
+		M.visible_message(span_danger("[M.name] hits [src]!"), \
+					span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
 		alter_integrity(M.force * 20)
 
 /turf/closed/attack_hulk(mob/living/carbon/user)
@@ -301,8 +301,8 @@
 	if(!arm || arm.bodypart_disabled)
 		return
 	alter_integrity(-250,user)
-	user.visible_message(span_danger("[user] smashes \the [src]!") , \
-				span_danger("You smash \the [src]!") , \
+	user.visible_message(span_danger("[user] smashes \the [src]!"), \
+				span_danger("You smash \the [src]!"), \
 				span_hear("You hear a booming smash!"))
 	return TRUE
 

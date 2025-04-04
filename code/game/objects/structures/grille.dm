@@ -118,7 +118,7 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.do_attack_animation(src, ATTACK_EFFECT_KICK)
-	user.visible_message(span_warning("[user] hits [src].") , null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_warning("[user] hits [src]."), null, null, COMBAT_MESSAGE_RANGE)
 	log_combat(user, src, "hit")
 	if(!shock(user, 70))
 		take_damage(rand(5,10), BRUTE, "melee", 1)
@@ -126,7 +126,7 @@
 /obj/structure/grille/attack_alien(mob/living/user)
 	user.do_attack_animation(src)
 	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message(span_warning("[user] mangles [src].") , null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_warning("[user] mangles [src]."), null, null, COMBAT_MESSAGE_RANGE)
 	if(!shock(user, 70))
 		take_damage(20, BRUTE, "melee", 1)
 
@@ -152,14 +152,14 @@
 			W.play_tool_sound(src, 100)
 			set_anchored(!anchored)
 			user.visible_message(
-				span_notice("[user] [anchored ? "fastens" : "unfastens"] [src].") , \
+				span_notice("[user] [anchored ? "fastens" : "unfastens"] [src]."), \
 				span_notice("You [anchored ? "fasten [src] to" : "unfasten [src] from"] the floor."))
 			return
 	else if(istype(W, /obj/item/stack/rods) && broken)
 		var/obj/item/stack/rods/R = W
 		if(!shock(user, 90))
 			user.visible_message(
-				span_notice("[user] rebuilds the broken grille.") , \
+				span_notice("[user] rebuilds the broken grille."), \
 				span_notice("You rebuild the broken grille."))
 			new grille_type(src.loc)
 			R.use(1)

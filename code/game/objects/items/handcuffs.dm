@@ -49,7 +49,7 @@
 
 	if(!C.handcuffed)
 		if(C.canBeHandcuffed())
-			C.visible_message(span_danger("[user] is trying to put [src.name] on [C]!") , \
+			C.visible_message(span_danger("[user] is trying to put [src.name] on [C]!"), \
 								span_userdanger("[user] is trying to put [src.name] on you!"))
 
 			playsound(loc, cuffsound, 30, TRUE, -2)
@@ -59,7 +59,7 @@
 					apply_cuffs(C, user, TRUE)
 				else
 					apply_cuffs(C, user)
-				C.visible_message(span_notice("[user] handcuffs [C].") , \
+				C.visible_message(span_notice("[user] handcuffs [C]."), \
 									span_userdanger("[user] handcuffs you."))
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 
@@ -307,7 +307,7 @@
 					snap = FALSE
 			if(snap)
 				close_trap()
-				L.visible_message(span_danger("[L] gets caught by \the [src]!") , \
+				L.visible_message(span_danger("[L] gets caught by \the [src]!"), \
 						span_userdanger("You get caught by \the [src]!"))
 				L.apply_damage(trap_damage, BRUTE, def_zone)
 

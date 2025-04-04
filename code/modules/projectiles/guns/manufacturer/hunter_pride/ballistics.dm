@@ -176,7 +176,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
 		if(magazine.ammo_count())
 			afterattack(user, user)	//you know the drill
-			user.visible_message(span_danger("[src] goes off!") , span_userdanger("[src] goes off in your face!"))
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
 			return TRUE
 		if(I.use_tool(src, user, 30))
 			if(magazine.ammo_count())
@@ -190,7 +190,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 		to_chat(user, span_notice("You begin to revert the modifications to [src]..."))
 		if(magazine.ammo_count())
 			afterattack(user, user)	//and again
-			user.visible_message(span_danger("[src] goes off!") , span_userdanger("[src] goes off in your face!"))
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
 			return TRUE
 		if(I.use_tool(src, user, 30))
 			if(magazine.ammo_count())

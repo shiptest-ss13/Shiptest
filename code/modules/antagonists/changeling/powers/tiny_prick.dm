@@ -146,7 +146,7 @@
 
 	var/obj/item/melee/arm_blade/false/blade = new(target,1)
 	target.put_in_hands(blade)
-	target.visible_message(span_warning("A grotesque blade forms around [target.name]\'s arm!") , span_userdanger("Your arm twists and mutates, transforming into a horrific monstrosity!") , span_hear("You hear organic matter ripping and tearing!"))
+	target.visible_message(span_warning("A grotesque blade forms around [target.name]\'s arm!"), span_userdanger("Your arm twists and mutates, transforming into a horrific monstrosity!"), span_hear("You hear organic matter ripping and tearing!"))
 	playsound(target, 'sound/effects/blobattack.ogg', 30, TRUE)
 
 	addtimer(CALLBACK(src, PROC_REF(remove_fake), target, blade), 600)
@@ -156,7 +156,7 @@
 	playsound(target, 'sound/effects/blobattack.ogg', 30, TRUE)
 	target.visible_message("<span class='warning'>With a sickening crunch, \
 	[target] reforms [target.p_their()] [blade.name] into an arm!</span>",
-	span_warning("[blade] reforms back to normal.") ,
+	span_warning("[blade] reforms back to normal."),
 	"<span class='italics>You hear organic matter ripping and tearing!</span>")
 
 	qdel(blade)

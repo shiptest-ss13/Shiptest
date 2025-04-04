@@ -283,8 +283,8 @@
 			if(W.use_tool(src, user, 40, volume=50))
 				if(!opened)
 					return
-				user.visible_message(span_notice("[user] slices apart \the [src].") ,
-								span_notice("You cut \the [src] apart with \the [W].") ,
+				user.visible_message(span_notice("[user] slices apart \the [src]."),
+								span_notice("You cut \the [src] apart with \the [W]."),
 								span_hear("You hear cutting."))
 				deconstruct(TRUE)
 			return
@@ -301,8 +301,8 @@
 				return
 			welded = !welded
 			after_weld(welded)
-			user.visible_message(span_notice("[user] [welded ? "welds shut" : "unwelded"] \the [src].") ,
-							span_notice("You [welded ? "weld" : "unwelded"] \the [src] with \the [W].") ,
+			user.visible_message(span_notice("[user] [welded ? "welds shut" : "unwelded"] \the [src]."),
+							span_notice("You [welded ? "weld" : "unwelded"] \the [src] with \the [W]."),
 							span_hear("You hear welding."))
 			update_appearance()
 	else if(W.tool_behaviour == TOOL_WRENCH && anchorable)
@@ -310,15 +310,15 @@
 			return
 		set_anchored(!anchored)
 		W.play_tool_sound(src, 75)
-		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.") , \
-						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.") , \
+		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
+						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
 						span_hear("You hear a ratchet."))
 
 	else if(W.tool_behaviour == TOOL_DECONSTRUCT && locked)
-		user.visible_message(span_warning("[user] is cutting \the [src] open !") , span_notice("You begin to cut \the [src] open."))
+		user.visible_message(span_warning("[user] is cutting \the [src] open !"), span_notice("You begin to cut \the [src] open."))
 		if (W.use_tool(src, user, 10 SECONDS, volume=0))
 			bust_open()
-			user.visible_message(span_warning("[user] busted \the [src] open !") ,  span_notice("You finish cutting \the [src] open."))
+			user.visible_message(span_warning("[user] busted \the [src] open !"),  span_notice("You finish cutting \the [src] open."))
 
 	else if(user.a_intent != INTENT_HARM)
 		var/item_is_id = W.GetID()
@@ -355,14 +355,14 @@
 	var/list/targets = list(O, src)
 	add_fingerprint(user)
 	user.visible_message(
-		span_warning("[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].") , \
-		span_warning("You [actuallyismob ? "try to ":""]stuff [O] into [src].") , \
+		span_warning("[user] [actuallyismob ? "tries to ":""]stuff [O] into [src]."), \
+		span_warning("You [actuallyismob ? "try to ":""]stuff [O] into [src]."), \
 		span_hear("You hear clanging."))
 	if(actuallyismob)
 		if(do_after(user, 40, targets))
 			user.visible_message(
-				span_notice("[user] stuffs [O] into [src].") , \
-				span_notice("You stuff [O] into [src].") , \
+				span_notice("[user] stuffs [O] into [src]."), \
+				span_notice("You stuff [O] into [src]."), \
 				span_hear("You hear a loud metal bang."))
 			var/mob/living/L = O
 			if(!issilicon(L))
@@ -449,14 +449,14 @@
 	//okay, so the closet is either welded or locked... resist!!!
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message(span_warning("[src] begins to shake violently!") , \
-		span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)") , \
+	user.visible_message(span_warning("[src] begins to shake violently!"), \
+		span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
 		span_hear("You hear banging from [src]."))
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || opened || (!locked && !welded))
 			return
 		//we check after a while whether there is a point of resisting anymore and whether the user is capable of resisting
-		user.visible_message(span_danger("[user] successfully broke out of [src]!") ,
+		user.visible_message(span_danger("[user] successfully broke out of [src]!"),
 							span_notice("You successfully break out of [src]!"))
 		bust_open()
 	else
@@ -484,7 +484,7 @@
 			if(iscarbon(user))
 				add_fingerprint(user)
 			locked = !locked
-			user.visible_message(span_notice("[user] [locked ? null : "un"]locks [src].") ,
+			user.visible_message(span_notice("[user] [locked ? null : "un"]locks [src]."),
 							span_notice("You [locked ? null : "un"]lock [src]."))
 			update_appearance()
 		else if(!silent)
@@ -495,8 +495,8 @@
 /obj/structure/closet/emag_act(mob/user)
 	if(secure && !broken)
 		if(user)
-			user.visible_message(span_warning("Sparks fly from [src]!") ,
-							span_warning("You scramble [src]'s lock, breaking it open!") ,
+			user.visible_message(span_warning("Sparks fly from [src]!"),
+							span_warning("You scramble [src]'s lock, breaking it open!"),
 							span_hear("You hear a faint electrical spark."))
 		playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		broken = TRUE

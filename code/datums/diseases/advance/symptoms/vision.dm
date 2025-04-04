@@ -67,7 +67,7 @@ Bonus
 							to_chat(M, span_userdanger("You go blind!"))
 							eyes.applyOrganDamage(eyes.maxHealth)
 					else
-						M.visible_message(span_warning("[M]'s eyes fall out of their sockets!") , span_userdanger("Your eyes fall out of their sockets!"))
+						M.visible_message(span_warning("[M]'s eyes fall out of their sockets!"), span_userdanger("Your eyes fall out of their sockets!"))
 						eyes.Remove(M)
 						eyes.forceMove(get_turf(M))
 				else

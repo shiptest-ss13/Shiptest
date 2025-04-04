@@ -260,10 +260,10 @@
 		var/num_hits = targets_hit[target]
 		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 		if(num_hits > 1)
-			target.visible_message(span_danger("[target] is hit by [num_hits] [proj_name]s!") , null, null, COMBAT_MESSAGE_RANGE, target)
+			target.visible_message(span_danger("[target] is hit by [num_hits] [proj_name]s!"), null, null, COMBAT_MESSAGE_RANGE, target)
 			to_chat(target, span_userdanger("You're hit by [num_hits] [proj_name]s!"))
 		else
-			target.visible_message(span_danger("[target] is hit by a [proj_name]!") , null, null, COMBAT_MESSAGE_RANGE, target)
+			target.visible_message(span_danger("[target] is hit by a [proj_name]!"), null, null, COMBAT_MESSAGE_RANGE, target)
 			to_chat(target, span_userdanger("You're hit by \a [proj_name]\s!"))
 
 	for(var/M in purple_hearts)

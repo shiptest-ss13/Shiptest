@@ -248,7 +248,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	update_icon("alienh_pounce")
 	if(hit_atom == target && target.stat!=DEAD)
 		target.Paralyze(100)
-		target.visible_message(span_danger("[target] flails around wildly.") ,span_userdanger("[name] pounces on you!"))
+		target.visible_message(span_danger("[target] flails around wildly."),span_userdanger("[name] pounces on you!"))
 
 /datum/hallucination/xeno_attack
 	//Xeno crawls from nearby vent,jumps at you, and goes back in
@@ -338,7 +338,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			target.adjustStaminaLoss(40)
 			step_away(target, bubblegum)
 			shake_camera(target, 4, 3)
-			target.visible_message(span_warning("[target] jumps backwards, falling on the ground!") ,span_userdanger("[bubblegum] slams into you!"))
+			target.visible_message(span_warning("[target] jumps backwards, falling on the ground!"),span_userdanger("[bubblegum] slams into you!"))
 		sleep(2)
 	sleep(30)
 	qdel(src)
@@ -770,26 +770,26 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
 
-	message_pool.Add(span_notice("You hear something squeezing through the pipes...") ,
-		span_warning("You hear something squelching in the ground beneath you...") ,
-		span_warning("You feel something inside your [pick("arm","leg","back","head")].") ,
-		span_warning("You feel [pick("angry","empty","dry","woozy")].") ,
-		span_warning("Your stomach rumbles.") ,
-		span_warning("Your head hurts.") ,
-		span_warning("You hear a faint buzz in your head.") ,
-		span_warning("The edges of your vision go dark.") ,
-		span_warning("You feel your head slowly splitting in two.") ,
-		span_warning("Your fingers feel like they're melting off.") ,
-		span_warning("You can't count how many fingers you have... there are too many.") ,
+	message_pool.Add(span_notice("You hear something squeezing through the pipes..."),
+		span_warning("You hear something squelching in the ground beneath you..."),
+		span_warning("You feel something inside your [pick("arm","leg","back","head")]."),
+		span_warning("You feel [pick("angry","empty","dry","woozy")]."),
+		span_warning("Your stomach rumbles."),
+		span_warning("Your head hurts."),
+		span_warning("You hear a faint buzz in your head."),
+		span_warning("The edges of your vision go dark."),
+		span_warning("You feel your head slowly splitting in two."),
+		span_warning("Your fingers feel like they're melting off."),
+		span_warning("You can't count how many fingers you have... there are too many."),
 		span_warning("You start sinking into the ground beneath you."))
 	if(prob(20))
-		message_pool.Add(span_warning("Behind you.") ,\
-			span_warning("You hear a faint laughter approaching you.") ,
-			span_warning("Something darts across your vision.") ,
-			span_warning("You hear skittering on the ceiling.") ,
-			span_warning("There's something squirming around inside of you.") ,
-			span_warning("It has found you.") ,
-			span_warning("You hear skittering on the ceiling.") ,
+		message_pool.Add(span_warning("Behind you."),\
+			span_warning("You hear a faint laughter approaching you."),
+			span_warning("Something darts across your vision."),
+			span_warning("You hear skittering on the ceiling."),
+			span_warning("There's something squirming around inside of you."),
+			span_warning("It has found you."),
+			span_warning("You hear skittering on the ceiling."),
 			span_warning("You see an inhumanly tall silhouette moving in the distance."))
 	if(prob(10))
 		message_pool.Add("[pick_list_replacements(HAL_LINES_FILE, "advice")]")

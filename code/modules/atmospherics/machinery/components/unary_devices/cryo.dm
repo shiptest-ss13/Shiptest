@@ -270,13 +270,13 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/container_resist_act(mob/living/user)
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message(span_notice("You see [user] kicking against the glass of [src]!") , \
-		span_notice("You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)") , \
+	user.visible_message(span_notice("You see [user] kicking against the glass of [src]!"), \
+		span_notice("You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)"), \
 		span_hear("You hear a thump from [src]."))
 	if(do_after(user, breakout_time, target = src, hidden = TRUE))
 		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
-		user.visible_message(span_warning("[user] successfully broke out of [src]!") , \
+		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
 			span_notice("You successfully break out of [src]!"))
 		open_machine()
 
@@ -298,7 +298,7 @@
 		if(L.incapacitated())
 			close_machine(target)
 	else
-		user.visible_message(span_notice("[user] starts shoving [target] inside [src].") , span_notice("You start shoving [target] inside [src]."))
+		user.visible_message(span_notice("[user] starts shoving [target] inside [src]."), span_notice("You start shoving [target] inside [src]."))
 		if (do_after(user, 25, target = target))
 			close_machine(target)
 
@@ -311,7 +311,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 		beaker = I
-		user.visible_message(span_notice("[user] places [I] in [src].") , \
+		user.visible_message(span_notice("[user] places [I] in [src]."), \
 							span_notice("You place [I] in [src]."))
 		var/reagentlist = pretty_string_from_reagent_list(I.reagents.reagent_list)
 		log_game("[key_name(user)] added an [I] to cryo containing [reagentlist]")

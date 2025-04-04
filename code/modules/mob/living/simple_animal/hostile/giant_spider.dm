@@ -317,7 +317,7 @@
 			to_chat(src, span_warning("You're already spinning a cocoon!"))
 			return //we're already doing this, don't cancel out or anything
 		busy = SPINNING_COCOON
-		visible_message(span_notice("[src] begins to secrete a sticky substance around [cocoon_target].") ,span_notice("You begin wrapping [cocoon_target] into a cocoon."))
+		visible_message(span_notice("[src] begins to secrete a sticky substance around [cocoon_target]."),span_notice("You begin wrapping [cocoon_target] into a cocoon."))
 		stop_automated_movement = TRUE
 		walk(src,0)
 		if(do_after(src, 50, target = cocoon_target))
@@ -329,7 +329,7 @@
 						consumed_mobs[REF(L)] = TRUE
 						fed++
 						lay_eggs.UpdateButtonIcon(TRUE)
-						visible_message(span_danger("[src] sticks a proboscis into [L] and sucks a viscous substance out.") ,span_notice("You suck the nutriment out of [L], feeding you enough to lay a cluster of eggs."))
+						visible_message(span_danger("[src] sticks a proboscis into [L] and sucks a viscous substance out."),span_notice("You suck the nutriment out of [L], feeding you enough to lay a cluster of eggs."))
 						L.death() //you just ate them, they're dead.
 					else
 						to_chat(src, span_warning("[L] cannot sate your hunger!"))
@@ -367,7 +367,7 @@
 
 	if(S.busy != SPINNING_WEB)
 		S.busy = SPINNING_WEB
-		S.visible_message(span_notice("[S] begins to secrete a sticky substance.") ,span_notice("You begin to lay a web."))
+		S.visible_message(span_notice("[S] begins to secrete a sticky substance."),span_notice("You begin to lay a web."))
 		S.stop_automated_movement = TRUE
 		if(do_after(S, 40, target = T))
 			if(S.busy == SPINNING_WEB && S.loc == T)
@@ -464,7 +464,7 @@
 		to_chat(S, span_warning("You are too hungry to do this!"))
 	else if(S.busy != LAYING_EGGS)
 		S.busy = LAYING_EGGS
-		S.visible_message(span_notice("[S] begins to lay a cluster of eggs.") ,span_notice("You begin to lay a cluster of eggs."))
+		S.visible_message(span_notice("[S] begins to lay a cluster of eggs."),span_notice("You begin to lay a cluster of eggs."))
 		S.stop_automated_movement = TRUE
 		if(do_after(S, 50, target = get_turf(S)))
 			if(S.busy == LAYING_EGGS)

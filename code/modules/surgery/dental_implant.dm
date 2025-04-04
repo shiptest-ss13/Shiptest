@@ -11,8 +11,8 @@
 	experience_given = (MEDICAL_SKILL_MEDIUM*0.4) //quick to do
 
 /datum/surgery_step/insert_pill/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to wedge [tool] in [target]'s [parse_zone(target_zone)]...") ,
-			span_notice("[user] begins to wedge \the [tool] in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to wedge [tool] in [target]'s [parse_zone(target_zone)]..."),
+			span_notice("[user] begins to wedge \the [tool] in [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] begins to wedge something in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/insert_pill/success(mob/user, mob/living/carbon/target, target_zone, obj/item/reagent_containers/pill/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -26,8 +26,8 @@
 	P.target = tool
 	P.Grant(target)	//The pill never actually goes in an inventory slot, so the owner doesn't inherit actions from it
 
-	display_results(user, target, span_notice("You wedge [tool] into [target]'s [parse_zone(target_zone)].") ,
-			span_notice("[user] wedges \the [tool] into [target]'s [parse_zone(target_zone)]!") ,
+	display_results(user, target, span_notice("You wedge [tool] into [target]'s [parse_zone(target_zone)]."),
+			span_notice("[user] wedges \the [tool] into [target]'s [parse_zone(target_zone)]!"),
 			span_notice("[user] wedges something into [target]'s [parse_zone(target_zone)]!"))
 	return ..()
 

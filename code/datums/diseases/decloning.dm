@@ -55,5 +55,5 @@
 				affected_mob.adjustCloneLoss(5)
 				affected_mob.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, 170)
 			if(affected_mob.cloneloss >= 100)
-				affected_mob.visible_message(span_danger("[affected_mob] skin turns to dust!") , "<span class'boldwarning'>Your skin turns to dust!</span>")
+				affected_mob.visible_message(span_danger("[affected_mob] skin turns to dust!"), "<span class'boldwarning'>Your skin turns to dust!</span>")
 				affected_mob.dust()

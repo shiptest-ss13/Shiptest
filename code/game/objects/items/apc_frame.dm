@@ -34,8 +34,8 @@
 /obj/item/wallframe/proc/attach(turf/on_wall, mob/user)
 	if(result_path)
 		playsound(src.loc, 'sound/machines/click.ogg', 75, TRUE)
-		user.visible_message(span_notice("[user.name] attaches [src] to the wall.") ,
-			span_notice("You attach [src] to the wall.") ,
+		user.visible_message(span_notice("[user.name] attaches [src] to the wall."),
+			span_notice("You attach [src] to the wall."),
 			span_hear("You hear clicking."))
 		var/ndir = get_dir(on_wall,user)
 		if(inverse)

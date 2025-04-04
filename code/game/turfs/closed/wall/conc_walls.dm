@@ -105,8 +105,8 @@
 	M.do_attack_animation(src)
 	switch(M.damtype)
 		if(BRUTE)
-			M.visible_message(span_danger("[M.name] hits [src]!") , \
-							span_danger("You hit [src]!") , null, COMBAT_MESSAGE_RANGE)
+			M.visible_message(span_danger("[M.name] hits [src]!"), \
+							span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
 			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 			alter_integrity(M.force * -20)

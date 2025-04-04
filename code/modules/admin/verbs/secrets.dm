@@ -354,7 +354,7 @@
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Mass Braindamage"))
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
-				to_chat(H, span_boldannounce("You suddenly feel stupid.") , confidential = TRUE)
+				to_chat(H, span_boldannounce("You suddenly feel stupid."), confidential = TRUE)
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60, 80)
 			message_admins("[key_name_admin(holder)] made everybody brain damaged")
 		if("floorlava")
@@ -400,7 +400,7 @@
 						if(droptype == "Yes")
 							ADD_TRAIT(I, TRAIT_NODROP, ADMIN_TRAIT)
 				else
-					to_chat(H, span_warning("You're not kawaii enough for this!") , confidential = TRUE)
+					to_chat(H, span_warning("You're not kawaii enough for this!"), confidential = TRUE)
 		if("masspurrbation")
 			if(!is_funmin)
 				return

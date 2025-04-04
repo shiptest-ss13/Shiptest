@@ -225,7 +225,7 @@ Doesn't work on other aliens/AI.*/
 		return FALSE
 
 	var/modifiers = params2list(params)
-	user.visible_message(span_danger("[user] spits neurotoxin!") , span_alertalien("You spit neurotoxin."))
+	user.visible_message(span_danger("[user] spits neurotoxin!"), span_alertalien("You spit neurotoxin."))
 	var/obj/projectile/bullet/neurotoxin/A = new /obj/projectile/bullet/neurotoxin(user.loc)
 
 	A.preparePixelProjectile(target, user, modifiers)

@@ -126,10 +126,10 @@
 	. = ..()
 	if(over_object != usr || !Adjacent(usr) || !foldabletype || !ishuman(usr) || has_buckled_mobs())
 		return FALSE
-	usr.visible_message(span_notice("[usr] begins to collapse [src].") , span_notice("You begin to collapse [src]."))
+	usr.visible_message(span_notice("[usr] begins to collapse [src]."), span_notice("You begin to collapse [src]."))
 	if(!do_after(usr, 3 SECONDS, target = src))
 		return FALSE
-	usr.visible_message(span_notice("[usr] collapses [src].") , span_notice("You collapse [src]."))
+	usr.visible_message(span_notice("[usr] collapses [src]."), span_notice("You collapse [src]."))
 	var/obj/vehicle/ridden/wheelchair/wheelchair_folded = new foldabletype(get_turf(src))
 	usr.put_in_hands(wheelchair_folded)
 	qdel(src)
@@ -138,10 +138,10 @@
 	deploy_wheelchair(user, user.loc)
 
 /obj/item/wheelchair/proc/deploy_wheelchair(mob/user, atom/location)
-	usr.visible_message(span_notice("[usr] begins to unfold [src].") , span_notice("You begin to unfold [src]."))
+	usr.visible_message(span_notice("[usr] begins to unfold [src]."), span_notice("You begin to unfold [src]."))
 	if(!do_after(usr, 3 SECONDS, target = src))
 		return FALSE
-	usr.visible_message(span_notice("[usr] deploys [src].") , span_notice("You deploy [src]."))
+	usr.visible_message(span_notice("[usr] deploys [src]."), span_notice("You deploy [src]."))
 	var/obj/vehicle/ridden/wheelchair/wheelchair_unfolded = new unfolded_type(location)
 	wheelchair_unfolded.add_fingerprint(user)
 	qdel(src)

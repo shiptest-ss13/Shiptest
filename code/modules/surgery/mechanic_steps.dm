@@ -11,8 +11,8 @@
 	success_sound = 'sound/items/screwdriver2.ogg'
 
 /datum/surgery_step/mechanic_open/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to unscrew the shell of [target]'s [parse_zone(target_zone)]...") ,
-			span_notice("[user] begins to unscrew the shell of [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to unscrew the shell of [target]'s [parse_zone(target_zone)]..."),
+			span_notice("[user] begins to unscrew the shell of [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] begins to unscrew the shell of [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/mechanic_open/tool_check(mob/user, obj/item/tool)
@@ -35,8 +35,8 @@
 	success_sound = 'sound/items/screwdriver2.ogg'
 
 /datum/surgery_step/mechanic_close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to screw the shell of [target]'s [parse_zone(target_zone)]...") ,
-			span_notice("[user] begins to screw the shell of [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to screw the shell of [target]'s [parse_zone(target_zone)]..."),
+			span_notice("[user] begins to screw the shell of [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] begins to screw the shell of [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/mechanic_close/tool_check(mob/user, obj/item/tool)
@@ -58,8 +58,8 @@
 	failure_sound = 'sound/machines/defib_zap.ogg'
 
 /datum/surgery_step/prepare_electronics/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to prepare electronics in [target]'s [parse_zone(target_zone)]...") ,
-			span_notice("[user] begins to prepare electronics in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to prepare electronics in [target]'s [parse_zone(target_zone)]..."),
+			span_notice("[user] begins to prepare electronics in [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] begins to prepare electronics in [target]'s [parse_zone(target_zone)]."))
 
 //unwrench
@@ -72,8 +72,8 @@
 	preop_sound = 'sound/items/ratchet.ogg'
 
 /datum/surgery_step/mechanic_unwrench/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to unwrench some bolts in [target]'s [parse_zone(target_zone)]...") ,
-			span_notice("[user] begins to unwrench some bolts in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to unwrench some bolts in [target]'s [parse_zone(target_zone)]..."),
+			span_notice("[user] begins to unwrench some bolts in [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] begins to unwrench some bolts in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/mechanic_unwrench/tool_check(mob/user, obj/item/tool)
@@ -91,8 +91,8 @@
 	preop_sound = 'sound/items/ratchet.ogg'
 
 /datum/surgery_step/mechanic_wrench/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to wrench some bolts in [target]'s [parse_zone(target_zone)]...") ,
-			span_notice("[user] begins to wrench some bolts in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to wrench some bolts in [target]'s [parse_zone(target_zone)]..."),
+			span_notice("[user] begins to wrench some bolts in [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] begins to wrench some bolts in [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/mechanic_wrench/tool_check(mob/user, obj/item/tool)
@@ -109,8 +109,8 @@
 	success_sound = 'sound/machines/doorclick.ogg'
 
 /datum/surgery_step/open_hatch/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to open the hatch holders in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to open the hatch holders in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to open the hatch holders in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to open the hatch holders in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to open the hatch holders in [target]'s [parse_zone(target_zone)]."))
 
 //close hatch
@@ -123,8 +123,8 @@
 	success_sound = 'sound/items/ratchet.ogg'
 
 /datum/surgery_step/close_hatch/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to close the hatch holders in [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to close the hatch holders in [target]'s [parse_zone(target_zone)].") ,
+	display_results(user, target, span_notice("You begin to close the hatch holders in [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to close the hatch holders in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] begins to close the hatch holders in [target]'s [parse_zone(target_zone)]."))
 
 //manipulate organs (metal edition)
@@ -149,14 +149,14 @@
 	success_sound = 'sound/machines/doorclick.ogg'
 
 /datum/surgery_step/prosthesis_removal/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You begin to unseat [target]'s [parse_zone(target_zone)]...") ,
-		span_notice("[user] begins to unseat [target]'s [parse_zone(target_zone)]!") ,
+	display_results(user, target, span_notice("You begin to unseat [target]'s [parse_zone(target_zone)]..."),
+		span_notice("[user] begins to unseat [target]'s [parse_zone(target_zone)]!"),
 		span_notice("[user] begins to unseat [target]'s [parse_zone(target_zone)]!"))
 
 /datum/surgery_step/prosthesis_removal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/L = target
-	display_results(user, target, span_notice("You detach [L]'s [parse_zone(target_zone)].") ,
-		span_notice("[user] detaches [L]'s [parse_zone(target_zone)]!") ,
+	display_results(user, target, span_notice("You detach [L]'s [parse_zone(target_zone)]."),
+		span_notice("[user] detaches [L]'s [parse_zone(target_zone)]!"),
 		span_notice("[user] detaches [L]'s [parse_zone(target_zone)]!"))
 	if(surgery.operated_bodypart)
 		var/obj/item/bodypart/target_limb = surgery.operated_bodypart
@@ -184,8 +184,8 @@
 	if(target_zone != BP.body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
 		to_chat(user, span_warning("[tool] isn't the right type for [parse_zone(target_zone)]."))
 		return -1
-	display_results(user, target, span_notice("You begin to replace [target]'s [parse_zone(target_zone)] with [tool]...") ,
-		span_notice("[user] begins to replace [target]'s [parse_zone(target_zone)] with [tool].") ,
+	display_results(user, target, span_notice("You begin to replace [target]'s [parse_zone(target_zone)] with [tool]..."),
+		span_notice("[user] begins to replace [target]'s [parse_zone(target_zone)] with [tool]."),
 		span_notice("[user] begins to replace [target]'s [parse_zone(target_zone)]."))
 
 /datum/surgery_step/add_prosthetic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -196,11 +196,11 @@
 		return FALSE
 	var/obj/item/bodypart/L = tool
 	if(!L.attach_limb(target))
-		display_results(user, target, span_warning("You fail to replace [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!") ,
-			span_warning("[user] fails to replace [target]'s [parse_zone(target_zone)]!") ,
+		display_results(user, target, span_warning("You fail to replace [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!"),
+			span_warning("[user] fails to replace [target]'s [parse_zone(target_zone)]!"),
 			span_warning("[user] fails to replace [target]'s [parse_zone(target_zone)]!"))
 		return FALSE
-	display_results(user, target, span_notice("You succeed in replacing [target]'s [parse_zone(target_zone)].") ,
-		span_notice("[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!") ,
+	display_results(user, target, span_notice("You succeed in replacing [target]'s [parse_zone(target_zone)]."),
+		span_notice("[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!"),
 		span_notice("[user] successfully replaces [target]'s [parse_zone(target_zone)]!"))
 	return ..()

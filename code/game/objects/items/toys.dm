@@ -98,7 +98,7 @@
 			T = get_turf(AT)
 		else
 			T = get_turf(src)
-		T.visible_message(span_danger("[src] bursts!") ,span_hear("You hear a pop and a splash."))
+		T.visible_message(span_danger("[src] bursts!"),span_hear("You hear a pop and a splash."))
 		reagents.expose(T)
 		for(var/atom/A in T)
 			reagents.expose(A)
@@ -231,14 +231,14 @@
 		return
 	src.add_fingerprint(user)
 	if (src.bullets < 1)
-		user.show_message(span_warning("*click*") , MSG_AUDIBLE)
+		user.show_message(span_warning("*click*"), MSG_AUDIBLE)
 		playsound(src, 'sound/weapons/gun/revolver/dry_fire.ogg', 30, TRUE)
 		return
 	playsound(user, 'sound/weapons/gun/revolver/shot.ogg', 100, TRUE)
 	src.bullets--
 	user.visible_message(
-		span_danger("[user] fires [src] at [target]!") ,
-		span_danger("You fire [src] at [target]!") ,
+		span_danger("[user] fires [src] at [target]!"),
+		span_danger("You fire [src] at [target]!"),
 		span_hear("You hear a gunshot!") 
 	)
 
@@ -445,7 +445,7 @@
 	s.set_up(n, c, src)
 	s.start()
 	new ash_type(loc)
-	visible_message(span_warning("[src] explodes!") ,
+	visible_message(span_warning("[src] explodes!"),
 		span_hear("You hear a snap!"))
 	playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 	qdel(src)
@@ -513,8 +513,8 @@
 
 /obj/item/toy/talking/proc/activation_message(mob/user)
 	user.visible_message(
-		span_notice("[user] pulls the string on \the [src].") ,
-		span_notice("You pull the string on \the [src].") ,
+		span_notice("[user] pulls the string on \the [src]."),
+		span_notice("You pull the string on \the [src]."),
 		span_notice("You hear a string being pulled."))
 
 /obj/item/toy/talking/proc/generate_messages()
@@ -630,7 +630,7 @@
 	src.cards -= choice
 	H.pickup(user)
 	user.put_in_hands(H)
-	user.visible_message(span_notice("[user] draws a card from the deck.") , span_notice("You draw a card from the deck."))
+	user.visible_message(span_notice("[user] draws a card from the deck."), span_notice("You draw a card from the deck."))
 	update_appearance()
 	return H
 
@@ -650,7 +650,7 @@
 	if(cooldown < world.time - 50)
 		cards = shuffle(cards)
 		playsound(src, 'sound/items/cardshuffle.ogg', 50, TRUE)
-		user.visible_message(span_notice("[user] shuffles the deck.") , span_notice("You shuffle the deck."))
+		user.visible_message(span_notice("[user] shuffles the deck."), span_notice("You shuffle the deck."))
 		cooldown = world.time
 
 /obj/item/toy/cards/deck/attackby(obj/item/I, mob/living/user, params)
@@ -661,7 +661,7 @@
 				to_chat(user, span_warning("The card is stuck to your hand, you can't add it to the deck!"))
 				return
 			cards += SC.cardname
-			user.visible_message(span_notice("[user] adds a card to the bottom of the deck.") ,span_notice("You add the card to the bottom of the deck."))
+			user.visible_message(span_notice("[user] adds a card to the bottom of the deck."),span_notice("You add the card to the bottom of the deck."))
 			qdel(SC)
 		else
 			to_chat(user, span_warning("You can't mix cards from other decks!"))
@@ -673,7 +673,7 @@
 				to_chat(user, span_warning("The hand of cards is stuck to your hand, you can't add it to the deck!"))
 				return
 			cards += CH.currenthand
-			user.visible_message(span_notice("[user] puts [user.p_their()] hand of cards in the deck.") , span_notice("You put the hand of cards in the deck."))
+			user.visible_message(span_notice("[user] puts [user.p_their()] hand of cards in the deck."), span_notice("You put the hand of cards in the deck."))
 			qdel(CH)
 		else
 			to_chat(user, span_warning("You can't mix cards from other decks!"))
@@ -745,7 +745,7 @@
 			C.apply_card_vars(C,O)
 			C.pickup(cardUser)
 			cardUser.put_in_hands(C)
-			cardUser.visible_message(span_notice("[cardUser] draws a card from [cardUser.p_their()] hand.") , span_notice("You take the [C.cardname] from your hand."))
+			cardUser.visible_message(span_notice("[cardUser] draws a card from [cardUser.p_their()] hand."), span_notice("You take the [C.cardname] from your hand."))
 
 			interact(cardUser)
 			update_sprite()
@@ -765,7 +765,7 @@
 	if(istype(C))
 		if(C.parentdeck == src.parentdeck)
 			src.currenthand += C.cardname
-			user.visible_message(span_notice("[user] adds a card to [user.p_their()] hand.") , span_notice("You add the [C.cardname] to your hand."))
+			user.visible_message(span_notice("[user] adds a card to [user.p_their()] hand."), span_notice("You add the [C.cardname] to your hand."))
 			qdel(C)
 			interact(user)
 			update_sprite(src)
@@ -814,7 +814,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/cardUser = user
 		if(cardUser.is_holding(src))
-			cardUser.visible_message(span_notice("[cardUser] checks [cardUser.p_their()] card.") , span_notice("The card reads: [cardname]."))
+			cardUser.visible_message(span_notice("[cardUser] checks [cardUser.p_their()] card."), span_notice("The card reads: [cardname]."))
 		else
 			. += span_warning("You need to have the card in your hand to check it!") 
 
@@ -861,7 +861,7 @@
 		var/obj/item/toy/cards/cardhand/H = I
 		if(H.parentdeck == parentdeck)
 			H.currenthand += cardname
-			user.visible_message(span_notice("[user] adds a card to [user.p_their()] hand.") , span_notice("You add the [cardname] to your hand."))
+			user.visible_message(span_notice("[user] adds a card to [user.p_their()] hand."), span_notice("You add the [cardname] to your hand."))
 			qdel(src)
 			H.interact(user)
 			H.update_sprite()
@@ -924,7 +924,7 @@
 /obj/item/toy/nuke/attack_self(mob/user)
 	if (obj_flags & EMAGGED && cooldown < world.time)
 		cooldown = world.time + 600
-		user.visible_message(span_hear("You hear the click of a button.") , span_notice("You activate [src], it plays a loud noise!"))
+		user.visible_message(span_hear("You hear the click of a button."), span_notice("You activate [src], it plays a loud noise!"))
 		sleep(5)
 		playsound(src, 'sound/machines/alarm.ogg', 20, FALSE)
 		sleep(140)
@@ -933,7 +933,7 @@
 		qdel(src)
 	else if (cooldown < world.time)
 		cooldown = world.time + 600 //1 minute
-		user.visible_message(span_warning("[user] presses a button on [src].") , span_notice("You activate [src], it plays a loud noise!") , span_hear("You hear the click of a button."))
+		user.visible_message(span_warning("[user] presses a button on [src]."), span_notice("You activate [src], it plays a loud noise!"), span_hear("You hear the click of a button."))
 		sleep(5)
 		icon_state = "nuketoy"
 		playsound(src, 'sound/machines/alarm.ogg', 20, FALSE)
@@ -996,7 +996,7 @@
 /obj/item/toy/redbutton/attack_self(mob/user)
 	if (cooldown < world.time)
 		cooldown = (world.time + 300) // Sets cooldown at 30 seconds
-		user.visible_message(span_warning("[user] presses the big red button.") , span_notice("You press the button, it plays a loud noise!") , span_hear("The button clicks loudly."))
+		user.visible_message(span_warning("[user] presses the big red button."), span_notice("You press the button, it plays a loud noise!"), span_hear("The button clicks loudly."))
 		playsound(src, 'sound/effects/explosionfar.ogg', 50, FALSE)
 		for(var/mob/M in urange(10, src)) // Checks range
 			if(!M.stat && !isAI(M)) // Checks to make sure whoever's getting shaken is alive/not the AI
@@ -1059,7 +1059,7 @@
 /obj/item/toy/clockwork_watch/attack_self(mob/user)
 	if (cooldown < world.time)
 		cooldown = world.time + 1800 //3 minutes
-		user.visible_message(span_warning("[user] rotates a cogwheel on [src].") , span_notice("You rotate a cogwheel on [src], it plays a loud noise!") , span_hear("You hear cogwheels turning."))
+		user.visible_message(span_warning("[user] rotates a cogwheel on [src]."), span_notice("You rotate a cogwheel on [src], it plays a loud noise!"), span_hear("You hear cogwheels turning."))
 		playsound(src, 'sound/magic/clockwork/ark_activation.ogg', 50, FALSE)
 	else
 		to_chat(user, span_alert("The cogwheels are already turning!"))

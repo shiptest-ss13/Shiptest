@@ -26,7 +26,7 @@
 		if(!user.transferItemToLoc(P, src))
 			return
 		contained_id = P
-		user.visible_message(span_notice("[user] inserts an ID card into the console.") , \
+		user.visible_message(span_notice("[user] inserts an ID card into the console."), \
 							span_notice("You insert the ID card into the console."))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		updateUsrDialog()
@@ -40,7 +40,7 @@
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(contained_id)
 		contained_id = null
-		user.visible_message(span_notice("[user] gets an ID card from the console.") , \
+		user.visible_message(span_notice("[user] gets an ID card from the console."), \
 							span_notice("You get the ID card from the console."))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		updateUsrDialog()

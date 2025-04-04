@@ -418,7 +418,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 	if(H.ears)
 		if(H.dropItemToGround(H.ears))
-			H.visible_message(span_danger("[src] tears [H.ears] off of [H]'s ear!") , \
+			H.visible_message(span_danger("[src] tears [H.ears] off of [H]'s ear!"), \
 							span_userdanger("[src] tears [H.ears] off of your ear!")) //coz, you know, they go in the ear holes
 
 	to_chat(src, span_warning("You slither up [H] and begin probing at their ear canal..."))
@@ -507,7 +507,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 	if(!hiding)
 		layer = LATTICE_LAYER
-		visible_message(span_name("[src] scurries to the ground!") , \
+		visible_message(span_name("[src] scurries to the ground!"), \
 						span_noticealien("You are now hiding."))
 		hiding = TRUE
 	else
@@ -886,11 +886,11 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 				var/mob/living/carbon/human/H = hit_atom
 				if(H.is_mouth_covered(head_only = 1))
 					to_chat(src, span_userdanger("You smash against [H]'s [H.head]!"))
-					H.visible_message(span_danger("[src] smashes against [H]'s [H.head]!") , \
+					H.visible_message(span_danger("[src] smashes against [H]'s [H.head]!"), \
 					span_userdanger("[src] smashes against your [H.head]!"))
 					blocked = TRUE
 			if(!blocked)
-				L.visible_message(span_danger("[src] pounces on [L]!") , span_userdanger("[src] pounces on you!"))
+				L.visible_message(span_danger("[src] pounces on [L]!"), span_userdanger("[src] pounces on you!"))
 				L.Paralyze(50)
 				sleep(2)//Runtime prevention (infinite bump() calls on hulks)
 				step_towards(src,L)
@@ -902,7 +902,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 			toggle_leap()
 		else if(hit_atom.density && !hit_atom.CanPass(src))
-			visible_message(span_danger("[src] smashes into [hit_atom]!") , span_borer("[src] smashes into [hit_atom]!"))
+			visible_message(span_danger("[src] smashes into [hit_atom]!"), span_borer("[src] smashes into [hit_atom]!"))
 			Paralyze(40, 1, 1)
 
 		if(leaping)

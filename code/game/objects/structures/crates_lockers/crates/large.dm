@@ -25,8 +25,8 @@
 			tear_manifest(user)
 
 		user.visible_message(
-			span_notice("[user] pries \the [src] open.") , \
-			span_notice("You pry open \the [src].") , \
+			span_notice("[user] pries \the [src] open."), \
+			span_notice("You pry open \the [src]."), \
 			span_hear("You hear splitting wood."))
 		playsound(src.loc, 'sound/weapons/slashmiss.ogg', 75, TRUE)
 

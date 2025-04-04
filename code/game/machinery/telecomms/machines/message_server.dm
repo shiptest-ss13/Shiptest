@@ -41,7 +41,7 @@
 		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
 			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return
-		user.visible_message(span_notice("[user] clicks [I] into [src]!") , \
+		user.visible_message(span_notice("[user] clicks [I] into [src]!"), \
 		span_notice("You press the device into [src], and it clicks into place. The tapes begin spinning again."))
 		playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 		stored = I

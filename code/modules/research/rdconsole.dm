@@ -132,7 +132,7 @@ Nothing else in the console has ID requirements.
 				return
 			else
 				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message(span_notice("[user] inserts [E] into a slot on the [src]!") , span_notice("You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!"))
+				visible_message(span_notice("[user] inserts [E] into a slot on the [src]!"), span_notice("You insert [E] into a slot on the [src], producting [E.research] points from the plant's genetic makeup!"))
 				stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = E.research))
 				plant_already_researched[E.type] = TRUE
 				qdel(D)
@@ -149,7 +149,7 @@ Nothing else in the console has ID requirements.
 			return
 
 		playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-		visible_message(span_notice("[user] inserts [anomaly] into a slot on the [src]!") , span_notice("You insert [anomaly] into a slot on the [src], producting [anomaly.research] points!"))
+		visible_message(span_notice("[user] inserts [anomaly] into a slot on the [src]!"), span_notice("You insert [anomaly] into a slot on the [src], producting [anomaly.research] points!"))
 		stored_research.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = anomaly.research))
 		qdel(anomaly)
 		return

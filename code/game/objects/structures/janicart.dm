@@ -86,7 +86,7 @@
 	else if(mybag)
 		mybag.attackby(I, user)
 	else if(I.tool_behaviour == TOOL_CROWBAR)
-		user.visible_message(span_notice("[user] begins to empty the contents of [src].") , span_notice("You begin to empty the contents of [src]..."))
+		user.visible_message(span_notice("[user] begins to empty the contents of [src]."), span_notice("You begin to empty the contents of [src]..."))
 		if(I.use_tool(src, user, 30))
 			to_chat(usr, span_notice("You empty the contents of [src]'s bucket onto the floor."))
 			reagents.expose(src.loc)

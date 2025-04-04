@@ -39,8 +39,8 @@
 		if("harm")
 			M.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 			if (prob(75))
-				visible_message(span_danger("[M] punches [name]!") , \
-								span_userdanger("[M] punches you!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , COMBAT_MESSAGE_RANGE, M)
+				visible_message(span_danger("[M] punches [name]!"), \
+								span_userdanger("[M] punches you!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, M)
 				to_chat(M, span_danger("You punch [name]!"))
 
 				playsound(loc, "punch", 25, TRUE, -1)
@@ -49,8 +49,8 @@
 					damage = rand(10, 15)
 					if(AmountUnconscious() < 100 && health > 0)
 						Unconscious(rand(200, 300))
-						visible_message(span_danger("[M] knocks [name] out!") , \
-										span_userdanger("[M] knocks you out!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , 5, M)
+						visible_message(span_danger("[M] knocks [name] out!"), \
+										span_userdanger("[M] knocks you out!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), 5, M)
 						to_chat(M, span_danger("You knock [name] out!"))
 				var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
 				if(!affecting)
@@ -60,8 +60,8 @@
 
 			else
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, TRUE, -1)
-				visible_message(span_danger("[M]'s punch misses [name]!") , \
-								span_danger("You avoid [M]'s punch!") , span_hear("You hear a swoosh!") , COMBAT_MESSAGE_RANGE, M)
+				visible_message(span_danger("[M]'s punch misses [name]!"), \
+								span_danger("You avoid [M]'s punch!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, M)
 				to_chat(M, span_warning("Your punch misses [name]!"))
 		if("disarm")
 			if(stat < UNCONSCIOUS)
@@ -75,12 +75,12 @@
 				var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 				if(AmountUnconscious() < 300)
 					Unconscious(rand(200, 300))
-					visible_message(span_danger("[M] wounds [name]!") , \
-									span_userdanger("[M] wounds you!") , span_hear("You hear a sickening sound of flesh hitting flesh!") , COMBAT_MESSAGE_RANGE, M)
+					visible_message(span_danger("[M] wounds [name]!"), \
+									span_userdanger("[M] wounds you!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, M)
 					to_chat(M, span_danger("You wound [name]!"))
 				else
-					visible_message(span_danger("[M] slashes [name]!") , \
-									span_userdanger("[M] slashes you!") , span_hear("You hear a sickening sound of a slice!") , COMBAT_MESSAGE_RANGE, M)
+					visible_message(span_danger("[M] slashes [name]!"), \
+									span_userdanger("[M] slashes you!"), span_hear("You hear a sickening sound of a slice!"), COMBAT_MESSAGE_RANGE, M)
 					to_chat(M, span_danger("You slash [name]!"))
 
 				var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
@@ -93,8 +93,8 @@
 
 			else
 				playsound(loc, 'sound/weapons/slashmiss.ogg', 25, TRUE, -1)
-				visible_message(span_danger("[M]'s lunge misses [name]!") , \
-								span_danger("You avoid [M]'s lunge!") , span_hear("You hear a swoosh!") , COMBAT_MESSAGE_RANGE, M)
+				visible_message(span_danger("[M]'s lunge misses [name]!"), \
+								span_danger("You avoid [M]'s lunge!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, M)
 				to_chat(M, span_warning("Your lunge misses [name]!"))
 
 		if (M.a_intent == INTENT_DISARM)
@@ -102,14 +102,14 @@
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
 			if(prob(95))
 				Paralyze(20)
-				visible_message(span_danger("[M] tackles [name] down!") , \
-								span_userdanger("[M] tackles you down!") , span_hear("You hear aggressive shuffling followed by a loud thud!") , COMBAT_MESSAGE_RANGE, M)
+				visible_message(span_danger("[M] tackles [name] down!"), \
+								span_userdanger("[M] tackles you down!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, M)
 				to_chat(M, span_danger("You tackle [name] down!"))
 			else
 				I = get_active_held_item()
 				if(dropItemToGround(I))
-					visible_message(span_danger("[M] disarms [name]!") , \
-									span_userdanger("[M] disarms you!") , span_hear("You hear aggressive shuffling!") , COMBAT_MESSAGE_RANGE, M)
+					visible_message(span_danger("[M] disarms [name]!"), \
+									span_userdanger("[M] disarms you!"), span_hear("You hear aggressive shuffling!"), COMBAT_MESSAGE_RANGE, M)
 					to_chat(M, span_danger("You disarm [name]!"))
 				else
 					I = null

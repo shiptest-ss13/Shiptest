@@ -657,7 +657,7 @@
 				if(elligible_organs.len)
 					var/obj/item/organ/O = pick(elligible_organs)
 					O.Remove(src)
-					visible_message(span_danger("[src] vomits up their [O.name]!") , span_danger("You vomit up your [O.name]")) //no "vomit up your the heart"
+					visible_message(span_danger("[src] vomits up their [O.name]!"), span_danger("You vomit up your [O.name]")) //no "vomit up your the heart"
 					O.forceMove(drop_location())
 			if(9 to 10)
 				ForceContractDisease(new/datum/disease/gastrolosis())
@@ -682,7 +682,7 @@
 				else
 					set_species(/datum/species/dullahan)
 			if(4)
-				visible_message(span_warning("[src]'s skin melts off!") , span_boldwarning("Your skin melts off!"))
+				visible_message(span_warning("[src]'s skin melts off!"), span_boldwarning("Your skin melts off!"))
 				spawn_gibs()
 				set_species(/datum/species/skeleton)
 				if(prob(90))
@@ -701,5 +701,5 @@
 			return
 		eyes.Remove(src)
 		qdel(eyes)
-		visible_message(span_notice("[src] looks up and their eyes melt away!") , "<span class>='userdanger'>I understand now.</span>")
+		visible_message(span_notice("[src] looks up and their eyes melt away!"), "<span class>='userdanger'>I understand now.</span>")
 		addtimer(CALLBACK(src, PROC_REF(adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 20)
