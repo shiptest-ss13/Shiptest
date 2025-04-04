@@ -15,7 +15,7 @@
 			log_test("Testing [ruin_name]")
 			
 			var/datum/overmap/dynamic/dummy_overmap = new(null, FALSE)
-			for(var/mission_type in used_ruin.ruin_mission_types)
+			for(var/mission_type in ruin.ruin_mission_types)
 				var/datum/mission/ruin/ruin_mission = new mission_type(dummy_overmap, 1 + length(dummy_overmap.dynamic_missions))
 				dummy_overmap.dynamic_missions += ruin_mission
 				ruin_mission.start_mission()
