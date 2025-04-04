@@ -150,6 +150,9 @@
 
 	spawn_mission_details(planet)
 
+	if(!length(bound_atoms))
+		WARNING("Somehow [src] ran on_planet_load and has no bound atoms still, this likely means its failed to find any valid pois to spawn? Contact Fallcon.")
+
 /datum/mission/proc/spawn_mission_details(datum/overmap/dynamic/planet)
 	return
 
