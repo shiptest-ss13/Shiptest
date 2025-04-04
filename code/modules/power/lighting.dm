@@ -89,7 +89,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct, 32)
 		else
 			. += "The casing has no power cell for backup power."
 	else
-		. += span_danger("This casing doesn't support power cells for backup power.") 
+		. += span_danger("This casing doesn't support power cells for backup power.")
 
 /obj/structure/light_construct/attack_hand(mob/user)
 	if(cell)

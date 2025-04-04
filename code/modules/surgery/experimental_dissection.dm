@@ -1,5 +1,5 @@
 #define MAX_DISSECTION_REWARD 2000
-#define EXPDIS_FAIL_MSG span_notice("You dissect [target], but do not find anything particularly interesting.") 
+#define EXPDIS_FAIL_MSG span_notice("You dissect [target], but do not find anything particularly interesting.")
 #define PUBLIC_TECHWEB_GAIN 0.6 //how many research points go directly into the main pool
 #define PRIVATE_TECHWEB_GAIN (1 - PUBLIC_TECHWEB_GAIN) //how many research points go directly into the main pool
 

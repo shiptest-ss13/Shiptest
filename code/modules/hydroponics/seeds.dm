@@ -86,11 +86,11 @@
 
 /obj/item/seeds/examine(mob/user)
 	. = ..()
-	. += span_notice("Use a pen on it to rename it or change its description.") 
+	. += span_notice("Use a pen on it to rename it or change its description.")
 	if(reagents_add && user.can_see_reagents())
-		. += span_notice("- Plant Reagents -") 
+		. += span_notice("- Plant Reagents -")
 		for(var/datum/plant_gene/reagent/gene in genes)
-			. += span_notice("- [gene.get_name()] -") 
+			. += span_notice("- [gene.get_name()] -")
 
 /obj/item/seeds/proc/Copy()
 	var/obj/item/seeds/S = new type(null, 1)

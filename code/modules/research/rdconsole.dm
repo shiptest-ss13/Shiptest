@@ -220,9 +220,9 @@ Nothing else in the console has ID requirements.
 	. += ..()
 	if(in_range(user, src) || isobserver(user))
 		if (t_disk)
-			. += span_notice("[t_disk.name] is loaded, Ctrl-Click to remove.") 
+			. += span_notice("[t_disk.name] is loaded, Ctrl-Click to remove.")
 		if (d_disk)
-			. += span_notice("[d_disk.name] is loaded, Alt-Click to remove.") 
+			. += span_notice("[d_disk.name] is loaded, Alt-Click to remove.")
 
 /obj/machinery/computer/rdconsole/proc/research_node(id, mob/user)
 	if(!stored_research.available_nodes[id] || stored_research.researched_nodes[id])
@@ -388,7 +388,7 @@ Nothing else in the console has ID requirements.
 			var/t = linked_lathe.check_mat(D, M)
 			temp_material += " | "
 			if (t < 1)
-				temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]") 
+				temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]")
 			else
 				temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 			c = min(c,t)
@@ -441,7 +441,7 @@ Nothing else in the console has ID requirements.
 			var/t = linked_lathe.check_mat(D, M)
 			temp_material += " | "
 			if (t < 1)
-				temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]") 
+				temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]")
 			else
 				temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 			c = min(c,t)
@@ -675,14 +675,14 @@ Nothing else in the console has ID requirements.
 
 			l += "<div class='statusDisplay'>[RDSCREEN_NOBREAK]"
 			if (stored_research.researched_nodes[N.id])  // already researched
-				l += span_linkoff("[N.display_name]") 
+				l += span_linkoff("[N.display_name]")
 				l += "This node has already been researched."
 			else if(!length(worth))  // reveal only
 				if (stored_research.hidden_nodes[N.id])
 					l += "<A href='?src=[REF(src)];deconstruct=[N.id]'>[N.display_name]</A>"
 					l += "This node will be revealed."
 				else
-					l += span_linkoff("[N.display_name]") 
+					l += span_linkoff("[N.display_name]")
 					l += "This node has already been revealed."
 			else  // boost by the difference
 				var/list/differences = list()
@@ -696,7 +696,7 @@ Nothing else in the console has ID requirements.
 					l += "<A href='?src=[REF(src)];deconstruct=[N.id]'>[N.display_name]</A>"
 					l += "This node will be boosted with the following:<BR>[techweb_point_display_generic(differences)]"
 				else
-					l += span_linkoff("[N.display_name]") 
+					l += span_linkoff("[N.display_name]")
 					l += "This node has already been boosted.</span>"
 			l += "</div>[RDSCREEN_NOBREAK]"
 
@@ -706,7 +706,7 @@ Nothing else in the console has ID requirements.
 			anything = TRUE
 			l += "<div class='statusDisplay'>[RDSCREEN_NOBREAK]"
 			if (stored_research.deconstructed_items[linked_destroy.loaded_item.type])
-				l += span_linkoff("Point Deconstruction") 
+				l += span_linkoff("Point Deconstruction")
 				l += "This item's points have already been claimed."
 			else
 				l += "<A href='?src=[REF(src)];deconstruct=[RESEARCH_MATERIAL_RECLAMATION_ID]'>Point Deconstruction</A>"
@@ -791,7 +791,7 @@ Nothing else in the console has ID requirements.
 		l += "<br>[node.description]"
 	else
 		if(stored_research.researched_nodes[node.id])
-			l += span_linkoff("Researched") 
+			l += span_linkoff("Researched")
 		else if(stored_research.available_nodes[node.id])
 			if(stored_research.can_afford(node.get_price(stored_research)))
 				l += "<BR><A href='?src=[REF(src)];research_node=[node.id]'>[node.price_display(stored_research)]</A>"

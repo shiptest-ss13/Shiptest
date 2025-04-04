@@ -327,10 +327,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		else
 			. += "The cover is closed."
 
-	. += span_notice("Alt-Click the APC to [ locked ? "unlock" : "lock"] the interface.") 
+	. += span_notice("Alt-Click the APC to [ locked ? "unlock" : "lock"] the interface.")
 
 	if(issilicon(user))
-		. += span_notice("Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].") 
+		. += span_notice("Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].")
 
 /obj/machinery/power/apc/examine_more(mob/user)
 	. = ..()

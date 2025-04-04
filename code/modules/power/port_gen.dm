@@ -125,11 +125,11 @@
 
 /obj/machinery/power/port_gen/pacman/examine(mob/user)
 	. = ..()
-	. += span_notice("The generator has [sheets] units of [sheet_name] fuel left, producing [DisplayPower(power_gen)] per cycle.") 
+	. += span_notice("The generator has [sheets] units of [sheet_name] fuel left, producing [DisplayPower(power_gen)] per cycle.")
 	if(anchored)
-		. += span_notice("It is anchored to the ground.") 
+		. += span_notice("It is anchored to the ground.")
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Fuel efficiency increased by <b>[(consumption*100)-100]%</b>.") 
+		. += span_notice("The status display reads: Fuel efficiency increased by <b>[(consumption*100)-100]%</b>.")
 
 /obj/machinery/power/port_gen/pacman/HasFuel()
 	if(sheets >= 1 / (time_per_sheet / power_output) - sheet_left)

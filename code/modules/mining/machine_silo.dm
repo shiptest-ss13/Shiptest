@@ -87,11 +87,11 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 			if (sheets >= 1)
 				ui += "<a href='?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</a>"
 			else
-				ui += span_linkoff("Eject") 
+				ui += span_linkoff("Eject")
 			if (sheets >= 20)
 				ui += "<a href='?src=[REF(src)];ejectsheet=[ref];eject_amt=20'>20x</a>"
 			else
-				ui += span_linkoff("20x") 
+				ui += span_linkoff("20x")
 			ui += "<b>[mat.name]</b>: [sheets] sheets<br>"
 			any = TRUE
 	if(!any)
@@ -116,7 +116,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 	if(num_pages > 1)
 		for(var/i in 1 to num_pages)
 			if(i == page)
-				ui += span_linkoff("[i]") 
+				ui += span_linkoff("[i]")
 			else
 				ui += "<a href='?src=[REF(src)];page=[i]'>[i]</a>"
 
@@ -189,7 +189,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 
 /obj/machinery/ore_silo/examine(mob/user)
 	. = ..()
-	. += span_notice("[src] can be linked to techfabs, circuit printers and protolathes with a multitool.") 
+	. += span_notice("[src] can be linked to techfabs, circuit printers and protolathes with a multitool.")
 
 /obj/machinery/ore_silo/on_object_saved(depth = 0)
 	if(depth >= 10)

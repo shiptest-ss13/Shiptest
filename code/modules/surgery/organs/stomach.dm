@@ -10,10 +10,10 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = span_info("Your stomach flashes with pain before subsiding. Food doesn't seem like a good idea right now.") 
-	high_threshold_passed = span_warning("Your stomach flares up with constant pain- you can hardly stomach the idea of food right now!") 
-	high_threshold_cleared = span_info("The pain in your stomach dies down for now, but food still seems unappealing.") 
-	low_threshold_cleared = span_info("The last bouts of pain in your stomach have died out.") 
+	low_threshold_passed = span_info("Your stomach flashes with pain before subsiding. Food doesn't seem like a good idea right now.")
+	high_threshold_passed = span_warning("Your stomach flares up with constant pain- you can hardly stomach the idea of food right now!")
+	high_threshold_cleared = span_info("The pain in your stomach dies down for now, but food still seems unappealing.")
+	low_threshold_cleared = span_info("The last bouts of pain in your stomach have died out.")
 
 	var/disgust_metabolism = 1
 

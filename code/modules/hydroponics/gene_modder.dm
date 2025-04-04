@@ -130,7 +130,7 @@
 				dat += "<span class='highlight'>[target.get_name()]</span> gene from \the <span class='highlight'>[seed]</span>?<br>"
 			if("extract")
 				dat += "<span class='highlight'>[target.get_name()]</span> gene from \the <span class='highlight'>[seed]</span>?<br>"
-				dat += span_bad("The sample will be destroyed in process!") 
+				dat += span_bad("The sample will be destroyed in process!")
 				if(istype(target, /datum/plant_gene/core))
 					var/datum/plant_gene/core/gene = target
 					if(istype(target, /datum/plant_gene/core/potency))
@@ -452,5 +452,5 @@
 /obj/item/disk/plantgene/examine(mob/user)
 	. = ..()
 	if(gene && (istype(gene, /datum/plant_gene/core/potency)))
-		. += span_notice("Percent is relative to potency, not maximum volume of the plant.") 
+		. += span_notice("Percent is relative to potency, not maximum volume of the plant.")
 	. += "The write-protect tab is set to [src.read_only ? "protected" : "unprotected"]."

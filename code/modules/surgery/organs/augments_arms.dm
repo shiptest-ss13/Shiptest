@@ -57,7 +57,7 @@
 
 /obj/item/organ/cyberimp/arm/examine(mob/user)
 	. = ..()
-	. += span_info("[src] is assembled in the [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm configuration. You can use a screwdriver to reassemble it.") 
+	. += span_info("[src] is assembled in the [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm configuration. You can use a screwdriver to reassemble it.")
 
 /obj/item/organ/cyberimp/arm/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -139,7 +139,7 @@
 		for(var/i in 1 to hand_items.len) //Can't just use *in* here.
 			var/I = hand_items[i]
 			if(!owner.dropItemToGround(I))
-				failure_message += span_warning("Your [I] interferes with [src]!") 
+				failure_message += span_warning("Your [I] interferes with [src]!")
 				continue
 			to_chat(owner, span_notice("You drop [I] to activate [src]!") )
 			success = owner.put_in_hand(active_item, owner.get_empty_held_index_for_side(side))

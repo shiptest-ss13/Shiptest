@@ -118,7 +118,7 @@
 /obj/machinery/fax/examine()
 	. = ..()
 	if(jammed)
-		. += span_notice("Its output port is jammed and needs cleaning.") 
+		. += span_notice("Its output port is jammed and needs cleaning.")
 
 
 /obj/machinery/fax/process(seconds_per_tick)

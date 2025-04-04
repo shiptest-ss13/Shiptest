@@ -11,11 +11,11 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = span_warning("You feel short of breath.") 
-	high_threshold_passed = span_warning("You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.") 
-	now_fixed = span_warning("Your lungs seem to once again be able to hold air.") 
-	low_threshold_cleared = span_info("You can breathe normally again.") 
-	high_threshold_cleared = span_info("The constriction around your chest loosens as your breathing calms down.") 
+	low_threshold_passed = span_warning("You feel short of breath.")
+	high_threshold_passed = span_warning("You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.")
+	now_fixed = span_warning("Your lungs seem to once again be able to hold air.")
+	low_threshold_cleared = span_info("You can breathe normally again.")
+	high_threshold_cleared = span_info("The constriction around your chest loosens as your breathing calms down.")
 
 
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/medicine/salbutamol = 5)

@@ -110,7 +110,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 	var/charge_max = 10 //recharge time in seconds if charge_type = "recharge" or starting charges if charge_type = "charges"
 	var/charge_counter = 0 //can only cast spells if it equals recharge, ++ each second if charge_type = "recharge" or -- each cast if charge_type = "charges"
-	var/still_recharging_msg = span_notice("The spell is still recharging.") 
+	var/still_recharging_msg = span_notice("The spell is still recharging.")
 	var/recharging = TRUE
 
 	var/holder_var_type = "bruteloss" //only used if charge_type equals to "holder_var"
@@ -263,7 +263,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	. = ..()
 	START_PROCESSING(SSfastprocess, src)
 
-	still_recharging_msg = span_warning("[name] is still recharging!") 
+	still_recharging_msg = span_warning("[name] is still recharging!")
 	charge_counter = charge_max
 
 /obj/effect/proc_holder/spell/Destroy()

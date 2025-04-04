@@ -12,12 +12,12 @@
 	high_threshold = 0.3 * STANDARD_ORGAN_THRESHOLD	//threshold at 30
 	low_threshold = 0.2 * STANDARD_ORGAN_THRESHOLD	//threshold at 20
 
-	low_threshold_passed = span_info("Distant objects become somewhat less tangible.") 
-	high_threshold_passed = span_info("Everything starts to look a lot less clear.") 
-	now_failing = span_warning("Darkness envelopes you, as your eyes go blind!") 
-	now_fixed = span_info("Color and shapes are once again perceivable.") 
-	high_threshold_cleared = span_info("Your vision functions passably once more.") 
-	low_threshold_cleared = span_info("Your vision is cleared of any ailment.") 
+	low_threshold_passed = span_info("Distant objects become somewhat less tangible.")
+	high_threshold_passed = span_info("Everything starts to look a lot less clear.")
+	now_failing = span_warning("Darkness envelopes you, as your eyes go blind!")
+	now_fixed = span_info("Color and shapes are once again perceivable.")
+	high_threshold_cleared = span_info("Your vision functions passably once more.")
+	low_threshold_cleared = span_info("Your vision is cleared of any ailment.")
 
 	var/sight_flags = 0
 	var/see_in_dark = 2

@@ -120,12 +120,12 @@
 	. = ..()
 	if(organ_flags & ORGAN_FAILING)
 		if(status == ORGAN_ROBOTIC)
-			. += span_warning("[src] seems to be broken.") 
+			. += span_warning("[src] seems to be broken.")
 			return
-		. += span_warning("[src] has decayed for too long, and has turned a sickly color. It probably won't work without repairs.") 
+		. += span_warning("[src] has decayed for too long, and has turned a sickly color. It probably won't work without repairs.")
 		return
 	if(damage > high_threshold)
-		. += span_warning("[src] is starting to look discolored.") 
+		. += span_warning("[src] is starting to look discolored.")
 
 /obj/item/organ/Initialize()
 	. = ..()

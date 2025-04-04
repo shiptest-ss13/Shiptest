@@ -47,7 +47,7 @@
 
 /obj/item/research_notes/examine(mob/user)
 	. = ..()
-	. += span_notice("It is worth [value] research points.") 
+	. += span_notice("It is worth [value] research points.")
 
 /// proc that changes name and icon depending on value
 /obj/item/research_notes/proc/change_vol()

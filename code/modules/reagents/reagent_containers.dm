@@ -65,20 +65,20 @@
 /obj/item/reagent_containers/examine(mob/user)
 	. = ..()
 	if(istype(src, /obj/item/reagent_containers/glass))
-		. += span_notice("Currently transferring [amount_per_transfer_from_this]u with each pour.") 
+		. += span_notice("Currently transferring [amount_per_transfer_from_this]u with each pour.")
 	if(istype(src, /obj/item/reagent_containers/dropper))
-		. += span_notice("Currently squeezing out [amount_per_transfer_from_this]u drops.") 
+		. += span_notice("Currently squeezing out [amount_per_transfer_from_this]u drops.")
 	if(istype(src, /obj/item/reagent_containers/syringe))
-		. += span_notice("Currently injecting [amount_per_transfer_from_this]u at a time.") 
+		. += span_notice("Currently injecting [amount_per_transfer_from_this]u at a time.")
 	if(!can_have_cap)
 		return
 	else
 		if(cap_lost)
-			. += span_notice("The cap seems to be missing.") 
+			. += span_notice("The cap seems to be missing.")
 		else if(cap_on)
-			. += span_notice("The cap is firmly on to prevent spilling. Alt-click to remove the cap.") 
+			. += span_notice("The cap is firmly on to prevent spilling. Alt-click to remove the cap.")
 		else
-			. += span_notice("The cap has been taken off. Alt-click to put a cap on.") 
+			. += span_notice("The cap has been taken off. Alt-click to put a cap on.")
 
 /obj/item/reagent_containers/is_injectable(mob/user, allowmobs = TRUE)
 	if(can_have_cap && cap_on)

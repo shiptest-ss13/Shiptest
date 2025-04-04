@@ -69,27 +69,27 @@
 	. = ..()
 	if(IS_ORGANIC_LIMB(src))
 		if(!brain)
-			. += span_info("The brain has been removed from [src].") 
+			. += span_info("The brain has been removed from [src].")
 		else if(brainmob?.health <= HEALTH_THRESHOLD_DEAD)
-			. += span_info("It's leaking some kind of... clear fluid? The brain inside must be in pretty bad shape.") 
+			. += span_info("It's leaking some kind of... clear fluid? The brain inside must be in pretty bad shape.")
 		else if(brainmob)
 			if(brainmob.get_ghost(FALSE, TRUE))
-				. += span_info("Its muscles are twitching slightly... It seems to have some life still in it.") 
+				. += span_info("Its muscles are twitching slightly... It seems to have some life still in it.")
 			else
-				. += span_info("It's completely lifeless. Perhaps there'll be a chance for them later.") 
+				. += span_info("It's completely lifeless. Perhaps there'll be a chance for them later.")
 		else if(brain?.decoy_override)
-			. += span_info("It's completely lifeless. Perhaps there'll be a chance for them later.") 
+			. += span_info("It's completely lifeless. Perhaps there'll be a chance for them later.")
 		else
-			. += span_info("It's completely lifeless.") 
+			. += span_info("It's completely lifeless.")
 
 		if(!eyes)
-			. += span_info("[real_name]'s eyes have been removed.") 
+			. += span_info("[real_name]'s eyes have been removed.")
 
 		if(!ears)
-			. += span_info("[real_name]'s ears have been removed.") 
+			. += span_info("[real_name]'s ears have been removed.")
 
 		if(!tongue)
-			. += span_info("[real_name]'s tongue has been removed.") 
+			. += span_info("[real_name]'s tongue has been removed.")
 
 
 /obj/item/bodypart/head/can_dismember()
