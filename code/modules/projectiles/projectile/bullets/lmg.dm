@@ -50,6 +50,17 @@
 	var/anti_armour_damage = 50
 	ricochet_chance = 0 // Superheated tungsten rod - I'd like to imagine it's impossible for it to ricochet
 	speed = 0.4 // Railgun, go fast
+/obj/projectile/bullet/p50/penetrator/sabot/on_hit(atom/target, blocked = FALSE)
+	..()
+	if(pierces >= 3)
+		qdel_self
+	if(ismecha(target))
+		var/obj/mecha/M = target
+		M.take_damage(anti_armour_damage)
+	if(issilicon(target))
+		var/mob/living/silicon/S = target
+		S.take_overall_damage(anti_armour_damage*0.5, anti_armour_damage*0.5)
+	return BULLET_ACT_HIT
 
 // Turrets
 

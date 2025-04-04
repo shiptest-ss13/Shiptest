@@ -366,7 +366,7 @@
 	name = "\improper PR-05 Mounted Plasma Railgun"
 	desc = "A plasma railgun manufactured by Cybersun after taking inspiration from a NT-funded project that, unfortunately, lost said funding just before the ICW took place. Shoots super-heated high-density iron-tungsten rods at ludicrous speeds."
 	icon_state = "mecha_railgun"
-	equip_cooldown = 25
+	equip_cooldown = 45
 	projectile = /obj/projectile/bullet/p50/penetrator/sabot
 	projectiles = 15
 	projectiles_cache = 30
