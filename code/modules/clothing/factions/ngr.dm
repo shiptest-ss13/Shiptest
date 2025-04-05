@@ -141,7 +141,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ngr
 	jetpack = null
 	greyscale_colors = list("#33353a", "#d9ad82", "#8c1a34")
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/plasmaman/ngr
 	name = "NGR phorid envirosuit helmet"
