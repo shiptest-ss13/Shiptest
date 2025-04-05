@@ -86,7 +86,7 @@
 	author = "HIS455 \"ICW-era Preservation\""
 	mission_limit = 1
 	setpiece_item = /obj/item/folder/documents/syndicate/red
-	vales = 1500
+	value = 1500
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"
