@@ -180,7 +180,7 @@
 
 /datum/supply_pack/gun/cm357
 	name = "CM-357 Automag Pistol Crate"
-	desc = "Contains a magazine-fed .357 handgun, produced for the CMM-BARD division and available for requisition in small numbers to the Minutemen."
+	desc = "Contains a magazine-fed .357 handgun, produced for the CLIP-BARD division and available for requisition in small numbers to the Minutemen."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/pistol/cm357)
 	faction = /datum/faction/clip
@@ -269,6 +269,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/cm357
+	name = "ECM-6 Beam Gun Crate"
+	desc = "Contains an ECM-6 Beam Gun, a modernization of the ECM-1 manufactured by Clover Photonics for Minutemen use."
+	cost = 1500
+	contains = list(/obj/item/storage/guncase/ecm6)
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/energy/disabler
 	name = "Disabler Crate"
 	desc = "One stamina-draining disabler weapon, for use in non-lethal pacification."
@@ -352,7 +361,7 @@
 
 /datum/supply_pack/gun/cm15
 	name = "CM-15 Shotgun Crate"
-	desc = "A combat shotgun produced by Lanchester Arms Co. for the Colonial Minuteman and CMM-BARD for use in CQC operations. Chambered in 12ga and equipped with 8-round box magazines."
+	desc = "A combat shotgun produced by Lanchester Arms Co. for the Colonial Minuteman and CLIP-BARD for use in CQC operations. Chambered in 12ga and equipped with 8-round box magazines."
 	contains = list(/obj/item/storage/guncase/cm15)
 	cost = 4000
 	crate_name = "shotgun crate"
