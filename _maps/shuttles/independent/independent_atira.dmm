@@ -30,11 +30,29 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
+"dn" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/turf/open/floor/mineral/titanium/tiled,
+/area/space)
+"dQ" = (
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/space)
 "ed" = (
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi';
 	dir = 4
 	},
+/area/space)
+"fb" = (
+/obj/structure/table/chem,
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/tiled,
 /area/space)
 "ff" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/warning{
@@ -43,8 +61,21 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/warning,
 /turf/open/floor/mineral/titanium/tiled,
 /area/space)
+"fJ" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/turf/open/floor/mineral/titanium/tiled,
+/area/space)
 "fT" = (
 /obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
+"hd" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /turf/open/space/basic,
@@ -52,6 +83,13 @@
 "hy" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /turf/open/floor/plating,
+/area/space)
+"hV" = (
+/obj/machinery/chem_heater,
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/tiled,
 /area/space)
 "ia" = (
 /obj/machinery/atmospherics/components/binary/valve/layer4,
@@ -69,6 +107,14 @@
 /obj/structure/chair/sofa/blue/left/directional/south,
 /turf/open/space/basic,
 /area/space)
+"iO" = (
+/obj/structure/table/chem,
+/obj/structure/sink/chem{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/turf/open/floor/mineral/titanium/tiled,
+/area/space)
 "iS" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -78,6 +124,9 @@
 "jf" = (
 /turf/closed/wall/mineral/titanium,
 /turf/closed/wall/mineral/titanium,
+/area/space)
+"js" = (
+/turf/open/floor/plasteel/showroomfloor,
 /area/space)
 "kr" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4,
@@ -90,6 +139,14 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
+"ne" = (
+/obj/machinery/power/shuttle/engine/electric,
+/turf/open/floor/engine/hull/interior,
+/area/space)
+"nl" = (
+/obj/machinery/chem_master,
+/turf/open/floor/mineral/titanium/tiled,
+/area/space)
 "nq" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -98,6 +155,14 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
+/area/space)
+"ov" = (
+/obj/item/radio/intercom/wideband/directional/north,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/computer/cargo,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "pv" = (
 /obj/effect/turf_decal/techfloor,
@@ -111,6 +176,7 @@
 /obj/structure/railing/thin{
 	dir = 10
 	},
+/obj/machinery/power/smes,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/space)
 "rx" = (
@@ -127,6 +193,14 @@
 "ss" = (
 /turf/open/floor/plasteel/tech,
 /area/space)
+"tl" = (
+/obj/effect/turf_decal/techfloor,
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 1;
+	icon_state = "computer-right"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/space)
 "tq" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/crate_shelf{
@@ -135,11 +209,13 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
 "tZ" = (
-/obj/item/radio/intercom/wideband/directional/north,
-/obj/effect/turf_decal/techfloor{
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/turf/open/space/basic,
 /area/space)
 "uk" = (
 /obj/machinery/atmospherics/components/binary/valve/layer4,
@@ -164,10 +240,27 @@
 	},
 /turf/open/floor/mineral/titanium,
 /area/space)
+"yg" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/space)
+"zh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/space/basic,
+/area/space)
 "AV" = (
 /obj/machinery/atmospherics/components/binary/circulator/cold{
 	dir = 1
 	},
+/turf/open/space/basic,
+/area/space)
+"CO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/space/basic,
 /area/space)
 "Di" = (
@@ -182,8 +275,23 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/engine/hull/interior,
 /area/space)
+"DG" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space)
+"DI" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/space)
 "Eq" = (
-/obj/effect/turf_decal/techfloor,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/space)
 "EE" = (
@@ -219,6 +327,15 @@
 "HD" = (
 /turf/closed/wall/mineral/titanium,
 /area/space)
+"HW" = (
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/turf/open/space/basic,
+/area/space)
 "Ic" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
 	dir = 9
@@ -241,9 +358,14 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"Lb" = (
+/obj/structure/table/chem,
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/turf/open/floor/mineral/titanium/tiled,
+/area/space)
 "Lw" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible,
-/turf/open/space/basic,
+/obj/machinery/atmospherics/components/binary/valve,
+/turf/open/floor/plating,
 /area/space)
 "LG" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden{
@@ -274,16 +396,16 @@
 /area/space)
 "Nb" = (
 /obj/effect/turf_decal/borderfloor/full,
-/obj/effect/turf_decal/borderfloor/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/borderfloor/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/borderfloor/corner{
-	dir = 4
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
 	},
 /turf/open/floor/mineral/titanium,
+/area/space)
+"Nk" = (
+/obj/effect/turf_decal/techfloor/corner{
+	dir = 1
+	},
+/turf/open/space/basic,
 /area/space)
 "OQ" = (
 /turf/open/floor/plasteel/tech/techmaint,
@@ -344,8 +466,20 @@
 /obj/structure/grille,
 /turf/open/floor/engine/hull/interior,
 /area/space)
+"WO" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 6
+	},
+/turf/open/floor/mineral/titanium/tiled,
+/area/space)
 "Xh" = (
 /turf/closed/wall/mineral/plastitanium,
+/area/space)
+"XQ" = (
+/obj/machinery/computer/operating{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/tiled,
 /area/space)
 "XY" = (
 /obj/machinery/atmospherics/components/binary/circulator{
@@ -364,6 +498,12 @@
 /turf/open/floor/engine/n2,
 /area/space)
 "Zz" = (
+/turf/open/floor/mineral/titanium/tiled,
+/area/space)
+"ZX" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 10
+	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/space)
 
@@ -430,14 +570,14 @@ ab
 Xh
 cv
 Xh
-ab
-ab
+Eq
+dQ
 Xh
-ab
-ab
+Eq
+dQ
 Xh
 Xh
-cv
+ne
 Xh
 ab
 ab
@@ -449,14 +589,14 @@ ab
 Xh
 cv
 Dj
-ab
-ab
-ab
-ab
-ab
-ab
+DG
+DG
+HW
+DG
+DG
+Nk
 Xh
-ab
+yg
 Xh
 ab
 ab
@@ -464,7 +604,7 @@ ab
 "}
 (6,1,1) = {"
 Xh
-cv
+ne
 Xh
 cv
 WE
@@ -483,7 +623,7 @@ ab
 "}
 (7,1,1) = {"
 Xh
-ab
+yg
 Xh
 Xh
 Xh
@@ -508,8 +648,8 @@ OQ
 OQ
 pG
 ab
-Lw
 ab
+fT
 RN
 ia
 Md
@@ -526,11 +666,11 @@ Xh
 OQ
 OQ
 JC
-ab
-ab
-fT
-sf
-sf
+zh
+CO
+tZ
+Lw
+DI
 Xh
 Xh
 Xh
@@ -547,7 +687,7 @@ OQ
 JC
 ed
 EE
-ab
+hd
 RN
 FZ
 Md
@@ -646,8 +786,8 @@ GY
 ab
 ab
 HD
-ab
-ab
+js
+js
 HD
 ab
 ab
@@ -665,8 +805,8 @@ HD
 ab
 ab
 GY
-ab
-ab
+js
+js
 HD
 ab
 ab
@@ -698,8 +838,8 @@ ab
 ab
 ab
 HD
-Zz
-Zz
+nl
+dn
 Di
 tq
 Wt
@@ -717,13 +857,13 @@ ab
 ab
 ab
 HD
-Zz
-Zz
+hV
+WO
 Di
 tq
 Wt
 Zz
-Zz
+XQ
 HD
 ab
 ab
@@ -755,8 +895,8 @@ ab
 ab
 ab
 HD
-Qc
-Zz
+fb
+ZX
 iS
 Qt
 ff
@@ -774,8 +914,8 @@ ab
 ab
 ab
 HD
-Qc
-Zz
+iO
+fJ
 iS
 Qt
 ff
@@ -794,7 +934,7 @@ HD
 HD
 HD
 Qc
-Qc
+Lb
 MK
 xL
 rY
@@ -809,17 +949,17 @@ ab
 ab
 ab
 ab
+HD
+js
+HD
+HD
+HD
 ab
 HD
 HD
 HD
 HD
-HD
 ab
-HD
-HD
-ab
-HD
 ab
 ab
 "}
@@ -828,17 +968,17 @@ ab
 ab
 ab
 ab
+HD
+js
+GY
+ab
+ab
 ab
 HD
 ab
 ab
-ab
-ab
-ab
-ab
 HD
 ab
-HD
 ab
 ab
 "}
@@ -847,17 +987,17 @@ ab
 ab
 ab
 ab
-ab
+HD
+js
 HD
 ab
 ab
+ab
+GY
+ab
+ab
 HD
 ab
-ab
-ab
-ab
-ab
-HD
 ab
 ab
 "}
@@ -865,8 +1005,6 @@ ab
 ab
 ab
 ab
-ab
-HD
 HD
 HD
 HD
@@ -878,14 +1016,14 @@ HD
 HD
 HD
 HD
+ab
+ab
 ab
 "}
 (28,1,1) = {"
 ab
 ab
 ab
-ab
-ab
 HD
 ab
 ab
@@ -898,13 +1036,13 @@ ss
 ss
 HD
 HD
+ab
+ab
 "}
 (29,1,1) = {"
 ab
 ab
 ab
-ab
-ab
 HD
 ab
 ab
@@ -912,37 +1050,37 @@ HD
 ab
 ab
 ab
-ab
+GY
 uM
 uM
 ss
 HD
+ab
+ab
 "}
 (30,1,1) = {"
 ab
 ab
 ab
-ab
-ab
 HD
 ab
 ab
-ab
+GY
 ab
 ab
 ab
 HD
 uM
 uM
-Eq
+tl
 Wt
+ab
+ab
 "}
 (31,1,1) = {"
 ab
 ab
 ab
-ab
-ab
 HD
 ab
 ab
@@ -951,17 +1089,17 @@ ab
 ab
 ab
 HD
-tZ
+ov
 cq
 pv
 Wt
+ab
+ab
 "}
 (32,1,1) = {"
 ab
 ab
 ab
-ab
-HD
 HD
 HD
 HD
@@ -974,10 +1112,10 @@ HD
 wo
 Wt
 Wt
+ab
+ab
 "}
 (33,1,1) = {"
-ab
-ab
 ab
 ab
 ab
@@ -993,10 +1131,10 @@ HD
 HD
 Wt
 ab
+ab
+ab
 "}
 (34,1,1) = {"
-ab
-ab
 ab
 ab
 ab
@@ -1012,10 +1150,10 @@ Wt
 ab
 ab
 ab
+ab
+ab
 "}
 (35,1,1) = {"
-ab
-ab
 ab
 ab
 ab
@@ -1031,10 +1169,10 @@ Wt
 ab
 ab
 ab
+ab
+ab
 "}
 (36,1,1) = {"
-ab
-ab
 ab
 ab
 ab
@@ -1046,6 +1184,8 @@ Wt
 Wt
 Wt
 Wt
+ab
+ab
 ab
 ab
 ab
