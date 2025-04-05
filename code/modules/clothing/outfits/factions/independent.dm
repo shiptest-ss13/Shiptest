@@ -947,3 +947,23 @@
 	belt = /obj/item/storage/bag/plants
 	suit = /obj/item/clothing/suit/apron/overalls
 	uniform = /obj/item/clothing/under/utility
+
+/datum/outfit/job/independent/colonist
+	name = "Independent - Colonist"
+	jobtype = /datum/job/assistant
+	job_icon = "assistant"
+
+	uniform = /obj/item/clothing/under/utility
+	shoes = /obj/item/clothing/shoes/workboots
+	gloves = /obj/item/clothing/gloves/color/black
+
+/datum/outfit/job/independent/colonist/captain
+	name = "Independent - Colonist Leader"
+	job_icon = "captain"
+	jobtype = /datum/job/captain
+
+	head = /obj/item/clothing/head/soft/utility_olive
+	gloves = /obj/item/clothing/gloves/combat
+	neck = /obj/item/clothing/neck/stripedgreenscarf
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	gloves = /obj/item/clothing/gloves/combat
