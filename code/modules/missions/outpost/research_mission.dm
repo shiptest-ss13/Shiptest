@@ -15,7 +15,7 @@
 	var/num_wanted = 5
 	var/researcher_name
 	///how much is a storm worth to fly through
-	var/storm_value = 200
+	var/storm_value = 300
 
 /datum/mission/outpost/research/New(...)
 	researcher_name = SSmissions.get_researcher_name()
@@ -79,8 +79,8 @@
 	desc = " require data on the behavior of asteroid fields in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 500
-	storm_value = 150
+	value = 1500
+	storm_value = 200
 	weight = 4
 	objective_type = /datum/overmap/event/meteor
 
@@ -89,8 +89,8 @@
 	desc = " require data on the migration patterns of space carp for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 250
-	storm_value = 100
+	value = 88
+	storm_value = 150
 	weight = 4
 	num_wanted = 3
 	objective_type = /datum/overmap/event/meteor/carp
@@ -100,8 +100,8 @@
 	desc = " require data on the density of space dust for updated navcharts. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 250
-	storm_value = 50
+	value = 800
+	storm_value = 150
 	weight = 4
 	objective_type = /datum/overmap/event/meteor/dust
 
