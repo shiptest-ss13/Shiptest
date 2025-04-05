@@ -1,6 +1,10 @@
 /// Management class used to handle successive calls used to generate a list of turfs.
 /datum/map_generator
 
+/// Gets the overmap object this is tied to and do checks before generating
+/datum/map_generator/proc/pre_generation(datum/overmap/our_planet)
+	return
+
 /// Given a list of turfs, asynchronously changes a list of turfs and their areas.
 /// Does not fill them with objects; this should be done with populate_turfs.
 /// This is a wrapper proc for generate_turf(), handling batch processing of turfs.

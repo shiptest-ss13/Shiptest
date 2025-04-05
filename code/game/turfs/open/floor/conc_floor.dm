@@ -32,6 +32,9 @@
 	var/entered_dirs
 	var/exited_dirs
 
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+
 /turf/open/floor/concrete/Initialize()
 	. = ..()
 	if(has_variation)
@@ -230,7 +233,7 @@
 	base_icon_state = "hexacrete"
 	has_variation = FALSE
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_FLOOR_HEXACRETE)
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_FLOOR_PLASTEEL, SMOOTH_GROUP_FLOOR_HEXACRETE)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_HEXACRETE)
 
 	smash_time = 8 SECONDS

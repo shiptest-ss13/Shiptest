@@ -122,6 +122,20 @@
 	'sound/ambience/shore.ogg', 'sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag2.ogg', \
 	'sound/ambience/ambiodd.ogg','sound/ambience/ambinice.ogg')
 
+#define DESERT list( \
+	'sound/ambience/wind/desert0.ogg', \
+	'sound/ambience/wind/desert1.ogg', \
+	'sound/ambience/wind/desert2.ogg', \
+	'sound/ambience/wind/desert3.ogg', \
+	'sound/ambience/wind/desert4.ogg', \
+	'sound/ambience/wind/desert5.ogg',)
+
+#define TUNDRA list( \
+	'sound/ambience/wind/tundra0.ogg', \
+	'sound/ambience/wind/tundra1.ogg', \
+	'sound/ambience/wind/tundra2.ogg', \
+	'sound/ambience/wind/spooky0.ogg', \
+	'sound/ambience/wind/spooky1.ogg')
 
 #define INTERACTION_SOUND_RANGE_MODIFIER -3
 #define EQUIP_SOUND_VOLUME 30

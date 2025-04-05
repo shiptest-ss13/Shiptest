@@ -7,7 +7,7 @@
 	desc = "A basic power cell that holds 1 MJ of energy."
 	id = "basic_cell"
 	build_type = PROTOLATHE | AUTOLATHE |MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/glass = 50)
+	materials = list(/datum/material/iron = 200, /datum/material/lead = 500, /datum/material/glass = 50, /datum/material/copper = 100)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/empty
 	category = list("Misc","Power Designs","Machinery","initial")
@@ -17,7 +17,7 @@
 	desc = "A power cell that holds 10 MJ of energy."
 	id = "high_cell"
 	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/glass = 60)
+	materials = list(/datum/material/iron = 200, /datum/material/lead = 600, /datum/material/glass = 60, /datum/material/copper = 100)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/high/empty
 	category = list("Misc","Power Designs")
@@ -27,7 +27,7 @@
 	desc = "A power cell that holds 20 MJ of energy."
 	id = "super_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/glass = 70)
+	materials = list(/datum/material/iron = 200, /datum/material/lead = 700, /datum/material/glass = 70, /datum/material/copper = 100)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/super/empty
 	category = list("Misc","Power Designs")
@@ -38,7 +38,7 @@
 	desc = "A power cell that holds 30 MJ of energy."
 	id = "hyper_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80)
+	materials = list(/datum/material/iron = 200, /datum/material/sulfur = 1000, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80, /datum/material/copper = 100)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/hyper/empty
 	category = list("Misc","Power Designs")
@@ -49,7 +49,7 @@
 	desc = "A power cell that holds 40 MJ of energy."
 	id = "bluespace_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 800, /datum/material/gold = 120, /datum/material/glass = 160, /datum/material/diamond = 160, /datum/material/titanium = 300, /datum/material/bluespace = 100)
+	materials = list(/datum/material/iron = 300, /datum/material/gold = 120, /datum/material/glass = 160, /datum/material/diamond = 160, /datum/material/titanium = 300, /datum/material/bluespace = 100, /datum/material/silicon = 200, /datum/material/copper = 100)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/bluespace/empty
 	category = list("Misc","Power Designs")
@@ -70,7 +70,7 @@
 	desc = "The NT-75 Electromagnetic Power Inducer can wirelessly induce electric charge in an object, allowing you to recharge power cells without having to remove them."
 	id = "inducer"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1000)
+	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1000, /datum/material/copper = 100, /datum/material/silicon = 300)
 	build_path = /obj/item/inducer/sci
 	category = list("Power Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
