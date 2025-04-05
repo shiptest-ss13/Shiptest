@@ -329,7 +329,7 @@
 	holder.remove_reagent(/datum/reagent/smoke_powder, created_volume*3)
 	var/smoke_radius = round(sqrt(created_volume * 1.5), 1)
 	var/location = get_turf(holder.my_atom)
-	var/datum/effect_system/smoke_spread/chem/S = new
+	var/datum/effect_system/smoke_spread/chem/thin/S = new
 	S.attach(location)
 	playsound(location, 'sound/effects/smoke.ogg', 50, TRUE, -3)
 	if(S)
@@ -344,6 +344,27 @@
 	mob_react = FALSE
 
 /datum/chemical_reaction/smoke_powder_smoke/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	var/smoke_radius = round(sqrt(created_volume / 2), 1)
+	var/datum/effect_system/smoke_spread/chem/thin/S = new
+	S.attach(location)
+	playsound(location, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+	if(S)
+		S.set_up(holder, smoke_radius, location, 0)
+		S.start()
+	if(holder && holder.my_atom)
+		holder.clear_reagents()
+
+/datum/chemical_reaction/dense_smoke_powder
+	results = list(/datum/reagent/dense_smoke_powder = 4)
+	required_reagents = list(/datum/reagent/smoke_powder = 3, /datum/reagent/carbon = 1)
+
+/datum/chemical_reaction/dense_smoke_powder_smoke
+	required_reagents = list(/datum/reagent/dense_smoke_powder = 1)
+	required_temp = 374
+	mob_react = FALSE
+
+/datum/chemical_reaction/dense_smoke_powder_smoke/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	var/smoke_radius = round(sqrt(created_volume / 2), 1)
 	var/datum/effect_system/smoke_spread/chem/S = new
