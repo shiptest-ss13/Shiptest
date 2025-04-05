@@ -99,7 +99,7 @@
 	to_chat(owner, "<B><font size=3 color=red>You are a Labor Division Inspector.</font></B>")
 	to_chat(owner, "You are part of The Galactic Optimum Labor Division, a division of the CLIP Government. Your task: [ert_team.mission.explanation_text]")
 
-/datum/antagonist/ert/minutemen/correspondant
-	name = "C-MM War Correspondant"
-	outfit = /datum/outfit/job/clip/correspondant
+/datum/antagonist/ert/minutemen/correspondent
+	name = "C-MM War Correspondent"
+	outfit = /datum/outfit/job/clip/correspondent
 	role = "Correspondant"
