@@ -20,14 +20,14 @@
 		return FALSE
 	return isipc(target)
 
-/datum/surgery_step/revive/ipc //TODO: make ipcs not auto revive, to make this surgery actually do something.
+/datum/surgery_step/revive/ipc
 	name = "reboot electronics"
 	implements = list(
 		/obj/item/inducer = 100,
 		/obj/item/shockpaddles = 80,
 		/obj/item/melee/baton = 50,
 		/obj/item/gun/energy = 30)
-	time = 60
+	time = 3.5 SECONDS
 
 /datum/surgery_step/revive/ipc/tool_check(mob/user, obj/item/tool)
 	. = ..()
@@ -35,5 +35,3 @@
 		var/obj/item/inducer/I = tool
 		if(I.cantbeused(user))
 			return FALSE
-
-
