@@ -34,7 +34,7 @@
 /datum/mission/ruin/fallen_montagne
 	name = "dark signal investigation"
 	desc = "A hunting lodge located on an ice-world in system has recently ceased communication. We suspect they may have been assulted by pirates. If this is the case, and they have fallen, bring the Montague's corpse, so they may be buried properly."
-	value = 2000
+	value = 3000
 	mission_limit = 1
 	mission_reward = /obj/structure/fermenting_barrel/trickwine
 	faction = /datum/faction/srm
