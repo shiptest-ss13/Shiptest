@@ -1,23 +1,27 @@
 /datum/mission/outpost/research
 	name = "Electrical storm research mission"
-	desc = " require data on the behavior of electrical storms in the system for an ongoing study. \
+	desc = " requires data on the behavior of electrical storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data. "
-	value = 3000 // base value, before adding bonus for number of things to fly through
+	value = 2000 // base value, before adding bonus for number of things to fly through
 	duration = 60 MINUTES
 	weight = 8
 
 	var/datum/overmap/objective_type = /datum/overmap/event/electric
 	var/obj/machinery/mission_scanner/scanner
+	///how many storms have we flown through already
 	var/num_current = 0
+	///goal number of storms
 	var/num_wanted = 5
 	var/researcher_name
+	///how much is a storm worth to fly through
+	var/storm_value = 200
 
 /datum/mission/outpost/research/New(...)
 	researcher_name = SSmissions.get_researcher_name()
 	num_wanted = rand(num_wanted - 1, num_wanted + 1)
-	value += num_wanted * 150
-	desc = researcher_name + desc
+	value += num_wanted * storm_value
+	desc = "[researcher_name] [desc]"
 	return ..()
 
 /datum/mission/outpost/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
@@ -75,7 +79,8 @@
 	desc = " require data on the behavior of asteroid fields in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 4000
+	value = 500
+	storm_value = 150
 	weight = 4
 	objective_type = /datum/overmap/event/meteor
 
@@ -84,7 +89,8 @@
 	desc = " require data on the migration patterns of space carp for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 2000
+	value = 250
+	storm_value = 100
 	weight = 4
 	num_wanted = 3
 	objective_type = /datum/overmap/event/meteor/carp
@@ -94,7 +100,8 @@
 	desc = " require data on the density of space dust for updated navcharts. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 1000
+	value = 250
+	storm_value = 50
 	weight = 4
 	objective_type = /datum/overmap/event/meteor/dust
 
