@@ -33,7 +33,7 @@
 	if(z_active[my_z])
 		flick(icon_state + "-corrupted", src)
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
-		src_turf.visible_message("<span class='warning'>Warning: interference detected in current sector</span>")
+		src_turf.visible_message(span_warning("Warning: interference detected in current sector"))
 		return
 
 	if(!z_history[my_z])
@@ -42,24 +42,24 @@
 	active = TRUE
 	z_active[my_z] = TRUE
 	while(user.get_active_held_item() == src)
-		to_chat(user, "<span class='notice'>You begin to scan your surroundings with [src].</span>")
+		to_chat(user, span_notice("You begin to scan your surroundings with [src]."))
 
 		var/penalty = 1 - (z_history[my_z] - 1) * 0.05 // You lose five percent of value and are five percent slower
 		if(!penalty || penalty < 0.20) // If you are below 20% value, do nothing and abort
 			flick(icon_state + "-corrupted", src)
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
-			src_turf.visible_message("<span class='warning'>Warning: unable to locate valuable information in current sector.</span>")
+			src_turf.visible_message(span_warning("Warning: unable to locate valuable information in current sector."))
 			break
 
 		if(!do_after(user, survey_delay / penalty, src))
 			flick(icon_state + "-corrupted", src)
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
-			src_turf.visible_message("<span class='warning'>Warning: results corrupted. Please try again.</span>")
+			src_turf.visible_message(span_warning("Warning: results corrupted. Please try again."))
 			break
 
 		flick(icon_state + "print", src)
 		playsound(src, 'sound/machines/whirr_beep.ogg', 20)
-		src_turf.visible_message("<span class='notice'>Data recorded and enscribed to research packet.</span>")
+		src_turf.visible_message(span_notice("Data recorded and enscribed to research packet."))
 		z_history[my_z]++
 
 		var/obj/item/result = new /obj/item/research_notes(null, survey_value * penalty, pick(list("astronomy", "physics", "planets", "space")))

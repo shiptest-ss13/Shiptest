@@ -32,16 +32,16 @@
 	experience_given = 0
 
 /datum/surgery_step/stomach_pump/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin pumping [target]'s stomach...</span>",
-		"<span class='notice'>[user] begins to pump [target]'s stomach.</span>",
-		"<span class='notice'>[user] begins to press on [target]'s chest.</span>")
+	display_results(user, target, span_notice("You begin pumping [target]'s stomach..."),
+		span_notice("[user] begins to pump [target]'s stomach."),
+		span_notice("[user] begins to press on [target]'s chest."))
 
 /datum/surgery_step/stomach_pump/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		var/reagents_volume_before_pump = H.reagents.total_volume
-		display_results(user, target, "<span class='notice'>[user] forces [H] to vomit, cleansing their stomach of some chemicals!</span>",
-				"<span class='notice'>[user] forces [H] to vomit, cleansing their stomach of some chemicals!</span>",
+		display_results(user, target, span_notice("[user] forces [H] to vomit, cleansing their stomach of some chemicals!"),
+				span_notice("[user] forces [H] to vomit, cleansing their stomach of some chemicals!"),
 				"[user] forces [H] to vomit!")
 		H.vomit(20, FALSE, TRUE, 1, TRUE, FALSE, purge = TRUE) //called with purge as true to lose more reagents
 		if(istype(surgery,/datum/surgery/stomach_pump))
@@ -54,8 +54,8 @@
 /datum/surgery_step/stomach_pump/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		display_results(user, target, "<span class='warning'>You screw up, brusing [H]'s chest!</span>",
-			"<span class='warning'>[user] screws up, brusing [H]'s chest!</span>",
-			"<span class='warning'>[user] screws up!</span>")
+		display_results(user, target, span_warning("You screw up, brusing [H]'s chest!"),
+			span_warning("[user] screws up, brusing [H]'s chest!"),
+			span_warning("[user] screws up!"))
 		H.adjustOrganLoss(ORGAN_SLOT_STOMACH, 5)
 		target.apply_damage(15, BRUTE, "[target_zone]")

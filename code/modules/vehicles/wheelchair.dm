@@ -41,7 +41,7 @@
 /obj/vehicle/ridden/wheelchair/driver_move(mob/living/user, direction)
 	if(istype(user))
 		if(canmove && (user.usable_hands < arms_required))
-			to_chat(user, "<span class='warning'>You don't have enough arms to operate the wheels!</span>")
+			to_chat(user, span_warning("You don't have enough arms to operate the wheels!"))
 			canmove = FALSE
 			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
 			return FALSE
@@ -76,9 +76,9 @@
 
 /obj/vehicle/ridden/wheelchair/wrench_act(mob/living/user, obj/item/I)	//Attackby should stop it attacking the wheelchair after moving away during decon
 	..()
-	to_chat(user, "<span class='notice'>You begin to detach the wheels...</span>")
+	to_chat(user, span_notice("You begin to detach the wheels..."))
 	if(I.use_tool(src, user, 40, volume=50))
-		to_chat(user, "<span class='notice'>You detach the wheels and deconstruct the chair.</span>")
+		to_chat(user, span_notice("You detach the wheels and deconstruct the chair."))
 		new /obj/item/stack/rods(drop_location(), 6)
 		new /obj/item/stack/sheet/metal(drop_location(), 4)
 		qdel(src)
@@ -126,10 +126,10 @@
 	. = ..()
 	if(over_object != usr || !Adjacent(usr) || !foldabletype || !ishuman(usr) || has_buckled_mobs())
 		return FALSE
-	usr.visible_message("<span class='notice'>[usr] begins to collapse [src].</span>", "<span class='notice'>You begin to collapse [src].</span>")
+	usr.visible_message(span_notice("[usr] begins to collapse [src]."), span_notice("You begin to collapse [src]."))
 	if(!do_after(usr, 3 SECONDS, target = src))
 		return FALSE
-	usr.visible_message("<span class='notice'>[usr] collapses [src].</span>", "<span class='notice'>You collapse [src].</span>")
+	usr.visible_message(span_notice("[usr] collapses [src]."), span_notice("You collapse [src]."))
 	var/obj/vehicle/ridden/wheelchair/wheelchair_folded = new foldabletype(get_turf(src))
 	usr.put_in_hands(wheelchair_folded)
 	qdel(src)
@@ -138,10 +138,10 @@
 	deploy_wheelchair(user, user.loc)
 
 /obj/item/wheelchair/proc/deploy_wheelchair(mob/user, atom/location)
-	usr.visible_message("<span class='notice'>[usr] begins to unfold [src].</span>", "<span class='notice'>You begin to unfold [src].</span>")
+	usr.visible_message(span_notice("[usr] begins to unfold [src]."), span_notice("You begin to unfold [src]."))
 	if(!do_after(usr, 3 SECONDS, target = src))
 		return FALSE
-	usr.visible_message("<span class='notice'>[usr] deploys [src].</span>", "<span class='notice'>You deploy [src].</span>")
+	usr.visible_message(span_notice("[usr] deploys [src]."), span_notice("You deploy [src]."))
 	var/obj/vehicle/ridden/wheelchair/wheelchair_unfolded = new unfolded_type(location)
 	wheelchair_unfolded.add_fingerprint(user)
 	qdel(src)

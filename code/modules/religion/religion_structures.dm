@@ -22,7 +22,7 @@
 	if(!can_i_see || !sect_to_altar)
 		return
 
-	. += "<span class='notice'>The sect currently has [round(sect_to_altar.favor)] favor with [GLOB.deity].</span>"
+	. += span_notice("The sect currently has [round(sect_to_altar.favor)] favor with [GLOB.deity].")
 	if(!sect_to_altar.rites_list)
 		return
 	. += "List of available Rites:"
@@ -45,7 +45,7 @@
 		return ..()
 	var/mob/living/pushed_mob = user.pulling
 	if(pushed_mob.buckled)
-		to_chat(user, "<span class='warning'>[pushed_mob] is buckled to [pushed_mob.buckled]!</span>")
+		to_chat(user, span_warning("[pushed_mob] is buckled to [pushed_mob.buckled]!"))
 		return ..()
 	to_chat(user,"<span class='notice>You try to coax [pushed_mob] onto [src]...</span>")
 	if(!do_after(user,(5 SECONDS),target = pushed_mob))

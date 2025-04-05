@@ -34,7 +34,7 @@
 
 	var/turf/open/floor/plasteel/F = A
 	if(!istype(F) || istype(F, /turf/open/floor/plasteel/tech))
-		to_chat(user, "<span class='warning'>\The [src] can only be used on plasteel flooring.</span>")
+		to_chat(user, span_warning("\The [src] can only be used on plasteel flooring."))
 		return
 
 	F.icon_state = floor_state
@@ -198,7 +198,7 @@
 
 	var/turf/open/floor/F = A
 	if(!istype(F))
-		to_chat(user, "<span class='warning'>\The [src] can only be used on flooring.</span>")
+		to_chat(user, span_warning("\The [src] can only be used on flooring."))
 		return
 	if(color_disallowed.Find(decal_state))
 		F.AddElement(/datum/element/decal, 'icons/turf/decals/decals.dmi', decal_state, decal_dir, FALSE, color, null, null, alpha)

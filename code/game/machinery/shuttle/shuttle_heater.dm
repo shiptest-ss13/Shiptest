@@ -385,13 +385,13 @@
 	if(damage_state == DAMAGE_MED && istype(I, /obj/item/stack/sheet/metal) && metal_repair == FALSE) //fix med damage with metal
 		var/obj/item/stack/sheet/metal/S = I
 		if(S.get_amount() < 2)
-			to_chat(user, "<span class='warning'>You need at least 2 metal sheets to repair [src].</span>")
+			to_chat(user, span_warning("You need at least 2 metal sheets to repair [src]."))
 			return
-		to_chat(user, "<span class='notice'>You start adding new plating.</span>")
+		to_chat(user, span_notice("You start adding new plating."))
 		if(do_after(user, 40, src, TRUE))
 			if(!I.use(2))
 				return
-			to_chat(user, "<span class='notice'>You add new plating.</span>")
+			to_chat(user, span_notice("You add new plating."))
 			I.use(1, FALSE, TRUE)
 			metal_repair = TRUE
 			pressure_damage = 0 //lets be nice and not let them explode while fixing this
@@ -400,29 +400,29 @@
 		return
 
 	if(damage_state == DAMAGE_MED && I.tool_behaviour == TOOL_WRENCH && metal_repair == TRUE)
-		to_chat(user, "<span class='notice'>You start wrenching down the new plating.</span>")
+		to_chat(user, span_notice("You start wrenching down the new plating."))
 		if(I.use_tool(src, user, 60, volume=75))
 			metal_repair = FALSE
 			damage_state = DAMAGE_LOW
 			pressure_damage = 0
-			to_chat(user, "<span class='notice'>You secure the new plating.</span>")
+			to_chat(user, span_notice("You secure the new plating."))
 			return
 		return
 
 	if(damage_state == DAMAGE_LOW && I.tool_behaviour == TOOL_CROWBAR) //fix low damage with screwdriver
-		to_chat(user, "<span class='notice'>You start prying in the insulation layer.</span>")
+		to_chat(user, span_notice("You start prying in the insulation layer."))
 		if(I.use_tool(src, user, 60, volume=75))
 			damage_state = DAMAGE_NONE
 			pressure_damage = 0
-			to_chat(user, "<span class='notice'>You secure the insulation layer.</span>")
+			to_chat(user, span_notice("You secure the insulation layer."))
 			return
 		return
 
 	if(damage_state == DAMAGE_NONE && I.tool_behaviour == TOOL_SCREWDRIVER && pressure_damage >= PRESSURE_DAMAGE_MAX / 2) //lets you fix pressure damage before it increases damage state
-		to_chat(user, "<span class='notice'>You start tightening loose screws.</span>")
+		to_chat(user, span_notice("You start tightening loose screws."))
 		if(I.use_tool(src, user, 60, volume=75))
 			pressure_damage = 0
-			to_chat(user, "<span class='notice'>You tighten the screws.</span>")
+			to_chat(user, span_notice("You tighten the screws."))
 			return
 		return
 

@@ -87,7 +87,7 @@
 			var/pen_mod = -armor + weapon.armour_penetration // even a little bit of armor can make a big difference for shrapnel with large negative armor pen
 			actual_chance += pen_mod // doing the armor pen as a separate calc just in case this ever gets expanded on
 			if(actual_chance <= 0)
-				victim.visible_message("<span class='danger'>[weapon] bounces off [victim]'s armor!</span>", "<span class='notice'>[weapon] bounces off your armor!</span>", vision_distance = COMBAT_MESSAGE_RANGE)
+				victim.visible_message(span_danger("[weapon] bounces off [victim]'s armor!"), span_notice("[weapon] bounces off your armor!"), vision_distance = COMBAT_MESSAGE_RANGE)
 				return
 
 	var/roll_embed = prob(actual_chance)

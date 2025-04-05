@@ -34,7 +34,7 @@
 	if(ismob(target))
 		var/mob/M = target
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
 			return BULLET_ACT_BLOCK
 
 /obj/effect/proc_holder/spell/targeted/genetic/mutate
@@ -242,7 +242,7 @@
 			shake_camera(AM, 2, 1)
 			if(stun_amt)
 				M.Paralyze(stun_amt)
-			to_chat(M, "<span class='userdanger'>You're thrown back by [user]!</span>")
+			to_chat(M, span_userdanger("You're thrown back by [user]!"))
 		AM.safe_throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user, force = repulse_force)//So stuff gets tossed around at the same time.
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno //i fixed conflicts only to find out that this is in the WIZARD file instead of the xeno file?!

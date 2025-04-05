@@ -30,7 +30,7 @@
 	var/temp_value = target_client.vv_get_value()
 	if(isnull(temp_value["class"]))
 		Reset()
-		to_chat(target_client, "<span class='notice'>Variable unset.</span>")
+		to_chat(target_client, span_notice("Variable unset."))
 		return
 	valueholder = temp_value["value"]
 
@@ -38,23 +38,23 @@
 	var/list/modifiers = params2list(params)
 
 	if(isnull(varholder))
-		to_chat(target_client, "<span class='warning'>Choose a variable to modify first.</span>")
+		to_chat(target_client, span_warning("Choose a variable to modify first."))
 		return
 	if(LAZYACCESS(modifiers, LEFT_CLICK))
 		if(object.vars.Find(varholder))
 			if(object.vv_edit_var(varholder, valueholder) == FALSE)
-				to_chat(target_client, "<span class='warning'>Your edit was rejected by the object.</span>")
+				to_chat(target_client, span_warning("Your edit was rejected by the object."))
 				return
 			log_admin("Build Mode: [key_name(target_client)] modified [object.name]'s [varholder] to [valueholder]")
 		else
-			to_chat(target_client, "<span class='warning'>[initial(object.name)] does not have a var called '[varholder]'</span>")
+			to_chat(target_client, span_warning("[initial(object.name)] does not have a var called '[varholder]'"))
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		if(object.vars.Find(varholder))
 			var/reset_value = initial(object.vars[varholder])
 			if(object.vv_edit_var(varholder, reset_value) == FALSE)
-				to_chat(target_client, "<span class='warning'>Your edit was rejected by the object.</span>")
+				to_chat(target_client, span_warning("Your edit was rejected by the object."))
 				return
 			log_admin("Build Mode: [key_name(target_client)] modified [object.name]'s [varholder] to [reset_value]")
 		else
-			to_chat(target_client, "<span class='warning'>[initial(object.name)] does not have a var called '[varholder]'</span>")
+			to_chat(target_client, span_warning("[initial(object.name)] does not have a var called '[varholder]'"))
 

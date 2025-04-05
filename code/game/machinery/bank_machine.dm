@@ -34,7 +34,7 @@
 		var/datum/bank_account/ship_account = ship_account_ref.resolve()
 		if(ship_account)
 			ship_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
-			to_chat(user, "<span class='notice'>You deposit [I]. The [ship_account.account_holder] Budget is now [ship_account.account_balance] cr.</span>")
+			to_chat(user, span_notice("You deposit [I]. The [ship_account.account_holder] Budget is now [ship_account.account_balance] cr."))
 		qdel(I)
 		return
 	return ..()

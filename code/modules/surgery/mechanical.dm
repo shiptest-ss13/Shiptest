@@ -62,9 +62,9 @@
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)
-			display_results(user, target, "<span class='notice'>You attempt to fix some of [target]'s [repairtype].</span>",
-		"<span class='notice'>[user] attempts to fix some of [target]'s [repairtype].</span>",
-		"<span class='notice'>[user] attempts to fix some of [target]'s [repairtype].</span>")
+			display_results(user, target, span_notice("You attempt to fix some of [target]'s [repairtype]."),
+		span_notice("[user] attempts to fix some of [target]'s [repairtype]."),
+		span_notice("[user] attempts to fix some of [target]'s [repairtype]."))
 
 /datum/surgery_step/heal/mechanic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/umsg = "You succeed in fixing some of [target]'s damages" //no period, add initial space to "addons"
@@ -81,7 +81,7 @@
 		umsg += " as best as you can while they have clothing on"
 		tmsg += " as best as they can while [target] has clothing on"
 	experience_given = CEILING((target.heal_bodypart_damage(urhealedamt_brute,urhealedamt_burn)/5),1)
-	display_results(user, target, "<span class='notice'>[umsg].</span>",
+	display_results(user, target, span_notice("[umsg]."),
 		"[tmsg].",
 		"[tmsg].")
 	if(istype(surgery, /datum/surgery/healing))
@@ -90,9 +90,9 @@
 	return TRUE
 
 /datum/surgery_step/heal/mechanic/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob)
-	display_results(user, target, "<span class='warning'>You screwed up!</span>",
-		"<span class='warning'>[user] screws up!</span>",
-		"<span class='notice'>[user] fixes some of [target]'s damages.</span>", TRUE)
+	display_results(user, target, span_warning("You screwed up!"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] fixes some of [target]'s damages."), TRUE)
 	var/urdamageamt_burn = brutehealing * 0.8
 	var/urdamageamt_brute = burnhealing * 0.8
 	//Reset heal checks
@@ -147,19 +147,19 @@
 /datum/surgery_step/repair_structure/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/stack/rods = tool
 	if(!tool || rods.get_amount() < 2)
-		to_chat(user, "<span class='warning'>You need at least two rods to do this!</span>")
+		to_chat(user, span_warning("You need at least two rods to do this!"))
 		return -1
 	if(target_zone == BODY_ZONE_HEAD)
-		user.visible_message("[user] begins to reinforce [target]'s skull with [tool]...", "<span class='notice'>You begin to reinforce [target]'s skull with [tool]...</span>")
+		user.visible_message("[user] begins to reinforce [target]'s skull with [tool]...", span_notice("You begin to reinforce [target]'s skull with [tool]..."))
 	else
-		user.visible_message("[user] begins to replace the rods in [target]'s [parse_zone(target_zone)]...", "<span class='notice'>You begin replacing the rods in [target]'s [parse_zone(target_zone)]...</span>")
+		user.visible_message("[user] begins to replace the rods in [target]'s [parse_zone(target_zone)]...", span_notice("You begin replacing the rods in [target]'s [parse_zone(target_zone)]..."))
 
 /datum/surgery_step/repair_structure/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/stack/rods = tool
 	if(!tool || rods.get_amount() < 2)
-		to_chat(user, "<span class='warning'>You need at least two rods to do this!</span>")
+		to_chat(user, span_warning("You need at least two rods to do this!"))
 		return FALSE
-	user.visible_message("[user] successfully restores integrity to [target]'s [parse_zone(target_zone)]!", "<span class='notice'>You successfully restore integrity to [target]'s [parse_zone(target_zone)].</span>")
+	user.visible_message("[user] successfully restores integrity to [target]'s [parse_zone(target_zone)]!", span_notice("You successfully restore integrity to [target]'s [parse_zone(target_zone)]."))
 	//restore all integrity-induced damage, so that they don't just weld themselves into a mess again
 	var/integ_heal = surgery.operated_bodypart.integrity_loss //ignore integrity_ignored as a little surgery bonus
 	var/brute_heal = min(surgery.operated_bodypart.brute_dam,integ_heal)

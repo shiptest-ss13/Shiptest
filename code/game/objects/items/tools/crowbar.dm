@@ -66,13 +66,13 @@
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_CROWBAR)
 		tool_behaviour = TOOL_WIRECUTTER
-		to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
+		to_chat(user, span_notice("You attach the cutting jaws to [src]."))
 		usesound = 'sound/items/jaws_cut.ogg'
 		icon_state = "jaws_cutter"
 		update_appearance()
 	else
 		tool_behaviour = TOOL_CROWBAR
-		to_chat(user, "<span class='notice'>You attach the prying jaws to [src].</span>")
+		to_chat(user, span_notice("You attach the prying jaws to [src]."))
 		usesound = 'sound/items/jaws_pry.ogg'
 		icon_state = "jaws_pry"
 		update_appearance()
@@ -102,7 +102,7 @@
 
 /obj/item/crowbar/power/attack(mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && tool_behaviour == TOOL_WIRECUTTER)
-		user.visible_message("<span class='notice'>[user] cuts [C]'s restraints with [src]!</span>")
+		user.visible_message(span_notice("[user] cuts [C]'s restraints with [src]!"))
 		qdel(C.handcuffed)
 		return
 	else

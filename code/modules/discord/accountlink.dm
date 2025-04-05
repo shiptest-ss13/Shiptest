@@ -6,10 +6,10 @@
 
 	// Safety checks
 	if(!CONFIG_GET(flag/sql_enabled))
-		to_chat(src, "<span class='warning'>This feature requires the SQL backend to be running.</span>")
+		to_chat(src, span_warning("This feature requires the SQL backend to be running."))
 		return
 	if(!SSdiscord && !SSdiscord.reverify_cache)
-		to_chat(src, "<span class='warning'>Wait for the Discord subsystem to finish initialising</span>")
+		to_chat(src, span_warning("Wait for the Discord subsystem to finish initialising"))
 		return
 	var/message = ""
 	// Simple sanity check to prevent a user doing this too often

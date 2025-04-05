@@ -31,7 +31,7 @@
 
 	if(left_click)
 		if(isnull(dressuptime))
-			to_chat(target_client, "<span class='warning'>Pick an outfit first.</span>")
+			to_chat(target_client, span_warning("Pick an outfit first."))
 			return
 
 		for (var/item in dollie.get_equipped_items(TRUE))

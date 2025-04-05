@@ -32,7 +32,7 @@
 	else
 		. += span_notice("- \The [name] doesn't seem to have a cell!")
 	if(!e_gun.internal_magazine)
-		examine_list += span_notice("- The cell retainment latch is [e_gun.latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click to toggle the latch.")
+		examine_list += span_notice("- The cell retainment latch is [e_gun.latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Alt-Click to toggle the latch.")
 	return examine_list
 
 /obj/item/attachment/gun/energy/AltClick(mob/user)

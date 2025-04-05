@@ -79,11 +79,11 @@
 
 /obj/item/clothing/head/helmet/space/pilot/attack_self(mob/user) //pilot helmet toggle
 	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You cannot toggle your helmet while in this [user.loc]!</span>" )
+		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
 		return
 	up = !up
 	if(!up || force)
-		to_chat(user, "<span class='notice'>You close your helmet's visor and breathing mask.</span>")
+		to_chat(user, span_notice("You close your helmet's visor and breathing mask."))
 		gas_transfer_coefficient = initial(gas_transfer_coefficient)
 		permeability_coefficient = initial(permeability_coefficient)
 		clothing_flags |= visor_flags
@@ -91,7 +91,7 @@
 		flags_inv |= visor_flags_inv
 		cold_protection |= HEAD
 	else
-		to_chat(user, "<span class='notice'>You open your helmet's visor and breathing mask.</span>")
+		to_chat(user, span_notice("You open your helmet's visor and breathing mask."))
 		gas_transfer_coefficient = null
 		permeability_coefficient = null
 		clothing_flags &= ~visor_flags

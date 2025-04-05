@@ -16,8 +16,8 @@
 	SIGNAL_HANDLER
 
 	M.visible_message(
-		"<span class='notice'>[M] stops and looks intently at [parent].</span>",
-		"<span class='notice'>You stop to take in [parent].</span>"
+		span_notice("[M] stops and looks intently at [parent]."),
+		span_notice("You stop to take in [parent].")
 	)
 	switch(impress)
 		if (0 to BAD_ART)
@@ -47,7 +47,7 @@
 
 /datum/component/art/proc/examine(datum/source, mob/M)
 
-	to_chat(M, "<span class='notice'>You start examining [parent]...</span>")
+	to_chat(M, span_notice("You start examining [parent]..."))
 	if(!do_after(M, 20, target = parent))
 		return
 	on_obj_examine(source, M)
@@ -62,6 +62,6 @@
 	else
 		msg = "You don't get it. At least it's not ugly."
 	user.visible_message(
-		"<span class='notice'>[user] stops and looks intently at [parent].</span>",
-		"<span class='notice'>You stop to take in [parent]. [msg]</span>"
+		span_notice("[user] stops and looks intently at [parent]."),
+		span_notice("You stop to take in [parent]. [msg]")
 	)

@@ -34,7 +34,7 @@ to accommodate additional materials.
 	if(grinded)
 		grinded.forceMove(drop_location())
 		grinded = null
-		to_chat(user, "<span class='notice'>You eject the item inside.</span>")
+		to_chat(user, span_notice("You eject the item inside."))
 
 /obj/item/reagent_containers/glass/mortar/attackby(obj/item/attacking_item, mob/living/carbon/human/user)
 	..()

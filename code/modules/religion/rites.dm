@@ -14,9 +14,9 @@
 ///Called to perform the invocation of the rite, with args being the performer and the altar where it's being performed. Maybe you want it to check for something else?
 /datum/religion_rites/proc/perform_rite(mob/living/user, obj/structure/altar_of_gods/AOG)
 	if(GLOB.religious_sect?.favor < favor_cost)
-		to_chat(user, "<span class='warning'>This rite requires more favor!</span>")
+		to_chat(user, span_warning("This rite requires more favor!"))
 		return FALSE
-	to_chat(user, "<span class='notice'>You begin to perform the rite of [name]...</span>")
+	to_chat(user, span_notice("You begin to perform the rite of [name]..."))
 	if(!ritual_invocations)
 		if(do_after(user, ritual_length))
 			return TRUE
@@ -59,7 +59,7 @@
 
 /datum/religion_rites/synthconversion/perform_rite(mob/living/user, obj/structure/altar_of_gods/AOG)
 	if(!AOG?.buckled_mobs?.len)
-		to_chat(user, "<span class='warning'>This rite requires an individual to be buckled to [AOG].</span>")
+		to_chat(user, span_warning("This rite requires an individual to be buckled to [AOG]."))
 		return FALSE
 	return ..()
 
@@ -74,7 +74,7 @@
 	if(!human2borg)
 		return FALSE
 	human2borg.set_species(/datum/species/android)
-	human2borg.visible_message("<span class='notice'>[human2borg] has been converted by the rite of [name]!</span>")
+	human2borg.visible_message(span_notice("[human2borg] has been converted by the rite of [name]!"))
 	return TRUE
 
 
@@ -91,5 +91,5 @@
 
 /datum/religion_rites/transmute_brass/invoke_effect(mob/living/user, obj/structure/altar_of_gods/AOG)
 	new /obj/item/stack/tile/bronze/thirty(get_turf(AOG))
-	to_chat(user, "<span class='notice'>Brass has been transmuted by the rite of [name]!</span>")
+	to_chat(user, span_notice("Brass has been transmuted by the rite of [name]!"))
 	return TRUE

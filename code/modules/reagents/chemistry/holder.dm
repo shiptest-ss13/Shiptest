@@ -420,7 +420,7 @@
 /// Removes addiction to a specific reagent on [/datum/reagents/var/my_atom]
 /datum/reagents/proc/remove_addiction(datum/reagent/R)
 	R.on_addiction_removal(my_atom)
-	to_chat(my_atom, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
+	to_chat(my_atom, span_notice("You feel like you've gotten over your need for [R.name]."))
 	SEND_SIGNAL(my_atom, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
 	addiction_list.Remove(R)
 	qdel(R)
@@ -564,7 +564,7 @@
 						playsound(get_turf(cached_my_atom), selected_reaction.mix_sound, 80, TRUE)
 
 					for(var/mob/M in seen)
-						to_chat(M, "<span class='notice'>[iconhtml] [selected_reaction.mix_message]</span>")
+						to_chat(M, span_notice("[iconhtml] [selected_reaction.mix_message]"))
 
 			selected_reaction.on_reaction(src, multiplier)
 			reaction_occurred = 1

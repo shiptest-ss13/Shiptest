@@ -54,11 +54,11 @@
 					qdel(W)
 			if(issilicon(H)) //no advantage to sacrificing borgs...
 				H.gib()
-				visible_message("<span class='notice'>Serrated tendrils eagerly pull [H] apart, but find nothing of interest.</span>")
+				visible_message(span_notice("Serrated tendrils eagerly pull [H] apart, but find nothing of interest."))
 				return
 
 			if(H.mind?.has_antag_datum(/datum/antagonist/ashwalker) && (H.key || H.get_ghost(FALSE, TRUE))) //special interactions for dead lava lizards with ghosts attached
-				visible_message("<span class='warning'>Serrated tendrils carefully pull [H] to [src], absorbing the body and creating it anew.</span>")
+				visible_message(span_warning("Serrated tendrils carefully pull [H] to [src], absorbing the body and creating it anew."))
 				var/datum/mind/deadmind
 				if(H.key)
 					deadmind = H
@@ -75,7 +75,7 @@
 				meat_counter += 20
 			else
 				meat_counter++
-			visible_message("<span class='warning'>Serrated tendrils eagerly pull [H] to [src], tearing the body apart as its blood seeps over the eggs.</span>")
+			visible_message(span_warning("Serrated tendrils eagerly pull [H] to [src], tearing the body apart as its blood seeps over the eggs."))
 			playsound(get_turf(src),'sound/magic/demon_consume.ogg', 100, TRUE)
 			H.gib()
 			obj_integrity = min(obj_integrity + max_integrity*0.05,max_integrity)//restores 5% hp of tendril
@@ -99,12 +99,12 @@
 /obj/structure/lavaland/ash_walker/proc/spawn_mob()
 	if(meat_counter >= ASH_WALKER_SPAWN_THRESHOLD)
 		new /obj/effect/mob_spawn/human/ash_walker(get_step(loc, pick(GLOB.alldirs)), ashies)
-		visible_message("<span class='danger'>One of the eggs swells to an unnatural size and tumbles free. It's ready to hatch!</span>")
+		visible_message(span_danger("One of the eggs swells to an unnatural size and tumbles free. It's ready to hatch!"))
 		meat_counter -= ASH_WALKER_SPAWN_THRESHOLD
 
 /obj/structure/lavaland/ash_walker/attackby(obj/item/I, mob/living/user, params)	//WS Edit - Movable Tendril
 	if(user.mind.assigned_role == "Ash Walker")
-		to_chat(user, "<span class='warning'>You would never think of harming the great Tendril of the Necropolis!</span>")
+		to_chat(user, span_warning("You would never think of harming the great Tendril of the Necropolis!"))
 		return
 	if(user.a_intent != INTENT_HELP)
 		return ..()
@@ -114,27 +114,27 @@
 			return
 		last_act = world.time
 		if(anchored)	//Getting here effectively just toggles the anchored bool, with some added flavor.
-			user.visible_message("<span class='warning'>[user] starts to cut the [src]'s roots free!</span>", \
-				"<span class='warning'>You start cutting the [src]'s roots from the ground...</span>", \
-				"<span class='hear'>You hear grotesque cutting.</span>")
+			user.visible_message(span_warning("[user] starts to cut the [src]'s roots free!"), \
+				span_warning("You start cutting the [src]'s roots from the ground..."), \
+				span_hear("You hear grotesque cutting."))
 			if(I.use_tool(src, user, 50, volume=100))
 				playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, FALSE, 50, TRUE, TRUE)
-				user.visible_message("<span class='danger'>The [src] writhes and screams as it's cut from the ground before finally settling down.</span>", \
-					"<span class='danger'>You cut the [src]'s from the ground, causing it to scream and writhe!</span>", \
-					"<span class='warning'>The ground shakes violently beneath you!</span>")
+				user.visible_message(span_danger("The [src] writhes and screams as it's cut from the ground before finally settling down."), \
+					span_danger("You cut the [src]'s from the ground, causing it to scream and writhe!"), \
+					span_warning("The ground shakes violently beneath you!"))
 				anchored = FALSE
 			return
 		else
 			if(src.z != init_zlevel)
-				user.show_message("<span class='warning'>The [src] refuses to settle down in this area! You can't secure it!</span>")
+				user.show_message(span_warning("The [src] refuses to settle down in this area! You can't secure it!"))
 				return
-			user.visible_message("<span class='notice'>[user] starts to plant the [src]'s roots into the ground!</span>", \
-				"<span class='notice'>You start threading the [src]'s roots back into the ground...</span>", \
-				"<span class='hear'>You hear grotesque cutting.</span>")
+			user.visible_message(span_notice("[user] starts to plant the [src]'s roots into the ground!"), \
+				span_notice("You start threading the [src]'s roots back into the ground..."), \
+				span_hear("You hear grotesque cutting."))
 			if(I.use_tool(src, user, 50, volume=100))
-				user.visible_message("<span class='notice'>The [src] seems to settle down as [user] finishest securing it firmly to the ashy plains.</span>", \
-					"<span class='notice'>You finish planting the [src]! It seems to calm down...</span>", \
-					"<span class='notice'>The ground seems to settle a bit...</span>")
+				user.visible_message(span_notice("The [src] seems to settle down as [user] finishest securing it firmly to the ashy plains."), \
+					span_notice("You finish planting the [src]! It seems to calm down..."), \
+					span_notice("The ground seems to settle a bit..."))
 				anchored = TRUE
 			return
 

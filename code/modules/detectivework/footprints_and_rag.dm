@@ -26,19 +26,19 @@
 		var/log_object = "containing [reagentlist]"
 		if(user.a_intent == INTENT_HARM && !C.is_mouth_covered())
 			reagents.trans_to(C, reagents.total_volume, transfered_by = user, method = INGEST)
-			C.visible_message("<span class='danger'>[user] smothers \the [C] with \the [src]!</span>", "<span class='userdanger'>[user] smothers you with \the [src]!</span>", "<span class='hear'>You hear some struggling and muffled cries of surprise.</span>")
+			C.visible_message(span_danger("[user] smothers \the [C] with \the [src]!"), span_userdanger("[user] smothers you with \the [src]!"), span_hear("You hear some struggling and muffled cries of surprise."))
 			log_combat(user, C, "smothered", src, log_object)
 		else
 			reagents.expose(C, TOUCH)
 			reagents.clear_reagents()
-			C.visible_message("<span class='notice'>[user] touches \the [C] with \the [src].</span>")
+			C.visible_message(span_notice("[user] touches \the [C] with \the [src]."))
 			log_combat(user, C, "touched", src, log_object)
 
 	else if(istype(target) && (src in user))
 		target.add_overlay(GLOB.cleaning_bubbles)
 		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
-		user.visible_message("<span class='notice'>[user] starts to wipe down [target] with [src]!</span>", "<span class='notice'>You start to wipe down [target] with [src]...</span>")
+		user.visible_message(span_notice("[user] starts to wipe down [target] with [src]!"), span_notice("You start to wipe down [target] with [src]..."))
 		if(do_after(user,30, target = target))
-			user.visible_message("<span class='notice'>[user] finishes wiping off [target]!</span>", "<span class='notice'>You finish wiping off [target].</span>")
+			user.visible_message(span_notice("[user] finishes wiping off [target]!"), span_notice("You finish wiping off [target]."))
 			target.wash(CLEAN_SCRUB)
 		target.cut_overlay(GLOB.cleaning_bubbles)

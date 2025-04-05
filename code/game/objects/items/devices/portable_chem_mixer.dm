@@ -37,7 +37,7 @@
 		var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 		STR.max_items = STR.max_items + 40
 		QDEL_NULL(I)
-		to_chat(user, "<span class='notice'>You insert the vortex anomaly core, and the storage space inside [src] seems to grow much larger!</span>")
+		to_chat(user, span_notice("You insert the vortex anomaly core, and the storage space inside [src] seems to grow much larger!"))
 		return
 	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
 	if (I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -134,7 +134,7 @@
 			ui_interact(user)
 			return
 		else
-			to_chat(user, "<span class='notice'>The portable chemical mixer is currently open and its contents can be accessed.</span>")
+			to_chat(user, span_notice("The portable chemical mixer is currently open and its contents can be accessed."))
 			return
 	return
 

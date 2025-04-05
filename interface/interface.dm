@@ -11,7 +11,7 @@
 		else if (query != null)
 			src << link(wikiurl)
 	else
-		to_chat(src, "<span class='danger'>The wiki URL is not set in the server configuration.</span>")
+		to_chat(src, span_danger("The wiki URL is not set in the server configuration."))
 	return
 
 /client/verb/lore()
@@ -24,7 +24,7 @@
 			return
 		src << link(loreurl)
 	else
-		to_chat(src, "<span class='danger'>The lore page URL is not set in the server configuration.</span>")
+		to_chat(src, span_danger("The lore page URL is not set in the server configuration."))
 	return
 
 /client/verb/rules()
@@ -37,7 +37,7 @@
 			return
 		src << link(rulesurl)
 	else
-		to_chat(src, "<span class='danger'>The rules URL is not set in the server configuration.</span>")
+		to_chat(src, span_danger("The rules URL is not set in the server configuration."))
 	return
 
 /client/verb/github()
@@ -50,7 +50,7 @@
 			return
 		src << link(githuburl)
 	else
-		to_chat(src, "<span class='danger'>The Github URL is not set in the server configuration.</span>")
+		to_chat(src, span_danger("The Github URL is not set in the server configuration."))
 	return
 
 /client/verb/reportissue()
@@ -74,7 +74,7 @@
 			url_params = "Issue reported from [GLOB.round_id ? " Round ID: [GLOB.round_id][servername ? " ([servername])" : ""]" : servername]\n\n[url_params]"
 		DIRECT_OUTPUT(src, link("[githuburl]/issues/new?body=[url_encode(url_params)]"))
 	else
-		to_chat(src, "<span class='danger'>The Github URL is not set in the server configuration.</span>")
+		to_chat(src, span_danger("The Github URL is not set in the server configuration."))
 	return
 
 /client/verb/joindiscord()
@@ -87,7 +87,7 @@
 			return
 		src << link(CONFIG_GET(string/discordurl))
 	else
-		to_chat(src, "<span class='danger'>The Discord URL is not set in the server configuration.</span>")
+		to_chat(src, span_danger("The Discord URL is not set in the server configuration."))
 	return
 
 /client/verb/changelog()
