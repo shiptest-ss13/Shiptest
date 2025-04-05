@@ -19,7 +19,7 @@
 
 /datum/mission/outpost/research/New(...)
 	researcher_name = SSmissions.get_researcher_name()
-	num_wanted = rand(num_wanted - 1, num_wanted + 1)
+	num_wanted = rand(num_wanted - 2, num_wanted + 2)
 	value += num_wanted * storm_value
 	desc = "[researcher_name] [desc]"
 	return ..()
