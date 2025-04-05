@@ -487,6 +487,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/debug
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/debug
+	slowdown = 0
 
 //Cybersun Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
