@@ -150,6 +150,7 @@
 	barefootstep = FOOTSTEP_ICE
 	clawfootstep = FOOTSTEP_ICE
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	flammability = -5
 
 /turf/open/floor/plating/ice/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -240,7 +241,10 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
 	layer = HIGH_TURF_LAYER
+	flammability = 2
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
+	/// How long this takes to burn down to just dirt
+	var/burn_limit = 10
 
 /turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -249,6 +253,11 @@
 		translation.Translate(-9, -9)
 		transform = translation
 		icon = smooth_icon
+
+/turf/open/floor/plating/grass/jungle/burn_tile()
+	burn_limit--
+	if(burn_limit <= 0)
+		ScrapeAway()
 
 /turf/open/floor/plating/grass/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS

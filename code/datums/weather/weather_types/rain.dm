@@ -22,6 +22,8 @@
 	sound_active_outside = /datum/looping_sound/weather/rain/indoors
 	sound_active_inside = /datum/looping_sound/weather/rain
 
+	fire_suppression = 6
+
 /datum/weather/rain/heavy
 	name = "heavy rain"
 	desc = "Downpour of rain."
@@ -40,12 +42,14 @@
 	sound_weak_outside = /datum/looping_sound/weather/rain/indoors
 	sound_weak_inside = /datum/looping_sound/weather/rain
 
+	fire_suppression = 8
 	thunder_chance = 2
 
 /datum/weather/rain/heavy/storm
 	name = "storm"
 	desc = "Storm with rain and lightning."
 	weather_message = "<span class='warning'>The clouds blacken and the sky starts to flash as thunder strikes down!</span>"
+	fire_suppression = 12
 	thunder_chance = 10
 
 /datum/weather/rain/heavy/storm_intense
@@ -56,6 +60,7 @@
 	weather_color = "#a3daf7"
 	weather_duration_lower = 420690
 	weather_duration_upper = 420690
+	fire_suppression = 16
 
 	sound_active_outside = /datum/looping_sound/weather/rain/storm/indoors
 	sound_active_inside = /datum/looping_sound/weather/rain/storm
