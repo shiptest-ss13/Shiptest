@@ -21,6 +21,11 @@
 	UnregisterSignal(registered_item, mission_main_signal)
 	remove_bound(registered_item)
 
+/datum/mission/ruin/signaled/remove_bound(atom/movable/bound)
+	if(bound == setpiece_item)
+		setpiece_item = null
+	return ..()
+
 /obj/effect/landmark/mission_poi/main/drill
 
 /datum/mission/ruin/signaled/drill

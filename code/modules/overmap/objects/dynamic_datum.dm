@@ -32,13 +32,16 @@
 	///Fetched before anything is loaded from the ruin datum
 	var/dynamic_missions = list()
 	///The list of mission pois once the planet has acctually loaded the ruin
-	var/list/obj/effect/landmark/mission_poi/spawned_mission_pois
+	var/list/list/datum/weakref/spawned_mission_pois
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
 	/// list of ruin templates currently spawned on the planet.
 	var/list/spawned_ruins
 	/// Whether or not the level is currently loading.
 	var/loading = FALSE
+
+	/// Whether or not we populate turfs, primarly to save some time in the ruin unit test
+	var/populate_turfs = TRUE
 
 	/// The mapgenerator itself. SHOULD NOT BE NULL if the datum ever creates an encounter
 	var/datum/map_generator/mapgen = /datum/map_generator/single_turf/space
@@ -164,6 +167,21 @@
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
+	set_planet_type(planet)
+
+	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
+	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
+	if(istype(used_ruin))
+		for(var/mission_type in used_ruin.ruin_mission_types)
+			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
+
+	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
+		planet_name = "LV-[pick(rand(11111,99999))]"
+		token.icon_state = "sector"
+		Rename(planet_name)
+
+/datum/overmap/dynamic/proc/set_planet_type(datum/planet_type/planet)
 	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
 		Rename(planet.name)
 		token.name = "[planet.name]"
@@ -182,18 +200,6 @@
 	weather_controller_type = planet.weather_controller_type
 	landing_sound = planet.landing_sound
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
-
-	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
-	if(istype(used_ruin))
-		for(var/mission_type in used_ruin.ruin_mission_types)
-			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
-
-	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
-		planet_name = "LV-[pick(rand(11111,99999))]"
-		token.icon_state = "sector"
-		Rename(planet_name)
 
 // - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
 // #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
