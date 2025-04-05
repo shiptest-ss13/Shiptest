@@ -18,7 +18,7 @@
 /datum/mission/ruin/nt_files
 	name = "Discrete Asset Recovery"
 	desc = "Look- long story short, I need this folder retrieved. You don't ask why, I make sure you get paid."
-	value = 2500
+	value = 1500
 	mission_limit = 1
 	mission_reward = list(
 		/obj/item/gun/energy/e_gun/old,
@@ -39,6 +39,7 @@
 	faction = /datum/faction/independent
 	mission_reward = /obj/item/poster/random_rilena
 	registered_type = /mob/living/simple_animal/hostile/human/ramzi
+	value = 750
 	setpiece_item = list(
 		/obj/item/toy/plush/rilena,
 		/obj/item/toy/plush/tali,
@@ -85,6 +86,7 @@
 	author = "HIS455 \"ICW-era Preservation\""
 	mission_limit = 1
 	setpiece_item = /obj/item/folder/documents/syndicate/red
+	vales = 1500
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"
