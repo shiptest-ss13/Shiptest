@@ -269,7 +269,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/cm357
+/datum/supply_pack/gun/ecm6
 	name = "ECM-6 Beam Gun Crate"
 	desc = "Contains an ECM-6 Beam Gun, a modernization of the ECM-1 manufactured by Clover Photonics for Minutemen use."
 	cost = 1500
