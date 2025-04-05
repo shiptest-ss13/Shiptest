@@ -82,6 +82,7 @@
 	description = "A crashed Ramzi Clique vessel that has since become an isolated pirate outpost."
 	id = "rockplanet_rustbase"
 	suffix = "rockplanet_rustbase.dmm"
+
 	ruin_mission_types = list(
 		/datum/mission/ruin/signaled/kill/bright,
 		/datum/mission/ruin/signaled/kill/amuro,
@@ -102,3 +103,9 @@
 	faction = /datum/faction/syndicate/ngr
 	value = 4000
 	mission_limit = 1
+
+/datum/map_template/ruin/rockplanet/river_valley_stash
+	name = "River Valley Stash"
+	description = "A frontiersman drug stash in the midst of being buried."
+	id = "rockplanet_river_valley_stash"
+	suffix = "rockplanet_river_valley_stash.dmm"
