@@ -96,6 +96,19 @@
 	faction = /datum/faction/syndicate/suns
 	faction_discount = 50 //this shouldnt be 3k but if it is...
 
+/datum/supply_pack/medical/disk
+	name = "Advanced Surgical Procedure Disk"
+	desc = "A disk containing Advanced T2 surgical procedures for wound tending. Requires an Operating Console."
+	cost = 2000
+	contains = list(/obj/item/disk/surgery/t2)
+	crate_name = "surgical supplies crate"
+
+/datum/supply_pack/medical/console
+	name = "Operating Console Crate"
+	desc = "Contains a console board to construct an Operating Console. Required to install surgical disks and gives basic diagnostics on the patients vitals."
+	cost = 500
+	contains = list(/obj/item/circuitboard/computer/operating)
+	crate_name = "surgical supplies crate"
 
 /datum/supply_pack/medical/anesthetic
 	name = "Anesthetics Crate"
