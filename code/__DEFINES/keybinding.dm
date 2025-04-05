@@ -38,6 +38,7 @@
 #define COMSIG_KB_CLIENT_LOOC_DOWN "keybinding_client_looc_down"
 #define COMSIG_KB_CLIENT_SAY_DOWN "keybinding_client_say_down"
 #define COMSIG_KB_CLIENT_ME_DOWN "keybinding_client_me_down"
+#define COMSIG_KB_CLIENT_SUBTLE_DOWN "keybinding_client_subtle_down"
 #define COMSIG_KB_CLIENT_WHISPER_DOWN "keybinding_client_whisper_down"
 
 //Human

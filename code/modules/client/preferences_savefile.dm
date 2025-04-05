@@ -499,6 +499,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Flavor Text
 	S["feature_flavor_text"]		>> features["flavor_text"]
+	S["feature_flavor_portrait"]	>> features["flavor_portrait"]
+	S["feature_flavor_source"]		>> features["flavor_source"]
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
@@ -582,7 +584,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["vox_neck_quills"]			= sanitize_inlist(features["vox_neck_quills"], GLOB.vox_neck_quills_list, "None")
 	features["elzu_horns"]				= sanitize_inlist(features["elzu_horns"], GLOB.elzu_horns_list)
 	features["tail_elzu"]				= sanitize_inlist(features["tail_elzu"], GLOB.tails_list_elzu)
+
 	features["flavor_text"]				= sanitize_text(features["flavor_text"], initial(features["flavor_text"]))
+	features["flavor_portrait"]			= sanitize_text(features["flavor_portrait"], initial(features["flavor_portrait"]))
+	features["flavor_source"]			= sanitize_text(features["flavor_source"], initial(features["flavor_source"]))
 
 	all_quirks = SANITIZE_LIST(all_quirks)
 
@@ -667,6 +672,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Flavor text
 	WRITE_FILE(S["feature_flavor_text"]			, features["flavor_text"])
+	WRITE_FILE(S["feature_flavor_portrait"]		, features["flavor_portrait"])
+	WRITE_FILE(S["feature_flavor_source"]		, features["flavor_source"])
+
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
