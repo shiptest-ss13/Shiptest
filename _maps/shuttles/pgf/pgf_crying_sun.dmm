@@ -1,18 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ae" = (
-/obj/structure/cable/blue{
-	icon_state = "0-4"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "lib_engine_blast"
-	},
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
 "ai" = (
 /obj/structure/railing,
 /obj/structure/cable/yellow{
@@ -417,20 +403,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
-"dv" = (
-/obj/structure/cable/blue{
-	icon_state = "0-4"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "lib_engine_blast"
-	},
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/starboard)
 "dz" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -1907,22 +1879,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
-"pK" = (
-/obj/structure/cable/blue{
-	icon_state = "0-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/structure/window/plasma/reinforced{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/starboard)
 "pW" = (
 /obj/machinery/computer/helm/viewscreen/directional/west,
 /obj/effect/turf_decal/siding/wood{
@@ -3174,22 +3130,6 @@
 /obj/machinery/vending/toyliberationstation,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
-"AM" = (
-/obj/structure/cable/blue{
-	icon_state = "0-8"
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/structure/window/plasma/reinforced{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engines/port)
 "AN" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -6830,14 +6770,14 @@ xz
 xz
 lc
 hJ
-ae
+is
 is
 lc
 xz
 xz
 TV
 FN
-dv
+FN
 fN
 TV
 xz
@@ -6858,14 +6798,14 @@ xz
 lc
 lc
 CB
-AM
+UM
 UM
 lc
 mf
 LD
 TV
 bB
-pK
+bB
 Wk
 TV
 TV

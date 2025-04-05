@@ -84,9 +84,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
@@ -381,7 +378,7 @@
 	dir = 5
 	},
 /turf/open/floor/plating,
-/area/ship/external/dark)
+/area/ship/engineering)
 "hg" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/ccommons)
@@ -475,9 +472,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"iD" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/external/dark)
 "iL" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 5;
@@ -790,9 +784,6 @@
 	dir = 8;
 	color = "#FFFFFF"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pq" = (
@@ -827,9 +818,6 @@
 	},
 /area/ship/cargo)
 "qi" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
@@ -1451,9 +1439,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/canteen/kitchen)
-"CI" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/external/dark)
 "CO" = (
 /obj/structure/table/glass,
 /obj/machinery/computer/cryopod/directional/north,
@@ -1588,10 +1573,8 @@
 	pixel_y = 10;
 	pixel_x = 10
 	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
-/area/ship/external/dark)
+/area/ship/engineering)
 "FU" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
 /turf/open/floor/engine/hull,
@@ -1784,9 +1767,6 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "cyberindie_airlock"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Hx" = (
@@ -1918,7 +1898,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/external/dark)
+/area/ship/engineering)
 "JP" = (
 /obj/structure/table,
 /obj/machinery/cell_charger{
@@ -1979,9 +1959,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 4
 	},
@@ -1989,7 +1966,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/external/dark)
+/area/ship/engineering)
 "KO" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -2596,7 +2573,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/external/dark)
+/area/ship/engineering)
 "Ut" = (
 /obj/structure/closet/wall/orange/directional/north,
 /obj/item/storage/backpack/industrial,
@@ -2629,9 +2606,6 @@
 /obj/item/weldingtool/electric,
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2971,7 +2945,7 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plating,
-/area/ship/external/dark)
+/area/ship/engineering)
 "ZI" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22";
@@ -3308,9 +3282,9 @@ eF
 YD
 dK
 YD
-CI
-CI
-CI
+YD
+YD
+YD
 NW
 XO
 "}
@@ -3366,7 +3340,7 @@ pn
 Hr
 Ku
 Fr
-CI
+YD
 FZ
 XO
 "}
@@ -3393,8 +3367,8 @@ UE
 iC
 YD
 JI
-CI
-iD
+YD
+PF
 XO
 XO
 "}
@@ -3420,8 +3394,8 @@ rP
 AG
 KT
 YD
-CI
-iD
+YD
+PF
 XO
 XO
 XO

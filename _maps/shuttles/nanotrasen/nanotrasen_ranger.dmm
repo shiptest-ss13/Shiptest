@@ -703,6 +703,9 @@
 	dir = 5
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/specialized/cargo)
 "eY" = (
@@ -1675,6 +1678,12 @@
 	density = 0;
 	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/specialized/cargo)
 "lp" = (
@@ -1722,6 +1731,12 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/corner,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
@@ -2246,9 +2261,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "ps" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical{
 	pixel_x = 5
@@ -3626,6 +3638,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/specialized/cargo)
 "zC" = (
@@ -3790,9 +3805,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/orange{
 	dir = 1
@@ -4365,6 +4377,7 @@
 	dir = 1
 	},
 /obj/machinery/light/dim/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Ek" = (
@@ -4478,6 +4491,12 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/specialized/cargo)
@@ -6258,12 +6277,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "So" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
 /obj/effect/decal/cleanable/wrapping,
 /obj/structure/chair/office{
 	dir = 1
@@ -6271,6 +6284,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
 "Sv" = (

@@ -904,6 +904,10 @@
 	dir = 4
 	},
 /obj/item/clothing/mask/gas/inteq,
+/obj/structure/extinguisher_cabinet/directional/east{
+	pixel_x = 28;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "mu" = (
@@ -1574,6 +1578,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/closet/crate/secure/plasma,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "zO" = (
@@ -1715,11 +1720,14 @@
 	dir = 10
 	},
 /obj/machinery/firealarm/directional/north,
-/obj/structure/extinguisher_cabinet/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
-	pixel_y = 10
+	pixel_y = 11
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
@@ -1902,8 +1910,9 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/gloves/color/yellow,
-/obj/structure/extinguisher_cabinet/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "CD" = (
@@ -2289,10 +2298,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "In" = (

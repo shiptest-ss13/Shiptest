@@ -4203,6 +4203,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "Jb" = (
@@ -5939,6 +5942,10 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer1,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/aft)
 "Xi" = (

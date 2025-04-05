@@ -50,14 +50,12 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -19;
 	pixel_y = -5
 	},
+/obj/structure/cable,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "aG" = (
@@ -248,6 +246,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/warning{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/crewtwo)
@@ -1607,6 +1608,9 @@
 /obj/structure/bed,
 /obj/item/bedsheet/solgov,
 /obj/structure/curtain/cloth,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "pd" = (
@@ -2387,9 +2391,6 @@
 	id = "sg_par_psych"
 	},
 /obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
 "wm" = (
@@ -5173,6 +5174,10 @@
 /obj/effect/turf_decal/trimline/opaque/solgovblue/filled/warning{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/crewtwo)
 "Ws" = (

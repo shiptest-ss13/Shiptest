@@ -1774,6 +1774,22 @@
 /obj/structure/sink/puddle,
 /turf/open/floor/grass/ship,
 /area/ship/roumain)
+"DL" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/rockplanet/safe,
+/area/ship/roumain)
 "El" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -2311,17 +2327,14 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/destructible/tribal_torch,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
 "MO" = (
@@ -3340,7 +3353,7 @@ Uj
 KD
 gJ
 ZA
-NS
+DL
 gV
 ZF
 jw

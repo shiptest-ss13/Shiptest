@@ -3824,9 +3824,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_win_1"
@@ -4001,6 +3998,9 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bay"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -4628,6 +4628,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"CT" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/ship/engineering/engines/port)
 "CV" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -5099,6 +5104,9 @@
 	},
 /obj/item/bedsheet/double/brown{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/captain)
@@ -7761,6 +7769,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bay"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "WN" = (
@@ -7982,7 +7993,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
 "Yv" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
@@ -8478,7 +8488,7 @@ oY
 ms
 yR
 Zg
-jI
+CT
 nz
 mA
 ux

@@ -516,6 +516,9 @@
 /obj/effect/turf_decal/number/zero{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "vR" = (
@@ -655,7 +658,7 @@
 	dir = 2
 	},
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "AU" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -925,6 +928,10 @@
 /area/ship/engineering)
 "MW" = (
 /obj/effect/landmark/start/assistant,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "MY" = (
@@ -1153,7 +1160,7 @@
 /area/ship/maintenance/aft)
 "VB" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "VI" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1

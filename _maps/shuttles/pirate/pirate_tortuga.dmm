@@ -2194,7 +2194,18 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ship/maintenance/port)
+/area/ship/maintenance/starboard)
+"CY" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/airless{
+	icon_state = "plating_rust"
+	},
+/area/ship/maintenance)
 "Dv" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -3363,6 +3374,12 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
+"Rt" = (
+/obj/item/flashlight/flare,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable/yellow,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance)
 "Ry" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3840,6 +3857,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"WD" = (
+/obj/machinery/power/shuttle/engine/electric/bad{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/starboard)
 "WF" = (
 /turf/closed/wall/rust,
 /area/ship/cargo)
@@ -4343,8 +4369,8 @@ mu
 WF
 Ek
 sQ
-jK
-jK
+WD
+WD
 Ko
 Ek
 Ek
@@ -5090,8 +5116,8 @@ Ek
 lJ
 lJ
 Cx
-XC
-eA
+CY
+Rt
 Ab
 Ar
 lQ
