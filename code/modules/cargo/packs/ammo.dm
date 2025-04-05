@@ -32,29 +32,29 @@
 	cost = 310
 
 
-/* 9mm */
+/* 9x18mm */
 
 /datum/supply_pack/ammo/c9mm_ammo_box
-	name = "9mm Ammo Box Crate"
-	desc = "Contains a 60-round 9mm box for pistols and SMGs such as the Commander or Saber."
+	name = "9x18mm Ammo Box Crate"
+	desc = "Contains a 60-round 9x18mm box for pistols and SMGs such as the Commander or Saber."
 	contains = list(/obj/item/storage/box/ammo/c9mm)
 	cost = 200 //6 ammo efficiency at 20 damage
 
 /datum/supply_pack/ammo/c9mmap_ammo_box
-	name = "9mm AP Ammo Box Crate"
-	desc = "Contains a 60-round 9mm box loaded with armor piercing ammo."
+	name = "9x18mm AP Ammo Box Crate"
+	desc = "Contains a 60-round 9x18mm box loaded with armor piercing ammo."
 	contains = list(/obj/item/storage/box/ammo/c9mm_ap)
 	cost = 250
 
 /datum/supply_pack/ammo/c9mmhp_ammo_box
-	name = "9mm HP Ammo Box Crate"
-	desc = "Contains a 60-round 9mm box loaded with hollow point ammo, great against unarmored targets."
+	name = "9x18mm HP Ammo Box Crate"
+	desc = "Contains a 60-round 9x18mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c9mm_hp)
 	cost = 250
 
 /datum/supply_pack/ammo/c9mmrubber_ammo_box
-	name = "9mm Rubber Ammo Box Crate"
-	desc = "Contains a 60-round 9mm box loaded with less-than-lethal rubber rounds."
+	name = "9x18mm Rubber Ammo Box Crate"
+	desc = "Contains a 60-round 9x18mm box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/storage/box/ammo/c9mm_rubber)
 	cost = 200
 
@@ -68,29 +68,29 @@
 					/obj/item/storage/box/ammo/c38)
 	crate_name = "ammo crate"
 
-/* 10mm */
+/* 10x22mm */
 
 /datum/supply_pack/ammo/c10mm_ammo_box
-	name = "10mm Ammo Box Crate"
-	desc = "Contains a 48-round 10mm box for pistols and SMGs like the Ringneck or the SkM-44(k)."
+	name = "10x22mm Ammo Box Crate"
+	desc = "Contains a 48-round 10x22mm box for pistols and SMGs like the Ringneck or the SkM-44(k)."
 	contains = list(/obj/item/storage/box/ammo/c10mm)
 	cost = 210 //5.7 ammo efficiency at 25 damage
 
 /datum/supply_pack/ammo/c10mmap_ammo_box
-	name = "10mm AP Ammo Box Crate"
-	desc = "Contains a 48-round 10mm box loaded with armor piercing ammo."
+	name = "10x22mm AP Ammo Box Crate"
+	desc = "Contains a 48-round 10x22mm box loaded with armor piercing ammo."
 	contains = list(/obj/item/storage/box/ammo/c10mm_ap)
 	cost = 260
 
 /datum/supply_pack/ammo/c10mmhp_ammo_box
-	name = "10mm HP Ammo Box Crate"
-	desc = "Contains a 48-round 10mm box loaded with hollow point ammo, great against unarmored targets."
+	name = "10x22mm HP Ammo Box Crate"
+	desc = "Contains a 48-round 10x22mm box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/storage/box/ammo/c10mm_hp)
 	cost = 260
 
 /datum/supply_pack/ammo/c10mmrubber_ammo_box
-	name = "10mm Rubber Ammo Box Crate"
-	desc = "Contains a 48-round 10mm box loaded with less-than-lethal rubber rounds."
+	name = "10x22mm Rubber Ammo Box Crate"
+	desc = "Contains a 48-round 10x22mm box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/storage/box/ammo/c10mm_rubber)
 	cost = 210
 
@@ -377,18 +377,18 @@
 	contains = list(/obj/item/storage/box/ammo/a308/hp)
 	cost = 230 //TTD 270
 
-/* 6.5 */
+/* 7.5x64 */
 
-/datum/supply_pack/ammo/a65clip_box
-	name = "6.5x57mm CLIP Ammo Box Crate"
-	desc = "Contains a twenty-round 6.5x57mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
-	contains = list(/obj/item/storage/box/ammo/a65clip)
+/datum/supply_pack/ammo/a75clip_box
+	name = "7.5x64mm CLIP Ammo Box Crate"
+	desc = "Contains a twenty-round 7.5x64mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a75clip)
 	cost = 200 //4 ammo efficiency at 40 damage
 
-/datum/supply_pack/ammo/a65clip_trackers
-	name = "6.5x57mm CLIP Tracker Shell Crate"
-	desc = "Contains a 10-round 6.5x57mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
-	contains = list(/obj/item/storage/box/ammo/a65clip/trac)
+/datum/supply_pack/ammo/a75clip_trackers
+	name = "7.5x64mm CLIP Tracker Shell Crate"
+	desc = "Contains a 10-round 7.5x64mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a75clip/trac)
 	cost = 250
 
 /* 8x58 */
