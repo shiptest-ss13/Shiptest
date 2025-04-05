@@ -44,6 +44,8 @@
 	var/click_cooldown_override = 0
 	///If true, overrides the bouncing sfx from the turf to this one
 	var/list/bounce_sfx_override
+	///Multiplier for weapon gun_wear
+	var/wear_modifier = 1
 
 	///What this casing can be stacked into.
 	var/obj/item/ammo_box/magazine/stack_type = /obj/item/ammo_box/magazine/ammo_stack

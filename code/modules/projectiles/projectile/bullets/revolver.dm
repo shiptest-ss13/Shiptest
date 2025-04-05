@@ -8,7 +8,6 @@
 	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/c38/surplus
-	damage = 15
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c38/match

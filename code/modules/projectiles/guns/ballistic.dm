@@ -8,6 +8,11 @@
 		spawn_no_ammo = TRUE;					\
 	}
 
+
+#define JAM_CHANCE_MINOR 10
+#define JAM_GRACE_MINOR 4
+#define JAM_CHANCE_MAJOR 30
+
 ///Subtype for any kind of ballistic gun
 ///This has a shitload of vars on it, and I'm sorry for that, but it does make making new subtypes really easy
 /obj/item/gun/ballistic
@@ -18,6 +23,20 @@
 	safety = TRUE
 	// when we load the gun, should it instantly chamber the next round?
 	var/always_chambers = FALSE
+	/// How utterly fucked the gun is. High gun_wear can cause failure to cycle rounds in some guns
+	var/gun_wear = 0
+	/// How much gun_wear is generated when we shoot. Increased when using surplus rounds
+	var/wear_rate = 1 // 60 to malfunction, 180 to critical
+	/// Multiplier for wear reduction
+	var/clean_rate = 1
+	/// Number of times we have successfully fired since the last time the the gun has jammed. Low but not abysmal condition will only jam so often.
+	var/last_jam = 0
+	/// Gun will start to jam at this level of wear
+	var/wear_minor_threshold = 60
+	/// Gun will start to jam more at this level of wear. The grace period between jams is also removed for extra fun
+	var/wear_major_threshold = 180
+	/// Highest wear value so the gun doesn't end up completely irreperable
+	var/wear_maximum = 300
 
 	///If you can examine a gun to see its current ammo count
 	var/ammo_counter = FALSE
@@ -123,9 +142,23 @@
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
-	if (chamber_next_round && (magazine?.max_ammo > 1))
+	if (chamber_next_round && (magazine?.max_ammo > 1) && !condition_check(from_firing, shooter))
 		chamber_round()
 	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
+
+/// Handles weapon condition. Returning TRUE prevents process_chamber from automatically loading a new round
+/obj/item/gun/ballistic/proc/condition_check(from_firing = TRUE, atom/shooter)
+	if(bolt_type == BOLT_TYPE_NO_BOLT || !from_firing || !magazine.ammo_count(FALSE)) //The revolver is one of the most reliable firearms ever designed, as long as you don't need to fire any more than six bullets at something. Which, of course, you do not.
+		return FALSE
+	last_jam++
+	if(gun_wear < wear_minor_threshold)
+		return FALSE
+	if(gun_wear >= wear_major_threshold ?  prob(JAM_CHANCE_MAJOR) : prob(JAM_CHANCE_MINOR) && last_jam >= JAM_GRACE_MINOR)
+		bolt_locked = TRUE
+		last_jam = 0 // sighs and erases number on whiteboard
+		balloon_alert(shooter, "jammed!")
+		playsound(src, 'sound/weapons/gun/general/dry_fire_old.ogg', 50, TRUE, -15) //click. uhoh.
+		return TRUE
 
 ///Used to chamber a new round and eject the old one
 /obj/item/gun/ballistic/proc/chamber_round(keep_bullet = FALSE)
@@ -353,8 +386,20 @@
 
 /obj/item/gun/ballistic/examine_more(mob/user)
 	. = ..()
-	if(bolt_type != BOLT_TYPE_NO_BOLT)
+	if(bolt_type != BOLT_TYPE_NO_BOLT && wear_rate)
 		. += "You can [bolt_wording] [src] by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
+		var/conditionstr = span_boldwarning("critical")
+		var/minorhalf = wear_minor_threshold / 2
+		var/majorhalf = wear_minor_threshold + (wear_major_threshold-wear_minor_threshold) / 2
+		if(gun_wear <= minorhalf)
+			conditionstr = span_green("good")
+		else if(gun_wear <= wear_minor_threshold)
+			conditionstr = span_nicegreen("decent") //nicegreen is less neon than green so it looks less :)))
+		else if(gun_wear <= majorhalf)
+			conditionstr = span_red("poor")
+		else if(gun_wear <= wear_major_threshold) //TTD: switch doesn't play nice with variables but this sucks
+			conditionstr = span_warning("terrible")
+		. += "it is in [conditionstr] condition[gun_wear >= wear_minor_threshold ? gun_wear >= wear_major_threshold ? " and will suffer constant malfunctions" : " and will suffer from regular malfunctions" :""]."
 
 ///Gets the number of bullets in the gun
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = TRUE)
@@ -387,3 +432,26 @@
 	. = ..()
 	process_chamber(empty_chamber,TRUE)
 
+/obj/item/gun/ballistic/proc/adjust_wear(amt)
+	if(amt > 0)
+		gun_wear = round(clamp(gun_wear + wear_rate * amt, 0, wear_maximum), 0.01)
+	else
+		gun_wear = round(clamp(gun_wear + clean_rate * amt, 0, wear_maximum), 0.01)
+
+/// Remember: you can always trust a loaded gun to go off at least once.
+/obj/item/gun/ballistic/proc/accidents_happen(mob/darwin)
+	. = TRUE
+	if(safety)
+		return FALSE
+	if(!magazine && !chambered)
+		return
+	if(internal_magazine && !magazine.ammo_count(TRUE))
+		return
+	if(prob(0.5)) //this gets called I think once per decisecond so we don't really want a high chance here
+		if(!chambered)
+			to_chat(darwin, span_warning("You accidentally chamber a round-"))
+			chamber_round()
+			return
+		to_chat(darwin, span_boldwarning("The trigger on [src] gets caught-"))
+		unsafe_shot(darwin)
+		return FALSE
