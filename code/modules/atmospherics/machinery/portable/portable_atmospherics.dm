@@ -31,7 +31,7 @@
 /obj/machinery/portable_atmospherics/ex_act(severity, target)
 	if(severity == 1 || target == src)
 		if(resistance_flags & INDESTRUCTIBLE)
-			return //Indestructable cans shouldn't release air
+			return //indestructible cans shouldn't release air
 
 		//This explosion will destroy the can, release its air.
 		var/turf/T = get_turf(src)
