@@ -1,7 +1,7 @@
 /datum/round_event_control/salesman
 	name = "Outpost Salesman"
 	typepath = /datum/round_event/ghost_role/salesman
-	weight = 5
+	weight = 0
 	earliest_start = 10 MINUTES
 	min_players = 0
 	max_occurrences = 1
