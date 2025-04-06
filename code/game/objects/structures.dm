@@ -35,8 +35,6 @@
 	GLOB.cameranet.updateVisibility(src)
 	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH_NEIGHBORS(src)
-	if(climbable)
-		RemoveElement(/datum/element/climbable)
 	return ..()
 
 /obj/structure/ui_act(action, params)

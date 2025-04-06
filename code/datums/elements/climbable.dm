@@ -1,4 +1,5 @@
 /datum/element/climbable
+	element_flags = ELEMENT_DETACH
 	///Time it takes to climb onto the object
 	var/climb_time
 	///Stun duration for when you get onto the object
