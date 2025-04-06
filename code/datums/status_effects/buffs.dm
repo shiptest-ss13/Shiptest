@@ -451,3 +451,25 @@
 
 /datum/movespeed_modifier/status_speed_boost
 	multiplicative_slowdown = -0.5
+
+/datum/status_effect/armor_assist
+	//duration = 100
+	var/static/mutable_appearance/overcharge
+	alert_type = /atom/movable/screen/alert/status_effect/armor_assist
+
+/atom/movable/screen/alert/status_effect/armor_assist
+	name = "Armor Assist"
+	desc = "Your armor's servos are online and helping you move without hinderance."
+
+/datum/status_effect/armor_assist/on_apply()
+	. = ..()
+	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
+	owner.add_overlay(overcharge)
+	owner.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/equipment_speedmod)
+	owner.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/gun)
+
+/datum/status_effect/armor_assist/on_remove()
+	. = ..()
+	owner.cut_overlay(overcharge)
+	owner.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/equipment_speedmod)
+	owner.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/gun)

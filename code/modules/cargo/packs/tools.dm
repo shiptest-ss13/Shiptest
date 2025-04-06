@@ -99,10 +99,18 @@
 
 /datum/supply_pack/tools/insulated_gloves
 	name = "Insulated Gloves Crate"
-	desc = "The backbone of modern society. Barely ever ordered for actual engineering. Contains a pair of insulated gloves."
+	desc = "The backbone of modern society. Contains a pair of insulated gloves."
 	cost = 750
 	contains = list(/obj/item/clothing/gloves/color/yellow)
 	crate_name = "insulated gloves crate"
+
+/datum/supply_pack/tools/inducer
+	name = "Inducer Crate"
+	desc = "An electromagnetic induction charging device, used for both field engineering/recharging and reactivation of Positronics. Not suitable for cooking."
+	cost = 750
+	contains = list(/obj/item/inducer)
+	crate_name = "inducer crate"
+	faction = /datum/faction/nt
 
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
@@ -134,6 +142,13 @@
 	cost = 850
 	contains = list(/obj/item/weldingtool/electric)
 	crate_name = "electric welder crate"
+
+/datum/supply_pack/tools/welding_goggles
+	name = "Welding Goggles"
+	desc = "Contains a single pair of welding goggles for protecting your eyes."
+	cost = 150
+	contains = list(/obj/item/clothing/glasses/welding)
+	crate_name = "welding goggles crate"
 
 /datum/supply_pack/tools/plasmacutter
 	name = "Plasmacutter Crate"

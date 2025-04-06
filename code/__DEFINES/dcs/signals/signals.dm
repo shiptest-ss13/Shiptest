@@ -693,17 +693,13 @@
 #define COMSIG_ACTION_TRIGGER "action_trigger" //from base of datum/action/proc/Trigger(): (datum/action)
 	#define COMPONENT_ACTION_BLOCK_TRIGGER 1
 
-// /datum/overmap signals
-/// From overmap Move(): (old_x, old_y)
-#define COMSIG_OVERMAP_MOVED "overmap_moved"
-/// From overmap Dock(): (datum/overmap)
-#define COMSIG_OVERMAP_DOCK "overmap_dock"
-/// From overmap Undock(): (datum/overmap)
-#define COMSIG_OVERMAP_UNDOCK "overmap_undock"
-
 // /datum/component/spawner signals
 // Called by parent when pausing spawning, returns bool: (datum/source, currently_spawning)
 #define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
+
+// Drill signals
+// Called when a mission drill finishes sampling
+#define COMSIG_DRILL_SAMPLES_DONE "drill_done"
 
 ///Beam Signals
 /// Called before beam is redrawn

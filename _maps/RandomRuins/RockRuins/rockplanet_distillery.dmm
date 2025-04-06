@@ -210,6 +210,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
 	},
+/obj/item/storage/bottles/moonshine/sealed,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/shuttle)
 "bS" = (
@@ -764,7 +765,7 @@
 /area/ruin/rockplanet/distillery/office)
 "ir" = (
 /obj/structure/cable/yellow,
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/distillery/office)
 "iy" = (
@@ -2447,7 +2448,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/wrapping,
-/obj/item/storage/bottles/moonshine,
+/obj/item/storage/bottles/moonshine/sealed,
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery/shuttle)
 "BJ" = (
@@ -4379,6 +4380,10 @@
 	specialfunctions = 4
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
+	},
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/office)
 "XD" = (

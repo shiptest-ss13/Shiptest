@@ -37,13 +37,6 @@
 	else
 		obj_flags &= ~EMAGGED
 
-/obj/machinery/computer/cargo/proc/get_export_categories()
-	. = EXPORT_CARGO
-	if(contraband)
-		. |= EXPORT_CONTRABAND
-	if(obj_flags & EMAGGED)
-		. |= EXPORT_EMAG
-
 /obj/machinery/computer/cargo/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
@@ -103,11 +96,11 @@
 	data["outpostMissions"] = list()
 
 	if(current_ship)
-		for(var/datum/mission/M as anything in current_ship.missions)
+		for(var/datum/mission/outpost/M as anything in current_ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
 		if(outpost_docked)
 			var/datum/overmap/outpost/out = current_ship.docked_to
-			for(var/datum/mission/M as anything in out.missions)
+			for(var/datum/mission/outpost/M as anything in out.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
 	return data
@@ -169,7 +162,7 @@
 				unprocessed_packs -= combo_packs
 
 		if("mission-act")
-			var/datum/mission/mission = locate(params["ref"])
+			var/datum/mission/outpost/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 			var/datum/overmap/ship/controlled/ship = D.current_ship
 			var/datum/overmap/outpost/outpost = ship.docked_to

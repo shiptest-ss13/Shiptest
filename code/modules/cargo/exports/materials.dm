@@ -1,10 +1,16 @@
 /datum/export/material
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
-	message = "cm3 of developer's tears. Please, report this on github"
+	desc = "Credit value is equal to 2000 cm3 of material. The standard sheet printing volume."
+
+	elasticity_coeff = 0.0002
+	recovery_ds = 0.02 MINUTES
 	var/material_id = null
 	export_types = list(
-		/obj/item/stack/sheet, /obj/item/stack/tile,
-		/obj/item/stack/ore, /obj/item/coin)
+		/obj/item/stack/sheet,
+		/obj/item/stack/tile,
+		/obj/item/stack/ore,
+		/obj/item/coin
+	)
 // Yes, it's a base type containing export_types.
 // But it has no material_id, so any applies_to check will return false, and these types reduce amount of copypasta a lot
 
@@ -28,67 +34,69 @@
 
 /datum/export/material/diamond
 	cost = 125
+	unit_name = "cm3 of diamond"
 	material_id = /datum/material/diamond
-	message = "cm3 of diamonds"
 
 /datum/export/material/plasma
 	cost = 25
-	k_elasticity = 0
+	unit_name = "cm3 of plasma"
 	material_id = /datum/material/plasma
-	message = "cm3 of plasma"
 
 /datum/export/material/uranium
 	cost = 25
+	unit_name = "cm3 of uranium"
 	material_id = /datum/material/uranium
-	message = "cm3 of uranium"
 
 /datum/export/material/gold
 	cost = 30
+	unit_name = "cm3 of gold"
 	material_id = /datum/material/gold
-	message = "cm3 of gold"
 
 /datum/export/material/silver
 	cost = 10
+	unit_name = "cm3 of silver"
 	material_id = /datum/material/silver
-	message = "cm3 of silver"
 
 /datum/export/material/titanium
 	cost = 30
+	unit_name = "cm3 of titanium"
 	material_id = /datum/material/titanium
-	message = "cm3 of titanium"
 
+/*
 /datum/export/material/hellstone
 	cost = 125
+	unit_name = "cm3 of hellstone"
 	material_id = /datum/material/hellstone
-	message = "cm3 of hellstone"
+*/
 
 /datum/export/material/bscrystal
+	unit_name = "bluespace crystals"
 	cost = 75
-	message = "of bluespace crystals"
 	material_id = /datum/material/bluespace
 
 /datum/export/material/plastic
-	cost = 5
-	message = "cm3 of plastic"
+	unit_name = "cm3 of plastic"
+	cost = 2
 	material_id = /datum/material/plastic
 
 /datum/export/material/metal
+	unit_name = "cm3 of metal"
 	cost = 2
-	message = "cm3 of metal"
 	material_id = /datum/material/iron
 	export_types = list(
-		/obj/item/stack/sheet/metal, /obj/item/stack/tile/plasteel,
-		/obj/item/stack/rods, /obj/item/stack/ore, /obj/item/coin)
+		/obj/item/stack/sheet/metal,
+		/obj/item/stack/tile/plasteel,
+		/obj/item/stack/rods,
+		/obj/item/stack/ore,
+		/obj/item/coin
+	)
 
 /datum/export/material/glass
-	cost = 2
-	message = "cm3 of glass"
+	unit_name = "cm3 of glass"
+	cost = 1
 	material_id = /datum/material/glass
-	export_types = list(/obj/item/stack/sheet/glass, /obj/item/stack/ore,
-		/obj/item/shard)
-
-/datum/export/material/hot_ice
-	cost = 100
-	message = "cm3 of Hot Ice"
-	material_id = /datum/material/hot_ice
-	export_types = /obj/item/stack/sheet/hot_ice
+	export_types = list(
+		/obj/item/stack/sheet/glass,
+		/obj/item/stack/ore,
+		/obj/item/shard
+	)

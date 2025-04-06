@@ -71,7 +71,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/goliath/gib()
-	if(prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
+	if(!from_nest && prob(1))//goliaths eat rocks and thus have a tiny chance to contain a number of gems
 		var/obj/item/gem/to_drop = pick(/obj/item/gem/rupee, /obj/item/gem/fdiamond, /obj/item/gem/void, /obj/item/gem/phoron)
 		new to_drop(loc)
 		visible_message("<span class='warning'>A glittering object falls out of [src]'s hide!</span>")
@@ -147,7 +147,7 @@
 	icon_dead = "goliath_dead"
 	throw_message = "does nothing to the thick hide of the"
 	pre_attack_icon = "goliath_preattack"
-	//mob_trophy = /obj/item/mob_trophy/goliath_tentacle
+	mob_trophy = /obj/item/mob_trophy/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
 	loot = list()
@@ -249,7 +249,7 @@
 	maxHealth = 180
 	health = 180
 	speed = 4
-	//mob_trophy = /obj/item/mob_trophy/elder_tentacle
+	mob_trophy = /obj/item/mob_trophy/elder_tentacle
 	guaranteed_butcher_results = list()
 	wander = FALSE
 	bonus_tame_chance = 10

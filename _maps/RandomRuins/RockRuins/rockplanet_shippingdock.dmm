@@ -936,9 +936,7 @@
 /turf/open/floor/concrete/pavement/rockplanet,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "jR" = (
-/obj/machinery/power/shuttle/engine/electric/bad{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric/bad,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/shippingdock)
 "jT" = (
@@ -2661,7 +2659,13 @@
 	},
 /obj/effect/turf_decal/corner/opaque/brown/border,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/pet/mothroach,
+/mob/living/simple_animal/pet/mothroach{
+	name = "Baffles"
+	},
+/obj/effect/landmark/mission_poi/main{
+	type_to_spawn = /mob/living/simple_animal/pet/mothroach;
+	already_spawned = 1
+	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/rockplanet/shippingdock)
 "zU" = (
@@ -3932,9 +3936,6 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/shippingdock)
-"Nq" = (
-/turf/closed/wall/mineral/titanium,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ns" = (
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
 	dir = 4
@@ -7556,7 +7557,7 @@ SO
 TW
 nr
 SO
-Nq
+SO
 XI
 bo
 So

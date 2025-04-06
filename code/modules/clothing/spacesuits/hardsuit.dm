@@ -337,8 +337,11 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_mode,/datum/action/item_action/toggle_helmet_light)
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDEEARS
 	visor_flags = STOPSPRESSUREDAMAGE
-	var/full_retraction = FALSE //whether or not our full face is revealed or not during travel mode
+	var/full_retraction = FALSE //whether or not our full face is revealed or not during combat mode
 	var/eva_mode = TRUE
+
+	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
 	icon_state = "hardsuit[eva_mode]-[hardsuit_type]"
@@ -424,9 +427,11 @@
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	jetpack = /obj/item/tank/jetpack/suit
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-	slowdown = 0.7
-	var/lightweight = FALSE
+	slowdown = 0.5
+	var/lightweight = 0 //used for flags when toggling
+
+	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 //Ramzi Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
@@ -450,7 +455,7 @@
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	slowdown = 0.7
 	jetpack = null
-	supports_variations = DIGITIGRADE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -487,6 +492,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/debug
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/debug
+	slowdown = 0
 
 //Cybersun Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
@@ -497,7 +503,7 @@
 	hardsuit_type = "cybersun"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
 	name = "neutron-star combat hardsuit helmet"
@@ -516,7 +522,6 @@
 	hardsuit_type = "cyberparamed"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
-	supports_variations = VOX_VARIATION
 	jetpack = null
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
@@ -535,7 +540,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
@@ -545,7 +550,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 	//Medical hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/medical

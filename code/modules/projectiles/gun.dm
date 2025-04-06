@@ -366,6 +366,8 @@
 /obj/item/gun/proc/do_wield(mob/user)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
+	if(azoom)
+		azoom.Grant(user)
 	if(wield_time > 0)
 		if(do_after(
 			user,
@@ -389,6 +391,8 @@
 	wielded_fully = FALSE
 	zoom(user, forced_zoom = FALSE)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
+	if(azoom)
+		azoom.Remove(user)
 
 /obj/item/gun/proc/is_wielded()
 	return wielded
@@ -411,9 +415,9 @@
 	return ..()
 
 /obj/item/gun/examine(mob/user)
+	. = ..()
 	if(manufacturer)
 		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
-	. = ..()
 
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
@@ -758,14 +762,10 @@
 /obj/item/gun/pickup(mob/user)
 	. = ..()
 	update_appearance()
-	if(azoom)
-		azoom.Grant(user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	update_appearance()
-	if(azoom)
-		azoom.Remove(user)
 	if(zoomed)
 		zoom(user, user.dir)
 
