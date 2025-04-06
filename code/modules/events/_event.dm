@@ -45,6 +45,7 @@
 		admin_setup += new admin_setup_type(src)
 
 /datum/round_event_control/wizard
+	category = EVENT_CATEGORY_ADMINBUS
 	wizardevent = TRUE
 
 // Checks if the event can be spawned. Used by event controller and "false alarm" event.

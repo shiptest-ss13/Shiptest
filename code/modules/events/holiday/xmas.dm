@@ -68,6 +68,7 @@
 	weight = 20
 	max_occurrences = 1
 	earliest_start = 30 MINUTES
+	category = EVENT_CATEGORY_HOLIDAY
 
 /datum/round_event/santa
 	var/mob/living/carbon/human/santa //who is our santa?

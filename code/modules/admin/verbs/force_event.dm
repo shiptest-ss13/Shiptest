@@ -18,9 +18,9 @@
 	var/holiday = ""
 	for(var/datum/round_event_control/E in SSevents.control)
 		dat = "<BR><A href='?src=[REF(src)];[HrefToken()];forceevent=[REF(E)]'>[E]</A>"
-		if(E.holidayID)
+		if(E.category == EVENT_CATEGORY_HOLIDAY)
 			holiday	+= dat
-		else if(E.wizardevent)
+		else if(E.category == EVENT_CATEGORY_ADMINBUS)
 			magic 	+= dat
 		else
 			normal 	+= dat
