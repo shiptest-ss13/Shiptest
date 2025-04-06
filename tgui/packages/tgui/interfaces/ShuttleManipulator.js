@@ -1,4 +1,5 @@
 import { map } from 'common/collections';
+import { useState } from 'react';
 import {
   Button,
   Collapsible,
@@ -9,12 +10,12 @@ import {
   Tabs,
 } from 'tgui-core/components';
 
-import { useBackend, useLocalState } from '../backend';
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const ShuttleManipulator = (props) => {
-  const [tab, setTab] = useLocalState('tab', 1);
-  const { act } = useBackend();
+  const [tab, setTab] = useState(1);
+
   return (
     <Window title="Shuttle Manipulator" width={875} height={600} resizable theme="admin">
       <Window.Content scrollable>
@@ -115,17 +116,17 @@ export const ShuttleManipulatorStatus = (props) => {
 export const ShuttleManipulatorTemplates = (props) => {
   const { act, data } = useBackend();
   const templateObject = data.templates || {};
-  const [selectedTemplateId, setSelectedTemplateId] = useLocalState(
-    'templateId',
-    Object.keys(templateObject)[0]
+  const [selectedTemplateId, setSelectedTemplateId] = useState(
+    Object.keys(templateObject)[0],
   );
   const actualTemplates = templateObject[selectedTemplateId]?.templates || [];
+
   return (
     <Section>
       <Flex>
         <Flex.Item>
           <Tabs vertical>
-            {map((template, templateId) => (
+            {map(templateObject, (template, templateId) => (
               <Tabs.Tab
                 key={templateId}
                 selected={selectedTemplateId === templateId}
