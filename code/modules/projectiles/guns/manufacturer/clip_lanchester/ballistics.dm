@@ -130,7 +130,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cm357
 	name = "\improper CM-357"
-	desc = "A powerful semi-automatic magnum handgun, designed for use by BARD's megafauna removal unit, as standard handguns had proven ineffective as backup weapons. The heft and power of the weapon have made it a status symbol among the few CLIP officers able to requisition one. Chambered in .357."
+	desc = "A powerful semi-automatic handgun designed for CLIP-BARD's megafauna removal unit, as standard handguns had proven ineffective as backup weapons. The heft and power of the weapon have made it a status symbol among the few CLIP officers able to requisition one. Chambered in .357."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -398,7 +398,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
-	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, featuring the impressive range and penetrating power characteristic of a sniper rifle. Chambered in 6.5mm CLIP."
+	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, featuring impressive range and penetrating power on a relatively lightweight platform. Chambered in 6.5mm CLIP."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
