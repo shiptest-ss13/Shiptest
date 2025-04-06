@@ -5,7 +5,7 @@
 	// disabled or intended as subshuttles
 	for(var/name as anything in SSmapping.shuttle_templates)
 		var/datum/map_template/shuttle/map = SSmapping.shuttle_templates[name]
-		log_test("::group::Testing [map.name]")
+		log_test("Testing [map.name]")
 		var/timer = REALTIMEOFDAY
 		try
 			var/subtimer = REALTIMEOFDAY
@@ -46,6 +46,5 @@
 			log_test(" - Qdeling took [(REALTIMEOFDAY - subtimer) / 10]s")
 		catch(var/exception/e)
 			Fail("Runtime error testing ship type ([map.name]): [e]\n[e.desc]", e.file, e.line)
-		log_test("::endgroup::")
 		log_test("[map.name] took [(REALTIMEOFDAY - timer) / 10]s")
 
