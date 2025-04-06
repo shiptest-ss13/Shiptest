@@ -228,6 +228,7 @@ EMPTY_GUN_HELPER(revolver/detective)
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	show_magazine_on_sprite = TRUE
+	wear_rate = 0.66 //HP weapons are more resistant to wear
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -251,6 +252,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor)
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
+	wear_rate = 0.6 //factory guns are now OBJECTIVELY better. if they happen to be candors.
 
 NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
@@ -287,6 +289,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	bolt_type = BOLT_TYPE_OPEN
 	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
 	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
+	wear_rate = 0.4 //HP weapons are more resistant to wear
 
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -1074,7 +1077,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 //well. its almost a sniper.
 /obj/item/gun/ballistic/automatic/marksman/vickland //weapon designed by Apogee-dev
 	name = "\improper Vickland"
-	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
+	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in 8x50mmR."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -1106,7 +1109,6 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
-		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
 	slot_offsets = list(
@@ -1123,6 +1125,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 			"y" = 14,
 		)
 	)
+
+	wear_rate = 0.8 //HP weapons are more resistant to wear
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"

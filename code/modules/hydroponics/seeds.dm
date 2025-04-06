@@ -17,7 +17,7 @@
 	var/icon_dead					// Used to override dead icon (default is "[species]-dead"). You can use one dead icon for multiple closely related plants with it.
 	var/icon_harvest				// Used to override harvest icon (default is "[species]-harvest"). If null, plant will use [icon_grow][growthstages].
 
-	var/lifespan = 25				// How long before the plant begins to take damage from age.
+	var/lifespan = 30				// How long before the plant begins to take damage from age.
 	var/endurance = 15				// Amount of health the plant has.
 	var/maturation = 6				// Used to determine which sprite to switch to when growing.
 	var/production = 6				// Changes the amount of time needed for a plant to become harvestable.
@@ -562,6 +562,40 @@
 		else
 			qdel(P)
 
+/obj/item/seeds/proc/get_tgui_info()
+	var/list/data = list()
+	data["name"] = plantname
+	data["lifespan"] = lifespan
+	data["endurance"] = endurance
+	data["maturation"] = maturation
+	data["production"] = production
+	data["yield"] = yield
+	data["potency"] = potency
+	data["instability"] = instability
+	data["weed_rate"] = weed_rate
+	data["weed_chance"] = weed_chance
+	data["rarity"] = rarity
+	data["genes"] = list()
+	for(var/datum/plant_gene/trait/traits in genes)
+		data["genes"] += traits.type
+
+	data["mutatelist"] = list()
+	for(var/obj/item/seeds/mutant as anything in mutatelist)
+		data["mutatelist"] += list(list(
+			"type" = mutant,
+			"name" = initial(mutant.plantname),
+			"desc" = initial(mutant.desc)
+		))
+
+	data["grind_results"] = list()
+	for(var/datum/plant_gene/reagent/reagent_gene in genes)
+		var/datum/reagent/seed_reagent = GLOB.chemical_reagents_list[reagent_gene.reagent_id]
+		data["grind_results"] += list(list(
+			"name" = reagent_gene,
+			"desc" = seed_reagent.description,
+			"amount" = "[reagent_gene.rate*100]%"
+		))
+	return data
 /*
  * Both `/item/food/grown` and `/item/grown` implement a seed variable which tracks
  * plant statistics, genes, traits, etc. This proc gets the seed for either grown food or

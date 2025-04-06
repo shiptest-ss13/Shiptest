@@ -76,6 +76,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			var/picked = pick_weight(ore_list)
 			vein_contents.Add(picked)
 			ore_list.Remove(picked)
+			if(!LAZYLEN(ore_list))
+				break
 	GLOB.ore_veins += src
 
 /obj/structure/vein/examine(mob/user)
@@ -160,6 +162,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/nest = 10,
 		)
 
+/obj/structure/vein/classfour
+	mining_charges = 30
+	vein_class = 4
+
 /obj/structure/vein/ice
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf = 30,
@@ -214,6 +220,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/ice = 8,
 		)
 	max_mobs = 6
+
+/obj/structure/vein/ice/classfour
+	mining_charges = 30
+	vein_class = 4
 
 // Asteroid veins are the same as the base planetary ones yield wise, but with the asteroid mobs.
 

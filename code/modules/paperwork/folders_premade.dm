@@ -75,6 +75,12 @@
 	desc = "A green folder with a Terran Regency seal."
 	icon_state = "folder_terragovred"
 
+/obj/item/folder/documents/eoehoma
+	document = /obj/item/documents/eoehoma
+	icon_state = "folder_blue"
+	name = "folder"
+	desc = "A blue folder."
+
 /obj/item/folder/suns
 	desc = "A purple folder with a SUNS seal."
 	icon_state = "folder_suns"

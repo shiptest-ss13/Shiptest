@@ -138,11 +138,11 @@
 /obj/item/udder/gutlunch/initial_conditions()
 	if(udder_mob.gender == FEMALE)
 		START_PROCESSING(SSobj, src)
-	RegisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET, PROC_REF(on_mob_attacking))
+	RegisterSignal(udder_mob, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, PROC_REF(on_mob_attacking))
 
 /obj/item/udder/gutlunch/Destroy()
 	if(udder_mob)
-		UnregisterSignal(udder_mob, COMSIG_HOSTILE_ATTACKINGTARGET)
+		UnregisterSignal(udder_mob, COMSIG_HOSTILE_PRE_ATTACKINGTARGET)
 	. = ..()
 
 /obj/item/udder/gutlunch/process(seconds_per_tick)

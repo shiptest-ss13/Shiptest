@@ -17,7 +17,7 @@
 	var/convert_damage_type = BRUTE //Since simplemobs don't have advanced damagetypes, what to convert damage back into.
 
 	var/mob/living/shapeshift_type
-	var/list/possible_shapes = list(/mob/living/simple_animal/mouse,\
+	var/list/possible_shapes = list(/mob/living/basic/mouse,\
 		/mob/living/simple_animal/pet/dog/corgi,\
 		/mob/living/simple_animal/bot/secbot/ed209,\
 		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,)

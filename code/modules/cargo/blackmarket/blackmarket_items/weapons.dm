@@ -45,7 +45,7 @@
 /datum/blackmarket_item/weapon/sledgehammer
 	name = "Breaching Sledgehammer"
 	desc = "A Clique outfit had to ditch a lot of equipment to evade a Gezenan assault. This little piece breaks legs and walls like no other. You want in?"
-	item = /obj/item/melee/axe/sledgehammer
+	item = /obj/item/melee/sledgehammer/gorlex
 
 	price_min = 2000
 	price_max = 3000
@@ -140,8 +140,8 @@
 	desc = "Look. I'll be straight with you. These guns are awful. But, they are cheap if you're that desperate."
 	item = /obj/item/gun/energy/e_gun/e11
 
-	price_min = 250
-	price_max = 750
+	price_min = 200
+	price_max = 400
 	stock = 5
 	availability_prob = 60
 

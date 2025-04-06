@@ -1,24 +1,5 @@
 //Service modules for MODsuits
 
-///Bike Horn - Plays a bike horn sound.
-/obj/item/mod/module/bikehorn
-	name = "MOD bike horn module"
-	desc = "A shoulder-mounted piece of heavy sonic artillery, this module uses the finest femto-manipulator technology to \
-		precisely deliver an almost lethal squeeze to... a bike horn, producing a significantly memorable sound."
-	icon_state = "bikehorn"
-	module_type = MODULE_USABLE
-	complexity = 1
-	use_power_cost = DEFAULT_CHARGE_DRAIN
-	incompatible_modules = list(/obj/item/mod/module/bikehorn)
-	cooldown_time = 1 SECONDS
-
-/obj/item/mod/module/bikehorn/on_use()
-	. = ..()
-	if(!.)
-		return
-	playsound(src, 'sound/items/bikehorn.ogg', 100, FALSE)
-	drain_power(use_power_cost)
-
 ///Microwave Beam - Microwaves items instantly.
 /obj/item/mod/module/microwave_beam
 	name = "MOD microwave beam module"
@@ -39,7 +20,7 @@
 	if(!istype(target, /obj/item))
 		return
 	if(!isturf(target.loc))
-		balloon_alert(mod.wearer, "must be on the floor!")
+		to_chat(mod.wearer,span_warning("\The [target] must be on the floor!"))
 		return
 	var/obj/item/microwave_target = target
 	var/datum/effect_system/spark_spread/spark_effect = new()
@@ -49,7 +30,7 @@
 	if(microwave_target.microwave_act())
 		playsound(src, 'sound/machines/microwave/microwave-end.ogg', 50, FALSE)
 	else
-		balloon_alert(mod.wearer, "can't be microwaved!")
+		to_chat(mod.wearer,span_warning("\The [microwave_target] can't be microwaved!"))
 	var/datum/effect_system/spark_spread/spark_effect_two = new()
 	spark_effect_two.set_up(2, 1, microwave_target)
 	spark_effect_two.start()

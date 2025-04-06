@@ -35,7 +35,7 @@
 	. = ..()
 
 	GLOB.new_player_list += src
-	SSpoints_of_interest.make_point_of_interest(src)
+	//SSpoints_of_interest.make_point_of_interest(src)
 
 /mob/dead/new_player/Destroy()
 	GLOB.new_player_list -= src
@@ -345,7 +345,7 @@
 
 	log_manifest(character.mind.key, character.mind, character, TRUE)
 
-	SSblackbox.record_feedback("tally", "player_joined_faction", 1, ship.get_faction())
+	SSblackbox.record_feedback("tally", "player_joined_faction", 1, ship.source_template.faction.name)
 	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
 		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 	return TRUE

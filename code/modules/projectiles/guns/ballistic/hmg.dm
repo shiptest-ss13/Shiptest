@@ -41,6 +41,9 @@
 	/obj/structure/railing,
 	/obj/structure/flippedtable
 	)
+	wear_minor_threshold = 300
+	wear_major_threshold = 900
+	wear_maximum = 1500
 
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()

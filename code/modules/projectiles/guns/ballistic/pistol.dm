@@ -30,50 +30,6 @@
 		/obj/item/attachment/sling
 		)
 
-
-/obj/item/gun/ballistic/automatic/pistol/candor
-	name = "\improper Candor"
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
-	icon_state = "candor"
-	item_state = "hp_generic"
-	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
-
-	default_ammo_type = /obj/item/ammo_box/magazine/m45
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m45,
-	)
-	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
-	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	show_magazine_on_sprite = TRUE
-
-NO_MAG_GUN_HELPER(automatic/pistol/candor)
-
-/obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
-	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
-	item_state = "hp_generic_fresh"
-
-NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
-
-/obj/item/gun/ballistic/automatic/pistol/candor/factory/update_overlays()
-	. = ..()
-	. += "[initial(icon_state)]_factory"
-
-/obj/item/gun/ballistic/automatic/pistol/candor/phenex
-	name = "\improper HP Phenex"
-	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .45."
-	icon_state = "phenex"
-	item_state = "hp_phenex"
-
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"
 	desc = "A Nanotrasen-issue handgun, modified with a voice box to further enhance its effectiveness in troop discipline."
