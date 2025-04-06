@@ -4,7 +4,7 @@ import {
   Box,
   Button,
   Collapsible,
-  Grid,
+  Flex,
   Input,
   LabeledList,
   NoticeBox,
@@ -104,9 +104,9 @@ export const PandemicDiseaseDisplay = (props) => {
           />
         }
       >
-        <Grid>
-          <Grid.Column>{virus.description}</Grid.Column>
-          <Grid.Column>
+        <Flex>
+          <Flex.Column>{virus.description}</Flex.Column>
+          <Flex.Column>
             <LabeledList>
               <LabeledList.Item label="Agent">{virus.agent}</LabeledList.Item>
               <LabeledList.Item label="Spread">{virus.spread}</LabeledList.Item>
@@ -114,13 +114,13 @@ export const PandemicDiseaseDisplay = (props) => {
                 {virus.cure}
               </LabeledList.Item>
             </LabeledList>
-          </Grid.Column>
-        </Grid>
+          </Flex.Column>
+        </Flex>
         {!!virus.is_adv && (
           <>
             <Section title="Statistics" level={2}>
-              <Grid>
-                <Grid.Column>
+              <Flex>
+                <Flex.Column>
                   <LabeledList>
                     <LabeledList.Item label="Resistance">
                       {virus.resistance}
@@ -129,8 +129,8 @@ export const PandemicDiseaseDisplay = (props) => {
                       {virus.stealth}
                     </LabeledList.Item>
                   </LabeledList>
-                </Grid.Column>
-                <Grid.Column>
+                </Flex.Column>
+                <Flex.Column>
                   <LabeledList>
                     <LabeledList.Item label="Stage speed">
                       {virus.stage_speed}
@@ -139,8 +139,8 @@ export const PandemicDiseaseDisplay = (props) => {
                       {virus.transmission}
                     </LabeledList.Item>
                   </LabeledList>
-                </Grid.Column>
-              </Grid>
+                </Flex.Column>
+              </Flex>
             </Section>
             <Section title="Symptoms" level={2}>
               {symptoms.map((symptom) => (
@@ -185,9 +185,9 @@ export const PandemicSymptomDisplay = (props) => {
         )
       }
     >
-      <Grid>
-        <Grid.Column size={2}>{desc}</Grid.Column>
-        <Grid.Column>
+      <Flex>
+        <Flex.Column size={2}>{desc}</Flex.Column>
+        <Flex.Column>
           <LabeledList>
             <LabeledList.Item label="Level">{level}</LabeledList.Item>
             <LabeledList.Item label="Resistance">{resistance}</LabeledList.Item>
@@ -199,8 +199,8 @@ export const PandemicSymptomDisplay = (props) => {
               {transmission}
             </LabeledList.Item>
           </LabeledList>
-        </Grid.Column>
-      </Grid>
+        </Flex.Column>
+      </Flex>
       {thresholds.length > 0 && (
         <Section title="Thresholds" level={3}>
           <LabeledList>

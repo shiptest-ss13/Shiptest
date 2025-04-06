@@ -2,7 +2,7 @@ import { useBackend } from '../backend';
 import {
   Box,
   Button,
-  Grid,
+  Flex,
   LabeledList,
   ProgressBar,
   Section,
@@ -50,8 +50,8 @@ export const DnaVault = (props) => {
             <Box bold textAlign="center" mb={1}>
               Applicable Gene Therapy Treatments
             </Box>
-            <Grid>
-              <Grid.Column>
+            <Flex>
+              <Flex.Column>
                 <Button
                   fluid
                   bold
@@ -63,8 +63,8 @@ export const DnaVault = (props) => {
                     })
                   }
                 />
-              </Grid.Column>
-              <Grid.Column>
+              </Flex.Column>
+              <Flex.Column>
                 <Button
                   fluid
                   bold
@@ -76,8 +76,8 @@ export const DnaVault = (props) => {
                     })
                   }
                 />
-              </Grid.Column>
-            </Grid>
+              </Flex.Column>
+            </Flex>
           </Section>
         )}
       </Window.Content>

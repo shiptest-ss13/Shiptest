@@ -4,7 +4,7 @@ import {
   AnimatedNumber,
   Box,
   Button,
-  Grid,
+  Flex,
   LabeledList,
   ProgressBar,
   Section,
@@ -18,8 +18,8 @@ export const NtosArcade = (props) => {
       <NtosWindow.Content>
         <Section title="Outbomb Cuban Pete Ultra" textAlign="center">
           <Box>
-            <Grid>
-              <Grid.Column size={2}>
+            <Flex>
+              <Flex.Column size={2}>
                 <Box m={1} />
                 <LabeledList>
                   <LabeledList.Item label="Player Health">
@@ -60,8 +60,8 @@ export const NtosArcade = (props) => {
                 >
                   {data.Status}
                 </Section>
-              </Grid.Column>
-              <Grid.Column>
+              </Flex.Column>
+              <Flex.Column>
                 <ProgressBar
                   value={data.Hitpoints}
                   minValue={0}
@@ -79,8 +79,8 @@ export const NtosArcade = (props) => {
                 <Section inline width="156px" textAlign="center">
                   <img src={resolveAsset(data.BossID)} />
                 </Section>
-              </Grid.Column>
-            </Grid>
+              </Flex.Column>
+            </Flex>
             <Box my={1} mx={4} />
             <Button
               icon="fist-raised"

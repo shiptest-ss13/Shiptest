@@ -534,7 +534,7 @@ export const Secrets = (props) => {
   const [tabIndex, setTabIndex] = useLocalState('tab-index', 2);
   const TabComponent = TAB2NAME[tabIndex - 1].component();
   return (
-    <Window title="Secrets Panel" width={500} height={485}>
+    <Window title="Secrets Panel" width={500} height={485} theme="admin">
       <Window.Content>
         <Flex direction="column" height="100%">
           <Flex.Item mb={1}>

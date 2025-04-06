@@ -1,5 +1,5 @@
 import { sortBy } from 'common/collections';
-import { Button, Flex, Grid, Section, Tabs } from 'tgui-core/components';
+import { Button, Flex, Flex, Section, Tabs } from 'tgui-core/components';
 
 import { useLocalState } from '../../backend';
 
@@ -101,8 +101,8 @@ export const AccessList = (props) => {
           </Tabs>
         </Flex.Item>
         <Flex.Item grow={1}>
-          <Grid>
-            <Grid.Column mr={0}>
+          <Flex>
+            <Flex.Column mr={0}>
               <Button
                 fluid
                 icon="check"
@@ -110,8 +110,8 @@ export const AccessList = (props) => {
                 color="good"
                 onClick={() => grantDep(selectedAccess.regid)}
               />
-            </Grid.Column>
-            <Grid.Column ml={0}>
+            </Flex.Column>
+            <Flex.Column ml={0}>
               <Button
                 fluid
                 icon="times"
@@ -119,8 +119,8 @@ export const AccessList = (props) => {
                 color="bad"
                 onClick={() => denyDep(selectedAccess.regid)}
               />
-            </Grid.Column>
-          </Grid>
+            </Flex.Column>
+          </Flex>
           {selectedAccessEntries.map((entry) => (
             <Button.Checkbox
               fluid

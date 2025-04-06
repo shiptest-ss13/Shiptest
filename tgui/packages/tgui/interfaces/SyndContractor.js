@@ -3,7 +3,7 @@ import {
   Box,
   Button,
   Flex,
-  Grid,
+  Flex,
   Icon,
   LabeledList,
   Modal,
@@ -229,8 +229,8 @@ export const StatusPane = (props) => {
         </Box>
       }
     >
-      <Grid>
-        <Grid.Column size={0.85}>
+      <Flex>
+        <Flex.Column size={0.85}>
           <LabeledList>
             <LabeledList.Item
               label="TC Availible"
@@ -248,16 +248,16 @@ export const StatusPane = (props) => {
               {data.earned_tc}
             </LabeledList.Item>
           </LabeledList>
-        </Grid.Column>
-        <Grid.Column>
+        </Flex.Column>
+        <Flex.Column>
           <LabeledList>
             <LabeledList.Item label="Contracts Completed">
               {data.contracts_completed}
             </LabeledList.Item>
             <LabeledList.Item label="Current Status">ACTIVE</LabeledList.Item>
           </LabeledList>
-        </Grid.Column>
-      </Grid>
+        </Flex.Column>
+      </Flex>
     </Section>
   );
 };
@@ -334,15 +334,15 @@ const ContractsTab = (props) => {
                 </>
               }
             >
-              <Grid>
-                <Grid.Column>{contract.message}</Grid.Column>
-                <Grid.Column size={0.5}>
+              <Flex>
+                <Flex.Column>{contract.message}</Flex.Column>
+                <Flex.Column size={0.5}>
                   <Box bold mb={1}>
                     Dropoff Location:
                   </Box>
                   <Box>{contract.dropoff}</Box>
-                </Grid.Column>
-              </Grid>
+                </Flex.Column>
+              </Flex>
             </Section>
           );
         })}

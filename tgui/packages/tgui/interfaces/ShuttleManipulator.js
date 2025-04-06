@@ -16,7 +16,7 @@ export const ShuttleManipulator = (props) => {
   const [tab, setTab] = useLocalState('tab', 1);
   const { act } = useBackend();
   return (
-    <Window title="Shuttle Manipulator" width={875} height={600} resizable>
+    <Window title="Shuttle Manipulator" width={875} height={600} resizable theme="admin">
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab selected={tab === 1} onClick={() => setTab(1)}>

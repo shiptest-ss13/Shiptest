@@ -78,7 +78,7 @@ function ApcLoggedOut(props) {
             <Stack.Item bold mt={5}>
               Zeus™ Controller Version 0.19
             </Stack.Item>
-            <Stack.Item color="label">Copyright 2526 Nanotrasen</Stack.Item>
+            <Stack.Item color="label">Copyright 506 Nanotrasen</Stack.Item>
           </Stack>
         </Stack.Item>
         <Stack.Item color="#2a2a2a" mb={1}>

@@ -2,7 +2,7 @@ import { useBackend } from '../backend';
 import {
   Button,
   Dropdown,
-  Grid,
+  Flex,
   Input,
   LabeledList,
   NoticeBox,
@@ -288,9 +288,9 @@ export const NaniteProgrammerContent = (props) => {
       }
     >
       <Section title="Info" level={2}>
-        <Grid>
-          <Grid.Column>{desc}</Grid.Column>
-          <Grid.Column size={0.7}>
+        <Flex>
+          <Flex.Column>{desc}</Flex.Column>
+          <Flex.Column size={0.7}>
             <LabeledList>
               <LabeledList.Item label="Use Rate">{use_rate}</LabeledList.Item>
               {!!can_trigger && (
@@ -304,8 +304,8 @@ export const NaniteProgrammerContent = (props) => {
                 </>
               )}
             </LabeledList>
-          </Grid.Column>
-        </Grid>
+          </Flex.Column>
+        </Flex>
       </Section>
       <Section
         title="Settings"
@@ -321,14 +321,14 @@ export const NaniteProgrammerContent = (props) => {
           />
         }
       >
-        <Grid>
-          <Grid.Column>
+        <Flex>
+          <Flex.Column>
             <NaniteCodes />
-          </Grid.Column>
-          <Grid.Column>
+          </Flex.Column>
+          <Flex.Column>
             <NaniteDelays />
-          </Grid.Column>
-        </Grid>
+          </Flex.Column>
+        </Flex>
         {!!has_extra_settings && (
           <Section title="Special" level={3}>
             <LabeledList>
