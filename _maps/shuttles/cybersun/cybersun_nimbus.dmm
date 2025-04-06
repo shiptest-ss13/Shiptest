@@ -1342,6 +1342,10 @@
 	pixel_x = 7;
 	pixel_y = -8
 	},
+/obj/item/clothing/mask/gas/syndicate{
+	pixel_x = -4;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "xM" = (
@@ -1686,30 +1690,53 @@
 "Fw" = (
 /obj/structure/table/chem,
 /obj/structure/closet/wall/white/directional/west,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/condiment/rice{
-	pixel_y = 9
-	},
 /obj/item/reagent_containers/condiment/rice{
 	pixel_y = 9;
-	pixel_x = -5
+	pixel_x = -7
 	},
 /obj/item/cutting_board{
 	pixel_y = 8;
 	pixel_x = 2
 	},
 /obj/item/melee/knife/kitchen,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/snacks/fishmeat/carp{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/snacks/fishmeat/carp{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/snacks/fishmeat/carp{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_x = 6;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "FH" = (
@@ -2106,9 +2133,9 @@
 	pixel_y = 12;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/sake{
-	pixel_y = 5;
-	pixel_x = 15
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
+	pixel_x = 16;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -2854,9 +2881,7 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun,
 /obj/item/folder/documents/syndicate/cybersun,
 /obj/item/reagent_containers/food/drinks/flask,
-/obj/item/reagent_containers/food/drinks/bottle/sake{
-	pixel_y = 2
-	},
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl,
 /turf/open/floor/suns/hatch{
 	color = "#E6D2BA"
 	},

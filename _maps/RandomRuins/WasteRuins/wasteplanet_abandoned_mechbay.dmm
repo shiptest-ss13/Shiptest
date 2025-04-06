@@ -3484,12 +3484,13 @@
 "PW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/innards,
-/obj/mecha/combat/gygax/dark{
+/obj/structure/mecha_wreckage/gygax/dark{
 	name = "515 EX 'Lucky #2'"
 	},
 /obj/effect/landmark/mission_poi/main{
 	already_spawned = 1;
-	type_to_spawn = /obj/mecha/combat/gygax/dark
+	type_to_spawn = /obj/structure/mecha_wreckage/gygax/dark;
+	mission_index = 2
 	},
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
