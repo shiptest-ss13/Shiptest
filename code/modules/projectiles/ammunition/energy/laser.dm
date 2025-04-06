@@ -54,7 +54,7 @@
 /obj/item/ammo_casing/energy/lasergun/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
-	e_cost = 1600
+	e_cost = 1428
 	delay = 0.3 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy
