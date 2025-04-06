@@ -7,7 +7,7 @@
 	min_players = 10
 	earliest_start = 10 MINUTES
 
-/datum/round_event_control/stray_cargo/canSpawnEvent(players, allow_magic = FALSE)
+/datum/round_event_control/stray_cargo/can_spawn_event(players, allow_magic = FALSE)
 	if(!(length(SSovermap.controlled_ships)))
 		return FALSE
 	return ..()
@@ -15,12 +15,12 @@
 ///Spawns a cargo pod containing a random cargo supply pack on a random area of the station
 /datum/round_event/ship/stray_cargo
 	var/area/impact_area ///Randomly picked area
-	announceChance = 75
+	announce_chance = 75
 	var/list/possible_pack_types = list() ///List of possible supply packs dropped in the pod, if empty picks from the cargo list
 	var/static/list/stray_spawnable_supply_packs = list() ///List of default spawnable supply packs, filtered from the cargo list
 
 /datum/round_event/ship/stray_cargo/announce(fake)
-	if(prob(announceChance) || fake)
+	if(prob(announce_chance) || fake)
 		priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].",
 			"Collision Alert",
 			null,
@@ -35,7 +35,7 @@
 /datum/round_event/ship/stray_cargo/setup()
 	if(!..())
 		return
-	startWhen = rand(10, 20)
+	start_when = rand(10, 20)
 	impact_area = find_event_area()
 	if(!impact_area)
 		CRASH("No valid areas for cargo pod found.")

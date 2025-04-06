@@ -415,15 +415,15 @@
 			log_admin("[key_name(holder)] has Un-Fully Immersed everyone.")
 	if(E)
 		E.processing = FALSE
-		if(E.announceWhen>0)
+		if(E.announce_when>0)
 			switch(alert(holder, "Would you like to alert the crew?", "Alert", "Yes", "No", "Cancel"))
 				if("Yes")
-					E.announceChance = 100
+					E.announce_chance = 100
 				if("Cancel")
 					E.kill()
 					return
 				if("No")
-					E.announceChance = 0
+					E.announce_chance = 0
 		E.processing = TRUE
 	if(holder)
 		log_admin("[key_name(holder)] used secret [action]")

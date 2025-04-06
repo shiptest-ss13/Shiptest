@@ -6,7 +6,7 @@
 	min_players = 1
 	earliest_start = 5 MINUTES
 
-/datum/round_event_control/rodent_infestation/canSpawnEvent(players, allow_magic = FALSE)
+/datum/round_event_control/rodent_infestation/can_spawn_event(players, allow_magic = FALSE)
 	if(!(length(SSovermap.controlled_ships)))
 		return FALSE
 	return ..()
