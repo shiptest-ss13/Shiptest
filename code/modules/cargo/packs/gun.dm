@@ -632,6 +632,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/rottweiler
+	name = "KM-05 Rottweiler Squad Automatic Weapon"
+	desc = "Contains an extensively modified belt fed machine gun, built for special IRMG operations. Bulky and cumbersome, this weapon is chambered in the powerful .308 cartridge."
+	cost = 6000
+	contains = list(/obj/item/storage/guncase/rottweiler)
+	crate_name = "LMG crate"
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
 /* Marksman Rifles */
 
 /datum/supply_pack/gun/cmf4
