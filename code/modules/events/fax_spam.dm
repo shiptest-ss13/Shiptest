@@ -43,9 +43,9 @@ I am representative of the Interstellar Frontier Mining Conglomerate, and recent
 
 Unfortunately, due to Solar Confederation laws regarding monetary transfer, we are unable to transfer monetary profits to our local bank accounts, and we require your assistance in transferring our funding. For facilitating this transfer, the Interstellar Frontier Mining Conglomerate is willing to relinquish 10% or 4,000,000 credits in exchange for services rendered.
 
-To assist us, please wire funding equal to or exceeding 500 credits to the SolGov Monetary Fund Account listed below. Upon confirmed reciept of the funding, we will send additional instructions on monetary transfer.
+To assist us, please wire funding equal to or exceeding 500 credits to the SolCon Monetary Fund Account listed below. Upon confirmed reciept of the funding, we will send additional instructions on monetary transfer.
 
-Forward funding to SolGov Monetary Fund Account ID: 846584.
+Forward funding to SolCon Monetary Fund Account ID: 846584.
 
 Yours truly,
 
