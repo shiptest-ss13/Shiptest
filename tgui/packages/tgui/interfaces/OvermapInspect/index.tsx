@@ -6,10 +6,10 @@ import {
   Section,
   LabeledList,
   AnimatedNumber,
-} from '../../components';
+} from 'tgui-core/components';
 import { Window } from '../../layouts';
 
-import { decodeHtmlEntities } from 'common/string';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
 export type OvermapData = {
   admin_rights: Boolean;

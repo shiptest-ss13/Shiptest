@@ -1,15 +1,16 @@
-import { createSearch, decodeHtmlEntities } from 'common/string';
-import { useBackend, useLocalState } from '../../backend';
 import {
   Box,
   Button,
   Input,
+  NoticeBox,
   Section,
   Table,
-  NoticeBox,
-} from '../../components';
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
+import { createSearch, decodeHtmlEntities } from 'tgui-core/string';
+
+import { useBackend, useLocalState } from '../../backend';
 import { Window } from '../../layouts';
-import { formatMoney } from '../../format';
 
 const MAX_SEARCH_RESULTS = 25;
 

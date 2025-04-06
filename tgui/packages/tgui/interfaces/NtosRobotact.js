@@ -9,7 +9,7 @@ import {
   Section,
   Slider,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
 import { NtosWindow } from '../layouts';
 
 export const NtosRobotact = (props, context) => {

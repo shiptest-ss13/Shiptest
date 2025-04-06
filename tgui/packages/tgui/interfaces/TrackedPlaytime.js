@@ -1,6 +1,6 @@
 import { sortBy } from 'common/collections';
 import { useBackend } from '../backend';
-import { Box, Flex, ProgressBar, Section, Table } from '../components';
+import { Box, Flex, ProgressBar, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 const JOB_REPORT_MENU_FAIL_REASON_TRACKING_DISABLED = 1;

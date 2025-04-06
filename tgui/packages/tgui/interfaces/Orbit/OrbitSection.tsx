@@ -1,4 +1,4 @@
-import { Collapsible, Flex, Tooltip } from '../../components';
+import { Collapsible, Flex, Tooltip } from 'tgui-core/components';
 import { isJobOrNameMatch } from './helpers';
 import { OrbitItem } from './OrbitItem';
 import { OrbitTooltip } from './OrbitTooltip';

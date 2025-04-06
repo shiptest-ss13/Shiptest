@@ -9,7 +9,6 @@
 	var/begin_weekday = FALSE //If set to a weekday, then this will trigger the holiday on the above week
 	var/always_celebrate = FALSE // for christmas neverending, or testing.
 	var/current_year = 0
-	var/year_offset = 0
 	var/obj/item/drone_hat //If this is defined, drones without a default hat will spawn with this one during the holiday; check drones_as_items.dm to see this used
 
 // This proc gets run before the game starts when the holiday is activated. Do festive shit here.
@@ -576,7 +575,7 @@
 /datum/holiday/easter/shouldCelebrate(dd, mm, yy, ww, ddd)
 	if(!begin_month)
 		current_year = text2num(time2text(world.timeofday, "YYYY"))
-		var/list/easterResults = EasterDate(current_year+year_offset)
+		var/list/easterResults = EasterDate(current_year+SECTOR_YEAR_OFFSET)
 
 		begin_day = easterResults["day"]
 		begin_month = easterResults["month"]

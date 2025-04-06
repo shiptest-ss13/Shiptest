@@ -1,6 +1,6 @@
-import { toTitleCase } from 'common/string';
+import { toTitleCase } from 'tgui-core/string';
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, Section, Table } from '../components';
+import { Box, Button, LabeledList, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const LaborClaimConsole = (props, context) => {

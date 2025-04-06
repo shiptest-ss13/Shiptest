@@ -1,5 +1,5 @@
 import { map } from 'common/collections';
-import { classes } from 'common/react';
+import { classes } from 'tgui-core/react';
 import { useBackend, useLocalState } from '../backend';
 import {
   Box,
@@ -8,7 +8,7 @@ import {
   LabeledList,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const ChemReactionChamber = (props, context) => {

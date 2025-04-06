@@ -2,14 +2,14 @@
  * @license MIT
  */
 
-import { classes } from 'common/react';
+import { classes } from 'tgui-core/react';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Flex, Section, TextArea } from '../components';
+import { Box, Button, Flex, Section, TextArea } from 'tgui-core/components';
 import { Window } from '../layouts';
 import { sanitizeText } from '../sanitize';
 import { marked } from 'marked';
-import { Component, createRef, RefObject } from 'inferno';
-import { clamp } from 'common/math';
+import { Component, createRef, RefObject } from 'react';
+import { clamp } from 'tgui-core/math';
 
 const Z_INDEX_STAMP = 1;
 const Z_INDEX_STAMP_PREVIEW = 2;

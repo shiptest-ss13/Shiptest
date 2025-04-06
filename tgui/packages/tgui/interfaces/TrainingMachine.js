@@ -7,7 +7,7 @@ import {
   Flex,
   LabeledControls,
   Divider,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const TrainingMachine = (props, context) => {

@@ -8,7 +8,7 @@ import {
   Modal,
   NoticeBox,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const Holopad = (props, context) => {

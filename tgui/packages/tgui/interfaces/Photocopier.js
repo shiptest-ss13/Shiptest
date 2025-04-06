@@ -8,7 +8,7 @@ import {
   NumberInput,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const Photocopier = (props, context) => {

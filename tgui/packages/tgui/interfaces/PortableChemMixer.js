@@ -1,4 +1,4 @@
-import { toTitleCase } from 'common/string';
+import { toTitleCase } from 'tgui-core/string';
 import { useBackend } from '../backend';
 import {
   AnimatedNumber,
@@ -6,7 +6,7 @@ import {
   Button,
   LabeledList,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
 

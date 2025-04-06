@@ -15,7 +15,7 @@ import {
   Flex,
   AnimatedNumber,
   Dropdown,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 const ConfigureNumberEntry = (props, context) => {

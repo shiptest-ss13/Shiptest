@@ -1,5 +1,6 @@
+import { Box, Button, Icon, Input, Section, Table } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, Icon, Input, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosNetChat = (props, context) => {

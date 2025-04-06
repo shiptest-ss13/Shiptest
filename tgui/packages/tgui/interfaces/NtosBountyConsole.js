@@ -1,6 +1,6 @@
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, Section, Table } from '../components';
-import { formatMoney } from '../format';
+import { AnimatedNumber, Box, Button, Section, Table } from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
 import { NtosWindow } from '../layouts';
 
 export const NtosBountyConsole = (props, context) => {

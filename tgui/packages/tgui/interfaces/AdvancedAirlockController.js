@@ -1,6 +1,6 @@
-import { toFixed } from 'common/math';
-import { decodeHtmlEntities } from 'common/string';
-import { Fragment } from 'inferno';
+import { toFixed } from 'tgui-core/math';
+import { decodeHtmlEntities } from 'tgui-core/string';
+import { Fragment } from 'react';
 import { useBackend } from '../backend';
 import {
   Box,
@@ -9,9 +9,9 @@ import {
   NumberInput,
   Section,
   ProgressBar,
-} from '../components';
+} from 'tgui-core/components';
 import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
-import { classes } from 'common/react';
+import { classes } from 'tgui-core/react';
 import { Window } from '../layouts';
 
 const STATE_INOPEN = 0;

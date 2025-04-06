@@ -1,15 +1,15 @@
 import { map } from 'common/collections';
-import { useBackend, useLocalState } from '../backend';
 import {
   Button,
+  Collapsible,
   Flex,
   LabeledList,
   Section,
   Table,
   Tabs,
-  Collapsible,
-} from '../components';
-import { ButtonConfirm } from '../components/Button';
+} from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 export const ShuttleManipulator = (props, context) => {
@@ -155,7 +155,7 @@ export const ShuttleManipulatorTemplates = (props, context) => {
                         })
                       }
                     />
-                    <ButtonConfirm
+                    <Button.Confirm
                       content="Load"
                       onClick={() =>
                         act('select_template', {

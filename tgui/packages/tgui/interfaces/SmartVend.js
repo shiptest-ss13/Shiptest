@@ -1,6 +1,6 @@
 import { map } from 'common/collections';
 import { useBackend } from '../backend';
-import { Button, NoticeBox, Section, Table } from '../components';
+import { Button, NoticeBox, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const SmartVend = (props, context) => {

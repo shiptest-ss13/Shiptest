@@ -5,7 +5,7 @@ import {
   ProgressBar,
   Section,
   AnimatedNumber,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const NtnetRelay = (props, context) => {

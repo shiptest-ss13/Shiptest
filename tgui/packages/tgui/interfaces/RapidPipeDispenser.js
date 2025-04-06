@@ -1,4 +1,4 @@
-import { classes } from 'common/react';
+import { classes } from 'tgui-core/react';
 import { useBackend, useLocalState } from '../backend';
 import {
   Box,
@@ -8,7 +8,7 @@ import {
   LabeledList,
   Section,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 const ROOT_CATEGORIES = ['Atmospherics', 'Disposals', 'Transit Tubes'];

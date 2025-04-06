@@ -4,7 +4,7 @@ import {
   Section,
   BlockQuote,
   NoticeBox,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 import { useBackend } from '../backend';
 

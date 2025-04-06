@@ -5,7 +5,7 @@ import {
   Button,
   LabeledList,
   Box,
-} from '../../components';
+} from 'tgui-core/components';
 import { Window } from '../../layouts';
 
 import { Mission, Data } from './types';

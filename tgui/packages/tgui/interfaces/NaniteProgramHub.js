@@ -7,7 +7,7 @@ import {
   NoticeBox,
   Section,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const NaniteProgramHub = (props, context) => {

@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, ByondUi } from '../components';
+import { Button, ByondUi } from 'tgui-core/components';
 import { NtosWindow } from '../layouts';
 import {
   prevNextCamera,

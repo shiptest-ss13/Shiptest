@@ -1,6 +1,6 @@
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 import { useBackend } from '../backend';
-import { LabeledList, NumberInput, Section } from '../components';
+import { LabeledList, NumberInput, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const ChemSplitter = (props, context) => {

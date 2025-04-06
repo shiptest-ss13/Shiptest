@@ -7,9 +7,9 @@ import {
   Slider,
   Flex,
   Button,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
-import { capitalize } from 'common/string';
+import { capitalize } from 'tgui-core/string';
 
 const colorToMatrix = (param) => {
   switch (param) {

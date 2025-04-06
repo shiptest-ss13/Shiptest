@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Section, LabeledList, Button, Box } from '../components';
+import { Section, LabeledList, Button, Box } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 const statusMap = {

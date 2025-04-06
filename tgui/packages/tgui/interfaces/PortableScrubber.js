@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, Section } from '../components';
+import { Button, Section } from 'tgui-core/components';
 import { getGasLabel } from '../constants';
 import { Window } from '../layouts';
 import { PortableBasicInfo } from './common/PortableAtmos';

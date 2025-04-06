@@ -5,7 +5,7 @@ import {
   ProgressBar,
   Section,
   Stack,
-} from '../components';
+} from 'tgui-core/components';
 import { NtosWindow } from '../layouts';
 
 const getMuleByRef = (mules, ref) => {

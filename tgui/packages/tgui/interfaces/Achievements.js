@@ -1,5 +1,5 @@
 import { useBackend, useLocalState } from '../backend';
-import { Box, Flex, Icon, Table, Tabs } from '../components';
+import { Box, Flex, Icon, Table, Tabs } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const Achievements = (props, context) => {

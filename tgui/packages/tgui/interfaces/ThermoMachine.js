@@ -1,4 +1,4 @@
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 import { useBackend } from '../backend';
 import {
   AnimatedNumber,
@@ -6,7 +6,7 @@ import {
   LabeledList,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const ThermoMachine = (props, context) => {

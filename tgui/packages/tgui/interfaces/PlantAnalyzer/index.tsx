@@ -7,10 +7,10 @@ import {
   AnimatedNumber,
   Tooltip,
   Box,
-} from '../../components';
+} from 'tgui-core/components';
 import { Window } from '../../layouts';
 
-import { capitalizeFirst } from 'common/string';
+import { capitalizeFirst } from 'tgui-core/string';
 
 import { PLANTSTATUS2COLOR } from './constants';
 

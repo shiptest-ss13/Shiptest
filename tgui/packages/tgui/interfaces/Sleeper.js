@@ -6,10 +6,10 @@ import {
   LabeledList,
   Button,
   ProgressBar,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 
 const damageTypes = [
   {

@@ -1,5 +1,5 @@
 import { map } from 'common/collections';
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 import { useBackend } from '../backend';
 import {
   Box,
@@ -9,7 +9,7 @@ import {
   Section,
   Divider,
   Table,
-} from '../components';
+} from 'tgui-core/components';
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
 

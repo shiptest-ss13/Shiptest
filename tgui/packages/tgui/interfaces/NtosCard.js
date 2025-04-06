@@ -7,7 +7,7 @@ import {
   NoticeBox,
   Section,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
 import { NtosWindow } from '../layouts';
 import { AccessList } from './common/AccessList';
 

@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, Section, ProgressBar } from '../components';
+import { Button, Section, ProgressBar } from 'tgui-core/components';
 import { BeakerContents } from './common/BeakerContents';
 import { Window } from '../layouts';
 

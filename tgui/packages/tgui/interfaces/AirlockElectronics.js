@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section, NumberInput } from '../components';
+import { Button, LabeledList, Section, NumberInput } from 'tgui-core/components';
 import { Window } from '../layouts';
 import { AccessList } from './common/AccessList';
 

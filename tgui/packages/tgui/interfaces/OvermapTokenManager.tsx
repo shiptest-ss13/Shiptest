@@ -1,5 +1,5 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, Collapsible, NoticeBox, Section } from '../components';
+import { Button, Collapsible, NoticeBox, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 type OvermapDatumType = string;

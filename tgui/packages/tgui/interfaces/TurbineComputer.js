@@ -1,6 +1,6 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section } from '../components';
-import { formatSiUnit } from '../format';
+import { Button, LabeledList, Section } from 'tgui-core/components';
+import { formatSiUnit } from 'tgui-core/format';
 import { Window } from '../layouts';
 
 export const TurbineComputer = (props, context) => {

@@ -1,5 +1,4 @@
-import { Component, Fragment } from 'inferno';
-import { useBackend, useLocalState } from '../backend';
+import { Component, Fragment } from 'react';
 import {
   Box,
   Button,
@@ -12,7 +11,9 @@ import {
   Section,
   Table,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { NtosWindow } from '../layouts';
 
 const CONTRACT_STATUS_INACTIVE = 1;

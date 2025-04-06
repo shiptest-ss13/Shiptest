@@ -10,7 +10,7 @@ import {
   NumberInput,
   Tooltip,
   Knob,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const AdminFax = (props, context) => {

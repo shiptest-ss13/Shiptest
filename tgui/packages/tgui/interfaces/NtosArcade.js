@@ -8,7 +8,7 @@ import {
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { NtosWindow } from '../layouts';
 
 export const NtosArcade = (props, context) => {

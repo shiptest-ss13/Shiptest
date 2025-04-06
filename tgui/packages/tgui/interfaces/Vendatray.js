@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Section } from '../components';
+import { Box, Button, Flex, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const Vendatray = (props, context) => {

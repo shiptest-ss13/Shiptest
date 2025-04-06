@@ -4,9 +4,9 @@
  * @license MIT
  */
 
-import { clamp01 } from 'common/math';
+import { clamp01 } from 'tgui-core/math';
 import { useBackend } from '../backend';
-import { Box, Button, Flex } from '../components';
+import { Box, Button, Flex } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const AlertModal = (props, context) => {

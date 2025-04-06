@@ -1,4 +1,4 @@
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 import { useBackend, useLocalState } from '../backend';
 import {
   Button,
@@ -7,7 +7,7 @@ import {
   NoticeBox,
   RoundGauge,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 const TAB2NAME = [

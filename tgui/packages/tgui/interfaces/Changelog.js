@@ -1,6 +1,6 @@
-import { classes } from 'common/react';
+import { classes } from 'tgui-core/react';
 import { useBackend } from '../backend';
-import { Component, Fragment } from 'inferno';
+import { Component, Fragment } from 'react';
 import {
   Box,
   Button,
@@ -9,7 +9,7 @@ import {
   Section,
   Stack,
   Table,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 import { resolveAsset } from '../assets';
 import dateformat from 'dateformat';

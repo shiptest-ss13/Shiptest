@@ -9,8 +9,8 @@ import {
   Section,
   Stack,
   TextArea,
-} from '../components';
-import { formatMoney } from '../format';
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
 import { Window } from '../layouts';
 
 export const RequestKiosk = (props, context) => {

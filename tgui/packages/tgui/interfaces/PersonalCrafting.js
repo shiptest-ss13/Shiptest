@@ -7,7 +7,7 @@ import {
   LabeledList,
   Section,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const PersonalCrafting = (props, context) => {

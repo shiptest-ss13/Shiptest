@@ -1,13 +1,14 @@
-import { useBackend, useLocalState } from '../backend';
 import {
+  Button,
   Dropdown,
   Input,
   LabeledList,
   NumberInput,
   Section,
   Table,
-} from '../components';
-import { Button } from '../components/Button';
+} from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 export const ShipEditor = (props, context) => {

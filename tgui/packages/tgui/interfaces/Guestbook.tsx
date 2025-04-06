@@ -1,6 +1,6 @@
 import { useBackend } from '../backend';
 import { useLocalState } from '../backend';
-import { Stack, Button, Input, Section, Box } from '../components';
+import { Stack, Button, Input, Section, Box } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 type Info = {

@@ -1,10 +1,5 @@
-import { toFixed } from 'common/math';
-import { classes } from 'common/react';
 import { storage } from 'common/storage';
-import { multiline } from 'common/string';
-import { createUuid } from 'common/uuid';
-import { Component, Fragment } from 'inferno';
-import { useBackend, useLocalState } from '../backend';
+import { Component, Fragment } from 'react';
 import {
   Box,
   Button,
@@ -16,7 +11,12 @@ import {
   NumberInput,
   Section,
   Stack,
-} from '../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+import { classes } from 'tgui-core/react';
+import { createUuid } from 'tgui-core/uuid';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const pod_grey = {
@@ -700,7 +700,7 @@ const ReverseMenu = (props, context) => {
         <Button
           icon={data.effectReverse === 1 ? 'toggle-on' : 'toggle-off'}
           selected={data.effectReverse}
-          tooltip={multiline`
+          tooltip={`
             Doesn't send items.
             Afer landing, returns to
             dropoff turf (or bay
@@ -723,7 +723,7 @@ const ReverseMenu = (props, context) => {
               content="Dropoff Turf"
               selected={data.picking_dropoff_turf}
               disabled={!data.effectReverse}
-              tooltip={multiline`
+              tooltip={`
                 Where reverse pods
                 go after landing`}
               tooltipPosition="bottom-end"
@@ -733,7 +733,7 @@ const ReverseMenu = (props, context) => {
               inline
               icon="trash"
               disabled={!data.customDropoff}
-              tooltip={multiline`
+              tooltip={`
                 Clears the custom dropoff
                 location. Reverse pods will
                 instead dropoff at the
@@ -984,7 +984,7 @@ const LaunchPage = (props, context) => {
     <Button
       fluid
       textAlign="center"
-      tooltip={multiline`
+      tooltip={`
         You should know what the
         Codex Astartes says about this`}
       selected={data.giveLauncher}
@@ -1012,7 +1012,7 @@ const StylePage = (props, context) => {
           color="transparent"
           icon="edit"
           selected={data.effectName}
-          tooltip={multiline`
+          tooltip={`
             Edit pod's
             name/desc.`}
           tooltipPosition="bottom-start"
@@ -1068,7 +1068,7 @@ const Bays = (props, context) => {
           <Button
             icon="trash"
             color="transparent"
-            tooltip={multiline`
+            tooltip={`
               Clears everything
               from the selected bay`}
             tooltipPosition="bottom-end"
@@ -1077,7 +1077,7 @@ const Bays = (props, context) => {
           <Button
             icon="question"
             color="transparent"
-            tooltip={multiline`
+            tooltip={`
               Each option corresponds
               to an area on centcom.
               Launched pods will
@@ -1114,7 +1114,7 @@ const Timing = (props, context) => {
           <Button
             icon="undo"
             color="transparent"
-            tooltip={multiline`
+            tooltip={`
             Reset all pod
             timings/delays`}
             tooltipPosition="bottom-end"
@@ -1125,7 +1125,7 @@ const Timing = (props, context) => {
             selected={data.custom_rev_delay}
             disabled={!data.effectReverse}
             color="transparent"
-            tooltip={multiline`
+            tooltip={`
             Toggle Reverse Delays
             Note: Top set is
             normal delays, bottom set
@@ -1199,7 +1199,7 @@ const Sounds = (props, context) => {
           color="transparent"
           selected={data.soundVolume !== data.defaultSoundVolume}
           tooltip={
-            multiline`
+            `
             Sound Volume:` + data.soundVolume
           }
           onClick={() => act('soundVolume')}

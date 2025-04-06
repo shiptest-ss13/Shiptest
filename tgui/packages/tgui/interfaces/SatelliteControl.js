@@ -1,6 +1,7 @@
+import { Box, Button, LabeledList, ProgressBar, Section } from 'tgui-core/components';
+import { LabeledListItem } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, ProgressBar, Section } from '../components';
-import { LabeledListItem } from '../components/LabeledList';
 import { Window } from '../layouts';
 
 export const SatelliteControl = (props, context) => {

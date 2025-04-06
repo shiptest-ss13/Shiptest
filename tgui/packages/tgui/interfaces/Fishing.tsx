@@ -1,16 +1,17 @@
-import { clamp } from 'common/math';
+import { Component } from 'react';
+import { useDispatch } from 'tgui/backend';
+import { Icon } from 'tgui-core/components';
+import { globalEvents } from 'tgui-core/events';
+import { clamp } from 'tgui-core/math';
 import {
   randomInteger,
   randomNumber,
   randomPick,
   randomProb,
-} from 'common/random';
-import { useDispatch } from 'common/redux';
-import { Component } from 'inferno';
+} from 'tgui-core/random';
+
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
-import { Icon } from '../components';
-import { globalEvents } from '../events';
 import { Window } from '../layouts';
 import { logger } from '../logging';
 

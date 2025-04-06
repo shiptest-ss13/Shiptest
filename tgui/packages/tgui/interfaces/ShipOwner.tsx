@@ -7,7 +7,7 @@ import {
   Tabs,
   Divider,
   NumberInput,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 type ShipOwnerData = {

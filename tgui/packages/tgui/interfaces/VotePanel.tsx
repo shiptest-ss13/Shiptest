@@ -1,16 +1,17 @@
-import { BooleanLike } from 'common/react';
 import {
   Box,
-  Icon,
-  Stack,
   Button,
-  Section,
-  NoticeBox,
-  LabeledList,
   Collapsible,
-} from '../components';
-import { Window } from '../layouts';
+  Icon,
+  LabeledList,
+  NoticeBox,
+  Section,
+  Stack,
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+
 import { useBackend } from '../backend';
+import { Window } from '../layouts';
 
 enum VoteConfig {
   None = -1,

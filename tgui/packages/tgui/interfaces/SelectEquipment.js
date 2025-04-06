@@ -1,28 +1,38 @@
 import { filter, map, sortBy, uniq } from 'common/collections';
-import { flow } from 'common/fp';
-import { createSearch } from 'common/string';
+import { useState } from 'react';
+import {
+  Box,
+  Button,
+  Icon,
+  Image,
+  Input,
+  Section,
+  Stack,
+  Tabs,
+} from 'tgui-core/components';
+import { createSearch } from 'tgui-core/string';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Icon, Input, Section, Stack, Tabs } from '../components';
 import { Window } from '../layouts';
 
 // here's an important mental define:
 // custom outfits give a ref keyword instead of path
 const getOutfitKey = (outfit) => outfit.path || outfit.ref;
 
-const useOutfitTabs = (context, categories) => {
-  return useLocalState(context, 'selected-tab', categories[0]);
+const useOutfitTabs = (categories) => {
+  return useLocalState('selected-tab', categories[0]);
 };
 
-export const SelectEquipment = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SelectEquipment = (props) => {
+  const { act, data } = useBackend();
   const { name, icon64, current_outfit, favorites } = data;
 
   const isFavorited = (entry) => favorites?.includes(entry.path);
 
-  const outfits = map((entry) => ({
+  const outfits = map([...data.outfits, ...data.custom_outfits], (entry) => ({
     ...entry,
     favorite: isFavorited(entry),
-  }))([...data.outfits, ...data.custom_outfits]);
+  }));
 
   // even if no custom outfits were sent, we still want to make sure there's
   // at least a 'Custom' tab so the button to create a new one pops up
@@ -30,23 +40,23 @@ export const SelectEquipment = (props, context) => {
     ...outfits.map((entry) => entry.category),
     'Custom',
   ]);
-  const [tab] = useOutfitTabs(context, categories);
+  const [tab] = useOutfitTabs(categories);
 
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
+  const [searchText, setSearchText] = useState('');
   const searchFilter = createSearch(
     searchText,
-    (entry) => entry.name + entry.path
+    (entry) => entry.name + entry.path,
   );
 
-  const visibleOutfits = flow([
-    filter((entry) => entry.category === tab),
-    filter(searchFilter),
-    sortBy(
-      (entry) => !entry.favorite,
-      (entry) => !entry.priority,
-      (entry) => entry.name
+  const visibleOutfits = sortBy(
+    filter(
+      filter(outfits, (entry) => entry.category === tab),
+      searchFilter,
     ),
-  ])(outfits);
+    (entry) => !entry.favorite,
+    (entry) => !entry.priority,
+    (entry) => entry.name,
+  );
 
   const getOutfitEntry = (current_outfit) =>
     outfits.find((outfit) => getOutfitKey(outfit) === current_outfit);
@@ -54,7 +64,7 @@ export const SelectEquipment = (props, context) => {
   const currentOutfitEntry = getOutfitEntry(current_outfit);
 
   return (
-    <Window width={650} height={415}>
+    <Window width={650} height={415} theme="admin">
       <Window.Content>
         <Stack fill>
           <Stack.Item>
@@ -85,14 +95,10 @@ export const SelectEquipment = (props, context) => {
               </Stack.Item>
               <Stack.Item grow={1}>
                 <Section fill title={name} textAlign="center">
-                  <Box
-                    as="img"
+                  <Image
                     m={0}
                     src={`data:image/jpeg;base64,${icon64}`}
                     height="100%"
-                    style={{
-                      '-ms-interpolation-mode': 'nearest-neighbor',
-                    }}
                   />
                 </Section>
               </Stack.Item>
@@ -104,9 +110,9 @@ export const SelectEquipment = (props, context) => {
   );
 };
 
-const DisplayTabs = (props, context) => {
+const DisplayTabs = (props) => {
   const { categories } = props;
-  const [tab, setTab] = useOutfitTabs(context, categories);
+  const [tab, setTab] = useOutfitTabs(categories);
   return (
     <Tabs textAlign="center">
       {categories.map((category) => (
@@ -122,8 +128,8 @@ const DisplayTabs = (props, context) => {
   );
 };
 
-const OutfitDisplay = (props, context) => {
-  const { act, data } = useBackend(context);
+const OutfitDisplay = (props) => {
+  const { act, data } = useBackend();
   const { current_outfit } = data;
   const { entries, currentTab } = props;
   return (
@@ -143,7 +149,7 @@ const OutfitDisplay = (props, context) => {
               path: getOutfitKey(entry),
             })
           }
-          onDblClick={() =>
+          onDoubleClick={() =>
             act('applyoutfit', {
               path: getOutfitKey(entry),
             })
@@ -164,8 +170,8 @@ const OutfitDisplay = (props, context) => {
   );
 };
 
-const CurrentlySelectedDisplay = (props, context) => {
-  const { act, data } = useBackend(context);
+const CurrentlySelectedDisplay = (props) => {
+  const { act, data } = useBackend();
   const { current_outfit } = data;
   const { entry } = props;
   return (
@@ -190,9 +196,9 @@ const CurrentlySelectedDisplay = (props, context) => {
         <Box
           title={entry?.path}
           style={{
-            'overflow': 'hidden',
-            'white-space': 'nowrap',
-            'text-overflow': 'ellipsis',
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis',
           }}
         >
           {entry?.name}

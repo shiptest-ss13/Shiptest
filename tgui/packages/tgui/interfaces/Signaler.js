@@ -1,6 +1,6 @@
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 import { useBackend } from '../backend';
-import { Button, Grid, NumberInput, Section } from '../components';
+import { Button, Grid, NumberInput, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const Signaler = (props, context) => {

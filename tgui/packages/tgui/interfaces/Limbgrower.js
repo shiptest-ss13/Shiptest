@@ -8,8 +8,8 @@ import {
   Stack,
   Section,
   Tabs,
-} from '../components';
-import { capitalize } from 'common/string';
+} from 'tgui-core/components';
+import { capitalize } from 'tgui-core/string';
 import { Window } from '../layouts';
 
 export const Limbgrower = (props, context) => {

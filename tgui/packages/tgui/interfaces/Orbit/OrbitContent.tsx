@@ -1,7 +1,7 @@
-import { toTitleCase } from 'common/string';
+import { toTitleCase } from 'tgui-core/string';
 
 import { useBackend } from '../../backend';
-import { NoticeBox, Section, Stack, Table, Tooltip } from '../../components';
+import { NoticeBox, Section, Stack, Table, Tooltip } from 'tgui-core/components';
 
 import { getAntagCategories } from './helpers';
 import { AntagGroup, Observable, OrbitData } from './types';

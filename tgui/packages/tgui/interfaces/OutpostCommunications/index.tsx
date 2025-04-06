@@ -7,7 +7,7 @@ import {
   LabeledList,
   Box,
   Stack,
-} from '../../components';
+} from 'tgui-core/components';
 import { Window } from '../../layouts';
 
 import { CargoCatalog } from './Catalog';

@@ -4,10 +4,11 @@
  * @license MIT
  */
 
-import { clamp01 } from 'common/math';
+import { Box, Button, Input, Section, Stack } from 'tgui-core/components';
+import { KEY_DOWN, KEY_ENTER, KEY_SPACE, KEY_UP } from 'tgui-core/keycodes';
+import { clamp01 } from 'tgui-core/math';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Section, Input, Stack } from '../components';
-import { KEY_DOWN, KEY_UP, KEY_ENTER, KEY_SPACE } from 'common/keycodes';
 import { Window } from '../layouts';
 
 let lastScrollTime = 0;

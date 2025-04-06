@@ -1,4 +1,4 @@
-import { createSearch } from 'common/string';
+import { createSearch } from 'tgui-core/string';
 import { sortBy } from 'common/collections';
 import { useBackend, useLocalState } from '../backend';
 import {
@@ -9,7 +9,7 @@ import {
   Section,
   Collapsible,
   Table,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const Stack = (props, context) => {

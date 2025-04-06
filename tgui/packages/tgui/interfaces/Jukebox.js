@@ -1,5 +1,5 @@
 import { sortBy } from 'common/collections';
-import { flow } from 'common/fp';
+import { flow } from 'tgui-core/fp';
 import { useBackend } from '../backend';
 import {
   Box,
@@ -9,7 +9,7 @@ import {
   Knob,
   LabeledControls,
   LabeledList,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const Jukebox = (props, context) => {

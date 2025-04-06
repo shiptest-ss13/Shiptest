@@ -1,18 +1,19 @@
-import { useBackend } from '../backend';
 import {
+  AnimatedNumber,
   Button,
   ByondUi,
-  LabeledList,
-  Section,
-  ProgressBar,
-  AnimatedNumber,
   Knob,
   LabeledControls,
+  LabeledList,
   NumberInput,
-} from '../components';
+  ProgressBar,
+  Section,
+} from 'tgui-core/components';
+import { Table } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import { Table } from '../components/Table';
-import { decodeHtmlEntities } from 'common/string';
 
 export const HelmConsole = (_props, context) => {
   const { data } = useBackend(context);

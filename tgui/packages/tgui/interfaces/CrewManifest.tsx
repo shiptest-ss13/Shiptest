@@ -1,6 +1,6 @@
-import { decodeHtmlEntities } from 'common/string';
+import { decodeHtmlEntities } from 'tgui-core/string';
 import { useBackend } from '../backend';
-import { Icon, StyleableSection, Table } from '../components';
+import { Icon, StyleableSection, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 type CrewEntry = {

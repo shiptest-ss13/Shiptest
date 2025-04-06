@@ -1,4 +1,4 @@
-import { BooleanLike } from '../../../common/react';
+import { BooleanLike } from 'tgui-core/react';
 
 export type Antagonist = Observable & { antag: string; antag_group: string };
 

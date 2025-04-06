@@ -1,6 +1,5 @@
-import { multiline } from 'common/string';
 import { useBackend } from '../backend';
-import { Box, Button, Grid, Section, Table, Tooltip } from '../components';
+import { Box, Button, Grid, Section, Table, Tooltip } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const ComputerFabricator = (props, context) => {
@@ -93,7 +92,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Battery:
             <Tooltip
-              content={multiline`
+              content={`
                 Allows your device to operate without external utility power
                 source. Advanced batteries increase battery life.
               `}
@@ -138,7 +137,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Hard Drive:
             <Tooltip
-              content={multiline`
+              content={`
                 Stores file on your device. Advanced drives can store more
                 files, but use more power, shortening battery life.
               `}
@@ -183,7 +182,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Network Card:
             <Tooltip
-              content={multiline`
+              content={`
                 Allows your device to wirelessly connect to stationwide NTNet
                 network. Basic cards are limited to on-station use, while
                 advanced cards can operate anywhere near the station, which
@@ -230,7 +229,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Nano Printer:
             <Tooltip
-              content={multiline`
+              content={`
                 A device that allows for various paperwork manipulations,
                 such as, scanning of documents or printing new ones.
                 This device was certified EcoFriendlyPlus and is capable of
@@ -266,7 +265,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Card Reader:
             <Tooltip
-              content={multiline`
+              content={`
                 Adds a slot that allows you to manipulate RFID cards.
                 Please note that this is not necessary to allow the device
                 to read your identification, it is just necessary to
@@ -304,7 +303,7 @@ const CfStep2 = (props, context) => {
               <Table.Cell bold position="relative">
                 Processor Unit:
                 <Tooltip
-                  content={multiline`
+                  content={`
                     A component critical for your device's functionality.
                     It allows you to run programs from your hard drive.
                     Advanced CPUs use more power, but allow you to run
@@ -340,7 +339,7 @@ const CfStep2 = (props, context) => {
               <Table.Cell bold position="relative">
                 Tesla Relay:
                 <Tooltip
-                  content={multiline`
+                  content={`
                     An advanced wireless power relay that allows your device
                     to connect to nearby area power controller to provide
                     alternative power source. This component is currently

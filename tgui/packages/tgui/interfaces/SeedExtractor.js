@@ -1,8 +1,8 @@
 import { sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { toTitleCase } from 'common/string';
+import { flow } from 'tgui-core/fp';
+import { toTitleCase } from 'tgui-core/string';
 import { useBackend } from '../backend';
-import { Button, Section, Table } from '../components';
+import { Button, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 /**

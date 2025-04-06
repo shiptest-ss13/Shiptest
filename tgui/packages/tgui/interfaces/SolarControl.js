@@ -7,7 +7,7 @@ import {
   NumberInput,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const SolarControl = (props, context) => {

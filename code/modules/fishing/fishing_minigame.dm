@@ -166,7 +166,8 @@
 	if(!ui)
 		ui = new(user, src, "Fishing")
 		ui.set_autoupdate(FALSE)
-		ui.set_mouse_hook(TRUE)
+		#warn fix
+		//ui.set_mouse_hook(TRUE)
 		ui.open()
 
 /datum/fishing_challenge/ui_host(mob/user)

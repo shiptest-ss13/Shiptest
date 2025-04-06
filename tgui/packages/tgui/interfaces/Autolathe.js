@@ -12,9 +12,9 @@ import {
   NumberInput,
   Dimmer,
   Icon,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
-import { capitalize } from 'common/string';
+import { capitalize } from 'tgui-core/string';
 
 export const Autolathe = (props, context) => {
   const { act, data } = useBackend(context);
