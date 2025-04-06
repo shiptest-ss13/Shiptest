@@ -1747,9 +1747,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						age = clamp(round(text2num(new_age)), pref_species.species_age_min, pref_species.species_age_max)
 
 				if("flavor_text")
-					var/msg = tgui_input_text(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
-					if(msg)
-						features["flavor_text"] = msg
+					tgui_markdown(user, "Flavor Text", CALLBACK(src, PROC_REF(set_flavortext)), features["flavor_text"])
 
 				if("flavor_portrait")
 					var/url = input(user, "A URL to an image that will be shown when others examine you.", "Flavor Portrait", features["flavor_portrait"]) as text|null
@@ -2704,3 +2702,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			return
 		else
 			custom_names[name_id] = sanitized_name
+
+/datum/preferences/proc/set_flavortext(result)
+	if(result && result != features["flavor_text"])
+		features["flavor_text"] = result
