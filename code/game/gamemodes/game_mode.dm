@@ -196,7 +196,7 @@
 
 
 ///Called by the gameSSticker
-/datum/game_mode/process()
+/datum/game_mode/process(seconds_per_tick)
 	return 0
 
 //For things that do not die easily

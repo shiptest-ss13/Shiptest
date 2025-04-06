@@ -12,6 +12,7 @@
 	desc = "A 10mm surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c10mm/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c10mm/ap
 	name = "10mm armor-piercing bullet casing"
@@ -46,6 +47,7 @@
 	desc = "A 9mm surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c9mm/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c9mm/ap
 	name = "9mm armor-piercing bullet casing"
@@ -80,6 +82,7 @@
 	desc = "A .45 surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c45/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c45/ap
 	name = ".45 armor-piercing bullet casing"
@@ -98,19 +101,6 @@
 	desc = "A .45 rubber bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c45/rubber
-
-// .50 AE (Desert Eagle)
-
-/obj/item/ammo_casing/a50AE
-	name = ".50 AE bullet casing"
-	desc = "A .50 AE bullet casing."
-	caliber = ".50 AE"
-	projectile_type = /obj/projectile/bullet/a50AE
-
-/obj/item/ammo_casing/a50AE/hp
-	name = ".50 AE hollow point bullet casing"
-	desc = "A .50 AE hollow point bullet casing."
-	projectile_type = /obj/projectile/bullet/a50AE/hp
 
 // .22 LR (Himehabu, Pounder)
 

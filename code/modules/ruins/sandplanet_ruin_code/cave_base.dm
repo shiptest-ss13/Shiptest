@@ -46,7 +46,8 @@
 	stun_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
-	turret_flags = TURRET_FLAG_SHOOT_ALLMOBS
+	turret_flags = TURRET_FLAG_HOSTILE
+	turret_respects_id = FALSE
 
 //gut wrenching content
 

@@ -136,6 +136,15 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"jt" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 6;
+	verted = -1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "jL" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 1
@@ -149,8 +158,30 @@
 	},
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
+"nQ" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "qz" = (
 /turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"qD" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"qO" = (
+/obj/structure/plasticflaps/outpost,
+/obj/machinery/conveyor/auto/outpost{
+	dir = 5;
+	verted = -1
+	},
+/turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -161,13 +192,37 @@
 /turf/open/floor/hangar/plasteel,
 /area/hangar)
 "rQ" = (
+/obj/structure/sign/departments/cargo,
 /turf/closed/indestructible/reinforced,
-/area/template_noop)
+/area/hangar)
+"tI" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "ud" = (
 /obj/structure/chair/plastic{
 	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
+/area/hangar)
+"wK" = (
+/obj/machinery/conveyor/auto/outpost,
+/obj/structure/plasticflaps/outpost,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ya" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 10
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "yo" = (
 /obj/structure/chair/plastic{
@@ -175,11 +230,24 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/hangar)
+"AN" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/closed/indestructible/reinforced,
+/area/hangar)
 "Co" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8
 	},
 /turf/open/floor/hangar/plasteel,
+/area/hangar)
+"CX" = (
+/obj/machinery/conveyor/auto/outpost,
+/obj/effect/landmark/outpost/hangar_crate_spawner,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Kl" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
@@ -190,6 +258,34 @@
 "LV" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/hangar/plasteel,
+/area/hangar)
+"Or" = (
+/obj/effect/turf_decal/industrial/loading,
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Ou" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/chair/plastic,
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"Pb" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/hangar/plasteel,
+/area/hangar)
+"Pj" = (
+/obj/structure/plasticflaps/outpost,
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "Qc" = (
 /obj/structure/marker_beacon{
@@ -202,6 +298,31 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/grimy,
+/area/hangar)
+"Vb" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Vz" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/conveyor/auto/outpost{
+	dir = 1
+	},
+/obj/structure/disposaloutlet{
+	dir = 1
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
 /area/hangar)
 "WI" = (
 /obj/effect/landmark/outpost/hangar_numbers,
@@ -791,9 +912,9 @@ aH
 aH
 aH
 aH
-aH
 am
-aZ
+nQ
+Or
 aM
 ap
 aJ
@@ -825,8 +946,8 @@ aH
 aH
 aH
 aH
-aH
 am
+qD
 aZ
 aM
 gQ
@@ -856,11 +977,11 @@ am
 "}
 (20,1,1) = {"
 aH
-aH
-aH
-aH
-aH
 am
+am
+am
+am
+tI
 aZ
 aM
 ap
@@ -890,11 +1011,11 @@ am
 "}
 (21,1,1) = {"
 aH
-aH
-aH
-aH
-aH
 am
+qO
+wK
+wK
+ya
 aZ
 aM
 ap
@@ -924,12 +1045,12 @@ am
 "}
 (22,1,1) = {"
 aH
-aH
-aH
-aH
-rQ
 am
-aZ
+Pj
+am
+rQ
+Ou
+Pb
 Co
 ap
 Qc
@@ -958,10 +1079,10 @@ am
 "}
 (23,1,1) = {"
 aH
-aH
-aH
-aH
-rQ
+am
+jt
+Vz
+am
 aO
 Rz
 aM
@@ -992,10 +1113,10 @@ am
 "}
 (24,1,1) = {"
 aH
-aH
-aH
-aH
-rQ
+am
+am
+AN
+am
 yo
 aA
 aM
@@ -1026,10 +1147,10 @@ am
 "}
 (25,1,1) = {"
 aH
-aH
-aH
-aH
-rQ
+am
+CX
+Vb
+am
 aT
 aA
 aM
@@ -1060,10 +1181,10 @@ am
 "}
 (26,1,1) = {"
 aH
-aH
-aH
-aH
-rQ
+am
+am
+am
+am
 ud
 aA
 aM
@@ -1097,7 +1218,7 @@ aH
 aH
 aH
 aH
-rQ
+am
 aq
 aA
 aZ
@@ -1131,7 +1252,7 @@ aH
 aH
 aH
 aH
-rQ
+am
 am
 am
 am

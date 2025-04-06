@@ -35,7 +35,7 @@
 /obj/item/attachment/gun/flamethrower/on_unique_action(obj/item/gun/gun, mob/user)
 	if(gun.gun_firemodes[gun.firemode_index] == FIREMODE_UNDERBARREL)
 		attached_flamethrower.unique_action(user)
-		return OVERIDE_UNIQUE_ACTION
+		return OVERRIDE_UNIQUE_ACTION
 
 /obj/item/attachment/gun/flamethrower/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	var/total_volume = 0

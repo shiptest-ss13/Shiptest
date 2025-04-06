@@ -17,6 +17,8 @@
 	near_miss_sound = 'sound/weapons/gun/hit/energy_miss1.ogg'
 	ricochet_sound = 'sound/weapons/gun/hit/energy_ricochet1.ogg'
 
+	bullet_identifier = "laser"
+
 	flag = "laser"
 	eyeblur = 2
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
@@ -38,7 +40,7 @@
 	impact_type = /obj/effect/projectile/impact/laser
 
 /obj/projectile/beam/laser/sharplite
-	speed = 0.4
+	speed = 0.25
 
 /obj/projectile/beam/laser/light
 	damage = 15
@@ -54,6 +56,12 @@
 	icon_state = "heavylaser"
 	damage = 25
 	armour_penetration = 20
+
+/obj/projectile/beam/laser/assault/sharplite
+	icon_state = "heavylaser"
+	damage = 25
+	armour_penetration = 20
+	speed = 0.25
 
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
@@ -80,6 +88,10 @@
 /obj/projectile/beam/weak
 	damage = 15
 
+/obj/projectile/beam/weak/sharplite
+	damage = 15
+	speed = 0.25
+
 /obj/projectile/beam/weaker
 	damage = 10
 
@@ -102,6 +114,12 @@
 	name = "practice laser"
 	damage = 0
 	nodamage = TRUE
+
+/obj/projectile/beam/practice/sharplite
+	name = "practice laser"
+	damage = 0
+	nodamage = TRUE
+	speed = 0.25
 
 /obj/projectile/beam/laser/slug
 	name = "laser slug"
@@ -146,7 +164,7 @@
 	impact_type = /obj/effect/projectile/impact/disabler
 
 /obj/projectile/beam/disabler/sharplite
-	speed = 0.4
+	speed = 0.25
 
 /obj/projectile/beam/disabler/weak
 	damage = 15
@@ -157,6 +175,11 @@
 /obj/projectile/beam/disabler/weak/negative_ap
 	armour_penetration = -30
 	range = 9
+
+/obj/projectile/beam/disabler/weak/negative_ap/sharplite
+	armour_penetration = -30
+	range = 9
+	speed = 0.25
 
 /obj/projectile/beam/disabler/weak/negative_ap/low_range
 	range = 6

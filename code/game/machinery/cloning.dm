@@ -276,7 +276,7 @@
 	return CLONING_SUCCESS
 
 //Grow clones to maturity then kick them out.  FREELOADERS
-/obj/machinery/clonepod/process()
+/obj/machinery/clonepod/process(seconds_per_tick)
 	var/mob/living/mob_occupant = occupant
 
 	if(mob_occupant && (mob_occupant.loc == src))

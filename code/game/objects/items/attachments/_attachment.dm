@@ -16,6 +16,10 @@
 	///Component that handles most of the logic of attachments
 	var/datum/component/attachment/attachment_comp
 
+
+	/// the cell in the gun, if any
+	var/obj/item/stock_parts/cell/gun/gun_cell
+
 	///If the attachment is on or off
 	var/toggled = FALSE
 	var/toggle_on_sound = 'sound/items/flashlight_on.ogg'
@@ -57,6 +61,7 @@
 		CALLBACK(src, PROC_REF(on_unwield)), \
 		CALLBACK(src, PROC_REF(on_examine)), \
 		CALLBACK(src, PROC_REF(on_alt_click)), \
+		CALLBACK(src, PROC_REF(on_attack_hand)), \
 		signals)
 
 /obj/item/attachment/Destroy()
@@ -80,6 +85,7 @@
 		return FALSE
 
 	apply_modifiers(gun, user, TRUE)
+	gun_cell = gun.cell
 	playsound(src.loc, 'sound/weapons/gun/pistol/mag_insert_alt.ogg', 75, 1)
 	return TRUE
 
@@ -91,6 +97,7 @@
 
 	apply_modifiers(gun, user, FALSE)
 	playsound(src.loc, 'sound/weapons/gun/pistol/mag_release_alt.ogg', 75, 1)
+	gun_cell = null
 	return TRUE
 
 /obj/item/attachment/proc/on_preattack(obj/item/gun/gun, atom/target, mob/user, list/params)
@@ -114,9 +121,11 @@
 /obj/item/attachment/proc/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	return
 
+/obj/item/attachment/proc/on_attack_hand(obj/item/gun/gun, mob/user, list/examine_list)
+	return FALSE
+
 /obj/item/attachment/proc/on_alt_click(obj/item/gun/gun, mob/user, list/examine_list)
-	AltClick(user)
-	return TRUE
+	return FALSE
 
 /obj/item/attachment/examine(mob/user)
 	. = ..()

@@ -13,7 +13,7 @@
 /datum/crafting_recipe/strobeshield
 	name = "Strobe Shield"
 	result = /obj/item/shield/riot/flash
-	reqs = list(/obj/item/wallframe/flasher = 1,
+	reqs = list(/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/flash/handheld = 1,
 				/obj/item/shield/riot = 1)
 	time = 40

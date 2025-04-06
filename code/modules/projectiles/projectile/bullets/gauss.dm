@@ -11,10 +11,12 @@
 
 /obj/projectile/bullet/gauss/hc
 	name = "ferromagnetic pellet"
-	damage = 10
+	damage = 15
 	armour_penetration = 60
-	range = 35
+	range = 50
 	hitscan = TRUE
+	light_system = 0
+	light_range = 0
 	muzzle_type = /obj/effect/projectile/muzzle/gauss
 	tracer_type = /obj/effect/projectile/tracer/gauss
 	impact_type = /obj/effect/projectile/impact/gauss
@@ -29,10 +31,12 @@
 
 /obj/projectile/bullet/gauss/lance/hc
 	name = "ferromagnetic lance"
-	damage = 15
+	damage = 20
 	armour_penetration = 80
-	range = 35
+	range = 50
 	hitscan = TRUE
+	light_system = 0
+	light_range = 0
 	muzzle_type = /obj/effect/projectile/muzzle/gauss
 	tracer_type = /obj/effect/projectile/tracer/gauss
 	impact_type = /obj/effect/projectile/impact/gauss
@@ -50,8 +54,10 @@
 	name = "ferromagnetic lance"
 	damage = 25
 	armour_penetration = 0
-	range = 35
+	range = 50
 	hitscan = TRUE
+	light_system = 0
+	light_range = 0
 	muzzle_type = /obj/effect/projectile/muzzle/gauss
 	tracer_type = /obj/effect/projectile/tracer/gauss
 	impact_type = /obj/effect/projectile/impact/gauss

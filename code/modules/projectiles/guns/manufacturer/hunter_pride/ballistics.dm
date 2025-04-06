@@ -98,6 +98,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
+
 	unique_reskin = list(\
 		"Shadow" = "shadow",
 		"Cattleman" = "shadow_cattleman",
@@ -109,18 +110,14 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 		"Cavalry" = "shadow_cavalry",
 		"Lanchester Special" = "shadow_lanchester"
 		)
+	unique_reskin_changes_inhand = TRUE
 
-	recoil = 0 //weaker than normal revolver, no recoil
+	recoil = 0
 	spread_unwielded = 10
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
-
-/obj/item/gun/ballistic/revolver/shadow/reskin_obj(mob/M)
-	. = ..()
-	if(current_skin)
-		item_state = unique_reskin[current_skin]
 
 EMPTY_GUN_HELPER(revolver/shadow)
 
@@ -152,7 +149,7 @@ EMPTY_GUN_HELPER(revolver/shadow)
 	w_class = WEIGHT_CLASS_SMALL
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
-	recoil = 0 //weaker than normal revolver, no recoil
+	recoil = 0
 	fire_delay = 0.2 SECONDS
 
 EMPTY_GUN_HELPER(revolver/detective)
@@ -231,12 +228,31 @@ EMPTY_GUN_HELPER(revolver/detective)
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	show_magazine_on_sprite = TRUE
+	wear_rate = 0.66 //HP weapons are more resistant to wear
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 21,
+			"y" = 18,
+		)
+	)
+
 
 NO_MAG_GUN_HELPER(automatic/pistol/candor)
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
+	wear_rate = 0.6 //factory guns are now OBJECTIVELY better. if they happen to be candors.
 
 NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
@@ -273,10 +289,27 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	bolt_type = BOLT_TYPE_OPEN
 	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
 	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
+	wear_rate = 0.4 //HP weapons are more resistant to wear
 
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = SMG_SLOWDOWN
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 34,
+			"y" = 13,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
 	default_ammo_type = /obj/item/ammo_box/magazine/c44_firestorm_mag/pan
@@ -327,6 +360,28 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	burst_size = 2
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
+	unique_attachments = list(/obj/item/attachment/scope)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 24,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 40,
+			"y" = 17,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/unique_action(mob/living/user)
 	if (bolt_locked == FALSE)
@@ -364,6 +419,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
+		if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
+			return TRUE
 		to_chat(user, "<span class='notice'>The [bolt_wording] is shut closed!</span>")
 		return
 	return ..()
@@ -399,7 +456,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/presawn
-	name = "sawn-off double-barreled shotgun"
+	//init gives it the sawn_off name
+	name = "double-barreled shotgun"
 	desc = "A break action shotgun cut down to the size of a sidearm. While the recoil is even harsher, it offers a lot of power in a very small package. Chambered in 12g."
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
@@ -462,6 +520,20 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 	rack_delay = 0.2 SECONDS
 
 	can_be_sawn_off = TRUE
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 36,
+			"y" = 17,
+		)
+	)
 
 
 /obj/item/gun/ballistic/shotgun/brimstone/sawoff(forced = FALSE)
@@ -484,7 +556,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 
 /obj/item/gun/ballistic/shotgun/hellfire
 	name = "HP Hellfire"
-	desc = "A hefty pump-action riot shotgun with a seven-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
+	desc = "A hefty pump-action riot shotgun with an eight-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -500,12 +572,26 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 	can_be_sawn_off = TRUE
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 0.1 SECONDS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 13,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/hellfire/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		var/obj/item/ammo_box/magazine/internal/tube = magazine
-		tube.max_ammo = 5 //this makes the gun so much worse
+		tube.max_ammo = 5 //this makes it so much worse
 
 		weapon_weight = WEAPON_MEDIUM
 		wield_slowdown = wield_slowdown-0.1
@@ -531,6 +617,21 @@ EMPTY_GUN_HELPER(shotgun/hellfire)
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 26,
+			"y" = 22,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 34,
+			"y" = 16,
+		)
 	)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(forced = FALSE)
@@ -612,12 +713,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		/obj/item/ammo_box/magazine/illestren_a850r,
 	)
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/sling,
+	unique_attachments = list(
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 	)
@@ -625,6 +721,21 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
 		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 37,
+			"y" = 15,
+		)
 	)
 
 	empty_autoeject = TRUE
@@ -693,11 +804,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	wield_slowdown = RIFLE_SLOWDOWN
 	wield_delay = 0.65 SECONDS
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
+	unique_attachments = list(
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 	)
@@ -712,6 +819,21 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 
 	recoil = 0
 	recoil_unwielded = 2
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 15,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 25,
+			"y" = 13,
+		)
+	)
 
 EMPTY_GUN_HELPER(shotgun/flamingarrow)
 
@@ -798,6 +920,21 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 		/obj/item/ammo_box/magazine/internal/shot/winchester/absolution,
 	)
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 15,
+		)
+	)
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
@@ -816,6 +953,18 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 
 		recoil = 0
 		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory
+	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially when a bolt action's slower rate of fire would be a liability. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .357."
+	icon_state = "absolution_factory"
+	base_icon_state = "absolution_factory"
+	item_state = "absolution_factory"
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory/sawoff(forced = FALSE)
+	. = ..()
+	if(.)
+		item_state = "absolution_factory_sawn"
+		mob_overlay_state = item_state
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
@@ -849,18 +998,30 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
+	unique_attachments = list(
+		/obj/item/attachment/alof,
 		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
-	)
+		/obj/item/attachment/long_scope)
+
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
 		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 15,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 31,
+			"y" = 16,
+		)
 	)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(forced = FALSE)
@@ -893,7 +1054,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
-	name = "sawn-off HP Beacon"
+	name = "HP Beacon"
 	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
@@ -916,7 +1077,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 //well. its almost a sniper.
 /obj/item/gun/ballistic/automatic/marksman/vickland //weapon designed by Apogee-dev
 	name = "\improper Vickland"
-	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
+	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in 8x50mmR."
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -935,7 +1096,6 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	zoomable = FALSE //no scope on it
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 
@@ -946,21 +1106,27 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	recoil_unwielded = 4
 	wield_slowdown = DMR_SLOWDOWN
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
-	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
-		ATTACHMENT_SLOT_SCOPE = 1
 	)
 
-	default_attachments = list(/obj/item/attachment/scope)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 17,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 38,
+			"y" = 14,
+		)
+	)
+
+	wear_rate = 0.8 //HP weapons are more resistant to wear
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"
@@ -992,3 +1158,13 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 32,
+			"y" = 14,
+		)
+	)

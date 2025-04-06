@@ -1245,7 +1245,7 @@
 
 /mob/living/carbon/human/do_after_coefficent()
 	. = ..()
-	. *= physiology.do_after_speed
+	return max(. *= physiology.do_after_speed, 0.1)
 
 /mob/living/carbon/human/updatehealth()
 	. = ..()
@@ -1367,9 +1367,6 @@
 
 /mob/living/carbon/human/species/zombie/infectious
 	race = /datum/species/zombie/infectious
-
-/mob/living/carbon/human/species/zombie/krokodil_addict
-	race = /datum/species/human/krokodil_addict
 
 /mob/living/carbon/human/species/ipc
 	race = /datum/species/ipc

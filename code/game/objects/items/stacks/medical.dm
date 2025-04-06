@@ -169,6 +169,9 @@
 /obj/item/stack/medical/gauze/twelve
 	amount = 12
 
+/obj/item/stack/medical/gauze/five
+	amount = 5
+
 /obj/item/stack/medical/gauze/heal(mob/living/target, mob/user)
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
@@ -239,6 +242,9 @@
 	var/heal_brute = 10
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 
+/obj/item/stack/medical/suture/five
+	amount = 5
+
 /obj/item/stack/medical/suture/medicated
 	name = "medicated suture"
 	icon_state = "suture_purp"
@@ -284,6 +290,9 @@
 	if(amount == max_amount)	 //only seal full mesh packs
 		is_open = FALSE
 		update_appearance()
+
+/obj/item/stack/medical/mesh/five
+	amount = 5
 
 /obj/item/stack/medical/mesh/update_icon_state()
 	if(is_open)

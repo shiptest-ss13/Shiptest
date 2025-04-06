@@ -24,6 +24,9 @@
 	gunslinger_spread_bonus = 16
 
 	light_range = 2
+	wear_minor_threshold = 100
+	wear_major_threshold = 300
+	wear_maximum = 600
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
@@ -54,19 +57,31 @@
 	)
 
 	//truly a doohickey for every occasion
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
+	unique_attachments = list (
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
 		/obj/item/attachment/energy_bayonet,
 	)
+
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1,
 		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 15,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		)
 	)
 
 	spread = 1
@@ -84,6 +99,7 @@
 	icon_state = "skm_pirate"
 	item_state = "skm_pirate"
 	manufacturer = MANUFACTURER_NONE
+	wear_rate = 2
 
 /obj/item/gun/ballistic/automatic/assault/skm/inteq
 	name = "\improper SKM-44"

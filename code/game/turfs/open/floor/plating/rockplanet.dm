@@ -11,6 +11,10 @@
 	digResult = /obj/item/stack/ore/glass/rockplanet
 	light_color = COLOR_ROCKPLANET_LIGHT
 
+/turf/open/floor/plating/asteroid/rockplanet/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 /turf/open/floor/plating/asteroid/rockplanet/lit
 	light_range = 2
 	light_power = 0.6
@@ -28,9 +32,17 @@
 	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
 
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 /turf/open/floor/plating/asteroid/rockplanet/wet
 	icon_state = "wet_soft0"
 	base_icon_state = "wet_soft"
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit
 	light_range = 2
@@ -41,7 +53,52 @@
 	icon_state = "wet_cracked0"
 	base_icon_state = "wet_cracked"
 
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit
+	light_range = 2
+	light_power = 0.6
+
+//safe tiles and whatever., i hate subtypinhg
+
+/turf/open/floor/plating/asteroid/rockplanet/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
+/turf/open/floor/plating/asteroid/rockplanet/safe/lit
+	light_range = 2
+	light_power = 0.6
+
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe
+	name = "iron cracked sand"
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	icon_state = "dry_cracked0"
+	base_icon_state = "dry_cracked"
+	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
+	turf_type = /turf/open/floor/plating/asteroid/rockplanet
+
+/turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit
+	light_range = 2
+	light_power = 0.6
+	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
+	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	icon_state = "wet_soft0"
+	base_icon_state = "wet_soft"
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/lit
+	light_range = 2
+	light_power = 0.6
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked
+	name = "iron cracked sand"
+	icon_state = "wet_cracked0"
+	base_icon_state = "wet_cracked"
+
+/turf/open/floor/plating/asteroid/rockplanet/wet/safe/cracked/lit
 	light_range = 2
 	light_power = 0.6
 
@@ -166,6 +223,51 @@
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/concrete/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_1/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_1/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_2/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_2/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_3/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_3/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_4/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/slab_4/rockplanet/lit
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_ROCKPLANET_LIGHT
+
+/turf/open/floor/concrete/pavement/rockplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/pavement/rockplanet/lit
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_ROCKPLANET_LIGHT

@@ -67,6 +67,9 @@
 	return
 
 /obj/structure/closet/Destroy()
+	if(istype(loc, /obj/structure/bigDelivery))
+		var/obj/structure/bigDelivery/wrap = loc
+		qdel(wrap)
 	dump_contents()
 	return ..()
 
@@ -114,10 +117,6 @@
 		. += "<span class='notice'>The parts are <b>welded</b> together.</span>"
 	else if(secure && !opened)
 		. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"].</span>"
-	if(isliving(user))
-		var/mob/living/L = user
-		if(HAS_TRAIT(L, TRAIT_SKITTISH))
-			. += "<span class='notice'>Ctrl-Shift-click [src] to jump inside.</span>"
 
 /obj/structure/closet/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
@@ -478,13 +477,6 @@
 		return
 	else
 		togglelock(user)
-
-/obj/structure/closet/CtrlShiftClick(mob/living/user)
-	if(!HAS_TRAIT(user, TRAIT_SKITTISH))
-		return ..()
-	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(user.loc))
-		return
-	dive_into(user)
 
 /obj/structure/closet/proc/togglelock(mob/living/user, silent)
 	if(secure && !broken)

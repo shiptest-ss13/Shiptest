@@ -25,9 +25,20 @@
 	slot_flags = ITEM_SLOT_BACK
 
 	show_magazine_on_sprite = TRUE
+	ammo_counter = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/laser/e40_bal.ogg'
 	manufacturer = MANUFACTURER_EOEHOMA
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 20,
+		),
+	)
 
 /obj/item/gun/ballistic/automatic/assault/e40/Initialize()
 	. = ..()
@@ -55,7 +66,7 @@
 /obj/item/gun/ballistic/automatic/assault/e40/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode != FIREMODE_OTHER)
-		if(!secondary.latch_closed && prob(65))
+		if(!secondary.latch_closed && secondary.cell && prob(65))
 			to_chat(user, span_warning("[src]'s cell falls out!"))
 			secondary.eject_cell()
 		return ..()

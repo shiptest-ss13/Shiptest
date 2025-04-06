@@ -35,14 +35,6 @@
 	crate_name = "pizza crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
-/datum/supply_pack/food/pizza/fill(obj/structure/closet/crate/C)
-	. = ..()
-	for(var/obj/item/pizzabox/P in C)
-		if(prob(0.5)) //0.5% chance for each box
-			var/obj/item/pizzabox/infinite/fourfiveeight = new(C)
-			fourfiveeight.boxtag = P.boxtag
-			qdel(P)
-
 /datum/supply_pack/food/ration
 	name = "Ration Crate"
 	desc = "6 standard issue rations. For your inner jarhead."
@@ -88,7 +80,8 @@
 					/obj/item/reagent_containers/condiment/hotsauce,
 					/obj/item/reagent_containers/food/drinks/bottle/cream,
 					/obj/item/reagent_containers/condiment/mayonnaise,
-					/obj/item/reagent_containers/condiment/bbqsauce)
+					/obj/item/reagent_containers/condiment/bbqsauce,
+					/obj/item/reagent_containers/condiment/soysauce)
 	crate_name = "condiments crate"
 	crate_type = /obj/structure/closet/crate/freezer
 

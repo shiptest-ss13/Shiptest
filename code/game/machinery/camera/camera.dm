@@ -36,6 +36,7 @@
 	var/busy = FALSE
 	var/emped = FALSE  //Number of consecutive EMP's on this camera
 	var/in_use_lights = 0
+	var/can_transmit_across_z_levels = FALSE
 
 	// Upgrades bitflag
 	var/upgrades = 0
@@ -258,8 +259,26 @@
 	if(!panel_open)
 		return
 
-	setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
-	to_chat(user, "<span class='notice'>You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus.</span>")
+	var/obj/item/multitool/M = I
+	var/list/choice_list = list("Occlude the camera lens", "Save the network to the multitool buffer", "Transfer the buffered network to the camera", "Change the camera network")
+	var/choice = tgui_input_list(user, "Select an option", "Camera Settings", choice_list)
+	switch(choice)
+		if("Occlude the camera lens")
+			setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
+			to_chat(user, "<span class='notice'>You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus.</span>")
+
+		if("Save the network to the multitool buffer")
+			M.buffer = network[1]
+			to_chat(user, "<span class='notice'>You add network '[network[1]]' to the multitool's buffer.</span>")
+
+		if("Transfer the buffered network to the camera")
+			network[1] = M.buffer
+			to_chat(user, "<span class='notice'>You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer.</span>")
+
+		if("Change the camera network")
+			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are not case sensitive.", "Network Tuning", max_length = 32)
+			to_chat(user, "<span class='notice'>You set [src] to transmit across the '[network[1]]' network.</span>")
+
 	return TRUE
 
 /obj/machinery/camera/welder_act(mob/living/user, obj/item/I)
@@ -508,6 +527,6 @@
 		user.sight |= (SEE_TURFS|SEE_MOBS|SEE_OBJS)
 		user.see_in_dark = max(user.see_in_dark, 8)
 	else
-		user.sight = 0
+		user.sight = SEE_BLACKNESS
 		user.see_in_dark = 2
 	return 1

@@ -2352,7 +2352,7 @@
 		worthy = TRUE
 		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
 		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
-		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, SetSleeping), 40 SECONDS), 10 SECONDS)
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
 

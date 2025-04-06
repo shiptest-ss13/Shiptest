@@ -31,6 +31,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
 	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
 	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(handle_hand_attack))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL, PROC_REF(handle_ctrl_click))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
@@ -219,6 +220,13 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNWIELD, parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_hand_attack(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ATTACK_HAND, parent, user, params))
 			return TRUE
 
 /datum/component/attachment_holder/proc/handle_unique_action(obj/item/parent, mob/user, params)

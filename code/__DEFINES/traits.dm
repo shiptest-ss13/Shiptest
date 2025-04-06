@@ -202,7 +202,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NOBREATH "no_breath"
 #define TRAIT_ANTIMAGIC "anti_magic"
 #define TRAIT_HOLY "holy"
-#define TRAIT_DEPRESSION "depression"
 #define TRAIT_JOLLY "jolly"
 #define TRAIT_NOCRITDAMAGE "no_crit"
 #define TRAIT_NOSLIPWATER "noslip_water"
@@ -241,7 +240,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_QUICKER_CARRY "quicker-carry"
 #define TRAIT_QUICK_BUILD "quick-build"
 #define TRAIT_UNINTELLIGIBLE_SPEECH "unintelligible-speech"
-#define TRAIT_UNSTABLE "unstable"
 #define TRAIT_OIL_FRIED "oil_fried"
 #define TRAIT_MEDICAL_HUD "med_hud"
 #define TRAIT_SECURITY_HUD "sec_hud"
@@ -286,8 +284,19 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
-
+/// Is this atom being actively shocked? Used to prevent repeated shocks.
+#define TRAIT_BEING_SHOCKED "shocked"
+/// Granted by prismwine, reflects lasers
+#define TRAIT_REFLECTIVE "reflective"
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
+
+/* Traits for ventcrawling.
+ * Both give access to ventcrawling, but *_NUDE requires the user to be
+ * wearing no clothes and holding no items. If both present, *_ALWAYS
+ * takes precedence.
+ */
+#define TRAIT_VENTCRAWLER_ALWAYS "ventcrawler_always"
+#define TRAIT_VENTCRAWLER_NUDE "ventcrawler_nude"
 
 /*
  * Used for movables that need to be updated, via COMSIG_ENTER_AREA and COMSIG_EXIT_AREA, when transitioning areas.
@@ -318,29 +327,27 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ALCOHOL_TOLERANCE "alcohol_tolerance"
 #define TRAIT_AGEUSIA "ageusia"
 #define TRAIT_HEAVY_SLEEPER "heavy_sleeper"
-#define TRAIT_NIGHT_VISION "night_vision"
 #define TRAIT_LIGHT_STEP "light_step"
-#define TRAIT_SPIRITUAL "spiritual"
 #define TRAIT_FAN_RILENA "fan_rilena"
 #define TRAIT_VORACIOUS "voracious"
 #define TRAIT_SELF_AWARE "self_aware"
 #define TRAIT_FREERUNNING "freerunning"
-#define TRAIT_SKITTISH "skittish"
 #define TRAIT_POOR_AIM "poor_aim"
 #define TRAIT_PROSOPAGNOSIA "prosopagnosia"
-#define TRAIT_DRUNK_HEALING "drunk_healing"
-#define TRAIT_TAGGER "tagger"
 #define TRAIT_PHOTOGRAPHER "photographer"
 #define TRAIT_MUSICIAN "musician"
 #define TRAIT_LIGHT_DRINKER "light_drinker"
 #define TRAIT_EMPATH "empath"
 #define TRAIT_FRIENDLY "friendly"
 #define TRAIT_GRABWEAKNESS "grab_weakness"
-#define TRAIT_SNOB "snob"
 #define TRAIT_BALD "bald"
 #define TRAIT_BADTOUCH "bad_touch"
 #define TRAIT_ANXIOUS "anxious"
 #define TRAIT_ANALGESIA "congenital_analgesia"
+#define TRAIT_CLOUDED "clouded_eyes"
+#define TRAIT_PINPOINT_EYES "pinpoint_eyes"
+#define TRAIT_CHEMICAL_NIGHTVISION "chemical_nightvision"
+#define TRAIT_GOOD_CHEMICAL_NIGHTVISION "good_chemical_nightvision"
 
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
@@ -453,8 +460,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_FISH_SAFE_STORAGE "fish_case"
 /// Stuff that can go inside fish cases
 #define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
-/// Granted by prismwine
-#define TRAIT_REFLECTIVE "reflective"
 /// Self-explainatory.
 #define BEAUTY_ELEMENT_TRAIT "beauty_element"
 #define MOOD_COMPONENT_TRAIT "mood_component"
@@ -487,3 +492,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
 #define AI_ANCHOR_TRAIT "ai_anchor"
+
+/// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
+#define TRAIT_CLIMBABLE "trait_climbable"

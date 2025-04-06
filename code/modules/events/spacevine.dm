@@ -454,7 +454,7 @@
 		KZ.set_production((spread_cap / initial(spread_cap)) * 5)
 		qdel(src)
 
-/datum/spacevine_controller/process()
+/datum/spacevine_controller/process(seconds_per_tick)
 	if(!LAZYLEN(vines))
 		qdel(src) //space vines exterminated. Remove the controller
 		return
@@ -462,9 +462,7 @@
 		qdel(src) //Sanity check
 		return
 
-	var/length = 0
-
-	length = min(spread_cap , max(1 , vines.len / spread_multiplier))
+	var/length = round(clamp(seconds_per_tick * 0.5 * vines.len / spread_multiplier, 1, spread_cap))
 	var/i = 0
 	var/list/obj/structure/spacevine/queue_end = list()
 
@@ -477,7 +475,7 @@
 		for(var/datum/spacevine_mutation/SM in SV.mutations)
 			SM.process_mutation(SV)
 		if(SV.energy < 2) //If tile isn't fully grown
-			if(prob(20))
+			if(SPT_PROB(10, seconds_per_tick))
 				SV.grow()
 		else //If tile is fully grown
 			SV.entangle_mob()

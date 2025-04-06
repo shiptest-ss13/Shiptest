@@ -223,6 +223,14 @@
 	build_path = /obj/item/wallframe/light_switch
 	category = list("initial", "Misc")
 
+/datum/design/paper_roll
+	name = "Hand Labeler Paper Roll"
+	id = "handlabeler_refill"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 50)
+	build_path = /obj/item/hand_labeler_refill
+	category = list("initial", "Misc")
+
 /datum/design/camera
 	name = "Camera"
 	id = "camera"
@@ -610,6 +618,22 @@
 	build_path = /obj/item/storage/pill_bottle
 	category = list("initial", "Medical", "Medical Designs")
 
+/datum/design/hypospray_vial
+	name = "Hypospray Vial"
+	id = "vial"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 100, /datum/material/glass = 500)
+	build_path = /obj/item/reagent_containers/glass/bottle/vial/small
+	category = list("initial", "Medical", "Medical Designs")
+
+/datum/design/chemical_bottle
+	name = "Glass Bottle"
+	id = "bottle"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 300)
+	build_path = /obj/item/reagent_containers/glass/bottle
+	category = list("initial", "Medical", "Medical Designs")
+
 /datum/design/chem_jug
 	name = "Chemical Jug"
 	id = "chem_jug"
@@ -738,12 +762,12 @@
 	build_path = /obj/item/wallframe/newscaster
 	category = list("initial", "Construction")
 
-/datum/design/bounty_board_frame
+/datum/design/mission_board_frame
 	name = "Bounty Board Frame"
 	id = "bountyboard_frame"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
-	build_path = /obj/item/wallframe/bounty_board
+	build_path = /obj/item/wallframe/mission_viewer
 	category = list("initial", "Construction")
 
 /datum/design/syringe
@@ -786,6 +810,14 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/restraints/handcuffs
+	category = list("initial", "Security")
+
+/datum/design/evidencebag
+	name = "Evidence Bag"
+	id = "evidencebag"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 500)
+	build_path = /obj/item/evidencebag
 	category = list("initial", "Security")
 
 /datum/design/receiver
@@ -1161,7 +1193,7 @@
 	name = "8x50 Stripper Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1169,7 +1201,7 @@
 	name = ".300 Scout Stripper Clip"
 	id = "ScoutStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a300/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1177,24 +1209,40 @@
 	name = "7.62 Stripper Clip"
 	id = "PolymerStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a762_stripper/empty
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/vickland_a308clip
-	name = ".308 Stripper Clip"
+/datum/design/vickland_a8_50rclip
+	name = "8x50mmR Stripper Clip"
 	id = "VicklandStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
-	build_path = /obj/item/ammo_box/vickland_a308/empty
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/ammo_box/vickland_a8_50r/empty
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/a858clip
 	name = "8x58 Stripper Clip"
 	id = "SSGStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a858/empty
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase
+	name = "Guncase"
+	id = "guncase"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/storage/guncase
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase_pistol
+	name = "Pistol Guncase"
+	id = "guncase-pitol"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/plastic = 1500)
+	build_path = /obj/item/storage/guncase/pistol
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/control

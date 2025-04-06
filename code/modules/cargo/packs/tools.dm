@@ -39,6 +39,15 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/bodycamera
+	name = "Body Camera Crate"
+	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
+	cost = 250
+	contains = list(/obj/item/bodycamera,
+					/obj/item/bodycamera,
+					/obj/item/paper/guides/bodycam)
+	crate_name = "bodycamera crate"
+
 /datum/supply_pack/tools/assbelt
 	name = "Assault Belt"
 	desc = "Contains an assault belt, with not one, not two, but six pockets."
@@ -89,10 +98,18 @@
 
 /datum/supply_pack/tools/insulated_gloves
 	name = "Insulated Gloves Crate"
-	desc = "The backbone of modern society. Barely ever ordered for actual engineering. Contains a pair of insulated gloves."
+	desc = "The backbone of modern society. Contains a pair of insulated gloves."
 	cost = 750
 	contains = list(/obj/item/clothing/gloves/color/yellow)
 	crate_name = "insulated gloves crate"
+
+/datum/supply_pack/tools/inducer
+	name = "Inducer Crate"
+	desc = "An electromagnetic induction charging device, used for both field engineering/recharging and reactivation of Positronics. Not suitable for cooking."
+	cost = 750
+	contains = list(/obj/item/inducer)
+	crate_name = "inducer crate"
+	faction = /datum/faction/nt
 
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
@@ -125,12 +142,29 @@
 	contains = list(/obj/item/weldingtool/electric)
 	crate_name = "electric welder crate"
 
+/datum/supply_pack/tools/welding_goggles
+	name = "Welding Goggles"
+	desc = "Contains a single pair of welding goggles for protecting your eyes."
+	cost = 150
+	contains = list(/obj/item/clothing/glasses/welding)
+	crate_name = "welding goggles crate"
+
 /datum/supply_pack/tools/plasmacutter
 	name = "Plasmacutter Crate"
 	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
 	cost = 2500
 	contains = list(/obj/item/gun/energy/plasmacutter)
 	crate_name = "plasmacutter crate"
+
+/datum/supply_pack/tools/sledgehammer
+	name = "Sledgehammer Crate"
+	desc = "Contains a freshly fabricated Breaching Sledgehammer, capable of wrecking hull and flesh with ease."
+	cost = 1500
+	contains = list(/obj/item/melee/sledgehammer/gorlex)
+	crate_name = "sledgehammer crate"
+	faction = /datum/faction/syndicate/ngr
+	faction_locked = TRUE
+	faction_discount = 0
 
 /*
 		Liquid tanks

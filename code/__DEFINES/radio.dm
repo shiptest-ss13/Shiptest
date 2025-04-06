@@ -85,6 +85,7 @@
 #define TRANSMISSION_RADIO 1 // electromagnetic radiation (default)
 #define TRANSMISSION_SUBSPACE 2 // subspace transmission (headsets only)
 #define TRANSMISSION_SUPERSPACE 3 // reaches independent (CentCom) radios only
+#define TRANSMISSION_SECTOR 4 // sector-wide broadcasting units, for cross-sector transmitting but not receiving
 
 // Filter types, used as an optimization to avoid unnecessary proc calls.
 #define RADIO_TO_AIRALARM "to_airalarm"
@@ -105,3 +106,6 @@
 #define REQ_DEP_TYPE_ASSISTANCE (1<<0)
 #define REQ_DEP_TYPE_SUPPLIES (1<<1)
 #define REQ_DEP_TYPE_INFORMATION (1<<2)
+
+///give this to can_receive to specify that there is no restriction on what virtual z level this signal is sent to
+#define RADIO_NO_Z_LEVEL_RESTRICTION 0

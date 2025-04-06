@@ -15,7 +15,6 @@
 	opacity = TRUE
 	density = TRUE
 	layer = EDGED_TURF_LAYER
-	initial_temperature = TCMB
 	base_icon_state = "smoothrocks"
 	var/smooth_icon = 'icons/turf/walls/smoothrocks.dmi'
 	var/environment_type = "asteroid"

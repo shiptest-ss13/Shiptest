@@ -18,11 +18,8 @@
 	name = "9mm SMG Magazine Crate"
 	desc = "Contains a 9mm magazine for the Vector and Saber SMGs, with a capacity of thirty rounds."
 	contains = list(/obj/item/ammo_box/magazine/smgm9mm/empty)
-	cost = 300
+	cost = 250
 	faction = /datum/faction/nt
-	faction_discount = 0
-	faction_locked = TRUE
-
 
 /* Hunter's Pride */
 
@@ -85,9 +82,21 @@
 	contains = list(/obj/item/ammo_box/magazine/m15/empty)
 	cost = 300
 
+/datum/supply_pack/magazine/woodsman_mag
+	name = "Woodsman Magazine Crate"
+	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of five rounds."
+	contains = list(/obj/item/ammo_box/magazine/m23/empty)
+	cost = 200
+
+/datum/supply_pack/magazine/woodsman_mag_extended
+	name = "Woodsman Magazine Crate"
+	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/m23/extended/empty)
+	cost = 500
+
 /datum/supply_pack/magazine/m20_auto_elite
 	name = "Auto Elite Magazine Crate"
-	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of ten rounds."
+	desc = "Contains a .44 Roumain magazine for the Auto Elite pistol, with a capacity of nine rounds."
 	contains = list(/obj/item/ammo_box/magazine/m20_auto_elite/empty)
 	cost = 250
 
@@ -98,28 +107,35 @@
 	desc = "Contains a .22lr magazine for the Himehabu pistol, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/empty)
 	cost = 100
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
+
+/datum/supply_pack/magazine/hognose_mag
+	name = "Hognose Magazine Crate"
+	desc = "Contains a .22lr magazine for the Hognose underbarrel pistol, with a capacity of eight rounds."
+	contains = list(/obj/item/ammo_box/magazine/m22lr_himehabu/hognose/empty)
+	cost = 100
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/asp_mag
 	name = "Asp Magazine Crate"
 	desc = "Contains a 5.7x39mm magazine for the Asp pistol, with a capacity of 12 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m57_39_asp/empty)
 	cost = 250
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/m10mm_mag
 	name = "Ringneck Magazine Crate"
 	desc = "Contains a 10mm magazine for the Ringneck pistol, with a capacity of eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m10mm_ringneck/empty)
 	cost = 150
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/m9mm_rattlesnake
 	name = "Rattlesnake Magazine Crate"
 	desc = "Contains a 9mm magazine for the Rattlesnake machine pistol, with a capacity of 18 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m9mm_rattlesnake/empty)
 	cost = 300
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/a357_mag
 	name = ".357 Speedloader Crate"
@@ -127,42 +143,42 @@
 	contains = list(/obj/item/ammo_box/a357/empty)
 	cost = 250
 	faction_discount = 20
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/sidewinder_mag
 	name = "Sidewinder Magazine Crate"
 	desc = "Contains a 30 round magazine for the Sidewinder SMG."
 	contains = list(/obj/item/ammo_box/magazine/m57_39_sidewinder/empty)
 	cost = 300
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/c45_cobra_mag
 	name = "Cobra Magazine Crate"
 	desc = "Contains a .45 magazine for the Cobra-20, with a capacity of 24 rounds."
 	cost = 300
 	contains = list(/obj/item/ammo_box/magazine/m45_cobra/empty)
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/short_hydra_mag
 	name = "SBR-80 DMR Short Magazine Crate"
 	desc = "Contains a 5.56x42mm CLIP made specially for the SBR-80 Designated Marksman Rifle, with a capacity of 20 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/small/empty)
 	cost = 400
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/hydra_mag
 	name = "SMR-80 Rifle Magazine Crate"
 	desc = "Contains a 5.56x42mm CLIP for the SMR-80 assault rifle, with a capacity of 30 rounds."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/empty)
 	cost = 500
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/saw_mag
 	name = "SAW-80 Magazine Crate"
 	desc = "Contains a 5.56x42mm CLIP magazine for the SAW-80 Squad Automatic Weapon, with a capacity of sixty rounds. Count your shots, they run out fast."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty)
 	cost = 750
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -171,14 +187,14 @@
 	desc = "Contains a 6.5 CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/short/empty)
 	cost = 750
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/boomslang_mag_extended
 	name = "MSR-90 'Boomslang' Magazine Crate"
 	desc = "Contains a 6.5 CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
 	cost = 1500
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 
 /* CM Lancaster */
@@ -272,7 +288,7 @@
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/empty)
 	faction = /datum/faction/nt
 
-/* Solgov */
+/* SolGov */
 
 /datum/supply_pack/magazine/mag_556mm
 	name = "5.56 Pistole C Magazine Crate"
@@ -311,6 +327,14 @@
 	cost = 300
 	faction = /datum/faction/inteq
 
+/datum/supply_pack/magazine/rottweiler_mag
+
+	name = "Rottweiler Box Magazine Crate"
+	desc = "Contains a .308 box magazine for the KM-05 'Rottweiler' LMG, with a capacity of fifty rounds."
+	contains = list(/obj/item/ammo_box/magazine/rottweiler_308_box/empty)
+	cost = 750
+	faction = /datum/faction/inteq
+
 /* Shotguns */
 
 /datum/supply_pack/magazine/bulldog
@@ -318,14 +342,14 @@
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/empty)
 	cost = 750
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/bulldog_12
 	name = "Bulldog Drum Magazine Crate"
 	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
 	cost = 1500
-	faction = /datum/faction/syndicate/scarborough_arms
+	faction = /datum/faction/syndicate/scarborough
 
 /* energy weapons */
 
@@ -356,15 +380,15 @@
 
 /* etherbor */
 
-/datum/supply_pack/magazine/guncell/kalix
+/datum/supply_pack/magazine/kalixcell
 	name = "Etherbor Cell Crate"
 	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/kalix)
 	cost = 600
 	faction = /datum/faction/pgf
 
-/datum/supply_pack/magazine/guncell/pgf
-	name = "Etherbor Cell Crate"
+/datum/supply_pack/magazine/pgfcell
+	name = "Military-Grade Etherbor Cell Crate"
 	desc = "Contains a military-grade Etherbor weapon cell produced for the PGFMC, compatible with Etherbor armaments with a significantly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/pgf)
 	cost = 1000

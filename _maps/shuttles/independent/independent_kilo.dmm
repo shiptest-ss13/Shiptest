@@ -6,7 +6,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/cargo)
 "ak" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma,
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull,
 /area/ship/engineering)
 "am" = (
@@ -14,16 +14,16 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "ar" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "kilothrusters"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -43,7 +43,7 @@
 /area/ship/engineering)
 "ay" = (
 /obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "aC" = (
@@ -336,7 +336,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "cb" = (
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
@@ -479,9 +479,7 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = -21
-	},
+/obj/machinery/advanced_airlock_controller/directional/south,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable/pink{
 	icon_state = "0-9"
@@ -632,6 +630,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"eK" = (
+/obj/machinery/button/door{
+	pixel_x = -21;
+	pixel_y = -13;
+	dir = 4;
+	id = "dwayne_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
+/turf/closed/wall,
+/area/ship/hallway/central)
 "eN" = (
 /obj/machinery/light/directional/west,
 /obj/structure/crate_shelf,
@@ -646,10 +656,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"fu" = (
-/obj/effect/turf_decal/corner/opaque/black/mono,
-/turf/closed/wall/r_wall/yesdiag,
-/area/ship/cargo)
 "fv" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-10"
@@ -674,9 +680,6 @@
 	dir = 8
 	},
 /obj/item/storage/box/ammo/a12g_buckshot,
-/obj/item/gun/ballistic/shotgun/doublebarrel/presawn{
-	default_ammo_type = 0
-	},
 /obj/structure/cable/pink{
 	icon_state = "4-10"
 	},
@@ -815,7 +818,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/food/flour,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
@@ -919,8 +922,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "mz" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/machinery/light_switch{
 	pixel_x = 7;
 	pixel_y = 20
@@ -1256,6 +1263,15 @@
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 6
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "cock_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock";
+	pixel_x = 20;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew)
@@ -1655,7 +1671,8 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "cock_bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1682,7 +1699,7 @@
 	pixel_x = 12;
 	pixel_y = 12
 	},
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_x = -5
 	},
@@ -1809,11 +1826,15 @@
 /turf/open/floor/plating/airless,
 /area/ship/crew)
 "Tn" = (
-/obj/structure/bed,
+/obj/structure/bed{
+	dir = 4
+	},
 /obj/structure/cable/pink{
 	icon_state = "1-6"
 	},
-/obj/effect/spawner/random/bedsheet,
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -2044,7 +2065,7 @@
 	icon_state = "4-9"
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plating,
 /area/ship/engineering)
 
@@ -2245,7 +2266,7 @@ Vq
 "}
 (14,1,1) = {"
 aa
-fu
+Nq
 ac
 Ud
 bX
@@ -2285,7 +2306,7 @@ bA
 Ew
 xk
 xk
-xk
+eK
 nO
 "}
 (17,1,1) = {"

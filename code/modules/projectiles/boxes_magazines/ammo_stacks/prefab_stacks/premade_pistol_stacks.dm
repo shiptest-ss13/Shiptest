@@ -212,14 +212,6 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c45/rubber = 4)
 	generate_items_inside(items_inside,src)
 
-// .50 AE (Desert Eagle)
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a50AE
-	ammo_type = /obj/item/ammo_casing/a50AE
-
-/obj/item/ammo_box/magazine/ammo_stack/prefilled/a50AE/hp
-	ammo_type = /obj/item/ammo_casing/a50AE/hp
-
 // .22 LR (Himehabu, Pounder)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c22lr
@@ -243,7 +235,7 @@
 /obj/item/storage/box/ammo/c22lr/ap
 	name = "box of .22 LR AP ammo"
 	desc = "A box of standard .22 LR AP ammo, designed to penetrate through armor at the cost of total damage."
-	icon_state = "22lrbox"
+	icon_state = "22lrbox-ap"
 
 /obj/item/storage/box/ammo/c22lr/ap/PopulateContents()
 	var/static/items_inside = list(
@@ -257,7 +249,7 @@
 /obj/item/storage/box/ammo/c22lr/hp
 	name = "box of .22 LR HP ammo"
 	desc = "A box of standard .22 LR HP ammo, designed to cause massive tissue damage at the cost of armor penetration."
-	icon_state = "22lrbox"
+	icon_state = "22lrbox-hp"
 
 /obj/item/storage/box/ammo/c22lr/hp/PopulateContents()
 	var/static/items_inside = list(
@@ -271,7 +263,7 @@
 /obj/item/storage/box/ammo/c22lr/rubber
 	name = "box of .22 LR rubber ammo"
 	desc = "A box of standard .22 LR rubber ammo."
-	icon_state = "22lrbox"
+	icon_state = "22lrbox-rubbershot"
 
 /obj/item/storage/box/ammo/c22lr/rubber/PopulateContents()
 	var/static/items_inside = list(

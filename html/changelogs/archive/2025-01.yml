@@ -204,3 +204,117 @@
   zimon9:
   - balance: The bone breakage damage proc now depends on the movement intent of a
       carbon. Walking reduces the proc call probability
+2025-01-22:
+  Ahmedok:
+  - balance: added mesons in Kali-Adhil Wrecker locker
+  - imageadd: added NGR variant of mining webbing
+  Erikafox:
+  - rscadd: chitosan! a coagulant that you can make by mixing 1 silicon, 2 sugar,
+      1 cryptobiolin and warming it all up.
+  - rscadd: hyposprays and hypospray vials to cargo
+  - bugfix: mannitol pens now have their proper name
+  Gristlebee:
+  - rscadd: Mechs use the new zoom system
+  - rscadd: Solaris and Ez-Pulse cannon can zoom.
+  - rscdel: Zoom on the Marauder
+  Jedi-Toothpaste:
+  - bugfix: spacesuit crates are now correctly categorised
+  - bugfix: laser tag crates are 500 instead of 100
+  Ratvarr:
+  - bugfix: The Irish have been removed from corned beef.
+  Slim-Pickems:
+  - balance: moved combat medic hardsuit bullet protection from 10 to 20
+  Thera-Pissed:
+  - bugfix: broken closet in package wrap qdel contents bug
+  - bugfix: extra space in disabled bodypart text.
+  firebudgy:
+  - rscadd: Inteq Gas Mask sprites for Vox.
+  - balance: Vests now have pockets for binoculars, attachments and pocket fire extinguishers
+2025-01-23:
+  Apogee-dev:
+  - rscadd: added Miskilamo Falmouth-class Light Freighter
+  - rscdel: removed Libertatia-class Hauler
+  MemeSnorfer & Moffball:
+  - imageadd: Kepori will no longer be haunted by floating combat webbings and balaclavas.
+      Hurray!
+  - bugfix: Fixes a mistake concerning NGR balaclavas not fitting Sarathi snouts.
+2025-01-24:
+  firebudgy:
+  - bugfix: Inteq Balaclavas and other Vox Sprites
+  generalthrax:
+  - bugfix: Falmouth filename is now indie
+  zimon9:
+  - bugfix: updated cell latch descriptions
+  - bugfix: fixed a minor bug with cell latches on the E-40
+2025-01-25:
+  Erikafox:
+  - rscadd: Cybersun's newest doohickey, the Nimbus-Class Caravel, is now on sale
+      in the Frontier.
+  FalloutFalcon:
+  - refactor: SetSleeping to set_sleeping
+  - refactor: Removed redundant arg from set_sleeping call
+  Geoengi:
+  - rscadd: Roulette tables can be bought at cargo for the low price of 5000 credits!
+  - bugfix: Fixed persistent overlays on roulette tables and requires them to be powered
+      to function.
+  - bugfix: Roulette tables now pay out when betting zero.
+  - tweak: Owners of roulette tables are the only ones who can bolt or unbolt them.
+  - tweak: Slot machines don't announce who won a jackpot where.
+  - tweak: Replaced references to ID cards with cash cards where applicable.
+  - tweak: The roulette beacon now has an activation sound.
+  - spellcheck: The roulette beacon's description reads better.
+  - code_imp: Slot machines no longer accept material coins due to them nuking the
+      server if withdrawn.
+2025-01-27:
+  Erikafox:
+  - balance: Nimbus has more money now. Be a |rich| lesbian.
+  - balance: drills no longer spawn more mobs when more people are around.
+  - balance: drill missions now pay more money.
+  Ratvarr:
+  - rscadd: Nanotrasen no longer expects you to preform open heart surgery with no
+      anesthesia of any kind on the Harrier. Rejoice.
+  firebudgy:
+  - balance: Ammo cans can hold weapon cells now too.
+  zimon9:
+  - code_imp: applied some bugfixes to the interaction of examine_more with modular
+      computers and laptops
+  - rscadd: adds the ability to interact with a tablet using the examine_more function
+2025-01-28:
+  Erikafox:
+  - rscadd: Cargo Beacons are free now.
+  - rscadd: bullets now refuse to tell you their calibre
+  - rscdel: deagle
+  - balance: most cartridges have been lightly adjusted. please say something if firing
+      bullets feels weird.
+  Jedi-Toothpaste:
+  - bugfix: fixes misaligned floor decal
+2025-01-29:
+  Apogee-dev:
+  - rscdel: Launched the Komodo-class into a black hole
+  FalloutFalcon:
+  - rscadd: Readds prism and force, heavily reworked.
+  - rscadd: You can tell when someone is under the affects of a trickwine easier.
+  - balance: Alot of tweaks to the hostile effects because they can work off status
+      effects now.
+  - balance: Trickwines off the blackmarket are slighter rarer and more expensive.
+  - balance: The reflective trait now grants full reflection instead of a 50/50 chance.
+  - refactor: Refactored alot of trickwine code, they work off of effects now and
+      are easier to read.
+2025-01-30:
+  Ical92:
+  - bugfix: adjusted autowiki ship size calculations
+  Rye-Rice, Timberpoes:
+  - rscadd: Added bodycameras
+  - rscadd: Added the ability to set custom networks on cameras and camera consoles
+  - code_imp: Made camera consoles and SecurEye have better parity
+  Thera-Pissed:
+  - rscdel: fried eggs no longer fried foodtype
+  firebudgy:
+  - balance: Abandoned Listening Post has been slightly adjusted to have marginally
+      better loot.
+  generalthrax:
+  - balance: Morphine now requires more cycles to put you to sleep, giving more combat
+      utility
+2025-01-31:
+  Apogee-dev:
+  - bugfix: Auto Elite magazines now advertise the correct capacity

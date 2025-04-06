@@ -36,14 +36,15 @@
 
 	zoom_amt = SHOTGUN_ZOOM
 
-	spread = 4
-	spread_unwielded = 10
+	spread = 3
+	spread_unwielded = 9
 	recoil = 1
 	recoil_unwielded = 4
 
 	gunslinger_recoil_bonus = -1
 
 	min_recoil = 0.1
+	wear_rate = 0
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
@@ -58,8 +59,8 @@
 
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
-	spread = 4
-	spread_unwielded = 16
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
@@ -67,6 +68,10 @@
 	semi_auto = TRUE
 
 	gunslinger_recoil_bonus = 1
+	wear_rate = 1
+	wear_minor_threshold = 30
+	wear_major_threshold = 90
+	wear_maximum = 150
 
 //Dual Feed Shotgun
 

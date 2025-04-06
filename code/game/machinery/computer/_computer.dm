@@ -31,7 +31,7 @@
 		circuit = C
 		C.moveToNullspace()
 
-/obj/machinery/computer/process()
+/obj/machinery/computer/process(seconds_per_tick)
 	if(machine_stat & (NOPOWER|BROKEN))
 		return 0
 	return 1
@@ -125,5 +125,6 @@
 		return
 
 /obj/machinery/computer/examine_more(mob/user)
+	. = ..()
 	ui_interact(user)
-	return ..()
+	return

@@ -18,8 +18,8 @@
 	throw_message = "does nothing against the hard shell of"
 	vision_range = 2
 	speed = 3
-	maxHealth = 175
-	health = 175
+	maxHealth = 90
+	health = 90
 	harm_intent_damage = 5
 	obj_damage = 60
 	melee_damage_lower = 7
@@ -223,7 +223,7 @@
 	movement_type = FLYING
 	robust_searching = 1
 	attack_same = TRUE		// So we'll fight basilisks
-	//mob_trophy = /obj/item/mob_trophy/watcher_wing
+	mob_trophy = /obj/item/mob_trophy/watcher_wing
 	loot = list()
 	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
 	lava_drinker = FALSE
@@ -286,7 +286,7 @@
 	light_power = 2.5
 	light_color = LIGHT_COLOR_LAVA
 	projectiletype = /obj/projectile/temp/basilisk/magmawing
-	//mob_trophy = /obj/item/mob_trophy/magma_wing
+	mob_trophy = /obj/item/mob_trophy/magma_wing
 	trophy_drop_mod = 75
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing
@@ -301,7 +301,7 @@
 	ranged_cooldown_time = 20
 	projectiletype = /obj/projectile/temp/basilisk/icewing
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/bone = 1) //No sinew; the wings are too fragile to be usable
-	//mob_trophy = /obj/item/mob_trophy/ice_wing
+	mob_trophy = /obj/item/mob_trophy/ice_wing
 	trophy_drop_mod = 75
 
 /obj/projectile/temp/basilisk/magmawing

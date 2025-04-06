@@ -61,7 +61,7 @@
 ///////////////
 
 //Start of a breath chain, calls breathe()
-/mob/living/carbon/handle_breathing(times_fired)
+/mob/living/carbon/handle_breathing(seconds_per_tick, times_fired)
 	var/next_breath = 4
 	var/obj/item/organ/lungs/L = getorganslot(ORGAN_SLOT_LUNGS)
 	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
@@ -438,8 +438,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(drowsyness)
 		drowsyness = max(drowsyness - restingpwr, 0)
 		blur_eyes(2)
-		if(prob(5))
-			AdjustSleeping(100)
+		if(drowsyness > 20)
+			if(prob(round(drowsyness/10)))
+				AdjustSleeping(drowsyness)
 
 	//jitteriness
 	if(jitteriness)

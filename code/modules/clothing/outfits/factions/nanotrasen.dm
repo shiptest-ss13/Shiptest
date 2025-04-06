@@ -100,7 +100,7 @@
 
 	chameleon_extras = list(
 						/obj/item/gun/energy/e_gun,
-						/obj/item/stamp/head_of_personnel,
+						/obj/item/stamp/nanotrasen/officer,
 						)
 
 // Head of Security
@@ -430,8 +430,6 @@
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
-	chameleon_extras = /obj/item/stamp/law
-
 // Corp. Rep
 /datum/outfit/job/nanotrasen/lawyer/corporaterepresentative
 	name = "Nanotrasen - Corporate Representative"
@@ -478,6 +476,8 @@
 /datum/outfit/job/nanotrasen/pilot
 	name = "Nanotrasen - Pilot"
 	id_assignment = "Pilot"
+	jobtype = /datum/job/head_of_personnel
+
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military
 	suit = /obj/item/clothing/suit/jacket/leather/duster

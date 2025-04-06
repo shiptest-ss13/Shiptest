@@ -18,9 +18,16 @@
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
+
+	//spread, set on humans during init by checking what gun they're holding.
+	var/spread = 0
+
 	///delay for the automated movement.
 	var/move_to_delay = 3
 	var/list/friends = list()
+
+	var/list/on_aggro_say = list()
+	var/aggro_say_chance = 0
 
 	var/list/emote_taunt = list()
 	var/taunt_chance = 0
@@ -362,16 +369,19 @@
 
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
-	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, target)
-	//Target can be removed by the signal's effects
-	if(QDELETED(target))
-		return
 	in_melee = TRUE
-	return target.attack_animal(src)
+	if(SEND_SIGNAL(src, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, target) & COMPONENT_HOSTILE_NO_ATTACK)
+		return FALSE //but more importantly return before attack_animal called
+	var/result = target.attack_animal(src)
+	SEND_SIGNAL(src, COMSIG_HOSTILE_POST_ATTACKINGTARGET, target, result)
+	return result
 
 /mob/living/simple_animal/hostile/proc/Aggro()
 	vision_range = aggro_vision_range
 	if(target)
+		if(on_aggro_say.len && prob(aggro_say_chance))
+			INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "[pick(on_aggro_say)]")
+			aggro_say_chance = max(taunt_chance-7,2)
 		if(emote_taunt.len && prob(taunt_chance))
 			manual_emote("[pick(emote_taunt)] at [target].")
 			taunt_chance = max(taunt_chance-7,2)
@@ -381,6 +391,7 @@
 	stop_automated_movement = 0
 	vision_range = initial(vision_range)
 	taunt_chance = initial(taunt_chance)
+	aggro_say_chance = initial(aggro_say_chance)
 
 /mob/living/simple_animal/hostile/proc/LoseTarget()
 	GiveTarget(null)
@@ -438,7 +449,7 @@
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
-		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0,  src)
+		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), rand(-spread, spread),  src)
 	else if(projectiletype)
 		var/obj/projectile/P = new projectiletype(startloc)
 		playsound(src, projectilesound, 100, TRUE)

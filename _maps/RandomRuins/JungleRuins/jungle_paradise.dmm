@@ -935,7 +935,7 @@
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "fR" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fT" = (
@@ -2045,10 +2045,8 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "mk" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 6;
-	pixel_x = 5;
-	pixel_y = -5
+/obj/machinery/porta_turret/ship/nt{
+	dir = 6
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/paradise/misc)
@@ -4668,6 +4666,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/disk/surgery/t2,
 /turf/open/floor/pod/light,
 /area/ruin/jungle/paradise/med)
 "Di" = (
@@ -6359,7 +6358,7 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "Os" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/plating/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Oz" = (
@@ -6653,10 +6652,8 @@
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "QD" = (
-/obj/machinery/porta_turret/syndicate/pod{
-	dir = 10;
-	pixel_x = -5;
-	pixel_y = -5
+/obj/machinery/porta_turret/ship/nt{
+	dir = 10
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/paradise/misc)
@@ -6900,7 +6897,7 @@
 /turf/open/floor/plating/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Su" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/plating/dirt/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Sw" = (
@@ -7508,7 +7505,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/item/food/breadslice/moldy{
 	pixel_x = -4;

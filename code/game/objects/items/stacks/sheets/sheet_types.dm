@@ -153,6 +153,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wooden railing", /obj/structure/railing/wood, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("wooden railing corner", /obj/structure/railing/corner/wood, 1, time = 10, window_checks = TRUE), \
 	new /datum/stack_recipe("wooden computer frame", /obj/structure/frame/computer/solgov, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("planter box", /obj/machinery/hydroponics/wooden, 5, time = 8 SECONDS, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
 /obj/item/stack/sheet/mineral/wood
@@ -251,7 +252,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("fingerless gloves", /obj/item/clothing/gloves/fingerless, 1), \
 	new/datum/stack_recipe("white gloves", /obj/item/clothing/gloves/color/white, 3), \
-	new/datum/stack_recipe("white softcap", /obj/item/clothing/head/soft/mime, 2), \
+	new/datum/stack_recipe("white softcap", /obj/item/clothing/head/soft, 2), \
 	new/datum/stack_recipe("white beanie", /obj/item/clothing/head/beanie, 2), \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/blindfold, 2), \

@@ -265,6 +265,7 @@
 /obj/item/reagent_containers/food/snacks/grown/seaweed
 	seed = /obj/item/seeds/seaweed
 	name = "seaweed"
+	dried_type = /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
 	desc = "It's so rubbery... is this safe to eat?"
 	icon_state = "seaweed"
 	filling_color = "#4a7244"

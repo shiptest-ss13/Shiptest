@@ -251,6 +251,7 @@
 
 /obj/projectile/kinetic/mech
 	range = 5
+	pressure_decrease = 0.5
 
 /obj/projectile/kinetic/mech/strike_thing(atom/target) //has no skill check for mechs
 	var/turf/target_turf = get_turf(target)

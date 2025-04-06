@@ -662,13 +662,15 @@
 		return
 	limb_attack_self()
 
+///proc to call unique action on whatever we're holding.
 /mob/verb/do_unique_action()
 	set name = "Do Unique Action"
 	set category = "Object"
 	set src = usr
 
 	if(ismecha(loc))
-		return
+		var/obj/mecha/mech = loc
+		return mech.handle_unique_action(src)
 
 	if(incapacitated())
 		return
@@ -679,6 +681,46 @@
 			update_inv_hands()
 			return
 		I.unique_action(src)
+		update_inv_hands()
+
+///proc to call zoom on whatever we're holding.
+/mob/verb/do_zoom()
+	set name = "Aim Down Sights"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		var/obj/mecha/mecha = loc
+		if(mecha.zoom_action)
+			mecha.zoom_action.Activate()
+			return
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(istype(I, /obj/item/gun))
+		var/obj/item/gun/our_gun = I
+		if(our_gun.wielded_fully)
+			our_gun.zoom(src, src.dir)
+		update_inv_hands()
+		return
+	return
+
+/mob/verb/do_secondary_action()
+	set name = "Do Secondary Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		if(I.pre_secondary_action(src))
+			update_inv_hands()
+			return
+		I.secondary_action(src)
 		update_inv_hands()
 
 /**

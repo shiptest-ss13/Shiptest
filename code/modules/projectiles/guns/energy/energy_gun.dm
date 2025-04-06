@@ -7,7 +7,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
 	modifystate = TRUE
 	ammo_x_offset = 2
 	dual_wield_spread = 60
@@ -46,7 +46,7 @@
 	icon_state = "energytac"
 	ammo_x_offset = 2
 	charge_sections = 5
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault, /obj/item/ammo_casing/energy/disabler)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite, /obj/item/ammo_casing/energy/disabler/sharplite)
 	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 
 	weapon_weight = WEAPON_MEDIUM
@@ -67,7 +67,7 @@
 	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has a multifaceted energy lens, allowing the gun to alter the form of projectile it fires on command. The project was a dud, and Nanotrasen later acquired Sharplite to suit its laser weapon needs."
 	icon_state = "protolaser"
 	ammo_x_offset = 2
-	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/electrode/old)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/sharplite, /obj/item/ammo_casing/energy/electrode/old)
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
 /obj/item/gun/energy/e_gun/hos
@@ -76,7 +76,7 @@
 	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	icon_state = "hoslaser"
 	force = 10
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
 	shaded_charge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
@@ -138,7 +138,7 @@
 	lefthand_file = GUN_LEFTHAND_ICON
 	righthand_file = GUN_RIGHTHAND_ICON
 
-	charge_delay = 5
+	charge_delay = 10
 	can_charge = FALSE
 	internal_magazine = TRUE
 	ammo_x_offset = 2
@@ -149,9 +149,9 @@
 	var/fail_chance = 0
 	manufacturer = MANUFACTURER_NONE
 
-/obj/item/gun/energy/e_gun/nuclear/process()
+/obj/item/gun/energy/e_gun/nuclear/process(seconds_per_tick)
 	if(fail_tick > 0)
-		fail_tick--
+		fail_tick -= seconds_per_tick * 0.5
 	..()
 
 /obj/item/gun/energy/e_gun/nuclear/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
@@ -218,7 +218,7 @@
 	icon_state = "bsgun"
 	item_state = "gun"
 	force = 7
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/trap)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/trap)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
 
@@ -226,7 +226,7 @@
 	name = "\improper E-TAR SMG"
 	desc = "A dual-mode energy gun capable of discharging weaker shots at a much faster rate than the standard energy gun."
 	icon_state = "esmg"
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/smg, /obj/item/ammo_casing/energy/laser/smg)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/smg, /obj/item/ammo_casing/energy/laser/sharplite/smg)
 	ammo_x_offset = 2
 	charge_sections = 3
 	weapon_weight = WEAPON_LIGHT

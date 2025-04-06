@@ -225,7 +225,7 @@
  * Will only move if the move_cooldown cooldown macro is finished.
  * If it can't find a place to go, it will stop moving.
  */
-/obj/structure/training_machine/process()
+/obj/structure/training_machine/process(seconds_per_tick)
 	if(!COOLDOWN_FINISHED(src, move_cooldown))
 		return
 	var/turf/current_turf = get_turf(src)

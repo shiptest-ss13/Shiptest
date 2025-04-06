@@ -108,7 +108,7 @@
 	else if(!machine_stat && construction_state == PA_CONSTRUCTION_COMPLETE)
 		set_idle_power()
 
-/obj/machinery/particle_accelerator/control_box/process()
+/obj/machinery/particle_accelerator/control_box/process(seconds_per_tick)
 	if(active)
 		//a part is missing!
 		if(connected_parts.len < 6)

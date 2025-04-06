@@ -110,7 +110,7 @@
 		new /obj/item/soap(location)
 
 /datum/chemical_reaction/omegasoapification
-	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/drug/krokodil = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/baldium = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
+	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/baldium = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
 	required_temp = 999
 	mob_react = FALSE
 
@@ -539,7 +539,7 @@
 /datum/chemical_reaction/yuck
 	results = list(/datum/reagent/yuck = 4)
 	required_reagents = list(/datum/reagent/fuel = 3)
-	required_container = /obj/item/reagent_containers/food/snacks/deadmouse
+	required_container = /obj/item/food/deadmouse
 
 
 /datum/chemical_reaction/slimejelly

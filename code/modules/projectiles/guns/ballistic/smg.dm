@@ -27,6 +27,9 @@
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
+	wear_minor_threshold = 120
+	wear_major_threshold = 360
+	wear_maximum = 600
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -102,14 +105,11 @@
 	wield_delay = 0.6 SECONDS
 	wield_slowdown = SMG_SLOWDOWN
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/gun,
+	wear_rate = 1.6
+
+	unique_attachments = list(
 		/obj/item/attachment/foldable_stock
-	)
+		)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -164,12 +164,7 @@
 
 	wield_delay = 0.4 SECONDS
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/gun,
+	unique_attachments = list(
 		/obj/item/attachment/foldable_stock/inteq
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
@@ -201,12 +196,7 @@
 
 	wield_delay = 0.4 SECONDS
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/gun,
+	unique_attachments = list(
 		/obj/item/attachment/foldable_stock
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock)

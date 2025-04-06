@@ -46,7 +46,7 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed)
 
-/obj/item/ctf/process()
+/obj/item/ctf/process(seconds_per_tick)
 	if(is_ctf_target(loc)) //don't reset from someone's hands.
 		return PROCESS_KILL
 	if(world.time > reset_cooldown)
@@ -201,7 +201,7 @@
 	SSpoints_of_interest.remove_point_of_interest(src)
 	return ..()
 
-/obj/machinery/capture_the_flag/process()
+/obj/machinery/capture_the_flag/process(seconds_per_tick)
 	for(var/i in spawned_mobs)
 		// Anyone in crit, automatically reap
 		var/mob/living/living_participant = i
@@ -211,9 +211,8 @@
 		else
 			// The changes that you've been hit with no shield but not
 			// instantly critted are low, but have some healing.
-			living_participant.adjustBruteLoss(-5)
-			living_participant.adjustFireLoss(-5)
-
+			living_participant.adjustBruteLoss(-2.5 * seconds_per_tick)
+			living_participant.adjustFireLoss(-2.5 * seconds_per_tick)
 
 /obj/machinery/capture_the_flag/red
 	name = "Red CTF Controller"
@@ -403,22 +402,6 @@
 			CTF.ctf_gear = initial(ctf_gear)
 			CTF.respawn_cooldown = DEFAULT_RESPAWN
 
-/obj/item/gun/ballistic/automatic/pistol/deagle/ctf
-	desc = "This looks like it could really hurt in melee."
-	force = 75
-	default_ammo_type = /obj/item/ammo_box/magazine/m50/ctf
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m50/ctf,
-	)
-
-/obj/item/gun/ballistic/automatic/pistol/deagle/ctf/dropped()
-	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
-
-/obj/item/gun/ballistic/automatic/pistol/deagle/ctf/proc/floor_vanish()
-	if(isturf(loc))
-		qdel(src)
-
 /obj/item/ammo_box/magazine/m50/ctf
 	ammo_type = /obj/item/ammo_casing/a50/ctf
 
@@ -528,7 +511,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	id = /obj/item/card/id/away
-	belt = /obj/item/gun/ballistic/automatic/pistol/deagle/ctf
+	belt = /obj/item/gun/ballistic/automatic/pistol/cm357
 	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf
 	r_pocket = /obj/item/ammo_box/magazine/recharge/ctf
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf
@@ -722,11 +705,11 @@
 	resistance_flags = INDESTRUCTIBLE
 	var/obj/machinery/capture_the_flag/controlling
 	var/team = "none"
-	var/point_rate = 1
+	var/point_rate = 0.5
 
-/obj/machinery/control_point/process()
+/obj/machinery/control_point/process(seconds_per_tick)
 	if(controlling)
-		controlling.control_points += point_rate
+		controlling.control_points += point_rate * seconds_per_tick
 		if(controlling.control_points >= controlling.control_points_to_win)
 			controlling.victory()
 

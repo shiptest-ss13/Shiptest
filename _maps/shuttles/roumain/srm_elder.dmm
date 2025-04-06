@@ -71,7 +71,7 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "aF" = (
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -588,7 +588,7 @@
 /turf/open/floor/wood/maple,
 /area/ship/hallway/port)
 "fC" = (
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "fP" = (
@@ -1280,9 +1280,7 @@
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
 "oY" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "pb" = (
@@ -1505,15 +1503,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "rE" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "elderengineshuts"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1842,6 +1838,15 @@
 /obj/effect/turf_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4;
+	id = "elders_bathroom";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/medical)
 "vX" = (
@@ -1947,7 +1952,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 8
 	},
@@ -2051,7 +2056,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/line{
 	dir = 8
 	},
@@ -2111,7 +2116,7 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/bridge)
 "Aq" = (
-/obj/machinery/hydroponics/soil,
+/obj/machinery/hydroponics/wooden,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Ar" = (
@@ -3031,10 +3036,7 @@
 /turf/closed/wall/r_wall,
 /area/ship/storage)
 "LS" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = -25;
-	pixel_y = 3
-	},
+/obj/machinery/advanced_airlock_controller/directional/west,
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 4
 	},
@@ -3171,15 +3173,13 @@
 /turf/open/floor/wood/ebony,
 /area/ship/cargo)
 "MV" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
 	id = "elderengineshuts"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3416,9 +3416,7 @@
 /turf/open/floor/wood/ebony,
 /area/ship/cargo)
 "Py" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "PE" = (
@@ -4128,7 +4126,8 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/wood{
-	name = "Restroom"
+	name = "Restroom";
+	id_tag = "elders_bathroom"
 	},
 /obj/effect/turf_decal/spline/fancy/wood/cee{
 	dir = 1

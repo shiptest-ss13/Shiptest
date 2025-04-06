@@ -33,8 +33,7 @@
 /obj/structure/flora/tree/attackby(obj/item/W, mob/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.get_sharpness() && W.force > 0)
-			if(W.hitsound)
-				playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
+			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100, FALSE, FALSE)
 			user.visible_message("<span class='notice'>[user] begins to cut down [src] with [W].</span>","<span class='notice'>You begin to cut down [src] with [W].</span>", "<span class='hear'>You hear the sound of sawing.</span>")
 			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
 				user.visible_message("<span class='notice'>[user] fells [src] with the [W].</span>","<span class='notice'>You fell [src] with the [W].</span>", "<span class='hear'>You hear the sound of a tree falling.</span>")
@@ -830,7 +829,7 @@
 	START_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/structure/flora/tree/chapel/process()
+/obj/structure/flora/tree/chapel/process(seconds_per_tick)
 	if(world.time > (lastcycle + 200))
 		if(abs(karma) > 100)
 			pulseKarma()
@@ -1028,7 +1027,7 @@
 	create_reagents(300, OPENCONTAINER)
 	. = ..()
 
-/obj/structure/flora/tree/srm/process()
+/obj/structure/flora/tree/srm/process(seconds_per_tick)
 	if(world.time > (lastcycle + 100))
 		if(reagents.total_volume > 0)
 			var/gainedhealth = 0

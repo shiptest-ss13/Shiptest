@@ -227,7 +227,7 @@
 			lights = "lights-exploding"
 	add_overlay(lights)
 
-/obj/machinery/nuclearbomb/process()
+/obj/machinery/nuclearbomb/process(seconds_per_tick)
 	if(timing && !exploding)
 		if(detonation_timer < world.time)
 			explode()
@@ -617,7 +617,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 		last_disk_move = world.time
 		START_PROCESSING(SSobj, src)
 
-/obj/item/disk/nuclear/process()
+/obj/item/disk/nuclear/process(seconds_per_tick)
 	if(fake)
 		STOP_PROCESSING(SSobj, src)
 		CRASH("A fake nuke disk tried to call process(). Who the fuck and how the fuck")

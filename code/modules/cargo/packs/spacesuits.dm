@@ -18,7 +18,7 @@
 /datum/supply_pack/spacesuits/pilot_spacesuit
 	name = "Pilot Space Suit Crate"
 	desc = "One pilot space suit, for improved mobility in exosuits."
-	cost = 750
+	cost = 500
 	contains = list(/obj/item/clothing/suit/space/pilot,
 					/obj/item/clothing/head/helmet/space/pilot/random)
 	crate_name = "pilot space suit crate"
@@ -128,7 +128,7 @@
 /datum/supply_pack/spacesuits/engineering_hardsuit
 	name = "Engineering Hardsuit Crate"
 	desc = "One engineering hardsuit, resistant to fire, radiation, and other engineering hazards. Nanotrasen reminds you that Resistant does not mean Immune."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine)
 	crate_name = "engineering hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
@@ -137,7 +137,7 @@
 /datum/supply_pack/spacesuits/mining_hardsuit_heavy
 	name = "Heavy Mining Hardsuit Crate"
 	desc = "One heavy-duty mining hardsuit for dangerous frontier operations. Comes with a pair of EXOCOM jet boots."
-	cost = 3500
+	cost = 2500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy,
 					/obj/item/clothing/shoes/bhop)
 	crate_name = "heavy mining hardsuit crate"
@@ -186,18 +186,6 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-//general syndicate
-
-/datum/supply_pack/spacesuits/op_hardsuit //pls nerf
-	name = "Blood Red Hardsuit Crate"
-	desc = "The terrifying visage of a Blood-red Hardsuit has heralded the end of many corporate rats. This is most likely due to favorable survivablity onion ratings in its design."
-	cost = 5000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi)
-	crate_name = "blood-red hardsuit crate"
-	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate
-	faction_locked = TRUE
-
 //cybersun breaker
 
 /datum/supply_pack/spacesuits/neutron_hardsuit
@@ -238,7 +226,7 @@
 	name = "Inteq Hardsuit Crate"
 	desc = "A bulky Mothership-native design with a monocular viewport. The Inteq Hardsuit provides decent protection and combat manueverability for members of IRMG."
 	cost = 3000
-	contains = list(/obj/item/clothing/suit/space/hardsuit/security/independent/inteq)
+	contains = list(/obj/item/clothing/suit/space/hardsuit/security/inteq)
 	crate_name = "inteq hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	faction = /datum/faction/inteq

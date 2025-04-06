@@ -5,7 +5,7 @@
 	max_pathing_attempts = 4
 
 ///Put your movement behavior in here!
-/datum/ai_movement/jps/process(delta_time)
+/datum/ai_movement/jps/process(seconds_per_tick)
 	for(var/datum/ai_controller/controller as anything in moving_controllers)
 		if(!COOLDOWN_FINISHED(controller, movement_cooldown))
 			continue
@@ -13,6 +13,9 @@
 
 		var/atom/movable/movable_pawn = controller.pawn
 		if(!isturf(movable_pawn.loc)) //No moving if not on a turf
+			continue
+
+		if(controller.ai_traits & STOP_MOVING_WHEN_PULLED && movable_pawn.pulledby)
 			continue
 
 		var/minimum_distance = controller.max_target_distance

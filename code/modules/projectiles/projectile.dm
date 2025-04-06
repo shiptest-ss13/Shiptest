@@ -19,7 +19,8 @@
 	var/near_miss_sound = ""
 	var/ricochet_sound = ""
 
-
+	///what we should call the fired bullet
+	var/bullet_identifier = null
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
@@ -98,6 +99,8 @@
 	var/ricochet_auto_aim_angle = 30
 	/// the angle of impact must be within this many degrees of the struck surface, set to 0 to allow any angle
 	var/ricochet_incidence_leeway = 40
+	/// accuracy modifier. Used as a multiplier
+	var/accuracy_mod = 1
 
 	///If the object being hit can pass ths damage on to something else, it should not do it for this bullet
 	var/force_hit = FALSE
@@ -182,6 +185,8 @@
 	. = ..()
 	decayedRange = range
 	speed = speed + speed_mod
+	if(!bullet_identifier)
+		bullet_identifier = name
 	AddElement(/datum/element/connect_loc, projectile_connections)
 
 /obj/projectile/proc/Range()
@@ -373,7 +378,7 @@
 			return TRUE
 
 	var/distance = get_dist(T, starting) // Get the distance between the turf shot from and the mob we hit and use that for the calculations.
-	def_zone = ran_zone(def_zone, max(100-(7*distance), 5)) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
+	def_zone = ran_zone(def_zone, max(80-(7*distance*accuracy_mod), 5)) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
 
 	return process_hit(T, select_target(T, A))		// SELECT TARGET FIRST!
 
@@ -636,7 +641,7 @@
 /obj/projectile/Process_Spacemove(movement_dir = 0)
 	return TRUE	//Bullets don't drift in space
 
-/obj/projectile/process()
+/obj/projectile/process(seconds_per_tick)
 	last_process = world.time
 	if(!loc || !fired || !trajectory)
 		fired = FALSE
@@ -694,6 +699,7 @@
 	trajectory_ignore_forcemove = FALSE
 	trajectory = new(starting.x, starting.y, starting.z, pixel_x, pixel_y, Angle, SSprojectiles.global_pixel_speed)
 	last_projectile_move = world.time
+	name = bullet_identifier
 	fired = TRUE
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_FIRE)
 	if(hitscan)

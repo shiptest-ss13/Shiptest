@@ -76,6 +76,15 @@
 	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING
 
+/obj/item/storage/backpack/holding/debug
+	name = "advanced bag of holding"
+
+/obj/item/storage/backpack/holding/debug/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.worn_access = TRUE
+
+
 /obj/item/storage/backpack/cultpack
 	name = "trophy rack"
 	desc = "It's useful for both carrying extra gear and proudly declaring your insanity."
@@ -638,6 +647,9 @@
 	if(prob(5))
 		new /obj/item/reagent_containers/food/snacks/pizza/pineapple(src)
 
+/obj/item/storage/backpack/duffelbag/syndie/c4
+	name = "demolitions duffel bag"
+
 /obj/item/storage/backpack/duffelbag/syndie/c4/PopulateContents()
 	for(var/i in 1 to 10)
 		new /obj/item/grenade/c4(src)
@@ -667,7 +679,6 @@
 	STR.silent = TRUE
 
 /obj/item/storage/backpack/duffelbag/clown/syndie/PopulateContents()
-	new /obj/item/pda/clown(src)
 	new /obj/item/clothing/under/rank/civilian/clown(src)
 	new /obj/item/clothing/mask/gas/clown_hat(src)
 	new /obj/item/bikehorn(src)

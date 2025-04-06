@@ -2146,7 +2146,7 @@
 /area/ruin/space/has_grav/spacemall)
 "iu" = (
 /obj/effect/turf_decal/box,
-/obj/effect/spawner/random/salvage_machine,
+/obj/effect/spawner/random/salvage/machine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "iv" = (
@@ -4709,7 +4709,7 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "rE" = (
 /obj/effect/turf_decal/corner/transparent/lime,
-/obj/structure/sign/poster/contraband/clown{
+/obj/structure/sign/poster/contraband/smoke{
 	pixel_x = 30
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -4987,7 +4987,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "sL" = (
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "sM" = (
@@ -6315,7 +6315,7 @@
 "xM" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/transparent/black/diagonal,
-/obj/item/dualsaber/toy,
+/obj/item/melee/duelenergy/saber/toy,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop2)
 "xN" = (
@@ -10976,11 +10976,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Pj" = (
-/obj/item/clothing/mask/gas/clown_hat{
-	pixel_y = 2;
-	pixel_x = 1;
-	name = "tainted clown wig and mask"
-	},
 /obj/effect/decal/remains/human,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/wood,
@@ -11422,7 +11417,7 @@
 /turf/open/floor/plating/grass,
 /area/ruin/space/has_grav/spacemall)
 "QO" = (
-/obj/item/dualsaber/toy,
+/obj/item/melee/duelenergy/saber/toy,
 /obj/item/toy/redbutton{
 	pixel_x = 14
 	},

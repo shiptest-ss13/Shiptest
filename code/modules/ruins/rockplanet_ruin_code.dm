@@ -58,7 +58,7 @@
 	. = ..()
 	is_open = FALSE
 
-/obj/machinery/door/poddoor/crusher/automatic/process(delta_time)
+/obj/machinery/door/poddoor/crusher/automatic/process(seconds_per_tick)
 	if(is_open)
 		close()
 	else

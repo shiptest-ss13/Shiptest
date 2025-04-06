@@ -24,6 +24,21 @@
 	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 29,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 17,
+		)
+	)
+
 NO_MAG_GUN_HELPER(automatic/pistol/commander)
 
 /obj/item/ammo_box/magazine/co9mm

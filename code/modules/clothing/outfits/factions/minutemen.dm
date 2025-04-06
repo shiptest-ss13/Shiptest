@@ -147,7 +147,7 @@
 		/obj/item/melee/classic_baton/telescopic=1,
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
+	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
 
 /datum/outfit/job/clip/doctor
 	name = "CLIP - Doctor"
@@ -303,10 +303,13 @@
 	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
 	shoes = /obj/item/clothing/shoes/laceup
 
-	backpack = /obj/item/storage/backpack/satchel/leather
-	satchel = /obj/item/storage/backpack/satchel/leather
+	belt = /obj/item/bodycamera/broadcast_camera
+
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
 
 	r_pocket = /obj/item/radio
+	l_pocket = /obj/item/multitool
 
 // Colonial League Minutemen
 

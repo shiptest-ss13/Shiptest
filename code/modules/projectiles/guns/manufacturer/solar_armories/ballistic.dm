@@ -1,4 +1,4 @@
-#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope)
+#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/gun, /obj/item/attachment/sling)
 #define SOLAR_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 ///SOLAR ARMORIES
@@ -210,3 +210,4 @@
 	recoil_unwielded = 8
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+

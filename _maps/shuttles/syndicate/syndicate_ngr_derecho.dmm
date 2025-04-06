@@ -1262,6 +1262,7 @@
 	pixel_y = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/mask/breath/ngr,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "lh" = (
@@ -1404,11 +1405,11 @@
 	pixel_x = 12;
 	pixel_y = 12
 	},
-/obj/item/storage/belt/mining{
-	pixel_x = 5;
+/obj/item/storage/belt/utility,
+/obj/item/storage/belt/mining/ngr{
+	pixel_x = 4;
 	pixel_y = 8
 	},
-/obj/item/storage/belt/utility,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "mJ" = (
@@ -2587,12 +2588,6 @@
 	pixel_y = 7
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/hatch{
-	dir = 4;
-	name = "Locker Room";
-	req_access_txt = null;
-	req_one_access_txt = "48,56"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "vF" = (
@@ -3269,7 +3264,6 @@
 	normaldoorcontrol = 1;
 	pixel_x = -20;
 	pixel_y = 7;
-	req_access_txt = "3";
 	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/blood/drip,
@@ -3511,9 +3505,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "Dq" = (
@@ -3528,8 +3520,8 @@
 /obj/machinery/light/small/directional/south,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/melee/axe/sledgehammer,
-/obj/item/melee/axe/sledgehammer{
+/obj/item/melee/sledgehammer/gorlex,
+/obj/item/melee/sledgehammer/gorlex{
 	pixel_x = 5
 	},
 /turf/open/floor/pod,
@@ -4855,6 +4847,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/melee/knife/survival,
+/obj/item/clothing/mask/breath/ngr,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "QD" = (
@@ -4960,9 +4953,7 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line,
 /obj/structure/closet/emcloset/wall/directional/west,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "RU" = (
@@ -5392,6 +5383,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/melee/knife/survival,
+/obj/item/clothing/mask/breath/ngr,
 /turf/open/floor/pod,
 /area/ship/storage/equip)
 "UA" = (
@@ -5466,7 +5458,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/hallway/central)
 "Vq" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 8;
 	icon_state = "computer-right"
 	},

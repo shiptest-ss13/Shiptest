@@ -29,7 +29,7 @@
 	var/list/allowed_typecache		//Leave as null to allow all.
 	var/charge_amount = 1
 	var/charge_ticks = 1
-	var/charge_tick = 0
+	var/charge_timer = 0
 	var/charge_type
 	var/selfcharge = FALSE
 	var/fire_sound = 'sound/weapons/sonic_jackhammer.ogg'
@@ -45,8 +45,8 @@
 /obj/item/pneumatic_cannon/proc/init_charge()	//wrapper so it can be vv'd easier
 	START_PROCESSING(SSobj, src)
 
-/obj/item/pneumatic_cannon/process()
-	if(++charge_tick >= charge_ticks && charge_type)
+/obj/item/pneumatic_cannon/process(seconds_per_tick)
+	if(++charge_timer >= charge_ticks && charge_type)
 		fill_with_type(charge_type, charge_amount)
 
 /obj/item/pneumatic_cannon/Destroy()

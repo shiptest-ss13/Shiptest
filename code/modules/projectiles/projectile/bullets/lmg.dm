@@ -61,6 +61,7 @@
 	damage = 25
 	armour_penetration = 40
 	speed = BULLET_SPEED_RIFLE
+	bullet_identifier = "large bullet"
 
 /obj/projectile/bullet/mm712x82/ap
 	name = "7.12x82mm armor-piercing bullet"

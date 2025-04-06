@@ -17,12 +17,14 @@
 	var/overheat = 0
 	var/overheat_max = 40
 	var/heat_diffusion = 1
+	var/spawn_with_gun = TRUE
 
 /obj/item/minigunpack/Initialize()
 	. = ..()
-	gun = new(src)
 	battery = new(src)
-	gun.cell = battery
+	if(spawn_with_gun)
+		gun = new(src)
+		gun.cell = battery
 	START_PROCESSING(SSobj, src)
 
 /obj/item/minigunpack/Destroy()
@@ -33,7 +35,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/minigunpack/process()
+/obj/item/minigunpack/process(seconds_per_tick)
 	overheat = max(0, overheat - heat_diffusion)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
@@ -97,6 +99,8 @@
 	update_appearance()
 	user.update_inv_back()
 
+/obj/item/minigunpack/no_gun
+	spawn_with_gun = FALSE
 
 /obj/item/gun/energy/minigun
 	name = "laser gatling gun"

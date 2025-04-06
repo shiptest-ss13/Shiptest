@@ -3,71 +3,112 @@
 
 //Plus a bobble hat, lets be inclusive!!
 
-/obj/item/clothing/head/beanie //Default is white, this is meant to be seen
-	name = "white beanie"
+/obj/item/clothing/head/beanie
+	name = "beanie"
 	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
-	icon_state = "beanie" //Default white
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	icon_state = "beaniewhite"
+	item_state = "beaniewhite"
 	custom_price = 60
-	cuttable = TRUE
-	clothamnt = 3
+	unique_reskin = list(
+		"white beanie" = "beaniewhite",
+		"grey beanie" = "beaniegrey",
+		"black beanie" = "beanieblack",
+		"red beanie" = "beaniered",
+		"maroon beanie" = "beaniemaroon",
+		"orange beanie" = "beanieorange",
+		"yellow beanie" = "beanieyellow",
+		"green beanie" = "beaniegreen",
+		"dark green beanie" = "beaniedarkgreen",
+		"teal beanie" = "beanieteal",
+		"blue beanie" = "beanieblue",
+		"dark blue beanie" = "beaniedarkblue",
+		"purple beanie" = "beaniepurple",
+		"pink beanie" = "beaniepink",
+		"brown beanie" = "beaniebrown",
+		"light brown beanie" = "beanielightbrown"
+	)
+
+/obj/item/clothing/head/beanie/white
+	name = "white beanie"
+	icon_state = "beaniewhite"
+	current_skin = "white beanie"
+
+/obj/item/clothing/head/beanie/grey
+	name = "grey beanie"
+	icon_state = "beaniegrey"
+	current_skin = "grey beanie"
 
 /obj/item/clothing/head/beanie/black
 	name = "black beanie"
-	icon_state = "beanie"
-	color = "#4A4A4B" //Grey but it looks black
+	icon_state = "beanieblack"
+	current_skin = "black beanie"
 
 /obj/item/clothing/head/beanie/red
 	name = "red beanie"
-	icon_state = "beanie"
-	color = "#D91414" //Red
+	icon_state = "beaniered"
+	current_skin = "red beanie"
 
-/obj/item/clothing/head/beanie/green
-	name = "green beanie"
-	icon_state = "beanie"
-	color = "#5C9E54" //Green
-
-/obj/item/clothing/head/beanie/darkblue
-	name = "dark blue beanie"
-	icon_state = "beanie"
-	color = "#1E85BC" //Blue
-
-/obj/item/clothing/head/beanie/purple
-	name = "purple beanie"
-	icon_state = "beanie"
-	color = "#9557C5" //purple
-
-/obj/item/clothing/head/beanie/yellow
-	name = "yellow beanie"
-	icon_state = "beanie"
-	color = "#E0C14F" //Yellow
+/obj/item/clothing/head/beanie/maroon
+	name = "maroon beanie"
+	icon_state = "beaniemaroon"
+	current_skin = "maroon beanie"
 
 /obj/item/clothing/head/beanie/orange
 	name = "orange beanie"
-	icon_state = "beanie"
-	color = "#C67A4B" //orange
+	icon_state = "beanieorange"
+	current_skin = "orange beanie"
 
-/obj/item/clothing/head/beanie/cyan
-	name = "cyan beanie"
-	icon_state = "beanie"
-	color = "#54A3CE" //Cyan (Or close to it)
+/obj/item/clothing/head/beanie/yellow
+	name = "yellow beanie"
+	icon_state = "beanieyellow"
+	current_skin = "yellow beanie"
 
-//Striped Beanies have unique sprites
+/obj/item/clothing/head/beanie/green
+	name = "green beanie"
+	icon_state = "beaniegreen"
+	current_skin = "green beanie"
 
-/obj/item/clothing/head/beanie/striped
-	name = "striped beanie"
-	icon_state = "beaniestriped"
+/obj/item/clothing/head/beanie/darkgreen
+	name = "dark green beanie"
+	icon_state = "beaniedarkgreen"
+	current_skin = "dark green beanie"
 
-/obj/item/clothing/head/beanie/stripedred
-	name = "red striped beanie"
-	icon_state = "beaniestripedred"
+/obj/item/clothing/head/beanie/teal
+	name = "teal beanie"
+	icon_state = "beanieteal"
+	current_skin = "teal beanie"
 
-/obj/item/clothing/head/beanie/stripedblue
-	name = "blue striped beanie"
-	icon_state = "beaniestripedblue"
+/obj/item/clothing/head/beanie/blue
+	name = "blue beanie"
+	icon_state = "beanieblue"
+	current_skin = "blue beanie"
 
-/obj/item/clothing/head/beanie/stripedgreen
-	name = "green striped beanie"
-	icon_state = "beaniestripedgreen"
+/obj/item/clothing/head/beanie/darkblue
+	name = "dark blue beanie"
+	icon_state = "beaniedarkblue"
+	current_skin = "dark blue beanie"
+
+/obj/item/clothing/head/beanie/purple
+	name = "purple beanie"
+	icon_state = "beaniepurple"
+	current_skin = "purple beanie"
+
+/obj/item/clothing/head/beanie/pink
+	name = "beanie"
+	icon_state = "beaniepink"
+	current_skin = "pink beanie"
+
+/obj/item/clothing/head/beanie/brown
+	name = "brown beanie"
+	icon_state = "beaniebrown"
+	current_skin = "brown beanie"
+
+/obj/item/clothing/head/beanie/lightbrown
+	name = "light brown beanie"
+	icon_state = "beanielightbrown"
+	current_skin = "light brown beanie"
 
 /obj/item/clothing/head/beanie/durathread
 	name = "durathread beanie"

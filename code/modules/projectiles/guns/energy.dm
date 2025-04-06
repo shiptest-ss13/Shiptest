@@ -38,15 +38,24 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling
+		/obj/item/attachment/sling,
 	)
 	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1
 	)
 	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 19,
 			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
 		)
 	)
 
@@ -106,12 +115,12 @@
 		update_appearance()
 	return ..()
 
-/obj/item/gun/energy/process()
+/obj/item/gun/energy/process(seconds_per_tick)
 	if(selfcharge && cell && cell.percent() < 100)
-		charge_tick++
-		if(charge_tick < charge_delay)
+		charge_timer += seconds_per_tick
+		if(charge_timer < charge_delay)
 			return
-		charge_tick = 0
+		charge_timer = 0
 		cell.give(1000) //WS Edit - Egun energy cells
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
@@ -119,7 +128,7 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/energy/attack_hand(mob/user)
-	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads)
+	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads && !(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL))
 		eject_cell(user)
 		return
 	return ..()

@@ -83,7 +83,7 @@
 	new /obj/item/storage/bag/medical(src) //Medibags
 	new /obj/item/clothing/head/beret/cmo(src) //Berets
 	new /obj/item/clothing/under/rank/command(src) //Better command uniforms
-	new /obj/item/storage/box/hypospray/CMO(src) //Hypo mk. 2s
+	new /obj/item/storage/box/hypospray/mkiii(src) //Hypo mk. 2s
 	new /obj/item/clothing/neck/cloak/cmo(src)
 	new /obj/item/clothing/suit/bio_suit/cmo(src)
 	new /obj/item/clothing/head/bio_hood/cmo(src)
@@ -104,7 +104,6 @@
 	new /obj/item/clothing/neck/petcollar(src)
 	new /obj/item/pet_carrier(src)
 	new /obj/item/wallframe/defib_mount(src)
-	new /obj/item/circuitboard/machine/techfab/department/medical(src)
 	new /obj/item/storage/photo_album/CMO(src)
 
 /obj/structure/closet/secure_closet/animal

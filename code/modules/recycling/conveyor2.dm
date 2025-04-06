@@ -23,8 +23,13 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	var/verted = 1		// Inverts the direction the conveyor belt moves.
 	var/conveying = FALSE
 
-/obj/machinery/conveyor/centcom_auto
-	id = "round_end_belt"
+/obj/machinery/conveyor/auto/outpost
+	id = "outpost-conveyor"
+	desc = "A sturdy conveyor belt. It is well-fastened to the floor and cannot be pried up."
+	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
+
+/obj/machinery/conveyor/auto/outpost/attackby(obj/item/I, mob/user, params)
+	return
 
 /obj/machinery/conveyor/inverted //Directions inverted so you can use different corner peices.
 	icon_state = "conveyor_map_inverted"
@@ -125,7 +130,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 // machine process
 // move items to the target location
-/obj/machinery/conveyor/process()
+/obj/machinery/conveyor/process(seconds_per_tick)
 	if(machine_stat & (BROKEN | NOPOWER))
 		return
 

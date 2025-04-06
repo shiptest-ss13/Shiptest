@@ -53,6 +53,8 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/odysseus/main
 		)
 	crate_name = "202r Construction Kit"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 40
 
 /datum/supply_pack/mech/gygax_parts
 	name = "501p construction kit"
@@ -72,6 +74,8 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
 	crate_name = "501p Construction Kit"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 40
 
 /datum/supply_pack/mech/mpgygax_parts
 	name = "NT-501p-MP construction kit"
@@ -112,6 +116,8 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/durand/targeting
 	)
 	crate_name = "Durand Construction Kit"
+	faction = /datum/faction/clip
+	faction_discount = 20
 
 /*
 Mech Equipment
@@ -265,12 +271,31 @@ Mech Equipment
 
 /datum/supply_pack/mech/equipment/basenji_upgrade
 	name = "IRMG Basenji upgrade kit"
-	desc = "Contains an IRMG-custom conversion kit for a Gygax combat exosuit, to convert it to the specialized Basenji breaching exosuit. The upgrade will overclock the Gygax's leg actuators, allowing for short ranged charges capable of smashing through most obstacles."
+	desc = "Contains an IRMG-custom conversion kit for a 501p combat exosuit, to convert it to the specialized Basenji breaching exosuit. The upgrade will overclock the Gygax's leg actuators, allowing for short ranged charges capable of smashing through most obstacles."
 	cost = 500
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	)
 	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/mech/equipment/charger_upgrade
+	name = "501p overclock kit"
+	desc = "Contains a kit to overclock the 501p, allowing it to leap forward instead of its enhanced speed."
+	cost = 1000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/leaper
+	)
+
+/datum/supply_pack/mech/equipment/dark_upgrade
+	name = "515 EX upgrade kit"
+	desc = "Contains a military grade conversion kit for a 501p combat exosuit, to convert it to the fearsome 515 EX models. Features a much stronger set of leg actuators."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/dark_gygax
+	)
+	faction = /datum/faction/syndicate
 	faction_discount = 0
 	faction_locked = TRUE
 
@@ -326,7 +351,7 @@ weapons
 
 /datum/supply_pack/mech/weapon/biglaser
 	name = "Solaris kit"
-	desc = "A heavy beam cannon designed for combat usage."
+	desc = "A heavy beam sniper cannon designed for combat usage."
 	cost = 2000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser

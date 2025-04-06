@@ -105,7 +105,6 @@
 #define SPECIES_VAMPIRE "vampire"
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
-#define SPECIES_GOOFZOMBIE "krokodil_zombie"
 #define SPECIES_XENOMORPH "xenomorph"
 
 #define DIGITIGRADE_NEVER 0
@@ -325,6 +324,8 @@
 #define SHOCK_ILLUSION (1 << 2)
 ///The shock doesn't stun.
 #define SHOCK_NOSTUN (1 << 3)
+/// No default message is sent from the shock
+#define SHOCK_SUPPRESS_MESSAGE (1 << 4)
 
 #define INCORPOREAL_MOVE_BASIC 1 /// normal movement, see: [/mob/living/var/incorporeal_move]
 #define INCORPOREAL_MOVE_SHADOW 2 /// leaves a trail of shadows
@@ -356,6 +357,13 @@
 #define ELZUOSE_CHARGE_FACTOR (0.05 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
+///Greater numbers mean that less alcohol has greater intoxication potential
+#define ALCOHOL_THRESHOLD_MODIFIER 1
+///The rate at which alcohol affects you
+#define ALCOHOL_RATE 0.005
+///The exponent applied to boozepwr to make higher volume alcohol at least a little bit damaging to the liver
+#define ALCOHOL_EXPONENT 1.6
+#define ETHANOL_METABOLISM 0.5 * REAGENTS_METABOLISM
 
 // Eye protection
 #define FLASH_PROTECTION_SENSITIVE -1
@@ -365,7 +373,7 @@
 
 // Roundstart trait system
 
-#define MAX_QUIRKS 6 //The maximum amount of quirks one character can have at roundstart
+#define MAX_QUIRKS 4 //The maximum amount of quirks one character can have at roundstart
 
 // AI Toggles
 #define AI_CAMERA_LUMINOSITY 5
@@ -437,3 +445,17 @@
 
 //Saves a proc call, life is suffering. If who has no targets_from var, we assume it's just who
 #define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)
+
+///Squash flags. For squashable component
+///Whether or not the squashing requires the squashed mob to be lying down
+#define SQUASHED_SHOULD_BE_DOWN (1<<0)
+///Whether or not to gib when the squashed mob is moved over
+#define SQUASHED_SHOULD_BE_GIBBED (1<<0)
+
+/// Default minimum body temperature mobs can exist in before taking damage
+#define NPC_DEFAULT_MIN_TEMP 250
+/// Default maximum body temperature mobs can exist in before taking damage
+#define NPC_DEFAULT_MAX_TEMP 350
+
+/// In dynamic human icon gen we don't replace the held item.
+#define NO_REPLACE 0

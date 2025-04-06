@@ -52,7 +52,7 @@
 
 	STOP_PROCESSING(SSdcs, src)
 
-/datum/component/manual_blinking/process()
+/datum/component/manual_blinking/process(seconds_per_tick)
 	var/mob/living/carbon/C = parent
 
 	if(world.time > (last_blink + check_every + grace_period))

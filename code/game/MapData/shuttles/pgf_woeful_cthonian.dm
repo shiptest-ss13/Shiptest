@@ -17,7 +17,7 @@
 					<tr>
 						<td>logo here (one day)</td>
 						<td style="padding-top:10%">
-							<b>Pan Gezenan Federation Navy<br> Bolide-Class Lander</b>
+							<b>Pan Gezenan Federation Navy<br> Bolide-class Lander</b>
 						</td>
 						<td>XX - XX - 506</td>
 					</tr>

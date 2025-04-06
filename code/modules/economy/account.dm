@@ -23,6 +23,7 @@
 
 /datum/bank_account/proc/_adjust_money(amt)
 	account_balance += amt
+	account_balance = round(account_balance, 1)
 	if(account_balance < 0)
 		account_balance = 0
 

@@ -76,6 +76,8 @@
 #define COMSIG_ATOM_HULK_ATTACK "hulk_attack"
 ///from base of atom/animal_attack(): (/mob/user)
 #define COMSIG_ATOM_ATTACK_ANIMAL "attack_animal"
+//from base of atom/attack_basic_mob(): (/mob/user)
+#define COMSIG_ATOM_ATTACK_BASIC_MOB "attack_basic_mob"
 ///from base of atom/examine(): (/mob)
 #define COMSIG_PARENT_EXAMINE "atom_examine"
 ///from base of atom/get_examine_name(): (/mob, list/overrides)
@@ -273,7 +275,10 @@
 #define COMSIG_CLICK_CTRL_SHIFT_RIGHT "ctrl_shift_right_click"
 /// from mob/ver/do_unique_action
 #define COMSIG_CLICK_UNIQUE_ACTION "unique_action"
-	#define OVERIDE_UNIQUE_ACTION 1
+	#define OVERRIDE_UNIQUE_ACTION 1
+/// from mob/ver/do_unique_action
+#define COMSIG_CLICK_SECONDARY_ACTION "secondary_action"
+	#define OVERRIDE_SECONDARY_ACTION 1
 //from base of atom/MouseDrop(): (/atom/over, /mob/user)
 #define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"
 	#define COMPONENT_NO_MOUSEDROP 1
@@ -389,6 +394,10 @@
 #define COMSIG_LIVING_TRY_PUT_IN_HAND "living_try_put_in_hand"
 	/// Can't pick up
 	#define COMPONENT_LIVING_CANT_PUT_IN_HAND (1<<0)
+
+///Basic mob signals
+///Called on /basic when updating its speed, from base of /mob/living/basic/update_basic_mob_varspeed(): ()
+#define POST_BASIC_MOB_UPDATE_VARSPEED "post_basic_mob_update_varspeed"
 
 // /mob signals
 
@@ -533,6 +542,8 @@
 ///from base of /mob/living/can_track(): (mob/user)
 #define COMSIG_LIVING_CAN_TRACK "mob_cantrack"
 	#define COMPONENT_CANT_TRACK (1<<0)
+/// from start of /mob/living/handle_breathing(): (delta_time, times_fired)
+#define COMSIG_LIVING_HANDLE_BREATHING "living_handle_breathing"
 
 ///From /datum/component/creamed/Initialize()
 #define COMSIG_MOB_CREAMED "mob_creamed"
@@ -564,11 +575,6 @@
 #define COMSIG_CARBON_EMBED_RIP "item_embed_start_rip"
 ///called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"
-
-// /mob/living/simple_animal/hostile signals
-#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
-	#define COMPONENT_HOSTILE_NO_ATTACK 1
-
 
 /// Admin helps
 /// From /datum/admin_help/RemoveActive().
@@ -687,17 +693,13 @@
 #define COMSIG_ACTION_TRIGGER "action_trigger" //from base of datum/action/proc/Trigger(): (datum/action)
 	#define COMPONENT_ACTION_BLOCK_TRIGGER 1
 
-// /datum/overmap signals
-/// From overmap Move(): (old_x, old_y)
-#define COMSIG_OVERMAP_MOVED "overmap_moved"
-/// From overmap Dock(): (datum/overmap)
-#define COMSIG_OVERMAP_DOCK "overmap_dock"
-/// From overmap Undock(): (datum/overmap)
-#define COMSIG_OVERMAP_UNDOCK "overmap_undock"
-
 // /datum/component/spawner signals
-// Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
+// Called by parent when pausing spawning, returns bool: (datum/source, currently_spawning)
 #define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
+
+// Drill signals
+// Called when a mission drill finishes sampling
+#define COMSIG_DRILL_SAMPLES_DONE "drill_done"
 
 ///Beam Signals
 /// Called before beam is redrawn
@@ -748,6 +750,8 @@
 ///sent when the access on an id is changed/updated, ensures wallets get updated once ids generate there access
 #define COSMIG_ACCESS_UPDATED "acces_updated"
 
+///sent by carbons to check if they can reflect a projectile
+#define COMSIG_CHECK_REFLECT "check_reflect"
 // Point of interest signals
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_added : (atom/new_poi)
 #define COMSIG_ADDED_POINT_OF_INTEREST "added_point_of_interest"

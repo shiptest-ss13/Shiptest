@@ -97,19 +97,23 @@
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))
 			return TRUE
-	///Granted by prismwine
-	if(HAS_TRAIT(src, TRAIT_REFLECTIVE) && prob(50))
+	if(SEND_SIGNAL(src, COMSIG_CHECK_REFLECT, def_zone))
+		return TRUE
+	if(HAS_TRAIT(src, TRAIT_REFLECTIVE))
 		return TRUE
 	return FALSE
 
 /mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "the attack", attack_type = MELEE_ATTACK, armour_penetration = 0)
 	var/block_chance_modifier = round(damage / -3)
 
-	for(var/obj/item/I in held_items)
-		if(!istype(I, /obj/item/clothing) || I == get_active_held_item() || istype(I ,/obj/item/shield))
-			var/final_block_chance = I.block_chance - (clamp((armour_penetration-I.armour_penetration)/2,0,100)) + block_chance_modifier //So armour piercing blades can still be parried by other blades, for example
-			if(I.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
-				return TRUE
+	var/obj/item/shield = get_best_shield()
+	if(shield)
+		var/final_block_chance = shield.block_chance - (clamp((armour_penetration - shield.armour_penetration)/2,0,100)) + block_chance_modifier
+		var/shield_result = shield.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type)
+		if(shield_result >= 1)
+			return TRUE
+		if(shield_result == -1)
+			return -1
 
 	if(wear_suit)
 		var/final_block_chance = wear_suit.block_chance - (clamp((armour_penetration - wear_suit.armour_penetration)/2,0,100)) + block_chance_modifier
@@ -129,6 +133,17 @@
 			return TRUE
 
 	return FALSE
+
+
+/mob/living/carbon/human/proc/get_best_shield()
+	var/obj/item/l_hand = held_items[1]
+	var/obj/item/r_hand = held_items[2]
+	if(!(r_hand || l_hand))
+		return r_hand || l_hand
+	else if(r_hand?.block_chance > l_hand?.block_chance)
+		return r_hand
+	else
+		return l_hand
 
 /mob/living/carbon/human/proc/check_block()
 	if(mind)
@@ -328,13 +343,30 @@
 			apply_damage(damage, BRUTE, affecting, armor_block)
 
 
+/mob/living/carbon/human/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	. = ..()
+	if(!.)
+		return
+	var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
+	if(check_shields(user, damage, "the [user.name]", MELEE_ATTACK, user.armour_penetration))
+		return FALSE
+	var/dam_zone = dismembering_strike(user, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+	if(!dam_zone) //Dismemberment successful
+		return TRUE
+	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
+	if(!affecting)
+		affecting = get_bodypart(BODY_ZONE_CHEST)
+	var/armor = run_armor_check(affecting, MELEE, armour_penetration = user.armour_penetration)
+	apply_damage(damage, user.melee_damage_type, affecting, armor, sharpness = user.sharpness)
+
+
 /mob/living/carbon/human/attack_animal(mob/living/simple_animal/M)
 	. = ..()
 	if(.)
 		var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 		if(check_shields(M, damage, "the [M.name]", MELEE_ATTACK, M.armour_penetration))
 			return FALSE
-		var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+		var/dam_zone = dismembering_strike(M, pick_weight(list(BODY_ZONE_HEAD = 4, BODY_ZONE_CHEST = 64, BODY_ZONE_L_ARM = 8, BODY_ZONE_R_ARM = 8, BODY_ZONE_L_LEG = 8, BODY_ZONE_R_LEG = 8)))
 		if(!dam_zone) //Dismemberment successful
 			return TRUE
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
@@ -763,9 +795,9 @@
 		if(LB.bodypart_disabled)
 			isdisabled = " is disabled"
 			if(no_damage)
-				isdisabled += " but otherwise "
+				isdisabled += " but otherwise"
 			else
-				isdisabled += " and "
+				isdisabled += " and"
 		combined_msg += "\t <span class='[no_damage ? "notice" : "warning"]'>Your [LB.name][isdisabled][self_aware ? " has " : " is "][status].</span>"
 
 		for(var/obj/item/I in LB.embedded_objects)

@@ -25,48 +25,10 @@
 	muzzleflash_iconstate = "muzzle_flash_light"
 	light_range = 1
 
-
-/obj/item/gun/ballistic/automatic/pistol/deagle
-	name = "\improper Desert Eagle"
-	desc = "An oversized handgun chambered in .50 AE. A true hand cannon."
-	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
-	icon_state = "deagle"
-	force = 14
-	default_ammo_type = /obj/item/ammo_box/magazine/m50
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m50,
-	)
-	mag_display = TRUE
-	show_magazine_on_sprite = TRUE
-	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/rack.ogg'
-	manufacturer = MANUFACTURER_NONE
-	load_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
-	fire_delay = 0.6 SECONDS
-	recoil = 2
-	recoil_unwielded = 5
-	recoil_backtime_multiplier = 2
-
-	spread = 7
-	spread_unwielded = 14
-
-/obj/item/gun/ballistic/automatic/pistol/deagle/gold
-	desc = "A gold-plated Desert Eagle folded over a million times by superior Martian gunsmiths. Uses .50 AE ammo."
-	icon_state = "deagleg"
-	item_state = "deagleg"
-
-/obj/item/gun/ballistic/automatic/pistol/deagle/camo
-	desc = "A Deagle-brand Deagle for operators operating operationally. Uses .50 AE ammo." //I hate this joke with a passion
-	icon_state = "deaglecamo"
-	item_state = "deagleg"
+	refused_attachments = list(
+		/obj/item/attachment/gun,
+		/obj/item/attachment/sling
+		)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"

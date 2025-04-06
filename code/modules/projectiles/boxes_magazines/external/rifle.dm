@@ -103,6 +103,7 @@
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
+	custom_materials = list(/datum/material/iron = 500)
 
 /obj/item/ammo_box/magazine/illestren_a850r/empty
 	start_empty = TRUE

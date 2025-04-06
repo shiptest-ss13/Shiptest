@@ -84,9 +84,6 @@
 				to_chat(user, "<span class='notice'>You forcefully pry off the planks, destroying them in the process.</span>")
 	return make_plating()
 
-/turf/open/floor/wood/cold
-	initial_temperature = 255.37
-
 /turf/open/floor/wood/airless
 	initial_gas_mix = AIRLESS_ATMOS
 

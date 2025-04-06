@@ -7,6 +7,7 @@
 	visor_flags = ALLOWINTERNALS
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
 	visor_flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	alternate_worn_layer = BODY_LAYER
 	w_class = WEIGHT_CLASS_SMALL
 	gas_transfer_coefficient = 0.1
 	permeability_coefficient = 0.5
@@ -14,7 +15,7 @@
 	flags_cover = MASKCOVERSMOUTH
 	visor_flags_cover = MASKCOVERSMOUTH
 	resistance_flags = NONE
-	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
 	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC

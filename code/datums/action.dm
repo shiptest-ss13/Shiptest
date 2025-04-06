@@ -198,6 +198,17 @@
 		return
 	..()
 
+/datum/action/item_action/toggle_radio
+	name = "Toggle Radio"
+
+/datum/action/item_action/toggle_radio/Trigger()
+	if(istype(target, /obj/item/bodycamera/broadcast_camera))
+		var/obj/item/bodycamera/broadcast_camera/cam = target
+		var/obj/item/radio/radio = cam.radio
+		radio.ui_interact(owner, state = GLOB.deep_inventory_state)
+		return
+	..()
+
 /datum/action/item_action/toggle_hood
 	name = "Toggle Hood"
 
@@ -347,6 +358,11 @@
 
 /datum/action/item_action/toggle_helmet_mode
 	name = "Toggle Helmet Mode"
+
+/datum/action/item_action/toggle_helmet_mode/Trigger()
+	if(istype(target, /obj/item/clothing/head/helmet/space/hardsuit/syndi))
+		var/obj/item/clothing/head/helmet/space/hardsuit/syndi/syndi_helmet = target
+		syndi_helmet.toggle_mode(owner)
 
 /datum/action/item_action/crew_monitor
 	name = "Interface With Crew Monitor"
@@ -604,7 +620,7 @@
 	UpdateButtonIcon()
 	START_PROCESSING(SSfastprocess, src)
 
-/datum/action/cooldown/process()
+/datum/action/cooldown/process(seconds_per_tick)
 	if(!owner)
 		button.maptext = ""
 		STOP_PROCESSING(SSfastprocess, src)

@@ -25,6 +25,9 @@
 /datum/map_template/outpost/elevator_ice
 	name = "elevator_ice"
 
+/datum/map_template/outpost/elevator_rock
+	name = "elevator_rock"
+
 
 /*
 	Independent Space Outpost //creative name!
@@ -89,6 +92,38 @@
 	dock_height = 40
 
 /*
+	Independent Rock Planet //ROCK AND STONE!
+*/
+/datum/map_template/outpost/ngr_rock
+	name = "ngr_rock"
+
+/datum/map_template/outpost/hangar/ngr_rock_20x20
+	name = "hangar/ngr_rock_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/ngr_rock_40x20
+	name = "hangar/ngr_rock_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/ngr_rock_40x40
+	name = "hangar/ngr_rock_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/ngr_rock_56x20
+	name = "hangar/ngr_rock_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/ngr_rock_56x40
+	name = "hangar/ngr_rock_56x40"
+	dock_width = 56
+	dock_height = 40
+
+
+/*
 	/datum/overmap/outpost subtypes
 */
 
@@ -110,6 +145,18 @@
 		/datum/map_template/outpost/hangar/nt_ice_56x40
 	)
 	faction = /datum/faction/nt
+
+/datum/overmap/outpost/ngr_rock
+	token_icon_state = "station_asteroid_0"
+	main_template = /datum/map_template/outpost/ngr_rock
+	elevator_template = /datum/map_template/outpost/elevator_rock
+	hangar_templates = list(
+		/datum/map_template/outpost/hangar/ngr_rock_20x20,
+		/datum/map_template/outpost/hangar/ngr_rock_40x20,
+		/datum/map_template/outpost/hangar/ngr_rock_40x40,
+		/datum/map_template/outpost/hangar/ngr_rock_56x20,
+		/datum/map_template/outpost/hangar/ngr_rock_56x40
+	)
 
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
 	main_template = null

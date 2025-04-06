@@ -122,7 +122,7 @@
 				"<span class='hear'>You hear a click.</span>")
 			set_mode(CLAMPED_OFF)
 
-/obj/item/powersink/process()
+/obj/item/powersink/process(seconds_per_tick)
 	if(!attached)
 		set_mode(DISCONNECTED)
 		return

@@ -225,6 +225,18 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
+	var/attack_cooldown = CLICK_CD_MELEE
+
+	/// Has the item been reskinned?
+	var/current_skin
+	/// List of options to reskin.
+	var/list/unique_reskin
+	/// If reskins change base icon state as well
+	var/unique_reskin_changes_base_icon_state = FALSE
+	/// If reskins change inhands as well
+	var/unique_reskin_changes_inhand = FALSE
+	var/unique_reskin_changes_name = FALSE
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -249,6 +261,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			hitsound = 'sound/items/welder.ogg'
 		if(damtype == "brute")
 			hitsound = "swing_hit"
+
+	setup_reskinning()
 
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
@@ -349,8 +363,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	abstract_move(null)
 	forceMove(T)
 
-/obj/item/examine(mob/user) //This might be spammy. Remove?
+/obj/item/examine(mob/user)
 	. = ..()
+
+	if(unique_reskin && !current_skin)
+		. += "<span class='notice'>Alt-click it to reskin it.</span>"
 
 	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
 
@@ -535,14 +552,20 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 // afterattack() and attack() prototypes moved to _onclick/item_attack.dm for consistency
 
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
+	//Mostly shields
 	if((prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown)) || (prob(final_block_chance) && istype(src, /obj/item/shield)))
 		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
 		playsound(src, 'sound/weapons/effects/deflect.ogg', 100)
 		if(!istype(src, /obj/item/shield))
 			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
 		return TRUE
-	return FALSE
+
+	var/signal_result = (SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, owner, hitby, damage, attack_type)) + prob(final_block_chance)
+	if(!signal_result)
+		return FALSE
+	if(hit_reaction_chance >= 0)
+		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
+	return signal_result
 
 /obj/item/proc/talk_into(mob/M, input, channel, spans, datum/language/language, list/message_mods)
 	return ITALICS | REDUCE_RANGE
@@ -880,6 +903,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/mech_melee_attack(obj/mecha/M)
 	return 0
 
+/obj/item/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	if (obj_flags & CAN_BE_HIT)
+		return ..()
+	return 0
+
 /obj/item/burn()
 	if(!QDELETED(src))
 		var/turf/T = get_turf(src)
@@ -917,20 +945,25 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/set_force_string()
 	switch(force)
-		if(0 to 4)
+		if(0 to 3)
+			force_string = "pitiful"
+		if(3 to 6)
 			force_string = "very low"
-		if(4 to 7)
+		if(6 to 9)
 			force_string = "low"
-		if(7 to 10)
+		if(10 to 13) //12 is the force of a toolbox
 			force_string = "medium"
-		if(10 to 11)
+		if(13 to 16)
 			force_string = "high"
-		if(11 to 20) //12 is the force of a toolbox
+		if(16 to 20)
 			force_string = "robust"
 		if(20 to 25)
 			force_string = "very robust"
-		else
+		if(25 to 30)
 			force_string = "exceptionally robust"
+		else
+			force_string = "unfair"
+
 	last_force_string_check = force
 
 /obj/item/proc/openTip(location, control, params, user)
@@ -1210,10 +1243,21 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 ///Intended for interactions with guns, like racking
 /obj/item/proc/unique_action(mob/living/user)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UNIQUE_ACTION, user))
+		return TRUE
 
 ///Called before unique action, if any other associated items should do a unique action or override it.
 /obj/item/proc/pre_unique_action(mob/living/user)
-	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERIDE_UNIQUE_ACTION)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERRIDE_UNIQUE_ACTION)
+		return TRUE
+	return FALSE //return true if the proc should end here
+
+///Intended for interactions with guns, like swapping firemodes
+/obj/item/proc/secondary_action(mob/living/user)
+
+///Called before unique action, if any other associated items should do a secondary action or override it.
+/obj/item/proc/pre_secondary_action(mob/living/user)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_SECONDARY_ACTION,user) & OVERRIDE_SECONDARY_ACTION)
 		return TRUE
 	return FALSE //return true if the proc should end here
 /**

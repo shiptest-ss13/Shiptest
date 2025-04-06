@@ -34,7 +34,7 @@
 	on = !(on)
 	update_appearance()
 
-/obj/machinery/igniter/process()	//ugh why is this even in process()?
+/obj/machinery/igniter/process(seconds_per_tick)	//ugh why is this even in process()?
 	if (src.on && !(machine_stat & NOPOWER))
 		var/turf/location = src.loc
 		if (isturf(location))

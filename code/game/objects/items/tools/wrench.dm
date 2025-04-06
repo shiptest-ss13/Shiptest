@@ -15,7 +15,9 @@
 	drop_sound = 'sound/items/handling/wrench_drop.ogg'
 	pickup_sound =  'sound/items/handling/wrench_pickup.ogg'
 
+	attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
+	demolition_mod = 1.25
 	tool_behaviour = TOOL_WRENCH
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)

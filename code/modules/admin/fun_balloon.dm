@@ -14,7 +14,7 @@
 	SSobj.processing -= src
 	. = ..()
 
-/obj/effect/fun_balloon/process()
+/obj/effect/fun_balloon/process(seconds_per_tick)
 	if(!popped && check() && !QDELETED(src))
 		popped = TRUE
 		effect()
