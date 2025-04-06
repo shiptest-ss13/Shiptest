@@ -556,7 +556,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 	if(mode != BOT_SUMMON && mode != BOT_RESPONDING)
 		access_card.access = prev_access
 
-/mob/living/simple_animal/bot/proc/call_bot(caller, turf/waypoint, message=TRUE)
+/mob/living/simple_animal/bot/proc/call_bot(requester, turf/waypoint, message=TRUE)
 	bot_reset() //Reset a bot before setting it to call mode.
 
 	//For giving the bot temporary all-access.
@@ -565,7 +565,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 	all_access.access = All.get_access()
 
 	set_path(get_path_to(src, waypoint, 200, id=all_access))
-	calling_ai = caller //Link the AI to the bot!
+	calling_ai = requester //Link the AI to the bot!
 	ai_waypoint = waypoint
 
 	if(path && path.len) //Ensures that a valid path is calculated!
