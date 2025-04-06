@@ -5,7 +5,7 @@
 	var/portrait_url
 	var/portrait_source
 
-	var/static/flavortext_regex = regex(@"https://i\.imgur\.com/[0-9A-z]{7}\.(?:png|jpe?g)")
+	var/static/flavortext_regex = regex(@"https://(?:i\.imgur\.com/[0-9A-z]{7}|forums.shiptest.net/uploads/.+)\.(?:png|jpe?g)")
 
 /datum/component/flavor_text/Initialize(_flavor_text, _portrait_url, _portrait_source)
 	//You could technically use this on any atom, but... no.
@@ -49,7 +49,7 @@
 /datum/component/flavor_text/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "FlavorText", "[user.name]")
+		ui = new(user, src, "FlavorText", "[parent]")
 		ui.set_autoupdate(FALSE)
 		ui.open()
 
@@ -58,7 +58,7 @@
 
 /datum/component/flavor_text/ui_data(mob/user)
 	var/list/data = list()
-	data["characterName"] = flavor_text
+	data["characterName"] = "[parent]"
 	data["portraitUrl"] = portrait_url
 	data["portraitSource"] = portrait_source
 	data["flavorText"] = flavor_text
