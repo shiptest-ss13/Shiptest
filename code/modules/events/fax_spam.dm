@@ -5,16 +5,17 @@
 	max_occurrences = 1
 	min_players = 1
 	earliest_start = 5 MINUTES
+	requires_ship = TRUE
 
 /datum/round_event/fax_spam
-	endWhen = 60
+	end_when = 60
 	var/list/pick_faxes = list()
 	var/spam_frequency = 5
 	var/spam_prob = 50
 	var/obj/item/paper/spam/spam_type
 
 /datum/round_event/fax_spam/setup()
-	endWhen = rand(20, 40)
+	end_when = rand(20, 40)
 	spam_type = pick(/obj/item/paper/spam/ifmc, /obj/item/paper/spam/help)
 
 /datum/round_event/fax_spam/start()

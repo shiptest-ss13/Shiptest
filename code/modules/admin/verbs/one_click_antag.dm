@@ -352,7 +352,7 @@
 /datum/admins/proc/makeFrontiersmen()
 	var/datum/round_event_control/team/frontiersmen/event = new()
 	event.admin_setup()
-	event.runEvent()
+	event.run_event()
 	return TRUE
 
 #undef ERT_EXPERIENCED_LEADER_CHOOSE_TOP

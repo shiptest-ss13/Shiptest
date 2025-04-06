@@ -6,11 +6,6 @@
 	min_players = 1
 	earliest_start = 5 MINUTES
 
-/datum/round_event_control/rodent_infestation/can_spawn_event(players, allow_magic = FALSE)
-	if(!(length(SSovermap.controlled_ships)))
-		return FALSE
-	return ..()
-
 /datum/round_event/ship/rodent_infestation
 	var/mob/living/basic/rodent_type = /mob/living/basic/mouse
 	var/spawncount = 1

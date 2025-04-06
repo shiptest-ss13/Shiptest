@@ -393,7 +393,6 @@
 	config_entry_value = 127
 	min_val = 127
 
-/datum/config_entry/flag/should_events
 
 /datum/config_entry/number/events_frequency_lower
 	config_entry_value = 3 MINUTES

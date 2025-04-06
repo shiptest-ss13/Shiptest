@@ -7,6 +7,8 @@
 	var/description //The description of the event
 	var/typepath //The typepath of the event datum /datum/round_event
 
+	///Requires atleast ONE ship.
+	var/requires_ship = FALSE
 	var/weight = 10 //The weight this event has in the random-selection process.
 									//Higher weights are more likely to be picked.
 									//10 is the default weight. 20 is twice more likely; 5 is half as likely as this default.
@@ -57,6 +59,8 @@
 	if(players_amt < min_players)
 		return FALSE
 	if(holidayID && !check_holidays(holidayID))
+		return FALSE
+	if(requires_ship && !length(SSovermap.controlled_ships))
 		return FALSE
 	return TRUE
 

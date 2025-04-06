@@ -7,11 +7,6 @@
 	min_players = 10
 	earliest_start = 10 MINUTES
 
-/datum/round_event_control/stray_cargo/can_spawn_event(players, allow_magic = FALSE)
-	if(!(length(SSovermap.controlled_ships)))
-		return FALSE
-	return ..()
-
 ///Spawns a cargo pod containing a random cargo supply pack on a random area of the station
 /datum/round_event/ship/stray_cargo
 	var/area/impact_area ///Randomly picked area
