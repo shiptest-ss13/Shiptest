@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   Flex,
-  Flex,
   Icon,
   LabeledList,
   Modal,

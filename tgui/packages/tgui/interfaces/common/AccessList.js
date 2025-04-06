@@ -1,5 +1,5 @@
 import { sortBy } from 'common/collections';
-import { Button, Flex, Flex, Section, Tabs } from 'tgui-core/components';
+import { Button, Flex, Section, Tabs } from 'tgui-core/components';
 
 import { useLocalState } from '../../backend';
 

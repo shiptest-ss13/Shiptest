@@ -1,15 +1,15 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
   Divider,
-  Flex,
   Flex,
   Input,
   NoticeBox,
   NumberInput,
   Section,
 } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const LaunchpadButtonPad = (props) => {
