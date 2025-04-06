@@ -10,7 +10,7 @@
 ///Spawns a cargo pod containing a random cargo supply pack on a random area of the station
 /datum/round_event/ship/stray_cargo
 	var/area/impact_area ///Randomly picked area
-	announce_chance = 75
+	announce_chance = 95
 	var/list/possible_pack_types = list() ///List of possible supply packs dropped in the pod, if empty picks from the cargo list
 	var/static/list/stray_spawnable_supply_packs = list() ///List of default spawnable supply packs, filtered from the cargo list
 
@@ -57,7 +57,7 @@
 		if(!supplier)
 			return
 		pack_type = pick(supplier.supply_packs)
-	var/datum/supply_pack/SP = new pack_type
+	var/datum/supply_pack/SP = pack_type
 	var/obj/structure/closet/crate/crate = SP.generate(null)
 	crate.locked = FALSE //Unlock secure crates
 	crate.update_appearance()
