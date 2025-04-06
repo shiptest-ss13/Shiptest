@@ -42,6 +42,8 @@
 	var/human_loot = TRUE
 	/// Path of the mob spawner we base the mob's visuals off of.
 	var/mob_spawner
+	/// Path of the species we base the mob's visuals off of.
+	var/species_spawner = /datum/species/human
 	/// Path of the right hand held item we give to the mob's visuals.
 	var/obj/r_hand
 	/// Path of the left hand held item we give to the mob's visuals.
@@ -55,7 +57,7 @@
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
 	if(mob_spawner)
-		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
+		apply_dynamic_human_appearance(src, species_path = species_spawner, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
 		if(ispath(r_hand,/obj/item/gun))
 			var/obj/item/gun/our_gun = r_hand
 			spread = our_gun.spread
