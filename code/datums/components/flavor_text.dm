@@ -5,7 +5,7 @@
 	var/portrait_url
 	var/portrait_source
 
-	var/static/flavortext_regex = regex(@"https://(?:i\.imgur\.com/[0-9A-z]{7}|forums.shiptest.net/uploads/.+)\.(?:png|jpe?g)")
+	var/static/flavortext_regex = regex(@"https://(?:i\.imgur\.com/[0-9A-z]{7}|i\.gyazo\.com/[0-9A-z]{32}|forums\.shiptest\.net/uploads/.+)\.(?:png|jpe?g)")
 
 /datum/component/flavor_text/Initialize(_flavor_text, _portrait_url, _portrait_source)
 	//You could technically use this on any atom, but... no.
@@ -39,12 +39,12 @@
 		portrait_url = _portrait_url
 		portrait_source = _portrait_source
 
-/datum/component/flavor_text/proc/handle_examine_more(mob/user)
+/datum/component/flavor_text/proc/handle_examine_more(mob/user, mob/examiner)
 	SIGNAL_HANDLER
 	if(!flavor_text)
 		return
 
-	INVOKE_ASYNC(src, PROC_REF(ui_interact), user)
+	INVOKE_ASYNC(src, PROC_REF(ui_interact), examiner)
 
 /datum/component/flavor_text/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
