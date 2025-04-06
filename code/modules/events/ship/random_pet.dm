@@ -14,6 +14,7 @@
 		return FALSE
 	random_pet = pick(
 		/mob/living/simple_animal/pet/dog/corgi,
+		/mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
 		/mob/living/simple_animal/pet/dog/corgi/capybara,
 		/mob/living/simple_animal/pet/dog/pug,
 		/mob/living/simple_animal/pet/cat,
