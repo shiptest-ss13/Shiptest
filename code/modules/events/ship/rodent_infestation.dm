@@ -1,4 +1,4 @@
-/datum/round_event_control/rodent_infestation
+/datum/round_event_control/ship/rodent_infestation
 	name = "Small Rodent Infestation"
 	typepath = /datum/round_event/ship/rodent_infestation
 	weight = 15

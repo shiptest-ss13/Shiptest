@@ -1,5 +1,5 @@
 ///Spawns a cargo pod containing a random cargo supply pack on a random area of the station
-/datum/round_event_control/stray_cargo
+/datum/round_event_control/ship/stray_cargo
 	name = "Stray Cargo Pod"
 	typepath = /datum/round_event/ship/stray_cargo
 	weight = 5

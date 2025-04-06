@@ -1,5 +1,7 @@
-/datum/round_event/ship
+/datum/round_event_control/ship
 	requires_ship = TRUE
+
+/datum/round_event/ship
 	var/datum/overmap/ship/controlled/target_ship
 
 /datum/round_event/ship/setup()

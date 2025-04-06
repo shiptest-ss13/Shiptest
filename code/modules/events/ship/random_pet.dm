@@ -1,4 +1,4 @@
-/datum/round_event_control/random_pet
+/datum/round_event_control/ship/random_pet
 	name = "Random Pet"
 	typepath = /datum/round_event/ship/random_pet
 	weight = 5
@@ -12,15 +12,15 @@
 /datum/round_event/ship/random_pet/setup()
 	if(!..())
 		return FALSE
-	random_pet = pick(
+	random_pet = pick(list(
 		/mob/living/simple_animal/pet/dog/corgi,
 		/mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
 		/mob/living/simple_animal/pet/dog/corgi/capybara,
 		/mob/living/simple_animal/pet/dog/pug,
 		/mob/living/simple_animal/pet/cat,
 		/mob/living/simple_animal/pet/mothroach,
-		/mob/living/simple_animal/pet/fox
-	)
+		/mob/living/simple_animal/pet/fox,
+	))
 
 /datum/round_event/ship/random_pet/start()
 	var/list/crates = list()
