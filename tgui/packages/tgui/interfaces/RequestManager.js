@@ -11,17 +11,16 @@ import { decodeHtmlEntities } from 'tgui-core/string';
 import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
-export const RequestManager = (props, context) => {
-  const { act, data } = useBackend(context);
+export const RequestManager = (props) => {
+  const { act, data } = useBackend();
   const { requests } = data;
   const [filteredTypes, _] = useLocalState(
-    context,
     'filteredTypes',
     Object.fromEntries(
       Object.entries(displayTypeMap).map(([type, _]) => [type, true])
     )
   );
-  const [searchText, setSearchText] = useLocalState(context, 'searchText');
+  const [searchText, setSearchText] = useLocalState('searchText');
 
   // Handle filtering
   let displayedRequests = requests.filter(
@@ -99,8 +98,8 @@ const RequestType = (props) => {
   );
 };
 
-const RequestControls = (props, context) => {
-  const { act, _ } = useBackend(context);
+const RequestControls = (props) => {
+  const { act, _ } = useBackend();
   const { request } = props;
 
   return (
@@ -127,14 +126,12 @@ const RequestControls = (props, context) => {
   );
 };
 
-const FilterPanel = (_, context) => {
+const FilterPanel = (_) => {
   const [filterVisible, setFilterVisible] = useLocalState(
-    context,
     'filterVisible',
     false
   );
   const [filteredTypes, setFilteredTypes] = useLocalState(
-    context,
     'filteredTypes',
     Object.fromEntries(
       Object.entries(displayTypeMap).map(([type, _]) => [type, true])

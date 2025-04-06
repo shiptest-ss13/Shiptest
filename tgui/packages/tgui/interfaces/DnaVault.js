@@ -9,8 +9,8 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const DnaVault = (props, context) => {
-  const { act, data } = useBackend(context);
+export const DnaVault = (props) => {
+  const { act, data } = useBackend();
   const {
     completed,
     used,

@@ -13,7 +13,7 @@ import {
 import { formatMoney } from 'tgui-core/format';
 import { Window } from '../layouts';
 
-export const RequestKiosk = (props, context) => {
+export const RequestKiosk = (props) => {
   return (
     <Window width={550} height={600} resizable>
       <Window.Content scrollable>
@@ -23,8 +23,8 @@ export const RequestKiosk = (props, context) => {
   );
 };
 
-export const RequestKioskContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const RequestKioskContent = (props) => {
+  const { act, data } = useBackend();
   const {
     accountName,
     requests = [],

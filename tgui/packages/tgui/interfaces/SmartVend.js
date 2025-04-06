@@ -3,8 +3,8 @@ import { useBackend } from '../backend';
 import { Button, NoticeBox, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const SmartVend = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SmartVend = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={440} height={550} resizable>
       <Window.Content scrollable>

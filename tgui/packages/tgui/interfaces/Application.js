@@ -2,10 +2,10 @@ import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 import { Button, TextArea, Stack } from 'tgui-core/components';
 
-export const Application = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [message, setMessage] = useLocalState(context, 'message', '');
-  const [showCkey, setShowCkey] = useLocalState(context, 'showCkey', false);
+export const Application = (props) => {
+  const { act, data } = useBackend();
+  const [message, setMessage] = useLocalState('message', '');
+  const [showCkey, setShowCkey] = useLocalState('showCkey', false);
   const { ship_name, player_name } = data;
 
   return (

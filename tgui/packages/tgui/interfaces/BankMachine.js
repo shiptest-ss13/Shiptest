@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Button, LabeledList, NoticeBox, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const BankMachine = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BankMachine = (props) => {
+  const { act, data } = useBackend();
   const { current_balance, siphoning, ship_name } = data;
   return (
     <Window width={335} height={160}>

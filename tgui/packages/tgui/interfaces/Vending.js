@@ -3,8 +3,8 @@ import { useBackend } from '../backend';
 import { Box, Button, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-const VendingRow = (props, context) => {
-  const { act, data } = useBackend(context);
+const VendingRow = (props) => {
+  const { act, data } = useBackend();
   const { product, productStock, custom } = props;
   const { miningvendor, all_items_free, user } = data;
   const free = all_items_free || product.price === 0;
@@ -81,8 +81,8 @@ const VendingRow = (props, context) => {
   );
 };
 
-export const Vending = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Vending = (props) => {
+  const { act, data } = useBackend();
   const {
     user,
     all_items_free,

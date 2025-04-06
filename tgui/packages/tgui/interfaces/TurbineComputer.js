@@ -3,8 +3,8 @@ import { Button, LabeledList, Section } from 'tgui-core/components';
 import { formatSiUnit } from 'tgui-core/format';
 import { Window } from '../layouts';
 
-export const TurbineComputer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const TurbineComputer = (props) => {
+  const { act, data } = useBackend();
   const operational = Boolean(
     data.compressor &&
       !data.compressor_broke &&

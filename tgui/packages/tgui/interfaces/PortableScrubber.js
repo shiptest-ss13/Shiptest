@@ -4,8 +4,8 @@ import { getGasLabel } from '../constants';
 import { Window } from '../layouts';
 import { PortableBasicInfo } from './common/PortableAtmos';
 
-export const PortableScrubber = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PortableScrubber = (props) => {
+  const { act, data } = useBackend();
   const filter_types = data.filter_types || [];
   return (
     <Window width={320} height={350}>

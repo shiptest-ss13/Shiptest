@@ -49,8 +49,8 @@ const SUFFIXES = [
 ];
 
 // TODO: refactor the backend of this it's a trainwreck
-export const CodexGigas = (props, context) => {
-  const { act, data } = useBackend(context);
+export const CodexGigas = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={450} height={450}>
       <Window.Content>

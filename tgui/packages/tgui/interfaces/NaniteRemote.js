@@ -10,7 +10,7 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const NaniteRemote = (props, context) => {
+export const NaniteRemote = (props) => {
   return (
     <Window width={420} height={500} resizable>
       <Window.Content scrollable>
@@ -20,8 +20,8 @@ export const NaniteRemote = (props, context) => {
   );
 };
 
-export const NaniteRemoteContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteRemoteContent = (props) => {
+  const { act, data } = useBackend();
   const {
     code,
     locked,

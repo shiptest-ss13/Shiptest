@@ -357,7 +357,7 @@ class FishingMinigame extends Component<
       completion: newCompletion,
     };
 
-    const dispatch = useDispatch(this.context);
+    const dispatch = useDispatch();
 
     if (newCompletion <= 0) {
       this.props.lose();
@@ -432,8 +432,8 @@ type FishingData = {
   background_image: string;
 };
 
-export const Fishing = (props, context) => {
-  const { act, data } = useBackend<FishingData>(context);
+export const Fishing = (props) => {
+  const { act, data } = useBackend<FishingData>();
   return (
     <Window width={180} height={600}>
       <Window.Content fitted>

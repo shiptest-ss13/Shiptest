@@ -10,8 +10,8 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const SolarControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SolarControl = (props) => {
+  const { act, data } = useBackend();
   const {
     generated,
     generated_ratio,

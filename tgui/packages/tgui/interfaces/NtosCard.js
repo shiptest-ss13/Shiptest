@@ -11,7 +11,7 @@ import {
 import { NtosWindow } from '../layouts';
 import { AccessList } from './common/AccessList';
 
-export const NtosCard = (props, context) => {
+export const NtosCard = (props) => {
   return (
     <NtosWindow width={450} height={520} resizable>
       <NtosWindow.Content scrollable>
@@ -21,9 +21,9 @@ export const NtosCard = (props, context) => {
   );
 };
 
-export const NtosCardContent = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [tab, setTab] = useLocalState(context, 'tab', 1);
+export const NtosCardContent = (props) => {
+  const { act, data } = useBackend();
+  const [tab, setTab] = useLocalState('tab', 1);
   const {
     authenticated,
     regions = [],
@@ -40,7 +40,6 @@ export const NtosCardContent = (props, context) => {
     ship_has_unique_access,
   } = data;
   const [selectedDepartment, setSelectedDepartment] = useLocalState(
-    context,
     'department',
     Object.keys(jobs)[0]
   );

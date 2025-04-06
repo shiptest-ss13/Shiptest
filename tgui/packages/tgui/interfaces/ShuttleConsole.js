@@ -11,8 +11,8 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const ShuttleConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShuttleConsole = (props) => {
+  const { act, data } = useBackend();
   const { authorization_required } = data;
   return (
     <Window width={350} height={230}>
@@ -69,8 +69,8 @@ const STATUS_COLOR_KEYS = {
   'Locked': 'bad',
 };
 
-const ShuttleConsoleContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const ShuttleConsoleContent = (props) => {
+  const { act, data } = useBackend();
   const {
     status,
     locked,

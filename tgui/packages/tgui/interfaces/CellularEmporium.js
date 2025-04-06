@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Box, Button, LabeledList, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const CellularEmporium = (props, context) => {
-  const { act, data } = useBackend(context);
+export const CellularEmporium = (props) => {
+  const { act, data } = useBackend();
   const { abilities } = data;
   return (
     <Window width={900} height={480} resizable>

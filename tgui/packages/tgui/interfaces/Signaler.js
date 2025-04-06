@@ -3,8 +3,8 @@ import { useBackend } from '../backend';
 import { Button, Grid, NumberInput, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Signaler = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Signaler = (props) => {
+  const { act, data } = useBackend();
   const { code, frequency, minFrequency, maxFrequency } = data;
   return (
     <Window width={280} height={132}>

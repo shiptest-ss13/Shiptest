@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Button, LabeledList, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const HydrogenExchange = (props, context) => {
-  const { act, data } = useBackend(context);
+export const HydrogenExchange = (props) => {
+  const { act, data } = useBackend();
   const { credits, merits, next_merit_rate, credits_to_merits, credit_tax } =
     data;
   return (

@@ -8,8 +8,8 @@ type FishingPortalData = {
   active_preset: string;
 };
 
-export const FishingPortalGenerator = (props, context) => {
-  const { act, data } = useBackend<FishingPortalData>(context);
+export const FishingPortalGenerator = (props) => {
+  const { act, data } = useBackend<FishingPortalData>();
 
   return (
     <Window title="Ishmael3000" width={300} height={300}>

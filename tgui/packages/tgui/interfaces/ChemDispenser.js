@@ -12,8 +12,8 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const ChemDispenser = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemDispenser = (props) => {
+  const { act, data } = useBackend();
   const recording = !!data.recordingRecipe;
   // TODO: Change how this piece of shit is built on server side
   // It has to be a list, not a fucking OBJECT!

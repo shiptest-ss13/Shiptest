@@ -6,8 +6,8 @@ import { LabeledList, ProgressBar, Section } from 'tgui-core/components';
 import { getGasColor } from '../constants';
 import { NtosWindow } from '../layouts';
 
-export const NtosAtmos = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosAtmos = (props) => {
+  const { act, data } = useBackend();
   const { AirTemp, AirPressure, AirData } = data;
   const gases = flow([
     filter((gas) => gas.percentage >= 0.01),

@@ -15,8 +15,8 @@ import { decodeHtmlEntities } from 'tgui-core/string';
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const HelmConsole = (_props, context) => {
-  const { data } = useBackend(context);
+export const HelmConsole = (_props) => {
+  const { data } = useBackend();
   const { mapRef, isViewer } = data;
   return (
     <Window width={870} height={708} resizable>
@@ -45,8 +45,8 @@ export const HelmConsole = (_props, context) => {
   );
 };
 
-const SharedContent = (_props, context) => {
-  const { act, data } = useBackend(context);
+const SharedContent = (_props) => {
+  const { act, data } = useBackend();
   const { isViewer, canRename, shipInfo = [], otherInfo = [] } = data;
   return (
     <>
@@ -127,8 +127,8 @@ const SharedContent = (_props, context) => {
 };
 
 // Content included on helms when they're controlling ships
-const ShipContent = (_props, context) => {
-  const { act, data } = useBackend(context);
+const ShipContent = (_props) => {
+  const { act, data } = useBackend();
   const {
     isViewer,
     engineInfo,
@@ -254,8 +254,8 @@ const ShipContent = (_props, context) => {
 };
 
 // Arrow directional controls
-const ShipControlContent = (_props, context) => {
-  const { act, data } = useBackend(context);
+const ShipControlContent = (_props) => {
+  const { act, data } = useBackend();
   const {
     calibrating,
     aiControls,

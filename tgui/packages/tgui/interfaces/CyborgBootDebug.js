@@ -32,8 +32,8 @@ const TOOLTIP_LAWSYNC = `
   it's laws with it's master AI.
 `;
 
-export const CyborgBootDebug = (props, context) => {
-  const { act, data } = useBackend(context);
+export const CyborgBootDebug = (props) => {
+  const { act, data } = useBackend();
   const { designation, master, lawsync, aisync, locomotion, panel } = data;
   return (
     <Window width={master?.length > 26 ? 537 : 440} height={289}>

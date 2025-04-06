@@ -7,12 +7,11 @@ import { searchFor } from './helpers';
 import { OrbitContent } from './OrbitContent';
 import { OrbitData } from './types';
 
-export const Orbit = (props, context) => {
-  const { act, data } = useBackend<OrbitData>(context);
+export const Orbit = (props) => {
+  const { act, data } = useBackend<OrbitData>();
 
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
+  const [searchText, setSearchText] = useLocalState('searchText', '');
   const [autoObserve, setAutoObserve] = useLocalState(
-    context,
     'autoObserve',
     false
   );

@@ -2,7 +2,7 @@ import { useBackend } from '../backend';
 import { Button, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const ElevatorButtons = (props, context) => {
+export const ElevatorButtons = (props) => {
   return (
     <Window width={200} height={400} resizable>
       <Window.Content scrollable>
@@ -12,8 +12,8 @@ export const ElevatorButtons = (props, context) => {
   );
 };
 
-const ElevatorButtonsContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const ElevatorButtonsContent = (props) => {
+  const { act, data } = useBackend();
   const { floors = [] } = data;
   // you know this TGUI code sucks because it looks like actual fucking code
   // burn all functional languages

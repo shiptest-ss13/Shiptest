@@ -45,7 +45,7 @@ type JobData = {
   def: number;
 };
 
-export const ShipOwner = (props, context) => {
+export const ShipOwner = (props) => {
   return (
     <Window width={620} height={620} resizable>
       <Window.Content scrollable>
@@ -55,9 +55,9 @@ export const ShipOwner = (props, context) => {
   );
 };
 
-const ShipOwnerContent = (_, context: any) => {
-  const { act, data } = useBackend<ShipOwnerData>(context);
-  const [tab, setTab] = useLocalState(context, 'tab', 1);
+const ShipOwnerContent = (_) => {
+  const { act, data } = useBackend<ShipOwnerData>();
+  const [tab, setTab] = useLocalState('tab', 1);
   const {
     crew = [],
     jobs = [],

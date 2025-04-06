@@ -4,8 +4,8 @@ import { useBackend } from '../backend';
 import { Button, LabeledList, NumberInput, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const AtmosControlConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosControlConsole = (props) => {
+  const { act, data } = useBackend();
   const sensors = data.sensors || [];
   return (
     <Window width={500} height={315} resizable>

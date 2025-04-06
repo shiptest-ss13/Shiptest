@@ -11,8 +11,8 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const ChemMaster = (props, context) => {
-  const { data } = useBackend(context);
+export const ChemMaster = (props) => {
+  const { data } = useBackend();
   const { screen } = data;
   return (
     <Window width={465} height={550} resizable>
@@ -23,8 +23,8 @@ export const ChemMaster = (props, context) => {
   );
 };
 
-const ChemMasterContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const ChemMasterContent = (props) => {
+  const { act, data } = useBackend();
   const {
     screen,
     beakerContents = [],
@@ -136,8 +136,8 @@ const ChemMasterContent = (props, context) => {
 
 const ChemicalBuffer = Table;
 
-const ChemicalBufferEntry = (props, context) => {
-  const { act } = useBackend(context);
+const ChemicalBufferEntry = (props) => {
+  const { act } = useBackend();
   const { chemical, transferTo } = props;
   return (
     <Table.Row key={chemical.id}>
@@ -234,20 +234,18 @@ const PackagingControlsItem = (props) => {
   );
 };
 
-const PackagingControls = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [pillAmount, setPillAmount] = useSharedState(context, 'pillAmount', 1);
+const PackagingControls = (props) => {
+  const { act, data } = useBackend();
+  const [pillAmount, setPillAmount] = useSharedState('pillAmount', 1);
   const [patchAmount, setPatchAmount] = useSharedState(
-    context,
     'patchAmount',
     1
   );
   const [bottleAmount, setBottleAmount] = useSharedState(
-    context,
     'bottleAmount',
     1
   );
-  const [packAmount, setPackAmount] = useSharedState(context, 'packAmount', 1);
+  const [packAmount, setPackAmount] = useSharedState('packAmount', 1);
   const { condi, chosenPillStyle, pillStyles = [] } = data;
   return (
     <LabeledList>
@@ -351,8 +349,8 @@ const PackagingControls = (props, context) => {
   );
 };
 
-const AnalysisResults = (props, context) => {
-  const { act, data } = useBackend(context);
+const AnalysisResults = (props) => {
+  const { act, data } = useBackend();
   const { analyzeVars } = data;
   return (
     <Section

@@ -3,8 +3,8 @@ import { Button, LabeledList, NumberInput, Section } from 'tgui-core/components'
 import { getGasLabel } from '../constants';
 import { Window } from '../layouts';
 
-export const AtmosFilter = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosFilter = (props) => {
+  const { act, data } = useBackend();
   const filterTypes = data.filter_types || [];
   return (
     <Window width={390} height={187}>

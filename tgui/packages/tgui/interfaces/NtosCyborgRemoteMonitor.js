@@ -2,7 +2,7 @@ import { useBackend } from '../backend';
 import { Box, Button, LabeledList, NoticeBox, Section } from 'tgui-core/components';
 import { NtosWindow } from '../layouts';
 
-export const NtosCyborgRemoteMonitor = (props, context) => {
+export const NtosCyborgRemoteMonitor = (props) => {
   return (
     <NtosWindow width={600} height={800} resizable>
       <NtosWindow.Content scrollable>
@@ -12,8 +12,8 @@ export const NtosCyborgRemoteMonitor = (props, context) => {
   );
 };
 
-export const NtosCyborgRemoteMonitorContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosCyborgRemoteMonitorContent = (props) => {
+  const { act, data } = useBackend();
   const { card, cyborgs = [] } = data;
 
   if (!cyborgs.length) {

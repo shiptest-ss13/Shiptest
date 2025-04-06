@@ -3,8 +3,8 @@ import { AnimatedNumber, Box, Button, Section, Table } from 'tgui-core/component
 import { formatMoney } from 'tgui-core/format';
 import { Window } from '../layouts';
 
-export const CargoBountyConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const CargoBountyConsole = (props) => {
+  const { act, data } = useBackend();
   const { bountydata = [] } = data;
   return (
     <Window width={750} height={600} resizable>
@@ -81,8 +81,8 @@ export const CargoBountyConsole = (props, context) => {
   );
 };
 
-const BountyHeader = (props, context) => {
-  const { act, data } = useBackend(context);
+const BountyHeader = (props) => {
+  const { act, data } = useBackend();
   const { stored_cash } = data;
   return (
     <Box inline bold>

@@ -13,8 +13,8 @@ import {
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
 
-export const Telecomms = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Telecomms = (props) => {
+  const { act, data } = useBackend();
   const {
     type,
     minfreq,

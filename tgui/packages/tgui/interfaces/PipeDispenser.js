@@ -39,8 +39,8 @@ const PAINT_COLORS = {
   yellow: '#ffce26',
 };
 
-export const PipeDispenser = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PipeDispenser = (props) => {
+  const { act, data } = useBackend();
   const {
     category: rootCategoryIndex,
     categories = [],
@@ -50,7 +50,6 @@ export const PipeDispenser = (props, context) => {
   } = data;
   const previews = data.preview_rows.flatMap((row) => row.previews);
   const [categoryName, setCategoryName] = useLocalState(
-    context,
     'categoryName'
   );
   const shownCategory =

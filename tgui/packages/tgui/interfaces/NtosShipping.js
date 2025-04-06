@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Box, Button, LabeledList, Section } from 'tgui-core/components';
 import { NtosWindow } from '../layouts';
 
-export const NtosShipping = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosShipping = (props) => {
+  const { act, data } = useBackend();
   return (
     <NtosWindow width={450} height={350} resizable>
       <NtosWindow.Content scrollable>

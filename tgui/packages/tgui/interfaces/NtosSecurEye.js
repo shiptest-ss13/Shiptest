@@ -7,8 +7,8 @@ import {
   CameraConsoleContent,
 } from './CameraConsole';
 
-export const NtosSecurEye = (props, context) => {
-  const { act, data, config } = useBackend(context);
+export const NtosSecurEye = (props) => {
+  const { act, data, config } = useBackend();
   const { PC_device_theme, mapRef, activeCamera } = data;
   const cameras = selectCameras(data.cameras);
   const [prevCameraName, nextCameraName] = prevNextCamera(

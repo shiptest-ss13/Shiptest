@@ -9,8 +9,8 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const ThermoMachine = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ThermoMachine = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={300} height={230}>
       <Window.Content>

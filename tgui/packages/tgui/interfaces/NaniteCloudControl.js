@@ -11,8 +11,8 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const NaniteDiskBox = (props, context) => {
-  const { data } = useBackend(context);
+export const NaniteDiskBox = (props) => {
+  const { data } = useBackend();
   const { has_disk, has_program, disk } = data;
   if (!has_disk) {
     return <NoticeBox>No disk inserted</NoticeBox>;
@@ -23,7 +23,7 @@ export const NaniteDiskBox = (props, context) => {
   return <NaniteInfoBox program={disk} />;
 };
 
-export const NaniteInfoBox = (props, context) => {
+export const NaniteInfoBox = (props) => {
   const { program } = props;
   const {
     name,
@@ -139,8 +139,8 @@ export const NaniteInfoBox = (props, context) => {
   );
 };
 
-export const NaniteCloudBackupList = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteCloudBackupList = (props) => {
+  const { act, data } = useBackend();
   const cloud_backups = data.cloud_backups || [];
   return cloud_backups.map((backup) => (
     <Button
@@ -157,8 +157,8 @@ export const NaniteCloudBackupList = (props, context) => {
   ));
 };
 
-export const NaniteCloudBackupDetails = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteCloudBackupDetails = (props) => {
+  const { act, data } = useBackend();
   const { current_view, disk, has_program, cloud_backup } = data;
   const can_rule = (disk && disk.can_rule) || false;
   if (!cloud_backup) {
@@ -264,8 +264,8 @@ export const NaniteCloudBackupDetails = (props, context) => {
   );
 };
 
-export const NaniteCloudControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteCloudControl = (props) => {
+  const { act, data } = useBackend();
   const { has_disk, current_view, new_backup_id } = data;
   return (
     <Window width={375} height={700} resizable>

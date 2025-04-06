@@ -12,9 +12,9 @@ import {
 import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
-export const ShuttleManipulator = (props, context) => {
-  const [tab, setTab] = useLocalState(context, 'tab', 1);
-  const { act } = useBackend(context);
+export const ShuttleManipulator = (props) => {
+  const [tab, setTab] = useLocalState('tab', 1);
+  const { act } = useBackend();
   return (
     <Window title="Shuttle Manipulator" width={875} height={600} resizable>
       <Window.Content scrollable>
@@ -36,8 +36,8 @@ export const ShuttleManipulator = (props, context) => {
   );
 };
 
-export const ShuttleManipulatorStatus = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShuttleManipulatorStatus = (props) => {
+  const { act, data } = useBackend();
   const shuttles = data.shuttles || [];
   return (
     <Section>
@@ -112,11 +112,10 @@ export const ShuttleManipulatorStatus = (props, context) => {
   );
 };
 
-export const ShuttleManipulatorTemplates = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShuttleManipulatorTemplates = (props) => {
+  const { act, data } = useBackend();
   const templateObject = data.templates || {};
   const [selectedTemplateId, setSelectedTemplateId] = useLocalState(
-    context,
     'templateId',
     Object.keys(templateObject)[0]
   );

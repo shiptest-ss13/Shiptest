@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Button, Flex, Knob, LabeledControls, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Aquarium = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Aquarium = (props) => {
+  const { act, data } = useBackend();
   const {
     temperature,
     fluid_type,

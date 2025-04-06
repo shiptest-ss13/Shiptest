@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Button, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const DecalPainter = (props, context) => {
-  const { act, data } = useBackend(context);
+export const DecalPainter = (props) => {
+  const { act, data } = useBackend();
   const decal_list = data.decal_list || [];
   const color_list = data.color_list || [];
   const dir_list = data.dir_list || [];

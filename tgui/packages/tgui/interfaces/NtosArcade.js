@@ -11,8 +11,8 @@ import {
 } from 'tgui-core/components';
 import { NtosWindow } from '../layouts';
 
-export const NtosArcade = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosArcade = (props) => {
+  const { act, data } = useBackend();
   return (
     <NtosWindow width={450} height={350}>
       <NtosWindow.Content>

@@ -16,8 +16,8 @@ import {
 import { Window } from '../layouts';
 import { capitalize } from 'tgui-core/string';
 
-export const Autolathe = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Autolathe = (props) => {
+  const { act, data } = useBackend();
   // Extract `health` and `color` variables from the `data` object.
   const {
     materialtotal,
@@ -29,7 +29,6 @@ export const Autolathe = (props, context) => {
     active,
   } = data;
   const [current_category, setCategory] = useLocalState(
-    context,
     'current_category',
     'None'
   );
@@ -246,11 +245,10 @@ export const Autolathe = (props, context) => {
   );
 };
 
-const MaterialRow = (props, context) => {
+const MaterialRow = (props) => {
   const { material, materialsmax, onRelease } = props;
 
   const [amount, setAmount] = useLocalState(
-    context,
     'amount' + material.name,
     1
   );

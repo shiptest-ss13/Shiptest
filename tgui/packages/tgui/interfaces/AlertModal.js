@@ -9,8 +9,8 @@ import { useBackend } from '../backend';
 import { Box, Button, Flex } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const AlertModal = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AlertModal = (props) => {
+  const { act, data } = useBackend();
   const { title, message, buttons, timeout } = data;
 
   return (

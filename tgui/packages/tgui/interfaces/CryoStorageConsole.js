@@ -2,7 +2,7 @@ import { useBackend } from '../backend';
 import { Button, LabeledList, Section, Table, Divider } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const CryoStorageConsole = (props, context) => {
+export const CryoStorageConsole = (props) => {
   return (
     <Window width={450} height={620} resizable>
       <Window.Content scrollable>
@@ -12,8 +12,8 @@ export const CryoStorageConsole = (props, context) => {
   );
 };
 
-export const CryoStorageConsoleContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const CryoStorageConsoleContent = (props) => {
+  const { act, data } = useBackend();
   const { stored = [], hasItems, allowItems } = data;
   return (
     <Section title="Cryo Management">

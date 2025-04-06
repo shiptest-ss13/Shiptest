@@ -12,8 +12,8 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Jukebox = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Jukebox = (props) => {
+  const { act, data } = useBackend();
   const { active, track_selected, track_length, track_beat, volume } = data;
   const songs = flow([sortBy((song) => song.name)])(data.songs || []);
   return (

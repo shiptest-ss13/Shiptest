@@ -13,7 +13,7 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const AdminFax = (props, context) => {
+export const AdminFax = (props) => {
   return (
     <Window title="Send Fax Message" width={500} height={800} theme="admin">
       <Window.Content scrollable>
@@ -23,26 +23,24 @@ export const AdminFax = (props, context) => {
   );
 };
 
-export const FaxMainPanel = (props, context) => {
-  const { act, data } = useBackend(context);
+export const FaxMainPanel = (props) => {
+  const { act, data } = useBackend();
 
-  const [fax, setFax] = useLocalState(context, 'fax', '');
-  const [saved, setSaved] = useLocalState(context, 'saved', false);
-  const [paperName, setPaperName] = useLocalState(context, 'paperName', '');
-  const [fromWho, setFromWho] = useLocalState(context, 'fromWho', '');
-  const [rawText, setRawText] = useLocalState(context, 'rawText', '');
-  const [stamp, setStamp] = useLocalState(context, 'stampType', '');
+  const [fax, setFax] = useLocalState('fax', '');
+  const [saved, setSaved] = useLocalState('saved', false);
+  const [paperName, setPaperName] = useLocalState('paperName', '');
+  const [fromWho, setFromWho] = useLocalState('fromWho', '');
+  const [rawText, setRawText] = useLocalState('rawText', '');
+  const [stamp, setStamp] = useLocalState('stampType', '');
   const [stampCoordX, setStampCoordX] = useLocalState(
-    context,
     'stampCoordX',
     0
   );
   const [stampCoordY, setStampCoordY] = useLocalState(
-    context,
     'stampCoordY',
     0
   );
-  const [stampAngle, setStampAngle] = useLocalState(context, 'stampAngle', 0);
+  const [stampAngle, setStampAngle] = useLocalState('stampAngle', 0);
   if (stamp && data.stamps[0] !== 'None') {
     data.stamps.unshift('None');
   }

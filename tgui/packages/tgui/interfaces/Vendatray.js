@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Box, Button, Flex, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Vendatray = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Vendatray = (props) => {
+  const { act, data } = useBackend();
   const { product_name, product_cost, tray_open, registered, owner_name } =
     data;
   return (
@@ -56,8 +56,8 @@ export const Vendatray = (props, context) => {
   );
 };
 
-const VendingImage = (props, context) => {
-  const { data } = useBackend(context);
+const VendingImage = (props) => {
+  const { data } = useBackend();
   const { product_icon } = data;
   return (
     <Section height="100%">

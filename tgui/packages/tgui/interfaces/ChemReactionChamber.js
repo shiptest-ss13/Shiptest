@@ -11,15 +11,13 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const ChemReactionChamber = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemReactionChamber = (props) => {
+  const { act, data } = useBackend();
   const [reagentName, setReagentName] = useLocalState(
-    context,
     'reagentName',
     ''
   );
   const [reagentQuantity, setReagentQuantity] = useLocalState(
-    context,
     'reagentQuantity',
     1
   );

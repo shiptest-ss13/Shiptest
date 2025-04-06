@@ -12,13 +12,13 @@ type NameData = {
   given_name: string;
 };
 
-export const Guestbook = (props, context) => {
-  const { act, data } = useBackend<Info>(context);
+export const Guestbook = (props) => {
+  const { act, data } = useBackend<Info>();
   const { names = [] } = data;
 
   const [lastNameBeforeEdit, setLastNameBeforeEdit] = useLocalState<
     string | null
-  >(context, 'lastNameBeforeEdit', null);
+  >('lastNameBeforeEdit', null);
 
   return (
     <Window title="Guestbook" width={400} height={500}>

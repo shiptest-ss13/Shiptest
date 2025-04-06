@@ -9,9 +9,9 @@ import {
 } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const RoboticsControlConsole = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [tab, setTab] = useSharedState(context, 'tab', 1);
+export const RoboticsControlConsole = (props) => {
+  const { act, data } = useBackend();
+  const [tab, setTab] = useSharedState('tab', 1);
   const { can_hack, cyborgs = [], drones = [] } = data;
   return (
     <Window width={500} height={460} resizable>
@@ -41,9 +41,9 @@ export const RoboticsControlConsole = (props, context) => {
   );
 };
 
-const Cyborgs = (props, context) => {
+const Cyborgs = (props) => {
   const { cyborgs, can_hack } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   if (!cyborgs.length) {
     return (
       <NoticeBox>No cyborg units detected within access parameters</NoticeBox>
@@ -132,9 +132,9 @@ const Cyborgs = (props, context) => {
   });
 };
 
-const Drones = (props, context) => {
+const Drones = (props) => {
   const { drones } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
 
   if (!drones.length) {
     return (

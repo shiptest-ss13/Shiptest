@@ -19,31 +19,26 @@ type FishingCalculatorData = {
   spot_types: string[];
 };
 
-export const FishingCalculator = (props, context) => {
-  const { act, data } = useBackend<FishingCalculatorData>(context);
+export const FishingCalculator = (props) => {
+  const { act, data } = useBackend<FishingCalculatorData>();
 
   const [bait, setBait] = useLocalState<string>(
-    context,
     'bait',
     '/obj/item/reagent_containers/food/snacks/bait/worm'
   );
   const [spot, setSpot] = useLocalState<string>(
-    context,
     'spot',
     data.spot_types[0]
   );
   const [rod, setRod] = useLocalState<string>(
-    context,
     'rod',
     data.rod_types[0]
   );
   const [hook, setHook] = useLocalState<string>(
-    context,
     'hook',
     data.hook_types[0]
   );
   const [line, setLine] = useLocalState<string>(
-    context,
     'line',
     data.line_types[0]
   );

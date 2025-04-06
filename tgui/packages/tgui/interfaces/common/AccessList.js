@@ -1,6 +1,7 @@
 import { sortBy } from 'common/collections';
-import { useLocalState } from '../../backend';
 import { Button, Flex, Grid, Section, Tabs } from 'tgui-core/components';
+
+import { useLocalState } from '../../backend';
 
 const diffMap = {
   0: {
@@ -17,7 +18,7 @@ const diffMap = {
   },
 };
 
-export const AccessList = (props, context) => {
+export const AccessList = (props) => {
   const {
     accesses = [],
     selectedList = [],
@@ -28,7 +29,6 @@ export const AccessList = (props, context) => {
     denyDep,
   } = props;
   const [selectedAccessName, setSelectedAccessName] = useLocalState(
-    context,
     'accessName',
     accesses[0]?.name
   );
