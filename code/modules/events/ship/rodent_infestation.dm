@@ -14,7 +14,7 @@
 	if(!..())
 		return FALSE
 	spawncount = rand(2, 4)
-	//rodent_type = pick(/mob/living/simple_animal/mouse, /mob/living/simple_animal/hostile/rat)
+	rodent_type = pick(/mob/living/basic/mouse, /mob/living/basic/mouse/rat, /mob/living/basic/cockroach)
 
 /datum/round_event/ship/rodent_infestation/start()
 	var/list/vents = list()
