@@ -29,7 +29,7 @@ export const FlavorText = (props, context) => {
         <Stack fill>
           {data.portraitUrl && (
             <Stack.Item grow>
-              <Section title="Portrait" fill>
+              <Section title="Portrait" fill fitted>
                 <Box className="FlavorText__Portrait">
                   <img src={data.portraitUrl} />
                 </Box>
@@ -40,7 +40,7 @@ export const FlavorText = (props, context) => {
             </Stack.Item>
           )}
           <Stack.Item grow>
-            <Section title="Flavor Text" fill>
+            <Section title="Flavor Text" fill fitted scrollable>
               <Box
                 dangerouslySetInnerHTML={{
                   __html: marked(data.flavorText),

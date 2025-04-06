@@ -1313,8 +1313,12 @@
 
 	AddComponent(/datum/component/flavor_text, new_text, new_portrait, new_source)
 
-	flavor_text_html = parsemarkdown_basic(new_text)
 	flavor_text = new_text
+	flavor_text_html = parsemarkdown_basic(new_text)
+
+	if(findtext(new_portrait, /datum/component/flavor_text::flavortext_regex))
+		//TODO: remove once I decide whether to stick to the TGUI interface or not
+		flavor_text_html += "<img src='[new_portrait]' style='float: right' width=200 />"
 
 	if(dna)
 		dna.features["flavor_text"] = flavor_text

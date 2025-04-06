@@ -27,6 +27,7 @@
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 
 /datum/component/flavor_text/UnregisterFromParent()
+	SStgui.close_uis(src)
 	UnregisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE)
 
 /datum/component/flavor_text/InheritComponent(datum/component/flavor_text/new_comp, original, _flavor_text, _portrait_url, _portrait_source)
