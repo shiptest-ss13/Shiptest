@@ -390,11 +390,9 @@
 	if(!istype(M))
 		return
 
-	var/area/ship/ship_area = get_area(mob)
-	if(istype(ship_area))
-		var/datum/overmap/area_overmap_location = ship_area.mobile_port.current_ship
-		if(istype(area_overmap_location))
-			overmap_location = area_overmap_location
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(M)
+	if(istype(ship))
+		overmap_location = ship
 
 	if(!overmap_location)
 		overmap_location = M.get_overmap_location()
