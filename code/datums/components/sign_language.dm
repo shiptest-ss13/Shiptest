@@ -33,6 +33,8 @@
 	var/regex/omissions = new ("\[!?\]", "g")
 	/// The action for toggling sign language.
 	var/datum/action/innate/sign_language/linked_action
+	//Used for checking if someone was typing when sign language was enabled/disabled.
+	var/was_typing = FALSE
 
 /// Replace specific characters in the input string with periods.
 /datum/component/sign_language/proc/sanitize_message(input)
@@ -69,8 +71,14 @@
 /datum/component/sign_language/proc/enable_sign_language()
 	SIGNAL_HANDLER
 
+	was_typing = FALSE
 	var/mob/living/carbon/carbon_parent = parent
 	var/obj/item/organ/tongue/tongue = locate(/obj/item/organ/tongue) in carbon_parent.internal_organs
+
+	if (carbon_parent.typing_indicator == TRUE)
+		carbon_parent.set_typing_indicator(FALSE) //we need to remove the indicator before bubble_icon gets set to prevent "sticky indicator"
+		was_typing = TRUE
+
 	tongue.say_mod = "signs"
 	carbon_parent.verb_ask = "signs"
 	carbon_parent.verb_exclaim = "signs"
@@ -78,6 +86,10 @@
 	carbon_parent.verb_sing = "rythmically signs"
 	carbon_parent.verb_yell = "emphatically signs"
 	carbon_parent.bubble_icon = "signlang"
+
+	if (was_typing == TRUE)
+		carbon_parent.set_typing_indicator(TRUE) //bubble icon is set, show the indicator again
+
 	RegisterSignal(carbon_parent, COMSIG_LIVING_TRY_SPEECH, PROC_REF(on_try_speech))
 	RegisterSignal(carbon_parent, COMSIG_LIVING_TREAT_MESSAGE, PROC_REF(on_treat_living_message))
 	RegisterSignal(carbon_parent, COMSIG_MOVABLE_TREAT_MESSAGE, PROC_REF(on_treat_message))
@@ -92,8 +104,14 @@
 /datum/component/sign_language/proc/disable_sign_language()
 	SIGNAL_HANDLER
 
+	was_typing = FALSE
 	var/mob/living/carbon/carbon_parent = parent
 	var/obj/item/organ/tongue/tongue = locate(/obj/item/organ/tongue) in carbon_parent.internal_organs
+
+	if (carbon_parent.typing_indicator == TRUE)
+		carbon_parent.set_typing_indicator(FALSE) //we need to remove the indicator before bubble_icon gets set to prevent "sticky indicator"
+		was_typing = TRUE
+
 	tongue.say_mod = initial(tongue.say_mod)
 	carbon_parent.verb_ask = initial(carbon_parent.verb_ask)
 	carbon_parent.verb_exclaim = initial(carbon_parent.verb_exclaim)
@@ -101,6 +119,10 @@
 	carbon_parent.verb_sing = initial(carbon_parent.verb_sing)
 	carbon_parent.verb_yell = initial(carbon_parent.verb_yell)
 	carbon_parent.bubble_icon = initial(carbon_parent.bubble_icon)
+
+	if (was_typing == TRUE)
+		carbon_parent.set_typing_indicator(TRUE) //bubble icon is set, show the indicator again
+
 	UnregisterSignal(carbon_parent, list(
 		COMSIG_LIVING_TRY_SPEECH,
 		COMSIG_LIVING_TREAT_MESSAGE,
