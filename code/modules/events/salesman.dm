@@ -50,26 +50,25 @@
 
 	var/list/stuff = list()
 
-
 	stuff += /obj/item/spacecash/bundle/loadsamoney
 	stuff += /obj/item/spacecash/bundle/loadsamoney
 
 	switch(type)
 		if("hunters_pride")
-			stuff += list(/obj/item/gun/ballistic/rifle/illestren,
-			/obj/item/gun/ballistic/rifle/illestren,
-			/obj/item/gun/ballistic/rifle/scout,
-			/obj/item/gun/ballistic/shotgun/doublebarrel,
-			/obj/item/gun/ballistic/revolver/detective,
-			/obj/item/gun/ballistic/revolver/detective,
-			/obj/item/gun/ballistic/revolver/firebrand,
-			/obj/item/ammo_box/c38,
-			/obj/item/ammo_box/c38,
-			/obj/item/ammo_box/c38_box,
-			/obj/item/ammo_box/c38_box,
-			/obj/item/ammo_box/magazine/illestren_a850r,
-			/obj/item/ammo_box/magazine/illestren_a850r,
-			/obj/item/storage/toolbox/ammo/a850r,)
+			stuff += list(
+				/obj/item/gun/ballistic/rifle/illestren,
+				/obj/item/gun/ballistic/rifle/illestren,
+				/obj/item/gun/ballistic/rifle/scout,
+				/obj/item/gun/ballistic/shotgun/doublebarrel,
+				/obj/item/gun/ballistic/revolver/detective,
+				/obj/item/gun/ballistic/revolver/detective,
+				/obj/item/gun/ballistic/revolver/firebrand,
+				/obj/item/ammo_box/c38,
+				/obj/item/ammo_box/c38,
+				/obj/item/ammo_box/magazine/illestren_a850r,
+				/obj/item/ammo_box/magazine/illestren_a850r,
+				/obj/item/storage/toolbox/ammo/a850r
+			)
 
 	for(var/thing in stuff)
 		new thing(src)

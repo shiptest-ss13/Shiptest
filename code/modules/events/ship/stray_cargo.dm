@@ -58,7 +58,10 @@
 	if(possible_pack_types.len)
 		pack_type = pick(possible_pack_types)
 	else
-		pack_type = pick(SSshuttle.supply_packs)
+		var/datum/overmap/outpost/supplier = pick(SSovermap.outposts)
+		if(!supplier)
+			return
+		pack_type = pick(supplier.supply_packs)
 	var/datum/supply_pack/SP = new pack_type
 	var/obj/structure/closet/crate/crate = SP.generate(null)
 	crate.locked = FALSE //Unlock secure crates

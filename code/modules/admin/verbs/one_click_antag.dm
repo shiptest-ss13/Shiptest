@@ -347,7 +347,7 @@
 	return
 
 /datum/admins/proc/makeDeathsquad()
-	return makeEmergencyresponseteam(/datum/ert/deathsquad)
+	return makeEmergencyresponseteam(/datum/ert/independent/deathsquad)
 
 /datum/admins/proc/makeFrontiersmen()
 	var/datum/round_event_control/team/frontiersmen/event = new()

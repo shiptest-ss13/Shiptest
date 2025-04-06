@@ -22,7 +22,7 @@
 	if (ertemplate)
 		ertemplate = new ertemplate
 	else
-		ertemplate = new /datum/ert/centcom_official
+		ertemplate = new /datum/ert/nanotrasen
 	var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 	var/index = 0
 
