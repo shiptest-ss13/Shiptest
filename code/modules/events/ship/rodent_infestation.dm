@@ -12,7 +12,7 @@
 	return ..()
 
 /datum/round_event/ship/rodent_infestation
-	var/mob/living/simple_animal/rodent_type = /mob/living/simple_animal/mouse
+	var/mob/living/basic/rodent_type = /mob/living/basic/mouse
 	var/spawncount = 1
 
 /datum/round_event/ship/rodent_infestation/setup()
