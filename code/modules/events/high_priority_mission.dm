@@ -3,7 +3,7 @@
 	typepath = /datum/round_event/high_priority_mission
 	max_occurrences = 3
 	weight = 20
-	earliest_start = 0 //10 MINUTES
+	earliest_start = 5 MINUTES
 
 /datum/round_event_control/high_priority_missiony/can_spawn_event(players_amt, gamemode)
 	if(!(length(SSovermap.outposts)))
