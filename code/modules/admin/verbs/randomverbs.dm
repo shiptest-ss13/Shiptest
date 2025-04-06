@@ -360,13 +360,49 @@
 	message_admins("[key_name_admin(src)] has changed Central Command's name to [input]")
 	log_admin("[key_name(src)] has changed the Central Command name to: [input]")
 
-/client/proc/cmd_admin_distress_signal(datum/overmap/overmap_location as anything in SSovermap.overmap_objects)
-	set category = "Event"
+/client/proc/cmd_admin_distress_signal()
+	set category = "Event.Overmap"
 	set name = "Create Distress Signal"
+
+	var/datum/overmap/overmap_location = tgui_input_list(
+		src,
+		"Select a location to launch a distress signal from.",
+		"Signal Location",
+		SSovermap.overmap_objects
+	)
 
 	if(!istype(overmap_location)) // Sanity check
 		return
-	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name]", "Distress Signal", "Yes", "No")
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
+
+	switch(confirm)
+		if("Yes")
+			create_distress_beacon(overmap_location)
+		if("No")
+			return
+
+/client/proc/cmd_admin_distress_signal_here()
+	set category = "Event.Overmap"
+	set name = "Create Distress Signal Here"
+
+	var/mob/M = src.mob
+	var/datum/overmap/overmap_location
+	if(!istype(M))
+		return
+
+	var/area/ship/ship_area = get_area(mob)
+	if(istype(ship_area))
+		var/datum/overmap/area_overmap_location = ship_area.mobile_port.current_ship
+		if(istype(area_overmap_location))
+			overmap_location = area_overmap_location
+
+	if(!overmap_location)
+		overmap_location = M.get_overmap_location()
+
+	if(!overmap_location && !istype(overmap_location))
+		return
+
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
 
 	switch(confirm)
 		if("Yes")
