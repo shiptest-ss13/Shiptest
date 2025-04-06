@@ -27,6 +27,7 @@
 	/// Whether the turf has been dug or not
 	var/dug
 
+
 /turf/open/floor/plating/asteroid/Initialize(mapload, inherited_virtual_z)
 	var/proper_name = name
 	. = ..()

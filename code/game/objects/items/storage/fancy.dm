@@ -196,7 +196,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	spawn_type = /obj/item/clothing/mask/cigarette/space_cigarette
 	var/candy = FALSE //for cigarette overlay
-	custom_price = 75
+	custom_price = 10
 	contents_tag = "cigarette"
 
 /obj/item/storage/fancy/cigarettes/ComponentInitialize()
@@ -359,7 +359,7 @@
 	base_icon_state = "cig_paper_pack"
 	contents_tag = "rolling paper"
 	spawn_type = /obj/item/rollingpaper
-	custom_price = 25
+	custom_price = 5
 
 /obj/item/storage/fancy/rollingpapers/ComponentInitialize()
 	. = ..()

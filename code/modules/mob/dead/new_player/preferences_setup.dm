@@ -52,7 +52,9 @@
 	var/random_species_type = GLOB.species_list[pick(GLOB.roundstart_races)]
 	pref_species = new random_species_type
 	if(randomise[RANDOM_NAME])
-		real_name = pref_species.random_name(gender,1)
+		real_name = pref_species.random_name(gender, TRUE)
+	if(randomise[RANDOM_AGE])
+		age = rand(pref_species.species_age_min, pref_species.species_age_max)
 
 /datum/preferences/proc/update_preview_icon(show_gear = TRUE, show_loadout = FALSE)
 	// Set up the dummy for its photoshoot
@@ -62,6 +64,5 @@
 	if(selected_outfit && show_gear)
 		selected_outfit.equip(mannequin, TRUE, preference_source = parent)
 
-	COMPILE_OVERLAYS(mannequin)
 	parent.show_character_previews(new /mutable_appearance(mannequin))
 	unset_busy_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)

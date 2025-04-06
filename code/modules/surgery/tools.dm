@@ -11,14 +11,13 @@
 	custom_materials = list(/datum/material/iron=6000, /datum/material/glass=3000)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	tool_behaviour = TOOL_RETRACTOR
 	toolspeed = 1
 
 /obj/item/retractor/augment
 	desc = "Micro-mechanical manipulator for retracting stuff."
 	toolspeed = 0.5
-
 
 /obj/item/hemostat
 	name = "hemostat"
@@ -33,7 +32,7 @@
 	custom_materials = list(/datum/material/iron=5000, /datum/material/glass=2500)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("attacked", "pinched")
 	tool_behaviour = TOOL_HEMOSTAT
 	toolspeed = 1
@@ -41,7 +40,6 @@
 /obj/item/hemostat/augment
 	desc = "Tiny servos power a pair of pincers to stop bleeding."
 	toolspeed = 0.5
-
 
 /obj/item/cautery
 	name = "cautery"
@@ -56,7 +54,7 @@
 	custom_materials = list(/datum/material/iron=2500, /datum/material/glass=750)
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("burnt")
 	tool_behaviour = TOOL_CAUTERY
 	toolspeed = 1
@@ -85,6 +83,7 @@
 	sharpness = IS_SHARP		//WS Edit - Makes the Drill sharp
 	tool_behaviour = TOOL_DRILL
 	toolspeed = 1
+	demolition_mod = 0.5
 
 /obj/item/surgicaldrill/Initialize()		//WS Edit Start - Trying to butcher with a drill is a bad idea
 	. = ..()
@@ -96,7 +95,6 @@
 	force = 10
 	w_class = WEIGHT_CLASS_SMALL
 	toolspeed = 0.5
-
 
 /obj/item/scalpel
 	name = "scalpel"
@@ -111,7 +109,7 @@
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL | EYE_STAB
 	force = 10
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
@@ -121,6 +119,7 @@
 	sharpness = IS_SHARP_ACCURATE
 	tool_behaviour = TOOL_SCALPEL
 	toolspeed = 1
+	demolition_mod = 0.25
 
 /obj/item/scalpel/Initialize()
 	. = ..()
@@ -171,7 +170,7 @@
 //spases 4 legibilititie
 
 	icon_state = "swa"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 

@@ -1,4 +1,4 @@
-/proc/priority_announce(text, title = "", sound = 'sound/ai/attention.ogg', type, sender_override, auth_id, zlevel)            //WS Edit - Make cap's announcement use logged-in name
+/proc/priority_announce(text, title = "", sound = 'sound/ai/attention.ogg', type, sender_override, auth_id, zlevel)
 	if(!text)
 		return
 
@@ -73,3 +73,12 @@
 		to_chat(M, "<span class='minorannounce'><font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])</span>" : null]")
 		if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
 			SEND_SOUND(M, S)
+
+/proc/create_distress_beacon(datum/overmap/location)
+	var/message
+	var/datum/overmap/ship/ship = location
+	if(istype(ship))
+		message = "A distress beacon has been launched by [ship.name], at local sector co-ordinates [ship.x || ship.docked_to.x]/[ship.y || ship.docked_to.y]. No further information available."
+	else
+		message = "A distress beacon has been activated from [location.name] at local sector co-ordinates [location.x]/[location.y]. No further information available."
+	priority_announce(message, null, 'sound/effects/alert.ogg', sender_override = "Outpost Distress Beacon System", zlevel = 0)

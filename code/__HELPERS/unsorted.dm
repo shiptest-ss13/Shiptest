@@ -294,65 +294,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 /proc/ionnum()
 	return "[pick("!","@","#","$","%","^","&")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")][pick("!","@","#","$","%","^","&","*")]"
 
-//Returns a list of all items of interest with their name
-/proc/getpois(mobs_only = FALSE, skip_mindless = FALSE, specify_dead_role = TRUE)
-	var/list/mobs = sortmobs()
-	var/list/namecounts = list()
-	var/list/pois = list()
-	for(var/mob/M in mobs)
-		if(skip_mindless && (!M.mind && !M.ckey))
-			if(!isbot(M) && !iscameramob(M) && !ismegafauna(M))
-				continue
-		if(M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
-			continue
-		var/name = avoid_assoc_duplicate_keys(M.name, namecounts) + M.get_realname_string()
-
-		if(M.stat == DEAD && specify_dead_role)
-			if(isobserver(M))
-				name += " \[ghost\]"
-			else
-				name += " \[dead\]"
-		pois[name] = M
-
-	if(!mobs_only)
-		for(var/atom/A in GLOB.poi_list)
-			if(!A || !A.loc)
-				continue
-			pois[avoid_assoc_duplicate_keys(A.name, namecounts)] = A
-
-	return pois
-//Orders mobs by type then by name
-/proc/sortmobs()
-	var/list/moblist = list()
-	var/list/sortmob = sortNames(GLOB.mob_list)
-	for(var/mob/living/silicon/ai/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/camera/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/silicon/pai/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/silicon/robot/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/human/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/brain/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/alien/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/dead/observer/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/dead/new_player/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/monkey/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/simple_animal/slime/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/simple_animal/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/true_devil/M in sortmob)
-		moblist.Add(M)
-	return moblist
-
 // Format a power value in W, kW, MW, or GW.
 /proc/DisplayPower(powerused)
 	if(powerused < 1000) //Less than a kW
@@ -384,7 +325,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 /proc/get_mob_by_ckey(key)
 	if(!key)
 		return
-	var/list/mobs = sortmobs()
+	var/list/mobs = SSpoints_of_interest.get_mob_pois()
 	for(var/mob/M in mobs)
 		if(M.ckey == key)
 			return M
@@ -527,6 +468,8 @@ Turf and target are separate in case you want to teleport some distance from a t
 /proc/can_see(atom/source, atom/target, length=5) // I couldnt be arsed to do actual raycasting :I This is horribly inaccurate.
 	var/turf/current = get_turf(source)
 	var/turf/target_turf = get_turf(target)
+	if(get_dist(source, target) > length)
+		return FALSE
 	var/steps = 1
 	if(current != target_turf)
 		current = get_step_towards(current, target_turf)
@@ -739,8 +682,8 @@ GLOBAL_LIST_INIT(WALLITEMS, typecacheof(list(
 	/obj/machinery/newscaster, /obj/machinery/firealarm, /obj/structure/noticeboard, /obj/machinery/button,
 	/obj/machinery/computer/security/telescreen, /obj/machinery/embedded_controller/radio/simple_vent_controller,
 	/obj/item/storage/secure/safe, /obj/machinery/door_timer, /obj/machinery/flasher, /obj/machinery/keycard_auth,
-	/obj/structure/mirror, /obj/structure/fireaxecabinet, /obj/machinery/computer/security/telescreen/entertainment,
-	/obj/structure/sign/picture_frame, /obj/machinery/bounty_board
+	/obj/structure/mirror, /obj/structure/cabinet, /obj/machinery/computer/security/telescreen/entertainment,
+	/obj/structure/sign/picture_frame, /obj/machinery/mission_viewer
 	)))
 
 GLOBAL_LIST_INIT(WALLITEMS_EXTERNAL, typecacheof(list(
@@ -824,19 +767,25 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 		else
 			return "white"
 
-/proc/params2turf(scr_loc, turf/origin, client/C)
-	if(!scr_loc)
+/proc/parse_caught_click_modifiers(list/modifiers, turf/origin, client/viewing_client)
+	if(!modifiers)
 		return null
-	var/tX = splittext(scr_loc, ",")
-	var/tY = splittext(tX[2], ":")
-	var/tZ = origin.z
-	tY = tY[1]
-	tX = splittext(tX[1], ":")
-	tX = tX[1]
-	var/list/actual_view = getviewsize(C ? C.view : world.view)
-	tX = clamp(origin.x + text2num(tX) - round(actual_view[1] / 2) - 1, 1, world.maxx)
-	tY = clamp(origin.y + text2num(tY) - round(actual_view[2] / 2) - 1, 1, world.maxy)
-	return locate(tX, tY, tZ)
+
+	var/screen_loc = splittext(LAZYACCESS(modifiers, SCREEN_LOC), ",")
+	var/list/actual_view = getviewsize(viewing_client ? viewing_client.view : world.view)
+	var/click_turf_x = splittext(screen_loc[1], ":")
+	var/click_turf_y = splittext(screen_loc[2], ":")
+	var/click_turf_z = origin.z
+
+	var/click_turf_px = text2num(click_turf_x[2])
+	var/click_turf_py = text2num(click_turf_y[2])
+	click_turf_x = origin.x + text2num(click_turf_x[1]) - round(actual_view[1] / 2) - 1
+	click_turf_y = origin.y + text2num(click_turf_y[1]) - round(actual_view[2] / 2) - 1
+
+	var/turf/click_turf = locate(clamp(click_turf_x, 1, world.maxx), clamp(click_turf_y, 1, world.maxy), click_turf_z)
+	LAZYSET(modifiers, ICON_X, "[(click_turf_px - click_turf.pixel_x) + ((click_turf_x - click_turf.x) * world.icon_size)]")
+	LAZYSET(modifiers, ICON_Y, "[(click_turf_py - click_turf.pixel_y) + ((click_turf_y - click_turf.y) * world.icon_size)]")
+	return click_turf
 
 /proc/screen_loc2turf(text, turf/origin, client/C)
 	if(!text)
@@ -1420,10 +1369,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		REMOVE_TRAIT(the_atom2,trait,source)
 
 /proc/get_random_food()
-	var/list/blocked = list(/obj/item/reagent_containers/food/snacks/store/bread,
-		/obj/item/reagent_containers/food/snacks/breadslice,
-		/obj/item/reagent_containers/food/snacks/store/cake,
-		/obj/item/reagent_containers/food/snacks/cakeslice,
+	var/static/list/allowed_food = list()
+
+	if(!LAZYLEN(allowed_food)) //it's static so we only ever do this once
+		var/list/blocked = list(
+		/obj/item/food/spaghetti,
+		/obj/item/food/bread,
+		/obj/item/food/breadslice,
+		/obj/item/food/cake,
+		/obj/item/food/cakeslice,
 		/obj/item/reagent_containers/food/snacks/store,
 		/obj/item/reagent_containers/food/snacks/pie,
 		/obj/item/reagent_containers/food/snacks/kebab,
@@ -1435,15 +1389,21 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		/obj/item/reagent_containers/food/snacks/soup,
 		/obj/item/reagent_containers/food/snacks/grown,
 		/obj/item/reagent_containers/food/snacks/grown/mushroom,
-		/obj/item/reagent_containers/food/snacks/deepfryholder,
+		/obj/item/food/deepfryholder,
 		/obj/item/reagent_containers/food/snacks/clothing,
 		/obj/item/reagent_containers/food/snacks/grown/shell, //base types
-		/obj/item/reagent_containers/food/snacks/store/bread,
+		/obj/item/food/bread,
 		/obj/item/reagent_containers/food/snacks/grown/nettle
 		)
-	blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
+		blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
 
-	return pick(subtypesof(/obj/item/reagent_containers/food/snacks) - blocked)
+		var/list/unfiltered_allowed_food = subtypesof(/obj/item/food) - blocked
+		for(var/obj/item/food/food as anything in unfiltered_allowed_food)
+			if(!initial(food.icon_state)) //food with no icon_state should probably not be spawned
+				continue
+			allowed_food.Add(food)
+
+	return pick(allowed_food)
 
 /proc/get_random_drink()
 	var/list/blocked = list(/obj/item/reagent_containers/food/drinks/soda_cans,

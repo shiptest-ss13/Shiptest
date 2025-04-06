@@ -131,7 +131,7 @@
 	use_static_power = NO_POWER_USE
 
 /obj/machinery/proc/set_static_power(area/A)//used to set the actual draw to the value of use_static_power
-	switch(use_power)
+	switch(use_static_power)
 		if(NO_POWER_USE)
 			set_no_power(A)
 		if(IDLE_POWER_USE)
@@ -377,8 +377,9 @@
 //source is an object caused electrocuting (airlock, grille, etc)
 //siemens_coeff - layman's terms, conductivity
 //dist_check - set to only shock mobs within 1 of source (vendors, airlocks, etc.)
+//drain_energy - whether the shock will drain power from the mech. Enabled by default.
 //No animations will be performed by this proc.
-/proc/electrocute_mob(mob/living/carbon/victim, power_source, obj/source, siemens_coeff = 1, dist_check = FALSE)
+/proc/electrocute_mob(mob/living/carbon/victim, power_source, obj/source, siemens_coeff = 1, dist_check = FALSE, drain_energy = TRUE)
 	if(!istype(victim) || ismecha(victim.loc))
 		return FALSE //feckin mechs are dumb
 

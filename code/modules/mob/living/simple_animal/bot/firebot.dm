@@ -15,7 +15,7 @@
 	maxHealth = 25
 
 	radio_key = /obj/item/encryptionkey/headset_com
-	radio_channel = RADIO_CHANNEL_COMMAND
+	radio_channel = RADIO_CHANNEL_EMERGENCY
 	bot_type = FIRE_BOT
 	model = "Firebot"
 	bot_core = /obj/machinery/bot_core/firebot
@@ -269,7 +269,7 @@
 
 	if(get_dist(src, target_fire) > 2)
 
-		path = get_path_to(src, get_turf(target_fire), /turf/proc/Distance_cardinal, 0, 30, 1, id=access_card)
+		path = get_path_to(src, target_fire, 30, 1, id=access_card)
 		mode = BOT_MOVING
 		if(!length(path))
 			soft_reset()

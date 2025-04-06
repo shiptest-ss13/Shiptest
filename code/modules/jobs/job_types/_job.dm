@@ -28,11 +28,18 @@
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
-/datum/job/New(new_name, datum/outfit/new_outfit)
-	if(new_name)
-		name = new_name
-		outfit = new_outfit
-		register()
+/datum/job/New(new_name, datum/outfit/job/new_outfit)
+	if(!new_name)
+		return
+
+	name = new_name
+	outfit = new_outfit
+
+	var/datum/job/outfit_job = new new_outfit.jobtype
+	if(outfit_job)
+		access = outfit_job.get_access()
+
+	register()
 
 /datum/job/proc/register()
 	GLOB.occupations += src
@@ -123,8 +130,12 @@
 		return FALSE
 	if(!visualsOnly)
 		var/datum/bank_account/bank_account = new(H.real_name, H.age)
-		bank_account.adjust_money(officer ? 250 : 100, "starting_money") //just a little bit of money for you
+		bank_account.adjust_money(officer ? 250 : 100, CREDIT_LOG_STARTING_MONEY) //just a little bit of money for you
 		H.account_id = bank_account.account_id
+
+		var/obj/item/card/id/idcard = H.get_idcard(TRUE)
+		if(idcard)
+			idcard.officer = officer
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
@@ -176,7 +187,7 @@
 /datum/outfit/job
 	name = "Standard Gear"
 
-	var/jobtype = null
+	var/datum/job/jobtype = null
 
 	uniform = /obj/item/clothing/under/color/grey
 	wallet = /obj/item/storage/wallet
@@ -273,6 +284,7 @@
 	var/obj/item/card/id/C = H.get_idcard(TRUE)
 	if(istype(C))
 		C.access = J.get_access()
+		SEND_SIGNAL(C, COSMIG_ACCESS_UPDATED)
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
 		if(H.job)

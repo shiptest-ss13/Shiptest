@@ -248,7 +248,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_announcement_sound)()
 /datum/verbs/menu/Settings/Sound/toggle_announcement_sound/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_ANNOUNCEMENTS
 
-/* READD THIS WHEN YOU FIX RADIO CHATTER
+//Readded, now that radio chatter is fixed.
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_radio_sound)()
 	set name = "Hear/Silence Radio Chatter"
 	set category = "Preferences"
@@ -260,7 +260,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_radio_sound)()
 
 /datum/verbs/menu/Settings/Sound/toggle_radio_sound/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_RADIO
-*/
 
 /datum/verbs/menu/Settings/Sound/verb/stop_client_sounds()
 	set name = "Stop Sounds"

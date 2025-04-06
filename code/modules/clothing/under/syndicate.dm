@@ -3,7 +3,7 @@
 	desc = "A non-descript and slightly suspicious looking turtleneck with digital camouflage cargo pants."
 	icon_state = "syndicate"
 	item_state = "bl_suit"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 	icon = 'icons/obj/clothing/under/syndicate.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
@@ -14,7 +14,7 @@
 	desc = "A non-descript and slightly suspicious looking skirtleneck."
 	icon_state = "syndicate_skirt"
 	item_state = "bl_suit"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
@@ -24,7 +24,7 @@
 	desc = "It still counts as stealth if there are no witnesses."
 	icon_state = "bloodred_pajamas"
 	item_state = "bl_suit"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 50, "acid" = 40)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION
@@ -82,7 +82,7 @@
 	desc = "Military grade tracksuits for frontline squatting."
 	icon_state = "rus_under"
 	can_adjust = FALSE
-	armor = list("melee" = 5, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = NONE
 
 /obj/item/clothing/under/syndicate/intern
@@ -90,7 +90,7 @@
 	desc = "A non-descript and slightly suspicious looking polo paired with a respectable yet also suspicious pair of khaki pants."
 	icon_state = "jake"
 	can_adjust = FALSE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/syndicate/gorlex
@@ -98,7 +98,7 @@
 	desc = "Originally worn by the miners of the Gorlex VII colony, it is now donned by veteran Gorlex Marauders."
 	icon_state = "gorlex"
 	can_adjust = FALSE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -130,7 +130,7 @@
 	icon_state = "cybersun_med"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/syndicate/medic/skirt
 	name = "Cybersun medical jumpskirt"
@@ -145,7 +145,7 @@
 	desc = "The standard employee uniform of Donk Co. Smells like minimum wage."
 	icon_state = "donk_cargo"
 	can_adjust = FALSE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	body_parts_covered = CHEST|GROIN|ARMS
 	alt_covers_chest = TRUE
 	supports_variations = DIGITIGRADE_VARIATION
@@ -186,17 +186,6 @@
 	icon_state = "gec_ce"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 80, "acid" = 40)
 
-/obj/item/clothing/under/syndicate/skirt/maid
-	name = "tactical maid outfit"
-	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
-	icon_state = "syndimaid"
-	item_state = "syndimaid"
-
-/obj/item/clothing/under/syndicate/skirt/maid/Initialize()
-	. = ..()
-	var/obj/item/clothing/accessory/maidapron/syndicate/A = new (src)
-	attach_accessory(A)
-
 /datum/outfit/syndicate/intern
 	name = "Syndicate Operative - Intern"
 
@@ -206,10 +195,10 @@
 	head = /obj/item/clothing/head/helmet/space/syndicate/surplus
 	mask = /obj/item/clothing/mask/breath
 	shoes = /obj/item/clothing/shoes/laceup
-	r_hand = /obj/item/gun/ballistic/automatic/ebr
+	r_hand = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	gloves =  null
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	r_pocket = /obj/item/ammo_box/magazine/ebr
+	r_pocket = /obj/item/ammo_box/magazine/m556_42_hydra/small
 	belt = null
 	back = /obj/item/tank/jetpack/oxygen/harness
 	backpack_contents = null
@@ -228,7 +217,7 @@
 	icon_state = "inteq"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 	alt_covers_chest = TRUE
 	icon = 'icons/obj/clothing/under/syndicate.dmi'
@@ -240,7 +229,7 @@
 	icon_state = "inteq_skirt"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 	alt_covers_chest = TRUE
@@ -251,10 +240,11 @@
 	icon_state = "inteqeng"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
-/obj/item/clothing/under/syndicate/inteq/skirt/artificer
+/obj/item/clothing/under/syndicate/inteq/artificer/skirt
 	name = "inteq artificer overall skirt"
 	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division Artificers."
 	icon_state = "inteqeng_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/syndicate/inteq/corpsman
@@ -263,24 +253,12 @@
 	icon_state = "inteqmed"
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION
 
-/obj/item/clothing/under/syndicate/inteq/skirt/corpsman
+/obj/item/clothing/under/syndicate/inteq/corpsman/skirt
 	name = "inteq corpsman skirtleneck"
 	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division Corpsmen."
 	icon_state = "inteqmed_skirt"
-	supports_variations = KEPORI_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
-
-/obj/item/clothing/under/syndicate/inteq/skirt/maid
-	name = "inteq tactical maid outfit"
-	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. This one is lovingly knitted in the colors of the IRMG."
-	icon_state = "inteqmaid"
-	item_state = "inteqmaid"
-	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
-
-/obj/item/clothing/under/syndicate/inteq/skirt/maid/Initialize()
-	. = ..()
-	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
-	attach_accessory(A)
 
 /obj/item/clothing/under/syndicate/inteq/honorable
 	name = "honorable vanguard turtleneck"

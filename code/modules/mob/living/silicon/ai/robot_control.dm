@@ -1,7 +1,7 @@
 /datum/robot_control
 	var/mob/living/silicon/ai/owner
 
-/datum/robot_control/Destroy(force, ...)
+/datum/robot_control/Destroy(force)
 	if(!QDELETED(owner))
 		CRASH("Robot Control panel destroyed even though owner AI is not being destroyed.")
 	owner = null

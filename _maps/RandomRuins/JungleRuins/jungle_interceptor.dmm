@@ -9,6 +9,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
+/obj/item/disk/surgery/t2,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/interceptor/porthall)
 "ah" = (
@@ -41,7 +42,7 @@
 	dir = 5
 	},
 /obj/item/stack/cable_coil/cut/green,
-/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/condiment/peppermill,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starhall)
 "au" = (
@@ -992,9 +993,9 @@
 /obj/structure/closet/wall/directional/east,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/rice,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "hO" = (
@@ -1090,7 +1091,7 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/clothing/under/color/jumpskirt/darkblue,
-/obj/item/clothing/under/dress/skirt/blue,
+/obj/item/clothing/under/dress/skirt/color/blue,
 /obj/effect/turf_decal/corner/opaque/black{
 	icon_state = "siding_line";
 	dir = 10
@@ -1516,7 +1517,7 @@
 	},
 /obj/item/radio,
 /obj/item/radio,
-/obj/item/clothing/under/dress/skirt/blue,
+/obj/item/clothing/under/dress/skirt/color/blue,
 /obj/item/clothing/under/color/darkblue,
 /obj/effect/turf_decal/corner/opaque/black{
 	icon_state = "siding_line";
@@ -2634,9 +2635,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "wI" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable/orange{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/orange,
 /obj/structure/cable/orange{
 	icon_state = "1-5"
 	},
@@ -2887,7 +2886,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/reagent_containers/food/condiment/saltshaker{
+/obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -3050,7 +3049,7 @@
 /obj/item/clothing/under/rank/security/officer/blueshirt,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/jackboots,
-/obj/item/ammo_box/c9mm,
+/obj/item/storage/box/ammo/c9mm,
 /obj/machinery/light/small/broken/directional/north,
 /obj/effect/turf_decal/corner/transparent/bar/three_quarters{
 	dir = 4
@@ -3251,9 +3250,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/security,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -3650,9 +3647,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/jungle/explored)
 "FQ" = (
@@ -4769,9 +4764,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "OL" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable/orange{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/orange,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -4812,9 +4805,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "OW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/stack/cable_coil/cut/orange,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -5274,9 +5265,7 @@
 /area/ruin/jungle/interceptor/starhall)
 "ST" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable/orange{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/orange,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -5437,9 +5426,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "Up" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/stack/cable_coil/cut/orange,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,

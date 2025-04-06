@@ -63,6 +63,9 @@
 	var/extinguishes_left = 5
 	cuttable = FALSE
 
+	//remove when phorids suck less
+	equip_delay_self = null
+
 /obj/item/clothing/under/plasmaman/skirt //WS edit plasmaman customization
 	name = "plasma enviroskirt"
 	icon_state = "plasmaskirt"
@@ -106,11 +109,11 @@
 
 /obj/item/clothing/under/misc/durathread
 	name = "durathread jumpsuit"
-	desc = "A jumpsuit made from durathread, its resilient fibres provide some protection to the wearer."
+	desc = "A jumpsuit made from durathread. Its resilient fibres preserve it from certain destructive forces. These forces do not include bullets."
 	icon_state = "durathread"
 	item_state = "durathread"
 	can_adjust = FALSE
-	armor = list("melee" = 10, "laser" = 10, "fire" = 40, "acid" = 10, "bomb" = 5)
+	armor = list("melee" = 0, "laser" = 0, "fire" = 40, "acid" = 10, "bomb" = 0)
 	cuttable = FALSE
 
 /obj/item/clothing/under/utility

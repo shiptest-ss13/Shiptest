@@ -5,17 +5,6 @@
 	name = "collectable hat"
 	desc = "A rare collectable hat."
 
-/obj/item/clothing/head/collectable/petehat
-	name = "ultra rare Pete's hat!"
-	desc = "It smells faintly of plasma."
-	icon_state = "petehat"
-
-/obj/item/clothing/head/collectable/xenom
-	name = "collectable xenomorph helmet!"
-	desc = "Hiss hiss hiss!"
-	clothing_flags = SNUG_FIT
-	icon_state = "xenom"
-
 /obj/item/clothing/head/collectable/chef
 	name = "collectable chef's hat"
 	desc = "A rare chef's hat meant for hat collectors!"
@@ -23,12 +12,6 @@
 	item_state = "chefhat"
 
 	dog_fashion = /datum/dog_fashion/head/chef
-
-/obj/item/clothing/head/collectable/paper
-	name = "collectable paper hat"
-	desc = "What looks like an ordinary paper hat is actually a rare and valuable collector's edition paper hat. Keep away from water, fire, and Curators."
-	icon_state = "paper"
-	dog_fashion = /datum/dog_fashion/head
 
 /obj/item/clothing/head/collectable/tophat
 	name = "collectable top hat"
@@ -64,12 +47,6 @@
 	item_state = "welding"
 	clothing_flags = SNUG_FIT
 
-/obj/item/clothing/head/collectable/slime
-	name = "collectable slime hat"
-	desc = "Just like a real brain slug!"
-	icon_state = "headslime"
-	clothing_flags = SNUG_FIT
-
 /obj/item/clothing/head/collectable/flatcap
 	name = "collectable flat cap"
 	desc = "A collectible laborer's flat cap! Smells like No. 9 coal..."
@@ -91,13 +68,6 @@
 
 	dog_fashion = /datum/dog_fashion/head/kitty
 
-/obj/item/clothing/head/collectable/rabbitears
-	name = "collectable rabbit ears"
-	desc = "Not as lucky as the feet!"
-	icon_state = "bunny"
-
-	dog_fashion = /datum/dog_fashion/head/rabbit
-
 /obj/item/clothing/head/collectable/wizard
 	name = "collectable wizard's hat"
 	desc = "NOTE: Any magical powers gained from wearing this hat are purely coincidental."
@@ -111,16 +81,6 @@
 	icon_state = "hardhat_standard"
 	dog_fashion = /datum/dog_fashion/head
 
-/obj/item/clothing/head/collectable/HoS
-	name = "collectable HoS hat"
-	desc = "Now you too can beat prisoners, set silly sentences, and arrest for no reason!"
-	icon_state = "hoscap"
-
-/obj/item/clothing/head/collectable/HoP
-	name = "collectable HoP hat"
-	desc = "It's your turn to demand excessive paperwork, signatures, stamps, and hire more clowns! Papers, please!"
-	icon_state = "hopcap_nt"
-	dog_fashion = /datum/dog_fashion/head/head_of_personnel
 
 /obj/item/clothing/head/collectable/thunderdome
 	name = "collectable Thunderdome helmet"

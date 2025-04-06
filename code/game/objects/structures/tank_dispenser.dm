@@ -28,10 +28,10 @@
 /obj/structure/tank_dispenser/update_overlays()
 	. = ..()
 	switch(oxygentanks)
-		if(1 to 3)
+		if(1 to 4)
 			. += "oxygen-[oxygentanks]"
-		if(4 to TANK_DISPENSER_CAPACITY)
-			. += "oxygen-4"
+		if(5 to TANK_DISPENSER_CAPACITY)
+			. += "oxygen-5"
 	switch(plasmatanks)
 		if(1 to 4)
 			. += "plasma-[plasmatanks]"

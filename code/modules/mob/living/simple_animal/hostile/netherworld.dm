@@ -14,8 +14,7 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	faction = list("nether")
 	speak_emote = list("screams")
-	gold_core_spawnable = HOSTILE_SPAWN
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	var/phaser = TRUE
@@ -127,6 +126,7 @@
 	deathmessage = "wails as its form turns into a pulpy mush."
 	deathsound = 'sound/voice/hiss6.ogg'
 	phaser = FALSE
+	var/sound_prob = 1
 
 /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	faction = list("mining")
@@ -148,7 +148,7 @@
 	..()
 	if(stat)
 		return
-	if(prob(10))
+	if(prob(sound_prob))
 		var/chosen_sound = pick(migo_sounds)
 		playsound(src, chosen_sound, 50, TRUE)
 
@@ -158,7 +158,6 @@
 	icon_state = "blank-body"
 	icon_living = "blank-body"
 	icon_dead = "blank-dead"
-	gold_core_spawnable = NO_SPAWN
 	health = 100
 	maxHealth = 100
 	melee_damage_lower = 5
@@ -167,48 +166,3 @@
 	attack_verb_simple = "punch"
 	deathmessage = "falls apart into a fine dust."
 	phaser = FALSE
-
-/obj/structure/spawner/nether
-	name = "netherworld link"
-	desc = null //see examine()
-	icon_state = "nether"
-	max_integrity = 50
-	spawn_time = 600 //1 minute
-	max_mobs = 15
-	spawn_text = "crawls through"
-	mob_types = list(/mob/living/simple_animal/hostile/netherworld/migo, /mob/living/simple_animal/hostile/netherworld, /mob/living/simple_animal/hostile/netherworld/blankbody)
-	faction = list("nether")
-
-/obj/structure/spawner/nether/Initialize()
-	.=..()
-	START_PROCESSING(SSprocessing, src)
-
-/obj/structure/spawner/nether/examine(mob/user)
-	. = ..()
-	if(isskeleton(user) || iszombie(user))
-		. += "A direct link to another dimension full of creatures very happy to see you. <span class='nicegreen'>You can see your house from here!</span>"
-	else
-		. += "A direct link to another dimension full of creatures not very happy to see you. <span class='warning'>Entering the link would be a very bad idea.</span>"
-
-/obj/structure/spawner/nether/attack_hand(mob/user)
-	. = ..()
-	if(isskeleton(user) || iszombie(user))
-		to_chat(user, "<span class='notice'>You don't feel like going home yet...</span>")
-	else
-		user.visible_message("<span class='warning'>[user] is violently pulled into the link!</span>", \
-							"<span class='userdanger'>Touching the portal, you are quickly pulled through into a world of unimaginable horror!</span>")
-		contents.Add(user)
-
-/obj/structure/spawner/nether/process()
-	for(var/mob/living/M in contents)
-		if(M)
-			playsound(src, 'sound/magic/demon_consume.ogg', 50, TRUE)
-			M.adjustBruteLoss(60)
-			new /obj/effect/gibspawner/generic(get_turf(M), M)
-			if(M.stat == DEAD)
-				var/mob/living/simple_animal/hostile/netherworld/blankbody/blank
-				blank = new(loc)
-				blank.name = "[M]"
-				blank.desc = "It's [M], but [M.p_their()] flesh has an ashy texture, and [M.p_their()] face is featureless save an eerie smile."
-				src.visible_message("<span class='warning'>[M] reemerges from the link!</span>")
-				qdel(M)

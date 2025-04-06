@@ -18,7 +18,10 @@
 	open_sound_volume = 35
 	close_sound_volume = 50
 	drag_slowdown = 0
+	pass_flags_self = LETPASSCLICKS
 	var/obj/item/paper/fluff/jobs/cargo/manifest/manifest
+	var/shelve = FALSE
+	var/shelve_range = 0
 
 /obj/structure/closet/crate/Initialize()
 	. = ..()
@@ -64,6 +67,9 @@
 	if(istype(drop_atom, /turf/open) && istype(loc, /obj/structure/crate_shelf) && user.Adjacent(drop_atom))
 		var/obj/structure/crate_shelf/shelf = loc
 		return shelf.unload(src, user, drop_atom) // If we're being dropped onto a turf, and we're inside of a crate shelf, unload.
+	if(istype(drop_atom, /obj/structure) && istype(loc, /obj/structure/crate_shelf) && user.Adjacent(drop_atom) && !drop_atom.density)
+		var/obj/structure/crate_shelf/shelf = loc
+		return shelf.unload(src, user, drop_atom.loc) // If we're being dropped onto a turf, and we're inside of a crate shelf, unload.
 	if(istype(drop_atom, /obj/structure/crate_shelf) && isturf(loc) && user.Adjacent(src))
 		var/obj/structure/crate_shelf/shelf = drop_atom
 		return shelf.load(src, user) // If we're being dropped onto a crate shelf, and we're in a turf, load.
@@ -293,3 +299,21 @@
 		new /obj/item/clothing/mask/breath(src)
 	for(var/i in 1 to 3)
 		new /obj/item/tank/internals/oxygen(src)
+
+/obj/structure/closet/crate/cyborg
+	name = "Cyborg Construction Crate"
+	desc = "A crate containing the parts to build a cyborg frame."
+	icon_state = "scicrate"
+
+/obj/structure/closet/crate/cyborg/PopulateContents()
+	. = ..()
+	new /obj/item/bodypart/l_arm/robot(src)
+	new /obj/item/bodypart/r_arm/robot(src)
+	new /obj/item/bodypart/leg/left/robot(src)
+	new /obj/item/bodypart/leg/right/robot(src)
+	new /obj/item/bodypart/chest/robot(src)
+	new /obj/item/bodypart/head/robot(src)
+	new /obj/item/robot_suit(src)
+	new /obj/item/stock_parts/cell/high(src)
+	for(var/i in 1 to 2)
+		new /obj/item/assembly/flash/handheld(src)

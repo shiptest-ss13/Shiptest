@@ -7,7 +7,10 @@
 	load_sound = null
 	fire_sound = 'sound/weapons/bowfire.ogg'
 	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/internal/bow
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/bow
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/bow,
+	)
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	force = 15
 	attack_verb = list("whipped", "cracked")

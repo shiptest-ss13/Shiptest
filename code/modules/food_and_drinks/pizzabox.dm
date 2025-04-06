@@ -28,7 +28,7 @@
 	var/bomb_defused = TRUE // If the bomb is inert.
 	var/bomb_timer = 1 // How long before blowing the bomb.
 	var/const/BOMB_TIMER_MIN = 1
-	var/const/BOMB_TIMER_MAX = 10
+	var/const/BOMB_TIMER_MAX = 20
 
 /obj/item/pizzabox/Initialize()
 	. = ..()
@@ -96,7 +96,7 @@
 		. += tag_overlay
 
 /obj/item/pizzabox/worn_overlays(isinhands, icon_file)
-	. = list()
+	. = ..()
 	var/current_offset = 2
 	if(isinhands)
 		for(var/V in boxes) //add EXTRA BOX per box
@@ -220,10 +220,10 @@
 		to_chat(user, "<span class='warning'>That's not a pizza!</span>")
 	..()
 
-/obj/item/pizzabox/process()
+/obj/item/pizzabox/process(seconds_per_tick)
 	if(bomb_active && !bomb_defused && (bomb_timer > 0))
 		playsound(loc, 'sound/items/timer.ogg', 50, FALSE)
-		bomb_timer--
+		bomb_timer -= seconds_per_tick
 	if(bomb_active && !bomb_defused && (bomb_timer <= 0))
 		if(bomb in src)
 			bomb.detonate()
@@ -308,49 +308,3 @@
 	pizza = new /obj/item/reagent_containers/food/snacks/pizza/pineapple(src)
 	boxtag = "Honolulu Chew"
 
-//An anomalous pizza box that, when opened, produces the opener's favorite kind of pizza.
-/obj/item/pizzabox/infinite
-	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF //hard to destroy
-	can_open_on_fall = FALSE
-	var/list/pizza_types = list(
-		/obj/item/reagent_containers/food/snacks/pizza/meat = 1,
-		/obj/item/reagent_containers/food/snacks/pizza/mushroom = 1,
-		/obj/item/reagent_containers/food/snacks/pizza/margherita = 1,
-		/obj/item/reagent_containers/food/snacks/pizza/sassysage = 0.8,
-		/obj/item/reagent_containers/food/snacks/pizza/vegetable = 0.8,
-		/obj/item/reagent_containers/food/snacks/pizza/pineapple = 0.5,
-		/obj/item/reagent_containers/food/snacks/pizza/donkpocket = 0.3,
-		/obj/item/reagent_containers/food/snacks/pizza/dank = 0.1) //pizzas here are weighted by chance to be someone's favorite
-	var/static/list/pizza_preferences
-
-/obj/item/pizzabox/infinite/Initialize()
-	. = ..()
-	if(!pizza_preferences)
-		pizza_preferences = list()
-
-/obj/item/pizzabox/infinite/examine(mob/user)
-	. = ..()
-	if(isobserver(user))
-		. += "<span class='deadsay'>This pizza box is anomalous, and will produce infinite pizza.</span>"
-
-/obj/item/pizzabox/infinite/attack_self(mob/living/user)
-	QDEL_NULL(pizza)
-	if(ishuman(user))
-		attune_pizza(user)
-	. = ..()
-
-/obj/item/pizzabox/infinite/proc/attune_pizza(mob/living/carbon/human/noms) //tonight on "proc names I never thought I'd type"
-	if(!pizza_preferences[noms.ckey])
-		pizza_preferences[noms.ckey] = pickweight(pizza_types)
-		if(noms.has_quirk(/datum/quirk/pineapple_liker))
-			pizza_preferences[noms.ckey] = /obj/item/reagent_containers/food/snacks/pizza/pineapple
-		else if(noms.has_quirk(/datum/quirk/pineapple_hater))
-			var/list/pineapple_pizza_liker = pizza_types.Copy()
-			pineapple_pizza_liker -= /obj/item/reagent_containers/food/snacks/pizza/pineapple
-			pizza_preferences[noms.ckey] = pickweight(pineapple_pizza_liker)
-		else if(noms.mind && noms.mind.assigned_role == "Botanist")
-			pizza_preferences[noms.ckey] = /obj/item/reagent_containers/food/snacks/pizza/dank
-
-	var/obj/item/pizza_type = pizza_preferences[noms.ckey]
-	pizza = new pizza_type (src)
-	pizza.foodtype = noms.dna.species.liked_food //it's our favorite!

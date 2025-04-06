@@ -35,7 +35,7 @@
 	var/list/enemy_roles = list()
 	/// If enemy_roles was set, this is the amount of enemy job workers needed per threat_level range (0-10,10-20,etc) IMPORTANT: DOES NOT WORK ON ROUNDSTART RULESETS.
 	var/required_enemies = list(1,1,0,0,0,0,0,0,0,0)
-	/// The rule needs this many candidates (post-trimming) to be executed (example: Cult needs 4 players at round start)
+	/// The rule needs this many candidates (post-trimming) to be executed
 	var/required_candidates = 0
 	/// 1 -> 9, probability for this rule to be picked against other rules
 	var/weight = 5

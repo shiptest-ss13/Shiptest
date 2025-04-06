@@ -79,7 +79,6 @@
 	name = "Groundhog Day"
 	begin_day = 2
 	begin_month = FEBRUARY
-	drone_hat = /obj/item/clothing/head/helmet/space/chronos
 
 /datum/holiday/groundhog/getStationPrefix()
 	return pick("Deja Vu") //I have been to this place before
@@ -571,7 +570,6 @@
 
 /datum/holiday/easter
 	name = EASTER
-	drone_hat = /obj/item/clothing/head/rabbitears
 	var/const/days_early = 1 //to make editing the holiday easier
 	var/const/days_extra = 1
 

@@ -15,15 +15,21 @@
 	var/reason
 	var/datum/supply_pack/pack
 	var/datum/bank_account/paying_account
+	var/datum/overmap/outpost/ordering_outpost
 
-/datum/supply_order/New(datum/supply_pack/pack, orderer, orderer_rank, orderer_ckey, reason, paying_account)
-	id = SSshuttle.ordernum++
+/datum/supply_order/New(datum/supply_pack/pack, orderer, orderer_rank, orderer_ckey, reason, paying_account, ordering_outpost)
 	src.pack = pack
 	src.orderer = orderer
 	src.orderer_rank = orderer_rank
 	src.orderer_ckey = orderer_ckey
 	src.reason = reason
 	src.paying_account = paying_account
+	src.ordering_outpost = ordering_outpost
+	if(src.ordering_outpost)
+		id = src.ordering_outpost.ordernum++
+	if(pack)
+		SSblackbox.record_feedback("nested tally", "crate_ordered", 1, list(pack.name, "amount"))
+		SSblackbox.record_feedback("nested tally", "crate_ordered", pack.cost, list(pack.name, "cost"))
 
 /datum/supply_order/proc/generateRequisition(turf/T)
 	var/obj/item/paper/requisition_paper = new(T)

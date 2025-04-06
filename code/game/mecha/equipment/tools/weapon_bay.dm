@@ -1,6 +1,6 @@
 /obj/item/mecha_parts/concealed_weapon_bay
 	name = "concealed weapon bay"
-	desc = "A compartment that allows a non-combat mecha to equip one weapon while hiding the weapon from plain sight."
+	desc = "A compartment that allows a civilian exosuit to equip one weapon while hiding the weapon from plain sight."
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_weapon_bay"
 

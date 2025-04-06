@@ -36,7 +36,7 @@
 	response_harm_simple = "punch through"
 	unsuitable_atmos_damage = 0
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0) //I don't know how you'd apply those, but revenants no-sell them anyway.
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = INFINITY
 	harm_intent_damage = 0
@@ -175,9 +175,6 @@
 
 /mob/living/simple_animal/revenant/ex_act(severity, target)
 	return 1 //Immune to the effects of explosions.
-
-/mob/living/simple_animal/revenant/blob_act(obj/structure/blob/B)
-	return //blah blah blobs aren't in tune with the spirit world, or something.
 
 /mob/living/simple_animal/revenant/singularity_act()
 	return //don't walk into the singularity expecting to find corpses, okay?

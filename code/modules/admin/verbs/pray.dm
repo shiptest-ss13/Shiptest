@@ -27,17 +27,6 @@
 		prayer_type = "CHAPLAIN PRAYER"
 		if(GLOB.deity)
 			deity = GLOB.deity
-	else if(iscultist(usr))
-		cross.icon_state = "tome"
-		font_color = "red"
-		prayer_type = "CULTIST PRAYER"
-		deity = "Nar'Sie"
-	else if(isliving(usr))
-		var/mob/living/L = usr
-		if(HAS_TRAIT(L, TRAIT_SPIRITUAL))
-			cross.icon_state = "holylight"
-			font_color = "blue"
-			prayer_type = "SPIRITUAL PRAYER"
 	else if((usr.faction && ("roumain" in usr.faction)))
 		font_color = "purple"
 		prayer_type = "SRM PRAYER"

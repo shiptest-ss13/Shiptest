@@ -46,11 +46,15 @@
 	return ..()
 
 /obj/machinery/navbeacon/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	..()
+	if(!codes)
+		return
+	if(!codes["patrol"])
+		return
 	if(previous_virtual_z)
 		LAZYREMOVEASSOC(GLOB.navbeacons, "[previous_virtual_z]", src)
 	if(new_virtual_z)
 		LAZYADDASSOCLIST(GLOB.navbeacons, "[new_virtual_z]", src)
-	..()
 
 // set the transponder codes assoc list from codes_txt
 /obj/machinery/navbeacon/proc/set_codes()
@@ -71,7 +75,10 @@
 			codes[e] = "1"
 
 /obj/machinery/navbeacon/proc/glob_lists_deregister()
-	LAZYREMOVE(GLOB.navbeacons["[virtual_z()]"], src)
+	if(!codes)
+		return
+	if(codes["patrol"])
+		LAZYREMOVE(GLOB.navbeacons["[virtual_z()]"], src)
 	GLOB.deliverybeacons -= src
 	GLOB.deliverybeacontags -= location
 	GLOB.wayfindingbeacons -= src

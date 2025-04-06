@@ -17,13 +17,10 @@
 #define ROLE_REV_SUCCESSFUL "Victorious Revolutionary"
 #define ROLE_ALIEN "Xenomorph"
 #define ROLE_PAI "pAI"
-#define ROLE_CULTIST "Cultist"
-#define ROLE_BLOB "Blob"
 #define ROLE_NINJA "Space Ninja"
 #define ROLE_MONKEY "Monkey"
 #define ROLE_ABDUCTOR "Abductor"
 #define ROLE_REVENANT "Revenant"
-#define ROLE_DEVIL "Devil"
 #define ROLE_BROTHER "Blood Brother"
 #define ROLE_BRAINWASHED "Brainwashed Victim"
 #define ROLE_OVERTHROW "Syndicate Mutineer" //Role removed, left here for safety.

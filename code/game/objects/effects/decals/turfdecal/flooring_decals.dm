@@ -2,19 +2,9 @@
 	layer = TURF_PLATING_DECAL_LAYER
 	icon_state = "corner_white"
 
-/obj/effect/turf_decal/corner/Initialize()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
-		color = "#[random_short_color()]"
-	. = ..()
-
 /obj/effect/turf_decal/trimline
 	layer = TURF_PLATING_DECAL_LAYER
 	icon_state = "trimline_box"
-
-/obj/effect/turf_decal/trimline/Initialize()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
-		color = "#[random_short_color()]"
-	. = ..()
 
 //forgive me for my sins
 #define TURF_DECAL_COLOR_HELPER(color_name, tile_color, tile_alpha)		\
@@ -126,6 +116,7 @@ TURF_DECAL_COLOR_HELPER(opaque/green, COLOR_GREEN_GRAY, 255)
 TURF_DECAL_COLOR_HELPER(opaque/lime, COLOR_PALE_GREEN_GRAY, 255)
 TURF_DECAL_COLOR_HELPER(opaque/yellow, COLOR_BROWN, 255)
 TURF_DECAL_COLOR_HELPER(opaque/beige, COLOR_BEIGE, 255)
+TURF_DECAL_COLOR_HELPER(opaque/tan, "#c59973", 255)
 TURF_DECAL_COLOR_HELPER(opaque/red, COLOR_RED_GRAY, 255)
 TURF_DECAL_COLOR_HELPER(opaque/bar, "#791500", 255)
 TURF_DECAL_COLOR_HELPER(opaque/pink, COLOR_PALE_RED_GRAY, 255)
@@ -144,6 +135,7 @@ TURF_DECAL_COLOR_HELPER(opaque/solgovblue, "#2d2a4e", 255)
 TURF_DECAL_COLOR_HELPER(opaque/solgovgold, "#eeac2e", 255)
 TURF_DECAL_COLOR_HELPER(opaque/syndiered, "#730622", 255)
 TURF_DECAL_COLOR_HELPER(opaque/inteqbrown, "#4b2a18", 255)
+TURF_DECAL_COLOR_HELPER(opaque/cybersunteal, "#4C9C9C", 255)
 
 //transparent
 TURF_DECAL_COLOR_HELPER(transparent/neutral, null, 75)
@@ -153,6 +145,7 @@ TURF_DECAL_COLOR_HELPER(transparent/green, COLOR_GREEN_GRAY, 140)
 TURF_DECAL_COLOR_HELPER(transparent/lime, COLOR_PALE_GREEN_GRAY, 140)
 TURF_DECAL_COLOR_HELPER(transparent/yellow, COLOR_BROWN, 140)
 TURF_DECAL_COLOR_HELPER(transparent/beige, COLOR_BEIGE, 140)
+TURF_DECAL_COLOR_HELPER(transparent/tan, "#c59973", 140)
 TURF_DECAL_COLOR_HELPER(transparent/red, COLOR_RED_GRAY, 140)
 TURF_DECAL_COLOR_HELPER(transparent/bar, "#791500", 130)
 TURF_DECAL_COLOR_HELPER(transparent/pink, COLOR_PALE_RED_GRAY, 140)
@@ -166,11 +159,12 @@ TURF_DECAL_COLOR_HELPER(transparent/lightgrey, "#a8b2b6", 140)
 TURF_DECAL_COLOR_HELPER(transparent/bottlegreen, "#57967f", 140)
 TURF_DECAL_COLOR_HELPER(transparent/ntblue, "#283674", 140)
 TURF_DECAL_COLOR_HELPER(transparent/nsorange, "#FF6600", 140)
-TURF_DECAL_COLOR_HELPER(opaque/vired, "#d40000", 140)
+TURF_DECAL_COLOR_HELPER(transparent/vired, "#d40000", 140)
 TURF_DECAL_COLOR_HELPER(transparent/solgovblue, "#2d2a4e", 140)
 TURF_DECAL_COLOR_HELPER(transparent/solgovgold, "#eeac2e", 140)
 TURF_DECAL_COLOR_HELPER(transparent/syndiered, "#730622", 140)
 TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
+TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 
 /obj/effect/turf_decal/spline/plain
 	icon_state = "spline_plain"
@@ -384,6 +378,18 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 /obj/effect/turf_decal/industrial/loading/white
 	detail_color = COLOR_WHITE
 	detail_overlay = "loadingarea_stripes"
+
+/obj/effect/turf_decal/industrial/loading/stripes
+	name = "loading area stripes"
+	icon_state = "loadingarea_stripes"
+	color = COLOR_WARNING
+	detail_overlay = null
+
+/obj/effect/turf_decal/industrial/loading/stripes/red
+	color = COLOR_RED_GRAY
+
+/obj/effect/turf_decal/industrial/loading/stripes/white
+	color = COLOR_WHITE
 
 /obj/effect/turf_decal/industrial/caution
 	icon_state = "caution"

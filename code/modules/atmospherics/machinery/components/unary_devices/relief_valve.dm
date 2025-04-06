@@ -29,7 +29,7 @@
 
 	icon_state = "relief_valve-e-blown"
 
-/obj/machinery/atmospherics/components/unary/relief_valve/process_atmos()
+/obj/machinery/atmospherics/components/unary/relief_valve/process_atmos(seconds_per_tick)
 	..()
 
 	if(!is_operational)

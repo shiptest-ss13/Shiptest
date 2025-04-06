@@ -38,7 +38,7 @@
 	core = new /obj/item/nuke_core(src)
 	STOP_PROCESSING(SSobj, core)
 	update_appearance()
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	previous_level = get_security_level()
 
 /obj/machinery/nuclearbomb/Destroy()
@@ -46,7 +46,7 @@
 	if(!exploding)
 		// If we're not exploding, set the alert level back to normal
 		set_safety()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	GLOB.nuke_list -= src
 	QDEL_NULL(countdown)
 	QDEL_NULL(core)
@@ -227,7 +227,7 @@
 			lights = "lights-exploding"
 	add_overlay(lights)
 
-/obj/machinery/nuclearbomb/process()
+/obj/machinery/nuclearbomb/process(seconds_per_tick)
 	if(timing && !exploding)
 		if(detonation_timer < world.time)
 			explode()
@@ -436,11 +436,6 @@
 	else
 		. = timer_set
 
-/obj/machinery/nuclearbomb/blob_act(obj/structure/blob/B)
-	if(exploding)
-		return
-	qdel(src)
-
 /obj/machinery/nuclearbomb/zap_act(power, zap_flags)
 	..()
 	if(zap_flags & ZAP_MACHINE_EXPLOSIVE)
@@ -478,8 +473,6 @@
 			off_station = NUKE_NEAR_MISS
 		if((bomb_location.x < (128-NUKERANGE)) || (bomb_location.x > (128+NUKERANGE)) || (bomb_location.y < (128-NUKERANGE)) || (bomb_location.y > (128+NUKERANGE)))
 			off_station = NUKE_NEAR_MISS
-	else if(bomb_location.onSyndieBase())
-		off_station = NUKE_SYNDICATE_BASE
 	else
 		off_station = NUKE_MISS_STATION
 
@@ -529,6 +522,10 @@
 		to_chat(user, "<span class='notice'>[src] has had its plutonium core removed as a part of being decommissioned.</span>")
 		return TRUE
 	return ..()
+
+/obj/machinery/nuclearbomb/beer/empty/Initialize()
+	. = ..()
+	keg.reagent_id = null
 
 /obj/machinery/nuclearbomb/beer/actually_explode()
 	//Unblock roundend, we're not actually exploding.
@@ -610,7 +607,47 @@ This is here to make the tiles around the station mininuke change when it's arme
 
 /obj/item/disk/nuclear/Initialize()
 	. = ..()
-	AddElement(/datum/element/bed_tuckable, 6, -6, 0)
+	AddElement(/datum/element/bed_tuckable, 6, -6, 0, FALSE, FALSE)
+
+	if(!fake)
+		SSpoints_of_interest.make_point_of_interest(src)
+		last_disk_move = world.time
+		START_PROCESSING(SSobj, src)
+
+/obj/item/disk/nuclear/process(seconds_per_tick)
+	if(fake)
+		STOP_PROCESSING(SSobj, src)
+		CRASH("A fake nuke disk tried to call process(). Who the fuck and how the fuck")
+	var/turf/newturf = get_turf(src)
+
+	if(newturf && lastlocation == newturf)
+		/// How comfy is our disk?
+		var/disk_comfort_level = 0
+
+		//Go through and check for items that make disk comfy
+		for(var/obj/comfort_item in loc)
+			if(istype(comfort_item, /obj/item/bedsheet) || istype(comfort_item, /obj/structure/bed))
+				disk_comfort_level++
+
+		if(last_disk_move < world.time - 5000 && prob((world.time - 5000 - last_disk_move)*0.0001))
+			var/datum/round_event_control/operative/loneop = locate(/datum/round_event_control/operative) in SSevents.control
+			if(istype(loneop) && loneop.occurrences < loneop.max_occurrences)
+				loneop.weight += 1
+				if(loneop.weight % 5 == 0 && SSticker.totalPlayers > 1)
+					if(disk_comfort_level >= 2)
+						visible_message("<span class='notice'>[src] sleeps soundly. Sleep tight, disky.</span>")
+					message_admins("[src] is stationary in [ADMIN_VERBOSEJMP(newturf)]. The weight of Lone Operative is now [loneop.weight].")
+				log_game("[src] is stationary for too long in [loc_name(newturf)], and has increased the weight of the Lone Operative event to [loneop.weight].")
+
+	else
+		lastlocation = newturf
+		last_disk_move = world.time
+		var/datum/round_event_control/operative/loneop = locate(/datum/round_event_control/operative) in SSevents.control
+		if(istype(loneop) && loneop.occurrences < loneop.max_occurrences && prob(loneop.weight))
+			loneop.weight = max(loneop.weight - 1, 0)
+			if(loneop.weight % 5 == 0 && SSticker.totalPlayers > 1)
+				message_admins("[src] is on the move (currently in [ADMIN_VERBOSEJMP(newturf)]). The weight of Lone Operative is now [loneop.weight].")
+			log_game("[src] being on the move has reduced the weight of the Lone Operative event to [loneop.weight].")
 
 /obj/item/disk/nuclear/examine(mob/user)
 	. = ..()
@@ -620,24 +657,10 @@ This is here to make the tiles around the station mininuke change when it's arme
 	if(isobserver(user) || HAS_TRAIT(user.mind, TRAIT_DISK_VERIFIER))
 		. += "<span class='warning'>The serial numbers on [src] are incorrect.</span>"
 
-/obj/item/disk/nuclear/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/claymore/highlander) && !fake)
-		var/obj/item/claymore/highlander/H = I
-		if(H.nuke_disk)
-			to_chat(user, "<span class='notice'>Wait... what?</span>")
-			qdel(H.nuke_disk)
-			H.nuke_disk = null
-			return
-		user.visible_message("<span class='warning'>[user] captures [src]!</span>", "<span class='userdanger'>You've got the disk! Defend it with your life!</span>")
-		forceMove(H)
-		H.nuke_disk = src
-		return TRUE
-	return ..()
-
 /obj/item/disk/nuclear/Destroy(force=FALSE)
 	// respawning is handled in /obj/Destroy()
 	if(force)
-		GLOB.poi_list -= src
+		SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/item/disk/nuclear/fake

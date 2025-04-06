@@ -99,10 +99,6 @@
 		log_message("Attack by hulk. Attacker - [user].", LOG_MECHA, color="red")
 		log_combat(user, src, "punched", "hulk powers")
 
-/obj/mecha/blob_act(obj/structure/blob/B)
-	log_message("Attack by blob. Attacker - [B].", LOG_MECHA, color="red")
-	take_damage(30, BRUTE, "melee", 0, get_dir(src, B))
-
 /obj/mecha/attack_tk()
 	return
 
@@ -253,7 +249,7 @@
 				clearInternalDamage(MECHA_INT_SHORT_CIRCUIT)
 				to_chat(user, "<span class='notice'>You replace the fused wires.</span>")
 			else
-				to_chat(user, "<span class='warning'>You need two lengths of cable to fix this mech!</span>")
+				to_chat(user, "<span class='warning'>You need two lengths of cable to fix this exosuit!</span>")
 		return
 
 	if(istype(W, /obj/item/mecha_parts))
@@ -302,17 +298,19 @@
 		if(!W.use_tool(src, user, 0, volume=50, amount=1))
 			return
 		clearInternalDamage(MECHA_INT_TANK_BREACH)
-		to_chat(user, "<span class='notice'>You repair the damaged gas tank.</span>")
+		to_chat(user, span_notice("You repair the damaged gas tank."))
 		return
-	if(obj_integrity < max_integrity)
+	while(obj_integrity < max_integrity)
+		if(!do_after(user, 20, target= src))
+			return
 		if(!W.use_tool(src, user, 0, volume=50, amount=1))
 			return
-		user.visible_message("<span class='notice'>[user] repairs some damage to [name].</span>", "<span class='notice'>You repair some damage to [src].</span>")
-		obj_integrity += min(10, max_integrity-obj_integrity)
+		user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("You repair some damage to [src]."))
+		obj_integrity += min(10 * repair_multiplier, max_integrity-obj_integrity)
 		if(obj_integrity == max_integrity)
-			to_chat(user, "<span class='notice'>It looks to be fully repaired now.</span>")
-		return
-	to_chat(user, "<span class='warning'>The [name] is at full integrity!</span>")
+			to_chat(user, span_notice("It looks to be fully repaired now."))
+			return
+	to_chat(user, span_warning("The [name] is at full integrity!"))
 
 /obj/mecha/proc/mech_toxin_damage(mob/living/target)
 	playsound(src, 'sound/effects/spray2.ogg', 50, TRUE)

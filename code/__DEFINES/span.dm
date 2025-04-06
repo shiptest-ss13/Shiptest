@@ -73,6 +73,7 @@
 #define span_narsie(str) ("<span class='narsie'>" + str + "</span>")
 #define span_narsiesmall(str) ("<span class='narsiesmall'>" + str + "</span>")
 #define span_nicegreen(str) ("<span class='nicegreen'>" + str + "</span>")
+#define span_nicegreen_robot(str) ("<span class='nicegreen robot'>" + str + "</span>")
 #define span_notice(str) ("<span class='notice'>" + str + "</span>")
 #define span_noticealien(str) ("<span class='noticealien'>" + str + "</span>")
 #define span_ooc(str) ("<span class='ooc'>" + str + "</span>")
@@ -113,6 +114,7 @@
 #define span_unconscious(str) ("<span class='unconscious'>" + str + "</span>")
 #define span_userdanger(str) ("<span class='userdanger'>" + str + "</span>")
 #define span_warning(str) ("<span class='warning'>" + str + "</span>")
+#define span_warning_robot(str) ("<span class='warning robot'>" + str + "</span>")
 #define span_yell(str) ("<span class='yell'>" + str + "</span>")
 #define span_yellowteamradio(str) ("<span class='yellowteamradio'>" + str + "</span>")
 

@@ -5,7 +5,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 20
+	var/max_save_slots = 30
 
 	//non-preference stuff
 	var/muted = 0
@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/ooccolor = "#c43b23"
 	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones.
 	/// If we spawn an ERT as an admin and choose to spawn as the briefing officer, we'll be given this outfit
-	var/brief_outfit = /datum/outfit/centcom/commander
+	var/brief_outfit = /datum/outfit/job/nanotrasen/captain
 	var/enable_tips = TRUE
 	var/tip_delay = 500 //tip delay in milliseconds
 
@@ -215,6 +215,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///The outfit we currently want to preview on our character
 	var/datum/outfit/job/selected_outfit
 
+	///Someone thought we were nice! We get a little heart in OOC until we join the server past the below time (we can keep it until the end of the round otherwise)
+	var/hearted
+	///
+	var/hearted_until
+
+
+
 /datum/preferences/New(client/C)
 	parent = C
 
@@ -227,7 +234,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
-				max_save_slots = 30
+				max_save_slots = 50
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
@@ -862,7 +869,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					mutant_category = 0
 
 			if("Smoker" in all_quirks)
-				dat += "<h3>Smoker</h3>"
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+				dat += "<h3>Favorite Smokes</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=preferred_smoke_brand;task=input'>[preferred_smoke_brand]</a><BR>"
 
@@ -893,7 +902,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				mutant_category = 0
 			// end generic adjective
 
-			if("wings" in pref_species.default_features && GLOB.r_wings_list.len >1)
+			if(("wings" in pref_species.default_features) && GLOB.r_wings_list.len >1)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -1135,6 +1144,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(unlock_content || check_rights_for(user.client, R_ADMIN) || custom_ooc)
 					dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
 
+				if(hearted_until)
+					dat += "<a href='?_src_=prefs;preference=clear_heart'>Clear OOC Commend Heart</a><br>"
+
 			dat += "</td>"
 
 			if(user.client.holder)
@@ -1153,7 +1165,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Hide Prayers:</b> <a href = '?_src_=prefs;preference=toggle_prayers'>[(chat_toggles & CHAT_PRAYER)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Split Admin Tabs:</b> <a href = '?_src_=prefs;preference=toggle_split_admin_tabs'>[(toggles & SPLIT_ADMIN_TABS)?"Enabled":"Disabled"]</a><br>"
 				dat += "<b>Fast MC Refresh:</b> <a href = '?_src_=prefs;preference=toggle_fast_mc_refresh'>[(toggles & FAST_MC_REFRESH)?"Enabled":"Disabled"]</a><br>"
-				dat += "<b>Ignore Being Summoned as Cult Ghost:</b> <a href = '?_src_=prefs;preference=toggle_ignore_cult_ghost'>[(toggles & ADMIN_IGNORE_CULT_GHOST)?"Don't Allow Being Summoned":"Allow Being Summoned"]</a><br>"
 				dat += "<b>Briefing Officer Outfit:</b> <a href = '?_src_=prefs;preference=briefoutfit;task=input'>[brief_outfit]</a><br>"
 				if(CONFIG_GET(flag/allow_admin_asaycolor))
 					dat += "<br>"
@@ -1379,7 +1390,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					<font color='[font_color]'>[initial(quirk_datum.name)]</font> - [initial(quirk_datum.desc)]<br>"
 		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
 
-	var/datum/browser/popup = new(user, "mob_trait", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/popup = new(user, "mob_trait", "<div align='center'>Quirk Preferences</div>", 900, 650) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -1435,7 +1446,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		balance -= initial(quirk_type.value)
 		switch(change_type)
 			if("species")
-				if((quirk_name in SSquirks.species_blacklist) && (pref_species.id in SSquirks.species_blacklist[quirk_name]))
+				if((quirk_name in SSquirks.species_blacklist) && (target_species.id in SSquirks.species_blacklist[quirk_name]))
 					all_quirks_new -= quirk_name
 					balance += initial(quirk_type.value)
 			if("mood")
@@ -2117,11 +2128,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						pda_color = pickedPDAColor
 
 				if("phobia")
-					var/phobiaType = input(user, "What are you scared of?", "Character Preference", phobia) as null|anything in SStraumas.phobia_types
+					var/phobiaType = input(user, "What is your character scared of?", "Quirk Preference", phobia) as null|anything in SStraumas.phobia_types
 					if(phobiaType)
 						phobia = phobiaType
+
 				if("preferred_smoke_brand")
-					var/smokeBrand = input(user, "What cigarettes are your favorite?", "Character Preference", preferred_smoke_brand) as null|anything in GLOB.valid_smoke_types
+					var/smokeBrand = input(user, "What are your character's favorite smokes?", "Quirk Preference", preferred_smoke_brand) as null|anything in GLOB.valid_smoke_types
 					if(smokeBrand)
 						preferred_smoke_brand = smokeBrand
 
@@ -2293,8 +2305,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					toggles ^= DEADMIN_POSITION_SECURITY
 				if("toggle_deadmin_silicon")
 					toggles ^= DEADMIN_POSITION_SILICON
-				if("toggle_ignore_cult_ghost")
-					toggles ^= ADMIN_IGNORE_CULT_GHOST
 
 				if("be_special")
 					var/be_special_type = href_list["be_special_type"]
@@ -2432,6 +2442,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						current_tab = text2num(href_list["tab"])
 						if(current_tab == 2)
 							show_loadout = TRUE
+
+				if("clear_heart")
+					hearted = FALSE
+					hearted_until = null
+					to_chat(user, "<span class='notice'>OOC Commendation Heart disabled</span>")
+					save_preferences()
+
 
 	ShowChoices(user)
 	return 1

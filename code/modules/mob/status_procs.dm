@@ -4,8 +4,20 @@
 // eye damage, eye_blind, eye_blurry, druggy, TRAIT_BLIND trait, and TRAIT_NEARSIGHT trait.
 
 ///Set the jitter of a mob
-/mob/proc/Jitter(amount)
+/mob/proc/set_jitter(amount)
 	jitteriness = max(jitteriness,amount,0)
+	return TRUE
+
+/mob/proc/adjust_jitter(amount, min = 0, max = 1000)
+	if((jitteriness+amount > max) && jitteriness+amount <= max*1.6)
+		jitteriness = max
+		return TRUE
+	if(jitteriness+amount < min && jitteriness+amount < min * 1.6)
+		jitteriness = min
+		return TRUE
+	jitteriness = clamp(jitteriness+amount, 0, max)
+	return TRUE
+
 
 /**
  * Set the dizzyness of a mob to a passed in amount
@@ -64,13 +76,11 @@
 		overlay_fullscreen("blind", /atom/movable/screen/fullscreen/blind)
 		// You are blind why should you be able to make out details like color, only shapes near you
 		add_client_colour(/datum/client_colour/monochrome/blind)
-		ADD_TRAIT(src, TRAIT_EYESCLOSED, STAT_TRAIT)
 		update_body()
 	else
 		clear_alert("blind")
 		clear_fullscreen("blind")
 		remove_client_colour(/datum/client_colour/monochrome/blind)
-		REMOVE_TRAIT(src, TRAIT_EYESCLOSED, STAT_TRAIT)
 		update_body()
 
 

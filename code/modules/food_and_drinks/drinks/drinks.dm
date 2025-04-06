@@ -233,7 +233,7 @@
 /obj/item/reagent_containers/food/drinks/ice
 	name = "ice cup"
 	desc = "Careful, cold ice, do not chew."
-	custom_price = 15
+	custom_price = 5
 	icon_state = "coffee"
 	list_reagents = list(/datum/reagent/consumable/ice = 30)
 	spillable = TRUE
@@ -268,21 +268,21 @@
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
 	resistance_flags = FREEZE_PROOF
-	custom_price = 120
+	custom_price = 5
 
 /obj/item/reagent_containers/food/drinks/cafelatte
 	name = "cafe latte"
 	desc = "A nice, strong and refreshing beverage while you're reading."
 	icon_state = "cafe_latte"
 	list_reagents = list(/datum/reagent/consumable/cafe_latte = 30)
-	custom_price = 200
+	custom_price = 5
 
 /obj/item/reagent_containers/food/drinks/soylatte
 	name = "soy latte"
 	desc = "A nice and refreshing beverage while you're reading."
 	icon_state = "soy_latte"
 	list_reagents = list(/datum/reagent/consumable/soy_latte = 30)
-	custom_price = 200
+	custom_price = 5
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
@@ -291,7 +291,7 @@
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 15, /datum/reagent/consumable/sodiumchloride = 3)
 	foodtype = GRAIN
 	isGlass = FALSE
-	custom_price = 95
+	custom_price = 5
 
 /obj/item/reagent_containers/food/drinks/waterbottle
 	name = "Ryuunosuke Reserve" //we still have to find a way to make multiple variants as per the plan
@@ -305,7 +305,7 @@
 	amount_per_transfer_from_this = 10
 	fill_icon_thresholds = list(0, 10, 25, 50, 75, 80, 90)
 	isGlass = FALSE
-	custom_price = 30
+	custom_price = 8
 	can_have_cap = TRUE
 	// The 2 bottles have separate cap overlay icons because if the bottle falls over while bottle flipping the cap stays fucked on the moved overlay
 	cap_icon_state = "bottle_cap_small"
@@ -373,8 +373,8 @@
 	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
-	foodtype = GRAIN | ALCOHOL
-	custom_price = 60
+	foodtype = SUGAR | ALCOHOL
+	custom_price = 10
 
 /obj/item/reagent_containers/food/drinks/beer/light
 	name = "Carp Lite"
@@ -388,7 +388,7 @@
 	item_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 	foodtype = GRAIN | ALCOHOL
-	custom_price = 60
+	custom_price = 15
 
 /obj/item/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
@@ -512,7 +512,7 @@
 /obj/item/reagent_containers/food/drinks/flask
 	name = "flask"
 	desc = "Every good spacer knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
-	custom_price = 200
+	custom_price = 20
 	icon_state = "flask"
 	custom_materials = list(/datum/material/iron=250)
 	volume = 60
@@ -554,22 +554,9 @@
 	reagent_flags = NONE
 	spillable = FALSE
 	isGlass = FALSE
-	custom_price = 45
+	custom_price = 5
 	var/pierced = FALSE
 	obj_flags = CAN_BE_HIT
-
-
-/obj/item/reagent_containers/food/drinks/soda_cans/random/Initialize()
-	..()
-	var/T = pick(subtypesof(/obj/item/reagent_containers/food/drinks/soda_cans) - /obj/item/reagent_containers/food/drinks/soda_cans/random)
-	new T(loc)
-	return INITIALIZE_HINT_QDEL
-
-/obj/item/reagent_containers/food/drinks/soda_cans/random/Initialize()
-	..()
-	var/T = pick(subtypesof(/obj/item/reagent_containers/food/drinks/soda_cans) - /obj/item/reagent_containers/food/drinks/soda_cans/random)
-	new T(loc)
-	return INITIALIZE_HINT_QDEL
 
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
@@ -593,6 +580,7 @@
 			broh.losebreath++
 			switch(broh.losebreath)
 				if(-INFINITY to 0)
+					EMPTY_BLOCK_GUARD
 				if(1 to 2)
 					if(prob(30))
 						user.visible_message("<b>[broh]</b>'s eyes water as [broh.p_they()] chug the can of [src]!")
@@ -762,7 +750,7 @@
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
 	icon = 'icons/obj/food/ration.dmi'
-	icon_state = "ration_package"
+	icon_state = "ration_drink"
 	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	in_container = TRUE
@@ -773,7 +761,7 @@
 
 /obj/item/reagent_containers/food/drinks/ration/proc/open_ration(mob/user)
 	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
-	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	playsound(user.loc, 'sound/items/glass_cap.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	spillable = TRUE
 

@@ -370,17 +370,6 @@
 	result = /obj/item/reagent_containers/food/snacks/donkpocket/pizza
 	subcategory = CAT_PASTRY
 
-/datum/crafting_recipe/food/donkpocket/honk
-	time = 15
-	name = "Honk-Pocket"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/reagent_containers/food/snacks/grown/banana = 1,
-		/datum/reagent/consumable/sugar = 3
-	)
-	result = /obj/item/reagent_containers/food/snacks/donkpocket/honk
-	subcategory = CAT_PASTRY
-
 /datum/crafting_recipe/food/donkpocket/berry
 	time = 15
 	name = "Berry-pocket"
@@ -396,8 +385,7 @@
 	name = "Gondola-pocket"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/reagent_containers/food/snacks/meatball = 1,
-		/datum/reagent/tranquility = 5
+		/obj/item/reagent_containers/food/snacks/meatball = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/donkpocket/gondola
 	subcategory = CAT_PASTRY
@@ -474,7 +462,7 @@
 	reqs = list(
 		/datum/reagent/consumable/eggyolk = 5,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1
+		/obj/item/food/bread/plain = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/khachapuri
 	subcategory = CAT_PASTRY
@@ -576,7 +564,7 @@
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
 		/obj/item/reagent_containers/food/snacks/grown/bluecherries = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/bluecherrycupcake
+	result = /obj/item/reagent_containers/food/snacks/cherrycupcake/blue
 	subcategory = CAT_PASTRY
 
 /datum/crafting_recipe/food/honeybun

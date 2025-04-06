@@ -54,6 +54,9 @@ export const CameraConsole = (props, context) => {
       </div>
       <div className="CameraConsole__right">
         <div className="CameraConsole__toolbar">
+          <b>Network: </b>
+          {data.network || '—'}
+          <b>{'\n'}</b>
           <b>Camera: </b>
           {(activeCamera && activeCamera.name) || '—'}
         </div>
@@ -100,7 +103,22 @@ export const CameraConsoleContent = (props, context) => {
         <Input
           autoFocus
           fluid
-          mt={1}
+          m={1}
+          placeholder="Enter a network"
+          onInput={(e, value) =>
+            act('set_temp_network', {
+              name: value,
+            })
+          }
+        />
+        <Button icon="add" ml={1} onClick={() => act('set_network')} />
+        <Button icon="refresh" onClick={() => act('refresh')} />
+      </Flex.Item>
+      <Flex.Item>
+        <Input
+          autoFocus
+          fluid
+          m={1}
           placeholder="Search for a camera"
           onInput={(e, value) => setSearchText(value)}
         />

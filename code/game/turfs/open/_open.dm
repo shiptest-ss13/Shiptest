@@ -155,7 +155,7 @@
 	baseturfs = /turf/open/indestructible/airblock
 
 /turf/open/Initalize_Atmos(times_fired)
-	if(!istype(air,/datum/gas_mixture/turf))
+	if(!air)
 		air = new(2500, src)
 	air.copy_from_turf(src)
 	update_air_ref(planetary_atmos ? AIR_REF_PLANETARY_TURF : AIR_REF_OPEN_TURF)
@@ -267,7 +267,7 @@
 		pulse_strength = min(pulse_strength,air.get_moles(GAS_CO2)*1000,air.get_moles(GAS_O2)*2000) //Ensures matter is conserved properly
 		air.set_moles(GAS_CO2, max(air.get_moles(GAS_CO2)-(pulse_strength/1000),0))
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))
-		air.adjust_moles(GAS_PLUOXIUM, pulse_strength/4000)
+		air.adjust_moles(GAS_O3, pulse_strength/4000)
 
 /turf/open/IgniteTurf(power, fire_color)
 	if(turf_fire)

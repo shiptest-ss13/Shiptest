@@ -16,7 +16,8 @@
 	var/last_progress = 0
 	///Variable to ensure smooth visual stacking on multiple progress bars.
 	var/listindex = 0
-
+	///The type of our last value for bar_loc, for debugging
+	var/location_type
 
 /datum/progressbar/New(mob/User, goal_number, atom/target)
 	. = ..()
@@ -32,6 +33,7 @@
 		return
 	goal = goal_number
 	bar_loc = target
+	location_type = bar_loc.type
 	bar = image('icons/effects/progressbar.dmi', bar_loc, "prog_bar_0", HUD_LAYER)
 	bar.plane = ABOVE_HUD_PLANE
 	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
@@ -135,6 +137,89 @@
 
 	QDEL_IN(src, PROGRESSBAR_ANIMATION_TIME)
 
+///Progress bars are very generic, and what hangs a ref to them depends heavily on the context in which they're used
+///So let's make hunting harddels easier yeah?
+/datum/progressbar/dump_harddel_info()
+	return "Owner's type: [location_type]"
+
+
+/datum/world_progressbar
+	///The progress bar visual element.
+	var/obj/effect/abstract/progbar/bar
+	///The atom who "created" the bar
+	var/atom/movable/owner
+	///Effectively the number of steps the progress bar will need to do before reaching completion.
+	var/goal = 1
+	///Control check to see if the progress was interrupted before reaching its goal.
+	var/last_progress = 0
+	///Variable to ensure smooth visual stacking on multiple progress bars.
+	var/listindex = 0
+	///Does this qdelete on completion?
+	var/qdel_when_done = TRUE
+
+/datum/world_progressbar/New(atom/movable/_owner, _goal, image/underlay)
+	if(!_owner)
+		return
+
+	owner = _owner
+	goal = _goal
+
+	bar = new()
+
+	if(underlay)
+		if(!istype(underlay))
+			underlay = image(underlay, dir = SOUTH)
+			underlay.filters += filter(type = "outline", size = 1)
+
+		underlay.pixel_y += 2
+		underlay.alpha = 200
+		underlay.plane = GAME_PLANE
+		underlay.layer = FLY_LAYER
+		underlay.appearance_flags = APPEARANCE_UI
+		bar.underlays += underlay
+
+	owner:vis_contents += bar
+
+	animate(bar, alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
+
+	RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_delete))
+
+/datum/world_progressbar/Destroy()
+	owner = null
+	QDEL_NULL(bar)
+	return ..()
+
+
+/datum/world_progressbar/proc/owner_delete()
+	qdel(src)
+
+///Updates the progress bar image visually.
+/datum/world_progressbar/proc/update(progress)
+	progress = clamp(progress, 0, goal)
+	if(progress == last_progress)
+		return
+	last_progress = progress
+	bar.icon_state = "prog_bar_[round(((progress / goal) * 100), 5)]"
+
+/datum/world_progressbar/proc/end_progress()
+	if(last_progress != goal)
+		bar.icon_state = "[bar.icon_state]_fail"
+
+	if(qdel_when_done)
+		animate(bar, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME)
+		QDEL_IN(src, PROGRESSBAR_ANIMATION_TIME)
+	else
+		bar.icon_state = "prog_bar_0"
 
 #undef PROGRESSBAR_ANIMATION_TIME
 #undef PROGRESSBAR_HEIGHT
+
+/obj/effect/abstract/progbar
+	icon = 'icons/effects/progressbar.dmi'
+	icon_state = "prog_bar_0"
+	plane = ABOVE_HUD_PLANE
+	appearance_flags = APPEARANCE_UI | KEEP_APART
+	pixel_y = 32
+	alpha = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	vis_flags = NONE //We don't want VIS_INHERIT_PLANE

@@ -143,7 +143,7 @@
 			return FALSE
 	return TRUE
 
-/obj/machinery/satellite/meteor_shield/process()
+/obj/machinery/satellite/meteor_shield/process(seconds_per_tick)
 	if(!active)
 		return
 	for(var/obj/effect/meteor/M in GLOB.meteor_list)
@@ -155,3 +155,6 @@
 			Beam(get_turf(M),icon_state="sat_beam",time=5,maxdistance=kill_range)
 			qdel(M)
 
+/obj/machinery/satellite/meteor_shield/toggle(user)
+	if(!..(user))
+		return FALSE

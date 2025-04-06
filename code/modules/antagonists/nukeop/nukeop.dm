@@ -345,7 +345,7 @@
 /datum/team/nuclear/antag_listing_entry()
 	var/disk_report = "<b>Nuclear Disk(s)</b><br>"
 	disk_report += "<table cellspacing=5>"
-	for(var/obj/item/disk/nuclear/N in GLOB.poi_list)
+	for(var/obj/item/disk/nuclear/N in SSpoints_of_interest.other_points_of_interest)
 		disk_report += "<tr><td>[N.name], "
 		var/atom/disk_loc = N.loc
 		while(!isturf(disk_loc))

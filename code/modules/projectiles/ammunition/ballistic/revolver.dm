@@ -6,7 +6,6 @@
 	caliber = ".357"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a357
-	bullet_per_box = 50
 
 /obj/item/ammo_casing/a357/match
 	name = ".357 match bullet casing"
@@ -29,7 +28,7 @@
 	caliber = ".45-70"
 	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a4570
-	bullet_per_box = 12
+	stack_size = 6
 
 /obj/item/ammo_casing/a4570/match
 	name = ".45-70 match bullet casing"
@@ -55,13 +54,12 @@
 	desc = "A .38 Special bullet casing."
 	caliber = ".38"
 	projectile_type = /obj/projectile/bullet/c38
-	bullet_per_box = 50
 
 /obj/item/ammo_casing/c38/surplus
 	name = ".38 surplus bullet casing"
 	desc = "A .38 surplus bullet casing."
 	projectile_type = /obj/projectile/bullet/c38/surplus
-
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c38/trac
 	name = ".38 TRAC bullet casing"
@@ -79,25 +77,43 @@
 	name = ".38 rubber bullet casing"
 	desc = "A .38 rubber bullet casing."
 	bullet_skin = "rubber"
-	projectile_type = /obj/projectile/bullet/c38/match/bouncy
+	projectile_type = /obj/projectile/bullet/c38/bouncy
 
 /obj/item/ammo_casing/c38/dumdum
-	name = ".38 dum-dum bullet casing"
-	desc = "A .38 dum-dum bullet casing."
+	name = ".38 prism bullet casing"
+	desc = "A .38 prism bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c38/dumdum
 
 /obj/item/ammo_casing/c38/hotshot
-	name = ".38 hot shot bullet casing"
-	desc = "A .38 hot shot bullet casing."
+	name = ".38 hearth bullet casing"
+	desc = "A .38 hearth bullet casing."
 	bullet_skin = "incen"
 	projectile_type = /obj/projectile/bullet/c38/hotshot
 
 /obj/item/ammo_casing/c38/iceblox
-	name = ".38 iceblox bullet casing"
-	desc = "A .38 iceblox bullet casing."
+	name = ".38 chilled bullet casing"
+	desc = "A .38 chilled bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c38/iceblox
+
+/obj/item/ammo_casing/c38/ashwine
+	name = ".38 hallucinogenic bullet casing"
+	desc = "A .38 hallucinogenic bullet casing."
+	bullet_skin = "ash"
+	projectile_type = /obj/projectile/bullet/c38/ashwine
+
+/obj/item/ammo_casing/c38/shock
+	name = ".38 shock bullet casing"
+	desc = "A .38 shock bullet casing."
+	bullet_skin = "shock"
+	projectile_type = /obj/projectile/bullet/c38/shock
+
+/obj/item/ammo_casing/c38/force
+	name = ".38 force bullet casing"
+	desc = "A .38 force bullet casing."
+	bullet_skin = "force"
+	projectile_type = /obj/projectile/bullet/c38/force
 
 //44 Roumain (Montagne & Shadow)
 

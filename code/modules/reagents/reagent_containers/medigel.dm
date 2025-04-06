@@ -97,6 +97,6 @@
 	name = "sterilizer gel"
 	desc = "gel bottle loaded with non-toxic sterilizer. Useful in preparation for surgery."
 	icon_state = "medigel_blue"
-	current_skin = "medigel_blue"
+	current_skin = "Blue"
 	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)
 	custom_price = 175

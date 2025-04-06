@@ -67,7 +67,7 @@
 	given_name = reject_bad_name(given_name)
 	if(!given_name)
 		if(!silent)
-			to_chat(user, span_warning("That's a pretty terrible name. You can do better."))
+			to_chat(user, span_warning("That's a pretty terrible name."))
 		return FALSE
 	if(!visibility_checks(user, guest, silent))
 		return FALSE

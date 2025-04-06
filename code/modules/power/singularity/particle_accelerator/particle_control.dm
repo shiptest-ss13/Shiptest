@@ -108,7 +108,7 @@
 	else if(!machine_stat && construction_state == PA_CONSTRUCTION_COMPLETE)
 		set_idle_power()
 
-/obj/machinery/particle_accelerator/control_box/process()
+/obj/machinery/particle_accelerator/control_box/process(seconds_per_tick)
 	if(active)
 		//a part is missing!
 		if(connected_parts.len < 6)
@@ -260,10 +260,6 @@
 		return
 
 	return ..()
-
-/obj/machinery/particle_accelerator/control_box/blob_act(obj/structure/blob/B)
-	if(prob(50))
-		qdel(src)
 
 /obj/machinery/particle_accelerator/control_box/interact(mob/user)
 	if(construction_state == PA_CONSTRUCTION_PANEL_OPEN)

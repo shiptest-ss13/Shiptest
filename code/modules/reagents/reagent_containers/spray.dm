@@ -180,7 +180,7 @@
 /obj/item/reagent_containers/spray/pepper
 	name = "pepperspray"
 	desc = "Manufactured by UhangInc, used to blind and down an opponent quickly."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "pepperspray"
 	item_state = "pepperspray"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -240,7 +240,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/item/reagent_containers/spray/waterflower/cyborg/process()
+/obj/item/reagent_containers/spray/waterflower/cyborg/process(seconds_per_tick)
 	if(world.time < last_generate + generate_delay)
 		return
 	last_generate = world.time
@@ -260,8 +260,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "chemsprayer"
 	item_state = "chemsprayer"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	throwforce = 0
 	w_class = WEIGHT_CLASS_NORMAL
 	stream_mode = 1
@@ -298,8 +298,8 @@
 	desc = "A utility used to spray large amounts of cleaning reagents in a given area. It regenerates space cleaner by itself but it's unable to be fueled by normal means."
 	icon_state = "chemsprayer_janitor"
 	item_state = "chemsprayer_janitor"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	reagent_flags = NONE
 	list_reagents = list(/datum/reagent/space_cleaner = 1000)
 	volume = 1000
@@ -317,7 +317,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/item/reagent_containers/spray/chemsprayer/janitor/process()
+/obj/item/reagent_containers/spray/chemsprayer/janitor/process(seconds_per_tick)
 	if(world.time < last_generate + generate_delay)
 		return
 	last_generate = world.time
@@ -343,21 +343,9 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	volume = 100
-	unique_reskin = list("Red" = "sprayer_med_red",
-						"Yellow" = "sprayer_med_yellow",
-						"Blue" = "sprayer_med_blue")
-
-/obj/item/reagent_containers/spray/medical/AltClick(mob/user)
-	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		reskin_obj(user)
-
-/obj/item/reagent_containers/spray/medical/reskin_obj(mob/M)
-	..()
-	switch(icon_state)
-		if("sprayer_med_red")
-			item_state = "sprayer_med_red"
-		if("sprayer_med_yellow")
-			item_state = "sprayer_med_yellow"
-		if("sprayer_med_blue")
-			item_state = "sprayer_med_blue"
-	M.update_inv_hands()
+	unique_reskin = list(
+		"Red" = "sprayer_med_red",
+		"Yellow" = "sprayer_med_yellow",
+		"Blue" = "sprayer_med_blue"
+	)
+	unique_reskin_changes_inhand = TRUE

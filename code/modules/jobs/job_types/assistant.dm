@@ -25,23 +25,12 @@ Assistant
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
-	if (CONFIG_GET(flag/grey_assistants))
-		switch(H.jumpsuit_style)
-			if(PREF_SUIT)
-				uniform = initial(uniform)
-			if(PREF_ALTSUIT)
-				uniform = /obj/item/clothing/under/misc/assistantformal
-			if(PREF_SKIRT)
-				uniform = /obj/item/clothing/under/color/jumpskirt/grey
-			else
-				uniform = /obj/item/clothing/under/color/grey
-	else
-		switch(H.jumpsuit_style)
-			if(PREF_SUIT)
-				uniform = initial(uniform)
-			if(PREF_ALTSUIT)
-				uniform = /obj/item/clothing/under/misc/assistantformal
-			if(PREF_SKIRT)
-				uniform = /obj/item/clothing/under/utility/skirt
-			else
-				uniform = /obj/item/clothing/under/utility
+	switch(H.jumpsuit_style)
+		if(PREF_SUIT)
+			uniform = initial(uniform)
+		if(PREF_ALTSUIT)
+			uniform = /obj/item/clothing/under/misc/assistantformal
+		if(PREF_SKIRT)
+			uniform = /obj/item/clothing/under/utility/skirt
+		else
+			uniform = /obj/item/clothing/under/utility

@@ -150,10 +150,6 @@
 	pixel_x = -5;
 	pixel_y = 12
 	},
-/obj/item/clothing/head/witchunter{
-	pixel_y = 13;
-	pixel_x = -5
-	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -345,7 +341,7 @@
 /obj/effect/mob_spawn/human/corpse{
 	mob_species = /datum/species/lizard/ashwalker
 	},
-/obj/item/spear/bonespear{
+/obj/item/melee/spear/bone{
 	pixel_x = 10;
 	pixel_y = -2
 	},
@@ -611,7 +607,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "pX" = (
-/obj/item/claymore/bone{
+/obj/item/melee/sword/bone{
 	pixel_x = -12;
 	pixel_y = 11
 	},
@@ -887,7 +883,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "zb" = (
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
-	loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon);
+	loot = list(/obj/item/melee/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon)
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1101,7 +1097,7 @@
 	pixel_y = -11;
 	pixel_x = -7
 	},
-/obj/item/kitchen/knife/combat/bone{
+/obj/item/melee/knife/bone{
 	pixel_x = 10;
 	pixel_y = -10
 	},
@@ -1474,7 +1470,7 @@
 /turf/closed/mineral/random/volcanic,
 /area/overmap_encounter/planetoid/cave/explored)
 "PP" = (
-/obj/item/kitchen/knife/combat/bone{
+/obj/item/melee/knife/bone{
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -1706,7 +1702,7 @@
 	pixel_x = -2;
 	pixel_y = 1
 	},
-/obj/item/spear/bonespear{
+/obj/item/melee/spear/bone{
 	pixel_x = 8;
 	pixel_y = 14
 	},

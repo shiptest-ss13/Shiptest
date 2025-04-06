@@ -46,7 +46,7 @@
 
 	addtimer(CALLBACK(src, PROC_REF(update_stage), 2), GUNPOINT_DELAY_STAGE_2)
 
-/datum/component/gunpoint/Destroy(force, silent)
+/datum/component/gunpoint/Destroy(force)
 	var/mob/living/shooter = parent
 	shooter.remove_status_effect(STATUS_EFFECT_HOLDUP)
 	target.remove_status_effect(STATUS_EFFECT_HELDUP)

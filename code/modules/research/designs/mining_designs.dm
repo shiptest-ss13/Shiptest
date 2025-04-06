@@ -8,7 +8,7 @@
 	id = "cargoexpress"//the coder reading this
 	build_type = IMPRINTER
 	materials = list(/datum/material/glass = 1000)
-	build_path = /obj/item/circuitboard/computer/cargo/express
+	build_path = /obj/item/circuitboard/computer/cargo
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 

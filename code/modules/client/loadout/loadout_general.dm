@@ -14,10 +14,6 @@
 	display_name = "lipstick, red"
 	path = /obj/item/lipstick
 
-/datum/gear/balaclava
-	display_name = "balaclava"
-	path = /obj/item/clothing/mask/balaclava
-
 /datum/gear/vape
 	display_name = "vape"
 	path = /obj/item/clothing/mask/vape
@@ -25,10 +21,6 @@
 /datum/gear/ecigar
 	display_name = "e-cigar"
 	path = /obj/item/clothing/mask/vape/cigar
-
-/datum/gear/bandana
-	display_name = "bandana, red"
-	path = /obj/item/clothing/mask/bandana/red
 
 /datum/gear/flask
 	display_name = "flask"
@@ -54,9 +46,25 @@
 	display_name = "Clockwork Zippo"
 	path = /obj/item/lighter/clockwork
 
+/datum/gear/matches
+	display_name = "matchbox"
+	path = /obj/item/storage/box/matches
+
+/datum/gear/candles
+	display_name = "candle pack"
+	path = /obj/item/storage/fancy/candle_box
+
 /datum/gear/cards
 	display_name = "toy, deck of cards"
 	path = /obj/item/toy/cards/deck
+
+/datum/gear/kotahi
+	display_name = "toy, deck of KOTAHI cards"
+	path = /obj/item/toy/cards/deck/kotahi
+
+/datum/gear/tarot_cards
+	display_name = "toy, deck of tarot cards"
+	path = /obj/item/toy/cards/deck/tarot
 
 /datum/gear/eightball
 	display_name = "toy, magic eight ball"
@@ -64,6 +72,7 @@
 
 /datum/gear/pai
 	display_name = "personal AI device"
+	description = "A synthetic friend that fits in your pocket."
 	path = /obj/item/paicard
 
 /datum/gear/tablet
@@ -86,9 +95,21 @@
 	display_name = "pen, four-color"
 	path = /obj/item/pen/fourcolor
 
+/datum/gear/fountainpen
+	display_name = "pen, fountain"
+	path = /obj/item/pen/fountain
+
 /datum/gear/paperbin
 	display_name = "paper bin"
 	path = /obj/item/paper_bin
+
+/datum/gear/spraycan
+	display_name = "spray can"
+	path = /obj/item/toy/crayon/spraycan
+
+/datum/gear/crayons
+	display_name = "box of crayons"
+	path = /obj/item/storage/crayons
 
 /datum/gear/cane
 	display_name = "cane"
@@ -103,8 +124,24 @@
 	path = /obj/item/toy/plush/snakeplushie
 
 /datum/gear/moth
-	display_name = "toy, moth plushie"
-	path = /obj/item/toy/plush/moth
+	display_name = "toy, moth plushie box"
+	path = /obj/item/choice_beacon/mothplushies
+
+/datum/gear/bee
+	display_name = "toy, bee plushie"
+	path = /obj/item/toy/plush/beeplushie
+
+/datum/gear/spider
+	display_name = "toy, spider plushie"
+	path = /obj/item/toy/plush/spider
+
+/datum/gear/flushed
+	display_name = "toy, flushed plushie"
+	path = /obj/item/toy/plush/flushed
+
+/datum/gear/blahaj
+	display_name = "toy, Solarian Marine Society mascot plushie"
+	path = /obj/item/toy/plush/blahaj
 
 /datum/gear/hornet
 	display_name = "toy, marketable hornet plushie"
@@ -127,10 +164,13 @@
 	display_name = "toy, rilena tali plushie"
 	path = /obj/item/toy/plush/tali
 
-// Shiptest edit
 /datum/gear/amongus
 	display_name = "toy, suspicious pill plushie"
 	path = /obj/item/toy/plush/among
+
+/datum/gear/dice_bag
+	display_name = "toy, bag of die"
+	path = /obj/item/storage/pill_bottle/dice
 
 /datum/gear/amongus/New()
 	. = ..()
@@ -147,10 +187,12 @@
 	path = /obj/item/colorsalve
 
 /datum/gear/tablebell
+	display_name = "table bell"
+	path = /obj/item/table_bell
+
+/datum/gear/brasstablebell
 	display_name = "table bell, brass"
 	path = /obj/item/table_bell/brass
-
-// End Shiptest
 
 /datum/gear/flashlight
 	display_name = "tool, flashlight"
@@ -160,19 +202,19 @@
 	display_name = "tool, emergency crowbar"
 	path = /obj/item/crowbar/red
 
-/datum/gear/balloon
-	display_name = "toy, balloon"
-	path = /obj/item/toy/balloon
-
-/datum/gear/balloon/ian
-	display_name = "toy, ian balloon"
-	path = /obj/item/toy/balloon/corgi
-
-/datum/gear/surgical_mask
-	display_name = "surgical mask"
-	path = /obj/item/clothing/mask/surgical
-
 /datum/gear/rilena_poster
 	display_name = "poster, rilena"
 	path = /obj/item/poster/random_rilena
 	description = "A random poster of the RILENA series."
+
+/datum/gear/camera
+	display_name = "polaroid camera"
+	path = /obj/item/camera
+
+/datum/gear/hourglass
+	display_name = "hourglass"
+	path = /obj/item/hourglass
+
+/datum/gear/spraycan
+	display_name = "spraycan"
+	path = /obj/item/toy/crayon/spraycan

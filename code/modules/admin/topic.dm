@@ -1010,18 +1010,6 @@
 
 		usr.client.cmd_admin_slimeize(H)
 
-	else if(href_list["makeblob"])
-		if(!check_rights(R_SPAWN))
-			return
-
-		var/mob/living/carbon/human/H = locate(href_list["makeblob"])
-		if(!istype(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.", confidential = TRUE)
-			return
-
-		usr.client.cmd_admin_blobize(H)
-
-
 	else if(href_list["makerobot"])
 		if(!check_rights(R_SPAWN))
 			return
@@ -1091,12 +1079,6 @@
 		if(!check_rights(R_ADMIN))
 			return
 		output_ai_laws()
-
-	else if(href_list["admincheckdevilinfo"])
-		if(!check_rights(R_ADMIN))
-			return
-		var/mob/M = locate(href_list["admincheckdevilinfo"])
-		output_devil_info(M)
 
 	else if(href_list["adminmoreinfo"])
 		var/mob/M = locate(href_list["adminmoreinfo"]) in GLOB.mob_list
@@ -1169,9 +1151,9 @@
 		//milk to plasmemes and skeletons, meat to lizards, electricity bars to ethereals, cookies to everyone else
 		var/obj/item/reagent_containers/food/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
 		if(isskeleton(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
+			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(isplasmaman(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
+			cookiealt = /obj/item/reagent_containers/condiment/milk
 		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start
@@ -1925,7 +1907,7 @@
 			if(response.body == "[]")
 				dat += "<center><b>0 bans detected for [ckey]</b></center>"
 			else
-				bans = json_decode(response["body"])
+				bans = json_decode(response.body)
 
 				//Ignore bans from non-whitelisted sources, if a whitelist exists
 				var/list/valid_sources
@@ -2138,6 +2120,19 @@
 		var/datum/poll_option/option = locate(href_list["submitoption"]) in GLOB.poll_options
 		var/datum/poll_question/poll = locate(href_list["submitoptionpoll"]) in GLOB.polls
 		poll_option_parse_href(href_list, poll, option)
+
+	else if(href_list["admincommend"])
+		var/mob/heart_recepient = locate(href_list["admincommend"])
+		if(!heart_recepient?.ckey)
+			to_chat(usr, "<span class='warning'>This mob either no longer exists or no longer is being controlled by someone!</span>")
+			return
+		switch(tgui_alert(usr, "Would you like the effects to apply immediately or at the end of the round? Applying them now will make it clear it was an admin commendation.", "<3?", list("Apply now", "Apply at round end", "Cancel")))
+			if("Apply now")
+				heart_recepient.receive_heart(usr, instant = TRUE)
+			if("Apply at round end")
+				heart_recepient.receive_heart(usr)
+			else
+				return
 
 	else if (href_list["interview"])
 		if(!check_rights(R_ADMIN))

@@ -1,5 +1,5 @@
 /obj/mecha
-	name = "mecha"
+	name = "exosuit"
 	desc = "Exosuit"
 	icon = 'icons/mecha/mecha.dmi'
 	density = TRUE //Dense. To raise the heat.
@@ -13,13 +13,15 @@
 	light_power = 0.8
 	light_range = 6
 	light_on = FALSE
+	var/repair_multiplier = 1 //multiply incoming repairs by this value. used to make some mechs less efficient and slower to repair.
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
+	var/stopped = FALSE
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
 	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
-	var/normal_step_energy_drain = 10 //How much energy the mech will consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
-	var/step_energy_drain = 10
+	var/base_step_energy_drain = 15 //The base amount of energy the mech should consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
+	var/step_energy_drain  // How much energy the mech actually consumes when moving after modifiers (Eg, stock parts, leg actuators)
 	var/melee_energy_drain = 15
 	var/overload_step_energy_drain_min = 100
 	max_integrity = 300 //max_integrity is base health
@@ -41,6 +43,17 @@
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
 	var/completely_disabled = FALSE //stops the mech from doing anything
 
+	///Vars for mech charges
+	var/charging = FALSE
+	var/charge_ready = TRUE
+	var/charge_windup = 0.5
+	var/charge_cooldown = 50
+	var/charge_power_consume = 200
+	var/charge_distance = 5
+	var/charge_break_walls = FALSE
+	var/charge_toss_structures  = FALSE
+	var/charge_toss_mobs = FALSE
+
 	var/bumpsmash = 0 //Whether or not the mech destroys walls by running into it.
 	//inner atmos
 	var/use_internal_tank = 0
@@ -57,7 +70,7 @@
 	var/internal_damage = 0 //contains bitflags
 
 	var/list/operation_req_access = list()//required access level for mecha operation
-	var/list/internals_req_access = list(ACCESS_MECH_ENGINE, ACCESS_MECH_SCIENCE)//REQUIRED ACCESS LEVEL TO OPEN CELL COMPARTMENT
+	var/list/internals_req_access = list()//REQUIRED ACCESS LEVEL TO OPEN CELL COMPARTMENT
 
 	var/wreckage
 
@@ -90,6 +103,7 @@
 	var/datum/action/innate/mecha/mech_view_stats/stats_action = new
 	var/datum/action/innate/mecha/mech_defense_mode/defense_action = new
 	var/datum/action/innate/mecha/mech_overload_mode/overload_action = new
+	var/datum/action/innate/mecha/mech_charge_mode/charge_action = new
 	var/datum/effect_system/smoke_spread/smoke_system = new //not an action, but trigged by one
 	var/datum/action/innate/mecha/mech_smoke/smoke_action = new
 	var/datum/action/innate/mecha/mech_zoom/zoom_action = new
@@ -97,12 +111,14 @@
 	var/datum/action/innate/mecha/mech_toggle_phasing/phasing_action = new
 	var/datum/action/innate/mecha/strafe/strafing_action = new
 
+	// for mechs with unique actions
+	var/datum/action/innate/mecha/mech_unique_action
+
 	//Action vars
 	var/obj/item/mecha_parts/mecha_equipment/thrusters/active_thrusters
 	var/defense_mode = FALSE
 	var/leg_overload_mode = FALSE
 	var/leg_overload_coeff = 100
-	var/zoom_mode = FALSE
 	var/smoke = 5
 	var/smoke_ready = 1
 	var/smoke_cooldown = 100
@@ -110,6 +126,10 @@
 	var/phasing_energy_drain = 200
 	var/phase_state = "" //icon_state when phasing
 	var/strafe = FALSE //If we are strafing
+
+	var/zoom_mode = FALSE
+	var/zoom_mod = 6
+	var/zoom_out_mod = 2
 
 	var/nextsmash = 0
 	var/smashcooldown = 3	//deciseconds
@@ -137,7 +157,7 @@
 	add_scanmod()
 	add_capacitor()
 	START_PROCESSING(SSobj, src)
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 	log_message("[src.name] created.", LOG_MECHA)
 	GLOB.mechas_list += src //global mech list
 	prepare_huds()
@@ -147,6 +167,9 @@
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
+	update_part_values()
+	AddComponent(/datum/component/automatic_fire_mecha,0.5)
+	set_up_unique_action()
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
@@ -159,7 +182,7 @@
 
 /obj/mecha/Destroy()
 	if(occupant && iscarbon(occupant))
-		occupant.SetSleeping(destruction_sleep_duration)
+		occupant.set_sleeping(destruction_sleep_duration)
 	go_out()
 	var/mob/living/silicon/ai/AI
 	for(var/mob/M in src) //Let's just be ultra sure
@@ -175,7 +198,7 @@
 		AI.gib() //No wreck, no AI to recover
 		AI = null
 	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list.Remove(src)
+	SSpoints_of_interest.remove_point_of_interest(src)
 	equipment.Cut()
 
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
@@ -225,11 +248,9 @@
 
 /obj/mecha/proc/update_part_values() ///Updates the values given by scanning module and capacitor tier, called when a part is removed or inserted.
 	if(scanmod)
-		normal_step_energy_drain = 20 - (5 * scanmod.rating) //10 is normal, so on lowest part its worse, on second its ok and on higher its real good up to 0 on best
-		step_energy_drain = normal_step_energy_drain
+		step_energy_drain = max(1, base_step_energy_drain - (5 * scanmod.rating)) //10 is normal, so on lowest part its worse, on second its ok and on higher its real good up to 0 on best
 	else
-		normal_step_energy_drain = 500
-		step_energy_drain = normal_step_energy_drain
+		step_energy_drain = 500
 	if(capacitor)
 		armor = armor.modifyRating(energy = (capacitor.rating * 5)) //Each level of capacitor protects the mech against emp by 5%
 	else //because we can still be hit without a cap, even if we can't move
@@ -328,9 +349,10 @@
 					if(istype(O, /obj/item/gun))
 						. += "<span class='warning'>It looks like you can hit the pilot directly if you target the center or above.</span>"
 						break //in case user is holding two guns
-
+	if(mech_unique_action)
+		. += "This mech has a special action you can activate by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
 //processing internal damage, temperature, air regulation, alert updates, lights power use.
-/obj/mecha/process()
+/obj/mecha/process(seconds_per_tick)
 	var/internal_temp_regulation = 1
 
 	if(internal_damage)
@@ -404,13 +426,13 @@
 		var/integrity = obj_integrity/max_integrity*100
 		switch(integrity)
 			if(30 to 45)
-				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 1)
+				occupant.throw_alert("exosuit damage", /atom/movable/screen/alert/low_mech_integrity, 1)
 			if(15 to 35)
-				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 2)
+				occupant.throw_alert("exosuit damage", /atom/movable/screen/alert/low_mech_integrity, 2)
 			if(-INFINITY to 15)
-				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 3)
+				occupant.throw_alert("exosuit damage", /atom/movable/screen/alert/low_mech_integrity, 3)
 			else
-				occupant.clear_alert("mech damage")
+				occupant.clear_alert("exosuit damage")
 		var/atom/checking = occupant.loc
 		// recursive check to handle all cases regarding very nested occupants,
 		// such as brainmob inside brainitem inside MMI inside mecha
@@ -419,7 +441,7 @@
 				// hit a turf before hitting the mecha, seems like they have
 				// been moved out
 				occupant.clear_alert("charge")
-				occupant.clear_alert("mech damage")
+				occupant.clear_alert("exosuit damage")
 				RemoveActions(occupant, human_occupant=1)
 				occupant = null
 				break
@@ -465,7 +487,7 @@
 ////////////////////////////
 
 
-/obj/mecha/proc/click_action(atom/target,mob/user,params)
+/obj/mecha/proc/click_action(atom/target,mob/user,params, cooldown_override = null)
 	if(!occupant || occupant != user)
 		return
 	if(!locate(/turf) in list(target,target.loc)) // Prevents inventory from being drilled
@@ -501,13 +523,13 @@
 				to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 				return
 			if(selected.action(target,params))
-				selected.start_cooldown()
+				selected.start_cooldown(cooldown_override)
 	else if(selected && selected.is_melee())
 		if(isliving(target) && selected.harmful && HAS_TRAIT(L, TRAIT_PACIFISM))
 			to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 			return
 		if(selected.action(target,params))
-			selected.start_cooldown()
+			selected.start_cooldown(cooldown_override)
 	else
 		if(internal_damage & MECHA_INT_CONTROL_LOST)
 			var/list/possible_targets = oview(1,src)
@@ -522,6 +544,13 @@
 
 
 /obj/mecha/proc/range_action(atom/target)
+	return
+
+/obj/mecha/proc/set_up_unique_action(mob/user)
+	return
+
+/obj/mecha/proc/handle_unique_action(mob/user)
+	mech_unique_action.Activate()
 	return
 
 
@@ -586,6 +615,8 @@
 /obj/mecha/proc/domove(direction)
 	if(can_move >= world.time)
 		return 0
+	if(stopped)
+		return 0
 	if(!Process_Spacemove(direction))
 		return 0
 	if(!has_charge(step_energy_drain))
@@ -593,6 +624,11 @@
 	if(zoom_mode)
 		if(world.time - last_message > 20)
 			occupant_message("<span class='warning'>Unable to move while in zoom mode!</span>")
+			last_message = world.time
+		return 0
+	if(charging)
+		if(world.time - last_message > 20)
+			occupant_message(span_warning("You can't change direction while charging!"))
 			last_message = world.time
 		return 0
 	if(!cell)
@@ -644,6 +680,7 @@
 	step_silent = FALSE
 
 /obj/mecha/Bump(atom/obstacle)
+	var/atom/throw_target = get_edge_target_turf(obstacle, dir)
 	if(phasing && get_charge() >= phasing_energy_drain && !throwing)
 		if(!can_move)
 			return
@@ -655,6 +692,27 @@
 		forceMove(get_step(src,dir))
 		use_power(phasing_energy_drain)
 		addtimer(VARSET_CALLBACK(src, can_move, TRUE), step_in*3)
+	else if(charging)
+		if(charge_break_walls && iswallturf(obstacle))
+			var/turf/closed/wall/crushed = obstacle
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
+			visible_message(span_danger("[src] smashes through [obstacle]"))
+			crushed.dismantle_wall(TRUE)
+		if(isobj(obstacle))
+			var/obj/object = obstacle
+			obstacle.mech_melee_attack(src)
+			if(!(object.resistance_flags & INDESTRUCTIBLE) && charge_toss_structures)
+				object.throw_at(throw_target, 4, 3)
+			visible_message(span_danger("[src] crashes into [obstacle]!"))
+			playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
+		if(ishuman(obstacle))
+			var/mob/living/carbon/human/H = obstacle
+			H.throw_at(throw_target,4,3)
+			visible_message(span_danger("[src] slams into \the [obstacle], sending [obstacle.p_them()] flying!"))
+			playsound(H, 'sound/effects/bang.ogg', 100, FALSE, -1)
+			H.Paralyze(20)
+			H.adjustStaminaLoss(30)
+			H.apply_damage(rand(20,35), BRUTE)
 	else
 		if(..()) //mech was thrown
 			return
@@ -831,7 +889,7 @@
 
 
 //An actual AI (simple_animal mecha pilot) entering the mech
-/obj/mecha/proc/aimob_enter_mech(mob/living/simple_animal/hostile/human/syndicate/mecha_pilot/pilot_mob)
+/obj/mecha/proc/aimob_enter_mech(mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/pilot_mob)
 	if(pilot_mob && pilot_mob.Adjacent(src))
 		if(occupant)
 			return
@@ -841,7 +899,7 @@
 		pilot_mob.forceMove(src)
 		GrantActions(pilot_mob)//needed for checks, and incase a badmin puts somebody in the mob
 
-/obj/mecha/proc/aimob_exit_mech(mob/living/simple_animal/hostile/human/syndicate/mecha_pilot/pilot_mob)
+/obj/mecha/proc/aimob_exit_mech(mob/living/simple_animal/hostile/human/ramzi/mecha_pilot/pilot_mob)
 	if(occupant == pilot_mob)
 		occupant = null
 	if(pilot_mob.mecha == src)
@@ -944,6 +1002,7 @@
 	else
 		to_chat(user, "<span class='warning'>You stop entering the exosuit!</span>")
 
+// wake up should go off here
 /obj/mecha/proc/moved_inside(mob/living/carbon/human/H)
 	. = FALSE
 	if(H && H.client && (H in range(1)))
@@ -959,6 +1018,8 @@
 		playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
+		SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
+		equipment_check()
 		return TRUE
 
 /obj/mecha/proc/mmi_move_inside(obj/item/mmi/M, mob/user)
@@ -1003,6 +1064,8 @@
 	B.remote_control = src
 	B.update_mouse_pointer()
 	icon_state = initial(icon_state)
+	SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
+	equipment_check()
 	update_appearance()
 	setDir(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
@@ -1024,10 +1087,10 @@
 				final_exit_delay = exit_delay/2
 
 	if(do_after(occupant, has_gravity() ? final_exit_delay : 0 , target = src))
-		to_chat(occupant, "<span class='notice'>You exit the mech.</span>")
+		to_chat(occupant, "<span class='notice'>You exit the exosuit.</span>")
 		go_out()
 	else
-		to_chat(occupant, "<span class='notice'>You stop exiting the mech. Weapons are enabled again.</span>")
+		to_chat(occupant, "<span class='notice'>You stop exiting the exosuit. Weapons are enabled again.</span>")
 	is_currently_ejecting = FALSE
 
 /obj/mecha/Exited(atom/movable/M, atom/newloc)
@@ -1052,7 +1115,7 @@
 		return
 	var/atom/movable/mob_container
 	occupant.clear_alert("charge")
-	occupant.clear_alert("mech damage")
+	occupant.clear_alert("exosuit damage")
 	if(ishuman(occupant))
 		mob_container = occupant
 		RemoveActions(occupant, human_occupant=1)
@@ -1086,6 +1149,7 @@
 	var/mob/living/L = occupant
 	occupant = null //we need it null when forceMove calls Exited().
 	silicon_pilot = FALSE
+	SEND_SIGNAL(src,COMSIG_MECH_EXITED,L)
 	if(mob_container.forceMove(newloc))//ejecting mob container
 		log_message("[mob_container] moved out.", LOG_MECHA)
 		L << browse(null, "window=exosuit")
@@ -1165,7 +1229,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 			user.sight |= occupant_sight_flags
 
 ///////////////////////
-////// Ammo stuff /////
+////// Weapon stuff ///
 ///////////////////////
 
 /obj/mecha/proc/ammo_resupply(obj/item/mecha_ammo/A, mob/user,fail_chat_override = FALSE)
@@ -1213,3 +1277,54 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		else
 			to_chat(user, "<span class='notice'>None of the equipment on this exosuit can use this ammo!</span>")
 	return FALSE
+
+// handles actions tied to mech equipment
+/obj/mecha/proc/equipment_check()
+	occupant.client.view_size.zoomIn()
+	if(istype(selected,/obj/item/mecha_parts/mecha_equipment/weapon))
+		var/obj/item/mecha_parts/mecha_equipment/weapon/mech_gun = selected
+		if(mech_gun.full_auto)
+			SEND_SIGNAL(src,COMSIG_MECH_ENABLE_AUTOFIRE)
+			SEND_SIGNAL(src,COMSIG_MECH_SET_AUTOFIRE_SPEED, mech_gun.equip_cooldown)
+		else
+			SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+		if(mech_gun.scoped)
+			zoom_action.Grant(occupant,src)
+			zoom_mod = mech_gun.zoom_mod
+			zoom_out_mod = mech_gun.zoom_out_mod
+		else
+			zoom_action.Remove(occupant)
+			zoom_mod = initial(zoom_mod)
+			zoom_out_mod = initial(zoom_out_mod)
+	else
+		SEND_SIGNAL(src,COMSIG_MECH_DISABLE_AUTOFIRE)
+		zoom_action.Remove(occupant)
+		zoom_mod = initial(zoom_mod)
+		zoom_out_mod = initial(zoom_out_mod)
+
+
+///////////////////////
+////// Charging /////
+///////////////////////
+
+/obj/mecha/proc/start_charge()
+	Shake(15, 15, 1 SECONDS)
+	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
+	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 2)
+	addtimer(CALLBACK(src,PROC_REF(handle_charge)), charge_windup SECONDS, TIMER_STOPPABLE)
+
+/obj/mecha/proc/handle_charge()
+	var/turf/mecha_loc = get_turf(src)
+	charging = TRUE
+	var/turf/charge_target = get_ranged_target_turf(mecha_loc,dir,charge_distance)
+	if(!charge_target)
+		charging = FALSE
+		return
+	cell.use(charge_power_consume)
+	walk_towards(src, charge_target, 0.7)
+	sleep(get_dist(src, charge_target) * 0.7)
+	charge_end()
+
+/obj/mecha/proc/charge_end()
+	walk(src,0)
+	charging = FALSE

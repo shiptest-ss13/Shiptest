@@ -155,12 +155,6 @@
 				if(R.can_receive(frequency, map_zones))
 					radios += R
 
-			// Syndicate radios can hear all well-known radio channels
-			if (num2text(frequency) in GLOB.reverseradiochannels)
-				for(var/obj/item/radio/R in GLOB.all_radios["[FREQ_SYNDICATE]"])
-					if(R.can_receive(FREQ_SYNDICATE, map_zones))
-						radios |= R
-
 		if (TRANSMISSION_RADIO)
 			// Only radios not currently in subspace mode
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
@@ -173,12 +167,14 @@
 				if(R.independent && R.can_receive(frequency, map_zones))
 					radios += R
 
-	//WS edit begin - Radio chatter #434
+		if (TRANSMISSION_SECTOR)
+			// Newscasting
+			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
+				if(R.can_receive(frequency, map_zones))
+					radios += R
+
 	// Next, we'll have each radio play a small sound effect except for the one that broadcasted it.
 	for(var/obj/item/radio/radio in radios)
-		if(radio.last_chatter_time + 1 SECONDS < world.time && source != radio)
-			playsound(radio, "sound/effects/radio_chatter.ogg", 20, FALSE)
-			radio.last_chatter_time = world.time
 		if(radio.log)
 			var/name = data["name"]
 			var/list/log_details = list()

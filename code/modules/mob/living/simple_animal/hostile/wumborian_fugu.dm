@@ -32,7 +32,7 @@
 	aggro_vision_range = 9
 	mob_size = MOB_SIZE_SMALL
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	gold_core_spawnable = HOSTILE_SPAWN
+	armor = list(melee = 20, bullet = 10, laser = 30, energy = 80, bomb = 80, bio = 80, rad = 80, fire = 80, acid = 80, magic = 80)
 	var/wumbo = 0
 	var/inflate_cooldown = 0
 	var/datum/action/innate/fugu/expand/E
@@ -57,11 +57,6 @@
 	if(target && AIStatus == AI_ON)
 		E.Activate()
 	..()
-
-/mob/living/simple_animal/hostile/asteroid/fugu/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced && wumbo)
-		return FALSE
-	. = ..()
 
 /mob/living/simple_animal/hostile/asteroid/fugu/Aggro()
 	..()
@@ -100,6 +95,7 @@
 	F.environment_smash = ENVIRONMENT_SMASH_WALLS
 	F.mob_size = MOB_SIZE_LARGE
 	F.speed = 1
+	F.armor = list(melee = 80, bullet = 60, laser = 80, energy = 80, bomb = 80, bio = 80, rad = 80, fire = 80, acid = 80, magic = 80)
 	addtimer(CALLBACK(F, TYPE_PROC_REF(/mob/living/simple_animal/hostile/asteroid/fugu, Deflate)), 100)
 
 /mob/living/simple_animal/hostile/asteroid/fugu/proc/Deflate()

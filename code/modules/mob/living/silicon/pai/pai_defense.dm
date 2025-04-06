@@ -1,7 +1,3 @@
-
-/mob/living/silicon/pai/blob_act(obj/structure/blob/B)
-	return FALSE
-
 /mob/living/silicon/pai/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)

@@ -1,7 +1,7 @@
 /obj/item/dnainjector
 	name = "\improper DNA injector"
 	desc = "This injects the person with DNA."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "dnainjector"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -246,30 +246,6 @@
 /obj/item/dnainjector/antiunintelligible
 	name = "\improper DNA injector (Anti-Unintelligible)"
 	remove_mutations = list(UNINTELLIGIBLE)
-
-/obj/item/dnainjector/swedishmut
-	name = "\improper DNA injector (Swedish)"
-	add_mutations = list(SWEDISH)
-
-/obj/item/dnainjector/antiswedish
-	name = "\improper DNA injector (Anti-Swedish)"
-	remove_mutations = list(SWEDISH)
-
-/obj/item/dnainjector/chavmut
-	name = "\improper DNA injector (Chav)"
-	add_mutations = list(CHAV)
-
-/obj/item/dnainjector/antichav
-	name = "\improper DNA injector (Anti-Chav)"
-	remove_mutations = list(CHAV)
-
-/obj/item/dnainjector/elvismut
-	name = "\improper DNA injector (Elvis)"
-	add_mutations = list(ELVIS)
-
-/obj/item/dnainjector/antielvis
-	name = "\improper DNA injector (Anti-Elvis)"
-	remove_mutations = list(ELVIS)
 
 /obj/item/dnainjector/lasereyesmut
 	name = "\improper DNA injector (Laser Eyes)"

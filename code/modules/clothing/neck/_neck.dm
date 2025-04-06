@@ -11,7 +11,7 @@
 	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(body_parts_covered & HEAD)
 			if(damaged_clothes)
@@ -21,33 +21,35 @@
 
 /obj/item/clothing/neck/tie
 	name = "tie"
-	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
-	unique_reskin = list("red tie" = "redtie",
-						"orange tie" = "orangetie",
-						"green tie" = "greentie",
-						"light blue tie" = "lightbluetie",
-						"blue tie" = "bluetie",
-						"purple tie" = "purpletie",
-						"black tie" = "blacktie",
-						"orange tie" = "orangetie",
-						"light blue tie" = "lightbluetie",
-						"purple tie" = "purpletie",
-						"green tie" = "greentie",
-						"brown tie" = "browntie",
-						"rainbow tie" = "rainbow_tie",
-						"horrible tie" = "horribletie",
-						"transgender tie" = "transgender",
-						"pansexual tie" = "pansexual",
-						"nonbinary tie" = "nonbinary",
-						"bisexual tie" = "bisexual",
-						"lesbian tie" = "lesbian",
-						"intersex tie" = "intersex",
-						"gay tie" = "gay",
-						"genderfluid tie" = "genderfluid",
-						"asexual tie" = "asexual",
-						"genderfae tie" = "genderfae",
-						"ally tie" = "ally_tie"
-						)
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned, but only once."
+	unique_reskin = list(
+		"red tie" = "redtie",
+		"orange tie" = "orangetie",
+		"green tie" = "greentie",
+		"light blue tie" = "lightbluetie",
+		"blue tie" = "bluetie",
+		"purple tie" = "purpletie",
+		"black tie" = "blacktie",
+		"orange tie" = "orangetie",
+		"light blue tie" = "lightbluetie",
+		"purple tie" = "purpletie",
+		"green tie" = "greentie",
+		"brown tie" = "browntie",
+		"rainbow tie" = "rainbow_tie",
+		"horrible tie" = "horribletie",
+		"transgender tie" = "transgender",
+		"pansexual tie" = "pansexual",
+		"nonbinary tie" = "nonbinary",
+		"bisexual tie" = "bisexual",
+		"lesbian tie" = "lesbian",
+		"intersex tie" = "intersex",
+		"gay tie" = "gay",
+		"genderfluid tie" = "genderfluid",
+		"asexual tie" = "asexual",
+		"genderfae tie" = "genderfae",
+		"ally tie" = "ally_tie"
+	)
+	unique_reskin_changes_name = TRUE
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
@@ -106,6 +108,7 @@
 	name = "maid neck cover"
 	desc = "A neckpiece for a maid costume, it smells faintly of disappointment."
 	icon_state = "maid_neck"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/tie/trans
 	name = "transgender tie"
@@ -167,6 +170,7 @@
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
 	icon_state = "stethoscope"
 	cuttable = FALSE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
@@ -198,68 +202,113 @@
 //SCARVES//
 ///////////
 
-/obj/item/clothing/neck/scarf //Default white color, same functionality as beanies.
-	name = "white scarf"
-	icon_state = "scarf"
+/obj/item/clothing/neck/scarf
+	name = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
-	dog_fashion = /datum/dog_fashion/head
+	icon = 'icons/obj/clothing/neck/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck/color.dmi'
+	icon_state = "scarfwhite"
+	item_state = "scarfwhite"
 	custom_price = 60
+	unique_reskin = list("white scarf" = "scarfwhite",
+						"grey scarf" = "scarfgrey",
+						"black scarf" = "scarfblack",
+						"red scarf" = "scarfred",
+						"maroon scarf" = "scarfmaroon",
+						"orange scarf" = "scarforange",
+						"yellow scarf" = "scarfyellow",
+						"green scarf" = "scarfgreen",
+						"dark green scarf" = "scarfdarkgreen",
+						"teal scarf" = "scarfteal",
+						"blue scarf" = "scarfblue",
+						"dark blue scarf" = "scarfdarkblue",
+						"purple scarf" = "scarfpurple",
+						"pink scarf" = "scarfpink",
+						"brown scarf" = "scarfbrown",
+						"light brown scarf" = "scarflightbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/scarf/white
+	name = "white scarf"
+	icon_state = "scarfwhite"
+	current_skin = "white scarf"
+
+/obj/item/clothing/neck/scarf/grey
+	name = "grey scarf"
+	icon_state = "scarfgrey"
+	current_skin = "grey scarf"
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"
-	icon_state = "scarf"
-	color = "#4A4A4B" //Grey but it looks black
-
-/obj/item/clothing/neck/scarf/pink
-	name = "pink scarf"
-	icon_state = "scarf"
-	color = "#F699CD" //Pink
+	icon_state = "scarfblack"
+	current_skin = "black scarf"
 
 /obj/item/clothing/neck/scarf/red
 	name = "red scarf"
-	icon_state = "scarf"
-	color = "#D91414" //Red
+	icon_state = "scarfred"
+	current_skin = "red scarf"
 
-/obj/item/clothing/neck/scarf/green
-	name = "green scarf"
-	icon_state = "scarf"
-	color = "#5C9E54" //Green
-
-/obj/item/clothing/neck/scarf/darkblue
-	name = "dark blue scarf"
-	icon_state = "scarf"
-	color = "#1E85BC" //Blue
-
-/obj/item/clothing/neck/scarf/purple
-	name = "purple scarf"
-	icon_state = "scarf"
-	color = "#9557C5" //Purple
-
-/obj/item/clothing/neck/scarf/yellow
-	name = "yellow scarf"
-	icon_state = "scarf"
-	color = "#E0C14F" //Yellow
+/obj/item/clothing/neck/scarf/maroon
+	name = "maroon scarf"
+	icon_state = "scarfmaroon"
+	current_skin = "maroon scarf"
 
 /obj/item/clothing/neck/scarf/orange
 	name = "orange scarf"
-	icon_state = "scarf"
-	color = "#C67A4B" //Orange
+	icon_state = "scarforange"
+	current_skin = "orange scarf"
 
-/obj/item/clothing/neck/scarf/cyan
-	name = "cyan scarf"
-	icon_state = "scarf"
-	color = "#54A3CE" //Cyan
+/obj/item/clothing/neck/scarf/yellow
+	name = "yellow scarf"
+	icon_state = "scarfyellow"
+	current_skin = "yellow scarf"
 
+/obj/item/clothing/neck/scarf/green
+	name = "green scarf"
+	icon_state = "scarfgreen"
+	current_skin = "green scarf"
 
-//Striped scarves get their own icons
+/obj/item/clothing/neck/scarf/darkgreen
+	name = "dark green scarf"
+	icon_state = "scarfdarkgreen"
+	current_skin = "dark green scarf"
 
-/obj/item/clothing/neck/scarf/zebra
-	name = "zebra scarf"
-	icon_state = "zebrascarf"
+/obj/item/clothing/neck/scarf/teal
+	name = "teal scarf"
+	icon_state = "scarfteal"
+	current_skin = "teal scarf"
 
-/obj/item/clothing/neck/scarf/christmas
-	name = "christmas scarf"
-	icon_state = "christmasscarf"
+/obj/item/clothing/neck/scarf/blue
+	name = "blue scarf"
+	icon_state = "scarfblue"
+	current_skin = "blue scarf"
+
+/obj/item/clothing/neck/scarf/darkblue
+	name = "dark blue scarf"
+	icon_state = "scarfdarkblue"
+	current_skin = "dark blue scarf"
+
+/obj/item/clothing/neck/scarf/purple
+	name = "purple scarf"
+	icon_state = "scarfpurple"
+	current_skin = "purple scarf"
+
+/obj/item/clothing/neck/scarf/pink
+	name = "scarf"
+	icon_state = "scarfpink"
+	current_skin = "pink scarf"
+
+/obj/item/clothing/neck/scarf/brown
+	name = "brown scarf"
+	icon_state = "scarfbrown"
+	current_skin = "brown scarf"
+
+/obj/item/clothing/neck/scarf/lightbrown
+	name = "light brown scarf"
+	icon_state = "scarflightbrown"
+	current_skin = "light brown scarf"
 
 //Shemaghs to operate tactically in a operational tactical situation
 
@@ -267,6 +316,7 @@
 	name = "shemagh"
 	desc = "An oversized shemagh, for those with a keen sense of fashion, or those operating tactically."
 	icon_state = "shemagh"
+	supports_variations = VOX_VARIATION
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
@@ -275,21 +325,25 @@
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedgreenscarf
 	name = "striped green scarf"
 	icon_state = "stripedgreenscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/stripedsolgovscarf
 	name = "striped solgov scarf"
 	icon_state = "stripedsolgovscarf"
 	custom_price = 10
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/petcollar
 	name = "pet collar"
@@ -304,6 +358,27 @@
 	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
 
+/obj/item/clothing/neck/dogtag
+	name = "dogtag"
+	desc = "A nondescript dogtag."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "dogtag"
+	resistance_flags = FIRE_PROOF
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
+
+/obj/item/clothing/neck/dogtag/gold
+	icon_state = "dogtag_gold"
+	desc = "The characters are engraved with gold."
+
+/obj/item/clothing/neck/dogtag/frontier
+	name = "frontiersman dogtag"
+	desc = "A dogtag marked with the name and rank of a Frontiersmen pirate. You could turn this in to an outpost console contract for money."
+
+/obj/item/clothing/neck/dogtag/ramzi
+	name = "ramzi clique dogtag"
+	desc = "A dogtag marked with the name and rank of a Ramzi Clique pirate. You could turn this in to an outpost console contract for money."
+
 //////////////
 //DOPE BLING//
 //////////////
@@ -313,41 +388,6 @@
 	desc = "Damn, it feels good to be a gangster."
 	icon_state = "bling"
 	cuttable = FALSE
-
-/obj/item/clothing/neck/necklace/dope/merchant
-	desc = "Don't ask how it works, the proof is in the holochips!"
-	/// scales the amount received in case an admin wants to emulate taxes/fees.
-	var/profit_scaling = 1
-	/// toggles between sell (TRUE) and get price post-fees (FALSE)
-	var/selling = FALSE
-
-/obj/item/clothing/neck/necklace/dope/merchant/attack_self(mob/user)
-	. = ..()
-	selling = !selling
-	to_chat(user, "<span class='notice'>[src] has been set to [selling ? "'Sell'" : "'Get Price'"] mode.</span>")
-
-/obj/item/clothing/neck/necklace/dope/merchant/afterattack(obj/item/I, mob/user, proximity)
-	. = ..()
-	if(!proximity)
-		return
-	var/datum/export_report/ex = export_item_and_contents(I, allowed_categories = (ALL), dry_run=TRUE)
-	var/price = 0
-	for(var/x in ex.total_amount)
-		price += ex.total_value[x]
-
-	if(price)
-		var/true_price = round(price*profit_scaling)
-		to_chat(user, "<span class='notice'>[selling ? "Sold" : "Getting the price of"] [I], value: <b>[true_price]</b> credits[I.contents.len ? " (exportable contents included)" : ""].[profit_scaling < 1 && selling ? "<b>[round(price-true_price)]</b> credit\s taken as processing fee\s." : ""]</span>")
-		if(selling)
-			new /obj/item/holochip(get_turf(user),true_price)
-			for(var/i in ex.exported_atoms_ref)
-				var/atom/movable/AM = i
-				if(QDELETED(AM))
-					continue
-				qdel(AM)
-	else
-		to_chat(user, "<span class='warning'>There is no export value for [I] or any items within it.</span>")
-
 
 /obj/item/clothing/neck/neckerchief
 	icon = 'icons/obj/clothing/masks.dmi' //In order to reuse the bandana sprite

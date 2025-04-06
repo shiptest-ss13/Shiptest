@@ -5,13 +5,14 @@
 //it for the engine.
 //-----------------------------------------------
 
+#define CHLORINE_OXIDATION_VALUE 0.5
 #define O2_OXIDATION_VALUE 1
 #define NITRYL_OXIDATION_VALUE 1
 #define NITROUS_OXIDATION_VALUE 3
 
+#define HYDROGEN_THRUSTER_VALUE 0.5
 #define PLASMA_THRUSTER_VALUE 1
 #define TRITRIUM_THRUSTER_VALUE 3
-#define HYDROGEN_THRUSTER_VALUE 0.5
 
 #define NITROUS_COOLING_MULTIPIER 500
 #define NITROUS_COOLING_MIN 173
@@ -77,7 +78,7 @@
 	SetInitDirections()
 	update_adjacent_engines()
 
-/obj/machinery/atmospherics/components/unary/shuttle/heater/process_atmos()
+/obj/machinery/atmospherics/components/unary/shuttle/heater/process_atmos(seconds_per_tick)
 	if(!use_tank)
 		update_parents()
 
@@ -248,7 +249,7 @@
 	SetInitDirections()
 	update_adjacent_engines()
 
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/process_atmos()
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/process_atmos(seconds_per_tick)
 	var/datum/gas_mixture/air_contents = airs[1]
 	var/pressure = air_contents.return_pressure()
 	if(pressure > PRESSURE_LIMIT)
@@ -359,8 +360,6 @@
 			// adds each oxidizer's power to the total oxidation max
 				if(GAS_O2)
 					oxidation_power += O2_OXIDATION_VALUE * gas_amount
-				if(GAS_NITRYL)
-					oxidation_power += NITRYL_OXIDATION_VALUE * gas_amount
 				if(GAS_NITROUS) //burning nitrous cools down the heater's main tank, just like it cools the intake on real cars.
 					oxidation_power += NITROUS_OXIDATION_VALUE * gas_amount
 					var/heat_capacity = gas_amount * NITROUS_COOLING_MULTIPIER

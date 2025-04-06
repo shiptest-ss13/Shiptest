@@ -16,49 +16,17 @@
 	end_message = "<span class='notice'>The air seems to be cooling off again.</span>"
 
 	area_type = /area
-	protected_areas = list(/area/ship/maintenance, /area/ship/science/ai_chamber, /area/ship/storage, /area/ship/security/prison)
+	protected_areas = list(/area/ship, /area/overmap_encounter/planetoid/cave)
+
+	protect_indoors = TRUE
 
 	immunity_type = "rad"
 	multiply_blend_on_main_stage = TRUE
 
-/datum/weather/rad_storm/telegraph()
-	..()
-	status_alarm(TRUE)
-
-
 /datum/weather/rad_storm/weather_act(mob/living/L)
-	var/resist = L.getarmor(null, "rad")
 	if(prob(40))
-		if(ishuman(L))
-			var/mob/living/carbon/human/H = L
-			if(H.dna && !HAS_TRAIT(H, TRAIT_GENELESS))
-				if(prob(max(0,100-resist)))
-					H.randmuti()
-					if(prob(50))
-						if(prob(90))
-							H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
-						else
-							H.easy_randmut(POSITIVE)
-						H.domutcheck()
 		L.rad_act(20)
 
 /datum/weather/rad_storm/end()
 	if(..())
 		return
-	priority_announce("The radiation threat has passed. Please return to your workplaces.", "Anomaly Alert")
-	status_alarm(FALSE)
-
-/datum/weather/rad_storm/proc/status_alarm(active) //Makes the status displays show the radiation warning for those who missed the announcement.
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
-	if(!frequency)
-		return
-
-	var/datum/signal/signal = new
-	if (active)
-		signal.data["command"] = "alert"
-		signal.data["picture_state"] = "radiation"
-	else
-		signal.data["command"] = "shuttle"
-
-	var/atom/movable/virtualspeaker/virt = new(null)
-	frequency.post_signal(virt, signal)

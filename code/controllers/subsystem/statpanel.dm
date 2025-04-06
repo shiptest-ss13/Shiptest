@@ -32,7 +32,8 @@ SUBSYSTEM_DEF(statpanels)
 			"Internal Round Timer: [SSticker.round_start_timeofday ? ROUND_TIME : "The round hasn't started yet!"]",
 			"Actual Round Timer: [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]",
 			"\n",
-			"Playing/Connected: [get_active_player_count()]/[length(GLOB.clients)]"
+			"Playing/Connected: [get_active_player_count()]/[length(GLOB.clients)]",
+			"Crew Percentage/Ship Locking Cap: [SSovermap.ship_crew_percentage()]%/[SSovermap.ship_locking_percentage()]%"
 		)
 
 		if(SSshuttle.jump_mode != BS_JUMP_IDLE)
@@ -298,7 +299,7 @@ SUBSYSTEM_DEF(statpanels)
 	. = ..()
 	src.parent = parent
 
-/datum/object_window_info/Destroy(force, ...)
+/datum/object_window_info/Destroy(force)
 	atoms_to_show = null
 	atoms_to_images = null
 	atoms_to_imagify = null
@@ -309,7 +310,7 @@ SUBSYSTEM_DEF(statpanels)
 
 /// Takes a client, attempts to generate object images for it
 /// We will update the client with any improvements we make when we're done
-/datum/object_window_info/process(delta_time)
+/datum/object_window_info/process(seconds_per_tick)
 	// Cache the datum access for sonic speed
 	var/list/to_make = atoms_to_imagify
 	var/list/newly_seen = atoms_to_images

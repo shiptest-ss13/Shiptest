@@ -108,6 +108,7 @@
 
 /mob/proc/throw_item(atom/target)
 	SEND_SIGNAL(src, COMSIG_MOB_THROW, target)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CARBON_THROW_THING, src, target)
 	return
 
 /mob/living/carbon/throw_item(atom/target)
@@ -386,7 +387,7 @@
 
 /mob/living/carbon/get_standard_pixel_y_offset(lying = 0)
 	if(lying)
-		return -6
+		return PIXEL_Y_OFFSET_LYING
 	else
 		return initial(pixel_y)
 
@@ -438,7 +439,7 @@
 			visible_message("<span class='warning'>[src] dry heaves!</span>", \
 							"<span class='userdanger'>You try to throw up, but there's nothing in your stomach!</span>")
 		if(stun)
-			Paralyze(200)
+			Immobilize(30)
 		return TRUE
 
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
@@ -454,7 +455,7 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomit)
 
 	if(stun)
-		Paralyze(80)
+		Immobilize(10)
 
 	playsound(get_turf(src), 'sound/effects/splat.ogg', 50, TRUE)
 	var/turf/T = get_turf(src)
@@ -476,6 +477,7 @@
 		T = get_step(T, dir)
 		if (T?.is_blocked_turf())
 			break
+	adjust_disgust(-(lost_nutrition*rand(0.5, 2)))
 	return TRUE
 
 /mob/living/carbon/proc/spew_organ(power = 5, amt = 1)
@@ -538,6 +540,7 @@
 		REMOVE_TRAIT(src, TRAIT_INCAPACITATED, STAMINA)
 		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, STAMINA)
 		REMOVE_TRAIT(src, TRAIT_FLOORED, STAMINA)
+		REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, STAMINA)
 	else
 		return
 	update_health_hud()
@@ -578,10 +581,28 @@
 			see_invisible = max(G.invis_view, see_invisible)
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
+	if(head)
+		var/obj/item/clothing/head/headslot = head
+		sight |= headslot.vision_flags
+		see_in_dark = max(headslot.darkness_view, see_in_dark)
+		if(headslot.invis_override)
+			see_invisible = max(see_invisible, headslot.invis_override)
+		else
+			see_invisible = max(headslot.invis_view, see_invisible)
+		if(!isnull(headslot.lighting_alpha))
+			lighting_alpha = min(lighting_alpha, headslot.lighting_alpha)
+
+	if(HAS_TRAIT(src, TRAIT_CHEMICAL_NIGHTVISION))
+		lighting_alpha = min(lighting_alpha, LIGHTING_PLANE_ALPHA_NV_DRUG)
+		see_in_dark = max(see_in_dark, 4)
 
 	if(HAS_TRAIT(src, TRAIT_THERMAL_VISION))
 		sight |= (SEE_MOBS)
 		lighting_alpha = min(lighting_alpha, LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE)
+
+	if(HAS_TRAIT(src, TRAIT_GOOD_CHEMICAL_NIGHTVISION))
+		lighting_alpha = min(lighting_alpha, LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE)
+		see_in_dark = max(see_in_dark, 6)
 
 	if(HAS_TRAIT(src, TRAIT_XRAY_VISION))
 		sight |= (SEE_TURFS|SEE_MOBS|SEE_OBJS)
@@ -708,7 +729,9 @@
 
 	//Fire and Brute damage overlay (BSSR)
 	var/hurtdamage = getBruteLoss() + getFireLoss() + damageoverlaytemp
-	if(hurtdamage)
+	if(HAS_TRAIT(src, TRAIT_PAIN_RESIST))
+		hurtdamage = round(hurtdamage/2)
+	if(hurtdamage && !HAS_TRAIT(src, TRAIT_ANALGESIA))
 		var/severity = 0
 		switch(hurtdamage)
 			if(5 to 15)

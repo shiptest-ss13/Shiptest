@@ -67,6 +67,8 @@
 			return pick('sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg', 'sound/voice/human/malescream_6.ogg')
 	else if(ismoth(H))
 		return 'sound/voice/moth/scream_moth.ogg'
+	else if(isvox(H))
+		return 'sound/voice/vox/vox_scream_1.ogg'
 	else if(islizard(H))
 		return pick('sound/voice/lizard/lizard_scream_1.ogg', 'sound/voice/lizard/lizard_scream_2.ogg', 'sound/voice/lizard/lizard_scream_3.ogg', 'sound/voice/lizard/lizard_scream_4.ogg')
 

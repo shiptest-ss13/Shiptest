@@ -77,6 +77,12 @@
 		if(.)
 			L.amount_grown = min(L.amount_grown + damage, L.max_grown)
 
+/mob/living/simple_animal/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	. = ..()
+	if(.)
+		var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
+		return attack_threshold_check(damage, user.melee_damage_type)
+
 /mob/living/simple_animal/attack_animal(mob/living/simple_animal/M)
 	. = ..()
 	if(.)
@@ -141,10 +147,6 @@
 			if(prob(bomb_armor))
 				bloss = bloss / 1.5
 			adjustBruteLoss(bloss)
-
-/mob/living/simple_animal/blob_act(obj/structure/blob/B)
-	adjustBruteLoss(20)
-	return
 
 /mob/living/simple_animal/do_attack_animation(atom/A, visual_effect_icon, used_item, no_effect)
 	if(!no_effect && !visual_effect_icon && melee_damage_upper)

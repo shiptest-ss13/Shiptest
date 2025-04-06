@@ -2,7 +2,7 @@ SUBSYSTEM_DEF(overmap)
 	name = "Overmap"
 	wait = 10
 	init_order = INIT_ORDER_OVERMAP
-	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
+	flags = SS_KEEP_TIMING
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
 
 	///Defines which generator to use for the overmap
@@ -15,6 +15,9 @@ SUBSYSTEM_DEF(overmap)
 	///List of spawned outposts. The default spawn location is the first index.
 	var/list/outposts
 
+	///List of dynamic encounters, just planets rn.
+	var/list/dynamic_encounters
+	COOLDOWN_DECLARE(dynamic_despawn_cooldown)
 	///List of all events
 	var/list/events
 
@@ -48,6 +51,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
+	dynamic_encounters = list()
 	events = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
@@ -79,6 +83,20 @@ SUBSYSTEM_DEF(overmap)
 	return ..()
 
 /datum/controller/subsystem/overmap/fire()
+	if(length(dynamic_encounters) < CONFIG_GET(number/max_overmap_dynamic_events))
+		spawn_ruin_level()
+	else if(COOLDOWN_FINISHED(src, dynamic_despawn_cooldown))
+		//need to make this have a weight for older planets at some point soon
+		var/datum/overmap/dynamic/picked_encounter = pick(dynamic_encounters)
+		if(picked_encounter)
+			//If we manage to start a countdown, 5 minute timer, else, try again in a minute.
+			//Cant run this first section of the fire too hot as we still need MC_TICK_CHECK to not run out for events.
+			//This should probally moved to its own fire or just otherwise handled better.
+			if(picked_encounter.start_countdown(10 MINUTES, COLOR_SOFT_RED))
+				COOLDOWN_START(src, dynamic_despawn_cooldown, 5 MINUTES)
+			else
+				COOLDOWN_START(src, dynamic_despawn_cooldown, 1 MINUTES)
+
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
 			if(E.get_nearby_overmap_objects())
@@ -127,10 +145,10 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/proc/create_map()
 	if (generator_type == OVERMAP_GENERATOR_SOLAR)
 		spawn_events_in_orbits()
-		spawn_ruin_levels_in_orbits()
 	else
 		spawn_events()
-		spawn_ruin_levels()
+
+	spawn_ruin_levels()
 
 	spawn_outpost()
 	//spawn_initial_ships()
@@ -154,7 +172,7 @@ SUBSYSTEM_DEF(overmap)
 			return
 		if(!length(orbits))
 			break // Can't fit any more in
-		var/event_type = pickweight(GLOB.overmap_event_pick_list)
+		var/event_type = pick_weight(GLOB.overmap_event_pick_list)
 		var/selected_orbit = pick(orbits)
 
 		var/list/T = get_unused_overmap_square_in_radius(selected_orbit)
@@ -250,11 +268,10 @@ SUBSYSTEM_DEF(overmap)
  */
 /datum/controller/subsystem/overmap/proc/spawn_ruin_levels()
 	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /datum/overmap/dynamic()
+		spawn_ruin_level()
 
-/datum/controller/subsystem/overmap/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
-		new /datum/overmap/dynamic()
+/datum/controller/subsystem/overmap/proc/spawn_ruin_level()
+	new /datum/overmap/dynamic()
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
@@ -270,6 +287,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
+	SSblackbox.record_feedback("tally", "encounter_spawned", 1, "[dynamic_datum.mapgen]")
 
 	// name is random but PROBABLY unique
 	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
@@ -291,6 +309,7 @@ SUBSYSTEM_DEF(overmap)
 	mapgen.generate_turfs(vlevel.get_unreserved_block())
 
 	var/list/ruin_turfs = list()
+	var/list/ruin_templates = list()
 	if(used_ruin)
 		var/turf/ruin_turf = locate(
 			rand(
@@ -302,6 +321,7 @@ SUBSYSTEM_DEF(overmap)
 		)
 		used_ruin.load(ruin_turf)
 		ruin_turfs[used_ruin.name] = ruin_turf
+		ruin_templates[used_ruin.name] = used_ruin
 
 	// fill in the turfs, AFTER generating the ruin. this prevents them from generating within the ruin
 	// and ALSO prevents the ruin from being spaced when it spawns in
@@ -376,7 +396,16 @@ SUBSYSTEM_DEF(overmap)
 		quaternary_dock.dwidth = 0
 		docking_ports += quaternary_dock
 
-	return list(mapzone, docking_ports, ruin_turfs)
+	var/list/spawned_mission_pois = list()
+	for(var/obj/effect/landmark/mission_poi/mission_poi in SSmissions.unallocated_pois)
+		if(!vlevel.is_in_bounds(mission_poi))
+			continue
+
+		spawned_mission_pois += mission_poi
+		SSmissions.unallocated_pois -= mission_poi
+
+
+	return list(mapzone, docking_ports, ruin_turfs, ruin_templates, spawned_mission_pois)
 
 /**
  * Returns a random, usually empty turf in the overmap
@@ -418,10 +447,10 @@ SUBSYSTEM_DEF(overmap)
  * Gets the parent overmap object (e.g. the planet the atom is on) for a given atom.
  * * source - The object you want to get the corresponding parent overmap object for.
  */
-/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+/datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source, exclude_ship = FALSE)
 	var/turf/T = get_turf(source)
 	var/area/ship/A = get_area(source)
-	while(istype(A) && A.mobile_port)
+	while(istype(A) && A.mobile_port && !exclude_ship)
 		if(A.mobile_port.current_ship)
 			return A.mobile_port.current_ship
 		A = A.mobile_port.underlying_turf_area[T]
@@ -431,9 +460,31 @@ SUBSYSTEM_DEF(overmap)
 			if(D.mapzone?.is_in_bounds(source))
 				return D
 
+/datum/controller/subsystem/overmap/proc/ship_crew_percentage()
+	var/ship_percentages = 0
+	var/counted_ships = 0
+	for(var/datum/overmap/ship/controlled/ship_datum in controlled_ships)
+		var/slot_count = 0
+		if(!ship_datum.source_template || ship_datum.source_template.category != "subshuttles")
+			continue
+		for(var/job_slot in ship_datum.source_template.job_slots)
+			slot_count += ship_datum.source_template.job_slots[job_slot]
+		if(!slot_count)
+			continue
+		ship_percentages += ((length(ship_datum.manifest) / slot_count) * 100)
+		counted_ships++
+	if(ship_percentages && counted_ships)
+		return round(ship_percentages / counted_ships)
+	return 0
+
+/datum/controller/subsystem/overmap/proc/ship_locking_percentage()
+	return round(clamp(clamp(((world.time - (CONFIG_GET(number/ship_locking_starts) MINUTES)) / (1 MINUTES)), 0, 25) + TRANSFER_FACTOR * 100, 0, 50))
+
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
 	if(!(GLOB.ship_spawn_enabled) || (get_num_cap_ships() >= CONFIG_GET(number/max_shuttle_count)))
+		return FALSE
+	if((length(controlled_ships) < 2 && CONFIG_GET(flag/auto_ship_spawn_locking)) && ship_crew_percentage() < ship_locking_percentage())
 		return FALSE
 	return TRUE
 
@@ -444,6 +495,25 @@ SUBSYSTEM_DEF(overmap)
 		if(!Ship.source_template || Ship.source_template.category != "subshuttles")
 			ship_count++
 	return ship_count
+
+/datum/controller/subsystem/overmap/proc/get_fancy_manifest()
+	var/list/manifest_out = list()
+	for(var/datum/overmap/ship/controlled/ship as anything in controlled_ships)
+		if(!length(ship.manifest))
+			continue
+		var/list/data = list()
+		data["color"] = ship.source_template.faction.color
+		data["mode"] = ship.join_mode
+		for(var/crewmember in ship.manifest)
+			var/datum/job/crewmember_job = ship.manifest[crewmember]
+			data["crew"] += list(list(
+				"name" = crewmember,
+				"rank" = crewmember_job.name,
+				"officer" = crewmember_job.officer
+			))
+		manifest_out["[ship.name] ([ship.source_template.short_name])"] = data
+
+	return manifest_out
 
 /datum/controller/subsystem/overmap/proc/get_manifest()
 	var/list/manifest_out = list()
@@ -492,6 +562,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = SSovermap.overmap_objects
 	controlled_ships = SSovermap.controlled_ships
 	events = SSovermap.events
+	dynamic_encounters = SSovermap.dynamic_encounters
 	outposts = SSovermap.outposts
 	radius_positions = SSovermap.radius_positions
 	overmap_vlevel = SSovermap.overmap_vlevel

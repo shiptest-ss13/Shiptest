@@ -82,13 +82,14 @@
 	if(viewing_category && market)
 		if(market.available_items[viewing_category])
 			for(var/datum/blackmarket_item/I in market.available_items[viewing_category])
-				data["items"] += list(list(
-					"id" = I.type,
-					"name" = I.name,
-					"cost" = I.price,
-					"amount" = I.unlimited ? "INF" : I.stock,
-					"desc" = I.desc || I.name
-				))
+				if(I.available)
+					data["items"] += list(list(
+						"id" = I.type,
+						"name" = I.name,
+						"cost" = I.price,
+						"amount" = I.unlimited ? "INF" : I.stock,
+						"desc" = I.desc || I.name
+					))
 	return data
 
 /obj/item/blackmarket_uplink/ui_static_data(mob/user)

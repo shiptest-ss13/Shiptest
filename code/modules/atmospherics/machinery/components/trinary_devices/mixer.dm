@@ -58,7 +58,7 @@
 	air3.set_volume(300)
 	airs[3] = air3
 
-/obj/machinery/atmospherics/components/trinary/mixer/process_atmos()
+/obj/machinery/atmospherics/components/trinary/mixer/process_atmos(seconds_per_tick)
 	..()
 	if(!on || !(nodes[1] && nodes[2] && nodes[3]) && !is_operational)
 		return

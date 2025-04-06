@@ -1,28 +1,19 @@
-// .50 AE (Desert Eagle)
-
-/obj/projectile/bullet/a50AE
-	name = ".50 AE bullet"
-	damage = 40
-
-/obj/projectile/bullet/a50AE/hp
-	name = ".50 AE hollow point bullet"
-	damage = 60
-	armour_penetration = -50
-
 // .38 (Colt Detective Special & Winchester)
 
 /obj/projectile/bullet/c38
 	name = ".38 bullet"
 	damage = 20
 	armour_penetration = -20
+	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/c38/surplus
-	damage = 15
+	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c38/match
 	name = ".38 match bullet"
-	speed = 0.3
 	armour_penetration = -10
+	speed_mod = BULLET_SPEED_AP_MOD
 	ricochets_max = 4
 	ricochet_chance = 100
 	ricochet_auto_aim_angle = 40
@@ -31,45 +22,33 @@
 	ricochet_decay_chance = 1
 	ricochet_decay_damage = 1
 
-/obj/projectile/bullet/c38/match/bouncy // I don't know why this is a subtype of match
+/obj/projectile/bullet/c38/bouncy
 	name = ".38 rubber bullet"
-	speed = 0.4
 	damage = 7
-	stamina = 38
+	stamina = 28
 	armour_penetration = -60
+	speed_mod = BULLET_SPEED_RUBBER_MOD
 	ricochets_max = 6
 	ricochet_incidence_leeway = 70
 	ricochet_chance = 130
 	ricochet_decay_damage = 0.8
-	shrapnel_type = NONE
+	bullet_identifier = "small rubber bullet"
 
 /obj/projectile/bullet/c38/dumdum
-	name = ".38 dum-dum bullet"
+	name = ".38 prism bullet"
 	damage = 20
-	armour_penetration = -50
+	armour_penetration = -30
 	ricochets_max = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/c38/dumdum
 
 /obj/projectile/bullet/c38/trac
-	name = ".38 TRAC bullet"
+	name = ".38 tracker"
 	damage = 10
 	ricochets_max = 0
-
-/obj/projectile/bullet/c38/trac/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	var/mob/living/carbon/M = target
-	if(!istype(M))
-		return
-	var/obj/item/implant/tracking/c38/imp
-	for(var/obj/item/implant/tracking/c38/TI in M.implants) //checks if the target already contains a tracking implant
-		imp = TI
-		return
-	if(!imp)
-		imp = new /obj/item/implant/tracking/c38(M)
-		imp.implant(M)
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/c38
 
 /obj/projectile/bullet/c38/hotshot //similar to incendiary bullets, but do not leave a flaming trail
-	name = ".38 hot shot bullet"
+	name = ".38 hearth bullet"
 	ricochets_max = 0
 
 /obj/projectile/bullet/c38/hotshot/on_hit(atom/target, blocked = FALSE)
@@ -80,7 +59,7 @@
 		M.IgniteMob()
 
 /obj/projectile/bullet/c38/iceblox //see /obj/projectile/temp for the original code
-	name = ".38 iceblox bullet"
+	name = ".38 chilled bullet"
 	var/temperature = 100
 	ricochets_max = 0
 
@@ -90,17 +69,57 @@
 		var/mob/living/M = target
 		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))
 
+/obj/projectile/bullet/c38/ashwine
+	name = ".38 hallucinogenic bullet"
+	ricochets_max = 0
+
+/obj/projectile/bullet/c38/ashwine/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		M.adjust_jitter(5)
+		M.Dizzy(5)
+		M.adjust_drugginess(10)
+
+/obj/projectile/bullet/c38/shock
+	name = ".38 shock bullet"
+	ricochets_max = 0
+	var/zap_flags = ZAP_MOB_DAMAGE
+
+/obj/projectile/bullet/c38/shock/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		do_sparks(5, FALSE, M)
+		M.electrocute_act(5, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
+	else
+		tesla_zap(target, 5, 2000, zap_flags)
+
+/obj/projectile/bullet/c38/force
+	name = ".38 force bullet"
+	armour_penetration = 10
+	ricochets_max = 0
+
+/obj/projectile/bullet/c38/force/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(ismovable(target) && isliving(target))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+		M.safe_throw_at(throw_target, 2, 2)
+
 // .357 (Syndicate Revolver)
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
-	damage = 30 //shiptest nerf
+	damage = 35
 
-// admin only really, for ocelot memes
+	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "medium bullet"
+
 /obj/projectile/bullet/a357/match
 	name = ".357 match bullet"
-	speed = 0.3
 	armour_penetration = 10
+	speed_mod = BULLET_SPEED_AP_MOD
 	ricochets_max = 5
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
@@ -111,19 +130,22 @@
 /obj/projectile/bullet/a357/hp
 	name = ".357 hollow point bullet"
 	damage = 50
-	armour_penetration = -50
-	ricochet_chance = 0 //mushroom on impact, no bounces
+	armour_penetration = -20
+	speed_mod = BULLET_SPEED_HP_MOD
+	ricochet_chance = 0
 
 // .45-70 Gov't (Hunting Revolver)
 
 /obj/projectile/bullet/a4570
 	name = ".45-70 bullet"
 	damage = 45 //crits in 3-4 taps depending on armor
+	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "large bullet"
 
 /obj/projectile/bullet/a4570/match
 	name = ".45-70 match bullet"
-	speed = 0.3
 	armour_penetration = 10
+	speed_mod = BULLET_SPEED_AP_MOD
 	ricochets_max = 5
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
@@ -133,8 +155,9 @@
 
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
-	damage = 60 //it's the pre-nerf .357 with less armor pen
-	armour_penetration = -50
+	damage = 55
+	armour_penetration = -10
+	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/a4570/explosive //for extra oof
 	name = ".45-70 explosive bullet"
@@ -145,27 +168,25 @@
 	explosion(target, -1, 0, 1)
 	return BULLET_ACT_HIT
 
-
-/obj/projectile/bullet/c22lr
-	name = ".22LR bullet"
-	damage = 20
-	armour_penetration = -45
-	ricochet_incidence_leeway = 20
-	ricochet_chance = 65
-
 // 44 Short (Roumain & Shadow)
 
 /obj/projectile/bullet/a44roum
 	name = ".44 roumain bullet"
 	damage =  25
+	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/a44roum/rubber
-	name = ".44 roumain bullet"
+	name = ".44 roumain rubber bullet"
 	damage =  7
-	stamina = 38
-	armour_penetration = -20
+	stamina = 40
+	armour_penetration = -10
+	speed_mod = BULLET_SPEED_RUBBER_MOD
+	bullet_identifier = "small rubber bullet"
 
 /obj/projectile/bullet/a44roum/hp
-	name = ".44 roumain bullet"
-	damage =  45
-	armour_penetration = -20
+	name = ".44 roumain hollow point bullet"
+	damage =  40
+	armour_penetration = -10
+	ricochet_chance = 0
+	speed_mod = BULLET_SPEED_HP_MOD

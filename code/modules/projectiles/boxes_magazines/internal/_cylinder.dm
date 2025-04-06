@@ -2,7 +2,7 @@
 	name = "revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
-	max_ammo = 7
+	max_ammo = 6
 	instant_load = TRUE
 
 /obj/item/ammo_box/magazine/internal/cylinder/get_round(keep = FALSE, counter_clockwise = FALSE)
