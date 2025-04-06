@@ -373,12 +373,12 @@
 				. += "<span class='notice ml-2'>[cyberimp_detect]</span>"
 			if(R)
 				var/health_r = R.fields["p_stat"]
-				. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
+				. += "<a href='byond://?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
 				health_r = R.fields["m_stat"]
-				. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
+				. += "<a href='byond://?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
 			R = find_record("name", perpname, GLOB.data_core.medical)
 			if(R)
-				. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
+				. += "<a href='byond://?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
 			if(traitstring)
 				. += "<span class='notice ml-1'>Detected physiological traits:</span>"
 				. += "<span class='notice ml-2'>[traitstring]</span>"

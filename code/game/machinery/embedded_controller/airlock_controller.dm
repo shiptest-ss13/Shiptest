@@ -280,8 +280,8 @@
 			state_options = "<A href='?src=[REF(src)];command=abort'>Abort Cycling</A><BR>"
 			current_status = "Cycling to Interior Airlock<BR>[span_average("Chamber Pressurizing")]"
 		if(AIRLOCK_STATE_CLOSED)
-			state_options = {"<A href='?src=[REF(src)];command=cycle_interior'>Open Interior Airlock</A><BR>
-<A href='?src=[REF(src)];command=cycle_exterior'>Open Exterior Airlock</A><BR>"}
+			state_options = {"<A href='byond://?src=[REF(src)];command=cycle_interior'>Open Interior Airlock</A><BR>
+<A href='byond://?src=[REF(src)];command=cycle_exterior'>Open Exterior Airlock</A><BR>"}
 		if(AIRLOCK_STATE_DEPRESSURIZE)
 			state_options = "<A href='?src=[REF(src)];command=abort'>Abort Cycling</A><BR>"
 			current_status = "Cycling to Exterior Airlock<BR>[span_average("Chamber Depressurizing")]"
