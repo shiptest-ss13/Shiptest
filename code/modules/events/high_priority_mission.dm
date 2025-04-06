@@ -19,7 +19,10 @@
 
 /datum/round_event/high_priority_mission/setup()
 	target_outpost = pick(SSovermap.outposts)
-	priority_mission = pick(target_outpost.missions)
+	if(prob(75))
+		priority_mission = pick(SSmissions.active_ruin_missions)
+	else
+		priority_mission = pick(target_outpost.missions)
 
 /datum/round_event/high_priority_mission/start()
 	if(priority_mission)
