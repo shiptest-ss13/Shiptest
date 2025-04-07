@@ -2,7 +2,7 @@
 	name = "\improper Armored Combat Vehicle \"Tank\""
 	desc = "While exosuits have taken over armored vehicles in performance in ground combat, factions that can not afford expensive exosuits have to rely on these old relics. The 207 was exclusively mass produced for a Kalixcian war, however an abrupt surrender left many of these to gain dust in warehouses."
 
-	icon = 'icons/mecha/mecha_48x48.dmi'
+	icon = 'icons/mecha/mecha_96x96.dmi'
 	icon_state = "five_stars"
 
 	stepsound = 'sound/mecha/mechstep.ogg'
@@ -15,8 +15,8 @@
 	step_in = 5
 	dir_in = 1 //Facing North.
 	max_integrity = 800
-	pixel_x = -8
-	pixel_y = -6
+	pixel_x = -32
+	pixel_y = -32
 
 /obj/mecha/combat/combat_tank/Initialize()
 	. = ..()

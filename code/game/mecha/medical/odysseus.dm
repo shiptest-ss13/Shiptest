@@ -4,6 +4,7 @@
 	icon_state = "odysseus"
 	step_in = 2
 	max_temperature = 15000
+	max_integrity = 120
 	wreckage = /obj/structure/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
 	deflect_chance = 15
