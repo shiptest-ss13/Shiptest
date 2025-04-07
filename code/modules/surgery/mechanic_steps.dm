@@ -3,8 +3,8 @@
 	name = "unscrew shell"
 	implements = list(
 		TOOL_SCREWDRIVER		= 100,
-		TOOL_SCALPEL 			= 75, // med borgs could try to unscrew shell with scalpel
-		/obj/item/melee/knife/kitchen	= 50,
+		TOOL_SCALPEL 			= 75,
+		/obj/item/melee/knife	= 50,
 		/obj/item				= 10)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/screwdriver.ogg'
@@ -28,7 +28,7 @@
 	implements = list(
 		TOOL_SCREWDRIVER		= 100,
 		TOOL_SCALPEL 			= 75,
-		/obj/item/melee/knife/kitchen	= 50,
+		/obj/item/melee/knife	= 50,
 		/obj/item				= 10)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/screwdriver.ogg'
@@ -50,8 +50,7 @@
 /datum/surgery_step/prepare_electronics
 	name = "prepare electronics"
 	implements = list(
-		TOOL_MULTITOOL = 100,
-		TOOL_HEMOSTAT = 10) // try to reboot internal controllers via short circuit with some conductor
+		TOOL_MULTITOOL = 100,)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/tape_flip.ogg'
 	success_sound = 'sound/items/taperecorder_close.ogg'
