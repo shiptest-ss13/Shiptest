@@ -14,7 +14,7 @@
 	integrity_failure = 0.2
 
 	var/id = 0
-	var/obj/machinery/power/solar_control/control
+	var/obj/machinery/computer/solar_control/control
 
 /obj/machinery/power/tracker/Initialize(mapload, obj/item/solar_assembly/S)
 	. = ..()
@@ -26,7 +26,7 @@
 	unset_control() //remove from control computer
 	return ..()
 
-/obj/machinery/power/tracker/proc/set_control(obj/machinery/power/solar_control/SC)
+/obj/machinery/power/tracker/proc/set_control(obj/machinery/computer/solar_control/SC)
 	unset_control()
 	control = SC
 	SC.connected_tracker = src
