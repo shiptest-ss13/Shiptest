@@ -309,7 +309,7 @@
 
 /obj/item/circuitboard/mecha/gygax/targeting
 	name = "500 Series Weapon Control and Targeting module (Exosuit Board)"
-	icon_state = "mcontroller"
+	icon_state = "mweapons"
 
 /obj/item/circuitboard/mecha/gygax/main
 	name = "500 Series Central Control module (Exosuit Board)"
@@ -321,7 +321,7 @@
 
 /obj/item/circuitboard/mecha/durand/targeting
 	name = "Durand Weapon Control and Targeting module (Exosuit Board)"
-	icon_state = "mcontroller"
+	icon_state = "mweapons"
 
 /obj/item/circuitboard/mecha/durand/main
 	name = "Durand Central Control module (Exosuit Board)"
@@ -333,7 +333,7 @@
 
 /obj/item/circuitboard/mecha/honker/targeting
 	name = "H.O.N.K Weapon Control and Targeting module (Exosuit Board)"
-	icon_state = "mcontroller"
+	icon_state = "mweapons"
 
 /obj/item/circuitboard/mecha/honker/main
 	name = "H.O.N.K Central Control module (Exosuit Board)"
@@ -353,7 +353,7 @@
 
 /obj/item/circuitboard/mecha/phazon/targeting
 	name = "Phazon Weapon Control and Targeting module (Exosuit Board)"
-	icon_state = "mcontroller"
+	icon_state = "mweapons"
 
 /obj/item/circuitboard/mecha/phazon/main
 	name = "Phazon Central Control module (Exosuit Board)"
