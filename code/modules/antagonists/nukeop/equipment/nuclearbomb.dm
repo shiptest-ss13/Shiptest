@@ -114,7 +114,7 @@
 
 		if(NUKESTATE_PANEL_REMOVED)
 			if(I.tool_behaviour == TOOL_WELDER)
-				if(!I.tool_start_check(user, amount=1))
+				if(!I.tool_start_check(user, src, amount=1))
 					return
 				to_chat(user, "<span class='notice'>You start cutting [src]'s inner plate...</span>")
 				if(I.use_tool(src, user, 80, volume=100, amount=1))
@@ -136,7 +136,7 @@
 						to_chat(user, "<span class='warning'>You fail to load the plutonium core into [core_box]. [core_box] has already been used!</span>")
 				return
 			if(istype(I, /obj/item/stack/sheet/metal))
-				if(!I.tool_start_check(user, amount=20))
+				if(!I.tool_start_check(user, src, amount=20))
 					return
 
 				to_chat(user, "<span class='notice'>You begin repairing [src]'s inner metal plate...</span>")

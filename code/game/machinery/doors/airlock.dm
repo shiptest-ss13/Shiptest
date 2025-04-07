@@ -973,7 +973,7 @@
 					return
 			if(AIRLOCK_SECURITY_METAL)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, "<span class='notice'>You begin cutting the panel's shielding...</span>")
 					if(C.use_tool(src, user, 40, volume=50, amount = 2))
@@ -1005,7 +1005,7 @@
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_I)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, "<span class='notice'>You begin cutting the inner layer of shielding...</span>")
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
@@ -1031,7 +1031,7 @@
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_O)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, "<span class='notice'>You begin cutting the outer layer of shielding...</span>")
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
@@ -1123,7 +1123,7 @@
 			to_chat(user, "<span class='warning'>[src] is blocked by a seal!</span>")
 			return
 		if(user.a_intent != INTENT_HELP)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message("<span class='notice'>[user] begins [welded ? "unwelding":"welding"] the airlock.</span>", \
 							"<span class='notice'>You begin [welded ? "unwelding":"welding"] the airlock...</span>", \
@@ -1135,7 +1135,7 @@
 				update_appearance()
 		else
 			if(obj_integrity < max_integrity)
-				if(!W.tool_start_check(user, amount=0))
+				if(!W.tool_start_check(user, src, amount=0))
 					return
 				user.visible_message("<span class='notice'>[user] begins welding the airlock.</span>", \
 								"<span class='notice'>You begin repairing the airlock...</span>", \
@@ -1236,7 +1236,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	var/decon_time = 5 SECONDS
 	if(welded)

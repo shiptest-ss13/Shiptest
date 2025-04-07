@@ -109,7 +109,7 @@
 			to_chat(user,  "<span class='alert'>Access denied.</span>")
 	else if(W.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
 		if(obj_integrity < max_integrity)
-			if(!W.tool_start_check(user, amount=5))
+			if(!W.tool_start_check(user, src, amount=5))
 				return
 
 			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")

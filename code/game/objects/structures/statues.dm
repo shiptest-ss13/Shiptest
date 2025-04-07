@@ -23,7 +23,7 @@
 		if(default_unfasten_wrench(user, W))
 			return
 		if(W.tool_behaviour == TOOL_WELDER)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return FALSE
 
 			user.visible_message("<span class='notice'>[user] is slicing apart the [name].</span>", \

@@ -97,7 +97,7 @@
 			qdel(src)
 	else if(W.tool_behaviour == TOOL_WELDER)
 		if(obj_integrity < max_integrity)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 
 			user.visible_message("<span class='notice'>[user] starts to repair [src].</span>",
@@ -109,7 +109,7 @@
 									"<span class='notice'>You finish repairing [src].</span>")
 
 		else if(!anchored)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 
 			user.visible_message("<span class='notice'>[user] starts to weld [src] to the floor.</span>",
@@ -119,7 +119,7 @@
 				set_anchored(TRUE)
 				to_chat(user, "<span class='notice'>You weld [src] to the floor.</span>")
 		else
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 
 			user.visible_message("<span class='notice'>[user] starts to cut [src] free from the floor.</span>",

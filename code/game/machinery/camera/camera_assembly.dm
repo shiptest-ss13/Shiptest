@@ -270,7 +270,7 @@
 	return TRUE
 
 /obj/structure/camera_assembly/proc/weld(obj/item/weldingtool/W, mob/living/user)
-	if(!W.tool_start_check(user, amount=3))
+	if(!W.tool_start_check(user, src, amount=3))
 		return FALSE
 	to_chat(user, "<span class='notice'>You start to weld [src]...</span>")
 	if(W.use_tool(src, user, 20, amount=3, volume = 50))

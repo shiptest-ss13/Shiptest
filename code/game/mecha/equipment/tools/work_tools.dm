@@ -531,6 +531,9 @@
 	toolspeed = chassis?.has_charge(energy_drain) ? 0.3 : 10
 	return TRUE
 
+/obj/item/mecha_parts/mecha_equipment/salvage_saw/tool_use_check(mob/living/user, atom/target, amount)
+	return check_do_after(target)
+
 /obj/item/mecha_parts/mecha_equipment/salvage_saw/proc/saw_mob(mob/living/target, mob/user)
 	target.visible_message("<span class='danger'>[chassis] is sawing [target] with [src]!</span>", \
 						"<span class='userdanger'>[chassis] is sawing you with [src]!</span>")

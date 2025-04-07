@@ -154,7 +154,7 @@
 /obj/structure/disposalconstruct/welder_act(mob/living/user, obj/item/I)
 	..()
 	if(anchored)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return TRUE
 
 		to_chat(user, "<span class='notice'>You start welding the [pipename] in place...</span>")

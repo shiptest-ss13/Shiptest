@@ -563,7 +563,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 /obj/machinery/power/apc/welder_act(mob/living/user, obj/item/W)
 	. = ..()
 	if (opened && !has_electronics && !terminal)
-		if(!W.tool_start_check(user, amount=3))
+		if(!W.tool_start_check(user, src, amount=3))
 			return
 		user.visible_message("<span class='notice'>[user.name] welds [src].</span>", \
 							"<span class='notice'>You start welding the APC frame...</span>", \

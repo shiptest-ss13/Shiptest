@@ -260,7 +260,7 @@
 
 /obj/structure/closet/proc/try_deconstruct(obj/item/W, mob/user)
 	if(W.tool_behaviour == cutting_tool || W.tool_behaviour == TOOL_DECONSTRUCT)
-		if(!W.tool_start_check(user, amount = 0))
+		if(!W.tool_start_check(user, src, amount = 0))
 			return
 		to_chat(user, span_notice("You begin cutting \the [src] apart..."))
 		if(W.use_tool(src, user, 40, volume = 50))
@@ -276,7 +276,7 @@
 	. = TRUE
 	if(opened)
 		if(W.tool_behaviour == cutting_tool && user.a_intent != INTENT_HELP)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 
 			to_chat(user, "<span class='notice'>You begin cutting \the [src] apart...</span>")
@@ -292,7 +292,7 @@
 			return
 		return
 	else if(W.tool_behaviour == TOOL_WELDER && can_weld_shut)
-		if(!W.tool_start_check(user, amount=0))
+		if(!W.tool_start_check(user, src, src, amount=0))
 			return
 
 		to_chat(user, "<span class='notice'>You begin [welded ? "unwelding":"welding"] \the [src]...</span>")

@@ -161,7 +161,7 @@
 		if(payload || !wires.is_all_cut() || !open_panel)
 			return
 
-		if(!I.tool_start_check(user, amount=5))  //uses up 5 fuel
+		if(!I.tool_start_check(user, src, amount=5))  //uses up 5 fuel
 			return
 
 		to_chat(user, "<span class='notice'>You start to cut [src] apart...</span>")

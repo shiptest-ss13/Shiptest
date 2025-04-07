@@ -243,7 +243,7 @@
 /turf/closed/proc/try_decon(obj/item/I, mob/user, turf/T)
 	var/act_duration = breakdown_duration
 	if(I.tool_behaviour == TOOL_WELDER)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return FALSE
 		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
 		while(I.use_tool(src, user, act_duration, volume=50))
@@ -261,7 +261,7 @@
 	if(breakdown_duration == -1)
 		to_chat(user, span_warning("[src] cannot be deconstructed!"))
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
 	while(I.use_tool(src, user, act_duration, volume=100))

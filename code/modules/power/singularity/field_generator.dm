@@ -134,7 +134,7 @@ field_generator power level display
 			to_chat(user, "<span class='warning'>[src] needs to be wrenched to the floor!</span>")
 
 		if(FG_SECURED)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return TRUE
 			user.visible_message("<span class='notice'>[user] starts to weld [src] to the floor.</span>", \
 				"<span class='notice'>You start to weld \the [src] to the floor...</span>", \
@@ -144,7 +144,7 @@ field_generator power level display
 				to_chat(user, "<span class='notice'>You weld the field generator to the floor.</span>")
 
 		if(FG_WELDED)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return TRUE
 			user.visible_message("<span class='notice'>[user] starts to cut [src] free from the floor.</span>", \
 				"<span class='notice'>You start to cut \the [src] free from the floor...</span>", \

@@ -196,7 +196,7 @@
 			to_chat(user, "<span class='warning'>[src] doesn't need repairs.</span>")
 			return
 
-		if(!I.tool_start_check(user, amount=1))
+		if(!I.tool_start_check(user, src, amount=1))
 			return
 
 		user.visible_message(
