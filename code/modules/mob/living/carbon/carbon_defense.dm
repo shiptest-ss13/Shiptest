@@ -463,7 +463,8 @@
 		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
 			to_chat(M, "<span class='warning'>[src] looks visibly upset as you pat [p_them()] on the head.</span>")
 
-// Tail pulls!
+
+/* // Tail pulls!
 	else if((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && !isnull(src.getorgan(/obj/item/organ/tail)))
 		M.visible_message(span_notice("[M] pulls on [src]'s tail!"), \
 					null, span_hear("You hear a soft patter."), DEFAULT_MESSAGE_RANGE, list(M, src))
@@ -480,7 +481,7 @@
 		playsound(loc, 'sound/effects/rip1.ogg', 75, TRUE)
 		dropItemToGround(faketail)
 		M.put_in_hands(faketail)
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "rippedtail", /datum/mood_event/rippedtail)
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "rippedtail", /datum/mood_event/rippedtail) */
 
 	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			//WS Edit - Adds more help emotes
 		SEND_SIGNAL(src, COMSIG_CARBON_HUGGED, M)
