@@ -74,16 +74,20 @@ FLOOR SAFES
 		if(istype(I, /obj/item/clothing/neck/stethoscope))
 			attack_hand(user)
 			return
-
-		else if(I.tool_behaviour == TOOL_DECONSTRUCT)
-			user.visible_message("<span class='warning'>[user] begin to cut through the lock of \the [src].</span>","<span class='notice'>You start cutting trough the lock of [src].</span>")
-			if(I.use_tool(src, user, 45 SECONDS))
-				broken = TRUE
-				user.visible_message("<span class='warning'>[user] successfully cuts trough the lock of \the [src].</span>","<span class='notice'>You successfully cut trough the lock of [src].</span>")
-
 		else
 			to_chat(user, "<span class='warning'>You can't put [I] into the safe while it is closed!</span>")
 			return
+
+/obj/structure/safe/deconstruct_act(mob/living/user, obj/item/tool)
+	if(open)
+		return FALSE
+	if(..())
+		return TRUE
+	user.visible_message("<span class='warning'>[user] begin to cut through the lock of \the [src].</span>","<span class='notice'>You start cutting trough the lock of [src].</span>")
+	if(tool.use_tool(src, user, 45 SECONDS))
+		broken = TRUE
+		user.visible_message("<span class='warning'>[user] successfully cuts trough the lock of \the [src].</span>","<span class='notice'>You successfully cut trough the lock of [src].</span>")
+	return TRUE
 
 /obj/structure/safe/ex_act(severity, target)
 	if(((severity == 2 && target == src) || severity == 1) && !safe_broken)

@@ -57,10 +57,6 @@
 		. += "<span class='notice'>The supporting rods look like they could be <b>welded</b>.</span>"
 
 /obj/structure/catwalk/attackby(obj/item/C, mob/user, params)
-	if((C.tool_behaviour == TOOL_WELDER || C.tool_behaviour == TOOL_DECONSTRUCT) && !(resistance_flags & INDESTRUCTIBLE))
-		to_chat(user, "<span class='notice'>You slice off [src]</span>")
-		deconstruct()
-		return
 	if(C.tool_behaviour == TOOL_CROWBAR && plated_tile)
 		hatch_open = !hatch_open
 		if(hatch_open)
@@ -83,6 +79,20 @@
 				update_appearance()
 		return
 	return ..()
+
+/obj/structure/catwalk/deconstruct_act(mob/living/user, obj/item/tool)
+	if(..())
+		return TRUE
+	to_chat(user, "<span class='notice'>You slice off [src]</span>")
+	deconstruct()
+	return TRUE
+
+/obj/structure/catwalk/welder_act(mob/living/user, obj/item/tool)
+	if(..() || (resistance_flags & INDESTRUCTIBLE))
+		return TRUE
+	to_chat(user, "<span class='notice'>You slice off [src]</span>")
+	deconstruct()
+	return TRUE
 
 /obj/structure/catwalk/Move(atom/newloc)
 	var/turf/T = loc
