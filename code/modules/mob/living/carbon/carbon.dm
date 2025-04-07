@@ -233,6 +233,12 @@
 
 		paper_note.show_through_camera(usr)
 
+	if(href_list["flavor_more"])
+		var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text (expanded)", 500, 200)
+		popup.set_content(flavor_text_html)
+		popup.open()
+		return
+
 /mob/living/carbon/on_fall()
 	. = ..()
 	loc?.handle_fall(src)//it's loc so it doesn't call the mob's handle_fall which does nothing
@@ -1174,11 +1180,6 @@
 		update_inv_gloves()
 		. = TRUE
 
-/mob/living/carbon/proc/update_flavor_text_feature(new_text)
-	if(!dna)
-		return
-	dna.features["flavor_text"] = new_text
-
 /// Returns whether or not the carbon should be able to be shocked
 /mob/living/carbon/proc/should_electrocute(power_source)
 	if (ismecha(loc))
@@ -1227,3 +1228,30 @@
 		set_lying_angle(pick(90, 270))
 	else
 		set_lying_angle(new_lying_angle)
+
+/mob/living/carbon/proc/set_flavor_text(new_text, new_portrait, new_source)
+	if(!new_text)
+		return
+
+	AddComponent(/datum/component/flavor_text, new_text, new_portrait, new_source)
+
+	flavor_text = new_text
+	flavor_text_html = parsemarkdown_basic(new_text)
+
+	if(findtext(new_portrait, /datum/component/flavor_text::flavortext_regex))
+		//TODO: remove once I decide whether to stick to the TGUI interface or not
+		flavor_text_html += "<img src='[new_portrait]' style='float: right' width=200 />"
+
+	if(dna)
+		dna.features["flavor_text"] = flavor_text
+		dna.features["flavor_portrait"] = new_portrait
+		dna.features["flavor_source"] = new_source
+
+/mob/living/carbon/verb/change_flavor_text()
+	set name = "Change Flavor Text"
+	set category = "IC"
+	set src in usr
+
+	var/new_text = stripped_multiline_input(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(flavor_text), MAX_FLAVOR_LEN, TRUE)
+
+	set_flavor_text(new_text)

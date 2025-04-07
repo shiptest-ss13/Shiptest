@@ -101,6 +101,8 @@
 		"elzu_horns" = pick(GLOB.elzu_horns_list),
 		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
 		"flavor_text" = "",
+		"flavor_portrait" = "",
+		"flavor_portrait_source" = "",
 		"frills" = pick(GLOB.frills_list),
 		"horns" = pick(GLOB.horns_list),
 		"ipc_antenna" = pick(GLOB.ipc_antennas_list),
