@@ -94,6 +94,12 @@
 	charge_power_consume = 100
 	charge_windup = 0
 
+	facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 25),
+		MECHA_SIDE_ARMOUR = list(50, 0.75, 25),
+		MECHA_BACK_ARMOUR = list(60, 1, 10)
+	)
+
 /obj/mecha/combat/gygax/charger/mp/loaded/Initialize()
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser(src)
