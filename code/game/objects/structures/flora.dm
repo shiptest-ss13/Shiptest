@@ -34,8 +34,8 @@
 	layer = FLY_LAYER
 	var/log_amount = 10
 
-	fuel_power = 2 // trees take longer to burn
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	fuel_power = 1 // trees are more resistant to fire and take much longer to burn
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/flora/tree/ComponentInitialize()
@@ -66,6 +66,8 @@
 	icon_state = "tree_stump"
 	density = FALSE
 	pixel_x = -16
+	fuel_power = 2 // it's dead
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
@@ -141,6 +143,8 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	desc = "A dead tree. How it died, you know not."
 	icon_state = "tree_1"
+	fuel_power = 2 // it's dead
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/structure/flora/tree/dead/Initialize()
 	icon_state = "tree_[rand(1, 6)]"

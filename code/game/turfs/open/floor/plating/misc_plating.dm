@@ -241,10 +241,10 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
 	layer = HIGH_TURF_LAYER
-	flammability = 2
+	flammability = 1.5 // just a bit more than enough to sustain itself, needs additional fuel (plants) to really get going
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 	/// How long this takes to burn down to just dirt
-	var/burn_limit = 10
+	var/burn_limit = 20
 
 /turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
