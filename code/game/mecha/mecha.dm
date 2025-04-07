@@ -32,8 +32,8 @@
 	// internal list should be list[ref] = list(occupant_hit_chance, hit_multi, ap_threshold)
 	var/list/facing_modifiers = list(
 		MECHA_FRONT_ARMOUR = list(5, 0.5, 30),
-		MECHA_SIDE_ARMOUR = list(25, 1, 30),
-		MECHA_BACK_ARMOUR = list(60, 1.5, 30)
+		MECHA_SIDE_ARMOUR = list(25, 0.75, 30),
+		MECHA_BACK_ARMOUR = list(60, 1, 30)
 	)
 
 	var/equipment_disabled = 0 //disabled due to EMP
