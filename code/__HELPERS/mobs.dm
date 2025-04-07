@@ -312,7 +312,7 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	delay *= user.do_after_coefficent()
 
-	var/datum/progressbar/progbar = new(user, delay, target || user, timed_action_flags, extra_checks, show_progress && user.client)
+	var/datum/progressbar/progbar = new(user, delay, target || user, timed_action_flags, extra_checks, show_progress)
 	var/datum/cogbar/cog
 
 	if(show_progress && !hidden && delay >= 1 SECONDS)

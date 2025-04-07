@@ -25,7 +25,7 @@
 	///Whether the progress bar should be visible
 	var/show_progress = FALSE
 
-/datum/progressbar/New(mob/User, goal_number, atom/target, timed_action_flags, datum/callback/extra_checks, show_progress = TRUE)
+/datum/progressbar/New(mob/User, goal_number, atom/target, timed_action_flags, datum/callback/extra_checks, show_progress)
 	. = ..()
 	if (!istype(target))
 		EXCEPTION("Invalid target given")
@@ -51,11 +51,11 @@
 
 	if(user.client)
 		user_client = user.client
+		if(show_progress)
+			src.show_progress = TRUE
+			add_prog_bar_image_to_client()
 	if(extra_checks)
 		src.extra_checks = extra_checks
-	if(show_progress) // show_progress argument is always false without a user client
-		src.show_progress = TRUE
-		add_prog_bar_image_to_client()
 
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(on_user_delete))
 	RegisterSignal(user, COMSIG_MOB_LOGOUT, PROC_REF(clean_user_client))
