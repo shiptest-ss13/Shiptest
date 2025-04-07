@@ -459,14 +459,14 @@
 
 /obj/item/toy/prize/ripley
 	name = "toy Ripley"
-	desc = "1/13"
+	desc = "1/14"
 	max_combat_health = 4 //200 integrity
 	special_attack_type = SPECIAL_ATTACK_DAMAGE
 	special_attack_cry = "GIGA DRILL BREAK"
 
 /obj/item/toy/prize/fireripley //rip
 	name = "toy Firefighting Ripley"
-	desc = "2/13"
+	desc = "2/14"
 	icon_state = "fireripleytoy"
 	max_combat_health = 5 //250 integrity?
 	special_attack_type = SPECIAL_ATTACK_UTILITY
@@ -474,7 +474,7 @@
 
 /obj/item/toy/prize/deathripley
 	name = "toy Deathsquad Ripley"
-	desc = "3/13"
+	desc = "3/14"
 	icon_state = "deathripleytoy"
 	max_combat_health = 5 //250 integrity
 	special_attack_type = SPECIAL_ATTACK_OTHER
@@ -491,7 +491,7 @@
 
 /obj/item/toy/prize/gygax
 	name = "toy 515p"
-	desc = "4/13"
+	desc = "4/14"
 	icon_state = "gygaxtoy"
 	max_combat_health = 5 //250 integrity
 	special_attack_type = SPECIAL_ATTACK_UTILITY
@@ -499,7 +499,7 @@
 
 /obj/item/toy/prize/durand
 	name = "toy Durand"
-	desc = "5/13"
+	desc = "5/14"
 	icon_state = "durandtoy"
 	max_combat_health = 6 //400 integrity
 	special_attack_type = SPECIAL_ATTACK_HEAL
@@ -507,7 +507,7 @@
 
 /obj/item/toy/prize/honk
 	name = "toy H.O.N.K."
-	desc = "6/13"
+	desc = "6/14"
 	icon_state = "honktoy"
 	max_combat_health = 4 //140 integrity
 	special_attack_type = SPECIAL_ATTACK_OTHER
@@ -521,7 +521,7 @@
 
 /obj/item/toy/prize/marauder
 	name = "toy Marauder"
-	desc = "7/13"
+	desc = "7/14"
 	icon_state = "maraudertoy"
 	max_combat_health = 7 //500 integrity
 	special_attack_type = SPECIAL_ATTACK_DAMAGE
@@ -529,7 +529,7 @@
 
 /obj/item/toy/prize/seraph
 	name = "toy Seraph"
-	desc = "8/13"
+	desc = "8/14"
 	icon_state = "seraphtoy"
 	max_combat_health = 8 //550 integrity
 	special_attack_type = SPECIAL_ATTACK_DAMAGE
@@ -537,7 +537,7 @@
 
 /obj/item/toy/prize/touro
 	name = "toy Touro"
-	desc = "9/13"
+	desc = "9/14"
 	icon_state = "tourotoy"
 	max_combat_health = 7 //500 integrity
 	special_attack_type = SPECIAL_ATTACK_DAMAGE
@@ -545,7 +545,7 @@
 
 /obj/item/toy/prize/odysseus
 	name = "toy 202r"
-	desc = "10/13"
+	desc = "10/14"
 	icon_state = "odysseustoy"
 	max_combat_health = 4 //120 integrity
 	special_attack_type = SPECIAL_ATTACK_HEAL
@@ -553,7 +553,7 @@
 
 /obj/item/toy/prize/phazon
 	name = "toy Phazon"
-	desc = "11/13"
+	desc = "11/14"
 	icon_state = "phazontoy"
 	max_combat_health = 6 //200 integrity
 	special_attack_type = SPECIAL_ATTACK_UTILITY
@@ -561,7 +561,7 @@
 
 /obj/item/toy/prize/reticence
 	name = "toy Reticence"
-	desc = "12/13"
+	desc = "12/14"
 	icon_state = "reticencetoy"
 	quiet = TRUE
 	max_combat_health = 4 //100 integrity
@@ -576,11 +576,19 @@
 
 /obj/item/toy/prize/clarke
 	name = "toy Clarke"
-	desc = "13/13"
+	desc = "13/14"
 	icon_state = "clarketoy"
 	max_combat_health = 4 //200 integrity
 	special_attack_type = SPECIAL_ATTACK_UTILITY
 	special_attack_cry = "ROLL OUT"
+
+/obj/item/toy/prize/basenji
+	name = "toy Basenji"
+	desc = "14/14"
+	icon_state = "basenjitoy"
+	max_combat_health = 5
+	special_attack_type = SPECIAL_ATTACK_UTILITY
+	special_attack_cry = "SUPER SLAM"
 
 #undef SPECIAL_ATTACK_HEAL
 #undef SPECIAL_ATTACK_DAMAGE

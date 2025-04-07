@@ -27,7 +27,7 @@
 	///is the bipod deployed?
 	var/bipod_deployed = FALSE
 	///how long do we need to deploy the bipod?
-	var/deploy_time = 2 SECONDS
+	var/deploy_time = 0.5 SECONDS
 
 	///we add these two values to recoi/spread when we have the bipod deployed
 	var/deploy_recoil_bonus = -1
@@ -41,6 +41,9 @@
 	/obj/structure/railing,
 	/obj/structure/flippedtable
 	)
+	wear_minor_threshold = 300
+	wear_major_threshold = 900
+	wear_maximum = 1500
 
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
