@@ -33,6 +33,16 @@
 		armor_protection = clamp(armor_protection - armour_penetration, min(armor_protection, 0), 100)
 	return round(damage_amount * (100 - armor_protection)*0.01, DAMAGE_PRECISION)
 
+/// Get the obj's armor reference
+/obj/proc/get_armor()
+	RETURN_TYPE(/datum/armor)
+	return (armor)
+
+/// Helper to get a specific rating for the obj's armor
+/obj/proc/get_armor_rating(damage_type)
+	var/datum/armor/armor = get_armor()
+	return armor.getRating(damage_type)
+
 ///the sound played when the obj is damaged.
 /obj/proc/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)

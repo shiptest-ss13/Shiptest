@@ -17,6 +17,12 @@
 	max_equip = 3
 	phase_state = "phazon-phase"
 
+	facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
+		MECHA_SIDE_ARMOUR = list(50, 0.75, 25),
+		MECHA_BACK_ARMOUR = list(60, 1, 15)
+	)
+
 /obj/mecha/combat/phazon/set_up_unique_action()
 	mech_unique_action = phasing_action
 

@@ -1,12 +1,10 @@
 /obj/mecha/proc/get_armour_facing(relative_dir)
-	switch(relative_dir)
-		if(0) // BACKSTAB!
-			return facing_modifiers[MECHA_BACK_ARMOUR]
-		if(45, 90, 270, 315)
-			return facing_modifiers[MECHA_SIDE_ARMOUR]
-		if(225, 180, 135)
-			return facing_modifiers[MECHA_FRONT_ARMOUR]
-	return 1 //always return non-0
+	if(relative_dir  > -45 && relative_dir < 45)
+		return facing_modifiers[MECHA_FRONT_ARMOUR]
+	else if(relative_dir >= -180 && relative_dir <= 180)
+		return facing_modifiers[MECHA_BACK_ARMOUR]
+	else
+		return facing_modifiers[MECHA_SIDE_ARMOUR]
 
 /obj/mecha/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
@@ -43,9 +41,9 @@
 				break
 
 	if(attack_dir)
-		var/facing_modifier = get_armour_facing(dir2angle(attack_dir) - dir2angle(src))
-		booster_damage_modifier /= facing_modifier
-		booster_deflection_modifier *= facing_modifier
+		var/facing_modifier = get_armour_facing(abs(dir2angle(dir) - dir2angle(attack_dir)))
+		booster_damage_modifier *= facing_modifier[2]
+		booster_deflection_modifier /= facing_modifier[2]
 	if(prob(deflect_chance * booster_deflection_modifier))
 		visible_message("<span class='danger'>[src]'s armour deflects the attack!</span>")
 		log_message("Armor saved.", LOG_MECHA)
@@ -106,12 +104,56 @@
 	log_message("Hit by [AM].", LOG_MECHA, color="red")
 	. = ..()
 
-/obj/mecha/bullet_act(obj/projectile/Proj) //wrapper
-	if (!enclosed && occupant && !silicon_pilot && !Proj.force_hit && (Proj.def_zone == BODY_ZONE_HEAD || Proj.def_zone == BODY_ZONE_CHEST)) //allows bullets to hit the pilot of open-canopy mechs
-		occupant.bullet_act(Proj) //If the sides are open, the occupant can be hit
-		return BULLET_ACT_HIT
-	log_message("Hit by projectile. Type: [Proj.name]([Proj.flag]).", LOG_MECHA, color="red")
+/obj/mecha/bullet_act(obj/projectile/bullet_proj, def_zone, piercing_hit = FALSE)
+	//allows bullets to hit the pilot of open-canopy mechs
+	if (!enclosed \
+		&& occupant \
+		&& !silicon_pilot \
+		&& !bullet_proj.force_hit \
+		&& (def_zone == BODY_ZONE_HEAD || def_zone == BODY_ZONE_CHEST \
+		))
+		return occupant.bullet_act(bullet_proj) //If the sides are open, the occupant can be hit
+
+	log_message("Hit by projectile. Type: [bullet_proj.name]([bullet_proj.flag]).", LOG_MECHA, color="red")
+
+	var/attack_dir = REVERSE_DIR(bullet_proj.dir)
+	var/facing_modifiers = get_armour_facing(abs(dir2angle(dir) - dir2angle(attack_dir)))
+
+	var/cabin_pierce_percent = facing_modifiers[1]
+	var/facing_multi = facing_modifiers[2]
+	var/ap_threshold = facing_modifiers[3]
+
+	var/damage_taken = run_obj_armor(bullet_proj.damage, bullet_proj.damage_type, bullet_proj.flag, attack_dir, bullet_proj.armour_penetration)
+	var/pen_difference = (get_armor_rating(bullet_proj.flag) / facing_multi) - bullet_proj.armour_penetration
+	var/damage_left = round(bullet_proj.damage - damage_taken)
+
+	if(pen_difference > ap_threshold && bullet_proj.check_ricochet(src))
+		//Does not seem to function very well as it does not have a way to force ricochet regardless of angle unfortunatly
+		//handle_ricochet(bullet_proj)
+		bullet_proj.setAngle(SIMPLIFY_DEGREES(bullet_proj.Angle + rand(40,150)))
+		return BULLET_ACT_FORCE_PIERCE
+
 	. = ..()
+
+	if(. != BULLET_ACT_HIT)
+		return
+
+	if(occupant && prob(cabin_pierce_percent))
+		bullet_proj.damage = damage_left
+		if(pen_difference > ap_threshold)
+			return
+		if(bullet_proj.damage <= 0)
+			return
+		occupant.bullet_act(bullet_proj, bullet_proj.def_zone, piercing_hit)
+
+/*
+/obj/mecha/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armour_penetration)
+	. = ..()
+	if(attack_dir)
+		var/facing_modifier = get_armour_facing(abs(dir2angle(dir) - dir2angle(attack_dir)))
+		if(.)
+			. *= facing_modifier
+*/
 
 /obj/mecha/ex_act(severity, target)
 	log_message("Affected by explosion of severity: [severity].", LOG_MECHA, color="red")
@@ -140,7 +182,7 @@
 				SSexplosions.medobj += MT
 			if(EXPLODE_LIGHT)
 				SSexplosions.lowobj += MT
-	if(occupant)
+	if(occupant && !enclosed && severity < 3)
 		occupant.ex_act(severity,target)
 
 /obj/mecha/handle_atom_del(atom/A)

@@ -24,10 +24,18 @@
 	var/step_energy_drain  // How much energy the mech actually consumes when moving after modifiers (Eg, stock parts, leg actuators)
 	var/melee_energy_drain = 15
 	var/overload_step_energy_drain_min = 100
+
 	max_integrity = 300 //max_integrity is base health
 	var/deflect_chance = 10 //chance to deflect the incoming projectiles, hits, or lesser the effect of ex_act.
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
-	var/list/facing_modifiers = list(MECHA_FRONT_ARMOUR = 1.5, MECHA_SIDE_ARMOUR = 1, MECHA_BACK_ARMOUR = 0.5)
+	/// List of internal components per direction , will cause increased mech damge incase of mech AP and block shots from hitting the driver
+	// internal list should be list[ref] = list(occupant_hit_chance, hit_multi, ap_threshold)
+	var/list/facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(5, 0.5, 30),
+		MECHA_SIDE_ARMOUR = list(25, 1, 30),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 30)
+	)
+
 	var/equipment_disabled = 0 //disabled due to EMP
 	var/obj/item/stock_parts/cell/cell ///Keeps track of the mech's cell
 	var/obj/item/stock_parts/scanning_module/scanmod ///Keeps track of the mech's scanning module

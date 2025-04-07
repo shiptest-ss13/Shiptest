@@ -18,6 +18,12 @@
 	max_equip = 5
 	bumpsmash = 1
 
+	facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 60),
+		MECHA_SIDE_ARMOUR = list(50, 0.75, 50),
+		MECHA_BACK_ARMOUR = list(60, 1, 40)
+	)
+
 /obj/mecha/combat/marauder/GrantActions(mob/living/user, human_occupant = 0)
 	..()
 	smoke_action.Grant(user, src)
