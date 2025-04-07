@@ -18,12 +18,6 @@
 	pixel_x = -8
 	pixel_y = -6
 
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 60),
-		MECHA_SIDE_ARMOUR = list(60, 0.75, 50),
-		MECHA_BACK_ARMOUR = list(60, 1, 40)
-	)
-
 /obj/mecha/combat/combat_tank/Initialize()
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/tank(src)

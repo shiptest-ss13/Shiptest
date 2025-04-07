@@ -11,7 +11,7 @@
 	light_range = 7
 	light_power = 1
 	deflect_chance = 15
-	armor = list("melee" = 40, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 20, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 20, "fire" = 100, "acid" = 100)
 	max_equip = 6
 	wreckage = /obj/structure/mecha_wreckage/ripley
 	internals_req_access = list(ACCESS_MECH_ENGINE, ACCESS_MECH_SCIENCE, ACCESS_MECH_MINING)
@@ -21,12 +21,6 @@
 	enclosed = FALSE //Normal ripley has an open cockpit design
 	enter_delay = 10 //can enter in a quarter of the time of other mechs
 	exit_delay = 10
-
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 0),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
-		MECHA_BACK_ARMOUR = list(60, 1, 0)
-	)
 
 /obj/mecha/working/ripley/Move()
 	. = ..()
@@ -73,34 +67,28 @@
 	name = "\improper APLU MK-II \"Ripley\""
 	icon_state = "ripleymkii"
 	fast_pressure_step_in = 2 //step_in while in low pressure conditions
-	slow_pressure_step_in = 3 //step_in while in normal pressure conditions
-	step_in = 3
-	armor = list("melee" = 50, "bullet" = 15, "laser" = 15, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	slow_pressure_step_in = 4 //step_in while in normal pressure conditions
+	step_in = 4
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	wreckage = /obj/structure/mecha_wreckage/ripley/mkii
 	enclosed = TRUE
 	enter_delay = 40
 	silicon_icon_state = null
 	opacity = TRUE
 
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 5),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
-		MECHA_BACK_ARMOUR = list(60, 1, 5)
-	)
-
 /obj/mecha/working/ripley/firefighter
 	desc = "Autonomous Power Loader Unit MK-III. This model is refitted with a pressurized cabin and additional thermal protection."
 	name = "\improper APLU MK-III \"Firefighter\""
 	icon_state = "firefighter"
 	max_temperature = 65000
-	max_integrity = 300
+	max_integrity = 250
 	fast_pressure_step_in = 2 //step_in while in low pressure conditions
-	slow_pressure_step_in = 3 //step_in while in normal pressure conditions
-	step_in = 3
+	slow_pressure_step_in = 4 //step_in while in normal pressure conditions
+	step_in = 4
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	light_range = 7
 	light_power = 1
-	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 70, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 70, "fire" = 100, "acid" = 100)
 	max_equip = 5 // More armor, less tools
 	wreckage = /obj/structure/mecha_wreckage/ripley/firefighter
 	enclosed = TRUE
@@ -108,35 +96,22 @@
 	silicon_icon_state = null
 	opacity = TRUE
 
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 10),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 15),
-		MECHA_BACK_ARMOUR = list(60, 1, 5)
-	)
 
 /obj/mecha/working/ripley/deathripley
 	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE"
 	name = "\improper DEATH-RIPLEY"
 	icon_state = "deathripley"
-	max_integrity = 300
 	fast_pressure_step_in = 2 //step_in while in low pressure conditions
 	slow_pressure_step_in = 3 //step_in while in normal pressure conditions
-	step_in = 3
+	step_in = 4
 	light_range = 7
 	light_power = 1
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 70, "fire" = 100, "acid" = 100)
 	wreckage = /obj/structure/mecha_wreckage/ripley/deathripley
 	base_step_energy_drain = 0
 	enclosed = TRUE
 	enter_delay = 40
 	silicon_icon_state = null
 	opacity = TRUE
-
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 20),
-		MECHA_BACK_ARMOUR = list(60, 1, 15)
-	)
 
 /obj/mecha/working/ripley/deathripley/Initialize()
 	. = ..()
@@ -201,12 +176,6 @@
 	enclosed = TRUE
 	enter_delay = 20 //slower than a mk. I, faster than the armored Ripleys
 	silicon_icon_state = null
-
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 5),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
-		MECHA_BACK_ARMOUR = list(60, 1, 5)
-	)
 
 /obj/mecha/working/ripley/cargo
 	desc = "An ailing, old, repurposed cargo hauler. Most of its equipment wires are frayed or missing and its frame is rusted."
