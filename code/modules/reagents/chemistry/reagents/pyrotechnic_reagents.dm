@@ -155,6 +155,14 @@
 	color = "#C8C8C8"
 	taste_description = "smoke"
 
+/datum/reagent/dense_smoke_powder
+	name = "Dense Smoke Powder"
+	description = "Makes a large cloud of thick smoke that can carry reagents."
+	category = "Pyrotechnics"
+	reagent_state = LIQUID
+	color = "#C8C8C8"
+	taste_description = "smoke"
+
 /datum/reagent/sonic_powder
 	name = "Sonic Powder"
 	description = "Makes a deafening noise."
