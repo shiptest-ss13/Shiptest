@@ -38,10 +38,10 @@
 	if(left_click && alt_click)
 		if (istype(object, /turf) || istype(object, /obj) || istype(object, /mob))
 			objholder = object.type
-			to_chat(target_client, "<span class='notice'>[initial(object.name)] ([object.type]) selected.</span>")
+			to_chat(target_client, span_notice("[initial(object.name)] ([object.type]) selected."))
 			BM.preview_selected_item(objholder)
 		else
-			to_chat(target_client, "<span class='notice'>[initial(object.name)] is not a turf, object, or mob! Please select again.</span>")
+			to_chat(target_client, span_notice("[initial(object.name)] is not a turf, object, or mob! Please select again."))
 	else if(left_click)
 		if(ispath(objholder,/turf))
 			var/turf/T = get_turf(object)
@@ -57,7 +57,7 @@
 			A.setDir(BM.build_dir)
 			log_admin("Build Mode: [key_name(target_client)] modified [A]'s [COORD(A)] dir to [BM.build_dir]")
 		else
-			to_chat(target_client, "<span class='warning'>Select object type first.</span>")
+			to_chat(target_client, span_warning("Select object type first."))
 	else if(right_click)
 		if(isobj(object))
 			log_admin("Build Mode: [key_name(target_client)] deleted [object] at [AREACOORD(object)]")
