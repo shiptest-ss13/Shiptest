@@ -1,7 +1,7 @@
 //Gutlunches, passive mods that devour blood and gibs
 /mob/living/simple_animal/hostile/asteroid/gutlunch
 	name = "gutlunch"
-	desc = "A scavenger that eats raw meat, often found alongside ash walkers. Produces a thick, nutritious milk."
+	desc = "A scavenger that eats raw meat. Produces a thick, nutritious milk."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "gutlunch"
 	icon_living = "gutlunch"
