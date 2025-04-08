@@ -16,7 +16,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /*-----------------------------------------------------------------------------*/
 
-/area/space //SUPER OMEGA IMPORTANT - NEVER USE THIS ON A SHUTTLE EVER! - Ossa
+/area/space
 	icon_state = "space"
 	requires_power = TRUE
 	always_unpowered = TRUE
