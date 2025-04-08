@@ -224,7 +224,7 @@
 /datum/supply_pack/ammo/rubbershot
 	name = "Rubbershot Crate"
 	desc = "Contains a box of 32 12 gauge rubbershot shells. Perfect for crowd control and training."
-	cost = 300
+	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
 
 /datum/supply_pack/ammo/techshells

@@ -904,7 +904,7 @@
 	name = "surplus buckshot"
 	id = "buckshot-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 2500)
+	materials = list(/datum/material/iron = 5000)
 	build_path = /obj/item/ammo_casing/shotgun/improvised
 	category = list("initial", "Security", "Ammo")
 
