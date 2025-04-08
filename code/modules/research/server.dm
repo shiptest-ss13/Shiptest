@@ -30,7 +30,7 @@
 	if(istype(O, /obj/item/multitool))
 		var/obj/item/multitool/multi = O
 		multi.buffer = src
-		to_chat(user, "<span class='notice'>[src] stored in [O].</span>")
+		to_chat(user, span_notice("[src] stored in [O]."))
 		return TRUE
 
 	return ..()

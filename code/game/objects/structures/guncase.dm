@@ -11,7 +11,7 @@
 	var/case_type = ""
 	var/gun_category = /obj/item/gun
 	var/open = TRUE
-	var/capacity = 4
+	var/capacity = 8
 
 /obj/structure/guncloset/examine(mob/user)
 	. = ..()
@@ -43,10 +43,10 @@
 		if(LAZYLEN(contents) < capacity)
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, "<span class='notice'>You place [I] in [src].</span>")
+			to_chat(user, span_notice("You place [I] in [src]."))
 			update_appearance()
 		else
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, span_warning("[src] is full."))
 		return
 	else
 		return ..()

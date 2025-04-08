@@ -158,8 +158,11 @@
 		var/turf/terrain = get_turf(_human)
 		if(_human.has_status_effect(/datum/status_effect/rooted))
 			return FALSE
-		if(is_type_in_list(terrain,GOOD_SOIL))
+		if(is_type_in_list(terrain, GOOD_SOIL))
 			return TRUE
+		for(var/atom/movable/thing in terrain.contents)
+			if(is_type_in_list(thing, list(/obj/machinery/hydroponics/wooden, /obj/machinery/hydroponics/soil)))
+				return TRUE
 		return FALSE
 
 /datum/species/elzuose/random_name(gender,unique,lastname)

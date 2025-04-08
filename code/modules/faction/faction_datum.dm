@@ -2,6 +2,7 @@
 	var/name
 	/// Primarly to be used for backend stuff.
 	var/short_name
+	/// Parent faction of this faction, used for allowed factions and information
 	var/parent_faction
 	/// List of prefixes that ships of this faction uses
 	var/list/prefixes
@@ -9,6 +10,10 @@
 	var/list/allowed_factions = list()
 	/// Theme color for this faction, currently only used for the wiki
 	var/color = "#ffffff"
+	/// Contrast color for this faction, used for links on the wiki
+	var/contrast_color
+	/// Background color for this faction, for use under black text
+	var/background_color
 	/// Whether or not this faction should be able to use prefixes that aren't their own (see: Frontiersmen using Indie prefixes)
 	var/check_prefix = TRUE
 	/// Sorting order for factions
@@ -17,6 +22,12 @@
 /datum/faction/New()
 	if(!short_name)
 		short_name = uppertext(copytext_char(name, 3))
+
+	if(!contrast_color)
+		contrast_color = "#[invert_hex(copytext_char(color, 2))]"
+	if(!background_color)
+		var/list/hsl = rgb2num(color, COLORSPACE_HSL)
+		background_color = rgb(hsl[1], min(hsl[2], 33), max(hsl[3], 66), space=COLORSPACE_HSL)
 
 	//All subtypes of this faction, all subtypes of specifically allowed factions, and SPECIFICALLY the parent faction (no subtypes) are allowed.
 	//Try not to nest factions too deeply, yeah?
@@ -41,20 +52,24 @@
 	name = FACTION_NGR
 	short_name = "NGR"
 	prefixes = PREFIX_NGR
+	color = "#C59973"
 
 /datum/faction/syndicate/cybersun
 	name = FACTION_CYBERSUN
 	prefixes = PREFIX_CYBERSUN
+	color = "#4C9C9C"
 
 /datum/faction/syndicate/hardliners
 	name = FACTION_HARDLINERS
 	prefixes = PREFIX_HARDLINERS
 	check_prefix = FALSE
+	color = "#97150B"
 
 /datum/faction/syndicate/suns
 	name = FACTION_SUNS
 	short_name = "SUNS"
 	prefixes = PREFIX_SUNS
+	color = "#CD94D3"
 
 /datum/faction/syndicate/scarborough
 	name = "Scarborough Arms"
@@ -124,3 +139,11 @@
 	prefixes = PREFIX_INDEPENDENT
 	color = "#A0A0A0"
 	order = FACTION_SORT_INDEPENDENT
+
+/datum/faction/ramzi
+	name = FACTION_RAMZI
+	short_name = "RAM"
+	parent_faction =  /datum/faction/ramzi
+	prefixes = PREFIX_RAMZI
+	color = "#c45508"
+	check_prefix = FALSE

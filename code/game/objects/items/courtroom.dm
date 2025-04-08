@@ -26,7 +26,7 @@
 /obj/item/gavelblock/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/gavelhammer))
 		playsound(loc, 'sound/items/gavel.ogg', 100, TRUE)
-		user.visible_message("<span class='warning'>[user] strikes [src] with [I].</span>")
+		user.visible_message(span_warning("[user] strikes [src] with [I]."))
 		user.changeNext_move(CLICK_CD_MELEE)
 	else
 		return ..()

@@ -13,7 +13,7 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!(machine_stat & BROKEN))
-			. += "<span class='notice'>[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.</span>"
+			. += span_notice("[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.")
 
 /obj/machinery/porta_turret/ship/weak
 	max_integrity = 120
@@ -158,7 +158,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	lethal_projectile = /obj/projectile/bullet/a556_42
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
-	faction = list(FACTION_SYNDICATE, "turret")
+	faction = list(FACTION_RAMZI, "turret")
 	max_integrity = 180
 	shot_delay = 16
 	burst_delay = 8

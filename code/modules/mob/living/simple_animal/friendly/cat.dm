@@ -245,7 +245,7 @@
 			for(var/mob/living/basic/mouse/M in view(1,src))
 				if(istype(M, /mob/living/basic/mouse/brown/tom) && (name == "Jerry")) //Turns out there's no jerry subtype.
 					if (emote_cooldown < (world.time - 600))
-						visible_message("<span class='warning'>[src] chases [M] around, to no avail!</span>")
+						visible_message(span_warning("[src] chases [M] around, to no avail!"))
 						step(M, pick(GLOB.cardinals))
 						emote_cooldown = world.time
 					break
@@ -334,7 +334,7 @@
 	free cake to the universe!</b>")
 	var/new_name = stripped_input(src, "Enter your name, or press \"Cancel\" to stick with Keeki.", "Name Change")
 	if(new_name)
-		to_chat(src, "<span class='notice'>Your name is now <b>\"new_name\"</b>!</span>")
+		to_chat(src, span_notice("Your name is now <b>\"new_name\"</b>!"))
 		name = new_name
 
 /mob/living/simple_animal/pet/cat/cak/Life()
