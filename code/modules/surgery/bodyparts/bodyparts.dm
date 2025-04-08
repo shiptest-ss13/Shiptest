@@ -815,11 +815,12 @@
 	return (bone_status && bone_status != BONE_FLAG_BROKEN && IS_ORGANIC_LIMB(src)) //was BODYTYPE_ROBOTIC
 
 /obj/item/bodypart/proc/break_bone()
-	if(!can_break_bone())
+	return
+	/* if(!can_break_bone())
 		return
 	if (bone_status == BONE_FLAG_NORMAL && body_part & LEGS) // Because arms are not legs
 		owner.set_broken_legs(owner.broken_legs + 1)
-	bone_status = BONE_FLAG_BROKEN
+	bone_status = BONE_FLAG_BROKEN */
 //	addtimer(CALLBACK(src, PROC_REF(break_bone_feedback), 1 SECONDS)) testing sommething
 
 ///obj/item/bodypart/proc/break_bone_feedback()
