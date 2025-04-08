@@ -6,10 +6,10 @@
 
 /obj/item/mecha_parts/weapon_bay/try_attach_part(mob/user, obj/mecha/M)
 	if(istype(M, /obj/mecha/combat))
-		to_chat(user, "<span class='warning'>[M] can already hold weapons!</span>")
+		to_chat(user, span_warning("[M] can already hold weapons!"))
 		return
 	if(locate(/obj/item/mecha_parts/weapon_bay) in M.contents)
-		to_chat(user, "<span class='warning'>[M] already has a weapon bay!</span>")
+		to_chat(user, span_warning("[M] already has a concealed weapon bay!"))
 		return
 	..()
 

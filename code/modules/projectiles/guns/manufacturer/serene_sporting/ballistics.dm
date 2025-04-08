@@ -27,8 +27,8 @@
 
 	w_class = WEIGHT_CLASS_SMALL
 
-	spread = 25
-	spread_unwielded = 45
+	spread = 15
+	spread_unwielded = 35
 	recoil = -2
 	recoil_unwielded = -2
 
@@ -264,8 +264,9 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	spread_unwielded = 20
 	recoil = 1.25
 	recoil_unwielded = 6
-	fire_delay = 0.75 SECONDS
+	fire_delay = 0.5 SECONDS
 	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
+	zoom_out_amt = 2
 
 	can_be_sawn_off = FALSE
 
