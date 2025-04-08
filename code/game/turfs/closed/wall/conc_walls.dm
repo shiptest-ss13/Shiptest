@@ -63,7 +63,7 @@
 // we use this to show integrity + drying percentage
 /turf/closed/wall/concrete/deconstruction_hints(mob/user)
 	. = list()
-	. += "<span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
+	. += span_notice("[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].")
 	switch(harden_lvl)
 		if(0.8 to 0.99)
 			. += "[p_they(TRUE)] look[p_s()] nearly dry."
@@ -105,8 +105,8 @@
 	M.do_attack_animation(src)
 	switch(M.damtype)
 		if(BRUTE)
-			M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
-							"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+			M.visible_message(span_danger("[M.name] hits [src]!"), \
+							span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
 			playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 			alter_integrity(M.force * -20)
@@ -159,4 +159,4 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
-		to_chat(M, "<span class='warning'>This wall is far too strong for you to destroy.</span>")
+		to_chat(M, span_warning("This wall is far too strong for you to destroy."))

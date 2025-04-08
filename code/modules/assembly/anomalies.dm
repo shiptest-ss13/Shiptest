@@ -41,7 +41,7 @@
 
 /obj/item/assembly/signaler/anomaly/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_ANALYZER)
-		to_chat(user, "<span class='notice'>Analyzing... [src]'s stabilized field is fluctuating along frequency [format_frequency(frequency)], code [code]. An unstable frequency is present at code [code_b].</span>")
+		to_chat(user, span_notice("Analyzing... [src]'s stabilized field is fluctuating along frequency [format_frequency(frequency)], code [code]. An unstable frequency is present at code [code_b]."))
 	..()
 
 ///Bluespace Anomaly
