@@ -1710,7 +1710,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A modification for civilian exosuits that allows them to equip one piece of equipment designed for combat exosuits. \
 			It also hides the equipped weapon from plain sight. \
 			Only one can fit on an exosuit."
-	item = /obj/item/mecha_parts/concealed_weapon_bay
+	item = /obj/item/mecha_parts/weapon_bay/concealed
 	cost = 3
 	restricted_roles = list("Roboticist", "Research Director")
 
