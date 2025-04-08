@@ -259,7 +259,7 @@
 			burn *= 2
 
 	// Bone breaking. The harder you get hit and the more hurt you already are - the more likely you are to break a bone.
-	// The more damaged your bodypart is, the easier it is to break a bone, down to at least 20 force at 60 existing damage.
+	// The more damaged your bodypart is, the easier it is to break a bone, down to at least 5 force at 90 existing damage.
 	if((brute >= (bone_break_threshold - clamp((brute_dam * 0.5), 0, 45))) && prob(break_modifier + brute_dam * 0.5))
 		break_bone()
 
