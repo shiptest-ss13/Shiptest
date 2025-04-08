@@ -84,7 +84,7 @@
 			r_store = I
 			update_inv_pockets()
 		else
-			to_chat(src, "<span class='danger'>You are trying to equip this item to an unsupported inventory slot. Report this to a coder!</span>")
+			to_chat(src, span_danger("You are trying to equip this item to an unsupported inventory slot. Report this to a coder!"))
 			return
 
 	//Call back for item being equipped to drone
