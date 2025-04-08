@@ -259,8 +259,8 @@
 			burn *= 2
 
 	// Is the damage greater than the threshold, and if so, probability of damage + item force
-	if(brute && (brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
-		break_bone()
+	// if(brute && (brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
+	//	break_bone()
 
 	// Bleeding is applied here
 	if(brute_dam+brute >= (sharpness ? bleed_threshold : bleed_threshold_blunt) && brute >= (sharpness ? bleed_damage_min : bleed_damage_min_blunt))
@@ -810,28 +810,31 @@
 	qdel(src)
 
 // BROKEN BONE PROCS //
+/*
 /obj/item/bodypart/proc/can_break_bone()
 	// Do they have bones, are the bones not broken, is the limb not robotic? If yes to all, return 1
 	return (bone_status && bone_status != BONE_FLAG_BROKEN && IS_ORGANIC_LIMB(src)) //was BODYTYPE_ROBOTIC
 
+
 /obj/item/bodypart/proc/break_bone()
-	return
-	/* if(!can_break_bone())
+	if(!can_break_bone())
 		return
 	if (bone_status == BONE_FLAG_NORMAL && body_part & LEGS) // Because arms are not legs
 		owner.set_broken_legs(owner.broken_legs + 1)
-	bone_status = BONE_FLAG_BROKEN */
+	bone_status = BONE_FLAG_BROKEN
 //	addtimer(CALLBACK(src, PROC_REF(break_bone_feedback), 1 SECONDS)) testing sommething
 
 ///obj/item/bodypart/proc/break_bone_feedback()
 	owner.visible_message("<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>")
 	playsound(owner, pick(list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg')), 100, FALSE, -1)
+*/
 
-/obj/item/bodypart/proc/fix_bone()
+/obj/item/bodypart/proc/fix_bone() //keeping this just in case
 	// owner.update_inv_splints() breaks
 	if (bone_status != BONE_FLAG_NORMAL && body_part & LEGS)
 		owner.set_broken_legs(owner.broken_legs - 1)
 	bone_status = BONE_FLAG_NORMAL
+
 
 /obj/item/bodypart/proc/on_mob_move()
 	// Dont trigger if it isn't broken or if it has no owner or is buckled to a rollerbed
@@ -846,4 +849,3 @@
 		receive_damage(rand(1, 3))
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit
-

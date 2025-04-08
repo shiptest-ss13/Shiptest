@@ -71,7 +71,7 @@
 #define ADMIN_SHOW_PAPER(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_paper=[REF(atom)]'>SHOW</a>)"
 #define ADMIN_SHOW_PHOTO(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_photo=[REF(atom)]'>PHOTO</a>)"
 
-#define ADMIN_PUNISHMENT_BREAK_BONES "Break all bones"
+//#define ADMIN_PUNISHMENT_BREAK_BONES "Break all bones" //doesn't do anything
 #define ADMIN_PUNISHMENT_LIGHTNING "Lightning bolt"
 #define ADMIN_PUNISHMENT_BRAINDAMAGE "Brain damage"
 #define ADMIN_PUNISHMENT_GIB "Gib"
