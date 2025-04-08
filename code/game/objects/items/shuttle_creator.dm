@@ -33,27 +33,27 @@
 /obj/item/shuttle_creator/afterattack(atom/target, mob/user, proximity_flag)
 	. = ..()
 	if(!ready)
-		to_chat(user, "<span class='warning'>You need to define a shuttle area first.</span>")
+		to_chat(user, span_warning("You need to define a shuttle area first."))
 		return
 	if(!proximity_flag)
 		return
 	if(istype(target, /obj/machinery/door/airlock))
 		if(get_area(target) != loggedOldArea)
-			to_chat(user, "<span class='warning'>Caution, airlock must be on the shuttle to function as a dock.</span>")
+			to_chat(user, span_warning("Caution, airlock must be on the shuttle to function as a dock."))
 			return
 		if(!SSovermap.player_ship_spawn_allowed())
-			to_chat(user, "<span class='warning'>Shuttle limit reached, sorry.</span>")
+			to_chat(user, span_warning("Shuttle limit reached, sorry."))
 			return
 		if(!create_shuttle_area(user))
 			return
 		if(shuttle_create_docking_port(target, user))
-			to_chat(user, "<span class='notice'>Shuttle created!</span>")
+			to_chat(user, span_notice("Shuttle created!"))
 		return
 	else if(istype(target, /obj/machinery/computer/helm))
 		var/obj/machinery/computer/helm/console = target
 		console.reload_ship()
 		return
-	to_chat(user, "<span class='warning'>The [src] bleeps. Select an airlock to create a docking port, or a valid machine to link.</span>")
+	to_chat(user, span_warning("The [src] bleeps. Select an airlock to create a docking port, or a valid machine to link."))
 	return
 
 /obj/item/shuttle_creator/proc/calculate_bounds(obj/docking_port/mobile/port)
@@ -128,7 +128,7 @@
 /obj/item/shuttle_creator/proc/shuttle_create_docking_port(atom/target, mob/user)
 
 	if(loggedTurfs.len == 0 || !recorded_shuttle_area)
-		to_chat(user, "<span class='warning'>Invalid shuttle, restarting bluespace systems...</span>")
+		to_chat(user, span_warning("Invalid shuttle, restarting bluespace systems..."))
 		return FALSE
 	var/static/num_customs = 0
 	num_customs++
@@ -146,7 +146,7 @@
 	var/portDirection = getNonShuttleDirection(get_turf(port))
 	var/invertedDir = REVERSE_DIR(portDirection)
 	if(!portDirection || !invertedDir)
-		to_chat(usr, "<span class='warning'>Shuttle creation aborted, docking airlock must be on an external wall. Please select a new airlock.</span>")
+		to_chat(usr, span_warning("Shuttle creation aborted, docking airlock must be on an external wall. Please select a new airlock."))
 		qdel(port, TRUE)
 		qdel(stationary_port, TRUE)
 		return FALSE
@@ -154,7 +154,7 @@
 	port.port_direction = portDirection
 
 	if(!calculate_bounds(port))
-		to_chat(usr, "<span class='warning'>Bluespace calculations failed, please select a new airlock.</span>")
+		to_chat(usr, span_warning("Bluespace calculations failed, please select a new airlock."))
 		qdel(port, TRUE)
 		qdel(stationary_port, TRUE)
 		return FALSE
@@ -202,7 +202,7 @@
 	if(!str || !length(str))
 		return FALSE
 	if(length(str) > 50)
-		to_chat(user, "<span class='warning'>The provided ship name is too long, blares the [src]</span>")
+		to_chat(user, span_warning("The provided ship name is too long, blares the [src]"))
 		return FALSE
 	newS = new /area/ship()
 	newS.setup(str)
@@ -222,29 +222,29 @@
 	//Check to see if the user can make a new area to prevent spamming
 	if(user)
 		if(user.create_area_cooldown >= world.time)
-			to_chat(user, "<span class='warning'>Smoke vents from the [src], maybe you should let it cooldown before using it again.</span>")
+			to_chat(user, span_warning("Smoke vents from the [src], maybe you should let it cooldown before using it again."))
 			return
 		user.create_area_cooldown = world.time + 10
 	//Detect the turfs connected in the curerrent enclosed area
 	var/list/turfs = detect_room(get_turf(user), area_or_turf_fail_types)
 	if(!turfs)
-		to_chat(user, "<span class='warning'>Shuttles must be created in an airtight space, ensure that the shuttle is airtight, including corners.</span>")
+		to_chat(user, span_warning("Shuttles must be created in an airtight space, ensure that the shuttle is airtight, including corners."))
 		return
 	if(turfs.len > SHUTTLE_CREATOR_MAX_SIZE)
-		to_chat(user, "<span class='warning'>The [src]'s internal cooling system wizzes violently and a message appears on the screen, \"Caution, this device can only handle the creation of shuttles up to [SHUTTLE_CREATOR_MAX_SIZE] units in size. Please reduce your shuttle by [turfs.len-SHUTTLE_CREATOR_MAX_SIZE]. Sorry for the inconvinience\"</span>")
+		to_chat(user, span_warning("The [src]'s internal cooling system wizzes violently and a message appears on the screen, \"Caution, this device can only handle the creation of shuttles up to [SHUTTLE_CREATOR_MAX_SIZE] units in size. Please reduce your shuttle by [turfs.len-SHUTTLE_CREATOR_MAX_SIZE]. Sorry for the inconvinience\""))
 		return
 	//Check to see if it's a valid shuttle
 	for(var/i in 1 to turfs.len)
 		var/area/space/place = get_area(turfs[i])
 		//If any of the turfs are on station / not in space, a shuttle cannot be forced there
 		if(!place)
-			to_chat(user, "<span class='warning'>You can't seem to overpower the bluespace harmonics in this location, try somewhere else.</span>")
+			to_chat(user, span_warning("You can't seem to overpower the bluespace harmonics in this location, try somewhere else."))
 			return
 		if(!place.outdoors)
-			to_chat(user, "<span class='warning'>Caution, shuttle must be built outdoors. Your shuttle is currenly overlapping with [place.name]</span>")
+			to_chat(user, span_warning("Caution, shuttle must be built outdoors. Your shuttle is currenly overlapping with [place.name]"))
 			return
 
 	loggedOldArea = get_area(get_turf(user))
 	loggedTurfs = turfs
 	icon_state = "rsd_used"
-	to_chat(user, "<span class='notice'>Your current area was logged into the [src], select an airlock to act as the docking point.</span>")
+	to_chat(user, span_notice("Your current area was logged into the [src], select an airlock to act as the docking point."))

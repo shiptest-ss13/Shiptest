@@ -38,7 +38,7 @@
 	if(!SSticker.HasRoundStarted() || !loc || !em_starting || em)
 		return ..()
 	if(is_banned_from(user.key, ROLE_POSIBRAIN))
-		to_chat(user, "<span class='warning'>You are banned from becoming a hologram!</span>")
+		to_chat(user, span_warning("You are banned from becoming a hologram!"))
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
