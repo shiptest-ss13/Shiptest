@@ -67,7 +67,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/suits.dmi'
 	icon_state = "armor_inteq_battlecoat"
 	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
@@ -77,7 +77,7 @@
 	icon_state = "armor_inteq_honorable_battlecoat"
 	item_state = "inteq_honorable_battlecoat"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/vest/security/warden/inteq
 	name = "master at arms' armored coat"
@@ -202,8 +202,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
-	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
@@ -215,8 +214,7 @@
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE
-	supports_variations = VOX_VARIATION
-	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
+	supports_variations = VOX_VARIATION | KEPORI_VARIATION
 
 // Headgear
 
