@@ -36,7 +36,7 @@
 /datum/component/deployable/proc/examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
-	examine_list += "<span class='notice'>[source.p_they()] look[source.p_s()] like [source.p_they()] can be deployed into \a [deployed_name].</span>"
+	examine_list += span_notice("[source.p_they()] look[source.p_s()] like [source.p_they()] can be deployed into \a [deployed_name].")
 
 /datum/component/deployable/proc/on_attack_hand(datum/source, mob/user, location, direction)
 	SIGNAL_HANDLER
@@ -55,7 +55,7 @@
 			source.balloon_alert(user, "there's no room to deploy here.")
 			return
 		new_direction = user.dir //Gets the direction for thing_to_be_deployed if there is a user
-		to_chat(user, "<span class='notice'>You start deploying the [parent].</span>")
+		to_chat(user, span_notice("You start deploying the [parent]."))
 		source.balloon_alert(user, "deploying...")
 		playsound(source, 'sound/items/ratchet.ogg', 50, TRUE)
 		if(!do_after(user, deploy_time))

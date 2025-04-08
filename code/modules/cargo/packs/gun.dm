@@ -122,7 +122,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/pistolec
+/datum/supply_pack/gun/modelh
 	name = "Model 'H' Gauss Pistol Crate"
 	desc = "Contains a compact solarian-produced gauss pistol, chambered in ferromagnetic slugs. Remember to sign your necessary forms upon arrival."
 	cost = 2000

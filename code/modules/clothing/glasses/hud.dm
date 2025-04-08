@@ -37,7 +37,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, "<span class='warning'>PZZTTPFFFT</span>")
+	to_chat(user, span_warning("PZZTTPFFFT"))
 	desc = "[desc] The display is flickering slightly."
 
 /obj/item/clothing/glasses/hud/health
@@ -135,7 +135,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the hudpatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the hudpatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "hudpatch-[flipped]"
 	item_state = "hudpatch-[flipped]"
 	update_appearance()

@@ -48,15 +48,15 @@
 /obj/machinery/mineral/ore_redemption/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Smelting <b>[ore_multiplier]</b> sheet(s) per piece of ore.<br>Reward point generation at <b>[point_upgrade*100]%</b>.</span>"
+		. += span_notice("The status display reads: Smelting <b>[ore_multiplier]</b> sheet(s) per piece of ore.<br>Reward point generation at <b>[point_upgrade*100]%</b>.")
 	if(panel_open)
 		if(direction_to_edit == ORM_INPUT)
-			. += "<span class='notice'>Alt-click to rotate the input direction.</span>"
+			. += span_notice("Alt-click to rotate the input direction.")
 		else if (direction_to_edit == ORM_OUTPUT)
-			. += "<span class='notice'>Alt-click to rotate the output direction.</span>"
+			. += span_notice("Alt-click to rotate the output direction.")
 		else //defaults to both
-			. += "<span class='notice'>Alt-click to rotate the input and output direction.</span>"
-		. += "<span class='notice'>Use a multitool to change the rotation mode.</span>"
+			. += span_notice("Alt-click to rotate the input and output direction.")
+		. += span_notice("Use a multitool to change the rotation mode.")
 
 /obj/machinery/mineral/ore_redemption/proc/smelt_ore(obj/item/stack/ore/O)
 	if(QDELETED(O))
@@ -158,11 +158,11 @@
 			if(direction_to_edit > ORM_OUTPUT)
 				direction_to_edit = ORM_BOTH
 			if(direction_to_edit == ORM_INPUT)
-				to_chat(user, "<span class='notice'>You change [src]'s I/O settings. you will now only change the input direction.</span>")
+				to_chat(user, span_notice("You change [src]'s I/O settings. you will now only change the input direction."))
 			else if(direction_to_edit == ORM_OUTPUT)
-				to_chat(user, "<span class='notice'>You change [src]'s I/O settings, you will now only change the output direction.</span>")
+				to_chat(user, span_notice("You change [src]'s I/O settings, you will now only change the output direction."))
 			else //defaults to both
-				to_chat(user, "<span class='notice'>You change [src]'s I/O settings, you will now change the input and output directions.</span>")
+				to_chat(user, span_notice("You change [src]'s I/O settings, you will now change the input and output directions."))
 			return
 
 	if(istype(W, /obj/item/disk/design_disk))
@@ -173,7 +173,7 @@
 	var/obj/item/stack/ore/O = W
 	if(istype(O))
 		if(O.refined_type == null)
-			to_chat(user, "<span class='warning'>[O] has already been refined!</span>")
+			to_chat(user, span_warning("[O] has already been refined!"))
 			return
 
 	return ..()
@@ -185,14 +185,14 @@
 	if(panel_open)
 		if(direction_to_edit == ORM_INPUT)
 			input_dir = turn(input_dir, -90)
-			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)].</span>")
+			to_chat(user, span_notice("You change [src]'s I/O settings, setting the input to [dir2text(input_dir)]."))
 		else if(direction_to_edit == ORM_OUTPUT)
 			output_dir = turn(output_dir, -90)
-			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the output to [dir2text(output_dir)].</span>")
+			to_chat(user, span_notice("You change [src]'s I/O settings, setting the output to [dir2text(output_dir)]."))
 		else //defaults to both
 			input_dir = turn(input_dir, -90)
 			output_dir = turn(output_dir, -90)
-			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)] and the output to [dir2text(output_dir)].</span>")
+			to_chat(user, span_notice("You change [src]'s I/O settings, setting the input to [dir2text(input_dir)] and the output to [dir2text(output_dir)]."))
 		unregister_input_turf() // someone just rotated the input and output directions, unregister the old turf
 		register_input_turf() // register the new one
 		return TRUE
@@ -255,17 +255,17 @@
 					I.mining_points += points
 					points = 0
 				else
-					to_chat(usr, "<span class='warning'>No valid ID detected.</span>")
+					to_chat(usr, span_warning("No valid ID detected."))
 			else
-				to_chat(usr, "<span class='warning'>No points to claim.</span>")
+				to_chat(usr, span_warning("No points to claim."))
 			return TRUE
 		if("Release")
 			if(!mat_container)
 				return
 			if(materials.on_hold())
-				to_chat(usr, "<span class='warning'>Mineral access is on hold, please contact the quartermaster.</span>")
+				to_chat(usr, span_warning("Mineral access is on hold, please contact the quartermaster."))
 			else if(!allowed(usr)) //Check the ID inside, otherwise check the user
-				to_chat(usr, "<span class='warning'>Required access not found.</span>")
+				to_chat(usr, span_warning("Required access not found."))
 			else
 				var/datum/material/mat = locate(params["id"])
 
@@ -299,7 +299,7 @@
 					return
 				inserted_disk = disk
 			else
-				to_chat(usr, "<span class='warning'>Not a valid Design Disk!</span>")
+				to_chat(usr, span_warning("Not a valid Design Disk!"))
 			return TRUE
 		if("diskEject")
 			if(inserted_disk)
@@ -315,7 +315,7 @@
 			if(!mat_container)
 				return
 			if(materials.on_hold())
-				to_chat(usr, "<span class='warning'>Mineral access is on hold, please contact the quartermaster.</span>")
+				to_chat(usr, span_warning("Mineral access is on hold, please contact the quartermaster."))
 				return
 			var/alloy_id = params["id"]
 			var/datum/design/alloy = stored_research.isDesignResearchedID(alloy_id)
@@ -338,7 +338,7 @@
 					output = new alloy.build_path(src)
 				unload_mineral(output)
 			else
-				to_chat(usr, "<span class='warning'>Required access not found.</span>")
+				to_chat(usr, span_warning("Required access not found."))
 			return TRUE
 
 /obj/machinery/mineral/ore_redemption/ex_act(severity, target)

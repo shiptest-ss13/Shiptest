@@ -59,9 +59,9 @@
 /obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
 	. = ..()
 	if(!in_range(src, user) || !isobserver(user)) //hide the easter egg a little more
-		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
+		. += span_warning("You try to examine [src] closer, but you're too far away.")
 		return
-	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
+	. += span_notice("Alt-click to take a candy corn.")
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -70,10 +70,10 @@
 			if(candy_cooldown < world.time)
 				var/obj/item/reagent_containers/food/snacks/candy_corn/CC = new /obj/item/reagent_containers/food/snacks/candy_corn(src)
 				user.put_in_hands(CC)
-				to_chat(user, "<span class='notice'>You slip a candy corn from your hat.</span>")
+				to_chat(user, span_notice("You slip a candy corn from your hat."))
 				candy_cooldown = world.time+1200
 			else
-				to_chat(user, "<span class='warning'>You just took a candy corn! You should wait a couple minutes, lest you burn through your stash.</span>")
+				to_chat(user, span_warning("You just took a candy corn! You should wait a couple minutes, lest you burn through your stash."))
 
 //Curator
 /obj/item/clothing/head/fedora/curator
@@ -150,22 +150,22 @@
 		return TRUE
 	switch(mode)
 		if(DRILL_DEFAULT)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the middle position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the middle position."))
 			mode = DRILL_SHOUTING
 		if(DRILL_SHOUTING)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the last position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the last position."))
 			mode = DRILL_YELLING
 		if(DRILL_YELLING)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the first position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the first position."))
 			mode = DRILL_DEFAULT
 		if(DRILL_CANADIAN)
-			to_chat(user, "<span class='danger'>You adjust voice circuit but nothing happens, probably because it's broken.</span>")
+			to_chat(user, span_danger("You adjust voice circuit but nothing happens, probably because it's broken."))
 	return TRUE
 
 /obj/item/clothing/head/warden/drill/wirecutter_act(mob/living/user, obj/item/I)
 	..()
 	if(mode != DRILL_CANADIAN)
-		to_chat(user, "<span class='danger'>You broke the voice circuit!</span>")
+		to_chat(user, span_danger("You broke the voice circuit!"))
 		mode = DRILL_CANADIAN
 	return TRUE
 
