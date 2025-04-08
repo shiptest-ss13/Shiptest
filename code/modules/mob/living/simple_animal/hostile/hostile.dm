@@ -429,7 +429,7 @@
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
 	if(CheckFriendlyFire(A))
 		return
-	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
+	visible_message(span_danger("<b>[src]</b> [ranged_message] at [A]!"))
 
 
 	if(rapid > 1)
@@ -634,7 +634,7 @@
 	Shake(15, 15, 1 SECONDS)
 	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 3)
-	target.visible_message("<span class='danger'>[src] prepares to pounce!</span>")
+	target.visible_message(span_danger("[src] prepares to pounce!"))
 	addtimer(CALLBACK(src, PROC_REF(handle_charge_target), target), 1.5 SECONDS, TIMER_STOPPABLE)
 
 /**
@@ -678,7 +678,7 @@
 				if(H.check_shields(src, 0, "the [name]", attack_type = LEAP_ATTACK))
 					blocked = TRUE
 			if(!blocked)
-				L.visible_message(("<span class='danger'>[src] pounces onto[L]!</span>"), ("<span class='userdanger'>[src] pounces on you!</span>"))
+				L.visible_message((span_danger("[src] pounces onto[L]!")), (span_userdanger("[src] pounces on you!")))
 				L.Knockdown(knockdown_time)
 			else
 				Stun((knockdown_time * 2), ignore_canstun = TRUE)
@@ -730,7 +730,7 @@
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by [source]'s [fire_source]!</span>")
+			to_chat(L, span_userdanger("You're hit by [source]'s [fire_source]!"))
 
 		// deals damage to mechs
 		for(var/obj/mecha/M in T.contents)
