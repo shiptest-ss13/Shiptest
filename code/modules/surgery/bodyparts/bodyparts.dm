@@ -49,7 +49,7 @@
 	var/is_pseudopart = FALSE
 	/// Is it fine, broken, splinted, or just straight up fucking gone
 	var/bone_status = BONE_FLAG_NO_BONES
-	var/bone_break_threshold = 30
+	var/bone_break_threshold = 50
 	/// Threshold at which the limb will start bleeding if damaged by sharp items or projectiles
 	var/bleed_threshold = 10
 	/// Threshold at which the limb will start bleeding if damaged by blunt items
@@ -258,8 +258,9 @@
 		if(ALIEN_BODYPART,LARVA_BODYPART) //aliens take double burn //nothing can burn with so much snowflake code around
 			burn *= 2
 
-	// Is the damage greater than the threshold, and if so, probability of damage + item force
-	if(brute && (brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
+	// Bone breaking. The harder you get hit and the more hurt you already are - the more likely you are to break a bone.
+	// The more damaged your bodypart is, the easier it is to break a bone, down to at least 20 force at 60 existing damage.
+	if((brute >= (bone_break_threshold - clamp((brute_dam / 2), 0, 30))) && prob(break_modifier + brute_dam / 2))
 		break_bone()
 
 	// Bleeding is applied here
