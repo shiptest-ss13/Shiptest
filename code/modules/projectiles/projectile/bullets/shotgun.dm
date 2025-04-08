@@ -72,7 +72,7 @@
 	var/ap_dropoff_cutoff = -50
 
 	icon_state = "pellet"
-	armour_penetration = -20
+	armour_penetration = -30
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "pellet"
 
