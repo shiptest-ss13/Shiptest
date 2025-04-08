@@ -36,17 +36,13 @@
 	name = "kitchen counter"
 	},
 /obj/structure/closet/wall/white/directional/east,
-/obj/item/reagent_containers/condiment/rice,
-/obj/item/reagent_containers/condiment/rice,
-/obj/item/reagent_containers/condiment/rice,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
-/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
+/obj/item/reagent_containers/condiment/rice{
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/condiment/rice{
+	pixel_y = 6;
+	pixel_x = -6
+	},
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
 /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet,
@@ -80,17 +76,33 @@
 	pixel_x = -5;
 	pixel_y = 18
 	},
-/obj/item/reagent_containers/food/snacks/grown/coffee{
-	dry = 1
+/obj/item/reagent_containers/food/snacks/meat/rawcrab{
+	pixel_x = 8;
+	pixel_y = -6
 	},
-/obj/item/reagent_containers/food/snacks/grown/coffee{
-	dry = 1
+/obj/item/reagent_containers/food/snacks/meat/rawcrab{
+	pixel_x = 8;
+	pixel_y = -6
 	},
-/obj/item/reagent_containers/food/snacks/grown/coffee{
-	dry = 1
+/obj/item/reagent_containers/food/snacks/meat/rawcrab{
+	pixel_x = 8;
+	pixel_y = -6
 	},
-/obj/item/reagent_containers/food/snacks/grown/coffee{
-	dry = 1
+/obj/item/reagent_containers/food/snacks/meat/rawcrab{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_y = -11;
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_y = -11;
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken{
+	pixel_y = -11;
+	pixel_x = -4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -148,6 +160,8 @@
 /obj/machinery/computer/operating,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/light/directional/north,
+/obj/item/disk/surgery/t3,
+/obj/item/disk/surgery/cybersun,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
 "bu" = (
@@ -613,12 +627,10 @@
 	},
 /area/ship/medical)
 "eF" = (
-/obj/structure/aquarium/prefilled{
-	name = "Mr. Fish Storage"
-	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
+/obj/structure/aquarium/prefilled/cirrus,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "eI" = (
@@ -798,6 +810,12 @@
 /obj/item/melee/knife/kitchen{
 	pixel_y = -9;
 	pixel_x = -3
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -2
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -1521,6 +1539,8 @@
 	name = "window shutter control";
 	id = "cbridge"
 	},
+/obj/item/reagent_containers/food/drinks/bottle/fernet,
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "kJ" = (
@@ -1596,7 +1616,6 @@
 	},
 /area/ship/cargo)
 "ma" = (
-/obj/machinery/fax,
 /obj/structure/table/glass,
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 8
@@ -1606,6 +1625,7 @@
 	dir = 6
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/fax/syndicate,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "mx" = (
@@ -2837,20 +2857,20 @@
 /area/ship/medical/surgery)
 "Bs" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/bottle/sake{
-	pixel_y = 10;
-	pixel_x = 10
-	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_y = 10
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 3;
-	pixel_x = 11
+	pixel_y = 9;
+	pixel_x = 10
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_x = 2;
 	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
+	pixel_x = 16;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -3894,6 +3914,10 @@
 /obj/item/clothing/suit/toggle/industrial{
 	pixel_x = 7;
 	pixel_y = -8
+	},
+/obj/item/clothing/mask/gas/syndicate{
+	pixel_x = -4;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
