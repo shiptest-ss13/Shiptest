@@ -290,7 +290,7 @@
 /obj/machinery/hydroponics/examine(user)
 	. = ..()
 	if(myseed)
-		. += span_info("It has <span class='name'>[myseed.plantname]</span> planted.")
+		. += span_info("It has [span_name("[myseed.plantname]")] planted.")
 		if (dead)
 			. += span_warning("It's dead!")
 		else if (harvest)
@@ -300,7 +300,7 @@
 	else
 		. += span_info("It's empty.")
 
-	. += "<span class='info'>Water: [waterlevel]/[maxwater].</span>\n"+\
+	. += "[span_info("Water: [waterlevel]/[maxwater].")]\n"+\
 	span_info("Nutrient: [reagents.total_volume]/[maxnutri].")
 	if(self_sustaining)
 		. += span_info("The tray's autogrow is active, halving active reagent drain, and actively maintaning the plant.")
