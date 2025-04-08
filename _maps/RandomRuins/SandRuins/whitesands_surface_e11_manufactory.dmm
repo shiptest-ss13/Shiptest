@@ -58,6 +58,17 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
+"aD" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/obj/structure/fluff/paper/stack,
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/whitesands/e11manufactory/security)
 "aE" = (
 /obj/effect/turf_decal/road,
 /obj/effect/turf_decal/industrial/warning{
@@ -242,6 +253,13 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/carpet,
 /area/ruin/whitesands/e11manufactory/barracks)
+"bz" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 10
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "bB" = (
 /obj/structure/chair,
 /obj/effect/decal/cleanable/dirt,
@@ -330,6 +348,13 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"ch" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "cm" = (
 /obj/effect/decal/remains/xeno/larva{
@@ -474,16 +499,22 @@
 "di" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"dj" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ruin/whitesands/e11manufactory/office)
 "dk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory)
 "do" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"dq" = (
-/obj/structure/fence,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "dw" = (
@@ -510,18 +541,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/office)
-"dI" = (
-/obj/structure/sign/poster/official/work_for_a_future{
-	pixel_y = 32
-	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/whitesands/e11manufactory/mats)
 "dK" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -600,26 +619,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/mats)
-"ej" = (
-/obj/machinery/power/solar,
-/obj/effect/turf_decal/solarpanel,
+"el" = (
 /obj/structure/cable/yellow{
-	icon_state = "1-2"
+	icon_state = "0-9"
 	},
-/obj/structure/cable/yellow,
-/turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/machinery/power/solar_control{
+	dir = 1
+	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/whitesands/e11manufactory/security)
 "em" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/whitesands/corner{
 	dir = 1
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"eq" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 5
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -630,13 +645,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"ey" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 10
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "ez" = (
 /obj/machinery/conveyor,
 /obj/structure/plasticflaps/opaque,
@@ -654,6 +662,13 @@
 	},
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/concrete/pavement/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"eG" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 9
+	},
+/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "eM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -770,11 +785,6 @@
 	},
 /turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"fX" = (
-/obj/machinery/power/smes/engineering,
-/obj/structure/cable/orange,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "fY" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
@@ -876,6 +886,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"hb" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "he" = (
 /obj/machinery/conveyor{
 	dir = 4
@@ -887,13 +904,6 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"hf" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "hi" = (
 /obj/structure/cable/yellow{
 	icon_state = "6-9"
@@ -935,12 +945,6 @@
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"hp" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/whitesands/e11manufactory/warehouse)
 "hq" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -1002,10 +1006,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/e11manufactory/barracks)
-"hD" = (
-/obj/structure/fence,
-/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "hF" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -1036,16 +1036,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"hQ" = (
-/obj/structure/chair/office{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ruin/whitesands/e11manufactory/office)
 "hS" = (
 /obj/structure/flora/ash/puce,
 /turf/open/floor/plating/asteroid/whitesands/dried{
@@ -1113,6 +1103,18 @@
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"is" = (
+/obj/structure/sign/poster/official/work_for_a_future{
+	pixel_y = 32
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/whitesands/e11manufactory/mats)
 "iu" = (
 /obj/effect/turf_decal/weather/whitesands/corner,
 /turf/open/floor/concrete/whitesands/lit,
@@ -1353,6 +1355,13 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/sand/explored)
+"km" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "e11_manufactory_manager_window"
+	},
+/turf/open/floor/plating,
+/area/ruin/whitesands/e11manufactory/office)
 "kn" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/whitesands/dried{
@@ -1523,6 +1532,18 @@
 	light_power = 0.6;
 	light_range = 2
 	},
+/area/overmap_encounter/planetoid/sand/explored)
+"lE" = (
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "lF" = (
 /obj/effect/turf_decal/industrial/loading{
@@ -1824,14 +1845,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/e11manufactory/office)
-"nJ" = (
-/obj/structure/chair/office/dark{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/whitesands/e11manufactory/security)
 "nS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -1939,6 +1952,13 @@
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"oE" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 6
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "oJ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2002,17 +2022,6 @@
 /obj/structure/fence/end,
 /turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"pd" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/obj/structure/fluff/paper/stack,
-/obj/structure/fluff/paper/stack{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/nanoweave/red,
-/area/ruin/whitesands/e11manufactory/security)
 "pf" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2025,16 +2034,6 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"pt" = (
-/obj/structure/cable/yellow{
-	icon_state = "6-10"
-	},
-/obj/machinery/power/terminal,
-/obj/structure/cable/yellow{
-	icon_state = "0-10"
-	},
-/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "pu" = (
 /obj/structure/table,
@@ -2134,6 +2133,17 @@
 	},
 /turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"qm" = (
+/obj/structure/filingcabinet{
+	dir = 4
+	},
+/obj/item/folder/documents/eoehoma,
+/obj/item/pen/fourcolor,
+/obj/item/clothing/neck/stethoscope{
+	w_class = 2
+	},
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/whitesands/e11manufactory/office)
 "qn" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -2149,6 +2159,16 @@
 "qs" = (
 /obj/effect/turf_decal/weather/whitesands/corner{
 	dir = 4
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"qu" = (
+/obj/structure/cable/yellow{
+	icon_state = "6-10"
+	},
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-10"
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -2361,7 +2381,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"rV" = (
+"rZ" = (
 /obj/machinery/power/solar,
 /obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/yellow{
@@ -2515,6 +2535,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
+"tu" = (
+/obj/structure/fence,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "tv" = (
 /obj/structure/railing{
 	dir = 8
@@ -2569,6 +2593,15 @@
 	light_power = 0.6;
 	light_range = 2
 	},
+/area/overmap_encounter/planetoid/sand/explored)
+"tK" = (
+/obj/machinery/power/solar,
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "tN" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2668,17 +2701,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/whitesands/e11manufactory/barracks)
-"uP" = (
-/obj/structure/filingcabinet{
-	dir = 4
-	},
-/obj/item/folder/documents/eoehoma,
-/obj/item/pen/fourcolor,
-/obj/item/clothing/neck/stethoscope{
-	w_class = 2
-	},
-/turf/open/floor/carpet/nanoweave/blue,
-/area/ruin/whitesands/e11manufactory/office)
 "uR" = (
 /obj/effect/turf_decal/road{
 	dir = 6
@@ -2829,10 +2851,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow/lit/whitesands,
 /area/overmap_encounter/planetoid/sand/explored)
-"wk" = (
-/obj/effect/spawner/random/hermit,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "wt" = (
 /obj/structure/girder,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -2843,6 +2861,22 @@
 /obj/structure/chair/stool,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/e11manufactory/barracks)
+"wy" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal,
+/obj/effect/turf_decal/corner/opaque/red/diagonal{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/ruin/whitesands/e11manufactory/barracks)
 "wF" = (
 /obj/effect/turf_decal/corner/opaque/purple/diagonal,
@@ -2893,6 +2927,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"wL" = (
+/obj/machinery/power/solar_control,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/ruin/whitesands/e11manufactory/office)
 "wQ" = (
 /obj/structure/closet/crate/secure/weapon{
 	anchored = 1
@@ -3006,10 +3047,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/whitesands/e11manufactory/barracks)
-"xz" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 6
+"xF" = (
+/obj/structure/fence/door,
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 8
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -3109,13 +3150,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory)
-"yn" = (
-/obj/machinery/computer/solar_control,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/ruin/whitesands/e11manufactory/office)
 "yA" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder{
@@ -3208,13 +3242,6 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"zw" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 4
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "zz" = (
 /turf/open/floor/concrete/slab_3{
 	light_power = 0.6;
@@ -3244,6 +3271,13 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/e11manufactory/barracks)
+"zR" = (
+/obj/item/solar_assembly,
+/obj/effect/turf_decal/solarpanel,
+/obj/item/shard,
+/obj/structure/cable/yellow,
+/turf/open/floor/concrete/reinforced/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "zZ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3357,6 +3391,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"AM" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/weather/whitesands/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "AU" = (
 /obj/structure/fence{
 	dir = 4
@@ -3468,16 +3509,6 @@
 /obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"BE" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono,
-/area/ruin/whitesands/e11manufactory)
 "BJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -3522,6 +3553,10 @@
 /obj/item/pen/fourcolor,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
+"BY" = (
+/obj/structure/fence,
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "BZ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -3646,6 +3681,10 @@
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"CY" = (
+/obj/effect/spawner/random/hermit,
+/turf/open/floor/plating/asteroid/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Da" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -3655,13 +3694,18 @@
 "Db" = (
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/overmap_encounter/planetoid/sand/explored)
-"Dd" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
+"Dk" = (
+/obj/machinery/power/solar_control{
 	dir = 8
 	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/whitesands/e11manufactory/mats)
 "Dp" = (
 /obj/item/chair{
 	pixel_x = -4;
@@ -3691,18 +3735,6 @@
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"DE" = (
-/obj/machinery/computer/solar_control{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
-	},
-/area/ruin/whitesands/e11manufactory/mats)
 "DG" = (
 /obj/machinery/light/directional/south,
 /obj/machinery/mech_bay_recharge_port,
@@ -3941,13 +3973,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"Ft" = (
-/obj/structure/fence/door,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Fx" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4065,14 +4090,6 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"Gr" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/mob/living/basic/cockroach,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/whitesands/e11manufactory/barracks)
 "Gs" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
@@ -4091,6 +4108,17 @@
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"GA" = (
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/sign/poster/official/bless_this_spess{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/whitesands/e11manufactory/barracks)
 "GF" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Crew Quarters A";
@@ -4103,6 +4131,14 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged,
+/area/ruin/whitesands/e11manufactory/barracks)
+"GH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/mob/living/basic/cockroach,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono/white,
 /area/ruin/whitesands/e11manufactory/barracks)
 "GN" = (
 /obj/machinery/door/airlock/grunge{
@@ -4347,18 +4383,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"IE" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "IF" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -4409,10 +4433,6 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
-"Ji" = (
-/obj/structure/fence,
-/turf/open/floor/plating/asteroid/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Jl" = (
 /obj/effect/turf_decal/road{
 	dir = 8
@@ -4487,13 +4507,6 @@
 /obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
-"JY" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/mono,
-/area/ruin/whitesands/e11manufactory/barracks)
 "Kb" = (
 /obj/machinery/washing_machine,
 /obj/item/clothing/under/rank/cargo/miner{
@@ -4542,6 +4555,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"KA" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 8
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "KC" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -4568,18 +4588,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"KK" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-9"
-	},
-/obj/machinery/computer/solar_control{
-	dir = 1
-	},
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
-	},
-/area/ruin/whitesands/e11manufactory/security)
 "KN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
@@ -4649,6 +4657,14 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"Lo" = (
+/obj/item/solar_assembly,
+/obj/effect/turf_decal/solarpanel,
+/obj/item/shard,
+/obj/structure/cable/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Lq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -4728,14 +4744,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/whitesands/e11manufactory/office)
-"LP" = (
-/obj/item/solar_assembly,
-/obj/effect/turf_decal/solarpanel,
-/obj/item/shard,
-/obj/structure/cable/yellow,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "LU" = (
 /obj/structure/railing{
 	max_integrity = 70;
@@ -4811,22 +4819,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/e11manufactory/barracks)
-"Mn" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal,
-/obj/effect/turf_decal/corner/opaque/red/diagonal{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/whitesands/e11manufactory/barracks)
 "Ms" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -4866,6 +4858,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/e11manufactory/barracks)
+"MC" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/mono,
+/area/ruin/whitesands/e11manufactory/barracks)
 "ME" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -4902,6 +4901,16 @@
 "MR" = (
 /turf/closed/wall/rust,
 /area/ruin/whitesands/e11manufactory/security)
+"MY" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono,
+/area/ruin/whitesands/e11manufactory)
 "MZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/plastic{
@@ -4909,17 +4918,6 @@
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
-"Na" = (
-/obj/effect/turf_decal/corner/opaque/red/diagonal,
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/sign/poster/official/bless_this_spess{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/whitesands/e11manufactory/barracks)
 "Ni" = (
 /obj/effect/turf_decal/road{
 	dir = 8
@@ -5126,13 +5124,6 @@
 	},
 /obj/effect/turf_decal/weather/whitesands{
 	dir = 8
-	},
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"OM" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands{
-	dir = 9
 	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -5345,6 +5336,13 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/warehouse)
+"Qg" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 4
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Qi" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -5388,6 +5386,18 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/sand/explored)
+"Qt" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/orange{
+	icon_state = "4-8"
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Qu" = (
 /obj/structure/flora/ash/garden/arid,
 /turf/open/floor/plating/asteroid/whitesands/dried{
@@ -5399,13 +5409,6 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"QD" = (
-/obj/structure/fence,
-/obj/effect/turf_decal/weather/whitesands/corner{
-	dir = 8
-	},
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "QE" = (
@@ -5484,6 +5487,11 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"Ri" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/orange,
+/turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Rl" = (
 /obj/machinery/airalarm/directional/east,
@@ -5576,13 +5584,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
-"RR" = (
-/obj/item/solar_assembly,
-/obj/effect/turf_decal/solarpanel,
-/obj/item/shard,
-/obj/structure/cable/yellow,
-/turf/open/floor/concrete/reinforced/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "RS" = (
 /obj/structure/salvageable/server,
@@ -5710,13 +5711,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/e11manufactory/warehouse)
-"SE" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/shutters{
-	id = "e11_manufactory_manager_window"
-	},
-/turf/open/floor/plating,
-/area/ruin/whitesands/e11manufactory/office)
 "SF" = (
 /obj/structure/closet/crate/secure/plasma{
 	name = "material crate";
@@ -5889,12 +5883,29 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"TX" = (
+/obj/structure/fence,
+/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"Ub" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
+	faction = list("eoehoma")
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/whitesands/e11manufactory/warehouse)
 "Ug" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/e11manufactory/barracks)
+"Ui" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/weather/whitesands{
+	dir = 5
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "Uj" = (
 /turf/open/floor/concrete/slab_2{
 	light_power = 0.6;
@@ -6223,13 +6234,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/whitesands/e11manufactory/security)
-"WX" = (
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11{
-	faction = list("eoehoma")
+"WV" = (
+/obj/structure/chair/office/dark{
+	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/nanoweave/red,
+/area/ruin/whitesands/e11manufactory/security)
 "Xd" = (
 /obj/machinery/atmospherics/components/binary/valve/on/layer2{
 	dir = 4
@@ -6408,18 +6420,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ruin/whitesands/e11manufactory/office)
-"Ym" = (
-/obj/machinery/power/solar,
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/open/floor/concrete/reinforced/whitesands/lit,
-/area/overmap_encounter/planetoid/sand/explored)
 "Yv" = (
 /obj/machinery/power/tracker,
 /obj/effect/turf_decal/solarpanel,
@@ -6868,33 +6868,33 @@ mM
 vU
 gM
 gM
-Dd
-Dd
-Dd
-ey
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-OM
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-Dd
-ey
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
+KA
+KA
+KA
+bz
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+eG
+KA
+KA
+KA
+KA
+KA
+KA
+KA
+bz
+tu
+tu
+tu
+tu
+tu
+tu
+tu
 gM
 gM
 vU
@@ -7158,7 +7158,7 @@ Qp
 uo
 TP
 vU
-wk
+CY
 Zj
 vU
 vU
@@ -7198,8 +7198,8 @@ HX
 ZR
 ZR
 Zi
-fX
-DE
+Ri
+Dk
 eE
 eE
 eE
@@ -7461,7 +7461,7 @@ Lh
 eE
 kM
 eE
-dI
+is
 rj
 zK
 eE
@@ -7474,7 +7474,7 @@ Pg
 Km
 Xv
 zZ
-BE
+MY
 KP
 Km
 pE
@@ -7742,29 +7742,29 @@ Sn
 gV
 Pg
 gM
-Dd
-Dd
-ey
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-OM
-Dd
-Dd
-Dd
-Dd
-ey
+KA
+KA
+bz
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+tu
+eG
+KA
+KA
+KA
+KA
+bz
 gM
 gM
 Zj
@@ -7778,10 +7778,10 @@ mM
 vU
 gM
 gM
-zw
-QD
-dq
-dq
+Qg
+AM
+BY
+BY
 gM
 Pg
 oB
@@ -8052,7 +8052,7 @@ NV
 SK
 Pg
 Pg
-hf
+ch
 gV
 Pg
 Pg
@@ -8075,7 +8075,7 @@ oz
 oz
 oz
 rQ
-Gr
+GH
 Wn
 oz
 oz
@@ -8172,7 +8172,7 @@ vU
 vU
 iL
 FP
-Ft
+xF
 YK
 JM
 gV
@@ -8201,7 +8201,7 @@ oz
 Ii
 fu
 pV
-Mn
+wy
 fu
 oz
 oz
@@ -8467,7 +8467,7 @@ oz
 zo
 zs
 jn
-JY
+MC
 oz
 oz
 BL
@@ -8493,10 +8493,10 @@ vU
 vU
 gM
 gM
-Ji
-Ji
-Ji
-Ji
+tu
+tu
+tu
+tu
 gM
 Sn
 oB
@@ -8603,7 +8603,7 @@ VL
 pI
 Tb
 oz
-Na
+GA
 lw
 Hs
 oz
@@ -8704,7 +8704,7 @@ cN
 ms
 bJ
 RF
-hp
+Ub
 qx
 lF
 vL
@@ -8930,7 +8930,7 @@ YK
 Pg
 Pg
 bK
-LP
+Lo
 gV
 gV
 Xi
@@ -8954,7 +8954,7 @@ SR
 uS
 UM
 Pg
-IE
+Qt
 Pg
 Pg
 di
@@ -8995,7 +8995,7 @@ Pg
 Pg
 gV
 nu
-RR
+zR
 gV
 Pg
 Xi
@@ -9113,7 +9113,7 @@ sV
 Pg
 gV
 gV
-WX
+hb
 gV
 gV
 Pg
@@ -9189,8 +9189,8 @@ mI
 Lh
 ks
 iq
-Ym
-ej
+lE
+tK
 zC
 Pg
 KQ
@@ -9381,7 +9381,7 @@ NX
 ut
 NX
 NX
-uP
+qm
 jR
 kP
 NX
@@ -9405,7 +9405,7 @@ lY
 Qp
 uo
 Pg
-pt
+qu
 nA
 MR
 aN
@@ -9450,7 +9450,7 @@ Cx
 jX
 dC
 qp
-SE
+km
 ZY
 gV
 KQ
@@ -9471,7 +9471,7 @@ Pg
 gV
 Pg
 Pg
-KK
+el
 MR
 NO
 MR
@@ -9506,7 +9506,7 @@ Pg
 oS
 RG
 Je
-hQ
+dj
 Se
 jT
 rS
@@ -9515,7 +9515,7 @@ cm
 aY
 ln
 Wo
-SE
+km
 ry
 FP
 nE
@@ -9580,7 +9580,7 @@ Vo
 bB
 PV
 KC
-SE
+km
 yC
 vU
 AU
@@ -9667,7 +9667,7 @@ gV
 Pg
 MR
 PH
-pd
+aD
 cy
 jg
 Pg
@@ -9732,7 +9732,7 @@ gV
 Pg
 MR
 XO
-nJ
+WV
 RH
 jg
 Pg
@@ -9772,10 +9772,10 @@ NX
 yK
 NX
 NX
-yn
+wL
 Oj
 cH
-rV
+rZ
 Pg
 qs
 qJ
@@ -10118,9 +10118,9 @@ vU
 vU
 gM
 gM
-xz
-Ji
-Ji
+oE
+tu
+tu
 gM
 vU
 Sn
@@ -10283,20 +10283,20 @@ Pg
 Pg
 Pg
 gM
-zw
-zw
-zw
-xz
-Ji
-Ji
-Ji
-Ji
-Ji
+Qg
+Qg
+Qg
+oE
+tu
+tu
+tu
+tu
+tu
 fJ
-zw
-zw
-zw
-zw
+Qg
+Qg
+Qg
+Qg
 gM
 gM
 vU
@@ -10838,34 +10838,34 @@ Pa
 vU
 gM
 gM
-zw
-xz
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-eq
-zw
-zw
-zw
-dq
-hD
-zw
-zw
-zw
-zw
-xz
-Ji
-Ji
-Ji
-Ji
-Ji
-Ji
-eq
-zw
-zw
+Qg
+oE
+tu
+tu
+tu
+tu
+tu
+tu
+Ui
+Qg
+Qg
+Qg
+BY
+TX
+Qg
+Qg
+Qg
+Qg
+oE
+tu
+tu
+tu
+tu
+tu
+tu
+Ui
+Qg
+Qg
 gM
 gM
 vU

@@ -122,7 +122,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
-/datum/supply_pack/gun/modelh
+/datum/supply_pack/gun/pistolec
 	name = "Model 'H' Gauss Pistol Crate"
 	desc = "Contains a compact solarian-produced gauss pistol, chambered in ferromagnetic slugs. Remember to sign your necessary forms upon arrival."
 	cost = 2000
@@ -629,16 +629,6 @@
 	contains = list(/obj/item/storage/guncase/saw80)
 	crate_name = "LMG crate"
 	faction = /datum/faction/syndicate/scarborough
-	faction_discount = 0
-	faction_locked = TRUE
-
-/datum/supply_pack/gun/rottweiler
-	name = "KM-05 Rottweiler Squad Automatic Weapon"
-	desc = "Contains an extensively modified belt fed machine gun, built for special IRMG operations. Bulky and cumbersome, this weapon is chambered in the powerful .308 cartridge."
-	cost = 6000
-	contains = list(/obj/item/storage/guncase/rottweiler)
-	crate_name = "LMG crate"
-	faction = /datum/faction/inteq
 	faction_discount = 0
 	faction_locked = TRUE
 

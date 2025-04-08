@@ -54,7 +54,7 @@
 	stage_speed = 0
 	transmittable = 1
 	level = 6
-	passive_message = span_notice("You miss the feeling of starlight on your skin.")
+	passive_message = "<span class='notice'>You miss the feeling of starlight on your skin.</span>"
 	var/nearspace_penalty = 0.3
 	threshold_descs = list(
 		"Stage Speed 6" = "Increases healing speed.",
@@ -81,7 +81,7 @@
 /datum/symptom/heal/starlight/Heal(mob/living/carbon/M, datum/disease/advance/A, actual_power)
 	var/heal_amt = actual_power
 	if(M.getToxLoss() && prob(5))
-		to_chat(M, span_notice("Your skin tingles as the starlight seems to heal you."))
+		to_chat(M, "<span class='notice'>Your skin tingles as the starlight seems to heal you.</span>")
 
 	M.adjustToxLoss(-(4 * heal_amt)) //most effective on toxins
 
@@ -128,7 +128,7 @@
 		if(food_conversion)
 			M.adjust_nutrition(0.3)
 		if(prob(2))
-			to_chat(M, span_notice("You feel a mild warmth as your blood purifies itself."))
+			to_chat(M, "<span class='notice'>You feel a mild warmth as your blood purifies itself.</span>")
 	return 1
 
 
@@ -167,7 +167,7 @@
 	var/lost_nutrition = 9 - (reduced_hunger * 5)
 	C.adjust_nutrition(-lost_nutrition * HUNGER_FACTOR) //Hunger depletes at 10x the normal speed
 	if(prob(2))
-		to_chat(C, span_notice("You feel an odd gurgle in your stomach, as if it was working much faster than normal."))
+		to_chat(C, "<span class='notice'>You feel an odd gurgle in your stomach, as if it was working much faster than normal.</span>")
 	return 1
 
 /datum/symptom/heal/darkness
@@ -178,7 +178,7 @@
 	stage_speed = -2
 	transmittable = -1
 	level = 6
-	passive_message = span_notice("You feel tingling on your skin as light passes over it.")
+	passive_message = "<span class='notice'>You feel tingling on your skin as light passes over it.</span>"
 	threshold_descs = list(
 		"Stage Speed 8" = "Doubles healing speed.",
 	)
@@ -207,7 +207,7 @@
 		return
 
 	if(prob(5))
-		to_chat(M, span_notice("The darkness soothes and mends your wounds."))
+		to_chat(M, "<span class='notice'>The darkness soothes and mends your wounds.</span>")
 
 	for(var/obj/item/bodypart/L in parts)
 		if(L.heal_damage(heal_amt/parts.len, heal_amt/parts.len * 0.5, null, BODYTYPE_ORGANIC)) //more effective on brute
@@ -227,7 +227,7 @@
 	stage_speed = -3
 	transmittable = -2
 	level = 8
-	passive_message = span_notice("The pain from your wounds makes you feel oddly sleepy...")
+	passive_message = "<span class='notice'>The pain from your wounds makes you feel oddly sleepy...</span>"
 	var/deathgasp = FALSE
 	var/stabilize = FALSE
 	var/active_coma = FALSE //to prevent multiple coma procs
@@ -275,7 +275,7 @@
 		if(SOFT_CRIT)
 			return power * 0.5
 	if(M.getBruteLoss() + M.getFireLoss() >= 70 && !active_coma)
-		to_chat(M, span_warning("You feel yourself slip into a regenerative coma..."))
+		to_chat(M, "<span class='warning'>You feel yourself slip into a regenerative coma...</span>")
 		active_coma = TRUE
 		addtimer(CALLBACK(src, PROC_REF(coma), M), 60)
 
@@ -322,7 +322,7 @@
 	stage_speed = 0
 	transmittable = 1
 	level = 6
-	passive_message = span_notice("Your skin feels oddly dry...")
+	passive_message = "<span class='notice'>Your skin feels oddly dry...</span>"
 	var/absorption_coeff = 1
 	threshold_descs = list(
 		"Resistance 5" = "Water is consumed at a much slower rate.",
@@ -359,7 +359,7 @@
 		return
 
 	if(prob(5))
-		to_chat(M, span_notice("You feel yourself absorbing the water around you to soothe your damaged skin."))
+		to_chat(M, "<span class='notice'>You feel yourself absorbing the water around you to soothe your damaged skin.</span>")
 
 	for(var/obj/item/bodypart/L in parts)
 		if(L.heal_damage(heal_amt/parts.len * 0.5, heal_amt/parts.len, null, BODYTYPE_ORGANIC))
@@ -380,7 +380,7 @@
 	stage_speed = -2
 	transmittable = -2
 	level = 8
-	passive_message = span_notice("You feel an odd attraction to plasma.")
+	passive_message = "<span class='notice'>You feel an odd attraction to plasma.</span>"
 	var/temp_rate = 1
 	threshold_descs = list(
 		"Transmission 6" = "Increases temperature adjustment rate.",
@@ -413,16 +413,16 @@
 	var/heal_amt = 4 * actual_power
 
 	if(prob(5))
-		to_chat(M, span_notice("You feel yourself absorbing plasma inside and around you..."))
+		to_chat(M, "<span class='notice'>You feel yourself absorbing plasma inside and around you...</span>")
 
 	if(M.bodytemperature > M.get_body_temp_normal())
 		M.adjust_bodytemperature(-20 * temp_rate * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 		if(prob(5))
-			to_chat(M, span_notice("You feel less hot."))
+			to_chat(M, "<span class='notice'>You feel less hot.</span>")
 	else if(M.bodytemperature < (M.get_body_temp_normal() + 1))
 		M.adjust_bodytemperature(20 * temp_rate * TEMPERATURE_DAMAGE_COEFFICIENT,0, M.get_body_temp_normal())
 		if(prob(5))
-			to_chat(M, span_notice("You feel warmer."))
+			to_chat(M, "<span class='notice'>You feel warmer.</span>")
 
 	M.adjustToxLoss(-heal_amt)
 
@@ -430,7 +430,7 @@
 	if(!parts.len)
 		return
 	if(prob(5))
-		to_chat(M, span_notice("The pain from your wounds fades rapidly."))
+		to_chat(M, "<span class='notice'>The pain from your wounds fades rapidly.</span>")
 	for(var/obj/item/bodypart/L in parts)
 		if(L.heal_damage(heal_amt/parts.len, heal_amt/parts.len, null, BODYTYPE_ORGANIC))
 			M.update_damage_overlays()
@@ -447,7 +447,7 @@
 	level = 6
 	symptom_delay_min = 1
 	symptom_delay_max = 1
-	passive_message = span_notice("Your skin glows faintly for a moment.")
+	passive_message = "<span class='notice'>Your skin glows faintly for a moment.</span>"
 	var/cellular_damage = FALSE
 	threshold_descs = list(
 		"Transmission 6" = "Additionally heals cellular damage.",
@@ -492,7 +492,7 @@
 		return
 
 	if(prob(4))
-		to_chat(M, span_notice("Your skin glows faintly, and you feel your wounds mending themselves."))
+		to_chat(M, "<span class='notice'>Your skin glows faintly, and you feel your wounds mending themselves.</span>")
 
 	for(var/obj/item/bodypart/L in parts)
 		if(L.heal_damage(heal_amt/parts.len, heal_amt/parts.len, null, BODYTYPE_ORGANIC))

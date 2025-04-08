@@ -23,11 +23,11 @@
 		if("join")
 			var/datum/overmap/ship/controlled/target = locate(params["ship"]) in SSovermap.controlled_ships
 			if(!target)
-				to_chat(spawnee, span_danger("Unable to locate ship. Please contact admins!"))
+				to_chat(spawnee, "<span class='danger'>Unable to locate ship. Please contact admins!</span>")
 				spawnee.new_player_panel()
 				return
 			if(!target.is_join_option())
-				to_chat(spawnee, span_danger("This ship is not currently accepting new players!"))
+				to_chat(spawnee, "<span class='danger'>This ship is not currently accepting new players!</span>")
 				spawnee.new_player_panel()
 				return
 
@@ -37,13 +37,13 @@
 				if(isnull(current_application))
 					var/datum/ship_application/app = new(spawnee, target)
 					if(app.get_user_response())
-						to_chat(spawnee, span_notice("Ship application sent. You will be notified if the application is accepted."))
+						to_chat(spawnee, "<span class='notice'>Ship application sent. You will be notified if the application is accepted.</span>")
 					else
-						to_chat(spawnee, span_notice("Application cancelled, or there was an error sending the application."))
+						to_chat(spawnee, "<span class='notice'>Application cancelled, or there was an error sending the application.</span>")
 					return
 				switch(current_application.status)
 					if(SHIP_APPLICATION_ACCEPTED)
-						to_chat(spawnee, span_notice("Your ship application was accepted, continuing..."))
+						to_chat(spawnee, "<span class='notice'>Your ship application was accepted, continuing...</span>")
 					if(SHIP_APPLICATION_PENDING)
 						alert(spawnee, "You already have a pending application for this ship!")
 						return
@@ -53,35 +53,35 @@
 				did_application = TRUE
 
 			if(target.join_mode == SHIP_JOIN_MODE_CLOSED || (target.join_mode == SHIP_JOIN_MODE_APPLY && !did_application))
-				to_chat(spawnee, span_warning("You cannot join this ship anymore, as its join mode has changed!"))
+				to_chat(spawnee, "<span class='warning'>You cannot join this ship anymore, as its join mode has changed!</span>")
 				return
 
 			ui.close()
 			var/datum/job/selected_job = locate(params["job"]) in target.job_slots
 			// Attempts the spawn itself. This checks for playtime requirements.
 			if(!spawnee.AttemptLateSpawn(selected_job, target))
-				to_chat(spawnee, span_danger("Unable to spawn on ship!"))
+				to_chat(spawnee, "<span class='danger'>Unable to spawn on ship!</span>")
 				spawnee.new_player_panel()
 
 		if("buy")
 			if(is_banned_from(spawnee.ckey, "Ship Purchasing"))
-				to_chat(spawnee, span_danger("You are banned from purchasing ships!"))
+				to_chat(spawnee, "<span class='danger'>You are banned from purchasing ships!</span>")
 				spawnee.new_player_panel()
 				ui.close()
 				return
 
 			var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[params["name"]]
 			if(SSovermap.ship_spawning)
-				to_chat(spawnee, span_danger("A ship is currently spawning. Try again in a little while."))
+				to_chat(spawnee, "<span class='danger'>A ship is currently spawning. Try again in a little while.</span>")
 				return
 			if(!SSovermap.player_ship_spawn_allowed())
-				to_chat(spawnee, span_danger("No more ships may be spawned at this time!"))
+				to_chat(spawnee, "<span class='danger'>No more ships may be spawned at this time!</span>")
 				return
 			if(!template.enabled)
-				to_chat(spawnee, span_danger("This ship is not currently available for purchase!"))
+				to_chat(spawnee, "<span class='danger'>This ship is not currently available for purchase!</span>")
 				return
 			if(!template.has_ship_spawn_playtime(spawnee.client))
-				to_chat(spawnee, span_danger("You do not have enough playtime to spawn this ship!"))
+				to_chat(spawnee, "<span class='danger'>You do not have enough playtime to spawn this ship!</span>")
 				return
 
 			var/num_ships_with_template = 0
@@ -89,15 +89,15 @@
 				if(template == Ship.source_template)
 					num_ships_with_template += 1
 			if(num_ships_with_template >= template.limit)
-				to_chat(spawnee, span_danger("There are already [num_ships_with_template] ships of this type; you cannot spawn more!"))
+				to_chat(spawnee, "<span class='danger'>There are already [num_ships_with_template] ships of this type; you cannot spawn more!</span>")
 				return
 
 			ui.close()
 
-			to_chat(spawnee, span_danger("Your [template.name] is being prepared. Please be patient!"))
+			to_chat(spawnee, "<span class='danger'>Your [template.name] is being prepared. Please be patient!</span>")
 			var/datum/overmap/ship/controlled/target = SSovermap.spawn_ship_at_start(template)
 			if(!target?.shuttle_port)
-				to_chat(spawnee, span_danger("There was an error loading the ship. Please contact admins!"))
+				to_chat(spawnee, "<span class='danger'>There was an error loading the ship. Please contact admins!</span>")
 				spawnee.new_player_panel()
 				return
 			SSblackbox.record_feedback("tally", "ship_purchased", 1, template.name)
@@ -105,7 +105,7 @@
 			// Try to spawn as the first listed job in the job slots (usually captain)
 			// Playtime checks are overridden, to ensure the player gets to join the ship they spawned.
 			if(!spawnee.AttemptLateSpawn(target.job_slots[1], target, FALSE))
-				to_chat(spawnee, span_danger("Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin."))
+				to_chat(spawnee, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 				spawnee.new_player_panel()
 
 /datum/ship_select/ui_data(mob/user)

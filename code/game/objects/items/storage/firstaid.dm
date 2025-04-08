@@ -277,7 +277,7 @@
 
 	//Making a medibot!
 	if(contents.len >= 1)
-		to_chat(user, span_warning("You need to empty [src] out first!"))
+		to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
 		return
 
 	var/obj/item/bot_assembly/medbot/A = new
@@ -292,7 +292,7 @@
 	else if(istype(src, /obj/item/storage/firstaid/tactical))
 		A.set_skin("medibot_bezerk")
 	user.put_in_hands(A)
-	to_chat(user, span_notice("You add [S] to [src]."))
+	to_chat(user, "<span class='notice'>You add [S] to [src].</span>")
 	A.robot_arm = S.type
 	A.firstaid = type
 	qdel(S)

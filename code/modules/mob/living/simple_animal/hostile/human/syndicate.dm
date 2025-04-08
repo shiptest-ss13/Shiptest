@@ -71,7 +71,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/bullet_act(obj/projectile/Proj)
 	if(prob(projectile_deflect_chance))
-		visible_message(span_danger("[src] blocks [Proj] with its shield!"))
+		visible_message("<span class='danger'>[src] blocks [Proj] with its shield!</span>")
 		return BULLET_ACT_BLOCK
 	return ..()
 
@@ -417,7 +417,7 @@
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	faction = list(FACTION_RAMZI)
+	faction = list(ROLE_SYNDICATE)
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000

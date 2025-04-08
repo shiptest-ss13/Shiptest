@@ -123,7 +123,7 @@
 /obj/machinery/power/compressor/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Efficiency at <b>[efficiency*100]%</b>.")
+		. += "<span class='notice'>The status display reads: Efficiency at <b>[efficiency*100]%</b>.</span>"
 
 /obj/machinery/power/compressor/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, initial(icon_state), initial(icon_state), I))
@@ -131,10 +131,10 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(turbine)
-			to_chat(user, span_notice("Turbine connected."))
+			to_chat(user, "<span class='notice'>Turbine connected.</span>")
 			set_machine_stat(machine_stat & ~BROKEN)
 		else
-			to_chat(user, span_alert("Turbine not connected."))
+			to_chat(user, "<span class='alert'>Turbine not connected.</span>")
 		return
 
 	default_deconstruction_crowbar(I)
@@ -226,7 +226,7 @@
 /obj/machinery/power/shuttle/engine/turbine/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Productivity at <b>[productivity*100]%</b>.")
+		. += "<span class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.</span>"
 
 /obj/machinery/power/shuttle/engine/turbine/locate_machinery()
 	if(compressor)
@@ -310,9 +310,9 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(compressor)
-			to_chat(user, span_notice("Compressor connected."))
+			to_chat(user, "<span class='notice'>Compressor connected.</span>")
 		else
-			to_chat(user, span_alert("Compressor not connected."))
+			to_chat(user, "<span class='alert'>Compressor not connected.</span>")
 			obj_break()
 		return
 

@@ -107,7 +107,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
-	visible_message(span_boldannounce("[src] collapses!"))
+	visible_message("<span class='boldannounce'>[src] collapses!</span>")
 
 /obj/structure/vein/proc/toggle_spawning()
 	currently_spawning = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, currently_spawning)

@@ -54,14 +54,14 @@
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message(span_danger("[user]'s spoon snaps into tiny pieces in their hand."))
+		user.visible_message("<span class='danger'>[user]'s spoon snaps into tiny pieces in their hand.</span>")
 		qdel(src)
 
 
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message(span_danger("[user]'s knife snaps into tiny pieces in their hand."))
+		user.visible_message("<span class='danger'>[user]'s knife snaps into tiny pieces in their hand.</span>")
 		qdel(src)
 
 /obj/item/melee/knife/pizza_cutter

@@ -46,7 +46,7 @@
 		new /obj/effect/decal/cleanable/wrapping(get_turf(M))
 		qdel(src)
 	else
-		to_chat(M, span_notice("[uses] use[uses > 1 ? "s" : ""] remaining on the [src]."))
+		to_chat(M, "<span class='notice'>[uses] use[uses > 1 ? "s" : ""] remaining on the [src].</span>")
 
 /obj/item/choice_beacon/proc/spawn_option(obj/choice,mob/living/M)
 	new choice(get_turf(M))
@@ -209,10 +209,10 @@
 	var/mob/living/joe = user
 
 	if(joe in mob_mobs) //Only one nickname fuckhead
-		to_chat(joe, span_warning("You have already been initiated into the mafioso life."))
+		to_chat(joe, "<span class='warning'>You have already been initiated into the mafioso life.</span>")
 		return
 
-	to_chat(joe, span_notice("As you burn the picture, a nickname comes to mind..."))
+	to_chat(joe, "<span class='notice'>As you burn the picture, a nickname comes to mind...</span>")
 	var/nickname = stripped_input(joe, "Pick a nickname", "Mafioso Nicknames", null, NICKNAME_CAP, TRUE)
 	nickname = reject_bad_name(nickname, max_length = NICKNAME_CAP, ascii_only = TRUE)
 	if(!nickname)
@@ -227,7 +227,7 @@
 	used_up = TRUE
 	mob_mobs += joe
 	joe.say("My soul will burn like this saint if I betray my family. I enter alive and I will have to get out dead.", forced = /obj/item/virgin_mary)
-	to_chat(joe, span_userdanger("Being inducted into the mafia does not grant antagonist status."))
+	to_chat(joe, "<span class='userdanger'>Being inducted into the mafia does not grant antagonist status.</span>")
 
 #undef NICKNAME_CAP
 
@@ -332,7 +332,7 @@
 		extend(user)
 	else
 		if (held_sausage)
-			to_chat(user, span_warning("You can't retract [src] while [held_sausage] is attached!"))
+			to_chat(user, "<span class='warning'>You can't retract [src] while [held_sausage] is attached!</span>")
 			return
 		retract(user)
 
@@ -343,15 +343,15 @@
 	..()
 	if (istype(target, /obj/item/reagent_containers/food/snacks/sausage))
 		if (!on)
-			to_chat(user, span_warning("You must extend [src] to attach anything to it!"))
+			to_chat(user, "<span class='warning'>You must extend [src] to attach anything to it!</span>")
 			return
 		if (held_sausage)
-			to_chat(user, span_warning("[held_sausage] is already attached to [src]!"))
+			to_chat(user, "<span class='warning'>[held_sausage] is already attached to [src]!</span>")
 			return
 		if (user.transferItemToLoc(target, src))
 			held_sausage = target
 		else
-			to_chat(user, span_warning("[target] doesn't seem to want to get on [src]!"))
+			to_chat(user, "<span class='warning'>[target] doesn't seem to want to get on [src]!</span>")
 	update_appearance()
 
 /obj/item/roastingstick/attack_hand(mob/user)
@@ -367,13 +367,13 @@
 		. += mutable_appearance(icon, "roastingstick_sausage")
 
 /obj/item/roastingstick/proc/extend(user)
-	to_chat(user, span_warning("You extend [src]."))
+	to_chat(user, "<span class='warning'>You extend [src].</span>")
 	icon_state = "roastingstick_1"
 	item_state = "nullrod"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/roastingstick/proc/retract(user)
-	to_chat(user, span_notice("You collapse [src]."))
+	to_chat(user, "<span class='notice'>You collapse [src].</span>")
 	icon_state = "roastingstick_0"
 	item_state = null
 	w_class = WEIGHT_CLASS_SMALL
@@ -389,14 +389,14 @@
 		return
 	if (is_type_in_typecache(target, ovens))
 		if (held_sausage && held_sausage.roasted)
-			to_chat(src, span_warning("Your [held_sausage] has already been cooked!"))
+			to_chat(src, "<span class='warning'>Your [held_sausage] has already been cooked!</span>")
 			return
 		if (istype(target, /obj/singularity) && get_dist(user, target) < 10)
-			to_chat(user, span_notice("You send [held_sausage] towards [target]."))
+			to_chat(user, "<span class='notice'>You send [held_sausage] towards [target].</span>")
 			playsound(src, 'sound/items/rped.ogg', 50, TRUE)
 			beam = user.Beam(target,icon_state="rped_upgrade",time=100)
 		else if (user.Adjacent(target))
-			to_chat(user, span_notice("You extend [src] towards [target]."))
+			to_chat(user, "<span class='notice'>You extend [src] towards [target].</span>")
 			playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
 		else
 			return
@@ -407,7 +407,7 @@
 			playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
 
 /obj/item/roastingstick/proc/finish_roasting(user, atom/target)
-	to_chat(user, span_notice("You finish roasting [held_sausage]."))
+	to_chat(user, "<span class='notice'>You finish roasting [held_sausage].</span>")
 	playsound(src,'sound/items/welder2.ogg',50,TRUE)
 	held_sausage.add_atom_colour(rgb(103,63,24), FIXED_COLOUR_PRIORITY)
 	held_sausage.name = "[target.name]-roasted [held_sausage.name]"
@@ -496,7 +496,7 @@
 /obj/item/extendohand/attack(atom/M, mob/living/carbon/human/user)
 	var/dist = get_dist(M, user)
 	if(dist < min_reach)
-		to_chat(user, span_warning("[M] is too close to use [src] on."))
+		to_chat(user, "<span class='warning'>[M] is too close to use [src] on.</span>")
 		return
 	M.attack_hand(user)
 

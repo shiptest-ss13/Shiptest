@@ -57,7 +57,7 @@
 				else
 					ourpipeline = pipenets
 
-				to_chat(M, span_userdanger("Casting [src] inside of [pipeyoudiein] quickly turns you into a bloody mush!"))
+				to_chat(M, "<span class='userdanger'>Casting [src] inside of [pipeyoudiein] quickly turns you into a bloody mush!</span>")
 				var/gibtype = /obj/effect/gibspawner/generic
 				if(isalien(M))
 					gibtype = /obj/effect/gibspawner/xeno
@@ -73,7 +73,7 @@
 /obj/effect/proc_holder/spell/targeted/shapeshift/proc/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
 	if(H)
-		to_chat(caster, span_warning("You're already shapeshifted!"))
+		to_chat(caster, "<span class='warning'>You're already shapeshifted!</span>")
 		return
 
 	var/mob/living/shape = new shapeshift_type(caster.loc)

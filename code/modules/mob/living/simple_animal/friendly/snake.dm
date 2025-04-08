@@ -64,7 +64,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/AttackingTarget()
 	if(istype(target, /mob/living/basic/mouse))
-		visible_message(span_notice("[name] consumes [target] in a single gulp!"), span_notice("You consume [target] in a single gulp!"))
+		visible_message("<span class='notice'>[name] consumes [target] in a single gulp!</span>", "<span class='notice'>You consume [target] in a single gulp!</span>")
 		QDEL_NULL(target)
 		adjustBruteLoss(-2)
 	else
@@ -107,7 +107,7 @@
 		switch(remove_from)
 			if("glasses")
 				if(!glasses)
-					to_chat(usr, span_warning("There is nothing to remove from it!"))
+					to_chat(usr, "<span class='warning'>There is nothing to remove from it!</span>")
 					return
 				if(!stat)
 					say("HISSSS!")
@@ -119,12 +119,12 @@
 	else if(href_list["add_inv"])
 		var/add_to = href_list["add_inv"]
 		if(!usr.get_active_held_item())
-			to_chat(usr, span_warning("You have nothing in your hand to put on it!"))
+			to_chat(usr, "<span class='warning'>You have nothing in your hand to put on it!</span>")
 			return
 		switch(add_to)
 			if("glasses")
 				if(glasses)
-					to_chat(usr, span_warning("It's already wearing something!"))
+					to_chat(usr, "<span class='warning'>It's already wearing something!</span>")
 					return
 				else
 					var/obj/item/item_to_add = usr.get_active_held_item()
@@ -132,7 +132,7 @@
 						return
 
 					if(!istype(item_to_add, /obj/item/clothing/glasses))
-						to_chat(usr, span_warning("This object won't fit!"))
+						to_chat(usr, "<span class='warning'>This object won't fit!</span>")
 						return
 
 					var/obj/item/clothing/glasses/glasses_to_add = item_to_add
@@ -140,7 +140,7 @@
 					if(!usr.transferItemToLoc(glasses_to_add, src))
 						return
 					glasses = glasses_to_add
-					to_chat(usr, span_notice("You fit the glasses onto [src]."))
+					to_chat(usr, "<span class='notice'>You fit the glasses onto [src].</span>")
 					update_overlays()
 
 #define MAX_BOOKWORM_BOOKS 20

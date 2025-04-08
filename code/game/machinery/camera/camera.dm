@@ -132,24 +132,24 @@
 	if(isEmpProof(TRUE)) //don't reveal it's upgraded if was done via MALF AI Upgrade Camera Network ability
 		. += "It has electromagnetic interference shielding installed."
 	else
-		. += span_info("It can be shielded against electromagnetic interference with some <b>plasma</b>.")
+		. += "<span class='info'>It can be shielded against electromagnetic interference with some <b>plasma</b>.</span>"
 	if(isXRay(TRUE)) //don't reveal it's upgraded if was done via MALF AI Upgrade Camera Network ability
 		. += "It has an X-ray photodiode installed."
 	else
-		. += span_info("It can be upgraded with an X-ray photodiode with an <b>analyzer</b>.")
+		. += "<span class='info'>It can be upgraded with an X-ray photodiode with an <b>analyzer</b>.</span>"
 	if(isMotion())
 		. += "It has a proximity sensor installed."
 	else
-		. += span_info("It can be upgraded with a <b>proximity sensor</b>.")
+		. += "<span class='info'>It can be upgraded with a <b>proximity sensor</b>.</span>"
 
 	if(!status)
-		. += span_info("It's currently deactivated.")
+		. += "<span class='info'>It's currently deactivated.</span>"
 		if(!panel_open && powered())
-			. += span_notice("You'll need to open its maintenance panel with a <b>screwdriver</b> to turn it back on.")
+			. += "<span class='notice'>You'll need to open its maintenance panel with a <b>screwdriver</b> to turn it back on.</span>"
 	if(panel_open)
-		. += span_info("Its maintenance panel is currently open.")
+		. += "<span class='info'>Its maintenance panel is currently open.</span>"
 		if(!status && powered())
-			. += span_info("It can reactivated with <b>wirecutters</b>.")
+			. += "<span class='info'>It can reactivated with <b>wirecutters</b>.</span>"
 
 /obj/machinery/camera/emp_act(severity)
 	. = ..()
@@ -170,7 +170,7 @@
 				if (M.client.eye == src)
 					M.unset_machine()
 					M.reset_perspective(null)
-					to_chat(M, span_warning("The screen bursts into static!"))
+					to_chat(M, "<span class='warning'>The screen bursts into static!</span>")
 
 /obj/machinery/camera/proc/post_emp_reset(thisemp, previous_network)
 	if(QDELETED(src))
@@ -210,7 +210,7 @@
 	if(..())
 		return TRUE
 	panel_open = !panel_open
-	to_chat(user, span_notice("You screw the camera's panel [panel_open ? "open" : "closed"]."))
+	to_chat(user, "<span class='notice'>You screw the camera's panel [panel_open ? "open" : "closed"].</span>")
 	I.play_tool_sound(src)
 	update_appearance()
 	return TRUE
@@ -231,7 +231,7 @@
 	var/obj/item/choice = input(user, "Select a part to remove:", src) as null|obj in sortNames(droppable_parts)
 	if(!choice || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	to_chat(user, span_notice("You remove [choice] from [src]."))
+	to_chat(user, "<span class='notice'>You remove [choice] from [src].</span>")
 	if(choice == assembly.xray_module)
 		assembly.drop_upgrade(assembly.xray_module)
 		removeXRay()
@@ -265,19 +265,19 @@
 	switch(choice)
 		if("Occlude the camera lens")
 			setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
-			to_chat(user, span_notice("You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus."))
+			to_chat(user, "<span class='notice'>You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus.</span>")
 
 		if("Save the network to the multitool buffer")
 			M.buffer = network[1]
-			to_chat(user, span_notice("You add network '[network[1]]' to the multitool's buffer."))
+			to_chat(user, "<span class='notice'>You add network '[network[1]]' to the multitool's buffer.</span>")
 
 		if("Transfer the buffered network to the camera")
 			network[1] = M.buffer
-			to_chat(user, span_notice("You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer."))
+			to_chat(user, "<span class='notice'>You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer.</span>")
 
 		if("Change the camera network")
 			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are not case sensitive.", "Network Tuning", max_length = 32)
-			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network."))
+			to_chat(user, "<span class='notice'>You set [src] to transmit across the '[network[1]]' network.</span>")
 
 	return TRUE
 
@@ -289,10 +289,10 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 
-	to_chat(user, span_notice("You start to weld [src]..."))
+	to_chat(user, "<span class='notice'>You start to weld [src]...</span>")
 	if(I.use_tool(src, user, 100, volume=50))
-		user.visible_message(span_warning("[user] unwelds [src], leaving it as just a frame bolted to the wall."),
-			span_warning("You unweld [src], leaving it as just a frame bolted to the wall"))
+		user.visible_message("<span class='warning'>[user] unwelds [src], leaving it as just a frame bolted to the wall.</span>",
+			"<span class='warning'>You unweld [src], leaving it as just a frame bolted to the wall</span>")
 		deconstruct(TRUE)
 
 	return TRUE
@@ -305,19 +305,19 @@
 				if(!user.temporarilyRemoveItemFromInventory(attacking_item))
 					return
 				upgradeXRay(FALSE, TRUE)
-				to_chat(user, span_notice("You attach [attacking_item] into [assembly]'s inner circuits."))
+				to_chat(user, "<span class='notice'>You attach [attacking_item] into [assembly]'s inner circuits.</span>")
 				qdel(attacking_item)
 			else
-				to_chat(user, span_warning("[src] already has that upgrade!"))
+				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
 			return
 
 		else if(istype(attacking_item, /obj/item/stack/sheet/mineral/plasma))
 			if(!isEmpProof(TRUE)) //don't reveal it was already upgraded if was done via MALF AI Upgrade Camera Network ability
 				if(attacking_item.use_tool(src, user, 0, amount=1))
 					upgradeEmpProof(FALSE, TRUE)
-					to_chat(user, span_notice("You attach [attacking_item] into [assembly]'s inner circuits."))
+					to_chat(user, "<span class='notice'>You attach [attacking_item] into [assembly]'s inner circuits.</span>")
 			else
-				to_chat(user, span_warning("[src] already has that upgrade!"))
+				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
 			return
 
 		else if(istype(attacking_item, /obj/item/assembly/prox_sensor))
@@ -325,10 +325,10 @@
 				if(!user.temporarilyRemoveItemFromInventory(attacking_item))
 					return
 				upgradeMotion()
-				to_chat(user, span_notice("You attach [attacking_item] into [assembly]'s inner circuits."))
+				to_chat(user, "<span class='notice'>You attach [attacking_item] into [assembly]'s inner circuits.</span>")
 				qdel(attacking_item)
 			else
-				to_chat(user, span_warning("[src] already has that upgrade!"))
+				to_chat(user, "<span class='warning'>[src] already has that upgrade!</span>")
 			return
 
 	// OTHER
@@ -379,14 +379,14 @@
 
 	else if(istype(attacking_item, /obj/item/camera_bug))
 		if(!can_use())
-			to_chat(user, span_notice("Camera non-functional."))
+			to_chat(user, "<span class='notice'>Camera non-functional.</span>")
 			return
 		if(bug)
-			to_chat(user, span_notice("Camera bug removed."))
+			to_chat(user, "<span class='notice'>Camera bug removed.</span>")
 			bug.bugged_cameras -= src.c_tag
 			bug = null
 		else
-			to_chat(user, span_notice("Camera bugged."))
+			to_chat(user, "<span class='notice'>Camera bugged.</span>")
 			bug = attacking_item
 			bug.bugged_cameras[src.c_tag] = src
 		return
@@ -464,10 +464,10 @@
 			addtimer(CALLBACK(src, PROC_REF(cancelCameraAlarm)), 100)
 	if(displaymessage)
 		if(user)
-			visible_message(span_danger("[user] [change_msg] [src]!"))
+			visible_message("<span class='danger'>[user] [change_msg] [src]!</span>")
 			add_hiddenprint(user)
 		else
-			visible_message(span_danger("\The [src] [change_msg]!"))
+			visible_message("<span class='danger'>\The [src] [change_msg]!</span>")
 
 		playsound(src, 'sound/items/wirecutter.ogg', 100, TRUE)
 	update_appearance() //update Initialize() if you remove this.
@@ -479,7 +479,7 @@
 		if (O.client.eye == src)
 			O.unset_machine()
 			O.reset_perspective(null)
-			to_chat(O, span_warning("The screen bursts into static!"))
+			to_chat(O, "<span class='warning'>The screen bursts into static!</span>")
 
 /obj/machinery/camera/proc/triggerCameraAlarm()
 	alarm_on = TRUE

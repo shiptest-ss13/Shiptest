@@ -65,45 +65,45 @@
 /obj/machinery/power/bluespace_miner/examine(mob/user)
 	. += ..()
 	if(anchored)
-		. += span_info("It's currently anchored to the floor, you can unsecure it with a <b>wrench</b>.")
+		. += "<span class='info'>It's currently anchored to the floor, you can unsecure it with a <b>wrench</b>.</span>"
 	else
-		. += span_info("It's not anchored to the floor. You can secure it in place with a <b>wrench</b>.")
+		. += "<span class='info'>It's not anchored to the floor. You can secure it in place with a <b>wrench</b>.</span>"
 	if(panel_open)
-		. += span_info("It's maintenence panel is exposed. You can seal the cover with a <b>screwdriver</b>.")
+		. += "<span class='info'>It's maintenence panel is exposed. You can seal the cover with a <b>screwdriver</b>.</span>"
 	if(in_range(user, src) || isobserver(user))
 		if(!materials?.silo)
-			. += span_notice("No ore silo connected. Use a multi-tool to link an ore silo to this machine.")
+			. += "<span class='notice'>No ore silo connected. Use a multi-tool to link an ore silo to this machine.</span>"
 		else if(materials?.on_hold())
-			. += span_warning("Ore silo access is on hold, please contact the quartermaster.")
+			. += "<span class='warning'>Ore silo access is on hold, please contact the quartermaster.</span>"
 		if(!active)
-			. += span_notice("Its status display is currently turned off.")
+			. += "<span class='notice'>Its status display is currently turned off.</span>"
 		else if(!powered)
-			. += span_notice("Its status display is glowing faintly.")
+			. += "<span class='notice'>Its status display is glowing faintly.</span>"
 		else
-			. += span_notice("Its status display reads: Mining with [mining_chance]% efficiency.")
-			. += span_notice("Power consumption at <b>[DisplayPower(idle_power_usage * power_coeff)]</b>.")
+			. += "<span class='notice'>Its status display reads: Mining with [mining_chance]% efficiency.</span>"
+			. += "<span class='notice'>Power consumption at <b>[DisplayPower(idle_power_usage * power_coeff)]</b>.</span>"
 
 /obj/machinery/power/bluespace_miner/interact(mob/user)
 	add_fingerprint(user)
 	if(anchored)
 		if(!powernet)
-			to_chat(user, span_warning("\The [src] isn't connected to a wire!"))
+			to_chat(user, "<span class='warning'>\The [src] isn't connected to a wire!</span>")
 			return TRUE
 		if(panel_open)
-			to_chat(user, span_warning("\The maintenence hatch for the [src] is exposed!"))
+			to_chat(user, "<span class='warning'>\The maintenence hatch for the [src] is exposed!</span>")
 			return TRUE
 		if(active)
 			active = FALSE
-			to_chat(user, span_notice("You turn off the [src]."))
+			to_chat(user, "<span class='notice'>You turn off the [src].</span>")
 		else
 			if(!materials?.silo || materials?.on_hold())
-				to_chat(user, span_warning("ERROR CONNECTING TO ORE SILO! Please check your connection, and try again."))
+				to_chat(user, "<span class='warning'>ERROR CONNECTING TO ORE SILO! Please check your connection, and try again.</span>")
 				return TRUE
 			active = TRUE
-			to_chat(user, span_notice("You turn on the [src]."))
+			to_chat(user, "<span class='notice'>You turn on the [src].</span>")
 		update_appearance()
 	else
-		to_chat(user, span_warning("[src] needs to be firmly secured to the floor first!"))
+		to_chat(user, "<span class='warning'>[src] needs to be firmly secured to the floor first!</span>")
 		return TRUE
 
 /obj/machinery/power/bluespace_miner/process(seconds_per_tick)
@@ -135,7 +135,7 @@
 
 /obj/machinery/power/bluespace_miner/can_be_unfasten_wrench(mob/user, silent)
 	if(active)
-		to_chat(user, span_warning("Turn \the [src] off first!"))
+		to_chat(user, "<span class='warning'>Turn \the [src] off first!</span>")
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -152,7 +152,7 @@
 	if(..())
 		return TRUE
 	if(active)
-		to_chat(user, span_warning("Turn \the [src] off first!"))
+		to_chat(user, "<span class='warning'>Turn \the [src] off first!</span>")
 		return TRUE
 	default_deconstruction_screwdriver(user, "bsm_t", "bsm_off", I)
 	update_icon_state()

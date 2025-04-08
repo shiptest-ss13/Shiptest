@@ -39,22 +39,22 @@
 		if (W.tool_behaviour == TOOL_SCREWDRIVER)
 			if (W.use_tool(src, user, 20))
 				open =! open
-				to_chat(user, span_notice("You [open ? "open" : "close"] the service panel."))
+				to_chat(user, "<span class='notice'>You [open ? "open" : "close"] the service panel.</span>")
 			return
 		if (W.tool_behaviour == TOOL_WIRECUTTER)
-			to_chat(user, span_danger("[src] is protected from this sort of tampering, yet it appears the internal memory wires can still be <b>pulsed</b>."))
+			to_chat(user, "<span class='danger'>[src] is protected from this sort of tampering, yet it appears the internal memory wires can still be <b>pulsed</b>.</span>")
 		if ((W.tool_behaviour == TOOL_MULTITOOL) && (!l_hacking))
 			if(open == 1)
-				to_chat(user, span_danger("Now attempting to reset internal memory, please hold."))
+				to_chat(user, "<span class='danger'>Now attempting to reset internal memory, please hold.</span>")
 				l_hacking = 1
 				if (W.use_tool(src, user, 400))
-					to_chat(user, span_danger("Internal memory reset - lock has been disengaged."))
+					to_chat(user, "<span class='danger'>Internal memory reset - lock has been disengaged.</span>")
 					l_set = 0
 					l_hacking = 0
 				else
 					l_hacking = 0
 			else
-				to_chat(user, span_warning("You must <b>unscrew</b> the service panel before you can pulse the wiring!"))
+				to_chat(user, "<span class='warning'>You must <b>unscrew</b> the service panel before you can pulse the wiring!</span>")
 			return
 		//At this point you have exhausted all the special things to do when locked
 		// ... but it's still locked.

@@ -8,9 +8,9 @@
 	. = ..()
 	if(. && silent && !prevent_warning)
 		if(quickdraw)
-			to_chat(user, span_notice("You discreetly slip [I] into [parent]. Alt-click [parent] to remove it."))
+			to_chat(user, "<span class='notice'>You discreetly slip [I] into [parent]. Alt-click [parent] to remove it.</span>")
 		else
-			to_chat(user, span_notice("You discreetly slip [I] into [parent]."))
+			to_chat(user, "<span class='notice'>You discreetly slip [I] into [parent].</span>")
 
 /datum/component/storage/concrete/pockets/small
 	max_items = 1
@@ -112,7 +112,6 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
-		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/e_gun,
 		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/stock_parts/cell/gun,

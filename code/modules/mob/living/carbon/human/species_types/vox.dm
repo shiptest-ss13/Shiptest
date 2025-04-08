@@ -120,7 +120,7 @@
 	if(allergic_to[chem.type]) //Is_type_in_typecache is BAD.
 		H.reagents.add_reagent(/datum/reagent/toxin/histamine, chem.metabolization_rate * 3)
 		if(prob(5))
-			to_chat(H, span_danger("[pick(allergy_reactions)]"))
+			to_chat(H, "<span class='danger'>[pick(allergy_reactions)]</span>")
 		else if(prob(5))
 			H.emote("clack")
 		return FALSE //Its a bit TOO mean to have the chems not work at all.
@@ -178,17 +178,17 @@
 		if(I && I.w_class <= WEIGHT_CLASS_SMALL)
 			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
 				held_item = I
-				to_chat(H,span_notice("You move \the [I] into your tail's grip."))
+				to_chat(H,"<span class='notice'>You move \the [I] into your tail's grip.</span>")
 				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 				handle_sprite_magic(force = TRUE)
 				return
 
-		to_chat(H, span_warning("You are unable to hold that item in your tail!"))
+		to_chat(H, "<span class='warning'>You are unable to hold that item in your tail!</span>")
 
 /datum/action/innate/tail_hold/proc/on_examine(datum/source, mob/user, list/examine_list)
 	var/mob/living/carbon/human/H = owner
 	if(held_item)
-		examine_list += span_notice("[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.")
+		examine_list += "<span class='notice'>[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
 
 /datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, olddir, newdir, force = FALSE)
 	if(!held_item)

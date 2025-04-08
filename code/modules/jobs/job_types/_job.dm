@@ -104,7 +104,7 @@
 	radio_help_message(living_mob)
 	//WS Begin - Wikilinks
 	if(wiki_page)
-		to_chat(living_mob, span_notice("<a href=[CONFIG_GET(string/wikiurl)]/[wiki_page]>Wiki Page</a>"))
+		to_chat(living_mob, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[wiki_page]>Wiki Page</a></span>")
 	//WS End
 
 	var/related_policy = get_policy(name)

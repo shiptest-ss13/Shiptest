@@ -55,7 +55,7 @@
 		var/obj/item/stack/cable_coil/C = I
 		C.use(1)
 		has_sensor = HAS_SENSORS
-		to_chat(user,span_notice("You repair the suit sensors on [src] with [C]."))
+		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
 		return 1
 	if(attached_accessory && ispath(attached_accessory.pocket_storage_component_path) && loc == user)
 		attached_accessory.attackby(I,user)
@@ -85,7 +85,7 @@
 		sensor_mode = pick(SENSOR_OFF, SENSOR_OFF, SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS)
 		if(ismob(loc))
 			var/mob/M = loc
-			to_chat(M,span_warning("The sensors on the [src] change rapidly!"))
+			to_chat(M,"<span class='warning'>The sensors on the [src] change rapidly!</span>")
 
 /obj/item/clothing/under/visual_equipped(mob/user, slot)
 	..()
@@ -126,7 +126,7 @@
 		var/obj/item/clothing/accessory/A = I
 		if(attached_accessory)
 			if(user)
-				to_chat(user, span_warning("[src] already has an accessory."))
+				to_chat(user, "<span class='warning'>[src] already has an accessory.</span>")
 			return
 		else
 
@@ -138,7 +138,7 @@
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, span_notice("You attach [I] to [src]."))
+				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
 
 			var/accessory_color = attached_accessory.icon_state
 			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', "[accessory_color]")
@@ -162,9 +162,9 @@
 		var/obj/item/clothing/accessory/A = attached_accessory
 		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, span_notice("You detach [A] from [src]."))
+			to_chat(user, "<span class='notice'>You detach [A] from [src].</span>")
 		else
-			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
+			to_chat(user, "<span class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc

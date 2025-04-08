@@ -10,7 +10,7 @@
 /obj/item/pinpointer/wayfinding/attack_self(mob/living/user)
 	if(active)
 		toggle_on()
-		to_chat(user, span_notice("You deactivate your pinpointer."))
+		to_chat(user, "<span class='notice'>You deactivate your pinpointer.</span>")
 		return
 
 	if (!owner)
@@ -21,7 +21,7 @@
 		beacons[B.codes["wayfinding"]] = B
 
 	if(!beacons.len)
-		to_chat(user, span_notice("Your pinpointer fails to detect a signal."))
+		to_chat(user, "<span class='notice'>Your pinpointer fails to detect a signal.</span>")
 		return
 
 	var/A = input(user, "", "Pinpoint") as null|anything in sortList(beacons)
@@ -30,7 +30,7 @@
 
 	target = beacons[A]
 	toggle_on()
-	to_chat(user, span_notice("You activate your pinpointer."))
+	to_chat(user, "<span class='notice'>You activate your pinpointer.</span>")
 
 /obj/item/pinpointer/wayfinding/examine(mob/user)
 	. = ..()

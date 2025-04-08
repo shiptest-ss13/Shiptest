@@ -114,10 +114,10 @@
 /obj/machinery/satellite/proc/toggle(mob/user)
 	if(!active && !isinspace())
 		if(user)
-			to_chat(user, span_warning("You can only activate [src] in space."))
+			to_chat(user, "<span class='warning'>You can only activate [src] in space.</span>")
 		return FALSE
 	if(user)
-		to_chat(user, span_notice("You [active ? "deactivate": "activate"] [src]."))
+		to_chat(user, "<span class='notice'>You [active ? "deactivate": "activate"] [src].</span>")
 	set_anchored(!anchored)
 
 /obj/machinery/satellite/update_icon_state()
@@ -126,7 +126,7 @@
 
 /obj/machinery/satellite/multitool_act(mob/living/user, obj/item/I)
 	..()
-	to_chat(user, span_notice("// NTSAT-[id] // Mode : [active ? "PRIMARY" : "STANDBY"] //[(obj_flags & EMAGGED) ? "DEBUG_MODE //" : ""]"))
+	to_chat(user, "<span class='notice'>// NTSAT-[id] // Mode : [active ? "PRIMARY" : "STANDBY"] //[(obj_flags & EMAGGED) ? "DEBUG_MODE //" : ""]</span>")
 	return TRUE
 
 /obj/machinery/satellite/meteor_shield

@@ -11,11 +11,11 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = span_warning("You feel short of breath.")
-	high_threshold_passed = span_warning("You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.")
-	now_fixed = span_warning("Your lungs seem to once again be able to hold air.")
-	low_threshold_cleared = span_info("You can breathe normally again.")
-	high_threshold_cleared = span_info("The constriction around your chest loosens as your breathing calms down.")
+	low_threshold_passed = "<span class='warning'>You feel short of breath.</span>"
+	high_threshold_passed = "<span class='warning'>You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.</span>"
+	now_fixed = "<span class='warning'>Your lungs seem to once again be able to hold air.</span>"
+	low_threshold_cleared = "<span class='info'>You can breathe normally again.</span>"
+	high_threshold_cleared = "<span class='info'>The constriction around your chest loosens as your breathing calms down.</span>"
 
 
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/medicine/salbutamol = 5)
@@ -263,12 +263,12 @@
 	// Freon
 		var/freon_pp = PP(breath,GAS_FREON)
 		if (prob(freon_pp))
-			to_chat(H, span_alert("Your mouth feels like it's burning!"))
+			to_chat(H, "<span class='alert'>Your mouth feels like it's burning!</span>")
 		if (freon_pp >40)
 			H.emote("gasp")
 			H.adjustOxyLoss(15)
 			if (prob(freon_pp/2))
-				to_chat(H, span_alert("Your throat closes up!"))
+				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustOxyLoss(freon_pp/4)
@@ -477,12 +477,12 @@
 
 		if(breath_temperature < cold_level_1_threshold)
 			if(prob(sqrt(breath_effect_prob) * 6))
-				to_chat(breather, span_warning("You feel [cold_message] in your [name]!"))
+				to_chat(breather, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
 		else if(breath_temperature < chlly_threshold)
 			if(!breath_effect_prob)
 				breath_effect_prob = 20
 			if(prob(sqrt(breath_effect_prob) * 6))
-				to_chat(breather, span_warning("You feel [chilly_message] in your [name]."))
+				to_chat(breather, "<span class='warning'>You feel [chilly_message] in your [name].</span>")
 		if(breath_temperature < chlly_threshold)
 			if(breath_effect_prob)
 				// Breathing into your mask, no particle. We can add fogged up glasses later
@@ -509,12 +509,12 @@
 
 		if(breath_temperature > heat_level_1_threshold)
 			if(prob(sqrt(heat_message_prob) * 6))
-				to_chat(breather, span_warning("You feel [hot_message] in your [name]!"))
+				to_chat(breather, "<span class='warning'>You feel [hot_message] in your [name]!</span>")
 		else if(breath_temperature > warm_threshold)
 			if(!heat_message_prob)
 				heat_message_prob = 20
 			if(prob(sqrt(heat_message_prob) * 6))
-				to_chat(breather, span_warning("You feel [warm_message] in your [name]."))
+				to_chat(breather, "<span class='warning'>You feel [warm_message] in your [name].</span>")
 
 
 
@@ -531,7 +531,7 @@
 		if(do_i_cough)
 			owner.emote("cough")
 	if(organ_flags & ORGAN_FAILING && owner.stat == CONSCIOUS)
-		owner.visible_message(span_danger("[owner] grabs [owner.p_their()] throat, struggling for breath!"), span_userdanger("You suddenly feel like you can't breathe!"))
+		owner.visible_message("<span class='danger'>[owner] grabs [owner.p_their()] throat, struggling for breath!</span>", "<span class='userdanger'>You suddenly feel like you can't breathe!</span>")
 		failed = TRUE
 
 /obj/item/organ/lungs/get_availability(datum/species/S)

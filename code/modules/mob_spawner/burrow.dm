@@ -45,7 +45,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
  */
 /obj/structure/spawner/burrow/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
-	visible_message(span_boldannounce("[src] collapses, sealing everything inside!</span>\n<span class='warning'>Ores fall out of the burrow as it is destroyed!"))
+	visible_message("<span class='boldannounce'>[src] collapses, sealing everything inside!</span>\n<span class='warning'>Ores fall out of the burrow as it is destroyed!</span>")
 
 /**
  * Drops items after the spawner is destroyed

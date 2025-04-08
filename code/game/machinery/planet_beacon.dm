@@ -51,7 +51,7 @@
 
 /obj/machinery/power/planet_beacon/attackby(obj/item/item, mob/user, params)
 	if(istype(item, /obj/item/card/id))
-		if(!inserted_id)
+		if(!inserted_id || state != BEACON_UNANCHORED)
 			inserted_id = item
 			item.forceMove(src)
 			update_icon()
@@ -129,12 +129,13 @@
 
 /obj/machinery/power/planet_beacon/AltClick(mob/user)
 	..()
-	if(inserted_id)
-		try_put_in_hand(inserted_id, user)
-		inserted_id = null
-		update_icon()
-		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
-		return
+	if(state != BEACON_UNANCHORED)
+		if(inserted_id)
+			try_put_in_hand(inserted_id, user)
+			inserted_id = null
+			update_icon()
+			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+			return
 
 /obj/machinery/power/planet_beacon/examine(mob/user)
 	. = ..()

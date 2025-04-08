@@ -44,7 +44,7 @@
 
 /obj/item/gear_pack/examine(mob/user)
 	. = ..()
-	. += span_notice("It is [ on ? "currently" : "not"] active.")
+	. += "<span class='notice'>It is [ on ? "currently" : "not"] active.</span>"
 	if(cell)
 		. += "<span class = 'notice'>A small readout reports [PERCENT(cell.charge / cell.maxcharge)]% charge."
 
@@ -97,13 +97,13 @@
 			if(user.get_item_by_slot(ITEM_SLOT_BACK) == src)
 				ui_action_click()
 			else
-				to_chat(user, span_warning("Put the [src] on your back first!"))
+				to_chat(user, "<span class='warning'>Put the [src] on your back first!</span>")
 
 		else if(slot_flags == ITEM_SLOT_BELT)
 			if(user.get_item_by_slot(ITEM_SLOT_BELT) == src)
 				ui_action_click()
 			else
-				to_chat(user, span_warning("Strap the [src]'s belt on first!"))
+				to_chat(user, "<span class='warning'>Strap the [src]'s belt on first!</span>")
 		return
 	return ..()
 
@@ -121,15 +121,15 @@
 	else if(istype(W, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/C = W
 		if(cell)
-			to_chat(user, span_warning("[src] already has a cell!"))
+			to_chat(user, "<span class='warning'>[src] already has a cell!</span>")
 		else
 			if(C.maxcharge < gear_handle.usecost)
-				to_chat(user, span_notice("[src] requires a higher capacity cell."))
+				to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")
 				return
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			to_chat(user, span_notice("You install a cell in [src]."))
+			to_chat(user, "<span class='notice'>You install a cell in [src].</span>")
 			update_power()
 
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
@@ -137,7 +137,7 @@
 			cell.update_icon()
 			cell.forceMove(get_turf(src))
 			cell = null
-			to_chat(user, span_notice("You remove the cell from [src]."))
+			to_chat(user, "<span class='notice'>You remove the cell from [src].</span>")
 			update_power()
 	else
 		return ..()
@@ -161,7 +161,7 @@
 		playsound(src, 'sound/items/handling/multitool_pickup.ogg', 100)
 		if(!usr.put_in_hands(gear_handle))
 			on = FALSE
-			to_chat(user, span_warning("You need a free hand to hold the [gear_handle]!"))
+			to_chat(user, "<span class='warning'>You need a free hand to hold the [gear_handle]!</span>")
 			update_power()
 			return
 	else
@@ -267,9 +267,9 @@
 	if(!in_range(src,pack))
 		var/mob/living/L = loc
 		if(istype(L))
-			to_chat(L, span_warning("[pack]'s [src] overextends and comes out of your hands!"))
+			to_chat(L, "<span class='warning'>[pack]'s [src] overextends and comes out of your hands!</span>")
 		else
-			visible_message(span_notice("[src] snaps back into [pack]."))
+			visible_message("<span class='notice'>[src] snaps back into [pack].</span>")
 		snap_back()
 
 /obj/item/gear_handle/dropped(mob/user)
@@ -279,7 +279,7 @@
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		if(user != loc)
-			to_chat(user, span_notice("[src] snap back into the main unit."))
+			to_chat(user, "<span class='notice'>[src] snap back into the main unit.</span>")
 			snap_back()
 	return
 

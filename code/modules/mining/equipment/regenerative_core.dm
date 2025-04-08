@@ -13,11 +13,11 @@
 		return
 	var/obj/item/organ/regenerative_core/C = M
 	if(!istype(C, /obj/item/organ/regenerative_core))
-		to_chat(user, span_warning("The stabilizer only works on certain types of monster organs, generally regenerative in nature."))
+		to_chat(user, "<span class='warning'>The stabilizer only works on certain types of monster organs, generally regenerative in nature.</span>")
 		return
 
 	C.preserved()
-	to_chat(user, span_notice("You inject the [M] with the stabilizer. It will no longer go inert."))
+	to_chat(user, "<span class='notice'>You inject the [M] with the stabilizer. It will no longer go inert.</span>")
 	qdel(src)
 
 /************************Hivelord core*******************/
@@ -61,7 +61,7 @@
 
 /obj/item/organ/regenerative_core/ui_action_click()
 	if(inert)
-		to_chat(owner, span_notice("[src] breaks down as it tries to activate."))
+		to_chat(owner, "<span class='notice'>[src] breaks down as it tries to activate.</span>")
 	else
 		owner.adjustBruteLoss(-100) //previously heal proc
 		owner.adjustFireLoss(-100)
@@ -115,11 +115,11 @@
 	. = ..()
 	if(!preserved && !inert)
 		preserved(TRUE)
-		owner.visible_message(span_notice("[src] stabilizes as it's inserted."))
+		owner.visible_message("<span class='notice'>[src] stabilizes as it's inserted.</span>")
 
 /obj/item/organ/regenerative_core/Remove(mob/living/carbon/M, special = 0)
 	if(!inert && !special)
-		owner.visible_message(span_notice("[src] rapidly decays as it's removed."))
+		owner.visible_message("<span class='notice'>[src] rapidly decays as it's removed.</span>")
 		go_inert()
 	return ..()
 

@@ -155,7 +155,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, 4)
 	var/list/burn_turfs = getline(src, T) - get_turf(src)
-	visible_message(span_danger("<b>[src]</b> [ranged_message] at [target.name]!"))
+	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [target.name]!</span>")
 	playsound(src, projectilesound, 100, TRUE)
 	fire_line(src, burn_turfs, "flamethrower", TRUE, 10)
 	ranged_cooldown = world.time + ranged_cooldown_time

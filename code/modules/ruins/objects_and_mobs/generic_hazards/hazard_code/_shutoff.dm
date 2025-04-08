@@ -84,8 +84,8 @@
 /obj/structure/hazard_shutoff/powered/examine(mob/user)
 	. = ..()
 	if(!siphoned_power)
-		. += span_notice("[src] is disabled, and could be charged with a cable connection!")
+		. += "<span class='notice'>[src] is disabled, and could be charged with a cable connection!</span>"
 	else if(siphoned_power >= siphon_max)
-		. += span_notice("[src] is fully charged.")
+		. += "<span class='notice'>[src] is fully charged.</span>"
 	else
-		. += span_notice("[src] is [round((siphoned_power/siphon_max)*100, 0.1)]% charged.")
+		. += "<span class='notice'>[src] is [round((siphoned_power/siphon_max)*100, 0.1)]% charged.</span>"

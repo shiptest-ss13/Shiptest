@@ -177,31 +177,31 @@
 
 	if(!panel_open) //connect/disconnect circulators
 		if(!anchored)
-			to_chat(user, span_warning("Anchor [src] before trying to connect the circulators!"))
+			to_chat(user, "<span class='warning'>Anchor [src] before trying to connect the circulators!</span>")
 			return TRUE
 		else
 			if(hot_circ && cold_circ)
-				to_chat(user, span_notice("You start removing the circulators..."))
+				to_chat(user, "<span class='notice'>You start removing the circulators...</span>")
 				if(I.use_tool(src, user, 30, volume=50))
 					kill_circs()
 					update_appearance()
-					to_chat(user, span_notice("You disconnect [src]'s circulator links."))
+					to_chat(user, "<span class='notice'>You disconnect [src]'s circulator links.</span>")
 					playsound(src, 'sound/misc/box_deploy.ogg', 50)
 				return TRUE
 
-			to_chat(user, span_notice("You attempt to attach the circulators..."))
+			to_chat(user, "<span class='notice'>You attempt to attach the circulators...</span>")
 			if(I.use_tool(src, user, 30, volume=50))
 				switch(find_circs())
 					if(0)
-						to_chat(user, span_warning("No circulators found!"))
+						to_chat(user, "<span class='warning'>No circulators found!</span>")
 					if(1)
-						to_chat(user, span_warning("Only one circulator found!"))
+						to_chat(user, "<span class='warning'>Only one circulator found!</span>")
 					if(2)
-						to_chat(user, span_notice("You connect [src]'s circulator links."))
+						to_chat(user, "<span class='notice'>You connect [src]'s circulator links.</span>")
 						playsound(src, 'sound/misc/box_deploy.ogg', 50)
 						return TRUE
 					if(3)
-						to_chat(user, span_warning("Both circulators are the same mode!"))
+						to_chat(user, "<span class='warning'>Both circulators are the same mode!</span>")
 				return TRUE
 
 	set_anchored(!anchored)
@@ -209,7 +209,7 @@
 	if(!anchored)
 		kill_circs()
 	connect_to_network()
-	to_chat(user, span_notice("You [anchored?"secure":"unsecure"] [src]."))
+	to_chat(user, "<span class='notice'>You [anchored?"secure":"unsecure"] [src].</span>")
 	update_appearance()
 	return TRUE
 
@@ -220,11 +220,11 @@
 		return
 
 	if(hot_circ && cold_circ)
-		to_chat(user, span_warning("Disconnect the circulators first!"))
+		to_chat(user, "<span class='warning'>Disconnect the circulators first!</span>")
 		return TRUE
 	panel_open = !panel_open
 	I.play_tool_sound(src)
-	to_chat(user, span_notice("You [panel_open?"open":"close"] the panel on [src]."))
+	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
 	update_appearance()
 	return TRUE
 
@@ -233,10 +233,10 @@
 		return
 
 	if(anchored)
-		to_chat(user, span_warning("[src] is anchored!"))
+		to_chat(user, "<span class='warning'>[src] is anchored!</span>")
 		return TRUE
 	else if(!panel_open)
-		to_chat(user, span_warning("Open the panel first!"))
+		to_chat(user, "<span class='warning'>Open the panel first!</span>")
 		return TRUE
 	else
 		default_deconstruction_crowbar(I)

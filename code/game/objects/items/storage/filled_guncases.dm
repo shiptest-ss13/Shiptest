@@ -340,10 +340,6 @@
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4/inteq
 	mag_type = /obj/item/ammo_box/magazine/f4_308
 
-/obj/item/storage/guncase/rottweiler
-	gun_type = /obj/item/gun/ballistic/automatic/hmg/rottweiler
-	mag_type = /obj/item/ammo_box/magazine/rottweiler_308_box
-
 /* idk */
 
 /obj/item/storage/guncase/pistol/disposable

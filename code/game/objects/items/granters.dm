@@ -14,9 +14,9 @@
 	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, TRUE)
 	if(do_after(user, 50, src, hidden = TRUE))
 		if(remarks.len)
-			to_chat(user, span_notice("[pick(remarks)]"))
+			to_chat(user, "<span class='notice'>[pick(remarks)]</span>")
 		else
-			to_chat(user, span_notice("You keep reading..."))
+			to_chat(user, "<span class='notice'>You keep reading...</span>")
 		return TRUE
 	return FALSE
 
@@ -26,13 +26,13 @@
 	return FALSE
 
 /obj/item/book/granter/proc/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading [name]..."))
+	to_chat(user, "<span class='notice'>You start reading [name]...</span>")
 
 /obj/item/book/granter/proc/on_reading_stopped(mob/user)
-	to_chat(user, span_notice("You stop reading..."))
+	to_chat(user, "<span class='notice'>You stop reading...</span>")
 
 /obj/item/book/granter/proc/on_reading_finished(mob/user)
-	to_chat(user, span_notice("You finish reading [name]!"))
+	to_chat(user, "<span class='notice'>You finish reading [name]!</span>")
 
 /obj/item/book/granter/proc/onlearned(mob/user)
 	used = TRUE
@@ -40,7 +40,7 @@
 
 /obj/item/book/granter/attack_self(mob/user)
 	if(reading)
-		to_chat(user, span_warning("You're already reading this!"))
+		to_chat(user, "<span class='warning'>You're already reading this!</span>")
 		return FALSE
 	if(!user.can_read(src))
 		return FALSE
@@ -73,15 +73,15 @@
 		return TRUE
 	for(var/datum/action/A in user.actions)
 		if(A.type == granted_action)
-			to_chat(user, span_warning("You already know all about [actionname]!"))
+			to_chat(user, "<span class='warning'>You already know all about [actionname]!</span>")
 			return TRUE
 	return FALSE
 
 /obj/item/book/granter/action/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading about [actionname]..."))
+	to_chat(user, "<span class='notice'>You start reading about [actionname]...</span>")
 
 /obj/item/book/granter/action/on_reading_finished(mob/user)
-	to_chat(user, span_notice("You feel like you've got a good handle on [actionname]!"))
+	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [actionname]!</span>")
 	var/datum/action/G = new granted_action
 	G.Grant(user)
 	onlearned(user)
@@ -102,13 +102,13 @@
 	check_flags = NONE
 
 /datum/action/innate/origami/Activate()
-	to_chat(owner, span_notice("You will now fold origami planes."))
+	to_chat(owner, "<span class='notice'>You will now fold origami planes.</span>")
 	button_icon_state = "origami_on"
 	active = TRUE
 	UpdateButtonIcon()
 
 /datum/action/innate/origami/Deactivate()
-	to_chat(owner, span_notice("You will no longer fold origami planes."))
+	to_chat(owner, "<span class='notice'>You will no longer fold origami planes.</span>")
 	button_icon_state = "origami_off"
 	active = FALSE
 	UpdateButtonIcon()
@@ -126,29 +126,29 @@
 		if(knownspell.type == spell)
 			if(user.mind)
 				if(iswizard(user))
-					to_chat(user,span_warning("You're already far more versed in this spell than this flimsy how-to book can provide!"))
+					to_chat(user,"<span class='warning'>You're already far more versed in this spell than this flimsy how-to book can provide!</span>")
 				else
-					to_chat(user,span_warning("You've already read this one!"))
+					to_chat(user,"<span class='warning'>You've already read this one!</span>")
 			return TRUE
 	return FALSE
 
 /obj/item/book/granter/spell/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading about casting [spellname]..."))
+	to_chat(user, "<span class='notice'>You start reading about casting [spellname]...</span>")
 
 /obj/item/book/granter/spell/on_reading_finished(mob/user)
-	to_chat(user, span_notice("You feel like you've experienced enough to cast [spellname]!"))
+	to_chat(user, "<span class='notice'>You feel like you've experienced enough to cast [spellname]!</span>")
 	var/obj/effect/proc_holder/spell/S = new spell
 	user.mind.AddSpell(S)
 	user.log_message("learned the spell [spellname] ([S])", LOG_ATTACK, color="orange")
 	onlearned(user)
 
 /obj/item/book/granter/spell/recoil(mob/user)
-	user.visible_message(span_warning("[src] glows in a black light!"))
+	user.visible_message("<span class='warning'>[src] glows in a black light!</span>")
 
 /obj/item/book/granter/spell/onlearned(mob/user)
 	..()
 	if(oneuse)
-		user.visible_message(span_warning("[src] glows dark for a second!"))
+		user.visible_message("<span class='warning'>[src] glows dark for a second!</span>")
 
 /obj/item/book/granter/spell/fireball
 	spell = /obj/effect/proc_holder/spell/aimed/fireball
@@ -181,7 +181,7 @@
 
 /obj/item/book/granter/spell/smoke/recoil(mob/user)
 	..()
-	to_chat(user,span_warning("Your stomach rumbles..."))
+	to_chat(user,"<span class='warning'>Your stomach rumbles...</span>")
 	if(user.nutrition)
 		user.set_nutrition(200)
 		if(user.nutrition <= 0)
@@ -196,7 +196,7 @@
 
 /obj/item/book/granter/spell/blind/recoil(mob/user)
 	..()
-	to_chat(user,span_warning("You go blind!"))
+	to_chat(user,"<span class='warning'>You go blind!</span>")
 	user.blind_eyes(10)
 
 /obj/item/book/granter/spell/mindswap
@@ -220,17 +220,17 @@
 		stored_swap = null
 	if(!stored_swap)
 		stored_swap = user
-		to_chat(user,span_warning("For a moment you feel like you don't even know who you are anymore."))
+		to_chat(user,"<span class='warning'>For a moment you feel like you don't even know who you are anymore.</span>")
 		return
 	if(stored_swap == user)
-		to_chat(user,span_notice("You stare at the book some more, but there doesn't seem to be anything else to learn..."))
+		to_chat(user,"<span class='notice'>You stare at the book some more, but there doesn't seem to be anything else to learn...</span>")
 		return
 	var/obj/effect/proc_holder/spell/pointed/mind_transfer/swapper = new
 	if(swapper.cast(list(stored_swap), user, TRUE))
-		to_chat(user,span_warning("You're suddenly somewhere else... and someone else?!"))
-		to_chat(stored_swap,span_warning("Suddenly you're staring at [src] again... where are you, who are you?!"))
+		to_chat(user,"<span class='warning'>You're suddenly somewhere else... and someone else?!</span>")
+		to_chat(stored_swap,"<span class='warning'>Suddenly you're staring at [src] again... where are you, who are you?!</span>")
 	else
-		user.visible_message(span_warning("[src] fizzles slightly as it stops glowing!")) //if the mind_transfer failed to transfer mobs, likely due to the target being catatonic.
+		user.visible_message("<span class='warning'>[src] fizzles slightly as it stops glowing!</span>") //if the mind_transfer failed to transfer mobs, likely due to the target being catatonic.
 
 	stored_swap = null
 
@@ -243,7 +243,7 @@
 
 /obj/item/book/granter/spell/forcewall/recoil(mob/living/user)
 	..()
-	to_chat(user,span_warning("You suddenly feel very solid!"))
+	to_chat(user,"<span class='warning'>You suddenly feel very solid!</span>")
 	user.Stun(40, ignore_canstun = TRUE)
 	user.petrify(60)
 
@@ -256,7 +256,7 @@
 
 /obj/item/book/granter/spell/shapechange/recoil(mob/living/carbon/user)
 	..()
-	to_chat(user,span_warning("You're feeling a little primitive..."))
+	to_chat(user,"<span class='warning'>You're feeling a little primitive...</span>")
 	user.Stun(40, ignore_canstun = TRUE)
 	user.monkeyize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_KEEPSE)
 
@@ -269,7 +269,7 @@
 
 /obj/item/book/granter/spell/traps/recoil(mob/living/user)
 	..()
-	to_chat(user, span_danger("<B>The ground shifts beneath your feet!</B>"))
+	to_chat(user, "<span class='danger'><B>The ground shifts beneath your feet!</B></span>")
 	user.Paralyze(100)
 	user.adjustBruteLoss(35)
 
@@ -282,7 +282,7 @@
 
 /obj/item/book/granter/spell/knock/recoil(mob/living/user)
 	..()
-	to_chat(user,span_warning("You're knocked down!"))
+	to_chat(user,"<span class='warning'>You're knocked down!</span>")
 	user.Paralyze(40)
 
 /obj/item/book/granter/spell/barnyard
@@ -301,7 +301,7 @@
 		user.equip_to_slot_if_possible(magichead, ITEM_SLOT_MASK, TRUE, TRUE)
 		qdel(src)
 	else
-		to_chat(user,span_notice("I say thee neigh")) //It still lives here
+		to_chat(user,"<span class='notice'>I say thee neigh</span>") //It still lives here
 
 /obj/item/book/granter/spell/charge
 	spell = /obj/effect/proc_holder/spell/targeted/charge
@@ -312,7 +312,7 @@
 
 /obj/item/book/granter/spell/charge/recoil(mob/user)
 	..()
-	to_chat(user,span_warning("[src] suddenly feels very warm!"))
+	to_chat(user,"<span class='warning'>[src] suddenly feels very warm!</span>")
 	empulse(src, 1, 1)
 
 /obj/item/book/granter/spell/summonitem
@@ -324,7 +324,7 @@
 
 /obj/item/book/granter/spell/summonitem/recoil(mob/user)
 	..()
-	to_chat(user,span_warning("[src] suddenly vanishes!"))
+	to_chat(user,"<span class='warning'>[src] suddenly vanishes!</span>")
 	qdel(src)
 
 /obj/item/book/granter/spell/random
@@ -350,12 +350,12 @@
 		return TRUE
 	var/datum/martial_art/MA = martial
 	if(user.mind.has_martialart(initial(MA.id)))
-		to_chat(user,span_warning("You already know [martialname]!"))
+		to_chat(user,"<span class='warning'>You already know [martialname]!</span>")
 		return TRUE
 	return FALSE
 
 /obj/item/book/granter/martial/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading about [martialname]..."))
+	to_chat(user, "<span class='notice'>You start reading about [martialname]...</span>")
 
 /obj/item/book/granter/martial/on_reading_finished(mob/user)
 	to_chat(user, "[greet]")
@@ -369,17 +369,17 @@
 	name = "old manual"
 	martialname = "close quarters combat"
 	desc = "A small, black manual. There are drawn instructions of tactical hand-to-hand combat."
-	greet = span_boldannounce("You've mastered the basics of CQC.")
+	greet = "<span class='boldannounce'>You've mastered the basics of CQC.</span>"
 	icon_state = "cqcmanual"
 	remarks = list("Kick... Slam...", "Lock... Kick...", "Strike their abdomen, neck and back for critical damage...", "Slam... Lock...", "I could probably combine this with some other martial arts!", "Words that kill...", "The last and final moment is yours...")
 
 /obj/item/book/granter/martial/cqc/onlearned(mob/living/carbon/user)
 	..()
 	if(oneuse == TRUE)
-		to_chat(user, span_warning("[src] beeps ominously..."))
+		to_chat(user, "<span class='warning'>[src] beeps ominously...</span>")
 
 /obj/item/book/granter/martial/cqc/recoil(mob/living/carbon/user)
-	to_chat(user, span_warning("[src] explodes!"))
+	to_chat(user, "<span class='warning'>[src] explodes!</span>")
 	playsound(src,'sound/effects/explosion1.ogg',40,TRUE)
 	user.flash_act(1, 1)
 	user.adjustBruteLoss(6)
@@ -440,7 +440,7 @@
 	for(var/crafting_recipe_type in crafting_recipe_types)
 		var/datum/crafting_recipe/R = crafting_recipe_type
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
-		to_chat(user,span_notice("You learned how to make [initial(R.name)]."))
+		to_chat(user,"<span class='notice'>You learned how to make [initial(R.name)].</span>")
 
 /obj/item/book/granter/crafting_recipe/cooking_sweets_101
 	name = "Cooking Desserts 101"

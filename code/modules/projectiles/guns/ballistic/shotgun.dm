@@ -44,7 +44,6 @@
 	gunslinger_recoil_bonus = -1
 
 	min_recoil = 0.1
-	wear_rate = 0
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
@@ -68,10 +67,6 @@
 	semi_auto = TRUE
 
 	gunslinger_recoil_bonus = 1
-	wear_rate = 1
-	wear_minor_threshold = 30
-	wear_major_threshold = 90
-	wear_maximum = 150
 
 //Dual Feed Shotgun
 
@@ -97,7 +92,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to pump it.")
+	. += "<span class='notice'>Alt-click to pump it.</span>"
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
@@ -117,9 +112,9 @@
 	alternate_magazine = current_mag
 	toggled = !toggled
 	if(toggled)
-		to_chat(user, span_notice("You switch to tube B."))
+		to_chat(user, "<span class='notice'>You switch to tube B.</span>")
 	else
-		to_chat(user, span_notice("You switch to tube A."))
+		to_chat(user, "<span class='notice'>You switch to tube A.</span>")
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -174,11 +169,11 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		var/obj/item/stack/cable_coil/C = A
 		if(C.use(10))
 			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
+			to_chat(user, "<span class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
 			slung = TRUE
 			update_appearance()
 		else
-			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
+			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/update_icon_state()
 	. = ..()

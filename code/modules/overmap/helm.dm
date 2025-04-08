@@ -292,7 +292,7 @@
 			return
 		if("toggle_ai_control")
 			if(issilicon(usr))
-				to_chat(usr, span_warning("You are unable to toggle AI controls."))
+				to_chat(usr, "<span class='warning'>You are unable to toggle AI controls.</span>")
 				return
 			allow_ai_control = !allow_ai_control
 			say(allow_ai_control ? "AI Control has been enabled." : "AI Control is now disabled.")
@@ -306,7 +306,7 @@
 		switch(action)
 			if("act_overmap")
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
-					to_chat(usr, span_warning("Cannot dock due to bluespace jump preperations!"))
+					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
 					return
 				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)
 				say(current_ship.Dock(to_act))
@@ -395,7 +395,7 @@
 	if(!Adjacent(user))
 		return
 
-	to_chat(user, span_warning("You begin to manually override the local database..."))
+	to_chat(user, "<span class='warning'>You begin to manually override the local database...</span>")
 	if(!do_after(user, 2 SECONDS, list(src)))
 		return COMPONENT_BLOCK_TOOL_ATTACK
 

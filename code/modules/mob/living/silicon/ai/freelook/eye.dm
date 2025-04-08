@@ -105,11 +105,11 @@
 	var/turf/target = get_step_multiz(src, dir)
 	if(!target)
 		if(feedback)
-			to_chat(ai, span_warning("There's nowhere to go in that direction!"))
+			to_chat(ai, "<span class='warning'>There's nowhere to go in that direction!</span>")
 		return FALSE
 	if(!canZMove(dir, target))
 		if(feedback)
-			to_chat(ai, span_warning("You couldn't move there!"))
+			to_chat(ai, "<span class='warning'>You couldn't move there!</span>")
 		return FALSE
 	setLoc(target, TRUE)
 	return TRUE

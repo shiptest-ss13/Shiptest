@@ -31,7 +31,7 @@
 		return
 
 	if(breather.internal == src)
-		to_chat(breather, span_notice("You close [src] valve."))
+		to_chat(breather, "<span class='notice'>You close [src] valve.</span>")
 		breather.internal = null
 		breather.update_internals_hud_icon(0)
 	else
@@ -51,13 +51,13 @@
 					internals = TRUE
 
 			if(!internals)
-				to_chat(breather, span_warning("You are not wearing an internals mask!"))
+				to_chat(breather, "<span class='warning'>You are not wearing an internals mask!</span>")
 				return
 
 		if(breather.internal)
-			to_chat(breather, span_notice("You switch your internals to [src]."))
+			to_chat(breather, "<span class='notice'>You switch your internals to [src].</span>")
 		else
-			to_chat(breather, span_notice("You open [src] valve."))
+			to_chat(breather, "<span class='notice'>You open [src] valve.</span>")
 		breather.internal = src
 		breather.update_internals_hud_icon(1)
 	breather.update_action_buttons_icon()
@@ -88,10 +88,10 @@
 		icon = src.loc
 	if(!in_range(src, user) && !isobserver(user))
 		if(icon == src)
-			. += span_notice("If you want any more information you'll need to get closer.")
+			. += "<span class='notice'>If you want any more information you'll need to get closer.</span>"
 		return
 
-	. += span_notice("The gauge reads [round(air_contents.total_moles(), 0.01)] mol at [round(src.air_contents.return_pressure(),0.01)] kPa.")	//yogs can read mols
+	. += "<span class='notice'>The gauge reads [round(air_contents.total_moles(), 0.01)] mol at [round(src.air_contents.return_pressure(),0.01)] kPa.</span>"	//yogs can read mols
 
 	var/celsius_temperature = src.air_contents.return_temperature()-T0C
 	var/descriptive
@@ -109,7 +109,7 @@
 	else
 		descriptive = "furiously hot"
 
-	. += span_notice("It feels [descriptive].")
+	. += "<span class='notice'>It feels [descriptive].</span>"
 
 /obj/item/tank/deconstruct(disassembled = TRUE)
 	if(!disassembled)

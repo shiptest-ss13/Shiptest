@@ -55,8 +55,8 @@
 	if(!(P.original == src && P.firer == src)) //can't block or reflect when shooting yourself
 		if(P.reflectable & REFLECT_NORMAL)
 			if(check_reflect(def_zone)) // Checks if you've passed a reflection% check
-				visible_message(span_danger("The [P.name] gets reflected by [src]!"), \
-								span_userdanger("The [P.name] gets reflected by [src]!"))
+				visible_message("<span class='danger'>The [P.name] gets reflected by [src]!</span>", \
+								"<span class='userdanger'>The [P.name] gets reflected by [src]!</span>")
 				// Find a turf near or on the original location to bounce to
 				if(!isturf(loc)) //Open canopy mech (ripley) check. if we're inside something and still got hit
 					P.force_hit = TRUE //The thing we're in passed the bullet to us. Pass it back, and tell it to take the damage.
@@ -211,9 +211,9 @@
 	if(check_shields(user, 15, "the [hulk_verb]ing"))
 		return
 	playsound(loc, user.dna.species.attack_sound, 25, TRUE, -1)
-	visible_message(span_danger("[user] [hulk_verb]ed [src]!"), \
-					span_userdanger("[user] [hulk_verb]ed [src]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), null, user)
-	to_chat(user, span_danger("You [hulk_verb] [src]!"))
+	visible_message("<span class='danger'>[user] [hulk_verb]ed [src]!</span>", \
+					"<span class='userdanger'>[user] [hulk_verb]ed [src]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", null, user)
+	to_chat(user, "<span class='danger'>You [hulk_verb] [src]!</span>")
 	adjustBruteLoss(15)
 
 /mob/living/carbon/human/attack_hand(mob/user)
@@ -236,23 +236,23 @@
 		var/obj/item/I = get_active_held_item()
 		if(I && dropItemToGround(I))
 			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[M] disarmed [src]!"), \
-							span_userdanger("[M] disarmed you!"), span_hear("You hear aggressive shuffling!"), null, M)
-			to_chat(M, span_danger("You disarm [src]!"))
+			visible_message("<span class='danger'>[M] disarmed [src]!</span>", \
+							"<span class='userdanger'>[M] disarmed you!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, M)
+			to_chat(M, "<span class='danger'>You disarm [src]!</span>")
 		else if(!M.client || prob(5)) // only natural monkeys get to stun reliably, (they only do it occasionaly)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
 			if (src.IsKnockdown() && !src.IsParalyzed())
 				Paralyze(40)
 				log_combat(M, src, "pinned")
-				visible_message(span_danger("[M] pins [src] down!"), \
-								span_userdanger("[M] pins you down!"), span_hear("You hear shuffling and a muffled groan!"), null, M)
-				to_chat(M, span_danger("You pin [src] down!"))
+				visible_message("<span class='danger'>[M] pins [src] down!</span>", \
+								"<span class='userdanger'>[M] pins you down!</span>", "<span class='hear'>You hear shuffling and a muffled groan!</span>", null, M)
+				to_chat(M, "<span class='danger'>You pin [src] down!</span>")
 			else
 				Knockdown(30)
 				log_combat(M, src, "tackled")
-				visible_message(span_danger("[M] tackles [src] down!"), \
-								span_userdanger("[M] tackles you down!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), null, M)
-				to_chat(M, span_danger("You tackle [src] down!"))
+				visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
+								"<span class='userdanger'>[M] tackles you down!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)
+				to_chat(M, "<span class='danger'>You tackle [src] down!</span>")
 
 	if(M.limb_destroyer)
 		dismembering_strike(M, affecting.body_zone)
@@ -270,9 +270,9 @@
 
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/humanoid/M)
 	if(check_shields(M, 0, "the M.name"))
-		visible_message(span_danger("[M] attempts to touch [src]!"), \
-						span_danger("[M] attempts to touch you!"), span_hear("You hear a swoosh!"), null, M)
-		to_chat(M, span_warning("You attempt to touch [src]!"))
+		visible_message("<span class='danger'>[M] attempts to touch [src]!</span>", \
+						"<span class='danger'>[M] attempts to touch you!</span>", "<span class='hear'>You hear a swoosh!</span>", null, M)
+		to_chat(M, "<span class='warning'>You attempt to touch [src]!</span>")
 		return FALSE
 	. = ..()
 	if(!.)
@@ -283,9 +283,9 @@
 		var/damage = prob(90) ? rand(M.melee_damage_lower, M.melee_damage_upper) : 0
 		if(!damage)
 			playsound(loc, 'sound/weapons/slashmiss.ogg', 50, TRUE, -1)
-			visible_message(span_danger("[M] lunges at [src]!"), \
-							span_userdanger("[M] lunges at you!"), span_hear("You hear a swoosh!"), null, M)
-			to_chat(M, span_danger("You lunge at [src]!"))
+			visible_message("<span class='danger'>[M] lunges at [src]!</span>", \
+							"<span class='userdanger'>[M] lunges at you!</span>", "<span class='hear'>You hear a swoosh!</span>", null, M)
+			to_chat(M, "<span class='danger'>You lunge at [src]!</span>")
 			return FALSE
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
 		if(!affecting)
@@ -293,9 +293,9 @@
 		var/armor_block = run_armor_check(affecting, "melee", 10, silent = TRUE)
 
 		playsound(loc, 'sound/weapons/slice.ogg', 25, TRUE, -1)
-		visible_message(span_danger("[M] slashes at [src]!"), \
-						span_userdanger("[M] slashes at you!"), span_hear("You hear a sickening sound of a slice!"), null, M)
-		to_chat(M, span_danger("You slash at [src]!"))
+		visible_message("<span class='danger'>[M] slashes at [src]!</span>", \
+						"<span class='userdanger'>[M] slashes at you!</span>", "<span class='hear'>You hear a sickening sound of a slice!</span>", null, M)
+		to_chat(M, "<span class='danger'>You slash at [src]!</span>")
 		log_combat(M, src, "attacked")
 		if(!dismembering_strike(M, M.zone_selected)) //Dismemberment successful
 			return TRUE
@@ -305,25 +305,25 @@
 		var/obj/item/I = get_active_held_item()
 		if(I && dropItemToGround(I) && prob(50))
 			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[M] disarms [src]!"), \
-							span_userdanger("[M] disarms you!"), span_hear("You hear aggressive shuffling!"), null, M)
-			to_chat(M, span_danger("You disarm [src]!"))
+			visible_message("<span class='danger'>[M] disarms [src]!</span>", \
+							"<span class='userdanger'>[M] disarms you!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", null, M)
+			to_chat(M, "<span class='danger'>You disarm [src]!</span>")
 		else if(get_dist(src, M) != 0)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
 			var/shovetarget = get_edge_target_turf(M, get_dir(M, get_step_away(src, M)))
 			Knockdown(0.3 SECONDS)
 			throw_at(shovetarget, 4, 2, M, force = MOVE_FORCE_OVERPOWERING)
 			log_combat(M, src, "shoved")
-			visible_message(span_danger("[M] tackles [src] down!"), \
-							span_userdanger("[M] shoves you with great force!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), null, M)
-			to_chat(M, span_danger("You shove [src] with great force!"))
+			visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
+							"<span class='userdanger'>[M] shoves you with great force!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)
+			to_chat(M, "<span class='danger'>You shove [src] with great force!</span>")
 		else
 			Paralyze(1 SECONDS)
 			adjustBruteLoss(5)
 			playsound(loc, 'sound/weapons/punch3.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[M] slams [src] into the floor!"), \
-							span_userdanger("[M] slams you into the ground!"), span_hear("You hear something slam loudly onto the floor!"), null, M)
-			to_chat(M, span_danger("You slam [src] into the floor beneath you!"))
+			visible_message("<span class='danger'>[M] slams [src] into the floor!</span>", \
+							"<span class='userdanger'>[M] slams you into the ground!</span>", "<span class='hear'>You hear something slam loudly onto the floor!</span>", null, M)
+			to_chat(M, "<span class='danger'>You slam [src] into the floor beneath you!</span>")
 			log_combat(M, src, "slammed into the ground")
 
 /mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/L)
@@ -401,7 +401,7 @@
 
 	if(M.occupant.a_intent == INTENT_HARM)
 		if(HAS_TRAIT(M.occupant, TRAIT_PACIFISM))
-			to_chat(M.occupant, span_warning("You don't want to harm other living beings!"))
+			to_chat(M.occupant, "<span class='warning'>You don't want to harm other living beings!</span>")
 			return
 		M.do_attack_animation(src)
 		if(M.damtype == "brute")
@@ -429,9 +429,9 @@
 				update_damage_overlays()
 			updatehealth()
 
-		visible_message(span_danger("[M.name] hits [src]!"), \
-						span_userdanger("[M.name] hits you!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, M)
-		to_chat(M, span_danger("You hit [src]!"))
+		visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
+						"<span class='userdanger'>[M.name] hits you!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, M)
+		to_chat(M, "<span class='danger'>You hit [src]!</span>")
 		log_combat(M.occupant, src, "attacked", M, "(INTENT: [uppertext(M.occupant.a_intent)]) (DAMTYPE: [uppertext(M.damtype)])")
 
 	else
@@ -541,7 +541,7 @@
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
 			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 			if(heart.Restart() && stat == CONSCIOUS)
-				to_chat(src, span_notice("You feel your heart beating again!"))
+				to_chat(src, "<span class='notice'>You feel your heart beating again!</span>")
 	//WS - Bootleg IPC revival
 	if(stat == DEAD && isipc(src) && can_be_revived())
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
@@ -593,7 +593,7 @@
 				update_inv_neck()
 				update_inv_head()
 			else
-				to_chat(src, span_notice("Your [head_clothes.name] protects your head and face from the acid!"))
+				to_chat(src, "<span class='notice'>Your [head_clothes.name] protects your head and face from the acid!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_HEAD)
 			if(.)
@@ -614,7 +614,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [chest_clothes.name] protects your body from the acid!"))
+				to_chat(src, "<span class='notice'>Your [chest_clothes.name] protects your body from the acid!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_CHEST)
 			if(.)
@@ -646,7 +646,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [arm_clothes.name] protects your arms and hands from the acid!"))
+				to_chat(src, "<span class='notice'>Your [arm_clothes.name] protects your arms and hands from the acid!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_R_ARM)
 			if(.)
@@ -672,7 +672,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [leg_clothes.name] protects your legs and feet from the acid!"))
+				to_chat(src, "<span class='notice'>Your [leg_clothes.name] protects your legs and feet from the acid!</span>")
 		else
 			. = get_bodypart(BODY_ZONE_R_LEG)
 			if(.)
@@ -813,39 +813,39 @@
 		combined_msg += span_danger("Your [parse_zone(BP.body_zone)] is bleeding!</span>")
 	if(getStaminaLoss())
 		if(getStaminaLoss() > 30)
-			combined_msg += span_info("You're completely exhausted.")
+			combined_msg += "<span class='info'>You're completely exhausted.</span>"
 		else
-			combined_msg += span_info("You feel fatigued.")
+			combined_msg += "<span class='info'>You feel fatigued.</span>"
 	if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
 		if(toxloss)
 			if(toxloss > 10)
-				combined_msg += span_danger("You feel sick.")
+				combined_msg += "<span class='danger'>You feel sick.</span>"
 			else if(toxloss > 20)
-				combined_msg += span_danger("You feel nauseated.")
+				combined_msg += "<span class='danger'>You feel nauseated.</span>"
 			else if(toxloss > 40)
-				combined_msg += span_danger("You feel very unwell!")
+				combined_msg += "<span class='danger'>You feel very unwell!</span>"
 		if(oxyloss)
 			if(oxyloss > 10)
-				combined_msg += span_danger("You feel lightheaded.")
+				combined_msg += "<span class='danger'>You feel lightheaded.</span>"
 			else if(oxyloss > 20)
-				combined_msg += span_danger("Your thinking is clouded and distant.")
+				combined_msg += "<span class='danger'>Your thinking is clouded and distant.</span>"
 			else if(oxyloss > 30)
-				combined_msg += span_danger("You're choking!")
+				combined_msg += "<span class='danger'>You're choking!</span>"
 
 	if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
 		switch(nutrition)
 			if(NUTRITION_LEVEL_FULL to INFINITY)
-				combined_msg += span_info("You're completely stuffed!")
+				combined_msg += "<span class='info'>You're completely stuffed!</span>"
 			if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
-				combined_msg += span_info("You're well fed!")
+				combined_msg += "<span class='info'>You're well fed!</span>"
 			if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-				combined_msg += span_info("You're not hungry.")
+				combined_msg += "<span class='info'>You're not hungry.</span>"
 			if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-				combined_msg += span_info("You could use a bite to eat.")
+				combined_msg += "<span class='info'>You could use a bite to eat.</span>"
 			if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-				combined_msg += span_info("You feel quite hungry.")
+				combined_msg += "<span class='info'>You feel quite hungry.</span>"
 			if(0 to NUTRITION_LEVEL_STARVING)
-				combined_msg += span_danger("You're starving!")
+				combined_msg += "<span class='danger'>You're starving!</span>"
 
 	//Compiles then shows the list of damaged organs and broken organs
 	var/list/broken = list()
@@ -877,7 +877,7 @@
 		//Put the items in that list into a string of text
 		for(var/B in broken)
 			broken_message += B
-		combined_msg += span_warning("Your [broken_message] [broken_plural ? "are" : "is"] non-functional!")
+		combined_msg += "<span class='warning'>Your [broken_message] [broken_plural ? "are" : "is"] non-functional!</span>"
 	if(damaged.len)
 		if(damaged.len > 1)
 			damaged.Insert(damaged.len, "and ")
@@ -888,10 +888,10 @@
 				damaged_plural = TRUE
 		for(var/D in damaged)
 			damaged_message += D
-		combined_msg += span_info("Your [damaged_message] [damaged_plural ? "are" : "is"] hurt.")
+		combined_msg += "<span class='info'>Your [damaged_message] [damaged_plural ? "are" : "is"] hurt.</span>"
 
 	if(roundstart_quirks.len)
-		combined_msg += span_notice("You have these quirks: [get_trait_string()].")
+		combined_msg += "<span class='notice'>You have these quirks: [get_trait_string()].</span>"
 
 	to_chat(src, boxed_message(combined_msg.Join("\n")))
 

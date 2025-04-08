@@ -112,7 +112,7 @@
 			if(user.transferItemToLoc(W,src))
 				beaker.forceMove(get_turf(src))
 				beaker = W
-				to_chat(user, span_notice("You swap the fuel container in [src]!"))
+				to_chat(user, "<span class='notice'>You swap the fuel container in [src]!</span>")
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
@@ -131,17 +131,17 @@
 	if(beaker && isliving(user) && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY, FALSE, TRUE))
 		user.put_in_hands(beaker)
 		beaker = null
-		to_chat(user, span_notice("You remove the fuel container from [src]!"))
+		to_chat(user, "<span class='notice'>You remove the fuel container from [src]!</span>")
 		update_appearance()
 
 /obj/item/flamethrower/examine(mob/user)
 	. = ..()
 	if(beaker)
-		. += span_notice("\The [src] has \a [beaker] attached. Alt-click to remove it.")
+		. += "<span class='notice'>\The [src] has \a [beaker] attached. Alt-click to remove it.</span>"
 
 /obj/item/flamethrower/proc/toggle_igniter(mob/user)
 	if(!beaker)
-		to_chat(user, span_notice("Attach a fuel container first!"))
+		to_chat(user, "<span class='notice'>Attach a fuel container first!</span>")
 		return
 	if(!status)
 		if(!igniter)
@@ -149,7 +149,7 @@
 		else if (!igniter.secured)
 			to_chat(user, span_notice("Secure the igniter with a screwdriver first!"))
 		return
-	to_chat(user, span_notice("You [lit ? "extinguish" : "ignite"] [src]!"))
+	to_chat(user, "<span class='notice'>You [lit ? "extinguish" : "ignite"] [src]!</span>")
 	lit = !lit
 	if(lit)
 		playsound(loc, acti_sound, 50, TRUE)
@@ -187,7 +187,7 @@
 	power = my_fraction.get_total_accelerant_quality() * FLAMETHROWER_POWER_MULTIPLIER
 
 	if(power < REQUIRED_POWER_TO_FIRE_FLAMETHROWER)
-		audible_message(span_danger("The [src] sputters."))
+		audible_message("<span class='danger'>The [src] sputters.</span>")
 		playsound(src, 'sound/weapons/gun/flamethrower/flamethrower_empty.ogg', 50, TRUE, -3)
 		return
 	playsound(src, pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg'), 50, TRUE, -3)
@@ -276,7 +276,7 @@
 /obj/item/flamethrower/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/obj/projectile/P = hitby
 	if(beaker && damage && attack_type == PROJECTILE_ATTACK && P.damage_type != STAMINA && prob(15))
-		owner.visible_message(span_danger("\The [attack_text] hits the fueltank on [owner]'s [name], rupturing it! What a shot!"))
+		owner.visible_message("<span class='danger'>\The [attack_text] hits the fueltank on [owner]'s [name], rupturing it! What a shot!</span>")
 		var/turf/target_turf = get_turf(owner)
 		log_game("A projectile ([hitby]) detonated a flamethrower tank held by [key_name(owner)] at [COORD(target_turf)]")
 		var/turf/flamer_turf = get_turf(owner)

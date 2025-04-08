@@ -33,7 +33,7 @@
 
 /obj/item/gun/ballistic/bow/unique_action(mob/living/user)
 	if(chambered)
-		to_chat(user, span_notice("You [drawn ? "release" : "draw"] [src]'s string."))
+		to_chat(user, "<span class='notice'>You [drawn ? "release" : "draw"] [src]'s string.</span>")
 		if(!drawn)
 			playsound(src, 'sound/weapons/bowdraw.ogg', 75, 0)
 		drawn = !drawn

@@ -4,7 +4,7 @@
 	if(!check_rights(0))
 		return
 	if(!SSdbcore.IsConnected())
-		to_chat(src, span_danger("Failed to establish database connection."))
+		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
 		return
 	var/memotask = input(usr,"Choose task.","Memo") in list("Show","Write","Edit","Remove")
 	if(!memotask)
@@ -17,7 +17,7 @@
 	if(!check_mentor())
 		return
 	if(!SSdbcore.IsConnected())
-		to_chat(src, span_danger("Failed to establish database connection."))
+		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
 		return
 	mentor_memo_output("Show")
 
@@ -25,7 +25,7 @@
 	if(!task)
 		return
 	if(!SSdbcore.IsConnected())
-		to_chat(src, span_danger("Failed to establish database connection."))
+		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
 		return
 	switch(task)
 		if("Write")
@@ -106,9 +106,9 @@
 				var/memotext = query_memoshow.item[2]
 				var/timestamp = query_memoshow.item[3]
 				var/last_editor = query_memoshow.item[4]
-				output += "[span_memo("Mentor memo by <span class='prefix'>[ckey]")] on [timestamp]"
+				output += "<span class='memo'>Mentor memo by <span class='prefix'>[ckey]</span> on [timestamp]"
 				if(last_editor)
-					output += "<br>[span_memoedit("Last edit by [last_editor] <A href='?_src_=holder;mentormemoeditlist=[ckey]'>(Click here to see edit log)</A>")]"
+					output += "<br><span class='memoedit'>Last edit by [last_editor] <A href='?_src_=holder;mentormemoeditlist=[ckey]'>(Click here to see edit log)</A></span>"
 				output += "<br>[memotext]</span><br>"
 			if(!output)
 				to_chat(src, "No memos found in database.")

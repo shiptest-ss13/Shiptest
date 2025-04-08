@@ -121,8 +121,8 @@
 		return ..()
 	if(!tool_start_check(user, amount = 1))
 		return TRUE
-	user.visible_message(span_notice("[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)]."),
-			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
+	user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)].</span>",
+			"<span class='notice'>You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
 	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
@@ -144,7 +144,7 @@
 
 	if(!status && O.is_refillable())
 		reagents.trans_to(O, reagents.total_volume, transfered_by = user)
-		to_chat(user, span_notice("You empty [src]'s fuel tank into [O]."))
+		to_chat(user, "<span class='notice'>You empty [src]'s fuel tank into [O].</span>")
 		update_appearance()
 
 /obj/item/weldingtool/attack_qdeleted(atom/O, mob/user, proximity)
@@ -219,12 +219,12 @@
 //Switches the welder on
 /obj/item/weldingtool/proc/switched_on(mob/user)
 	if(!status)
-		to_chat(user, span_warning("[src] can't be turned on while unsecured!"))
+		to_chat(user, "<span class='warning'>[src] can't be turned on while unsecured!</span>")
 		return
 	set_welding(!welding)
 	if(welding)
 		if(get_fuel() >= 1)
-			to_chat(user, span_notice("You switch [src] on."))
+			to_chat(user, "<span class='notice'>You switch [src] on.</span>")
 			playsound(loc, acti_sound, 50, TRUE)
 			force = 15
 			damtype = "fire"
@@ -232,10 +232,10 @@
 			update_appearance()
 			START_PROCESSING(SSobj, src)
 		else
-			to_chat(user, span_warning("You need more fuel!"))
+			to_chat(user, "<span class='warning'>You need more fuel!</span>")
 			switched_off(user)
 	else
-		to_chat(user, span_notice("You switch [src] off."))
+		to_chat(user, "<span class='notice'>You switch [src] off.</span>")
 		playsound(loc, deac_sound, 50, TRUE)
 		switched_off(user)
 
@@ -263,32 +263,32 @@
 // If welding tool ran out of fuel during a construction task, construction fails.
 /obj/item/weldingtool/tool_use_check(mob/living/user, amount)
 	if(!isOn() || !check_fuel())
-		to_chat(user, span_warning("[src] has to be on to complete this task!"))
+		to_chat(user, "<span class='warning'>[src] has to be on to complete this task!</span>")
 		return FALSE
 
 	if(get_fuel() >= amount)
 		return TRUE
 	else
-		to_chat(user, span_warning("You need more welding fuel to complete this task!"))
+		to_chat(user, "<span class='warning'>You need more welding fuel to complete this task!</span>")
 		return FALSE
 
 
 /obj/item/weldingtool/proc/flamethrower_screwdriver(obj/item/I, mob/user)
 	if(welding)
-		to_chat(user, span_warning("Turn it off first!"))
+		to_chat(user, "<span class='warning'>Turn it off first!</span>")
 		return
 	status = !status
 	if(status)
-		to_chat(user, span_notice("You resecure [src] and close the fuel tank."))
+		to_chat(user, "<span class='notice'>You resecure [src] and close the fuel tank.</span>")
 		reagents.flags &= ~(OPENCONTAINER)
 	else
-		to_chat(user, span_notice("[src] can now be refuelled."))
+		to_chat(user, "<span class='notice'>[src] can now be refuelled.</span>")
 		reagents.flags |= OPENCONTAINER
 	add_fingerprint(user)
 
 /obj/item/weldingtool/ignition_effect(atom/A, mob/user)
 	if(use_tool(A, user, 0, amount=1))
-		return span_notice("[user] casually lights [A] with [src], what a badass.")
+		return "<span class='notice'>[user] casually lights [A] with [src], what a badass.</span>"
 	else
 		return ""
 

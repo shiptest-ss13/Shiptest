@@ -185,7 +185,7 @@
 				if(!isnull(U.welded) && !U.welded) //must be an unwelded vent pump or vent scrubber.
 					U.welded = TRUE
 					U.update_appearance()
-					U.visible_message(span_danger("[U] is frozen shut!"))
+					U.visible_message("<span class='danger'>[U] is frozen shut!</span>")
 		for(var/mob/living/L in T)
 			L.ExtinguishMob()
 		for(var/obj/item/Item in T)
@@ -229,13 +229,8 @@
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/smoke/chem
-
 	lifetime = 10
 
-/obj/effect/particle_effect/smoke/chem/thin
-	alpha = 100
-	opaque = FALSE
-	opaque = TRUE
 
 /obj/effect/particle_effect/smoke/chem/process(seconds_per_tick)
 	if(..())
@@ -325,8 +320,6 @@
 	if(S.amount)
 		S.spread_smoke() //calling process right now so the smoke immediately attacks mobs.
 
-/datum/effect_system/smoke_spread/chem/thin
-	effect_type = /obj/effect/particle_effect/smoke/chem/thin
 
 /////////////////////////////////////////////
 // Transparent smoke

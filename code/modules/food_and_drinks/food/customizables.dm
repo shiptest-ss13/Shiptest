@@ -42,11 +42,11 @@
 	var/obj/item/reagent_containers/food/snacks/S = I
 	if(istype(S) || E)
 		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, span_warning("The ingredient is too big for [src]!"))
+			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
 		else if((ingredients.len >= ingMax) || (reagents.total_volume >= volume))
-			to_chat(user, span_warning("You can't add more ingredients to [src]!"))
+			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
 		else if(istype(I, /obj/item/reagent_containers/food/snacks/pizzaslice/custom))
-			to_chat(user, span_warning("Adding [I.name] to [src] would make a mess."))
+			to_chat(user, "<span class='warning'>Adding [I.name] to [src] would make a mess.</span>")
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
@@ -62,7 +62,7 @@
 				mix_filling_color(E.filling_color)
 				foodtype |= E.foodtypes
 				update_customizable_overlays(E.filling_color)
-			to_chat(user, span_notice("You add the [I.name] to the [name]."))
+			to_chat(user, "<span class='notice'>You add the [I.name] to the [name].</span>")
 			update_food_name(I)
 	else
 		. = ..()
@@ -254,9 +254,9 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, span_warning("The ingredient is too big for [src]!"))
+			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
 		else if(contents.len >= 20)
-			to_chat(user, span_warning("You can't add more ingredients to [src]!"))
+			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
 		else
 			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
 				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup(get_turf(src))

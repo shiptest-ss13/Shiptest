@@ -177,11 +177,11 @@
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(prob(10))
 		M.adjust_drugginess(5)
-		to_chat(M, span_notice("[high_message]"))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
 	if(M.faction && ("roumain" in M.faction))
 		M.adjustToxLoss(-2)
 		if(prob(10))
-			to_chat(M, span_notice("[cleanse_message]"))
+			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
 	return ..()
 
 /datum/status_effect/trickwine/buff/ash

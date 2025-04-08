@@ -92,14 +92,14 @@
 	if(istype(I,/obj/item/keycard))
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
-			to_chat(user, span_notice("The door rattles, and slides opens."))
+			to_chat(user, "<span class='notice'>The door rattles, and slides opens.</span>")
 			open()
 			return
 		else if(puzzle_id != key.puzzle_id)
-			to_chat(user, span_notice("[src] shakes. This must not be the right key."))
+			to_chat(user, "<span class='notice'>[src] shakes. This must not be the right key.</span>")
 			return
 		else
-			to_chat(user, span_notice("This door doesn't appear to close."))
+			to_chat(user, "<span class='notice'>This door doesn't appear to close.</span>")
 			return
 
 //Test doors. Gives admins a few doors to use quickly should they so choose.
@@ -207,7 +207,7 @@
 /obj/item/pressure_plate/hologrid/examine(mob/user)
 	. = ..()
 	if(claimed)
-		. += span_notice("This one appears to be spent already.")
+		. += "<span class='notice'>This one appears to be spent already.</span>"
 
 /obj/item/pressure_plate/hologrid/trigger()
 	if(!claimed)

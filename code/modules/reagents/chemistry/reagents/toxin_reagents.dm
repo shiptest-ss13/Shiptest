@@ -165,7 +165,7 @@
 
 /datum/reagent/toxin/slimejelly/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
-		to_chat(M, span_danger("Your insides are burning!"))
+		to_chat(M, "<span class='danger'>Your insides are burning!</span>")
 		M.adjustToxLoss(rand(20,60)*REM, 0)
 		. = 1
 	else if(prob(40))
@@ -459,7 +459,7 @@
 	if(prob(10))
 		switch(rand(1,4))
 			if(1)
-				to_chat(M, span_danger("You can barely see!"))
+				to_chat(M, "<span class='danger'>You can barely see!</span>")
 				M.blur_eyes(3)
 			if(2)
 				M.emote("cough")
@@ -467,7 +467,7 @@
 				M.emote("sneeze")
 			if(4)
 				if(prob(75))
-					to_chat(M, span_danger("You scratch at an itch."))
+					to_chat(M, "<span class='danger'>You scratch at an itch.</span>")
 					M.adjustBruteLoss(5, 0)
 					. = 1
 	..()
@@ -543,7 +543,7 @@
 	if(prob(5))
 		M.losebreath += 1
 	if(prob(8))
-		to_chat(M, span_danger("You feel horrendously weak!"))
+		to_chat(M, "<span class='danger'>You feel horrendously weak!</span>")
 		M.Stun(40)
 		M.adjustToxLoss(2*REM, 0)
 	return ..()
@@ -572,15 +572,15 @@
 
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/M)
 	if(prob(15))
-		to_chat(M, span_danger("You scratch at your head."))
+		to_chat(M, "<span class='danger'>You scratch at your head.</span>")
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(15))
-		to_chat(M, span_danger("You scratch at your leg."))
+		to_chat(M, "<span class='danger'>You scratch at your leg.</span>")
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(15))
-		to_chat(M, span_danger("You scratch at your arm."))
+		to_chat(M, "<span class='danger'>You scratch at your arm.</span>")
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(3))
@@ -613,7 +613,7 @@
 				if(!C.undergoing_cardiac_arrest() && C.can_heartattack())
 					C.set_heartattack(TRUE)
 					if(C.stat == CONSCIOUS)
-						C.visible_message(span_userdanger("[C] clutches at [C.p_their()] chest as if [C.p_their()] heart stopped!"))
+						C.visible_message("<span class='userdanger'>[C] clutches at [C.p_their()] chest as if [C.p_their()] heart stopped!</span>")
 				else
 					C.losebreath += 10
 					C.adjustOxyLoss(rand(5,25), 0)
@@ -735,7 +735,7 @@
 	if(current_cycle >=33 && prob(15))
 		C.spew_organ()
 		C.vomit(0, TRUE, TRUE, 4)
-		to_chat(C, span_userdanger("You feel something lumpy come up as you vomit."))
+		to_chat(C, "<span class='userdanger'>You feel something lumpy come up as you vomit.</span>")
 
 /datum/reagent/toxin/curare
 	name = "Curare"
@@ -976,7 +976,7 @@
 			if(1)
 				M.manual_emote(pick("oofs silently.", "looks like their bones hurt.", "grimaces, as though their bones hurt."))
 			if(2)
-				to_chat(M, span_warning("Your bones hurt!"))
+				to_chat(M, "<span class='warning'>Your bones hurt!</span>")
 	return ..()
 
 /datum/reagent/toxin/bonehurtingjuice/overdose_process(mob/living/carbon/M)
@@ -985,11 +985,11 @@
 		var/obj/item/bodypart/bp = M.get_bodypart(selected_part)
 		if(bp)
 			playsound(M, get_sfx("desceration"), 50, TRUE, -1)
-			M.visible_message(span_warning("[M]'s bones hurt too much!!"), span_danger("Your bones hurt too much!!"))
+			M.visible_message("<span class='warning'>[M]'s bones hurt too much!!</span>", "<span class='danger'>Your bones hurt too much!!</span>")
 			M.say("OOF!!", forced = /datum/reagent/toxin/bonehurtingjuice)
 			bp.receive_damage(0, 0, 200)
 		else //SUCH A LUST FOR REVENGE!!!
-			to_chat(M, span_warning("A phantom limb hurts!"))
+			to_chat(M, "<span class='warning'>A phantom limb hurts!</span>")
 	return ..()
 
 /datum/reagent/toxin/bungotoxin
@@ -1006,7 +1006,7 @@
 	M.confused = M.dizziness //add a tertiary effect here if this is isn't an effective poison.
 	if(current_cycle >= 12 && prob(8))
 		var/tox_message = pick("You feel your heart spasm in your chest.", "You feel faint.","You feel you need to catch your breath.","You feel a prickle of pain in your chest.")
-		to_chat(M, span_notice("[tox_message]"))
+		to_chat(M, "<span class='notice'>[tox_message]</span>")
 	. = 1
 	..()
 
@@ -1023,7 +1023,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_EARS,1)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN,1)
 	if(prob(1))
-		to_chat(M, span_notice("Ah, what was that? You thought you heard something..."))
+		to_chat(M, "<span class='notice'>Ah, what was that? You thought you heard something...</span>")
 		M.confused += 5
 	return ..()
 

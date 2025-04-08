@@ -35,7 +35,7 @@
 	. = ..()
 
 	GLOB.new_player_list += src
-	SSpoints_of_interest.make_point_of_interest(src)
+	//SSpoints_of_interest.make_point_of_interest(src)
 
 /mob/dead/new_player/Destroy()
 	GLOB.new_player_list -= src
@@ -54,9 +54,9 @@
 
 	if(CONFIG_GET(flag/auth_only))
 		if(client?.holder && CONFIG_GET(flag/auth_admin_testing))
-			to_chat(src, span_userdanger("This server is allowed to be used for admin testing. Please ensure you are able to clean up anything you do. If the server needs to be restarted contact someone with TGS access."))
+			to_chat(src, "<span class='userdanger'>This server is allowed to be used for admin testing. Please ensure you are able to clean up anything you do. If the server needs to be restarted contact someone with TGS access.</span>")
 		else
-			to_chat(src, span_userdanger("This server is for authentication only."))
+			to_chat(src, "<span class='userdanger'>This server is for authentication only.</span>")
 			auth_check = TRUE
 			return
 
@@ -170,7 +170,7 @@
 
 	if(href_list["late_join"])
 		if(!SSticker?.IsRoundInProgress())
-			to_chat(usr, span_boldwarning("The round is either not ready, or has already finished..."))
+			to_chat(usr, "<span class='boldwarning'>The round is either not ready, or has already finished...</span>")
 			return
 
 		if(href_list["late_join"] == "override")
@@ -178,16 +178,16 @@
 			return
 
 		if(SSticker.queued_players.len || (relevant_cap && living_player_count() >= relevant_cap && !(ckey(key) in GLOB.admin_datums)))
-			to_chat(usr, span_danger("[CONFIG_GET(string/hard_popcap_message)]"))
+			to_chat(usr, "<span class='danger'>[CONFIG_GET(string/hard_popcap_message)]</span>")
 
 			var/queue_position = SSticker.queued_players.Find(usr)
 			if(queue_position == 1)
-				to_chat(usr, span_notice("You are next in line to join the game. You will be notified when a slot opens up."))
+				to_chat(usr, "<span class='notice'>You are next in line to join the game. You will be notified when a slot opens up.</span>")
 			else if(queue_position)
-				to_chat(usr, span_notice("There are [queue_position-1] players in front of you in the queue to join the game."))
+				to_chat(usr, "<span class='notice'>There are [queue_position-1] players in front of you in the queue to join the game.</span>")
 			else
 				SSticker.queued_players += usr
-				to_chat(usr, span_notice("You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len]."))
+				to_chat(usr, "<span class='notice'>You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len].</span>")
 			return
 		LateChoices()
 
@@ -238,7 +238,7 @@
 	observer.started_as_observer = TRUE
 	close_spawn_windows()
 	var/obj/effect/landmark/observer_start/O = locate(/obj/effect/landmark/observer_start) in GLOB.landmarks_list
-	to_chat(src, span_notice("Now teleporting."))
+	to_chat(src, "<span class='notice'>Now teleporting.</span>")
 	if (O)
 		observer.forceMove(O.loc)
 	observer.key = key
@@ -378,7 +378,7 @@
 
 	if(!SSticker?.IsRoundInProgress())
 		if(!silent)
-			to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
+			to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
 		return FALSE
 
 	var/relevant_cap
@@ -392,7 +392,7 @@
 	if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
 		if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
 			if(!silent)
-				to_chat(usr, span_warning("Server is full."))
+				to_chat(usr, "<span class='warning'>Server is full.</span>")
 			return FALSE
 	return TRUE
 

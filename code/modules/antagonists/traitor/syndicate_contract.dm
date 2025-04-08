@@ -168,17 +168,17 @@
 		M.flash_act()
 		M.confused += 10
 		M.blur_eyes(5)
-		to_chat(M, span_warning("You feel strange..."))
+		to_chat(M, "<span class='warning'>You feel strange...</span>")
 		sleep(60)
-		to_chat(M, span_warning("That pod did something to you..."))
+		to_chat(M, "<span class='warning'>That pod did something to you...</span>")
 		M.Dizzy(35)
 		sleep(65)
-		to_chat(M, span_warning("Your head pounds... It feels like it's going to burst out your skull!"))
+		to_chat(M, "<span class='warning'>Your head pounds... It feels like it's going to burst out your skull!</span>")
 		M.flash_act()
 		M.confused += 20
 		M.blur_eyes(3)
 		sleep(30)
-		to_chat(M, span_warning("Your head pounds..."))
+		to_chat(M, "<span class='warning'>Your head pounds...</span>")
 		sleep(100)
 		M.flash_act()
 		M.Unconscious(200)
@@ -207,7 +207,7 @@
 		return_pod.style = STYLE_SYNDICATE
 
 		do_sparks(8, FALSE, M)
-		M.visible_message(span_notice("[M] vanishes..."))
+		M.visible_message("<span class='notice'>[M] vanishes...</span>")
 
 		for(var/obj/item/W in M)
 			if (ishuman(M))

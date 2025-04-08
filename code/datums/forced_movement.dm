@@ -90,4 +90,4 @@
 	if(force_moving && force_moving.allow_climbing && isstructure(A))
 		var/obj/structure/S = A
 		if(S.climbable)
-			SEND_SIGNAL(S, COMSIG_MOUSEDROPPED_ONTO)
+			S.do_climb(src)

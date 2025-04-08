@@ -28,17 +28,17 @@
 		tamper = FALSE
 		cap_overlay = mutable_appearance(icon, tamper_cap_icon_state)
 		playsound(src, 'sound/items/poster_ripped.ogg', 50, 1)
-		to_chat(user, span_notice("You rip the tamper seal off of [src]."))
+		to_chat(user, "<span class='notice'>You rip the tamper seal off of [src].</span>")
 
 /obj/item/reagent_containers/glass/chem_jug/examine(mob/user)
 	. = ..()
 	if(tamper)
 		if(!cap_on)
-			. += span_info("The tamper seal hasn't been applied yet.")
+			. += "<span class='info'>The tamper seal hasn't been applied yet.</span>"
 			return
-		. += span_green("The tamper seal is <b>intact</b>.")
+		. += "<span class='green'>The tamper seal is <b>intact</b>.</span>"
 	else
-		. += span_warning("The tamper seal is <b>broken</b>.")
+		. += "<span class='warning'>The tamper seal is <b>broken</b>.</span>"
 
 
 /obj/item/reagent_containers/glass/chem_jug/SplashReagents(atom/target, thrown = FALSE)
@@ -51,8 +51,8 @@
 		var/mob/M = target
 		var/R
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		target.visible_message(span_danger("[M] is splashed with something!"), \
-						span_userdanger("[M] is splashed with something!"))
+		target.visible_message("<span class='danger'>[M] is splashed with something!</span>", \
+						"<span class='userdanger'>[M] is splashed with something!</span>")
 		for(var/datum/reagent/A in reagents.reagent_list)
 			R += "[A.type]  ([num2text(A.volume)]),"
 
@@ -61,7 +61,7 @@
 		reagents.expose(target, TOUCH, 0.3)
 
 	else if(bartender_check(target) && thrown)
-		visible_message(span_notice("[src] lands onto the [target.name] without spilling a single drop."))
+		visible_message("<span class='notice'>[src] lands onto the [target.name] without spilling a single drop.</span>")
 		return
 
 	else
@@ -70,7 +70,7 @@
 			log_game("[key_name(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		visible_message(span_notice("[src] spills its contents all over [target]."))
+		visible_message("<span class='notice'>[src] spills its contents all over [target].</span>")
 		reagents.expose(target, TOUCH, 0.3)
 		if(QDELETED(src))
 			return

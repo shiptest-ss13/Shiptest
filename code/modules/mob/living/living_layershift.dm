@@ -22,16 +22,16 @@
 		return
 
 	if(incapacitated(ignore_grab=TRUE))
-		to_chat(src, span_warning("You can't do that right now!"))
+		to_chat(src, "<span class='warning'>You can't do that right now!</span>")
 		return
 
 	var/new_layer = layer + delta
 
 	if(new_layer < MOB_LAYERSHIFT_MINIMUM)
-		to_chat(usr, span_warning("You can't shift your layer any lower."))
+		to_chat(usr, "<span class='warning'>You can't shift your layer any lower.</span>")
 		return
 	else if(new_layer > MOB_LAYERSHIFT_MAXIMUM)
-		to_chat(usr, span_warning("You can't shift your layer any higher."))
+		to_chat(usr, "<span class='warning'>You can't shift your layer any higher.</span>")
 		return
 	layer = new_layer
 
@@ -49,7 +49,7 @@
 	set name = "Layershift Reset"
 	set category = "IC"
 	if(incapacitated(ignore_grab=TRUE))
-		to_chat(src, span_warning("You can't do that right now!"))
+		to_chat(src, "<span class='warning'>You can't do that right now!</span>")
 		return
 	layer = initial(layer)
 

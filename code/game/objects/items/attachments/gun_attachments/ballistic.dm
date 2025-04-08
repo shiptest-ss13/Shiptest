@@ -37,7 +37,6 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/underbarrel,
 	)
-	wear_rate = 0
 
 /obj/item/attachment/gun/ballistic/shotgun
 	name = "underbarrel shotgun"
@@ -75,7 +74,6 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m22lr_himehabu/hognose,
 	)
-	wear_rate = 0
 
 /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
 	name = "Hognose magazine (.22 LR)"

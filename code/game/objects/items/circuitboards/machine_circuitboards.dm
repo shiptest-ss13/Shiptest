@@ -168,7 +168,7 @@
 		name = initial(new_type.name)
 		build_path = initial(new_type.build_path)
 		I.play_tool_sound(src)
-		to_chat(user, span_notice("You change the circuitboard setting to \"[new_setting]\"."))
+		to_chat(user, "<span class='notice'>You change the circuitboard setting to \"[new_setting]\".</span>")
 	else
 		return ..()
 
@@ -207,12 +207,12 @@
 /obj/item/circuitboard/machine/circulator/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
 		return
 
 /obj/item/circuitboard/machine/circulator/examine()
 	. = ..()
-	. += span_notice("It is set to layer [pipe_layer].")
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/emitter
 	name = "Emitter (Machine Board)"
@@ -378,19 +378,19 @@
 		name = initial(new_type.name)
 		build_path = initial(new_type.build_path)
 		I.play_tool_sound(src)
-		to_chat(user, span_notice("You change the circuitboard setting to \"[new_setting]\"."))
+		to_chat(user, "<span class='notice'>You change the circuitboard setting to \"[new_setting]\".</span>")
 		return
 
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
 		return
 
 	. = ..()
 
 /obj/item/circuitboard/machine/thermomachine/examine()
 	. = ..()
-	. += span_notice("It is set to layer [pipe_layer].")
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/thermomachine/heater
 	name = "Heater (Machine Board)"
@@ -512,7 +512,7 @@
 		else
 			build_path = /obj/machinery/holopad/secure
 			secure = TRUE
-		to_chat(user, span_notice("You [secure? "en" : "dis"]able the security on the [src]"))
+		to_chat(user, "<span class='notice'>You [secure? "en" : "dis"]able the security on the [src]</span>")
 	. = ..()
 
 /obj/item/circuitboard/machine/holopad/examine(mob/user)
@@ -587,13 +587,13 @@
 		var/position = fridges_name_paths.Find(build_path, fridges_name_paths)
 		position = (position == fridges_name_paths.len) ? 1 : (position + 1)
 		build_path = fridges_name_paths[position]
-		to_chat(user, span_notice("You set the board to [fridges_name_paths[build_path]]."))
+		to_chat(user, "<span class='notice'>You set the board to [fridges_name_paths[build_path]].</span>")
 	else
 		return ..()
 
 /obj/item/circuitboard/machine/smartfridge/examine(mob/user)
 	. = ..()
-	. += span_info("[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.")
+	. += "<span class='info'>[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.</span>"
 
 
 /obj/item/circuitboard/machine/space_heater
@@ -800,7 +800,7 @@
 
 		build_path = new_path
 		name = "[new_name] 3000 (Machine Board)"
-		to_chat(user, span_notice("You change the circuit board setting to \"[new_name]\"."))
+		to_chat(user, "<span class='notice'>You change the circuit board setting to \"[new_name]\".</span>")
 	else
 		return ..()
 
@@ -1027,7 +1027,7 @@
 	. = ..()
 	var/new_cloud = input("Set the public nanite chamber's Cloud ID (1-100).", "Cloud ID", cloud_id) as num|null
 	if(!new_cloud || (loc != user))
-		to_chat(user, span_warning("You must hold the circuitboard to change its Cloud ID!"))
+		to_chat(user, "<span class='warning'>You must hold the circuitboard to change its Cloud ID!</span>")
 		return
 	cloud_id = clamp(round(new_cloud, 1), 1, 100)
 
@@ -1061,11 +1061,11 @@
 	var/new_id = input("Set the server ID", "ServerID ID", server_id) as text|null
 	new_id = replacetext(new_id, " ", "-")
 	if(!new_id || (loc != user))
-		to_chat(user, span_warning("You must hold the circuitboard to change its Server ID!"))
+		to_chat(user, "<span class='warning'>You must hold the circuitboard to change its Server ID!</span>")
 		return
 
 	if(new_id in all_ids)
-		to_chat(user, span_warning("Server ID already in use!"))
+		to_chat(user, "<span class='warning'>Server ID already in use!</span>")
 		return
 
 	if(server_id != initial(server_id))
@@ -1202,18 +1202,18 @@
 
 /obj/item/circuitboard/machine/dish_drive/examine(mob/user)
 	. = ..()
-	. += span_notice("Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.")
-	. += span_notice("Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.")
+	. += "<span class='notice'>Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.</span>"
+	. += "<span class='notice'>Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.</span>"
 
 /obj/item/circuitboard/machine/dish_drive/attack_self(mob/living/user)
 	suction = !suction
-	to_chat(user, span_notice("You [suction ? "enable" : "disable"] the board's suction function."))
+	to_chat(user, "<span class='notice'>You [suction ? "enable" : "disable"] the board's suction function.</span>")
 
 /obj/item/circuitboard/machine/dish_drive/AltClick(mob/living/user)
 	if(!user.Adjacent(src))
 		return
 	transmit = !transmit
-	to_chat(user, span_notice("You [transmit ? "enable" : "disable"] the board's automatic disposal transmission."))
+	to_chat(user, "<span class='notice'>You [transmit ? "enable" : "disable"] the board's automatic disposal transmission.</span>")
 
 /obj/item/circuitboard/machine/gibber
 	name = "Gibber (Machine Board)"
@@ -1441,12 +1441,12 @@
 /obj/item/circuitboard/machine/shuttle/heater/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
 		return
 
 /obj/item/circuitboard/machine/shuttle/heater/examine()
 	. = ..()
-	. += span_notice("It is set to layer [pipe_layer].")
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/shuttle/fire_heater
 	name = "Combustion Engine Heater (Machine Board)"
@@ -1461,12 +1461,12 @@
 /obj/item/circuitboard/machine/shuttle/fire_heater/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
+		to_chat(user, "<span class='notice'>You change the circuitboard to layer [pipe_layer].</span>")
 		return
 
 /obj/item/circuitboard/machine/shuttle/fire_heater/examine()
 	. = ..()
-	. += span_notice("It is set to layer [pipe_layer].")
+	. += "<span class='notice'>It is set to layer [pipe_layer].</span>"
 
 /obj/item/circuitboard/machine/shuttle/smes
 	name = "Electric Engine Precharger (Machine Board)"

@@ -47,6 +47,7 @@
 
 /obj/projectile/bullet/c9mm/surplus
 	name = "9mm surplus bullet"
+	damage = 15
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c9mm/ap
@@ -80,6 +81,7 @@
 
 /obj/projectile/bullet/c10mm/surplus
 	name = "10mm surplus bullet"
+	damage = 20
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c10mm/ap
@@ -113,6 +115,7 @@
 
 /obj/projectile/bullet/c45/surplus
 	name = ".45 surplus bullet"
+	damage = 22
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c45/ap

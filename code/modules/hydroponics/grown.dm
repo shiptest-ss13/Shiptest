@@ -69,7 +69,7 @@
 /obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/O, mob/user, params)
 	..()
 	if (istype(O, /obj/item/plant_analyzer))
-		var/msg = "This is \a [span_name("[src]")].\n"
+		var/msg = "This is \a <span class='name'>[src]</span>.\n"
 		if(seed)
 			msg += "[seed.get_analyzer_text()]\n"
 		var/reag_txt = ""
@@ -77,7 +77,7 @@
 			for(var/reagent_id in seed.reagents_add)
 				var/datum/reagent/R  = GLOB.chemical_reagents_list[reagent_id]
 				var/amt = reagents.get_reagent_amount(reagent_id)
-				reag_txt += "[span_info("- [R.name]: [amt]")]\n"
+				reag_txt += "<span class='info'>- [R.name]: [amt]</span>\n"
 
 		if(reag_txt)
 			msg += reag_txt
@@ -90,39 +90,39 @@
 	switch(O.tool_behaviour)
 		if(TOOL_SCREWDRIVER)
 			playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
-			user.visible_message(span_notice("[user] starts digging into \the [src]."), span_notice("You start digging into \the [src]..."), span_hear("You hear the sound of a sharp object penetrating some plant matter."))
+			user.visible_message("<span class='notice'>[user] starts digging into \the [src].</span>", "<span class='notice'>You start digging into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
 			if(do_after(user, 28, target = src))
-				to_chat(user, span_notice("You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!"))
+				to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
 				seedify(src, 1, TRUE, TRUE, src, user)
 			playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
-			user.visible_message(span_notice("[user] starts digging into \the [src]."), span_notice("You start digging into \the [src]..."), span_hear("You hear the sound of a sharp object penetrating some plant matter."))
+			user.visible_message("<span class='notice'>[user] starts digging into \the [src].</span>", "<span class='notice'>You start digging into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
 			if(do_after(user, 28, target = src))
-				to_chat(user, span_notice("You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!"))
+				to_chat(user, "<span class='notice'>You dig into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
 				seedify(src, 1, TRUE, TRUE, src, user)
 		if(TOOL_WIRECUTTER)
 			playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
-			user.visible_message(span_notice("[user] starts nipping into \the [src]."), span_notice("You start nipping into \the [src]..."), span_hear("You hear the sound of a sharp object penetrating some plant matter."))
+			user.visible_message("<span class='notice'>[user] starts nipping into \the [src].</span>", "<span class='notice'>You start nipping into \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object penetrating some plant matter.</span>")
 			if(do_after(user, 28, target = src))
-				to_chat(user, span_notice("You nip into the [src] to collect it's seeds! It's all gross and unusuable now, ew!"))
+				to_chat(user, "<span class='notice'>You nip into the [src] to collect it's seeds! It's all gross and unusuable now, ew!</span>")
 				seedify(src, 1, TRUE, TRUE, src, user)
 		if(TOOL_CROWBAR)
 			playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-			user.visible_message(span_notice("[user] starts splitting \the [src]."), span_notice("You dig into \the [src] and start to split it..."), span_hear("You hear the sound of a sharp object digging into some plant matter."))
+			user.visible_message("<span class='notice'>[user] starts splitting \the [src].</span>", "<span class='notice'>You dig into \the [src] and start to split it...</span>", "<span class='hear'>You hear the sound of a sharp object digging into some plant matter.</span>")
 			if(do_after(user, 20, target = src))
-				to_chat(user, span_notice("You split apart the [src]! Sadly you put too much force and it's remains are unusable, but hey, you got your seeds!"))
+				to_chat(user, "<span class='notice'>You split apart the [src]! Sadly you put too much force and it's remains are unusable, but hey, you got your seeds!</span>")
 				seedify(src, 1, TRUE, TRUE, src, user)
 		if(TOOL_WRENCH)
 			playsound(loc, 'sound/misc/splort.ogg', 50, TRUE, -1)
-			user.visible_message(span_notice("[user] starts whacking \the [src]."), span_notice("You start whacking \the [src]..."), span_hear("You hear the sound of a plant being whacked violently."))
+			user.visible_message("<span class='notice'>[user] starts whacking \the [src].</span>", "<span class='notice'>You start whacking \the [src]...</span>", "<span class='hear'>You hear the sound of a plant being whacked violently.</span>")
 			if(do_after(user, 17, target = src))
-				to_chat(user, span_notice("You smash [src]! Sadly there's nothing left of it other than the seeds and some junk."))
+				to_chat(user, "<span class='notice'>You smash [src]! Sadly there's nothing left of it other than the seeds and some junk.</span>")
 				seedify(src, 1, TRUE, TRUE, src, user)
 	if(!slice_path)
 		if(O.get_sharpness())
 			playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-			user.visible_message(span_notice("[user] starts slicing apart \the [src]."), span_notice("You start slicing apart \the [src]..."), span_hear("You hear the sound of a sharp object slicing some plant matter."))
+			user.visible_message("<span class='notice'>[user] starts slicing apart \the [src].</span>", "<span class='notice'>You start slicing apart \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing some plant matter.</span>")
 			if(do_after(user, 30, target = src))
-				to_chat(user, span_notice("You slice apart the [src]! You went too far and the tiny remaining scraps are worthless!"))
+				to_chat(user, "<span class='notice'>You slice apart the [src]! You went too far and the tiny remaining scraps are worthless!</span>")
 				seedify(src, 1, TRUE, TRUE, src, user)
 
 /obj/item/reagent_containers/food/snacks/grown/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -147,7 +147,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/grind_requirements()
 	if(dry_grind && !dry)
-		to_chat(usr, span_warning("[src] needs to be dry before it can be ground up!"))
+		to_chat(usr, "<span class='warning'>[src] needs to be dry before it can be ground up!</span>")
 		return
 	return TRUE
 
@@ -193,4 +193,4 @@
 		qdel(src)
 		//put trash obj in hands or drop to ground
 		user.put_in_hands(T, user.active_hand_index, TRUE)
-		to_chat(user, span_notice("You open [src]\'s shell, revealing \a [T]."))
+		to_chat(user, "<span class='notice'>You open [src]\'s shell, revealing \a [T].</span>")

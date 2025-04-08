@@ -44,12 +44,12 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 					avail_chans += "use [MODE_TOKEN_DEPARTMENT] or [GLOB.channel_tokens[channels[i]]] for [lowertext(channels[i])]"
 				else
 					avail_chans += "use [GLOB.channel_tokens[channels[i]]] for [lowertext(channels[i])]"
-		. += span_notice("A small screen on the headset displays the following available frequencies:\n[english_list(avail_chans)].")
+		. += "<span class='notice'>A small screen on the headset displays the following available frequencies:\n[english_list(avail_chans)].</span>"
 
 		if(command)
-			. += span_info("Alt-click to toggle the high-volume mode.")
+			. += "<span class='info'>Alt-click to toggle the high-volume mode.</span>"
 	else
-		. += span_notice("A small screen on the headset flashes, it's too small to read without holding or wearing the headset.")
+		. += "<span class='notice'>A small screen on the headset flashes, it's too small to read without holding or wearing the headset.</span>"
 
 /obj/item/radio/headset/Initialize()
 	. = ..()
@@ -479,14 +479,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 				keyslot2 = null
 
 			recalculateChannels()
-			to_chat(user, span_notice("You pop out the encryption keys in the headset."))
+			to_chat(user, "<span class='notice'>You pop out the encryption keys in the headset.</span>")
 
 		else
-			to_chat(user, span_warning("This headset doesn't have any unique encryption keys! How useless..."))
+			to_chat(user, "<span class='warning'>This headset doesn't have any unique encryption keys! How useless...</span>")
 
 	else if(istype(W, /obj/item/encryptionkey))
 		if(keyslot && keyslot2)
-			to_chat(user, span_warning("The headset can't hold another key!"))
+			to_chat(user, "<span class='warning'>The headset can't hold another key!</span>")
 			return
 
 		if(!keyslot)
@@ -525,4 +525,4 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		return
 	if (command)
 		use_command = !use_command
-		to_chat(user, span_notice("You toggle high-volume mode [use_command ? "on" : "off"]."))
+		to_chat(user, "<span class='notice'>You toggle high-volume mode [use_command ? "on" : "off"].</span>")

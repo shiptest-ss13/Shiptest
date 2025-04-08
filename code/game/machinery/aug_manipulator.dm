@@ -16,7 +16,7 @@
 /obj/machinery/aug_manipulator/examine(mob/user)
 	. = ..()
 	if(storedpart)
-		. += span_notice("Alt-click to eject the limb.")
+		. += "<span class='notice'>Alt-click to eject the limb.</span>"
 
 /obj/machinery/aug_manipulator/Initialize()
 	if(!base_icon_state)
@@ -66,13 +66,13 @@
 	else if(istype(O, /obj/item/bodypart))
 		var/obj/item/bodypart/B = O
 		if(IS_ORGANIC_LIMB(B))
-			to_chat(user, span_warning("The machine only accepts cybernetics!"))
+			to_chat(user, "<span class='warning'>The machine only accepts cybernetics!</span>")
 			return
 		if(!(O.type in type_whitelist)) //Kepori won't break my system damn it
-			to_chat(user, span_warning("The machine doesn't accept that type of prosthetic!"))
+			to_chat(user, "<span class='warning'>The machine doesn't accept that type of prosthetic!</span>")
 			return
 		if(storedpart)
-			to_chat(user, span_warning("There is already something inside!"))
+			to_chat(user, "<span class='warning'>There is already something inside!</span>")
 			return
 		else
 			O = user.get_active_held_item()
@@ -87,19 +87,19 @@
 			if(!O.tool_start_check(user, amount=0))
 				return
 
-			user.visible_message(span_notice("[user] begins repairing [src]."), \
-				span_notice("You begin repairing [src]..."), \
-				span_hear("You hear welding."))
+			user.visible_message("<span class='notice'>[user] begins repairing [src].</span>", \
+				"<span class='notice'>You begin repairing [src]...</span>", \
+				"<span class='hear'>You hear welding.</span>")
 
 			if(O.use_tool(src, user, 40, volume=50))
 				if(!(machine_stat & BROKEN))
 					return
-				to_chat(user, span_notice("You repair [src]."))
+				to_chat(user, "<span class='notice'>You repair [src].</span>")
 				set_machine_stat(machine_stat & ~BROKEN)
 				obj_integrity = max(obj_integrity, max_integrity)
 				update_appearance()
 		else
-			to_chat(user, span_notice("[src] does not need repairs."))
+			to_chat(user, "<span class='notice'>[src] does not need repairs.</span>")
 	else
 		return ..()
 
@@ -123,7 +123,7 @@
 		eject_part(user)
 
 	else
-		to_chat(user, span_warning("\The [src] is empty!"))
+		to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
 
 /obj/machinery/aug_manipulator/proc/eject_part(mob/living/user)
 	if(storedpart)
@@ -131,7 +131,7 @@
 		storedpart = null
 		update_appearance()
 	else
-		to_chat(user, span_warning("[src] is empty!"))
+		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
 /obj/machinery/aug_manipulator/AltClick(mob/living/user)
 	..()

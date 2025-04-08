@@ -86,15 +86,15 @@
 		if(1)
 			if(!locked)
 				if(!istype(target) || target.anchored || target.move_resist >= MOVE_FORCE_EXTREMELY_STRONG)
-					occupant_message(span_warning("Unable to lock on [target]!"))
+					occupant_message("<span class='warning'>Unable to lock on [target]!</span>")
 					return
 				if(ismob(target))
 					var/mob/M = target
 					if(M.mob_negates_gravity())
-						occupant_message(span_warning("Unable to lock on [target]!"))
+						occupant_message("<span class='warning'>Unable to lock on [target]!</span>")
 						return
 				locked = target
-				occupant_message(span_notice("Locked on [target]."))
+				occupant_message("<span class='notice'>Locked on [target].</span>")
 				send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 			else if(target!=locked)
 				if(locked in view(chassis))
@@ -107,7 +107,7 @@
 					return TRUE
 				else
 					locked = null
-					occupant_message(span_notice("Lock on [locked] disengaged."))
+					occupant_message("<span class='notice'>Lock on [locked] disengaged.</span>")
 					send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 		if(2)
 			var/list/atoms = list()
@@ -349,7 +349,7 @@
 	if(isnull(cur_charge) || !chassis.cell)
 		STOP_PROCESSING(SSobj, src)
 		set_ready_state(1)
-		occupant_message(span_notice("No powercell detected."))
+		occupant_message("<span class='notice'>No powercell detected.</span>")
 		return
 	if(cur_charge < chassis.cell.maxcharge)
 		var/area/A = get_area(chassis)
@@ -427,13 +427,13 @@
 			var/units = min(max(round(to_load / MINERAL_MATERIAL_AMOUNT),1),sheet_being_inserted.amount)
 			fuel.amount += units
 			sheet_being_inserted.use(units)
-			occupant_message(span_notice("[units] unit\s of [fuel] successfully loaded."))
+			occupant_message("<span class='notice'>[units] unit\s of [fuel] successfully loaded.</span>")
 			return units
 		else
-			occupant_message(span_notice("Unit is full."))
+			occupant_message("<span class='notice'>Unit is full.</span>")
 			return 0
 	else
-		occupant_message(span_warning("[fuel] traces in target minimal! [sheet_being_inserted] cannot be used as fuel."))
+		occupant_message("<span class='warning'>[fuel] traces in target minimal! [sheet_being_inserted] cannot be used as fuel.</span>")
 		return
 
 /obj/item/mecha_parts/mecha_equipment/generator/attackby(weapon,mob/user, params)
@@ -452,7 +452,7 @@
 	var/cur_charge = chassis.get_charge()
 	if(isnull(cur_charge))
 		set_ready_state(1)
-		occupant_message(span_notice("No powercell detected."))
+		occupant_message("<span class='notice'>No powercell detected.</span>")
 		log_message("Deactivated.", LOG_MECHA)
 		STOP_PROCESSING(SSobj, src)
 		return
@@ -495,7 +495,7 @@
 /obj/item/mecha_parts/mecha_equipment/thrusters/try_attach_part(mob/user, obj/mecha/M)
 	for(var/obj/item/I in M.equipment)
 		if(istype(I, src))
-			to_chat(user, span_warning("[M] already has this thruster package!"))
+			to_chat(user, "<span class='warning'>[M] already has this thruster package!</span>")
 			return FALSE
 	. = ..()
 
@@ -530,13 +530,13 @@
 	if (chassis.active_thrusters == src)
 		return
 	chassis.active_thrusters = src
-	occupant_message(span_notice("[src] enabled."))
+	occupant_message("<span class='notice'>[src] enabled.</span>")
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/proc/disable()
 	if(chassis.active_thrusters != src)
 		return
 	chassis.active_thrusters = null
-	occupant_message(span_notice("[src] disabled."))
+	occupant_message("<span class='notice'>[src] disabled.</span>")
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/get_equip_info()
 	return "[..()] \[<a href='?src=[REF(src)];mode=0'>Enable</a>|<a href='?src=[REF(src)];mode=1'>Disable</a>\]"
@@ -562,7 +562,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/gas/try_attach_part(mob/user, obj/mecha/M)
 	if(!M.internal_tank)
-		to_chat(user, span_warning("[M] does not have an internal tank and cannot support this upgrade!"))
+		to_chat(user, "<span class='warning'>[M] does not have an internal tank and cannot support this upgrade!</span>")
 		return FALSE
 	. = ..()
 

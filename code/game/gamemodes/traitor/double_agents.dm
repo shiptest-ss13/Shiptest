@@ -22,6 +22,8 @@
 	<span class='danger'>IAA</span>: Eliminate your targets and protect yourself!\n\
 	<span class='notice'>Crew</span>: Stop the IAA agents before they can cause too much mayhem."
 
+
+
 /datum/game_mode/traitor/internal_affairs/post_setup()
 	var/i = 0
 	for(var/datum/mind/traitor in pre_traitors)

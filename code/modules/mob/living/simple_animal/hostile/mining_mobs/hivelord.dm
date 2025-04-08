@@ -133,7 +133,7 @@
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(15))
 		new /obj/item/mob_trophy/legion_skull(loc)
-		visible_message(span_warning("One of the [src]'s skulls looks intact."))
+		visible_message("<span class='warning'>One of the [src]'s skulls looks intact.</span>")
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
@@ -159,7 +159,7 @@
 	dwarf_mob = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
-	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))
+	visible_message("<span class='warning'>The skulls on [src] wail in anger as they flee from their dying host!</span>")
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)
@@ -384,7 +384,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	visible_message(span_userwarning("[src] falls over with a mighty crash, the remaining legions within it falling apart!"))
+	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it falling apart!</span>")
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)

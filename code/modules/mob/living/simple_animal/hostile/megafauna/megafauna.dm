@@ -117,8 +117,8 @@
 	if(!L)
 		return FALSE
 	visible_message(
-		span_danger("[src] devours [L]!"),
-		span_userdanger("You feast on [L], restoring your health!"))
+		"<span class='danger'>[src] devours [L]!</span>",
+		"<span class='userdanger'>You feast on [L], restoring your health!</span>")
 	adjustBruteLoss(-L.maxHealth/2)
 	L.gib()
 	return TRUE

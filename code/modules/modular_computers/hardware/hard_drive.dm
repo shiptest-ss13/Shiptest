@@ -20,7 +20,7 @@
 
 /obj/item/computer_hardware/hard_drive/examine(user)
 	. = ..()
-	. += span_notice("It has [max_capacity] GQ of storage capacity.")
+	. += "<span class='notice'>It has [max_capacity] GQ of storage capacity.</span>"
 
 /obj/item/computer_hardware/hard_drive/diagnostics(mob/user)
 	..()

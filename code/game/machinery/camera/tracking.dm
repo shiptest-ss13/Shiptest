@@ -80,11 +80,11 @@
 	U.tracking = 1
 
 	if(!target || !target.can_track(usr))
-		to_chat(U, span_warning("Target is not near any active cameras."))
+		to_chat(U, "<span class='warning'>Target is not near any active cameras.</span>")
 		U.cameraFollow = null
 		return
 
-	to_chat(U, span_notice("Now tracking [target.get_visible_name()] on camera."))
+	to_chat(U, "<span class='notice'>Now tracking [target.get_visible_name()] on camera.</span>")
 
 	INVOKE_ASYNC(src, PROC_REF(do_track), target, U)
 
@@ -98,11 +98,11 @@
 		if(!target.can_track(usr))
 			U.tracking = 1
 			if(!cameraticks)
-				to_chat(U, span_warning("Target is not near any active cameras. Attempting to reacquire..."))
+				to_chat(U, "<span class='warning'>Target is not near any active cameras. Attempting to reacquire...</span>")
 			cameraticks++
 			if(cameraticks > 9)
 				U.cameraFollow = null
-				to_chat(U, span_warning("Unable to reacquire, cancelling track..."))
+				to_chat(U, "<span class='warning'>Unable to reacquire, cancelling track...</span>")
 				tracking = 0
 				return
 			else

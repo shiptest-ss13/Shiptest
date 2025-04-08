@@ -86,14 +86,14 @@
 	..()
 	if(!can_be_disabled)
 		return
-	user.visible_message(span_warning("[user] cuts power to [src]."),
-		span_notice("You start to cut power to [src]."), span_hear("You hear cutting."))
+	user.visible_message("<span class='warning'>[user] cuts power to [src].</span>",
+		"<span class='notice'>You start to cut power to [src].</span>", "<span class='hear'>You hear cutting.</span>")
 	if(!disabled)
 		if(I.use_tool(src, user, time_to_disable, volume=100))
-			to_chat(user, span_notice("You disable [src]."))
+			to_chat(user, "<span class='notice'>You disable [src].</span>")
 			disable()
 	else
 		if(I.use_tool(src, user, time_to_disable * 2, volume=100))
-			to_chat(user, span_notice("You destroy [src]."))
+			to_chat(user, "<span class='notice'>You destroy [src].</span>")
 			qdel(src)
 	return TRUE

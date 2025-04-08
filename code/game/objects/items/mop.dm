@@ -43,7 +43,7 @@
 		return
 
 	if(reagents.total_volume < 0.1)
-		to_chat(user, span_warning("Your mop is dry!"))
+		to_chat(user, "<span class='warning'>Your mop is dry!</span>")
 		return
 
 	var/turf/T = get_turf(target)
@@ -54,10 +54,10 @@
 	if(T)
 		target.add_overlay(GLOB.cleaning_bubbles)
 		playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
-		user.visible_message(span_notice("[user] begins to clean \the [T] with [src]."), span_notice("You begin to clean \the [T] with [src]..."))
+		user.visible_message("<span class='notice'>[user] begins to clean \the [T] with [src].</span>", "<span class='notice'>You begin to clean \the [T] with [src]...</span>")
 		var/clean_speedies = user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)
 		if(do_after(user, mopspeed*clean_speedies, target = T))
-			to_chat(user, span_notice("You finish mopping."))
+			to_chat(user, "<span class='notice'>You finish mopping.</span>")
 			clean(T, user)
 		target.cut_overlay(GLOB.cleaning_bubbles)
 
@@ -75,7 +75,7 @@
 		J.mymop=src
 		J.update_appearance()
 	else
-		to_chat(user, span_warning("You are unable to fit your [name] into the [J.name]."))
+		to_chat(user, "<span class='warning'>You are unable to fit your [name] into the [J.name].</span>")
 		return
 
 /obj/item/mop/cyborg
@@ -108,7 +108,7 @@
 		START_PROCESSING(SSobj, src)
 	else
 		STOP_PROCESSING(SSobj,src)
-	to_chat(user, span_notice("You set the condenser switch to the '[refill_enabled ? "ON" : "OFF"]' position."))
+	to_chat(user, "<span class='notice'>You set the condenser switch to the '[refill_enabled ? "ON" : "OFF"]' position.</span>")
 	playsound(user, 'sound/machines/click.ogg', 30, TRUE)
 
 /obj/item/mop/advanced/process(seconds_per_tick)
@@ -118,7 +118,7 @@
 
 /obj/item/mop/advanced/examine(mob/user)
 	. = ..()
-	. += span_notice("The condenser switch is set to <b>[refill_enabled ? "ON" : "OFF"]</b>.")
+	. += "<span class='notice'>The condenser switch is set to <b>[refill_enabled ? "ON" : "OFF"]</b>.</span>"
 
 /obj/item/mop/advanced/Destroy()
 	if(refill_enabled)

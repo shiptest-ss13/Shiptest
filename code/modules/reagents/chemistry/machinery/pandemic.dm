@@ -35,7 +35,7 @@
 			is_close = TRUE
 		else
 			. += "It has a beaker inside it."
-		. += span_info("Alt-click to eject [is_close ? beaker : "the beaker"].")
+		. += "<span class='info'>Alt-click to eject [is_close ? beaker : "the beaker"].</span>"
 
 /obj/machinery/computer/pandemic/AltClick(mob/user)
 	. = ..()
@@ -205,7 +205,7 @@
 			var/id = get_virus_id_by_index(text2num(params["index"]))
 			var/datum/disease/advance/A = SSdisease.archive_diseases[id]
 			if(!istype(A) || !A.mutable)
-				to_chat(usr, span_warning("ERROR: Cannot replicate virus strain."))
+				to_chat(usr, "<span class='warning'>ERROR: Cannot replicate virus strain.</span>")
 				return
 			A = A.Copy()
 			var/list/data = list("viruses" = list(A))
@@ -239,13 +239,13 @@
 		if(machine_stat & (NOPOWER|BROKEN))
 			return
 		if(beaker)
-			to_chat(user, span_warning("A container is already loaded into [src]!"))
+			to_chat(user, "<span class='warning'>A container is already loaded into [src]!</span>")
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 
 		beaker = I
-		to_chat(user, span_notice("You insert [I] into [src]."))
+		to_chat(user, "<span class='notice'>You insert [I] into [src].</span>")
 		update_appearance()
 	else
 		return ..()

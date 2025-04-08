@@ -33,7 +33,7 @@
 
 /obj/machinery/plumbing/examine(mob/user)
 	. = ..()
-	. += span_notice("The maximum volume display reads: <b>[reagents.maximum_volume] units</b>.")
+	. += "<span class='notice'>The maximum volume display reads: <b>[reagents.maximum_volume] units</b>.</span>"
 
 /obj/machinery/plumbing/wrench_act(mob/living/user, obj/item/I)
 	..()
@@ -41,9 +41,9 @@
 	return TRUE
 
 /obj/machinery/plumbing/plunger_act(obj/item/plunger/P, mob/living/user)
-	to_chat(user, span_notice("You start furiously plunging [name]."))
+	to_chat(user, "<span class='notice'>You start furiously plunging [name].</span>")
 	if(do_after(user, 30, target = src))
-		to_chat(user, span_notice("You finish plunging the [name]."))
+		to_chat(user, "<span class='notice'>You finish plunging the [name].</span>")
 		reagents.expose(get_turf(src), TOUCH) //splash on the floor
 		reagents.clear_reagents()
 

@@ -32,21 +32,21 @@
 		if(!user.transferItemToLoc(P, src))
 			return
 		playsound(loc, "pageturn", 60, TRUE)
-		to_chat(user, span_notice("You place [P] in [src]."))
+		to_chat(user, "<span class='notice'>You place [P] in [src].</span>")
 		storedpaper = P
 		update_appearance()
 		return
 	if(istype(P, /obj/item/hatchet/cutterblade) && !storedcutter)
 		if(!user.transferItemToLoc(P, src))
 			return
-		to_chat(user, span_notice("You replace [src]'s [P]."))
+		to_chat(user, "<span class='notice'>You replace [src]'s [P].</span>")
 		P.forceMove(src)
 		storedcutter = P
 		update_appearance()
 		return
 	if(P.tool_behaviour == TOOL_SCREWDRIVER && storedcutter)
 		P.play_tool_sound(src)
-		to_chat(user, span_notice("[storedcutter] has been [cuttersecured ? "unsecured" : "secured"]."))
+		to_chat(user, "<span class='notice'>[storedcutter] has been [cuttersecured ? "unsecured" : "secured"].</span>")
 		cuttersecured = !cuttersecured
 		return
 	..()
@@ -57,18 +57,18 @@
 		return
 	add_fingerprint(user)
 	if(!storedcutter)
-		to_chat(user, span_warning("The cutting blade is gone! You can't use [src] now."))
+		to_chat(user, "<span class='warning'>The cutting blade is gone! You can't use [src] now.</span>")
 		return
 
 	if(!cuttersecured)
-		to_chat(user, span_notice("You remove [src]'s [storedcutter]."))
+		to_chat(user, "<span class='notice'>You remove [src]'s [storedcutter].</span>")
 		user.put_in_hands(storedcutter)
 		storedcutter = null
 		update_appearance()
 
 	if(storedpaper)
 		playsound(src.loc, 'sound/weapons/slash.ogg', 50, TRUE)
-		to_chat(user, span_notice("You neatly cut [storedpaper]."))
+		to_chat(user, "<span class='notice'>You neatly cut [storedpaper].</span>")
 		storedpaper = null
 		qdel(storedpaper)
 		new /obj/item/paper/paperslip(get_turf(src))

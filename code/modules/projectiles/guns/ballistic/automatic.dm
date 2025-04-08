@@ -33,4 +33,3 @@
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
-	wear_rate = 5 //it's a. piece of shit.

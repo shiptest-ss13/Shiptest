@@ -196,7 +196,7 @@
 	var/obj/item/card/id/W = H.get_idcard()
 	if(H.age < AGE_MINOR)
 		W.registered_age = AGE_MINOR
-		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!"))
+		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")
 
 /datum/outfit/job/syndicate/bartender/suns
 	name = "Syndicate - Student Mixologist (SUNS)"
@@ -1001,14 +1001,6 @@
 	satchel  = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
-
-/datum/outfit/job/syndicate/security/suns/alternate
-	name = "Syndicate - Peacekeeper - Casual(SUNS)"
-	id_assignment = "Peacekeeper"
-
-	suit = /obj/item/clothing/suit/toggle/suns/pkcoat
-	belt = null
-	head = null
 
 //Miners
 

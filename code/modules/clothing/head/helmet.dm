@@ -52,7 +52,7 @@
 	if(attached_light)
 		. += "It has \a [attached_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight)
-			. += span_info("[attached_light] looks like it can be unclipped from [src]. You can <b>Alt-Click</b> to detatch it.")
+			. += "<span class='info'>[attached_light] looks like it can be unclipped from [src]. You can <b>Alt-Click</b> to detatch it.</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
 
@@ -92,7 +92,7 @@
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
 			icon_state = "[initial(icon_state)][up ? "up" : ""]"
-			to_chat(user, span_notice("[up ? alt_toggle_message : toggle_message] \the [src]."))
+			to_chat(user, "<span class='notice'>[up ? alt_toggle_message : toggle_message] \the [src].</span>")
 
 			user.update_inv_head()
 			if(iscarbon(user))
@@ -117,7 +117,7 @@
 		if(can_flashlight && !attached_light)
 			if(!user.transferItemToLoc(attaching_seclite, src))
 				return
-			to_chat(user, span_notice("You click [attaching_seclite] into place on [src]."))
+			to_chat(user, "<span class='notice'>You click [attaching_seclite] into place on [src].</span>")
 			set_attached_light(attaching_seclite)
 			update_appearance()
 			update_helmlight()
@@ -130,7 +130,7 @@
 /obj/item/clothing/head/helmet/AltClick(mob/living/user)
 	. = ..()
 	if(can_flashlight && attached_light) //if it has a light but can_flashlight is false, the light is permanently attached.
-		to_chat(user, span_notice("You unclip [attached_light] from [src]."))
+		to_chat(user, "<span class='notice'>You unclip [attached_light] from [src].</span>")
 		attached_light.forceMove(drop_location())
 		if(Adjacent(user) && !issilicon(user))
 			user.put_in_hands(attached_light)
@@ -156,7 +156,7 @@
 		return
 	attached_light.on = !attached_light.on
 	attached_light.update_brightness()
-	to_chat(user, span_notice("You toggle the helmet light [attached_light.on ? "on":"off"]."))
+	to_chat(user, "<span class='notice'>You toggle the helmet light [attached_light.on ? "on":"off"].</span>")
 
 	playsound(user, attached_light.on ? attached_light.toggle_on_sound : attached_light.toggle_off_sound, 100, TRUE)
 	update_helmlight()
@@ -204,14 +204,14 @@
 	if(issignaler(I))
 		var/obj/item/assembly/signaler/S = I
 		if(attached_light) //Has a flashlight. Player must remove it, else it will be lost forever.
-			to_chat(user, span_warning("The mounted flashlight is in the way, remove it first!"))
+			to_chat(user, "<span class='warning'>The mounted flashlight is in the way, remove it first!</span>")
 			return
 
 		if(S.secured)
 			qdel(S)
 			var/obj/item/bot_assembly/secbot/A = new
 			user.put_in_hands(A)
-			to_chat(user, span_notice("You add the signaler to the helmet."))
+			to_chat(user, "<span class='notice'>You add the signaler to the helmet.</span>")
 			qdel(src)
 			return
 	return ..()

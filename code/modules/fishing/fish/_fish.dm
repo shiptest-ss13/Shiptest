@@ -121,13 +121,13 @@
 			!(locate(/obj/structure/table/optable) in src.loc) && \
 			!(locate(/obj/item/storage/bag/tray) in src.loc) \
 		)
-		to_chat(user, span_warning("You cannot slice [src] here! You need a table or at least a tray."))
+		to_chat(user, "<span class='warning'>You cannot slice [src] here! You need a table or at least a tray.</span>")
 		return FALSE
 	if(tool.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message(span_notice("[user] starts filleting \the [src]."), span_notice("You start filleting \the [src]..."), span_hear("You hear the sound of a sharp object slicing meat."))
+		user.visible_message("<span class='notice'>[user] starts filleting \the [src].</span>", "<span class='notice'>You start filleting \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing meat.</span>")
 		if(do_after(user, 30, target = src))
-			to_chat(user, span_notice("You fillet the [src]."))
+			to_chat(user, "<span class='notice'>You fillet the [src].</span>")
 			new fillet_type(loc, 1)
 		qdel(src)
 

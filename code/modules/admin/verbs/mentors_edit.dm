@@ -11,7 +11,7 @@ its mentors, not actual dangerous perms
 	if(!check_rights(R_PERMISSIONS))
 		return
 	if(!SSdbcore.IsConnected())
-		to_chat(src, span_danger("Failed to establish database connection."))
+		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
 		return
 
 	var/html = ""

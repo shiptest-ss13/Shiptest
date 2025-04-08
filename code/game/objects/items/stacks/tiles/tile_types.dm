@@ -45,34 +45,34 @@
 				verb = "mediocre"
 		if(!verb)
 			return
-		. += span_notice("Those could work as a [verb] throwing weapon.")
+		. += "<span class='notice'>Those could work as a [verb] throwing weapon.</span>"
 
 
 /obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
 
 	if (W.tool_behaviour == TOOL_WELDER)
 		if(get_amount() < 4)
-			to_chat(user, span_warning("You need at least four tiles to do this!"))
+			to_chat(user, "<span class='warning'>You need at least four tiles to do this!</span>")
 			return
 
 		if(!mineralType)
-			to_chat(user, span_warning("You can not reform this!"))
+			to_chat(user, "<span class='warning'>You can not reform this!</span>")
 			return
 
 		if(W.use_tool(src, user, 0, volume=40))
 			if(mineralType == "plasma")
 				atmos_spawn_air("plasma=5;TEMP=1000")
-				user.visible_message(span_warning("[user.name] sets the plasma tiles on fire!"), \
-									span_warning("You set the plasma tiles on fire!"))
+				user.visible_message("<span class='warning'>[user.name] sets the plasma tiles on fire!</span>", \
+									"<span class='warning'>You set the plasma tiles on fire!</span>")
 				qdel(src)
 				return
 
 			if (mineralType == "metal")
 				var/obj/item/stack/sheet/metal/new_item = new(user.loc)
 				user.visible_message(
-					span_notice("[user.name] shaped [src] into metal with the welding tool."),
-					span_notice("You shaped [src] into metal with the welding tool."),
-					span_hear("You hear welding.")
+					"<span class='notice'>[user.name] shaped [src] into metal with the welding tool.</span>",
+					"<span class='notice'>You shaped [src] into metal with the welding tool.</span>",
+					"<span class='hear'>You hear welding.</span>"
 				)
 				var/obj/item/stack/rods/R = src
 				src = null
@@ -85,9 +85,9 @@
 				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
 				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
 				user.visible_message(
-					span_notice("[user.name] shaped [src] into a sheet with the welding tool."),
-					span_notice("You shaped [src] into a sheet with the welding tool."),
-					span_hear("You hear welding.")
+					"<span class='notice'>[user.name] shaped [src] into a sheet with the welding tool.</span>",
+					"<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>",
+					"<span class='hear'>You hear welding.</span>"
 				)
 				var/obj/item/stack/rods/R = src
 				src = null

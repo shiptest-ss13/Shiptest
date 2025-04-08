@@ -39,7 +39,7 @@
 				. += "It has a slot installed for an intelliCard which contains: [ai_slot.stored_card.name]"
 			else
 				. += "It has a slot installed for an intelliCard, which appears to be occupied."
-			. += span_info("Alt-click to eject the intelliCard.")
+			. += "<span class='info'>Alt-click to eject the intelliCard.</span>"
 		else
 			. += "It has a slot installed for an intelliCard."
 
@@ -53,7 +53,7 @@
 				. += "It has two slots for identification cards installed[multiple_cards ? " which contain [first_ID] and [second_ID]" : ", one of which contains [first_ID ? first_ID : second_ID]"]."
 			else
 				. += "It has two slots for identification cards installed, [multiple_cards ? "both of which appear" : "and one of them appears"] to be occupied."
-			. += span_info("Alt-click [src] to eject the identification card[multiple_cards ? "s":""].")
+			. += "<span class='info'>Alt-click [src] to eject the identification card[multiple_cards ? "s":""].</span>"
 		else
 			. += "It has two slots installed for identification cards."
 

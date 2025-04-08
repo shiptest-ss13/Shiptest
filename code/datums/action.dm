@@ -344,10 +344,10 @@
 	if(istype(target, /obj/item/clothing/head/helmet/space/hardsuit/berserker))
 		var/obj/item/clothing/head/helmet/space/hardsuit/berserker/berzerk = target
 		if(berzerk.berserk_active)
-			to_chat(owner, span_warning("You are already berserk!"))
+			to_chat(owner, "<span class='warning'>You are already berserk!</span>")
 			return
 		if(berzerk.berserk_charge < 100)
-			to_chat(owner, span_warning("You don't have a full charge."))
+			to_chat(owner, "<span class='warning'>You don't have a full charge.</span>")
 			return
 		berzerk.berserk_mode(owner)
 		return
@@ -447,7 +447,7 @@
 			owner.research_scanner++
 		else
 			owner.research_scanner--
-		to_chat(owner, span_notice("[target] research scanner has been [active ? "activated" : "deactivated"]."))
+		to_chat(owner, "<span class='notice'>[target] research scanner has been [active ? "activated" : "deactivated"].</span>")
 		return 1
 
 /datum/action/item_action/toggle_research_scanner/Remove(mob/M)
@@ -511,7 +511,7 @@
 		return
 	//Box closing from here on out.
 	if(!isturf(owner.loc)) //Don't let the player use this to escape mechs/welded closets.
-		to_chat(owner, span_warning("You need more space to activate this implant!"))
+		to_chat(owner, "<span class='warning'>You need more space to activate this implant!</span>")
 		return
 	if(cooldown < world.time - 100)
 		var/box = new boxtype(owner.drop_location())
@@ -756,8 +756,8 @@
 	if(istype(target, /obj/item/flashlight/lantern/lanternbang))
 		var/obj/item/flashlight/lantern/lanternbang/L = target
 		if(L.cooldown)
-			to_chat(owner, span_warning("The lanternbang is still on cooldown!"))
+			to_chat(owner, "<span class='warning'>The lanternbang is still on cooldown!</span>")
 			return
-		to_chat(owner, span_warning("You overload the lanternbang!"))
+		to_chat(owner, "<span class='warning'>You overload the lanternbang!</span>")
 		L.activate()
 		return

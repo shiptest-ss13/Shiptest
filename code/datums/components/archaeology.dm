@@ -29,17 +29,17 @@
 	SIGNAL_HANDLER
 
 	if(dug)
-		to_chat(user, span_warning("Looks like someone has dug here already!"))
+		to_chat(user, "<span class='warning'>Looks like someone has dug here already!</span>")
 		return
 
 	if(!isturf(user.loc))
 		return
 
 	if(I.tool_behaviour == TOOL_SHOVEL || I.tool_behaviour == TOOL_MINING)
-		to_chat(user, span_notice("You start digging..."))
+		to_chat(user, "<span class='notice'>You start digging...</span>")
 
 		if(I.use_tool(parent, user, 40, volume=50))
-			to_chat(user, span_notice("You dig a hole."))
+			to_chat(user, "<span class='notice'>You dig a hole.</span>")
 			gets_dug()
 			dug = TRUE
 			SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)

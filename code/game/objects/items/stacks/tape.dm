@@ -21,23 +21,23 @@
 		return
 
 	if(I.embedding && I.embedding == conferred_embed)
-		to_chat(user, span_warning("[I] is already coated in [src]!"))
+		to_chat(user, "<span class='warning'>[I] is already coated in [src]!</span>")
 		return
 
-	user.visible_message(span_notice("[user] begins wrapping [I] with [src]."), span_notice("You begin wrapping [I] with [src]."))
+	user.visible_message("<span class='notice'>[user] begins wrapping [I] with [src].</span>", "<span class='notice'>You begin wrapping [I] with [src].</span>")
 
 	if(do_after(user, 30, target=I))
 		use(1)
 		if(istype(I, /obj/item/clothing/gloves/fingerless))
 			var/obj/item/clothing/gloves/tackler/offbrand/O = new /obj/item/clothing/gloves/tackler/offbrand
-			to_chat(user, span_notice("You turn [I] into [O] with [src]."))
+			to_chat(user, "<span class='notice'>You turn [I] into [O] with [src].</span>")
 			QDEL_NULL(I)
 			user.put_in_hands(O)
 			return
 
 		I.embedding = conferred_embed
 		I.updateEmbedding()
-		to_chat(user, span_notice("You finish wrapping [I] with [src]."))
+		to_chat(user, "<span class='notice'>You finish wrapping [I] with [src].</span>")
 		I.name = "[prefix] [I.name]"
 
 		if(istype(I, /obj/item/grenade))
@@ -104,59 +104,59 @@
 
 	//Relatable suffering
 	if((HAS_TRAIT(user, TRAIT_CLUMSY) && prob(25)))
-		to_chat(user, span_warning("Uh... where did the tape edge go?!"))
+		to_chat(user, "<span class='warning'>Uh... where did the tape edge go?!</span>")
 		return
 
 	//Mouth taping and tapecuffs
 	if(user.a_intent == INTENT_DISARM || user.a_intent == INTENT_HARM)
 		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH) //mouth tape
 			if(C.is_mouth_covered() || C.is_muzzled())
-				to_chat(user, span_warning("There is something covering [C]s mouth!"))
+				to_chat(user, "<span class='warning'>There is something covering [C]s mouth!</span>")
 				return
 			if(use(1))
 				playsound(loc, usesound, 30, TRUE, -2)
 				if(do_after(user, other_delay, C) && (!C.is_mouth_covered() || !C.is_muzzled()))
 					apply_gag(C, user)
-					C.visible_message(span_notice("[user] tapes [C]s mouth shut."), \
-										span_userdanger("[user] taped your mouth shut!"))
+					C.visible_message("<span class='notice'>[user] tapes [C]s mouth shut.</span>", \
+										"<span class='userdanger'>[user] taped your mouth shut!</span>")
 					log_combat(user, C, "gags")
 				else
-					to_chat(user, span_warning("You fail to tape up [C]!"))
+					to_chat(user, "<span class='warning'>You fail to tape up [C]!</span>")
 			else
 				to_chat(user, "<span class='warning'>There isn't enough tape left!")
 		else if (!C.handcuffed) //tapecuffs
 			if(iscarbon(user) && (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50)))
-				to_chat(user, span_warning("Uh... which side sticks again?"))
+				to_chat(user, "<span class='warning'>Uh... which side sticks again?</span>")
 				apply_tapecuffs(user, user)
 				return
 			if(C.canBeHandcuffed())
 				if(use(5))
-					C.visible_message(span_danger("[user] is trying to put [src.name] on [C]!"), \
-										span_userdanger("[user] is trying to put [src.name] on you!"))
+					C.visible_message("<span class='danger'>[user] is trying to put [src.name] on [C]!</span>", \
+										"<span class='userdanger'>[user] is trying to put [src.name] on you!</span>")
 
 					playsound(loc, usesound, 30, TRUE, -2)
 					if(do_after(user, self_delay, C) && (C.canBeHandcuffed()))
 						apply_tapecuffs(C, user)
-						C.visible_message(span_notice("[user] tapecuffs [C]."), \
-											span_userdanger("[user] tapecuffs you."))
+						C.visible_message("<span class='notice'>[user] tapecuffs [C].</span>", \
+											"<span class='userdanger'>[user] tapecuffs you.</span>")
 						SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 
 						log_combat(user, C, "tapecuffed")
 					else
-						to_chat(user, span_warning("You fail to tapecuff [C]!"))
+						to_chat(user, "<span class='warning'>You fail to tapecuff [C]!</span>")
 				else
-					to_chat(user, span_warning("There isn't enough tape left!"))
+					to_chat(user, "<span class='warning'>There isn't enough tape left!</span>")
 			else
-				to_chat(user, span_warning("[C] doesn't have two hands..."))
+				to_chat(user, "<span class='warning'>[C] doesn't have two hands...</span>")
 
 /obj/item/stack/tape/proc/try_heal(mob/living/carbon/C, mob/user)
 	if(C == user)
 		playsound(loc, usesound, 30, TRUE, -2)
-		user.visible_message(span_notice("[user] starts to apply \the [src] on [user.p_them()]self..."), span_notice("You begin applying \the [src] on yourself..."))
+		user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
 		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 	else if(other_delay)
-		user.visible_message(span_notice("[user] starts to apply \the [src] on [C]."), span_notice("You begin applying \the [src] on [C]..."))
+		user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [C].</span>", "<span class='notice'>You begin applying \the [src] on [C]...</span>")
 		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 
@@ -166,25 +166,25 @@
 
 /obj/item/stack/tape/proc/heal(mob/living/carbon/C, mob/user)
 	if(C.stat == DEAD)
-		to_chat(user, span_notice("There isn't enough [src] in the universe to fix that..."))
+		to_chat(user, "<span class='notice'>There isn't enough [src] in the universe to fix that...</span>")
 		return
 	if(!iscarbon(C))
 		return
 	var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
 	if(!affecting) //Missing limb?
-		to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]!"))
+		to_chat(user, "<span class='warning'>[C] doesn't have \a [parse_zone(user.zone_selected)]!</span>")
 		return
 	if(IS_ROBOTIC_LIMB(affecting)) //Robotic patch-up
 		if(affecting.brute_dam)
-			user.visible_message(span_notice("[user] applies \the [src] on [C]'s [affecting.name]."), span_green("You apply \the [src] on [C]'s [affecting.name]."))
+			user.visible_message("<span class='notice'>[user] applies \the [src] on [C]'s [affecting.name].</span>", "<span class='green'>You apply \the [src] on [C]'s [affecting.name].</span>")
 			if(affecting.heal_damage(nonorganic_heal))
 				C.update_damage_overlays()
 			return TRUE
 	if(affecting.can_bandage(user))
 		affecting.apply_bandage(bleed_reduction, lifespan, name)
-		to_chat(user, span_notice("You tape up [C]'s [parse_zone(affecting.body_zone)]!"))
+		to_chat(user, "<span class='notice'>You tape up [C]'s [parse_zone(affecting.body_zone)]!</span>")
 		return TRUE
-	to_chat(user, span_warning("[src] can't patch what [C] has..."))
+	to_chat(user, "<span class='warning'>[src] can't patch what [C] has...</span>")
 
 /obj/item/stack/tape/proc/apply_gag(mob/living/carbon/target, mob/user)
 	if(target.is_muzzled() || target.is_mouth_covered())
@@ -206,9 +206,9 @@
 	if(user.a_intent == INTENT_DISARM && istype(O, /obj/item))
 		var/obj/item/I = O
 		if(I.embedding && I.embedding == conferred_embed)
-			to_chat(user, span_warning("[I] is already coated in [src]!"))
+			to_chat(user, "<span class='warning'>[I] is already coated in [src]!</span>")
 			return
-		user.visible_message(span_notice("[user] begins wrapping [I] with [src]."), span_notice("You begin wrapping [I] with [src]."))
+		user.visible_message("<span class='notice'>[user] begins wrapping [I] with [src].</span>", "<span class='notice'>You begin wrapping [I] with [src].</span>")
 		if(do_after(user, 30, target=I))
 			use(1)
 			wrap_item(I, user)
@@ -217,7 +217,7 @@
 /obj/item/stack/tape/proc/wrap_item(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/clothing/gloves/fingerless))
 		var/obj/item/clothing/gloves/tackler/offbrand/O = new /obj/item/clothing/gloves/tackler/offbrand
-		to_chat(user, span_notice("You turn [I] into [O] with [src]."))
+		to_chat(user, "<span class='notice'>You turn [I] into [O] with [src].</span>")
 		QDEL_NULL(I)
 		if(!user.equip_to_slot_if_possible(O, ITEM_SLOT_GLOVES, 0))
 			user.put_in_hands(O)
@@ -225,7 +225,7 @@
 
 	I.embedding = conferred_embed
 	I.updateEmbedding()
-	to_chat(user, span_notice("You finish wrapping [I] with [src]."))
+	to_chat(user, "<span class='notice'>You finish wrapping [I] with [src].</span>")
 	I.name = "[prefix] [I.name]"
 
 	if(istype(I, /obj/item/grenade))
@@ -240,8 +240,8 @@
 /obj/item/clothing/mask/muzzle/tape/equipped(mob/M, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_HANDS)
-		M.visible_message(span_danger("[M] rips off the tape around [M.p_their()] face!"), \
-							span_userdanger("You tear off the [src] and can speak again!"))
+		M.visible_message("<span class='danger'>[M] rips off the tape around [M.p_their()] face!</span>", \
+							"<span class='userdanger'>You tear off the [src] and can speak again!</span>")
 		M.dropItemToGround(src, TRUE, TRUE)
 
 /obj/item/clothing/mask/muzzle/tape/dropped()
@@ -260,8 +260,8 @@
 
 /obj/item/restraints/handcuffs/tape/used/dropped(mob/user)
 	playsound(loc, 'sound/items/poster_ripped.ogg', 30, TRUE, -2)
-	user.visible_message(span_danger("[user] rips off the tape around [user.p_their()] hands!"), \
-							span_userdanger("You tear off the [src] and free yourself!"))
+	user.visible_message("<span class='danger'>[user] rips off the tape around [user.p_their()] hands!</span>", \
+							"<span class='userdanger'>You tear off the [src] and free yourself!</span>")
 	. = ..()
 
 /obj/item/stack/tape/industrial
@@ -280,14 +280,14 @@
 		return .
 	if(user.a_intent == INTENT_HELP)
 		if(O.obj_integrity < O.max_integrity)
-			to_chat(user, span_notice("Nothing a little [src] can't fix..."))
+			to_chat(user, "<span class='notice'>Nothing a little [src] can't fix...</span>")
 			play_tool_sound(O, 30)
 			if(src.use_tool(O, user, other_delay, 1))
 				O.AddComponent(/datum/component/taped, src)
-				to_chat(user, span_notice("You patch up the [O] with a bit of [src]."))
+				to_chat(user, "<span class='notice'>You patch up the [O] with a bit of [src].</span>")
 				return TRUE
 		else
-			to_chat(user, span_notice("[O] looks fine enough to me."))
+			to_chat(user, "<span class='notice'>[O] looks fine enough to me.</span>")
 
 /obj/item/stack/tape/industrial/electrical
 	name = "electrical tape"
@@ -301,14 +301,14 @@
 /obj/item/stack/tape/industrial/electrical/wrap_item(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/clothing/gloves/color))
 		var/obj/item/clothing/gloves/color/yellow/sprayon/tape/O = new /obj/item/clothing/gloves/color/yellow/sprayon/tape
-		to_chat(user, span_notice("You turn [I] into [O] with [src]."))
+		to_chat(user, "<span class='notice'>You turn [I] into [O] with [src].</span>")
 		QDEL_NULL(I)
 		user.put_in_hands(O)
 		return
 
 	I.embedding = conferred_embed
 	I.updateEmbedding()
-	to_chat(user, span_notice("You finish wrapping [I] with [src]."))
+	to_chat(user, "<span class='notice'>You finish wrapping [I] with [src].</span>")
 	I.name = "[prefix] [I.name]"
 	I.siemens_coefficient = 0
 

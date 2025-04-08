@@ -38,27 +38,27 @@
 	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM)
 		if(obj_integrity < max_integrity)
 			if(W.use_tool(src, user, 0, volume = 50, amount = 1))
-				user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("You repair some damage to \the [src]."))
+				user.visible_message("<span class='notice'>[user] repairs some damage to [name].</span>", "<span class='notice'>You repair some damage to \the [src].</span>")
 				obj_integrity += min(10, max_integrity-obj_integrity)
 				if(obj_integrity == max_integrity)
-					to_chat(user, span_notice("It looks to be fully repaired now."))
+					to_chat(user, "<span class='notice'>It looks to be fully repaired now.</span>")
 		return TRUE
 
 	if(istype(W, /obj/item/reagent_containers/food/snacks/grown/banana))
 		// ignore the occupants because they're presumably too distracted to notice the guy stuffing fruit into their vehicle's exhaust. do segways have exhausts? they do now!
-		user.visible_message(span_warning("[user] begins stuffing [W] into [src]'s tailpipe."), span_warning("You begin stuffing [W] into [src]'s tailpipe..."), ignored_mobs = occupants)
+		user.visible_message("<span class='warning'>[user] begins stuffing [W] into [src]'s tailpipe.</span>", "<span class='warning'>You begin stuffing [W] into [src]'s tailpipe...</span>", ignored_mobs = occupants)
 		if(do_after(user, 30, src))
 			if(user.transferItemToLoc(W, src))
-				user.visible_message(span_warning("[user] stuffs [W] into [src]'s tailpipe."), span_warning("You stuff [W] into [src]'s tailpipe."), ignored_mobs = occupants)
+				user.visible_message("<span class='warning'>[user] stuffs [W] into [src]'s tailpipe.</span>", "<span class='warning'>You stuff [W] into [src]'s tailpipe.</span>", ignored_mobs = occupants)
 				eddie_murphy = W
 		return TRUE
 	return ..()
 
 /obj/vehicle/ridden/secway/attack_hand(mob/living/user)
 	if(eddie_murphy)                                                       // v lol
-		user.visible_message(span_warning("[user] begins cleaning [eddie_murphy] out of [src]."), span_warning("You begin cleaning [eddie_murphy] out of [src]..."))
+		user.visible_message("<span class='warning'>[user] begins cleaning [eddie_murphy] out of [src].</span>", "<span class='warning'>You begin cleaning [eddie_murphy] out of [src]...</span>")
 		if(do_after(user, 60, target = src))
-			user.visible_message(span_warning("[user] cleans [eddie_murphy] out of [src]."), span_warning("You manage to get [eddie_murphy] out of [src]."))
+			user.visible_message("<span class='warning'>[user] cleans [eddie_murphy] out of [src].</span>", "<span class='warning'>You manage to get [eddie_murphy] out of [src].</span>")
 			eddie_murphy.forceMove(drop_location())
 			eddie_murphy = null
 		return
@@ -67,7 +67,7 @@
 /obj/vehicle/ridden/secway/driver_move(mob/living/user, direction)
 	if(is_key(inserted_key) && eddie_murphy)
 		if(stall_cooldown + 10 < world.time)
-			visible_message(span_warning("[src] sputters and refuses to move!"))
+			visible_message("<span class='warning'>[src] sputters and refuses to move!</span>")
 			playsound(src, 'sound/effects/stall.ogg', 70)
 			stall_cooldown = world.time
 		return FALSE
@@ -77,7 +77,7 @@
 	. = ..()
 
 	if(eddie_murphy)
-		. += span_warning("Something appears to be stuck in its exhaust...")
+		. += "<span class='warning'>Something appears to be stuck in its exhaust...</span>"
 
 /obj/vehicle/ridden/secway/obj_destruction()
 	explosion(src, -1, 0, 2, 4, flame_range = 3)

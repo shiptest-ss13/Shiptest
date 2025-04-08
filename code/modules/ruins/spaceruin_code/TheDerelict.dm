@@ -39,7 +39,7 @@
 
 /obj/machinery/computer/monitor/examine(mob/user)
 	. = ..()
-	. += span_notice("It appears to be powered via a cable connector.")
+	. += "<span class='notice'>It appears to be powered via a cable connector.</span>"
 
 //Checks for cable connection, charges if possible.
 /obj/machinery/computer/vaultcontroller/process(seconds_per_tick)
@@ -160,16 +160,16 @@
 	..()
 	if(isdrone(user) || issilicon(user))
 		if(user.has_language(/datum/language/drone))
-			to_chat(user, span_boldannounce("You start skimming through [src], but you already know dronespeak."))
+			to_chat(user, "<span class='boldannounce'>You start skimming through [src], but you already know dronespeak.</span>")
 		else
-			to_chat(user, span_boldannounce("You start skimming through [src], and suddenly the drone chittering makes sense."))
+			to_chat(user, "<span class='boldannounce'>You start skimming through [src], and suddenly the drone chittering makes sense.</span>")
 			user.grant_language(/datum/language/drone, TRUE, TRUE, LANGUAGE_MIND)
 		return
 
 	if(user.has_language(/datum/language/drone))
-		to_chat(user, span_boldannounce("You start skimming through [src], but you already know dronespeak."))
+		to_chat(user, "<span class='boldannounce'>You start skimming through [src], but you already know dronespeak.</span>")
 	else
-		to_chat(user, span_boldannounce("You start skimming through [src], but you can't make any sense of the contents."))
+		to_chat(user, "<span class='boldannounce'>You start skimming through [src], but you can't make any sense of the contents.</span>")
 
 /obj/item/dronespeak_manual/attack(mob/living/M, mob/living/user)
 	if(!istype(M) || !istype(user))
@@ -181,9 +181,9 @@
 	playsound(loc, "punch", 25, TRUE, -1)
 	if(isdrone(M) || issilicon(M))
 		if(M.has_language(/datum/language/drone))
-			M.visible_message(span_danger("[user] beats [M] over the head with [src]!"), span_userdanger("[user] beats you over the head with [src]!"), span_hear("You hear smacking."))
+			M.visible_message("<span class='danger'>[user] beats [M] over the head with [src]!</span>", "<span class='userdanger'>[user] beats you over the head with [src]!</span>", "<span class='hear'>You hear smacking.</span>")
 		else
-			M.visible_message(span_notice("[user] teaches [M] by beating [M.p_them()] over the head with [src]!"), span_boldnotice("As [user] hits you with [src], chitters resonate in your mind."), span_hear("You hear smacking."))
+			M.visible_message("<span class='notice'>[user] teaches [M] by beating [M.p_them()] over the head with [src]!</span>", "<span class='boldnotice'>As [user] hits you with [src], chitters resonate in your mind.</span>", "<span class='hear'>You hear smacking.</span>")
 			M.grant_language(/datum/language/drone, TRUE, TRUE, LANGUAGE_MIND)
 		return
 

@@ -38,7 +38,7 @@
 	add_overlay(ration_overlay)
 
 /obj/item/reagent_containers/food/snacks/ration/proc/open_ration(mob/user)
-	to_chat(user, span_notice("You tear open \the [src]."))
+	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
 	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	desc += "\nIt's been opened."
@@ -52,7 +52,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, span_warning("The [src] is sealed shut!"))
+		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
 		return 0
 	return ..()
 
@@ -78,7 +78,7 @@
 /obj/item/reagent_containers/food/snacks/ration/examine(mob/user)
 	. = ..()
 	if(cookable && !cooked)
-		. += span_notice("It can be cooked in a microwave or warmed using a flameless ration heater.")
+		. += "<span class='notice'>It can be cooked in a microwave or warmed using a flameless ration heater.</span>"
 
 /obj/item/reagent_containers/food/snacks/ration/entree
 	icon_state = "ration_main"
@@ -107,26 +107,26 @@
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, span_warning("[src] is sealed shut!"))
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return 0
 	else
-		to_chat(user, span_warning("[src] cant be eaten like that!"))
+		to_chat(user, "<span class='warning'>[src] cant be eaten like that!</span>")
 		return 0
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/afterattack(obj/target, mob/user , proximity)
 	. = ..()
 	if(!is_drainable())
-		to_chat(user, span_warning("[src] is sealed shut!"))
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return
 	if(!proximity)
 		return
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("[target] is too full!") )
+			to_chat(user, "<span class='warning'>[target] is too full!</span>" )
 			return
 		else
-			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
+			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
 
@@ -140,25 +140,25 @@
 
 /obj/item/reagent_containers/food/snacks/ration/pack/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, span_warning("[src] is sealed shut!"))
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return 0
 	else
-		to_chat(user, span_warning("[src] cant be eaten like that!"))
+		to_chat(user, "<span class='warning'>[src] cant be eaten like that!</span>")
 		return 0
 
 /obj/item/reagent_containers/food/snacks/ration/pack/afterattack(obj/target, mob/user , proximity)
 	. = ..()
 	if(!is_drainable())
-		to_chat(user, span_warning("[src] is sealed shut!"))
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
 		return
 	if(!proximity)
 		return
 	if(istype(target, /obj/item/reagent_containers))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("[target] is too full!") )
+			to_chat(user, "<span class='warning'>[target] is too full!</span>" )
 			return
 		else
-			to_chat(user, span_notice("You pour the [src] into [target] and shake."))
+			to_chat(user, "<span class='notice'>You pour the [src] into [target] and shake.</span>")
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
 
@@ -311,7 +311,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers/open_ration(mob/user)
 	.=..()
-	to_chat(user, span_notice("\the [src] makes a nice hiss."))
+	to_chat(user, "<span class='notice'>\the [src] makes a nice hiss.</span>")
 
 /obj/item/reagent_containers/food/snacks/ration/side/cornbread
 	name = "cornbread"

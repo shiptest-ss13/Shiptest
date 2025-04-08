@@ -178,23 +178,23 @@
 		return
 
 	if(absorbedcount < thepower.req_dna)
-		to_chat(owner.current, span_warning("We lack the energy to evolve this ability!"))
+		to_chat(owner.current, "<span class='warning'>We lack the energy to evolve this ability!</span>")
 		return
 
 	if(has_sting(thepower))
-		to_chat(owner.current, span_warning("We have already evolved this ability!"))
+		to_chat(owner.current, "<span class='warning'>We have already evolved this ability!</span>")
 		return
 
 	if(thepower.dna_cost < 0)
-		to_chat(owner.current, span_warning("We cannot evolve this ability!"))
+		to_chat(owner.current, "<span class='warning'>We cannot evolve this ability!</span>")
 		return
 
 	if(geneticpoints < thepower.dna_cost)
-		to_chat(owner.current, span_warning("We have reached our capacity for abilities!"))
+		to_chat(owner.current, "<span class='warning'>We have reached our capacity for abilities!</span>")
 		return
 
 	if(HAS_TRAIT(owner.current, TRAIT_DEATHCOMA))//To avoid potential exploits by buying new powers while in stasis, which clears your verblist.
-		to_chat(owner.current, span_warning("We lack the energy to evolve new abilities right now!"))
+		to_chat(owner.current, "<span class='warning'>We lack the energy to evolve new abilities right now!</span>")
 		return
 
 	geneticpoints -= thepower.dna_cost
@@ -203,16 +203,16 @@
 
 /datum/antagonist/changeling/proc/readapt()
 	if(!ishuman(owner.current))
-		to_chat(owner.current, span_warning("We can't remove our evolutions in this form!"))
+		to_chat(owner.current, "<span class='warning'>We can't remove our evolutions in this form!</span>")
 		return
 	if(canrespec)
-		to_chat(owner.current, span_notice("We have removed our evolutions from this form, and are now ready to readapt."))
+		to_chat(owner.current, "<span class='notice'>We have removed our evolutions from this form, and are now ready to readapt.</span>")
 		reset_powers()
 		canrespec = 0
 		SSblackbox.record_feedback("tally", "changeling_power_purchase", 1, "Readapt")
 		return 1
 	else
-		to_chat(owner.current, span_warning("You lack the power to readapt your evolutions!"))
+		to_chat(owner.current, "<span class='warning'>You lack the power to readapt your evolutions!</span>")
 		return 0
 
 //Called in life()
@@ -246,33 +246,33 @@
 		var/datum/changelingprofile/prof = stored_profiles[1]
 		if(prof.dna == user.dna && stored_profiles.len >= dna_max)//If our current DNA is the stalest, we gotta ditch it.
 			if(verbose)
-				to_chat(user, span_warning("We have reached our capacity to store genetic information! We must transform before absorbing more."))
+				to_chat(user, "<span class='warning'>We have reached our capacity to store genetic information! We must transform before absorbing more.</span>")
 			return
 	if(!target)
 		return
 	if(NO_DNA_COPY in target.dna.species.species_traits)
 		if(verbose)
-			to_chat(user, span_warning("[target] is not compatible with our biology."))
+			to_chat(user, "<span class='warning'>[target] is not compatible with our biology.</span>")
 		return
 	if(HAS_TRAIT(target, TRAIT_BADDNA))
 		if(verbose)
-			to_chat(user, span_warning("DNA of [target] is ruined beyond usability!"))
+			to_chat(user, "<span class='warning'>DNA of [target] is ruined beyond usability!</span>")
 		return
 	if(HAS_TRAIT(target, TRAIT_HUSK))
 		if(verbose)
-			to_chat(user, span_warning("[target]'s body is ruined beyond usability!"))
+			to_chat(user, "<span class='warning'>[target]'s body is ruined beyond usability!</span>")
 		return
 	if(!ishuman(target))//Absorbing monkeys is entirely possible, but it can cause issues with transforming. That's what lesser form is for anyway!
 		if(verbose)
-			to_chat(user, span_warning("We could gain no benefit from absorbing a lesser creature."))
+			to_chat(user, "<span class='warning'>We could gain no benefit from absorbing a lesser creature.</span>")
 		return
 	if(has_dna(target.dna))
 		if(verbose)
-			to_chat(user, span_warning("We already have this DNA in storage!"))
+			to_chat(user, "<span class='warning'>We already have this DNA in storage!</span>")
 		return
 	if(!target.has_dna())
 		if(verbose)
-			to_chat(user, span_warning("[target] is not compatible with our biology."))
+			to_chat(user, "<span class='warning'>[target] is not compatible with our biology.</span>")
 		return
 	return 1
 
@@ -372,15 +372,15 @@
 
 /datum/antagonist/changeling/greet()
 	if (you_are_greet)
-		to_chat(owner.current, span_boldannounce("You are [changelingID], a changeling! You have absorbed and taken the form of a human."))
-	to_chat(owner.current, span_boldannounce("Use say \"[MODE_TOKEN_CHANGELING] message\" to communicate with your fellow changelings."))
+		to_chat(owner.current, "<span class='boldannounce'>You are [changelingID], a changeling! You have absorbed and taken the form of a human.</span>")
+	to_chat(owner.current, "<span class='boldannounce'>Use say \"[MODE_TOKEN_CHANGELING] message\" to communicate with your fellow changelings.</span>")
 	to_chat(owner.current, "<b>You must complete the following tasks:</b>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ling_aler.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
 	owner.announce_objectives()
 
 /datum/antagonist/changeling/farewell()
-	to_chat(owner.current, span_userdanger("You grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!"))
+	to_chat(owner.current, "<span class='userdanger'>You grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!</span>")
 
 /datum/antagonist/changeling/proc/forge_team_objectives()
 	if(GLOB.changeling_team_objective_type)
@@ -482,7 +482,7 @@
 
 /datum/antagonist/changeling/admin_add(datum/mind/new_owner,mob/admin)
 	. = ..()
-	to_chat(new_owner.current, span_boldannounce("Our powers have awoken. A flash of memory returns to us...we are [changelingID], a changeling!"))
+	to_chat(new_owner.current, "<span class='boldannounce'>Our powers have awoken. A flash of memory returns to us...we are [changelingID], a changeling!</span>")
 
 /datum/antagonist/changeling/get_admin_commands()
 	. = ..()
@@ -491,7 +491,7 @@
 
 /datum/antagonist/changeling/proc/admin_restore_appearance(mob/admin)
 	if(!stored_profiles.len || !iscarbon(owner.current))
-		to_chat(admin, span_danger("Resetting DNA failed!"))
+		to_chat(admin, "<span class='danger'>Resetting DNA failed!</span>")
 	else
 		var/mob/living/carbon/C = owner.current
 		first_prof.dna.transfer_identity(C, transfer_SE=1)
@@ -556,16 +556,16 @@
 		var/count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_greentext("Success!</b>")]"
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='greentext'>Success!</b></span>"
 			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_redtext("Fail.")]"
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='redtext'>Fail.</span>"
 				changelingwin = 0
 			count++
 
 	if(changelingwin)
-		parts += span_greentext("The changeling was successful!")
+		parts += "<span class='greentext'>The changeling was successful!</span>"
 	else
-		parts += span_redtext("The changeling has failed.")
+		parts += "<span class='redtext'>The changeling has failed.</span>"
 
 	return parts.Join("<br>")
 
