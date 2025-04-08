@@ -269,7 +269,7 @@
 /datum/blackmarket_item/weapon/mecha_weapon_bay
 	name = "Concealed Weapons Bay"
 	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
-	item = /obj/item/mecha_parts/concealed_weapon_bay
+	item = /obj/item/mecha_parts/weapon_bay/concealed
 
 	price_min = 1000
 	price_max = 2000

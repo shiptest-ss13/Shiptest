@@ -11,7 +11,7 @@
 
 /turf/open/floor/plasteel/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There's a <b>small crack</b> on the edge where you can pry it with a <b>crowbar</b>.</span>"
+	. += span_notice("There's a <b>small crack</b> on the edge where you can pry it with a <b>crowbar</b>.")
 
 /turf/open/floor/plasteel/update_icon_state()
 	if(broken || burnt)
@@ -101,6 +101,9 @@
 /turf/open/floor/plasteel/patterned/grid
 	icon_state = "grid"
 	base_icon_state = "grid"
+/turf/open/floor/plasteel/patterned/grid/dark
+	icon_state = "grid_dark"
+	base_icon_state = "grid_dark"
 /turf/open/floor/plasteel/patterned/ridged
 	icon_state = "ridged"
 	base_icon_state = "ridged"

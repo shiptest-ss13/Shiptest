@@ -56,7 +56,7 @@
 
 /obj/machinery/drill/mission/examine()
 	. = ..()
-	. += "<span class='notice'>The drill contains [num_current] of the [num_wanted] samples needed.</span>"
+	. += span_notice("The drill contains [num_current] of the [num_wanted] samples needed.")
 
 /obj/machinery/drill/mission/start_mining()
 	if(orevein_wanted && !istype(our_vein, orevein_wanted))

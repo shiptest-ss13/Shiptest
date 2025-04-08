@@ -4139,17 +4139,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/singularitylab/lab)
-"qi" = (
-/obj/effect/decal/remains/human,
-/obj/item/clothing/under/rank/rnd/scientist,
-/obj/item/clothing/shoes/sneakers/white,
-/obj/effect/gibspawner,
-/obj/item/gun/energy/lasercannon{
-	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
-	name = "NT-LS-1013"
-	},
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav/singularitylab)
 "qk" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -7566,23 +7555,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
-"Ea" = (
-/obj/effect/turf_decal/box,
-/obj/machinery/light/directional/north,
-/obj/item/gun/energy/lasercannon{
-	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
-	name = "NT-LS-1013"
-	},
-/obj/item/gun/energy/laser/iot,
-/obj/item/gun/energy/laser/iot{
-	dry_fire_sound = 'sound/items/ding.ogg';
-	dry_fire_text = "ding"
-	},
-/obj/structure/safe{
-	name = "Prototype Storage"
-	},
-/turf/open/floor/engine,
-/area/ruin/space/has_grav/singularitylab/lab)
 "Ed" = (
 /obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/plasteel/dark,
@@ -9155,6 +9127,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"JK" = (
+/obj/effect/decal/remains/human,
+/obj/item/clothing/under/rank/rnd/scientist,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/effect/gibspawner,
+/obj/item/gun/energy/lasercannon{
+	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
+	name = "NT-LS-1013"
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/singularitylab)
 "JL" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/insectguts,
@@ -9228,15 +9211,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
-"JX" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-10"
-	},
-/obj/machinery/power/solar_control{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/singularitylab/reactor)
 "JY" = (
 /obj/effect/turf_decal/siding/thinplating/corner,
 /obj/effect/decal/cleanable/blood{
@@ -10905,6 +10879,15 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"PQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-10"
+	},
+/obj/machinery/computer/solar_control{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/singularitylab/reactor)
 "PR" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -10956,6 +10939,23 @@
 	},
 /turf/open/floor/engine/hull,
 /area/space/nearstation)
+"PZ" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/light/directional/north,
+/obj/item/gun/energy/lasercannon{
+	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
+	name = "NT-LS-1013"
+	},
+/obj/item/gun/energy/laser/iot,
+/obj/item/gun/energy/laser/iot{
+	dry_fire_sound = 'sound/items/ding.ogg';
+	dry_fire_text = "ding"
+	},
+/obj/structure/safe{
+	name = "Prototype Storage"
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab/lab)
 "Qe" = (
 /obj/structure/flippedtable{
 	dir = 8;
@@ -11636,6 +11636,15 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"SJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/flippedtable{
+	icon_state = ""
+	},
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ruin/space/has_grav/singularitylab/lab)
 "SK" = (
 /obj/structure/closet/emcloset{
 	anchored = 1
@@ -11751,16 +11760,6 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
-"Tc" = (
-/obj/machinery/the_singularitygen{
-	anchored = 1
-	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	type_to_spawn = /obj/machinery/the_singularitygen
-	},
-/turf/open/floor/plating,
-/area/space/nearstation)
 "Td" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -12484,6 +12483,16 @@
 /obj/item/gun/energy/floragun,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Vn" = (
+/obj/machinery/the_singularitygen{
+	anchored = 1
+	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	type_to_spawn = /obj/machinery/the_singularitygen
+	},
+/turf/open/floor/plating,
+/area/space/nearstation)
 "Vo" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 6
@@ -13030,15 +13039,6 @@
 	name = "grass"
 	},
 /area/ruin/space/has_grav/singularitylab)
-"WV" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/flippedtable{
-	icon_state = ""
-	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/space/has_grav/singularitylab/lab)
 "WW" = (
 /obj/structure/transit_tube/curved/flipped{
 	dir = 1
@@ -16210,7 +16210,7 @@ id
 id
 pE
 oT
-JX
+PQ
 xu
 yQ
 ja
@@ -16924,7 +16924,7 @@ id
 id
 id
 id
-qi
+JK
 kU
 qT
 TG
@@ -17828,7 +17828,7 @@ VH
 VH
 VH
 VH
-Tc
+Vn
 VH
 VH
 VH
@@ -18543,7 +18543,7 @@ fy
 gm
 TR
 lK
-Ea
+PZ
 QQ
 pC
 lK
@@ -18693,7 +18693,7 @@ id
 lK
 sv
 cK
-WV
+SJ
 Rq
 ya
 Mm

@@ -26,10 +26,10 @@
 			else
 				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Central Command", "Station Announcements", null)
 
-	announcement += "<br><span class='alert'>[html_encode(text)]</span><br>"
+	announcement += "<br>[span_alert("[html_encode(text)]")]<br>"
 	announcement += "<br>"
 	if(auth_id)															//WS Edit - Make cap's announcement use logged-in name
-		announcement += "<span class='alert'>-[auth_id]</span><br>"		//WS Edit - Make cap's announcement use logged-in name
+		announcement += "[span_alert("-[auth_id]")]<br>"		//WS Edit - Make cap's announcement use logged-in name
 
 	var/sound/S = sound(sound)
 	S.environment = SOUND_ENVIRONMENT_CONCERT_HALL
@@ -70,7 +70,7 @@
 		if(zlevel && (M.virtual_z() != zlevel)) // If a z-level is specified and the mob's z does not equal it
 			continue
 
-		to_chat(M, "<span class='minorannounce'><font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])</span>" : null]")
+		to_chat(M, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>[from ? "[span_alert("-[from.name] ([from.job])")]" : null]")
 		if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
 			SEND_SOUND(M, S)
 

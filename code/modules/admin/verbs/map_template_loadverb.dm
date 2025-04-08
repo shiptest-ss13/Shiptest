@@ -37,7 +37,7 @@
 	if(!map)
 		return
 	if(copytext("[map]", -4) != ".dmm")//4 == length(".dmm")
-		to_chat(src, "<span class='warning'>Filename must end in '.dmm': [map]</span>", confidential = TRUE)
+		to_chat(src, span_warning("Filename must end in '.dmm': [map]"), confidential = TRUE)
 		return
 	var/datum/map_template/new_map
 	var/template_type = tgui_input_list(src, "What kind of map is this?", "Map type", list("Normal", "Norm. & Mark", "Shuttle", "Static Overmap Obj.", "Cancel"))
@@ -61,7 +61,7 @@
 	if(report)
 		report.show_to(src)
 		report_link = " - <a href='?src=[REF(report)];[HrefToken(TRUE)];show=1'>validation report</a>"
-		to_chat(src, "<span class='warning'>Map template '[map]' <a href='?src=[REF(report)];[HrefToken()];show=1'>failed validation</a>.</span>", confidential = TRUE)
+		to_chat(src, span_warning("Map template '[map]' <a href='?src=[REF(report)];[HrefToken()];show=1'>failed validation</a>."), confidential = TRUE)
 		if(report.loadable)
 			var/response = alert(src, "The map failed validation, would you like to load it anyways?", "Map Errors", "Cancel", "Upload Anyways")
 			if(response != "Upload Anyways")

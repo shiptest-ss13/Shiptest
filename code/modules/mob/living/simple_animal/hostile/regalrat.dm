@@ -77,11 +77,11 @@
 	if(istype(user,/mob/living/basic/mouse/rat))
 		var/mob/living/basic/mouse/rat/ratself = user
 		if(ratself.faction_check_mob(src, TRUE))
-			. += "<span class='notice'>This is your king. Long live his majesty!</span>"
+			. += span_notice("This is your king. Long live his majesty!")
 		else
-			. += "<span class='warning'>This is a false king! Strike him down!</span>"
+			. += span_warning("This is a false king! Strike him down!")
 	else if(istype(user,/mob/living/simple_animal/hostile/regalrat))
-		. += "<span class='warning'>Who is this foolish false king? This will not stand!</span>"
+		. += span_warning("Who is this foolish false king? This will not stand!")
 
 /**
  *This action creates trash, money, dirt, and cheese.
@@ -102,19 +102,19 @@
 	var/loot = rand(1,100)
 	switch(loot)
 		if(1 to 5)
-			to_chat(owner, "<span class='notice'>Score! You find some cheese!</span>")
+			to_chat(owner, span_notice("Score! You find some cheese!"))
 			new /obj/item/reagent_containers/food/snacks/cheesewedge(T)
 		if(6 to 10)
-			to_chat(owner, "<span class='notice'>You find some leftover coins. More for the royal treasury!</span>")
+			to_chat(owner, span_notice("You find some leftover coins. More for the royal treasury!"))
 			for(var/i = 1 to rand(1,3))
 				new /obj/effect/spawner/random/entertainment/coin(T)
 		if(11 to 40)
 			var/pickedtrash = pick(GLOB.trash_loot)
-			to_chat(owner, "<span class='notice'>You just find more garbage and dirt. Lovely, but beneath you now.</span>")
+			to_chat(owner, span_notice("You just find more garbage and dirt. Lovely, but beneath you now."))
 			new /obj/effect/decal/cleanable/dirt(T)
 			new pickedtrash(T)
 		if(41 to 100)
-			to_chat(owner, "<span class='notice'>Drat. Nothing.</span>")
+			to_chat(owner, span_notice("Drat. Nothing."))
 			new /obj/effect/decal/cleanable/dirt(T)
 	StartCooldown()
 
@@ -148,10 +148,10 @@
 		qdel(M)
 	if(!something_from_nothing)
 		if(LAZYLEN(SSmobs.cheeserats) >= cap)
-			to_chat(owner,"<span class='warning'>There's too many mice in this sector to beckon a new one! Find them first!</span>")
+			to_chat(owner,span_warning("There's too many mice in this sector to beckon a new one! Find them first!"))
 			return
 		new /mob/living/basic/mouse(owner.loc)
-		owner.visible_message("<span class='warning'>[owner] commands a mouse to its side!</span>")
+		owner.visible_message(span_warning("[owner] commands a mouse to its side!"))
 	else
-		owner.visible_message("<span class='warning'>[owner] commands its army to action, mutating them into rats!</span>")
+		owner.visible_message(span_warning("[owner] commands its army to action, mutating them into rats!"))
 	StartCooldown()

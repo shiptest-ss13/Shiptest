@@ -44,7 +44,7 @@
 
 /turf/open/floor/concrete/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
+	. += span_notice("[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].")
 	switch(harden_lvl)
 		if(0.8 to 0.99)
 			. += "[p_they(TRUE)] look[p_s()] nearly dry."
@@ -59,10 +59,10 @@
 	if(.)
 		return
 	if(C.tool_behaviour == TOOL_MINING)
-		to_chat(user, "<span class='notice'>You start smashing [src]...</span>")
+		to_chat(user, span_notice("You start smashing [src]..."))
 		var/adj_time = (broken || burnt) ? smash_time/2 : smash_time
 		if(C.use_tool(src, user, adj_time, volume=30))
-			to_chat(user, "<span class='notice'>You break [src].</span>")
+			to_chat(user, span_notice("You break [src]."))
 			playsound(src, 'sound/effects/break_stone.ogg', 30, TRUE)
 			remove_tile()
 			return TRUE

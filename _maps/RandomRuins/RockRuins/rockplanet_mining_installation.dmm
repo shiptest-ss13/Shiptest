@@ -9,29 +9,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
-"af" = (
-/obj/effect/turf_decal/corner/transparent/nsorange/diagonal,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/office)
 "ag" = (
 /obj/item/emptysandbag,
 /obj/structure/flora/grass/rockplanet/dead,
@@ -141,21 +118,26 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"aR" = (
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/effect/turf_decal/siding/white/corner,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
+"aO" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/structure/cable,
-/obj/machinery/door/firedoor/border_only{
+/obj/effect/turf_decal/steeldecal/steel_decals_central1{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ruin/rockplanet/mining_base/crew)
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "Office Dome"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/office)
 "aV" = (
 /obj/machinery/door/airlock/external/glass{
 	name = "Armory"
@@ -171,23 +153,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/armory)
-"bb" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -3
-	},
-/obj/item/pen{
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/obj/effect/turf_decal/corner/opaque/nsorange/border{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/nsorange/half{
-	dir = 4
-	},
-/turf/open/floor/plasteel/rockplanet,
-/area/ruin/rockplanet/mining_base/refinery)
 "bc" = (
 /obj/structure/flora/ash/fern,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
@@ -247,24 +212,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
-"bk" = (
-/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
-	dir = 4
-	},
-/obj/structure/table,
-/obj/item/storage/case/surgery{
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = -8
-	},
-/obj/item/storage/box/syringes{
-	pixel_x = 9;
-	pixel_y = 10
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/mining_base/med)
 "bl" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/trimline/opaque/vired/line,
@@ -285,6 +232,15 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"bu" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "nsmine_canteen"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/mining_base/canteen)
 "bC" = (
 /obj/machinery/space_heater,
 /obj/effect/turf_decal/box,
@@ -418,6 +374,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
+"cf" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3,
+/obj/effect/turf_decal/box,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/mining_base/engineering)
 "cg" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -515,6 +476,29 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/crew)
+"cE" = (
+/obj/effect/turf_decal/corner/transparent/nsorange/diagonal,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/office)
 "cF" = (
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
@@ -540,16 +524,16 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"cP" = (
-/obj/machinery/conveyor{
-	id = "rock_mine";
-	pixel_y = -1
+"cQ" = (
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_y = 7
 	},
-/turf/open/floor/plating/rust/rockplanet,
-/area/ruin/rockplanet/mining_base/refinery)
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/canteen)
 "cU" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -566,6 +550,17 @@
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/food/egg_smudge,
 /turf/open/floor/plasteel/freezer,
+/area/ruin/rockplanet/mining_base/canteen)
+"cX" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 8
+	},
+/obj/item/reagent_containers/food/drinks/beer/light{
+	pixel_x = 3;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
 "da" = (
 /obj/effect/turf_decal/trimline/opaque/nsorange/line{
@@ -645,6 +640,31 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"do" = (
+/obj/effect/turf_decal/trimline/opaque/nsorange/filled/warning,
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "nsmine_two";
+	name = "blast door controls";
+	pixel_x = -22;
+	pixel_y = -11
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	id = "mining_base_two";
+	pixel_x = -20;
+	pixel_y = -2
+	},
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/mining_base/refinery)
 "dp" = (
 /obj/machinery/conveyor{
 	dir = 9;
@@ -721,6 +741,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"dI" = (
+/obj/structure/rack,
+/obj/item/tank/internals/oxygen{
+	pixel_x = 2;
+	pixel_y = -4
+	},
+/obj/effect/turf_decal/corner/opaque/nsorange/half,
+/obj/effect/turf_decal/box,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/mining_base/rig_two)
 "dJ" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
@@ -892,28 +926,25 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
-"ek" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
+"eh" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
 	},
-/obj/structure/rack,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat{
-	pixel_x = -3;
-	pixel_y = 9
-	},
-/obj/item/clothing/suit/hooded/wintercoat{
-	pixel_x = 9;
-	pixel_y = 5
-	},
+/obj/structure/table,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
 	},
-/obj/structure/railing{
-	dir = 8
+/obj/item/radio/intercom/table{
+	dir = 4;
+	pixel_x = 5;
+	pixel_y = -1
 	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/crew)
+/obj/item/radio/weather_monitor{
+	pixel_x = -10;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/mining_base/refinery)
 "es" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -949,23 +980,6 @@
 "ez" = (
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
-"eA" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/trimline/opaque/blue/filled/warning{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/mining_base/med)
 "eD" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 5
@@ -991,17 +1005,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/mining_base/med)
-"eS" = (
-/obj/machinery/door/airlock/security{
-	name = "Equipment Storage";
-	req_access_txt = "1"
+"eL" = (
+/obj/structure/table,
+/obj/machinery/conveyor_switch/oneway{
+	id = "rock_mine";
+	pixel_x = -1;
+	pixel_y = 4
 	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/warning,
-/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/nsorange/half{
+	dir = 4
 	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/rockplanet/mining_base/armory)
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/mining_base/refinery)
 "eV" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -1120,6 +1135,23 @@
 /obj/effect/decal/cleanable/food/salt,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
+"fS" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -3
+	},
+/obj/item/pen{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/effect/turf_decal/corner/opaque/nsorange/border{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/nsorange/half{
+	dir = 4
+	},
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/mining_base/refinery)
 "fT" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -1160,6 +1192,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"gg" = (
+/obj/machinery/porta_turret/ship/nt/light/mining_base{
+	id = "m1"
+	},
+/turf/open/floor/pod/rockplanet,
+/area/ruin/rockplanet/mining_base/rig_one)
 "gi" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
 /obj/effect/turf_decal/industrial/traffic,
@@ -1196,6 +1234,17 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
+"gq" = (
+/obj/structure/table/wood,
+/obj/item/lighter{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/storage/pill_bottle/dice{
+	pixel_y = -3
+	},
+/turf/open/floor/carpet/cyan,
+/area/ruin/rockplanet/mining_base/crew)
 "gs" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 6
@@ -1244,6 +1293,13 @@
 	dir = 4
 	},
 /area/ruin/rockplanet/mining_base/refinery)
+"gD" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
+/obj/machinery/washing_machine,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "gF" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -1274,6 +1330,18 @@
 	dir = 8
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"gI" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/canteen)
 "gJ" = (
 /obj/effect/turf_decal/borderfloor/corner,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1339,6 +1407,29 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"hd" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "Office Dome"
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/office)
 "hf" = (
 /obj/structure/rack,
 /obj/item/screwdriver{
@@ -1360,25 +1451,21 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
-"hl" = (
-/obj/structure/flippedtable{
-	dir = 1
+"hn" = (
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 8
 	},
-/obj/machinery/button/door{
-	dir = 8;
-	id = "nsmine2";
-	name = "blast door controls";
-	pixel_x = 24;
-	pixel_y = 5
+/obj/structure/table,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/item/reagent_containers/condiment/hotsauce{
+	pixel_x = 6;
+	pixel_y = 12
 	},
-/obj/machinery/button/shieldwallgen{
-	dir = 8;
-	id = "mining_base";
-	pixel_x = 22;
-	pixel_y = -5
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/refinery)
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/canteen)
 "ho" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -1412,19 +1499,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
-"hz" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/food/flour,
-/obj/machinery/light/directional/west,
-/obj/item/radio/old{
-	pixel_x = -2;
-	pixel_y = 11
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/canteen)
 "hA" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/borderfloor{
@@ -1505,17 +1579,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"ij" = (
-/obj/effect/turf_decal/corner/opaque/bar/diagonal{
-	dir = 4
+"ig" = (
+/obj/machinery/door/airlock{
+	name = "Coordinator's Quarters"
 	},
-/obj/structure/table/wood,
-/obj/machinery/firealarm/directional/north,
-/obj/item/radio/old{
-	pixel_x = 3;
-	pixel_y = 11
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/crew)
 "il" = (
 /obj/machinery/conveyor/inverted{
@@ -1558,6 +1630,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"ip" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central1{
+	dir = 8
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "Medical Dome"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/med)
 "it" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet,
@@ -1588,6 +1679,23 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"iw" = (
+/obj/machinery/door/airlock/security{
+	dir = 4;
+	name = "Suit Storage";
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/mining_base/armory)
 "ix" = (
 /obj/machinery/power/floodlight{
 	anchored = 1;
@@ -1640,17 +1748,23 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"iQ" = (
+"iT" = (
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/table,
-/obj/machinery/conveyor_switch/oneway{
-	id = "rock_mine";
-	pixel_x = -1;
-	pixel_y = 4
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/corner/opaque/nsorange/half{
-	dir = 4
+/obj/effect/turf_decal/spline/fancy/opaque/grey{
+	dir = 8
 	},
-/turf/open/floor/plasteel/rockplanet,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/pen{
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "iZ" = (
 /obj/effect/turf_decal/borderfloor/corner{
@@ -1660,6 +1774,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"ja" = (
+/obj/effect/turf_decal/trimline/opaque/nsorange/line,
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 1
+	},
+/obj/mecha/working/ripley/cargo{
+	name = "APLU 'Cherry Devil'"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/refinery)
 "jb" = (
 /obj/machinery/conveyor{
 	dir = 9;
@@ -1681,17 +1808,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
-"jd" = (
-/obj/structure/table/wood,
-/obj/item/lighter{
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/storage/pill_bottle/dice{
-	pixel_y = -3
-	},
-/turf/open/floor/carpet/cyan,
-/area/ruin/rockplanet/mining_base/crew)
 "jg" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
@@ -1710,25 +1826,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
 /turf/open/floor/concrete/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"jp" = (
-/obj/effect/turf_decal/trimline/opaque/vired/line{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
-/obj/machinery/space_heater{
-	anchored = 1;
-	density = 0;
-	pixel_x = -12;
-	pixel_y = 9
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ruin/rockplanet/mining_base/armory)
 "jq" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1744,6 +1841,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"ju" = (
+/obj/structure/table,
+/obj/machinery/firealarm/directional/west,
+/obj/item/storage/firstaid/brute{
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/rockplanet/mining_base/med)
 "jv" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
@@ -1952,26 +2058,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/mining_base/crew)
-"kJ" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/nsorange/border,
-/obj/effect/turf_decal/corner/opaque/nsorange/half{
-	dir = 4
-	},
-/obj/item/folder/syndicate{
-	pixel_x = -6;
-	pixel_y = 1
-	},
-/obj/item/folder/yellow{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/pen{
-	pixel_x = -4;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/rockplanet,
-/area/ruin/rockplanet/mining_base/refinery)
 "kK" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -1982,18 +2068,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
-"kM" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
-	pixel_x = -7;
-	pixel_y = 7
+"kO" = (
+/obj/machinery/conveyor{
+	id = "rock_mine";
+	pixel_y = -1
 	},
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = -5;
-	pixel_y = 5
+/obj/structure/railing{
+	dir = 4
 	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/canteen)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rockplanet,
+/area/ruin/rockplanet/mining_base/refinery)
 "kQ" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -2004,25 +2092,6 @@
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/rockplanet/mining_base/refinery)
-"kV" = (
-/obj/structure/table,
-/obj/machinery/recharger{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/structure/closet/wall/red/directional/west{
-	req_access_txt = "3"
-	},
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/item/stock_parts/cell/gun,
-/obj/machinery/recharger{
-	pixel_x = 7;
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/rockplanet/mining_base/armory)
 "kX" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -2033,16 +2102,6 @@
 	},
 /turf/open/floor/plasteel/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
-"kY" = (
-/obj/machinery/door/airlock{
-	name = "Coordinator's Quarters"
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/crew)
 "kZ" = (
 /obj/machinery/door/poddoor{
 	id = "nsmine_two"
@@ -2115,6 +2174,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"ln" = (
+/obj/machinery/mineral/processing_unit_console{
+	machinedir = 2;
+	pixel_y = 24
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/railing,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/mining_base/refinery)
 "lo" = (
 /obj/structure/closet/secure_closet/freezer/fridge{
 	populate = 0
@@ -2150,6 +2218,17 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
+"lr" = (
+/obj/effect/turf_decal/corner/opaque/nsorange/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/box,
+/obj/machinery/turretid{
+	id = "m2";
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/mining_base/rig_two)
 "lt" = (
 /obj/structure/filingcabinet/double/grey,
 /obj/machinery/light/directional/north,
@@ -2172,19 +2251,6 @@
 	},
 /turf/open/floor/plating/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"lA" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	icon_state = "blood2"
-	},
-/obj/machinery/door/airlock/command,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/office)
 "lB" = (
 /obj/machinery/conveyor{
 	dir = 1;
@@ -2228,14 +2294,6 @@
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"lN" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 8
-	},
-/obj/structure/bodycontainer/morgue,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/rockplanet/mining_base/med)
 "lP" = (
 /obj/structure/bookcase,
 /obj/effect/turf_decal/siding/wood,
@@ -2311,6 +2369,28 @@
 /obj/effect/turf_decal/borderfloor,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/engineering)
+"ml" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/rack,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_x = -3;
+	pixel_y = 9
+	},
+/obj/item/clothing/suit/hooded/wintercoat{
+	pixel_x = 9;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/grey{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/crew)
 "mm" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 8
@@ -2339,21 +2419,6 @@
 /obj/item/clothing/under/rank/medical/doctor,
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/mining_base/med)
-"mv" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/item/ammo_casing/c57x39mm{
-	icon_state = "rifle-steel-empty";
-	pixel_x = -9;
-	pixel_y = 5;
-	projectile_type = null
-	},
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "mw" = (
 /obj/effect/turf_decal/trimline/opaque/vired/corner{
 	dir = 4
@@ -2368,6 +2433,21 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
+"mA" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 8
+	},
+/obj/item/table_bell{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/storage/ration/sausage_peppers_onions{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/canteen)
 "mB" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
@@ -2384,15 +2464,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"mG" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	icon_state = "blood2"
+"mF" = (
+/obj/machinery/door/poddoor{
+	dir = 2;
+	id = "nsmine_canteen"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/airalarm/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/ruin/rockplanet/mining_base/office)
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "nsmine_canteen"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/mining_base/canteen)
 "mH" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2400,16 +2483,20 @@
 /obj/structure/flora/grass/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"mK" = (
-/obj/machinery/conveyor{
-	id = "rock_mine";
-	pixel_y = -1
+"mI" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/item/ammo_casing/c57x39mm{
+	icon_state = "rifle-steel-empty";
+	projectile_type = null
 	},
-/turf/open/floor/plating/rockplanet,
-/area/ruin/rockplanet/mining_base/refinery)
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/wood,
+/area/ruin/rockplanet/mining_base/office)
 "mN" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
@@ -2447,17 +2534,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/crew)
-"mW" = (
-/obj/effect/turf_decal/steeldecal/steel_decals_central1{
-	dir = 8
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4;
-	name = "Canteen"
-	},
-/obj/effect/mapping_helpers/airlock/sealed,
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/canteen)
 "mX" = (
 /obj/structure/platform,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
@@ -2541,21 +2617,6 @@
 	dir = 1
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"nu" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 8
-	},
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
-	pixel_x = 3;
-	pixel_y = -5
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/canteen)
 "nA" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2599,6 +2660,25 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"nH" = (
+/obj/structure/flippedtable{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "nsmine2";
+	name = "blast door controls";
+	pixel_x = 24;
+	pixel_y = 5
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	id = "mining_base";
+	pixel_x = 22;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/refinery)
 "nJ" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -2645,6 +2725,25 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/refinery)
+"nT" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/rockplanet/mining_base/med)
 "nW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2670,6 +2769,20 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"oj" = (
+/obj/structure/table,
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 4
+	},
+/obj/item/newspaper{
+	pixel_x = -6;
+	pixel_y = 15
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/canteen)
 "ok" = (
 /obj/effect/turf_decal/trimline/opaque/vired/corner{
 	dir = 1
@@ -2695,26 +2808,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
-"op" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central1{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4;
-	name = "Office Dome"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/office)
 "ot" = (
 /obj/machinery/mineral/unloading_machine,
 /obj/effect/decal/cleanable/dirt,
@@ -2818,17 +2911,18 @@
 "pd" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/rockplanet/mining_base/armory)
-"pf" = (
-/obj/structure/sign/warning/securearea{
-	pixel_x = 24;
-	pixel_y = 10
+"pg" = (
+/obj/effect/turf_decal/corner/opaque/bar/diagonal{
+	dir = 4
 	},
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/structure/table/wood,
+/obj/machinery/firealarm/directional/north,
+/obj/item/radio/old{
+	pixel_x = 3;
+	pixel_y = 11
 	},
-/turf/open/floor/plating,
-/area/ruin/rockplanet/mining_base/engineering)
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/crew)
 "pi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2894,21 +2988,6 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/mining_base/armory)
-"pw" = (
-/obj/structure/table,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
-	dir = 1
-	},
-/obj/machinery/fax/ruin{
-	pixel_x = -1;
-	pixel_y = 2
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/dark,
-/area/ruin/rockplanet/mining_base/armory)
 "py" = (
 /obj/effect/turf_decal/weather/rock/corner{
 	dir = 8
@@ -2918,6 +2997,14 @@
 	dir = 4
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"pB" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "nsmine_canteen"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/mining_base/canteen)
 "pE" = (
 /obj/structure/platform/military{
 	dir = 9
@@ -2957,6 +3044,21 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
+"pP" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/effect/turf_decal/siding/white/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/rockplanet/mining_base/crew)
 "pQ" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -3031,6 +3133,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_one)
+"qn" = (
+/obj/structure/table,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/line{
+	dir = 1
+	},
+/obj/machinery/fax/ruin{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/mining_base/armory)
 "qo" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing{
@@ -3070,6 +3187,14 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"qy" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/obj/structure/bodycontainer/morgue,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/rockplanet/mining_base/med)
 "qC" = (
 /obj/effect/turf_decal/trimline/opaque/vired/warning{
 	dir = 4
@@ -3093,6 +3218,26 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/rockplanet/mining_base/engineering)
+"qI" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/nsorange/border,
+/obj/effect/turf_decal/corner/opaque/nsorange/half{
+	dir = 4
+	},
+/obj/item/folder/syndicate{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/folder/yellow{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/mining_base/refinery)
 "qK" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /obj/structure/flora/grass/rockplanet/dead,
@@ -3207,24 +3352,6 @@
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/rockplanet/wet,
 /area/overmap_encounter/planetoid/cave/explored)
-"rp" = (
-/obj/machinery/computer/operating{
-	dir = 4;
-	pixel_x = -3
-	},
-/obj/machinery/airalarm/directional/west,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/item/radio/intercom/directional/north{
-	pixel_x = -7
-	},
-/obj/machinery/button/door{
-	id = "nsmine_med";
-	name = "window shutter control";
-	pixel_x = 9;
-	pixel_y = 23
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/mining_base/med)
 "rq" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 6
@@ -3256,28 +3383,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
-"rC" = (
-/obj/effect/turf_decal/trimline/opaque/nsorange/line,
-/obj/effect/turf_decal/trimline/opaque/nsorange/line{
-	dir = 1
-	},
-/obj/mecha/working/ripley/cargo{
-	name = "APLU 'Cherry Devil'"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/refinery)
-"rD" = (
-/obj/structure/table,
-/obj/machinery/firealarm/directional/west,
-/obj/item/storage/firstaid/brute{
-	pixel_x = 2;
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/mining_base/med)
 "rE" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3393,15 +3498,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/engineering)
-"sq" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "nsmine_canteen"
-	},
-/turf/open/floor/plating,
-/area/ruin/rockplanet/mining_base/canteen)
 "sr" = (
 /obj/machinery/conveyor{
 	dir = 1;
@@ -3523,6 +3619,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
+"sZ" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/spline/fancy/opaque/grey,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_x = 3;
+	pixel_y = -4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/engineering)
 "ta" = (
 /obj/effect/turf_decal/nanotrasen/ns/top,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3537,29 +3647,6 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"tj" = (
-/obj/effect/turf_decal/box,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/drill/mission/ruin,
-/obj/effect/landmark/mission_poi/main/drill{
-	already_spawned = 1
-	},
-/obj/structure/vein/rockplanet/classfour,
-/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
-/area/ruin/rockplanet/mining_base/rig_two)
-"tk" = (
-/obj/machinery/conveyor{
-	id = "rock_mine";
-	pixel_y = -1
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating/rockplanet,
-/area/ruin/rockplanet/mining_base/refinery)
 "tl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3636,46 +3723,25 @@
 /obj/structure/flora/tree/cactus,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"tA" = (
+/obj/machinery/conveyor{
+	id = "rock_mine";
+	pixel_y = -1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/rockplanet,
+/area/ruin/rockplanet/mining_base/refinery)
 "tB" = (
 /obj/structure/platform/corner{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"tE" = (
-/obj/structure/closet/wall/chem/directional/south,
-/obj/item/towel,
-/obj/item/towel{
-	pixel_x = -3;
-	pixel_y = 9
-	},
-/obj/item/towel{
-	pixel_x = 11;
-	pixel_y = 2
-	},
-/obj/item/towel{
-	pixel_x = -6;
-	pixel_y = -5
-	},
-/obj/item/towel{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/item/towel{
-	pixel_x = 7;
-	pixel_y = -5
-	},
-/obj/item/soap/nanotrasen{
-	pixel_x = 3;
-	pixel_y = -9
-	},
-/obj/item/soap/nanotrasen,
-/obj/structure/sign/poster/official/no_erp{
-	pixel_x = 28
-	},
-/obj/item/razor,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/rockplanet/mining_base/crew)
 "tF" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -3831,6 +3897,16 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/ruin/rockplanet/mining_base/refinery)
+"uG" = (
+/obj/effect/turf_decal/box,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/drill/mission/ruin,
+/obj/effect/landmark/mission_poi/main/drill{
+	already_spawned = 1
+	},
+/obj/structure/vein/rockplanet/classfour,
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
+/area/ruin/rockplanet/mining_base/rig_two)
 "uJ" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white/corner{
@@ -3845,6 +3921,15 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/mining_base/crew)
+"uK" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1;
+	icon_state = "blood2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/mining_base/office)
 "uQ" = (
 /obj/item/paper/crumpled{
 	pixel_x = -10;
@@ -3931,17 +4016,6 @@
 /obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/engineering)
-"vn" = (
-/obj/effect/turf_decal/corner/opaque/nsorange/half{
-	dir = 4
-	},
-/obj/effect/turf_decal/box,
-/obj/machinery/turretid{
-	id = "m2";
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel/rockplanet,
-/area/ruin/rockplanet/mining_base/rig_two)
 "vp" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -3951,6 +4025,17 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
+"vq" = (
+/obj/machinery/door/airlock/security{
+	name = "Equipment Storage";
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/filled/warning,
+/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/mining_base/armory)
 "vr" = (
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
@@ -4025,27 +4110,29 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"vT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/steeldecal/steel_decals_central1{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "Canteen"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/canteen)
 "vV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"vZ" = (
-/obj/structure/table/wood,
-/obj/item/tape/random{
-	pixel_x = -7;
-	pixel_y = 11
-	},
-/obj/item/tape/random{
-	pixel_x = 2
-	},
-/obj/item/tape/random{
-	pixel_x = -8;
-	pixel_y = -4
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/wood,
-/area/ruin/rockplanet/mining_base/office)
 "we" = (
 /obj/effect/radiation,
 /obj/effect/turf_decal/corner/transparent/orange{
@@ -4081,15 +4168,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
-"wp" = (
-/obj/effect/turf_decal/box,
-/obj/effect/turf_decal/corner/opaque/nsorange/half,
-/obj/machinery/turretid{
-	id = "m1";
-	pixel_x = 26
-	},
-/turf/open/floor/plasteel/rockplanet,
-/area/ruin/rockplanet/mining_base/rig_one)
 "wt" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -4164,31 +4242,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/refinery)
-"wJ" = (
-/obj/effect/turf_decal/trimline/opaque/nsorange/filled/warning,
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/firealarm/directional/west{
-	pixel_y = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	id = "nsmine_two";
-	name = "blast door controls";
-	pixel_x = -22;
-	pixel_y = -11
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 4;
-	id = "mining_base_two";
-	pixel_x = -20;
-	pixel_y = -2
-	},
-/obj/effect/decal/cleanable/ash,
-/turf/open/floor/plasteel/patterned,
-/area/ruin/rockplanet/mining_base/refinery)
 "wK" = (
 /obj/effect/turf_decal/steeldecal/steel_decals_central1{
 	dir = 1
@@ -4198,6 +4251,23 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/refinery)
+"wL" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4;
+	layer = 3.01;
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "nsmine_off";
+	name = "window shutter control";
+	pixel_x = 7;
+	pixel_y = -22
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/mining_base/office)
 "wO" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -4245,26 +4315,15 @@
 	dir = 8
 	},
 /area/ruin/rockplanet/mining_base/rig_one)
-"xb" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder{
-	pixel_x = -5;
-	pixel_y = 12
+"xa" = (
+/obj/structure/vein/rockplanet/classthree{
+	max_mobs = 18;
+	mining_charges = 80
 	},
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/food/flour,
-/obj/machinery/firealarm/directional/west,
-/obj/machinery/button/door{
-	dir = 4;
-	id = "nsmine_canteen";
-	name = "window shutter control";
-	pixel_x = -21;
-	pixel_y = 11
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/canteen)
+/obj/effect/turf_decal/box,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
+/area/ruin/rockplanet/mining_base/rig_one)
 "xc" = (
 /obj/machinery/conveyor{
 	dir = 1;
@@ -4290,6 +4349,25 @@
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"xk" = (
+/obj/structure/table,
+/obj/item/cutting_board{
+	anchored = 1;
+	pixel_y = 4
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = 4;
+	pixel_y = 1
+	},
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 8
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/canteen)
 "xl" = (
 /obj/structure/table/wood,
 /obj/machinery/fax/ruin{
@@ -4301,6 +4379,14 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/mining_base/office)
+"xm" = (
+/obj/machinery/power/floodlight{
+	anchored = 1;
+	setting = 2
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "xn" = (
 /obj/structure/filingcabinet{
 	density = 0;
@@ -4314,23 +4400,24 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/mining_base/armory)
 "xq" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_x = -5;
+	pixel_y = 6
 	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
+/obj/structure/closet/wall/red/directional/west{
+	req_access_txt = "3"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/machinery/recharger{
+	pixel_x = 7;
+	pixel_y = 6
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/stairs/rockplanet/lit{
-	dir = 8
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/mining_base/armory)
 "xr" = (
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_two)
@@ -4486,20 +4573,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"yj" = (
-/obj/structure/rack,
-/obj/item/tank/internals/oxygen{
-	pixel_x = 2;
-	pixel_y = -4
-	},
-/obj/effect/turf_decal/corner/opaque/nsorange/half,
-/obj/effect/turf_decal/box,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -4;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/rockplanet,
-/area/ruin/rockplanet/mining_base/rig_two)
 "yl" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/sign/warning/coldtemp{
@@ -4535,17 +4608,23 @@
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "yy" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 6;
-	pixel_y = 11
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
-	pixel_x = -6;
-	pixel_y = -2
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
 	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/canteen)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/stairs/rockplanet/lit{
+	dir = 8
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "yB" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4629,13 +4708,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/crew)
-"yP" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 5
-	},
-/obj/machinery/washing_machine,
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "yQ" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -4663,15 +4735,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"yW" = (
-/obj/machinery/mineral/processing_unit_console{
-	machinedir = 2;
-	pixel_y = 24
+"yZ" = (
+/obj/machinery/computer/operating{
+	dir = 4;
+	pixel_x = -3
 	},
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/structure/railing,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/mining_base/refinery)
+/obj/machinery/airalarm/directional/west,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/item/radio/intercom/directional/north{
+	pixel_x = -7
+	},
+/obj/machinery/button/door{
+	pixel_y = 23;
+	pixel_x = 9;
+	name = "window shutter control";
+	id = "nsmine_med"
+	},
+/obj/item/disk/surgery/t2,
+/turf/open/floor/plasteel/white,
+/area/ruin/rockplanet/mining_base/med)
 "zb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4683,20 +4765,6 @@
 	dir = 8
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"zd" = (
-/obj/structure/table,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -3
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 4
-	},
-/obj/item/newspaper{
-	pixel_x = -6;
-	pixel_y = 15
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/canteen)
 "zf" = (
 /obj/effect/turf_decal/siding{
 	dir = 1
@@ -4732,22 +4800,6 @@
 /obj/structure/platform,
 /turf/open/floor/plating/asteroid/rockplanet/cracked,
 /area/overmap_encounter/planetoid/cave/explored)
-"zu" = (
-/obj/structure/rack,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -4;
-	pixel_y = 5
-	},
-/obj/item/tank/internals/oxygen{
-	pixel_x = 2;
-	pixel_y = -4
-	},
-/obj/effect/turf_decal/corner/opaque/nsorange/half{
-	dir = 1
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/rockplanet,
-/area/ruin/rockplanet/mining_base/rig_one)
 "zx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -4820,23 +4872,6 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/cyan,
 /area/ruin/rockplanet/mining_base/crew)
-"zS" = (
-/obj/machinery/door/airlock/security{
-	dir = 4;
-	name = "Suit Storage";
-	req_access_txt = "1"
-	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/opaque/vired/filled/warning{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/rockplanet/mining_base/armory)
 "zT" = (
 /obj/structure/flora/ash/fern,
 /turf/open/floor/plating/asteroid/rockplanet,
@@ -4981,6 +5016,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"AA" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin{
+	pixel_x = -4;
+	pixel_y = 6
+	},
+/obj/item/pen/fountain{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/pen{
+	pixel_x = 9;
+	pixel_y = 10
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/wood,
+/area/ruin/rockplanet/mining_base/office)
 "AC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/sign/warning/coldtemp{
@@ -5087,6 +5141,26 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/engineering)
+"AR" = (
+/obj/structure/table,
+/obj/machinery/reagentgrinder{
+	pixel_x = -5;
+	pixel_y = 12
+	},
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/food/flour,
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "nsmine_canteen";
+	name = "window shutter control";
+	pixel_x = -21;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/canteen)
 "AX" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -5183,27 +5257,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/mining_base/med)
-"BC" = (
-/obj/machinery/jukebox{
-	density = 0;
-	pixel_y = 24
-	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/item/shard,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/canteen)
 "BE" = (
 /obj/machinery/power/rtg,
 /obj/structure/cable/yellow{
@@ -5258,6 +5311,26 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_two)
+"BM" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/item/lighter{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/mining_base/office)
 "BN" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -5583,18 +5656,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/engineering)
-"Df" = (
-/obj/effect/turf_decal/box,
-/obj/effect/turf_decal/weather/rock{
-	dir = 10
-	},
-/obj/structure/mopbucket,
-/obj/item/mop{
-	pixel_x = -5;
-	pixel_y = 7
-	},
-/turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Dh" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/template_noop)
@@ -5722,15 +5783,6 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"DK" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "nsmine_off"
-	},
-/turf/open/floor/plating,
-/area/ruin/rockplanet/mining_base/office)
 "DP" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 1
@@ -5781,24 +5833,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Er" = (
-/obj/machinery/conveyor_switch{
-	id = "rock_mine_swap";
-	name = "furnace switch";
-	pixel_x = 4;
-	pixel_y = 2
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
-	},
-/obj/machinery/conveyor_switch/oneway{
-	id = "rock_mine_int";
-	pixel_x = -13;
-	pixel_y = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/patterned,
-/area/ruin/rockplanet/mining_base/refinery)
 "Et" = (
 /obj/structure/platform{
 	dir = 5
@@ -5903,41 +5937,6 @@
 /obj/effect/turf_decal/borderfloor/corner,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Fg" = (
-/obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/mining_base/med)
-"Fi" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central1{
-	dir = 8
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4;
-	name = "Medical Dome"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/med)
 "Fj" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
@@ -5986,11 +5985,22 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/rockplanet/mining_base/crew)
-"Fu" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer3,
-/obj/effect/turf_decal/box,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/mining_base/engineering)
+"Ft" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/tank/internals/oxygen{
+	pixel_x = 2;
+	pixel_y = -4
+	},
+/obj/effect/turf_decal/corner/opaque/nsorange/half{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/mining_base/rig_one)
 "Fx" = (
 /obj/structure/platform{
 	dir = 10
@@ -6014,6 +6024,13 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/engineering)
+"FF" = (
+/obj/machinery/door/airlock{
+	dir = 4;
+	name = "Showers"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/crew)
 "FG" = (
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
@@ -6150,6 +6167,19 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Gv" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/table,
+/obj/item/storage/box/bodybags{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/rockplanet/mining_base/med)
 "Gx" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -6213,18 +6243,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"GP" = (
-/obj/effect/turf_decal/trimline/opaque/blue/end,
-/obj/item/stack/medical/splint/ghetto{
-	pixel_x = -5;
-	pixel_y = -6
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/mining_base/med)
 "GS" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -6297,38 +6315,6 @@
 /obj/item/mine/pressure/explosive/live,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Hm" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/ammo_casing/spent{
-	pixel_x = 2;
-	pixel_y = -9
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"Hn" = (
-/obj/item/paper/crumpled{
-	pixel_x = -9;
-	pixel_y = -7
-	},
-/obj/effect/decal/cleanable/blood{
-	icon_state = "floor1-old"
-	},
-/obj/effect/mob_spawn/human/corpse/ruin/ns_mine_manager,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	mission_index = 2
-	},
-/turf/open/floor/carpet,
-/area/ruin/rockplanet/mining_base/office)
 "Hp" = (
 /obj/structure/platform{
 	dir = 1
@@ -6364,6 +6350,24 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"HD" = (
+/obj/item/paper/crumpled{
+	pixel_x = -9;
+	pixel_y = -7
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor1-old"
+	},
+/obj/effect/mob_spawn/human/corpse/ruin/ns_mine_manager,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	mission_index = 2
+	},
+/turf/open/floor/carpet,
+/area/ruin/rockplanet/mining_base/office)
 "HE" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 6
@@ -6406,28 +6410,21 @@
 /obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/mining_base/engineering)
-"HY" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
-	},
-/obj/structure/table,
-/obj/effect/turf_decal/spline/fancy/opaque/grey{
-	dir = 4
-	},
-/obj/item/radio/intercom/table{
-	dir = 4;
-	pixel_x = 5;
-	pixel_y = -1
-	},
-/obj/item/radio/weather_monitor{
-	pixel_x = -10;
-	pixel_y = 10
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ruin/rockplanet/mining_base/refinery)
 "HZ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/rockplanet/mining_base/engineering)
+"Ib" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = 6;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/canteen)
 "If" = (
 /obj/effect/turf_decal/weather/rock/corner{
 	dir = 8
@@ -6450,6 +6447,21 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Iv" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 8
+	},
+/obj/item/reagent_containers/food/drinks/beer/light{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/canteen)
 "Iw" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 8
@@ -6459,20 +6471,6 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"IB" = (
-/obj/machinery/conveyor{
-	id = "rock_mine";
-	pixel_y = -1
-	},
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockplanet,
-/area/ruin/rockplanet/mining_base/refinery)
 "IC" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -6499,6 +6497,18 @@
 /obj/structure/flora/ash/puce,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"IH" = (
+/obj/effect/turf_decal/trimline/opaque/blue/end,
+/obj/item/stack/medical/splint/ghetto{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/rockplanet/mining_base/med)
 "IK" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -6512,18 +6522,6 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"IO" = (
-/obj/machinery/door/poddoor{
-	dir = 2;
-	id = "nsmine_canteen"
-	},
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor{
-	id = "nsmine_canteen"
-	},
-/turf/open/floor/plating,
-/area/ruin/rockplanet/mining_base/canteen)
 "IP" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
@@ -6565,14 +6563,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"IX" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 1;
-	icon_state = "blood2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/carpet,
-/area/ruin/rockplanet/mining_base/office)
 "IY" = (
 /obj/machinery/power/floodlight{
 	anchored = 1;
@@ -6604,29 +6594,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/refinery)
-"Jg" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4;
-	name = "Office Dome"
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central1{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/office)
 "Ji" = (
 /obj/machinery/photocopier,
 /obj/item/taperecorder/preset/mining_base{
@@ -6651,6 +6618,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Jm" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/blue/filled/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/rockplanet/mining_base/med)
 "Jq" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -6691,21 +6675,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/med)
-"JE" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 8
-	},
-/obj/item/table_bell{
-	pixel_x = -6;
-	pixel_y = 1
-	},
-/obj/item/storage/ration/sausage_peppers_onions{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/canteen)
 "JH" = (
 /obj/machinery/mineral/unloading_machine{
 	input_dir = 1;
@@ -6714,12 +6683,43 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
 /area/ruin/rockplanet/mining_base/rig_two)
+"JL" = (
+/obj/effect/turf_decal/trimline/opaque/vired/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/space_heater{
+	anchored = 1;
+	density = 0;
+	pixel_x = -12;
+	pixel_y = 9
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/mining_base/armory)
 "JO" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/tiled/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"JQ" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/refinery)
 "JS" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 5
@@ -6843,6 +6843,20 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/crew)
+"Kz" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/ammo_casing/spent{
+	pixel_x = 2;
+	pixel_y = -9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "KE" = (
 /obj/structure/rack,
 /obj/item/mining_scanner{
@@ -6989,24 +7003,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/rockplanet/mining_base/canteen)
-"LN" = (
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/table,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/grey{
-	dir = 8
-	},
-/obj/item/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/item/pen{
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ruin/rockplanet/mining_base/refinery)
 "LO" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/platform/military/corner{
@@ -7133,63 +7129,12 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Mm" = (
-/obj/structure/table/wood,
-/obj/item/paper_bin{
-	pixel_x = -4;
-	pixel_y = 6
-	},
-/obj/item/pen/fountain{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/pen{
-	pixel_x = 9;
-	pixel_y = 10
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/turf/open/floor/wood,
-/area/ruin/rockplanet/mining_base/office)
-"Mn" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/steeldecal/steel_decals_central1{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	dir = 4;
-	name = "Canteen"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/canteen)
 "Mt" = (
 /obj/structure/guncloset,
 /obj/effect/turf_decal/box,
 /obj/item/gun/energy/laser/empty_cell,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/mining_base/armory)
-"Mu" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 8
-	},
-/obj/structure/window/reinforced/survival_pod,
-/obj/structure/table,
-/obj/item/storage/box/bodybags{
-	pixel_x = -3;
-	pixel_y = 5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/rockplanet/mining_base/med)
 "MA" = (
 /obj/effect/radiation,
 /obj/structure/cable/yellow{
@@ -7200,15 +7145,6 @@
 	},
 /turf/open/floor/concrete/slab_4,
 /area/ruin/rockplanet/mining_base/engineering)
-"MI" = (
-/obj/structure/vein/rockplanet/classthree{
-	max_mobs = 18;
-	mining_charges = 80
-	},
-/obj/effect/turf_decal/box,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/asteroid/rockplanet/wet/cracked,
-/area/ruin/rockplanet/mining_base/rig_one)
 "MP" = (
 /obj/structure/closet/crate/freezer,
 /obj/item/storage/cans/sixbeer,
@@ -7245,23 +7181,6 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"MX" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 4;
-	layer = 3.01;
-	pixel_x = 5;
-	pixel_y = 6
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	id = "nsmine_off";
-	name = "window shutter control";
-	pixel_x = 7;
-	pixel_y = -22
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/mining_base/office)
 "Na" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -7435,6 +7354,19 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"NV" = (
+/obj/structure/table,
+/obj/effect/turf_decal/corner/opaque/white/diagonal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/food/flour,
+/obj/machinery/light/directional/west,
+/obj/item/radio/old{
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/canteen)
 "NX" = (
 /obj/effect/turf_decal/trimline/opaque/vired/warning{
 	dir = 4
@@ -7442,6 +7374,17 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/mining_base/armory)
+"NZ" = (
+/obj/effect/turf_decal/steeldecal/steel_decals_central1{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "Canteen"
+	},
+/obj/effect/mapping_helpers/airlock/welded,
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/canteen)
 "Ob" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 8
@@ -7646,6 +7589,39 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/canteen)
+"Pq" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/rockplanet/mining_base/med)
+"Pr" = (
+/obj/structure/table/wood,
+/obj/item/tape/random{
+	pixel_x = -7;
+	pixel_y = 11
+	},
+/obj/item/tape/random{
+	pixel_x = 2
+	},
+/obj/item/tape/random{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/wood,
+/area/ruin/rockplanet/mining_base/office)
 "Pu" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 5
@@ -7690,18 +7666,6 @@
 	},
 /turf/open/floor/noslip,
 /area/ruin/rockplanet/mining_base/crew)
-"PK" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 1
-	},
-/obj/structure/rack,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -4;
-	pixel_y = 5
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/refinery)
 "PM" = (
 /obj/structure/chair{
 	dir = 4
@@ -7710,6 +7674,23 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
+/area/ruin/rockplanet/mining_base/canteen)
+"PO" = (
+/obj/structure/table,
+/obj/item/cutting_board{
+	anchored = 1;
+	pixel_y = 4
+	},
+/obj/item/melee/knife/butcher{
+	pixel_x = -1;
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/white,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor3-old"
+	},
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/plasteel/freezer,
 /area/ruin/rockplanet/mining_base/canteen)
 "PT" = (
 /obj/effect/turf_decal/borderfloor,
@@ -7724,6 +7705,24 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"PZ" = (
+/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/storage/case/surgery{
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -8
+	},
+/obj/item/storage/box/syringes{
+	pixel_x = 9;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/rockplanet/mining_base/med)
 "Qa" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7778,21 +7777,6 @@
 /obj/item/geiger_counter,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/rockplanet/mining_base/engineering)
-"Qt" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 8
-	},
-/obj/structure/table,
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/item/reagent_containers/condiment/hotsauce{
-	pixel_x = 6;
-	pixel_y = 12
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/canteen)
 "Qx" = (
 /obj/structure/closet/crate/freezer,
 /obj/effect/turf_decal/spline/fancy/opaque/white{
@@ -7806,26 +7790,6 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/sodawater,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/rockplanet/mining_base/canteen)
-"Qy" = (
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/item/lighter{
-	pixel_x = -5;
-	pixel_y = -6
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/rockplanet/mining_base/office)
 "Qz" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
@@ -7943,17 +7907,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Rj" = (
-/obj/effect/turf_decal/steeldecal/steel_decals_central1{
-	dir = 4
+"Ri" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 7
 	},
-/obj/machinery/door/airlock/external{
-	dir = 4;
-	name = "Canteen"
+/obj/item/pen{
+	pixel_x = 7;
+	pixel_y = 1
 	},
-/obj/effect/mapping_helpers/airlock/welded,
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/canteen)
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/mining_base/office)
 "Rk" = (
 /obj/structure/toilet{
 	pixel_y = 16
@@ -8054,6 +8018,14 @@
 	},
 /turf/open/floor/plating/rockplanet,
 /area/ruin/rockplanet/mining_base/refinery)
+"RK" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1;
+	icon_state = "blood2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/carpet,
+/area/ruin/rockplanet/mining_base/office)
 "RQ" = (
 /obj/structure/flora/rock/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
@@ -8088,6 +8060,24 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/mining_base/refinery)
+"Sb" = (
+/obj/machinery/conveyor_switch{
+	id = "rock_mine_swap";
+	name = "furnace switch";
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/obj/machinery/conveyor_switch/oneway{
+	id = "rock_mine_int";
+	pixel_x = -13;
+	pixel_y = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
 "Sd" = (
@@ -8260,12 +8250,17 @@
 /obj/structure/platform,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/rockplanet/mining_base/refinery)
-"SL" = (
-/obj/machinery/porta_turret/ship/nt/light/mining_base{
-	id = "m1"
+"SK" = (
+/obj/effect/turf_decal/steeldecal/steel_decals_central1{
+	dir = 8
 	},
-/turf/open/floor/pod/rockplanet,
-/area/ruin/rockplanet/mining_base/rig_one)
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "Canteen"
+	},
+/obj/effect/mapping_helpers/airlock/sealed,
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/canteen)
 "SM" = (
 /obj/structure/closet/secure_closet/engineering_personal{
 	populate = 0
@@ -8291,6 +8286,40 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"SP" = (
+/obj/structure/closet/wall/chem/directional/south,
+/obj/item/towel,
+/obj/item/towel{
+	pixel_x = -3;
+	pixel_y = 9
+	},
+/obj/item/towel{
+	pixel_x = 11;
+	pixel_y = 2
+	},
+/obj/item/towel{
+	pixel_x = -6;
+	pixel_y = -5
+	},
+/obj/item/towel{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/towel{
+	pixel_x = 7;
+	pixel_y = -5
+	},
+/obj/item/soap/nanotrasen{
+	pixel_x = 3;
+	pixel_y = -9
+	},
+/obj/item/soap/nanotrasen,
+/obj/structure/sign/poster/official/no_erp{
+	pixel_x = 28
+	},
+/obj/item/razor,
+/turf/open/floor/plasteel/freezer,
+/area/ruin/rockplanet/mining_base/crew)
 "SS" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
@@ -8311,20 +8340,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_two)
-"SW" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/item/ammo_casing/c57x39mm{
-	icon_state = "rifle-steel-empty";
-	projectile_type = null
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/wood,
-/area/ruin/rockplanet/mining_base/office)
 "SX" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -8445,6 +8460,19 @@
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"TE" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1;
+	icon_state = "blood2"
+	},
+/obj/machinery/door/airlock/command,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/office)
 "TF" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/box,
@@ -8591,14 +8619,6 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"Uu" = (
-/obj/machinery/power/floodlight{
-	anchored = 1;
-	setting = 2
-	},
-/obj/structure/cable,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Uv" = (
 /obj/structure/platform{
 	dir = 4
@@ -8614,14 +8634,6 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ruin/rockplanet/mining_base/crew)
-"Uy" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor{
-	id = "nsmine_canteen"
-	},
-/turf/open/floor/plating,
-/area/ruin/rockplanet/mining_base/canteen)
 "UA" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
@@ -8655,23 +8667,6 @@
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"UL" = (
-/obj/structure/table,
-/obj/item/cutting_board{
-	anchored = 1;
-	pixel_y = 4
-	},
-/obj/item/melee/knife/butcher{
-	pixel_x = -1;
-	pixel_y = 4
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/white,
-/obj/effect/decal/cleanable/blood{
-	icon_state = "floor3-old"
-	},
-/obj/item/radio/intercom/directional/west,
-/turf/open/floor/plasteel/freezer,
-/area/ruin/rockplanet/mining_base/canteen)
 "UM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -8683,6 +8678,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/mining_base/refinery)
+"UT" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/item/ammo_casing/c57x39mm{
+	icon_state = "rifle-steel-empty";
+	pixel_x = -9;
+	pixel_y = 5;
+	projectile_type = null
+	},
+/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "UV" = (
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -8806,6 +8816,16 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"VE" = (
+/obj/machinery/conveyor{
+	id = "rock_mine";
+	pixel_y = -1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/rockplanet,
+/area/ruin/rockplanet/mining_base/refinery)
 "VG" = (
 /obj/effect/turf_decal/nanotrasen/ns/top_left,
 /obj/structure/cable{
@@ -8857,25 +8877,16 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"VN" = (
-/obj/effect/turf_decal/trimline/opaque/blue/filled/line{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+"VT" = (
+/obj/machinery/conveyor{
+	id = "rock_mine";
+	pixel_y = -1
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/mining_base/med)
+/turf/open/floor/plating/rust/rockplanet,
+/area/ruin/rockplanet/mining_base/refinery)
 "VV" = (
 /obj/effect/turf_decal/corner/transparent/nsorange/diagonal,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
@@ -8898,6 +8909,18 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/mining_base/rig_two)
+"We" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/weather/rock{
+	dir = 10
+	},
+/obj/structure/mopbucket,
+/obj/item/mop{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Wf" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal{
 	dir = 8
@@ -8924,17 +8947,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Wm" = (
-/obj/structure/table,
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 8
-	},
-/obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_x = 3;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/canteen)
 "Wn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/porta_turret/ship/nt/light/mining_base{
@@ -9025,6 +9037,15 @@
 /obj/structure/platform,
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"WM" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "nsmine_off"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/mining_base/office)
 "WO" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -9039,6 +9060,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/mining_base/armory)
+"WT" = (
+/obj/structure/sign/warning/securearea{
+	pixel_x = 24;
+	pixel_y = 10
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/mining_base/engineering)
 "WW" = (
 /obj/structure/table,
 /obj/structure/window/reinforced{
@@ -9078,17 +9110,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/refinery)
-"Xc" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 7
-	},
-/obj/item/pen{
-	pixel_x = 7;
-	pixel_y = 1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/mining_base/office)
 "Xg" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -9326,13 +9347,6 @@
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Yp" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	name = "Showers"
-	},
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/crew)
 "Yv" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -9393,20 +9407,15 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"YM" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/spline/fancy/opaque/grey,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -4;
-	pixel_y = 5
+"YJ" = (
+/obj/effect/turf_decal/box,
+/obj/effect/turf_decal/corner/opaque/nsorange/half,
+/obj/machinery/turretid{
+	id = "m1";
+	pixel_x = 26
 	},
-/obj/item/storage/toolbox/electrical{
-	pixel_x = 3;
-	pixel_y = -4
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/mono,
-/area/ruin/rockplanet/mining_base/engineering)
+/turf/open/floor/plasteel/rockplanet,
+/area/ruin/rockplanet/mining_base/rig_one)
 "YR" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -9534,25 +9543,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/mining_base/armory)
-"Zn" = (
-/obj/structure/table,
-/obj/item/cutting_board{
-	anchored = 1;
-	pixel_y = 4
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_x = 4;
-	pixel_y = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 8
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_x = -6;
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/canteen)
 "Zp" = (
 /obj/structure/chair{
 	dir = 8
@@ -9593,16 +9583,6 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Zu" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 8
-	},
-/obj/structure/sink/kitchen{
-	dir = 4;
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel,
-/area/ruin/rockplanet/mining_base/canteen)
 "Zv" = (
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/rockplanet,
@@ -9709,6 +9689,27 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
+"ZW" = (
+/obj/machinery/jukebox{
+	density = 0;
+	pixel_y = 24
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/item/shard,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/mono,
+/area/ruin/rockplanet/mining_base/canteen)
 "ZX" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -10044,7 +10045,7 @@ Ss
 hf
 HZ
 HZ
-YM
+sZ
 pY
 nW
 ee
@@ -10125,7 +10126,7 @@ Oo
 fW
 fW
 Ao
-Fu
+cf
 kf
 fW
 Jj
@@ -10170,7 +10171,7 @@ RQ
 En
 co
 UZ
-xq
+yy
 EC
 co
 Mk
@@ -10188,7 +10189,7 @@ iJ
 Pi
 Yj
 Ci
-pf
+WT
 im
 RF
 RF
@@ -10242,7 +10243,7 @@ UV
 UV
 Gl
 Gl
-Jg
+hd
 Gl
 Gl
 En
@@ -10314,7 +10315,7 @@ Qd
 Qd
 Gl
 SS
-af
+cE
 na
 Gl
 Gl
@@ -10386,15 +10387,15 @@ Qd
 Gl
 Gl
 Gl
-op
+aO
 Gl
 Gl
 Hf
 xl
-Mm
+AA
 Gl
 Ww
-Hm
+Kz
 yB
 Hp
 UV
@@ -10458,11 +10459,11 @@ Gl
 Gl
 Qi
 rc
-Qy
-mG
-lA
-IX
-Hn
+BM
+uK
+TE
+RK
+HD
 yo
 Gl
 Ww
@@ -10493,7 +10494,7 @@ ub
 Fn
 pd
 pu
-kV
+xq
 Mt
 pd
 Jj
@@ -10535,7 +10536,7 @@ YW
 Gl
 uQ
 NP
-vZ
+Pr
 Gl
 Ww
 eV
@@ -10560,7 +10561,7 @@ cU
 Jk
 bR
 Jk
-mv
+UT
 dP
 Hp
 pd
@@ -10601,12 +10602,12 @@ UV
 Gl
 uu
 Tu
-Xc
+Ri
 An
-MX
+wL
 Gl
 Ji
-SW
+mI
 lP
 Gl
 Ww
@@ -10639,7 +10640,7 @@ pd
 gm
 LW
 Ph
-eS
+vq
 SF
 bL
 pd
@@ -10672,10 +10673,10 @@ UV
 UV
 Gl
 Gl
-DK
-DK
-DK
-DK
+WM
+WM
+WM
+WM
 Gl
 Gl
 Gl
@@ -10783,7 +10784,7 @@ pd
 AF
 yD
 pd
-jp
+JL
 ON
 Md
 pd
@@ -10845,7 +10846,7 @@ UV
 UV
 TF
 mp
-Df
+We
 Qd
 Ww
 Aa
@@ -11000,7 +11001,7 @@ pd
 pd
 pd
 NS
-pw
+qn
 pd
 pd
 Jj
@@ -11014,7 +11015,7 @@ nd
 Bl
 ez
 ez
-SL
+gg
 sf
 GH
 GH
@@ -11071,7 +11072,7 @@ pd
 hO
 re
 pd
-zS
+iw
 pd
 pd
 Jj
@@ -11227,7 +11228,7 @@ lc
 Zk
 gU
 vC
-MI
+xa
 Hb
 ll
 ob
@@ -11412,7 +11413,7 @@ Rh
 Wj
 lz
 Xk
-hl
+nH
 vH
 da
 WX
@@ -11446,7 +11447,7 @@ wX
 JV
 ez
 ez
-SL
+gg
 QT
 GH
 GH
@@ -11557,13 +11558,13 @@ LX
 Eq
 DD
 DD
-PK
+JQ
 Ke
 IE
 AE
 UM
 FG
-LN
+iT
 Cx
 DD
 DD
@@ -11584,7 +11585,7 @@ GH
 GH
 GH
 ox
-zu
+Ft
 KE
 jj
 uD
@@ -11618,9 +11619,9 @@ Vm
 UV
 fM
 cA
-rp
+yZ
 zK
-rD
+ju
 cA
 En
 Mk
@@ -11692,7 +11693,7 @@ Qd
 gF
 Bv
 eJ
-GP
+IH
 cA
 cA
 Ww
@@ -11709,7 +11710,7 @@ ta
 Sd
 Fm
 dt
-wJ
+do
 kZ
 aK
 yv
@@ -11729,7 +11730,7 @@ Jj
 GH
 ox
 go
-wp
+YJ
 DI
 JV
 QT
@@ -11762,9 +11763,9 @@ sb
 UV
 Qd
 gF
-bk
+PZ
 mq
-Fg
+Pq
 rj
 cA
 Ww
@@ -11834,9 +11835,9 @@ KM
 UV
 Qd
 cA
-lN
-Mu
-VN
+qy
+Gv
+nT
 Sw
 cA
 Ww
@@ -11846,9 +11847,9 @@ Eq
 QF
 ew
 uB
-rC
+ja
 lR
-HY
+eh
 aw
 uk
 ak
@@ -11908,7 +11909,7 @@ UV
 cA
 NT
 qT
-eA
+Jm
 EY
 cA
 Ww
@@ -11917,14 +11918,14 @@ at
 Eq
 yI
 ew
-yW
+ln
 OB
 CU
 XE
 MQ
 XE
 sr
-Er
+Sb
 qE
 ew
 zm
@@ -11980,7 +11981,7 @@ UV
 cA
 cA
 cA
-Fi
+ip
 cA
 cA
 Ww
@@ -12072,9 +12073,9 @@ hu
 ew
 ew
 zm
-bb
-iQ
-kJ
+fS
+eL
+qI
 ZV
 Jj
 Jj
@@ -12622,7 +12623,7 @@ UV
 Pj
 MP
 Tn
-UL
+PO
 Pj
 yl
 rx
@@ -12636,7 +12637,7 @@ QR
 Et
 Qb
 dq
-ek
+ml
 Qb
 Vl
 uW
@@ -12701,7 +12702,7 @@ BK
 CJ
 Ma
 Pj
-yP
+gD
 Kj
 lm
 mN
@@ -12711,7 +12712,7 @@ VV
 Ah
 Ky
 Tb
-aR
+pP
 Qb
 Qb
 Jj
@@ -12769,8 +12770,8 @@ LA
 ts
 Pj
 Pj
-Rj
-Mn
+NZ
+vT
 Pj
 Pj
 Pj
@@ -12840,7 +12841,7 @@ Pj
 fP
 Pj
 Pj
-BC
+ZW
 fT
 Al
 yQ
@@ -12854,7 +12855,7 @@ Qb
 Qb
 Qb
 Qb
-ij
+pg
 Qz
 Bi
 Qb
@@ -12873,9 +12874,9 @@ VW
 xH
 EE
 PD
-yj
+dI
 fA
-vn
+lr
 PD
 og
 Yg
@@ -12906,11 +12907,11 @@ Ce
 UV
 lY
 UV
-IO
-xb
-Zu
+mF
+AR
+cQ
 rV
-hz
+NV
 zf
 Av
 AL
@@ -12978,15 +12979,15 @@ Ce
 UV
 UV
 UV
-IO
-Zn
+mF
+xk
 pS
 ZN
 jw
 BP
 iu
 pO
-kM
+gI
 JT
 bC
 Pj
@@ -13012,16 +13013,16 @@ jy
 IY
 IP
 sy
-tj
+uG
 JH
-tk
-IB
-cP
-cP
-mK
-mK
-mK
-cP
+tA
+kO
+VT
+VT
+VE
+VE
+VE
+VT
 Ga
 Jj
 Jj
@@ -13050,7 +13051,7 @@ Ce
 UV
 RQ
 UV
-IO
+mF
 kK
 ac
 pq
@@ -13061,14 +13062,14 @@ Vw
 BH
 po
 Aw
-Uy
+pB
 WL
 Yl
 uA
 Hp
 Qb
 Qb
-Yp
+FF
 Qb
 RD
 kH
@@ -13126,14 +13127,14 @@ Pj
 KH
 ZK
 GS
-JE
+mA
 sV
 MT
 PM
 zY
 Lx
 Tt
-Uy
+pB
 Ww
 Yl
 uA
@@ -13198,21 +13199,21 @@ Pj
 cg
 ZK
 fQ
-nu
+Iv
 sV
 MT
-yy
-zd
+Ib
+oj
 jc
 Ku
-Uy
+pB
 Ww
 Yl
 uA
 Hp
 Qb
 PH
-tE
+SP
 Qb
 bT
 Gx
@@ -13268,9 +13269,9 @@ UV
 UV
 Pj
 Pj
-Qt
+hn
 Wf
-Wm
+cX
 sV
 ca
 gy
@@ -13342,8 +13343,8 @@ UV
 Pj
 Pj
 Pj
-Uy
-sq
+pB
+bu
 eg
 FM
 ng
@@ -13360,7 +13361,7 @@ Pg
 CE
 Ux
 wT
-jd
+gq
 Qb
 Qb
 Jj
@@ -13415,11 +13416,11 @@ UV
 UV
 Qd
 Qd
-Uy
-sq
+pB
+bu
 Pj
 Pj
-mW
+SK
 Pj
 Pj
 Ww
@@ -13429,7 +13430,7 @@ Hp
 Qb
 oS
 hV
-kY
+ig
 um
 BZ
 Ub
@@ -13921,7 +13922,7 @@ UV
 ck
 HE
 xB
-Uu
+xm
 UV
 UV
 Jj

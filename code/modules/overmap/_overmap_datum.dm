@@ -104,8 +104,8 @@
 	if(isnum(x) && isnum(y))
 		current_overmap.overmap_container[x][y] -= src
 	token.parent = null
-	QDEL_NULL(token)
 	QDEL_LIST(contents)
+	QDEL_NULL(token)
 	if(lifespan)
 		STOP_PROCESSING(SSfastprocess, src)
 	return ..()
