@@ -24,7 +24,7 @@
 	hotkey_keys = list("Space")
 	name = "unique_action"
 	full_name = "Perform unique action"
-	description = ""
+	description = "Primarly used for guns"
 	keybind_signal = COMSIG_KB_HUMAN_UNIQUEACTION
 
 

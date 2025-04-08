@@ -11,3 +11,10 @@
 		. += 180
 	else if(dx < 0)
 		. += 360
+
+/proc/invert_hex(hex)
+	var/length = length(hex)
+
+	var/num = hex2num(hex)
+
+	return num2hex((16 ** length) - 1 - num, length)

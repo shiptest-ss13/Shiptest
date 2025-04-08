@@ -35,7 +35,7 @@
 	STR.locked_flavor = "seems to be sealed closed!"
 
 /obj/item/storage/ration/proc/open_ration(mob/user)
-	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
+	to_chat(user, span_notice("You tear open \the [src]."))
 	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
 	desc += "\nIt's been opened. Let's get this out onto a tray."

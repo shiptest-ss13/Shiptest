@@ -17,7 +17,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	lethal_projectile = /obj/projectile/bullet/a556_42
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
-	faction = list(FACTION_SYNDICATE, "turret")
+	faction = list(FACTION_RAMZI, "turret")
 	max_integrity = 180
 	shot_delay = 16
 	burst_delay = 8

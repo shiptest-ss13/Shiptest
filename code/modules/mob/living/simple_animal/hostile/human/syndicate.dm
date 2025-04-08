@@ -15,7 +15,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	maxbodytemp = 400
 	unsuitable_atmos_damage = 15
-	faction = list(FACTION_ANTAG_SYNDICATE)
+	faction = list(FACTION_RAMZI)
 	loot = null
 	check_friendly_fire = TRUE
 	dodging = TRUE
@@ -71,7 +71,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/bullet_act(obj/projectile/Proj)
 	if(prob(projectile_deflect_chance))
-		visible_message("<span class='danger'>[src] blocks [Proj] with its shield!</span>")
+		visible_message(span_danger("[src] blocks [Proj] with its shield!"))
 		return BULLET_ACT_BLOCK
 	return ..()
 
@@ -96,7 +96,7 @@
 	attack_verb_simple = "slice"
 	attack_sound = 'sound/weapons/blade1.ogg'
 
-	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
+	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -164,7 +164,7 @@
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
 
-	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
+	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge/AttackingTarget()
@@ -196,7 +196,7 @@
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	r_hand = /obj/item/melee/axe/sledgehammer/pre_wielded
+	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -311,6 +311,17 @@
 	minimum_distance = 2
 	shoot_point_blank = TRUE
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper
+	name = "Ramzi Clique Deadeye"
+	desc = "A deserter from the Gorlex Marauders turned pirate. The cold expressionless helmet betrays nothing but contempt as they await their next target."
+	minimum_distance = 7
+	vision_range = 12
+	aggro_vision_range = 14
+	icon_state = "syndicate_space_shotgun"
+	icon_living = "syndicate__space_shotgun"
+	casingtype = /obj/item/ammo_casing/a65clip
+	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
 	desc = "A deserter from the Gorlex Marauders turned pirate. The hateful eyes of a hardsuit stare down the sight of a Bulldog shotgun, elegance in its movements."
@@ -362,6 +373,17 @@
 	rapid = 2
 	rapid_fire_delay = 7
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/sniper
+	name = "Ramzi Clique Cleaner"
+	desc = "Black and red, black and red, and you're dead all over. They've already seen you, and are training their next shot with practiced distaste."
+	minimum_distance = 7
+	vision_range = 20
+	aggro_vision_range = 14
+	icon_state = "syndicate_shotgun"
+	icon_living = "syndicate_shotgun"
+	casingtype = /obj/item/ammo_casing/a65clip
+	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+
 ///////////////Misc////////////
 
 /mob/living/simple_animal/hostile/human/ramzi/civilian
@@ -395,7 +417,7 @@
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	faction = list(ROLE_SYNDICATE)
+	faction = list(FACTION_RAMZI)
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000

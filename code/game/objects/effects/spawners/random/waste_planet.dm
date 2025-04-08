@@ -8,7 +8,7 @@
 		/obj/item/trash/cheesie = 1,
 		/obj/item/trash/candy = 1,
 		/obj/item/trash/chips = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+		/obj/item/food/deadmouse = 1,
 		/obj/item/trash/pistachios = 1,
 		/obj/item/trash/plate = 1,
 		/obj/item/trash/popcorn = 1,
@@ -88,13 +88,13 @@
 
 /obj/effect/spawner/random/waste/hivebot
 	loot = list(
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/gold,
-		/obj/effect/spawner/random/salvage/plasma,
-		/obj/effect/spawner/random/salvage/silver,
-		/obj/effect/spawner/random/salvage/titanium,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/gold,
+		/obj/effect/spawner/random/salvage/ore/plasma,
+		/obj/effect/spawner/random/salvage/ore/silver,
+		/obj/effect/spawner/random/salvage/ore/titanium,
 		/obj/item/stack/ore/salvage/scrapbluespace,
 		/obj/item/stack/ore/salvage/scrapbluespace,
 		/obj/item/stack/ore/salvage/scrapuranium
