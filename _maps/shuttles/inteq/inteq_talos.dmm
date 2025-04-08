@@ -3989,7 +3989,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/structure/chair/handrail,
 /obj/machinery/light_switch{
 	pixel_x = -8;
 	pixel_y = 23
@@ -6288,6 +6287,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/half,
 /obj/machinery/firealarm/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "JT" = (
@@ -6942,6 +6942,14 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/directional/west,
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'"
+	},
+/obj/item/folder/syndicate{
+	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
+	pixel_x = 0;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/fore)
 "NN" = (
@@ -7677,9 +7685,6 @@
 	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
