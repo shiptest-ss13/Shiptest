@@ -206,7 +206,7 @@
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
 	desc = "Contains a box of 32 buckshot shells for use in lethal persuasion."
-	cost = 520 //6.4 ammo efficiency at 104 damage. Yes we are counting point blank.
+	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_buckshot)
 
 /datum/supply_pack/ammo/slugs
