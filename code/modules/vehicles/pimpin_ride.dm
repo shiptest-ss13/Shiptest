@@ -36,20 +36,20 @@
 /obj/vehicle/ridden/janicart/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/storage/bag/trash))
 		if(mybag)
-			to_chat(user, "<span class='warning'>[src] already has a trashbag hooked!</span>")
+			to_chat(user, span_warning("[src] already has a trashbag hooked!"))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
-		to_chat(user, "<span class='notice'>You hook the trashbag onto [src].</span>")
+		to_chat(user, span_notice("You hook the trashbag onto [src]."))
 		mybag = I
 		update_appearance()
 	else if(istype(I, /obj/item/janiupgrade))
 		if(floorbuffer)
-			to_chat(user, "<span class='warning'>[src] already has a floor buffer!</span>")
+			to_chat(user, span_warning("[src] already has a floor buffer!"))
 			return
 		floorbuffer = TRUE
 		qdel(I)
-		to_chat(user, "<span class='notice'>You upgrade [src] with the floor buffer.</span>")
+		to_chat(user, span_notice("You upgrade [src] with the floor buffer."))
 		AddElement(/datum/element/cleaning)
 		update_appearance()
 	else if(istype(I, /obj/item/key/janitor))
@@ -104,9 +104,9 @@
 
 /obj/vehicle/ridden/lawnmower/emag_act(mob/user)
 	if(emagged)
-		to_chat(user, "<span class='warning'>The safety mechanisms on \the [src] are already disabled!</span>")
+		to_chat(user, span_warning("The safety mechanisms on \the [src] are already disabled!"))
 		return
-	to_chat(user, "<span class='warning'>You disable the safety mechanisms on \the [src].</span>")
+	to_chat(user, span_warning("You disable the safety mechanisms on \the [src]."))
 	desc = "Equipped with reliable safeties to prevent <i>accidents</i> in the workplace. The safety light is <b>off</b>."
 	emagged = TRUE
 
@@ -135,7 +135,7 @@
 			if(M == H)
 				continue
 			if(M.body_position == LYING_DOWN)
-				visible_message("<span class='danger'>\the [src] grinds [M.name] into a fine paste!</span>")
+				visible_message(span_danger("\the [src] grinds [M.name] into a fine paste!"))
 				if (M.stat != DEAD)
 					gib_scream = TRUE
 				M.gib()
@@ -176,7 +176,7 @@
 			mowed = TRUE
 		else
 			take_damage(25)
-			visible_message("<span class='danger'>\the [src] makes a awful grinding sound as it drives over [flora]!</span>")
+			visible_message(span_danger("\the [src] makes a awful grinding sound as it drives over [flora]!"))
 
 	if(mowed)
 		playsound(loc, pick(drive_sounds), 50, 1)
