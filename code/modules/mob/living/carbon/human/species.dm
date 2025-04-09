@@ -174,6 +174,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///Does our species have colors for its' damage overlays?
 	var/use_damage_color = TRUE
 
+	/// How many tiles left in your sprint
+	var/sprint_length = 100
+	/// How many tiles you can sprint before spending stamina
+	var/sprint_length_max = 100
+	/// How many tiles you get back per second
+	var/sprint_regen_per_second = 0.75
+
 	///Species-only traits. Can be found in [code/_DEFINES/DNA.dm]
 	var/list/species_traits = list()
 	///Generic traits tied to having the species.

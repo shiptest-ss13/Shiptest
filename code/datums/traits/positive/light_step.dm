@@ -8,7 +8,7 @@
 	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
 
 /datum/quirk/light_step/on_spawn()
-	var/datum/component/footstep/C = quirk_holder.GetComponent(/datum/component/footstep)
+	var/datum/element/footstep/C = quirk_holder.GetComponent(/datum/element/footstep)
 	if(C)
 		C.volume *= 0.6
 		C.e_range -= 2

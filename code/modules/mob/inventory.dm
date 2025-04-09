@@ -447,21 +447,6 @@
 	if (I)
 		I.equip_to_best_slot(src)
 
-/mob/verb/equipment_swap()
-	set name = "equipment-swap"
-	set hidden = TRUE
-
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_equipment_swap)))
-
-/mob/proc/execute_equipment_swap()
-	var/obj/item/I = get_active_held_item()
-	if (I)
-		if(!do_after(src, 1 SECONDS, target = I))
-			to_chat(src, span_warning("You fumble with your equipment, accidentally dropping it on the floor!"))
-			dropItemToGround(I)
-			return
-		I.equip_to_best_slot(src, TRUE)
-
 //used in code for items usable by both carbon and drones, this gives the proper back slot for each mob.(defibrillator, backpack watertank, ...)
 /mob/proc/getBackSlot()
 	return ITEM_SLOT_BACK

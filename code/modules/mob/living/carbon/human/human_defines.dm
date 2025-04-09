@@ -13,13 +13,16 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	can_be_shoved_into = TRUE
-	//Hair colour and style
+	m_intent = MOVE_INTENT_WALK
+
+	/// Hair colour
 	var/hair_color = "000"
+	/// Hair style
 	var/hairstyle = "Bald"
 
-	///Colour used for the hair gradient.
+	/// Colour used for the hair gradient.
 	var/grad_color = "000"
-	///Style used for the hair gradient.
+	/// Style used for the hair gradient.
 	var/grad_style
 
 	//Facial hair colour and style
@@ -47,7 +50,7 @@
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/exowear = PREF_EXOWEAR			//exowear
 
-	///Whether this human started with a full-body prosthesis
+	/// Whether this human started with a full-body prosthesis
 	var/fbp = FALSE
 
 	//Equipment slots
@@ -58,13 +61,14 @@
 	var/obj/item/l_store = null
 	var/obj/item/s_store = null
 
-	var/special_voice = "" // For changing our voice. Used by a symptom.
-
+	/// For changing our voice.
+	var/special_voice = "" 
 	/// Adjective used in get_generic_name(), if any
 	var/generic_adjective
-	var/bleedsuppress = 0 //for stopping bloodloss body-wide
-
-	var/name_override //For temporary visible name changes
+	/// For stopping bloodloss body-wide
+	var/bleedsuppress = 0
+	/// For temporary visible name changes
+	var/name_override
 
 	var/datum/physiology/physiology
 
@@ -77,7 +81,7 @@
 
 	/// How many "units of blood" we have on our hands
 	var/blood_in_hands = 0
-	///blood particle effect
+	/// Blood particle effect
 	var/obj/effect/abstract/particle_holder/blood_particle
 
 	COOLDOWN_DECLARE(bloodloss_message)

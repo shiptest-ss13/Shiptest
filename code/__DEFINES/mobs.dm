@@ -13,9 +13,10 @@
 #define CURRENT_DEAD_PLAYERS "dead_players_list"
 #define CURRENT_OBSERVERS "current_observers_list"
 
-//movement intent defines for the m_intent var
+//Movement intent defines for the m_intent var
 #define MOVE_INTENT_WALK "walk"
 #define MOVE_INTENT_RUN "run"
+#define MOVE_INTENT_SNEAK "sneak"
 
 //Blood levels
 #define BLOOD_VOLUME_MAX_LETHAL 2150

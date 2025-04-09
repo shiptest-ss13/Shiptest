@@ -164,38 +164,38 @@
 		user.mob.dropItemToGround(I)
 	return TRUE
 
-/datum/keybinding/mob/toggle_move_intent
-	hotkey_keys = list("Alt")
+/datum/keybinding/living/toggle_move_intent
+	hotkey_keys = list("C")
 	name = "toggle_move_intent"
-	full_name = "Hold to toggle running"
-	description = "Hold down to enable running. Releasing will return you to walking."
-	keybind_signal = COMSIG_KB_MOB_TOGGLEMOVEINTENT_DOWN
+	full_name = "Hold to enable sprint"
+	description = "Hold down to enable sprinting. Releasing will return you to walking."
+	keybind_signal = COMSIG_KB_LIVING_TOGGLEMOVEINTENT_DOWN
 
-/datum/keybinding/mob/toggle_move_intent/down(client/user)
+/datum/keybinding/living/toggle_move_intent/down(client/user)
 	. = ..()
 	if(.)
 		return
-	var/mob/M = user.mob
-	M.toggle_move_intent()
+	var/mob/living/M = user.mob
+	M.set_move_intent(MOVE_INTENT_RUN)
 	return TRUE
 
-/datum/keybinding/mob/toggle_move_intent/up(client/user)
-	var/mob/M = user.mob
-	M.toggle_move_intent()
+/datum/keybinding/living/toggle_move_intent/up(client/user)
+	var/mob/living/M = user.mob
+	M.set_move_intent(MOVE_INTENT_WALK)
 	return TRUE
 
-/datum/keybinding/mob/toggle_move_intent_alternative
+/datum/keybinding/living/toggle_move_intent_alternative
 	hotkey_keys = list("Unbound")
 	name = "toggle_move_intent_alt"
-	full_name = "Press to toggle running"
-	description = "Press to toggle running, press again to toggle back to walking"
-	keybind_signal = COMSIG_KB_MOB_TOGGLEMOVEINTENTALT_DOWN
+	full_name = "Press to cycle move intent"
+	description = "Pressing this will cycle to the next move intent."
+	keybind_signal = COMSIG_KB_LIVING_TOGGLEMOVEINTENTALT_DOWN
 
-/datum/keybinding/mob/toggle_move_intent_alternative/down(client/user)
+/datum/keybinding/living/toggle_move_intent_alternative/down(client/user)
 	. = ..()
 	if(.)
 		return
-	var/mob/M = user.mob
+	var/mob/living/M = user.mob
 	M.toggle_move_intent()
 	return TRUE
 
@@ -298,7 +298,7 @@
 	return TRUE
 
 /datum/keybinding/mob/pixel_shift
-	hotkey_keys = list("C")
+	hotkey_keys = list("V")
 	name = "pixel_shift"
 	full_name = "Pixel shift"
 	description = "Displace your sprite within your current tile"

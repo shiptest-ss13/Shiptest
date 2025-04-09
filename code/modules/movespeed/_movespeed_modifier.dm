@@ -76,7 +76,7 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 			type_or_datum = new type_or_datum
 	var/datum/movespeed_modifier/existing = LAZYACCESS(movespeed_modification, type_or_datum.id)
 	if(existing)
-		if(existing == type_or_datum)		//same thing don't need to touch
+		if(existing == type_or_datum)//same thing don't need to touch
 			return TRUE
 		remove_movespeed_modifier(existing, FALSE)
 	if(length(movespeed_modification))

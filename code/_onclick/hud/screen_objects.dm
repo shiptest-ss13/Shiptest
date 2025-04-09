@@ -378,17 +378,21 @@
 	toggle(usr)
 
 /atom/movable/screen/mov_intent/update_icon_state()
+	if(!hud || !hud.mymob || !isliving(hud.mymob))
+		return
+	var/mob/living/living_hud_owner = hud.mymob
 	switch(hud?.mymob?.m_intent)
-		if(MOVE_INTENT_WALK)
+		if(MOVE_INTENT_WALK, MOVE_INTENT_SNEAK)
 			icon_state = "walking"
 		if(MOVE_INTENT_RUN)
 			icon_state = "running"
+	maptext = "<span style='[maptext_style]'>[capitalize(living_hud_owner.m_intent)]</span>" // remove this and add sneak icon here at some point in future
 	return ..()
 
 /atom/movable/screen/mov_intent/proc/toggle(mob/user)
 	if(isobserver(user))
 		return
-	user.toggle_move_intent(user)
+	user.toggle_move_intent()
 
 /atom/movable/screen/pull
 	name = "stop pulling"

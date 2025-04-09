@@ -84,7 +84,7 @@
 	/// Timer id of any transformation
 	var/transformation_timer
 
-	/// WS edit - moth dust when hugging
+	/// moth dust when hugging
 	var/mothdust
 
 	///List of quirk cooldowns to track
@@ -94,3 +94,10 @@
 
 	/// Can other carbons be shoved into this one to make it fall?
 	var/can_be_shoved_into = FALSE
+
+	/// If TRUE, we are being affected by run momentum
+	var/has_momentum = FALSE
+	/// Our last move direction, used for tracking momentum
+	var/momentum_dir = NONE
+	/// How many tiles we've moved in the momentum direction
+	var/momentum_distance = 0

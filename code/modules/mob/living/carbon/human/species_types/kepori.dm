@@ -10,7 +10,7 @@
 	disliked_food = FRIED | GROSS | CLOTH
 	liked_food = MEAT | GORE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
-	loreblurb = "Kepori are a species covered in feathers vaguely reminiscent of earth’s extinct troodontidae. They’re small and sometimes seen as weak by other species due to their hollow bones but make up for that in speed and reflexes. They tend to woop when excited, scared, or for any other reason at all."
+	loreblurb = "Kepori are a raptor-like species covered in feathers, and are vaguely reminiscent of earth's extinct Troodontidae dinosaurs. Kepori are small in height compared to other species, and may usually seen as weak by other species due to their physiology, but make up in their speed and reflexes. Kepori are typically found in tight social groups, and those who are on their own as spacers are usually seen as a novelty. Kepori are mostly found in the Reki system, centered around their homeworld, Teceti"
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -18,9 +18,11 @@
 	species_eye_path = 'icons/mob/species/kepori/kepori_eyes.dmi'
 	heatmod = 0.67
 	coldmod = 1.5
-	// brutemod = 1.5
-	// burnmod = 1.5
-	speedmod = -0.10
+
+	// Sprint vars
+	sprint_length = 60
+	sprint_length_max = 60
+	sprint_regen_per_second = 2
 
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 35
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 3
@@ -29,7 +31,6 @@
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
 
 	bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR - 4
-
 
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori

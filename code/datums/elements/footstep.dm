@@ -73,10 +73,9 @@
 		var/mob/living/carbon/carbon_source = source
 		if(!carbon_source.get_bodypart(BODY_ZONE_L_LEG) && !carbon_source.get_bodypart(BODY_ZONE_R_LEG))
 			return
-		/* todo: stealth mode?
-		if(carbon_source.m_intent == MOVE_INTENT_WALK)
-			return// stealth
-		*/
+		if(carbon_source.m_intent == MOVE_INTENT_SNEAK)
+			return // stealth
+
 	steps_for_living[source] += 1
 	var/steps = steps_for_living[source]
 
