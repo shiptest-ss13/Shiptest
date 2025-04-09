@@ -27,9 +27,9 @@
 	max_ammo = 5
 
 /obj/item/storage/box/ammo/a858
-	name = "box of .300 magnum ammo"
-	desc = "A box of standard .300 Magnum ammo."
-	icon_state = "300box"
+	name = "box of 8x58mm caseless ammo"
+	desc = "A box of 8x58mm caseless rounds."
+	icon_state = "8x58mmbox"
 
 /obj/item/storage/box/ammo/a858/PopulateContents()
 	var/static/items_inside = list(

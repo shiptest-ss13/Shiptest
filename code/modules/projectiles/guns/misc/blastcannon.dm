@@ -33,7 +33,7 @@
 	if(bomb)
 		bomb.forceMove(user.loc)
 		user.put_in_hands(bomb)
-		user.visible_message("<span class='warning'>[user] detaches [bomb] from [src].</span>")
+		user.visible_message(span_warning("[user] detaches [bomb] from [src]."))
 		bomb = null
 		name = initial(name)
 		desc = initial(desc)
@@ -48,12 +48,12 @@
 	if(istype(O, /obj/item/transfer_valve))
 		var/obj/item/transfer_valve/T = O
 		if(!T.tank_one || !T.tank_two)
-			to_chat(user, "<span class='warning'>What good would an incomplete bomb do?</span>")
+			to_chat(user, span_warning("What good would an incomplete bomb do?"))
 			return FALSE
 		if(!user.transferItemToLoc(T, src))
-			to_chat(user, "<span class='warning'>[T] seems to be stuck to your hand!</span>")
+			to_chat(user, span_warning("[T] seems to be stuck to your hand!"))
 			return FALSE
-		user.visible_message("<span class='warning'>[user] attaches [T] to [src]!</span>")
+		user.visible_message(span_warning("[user] attaches [T] to [src]!"))
 		bomb = T
 		name = "blast cannon"
 		desc = "A makeshift device used to concentrate a bomb's blast energy to a narrow wave."
@@ -91,7 +91,7 @@
 	var/heavy = power * 0.25
 	var/medium = power * 0.5
 	var/light = power
-	user.visible_message("<span class='danger'>[user] opens [bomb] on [user.p_their()] [name] and fires a blast wave at [target]!</span>","<span class='danger'>You open [bomb] on your [name] and fire a blast wave at [target]!</span>")
+	user.visible_message(span_danger("[user] opens [bomb] on [user.p_their()] [name] and fires a blast wave at [target]!"),span_danger("You open [bomb] on your [name] and fire a blast wave at [target]!"))
 	playsound(user, "explosion", 100, TRUE)
 	var/turf/starting = get_turf(user)
 	var/turf/targturf = get_turf(target)

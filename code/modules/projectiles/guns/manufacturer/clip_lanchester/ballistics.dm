@@ -286,6 +286,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 	var/obj/item/storage/briefcase/current_case
 
+NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
+
 /obj/item/gun/ballistic/automatic/smg/cm5/compact/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
 	if(current_case)
@@ -609,6 +611,94 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/cm40_762_40_box/empty
+	start_empty = TRUE
+
+/obj/item/gun/ballistic/automatic/hmg/rottweiler
+	name = "\improper KM-05 Rottweiler"
+	desc = "An F4 rifle purchased from CLIP and extensively modified into a belt fed machine gun. Heavy and firing a powerful cartridge, this weapon is unwieldy without a bipod support. Uniquely, the KM-05 Rottweiler can accept F4 magazines into the magazine well."
+	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
+
+	icon_state = "rottweiler"
+	item_state = "rottweiler"
+
+	manufacturer = MANUFACTURER_INTEQ
+
+	show_magazine_on_sprite = TRUE
+	show_magazine_on_sprite_ammo = TRUE
+	mag_display_ammo = TRUE
+
+
+	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_delay = 0.2 SECONDS //chunky machine gun
+
+	unique_mag_sprites_for_variants = TRUE
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	bolt_type = BOLT_TYPE_CLIP
+	tac_reloads = FALSE
+
+	default_ammo_type = /obj/item/ammo_box/magazine/rottweiler_308_box
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/rottweiler_308_box,
+		/obj/item/ammo_box/magazine/f4_308
+	)
+
+	spread = 12
+	spread_unwielded = 35
+
+	recoil = 3 //it's firing .308
+	recoil_unwielded = 8
+
+	has_bipod = TRUE
+
+	deploy_recoil_bonus = -3
+	deploy_spread_bonus = -10 //2 degree spread when deployed, making it VERY accurate for an lmg
+
+	valid_attachments = CLIP_ATTACHMENTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 49,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 19,
+			"y" = 21,
+		)
+	)
+/obj/item/gun/ballistic/automatic/hmg/rottweiler/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/ammo_box/magazine/rottweiler_308_box
+	name = "Rottweiler box magazine (.308)"
+	desc = "A 50 round box magazine for Rottweiler machine gun. These rounds do good damage with significant armor penetration."
+	base_icon_state = "rottweiler_mag"
+	icon_state = "rottweiler_mag-1"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 50
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/rottweiler_308_box/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/rottweiler_308_box/empty
 	start_empty = TRUE
 
 //########### MISC ###########//

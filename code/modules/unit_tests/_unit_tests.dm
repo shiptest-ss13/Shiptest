@@ -134,7 +134,7 @@
 #endif //RUIN_PLACEMENT_TEST
 
 #ifdef SHIP_PLACEMENT_TEST
-#include "ship_outpost_placement.dm"
+#include "ship_placement.dm"
 #endif //SHIP_PLACEMENT_TEST
 
 #include "unit_test.dm"

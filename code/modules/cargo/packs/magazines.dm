@@ -327,6 +327,14 @@
 	cost = 300
 	faction = /datum/faction/inteq
 
+/datum/supply_pack/magazine/rottweiler_mag
+
+	name = "Rottweiler Box Magazine Crate"
+	desc = "Contains a .308 box magazine for the KM-05 'Rottweiler' LMG, with a capacity of fifty rounds."
+	contains = list(/obj/item/ammo_box/magazine/rottweiler_308_box/empty)
+	cost = 750
+	faction = /datum/faction/inteq
+
 /* Shotguns */
 
 /datum/supply_pack/magazine/bulldog

@@ -12,6 +12,7 @@
 	desc = "A 10x22mm surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c10mm/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c10mm/ap
 	name = "10x22mm armor-piercing bullet casing"
@@ -46,6 +47,7 @@
 	desc = "A 9x18mm surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c9mm/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c9mm/ap
 	name = "9x18mm armor-piercing bullet casing"
@@ -80,6 +82,7 @@
 	desc = "A .45 surplus bullet casing."
 	bullet_skin = "surplus"
 	projectile_type = /obj/projectile/bullet/c45/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c45/ap
 	name = ".45 armor-piercing bullet casing"
