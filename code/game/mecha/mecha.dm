@@ -330,7 +330,7 @@
 			. += "It's heavily damaged."
 		else
 			. += "It's falling apart."
-	var/hide_weapon = locate(/obj/item/mecha_parts/concealed_weapon_bay) in contents
+	var/hide_weapon = locate(/obj/item/mecha_parts/weapon_bay/concealed) in contents
 	var/hidden_weapon = hide_weapon ? (locate(/obj/item/mecha_parts/mecha_equipment/weapon) in equipment) : null
 	var/list/visible_equipment = equipment - hidden_weapon
 	if(visible_equipment.len)

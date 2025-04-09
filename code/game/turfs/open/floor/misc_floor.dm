@@ -112,6 +112,10 @@
 /turf/open/floor/pod/light
 	icon_state = "podfloor_light"
 	floor_tile = /obj/item/stack/tile/pod/light
+/turf/open/floor/pod/light/external
+	initial_gas_mix = AIRLESS_ATMOS
+/turf/open/floor/pod/light/external/handle_decompression_floor_rip(sum)
+	return
 
 /turf/open/floor/pod/dark
 	icon_state = "podfloor_dark"

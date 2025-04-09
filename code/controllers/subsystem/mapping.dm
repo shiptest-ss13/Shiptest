@@ -378,6 +378,8 @@ SUBSYSTEM_DEF(mapping)
 				allocation_name = "Free Allocation"
 			if(ALLOCATION_QUADRANT)
 				allocation_name = "Quadrant Allocation"
+			if(ALLOCATION_OCTODRANT)
+				allocation_name = "Octodrant Allocation"
 			else
 				allocation_name = "Unaccounted Allocation"
 
