@@ -22,7 +22,7 @@
 	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "x"
 	var/datum/map_template/greeble/template = /datum/map_template/greeble/moon/crater1
-	/// Amount of time before the mapgen gives up on loading this greeble
+	/// Amount of time before the mapgen gives up on loading this greeble.
 	var/timeout = 8 SECONDS
 
 /obj/effect/greeble_spawner/Destroy()
