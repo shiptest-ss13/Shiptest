@@ -1200,6 +1200,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"pD" = (
+/obj/structure/closet/crate/secure/weapon{
+	req_access_txt = "3";
+	name = "explosives crate"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew)
 "pM" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -1283,10 +1290,8 @@
 	color = "#75A2BB";
 	alpha = 140
 	},
-/obj/effect/spawner/random/trash/box,
 /obj/machinery/light/dim/directional/south,
-/obj/effect/spawner/random/maintenance/three,
-/obj/item/chair/plastic,
+/obj/structure/reagent_dispensers/foamtank,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "qE" = (
@@ -1546,6 +1551,12 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/structure/closet/crate/secure/weapon{
+	req_access_txt = "3";
+	name = "explosives crate"
+	},
+/obj/item/storage/backpack/duffelbag/sec/c4,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "sB" = (
@@ -1830,9 +1841,7 @@
 /area/ship/bridge)
 "vB" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled,
-/obj/structure/crate_shelf{
-	capacity = 2
-	},
+/obj/structure/crate_shelf,
 /obj/structure/closet/crate{
 	name = "flare crate"
 	},
@@ -1872,8 +1881,10 @@
 	color = "#75A2BB";
 	alpha = 140
 	},
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/spawner/random/trash/box,
 /obj/machinery/light/dim/directional/north,
+/obj/effect/spawner/random/maintenance/three,
+/obj/item/chair/plastic,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
 "vV" = (
@@ -4559,7 +4570,7 @@ og
 Yj
 ex
 dK
-XJ
+pD
 vv
 st
 XJ
