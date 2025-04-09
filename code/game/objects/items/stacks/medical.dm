@@ -91,8 +91,6 @@
 
 	//WS Begin - Splints
 	if(splint_fracture) //Check if it's a splint and the bone is broken
-		if(affecting.body_part in list(CHEST, HEAD)) // Check if it isn't the head or chest
-			to_chat(user, span_warning("You can't splint that bodypart!"))
 		else if(affecting.bone_status == BONE_FLAG_SPLINTED) // Check if it isn't already splinted
 			to_chat(user, span_warning("[C]'s [affecting.name] is already splinted!"))
 		else if(!(affecting.bone_status == BONE_FLAG_BROKEN)) // Check if it's actually broken
