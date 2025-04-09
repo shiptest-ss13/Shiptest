@@ -20,9 +20,9 @@
 	coldmod = 1.5
 
 	// Sprint vars
-	sprint_length = 60
-	sprint_length_max = 60
-	sprint_regen_per_second = 2
+	sprint_length = 50
+	sprint_length_max = 50
+	sprint_regen_per_second = 2.5
 
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 35
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 3
@@ -34,8 +34,9 @@
 
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
-	var/datum/action/innate/keptackle/keptackle
+
 	/// # Inherit tackling variables #
+	var/datum/action/innate/keptackle/keptackle
 	/// See: [/datum/component/tackler/var/stamina_cost]
 	var/tackle_stam_cost = 10
 	/// See: [/datum/component/tackler/var/base_knockdown]

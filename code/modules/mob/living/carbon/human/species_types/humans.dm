@@ -14,9 +14,8 @@
 	species_language_holder = /datum/language_holder/human
 
 	// Sprint vars
-	sprint_length = 130
-	sprint_length_max = 130
-	sprint_regen_per_second = 0.75
+	sprint_length = 110
+	sprint_length_max = 110
 
 /datum/species/human/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	switch(C.dna.features["ears"])
