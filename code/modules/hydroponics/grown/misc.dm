@@ -163,7 +163,7 @@
 	name = "gatfruit"
 	desc = "It smells like burning."
 	icon_state = "gatfruit"
-	trash = /obj/item/gun/ballistic/revolver/syndicate
+	trash = /obj/item/gun/ballistic/revolver/viper
 	bitesize_mod = 2
 	foodtype = FRUIT
 	tastes = list("gunpowder" = 1)
@@ -196,7 +196,7 @@
 	wine_flavor = "smokey sweetness and poprocks" //WS edit: new wine flavors
 
 /obj/item/reagent_containers/food/snacks/grown/cherry_bomb/attack_self(mob/living/user)
-	user.visible_message("<span class='warning'>[user] plucks the stem from [src]!</span>", "<span class='userdanger'>You pluck the stem from [src], which begins to hiss loudly!</span>")
+	user.visible_message(span_warning("[user] plucks the stem from [src]!"), span_userdanger("You pluck the stem from [src], which begins to hiss loudly!"))
 	log_bomber(user, "primed a", src, "for detonation")
 	prime()
 
@@ -265,6 +265,7 @@
 /obj/item/reagent_containers/food/snacks/grown/seaweed
 	seed = /obj/item/seeds/seaweed
 	name = "seaweed"
+	dried_type = /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
 	desc = "It's so rubbery... is this safe to eat?"
 	icon_state = "seaweed"
 	filling_color = "#4a7244"

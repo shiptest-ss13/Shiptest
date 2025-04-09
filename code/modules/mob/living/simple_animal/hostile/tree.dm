@@ -40,7 +40,6 @@
 
 	deathmessage = "is hacked into pieces!"
 	loot = list(/obj/item/stack/sheet/mineral/wood)
-	gold_core_spawnable = HOSTILE_SPAWN
 	del_on_death = 1
 
 	var/is_tree = TRUE
@@ -63,8 +62,8 @@
 		var/mob/living/carbon/C = target
 		if(prob(15))
 			C.Paralyze(60)
-			C.visible_message("<span class='danger'>\The [src] knocks down \the [C]!</span>", \
-					"<span class='userdanger'>\The [src] knocks you down!</span>")
+			C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
+					span_userdanger("\The [src] knocks you down!"))
 
 /mob/living/simple_animal/hostile/tree/festivus
 	name = "festivus pole"
@@ -81,13 +80,13 @@
 	loot = list(/obj/item/stack/rods)
 	speak_emote = list("polls")
 	faction = list()
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	is_tree = FALSE
 
 /mob/living/simple_animal/hostile/tree/festivus/attack_hand(mob/living/carbon/human/M)
 	. = ..()
 	if(M.a_intent == "help")
-		visible_message("<span class='warning'>[src] crackles with static electricity!</span>")
+		visible_message(span_warning("[src] crackles with static electricity!"))
 		for(var/obj/item/stock_parts/cell/C in range(2, get_turf(src)))
 			C.give(75)
 		for(var/mob/living/silicon/robot/R in range(2, get_turf(src)))

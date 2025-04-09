@@ -36,7 +36,7 @@
 		/obj/item/radio/headset/headset_srv = 2,
 		/obj/item/clothing/accessory/waistcoat = 2,
 		/obj/item/clothing/suit/apron/chef = 3,
-		/obj/item/clothing/head/soft/mime = 2,
+		/obj/item/clothing/head/soft = 2,
 		/obj/item/storage/box/mousetraps = 2,
 		/obj/item/circuitboard/machine/dish_drive = 1,
 		/obj/item/clothing/suit/toggle/chef = 1,
@@ -98,14 +98,9 @@
 	icon_door = "black"
 
 /obj/structure/closet/wardrobe/chaplain_black/PopulateContents()
-	new /obj/item/storage/box/holy(src)
 	new /obj/item/clothing/accessory/pocketprotector/cosmetology(src)
 	new /obj/item/clothing/under/rank/civilian/chaplain(src)
 	new /obj/item/clothing/shoes/sneakers/black(src)
-	new /obj/item/clothing/suit/chaplainsuit/nun(src)
-	new /obj/item/clothing/head/nun_hood(src)
-	new /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit(src)
-	new /obj/item/clothing/suit/chaplainsuit/holidaypriest(src)
 	new /obj/item/storage/backpack/cultpack(src)
 	new /obj/item/storage/fancy/candle_box(src)
 	new /obj/item/storage/fancy/candle_box(src)
@@ -250,8 +245,7 @@
 		/obj/item/clothing/under/rank/medical/geneticist = 2,
 		/obj/item/clothing/shoes/sneakers/white = 2,
 		/obj/item/clothing/suit/toggle/labcoat/genetics = 2,
-		/obj/item/storage/backpack/genetics = 2,
-		/obj/item/storage/backpack/satchel/gen = 2)
+		/obj/item/storage/backpack/genetics = 2)
 	generate_items_inside(items_inside,src)
 	return
 

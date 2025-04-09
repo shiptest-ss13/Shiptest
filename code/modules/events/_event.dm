@@ -76,7 +76,7 @@
 	..()
 	if(href_list["cancel"])
 		if(!triggering)
-			to_chat(usr, "<span class='admin'>You are too late to cancel that event</span>")
+			to_chat(usr, span_admin("You are too late to cancel that event"))
 			return
 		triggering = FALSE
 		message_admins("[key_name_admin(usr)] cancelled event [name].")
@@ -165,7 +165,7 @@
 
 //Do not override this proc, instead use the appropiate procs.
 //This proc will handle the calls to the appropiate procs.
-/datum/round_event/process()
+/datum/round_event/process(seconds_per_tick)
 	SHOULD_NOT_OVERRIDE(TRUE)
 	if(!processing)
 		return

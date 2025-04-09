@@ -243,49 +243,10 @@
 	REMOVE_TRAIT(L, TRAIT_HOLY, type)
 	..()
 
-/datum/reagent/water/holywater/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(iscultist(M))
-		to_chat(M, "<span class='userdanger'>A vile holiness begins to spread its shining tendrils through your mind, purging the Geometer of Blood's influence!</span>")
-	..()
-
-/datum/reagent/water/holywater/on_mob_life(mob/living/carbon/M)
-	if(!data)
-		data = list("misc" = 1)
-	data["misc"]++
-	M.jitteriness = min(M.jitteriness+4,10)
-	if(iscultist(M))
-		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
-			to_chat(M, "<span class='cultlarge'>Your blood rites falter as holy water scours your body!</span>")
-			for(var/datum/action/innate/cult/blood_spell/BS in BM.spells)
-				qdel(BS)
-	if(data["misc"] >= 25)		// 10 units, 45 seconds @ metabolism 0.4 units & tick rate 1.8 sec
-		if(!M.stuttering)
-			M.stuttering = 1
-		M.stuttering = min(M.stuttering+4, 10)
-		M.Dizzy(5)
-		if(iscultist(M) && prob(20))
-			M.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
-			if(prob(10))
-				M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
-				M.Unconscious(120)
-				to_chat(M, "<span class='cultlarge'>[pick("Your blood is your bond - you are nothing without it", "Do not forget your place", \
-				"All that power, and you still fail?", "If you cannot scour this poison, I shall scour your meager life!")].</span>")
-	if(data["misc"] >= 60)	// 30 units, 135 seconds
-		if(iscultist(M))
-			SSticker.mode.remove_cultist(M.mind, FALSE, TRUE)
-		M.jitteriness = 0
-		M.stuttering = 0
-		holder.remove_reagent(type, volume)	// maybe this is a little too perfect and a max() cap on the statuses would be better??
-		return
-	holder.remove_reagent(type, 0.4)	//fixed consumption to prevent balancing going out of whack
-
 /datum/reagent/water/holywater/expose_turf(turf/T, reac_volume)
 	..()
 	if(!istype(T))
 		return
-	if(reac_volume>=10)
-		for(var/obj/effect/rune/R in T)
-			qdel(R)
 	T.Bless()
 
 // Holy water. Mostly the same as water, it also heals the plant a little with the power of the spirits. Also ALSO increases instability.
@@ -346,22 +307,12 @@
 	return ..()
 
 /datum/reagent/fuel/unholywater/on_mob_life(mob/living/carbon/M)
-	if(iscultist(M))
-		M.drowsyness = max(M.drowsyness-5, 0)
-		M.AdjustAllImmobility(-40)
-		M.adjustStaminaLoss(-10, 0)
-		M.adjustToxLoss(-2, 0)
-		M.adjustOxyLoss(-2, 0)
-		M.adjustBruteLoss(-2, 0)
-		M.adjustFireLoss(-2, 0)
-		if(ishuman(M) && M.blood_volume < BLOOD_VOLUME_NORMAL)
-			M.blood_volume += 3
-	else  // Will deal about 90 damage when 50 units are thrown
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
-		M.adjustToxLoss(2, 0)
-		M.adjustFireLoss(2, 0)
-		M.adjustOxyLoss(2, 0)
-		M.adjustBruteLoss(2, 0)
+	// Will deal about 90 damage when 50 units are thrown
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
+	M.adjustToxLoss(2, 0)
+	M.adjustFireLoss(2, 0)
+	M.adjustOxyLoss(2, 0)
+	M.adjustBruteLoss(2, 0)
 	holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -471,7 +422,7 @@
 
 		if(method == INGEST)
 			if(show_message)
-				to_chat(M, "<span class='notice'>That tasted horrible.</span>")
+				to_chat(M, span_notice("That tasted horrible."))
 	..()
 
 /datum/reagent/mulligan
@@ -485,7 +436,7 @@
 	..()
 	if (!istype(H))
 		return
-	to_chat(H, "<span class='warning'><b>You grit your teeth in pain as your body rapidly mutates!</b></span>")
+	to_chat(H, span_warning("<b>You grit your teeth in pain as your body rapidly mutates!</b>"))
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
 
@@ -516,12 +467,6 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 
-/datum/reagent/serotrotium/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M))
-		if(prob(7))
-			M.emote(pick("twitch","drool","moan","gasp"))
-	..()
-
 /datum/reagent/oxygen
 	name = "Oxygen"
 	description = "A colorless, odorless gas. Grows on trees but is still pretty valuable."
@@ -529,17 +474,56 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_mult = 0 // oderless and tasteless
 
+/datum/reagent/oxygen/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	var/obj/item/stock_parts/cell/current_cell
+	if(istype(I, /obj/item/stock_parts/cell))
+		if(!current_cell.use(1))
+			return
+		H.reagents.add_reagent(/datum/reagent/ozone, (H.reagents.remove_reagent(/datum/reagent/oxygen, 0.05*I.get_part_rating())))
+		return TRUE
+	return
+
 /datum/reagent/oxygen/expose_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("o2=[reac_volume/2];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_O2]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/oxygen/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("o2=[reac_volume/2];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_O2]=[reac_volume/2];TEMP=[temp]")
 	return
+
+/datum/reagent/ozone
+	name = "Ozone"
+	description = "A pale blue gas, with a distinct smell. While it is oxygen with an extra molecule attached, it is quite dangerous."
+	reagent_state = GAS
+	metabolization_rate = REAGENTS_METABOLISM * 0.5
+	color = "#a1a1e6"
+	taste_mult = 0
+
+/datum/reagent/ozone/on_mob_life(mob/living/carbon/M)
+	if(prob(30))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM)
+	if(prob(40))
+		M.adjustOrganLoss(ORGAN_SLOT_HEART,2*REM)
+	. = 1
+	return ..()
+
+/datum/reagent/ozone/expose_obj(obj/exposed_object, reac_volume)
+	if((!exposed_object) || (!reac_volume))
+		return 0
+	var/temp = holder ? holder.chem_temp : T20C
+	exposed_object.atmos_spawn_air("[GAS_O3]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/ozone/expose_turf(turf/open/exposed_turf, reac_volume)
+	if(istype(exposed_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		exposed_turf.atmos_spawn_air("[GAS_O3]=[reac_volume/2];TEMP=[temp]")
+	return
+
 
 /datum/reagent/copper
 	name = "Copper"
@@ -566,12 +550,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("n2=[reac_volume/2];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_N2]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/nitrogen/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("n2=[reac_volume/2];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_N2]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/hydrogen
@@ -597,8 +581,6 @@
 /datum/reagent/mercury/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(src, TRAIT_IMMOBILIZED) && !isspaceturf(M.loc))
 		step(M, pick(GLOB.cardinals))
-	if(prob(5))
-		M.emote(pick("twitch","drool","moan"))
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
 	..()
 
@@ -606,7 +588,7 @@
 	name = "Sulfur"
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
 	reagent_state = SOLID
-	color = "#BF8C00" // rgb: 191, 140, 0
+	color = "#f0e518"
 	taste_description = "rotten eggs"
 
 /datum/reagent/carbon
@@ -656,12 +638,12 @@
 	if((!exposed_object) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	exposed_object.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
+	exposed_object.atmos_spawn_air("[GAS_CHLORINE]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/chlorine/expose_turf(turf/open/exposed_turf, reac_volume)
 	if(istype(exposed_turf))
 		var/temp = holder ? holder.chem_temp : T20C
-		exposed_turf.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
+		exposed_turf.atmos_spawn_air("[GAS_CHLORINE]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/hydrogen_chloride
@@ -683,12 +665,12 @@
 	if((!exposed_object) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	exposed_object.atmos_spawn_air("hcl=[reac_volume/2];TEMP=[temp]")
+	exposed_object.atmos_spawn_air("[GAS_HYDROGEN_CHLORIDE]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/hydrogen_chloride/expose_turf(turf/open/exposed_turf, reac_volume)
 	if(istype(exposed_turf))
 		var/temp = holder ? holder.chem_temp : T20C
-		exposed_turf.atmos_spawn_air("hcl=[reac_volume/2];TEMP=[temp]")
+		exposed_turf.atmos_spawn_air("[GAS_HYDROGEN_CHLORIDE]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/fluorine
@@ -762,8 +744,6 @@
 /datum/reagent/lithium/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_IMMOBILIZED) && !isspaceturf(M.loc))
 		step(M, pick(GLOB.cardinals))
-	if(prob(5))
-		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/lithium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
@@ -902,8 +882,8 @@
 
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
-		to_chat(M, "<span class='warning'>You feel unstable...</span>")
-		M.Jitter(2)
+		to_chat(M, span_warning("You feel unstable..."))
+		M.adjust_jitter(2)
 		current_cycle = 1
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
@@ -1031,13 +1011,11 @@
 	taste_description = "numbness"
 
 /datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
-	M.jitteriness = max(M.jitteriness-5,0)
+	M.adjust_jitter(5)
 	if(prob(80))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	if(prob(50))
 		M.drowsyness = max(M.drowsyness, 3)
-	if(prob(10))
-		M.emote("drool")
 	..()
 
 /datum/reagent/nanomachines
@@ -1146,12 +1124,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("co2=[reac_volume/5];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_CO2]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/carbondioxide/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("co2=[reac_volume/5];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_CO2]=[reac_volume/5];TEMP=[temp]")
 	return
 
 // This is more bad ass, and pests get hurt by the corrosive nature of it, not the plant. The new trade off is it culls stability.
@@ -1176,12 +1154,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("n2o=[reac_volume/5];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_NITROUS]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/nitrous_oxide/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("n2o=[reac_volume/5];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_NITROUS]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/nitrous_oxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == VAPOR)
@@ -1196,6 +1174,80 @@
 		M.losebreath += 2
 		M.confused = min(M.confused + 2, 5)
 	..()
+
+/datum/reagent/carbon_monoxide
+	name = "Carbon Monoxide"
+	description = "A highly dangerous gas for sapients."
+	reagent_state = GAS
+	metabolization_rate = REAGENTS_METABOLISM
+	color = "#96898c"
+	var/accumulation
+
+/datum/reagent/carbon_monoxide/on_mob_life(mob/living/carbon/victim)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, 2*REM)
+		accumulation = accumulation/4
+
+	accumulation += volume
+	switch(accumulation)
+		if(10 to 50)
+			to_chat(src, span_warning("You feel dizzy."))
+		if(50 to 150)
+			to_chat(victim, span_warning("[pick("Your head hurts.", "Your head pounds.")]"))
+			victim.Dizzy(5)
+		if(150 to 250)
+			to_chat(victim, span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"))
+			victim.Stun(10)
+			victim.Dizzy(5)
+			victim.confused = (accumulation/50)
+			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+
+		if(250 to 350)
+			to_chat(victim, span_userdanger("[pick("What were you doing...?", "Where are you...?", "What's going on...?")]"))
+			victim.adjustStaminaLoss(3)
+
+			victim.Dizzy(5)
+			victim.confused = (accumulation/50)
+			victim.drowsyness = (accumulation/50)
+
+			victim.adjustToxLoss(accumulation/100*REM, 0)
+
+			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
+
+		if(350 to 1000)
+			victim.Unconscious(20 SECONDS)
+
+			victim.drowsyness += (accumulation/100)
+			victim.adjustToxLoss(accumulation/100*REM, 0)
+		if(1000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
+			victim.death()
+			victim.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
+
+			qdel(src)
+			return TRUE
+	accumulation -= (metabolization_rate * victim.metabolism_efficiency)
+	if(accumulation <  0)
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, volume)
+		return TRUE //to avoid a runtime
+	return ..()
+
+/datum/reagent/carbon_monoxide/expose_obj(obj/O, reac_volume)
+	if((!O) || (!reac_volume))
+		return FALSE
+	var/temp = holder ? holder.chem_temp : T20C
+	O.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/carbon_monoxide/expose_turf(turf/open/T, reac_volume)
+	if(istype(T))
+		var/temp = holder ? holder.chem_temp : T20C
+		T.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+	return
+
+/datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
+	var/mob/living/carbon/living_carbon = living_mob
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
 
 /datum/reagent/stimulum
 	name = "Stimulum"
@@ -1578,9 +1630,9 @@
 		var/turf/open/floor/F = T
 		playsound(T, 'sound/effects/bubbles.ogg', 50)
 		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
-		new /obj/effect/spawner/lootdrop/flower(T)
+		new /obj/effect/spawner/random/flower(T)
 		if(prob(75))
-			new /obj/effect/spawner/lootdrop/flora(T)
+			new /obj/effect/spawner/random/flora(T)
 	..()
 
 /datum/reagent/genesis/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -1733,7 +1785,7 @@
 			var/mob/living/carbon/human/H = M
 			var/datum/sprite_accessory/hair/picked_hair = pick(GLOB.hairstyles_list)
 			var/datum/sprite_accessory/facial_hair/picked_beard = pick(GLOB.facial_hairstyles_list)
-			to_chat(H, "<span class='notice'>Hair starts sprouting from your scalp.</span>")
+			to_chat(H, span_notice("Hair starts sprouting from your scalp."))
 			H.hairstyle = picked_hair
 			H.facial_hairstyle = picked_beard
 			H.update_hair()
@@ -1749,7 +1801,7 @@
 	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='notice'>Your hair starts growing at an incredible speed!</span>")
+			to_chat(H, span_notice("Your hair starts growing at an incredible speed!"))
 			H.hairstyle = "Very Long Hair"
 			H.facial_hairstyle = "Beard (Very Long)"
 			H.update_hair()
@@ -1765,7 +1817,7 @@
 	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='danger'>Your hair is falling out in clumps!</span>")
+			to_chat(H, span_danger("Your hair is falling out in clumps!"))
 			H.hairstyle = "Bald"
 			H.facial_hairstyle = "Shaved"
 			H.update_hair()
@@ -1803,12 +1855,6 @@
 /datum/reagent/drying_agent/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		T.MakeDry(ALL, TRUE, reac_volume * 5 SECONDS)		//50 deciseconds per unit
-
-/datum/reagent/drying_agent/expose_obj(obj/O, reac_volume)
-	if(O.type == /obj/item/clothing/shoes/galoshes)
-		var/t_loc = get_turf(O)
-		qdel(O)
-		new /obj/item/clothing/shoes/galoshes/dry(t_loc)
 
 // Virology virus food chems.
 
@@ -1897,25 +1943,14 @@
 
 /datum/reagent/growthserum
 	name = "Growth Serum"
-	description = "A commercial chemical designed to help older men in the bedroom."//not really it just makes you a giant
+	description = "A strange chemical that causes growth, but wears off over time. The growth effect is limited."
 	color = "#ff0000"//strong red. rgb 255, 0, 0
 	var/current_size = RESIZE_DEFAULT_SIZE
-	taste_description = "bitterness" // apparently what viagra tastes like
+	taste_description = "bitterness"
 
 /datum/reagent/growthserum/on_mob_life(mob/living/carbon/H)
 	var/newsize = current_size
-	switch(volume)
-		if(0 to 19)
-			newsize = 1.25*RESIZE_DEFAULT_SIZE
-		if(20 to 49)
-			newsize = 1.5*RESIZE_DEFAULT_SIZE
-		if(50 to 99)
-			newsize = 2*RESIZE_DEFAULT_SIZE
-		if(100 to 199)
-			newsize = 2.5*RESIZE_DEFAULT_SIZE
-		if(200 to INFINITY)
-			newsize = 3.5*RESIZE_DEFAULT_SIZE
-
+	newsize = (1 + (clamp(volume, 0, 25) / 100)) * RESIZE_DEFAULT_SIZE
 	H.resize = newsize/current_size
 	current_size = newsize
 	H.update_transform()
@@ -2072,7 +2107,7 @@
 			var/dread = pick("Something is moving in your stomach...", \
 				"A wet growl echoes from your stomach...", \
 				"For a moment you feel like your surroundings are moving, but it's your stomach...")
-			to_chat(C, "<span class='userdanger'>[dread]</span>")
+			to_chat(C, span_userdanger("[dread]"))
 			yuck_cycle = current_cycle
 	else
 		var/yuck_cycles = current_cycle - yuck_cycle
@@ -2215,12 +2250,12 @@
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.Jitter(rand(0,2))
+		H.adjust_jitter(rand(0,2))
 		H.Dizzy(rand(0,2))
 
 
 		if(prob(33))
-			to_chat(H,"<span class='danger'>Your body is trying to give up, but your heart is still beating!</span>")
+			to_chat(H,span_danger("Your body is trying to give up, but your heart is still beating!"))
 	. = ..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/M)
@@ -2228,7 +2263,7 @@
 	. = ..()
 
 /datum/reagent/determination/overdose_process(mob/living/carbon/human/H)
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
@@ -2252,7 +2287,7 @@
 	. = 1
 
 /datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H) //TODO port bee's regen cores legioning miners, and make it only do that if overdosed on crystal
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
@@ -2315,9 +2350,9 @@
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
-		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
-		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
-		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, SetSleeping), 40 SECONDS), 10 SECONDS)
+		L.visible_message(span_danger("<font size = 6>Grips their head and dances around, collapsing to the floor!</font>"), \
+		span_danger("<font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font>"))
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
 
@@ -2329,14 +2364,14 @@
 	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
 		M.reagents.remove_reagent(chem.type, chem.volume)
 
-	M.Jitter(3)
+	M.adjust_jitter(3)
 	M.Dizzy(3)
 	if(prob(0.1) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.seizure()
 		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
 	if(prob(7))
-		to_chat(M, "<span class='warning'><font size = [rand(1,3)]>[pick(dose_messages)]</font></span>")
+		to_chat(M, span_warning("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
 
 /datum/reagent/three_eye/overdose_start(mob/living/M)
 	on_mob_metabolize(M) //set worthy
@@ -2357,18 +2392,26 @@
 		var/mob/living/carbon/C = M
 		C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 2))
 	if(prob(7))
-		to_chat(M, "<span class='danger'><font size = [rand(2,4)]>[pick(overdose_messages)]</font></span>")
+		to_chat(M, span_danger("<font size = [rand(2,4)]>[pick(overdose_messages)]</font>"))
 
 /datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
-		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
+		to_chat(L, span_danger("<font size = 6>Your mind reels and the world begins to fade away...</font>"))
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
 		else
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, gib)), 5 SECONDS)
+
+/datum/reagent/concrete_mix
+	name = "Concrete Mix"
+	description = "Pre-made concrete mix, ideal for lazy engineers."
+	color = "#c4c0bc"
+	taste_description = "chalky concrete"
+	harmful = TRUE
+	reagent_state = SOLID
 
 /datum/reagent/cement
 	name = "Cement"
@@ -2530,3 +2573,64 @@
 	description = "Bacteria native to the Saint-Roumain Militia home planet."
 	color = "#5a4f42"
 	taste_description = "sour"
+
+//anti rad foam
+/datum/reagent/anti_radiation_foam
+	name = "Anti-Radiation Foam"
+	description = "A tried and tested foam, used for decontaminating nuclear disasters."
+	reagent_state = LIQUID
+	color = "#A6FAFF55"
+	taste_description = "bitter, foamy awfulness."
+
+/datum/reagent/anti_radiation_foam/expose_turf(turf/open/T, reac_volume)
+	if (!istype(T))
+		return
+
+	if(reac_volume >= 1)
+		var/obj/effect/particle_effect/foam/antirad/F = (locate(/obj/effect/particle_effect/foam/antirad) in T)
+		if(!F)
+			F = new(T)
+		else if(istype(F))
+			F.lifetime = initial(F.lifetime) //the foam is what does the cleaning here
+
+/datum/reagent/anti_radiation_foam/expose_obj(obj/O, reac_volume)
+	O.wash(CLEAN_RAD)
+
+/datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	if(method in list(TOUCH, VAPOR))
+		M.radiation = M.radiation - rand(max(M.radiation * 0.95, M.radiation)) //get the hose
+		M.ExtinguishMob()
+	..()
+
+
+/datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(0.5, 200)
+	M.adjust_disgust(4)
+	..()
+	. = 1
+
+/datum/reagent/sulfur_dioxide
+	name = "Sulfur Dioxide"
+	description = "A transparent gas produced by geological activity and burning certain fuels."
+	reagent_state = GAS
+	color = "#f0e518"
+	taste_mult = 0 // tasteless
+
+/datum/reagent/sulfur_dioxide/on_mob_life(mob/living/carbon/M)
+	M.adjustOxyLoss(1*REM, 0)
+	if(prob(40))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM)
+	. = 1
+	..()
+
+/datum/reagent/sulfur_dioxide/expose_obj(obj/exposed_object, reac_volume)
+	if((!exposed_object) || (!reac_volume))
+		return 0
+	var/temp = holder ? holder.chem_temp : T20C
+	exposed_object.atmos_spawn_air("[GAS_SO2]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/sulfur_dioxide/expose_turf(turf/open/exposed_turf, reac_volume)
+	if(istype(exposed_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		exposed_turf.atmos_spawn_air("[GAS_SO2]=[reac_volume/2];TEMP=[temp]")
+	return

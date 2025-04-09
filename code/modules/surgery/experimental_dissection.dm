@@ -1,5 +1,5 @@
 #define MAX_DISSECTION_REWARD 2000
-#define EXPDIS_FAIL_MSG "<span class='notice'>You dissect [target], but do not find anything particularly interesting.</span>"
+#define EXPDIS_FAIL_MSG span_notice("You dissect [target], but do not find anything particularly interesting.")
 #define PUBLIC_TECHWEB_GAIN 0.6 //how many research points go directly into the main pool
 #define PRIVATE_TECHWEB_GAIN (1 - PUBLIC_TECHWEB_GAIN) //how many research points go directly into the main pool
 
@@ -13,7 +13,7 @@
 				/datum/surgery_step/clamp_bleeders,
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
-	target_mobtypes = list(/mob/living) //Feel free to dissect devils but they're magic.
+	target_mobtypes = list(/mob/living)
 	replaced_by = /datum/surgery/advanced/experimental_dissection/adv
 	requires_tech = FALSE
 	var/value_multiplier = 0.25
@@ -34,7 +34,7 @@
 		/obj/item/scalpel/augment = 75,
 		/obj/item/scalpel/advanced = 60,
 		TOOL_SCALPEL = 45,
-		/obj/item/kitchen/knife = 30,
+		/obj/item/melee/knife = 30,
 		/obj/item/shard = 10)// special tools not only cut down time but also improve probability
 	time = 125
 	silicons_obey_prob = TRUE
@@ -42,7 +42,7 @@
 	experience_given = 0 //experience recieved scales with what's being dissected + which step you're doing.
 
 /datum/surgery_step/dissection/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("<span class='notice'>[user] starts dissecting [target].</span>", "<span class='notice'>You start dissecting [target].</span>")
+	user.visible_message(span_notice("[user] starts dissecting [target]."), span_notice("You start dissecting [target]."))
 
 /datum/surgery_step/dissection/proc/check_value(mob/living/target, datum/surgery/advanced/experimental_dissection/ED)
 	var/cost = 0
@@ -91,7 +91,7 @@
 
 /datum/surgery_step/dissection/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/points_earned = check_value(target, surgery)
-	user.visible_message("<span class='notice'>[user] dissects [target], discovering [points_earned] point\s of data!</span>", "<span class='notice'>You dissect [target], finding [points_earned] point\s worth of discoveries, you also write a few notes.</span>")
+	user.visible_message(span_notice("[user] dissects [target], discovering [points_earned] point\s of data!"), span_notice("You dissect [target], finding [points_earned] point\s worth of discoveries, you also write a few notes."))
 
 	var/obj/item/research_notes/the_dossier =new /obj/item/research_notes(user.loc, points_earned, "biology")
 	if(!user.put_in_hands(the_dossier) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
@@ -107,7 +107,7 @@
 
 /datum/surgery_step/dissection/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/points_earned = round(check_value(target, surgery) * 0.01)
-	user.visible_message("<span class='notice'>[user] dissects [target]!</span>", EXPDIS_FAIL_MSG)
+	user.visible_message(span_notice("[user] dissects [target]!"), EXPDIS_FAIL_MSG)
 
 	var/obj/item/research_notes/the_dossier =new /obj/item/research_notes(user.loc, points_earned, "biology")
 	if(!user.put_in_hands(the_dossier) && istype(user.get_inactive_held_item(), /obj/item/research_notes))

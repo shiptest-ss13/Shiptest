@@ -58,18 +58,11 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/proc/considered_escaped(datum/mind/M)
 	if(!considered_alive(M))
 		return FALSE
-	if(considered_exiled(M))
-		return FALSE
-	if(M.force_escaped)
-		return TRUE
-	if(SSticker.force_ending || SSticker.mode.station_was_nuked) // Just let them win.
+	if(SSticker.force_ending) // Just let them win.
 		return TRUE
 	if(SSshuttle.jump_mode != BS_JUMP_COMPLETED)
 		return FALSE
-	var/turf/location = get_turf(M.current)
-	if(!location || istype(location, /turf/open/floor/mineral/plastitanium/red/brig)) // Fails if they are in the shuttle brig
-		return FALSE
-	return location.onCentCom() || location.onSyndieBase()
+	return TRUE
 
 /datum/objective/proc/check_completion()
 	return completed
@@ -233,7 +226,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	..()
 
 /datum/objective/maroon/check_completion()
-	return !target || !considered_alive(target) || (!target.current.onCentCom() && !target.current.onSyndieBase())
+	return !target || !considered_alive(target)
 
 /datum/objective/maroon/update_explanation_text()
 	if(target && target.current)
@@ -334,7 +327,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "detain"
 
 /datum/objective/jailbreak/detain/check_completion()
-	return completed || (!considered_escaped(target) && (considered_alive(target) && target.current.onCentCom()))
+	return completed || (!considered_escaped(target) && (considered_alive(target)))
 
 /datum/objective/jailbreak/detain/update_explanation_text()
 	..()
@@ -851,7 +844,7 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 		var/mob/new_target = input(admin,"Select target:", "Objective target") as null|anything in sortNames(possible_targets)
 		target = new_target.mind
 	else
-		to_chat(admin, "<span class='boldwarning'>No active AIs with minds.</span>")
+		to_chat(admin, span_boldwarning("No active AIs with minds."))
 	update_explanation_text()
 
 /datum/objective/destroy/internal

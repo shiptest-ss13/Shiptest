@@ -74,7 +74,7 @@
 /obj/item/clothing/glasses/meson/engine/attack_self(mob/user)
 	toggle_mode(user, TRUE)
 
-/obj/item/clothing/glasses/meson/engine/process()
+/obj/item/clothing/glasses/meson/engine/process(seconds_per_tick)
 	if(!ishuman(loc))
 		return
 	var/mob/living/carbon/human/user = loc
@@ -106,7 +106,7 @@
 		var/strength = round(rad_places[i] / 1000, 0.1)
 		var/image/pic = image(loc = place)
 		var/mutable_appearance/MA = new()
-		MA.maptext = "<span class='maptext'>[strength]k</span>"
+		MA.maptext = MAPTEXT("[strength]k")
 		MA.color = "#04e604"
 		MA.layer = RAD_TEXT_LAYER
 		MA.plane = GAME_PLANE

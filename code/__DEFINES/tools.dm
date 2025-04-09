@@ -15,6 +15,7 @@
 #define TOOL_SCALPEL "scalpel"
 #define TOOL_SAW "saw"
 #define TOOL_KNIFE "knife" //luv me kuh-nyfe
+#define TOOL_DECONSTRUCT "deconstruct"
 
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,
 // tool sound is only played when op is started. If not, it's played twice.

@@ -12,11 +12,12 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
+	wield_slowdown = HMG_SLOWDOWN
+
 	spread = 4
 	spread_unwielded = 80
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 3
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 20
@@ -26,7 +27,7 @@
 	///is the bipod deployed?
 	var/bipod_deployed = FALSE
 	///how long do we need to deploy the bipod?
-	var/deploy_time = 2 SECONDS
+	var/deploy_time = 0.5 SECONDS
 
 	///we add these two values to recoi/spread when we have the bipod deployed
 	var/deploy_recoil_bonus = -1
@@ -40,6 +41,9 @@
 	/obj/structure/railing,
 	/obj/structure/flippedtable
 	)
+	wear_minor_threshold = 300
+	wear_major_threshold = 900
+	wear_maximum = 1500
 
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
@@ -64,6 +68,22 @@
 	else
 		retract_bipod(user=user)
 
+/obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/total_recoil = recoil_bonus
+
+	if(bipod_deployed)
+		total_recoil += deploy_recoil_bonus
+
+	return ..(user, total_recoil)
+
+/obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
+	var/total_spread = bonus_spread
+
+	if(bipod_deployed)
+		total_spread += deploy_spread_bonus
+
+	return ..(user, total_spread)
+
 /obj/item/gun/ballistic/automatic/hmg/proc/deploy_bipod(mob/user)
 	//we check if we can actually deploy the thing
 	var/can_deploy = TRUE
@@ -73,7 +93,7 @@
 		return
 
 	if(!wielded_fully)
-		to_chat(user, "<span class='warning'>You need to fully grip [src] to deploy it's bipod!</span>")
+		to_chat(user, span_warning("You need to fully grip [src] to deploy it's bipod!"))
 		return
 
 	if(wielder.body_position != LYING_DOWN) //are we braced against the ground? if not, we check for objects to brace against
@@ -89,13 +109,13 @@
 
 
 	if(!can_deploy)
-		to_chat(user, "<span class='warning'>You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!</span>")
+		to_chat(user, span_warning("You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!"))
 		return
 	if(!do_after(user, deploy_time, src, NONE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
-		to_chat(user, "<span class='warning'>You need to hold still to deploy [src]'s bipod!</span>")
+		to_chat(user, span_warning("You need to hold still to deploy [src]'s bipod!"))
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
-	to_chat(user, "<span class='notice'>You deploy [src]'s bipod.</span>")
+	to_chat(user, span_notice("You deploy [src]'s bipod."))
 	bipod_deployed = TRUE
 
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(retract_bipod))
@@ -108,7 +128,7 @@
 	if(!user || !ismob(user))
 		user = loc
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
-	to_chat(user, "<span class='notice'>The bipod undeploys itself.</span>")
+	to_chat(user, span_notice("The bipod undeploys itself."))
 	bipod_deployed = FALSE
 
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
@@ -128,75 +148,6 @@
 	if(has_bipod)
 		. += "[base_icon_state || initial(icon_state)][bipod_deployed ? "_deployed" : "_undeployed"]"
 
-
-// L6 SAW //
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw
-	name = "\improper L6 SAW"
-	desc = "A heavy machine gun, designated 'L6 SAW'. Chambered in 7.12x82mm."
-	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
-	icon_state = "l6"
-	item_state = "l6closedmag"
-	base_icon_state = "l6"
-
-	mag_type = /obj/item/ammo_box/magazine/mm712x82
-	spread = 7
-
-	fire_delay = 0.1 SECONDS
-
-	bolt_type = BOLT_TYPE_OPEN
-	show_magazine_on_sprite = TRUE
-	show_magazine_on_sprite_ammo = TRUE
-	tac_reloads = FALSE
-	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	rack_sound = 'sound/weapons/gun/l6/l6_rack.ogg'
-	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
-	manufacturer = MANUFACTURER_SCARBOROUGH
-	var/cover_open = FALSE
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/examine(mob/user)
-	. = ..()
-	. += "<b>alt + click</b> to [cover_open ? "close" : "open"] the dust cover."
-	if(cover_open && magazine)
-		. += "<span class='notice'>It seems like you could use an <b>empty hand</b> to remove the magazine.</span>"
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/AltClick(mob/user)
-	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
-	playsound(user, 'sound/weapons/gun/l6/l6_door.ogg', 60, TRUE)
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/update_overlays()
-	. = ..()
-	. += "l6_door_[cover_open ? "open" : "closed"]"
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params)
-	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
-		return
-	else
-		. = ..()
-		update_appearance()
-
-//ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/attack_hand(mob/user)
-	if (loc != user)
-		..()
-		return
-	if (!cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is closed! Open it before trying to remove the magazine!</span>")
-		return
-	..()
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/attackby(obj/item/A, mob/user, params)
-	if(!cover_open && istype(A, mag_type))
-		to_chat(user, "<span class='warning'>[src]'s dust cover prevents a magazine from being fit.</span>")
-		return
-	..()
-
 /obj/item/gun/ballistic/automatic/hmg/solar //This thing fires a 5.56 equivalent, that's an LMG, not an HMG, get out
 	name = "\improper Solar"
 	desc = "A TerraGov LMG-169 designed in 169 FS, nicknamed 'Solar.' A inscription reads: 'PROPERTY OF TERRAGOV', with 'TERRAGOV' poorly scribbled out, and replaced by 'SOLAR ARMORIES'. Chambered in 4.73×33mm caseless ammunition."
@@ -208,7 +159,10 @@
 	icon_state = "solar"
 
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
-	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
+	default_ammo_type = /obj/item/ammo_box/magazine/rifle47x33mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/rifle47x33mm,
+	)
 	spread = 7
 
 	fire_delay = 0.1 SECONDS
@@ -247,7 +201,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	manufacturer = MANUFACTURER_IMPORT
-	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/skm_762_40,
+	)
 
 	fire_delay = 0.13 SECONDS
 
@@ -257,7 +214,7 @@
 	recoil = 1 //identical to other LMGS
 	recoil_unwielded = 4 //same as skm
 
-	wield_slowdown = 1 //not as severe as other lmgs, but worse than the normal skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
 	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
 
 	has_bipod = TRUE
@@ -267,17 +224,7 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/skm_762_40/extended(src)
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag/Initialize()
-	. = ..()
-	magazine = new /obj/item/ammo_box/magazine/skm_762_40/drum(src)
-	chamber_round()
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum

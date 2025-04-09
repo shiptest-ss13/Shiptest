@@ -110,7 +110,7 @@
 		new /obj/item/soap(location)
 
 /datum/chemical_reaction/omegasoapification
-	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/drug/krokodil = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/baldium = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
+	required_reagents = list(/datum/reagent/consumable/potato_juice = 10, /datum/reagent/consumable/ethanol/lizardwine = 10, /datum/reagent/monkey_powder = 10, /datum/reagent/toxin/acid/nitracid = 10, /datum/reagent/baldium = 10, /datum/reagent/consumable/ethanol/hooch = 10, /datum/reagent/bluespace = 10, /datum/reagent/drug/pumpup = 10, /datum/reagent/consumable/space_cola = 10)
 	required_temp = 999
 	mob_react = FALSE
 
@@ -301,28 +301,28 @@
 	mob_react = FALSE
 
 /datum/chemical_reaction/foam/on_reaction(datum/reagents/holder, created_volume)
-	holder.create_foam(/datum/effect_system/foam_spread,2*created_volume,notification="<span class='danger'>The solution spews out foam!</span>")
+	holder.create_foam(/datum/effect_system/foam_spread,2*created_volume,notification=span_danger("The solution spews out foam!"))
 
 /datum/chemical_reaction/metalfoam
 	required_reagents = list(/datum/reagent/aluminium = 3, /datum/reagent/foaming_agent = 1, /datum/reagent/toxin/acid/fluacid = 1)
 	mob_react = FALSE
 
 /datum/chemical_reaction/metalfoam/on_reaction(datum/reagents/holder, created_volume)
-	holder.create_foam(/datum/effect_system/foam_spread/metal,5*created_volume,1,"<span class='danger'>The solution spews out a metallic foam!</span>")
+	holder.create_foam(/datum/effect_system/foam_spread/metal,5*created_volume,1,span_danger("The solution spews out a metallic foam!"))
 
 /datum/chemical_reaction/smart_foam
 	required_reagents = list(/datum/reagent/aluminium = 3, /datum/reagent/smart_foaming_agent = 1, /datum/reagent/toxin/acid/fluacid = 1)
 	mob_react = TRUE
 
 /datum/chemical_reaction/smart_foam/on_reaction(datum/reagents/holder, created_volume)
-	holder.create_foam(/datum/effect_system/foam_spread/metal/smart,5*created_volume,1,"<span class='danger'>The solution spews out metallic foam!</span>")
+	holder.create_foam(/datum/effect_system/foam_spread/metal/smart,5*created_volume,1,span_danger("The solution spews out metallic foam!"))
 
 /datum/chemical_reaction/ironfoam
 	required_reagents = list(/datum/reagent/iron = 3, /datum/reagent/foaming_agent = 1, /datum/reagent/toxin/acid/fluacid = 1)
 	mob_react = FALSE
 
 /datum/chemical_reaction/ironfoam/on_reaction(datum/reagents/holder, created_volume)
-	holder.create_foam(/datum/effect_system/foam_spread/metal,5*created_volume,2,"<span class='danger'>The solution spews out a metallic foam!</span>")
+	holder.create_foam(/datum/effect_system/foam_spread/metal,5*created_volume,2,span_danger("The solution spews out a metallic foam!"))
 
 /datum/chemical_reaction/foaming_agent
 	results = list(/datum/reagent/foaming_agent = 1)
@@ -435,18 +435,6 @@
 	results = list(/datum/reagent/colorful_reagent = 5)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/uranium/radium = 1, /datum/reagent/drug/space_drugs = 1, /datum/reagent/medicine/cryoxadone = 1, /datum/reagent/consumable/triple_citrus = 1)
 
-/datum/chemical_reaction/life
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
-
-/datum/chemical_reaction/life/on_reaction(datum/reagents/holder, created_volume)
-	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (hostile)") //defaults to HOSTILE_SPAWN
-
-/datum/chemical_reaction/life_friendly
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/consumable/sugar = 1)
-
-/datum/chemical_reaction/life_friendly/on_reaction(datum/reagents/holder, created_volume)
-	chemical_mob_spawn(holder, rand(1, round(created_volume, 1)), "Life (friendly)", FRIENDLY_SPAWN)
-
 /datum/chemical_reaction/corgium
 	required_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/colorful_reagent = 1, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/blood = 1)
 	required_temp = 374
@@ -551,7 +539,7 @@
 /datum/chemical_reaction/yuck
 	results = list(/datum/reagent/yuck = 4)
 	required_reagents = list(/datum/reagent/fuel = 3)
-	required_container = /obj/item/reagent_containers/food/snacks/deadmouse
+	required_container = /obj/item/food/deadmouse
 
 
 /datum/chemical_reaction/slimejelly
@@ -559,14 +547,6 @@
 	required_reagents = list(/datum/reagent/fuel/oil = 3, /datum/reagent/uranium/radium = 2, /datum/reagent/consumable/tinlux =1)
 	required_container = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom
 	mix_message = "The mushroom's insides bubble and pop and it becomes very limp."
-
-/datum/chemical_reaction/slime_extractification
-	required_reagents = list(/datum/reagent/toxin/slimejelly = 30, /datum/reagent/consumable/frostoil = 5, /datum/reagent/toxin/plasma = 5)
-	mix_message = "The mixture condenses into a ball."
-
-/datum/chemical_reaction/slime_extractification/on_reaction(datum/reagents/holder, created_volume)
-	var/location = get_turf(holder.my_atom)
-	new /obj/item/slime_extract/grey(location)
 
 /datum/chemical_reaction/metalgen_imprint
 	required_reagents = list(/datum/reagent/metalgen = 1, /datum/reagent/liquid_dark_matter = 1)
@@ -620,6 +600,10 @@
 	required_temp = 400
 	mix_message = "The mixture boils off a grey vapor..."//The water boils off, leaving the cement
 
+/datum/chemical_reaction/quick_concrete
+	results = list(/datum/reagent/concrete = 5)
+	required_reagents = list(/datum/reagent/concrete_mix = 5, /datum/reagent/water = 5)
+
 /datum/chemical_reaction/hexement
 	results = list(/datum/reagent/cement/hexement = 1)
 	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/phenol = 1)
@@ -627,7 +611,7 @@
 	mix_message = "The mixture rapidly condenses and darkens in color..."
 
 /datum/chemical_reaction/cellulose_carbonization/ash		// Sub for cellulose
-	required_reagents = list(/datum/reagent/ash_fibers)
+	required_reagents = list(/datum/reagent/ash_fibers = 1)
 
 /datum/chemical_reaction/fervor
 	results = list(/datum/reagent/consumable/fervor = 10)

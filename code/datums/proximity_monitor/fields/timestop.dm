@@ -29,9 +29,6 @@
 	for(var/mob/living/L in GLOB.player_list)
 		if(locate(/obj/effect/proc_holder/spell/aoe_turf/timestop) in L.mind.spell_list) //People who can stop time are immune to its effects
 			immune[L] = TRUE
-	for(var/mob/living/simple_animal/hostile/guardian/G in GLOB.parasites)
-		if(G.summoner && locate(/obj/effect/proc_holder/spell/aoe_turf/timestop) in G.summoner.mind.spell_list) //It would only make sense that a person's stand would also be immune.
-			immune[G] = TRUE
 	if(start)
 		INVOKE_ASYNC(src, PROC_REF(timestop))
 
@@ -166,7 +163,7 @@
 /datum/proximity_monitor/advanced/timestop/proc/unfreeze_structure(obj/O)
 	escape_the_negative_zone(O)
 
-/datum/proximity_monitor/advanced/timestop/process()
+/datum/proximity_monitor/advanced/timestop/process(seconds_per_tick)
 	for(var/i in frozen_mobs)
 		var/mob/living/m = i
 		m.Stun(20, ignore_canstun = TRUE)

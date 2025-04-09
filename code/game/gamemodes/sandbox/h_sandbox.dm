@@ -38,7 +38,6 @@ GLOBAL_VAR_INIT(hsboxspawn, TRUE)
 			"Standard Tools",
 			"Spawn Flashlight"					= "hsbspawn&path=[/obj/item/flashlight]",
 			"Spawn Toolbox"						= "hsbspawn&path=[/obj/item/storage/toolbox/mechanical]",
-			"Spawn Experimental Welding tool"	= "hsbspawn&path=[/obj/item/weldingtool/experimental]",
 			"Spawn Light Replacer"				= "hsbspawn&path=[/obj/item/lightreplacer]",
 			"Spawn Medical Kit"					= "hsbspawn&path=[/obj/item/storage/firstaid/regular]",
 			"Spawn All-Access ID"				= "hsbaaid",
@@ -114,11 +113,11 @@ GLOBAL_VAR_INIT(hsboxspawn, TRUE)
 			if("hsbtobj")
 				if(!admin) return
 				if(GLOB.hsboxspawn)
-					to_chat(world, "<span class='boldannounce'>Sandbox:</span> <b>\black[usr.key] has disabled object spawning!</b>")
+					to_chat(world, "[span_boldannounce("Sandbox:")] <b>\black[usr.key] has disabled object spawning!</b>")
 					GLOB.hsboxspawn = FALSE
 					return
 				else
-					to_chat(world, "<span class='boldnotice'>Sandbox:</span> <b>\black[usr.key] has enabled object spawning!</b>")
+					to_chat(world, "[span_boldnotice("Sandbox:")] <b>\black[usr.key] has enabled object spawning!</b>")
 					GLOB.hsboxspawn = TRUE
 					return
 			//
@@ -128,9 +127,9 @@ GLOBAL_VAR_INIT(hsboxspawn, TRUE)
 				if(!admin) return
 				var/sbac = CONFIG_GET(flag/sandbox_autoclose)
 				if(sbac)
-					to_chat(world, "<span class='boldnotice'>Sandbox:</span> <b>\black [usr.key] has removed the object spawn limiter.</b>")
+					to_chat(world, "[span_boldnotice("Sandbox:")] <b>\black [usr.key] has removed the object spawn limiter.</b>")
 				else
-					to_chat(world, "<span class='danger'>Sandbox:</span> <b>\black [usr.key] has added a limiter to object spawning. The window will now auto-close after use.</b>")
+					to_chat(world, "[span_danger("Sandbox:")] <b>\black [usr.key] has added a limiter to object spawning. The window will now auto-close after use.</b>")
 				CONFIG_SET(flag/sandbox_autoclose, !sbac)
 				return
 			//

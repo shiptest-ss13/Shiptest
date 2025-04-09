@@ -15,7 +15,7 @@
 
 /turf/open/floor/engine/examine(mob/user)
 	. += ..()
-	. += "<span class='notice'>The reinforcement sheet is <b>wrenched</b> firmly in place.</span>"
+	. += span_notice("The reinforcement sheet is <b>wrenched</b> firmly in place.")
 
 /turf/open/floor/engine/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -45,7 +45,7 @@
 
 /turf/open/floor/engine/wrench_act(mob/living/user, obj/item/I)
 	..()
-	to_chat(user, "<span class='notice'>You begin removing the sheet...</span>")
+	to_chat(user, span_notice("You begin removing the sheet..."))
 	if(I.use_tool(src, user, 30, volume=80))
 		if(!istype(src, /turf/open/floor/engine))
 			return TRUE
@@ -140,36 +140,6 @@
 /turf/open/floor/engine/hydrogen_fuel
 	name = "hydrogen mix floor"
 	initial_gas_mix = ATMOS_TANK_HYDROGEN_FUEL
-
-/turf/open/floor/engine/cult
-	name = "engraved floor"
-	desc = "The air smells strange over this sinister flooring."
-	icon_state = "plating"
-	floor_tile = null
-	var/obj/effect/cult_turf/overlay/floor/bloodcult/realappearance
-
-
-/turf/open/floor/engine/cult/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	new /obj/effect/temp_visual/cult/turf/floor(src)
-	realappearance = new /obj/effect/cult_turf/overlay/floor/bloodcult(src)
-	realappearance.linked = src
-
-/turf/open/floor/engine/cult/Destroy()
-	be_removed()
-	return ..()
-
-/turf/open/floor/engine/cult/ChangeTurf(path, new_baseturf, flags)
-	if(path != type)
-		be_removed()
-	return ..()
-
-/turf/open/floor/engine/cult/proc/be_removed()
-	qdel(realappearance)
-	realappearance = null
-
-/turf/open/floor/engine/cult/airless
-	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/engine/vacuum
 	name = "vacuum floor"

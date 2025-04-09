@@ -6,7 +6,7 @@
 	var/light_color = COLOR_WHITE
 
 /datum/buildmode_mode/lightmaker/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Left Click")] -> Create light\n\
 		[span_bold("Right Click")] -> Delete light\n\
 		[span_bold("Right Click on Build Mode Button")] -> Change light properties"))

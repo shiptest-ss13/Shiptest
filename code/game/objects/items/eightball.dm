@@ -51,10 +51,10 @@
 		return
 
 	if(on_cooldown)
-		to_chat(user, "<span class='warning'>[src] was shaken recently, it needs time to settle.</span>")
+		to_chat(user, span_warning("[src] was shaken recently, it needs time to settle."))
 		return
 
-	user.visible_message("<span class='notice'>[user] starts shaking [src].</span>", "<span class='notice'>You start shaking [src].</span>", "<span class='hear'>You hear shaking and sloshing.</span>")
+	user.visible_message(span_notice("[user] starts shaking [src]."), span_notice("You start shaking [src]."), span_hear("You hear shaking and sloshing."))
 
 	shaking = TRUE
 
@@ -136,10 +136,10 @@
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	for (var/answer in haunted_answers)
 		votes[answer] = 0
-	GLOB.poi_list |= src
+	SSpoints_of_interest.make_point_of_interest(src)
 
 /obj/item/toy/eightball/haunted/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/item/toy/eightball/haunted/MakeHaunted()
@@ -148,7 +148,7 @@
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/item/toy/eightball/haunted/attack_ghost(mob/user)
 	if(!shaking)
-		to_chat(user, "<span class='warning'>[src] is not currently being shaken.</span>")
+		to_chat(user, span_warning("[src] is not currently being shaken."))
 		return
 	interact(user)
 	return ..()

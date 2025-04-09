@@ -8,19 +8,6 @@ GLOBAL_PROTECT(donators)
 
 /client/var/datum/donator/donator
 
-/client/New(TopicData)
-	. = ..()
-	donator = GLOB.donators[ckey] || new /datum/donator(src)
-	donator.owner = src
-	add_verb(src, /client/proc/do_donator_redemption)
-	add_verb(src, /client/proc/do_donator_wcir)
-
-/client/Destroy()
-	. = ..()
-	if(donator) // it's possible that a client was qdel'd inside the initializer
-		donator.owner = null
-		donator = null
-
 /client/proc/do_donator_redemption()
 	set name = "Redeem Donator Reward"
 	set category = "OOC.Donator"
@@ -31,7 +18,7 @@ GLOBAL_PROTECT(donators)
 	if(client_mob.next_move > world.time)
 		return
 	if(!isliving(client_mob))
-		to_chat(client_mob, "<span class='notice'>You must be alive to use this!</span>")
+		to_chat(client_mob, span_notice("You must be alive to use this!"))
 		return
 	if(!donator?.handle_redemption(client_mob))
 		client_mob.changeNext_move(CLICK_CD_MELEE)
@@ -46,23 +33,20 @@ GLOBAL_PROTECT(donators)
 /datum/donator
 	/// ckey of the client who this datum belongs to
 	var/ckey
-	/// reference to the client
-	var/client/owner
+
+	/// Whether or not this datum actually is a real donator
+	var/is_donator = FALSE
 
 	/// typecache of eligible rewards for this donator
-	var/list/flat_rewards = list(
-		/obj/item/reagent_containers/food/snacks/cookie = TRUE
-	)
+	var/list/flat_rewards = list()
 
 	/// list of conversion rewards for this donator
 	/// Expected format: base type -> list of convertible types
-	var/list/conversion_rewards = list(
-	)
+	var/list/conversion_rewards = list()
 
 	/// list of reskin rewards for this donator
 	/// Should be an assosciative list indexed by type with a value which is a list of skins
-	var/list/reskin_rewards = list(
-	)
+	var/list/reskin_rewards = list()
 
 	/// list of redeemed conversion types
 	var/list/conversions_redeemed = list()
@@ -70,22 +54,22 @@ GLOBAL_PROTECT(donators)
 /datum/donator/New(client/owner)
 	. = ..()
 	src.ckey = owner.ckey
-	src.owner = owner
 	load_information()
 	GLOB.donators[ckey] = src
 
-/datum/donator/Destroy(force, ...)
+/datum/donator/Destroy(force)
 	if(!force)
 		return QDEL_HINT_LETMELIVE
 	. = ..()
 	GLOB.donators -= ckey
-	owner.donator = null
-	owner = null
 
 /datum/donator/proc/load_information() //todo: db support with config files being a backup method
 	var/json_file = file(REWARD_JSON_PATH + "[ckey].json")
 	if(!fexists(json_file))
 		return
+
+	is_donator = TRUE
+
 	var/list/json = safe_json_decode(file2text(json_file))
 
 	if(!json || !("ckey" in json))
@@ -180,6 +164,10 @@ GLOBAL_PROTECT(donators)
 			. += rinstance
 
 /datum/donator/proc/what_can_i_redeem(mob/user)
+	if(!is_donator)
+		to_chat(user, span_notice("You are not a donator! If you are, please contact an admin on the discord."))
+		return
+
 	var/resp = list()
 	resp += "<span class='fakespan0'>----------</span>"
 	resp += "Your current redeemable rewards are as follows:"
@@ -222,7 +210,7 @@ GLOBAL_PROTECT(donators)
 	var/r_all = r_flat + r_conv + r_resk
 
 	if(!r_all)
-		to_chat(user, "<span class='notice'>You do not have any rewards able to be redeemed currently.</span>")
+		to_chat(user, span_notice("You do not have any rewards able to be redeemed currently."))
 		return FALSE
 
 	var/choice
@@ -343,7 +331,7 @@ GLOBAL_PROTECT(donators)
 	if(!donator_key || donator_allow_other_usage || check_donator(equipper) || check_donator(target))
 		return ..()
 
-	to_chat(target, "<span class='warning'>A strange force prevents you from equipping [src]...</span>")
+	to_chat(target, span_warning("A strange force prevents you from equipping [src]..."))
 	return FALSE
 
 /obj/item/clothing/examine(mob/user)
@@ -351,10 +339,10 @@ GLOBAL_PROTECT(donators)
 	if(!donator_key) // Github I demand you run the checks on this PR
 		return .
 	if(check_donator(user))
-		. += "<span class='notice'><ul>This is one of your donator items, to <b>[(donator_allow_other_usage ? "allow" : "disallow")]</b> sharing <b>CtrlShiftClick</b> it.</ul></span>"
+		. += span_notice("<ul>This is one of your donator items, to <b>[(donator_allow_other_usage ? "allow" : "disallow")]</b> sharing <b>CtrlShiftClick</b> it.</ul>")
 	else
 		if(!donator_allow_other_usage)
-			. += "<span class='warning'>A strange force prevents you from making eye contact with it.</span>"
+			. += span_warning("A strange force prevents you from making eye contact with it.")
 
 /obj/item/clothing/proc/check_donator(mob/user)
 	return ckey(user.key) == ckey(donator_key)
@@ -364,5 +352,5 @@ GLOBAL_PROTECT(donators)
 		return ..()
 
 	donator_allow_other_usage = !donator_allow_other_usage
-	to_chat(user, "<span class='notice'>You <b>[(donator_allow_other_usage ? "allow" : "disallow")]</b> sharing of [src].</span>")
+	to_chat(user, span_notice("You <b>[(donator_allow_other_usage ? "allow" : "disallow")]</b> sharing of [src]."))
 	return TRUE

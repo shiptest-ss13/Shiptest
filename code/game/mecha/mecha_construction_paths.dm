@@ -3,6 +3,9 @@
 ////////////////////////////////
 /datum/component/construction/mecha
 	var/base_icon
+	// if we need to override the icon for a different one from the base. Step determines when the override occurs.
+	var/override_icon
+	var/override_step = list()
 
 	// Component typepaths.
 	// most must be defined unless
@@ -52,6 +55,11 @@
 	// "[base_icon][index - 1]"
 	// For example, Ripley's step 1 icon_state is "ripley0".
 	var/atom/parent_atom = parent
+	if(override_icon && ((index-1) in override_step))
+		if(!steps[index]["icon_state"] && base_icon)
+			parent_atom.icon_state = "[override_icon][index - 1]"
+			return
+
 	if(!steps[index]["icon_state"] && base_icon)
 		parent_atom.icon_state = "[base_icon][index - 1]"
 
@@ -59,7 +67,7 @@
 	. = user.transferItemToLoc(I, parent)
 	if(.)
 		var/atom/parent_atom = parent
-		user.visible_message("<span class='notice'>[user] connects [I] to [parent].</span>", "<span class='notice'>You connect [I] to [parent].</span>")
+		user.visible_message(span_notice("[user] connects [I] to [parent]."), span_notice("You connect [I] to [parent]."))
 		parent_atom.add_overlay(I.icon_state+"+o")
 		qdel(I)
 
@@ -297,102 +305,102 @@
 
 	switch(index)
 		if(1)
-			user.visible_message("<span class='notice'>[user] connects [parent] hydraulic systems.</span>", "<span class='notice'>You connect [parent] hydraulic systems.</span>")
+			user.visible_message(span_notice("[user] connects [parent] hydraulic systems."), span_notice("You connect [parent] hydraulic systems."))
 		if(2)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] activates [parent] hydraulic systems.</span>", "<span class='notice'>You activate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] activates [parent] hydraulic systems."), span_notice("You activate [parent] hydraulic systems."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects [parent] hydraulic systems.</span>", "<span class='notice'>You disconnect [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] disconnects [parent] hydraulic systems."), span_notice("You disconnect [parent] hydraulic systems."))
 		if(3)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adds the wiring to [parent].</span>", "<span class='notice'>You add the wiring to [parent].</span>")
+				user.visible_message(span_notice("[user] adds the wiring to [parent]."), span_notice("You add the wiring to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] deactivates [parent] hydraulic systems.</span>", "<span class='notice'>You deactivate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] deactivates [parent] hydraulic systems."), span_notice("You deactivate [parent] hydraulic systems."))
 		if(4)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adjusts the wiring of [parent].</span>", "<span class='notice'>You adjust the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] adjusts the wiring of [parent]."), span_notice("You adjust the wiring of [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>You remove the wiring from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the wiring from [parent]."), span_notice("You remove the wiring from [parent]."))
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>You disconnect the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] disconnects the wiring of [parent]."), span_notice("You disconnect the wiring of [parent]."))
 		if(6)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the mainboard.</span>", "<span class='notice'>You secure the mainboard.</span>")
+				user.visible_message(span_notice("[user] secures the mainboard."), span_notice("You secure the mainboard."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>You remove the central computer mainboard from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the central control module from [parent]."), span_notice("You remove the central computer mainboard from [parent]."))
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>You unfasten the mainboard.</span>")
+				user.visible_message(span_notice("[user] unfastens the mainboard."), span_notice("You unfasten the mainboard."))
 		if(8)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the peripherals control module.</span>", "<span class='notice'>You secure the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] secures the peripherals control module."), span_notice("You secure the peripherals control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>You remove the peripherals control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the peripherals control module from [parent]."), span_notice("You remove the peripherals control module from [parent]."))
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>You unfasten the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the peripherals control module."), span_notice("You unfasten the peripherals control module."))
 		if(10)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the scanner module.</span>", "<span class='notice'>You secure the scanner module.</span>")
+				user.visible_message(span_notice("[user] secures the scanner module."), span_notice("You secure the scanner module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>You remove the scanner module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the scanner module from [parent]."), span_notice("You remove the scanner module from [parent]."))
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>You unfasten the scanner module.</span>")
+				user.visible_message(span_notice("[user] unfastens the scanner module."), span_notice("You unfasten the scanner module."))
 		if(12)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures [I].</span>", "<span class='notice'>You secure [I].</span>")
+				user.visible_message(span_notice("[user] secures [I]."), span_notice("You secure [I]."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>You remove the capacitor from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the capacitor from [parent]."), span_notice("You remove the capacitor from [parent]."))
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I].</span>", "<span class='notice'>You install [I].</span>")
+				user.visible_message(span_notice("[user] installs [I]."), span_notice("You install [I]."))
 			else
-				user.visible_message("<span class='notice'>[user] unsecures the capacitor from [parent].</span>", "<span class='notice'>You unsecure the capacitor from [parent].</span>")
+				user.visible_message(span_notice("[user] unsecures the capacitor from [parent]."), span_notice("You unsecure the capacitor from [parent]."))
 		if(14)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the power cell.</span>", "<span class='notice'>You secure the power cell.</span>")
+				user.visible_message(span_notice("[user] secures the power cell."), span_notice("You secure the power cell."))
 			else
-				user.visible_message("<span class='notice'>[user] pries the power cell from [parent].</span>", "<span class='notice'>You pry the power cell from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the power cell from [parent]."), span_notice("You pry the power cell from [parent]."))
 		if(15)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the internal armor layer to [parent].</span>", "<span class='notice'>You install the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the internal armor layer to [parent]."), span_notice("You install the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the power cell.</span>", "<span class='notice'>You unfasten the power cell.</span>")
+				user.visible_message(span_notice("[user] unfastens the power cell."), span_notice("You unfasten the power cell."))
 		if(16)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the internal armor layer.</span>", "<span class='notice'>You secure the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the internal armor layer."), span_notice("You secure the internal armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries internal armor layer from [parent].</span>", "<span class='notice'>You pry internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries internal armor layer from [parent]."), span_notice("You pry internal armor layer from [parent]."))
 		if(17)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the internal armor layer to [parent].</span>", "<span class='notice'>You weld the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the internal armor layer to [parent]."), span_notice("You weld the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the internal armor layer.</span>", "<span class='notice'>You unfasten the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the internal armor layer."), span_notice("You unfasten the internal armor layer."))
 		if(18)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the external reinforced armor layer to [parent].</span>", "<span class='notice'>You install the external reinforced armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the external reinforced armor layer to [parent]."), span_notice("You install the external reinforced armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] cuts the internal armor layer from [parent].</span>", "<span class='notice'>You cut the internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] cuts the internal armor layer from [parent]."), span_notice("You cut the internal armor layer from [parent]."))
 		if(19)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the external armor layer.</span>", "<span class='notice'>You secure the external reinforced armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the external armor layer."), span_notice("You secure the external reinforced armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries external armor layer from [parent].</span>", "<span class='notice'>You pry external armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries external armor layer from [parent]."), span_notice("You pry external armor layer from [parent]."))
 		if(20)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the external armor layer to [parent].</span>", "<span class='notice'>You weld the external armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the external armor layer to [parent]."), span_notice("You weld the external armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the external armor layer.</span>", "<span class='notice'>You unfasten the external armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the external armor layer."), span_notice("You unfasten the external armor layer."))
 	return TRUE
 
 /datum/component/construction/unordered/mecha_chassis/gygax
@@ -420,6 +428,24 @@
 	outer_plating=/obj/item/mecha_parts/part/gygax_armor
 	outer_plating_amount=1
 
+/datum/component/construction/unordered/mecha_chassis/mpgygax
+	result = /datum/component/construction/mecha/gygax/mp
+	steps = list(
+		/obj/item/mecha_parts/part/gygax_torso,
+		/obj/item/mecha_parts/part/gygax_left_arm,
+		/obj/item/mecha_parts/part/gygax_right_arm,
+		/obj/item/mecha_parts/part/gygax_left_leg,
+		/obj/item/mecha_parts/part/gygax_right_leg,
+		/obj/item/mecha_parts/part/gygax_head
+	)
+
+/datum/component/construction/mecha/gygax/mp
+	result = /obj/mecha/combat/gygax/charger/mp
+
+	outer_plating = /obj/item/mecha_parts/part/mpgygax_armor
+	override_icon = "mpgygax"
+	override_step = list(21,22)
+
 /datum/component/construction/mecha/gygax/action(datum/source, atom/used_atom, mob/user)
 	return INVOKE_ASYNC(src, PROC_REF(check_step), used_atom, user)
 
@@ -429,112 +455,112 @@
 
 	switch(index)
 		if(1)
-			user.visible_message("<span class='notice'>[user] connects [parent] hydraulic systems.</span>", "<span class='notice'>You connect [parent] hydraulic systems.</span>")
+			user.visible_message(span_notice("[user] connects [parent] hydraulic systems."), span_notice("You connect [parent] hydraulic systems."))
 		if(2)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] activates [parent] hydraulic systems.</span>", "<span class='notice'>You activate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] activates [parent] hydraulic systems."), span_notice("You activate [parent] hydraulic systems."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects [parent] hydraulic systems.</span>", "<span class='notice'>You disconnect [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] disconnects [parent] hydraulic systems."), span_notice("You disconnect [parent] hydraulic systems."))
 		if(3)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adds the wiring to [parent].</span>", "<span class='notice'>You add the wiring to [parent].</span>")
+				user.visible_message(span_notice("[user] adds the wiring to [parent]."), span_notice("You add the wiring to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] deactivates [parent] hydraulic systems.</span>", "<span class='notice'>You deactivate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] deactivates [parent] hydraulic systems."), span_notice("You deactivate [parent] hydraulic systems."))
 		if(4)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adjusts the wiring of [parent].</span>", "<span class='notice'>You adjust the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] adjusts the wiring of [parent]."), span_notice("You adjust the wiring of [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>You remove the wiring from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the wiring from [parent]."), span_notice("You remove the wiring from [parent]."))
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>You disconnect the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] disconnects the wiring of [parent]."), span_notice("You disconnect the wiring of [parent]."))
 		if(6)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the mainboard.</span>", "<span class='notice'>You secure the mainboard.</span>")
+				user.visible_message(span_notice("[user] secures the mainboard."), span_notice("You secure the mainboard."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>You remove the central computer mainboard from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the central control module from [parent]."), span_notice("You remove the central computer mainboard from [parent]."))
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>You unfasten the mainboard.</span>")
+				user.visible_message(span_notice("[user] unfastens the mainboard."), span_notice("You unfasten the mainboard."))
 		if(8)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the peripherals control module.</span>", "<span class='notice'>You secure the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] secures the peripherals control module."), span_notice("You secure the peripherals control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>You remove the peripherals control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the peripherals control module from [parent]."), span_notice("You remove the peripherals control module from [parent]."))
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>You unfasten the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the peripherals control module."), span_notice("You unfasten the peripherals control module."))
 		if(10)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the weapon control module.</span>", "<span class='notice'>You secure the weapon control module.</span>")
+				user.visible_message(span_notice("[user] secures the weapon control module."), span_notice("You secure the weapon control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the weapon control module from [parent].</span>", "<span class='notice'>You remove the weapon control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the weapon control module from [parent]."), span_notice("You remove the weapon control module from [parent]."))
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the weapon control module.</span>", "<span class='notice'>You unfasten the weapon control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the weapon control module."), span_notice("You unfasten the weapon control module."))
 		if(12)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the scanner module.</span>", "<span class='notice'>You secure the scanner module.</span>")
+				user.visible_message(span_notice("[user] secures the scanner module."), span_notice("You secure the scanner module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>You remove the scanner module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the scanner module from [parent]."), span_notice("You remove the scanner module from [parent]."))
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>You unfasten the scanner module.</span>")
+				user.visible_message(span_notice("[user] unfastens the scanner module."), span_notice("You unfasten the scanner module."))
 		if(14)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the capacitor.</span>", "<span class='notice'>You secure the capacitor.</span>")
+				user.visible_message(span_notice("[user] secures the capacitor."), span_notice("You secure the capacitor."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>You remove the capacitor from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the capacitor from [parent]."), span_notice("You remove the capacitor from [parent]."))
 		if(15)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the capacitor.</span>", "<span class='notice'>You unfasten the capacitor.</span>")
+				user.visible_message(span_notice("[user] unfastens the capacitor."), span_notice("You unfasten the capacitor."))
 		if(16)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the power cell.</span>", "<span class='notice'>You secure the power cell.</span>")
+				user.visible_message(span_notice("[user] secures the power cell."), span_notice("You secure the power cell."))
 			else
-				user.visible_message("<span class='notice'>[user] pries the power cell from [parent].</span>", "<span class='notice'>You pry the power cell from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the power cell from [parent]."), span_notice("You pry the power cell from [parent]."))
 		if(17)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the internal armor layer to [parent].</span>", "<span class='notice'>You install the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the internal armor layer to [parent]."), span_notice("You install the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the power cell.</span>", "<span class='notice'>You unfasten the power cell.</span>")
+				user.visible_message(span_notice("[user] unfastens the power cell."), span_notice("You unfasten the power cell."))
 		if(18)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the internal armor layer.</span>", "<span class='notice'>You secure the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the internal armor layer."), span_notice("You secure the internal armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries internal armor layer from [parent].</span>", "<span class='notice'>You pry internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries internal armor layer from [parent]."), span_notice("You pry internal armor layer from [parent]."))
 		if(19)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the internal armor layer to [parent].</span>", "<span class='notice'>You weld the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the internal armor layer to [parent]."), span_notice("You weld the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the internal armor layer.</span>", "<span class='notice'>You unfasten the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the internal armor layer."), span_notice("You unfasten the internal armor layer."))
 		if(20)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] cuts the internal armor layer from [parent].</span>", "<span class='notice'>You cut the internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] cuts the internal armor layer from [parent]."), span_notice("You cut the internal armor layer from [parent]."))
 		if(21)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures Gygax Armor Plates.</span>", "<span class='notice'>You secure Gygax Armor Plates.</span>")
+				user.visible_message(span_notice("[user] secures the armor plates."), span_notice("You secure the armor plates."))
 			else
-				user.visible_message("<span class='notice'>[user] pries Gygax Armor Plates from [parent].</span>", "<span class='notice'>You pry Gygax Armor Plates from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the armor plates from [parent]."), span_notice("You pry the armor plates from [parent]."))
 		if(22)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds Gygax Armor Plates to [parent].</span>", "<span class='notice'>You weld Gygax Armor Plates to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the armor plates to [parent]."), span_notice("You weld the armor plates to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens Gygax Armor Plates.</span>", "<span class='notice'>You unfasten Gygax Armor Plates.</span>")
+				user.visible_message(span_notice("[user] unfastens the armor plates."), span_notice("You unfasten the armor plates."))
 	return TRUE
 
 /datum/component/construction/unordered/mecha_chassis/firefighter
@@ -591,107 +617,107 @@
 	//TODO: better messages.
 	switch(index)
 		if(1)
-			user.visible_message("<span class='notice'>[user] connects [parent] hydraulic systems.</span>", "<span class='notice'>You connect [parent] hydraulic systems.</span>")
+			user.visible_message(span_notice("[user] connects [parent] hydraulic systems."), span_notice("You connect [parent] hydraulic systems."))
 		if(2)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] activates [parent] hydraulic systems.</span>", "<span class='notice'>You activate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] activates [parent] hydraulic systems."), span_notice("You activate [parent] hydraulic systems."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects [parent] hydraulic systems.</span>", "<span class='notice'>You disconnect [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] disconnects [parent] hydraulic systems."), span_notice("You disconnect [parent] hydraulic systems."))
 		if(3)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adds the wiring to [parent].</span>", "<span class='notice'>You add the wiring to [parent].</span>")
+				user.visible_message(span_notice("[user] adds the wiring to [parent]."), span_notice("You add the wiring to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] deactivates [parent] hydraulic systems.</span>", "<span class='notice'>You deactivate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] deactivates [parent] hydraulic systems."), span_notice("You deactivate [parent] hydraulic systems."))
 		if(4)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adjusts the wiring of [parent].</span>", "<span class='notice'>You adjust the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] adjusts the wiring of [parent]."), span_notice("You adjust the wiring of [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>You remove the wiring from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the wiring from [parent]."), span_notice("You remove the wiring from [parent]."))
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>You disconnect the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] disconnects the wiring of [parent]."), span_notice("You disconnect the wiring of [parent]."))
 		if(6)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the mainboard.</span>", "<span class='notice'>You secure the mainboard.</span>")
+				user.visible_message(span_notice("[user] secures the mainboard."), span_notice("You secure the mainboard."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>You remove the central computer mainboard from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the central control module from [parent]."), span_notice("You remove the central computer mainboard from [parent]."))
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I]into [parent].</span>", "<span class='notice'>You install [I]into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I]into [parent]."), span_notice("You install [I]into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>You unfasten the mainboard.</span>")
+				user.visible_message(span_notice("[user] unfastens the mainboard."), span_notice("You unfasten the mainboard."))
 		if(8)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the peripherals control module.</span>", "<span class='notice'>You secure the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] secures the peripherals control module."), span_notice("You secure the peripherals control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>You remove the peripherals control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the peripherals control module from [parent]."), span_notice("You remove the peripherals control module from [parent]."))
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>You unfasten the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the peripherals control module."), span_notice("You unfasten the peripherals control module."))
 		if(10)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the scanner module.</span>", "<span class='notice'>You secure the scanner module.</span>")
+				user.visible_message(span_notice("[user] secures the scanner module."), span_notice("You secure the scanner module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>You remove the scanner module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the scanner module from [parent]."), span_notice("You remove the scanner module from [parent]."))
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>You unfasten the scanner module.</span>")
+				user.visible_message(span_notice("[user] unfastens the scanner module."), span_notice("You unfasten the scanner module."))
 		if(12)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the capacitor.</span>", "<span class='notice'>You secure the capacitor.</span>")
+				user.visible_message(span_notice("[user] secures the capacitor."), span_notice("You secure the capacitor."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>You remove the capacitor from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the capacitor from [parent]."), span_notice("You remove the capacitor from [parent]."))
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the capacitor.</span>", "<span class='notice'>You unfasten the capacitor.</span>")
+				user.visible_message(span_notice("[user] unfastens the capacitor."), span_notice("You unfasten the capacitor."))
 		if(14)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the power cell.</span>", "<span class='notice'>You secure the power cell.</span>")
+				user.visible_message(span_notice("[user] secures the power cell."), span_notice("You secure the power cell."))
 			else
-				user.visible_message("<span class='notice'>[user] pries the power cell from [parent].</span>", "<span class='notice'>You pry the power cell from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the power cell from [parent]."), span_notice("You pry the power cell from [parent]."))
 		if(15)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the internal armor layer to [parent].</span>", "<span class='notice'>You install the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the internal armor layer to [parent]."), span_notice("You install the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the power cell.</span>", "<span class='notice'>You unfasten the power cell.</span>")
+				user.visible_message(span_notice("[user] unfastens the power cell."), span_notice("You unfasten the power cell."))
 		if(16)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the internal armor layer.</span>", "<span class='notice'>You secure the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the internal armor layer."), span_notice("You secure the internal armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries internal armor layer from [parent].</span>", "<span class='notice'>You pry internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries internal armor layer from [parent]."), span_notice("You pry internal armor layer from [parent]."))
 		if(17)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the internal armor layer to [parent].</span>", "<span class='notice'>You weld the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the internal armor layer to [parent]."), span_notice("You weld the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the internal armor layer.</span>", "<span class='notice'>You unfasten the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the internal armor layer."), span_notice("You unfasten the internal armor layer."))
 		if(18)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] starts to install the external armor layer to [parent].</span>", "<span class='notice'>You install the external armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] starts to install the external armor layer to [parent]."), span_notice("You install the external armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] cuts the internal armor layer from [parent].</span>", "<span class='notice'>You cut the internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] cuts the internal armor layer from [parent]."), span_notice("You cut the internal armor layer from [parent]."))
 		if(19)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the external reinforced armor layer to [parent].</span>", "<span class='notice'>You install the external reinforced armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the external reinforced armor layer to [parent]."), span_notice("You install the external reinforced armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the external armor from [parent].</span>", "<span class='notice'>You remove the external armor from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the external armor from [parent]."), span_notice("You remove the external armor from [parent]."))
 		if(20)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the external armor layer.</span>", "<span class='notice'>You secure the external reinforced armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the external armor layer."), span_notice("You secure the external reinforced armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries external armor layer from [parent].</span>", "<span class='notice'>You pry external armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries external armor layer from [parent]."), span_notice("You pry external armor layer from [parent]."))
 		if(21)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the external armor layer to [parent].</span>", "<span class='notice'>You weld the external armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the external armor layer to [parent]."), span_notice("You weld the external armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the external armor layer.</span>", "<span class='notice'>You unfasten the external armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the external armor layer."), span_notice("You unfasten the external armor layer."))
 	return TRUE
 
 /datum/component/construction/unordered/mecha_chassis/honker
@@ -761,10 +787,6 @@
 			"key" = /obj/item/bikehorn
 		),
 		list(
-			"key" = /obj/item/clothing/shoes/clown_shoes,
-			"action" = ITEM_DELETE
-		),
-		list(
 			"key" = /obj/item/bikehorn
 		),
 	)
@@ -786,26 +808,26 @@
 
 	if(istype(I, /obj/item/bikehorn))
 		playsound(parent, 'sound/items/bikehorn.ogg', 50, TRUE)
-		user.visible_message("<span class='danger'>HONK!</span>")
+		user.visible_message(span_danger("HONK!"))
 
 	//TODO: better messages.
 	switch(index)
 		if(2)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+			user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 		if(4)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+			user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 		if(6)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+			user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 		if(8)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+			user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 		if(10)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+			user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 		if(12)
-			user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+			user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 		if(14)
-			user.visible_message("<span class='notice'>[user] puts [I] on [parent].</span>", "<span class='notice'>You put [I] on [parent].</span>")
+			user.visible_message(span_notice("[user] puts [I] on [parent]."), span_notice("You put [I] on [parent]."))
 		if(16)
-			user.visible_message("<span class='notice'>[user] puts [I] on [parent].</span>", "<span class='notice'>You put [I] on [parent].</span>")
+			user.visible_message(span_notice("[user] puts [I] on [parent]."), span_notice("You put [I] on [parent]."))
 	return TRUE
 
 /datum/component/construction/unordered/mecha_chassis/durand
@@ -840,112 +862,112 @@
 	//TODO: better messages.
 	switch(index)
 		if(1)
-			user.visible_message("<span class='notice'>[user] connects [parent] hydraulic systems.</span>", "<span class='notice'>You connect [parent] hydraulic systems.</span>")
+			user.visible_message(span_notice("[user] connects [parent] hydraulic systems."), span_notice("You connect [parent] hydraulic systems."))
 		if(2)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] activates [parent] hydraulic systems.</span>", "<span class='notice'>You activate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] activates [parent] hydraulic systems."), span_notice("You activate [parent] hydraulic systems."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects [parent] hydraulic systems.</span>", "<span class='notice'>You disconnect [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] disconnects [parent] hydraulic systems."), span_notice("You disconnect [parent] hydraulic systems."))
 		if(3)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adds the wiring to [parent].</span>", "<span class='notice'>You add the wiring to [parent].</span>")
+				user.visible_message(span_notice("[user] adds the wiring to [parent]."), span_notice("You add the wiring to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] deactivates [parent] hydraulic systems.</span>", "<span class='notice'>You deactivate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] deactivates [parent] hydraulic systems."), span_notice("You deactivate [parent] hydraulic systems."))
 		if(4)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adjusts the wiring of [parent].</span>", "<span class='notice'>You adjust the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] adjusts the wiring of [parent]."), span_notice("You adjust the wiring of [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>You remove the wiring from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the wiring from [parent]."), span_notice("You remove the wiring from [parent]."))
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>You disconnect the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] disconnects the wiring of [parent]."), span_notice("You disconnect the wiring of [parent]."))
 		if(6)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the mainboard.</span>", "<span class='notice'>You secure the mainboard.</span>")
+				user.visible_message(span_notice("[user] secures the mainboard."), span_notice("You secure the mainboard."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>You remove the central computer mainboard from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the central control module from [parent]."), span_notice("You remove the central computer mainboard from [parent]."))
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>You unfasten the mainboard.</span>")
+				user.visible_message(span_notice("[user] unfastens the mainboard."), span_notice("You unfasten the mainboard."))
 		if(8)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the peripherals control module.</span>", "<span class='notice'>You secure the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] secures the peripherals control module."), span_notice("You secure the peripherals control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>You remove the peripherals control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the peripherals control module from [parent]."), span_notice("You remove the peripherals control module from [parent]."))
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>You unfasten the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the peripherals control module."), span_notice("You unfasten the peripherals control module."))
 		if(10)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the weapon control module.</span>", "<span class='notice'>You secure the weapon control module.</span>")
+				user.visible_message(span_notice("[user] secures the weapon control module."), span_notice("You secure the weapon control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the weapon control module from [parent].</span>", "<span class='notice'>You remove the weapon control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the weapon control module from [parent]."), span_notice("You remove the weapon control module from [parent]."))
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the weapon control module.</span>", "<span class='notice'>You unfasten the weapon control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the weapon control module."), span_notice("You unfasten the weapon control module."))
 		if(12)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the scanner module.</span>", "<span class='notice'>You secure the scanner module.</span>")
+				user.visible_message(span_notice("[user] secures the scanner module."), span_notice("You secure the scanner module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>You remove the scanner module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the scanner module from [parent]."), span_notice("You remove the scanner module from [parent]."))
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>You unfasten the scanner module.</span>")
+				user.visible_message(span_notice("[user] unfastens the scanner module."), span_notice("You unfasten the scanner module."))
 		if(14)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the capacitor.</span>", "<span class='notice'>You secure the capacitor.</span>")
+				user.visible_message(span_notice("[user] secures the capacitor."), span_notice("You secure the capacitor."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>You remove the capacitor from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the capacitor from [parent]."), span_notice("You remove the capacitor from [parent]."))
 		if(15)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the capacitor.</span>", "<span class='notice'>You unfasten the capacitor.</span>")
+				user.visible_message(span_notice("[user] unfastens the capacitor."), span_notice("You unfasten the capacitor."))
 		if(16)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the power cell.</span>", "<span class='notice'>You secure the power cell.</span>")
+				user.visible_message(span_notice("[user] secures the power cell."), span_notice("You secure the power cell."))
 			else
-				user.visible_message("<span class='notice'>[user] pries the power cell from [parent].</span>", "<span class='notice'>You pry the power cell from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the power cell from [parent]."), span_notice("You pry the power cell from [parent]."))
 		if(17)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the internal armor layer to [parent].</span>", "<span class='notice'>You install the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the internal armor layer to [parent]."), span_notice("You install the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the power cell.</span>", "<span class='notice'>You unfasten the power cell.</span>")
+				user.visible_message(span_notice("[user] unfastens the power cell."), span_notice("You unfasten the power cell."))
 		if(18)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the internal armor layer.</span>", "<span class='notice'>You secure the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the internal armor layer."), span_notice("You secure the internal armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries internal armor layer from [parent].</span>", "<span class='notice'>You pry internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries internal armor layer from [parent]."), span_notice("You pry internal armor layer from [parent]."))
 		if(19)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the internal armor layer to [parent].</span>", "<span class='notice'>You weld the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the internal armor layer to [parent]."), span_notice("You weld the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the internal armor layer.</span>", "<span class='notice'>You unfasten the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the internal armor layer."), span_notice("You unfasten the internal armor layer."))
 		if(20)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] cuts the internal armor layer from [parent].</span>", "<span class='notice'>You cut the internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] cuts the internal armor layer from [parent]."), span_notice("You cut the internal armor layer from [parent]."))
 		if(21)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures Durand Armor Plates.</span>", "<span class='notice'>You secure Durand Armor Plates.</span>")
+				user.visible_message(span_notice("[user] secures Durand Armor Plates."), span_notice("You secure Durand Armor Plates."))
 			else
-				user.visible_message("<span class='notice'>[user] pries Durand Armor Plates from [parent].</span>", "<span class='notice'>You pry Durand Armor Plates from [parent].</span>")
+				user.visible_message(span_notice("[user] pries Durand Armor Plates from [parent]."), span_notice("You pry Durand Armor Plates from [parent]."))
 		if(22)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds Durand Armor Plates to [parent].</span>", "<span class='notice'>You weld Durand Armor Plates to [parent].</span>")
+				user.visible_message(span_notice("[user] welds Durand Armor Plates to [parent]."), span_notice("You weld Durand Armor Plates to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens Durand Armor Plates.</span>", "<span class='notice'>You unfasten Durand Armor Plates.</span>")
+				user.visible_message(span_notice("[user] unfastens Durand Armor Plates."), span_notice("You unfasten Durand Armor Plates."))
 	return TRUE
 
 //PHAZON
@@ -1066,131 +1088,131 @@
 	//TODO: better messages.
 	switch(index)
 		if(1)
-			user.visible_message("<span class='notice'>[user] connects [parent] hydraulic systems.</span>", "<span class='notice'>You connect [parent] hydraulic systems.</span>")
+			user.visible_message(span_notice("[user] connects [parent] hydraulic systems."), span_notice("You connect [parent] hydraulic systems."))
 		if(2)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] activates [parent] hydraulic systems.</span>", "<span class='notice'>You activate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] activates [parent] hydraulic systems."), span_notice("You activate [parent] hydraulic systems."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects [parent] hydraulic systems.</span>", "<span class='notice'>You disconnect [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] disconnects [parent] hydraulic systems."), span_notice("You disconnect [parent] hydraulic systems."))
 		if(3)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adds the wiring to [parent].</span>", "<span class='notice'>You add the wiring to [parent].</span>")
+				user.visible_message(span_notice("[user] adds the wiring to [parent]."), span_notice("You add the wiring to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] deactivates [parent] hydraulic systems.</span>", "<span class='notice'>You deactivate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] deactivates [parent] hydraulic systems."), span_notice("You deactivate [parent] hydraulic systems."))
 		if(4)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adjusts the wiring of [parent].</span>", "<span class='notice'>You adjust the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] adjusts the wiring of [parent]."), span_notice("You adjust the wiring of [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>You remove the wiring from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the wiring from [parent]."), span_notice("You remove the wiring from [parent]."))
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>You disconnect the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] disconnects the wiring of [parent]."), span_notice("You disconnect the wiring of [parent]."))
 		if(6)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the mainboard.</span>", "<span class='notice'>You secure the mainboard.</span>")
+				user.visible_message(span_notice("[user] secures the mainboard."), span_notice("You secure the mainboard."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>You remove the central computer mainboard from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the central control module from [parent]."), span_notice("You remove the central computer mainboard from [parent]."))
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>You unfasten the mainboard.</span>")
+				user.visible_message(span_notice("[user] unfastens the mainboard."), span_notice("You unfasten the mainboard."))
 		if(8)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the peripherals control module.</span>", "<span class='notice'>You secure the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] secures the peripherals control module."), span_notice("You secure the peripherals control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>You remove the peripherals control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the peripherals control module from [parent]."), span_notice("You remove the peripherals control module from [parent]."))
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>You unfasten the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the peripherals control module."), span_notice("You unfasten the peripherals control module."))
 		if(10)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the weapon control module.</span>", "<span class='notice'>You secure the weapon control module.</span>")
+				user.visible_message(span_notice("[user] secures the weapon control module."), span_notice("You secure the weapon control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the weapon control module from [parent].</span>", "<span class='notice'>You remove the weapon control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the weapon control module from [parent]."), span_notice("You remove the weapon control module from [parent]."))
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the weapon control module.</span>", "<span class='notice'>You unfasten the weapon control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the weapon control module."), span_notice("You unfasten the weapon control module."))
 		if(12)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the scanner module.</span>", "<span class='notice'>You secure the scanner module.</span>")
+				user.visible_message(span_notice("[user] secures the scanner module."), span_notice("You secure the scanner module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>You remove the scanner module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the scanner module from [parent]."), span_notice("You remove the scanner module from [parent]."))
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>You unfasten the scanner module.</span>")
+				user.visible_message(span_notice("[user] unfastens the scanner module."), span_notice("You unfasten the scanner module."))
 		if(14)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the capacitor.</span>", "<span class='notice'>You secure the capacitor.</span>")
+				user.visible_message(span_notice("[user] secures the capacitor."), span_notice("You secure the capacitor."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>You remove the capacitor from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the capacitor from [parent]."), span_notice("You remove the capacitor from [parent]."))
 		if(15)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I].</span>", "<span class='notice'>You install [I].</span>")
+				user.visible_message(span_notice("[user] installs [I]."), span_notice("You install [I]."))
 			else
-				user.visible_message("<span class='notice'>[user] unsecures the capacitor from [parent].</span>", "<span class='notice'>You unsecure the capacitor from [parent].</span>")
+				user.visible_message(span_notice("[user] unsecures the capacitor from [parent]."), span_notice("You unsecure the capacitor from [parent]."))
 		if(16)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] connects the bluespace crystal.</span>", "<span class='notice'>You connect the bluespace crystal.</span>")
+				user.visible_message(span_notice("[user] connects the bluespace crystal."), span_notice("You connect the bluespace crystal."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the bluespace crystal from [parent].</span>", "<span class='notice'>You remove the bluespace crystal from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the bluespace crystal from [parent]."), span_notice("You remove the bluespace crystal from [parent]."))
 		if(17)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] engages the bluespace crystal.</span>", "<span class='notice'>You engage the bluespace crystal.</span>")
+				user.visible_message(span_notice("[user] engages the bluespace crystal."), span_notice("You engage the bluespace crystal."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects the bluespace crystal from [parent].</span>", "<span class='notice'>You disconnect the bluespace crystal from [parent].</span>")
+				user.visible_message(span_notice("[user] disconnects the bluespace crystal from [parent]."), span_notice("You disconnect the bluespace crystal from [parent]."))
 		if(18)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] disengages the bluespace crystal.</span>", "<span class='notice'>You disengage the bluespace crystal.</span>")
+				user.visible_message(span_notice("[user] disengages the bluespace crystal."), span_notice("You disengage the bluespace crystal."))
 		if(19)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the power cell.</span>", "<span class='notice'>You secure the power cell.</span>")
+				user.visible_message(span_notice("[user] secures the power cell."), span_notice("You secure the power cell."))
 			else
-				user.visible_message("<span class='notice'>[user] pries the power cell from [parent].</span>", "<span class='notice'>You pry the power cell from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the power cell from [parent]."), span_notice("You pry the power cell from [parent]."))
 		if(20)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the phase armor layer to [parent].</span>", "<span class='notice'>You install the phase armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the phase armor layer to [parent]."), span_notice("You install the phase armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the power cell.</span>", "<span class='notice'>You unfasten the power cell.</span>")
+				user.visible_message(span_notice("[user] unfastens the power cell."), span_notice("You unfasten the power cell."))
 		if(21)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the phase armor layer.</span>", "<span class='notice'>You secure the phase armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the phase armor layer."), span_notice("You secure the phase armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries the phase armor layer from [parent].</span>", "<span class='notice'>You pry the phase armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the phase armor layer from [parent]."), span_notice("You pry the phase armor layer from [parent]."))
 		if(22)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the phase armor layer to [parent].</span>", "<span class='notice'>You weld the phase armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the phase armor layer to [parent]."), span_notice("You weld the phase armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the phase armor layer.</span>", "<span class='notice'>You unfasten the phase armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the phase armor layer."), span_notice("You unfasten the phase armor layer."))
 		if(23)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] cuts phase armor layer from [parent].</span>", "<span class='notice'>You cut the phase armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] cuts phase armor layer from [parent]."), span_notice("You cut the phase armor layer from [parent]."))
 		if(24)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures Phazon Armor Plates.</span>", "<span class='notice'>You secure Phazon Armor Plates.</span>")
+				user.visible_message(span_notice("[user] secures Phazon Armor Plates."), span_notice("You secure Phazon Armor Plates."))
 			else
-				user.visible_message("<span class='notice'>[user] pries Phazon Armor Plates from [parent].</span>", "<span class='notice'>You pry Phazon Armor Plates from [parent].</span>")
+				user.visible_message(span_notice("[user] pries Phazon Armor Plates from [parent]."), span_notice("You pry Phazon Armor Plates from [parent]."))
 		if(25)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds Phazon Armor Plates to [parent].</span>", "<span class='notice'>You weld Phazon Armor Plates to [parent].</span>")
+				user.visible_message(span_notice("[user] welds Phazon Armor Plates to [parent]."), span_notice("You weld Phazon Armor Plates to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens Phazon Armor Plates.</span>", "<span class='notice'>You unfasten Phazon Armor Plates.</span>")
+				user.visible_message(span_notice("[user] unfastens Phazon Armor Plates."), span_notice("You unfasten Phazon Armor Plates."))
 		if(26)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] carefully inserts the anomaly core into [parent] and secures it.</span>", //WS Edit
-					"<span class='notice'>You slowly place the anomaly core into its socket and close its chamber.</span>") //WS Edit - Any anomaly core for phazons
+				user.visible_message(span_notice("[user] carefully inserts the anomaly core into [parent] and secures it."), //WS Edit
+					span_notice("You slowly place the anomaly core into its socket and close its chamber.")) //WS Edit - Any anomaly core for phazons
 	return TRUE
 
 //ODYSSEUS
@@ -1226,100 +1248,100 @@
 	//TODO: better messages.
 	switch(index)
 		if(1)
-			user.visible_message("<span class='notice'>[user] connects [parent] hydraulic systems.</span>", "<span class='notice'>You connect [parent] hydraulic systems.</span>")
+			user.visible_message(span_notice("[user] connects [parent] hydraulic systems."), span_notice("You connect [parent] hydraulic systems."))
 		if(2)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] activates [parent] hydraulic systems.</span>", "<span class='notice'>You activate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] activates [parent] hydraulic systems."), span_notice("You activate [parent] hydraulic systems."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects [parent] hydraulic systems.</span>", "<span class='notice'>You disconnect [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] disconnects [parent] hydraulic systems."), span_notice("You disconnect [parent] hydraulic systems."))
 		if(3)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adds the wiring to [parent].</span>", "<span class='notice'>You add the wiring to [parent].</span>")
+				user.visible_message(span_notice("[user] adds the wiring to [parent]."), span_notice("You add the wiring to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] deactivates [parent] hydraulic systems.</span>", "<span class='notice'>You deactivate [parent] hydraulic systems.</span>")
+				user.visible_message(span_notice("[user] deactivates [parent] hydraulic systems."), span_notice("You deactivate [parent] hydraulic systems."))
 		if(4)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] adjusts the wiring of [parent].</span>", "<span class='notice'>You adjust the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] adjusts the wiring of [parent]."), span_notice("You adjust the wiring of [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the wiring from [parent].</span>", "<span class='notice'>You remove the wiring from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the wiring from [parent]."), span_notice("You remove the wiring from [parent]."))
 		if(5)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] disconnects the wiring of [parent].</span>", "<span class='notice'>You disconnect the wiring of [parent].</span>")
+				user.visible_message(span_notice("[user] disconnects the wiring of [parent]."), span_notice("You disconnect the wiring of [parent]."))
 		if(6)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the mainboard.</span>", "<span class='notice'>You secure the mainboard.</span>")
+				user.visible_message(span_notice("[user] secures the mainboard."), span_notice("You secure the mainboard."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the central control module from [parent].</span>", "<span class='notice'>You remove the central computer mainboard from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the central control module from [parent]."), span_notice("You remove the central computer mainboard from [parent]."))
 		if(7)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the mainboard.</span>", "<span class='notice'>You unfasten the mainboard.</span>")
+				user.visible_message(span_notice("[user] unfastens the mainboard."), span_notice("You unfasten the mainboard."))
 		if(8)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the peripherals control module.</span>", "<span class='notice'>You secure the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] secures the peripherals control module."), span_notice("You secure the peripherals control module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the peripherals control module from [parent].</span>", "<span class='notice'>You remove the peripherals control module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the peripherals control module from [parent]."), span_notice("You remove the peripherals control module from [parent]."))
 		if(9)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the peripherals control module.</span>", "<span class='notice'>You unfasten the peripherals control module.</span>")
+				user.visible_message(span_notice("[user] unfastens the peripherals control module."), span_notice("You unfasten the peripherals control module."))
 		if(10)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the scanner module.</span>", "<span class='notice'>You secure the scanner module.</span>")
+				user.visible_message(span_notice("[user] secures the scanner module."), span_notice("You secure the scanner module."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the scanner module from [parent].</span>", "<span class='notice'>You remove the scanner module from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the scanner module from [parent]."), span_notice("You remove the scanner module from [parent]."))
 		if(11)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] to [parent].</span>", "<span class='notice'>You install [I] to [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] to [parent]."), span_notice("You install [I] to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the scanner module.</span>", "<span class='notice'>You unfasten the scanner module.</span>")
+				user.visible_message(span_notice("[user] unfastens the scanner module."), span_notice("You unfasten the scanner module."))
 		if(12)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the capacitor.</span>", "<span class='notice'>You secure the capacitor.</span>")
+				user.visible_message(span_notice("[user] secures the capacitor."), span_notice("You secure the capacitor."))
 			else
-				user.visible_message("<span class='notice'>[user] removes the capacitor from [parent].</span>", "<span class='notice'>You remove the capacitor from [parent].</span>")
+				user.visible_message(span_notice("[user] removes the capacitor from [parent]."), span_notice("You remove the capacitor from [parent]."))
 		if(13)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs [I] into [parent].</span>", "<span class='notice'>You install [I] into [parent].</span>")
+				user.visible_message(span_notice("[user] installs [I] into [parent]."), span_notice("You install [I] into [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the capacitor.</span>", "<span class='notice'>You unfasten the capacitor.</span>")
+				user.visible_message(span_notice("[user] unfastens the capacitor."), span_notice("You unfasten the capacitor."))
 		if(14)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the power cell.</span>", "<span class='notice'>You secure the power cell.</span>")
+				user.visible_message(span_notice("[user] secures the power cell."), span_notice("You secure the power cell."))
 			else
-				user.visible_message("<span class='notice'>[user] pries the power cell from [parent].</span>", "<span class='notice'>You pry the power cell from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the power cell from [parent]."), span_notice("You pry the power cell from [parent]."))
 		if(15)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the internal armor layer to [parent].</span>", "<span class='notice'>You install the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the internal armor layer to [parent]."), span_notice("You install the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the power cell.</span>", "<span class='notice'>You unfasten the power cell.</span>")
+				user.visible_message(span_notice("[user] unfastens the power cell."), span_notice("You unfasten the power cell."))
 		if(16)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the internal armor layer.</span>", "<span class='notice'>You secure the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the internal armor layer."), span_notice("You secure the internal armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries internal armor layer from [parent].</span>", "<span class='notice'>You pry internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries internal armor layer from [parent]."), span_notice("You pry internal armor layer from [parent]."))
 		if(17)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the internal armor layer to [parent].</span>", "<span class='notice'>You weld the internal armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the internal armor layer to [parent]."), span_notice("You weld the internal armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the internal armor layer.</span>", "<span class='notice'>You unfasten the internal armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the internal armor layer."), span_notice("You unfasten the internal armor layer."))
 		if(18)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] installs the external armor layer to [parent].</span>", "<span class='notice'>You install the external reinforced armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] installs the external armor layer to [parent]."), span_notice("You install the external reinforced armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] cuts the internal armor layer from [parent].</span>", "<span class='notice'>You cut the internal armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] cuts the internal armor layer from [parent]."), span_notice("You cut the internal armor layer from [parent]."))
 		if(19)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] secures the external armor layer.</span>", "<span class='notice'>You secure the external reinforced armor layer.</span>")
+				user.visible_message(span_notice("[user] secures the external armor layer."), span_notice("You secure the external reinforced armor layer."))
 			else
-				user.visible_message("<span class='notice'>[user] pries the external armor layer from [parent].</span>", "<span class='notice'>You pry the external armor layer from [parent].</span>")
+				user.visible_message(span_notice("[user] pries the external armor layer from [parent]."), span_notice("You pry the external armor layer from [parent]."))
 		if(20)
 			if(diff==FORWARD)
-				user.visible_message("<span class='notice'>[user] welds the external armor layer to [parent].</span>", "<span class='notice'>You weld the external armor layer to [parent].</span>")
+				user.visible_message(span_notice("[user] welds the external armor layer to [parent]."), span_notice("You weld the external armor layer to [parent]."))
 			else
-				user.visible_message("<span class='notice'>[user] unfastens the external armor layer.</span>", "<span class='notice'>You unfasten the external armor layer.</span>")
+				user.visible_message(span_notice("[user] unfastens the external armor layer."), span_notice("You unfasten the external armor layer."))
 	return TRUE

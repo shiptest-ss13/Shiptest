@@ -10,10 +10,10 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = "<span class='info'>Your stomach flashes with pain before subsiding. Food doesn't seem like a good idea right now.</span>"
-	high_threshold_passed = "<span class='warning'>Your stomach flares up with constant pain- you can hardly stomach the idea of food right now!</span>"
-	high_threshold_cleared = "<span class='info'>The pain in your stomach dies down for now, but food still seems unappealing.</span>"
-	low_threshold_cleared = "<span class='info'>The last bouts of pain in your stomach have died out.</span>"
+	low_threshold_passed = span_info("Your stomach flashes with pain before subsiding. Food doesn't seem like a good idea right now.")
+	high_threshold_passed = span_warning("Your stomach flares up with constant pain- you can hardly stomach the idea of food right now!")
+	high_threshold_cleared = span_info("The pain in your stomach dies down for now, but food still seems unappealing.")
+	low_threshold_cleared = span_info("The last bouts of pain in your stomach have died out.")
 
 	var/disgust_metabolism = 1
 
@@ -35,12 +35,12 @@
 	if(Nutri)
 		if(prob((damage/40) * Nutri.volume * Nutri.volume))
 			H.vomit(damage)
-			to_chat(H, "<span class='warning'>Your stomach reels in pain as you're incapable of holding down all that food!</span>")
+			to_chat(H, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 
 	else if(Nutri && damage > high_threshold)
 		if(prob((damage/10) * Nutri.volume * Nutri.volume))
 			H.vomit(damage)
-			to_chat(H, "<span class='warning'>Your stomach reels in pain as you're incapable of holding down all that food!</span>")
+			to_chat(H, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 
 /obj/item/organ/stomach/get_availability(datum/species/S)
 	return !(NOSTOMACH in S.species_traits)
@@ -48,37 +48,48 @@
 /obj/item/organ/stomach/proc/handle_disgust(mob/living/carbon/human/H)
 	if(H.disgust)
 		var/pukeprob = 5 + 0.05 * H.disgust
-		if(H.disgust >= DISGUST_LEVEL_GROSS)
-			if(prob(10))
-				H.stuttering += 1
-				H.confused += 2
-			if(prob(10) && !H.stat)
-				to_chat(H, "<span class='warning'>You feel kind of iffy...</span>")
-			H.jitteriness = max(H.jitteriness - 3, 0)
-		if(H.disgust >= DISGUST_LEVEL_VERYGROSS)
-			if(prob(pukeprob)) //iT hAndLeS mOrE ThaN PukInG
-				H.confused += 2.5
-				H.stuttering += 1
-				H.vomit(10, 0, 1, 0, 1, 0)
-			H.Dizzy(5)
-		if(H.disgust >= DISGUST_LEVEL_DISGUSTED)
-			if(prob(25))
-				H.blur_eyes(3) //We need to add more shit down here
+		switch(H.disgust)
+			if(0 to DISGUST_LEVEL_GROSS)
+				//throw alerts
+				H.clear_alert("disgust")
+				SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "disgust")
+				//do our stupid bullshit
+				if(prob(10))
+					H.stuttering += 1
+					H.confused += 2
+					if(!H.stat)
+						to_chat(H, span_warning("You feel queasy..."))
+				H.adjust_jitter(-3)
+			if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
+				//throw alerts
+				H.throw_alert("disgust", /atom/movable/screen/alert/gross)
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/gross)
+				//do the nausea stuff
+				if(prob(pukeprob)) //iT hAndLeS mOrE ThaN PukInG
+					H.vomit(10, 0, 0, 0, 1, 0)
+					H.confused += 2.5
+					H.stuttering += 1
+					H.Dizzy(5)
+			if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
+				//do the thing
+				H.throw_alert("disgust", /atom/movable/screen/alert/verygross)
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/verygross)
+				//you're not gonna believe it we do the other thing too
+
+				if(prob(pukeprob))
+					H.blur_eyes(3)
+					H.vomit(20, 0, 1, 1, 1, 0)
+					H.confused += 2.5
+					H.stuttering += 1
+			if(DISGUST_LEVEL_DISGUSTED to DISGUST_LEVEL_MAXEDOUT)
+				H.throw_alert("disgust", /atom/movable/screen/alert/disgusted)
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/disgusted)
+
+				//profusely vomiting.
+				if(prob(pukeprob))
+					H.vomit(40, 0, 1, 1, 1, 0)
 
 		H.adjust_disgust(-0.5 * disgust_metabolism)
-	switch(H.disgust)
-		if(0 to DISGUST_LEVEL_GROSS)
-			H.clear_alert("disgust")
-			SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "disgust")
-		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
-			H.throw_alert("disgust", /atom/movable/screen/alert/gross)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/gross)
-		if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
-			H.throw_alert("disgust", /atom/movable/screen/alert/verygross)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/verygross)
-		if(DISGUST_LEVEL_DISGUSTED to INFINITY)
-			H.throw_alert("disgust", /atom/movable/screen/alert/disgusted)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "disgust", /datum/mood_event/disgusted)
 
 /obj/item/organ/stomach/Remove(mob/living/carbon/M, special = 0)
 	var/mob/living/carbon/human/H = owner
@@ -130,7 +141,7 @@
 	if(flags & SHOCK_ILLUSION)
 		return
 	adjust_charge(shock_damage * siemens_coeff * 2)
-	to_chat(owner, "<span class='notice'>You absorb some of the shock into your body!</span>")
+	to_chat(owner, span_notice("You absorb some of the shock into your body!"))
 
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
 	crystal_charge = clamp(crystal_charge + amount, ELZUOSE_CHARGE_NONE, ELZUOSE_CHARGE_DANGEROUS)
@@ -185,9 +196,9 @@
 	switch(severity)
 		if(1)
 			owner.nutrition = 50
-			to_chat(owner, "<span class='warning'>Alert: Heavy EMP Detected. Rebooting power cell to prevent damage.</span>")
+			to_chat(owner, span_warning("Alert: Heavy EMP Detected. Rebooting power cell to prevent damage."))
 		if(2)
 			owner.nutrition = 250
-			to_chat(owner, "<span class='warning'>Alert: EMP Detected. Cycling battery.</span>")
+			to_chat(owner, span_warning("Alert: EMP Detected. Cycling battery."))
 
 //WS End

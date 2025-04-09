@@ -28,12 +28,14 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
-	STR.set_holdable(list(/obj/item/reagent_containers/food))
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/food,
+		/obj/item/ration_heater))
 	STR.locked = TRUE
-	STR.locked_flavor = "sealed closed"
+	STR.locked_flavor = "seems to be sealed closed!"
 
 /obj/item/storage/ration/proc/open_ration(mob/user)
-	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
+	to_chat(user, span_notice("You tear open \the [src]."))
 	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, FALSE)
 	desc += "\nIt's been opened. Let's get this out onto a tray."
@@ -54,7 +56,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/entree/vegan_chili = 1,
 		/obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers = 1,
 		/obj/item/reagent_containers/food/snacks/ration/side/cornbread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/snack/pizza_crackers = 1,
+		/obj/item/reagent_containers/food/snacks/ration/snack/fruit_puree = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread = 1,
 		/obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage = 1,
 		/obj/item/ration_heater = 1

@@ -23,7 +23,7 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 	/// List where requests can be accessed by ID
 	var/list/requests_by_id = list()
 
-/datum/request_manager/Destroy(force, ...)
+/datum/request_manager/Destroy(force)
 	QDEL_LIST(requests)
 	return ..()
 
@@ -106,6 +106,9 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
  */
 /datum/request_manager/proc/fax_request(client/requester, message, additional_info)
 	request_for_client(requester, REQUEST_FAX, message, additional_info)
+	for(var/client/admin in GLOB.admins)
+		if(admin.prefs.chat_toggles & CHAT_PRAYER && admin.prefs.toggles & SOUND_PRAYERS)
+			SEND_SOUND(admin, sound('sound/misc/mail.ogg'))
 
 /**
  * Creates a request and registers the request with all necessary internal tracking lists
@@ -218,6 +221,9 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 		if ("show")
 			if(request.req_type != REQUEST_FAX)
 				to_chat(usr, "Request doesn't have a paper to read.")
+				return TRUE
+			if(!istype(request.additional_information, /obj/item/paper))
+				to_chat(usr, "Request is not a paper! Check the office it was sent to")
 				return TRUE
 			var/obj/item/paper/request_message = request.additional_information
 			request_message.ui_interact(usr)

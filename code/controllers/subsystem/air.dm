@@ -2,7 +2,7 @@ SUBSYSTEM_DEF(air)
 	name = "Atmospherics"
 	init_order = INIT_ORDER_AIR
 	priority = FIRE_PRIORITY_AIR
-	wait = 5
+	wait = 0.5 SECONDS
 	flags = SS_BACKGROUND
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 
@@ -66,12 +66,16 @@ SUBSYSTEM_DEF(air)
 	var/equalize_hard_turf_limit = 2000
 	// Whether equalization should be enabled at all.
 	var/equalize_enabled = TRUE
+	// The ratio of gas "shared" from the immutable planetary atmos mix to planetary tiles
+	var/planet_share_ratio = 0.25
 	// Whether turf-to-turf heat exchanging should be enabled.
 	var/heat_enabled = FALSE
 	// Max number of times process_turfs will share in a tick.
 	var/share_max_steps = 3
 	// Excited group processing will try to equalize groups with total pressure difference less than this amount.
 	var/excited_group_pressure_goal = 1
+
+	var/lasttick = 0
 
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
@@ -121,8 +125,9 @@ SUBSYSTEM_DEF(air)
 	message_admins("Air reset done.")
 	SSair.can_fire = TRUE
 
-/datum/controller/subsystem/air/fire(resumed = 0)
+/datum/controller/subsystem/air/fire(resumed = FALSE)
 	var/timer = TICK_USAGE_REAL
+	var/seconds_per_tick = wait * 0.1
 
 	//Rebuilds can happen at any time, so this needs to be done outside of the normal system
 	cost_rebuilds = 0
@@ -141,7 +146,7 @@ SUBSYSTEM_DEF(air)
 		cost_turfs = MC_AVERAGE(cost_turfs, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 
 		currentpart = SSAIR_EXCITEDGROUPS
 
@@ -151,7 +156,7 @@ SUBSYSTEM_DEF(air)
 		cost_groups = MC_AVERAGE(cost_groups, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 		currentpart = SSAIR_EQUALIZE
 
 	if(currentpart == SSAIR_EQUALIZE)
@@ -160,7 +165,7 @@ SUBSYSTEM_DEF(air)
 		cost_equalize = MC_AVERAGE(cost_equalize, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 		currentpart = SSAIR_FINALIZE_TURFS
 
 	if(currentpart == SSAIR_FINALIZE_TURFS)
@@ -168,28 +173,28 @@ SUBSYSTEM_DEF(air)
 		if(state != SS_RUNNING)
 			cur_thread_wait_ticks++
 			return
-		resumed = 0
+		resumed = FALSE
 		thread_wait_ticks = MC_AVERAGE(thread_wait_ticks, cur_thread_wait_ticks)
 		cur_thread_wait_ticks = 0
 		currentpart = SSAIR_PIPENETS
 
 	if(currentpart == SSAIR_PIPENETS || !resumed)
 		timer = TICK_USAGE_REAL
-		process_pipenets(resumed)
+		process_pipenets(seconds_per_tick, resumed)
 		cost_pipenets = MC_AVERAGE(cost_pipenets, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 		currentpart = SSAIR_ATMOSMACHINERY
 
 	// This is only machinery like filters, mixers that don't interact with air
 	if(currentpart == SSAIR_ATMOSMACHINERY)
 		timer = TICK_USAGE_REAL
-		process_atmos_machinery(resumed)
+		process_atmos_machinery(seconds_per_tick, resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 		currentpart = SSAIR_HIGHPRESSURE
 
 	if(currentpart == SSAIR_HIGHPRESSURE)
@@ -198,25 +203,25 @@ SUBSYSTEM_DEF(air)
 		cost_highpressure = MC_AVERAGE(cost_highpressure, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 		currentpart = SSAIR_ATMOSMACHINERY_AIR
 
 	if(currentpart == SSAIR_ATMOSMACHINERY_AIR)
 		timer = TICK_USAGE_REAL
-		process_atmos_air_machinery(resumed)
+		process_atmos_air_machinery(seconds_per_tick, resumed)
 		cost_atmos_machinery_air = MC_AVERAGE(cost_atmos_machinery_air, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 		currentpart = SSAIR_HOTSPOTS
 
 	if(currentpart == SSAIR_HOTSPOTS)
 		timer = TICK_USAGE_REAL
-		process_hotspots(resumed)
+		process_hotspots(seconds_per_tick, resumed)
 		cost_hotspots = MC_AVERAGE(cost_hotspots, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 		currentpart = heat_enabled ? SSAIR_TURF_CONDUCTION : SSAIR_ACTIVETURFS
 
 	// Heat -- slow and of questionable usefulness. Off by default for this reason. Pretty cool, though.
@@ -227,7 +232,7 @@ SUBSYSTEM_DEF(air)
 		cost_superconductivity = MC_AVERAGE(cost_superconductivity, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
-		resumed = 0
+		resumed = FALSE
 		currentpart = SSAIR_ACTIVETURFS
 
 /datum/controller/subsystem/air/Recover()
@@ -290,7 +295,7 @@ SUBSYSTEM_DEF(air)
 		currentrun -= machine
 
 
-/datum/controller/subsystem/air/proc/process_pipenets(resumed = 0)
+/datum/controller/subsystem/air/proc/process_pipenets(seconds_per_tick, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = networks.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -299,7 +304,7 @@ SUBSYSTEM_DEF(air)
 		var/datum/thing = currentrun[currentrun.len]
 		currentrun.len--
 		if(thing)
-			thing.process()
+			thing.process(seconds_per_tick)
 		else
 			networks.Remove(thing)
 		if(MC_TICK_CHECK)
@@ -385,8 +390,7 @@ SUBSYSTEM_DEF(air)
 		if (MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_atmos_machinery(resumed = 0)
-	var/seconds = wait * 0.1
+/datum/controller/subsystem/air/proc/process_atmos_machinery(seconds_per_tick, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = atmos_machinery.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -396,13 +400,12 @@ SUBSYSTEM_DEF(air)
 		currentrun.len--
 		if(!M)
 			atmos_machinery -= M
-		if(M.process_atmos(seconds) == PROCESS_KILL)
+		if(M.process_atmos(seconds_per_tick) == PROCESS_KILL)
 			stop_processing_machine(M)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_atmos_air_machinery(resumed = 0)
-	var/seconds = wait * 0.1
+/datum/controller/subsystem/air/proc/process_atmos_air_machinery(seconds_per_tick, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = atmos_air_machinery.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -412,14 +415,14 @@ SUBSYSTEM_DEF(air)
 		currentrun.len--
 		if(!M)
 			atmos_air_machinery -= M
-		if(M.process_atmos(seconds) == PROCESS_KILL)
+		if(M.process_atmos(seconds_per_tick) == PROCESS_KILL)
 			stop_processing_machine(M)
 		if(MC_TICK_CHECK)
 			return
 
 /datum/controller/subsystem/air/proc/process_turf_heat()
 
-/datum/controller/subsystem/air/proc/process_hotspots(resumed = FALSE)
+/datum/controller/subsystem/air/proc/process_hotspots(seconds_per_tick, resumed = FALSE)
 	if (!resumed)
 		src.currentrun = hotspots.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -428,14 +431,14 @@ SUBSYSTEM_DEF(air)
 		var/obj/effect/hotspot/H = currentrun[currentrun.len]
 		currentrun.len--
 		if (H)
-			H.process()
+			H.process(seconds_per_tick)
 		else
 			hotspots -= H
 		if(MC_TICK_CHECK)
 			return
 
 
-/datum/controller/subsystem/air/proc/process_high_pressure_delta(resumed = 0)
+/datum/controller/subsystem/air/proc/process_high_pressure_delta(resumed = FALSE)
 	while (high_pressure_delta.len)
 		var/turf/open/T = high_pressure_delta[high_pressure_delta.len]
 		high_pressure_delta.len--
@@ -448,19 +451,19 @@ SUBSYSTEM_DEF(air)
 			return
 
 
-/datum/controller/subsystem/air/proc/process_turf_equalize(resumed = 0)
+/datum/controller/subsystem/air/proc/process_turf_equalize(resumed = FALSE)
 	if(process_turf_equalize_auxtools(MC_TICK_REMAINING_MS))
 		pause()
 
-/datum/controller/subsystem/air/proc/process_turfs(resumed = 0)
+/datum/controller/subsystem/air/proc/process_turfs(resumed = FALSE)
 	if(process_turfs_auxtools(MC_TICK_REMAINING_MS))
 		pause()
 
-/datum/controller/subsystem/air/proc/process_excited_groups(resumed = 0)
+/datum/controller/subsystem/air/proc/process_excited_groups(resumed = FALSE)
 	if(process_excited_groups_auxtools(MC_TICK_REMAINING_MS))
 		pause()
 
-/datum/controller/subsystem/air/proc/finish_turf_processing(resumed = 0)
+/datum/controller/subsystem/air/proc/finish_turf_processing(resumed = FALSE)
 	if(finish_turf_processing_auxtools(MC_TICK_REMAINING_MS))
 		pause()
 

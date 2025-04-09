@@ -31,7 +31,7 @@
 		circuit = C
 		C.moveToNullspace()
 
-/obj/machinery/computer/process()
+/obj/machinery/computer/process(seconds_per_tick)
 	if(machine_stat & (NOPOWER|BROKEN))
 		return 0
 	return 1
@@ -59,7 +59,7 @@
 	if(..())
 		return TRUE
 	if(circuit && !(flags_1&NODECONSTRUCT_1))
-		to_chat(user, "<span class='notice'>You start to disconnect the monitor...</span>")
+		to_chat(user, span_notice("You start to disconnect the monitor..."))
 		if(I.use_tool(src, user, time_to_screwdrive, volume=50))
 			deconstruct(TRUE, user)
 	return TRUE
@@ -103,7 +103,7 @@
 			newframe.set_anchored(TRUE)
 			if(machine_stat & BROKEN)
 				if(user)
-					to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
+					to_chat(user, span_notice("The broken glass falls out."))
 				else
 					playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 				new /obj/item/shard(drop_location())
@@ -111,7 +111,7 @@
 				newframe.state = 3
 			else
 				if(user)
-					to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
+					to_chat(user, span_notice("You disconnect the monitor."))
 				newframe.state = 4
 			circuit = null
 			newframe.update_appearance()
@@ -123,3 +123,8 @@
 	. = ..()
 	if(!user.canUseTopic(src, !issilicon(user)) || !is_operational)
 		return
+
+/obj/machinery/computer/examine_more(mob/user)
+	. = ..()
+	ui_interact(user)
+	return

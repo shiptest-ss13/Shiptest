@@ -21,6 +21,8 @@
 	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
 	trigger_guard = TRIGGER_GUARD_NORMAL
 
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+
 	///The manufacturer of this weapon. For flavor mostly. If none, this will not show.
 	var/manufacturer = MANUFACTURER_NONE
 
@@ -29,12 +31,13 @@
 */
 	///Effect for the muzzle flash of the gun.
 	var/obj/effect/muzzle_flash/muzzle_flash
+
+	light_range = 3
+	light_color = COLOR_VERY_SOFT_YELLOW
+	light_on = FALSE
+
 	///Icon state of the muzzle flash effect.
 	var/muzzleflash_iconstate
-	///Brightness of the muzzle flash effect.
-	var/muzzle_flash_lum = 3
-	///Color of the muzzle flash effect.
-	var/muzzle_flash_color = COLOR_VERY_SOFT_YELLOW
 
 /*
  *  Firing
@@ -56,7 +59,11 @@
 
 //BALLISTIC
 	///Compatible magazines with the gun
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
+	var/default_ammo_type
+	///Allowed base types of magazines with the gun
+	var/allowed_ammo_types
+	///Incompatible magazines with the gun
+	var/blacklisted_ammo_types
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
 	///Do we eject the magazine upon runing out of ammo?
@@ -70,6 +77,9 @@
 	var/casing_ejector = TRUE
 	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
 	var/internal_magazine = FALSE
+	///Whether the gun *can* be reloaded
+	var/sealed_magazine = FALSE
+
 
 	///Phrasing of the magazine in examine and notification messages; ex: magazine, box, etx
 	var/magazine_wording = "magazine"
@@ -96,16 +106,13 @@
 //ENERGY
 	//What type of power cell this uses
 	var/obj/item/stock_parts/cell/gun/cell
-	var/cell_type = /obj/item/stock_parts/cell/gun
 	//Can it be charged in a recharger?
 	var/can_charge = TRUE
 	var/selfcharge = FALSE
-	var/charge_tick = 0
-	var/charge_delay = 4
+	var/charge_timer = 0
+	var/charge_delay = 8
 	//whether the gun's cell drains the cyborg user's cell to recharge
 	var/use_cyborg_cell = FALSE
-	///Used for large and small cells
-	var/mag_size = MAG_SIZE_MEDIUM
 	//Time it takes to unscrew the cell
 	var/unscrewing_time = 2 SECONDS
 
@@ -130,6 +137,8 @@
 	var/wielded_fully = FALSE
 	///Slowdown for wielding
 	var/wield_slowdown = 0.1
+	///slowdown for aiming whilst wielding
+	var/aimed_wield_slowdown = 0.1
 	///How long between wielding and firing in tenths of seconds
 	var/wield_delay	= 0.4 SECONDS
 	///Storing value for above
@@ -207,6 +216,14 @@
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
 
+	///Used if the guns recoil is lower then the min, it clamps the highest recoil
+	var/min_recoil = 0
+	///if we want a min recoil (or lack of it) whilst aiming
+	var/min_recoil_aimed = 0
+
+	var/gunslinger_recoil_bonus = 0
+	var/gunslinger_spread_bonus = 0
+
 	/// how many shots per burst, Ex: most machine pistols, M90, some ARs are 3rnd burst, while others like the GAR and laser minigun are 2 round burst.
 	var/burst_size = 3
 	///The rate of fire when firing in a burst. Not the delay between bursts
@@ -232,6 +249,8 @@
 	var/empty_indicator = FALSE
 	///Whether the sprite has a visible magazine or not
 	var/show_magazine_on_sprite = FALSE
+	///Do we show how much ammo is left on the sprite? In increments of 20.
+	var/show_ammo_capacity_on_magazine_sprite = FALSE
 	///Whether the sprite has a visible ammo display or not
 	var/show_magazine_on_sprite_ammo = FALSE
 	///Whether the gun supports multiple special mag types
@@ -249,20 +268,23 @@
 /*
  *  Attachment
 */
-	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
+	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED.
 	var/list/valid_attachments = list()
-	///Reference to our attachment holder to prevent subtypes having to call GetComponent
-	var/datum/component/attachment_holder/attachment_holder
+	///The types of attachments that are unique to this gun. Adds it to the base valid_attachments list. So if this gun takes a special stock, add it here.
+	var/list/unique_attachments = list()
+	///The types of attachments that aren't allowed. Removes it from the base valid_attachments list.
+	var/list/refused_attachments
 	///Number of attachments that can fit on a given slot
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
 	var/list/slot_offsets = list()
+	var/underbarrel_prefix = "" // so the action has the right icon for underbarrel gun
 
 /*
  *  Zooming
 */
 	///Whether the gun generates a Zoom action on creation
-	var/zoomable = FALSE
+	var/zoomable = TRUE
 	//Zoom toggle
 	var/zoomed = FALSE
 	///Distance in TURFs to move the user's screen forward (the "zoom" effect)
@@ -279,6 +301,8 @@
 	var/safety = FALSE
 	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
 	var/safety_wording = "safety"
+	///multiplier for this gun's misfire chances. Closer to 0 is better.
+	var/safety_multiplier = 1
 
 /*
  *  Spawn Info (Stuff that becomes useless onces the gun is spawned, mostly here for mappers)
@@ -286,13 +310,9 @@
 	///Attachments spawned on initialization. Should also be in valid attachments or it SHOULD(once i add that) fail
 	var/list/default_attachments = list()
 
-//BALLISTIC
-	///Whether the gun will spawn loaded with a magazine
-	var/spawnwithmagazine = TRUE
-
 //ENERGY
 	//set to true so the gun is given an empty cell
-	var/dead_cell = FALSE
+	var/spawn_no_ammo = FALSE
 
 // Need to sort
 	///trigger guard on the weapon. Used for hulk mutations and ashies. I honestly dont know how usefult his is, id avoid touching it
@@ -305,7 +325,7 @@
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
 	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
 	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
-	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire")
+	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_UNDERBARREL = "underbarrel weapon")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/fire_select_icon_state_prefix = ""
 	///If true, we put "safety_" before fire_select_icon_state_prefix's prefix. ex. "safety_laser_single"
@@ -316,30 +336,38 @@
 	///This prevents gun from firing until the coodown is done, affected by lag
 	var/current_cooldown = 0
 
-	var/gunslinger_recoil_bonus = 0
-	var/gunslinger_spread_bonus = 0
-
-/obj/item/gun/Initialize()
+/obj/item/gun/Initialize(mapload, spawn_empty)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
 	build_firemodes()
+	if(sawn_off)
+		sawoff(forced = TRUE)
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
-	attachment_holder = AddComponent(/datum/component/attachment_holder, slot_available, valid_attachments, slot_offsets, default_attachments)
+	var/list/attachment_list = valid_attachments
+	attachment_list += unique_attachments
+	if(refused_attachments)
+		for(var/to_remove in attachment_list)
+			if(refused_attachments.Find(to_remove))
+				attachment_list -= to_remove
+
+	AddComponent(/datum/component/attachment_holder, slot_available, attachment_list, slot_offsets, default_attachments)
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
-	INVOKE_ASYNC(src, .proc.do_wield, user)
+	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
 
 /obj/item/gun/proc/do_wield(mob/user)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
+	if(azoom)
+		azoom.Grant(user)
 	if(wield_time > 0)
 		if(do_after(
 			user,
@@ -357,15 +385,17 @@
 		wielded_fully = TRUE
 		return TRUE
 
-/obj/item/gun/proc/is_wielded()
-	return wielded
-
 /// triggered on unwield of two handed item
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 	wielded_fully = FALSE
 	zoom(user, forced_zoom = FALSE)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
+	if(azoom)
+		azoom.Remove(user)
+
+/obj/item/gun/proc/is_wielded()
+	return wielded
 
 /obj/item/gun/Destroy()
 	if(chambered) //Not all guns are chambered (EMP'ed energy guns etc)
@@ -374,6 +404,8 @@
 		QDEL_NULL(azoom)
 	if(muzzle_flash)
 		QDEL_NULL(muzzle_flash)
+	if(magazine)
+		QDEL_NULL(magazine)
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
@@ -384,11 +416,22 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
-	if(has_safety)
-		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
-
 	if(manufacturer)
-		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
+
+/obj/item/gun/examine_more(mob/user)
+	. = ..()
+	if(has_safety)
+		. += "The safety is [safety ? span_green("ON") : span_red("OFF")]. Ctrl-Click to toggle the safety."
+
+	if(gun_firemodes.len > 1)
+		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
+
+
+/obj/item/gun/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	if(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL)
+		return TRUE
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
@@ -441,7 +484,7 @@
 /* TODO: gunpointing is very broken, port the old skyrat gunpointing? its much better, usablity wise and rp wise?
 		if(ismob(target) && user.a_intent == INTENT_GRAB)
 			if(user.GetComponent(/datum/component/gunpoint))
-				to_chat(user, "<span class='warning'>You are already holding someone up!</span>")
+				to_chat(user, span_warning("You are already holding someone up!"))
 				return
 			user.AddComponent(/datum/component/gunpoint, target, src)
 			return
@@ -475,17 +518,17 @@
 
 	//we then check our weapon weight vs if we are being wielded...
 	if(weapon_weight == WEAPON_VERY_HEAVY && (!wielded_fully))
-		to_chat(user, "<span class='warning'>You need a fully secure grip to fire [src]!</span>")
+		to_chat(user, span_warning("You need a fully secure grip to fire [src]!"))
 		return
 
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
-		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
+		to_chat(user, span_warning("You need a more secure grip to fire [src]!"))
 		return
 	//If we have the pacifist trait and a chambered round, don't fire. Honestly, pacifism quirk is pretty stupid, and as such we check again in process_fire() anyways
 	if(chambered)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
+				to_chat(user, span_warning("[src] is lethally chambered! You don't want to risk harming anyone..."))
 				return
 
 	//Dual wielding handling. Not the biggest fan of this, but it's here. Dual berettas not included
@@ -560,7 +603,7 @@
 	if(chambered)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
+				to_chat(user, span_warning("[src] is lethally chambered! You don't want to risk harming anyone..."))
 				currently_firing_burst = FALSE //no burst 4 u
 				return FALSE
 	else
@@ -623,10 +666,10 @@
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	if(!safety)
-		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
+		to_chat(user, span_danger("*[dry_fire_text]*"))
 		playsound(src, dry_fire_sound, 30, TRUE)
 		return
-	to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
+	to_chat(user, span_danger("Safeties are active on the [src]! Turn them off to fire!"))
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
@@ -641,7 +684,11 @@
 	if(wielded_fully)
 		simulate_recoil(user, recoil, actual_angle)
 	else if(!wielded_fully)
-		simulate_recoil(user, recoil_unwielded, actual_angle)
+		var/recoil_temp = recoil_unwielded
+		var/obj/item/shield/shield = user.get_inactive_held_item()
+		if(istype(shield))
+			recoil_temp += shield.recoil_bonus
+		simulate_recoil(user, recoil_temp, actual_angle)
 
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
@@ -654,7 +701,7 @@
 						span_danger("You fire [src] point blank at [pbtarget]!"),
 						span_hear("You hear a gunshot!"), COMBAT_MESSAGE_RANGE, pbtarget
 				)
-				to_chat(pbtarget, "<span class='userdanger'>[user] fires [src] point blank at you!</span>")
+				to_chat(pbtarget, span_userdanger("[user] fires [src] point blank at you!"))
 				if(pb_knockback > 0 && ismob(pbtarget))
 					var/mob/PBT = pbtarget
 					var/atom/throw_target = get_edge_target_turf(PBT, user.dir)
@@ -689,8 +736,8 @@
 	. = ..()
 	if(!has_safety)
 		return
-
-	if(src != user.get_active_held_item())
+	// only checks for first level storage e.g pockets, hands, suit storage, belts, nothing in containers
+	if(!in_contents_of(user))
 		return
 
 	if(isliving(user) && in_range(src, user))
@@ -702,8 +749,8 @@
 	if(!silent)
 		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 		user.visible_message(
-			span_notice("[user] turns the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-			span_notice("You turn the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("[user] turns the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
+			span_notice("You turn the [safety_wording] on [src] [safety ? span_green("ON") : span_red("OFF")]."),
 		)
 
 	update_appearance()
@@ -715,16 +762,17 @@
 /obj/item/gun/pickup(mob/user)
 	. = ..()
 	update_appearance()
-	if(azoom)
-		azoom.Grant(user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	update_appearance()
-	if(azoom)
-		azoom.Remove(user)
 	if(zoomed)
 		zoom(user, user.dir)
+
+/obj/item/gun/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(prob(GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH))
+		discharge("hits the ground hard")
 
 /obj/item/gun/update_overlays()
 	. = ..()
@@ -808,7 +856,7 @@
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, 0 , INFINITY)
+	return clamp(recoil_bonus, min_recoil , INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
@@ -851,14 +899,10 @@
 
 /obj/item/gun/proc/handle_muzzle_flash(mob/living/user, firing_angle)
 	var/atom/movable/flash_loc = user
-	var/prev_light = light_range
-
-	if(!light_on && (light_range <= muzzle_flash_lum))
-		set_light_range(muzzle_flash_lum)
-		set_light_color(muzzle_flash_color)
+	if(!light_on)
 		set_light_on(TRUE)
-		update_light()
-		addtimer(CALLBACK(src, PROC_REF(reset_light_range), prev_light), 1 SECONDS)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light_on), FALSE), 3)
+
 	//Offset the pixels.
 	switch(firing_angle)
 		if(0, 360)
@@ -933,36 +977,77 @@
 
 	addtimer(CALLBACK(src, PROC_REF(remove_muzzle_flash), flash_loc, muzzle_flash), 0.2 SECONDS)
 
-/obj/item/gun/proc/reset_light_range(lightrange)
-	set_light_range(lightrange)
-	set_light_color(initial(light_color))
-	if(lightrange <= 0)
-		set_light_on(FALSE)
-	update_light()
-
 /obj/item/gun/proc/remove_muzzle_flash(atom/movable/flash_loc, obj/effect/muzzle_flash/muzzle_flash)
 	if(!QDELETED(flash_loc))
 		flash_loc.vis_contents -= muzzle_flash
 	muzzle_flash.applied = FALSE
 
+// for guns firing on their own without a user
+/obj/item/gun/proc/discharge(cause, seek_chance = 10)
+	var/target
+	if(!safety && has_safety)
+		// someone is very unlucky and about to be shot
+		if(prob(seek_chance))
+			for(var/mob/living/target_mob in range(6, get_turf(src)))
+				if(!isInSight(src, target_mob))
+					continue
+				target = target_mob
+				break
+		if(!target)
+			var/fire_dir = pick(GLOB.alldirs)
+			target = get_ranged_target_turf(get_turf(src),fire_dir,6)
+		if(!chambered || !chambered.BB)
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safteies on! Luckily it wasn't live."))
+			playsound(src, dry_fire_sound, 30, TRUE)
+		else
+			visible_message(span_danger("\The [src] [cause ? "[cause], suddenly going off" : "suddenly goes off"] without its safeties on!"))
+			unsafe_shot(target)
+
+/obj/item/gun/proc/unsafe_shot(target)
+	if(chambered)
+		chambered.fire_casing(target,null, null, null, suppressed, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
+		playsound(src, fire_sound, 100, TRUE)
+
+/mob/living/proc/trip_with_gun(cause)
+	var/mob/living/carbon/human/human_holder
+	if(ishuman(src))
+		human_holder = src
+	for(var/obj/item/gun/at_risk in get_all_contents())
+		var/chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM * at_risk.safety_multiplier)
+		var/bodyzone = pick_weight(list(BODY_ZONE_HEAD = 1, BODY_ZONE_CHEST = 9, BODY_ZONE_L_ARM = 4, BODY_ZONE_R_ARM = 4, BODY_ZONE_L_LEG = 41, BODY_ZONE_R_LEG = 41))
+		if(human_holder)
+			// gun is less likely to go off in a holster
+			if(at_risk == human_holder.s_store)
+				chance_to_fire = round(GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW * at_risk.safety_multiplier)
+				bodyzone = pick_weight(list(BODY_ZONE_CHEST = 10, BODY_ZONE_L_LEG = 45, BODY_ZONE_R_LEG = 45))
+		if(at_risk.safety == FALSE && prob(chance_to_fire))
+			if(at_risk.process_fire(src,src,FALSE, null, bodyzone) == TRUE)
+				log_combat(src,src,"misfired",at_risk,"caused by [cause]")
+				visible_message(span_danger("\The [at_risk.name]'s trigger gets caught as [src] falls, suddenly going off into [src]'s [get_bodypart(bodyzone)]!"), span_danger("\The [at_risk.name]'s trigger gets caught on something as you fall, suddenly going off into your [get_bodypart(bodyzone)]!"))
+				human_holder.force_scream()
+
 //I need to refactor this into an attachment
 /datum/action/toggle_scope_zoom
-	name = "Toggle Scope"
+	name = "Aim Down Sights"
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	var/obj/item/gun/gun = null
 
 /datum/action/toggle_scope_zoom/Trigger()
+	if(!istype(target, /obj/item/gun) || !..())
+		return
+
+	var/obj/item/gun/gun = target
 	gun.zoom(owner, owner.dir)
+	gun.min_recoil = gun.min_recoil_aimed
 
-/datum/action/toggle_scope_zoom/IsAvailable()
-	. = ..()
-	if(!. && gun)
-		gun.zoom(owner, owner.dir, FALSE)
+/datum/action/toggle_scope_zoom/Remove(mob/user)
+	if(!istype(target, /obj/item/gun))
+		return ..()
 
-/datum/action/toggle_scope_zoom/Remove(mob/living/L)
-	gun.zoom(L, L.dir, FALSE)
+	var/obj/item/gun/gun = target
+	gun.zoom(user, user.dir, FALSE)
+
 	..()
 
 /obj/item/gun/proc/rotate(atom/thing, old_dir, new_dir)
@@ -980,17 +1065,23 @@
 		if((!zoomed && wielded_fully) || zoomed)
 			zoomed = !zoomed
 		else
-			to_chat(user, "<span class='danger'>You can't look down the scope without wielding [src]!</span>")
+			to_chat(user, span_danger("You can't look down the sights without wielding [src]!"))
 			zoomed = FALSE
 	else
 		zoomed = forced_zoom
 
 	if(zoomed)
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
+		ADD_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
+		min_recoil = min_recoil_aimed
+		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/aiming, multiplicative_slowdown = aimed_wield_slowdown)
 	else
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
+		REMOVE_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomIn()
+		min_recoil = initial(min_recoil)
+		user.remove_movespeed_modifier(/datum/movespeed_modifier/aiming)
 	return zoomed
 
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
@@ -999,13 +1090,15 @@
 		return
 
 	if(zoomable)
-		azoom = new()
-		azoom.gun = src
+		azoom = new(src)
 
 /obj/item/gun/proc/build_firemodes()
 	if(FIREMODE_FULLAUTO in gun_firemodes)
-		AddComponent(/datum/component/automatic_fire, fire_delay)
+		if(!GetComponent(/datum/component/automatic_fire))
+			AddComponent(/datum/component/automatic_fire, fire_delay)
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
+		old_firemode.Destroy()
 	var/datum/action/item_action/our_action
 
 	if(gun_firemodes.len > 1)
@@ -1043,11 +1136,15 @@
 	else
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
 //wawa
-	to_chat(user, "<span class='notice'>Switched to [gun_firenames[current_firemode]].</span>")
+	to_chat(user, span_notice("Switched to [gun_firenames[current_firemode]]."))
 	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
 		current_action.UpdateButtonIcon()
+
+/obj/item/gun/secondary_action(user)
+	if(gun_firemodes.len > 1)
+		fire_select(user)
 
 /datum/action/item_action/toggle_firemode/UpdateButtonIcon(status_only = FALSE, force = FALSE)
 	var/obj/item/gun/our_gun = target
@@ -1055,5 +1152,52 @@
 	var/current_firemode = our_gun.gun_firemodes[our_gun.firemode_index]
 	//tldr; if we have adjust_fire_select_icon_state_on_safety as true, we append "safety_" to the prefix, otherwise nothing.
 	var/safety_prefix = "[our_gun.adjust_fire_select_icon_state_on_safety ? "[our_gun.safety ? "safety_" : ""]" : ""]"
-	button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
+	if(current_firemode == FIREMODE_UNDERBARREL)
+		button_icon_state = "[safety_prefix][our_gun.underbarrel_prefix][current_firemode]"
+	else
+		button_icon_state = "[safety_prefix][our_gun.fire_select_icon_state_prefix][current_firemode]"
 	return ..()
+
+GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
+	/obj/item/gun/energy/plasmacutter,
+	/obj/item/melee/energy,
+	/obj/item/gear_handle/anglegrinder,
+	)))
+
+///Handles all the logic of sawing off guns,
+/obj/item/gun/proc/try_sawoff(mob/user, obj/item/saw)
+	if(!saw.get_sharpness() || !is_type_in_typecache(saw, GLOB.gun_saw_types) && saw.tool_behaviour != TOOL_SAW) //needs to be sharp. Otherwise turned off eswords can cut this.
+		return
+	if(sawn_off)
+		to_chat(user, span_warning("\The [src] is already shortened!"))
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.visible_message(span_notice("[user] begins to shorten \the [src]."), span_notice("You begin to shorten \the [src]..."))
+
+	//if there's any live ammo inside the gun, makes it go off
+	if(blow_up(user))
+		user.visible_message(span_danger("\The [src] goes off!"), span_danger("\The [src] goes off in your face!"))
+		return
+
+	if(do_after(user, 30, target = src))
+		user.visible_message(span_notice("[user] shortens \the [src]!"), span_notice("You shorten \the [src]."))
+		sawoff(user, saw)
+
+///Used on init or try_sawoff
+/obj/item/gun/proc/sawoff(forced = FALSE)
+	if(sawn_off && !forced)
+		return
+	name = "sawn-off [src.name]"
+	desc = sawn_desc
+	w_class = WEIGHT_CLASS_NORMAL
+	item_state = "gun"
+	slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
+	slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+	recoil = SAWN_OFF_RECOIL
+	sawn_off = TRUE
+	update_appearance()
+	return TRUE
+
+///used for sawing guns, causes the gun to fire without the input of the user
+/obj/item/gun/proc/blow_up(mob/user)
+	return

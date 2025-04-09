@@ -16,7 +16,7 @@
 	toxic_food = MEAT | RAW | GORE
 	mutanteyes = /obj/item/organ/eyes/compound 	//WS Edit - Compound eyes
 	mutanttongue = /obj/item/organ/tongue/moth //WS Edit - Insectoid language
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/moth
 	loreblurb = "Bug-mammal hybrids resembling Sol's lepidopterans. They share the least DNA with baseline humans of any human-derived geneline, being significant portions insect and modified whole-cloth DNA. Their classification as another human geneline or as something else is highly debated. All evidence that would point to their origin– which is presumably a genelab somewhere– has seemingly disappeared into thin air. Mothpeople themselves have no centralized culture or homeworld, leading to a fractured existence amongst the stars."
 	wings_icons = list("Megamoth", "Mothra")
@@ -29,6 +29,9 @@
 	species_r_arm = /obj/item/bodypart/r_arm/moth
 	species_l_leg = /obj/item/bodypart/leg/left/moth
 	species_r_leg = /obj/item/bodypart/leg/right/moth
+
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
+	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5
 
 /datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	. = ..()
@@ -43,7 +46,7 @@
 	if(!("moth_wings" in H.dna.species.mutant_bodyparts)) //if they don't have wings, you can't burn em, can ye
 		return
 	if(H.dna.features["moth_wings"] != "Burnt Off" && H.bodytemperature >= 500 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
-		to_chat(H, "<span class='danger'>Your precious wings start to char!</span>")
+		to_chat(H, span_danger("Your precious wings start to char!"))
 		H.dna.features["moth_wings"] = "Burnt Off"
 		if(flying_species) //This is all exclusive to if the person has the effects of a potion of flight
 			if(H.movement_type & FLYING)
@@ -55,7 +58,7 @@
 		handle_mutant_bodyparts(H)
 
 	else if(H.dna.features["moth_wings"] == "Burnt Off" && H.bodytemperature >= 800 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
-		to_chat(H, "<span class='danger'>Your precious wings disintigrate into nothing!</span>")
+		to_chat(H, span_danger("Your precious wings disintigrate into nothing!"))
 		if(/obj/item/organ/moth_wings in H.internal_organs)
 			qdel(H.getorganslot(ORGAN_SLOT_WINGS))
 		if(flying_species) //This is all exclusive to if the person has the effects of a potion of flight

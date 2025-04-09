@@ -44,8 +44,12 @@
 	var/datum/weakref/weak_reference
 
 #ifdef REFERENCE_TRACKING
-	var/running_find_references
+	/// When was this datum last touched by a reftracker?
+	/// If this value doesn't match with the start of the search
+	/// We know this datum has never been seen before, and we should check it
 	var/last_find_references = 0
+	/// How many references we're trying to find when searching
+	var/references_to_clear = 0
 	#ifdef REFERENCE_TRACKING_DEBUG
 	///Stores info about where refs are found, used for sanity checks and testing
 	var/list/found_refs
@@ -81,7 +85,7 @@
  *
  * Returns [QDEL_HINT_QUEUE]
  */
-/datum/proc/Destroy(force=FALSE, ...)
+/datum/proc/Destroy(force)
 	SHOULD_CALL_PARENT(TRUE)
 	tag = null
 	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
@@ -107,10 +111,10 @@
 		var/all_components = dc[/datum/component]
 		if(length(all_components))
 			for(var/datum/component/component as anything in all_components)
-				qdel(component, FALSE, TRUE)
+				qdel(component, FALSE)
 		else
 			var/datum/component/C = all_components
-			qdel(C, FALSE, TRUE)
+			qdel(C, FALSE)
 		dc.Cut()
 
 	clear_signal_refs()
@@ -226,3 +230,19 @@
 		qdel(D)
 	else
 		return returned
+
+/// Return text from this proc to provide extra context to hard deletes that happen to it
+/// Optional, you should use this for cases where replication is difficult and extra context is required
+/// Can be called more then once per object, use harddel_deets_dumped to avoid duplicate calls (I am so sorry)
+/datum/proc/dump_harddel_info()
+	return
+
+/image
+	var/harddel_deets_dumped = FALSE
+
+///images are pretty generic, this should help a bit with tracking harddels related to them
+/image/dump_harddel_info()
+	if(harddel_deets_dumped)
+		return
+	harddel_deets_dumped = TRUE
+	return "Image icon: [icon] - icon_state: [icon_state] [loc ? "loc: [loc] ([loc.x],[loc.y],[loc.z])" : ""]"

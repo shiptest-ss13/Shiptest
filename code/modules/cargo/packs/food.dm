@@ -16,6 +16,7 @@
 					/obj/item/storage/box/donkpockets/donkpockethonk)
 	crate_name = "donk pocket crate"
 	crate_type = /obj/structure/closet/crate/freezer
+	faction = /datum/faction/syndicate
 
 /datum/supply_pack/food/donkpockets/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 3)
@@ -34,24 +35,16 @@
 	crate_name = "pizza crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
-/datum/supply_pack/food/pizza/fill(obj/structure/closet/crate/C)
-	. = ..()
-	for(var/obj/item/pizzabox/P in C)
-		if(prob(0.5)) //0.5% chance for each box
-			var/obj/item/pizzabox/infinite/fourfiveeight = new(C)
-			fourfiveeight.boxtag = P.boxtag
-			qdel(P)
-
 /datum/supply_pack/food/ration
 	name = "Ration Crate"
-	desc = "6 standerd issue rations."
+	desc = "6 standard issue rations. For your inner jarhead."
 	cost = 500
-	contains = list(/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration,
-					/obj/effect/spawner/lootdrop/ration)
+	contains = list(/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration,
+					/obj/effect/spawner/random/food_or_drink/ration)
 	crate_name = "ration crate"
 	crate_type = /obj/structure/closet/crate
 
@@ -61,39 +54,40 @@
 
 /datum/supply_pack/food/ingredients_basic
 	name = "Basic Ingredients Crate"
-	desc = "Get things cooking with this crate full of useful ingredients! Contains a dozen eggs, two slabs of meat, some flour, some rice, a bottle of milk, a bottle of soymilk, and a bag of sugar."
-	cost = 300
-	contains = list(/obj/item/reagent_containers/food/condiment/flour,
-					/obj/item/reagent_containers/food/condiment/flour,
-					/obj/item/reagent_containers/food/condiment/rice,
-					/obj/item/reagent_containers/food/condiment/milk,
-					/obj/item/reagent_containers/food/condiment/soymilk,
-					/obj/item/reagent_containers/food/condiment/sugar,
+	desc = "Get things cooking with this crate full of useful ingredients! Contains a dozen eggs, some enzyme, two slabs of meat, some flour, some rice, a few bottles of milk, a bottle of soymilk, and a bag of sugar."
+	cost = 350
+	contains = list(/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/flour,
+					/obj/item/reagent_containers/condiment/rice,
+					/obj/item/reagent_containers/condiment/milk,
+					/obj/item/reagent_containers/condiment/milk,
+					/obj/item/reagent_containers/condiment/soymilk,
+					/obj/item/reagent_containers/condiment/sugar,
 					/obj/item/storage/fancy/egg_box,
 					/obj/item/reagent_containers/food/snacks/meat/slab,
-					/obj/item/reagent_containers/food/snacks/meat/slab
-	)
+					/obj/item/reagent_containers/food/snacks/meat/slab,
+					/obj/item/reagent_containers/condiment/enzyme)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
 /datum/supply_pack/food/ingredients_condiments
 	name = "Condiments Crate"
 	desc = "A variety of garnishes for topping off your dish with a little extra pizzaz. Contains a bottle of enzyme, a salt shaker, a pepper mill, a bottle of ketchup, a bottle of hot sauce, a bottle of BBQ sauce, and a bottle of cream."
-	cost = 250
-	contains = list(/obj/item/reagent_containers/food/condiment/enzyme,
-					/obj/item/reagent_containers/food/condiment/saltshaker,
-					/obj/item/reagent_containers/food/condiment/peppermill,
-					/obj/item/reagent_containers/food/condiment/ketchup,
-					/obj/item/reagent_containers/food/condiment/hotsauce,
+	cost = 100
+	contains = list(/obj/item/reagent_containers/condiment/saltshaker,
+					/obj/item/reagent_containers/condiment/peppermill,
+					/obj/item/reagent_containers/condiment/ketchup,
+					/obj/item/reagent_containers/condiment/hotsauce,
 					/obj/item/reagent_containers/food/drinks/bottle/cream,
-					/obj/item/reagent_containers/food/condiment/bbqsauce
-	)
+					/obj/item/reagent_containers/condiment/mayonnaise,
+					/obj/item/reagent_containers/condiment/bbqsauce,
+					/obj/item/reagent_containers/condiment/soysauce)
 	crate_name = "condiments crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
 /datum/supply_pack/food/ingredients_randomized
 	name = "Exotic Meat Crate"
-	desc = "The best cuts in the whole galaxy. Probably."
+	desc = "The best cuts in the whole sector. Probably."
 	cost = 500
 	contains = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime,
 					/obj/item/reagent_containers/food/snacks/meat/slab/killertomato,
@@ -116,7 +110,7 @@
 
 /datum/supply_pack/food/ingredients_randomized/meat
 	name = "Standard Meat Crate"
-	desc = "Less interesting cuts of meat, but filling nonetheless."
+	desc = "Less interesting, yet filling cuts of meat."
 	cost = 300
 	contains = list(/obj/item/reagent_containers/food/snacks/meat/slab,
 					/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
@@ -129,8 +123,8 @@
 
 /datum/supply_pack/food/ingredients_randomized/vegetables
 	name = "Vegetables Crate"
-	desc = "Grown in vats."
-	cost = 250
+	desc = "Grown in the finest hydroponic vats."
+	cost = 100
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/chili,
 					/obj/item/reagent_containers/food/snacks/grown/corn,
 					/obj/item/reagent_containers/food/snacks/grown/tomato,
@@ -146,7 +140,7 @@
 /datum/supply_pack/food/ingredients_randomized/fruits
 	name = "Fruit Crate"
 	desc = "Rich of vitamins, may contain oranges."
-	cost = 250
+	cost = 100
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
 					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
 					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon,
@@ -161,7 +155,7 @@
 /datum/supply_pack/food/ingredients_randomized/grains
 	name = "Grains Crate"
 	desc = "A crate full of various grains. How interesting."
-	cost = 250
+	cost = 100
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/wheat,
 					/obj/item/reagent_containers/food/snacks/grown/wheat,
 					/obj/item/reagent_containers/food/snacks/grown/wheat, //Weighted to be more common
@@ -187,6 +181,17 @@
 	)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
+
+/datum/supply_pack/food/sugar
+	name = "Sugar Crate"
+	desc = "A crate with a few bags of sugar. Good for cake shops and amateur chemists."
+	cost = 150
+	contains = list(/obj/item/reagent_containers/condiment/sugar,
+					/obj/item/reagent_containers/condiment/sugar,
+					/obj/item/reagent_containers/condiment/sugar
+	)
+	crate_name = "sugar crate"
+	crate_type = /obj/structure/closet/crate
 
 /*
 		Cooking
@@ -237,10 +242,23 @@
 	crate_name = "gardening crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
+/datum/supply_pack/food/ethanol
+	name = "Ethanol Crate"
+	desc = "Five small bottles of ethanol for the aspiring botanist or amateur chemist."
+	cost = 500
+	contains = list(/obj/item/reagent_containers/glass/bottle/ethanol,
+					/obj/item/reagent_containers/glass/bottle/ethanol,
+					/obj/item/reagent_containers/glass/bottle/ethanol,
+					/obj/item/reagent_containers/glass/bottle/ethanol,
+					/obj/item/reagent_containers/glass/bottle/ethanol
+					)
+	crate_name = "gardening crate"
+	crate_type = /obj/structure/closet/crate/hydroponics
+
 /datum/supply_pack/food/weedcontrol
 	name = "Weed Control Crate"
 	desc = "Contains a scythe, gasmask, and two anti-weed defoliant grenades, for when your garden grows out of control."
-	cost = 750
+	cost = 200
 	contains = list(/obj/item/scythe,
 					/obj/item/clothing/mask/gas,
 					/obj/item/grenade/chem_grenade/antiweed,
@@ -251,7 +269,7 @@
 /datum/supply_pack/food/seeds
 	name = "Seeds Crate"
 	desc = "Big things have small beginnings. Contains fourteen different seeds."
-	cost = 750
+	cost = 150
 	contains = list(/obj/item/seeds/chili,
 					/obj/item/seeds/cotton,
 					/obj/item/seeds/berry,
@@ -294,7 +312,7 @@
 /datum/supply_pack/food/beekeeping_suits
 	name = "Beekeeper Suit Crate"
 	desc = "Bee business booming? Better be benevolent and boost botany by bestowing bi-Beekeeper-suits! Contains two beekeeper suits and matching headwear."
-	cost = 1000
+	cost = 500
 	contains = list(/obj/item/clothing/head/beekeeper_head,
 					/obj/item/clothing/suit/beekeeper_suit,
 					/obj/item/clothing/head/beekeeper_head,
@@ -305,7 +323,7 @@
 /datum/supply_pack/food/beekeeping_fullkit
 	name = "Beekeeping Starter Crate"
 	desc = "BEES BEES BEES. Contains three honey frames, a beekeeper suit and helmet, flyswatter, bee house, and, of course, a pure-bred Nanotrasen-Standardized Queen Bee!"
-	cost = 2000
+	cost = 1000
 	contains = list(/obj/structure/beebox/unwrenched,
 					/obj/item/honey_frame,
 					/obj/item/honey_frame,
@@ -317,5 +335,10 @@
 	crate_name = "beekeeping starter crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
-
-
+/datum/supply_pack/food/kitchen_knife
+	name = "Kitchen Knife Crate"
+	desc = "Need a new knife to cut something hard? Try out this stamped steel knife, straight from The New Gorlex Republic's factories."
+	cost = 100
+	contains = list(/obj/item/melee/knife/kitchen)
+	crate_name = "kitchen knife crate"
+	crate_type = /obj/structure/closet/crate/wooden

@@ -59,7 +59,7 @@
 	..()
 
 
-/obj/singularity/energy_ball/process()
+/obj/singularity/energy_ball/process(seconds_per_tick)
 	if(!orbiting)
 		handle_energy()
 
@@ -142,7 +142,7 @@
 /obj/singularity/energy_ball/attack_tk(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		to_chat(C, "<span class='userdanger'>That was a shockingly dumb idea.</span>")
+		to_chat(C, span_userdanger("That was a shockingly dumb idea."))
 		var/obj/item/organ/brain/rip_u = locate(/obj/item/organ/brain) in C.internal_organs
 		C.ghostize(0)
 		qdel(rip_u)
@@ -151,7 +151,7 @@
 /obj/singularity/energy_ball/orbit(obj/singularity/energy_ball/target)
 	if (istype(target))
 		target.orbiting_balls += src
-		GLOB.poi_list -= src
+		SSpoints_of_interest.remove_point_of_interest(src)
 		target.dissipate_strength = target.orbiting_balls.len
 	. = ..()
 

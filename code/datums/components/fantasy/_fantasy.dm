@@ -75,7 +75,7 @@
 
 	var/usedSlots = NONE
 	for(var/i in 1 to max(1, abs(quality))) // We want at least 1 affix applied
-		var/datum/fantasy_affix/affix = pickweight(affixListing)
+		var/datum/fantasy_affix/affix = pick_weight(affixListing)
 		if(affix.placement & usedSlots)
 			continue
 		if(!(affix.alignment & alignment))
@@ -133,6 +133,6 @@
 		effect_description = "<span class='heavy_brass'>shimmering golden glow</span>"
 	else
 		span = "<span class='danger'>"
-		effect_description = "<span class='bold'>mottled black glow</span>"
+		effect_description = span_bold("mottled black glow")
 
 	location.visible_message("[span][originalName] is covered by a [effect_description] and then transforms into [parent]!</span>")

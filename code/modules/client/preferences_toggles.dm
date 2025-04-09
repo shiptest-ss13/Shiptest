@@ -248,7 +248,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_announcement_sound)()
 /datum/verbs/menu/Settings/Sound/toggle_announcement_sound/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_ANNOUNCEMENTS
 
-/* READD THIS WHEN YOU FIX RADIO CHATTER
+//Readded, now that radio chatter is fixed.
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_radio_sound)()
 	set name = "Hear/Silence Radio Chatter"
 	set category = "Preferences"
@@ -260,7 +260,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_radio_sound)()
 
 /datum/verbs/menu/Settings/Sound/toggle_radio_sound/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_RADIO
-*/
 
 /datum/verbs/menu/Settings/Sound/verb/stop_client_sounds()
 	set name = "Stop Sounds"
@@ -435,9 +434,9 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	prefs.inquisitive_ghost = !prefs.inquisitive_ghost
 	prefs.save_preferences()
 	if(prefs.inquisitive_ghost)
-		to_chat(src, "<span class='notice'>You will now examine everything you click on.</span>")
+		to_chat(src, span_notice("You will now examine everything you click on."))
 	else
-		to_chat(src, "<span class='notice'>You will no longer examine things you click on.</span>")
+		to_chat(src, span_notice("You will no longer examine things you click on."))
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ghost Inquisitiveness", "[prefs.inquisitive_ghost ? "Enabled" : "Disabled"]"))
 
 //Admin Preferences

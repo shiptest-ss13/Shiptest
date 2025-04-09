@@ -11,7 +11,7 @@
 		/obj/item/reagent_containers/food/drinks/ice/prison = 12,
 		/obj/item/reagent_containers/food/snacks/candy_corn/prison = 6)
 	contraband = list(
-		/obj/item/kitchen/knife = 6,
+		/obj/item/melee/knife/kitchen = 6,
 		/obj/item/reagent_containers/food/drinks/coffee = 12,
 		/obj/item/tank/internals/emergency_oxygen = 6,
 		/obj/item/clothing/mask/breath = 6)

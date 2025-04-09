@@ -239,13 +239,13 @@
 		if(!user.temporarilyRemoveItemFromInventory(c))
 			return
 		credits += c.value
-		visible_message("<span class='info'><span class='name'>[user]</span> inserts [c.value] cr into [src].</span>")
+		visible_message(span_info("[span_name("[user]")] inserts [c.value] cr into [src]."))
 		qdel(c)
 		return
 	else if(istype(I, /obj/item/holochip))
 		var/obj/item/holochip/HC = I
 		credits += HC.credits
-		visible_message("<span class='info'>[user] inserts a [HC.credits] cr holocredit chip into [src].</span>")
+		visible_message(span_info("[user] inserts a [HC.credits] cr holocredit chip into [src]."))
 		qdel(HC)
 		return
 	else if(istype(I, /obj/item/card/bank))
@@ -254,7 +254,7 @@
 		var/obj/item/card/bank/ID = I
 		var/datum/bank_account/account = ID.registered_account
 		var/target_credits = total_price - credits
-		if(!account.adjust_money(-target_credits, "laptop_vendor"))
+		if(!account.adjust_money(-target_credits, CREDIT_LOG_VENDOR_PURCHASE))
 			say("Insufficient credits on card to purchase!")
 			return
 		credits += target_credits

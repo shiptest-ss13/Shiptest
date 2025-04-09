@@ -22,7 +22,7 @@
 	. = ..()
 	if(!.)
 		var/obj/item/held_item = get_active_held_item()
-		to_chat(usr, "<span class='warning'>Your other hand is too busy holding [held_item].</span>")
+		to_chat(usr, span_warning("Your other hand is too busy holding [held_item]."))
 		return
 
 	if(!held_index)
@@ -78,8 +78,8 @@
 			take_bodypart_damage(10,check_armor = TRUE)
 			victim.Paralyze(20)
 			Paralyze(20)
-			visible_message("<span class='danger'>[src] crashes into [victim], knocking them both over!</span>",\
-				"<span class='userdanger'>You violently crash into [victim]!</span>")
+			visible_message(span_danger("[src] crashes into [victim], knocking them both over!"),\
+				span_userdanger("You violently crash into [victim]!"))
 		playsound(src,'sound/weapons/punch1.ogg',50,TRUE)
 
 
@@ -108,6 +108,7 @@
 
 /mob/proc/throw_item(atom/target)
 	SEND_SIGNAL(src, COMSIG_MOB_THROW, target)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CARBON_THROW_THING, src, target)
 	return
 
 /mob/living/carbon/throw_item(atom/target)
@@ -128,7 +129,7 @@
 				thrown_thing = throwable_mob
 				stop_pulling()
 				if(HAS_TRAIT(src, TRAIT_PACIFISM))
-					to_chat(src, "<span class='notice'>You gently let go of [throwable_mob].</span>")
+					to_chat(src, span_notice("You gently let go of [throwable_mob]."))
 					return
 	else
 		thrown_thing = I.on_thrown(src, target)
@@ -141,8 +142,8 @@
 				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
 		do_attack_animation(target, no_effect = 1)
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1)
-		visible_message("<span class='danger'>[src] throws [thrown_thing].</span>", \
-						"<span class='danger'>You throw [thrown_thing].</span>")
+		visible_message(span_danger("[src] throws [thrown_thing]."), \
+						span_danger("You throw [thrown_thing]."))
 		log_message("has thrown [thrown_thing]", LOG_ATTACK)
 		newtonian_move(get_dir(target, src))
 		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed, src, null, null, null, move_force)
@@ -199,9 +200,9 @@
 		var/slot = text2num(href_list["internal"])
 		var/obj/item/ITEM = get_item_by_slot(slot)
 		if(ITEM && istype(ITEM, /obj/item/tank) && wear_mask && (wear_mask.clothing_flags & ALLOWINTERNALS))
-			visible_message("<span class='danger'>[usr] tries to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name].</span>", \
-							"<span class='userdanger'>[usr] tries to [internal ? "close" : "open"] the valve on your [ITEM.name].</span>", null, null, usr)
-			to_chat(usr, "<span class='notice'>You try to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]...</span>")
+			visible_message(span_danger("[usr] tries to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]."), \
+							span_userdanger("[usr] tries to [internal ? "close" : "open"] the valve on your [ITEM.name]."), null, null, usr)
+			to_chat(usr, span_notice("You try to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]..."))
 			if(do_after(usr, POCKET_STRIP_DELAY, src))
 				if(internal)
 					internal = null
@@ -211,9 +212,9 @@
 						internal = ITEM
 						update_internals_hud_icon(1)
 
-				visible_message("<span class='danger'>[usr] [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name].</span>", \
-								"<span class='userdanger'>[usr] [internal ? "opens" : "closes"] the valve on your [ITEM.name].</span>", null, null, usr)
-				to_chat(usr, "<span class='notice'>You [internal ? "open" : "close"] the valve on [src]'s [ITEM.name].</span>")
+				visible_message(span_danger("[usr] [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name]."), \
+								span_userdanger("[usr] [internal ? "opens" : "closes"] the valve on your [ITEM.name]."), null, null, usr)
+				to_chat(usr, span_notice("You [internal ? "open" : "close"] the valve on [src]'s [ITEM.name]."))
 
 	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
@@ -253,15 +254,15 @@
 		if(handcuffed)
 			var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 			buckle_cd = O.breakouttime
-		visible_message("<span class='warning'>[src] attempts to unbuckle [p_them()]self!</span>", \
-					"<span class='notice'>You attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)</span>")
+		visible_message(span_warning("[src] attempts to unbuckle [p_them()]self!"), \
+					span_notice("You attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)"))
 		if(do_after(src, buckle_cd, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			if(!buckled)
 				return
 			buckled.user_unbuckle_mob(src,src)
 		else
 			if(src && buckled)
-				to_chat(src, "<span class='warning'>You fail to unbuckle yourself!</span>")
+				to_chat(src, span_warning("You fail to unbuckle yourself!"))
 	else
 		buckled.user_unbuckle_mob(src,src)
 
@@ -269,12 +270,12 @@
 	adjust_fire_stacks(-5)
 	Paralyze(60, ignore_canstun = TRUE)
 	spin(32,2)
-	visible_message("<span class='danger'>[src] rolls on the floor, trying to put [p_them()]self out!</span>", \
-		"<span class='notice'>You stop, drop, and roll!</span>")
+	visible_message(span_danger("[src] rolls on the floor, trying to put [p_them()]self out!"), \
+		span_notice("You stop, drop, and roll!"))
 	sleep(30)
 	if(fire_stacks <= 0 && !QDELETED(src))
-		visible_message("<span class='danger'>[src] successfully extinguishes [p_them()]self!</span>", \
-			"<span class='notice'>You extinguish yourself.</span>")
+		visible_message(span_danger("[src] successfully extinguishes [p_them()]self!"), \
+			span_notice("You extinguish yourself."))
 		ExtinguishMob()
 	return
 
@@ -299,26 +300,26 @@
 
 /mob/living/carbon/proc/cuff_resist(obj/item/I, breakouttime = 600, cuff_break = 0)
 	if(I.item_flags & BEING_REMOVED)
-		to_chat(src, "<span class='warning'>You're already attempting to remove [I]!</span>")
+		to_chat(src, span_warning("You're already attempting to remove [I]!"))
 		return
 	I.item_flags |= BEING_REMOVED
 	breakouttime = I.breakouttime
 	if(!cuff_break)
-		visible_message("<span class='warning'>[src] attempts to remove [I]!</span>")
-		to_chat(src, "<span class='notice'>You attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)</span>")
+		visible_message(span_warning("[src] attempts to remove [I]!"))
+		to_chat(src, span_notice("You attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)"))
 		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			. = clear_cuffs(I, cuff_break)
 		else
-			to_chat(src, "<span class='warning'>You fail to remove [I]!</span>")
+			to_chat(src, span_warning("You fail to remove [I]!"))
 
 	else if(cuff_break == FAST_CUFFBREAK)
 		breakouttime = 50
-		visible_message("<span class='warning'>[src] is trying to break [I]!</span>")
-		to_chat(src, "<span class='notice'>You attempt to break [I]... (This will take around 5 seconds and you need to stand still.)</span>")
+		visible_message(span_warning("[src] is trying to break [I]!"))
+		to_chat(src, span_notice("You attempt to break [I]... (This will take around 5 seconds and you need to stand still.)"))
 		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			. = clear_cuffs(I, cuff_break)
 		else
-			to_chat(src, "<span class='warning'>You fail to break [I]!</span>")
+			to_chat(src, span_warning("You fail to break [I]!"))
 
 	else if(cuff_break == INSTANT_CUFFBREAK)
 		. = clear_cuffs(I, cuff_break)
@@ -360,8 +361,8 @@
 		return FALSE
 	if(I != handcuffed && I != legcuffed)
 		return FALSE
-	visible_message("<span class='danger'>[src] manages to [cuff_break ? "break" : "remove"] [I]!</span>")
-	to_chat(src, "<span class='notice'>You successfully [cuff_break ? "break" : "remove"] [I].</span>")
+	visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!"))
+	to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I]."))
 
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
@@ -386,7 +387,7 @@
 
 /mob/living/carbon/get_standard_pixel_y_offset(lying = 0)
 	if(lying)
-		return -6
+		return PIXEL_Y_OFFSET_LYING
 	else
 		return initial(pixel_y)
 
@@ -435,26 +436,26 @@
 
 	if(nutrition < 100 && !blood)
 		if(message)
-			visible_message("<span class='warning'>[src] dry heaves!</span>", \
-							"<span class='userdanger'>You try to throw up, but there's nothing in your stomach!</span>")
+			visible_message(span_warning("[src] dry heaves!"), \
+							span_userdanger("You try to throw up, but there's nothing in your stomach!"))
 		if(stun)
-			Paralyze(200)
+			Immobilize(30)
 		return TRUE
 
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 		if(message)
-			visible_message("<span class='danger'>[src] throws up all over [p_them()]self!</span>", \
-							"<span class='userdanger'>You throw up all over yourself!</span>")
+			visible_message(span_danger("[src] throws up all over [p_them()]self!"), \
+							span_userdanger("You throw up all over yourself!"))
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomitself)
 		distance = 0
 	else
 		if(message)
-			visible_message("<span class='danger'>[src] throws up!</span>", "<span class='userdanger'>You throw up!</span>")
+			visible_message(span_danger("[src] throws up!"), span_userdanger("You throw up!"))
 			if(!isflyperson(src))
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomit)
 
 	if(stun)
-		Paralyze(80)
+		Immobilize(10)
 
 	playsound(get_turf(src), 'sound/effects/splat.ogg', 50, TRUE)
 	var/turf/T = get_turf(src)
@@ -476,6 +477,7 @@
 		T = get_step(T, dir)
 		if (T?.is_blocked_turf())
 			break
+	adjust_disgust(-(lost_nutrition*rand(0.5, 2)))
 	return TRUE
 
 /mob/living/carbon/proc/spew_organ(power = 5, amt = 1)
@@ -579,10 +581,28 @@
 			see_invisible = max(G.invis_view, see_invisible)
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
+	if(head)
+		var/obj/item/clothing/head/headslot = head
+		sight |= headslot.vision_flags
+		see_in_dark = max(headslot.darkness_view, see_in_dark)
+		if(headslot.invis_override)
+			see_invisible = max(see_invisible, headslot.invis_override)
+		else
+			see_invisible = max(headslot.invis_view, see_invisible)
+		if(!isnull(headslot.lighting_alpha))
+			lighting_alpha = min(lighting_alpha, headslot.lighting_alpha)
+
+	if(HAS_TRAIT(src, TRAIT_CHEMICAL_NIGHTVISION))
+		lighting_alpha = min(lighting_alpha, LIGHTING_PLANE_ALPHA_NV_DRUG)
+		see_in_dark = max(see_in_dark, 4)
 
 	if(HAS_TRAIT(src, TRAIT_THERMAL_VISION))
 		sight |= (SEE_MOBS)
 		lighting_alpha = min(lighting_alpha, LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE)
+
+	if(HAS_TRAIT(src, TRAIT_GOOD_CHEMICAL_NIGHTVISION))
+		lighting_alpha = min(lighting_alpha, LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE)
+		see_in_dark = max(see_in_dark, 6)
 
 	if(HAS_TRAIT(src, TRAIT_XRAY_VISION))
 		sight |= (SEE_TURFS|SEE_MOBS|SEE_OBJS)
@@ -709,7 +729,9 @@
 
 	//Fire and Brute damage overlay (BSSR)
 	var/hurtdamage = getBruteLoss() + getFireLoss() + damageoverlaytemp
-	if(hurtdamage)
+	if(HAS_TRAIT(src, TRAIT_PAIN_RESIST))
+		hurtdamage = round(hurtdamage/2)
+	if(hurtdamage && !HAS_TRAIT(src, TRAIT_ANALGESIA))
 		var/severity = 0
 		switch(hurtdamage)
 			if(5 to 15)
@@ -870,7 +892,7 @@
 			O.Remove(src)
 			O.forceMove(drop_location())
 	if(organs_amt)
-		to_chat(user, "<span class='notice'>You retrieve some of [src]\'s internal organs!</span>")
+		to_chat(user, span_notice("You retrieve some of [src]\'s internal organs!"))
 
 /mob/living/carbon/ExtinguishMob()
 	for(var/X in get_equipped_items())
@@ -988,7 +1010,7 @@
 					BP.drop_limb(TRUE)
 					admin_ticket_log("[key_name_admin(usr)] has removed [src]'s [parse_zone(BP.body_zone)]")
 				else
-					to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
+					to_chat(usr, span_boldwarning("[src] doesn't have such bodypart."))
 					admin_ticket_log("[key_name_admin(usr)] has attempted to modify the bodyparts of [src]")
 			else
 				var/list/limbtypes = list()
@@ -1007,7 +1029,7 @@
 						limbtypes = typesof(/obj/item/bodypart/leg/right)
 
 				if((edit_action == "add") && BP)
-					to_chat(usr, "<span class='boldwarning'>[src] already has such bodypart.</span>")
+					to_chat(usr, span_boldwarning("[src] already has such bodypart."))
 				else
 					var/limb2add = input(usr, "Select a bodypart type to add", "Add/Replace Bodypart") as null|anything in sortList(limbtypes)
 					var/obj/item/bodypart/new_bp = new limb2add()
@@ -1042,14 +1064,14 @@
 		if(!usr)
 			return
 		if(QDELETED(src))
-			to_chat(usr, "<span class='boldwarning'>Mob doesn't exist anymore.</span>")
+			to_chat(usr, span_boldwarning("Mob doesn't exist anymore."))
 			return
 		if(result)
 			var/chosenart = artnames[result]
 			var/datum/martial_art/MA = new chosenart
 			MA.teach(src)
 			log_admin("[key_name(usr)] has taught [MA] to [key_name(src)].")
-			message_admins("<span class='notice'>[key_name_admin(usr)] has taught [MA] to [key_name_admin(src)].</span>")
+			message_admins(span_notice("[key_name_admin(usr)] has taught [MA] to [key_name_admin(src)]."))
 	if(href_list[VV_HK_GIVE_TRAUMA])
 		if(!check_rights(NONE))
 			return
@@ -1065,13 +1087,13 @@
 		var/datum/brain_trauma/BT = gain_trauma(result)
 		if(BT)
 			log_admin("[key_name(usr)] has traumatized [key_name(src)] with [BT.name]")
-			message_admins("<span class='notice'>[key_name_admin(usr)] has traumatized [key_name_admin(src)] with [BT.name].</span>")
+			message_admins(span_notice("[key_name_admin(usr)] has traumatized [key_name_admin(src)] with [BT.name]."))
 	if(href_list[VV_HK_CURE_TRAUMA])
 		if(!check_rights(NONE))
 			return
 		cure_all_traumas(TRAUMA_RESILIENCE_ABSOLUTE)
 		log_admin("[key_name(usr)] has cured all traumas from [key_name(src)].")
-		message_admins("<span class='notice'>[key_name_admin(usr)] has cured all traumas from [key_name_admin(src)].</span>")
+		message_admins(span_notice("[key_name_admin(usr)] has cured all traumas from [key_name_admin(src)]."))
 	if(href_list[VV_HK_HALLUCINATION])
 		if(!check_rights(NONE))
 			return

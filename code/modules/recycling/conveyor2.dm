@@ -23,8 +23,13 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	var/verted = 1		// Inverts the direction the conveyor belt moves.
 	var/conveying = FALSE
 
-/obj/machinery/conveyor/centcom_auto
-	id = "round_end_belt"
+/obj/machinery/conveyor/auto/outpost
+	id = "outpost-conveyor"
+	desc = "A sturdy conveyor belt. It is well-fastened to the floor and cannot be pried up."
+	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
+
+/obj/machinery/conveyor/auto/outpost/attackby(obj/item/I, mob/user, params)
+	return
 
 /obj/machinery/conveyor/inverted //Directions inverted so you can use different corner peices.
 	icon_state = "conveyor_map_inverted"
@@ -125,7 +130,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 // machine process
 // move items to the target location
-/obj/machinery/conveyor/process()
+/obj/machinery/conveyor/process(seconds_per_tick)
 	if(machine_stat & (BROKEN | NOPOWER))
 		return
 
@@ -159,13 +164,13 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 // attack with item, place item on conveyor
 /obj/machinery/conveyor/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_CROWBAR)
-		user.visible_message("<span class='notice'>[user] struggles to pry up \the [src] with \the [I].</span>", \
-		"<span class='notice'>You struggle to pry up \the [src] with \the [I].</span>")
+		user.visible_message(span_notice("[user] struggles to pry up \the [src] with \the [I]."), \
+		span_notice("You struggle to pry up \the [src] with \the [I]."))
 		if(I.use_tool(src, user, 40, volume=40))
 			if(!(machine_stat & BROKEN))
 				var/obj/item/stack/conveyor/C = new /obj/item/stack/conveyor(loc, 1, TRUE, id)
 				transfer_fingerprints_to(C)
-			to_chat(user, "<span class='notice'>You remove the conveyor belt.</span>")
+			to_chat(user, span_notice("You remove the conveyor belt."))
 			qdel(src)
 
 	else if(I.tool_behaviour == TOOL_WRENCH)
@@ -173,13 +178,13 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 			I.play_tool_sound(src)
 			setDir(turn(dir,-45))
 			update_move_direction()
-			to_chat(user, "<span class='notice'>You rotate [src].</span>")
+			to_chat(user, span_notice("You rotate [src]."))
 
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!(machine_stat & BROKEN))
 			verted = verted * -1
 			update_move_direction()
-			to_chat(user, "<span class='notice'>You reverse [src]'s direction.</span>")
+			to_chat(user, span_notice("You reverse [src]'s direction."))
 
 	else if(user.a_intent != INTENT_HARM)
 		user.transferItemToLoc(I, drop_location())
@@ -329,7 +334,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 		var/obj/item/conveyor_switch_construct/C = new/obj/item/conveyor_switch_construct(src.loc)
 		C.id = id
 		transfer_fingerprints_to(C)
-		to_chat(user, "<span class='notice'>You detach the conveyor switch.</span>")
+		to_chat(user, span_notice("You detach the conveyor switch."))
 		qdel(src)
 	if(is_wire_tool(I))
 		wires.interact(user)
@@ -361,11 +366,11 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 /obj/item/conveyor_switch_construct/attack_self(mob/user)
 	for(var/obj/item/stack/conveyor/C in view())
 		C.id = id
-	to_chat(user, "<span class='notice'>You have linked all nearby conveyor belt assemblies to this switch.</span>")
+	to_chat(user, span_notice("You have linked all nearby conveyor belt assemblies to this switch."))
 
 /obj/item/conveyor_switch_construct/afterattack(atom/A, mob/user, proximity)
 	. = ..()
-	if(!proximity || user.stat || !isfloorturf(A) || istype(A, /area/shuttle))
+	if(!proximity || user.stat || !isfloorturf(A))
 		return
 	var/found = 0
 	for(var/obj/machinery/conveyor/C in view())
@@ -397,11 +402,11 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 
 /obj/item/stack/conveyor/afterattack(atom/A, mob/user, proximity)
 	. = ..()
-	if(!proximity || user.stat || !isfloorturf(A) || istype(A, /area/shuttle))
+	if(!proximity || user.stat || !isfloorturf(A))
 		return
 	var/cdir = get_dir(A, user)
 	if(A == user.loc)
-		to_chat(user, "<span class='warning'>You cannot place a conveyor belt under yourself!</span>")
+		to_chat(user, span_warning("You cannot place a conveyor belt under yourself!"))
 		return
 	var/obj/machinery/conveyor/C = new/obj/machinery/conveyor(A, cdir, id)
 	transfer_fingerprints_to(C)
@@ -410,7 +415,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 /obj/item/stack/conveyor/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/conveyor_switch_construct))
-		to_chat(user, "<span class='notice'>You link the switch to the conveyor belt assembly.</span>")
+		to_chat(user, span_notice("You link the switch to the conveyor belt assembly."))
 		var/obj/item/conveyor_switch_construct/C = I
 		id = C.id
 

@@ -15,7 +15,9 @@
 	drop_sound = 'sound/items/handling/wrench_drop.ogg'
 	pickup_sound =  'sound/items/handling/wrench_pickup.ogg'
 
+	attack_cooldown = LIGHT_WEAPON_CD
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
+	demolition_mod = 1.25
 	tool_behaviour = TOOL_WRENCH
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
@@ -71,7 +73,7 @@
 		attack_verb = list("bopped")
 		toolspeed = initial(toolspeed)
 		playsound(user, 'sound/weapons/saberoff.ogg', 5, TRUE)
-		to_chat(user, "<span class='warning'>[src] can now be kept at bay.</span>")
+		to_chat(user, span_warning("[src] can now be kept at bay."))
 	else
 		on = TRUE
 		force = 15
@@ -82,7 +84,7 @@
 		toolspeed = 0.5
 		hitsound = 'sound/weapons/blade1.ogg'
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
-		to_chat(user, "<span class='warning'>[src] is now active. Woe onto your enemies!</span>")
+		to_chat(user, span_warning("[src] is now active. Woe onto your enemies!"))
 	update_appearance()
 
 /obj/item/wrench/combat/update_icon_state()
@@ -95,10 +97,7 @@
 	return ..()
 
 /obj/item/wrench/syndie
-	name = "suspicious-looking wrench"
-	desc = "It's one of those fancy wrenches that you turn backward without twisting the bolt for faster action."
 	icon_state = "wrench_syndie"
-	toolspeed = 0.5
 
 /obj/item/wrench/crescent
 	name = "crescent wrench"

@@ -61,7 +61,7 @@
 ///////////////
 
 //Start of a breath chain, calls breathe()
-/mob/living/carbon/handle_breathing(times_fired)
+/mob/living/carbon/handle_breathing(seconds_per_tick, times_fired)
 	var/next_breath = 4
 	var/obj/item/organ/lungs/L = getorganslot(ORGAN_SLOT_LUNGS)
 	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
@@ -176,7 +176,7 @@
 	var/oxygen_used = 0
 	var/moles = breath.total_moles()
 	var/breath_pressure = (moles*R_IDEAL_GAS_EQUATION*breath.return_temperature())/BREATH_VOLUME
-	var/O2_partialpressure = ((breath.get_moles(GAS_O2)/moles)*breath_pressure) + (((breath.get_moles(GAS_PLUOXIUM)*8)/moles)*breath_pressure)
+	var/O2_partialpressure = ((breath.get_moles(GAS_O2)/moles)*breath_pressure) + (((breath.get_moles(GAS_O3)*2)/moles)*breath_pressure)
 	var/Toxins_partialpressure = (breath.get_moles(GAS_PLASMA)/moles)*breath_pressure
 	var/CO2_partialpressure = (breath.get_moles(GAS_CO2)/moles)*breath_pressure
 
@@ -260,11 +260,6 @@
 	if(breath.get_moles(GAS_TRITIUM))
 		var/tritium_partialpressure = (breath.get_moles(GAS_TRITIUM)/breath.total_moles())*breath_pressure
 		radiation += tritium_partialpressure/10
-
-	//NITRYL
-	if(breath.get_moles(GAS_NITRYL))
-		var/nitryl_partialpressure = (breath.get_moles(GAS_NITRYL)/breath.total_moles())*breath_pressure
-		adjustFireLoss(nitryl_partialpressure/4)
 
 	//FREON
 	if(breath.get_moles(GAS_FREON))
@@ -443,10 +438,11 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(drowsyness)
 		drowsyness = max(drowsyness - restingpwr, 0)
 		blur_eyes(2)
-		if(prob(5))
-			AdjustSleeping(100)
+		if(drowsyness > 20)
+			if(prob(round(drowsyness/10)))
+				AdjustSleeping(drowsyness)
 
-	//Jitteriness
+	//jitteriness
 	if(jitteriness)
 		do_jitter_animation(jitteriness)
 		jitteriness = max(jitteriness - restingpwr, 0)
@@ -477,11 +473,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 	if(drunkenness)
 		drunkenness = max(drunkenness - (drunkenness * 0.04) - 0.01, 0)
-		if(drunkenness >= 6)
+		if(drunkenness >= 11)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
-			if(prob(25))
-				slurring += 2
-			jitteriness = max(jitteriness - 3, 0)
+			adjust_jitter(max(jitteriness -3,0), max = 200)
 			throw_alert("drunk", /atom/movable/screen/alert/drunk)
 			sound_environment_override = SOUND_ENVIRONMENT_PSYCHOTIC
 		else
@@ -489,8 +483,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			clear_alert("drunk")
 			sound_environment_override = SOUND_ENVIRONMENT_NONE
 
-		if(drunkenness >= 11 && slurring < 5)
-			slurring += 1.2
+		if(drunkenness >= 31 && slurring < 5)
+			slurring += 0.5
 
 		if(drunkenness >= 41)
 			if(prob(25))
@@ -513,13 +507,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		if(drunkenness >= 81)
 			adjustToxLoss(1)
 			if(prob(5) && !stat)
-				to_chat(src, "<span class='warning'>Maybe you should lie down for a bit...</span>")
+				to_chat(src, span_warning("Maybe you should lie down for a bit..."))
 
 		if(drunkenness >= 91)
 			adjustToxLoss(1)
 			adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.4)
 			if(prob(20) && !stat)
-				to_chat(src, "<span class='warning'>Just a quick nap...</span>")
+				to_chat(src, span_warning("Just a quick nap..."))
 				Sleeping(900)
 
 		if(drunkenness >= 101)
@@ -590,7 +584,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				natural_change = (1 / (thermal_protection + 1)) * natural_change
 
 	// Apply the natural stabilization changes
-	adjust_bodytemperature(natural_change)
+	adjust_bodytemperature(natural_change, use_insulation=FALSE)
 
 /**
  * Get the insulation that is appropriate to the temperature you're being exposed to.
@@ -642,7 +636,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
  * * use_steps (optional) Use the body temp divisors and max change rates
  * * hardsuit_fix (optional) num HUMAN_BODYTEMP_NORMAL - H.bodytemperature Use hardsuit override until hardsuits fix is done...
  */
-/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=FALSE, use_steps=FALSE, \
+/mob/living/carbon/adjust_bodytemperature(amount, min_temp=0, max_temp=INFINITY, use_insulation=TRUE, use_steps=FALSE, \
 											hardsuit_fix=FALSE)
 	// apply insulation to the amount of change
 	if(use_insulation)
@@ -658,6 +652,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 	if(bodytemperature >= min_temp && bodytemperature <= max_temp)
 		bodytemperature = clamp(bodytemperature + amount,min_temp,max_temp)
+		return amount
 
 
 /////////
@@ -684,7 +679,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		return
 	adjustToxLoss(4, TRUE,  TRUE)
 	if(prob(30))
-		to_chat(src, "<span class='warning'>You feel a stabbing pain in your abdomen!</span>")
+		to_chat(src, span_warning("You feel a stabbing pain in your abdomen!"))
 
 /////////////
 //CREMATION//
@@ -712,11 +707,11 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				if(limb.cremation_progress >= 100)
 					if(IS_ORGANIC_LIMB(limb))  //Non-organic limbs don't burn
 						limb.drop_limb()
-						limb.visible_message("<span class='warning'>[src]'s [limb.name] crumbles into ash!</span>")
+						limb.visible_message(span_warning("[src]'s [limb.name] crumbles into ash!"))
 						qdel(limb)
 					else
 						limb.drop_limb()
-						limb.visible_message("<span class='warning'>[src]'s [limb.name] detaches from [p_their()] body!</span>")
+						limb.visible_message(span_warning("[src]'s [limb.name] detaches from [p_their()] body!"))
 	if(still_has_limbs)
 		return
 
@@ -728,17 +723,17 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(head.cremation_progress >= 100)
 				if(!IS_ORGANIC_LIMB(head)) //Non-organic limbs don't burn
 					head.drop_limb()
-					head.visible_message("<span class='warning'>[src]'s head crumbles into ash!</span>")
+					head.visible_message(span_warning("[src]'s head crumbles into ash!"))
 					qdel(head)
 				else
 					head.drop_limb()
-					head.visible_message("<span class='warning'>[src]'s head detaches from [p_their()] body!</span>")
+					head.visible_message(span_warning("[src]'s head detaches from [p_their()] body!"))
 		return
 
 	//Nothing left: dust the body, drop the items (if they're flammable they'll burn on their own)
 	chest.cremation_progress += rand(2,5)
 	if(chest.cremation_progress >= 100)
-		visible_message("<span class='warning'>[src]'s body crumbles into a pile of ash!</span>")
+		visible_message(span_warning("[src]'s body crumbles into a pile of ash!"))
 		dust(TRUE, TRUE)
 
 ////////////////

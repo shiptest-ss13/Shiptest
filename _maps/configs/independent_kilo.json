@@ -5,15 +5,18 @@
 	"tags": [
 		"Mining"
 	],
+	"faction": "/datum/faction/independent",
 	"prefix": "SV",
+	"manufacturer": "Miskilamo Spacefaring",
 	"namelists": [
 		"GENERAL",
 		"SPACE",
 		"NATURAL"
 	],
 	"map_short_name": "Kilo-class",
-	"starting_funds": 3500,
+	"starting_funds": 1500,
 	"map_path": "_maps/shuttles/independent/independent_kilo.dmm",
+	"limit": 1,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/independent/captain/cheap",
@@ -30,7 +33,7 @@
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/independent/assistant",
-			"slots": 2
+			"slots": 1
 		}
 	},
 	"enabled": true

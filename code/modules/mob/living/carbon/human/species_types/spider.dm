@@ -1,33 +1,8 @@
-GLOBAL_LIST_INIT(spider_first, world.file2list("strings/names/spider_first.txt"))
-GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
-
 /obj/item/organ/eyes/night_vision/spider
 	name = "spider eyes"
 	desc = "These eyes seem to have increased sensitivity to bright light, offset by basic night vision."
 	see_in_dark = 4
 	flash_protect = FLASH_PROTECTION_SENSITIVE
-
-/obj/item/organ/tongue/spider
-	name = "inner mandible"
-	desc = "A set of soft, spoon-esque mandibles closer to the mouth opening, that allow for basic speech, and the ability to speak Rachnidian."
-	say_mod = "chitters"
-	var/static/list/languages_possible_arachnid = typecacheof(list(
-		/datum/language/common,
-		/datum/language/draconic,
-		/datum/language/codespeak,
-		/datum/language/monkey,
-		/datum/language/narsie,
-		/datum/language/beachbum,
-		/datum/language/aphasia,
-		/datum/language/piratespeak,
-		/datum/language/moffic,
-		/datum/language/spider,
-		/datum/language/buzzwords
-	))
-
-/obj/item/organ/tongue/spider/Initialize(mapload)
-	. = ..()
-	languages_possible = languages_possible_arachnid
 
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
@@ -56,7 +31,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	toxic_food = VEGETABLES | DAIRY | CLOTH
 	mutanteyes = /obj/item/organ/eyes/night_vision/spider
 	mutanttongue = /obj/item/organ/tongue/spider
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	species_language_holder = /datum/language_holder/spider
 	loreblurb = "Rachnids are aliens with coincidental physiological similarities to Sol's spiders. Despite visible adaptations that would make them excellent hunters, modern Rachnidian culture revolves around honing the skills and talents of oneself, treating them as forms of self-expression. Rachnids tend to focus on their work intensely, priding themselves on a job well done and languishing if they see themselves as underperforming in their field."
 	var/web_cooldown = 30
@@ -70,26 +45,10 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	species_l_leg = /obj/item/bodypart/leg/left/rachnid
 	species_r_leg = /obj/item/bodypart/leg/right/rachnid
 
-/proc/random_unique_spider_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(pick(GLOB.spider_first)) + " " + capitalize(pick(GLOB.spider_last))
-
-		if(!findname(.))
-			break
-
-/proc/spider_name()
-	return "[pick(GLOB.spider_first)] [pick(GLOB.spider_last)]"
-
 /datum/species/spider/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_spider_name()
-
-	var/randname = spider_name()
-
-	if(lastname)
-		randname += " [lastname]"
-
-	return randname
+	return spider_name()
 
 /datum/species/spider/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/toxin/pestkiller)
@@ -132,23 +91,23 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	if(H.stat == "DEAD")
 		return
 	if(E.web_ready == FALSE)
-		to_chat(H, "<span class='warning'>You need to wait awhile to regenerate web fluid.</span>")
+		to_chat(H, span_warning("You need to wait awhile to regenerate web fluid."))
 		return
 	var/turf/T = get_turf(H)
 	if(!T)
-		to_chat(H, "<span class='warning'>There's no room to spin your web here!</span>")
+		to_chat(H, span_warning("There's no room to spin your web here!"))
 		return
 	var/obj/structure/spider/stickyweb/W = locate() in T
 	var/obj/structure/spider_player/W2 = locate() in T
 	if(W || W2)
-		to_chat(H, "<span class='warning'>There's already a web here!</span>")
+		to_chat(H, span_warning("There's already a web here!"))
 		return
 	// Should have some minimum amount of food before trying to activate
 	var/nutrition_threshold = NUTRITION_LEVEL_FED
 	if (H.nutrition >= nutrition_threshold)
 		to_chat(H, "<i>You begin spinning some web...</i>")
 		if(!do_after(H, 10 SECONDS, T, hidden = TRUE))
-			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
+			to_chat(H, span_warning("Your web spinning was interrupted!"))
 			return
 		if(prob(75))
 			H.adjust_nutrition(-E.spinner_rate)
@@ -158,7 +117,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		to_chat(H, "<i>You weave a web on the ground with your spinneret!</i>")
 
 	else
-		to_chat(H, "<span class='warning'>You're too hungry to spin web right now, eat something first!</span>")
+		to_chat(H, span_warning("You're too hungry to spin web right now, eat something first!"))
 		return
 /*
 	This took me far too long to figure out so I'm gonna document it here.
@@ -174,7 +133,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	if(H.stat == "DEAD")
 		return
 	if(E.web_ready == FALSE)
-		to_chat(H, "<span class='warning'>You need to wait awhile to regenerate web fluid.</span>")
+		to_chat(H, span_warning("You need to wait awhile to regenerate web fluid."))
 		return
 	var/nutrition_threshold = NUTRITION_LEVEL_FED
 	if (H.nutrition >= nutrition_threshold)
@@ -184,7 +143,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		RegisterSignal(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(cocoonAtom))
 		return
 	else
-		to_chat(H, "<span class='warning'>You're too hungry to spin web right now, eat something first!</span>")
+		to_chat(H, span_warning("You're too hungry to spin web right now, eat something first!"))
 		return
 
 /datum/action/innate/spin_cocoon/proc/cocoonAtom(mob/living/carbon/human/species/spider/H, atom/movable/A)
@@ -194,31 +153,31 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		return COMSIG_MOB_CANCEL_CLICKON
 	else
 		if(E.web_ready == FALSE)
-			to_chat(H, "<span class='warning'>You need to wait awhile to regenerate web fluid.</span>")
+			to_chat(H, span_warning("You need to wait awhile to regenerate web fluid."))
 			return
 		if(!H.Adjacent(A))	//No.
 			return
 		if(!isliving(A) && A.anchored)
-			to_chat(H, "<span class='warning'>[A] is bolted to the floor!</span>")
+			to_chat(H, span_warning("[A] is bolted to the floor!"))
 			return
 		if(istype(A, /obj/structure/spider_player))
-			to_chat(H, "<span class='warning'>No double wrapping.</span>")
+			to_chat(H, span_warning("No double wrapping."))
 			return
 		if(istype(A, /obj/effect))
-			to_chat(H, "<span class='warning'>You cannot wrap this.</span>")
+			to_chat(H, span_warning("You cannot wrap this."))
 			return
-		H.visible_message("<span class='danger'>[H] starts to wrap [A] into a cocoon!</span>","<span class='warning'>You start to wrap [A] into a cocoon.</span>")
+		H.visible_message(span_danger("[H] starts to wrap [A] into a cocoon!"),span_warning("You start to wrap [A] into a cocoon."))
 		if(!do_after(H, 10 SECONDS, A, hidden = TRUE))
-			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
+			to_chat(H, span_warning("Your web spinning was interrupted!"))
 			return
 		H.adjust_nutrition(E.spinner_rate * -3.5)
 		var/obj/structure/spider_player/cocoon/C = new(A.loc)
 		if(isliving(A))
 			C.icon_state = pick("cocoon_large1","cocoon_large2","cocoon_large3")
 			A.forceMove(C)
-			H.visible_message("<span class='danger'>[H] wraps [A] into a large cocoon!</span>")
+			H.visible_message(span_danger("[H] wraps [A] into a large cocoon!"))
 			return
 		else
 			A.forceMove(C)
-			H.visible_message("<span class='danger'>[H] wraps [A] into a cocoon!</span>")
+			H.visible_message(span_danger("[H] wraps [A] into a cocoon!"))
 			return

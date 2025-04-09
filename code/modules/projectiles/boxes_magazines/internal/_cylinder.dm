@@ -2,7 +2,7 @@
 	name = "revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
-	max_ammo = 7
+	max_ammo = 6
 	instant_load = TRUE
 
 /obj/item/ammo_box/magazine/internal/cylinder/get_round(keep = FALSE, counter_clockwise = FALSE)
@@ -92,5 +92,5 @@
 
 	if(num_loaded)
 		if(!silent)
-			to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [src]!</span>")
+			to_chat(user, span_notice("You load [num_loaded] cartridge\s into \the [src]!"))
 	return num_loaded

@@ -173,6 +173,15 @@
 		S.connected = src
 		return S
 
+/datum/wires/proc/attach_assembly_init(obj/item/assembly/S)
+	var/obj/item/assembly/I = new S(holder.loc)
+	for(var/color in colors)
+		if(I && istype(I) && I.attachable && !is_attached(color))
+			assemblies[color] = I
+			I.forceMove(holder)
+			I.connected = src
+			return I
+
 /datum/wires/proc/detach_assembly(color)
 	var/obj/item/assembly/S = get_attached(color)
 	if(S && istype(S))
@@ -277,7 +286,7 @@
 				cut_color(target_wire)
 				. = TRUE
 			else
-				to_chat(L, "<span class='warning'>You need wirecutters!</span>")
+				to_chat(L, span_warning("You need wirecutters!"))
 		if("pulse")
 			I = L.is_holding_tool_quality(TOOL_MULTITOOL)
 			if(I || isAdminGhostAI(usr))
@@ -286,7 +295,7 @@
 				pulse_color(target_wire, L)
 				. = TRUE
 			else
-				to_chat(L, "<span class='warning'>You need a multitool!</span>")
+				to_chat(L, span_warning("You need a multitool!"))
 		if("attach")
 			if(is_attached(target_wire))
 				I = detach_assembly(target_wire)
@@ -304,6 +313,6 @@
 							A.forceMove(L.drop_location())
 						. = TRUE
 					else
-						to_chat(L, "<span class='warning'>You need an attachable assembly!</span>")
+						to_chat(L, span_warning("You need an attachable assembly!"))
 
 #undef MAXIMUM_EMP_WIRES

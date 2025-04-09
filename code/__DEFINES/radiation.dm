@@ -57,3 +57,16 @@ Ask ninjanomnom if they're around
 #define RAD_DISTANCE_COEFFICIENT 1 // Lower means further rad spread
 
 #define RAD_HALF_LIFE 90 // The half-life of contaminated objects
+
+#define RAD_GLOW_COLOR "#39ff1430"
+
+#define RAD_LEVEL_NORMAL 9
+#define RAD_LEVEL_MODERATE 100
+#define RAD_LEVEL_HIGH 400
+#define RAD_LEVEL_VERY_HIGH 800
+#define RAD_LEVEL_CRITICAL 1500
+
+#define RAD_MEASURE_SMOOTHING 5
+
+#define RAD_GEIGER_RC 4 // RC-constant for the LP filter for geiger counters. See #define LPFILTER for more info.
+#define RAD_GEIGER_GRACE_PERIOD 4 // How many seconds after we last detect a radiation pulse until we stop blipping

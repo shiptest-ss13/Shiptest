@@ -22,7 +22,7 @@
 					/obj/item/construction/rcd/loaded = 2,
 					/obj/item/storage/box/smart_metal_foam = 1)
 	refill_canister = /obj/item/vending_refill/engivend
-	default_price = 450
+	default_price = 250
 	extra_price = 500
 	light_mask = "engivend-light-mask"
 

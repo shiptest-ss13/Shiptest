@@ -383,7 +383,7 @@
 			if (specificTarget)
 				specificTarget = null
 				return
-			var/list/mobs = getpois()//code stolen from observer.dm
+			var/list/mobs = SSpoints_of_interest.get_mob_pois()
 			var/inputTarget = input("Select a mob! (Smiting does this automatically)", "Target", null, null) as null|anything in mobs
 			if (isnull(inputTarget))
 				return
@@ -576,7 +576,7 @@
 			else
 				return //if target is null and we don't have a specific target, cancel
 			if (effectAnnounce)
-				deadchat_broadcast("<span class='deadsay'>A special package is being launched at the station!</span>", turf_target = target)
+				deadchat_broadcast(span_deadsay("A special package is being launched at the station!"), turf_target = target)
 			var/list/bouttaDie = list()
 			for (var/mob/living/target_mob in target)
 				bouttaDie.Add(target_mob)

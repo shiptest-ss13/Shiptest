@@ -15,8 +15,15 @@
 	multiplicative_slowdown = 1
 	variable = TRUE
 
+/datum/movespeed_modifier/aiming
+	multiplicative_slowdown = 0
+	variable = TRUE
+
 /datum/movespeed_modifier/berserk
 	multiplicative_slowdown = -0.2
 
 /datum/movespeed_modifier/sphere
 	multiplicative_slowdown = -0.5
+
+/datum/movespeed_modifier/equipping
+	multiplicative_slowdown = 1.5

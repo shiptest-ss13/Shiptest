@@ -52,7 +52,7 @@
 /datum/looping_sound/grill
 	mid_length = 2
 	mid_sounds = list('sound/machines/fryer/deep_fryer_1.ogg' = 1, 'sound/machines/fryer/deep_fryer_2.ogg' = 1)
-	volume = 30
+	volume = 10
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

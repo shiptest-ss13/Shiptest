@@ -91,34 +91,6 @@
 	result = /obj/item/reagent_containers/food/snacks/burger/tofu
 	subcategory = CAT_BURGER
 
-/datum/crafting_recipe/food/ghostburger
-	name = "Ghost burger"
-	reqs = list(
-		/obj/item/ectoplasm = 1,
-		/datum/reagent/consumable/sodiumchloride = 2,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/ghost
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/clownburger
-	name = "Clown burger"
-	reqs = list(
-		/obj/item/clothing/mask/gas/clown_hat = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/clown
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/mimeburger
-	name = "Mime burger"
-	reqs = list(
-		/obj/item/clothing/mask/gas/mime = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/mime
-	subcategory = CAT_BURGER
-
 /datum/crafting_recipe/food/redburger
 	name = "Red burger"
 	reqs = list(
@@ -199,24 +171,6 @@
 	result = /obj/item/reagent_containers/food/snacks/burger/white
 	subcategory = CAT_BURGER
 
-/datum/crafting_recipe/food/spellburger
-	name = "Spell burger"
-	reqs = list(
-		/obj/item/clothing/head/wizard/fake = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/spell
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/spellburger2
-	name = "Spell burger"
-	reqs = list(
-		/obj/item/clothing/head/wizard = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/spell
-	subcategory = CAT_BURGER
-
 /datum/crafting_recipe/food/bigbiteburger
 	name = "Big bite burger"
 	reqs = list(
@@ -274,7 +228,7 @@
 /datum/crafting_recipe/food/ratburger
 	name = "Rat burger"
 	reqs = list(
-			/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+			/obj/item/food/deadmouse = 1,
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/rat

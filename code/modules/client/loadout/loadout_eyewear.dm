@@ -29,10 +29,6 @@
 	display_name = "eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
 
-/datum/gear/eyewear/monocle
-	display_name = "monocle"
-	path = /obj/item/clothing/glasses/monocle
-
 /datum/gear/eyewear/cheapsuns
 	display_name = "cheap sunglasses"
 	path = /obj/item/clothing/glasses/cheapsuns

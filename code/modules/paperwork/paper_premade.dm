@@ -112,3 +112,16 @@
 	name = "URGENT!"
 	default_raw_text = "A hastily written note has been scribbled here... <br><br> Please use the ore redemption machine in the cargo office for smelting. PLEASE! <br><br>--The Research Staff"
 
+//////////// Ruins
+
+/obj/item/paper/crumpled/bloody/fluff/ruin/space/ramzistation/toilet
+	name = "\improper Out of Order Notice"
+	default_raw_text = "<center><h1>OUT OF ORDER</h1><hr color=darkred size=4><body>Someone flushed something they shouldn't down the basin, and now the toilet's clogged. You can all thank trooper Yarlin for this blunder. This stall is closed for the time being until a technician gets too it.</body>"
+
+/obj/item/paper/crumpled/bloody/fluff/ruin/space/ramzistation/maintlog
+	name = "\improper Maintanence Log"
+	default_raw_text = "<center><h1>Maintanence Requests - First Quarterly</h1><hr color=darkred size=4><br><head><table bgcolor=white width=100% height=15%><center><td><div align = left><table style=width: 100%; border=2><tbody><td width=30%><center><b><code>Issue</td><td width= 10%><center><b><code>Date(MM/DD)</td><td width= 60%><center><b><code>Fixed(Y/N)?</td><tr bgcolor =#D6EEEE><td><center>Door Jam</td><td><center>5/21</td><td><center>(Y) Motion sensor was broken. Spare unit taken from storage.</td></tr><tr><td><center>Sink water is brown.</td><td><center>5/24</td><td><center>(N) Water filtration unit gave the ghost. No replacement parts. Told raid team to get new unit.</td></tr><tr bgcolor =#D6EEEE><td><center>Food proccessor won't blend.</td><td><center>5/30</td><td><center>(Y) Food proccessor plugged in.</td></tr><tr><td><center>Air leak in hangar.</td><td><center>6/3</td><td><center>(Y) Floor partially worn down under blastdoors. Floor temporarily raised until more permanent solution.</td></tr><tr bgcolor =#D6EEEE><td><center>Power outage</td><td><center>6/14</td><td><center>(Y) Solar panels burned out. Had to cannibalize parts from some of the panels to get it running again..</td></tr><tr><td><center>Rust in hallways.</td><td><center>6/24</td><td><center>(N) I have bigger problems to worry about than whether the floor looks nice.</td></tr><tr bgcolor =#D6EEEE><td><center>Sick from brown water.</td><td><center>7/5</td><td><center>(N) Not my department dumbass. Go to the doc and drink the bottled water.</td></tr><tr><td><center>Hardsuit helmet sprung leak during raid.</td><td><center>7/10</td><td><center>(Y) Duct tape issued.</td></tr><tr bgcolor =#D6EEEE><td><center>Trooper spilled coffee on my computer.</td><td><center>7/12</td><td><center>(Y) Trooper punched in the face. (Technically not fixed- Will have to wait for new computer parts. It did make me feel better though.)</td><tr><td><center>Toilet clogged</td><td><center>7/17</td><td><center>(N) Looking for disposable gloves. Not using my good pair to fish around in a toilet.</td></tr>"
+
+/obj/item/paper/crumpled/fluff/abandoned_crate
+	name = "\improper Hastily Written Note"
+	default_raw_text = "SORRY NOTHING IOU ONE REWARD"

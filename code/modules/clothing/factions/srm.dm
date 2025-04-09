@@ -95,7 +95,7 @@
 	worn_y_offset = 4
 	supports_variations = KEPORI_VARIATION
 
-/obj/item/clothing/suit/space/hardsuit/solgov/roumain
+/obj/item/clothing/suit/space/hardsuit/solgov/roumain //i swear to fuck whoever is subtyping these. you will face my wrath.
 	name = "\improper roumain hardsuit"
 	desc = "A hand-crafted suit of armor either modified from a set of normal plate armor or designed to resemble one. A powered exoskeleton has been cleverly integrated into the design and, surprisingly, it is completely vacuum-proof. Suits like this are a testament to what the master craftsmen of Hunter's Pride are capable of."
 	icon = 'icons/obj/clothing/faction/srm/suits.dmi'

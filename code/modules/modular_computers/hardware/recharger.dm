@@ -9,7 +9,7 @@
 		return 1
 	return 0
 
-/obj/item/computer_hardware/recharger/process()
+/obj/item/computer_hardware/recharger/process(seconds_per_tick)
 	..()
 	var/obj/item/computer_hardware/battery/battery_module = holder.all_components[MC_CELL]
 	if(!holder || !battery_module || !battery_module.battery)
@@ -55,7 +55,7 @@
 /obj/item/computer_hardware/recharger/wired/can_install(obj/item/modular_computer/M, mob/living/user = null)
 	if(ismachinery(M.physical) && M.physical.anchored)
 		return ..()
-	to_chat(user, "<span class='warning'>\The [src] is incompatible with portable computers!</span>")
+	to_chat(user, span_warning("\The [src] is incompatible with portable computers!"))
 	return 0
 
 /obj/item/computer_hardware/recharger/wired/use_power(amount, charging=0)

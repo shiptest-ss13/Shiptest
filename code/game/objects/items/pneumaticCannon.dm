@@ -29,7 +29,7 @@
 	var/list/allowed_typecache		//Leave as null to allow all.
 	var/charge_amount = 1
 	var/charge_ticks = 1
-	var/charge_tick = 0
+	var/charge_timer = 0
 	var/charge_type
 	var/selfcharge = FALSE
 	var/fire_sound = 'sound/weapons/sonic_jackhammer.ogg'
@@ -45,8 +45,8 @@
 /obj/item/pneumatic_cannon/proc/init_charge()	//wrapper so it can be vv'd easier
 	START_PROCESSING(SSobj, src)
 
-/obj/item/pneumatic_cannon/process()
-	if(++charge_tick >= charge_ticks && charge_type)
+/obj/item/pneumatic_cannon/process(seconds_per_tick)
+	if(++charge_timer >= charge_ticks && charge_type)
 		fill_with_type(charge_type, charge_amount)
 
 /obj/item/pneumatic_cannon/Destroy()
@@ -60,13 +60,13 @@
 	. = ..()
 	var/list/out = list()
 	if(!in_range(user, src))
-		out += "<span class='notice'>You'll need to get closer to see any more.</span>"
+		out += span_notice("You'll need to get closer to see any more.")
 		return
 	for(var/obj/item/I in loadedItems)
-		out += "<span class='info'>[icon2html(I, user)] It has \a [I] loaded.</span>"
+		out += span_info("[icon2html(I, user)] It has \a [I] loaded.")
 		CHECK_TICK
 	if(tank)
-		out += "<span class='notice'>[icon2html(tank, user)] It has \a [tank] mounted onto it.</span>"
+		out += span_notice("[icon2html(tank, user)] It has \a [tank] mounted onto it.")
 	. += out.Join("\n")
 
 /obj/item/pneumatic_cannon/attackby(obj/item/W, mob/user, params)
@@ -76,11 +76,11 @@
 		if(!tank)
 			var/obj/item/tank/internals/IT = W
 			if(IT.volume <= 3)
-				to_chat(user, "<span class='warning'>\The [IT] is too small for \the [src].</span>")
+				to_chat(user, span_warning("\The [IT] is too small for \the [src]."))
 				return
 			updateTank(W, 0, user)
 	else if(W.type == type)
-		to_chat(user, "<span class='warning'>You're fairly certain that putting a pneumatic cannon inside another pneumatic cannon would cause a spacetime disruption.</span>")
+		to_chat(user, span_warning("You're fairly certain that putting a pneumatic cannon inside another pneumatic cannon would cause a spacetime disruption."))
 	else if(W.tool_behaviour == TOOL_WRENCH)
 		switch(pressureSetting)
 			if(1)
@@ -89,12 +89,12 @@
 				pressureSetting = 3
 			if(3)
 				pressureSetting = 1
-		to_chat(user, "<span class='notice'>You tweak \the [src]'s pressure output to [pressureSetting].</span>")
+		to_chat(user, span_notice("You tweak \the [src]'s pressure output to [pressureSetting]."))
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(tank)
 			updateTank(tank, 1, user)
 	else if(loadedWeightClass >= maxWeightClass)
-		to_chat(user, "<span class='warning'>\The [src] can't hold any more items!</span>")
+		to_chat(user, span_warning("\The [src] can't hold any more items!"))
 	else if(isitem(W))
 		var/obj/item/IW = W
 		load_item(IW, user)
@@ -104,15 +104,15 @@
 		return TRUE
 	if(allowed_typecache && !is_type_in_typecache(I, allowed_typecache))
 		if(user)
-			to_chat(user, "<span class='warning'>[I] won't fit into [src]!</span>")
+			to_chat(user, span_warning("[I] won't fit into [src]!"))
 		return
 	if((loadedWeightClass + I.w_class) > maxWeightClass)	//Only make messages if there's a user
 		if(user)
-			to_chat(user, "<span class='warning'>\The [I] won't fit into \the [src]!</span>")
+			to_chat(user, span_warning("\The [I] won't fit into \the [src]!"))
 		return FALSE
 	if(I.w_class > w_class)
 		if(user)
-			to_chat(user, "<span class='warning'>\The [I] is too large to fit into \the [src]!</span>")
+			to_chat(user, span_warning("\The [I] is too large to fit into \the [src]!"))
 		return FALSE
 	return TRUE
 
@@ -122,7 +122,7 @@
 	if(user)		//Only use transfer proc if there's a user, otherwise just set loc.
 		if(!user.transferItemToLoc(I, src))
 			return FALSE
-		to_chat(user, "<span class='notice'>You load \the [I] into \the [src].</span>")
+		to_chat(user, span_notice("You load \the [I] into \the [src]."))
 	else
 		I.forceMove(src)
 	loadedItems += I
@@ -147,17 +147,17 @@
 	if(!can_trigger_gun(user))
 		return
 	if(!loadedItems || !loadedWeightClass)
-		to_chat(user, "<span class='warning'>\The [src] has nothing loaded.</span>")
+		to_chat(user, span_warning("\The [src] has nothing loaded."))
 		return
 	if(!tank && checktank)
-		to_chat(user, "<span class='warning'>\The [src] can't fire without a source of gas.</span>")
+		to_chat(user, span_warning("\The [src] can't fire without a source of gas."))
 		return
 	if(tank && !tank.air_contents.remove(gasPerThrow * pressureSetting))
-		to_chat(user, "<span class='warning'>\The [src] lets out a weak hiss and doesn't react!</span>")
+		to_chat(user, span_warning("\The [src] lets out a weak hiss and doesn't react!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(75) && clumsyCheck && iscarbon(user))
 		var/mob/living/carbon/C = user
-		C.visible_message("<span class='warning'>[C] loses [C.p_their()] grip on [src], causing it to go off!</span>", "<span class='userdanger'>[src] slips out of your hands and goes off!</span>")
+		C.visible_message(span_warning("[C] loses [C.p_their()] grip on [src], causing it to go off!"), span_userdanger("[src] slips out of your hands and goes off!"))
 		C.dropItemToGround(src, TRUE)
 		if(prob(10))
 			target = get_turf(user)
@@ -167,8 +167,8 @@
 		discharge = 1
 	if(!discharge)
 		user.visible_message(
-			"<span class='danger'>[user] fires \the [src]!</span>",
-			"<span class='danger'>You fire \the [src]!</span>"
+			span_danger("[user] fires \the [src]!"),
+			span_danger("You fire \the [src]!")
 		)
 	log_combat(user, target, "fired at", src)
 	var/turf/T = get_target(target, get_turf(src))
@@ -176,7 +176,7 @@
 	fire_items(T, user)
 	if(pressureSetting >= 3 && iscarbon(user))
 		var/mob/living/carbon/C = user
-		C.visible_message("<span class='warning'>[C] is thrown down by the force of the cannon!</span>", "<span class='userdanger'>[src] slams into your shoulder, knocking you down!</span>")
+		C.visible_message(span_warning("[C] is thrown down by the force of the cannon!"), span_userdanger("[src] slams into your shoulder, knocking you down!"))
 		C.Paralyze(60)
 
 /obj/item/pneumatic_cannon/proc/fire_items(turf/target, mob/user)
@@ -242,17 +242,17 @@
 	if(removing)
 		if(!tank)
 			return
-		to_chat(user, "<span class='notice'>You detach \the [thetank] from \the [src].</span>")
+		to_chat(user, span_notice("You detach \the [thetank] from \the [src]."))
 		tank.forceMove(user.drop_location())
 		user.put_in_hands(tank)
 		tank = null
 	if(!removing)
 		if(tank)
-			to_chat(user, "<span class='warning'>\The [src] already has a tank.</span>")
+			to_chat(user, span_warning("\The [src] already has a tank."))
 			return
 		if(!user.transferItemToLoc(thetank, src))
 			return
-		to_chat(user, "<span class='notice'>You hook \the [thetank] up to \the [src].</span>")
+		to_chat(user, span_notice("You hook \the [thetank] up to \the [src]."))
 		tank = thetank
 	update_appearance()
 
@@ -326,23 +326,3 @@
 /obj/item/pneumatic_cannon/speargun/Initialize()
 	. = ..()
 	allowed_typecache = magspear_typecache
-
-/obj/item/storage/backpack/magspear_quiver
-	name = "quiver"
-	desc = "A quiver for holding magspears."
-	icon_state = "quiver"
-	item_state = "quiver"
-
-/obj/item/storage/backpack/magspear_quiver/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 20
-	STR.max_combined_w_class = 40
-	STR.display_numerical_stacking = TRUE
-	STR.set_holdable(list(
-		/obj/item/throwing_star/magspear
-		))
-
-/obj/item/storage/backpack/magspear_quiver/PopulateContents()
-	for(var/i in 1 to 20)
-		new /obj/item/throwing_star/magspear(src)

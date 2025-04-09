@@ -8,8 +8,8 @@
 	. = ..()
 	if(!microwaved_type) // This isn't cooked, why would you put uncooked spaghetti in your pocket?
 		var/list/display_message = list(
-			"<span class='notice'>Something wet falls out of their pocket and hits the ground. Is that... [name]?</span>",
-			"<span class='warning'>Oh shit! All your pocket [name] fell out!</span>")
+			span_notice("Something wet falls out of their pocket and hits the ground. Is that... [name]?"),
+			span_warning("Oh shit! All your pocket [name] fell out!"))
 		AddComponent(/datum/component/spill, display_message, 'sound/effects/splat.ogg')
 
 /obj/item/food/spaghetti/raw
@@ -29,14 +29,14 @@
 
 /obj/item/food/spaghetti/pastatomato
 	name = "spaghetti"
-	desc = "Spaghetti and crushed tomatoes. Just like your abusive father used to make!"
+	desc = "Spaghetti and crushed tomatoes, almost as tangled as Miskilamo's wiring!"
 	icon_state = "pastatomato"
 	trash_type = /obj/item/trash/plate
 	bite_consumption = 4
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/tomatojuice = 10, /datum/reagent/consumable/nutriment/vitamin = 4)
 	microwaved_type = null
 	tastes = list("pasta" = 1, "tomato" = 1)
-	foodtypes = GRAIN | VEGETABLES
+	foodtypes = GRAIN | FRUIT
 
 /obj/item/food/spaghetti/copypasta
 	name = "copypasta"

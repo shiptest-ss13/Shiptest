@@ -9,26 +9,25 @@ GLOBAL_LIST_INIT(summoned_guns, list(
 	/obj/item/gun/energy/e_gun,
 	/obj/item/gun/energy/e_gun/advtaser,
 	/obj/item/gun/energy/laser,
-	/obj/item/gun/ballistic/revolver/syndicate,
+	/obj/item/gun/ballistic/revolver/viper,
 	/obj/item/gun/ballistic/revolver/detective,
-	/obj/item/gun/ballistic/automatic/pistol/deagle/camo,
 	/obj/item/gun/ballistic/automatic/gyropistol,
 	/obj/item/gun/energy/pulse,
-	/obj/item/gun/ballistic/automatic/pistol/syndicate,
+	/obj/item/gun/ballistic/automatic/pistol/ringneck,
 	/obj/item/gun/ballistic/shotgun/doublebarrel,
 	/obj/item/gun/ballistic/shotgun,
-	/obj/item/gun/ballistic/shotgun/automatic/combat,
-	/obj/item/gun/ballistic/automatic/assault/p16,
+	/obj/item/gun/ballistic/shotgun/automatic/m11,
+	/obj/item/gun/ballistic/automatic/m15,
 	/obj/item/gun/ballistic/revolver/mateba,
 	/obj/item/gun/ballistic/rifle/illestren,
 	/obj/item/pneumatic_cannon/speargun,
 	/obj/item/gun/energy/lasercannon,
 	/obj/item/gun/energy/kinetic_accelerator/crossbow/large,
 	/obj/item/gun/energy/e_gun/nuclear,
-	/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto,
-	/obj/item/gun/ballistic/automatic/smg/c20r,
-	/obj/item/gun/ballistic/automatic/hmg/l6_saw,
-	/obj/item/gun/ballistic/automatic/smg/m90,
+	/obj/item/gun/ballistic/automatic/smg/skm_carbine/saber,
+	/obj/item/gun/ballistic/automatic/smg/cobra,
+	/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended,
+	/obj/item/gun/ballistic/automatic/assault/hydra,
 	/obj/item/gun/energy/alien,
 	/obj/item/gun/energy/e_gun/dragnet,
 	/obj/item/gun/energy/e_gun/turret,
@@ -39,10 +38,10 @@ GLOBAL_LIST_INIT(summoned_guns, list(
 	/obj/item/gun/energy/plasmacutter/adv,
 	/obj/item/gun/energy/wormhole_projector,
 	/obj/item/gun/ballistic/automatic/smg/wt550,
-	/obj/item/gun/ballistic/shotgun/bulldog,
+	/obj/item/gun/ballistic/shotgun/automatic/bulldog,
 	/obj/item/gun/ballistic/revolver/grenadelauncher,
 	/obj/item/gun/ballistic/revolver/golden,
-	/obj/item/gun/ballistic/automatic/marksman/sniper_rifle,
+	/obj/item/gun/ballistic/automatic/marksman/taipan,
 	/obj/item/gun/ballistic/rocketlauncher,
 	/obj/item/gun/medbeam,
 	/obj/item/gun/energy/laser/scatter,
@@ -70,11 +69,11 @@ GLOBAL_VAR_INIT(summon_guns_triggered, FALSE)
 
 	var/in_hand = H.put_in_hands(G) // not always successful
 
-	to_chat(H, "<span class='warning'>\A [G] appears [in_hand ? "in your hand" : "at your feet"]!</span>")
+	to_chat(H, span_warning("\A [G] appears [in_hand ? "in your hand" : "at your feet"]!"))
 
 /proc/rightandwrong(mob/user, survivor_probability)
 	if(user) //in this case someone is a badmin
-		to_chat(user, "<span class='warning'>You summoned guns!</span>")
+		to_chat(user, span_warning("You summoned guns!"))
 		message_admins("[ADMIN_LOOKUPFLW(user)] summoned guns!")
 		log_game("[key_name(user)] summoned guns!")
 

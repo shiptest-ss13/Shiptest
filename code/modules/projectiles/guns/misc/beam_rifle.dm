@@ -28,9 +28,11 @@
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/beam_rifle/hitscan)
-	internal_cell = FALSE //prevents you from giving it an OP cell - WS Edit //shut up dumb nerd
-	mag_size = MAG_SIZE_LARGE
-	cell_type = "/obj/item/stock_parts/cell/gun/large"
+	internal_magazine = FALSE //prevents you from giving it an OP cell - WS Edit //shut up dumb nerd
+	default_ammo_type = /obj/item/stock_parts/cell/gun/large
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/large,
+	)
 	canMouseDown = TRUE
 	var/aiming = FALSE
 	var/aiming_time = 12
@@ -78,7 +80,10 @@
 
 /obj/item/gun/energy/beam_rifle/debug
 	delay = 0
-	cell_type = /obj/item/stock_parts/cell/infinite
+	default_ammo_type = /obj/item/stock_parts/cell/infinite
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/infinite,
+	)
 	aiming_time = 0
 	recoil = 0
 
@@ -101,13 +106,13 @@
 			zoom_lock = 0
 		switch(zoom_lock)
 			if(ZOOM_LOCK_AUTOZOOM_FREEMOVE)
-				to_chat(user, "<span class='boldnotice'>You switch [src]'s zooming processor to free directional.</span>")
+				to_chat(user, span_boldnotice("You switch [src]'s zooming processor to free directional."))
 			if(ZOOM_LOCK_AUTOZOOM_ANGLELOCK)
-				to_chat(user, "<span class='boldnotice'>You switch [src]'s zooming processor to locked directional.</span>")
+				to_chat(user, span_boldnotice("You switch [src]'s zooming processor to locked directional."))
 			if(ZOOM_LOCK_CENTER_VIEW)
-				to_chat(user, "<span class='boldnotice'>You switch [src]'s zooming processor to center mode.</span>")
+				to_chat(user, span_boldnotice("You switch [src]'s zooming processor to center mode."))
 			if(ZOOM_LOCK_OFF)
-				to_chat(user, "<span class='boldnotice'>You disable [src]'s zooming system.</span>")
+				to_chat(user, span_boldnotice("You disable [src]'s zooming system."))
 		reset_zooming()
 	else
 		..()
@@ -148,7 +153,7 @@
 
 /obj/item/gun/energy/beam_rifle/unique_action(mob/living/user)
 	projectile_setting_pierce = !projectile_setting_pierce
-	to_chat(user, "<span class='boldnotice'>You set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode.</span>")
+	to_chat(user, span_boldnotice("You set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode."))
 	aiming_beam()
 
 /obj/item/gun/energy/beam_rifle/proc/update_slowdown()
@@ -201,10 +206,11 @@
 		if(!istype(curloc))
 			return
 		targloc = get_turf_in_angle(lastangle, curloc, 10)
-	P.preparePixelProjectile(targloc, current_user, current_user.client.mouseParams, 0)
+	var/mouse_modifiers = params2list(current_user.client.mouseParams)
+	P.preparePixelProjectile(targloc, current_user, mouse_modifiers, 0)
 	P.fire(lastangle)
 
-/obj/item/gun/energy/beam_rifle/process()
+/obj/item/gun/energy/beam_rifle/process(seconds_per_tick)
 	if(!aiming)
 		last_process = world.time
 		return
@@ -394,7 +400,8 @@
 		firing_dir = BB.firer.dir
 	if(!BB.suppressed && firing_effect_type)
 		new firing_effect_type(get_turf(src), firing_dir)
-	BB.preparePixelProjectile(target, user, params, spread)
+	var/modifiers = params2list(params)
+	BB.preparePixelProjectile(target, user, modifiers, spread)
 	BB.fire(gun? gun.lastangle : null, null)
 	BB = null
 	return TRUE
@@ -438,7 +445,7 @@
 	new /obj/effect/temp_visual/explosion/fast(epicenter)
 	for(var/mob/living/L in range(aoe_mob_range, epicenter))		//handle aoe mob damage
 		L.adjustFireLoss(aoe_mob_damage)
-		to_chat(L, "<span class='userdanger'>\The [src] sears you!</span>")
+		to_chat(L, span_userdanger("\The [src] sears you!"))
 	for(var/turf/T in range(aoe_fire_range, epicenter))		//handle aoe fire
 		if(prob(aoe_fire_chance))
 			new /obj/effect/hotspot(T)
@@ -477,7 +484,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		L.adjustFireLoss(impact_direct_damage)
-		L.emote("scream")
+		L.force_scream()
 
 /obj/projectile/beam/beam_rifle/proc/handle_hit(atom/target, piercing_hit = FALSE)
 	set waitfor = FALSE

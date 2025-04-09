@@ -7,7 +7,11 @@
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	opacity = FALSE
+	pass_flags_self = LETPASSTHROW
+	flags_1 = ON_BORDER_1
 	var/table_type = /obj/structure/table
+	climbable = TRUE
+	climb_time = 1.5 SECONDS
 
 /obj/structure/flippedtable/Initialize()
 	. = ..()
@@ -19,7 +23,7 @@
 
 /obj/structure/flippedtable/examine(mob/user)
 	. = ..()
-	. += span_notice("You could right the [name] by control shift-clicking it.")
+	. += span_notice("You could right the [name] by <b>Control Shift-Clicking</b> it.")
 
 /obj/structure/flippedtable/proc/check_dir()
 	if(dir == NORTHEAST || dir == SOUTHEAST)
@@ -53,6 +57,8 @@
 		if(istype(exiter) && (exiter.pass_flags & PASSGLASS))
 			return
 	if(istype(exiter, /obj/projectile))
+		return
+	if(istype(exiter, /obj/item))
 		return
 	if(direction == table_dir)
 		exiter.Bump(src)

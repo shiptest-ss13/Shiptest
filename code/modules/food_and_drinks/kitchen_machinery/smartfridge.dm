@@ -12,6 +12,7 @@
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/smartfridge
+	integrity_failure = 0.4
 
 	var/max_n_of_items = 1500
 	var/allow_ai_retrieve = FALSE
@@ -37,10 +38,13 @@
 /obj/machinery/smartfridge/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: This unit can hold a maximum of <b>[max_n_of_items]</b> items.</span>"
+		. += span_notice("The status display reads: This unit can hold a maximum of <b>[max_n_of_items]</b> items.")
 
 /obj/machinery/smartfridge/update_icon_state()
-	if(machine_stat)
+	if(machine_stat & BROKEN)
+		icon_state = "[initial(icon_state)]-broken"
+		return ..()
+	else if(!powered())
 		icon_state = "[initial(icon_state)]-off"
 		return ..()
 
@@ -53,10 +57,8 @@
 			icon_state = "[initial(icon_state)]"
 		if(1 to 25)
 			icon_state = "[initial(icon_state)]1"
-		if(26 to 75)
+		if(26 to INFINITY)
 			icon_state = "[initial(icon_state)]2"
-		if(76 to INFINITY)
-			icon_state = "[initial(icon_state)]3"
 	return ..()
 
 /obj/machinery/smartfridge/update_overlays()
@@ -91,12 +93,12 @@
 	if(!machine_stat)
 
 		if(contents.len >= max_n_of_items)
-			to_chat(user, "<span class='warning'>\The [src] is full!</span>")
+			to_chat(user, span_warning("\The [src] is full!"))
 			return FALSE
 
 		if(accept_check(O))
 			load(O)
-			user.visible_message("<span class='notice'>[user] adds \the [O] to \the [src].</span>", "<span class='notice'>You add \the [O] to \the [src].</span>")
+			user.visible_message(span_notice("[user] adds \the [O] to \the [src]."), span_notice("You add \the [O] to \the [src]."))
 			updateUsrDialog()
 			if (visible_contents)
 				update_appearance()
@@ -116,23 +118,23 @@
 			if(loaded)
 				if(contents.len >= max_n_of_items)
 					user.visible_message(
-						"<span class='notice'>[user] loads \the [src] with \the [O].</span>", \
-						"<span class='notice'>You fill \the [src] with \the [O].</span>")
+						span_notice("[user] loads \the [src] with \the [O]."), \
+						span_notice("You fill \the [src] with \the [O]."))
 				else
 					user.visible_message(
-						"<span class='notice'>[user] loads \the [src] with \the [O].</span>", \
-						"<span class='notice'>You load \the [src] with \the [O].</span>")
+						span_notice("[user] loads \the [src] with \the [O]."), \
+						span_notice("You load \the [src] with \the [O]."))
 				if(O.contents.len > 0)
-					to_chat(user, "<span class='warning'>Some items are refused.</span>")
+					to_chat(user, span_warning("Some items are refused."))
 				if (visible_contents)
 					update_appearance()
 				return TRUE
 			else
-				to_chat(user, "<span class='warning'>There is nothing in [O] to put in [src]!</span>")
+				to_chat(user, span_warning("There is nothing in [O] to put in [src]!"))
 				return FALSE
 
 	if(user.a_intent != INTENT_HARM)
-		to_chat(user, "<span class='warning'>\The [src] smartly refuses [O].</span>")
+		to_chat(user, span_warning("\The [src] smartly refuses [O]."))
 		updateUsrDialog()
 		return FALSE
 	else
@@ -149,7 +151,7 @@
 	if(ismob(O.loc))
 		var/mob/M = O.loc
 		if(!M.transferItemToLoc(O, src))
-			to_chat(usr, "<span class='warning'>\the [O] is stuck to your hand, you cannot put it in \the [src]!</span>")
+			to_chat(usr, span_warning("\the [O] is stuck to your hand, you cannot put it in \the [src]!"))
 			return FALSE
 		else
 			return TRUE
@@ -204,7 +206,7 @@
 			var/desired = 0
 
 			if(!allow_ai_retrieve && isAI(usr))
-				to_chat(usr, "<span class='warning'>[src] does not seem to be configured to respect your authority!</span>")
+				to_chat(usr, span_warning("[src] does not seem to be configured to respect your authority!"))
 				return
 
 			if (params["amount"])
@@ -307,7 +309,7 @@
 	if(contents.len)
 		. += "drying_rack_filled"
 
-/obj/machinery/smartfridge/drying_rack/process()
+/obj/machinery/smartfridge/drying_rack/process(seconds_per_tick)
 	..()
 	if(drying)
 		if(rack_dry())//no need to update unless something got dried
@@ -366,7 +368,7 @@
 /obj/machinery/smartfridge/drinks/accept_check(obj/item/O)
 	if(!istype(O, /obj/item/reagent_containers) || (O.item_flags & ABSTRACT) || !O.reagents || !O.reagents.reagent_list.len)
 		return FALSE
-	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/food/condiment))
+	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/condiment))
 		return TRUE
 
 // ----------------------------
@@ -379,23 +381,6 @@
 	if(istype(O, /obj/item/reagent_containers/food/snacks/))
 		return TRUE
 	return FALSE
-
-// -------------------------------------
-// Xenobiology Slime-Extract Smartfridge
-// -------------------------------------
-/obj/machinery/smartfridge/extract
-	name = "smart slime extract storage"
-	desc = "A refrigerated storage unit for slime extracts."
-
-/obj/machinery/smartfridge/extract/accept_check(obj/item/O)
-	if(istype(O, /obj/item/slime_extract))
-		return TRUE
-	if(istype(O, /obj/item/slime_scanner))
-		return TRUE
-	return FALSE
-
-/obj/machinery/smartfridge/extract/preloaded
-	initial_contents = list(/obj/item/slime_scanner = 2)
 
 // -------------------------
 // Organ Surgery Smartfridge
@@ -422,20 +407,29 @@
 /obj/machinery/smartfridge/organ/RefreshParts()
 	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
 		max_n_of_items = 20 * B.rating
-		repair_rate = max(0, STANDARD_ORGAN_HEALING * (B.rating - 1))
+		repair_rate = max(0, STANDARD_ORGAN_HEALING * (B.rating - 1) * 0.5)
 
-/obj/machinery/smartfridge/organ/process()
+/obj/machinery/smartfridge/organ/process(seconds_per_tick)
 	for(var/organ in contents)
 		var/obj/item/organ/O = organ
 		if(!istype(O))
 			return
-		O.applyOrganDamage(-repair_rate)
+		O.applyOrganDamage(-repair_rate * seconds_per_tick)
 
 /obj/machinery/smartfridge/organ/Exited(atom/movable/AM, atom/newLoc)
 	. = ..()
 	if(isorgan(AM))
 		var/obj/item/organ/O = AM
 		O.organ_flags &= ~ORGAN_FROZEN
+
+/obj/machinery/smartfridge/organ/preloaded
+	initial_contents = list(
+		/obj/item/organ/stomach = 2,
+		/obj/item/organ/lungs = 1,
+		/obj/item/organ/liver = 2,
+		/obj/item/organ/eyes = 2,
+		/obj/item/organ/heart = 2,
+		/obj/item/organ/ears = 2)
 
 // -----------------------------
 // Chemistry Medical Smartfridge

@@ -265,7 +265,7 @@
 		/datum/reagent/consumable/milk = 1,
 		/datum/reagent/consumable/cherryjelly = 5,
 		/obj/item/stock_parts/cell/super =1,
-		/obj/item/melee/sabre = 1
+		/obj/item/melee/sword/sabre = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/powercrepe
 	subcategory = CAT_MISCFOOD
@@ -358,7 +358,7 @@
 /datum/crafting_recipe/food/vegetariansushiroll
 	name = "Vegetarian sushi roll"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
 		/obj/item/reagent_containers/food/snacks/grown/potato = 1
@@ -369,7 +369,7 @@
 /datum/crafting_recipe/food/onigiri
 	name = "Onigiri"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/onigiri

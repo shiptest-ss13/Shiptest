@@ -1,12 +1,12 @@
 /obj/item/gun/energy/laser
 	name = "SL L-204 laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
-
-	icon_state = "laser"
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=2000)
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/sharplite)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
 	supports_variations = VOX_VARIATION
@@ -16,12 +16,12 @@
 	spread_unwielded = 10
 
 /obj/item/gun/energy/laser/empty_cell
-	dead_cell = TRUE
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	desc = "A modified version of the L-204 laser gun, this one fires less concentrated energy bolts designed for target practice."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice/sharplite)
 	item_flags = NONE
 
 /obj/item/gun/energy/laser/retro
@@ -31,10 +31,10 @@
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "retro"
+	item_state = "laser"
 	desc = "An antiquated model of the basic lasergun, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
 	ammo_x_offset = 3
 	manufacturer = MANUFACTURER_SHARPLITE
-
 
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
@@ -43,7 +43,7 @@
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "caplaser"
-	item_state = null
+	item_state = "caplaser"
 	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. All craftsmanship is of the highest quality. It is decorated with ashdrake leather and chrome. The gun menaces with spikes of energy. On the item is an image of a space station. The station is exploding."
 	force = 10
 	ammo_x_offset = 3
@@ -60,7 +60,7 @@
 /obj/item/gun/energy/laser/captain/scattershot
 	name = "scatter shot laser rifle"
 	desc = "An industrial-grade heavy-duty laser rifle with a modified laser lens to scatter its shot into multiple smaller lasers. The inner-core can self-charge for theoretically infinite use."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
 	shaded_charge = FALSE
 
 /obj/item/gun/energy/laser/cyborg
@@ -74,8 +74,8 @@
 
 /obj/item/gun/energy/laser/scatter
 	name = "scatter laser gun"
-	desc = "A laser gun equipped with a refraction kit that spreads bolts."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
+	desc = "A laser gun mimicking the function of a shotgun, manufactured with an adjustable lens capable of projecting scattershot or slugs."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser/slug)
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/laser/scatter/shotty
@@ -94,16 +94,28 @@
 	name = "accelerator laser cannon"
 	desc = "An advanced laser cannon that does more damage the farther away the target is."
 	icon_state = "lasercannon"
-	item_state = "laser"
+	item_state = "lasercannon"
 	w_class = WEIGHT_CLASS_BULKY
-	mag_size = MAG_SIZE_LARGE
-	cell_type = "/obj/item/stock_parts/cell/gun/large"
+	default_ammo_type = /obj/item/stock_parts/cell/gun/large
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/large,
+	)
 	force = 10
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/accelerator)
 	ammo_x_offset = 3
 	manufacturer = MANUFACTURER_SHARPLITE
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
 
 /obj/item/ammo_casing/energy/laser/accelerator
 	projectile_type = /obj/projectile/beam/laser/accelerator
@@ -129,6 +141,7 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
 	ammo_x_offset = 3
+	w_class = WEIGHT_CLASS_BULKY
 
 ////////Laser Tag////////////////////
 
@@ -170,8 +183,8 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
+	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
@@ -203,62 +216,16 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 4
-	mag_size = MAG_SIZE_SMALL
-	w_class = WEIGHT_CLASS_NORMAL
-	cell_type = /obj/item/stock_parts/cell/gun/mini
+	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/mini,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/hitscan)
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
+	. = ..()
 	if(in_range(src, user) || isobserver(user))
-		. = list("<span class='notice'>You examine [src] closer. Under the grip is a small inscription: \"NT CN SVALINN 462\".</span>")
+		. += span_notice("You examine [src] closer. Under the grip is a small inscription: \"NT CN SVALINN 462\".")
 	else
-		. = list("<span class='warning'>You try to examine [src] closer, but you're too far away.</span>")
-
-/obj/item/gun/energy/laser/e10
-	name = "E-10 laser pistol"
-	desc = "A very old laser weapon. Despite the extreme age of some of these weapons, they are sometimes preferred to newer, mass-produced Nanotrasen laser weapons."
-	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
-	icon_state = "e10"
-	w_class = WEIGHT_CLASS_SMALL
-
-	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
-
-	spread = 2
-	spread_unwielded = 5
-
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma)
-	manufacturer = MANUFACTURER_EOEHOMA
-
-/obj/item/gun/energy/laser/e50
-	name = "E-50 energy emitter"
-	desc = "A heavy and extremely powerful laser. Sets targets on fire and kicks ass, but it uses a massive amount of energy per shot and is generally awkward to handle."
-
-	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/eoehoma/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/eoehoma/onmob.dmi'
-	icon_state = "e50"
-	item_state = "e50"
-
-	mag_size = MAG_SIZE_LARGE
-	cell_type = /obj/item/stock_parts/cell/gun/large
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
-	weapon_weight = WEAPON_HEAVY
-	manufacturer = MANUFACTURER_EOEHOMA
-
-	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
-	spread_unwielded = 20
-
-	shaded_charge = FALSE
-	ammo_x_offset = 4
-	charge_sections = 2
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = 0
-
-
+		. += span_warning("You try to examine [src] closer, but you're too far away.")

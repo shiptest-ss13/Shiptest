@@ -52,3 +52,7 @@
 /obj/effect/projectile/impact/pgf/rifle
 	name = "beam impact"
 	icon_state = "impact_pgf_rifle"
+
+/obj/effect/projectile/impact/gauss
+	name = "gauss impact"
+	icon_state = "hc_gauss"

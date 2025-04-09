@@ -34,7 +34,7 @@
 
 /obj/item/multitool/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Its buffer [buffer ? "contains [buffer]." : "is empty."]</span>"
+	. += span_notice("Its buffer [buffer ? "contains [buffer]." : "is empty."]")
 
 // Syndicate device disguised as a multitool; it will turn red when an AI camera is nearby.
 
@@ -76,7 +76,7 @@
 	if(hud_on)
 		remove_hud(user)
 
-/obj/item/multitool/ai_detect/process()
+/obj/item/multitool/ai_detect/process(seconds_per_tick)
 	if(track_cooldown > world.time)
 		return
 	detect_state = PROXIMITY_NONE
@@ -89,7 +89,7 @@
 /obj/item/multitool/ai_detect/proc/toggle_hud(mob/user)
 	hud_on = !hud_on
 	if(user)
-		to_chat(user, "<span class='notice'>You toggle the ai detection HUD on [src] [hud_on ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle the ai detection HUD on [src] [hud_on ? "on" : "off"]."))
 	if(hud_on)
 		show_hud(user)
 	else
@@ -170,10 +170,8 @@
 	toolspeed = 0.5
 
 /obj/item/multitool/syndie
-	name = "suspicious-looking multitool"
 	desc = "A darkened multitool with a matte finish and an ominous glowing screen."
 	icon_state = "multitool_syndie"
-	toolspeed = 0.5
 
 /obj/item/multitool/old
 	desc = "Used for pulsing wires to test which to cut. This one looks... 'retro'. It wasn't recommended by doctors then and won't be recommended by doctors now."

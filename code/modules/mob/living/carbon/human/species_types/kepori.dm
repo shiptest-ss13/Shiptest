@@ -9,7 +9,7 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = FRIED | GROSS | CLOTH
 	liked_food = MEAT | GORE
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
 	loreblurb = "Kepori are a species covered in feathers vaguely reminiscent of earth’s extinct troodontidae. They’re small and sometimes seen as weak by other species due to their hollow bones but make up for that in speed and reflexes. They tend to woop when excited, scared, or for any other reason at all."
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -18,12 +18,19 @@
 	species_eye_path = 'icons/mob/species/kepori/kepori_eyes.dmi'
 	heatmod = 0.67
 	coldmod = 1.5
-	brutemod = 1.5
-	burnmod = 1.5
-	speedmod = -0.25
-	bodytemp_normal = HUMAN_BODYTEMP_NORMAL + 30
-	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30
-	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 30
+	// brutemod = 1.5
+	// burnmod = 1.5
+	speedmod = -0.10
+
+	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 35
+	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT + 3
+
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 40
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
+
+	bodytemp_autorecovery_divisor = HUMAN_BODYTEMP_AUTORECOVERY_DIVISOR - 4
+
+
 	mutanttongue = /obj/item/organ/tongue/kepori
 	species_language_holder = /datum/language_holder/kepori
 	var/datum/action/innate/keptackle/keptackle
@@ -58,6 +65,9 @@
 	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/kepori
 
 	robotic_eyes = /obj/item/organ/eyes/robotic/kepori
+
+	//I'm not emotionally prepared to spend ten more hours splicing overlays together
+	damage_overlay_type = ""
 
 /datum/species/kepori/New()
 	. = ..()
@@ -123,14 +133,19 @@
 /datum/species/kepori/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, swap)
 	if(..()) //If it already fits, then it's fine.
 		return TRUE
-	if(slot == ITEM_SLOT_MASK)
-		if(H.wear_mask && !swap)
-			return FALSE
-		if(I.w_class > WEIGHT_CLASS_SMALL)
-			return FALSE
-		if(!H.get_bodypart(BODY_ZONE_HEAD))
-			return FALSE
-		return equip_delay_self_check(I, H, bypass_equip_delay_self)
+	if(slot != ITEM_SLOT_MASK)
+		return FALSE
+	//Blocks all items that are equippable to other slots. (block anything with a flag that ISN'T item_slot_mask)
+	if(I.slot_flags & ~ITEM_SLOT_KEPORI_BEAK)
+		return FALSE
+	if(H.wear_mask && !swap)
+		return FALSE
+	if(I.w_class > WEIGHT_CLASS_SMALL)
+		return FALSE
+	//ya ain't got no biters to put it in sir
+	if(!H.get_bodypart(BODY_ZONE_HEAD))
+		return FALSE
+	return H.equip_delay_self_check(I, bypass_equip_delay_self)
 
 /datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
@@ -168,8 +183,8 @@
 	var/datum/species/kepori/kep = H.dna.species
 	if(H.GetComponent(/datum/component/tackler))
 		qdel(H.GetComponent(/datum/component/tackler))
-		to_chat(H, "<span class='notice'>You relax, no longer ready to pounce.</span>")
+		to_chat(H, span_notice("You relax, no longer ready to pounce."))
 		return
 	H.AddComponent(/datum/component/tackler, stamina_cost= kep.tackle_stam_cost, base_knockdown= kep.base_knockdown, range= kep.tackle_range, speed= kep.tackle_speed, skill_mod= kep.skill_mod, min_distance= kep.min_distance)
-	H.visible_message("<span class='notice'>[H] gets ready to pounce!</span>", \
-		"<span class='notice'>You ready yourself to pounce!</span>", null, COMBAT_MESSAGE_RANGE)
+	H.visible_message(span_notice("[H] gets ready to pounce!"), \
+		span_notice("You ready yourself to pounce!"), null, COMBAT_MESSAGE_RANGE)

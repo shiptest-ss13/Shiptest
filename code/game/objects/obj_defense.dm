@@ -24,11 +24,8 @@
 /obj/proc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armour_penetration = 0)
 	if(damage_flag == "melee" && damage_amount < damage_deflection)
 		return 0
-	switch(damage_type)
-		if(BRUTE)
-		if(BURN)
-		else
-			return 0
+	if(damage_type != BRUTE && damage_type != BURN)
+		return 0
 	var/armor_protection = 0
 	if(damage_flag)
 		armor_protection = armor.getRating(damage_flag)
@@ -72,7 +69,7 @@
 	. = ..()
 	bullet_hit_sfx(hitting_projectile)
 	if(hitting_projectile.suppressed != SUPPRESSED_VERY)
-		visible_message("<span class='danger'>[src] is hit by \a [hitting_projectile]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_danger("[src] is hit by \a [hitting_projectile]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src)) //Bullet on_hit effect might have already destroyed this object
 		take_damage(hitting_projectile.damage, hitting_projectile.damage_type, hitting_projectile.flag, 0, turn(hitting_projectile.dir, 180), hitting_projectile.armour_penetration)
 
@@ -82,7 +79,7 @@
 
 /obj/attack_hulk(mob/living/carbon/human/user)
 	..()
-	user.visible_message("<span class='danger'>[user] smashes [src]!</span>", "<span class='danger'>You smash [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[user] smashes [src]!"), span_danger("You smash [src]!"), null, COMBAT_MESSAGE_RANGE)
 	if(density)
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
@@ -98,6 +95,18 @@
 /obj/attack_alien(mob/living/carbon/alien/humanoid/user)
 	if(attack_generic(user, 60, BRUTE, "melee", 0))
 		playsound(src.loc, 'sound/weapons/slash.ogg', 100, TRUE)
+
+/obj/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	if(!user.melee_damage_upper && !user.obj_damage) //No damage
+		user.emote("custom", message = "[user.friendly_verb_continuous] [src].")
+		return FALSE
+	else
+		if(user.obj_damage)
+			. = attack_generic(user, user.obj_damage, user.melee_damage_type, MELEE, TRUE, user.armour_penetration)
+		else
+			. = attack_generic(user, rand(user.melee_damage_lower,user.melee_damage_upper), user.melee_damage_type, MELEE,TRUE, user.armour_penetration)
+		if(.)
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 
 /obj/attack_animal(mob/living/simple_animal/M)
 	if(!M.melee_damage_upper && !M.obj_damage)
@@ -148,7 +157,7 @@
 				return 0
 			else
 				return 0
-	M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", "<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+	M.visible_message(span_danger("[M.name] hits [src]!"), span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
 	return take_damage(M.force*3, mech_damtype, "melee", play_soundeffect, get_dir(src, M)) // multiplied by 3 so we can hit objs hard but not be overpowered against mobs.
 
 /obj/singularity_act()
@@ -244,6 +253,8 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 ///the obj is deconstructed into pieces, whether through careful disassembly or when destroyed.
 /obj/proc/deconstruct(disassembled = TRUE)
+	if(resistance_flags & INDESTRUCTIBLE) //really sod off
+		return
 	SEND_SIGNAL(src, COMSIG_OBJ_DECONSTRUCT, disassembled)
 	qdel(src)
 
@@ -253,6 +264,8 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 ///what happens when the obj's integrity reaches zero.
 /obj/proc/obj_destruction(damage_flag)
+	if(resistance_flags & INDESTRUCTIBLE) //sod off
+		return
 	if(damage_flag == "acid")
 		acid_melt()
 	else if(damage_flag == "fire")

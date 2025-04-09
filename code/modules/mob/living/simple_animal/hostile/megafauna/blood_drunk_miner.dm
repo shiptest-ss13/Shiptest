@@ -41,8 +41,8 @@ Difficulty: Medium
 	ranged_cooldown_time = 16
 	pixel_x = -16
 	base_pixel_x = -16
-	//mob_trophy = /obj/item/mob_trophy/miner_eye
-	loot = list(/obj/item/melee/transforming/cleaving_saw, /obj/item/gun/energy/kinetic_accelerator)
+	mob_trophy = /obj/item/mob_trophy/miner_eye
+	loot = list(/obj/item/melee/cleaving_saw, /obj/item/gun/energy/kinetic_accelerator)
 	wander = FALSE
 	del_on_death = TRUE
 	blood_volume = BLOOD_VOLUME_NORMAL
@@ -50,7 +50,7 @@ Difficulty: Medium
 	achievement_type = /datum/award/achievement/boss/blood_miner_kill
 	crusher_achievement_type = /datum/award/achievement/boss/blood_miner_crusher
 	score_achievement_type = /datum/award/score/blood_miner_score
-	var/obj/item/melee/transforming/cleaving_saw/miner/miner_saw
+	var/obj/item/melee/cleaving_saw/miner/miner_saw
 	var/time_until_next_transform = 0
 	var/dashing = FALSE
 	var/dash_cooldown = 15
@@ -72,21 +72,21 @@ Difficulty: Medium
 	name = "Dash To Target"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	chosen_message = "<span class='colossus'>You are now dashing to your target.</span>"
+	chosen_message = span_colossus("You are now dashing to your target.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/kinetic_accelerator
 	name = "Fire Kinetic Accelerator"
 	icon_icon = 'icons/obj/guns/energy.dmi'
 	button_icon_state = "kineticgun"
-	chosen_message = "<span class='colossus'>You are now shooting your kinetic accelerator.</span>"
+	chosen_message = span_colossus("You are now shooting your kinetic accelerator.")
 	chosen_attack_num = 2
 
 /datum/action/innate/megafauna_attack/transform_weapon
 	name = "Transform Weapon"
 	icon_icon = 'icons/obj/lavaland/artefacts.dmi'
 	button_icon_state = "cleaving_saw"
-	chosen_message = "<span class='colossus'>You are now transforming your weapon.</span>"
+	chosen_message = span_colossus("You are now transforming your weapon.")
 	chosen_attack_num = 3
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/OpenFire()
@@ -107,11 +107,11 @@ Difficulty: Medium
 		shoot_ka()
 	transform_weapon()
 
-/obj/item/melee/transforming/cleaving_saw/miner //nerfed saw because it is very murdery
+/obj/item/melee/cleaving_saw/miner //nerfed saw because it is very murdery
 	force = 6
-	force_on = 10
+	active_force = 10
 
-/obj/item/melee/transforming/cleaving_saw/miner/attack(mob/living/target, mob/living/carbon/human/user)
+/obj/item/melee/cleaving_saw/miner/attack(mob/living/target, mob/living/carbon/human/user)
 	target.add_stun_absorption("miner", 10, INFINITY)
 	..()
 	target.stun_absorption -= "miner"
@@ -156,8 +156,8 @@ Difficulty: Medium
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.stat == DEAD)
-			visible_message("<span class='danger'>[src] butchers [L]!</span>",
-			"<span class='userdanger'>You butcher [L], restoring your health!</span>")
+			visible_message(span_danger("[src] butchers [L]!"),
+			span_userdanger("You butcher [L], restoring your health!"))
 			if(guidance)
 				adjustHealth(-L.maxHealth)
 			else
@@ -188,7 +188,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/shoot_ka()
 	if(ranged_cooldown <= world.time && get_dist(src, target) <= MINER_DASH_RANGE && !Adjacent(target))
 		ranged_cooldown = world.time + ranged_cooldown_time
-		visible_message("<span class='danger'>[src] fires the proto-kinetic accelerator!</span>")
+		visible_message(span_danger("[src] fires the proto-kinetic accelerator!"))
 		face_atom(target)
 		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
 		Shoot(target)
@@ -248,14 +248,12 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/transform_weapon()
 	if(time_until_next_transform <= world.time)
 		miner_saw.transform_cooldown = 0
-		miner_saw.transform_weapon(src, TRUE)
-		if(!miner_saw.active)
-			rapid_melee = 5 // 4 deci cooldown before changes, npcpool subsystem wait is 20, 20/4 = 5
-		else
-			rapid_melee = 3 // same thing but halved (slightly rounded up)
+		miner_saw.attack_self(src)
+		var/saw_open = HAS_TRAIT(miner_saw, TRAIT_TRANSFORM_ACTIVE)
+		rapid_melee = saw_open ? 3 : 5
 		transform_stop_attack = TRUE
-		icon_state = "miner[miner_saw.active ? "_transformed":""]"
-		icon_living = "miner[miner_saw.active ? "_transformed":""]"
+		icon_state = "miner[saw_open ? "_transformed":""]"
+		icon_living = "miner[saw_open ? "_transformed":""]"
 		time_until_next_transform = world.time + rand(50, 100)
 
 /obj/effect/temp_visual/dir_setting/miner_death

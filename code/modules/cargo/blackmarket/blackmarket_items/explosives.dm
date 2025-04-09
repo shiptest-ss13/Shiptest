@@ -97,18 +97,6 @@
 	stock_max = 7
 	availability_prob = 50
 
-/datum/blackmarket_item/explosive/rpg
-	name = "PML-9 RPG"
-	desc = "Offically, it's an anti-armor RPG launcher. Technically, it's anti-everything. Most things don't enjoy being hit in the face with high explosives."
-	item = /obj/item/gun/ballistic/rocketlauncher
-
-	price_min = 3500
-	price_max = 6500
-	stock_min = 2
-	stock_max = 5
-	availability_prob = 10
-	spawn_weighting = FALSE
-
 /datum/blackmarket_item/explosive/live_bomb
 	name = "Active ICW Era Ordinance"
 	desc = "Look, I won't mince words. This thing is counting down and I don't want to be the next causualty of ICW after it's already ended. I'll sell it to you real cheap."

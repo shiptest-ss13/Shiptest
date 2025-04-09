@@ -14,7 +14,7 @@ SUBSYSTEM_DEF(weather)
 /datum/controller/subsystem/weather/fire()
 	// process active weather controllers
 	for(var/datum/weather_controller/iterated_controller as anything in weather_controllers)
-		iterated_controller.process()
+		iterated_controller.process(wait * 0.1)
 
 /datum/controller/subsystem/weather/proc/get_all_current_weather()
 	var/list/returned_weathers = list()

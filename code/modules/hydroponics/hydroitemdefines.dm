@@ -1,35 +1,3 @@
-// Plant analyzer
-/obj/item/plant_analyzer
-	name = "plant analyzer"
-	desc = "A scanner used to evaluate a plant's various areas of growth, chemical contents, and genetic traits."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "hydro"
-	item_state = "analyzer"
-	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
-	w_class = WEIGHT_CLASS_TINY
-	slot_flags = ITEM_SLOT_BELT
-	custom_materials = list(/datum/material/iron=30, /datum/material/glass=20)
-	var/scan_mode = PLANT_SCANMODE_STATS
-
-/obj/item/plant_analyzer/attack_self(mob/user)
-	. = ..()
-	scan_mode = !scan_mode
-	to_chat(user, "<span class='notice'>You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents" : "scan for plant growth statistics and traits"].</span>")
-
-/obj/item/plant_analyzer/attack(mob/living/M, mob/living/carbon/human/user)
-	//Checks if target is a podman
-	if(ispodperson(M))
-		user.visible_message("<span class='notice'>[user] analyzes [M]'s vitals.</span>", \
-							"<span class='notice'>You analyze [M]'s vitals.</span>")
-		if(scan_mode == PLANT_SCANMODE_STATS)
-			healthscan(user, M, advanced = TRUE)
-		else
-			chemscan(user, M)
-		add_fingerprint(user)
-		return
-	return ..()
-
 // *************************************
 // Hydroponics Tools
 // *************************************
@@ -59,7 +27,7 @@
 /obj/item/cultivator
 	name = "cultivator"
 	desc = "It's used for removing weeds or scratching your back."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "cultivator"
 	item_state = "cultivator"
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
@@ -100,13 +68,13 @@
 		H.Stun(20)
 		playsound(src, 'sound/weapons/punch4.ogg', 50, TRUE)
 		H.visible_message(
-			"<span class='warning'>[H] steps on [src] causing the handle to hit [H.p_them()] right in the face!</span>", \
-			"<span class='userdanger'>You step on [src] causing the handle to hit you right in the face!</span>")
+			span_warning("[H] steps on [src] causing the handle to hit [H.p_them()] right in the face!"), \
+			span_userdanger("You step on [src] causing the handle to hit you right in the face!"))
 
 /obj/item/hatchet
 	name = "hatchet"
 	desc = "A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/weapon/axe.dmi'
 	icon_state = "hatchet"
 	item_state = "hatchet"
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
@@ -179,11 +147,13 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(1,2,5,10,15,25,50)
+	var/auto_scatter = TRUE
 
 /obj/item/reagent_containers/glass/bottle/nutrient/Initialize()
 	. = ..()
-	pixel_x = base_pixel_x + rand(-5, 5)
-	pixel_y = base_pixel_y + rand(-5, 5)
+	if(auto_scatter)
+		pixel_x = base_pixel_x + rand(-5, 5)
+		pixel_y = base_pixel_y + rand(-5, 5)
 
 
 /obj/item/reagent_containers/glass/bottle/nutrient/ez

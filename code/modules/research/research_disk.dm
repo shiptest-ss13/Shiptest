@@ -23,17 +23,6 @@
 	. = ..()
 	stored_research = new /datum/techweb/admin
 
-/obj/item/disk/tech_disk/major
-	name = "Reformatted technology disk"
-	desc = "A disk containing a new, completed tech from the B.E.P.I.S. Upload the disk to an R&D Console to redeem the tech."
-	color = "#FFBAFF"
-	illustration = "bepis"
-	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
-
-/obj/item/disk/tech_disk/major/Initialize()
-	. = ..()
-	stored_research = new /datum/techweb/bepis
-
 /obj/item/research_notes
 	name = "research notes"
 	desc = "Valuable scientific data. Use it in a research console to scan it."
@@ -58,7 +47,7 @@
 
 /obj/item/research_notes/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is worth [value] research points.</span>"
+	. += span_notice("It is worth [value] research points.")
 
 /// proc that changes name and icon depending on value
 /obj/item/research_notes/proc/change_vol()

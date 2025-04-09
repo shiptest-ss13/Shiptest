@@ -1,32 +1,4 @@
-
-
 /mob/living/carbon/monkey
-
-
-/mob/living/carbon/monkey/Life()
-	set invisibility = 0
-
-	if (notransform)
-		return
-
-	if(..() && !IS_IN_STASIS(src))
-
-		if(!client)
-			if(stat == CONSCIOUS)
-				if(on_fire || buckled || HAS_TRAIT(src, TRAIT_RESTRAINED) || (pulledby && pulledby.grab_state > GRAB_PASSIVE))
-					if(!resisting && prob(MONKEY_RESIST_PROB))
-						resisting = TRUE
-						walk_to(src,0)
-						execute_resist()
-				else if(resisting)
-					resisting = FALSE
-				else if((mode == MONKEY_IDLE && !pickupTarget && !prob(MONKEY_SHENANIGAN_PROB)) || !handle_combat())
-					if(prob(25) && (mobility_flags & MOBILITY_MOVE) && isturf(loc) && !pulledby)
-						step(src, pick(GLOB.cardinals))
-					else if(prob(1))
-						emote(pick("scratch","jump","roll","tail"))
-			else
-				walk_to(src,0)
 
 /mob/living/carbon/monkey/handle_mutations_and_radiation()
 	if(radiation)
@@ -34,10 +6,10 @@
 			if(!IsParalyzed())
 				emote("collapse")
 			Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
-			to_chat(src, "<span class='danger'>You feel weak.</span>")
+			to_chat(src, span_danger("You feel weak."))
 		if(radiation > RAD_MOB_MUTATE)
 			if(prob(1))
-				to_chat(src, "<span class='danger'>You mutate!</span>")
+				to_chat(src, span_danger("You mutate!"))
 				easy_randmut(NEGATIVE+MINOR_NEGATIVE)
 				emote("gasp")
 				domutcheck()

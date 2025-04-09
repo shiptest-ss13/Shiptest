@@ -121,13 +121,13 @@
 			!(locate(/obj/structure/table/optable) in src.loc) && \
 			!(locate(/obj/item/storage/bag/tray) in src.loc) \
 		)
-		to_chat(user, "<span class='warning'>You cannot slice [src] here! You need a table or at least a tray.</span>")
+		to_chat(user, span_warning("You cannot slice [src] here! You need a table or at least a tray."))
 		return FALSE
 	if(tool.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message("<span class='notice'>[user] starts filleting \the [src].</span>", "<span class='notice'>You start filleting \the [src]...</span>", "<span class='hear'>You hear the sound of a sharp object slicing meat.</span>")
+		user.visible_message(span_notice("[user] starts filleting \the [src]."), span_notice("You start filleting \the [src]..."), span_hear("You hear the sound of a sharp object slicing meat."))
 		if(do_after(user, 30, target = src))
-			to_chat(user, "<span class='notice'>You fillet the [src].</span>")
+			to_chat(user, span_notice("You fillet the [src]."))
 			new fillet_type(loc, 1)
 		qdel(src)
 
@@ -213,11 +213,11 @@
 	else
 		stop_flopping()
 
-/obj/item/fish/process(delta_time)
+/obj/item/fish/process(seconds_per_tick)
 	if(in_stasis || status != FISH_ALIVE)
 		return
 
-	process_health(delta_time)
+	process_health(seconds_per_tick)
 	if(ready_to_reproduce())
 		try_to_reproduce()
 
@@ -261,7 +261,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/fish/proc/process_health(delta_time)
+/obj/item/fish/proc/process_health(seconds_per_tick)
 	var/health_change_per_second = 0
 
 	if(!proper_environment())
@@ -386,6 +386,6 @@
 			if(initial(fish.available_in_random_cases) || !case_fish_only)
 				chance_table[fish] = initial(fish.random_case_rarity)
 		probability_table[argkey] = chance_table
-	return pickweight(probability_table[argkey])
+	return pick_weight(probability_table[argkey])
 
 

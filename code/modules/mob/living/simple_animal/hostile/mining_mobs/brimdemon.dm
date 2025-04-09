@@ -37,7 +37,7 @@
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
 	light_power = 5
 	light_range = 1.4
-	//mob_trophy = /obj/item/mob_trophy/brimdemon_fang
+	mob_trophy = /obj/item/mob_trophy/brimdemon_fang
 	/// Are we charging/firing? If yes stops our movement.
 	var/firing = FALSE
 	/// A list of all the beam parts.
@@ -84,11 +84,11 @@
 /mob/living/simple_animal/hostile/asteroid/brimdemon/OpenFire()
 	if(firing)
 		balloon_alert(src, "already firing!")
-		to_chat(src, "<span class='warning'>You're already firing!.</span>")
+		to_chat(src, span_warning("You're already firing!."))
 		return
 	if(!COOLDOWN_FINISHED(src, ranged_cooldown))
 		balloon_alert(src, "on cooldown!")
-		to_chat(src, "<span class='warning'>You're on cooldown!.</span>")
+		to_chat(src, span_warning("You're on cooldown!."))
 		return
 	firing = TRUE
 	set_dir_on_move = FALSE
@@ -97,7 +97,7 @@
 	add_overlay("brimdemon_telegraph_dir")
 	visible_message(span_danger("[src] starts charging!"))
 	balloon_alert(src, "charging...")
-	to_chat(src, "<span class='warning'>You begin to charge up...</span>")
+	to_chat(src, span_warning("You begin to charge up..."))
 	fire_laser()
 	COOLDOWN_START(src, ranged_cooldown, ranged_cooldown_time)
 
@@ -184,7 +184,7 @@
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/effect/brimbeam/process()
+/obj/effect/brimbeam/process(seconds_per_tick)
 	for(var/mob/living/hit_mob in get_turf(src))
 		damage(hit_mob)
 
@@ -225,7 +225,7 @@
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
 
-/obj/item/ore_sensor/process(delta_time)
+/obj/item/ore_sensor/process(seconds_per_tick)
 	if(!COOLDOWN_FINISHED(src, ore_sensing_cooldown))
 		return
 	COOLDOWN_START(src, ore_sensing_cooldown, cooldown)
@@ -239,10 +239,10 @@
 	taste_description = "sulfurous flame"
 	can_synth = TRUE
 
-/datum/reagent/brimdust/on_mob_life(mob/living/carbon/carbon, delta_time, times_fired)
+/datum/reagent/brimdust/on_mob_life(mob/living/carbon/carbon, seconds_per_tick, times_fired)
 	. = ..()
-	carbon.adjustFireLoss((ispodperson(carbon) ? -1 : 1) * delta_time)
-	carbon.adjust_bodytemperature(55 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, carbon.get_body_temp_normal())
+	carbon.adjustFireLoss((ispodperson(carbon) ? -1 : 1) * seconds_per_tick)
+	carbon.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, carbon.get_body_temp_normal())
 
 /datum/reagent/brimdust/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
 	. = ..()

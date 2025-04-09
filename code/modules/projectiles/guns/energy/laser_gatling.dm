@@ -17,12 +17,14 @@
 	var/overheat = 0
 	var/overheat_max = 40
 	var/heat_diffusion = 1
+	var/spawn_with_gun = TRUE
 
 /obj/item/minigunpack/Initialize()
 	. = ..()
-	gun = new(src)
 	battery = new(src)
-	gun.cell = battery
+	if(spawn_with_gun)
+		gun = new(src)
+		gun.cell = battery
 	START_PROCESSING(SSobj, src)
 
 /obj/item/minigunpack/Destroy()
@@ -33,7 +35,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/minigunpack/process()
+/obj/item/minigunpack/process(seconds_per_tick)
 	overheat = max(0, overheat - heat_diffusion)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
@@ -44,12 +46,12 @@
 				armed = 1
 				if(!user.put_in_hands(gun))
 					armed = 0
-					to_chat(user, "<span class='warning'>You need a free hand to hold the gun!</span>")
+					to_chat(user, span_warning("You need a free hand to hold the gun!"))
 					return
 				update_appearance()
 				user.update_inv_back()
 		else
-			to_chat(user, "<span class='warning'>You are already holding the gun!</span>")
+			to_chat(user, span_warning("You are already holding the gun!"))
 	else
 		..()
 
@@ -91,12 +93,14 @@
 	gun.forceMove(src)
 	armed = 0
 	if(user)
-		to_chat(user, "<span class='notice'>You attach the [gun.name] to the [name].</span>")
+		to_chat(user, span_notice("You attach the [gun.name] to the [name]."))
 	else
-		src.visible_message("<span class='warning'>The [gun.name] snaps back onto the [name]!</span>")
+		src.visible_message(span_warning("The [gun.name] snaps back onto the [name]!"))
 	update_appearance()
 	user.update_inv_back()
 
+/obj/item/minigunpack/no_gun
+	spawn_with_gun = FALSE
 
 /obj/item/gun/energy/minigun
 	name = "laser gatling gun"
@@ -116,7 +120,10 @@
 	custom_materials = null
 	weapon_weight = WEAPON_MEDIUM
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/minigun)
-	cell_type = /obj/item/stock_parts/cell/crap
+	default_ammo_type = /obj/item/stock_parts/cell/crap
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/crap,
+	)
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	can_charge = FALSE
 	var/obj/item/minigunpack/ammo_pack
@@ -147,7 +154,7 @@
 
 /obj/item/gun/energy/minigun/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(ammo_pack && ammo_pack.overheat >= ammo_pack.overheat_max)
-		to_chat(user, "<span class='warning'>The gun's heat sensor locked the trigger to prevent lens damage!</span>")
+		to_chat(user, span_warning("The gun's heat sensor locked the trigger to prevent lens damage!"))
 		return
 	..()
 	ammo_pack.overheat += burst_size
@@ -158,7 +165,7 @@
 
 /obj/item/gun/energy/minigun/afterattack(atom/target, mob/living/user, flag, params)
 	if(!ammo_pack || ammo_pack.loc != user)
-		to_chat(user, "<span class='warning'>You need the backpack power source to fire the gun!</span>")
+		to_chat(user, span_warning("You need the backpack power source to fire the gun!"))
 	. = ..()
 
 

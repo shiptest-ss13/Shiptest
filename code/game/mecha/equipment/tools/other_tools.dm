@@ -86,15 +86,15 @@
 		if(1)
 			if(!locked)
 				if(!istype(target) || target.anchored || target.move_resist >= MOVE_FORCE_EXTREMELY_STRONG)
-					occupant_message("<span class='warning'>Unable to lock on [target]!</span>")
+					occupant_message(span_warning("Unable to lock on [target]!"))
 					return
 				if(ismob(target))
 					var/mob/M = target
 					if(M.mob_negates_gravity())
-						occupant_message("<span class='warning'>Unable to lock on [target]!</span>")
+						occupant_message(span_warning("Unable to lock on [target]!"))
 						return
 				locked = target
-				occupant_message("<span class='notice'>Locked on [target].</span>")
+				occupant_message(span_notice("Locked on [target]."))
 				send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 			else if(target!=locked)
 				if(locked in view(chassis))
@@ -107,7 +107,7 @@
 					return TRUE
 				else
 					locked = null
-					occupant_message("<span class='notice'>Lock on [locked] disengaged.</span>")
+					occupant_message(span_notice("Lock on [locked] disengaged."))
 					send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 		if(2)
 			var/list/atoms = list()
@@ -151,8 +151,8 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster //what is that noise? A BAWWW from TK mutants.
-	name = "armor booster module (Close Combat Weaponry)"
-	desc = "Boosts exosuit armor against armed melee attacks. Requires energy to operate."
+	name = "applique armor (Close Combat Weaponry)"
+	desc = "Applique armor to protect civilian exosuits against armed melee attacks. Requires energy to operate. Cannot equip to combat mechs."
 	icon_state = "mecha_abooster_ccw"
 	equip_cooldown = 10
 	energy_drain = 50
@@ -166,11 +166,17 @@
 		start_cooldown()
 		return 1
 
+/obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster/can_attach(obj/mecha/M)
+	if(!..())
+		return FALSE
+	if(istype(M, /obj/mecha/working))
+		return TRUE
+	return FALSE
 
 
 /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
-	name = "armor booster module (Ranged Weaponry)"
-	desc = "Boosts exosuit armor against ranged attacks. Completely blocks taser shots. Requires energy to operate."
+	name = "applique armor (Ranged Weaponry)"
+	desc = "Applique armor to protect civilian exosuits against ranged attacks. Completely blocks taser shots. Requires energy to operate. Cannot equip to combat mechs."
 	icon_state = "mecha_abooster_proj"
 	equip_cooldown = 10
 	energy_drain = 50
@@ -184,6 +190,12 @@
 		start_cooldown()
 		return 1
 
+/obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster/can_attach(obj/mecha/M)
+	if(!..())
+		return FALSE
+	if(istype(M, /obj/mecha/working))
+		return TRUE
+	return FALSE
 
 ////////////////////////////////// REPAIR DROID //////////////////////////////////////////////////
 
@@ -239,12 +251,12 @@
 		send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
 
 
-/obj/item/mecha_parts/mecha_equipment/repair_droid/process()
+/obj/item/mecha_parts/mecha_equipment/repair_droid/process(seconds_per_tick)
 	if(!chassis)
 		STOP_PROCESSING(SSobj, src)
 		set_ready_state(1)
 		return
-	var/h_boost = health_boost
+	var/h_boost = health_boost * chassis.repair_multiplier
 	var/repaired = 0
 	if(chassis.internal_damage & MECHA_INT_SHORT_CIRCUIT)
 		h_boost *= -2
@@ -328,7 +340,7 @@
 	return "<span style=\"color:[equip_ready?"#0f0":"#f00"];\">*</span>&nbsp; [src.name] - <a href='?src=[REF(src)];toggle_relay=1'>[equip_ready?"A":"Dea"]ctivate</a>"
 
 
-/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay/process()
+/obj/item/mecha_parts/mecha_equipment/tesla_energy_relay/process(seconds_per_tick)
 	if(!chassis || chassis.internal_damage & MECHA_INT_SHORT_CIRCUIT)
 		STOP_PROCESSING(SSobj, src)
 		set_ready_state(1)
@@ -337,7 +349,7 @@
 	if(isnull(cur_charge) || !chassis.cell)
 		STOP_PROCESSING(SSobj, src)
 		set_ready_state(1)
-		occupant_message("<span class='notice'>No powercell detected.</span>")
+		occupant_message(span_notice("No powercell detected."))
 		return
 	if(cur_charge < chassis.cell.maxcharge)
 		var/area/A = get_area(chassis)
@@ -415,19 +427,19 @@
 			var/units = min(max(round(to_load / MINERAL_MATERIAL_AMOUNT),1),sheet_being_inserted.amount)
 			fuel.amount += units
 			sheet_being_inserted.use(units)
-			occupant_message("<span class='notice'>[units] unit\s of [fuel] successfully loaded.</span>")
+			occupant_message(span_notice("[units] unit\s of [fuel] successfully loaded."))
 			return units
 		else
-			occupant_message("<span class='notice'>Unit is full.</span>")
+			occupant_message(span_notice("Unit is full."))
 			return 0
 	else
-		occupant_message("<span class='warning'>[fuel] traces in target minimal! [sheet_being_inserted] cannot be used as fuel.</span>")
+		occupant_message(span_warning("[fuel] traces in target minimal! [sheet_being_inserted] cannot be used as fuel."))
 		return
 
 /obj/item/mecha_parts/mecha_equipment/generator/attackby(weapon,mob/user, params)
 	load_fuel(weapon)
 
-/obj/item/mecha_parts/mecha_equipment/generator/process()
+/obj/item/mecha_parts/mecha_equipment/generator/process(seconds_per_tick)
 	if(!chassis)
 		STOP_PROCESSING(SSobj, src)
 		set_ready_state(1)
@@ -440,7 +452,7 @@
 	var/cur_charge = chassis.get_charge()
 	if(isnull(cur_charge))
 		set_ready_state(1)
-		occupant_message("<span class='notice'>No powercell detected.</span>")
+		occupant_message(span_notice("No powercell detected."))
 		log_message("Deactivated.", LOG_MECHA)
 		STOP_PROCESSING(SSobj, src)
 		return
@@ -466,7 +478,7 @@
 /obj/item/mecha_parts/mecha_equipment/generator/nuclear/generator_init()
 	fuel = new /obj/item/stack/sheet/mineral/uranium(src, 0)
 
-/obj/item/mecha_parts/mecha_equipment/generator/nuclear/process()
+/obj/item/mecha_parts/mecha_equipment/generator/nuclear/process(seconds_per_tick)
 	if(..())
 		radiation_pulse(get_turf(src), rad_per_cycle)
 
@@ -483,7 +495,7 @@
 /obj/item/mecha_parts/mecha_equipment/thrusters/try_attach_part(mob/user, obj/mecha/M)
 	for(var/obj/item/I in M.equipment)
 		if(istype(I, src))
-			to_chat(user, "<span class='warning'>[M] already has this thruster package!</span>")
+			to_chat(user, span_warning("[M] already has this thruster package!"))
 			return FALSE
 	. = ..()
 
@@ -518,13 +530,13 @@
 	if (chassis.active_thrusters == src)
 		return
 	chassis.active_thrusters = src
-	occupant_message("<span class='notice'>[src] enabled.</span>")
+	occupant_message(span_notice("[src] enabled."))
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/proc/disable()
 	if(chassis.active_thrusters != src)
 		return
 	chassis.active_thrusters = null
-	occupant_message("<span class='notice'>[src] disabled.</span>")
+	occupant_message(span_notice("[src] disabled."))
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/get_equip_info()
 	return "[..()] \[<a href='?src=[REF(src)];mode=0'>Enable</a>|<a href='?src=[REF(src)];mode=1'>Disable</a>\]"
@@ -550,7 +562,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/gas/try_attach_part(mob/user, obj/mecha/M)
 	if(!M.internal_tank)
-		to_chat(user, "<span class='warning'>[M] does not have an internal tank and cannot support this upgrade!</span>")
+		to_chat(user, span_warning("[M] does not have an internal tank and cannot support this upgrade!"))
 		return FALSE
 	. = ..()
 
@@ -570,7 +582,6 @@
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion //for mechs with built-in thrusters, should never really exist un-attached to a mech
 	name = "Ion thruster package"
 	desc = "A set of thrusters that allow for exosuit movement in zero-gravity enviroments."
-	detachable = FALSE
 	salvageable = FALSE
 	effect_type = /obj/effect/particle_effect/ion_trails
 

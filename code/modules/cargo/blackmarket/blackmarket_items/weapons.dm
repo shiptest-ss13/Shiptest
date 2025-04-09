@@ -15,7 +15,7 @@
 /datum/blackmarket_item/weapon/bone_spear
 	name = "Bone Spear"
 	desc = "Authentic tribal spear, made from real bones! A steal at any price, especially if you're a caveman."
-	item = /obj/item/spear/bonespear
+	item = /obj/item/melee/spear/bone
 
 	price_min = 200
 	price_max = 300
@@ -25,12 +25,32 @@
 /datum/blackmarket_item/weapon/switchblade
 	name = "Switchblade"
 	desc = "Extra shrap switchblades for intimidation AND style. Bandages not included if you cut yourself."
-	item = /obj/item/kitchen/knife/switchblade
+	item = /obj/item/melee/knife/switchblade
 
 	price_min = 500
 	price_max = 700
 	stock_max = 3
 	availability_prob = 50
+
+/datum/blackmarket_item/weapon/fireaxe
+	name = "Fire Axe"
+	desc = "An incredibly sharp axe of reputable make, used by various engineers to settle arguments while hammered. Sold to us by a very friendly man in a suit."
+	item = /obj/item/melee/axe/fire
+
+	price_min = 1200
+	price_max = 2300
+	stock_max = 3
+	availability_prob = 40
+
+/datum/blackmarket_item/weapon/sledgehammer
+	name = "Breaching Sledgehammer"
+	desc = "A Clique outfit had to ditch a lot of equipment to evade a Gezenan assault. This little piece breaks legs and walls like no other. You want in?"
+	item = /obj/item/melee/sledgehammer/gorlex
+
+	price_min = 2000
+	price_max = 3000
+	stock_max = 3
+	availability_prob = 30
 
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
@@ -98,7 +118,7 @@
 	name = "Himehabu Pistol"
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
-	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag, /datum/blackmarket_item/ammo/himehabu_box)
+	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag)
 
 	price_min = 100
 	price_max = 600
@@ -120,8 +140,8 @@
 	desc = "Look. I'll be straight with you. These guns are awful. But, they are cheap if you're that desperate."
 	item = /obj/item/gun/energy/e_gun/e11
 
-	price_min = 250
-	price_max = 750
+	price_min = 200
+	price_max = 400
 	stock = 5
 	availability_prob = 60
 
@@ -129,7 +149,7 @@
 	name = "E-40 Hybrid Assault Rifle"
 	desc = "A dual mode hybrid assault rifle made by the now defunct Eoehoma Firearms. Capable of firing both bullets AND lasers, for the discerning dealer in death. Chambered in Eoehoma .299 Caseless."
 	item = /obj/item/gun/ballistic/automatic/assault/e40
-	pair_item = list(/datum/blackmarket_item/ammo/e40_mag, /datum/blackmarket_item/ammo/c299)
+	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
 
 	price_min = 7000
 	price_max = 10000
@@ -141,10 +161,21 @@
 	name = "E-50 Energy Emitter"
 	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
 	item = /obj/item/gun/energy/laser/e50
-	pair_item = (/datum/blackmarket_item/ammo/huge_weapon_cell)
+	pair_item = list(/datum/blackmarket_item/ammo/huge_weapon_cell)
 
 	price_min = 4000
 	price_max = 7000
+	stock_max = 2
+	availability_prob = 20
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/e50_underbarrel
+	name = "Underbarrel Energy Cannon"
+	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor<i> chance of painfully burning your hands."
+	item = /obj/item/attachment/gun/energy/e50
+
+	price_min = 4000
+	price_max = 5000
 	stock_max = 2
 	availability_prob = 20
 	spawn_weighting = FALSE
@@ -159,10 +190,43 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/weapon/cm23
+	name = "CM-23 pistol"
+	desc = "The service pistol of the Confederated League. Chambered in 10mm and fresh off a crashed clipper. We made sure to scratch the ID off this time."
+
+	item = /obj/item/gun/ballistic/automatic/pistol/cm23
+	pair_item = list(/datum/blackmarket_item/ammo/cm23_mag)
+	price_min = 500
+	price_max = 1500
+	stock_max = 4
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/cm70
+	name = "CM-70 Machine Pistol"
+	desc = "One slick piece from the Confederated League. Chambered in 9mm. That officer wasn't happy to lose this but you should be safe."
+
+	item = /obj/item/gun/ballistic/automatic/pistol/cm70
+	pair_item = list(/datum/blackmarket_item/ammo/cm70_mag)
+	price_min = 900
+	price_max = 2100
+	stock_max = 2
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/cm5
+	name = "CM-5 SMG"
+	desc = "Now isn't this a good find. A whole League sub-machinegun, chambered in 9mm. We're pretty sure no one is gonna notice the pallet of these missing."
+
+	item = /obj/item/gun/ballistic/automatic/smg/cm5
+	pair_item = list(/datum/blackmarket_item/ammo/cm5_mag)
+	price_min = 1750
+	price_max = 3500
+	stock_max = 2
+	availability_prob = 30
+
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
 	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
-	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/proto
+	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	pair_item = list(/datum/blackmarket_item/ammo/saber_mag)
 
 	price_min = 2250
@@ -180,6 +244,17 @@
 	stock = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/larker
+	name = "Model 13 \"Larker\""
+	desc = "Gotta deal for you broski. We got this mod of those shoddy Sporter Rifles an' you can buy one, or two, orreven three if yer int' that."
+	item = /obj/item/storage/guncase/m13
+
+	price_min = 500
+	price_max = 1200
+	stock_min = 3
+	stock_max = 5
+	availability_prob = 40
+
 /datum/blackmarket_item/weapon/sawn_illestren
 	name = "Sawn off Illestren Rifle"
 	desc = "We had to saw down the barrels on these to fit them in the smuggling compartment. They don't aim too good, but it still packs a good punch."
@@ -191,20 +266,10 @@
 	stock_max = 5
 	availability_prob = 60
 
-/datum/blackmarket_item/weapon/combat_shotgun
-	name = "Combat Shotgun"
-	desc = "Are your arms tired from pumping Hunter's Pride shotguns? This semi-automatic combat shotgun will make killing a breeze."
-	item = /obj/item/gun/ballistic/shotgun/automatic/combat
-
-	price_min = 1750
-	price_max = 3500
-	stock_max = 3
-	availability_prob = 40
-
 /datum/blackmarket_item/weapon/mecha_weapon_bay
 	name = "Concealed Weapons Bay"
-	desc = "Ripley with a laser cannon? Odysseus with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
-	item = /obj/item/mecha_parts/concealed_weapon_bay
+	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
+	item = /obj/item/mecha_parts/weapon_bay/concealed
 
 	price_min = 1000
 	price_max = 2000
@@ -214,7 +279,7 @@
 
 /datum/blackmarket_item/weapon/mecha_syringe_gun
 	name = "Mounted Syringe Gun"
-	desc = "We ripped this off an old Nanotrasen exosuit. It's a real advanced piece of equipment. Exosuit not included."
+	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
 	item = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
 
 	price_min = 5000
@@ -283,17 +348,6 @@
 	stock = 2
 	availability_prob = 25
 
-/datum/blackmarket_item/weapon/tec
-	name = "TEC-9 Machine Pistol"
-	desc = "Hallelujah! It's raining lead! This 9mm machine pistol is capable of spitting out bullets at rapid pace."
-	item = /obj/item/gun/ballistic/automatic/pistol/tec9
-	pair_item = list(/datum/blackmarket_item/ammo/tec_mag)
-
-	price_min = 1500
-	price_max = 2750
-	stock = 2
-	availability_prob = 35
-
 /datum/blackmarket_item/weapon/syringe_gun
 	name = "Dart Pistol"
 	desc = "A compact dart pistol, for clandestine poisoining from a distance."
@@ -303,6 +357,40 @@
 	price_max = 1500
 	stock = 2
 	availability_prob = 30
+
+/datum/blackmarket_item/weapon/mauler
+	name = "Mauler Machine Pistol"
+	desc = "This gun's got teeth! Twelve 9mm teeth to be exact. Hardly a full smile, and you'll be losing the rest pretty quick with this thing's rate of fire."
+	item = /obj/item/gun/ballistic/automatic/pistol/mauler
+	pair_item = list(/datum/blackmarket_item/ammo/mauler_mag)
+
+	price_min = 1000
+	price_max = 2000
+	stock_max = 3
+	availability_prob = 50
+
+/datum/blackmarket_item/weapon/spitter
+	name = "Spitter Submachine Gun"
+	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9mm."
+	item = /obj/item/gun/ballistic/automatic/pistol/spitter
+	pair_item = list(/datum/blackmarket_item/ammo/spitter_mag)
+
+	price_min = 1500
+	price_max = 2250
+	stock_min = 1
+	stock_max = 2
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/pounder
+	name = "Pounder Submachine Gun"
+	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
+	item = /obj/item/gun/ballistic/automatic/smg/pounder
+	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag)
+
+	price_min = 1500
+	price_max = 2000
+	stock = 1
+	availability_prob = 35
 
 /datum/blackmarket_item/weapon/polymer
 	name = "Polymer Survivor Rifle"
@@ -327,4 +415,35 @@
 	stock_max = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/weapon/oneshot
+	name = "Hammer Launcher"
+	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HE rocket. "
+	item = /obj/item/gun/ballistic/rocketlauncher/oneshot
 
+	price_min = 3000
+	price_max = 4500
+	stock_min = 1
+	stock_max = 5
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/oneshot/hedp
+	name = "Hammer-DP Launcher"
+	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
+	item = /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
+
+	price_min = 4000
+	price_max = 6000
+	stock_min = 1
+	stock_max = 5
+	availability_prob = 10
+
+/datum/blackmarket_item/weapon/skm_lmg
+	name = "SKM-24u Light Machinegun"
+	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machinegun, ready to blow away whatever you point it at. Increased firerate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
+	item = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
+
+	price_min = 5000
+	price_max = 7000
+	stock_max = 2
+	availability_prob = 15
+	spawn_weighting = FALSE

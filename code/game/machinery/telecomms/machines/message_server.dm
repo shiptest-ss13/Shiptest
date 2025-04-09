@@ -16,30 +16,33 @@
 	active_power_usage = ACTIVE_DRAW_MINIMAL
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
 	var/obj/item/stored
+	var/empty = FALSE
 
 /obj/machinery/blackbox_recorder/Initialize()
 	. = ..()
-	stored = new /obj/item/blackbox(src)
+	if(!empty)
+		stored = new /obj/item/blackbox(src)
+	update_appearance()
 
 /obj/machinery/blackbox_recorder/attack_hand(mob/living/user)
 	. = ..()
 	if(stored)
 		user.put_in_hands(stored)
 		stored = null
-		to_chat(user, "<span class='notice'>You remove the blackbox from [src]. The tapes stop spinning.</span>")
+		to_chat(user, span_notice("You remove the blackbox from [src]. The tapes stop spinning."))
 		update_appearance()
 		return
 	else
-		to_chat(user, "<span class='warning'>It seems that the blackbox is missing...</span>")
+		to_chat(user, span_warning("It seems that the blackbox is missing..."))
 		return
 
 /obj/machinery/blackbox_recorder/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/blackbox))
 		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
+			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return
-		user.visible_message("<span class='notice'>[user] clicks [I] into [src]!</span>", \
-		"<span class='notice'>You press the device into [src], and it clicks into place. The tapes begin spinning again.</span>")
+		user.visible_message(span_notice("[user] clicks [I] into [src]!"), \
+		span_notice("You press the device into [src], and it clicks into place. The tapes begin spinning again."))
 		playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 		stored = I
 		update_appearance()
@@ -110,7 +113,7 @@
 /obj/machinery/telecomms/message_server/examine(mob/user)
 	. = ..()
 	if(calibrating)
-		. += "<span class='warning'>It's still calibrating.</span>"
+		. += span_warning("It's still calibrating.")
 
 /obj/machinery/telecomms/message_server/proc/GenerateKey()
 	var/newKey
@@ -119,7 +122,7 @@
 	newKey += pick("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
 	return newKey
 
-/obj/machinery/telecomms/message_server/process()
+/obj/machinery/telecomms/message_server/process(seconds_per_tick)
 	. = ..()
 	if(calibrating && calibrating <= world.time)
 		calibrating = 0

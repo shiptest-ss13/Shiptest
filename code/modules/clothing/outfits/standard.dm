@@ -1,13 +1,3 @@
-/datum/outfit/centcom
-	name = "CentCom Base"
-
-/datum/outfit/centcom/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/implant/mindshield/L = new/obj/item/implant/mindshield(H)//hmm lets have centcom officials become revs
-	L.implant(H, null, 1)
-
 /datum/outfit/laser_tag
 	name = "Laser Tag Red"
 
@@ -59,50 +49,13 @@
 
 	var/obj/item/radio/R = H.ears
 	if(R)
-		R.set_frequency(FREQ_SYNDICATE)
+		R.set_frequency(FREQ_PIRATE)
 		R.freqlock = TRUE
 
 	var/obj/item/card/id/W = H.wear_id
 	if(W)
 		W.registered_name = H.real_name
 		W.update_label()
-
-/datum/outfit/centcom/commander
-	name = "CentCom Commander"
-
-	uniform = /obj/item/clothing/under/rank/centcom/commander
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	ears = /obj/item/radio/headset/headset_cent/commander
-	glasses = /obj/item/clothing/glasses/eyepatch
-	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
-	head = /obj/item/clothing/head/centcom_cap
-	belt = /obj/item/gun/ballistic/revolver/mateba
-	r_pocket = /obj/item/lighter
-	l_pocket = /obj/item/ammo_box/a357
-	back = /obj/item/storage/backpack/satchel/leather
-	id = /obj/item/card/id/centcom
-
-/datum/outfit/centcom/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	W.access = get_all_accesses()
-	W.access += get_centcom_access("CentCom Commander")
-	W.assignment = "CentCom Commander"
-	W.registered_name = H.real_name
-	W.update_label()
-	..()
-
-/datum/outfit/ghost_cultist
-	name = "Cultist Ghost"
-
-	uniform = /obj/item/clothing/under/color/black/ghost
-	suit = /obj/item/clothing/suit/hooded/cultrobes/alt/ghost
-	shoes = /obj/item/clothing/shoes/cult/alt/ghost
-	r_hand = /obj/item/melee/cultblade/ghost
 
 /datum/outfit/wizard
 	name = "Blue Wizard"
@@ -126,25 +79,6 @@
 	if(S)
 		S.owner = H
 
-/datum/outfit/wizard/apprentice
-	name = "Wizard Apprentice"
-	r_hand = null
-	l_hand = null
-	r_pocket = /obj/item/teleportation_scroll/apprentice
-
-/datum/outfit/wizard/red
-	name = "Red Wizard"
-
-	suit = /obj/item/clothing/suit/wizrobe/red
-	head = /obj/item/clothing/head/wizard/red
-
-/datum/outfit/wizard/weeb
-	name = "Marisa Wizard"
-
-	suit = /obj/item/clothing/suit/wizrobe/marisa
-	shoes = /obj/item/clothing/shoes/sandal/marisa
-	head = /obj/item/clothing/head/wizard/marisa
-
 /datum/outfit/plasmaman
 	name = "Plasmaman"
 
@@ -154,60 +88,6 @@
 	mask = /obj/item/clothing/mask/breath
 	gloves = /obj/item/clothing/gloves/color/plasmaman
 
-
-/datum/outfit/centcom/death_commando
-	name = "Death Commando"
-
-	uniform = /obj/item/clothing/under/rank/centcom/commander
-	suit = /obj/item/clothing/suit/space/hardsuit/deathsquad
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	glasses = /obj/item/clothing/glasses/hud/toggle/thermal
-	back = /obj/item/storage/backpack/security
-	l_pocket = /obj/item/melee/transforming/energy/sword/saber
-	r_pocket = /obj/item/shield/energy
-	suit_store = /obj/item/tank/internals/emergency_oxygen/double
-	belt = /obj/item/gun/ballistic/revolver/mateba
-	r_hand = /obj/item/gun/energy/pulse
-	id = /obj/item/card/id/ert/deathsquad
-	ears = /obj/item/radio/headset/headset_cent/alt
-
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/ammo_box/a357=1,\
-		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/storage/box/flashbangs=1,\
-		/obj/item/flashlight=1,\
-		/obj/item/grenade/c4/x4=1)
-
-/datum/outfit/centcom/death_commando/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CENTCOM)
-	R.freqlock = TRUE
-	var/obj/item/card/id/W = H.wear_id
-	W.access = get_all_accesses()//They get full station access.
-	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
-	W.assignment = "Death Commando"
-	W.registered_name = H.real_name
-	W.update_label()
-	..()
-
-/datum/outfit/centcom/death_commando/officer
-	name = "Death Commando Officer"
-	head = /obj/item/clothing/head/helmet/space/beret
-
-/datum/outfit/chrono_agent
-	name = "Timeline Eradication Agent"
-	uniform = /obj/item/clothing/under/color/white
-	suit = /obj/item/clothing/suit/space/chronos
-	back = /obj/item/chrono_eraser
-	head = /obj/item/clothing/head/helmet/space/chronos
-	mask = /obj/item/clothing/mask/breath
-	suit_store = /obj/item/tank/internals/oxygen
-
 /datum/outfit/debug //Debug objs plus hardsuit
 	name = "Debug outfit"
 	uniform = /obj/item/clothing/under/misc/patriotsuit
@@ -215,16 +95,16 @@
 	glasses = /obj/item/clothing/glasses/debug
 	ears = /obj/item/radio/headset/headset_cent/commander
 	mask = /obj/item/clothing/mask/gas/welding/up
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/combat/insul
 	belt = /obj/item/storage/belt/utility/chief/full
 	shoes = /obj/item/clothing/shoes/magboots/advance
 	id = /obj/item/card/id/debug
 	suit_store = /obj/item/tank/internals/oxygen
-	back = /obj/item/storage/backpack/holding
+	back = /obj/item/storage/backpack/holding/debug
 	box = /obj/item/storage/box/debugtools
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(
-		/obj/item/melee/transforming/energy/axe=1,\
+		/obj/item/melee/energy/axe=1,\
 		/obj/item/storage/part_replacer/bluespace/tier4=1,\
 		/obj/item/debug/human_spawner=1,\
 		/obj/item/debug/omnitool=1

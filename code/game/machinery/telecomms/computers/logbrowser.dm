@@ -166,7 +166,7 @@
 					temp = "<font color = #D70B00>- FAILED: CANNOT PROBE WHEN BUFFER FULL -</font color>"
 
 				else
-					for(var/obj/machinery/telecomms/server/T in urange(25, src))
+					for(var/obj/machinery/telecomms/server/T in urange(40, src))
 						if(T.network == network)
 							servers.Add(T)
 
@@ -180,7 +180,7 @@
 	if(href_list["delete"])
 
 		if(!src.allowed(usr) && !(obj_flags & EMAGGED))
-			to_chat(usr, "<span class='danger'>ACCESS DENIED.</span>")
+			to_chat(usr, span_danger("ACCESS DENIED."))
 			return
 
 		if(SelectedServer)

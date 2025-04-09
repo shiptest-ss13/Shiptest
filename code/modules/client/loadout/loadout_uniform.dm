@@ -19,43 +19,12 @@
 //Colored jumpsuits
 
 /datum/gear/uniform/color
-	subtype_path = /datum/gear/uniform/color
+	display_name = "jumpsuit, recolorable"
+	path = /obj/item/clothing/under/color
 
-/datum/gear/uniform/color/red
-	display_name = "jumpsuit, red"
-	path = /obj/item/clothing/under/color/red
-
-/datum/gear/uniform/color/green
-	display_name = "jumpsuit, green"
-	path = /obj/item/clothing/under/color/green
-
-/datum/gear/uniform/color/blue
-	display_name = "jumpsuit, blue"
-	path = /obj/item/clothing/under/color/blue
-
-/datum/gear/uniform/color/yellow
-	display_name = "jumpsuit, yellow"
-	path = /obj/item/clothing/under/color/yellow
-
-/datum/gear/uniform/color/pink
-	display_name = "jumpsuit, pink"
-	path = /obj/item/clothing/under/color/pink
-
-/datum/gear/uniform/color/black
-	display_name = "jumpsuit, black"
-	path = /obj/item/clothing/under/color/black
-
-/datum/gear/uniform/color/white
-	display_name = "jumpsuit, white"
-	path = /obj/item/clothing/under/color/white
-
-/datum/gear/uniform/color/random
-	display_name = "jumpsuit, random"
-	path = /obj/item/clothing/under/color/random //literally useless if grey assistants is off
-
-/datum/gear/uniform/color/rainbow
-	display_name = "jumpsuit, rainbow"
-	path = /obj/item/clothing/under/color/rainbow
+/datum/gear/uniform/color_skirt
+	display_name = "jumpskirt, recolorable"
+	path = /obj/item/clothing/under/color/jumpskirt
 
 //Shorts
 
@@ -180,46 +149,115 @@
 	display_name = "suit, checkered"
 	path = /obj/item/clothing/under/suit/checkered
 
+/datum/gear/uniform/suit/detective
+	display_name = "suit, hardworn"
+	path = /obj/item/clothing/under/rank/security/detective
+
+/datum/gear/uniform/suit/detective/skirt
+	display_name = "suitskirt, hardworn"
+	path =  /obj/item/clothing/under/rank/security/detective/skirt
+
+/datum/gear/uniform/suit/detective/grey
+	display_name = "suit, noir"
+	path = /obj/item/clothing/under/rank/security/detective/grey
+
+/datum/gear/uniform/suit/detective/grey/skirt
+	display_name = "suitskirt, noir"
+	path = /obj/item/clothing/under/rank/security/detective/grey/skirt
+
 // Dresses
 /datum/gear/uniform/dress
 	subtype_path = /datum/gear/uniform/dress
 
 /datum/gear/uniform/dress/sailor
-	display_name = "sailor dress"
+	display_name = "dress, sailor"
 	path = /obj/item/clothing/under/dress/sailor
 
 /datum/gear/uniform/dress/striped
-	display_name = "striped dress"
+	display_name = "dress, striped"
 	path = /obj/item/clothing/under/dress/striped
 
 /datum/gear/uniform/dress/redeveninggown
-	display_name = "red evening gown"
+	display_name = "dress, red evening gown"
 	path = /obj/item/clothing/under/dress/redeveninggown
 
 /datum/gear/uniform/dress/blacktango
-	display_name = "black tango dress"
+	display_name = "dress, black tango"
 	path = /obj/item/clothing/under/dress/blacktango
 
-/datum/gear/uniform/dress/purpleskirt
-	display_name = "purple skirt"
-	path = /obj/item/clothing/under/dress/skirt/purple
+/datum/gear/uniform/dress/one_shoulder_dress
 
-/datum/gear/uniform/dress/blueskirt
-	display_name = "blue skirt"
-	path = /obj/item/clothing/under/dress/skirt/blue
+	display_name = "dress, one shoulder"
+	path = /obj/item/clothing/under/dress/one_shoulder
 
-/datum/gear/uniform/dress/redskirt
-	display_name = "red skirt"
-	path = /obj/item/clothing/under/dress/skirt/red
+/datum/gear/uniform/dress/iko_ikssoal
 
-/datum/gear/uniform/dress/blackskirt
-	display_name = "black skirt"
-	path = /obj/item/clothing/under/dress/skirt
-	description = "Actually, it's a black blouse with a salmon skirt. But it's not called that."
+	display_name = "dress, iko-ikssoal"
+	path = /obj/item/clothing/under/dress/iko_ikssoal
+
+/datum/gear/uniform/dress/whitedress
+
+	display_name = "dress, white"
+	path = /obj/item/clothing/under/dress/white_dress
 
 /datum/gear/uniform/dress/sundress
-	display_name = "sundress"
+	display_name = "dress, sundress"
 	path = /obj/item/clothing/under/dress/sundress
+
+/datum/gear/uniform/dress/rilena
+	display_name = "dress, Ri cosplay"
+	path = /obj/item/clothing/under/dress/rilena
+
+/datum/gear/uniform/dress/purpleskirt
+	display_name = "skirt, purple"
+	path = /obj/item/clothing/under/dress/skirt/color/purple
+
+/datum/gear/uniform/dress/blueskirt
+	display_name = "skirt, blue"
+	path = /obj/item/clothing/under/dress/skirt/color/blue
+
+/datum/gear/uniform/dress/redskirt
+	display_name = "skirt, red"
+	path = /obj/item/clothing/under/dress/skirt/color/red
+
+/datum/gear/uniform/dress/whiteskirt
+
+	display_name = "skirt, white"
+	path = /obj/item/clothing/under/dress/skirt/color/white
+
+/datum/gear/uniform/dress/blackskirt
+	display_name = "skirt, black"
+	path = /obj/item/clothing/under/dress/skirt/color
+
+/datum/gear/uniform/dress/black_pinafore
+
+	display_name = "pinafore, black"
+	path = /obj/item/clothing/under/dress/skirt/pinafore
+
+/datum/gear/uniform/dress/maroon_pinafore
+
+	display_name = "pinafore, maroon"
+	path = /obj/item/clothing/under/dress/skirt/pinafore/maroon
+
+/datum/gear/uniform/dress/cerulean_pinafore
+
+	display_name = "pinafore, cerulean"
+	path = /obj/item/clothing/under/dress/skirt/pinafore/cerulean
+
+/datum/gear/uniform/dress/red_plaid_pinafore
+
+	display_name = "pinafore, red plaid"
+	path = /obj/item/clothing/under/dress/skirt/pinafore/plaid
+
+/datum/gear/uniform/dress/green_plaid_pinafore
+
+	display_name = "pinafore, green plaid"
+	path = /obj/item/clothing/under/dress/skirt/pinafore/plaid/green
+
+/datum/gear/uniform/dress/brown_plaid_pinafore
+
+	display_name = "pinafore, brown plaid"
+	path = /obj/item/clothing/under/dress/skirt/pinafore/plaid/brown
 
 /datum/gear/uniform/suit/dress_suit
 	display_name = "dress-suit, navy"
@@ -228,7 +266,3 @@
 /datum/gear/uniform/suit/dress_suit/skirt
 	display_name = "dress-suitskirt, navy"
 	path = /obj/item/clothing/under/suit/dresssuit/skirt
-
-/datum/gear/uniform/dress/rilena
-	display_name = "red dress, Ri cosplay"
-	path = /obj/item/clothing/under/dress/rilena

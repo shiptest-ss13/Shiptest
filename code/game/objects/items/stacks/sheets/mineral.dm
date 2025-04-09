@@ -26,7 +26,6 @@ Mineral Sheets
 GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	new/datum/stack_recipe("pile of dirt", /obj/machinery/hydroponics/soil, 3, time = 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("sandstone door", /obj/structure/mineral_door/sandstone, 10, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Assistant Statue", /obj/structure/statue/sandstone/assistant, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Breakdown into sand", /obj/item/stack/ore/glass, 1, one_per_turf = 0, on_floor = 1) \
 	))
 
@@ -74,14 +73,13 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 /obj/item/emptysandbag
 	name = "empty sandbag"
 	desc = "A bag to be filled with sand."
-	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sandbag"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/emptysandbag/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/ore/glass))
 		var/obj/item/stack/ore/glass/G = W
-		to_chat(user, "<span class='notice'>You fill the sandbag.</span>")
+		to_chat(user, span_notice("You fill the sandbag."))
 		var/obj/item/stack/sheet/mineral/sandbags/I = new /obj/item/stack/sheet/mineral/sandbags(drop_location())
 		qdel(src)
 		if (Adjacent(user) && !issilicon(user))
@@ -109,9 +107,6 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 GLOBAL_LIST_INIT(diamond_recipes, list ( \
 	new/datum/stack_recipe("diamond door", /obj/structure/mineral_door/transparent/diamond, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("diamond tile", /obj/item/stack/tile/mineral/diamond, 1, 4, 20),  \
-	new/datum/stack_recipe("Captain Statue", /obj/structure/statue/diamond/captain, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("AI Hologram Statue", /obj/structure/statue/diamond/ai1, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("AI Core Statue", /obj/structure/statue/diamond/ai2, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/diamond/get_main_recipes()
@@ -147,7 +142,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	new/datum/stack_recipe("uranium door", /obj/structure/mineral_door/uranium, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("uranium tile", /obj/item/stack/tile/mineral/uranium, 1, 4, 20), \
 	new/datum/stack_recipe("Nuke Statue", /obj/structure/statue/uranium/nuke, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Engineer Statue", /obj/structure/statue/uranium/eng, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/uranium/get_main_recipes()
@@ -187,7 +181,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	new/datum/stack_recipe("plasma door", /obj/structure/mineral_door/transparent/plasma, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("plasma tile", /obj/item/stack/tile/mineral/plasma, 1, 4, 20), \
-	new/datum/stack_recipe("Scientist Statue", /obj/structure/statue/plasma/scientist, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/plasma/get_main_recipes()
@@ -241,12 +234,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	new/datum/stack_recipe("chemical crate", /obj/structure/closet/crate/chem, 1, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("gold tile", /obj/item/stack/tile/mineral/gold, 1, 4, 20), \
 	new/datum/stack_recipe("blank plaque", /obj/item/plaque, 1), \
-	new/datum/stack_recipe("HoS Statue", /obj/structure/statue/gold/hos, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("HOP Statue", /obj/structure/statue/gold/head_of_personnel, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("CE Statue", /obj/structure/statue/gold/ce, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("RD Statue", /obj/structure/statue/gold/rd, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Simple Crown", /obj/item/clothing/head/crown, 5), \
-	new/datum/stack_recipe("CMO Statue", /obj/structure/statue/gold/cmo, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/gold/get_main_recipes()
@@ -258,7 +246,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	if(item.tool_behaviour != TOOL_WIRECUTTER)
 		return
 	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
+	to_chat(user, span_notice("You start whittling away some of [src]..."))
 	if(!do_after(user, 1 SECONDS, src))
 		return
 	var/obj/item/result = new /obj/item/garnish/gold(drop_location())
@@ -266,7 +254,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	use(1)
 	if(QDELETED(src) && give_to_user)
 		user.put_in_hands(result)
-	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
+	to_chat(user, span_notice("You finish cutting [src]"))
 
 /obj/item/stack/sheet/mineral/gold/fifty
 	amount = 50
@@ -297,11 +285,6 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 GLOBAL_LIST_INIT(silver_recipes, list ( \
 	new/datum/stack_recipe("silver door", /obj/structure/mineral_door/silver, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("silver tile", /obj/item/stack/tile/mineral/silver, 1, 4, 20), \
-	new/datum/stack_recipe("Med Officer Statue", /obj/structure/statue/silver/md, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Janitor Statue", /obj/structure/statue/silver/janitor, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Sec Officer Statue", /obj/structure/statue/silver/sec, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Sec Borg Statue", /obj/structure/statue/silver/secborg, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Med Borg Statue", /obj/structure/statue/silver/medborg, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/silver/get_main_recipes()
@@ -313,7 +296,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	if(item.tool_behaviour != TOOL_WIRECUTTER)
 		return
 	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
+	to_chat(user, span_notice("You start whittling away some of [src]..."))
 	if(!do_after(user, 1 SECONDS, src))
 		return
 	var/obj/item/result = new /obj/item/garnish/silver(drop_location())
@@ -321,7 +304,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	use(1)
 	if(QDELETED(src) && give_to_user)
 		user.put_in_hands(result)
-	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
+	to_chat(user, span_notice("You finish cutting [src]"))
 
 /obj/item/stack/sheet/mineral/silver/fifty
 	amount = 50

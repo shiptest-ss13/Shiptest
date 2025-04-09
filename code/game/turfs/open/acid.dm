@@ -49,7 +49,7 @@
 	if(melt_stuff(AM))
 		START_PROCESSING(SSobj, src)
 
-/turf/open/water/acid/process()
+/turf/open/water/acid/process(seconds_per_tick)
 	if(!melt_stuff())
 		STOP_PROCESSING(SSobj, src)
 
@@ -145,4 +145,4 @@
 
 /turf/open/water/acid/whitesands
 	planetary_atmos = TRUE
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS

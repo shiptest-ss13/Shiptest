@@ -21,33 +21,35 @@
 
 /obj/item/clothing/neck/tie
 	name = "tie"
-	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
-	unique_reskin = list("red tie" = "redtie",
-						"orange tie" = "orangetie",
-						"green tie" = "greentie",
-						"light blue tie" = "lightbluetie",
-						"blue tie" = "bluetie",
-						"purple tie" = "purpletie",
-						"black tie" = "blacktie",
-						"orange tie" = "orangetie",
-						"light blue tie" = "lightbluetie",
-						"purple tie" = "purpletie",
-						"green tie" = "greentie",
-						"brown tie" = "browntie",
-						"rainbow tie" = "rainbow_tie",
-						"horrible tie" = "horribletie",
-						"transgender tie" = "transgender",
-						"pansexual tie" = "pansexual",
-						"nonbinary tie" = "nonbinary",
-						"bisexual tie" = "bisexual",
-						"lesbian tie" = "lesbian",
-						"intersex tie" = "intersex",
-						"gay tie" = "gay",
-						"genderfluid tie" = "genderfluid",
-						"asexual tie" = "asexual",
-						"genderfae tie" = "genderfae",
-						"ally tie" = "ally_tie"
-						)
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned, but only once."
+	unique_reskin = list(
+		"red tie" = "redtie",
+		"orange tie" = "orangetie",
+		"green tie" = "greentie",
+		"light blue tie" = "lightbluetie",
+		"blue tie" = "bluetie",
+		"purple tie" = "purpletie",
+		"black tie" = "blacktie",
+		"orange tie" = "orangetie",
+		"light blue tie" = "lightbluetie",
+		"purple tie" = "purpletie",
+		"green tie" = "greentie",
+		"brown tie" = "browntie",
+		"rainbow tie" = "rainbow_tie",
+		"horrible tie" = "horribletie",
+		"transgender tie" = "transgender",
+		"pansexual tie" = "pansexual",
+		"nonbinary tie" = "nonbinary",
+		"bisexual tie" = "bisexual",
+		"lesbian tie" = "lesbian",
+		"intersex tie" = "intersex",
+		"gay tie" = "gay",
+		"genderfluid tie" = "genderfluid",
+		"asexual tie" = "asexual",
+		"genderfae tie" = "genderfae",
+		"ally tie" = "ally_tie"
+	)
+	unique_reskin_changes_name = TRUE
 	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
@@ -106,6 +108,7 @@
 	name = "maid neck cover"
 	desc = "A neckpiece for a maid costume, it smells faintly of disappointment."
 	icon_state = "maid_neck"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/neck/tie/trans
 	name = "transgender tie"
@@ -174,24 +177,24 @@
 		if(user.a_intent == INTENT_HELP)
 			var/body_part = parse_zone(user.zone_selected)
 
-			var/heart_strength = "<span class='danger'>no</span>"
-			var/lung_strength = "<span class='danger'>no</span>"
+			var/heart_strength = span_danger("no")
+			var/lung_strength = span_danger("no")
 
 			var/obj/item/organ/heart/heart = M.getorganslot(ORGAN_SLOT_HEART)
 			var/obj/item/organ/lungs/lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
 
 			if(!(M.stat == DEAD || (HAS_TRAIT(M, TRAIT_FAKEDEATH))))
 				if(heart && istype(heart))
-					heart_strength = "<span class='danger'>an unstable</span>"
+					heart_strength = span_danger("an unstable")
 					if(heart.beating)
 						heart_strength = "a healthy"
 				if(lungs && istype(lungs))
-					lung_strength = "<span class='danger'>strained</span>"
+					lung_strength = span_danger("strained")
 					if(!(M.failed_last_breath || M.losebreath))
 						lung_strength = "healthy"
 
 			var/diagnosis = (body_part == BODY_ZONE_CHEST ? "You hear [heart_strength] pulse and [lung_strength] respiration." : "You faintly hear [heart_strength] pulse.")
-			user.visible_message("<span class='notice'>[user] places [src] against [M]'s [body_part] and listens attentively.</span>", "<span class='notice'>You place [src] against [M]'s [body_part]. [diagnosis]</span>")
+			user.visible_message(span_notice("[user] places [src] against [M]'s [body_part] and listens attentively."), span_notice("You place [src] against [M]'s [body_part]. [diagnosis]"))
 			return
 	return ..(M,user)
 
@@ -199,68 +202,113 @@
 //SCARVES//
 ///////////
 
-/obj/item/clothing/neck/scarf //Default white color, same functionality as beanies.
-	name = "white scarf"
-	icon_state = "scarf"
+/obj/item/clothing/neck/scarf
+	name = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
-	dog_fashion = /datum/dog_fashion/head
+	icon = 'icons/obj/clothing/neck/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck/color.dmi'
+	icon_state = "scarfwhite"
+	item_state = "scarfwhite"
 	custom_price = 60
+	unique_reskin = list("white scarf" = "scarfwhite",
+						"grey scarf" = "scarfgrey",
+						"black scarf" = "scarfblack",
+						"red scarf" = "scarfred",
+						"maroon scarf" = "scarfmaroon",
+						"orange scarf" = "scarforange",
+						"yellow scarf" = "scarfyellow",
+						"green scarf" = "scarfgreen",
+						"dark green scarf" = "scarfdarkgreen",
+						"teal scarf" = "scarfteal",
+						"blue scarf" = "scarfblue",
+						"dark blue scarf" = "scarfdarkblue",
+						"purple scarf" = "scarfpurple",
+						"pink scarf" = "scarfpink",
+						"brown scarf" = "scarfbrown",
+						"light brown scarf" = "scarflightbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
+/obj/item/clothing/neck/scarf/white
+	name = "white scarf"
+	icon_state = "scarfwhite"
+	current_skin = "white scarf"
+
+/obj/item/clothing/neck/scarf/grey
+	name = "grey scarf"
+	icon_state = "scarfgrey"
+	current_skin = "grey scarf"
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"
-	icon_state = "scarf"
-	color = "#4A4A4B" //Grey but it looks black
-
-/obj/item/clothing/neck/scarf/pink
-	name = "pink scarf"
-	icon_state = "scarf"
-	color = "#F699CD" //Pink
+	icon_state = "scarfblack"
+	current_skin = "black scarf"
 
 /obj/item/clothing/neck/scarf/red
 	name = "red scarf"
-	icon_state = "scarf"
-	color = "#D91414" //Red
+	icon_state = "scarfred"
+	current_skin = "red scarf"
 
-/obj/item/clothing/neck/scarf/green
-	name = "green scarf"
-	icon_state = "scarf"
-	color = "#5C9E54" //Green
-
-/obj/item/clothing/neck/scarf/darkblue
-	name = "dark blue scarf"
-	icon_state = "scarf"
-	color = "#1E85BC" //Blue
-
-/obj/item/clothing/neck/scarf/purple
-	name = "purple scarf"
-	icon_state = "scarf"
-	color = "#9557C5" //Purple
-
-/obj/item/clothing/neck/scarf/yellow
-	name = "yellow scarf"
-	icon_state = "scarf"
-	color = "#E0C14F" //Yellow
+/obj/item/clothing/neck/scarf/maroon
+	name = "maroon scarf"
+	icon_state = "scarfmaroon"
+	current_skin = "maroon scarf"
 
 /obj/item/clothing/neck/scarf/orange
 	name = "orange scarf"
-	icon_state = "scarf"
-	color = "#C67A4B" //Orange
+	icon_state = "scarforange"
+	current_skin = "orange scarf"
 
-/obj/item/clothing/neck/scarf/cyan
-	name = "cyan scarf"
-	icon_state = "scarf"
-	color = "#54A3CE" //Cyan
+/obj/item/clothing/neck/scarf/yellow
+	name = "yellow scarf"
+	icon_state = "scarfyellow"
+	current_skin = "yellow scarf"
 
+/obj/item/clothing/neck/scarf/green
+	name = "green scarf"
+	icon_state = "scarfgreen"
+	current_skin = "green scarf"
 
-//Striped scarves get their own icons
+/obj/item/clothing/neck/scarf/darkgreen
+	name = "dark green scarf"
+	icon_state = "scarfdarkgreen"
+	current_skin = "dark green scarf"
 
-/obj/item/clothing/neck/scarf/zebra
-	name = "zebra scarf"
-	icon_state = "zebrascarf"
+/obj/item/clothing/neck/scarf/teal
+	name = "teal scarf"
+	icon_state = "scarfteal"
+	current_skin = "teal scarf"
 
-/obj/item/clothing/neck/scarf/christmas
-	name = "christmas scarf"
-	icon_state = "christmasscarf"
+/obj/item/clothing/neck/scarf/blue
+	name = "blue scarf"
+	icon_state = "scarfblue"
+	current_skin = "blue scarf"
+
+/obj/item/clothing/neck/scarf/darkblue
+	name = "dark blue scarf"
+	icon_state = "scarfdarkblue"
+	current_skin = "dark blue scarf"
+
+/obj/item/clothing/neck/scarf/purple
+	name = "purple scarf"
+	icon_state = "scarfpurple"
+	current_skin = "purple scarf"
+
+/obj/item/clothing/neck/scarf/pink
+	name = "scarf"
+	icon_state = "scarfpink"
+	current_skin = "pink scarf"
+
+/obj/item/clothing/neck/scarf/brown
+	name = "brown scarf"
+	icon_state = "scarfbrown"
+	current_skin = "brown scarf"
+
+/obj/item/clothing/neck/scarf/lightbrown
+	name = "light brown scarf"
+	icon_state = "scarflightbrown"
+	current_skin = "light brown scarf"
 
 //Shemaghs to operate tactically in a operational tactical situation
 
@@ -310,6 +358,27 @@
 	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
 
+/obj/item/clothing/neck/dogtag
+	name = "dogtag"
+	desc = "A nondescript dogtag."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "dogtag"
+	resistance_flags = FIRE_PROOF
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
+
+/obj/item/clothing/neck/dogtag/gold
+	icon_state = "dogtag_gold"
+	desc = "The characters are engraved with gold."
+
+/obj/item/clothing/neck/dogtag/frontier
+	name = "frontiersman dogtag"
+	desc = "A dogtag marked with the name and rank of a Frontiersmen pirate. You could turn this in to an outpost console contract for money."
+
+/obj/item/clothing/neck/dogtag/ramzi
+	name = "ramzi clique dogtag"
+	desc = "A dogtag marked with the name and rank of a Ramzi Clique pirate. You could turn this in to an outpost console contract for money."
+
 //////////////
 //DOPE BLING//
 //////////////
@@ -319,41 +388,6 @@
 	desc = "Damn, it feels good to be a gangster."
 	icon_state = "bling"
 	cuttable = FALSE
-
-/obj/item/clothing/neck/necklace/dope/merchant
-	desc = "Don't ask how it works, the proof is in the holochips!"
-	/// scales the amount received in case an admin wants to emulate taxes/fees.
-	var/profit_scaling = 1
-	/// toggles between sell (TRUE) and get price post-fees (FALSE)
-	var/selling = FALSE
-
-/obj/item/clothing/neck/necklace/dope/merchant/attack_self(mob/user)
-	. = ..()
-	selling = !selling
-	to_chat(user, "<span class='notice'>[src] has been set to [selling ? "'Sell'" : "'Get Price'"] mode.</span>")
-
-/obj/item/clothing/neck/necklace/dope/merchant/afterattack(obj/item/I, mob/user, proximity)
-	. = ..()
-	if(!proximity)
-		return
-	var/datum/export_report/ex = export_item_and_contents(I, allowed_categories = (ALL), dry_run=TRUE)
-	var/price = 0
-	for(var/x in ex.total_amount)
-		price += ex.total_value[x]
-
-	if(price)
-		var/true_price = round(price*profit_scaling)
-		to_chat(user, "<span class='notice'>[selling ? "Sold" : "Getting the price of"] [I], value: <b>[true_price]</b> credits[I.contents.len ? " (exportable contents included)" : ""].[profit_scaling < 1 && selling ? "<b>[round(price-true_price)]</b> credit\s taken as processing fee\s." : ""]</span>")
-		if(selling)
-			new /obj/item/holochip(get_turf(user),true_price)
-			for(var/i in ex.exported_atoms_ref)
-				var/atom/movable/AM = i
-				if(QDELETED(AM))
-					continue
-				qdel(AM)
-	else
-		to_chat(user, "<span class='warning'>There is no export value for [I] or any items within it.</span>")
-
 
 /obj/item/clothing/neck/neckerchief
 	icon = 'icons/obj/clothing/masks.dmi' //In order to reuse the bandana sprite
@@ -372,7 +406,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.get_item_by_slot(ITEM_SLOT_NECK) == src)
-			to_chat(user, "<span class='warning'>You can't untie [src] while wearing it!</span>")
+			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
 			return
 		if(user.is_holding(src))
 			var/obj/item/clothing/mask/bandana/newBand = new sourceBandanaType(user)
@@ -380,9 +414,9 @@
 			var/oldName = src.name
 			qdel(src)
 			user.put_in_hand(newBand, currentHandIndex)
-			user.visible_message("<span class='notice'>You untie [oldName] back into a [newBand.name].</span>", "<span class='notice'>[user] unties [oldName] back into a [newBand.name].</span>")
+			user.visible_message(span_notice("You untie [oldName] back into a [newBand.name]."), span_notice("[user] unties [oldName] back into a [newBand.name]."))
 		else
-			to_chat(user, "<span class='warning'>You must be holding [src] in order to untie it!</span>")
+			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
 
 /obj/item/clothing/neck/beads
 	name = "plastic bead necklace"
@@ -413,7 +447,7 @@
 	var/datum/effect_system/spark_spread/quantum/spark_creator = new
 	spark_creator.set_up(2, 1, src)
 	spark_creator.start()
-	owner.visible_message("<span class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")
+	owner.visible_message(span_danger("[owner]'s shields deflect [attack_text] in a shower of sparks!"))
 	take_damage(damage_to_take_on_hit)
 	playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 	return TRUE
@@ -427,7 +461,7 @@
 		if(25 to 50)
 			. += "It appears heavily damaged."
 		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
+			. += span_warning("It's falling apart!")
 
 /obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
 	. = ..()
@@ -435,7 +469,7 @@
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 
 /obj/item/clothing/neck/crystal_amulet/obj_destruction(damage_flag)
-	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+	visible_message(span_danger("[src] shatters into a million pieces!"))
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 	return ..()

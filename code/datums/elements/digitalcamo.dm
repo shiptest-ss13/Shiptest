@@ -49,7 +49,7 @@
 
 	return COMPONENT_CANT_TRACK
 
-/datum/element/digitalcamo/process()
+/datum/element/digitalcamo/process(seconds_per_tick)
 	for(var/mob/living/silicon/ai/AI in GLOB.player_list)
 		for(var/mob in attached_mobs)
 			AI.client.images |= attached_mobs[mob]

@@ -17,7 +17,7 @@
 	var/icon_dead					// Used to override dead icon (default is "[species]-dead"). You can use one dead icon for multiple closely related plants with it.
 	var/icon_harvest				// Used to override harvest icon (default is "[species]-harvest"). If null, plant will use [icon_grow][growthstages].
 
-	var/lifespan = 25				// How long before the plant begins to take damage from age.
+	var/lifespan = 30				// How long before the plant begins to take damage from age.
 	var/endurance = 15				// Amount of health the plant has.
 	var/maturation = 6				// Used to determine which sprite to switch to when growing.
 	var/production = 6				// Changes the amount of time needed for a plant to become harvestable.
@@ -40,7 +40,7 @@
 	var/research = 0				// Defines "discovery value", which will give a one-time point payout if a seed is given to an R&D console. Seed discovery is determined on a ship-by-ship basis.
 	var/seed_flags = MUTATE_EARLY	// Determines if a plant is allowed to mutate early at 30+ instability
 
-/obj/item/seeds/Initialize(mapload, nogenes = 0)
+/obj/item/seeds/Initialize(mapload, nogenes = FALSE)
 	. = ..()
 	pixel_x = base_pixel_y + rand(-8, 8)
 	pixel_y = base_pixel_x + rand(-8, 8)
@@ -66,10 +66,14 @@
 			genes += new /datum/plant_gene/core/potency(potency)
 			genes += new /datum/plant_gene/core/instability(instability)
 
-		for(var/p in genes)
-			if(ispath(p))
-				genes -= p
-				genes += new p
+		for(var/plant_gene in genes)
+			if(ispath(plant_gene))
+				genes -= plant_gene
+				genes += new plant_gene
+
+		// Go through all traits in their genes and call on_new_seed from them.
+		for(var/datum/plant_gene/trait/traits in genes)
+			traits.on_new_seed(src)
 
 		for(var/reag_id in reagents_add)
 			genes += new /datum/plant_gene/reagent(reag_id, reagents_add[reag_id])
@@ -82,11 +86,11 @@
 
 /obj/item/seeds/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use a pen on it to rename it or change its description.</span>"
+	. += span_notice("Use a pen on it to rename it or change its description.")
 	if(reagents_add && user.can_see_reagents())
-		. += "<span class='notice'>- Plant Reagents -</span>"
+		. += span_notice("- Plant Reagents -")
 		for(var/datum/plant_gene/reagent/gene in genes)
-			. += "<span class='notice'>- [gene.get_name()] -</span>"
+			. += span_notice("- [gene.get_name()] -")
 
 /obj/item/seeds/proc/Copy()
 	var/obj/item/seeds/S = new type(null, 1)
@@ -427,7 +431,7 @@
 
 /obj/item/seeds/attackby(obj/item/O, mob/user, params)
 	if (istype(O, /obj/item/plant_analyzer))
-		var/msg = "This is \a <span class='name'>[src]</span>."
+		var/msg = "This is \a [span_name("[src]")]."
 		var/text
 		var/obj/item/plant_analyzer/P_analyzer = O
 		if(P_analyzer.scan_mode == PLANT_SCANMODE_STATS)
@@ -438,9 +442,9 @@
 			msg += "\n- Plant Reagents -"
 			msg += "\n*---------*"
 			for(var/datum/plant_gene/reagent/Gene in genes)
-				msg += "\n<span class='notice'>- [Gene.get_name()] -</span>"
+				msg += "\n[span_notice("- [Gene.get_name()] -")]"
 			msg += "\n*---------*"
-		to_chat(user, examine_block(msg))
+		to_chat(user, boxed_message(msg))
 
 		return
 
@@ -557,3 +561,55 @@
 			genes += P
 		else
 			qdel(P)
+
+/obj/item/seeds/proc/get_tgui_info()
+	var/list/data = list()
+	data["name"] = plantname
+	data["lifespan"] = lifespan
+	data["endurance"] = endurance
+	data["maturation"] = maturation
+	data["production"] = production
+	data["yield"] = yield
+	data["potency"] = potency
+	data["instability"] = instability
+	data["weed_rate"] = weed_rate
+	data["weed_chance"] = weed_chance
+	data["rarity"] = rarity
+	data["genes"] = list()
+	for(var/datum/plant_gene/trait/traits in genes)
+		data["genes"] += traits.type
+
+	data["mutatelist"] = list()
+	for(var/obj/item/seeds/mutant as anything in mutatelist)
+		data["mutatelist"] += list(list(
+			"type" = mutant,
+			"name" = initial(mutant.plantname),
+			"desc" = initial(mutant.desc)
+		))
+
+	data["grind_results"] = list()
+	for(var/datum/plant_gene/reagent/reagent_gene in genes)
+		var/datum/reagent/seed_reagent = GLOB.chemical_reagents_list[reagent_gene.reagent_id]
+		data["grind_results"] += list(list(
+			"name" = reagent_gene,
+			"desc" = seed_reagent.description,
+			"amount" = "[reagent_gene.rate*100]%"
+		))
+	return data
+/*
+ * Both `/item/food/grown` and `/item/grown` implement a seed variable which tracks
+ * plant statistics, genes, traits, etc. This proc gets the seed for either grown food or
+ * grown inedibles and returns it, or returns null if it's not a plant.
+ *
+ * Returns an `/obj/item/seeds` ref for grown foods or grown inedibles.
+ *  - returned seed CAN be null in weird cases but in all applications it SHOULD NOT be.
+ * Returns null if it is not a plant.
+ */
+/obj/item/proc/get_plant_seed()
+	return null
+
+/obj/item/reagent_containers/food/snacks/grown/get_plant_seed()
+	return seed
+
+/obj/item/grown/get_plant_seed()
+	return seed

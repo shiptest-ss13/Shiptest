@@ -39,22 +39,22 @@
 		if (W.tool_behaviour == TOOL_SCREWDRIVER)
 			if (W.use_tool(src, user, 20))
 				open =! open
-				to_chat(user, "<span class='notice'>You [open ? "open" : "close"] the service panel.</span>")
+				to_chat(user, span_notice("You [open ? "open" : "close"] the service panel."))
 			return
 		if (W.tool_behaviour == TOOL_WIRECUTTER)
-			to_chat(user, "<span class='danger'>[src] is protected from this sort of tampering, yet it appears the internal memory wires can still be <b>pulsed</b>.</span>")
+			to_chat(user, span_danger("[src] is protected from this sort of tampering, yet it appears the internal memory wires can still be <b>pulsed</b>."))
 		if ((W.tool_behaviour == TOOL_MULTITOOL) && (!l_hacking))
 			if(open == 1)
-				to_chat(user, "<span class='danger'>Now attempting to reset internal memory, please hold.</span>")
+				to_chat(user, span_danger("Now attempting to reset internal memory, please hold."))
 				l_hacking = 1
 				if (W.use_tool(src, user, 400))
-					to_chat(user, "<span class='danger'>Internal memory reset - lock has been disengaged.</span>")
+					to_chat(user, span_danger("Internal memory reset - lock has been disengaged."))
 					l_set = 0
 					l_hacking = 0
 				else
 					l_hacking = 0
 			else
-				to_chat(user, "<span class='warning'>You must <b>unscrew</b> the service panel before you can pulse the wiring!</span>")
+				to_chat(user, span_warning("You must <b>unscrew</b> the service panel before you can pulse the wiring!"))
 			return
 		//At this point you have exhausted all the special things to do when locked
 		// ... but it's still locked.
@@ -173,7 +173,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.set_holdable(null, list(/obj/item/storage/secure/briefcase))
-	STR.max_w_class = 8						//??
+	STR.max_w_class = 8
 
 /obj/item/storage/secure/safe/PopulateContents()
 	new /obj/item/paper(src)
@@ -200,9 +200,9 @@
 
 /obj/item/storage/secure/safe/intel/stechkin/PopulateContents()
 		. = ..()
-		new /obj/item/gun/ballistic/automatic/pistol/syndicate(src)
-		new /obj/item/ammo_box/magazine/m10mm(src)
-		new /obj/item/ammo_box/magazine/m10mm(src)
+		new /obj/item/gun/ballistic/automatic/pistol/ringneck(src)
+		new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
+		new /obj/item/ammo_box/magazine/m10mm_ringneck(src)
 
 /obj/item/storage/secure/safe/suns
 	name = "Captain's Secure Safe"
@@ -211,3 +211,20 @@
 /obj/item/storage/secure/safe/suns/PopulateContents()
 	. = ..()
 	new /obj/item/storage/belt/sabre/suns(src)
+
+/obj/item/storage/secure/safe/cybersun
+	name = "Captain's secure safe"
+	desc = "An electronic safe manufactured by Cybersun Virtual Solutions."
+
+/obj/item/storage/secure/safe/cybersun/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/himehabu/no_mag(src)
+	new /obj/item/ammo_box/magazine/m22lr_himehabu(src)
+	new /obj/item/ammo_box/magazine/m22lr_himehabu(src)
+
+/obj/item/storage/secure/safe/cybersun/solutions/PopulateContents()
+	. = ..()
+	new /obj/item/folder/documents/syndicate/cybersun(src)
+
+/obj/item/storage/secure/safe/cybersun/biodynamics/PopulateContents()
+	. = ..()
+	new /obj/item/folder/documents/syndicate/cybersun/biodynamics(src)

@@ -11,6 +11,14 @@
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	resistance_flags = NONE
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_MASK
+	equip_delay_other = EQUIP_DELAY_MASK * 1.5
+	strip_delay = EQUIP_DELAY_MASK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
+
 /obj/item/clothing/mask/gas/atmos
 	name = "atmospheric gas mask"
 	desc = "Improved gas mask utilized by atmospheric technicians. Still not very good at blocking gas flow, but it's flameproof!"
@@ -128,7 +136,7 @@
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
-		to_chat(user, "<span class='notice'>Your Clown Mask has now morphed into [choice], all praise the Honkmother!</span>")
+		to_chat(user, span_notice("Your Clown Mask has now morphed into [choice], all praise the Honkmother!"))
 		return TRUE
 
 /obj/item/clothing/mask/gas/sexyclown
@@ -181,7 +189,7 @@
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
-		to_chat(user, "<span class='notice'>Your Mime Mask has now morphed into [choice]!</span>")
+		to_chat(user, span_notice("Your Mime Mask has now morphed into [choice]!"))
 		return TRUE
 
 /obj/item/clothing/mask/gas/monkeymask
@@ -260,7 +268,7 @@
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
-		to_chat(M, "<span class='notice'>The Tiki Mask has now changed into the [choice] Mask!</span>")
+		to_chat(M, span_notice("The Tiki Mask has now changed into the [choice] Mask!"))
 		return 1
 
 /obj/item/clothing/mask/gas/tiki_mask/yalp_elor
@@ -275,3 +283,10 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
 
+/obj/item/clothing/mask/gas/inteq
+	name = "Inteq gas mask"
+	desc = "A protective gas mask refit for Inteq's standards. It features a modified scratch resistant visor, ports for connecting an oxygen supply, and secure, comfortable straps."
+	icon_state = "inteq_gas_mask"
+	item_state = "inteq_gas_mask"
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION

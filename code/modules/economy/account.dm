@@ -23,13 +23,14 @@
 
 /datum/bank_account/proc/_adjust_money(amt)
 	account_balance += amt
+	account_balance = round(account_balance, 1)
 	if(account_balance < 0)
 		account_balance = 0
 
 /datum/bank_account/proc/has_money(amt)
 	return account_balance >= amt
 
-/datum/bank_account/proc/adjust_money(amt, reason = "cash")
+/datum/bank_account/proc/adjust_money(amt, reason = CREDIT_LOG_WITHDRAW)
 	if((amt < 0 && has_money(-amt)) || amt > 0)
 		SSblackbox.record_feedback("tally", "credits", amt, reason)
 		SSeconomy.bank_money += amt
@@ -39,10 +40,10 @@
 
 /datum/bank_account/proc/transfer_money(datum/bank_account/from, amount)
 	if(from.has_money(amount))
-		adjust_money(amount, "transfer")
+		adjust_money(amount, CREDIT_LOG_TRANSFER_IN)
 		SSblackbox.record_feedback("amount", "credits_transferred", amount)
 		log_econ("[amount] credits were transferred from [from.account_holder]'s account to [src.account_holder]")
-		from.adjust_money(-amount, "transfer_out")
+		from.adjust_money(-amount, CREDIT_LOG_TRANSFER_OUT)
 		return TRUE
 	return FALSE
 
@@ -58,7 +59,7 @@
 
 			if(card_holder.can_hear())
 				card_holder.playsound_local(get_turf(card_holder), 'sound/machines/twobeep_high.ogg', 50, TRUE)
-				to_chat(card_holder, "[icon2html(icon_source, card_holder)] <span class='notice'>[message]</span>")
+				to_chat(card_holder, "[icon2html(icon_source, card_holder)] [span_notice("[message]")]")
 		else if(isturf(A.loc)) //If on the ground
 			var/turf/T = A.loc
 			for(var/mob/M in hearers(1,T))
@@ -66,7 +67,7 @@
 					continue
 				if(M.can_hear())
 					M.playsound_local(T, 'sound/machines/twobeep_high.ogg', 50, TRUE)
-					to_chat(M, "[icon2html(icon_source, M)] <span class='notice'>[message]</span>")
+					to_chat(M, "[icon2html(icon_source, M)] [span_notice("[message]")]")
 		else
 			var/atom/sound_atom
 			for(var/mob/M in A.loc) //If inside a container with other mobs (e.g. locker)
@@ -76,11 +77,11 @@
 					sound_atom = A.drop_location() //in case we're inside a bodybag in a crate or something. doing this here to only process it if there's a valid mob who can hear the sound.
 				if(M.can_hear())
 					M.playsound_local(get_turf(sound_atom), 'sound/machines/twobeep_high.ogg', 50, TRUE)
-					to_chat(M, "[icon2html(icon_source, M)] <span class='notice'>[message]</span>")
+					to_chat(M, "[icon2html(icon_source, M)] [span_notice("[message]")]")
 
 /datum/bank_account/ship
 	add_to_accounts = FALSE
 
 /datum/bank_account/ship/New(newname, budget)
 	account_holder = newname
-	adjust_money(budget, "starting_money")
+	adjust_money(budget, CREDIT_LOG_STARTING_MONEY)

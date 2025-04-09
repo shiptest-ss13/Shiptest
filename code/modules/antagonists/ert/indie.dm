@@ -8,7 +8,7 @@
 	role = "Security Officer"
 
 /datum/antagonist/ert/independent/greet()
-	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+	to_chat(owner, "<B><font size=3 color=red>You are \a [name].</font></B>")
 	var/missiondesc = "You are one of the many Independent contractors, workers and students on [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your team to complete your objectives."
@@ -22,6 +22,9 @@
 	name = "Independent Medical Technician"
 	outfit = /datum/outfit/job/independent/ert/emt
 	role = "Paramedic"
+
+/datum/antagonist/ert/independent/emt/eva
+	outfit = /datum/outfit/job/independent/ert/emt/eva
 
 /datum/antagonist/ert/independent/firefighter
 	name = "Independent Firefighter"
@@ -42,3 +45,18 @@
 	name = "Independent Technician"
 	outfit = /datum/outfit/job/independent/ert/technician
 	role = "Technician"
+
+/datum/antagonist/ert/independent/deathsquad
+	name = "Deathsquad Commando"
+	outfit = /datum/outfit/job/independent/ert/deathsquad
+	role = "Commando"
+
+/datum/antagonist/ert/independent/pizza
+	name = "Pizza Delivery Worker"
+	outfit = /datum/outfit/job/independent/ert/pizza
+	role = "Delivery Worker"
+
+/datum/antagonist/ert/independent/janitor
+	name = "Independent Sanitation Technician"
+	outfit = /datum/outfit/job/independent/ert/janitor
+	role = "Sanitation Technician"

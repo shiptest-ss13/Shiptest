@@ -33,27 +33,28 @@
 	if(value)
 		var/datum/bank_account/ship_account = ship_account_ref.resolve()
 		if(ship_account)
-			ship_account.adjust_money(value, "deposit")
-			to_chat(user, "<span class='notice'>You deposit [I]. The [ship_account.account_holder] Budget is now [ship_account.account_balance] cr.</span>")
+			ship_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
+			to_chat(user, span_notice("You deposit [I]. The [ship_account.account_holder] Budget is now [ship_account.account_balance] cr."))
 		qdel(I)
 		return
 	return ..()
 
-/obj/machinery/computer/bank_machine/process()
+/obj/machinery/computer/bank_machine/process(seconds_per_tick)
 	..()
 	if(siphoning)
 		if (machine_stat & (BROKEN|NOPOWER))
 			say("Insufficient power. Halting siphon.")
 			end_syphon()
+		var/siphon_am = 100 * seconds_per_tick
 		var/datum/bank_account/ship_account = ship_account_ref.resolve()
-		if(!ship_account?.has_money(200))
+		if(!ship_account?.has_money(siphon_am))
 			say("Ship budget depleted. Halting siphon.")
 			end_syphon()
 			return
 
 		playsound(src, 'sound/items/poster_being_created.ogg', 100, TRUE)
-		syphoning_credits += 200
-		ship_account.adjust_money(-200)
+		syphoning_credits += siphon_am
+		ship_account.adjust_money(-siphon_am, "siphon")
 		if(next_warning < world.time && prob(15))
 			var/area/A = get_area(loc)
 			var/message = "Unauthorized credit withdrawal underway in [initial(A.name)]!!"

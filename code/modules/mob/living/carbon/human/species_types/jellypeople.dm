@@ -20,7 +20,7 @@
 	coldmod = 6   // = 3x cold damage
 	heatmod = 0.5 // = 1/4x heat damage
 	burnmod = 0.5 // = 1/2x generic burn damage
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	inherent_factions = list("slime")
 	species_language_holder = /datum/language_holder/jelly
 	ass_image = 'icons/ass/assslime.png'
@@ -54,7 +54,7 @@
 	if(!H.blood_volume)
 		H.blood_volume += 5
 		H.adjustBruteLoss(5)
-		to_chat(H, "<span class='danger'>You feel empty!</span>")
+		to_chat(H, span_danger("You feel empty!"))
 
 	if(H.blood_volume < BLOOD_VOLUME_NORMAL)
 		if(H.nutrition >= NUTRITION_LEVEL_STARVING)
@@ -62,7 +62,7 @@
 			H.adjust_nutrition(-2.5)
 	if(H.blood_volume < BLOOD_VOLUME_OKAY)
 		if(prob(5))
-			to_chat(H, "<span class='danger'>You feel drained!</span>")
+			to_chat(H, span_danger("You feel drained!"))
 	if(H.blood_volume < BLOOD_VOLUME_BAD)
 		Cannibalize_Body(H)
 	if(regenerate_limbs)
@@ -78,7 +78,7 @@
 		limbs_to_consume -= list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM)
 	consumed_limb = H.get_bodypart(pick(limbs_to_consume))
 	consumed_limb.drop_limb()
-	to_chat(H, "<span class='userdanger'>Your [consumed_limb] is drawn back into your body, unable to maintain its shape!</span>")
+	to_chat(H, span_userdanger("Your [consumed_limb] is drawn back into your body, unable to maintain its shape!"))
 	qdel(consumed_limb)
 	H.blood_volume += 20
 
@@ -130,13 +130,13 @@
 	var/mob/living/carbon/human/H = owner
 	var/list/limbs_to_heal = H.get_missing_limbs()
 	if(limbs_to_heal.len < 1)
-		to_chat(H, "<span class='notice'>You feel intact enough as it is.</span>")
+		to_chat(H, span_notice("You feel intact enough as it is."))
 		return
-	to_chat(H, "<span class='notice'>You focus intently on your missing [limbs_to_heal.len >= 2 ? "limbs" : "limb"]...</span>")
+	to_chat(H, span_notice("You focus intently on your missing [limbs_to_heal.len >= 2 ? "limbs" : "limb"]..."))
 	if(H.blood_volume >= 40*limbs_to_heal.len+BLOOD_VOLUME_OKAY)
 		H.regenerate_limbs()
 		H.blood_volume -= 40*limbs_to_heal.len
-		to_chat(H, "<span class='notice'>...and after a moment you finish reforming!</span>")
+		to_chat(H, span_notice("...and after a moment you finish reforming!"))
 		return
 	else if(H.blood_volume >= 40)//We can partially heal some limbs
 		while(H.blood_volume >= BLOOD_VOLUME_OKAY+40)
@@ -144,9 +144,9 @@
 			H.regenerate_limb(healed_limb)
 			limbs_to_heal -= healed_limb
 			H.blood_volume -= 40
-		to_chat(H, "<span class='warning'>...but there is not enough of you to fix everything! You must attain more mass to heal completely!</span>")
+		to_chat(H, span_warning("...but there is not enough of you to fix everything! You must attain more mass to heal completely!"))
 		return
-	to_chat(H, "<span class='warning'>...but there is not enough of you to go around! You must attain more mass to heal!</span>")
+	to_chat(H, span_warning("...but there is not enough of you to go around! You must attain more mass to heal!"))
 
 /datum/action/innate/humanoid_customization //oh boy this will be fun to do <-- clueless
 	name = "Alter Form"
@@ -222,7 +222,7 @@
 	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
 	hair_color = "mutcolor"
 	hair_alpha = 150
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN
 	var/datum/action/innate/split_body/slime_split
 	var/list/mob/living/carbon/bodies
 	var/datum/action/innate/swap_body/swap_body
@@ -280,7 +280,7 @@
 /datum/species/jelly/slime/spec_life(mob/living/carbon/human/H)
 	if(H.blood_volume >= BLOOD_VOLUME_SLIME_SPLIT)
 		if(prob(5))
-			to_chat(H, "<span class='notice'>You feel very bloated!</span>")
+			to_chat(H, span_notice("You feel very bloated!"))
 	else if(H.nutrition >= NUTRITION_LEVEL_WELL_FED)
 		H.blood_volume += 3
 		H.adjust_nutrition(-2.5)
@@ -317,9 +317,9 @@
 		if(H.blood_volume >= BLOOD_VOLUME_SLIME_SPLIT)
 			make_dupe()
 		else
-			to_chat(H, "<span class='warning'>...but there is not enough of you to go around! You must attain more mass to split!</span>")
+			to_chat(H, span_warning("...but there is not enough of you to go around! You must attain more mass to split!"))
 	else
-		to_chat(H, "<span class='warning'>...but fail to stand perfectly still!</span>")
+		to_chat(H, span_warning("...but fail to stand perfectly still!"))
 
 	H.notransform = FALSE
 
@@ -372,7 +372,7 @@
 
 /datum/action/innate/swap_body/Activate()
 	if(!isslimeperson(owner))
-		to_chat(owner, "<span class='warning'>You are not a slimeperson.</span>")
+		to_chat(owner, span_warning("You are not a slimeperson."))
 		Remove(owner)
 	else
 		ui_interact(owner)
@@ -498,14 +498,14 @@
 	if(M.current.stat == CONSCIOUS)
 		M.current.visible_message("<span class='notice'>[M.current] \
 			stops moving and starts staring vacantly into space.</span>",
-			"<span class='notice'>You stop moving this body...</span>")
+			span_notice("You stop moving this body..."))
 	else
-		to_chat(M.current, "<span class='notice'>You abandon this body...</span>")
+		to_chat(M.current, span_notice("You abandon this body..."))
 	M.current.transfer_trait_datums(dupe)
 	M.transfer_to(dupe)
 	dupe.visible_message("<span class='notice'>[dupe] blinks and looks \
 		around.</span>",
-		"<span class='notice'>...and move this one instead.</span>")
+		span_notice("...and move this one instead."))
 
 
 ///////////////////////////////////LUMINESCENTS//////////////////////////////////////////
@@ -517,50 +517,22 @@
 	id = SPECIES_LUMINESCENT
 	var/glow_intensity = LUMINESCENT_DEFAULT_GLOW
 	var/obj/effect/dummy/luminescent_glow/glow
-	var/obj/item/slime_extract/current_extract
-	var/datum/action/innate/integrate_extract/integrate_extract
-	var/datum/action/innate/use_extract/extract_minor
-	var/datum/action/innate/use_extract/major/extract_major
-	var/extract_cooldown = 0
-
 	examine_limb_id = SPECIES_JELLYPERSON
 
 //Species datums don't normally implement destroy, but JELLIES SUCK ASS OUT OF A STEEL STRAW
-/datum/species/jelly/luminescent/Destroy(force, ...)
-	current_extract = null
+/datum/species/jelly/luminescent/Destroy(force)
 	QDEL_NULL(glow)
-	QDEL_NULL(integrate_extract)
-	QDEL_NULL(extract_major)
-	QDEL_NULL(extract_minor)
 	return ..()
 
 
 /datum/species/jelly/luminescent/on_species_loss(mob/living/carbon/C)
 	..()
-	if(current_extract)
-		current_extract.forceMove(C.drop_location())
-		current_extract = null
 	QDEL_NULL(glow)
-	QDEL_NULL(integrate_extract)
-	QDEL_NULL(extract_major)
-	QDEL_NULL(extract_minor)
 
 /datum/species/jelly/luminescent/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	glow = new(C)
 	update_glow(C)
-	integrate_extract = new(src)
-	integrate_extract.Grant(C)
-	extract_minor = new(src)
-	extract_minor.Grant(C)
-	extract_major = new(src)
-	extract_major.Grant(C)
-
-/datum/species/jelly/luminescent/proc/update_slime_actions()
-	integrate_extract.update_name()
-	integrate_extract.UpdateButtonIcon()
-	extract_minor.UpdateButtonIcon()
-	extract_major.UpdateButtonIcon()
 
 /datum/species/jelly/luminescent/proc/update_glow(mob/living/carbon/C, intensity)
 	if(intensity)
@@ -580,108 +552,6 @@
 	. = ..()
 	if(!isliving(loc))
 		return INITIALIZE_HINT_QDEL
-
-
-/datum/action/innate/integrate_extract
-	name = "Integrate Extract"
-	desc = "Eat a slime extract to use its properties."
-	check_flags = AB_CHECK_CONSCIOUS
-	button_icon_state = "slimeconsume"
-	icon_icon = 'icons/mob/actions/actions_slime.dmi'
-	background_icon_state = "bg_alien"
-
-/datum/action/innate/integrate_extract/proc/update_name()
-	var/datum/species/jelly/luminescent/species = target
-	if(!species || !species.current_extract)
-		name = "Integrate Extract"
-		desc = "Eat a slime extract to use its properties."
-	else
-		name = "Eject Extract"
-		desc = "Eject your current slime extract."
-
-/datum/action/innate/integrate_extract/UpdateButtonIcon(status_only, force)
-	var/datum/species/jelly/luminescent/species = target
-	if(!species || !species.current_extract)
-		button_icon_state = "slimeconsume"
-	else
-		button_icon_state = "slimeeject"
-	..()
-
-/datum/action/innate/integrate_extract/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force)
-	..(current_button, TRUE)
-	var/datum/species/jelly/luminescent/species = target
-	if(species?.current_extract)
-		current_button.add_overlay(mutable_appearance(species.current_extract.icon, species.current_extract.icon_state))
-
-/datum/action/innate/integrate_extract/Activate()
-	var/mob/living/carbon/human/H = owner
-	var/datum/species/jelly/luminescent/species = target
-	if(!is_species(H, /datum/species/jelly/luminescent) || !species)
-		return
-	CHECK_DNA_AND_SPECIES(H)
-
-	if(species.current_extract)
-		var/obj/item/slime_extract/S = species.current_extract
-		if(!H.put_in_active_hand(S))
-			S.forceMove(H.drop_location())
-		species.current_extract = null
-		to_chat(H, "<span class='notice'>You eject [S].</span>")
-		species.update_slime_actions()
-	else
-		var/obj/item/I = H.get_active_held_item()
-		if(istype(I, /obj/item/slime_extract))
-			var/obj/item/slime_extract/S = I
-			if(!S.Uses)
-				to_chat(H, "<span class='warning'>[I] is spent! You cannot integrate it.</span>")
-				return
-			if(!H.temporarilyRemoveItemFromInventory(S))
-				return
-			S.forceMove(H)
-			species.current_extract = S
-			to_chat(H, "<span class='notice'>You consume [I], and you feel it pulse within you...</span>")
-			species.update_slime_actions()
-		else
-			to_chat(H, "<span class='warning'>You need to hold an unused slime extract in your active hand!</span>")
-
-/datum/action/innate/use_extract
-	name = "Extract Minor Activation"
-	desc = "Pulse the slime extract with energized jelly to activate it."
-	check_flags = AB_CHECK_CONSCIOUS
-	button_icon_state = "slimeuse1"
-	icon_icon = 'icons/mob/actions/actions_slime.dmi'
-	background_icon_state = "bg_alien"
-	var/activation_type = SLIME_ACTIVATE_MINOR
-
-/datum/action/innate/use_extract/IsAvailable()
-	if(..())
-		var/datum/species/jelly/luminescent/species = target
-		if(species && species.current_extract && (world.time > species.extract_cooldown))
-			return TRUE
-		return FALSE
-
-/datum/action/innate/use_extract/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force)
-	..(current_button, TRUE)
-	var/datum/species/jelly/luminescent/species = owner
-	if(species?.current_extract)
-		current_button.add_overlay(mutable_appearance(species.current_extract.icon, species.current_extract.icon_state))
-
-/datum/action/innate/use_extract/Activate()
-	var/mob/living/carbon/human/H = owner
-	var/datum/species/jelly/luminescent/species = owner
-	if(!is_species(H, /datum/species/jelly/luminescent) || !species)
-		return
-	CHECK_DNA_AND_SPECIES(H)
-
-	if(species.current_extract)
-		species.extract_cooldown = world.time + 100
-		var/cooldown = species.current_extract.activate(H, species, activation_type)
-		species.extract_cooldown = world.time + cooldown
-
-/datum/action/innate/use_extract/major
-	name = "Extract Major Activation"
-	desc = "Pulse the slime extract with plasma jelly to activate it."
-	button_icon_state = "slimeuse2"
-	activation_type = SLIME_ACTIVATE_MAJOR
 
 ///////////////////////////////////STARGAZERS//////////////////////////////////////////
 
@@ -746,7 +616,7 @@
 	if(!owner)
 		return FALSE
 	linked_mobs.Add(M)
-	to_chat(M, "<span class='notice'>You are now connected to [owner.real_name]'s Slime Link.</span>")
+	to_chat(M, span_notice("You are now connected to [owner.real_name]'s Slime Link."))
 	var/datum/action/innate/linked_speech/action = new(src)
 	linked_actions.Add(action)
 	action.Grant(M)
@@ -763,7 +633,7 @@
 	action.Remove(M)
 	var/mob/living/carbon/human/owner = slimelink_owner.resolve()
 	if(owner)
-		to_chat(M, "<span class='notice'>You are no longer connected to [owner.real_name]'s Slime Link.</span>")
+		to_chat(M, span_notice("You are no longer connected to [owner.real_name]'s Slime Link."))
 	linked_mobs -= M
 	linked_actions -= action
 	qdel(action)
@@ -781,14 +651,14 @@
 		return
 	var/datum/species/jelly/stargazer/species = target
 	if(!species || !(H in species.linked_mobs))
-		to_chat(H, "<span class='warning'>The link seems to have been severed...</span>")
+		to_chat(H, span_warning("The link seems to have been severed..."))
 		Remove(H)
 		return
 
 	var/message = sanitize(input("Message:", "Slime Telepathy") as text|null)
 
 	if(!species || !(H in species.linked_mobs))
-		to_chat(H, "<span class='warning'>The link seems to have been severed...</span>")
+		to_chat(H, span_warning("The link seems to have been severed..."))
 		Remove(H)
 		return
 
@@ -828,22 +698,22 @@
 	if(!M)
 		return
 	if(M.anti_magic_check(FALSE, FALSE, TRUE, 0))
-		to_chat(H, "<span class='notice'>As you try to communicate with [M], you're suddenly stopped by a vision of a massive tinfoil wall that streches beyond visible range. It seems you've been foiled.</span>")
+		to_chat(H, span_notice("As you try to communicate with [M], you're suddenly stopped by a vision of a massive tinfoil wall that streches beyond visible range. It seems you've been foiled."))
 		return
 	var/msg = sanitize(input("Message:", "Telepathy") as text|null)
 	if(msg)
 		if(M.anti_magic_check(FALSE, FALSE, TRUE, 0))
-			to_chat(H, "<span class='notice'>As you try to communicate with [M], you're suddenly stopped by a vision of a massive tinfoil wall that streches beyond visible range. It seems you've been foiled.</span>")
+			to_chat(H, span_notice("As you try to communicate with [M], you're suddenly stopped by a vision of a massive tinfoil wall that streches beyond visible range. It seems you've been foiled."))
 			return
 		log_directed_talk(H, M, msg, LOG_SAY, "slime telepathy")
-		to_chat(M, "<span class='notice'>You hear an alien voice in your head... </span><font color=#008CA2>[msg]</font>")
-		to_chat(H, "<span class='notice'>You telepathically said: \"[msg]\" to [M]</span>")
+		to_chat(M, "[span_notice("You hear an alien voice in your head... ")]<font color=#008CA2>[msg]</font>")
+		to_chat(H, span_notice("You telepathically said: \"[msg]\" to [M]"))
 		for(var/dead in GLOB.dead_mob_list)
 			if(!isobserver(dead))
 				continue
 			var/follow_link_user = FOLLOW_LINK(dead, H)
 			var/follow_link_target = FOLLOW_LINK(dead, M)
-			to_chat(dead, "[follow_link_user] <span class='name'>[H]</span> <span class='alertalien'>Slime Telepathy --> </span> [follow_link_target] <span class='name'>[M]</span> <span class='noticealien'>[msg]</span>")
+			to_chat(dead, "[follow_link_user] [span_name("[H]")] [span_alertalien("Slime Telepathy --> ")] [follow_link_target] [span_name("[M]")] [span_noticealien("[msg]")]")
 
 /datum/action/innate/link_minds
 	name = "Link Minds"
@@ -859,19 +729,19 @@
 	CHECK_DNA_AND_SPECIES(H)
 
 	if(!H.pulling || !isliving(H.pulling) || H.grab_state < GRAB_AGGRESSIVE)
-		to_chat(H, "<span class='warning'>You need to aggressively grab someone to link minds!</span>")
+		to_chat(H, span_warning("You need to aggressively grab someone to link minds!"))
 		return
 
 	var/mob/living/target = H.pulling
 	var/datum/species/jelly/stargazer/species = target
 
-	to_chat(H, "<span class='notice'>You begin linking [target]'s mind to yours...</span>")
-	to_chat(target, "<span class='warning'>You feel a foreign presence within your mind...</span>")
+	to_chat(H, span_notice("You begin linking [target]'s mind to yours..."))
+	to_chat(target, span_warning("You feel a foreign presence within your mind..."))
 	if(do_after(H, 60, target = target))
 		if(H.pulling != target || H.grab_state < GRAB_AGGRESSIVE)
 			return
 		if(species.link_mob(target))
-			to_chat(H, "<span class='notice'>You connect [target]'s mind to your slime link!</span>")
+			to_chat(H, span_notice("You connect [target]'s mind to your slime link!"))
 		else
-			to_chat(H, "<span class='warning'>You can't seem to link [target]'s mind...</span>")
-			to_chat(target, "<span class='warning'>The foreign presence leaves your mind.</span>")
+			to_chat(H, span_warning("You can't seem to link [target]'s mind..."))
+			to_chat(target, span_warning("The foreign presence leaves your mind."))

@@ -13,7 +13,7 @@
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/structure/closet/infinite/process()
+/obj/structure/closet/infinite/process(seconds_per_tick)
 	if(!replicating_type)
 		if(!length(contents))
 			return
@@ -30,4 +30,4 @@
 
 /obj/structure/closet/infinite/proc/close_on_my_own()
 	if(close())
-		visible_message("<span class='notice'>\The [src] closes on its own.</span>")
+		visible_message(span_notice("\The [src] closes on its own."))

@@ -9,14 +9,11 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_INTEQ]" = "irmgradio",
 	"[FREQ_PGF]" = "pgfradio",
 	"[FREQ_PIRATE]" = "pirradio",
-	"[FREQ_COMMAND]" = "comradio",
-	"[FREQ_AI_PRIVATE]" = "aiprivradio",
+	"[FREQ_EMERGENCY]" = "emrgradio",
 	"[FREQ_SYNDICATE]" = "syndradio",
 	"[FREQ_CENTCOM]" = "centcomradio",
-	"[FREQ_SOLGOV]" = "solgovradio",		//WS Edit - SolGov Rep
-	"[FREQ_WIDEBAND]" = "widebandradio",	//WS Edit - Overmaps
-	"[FREQ_CTF_RED]" = "redteamradio",
-	"[FREQ_CTF_BLUE]" = "blueteamradio"
+	"[FREQ_SOLGOV]" = "solgovradio",
+	"[FREQ_WIDEBAND]" = "widebandradio",
 	))
 
 GLOBAL_LIST_INIT(freqcolor, list())
@@ -89,7 +86,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 		if(istype(language) && language.display_icon(src))
 			languageicon = "[language.get_icon()] "
 
-	messagepart = " <span class='message'>[say_emphasis(messagepart)]</span></span>"
+	messagepart = " [span_message("[say_emphasis(messagepart)]")]</span>"
 
 	return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][endspanpart][messagepart]"
 

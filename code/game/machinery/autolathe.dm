@@ -291,12 +291,12 @@
 
 	if(istype(O, /obj/item/disk/design_disk))
 		if(d_disk)
-			to_chat(user, "<span class='warning'>A design disk is already loaded!</span>")
+			to_chat(user, span_warning("A design disk is already loaded!"))
 			return TRUE
 		if(!user.transferItemToLoc(O, src))
-			to_chat(user, "<span class='warning'>[O] is stuck to your hand!</span>")
+			to_chat(user, span_warning("[O] is stuck to your hand!"))
 			return TRUE
-		to_chat(user, "<span class='notice'>You insert [O] into \the [src]!</span>")
+		to_chat(user, span_notice("You insert [O] into \the [src]!"))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		d_disk = O
 		categories += d_disk.name
@@ -314,7 +314,7 @@
 
 /obj/machinery/autolathe/AltClick(mob/user)
 	if(d_disk && user.canUseTopic(src, !issilicon(user)))
-		to_chat(user, "<span class='notice'>You take out [d_disk] from [src].</span>")
+		to_chat(user, span_notice("You take out [d_disk] from [src]."))
 		playsound(src, 'sound/machines/click.ogg', 50, FALSE)
 		eject(user)
 	return
@@ -339,14 +339,15 @@
 	materials.use_materials(materials_used)
 
 	if(is_stack)
-		var/obj/item/stack/N = new being_built.build_path(A, multiplier, FALSE)
-		N.update_appearance()
-		N.autolathe_crafted(src)
+		var/obj/item/stack/new_item = new being_built.build_path(A, multiplier, FALSE)
+		new_item.update_appearance()
+		new_item.autolathe_crafted(src)
+		SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
 	else
 		for(var/i=1, i<=multiplier, i++)
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
-
+			SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
 			if(length(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
 				for(var/x in picked_materials)
@@ -374,9 +375,9 @@
 	. += ..()
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[creation_efficiency*100]%</b>.</span>"
+		. += span_notice("The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[creation_efficiency*100]%</b>.")
 		if (d_disk)
-			. += "<span class='notice'>[d_disk.name] is loaded, Alt-Click to remove.</span>"
+			. += span_notice("[d_disk.name] is loaded, Alt-Click to remove.")
 
 /obj/machinery/autolathe/proc/can_build(datum/design/D, amount = 1)
 	if(D.make_reagents.len)
@@ -446,5 +447,5 @@
 
 //Called when the object is constructed by an autolathe
 //Has a reference to the autolathe so you can do !!FUN!! things with hacked lathes
-/obj/item/proc/autolathe_crafted(obj/machinery/autolathe/A)
+/obj/item/proc/autolathe_crafted(obj/machinery/autolathe/lathe)
 	return

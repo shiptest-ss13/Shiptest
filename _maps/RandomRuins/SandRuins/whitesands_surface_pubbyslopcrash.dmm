@@ -225,8 +225,8 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/maintenance/five,
-/obj/effect/spawner/lootdrop/maintenance/five,
+/obj/effect/spawner/random/maintenance/five,
+/obj/effect/spawner/random/maintenance/five,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/pubbycrash)
 "fO" = (
@@ -279,7 +279,7 @@
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/item/stack/ore/salvage/scrapmetal,
-/obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
+/obj/effect/mob_spawn/human/corpse/vigilitas_trooper,
 /obj/effect/gibspawner,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
@@ -405,7 +405,7 @@
 	dir = 8;
 	name = "engine fuel pump"
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "jt" = (
@@ -502,7 +502,7 @@
 "ln" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset/wall/directional/south,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "ly" = (
@@ -530,7 +530,7 @@
 	name = "engine fuel pump"
 	},
 /obj/machinery/light/small/directional/north,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel/tech,
@@ -622,7 +622,7 @@
 /area/ruin/whitesands/pubbycrash)
 "nP" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbycrash)
 "nQ" = (
@@ -780,7 +780,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "rT" = (
@@ -851,7 +851,6 @@
 	dir = 1
 	},
 /obj/structure/closet/wall/directional/north{
-	icon_door = "orange_wall";
 	name = "Mining equipment"
 	},
 /obj/item/clothing/glasses/meson,
@@ -931,7 +930,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/random/maintenance,
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbycrash)
 "vL" = (
@@ -972,7 +971,7 @@
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
@@ -1063,7 +1062,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning/corner,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "xX" = (
@@ -1292,7 +1291,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/vomit/old,
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /obj/item/storage/box/stockparts/basic{
 	pixel_x = -3;
 	pixel_y = 4
@@ -1447,7 +1446,7 @@
 /obj/machinery/door/airlock/hatch{
 	welded = 1
 	},
-/turf/template_noop,
+/turf/open/floor/plating,
 /area/ruin/whitesands/pubbycrash/split)
 "ET" = (
 /obj/structure/cable/yellow{
@@ -1566,7 +1565,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
 "GA" = (
@@ -1792,7 +1791,7 @@
 /obj/structure/sign/poster/retro/nanotrasen_logo_70s{
 	pixel_x = -32
 	},
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "KT" = (
@@ -1947,7 +1946,7 @@
 	dir = 1;
 	faction = list("saloon")
 	},
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
 "Oz" = (
@@ -2003,7 +2002,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "PA" = (
@@ -2118,7 +2117,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/whitesands/pubbycrash/engine_room)
 "RC" = (
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
@@ -2292,7 +2291,7 @@
 /obj/structure/sign/number/two,
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/engine,
 /area/ruin/whitesands/pubbycrash)
 "Wo" = (
@@ -2460,7 +2459,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/item/stamp/captain{
+/obj/item/stamp/nanotrasen/captain{
 	pixel_x = -6;
 	pixel_y = 8
 	},

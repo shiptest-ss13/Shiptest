@@ -20,7 +20,7 @@
 	var/init_order = INIT_ORDER_DEFAULT
 
 	/// Time to wait (in deciseconds) between each call to fire(). Must be a positive integer.
-	var/wait = 20
+	var/wait = 2 SECONDS
 
 	/// Priority Weight: When mutiple subsystems need to run in the same tick, higher priority subsystems will be given a higher share of the tick before MC_TICK_CHECK triggers a sleep, higher priority subsystems also run before lower priority subsystems
 	var/priority = FIRE_PRIORITY_DEFAULT
@@ -75,6 +75,9 @@
 	/// Tracks the amount of completed runs for the subsystem
 	var/times_fired = 0
 
+	/// How many fires have we been requested to postpone
+	var/postponed_fires = 0
+
 	/// Time the subsystem entered the queue, (for timing and priority reasons)
 	var/queued_time = 0
 
@@ -103,7 +106,7 @@
 	return
 
 //This is used so the mc knows when the subsystem sleeps. do not override.
-/datum/controller/subsystem/proc/ignite(resumed = 0)
+/datum/controller/subsystem/proc/ignite(resumed = FALSE)
 	SHOULD_NOT_OVERRIDE(TRUE)
 	set waitfor = 0
 	. = SS_SLEEPING
@@ -120,7 +123,7 @@
 //previously, this would have been named 'process()' but that name is used everywhere for different things!
 //fire() seems more suitable. This is the procedure that gets called every 'wait' deciseconds.
 //Sleeping in here prevents future fires until returned.
-/datum/controller/subsystem/proc/fire(resumed = 0)
+/datum/controller/subsystem/proc/fire(resumed = FALSE)
 	flags |= SS_NO_FIRE
 	CRASH("Subsystem [src]([type]) does not fire() but did not set the SS_NO_FIRE flag. Please add the SS_NO_FIRE flag to any subsystem that doesn't fire so it doesn't get added to the processing list and waste cpu.")
 
@@ -131,6 +134,26 @@
 	if (Master)
 		Master.subsystems -= src
 	return ..()
+
+/datum/controller/subsystem/proc/update_nextfire(reset_time = FALSE)
+	var/queue_node_flags = flags
+
+	if (reset_time)
+		postponed_fires = 0
+		if (queue_node_flags & SS_TICKER)
+			next_fire = world.time + (world.tick_lag * wait)
+		else
+			next_fire = world.time + wait
+		return
+
+	if (queue_node_flags & SS_TICKER)
+		next_fire = world.time + (world.tick_lag * wait)
+	else if (queue_node_flags & SS_POST_FIRE_TIMING)
+		next_fire = world.time + wait + (world.tick_lag * (tick_overrun/100))
+	else if (queue_node_flags & SS_KEEP_TIMING)
+		next_fire += wait
+	else
+		next_fire = queued_time + wait + (world.tick_lag * (tick_overrun/100))
 
 //Queue it to run.
 //	(we loop thru a linked list until we get to the end or find the right point)
@@ -223,7 +246,7 @@
 	initialized = TRUE
 	var/time = (REALTIMEOFDAY - start_timeofday) / 10
 	var/msg = "Initialized [name] subsystem within [time] second[time == 1 ? "" : "s"]!"
-	to_chat(world, "<span class='boldannounce'>[msg]</span>")
+	to_chat(world, span_boldannounce("[msg]"))
 	log_world(msg)
 	return time
 
@@ -251,8 +274,8 @@
 //could be used to postpone a costly subsystem for (default one) var/cycles, cycles
 //for instance, during cpu intensive operations like explosions
 /datum/controller/subsystem/proc/postpone(cycles = 1)
-	if(next_fire - world.time < wait)
-		next_fire += (wait*cycles)
+	if (can_fire && cycles >= 1)
+		postponed_fires += cycles
 
 //usually called via datum/controller/subsystem/New() when replacing a subsystem (i.e. due to a recurring crash)
 //should attempt to salvage what it can from the old instance of subsystem
