@@ -49,47 +49,6 @@ const SharedContent = (_props, context) => {
   const { isViewer, canRename, shipInfo = [], otherInfo = [] } = data;
   return (
     <>
-      <Section
-        title={
-          <Button.Input
-            content={decodeHtmlEntities(shipInfo.prefixed)}
-            currentValue={shipInfo.name}
-            disabled={isViewer || !canRename}
-            onCommit={(_e, value) =>
-              act('rename_ship', {
-                newName: value,
-              })
-            }
-          />
-        }
-        buttons={
-          <Button
-            tooltip="Refresh Ship Stats"
-            tooltipPosition="left"
-            icon="sync"
-            disabled={isViewer}
-            onClick={() => act('reload_ship')}
-          />
-        }
-      >
-        <LabeledList>
-          <LabeledList.Item label="Class">{shipInfo.class}</LabeledList.Item>
-          <LabeledList.Item label="Sensor Range">
-            <ProgressBar
-              value={shipInfo.sensor_range}
-              minValue={1}
-              maxValue={8}
-            >
-              <AnimatedNumber value={shipInfo.sensor_range} />
-            </ProgressBar>
-          </LabeledList.Item>
-          {shipInfo.mass && (
-            <LabeledList.Item label="Mass">
-              {shipInfo.mass + 'tonnes'}
-            </LabeledList.Item>
-          )}
-        </LabeledList>
-      </Section>
       <Section title="Radar">
         <Table>
           <Table.Row bold>
@@ -144,6 +103,47 @@ const SharedContent = (_props, context) => {
             </Table.Row>
           ))}
         </Table>
+      </Section>
+      <Section
+        title={
+          <Button.Input
+            content={decodeHtmlEntities(shipInfo.prefixed)}
+            currentValue={shipInfo.name}
+            disabled={isViewer || !canRename}
+            onCommit={(_e, value) =>
+              act('rename_ship', {
+                newName: value,
+              })
+            }
+          />
+        }
+        buttons={
+          <Button
+            tooltip="Refresh Ship Stats"
+            tooltipPosition="left"
+            icon="sync"
+            disabled={isViewer}
+            onClick={() => act('reload_ship')}
+          />
+        }
+      >
+        <LabeledList>
+          <LabeledList.Item label="Class">{shipInfo.class}</LabeledList.Item>
+          <LabeledList.Item label="Sensor Range">
+            <ProgressBar
+              value={shipInfo.sensor_range}
+              minValue={1}
+              maxValue={8}
+            >
+              <AnimatedNumber value={shipInfo.sensor_range} />
+            </ProgressBar>
+          </LabeledList.Item>
+          {shipInfo.mass && (
+            <LabeledList.Item label="Mass">
+              {shipInfo.mass + 'tonnes'}
+            </LabeledList.Item>
+          )}
+        </LabeledList>
       </Section>
     </>
   );
