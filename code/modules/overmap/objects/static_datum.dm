@@ -144,11 +144,3 @@
 	token_icon_state = "bus"
 	preserve_level = TRUE
 	gravity = TRUE
-
-/datum/overmap/static_object/testmap
-	name = "test"
-	desc = "TESTMAP"
-	token_icon_state = "zeta"
-	preserve_level = TRUE
-	map_to_load = /datum/map_template/test_punchcard
-
