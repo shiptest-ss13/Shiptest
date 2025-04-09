@@ -14,7 +14,7 @@
 	output = /obj/item/reagent_containers/food/snacks/meat/rawbacon
 
 /datum/food_processor_process/sweetpotato
-	input = /obj/item/reagent_containers/food/snacks/grown/potato/sweet
+	input = /obj/item/reagent_containers/food/snacks/grown/potatosweet
 	output = /obj/item/reagent_containers/food/snacks/yakiimo
 
 /datum/food_processor_process/potato

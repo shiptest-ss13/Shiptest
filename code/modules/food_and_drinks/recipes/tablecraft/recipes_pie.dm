@@ -170,7 +170,7 @@
 	reqs = list(
 		/datum/reagent/consumable/vanilla = 5,
 		/datum/reagent/water = 5,
-		/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 2
+		/obj/item/reagent_containers/food/snacks/grown/potatosweet = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/pie/dulcedebatata
 	subcategory = CAT_PIE
