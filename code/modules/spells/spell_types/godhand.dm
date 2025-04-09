@@ -25,7 +25,7 @@
 	if(!iscarbon(user)) //Look ma, no hands
 		return
 	if(!(user.mobility_flags & MOBILITY_USE))
-		to_chat(user, "<span class='warning'>You can't reach out!</span>")
+		to_chat(user, span_warning("You can't reach out!"))
 		return
 	..()
 
@@ -57,7 +57,7 @@
 	if(!proximity || target == user || !ismob(target) || !iscarbon(user) || !(user.mobility_flags & MOBILITY_USE)) //exploding after touching yourself would be bad
 		return
 	if(!user.can_speak_vocal())
-		to_chat(user, "<span class='warning'>You can't get the words out!</span>")
+		to_chat(user, span_warning("You can't get the words out!"))
 		return
 	var/mob/M = target
 	do_sparks(4, FALSE, M.loc)
@@ -67,8 +67,8 @@
 	var/atom/A = M.anti_magic_check()
 	if(A)
 		if(isitem(A))
-			target.visible_message("<span class='warning'>[target]'s [A] glows brightly as it wards off the spell!</span>")
-		user.visible_message("<span class='warning'>The feedback blows [user]'s arm off!</span>","<span class='userdanger'>The spell bounces from [M]'s skin back into your arm!</span>")
+			target.visible_message(span_warning("[target]'s [A] glows brightly as it wards off the spell!"))
+		user.visible_message(span_warning("The feedback blows [user]'s arm off!"),span_userdanger("The spell bounces from [M]'s skin back into your arm!"))
 		user.flash_act()
 		var/obj/item/bodypart/part = user.get_holding_bodypart_of_item(src)
 		if(part)
@@ -76,7 +76,7 @@
 		return ..()
 	var/obj/item/clothing/suit/hooded/bloated_human/suit = M.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 	if(istype(suit))
-		M.visible_message("<span class='danger'>[M]'s [suit] explodes off of them into a puddle of gore!</span>")
+		M.visible_message(span_danger("[M]'s [suit] explodes off of them into a puddle of gore!"))
 		M.dropItemToGround(suit)
 		qdel(suit)
 		new /obj/effect/gibspawner(M.loc)
@@ -96,15 +96,15 @@
 	if(!proximity || target == user || !isliving(target) || !iscarbon(user)) //getting hard after touching yourself would also be bad
 		return
 	if(!(user.mobility_flags & MOBILITY_USE))
-		to_chat(user, "<span class='warning'>You can't reach out!</span>")
+		to_chat(user, span_warning("You can't reach out!"))
 		return
 	if(!user.can_speak_vocal())
-		to_chat(user, "<span class='warning'>You can't get the words out!</span>")
+		to_chat(user, span_warning("You can't get the words out!"))
 		return
 	var/mob/living/M = target
 	if(M.anti_magic_check())
-		to_chat(user, "<span class='warning'>The spell can't seem to affect [M]!</span>")
-		to_chat(M, "<span class='warning'>You feel your flesh turn to stone for a moment, then revert back!</span>")
+		to_chat(user, span_warning("The spell can't seem to affect [M]!"))
+		to_chat(M, span_warning("You feel your flesh turn to stone for a moment, then revert back!"))
 		..()
 		return
 	M.Stun(40)
