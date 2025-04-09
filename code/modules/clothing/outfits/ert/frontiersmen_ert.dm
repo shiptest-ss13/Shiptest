@@ -195,7 +195,7 @@
 	suit_store = null
 	belt = /obj/item/gun/ballistic/automatic/pistol/mauler
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/m50=2, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
+	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/ammo_box/magazine/m9mm_mauler/extended=2, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
 
 /datum/outfit/job/frontiersmen/ert/leader/heavy
 	name = "ERT - Frontiersman Officer (Shock Troop)"
