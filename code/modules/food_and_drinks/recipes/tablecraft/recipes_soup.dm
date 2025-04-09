@@ -221,7 +221,7 @@
 		/datum/reagent/water = 10,
 		/datum/reagent/consumable/sugar = 5,
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/potatosweet = 2
+		/obj/item/reagent_containers/food/snacks/grown/sweet_potato = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/sweetpotato
 	subcategory = CAT_SOUP
