@@ -312,6 +312,7 @@
 
 		breath.adjust_moles(GAS_HYDROGEN_CHLORIDE, -gas_breathed)
 
+	//TODO: This probably should be a status effect, While all gas effects are standardized here, monoxide is way too complicated for this system.
 	// Carbon Monoxide
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
 		if (carbon_monoxide_pp > gas_stimulation_min)

@@ -152,6 +152,3 @@
 	preserve_level = TRUE
 	map_to_load = /datum/map_template/test_punchcard
 
-/datum/map_template/test_punchcard
-	name = "test_punchcard"
-	mappath = 'punchcard_test_map.dmm'

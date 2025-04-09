@@ -895,6 +895,7 @@
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
 		encounter.ruin_type = null
+		encounter.selected_ruin  = null
 	if(admin_load_instant)
 		encounter.admin_load()
 		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)], and here to go to the dock: [ADMIN_JMP(encounter.reserve_docks[1])]")
