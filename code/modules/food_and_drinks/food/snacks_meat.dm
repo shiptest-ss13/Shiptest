@@ -438,6 +438,15 @@
 	tastes = list("sweet meat" = 3, "fruity mushroom" = 2)
 	foodtype = MEAT | SUGAR | FRUIT
 
+/obj/item/reagent_containers/food/snacks/miras_li
+	name = "Miras-Li"
+	desc = "Miras cooked with slivers of seeded Refa-Li. It looks sweet and tastes spicy."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/sugar = 1)
+	bonus_reagents = list(/datum/reagent/consumable/vitfro = 2)
+	tastes = list("sweet meat" = 3, "pungent heat" = 2, "subtle fruitness" = 1)
+	foodtype = MEAT | SUGAR | FRUIT
+
 //////////////////////////////////////////// KEBABS AND OTHER SKEWERS ////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/kebab

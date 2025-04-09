@@ -207,6 +207,16 @@
 	tastes = list("warm not-grapes" = 1)
 	foodtype = MEAT | TOXIC
 
+/obj/item/reagent_containers/food/snacks/mirasegg
+	name = "miras eggs"
+	desc = "The eggs of a Miras Lizard are typically extracted from their nest. The individual eggs are small and unfertilized, unless the Miras has mated recently."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2)
+	dried_type = /obj/item/reagent_containers/food/snacks/reti
+	filling_color = "#bae1ba"
+	tastes = list("egg" = 1, "hints of spice" = 1)
+	foodtype = MEAT | RAW
+
 /obj/item/reagent_containers/food/snacks/spiderling
 	name = "spiderling"
 	desc = "Seemingly a small spider, this is actually a nymph of the much larger giant arachnid."

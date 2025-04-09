@@ -125,3 +125,27 @@
 	foodtype = JUNKFOOD | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/reti
+	name = "(yum!) Reti"
+	icon_state = ""
+	desc = "Preserved Miras eggs vacuum sealed inside a small tin for freshness. A label declares it as a \"Proud Product of the Northern Teceti Coalition\"."
+	trash = /obj/item/trash/mirastin
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2)
+	filling_color = "#639fee"
+	tastes = list("egg" = 5 "a slight metallic hint" = 1,)
+	foodtype = JUNKFOOD | MEAT
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/lifosa
+	name = "Lifosa Tiris"
+	icon_state = ""
+	desc = "Small pearls of Tiris Cheese, sealed in a salty crust, and distributed in a sealed tin. The interior of the tin is somewhat oily."
+	trash = /obj/item/trash/mirastin
+	filling_color = "#cac84e"
+	tastes = list("rock salts" = 1, "cheese" = 1, "savory herbs" = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	foodtype = DAIRY
+	/*food_flags = FOOD_FINGER_FOOD*/
+	w_class = WEIGHT_CLASS_SMALL

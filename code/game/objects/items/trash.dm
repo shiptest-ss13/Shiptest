@@ -49,6 +49,12 @@
 	name = "energybar wrapper"
 	icon_state = "energybar"
 
+/obj/item/trash/mirastin
+	name = "empty tin"
+	icon_state = ""
+	resistance_flags = NONE
+	grind_results = list(/datum/reagent/aluminium = 10) //claims to be tin
+
 /obj/item/trash/waffles
 	name = "waffles tray"
 	icon_state = "waffles"

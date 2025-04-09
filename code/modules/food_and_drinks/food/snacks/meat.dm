@@ -301,7 +301,16 @@
 	desc = "A cut of meat from the Miras Lizard. When alone, it tends to be a sickly-sweet experience, requiring proper preparation to truly shine."
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/miras
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/miras
-	tastes = list("chicken" = 1)
+	tastes = list("sweet meat" = 1, "sickening sweetness" = 1, "gamey meat" = 1)
+	foodtype = MEAT | SUGAR | RAW
+
+/obj/item/reagent_containers/food/snacks/meat/slab/tiris
+	name = "tiris meat"
+	icon_state = ""
+	desc = "A rough meat with rich deposits of fat. It is typically processed, spiced, and preserved."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/tiris
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/tiris
+	tastes = list("fatty meat" = 1, "raw fat" = 1)
 	foodtype = MEAT | SUGAR | RAW
 
 ////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
@@ -383,6 +392,13 @@
 	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
 	foodtype = MEAT | SUGAR
 
+/obj/item/reagent_containers/food/snacks/meat/steak/miras
+	name = "tiris steak"
+	desc = "A cooked slice of tiris meat. Rough and fatty."
+	icon_state = ""
+	tastes = list("fatty meat")
+	foodtype = MEAT
+
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////
 
 //Raw cutlets
@@ -461,6 +477,12 @@
 	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
 	foodtype = MEAT | SUGAR | RAW
 
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet/tiris
+	name = "raw tiris cutlet"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/cutlet/tiris
+	tastes = list("fatty meat" = 1, "raw fat" = 1)
+	foodtype = MEAT | RAW
+
 //Cooked cutlets
 
 /obj/item/reagent_containers/food/snacks/meat/cutlet
@@ -513,6 +535,11 @@
 	name = "miras cutlet"
 	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
 	foodtype = MEAT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/meat/cutlet/tiris
+	name = "tiris cutlet"
+	tastes = list("fatty meat")
+	foodtype = MEAT
 
 /* Bacon */
 

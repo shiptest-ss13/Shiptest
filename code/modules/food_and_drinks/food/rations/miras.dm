@@ -20,7 +20,7 @@
 	name = "Tiris Celima"
 	desc = "Dofitis fat is rendered from the animal and used to slow-cook this heavily salted chunk of Tiris steak. Once it's warmed up, it practically melts in the mouth."
 	filling_color = "#2a7416"
-	tastes = list("fatty meat" = 1, "salt" = 1, "crusty herbs" = 1)
+	tastes = list("fatty meat" = 2, "salt" = 3, "crusty herbs" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/ration/side/miras_reti
