@@ -383,11 +383,12 @@
 	h_dock.dir = NORTH
 	h_dock.width = h_template.dock_width
 	h_dock.height = h_template.dock_height
+	h_dock.initial_hangar_template = h_template
 	shaft.hangar_docks += h_dock
 
 	// important not to CHECK_TICK after this point, so that the number is guaranteed to be correct
 	var/hangar_num = length(shaft.hangar_docks)
-	var/hangar_name = "Elevator [shaft.name] - Floor[hangar_num] ([src.name])"
+	var/hangar_name = "Elevator [shaft.name] - Floor [hangar_num] ([src.name])"
 	h_dock.name = hangar_name
 	vlevel.name = hangar_name
 	// hangar area has UNIQUE_AREA, so do not rename it (annoying)
@@ -438,6 +439,7 @@
 /datum/hangar_shaft
 	var/name
 
+	var/datum/map_template/outpost/hangar/shaft_hangar
 	var/datum/elevator_master/shaft_elevator
 	var/list/obj/docking_port/stationary/hangar_docks = list()
 
@@ -446,3 +448,44 @@
 		name = _name
 	if(_elevator)
 		shaft_elevator = _elevator
+
+/// Not the best way of handling this, but it will Work. If a docking port fails to adjust 3 times, then we essentially "Reset" the docking port
+/datum/overmap/outpost/proc/fix_docking_port(obj/docking_port/stationary/port_to_fix)
+	var/obj/docking_port/mobile/our_mobile_port = port_to_fix.docked
+	var/datum/hangar_shaft/our_shaft
+
+	if(!istype(port_to_fix))
+		return FALSE
+
+	if(istype(our_mobile_port))
+		our_mobile_port.current_ship.complete_undock()
+	port_to_fix.is_adjusting_now = TRUE
+
+	//checks all shafts if the docking port is in them
+	for(var/datum/hangar_shaft/h_shaft as anything in shaft_datums)
+		for(var/obj/docking_port/stationary/h_dock as anything in h_shaft.hangar_docks)
+			//if it's in this hangar's docks, set our targetted shaft to it, then break
+			if(port_to_fix in h_shaft.hangar_docks)
+				our_shaft = h_shaft
+				break
+		//ditto
+		if(our_shaft)
+			break
+	//If we didnt ourselves on this outpost, then return
+	if(!our_shaft)
+		port_to_fix.is_adjusting_now = FALSE
+		return FALSE
+	var/turf/initial_turf = locate(port_to_fix.initial_location["x"], port_to_fix.initial_location["y"], port_to_fix.initial_location["z"])
+
+	if(!port_to_fix.forceMove(initial_turf) || !port_to_fix.initial_hangar_template)
+		return FALSE
+
+	port_to_fix.adjust_dock_for_landing = TRUE
+	port_to_fix.dir = NORTH
+	port_to_fix.width = port_to_fix.initial_hangar_template.dock_width
+	port_to_fix.height = port_to_fix.initial_hangar_template.dock_height
+	port_to_fix.dwidth = 0
+	port_to_fix.dheight = 0
+	//fixed? return to service after
+	port_to_fix.is_adjusting_now = FALSE
+	return TRUE

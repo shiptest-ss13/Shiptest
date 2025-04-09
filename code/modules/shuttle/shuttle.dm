@@ -7,6 +7,7 @@
 /obj/docking_port
 	desc = "Where the ships dock and undock. Ask ruinyard about this."
 	invisibility = INVISIBILITY_OBSERVER
+	layer = MID_LANDMARK_LAYER
 	icon = 'icons/effects/mapping/docking_ports.dmi'
 	icon_state = "static"
 
@@ -228,10 +229,15 @@
 
 	/// disables the port from being docked to when the mobile port the ship is attatched to is docked. Useless on non-ships.
 	var/disable_on_owner_ship_dock = FALSE
+	/// Our inital location, used for fixing docks
+	var/list/initial_location
+	///ditto
+	var/datum/map_template/outpost/hangar/initial_hangar_template
 
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
 	SSshuttle.stationary += src
+	initial_location = list("x" = x, "y" = y, "z" = z)
 	if(name == "dock")
 		name = "dock[SSshuttle.stationary.len]"
 
@@ -309,7 +315,7 @@
 	dir = final_facing_dir
 	if(shuttle.height > height || shuttle.width > width)
 		is_adjusting_now = FALSE
-		CRASH("Shuttle cannot fit in dock!")
+		return
 
 	// offset for the dock within its area
 	var/new_dheight = round((height-shuttle.height)/2) + shuttle.dheight
@@ -337,16 +343,28 @@
 	for(var/turf/closed/indestructible/edgeturf as anything in return_turfs())
 		if(!istype(edgeturf))
 			continue
-		message_admins("[src] [ADMIN_JMP(src)] adjusted to fit a vessel but somehow it's bounds ended up in an edge tile ([ADMIN_JMP(edgeturf)])! This doesn't seem right so resetting it back to how it was before as a failsafe!")
-		stack_trace("[src] adjusted to fit a vessel but somehow it's bounds ended up in an edge! This doesn't seem right so resetting it back to how it was before as a failsafe!")
+		if(!initial_hangar_template)
+			message_admins("[src] [ADMIN_VV(src)] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge tile ([ADMIN_JMP(edgeturf)])! This doesn't seem right so resetting it back to how it was before as a failsafe!")
+			stack_trace("[src] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge! This doesn't seem right so resetting it back to how it was before as a failsafe!")
 
-		forceMove(oldloc)
-		dir = olddir
-		dheight = olddheight
-		dwidth = olddwidth
-		height = oldheight
-		width = oldwidth
+			forceMove(oldloc)
+			dir = olddir
+			dheight = olddheight
+			dwidth = olddwidth
+			height = oldheight
+			width = oldwidth
+		else
+			forceMove(oldloc)
+			var/datum/overmap/outpost/our_overmap_object = SSovermap.get_overmap_object_by_location(src)
+			if(istype(our_overmap_object) && our_overmap_object.fix_docking_port(src))
+				message_admins("[src] [ADMIN_VV(src)] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge tile ([ADMIN_JMP(edgeturf)])! Setting to default values in an attempt to fix!")
+				stack_trace("[src] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge! Setting to default values in an attempt to fix!")
+			else
+				message_admins("[src] [ADMIN_VV(src)] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge tile ([ADMIN_JMP(edgeturf)])! Unable to fix because we ended up on a non-outpost!! Disabling until a manual fix!")
+				stack_trace("[src] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge! Unable to fix because we ended up on a non-outpost!! Disabling until a manual fix!")
+				enabled = FALSE
 		break
+
 	is_adjusting_now = FALSE
 
 
