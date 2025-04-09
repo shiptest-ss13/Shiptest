@@ -11,6 +11,12 @@
 			/obj/effect/greeble_spawner/moon/crater6 = 5,
 		)
 
+/obj/effect/spawner/random/greeble/random_ruin_greeble/spawn_loot(lootcount_override)
+	var/lootspawn = pick_weight_recursive(loot)
+	if(!can_spawn(lootspawn))
+		return
+	make_item(get_turf(src), lootspawn)
+
 /obj/effect/greeble_spawner
 	name = "planet greeble spawner"
 	icon = 'icons/effects/mapping/landmarks_static.dmi'

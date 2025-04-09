@@ -1,5 +1,5 @@
 /datum/unit_test/ship_placement/Run()
-	var/datum/overmap/outpost/test_outpost = new /datum/overmap/outpost/no_main_level()
+	var/datum/overmap/outpost/test_outpost = new /datum/overmap/outpost/no_main_level(system_spawned_in = SSovermap.default_system)
 
 	// checks all shuttle templates, including those
 	// disabled or intended as subshuttles
