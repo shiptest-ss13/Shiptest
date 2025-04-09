@@ -12,6 +12,7 @@
 
 <!-- Tick the box below (put an X instead of a space between the brackets) if you have tested your changes and this is ready for review. Leave unticked if you have yet to test your changes and this is not ready for review. -->
 - [ ] I affirm that I have tested all of my proposed changes and that any issues found during tested have been addressed.
+
 ## Changelog
 
 :cl:
