@@ -62,7 +62,7 @@
 	var/obj/item/s_store = null
 
 	/// For changing our voice.
-	var/special_voice = "" 
+	var/special_voice = ""
 	/// Adjective used in get_generic_name(), if any
 	var/generic_adjective
 	/// For stopping bloodloss body-wide
