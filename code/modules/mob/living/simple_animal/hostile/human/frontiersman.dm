@@ -64,6 +64,31 @@
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/wasp
+	name = "Frontiersman Searer"
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one's trigger finger itches, ready to dump their entire laser SMG cell into an unlucky person."
+	icon_state = "frontiersmanranged"
+	retreat_distance = 3
+	minimum_distance = 2
+	projectilesound = 'sound/weapons/laser4.ogg'
+	rapid = 6
+	casingtype = null
+	projectiletype = /obj/projectile/beam/weak/sharplite
+	rapid_fire_delay = 1
+	r_hand = /obj/item/gun/energy/laser/wasp
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/internals
+	icon_state = "frontiersmanranged_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/internals/neutered
+	weapon_drop_chance = 0
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon
 	name = "Frontiersman Sawbones"
 	desc = "A member of the brutal Frontiersman terrorist fleet! They appear to be a \"doctor\" of some sort, nervously swinging about some kind of makeshift syringe launcher."
@@ -163,6 +188,32 @@
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/wasp
+	name = "Frontiersman Stinger"
+	desc = "A member of the brutal Frontiersman terrorist fleet! This one is well protected with their laser SMG, ready to scorch anyone who stands in their way."
+	icon_state = "frontiersmanrangedak47"
+	retreat_distance = 3
+	minimum_distance = 2
+	projectilesound = 'sound/weapons/laser4.ogg'
+	rapid = 6
+	casingtype = null
+	projectiletype = /obj/projectile/beam/weak/sharplite
+	rapid_fire_delay = 1
+	armor_base = /obj/item/clothing/suit/armor/vest/frontier
+	r_hand = /obj/item/gun/energy/laser/wasp
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/wasp/internals
+	icon_state = "frontiersmanrangedak47_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/internals
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/wasp/internals/neutered
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm
