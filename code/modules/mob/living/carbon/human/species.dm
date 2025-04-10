@@ -1835,7 +1835,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/mechanical = FALSE
 
 	var/feels_pain = TRUE
-	if(inherent_biotypes & MOB_ROBOTIC) //makes certain species take more damage and start taking damage at lower air amounts
+	if(inherent_biotypes & MOB_ROBOTIC) //robots are not flesh
 		mechanical = TRUE
 
 	if(HAS_TRAIT(H, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
