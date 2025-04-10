@@ -2266,6 +2266,14 @@
 	pixel_y = 8;
 	pixel_x = -8
 	},
+/obj/item/melee/knife/survival{
+	pixel_y = 5;
+	pixel_x = 3
+	},
+/obj/item/melee/knife/survival{
+	pixel_y = 6;
+	pixel_x = 8
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "nL" = (
@@ -3699,54 +3707,76 @@
 "yq" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = 5;
-	pixel_y = -2
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 6;
-	pixel_x = 5
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 6;
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8;
-	pixel_y = -2
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = 4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 11;
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 10;
-	pixel_x = 2
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_x = 5;
-	pixel_y = -2
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 6;
-	pixel_x = -8
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 10;
-	pixel_x = 2
-	},
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_x = -32
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 12;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 10;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 8;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 6;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 4;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 2;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 0;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = -2;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = -4;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 12
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 10
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = 6;
+	pixel_y = 0
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -4339,6 +4369,10 @@
 /obj/item/storage/backpack/satchel/explorer{
 	pixel_y = -2
 	},
+/obj/item/storage/backpack/explorer,
+/obj/item/storage/backpack/explorer,
+/obj/item/storage/backpack/explorer,
+/obj/item/storage/backpack/explorer,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "Ba" = (
@@ -5060,11 +5094,11 @@
 /obj/structure/bed/double{
 	dir = 4
 	},
-/obj/item/bedsheet/double{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
+	},
+/obj/item/bedsheet/double/brown{
+	dir = 1
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/captain)
@@ -6519,6 +6553,17 @@
 /obj/machinery/cell_charger{
 	pixel_y = 7;
 	pixel_x = 2
+	},
+/obj/item/gps{
+	pixel_y = -6;
+	pixel_x = -10
+	},
+/obj/item/gps{
+	pixel_y = -6
+	},
+/obj/item/gps{
+	pixel_y = -6;
+	pixel_x = 10
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -8159,33 +8204,24 @@
 /area/ship/external/dark)
 "Zp" = (
 /obj/structure/railing,
+/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/starboard)
 "Zt" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 6
+	pixel_y = 4
 	},
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 12
-	},
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = 6
-	},
-/obj/item/gps{
-	pixel_y = -6;
-	pixel_x = 10
-	},
-/obj/item/gps{
-	pixel_y = -6
-	},
-/obj/item/gps{
-	pixel_y = -6;
-	pixel_x = -10
+	pixel_y = 11
 	},
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/gun/energy/kalix/pgf/medium{
+	pixel_y = -3;
+	pixel_x = -2
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Zu" = (

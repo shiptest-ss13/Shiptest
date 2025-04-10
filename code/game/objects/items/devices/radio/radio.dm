@@ -104,9 +104,9 @@
 	return ..()
 
 /obj/item/radio/proc/set_frequency(new_frequency)
-	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
 	remove_radio(src, frequency)
 	frequency = add_radio(src, new_frequency)
+	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
 
 /obj/item/radio/proc/recalculateChannels()
 	channels = list()
@@ -133,7 +133,7 @@
 		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		set_broadcasting(!broadcasting)
-		to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle broadcasting [broadcasting ? "on" : "off"]."))
 
 /obj/item/radio/CtrlShiftClick(mob/user)
 	if(headset)
@@ -142,7 +142,7 @@
 		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		set_listening(!listening)
-		to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle speaker [listening ? "on" : "off"]."))
 
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
@@ -435,22 +435,22 @@
 /obj/item/radio/examine(mob/user)
 	. = ..()
 	if (frequency && in_range(src, user))
-		. += "<span class='notice'>It is set to broadcast over the [frequency/10] frequency.</span>"
+		. += span_notice("It is set to broadcast over the [frequency/10] frequency.")
 	if (unscrewed)
-		. += "<span class='notice'>It can be attached and modified.</span>"
+		. += span_notice("It can be attached and modified.")
 	else
-		. += "<span class='notice'>It cannot be modified or attached.</span>"
+		. += span_notice("It cannot be modified or attached.")
 	if (in_range(src, user)&& !headset)
-		. += "<span class='info'>Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.</span>"
+		. += span_info("Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.")
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		unscrewed = !unscrewed
 		if(unscrewed)
-			to_chat(user, "<span class='notice'>The radio can now be attached and modified!</span>")
+			to_chat(user, span_notice("The radio can now be attached and modified!"))
 		else
-			to_chat(user, "<span class='notice'>The radio can no longer be modified or attached!</span>")
+			to_chat(user, span_notice("The radio can no longer be modified or attached!"))
 	else
 		return ..()
 
@@ -461,7 +461,7 @@
 	emped++ //There's been an EMP; better count it
 	var/curremp = emped //Remember which EMP this was
 	if (listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-		to_chat(loc, "<span class='warning'>\The [src] overloads.</span>")
+		to_chat(loc, span_warning("\The [src] overloads."))
 	set_broadcasting(FALSE)
 	set_listening(FALSE)
 	for (var/ch_name in channels)
@@ -517,14 +517,14 @@
 					keyslot = null
 
 			recalculateChannels()
-			to_chat(user, "<span class='notice'>You pop out the encryption key in the radio.</span>")
+			to_chat(user, span_notice("You pop out the encryption key in the radio."))
 
 		else
-			to_chat(user, "<span class='warning'>This radio doesn't have any encryption keys!</span>")
+			to_chat(user, span_warning("This radio doesn't have any encryption keys!"))
 
 	else if(istype(W, /obj/item/encryptionkey/))
 		if(keyslot)
-			to_chat(user, "<span class='warning'>The radio can't hold another key!</span>")
+			to_chat(user, span_warning("The radio can't hold another key!"))
 			return
 
 		if(!keyslot)

@@ -42,6 +42,7 @@
 	caliber = "4.6x30mm"
 	projectile_type = /obj/projectile/bullet/c46x30mm/recycled
 	stack_size = 15
+	wear_modifier = 2
 
 /obj/item/ammo_casing/c46x30mm/ap
 	name = "4.6x30mm armor-piercing bullet casing"
@@ -83,6 +84,7 @@
 	name = "5.56mm HITP caseless surplus round"
 	desc = "A 5.56mm HITP caseless surplus round."
 	projectile_type = /obj/projectile/bullet/c556mm/surplus
+	wear_modifier = 2
 
 /obj/item/ammo_casing/caseless/c556mm/ap
 	name = "5.56mm HITP caseless armor-piercing round"

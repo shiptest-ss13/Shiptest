@@ -27,7 +27,7 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 1)
 	loot = list()
-	//mob_trophy = /obj/item/mob_trophy/bear_paw
+	mob_trophy = /obj/item/mob_trophy/bear_paw
 	stat_attack = HARD_CRIT
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -40,7 +40,7 @@
 		rapid_melee = initial(rapid_melee)
 		return
 	if(!aggressive_message_said && target)
-		visible_message("<span class='danger'>The [name] looks at [target] with an expression of rage!</span>")
+		visible_message(span_danger("The [name] looks at [target] with an expression of rage!"))
 		aggressive_message_said = TRUE
 	rapid_melee = 2
 	speed = 7
@@ -73,7 +73,7 @@
 	icon_state = "warbear"
 	icon_living = "warbear"
 	icon_dead = "warbear_dead"
-	//mob_trophy = /obj/item/mob_trophy/war_paw
+	mob_trophy = /obj/item/mob_trophy/war_paw
 	trophy_drop_mod = 75
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3, /obj/item/bear_armor = 1)

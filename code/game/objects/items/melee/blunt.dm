@@ -3,8 +3,9 @@
 	icon_state = "sledgehammer"
 	base_icon_state = "sledgehammer"
 	icon = 'icons/obj/weapon/blunt.dmi'
-	//lefthand_file = 'icons/mob/inhands/weapons/blunt_lefthand.dmi'
-	//righthand_file = 'icons/mob/inhands/weapons/blunt_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/blunt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/blunt_righthand.dmi'
 	force = 5
 	throwforce = 15
 	armour_penetration = 40
@@ -23,11 +24,13 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30, icon_wielded="[base_icon_state]_w")
 
+/obj/item/melee/sledgehammer/update_icon_state()
+	icon_state = "[base_icon_state]"
+	return ..()
+
 /obj/item/melee/sledgehammer/gorlex
 	icon_state = "gorlex_sledgehammer"
 	base_icon_state = "gorlex_sledgehammer"
-	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	name = "breaching sledgehammer"
 	desc = "A large hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
 	toolspeed = 0.5
@@ -57,6 +60,15 @@
 	if(!target.anchored)
 		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
 
+/obj/item/melee/sledgehammer/gorlex/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
+		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
+			var/obj/structure/W = A
+			W.obj_destruction("axe")
+
 // its for dynamic gen mobs okay
 /obj/item/melee/sledgehammer/gorlex/pre_wielded
-	icon_state = "sledgehammer_w"
+	icon_state = "gorlex_sledgehammer_w"

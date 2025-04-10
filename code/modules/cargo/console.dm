@@ -37,19 +37,12 @@
 	else
 		obj_flags &= ~EMAGGED
 
-/obj/machinery/computer/cargo/proc/get_export_categories()
-	. = EXPORT_CARGO
-	if(contraband)
-		. |= EXPORT_CONTRABAND
-	if(obj_flags & EMAGGED)
-		. |= EXPORT_EMAG
-
 /obj/machinery/computer/cargo/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
 	if(user)
-		user.visible_message("<span class='warning'>[user] swipes a suspicious card through [src]!</span>",
-		"<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
+		user.visible_message(span_warning("[user] swipes a suspicious card through [src]!"),
+		span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
@@ -102,11 +95,11 @@
 	data["outpostMissions"] = list()
 
 	if(current_ship)
-		for(var/datum/mission/M as anything in current_ship.missions)
+		for(var/datum/mission/outpost/M as anything in current_ship.missions)
 			data["shipMissions"] += list(M.get_tgui_info())
 		if(outpost_docked)
 			var/datum/overmap/outpost/out = current_ship.docked_to
-			for(var/datum/mission/M as anything in out.missions)
+			for(var/datum/mission/outpost/M as anything in out.missions)
 				data["outpostMissions"] += list(M.get_tgui_info())
 
 	return data
@@ -127,7 +120,7 @@
 					var/mob/living/carbon/human/user = usr
 					user.put_in_hands(cash_chip)
 				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
-				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
+				src.visible_message(span_notice("[src] dispenses a holochip."))
 			return TRUE
 
 		if("add")
@@ -157,9 +150,8 @@
 					crate_spawner.handle_order(SO)
 					update_appearance() // ??????????????????
 					return TRUE
-
 		if("mission-act")
-			var/datum/mission/mission = locate(params["ref"])
+			var/datum/mission/outpost/mission = locate(params["ref"])
 			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
 			var/datum/overmap/ship/controlled/ship = D.current_ship
 			var/datum/overmap/outpost/outpost = ship.docked_to
@@ -195,7 +187,7 @@
 	var/value = W.get_item_credit_value()
 	if(value && charge_account)
 		charge_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
-		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
+		to_chat(user, span_notice("You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr."))
 		qdel(W)
 		return TRUE
 	..()
