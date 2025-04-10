@@ -44,7 +44,7 @@
 
 /obj/projectile/bullet/p50/penetrator/sabot
 	name = "Iron-tungsten rod"
-	icon_state = "redtrac"
+	icon_state = "sabot"
 	projectile_piercing = ALL // Little to nothing it can't pierce through
 	projectile_phasing = NONE// Might need adjusting to allow it to pierce things such as computers and what not, uncertain though
 	var/anti_armour_damage = 50

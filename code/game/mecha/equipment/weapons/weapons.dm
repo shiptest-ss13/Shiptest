@@ -373,7 +373,6 @@
 	projectiles_cache_max = 90
 	ammo_type = "railgun"
 	fire_sound = 'sound/weapons/blastcannon.ogg'
-	full_auto = FALSE
 	scoped = TRUE
 	zoom_mod = 10
 	zoom_out_mod = 3
