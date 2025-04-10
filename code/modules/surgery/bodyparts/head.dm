@@ -13,7 +13,7 @@
 	px_y = -8
 	stam_damage_coeff = 1
 	max_stamina_damage = 100
-	bone_break_threshold = 55 // Beefier bones
+	bone_break_threshold = 45 // Beefier bones
 
 	var/mob/living/brain/brainmob = null //The current occupant.
 	var/obj/item/organ/brain/brain = null //The brain organ

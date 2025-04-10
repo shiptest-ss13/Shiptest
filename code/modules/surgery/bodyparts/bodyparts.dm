@@ -49,7 +49,7 @@
 	var/is_pseudopart = FALSE
 	/// Is it fine, broken, splinted, or just straight up fucking gone
 	var/bone_status = BONE_FLAG_NO_BONES
-	var/bone_break_threshold = 50
+	var/bone_break_threshold = 40
 	/// Threshold at which the limb will start bleeding if damaged by sharp items or projectiles
 	var/bleed_threshold = 10
 	/// Threshold at which the limb will start bleeding if damaged by blunt items
@@ -233,8 +233,9 @@
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
-/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, break_modifier = 1, sharpness = FALSE)
+/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, sharpness = FALSE)
 	var/hit_percent = (100-blocked)/100
+	var/attack_force = brute //Used for bone breaking because break_modifier straight up didn't work, ever.
 	if((!brute && !burn && !stamina) || hit_percent <= 0)
 		return FALSE
 	if(owner && (owner.status_flags & GODMODE))
@@ -259,8 +260,9 @@
 			burn *= 2
 
 	// Bone breaking. The harder you get hit and the more hurt you already are - the more likely you are to break a bone.
-	// The more damaged your bodypart is, the easier it is to break a bone, down to at least 5 force at 90 existing damage.
-	if((brute >= (bone_break_threshold - clamp((brute_dam * 0.5), 0, 45))) && prob(break_modifier + brute_dam * 0.5))
+	// The more damaged your bodypart is, the easier it is to break a bone.
+	//Down to at least 5 force at 70 existing damage for the chest, 30 damage for arms or legs, 100 damage for head.
+	if((brute >= (bone_break_threshold - clamp((brute_dam * 0.5), 0, (bone_break_threshold - 5)))) && prob(attack_force + brute_dam * 0.5))
 		break_bone()
 
 	// Bleeding is applied here
