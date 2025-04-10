@@ -1832,7 +1832,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/eyedamage = FALSE
 	var/irritant = FALSE
 	var/burndamage = 0
-	var/lowerthreshold = FALSE
+	var/mechanical = FALSE
 
 	var/feels_pain = TRUE
 	if(inherent_biotypes & MOB_ROBOTIC) //makes certain species take more damage and start taking damage at lower air amounts
@@ -1879,7 +1879,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.apply_damage(burndamage, BURN, spread_damage = TRUE)
 	if(prob(5) && burndamage)
 		if(feels_pain)
-			to_chat(H, span_userdanger("You're [mechanical : "corroding" ? "melting"]!"))
+			to_chat(H, span_userdanger("You're [mechanical ? "corroding" : "melting"]!"))
 		playsound(H, 'sound/items/welder.ogg', 30, TRUE)
 	if(!H.check_for_goggles() && eyedamage && !mechanical)
 		if(prob(30))
@@ -1889,7 +1889,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.emote("cry")
 		H.set_blurriness(rand(5,15))
 	if(irritant && prob(5) && feels_pain)
-		to_chat(H, span_danger("Your [mechanical : "outer shell smolders" ? "skin itches".))
+		to_chat(H, span_danger("Your [mechanical ? "outer shell smolders" : "skin itches"]."))
 
 /// Handle the body temperature status effects for the species
 /// Traits for resitance to heat or cold are handled here.
