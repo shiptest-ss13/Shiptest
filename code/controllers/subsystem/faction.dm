@@ -3,30 +3,31 @@ SUBSYSTEM_DEF(factions)
 	init_order = INIT_ORDER_FACTION
 	flags = SS_NO_FIRE
 	var/list/datum/faction/factions = list()
+	var/list/faction_prefixes = list()
 
 /datum/controller/subsystem/factions/Initialize(timeofday)
 	for(var/path in subtypesof(/datum/faction))
-		factions += new path()
+		var/datum/faction/faction = new path()
+		factions[path] = faction
+		for(var/prefix in faction.prefixes)
+			if(prefix in faction_prefixes)
+				var/datum/faction/other_faction = faction_prefixes[prefix]
+				stack_trace("Duplicate ship prefix: [prefix] for [faction.name] and [other_faction.name]")
+			faction_prefixes[prefix] = faction
+
 	return ..()
 
 /datum/controller/subsystem/factions/proc/ship_prefix_to_faction(prefix)
-	for(var/datum/faction/faction in factions)
-		if(prefix in faction.prefixes)
-			return faction
-	var/static/list/screamed = list()
-	if(!(prefix in screamed))
-		screamed += prefix
-		stack_trace("attempted to get faction for unknown prefix [prefix]")
-	return null
+	if(!(prefix in faction_prefixes))
+		CRASH("Unknown ship prefix: [prefix]")
+	return faction_prefixes[prefix]
 
-/datum/controller/subsystem/factions/proc/ship_prefix_to_name(prefix)
-	var/datum/faction/faction = ship_prefix_to_faction(prefix)
-	if(faction)
-		return faction.name
-	return "?!ERR!?"
-
-/datum/controller/subsystem/factions/proc/faction_path_to_datum(path)
-	for(var/datum/faction/faction in factions)
-		if(faction.type == path)
-			return faction
-	stack_trace("we did not return any faction with path [path]")
+/datum/controller/subsystem/factions/proc/faction_name(path_or_type)
+	var/datum/faction/faction
+	if(istype(path_or_type, /datum/faction))
+		faction = path_or_type
+	else if(ispath(path_or_type))
+		faction = factions[path_or_type]
+	else
+		return "Unknown Faction"
+	return faction.name

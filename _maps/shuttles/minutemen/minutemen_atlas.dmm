@@ -1987,7 +1987,6 @@
 	},
 /obj/structure/curtain/cloth,
 /obj/structure/window/reinforced{
-	dir = 2;
 	pixel_y = -1
 	},
 /turf/open/floor/carpet/blue,
@@ -2208,7 +2207,6 @@
 /area/ship/engineering)
 "vT" = (
 /obj/effect/turf_decal/siding/wood/corner{
-	pixel_y = 0;
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
@@ -2667,7 +2665,6 @@
 	},
 /obj/structure/dresser{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = -5
 	},
 /obj/item/reagent_containers/food/drinks/beaglemug{
@@ -2721,12 +2718,10 @@
 "An" = (
 /obj/machinery/light/directional/west,
 /obj/effect/spawner/bunk_bed{
-	dir = 4;
-	pixel_y = 0
+	dir = 4
 	},
 /obj/structure/curtain/cloth,
 /obj/structure/window/reinforced{
-	dir = 2;
 	pixel_y = -1
 	},
 /turf/open/floor/carpet/blue,
@@ -3134,6 +3129,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 30
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -4339,6 +4337,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Sw" = (
@@ -4725,11 +4724,9 @@
 	pixel_y = 7
 	},
 /obj/item/ammo_box/magazine/p16{
-	pixel_y = 0;
 	pixel_x = -6
 	},
 /obj/item/ammo_box/magazine/p16{
-	pixel_y = 0;
 	pixel_x = -6
 	},
 /obj/item/melee/knife/survival{
@@ -5183,9 +5180,7 @@
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
-/obj/structure/platform/industrial{
-	dir = 2
-	},
+/obj/structure/platform/industrial,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ZU" = (
