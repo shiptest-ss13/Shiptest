@@ -167,7 +167,7 @@
 		human_owner.drunkenness *= 0.997 //reduce drunkenness by 0.3% per tick, 6% per 2 seconds
 	if(prob(20) && carbon_owner?.client)
 		carbon_owner.handle_dreams()
-		if(prob(10) && carbon_owner.client && owner.health > owner.crit_threshold)
+		if(prob(10) && owner.health > owner.crit_threshold)
 			owner.emote("snore")
 
 /atom/movable/screen/alert/status_effect/asleep
