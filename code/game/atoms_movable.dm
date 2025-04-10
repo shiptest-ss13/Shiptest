@@ -553,6 +553,9 @@
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_ATOM_VIRTUAL_Z_CHANGE, new_virtual_z, previous_virtual_z)
 
+	for(var/atom/movable/thing as anything in contents)
+		thing.on_virtual_z_change(new_virtual_z, previous_virtual_z)
+
 /mob/living/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	. = ..()
 	if(previous_virtual_z)

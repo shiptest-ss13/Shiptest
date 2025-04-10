@@ -98,6 +98,9 @@
 /turf/open/floor/plasteel/patterned/grid
 	icon_state = "grid"
 	base_icon_state = "grid"
+/turf/open/floor/plasteel/patterned/grid/dark
+	icon_state = "grid_dark"
+	base_icon_state = "grid_dark"
 /turf/open/floor/plasteel/patterned/ridged
 	icon_state = "ridged"
 	base_icon_state = "ridged"
