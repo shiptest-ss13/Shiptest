@@ -472,7 +472,7 @@
 	desc = "A large duffel bag for holding extra plastic explosives."
 
 /obj/item/storage/backpack/duffelbag/sec/c4/PopulateContents()
-	for(var/i in 1 to 10)
+	for(var/i in 1 to 7)
 		new /obj/item/grenade/c4(src)
 
 /obj/item/storage/backpack/duffelbag/sec/surgery/PopulateContents()
