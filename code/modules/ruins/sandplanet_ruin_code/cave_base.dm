@@ -29,6 +29,8 @@
 
 //turret
 /obj/machinery/porta_turret/ruin/cave_base
+	name = "high-gain laser cannon"
+	desc = "A completely novel design, one you're fairly certain you have never seen before. Seems to fire laser bolts in triplicate."
 	max_integrity = 100
 	faction = list("turret", "Forward_Ops_Post")
 	stun_projectile = /obj/projectile/beam/laser/heavylaser
