@@ -64,7 +64,7 @@
 		qdel(src)
 		return
 	if(ismegafauna(M))
-		M.visible_message("<span class='warning'>[M] glows fiercely as the containment field flickers out!</span>")
+		M.visible_message(span_warning("[M] glows fiercely as the containment field flickers out!"))
 		field_gen_1.calc_power(INFINITY) //rip that 'containment' field
 		M.adjustHealth(-M.obj_damage)
 	else
@@ -129,9 +129,9 @@
 		if(prob(20))
 			user.Stun(40)
 		user.take_overall_damage(0, shock_damage)
-		user.visible_message("<span class='danger'>[user.name] is shocked by the [src.name]!</span>", \
-		"<span class='userdanger'>Energy pulse detected, system damaged!</span>", \
-		"<span class='hear'>You hear an electrical crack.</span>")
+		user.visible_message(span_danger("[user.name] is shocked by the [src.name]!"), \
+		span_userdanger("Energy pulse detected, system damaged!"), \
+		span_hear("You hear an electrical crack."))
 
 	user.updatehealth()
 	bump_field(user)

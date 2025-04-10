@@ -13,7 +13,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 	var/smash_time = 3 SECONDS
-	var/time_to_harden = 50 SECONDS
+	var/time_to_harden = 20 SECONDS
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened
 	// don't change this in subtypes unless you want them to spawn in soft on maps
 	var/harden_lvl = 1
@@ -41,7 +41,7 @@
 
 /turf/open/floor/concrete/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].</span>"
+	. += span_notice("[p_they(TRUE)] look[p_s()] like you could <b>smash</b> [p_them()].")
 	switch(harden_lvl)
 		if(0.8 to 0.99)
 			. += "[p_they(TRUE)] look[p_s()] nearly dry."
@@ -56,10 +56,10 @@
 	if(.)
 		return
 	if(C.tool_behaviour == TOOL_MINING)
-		to_chat(user, "<span class='notice'>You start smashing [src]...</span>")
+		to_chat(user, span_notice("You start smashing [src]..."))
 		var/adj_time = (broken || burnt) ? smash_time/2 : smash_time
 		if(C.use_tool(src, user, adj_time, volume=30))
-			to_chat(user, "<span class='notice'>You break [src].</span>")
+			to_chat(user, span_notice("You break [src]."))
 			playsound(src, 'sound/effects/break_stone.ogg', 30, TRUE)
 			remove_tile()
 			return TRUE
@@ -234,7 +234,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_HEXACRETE)
 
 	smash_time = 8 SECONDS
-	time_to_harden = 80 SECONDS
+	time_to_harden = 40 SECONDS
 	// so that you can remove the overlays
 	shape_types = list(/turf/open/floor/concrete/reinforced)
 

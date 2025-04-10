@@ -40,6 +40,22 @@
 	description = "An old Eoehoma Firearms manufacturing plant dedicated to assembly of the beloved-by-many E-11 rifle."
 	suffix = "whitesands_surface_e11_manufactory.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS)
+	ruin_mission_types = list(/datum/mission/ruin/multiple/e11_stash)
+
+/datum/mission/ruin/multiple/e11_stash
+	name = "recover a stash of Eoehoma weapons"
+	desc = "My first mate found an Eoehoma document detailing a production plant for energy weapons in the sector, we'll pay well if you can recover and deliver 6 guns back to us."
+	faction = /datum/faction/independent
+	value = 2750
+	mission_limit = 1
+	setpiece_item = /obj/item/gun/energy/e_gun/e11
+	required_count = 6
+
+/datum/mission/ruin/multiple/e11_stash/can_turn_in(atom/movable/item_to_check)
+	if(istype(item_to_check, /obj/item/gun))
+		var/obj/item/gun/eoehoma_gun = item_to_check
+		if(eoehoma_gun.manufacturer == MANUFACTURER_EOEHOMA)
+			return TRUE
 
 /datum/map_template/ruin/whitesands/brazillian_lab
 	name = "Hermit Weapons-Testing Compound"

@@ -59,7 +59,7 @@
 	if(..())
 		return TRUE
 	if(circuit && !(flags_1&NODECONSTRUCT_1))
-		to_chat(user, "<span class='notice'>You start to disconnect the monitor...</span>")
+		to_chat(user, span_notice("You start to disconnect the monitor..."))
 		if(I.use_tool(src, user, time_to_screwdrive, volume=50))
 			deconstruct(TRUE, user)
 	return TRUE
@@ -103,7 +103,7 @@
 			newframe.set_anchored(TRUE)
 			if(machine_stat & BROKEN)
 				if(user)
-					to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
+					to_chat(user, span_notice("The broken glass falls out."))
 				else
 					playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 				new /obj/item/shard(drop_location())
@@ -111,7 +111,7 @@
 				newframe.state = 3
 			else
 				if(user)
-					to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
+					to_chat(user, span_notice("You disconnect the monitor."))
 				newframe.state = 4
 			circuit = null
 			newframe.update_appearance()

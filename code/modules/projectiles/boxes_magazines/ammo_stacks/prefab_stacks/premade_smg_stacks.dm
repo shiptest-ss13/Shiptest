@@ -20,7 +20,7 @@
 /obj/item/storage/box/ammo/c46x30mm/ap
 	name = "box of 4.6x30mm AP ammo"
 	desc = "A box of standard 4.6x30mm AP ammo."
-	icon_state = "46x30mmbox"
+	icon_state = "46x30mmbox-ap"
 
 /obj/item/storage/box/ammo/c46x30mm/ap/PopulateContents()
 	var/static/items_inside = list(
@@ -34,11 +34,25 @@
 /obj/item/storage/box/ammo/c46x30mm/hp
 	name = "box of 4.6x30mm HP ammo"
 	desc = "A box of standard 4.6x30mm HP ammo."
-	icon_state = "46x30mmbox"
+	icon_state = "46x30mmbox-hp"
 
 /obj/item/storage/box/ammo/c46x30mm/hp/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/hp = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/rubber
+	ammo_type = /obj/item/ammo_casing/c46x30mm/rubber
+	max_ammo = 20
+
+/obj/item/storage/box/ammo/c46x30mm/rubber
+	name = "box of 4.6x30mm rubber ammo"
+	desc = "A box of standard 4.6x30mm rubber ammo."
+	icon_state = "46x30mmbox-rubbershot"
+
+/obj/item/storage/box/ammo/c46x30mm/rubber/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/c46x30mm/rubber = 4)
 	generate_items_inside(items_inside,src)
 
 // 4.73x33mm caseless (Solar)
@@ -115,6 +129,7 @@
 // 5.7x39mm (Asp and Sidewinder)
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/c57x39
+	max_ammo = 20
 	ammo_type = /obj/item/ammo_casing/c57x39mm
 
 /obj/item/storage/box/ammo/c57x39
@@ -133,7 +148,7 @@
 /obj/item/storage/box/ammo/c57x39/hp
 	name = "box of 5.7x39mm HP ammo"
 	desc = "A box of standard 5.7x39mm HP ammo."
-	icon_state = "57x39mmbox"
+	icon_state = "57x39mmbox-hp"
 
 /obj/item/storage/box/ammo/c57x39/hp/PopulateContents()
 	var/static/items_inside = list(
@@ -146,7 +161,7 @@
 /obj/item/storage/box/ammo/c57x39/ap
 	name = "box of 5.7x39mm AP ammo"
 	desc = "A box of standard 5.7x39mm AP ammo."
-	icon_state = "57x39mmbox"
+	icon_state = "57x39mmbox-ap"
 
 /obj/item/storage/box/ammo/c57x39/ap/PopulateContents()
 	var/static/items_inside = list(
@@ -159,7 +174,7 @@
 /obj/item/storage/box/ammo/c57x39/rubber
 	name = "box of 5.7x39mm rubber ammo"
 	desc = "A box of standard 5.7x39mm rubber ammo."
-	icon_state = "57x39mmbox"
+	icon_state = "57x39mmbox-rubbershot"
 
 /obj/item/storage/box/ammo/c57x39/rubber/PopulateContents()
 	var/static/items_inside = list(

@@ -35,7 +35,7 @@
 		/obj/effect/spawner/random/trash/soap = 3,
 		/obj/item/broken_bottle = 3,
 		/obj/effect/spawner/random/engineering/tool/common = 1,
-		/mob/living/simple_animal/mouse = 1,
+		/mob/living/basic/mouse = 1,
 		/obj/item/reagent_containers/glass/rag = 1,
 		/obj/effect/spawner/random/entertainment/drugs= 1,
 		/obj/item/reagent_containers/syringe = 1,
@@ -88,7 +88,7 @@
 		/obj/structure/grille = 5,
 		/obj/effect/spawner/random/trash/food_packaging = 3,
 		/obj/effect/spawner/random/trash/cigbutt = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+		/obj/item/food/deadmouse = 1,
 	)
 
 /obj/effect/spawner/random/trash/decal
@@ -129,7 +129,7 @@
 	spawn_scatter_radius = 2
 	loot = list( // This spawner will scatter garbage around a dirty site.
 		/obj/effect/spawner/random/trash/garbage = 6,
-		/mob/living/simple_animal/hostile/cockroach = 5,
+		/mob/living/basic/cockroach = 5,
 		/obj/effect/decal/cleanable/garbage = 4,
 		/obj/effect/decal/cleanable/vomit/old = 3,
 		/obj/effect/spawner/random/trash/cigbutt = 2,

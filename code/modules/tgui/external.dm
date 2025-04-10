@@ -15,7 +15,7 @@
  * optional ui datum/tgui The UI to be updated, if it exists.
  */
 /datum/proc/ui_interact(mob/user, datum/tgui/ui)
-	return FALSE // Not implemented.
+	return FALSE
 
 /**
  * public
@@ -28,7 +28,7 @@
  * return list Data to be sent to the UI.
  */
 /datum/proc/ui_data(mob/user)
-	return list() // Not implemented.
+	return list()
 
 /**
  * public

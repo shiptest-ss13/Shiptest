@@ -758,12 +758,12 @@ There are several things that need to be remembered:
 					handled_by_bodytype = TRUE
 
 			else if(dna.species.bodytype & BODYTYPE_KEPORI)
-//				if(I.supports_variations & KEPORI_VARIATION)
-//					icon_file = KEPORI_NECK_PATH
-//					if(I.kepoi_override_icon)
-//						icon_file = I.kepoi_override_icon
-//				else
-				handled_by_bodytype = TRUE
+				if(I.supports_variations & KEPORI_VARIATION)
+					icon_file = KEPORI_NECK_PATH
+					if(I.kepori_override_icon)
+						icon_file = I.kepori_override_icon
+				else
+					handled_by_bodytype = TRUE
 
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				handled_by_bodytype = TRUE

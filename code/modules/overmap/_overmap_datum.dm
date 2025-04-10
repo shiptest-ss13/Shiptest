@@ -80,8 +80,8 @@
 	if(isnum(x) && isnum(y))
 		SSovermap.overmap_container[x][y] -= src
 	token.parent = null
-	QDEL_NULL(token)
 	QDEL_LIST(contents)
+	QDEL_NULL(token)
 	if(lifespan)
 		STOP_PROCESSING(SSfastprocess, src)
 	return ..()
@@ -425,3 +425,6 @@
 	dock_to_adjust.forceMove(locate(new_dock_location[1], new_dock_location[2], dock_to_adjust.z))
 	dock_to_adjust.dheight = new_dheight
 	dock_to_adjust.dwidth = new_dwidth
+
+/datum/overmap/proc/admin_load()
+	return

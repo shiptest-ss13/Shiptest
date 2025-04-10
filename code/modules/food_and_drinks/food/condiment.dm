@@ -69,24 +69,24 @@
 /obj/item/reagent_containers/condiment/attack(mob/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>None of [src] left, oh no!</span>")
+		to_chat(user, span_warning("None of [src] left, oh no!"))
 		return 0
 
 	if(!canconsume(M, user))
 		return 0
 
 	if(M == user)
-		user.visible_message("<span class='notice'>[user] swallows some of the contents of \the [src].</span>", \
-			"<span class='notice'>You swallow some of the contents of \the [src].</span>")
+		user.visible_message(span_notice("[user] swallows some of the contents of \the [src]."), \
+			span_notice("You swallow some of the contents of \the [src]."))
 	else
-		M.visible_message("<span class='warning'>[user] attempts to feed [M] from [src].</span>", \
-			"<span class='warning'>[user] attempts to feed you from [src].</span>")
+		M.visible_message(span_warning("[user] attempts to feed [M] from [src]."), \
+			span_warning("[user] attempts to feed you from [src]."))
 		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The condiment might be empty after the delay.
-		M.visible_message("<span class='warning'>[user] fed [M] from [src].</span>", \
-			"<span class='warning'>[user] fed you from [src].</span>")
+		M.visible_message(span_warning("[user] fed [M] from [src]."), \
+			span_warning("[user] fed you from [src]."))
 		log_combat(user, M, "fed", reagents.log_list())
 	reagents.trans_to(M, 10, transfered_by = user, method = INGEST)
 	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
@@ -99,26 +99,26 @@
 	if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
 
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty!</span>")
+			to_chat(user, span_warning("[target] is empty!"))
 			return
 
 		if(reagents.total_volume >= reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			to_chat(user, span_warning("[src] is full!"))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || istype(target, /obj/item/reagent_containers/food/snacks))
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, span_warning("[src] is empty!"))
 			return
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>you can't add anymore to [target]!</span>")
+			to_chat(user, span_warning("you can't add anymore to [target]!"))
 			return
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You transfer [trans] units of the condiment to [target].</span>")
+		to_chat(user, span_notice("You transfer [trans] units of the condiment to [target]."))
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 /obj/item/reagent_containers/condiment/on_reagent_change(changetype)
@@ -132,14 +132,14 @@
 
 /obj/item/reagent_containers/condiment/sugar
 	name = "sugar sack"
-	desc = "Tasty spacey sugar!"
+	desc = "A bag of sugar. Used for sweetening, typically. There's nothing stopping you from eating it straight..."
 	icon_state = "sugar"
 	item_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/sugar = 50)
 
 /obj/item/reagent_containers/condiment/saltshaker		//Separate from above since it's a small shaker rather then
 	name = "salt shaker"											//	a large one.
-	desc = "Salt. From space oceans, presumably."
+	desc = "A shaker full of salt. Make sure the cap is on tight!"
 	icon_state = "saltshakersmall"
 	icon_empty = "emptyshaker"
 	possible_transfer_amounts = list(1,20) //for clown turning the lid off
@@ -153,16 +153,16 @@
 		return
 	if(isturf(target))
 		if(!reagents.has_reagent(/datum/reagent/consumable/sodiumchloride, 2))
-			to_chat(user, "<span class='warning'>You don't have enough salt to make a pile!</span>")
+			to_chat(user, span_warning("You don't have enough salt to make a pile!"))
 			return
-		user.visible_message("<span class='notice'>[user] shakes some salt onto [target].</span>", "<span class='notice'>You shake some salt onto [target].</span>")
+		user.visible_message(span_notice("[user] shakes some salt onto [target]."), span_notice("You shake some salt onto [target]."))
 		reagents.remove_reagent(/datum/reagent/consumable/sodiumchloride, 2)
 		new/obj/effect/decal/cleanable/food/salt(target)
 		return
 
 /obj/item/reagent_containers/condiment/peppermill
 	name = "pepper mill"
-	desc = "Often used to flavor food or make people sneeze."
+	desc = "A handheld mill to grind down peppercorn. Often used to flavor food... or make people sneeze."
 	icon_state = "peppermillsmall"
 	icon_empty = "emptyshaker"
 	possible_transfer_amounts = list(1,20) //for clown turning the lid off
@@ -172,7 +172,7 @@
 
 /obj/item/reagent_containers/condiment/milk
 	name = "space milk"
-	desc = "It's milk. White and nutritious goodness!"
+	desc = "A carton full of milk. Freshly supplied from a mammal, a biogenerator, or chemically reproduced in a lab."
 	icon_state = "milk"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -188,7 +188,7 @@
 
 /obj/item/reagent_containers/condiment/soymilk
 	name = "soy milk"
-	desc = "It's soy milk. White and nutritious goodness!"
+	desc = "A carton full of soy milk. Freshly supplied from soybeans."
 	icon_state = "soymilk"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -197,14 +197,14 @@
 
 /obj/item/reagent_containers/condiment/rice
 	name = "rice sack"
-	desc = "A big bag of rice. Good for cooking!"
+	desc = "A bag of dried, bleached rice. Don't go feeding birds these."
 	icon_state = "rice"
 	item_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/rice = 30)
 
 /obj/item/reagent_containers/condiment/soysauce
 	name = "soy sauce"
-	desc = "A salty soy-based flavoring."
+	desc = "A glass bottle of soy sauce. Known for being salty and savory."
 	icon_state = "soysauce"
 	list_reagents = list(/datum/reagent/consumable/soysauce = 50)
 
@@ -224,16 +224,16 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
 	possible_states = list(
-		/datum/reagent/consumable/ketchup = list("condi_ketchup", "Ketchup", "You feel more American already."),
-		/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Hotsauce", "You can almost TASTE the stomach ulcers now!"),
-		/datum/reagent/consumable/soysauce = list("condi_soysauce", "Soy Sauce", "A salty soy-based flavoring"),
-		/datum/reagent/consumable/frostoil = list("condi_frostoil", "Coldsauce", "Leaves the tongue numb in it's passage"),
-		/datum/reagent/consumable/sodiumchloride = list("condi_salt", "Salt Shaker", "Salt. From space oceans, presumably"),
-		/datum/reagent/consumable/blackpepper = list("condi_pepper", "Pepper Mill", "Often used to flavor food or make people sneeze"),
-		/datum/reagent/consumable/cornoil = list("condi_cornoil", "Corn Oil", "A delicious oil used in cooking. Made from corn"),
-		/datum/reagent/consumable/sugar = list("condi_sugar", "Sugar", "Tasty spacey sugar!"),
-		/datum/reagent/consumable/astrotame = list("condi_astrotame", "Astrotame", "The sweetness of a thousand sugars but none of the calories."),
-		/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ sauce", "Hand wipes not included."),
+		/datum/reagent/consumable/ketchup = list("condi_ketchup", "Ketchup", "A packet of ketchup. The old standby, given by the fistful."),
+		/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Hotsauce", "A packet of hotsauce. Good for spicing up food."),
+		/datum/reagent/consumable/soysauce = list("condi_soysauce", "Soy Sauce", "A packet of soy sauce. Good on rice."),
+		/datum/reagent/consumable/frostoil = list("condi_frostoil", "Coldsauce", "A packet of coldsauce. Good for... cooling down food?"),
+		/datum/reagent/consumable/sodiumchloride = list("condi_salt", "Salt Shaker", "A shaker full of salt. Make sure the cap is on tight!"),
+		/datum/reagent/consumable/blackpepper = list("condi_pepper", "Pepper Mill", "A handheld mill to grind down peppercorn. Often used to flavor food... or make people sneeze."),
+		/datum/reagent/consumable/cornoil = list("condi_cornoil", "Corn Oil", "A (presumably) corn-sourced oil. Good for cooking."),
+		/datum/reagent/consumable/sugar = list("condi_sugar", "Sugar", "A packet of sugar. Used for sweetening, typically."),
+		/datum/reagent/consumable/astrotame = list("condi_astrotame", "Astrotame", "An artificial sweetener. Just be careful to not give yourself a headache with too much!"),
+		/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ sauce", "A sweet and savory packet of barbeque sauce. It's sticky!"),
 		)
 
 /obj/item/reagent_containers/condiment/pack/create_reagents(max_vol, flags)
@@ -256,11 +256,11 @@
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
+			to_chat(user, span_warning("You tear open [src], but [target] is stacked so high that it just drips off!") )
 			qdel(src)
 			return
 		else
-			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
+			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
 
@@ -309,30 +309,30 @@
 
 /obj/item/reagent_containers/condiment/ketchup
 	name = "ketchup bottle"
-	desc = "You feel more american already"
+	desc = "Tomato ketchup, the old standby condiment."
 	icon_state = "ketchup"
 	list_reagents = list(/datum/reagent/consumable/ketchup = 50)
 
 /obj/item/reagent_containers/condiment/bbqsauce
 	name = "bbq sauce bottle"
-	desc = "Hand wipes not included"
+	desc = "A bottle of sweet, savory barbeque sauce. It's sticky!"
 	icon_state = "bbqsauce"
 	list_reagents = list(/datum/reagent/consumable/bbqsauce = 50)
 
 /obj/item/reagent_containers/condiment/hotsauce
 	name = "hot sauce bottle"
-	desc = "You can almost TASTE the stomach ulcers now!"
+	desc = "A bottle of hot sauce, made from chili peppers. Good for spicing up food!"
 	icon_state = "hotsauce"
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 50)
 
 /obj/item/reagent_containers/condiment/coldsauce
 	name = "cold sauce bottle"
-	desc = "Leaves the tounge numb in it's passage"
+	desc = "A bottle of cold sauce, made from... chilly peppers Good for cooling down food(?)."
 	icon_state = "coldsauce"
 	list_reagents = list(/datum/reagent/consumable/frostoil = 50)
 
 /obj/item/reagent_containers/condiment/oliveoil
 	name = "olive oil bottle"
-	desc = "A delicious oil used in cooking"
+	desc = "Oil made from pressed olives. Great for cooking."
 	icon_state = "oliveoil"
 	list_reagents = list(/datum/reagent/consumable/cornoil = 50)

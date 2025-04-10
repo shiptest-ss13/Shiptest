@@ -28,7 +28,7 @@
 		return ..()
 	var/obj/item/mod/control/mod = attacked_atom
 	if(mod.active || mod.activating)
-		balloon_alert(user, "suit is active!")
+		to_chat(user,span_warning("You can't repaint the suit while it's active!"))
 		return TRUE
 	paint_skin(mod, user)
 
@@ -98,57 +98,57 @@
 				if(isnum(color_value))
 					continue
 				return
-			var/total_color_value = 0
-			var/list/total_colors = current_color.Copy()
-			total_colors.Cut(13, length(total_colors)) // 13 to 20 are just a and c, dont want to count them
+			var/Total_color_value = 0
+			var/list/Total_colors = current_color.Copy()
+			Total_colors.Cut(13, length(Total_colors)) // 13 to 20 are just a and c, dont want to count them
 			var/red_value = current_color[1] + current_color[5] + current_color[9] //rr + gr + br
 			var/green_value = current_color[2] + current_color[6] + current_color[10] //rg + gg + bg
 			var/blue_value = current_color[3] + current_color[7] + current_color[11] //rb + gb + bb
 			if(red_value > MODPAINT_MAX_SECTION_COLORS)
-				balloon_alert(usr, "total red too high! ([red_value*100]%/[MODPAINT_MAX_SECTION_COLORS*100]%)")
+				to_chat(usr,span_warning("Total red too high! ([red_value*100]%/[MODPAINT_MAX_SECTION_COLORS*100]%)"))
 				return
 			else if(red_value < MODPAINT_MIN_SECTION_COLORS)
-				balloon_alert(usr, "total red too low! ([red_value*100]%/[MODPAINT_MIN_SECTION_COLORS*100]%)")
+				to_chat(usr,span_warning("Total red too low! ([red_value*100]%/[MODPAINT_MIN_SECTION_COLORS*100]%)"))
 				return
 			if(green_value > MODPAINT_MAX_SECTION_COLORS)
-				balloon_alert(usr, "total green too high! ([green_value*100]%/[MODPAINT_MAX_SECTION_COLORS*100]%)")
+				to_chat(usr,span_warning("Total green too high! ([green_value*100]%/[MODPAINT_MAX_SECTION_COLORS*100]%)"))
 				return
 			else if(green_value < MODPAINT_MIN_SECTION_COLORS)
-				balloon_alert(usr, "total green too low! ([green_value*100]%/[MODPAINT_MIN_SECTION_COLORS*100]%)")
+				to_chat(usr,span_warning("Total green too low! ([green_value*100]%/[MODPAINT_MIN_SECTION_COLORS*100]%)"))
 				return
 			if(blue_value > MODPAINT_MAX_SECTION_COLORS)
-				balloon_alert(usr, "total blue too high! ([blue_value*100]%/[MODPAINT_MAX_SECTION_COLORS*100]%)")
+				to_chat(usr,span_warning("Total blue too high! ([blue_value*100]%/[MODPAINT_MAX_SECTION_COLORS*100]%)"))
 				return
 			else if(blue_value < MODPAINT_MIN_SECTION_COLORS)
-				balloon_alert(usr, "total blue too low! ([blue_value*100]%/[MODPAINT_MIN_SECTION_COLORS*100]%)")
+				to_chat(usr,span_warning("Total blue too low! ([blue_value*100]%/[MODPAINT_MIN_SECTION_COLORS*100]%)"))
 				return
-			for(var/color_value in total_colors)
-				total_color_value += color_value
+			for(var/color_value in Total_colors)
+				Total_color_value += color_value
 				if(color_value > MODPAINT_MAX_COLOR_VALUE)
-					balloon_alert(usr, "one of colors too high! ([color_value*100]%/[MODPAINT_MAX_COLOR_VALUE*100]%")
+					to_chat(usr,span_warning("One of colors too high! ([color_value*100]%/[MODPAINT_MAX_COLOR_VALUE*100]%"))
 					return
 				else if(color_value < MODPAINT_MIN_COLOR_VALUE)
-					balloon_alert(usr, "one of colors too low! ([color_value*100]%/[MODPAINT_MIN_COLOR_VALUE*100]%")
+					to_chat(usr,span_warning("One of colors too low! ([color_value*100]%/[MODPAINT_MIN_COLOR_VALUE*100]%"))
 					return
-			if(total_color_value > MODPAINT_MAX_OVERALL_COLORS)
-				balloon_alert(usr, "total colors too high! ([total_color_value*100]%/[MODPAINT_MAX_OVERALL_COLORS*100]%)")
+			if(Total_color_value > MODPAINT_MAX_OVERALL_COLORS)
+				to_chat(usr,span_warning("Total colors too high! ([Total_color_value*100]%/[MODPAINT_MAX_OVERALL_COLORS*100]%)"))
 				return
-			else if(total_color_value < MODPAINT_MIN_OVERALL_COLORS)
-				balloon_alert(usr, "total colors too low! ([total_color_value*100]%/[MODPAINT_MIN_OVERALL_COLORS*100]%)")
+			else if(Total_color_value < MODPAINT_MIN_OVERALL_COLORS)
+				to_chat(usr,span_warning("Total colors too low! ([Total_color_value*100]%/[MODPAINT_MIN_OVERALL_COLORS*100]%)"))
 				return
 			editing_mod.set_mod_color(current_color)
 			SStgui.close_uis(src)
 
 /obj/item/mod/paint/proc/paint_skin(obj/item/mod/control/mod, mob/user)
 	if(length(mod.theme.skins) <= 1)
-		balloon_alert(user, "no alternate skins!")
+		to_chat(user,span_warning("The suit doesnt have any alternate skins!"))
 		return
 	var/list/skins = list()
 	for(var/mod_skin in mod.theme.skins)
 		skins[mod_skin] = image(icon = mod.icon, icon_state = "[mod_skin]-control")
 	var/pick = show_radial_menu(user, mod, skins, custom_check = CALLBACK(src, PROC_REF(check_menu), mod, user), require_near = TRUE)
 	if(!pick)
-		balloon_alert(user, "no skin picked!")
+		to_chat(user,span_warning("No skin picked!"))
 		return
 	mod.set_mod_skin(pick)
 
@@ -181,12 +181,12 @@
 		return ..()
 	var/obj/item/mod/control/mod = attacked_atom
 	if(mod.active || mod.activating)
-		balloon_alert(user, "suit is active!")
+		to_chat(user,span_warning("You can't repaint the suit while it's active!"))
 		return TRUE
 	if(!istype(mod.theme, compatible_theme))
-		balloon_alert(user, "incompatible theme!")
+		to_chat(user,span_warning("Incompatible theme!"))
 		return TRUE
 	mod.set_mod_skin(skin)
-	balloon_alert(user, "skin applied")
+	to_chat(user,span_notice("You apply the skin."))
 	qdel(src)
 	return TRUE

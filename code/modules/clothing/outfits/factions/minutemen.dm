@@ -303,10 +303,13 @@
 	suit = /obj/item/clothing/suit/armor/vest/clip_correspondent
 	shoes = /obj/item/clothing/shoes/laceup
 
-	backpack = /obj/item/storage/backpack/satchel/leather
-	satchel = /obj/item/storage/backpack/satchel/leather
+	belt = /obj/item/bodycamera/broadcast_camera
+
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
 
 	r_pocket = /obj/item/radio
+	l_pocket = /obj/item/multitool
 
 // Colonial League Minutemen
 
@@ -458,6 +461,12 @@
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
+
+/datum/outfit/job/clip/minutemen/vehicle_pilot/disarmed
+	name = "CLIP Minutemen - Vehicle Pilot (Disarmed)"
+	head = null
+	suit = null
+	glasses = null
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot/commander
 	name = "CLIP Minutemen - Vehicle Commander"

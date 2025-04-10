@@ -178,3 +178,178 @@
   - rscadd: Indestructible Beach Rock
   - rscadd: Indestructible Waste Rock
   - rscadd: Indestructible Sand Rock
+2025-03-18:
+  Erikafox:
+  - bugfix: radiation storms don't suck any more
+  FalloutFalcon:
+  - rscadd: Cool new plant analyzer tgui
+  - bugfix: Max reagent level on trays now work as intented.
+  - code_imp: Alot of plant file cleanup, primarly defining important things.
+  - rscadd: Helms in the orbit menu now use the ship's name as its full name
+  - bugfix: Random helms not connected to a ship don't appear in the orbit menu
+  - rscadd: Wallets now use a random spawner
+  - rscadd: More spawners now use the fancy sprites
+  - rscdel: Removed a few cruft items/spawners
+  - balance: Exotic loot is alot less cruft
+  - refactor: Re paths a few spawns to make them easier to reuse
+  - balance: Ration crayons and twice as rare
+  Ical92:
+  - bugfix: Arke-class now has a command modcomp
+  firebudgy:
+  - balance: Abandoned Crates reportedly now contain vastly different contents. Pry
+      them open, if you dare.
+  generalthrax:
+  - rscadd: Added more paperstuff to the Arke and CLIP gas masks + Evidence bags
+  thestripes:
+  - rscdel: Removed the borscht misspelling system.
+  - spellcheck: Fixed of typos and errors in multiple food descriptions. rewrote multiple
+      food descriptions from the ground up.
+2025-03-19:
+  Erikafox:
+  - rscadd: broadcast cameras have gotten some minor improvements.
+  - imageadd: sprites for several types of specialist ammo
+  FalloutFalcon:
+  - rscdel: Removed some decals inside walls
+  - refactor: Adds basic mobs, a replacement for simple mobs that will hopefully destroy
+      the subtype. This is so far applied to cockroaches, mice, rats (and their variants)
+  - code_imp: the blackbox key "reagent expose mob" is now reagent_expose_mob
+  - rscadd: melee weapons now support varried cooldowns, we now have fast swinging
+      knives and slow swinging axes for example
+  - rscadd: stamped machetes can now break
+  - rscadd: expanded the range of the force string, toolboxes are now "medium" in
+      accordance to power creep
+  - balance: you now only take the block chance from your best weapon
+  - soundadd: alot of sounds ported from mojave sun
+  - refactor: halberds are now a simple subtype of dswords
+  - refactor: detached some shield code from shield/riot and ported from breaking
+      logic from tg
+  - refactor: gorlex sledgehammers no longer inherit behavoir from axes
+  MarkSuckerberg:
+  - rscadd: Autowiki ship table
+  - tweak: Ship Prefixes are now immutable.
+  - tweak: Crew manifest is prettier. In my opinion.
+  Ratvarr:
+  - bugfix: You can no longer place pipes anywhere you can see with an RPD. The grinch
+      is setback once more.
+  generalthrax:
+  - bugfix: Distillery now has Mauler mags.
+  - rscadd: Fancy Illestren in the Distillery armoury.
+2025-03-20:
+  FalloutFalcon:
+  - bugfix: a say() is now a invoke async cause it sleeps
+  FalloutFalcon, ErikaFox:
+  - rscadd: Dynamic missions! see about them in your local outpost.
+  - rscadd: A ModComp program to view and call dibs on missions.
+  - rscadd: You now need to head down to outpost cargo to view and turn in missions.
+  - rscadd: Adds multiple ruin specific missions, you can examine objects to see if
+      they are using in a mission.
+  - rscadd: You can examine planets and other overmap objects. (will eventually become
+      admin only)
+  - rscdel: Kills all old missions expect for drills, overmap scans, and capture.
+  - admin: Swaps the category on a few overmap related buttons.
+  - admin: You can now choose to not load a planet when spawning them.
+  - refactor: Planets now pick there ruin before they spawn. Used in missions to pick
+      a planet.
+  SomeguyManperson:
+  - rscadd: surgeries to organic limbs that are done without anesthetic or painkillers
+      now have a chance to cause extra damage
+  - balance: medical cyborgs now have access to morphine in their hypospray
+2025-03-21:
+  Erikafox:
+  - rscadd: entertainment monitors now tell you when someone starts their livestream.
+      don't miss today's episode of the scrapper show!
+2025-03-22:
+  DIB-DOG:
+  - rscadd: Added a grinder and PPE to the Nail-class boarding shuttle
+  FalloutFalcon:
+  - bugfix: people should remember how to breath again
+  Gristlebee:
+  - rscadd: Modsuits can be bought in Cargo
+  - rscadd: Toolset, Armor Assist Module, Plasma Engine Module
+  - rscdel: Ethereal MOD Core, Bikehorn Module
+  - balance: Modsuit slow downs, power drain and armor
+  - balance: Spacesuit prices.
+  Ical92:
+  - rscadd: EHF point beacons, which can be used to preserve planets
+  MemeSnorfer:
+  - rscdel: Elzuose, IPC, and Phorid damage mods
+  firebudgy:
+  - bugfix: Shotgun ammo cans correctly have shotgun ammo now
+  - bugfix: Grenades on the market.
+  stiel0248, thgvr, cloudbreak:
+  - rscadd: vox and kepori sprites for the azuilhauz
+2025-03-23:
+  DIB-DOG:
+  - rscadd: Added a portable pump to the Bolide
+  - balance: Re-evaluated the bolide armory equipment
+  - rscadd: Added a new bed to the Crying Sun
+  Sadhorizon:
+  - tweak: Plenty tweaks have hit the Sunskipper. Most importantly, dorms should suck
+      less now. It also now gets more medicine, more fuel and fishing gear. The mini
+      egun has been swapped for an E-60 too.
+  firebudgy:
+  - rscadd: 'Additional tool in cargo: Inducers.'
+  generalthrax:
+  - balance: Concrete and Hexacrete floors take roughly half the time to proceed to
+      the next drying stage
+  mc-oofert:
+  - bugfix: background radiation (on waste worlds) may no longer decide to ignore
+      obstructions and also actually works now
+2025-03-24:
+  Erikafox:
+  - bugfix: ramzi installations should infight less
+  - balance: airbase no longer has the dragonbreath guy
+  - bugfix: the coalition can now purchase weapons again
+  FalloutFalcon:
+  - bugfix: beach bunkers' frontiersmen should now drop his shiny tags
+  - bugfix: baffles can now be turned in
+  - bugfix: the wasteplanet tradepost vangaurd mission now properly works
+  Gristlebee:
+  - rscadd: Ramzi Scrapping Station ruin
+  - rscadd: PGF corpse spawners, anchored portable flasher
+  - bugfix: door seal mapping helper
+2025-03-25:
+  Zevotech:
+  - rscadd: Remapped the Meta-Class into a N+S Freighter
+  - bugfix: Corporate Paper Slips now use the correct sprite and wont vanish when
+      written on
+2025-03-26:
+  Sadhorizon:
+  - rscdel: Removed an unneeded area from the Scarab.
+2025-03-28:
+  Erikafox:
+  - balance: cirrus and nimbus got a little more variety in their food. Not much mind
+      you, but some.
+  thgvr:
+  - rscadd: New language quirks for the four main languages
+  - rscdel: Removed and rebalanced a lot of quirks
+2025-03-29:
+  Burning02:
+  - bugfix: The CM-24 is now properly delivered when ordered
+2025-03-30:
+  Erikafox:
+  - bugfix: the syndicate coalition has retroactively installed the correct turrets
+      on their old abandoned airbase.
+  Gristlebee:
+  - bugfix: multishot mech guns fire the correct number of shots
+  MarkSuckerberg:
+  - bugfix: Autowiki ship boxes now actually show crew count again
+  - rscadd: Autowiki ship crews now show the hud icon
+  - rscadd: Autowiki ship list now supports nested factions.
+  - tweak: Some subfactions now have their own colours.
+  SomeguyManperson:
+  - bugfix: starlight reagent now provides slightly better night vision than stardrop
+      as intended
+  generalthrax:
+  - rscadd: Added new decaling and flooring in some areas to the Riggs, along with
+      an armament increase and expansion of the cargo bay.
+  - rscadd: Modified Riggs atmospherics and added anesthetic to its medbay
+  - bugfix: Riggs airlock now works
+2025-03-31:
+  Erikafox:
+  - rscadd: you can give photos longer descriptions
+  - bugfix: photo description is now properly labelled
+  FalloutFalcon:
+  - rscadd: A cap on simple missions, tweaks the numbers.
+  generalthrax:
+  - bugfix: Blind people unglued their eyes only to discover they were still blind
