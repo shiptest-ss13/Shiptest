@@ -128,7 +128,7 @@ SUBSYSTEM_DEF(mapping)
 	virtual_z_translation = SSmapping.virtual_z_translation
 	z_list = SSmapping.z_list
 
-#define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
+#define INIT_ANNOUNCE(X) to_chat(world, span_boldannounce("[X]")); log_world(X)
 
 /datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
 	var/list/filelist = flist(path)
@@ -378,6 +378,8 @@ SUBSYSTEM_DEF(mapping)
 				allocation_name = "Free Allocation"
 			if(ALLOCATION_QUADRANT)
 				allocation_name = "Quadrant Allocation"
+			if(ALLOCATION_OCTODRANT)
+				allocation_name = "Octodrant Allocation"
 			else
 				allocation_name = "Unaccounted Allocation"
 
