@@ -19,10 +19,9 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 	critical_machine = TRUE
 	/// list of machines this machine is linked to
 	var/list/links = list()
-	/**
-	 * associative lazylist list of the telecomms_type of linked telecomms machines and a list of said machines.
-	 * eg list(telecomms_type1 = list(everything linked to us with that type), telecomms_type2 = list(everything linked to us with THAT type)...)
-	 */
+
+	/// associative lazylist list of the telecomms_type of linked telecomms machines and a list of said machines.
+	/// eg list(telecomms_type1 = list(everything linked to us with that type), telecomms_type2 = list(everything linked to us with THAT type)...)
 	var/list/links_by_telecomms_type
 	/// value increases as traffic increases
 	var/traffic = 0
