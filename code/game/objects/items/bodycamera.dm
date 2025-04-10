@@ -35,11 +35,11 @@
 
 /obj/item/bodycamera/examine(mob/user)
 	. += ..()
-	. += "The camera is currently [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Alt-Click to toggle its status."
+	. += "The camera is currently [status ? span_green("ON") : span_red("OFF")]. Alt-Click to toggle its status."
 	if(in_range(src, user))
-		. += "<span class='notice'>The camera is set to a nametag of '<b>[c_tag]</b>'.</span>"
-		. += "<span class='notice'>The camera is set to transmit on the '<b>[network[1]]</b>' network.</span>"
-		. += "<span class='notice'>It looks like you can modify the camera settings by using a <b>multitool</b> on it.</span>"
+		. += span_notice("The camera is set to a nametag of '<b>[c_tag]</b>'.")
+		. += span_notice("The camera is set to transmit on the '<b>[network[1]]</b>' network.")
+		. += span_notice("It looks like you can modify the camera settings by using a <b>multitool</b> on it.")
 
 /obj/item/bodycamera/AltClick(mob/user)
 	. = ..()
@@ -54,8 +54,8 @@
 			icon_state = "bodycamera-off"
 			playsound(user, 'sound/items/bodycamera_off.ogg', 23, FALSE)
 		user.visible_message(
-			span_notice("[user] turns [src] [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-			span_notice("You turn [src] [status ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("[user] turns [src] [status ? span_green("ON") : span_red("OFF")]."),
+			span_notice("You turn [src] [status ? span_green("ON") : span_red("OFF")]."),
 		update_appearance()
 		)
 
@@ -68,25 +68,30 @@
 	switch(choice)
 		if("Modify the camera tag")
 			c_tag_addition = stripped_input(user, "Set a nametag for this camera. Ensure that it is no bigger than 32 characters long.", "Nametag Setup", max_length = 32)
-			if(c_tag_addition == "")
-				c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
-			else
-				c_tag = c_tag_addition
-			to_chat(user, "<span class='notice'>You set [src] nametag to '[c_tag]'.</span>")
+			set_name(c_tag_addition)
+			to_chat(user, span_notice("You set [src] nametag to '[c_tag]'."))
 
 		if("Change the camera network")
 			network[1] = stripped_input(user, "Tune [src] to a specific network. Enter the network name and ensure that it is no bigger than 32 characters long. Network names are case sensitive.", "Network Tuning", max_length = 32)
-			to_chat(user, "<span class='notice'>You set [src] to transmit across the '[network[1]]' network.</span>")
+			to_chat(user, span_notice("You set [src] to transmit across the '[network[1]]' network."))
 
 		if("Save the network to the multitool buffer")
 			M.buffer = network[1]
-			to_chat(user, "<span class='notice'>You add network '[network[1]]' to the multitool's buffer.</span>")
+			to_chat(user, span_notice("You add network '[network[1]]' to the multitool's buffer."))
 
 		if("Transfer the buffered network to the camera")
 			network[1] = M.buffer
-			to_chat(user, "<span class='notice'>You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer.</span>")
+			to_chat(user, span_notice("You tune [src] to transmit across the '[network[1]]' network using the saved data from the multiool's buffer."))
 
 	return TRUE
+
+/obj/item/bodycamera/proc/set_name(camera_name)
+	if(camera_name == "")
+		c_tag = "Body Camera - " + random_string(4, list("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"))
+	else
+		c_tag = camera_name
+	return
+
 
 /obj/item/bodycamera/proc/setViewRange(num = 5)
 	src.view_range = num
@@ -111,7 +116,7 @@
 		if (O.client.eye == src)
 			O.unset_machine()
 			O.reset_perspective(null)
-			to_chat(O, "<span class='warning'>The screen bursts into static!</span>")
+			to_chat(O, span_warning("The screen bursts into static!"))
 
 /obj/item/bodycamera/proc/can_use()
 	if(!status)
@@ -139,6 +144,19 @@
 
 // Broadcast Camera - For Journalism
 
+/obj/item/radio/broadcast
+	name = "Broadcast Radio"
+	desc = "You're fairly sure this shouldn't be outside of the camera, and that you should tell someone you found this. Maybe an adminhelp is in order."
+	frequency = 1499
+	log = TRUE
+
+/obj/item/radio/broadcast/set_frequency(new_frequency)
+	if(new_frequency == (FREQ_COMMON || FREQ_WIDEBAND))
+		to_chat(usr,  span_warning("Invalid Radio Frequency!"))
+		return FALSE
+	else
+		..()
+
 /obj/item/bodycamera/broadcast_camera
 	name = "broadcast camera"
 	desc = "A camera used by media agencies in order to broadcast video and audio to recievers across a sector."
@@ -149,19 +167,22 @@
 	w_class = WEIGHT_CLASS_BULKY
 	view_range = 5
 	can_transmit_across_z_levels = TRUE
-	network = list("thunder")
-	var/obj/item/radio/radio
+	network = list("IntraNet")
+	var/obj/item/radio/broadcast/radio
 	var/mob/listeningTo
 	actions_types = list(/datum/action/item_action/toggle_radio)
+	COOLDOWN_DECLARE(broadcast_announcement)
 
 /obj/item/bodycamera/broadcast_camera/Initialize()
 	. = ..()
-	radio = new /obj/item/radio(src)
+	radio = new /obj/item/radio/broadcast(src)
 	radio.sectorwide = TRUE
 	radio.canhear_range = 3
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(radio, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(adjust_name))
 	c_tag = "Broadcast Camera - Unlabeled"
+
 
 /obj/item/bodycamera/broadcast_camera/Destroy()
 	listeningTo = null
@@ -191,8 +212,17 @@
 /obj/item/bodycamera/broadcast_camera/examine(mob/user)
 	. += ..()
 	if(in_range(src, user))
-		. += "<span class='notice'>You can access the Internal Radio by <b>interacting with harm intent</b>.</span>"
-		. += "<span class='notice'>You can also use <b>Unique Action (default space)</b> to toggle the microphone.</span>"
+		. += span_notice("You can access the Internal Radio by <b>interacting with harm intent</b>.")
+		. += span_notice("You can also use <b>Unique Action (default space)</b> to toggle the microphone.")
+
+/obj/item/bodycamera/broadcast_camera/set_name(camera_name)
+	if(camera_name != "")
+		camera_name = "[camera_name]@[radio.frequency/10]"
+	. = ..()
+
+/obj/item/bodycamera/broadcast_camera/proc/adjust_name()
+	var/camera_name = splittext(c_tag, "@")
+	c_tag = "[camera_name[1]]@[radio.frequency/10]"
 
 /obj/item/bodycamera/broadcast_camera/ComponentInitialize()
 	. = ..()
@@ -211,3 +241,10 @@
 	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src], reducing it's view."))
 	item_state = "broadcast"
 	view_range = 3
+
+/obj/item/bodycamera/broadcast_camera/AltClick(mob/user)
+	. = ..()
+	if(status && COOLDOWN_FINISHED(src, broadcast_announcement))
+		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
+			TV.notify(TRUE, "[c_tag] is now live on [network[1]]!")
+			COOLDOWN_START(src, broadcast_announcement, 20 SECONDS)

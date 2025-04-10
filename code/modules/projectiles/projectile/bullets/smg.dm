@@ -76,7 +76,6 @@
 
 /obj/projectile/bullet/c556mm/surplus
 	name = "5.56mm HITP surplus bullet"
-	damage = 15
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c556mm/ap

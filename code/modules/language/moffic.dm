@@ -4,7 +4,7 @@
 	speech_verb = "flutters"
 	ask_verb = "fluffs"
 	exclaim_verb = "floofs"
-	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD //WS Edit- Language icon hiding
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	key = "m"
 	space_chance = 55
 	syllables = list( //hollow knight
@@ -16,4 +16,3 @@
 	)
 	icon_state = "moth"
 	default_priority = 90
-

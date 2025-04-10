@@ -29,7 +29,7 @@
 
 /turf/closed/indestructible/try_destroy(obj/item/W, mob/user, turf/T)
 	user.do_attack_animation(src)
-	to_chat(user, "<span class='warning'>[W] isn't strong enough to damage [src]!</span>")
+	to_chat(user, span_warning("[W] isn't strong enough to damage [src]!"))
 	playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 	return TRUE
 
@@ -42,8 +42,8 @@
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 		if(TOX)
 			playsound(src, 'sound/effects/spray2.ogg', 100, TRUE)
-	M.visible_message("<span class='danger'>[M.name] hits [src] and doesn't even leave a mark!</span>", \
-					"<span class='danger'>You hit [src] and fail to damage it.</span>", null, COMBAT_MESSAGE_RANGE)
+	M.visible_message(span_danger("[M.name] hits [src] and doesn't even leave a mark!"), \
+					span_danger("You hit [src] and fail to damage it."), null, COMBAT_MESSAGE_RANGE)
 
 /turf/closed/indestructible/attack_hulk(mob/living/carbon/user)
 	return FALSE
@@ -239,7 +239,7 @@
 
 /turf/closed/indestructible/rock
 	name = "dense rock"
-	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
+	desc = "A densely-packed rock, most mining tools or explosives would never get through this."
 	icon = 'icons/turf/walls/rock_wall.dmi'
 	icon_state = "rock_wall-0"
 	base_icon_state = "rock_wall"
@@ -254,7 +254,7 @@
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
-	desc = "Extremely densely-packed sheets of ice and rock, forged over the years of the harsh cold."
+	desc = "Densely-packed sheets of ice and rock, forged over the years of the harsh cold."
 	icon = 'icons/turf/walls/icerock_wall.dmi'
 	icon_state = "icerock_wall-0"
 	base_icon_state = "icerock_wall"
@@ -269,7 +269,7 @@
 
 /turf/closed/indestructible/rock/rockplanet
 	name = "dense hematite"
-	desc = "Extremely densely-packed rock. The iron grit rusts softly, bringing forth a crimson hue."
+	desc = "Densely-packed rock. The iron grit rusts softly, bringing forth a crimson hue."
 	icon = 'icons/turf/walls/red_wall.dmi'
 	icon_state = "red_wall-0"
 	base_icon_state = "red_wall"
@@ -282,11 +282,67 @@
 	bullet_bounce_sound = null
 
 /turf/closed/indestructible/rock/schist
-	name = "schist"
-	desc = "Extremely densely-packed layers of schist. Say it ten times fast."
+	name = "dense schist"
+	desc = "Densely-packed layers of schist. Say it ten times fast."
 	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
 	icon_state = "rockwall_icemoon-0"
 	base_icon_state = "rockwall_icemoon"
+
+/turf/closed/indestructible/rock/whitesands
+	name = "dense limestone"
+	desc = "Densely-packed limestone. The powdered remains of what once lived here, under the endless sea."
+	icon = 'icons/turf/walls/ws_walls.dmi'
+	icon_state = "smoothrocks-0"
+	base_icon_state = "smoothrocks"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	pixel_x = -4
+	pixel_y = -4
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
+
+/turf/closed/indestructible/rock/jungle
+	name = "dense bauxite"
+	desc = "Densely-packed dirt and rock. Silt and mud are mummified, taking a rigid shape in the morning sun."
+	icon = 'icons/turf/walls/jungle_wall.dmi'
+	icon_state = "jungle_wall-0"
+	base_icon_state = "jungle_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	pixel_x = -4
+	pixel_y = -4
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
+
+/turf/closed/indestructible/rock/beach
+	name = "coastal marl"
+	desc = "Densely-packed rock. Water eats away at the shoreline, forming rippling scars in softening stone."
+	icon = 'icons/turf/walls/smoothrocks.dmi'
+	icon_state = "smoothrocks-0"
+	base_icon_state = "smoothrocks"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	pixel_x = -4
+	pixel_y = -4
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
+
+/turf/closed/indestructible/rock/wasteplanet
+	name = "dense polluted rock"
+	desc = "Densely-packed waste materal. Whatever once held sway, the poison is all that remains."
+	icon = 'icons/turf/walls/wasteplanet.dmi'
+	icon_state = "wasteplanet-0"
+	base_icon_state = "wasteplanet"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	pixel_x = -4
+	pixel_y = -4
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
 
 /turf/closed/indestructible/paper
 	name = "thick paper wall"

@@ -20,14 +20,15 @@
 		TOOL_WRENCH = 40)
 	preop_sound = 'sound/surgery/bone1.ogg'
 	success_sound = 'sound/surgery/bone3.ogg'
+	fuckup_damage = 15
 
 /datum/surgery_step/set_bone/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(target_zone == BODY_ZONE_HEAD)
-		user.visible_message("[user] begins to set [target]'s skull with [tool]...", "<span class='notice'>You begin to set [target]'s skull with [tool]...</span>")
+		user.visible_message("[user] begins to set [target]'s skull with [tool]...", span_notice("You begin to set [target]'s skull with [tool]..."))
 	else
-		user.visible_message("[user] begins to set the bones in [target]'s [parse_zone(target_zone)] with [tool]...", "<span class='notice'>You begin setting the bones in [target]'s [parse_zone(target_zone)] with [tool]...</span>")
+		user.visible_message("[user] begins to set the bones in [target]'s [parse_zone(target_zone)] with [tool]...", span_notice("You begin setting the bones in [target]'s [parse_zone(target_zone)] with [tool]..."))
 
 /datum/surgery_step/set_bone/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] successfully sets the bones in [target]'s [parse_zone(target_zone)]!", "<span class='notice'>You successfully set the bones in [target]'s [parse_zone(target_zone)].</span>")
+	user.visible_message("[user] successfully sets the bones in [target]'s [parse_zone(target_zone)]!", span_notice("You successfully set the bones in [target]'s [parse_zone(target_zone)]."))
 	surgery.operated_bodypart.fix_bone()
 	return TRUE
