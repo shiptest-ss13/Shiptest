@@ -212,7 +212,7 @@
 
 			var/multiplier = text2num(params["multiplier"])
 			if(!multiplier)
-				to_chat(usr, "<span class=\"alert\">[src] only accepts a numerical multiplier!</span>")
+				to_chat(usr, span_alert("[src] only accepts a numerical multiplier!"))
 				return
 			var/is_stack = ispath(being_built.build_path, /obj/item/stack)
 			multiplier = clamp(round(multiplier),1,50)
@@ -250,7 +250,7 @@
 
 			if(materials.has_materials(materials_used))
 				busy = TRUE
-				to_chat(usr, "<span class=\"notice\">You print [multiplier] item(s) from the [src]</span>")
+				to_chat(usr, span_notice("You print [multiplier] item(s) from the [src]"))
 				use_power(power)
 				icon_state = "autolathe_n"
 				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
@@ -258,9 +258,9 @@
 				addtimer(CALLBACK(src, PROC_REF(make_item), power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
 				. = TRUE
 			else
-				to_chat(usr, "<span class=\"alert\">Not enough materials for this operation.</span>")
+				to_chat(usr, span_alert("Not enough materials for this operation."))
 		else
-			to_chat(usr, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+			to_chat(usr, span_alert("The autolathe is busy. Please wait for completion of previous operation."))
 
 /obj/machinery/autolathe/on_deconstruction()
 	if(d_disk) // Drops the design disk on the floor when destroyed
@@ -271,7 +271,7 @@
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
 	if(busy)
-		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		to_chat(user, span_alert("The autolathe is busy. Please wait for completion of previous operation."))
 		return TRUE
 
 	if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", O))
@@ -309,7 +309,7 @@
 	if(!d_disk)
 		return
 	if(busy)
-		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		to_chat(user, span_alert("the autolathe is busy. Please wait for completion of previous operation."))
 		return TRUE
 	if(!istype(user) || !Adjacent(user) || !user.put_in_active_hand(d_disk))
 		d_disk.forceMove(drop_location())
@@ -320,7 +320,7 @@
 	if(!d_disk)
 		return
 	if(busy)
-		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		to_chat(user, span_alert("The autolathe is busy. Please wait for completion of previous operation."))
 		return TRUE
 	if(d_disk && user.canUseTopic(src, !issilicon(user)))
 		to_chat(user, span_notice("You take out [d_disk] from [src]."))
