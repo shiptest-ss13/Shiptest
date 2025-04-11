@@ -7,6 +7,8 @@
 	var/use_count = 1
 	///Assume the item we want is included in the map and we simple have to return it
 	var/already_spawned = FALSE
+	///If we search closets
+	var/search_containers = FALSE
 	///Grabbed as apart of late init to ensure that the item of intrest cant move
 	var/datum/weakref/prespawned_weakref
 	///Only needed if you have multipe missiosn that would otherwise use the same poi's
@@ -36,7 +38,7 @@
 /obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn, datum/mission/mission)
 	var/atom/item_of_interest
 	use_count--
-	NOTICE("[src] was used!")
+	log_world("[src] was used for [mission.name]!")
 	if(!ispath(type_to_spawn))
 		type_to_spawn = _type_to_spawn
 	if(!ispath(type_to_spawn))
@@ -61,6 +63,15 @@
 	for(var/atom/movable/item_in_poi as anything in get_turf(src))
 		if(istype(item_in_poi, type_to_spawn))
 			return item_in_poi
+		if(search_containers && length(item_in_poi.contents))
+			for(var/atom/movable/item_in_thing as anything in item_in_poi.contents)
+				if(istype(item_in_thing, type_to_spawn))
+					return item_in_thing
+/*
+/obj/effect/landmark/mission_poi/proc/valid_item(_item, _type)
+	if(istype(_item, _type))
+		return TRUE
+*/
 
 /obj/effect/landmark/mission_poi/main
 	name = "mission focus"
