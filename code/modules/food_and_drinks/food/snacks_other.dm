@@ -423,14 +423,9 @@
 	name = "jelly crepe"
 	desc = "A crepe filled with jelly. It's very sticky."
 	icon_state = "powercrepe"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/iron = 10)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/cherryjelly = 5)
-	force = 30
-	throwforce = 15
-	block_chance = 55
-	armour_penetration = 80
 	attack_verb = list("slapped", "slathered")
-	w_class = WEIGHT_CLASS_BULKY
 	tastes = list("cherry" = 1, "crepe" = 1)
 	foodtype = GRAIN | FRUIT | SUGAR
 

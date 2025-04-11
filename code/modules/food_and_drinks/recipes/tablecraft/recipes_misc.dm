@@ -258,14 +258,12 @@
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/powercrepe
-	name = "Powercrepe"
+	name = "jelly crepe"
 	time = 40
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/flatdough = 1,
 		/datum/reagent/consumable/milk = 1,
-		/datum/reagent/consumable/cherryjelly = 5,
-		/obj/item/stock_parts/cell/super =1,
-		/obj/item/melee/sword/sabre = 1
+		/datum/reagent/consumable/cherryjelly = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/powercrepe
 	subcategory = CAT_MISCFOOD
