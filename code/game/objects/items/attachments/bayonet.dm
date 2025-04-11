@@ -11,6 +11,7 @@
 	sharpness = IS_SHARP_ACCURATE
 	slot = ATTACHMENT_SLOT_MUZZLE
 
+	allow_icon_state_prefixes = TRUE
 	pixel_shift_x = 1
 	pixel_shift_y = 4
 	spread_mod = 1

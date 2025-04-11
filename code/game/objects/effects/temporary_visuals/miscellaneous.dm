@@ -542,3 +542,4 @@
 	. = ..()
 	if(new_icon_state)
 		icon_state = new_icon_state
+	SSvis_overlays.add_vis_overlay(src, icon, icon_state, layer, EMISSIVE_PLANE, dir)

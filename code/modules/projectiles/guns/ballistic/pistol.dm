@@ -7,6 +7,7 @@
 	bolt_wording = "slide"
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
+	attachment_icon_overlay_prefix = "big_"
 
 	//recoil = 0.5 // apogee wants bloom, this is a placeholder until then to simulate the same concept. //UPDATE ive changed my mind on this, however i would
 	recoil_unwielded = 3
@@ -23,7 +24,7 @@
 	aimed_wield_slowdown = PISTOL_AIM_SLOWDOWN
 
 	muzzleflash_iconstate = "muzzle_flash_light"
-	light_range = 1
+	light_range = 2
 
 	refused_attachments = list(
 		/obj/item/attachment/gun,
