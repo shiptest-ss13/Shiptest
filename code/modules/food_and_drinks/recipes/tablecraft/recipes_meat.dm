@@ -2,15 +2,6 @@
 
 ////////////////////////////////////////////////KEBABS////////////////////////////////////////////////
 
-/datum/crafting_recipe/food/humankebab
-	name = "Human kebab"
-	reqs = list(
-		/obj/item/stack/rods = 1,
-		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 2
-	)
-	result = /obj/item/reagent_containers/food/snacks/kebab/human
-	subcategory = CAT_MEAT
-
 /datum/crafting_recipe/food/kebab
 	name = "Kebab"
 	reqs = list(
