@@ -290,7 +290,7 @@
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/branrequests
-	name = "Bran Requests Cereal"
+	name = "Bran Cereal"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/wheat = 1,
 		/obj/item/reagent_containers/food/snacks/no_raisin = 1,
@@ -306,19 +306,6 @@
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/ricepudding
-	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/butterbear //ITS ALIVEEEEEE!
-	name = "Living bear/butter hybrid"
-	reqs = list(
-		/obj/item/organ/brain = 1,
-		/obj/item/organ/heart = 1,
-		/obj/item/reagent_containers/food/snacks/butter = 10,
-		/obj/item/reagent_containers/food/snacks/meat/slab = 5,
-		/datum/reagent/blood = 50,
-		/datum/reagent/teslium = 1 //To shock the whole thing into life
-	)
-	result = /mob/living/simple_animal/hostile/bear/butter
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/crab_rangoon
@@ -340,17 +327,6 @@
 		/datum/reagent/consumable/gravy = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/customizable/poutine
-	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/royalcheese
-	name = "Royal Cheese"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/store/cheesewheel = 1,
-		/obj/item/clothing/head/crown = 1,
-		/datum/reagent/medicine/strange_reagent = 5,
-		/datum/reagent/toxin/mutagen = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/royalcheese
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/vegetariansushiroll

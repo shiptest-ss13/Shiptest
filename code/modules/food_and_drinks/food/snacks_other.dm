@@ -12,15 +12,6 @@
 	tastes = list("cheese" = 1)
 	foodtype = DAIRY
 
-/obj/item/reagent_containers/food/snacks/royalcheese
-	name = "royal cheese"
-	desc = "A specially treated wheel of cheese, with a crown to grant the eater a petty monarchist position after they've developed a desire for despotic rule."
-	icon_state = "royalcheese"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 15, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/gold = 20, /datum/reagent/toxin/mutagen = 5)
-	w_class = WEIGHT_CLASS_BULKY
-	tastes = list("cheese" = 4, "royalty" = 1)
-	foodtype = DAIRY
-
 /obj/item/reagent_containers/food/snacks/cheesewedge
 	name = "cheese wedge"
 	desc = "A wedge of cheese, originating from a wheel. You wonder where the original wheel is."
@@ -618,12 +609,11 @@
 	foodtype = MEAT | DAIRY | GRAIN
 
 /obj/item/reagent_containers/food/snacks/branrequests
-	name = "Bran Appeal Cereal"
+	name = "Bran Cereal"
 	desc = "A box of cereal, consisting mainly of bran and raisins for the fiber content. Salt has been added for... some reason?"
 	icon_state = "bran_requests"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/sodiumchloride = 5)
-	bonus_reagents = list(/datum/reagent/consumable/sodiumchloride = 10)
-	tastes = list("bran" = 4, "raisins" = 3, "salt" = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("bran" = 4, "raisins" = 3)
 	foodtype = GRAIN | FRUIT | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/butter
