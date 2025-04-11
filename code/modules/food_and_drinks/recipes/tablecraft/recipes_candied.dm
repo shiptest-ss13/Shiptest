@@ -43,3 +43,24 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/chocoorange
 	subcategory = CAT_CANDIED
+
+/datum/crafting_recipe/food/spacylibertyduff
+	name = "Spacy liberty duff"
+	reqs = list(
+		/datum/reagent/consumable/ethanol/vodka = 5,
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/spacylibertyduff
+	subcategory = CAT_CANDIED
+
+/datum/crafting_recipe/food/amanitajelly
+	name = "Amanita jelly"
+	reqs = list(
+		/datum/reagent/consumable/ethanol/vodka = 5,
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/grown/mushroom/amanita = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/amanitajelly
+	subcategory = CAT_CANDIED
+
