@@ -26,27 +26,6 @@
 		"You know, these hamburgers taste quite similar to the ones they have at the Maltese Falcon.")
 		tastes = list("fast food hamburger" = 1)
 
-/obj/item/reagent_containers/food/snacks/burger/human
-	var/subjectname = ""
-	var/subjectjob = null
-	name = "human burger"
-	desc = "A hamburger prepared with an oddly lean cut of meat. Something feels off..."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
-	tastes = list("bun" = 2, "long pork" = 4)
-	foodtype = MEAT | GRAIN | GORE
-
-/obj/item/reagent_containers/food/snacks/burger/human/CheckParts(list/parts_list)
-	..()
-	var/obj/item/reagent_containers/food/snacks/meat/M = locate(/obj/item/reagent_containers/food/snacks/meat/steak/plain/human) in contents
-	if(M)
-		subjectname = M.subjectname
-		subjectjob = M.subjectjob
-		if(subjectname)
-			name = "[subjectname] burger"
-		else if(subjectjob)
-			name = "[subjectjob] burger"
-		qdel(M)
-
 /obj/item/reagent_containers/food/snacks/burger/fish
 	name = "fillet -o- carp sandwich"
 	desc = "A breaded and fried square of space carp, usually with tartar sauce and cheese kept between a sliced, steamed bun."

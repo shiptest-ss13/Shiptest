@@ -4,18 +4,6 @@
 ////////////////////////////////////////////////BURGERS////////////////////////////////////////////////
 
 
-/datum/crafting_recipe/food/humanburger
-	name = "Human burger"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/bun = 1,
-		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 1
-	)
-	parts = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/human
-	subcategory = CAT_BURGER
-
 /datum/crafting_recipe/food/burger
 	name = "Burger"
 	reqs = list(
