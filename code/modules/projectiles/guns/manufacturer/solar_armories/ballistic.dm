@@ -211,3 +211,10 @@
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
 
+/obj/item/gun/ballistic/rifle/solgov/before_firing(atom/target, mob/user, params)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.set_light_color(COLOR_SOFT_RED)
+		chambered.BB.set_light_range(2)

@@ -376,6 +376,72 @@
 	caliber = "84mm"
 	max_ammo = 1
 
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg
+	name = "\improper SKM-24u"
+	desc = "What appears to be a standard SKM-24 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "skm_lmg"
+	item_state = "skm_lmg"
+
+	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	show_magazine_on_sprite = TRUE
+	unique_mag_sprites_for_variants = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	manufacturer = MANUFACTURER_IMPORT
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/skm_762_40,
+	)
+
+	fire_delay = 0.13 SECONDS
+
+	spread = 7 //you can hipfire, but why?
+	spread_unwielded = 25
+
+	recoil = 1 //identical to other LMGS
+	recoil_unwielded = 4 //same as skm
+
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
+	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
+
+	has_bipod = TRUE
+
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/before_firing(atom/target, mob/user, params)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.set_light_color(COLOR_SOFT_RED)
+		chambered.BB.set_light_range(2)
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum
+
+
 /obj/item/gun/ballistic/automatic/hmg/mower
 	name = "\improper Mower"
 	desc = "Unnamed Frontiersmen LMG. Chambered in .308."
@@ -441,47 +507,7 @@
 /obj/item/ammo_box/magazine/mower_lmg_308/empty
 	start_empty = TRUE
 
-/obj/item/gun/ballistic/automatic/hmg/mower/before_firing(atom/target, mob/user)
-	. = ..()
-	if(chambered.BB)
-		chambered.BB.icon_state = "redtrac"
-		chambered.BB.light_system = MOVABLE_LIGHT
-		chambered.BB.set_light_color(COLOR_SOFT_RED)
-		chambered.BB.set_light_range(2)
-
-/obj/item/gun/ballistic/rifle/illestren/before_firing(atom/target, mob/user)
-	. = ..()
-	if(chambered.BB)
-		chambered.BB.icon_state = "redtrac"
-		chambered.BB.light_system = MOVABLE_LIGHT
-		chambered.BB.set_light_color(COLOR_SOFT_RED)
-		chambered.BB.set_light_range(2)
-
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg/before_firing(atom/target, mob/user)
-	. = ..()
-	if(chambered.BB)
-		chambered.BB.icon_state = "redtrac"
-		chambered.BB.light_system = MOVABLE_LIGHT
-		chambered.BB.set_light_color(COLOR_SOFT_RED)
-		chambered.BB.set_light_range(2)
-
-/obj/item/gun/ballistic/rifle/scout/before_firing(atom/target, mob/user)
-	. = ..()
-	if(chambered.BB)
-		chambered.BB.icon_state = "redtrac"
-		chambered.BB.light_system = MOVABLE_LIGHT
-		chambered.BB.set_light_color(COLOR_SOFT_RED)
-		chambered.BB.set_light_range(2)
-
-/obj/item/gun/ballistic/rifle/solgov/before_firing(atom/target, mob/user)
-	. = ..()
-	if(chambered.BB)
-		chambered.BB.icon_state = "redtrac"
-		chambered.BB.light_system = MOVABLE_LIGHT
-		chambered.BB.set_light_color(COLOR_SOFT_RED)
-		chambered.BB.set_light_range(2)
-
-/obj/item/gun/ballistic/automatic/marksman/f4/before_firing(atom/target, mob/user)
+/obj/item/gun/ballistic/automatic/hmg/mower/before_firing(atom/target, mob/user, params)
 	. = ..()
 	if(chambered.BB)
 		chambered.BB.icon_state = "redtrac"

@@ -94,6 +94,11 @@
 	speed = BULLET_SPEED_RIFLE
 	bullet_identifier = "huge bullet"
 
+	icon_state = "redtrac"
+	light_system = MOVABLE_LIGHT
+	light_color = COLOR_SOFT_RED
+	light_range = 2
+
 /obj/projectile/bullet/a300/trac
 	name = ".300 Tracker"
 	damage = 10

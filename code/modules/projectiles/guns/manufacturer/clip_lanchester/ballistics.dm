@@ -605,7 +605,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 	AddElement(/datum/element/update_icon_updates_onmob)
 
-/obj/item/gun/ballistic/automatic/hmg/cm40/before_firing(atom/target, mob/user)
+/obj/item/gun/ballistic/automatic/hmg/cm40/before_firing(atom/target, mob/user, params)
 	. = ..()
 	if(chambered.BB)
 		chambered.BB.icon_state = "redtrac"
