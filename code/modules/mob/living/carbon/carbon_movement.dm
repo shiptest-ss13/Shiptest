@@ -31,6 +31,17 @@
 			if(m_intent == MOVE_INTENT_RUN)
 				adjust_nutrition(-(HUNGER_FACTOR/10))
 
+		if(m_intent == MOVE_INTENT_RUN && !(movement_type & FLYING) && (mobility_flags & (MOBILITY_MOVE|MOBILITY_STAND)) && !pulledby)
+			drain_sprint()
+		if(momentum_dir & direct)
+			momentum_distance++
+			if(!has_momentum && momentum_distance >= 4 && add_movespeed_modifier(/datum/movespeed_modifier/momentum))
+				has_momentum = TRUE
+		else
+			momentum_dir = direct
+			momentum_distance = 0
+			if(has_momentum && remove_movespeed_modifier(/datum/movespeed_modifier/momentum))
+				has_momentum = FALSE
 
 /mob/living/carbon/set_usable_legs(new_value)
 	. = ..()
