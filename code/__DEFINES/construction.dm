@@ -87,6 +87,7 @@
 #define CAT_MEAT "Meats"
 #define CAT_MISCFOOD "Misc. Food"
 #define CAT_TORTILLA "Tortilla"
+#define CAT_CANDIED "Candied"
 #define CAT_PASTRY "Pastries"
 #define CAT_PIE "Pies"
 #define CAT_PIZZA "Pizzas"
