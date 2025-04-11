@@ -16,6 +16,7 @@
 	grow = 0.05
 
 /particles/smoke/turf_fire
+	spawning = 1 // don't turn this up or forest fires cause way too much lag
 	position = generator(GEN_SPHERE, 16, 24, NORMAL_RAND)
 
 /particles/smoke/burning
