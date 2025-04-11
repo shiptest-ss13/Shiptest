@@ -316,7 +316,7 @@
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/fuegoburrito
-	name = "fuego plasma burrito"
+	name = "chili con carne burrito"
 	desc = "A tortilla filled with meat and chili peppers."
 	icon_state = "fuegoburrito"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 3)

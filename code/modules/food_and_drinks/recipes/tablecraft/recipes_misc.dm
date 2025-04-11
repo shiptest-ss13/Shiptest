@@ -173,7 +173,7 @@
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/fuegoburrito
-	name ="Fuego plasma burrito"
+	name ="chili con carne burrito"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/tortilla = 1,
 		/obj/item/reagent_containers/food/snacks/grown/ghost_chili = 2,
