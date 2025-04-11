@@ -79,6 +79,13 @@
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
+/datum/outfit/job/clip/captain/meld
+	name = "CLIP - Captain (MELD)"
+	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/hazardvest
+	head = /obj/item/clothing/head/hardhat/white
+
 /datum/outfit/job/clip/chemist
 	name = "CLIP - Pharmacist"
 	job_icon = "chemist"
@@ -222,6 +229,24 @@
 		/obj/item/weldingtool=1,
 		/obj/item/clothing/mask/gas/clip=1
 		)
+
+/datum/outfit/job/clip/fieldengi
+	name = "CLIP - Field Engineer"
+	job_icon = "shaftminer"
+	jobtype = /datum/job/mining
+
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/workboots
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
+
+	uniform = /obj/item/clothing/under/clip
+	accessory = /obj/item/clothing/accessory/armband/engine
+	head = /obj/item/clothing/head/hardhat/orange
+	suit =  /obj/item/clothing/suit/hazardvest
 
 /datum/outfit/job/clip/mechanic
 	name = "CLIP - Mechanic"

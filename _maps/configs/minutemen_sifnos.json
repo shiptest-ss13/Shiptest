@@ -1,0 +1,44 @@
+	{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sifnos-class Mining Cutter",
+	"prefix": "CLSV",
+	"manufacturer": "Lanchester Shipyards",
+	"namelists": [
+		"GENERAL",
+		"CLIP MINUTEMEN",
+		"NATURAL"
+	],
+	"description": "Later.....................................................................................................................................................................................................................................................",
+	"tags": [
+		"Mining",
+		"Specialist"
+	],
+	"map_short_name": "Sifnos-class",
+	"faction": "/datum/faction/clip",
+	"map_path": "_maps/shuttles/minutemen/minutemen_sifnos.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/clip/captain/meld",
+			"officer": true,
+			"slots": 1
+		},
+		"Drill Operator": {
+			"outfit": "/datum/outfit/job/clip/fieldengi",
+			"slots": 2
+		},
+		"Medical Technician": {
+			"outfit": "/datum/outfit/job/clip/medtech",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/clip/mechanic",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/clip/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
