@@ -278,7 +278,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "cornuto"
-	desc = "A vanilla and chocolate icecream cone. It menaces with a sprinkling of caramelized nuts."
+	desc = "A solarian vanilla and chocolate icecream cone. It menaces with a sprinkling of caramelized nuts."
 	tastes = list("chopped hazelnuts", "waffle")
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 1)
