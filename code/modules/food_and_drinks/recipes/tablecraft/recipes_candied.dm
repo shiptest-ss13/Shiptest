@@ -21,7 +21,7 @@
 	name = "Choco coin"
 	reqs = list(
 		/obj/item/coin = 1,
-		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/chococoin
 	subcategory = CAT_CANDIED
@@ -30,7 +30,7 @@
 	name = "Fudge dice"
 	reqs = list(
 		/obj/item/dice = 1,
-		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fudgedice
 	subcategory = CAT_CANDIED
@@ -39,7 +39,7 @@
 	name = "Choco orange"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 1,
-		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/chocoorange
 	subcategory = CAT_CANDIED
