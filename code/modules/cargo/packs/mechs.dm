@@ -1,6 +1,7 @@
 /datum/supply_pack/mech
 	group = "Exosuit Construction"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 
 /*
