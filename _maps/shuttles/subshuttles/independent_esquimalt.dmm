@@ -1,0 +1,359 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/item/radio/intercom/wideband/directional/east{
+	pixel_x = 26;
+	pixel_y = -5
+	},
+/obj/machinery/holopad,
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = 10;
+	name = "Window Shutters";
+	dir = 8;
+	id = "window_shutters_esq"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/glass,
+/obj/item/stack/rods,
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+"b" = (
+/obj/structure/cable/yellow{
+	icon_state = "8-10"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = 11;
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+"d" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "holofield_esq"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "6-9"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "shutter_esq"
+	},
+/obj/effect/turf_decal/industrial/warning/dust,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/stand_clear,
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/docking_port/mobile{
+	name = "esquimalt shuttle";
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/storage)
+"h" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "holofield_esq"
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "shutter_esq"
+	},
+/obj/effect/turf_decal/industrial/warning/dust,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/stand_clear,
+/turf/open/floor/engine/hull,
+/area/ship/storage)
+"k" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
+/area/ship/storage)
+"l" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+"m" = (
+/turf/template_noop,
+/area/template_noop)
+"p" = (
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+"v" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/power/smes/shuttle/micro/precharged{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"B" = (
+/turf/closed/wall,
+/area/ship/storage)
+"D" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "window_shutters_esq"
+	},
+/obj/structure/grille/broken,
+/turf/open/floor/plating,
+/area/ship/storage)
+"E" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "window_shutters_esq"
+	},
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/storage)
+"F" = (
+/turf/closed/wall/r_wall,
+/area/ship/storage)
+"G" = (
+/obj/structure/chair/handrail,
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 22;
+	id = "shutter_esq";
+	name = "Shuttle Shutters"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 4;
+	pixel_y = 21;
+	id = "holofield_esq"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-9"
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/generic,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+"H" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-6"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-6"
+	},
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/storage)
+"I" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating,
+/area/ship/storage)
+"J" = (
+/obj/machinery/computer/helm{
+	dir = 8;
+	icon_state = "computer-middle";
+	pixel_x = 2;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
+"L" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "window_shutters_esq"
+	},
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/storage)
+"P" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "5-9"
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = 10;
+	pixel_y = 8
+	},
+/obj/effect/turf_decal/borderfloor,
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+"S" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/storage)
+"U" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/chair/plastic{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+"V" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	pixel_x = 1;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+"Y" = (
+/obj/machinery/power/smes,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"Z" = (
+/obj/structure/crate_shelf,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
+
+(1,1,1) = {"
+m
+S
+F
+S
+m
+"}
+(2,1,1) = {"
+F
+v
+Y
+v
+F
+"}
+(3,1,1) = {"
+h
+k
+H
+I
+B
+"}
+(4,1,1) = {"
+d
+l
+U
+P
+B
+"}
+(5,1,1) = {"
+B
+G
+b
+p
+B
+"}
+(6,1,1) = {"
+D
+a
+V
+Z
+E
+"}
+(7,1,1) = {"
+F
+F
+J
+F
+F
+"}
+(8,1,1) = {"
+m
+F
+L
+F
+m
+"}
