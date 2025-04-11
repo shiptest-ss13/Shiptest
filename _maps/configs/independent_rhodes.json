@@ -1,0 +1,29 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Rhodes-class Colonial Ship",
+	"map_short_name": "Rhodes-class",
+	"map_path": "_maps/shuttles/independent/independent_rhodes.dmm",
+	"description": "Designed by Miskilamo Spacefaring for intersolar colonization, the Rhodes-class is frequently used for colonization by smaller independent colonies and groups splintering from larger factions. Compared to the larger colony ships, transporting many colonists at once and able to fully support a starting colony, the Rhodes-class is designed as a shuttle between a colonization site and a larger transporting ship. Because of this, the ship is lightly equipped for colonists to reach self-sufficiency, while not being self-sufficient on it's own initially.",
+	"tags": [
+		"Construction"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Miskilamo Spacefaring",
+	"limit": 1,
+	"job_slots": {
+		"Colony Leader": {
+			"outfit": "/datum/outfit/job/independent/colonist/captain",
+			"slots": 1
+		},
+		"Colonist": {
+			"outfit": "/datum/outfit/job/independent/colonist",
+			"slots": 10
+		}
+	},
+	"enabled": false
+}
