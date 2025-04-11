@@ -16,6 +16,7 @@
 	name = "Axe Retrieval"
 	desc = "I recently lost a heirloom axe - produced by a very fine Syebenaltch Guild. I was unable to retrieve it when my vessel crashed, and I was rescued. Please bring it home to me."
 	mission_limit = 1
+	value = 1000
 	setpiece_item = /obj/item/melee/axe/fire
 
 /datum/map_template/ruin/beachplanet/ancient

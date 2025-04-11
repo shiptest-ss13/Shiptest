@@ -1,5 +1,5 @@
 /datum/mission/ruin
-	value = 2000
+	value = 1500
 	duration = null
 	desc = "Find my pages. (Please report if you cannot locate pages)"
 	location_specific = TRUE

@@ -4,7 +4,7 @@
 #define MERITS_PER_ICE MOLS_PER_ICE / MOLS_PER_MERIT //1 ice = 5 merits
 #define MERITS_USED_PER_TICK 2
 #define H2_PUMP_SHUTOFF_PRESSURE 4000
-#define CREDITS_TO_MERITS 4 // currently 2:5 credits to mols hydrogen. # of credits per merit
+#define CREDITS_TO_MERITS 3 // currently 3:10 credits to mols hydrogen. # of credits per merit
 #define OUTPOST_HYDROGEN_CUT 0.8
 #define HYDROGEN_IDEAL 45000 //used for high and low end of merit multiplier
 #define MERIT_EXPONENT 0.95 //used for diminishing returns, values closer to 1 increase returns, lower decrease.
