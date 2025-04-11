@@ -33,6 +33,7 @@
 					CAT_MISCFOOD,
 					CAT_TORTILLA,
 					CAT_CANDIED,
+					CAT_DONUT,
 					CAT_PASTRY,
 					CAT_PIE,
 					CAT_PIZZA,
