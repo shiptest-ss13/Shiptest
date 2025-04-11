@@ -85,6 +85,7 @@
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/hazardvest
 	head = /obj/item/clothing/head/hardhat/white
+	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/clip/chemist
 	name = "CLIP - Pharmacist"
