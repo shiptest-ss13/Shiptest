@@ -15,6 +15,8 @@
 	var/static/list/stray_spawnable_supply_packs = list() ///List of default spawnable supply packs, filtered from the cargo list
 
 /datum/round_event/ship/stray_cargo/announce(fake)
+	if(!impact_area)
+		return
 	if(prob(announce_chance) || fake)
 		priority_announce("Stray cargo pod detected on long-range scanners. Expected location of impact: [impact_area.name].",
 			"Collision Alert",

@@ -95,7 +95,7 @@
 		var/datum/round_event_control/E = locate(href_list["forceevent"]) in SSevents.control
 		if(E)
 			E.admin_setup(usr)
-			var/datum/round_event/event = E.run_event()
+			var/datum/round_event/event = E.run_event(event_cause = "admins")
 			if(event.announce_when>0)
 				event.processing = FALSE
 				var/prompt = alert(usr, "Would you like to alert the crew?", "Alert", "Yes", "No", "Cancel")
