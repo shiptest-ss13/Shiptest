@@ -198,7 +198,7 @@
 		display_results(user, target, span_warning("You screw up, breaking the bone!"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"))
-		affected.break_bone()
+		//affected.break_bone()
 		target.apply_damage(25, BRUTE, "[target_zone]")
 
 //drill bone
