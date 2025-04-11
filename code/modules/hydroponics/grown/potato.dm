@@ -44,6 +44,9 @@
 /obj/item/reagent_containers/food/snacks/grown/sweet_potato
 	seed = /obj/item/seeds/sweet_potato
 	name = "sweet potato"
+	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
+	icon_grow = "potato-grow"
+	icon_dead = "potato-dead"
 	desc = "It's sweet."
 	icon_state = "sweetpotato"
 	distill_reagent = /datum/reagent/consumable/ethanol/sbiten
