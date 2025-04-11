@@ -293,6 +293,10 @@
 /obj/structure/grille/get_dumping_location(datum/component/storage/source,mob/user)
 	return null
 
+/obj/structure/grille/indestructible
+	flags_1 = CONDUCT_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/grille/broken // Pre-broken grilles for map placement
 	icon_state = "brokengrille"
 	density = FALSE
