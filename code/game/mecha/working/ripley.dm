@@ -98,7 +98,7 @@
 
 
 /obj/mecha/working/ripley/deathripley
-	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE"
+	desc = "Seen in issue #78 'DSQUAD X VALENTINE', the iconic Deathripley is an almost cartoonish overhaul of the well known powerloader."
 	name = "\improper DEATH-RIPLEY"
 	icon_state = "deathripley"
 	fast_pressure_step_in = 2 //step_in while in low pressure conditions
@@ -119,7 +119,7 @@
 	ME.attach(src)
 
 /obj/mecha/working/ripley/deathripley/real
-	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE. FOR REAL"
+	desc = "Seen in issue #136 'DEATHSQUAD GETS SERIOUS', often viewed as a joke issue, this ridiculous powerloader overhaul comes standard with a very real, very deadly 'KILLCLAMP'."
 
 /obj/mecha/working/ripley/deathripley/real/Initialize()
 	. = ..()
