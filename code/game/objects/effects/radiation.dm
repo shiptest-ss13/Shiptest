@@ -1,8 +1,10 @@
 /obj/effect/radiation
 	name = "background radiation"
+	desc = "Pulses radition every so often. Only observers can see this."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "radiation"
-	invisibility = INVISIBILITY_ABSTRACT
+	invisibility = INVISIBILITY_OBSERVER
+	layer = MID_LANDMARK_LAYER
 	anchored = TRUE
 	///Radiation pulse intensity
 	var/rad_power = 33

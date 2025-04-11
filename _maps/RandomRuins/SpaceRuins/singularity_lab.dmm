@@ -2069,16 +2069,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/space/nearstation)
-"is" = (
-/obj/machinery/the_singularitygen{
-	anchored = 1
-	},
-/obj/effect/landmark/mission_poi/main{
-	already_spawned = 1;
-	type_to_spawn = /obj/machinery/the_singularitygen
-	},
-/turf/open/floor/plating,
-/area/space/nearstation)
 "iv" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable/yellow{
@@ -2301,23 +2291,6 @@
 	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
-"jr" = (
-/obj/effect/turf_decal/box,
-/obj/machinery/light/directional/north,
-/obj/item/gun/energy/lasercannon{
-	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
-	name = "NT-LS-1013"
-	},
-/obj/item/gun/energy/laser/iot,
-/obj/item/gun/energy/laser/iot{
-	dry_fire_sound = 'sound/items/ding.ogg';
-	dry_fire_text = "ding"
-	},
-/obj/structure/safe{
-	name = "Prototype Storage"
-	},
-/turf/open/floor/engine,
-/area/ruin/space/has_grav/singularitylab/lab)
 "jt" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -3639,17 +3612,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
-	},
-/turf/open/floor/plating/asteroid,
-/area/ruin/space/has_grav/singularitylab)
-"oi" = (
-/obj/effect/decal/remains/human,
-/obj/item/clothing/under/rank/rnd/scientist,
-/obj/item/clothing/shoes/sneakers/white,
-/obj/effect/gibspawner,
-/obj/item/gun/energy/lasercannon{
-	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
-	name = "NT-LS-1013"
 	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav/singularitylab)
@@ -9134,15 +9096,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
-"JH" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/flippedtable{
-	icon_state = ""
-	},
-/turf/open/floor/carpet/nanoweave/purple,
-/area/ruin/space/has_grav/singularitylab/lab)
 "JI" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine{
@@ -9174,6 +9127,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"JK" = (
+/obj/effect/decal/remains/human,
+/obj/item/clothing/under/rank/rnd/scientist,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/effect/gibspawner,
+/obj/item/gun/energy/lasercannon{
+	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
+	name = "NT-LS-1013"
+	},
+/turf/open/floor/plating/asteroid,
+/area/ruin/space/has_grav/singularitylab)
 "JL" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/insectguts,
@@ -10915,6 +10879,15 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"PQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-10"
+	},
+/obj/machinery/computer/solar_control{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/singularitylab/reactor)
 "PR" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -10966,6 +10939,23 @@
 	},
 /turf/open/floor/engine/hull,
 /area/space/nearstation)
+"PZ" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/light/directional/north,
+/obj/item/gun/energy/lasercannon{
+	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
+	name = "NT-LS-1013"
+	},
+/obj/item/gun/energy/laser/iot,
+/obj/item/gun/energy/laser/iot{
+	dry_fire_sound = 'sound/items/ding.ogg';
+	dry_fire_text = "ding"
+	},
+/obj/structure/safe{
+	name = "Prototype Storage"
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab/lab)
 "Qe" = (
 /obj/structure/flippedtable{
 	dir = 8;
@@ -11645,6 +11635,15 @@
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/lab)
+"SJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/flippedtable{
+	icon_state = ""
+	},
+/turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/space/has_grav/singularitylab/lab)
 "SK" = (
 /obj/structure/closet/emcloset{
@@ -12484,6 +12483,16 @@
 /obj/item/gun/energy/floragun,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Vn" = (
+/obj/machinery/the_singularitygen{
+	anchored = 1
+	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	type_to_spawn = /obj/machinery/the_singularitygen
+	},
+/turf/open/floor/plating,
+/area/space/nearstation)
 "Vo" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 6
@@ -12769,15 +12778,6 @@
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/space/has_grav/singularitylab/civvie)
-"Wf" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-10"
-	},
-/obj/machinery/computer/solar_control{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/singularitylab/reactor)
 "Wh" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -15547,7 +15547,7 @@ Ke
 Ke
 kP
 kP
-kP
+tq
 tq
 tq
 tq
@@ -15625,7 +15625,7 @@ Ke
 Ke
 kP
 kP
-kP
+tq
 tq
 tq
 tq
@@ -15702,7 +15702,7 @@ id
 Ke
 Ke
 kP
-kP
+tq
 tq
 tq
 tq
@@ -15778,10 +15778,10 @@ TN
 bY
 id
 Ke
-Ke
 kP
 kP
-kP
+tq
+tq
 tq
 tq
 "}
@@ -15857,8 +15857,8 @@ id
 Ke
 Ke
 Ke
-Ke
-Ke
+tq
+tq
 tq
 tq
 "}
@@ -15934,8 +15934,8 @@ vY
 id
 Ke
 Ke
-Ke
-Ke
+tq
+tq
 tq
 tq
 "}
@@ -16010,9 +16010,9 @@ os
 og
 id
 id
-id
 Ke
-Ke
+tq
+tq
 tq
 tq
 "}
@@ -16087,9 +16087,9 @@ NB
 Rp
 NB
 id
-id
-Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -16164,9 +16164,9 @@ Am
 Ud
 id
 id
-id
-Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -16210,7 +16210,7 @@ id
 id
 pE
 oT
-Wf
+PQ
 xu
 yQ
 ja
@@ -16241,9 +16241,9 @@ xW
 Ud
 id
 id
-id
-Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -16318,9 +16318,9 @@ KZ
 lM
 id
 id
-id
 Ke
-Ke
+tq
+tq
 tq
 tq
 "}
@@ -16395,9 +16395,9 @@ qk
 Ud
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -16471,10 +16471,10 @@ bi
 jO
 Ud
 id
-id
 Ke
 Ke
-Ke
+tq
+tq
 tq
 tq
 "}
@@ -16548,10 +16548,10 @@ HG
 NB
 Rp
 NB
-id
 Ke
 Qo
-Qo
+tq
+tq
 tq
 tq
 "}
@@ -16625,9 +16625,9 @@ kU
 id
 ZV
 id
-id
 Ke
-Qo
+tq
+tq
 tq
 tq
 tq
@@ -16702,9 +16702,9 @@ id
 id
 ZV
 id
-id
 Ke
-Qo
+tq
+tq
 tq
 tq
 tq
@@ -16779,10 +16779,10 @@ id
 id
 ZV
 id
-id
 Ke
 Ke
-Ke
+tq
+tq
 tq
 tq
 "}
@@ -16857,9 +16857,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -16924,7 +16924,7 @@ id
 id
 id
 id
-oi
+JK
 kU
 qT
 TG
@@ -16934,9 +16934,9 @@ kU
 ZV
 kU
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -17011,9 +17011,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -17088,9 +17088,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -17165,9 +17165,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -17242,9 +17242,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -17319,9 +17319,9 @@ NB
 Rp
 NB
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -17396,10 +17396,10 @@ id
 ZV
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (47,1,1) = {"
@@ -17474,9 +17474,9 @@ ZV
 id
 id
 id
-id
-id
-Ke
+tq
+tq
+tq
 tq
 "}
 (48,1,1) = {"
@@ -17550,10 +17550,10 @@ id
 ZV
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (49,1,1) = {"
@@ -17626,10 +17626,10 @@ lK
 id
 ZV
 id
-id
-id
 Ke
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -17703,10 +17703,10 @@ lK
 id
 ZV
 id
-id
-id
 Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -17780,10 +17780,10 @@ lK
 id
 ZV
 id
-id
-id
 Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -17828,7 +17828,7 @@ VH
 VH
 VH
 VH
-is
+Vn
 VH
 VH
 VH
@@ -17857,10 +17857,10 @@ lK
 id
 ZV
 id
-id
-id
 Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -17934,10 +17934,10 @@ lK
 id
 ZV
 id
-id
-id
 Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -18011,10 +18011,10 @@ lK
 id
 ZV
 id
-id
-id
 Ke
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -18089,9 +18089,9 @@ NB
 Rp
 NB
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -18166,10 +18166,10 @@ id
 ZV
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (57,1,1) = {"
@@ -18243,10 +18243,10 @@ id
 ZV
 id
 id
-id
-id
-id
 Ke
+tq
+tq
+tq
 tq
 "}
 (58,1,1) = {"
@@ -18320,10 +18320,10 @@ id
 ZV
 id
 id
-id
-id
-id
 Ke
+tq
+tq
+tq
 tq
 "}
 (59,1,1) = {"
@@ -18397,10 +18397,10 @@ id
 ZV
 id
 id
-id
-id
-id
 Ke
+tq
+tq
+tq
 tq
 "}
 (60,1,1) = {"
@@ -18474,10 +18474,10 @@ id
 ZV
 id
 id
-id
-id
-id
 Ke
+tq
+tq
+tq
 tq
 "}
 (61,1,1) = {"
@@ -18543,7 +18543,7 @@ fy
 gm
 TR
 lK
-jr
+PZ
 QQ
 pC
 lK
@@ -18551,10 +18551,10 @@ id
 ZV
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (62,1,1) = {"
@@ -18628,9 +18628,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -18693,7 +18693,7 @@ id
 lK
 sv
 cK
-JH
+SJ
 Rq
 ya
 Mm
@@ -18705,9 +18705,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -18782,9 +18782,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -18859,9 +18859,9 @@ NB
 Rp
 NB
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -18936,9 +18936,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -19013,9 +19013,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -19090,10 +19090,10 @@ id
 ZV
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (69,1,1) = {"
@@ -19167,10 +19167,10 @@ id
 ZV
 id
 id
-id
-id
-id
 Ke
+tq
+tq
+tq
 tq
 "}
 (70,1,1) = {"
@@ -19244,10 +19244,10 @@ id
 ZV
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (71,1,1) = {"
@@ -19321,9 +19321,9 @@ id
 ZV
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -19397,10 +19397,10 @@ id
 id
 ZV
 id
-id
-id
 Ke
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -19474,10 +19474,10 @@ id
 id
 ZV
 id
-id
-id
 Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -19551,10 +19551,10 @@ id
 NB
 Rp
 NB
-id
-id
 Ke
 Qo
+tq
+tq
 tq
 tq
 "}
@@ -19628,10 +19628,10 @@ id
 id
 ZV
 id
-id
-id
 Ke
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -19706,10 +19706,10 @@ cW
 Fc
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (77,1,1) = {"
@@ -19783,10 +19783,10 @@ VV
 OL
 id
 id
-id
-id
-id
 Ke
+tq
+tq
+tq
 tq
 "}
 (78,1,1) = {"
@@ -19860,10 +19860,10 @@ ZV
 id
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (79,1,1) = {"
@@ -19937,9 +19937,9 @@ ZV
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -20014,9 +20014,9 @@ ZV
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -20091,9 +20091,9 @@ Rp
 NB
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -20168,9 +20168,9 @@ Ox
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -20245,9 +20245,9 @@ pH
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -20322,10 +20322,10 @@ id
 id
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (85,1,1) = {"
@@ -20399,10 +20399,10 @@ id
 id
 id
 id
-id
-id
-id
 Ke
+tq
+tq
+tq
 tq
 "}
 (86,1,1) = {"
@@ -20476,10 +20476,10 @@ id
 id
 id
 id
-id
-id
 Ke
-Ke
+tq
+tq
+tq
 tq
 "}
 (87,1,1) = {"
@@ -20553,9 +20553,9 @@ id
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -20629,10 +20629,10 @@ IB
 id
 id
 id
-id
-id
 Ke
 Ke
+tq
+tq
 tq
 tq
 "}
@@ -20706,9 +20706,9 @@ IB
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 tq
@@ -20783,9 +20783,9 @@ IB
 id
 id
 id
-id
 Ke
-Ke
+tq
+tq
 tq
 tq
 tq
@@ -20860,8 +20860,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -20937,8 +20937,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -21014,8 +21014,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -21091,8 +21091,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -21168,10 +21168,10 @@ IB
 id
 id
 id
-id
 Ke
 Ke
-id
+tq
+tq
 tq
 tq
 "}
@@ -21245,9 +21245,9 @@ IB
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 tq
@@ -21322,9 +21322,9 @@ IB
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 tq
@@ -21399,9 +21399,9 @@ IB
 id
 id
 id
-id
-id
 Ke
+tq
+tq
 tq
 tq
 tq
@@ -21476,9 +21476,9 @@ IB
 id
 id
 id
-id
 Ke
-Ke
+tq
+tq
 tq
 tq
 tq
@@ -21553,8 +21553,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -21630,8 +21630,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -21707,8 +21707,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -21784,8 +21784,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -21861,8 +21861,8 @@ IB
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -21938,10 +21938,10 @@ id
 id
 id
 id
-id
 Ke
 Ke
-Ke
+tq
+tq
 tq
 tq
 "}
@@ -22016,10 +22016,10 @@ id
 id
 id
 id
-id
-id
 Ke
-id
+tq
+tq
+tq
 tq
 "}
 (107,1,1) = {"
@@ -22093,9 +22093,9 @@ id
 id
 id
 id
-id
 Ke
-Ke
+tq
+tq
 tq
 tq
 "}
@@ -22169,9 +22169,9 @@ Ke
 id
 id
 id
-id
 Ke
-Ke
+tq
+tq
 tq
 tq
 tq
@@ -22246,8 +22246,8 @@ Ke
 id
 id
 id
-id
 Ke
+tq
 tq
 tq
 tq
@@ -22324,7 +22324,7 @@ id
 id
 id
 Ke
-Ke
+tq
 tq
 tq
 tq

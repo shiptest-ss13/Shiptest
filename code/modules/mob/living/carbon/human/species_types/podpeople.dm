@@ -3,13 +3,14 @@
 	name = "\improper Podperson"
 	id = SPECIES_POD
 	default_color = "59CE00"
-	species_traits = list(MUTCOLORS,EYECOLOR)
+	species_traits = list(MUTCOLORS,EYECOLOR,SCLERA)
 	inherent_traits = list(
 		TRAIT_ALWAYS_CLEAN,
 		TRAIT_PLANT_SAFE,
 	)
 	inherent_factions = list("plants", "vines")
-	fixed_mut_color = "59CE00"
+	//fixed_mut_color = "59CE00" //wtf tg
+	exotic_bloodtype = "E"
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slice.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'

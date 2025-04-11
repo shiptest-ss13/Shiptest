@@ -1,5 +1,5 @@
 /datum/unit_test/ship_placement/Run()
-	var/datum/overmap/outpost/test_outpost = new /datum/overmap/outpost/no_main_level()
+	var/datum/overmap/outpost/test_outpost = new /datum/overmap/outpost/no_main_level(system_spawned_in = SSovermap.default_system)
 
 	// checks all shuttle templates, including those
 	// disabled or intended as subshuttles
@@ -11,7 +11,7 @@
 			var/subtimer = REALTIMEOFDAY
 
 			// they'll spawn in empty space, and won't be docked
-			var/datum/overmap/ship/controlled/cur_ship = new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), map)
+			var/datum/overmap/ship/controlled/cur_ship = new /datum/overmap/ship/controlled(list("x" = 1, "y" = 1), SSovermap.default_system, map)
 
 			log_test(" - Loading took [(REALTIMEOFDAY - subtimer) / 10]s")
 			subtimer = REALTIMEOFDAY
@@ -22,7 +22,7 @@
 			for(var/error in errors)
 				TEST_FAIL("Mapping error: [error]")
 
-			cur_ship.Dock(test_outpost, TRUE)
+			cur_ship.Dock(test_outpost, force = TRUE)
 
 			var/obj/docking_port/stationary/ship_dock = cur_ship.shuttle_port.docked
 			var/found_dock = FALSE

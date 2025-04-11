@@ -529,8 +529,8 @@ GENE SCANNER
 		var/area/user_area = T.loc
 		var/datum/weather/ongoing_weather = null
 
-		if(!user_area.outdoors)
-			to_chat(user, span_warning("[src]'s barometer function won't work indoors!"))
+		if(!user_area.outdoors && !user_area.allow_weather)
+			to_chat(user, "<span class='warning'>[src]'s barometer function won't work indoors!</span>")
 			return
 
 		if(weather_controller.current_weathers)

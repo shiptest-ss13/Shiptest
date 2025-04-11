@@ -96,10 +96,10 @@
 	plane = FULLSCREEN_PLANE
 	layer = FLASH_LAYER
 	icon = 'icons/effects/ore_visuals.dmi'
-	appearance_flags = 0 //to avoid having TILE_BOUND in the flags, so that the 480x480 icon states let you see it no matter where you are
+	appearance_flags = TILE_BOUND
 	duration = 35
-	pixel_x = -224
-	pixel_y = -224
+	pixel_x = 0
+	pixel_y = 0
 
 /obj/effect/temp_visual/mining_overlay/Initialize()
 	. = ..()
