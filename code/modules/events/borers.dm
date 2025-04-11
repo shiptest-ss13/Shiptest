@@ -7,7 +7,7 @@
 	earliest_start = 24000 //40 min, double default timer
 
 
-/datum/round_event_control/borer/canSpawnEvent()
+/datum/round_event_control/borer/can_spawn_event()
 	. = ..()
 	if(!.)
 		return .
@@ -17,7 +17,7 @@
 			return FALSE
 
 /datum/round_event/ghost_role/borer
-	announceWhen	= 400
+	announce_when	= 400
 
 	minimum_required = 1
 	role_name = "cortical borer"
@@ -27,7 +27,7 @@
 	fakeable = TRUE
 
 /datum/round_event/ghost_role/borer/setup()
-	announceWhen = rand(announceWhen, announceWhen + 50)
+	announce_when = rand(announce_when, announce_when + 50)
 	if(prob(50))
 		spawncount++
 

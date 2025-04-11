@@ -6,7 +6,7 @@
 	min_players = 10 //WS Edit - Bureaucracy Nerf
 
 /datum/round_event/bureaucratic_error
-	announceWhen = 1
+	announce_when = 1
 	//WS Start - Bureaucracy Nerf
 	//these jobs can't be reopened, and AI can't have multiple latejoins anyway, so the error will not close them
 	var/list/blacklisted = list(

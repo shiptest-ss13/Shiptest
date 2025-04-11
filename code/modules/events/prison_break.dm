@@ -5,8 +5,8 @@
 	min_players = 5
 
 /datum/round_event/grey_tide
-	announceWhen = 50
-	endWhen = 20
+	announce_when = 50
+	end_when = 20
 	var/list/area/areasToOpen = list()
 	var/list/potential_areas = list(/area/ship/bridge,
 									/area/ship/engineering,
@@ -18,8 +18,8 @@
 
 
 /datum/round_event/grey_tide/setup()
-	announceWhen = rand(50, 60)
-	endWhen = rand(20, 30)
+	announce_when = rand(50, 60)
+	end_when = rand(20, 30)
 	severity = rand(1,3)
 	for(var/i in 1 to severity)
 		var/picked_area = pick_n_take(potential_areas)

@@ -7,8 +7,8 @@
 	alert_observers = FALSE
 
 /datum/round_event/space_dust
-	startWhen		= 1
-	endWhen			= 2
+	start_when		= 1
+	end_when			= 2
 	fakeable = FALSE
 
 /datum/round_event/space_dust/start()
@@ -22,9 +22,9 @@
 	earliest_start = 0 MINUTES
 
 /datum/round_event/sandstorm
-	startWhen = 1
-	endWhen = 150 // ~5 min
-	announceWhen = 0
+	start_when = 1
+	end_when = 150 // ~5 min
+	announce_when = 0
 	fakeable = FALSE
 
 /datum/round_event/sandstorm/tick()
