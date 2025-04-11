@@ -49,53 +49,7 @@
 	result = /obj/item/reagent_containers/food/snacks/eggplantparm
 	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/baguette
-	name = "Baguette"
-	time = 40
-	reqs = list(/datum/reagent/consumable/sodiumchloride = 1,
-				/datum/reagent/consumable/blackpepper = 1,
-				/obj/item/reagent_containers/food/snacks/pastrybase = 2
-	)
-	result = /obj/item/food/baguette
-	subcategory = CAT_MISCFOOD
-
 ////////////////////////////////////////////////TOAST////////////////////////////////////////////////
-
-/datum/crafting_recipe/food/slimetoast
-	name = "Slime toast"
-	reqs = list(
-		/datum/reagent/toxin/slimejelly = 5,
-		/obj/item/food/breadslice/plain = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/jelliedtoast/slime
-	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/jelliedyoast
-	name = "Jellied toast"
-	reqs = list(
-		/datum/reagent/consumable/cherryjelly = 5,
-		/obj/item/food/breadslice/plain = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/jelliedtoast/cherry
-	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/butteredtoast
-	name = "Buttered Toast"
-	reqs = list(
-		/obj/item/food/breadslice/plain = 1,
-		/obj/item/reagent_containers/food/snacks/butter = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/butteredtoast
-	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/twobread
-	name = "Two bread"
-	reqs = list(
-		/datum/reagent/consumable/ethanol/wine = 5,
-		/obj/item/food/breadslice/plain = 2
-	)
-	result = /obj/item/reagent_containers/food/snacks/twobread
-	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/melonfruitbowl
 	name ="Melon fruit bowl"
@@ -121,15 +75,6 @@
 	result = /obj/item/reagent_containers/food/snacks/melonkeg
 	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/honeybar
-	name = "Honey nut bar"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/oat = 1,
-		/datum/reagent/consumable/honey = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/honeybar
-	subcategory = CAT_MISCFOOD
-
 /datum/crafting_recipe/food/stuffedlegion
 	name = "Stuffed legion"
 	time = 40
@@ -140,17 +85,6 @@
 		/datum/reagent/consumable/capsaicin = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/stuffedlegion
-	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/powercrepe
-	name = "jelly crepe"
-	time = 40
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/flatdough = 1,
-		/datum/reagent/consumable/milk = 1,
-		/datum/reagent/consumable/cherryjelly = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/powercrepe
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/branrequests
@@ -170,17 +104,6 @@
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/ricepudding
-	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/crab_rangoon
-	name = "Crab Rangoon"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/doughslice = 1,
-		/datum/reagent/consumable/cream = 5,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/meat/rawcrab = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/crab_rangoon
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/poutine
