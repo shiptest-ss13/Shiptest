@@ -416,7 +416,7 @@
 			to_chat(user, span_warning("\The [src] does not require repairs."))
 			return
 
-		if(!W.tool_start_check(user, amount=1))
+		if(!W.tool_start_check(user, src, amount=1))
 			return
 
 		to_chat(user, span_notice("You begin repairing damage to \the [src]..."))

@@ -72,7 +72,7 @@
 /obj/structure/door_assembly/welder_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(mineral || glass || !anchored)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return FALSE
 
 		if(mineral)
@@ -199,7 +199,7 @@
 		created_name = t
 
 	else if(istype(W, /obj/item/stack/cable_coil) && state == AIRLOCK_ASSEMBLY_NEEDS_WIRES && anchored)
-		if(!W.tool_start_check(user, amount=1))
+		if(!W.tool_start_check(user, src, amount=1))
 			return
 
 		user.visible_message(span_notice("[user] wires the airlock assembly."), \
@@ -349,7 +349,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, 3 SECONDS, volume=100))
 		to_chat(user, span_warning("You slice [src] apart."))

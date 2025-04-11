@@ -93,7 +93,7 @@
 				to_chat(user, span_warning("The core must be empty to deconstruct it!"))
 				return
 
-			if(!P.tool_start_check(user, amount=0))
+			if(!P.tool_start_check(user, src, amount=0))
 				return
 
 			to_chat(user, span_notice("You start to deconstruct the frame..."))

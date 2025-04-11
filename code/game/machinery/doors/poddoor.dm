@@ -58,14 +58,17 @@
 			else if(W.use_tool(src, user, 10 SECONDS, volume=50))
 				deconstruct(TRUE)
 
-	if(W.tool_behaviour == TOOL_DECONSTRUCT)
-		if(!(machine_stat & NOPOWER))
-			do_sparks(5, TRUE, src)
-			electrocute_mob(user, get_area(src), src, 1, TRUE) //zorp
-			close()
-		to_chat(user, span_notice("You start to cut [src] apart"))
-		if (W.use_tool(src, user, 10 SECONDS, volume = 75))
-			deconstruct(TRUE)
+/obj/machinery/door/poddoor/deconstruct_act(mob/living/user, obj/item/tool)
+	if(..())
+		return TRUE
+	if(!(machine_stat & NOPOWER))
+		do_sparks(5, TRUE, src)
+		electrocute_mob(user, get_area(src), src, 1, TRUE) //zorp
+		close()
+	to_chat(user, span_notice("You start to cut [src] apart"))
+	if(tool.use_tool(src, user, 10 SECONDS, volume = 75))
+		deconstruct(TRUE)
+	return TRUE
 
 /obj/machinery/door/poddoor/examine(mob/user)
 	. = ..()

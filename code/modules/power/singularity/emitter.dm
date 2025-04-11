@@ -255,7 +255,7 @@
 		return TRUE
 
 	if(welded)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return TRUE
 		user.visible_message(span_notice("[user.name] starts to cut the [name] free from the floor."), \
 			span_notice("You start to cut [src] free from the floor..."), \
@@ -267,7 +267,7 @@
 //			update_cable_icons_on_turf(get_turf(src)) - WS Edit - Smartwire Revert
 
 	else if(anchored)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return TRUE
 		user.visible_message(span_notice("[user.name] starts to weld the [name] to the floor."), \
 			span_notice("You start to weld [src] to the floor..."), \

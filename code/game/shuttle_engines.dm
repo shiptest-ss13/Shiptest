@@ -44,7 +44,7 @@
 		if(ENGINE_UNWRENCHED)
 			to_chat(user, span_warning("The [src.name] needs to be wrenched to the floor!"))
 		if(ENGINE_WRENCHED)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return TRUE
 
 			user.visible_message(span_notice("[user.name] starts to weld the [name] to the floor."), \
@@ -56,7 +56,7 @@
 				to_chat(user, span_notice("You weld \the [src] to the floor."))
 
 		if(ENGINE_WELDED)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return TRUE
 
 			user.visible_message(span_notice("[user.name] starts to cut the [name] free from the floor."), \

@@ -56,16 +56,8 @@
 			return
 		created_name = new_name
 
-	else if(item_used.tool_behaviour == TOOL_DECONSTRUCT)
-		if(!item_used.tool_start_check(user, amount=0))
-			return
-		user.visible_message(span_notice("[user] cuts apart [src]."), span_notice("You start to slice apart [src]..."))
-		if(item_used.use_tool(src, user, 4 SECONDS, volume=50))
-			to_chat(user, span_notice("You disassemble [src]."))
-			deconstruct(TRUE)
-
 	else if(item_used.tool_behaviour == TOOL_WELDER)
-		if(!item_used.tool_start_check(user, amount=0))
+		if(!item_used.tool_start_check(user, src, amount=0))
 			return
 
 		else if(!anchored)
@@ -127,7 +119,7 @@
 				set_anchored(FALSE)
 
 	else if(istype(item_used, /obj/item/stack/cable_coil) && state == AIRLOCK_ASSEMBLY_NEEDS_WIRES)
-		if(!item_used.tool_start_check(user, amount=1))
+		if(!item_used.tool_start_check(user, src, amount=1))
 			return
 
 		user.visible_message(span_notice("[user] wires [src]."), \
@@ -204,6 +196,17 @@
 		return ..()
 	update_door_name()
 	update_appearance()
+
+/obj/structure/poddoor_assembly/deconstruct_act(mob/living/user, obj/item/tool)
+	if(..())
+		return TRUE
+	if(!tool.tool_start_check(user, src, amount=0))
+		return TRUE
+	user.visible_message(span_notice("[user] cuts apart [src]."), span_notice("You start to slice apart [src]..."))
+	if(tool.use_tool(src, user, 4 SECONDS, volume=50))
+		to_chat(user, span_notice("You disassemble [src]."))
+		deconstruct(TRUE)
+	return TRUE
 
 /obj/structure/poddoor_assembly/proc/update_door_name()
 

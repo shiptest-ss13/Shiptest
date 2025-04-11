@@ -185,7 +185,7 @@
 
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
 		if(obj_integrity < max_integrity)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return
 
 			to_chat(user, span_notice("You begin repairing [src]..."))
@@ -298,7 +298,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, decon_time, volume=100))
 		to_chat(user, span_warning("You shatter [src] with the [I]."))
