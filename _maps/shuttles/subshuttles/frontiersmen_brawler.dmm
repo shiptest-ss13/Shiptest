@@ -3,6 +3,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "c" = (
@@ -203,6 +204,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "v" = (
@@ -212,6 +214,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "x" = (
@@ -295,6 +298,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "D" = (
@@ -358,6 +362,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "I" = (
@@ -465,6 +470,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "W" = (
@@ -495,9 +501,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "Y" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 1
