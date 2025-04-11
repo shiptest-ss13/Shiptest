@@ -33,7 +33,7 @@
 
 /obj/item/food/cake/plain
 	name = "plain cake"
-	desc = "A plain cake without frosting or fillings. Still sweet and fluffy." //Many of the cakes seem to follow this desc scheme, so I am going to try and put either a hint about its contents, or a fun fact. Lets try to follow this.
+	desc = "A plain cake without frosting or fillings. Still sweet and fluffy."
 	icon_state = "plaincake"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 30,
