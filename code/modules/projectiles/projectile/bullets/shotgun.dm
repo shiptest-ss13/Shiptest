@@ -1,7 +1,7 @@
 /obj/projectile/bullet/slug
 	name = "12g shotgun slug"
 	damage = 40
-	armour_penetration = -10
+	armour_penetration = 0
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "large slug"
 
