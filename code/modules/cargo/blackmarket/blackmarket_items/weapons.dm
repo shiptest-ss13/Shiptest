@@ -106,7 +106,7 @@
 /datum/blackmarket_item/weapon/disposable_gun_disk
 	name = "Disposable Gun Design Disk"
 	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22 LR. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
-	item = /obj/item/disk/design_disk/disposable_gun
+	item = /obj/item/disk/design_disk/limited/firearm/disposable_gun
 
 	price_min = 1500
 	price_max = 2500

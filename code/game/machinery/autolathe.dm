@@ -24,7 +24,8 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-	var/obj/item/disk/design_disk/d_disk    //Stores the design disk.
+	//Stores the design disk.
+	var/obj/item/disk/design_disk/d_disk
 
 	var/busy = FALSE
 
@@ -51,7 +52,7 @@
 							)
 
 /obj/machinery/autolathe/Initialize()
-	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium, /datum/material/hellstone), 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))
+	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium, /datum/material/diamond, /datum/material/bluespace, /datum/material/hellstone), 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
@@ -211,7 +212,7 @@
 
 			var/multiplier = text2num(params["multiplier"])
 			if(!multiplier)
-				to_chat(usr, "<span class=\"alert\">[src] only accepts a numerical multiplier!</span>")
+				to_chat(usr, span_alert("[src] only accepts a numerical multiplier!"))
 				return
 			var/is_stack = ispath(being_built.build_path, /obj/item/stack)
 			multiplier = clamp(round(multiplier),1,50)
@@ -249,7 +250,7 @@
 
 			if(materials.has_materials(materials_used))
 				busy = TRUE
-				to_chat(usr, "<span class=\"notice\">You print [multiplier] item(s) from the [src]</span>")
+				to_chat(usr, span_notice("You print [multiplier] item(s) from the [src]"))
 				use_power(power)
 				icon_state = "autolathe_n"
 				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
@@ -257,9 +258,9 @@
 				addtimer(CALLBACK(src, PROC_REF(make_item), power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
 				. = TRUE
 			else
-				to_chat(usr, "<span class=\"alert\">Not enough materials for this operation.</span>")
+				to_chat(usr, span_alert("Not enough materials for this operation."))
 		else
-			to_chat(usr, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+			to_chat(usr, span_alert("The autolathe is busy. Please wait for completion of previous operation."))
 
 /obj/machinery/autolathe/on_deconstruction()
 	if(d_disk) // Drops the design disk on the floor when destroyed
@@ -269,8 +270,8 @@
 	materials.retrieve_all()
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
-	if (busy)
-		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+	if(busy)
+		to_chat(user, span_alert("The autolathe is busy. Please wait for completion of previous operation."))
 		return TRUE
 
 	if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", O))
@@ -307,12 +308,20 @@
 /obj/machinery/autolathe/proc/eject(mob/living/user)
 	if(!d_disk)
 		return
+	if(busy)
+		to_chat(user, span_alert("the autolathe is busy. Please wait for completion of previous operation."))
+		return TRUE
 	if(!istype(user) || !Adjacent(user) || !user.put_in_active_hand(d_disk))
 		d_disk.forceMove(drop_location())
 	categories -= d_disk.name
 	d_disk = null
 
 /obj/machinery/autolathe/AltClick(mob/user)
+	if(!d_disk)
+		return
+	if(busy)
+		to_chat(user, span_alert("The autolathe is busy. Please wait for completion of previous operation."))
+		return TRUE
 	if(d_disk && user.canUseTopic(src, !issilicon(user)))
 		to_chat(user, span_notice("You take out [d_disk] from [src]."))
 		playsound(src, 'sound/machines/click.ogg', 50, FALSE)
@@ -340,11 +349,19 @@
 
 	if(is_stack)
 		var/obj/item/stack/new_item = new being_built.build_path(A, multiplier, FALSE)
+		if(d_disk)
+			if(locate(being_built.type) in d_disk.blueprints)
+				d_disk.used_charges += multiplier
+				d_disk.check_charges()
 		new_item.update_appearance()
 		new_item.autolathe_crafted(src)
 		SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
 	else
 		for(var/i=1, i<=multiplier, i++)
+			if(d_disk)
+				if(locate(being_built.type) in d_disk.blueprints)
+					d_disk.used_charges += 1
+					d_disk.check_charges()
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
 			SSblackbox.record_feedback("nested tally", "item_printed", 1, list("[type]", "[new_item.type]"))
@@ -354,7 +371,6 @@
 					var/datum/material/M = x
 					if(!istype(M, /datum/material/glass) && !istype(M, /datum/material/iron))
 						user.client.give_award(/datum/award/achievement/misc/getting_an_upgrade, user)
-
 
 	icon_state = "autolathe"
 	busy = FALSE
