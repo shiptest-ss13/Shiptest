@@ -267,21 +267,3 @@
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/boneaxe
-	name = "Bone Axe"
-	result = /obj/item/melee/axe/bone
-	time = 50
-	reqs = list(/obj/item/stack/sheet/bone = 6,
-				/obj/item/stack/sheet/sinew = 3)
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/bonesword
-	name = "Bone Sword"
-	result = /obj/item/melee/sword/bone
-	time = 40
-	reqs = list(/obj/item/stack/sheet/bone = 3,
-				/obj/item/stack/sheet/sinew = 2)
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
