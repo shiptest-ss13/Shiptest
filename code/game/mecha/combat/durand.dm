@@ -16,6 +16,12 @@
 	var/shield_type = /obj/durand_shield
 	var/shield_passive_drain = 300
 
+	facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 50),
+		MECHA_SIDE_ARMOUR = list(50, 0.75, 40),
+		MECHA_BACK_ARMOUR = list(60, 1, 30)
+	)
+
 /obj/mecha/combat/durand/clip
 	desc = "An aging combat exosuit specially modified for the CMM-BARD anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
 	name = "\improper Paladin"
@@ -25,6 +31,12 @@
 	wreckage = /obj/structure/mecha_wreckage/durand/clip
 	shield_passive_drain = 0
 	shield_type = /obj/durand_shield/clip
+
+	facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
+		MECHA_SIDE_ARMOUR = list(50, 0.75, 35),
+		MECHA_BACK_ARMOUR = list(60, 1, 20)
+	)
 
 /obj/mecha/combat/durand/Initialize()
 	. = ..()

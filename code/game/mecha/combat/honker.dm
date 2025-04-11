@@ -16,6 +16,12 @@
 	max_equip = 3
 	var/squeak = TRUE
 
+	facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 5),
+		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
+		MECHA_BACK_ARMOUR = list(60, 1, 0)
+	)
+
 /obj/mecha/combat/honker/get_stats_part()
 	var/integrity = obj_integrity/max_integrity*100
 	var/cell_charge = get_charge()

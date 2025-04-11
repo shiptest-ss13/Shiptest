@@ -16,6 +16,12 @@
 	max_equip = 3
 	base_step_energy_drain = 8
 
+	facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
+		MECHA_SIDE_ARMOUR = list(50, 0.75, 35),
+		MECHA_BACK_ARMOUR = list(60, 1, 20)
+	)
+
 /obj/mecha/combat/gygax/mechturn(direction)
 	. = ..()
 	if(!strafe && !occupant.client.keys_held["Alt"])
@@ -87,6 +93,12 @@
 	charge_cooldown = 8
 	charge_power_consume = 100
 	charge_windup = 0
+
+	facing_modifiers = list(
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 25),
+		MECHA_SIDE_ARMOUR = list(50, 0.75, 25),
+		MECHA_BACK_ARMOUR = list(60, 1, 10)
+	)
 
 /obj/mecha/combat/gygax/charger/mp/loaded/Initialize()
 	. = ..()
