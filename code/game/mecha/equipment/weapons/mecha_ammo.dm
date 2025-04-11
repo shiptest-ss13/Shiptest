@@ -55,6 +55,13 @@
 	rounds = 200
 	ammo_type = "lmg"
 
+/obj/item/mecha_ammo/railgun_ammo
+	name = "Railgun rods"
+	desc = "A box of iron-tungsten rods, designed for the PR-05 exosuit weapon."
+	icon_state = "railgun"
+	rounds = 30
+	ammo_type = "railgun"
+
 /obj/item/mecha_ammo/lmg/tank
 	name = "HMG ammo"
 	desc = "A box of linked ammunition, designed for the mounted machine guns."
