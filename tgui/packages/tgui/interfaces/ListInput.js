@@ -4,50 +4,45 @@
  * @license MIT
  */
 
-import { clamp01 } from 'common/math';
+import { Box, Button, Input, Section, Stack } from 'tgui-core/components';
+import { KEY_DOWN, KEY_ENTER, KEY_SPACE, KEY_UP } from 'tgui-core/keycodes';
+import { clamp01 } from 'tgui-core/math';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Section, Input, Stack } from '../components';
-import { KEY_DOWN, KEY_UP, KEY_ENTER, KEY_SPACE } from 'common/keycodes';
 import { Window } from '../layouts';
 
 let lastScrollTime = 0;
 
-export const ListInput = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ListInput = (props) => {
+  const { act, data } = useBackend();
   const { title, message, buttons, timeout } = data;
 
   // Search
   const [showSearchBar, setShowSearchBar] = useLocalState(
-    context,
     'search_bar',
     false
   );
   const [displayedArray, setDisplayedArray] = useLocalState(
-    context,
     'displayed_array',
     buttons
   );
 
   // KeyPress
   const [searchArray, setSearchArray] = useLocalState(
-    context,
     'search_array',
     []
   );
   const [searchIndex, setSearchIndex] = useLocalState(
-    context,
     'search_index',
     0
   );
   const [lastCharCode, setLastCharCode] = useLocalState(
-    context,
     'last_char_code',
     null
   );
 
   // Selected Button
   const [selectedButton, setSelectedButton] = useLocalState(
-    context,
     'selected_button',
     buttons[0]
   );

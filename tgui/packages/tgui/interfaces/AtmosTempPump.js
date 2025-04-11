@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, Section } from '../components';
+import { Button, LabeledList, NumberInput, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const AtmosTempPump = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosTempPump = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={335} height={115}>
       <Window.Content>

@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Box, Button, ColorBox, Section, Table } from '../components';
+import { Box, Button, ColorBox, Section, Table } from 'tgui-core/components';
 import { COLORS } from '../constants';
 import { Window } from '../layouts';
 
@@ -66,8 +66,8 @@ export const CrewConsole = () => {
   );
 };
 
-const CrewTable = (props, context) => {
-  const { act, data } = useBackend(context);
+const CrewTable = (props) => {
+  const { act, data } = useBackend();
   const sensors = data.sensors || [];
   return (
     <Table>

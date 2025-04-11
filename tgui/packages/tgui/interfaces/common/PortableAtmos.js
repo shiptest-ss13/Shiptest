@@ -5,10 +5,10 @@ import {
   Button,
   LabeledList,
   Section,
-} from '../../components';
+} from 'tgui-core/components';
 
-export const PortableBasicInfo = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PortableBasicInfo = (props) => {
+  const { act, data } = useBackend();
   const { connected, holding, on, pressure } = data;
   return (
     <>

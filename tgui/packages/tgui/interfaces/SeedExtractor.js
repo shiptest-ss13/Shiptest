@@ -1,8 +1,8 @@
 import { sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { toTitleCase } from 'common/string';
+import { flow } from 'tgui-core/fp';
+import { toTitleCase } from 'tgui-core/string';
 import { useBackend } from '../backend';
-import { Button, Section, Table } from '../components';
+import { Button, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 /**
@@ -40,8 +40,8 @@ const createSeeds = (seedStrings) => {
   return flow([sortBy((item) => item.name)])(objs);
 };
 
-export const SeedExtractor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SeedExtractor = (props) => {
+  const { act, data } = useBackend();
   const seeds = createSeeds(data.seeds);
   return (
     <Window width={1000} height={400} resizable>

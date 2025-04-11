@@ -6,11 +6,11 @@ import {
   LabeledList,
   Flex,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Clipboard = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Clipboard = (props) => {
+  const { act, data } = useBackend();
   const { pen, top_paper, top_paper_ref, paper, paper_ref } = data;
   return (
     <Window title="Clipboard" width={400} height={500}>

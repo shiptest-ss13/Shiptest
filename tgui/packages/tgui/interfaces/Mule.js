@@ -7,12 +7,12 @@ import {
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
 
-export const Mule = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Mule = (props) => {
+  const { act, data } = useBackend();
   const {
     on,
     cell,

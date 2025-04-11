@@ -2,16 +2,16 @@ import { useBackend } from '../backend';
 import {
   Box,
   Button,
-  Grid,
+  Flex,
   LabeledList,
   NumberInput,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const SolarControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SolarControl = (props) => {
+  const { act, data } = useBackend();
   const {
     generated,
     generated_ratio,
@@ -35,8 +35,8 @@ export const SolarControl = (props, context) => {
             />
           }
         >
-          <Grid>
-            <Grid.Column>
+          <Flex>
+            <Flex.Column>
               <LabeledList>
                 <LabeledList.Item
                   label="Solar tracker"
@@ -51,8 +51,8 @@ export const SolarControl = (props, context) => {
                   {connected_panels}
                 </LabeledList.Item>
               </LabeledList>
-            </Grid.Column>
-            <Grid.Column size={1.5}>
+            </Flex.Column>
+            <Flex.Column size={1.5}>
               <LabeledList>
                 <LabeledList.Item label="Power output">
                   <ProgressBar
@@ -69,8 +69,8 @@ export const SolarControl = (props, context) => {
                   </ProgressBar>
                 </LabeledList.Item>
               </LabeledList>
-            </Grid.Column>
-          </Grid>
+            </Flex.Column>
+          </Flex>
         </Section>
         <Section title="Controls">
           <LabeledList>

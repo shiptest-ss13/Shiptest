@@ -1,10 +1,10 @@
 import { useBackend } from '../backend';
-import { NoticeBox } from '../components';
+import { NoticeBox } from 'tgui-core/components';
 import { Window } from '../layouts';
 import { LaunchpadControl } from './LaunchpadConsole';
 
-export const LaunchpadRemote = (props, context) => {
-  const { data } = useBackend(context);
+export const LaunchpadRemote = (props) => {
+  const { data } = useBackend();
   const { has_pad, pad_closed } = data;
   return (
     <Window

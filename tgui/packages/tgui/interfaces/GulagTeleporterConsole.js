@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, Section } from '../components';
+import { Button, LabeledList, NumberInput, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const GulagTeleporterConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const GulagTeleporterConsole = (props) => {
+  const { act, data } = useBackend();
   const {
     teleporter,
     teleporter_lock,

@@ -1,6 +1,6 @@
-import { classes } from 'common/react';
+import { classes } from 'tgui-core/react';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Grid, NumberInput } from '../components';
+import { Box, Button, Flex, NumberInput } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 const getNumberColor = (number) => {
@@ -27,9 +27,9 @@ const getNumberColor = (number) => {
   return (oddRed ? isOdd : !isOdd) ? 'red' : 'black';
 };
 
-export const RouletteNumberButton = (props, context) => {
+export const RouletteNumberButton = (props) => {
   const { number } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
 
   return (
     <Button
@@ -47,8 +47,8 @@ export const RouletteNumberButton = (props, context) => {
   );
 };
 
-export const RouletteBoard = (props, context) => {
-  const { act } = useBackend(context);
+export const RouletteBoard = (props) => {
+  const { act } = useBackend();
 
   const firstRow = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36];
   const secondRow = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35];
@@ -231,10 +231,10 @@ export const RouletteBoard = (props, context) => {
   );
 };
 
-export const RouletteBetTable = (props, context) => {
-  const { act, data } = useBackend(context);
+export const RouletteBetTable = (props) => {
+  const { act, data } = useBackend();
 
-  const [customBet, setCustomBet] = useLocalState(context, 'customBet', 500);
+  const [customBet, setCustomBet] = useLocalState('customBet', 500);
 
   let { BetType } = data;
 
@@ -322,8 +322,8 @@ export const RouletteBetTable = (props, context) => {
                 })
               }
             />
-            <Grid>
-              <Grid.Column>
+            <Flex>
+              <Flex.Column>
                 <Button
                   fluid
                   content="Bet custom amount..."
@@ -333,8 +333,8 @@ export const RouletteBetTable = (props, context) => {
                     })
                   }
                 />
-              </Grid.Column>
-              <Grid.Column size={0.1}>
+              </Flex.Column>
+              <Flex.Column size={0.1}>
                 <NumberInput
                   value={customBet}
                   minValue={0}
@@ -344,8 +344,8 @@ export const RouletteBetTable = (props, context) => {
                   width="40px"
                   onChange={(e, value) => setCustomBet(value)}
                 />
-              </Grid.Column>
-            </Grid>
+              </Flex.Column>
+            </Flex>
           </Box>
         </td>
       </tr>
@@ -380,7 +380,7 @@ export const RouletteBetTable = (props, context) => {
   );
 };
 
-export const Roulette = (props, context) => {
+export const Roulette = (props) => {
   return (
     <Window width={603} height={475} theme="cardtable">
       <Window.Content>

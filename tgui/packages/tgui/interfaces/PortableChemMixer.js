@@ -1,4 +1,4 @@
-import { toTitleCase } from 'common/string';
+import { toTitleCase } from 'tgui-core/string';
 import { useBackend } from '../backend';
 import {
   AnimatedNumber,
@@ -6,12 +6,12 @@ import {
   Button,
   LabeledList,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
 
-export const PortableChemMixer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PortableChemMixer = (props) => {
+  const { act, data } = useBackend();
   const recording = !!data.recordingRecipe;
   const beakerTransferAmounts = data.beakerTransferAmounts || [];
   const beakerContents =

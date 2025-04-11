@@ -1,15 +1,14 @@
-import { multiline } from 'common/string';
 import { useBackend } from '../backend';
-import { Button, Input, LabeledList, Section } from '../components';
+import { Button, Input, LabeledList, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-const TOOLTIP_TEXT = multiline`
+const TOOLTIP_TEXT = `
   %PERSON will be replaced with their name.
   %RANK with their job.
 `;
 
-export const AutomatedAnnouncement = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AutomatedAnnouncement = (props) => {
+  const { act, data } = useBackend();
   const { arrivalToggle, arrival, newheadToggle, newhead } = data;
   return (
     <Window title="Automated Announcement System" width={500} height={225}>

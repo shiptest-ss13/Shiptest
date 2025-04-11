@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section } from '../components';
+import { Button, LabeledList, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Crayon = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Crayon = (props) => {
+  const { act, data } = useBackend();
   const capOrChanges = data.has_cap || data.can_change_colour;
   const drawables = data.drawables || [];
   return (

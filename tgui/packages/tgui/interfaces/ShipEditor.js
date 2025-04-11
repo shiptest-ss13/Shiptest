@@ -1,27 +1,28 @@
-import { useBackend, useLocalState } from '../backend';
 import {
+  Button,
   Dropdown,
   Input,
   LabeledList,
   NumberInput,
   Section,
   Table,
-} from '../components';
-import { Button } from '../components/Button';
+} from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
-export const ShipEditor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShipEditor = (props) => {
+  const { act, data } = useBackend();
   const outfits = [];
 
   for (let name in data.outfits) {
     outfits.push(name);
   }
 
-  const [tagText, setTagText] = useLocalState(context, 'tagText', '');
+  const [tagText, setTagText] = useLocalState('tagText', '');
 
   return (
-    <Window title="Ship Editor" width={500} height={600}>
+    <Window title="Ship Editor" width={500} height={600} theme="admin">
       <Window.Content>
         <Section title="Details">
           <LabeledList>

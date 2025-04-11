@@ -1,22 +1,22 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
   Divider,
   Flex,
-  Grid,
   Input,
   NoticeBox,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-const LaunchpadButtonPad = (props, context) => {
-  const { act } = useBackend(context);
+const LaunchpadButtonPad = (props) => {
+  const { act } = useBackend();
   return (
-    <Grid width="1px">
-      <Grid.Column>
+    <Flex width="1px">
+      <Flex.Column>
         <Button
           fluid
           icon="arrow-left"
@@ -51,8 +51,8 @@ const LaunchpadButtonPad = (props, context) => {
             })
           }
         />
-      </Grid.Column>
-      <Grid.Column>
+      </Flex.Column>
+      <Flex.Column>
         <Button
           fluid
           icon="arrow-up"
@@ -84,8 +84,8 @@ const LaunchpadButtonPad = (props, context) => {
             })
           }
         />
-      </Grid.Column>
-      <Grid.Column>
+      </Flex.Column>
+      <Flex.Column>
         <Button
           fluid
           icon="arrow-up"
@@ -120,14 +120,14 @@ const LaunchpadButtonPad = (props, context) => {
             })
           }
         />
-      </Grid.Column>
-    </Grid>
+      </Flex.Column>
+    </Flex>
   );
 };
 
-export const LaunchpadControl = (props, context) => {
+export const LaunchpadControl = (props) => {
   const { topLevel } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const { x, y, pad_name, range } = data;
   return (
     <Section
@@ -152,13 +152,13 @@ export const LaunchpadControl = (props, context) => {
         />
       }
     >
-      <Grid>
-        <Grid.Column>
+      <Flex>
+        <Flex.Column>
           <Section title="Controls" level={2}>
             <LaunchpadButtonPad />
           </Section>
-        </Grid.Column>
-        <Grid.Column>
+        </Flex.Column>
+        <Flex.Column>
           <Section title="Target" level={2}>
             <Box fontSize="26px">
               <Box mb={1}>
@@ -203,10 +203,10 @@ export const LaunchpadControl = (props, context) => {
               </Box>
             </Box>
           </Section>
-        </Grid.Column>
-      </Grid>
-      <Grid>
-        <Grid.Column>
+        </Flex.Column>
+      </Flex>
+      <Flex>
+        <Flex.Column>
           <Button
             fluid
             icon="upload"
@@ -214,8 +214,8 @@ export const LaunchpadControl = (props, context) => {
             textAlign="center"
             onClick={() => act('launch')}
           />
-        </Grid.Column>
-        <Grid.Column>
+        </Flex.Column>
+        <Flex.Column>
           <Button
             fluid
             icon="download"
@@ -223,14 +223,14 @@ export const LaunchpadControl = (props, context) => {
             textAlign="center"
             onClick={() => act('pull')}
           />
-        </Grid.Column>
-      </Grid>
+        </Flex.Column>
+      </Flex>
     </Section>
   );
 };
 
-export const LaunchpadConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const LaunchpadConsole = (props) => {
+  const { act, data } = useBackend();
   const { launchpads = [], selected_id } = data;
   return (
     <Window width={475} height={260} resizable>

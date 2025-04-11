@@ -6,7 +6,7 @@ import {
   NoticeBox,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const AiRestorer = () => {
@@ -19,8 +19,8 @@ export const AiRestorer = () => {
   );
 };
 
-export const AiRestorerContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AiRestorerContent = (props) => {
+  const { act, data } = useBackend();
   const {
     AI_present,
     error,

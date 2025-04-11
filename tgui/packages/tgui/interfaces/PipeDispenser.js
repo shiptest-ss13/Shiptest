@@ -1,4 +1,4 @@
-import { classes } from 'common/react';
+import { classes } from 'tgui-core/react';
 import { useBackend, useLocalState } from '../backend';
 import {
   Box,
@@ -8,7 +8,7 @@ import {
   LabeledList,
   Section,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
 const ROOT_CATEGORIES = ['Atmospherics', 'Disposals', 'Transit Tubes'];
@@ -39,8 +39,8 @@ const PAINT_COLORS = {
   yellow: '#ffce26',
 };
 
-export const PipeDispenser = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PipeDispenser = (props) => {
+  const { act, data } = useBackend();
   const {
     category: rootCategoryIndex,
     categories = [],
@@ -50,7 +50,6 @@ export const PipeDispenser = (props, context) => {
   } = data;
   const previews = data.preview_rows.flatMap((row) => row.previews);
   const [categoryName, setCategoryName] = useLocalState(
-    context,
     'categoryName'
   );
   const shownCategory =

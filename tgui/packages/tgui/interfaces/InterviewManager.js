@@ -1,9 +1,9 @@
-import { Button, Section } from '../components';
+import { Button, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 import { useBackend } from '../backend';
 
-export const InterviewManager = (props, context) => {
-  const { act, data } = useBackend(context);
+export const InterviewManager = (props) => {
+  const { act, data } = useBackend();
   const { open_interviews, closed_interviews } = data;
 
   const colorMap = (status) => {
@@ -18,7 +18,7 @@ export const InterviewManager = (props, context) => {
   };
 
   return (
-    <Window width={500} height={600}>
+    <Window width={500} height={600} theme="admin">
       <Window.Content scrollable>
         <Section title="Active Interviews">
           {open_interviews.map(({ id, ckey, status, queued, disconnected }) => (

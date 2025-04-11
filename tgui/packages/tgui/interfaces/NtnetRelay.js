@@ -5,11 +5,11 @@ import {
   ProgressBar,
   Section,
   AnimatedNumber,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const NtnetRelay = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtnetRelay = (props) => {
+  const { act, data } = useBackend();
   const { enabled, dos_capacity, dos_overload, dos_crashed } = data;
   return (
     <Window title="NtNet Quantum Relay" width={400} height={300}>

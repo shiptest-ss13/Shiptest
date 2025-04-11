@@ -1,6 +1,6 @@
-import { Component, createRef } from 'inferno';
+import { Component, createRef } from 'react';
 import { useBackend } from '../backend';
-import { Box, Button } from '../components';
+import { Box, Button } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 const PX_PER_UNIT = 24;
@@ -79,8 +79,8 @@ const getImageSize = (value) => {
   return [width, height];
 };
 
-export const Canvas = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Canvas = (props) => {
+  const { act, data } = useBackend();
   const dotsize = PX_PER_UNIT;
   const [width, height] = getImageSize(data.grid);
   return (

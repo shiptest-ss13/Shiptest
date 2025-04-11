@@ -7,15 +7,15 @@ import {
   ProgressBar,
   Section,
   Slider,
-} from '../components';
-import { formatPower } from '../format';
+} from 'tgui-core/components';
+import { formatPower } from 'tgui-core/format';
 import { Window } from '../layouts';
 
 // Common power multiplier
 const POWER_MUL = 1e3;
 
-export const Smes = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Smes = (props) => {
+  const { act, data } = useBackend();
   const {
     capacityPercent,
     capacity,

@@ -1,10 +1,11 @@
-import { classes } from 'common/react';
+import { Box, Button, Flex, Icon, NoticeBox, Section } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Icon, NoticeBox, Section } from '../components';
 import { NtosWindow } from '../layouts';
 
-export const NtosRadar = (props, context) => {
+export const NtosRadar = (props) => {
   return (
     <NtosWindow width={800} height={600} theme="ntos">
       <NtosRadarContent />
@@ -12,8 +13,8 @@ export const NtosRadar = (props, context) => {
   );
 };
 
-export const NtosRadarContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosRadarContent = (props) => {
+  const { act, data } = useBackend();
   const { selected, object = [], target = [], scanning } = data;
   return (
     <Flex direction={'row'} hight="100%">
