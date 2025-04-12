@@ -341,7 +341,7 @@
 	var/eva_mode = TRUE
 
 	kepori_override_icon = 'icons/mob/clothing/head/spacesuits_kepori.dmi'
-	supports_variations = KEPORI_VARIATION
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/update_icon_state()
 	icon_state = "hardsuit[eva_mode]-[hardsuit_type]"
@@ -455,7 +455,7 @@
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	slowdown = 0.7
 	jetpack = null
-	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
