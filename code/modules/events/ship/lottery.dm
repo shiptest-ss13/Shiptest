@@ -25,14 +25,13 @@
 		target_ship.ship_account.adjust_money(creds_won, "deposit")
 
 /datum/round_event/ship/lottery/announce(fake)
-	if(prob(announce_chance) || fake)
-		if(fake)
-			creds_won = 1000000000
-		priority_announce("congracts to [target_ship] who has won a sweep stakes for [creds_won] creds!",
-			null,
-			null,
-			"Sweep stakes!",
-			sender_override = "[target_outpost] Communications",
-		)
+	if(fake)
+		creds_won = 1000000000
+	priority_announce("congracts to [target_ship] who has won a sweep stakes for [creds_won] creds!",
+		null,
+		null,
+		"Sweep stakes!",
+		sender_override = "[target_outpost] Communications",
+	)
 
 
