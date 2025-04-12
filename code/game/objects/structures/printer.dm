@@ -54,11 +54,11 @@
 		return
 	else if(istype(item, /obj/item/toner))
 		if(toner_cartridge)
-			to_chat(user, "<span class='warning'>[src] already has a toner cartridge inserted. Remove that one first.</span>")
+			to_chat(user, span_warning("[src] already has a toner cartridge inserted. Remove that one first."))
 			return
 		item.forceMove(src)
 		toner_cartridge = item
-		to_chat(user, "<span class='notice'>You insert [item] into [src].</span>")
+		to_chat(user, span_notice("You insert [item] into [src]."))
 	else return ..()
 
 /obj/machinery/printer/proc/can_load_item(obj/item/item)

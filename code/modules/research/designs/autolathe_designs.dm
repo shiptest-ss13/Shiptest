@@ -869,7 +869,7 @@
 	category = list("initial", "Security")
 
 /datum/design/c10mm_surplus
-	name = "Ammo Box (10mm surplus)"
+	name = "Ammo Box (10x22mm surplus)"
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
@@ -885,7 +885,7 @@
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c9mm_surplus
-	name = "Ammo Box (9mm surplus)"
+	name = "Ammo Box (9x18mm surplus)"
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
@@ -1174,7 +1174,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/zip_ammo_9mm
-	name = "Budget Pistol 9mm Magazine"
+	name = "Budget Pistol 9x18mm Magazine"
 	id = "ZipAmmo9mm"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20000)
@@ -1213,12 +1213,12 @@
 	build_path = /obj/item/ammo_box/a762_stripper/empty
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/vickland_a308clip
-	name = ".308 Stripper Clip"
+/datum/design/vickland_a8_50rclip
+	name = "8x50mmR Stripper Clip"
 	id = "VicklandStripClip"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
-	build_path = /obj/item/ammo_box/vickland_a308/empty
+	build_path = /obj/item/ammo_box/vickland_a8_50r/empty
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/a858clip
@@ -1227,6 +1227,22 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a858/empty
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase
+	name = "Guncase"
+	id = "guncase"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/storage/guncase
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase_pistol
+	name = "Pistol Guncase"
+	id = "guncase-pitol"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/plastic = 1500)
+	build_path = /obj/item/storage/guncase/pistol
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/control

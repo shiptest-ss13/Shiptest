@@ -10,7 +10,7 @@
 	if(SSticker.anonymousnames)
 		SSticker.anonymousnames = ANON_DISABLED
 		to_chat(usr, "Disabled anonymous names.")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] has disabled anonymous names.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] has disabled anonymous names."))
 		return
 	var/list/names = list("Cancel", ANON_RANDOMNAMES, ANON_EMPLOYEENAMES)
 	var/result = input(usr, "Choose an anonymous theme","going dark") as null|anything in names
@@ -22,7 +22,7 @@
 
 	SSticker.anonymousnames = result
 	to_chat(usr, "Enabled anonymous names. THEME: [SSticker.anonymousnames].")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has enabled anonymous names. THEME: [SSticker.anonymousnames].</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] has enabled anonymous names. THEME: [SSticker.anonymousnames]."))
 
 /**
  * anonymous_name: generates a corporate random name. used in admin event tool anonymous names

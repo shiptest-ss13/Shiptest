@@ -221,10 +221,10 @@
 				return TRUE
 			var/mob/new_owner = parent_ship.get_mob_if_valid_owner(target_mind)
 			if(!new_owner)
-				to_chat(user, "<span class='notice'>Selected candidate is currently ineligible for ownership.</span>", MESSAGE_TYPE_INFO)
+				to_chat(user, span_notice("Selected candidate is currently ineligible for ownership."), MESSAGE_TYPE_INFO)
 				return TRUE
 			else if(!user.client?.holder && new_owner == user) // admins get an exception, in case they want to reclaim ownership
-				to_chat(user, "<span class='notice'>You can't transfer ownership to yourself!</span>", MESSAGE_TYPE_INFO)
+				to_chat(user, span_notice("You can't transfer ownership to yourself!"), MESSAGE_TYPE_INFO)
 				return TRUE
 
 			parent_ship.set_owner_mob(new_owner)

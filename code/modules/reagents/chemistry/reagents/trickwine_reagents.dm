@@ -100,6 +100,46 @@
 	name = "Trickwine"
 	var/datum/status_effect/trickwine/debuff_effect = null
 	var/datum/status_effect/trickwine/buff_effect = null
+	//the kind of ammo you get from dipping 38 in this
+	var/obj/item/ammo_casing/c38/dip_ammo_type = null
+	var/dip_consumption = 2
+
+/datum/reagent/consumable/ethanol/trickwine/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(!dip_ammo_type)
+		return
+	if(istype(I, /obj/item/ammo_casing/c38))
+		if(volume > dip_consumption)
+			var/obj/item/ammo_casing/c38/new_ammo = new dip_ammo_type(user.loc)
+			user.put_in_hands(new_ammo)
+			to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with the wine's effects."))
+			H.reagents.remove_reagent(src.type, dip_consumption)
+			qdel(I)
+			return TRUE
+		else
+			to_chat(user,span_warning("There's not enough trickwine left to soak \the [I]!"))
+			return FALSE
+
+	else if(istype(I, /obj/item/ammo_box/magazine/ammo_stack))
+		var/obj/item/ammo_box/magazine/ammo_stack/dip_stack = I
+		if(dip_stack.ammo_type == /obj/item/ammo_casing/c38)
+			var/trickwine_used = dip_consumption * dip_stack.ammo_count(FALSE)
+			if(volume > trickwine_used)
+				var/obj/item/ammo_box/magazine/ammo_stack/prefilled/new_stack
+				new_stack = new(user.loc, dip_stack.ammo_count(FALSE), dip_ammo_type)
+				user.put_in_hands(new_stack)
+				to_chat(user,span_notice("You dip \the [I] into the trickwine, suffusing it with the wine's effects."))
+				H.reagents.remove_reagent(src.type, trickwine_used)
+				qdel(I)
+				return TRUE
+			else
+				to_chat(user,span_warning("There's not enough trickwine left to soak \the [I]!"))
+				return FALSE
+		return FALSE
+	else
+		return FALSE
+
+
 
 /datum/reagent/consumable/ethanol/trickwine/on_mob_metabolize(mob/living/consumer)
 	if(buff_effect)
@@ -130,17 +170,18 @@
 	breakaway_flask_icon_state = "baflaskashwine"
 	buff_effect = /datum/status_effect/trickwine/buff/ash
 	debuff_effect = /datum/status_effect/trickwine/debuff/ash
+	dip_ammo_type = /obj/item/ammo_casing/c38/ashwine
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(prob(10))
 		M.adjust_drugginess(5)
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	if(M.faction && ("roumain" in M.faction))
 		M.adjustToxLoss(-2)
 		if(prob(10))
-			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
+			to_chat(M, span_notice("[cleanse_message]"))
 	return ..()
 
 /datum/status_effect/trickwine/buff/ash
@@ -181,6 +222,7 @@
 	breakaway_flask_icon_state = "baflaskicewine"
 	buff_effect = /datum/status_effect/trickwine/buff/ice
 	debuff_effect = /datum/status_effect/trickwine/debuff/ice
+	dip_ammo_type = /obj/item/ammo_casing/c38/iceblox
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -239,6 +281,7 @@
 	breakaway_flask_icon_state = "baflaskshockwine"
 	buff_effect = /datum/status_effect/trickwine/buff/shock
 	debuff_effect = /datum/status_effect/trickwine/debuff/shock
+	dip_ammo_type = /obj/item/ammo_casing/c38/shock
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -289,6 +332,7 @@
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
+	dip_ammo_type = /obj/item/ammo_casing/c38/hotshot
 
 //This needs a buff
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
@@ -334,6 +378,7 @@
 	breakaway_flask_icon_state = "baflaskforcewine"
 	buff_effect = /datum/status_effect/trickwine/buff/force
 	debuff_effect = /datum/status_effect/trickwine/debuff/force
+	dip_ammo_type = /obj/item/ammo_casing/c38/force
 
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
@@ -375,6 +420,7 @@
 	breakaway_flask_icon_state = "baflaskprismwine"
 	buff_effect = /datum/status_effect/trickwine/buff/prism
 	debuff_effect = /datum/status_effect/trickwine/debuff/prism
+	dip_ammo_type = /obj/item/ammo_casing/c38/dumdum
 
 #define MAX_REFLECTS 3
 /datum/status_effect/trickwine/buff/prism

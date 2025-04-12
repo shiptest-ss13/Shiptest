@@ -74,7 +74,7 @@
 	var/obj/item/multitool/M = I
 	if(M.buffer != null)
 		network = M.buffer
-		to_chat(user, "<span class='notice'>You input network '[M.buffer]' from the multitool's buffer into [src].</span>")
+		to_chat(user, span_notice("You input network '[M.buffer]' from the multitool's buffer into [src]."))
 	return
 
 /obj/machinery/computer/security/ui_interact(mob/user, datum/tgui/ui)
@@ -397,7 +397,7 @@
 
 	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom, interact), usr)
 
-/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="helloooo please tell coders if you see me")
+/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="IntraNet is proud to present the latest in unique content!")
 	if(on && icon_state == icon_state_off)
 		say(string)
 		icon_state = icon_state_on
