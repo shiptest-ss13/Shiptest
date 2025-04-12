@@ -7,7 +7,6 @@
 	earliest_start = 30 MINUTES
 
 /datum/round_event/ship/spider_infestation
-	announce_when = 400
 	var/spawncount = 1
 
 /datum/round_event/ship/spider_infestation/setup()
