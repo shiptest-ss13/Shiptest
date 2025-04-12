@@ -830,7 +830,7 @@
 /area/ship/hallway/central)
 "hR" = (
 /obj/effect/decal/fakelattice,
-/turf/open/floor/engine/hull/reinforced/interior,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
 "ip" = (
 /obj/machinery/cryopod,
@@ -1230,6 +1230,30 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
+"nc" = (
+/obj/structure/closet/wall/red/directional/north,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -3;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "nd" = (
 /obj/docking_port/stationary{
 	dwidth = 15;
@@ -4227,30 +4251,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Zr" = (
-/obj/structure/closet/wall/red/directional/north,
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 5;
-	pixel_y = 8
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 8;
-	pixel_y = -1
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -3;
-	pixel_y = -1
-	},
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/crew/dorm)
 "Zz" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -4629,7 +4629,7 @@ zF
 us
 bP
 vx
-Zr
+nc
 xs
 tQ
 hu
