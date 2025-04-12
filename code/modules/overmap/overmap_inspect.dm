@@ -10,8 +10,8 @@
 
 /datum/overmap/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
-	//if(!check_rights(R_DEBUG))
-	//	return
+	if(!check_rights(R_DEBUG, FALSE))
+		return
 	if(user.client)
 		var/datum/overmap_inspect/overmap_inspect = new(src, user)
 		overmap_inspect.ui_interact(user)
