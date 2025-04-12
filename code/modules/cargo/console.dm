@@ -197,7 +197,7 @@
 				"name" = current_pack.group,
 				"packs" = list()
 			)
-		if((current_pack.hidden))
+		if((!current_pack.available))
 			continue
 		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
 		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null

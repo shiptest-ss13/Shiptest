@@ -71,5 +71,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 	return TRUE
 
 /datum/cargo_market/outpost
+	name = "outpost market"
 
 /datum/cargo_market/black
+	name = "blackmarket"

@@ -1,26 +1,52 @@
 /datum/supply_pack
 	var/name = "Crate"
 	var/group = "Unsorted"
-	var/hidden = FALSE
-	var/base_cost
-	var/cost = 700
-	var/list/contains = null
-	var/crate_name = "crate"
 	var/desc = ""
-	var/crate_type = /obj/structure/closet/crate
-	var/admin_spawned = FALSE
 
+	var/crate_name = "crate"
+	var/crate_type = /obj/structure/closet/crate
 	var/no_bundle = FALSE
 
-	var/restocks = FALSE
-	var/current_stock = INFINITY
-	var/max_stock = INFINITY
+	/// Price for the item, if not set creates a price according to the *_min and *_max vars.
+	var/cost
+	/// How many of this type of item is available, if not set creates a price according to the *_min and *_max vars.
+	var/stock
 
+	//TODO: Deprecate contains in favor of item
+	var/list/contains = null
+	/// Path to or the item itself what this entry is for, this should be set even if you override spawn_item to spawn your item.
+	var/item
+
+	/// The inital price or the price it will trend towards.
+	var/base_cost
+	/// Minimum price for the item if generated randomly.
+	var/cost_min	= 0
+	/// Maximum price for the item if generated randomly.
+	var/cost_max	= 0
+
+	/// If the pack is allowed to restock when requested
+	var/restocks
+	/// Minimum amount that there should be of this item in the market if generated randomly. This defaults to 1 as most items will have it as 1.
+	var/stock_min	= 1
+	/// Maximum amount that there should be of this item in the market if generated randomly.
+	var/stock_max	= 0
+
+	/// Whether the item is visible and purchasable on the market
+	var/available = TRUE
+	/// Probability for this item to be available. Used by SSblackmarket on init.
+	var/availability_prob = 0
+	/// If this item should be more or less likely to spawn than usual. Positive is more likely, negative is less
+	var/weight = 0
+
+	//FACTION
 	var/datum/faction/faction
 	//what's the discount for buyers in our faction.
 	var/faction_discount = 15
 	//are we locked to one faction and its subgroups
 	var/faction_locked = FALSE
+
+	var/admin_spawned = FALSE
+
 
 /datum/supply_pack/New()
 	. = ..()
