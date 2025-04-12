@@ -2,7 +2,7 @@
 /datum/round_event_control/ship/stray_cargo
 	name = "Stray Cargo Pod"
 	typepath = /datum/round_event/ship/stray_cargo
-	weight = 5
+	weight = 0
 	max_occurrences = 2
 	min_players = 10
 	earliest_start = 10 MINUTES

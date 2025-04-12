@@ -294,12 +294,12 @@
 	integer = FALSE
 
 /datum/config_entry/number/events_frequency_lower
-	config_entry_value = 2.5 MINUTES
+	config_entry_value = 30 MINUTES
 	min_val = 0
 	protection = CONFIG_ENTRY_LOCKED
 
 /datum/config_entry/number/events_frequency_upper
-	config_entry_value = 7 MINUTES
+	config_entry_value = 60 MINUTES
 	min_val = 0
 	protection = CONFIG_ENTRY_LOCKED
 

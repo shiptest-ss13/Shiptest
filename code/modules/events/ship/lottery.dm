@@ -15,7 +15,7 @@
 	if(!..())
 		return FALSE
 	target_outpost = pick(SSovermap.outposts)
-	creds_won = rand(1, 100) * 250
+	creds_won = rand(1, 100) * 50
 
 /datum/round_event/ship/lottery/start()
 	if(!target_ship)
