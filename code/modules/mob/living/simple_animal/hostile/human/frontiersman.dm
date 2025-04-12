@@ -217,7 +217,7 @@
 	projectilesound = 'sound/weapons/gun/hmg/shredder.ogg'
 	rapid = 5
 	rapid_fire_delay = 2
-	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+	casingtype = /obj/item/ammo_casing/shotgun
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
