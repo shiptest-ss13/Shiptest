@@ -58,7 +58,7 @@
 		return
 	chassis.use_internal_tank = !chassis.use_internal_tank
 	button_icon_state = "mech_internals_[chassis.use_internal_tank ? "on" : "off"]"
-	chassis.occupant_message("<span class='notice'>Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"].</span>")
+	chassis.occupant_message(span_notice("Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"]."))
 	chassis.log_message("Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"].", LOG_MECHA)
 	UpdateButtonIcon()
 
@@ -76,11 +76,11 @@
 			available_equipment += M
 
 	if(available_equipment.len == 0)
-		chassis.occupant_message("<span class='warning'>No equipment available!</span>")
+		chassis.occupant_message(span_warning("No equipment available!"))
 		return
 	if(!chassis.selected)
 		chassis.selected = available_equipment[1]
-		chassis.occupant_message("<span class='notice'>You select [chassis.selected].</span>")
+		chassis.occupant_message(span_notice("You select [chassis.selected]."))
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
 		UpdateButtonIcon()
@@ -92,11 +92,11 @@
 		if(A == chassis.selected)
 			if(available_equipment.len == number)
 				chassis.selected = null
-				chassis.occupant_message("<span class='notice'>You switch to no equipment.</span>")
+				chassis.occupant_message(span_notice("You switch to no equipment."))
 				button_icon_state = "mech_cycle_equip_off"
 			else
 				chassis.selected = available_equipment[number+1]
-				chassis.occupant_message("<span class='notice'>You switch to [chassis.selected].</span>")
+				chassis.occupant_message(span_notice("You switch to [chassis.selected]."))
 				button_icon_state = "mech_cycle_equip_on"
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 			chassis.equipment_check()
@@ -117,7 +117,7 @@
 	else
 		button_icon_state = "mech_lights_off"
 	chassis.set_light_on(chassis.lights)
-	chassis.occupant_message("<span class='notice'>Toggled lights [chassis.lights?"on":"off"].</span>")
+	chassis.occupant_message(span_notice("Toggled lights [chassis.lights?"on":"off"]."))
 	chassis.log_message("Toggled lights [chassis.lights?"on":"off"].", LOG_MECHA)
 	UpdateButtonIcon()
 
@@ -148,7 +148,7 @@
 /obj/mecha/proc/toggle_strafe()
 	strafe = !strafe
 
-	occupant_message("<span class='notice'>Toggled strafing mode [strafe?"on":"off"].</span>")
+	occupant_message(span_notice("Toggled strafing mode [strafe?"on":"off"]."))
 	log_message("Toggled strafing mode [strafe?"on":"off"].", LOG_MECHA)
 	strafing_action.UpdateButtonIcon()
 
@@ -180,12 +180,12 @@
 		chassis.leg_overload_mode = 1
 		chassis.step_in = min(1, round(chassis.step_in/2))
 		chassis.step_energy_drain = max(chassis.overload_step_energy_drain_min,chassis.step_energy_drain*chassis.leg_overload_coeff)
-		chassis.occupant_message("<span class='danger'>You enable leg actuators overload.</span>")
+		chassis.occupant_message(span_danger("You enable leg actuators overload."))
 	else
 		chassis.leg_overload_mode = 0
 		chassis.step_in = initial(chassis.step_in)
 		chassis.update_part_values()
-		chassis.occupant_message("<span class='notice'>You disable leg actuators overload.</span>")
+		chassis.occupant_message(span_notice("You disable leg actuators overload."))
 	UpdateButtonIcon()
 
 /datum/action/innate/mecha/mech_charge_mode
@@ -246,13 +246,13 @@
 	switch(chassis.damtype)
 		if("tox")
 			new_damtype = "brute"
-			chassis.occupant_message("<span class='notice'>Your exosuit's hands form into fists.</span>")
+			chassis.occupant_message(span_notice("Your exosuit's hands form into fists."))
 		if("brute")
 			new_damtype = "fire"
-			chassis.occupant_message("<span class='notice'>A torch tip extends from your exosuit's hand, glowing red.</span>")
+			chassis.occupant_message(span_notice("A torch tip extends from your exosuit's hand, glowing red."))
 		if("fire")
 			new_damtype = "tox"
-			chassis.occupant_message("<span class='notice'>A bone-chillingly thick plasteel needle protracts from the exosuit's palm.</span>")
+			chassis.occupant_message(span_notice("A bone-chillingly thick plasteel needle protracts from the exosuit's palm."))
 	chassis.damtype = new_damtype
 	button_icon_state = "mech_damtype_[new_damtype]"
 	playsound(src, 'sound/mecha/mechmove01.ogg', 50, TRUE)

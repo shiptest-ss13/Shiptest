@@ -5,7 +5,7 @@
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/cm23
 	name = "\improper CM-23"
-	desc = "CLIP's standard service pistol. 10 rounds of 10mm ammunition make the CM-23 deadlier than many other service pistols, but its weight and bulk have made it unpopular as a sidearm. As such, it is in the midst of being replaced, seen primarily in the hands of lower profile Minutemen units. Chambered in 10mm."
+	desc = "CLIP's standard service pistol. 10 rounds of 10mm ammunition make the CM-23 deadlier than many other service pistols, but its weight and bulk have made it unpopular as a sidearm. It has largely been phased out outside of specialized units and patrols on the fringes of CLIP space. Chambered in 10mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -52,12 +52,12 @@
 	default_ammo_type = FALSE
 
 /obj/item/ammo_box/magazine/cm23
-	name = "CM-23 pistol magazine (10mm)"
+	name = "CM-23 pistol magazine (10x22mm)"
 	desc = "An 10-round magazine magazine designed for the CM-23 pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
+	caliber = "10x22mm"
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/cm23/update_icon_state()
@@ -69,7 +69,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cm70
 	name = "CM-70 machine pistol"
-	desc = "A compact machine pistol designed to fire 3-round bursts in short succession, making it incredibly dangerous at close range. Popular with officers and certain special units. Chambered in 9mm."
+	desc = "A compact machine pistol designed to rapidly fire 3-round bursts. Popular with officers and certain special units, the CM-70 is incredibly dangerous at close range. Chambered in 9mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -112,12 +112,12 @@
 	)
 
 /obj/item/ammo_box/magazine/m9mm_cm70
-	name = "CM-70 machine pistol magazine (9mm)"
+	name = "CM-70 machine pistol magazine (9x18mm)"
 	desc = "A 18-round magazine designed for the CM-70 machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "cm70_mag_18"
 	base_icon_state = "cm70_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 18
 
 
@@ -233,12 +233,12 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	default_ammo_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
 /obj/item/ammo_box/magazine/cm5_9mm
-	name = "CM-5 magazine (9mm)"
+	name = "CM-5 magazine (9x18mm)"
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rounds do okay damage, but struggle against armor."
 	icon_state = "cm5_mag-1"
 	base_icon_state = "cm5_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -247,12 +247,12 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/ammo_box/magazine/cm5_9mm/rubber
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
-	caliber = "9mm rubber"
+	caliber = "9x18mm rubber"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	name = "\improper CM-5c"
-	desc = "A modification of the CM-5 featuring a dramatically shortened barrel and removed stock. Designed for CLIP-GOLD covert enforcement agents to maximize portability without sacrificing firepower, though accuracy at range is abysmal. Chambered in 9mm."
+	desc = "A modification of the CM-5 featuring a dramatically shortened barrel and removed stock. Designed for CLIP-GOLD covert enforcement agents to maximize portability without sacrificing firepower, though accuracy at range is abysmal at best. Chambered in 9mm."
 	icon_state = "cm5c"
 	item_state = "cm5c"
 
@@ -285,6 +285,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	wield_slowdown = 0.15
 
 	var/obj/item/storage/briefcase/current_case
+
+NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
@@ -398,7 +400,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
-	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, featuring impressive range and penetrating power on a relatively lightweight platform. Chambered in 6.5mm CLIP."
+	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, capable of impressive range and penetrating power. Chambered in 6.5mm CLIP."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -441,11 +443,11 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/ammo_box/magazine/f90
 	name = "\improper CM-F90 Magazine (6.5x57mm CLIP)"
-	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass personal protective equipment, but are ineffective against armored vehicles."
+	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
-	ammo_type = /obj/item/ammo_casing/a65clip
-	caliber = "6.5CLIP"
+	ammo_type = /obj/item/ammo_casing/a75clip
+	caliber = "7.5x64mm CLIP"
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/f90/update_icon_state()

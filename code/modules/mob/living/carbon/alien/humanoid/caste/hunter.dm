@@ -38,7 +38,7 @@
 		return
 	if(!isliving(hit_atom))
 		if(hit_atom.density && !hit_atom.CanPass(src, get_dir(hit_atom, src)))
-			visible_message("<span class='danger'>[src] smashes into [hit_atom]!</span>", "<span class='alertalien'>[src] smashes into [hit_atom]!</span>")
+			visible_message(span_danger("[src] smashes into [hit_atom]!"), span_alertalien("[src] smashes into [hit_atom]!"))
 			Paralyze(40, ignore_canstun = TRUE)
 		return
 	var/mob/living/living_target = hit_atom
@@ -48,7 +48,7 @@
 		if(H.check_shields(src, FALSE, "the [name]", attack_type = LEAP_ATTACK))
 			blocked = TRUE
 	if(!blocked)
-		living_target.visible_message("<span class='danger'>[src] pounces on [living_target]!</span>", "<span class='userdanger'>[src] pounces on you!</span>")
+		living_target.visible_message(span_danger("[src] pounces on [living_target]!"), span_userdanger("[src] pounces on you!"))
 		living_target.Paralyze(100)
 		var/turf/hit_target_turf = get_turf(living_target)
 		if(living_target.CanPass(src, hit_target_turf))
@@ -71,7 +71,7 @@
 	leap_icon.icon_state = "leap_[leap_on_click ? "on":"off"]"
 	update_icons()
 	if(message)
-		to_chat(src, "<span class='noticealien'>You will now [leap_on_click ? "leap at":"slash at"] enemies!</span>")
+		to_chat(src, span_noticealien("You will now [leap_on_click ? "leap at":"slash at"] enemies!"))
 	else
 		return
 
@@ -91,11 +91,11 @@
 		return
 
 	if(pounce_cooldown > world.time)
-		to_chat(src, "<span class='alertalien'>You are too fatigued to pounce right now!</span>")
+		to_chat(src, span_alertalien("You are too fatigued to pounce right now!"))
 		return
 
 	if(!has_gravity() || !leap_target.has_gravity())
-		to_chat(src, "<span class='alertalien'>It is unsafe to leap without gravity!</span>")
+		to_chat(src, span_alertalien("It is unsafe to leap without gravity!"))
 		//It's also extremely buggy visually, so it's balance+bugfix
 		return
 

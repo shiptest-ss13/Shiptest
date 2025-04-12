@@ -125,7 +125,7 @@
 /obj/item/hand_tele/proc/try_dispel_portal(atom/target, mob/user)
 	if(is_parent_of_portal(target))
 		qdel(target)
-		to_chat(user, "<span class='notice'>You dispel [target] with \the [src]!</span>")
+		to_chat(user, span_notice("You dispel [target] with \the [src]!"))
 		return TRUE
 	return FALSE
 
@@ -137,7 +137,7 @@
 	var/turf/current_location = get_turf(user)//What turf is the user on?
 	var/area/current_area = current_location.loc
 	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
-		to_chat(user, "<span class='notice'>\The [src] is malfunctioning.</span>")
+		to_chat(user, span_notice("\The [src] is malfunctioning."))
 		return
 	var/list/L = list()
 	for(var/obj/machinery/computer/teleporter/com in GLOB.machines)
@@ -168,19 +168,19 @@
 	if (!t1 || user.get_active_held_item() != src || user.incapacitated())
 		return
 	if(active_portal_pairs.len >= max_portal_pairs)
-		user.show_message("<span class='notice'>\The [src] is recharging!</span>")
+		user.show_message(span_notice("\The [src] is recharging!"))
 		return
 	var/atom/T = L[t1]
 	var/area/A = get_area(T)
 	if(A.area_flags & NOTELEPORT)
-		to_chat(user, "<span class='notice'>\The [src] is malfunctioning.</span>")
+		to_chat(user, span_notice("\The [src] is malfunctioning."))
 		return
 	current_location = get_turf(user)	//Recheck.
 	current_area = current_location.loc
 	if(!current_location || (current_area.area_flags & NOTELEPORT) || is_away_level(current_location) || !isturf(user.loc))//If turf was not found or they're on z level 2 or >7 which does not currently exist. or if user is not located on a turf
-		to_chat(user, "<span class='notice'>\The [src] is malfunctioning.</span>")
+		to_chat(user, span_notice("\The [src] is malfunctioning."))
 		return
-	user.show_message("<span class='notice'>Locked In.</span>", MSG_AUDIBLE)
+	user.show_message(span_notice("Locked In."), MSG_AUDIBLE)
 	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(current_location, get_turf(T), 0, FALSE), 300, 1, null, atmos_link_override)
 	if(!(LAZYLEN(created) == 2))
 		return

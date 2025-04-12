@@ -288,11 +288,6 @@
 	mood_change = -3
 	timeout = 2 MINUTES
 
-/datum/mood_event/rippedtail
-	description = span_boldwarning("I ripped their tail right off, what have I done!")
-	mood_change = -5
-	timeout = 30 SECONDS
-
 /datum/mood_event/bad_boop
 	description = span_warning("Someone booped my nose... ACK!")
 	mood_change = -3
