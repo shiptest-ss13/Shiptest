@@ -742,30 +742,6 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/security)
-"ha" = (
-/obj/structure/closet/wall/red/directional/north,
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 5;
-	pixel_y = 8
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 8;
-	pixel_y = -1
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -3;
-	pixel_y = -1
-	},
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/crew/dorm)
 "hg" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3009,6 +2985,17 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/closet/crate{
+	name = "Mining supplies"
+	},
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/radio/weather_monitor,
+/obj/item/radio/weather_monitor,
+/obj/item/mining_scanner,
+/obj/item/mining_scanner,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "LA" = (
@@ -3394,13 +3381,16 @@
 /area/ship/bridge)
 "Qj" = (
 /obj/structure/crate_shelf,
-/obj/structure/closet/crate/medical,
+/obj/structure/closet/crate/medical{
+	name = "medical supplies"
+	},
 /obj/item/clothing/suit/hardliners,
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Qt" = (
@@ -3580,6 +3570,30 @@
 "Sf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
+"So" = (
+/obj/structure/closet/wall/red/directional/north,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -3;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "Su" = (
 /obj/effect/turf_decal/siding{
 	color = "#730622";
@@ -4613,7 +4627,7 @@ zF
 us
 bP
 vx
-ha
+So
 xs
 tQ
 hu
