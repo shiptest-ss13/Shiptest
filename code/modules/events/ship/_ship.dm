@@ -28,7 +28,7 @@
 	normal_run_option = "Random Ship"
 
 /datum/event_admin_setup/listed_options/ship/get_list()
-	return SSovermap.controlled_ships
+	return LAZYCOPY(SSovermap.controlled_ships)
 
 /datum/event_admin_setup/listed_options/ship/apply_to_event(datum/round_event/ship/event)
 	if(isnull(chosen))
