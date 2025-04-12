@@ -26,6 +26,7 @@
 		pickable_missions.Add(active_mission)
 	if(pickable_missions.len)
 		priority_mission = pick(pickable_missions)
+		message_admins("[priority_mission][ADMIN_VV(priority_mission)] has been selected for [src]")
 
 /datum/round_event/high_priority_mission/start()
 	if(priority_mission)
