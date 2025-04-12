@@ -22,7 +22,6 @@
 	var/area/ship_area = find_event_area()
 	return pick(get_area_turfs(ship_area))
 
-
 /datum/event_admin_setup/listed_options/ship
 	input_text = "Select Ship"
 	normal_run_option = "Random Ship"
