@@ -15,13 +15,13 @@
 	if(!..())
 		return FALSE
 	target_outpost = pick(SSovermap.outposts)
-	creds_won = rand(1, 100) * 50
+
+	creds_won = cubic_random(100, 10000)
 
 /datum/round_event/ship/lottery/start()
 	if(!target_ship)
 		return
 	if(target_ship.ship_account)
-
 		target_ship.ship_account.adjust_money(creds_won, "deposit")
 
 /datum/round_event/ship/lottery/announce(fake)
