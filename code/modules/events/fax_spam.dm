@@ -16,7 +16,7 @@
 
 /datum/round_event/fax_spam/setup()
 	end_when = rand(20, 40)
-	spam_type = pick(/obj/item/paper/spam/ifmc, /obj/item/paper/spam/help)
+	spam_type = pick(subtypesof(/obj/item/paper/spam))
 
 /datum/round_event/fax_spam/start()
 	for(var/obj/machinery/fax/fax_machine in GLOB.machines)
@@ -60,7 +60,7 @@ Interstellar Frontier Mining Conglormerate Board of Directors"}
 
 HEEEEEEEEEEEEELP ME"}
 
-/obj/item/paper/spam/btttzzz
+/obj/item/paper/spam/troll
 	name = "important message"
 	sender = "unknown sender"
 	default_raw_text = "{<p>░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░<br>░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░<br>░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░<br>░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░<br>░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░<br>█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█<br>█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█<br>░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░<br>░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░<br>░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░<br>░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░<br>░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░<br>░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░<br>░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░<br>░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░</p> </span>}"
