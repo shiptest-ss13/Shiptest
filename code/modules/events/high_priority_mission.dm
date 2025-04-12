@@ -19,12 +19,16 @@
 
 /datum/round_event/high_priority_mission/setup()
 	target_outpost = pick(SSovermap.outposts)
-	if(prob(75))
-		priority_mission = pick(SSmissions.active_ruin_missions)
-	else
-		priority_mission = pick(target_outpost.missions)
+	var/list/pickable_missions = list()
+	for(var/datum/mission/ruin/active_mission)
+		if(active_mission.dibs_string)
+			continue
+		pickable_missions.Add(active_mission)
+	if(pickable_missions.len)
+		priority_mission = pick(pickable_missions)
 
 /datum/round_event/high_priority_mission/start()
 	if(priority_mission)
+		notify_ghosts("[priority_mission] value has been doubled")
 		priority_mission.name = "HIGH PRIORITY - [priority_mission.name]"
 		priority_mission.value = priority_mission.value * 3
