@@ -11,6 +11,9 @@
 		return FALSE
 	return TRUE
 
+/datum/round_event/ship/announce_deadchat(random, cause)
+	deadchat_broadcast(" has just been[random ? " randomly" : ""] triggered[cause ? " by [cause]" : ""]!", "<b>[control.name]</b>. Located on [target_ship.name]", message_type=DEADCHAT_ANNOUNCEMENT) //STOP ASSUMING IT'S BADMINS!
+
 /datum/round_event/ship/proc/find_event_area()
 	if(length(target_ship.shuttle_port.shuttle_areas))
 		return pick(target_ship.shuttle_port.shuttle_areas)

@@ -143,6 +143,9 @@
 	if(alert_observers)
 		round_event.announce_deadchat(random, event_cause)
 
+	if(weight > 0) //Half the weight of missions to hopefully reduce repeats?
+		weight = weight/2
+
 	SSblackbox.record_feedback("tally", "event_ran", 1, "[round_event]")
 	return round_event
 
