@@ -311,6 +311,9 @@
 #define COMSIG_TURF_IGNITED "turf_ignited"
 	///Prevents hotspots and turf fires
 	#define SUPPRESS_FIRE (1<<0)
+///From /obj/item/open_flame(): (flame_heat)
+#define COMSIG_TURF_OPEN_FLAME "open_flame"
+	#define BLOCK_TURF_IGNITION (1<<0)
 
 // /atom/movable signals
 
