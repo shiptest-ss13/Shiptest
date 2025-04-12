@@ -4,16 +4,16 @@ import {
   Box,
   Button,
   Collapsible,
-  Grid,
+  Flex,
   Input,
   LabeledList,
   NoticeBox,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const PandemicBeakerDisplay = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PandemicBeakerDisplay = (props) => {
+  const { act, data } = useBackend();
   const { has_beaker, beaker_empty, has_blood, blood } = data;
   const cant_empty = !has_beaker || beaker_empty;
   return (
@@ -67,8 +67,8 @@ export const PandemicBeakerDisplay = (props, context) => {
   );
 };
 
-export const PandemicDiseaseDisplay = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PandemicDiseaseDisplay = (props) => {
+  const { act, data } = useBackend();
   const { is_ready } = data;
   const viruses = data.viruses || [];
   return viruses.map((virus) => {
@@ -104,9 +104,9 @@ export const PandemicDiseaseDisplay = (props, context) => {
           />
         }
       >
-        <Grid>
-          <Grid.Column>{virus.description}</Grid.Column>
-          <Grid.Column>
+        <Flex>
+          <Flex.Column>{virus.description}</Flex.Column>
+          <Flex.Column>
             <LabeledList>
               <LabeledList.Item label="Agent">{virus.agent}</LabeledList.Item>
               <LabeledList.Item label="Spread">{virus.spread}</LabeledList.Item>
@@ -114,13 +114,13 @@ export const PandemicDiseaseDisplay = (props, context) => {
                 {virus.cure}
               </LabeledList.Item>
             </LabeledList>
-          </Grid.Column>
-        </Grid>
+          </Flex.Column>
+        </Flex>
         {!!virus.is_adv && (
           <>
             <Section title="Statistics" level={2}>
-              <Grid>
-                <Grid.Column>
+              <Flex>
+                <Flex.Column>
                   <LabeledList>
                     <LabeledList.Item label="Resistance">
                       {virus.resistance}
@@ -129,8 +129,8 @@ export const PandemicDiseaseDisplay = (props, context) => {
                       {virus.stealth}
                     </LabeledList.Item>
                   </LabeledList>
-                </Grid.Column>
-                <Grid.Column>
+                </Flex.Column>
+                <Flex.Column>
                   <LabeledList>
                     <LabeledList.Item label="Stage speed">
                       {virus.stage_speed}
@@ -139,8 +139,8 @@ export const PandemicDiseaseDisplay = (props, context) => {
                       {virus.transmission}
                     </LabeledList.Item>
                   </LabeledList>
-                </Grid.Column>
-              </Grid>
+                </Flex.Column>
+              </Flex>
             </Section>
             <Section title="Symptoms" level={2}>
               {symptoms.map((symptom) => (
@@ -158,7 +158,7 @@ export const PandemicDiseaseDisplay = (props, context) => {
   });
 };
 
-export const PandemicSymptomDisplay = (props, context) => {
+export const PandemicSymptomDisplay = (props) => {
   const { symptom } = props;
   const {
     name,
@@ -185,9 +185,9 @@ export const PandemicSymptomDisplay = (props, context) => {
         )
       }
     >
-      <Grid>
-        <Grid.Column size={2}>{desc}</Grid.Column>
-        <Grid.Column>
+      <Flex>
+        <Flex.Column size={2}>{desc}</Flex.Column>
+        <Flex.Column>
           <LabeledList>
             <LabeledList.Item label="Level">{level}</LabeledList.Item>
             <LabeledList.Item label="Resistance">{resistance}</LabeledList.Item>
@@ -199,8 +199,8 @@ export const PandemicSymptomDisplay = (props, context) => {
               {transmission}
             </LabeledList.Item>
           </LabeledList>
-        </Grid.Column>
-      </Grid>
+        </Flex.Column>
+      </Flex>
       {thresholds.length > 0 && (
         <Section title="Thresholds" level={3}>
           <LabeledList>
@@ -218,8 +218,8 @@ export const PandemicSymptomDisplay = (props, context) => {
   );
 };
 
-export const PandemicAntibodyDisplay = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PandemicAntibodyDisplay = (props) => {
+  const { act, data } = useBackend();
   const resistances = data.resistances || [];
   return (
     <Section title="Antibodies">
@@ -249,8 +249,8 @@ export const PandemicAntibodyDisplay = (props, context) => {
   );
 };
 
-export const Pandemic = (props, context) => {
-  const { data } = useBackend(context);
+export const Pandemic = (props) => {
+  const { data } = useBackend();
   return (
     <Window width={520} height={550} resizable>
       <Window.Content scrollable>

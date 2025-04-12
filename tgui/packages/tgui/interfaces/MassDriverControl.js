@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Box, Button, Section, LabeledList, NumberInput } from '../components';
+import { Box, Button, Section, LabeledList, NumberInput } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const MassDriverControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MassDriverControl = (props) => {
+  const { act, data } = useBackend();
   const { connected, minutes, seconds, timing, power, poddoor } = data;
   return (
     <Window width={300} height={connected ? 215 : 107}>

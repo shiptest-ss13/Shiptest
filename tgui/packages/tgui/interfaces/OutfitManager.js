@@ -1,12 +1,12 @@
 import { useBackend } from '../backend';
-import { Button, Section, Stack } from '../components';
+import { Button, Section, Stack } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const OutfitManager = (props, context) => {
-  const { act, data } = useBackend(context);
+export const OutfitManager = (props) => {
+  const { act, data } = useBackend();
   const { outfits } = data;
   return (
-    <Window title="Outfit Manager" width={300} height={300}>
+    <Window title="Outfit Manager" width={300} height={300} theme="admin">
       <Window.Content>
         <Section
           fill

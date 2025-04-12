@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Section } from '../components';
+import { Box, Button, Flex, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Folder = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Folder = (props) => {
+  const { act, data } = useBackend();
   const { theme, bg_color, folder_name, contents, contents_ref } = data;
   return (
     <Window

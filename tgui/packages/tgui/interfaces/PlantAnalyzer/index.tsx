@@ -7,17 +7,17 @@ import {
   AnimatedNumber,
   Tooltip,
   Box,
-} from '../../components';
+} from 'tgui-core/components';
 import { Window } from '../../layouts';
 
-import { capitalizeFirst } from 'common/string';
+import { capitalizeFirst } from 'tgui-core/string';
 
 import { PLANTSTATUS2COLOR } from './constants';
 
 import { PlantAnalyzerData } from './types';
 
-export const PlantAnalyzer = (props, context) => {
-  const { act, data } = useBackend<PlantAnalyzerData>(context);
+export const PlantAnalyzer = (props) => {
+  const { act, data } = useBackend<PlantAnalyzerData>();
   const { tray, seed } = data;
   return (
     <Window width={500} height={600} resizable>
@@ -29,8 +29,8 @@ export const PlantAnalyzer = (props, context) => {
   );
 };
 
-const TrayContent = (props, context) => {
-  const { act, data } = useBackend<PlantAnalyzerData>(context);
+const TrayContent = (props) => {
+  const { act, data } = useBackend<PlantAnalyzerData>();
   const { tray } = data;
   return (
     <Section title="Tray">
@@ -76,8 +76,8 @@ const TrayContent = (props, context) => {
   );
 };
 
-const SeedContent = (props, context) => {
-  const { act, data } = useBackend<PlantAnalyzerData>(context);
+const SeedContent = (props) => {
+  const { act, data } = useBackend<PlantAnalyzerData>();
   const { seed } = data;
   return (
     <Section title={seed.name}>

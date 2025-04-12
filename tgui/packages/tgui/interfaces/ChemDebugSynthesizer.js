@@ -6,11 +6,11 @@ import {
   LabeledList,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const ChemDebugSynthesizer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemDebugSynthesizer = (props) => {
+  const { act, data } = useBackend();
   const {
     amount,
     beakerCurrentVolume,

@@ -1,20 +1,20 @@
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 import { useBackend } from '../backend';
-import { Button, Grid, NumberInput, Section } from '../components';
+import { Button, Flex, NumberInput, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Signaler = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Signaler = (props) => {
+  const { act, data } = useBackend();
   const { code, frequency, minFrequency, maxFrequency } = data;
   return (
     <Window width={280} height={132}>
       <Window.Content>
         <Section>
-          <Grid>
-            <Grid.Column size={1.4} color="label">
+          <Flex>
+            <Flex.Column size={1.4} color="label">
               Frequency:
-            </Grid.Column>
-            <Grid.Column>
+            </Flex.Column>
+            <Flex.Column>
               <NumberInput
                 animate
                 unit="kHz"
@@ -31,8 +31,8 @@ export const Signaler = (props, context) => {
                   })
                 }
               />
-            </Grid.Column>
-            <Grid.Column>
+            </Flex.Column>
+            <Flex.Column>
               <Button
                 ml={1.3}
                 icon="sync"
@@ -43,13 +43,13 @@ export const Signaler = (props, context) => {
                   })
                 }
               />
-            </Grid.Column>
-          </Grid>
-          <Grid mt={0.6}>
-            <Grid.Column size={1.4} color="label">
+            </Flex.Column>
+          </Flex>
+          <Flex mt={0.6}>
+            <Flex.Column size={1.4} color="label">
               Code:
-            </Grid.Column>
-            <Grid.Column>
+            </Flex.Column>
+            <Flex.Column>
               <NumberInput
                 animate
                 step={1}
@@ -64,8 +64,8 @@ export const Signaler = (props, context) => {
                   })
                 }
               />
-            </Grid.Column>
-            <Grid.Column>
+            </Flex.Column>
+            <Flex.Column>
               <Button
                 ml={1.3}
                 icon="sync"
@@ -76,10 +76,10 @@ export const Signaler = (props, context) => {
                   })
                 }
               />
-            </Grid.Column>
-          </Grid>
-          <Grid mt={0.8}>
-            <Grid.Column>
+            </Flex.Column>
+          </Flex>
+          <Flex mt={0.8}>
+            <Flex.Column>
               <Button
                 mb={-0.1}
                 fluid
@@ -88,8 +88,8 @@ export const Signaler = (props, context) => {
                 textAlign="center"
                 onClick={() => act('signal')}
               />
-            </Grid.Column>
-          </Grid>
+            </Flex.Column>
+          </Flex>
         </Section>
       </Window.Content>
     </Window>

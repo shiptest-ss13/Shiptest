@@ -1,7 +1,7 @@
 import { useBackend } from '../../backend';
-import { Stack, Button, Flex, Icon } from '../../components';
+import { Stack, Button, Flex, Icon } from 'tgui-core/components';
 
-import { capitalizeFirst } from 'common/string';
+import { capitalizeFirst } from 'tgui-core/string';
 
 import { getDisplayColor, getDisplayName } from './helpers';
 import { Antagonist, Observable, OrbitData } from './types';
@@ -12,11 +12,11 @@ type Props = {
   color: string | undefined;
 };
 
-export const OrbitItem = (props: Props, context) => {
+export const OrbitItem = (props: props) => {
   const { item, autoObserve, color } = props;
   const { full_name, icon, job, name, orbiters, ref } = item;
 
-  const { act, data } = useBackend<OrbitData>(context);
+  const { act, data } = useBackend<OrbitData>();
   const { orbiting } = data;
 
   const selected = ref === orbiting?.ref;

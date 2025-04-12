@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -6,11 +5,13 @@ import {
   NoticeBox,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { NtosWindow } from '../layouts';
 
-export const NtosNetMonitor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosNetMonitor = (props) => {
+  const { act, data } = useBackend();
   const {
     ntnetrelays,
     ntnetstatus,

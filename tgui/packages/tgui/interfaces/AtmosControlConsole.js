@@ -1,11 +1,11 @@
 import { map } from 'common/collections';
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, Section } from '../components';
+import { Button, LabeledList, NumberInput, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const AtmosControlConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosControlConsole = (props) => {
+  const { act, data } = useBackend();
   const sensors = data.sensors || [];
   return (
     <Window width={500} height={315} resizable>

@@ -1,5 +1,5 @@
 import { sortBy } from 'common/collections';
-import { flow } from 'common/fp';
+import { flow } from 'tgui-core/fp';
 import { useBackend } from '../backend';
 import {
   Box,
@@ -9,11 +9,11 @@ import {
   Knob,
   LabeledControls,
   LabeledList,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const Jukebox = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Jukebox = (props) => {
+  const { act, data } = useBackend();
   const { active, track_selected, track_length, track_beat, volume } = data;
   const songs = flow([sortBy((song) => song.name)])(data.songs || []);
   return (

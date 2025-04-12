@@ -1,5 +1,5 @@
 import { map } from 'common/collections';
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 import { useBackend } from '../backend';
 import {
   Box,
@@ -9,12 +9,12 @@ import {
   Section,
   Divider,
   Table,
-} from '../components';
+} from 'tgui-core/components';
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
 
-export const Radio = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Radio = (props) => {
+  const { act, data } = useBackend();
   const {
     freqlock,
     frequency,
@@ -32,10 +32,10 @@ export const Radio = (props, context) => {
   const tunedChannel = RADIO_CHANNELS.find(
     (channel) => channel.freq === frequency
   );
-  const channels = map((value, key) => ({
+  const channels = map(data.channels, (value, key) => ({
     name: key,
     status: !!value,
-  }))(data.channels);
+  }));
   // Calculate window height
   let height = 106;
   let width = 360;

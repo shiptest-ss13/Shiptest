@@ -5,7 +5,7 @@ import {
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { BeakerContents } from './common/BeakerContents';
 import { Window } from '../layouts';
 
@@ -38,8 +38,8 @@ export const Cryo = () => {
   );
 };
 
-const CryoContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const CryoContent = (props) => {
+  const { act, data } = useBackend();
   return (
     <>
       <Section title="Occupant">

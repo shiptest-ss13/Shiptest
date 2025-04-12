@@ -6,10 +6,10 @@ import {
   LabeledList,
   Button,
   ProgressBar,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 import { sortBy } from 'common/collections';
-import { toFixed } from 'common/math';
+import { toFixed } from 'tgui-core/math';
 
 const damageTypes = [
   {
@@ -30,8 +30,8 @@ const damageTypes = [
   },
 ];
 
-export const Sleeper = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Sleeper = (props) => {
+  const { act, data } = useBackend();
   const chemicals = sortBy((chem) => chem.title)(data.chemicals);
   const transferAmounts = data.transferAmounts || [];
   const { open, occupant = {}, occupied, stasis, canStasis, cell = {} } = data;

@@ -1,22 +1,23 @@
-import { createSearch, decodeHtmlEntities } from 'common/string';
-import { useBackend, useLocalState } from '../../backend';
 import {
   Box,
   Button,
   Input,
+  NoticeBox,
   Section,
   Table,
-  NoticeBox,
-} from '../../components';
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
+import { createSearch, decodeHtmlEntities } from 'tgui-core/string';
+
+import { useBackend, useLocalState } from '../../backend';
 import { Window } from '../../layouts';
-import { formatMoney } from '../../format';
 
 const MAX_SEARCH_RESULTS = 25;
 
 // this UI is heavily based on (read: basically copy-pasted from) Uplink.js.
 
-export const OutpostExport = (props, context) => {
-  const { data } = useBackend(context);
+export const OutpostExport = (props) => {
+  const { data } = useBackend();
   const { telecrystals } = data;
   return (
     <Window width={620} height={580} theme="ntos_terminal" resizable>
@@ -41,12 +42,11 @@ export const OutpostExport = (props, context) => {
 //
 //
 
-const GenericExport = (props, context) => {
-  const { act, data } = useBackend(context);
+const GenericExport = (props) => {
+  const { act, data } = useBackend();
   const { redeemExports = [], allExports = [] } = data;
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
+  const [searchText, setSearchText] = useLocalState('searchText', '');
   const [compactMode, setCompactMode] = useLocalState(
-    context,
     'compactMode',
     false
   );
@@ -107,11 +107,10 @@ const GenericExport = (props, context) => {
   );
 };
 
-const ExportList = (props, context) => {
+const ExportList = (props) => {
   const { compactMode, exportList = [], redeemable = false } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   const [hoveredItem, setHoveredItem] = useLocalState(
-    context,
     'hoveredItem',
     {}
   );

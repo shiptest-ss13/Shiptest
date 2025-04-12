@@ -6,10 +6,10 @@ import {
   Section,
   LabeledList,
   AnimatedNumber,
-} from '../../components';
+} from 'tgui-core/components';
 import { Window } from '../../layouts';
 
-import { decodeHtmlEntities } from 'common/string';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
 export type OvermapData = {
   admin_rights: Boolean;
@@ -30,8 +30,8 @@ type NameAndRef = {
   ref: string;
 };
 
-export const OvermapInspect = (props, context) => {
-  const { act, data } = useBackend<OvermapData>(context);
+export const OvermapInspect = (props) => {
+  const { act, data } = useBackend<OvermapData>();
   const { admin_rights, name, ascii, desc, x, y, dockedTo, docked = [] } = data;
 
   return (

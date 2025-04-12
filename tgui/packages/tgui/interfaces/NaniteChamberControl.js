@@ -3,15 +3,15 @@ import {
   Box,
   Button,
   Collapsible,
-  Grid,
+  Flex,
   LabeledList,
   NoticeBox,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const NaniteChamberControl = (props, context) => {
+export const NaniteChamberControl = (props) => {
   return (
     <Window width={380} height={570} resizable>
       <Window.Content scrollable>
@@ -21,8 +21,8 @@ export const NaniteChamberControl = (props, context) => {
   );
 };
 
-export const NaniteChamberControlContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteChamberControlContent = (props) => {
+  const { act, data } = useBackend();
   const {
     status_msg,
     locked,
@@ -84,8 +84,8 @@ export const NaniteChamberControlContent = (props, context) => {
               />
             }
           >
-            <Grid>
-              <Grid.Column>
+            <Flex>
+              <Flex.Column>
                 <LabeledList>
                   <LabeledList.Item label="Nanite Volume">
                     {nanite_volume}
@@ -94,8 +94,8 @@ export const NaniteChamberControlContent = (props, context) => {
                     {regen_rate}
                   </LabeledList.Item>
                 </LabeledList>
-              </Grid.Column>
-              <Grid.Column>
+              </Flex.Column>
+              <Flex.Column>
                 <LabeledList>
                   <LabeledList.Item label="Safety Threshold">
                     <NumberInput
@@ -126,8 +126,8 @@ export const NaniteChamberControlContent = (props, context) => {
                     />
                   </LabeledList.Item>
                 </LabeledList>
-              </Grid.Column>
-            </Grid>
+              </Flex.Column>
+            </Flex>
           </Section>
           <Section title="Programs" level={2}>
             {mob_programs.map((program) => {
@@ -136,10 +136,10 @@ export const NaniteChamberControlContent = (props, context) => {
               return (
                 <Collapsible key={program.name} title={program.name}>
                   <Section>
-                    <Grid>
-                      <Grid.Column>{program.desc}</Grid.Column>
+                    <Flex>
+                      <Flex.Column>{program.desc}</Flex.Column>
                       {scan_level >= 2 && (
-                        <Grid.Column size={0.6}>
+                        <Flex.Column size={0.6}>
                           <LabeledList>
                             <LabeledList.Item label="Activation Status">
                               <Box color={program.activated ? 'good' : 'bad'}>
@@ -150,13 +150,13 @@ export const NaniteChamberControlContent = (props, context) => {
                               {program.use_rate}/s
                             </LabeledList.Item>
                           </LabeledList>
-                        </Grid.Column>
+                        </Flex.Column>
                       )}
-                    </Grid>
+                    </Flex>
                     {scan_level >= 2 && (
-                      <Grid>
+                      <Flex>
                         {!!program.can_trigger && (
-                          <Grid.Column>
+                          <Flex.Column>
                             <Section title="Triggers" level={2}>
                               <LabeledList>
                                 <LabeledList.Item label="Trigger Cost">
@@ -177,12 +177,12 @@ export const NaniteChamberControlContent = (props, context) => {
                                 )}
                               </LabeledList>
                             </Section>
-                          </Grid.Column>
+                          </Flex.Column>
                         )}
                         {!!(
                           program.timer_restart || program.timer_shutdown
                         ) && (
-                          <Grid.Column>
+                          <Flex.Column>
                             <Section>
                               <LabeledList>
                                 {/* I mean, bruh, this indentation level
@@ -199,9 +199,9 @@ export const NaniteChamberControlContent = (props, context) => {
                                 )}
                               </LabeledList>
                             </Section>
-                          </Grid.Column>
+                          </Flex.Column>
                         )}
-                      </Grid>
+                      </Flex>
                     )}
                     {scan_level >= 3 && !!program.has_extra_settings && (
                       <Section title="Extra Settings" level={2}>
@@ -218,8 +218,8 @@ export const NaniteChamberControlContent = (props, context) => {
                       </Section>
                     )}
                     {scan_level >= 4 && (
-                      <Grid>
-                        <Grid.Column>
+                      <Flex>
+                        <Flex.Column>
                           <Section title="Codes" level={2}>
                             <LabeledList>
                               {!!program.activation_code && (
@@ -245,17 +245,17 @@ export const NaniteChamberControlContent = (props, context) => {
                                 )}
                             </LabeledList>
                           </Section>
-                        </Grid.Column>
+                        </Flex.Column>
                         {program.has_rules && (
-                          <Grid.Column>
+                          <Flex.Column>
                             <Section title="Rules" level={2}>
                               {rules.map((rule) => (
                                 <Box key={rule.display}>{rule.display}</Box>
                               ))}
                             </Section>
-                          </Grid.Column>
+                          </Flex.Column>
                         )}
-                      </Grid>
+                      </Flex>
                     )}
                   </Section>
                 </Collapsible>

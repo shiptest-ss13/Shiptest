@@ -1,6 +1,6 @@
 import { sortBy } from '../../common/collections';
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, Section, Table } from '../components';
+import { Box, Button, LabeledList, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 type FaxData = {
@@ -35,9 +35,9 @@ type FaxSpecial = {
   emag_needed: boolean;
 };
 
-export const Fax = (props, context) => {
-  const { act } = useBackend(context);
-  const { data } = useBackend<FaxData>(context);
+export const Fax = (props) => {
+  const { act } = useBackend();
+  const { data } = useBackend<FaxData>();
   const faxes = data.faxes
     ? sortBy((sortFax: FaxInfo) => sortFax.fax_name)(
         data.frontier_network

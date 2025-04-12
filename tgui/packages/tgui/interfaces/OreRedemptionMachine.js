@@ -1,4 +1,4 @@
-import { toTitleCase } from 'common/string';
+import { toTitleCase } from 'tgui-core/string';
 import { useBackend, useLocalState } from '../backend';
 import {
   BlockQuote,
@@ -7,11 +7,11 @@ import {
   NumberInput,
   Section,
   Table,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const OreRedemptionMachine = (props, context) => {
-  const { act, data } = useBackend(context);
+export const OreRedemptionMachine = (props) => {
+  const { act, data } = useBackend();
   const { unclaimedPoints, materials, alloys, diskDesigns, hasDisk } = data;
   return (
     <Window title="Ore Redemption Machine" width={440} height={550} resizable>
@@ -111,11 +111,10 @@ export const OreRedemptionMachine = (props, context) => {
   );
 };
 
-const MaterialRow = (props, context) => {
+const MaterialRow = (props) => {
   const { material, onRelease } = props;
 
   const [amount, setAmount] = useLocalState(
-    context,
     'amount' + material.name,
     1
   );

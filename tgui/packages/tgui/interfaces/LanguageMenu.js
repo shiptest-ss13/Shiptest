@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section } from '../components';
+import { Button, LabeledList, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
-export const LanguageMenu = (props, context) => {
-  const { act, data } = useBackend(context);
+export const LanguageMenu = (props) => {
+  const { act, data } = useBackend();
   const {
     admin_mode,
     is_living,

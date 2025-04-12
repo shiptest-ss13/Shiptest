@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Section } from '../components';
+import { Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const StationAlertConsole = () => {
@@ -12,8 +12,8 @@ export const StationAlertConsole = () => {
   );
 };
 
-export const StationAlertConsoleContent = (props, context) => {
-  const { data } = useBackend(context);
+export const StationAlertConsoleContent = (props) => {
+  const { data } = useBackend();
   const categories = data.alarms || [];
   const fire = categories['Fire'] || [];
   const atmos = categories['Atmosphere'] || [];
