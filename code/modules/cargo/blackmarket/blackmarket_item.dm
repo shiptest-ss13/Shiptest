@@ -1,5 +1,5 @@
 /datum/supply_pack/blackmarket
-	markets = list(/datum/cargo_market/black)
+	markets = list(/datum/cargo_market/black/default)
 
 /datum/supply_pack/blackmarket/New()
 	if(isnull(cost))

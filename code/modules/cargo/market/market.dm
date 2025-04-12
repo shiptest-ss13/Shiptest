@@ -154,3 +154,5 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 			uplink.money -= cost
 			return TRUE
 		return FALSE
+
+/datum/cargo_market/black/default

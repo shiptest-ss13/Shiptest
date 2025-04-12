@@ -13,7 +13,7 @@
 	/// How much money is inserted into the uplink.
 	var/money = 0
 	/// List of typepaths for "/datum/cargo_market/black"s that this uplink can access.
-	var/list/accessible_markets = list(/datum/cargo_market/black)
+	var/list/accessible_markets = list(/datum/cargo_market/black/default)
 	// Linked LTSRBT for uplink to send to.
 	var/obj/machinery/ltsrbt/target
 
