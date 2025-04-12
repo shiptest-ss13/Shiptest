@@ -20,6 +20,7 @@
 		"Unidentified lifesigns detected coming aboard [target_ship]. Secure any exterior access, including ducting and ventilation.",
 	 	"Lifesign Alert",
 		'sound/ai/aliens.ogg',
+		sender_override = "Lifesign Detection System",
 		zlevel = event_area.virtual_z()
 	)
 

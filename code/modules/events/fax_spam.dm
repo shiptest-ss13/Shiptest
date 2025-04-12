@@ -34,6 +34,8 @@
 /obj/item/paper/spam
 	var/sender = "Spammer"
 
+
+//Make this init a bank account
 /obj/item/paper/spam/ifmc
 	name = "paper- 'Official Bulletin'"
 	sender = "Interstellar Frontier Mining Conglormerate"
@@ -53,7 +55,33 @@ Interstellar Frontier Mining Conglormerate Board of Directors"}
 
 /obj/item/paper/spam/help
 	name = "paper- 'HELP ME'"
+	icon_state = "scrap_bloodied"
 	sender = "HELP ME"
 	default_raw_text = {"HEEEEEEEEELP
 
 HEEEEEEEEEEEEELP ME"}
+
+/obj/item/paper/spam/btttzzz
+	default_raw_text = "{<p>░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░<br>░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░<br>░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░<br>░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░<br>░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░<br>█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█<br>█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█<br>░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░<br>░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░<br>░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░<br>░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░<br>░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░<br>░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░<br>░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░<br>░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░</p> </span>}"
+
+/obj/item/paper/spam/pgf_marine_test
+	name = "PAN-GEZENA MARINE CORP APTITUDE TEST"
+	default_raw_text = {"<center>
+<h1>PAN-GEZENA MARINE CORP APTITUDE TEST</h1>
+<h2>Using the crayon provided, join the two dots.<br> Your recruiter can help you.<br> You have one hour to complete.</h2>
+(please do not eat the crayon)
+</center>
+<br>
+<font size=5>
+<pre>Ο\[_________________________________________\]Ο</pre>"}
+
+/obj/item/paper/spam/sus_activity
+	default_raw_text = {"
+<h1><center><font color="red">! ! ATTENTION ! !</h1></center> </font>
+<b><center>SUSPICIOUS OR ILLICIT ACTIVITY HAS BEEN DETECTED FROM THIS FAX NETWORK. OUTGOING COMMUNICATIONS HAVE BEEN BLOCKED UNTIL FURTHER NOTICE.</center></b>
+<p><center>In order to prove you are a human, please solve this Somewhat Automated Public Turing test to tell Computers and Humans Apart:</center></p>
+<blockquote><code>
+2+2 = ?
+</blockquote></code>
+<b>YOUR ANSWER AFTER THIS LINE</b>
+<hr>"}
