@@ -38,19 +38,13 @@
 	normal_run_option = "Random Rodent"
 
 /datum/event_admin_setup/listed_options/rodent/get_list()
-	return list("Mouse", "Cockroach", "Rat(Hostile)")
+	return subtypesof(/mob/living/basic) + subtypesof(/mob/living/simple_animal)
 
 /datum/event_admin_setup/listed_options/rodent/apply_to_event(datum/round_event/ship/rodent_infestation/event)
 	if(isnull(chosen))
 		event.rodent_type = pick(/mob/living/basic/mouse, /mob/living/basic/mouse/rat, /mob/living/basic/cockroach)
 	else
-		switch(chosen)
-			if("Mouse")
-				event.rodent_type = /mob/living/basic/mouse
-			if("Cockroach")
-				event.rodent_type = /mob/living/basic/cockroach
-			if("Rat(Hostile)")
-				event.rodent_type = /mob/living/basic/mouse/rat
+		event.rodent_type = chosen
 
 /datum/event_admin_setup/input_number/rodent
 	input_text = "How strong do you want your hoard"
