@@ -110,6 +110,8 @@
 		return FALSE
 	if(include_subtypes && is_type_in_typecache(O, exclude_types))
 		return FALSE
+	if(!get_amount(O))
+		return FALSE
 	if(!get_cost(O, apply_elastic))
 		return FALSE
 	if(O.flags_1 & HOLOGRAM_1)
