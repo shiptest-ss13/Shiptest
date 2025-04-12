@@ -92,6 +92,8 @@ SUBSYSTEM_DEF(events)
 				continue //like it never happened
 			if(res == EVENT_CANT_RUN)
 				return
+		else if(event_to_check.weight == 0) //Weight 0 are admin spawn or otherwise cant be pulled from spawn event
+			continue
 		else
 			event_roster[event_to_check] = event_to_check.weight
 
