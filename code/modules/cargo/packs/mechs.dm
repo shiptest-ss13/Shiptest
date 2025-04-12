@@ -281,6 +281,14 @@ Mech Equipment
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/mech/equipment/charger_upgrade
+	name = "501p overclock kit"
+	desc = "Contains a kit to overclock the 501p, allowing it to leap forward instead of its enhanced speed."
+	cost = 1000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/leaper
+	)
+
 /datum/supply_pack/mech/equipment/dark_upgrade
 	name = "515 EX upgrade kit"
 	desc = "Contains a military grade conversion kit for a 501p combat exosuit, to convert it to the fearsome 515 EX models. Features a much stronger set of leg actuators."

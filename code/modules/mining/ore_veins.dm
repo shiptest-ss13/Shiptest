@@ -76,6 +76,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 			var/picked = pick_weight(ore_list)
 			vein_contents.Add(picked)
 			ore_list.Remove(picked)
+			if(!LAZYLEN(ore_list))
+				break
 	GLOB.ore_veins += src
 
 /obj/structure/vein/examine(mob/user)
@@ -105,7 +107,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
-	visible_message("<span class='boldannounce'>[src] collapses!</span>")
+	visible_message(span_boldannounce("[src] collapses!"))
 
 /obj/structure/vein/proc/toggle_spawning()
 	currently_spawning = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, currently_spawning)

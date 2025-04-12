@@ -54,14 +54,14 @@
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user]'s spoon snaps into tiny pieces in their hand.</span>")
+		user.visible_message(span_danger("[user]'s spoon snaps into tiny pieces in their hand."))
 		qdel(src)
 
 
 /obj/item/melee/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user]'s knife snaps into tiny pieces in their hand.</span>")
+		user.visible_message(span_danger("[user]'s knife snaps into tiny pieces in their hand."))
 		qdel(src)
 
 /obj/item/melee/knife/pizza_cutter
@@ -105,7 +105,7 @@
 	item_state = "combatknife"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
-	force = 15
+	force = 20
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 
@@ -115,7 +115,7 @@
 	item_state = "survivalknife"
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	desc = "A hunting grade survival knife."
-	force = 12
+	force = 15
 	throwforce = 15
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 
@@ -182,8 +182,8 @@
 	. = ..()
 	AddComponent( \
 		/datum/component/transforming, \
-		force_on = 14, \
-		throwforce_on = 20, \
+		force_on = 20, \
+		throwforce_on = 23, \
 		throw_speed_on = 4, \
 		sharpness_on = IS_SHARP, \
 		hitsound_on = 'sound/weapons/bladeslice.ogg', \
@@ -198,7 +198,7 @@
 	icon_state = "letter_opener"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
-	force = 10
+	force = 15
 	throwforce = 15
 	unique_reskin = list("Traditional" = "letter_opener",
 						"Boxcutter" = "letter_opener_b",

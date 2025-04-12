@@ -76,7 +76,7 @@
 
 /datum/mission/ruin/signaled/kill/ramzi/airbase
 	mission_limit = 1
-	registered_type = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary
+	registered_type = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 
 /datum/mission/ruin/icw_documents
 	name = "Syndicate Battleplans Retrieval"

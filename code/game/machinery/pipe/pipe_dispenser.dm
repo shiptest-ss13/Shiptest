@@ -119,7 +119,7 @@
 /obj/machinery/pipedispenser/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
 	if (istype(W, /obj/item/pipe) || istype(W, /obj/item/pipe_meter))
-		to_chat(usr, "<span class='notice'>You put [W] back into [src].</span>")
+		to_chat(usr, span_notice("You put [W] back into [src]."))
 		qdel(W)
 		return
 	else
@@ -135,7 +135,7 @@
 /obj/machinery/pipedispenser/screwdriver_act(mob/user, obj/item/I)
 	panel_open = !panel_open
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
+	to_chat(user, span_notice("You [panel_open?"open":"close"] the panel on [src]."))
 	return TRUE
 
 /obj/machinery/pipedispenser/crowbar_act(mob/living/user, obj/item/I)

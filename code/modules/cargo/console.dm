@@ -43,8 +43,8 @@
 	if(obj_flags & EMAGGED)
 		return
 	if(user)
-		user.visible_message("<span class='warning'>[user] swipes a suspicious card through [src]!</span>",
-		"<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
+		user.visible_message(span_warning("[user] swipes a suspicious card through [src]!"),
+		span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
@@ -129,7 +129,7 @@
 					var/mob/living/carbon/human/user = usr
 					user.put_in_hands(cash_chip)
 				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
-				src.visible_message("<span class='notice'>[src] dispenses a holochip.</span>")
+				src.visible_message(span_notice("[src] dispenses a holochip."))
 			return TRUE
 
 		if("purchase")
@@ -175,7 +175,7 @@
 	var/value = W.get_item_credit_value()
 	if(value && charge_account)
 		charge_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
-		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
+		to_chat(user, span_notice("You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr."))
 		qdel(W)
 		return TRUE
 	..()

@@ -50,3 +50,13 @@
 /atom/proc/get_relative_location()
 	var/datum/virtual_level/vlevel = get_virtual_level()
 	return vlevel?.get_relative_coords(src)
+
+/atom/proc/get_overmap_location()
+	var/datum/map_zone/our_zone = get_map_zone()
+	for(var/datum/overmap/dynamic/overmap_object in SSovermap.overmap_objects)
+		if(!istype(overmap_object))
+			continue
+		if(!overmap_object.mapzone)
+			continue
+		if(overmap_object.mapzone == our_zone)
+			return overmap_object

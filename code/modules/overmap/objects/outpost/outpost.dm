@@ -38,7 +38,7 @@
 
 	/// The maximum number of missions that may be offered by the outpost at one time.
 	/// Missions which have been accepted do not count against this limit.
-	var/max_missions = 10
+	var/max_missions
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 
@@ -77,7 +77,7 @@
 	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
-	SSpoints_of_interest.make_point_of_interest(token)
+	SSpoints_of_interest.remove_point_of_interest(token)
 	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
 	for(var/list/datum/hangar_shaft/h_shaft as anything in shaft_datums)
 		qdel(h_shaft)
@@ -139,7 +139,7 @@
 			if(1)
 				person_name = pick(prob(50) ? GLOB.lizard_names_male : GLOB.lizard_names_female)
 			if(2)
-				person_name = pick(GLOB.spider_last)
+				person_name = spider_name()
 			if(3)
 				person_name = kepori_name()
 			if(4)
@@ -147,7 +147,7 @@
 	return person_name
 
 /datum/overmap/outpost/proc/fill_missions()
-	max_missions = 10 + (SSovermap.controlled_ships.len * 5)
+	max_missions = min(10 + (SSovermap.controlled_ships.len * 2), 25)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = SSmissions.get_weighted_mission_type()
 		var/datum/mission/outpost/M = new mission_type(src)

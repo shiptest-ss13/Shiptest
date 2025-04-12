@@ -18,7 +18,7 @@
 /datum/supply_pack/spacesuits/pilot_spacesuit
 	name = "Pilot Space Suit Crate"
 	desc = "One pilot space suit, for improved mobility in exosuits."
-	cost = 750
+	cost = 500
 	contains = list(/obj/item/clothing/suit/space/pilot,
 					/obj/item/clothing/head/helmet/space/pilot/random)
 	crate_name = "pilot space suit crate"
@@ -128,7 +128,7 @@
 /datum/supply_pack/spacesuits/engineering_hardsuit
 	name = "Engineering Hardsuit Crate"
 	desc = "One engineering hardsuit, resistant to fire, radiation, and other engineering hazards. Nanotrasen reminds you that Resistant does not mean Immune."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine)
 	crate_name = "engineering hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
@@ -137,7 +137,7 @@
 /datum/supply_pack/spacesuits/mining_hardsuit_heavy
 	name = "Heavy Mining Hardsuit Crate"
 	desc = "One heavy-duty mining hardsuit for dangerous frontier operations. Comes with a pair of EXOCOM jet boots."
-	cost = 3500
+	cost = 2500
 	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy,
 					/obj/item/clothing/shoes/bhop)
 	crate_name = "heavy mining hardsuit crate"
