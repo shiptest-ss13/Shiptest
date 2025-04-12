@@ -27,7 +27,7 @@
 /datum/round_event/ship/lottery/announce(fake)
 	if(fake)
 		creds_won = 1000000000
-	priority_announce("congracts to [target_ship] who has won a sweep stakes for [creds_won] creds!",
+	priority_announce("congracts to [target_ship.name] who has won a sweep stakes for [creds_won] creds!",
 		null,
 		null,
 		"Sweep stakes!",
