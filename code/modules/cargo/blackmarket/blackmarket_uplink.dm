@@ -12,8 +12,8 @@
 
 	/// How much money is inserted into the uplink.
 	var/money = 0
-	/// List of typepaths for "/datum/blackmarket_market"s that this uplink can access.
-	var/list/accessible_markets = list(/datum/blackmarket_market/blackmarket)
+	/// List of typepaths for "/datum/cargo_market/black"s that this uplink can access.
+	var/list/accessible_markets = list(/datum/cargo_market/black)
 	// Linked LTSRBT for uplink to send to.
 	var/obj/machinery/ltsrbt/target
 
@@ -68,12 +68,12 @@
 
 /obj/item/blackmarket_uplink/ui_data(mob/user)
 	var/list/data = list()
-	var/datum/blackmarket_market/market = viewing_market ? SSblackmarket.markets[viewing_market] : null
+	var/datum/cargo_market/black/market = viewing_market ? SSblackmarket.markets[viewing_market] : null
 	data["categories"] = market ? market.categories : null
 	data["delivery_methods"] = list()
 	if(market)
 		for(var/delivery in market.shipping)
-			data["delivery_methods"] += list(list("name" = delivery, "price" = market.shipping[delivery]))
+			data["delivery_methods"] += list(list("name" = delivery, "cost" = market.shipping[delivery]))
 	data["money"] = money
 	data["buying"] = buying
 	data["items"] = list()
@@ -81,13 +81,13 @@
 	data["viewing_market"] = viewing_market
 	if(viewing_category && market)
 		if(market.available_items[viewing_category])
-			for(var/datum/blackmarket_item/I in market.available_items[viewing_category])
+			for(var/datum/supply_pack/blackmarket/I in market.available_items[viewing_category])
 				if(I.available)
 					data["items"] += list(list(
 						"id" = I.type,
 						"name" = I.name,
-						"cost" = I.price,
-						"amount" = I.unlimited ? "INF" : I.stock,
+						"cost" = I.cost,
+						"amount" = I.stock == INFINITY ? "INF" : I.stock,
 						"desc" = I.desc || I.name
 					))
 	return data
@@ -98,7 +98,7 @@
 	data["ltsrbt_built"] = target
 	data["markets"] = list()
 	for(var/M in accessible_markets)
-		var/datum/blackmarket_market/BM = SSblackmarket.markets[M]
+		var/datum/cargo_market/black/BM = SSblackmarket.markets[M]
 		data["markets"] += list(list(
 			"id" = M,
 			"name" = BM.name
@@ -151,7 +151,7 @@
 			if(isnull(selected_item))
 				buying = FALSE
 				return
-			var/datum/blackmarket_market/market = SSblackmarket.markets[viewing_market]
+			var/datum/cargo_market/black/market = SSblackmarket.markets[viewing_market]
 			market.purchase(selected_item, viewing_category, params["method"], src, usr)
 
 			buying = FALSE

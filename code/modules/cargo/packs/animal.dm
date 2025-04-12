@@ -1,5 +1,5 @@
 /datum/supply_pack/animal
-	group = "Animals"
+	category = "Animals"
 	crate_type = /obj/structure/closet/crate/critter
 	no_bundle = TRUE
 

@@ -51,12 +51,12 @@
 
 	/// The percentage of the item's value which is shaved off after each unit is sold, compounding multiplicatively. This recovers over time.
 	/// If items are sold in bulk (i.e., 2 or 3 or 10 at a time), the total payout is the same as if they were sold individually, before rounding.
-	/// Even without any items previously sold, the sale price may be slightly smaller than the "base" price, due to the math attempting to remain
+	/// Even without any items previously sold, the sale cost may be slightly smaller than the "base" cost, due to the math attempting to remain
 	/// correct even when less than a whole unit is sold.
-	/// If set to 0, the price is static.
+	/// If set to 0, the cost is static.
 	var/elasticity_coeff = 0.01
-	/// The amount of time it takes for the sale price of the export to recover from a single unit sold.
-	/// If set to 0, the price will never recover.
+	/// The amount of time it takes for the sale cost of the export to recover from a single unit sold.
+	/// If set to 0, the cost will never recover.
 	var/recovery_ds = 5 MINUTES
 
 	var/list/export_types = list()	// Type of the exported object. If none, the export datum is considered base type.
@@ -118,7 +118,7 @@
 	var/the_cost = get_cost(O, apply_elastic)
 	///Quantity of the object in question.
 	var/amount = get_amount(O)
-	///Utilized in the pricetag component. Splits the object's profit when it has a pricetag by the specified amount.
+	///Utilized in the costtag component. Splits the object's profit when it has a costtag by the specified amount.
 	var/profit_ratio = 0
 
 	if(amount <= 0 || the_cost <= 0)
@@ -138,8 +138,8 @@
 
 /datum/export/proc/calc_total_payout(atoms_list = list())
 	var/total_payout = 0
-	for(var/atom/priced_atom in atoms_list)
-		total_payout += get_cost(priced_atom)
+	for(var/atom/costd_atom in atoms_list)
+		total_payout += get_cost(costd_atom)
 	return total_payout
 
 /datum/export/proc/get_payout_text()

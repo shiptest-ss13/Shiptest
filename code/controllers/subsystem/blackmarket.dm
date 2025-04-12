@@ -11,18 +11,18 @@ SUBSYSTEM_DEF(blackmarket)
 	)
 
 	/// List of all existing markets.
-	var/list/datum/blackmarket_market/markets		= list()
+	var/list/datum/cargo_market/black/markets		= list()
 	/// List of existing ltsrbts.
 	var/list/obj/machinery/ltsrbt/telepads			= list()
 	/// Currently queued purchases.
 	var/list/queued_purchases 						= list()
 
 /datum/controller/subsystem/blackmarket/Initialize(timeofday)
-	for(var/market in subtypesof(/datum/blackmarket_market))
+	for(var/market in subtypesof(/datum/cargo_market/black))
 		markets[market] += new market
 
-	for(var/item in subtypesof(/datum/blackmarket_item))
-		var/datum/blackmarket_item/I = new item()
+	for(var/item in subtypesof(/datum/supply_pack/blackmarket))
+		var/datum/supply_pack/blackmarket/I = new item()
 		if(!I.item)
 			continue
 
@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(blackmarket)
 
 		qdel(I)
 	for(var/market in markets)
-		var/datum/blackmarket_market/market_to_cycle = markets[market]
+		var/datum/cargo_market/black/market_to_cycle = markets[market]
 		market_to_cycle.cycle_stock()
 	. = ..()
 

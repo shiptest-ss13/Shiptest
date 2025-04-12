@@ -192,9 +192,9 @@
 		return supply_pack_data
 
 	for(var/datum/supply_pack/current_pack as anything in outpost_docked.market.supply_packs)
-		if(!supply_pack_data[current_pack.group])
-			supply_pack_data[current_pack.group] = list(
-				"name" = current_pack.group,
+		if(!supply_pack_data[current_pack.category])
+			supply_pack_data[current_pack.category] = list(
+				"name" = current_pack.category,
 				"packs" = list()
 			)
 		if((!current_pack.available))
@@ -203,7 +203,7 @@
 		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
 		if(current_pack.faction_locked && !same_faction)
 			continue
-		supply_pack_data[current_pack.group]["packs"] += list(list(
+		supply_pack_data[current_pack.category]["packs"] += list(list(
 			"name" = current_pack.name,
 			"cost" = current_pack.cost,
 			"discountedcost" = discountedcost ? discountedcost : null,

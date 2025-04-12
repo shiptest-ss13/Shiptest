@@ -78,9 +78,9 @@
 	data["max_order"] = CARGO_MAX_ORDER
 	data["supply_packs"] = list()
 	for(var/datum/supply_pack/current_pack in get_cargo_packs())
-		if(!data["supply_packs"][current_pack.group])
-			data["supply_packs"][current_pack.group] = list(
-				"name" = current_pack.group,
+		if(!data["supply_packs"][current_pack.category])
+			data["supply_packs"][current_pack.category] = list(
+				"name" = current_pack.category,
 				"packs" = list()
 			)
 		if((!current_pack.available))
@@ -91,10 +91,10 @@
 			continue
 		// If there is a description, use it. Otherwise use the pack's name.
 		var/desc = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : "")
-		data["supply_packs"][current_pack.group]["packs"] += list(list(
+		data["supply_packs"][current_pack.category]["packs"] += list(list(
 			"ref" = REF(current_pack),
 			"name" = current_pack.name,
-			"group" = current_pack.group,
+			"category" = current_pack.category,
 			"cost" = current_pack.cost,
 			"discountedcost" = discountedcost ? discountedcost : null,
 			"discountpercent" = current_pack.faction_discount,
