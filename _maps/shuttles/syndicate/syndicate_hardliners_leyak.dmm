@@ -410,6 +410,26 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/item/storage/toolbox/syndicate,
+/obj/item/radio/headset/alt,
+/obj/item/clothing/under/syndicate/gec{
+	pixel_x = 12;
+	pixel_y = 0
+	},
+/obj/item/clothing/under/syndicate/hardliners{
+	pixel_x = 13;
+	pixel_y = 8
+	},
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit{
+	pixel_x = 13;
+	pixel_y = -11
+	},
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/storage/backpack/industrial,
+/obj/item/clothing/head/hardhat/hardliners,
+/obj/item/clothing/suit/hazardvest/hardliners,
+/obj/item/storage/belt/utility,
+/obj/item/clothing/shoes/workboots,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "dS" = (
@@ -722,6 +742,30 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/security)
+"ha" = (
+/obj/structure/closet/wall/red/directional/north,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -3;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "hg" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3134,6 +3178,22 @@
 /area/ship/hallway/central)
 "Ok" = (
 /obj/structure/closet/wall/red/directional/north,
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
 "Ot" = (
@@ -4203,6 +4263,8 @@
 	pixel_y = 8;
 	dir = 4
 	},
+/obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "ZI" = (
@@ -4551,7 +4613,7 @@ zF
 us
 bP
 vx
-Ok
+ha
 xs
 tQ
 hu
