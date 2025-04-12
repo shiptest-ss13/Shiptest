@@ -29,7 +29,7 @@
 
 /datum/buildmode_mode/fill/handle_click(client/target_client, params, obj/object)
 	if(isnull(objholder))
-		to_chat(target_client, "<span class='warning'>Select an object type first.</span>")
+		to_chat(target_client, span_warning("Select an object type first."))
 		deselect_region()
 		return
 	..()

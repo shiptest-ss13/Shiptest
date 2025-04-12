@@ -2,19 +2,9 @@
 	layer = TURF_PLATING_DECAL_LAYER
 	icon_state = "corner_white"
 
-/obj/effect/turf_decal/corner/Initialize()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
-		color = "#[random_short_color()]"
-	. = ..()
-
 /obj/effect/turf_decal/trimline
 	layer = TURF_PLATING_DECAL_LAYER
 	icon_state = "trimline_box"
-
-/obj/effect/turf_decal/trimline/Initialize()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
-		color = "#[random_short_color()]"
-	. = ..()
 
 //forgive me for my sins
 #define TURF_DECAL_COLOR_HELPER(color_name, tile_color, tile_alpha)		\
