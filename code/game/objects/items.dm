@@ -883,7 +883,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(isturf(location))
 		location.hotspot_expose(flame_heat, 5)
 		var/turf/open/open_location = loc // NOT the location variable used earlier else cigarettes in mouths start fires
-		if(isopenturf(location) && open_location.flammability >= 1 && prob(open_location.flammability))
+		if(isopenturf(loc) && open_location.flammability >= 1 && prob(open_location.flammability))
 			open_location.ignite_turf(2) // if there's enough flammability for a fire to sustain itself..
 
 /obj/item/proc/ignition_effect(atom/A, mob/user)
