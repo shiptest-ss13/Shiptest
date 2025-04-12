@@ -92,24 +92,26 @@
 	else if(href_list["forceevent"])
 		if(!check_rights(R_FUN))
 			return
-		var/datum/round_event_control/E = locate(href_list["forceevent"]) in SSevents.control
-		if(E)
-			E.admin_setup(usr)
-			var/datum/round_event/event = E.run_event(event_cause = "admins")
-			if(event.announce_when>0)
-				event.processing = FALSE
-				var/prompt = alert(usr, "Would you like to alert the crew?", "Alert", "Yes", "No", "Cancel")
-				switch(prompt)
-					if("Yes")
-						event.announce_chance = 100
-					if("Cancel")
-						event.kill()
-						return
-					if("No")
-						event.announce_chance = 0
-				event.processing = TRUE
-			message_admins("[key_name_admin(usr)] has triggered an event. ([E.name])")
-			log_admin("[key_name(usr)] has triggered an event. ([E.name])")
+		var/datum/round_event_control/event = locate(href_list["forceevent"]) in SSevents.control
+		if(!event)
+			return
+
+		var/announce_chance = 0
+		var/prompt = alert(usr, "Would you like to alert the crew?", "Alert", "Yes", "No")
+		switch(prompt)
+			if("Yes")
+				announce_chance = 100
+			if("No")
+				announce_chance = 0
+
+		if(length(event.admin_setup))
+			for(var/datum/event_admin_setup/admin_setup_datum as anything in event.admin_setup)
+				if(admin_setup_datum.prompt_admins() == ADMIN_CANCEL_EVENT)
+					return
+
+		event.run_event(announce_chance_override = announce_chance, admin_forced = TRUE)
+		message_admins("[key_name_admin(usr)] has triggered an event. ([event.name])")
+		log_admin("[key_name(usr)] has triggered an event. ([event.name])")
 		return
 
 	else if(href_list["editrightsbrowser"])

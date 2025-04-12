@@ -23,4 +23,4 @@
 
 /datum/round_event/high_priority_bounty/start()
 	if(priority_bounty)
-		priority_bounty.cost = priority_bounty.cost * 3
+		priority_bounty.true_cost = priority_bounty.cost * 3
