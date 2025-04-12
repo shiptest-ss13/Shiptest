@@ -2596,6 +2596,8 @@
 /area/ship/cargo)
 "FQ" = (
 /obj/machinery/autolathe,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/twenty,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ga" = (
@@ -3570,30 +3572,6 @@
 "Sf" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/cargo)
-"So" = (
-/obj/structure/closet/wall/red/directional/north,
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 5;
-	pixel_y = 8
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 8;
-	pixel_y = -1
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -3;
-	pixel_y = -1
-	},
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/crew/dorm)
 "Su" = (
 /obj/effect/turf_decal/siding{
 	color = "#730622";
@@ -4249,6 +4227,30 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Zr" = (
+/obj/structure/closet/wall/red/directional/north,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -3;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "Zz" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -4627,7 +4629,7 @@ zF
 us
 bP
 vx
-So
+Zr
 xs
 tQ
 hu
