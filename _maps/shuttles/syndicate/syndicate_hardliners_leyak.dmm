@@ -377,11 +377,17 @@
 /area/ship/engineering/engines)
 "dF" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
-/obj/structure/chair/comfy/red/corpo/directional/north,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
+/mob/living/simple_animal/hostile/carp/megacarp{
+	faction = list("neutral","playerSyndicate");
+	environment_smash = 0;
+	desc = "A ferocious, fang bearing creature that resembles a shark. This one has beady, shiny eyes and a slight grin."
+	},
+/obj/structure/bed/dogbed,
+/obj/item/toy/beach_ball,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "dJ" = (
@@ -1087,6 +1093,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/obj/item/pen,
+/obj/item/pen,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "lo" = (
@@ -1230,30 +1241,6 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
-"nc" = (
-/obj/structure/closet/wall/red/directional/north,
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 5;
-	pixel_y = 8
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = 8;
-	pixel_y = -1
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
-	pixel_x = -3;
-	pixel_y = -1
-	},
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/obj/item/clothing/head/soft/cybersun,
-/turf/open/floor/carpet/nanoweave,
-/area/ship/crew/dorm)
 "nd" = (
 /obj/docking_port/stationary{
 	dwidth = 15;
@@ -1936,6 +1923,26 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security)
+"ws" = (
+/obj/structure/closet/wall/red/directional/north,
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
+/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/turf/open/floor/carpet/nanoweave,
+/area/ship/crew/dorm)
 "wH" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -3191,22 +3198,26 @@
 /area/ship/hallway/central)
 "Ok" = (
 /obj/structure/closet/wall/red/directional/north,
-/obj/item/clothing/under/syndicate/hardliners,
-/obj/item/clothing/under/syndicate/hardliners,
-/obj/item/clothing/under/syndicate/hardliners,
-/obj/item/clothing/under/syndicate/hardliners,
-/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
-/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
-/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
-/obj/item/clothing/under/syndicate/hardliners/jumpsuit,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/gloves/combat,
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = 8;
+	pixel_y = -1
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/clothing/suit/hooded/wintercoat/security/hardliners{
+	pixel_x = -3;
+	pixel_y = -1
+	},
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
+/obj/item/clothing/head/soft/cybersun,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/dorm)
 "Ot" = (
@@ -4606,7 +4617,7 @@ OI
 OI
 jO
 vx
-Ok
+ws
 xs
 PJ
 vQ
@@ -4629,7 +4640,7 @@ zF
 us
 bP
 vx
-nc
+Ok
 xs
 tQ
 hu
