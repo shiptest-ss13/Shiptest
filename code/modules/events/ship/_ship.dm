@@ -8,11 +8,8 @@
 
 /datum/round_event/ship/setup()
 	if(SSovermap.controlled_ships && length(SSovermap.controlled_ships))
-		target_ship = pick(SSovermap.controlled_ships)
-		message_admins("[target_ship] was selected for [src]")
-	else
-		return FALSE
-	return TRUE
+		return TRUE
+	return FALSE
 
 /datum/round_event/ship/announce_deadchat(random, cause)
 	deadchat_broadcast(" has just been[random ? " randomly" : ""] triggered[cause ? " by [cause]" : ""]!", "<b>[control.name]</b>. Located on [target_ship.name]", message_type=DEADCHAT_ANNOUNCEMENT) //STOP ASSUMING IT'S BADMINS!
