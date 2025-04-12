@@ -2,7 +2,7 @@
 	name = "Fax Spam"
 	typepath = /datum/round_event/fax_spam
 	weight = 10
-	max_occurrences = 1
+	max_occurrences = 2
 	min_players = 1
 	earliest_start = 5 MINUTES
 	requires_ship = TRUE
@@ -55,17 +55,19 @@ Interstellar Frontier Mining Conglormerate Board of Directors"}
 
 /obj/item/paper/spam/help
 	name = "paper- 'HELP ME'"
-	icon_state = "scrap_bloodied"
 	sender = "HELP ME"
 	default_raw_text = {"HEEEEEEEEELP
 
 HEEEEEEEEEEEEELP ME"}
 
 /obj/item/paper/spam/btttzzz
+	name = "important message"
+	sender = "unknown sender"
 	default_raw_text = "{<p>░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░<br>░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░<br>░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░<br>░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░<br>░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░<br>█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█<br>█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█<br>░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░<br>░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░<br>░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░<br>░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░<br>░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░<br>░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░<br>░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░<br>░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░</p> </span>}"
 
 /obj/item/paper/spam/pgf_marine_test
-	name = "PAN-GEZENA MARINE CORP APTITUDE TEST"
+	name = "Aptitude Test"
+	sender = "Pan-Gezeanan Mariner Cores Recruitment Office"
 	default_raw_text = {"<center>
 <h1>PAN-GEZENA MARINE CORP APTITUDE TEST</h1>
 <h2>Using the crayon provided, join the two dots.<br> Your recruiter can help you.<br> You have one hour to complete.</h2>
@@ -76,6 +78,8 @@ HEEEEEEEEEEEEELP ME"}
 <pre>Ο\[_________________________________________\]Ο</pre>"}
 
 /obj/item/paper/spam/sus_activity
+	name = "NOTICE"
+	sender = "Outpost Authorithy"
 	default_raw_text = {"
 <h1><center><font color="red">! ! ATTENTION ! !</h1></center> </font>
 <b><center>SUSPICIOUS OR ILLICIT ACTIVITY HAS BEEN DETECTED FROM THIS FAX NETWORK. OUTGOING COMMUNICATIONS HAVE BEEN BLOCKED UNTIL FURTHER NOTICE.</center></b>

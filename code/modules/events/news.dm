@@ -20,6 +20,6 @@ GLOBAL_LIST_INIT(premade_news_stories, list(\
 /datum/round_event/news_report/start()
 	var/list/random_story = pick(GLOB.premade_news_stories)
 	GLOB.premade_news_stories -= random_story
-	GLOB.news_network.SubmitArticle(random_story["title"], random_story["msg"], "Colonial Announcement Network")
+	GLOB.news_network.SubmitArticle(random_story["msg"], "Unknown", "Colonial Announcement Network")
 
 
