@@ -33,6 +33,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "as" = (
@@ -139,6 +140,9 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
+/obj/item/folder/red,
+/obj/item/folder/red,
+/obj/item/folder/red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "bp" = (
@@ -197,6 +201,7 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 6
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "bJ" = (
@@ -398,6 +403,7 @@
 	dir = 1
 	},
 /obj/structure/chair/bench/red/directional/south,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "dR" = (
@@ -436,6 +442,7 @@
 /obj/item/clothing/suit/hazardvest/hardliners,
 /obj/item/storage/belt/utility,
 /obj/item/clothing/shoes/workboots,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "dS" = (
@@ -498,17 +505,15 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/armorycage,
-/obj/item/storage/toolbox/ammo/c9mm,
-/obj/item/storage/toolbox/ammo/c57,
-/obj/item/ammo_box/magazine/m12g_bulldog/empty,
-/obj/item/ammo_box/magazine/m12g_bulldog/empty,
-/obj/item/ammo_box/magazine/m12g_bulldog/empty,
-/obj/item/ammo_box/magazine/m12g_bulldog/empty,
-/obj/item/ammo_box/magazine/m12g_bulldog/empty,
-/obj/item/ammo_box/magazine/m12g_bulldog/empty,
 /obj/item/ammo_box/magazine/m57_39_asp,
 /obj/item/ammo_box/magazine/m57_39_asp,
 /obj/item/ammo_box/magazine/m57_39_asp,
+/obj/item/ammo_box/magazine/m12g_bulldog/slug,
+/obj/item/ammo_box/magazine/m12g_bulldog/slug,
+/obj/item/ammo_box/magazine/m12g_bulldog/slug,
+/obj/item/ammo_box/magazine/m12g_bulldog/slug,
+/obj/item/ammo_box/magazine/m12g_bulldog/slug,
+/obj/item/ammo_box/magazine/m12g_bulldog/slug,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "eA" = (
@@ -516,7 +521,6 @@
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
 	},
-/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/science/workshop)
 "eD" = (
@@ -586,7 +590,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "fj" = (
-/obj/structure/closet/wall/red/directional/north,
 /obj/item/clothing/under/syndicate/hardliners/jumpsuit{
 	pixel_x = -9;
 	pixel_y = 9
@@ -615,6 +618,10 @@
 /obj/item/melee/knife/survival,
 /obj/item/flashlight/seclite,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/closet/secure_closet/wall/directional/north{
+	icon_state = "sec_wall";
+	req_access_txt = list(48)
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science/workshop)
 "fq" = (
@@ -894,21 +901,17 @@
 	dir = 8
 	},
 /obj/structure/rack,
-/obj/item/storage/box/ammo/a12g_slug{
-	pixel_x = -10;
-	pixel_y = -1
+/obj/item/storage/toolbox/ammo/a12g_slug{
+	pixel_x = -7;
+	pixel_y = 0
 	},
-/obj/item/storage/box/ammo/a12g_slug{
-	pixel_x = 9;
-	pixel_y = -1
+/obj/item/storage/toolbox/ammo/c57{
+	pixel_x = 8;
+	pixel_y = 0
 	},
-/obj/item/storage/box/ammo/a12g_slug{
-	pixel_x = -8;
+/obj/item/storage/toolbox/ammo/c9mm{
+	pixel_x = 0;
 	pixel_y = 10
-	},
-/obj/item/storage/box/ammo/a12g_slug{
-	pixel_x = 9;
-	pixel_y = 9
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -966,16 +969,15 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "jT" = (
-/obj/machinery/door/airlock/security{
-	dir = 4;
-	name = "Gear Room";
-	req_access = list(1)
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/airlock/security{
+	dir = 4;
+	name = "Gear Room"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -1196,6 +1198,7 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen)
 "mL" = (
@@ -1556,6 +1559,14 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/airalarm/directional/south,
+/obj/item/paper_bin{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_x = 0;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "qq" = (
@@ -1692,7 +1703,7 @@
 	dir = 1
 	},
 /obj/structure/closet/syndicate/personal{
-	name = "Captain's closet";
+	name = "Sergeant's closet";
 	populate = 0
 	},
 /obj/item/storage/guncase/rattlesnake{
@@ -1720,6 +1731,13 @@
 	},
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/machinery/light/directional/south,
+/obj/item/clothing/shoes/combat{
+	pixel_x = 0;
+	pixel_y = -7
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/megaphone,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "sM" = (
@@ -1781,6 +1799,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/corner{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "uA" = (
@@ -1806,6 +1825,19 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"vh" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 4
+	},
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/east,
+/turf/open/floor/plasteel/mono/white,
+/area/ship/security)
 "vm" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half,
 /obj/effect/turf_decal/spline/plain/opaque/syndiered{
@@ -2013,17 +2045,16 @@
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "xJ" = (
-/obj/machinery/door/airlock/public/glass{
-	req_ship_access = 1;
-	name = "Gear Room";
-	req_access = list(1)
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/public/glass{
+	req_ship_access = 1;
+	name = "Gear Room"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "xO" = (
@@ -2143,7 +2174,6 @@
 /obj/item/clothing/head/helmet/space/syndicate/black/green,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/machinery/light/small/directional/south,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
@@ -2224,6 +2254,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "AJ" = (
@@ -2286,15 +2317,17 @@
 	},
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/radio/headset/syndicate/alt,
-/obj/structure/closet/syndicate/personal{
-	name = "supply closet";
-	populate = 0
-	},
 /obj/machinery/light/small/directional/south,
 /obj/machinery/light_switch{
 	pixel_x = 10;
 	pixel_y = -20;
 	dir = 1
+	},
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "syndicate";
+	name = "supply locker";
+	req_access = list(1)
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
@@ -2449,11 +2482,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Dr" = (
-/obj/machinery/door/airlock/security{
-	dir = 4;
-	name = "Gear Room";
-	req_access = list(1)
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2468,6 +2496,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/door/airlock/security{
+	dir = 4;
+	name = "Gear Room"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -2629,6 +2661,7 @@
 /obj/machinery/autolathe,
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/twenty,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ga" = (
@@ -2644,6 +2677,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Gc" = (
@@ -2945,6 +2979,19 @@
 	pixel_y = 7
 	},
 /obj/item/radio/headset/syndicate/alt/captain,
+/obj/item/clothing/under/syndicate/hardliners/officer{
+	pixel_x = -10;
+	pixel_y = -9
+	},
+/obj/item/clothing/gloves/combat{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/megaphone{
+	pixel_x = 0;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "Lg" = (
@@ -3043,7 +3090,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/directional/north,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
 "LF" = (
@@ -3266,6 +3313,7 @@
 	pixel_x = 0;
 	pixel_y = 28
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "OC" = (
@@ -3310,10 +3358,6 @@
 	pixel_x = 9;
 	pixel_y = -5
 	},
-/obj/structure/closet/syndicate/personal{
-	name = "armoring closet";
-	populate = 0
-	},
 /obj/item/clothing/suit/armor/hardliners{
 	pixel_x = 10;
 	pixel_y = 0
@@ -3321,6 +3365,12 @@
 /obj/item/clothing/suit/armor/hardliners{
 	pixel_x = -9;
 	pixel_y = -1
+	},
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "syndicate";
+	name = "armoring locker";
+	req_access = list(1)
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
@@ -3770,6 +3820,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "TB" = (
@@ -4003,6 +4054,7 @@
 /area/ship/hallway/central)
 "Xt" = (
 /obj/structure/chair/bench/red/directional/north,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
 "Xz" = (
@@ -4292,6 +4344,8 @@
 	},
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
+/obj/item/attachment/rail_light,
+/obj/item/attachment/bayonet,
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "ZI" = (
@@ -5008,7 +5062,7 @@ RN
 It
 wH
 bZ
-bZ
+vh
 gW
 OT
 LF
