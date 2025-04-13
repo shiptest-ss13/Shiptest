@@ -349,7 +349,7 @@
 	if(sawn_off)
 		sawoff(forced = TRUE)
 	if(slot_flags & ITEM_SLOT_SUITSTORE)
-		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, src)
+		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
