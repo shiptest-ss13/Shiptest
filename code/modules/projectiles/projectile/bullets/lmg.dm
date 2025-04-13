@@ -50,6 +50,7 @@
 	var/anti_armour_damage = 50
 	ricochet_chance = 0 // Superheated tungsten rod - I'd like to imagine it's impossible for it to ricochet
 	speed = 0.4 // Railgun, go fast
+
 /obj/projectile/bullet/p50/penetrator/sabot/on_hit(atom/target, blocked = FALSE)
 	..()
 	if(pierces > 1)
