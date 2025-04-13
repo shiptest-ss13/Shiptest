@@ -296,10 +296,3 @@
 	l_hand = /obj/item/gun/ballistic/automatic/hmg/shredder // this doesnt even fit on the suit storage slot
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/m12_shredder=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
-
-/datum/outfit/job/frontiersmen/ert/sentry/mower
-	name = "ERT - Frontiersman Sentry (Mower LMG)"
-
-	suit_store = /obj/item/gun/ballistic/automatic/hmg/mower
-
-	backpack_contents = list(/obj/item/ammo_box/magazine/mower_lmg_308=2,/obj/item/ammo_box/a357=2,/obj/item/grenade/frag=1,/obj/item/radio=1)
