@@ -47,6 +47,7 @@
 */
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
+	var/fire_sound_extrarange = GUN_SOUND_EXTRARANGE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
 	var/dry_fire_text = "click"
@@ -347,6 +348,8 @@
 	build_firemodes()
 	if(sawn_off)
 		sawoff(forced = TRUE)
+	if(slot_flags & ITEM_SLOT_SUITSTORE)
+		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, src)
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -695,7 +698,7 @@
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE)
 	else
-		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound, GUN_SOUND_EXTRARANGE, GUN_SOUND_FALLOFF_EXPONENT)
+		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound, fire_sound_extrarange, GUN_SOUND_FALLOFF_EXPONENT)
 		if(message)
 			if(pointblank)
 				user.visible_message(

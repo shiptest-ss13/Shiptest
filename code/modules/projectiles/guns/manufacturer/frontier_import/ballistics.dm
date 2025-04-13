@@ -139,6 +139,7 @@
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
+
 		/obj/item/attachment/foldable_stock/spitter
 	)
 
@@ -339,7 +340,7 @@
 	empty_indicator = FALSE
 	sealed_magazine = TRUE
 	manufacturer = MANUFACTURER_IMPORT
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	has_safety = FALSE
 	safety = FALSE
 
@@ -402,7 +403,7 @@
 	unique_mag_sprites_for_variants = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_IMPORT
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 	allowed_ammo_types = list(
@@ -441,7 +442,7 @@
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum
 
-
+//TODO: REMOVE
 /obj/item/gun/ballistic/automatic/hmg/mower
 	name = "\improper Mower"
 	desc = "Unnamed Frontiersmen LMG. Chambered in .308."

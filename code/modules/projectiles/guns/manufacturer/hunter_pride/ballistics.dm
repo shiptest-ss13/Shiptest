@@ -339,7 +339,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/dual,
@@ -459,7 +459,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 	sawn_off = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 
 	wield_slowdown = 0.15
 	wield_delay = 0.3 SECONDS //OP? maybe
@@ -713,6 +713,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	unique_attachments = list(
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
+		/obj/item/attachment/muzzle_brake,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -1055,7 +1056,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 
 	weapon_weight = WEAPON_MEDIUM
 

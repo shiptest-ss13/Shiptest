@@ -11,7 +11,7 @@
 	force = 10
 	modifystate = TRUE
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser)
 	internal_magazine = TRUE //prevents you from giving it an OP cell - WS Edit
 	default_ammo_type = /obj/item/stock_parts/cell/pulse
@@ -38,7 +38,7 @@
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	icon_state = "pulse_carbine"
 	item_state = null
 	internal_magazine = FALSE
@@ -71,7 +71,7 @@
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	icon_state = "pulse_pistol"
 	item_state = "gun"
 	default_ammo_type = /obj/item/stock_parts/cell/pulse/pistol

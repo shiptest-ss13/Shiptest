@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/sling, /obj/item/attachment/ammo_counter)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/muzzle_brake, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -20,7 +20,6 @@
 
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
 	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
@@ -97,6 +96,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "asp"
 	item_state = "sa_generic"
+
+	light_range = 3
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m57_39_asp
 	allowed_ammo_types = list(
@@ -231,7 +232,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	fire_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
 	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
@@ -300,6 +300,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 	icon_state = "himehabu"
 	item_state = "sa_generic"
 
+	light_range = 1
+
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -312,6 +314,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake)
 		/obj/item/ammo_box/magazine/m22lr_himehabu,
 	)
 	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
+	suppressed_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
 
 	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
@@ -546,8 +549,6 @@ NO_MAG_GUN_HELPER(automatic/smg/sidewinder)
 
 	fire_delay = 1 SECONDS
 
-	slot_flags = ITEM_SLOT_BACK
-
 	show_magazine_on_sprite = TRUE
 	unique_mag_sprites_for_variants = TRUE
 	show_ammo_capacity_on_magazine_sprite = TRUE
@@ -643,7 +644,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/boomslang/indie)
 	w_class = WEIGHT_CLASS_BULKY
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
@@ -695,7 +696,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/taipan)
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
 	burst_size = 2
 	burst_delay = 0.1 SECONDS

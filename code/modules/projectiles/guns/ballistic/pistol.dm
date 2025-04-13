@@ -28,7 +28,6 @@
 
 	refused_attachments = list(
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling
 		)
 
 

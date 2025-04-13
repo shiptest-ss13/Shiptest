@@ -17,7 +17,7 @@
 	icon_state = "esniper"
 	item_state = "esniper"
 	fire_sound = 'sound/weapons/beam_sniper.ogg'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	force = 15
 	custom_materials = null
 	recoil = 4
