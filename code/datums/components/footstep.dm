@@ -96,7 +96,7 @@
 		return
 	playsound(T, pick(footstep_sounds[turf_footstep][1]), footstep_sounds[turf_footstep][2] * volume, TRUE, footstep_sounds[turf_footstep][3] + e_range, falloff_distance = 1)
 
-/datum/component/footstep/proc/play_humanstep()
+/datum/component/footstep/proc/play_humanstep(mob/living/carbon/human/source, atom/oldloc, direction)
 	SIGNAL_HANDLER
 
 	if (SHOULD_DISABLE_FOOTSTEPS(parent))
@@ -108,7 +108,7 @@
 	var/mob/living/carbon/human/H = parent
 	var/feetCover = (H.wear_suit && (H.wear_suit.body_parts_covered & FEET)) || (H.w_uniform && (H.w_uniform.body_parts_covered & FEET))
 
-	play_fov_effect(source, 5, "footstep", direction, ignore_self = TRUE)
+	play_fov_effect(H, 5, "footstep", direction, ignore_self = TRUE)
 	if(H.shoes || feetCover) //are we wearing shoes
 		playsound(T, pick(GLOB.footstep[T.footstep][1]),
 			GLOB.footstep[T.footstep][2] * volume,
