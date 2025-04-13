@@ -44,6 +44,8 @@
 	var/click_cooldown_override = 0
 	///If true, overrides the bouncing sfx from the turf to this one
 	var/list/bounce_sfx_override
+	///Multiplier for weapon gun_wear
+	var/wear_modifier = 1
 
 	///What this casing can be stacked into.
 	var/obj/item/ammo_box/magazine/stack_type = /obj/item/ammo_box/magazine/ammo_stack
@@ -53,7 +55,7 @@
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, "<span class='notice'>You scribble illegibly on the [src]!</span>")
+			to_chat(user, span_notice("You scribble illegibly on the [src]!"))
 			return
 		var/inputvalue = stripped_input(user, "What would you like to label the round?", "Bullet Labelling", "", MAX_NAME_LEN)
 

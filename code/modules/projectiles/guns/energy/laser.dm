@@ -226,6 +226,6 @@
 /obj/item/gun/energy/laser/hitscanpistol/examine_more(mob/user)
 	. = ..()
 	if(in_range(src, user) || isobserver(user))
-		. += "<span class='notice'>You examine [src] closer. Under the grip is a small inscription: \"NT CN SVALINN 462\".</span>"
+		. += span_notice("You examine [src] closer. Under the grip is a small inscription: \"NT CN SVALINN 462\".")
 	else
-		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
+		. += span_warning("You try to examine [src] closer, but you're too far away.")

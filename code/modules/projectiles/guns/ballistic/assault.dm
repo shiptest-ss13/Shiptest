@@ -36,6 +36,10 @@
 		/obj/item/attachment/ammo_counter
 	)
 
+	wear_minor_threshold = 100
+	wear_major_threshold = 300
+	wear_maximum = 600
+
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
@@ -107,6 +111,7 @@
 	icon_state = "skm_pirate"
 	item_state = "skm_pirate"
 	manufacturer = MANUFACTURER_NONE
+	wear_rate = 2
 
 /obj/item/gun/ballistic/automatic/assault/skm/inteq
 	name = "\improper SKM-44"
@@ -162,4 +167,4 @@
 	spread_unwielded = 15
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/process_other(atom/target, mob/living/user, message = TRUE, flag, params = null, zone_override = "", bonus_spread = 0)
-	to_chat(user, "<span class='danger'>You hear a strange sound from the DMA unit. It doesn't appear to be operational.</span>")
+	to_chat(user, span_danger("You hear a strange sound from the DMA unit. It doesn't appear to be operational."))

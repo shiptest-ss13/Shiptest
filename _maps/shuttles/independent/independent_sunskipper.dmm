@@ -356,56 +356,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
-"dG" = (
-/obj/structure/closet/wall/white/directional/south{
-	name = "Seeds Storage";
-	color = "#50C878";
-	storage_capacity = 40
-	},
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 8
-	},
-/obj/item/seeds/apple,
-/obj/item/seeds/banana,
-/obj/item/seeds/berry,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/carrot,
-/obj/item/seeds/carrot/parsnip,
-/obj/item/seeds/chanter,
-/obj/item/seeds/cherry,
-/obj/item/seeds/chili,
-/obj/item/seeds/chili/ice,
-/obj/item/seeds/cocoapod,
-/obj/item/seeds/cocoapod/vanillapod,
-/obj/item/seeds/coffee/robusta,
-/obj/item/seeds/corn,
-/obj/item/seeds/eggplant,
-/obj/item/seeds/garlic,
-/obj/item/seeds/grape,
-/obj/item/seeds/lemon,
-/obj/item/seeds/lime,
-/obj/item/seeds/onion,
-/obj/item/seeds/orange,
-/obj/item/seeds/peas,
-/obj/item/seeds/pineapple,
-/obj/item/seeds/plump,
-/obj/item/seeds/poppy,
-/obj/item/seeds/potato,
-/obj/item/seeds/potato/sweet,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/redbeet,
-/obj/item/seeds/seaweed,
-/obj/item/seeds/soya,
-/obj/item/seeds/sugarcane,
-/obj/item/seeds/tea/astra,
-/obj/item/seeds/tomato,
-/obj/item/seeds/watermelon,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/whitebeet,
-/obj/item/seeds/ambrosia,
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/hydroponics)
 "dW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -1550,6 +1500,56 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
+"sl" = (
+/obj/structure/closet/wall/white/directional/south{
+	name = "Seeds Storage";
+	color = "#50C878";
+	storage_capacity = 40
+	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
+	dir = 8
+	},
+/obj/item/seeds/apple,
+/obj/item/seeds/banana,
+/obj/item/seeds/berry,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/carrot,
+/obj/item/seeds/carrot/parsnip,
+/obj/item/seeds/chanter,
+/obj/item/seeds/cherry,
+/obj/item/seeds/chili,
+/obj/item/seeds/chili/ice,
+/obj/item/seeds/cocoapod,
+/obj/item/seeds/cocoapod/vanillapod,
+/obj/item/seeds/coffee/robusta,
+/obj/item/seeds/corn,
+/obj/item/seeds/eggplant,
+/obj/item/seeds/garlic,
+/obj/item/seeds/grape,
+/obj/item/seeds/lemon,
+/obj/item/seeds/lime,
+/obj/item/seeds/onion,
+/obj/item/seeds/orange,
+/obj/item/seeds/peas,
+/obj/item/seeds/pineapple,
+/obj/item/seeds/plump,
+/obj/item/seeds/poppy,
+/obj/item/seeds/potato,
+/obj/item/seeds/sweet_potato,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/redbeet,
+/obj/item/seeds/seaweed,
+/obj/item/seeds/soya,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/tea/astra,
+/obj/item/seeds/tomato,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/wheat,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/whitebeet,
+/obj/item/seeds/ambrosia,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/hydroponics)
 "sm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2098,32 +2098,6 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
-"zw" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/dept/cargo{
-	dir = 4
-	},
-/obj/structure/closet/crate/wooden{
-	name = "hunting gear crate"
-	},
-/obj/item/storage/guncase/m12,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/melee/knife/hunting,
-/obj/item/melee/knife/hunting,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/head/hardhat/orange,
-/obj/item/clothing/head/hardhat/orange,
-/obj/effect/mapping_helpers/crate_shelve,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "zC" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
@@ -2734,20 +2708,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
-"Hj" = (
-/obj/machinery/power/solar_control{
-	dir = 8
-	},
-/obj/structure/cable/orange{
-	icon_state = "1-2"
-	},
-/obj/structure/railing,
-/obj/machinery/light/small/directional/east,
-/obj/structure/cable/orange{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "Hq" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -3821,6 +3781,32 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
+"Vz" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/dept/cargo{
+	dir = 4
+	},
+/obj/structure/closet/crate/wooden{
+	name = "hunting gear crate"
+	},
+/obj/item/storage/guncase/m12,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/melee/knife/hunting,
+/obj/item/melee/knife/hunting,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/head/hardhat/orange,
+/obj/effect/mapping_helpers/crate_shelve,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "VE" = (
 /obj/machinery/button/door{
 	pixel_x = -21;
@@ -4120,6 +4106,20 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"Yr" = (
+/obj/machinery/computer/solar_control{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/railing,
+/obj/machinery/light/small/directional/east,
+/obj/structure/cable/orange{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "YF" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 4;
@@ -4395,7 +4395,7 @@ lK
 BA
 tr
 JY
-Hj
+Yr
 Gp
 BA
 Gd
@@ -4447,7 +4447,7 @@ BA
 mD
 NM
 xI
-dG
+sl
 Lp
 tJ
 Jf
@@ -4829,7 +4829,7 @@ Pa
 eR
 jo
 qG
-zw
+Vz
 kW
 uj
 HK
