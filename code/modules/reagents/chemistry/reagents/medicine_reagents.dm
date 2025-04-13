@@ -2409,7 +2409,7 @@
 		if(prob(40))
 			M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 
-	M.adjustStaminaLoss(-5, 0)
+	M.adjustStaminaLoss(-7, 0)
 
 	..()
 

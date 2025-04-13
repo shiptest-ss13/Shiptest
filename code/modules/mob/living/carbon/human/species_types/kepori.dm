@@ -20,8 +20,8 @@
 	coldmod = 1.5
 
 	// Sprint vars
-	sprint_length = 50
-	sprint_length_max = 50
+	sprint_length = 80
+	sprint_length_max = 80
 	sprint_regen_per_second = 2.5
 
 	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 35

@@ -534,16 +534,14 @@
 
 /mob/living/carbon/update_stamina()
 	var/stam = getStaminaLoss()
-	if(stam > DAMAGE_PRECISION && (health - stam) <= crit_threshold && !stat)		//WS edit - Stamina stacks with health damage
+	update_health_hud()
+	if(stam > DAMAGE_PRECISION && (health - stam) <= crit_threshold && !stat)
 		enter_stamcrit()
-	else if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, STAMINA))
+	else if(HAS_TRAIT_FROM(src, TRAIT_FLOORED, STAMINA))
 		REMOVE_TRAIT(src, TRAIT_INCAPACITATED, STAMINA)
-		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, STAMINA)
 		REMOVE_TRAIT(src, TRAIT_FLOORED, STAMINA)
-		REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, STAMINA)
 	else
 		return
-	update_health_hud()
 
 /mob/living/carbon/update_sight()
 	if(!client)
