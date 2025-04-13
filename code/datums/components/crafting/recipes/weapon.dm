@@ -259,6 +259,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/* Kept for SRM use */
 /datum/crafting_recipe/bonespear
 	name = "Bone Spear"
 	always_availible = FALSE
