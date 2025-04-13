@@ -187,7 +187,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#F0E68C"
 	tastes = list("egg" = 1)
-	foodtype = MEAT | GRAIN
+	foodtype = MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/spidereggs
 	name = "spider eggs"
