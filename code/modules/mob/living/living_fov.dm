@@ -119,7 +119,7 @@
 				fov_image.transform = matrix
 			fov_image.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		mob_client.images += fov_image
-		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(remove_image_from_client), fov_image, mob_client), time)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_image_from_client), fov_image, mob_client), time)
 
 /atom/movable/screen/fov_blocker
 	icon = 'icons/effects/fov/field_of_view.dmi'
