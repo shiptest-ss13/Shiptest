@@ -70,7 +70,7 @@
 		return
 	return T
 
-/datum/component/footstep/proc/play_simplestep()
+/datum/component/footstep/proc/play_simplestep(mob/living/source, atom/oldloc, direction)
 	SIGNAL_HANDLER
 
 	if (SHOULD_DISABLE_FOOTSTEPS(parent))
@@ -79,6 +79,7 @@
 	var/turf/open/T = prepare_step()
 	if(!T)
 		return
+	play_fov_effect(source, 5, "footstep", direction, ignore_self = TRUE)
 	if(isfile(footstep_sounds) || istext(footstep_sounds))
 		playsound(T, footstep_sounds, volume, falloff_distance = 1)
 		return

@@ -96,7 +96,7 @@
 	update_fov()
 
 /// Plays a visual effect representing a sound cue for people with vision obstructed by FOV or blindness
-/proc/play_fov_effect(atom/center, range, icon_state, dir = SOUTH, ignore_self = FALSE, angle = 0)
+/proc/play_fov_effect(atom/center, range, icon_state, dir = SOUTH, ignore_self = FALSE, angle = 0, time = 1.5 SECONDS, list/override_list)
 	var/turf/anchor_point = get_turf(center)
 	var/image/fov_image
 	for(var/mob/living/living_mob in get_hearers_in_view(range, center))
@@ -119,7 +119,7 @@
 				fov_image.transform = matrix
 			fov_image.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		mob_client.images += fov_image
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_image_from_client, fov_image, mob_client), 30)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_image_from_client, fov_image, mob_client), time)
 
 /atom/movable/screen/fov_blocker
 	icon = 'icons/effects/fov/field_of_view.dmi'
