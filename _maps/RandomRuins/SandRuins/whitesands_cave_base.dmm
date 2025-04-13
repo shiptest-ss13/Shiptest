@@ -687,6 +687,7 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "hG" = (
@@ -1760,6 +1761,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "uu" = (
@@ -1996,6 +1998,7 @@
 	pixel_y = 4;
 	pixel_x = -8
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "wC" = (
@@ -2133,6 +2136,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning/corner,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "yl" = (
@@ -3206,6 +3210,7 @@
 /obj/item/kirbyplants/fullysynthetic{
 	pixel_x = 8
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "Hu" = (
@@ -3648,12 +3653,10 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
 "MP" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
-	dir = 4
-	},
 /obj/effect/turf_decal/box,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -3663,6 +3666,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/plasma{
+	dir = 4;
+	name = "oxygen filter"
+	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/whitesands/cave_base/engi)
 "Na" = (
@@ -4839,10 +4846,10 @@ ux
 mh
 mh
 mh
-mh
-mh
-mh
-mh
+ux
+ux
+ux
+ux
 mh
 mh
 ux
@@ -4898,6 +4905,10 @@ mh
 mh
 mh
 mh
+ux
+ux
+ux
+ux
 mh
 mh
 mh
@@ -4905,15 +4916,11 @@ mh
 mh
 mh
 mh
+ux
+ux
+ux
 mh
-mh
-mh
-mh
-mh
-mh
-mh
-mh
-mh
+ux
 mh
 mh
 ux
@@ -4959,6 +4966,8 @@ mh
 mh
 mh
 mh
+ux
+ux
 mh
 mh
 mh
@@ -4968,10 +4977,8 @@ mh
 mh
 mh
 mh
-mh
-mh
-mh
-mh
+ux
+ux
 mh
 mh
 mh
