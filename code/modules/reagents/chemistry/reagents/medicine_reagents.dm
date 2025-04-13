@@ -2410,7 +2410,6 @@
 			M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 
 	M.adjustStaminaLoss(-7, 0)
-
 	..()
 
 /datum/reagent/medicine/carfencadrizine/overdose_process(mob/living/M)

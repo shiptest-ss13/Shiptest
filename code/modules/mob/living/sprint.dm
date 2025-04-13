@@ -78,7 +78,7 @@
 /mob/living/carbon/human/adjustStaminaLoss(amount, updating_health, forced)
 	. = ..()
 	if(amount < 0 && amount >= -20)
-		adjust_sprint_left(amount * 0.25)
+		adjust_sprint_left(amount * -0.25)
 
 // Entering stamina critical will drain your sprint capacity entirely
 /mob/living/carbon/human/enter_stamcrit()
