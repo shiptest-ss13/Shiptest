@@ -22,7 +22,7 @@
 #define FLOOR_PLANE_RENDER_TARGET "FLOOR_PLANE"
 #define GAME_PLANE -4
 #define GAME_PLANE_RENDER_TARGET "GAME_PLANE"
-#define GAME_PLANE_FOV_HIDDEN -3
+#define GAME_PLANE_FOV_HIDDEN -4 // should be -3 if its a direct port but could not get it working and messes with layers
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 #define BLACKNESS_PLANE_RENDER_TARGET "BLACKNESS_PLANE"
 
