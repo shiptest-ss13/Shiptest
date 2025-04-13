@@ -26,7 +26,7 @@
 	icon_state = "frontiersmanranged"
 	ranged = 1
 	rapid = 2
-	rapid_fire_delay = 1.5
+	rapid_fire_delay = 1.5 SECONDS
 	retreat_distance = 5
 	minimum_distance = 5
 	projectilesound = 'sound/weapons/gun/pistol/mauler.ogg'
@@ -53,7 +53,8 @@
 	retreat_distance = 2
 	minimum_distance = 1
 	rapid = 10
-	rapid_fire_delay = 1
+	spread = 25
+	rapid_fire_delay = 0.1 SECONDS
 	projectilesound = 'sound/weapons/gun/smg/pounder.ogg'
 	casingtype = /obj/item/ammo_casing/c22lr
 	r_hand = /obj/item/gun/ballistic/automatic/smg/pounder
@@ -74,8 +75,9 @@
 	rapid = 4
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
-	rapid_fire_delay = 1
+	rapid_fire_delay = 0.1 SECONDS
 	r_hand = /obj/item/gun/energy/laser/wasp
+	spread = 12
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/wasp/neutered
 	weapon_drop_chance = 0
@@ -200,9 +202,10 @@
 	minimum_distance = 1
 	projectilesound = 'sound/weapons/laser4.ogg'
 	rapid = 5
+	spread = 12
 	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
-	rapid_fire_delay = 1
+	rapid_fire_delay = 0.1 SECONDS
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 	r_hand = /obj/item/gun/energy/laser/wasp
 
@@ -299,7 +302,7 @@
 	desc = "A horrifically still mass of plasteel and flesh. Its glare traverses the world, menace radiating off it as it aims a mesh of wood and steel."
 	casingtype = /obj/item/ammo_casing/a762_40
 	rapid = 4
-	rapid_fire_delay = 1
+	rapid_fire_delay = 0.1 SECONDS
 	projectilesound = 'sound/weapons/gun/rifle/skm.ogg'
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
 
