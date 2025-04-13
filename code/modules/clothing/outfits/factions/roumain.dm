@@ -10,6 +10,12 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_ROUMAIN)
+	var/list/crafting_recipe_types = list(
+		/datum/crafting_recipe/bonespear,
+		/datum/crafting_recipe/boneaxe
+	)
+	for(var/crafting_recipe_type in crafting_recipe_types)
+		H.mind.teach_crafting_recipe(crafting_recipe_type)
 
 // Assistant
 
