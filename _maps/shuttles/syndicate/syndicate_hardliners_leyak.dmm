@@ -1632,6 +1632,10 @@
 	pixel_x = -9;
 	pixel_y = -11
 	},
+/obj/item/megaphone{
+	pixel_x = 0;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "se" = (
@@ -2715,7 +2719,22 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -9;
+	pixel_y = 1
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -9;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "GB" = (
