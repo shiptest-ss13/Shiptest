@@ -124,6 +124,7 @@
 	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 	r_hand = /obj/item/gun/ballistic/rifle/illestren
+	rapid = 1
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals
 	icon_state = "frontiersmanrangedrifle_mask"
@@ -147,6 +148,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	r_hand = /obj/item/gun/ballistic/shotgun/brimstone
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
+	rapid = 1
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
@@ -249,7 +251,8 @@
 	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
-	r_hand = /obj/item/gun/ballistic/rifle/illestren
+	r_hand = /obj/item/gun/ballistic/rifle/
+	rapid = 1
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals
 	icon_state = "frontiersmanrangedmosin_mask"
