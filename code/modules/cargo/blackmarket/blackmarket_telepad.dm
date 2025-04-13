@@ -25,12 +25,12 @@
 	var/recharge_cooldown = 0
 	/// Base recharge time which is used to get recharge_time.
 	var/base_recharge_time = 20
-	/// Current /datum/blackmarket_purchase being recieved.
+	/// Current /datum/supply_order/blackmarket being recieved.
 	var/recieving
-	/// Current /datum/blackmarket_purchase being sent to the target uplink.
+	/// Current /datum/supply_order/blackmarket being sent to the target uplink.
 	var/transmitting
 	/// Queue for purchases that the machine should recieve and send.
-	var/list/datum/blackmarket_purchase/queue = list()
+	var/list/datum/supply_order/blackmarket/queue = list()
 
 /obj/machinery/ltsrbt/Initialize()
 	. = ..()
@@ -38,7 +38,7 @@
 /obj/machinery/ltsrbt/Destroy()
 	// Bye bye orders.
 	if(SSblackmarket.telepads.len)
-		for(var/datum/blackmarket_purchase/P in queue)
+		for(var/datum/supply_order/blackmarket/P in queue)
 			SSblackmarket.queue_item(P)
 	. = ..()
 
@@ -66,8 +66,8 @@
 
 	return ..()
 
-/// Adds /datum/blackmarket_purchase to queue unless the machine is free, then it sets the purchase to be instantly recieved
-/obj/machinery/ltsrbt/proc/add_to_queue(datum/blackmarket_purchase/purchase)
+/// Adds /datum/supply_order/blackmarket to queue unless the machine is free, then it sets the purchase to be instantly recieved
+/obj/machinery/ltsrbt/proc/add_to_queue(datum/supply_order/blackmarket/purchase)
 	if(!recharge_cooldown && !recieving && !transmitting)
 		recieving = purchase
 		return
@@ -83,7 +83,7 @@
 
 	var/turf/T = get_turf(src)
 	if(recieving)
-		var/datum/blackmarket_purchase/P = recieving
+		var/datum/supply_order/blackmarket/P = recieving
 
 		if(!P.item || ispath(P.item))
 			P.item = P.entry.spawn_item(T)
@@ -103,7 +103,7 @@
 		recharge_cooldown = recharge_time
 		return
 	else if(transmitting)
-		var/datum/blackmarket_purchase/P = transmitting
+		var/datum/supply_order/blackmarket/P = transmitting
 		if(!P.item)
 			QDEL_NULL(transmitting)
 		if(!(P.item in T.contents))

@@ -19,7 +19,7 @@ SUBSYSTEM_DEF(blackmarket)
 
 /datum/controller/subsystem/blackmarket/Initialize(timeofday)
 	for(var/market in subtypesof(/datum/cargo_market/black))
-		markets[market] += new market
+		markets += new market
 
 	for(var/item in subtypesof(/datum/supply_pack/blackmarket))
 		var/datum/supply_pack/blackmarket/I = new item()
@@ -33,14 +33,13 @@ SUBSYSTEM_DEF(blackmarket)
 			markets[M].add_item(item, FALSE)
 
 		qdel(I)
-	for(var/market in markets)
-		var/datum/cargo_market/black/market_to_cycle = markets[market]
-		market_to_cycle.cycle_stock()
+	for(var/datum/cargo_market/market in markets)
+		market.cycle_stock()
 	. = ..()
 
 /datum/controller/subsystem/blackmarket/fire(resumed)
 	while(length(queued_purchases))
-		var/datum/blackmarket_purchase/purchase = queued_purchases[1]
+		var/datum/supply_order/blackmarket/purchase = queued_purchases[1]
 		queued_purchases.Cut(1,2)
 
 		// Uh oh, uplink is gone. We will just keep the money and you will not get your order.
@@ -143,8 +142,8 @@ SUBSYSTEM_DEF(blackmarket)
 	sparks.attach(item)
 	sparks.start()
 
-/// Used to add /datum/blackmarket_purchase to queued_purchases var. Returns TRUE when queued.
-/datum/controller/subsystem/blackmarket/proc/queue_item(datum/blackmarket_purchase/P)
+/// Used to add /datum/supply_order/blackmarket to queued_purchases var. Returns TRUE when queued.
+/datum/controller/subsystem/blackmarket/proc/queue_item(datum/supply_order/blackmarket/P)
 	if(P.method == SHIPPING_METHOD_LTSRBT && !P.uplink.target)
 		return FALSE
 	queued_purchases += P

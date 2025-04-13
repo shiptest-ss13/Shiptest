@@ -17,6 +17,8 @@
 	var/datum/bank_account/paying_account
 	var/datum/cargo_market/market
 
+	/// Shipping method used to buy this item.
+	var/method
 	var/atom/landing_zone
 
 /datum/supply_order/New(list/supply_packs = list(), orderer, orderer_rank, orderer_ckey, paying_account, datum/cargo_market/market, atom/landing_zone)

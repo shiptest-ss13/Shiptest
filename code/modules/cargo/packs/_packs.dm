@@ -58,7 +58,41 @@
 
 /datum/supply_pack/New()
 	. = ..()
+	if(isnull(cost))
+		randomize_cost()
+	if(isnull(stock))
+		randomize_stock()
+	if(isnull(spawn_weighting))
+		if(availability_prob == 0 || availability_prob == 100)
+			spawn_weighting = FALSE
+		else
+			spawn_weighting = TRUE
 	base_cost = cost
+
+/// Used for spawning the wanted item, override if you need to do something special with the item.
+/datum/supply_pack/proc/spawn_item(loc)
+	return new item(loc)
+
+/datum/supply_pack/proc/randomize_cost()
+	cost = rand(cost_min, cost_max)
+
+/datum/supply_pack/proc/randomize_stock()
+	stock = rand(stock_min, stock_max)
+
+/datum/supply_pack/proc/cycle(cost = TRUE, availibility = TRUE, stock = FALSE, force_appear = FALSE)
+	if(cost)
+		randomize_cost()
+	if(stock)
+		randomize_stock()
+	if(availibility)
+		if(spawn_weighting ? prob(max(0, (availability_prob + (weight * 10)))) : prob(availability_prob))
+			available = TRUE
+			weight--
+		else
+			available = FALSE
+			weight++
+	if(force_appear)
+		available = TRUE
 
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C

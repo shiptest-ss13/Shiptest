@@ -30,6 +30,9 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 			continue
 		supply_packs += current_pack
 
+/datum/cargo_market/proc/cycle_stock()
+	return
+
 /datum/cargo_market/proc/make_order(mob/user, list/unprocessed_packs, atom/landing_zone)
 	while(unprocessed_packs.len > 0)
 		var/datum/supply_pack/initial_pack = unprocessed_packs[1]
@@ -70,6 +73,17 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 	SScargo.queue_item(order)
 	return TRUE
 
+/datum/cargo_market/proc/deliver_purchase(datum/supply_order/purchase)
+	switch(purchase.method)
+		if(SHIPPING_METHOD_HANGER)
+			if(istype(purchase.landing_zone, /obj/hangar_crate_spawner))
+				var/obj/hangar_crate_spawner/crate_spawner = purchase.landing_zone
+				crate_spawner.handle_order(purchase)
+			else
+				purchase.generate(get_turf(purchase.landing_zone))
+			SScargo.queued_purchases -= purchase
+			qdel(purchase)
+
 /datum/cargo_market/outpost
 	name = "outpost market"
 
@@ -93,7 +107,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(cycle_stock)), 60 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
-/datum/cargo_market/black/proc/cycle_stock()
+/datum/cargo_market/black/cycle_stock()
 	var/list/pair_items_to_handle = list()
 
 	for(var/category in available_items)
@@ -154,5 +168,93 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 			uplink.money -= cost
 			return TRUE
 		return FALSE
+
+/datum/cargo_market/black/deliver_purchase(datum/supply_order/order)
+	if(istype(order, /datum/supply_order/blackmarket))
+		var/datum/supply_order/blackmarket/purchase = order
+
+		switch(purchase.method)
+			// Find a ltsrbt pad and make it handle the shipping.
+			if(SHIPPING_METHOD_LTSRBT)
+				if(!purchase.uplink.target)
+					return
+
+				var/obj/machinery/ltsrbt/pad = purchase.uplink.target
+
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting that the order is being processed by [pad]."))
+
+				SScargo.queued_purchases -= purchase
+				pad.add_to_queue(purchase)
+			// Get the current location of the uplink if it exists, then throws the item from space at the station from a random direction.
+			if(SHIPPING_METHOD_LAUNCH)
+				var/startSide = pick(GLOB.cardinals)
+				var/turf/T = get_turf(purchase.uplink)
+				var/datum/virtual_level/vlevel = T.get_virtual_level()
+				var/turf/pickedloc
+
+				switch(startSide)
+					if(NORTH)
+						pickedloc = locate(T.x, (vlevel.high_y - vlevel.reserved_margin),T.z)
+					if(EAST)
+						pickedloc = locate((vlevel.high_x - vlevel.reserved_margin), T.y ,T.z)
+					if(SOUTH)
+						pickedloc = locate(T.x, (vlevel.low_y + vlevel.reserved_margin),T.z)
+					if(WEST)
+						pickedloc = locate((vlevel.low_x + vlevel.reserved_margin), T.y ,T.z)
+					else
+						pickedloc = vlevel.get_side_turf(startSide)
+
+				var/atom/movable/item = purchase.entry.spawn_item(pickedloc)
+				item.Move(get_step(pickedloc,get_dir(pickedloc,T)))
+				to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message noting the order is being launched at your coordinates from [dir2text(startSide)]."))
+
+				SScargo.queued_purchases -= purchase
+				qdel(purchase)
+			// Drop the order somewhere with the bounds of overmap encounter's ruin
+			if(SHIPPING_METHOD_DEAD_DROP)
+				var/datum/overmap/dynamic/overmap_loc = SSovermap.get_overmap_object_by_location(purchase.uplink, TRUE)
+				var/datum/virtual_level/zlevel = purchase.uplink.get_virtual_level()
+				var/turf/landing_turf
+				var/datum/map_template/ruin
+				if(!isnull(overmap_loc))
+					for(var/possible_ruin in overmap_loc.ruin_turfs)
+						var/turf/lowerbound = overmap_loc.ruin_turfs[possible_ruin]
+						ruin = overmap_loc.spawned_ruins[possible_ruin]
+						var/list/possible_ruin_turfs = zlevel.get_block_portion(lowerbound.x,lowerbound.y,(lowerbound.x + ruin.width),(lowerbound.y + ruin.height))
+						for(var/cycle in 1 to length(possible_ruin_turfs))
+							var/potential_turf = pick_n_take(possible_ruin_turfs)
+							if(!isopenturf(potential_turf))
+								continue
+							var/turf/open/potential_open_turf = potential_turf
+							if(ischasm(potential_open_turf))
+								continue
+							if(islava(potential_open_turf))
+								var/turf/open/lava/potential_lava_floor = potential_open_turf
+								if(!potential_lava_floor.is_safe())
+									continue
+							if(istype(potential_open_turf, /turf/open/water/acid))
+								var/turf/open/water/acid/potential_acid_floor = potential_open_turf
+								if(!potential_acid_floor.is_safe_to_cross())
+									continue
+							if(potential_open_turf.is_blocked_turf())
+								continue
+
+							//yippee, there's a viable turf for the package to land on
+							landing_turf = potential_open_turf
+							to_chat(recursive_loc_check(purchase.uplink.loc, /mob),span_notice("[purchase.uplink] flashes a message noting the order is being launched at a structure in your local area."))
+							break
+
+				if(!landing_turf)
+					landing_turf = zlevel.get_random_position_in_margin()
+					to_chat(recursive_loc_check(purchase.uplink.loc, /mob), span_notice("[purchase.uplink] flashes a message that the pod was unable to reach it's designated landing spot, and has landed somewhere in the local area instead."))
+
+				var/obj/structure/closet/supplypod/pod = new()
+				pod.setStyle(STYLE_BOX)
+				purchase.entry.spawn_item(pod)
+				pod.explosionSize = list(0,0,0,1)
+				new /obj/effect/pod_landingzone(landing_turf, pod)
+
+				SScargo.queued_purchases -= purchase
+				qdel(purchase)
 
 /datum/cargo_market/black/default
