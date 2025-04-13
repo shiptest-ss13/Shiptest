@@ -7,7 +7,7 @@
 	icon_state = "snow"
 	icon_plating = "snow"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	slowdown = 1.5
+	slowdown = 0.5
 	base_icon_state = "snow"
 	flags_1 = NONE
 	planetary_atmos = TRUE

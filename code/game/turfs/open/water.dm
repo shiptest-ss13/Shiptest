@@ -6,7 +6,7 @@
 	icon_state = "riverwater_motion"
 	baseturfs = /turf/open/water
 	planetary_atmos = TRUE
-	slowdown = 1
+	slowdown = 0.5
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null //needs a splashing sound one day.
 
@@ -96,6 +96,6 @@
 	desc = "Shallow tar. Will slow you down significantly."
 	color = "#473a3a"
 	light_range = 0
-	slowdown = 2
+	slowdown = 1.5
 	reagent_to_extract = /datum/reagent/asphalt
 	extracted_reagent_visible_name = "tar"

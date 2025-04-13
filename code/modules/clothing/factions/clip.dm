@@ -222,7 +222,7 @@
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 
 	resistance_flags = null
-	slowdown = 1.25
+	slowdown = 0.5
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 

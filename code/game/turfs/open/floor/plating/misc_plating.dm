@@ -85,7 +85,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ASH, SMOOTH_GROUP_CLOSED_TURFS)
 	layer = HIGH_TURF_LAYER
-	slowdown = 1
+	slowdown = 0.5
 
 /turf/open/floor/plating/ashplanet/rocky
 	gender = PLURAL
@@ -106,7 +106,7 @@
 	name = "wet rocky ground"
 	smoothing_flags = NONE
 	icon_state = "wateryrock"
-	slowdown = 2
+	slowdown = 1
 	footstep = FOOTSTEP_FLOOR
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
@@ -143,7 +143,7 @@
 	initial_gas_mix = FROZEN_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/ice
-	slowdown = 1
+	slowdown = 0.5
 	attachment_holes = FALSE
 	bullet_sizzle = TRUE
 	footstep = FOOTSTEP_ICE

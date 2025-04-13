@@ -5,7 +5,7 @@
 	icon_state = "lava"
 	gender = PLURAL //"That's some lava."
 	baseturfs = /turf/open/lava //lava all the way down
-	slowdown = 2
+	slowdown = 1.5
 
 	light_range = 2
 	light_power = 0.75

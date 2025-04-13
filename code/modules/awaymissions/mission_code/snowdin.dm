@@ -10,7 +10,7 @@
 	icon_state = "liquidplasma"
 	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
 	baseturfs = /turf/open/lava/plasma
-	slowdown = 2
+	slowdown = 1
 
 	light_range = 3
 	light_power = 0.75

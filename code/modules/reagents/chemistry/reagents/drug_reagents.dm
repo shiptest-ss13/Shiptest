@@ -493,7 +493,7 @@
 /datum/reagent/drug/combat_drug/on_mob_life(mob/living/carbon/M)
 	..()
 	M.adjust_jitter(10, max = 200)
-	M.adjustStaminaLoss(-18, 0)
+	M.adjustStaminaLoss(-10, 0)
 	if(prob(30) && !isvox(M))
 		M.playsound_local(get_turf(M), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 		M.adjustOrganLoss(ORGAN_SLOT_HEART, 3)

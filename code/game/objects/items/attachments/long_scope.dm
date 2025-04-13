@@ -10,7 +10,7 @@
 	var/zoom_mod = 10
 	var/zoom_out_mod = 3
 	var/min_recoil_mod = 0.1
-	var/aim_slowdown_mod = 0.4
+	var/aim_slowdown_mod = 0.3
 
 
 /obj/item/attachment/long_scope/apply_attachment(obj/item/gun/gun, mob/user)

@@ -118,8 +118,6 @@
 	name = "prototype exploration suit"
 	desc = "A limited-production heavy-armor softsuit, designed by NT to outfit their fleets of hostile-territory miners. Known as uncomfortable to some and clunky to many, it nonetheless gets the job done. </br> Replicas and redesigns of this suit abound anywhere a little protection goes a long way."
 	icon_state = "miningold"
-	slowdown = 0.1
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
 	hoodtype = /obj/item/clothing/head/hooded/explorer/old
 
 /obj/item/clothing/head/hooded/explorer/old

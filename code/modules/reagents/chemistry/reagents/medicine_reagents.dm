@@ -2408,6 +2408,9 @@
 			M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
 		if(prob(40))
 			M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
+
+	M.adjustStaminaLoss(-5, 0)
+
 	..()
 
 /datum/reagent/medicine/carfencadrizine/overdose_process(mob/living/M)

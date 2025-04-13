@@ -453,7 +453,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 	jetpack = null
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	slowdown = 0.7
+	slowdown = 0.5
 	jetpack = null
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
@@ -571,7 +571,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/firstaid, /obj/item/healthanalyzer, /obj/item/stack/medical)
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/medical
-	slowdown = 0.3
+	slowdown = 0.2
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/medical/cmo
@@ -633,7 +633,7 @@
 		/obj/item/gun/energy/wormhole_projector,
 		/obj/item/hand_tele,
 		/obj/item/aicard)
-	slowdown = 1.5
+	slowdown = 0.75
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
@@ -654,7 +654,7 @@
 	item_state = "sec_hardsuit"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
-	slowdown = 0.5
+	slowdown = 0.25
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/Initialize()
@@ -676,7 +676,7 @@
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
-	slowdown = 0.7
+	slowdown = 0.5
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 	//SWAT MKII
@@ -739,7 +739,7 @@
 	icon_state = "hardsuit-ancient"
 	item_state = "anc_hardsuit"
 	armor = list("melee" = 30, "bullet" = 5, "laser" = 5, "energy" = 15, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 75)
-	slowdown = 3
+	slowdown = 1.5
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ancient
 	resistance_flags = FIRE_PROOF
 	var/footstep = 1

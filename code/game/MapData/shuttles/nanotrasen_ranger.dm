@@ -149,7 +149,7 @@
 	desc = "The best of the best medical staff get assigned to the ERT. Second best are given this Hardsuit as a part of the LP Team."
 	icon_state = "ert_medical"
 	item_state = "ert_medical"
-	slowdown = 0.5
+	slowdown = 0.2
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/lp/med
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)

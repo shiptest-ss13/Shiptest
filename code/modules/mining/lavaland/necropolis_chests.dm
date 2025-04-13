@@ -997,7 +997,7 @@
 	equip_delay_other = 80
 	strip_delay = 100//to prevent hotswapping in battle
 	equip_delay_other = 10
-	slowdown =  -0.3
+	slowdown =  -0.25
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals)
 	resistance_flags = FIRE_PROOF

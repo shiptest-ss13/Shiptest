@@ -1064,7 +1064,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	item_state = "beacon_sawn"
 	mob_overlay_state = "beacon_sawn"
-	wield_slowdown = 0.45
+	wield_slowdown = 0.25
 	wield_delay = 0.5 SECONDS
 
 	spread_unwielded = 20 //mostly the hunting revolver stats

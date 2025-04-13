@@ -10,7 +10,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	item_flags = SLOWS_WHILE_IN_HAND
 	max_integrity = 300
-	slowdown = 1
+	slowdown = 0.5
 	drag_slowdown = 1
 	actions_types = list(/datum/action/item_action/toggle_gear_handle)
 	max_integrity = 200

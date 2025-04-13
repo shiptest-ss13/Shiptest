@@ -61,7 +61,7 @@
 	heat_protection = CHEST|GROIN
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
-	slowdown = 0 //one day...
+	slowdown = 0 //one day... //?????? what does this mean
 
 /obj/item/clothing/suit/armor/vest/marine/medium
 	name = "medium tactical armor vest"
@@ -70,7 +70,7 @@
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50)
-	slowdown = 0.4
+	slowdown = 0.15
 
 /obj/item/clothing/suit/armor/vest/marine/heavy
 	name = "heavy tactical armor vest"
@@ -79,12 +79,12 @@
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 55, "energy" = 25, "bomb" = 50, "bio" = 75, "fire" = 40, "acid" = 50)
-	slowdown = 0.8
+	slowdown = 0.25
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
 	desc = "Older generation Type 1 armored vest. Due to degradation over time the vest is far less maneuverable to move in."
-	slowdown = 1
+	slowdown = 0.15
 
 /obj/item/clothing/suit/armor/vest/blueshirt
 	name = "large armor vest"
@@ -264,7 +264,7 @@
 	gas_transfer_coefficient = 0.9
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	slowdown = 3
+	slowdown = 1.5
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 90)
 

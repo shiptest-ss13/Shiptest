@@ -21,7 +21,7 @@
 	permeability_coefficient = 0.5
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/extinguisher, /obj/item/crowbar)
-	slowdown = 1
+	slowdown = 0.25
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 10, "rad" = 20, "fire" = 100, "acid" = 50)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
@@ -41,7 +41,7 @@
 	desc = "An old, bulky thermal protection suit."
 	icon_state = "thermal"
 	item_state = "ro_suit"
-	slowdown = 1.5
+	slowdown = 0.35
 
 /obj/item/clothing/suit/fire/atmos
 	name = "firesuit"
@@ -88,7 +88,7 @@
 	permeability_coefficient = 0.01
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	slowdown = 2
+	slowdown = 1
 	armor = list("melee" = 20, "bullet" = 0, "laser" = 20,"energy" = 30, "bomb" = 100, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	flags_inv = HIDEJUMPSUIT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -150,7 +150,7 @@
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/geiger_counter)
-	slowdown = 1.5
+	slowdown = 0.25
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 60, "rad" = 100, "fire" = 30, "acid" = 30)
 	strip_delay = 60
 	equip_delay_other = 60

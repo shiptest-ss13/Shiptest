@@ -220,7 +220,7 @@
 	flags_1 = CONDUCT_1
 	throwforce = 0
 	w_class = WEIGHT_CLASS_NORMAL
-	slowdown = 7
+	slowdown = 5
 	breakouttime = 30 SECONDS
 
 /obj/item/restraints/legcuffs/beartrap
@@ -237,7 +237,7 @@
 	desc = "Ew."
 	icon_state = "goliathtrap"
 	flags_1 = NONE
-	slowdown = 10
+	slowdown = 7.5
 	breakouttime = 5 SECONDS
 	item_flags = DROPDEL
 	armed = 1

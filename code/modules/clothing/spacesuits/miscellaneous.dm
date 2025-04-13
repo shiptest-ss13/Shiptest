@@ -108,7 +108,7 @@ Contains:
 	icon_state = "void"
 	item_state = "void"
 	desc = "A CentCom engineering dark red space suit. Age has degraded the suit making is difficult to move around in."
-	slowdown = 4
+	slowdown = 2
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/multitool)
 
 	//Space santa outfit suit
@@ -470,7 +470,7 @@ Contains:
 	var/torn = FALSE
 	icon_state = "syndicate-orange"
 	item_state = "syndicate-orange"
-	slowdown = 2
+	slowdown = 1
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
 	strip_delay = 65
 
@@ -527,7 +527,7 @@ Contains:
 	item_state = "vacsuit_solgov"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy, /obj/item/tank/internals)
 	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
-	slowdown = 0.5
+	slowdown = 0.25
 	w_class = WEIGHT_CLASS_NORMAL
 	supports_variations = DIGITIGRADE_VARIATION
 
@@ -536,7 +536,7 @@ Contains:
 	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
 	item_state = "space-inteq"
 	icon_state = "space-inteq"
-	slowdown = 0.8
+	slowdown = 0.25
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	w_class = WEIGHT_CLASS_NORMAL
 

@@ -7,7 +7,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	gear_handle_type = /obj/item/gear_handle/anglegrinder
-	slowdown = 0.3
+	slowdown = 0.25
 	drag_slowdown = 0.3
 
 /obj/item/gear_handle/anglegrinder

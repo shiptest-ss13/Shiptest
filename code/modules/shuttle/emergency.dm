@@ -9,7 +9,7 @@
 	name = "emergency space suit"
 	icon_state = "syndicate-orange"
 	item_state = "syndicate-orange"
-	slowdown = 3
+	slowdown = 1.5
 
 /obj/item/pickaxe/emergency
 	name = "emergency disembarkation tool"

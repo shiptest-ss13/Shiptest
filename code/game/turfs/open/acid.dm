@@ -3,7 +3,7 @@
 	desc = "A lake of acid."
 	icon_state = "acid"
 	baseturfs = /turf/open/water/acid
-	slowdown = 2
+	slowdown = 1.5
 
 	light_range = 2
 	light_power = 0.75

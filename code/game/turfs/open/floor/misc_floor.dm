@@ -121,14 +121,12 @@
 	icon_state = "podfloor_dark"
 	floor_tile = /obj/item/stack/tile/pod/dark
 
-
 /turf/open/floor/noslip
 	name = "high-traction floor"
 	icon_state = "noslip"
 	floor_tile = /obj/item/stack/tile/noslip
 	broken_states = list("noslip-damaged1","noslip-damaged2","noslip-damaged3")
 	burnt_states = list("noslip-scorched1","noslip-scorched2")
-	slowdown = -0.3
 
 /turf/open/floor/noslip/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
@@ -250,7 +248,7 @@
 	desc = "Shallow water."
 	icon_state = "riverwater_motion"
 	baseturfs = /turf/open/floor/ship/dirt
-	slowdown = 1
+	slowdown = 0.5
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null //needs a splashing sound one day.
 
@@ -302,6 +300,6 @@
 	name = "tar pit"
 	desc = "Shallow tar. Will slow you down significantly. You could use a beaker to scoop some out."
 	color = "#222424"
-	slowdown = 2
+	slowdown = 1.5
 	reagent_to_extract = /datum/reagent/asphalt
 	extracted_reagent_visible_name = "tar"

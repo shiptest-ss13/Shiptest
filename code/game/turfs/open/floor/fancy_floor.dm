@@ -146,7 +146,7 @@
 	planetary_atmos = TRUE
 	floor_tile = null
 	initial_gas_mix = FROZEN_ATMOS
-	slowdown = 2
+	slowdown = 1
 	bullet_sizzle = TRUE
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -177,7 +177,7 @@
 		set_basalt_light(src)
 
 /turf/open/floor/grass/snow/safe
-	slowdown = 1.5
+	slowdown = 0.5
 	planetary_atmos = FALSE
 
 
