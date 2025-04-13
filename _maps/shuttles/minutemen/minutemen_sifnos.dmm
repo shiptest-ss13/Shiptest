@@ -287,8 +287,8 @@
 /turf/template_noop,
 /area/template_noop)
 "fn" = (
-/obj/machinery/conveyor/inverted{
-	dir = 8;
+/obj/machinery/conveyor{
+	dir = 4;
 	id = "sifnos_belt"
 	},
 /obj/structure/sign/poster/clip/random{
@@ -1827,8 +1827,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "Dy" = (
-/obj/machinery/conveyor/inverted{
-	dir = 8;
+/obj/machinery/conveyor{
+	dir = 4;
 	id = "sifnos_belt"
 	},
 /obj/structure/plasticflaps/opaque{
@@ -2097,8 +2097,8 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/cargo/office)
 "HD" = (
-/obj/machinery/conveyor/inverted{
-	dir = 4;
+/obj/machinery/conveyor{
+	dir = 8;
 	id = "sifnos_belt"
 	},
 /obj/machinery/mineral/unloading_machine{
