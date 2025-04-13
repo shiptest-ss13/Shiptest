@@ -30,6 +30,6 @@
 
 /datum/round_event/high_priority_mission/start()
 	if(priority_mission)
-		notify_ghosts("[priority_mission] value has been tripled")
+		notify_ghosts("[priority_mission] value has been doubled")
 		priority_mission.name = "HIGH PRIORITY - [priority_mission.name]"
-		priority_mission.value = priority_mission.value * 3
+		priority_mission.value = priority_mission.value * 2

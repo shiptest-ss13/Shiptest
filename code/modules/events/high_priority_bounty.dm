@@ -15,7 +15,7 @@
 	var/datum/overmap/outpost/target_outpost
 
 /datum/round_event/high_priority_bounty/announce()
-	priority_announce("We have issued a high-priority bounty for [priority_bounty.unit_name]. The Value has been tripled due to high demand.", "[target_outpost] Bounty Program", null, sender_override = "[target_outpost] Communications")
+	priority_announce("We have issued a high-priority bounty for [priority_bounty.unit_name]. The Value has been doubled due to high demand.", "[target_outpost] Bounty Program", null, sender_override = "[target_outpost] Communications")
 
 /datum/round_event/high_priority_bounty/setup()
 	target_outpost = pick(SSovermap.outposts)
@@ -23,4 +23,4 @@
 
 /datum/round_event/high_priority_bounty/start()
 	if(priority_bounty)
-		priority_bounty.true_cost = priority_bounty.cost * 3
+		priority_bounty.true_cost = priority_bounty.cost * 2
