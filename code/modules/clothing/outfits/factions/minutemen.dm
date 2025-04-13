@@ -80,7 +80,7 @@
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/captain/meld
-	name = "CLIP - Captain (MELD)"
+	name = "CLIP MELD - Captain"
 	uniform = /obj/item/clothing/under/clip/formal/with_shirt
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/hazardvest
