@@ -396,3 +396,5 @@
 //When the auto ship locking will start counting up, in minutes
 /datum/config_entry/number/ship_locking_starts
 	config_entry_value = 30
+
+/datum/config_entry/flag/native_fov

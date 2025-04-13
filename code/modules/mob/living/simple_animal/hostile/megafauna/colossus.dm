@@ -259,6 +259,7 @@ Difficulty: Very Hard
 	eyeblur = 0
 	damage_type = BRUTE
 	pass_flags = PASSTABLE
+	plane = GAME_PLANE
 
 /obj/projectile/colossus/on_hit(atom/target, blocked = FALSE)
 	. = ..()

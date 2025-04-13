@@ -17,6 +17,7 @@
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+	update_fov()
 
 /mob/living/prepare_huds()
 	..()
@@ -648,7 +649,6 @@
 		adjustToxLoss(-20, TRUE, TRUE) //slime friendly
 		updatehealth()
 		grab_ghost()
-	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
 	if(full_heal)
 		fully_heal(admin_revive = admin_revive)
 	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
