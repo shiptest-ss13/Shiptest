@@ -25,7 +25,7 @@
 	blocker_mask = new
 	visual_shadow = new
 	//visual_shadow.alpha = parent_client?.prefs.read_preference(/datum/preference/numeric/fov_darkness)
-	visual_shadow.alpha = 100
+	visual_shadow.alpha = 255
 	set_fov_angle(fov_type)
 	on_dir_change(mob_parent, mob_parent.dir, mob_parent.dir)
 	update_fov_size()
