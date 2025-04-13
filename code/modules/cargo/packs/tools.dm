@@ -14,6 +14,7 @@
 					/obj/item/key)
 	crate_name = "ATV crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /*
 		Actual tools
@@ -177,6 +178,7 @@
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
 	crate_name = "fuel tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/watertank
 	name = "Fresh Water Supply Crate"
@@ -185,6 +187,7 @@
 	contains = list(/obj/structure/reagent_dispensers/watertank)
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/hightank
 	name = "Large Fresh Water Supply Crate"
@@ -193,6 +196,7 @@
 	contains = list(/obj/structure/reagent_dispensers/watertank/high)
 	crate_name = "high-capacity water tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/foamtank
 	name = "Firefighting Foam Tank Crate"
@@ -201,6 +205,7 @@
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/radfoamtank
 	name = "Radiation Foam Tank Crate"
@@ -212,3 +217,4 @@
 	)
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
