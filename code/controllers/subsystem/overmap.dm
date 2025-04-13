@@ -110,7 +110,7 @@ SUBSYSTEM_DEF(overmap)
 	var/counted_ships = 0
 	for(var/datum/overmap/ship/controlled/ship_datum in controlled_ships)
 		var/slot_count = 0
-		if(!ship_datum.source_template || ship_datum.source_template.category != "subshuttles")
+		if(!ship_datum.source_template || ship_datum.source_template.category == "subshuttles")
 			continue
 		for(var/job_slot in ship_datum.source_template.job_slots)
 			slot_count += ship_datum.source_template.job_slots[job_slot]

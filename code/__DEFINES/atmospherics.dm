@@ -353,7 +353,7 @@
 
 // odors
 #define GAS_ODOR_CHEMICAL list(\
-	span_notice("It smells fainly like space cleaner."),\
+	span_notice("It smells faintly like space cleaner."),\
 	span_danger("It smells like chemicals."),\
 	span_danger("There's a strong smell in the air, like chlorine."),\
 	span_userdanger("The smell burns the inside of your nose! It's unbearable!"))

@@ -175,6 +175,9 @@
 /turf/open/floor/mineral/plastitanium/red/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
+/turf/open/floor/mineral/plastitanium/red/jungle
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
 /turf/open/floor/mineral/plastitanium/red/brig
 	name = "brig floor"
 
