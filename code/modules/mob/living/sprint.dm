@@ -35,7 +35,7 @@
 /datum/movespeed_modifier/momentum
 	movetypes = GROUND
 	flags = IGNORE_NOSLOW
-	multiplicative_slowdown = -0.1
+	multiplicative_slowdown = -0.2
 
 /mob/living/carbon/human/Life(seconds_per_tick, times_fired)
 	. = ..()

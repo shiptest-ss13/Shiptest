@@ -14,7 +14,7 @@
 	if(absorb_stun(0)) //continuous effect, so we don't want it to increment the stuns absorbed.
 		return
 
-	visible_message(span_warning("[AM] pushes [user] off of [AM.p_them()]!"), \
+	visible_message(span_warning("[src] collapses in exhaustion."), \
 					span_warning("You collapse, too exhausted to keep going..."))
 
 	ADD_TRAIT(src, TRAIT_INCAPACITATED, STAMINA)

@@ -52,12 +52,12 @@
 /datum/movespeed_modifier/config_walk_run/proc/sync()
 
 /datum/movespeed_modifier/config_walk_run/walk/sync()
-	// var/mod = CONFIG_GET(number/movedelay/walk_delay)
+	var/mod = 2.75
 	mod = 2.75
 	multiplicative_slowdown = isnum(mod)? mod : initial(multiplicative_slowdown)
 
 /datum/movespeed_modifier/config_walk_run/run/sync()
-	// var/mod = CONFIG_GET(number/movedelay/run_delay)
+	var/mod = 1.85
 	mod = 1.85
 	multiplicative_slowdown = isnum(mod)? mod : initial(multiplicative_slowdown)
 
