@@ -295,7 +295,7 @@
 	boozepwr = 25
 	taste_description = "bitter fruit with a smooth aftertaste"
 	glass_icon_state = ""
-	glass_name = "Dotumira"
+	glass_name = "Dotusira"
 	glass_desc = "A bitter tecetian liquor that leaves behind a smooth aftertaste."
 
 /datum/reagent/consumable/ethanol/faraseta

@@ -824,3 +824,31 @@
 	filling_color = "#ECA735"
 	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
 	foodtype = FRUIT | DAIRY
+
+/obj/item/reagent_containers/food/snacks/remes_roe
+	name = "remes roe"
+	desc = "The roe of a Remes is a topping that rose to prominence due to its serving during talks with Zohilese diplomats. The slight <i>pop</i> of the eggs was hailed as incredibly satisfying."
+	icon_state = ""
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	filling_color = "#ECA735"
+	tastes = list("condensed salt" = 1, "satisfying pop" = 2)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/refa_remes
+	name = "refa-remes"
+	desc = "The flesh of a refa-li fruit, once all the seeds have been removed, is quite mellow. Adding Remes roe into the flesh creates an experience filled with salty pops."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
+	filling_color = "#ECA735"
+	tastes = list("condensed salt" = 1, "satisfying pop" = 1, "mellow fruitflesh" = 3)
+	foodtype = MEAT | FRUIT
+
+/obj/item/reagent_containers/food/snacks/roe_tiris
+	name = "roe tiris"
+	desc = "Remes roe and Tiris blood mixed together into a thick drink. Acquired taste is the nicest that can be said of it."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
+	filling_color = "#ECA735"
+	tastes = list("blood and salt" = 3, "umami" = 1, "subdued pops" = 1)
+	foodtype = MEAT | GROSS | GORE

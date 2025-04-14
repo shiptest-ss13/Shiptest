@@ -330,6 +330,15 @@
 	tastes = list("mellow flesh" = 1, "earthiness" =1)
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/meat/slab/dofitis
+	name = "dofitis meat"
+	icon_state = ""
+	desc = "A rich cut of meat with a sublime marble."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/dofitis
+	slice_path = null
+	tastes = list("hearty meat" = 1, "buttery fat" =1)
+	foodtype = MEAT | RAW
+
 ////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
 
 
@@ -414,6 +423,13 @@
 	desc = "A cooked slice of tiris meat. Rough and fatty."
 	icon_state = ""
 	tastes = list("fatty meat")
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/meat/steak/dofitis
+	name = "dofitis steak"
+	desc = "A cooked slab of dofitis meat. A rich, hearty experience."
+	icon_state = ""
+	tastes = list("hearty meat" = 1, "buttery fat" = 1)
 	foodtype = MEAT
 
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////
