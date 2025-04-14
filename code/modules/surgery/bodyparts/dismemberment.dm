@@ -16,7 +16,7 @@
 
 	var/obj/item/bodypart/affecting = C.get_bodypart(BODY_ZONE_CHEST)
 	affecting.receive_damage(clamp(brute_dam/2 * affecting.body_damage_coeff, 15, 50), clamp(burn_dam/2 * affecting.body_damage_coeff, 0, 50)) //Damage the chest based on limb's existing damage
-	C.visible_message("<span class='danger'><B>[C]'s [src.name] is violently dismembered!</B></span>")
+	C.visible_message(span_danger("<B>[C]'s [src.name] is violently dismembered!</B>"))
 
 	if(C.stat <= SOFT_CRIT)//No more screaming while unconsious
 		if(IS_ORGANIC_LIMB(affecting))//Chest is a good indicator for if a carbon is robotic in nature or not.
@@ -81,7 +81,7 @@
 		organ_spilled = 1
 
 	if(organ_spilled)
-		C.visible_message("<span class='danger'><B>[C]'s internal organs spill out onto the floor!</B></span>")
+		C.visible_message(span_danger("<B>[C]'s internal organs spill out onto the floor!</B>"))
 
 
 

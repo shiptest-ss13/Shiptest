@@ -35,6 +35,7 @@
 					/obj/item/clothing/shoes/galoshes)
 	crate_name = "janitorial cart crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /*
 		Bundles

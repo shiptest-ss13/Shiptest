@@ -2504,9 +2504,8 @@
 /obj/structure/barricade/security{
 	layer = 2.89
 	},
-/obj/machinery/porta_turret/ship/syndicate/heavy/starport{
-	dir = 10;
-	lethal = 1
+/obj/machinery/porta_turret/ruin/ramzi/heavy{
+	dir = 10
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/jungle/airbase/turrets)
@@ -3580,9 +3579,8 @@
 /obj/structure/barricade/security{
 	layer = 2.89
 	},
-/obj/machinery/porta_turret/ship/syndicate/heavy/starport{
-	dir = 6;
-	lethal = 1
+/obj/machinery/porta_turret/ruin/ramzi/heavy{
+	dir = 6
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/jungle/airbase/turrets)
@@ -6833,9 +6831,8 @@
 /obj/structure/barricade/security{
 	layer = 2.89
 	},
-/obj/machinery/porta_turret/ship/syndicate/heavy/starport{
-	dir = 9;
-	lethal = 1
+/obj/machinery/porta_turret/ruin/ramzi/heavy{
+	dir = 9
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/jungle/airbase/turrets)
@@ -9099,6 +9096,7 @@
 "MF" = (
 /obj/machinery/computer/operating,
 /obj/machinery/light/broken/directional/east,
+/obj/item/disk/surgery/t2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/med)
 "MG" = (
@@ -9744,8 +9742,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun/incendiary,
-/obj/effect/landmark/mission_poi/main/kill,
+/obj/effect/landmark/mission_poi/main/kill{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
+	},
 /turf/open/floor/plating/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Py" = (
@@ -12094,9 +12093,8 @@
 /obj/structure/barricade/security{
 	layer = 2.89
 	},
-/obj/machinery/porta_turret/ship/syndicate/heavy/starport{
-	dir = 5;
-	lethal = 1
+/obj/machinery/porta_turret/ruin/ramzi/heavy{
+	dir = 5
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/jungle/airbase/turrets)
@@ -17345,7 +17343,7 @@ bY
 uX
 uX
 bp
-kX
+pw
 BM
 eO
 "}
