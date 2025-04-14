@@ -220,7 +220,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 /obj/machinery/cryopod/proc/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	sleepyhead.set_sleeping(60)
 	sleepyhead.set_nutrition(200)
-	to_chat(sleepyhead, "<span class='boldnotice'>You begin to wake from cryosleep...</span>")
+	to_chat(sleepyhead, span_boldnotice("You begin to wake from cryosleep..."))
 	var/ship_name = "<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[linked_ship.current_ship.name]</u></span>"
 	var/sector_name = "[linked_ship.current_ship.current_overmap.name]"
 	var/time = "[station_time_timestamp("hh:mm")]"
