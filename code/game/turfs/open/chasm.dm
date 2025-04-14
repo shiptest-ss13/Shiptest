@@ -18,7 +18,7 @@
 
 /turf/open/chasm/examine(mob/user)
 	. = ..()
-	. += "<span class='warning'>You WILL fucking die if you step on this!!!</span>"
+	. += span_warning("You WILL fucking die if you step on this!!!")
 
 /// Lets people walk into chasms.
 /turf/open/chasm/CanAllowThrough(atom/movable/mover, border_dir)
