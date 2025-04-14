@@ -53,7 +53,7 @@
 		else
 			return
 	if(!new_map.cached_map)
-		to_chat(src, "<span class='warning'>Map template '[map]' failed to parse properly.</span>", confidential = TRUE)
+		to_chat(src, span_warning("Map template '[map]' failed to parse properly."), confidential = TRUE)
 		return
 
 	var/datum/map_report/report = new_map.cached_map.check_for_errors()
