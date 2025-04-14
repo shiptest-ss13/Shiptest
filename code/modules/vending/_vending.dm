@@ -192,7 +192,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	power_change()
 
 	Radio = new /obj/item/radio(src)
-	Radio.listening = 0
+	Radio.set_listening(FALSE)
 	if(istype(get_area(src.loc), /area/outpost) || istype(get_area(src.loc), /area/ruin))
 		all_items_free = FALSE
 

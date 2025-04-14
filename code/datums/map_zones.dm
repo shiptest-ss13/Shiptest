@@ -404,6 +404,7 @@
 	passed_map.add_virtual_level(src)
 	SSmapping.virtual_z_translation["[id]"] = src
 	reserve(lx, ly, hx, hy, passed_z)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_VIRT_Z, src)
 	return ..()
 
 /datum/virtual_level/Destroy()
