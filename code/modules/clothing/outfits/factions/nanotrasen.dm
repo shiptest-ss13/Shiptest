@@ -8,6 +8,8 @@
 	name = "Nanotrasen - Base Outfit"
 	faction_icon = "bg_nanotrasen"
 
+	skirt_uniform = null
+
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
 
@@ -30,7 +32,7 @@
 	gloves = /obj/item/clothing/gloves/color/captain/nt
 	ears = /obj/item/radio/headset/nanotrasen/captain
 	uniform = /obj/item/clothing/under/nanotrasen/captain
-	alt_uniform = /obj/item/clothing/under/nanotrasen/captain/skirt
+	skirt_uniform = /obj/item/clothing/under/nanotrasen/captain/skirt
 	suit = /obj/item/clothing/suit/armor/nanotrasen/captain
 	alt_suit = /obj/item/clothing/suit/armor/nanotrasen/captain/parade
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
@@ -43,6 +45,8 @@
 	satchel = /obj/item/storage/backpack/satchel/cap
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
+
+	phorid_outfit = /datum/outfit/plasmaman/command
 
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
@@ -68,6 +72,9 @@
 	name = "Nanotrasen - Captain (Central Command)"
 
 	uniform = /obj/item/clothing/under/rank/centcom/officer
+	skirt_uniform = /obj/item/clothing/under/rank/centcom/officer_skirt
+	suit = null
+	alt_suit = null
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/centhat
 
@@ -81,11 +88,13 @@
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/nanotrasen/officer
-	alt_uniform = /obj/item/clothing/under/nanotrasen/officer/skirt
+	skirt_uniform = /obj/item/clothing/under/nanotrasen/officer/skirt
 	suit = /obj/item/clothing/suit/toggle/nanotrasen
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/nanotrasen/officer
+
+	phorid_outfit = /datum/outfit/plasmaman/hop
 
 	backpack_contents = list(
 						/obj/item/storage/box/ids=1,
@@ -113,7 +122,6 @@
 	belt = /obj/item/pda/heads/hos
 	ears = /obj/item/radio/headset/nanotrasen/alt
 	uniform = /obj/item/clothing/under/nanotrasen/security/director
-	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/nanotrasen/slim
 	alt_suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
@@ -124,13 +132,16 @@
 	suit_store = null
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/classic_baton=1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
+
+	backpack_contents = list(/obj/item/melee/classic_baton=1)
+
+	phorid_outfit = /datum/outfit/plasmaman/hos
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -160,6 +171,8 @@
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
 
+	phorid_outfit = /datum/outfit/plasmaman/security
+
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
@@ -171,6 +184,7 @@
 
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/warden/nt
+	skirt_uniform = /obj/item/clothing/under/rank/security/warden/nt/skirt
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
@@ -180,13 +194,16 @@
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 	suit_store = null
-	backpack_contents = list(/obj/item/melee/classic_baton)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
 	box = /obj/item/storage/box/survival/security
+
+	phorid_outfit = /datum/outfit/plasmaman/warden
+
+	backpack_contents = list(/obj/item/melee/classic_baton)
 
 	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/m11
 
@@ -199,7 +216,6 @@
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/pda/engineering
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/nanotrasen/engineering
 	head = /obj/item/clothing/head/hardhat/nanotrasen
@@ -207,11 +223,14 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/t_scanner
+	l_pocket = /obj/item/pda/engineering
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
+
+	phorid_outfit = /datum/outfit/plasmaman/engineering
 
 	box = /obj/item/storage/box/survival/engineer
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
@@ -241,6 +260,8 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
+	phorid_outfit = /datum/outfit/plasmaman/ce
+
 	box = /obj/item/storage/box/survival/engineer
 	chameleon_extras = /obj/item/stamp/ce
 
@@ -262,6 +283,9 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 	box = /obj/item/storage/box/survival/engineer
+
+	phorid_outfit = /datum/outfit/plasmaman/atmospherics
+
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 // Brig Physician
@@ -273,12 +297,14 @@
 
 	ears = /obj/item/radio/headset/headset_medsec/alt
 	uniform = /obj/item/clothing/under/rank/security/brig_phys/nt
+	skirt_uniform = /obj/item/clothing/under/rank/security/brig_phys/nt/skirt
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	head = /obj/item/clothing/head/soft/sec/brig_phys
-	implants = list(/obj/item/implant/mindshield)
+
+	phorid_outfit = /datum/outfit/plasmaman/secmed
 
 // Supply //
 
@@ -295,8 +321,10 @@
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/clipboard
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
+	phorid_outfit = /datum/outfit/plasmaman/cargo
+
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 	chameleon_extras = /obj/item/stamp/qm
 
 //Miner
@@ -326,6 +354,8 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	box = /obj/item/storage/box/survival/mining
 
+	phorid_outfit = /datum/outfit/plasmaman/mining
+
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
 
 /datum/outfit/job/nanotrasen/miner/no_equipment
@@ -346,6 +376,8 @@
 	uniform = /obj/item/clothing/under/nanotrasen/supply
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
+
+	phorid_outfit = /datum/outfit/plasmaman/cargo
 
 // Medical //
 
@@ -368,6 +400,9 @@
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/med
+
+	phorid_outfit = /datum/outfit/plasmaman/medical
+
 	box = /obj/item/storage/box/survival/medical
 
 // Paramedic
@@ -391,6 +426,9 @@
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/para
+
+	phorid_outfit = /datum/outfit/plasmaman/paramedic
+
 	box = /obj/item/storage/box/survival/medical
 
 	chameleon_extras = /obj/item/gun/syringe
@@ -415,6 +453,8 @@
 
 	uniform = /obj/item/clothing/under/nanotrasen/janitor
 	head = /obj/item/clothing/head/nanotrasen/cap/janitor
+
+	phorid_outfit = /datum/outfit/plasmaman/janitor
 
 // Lawyer
 /datum/outfit/job/nanotrasen/lawyer
@@ -458,6 +498,8 @@
 	satchel = /obj/item/storage/backpack/satchel/tox
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
+	phorid_outfit = /datum/outfit/plasmaman/science
+
 // Roboticist
 /datum/outfit/job/nanotrasen/roboticist
 	name = "Nanotrasen - Roboticist"
@@ -469,6 +511,8 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/nanotrasen
 	ears = /obj/item/radio/headset/nanotrasen
 	glasses = /obj/item/clothing/glasses/welding
+
+	phorid_outfit = /datum/outfit/plasmaman/robotics
 
 	backpack_contents = list(/obj/item/weldingtool/hugetank)
 
@@ -507,7 +551,7 @@
 	belt = /obj/item/pda/captain
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/lp
-	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
+	skirt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
 	dcoat = /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/command
@@ -526,7 +570,7 @@
 	belt = /obj/item/pda/security
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
-	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
+	skirt_uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/sec
@@ -543,7 +587,7 @@
 	id = /obj/item/card/id/lpengie
 	gloves = /obj/item/clothing/gloves/color/yellow
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
-	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
+	skirt_uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/eng
@@ -562,7 +606,7 @@
 	belt = /obj/item/pda/medical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
-	alt_uniform = /obj/item/clothing/under/rank/medical/paramedic/skirt/lp
+	skirt_uniform = /obj/item/clothing/under/rank/medical/paramedic/skirt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/beret/med
