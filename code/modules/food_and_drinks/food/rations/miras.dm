@@ -11,7 +11,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/seed_crackers = 1,
 		/obj/item/reagent_containers/food/snacks/ration/bar/wanderer = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/tiris_cheese = 1,
-		/obj/item/reagent_containers/food/drinks/ration/refa-li = 1
+		/obj/item/reagent_containers/food/drinks/ration/refa_li = 1
 		)
 	generate_items_inside(items_inside,src)
 
@@ -59,7 +59,7 @@
 	filling_color = "#cac84e"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
 
-/obj/item/reagent_containers/food/drinks/ration/refa-li
+/obj/item/reagent_containers/food/drinks/ration/refa_li
 	name = "Refa-Li Juice"
 	desc = "The spicy juice of a Refa-Li fruit."
 	list_reagents = list(/datum/reagent/consumable/refa_li = 10, /datum/reagent/consumable/capsaicin = 5)

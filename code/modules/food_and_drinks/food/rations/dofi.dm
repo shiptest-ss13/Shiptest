@@ -28,7 +28,7 @@
 	desc = "Small crunchy berries that've been victim to a dusting of seasoning. The seeds tend to cluster at the bottom of the pack."
 	filling_color = "#2359a0"
 	tastes = list("concentrated fruit" = 1, "a hint of spice" = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/side/dore
@@ -62,4 +62,4 @@
 /obj/item/reagent_containers/food/snacks/ration/pack/dote_juice
 	name = "dote juice powder"
 	filling_color = "#803300"
-	list_reagents = list(/datum/reagent/consumable/dotejuice = 8)
+	list_reagents = list(/datum/reagent/consumable/dote_juice = 8)

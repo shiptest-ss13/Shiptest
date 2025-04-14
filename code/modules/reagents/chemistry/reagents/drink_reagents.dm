@@ -99,7 +99,7 @@
 	. = 1
 	..()
 
-/datum/reagent/consumable/dotejuice
+/datum/reagent/consumable/dote_juice
 	name = "Dote Juice"
 	description = "A delicious juice made from Dote berries"
 	color = "#2359a0"
@@ -221,6 +221,23 @@
 	name = "Milk"
 	description = "An opaque white liquid produced by the mammary glands of mammals, some arthropods, biogenerators, chemical factories..."
 	color = "#DFDFDF" // rgb: 223, 223, 223
+	taste_description = "milk"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of milk"
+	glass_desc = "A glass of frothy milk. You wonder what animal this could have come from, if at all."
+
+/datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)
+	if(M.getBruteLoss() && prob(20))
+		M.heal_bodypart_damage(1,0, 0)
+		. = 1
+	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
+		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	..()
+
+/datum/reagent/consumable/tiris_milk
+	name = "Tiris Milk"
+	description = "A strong, tangy milk made by a Tiris. Makes a very good cheese."
+	color = "#e2c5c5"
 	taste_description = "milk"
 	glass_icon_state = "glass_white"
 	glass_name = "glass of milk"

@@ -201,7 +201,6 @@
 	color = "#731008" // rgb: 115, 16, 8
 	taste_description = "ketchup"
 
-
 /datum/reagent/consumable/capsaicin
 	name = "Capsaicin Oil"
 	description = "This is what makes chilis hot."
@@ -813,14 +812,17 @@
 	taste_description = "peanut"
 	reagent_state = SOLID
 
+/datum/reagent/consumable/tiris_blood
+	name = "Tiris blood"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "bloody and earthy"
+
 /datum/reagent/consumable/tiris_sele
 	name = "Tiris-Sele"
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "gently blossoming umami"
-	reagent_state = SOLID
 
 /datum/reagent/consumable/tiris_sale
 	name = "Tiris-Sale"
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "bloody piercing umami"
-	reagent_state = SOLID

@@ -82,6 +82,14 @@
 	tastes = list("darkness" = 1, "meat" = 1)
 	foodtype = MEAT | RAW | GORE
 
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
+	icon_state = "lizardmeat"
+	desc = "Delicious dino damage."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/plain/human/lizard
+	filling_color = "#6B8E23"
+	tastes = list("meat" = 4, "scales" = 1)
+	foodtype = MEAT | RAW | GORE
+
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/fly
 	icon_state = "flymeat"
 	desc = "Nothing says tasty like maggot filled radioactive mutant flesh."
@@ -311,7 +319,16 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/tiris
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/tiris
 	tastes = list("fatty meat" = 1, "raw fat" = 1)
-	foodtype = MEAT | SUGAR | RAW
+	foodtype = MEAT | RAW
+
+/obj/item/reagent_containers/food/snacks/meat/slab/remes
+	name = "remes meat"
+	icon_state = ""
+	desc = "The meat of a properly prepared Remes tends to melt away as it's consumed, leaving behind the flavors that it has soaked in."
+	cooked_type = null
+	slice_path = null
+	tastes = list("mellow flesh" = 1, "earthiness" =1)
+	foodtype = MEAT
 
 ////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
 
@@ -392,7 +409,7 @@
 	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
 	foodtype = MEAT | SUGAR
 
-/obj/item/reagent_containers/food/snacks/meat/steak/miras
+/obj/item/reagent_containers/food/snacks/meat/steak/tiris
 	name = "tiris steak"
 	desc = "A cooked slice of tiris meat. Rough and fatty."
 	icon_state = ""

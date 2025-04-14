@@ -133,7 +133,7 @@
 	trash = /obj/item/trash/mirastin
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2)
 	filling_color = "#639fee"
-	tastes = list("egg" = 5 "a slight metallic hint" = 1,)
+	tastes = list("egg" = 5, "a slight metallic hint" = 1)
 	foodtype = JUNKFOOD | MEAT
 	/*food_flags = FOOD_FINGER_FOOD*/
 	w_class = WEIGHT_CLASS_SMALL

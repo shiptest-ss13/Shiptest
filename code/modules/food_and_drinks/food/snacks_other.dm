@@ -12,6 +12,17 @@
 	tastes = list("cheese" = 1)
 	foodtype = DAIRY
 
+/obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel
+	name = "tiris cheese"
+	desc = "A bold cheese with a salty header. Tradition says to let the cheese age and form a crust before consuming it, but even without being aged, it has a strong, distinctive flavor."
+	icon_state = ""
+	slice_path = /obj/item/reagent_containers/food/snacks/tiris_cheese_slice
+	slices_num = 5
+	list_reagents = list(/datum/reagent/consumable/nutriment = 15, /datum/reagent/consumable/nutriment/vitamin = 5)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("rock salt" = 1, "rich cheese" = 4, "faint mushroom" = 1)
+	foodtype = DAIRY
+
 /obj/item/reagent_containers/food/snacks/royalcheese
 	name = "royal cheese"
 	desc = "A specially treated wheel of cheese, with a crown to grant the eater a petty monarchist position after they've developed a desire for despotic rule."
@@ -28,6 +39,15 @@
 	filling_color = "#FFD700"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("cheese" = 1)
+	foodtype = DAIRY
+
+/obj/item/reagent_containers/food/snacks/tiris_cheese_slice
+	name = "tiris cheese wedge"
+	desc = "A wedge of cheese, originating from a wheel. You wonder where the original wheel is."
+	icon_state = ""
+	filling_color = "#FFD700"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("rock salt" = 1, "rich cheese" = 4, "faint mushroom" = 1)
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/snacks/watermelonslice
@@ -785,4 +805,22 @@
 	tastes = list("tortilla chips" = 1, "salt" = 1)
 	foodtype = JUNKFOOD | FRIED
 
+/obj/item/reagent_containers/food/snacks/stuffed_fara
+	name = "Stuffed Fara"
+	desc = "Tiris cheese is removed from its crust and added to the fruits of a Fara-Li plant before being baked"
+	icon_state = ""
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	filling_color = "#ECA735"
+	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
+	foodtype = FRUIT | DAIRY
 
+/obj/item/reagent_containers/food/snacks/tiris_fondue
+	name = "Fondue Tiris-Dotu"
+	desc = "Fusion cuisine originating from travelling Solarians. This fondue is made of Tiris Cheese, and filled with small cubes of Dotu-Fime fruit. The flavor profile is reputed to be incredibly rich, especially with crackers."
+	icon_state = ""
+	bitesize = 8
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/dotu_juice = 2)
+	filling_color = "#ECA735"
+	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
+	foodtype = FRUIT | DAIRY

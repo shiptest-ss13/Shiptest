@@ -241,6 +241,47 @@
 	tastes = list("meat" = 1, "smoke" = 1)
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/sausage/tiris_dote
+	name = "Tiris Dote"
+	desc = "A sweet sausage made with the fats of a Tiris and sweet dote berries."
+	icon_state = ""
+	filling_color = "#CD5C5C"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/dote_juice = 1)
+	tastes = list("sweet berries" = 1, "fatty meat" = 1)
+	slices_num = 0
+	slice_path = null
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/sausage/tiris_refa //we having jalapeno brats tonight
+	name = "Tiris refa"
+	desc = "A spicy sausage made with the fats of a Tiris and ground up refa-li fruit."
+	icon_state = ""
+	filling_color = "#CD5C5C"
+	tastes = list("pungent spice" = 1, "fatty meat" = 1)
+	slices_num = 0
+	slice_path = null
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/sausage/tirila_li //we having jalapeno brats tonight
+	name = "Tirila-Li"
+	desc = "Cured logs of Tiris spiced with refa-li, rock salts, and dotu. A favorite at casual gatherings, where it typically serves as an appetizer."
+	icon_state = ""
+	filling_color = "#CD5C5C"
+	tastes = list("sweet berries" = 2, "fatty meat" = 3, "rock salts" = 1)
+	slices_num = 0
+	slice_path = /obj/item/reagent_containers/food/snacks/salami
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/rila_li
+	name = "rila li slice"
+	desc = "A slice of cured tiris."
+	icon_state = "salami"
+	filling_color = "#CD4122"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("sweet berries" = 1, "fatty meat" = 1, "rock salts" = 1)
+	foodtype = MEAT
+
 /obj/item/reagent_containers/food/snacks/rawkhinkali
 	name = "raw khinkali"
 	desc = "One of the many Solarian dumplings. This one is in the shape of a twisted knob, filled with meat, vegetables, and garlic. This one needs to be boiled."
@@ -259,6 +300,26 @@
 	filling_color = "#F0F0F0"
 	tastes = list("meat" = 1, "onions" = 1, "garlic" = 1)
 	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/timera
+	name = "Timera-Fa"
+	desc = "Tiris meat ground down, dried, and mixed with berries and fruits. The result is a long-lasting survival food."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/garlic = 1)
+	bitesize = 3
+	filling_color = "#F0F0F0"
+	tastes = list("crunchy berry bits" = 1, "dried meat" = 1,)
+	foodtype = MEAT | FRUIT
+
+/obj/item/reagent_containers/food/snacks/tiris_apple
+	name = "tiris and apples"
+	desc = "Tiris served with small slices of apple. An excellent appetizer for humans searching for an introduction to Tecetian food culture."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/applejuice = 2)
+	bitesize = 3
+	filling_color = "#F0F0F0"
+	tastes = list("crisp apple" = 1, "fatty meat" = 1)
+	foodtype = MEAT | FRUIT
 
 /obj/item/reagent_containers/food/snacks/monkeycube
 	name = "monkey cube"
@@ -409,7 +470,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/sugar = 1)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("sweet meat" = 3, "gentle umami" = 1, "gel" = 1, "satisfying crunch" = 1)
-	foodtype = MEAT | SUGAR | VEGETABLE
+	foodtype = MEAT | SUGAR | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/miras_potato
 	name = "Miras Loaded Potato"
@@ -418,7 +479,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
-	foodtype = MEAT | SUGAR | VEGETABLE
+	foodtype = MEAT | SUGAR | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/siti_miras
 	name = "Siti-Miras"
@@ -446,6 +507,14 @@
 	bonus_reagents = list(/datum/reagent/consumable/vitfro = 2)
 	tastes = list("sweet meat" = 3, "pungent heat" = 2, "subtle fruitness" = 1)
 	foodtype = MEAT | SUGAR | FRUIT
+
+/obj/item/reagent_containers/food/snacks/grape_remes
+	name = "grape remes"
+	desc = "The absorbent nature of a Remes snail was eagerly exploited by interstellar chefs, leading to the creation of this wine-soaked meat. Eating enough is said to leave a mild buzz."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/ethanol/wine = 10)
+	tastes = list("earthiness" = 2, "wine-soaked flesh" = 4)
+	foodtype = MEAT | ALCOHOL
 
 //////////////////////////////////////////// KEBABS AND OTHER SKEWERS ////////////////////////////////////////////
 
@@ -498,8 +567,6 @@
 	icon_state = "fiestaskewer"
 	tastes = list("tex-mex" = 3, "cumin" = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/capsaicin = 3)
-
-// Erika's teceti breaker
 
 /obj/item/reagent_containers/food/snacks/kebab/miras
 	name = "miras-kebab"

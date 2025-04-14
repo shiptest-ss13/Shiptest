@@ -21,7 +21,7 @@
 	desc = "Thick leaves with an interior made of sweet gel. It's been vacuum-sealed to preserve the flavor, and integrity of the plant"
 	filling_color = "#2a7416"
 	tastes = list("fruity gel" = 1, "watery sugars" = 1, "satisfying crunch" = 1)
-	foodtype = VEGETABLE | SUGAR
+	foodtype = VEGETABLES | SUGAR
 	cookable = FALSE
 
 /obj/item/reagent_containers/food/snacks/ration/side/lifosa
@@ -36,7 +36,7 @@
 	name = "cored cactus fruit"
 	desc = "A Tecetian cactus fruit, cored out so that it can be stuffed full of other foods."
 	filling_color = "#e2904d"
-	list_reagents = /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/vitfro = 1
+	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/vitfro = 1)
 	tastes = list("fruity mushroom" = 1)
 	foodtype = FRUIT
 
