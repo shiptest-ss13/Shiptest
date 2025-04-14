@@ -29,7 +29,7 @@
 		),
 		BIOME_TEMPERATE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/sand,
-			BIOME_LOW_HUMIDITY =/datum/biome/sand/grass/dead,
+			BIOME_LOW_HUMIDITY = /datum/biome/sand/grass/dead,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/grass,
 			BIOME_HIGH_HUMIDITY = /datum/biome/sand/grass,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/sand/grass
