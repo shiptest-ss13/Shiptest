@@ -76,6 +76,15 @@
 	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING
 
+/obj/item/storage/backpack/holding/debug
+	name = "advanced bag of holding"
+
+/obj/item/storage/backpack/holding/debug/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.worn_access = TRUE
+
+
 /obj/item/storage/backpack/cultpack
 	name = "trophy rack"
 	desc = "It's useful for both carrying extra gear and proudly declaring your insanity."
@@ -410,7 +419,6 @@
 	desc = "A large duffel bag for holding extra things."
 	icon_state = "duffel"
 	item_state = "duffel"
-	slowdown = 1
 	greyscale_colors = list(list(21, 11), list(14, 19), list(15, 16))
 	w_class = WEIGHT_CLASS_HUGE
 

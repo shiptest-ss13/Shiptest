@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "VI Commander"
-	desc = "A service pistol produced as Vigilitas Interstellar's standard sidearm. Has a reputation for being easy to use, due to its light recoil and high magazine capacity. Chambered in 9mm."
+	desc = "A service pistol produced as Vigilitas Interstellar's standard sidearm. Has a reputation for being easy to use, due to its light recoil and high magazine capacity. Chambered in 9x18mm."
 	icon_state = "commander"
 	item_state = "nt_generic"
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -42,28 +42,28 @@
 NO_MAG_GUN_HELPER(automatic/pistol/commander)
 
 /obj/item/ammo_box/magazine/co9mm
-	name = "commander pistol magazine (9mm)"
+	name = "commander pistol magazine (9x18mm)"
 	desc = "A 12-round double-stack magazine for Commander pistols. These rounds do okay damage, but struggle against armor."
 	icon_state = "commander_mag-12"
 	base_icon_state = "commander_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 12
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/magazine/co9mm/hp
-	name = "pistol magazine (9mm HP)"
-	desc= "A 12-round double-stack magazine for standard-issue 9mm pistols. These hollow point rounds do significant damage against soft targets, but are nearly ineffective against armored ones."
+	name = "pistol magazine (9x18mm HP)"
+	desc= "A 12-round double-stack magazine for standard-issue 9x18mm pistols. These hollow point rounds do significant damage against soft targets, but are nearly ineffective against armored ones."
 	ammo_type = /obj/item/ammo_casing/c9mm/hp
 
 /obj/item/ammo_box/magazine/co9mm/ap
-	name = "pistol magazine (9mm AP)"
-	desc= "A 12-round double-stack magazine for standard-issue 9mm pistols. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
+	name = "pistol magazine (9x18mm AP)"
+	desc= "A 12-round double-stack magazine for standard-issue 9x18mm pistols. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/ammo_box/magazine/co9mm/rubber
-	name = "pistol magazine (9mm rubber)"
-	desc = "A 12-round double-stack magazine for standard-issue 9mm pistols. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
+	name = "pistol magazine (9x18mm rubber)"
+	desc = "A 12-round double-stack magazine for standard-issue 9x18mm pistols. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 /obj/item/ammo_box/magazine/co9mm/update_icon_state()
@@ -77,7 +77,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander)
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	name = "PS-03 Commissioner"
-	desc = "A modified version of the VI Commander, issued as standard to Inteq Risk Management Group personnel. Features the same excellent handling and high magazine capacity as the original. Chambered in 9mm."
+	desc = "A modified version of the VI Commander, issued as standard to Inteq Risk Management Group personnel. Features the same excellent handling and high magazine capacity as the original. Chambered in 9x18mm."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'

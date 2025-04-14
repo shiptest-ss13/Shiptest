@@ -305,7 +305,7 @@
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
 		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
-		/obj/item/ammo_box/vickland_a308,
+		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
@@ -813,18 +813,18 @@
 /obj/item/storage/belt/sabre/examine(mob/user)
 	. = ..()
 	if(length(contents))
-		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
+		. += span_notice("Alt-click it to quickly draw the blade.")
 
 /obj/item/storage/belt/sabre/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(length(contents))
 		var/obj/item/I = contents[1]
-		user.visible_message("<span class='notice'>[user] takes [I] out of [src].</span>", "<span class='notice'>You take [I] out of [src].</span>")
+		user.visible_message(span_notice("[user] takes [I] out of [src]."), span_notice("You take [I] out of [src]."))
 		user.put_in_hands(I)
 		update_appearance()
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 
 /obj/item/storage/belt/sabre/update_icon_state()
 	icon_state = "[base_icon_state]"

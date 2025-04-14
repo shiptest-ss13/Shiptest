@@ -91,7 +91,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	if(!garnish.garnish_state)
 		return ..()
 	if(garnishes["[garnish.garnish_layer]"])
-		to_chat(user, "<span class='notice'>Theres already something on this part of the glass!</span>")
+		to_chat(user, span_notice("Theres already something on this part of the glass!"))
 		return ..()
 	garnishes["[garnish.garnish_layer]"] = garnish.garnish_state
 	update_appearance()

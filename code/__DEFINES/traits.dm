@@ -175,7 +175,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_RESISTCOLD "resist_cold"
 #define TRAIT_RESISTHIGHPRESSURE "resist_high_pressure"
 #define TRAIT_RESISTLOWPRESSURE "resist_low_pressure"
-#define TRAIT_METALLIC "metallic" //used on IPCs
 #define TRAIT_BOMBIMMUNE "bomb_immunity"
 #define TRAIT_RADIMMUNE "rad_immunity"
 #define TRAIT_GENELESS "geneless"
@@ -334,7 +333,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_FREERUNNING "freerunning"
 #define TRAIT_POOR_AIM "poor_aim"
 #define TRAIT_PROSOPAGNOSIA "prosopagnosia"
-#define TRAIT_TAGGER "tagger"
 #define TRAIT_PHOTOGRAPHER "photographer"
 #define TRAIT_MUSICIAN "musician"
 #define TRAIT_LIGHT_DRINKER "light_drinker"
@@ -493,3 +491,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
 #define AI_ANCHOR_TRAIT "ai_anchor"
+
+/// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
+#define TRAIT_CLIMBABLE "trait_climbable"
