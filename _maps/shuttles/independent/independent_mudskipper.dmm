@@ -159,6 +159,13 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/structure/bed/dogbed{
+	name = "Kitty's Bed"
+	},
+/mob/living/simple_animal/hostile/asteroid/gutlunch/guthen{
+	name = "Kitty";
+	faction = list("neutral")
+	},
 /turf/open/floor/carpet,
 /area/ship/crew)
 "dT" = (

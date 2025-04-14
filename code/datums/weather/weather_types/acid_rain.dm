@@ -35,4 +35,4 @@
 		return
 	var/resist = L.getarmor(null, "acid")
 	if(prob(max(0,100-resist)))
-		L.acid_act(20,20)
+		L.acid_act(20,1)
