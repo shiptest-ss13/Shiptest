@@ -7,7 +7,8 @@
 	icon = 'ICON FILENAME' 			(defaults to 'icons/turf/areas.dmi')
 	icon_state = "NAME OF ICON" 	(defaults to "unknown" (blank))
 	requires_power = FALSE 				(defaults to true)
-	ambience_index = AMBIENCE_list()				(defaults to GENERIC from sound.dm. override it as "ambience_index = AMBIENCE_list('sound/ambience/signal.ogg')" or using another define.
+	ambientsounds = list()				(defaults to grabbing from GENERIC_INDEX on area init.
+	override it as "ambientsounds = list('sound/ambience/signal.ogg')" or setting its ambience_index to something else.
 
 NOTE: there are two lists of areas in the end of this file: centcom and station itself. Please maintain these lists valid. --rastaf0
 
