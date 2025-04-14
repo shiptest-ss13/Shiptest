@@ -17,7 +17,7 @@
 	var/mission_index = 1
 	///Prefered over the passed one, used for varediting primarly.
 	var/type_to_spawn
-	///checks for containters on the turf for this to put into. For if we haven't already spawned the thing.
+	///checks for containters on the turf for this to put into, or if prespawned check container for the object
 	var/spawn_in_containter = FALSE
 
 
@@ -72,7 +72,12 @@
 		if(istype(prespawned_item, type_to_spawn))
 			return prespawned_item
 	for(var/atom/movable/item_in_poi as anything in get_turf(src))
-		if(istype(item_in_poi, type_to_spawn))
+		if(spawn_in_containter)
+			if(is_type_in_list(item_in_poi, VALID_POI_CONTAINERS))
+				for(var/atom/movable/item_in_container as anything in item_in_poi.contents)
+					if(istype(item_in_container, type_to_spawn))
+						return item_in_container
+		else if(istype(item_in_poi, type_to_spawn))
 			return item_in_poi
 
 /obj/effect/landmark/mission_poi/proc/get_container()
