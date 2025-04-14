@@ -7,7 +7,7 @@
 	icon = 'ICON FILENAME' 			(defaults to 'icons/turf/areas.dmi')
 	icon_state = "NAME OF ICON" 	(defaults to "unknown" (blank))
 	requires_power = FALSE 				(defaults to true)
-	ambientsounds = list()				(defaults to GENERIC from sound.dm. override it as "ambientsounds = list('sound/ambience/signal.ogg')" or using another define.
+	ambience_index = AMBIENCE_list()				(defaults to GENERIC from sound.dm. override it as "ambience_index = AMBIENCE_list('sound/ambience/signal.ogg')" or using another define.
 
 NOTE: there are two lists of areas in the end of this file: centcom and station itself. Please maintain these lists valid. --rastaf0
 
@@ -26,7 +26,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_environ = FALSE
 	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
 	outdoors = TRUE
-	ambientsounds = SPACE
+	ambience_index = AMBIENCE_SPACE
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_SPACE
 
@@ -56,7 +56,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_environ = FALSE
 	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
 	outdoors = TRUE
-	ambientsounds = SPACE
+	ambience_index = AMBIENCE_SPACE
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_SPACE
 
@@ -67,7 +67,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "asteroid"
 	has_gravity = STANDARD_GRAVITY
 	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
-	ambientsounds = MINING
+	ambience_index = AMBIENCE_MINING
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_ASTEROID
 	min_ambience_cooldown = 70 SECONDS
@@ -228,7 +228,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/chapel
 	name = "Chapel"
 	icon_state = "chapel"
-	ambientsounds = HOLY
+	ambience_index = AMBIENCE_HOLY
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
@@ -275,7 +275,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/medical
 	name = "Infirmary"
 	icon_state = "medbay3"
-	ambientsounds = MEDICAL
+	ambience_index = AMBIENCE_MEDICAL
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"
 	min_ambience_cooldown = 90 SECONDS
@@ -288,7 +288,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/medical/morgue
 	name = "Morgue"
 	icon_state = "morgue"
-	ambientsounds = SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
 
 /area/ship/medical/psych
 	name = "Psych's Office"
@@ -329,7 +329,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/engineering
 	name = "Engineering"
 	icon_state = "engine"
-	ambientsounds = ENGINEERING
+	ambience_index = AMBIENCE_ENGI
 	lighting_colour_tube = "#ffce93"
 	lighting_colour_bulb = "#ffbc6f"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
@@ -372,7 +372,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/security
 	name = "Brig"
 	icon_state = "brig"
-	ambientsounds = HIGHSEC
+	ambience_index = AMBIENCE_DANGER
 	lighting_colour_tube = "#ffeee2"
 	lighting_colour_bulb = "#ffdfca"
 
@@ -421,7 +421,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Hangar"
 	icon_state = "shuttlered"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
-	ambientsounds = ENGINEERING
+	ambience_index = AMBIENCE_ENGI
 
 /area/ship/hangar/port
 	name = "Port Hangar"
@@ -460,7 +460,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /// Maintenance Areas ///
 /area/ship/maintenance
 	name = "Maintenance"
-	ambientsounds = MAINTENANCE
+	ambience_index = AMBIENCE_MAINT
 	lighting_colour_tube = "#ffe5cb"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
@@ -518,6 +518,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "External"
 	icon_state = "space_near"
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
-	ambientsounds = SPACE
+	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
 	lightswitch = TRUE

@@ -299,7 +299,7 @@
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
-	ambientsounds = RUINS
+	ambience_index = AMBIENCE_RUINS
 	outdoors = TRUE
 	allow_weather = TRUE
 
@@ -318,7 +318,7 @@
 /area/overmap_encounter/planetoid/cave
 	name = "\improper Planetoid Cavern"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
-	ambientsounds = SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
 	allow_weather = FALSE
 
 /area/overmap_encounter/planetoid/cave/explored
@@ -328,7 +328,7 @@
 
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
-	ambientsounds = MINING
+	ambience_index = AMBIENCE_MINING
 
 /area/overmap_encounter/planetoid/lava/explored
 	area_flags = VALID_TERRITORY
@@ -336,7 +336,7 @@
 /area/overmap_encounter/planetoid/ice
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
-	ambientsounds = SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
 
 /area/overmap_encounter/planetoid/ice/explored
 	area_flags = VALID_TERRITORY
@@ -344,7 +344,7 @@
 /area/overmap_encounter/planetoid/sand
 	name = "\improper Sandy Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambientsounds = MINING
+	ambience_index = AMBIENCE_MINING
 
 /area/overmap_encounter/planetoid/sand/explored
 	area_flags = VALID_TERRITORY
@@ -352,7 +352,7 @@
 /area/overmap_encounter/planetoid/jungle
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambientsounds = AWAY_MISSION
+	ambience_index = AMBIENCE_AWAY
 
 /area/overmap_encounter/planetoid/jungle/explored
 	area_flags = VALID_TERRITORY
@@ -360,7 +360,7 @@
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambientsounds = AWAY_MISSION
+	ambience_index = AMBIENCE_AWAY
 
 /area/overmap_encounter/planetoid/rockplanet/explored
 	area_flags = VALID_TERRITORY
@@ -368,7 +368,7 @@
 /area/overmap_encounter/planetoid/beachplanet
 	name = "\improper Beach Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambientsounds = BEACH
+	ambience_index = AMBIENCE_BEACH
 
 /area/overmap_encounter/planetoid/beachplanet/explored
 	area_flags = VALID_TERRITORY
@@ -376,7 +376,7 @@
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
-	ambientsounds = MAINTENANCE
+	ambience_index = AMBIENCE_MAINT
 
 /area/overmap_encounter/planetoid/wasteplanet/explored
 	area_flags = VALID_TERRITORY
@@ -385,15 +385,15 @@
 	name = "\improper Yellow Space"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
-	ambientsounds = REEBE
+	ambience_index = AMBIENCE_REEBE
 
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambientsounds = SPACE
+	ambience_index = AMBIENCE_SPACE
 
 /area/overmap_encounter/planetoid/gas_giant
 	name = "\improper Gas Giant"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	ambientsounds = REEBE
+	ambience_index = AMBIENCE_REEBE
 	has_gravity = GAS_GIANT_GRAVITY
