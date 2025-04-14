@@ -48,7 +48,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/bar/wanderer
 	name = "wanderer bar"
-	desc = "A bar of shredded miras meat, refa-li, and seeds, not too much unlike Tirili-La. Nomads used to eat these to keep going on long trips."
+	desc = "A bar of shredded miras meat, refa-li, and seeds, not too much unlike Tirili-La. Great for a power-up before a trip."
 	filling_color = "#70829a"
 	tastes = list("sweet meat" = 1, "dried out fruit flesh" = 1, "crunchy seeds" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
