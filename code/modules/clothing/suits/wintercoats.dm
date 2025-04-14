@@ -22,17 +22,6 @@
 					/obj/item/radio,
 					/obj/item/storage/pill_bottle
 					)
-	unique_reskin = list(
-		"red winter coat" = "coatsecurity",
-		"light blue winter coat" = "coatmedical",
-		"blue winter coat" = "coatparamedic",
-		"white-purple winter coat" = "coatscience",
-		"yellow winter coat" = "coatengineer",
-		"yellow-cyan winter coat" = "coatatmos",
-		"green-blue winter coat" = "coathydro",
-		"black-yellow winter coat" = "coatcargo",
-		"purple-orange winter coat" = "coatminer"
-	)
 
 /obj/item/clothing/head/hooded/winterhood
 	name = "winter hood"
@@ -44,6 +33,21 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	flags_inv = HIDEHAIR|HIDEEARS
+
+/obj/item/clothing/suit/hooded/wintercoat/recolorable
+	desc = "A heavy jacket made from 'synthetic' animal furs. This one can be recolored, but only once."
+	unique_reskin = list(
+		"grey winter coat" = "coatwinter"
+		"red winter coat" = "coatsecurity",
+		"light blue winter coat" = "coatmedical",
+		"blue winter coat" = "coatparamedic",
+		"white-purple winter coat" = "coatscience",
+		"yellow winter coat" = "coatengineer",
+		"yellow-cyan winter coat" = "coatatmos",
+		"green-blue winter coat" = "coathydro",
+		"black-yellow winter coat" = "coatcargo",
+		"purple-orange winter coat" = "coatminer"
+	)
 
 /obj/item/clothing/suit/hooded/wintercoat/captain
 	name = "captain's winter coat"
