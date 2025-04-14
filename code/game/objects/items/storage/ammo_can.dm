@@ -10,13 +10,7 @@
 	material_flags = NONE
 	has_latches = FALSE
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/toolbox/ammo/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_BACKPACK
-	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
-	STR.set_holdable(list(
+	var/holdable_items = list(
 		/obj/item/storage/box/ammo,
 		/obj/item/mine,
 		/obj/item/grenade,
@@ -26,12 +20,20 @@
 		/obj/item/mine,
 		/obj/item/grenade,
 		/obj/item/stock_parts/cell/gun
-		))
+	)
+
+/obj/item/storage/toolbox/ammo/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 400
+	STR.set_holdable(holdable_items)
+
 	unique_reskin = list(
 		"EXPLOSIVE" = "ammobox_expl",
 		"12ga Buckshot" = "ammobox_12ga",
-		".9mm" = "ammobox_9mm",
-		"10mm" = "ammobox_10mm",
+		"9x18mm" = "ammobox_9mm",
+		"10x22mm" = "ammobox_10mm",
 		".45" = "ammobox_45",
 		".38" = "ammobox_38",
 		".22lr" = "ammobox_22",
@@ -42,7 +44,7 @@
 		"8x50mmR" = "ammobox_850",
 		"8x58mm" = "ammobox_858",
 		".308" = "ammobox_308",
-		"6.5mm CLIP" = "ammobox_65",
+		"7.5x64mm CLIP" = "ammobox_75",
 		".300" = "ammobox_300",
 		".357" = "ammobox_357",
 		".299 Eoehoma" = "ammobox_299",
@@ -80,13 +82,13 @@
 		new /obj/item/storage/box/ammo/c45(src)
 
 /obj/item/storage/toolbox/ammo/c9mm/PopulateContents()
-	name = "ammo can (9mm)"
+	name = "ammo can (9x18mm)"
 	icon_state = "ammobox_9mm"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/c9mm(src)
 
 /obj/item/storage/toolbox/ammo/c10mm/PopulateContents()
-	name = "ammo can (10mm)"
+	name = "ammo can (10x22mm)"
 	icon_state = "ammobox_10mm"
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/c10mm(src)
@@ -127,11 +129,11 @@
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/c46x30mm(src)
 
-/obj/item/storage/toolbox/ammo/c65/PopulateContents()
-	name = "ammo can (6.5mm CLIP)"
-	icon_state = "ammobox_65"
+/obj/item/storage/toolbox/ammo/c75/PopulateContents()
+	name = "ammo can (7.5x64mm CLIP)"
+	icon_state = "ammobox_75"
 	for (var/i in 1 to 4)
-		new /obj/item/storage/box/ammo/a65clip(src)
+		new /obj/item/storage/box/ammo/a75clip(src)
 
 /obj/item/storage/toolbox/ammo/c300/PopulateContents()
 	name = "ammo can (.300)"
