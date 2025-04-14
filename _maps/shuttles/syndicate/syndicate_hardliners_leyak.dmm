@@ -45,6 +45,7 @@
 	pixel_x = 8;
 	pixel_y = 21
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "au" = (
@@ -153,6 +154,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/light/floor,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "by" = (
@@ -1815,7 +1817,6 @@
 /area/ship/crew/dorm)
 "uW" = (
 /obj/effect/turf_decal/isf_big/seven,
-/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "vf" = (
@@ -3114,9 +3115,6 @@
 /area/ship/science/workshop)
 "LF" = (
 /obj/effect/turf_decal/isf_big/three,
-/obj/structure/chair/handrail{
-	dir = 1
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "LG" = (
@@ -3410,6 +3408,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Pm" = (
@@ -3746,9 +3745,6 @@
 /area/ship/bridge)
 "Tc" = (
 /obj/effect/turf_decal/isf_big/two,
-/obj/structure/chair/handrail{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
@@ -4327,7 +4323,6 @@
 /area/ship/science/workshop)
 "YY" = (
 /obj/effect/turf_decal/isf_big/six,
-/obj/structure/chair/handrail,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
