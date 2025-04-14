@@ -30,6 +30,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambience_index = AMBIENCE_SPACE
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_SPACE
+	allow_weather = TRUE
 
 /area/space/nearstation
 	icon_state = "space_near"

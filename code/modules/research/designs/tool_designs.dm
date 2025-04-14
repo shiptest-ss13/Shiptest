@@ -7,7 +7,7 @@
 	name = "Industrial Welding Tool"
 	id = "large_welding_tool"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 70, /datum/material/glass = 60)
+	materials = list(/datum/material/iron = 70, /datum/material/glass = 60, /datum/material/sulfur = 10)
 	build_path = /obj/item/weldingtool/largetank/empty
 	category = list("initial", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

@@ -143,3 +143,16 @@
   - rscadd: outpost cargo is now bundled when applicable
   generalthrax:
   - balance: Butter now requires 5 milk instead of 15
+2025-04-14:
+  FalloutFalcon:
+  - rscdel: beats in deciseconds of a song is no longer player facing
+  - rscdel: handful of other jukebox cruft cleanup things
+  - code_imp: rustg version bump to 3.6
+  - refactor: can now determine its own length and cache it, used in jukeboxes so
+      we dont have to add it in the title.
+  firebudgy:
+  - bugfix: Jungle Bunker tiles now have the correct atmos.
+  kaylexis:
+  - rscadd: added medical area to rock outpost
+  - rscadd: potted plants to rock outpost
+  - rscadd: altered bounty pad locations

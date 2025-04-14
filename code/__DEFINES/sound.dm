@@ -44,6 +44,8 @@
 
 #define AMBIENCE_REEBE "reebe" //unused
 #define AMBIENCE_BEACH "beach"
+#define AMBIENCE_DESERT "desert"
+#define AMBIENCE_TUNDRA "tundra"
 
 #define INTERACTION_SOUND_RANGE_MODIFIER -3
 #define EQUIP_SOUND_VOLUME 30

@@ -163,7 +163,22 @@ GLOBAL_LIST_INIT(beach_ambience,list(
 	'sound/ambience/seag2.ogg',
 	'sound/ambience/seag2.ogg',
 	'sound/ambience/ambiodd.ogg',
-	'sound/ambience/ambinice.ogg'
+	'sound/ambience/ambinice.ogg',
+))
+GLOBAL_LIST_INIT(desert_ambience,list(
+	'sound/ambience/wind/desert0.ogg',
+	'sound/ambience/wind/desert1.ogg',
+	'sound/ambience/wind/desert2.ogg',
+	'sound/ambience/wind/desert3.ogg',
+	'sound/ambience/wind/desert4.ogg',
+	'sound/ambience/wind/desert5.ogg',
+))
+GLOBAL_LIST_INIT(tundra_ambience,list(
+	'sound/ambience/wind/tundra0.ogg',
+	'sound/ambience/wind/tundra1.ogg',
+	'sound/ambience/wind/tundra2.ogg',
+	'sound/ambience/wind/spooky0.ogg',
+	'sound/ambience/wind/spooky1.ogg',
 ))
 
 GLOBAL_LIST_INIT(ambience_assoc,list(
@@ -181,4 +196,6 @@ GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_CREEPY = GLOB.creepy_ambience,
 	AMBIENCE_REEBE = GLOB.reebe_ambience,
 	AMBIENCE_BEACH = GLOB.beach_ambience,
+	AMBIENCE_DESERT = GLOB.desert_ambience,
+	AMBIENCE_TUNDRA = GLOB.tundra_ambience,
 ))

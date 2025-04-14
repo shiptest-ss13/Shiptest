@@ -1,8 +1,0 @@
-author: FalloutFalcon
-changes:
-  - {rscdel: beats in deciseconds of a song is no longer player facing}
-  - {rscdel: handful of other jukebox cruft cleanup things}
-  - {code_imp: rustg version bump to 3.6}
-  - {refactor: 'can now determine its own length and cache it, used in jukeboxes so
-      we dont have to add it in the title.'}
-delete-after: true
