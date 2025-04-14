@@ -5102,6 +5102,21 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
+"yO" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/curtain{
+	dir = 8
+	},
+/obj/machinery/shower{
+	dir = 4;
+	desc = "An old shower. It looks rusted."
+	},
+/obj/item/bikehorn/rubberducky{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/turf/open/floor/noslip,
+/area/ruin/icemoon/training_facility/cafeteria)
 "yP" = (
 /obj/effect/turf_decal/corner/transparent/syndiered/border{
 	dir = 6
@@ -11230,7 +11245,7 @@ pw
 qJ
 Fm
 Wb
-uu
+yO
 uu
 GE
 EL
