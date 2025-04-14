@@ -37,7 +37,6 @@
 
 /obj/effect/greeble_spawner/proc/start_load()
 	if(!template)
-		WARNING("Greeble template not set!")
 		qdel(src)
 		return
 	template = new template()
