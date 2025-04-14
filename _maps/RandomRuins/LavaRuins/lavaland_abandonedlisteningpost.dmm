@@ -518,11 +518,13 @@
 	pixel_x = -4
 	},
 /obj/item/spacecash/bundle/loadsamoney,
-/obj/item/documents/syndicate,
 /obj/machinery/light/small/directional/north,
 /obj/item/folder/documents/syndicate/red,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
+	},
+/obj/effect/landmark/mission_poi/main{
+	type_to_spawn = /obj/item/documents/syndicate
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/listening_post/operations)
