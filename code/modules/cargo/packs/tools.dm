@@ -14,6 +14,7 @@
 					/obj/item/key)
 	crate_name = "ATV crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /*
 		Actual tools
@@ -142,6 +143,13 @@
 	contains = list(/obj/item/weldingtool/electric)
 	crate_name = "electric welder crate"
 
+/datum/supply_pack/tools/welding_goggles
+	name = "Welding Goggles"
+	desc = "Contains a single pair of welding goggles for protecting your eyes."
+	cost = 150
+	contains = list(/obj/item/clothing/glasses/welding)
+	crate_name = "welding goggles crate"
+
 /datum/supply_pack/tools/plasmacutter
 	name = "Plasmacutter Crate"
 	desc = "Contains a plasmacutter, capable of rapidly breaking down hull."
@@ -170,6 +178,7 @@
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
 	crate_name = "fuel tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/watertank
 	name = "Fresh Water Supply Crate"
@@ -178,6 +187,7 @@
 	contains = list(/obj/structure/reagent_dispensers/watertank)
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/hightank
 	name = "Large Fresh Water Supply Crate"
@@ -186,6 +196,7 @@
 	contains = list(/obj/structure/reagent_dispensers/watertank/high)
 	crate_name = "high-capacity water tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/foamtank
 	name = "Firefighting Foam Tank Crate"
@@ -194,6 +205,7 @@
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/tools/radfoamtank
 	name = "Radiation Foam Tank Crate"
@@ -205,3 +217,4 @@
 	)
 	crate_name = "foam tank crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE

@@ -256,3 +256,14 @@
 	new /obj/item/fish/goldfish(src)
 	new /obj/item/fish/angelfish(src)
 	new /obj/item/fish/guppy(src)
+
+/obj/structure/aquarium/prefilled/cirrus/Initialize(mapload)
+	. = ..()
+
+	new /obj/item/aquarium_prop/rocks(src)
+	new /obj/item/aquarium_prop/seaweed(src)
+	new /obj/item/aquarium_prop/treasure(src)
+
+	new /obj/item/fish/trout(src)
+	new /obj/item/fish/trout(src)
+	new /obj/item/fish/catfish(src)

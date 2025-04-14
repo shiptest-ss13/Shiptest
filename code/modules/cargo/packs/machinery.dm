@@ -142,6 +142,7 @@
 	cost = 500
 	contains = list(/obj/machinery/space_heater)
 	crate_name = "space heater crate"
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/thermomachine
 	name = "Thermomachine Crate"
@@ -149,6 +150,7 @@
 	cost = 1000
 	contains = list(/obj/item/circuitboard/machine/thermomachine)
 	crate_name = "thermomachine crate"
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/portapump
 	name = "Portable Air Pump Crate"
@@ -156,6 +158,7 @@
 	cost = 750
 	contains = list(/obj/machinery/portable_atmospherics/pump)
 	crate_name = "portable air pump crate"
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/portascrubber
 	name = "Portable Scrubber Crate"
@@ -163,6 +166,7 @@
 	cost = 750
 	contains = list(/obj/machinery/portable_atmospherics/scrubber)
 	crate_name = "portable scrubber crate"
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/hugescrubber
 	name = "Huge Portable Scrubber Crate"
@@ -171,6 +175,7 @@
 	contains = list(/obj/machinery/portable_atmospherics/scrubber/huge/movable/cargo)
 	crate_name = "huge portable scrubber crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /*
 		Bots
@@ -183,6 +188,7 @@
 	contains = list(/mob/living/simple_animal/bot/mulebot)
 	crate_name = "\improper MULEbot Crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/robotics
 	name = "Robotics Assembly Crate"
@@ -208,6 +214,7 @@
 					/obj/item/bot_assembly/cleanbot)
 	crate_name = "robotics assembly crate"
 	crate_type = /obj/structure/closet/crate/science
+	no_bundle = TRUE
 
 /*
 		Miscellaneous machines
@@ -220,6 +227,7 @@
 	contains = list(/obj/machinery/power/ship_gravity/unanchored)
 	crate_name = "gravity generator crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/breach_shield_gen
 	name = "Anti-breach Shield Projector Crate"
@@ -229,6 +237,7 @@
 					/obj/machinery/shieldgen)
 	crate_name = "anti-breach shield projector crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/wall_shield_gen
 	name = "Shield Generator Crate"
@@ -238,6 +247,7 @@
 					/obj/machinery/power/shieldwallgen)
 	crate_name = "shield generators crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/holofield_generator
 	name = "Holofield Generator Crate"
@@ -339,6 +349,7 @@
 					/obj/item/paper/guides/jobs/engi/solars)
 	crate_name = "solar panel crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/teg
 	name = "Thermoelectric Generator Crate"

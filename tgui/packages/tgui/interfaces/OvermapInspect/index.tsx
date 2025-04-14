@@ -9,6 +9,8 @@ import {
 } from '../../components';
 import { Window } from '../../layouts';
 
+import { decodeHtmlEntities } from 'common/string';
+
 export type OvermapData = {
   admin_rights: Boolean;
   ref: string;
@@ -54,7 +56,9 @@ export const OvermapInspect = (props, context) => {
               /Y
               <AnimatedNumber value={y} />
             </LabeledList.Item>
-            <LabeledList.Item label="Information">{desc}</LabeledList.Item>
+            <LabeledList.Item label="Information">
+              {decodeHtmlEntities(desc)}
+            </LabeledList.Item>
             {dockedTo.ref && (
               <LabeledList.Item label="Docked To">
                 <Box>
@@ -90,7 +94,7 @@ export const OvermapInspect = (props, context) => {
               </LabeledList.Item>
             )}
             {admin_rights ? (
-              <Box>
+              <>
                 <LabeledList.Item label="Active Missions">
                   {data.active_ruin_missions?.map((mission) => (
                     <Box key={mission.ref}>
@@ -119,7 +123,7 @@ export const OvermapInspect = (props, context) => {
                     </Box>
                   ))}
                 </LabeledList.Item>
-              </Box>
+              </>
             ) : null}
           </LabeledList>
         </Section>

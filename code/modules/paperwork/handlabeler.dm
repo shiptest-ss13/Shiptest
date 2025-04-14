@@ -17,21 +17,21 @@
 		return
 
 	if(!labels_left)
-		to_chat(user, "<span class='warning'>No labels left!</span>")
+		to_chat(user, span_warning("No labels left!"))
 		return
 	if(!label || !length(label))
-		to_chat(user, "<span class='warning'>No text set!</span>")
+		to_chat(user, span_warning("No text set!"))
 		return
 	if(length(A.name) + length(label) > 64)
-		to_chat(user, "<span class='warning'>Label too big!</span>")
+		to_chat(user, span_warning("Label too big!"))
 		return
 	if(ismob(A))
-		to_chat(user, "<span class='warning'>You can't label creatures!</span>") // use a collar
+		to_chat(user, span_warning("You can't label creatures!")) // use a collar
 		return
 
 	user.visible_message(
-		"<span class='notice'>[user] labels [A] with \"[label]\".</span>", \
-		"<span class='notice'>You label [A] with \"[label]\".</span>")
+		span_notice("[user] labels [A] with \"[label]\"."), \
+		span_notice("You label [A] with \"[label]\"."))
 	A.AddComponent(/datum/component/label, label)
 	playsound(A, 'sound/items/handling/component_pickup.ogg', 20, TRUE)
 	labels_left--
@@ -39,26 +39,26 @@
 
 /obj/item/hand_labeler/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to use [src]!</span>")
+		to_chat(user, span_warning("You don't have the dexterity to use [src]!"))
 		return
 	mode = !mode
 	icon_state = "labeler[mode]"
 	if(mode)
-		to_chat(user, "<span class='notice'>You turn on [src].</span>")
+		to_chat(user, span_notice("You turn on [src]."))
 		//Now let them chose the text.
 		var/str = reject_bad_text(stripped_input(user, "Label text?", "Set label","", MAX_NAME_LEN))
 		if(!str || !length(str))
-			to_chat(user, "<span class='warning'>Invalid text!</span>")
+			to_chat(user, span_warning("Invalid text!"))
 			return
 		label = str
-		to_chat(user, "<span class='notice'>You set the text to '[str]'.</span>")
+		to_chat(user, span_notice("You set the text to '[str]'."))
 	else
-		to_chat(user, "<span class='notice'>You turn off [src].</span>")
+		to_chat(user, span_notice("You turn off [src]."))
 
 /obj/item/hand_labeler/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/hand_labeler_refill))
-		to_chat(user, "<span class='notice'>You insert [I] into [src].</span>")
+		to_chat(user, span_notice("You insert [I] into [src]."))
 		qdel(I)
 		labels_left = initial(labels_left)	//Yes, it's capped at its initial value
 

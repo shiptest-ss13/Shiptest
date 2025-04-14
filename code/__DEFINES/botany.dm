@@ -9,7 +9,7 @@
 /// Maximum weeds a tray can reach.
 #define MAX_TRAY_WEEDS 10
 /// How long to wait between plant age ticks, by default. See [/obj/machinery/hydroponics/var/cycledelay]
-#define HYDROTRAY_CYCLE_DELAY 20 SECONDS
+#define HYDROTRAY_CYCLE_DELAY 60 SECONDS
 
 #define HYDROTRAY_NO_PLANT "missing"
 #define HYDROTRAY_PLANT_DEAD "dead"
