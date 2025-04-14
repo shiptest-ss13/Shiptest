@@ -160,7 +160,6 @@
 
 	return TRUE
 
-//Evil proc that needs to be removed
 /datum/overmap/dynamic/proc/reset_dynamic()
 	QDEL_NULL(token.countdown)
 	STOP_PROCESSING(SSfastprocess, src)
@@ -169,7 +168,6 @@
 		return
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	current_overmap.replace_dynamic_datum()
 	qdel(src)
 
 /**
