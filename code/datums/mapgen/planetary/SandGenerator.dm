@@ -35,7 +35,7 @@
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/sand/grass
 		),
 		BIOME_HOT = list(
-			BIOME_LOWEST_HUMIDITY =/datum/biome/sand/sulfur_plains,
+			BIOME_LOWEST_HUMIDITY = /datum/biome/sand/sulfur_plains,
 			BIOME_LOW_HUMIDITY = /datum/biome/sand/sulfur_plains,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/sand/riverbed,
 			BIOME_HIGH_HUMIDITY = /datum/biome/sand/grass,
