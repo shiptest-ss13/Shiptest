@@ -24,7 +24,7 @@
 	images += preview
 	if(alert(src,"Confirm location.","Template Confirm","Yes","No") == "Yes")
 		if(template.load(T, center_map))
-			message_admins("<span class='adminnotice'>[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]</span>")
+			message_admins(span_adminnotice("[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]"))
 		else
 			to_chat(src, "Failed to place map", confidential = TRUE)
 	images -= preview
