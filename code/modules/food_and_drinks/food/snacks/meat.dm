@@ -360,6 +360,12 @@
 	tastes = list("tender meat" = 1)
 	foodtype = MEAT | GORE
 
+/obj/item/reagent_containers/food/snacks/meat/steak/plain/human/lizard
+	name = "lizard steak"
+	icon_state = "birdsteak"
+	tastes = list("juicy chicken" = 3, "scales" = 1)
+	foodtype = MEAT
+
 /obj/item/reagent_containers/food/snacks/meat/steak/killertomato
 	name = "killer tomato steak"
 	tastes = list("tomato" = 1)

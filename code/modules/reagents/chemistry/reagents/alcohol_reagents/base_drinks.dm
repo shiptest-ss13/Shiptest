@@ -327,3 +327,10 @@
 	glass_icon_state = ""
 	glass_name = "Sososi-Seta"
 	glass_desc = "A white liquid with small pieces of fruit floating inside it. Typically served as a digestive after a hearty meal."
+
+/datum/reagent/consumable/ethanol/sososeta/on_mob_life(mob/living/carbon/M)
+	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
+		M.adjustToxLoss(0.5*REM, 0)
+	M.adjust_nutrition(-2)
+	M.overeatduration = 0
+	return ..()
