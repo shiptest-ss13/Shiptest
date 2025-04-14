@@ -428,7 +428,7 @@
 
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
-	ambient_index = AMBIENCE_MINING
+	ambience_index = AMBIENCE_MINING
 	light_color = COLOR_LAVAPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -439,7 +439,7 @@
 /area/overmap_encounter/planetoid/ice
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
-	ambient_index = AMBIENCE_SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
 	light_color = COLOR_ICEPLANET_LIGHT
 	light_range = 2
 	light_power = 1
@@ -450,7 +450,7 @@
 /area/overmap_encounter/planetoid/sand
 	name = "\improper Sandy Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambient_index = AMBIENCE_MINING
+	ambience_index = AMBIENCE_MINING
 	light_color = COLOR_SANDPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -461,7 +461,7 @@
 /area/overmap_encounter/planetoid/jungle
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambient_index = AMBIENCE_AWAY
+	ambience_index = AMBIENCE_AWAY
 	light_range = 2
 	light_power = 1
 	light_color = COLOR_VERY_LIGHT_GRAY
@@ -472,7 +472,7 @@
 /area/overmap_encounter/planetoid/battlefield
 	name = "\improper Battlefield Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CITY
-	ambient_index = AMBIENCE_SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
 	light_color = COLOR_FOGGY_LIGHT
 	light_range = 2
 	light_power = 1
@@ -484,7 +484,7 @@
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambient_index = AMBIENCE_AWAY
+	ambience_index = AMBIENCE_AWAY
 	light_color = COLOR_ROCKPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -495,7 +495,7 @@
 /area/overmap_encounter/planetoid/beachplanet
 	name = "\improper Beach Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambient_index = AMBIENCE_BEACH
+	ambience_index = AMBIENCE_BEACH
 	light_color = COLOR_BEACHPLANET_LIGHT
 	light_range = 2
 	light_power = 0.80
@@ -503,7 +503,7 @@
 /area/overmap_encounter/planetoid/waterplanet
 	name = "\improper Water Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambient_index = AMBIENCE_MINING
+	ambience_index = AMBIENCE_MINING
 	light_color = "#09121a"
 	light_range = 2
 	light_power = 1
@@ -514,7 +514,7 @@
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
-	ambient_index = AMBIENCE_MAINT
+	ambience_index = AMBIENCE_MAINT
 	light_color = COLOR_WASTEPLANET_LIGHT
 	light_range = 2
 	light_power = 0.2
@@ -526,7 +526,7 @@
 	name = "\improper Yellow Space"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
-	ambient_index = AMBIENCE_REEBE
+	ambience_index = AMBIENCE_REEBE
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
@@ -534,7 +534,7 @@
 /area/overmap_encounter/planetoid/desert
 	name = "\improper Desert Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	ambient_index = AMBIENCE_DESERT
+	ambience_index = AMBIENCE_DESERT
 	light_range = 2
 	light_power = 0.6
 	light_color = "#ffd2bd"
@@ -542,14 +542,14 @@
 /area/overmap_encounter/planetoid/shrouded
 	name = "\improper Shrouded Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	ambient_index = AMBIENCE_DESERT
+	ambience_index = AMBIENCE_DESERT
 	light_range = 0
 	light_power = 0
 
 /area/overmap_encounter/planetoid/snowball
 	name = "\improper Snowball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
-	ambient_index = AMBIENCE_TUNDRA
+	ambience_index = AMBIENCE_TUNDRA
 	light_color = "#67769e"
 	light_range = 2
 	light_power = 1
@@ -557,7 +557,7 @@
 /area/overmap_encounter/planetoid/dustball
 	name = "\improper Dustball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_PLAIN
-	ambient_index = AMBIENCE_DESERT
+	ambience_index = AMBIENCE_DESERT
 	light_color = "#bf9b9b"
 	light_range = 2
 	light_power = 1
@@ -565,7 +565,7 @@
 /area/overmap_encounter/planetoid/duneball
 	name = "\improper Duneball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_PLAIN
-	ambient_index = AMBIENCE_DESERT
+	ambience_index = AMBIENCE_DESERT
 	light_color = "#be956b"
 	light_range = 2
 	light_power = 1
@@ -573,7 +573,7 @@
 /area/overmap_encounter/planetoid/waterball
 	name = "\improper Waterball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambient_index = AMBIENCE_MINING
+	ambience_index = AMBIENCE_MINING
 	lighting_colour_tube = "#8affe2"
 	lighting_colour_bulb = "#8affe2"
 	light_color = "#09121a"
@@ -582,7 +582,7 @@
 
 /area/overmap_encounter/planetoid/moon
 	name = "\improper Planetoid Moon"
-	ambient_index = AMBIENCE_SPACE
+	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
 	light_range = 2
 	light_power = 1
@@ -591,7 +591,7 @@
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambient_index = AMBIENCE_SPACE
+	ambience_index = AMBIENCE_SPACE
 	light_range = 0
 	light_power = 0
 
