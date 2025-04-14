@@ -509,7 +509,7 @@
 	foodtype = MEAT | SUGAR | FRUIT
 
 /obj/item/reagent_containers/food/snacks/grape_remes
-	name = "grape remes"
+	name = "wine remes"
 	desc = "The absorbent nature of a Remes snail was eagerly exploited by interstellar chefs, leading to the creation of this wine-soaked meat. Eating enough is said to leave a mild buzz."
 	icon_state = ""
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/ethanol/wine = 10)
@@ -576,3 +576,12 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("seared meat" = 1, "faint sweetness" = 1)
 	foodtype = MEAT | SUGAR | GORE
+
+/obj/item/reagent_containers/food/snacks/kebab/miras
+	name = "faferiri skewer"
+	desc = "Remes meat separates out Tiris, Sososi, and Refa-li on a skewer. The flavors mix together as the juices flow, creating a gooey mess with a hint of spice."
+	icon_state = ""
+	w_class = WEIGHT_CLASS_NORMAL
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("spicy fruit" = 1, "faint sweetness" = 1, "satisfying crunch" = 1, "earthiness" = 2, "savory goo" = 4)
+	foodtype = MEAT | FRUIT | VEGETABLES
