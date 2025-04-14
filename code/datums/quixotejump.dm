@@ -26,14 +26,14 @@
 		return
 	charges = clamp(charges + 1, 0, max_charges)
 	holder.update_action_buttons_icon()
-	to_chat(holder, "<span class='notice'>Quixote dash mechanisms now have [charges]/[max_charges] charges.</span>")
+	to_chat(holder, span_notice("Quixote dash mechanisms now have [charges]/[max_charges] charges."))
 
 /datum/action/innate/quixotejump/Activate()
 	var/mob/living/carbon/human/holder = holder_ref.resolve()
 	if(isnull(holder))
 		return
 	if(!charges)
-		to_chat(holder, "<span class='warning'>Quixote dash mechanisms are still recharging. Please standby.</span>")
+		to_chat(holder, span_warning("Quixote dash mechanisms are still recharging. Please standby."))
 		return
 	var/newx = holder.x
 	var/newy = holder.y
@@ -45,7 +45,7 @@
 		else      CRASH("Invalid direction!")
 	var/turf/T = locate(newx, newy, holder.z)
 	holder.throw_at(T, 5, 3, spin = FALSE)
-	holder.visible_message("<span class='warning'>[holder] suddenly dashes forward!</span>", "<span class='notice'>The Quixote dash mechanisms propel you forward!</span>")
+	holder.visible_message(span_warning("[holder] suddenly dashes forward!"), span_notice("The Quixote dash mechanisms propel you forward!"))
 	playsound(T, dash_sound, 25, TRUE)
 	charges--
 	holder.update_action_buttons_icon()
