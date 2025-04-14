@@ -7298,6 +7298,11 @@
 "JM" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner/north,
+/obj/item/ammo_casing/a65clip,
+/obj/item/ammo_casing/a65clip{
+	pixel_x = -7;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
 "JN" = (
@@ -8677,17 +8682,11 @@
 "Qu" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner,
-/obj/item/storage/box/ammo/a65clip{
-	pixel_y = 31
-	},
-/obj/item/ammo_casing/a65clip/trac{
-	pixel_x = -6
-	},
-/obj/item/ammo_casing/a65clip/trac,
 /obj/item/clothing/ears/earmuffs{
-	pixel_y = 26;
-	pixel_x = 3
+	pixel_y = 8;
+	pixel_x = 7
 	},
+/obj/item/storage/box/ammo/a65clip,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
 "Qw" = (
