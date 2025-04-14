@@ -37,7 +37,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/recolorable
 	desc = "A heavy jacket made from 'synthetic' animal furs. This one can be recolored, but only once."
 	unique_reskin = list(
-		"grey winter coat" = "coatwinter"
+		"grey winter coat" = "coatwinter",
 		"red winter coat" = "coatsecurity",
 		"light blue winter coat" = "coatmedical",
 		"blue winter coat" = "coatparamedic",
