@@ -135,7 +135,6 @@
 /turf/closed/wall,
 /area/ship/storage)
 "D" = (
-/obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
 	id = "window_shutters_esq"
@@ -248,6 +247,11 @@
 	pixel_y = 8
 	},
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = -17
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/storage)
 "S" = (
