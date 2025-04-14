@@ -25,7 +25,7 @@
 		return FALSE
 	if(istype(M, /obj/mecha/combat))
 		return TRUE
-	if((locate(/obj/item/mecha_parts/concealed_weapon_bay) in M.contents) && !(locate(/obj/item/mecha_parts/mecha_equipment/weapon) in M.equipment))
+	if((locate(/obj/item/mecha_parts/weapon_bay) in M.contents) && !(locate(/obj/item/mecha_parts/mecha_equipment/weapon) in M.equipment))
 		return TRUE
 	return FALSE
 
@@ -235,7 +235,10 @@
 	projectiles_max ||= projectiles
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_shot_amount()
-	return min(projectiles, projectiles_per_shot)
+	if(one_casing)
+		return projectiles_per_shot
+	else
+		return min(projectiles, projectiles_per_shot)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/action_checks(target)
 	if(!..())

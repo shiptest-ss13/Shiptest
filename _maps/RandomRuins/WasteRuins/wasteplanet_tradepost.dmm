@@ -1244,6 +1244,7 @@
 "nO" = (
 /obj/machinery/light/small/directional/north,
 /obj/machinery/computer/operating,
+/obj/item/disk/surgery/t2,
 /turf/open/floor/pod/light,
 /area/ruin/wasteplanet/tradepost/barracks)
 "nU" = (
@@ -2547,7 +2548,9 @@
 	pixel_x = -4
 	},
 /obj/effect/mob_spawn/human/corpse/inteq/vanguard/tradepost,
-/obj/effect/landmark/mission_poi/main,
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ruin/wasteplanet/tradepost/center)
 "Cq" = (

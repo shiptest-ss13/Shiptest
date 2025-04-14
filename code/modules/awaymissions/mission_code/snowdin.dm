@@ -20,10 +20,10 @@
 /turf/open/lava/plasma/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/glass/C = I
 	if(C.reagents.total_volume >= C.volume)
-		to_chat(user, "<span class='danger'>[C] is full.</span>")
+		to_chat(user, span_danger("[C] is full."))
 		return
 	C.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
-	user.visible_message("<span class='notice'>[user] scoops some plasma from the [src] with \the [C].</span>", "<span class='notice'>You scoop out some plasma from the [src] using \the [C].</span>")
+	user.visible_message(span_notice("[user] scoops some plasma from the [src] with \the [C]."), span_notice("You scoop out some plasma from the [src] using \the [C]."))
 	return TRUE
 
 /turf/open/lava/plasma/burn_stuff(AM)
@@ -93,18 +93,18 @@
 							PP.force_scream()
 							if(!HAS_TRAIT(PP, TRAIT_ANALGESIA))
 								PP.visible_message(
-									"<span class='warning'>[L] screams in pain as [L.p_their()] [NB] melts down to the bone!</span>",
-									"<span class='userdanger'>You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+									span_warning("[L] screams in pain as [L.p_their()] [NB] melts down to the bone!"),
+									span_userdanger("You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
 							else
 								PP.visible_message(
-									"<span class='warning'>[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!</span>",
-									"<span class='userdanger'>You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!</span>")
+									span_warning("[L] lets out panicked gasps as [L.p_their()] [NB] melts down to the bone!"),
+									span_userdanger("You gasp in shock as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
 						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
 							PP.IgniteMob()
 							PP.set_species(/datum/species/plasmaman)
 							PP.visible_message(
-								"<span class='warning'>[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!</span>",
-								"<span class='userdanger'>Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!</span>")
+								span_warning("[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!"),
+								span_userdanger("Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!"))
 
 
 /obj/vehicle/ridden/lavaboat/plasma
@@ -328,19 +328,19 @@
 
 /obj/structure/flora/rock/icy
 	name = "icy rock"
-	icon_state = "icemoonrock1"
+	icon_state = "snowrock_1"
 
 /obj/structure/flora/rock/icy/Initialize()
 	. = ..()
-	icon_state = "icemoonrock[rand(1,3)]"
+	icon_state = "snowrock_[rand(1,4)]"
 
 /obj/structure/flora/rock/pile/icy
 	name = "icey rocks"
-	icon_state = "icemoonrock4"
+	icon_state = "snowrock_4"
 
 /obj/structure/flora/rock/pile/icy/Initialize()
 	. = ..()
-	icon_state = "icemoonrock4"
+	icon_state = "snowrock_4"
 
 //decals//--
 /obj/effect/turf_decal/snowdin_station_sign

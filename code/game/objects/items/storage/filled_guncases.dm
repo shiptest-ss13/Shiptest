@@ -61,7 +61,7 @@
 
 /obj/item/storage/guncase/vickland
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
-	mag_type = /obj/item/ammo_box/vickland_a308
+	mag_type = /obj/item/ammo_box/vickland_a8_50r
 
 /* Scarbourough */
 
@@ -145,6 +145,10 @@
 
 /obj/item/storage/guncase/energy/bg16
 	gun_type = /obj/item/gun/energy/kalix/pgf
+	mag_type = /obj/item/stock_parts/cell/gun/pgf
+
+/obj/item/storage/guncase/energy/bgc10
+	gun_type = /obj/item/gun/energy/kalix/pgf/medium
 	mag_type = /obj/item/stock_parts/cell/gun/pgf
 
 /obj/item/storage/guncase/energy/hbg7
@@ -335,6 +339,10 @@
 /obj/item/storage/guncase/ssg04
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/f4/inteq
 	mag_type = /obj/item/ammo_box/magazine/f4_308
+
+/obj/item/storage/guncase/rottweiler
+	gun_type = /obj/item/gun/ballistic/automatic/hmg/rottweiler
+	mag_type = /obj/item/ammo_box/magazine/rottweiler_308_box
 
 /* idk */
 
