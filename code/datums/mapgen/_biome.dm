@@ -98,9 +98,10 @@
 
 		if(can_spawn)
 			spawned_feature = new feature_type(open_turf)
-			// insert at the head of the list, so the most recent features get checked first
-			feature_list.Insert(1, spawned_feature)
 			open_turf.flags_1 |= NO_LAVA_GEN_1
+			if(!istype(spawned_feature, /obj/effect/greeble_spawner)) //Greebles hard del alot of they are put into this?
+				// insert at the head of the list, so the most recent features get checked first
+				feature_list.Insert(1, spawned_feature)
 
 	//MOB SPAWNING HERE
 	if(length(mob_spawn_list_expanded) && !spawned_flora && !spawned_feature && prob(mob_spawn_chance) && (a_flags & MOB_SPAWN_ALLOWED))
