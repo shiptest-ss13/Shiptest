@@ -26,7 +26,8 @@
 	var/timeout = 8 SECONDS
 
 /obj/effect/greeble_spawner/Destroy()
-	template = null // without this, capsules would be one use. per round.
+	if(istype(template))
+		QDEL_NULL(template)
 	. = ..()
 
 /obj/effect/greeble_spawner/Initialize()
