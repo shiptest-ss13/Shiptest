@@ -582,6 +582,6 @@
 	desc = "Remes meat separates out Tiris, Sososi, and Refa-li on a skewer. The flavors mix together as the juices flow, creating a gooey mess with a hint of spice."
 	icon_state = ""
 	w_class = WEIGHT_CLASS_NORMAL
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/refa_li = 2)
 	tastes = list("spicy fruit" = 1, "faint sweetness" = 1, "satisfying crunch" = 1, "earthiness" = 2, "savory goo" = 4)
 	foodtype = MEAT | FRUIT | VEGETABLES
