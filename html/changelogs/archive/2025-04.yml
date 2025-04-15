@@ -143,3 +143,43 @@
   - rscadd: outpost cargo is now bundled when applicable
   generalthrax:
   - balance: Butter now requires 5 milk instead of 15
+2025-04-14:
+  FalloutFalcon:
+  - rscdel: beats in deciseconds of a song is no longer player facing
+  - rscdel: handful of other jukebox cruft cleanup things
+  - code_imp: rustg version bump to 3.6
+  - refactor: can now determine its own length and cache it, used in jukeboxes so
+      we dont have to add it in the title.
+  firebudgy:
+  - bugfix: Jungle Bunker tiles now have the correct atmos.
+  kaylexis:
+  - rscadd: added medical area to rock outpost
+  - rscadd: potted plants to rock outpost
+  - rscadd: altered bounty pad locations
+2025-04-15:
+  Zevotech:
+  - bugfix: readds the remapped meta class
+  ? ryerice, Imaginos16, spooky, Horizon, Nebula (presumably), MarkSuckerberg, thgvr,
+    Erikafox, Nitha(emotional support), Latentish, The Playerbase
+  : - rscadd: New Overmap resprite
+    - rscadd: Most if not all planets have gotten a resprite
+    - rscadd: Some new missions.
+    - rscadd: These missions might lead you to a "new" planet...
+    - rscadd: Overmap Mechanics have been overhauled
+    - rscadd: Interactions; you can now choose where exactly to dock and how to dock.
+    - rscadd: Suns should be actually dangerous to go near
+    - rscadd: Suns are actually dangerous
+    - rscadd: See https://github.com/shiptest-ss13/Shiptest/pull/3868 for more
+    - rscadd: Radio interference based on radio's location on the overmap. For example,
+        moving next to an nebula might scramble your radio messages. A Telecoms setup
+        with reduce this significantly.
+    - rscadd: New Ore Overhaul
+    - rscadd: Some temperature changes missed by the temp pr should be addressed
+    - balance: Fauna balance should be slightly better now
+    - tweak: Helm consoles should tell you why you cant dock, rather than staying
+        silent on an error.
+    - bugfix: Carbon monoxide should work better now.
+    - code_imp: Framework for ship to ship docking
+    - code_imp: Overmap code is much more modular and robust now.
+    - rscdel: Removes cryosickness
+    - balance: Explosions, acid and electrocute acts all do alot less damage.
