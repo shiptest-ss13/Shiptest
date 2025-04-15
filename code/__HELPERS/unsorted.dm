@@ -1533,4 +1533,4 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	radius = clamp(radius, 1, 50) //Sanitize inputs
 
 	for(var/turf/turf_to_flame as anything in filled_turfs(epicenter, radius, "circle"))
-		turf_to_flame.IgniteTurf(power, fire_color)
+		turf_to_flame.ignite_turf(power, fire_color)
