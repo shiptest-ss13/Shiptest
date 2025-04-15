@@ -80,7 +80,7 @@
 /obj/item/gun/ballistic/automatic/pistol/commissar/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	funnysounds = !funnysounds
-	to_chat(user, "<span class='notice'>You toggle [src]'s vox audio functions.</span>")
+	to_chat(user, span_notice("You toggle [src]'s vox audio functions."))
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/AltClick(mob/user)
 	. = ..()
@@ -94,7 +94,7 @@
 /obj/item/gun/ballistic/automatic/pistol/commissar/examine(mob/user)
 	. = ..()
 	if(funnysounds)
-		. += "<span class='info'>Alt-click to use \the [src] vox hailer.</span>"
+		. += span_info("Alt-click to use \the [src] vox hailer.")
 
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
@@ -113,11 +113,11 @@
 	safety = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user, display_message = TRUE)
-	to_chat(user, "<span class='warning'>Theres no magazine to eject!</span>")
+	to_chat(user, span_warning("Theres no magazine to eject!"))
 	return
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/insert_magazine(mob/user)
-	to_chat(user, "<span class='warning'>Theres no magazine to replace!</span>")
+	to_chat(user, span_warning("Theres no magazine to replace!"))
 	return
 
 //not technically a pistol but whatever

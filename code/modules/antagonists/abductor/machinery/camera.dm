@@ -71,7 +71,7 @@
 	if(!target || !iscarbon(owner))
 		return
 	if(world.time < use_delay)
-		to_chat(owner, "<span class='warning'>You must wait [DisplayTimeText(use_delay - world.time)] to use the [target] again!</span>")
+		to_chat(owner, span_warning("You must wait [DisplayTimeText(use_delay - world.time)] to use the [target] again!"))
 		return
 	var/mob/living/carbon/human/C = owner
 	var/mob/camera/aiEye/remote/remote_eye = C.remote_control
@@ -105,7 +105,7 @@
 	if(!target || !iscarbon(owner))
 		return
 	if(world.time < use_delay)
-		to_chat(owner, "<span class='warning'>You can only teleport to one place at a time!</span>")
+		to_chat(owner, span_warning("You can only teleport to one place at a time!"))
 		return
 	var/mob/living/carbon/human/C = owner
 	var/mob/camera/aiEye/remote/remote_eye = C.remote_control

@@ -34,7 +34,7 @@
 
 /obj/item/grenade/c4/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		to_chat(user, "<span class='notice'>The wire panel can be accessed without a screwdriver.</span>")
+		to_chat(user, span_notice("The wire panel can be accessed without a screwdriver."))
 	else if(is_wire_tool(I))
 		wires.interact(user)
 	else
@@ -91,7 +91,7 @@
 	if(!flag)
 		return
 
-	to_chat(user, "<span class='notice'>You start planting [src]. The timer is set to [det_time]...</span>")
+	to_chat(user, span_notice("You start planting [src]. The timer is set to [det_time]..."))
 
 	if(do_after(user, 30, target = AM))
 		if(!user.temporarilyRemoveItemFromInventory(src))
@@ -116,7 +116,7 @@
 			plastic_overlay.layer = FLOAT_LAYER
 
 		target.add_overlay(plastic_overlay)
-		to_chat(user, "<span class='notice'>You plant the bomb. Timer counting down from [det_time].</span>")
+		to_chat(user, span_notice("You plant the bomb. Timer counting down from [det_time]."))
 		addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
 
 // X4 is an upgraded directional variant of c4 which is relatively safe to be standing next to. And much less safe to be standing on the other side of.

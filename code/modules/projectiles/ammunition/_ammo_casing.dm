@@ -55,7 +55,7 @@
 /obj/item/ammo_casing/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, "<span class='notice'>You scribble illegibly on the [src]!</span>")
+			to_chat(user, span_notice("You scribble illegibly on the [src]!"))
 			return
 		var/inputvalue = stripped_input(user, "What would you like to label the round?", "Bullet Labelling", "", MAX_NAME_LEN)
 
