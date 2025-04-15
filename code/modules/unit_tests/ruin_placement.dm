@@ -22,7 +22,7 @@
 			log_test("Testing Ruin: [ruin_name]")
 			var/datum/map_template/ruin/ruin = SSmapping.ruin_types_list[planet_type.ruin_type][ruin_name]
 
-			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, dummy_system, load_now = FALSE)
+			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, dummy_system, FALSE)
 			dummy_overmap.set_planet_type(planet_type)
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 
