@@ -22,5 +22,5 @@
 			log_admin("Build Mode: [key_name(target_client)] copied [stored] to [AREACOORD(object)]")
 	else if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		if(ismovable(object)) // No copying turfs for now.
-			to_chat(target_client, "<span class='notice'>[object] set as template.</span>")
+			to_chat(target_client, span_notice("[object] set as template."))
 			stored = object

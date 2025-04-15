@@ -69,13 +69,13 @@
 
 			if(S.ignore_clothes || get_location_accessible(M, selected_zone))
 				var/datum/surgery/procedure = new S.type(M, selected_zone, affecting)
-				user.visible_message("<span class='notice'>[user] prepares to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)].</span>", \
-					"<span class='notice'>You prepare to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)].</span>")
+				user.visible_message(span_notice("[user] prepares to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)]."), \
+					span_notice("You prepare to perform \an [procedure.name] on [M]'s [parse_zone(selected_zone)]."))
 				playsound(get_turf(M), 'sound/items/handling/cloth_drop.ogg', 30, TRUE)
 
 				log_combat(user, M, "operated on", null, "(OPERATION TYPE: [procedure.name]) (TARGET AREA: [selected_zone])")
 			else
-				to_chat(user, "<span class='warning'>You need to expose [M]'s [parse_zone(selected_zone)] first!</span>")
+				to_chat(user, span_warning("You need to expose [M]'s [parse_zone(selected_zone)] first!"))
 
 	else if(!current_surgery.step_in_progress)
 		attempt_cancel_surgery(current_surgery, I, M, user)
@@ -84,14 +84,14 @@
 
 /proc/attempt_cancel_surgery(datum/surgery/S, obj/item/I, mob/living/M, mob/user)
 	var/selected_zone = user.zone_selected
-	to_chat(user, "<span class='notice'>You begin to cancel \the [S].</span>")
+	to_chat(user, span_notice("You begin to cancel \the [S]."))
 	if (!do_after(user, 3 SECONDS, M))
 		return
 
 	if(S.status == 1)
 		M.surgeries -= S
-		user.visible_message("<span class='notice'>[user] stops the surgery on [M]'s [parse_zone(selected_zone)].</span>", \
-			"<span class='notice'>You stop the surgery on [M]'s [parse_zone(selected_zone)].</span>")
+		user.visible_message(span_notice("[user] stops the surgery on [M]'s [parse_zone(selected_zone)]."), \
+			span_notice("You stop the surgery on [M]'s [parse_zone(selected_zone)]."))
 		qdel(S)
 		return
 
@@ -107,10 +107,10 @@
 		if(iscyborg(user))
 			close_tool = locate(/obj/item/cautery) in user.held_items
 			if(!close_tool)
-				to_chat(user, "<span class='warning'>You need to equip a cautery in an active slot to stop [M]'s surgery!</span>")
+				to_chat(user, span_warning("You need to equip a cautery in an active slot to stop [M]'s surgery!"))
 				return
 		else if(!close_tool || close_tool.tool_behaviour != required_tool_type)
-			to_chat(user, "<span class='warning'>You need to hold a [is_robotic ? "screwdriver" : "cautery"] in your active hand to stop [M]'s surgery!</span>")
+			to_chat(user, span_warning("You need to hold a [is_robotic ? "screwdriver" : "cautery"] in your active hand to stop [M]'s surgery!"))
 			return
 
 		if(ishuman(M))
@@ -119,8 +119,8 @@
 			if(BP)
 				BP.adjust_bleeding(-3)
 		M.surgeries -= S
-		user.visible_message("<span class='notice'>[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery.</span>", \
-			"<span class='notice'>You close [M]'s [parse_zone(selected_zone)] with [close_tool] and stop the surgery.</span>")
+		user.visible_message(span_notice("[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery."), \
+			span_notice("You close [M]'s [parse_zone(selected_zone)] with [close_tool] and stop the surgery."))
 		qdel(S)
 
 

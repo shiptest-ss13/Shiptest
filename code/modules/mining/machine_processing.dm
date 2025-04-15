@@ -83,7 +83,7 @@
 		return
 	var/obj/item/multitool/M = I
 	M.buffer = src
-	to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+	to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	return TRUE
 
 /obj/machinery/mineral/processing_unit_console/ui_interact(mob/user)
@@ -144,7 +144,7 @@
 /obj/machinery/mineral/processing_unit/Initialize()
 	. = ..()
 	proximity_monitor = new(src, 1)
-	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
+	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/copper, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/carbon, /datum/material/sulfur, /datum/material/lead, /datum/material/quartz, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
 	stored_research = new /datum/techweb/specialized/autounlocking/smelter
 	selected_material = SSmaterials.GetMaterialRef(/datum/material/iron)
 
@@ -158,7 +158,7 @@
 		if(istype(M.buffer, /obj/machinery/mineral/processing_unit_console))
 			CONSOLE = M.buffer
 			CONSOLE.machine = src
-			to_chat(user, "<span class='notice'>You link [src] to the console in [M]'s buffer.</span>")
+			to_chat(user, span_notice("You link [src] to the console in [M]'s buffer."))
 			return TRUE
 
 /obj/machinery/mineral/processing_unit/proc/process_ore(obj/item/stack/ore/O)

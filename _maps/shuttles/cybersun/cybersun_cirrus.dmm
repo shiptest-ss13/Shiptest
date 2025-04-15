@@ -160,6 +160,8 @@
 /obj/machinery/computer/operating,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/light/directional/north,
+/obj/item/disk/surgery/t3,
+/obj/item/disk/surgery/cybersun,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical/surgery)
 "bu" = (
@@ -4861,7 +4863,8 @@
 /obj/machinery/washing_machine{
 	pixel_x = -10;
 	pixel_y = -3;
-	density = 0
+	density = 0;
+	should_we_be_dense = 0
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)

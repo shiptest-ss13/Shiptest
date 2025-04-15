@@ -17,7 +17,6 @@
 	id = "buried_shrine"
 	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
 	suffix = "lavaland_surface_buried_shrine.dmm"
-	ruin_mission_types = list(/datum/mission/ruin/signaled/kill/elite)
 
 /datum/map_template/ruin/lavaland/lava_canyon
 	name = "Lava Canyon"
