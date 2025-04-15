@@ -4,17 +4,11 @@
 	has_outpost = FALSE
 	mission_system_enabled = FALSE
 
-//generate as little as we need to test our planets
-/datum/overmap_star_system/empty
-	generator_type = OVERMAP_GENERATOR_NONE
-	has_outpost = FALSE
-	mission_system_enabled = FALSE
-
 /datum/overmap/dynamic/ruin_tester
 	populate_turfs = FALSE
 
 /datum/unit_test/ruin_placement/Run()
-	var/datum/overmap_star_system/dummy_system = SSovermap.spawn_new_star_system(/datum/overmap_star_system/empty)
+	var/datum/overmap_star_system/dummy_system = SSovermap.default_system
 	dummy_system.name = "Ruin Test: Dummy System"
 	for(var/planet_name as anything in SSmapping.planet_types)
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
@@ -23,7 +17,7 @@
 			var/datum/map_template/ruin/ruin = SSmapping.ruin_types_list[planet_type.ruin_type][ruin_name]
 
 			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, dummy_system, FALSE)
-			TEST_ASSERT(!dummy_overmap.loading, "[dummy_overmap] is instant loading despite us telling it not to!")
+			TEST_ASSERT(!dummy_overmap.selected_ruin, "[dummy_overmap] was not meant to set its own ruin, this will init all its pois and fuck up shit when we overwrite in this test!")
 
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 			dummy_overmap.selected_ruin = ruin
