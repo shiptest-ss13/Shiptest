@@ -20,6 +20,9 @@
 
 /// Override to define loot blacklist behavior
 /obj/effect/spawner/proc/can_spawn(atom/loot)
+	if(!loot)
+		WARNING("Null type in loot")
+		return FALSE
 	if(loot:bad_type == loot)
 		return FALSE
 	if(loot:spawn_blacklisted == TRUE)
