@@ -20,8 +20,8 @@
 
 /// Override to define loot blacklist behavior
 /obj/effect/spawner/proc/can_spawn(atom/loot)
-	if(!loot)
-		WARNING("Null type in loot")
+	if(!ispath(loot))
+		WARNING("[loot] is not a path")
 		return FALSE
 	if(loot:bad_type == loot)
 		return FALSE
