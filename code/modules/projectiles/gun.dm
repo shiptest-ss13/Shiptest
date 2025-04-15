@@ -14,6 +14,9 @@
 	throw_speed = 3
 	throw_range = 5
 	force = 5
+
+	bad_type = /obj/item/gun
+
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'

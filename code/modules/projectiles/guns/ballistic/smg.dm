@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/smg
+	bad_type = /obj/item/gun/ballistic/automatic/smg
 	show_magazine_on_sprite = TRUE
 
 	burst_size = 2
