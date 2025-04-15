@@ -63,6 +63,10 @@
 	port_direction = 8;
 	dir = 2
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/engine/hull,
 /area/ship/storage)
 "h" = (
@@ -81,6 +85,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/stand_clear,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/engine/hull,
 /area/ship/storage)
 "k" = (
@@ -126,10 +134,14 @@
 "v" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 4
+	dir = 4;
+	density = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
@@ -259,6 +271,9 @@
 "S" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/engine/hull,
 /area/ship/storage)
