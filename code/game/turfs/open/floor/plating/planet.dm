@@ -159,7 +159,7 @@
 		. += "<span class='notice'>If I pour some <i>water</i> onto it, maybe it can cool down?</span>"
 
 // Legacy grass/firt turfs, do not use
-
+/* to del
 /turf/open/floor/plating/dirt
 	gender = PLURAL
 	name = "dirt"
@@ -206,7 +206,7 @@
 	light_power = 1
 	light_range = 2
 
-
+*/
 //Artifical sand turfs
 /turf/open/floor/plating/asteroid/sand/ship
 	name = "sand"

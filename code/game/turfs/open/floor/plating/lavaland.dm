@@ -96,6 +96,7 @@
 	light_color = COLOR_LAVAPLANET_LIGHT
 
 //legacy grass tiles, deprecated but not removed yet as to avoid a massive repath
+/* to del
 /turf/open/floor/plating/grass/lava
 	name = "crimson grass"
 	desc = "This grass is actually native to Teceti. It has adapted extremely well to the hot enviroments of lava planets, as well as absorbing the non-absorbed red light of the atmosphere."
@@ -116,6 +117,7 @@
 
 /turf/open/floor/plating/grass/lava/purple
 	baseturfs = /turf/open/floor/plating/grass/lava/purple
+*/
 
 ///The Moss
 /turf/open/floor/plating/moss
