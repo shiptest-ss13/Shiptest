@@ -97,7 +97,6 @@
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
 	data["message"] = message
-
 	data["supplies"] = supply_pack_data
 
 	data["shipMissions"] = list()
