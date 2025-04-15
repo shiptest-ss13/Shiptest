@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Vancouver-class Salvage Freighter",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Miskilamo Spacefaring",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL"
+	],
+	"map_short_name": "Vancouver-class",
+	"description": "When faced with a lot of salvage, and not a lot of time, most vessels scrap the key parts, and leave a crab-shell of hull and wires ripe for the taking. So, with time and supplies becoming an issue, the ever resolute and probably (not) reliable Miskilamo Spacefaring produced the Vancouver-class, and its internal Esquimalt-class shuttle, so that you can stay in the field for longer, and get into those tight spaces.",
+	"tags": [
+		"Mining",
+		"Engineering",
+		"Combat",
+		"Subshuttle"
+	],
+	"starting_funds": 2000,
+	"limit": 1,
+	"map_path": "_maps/shuttles/independent/independent_vancouver.dmm",
+	"map_id": "independent_vancouver",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/cheap",
+			"officer": true,
+			"slots": 1
+		},
+		"Foreman": {
+			"outfit": "/datum/outfit/job/independent/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Vessel Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Senior Salvager": {
+			"outfit": "/datum/outfit/job/independent/engineer/salvage",
+			"slots": 2
+		},
+		"Security Detail": {
+			"outfit": "/datum/outfit/job/independent/security/disarmed",
+			"slots": 1
+		},
+		"Salvager": {
+			"outfit": "/datum/outfit/job/independent/engineer/salvage",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
