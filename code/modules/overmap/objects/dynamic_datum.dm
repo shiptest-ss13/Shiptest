@@ -188,18 +188,6 @@
 
 	set_planet_type(planet)
 
-	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
-	if(istype(used_ruin))
-		for(var/mission_type in used_ruin.ruin_mission_types)
-			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
-
-	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
-		planet_name = "LV-[pick(rand(11111,99999))]"
-		token.icon_state = "sector"
-		Rename(planet_name)
-
 /datum/overmap/dynamic/proc/set_planet_type(datum/planet_type/planet)
 	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
 		Rename(planet.name)
