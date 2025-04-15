@@ -1,13 +1,14 @@
 /datum/overmap/dynamic/ruin_tester
 
 /datum/unit_test/ruin_placement/Run()
+	var/datum/overmap_star_system/dummy_system = new()
 	for(var/planet_name as anything in SSmapping.planet_types)
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
 		for(var/ruin_name as anything in SSmapping.ruin_types_list[planet_type.ruin_type])
 			log_test("Testing Ruin: [ruin_name]")
 			var/datum/map_template/ruin/ruin = SSmapping.ruin_types_list[planet_type.ruin_type][ruin_name]
 
-			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, FALSE)
+			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, dummy_system, FALSE)
 			dummy_overmap.set_planet_type(planet_type)
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 

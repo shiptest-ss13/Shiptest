@@ -189,7 +189,7 @@
 	set_planet_type(planet)
 
 /datum/overmap/dynamic/proc/set_planet_type(datum/planet_type/planet)
-	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
+	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
 		Rename(planet.name)
 	else
 		planet_name = "[gen_planet_name()]"
