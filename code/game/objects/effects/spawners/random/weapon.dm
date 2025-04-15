@@ -2,11 +2,11 @@
 	icon_state = "laser_gun"
 
 /obj/effect/spawner/random/weapon/full_gun
-	loot_subtype_path = /obj/item/gun/ballistic
+	loot_subtype_path = /obj/item/gun
 
 /obj/effect/spawner/random/weapon/full_gun/can_spawn(atom/loot)
 	. = ..()
-	var/obj/item/gun/ballistic/gun_to_spawn = loot
+	var/obj/item/gun/gun_to_spawn = loot
 	if(!ispath(gun_to_spawn))
 		return FALSE
 	if(gun_to_spawn:spawn_no_ammo == TRUE)
