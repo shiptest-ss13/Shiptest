@@ -1,7 +1,7 @@
 /datum/overmap/dynamic/ruin_tester
 
 /datum/unit_test/ruin_placement/Run()
-	var/datum/overmap_star_system/empty/dummy_system = new()
+	var/datum/overmap_star_system/dummy_system = SSovermap.spawn_new_star_system(/datum/overmap_star_system/empty)
 	dummy_system.name = "Ruin Test: Dummy System"
 	for(var/planet_name as anything in SSmapping.planet_types)
 		var/datum/planet_type/planet_type = SSmapping.planet_types[planet_name]
@@ -14,8 +14,8 @@
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 
 			//12 is since it pads 6 and i dont feel like fixing that rn
-			dummy_overmap.vlevel_height = ruin.height+12
-			dummy_overmap.vlevel_width = ruin.width+12
+			//dummy_overmap.vlevel_height = ruin.height+12
+			//dummy_overmap.vlevel_width = ruin.width+12
 
 			dummy_overmap.populate_turfs = FALSE
 			dummy_overmap.selected_ruin = ruin
@@ -27,7 +27,7 @@
 				log_test("Testing Mission: [ruin_mission.name]")
 
 			dummy_overmap.load_level()
-
+			log_test("Mission poi count: [length(dummy_overmap.spawned_mission_pois)]")
 			var/list/errors = atmosscan(TRUE, TRUE)
 			//errors += powerdebug(TRUE)
 

@@ -1164,4 +1164,6 @@ SUBSYSTEM_DEF(overmap)
 	return ..()
 
 /datum/overmap_star_system/empty
+	can_be_selected_randomly = FALSE
+	can_jump_to = FALSE
 	generator_type = OVERMAP_GENERATOR_NONE
