@@ -241,7 +241,7 @@
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
-	switch(rand(1,10))
+	switch(rand(1,12))
 		if(1 to 4)
 			for(var/i in 1 to rand(2,3))
 				. += capitalize(pick(GLOB.alphabet))
@@ -249,8 +249,10 @@
 			. += "[pick(rand(1,999))]"
 		if(4 to 9)
 			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
-		if(10)
+		if(10, 11)
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
+		if(12)
+			. += "[pick(GLOB.adjectives)] [pick(GLOB.planet_names)]"
 
 /**
  * Load a level for a ship that's visiting the level.
