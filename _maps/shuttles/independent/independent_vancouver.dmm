@@ -26,6 +26,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
+"aL" = (
+/obj/effect/turf_decal/corner/transparent/beige/full,
+/obj/effect/turf_decal/corner/transparent/brown/diagonal,
+/obj/structure/table/wood/poker,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ship/crew/canteen)
 "aX" = (
 /obj/structure/closet/crate/secure/gear{
 	anchored = 1
@@ -126,7 +133,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "cr" = (
@@ -363,13 +370,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"eS" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/hangar)
 "eW" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -504,6 +504,15 @@
 	dir = 1
 	},
 /area/ship/cargo)
+"hp" = (
+/obj/docking_port/stationary{
+	dwidth = 15;
+	name = "vancouver hanger dock";
+	height = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "hr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/power/terminal{
@@ -760,13 +769,6 @@
 "lz" = (
 /turf/closed/wall/r_wall,
 /area/ship/hangar)
-"lE" = (
-/obj/machinery/suit_storage_unit/independent/engineering,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono{
-	dir = 1
-	},
-/area/ship/cargo)
 "lF" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -1180,6 +1182,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/ccommons)
+"rt" = (
+/obj/machinery/suit_storage_unit/independent/engineering,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono{
+	dir = 1
+	},
+/area/ship/cargo)
 "rv" = (
 /obj/effect/spawner/random/waste/mechwreck,
 /obj/structure/cable{
@@ -1272,13 +1281,27 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"tb" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/hangar)
 "te" = (
-/obj/item/toy/plush/among{
-	pixel_x = 14;
-	pixel_y = -10
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/plasteel/mono{
+	dir = 1
+	},
+/area/ship/hangar)
 "tp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1307,13 +1330,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/ccommons)
-"tK" = (
-/obj/effect/turf_decal/corner/transparent/beige/full,
-/obj/effect/turf_decal/corner/transparent/brown/diagonal,
-/obj/structure/table/wood/poker,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ship/crew/canteen)
 "tS" = (
 /turf/closed/wall/r_wall,
 /area/ship/security/armory)
@@ -1381,7 +1397,7 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
-"vc" = (
+"uY" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
 /obj/structure/chair/plastic{
@@ -1393,7 +1409,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "vg" = (
@@ -1599,7 +1615,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
@@ -1626,10 +1641,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
-"xT" = (
-/obj/effect/decal/cleanable/oil,
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "xU" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -1772,22 +1783,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
-"zw" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/mono{
-	dir = 1
-	},
-/area/ship/hangar)
 "zy" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1847,6 +1842,16 @@
 	dir = 1
 	},
 /area/ship/hangar)
+"Ag" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/window,
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Ah" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -2045,6 +2050,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
+"DF" = (
+/obj/docking_port/mobile{
+	name = "esquimalt shuttle";
+	dir = 2;
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/closed/wall/r_wall,
+/area/ship/engineering/engine)
 "DU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2112,6 +2127,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
+"ED" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "EF" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/suit/hazardvest,
@@ -2223,6 +2242,13 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/ccommons)
+"Gv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/hangar)
 "Gw" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2560,6 +2586,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hangar)
+"Ki" = (
+/obj/docking_port/stationary{
+	name = "vancouver airlock dock";
+	dwidth = 2;
+	dir = 2;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "Kj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
@@ -2719,6 +2754,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/ccommons)
+"Mz" = (
+/obj/docking_port/stationary{
+	name = "vancouver cargo dock";
+	dir = 4;
+	dwidth = 15;
+	width = 30;
+	height = 15
+	},
+/turf/template_noop,
+/area/template_noop)
 "MR" = (
 /obj/structure/cable{
 	icon_state = "9-10"
@@ -2775,6 +2820,10 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hangar)
+"Or" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "Ot" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -3164,10 +3213,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"Ty" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/hangar)
 "TC" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
@@ -3265,14 +3310,6 @@
 "UX" = (
 /turf/template_noop,
 /area/template_noop)
-"Vm" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "Vr" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3427,10 +3464,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar)
-"Xg" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "Xh" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
@@ -3553,6 +3586,14 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/ccommons)
+"Zr" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "ZD" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3583,7 +3624,7 @@ Ac
 YV
 Ac
 Ac
-YV
+DF
 UX
 UX
 UX
@@ -3644,7 +3685,7 @@ la
 Xh
 EP
 xo
-Vm
+Zr
 qL
 la
 Xz
@@ -3698,7 +3739,7 @@ UX
 "}
 (7,1,1) = {"
 UX
-te
+UX
 YV
 nv
 pk
@@ -3714,7 +3755,7 @@ NC
 Ss
 jY
 YV
-XC
+UX
 UX
 "}
 (8,1,1) = {"
@@ -3756,8 +3797,8 @@ JX
 ki
 iY
 nT
-UX
-UX
+Ag
+Ki
 "}
 (10,1,1) = {"
 jL
@@ -3769,9 +3810,9 @@ nH
 Ib
 qI
 GS
-ck
+uY
 KP
-vc
+ck
 es
 aA
 KI
@@ -3792,7 +3833,7 @@ xx
 cx
 De
 Yo
-tK
+aL
 YQ
 AX
 AX
@@ -3973,7 +4014,7 @@ jz
 Ch
 KX
 To
-xT
+ED
 vS
 wK
 Cp
@@ -4058,7 +4099,7 @@ Ch
 sM
 Wv
 mc
-lE
+rt
 wK
 yW
 hB
@@ -4078,7 +4119,7 @@ UX
 ah
 vo
 Gk
-Xg
+Or
 IO
 Ch
 xQ
@@ -4140,7 +4181,7 @@ UX
 (28,1,1) = {"
 UX
 UX
-UX
+Mz
 UX
 UX
 UX
@@ -4168,13 +4209,13 @@ UX
 UX
 UX
 Tv
-xz
+te
 zC
-Ty
-Ty
+tb
+tb
 zC
 zC
-eS
+Gv
 lz
 UX
 UX
@@ -4189,13 +4230,13 @@ UX
 UX
 UX
 Tv
-zw
+xz
 zC
-Ty
+tb
 zC
 zC
 zC
-eS
+Gv
 lz
 UX
 UX
@@ -4211,11 +4252,11 @@ UX
 UX
 Nc
 LM
-Ty
+tb
 zC
-Ty
+tb
 zC
-Ty
+tb
 iB
 lz
 UX
@@ -4229,13 +4270,13 @@ UX
 UX
 UX
 UX
-UX
+hp
 Tv
 HP
 zC
 zC
-Ty
-Ty
+tb
+tb
 zC
 DU
 lz
@@ -4254,10 +4295,10 @@ UX
 gl
 yj
 zC
-Ty
+tb
 zC
-Ty
-Ty
+tb
+tb
 wA
 lz
 UX
@@ -4275,10 +4316,10 @@ UX
 Tv
 OJ
 zC
-Ty
-Ty
+tb
+tb
 zC
-Ty
+tb
 wA
 lz
 UX
@@ -4297,7 +4338,7 @@ Tv
 Ae
 zC
 zC
-Ty
+tb
 zC
 zC
 Oa

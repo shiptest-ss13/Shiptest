@@ -59,7 +59,9 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/docking_port/mobile{
 	name = "esquimalt shuttle";
-	dir = 4
+	preferred_direction = 4;
+	port_direction = 8;
+	dir = 2
 	},
 /turf/open/floor/engine/hull,
 /area/ship/storage)
