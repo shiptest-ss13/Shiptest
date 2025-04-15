@@ -303,7 +303,7 @@
 /datum/supply_pack/medical/vials/sal_vial
 	name = "SalGlu Vial Crate"
 	desc = "Contains one spare SalGlu Solution vial, for usage in a Hypospray."
-	cost = 600
+	cost = 300
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/salclu)
 	crate_name = "SalGlu vial crate"
@@ -311,7 +311,7 @@
 /datum/supply_pack/medical/vials/chit_vial
 	name = "Chitosan Vial Crate"
 	desc = "Contains one spare Chitosan vial, for usage in a Hypospray."
-	cost = 600
+	cost = 300
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chitosan)
 	crate_name = "chitosan vial crate"
