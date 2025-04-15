@@ -21,18 +21,6 @@ SUBSYSTEM_DEF(blackmarket)
 	for(var/market in subtypesof(/datum/cargo_market/black))
 		markets += new market
 
-	for(var/item in subtypesof(/datum/supply_pack/blackmarket))
-		var/datum/supply_pack/blackmarket/I = new item()
-		if(!I.item)
-			continue
-
-		for(var/M in I.markets)
-			if(!markets[M])
-				stack_trace("SSblackmarket: Item [I] available in market that does not exist.")
-				continue
-			markets[M].add_item(item, FALSE)
-
-		qdel(I)
 	for(var/datum/cargo_market/market in markets)
 		market.cycle_stock()
 	. = ..()

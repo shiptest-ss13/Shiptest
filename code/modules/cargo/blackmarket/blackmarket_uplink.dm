@@ -80,8 +80,8 @@
 	data["viewing_category"] = viewing_category
 	data["viewing_market"] = viewing_market
 	if(viewing_category && market)
-		if(market.available_items[viewing_category])
-			for(var/datum/supply_pack/blackmarket/I in market.available_items[viewing_category])
+		if(market.supply_packs[viewing_category])
+			for(var/datum/supply_pack/blackmarket/I in market.supply_packs[viewing_category])
 				if(I.available)
 					data["items"] += list(list(
 						"id" = I.type,
