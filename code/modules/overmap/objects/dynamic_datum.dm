@@ -188,7 +188,7 @@
 
 	set_planet_type(planet)
 
-/datum/overmap/dynamic/proc/set_planet_type(datum/planet_type/planet)
+/datum/overmap/dynamic/proc/set_planet_type(datum/planet_type/planet, handle_ruin_setting = TRUE)
 	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
 		Rename(planet.name)
 	else
@@ -207,12 +207,14 @@
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
 
-	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
-	if(istype(used_ruin))
-		for(var/mission_type in used_ruin.ruin_mission_types)
-			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
+	//For unit tests to be able to handle this themselves.
+	if(handle_ruin_setting)
+		// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
+		selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+		var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
+		if(istype(used_ruin))
+			for(var/mission_type in used_ruin.ruin_mission_types)
+				dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"

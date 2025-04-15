@@ -24,15 +24,17 @@
 
 			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, dummy_system, FALSE)
 			TEST_ASSERT(!dummy_overmap.loading, "[dummy_overmap] is instant loading despite us telling it not to!")
-			dummy_overmap.set_planet_type(planet_type)
+
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
+			dummy_overmap.selected_ruin = ruin
+
+			dummy_overmap.set_planet_type(planet_type, FALSE)
 
 			//12 is since it pads 6 and i dont feel like fixing that rn
 			dummy_overmap.vlevel_height = ruin.height+12
 			dummy_overmap.vlevel_width = ruin.width+12
 
 			dummy_overmap.populate_turfs = FALSE
-			dummy_overmap.selected_ruin = ruin
 
 			for(var/mission_type in ruin.ruin_mission_types)
 				var/datum/mission/ruin/ruin_mission = new mission_type(dummy_overmap, 1 + length(dummy_overmap.dynamic_missions))
