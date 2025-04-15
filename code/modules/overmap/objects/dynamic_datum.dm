@@ -183,13 +183,11 @@
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
-	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
-		Rename(planet.name)
-	else
+	if(!is_type_in_list(planet, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin)))
 		planet_name = "[gen_planet_name()]"
-		Rename(planet_name)
+		name = "[planet_name] ([planet.name])"
 
-	alter_token_appearance()
+
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
 	gravity = planet.gravity
@@ -218,10 +216,7 @@
 /datum/overmap/dynamic/alter_token_appearance()
 	if(!planet)
 		return ..()
-	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
-		token.name = "[planet.name]"
-	else
-		token.name = "[planet_name]" + " ([planet.name])"
+	token.name = name
 	token_icon_state = planet.icon_state
 	desc = planet.desc
 	default_color = planet.color
