@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(overmap)
 
 /datum/controller/subsystem/overmap/fire()
 	for(var/datum/overmap_star_system/current_system as anything in tracked_star_systems)
-		if(!current_system.mission_system_enabled)
+		if(!current_system.encounters_refresh)
 			continue
 		current_system.handle_dynamic_encounters()
 
@@ -310,8 +310,8 @@ SUBSYSTEM_DEF(overmap)
 	var/max_overmap_dynamic_events
 	///Do we have a outpost in this system?
 	var/has_outpost = FALSE
-	///Do we modifiy our dynamic encounters every so often for missions? Disbaled on base type so non-main overmaps dont hog up missions(?)
-	var/mission_system_enabled = FALSE
+	///The abliltiy for the system to automaticly spawn and despawn dynamic encounters
+	var/encounters_refresh = FALSE
 	/// Our faction of the outpost
 	var/faction
 
@@ -1082,7 +1082,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/shiptest
 	has_outpost = TRUE
 	can_be_selected_randomly = FALSE
-	mission_system_enabled = TRUE
+	encounters_refresh = TRUE
 
 /datum/overmap_star_system/shiptest/New(generate_now=TRUE)
 	//1/10 rounds
