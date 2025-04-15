@@ -23,6 +23,7 @@
 			var/datum/map_template/ruin/ruin = SSmapping.ruin_types_list[planet_type.ruin_type][ruin_name]
 
 			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, dummy_system, FALSE)
+			TEST_ASSERT(!dummy_overmap.loading, "[dummy_overmap] is instant loading despite us telling it not to!")
 			dummy_overmap.set_planet_type(planet_type)
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 
@@ -39,6 +40,7 @@
 				ruin_mission.start_mission()
 				log_test("Testing Mission: [ruin_mission.name]")
 
+			TEST_ASSERT(!dummy_overmap.loading, "[dummy_overmap] is somehow loading before we call the load level proc?!?")
 			TEST_ASSERT(dummy_overmap.load_level(), "[dummy_overmap] failed to load!")
 			TEST_ASSERT_EQUAL(length(SSmissions.unallocated_pois), 0, "Somehow a planet created pois but did not manage to allocate them to itself!")
 
