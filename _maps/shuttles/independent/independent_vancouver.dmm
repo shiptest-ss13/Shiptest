@@ -84,10 +84,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
-"bD" = (
-/obj/structure/catwalk/over/plated_catwalk,
-/turf/closed/wall,
-/area/ship/crew/ccommons)
 "bE" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
@@ -558,7 +554,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/ccommons)
 "hF" = (
-/obj/structure/closet/crate/large,
+/obj/structure/closet/crate/large{
+	name = "Laser Bore Drill Crate"
+	},
 /obj/item/rcl/pre_loaded{
 	pixel_x = 0;
 	pixel_y = -5
@@ -759,6 +757,10 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/ccommons)
+"ku" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/closed/wall,
+/area/ship/crew/ccommons)
 "kC" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -843,7 +845,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "mg" = (
-/obj/structure/closet/crate/large,
+/obj/structure/closet/crate/large{
+	name = "Radiological Cleaning Supplies"
+	},
 /obj/structure/reagent_dispensers/foamtank/antirad,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -1358,6 +1362,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
@@ -1692,6 +1699,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
@@ -1797,6 +1807,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-5"
 	},
 /turf/open/floor/plating,
 /area/ship/hangar)
@@ -2172,6 +2185,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
@@ -2512,7 +2528,9 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Id" = (
-/obj/structure/closet/crate/large,
+/obj/structure/closet/crate/large{
+	name = "EHF Beacon Crate"
+	},
 /obj/machinery/power/planet_beacon{
 	pixel_x = 0;
 	pixel_y = 0
@@ -2883,6 +2901,9 @@
 /obj/machinery/door/poddoor{
 	dir = 1;
 	id = "hanger_shutter_van"
+	},
+/obj/structure/cable{
+	icon_state = "2-10"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/hangar)
@@ -3419,6 +3440,9 @@
 	dir = 6
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/hangar)
 "Vs" = (
@@ -4029,7 +4053,7 @@ gc
 sg
 qk
 Ot
-bD
+ku
 vp
 vp
 vp
