@@ -36,68 +36,66 @@
 	ricochet_decay_damage = 0.8
 	bullet_identifier = "tiny rubber bullet"
 
-// 9mm (Commander, SABR)
+// 9x18mm (Commander, SABR)
 
 /obj/projectile/bullet/c9mm
-	name = "9mm bullet"
+	name = "9x18mm bullet"
 	damage = 20
 	armour_penetration = -20
 	speed = BULLET_SPEED_HANDGUN
 	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/c9mm/surplus
-	name = "9mm surplus bullet"
-	damage = 15
+	name = "9x18mm surplus bullet"
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c9mm/ap
-	name = "9mm armor-piercing bullet"
+	name = "9x18mm armor-piercing bullet"
 	damage = 18
 	armour_penetration = 10
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/c9mm/hp
-	name = "9mm hollow point bullet"
+	name = "9x18mm hollow point bullet"
 	damage = 30
 	armour_penetration = -30
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c9mm/rubber
-	name = "9mm rubber bullet"
+	name = "9x18mm rubber bullet"
 	damage = 5
 	armour_penetration = -40
 	stamina = 30
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"
 
-// 10mm (Ringneck)
+// 10x22mm (Ringneck)
 
 /obj/projectile/bullet/c10mm
-	name = "10mm bullet"
+	name = "10x22mm bullet"
 	damage = 25
 	armour_penetration = -20
 	speed = BULLET_SPEED_HANDGUN
 	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/c10mm/surplus
-	name = "10mm surplus bullet"
-	damage = 20
+	name = "10x22mm surplus bullet"
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c10mm/ap
-	name = "10mm armor-piercing bullet"
+	name = "10x22mm armor-piercing bullet"
 	damage = 23
 	armour_penetration = 10
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/projectile/bullet/c10mm/hp
-	name = "10mm hollow point bullet"
+	name = "10x22mm hollow point bullet"
 	damage = 35
 	armour_penetration = -30
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c10mm/rubber
-	name = "10mm rubber bullet"
+	name = "10x22mm rubber bullet"
 	damage = 7
 	stamina = 35
 	armour_penetration = -30
@@ -115,7 +113,6 @@
 
 /obj/projectile/bullet/c45/surplus
 	name = ".45 surplus bullet"
-	damage = 22
 	speed_mod = BULLET_SPEED_SURPLUS_MOD
 
 /obj/projectile/bullet/c45/ap
