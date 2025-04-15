@@ -4,6 +4,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Location
 	MODE_KEY_R_HAND = MODE_R_HAND,
 	MODE_KEY_L_HAND = MODE_L_HAND,
+	MODE_KEY_EXOSUIT = MODE_EXOSUIT,
 	MODE_KEY_INTERCOM = MODE_INTERCOM,
 
 	// Department
@@ -394,6 +395,12 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			for(var/obj/item/l_hand in get_held_items_for_side(LEFT_HANDS, all = TRUE))
 				if (l_hand)
 					return l_hand.talk_into(src, message, , spans, language, message_mods)
+				return ITALICS | REDUCE_RANGE
+
+		if(MODE_EXOSUIT)
+			var/obj/mecha/exo = get_atom_on_turf(src, /obj/mecha)
+			if(ismecha(exo) && exo.radio)
+				exo.radio.talk_into(src, message, , spans, language, message_mods)
 				return ITALICS | REDUCE_RANGE
 
 		if(MODE_INTERCOM)
