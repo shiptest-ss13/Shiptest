@@ -1162,8 +1162,3 @@ SUBSYSTEM_DEF(overmap)
 	The [span_notice("MODIF. OVERMAP")] tool is similar in usuage to BUILD ADV but to manipulate the overmap only.
 	"}
 	return ..()
-
-/datum/overmap_star_system/empty
-	can_be_selected_randomly = FALSE
-	can_jump_to = FALSE
-	generator_type = OVERMAP_GENERATOR_NONE

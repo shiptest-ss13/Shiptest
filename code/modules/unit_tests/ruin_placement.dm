@@ -1,3 +1,15 @@
+//minimize overhead of the default system
+/datum/overmap_star_system/shiptest
+	generator_type = OVERMAP_GENERATOR_NONE
+	has_outpost = FALSE
+	mission_system_enabled = FALSE
+
+//generate as little as we need to test our planets
+/datum/overmap_star_system/empty
+	generator_type = OVERMAP_GENERATOR_NONE
+	has_outpost = FALSE
+	mission_system_enabled = FALSE
+
 /datum/overmap/dynamic/ruin_tester
 	populate_turfs = FALSE
 
@@ -10,7 +22,7 @@
 			log_test("Testing Ruin: [ruin_name]")
 			var/datum/map_template/ruin/ruin = SSmapping.ruin_types_list[planet_type.ruin_type][ruin_name]
 
-			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, dummy_system, FALSE)
+			var/datum/overmap/dynamic/ruin_tester/dummy_overmap = new(null, dummy_system, load_now = FALSE)
 			dummy_overmap.set_planet_type(planet_type)
 			dummy_overmap.name = "Ruin Test: [ruin_name]"
 
@@ -37,6 +49,7 @@
 			for(var/error in errors)
 				Fail("Mapping error in [ruin_name]: [error]", ruin.mappath, 1)
 
+			log_test("Cleaning up [dummy_overmap]")
 			//qdel(vlevel)
 			qdel(dummy_overmap)
 
