@@ -74,6 +74,8 @@
 	icon = 'icons/obj/contraband.dmi'
 	icon_state = "poster_ripped"
 	anchored = TRUE
+	// Subtypes can set this to make the poster show an HTML document when inspected
+	var/inspect_src
 	var/ruined = FALSE
 	/// how do we want to handle the random poster pool? POSTER_SUBTYPES chooses randomly from subtypes, AKA how it was handled before
 	var/random_type = POSTER_NORANDOM
@@ -99,6 +101,33 @@
 		desc = "A large piece of space-resistant printed paper. [desc]"
 
 	AddElement(/datum/element/beauty, 300)
+
+/obj/structure/sign/poster/examine(mob/user)
+	. = ..()
+	if (inspect_src)
+		// This is lifted from paper.dm
+		if(!get_dist(source, user) <= 2 && !isobserver(user))
+			. += span_warning("You're too far away to read it!")
+			return
+
+		if(user.is_blind())
+			to_chat(user, span_warning("You are blind and can't read anything!"))
+			return
+
+		if(user.can_read(src))
+			ui_interact(user)
+			return
+		. += span_warning("You cannot read it!")
+
+/obj/structure/sign/poster/ui_interact(mob/user, datum/tgui/ui)
+	if (!inspect_src) return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		var/datum/tgui_window/window = new(usr.client, "Poster")
+		window.initialize(
+			inline_html = inspect_src,
+			inline_js = "Byond.winset(Byond.windowId, {size: '700x800'})"
+		)
 
 /obj/structure/sign/poster/proc/randomise()
 	var/obj/structure/sign/poster/selected
@@ -546,6 +575,158 @@
 	name = "Captain Cardinal Port and Starbird"
 	desc = "Captain Cardinal would like to remind you that the left of the ship is port, and the right of the ship is starBIRD! Get it, right?"
 	icon_state = "poster-cardinal-2"
+
+/obj/structure/sign/poster/contraband/diet_guide
+	name = "Dietary Guide"
+	desc = "It's a food safety infographic outlining the types of food that different species can and cannot eat."
+	icon_state = "poster-diet-guide"
+	inspect_src = {"
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+	<style>
+		h1{font-family: Verdana, Geneva, Tahoma, sans-serif}
+		table{border-collapse: collapse; border-color: rgb(112, 158, 132); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size:14px}
+		th{width:70px; width: #d9f5e1}
+		td{text-align: center;}
+		tr{background-color:  #ffffff}
+		tr:nth-child(even){background-color: #d9f5e1}
+		.main tr td:nth-child(1){background-color: #80c294}
+	</style>
+</head>
+
+<body>
+	<center><h1>Species Dietary Guide</h1></center>
+	<table align="center" border="1" style="table-layout: fixed;" class="main">
+		<tr>
+			<td style="width: 120px" valign="top" />
+			<th valign="top">
+				<img src="https://file.garden/Xpe_011bbgcDmDNB/diet/cooked_meat_stamp.png" />
+				<br / >Meat, Eggs
+			</th>
+			<th valign="top">
+				<image src="https://file.garden/Xpe_011bbgcDmDNB/diet/raw_meat_stamp.png" />
+				<br / >Uncooked Meat
+			</th>
+			<th valign="top">
+				<image src="https://file.garden/Xpe_011bbgcDmDNB/diet/bread_stamp.png" />
+				<br / >Grains
+			</th>
+			<th valign="top">
+				<image src="https://file.garden/Xpe_011bbgcDmDNB/diet/fruit_stamp.png" />
+				<br / >Fruits
+			</th>
+			<th valign="top">
+				<image src="https://file.garden/Xpe_011bbgcDmDNB/diet/vegetable_stamp.png" />
+				<br / >Veggies
+			</th>
+			<th valign="top">
+				<image src="https://file.garden/Xpe_011bbgcDmDNB/diet/dairy_stamp.png" />
+				<br / >Dairy
+			</th>
+			<th valign="top">
+				<image src="https://file.garden/Xpe_011bbgcDmDNB/diet/cloth_stamp.png" />
+				<br / >Cloth
+			</th>
+			<th valign="top">
+				<image src="https://file.garden/Xpe_011bbgcDmDNB/diet/fried_food_stamp.png" />
+				<br / >Fried Foods
+			</th>
+		</tr>
+		<tr>
+			<td>Human</td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+		</tr>
+		<tr>
+			<td>Sarathi</td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+		</tr>
+		<tr>
+			<td>Kepori</td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+		</tr>
+		<tr>
+			<td>Mothperson</td>
+			<td><font size="6" color="c91625">✗</font></td>
+			<td><font size="6" color="c91625">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+		</tr>
+		<tr>
+			<td>Rachnid</td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="c91625">✗</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+		</tr>
+		<tr>
+			<td>Vox</td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+		</tr>
+		<tr>
+			<td>Elzuose</td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+		</tr>
+	</table>
+<br />
+	<table align="center" width="300px" border="1" style="table-layout: fixed">
+		<tr>
+			<td><font size="6" color="3bbf2a">✓</font></td>
+			<td>Safe to eat</td>
+		</tr>
+		<tr>
+			<td><font size="6" color="fc8403">✗</font></td>
+			<td>Cannot be digested</td>
+		</tr>
+		<tr>
+			<td><font size="6" color="c91625">✗</font></td>
+			<td>Toxic if ingested</td>
+		</tr>
+	</table>
+</body>
+"}
 
 //beginning of Nanotrasen approved posters. Expect corprate propaganda and motavation. You will usually only see this on Nanotrasen ships and stations
 /obj/structure/sign/poster/official
