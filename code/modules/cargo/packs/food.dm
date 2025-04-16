@@ -39,7 +39,7 @@
 	name = "Ration Crate"
 	desc = "One standard issue ration pack. For your inner jarhead."
 	cost = 80
-	contains = list(/obj/effect/spawner/random/food_or_drink/ration,
+	contains = list(/obj/effect/spawner/random/food_or_drink/ration)
 	crate_name = "ration crate"
 	crate_type = /obj/structure/closet/crate
 
