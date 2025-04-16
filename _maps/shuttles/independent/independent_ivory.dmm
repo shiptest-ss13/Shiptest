@@ -413,6 +413,18 @@
 "fK" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/bridge)
+"fR" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 20;
+	height = 31;
+	name = "Ivory Stern Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "gb" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor{
@@ -1149,6 +1161,12 @@
 /obj/effect/turf_decal/industrial/caution/red{
 	dir = 4
 	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/patterned/external,
 /area/ship/external/dark)
 "sA" = (
@@ -1496,15 +1514,6 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/port)
-"Ab" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 15;
-	dir = 8
-	},
-/turf/template_noop,
-/area/template_noop)
 "Af" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "cabinet";
@@ -2189,6 +2198,18 @@
 /obj/machinery/door/firedoor/window,
 /turf/open/floor/plating,
 /area/ship/crew/crewtwo)
+"Sm" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 31;
+	name = "Ivory Stern Dock";
+	width = 40
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/cargo)
 "Ss" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -2367,6 +2388,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"Xp" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 31;
+	name = "Ivory Stern Dock";
+	width = 40
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/cargo)
 "Xr" = (
 /turf/open/floor/carpet/black,
 /area/ship/crew/ccommons)
@@ -2425,13 +2458,6 @@
 /turf/open/floor/light,
 /area/ship/bridge)
 "Yu" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4;
-	name = "ivory dock"
-	},
 /obj/structure/railing/thick/corner{
 	dir = 1
 	},
@@ -2478,7 +2504,7 @@ hB
 iy
 hB
 hB
-hB
+fR
 hB
 hB
 iy
@@ -2503,7 +2529,7 @@ tj
 iy
 CU
 hB
-Ab
+hB
 hB
 Dq
 iy
@@ -2550,7 +2576,7 @@ hB
 hB
 iC
 iy
-iy
+Sm
 kj
 go
 VS
@@ -2704,7 +2730,7 @@ iq
 iq
 iq
 vo
-AX
+Xp
 qm
 uU
 HV

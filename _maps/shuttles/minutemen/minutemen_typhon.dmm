@@ -764,10 +764,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
-"kr" = (
-/obj/effect/landmark/start/warden,
-/turf/template_noop,
-/area/template_noop)
 "kz" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -1137,6 +1133,13 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
+"oX" = (
+/obj/structure/catwalk/over,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-13"
+	},
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "pg" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -1146,13 +1149,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
-"pr" = (
-/obj/effect/landmark/start/roboticist,
-/obj/effect/landmark/start/security_officer{
-	pixel_x = -5
-	},
-/turf/template_noop,
-/area/template_noop)
 "pv" = (
 /obj/structure/railing{
 	dir = 8
@@ -1474,16 +1470,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
-"sl" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 7;
-	name = "Typhon Starboard Bay";
-	dir = 8
-	},
-/turf/open/floor/pod/light/external,
-/area/ship/external/dark)
 "st" = (
 /obj/structure/sink{
 	dir = 4;
@@ -1742,10 +1728,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
-"vg" = (
-/obj/effect/landmark/start/station_engineer,
-/turf/template_noop,
-/area/template_noop)
 "vi" = (
 /obj/machinery/computer/cryopod/directional/east,
 /obj/machinery/light_switch{
@@ -2210,6 +2192,16 @@
 "Bb" = (
 /turf/template_noop,
 /area/template_noop)
+"Bd" = (
+/obj/docking_port/stationary{
+	width = 40;
+	height = 30;
+	dwidth = 7;
+	name = "Typhon Quarter Dock";
+	dir = 8
+	},
+/turf/open/floor/pod/light/external,
+/area/ship/external/dark)
 "Bf" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security)
@@ -2915,6 +2907,16 @@
 	picked_color = "Cerulean";
 	pixel_x = -11;
 	pixel_y = 14
+	},
+/turf/open/floor/pod/light/external,
+/area/ship/external/dark)
+"KX" = (
+/obj/docking_port/stationary{
+	width = 40;
+	height = 30;
+	dwidth = 7;
+	name = "Typhon Starboard Quarter Dock";
+	dir = 8
 	},
 /turf/open/floor/pod/light/external,
 /area/ship/external/dark)
@@ -3797,16 +3799,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"UW" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4;
-	name = "typhon dock"
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/engines/port)
 "Vc" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -3819,16 +3811,6 @@
 /obj/item/clothing/shoes/magboots,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
-"Vf" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 7;
-	name = "Typhon Port Bay";
-	dir = 8
-	},
-/turf/open/floor/pod/light/external,
-/area/ship/external/dark)
 "Vz" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -4135,6 +4117,17 @@
 /obj/item/radio/weather_monitor,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
+"Yz" = (
+/obj/docking_port/mobile{
+	dir = 8;
+	preferred_direction = 4
+	},
+/obj/structure/catwalk/over,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-13"
+	},
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "YO" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open{
 	populate = 0;
@@ -4196,10 +4189,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hangar)
-"Zm" = (
-/obj/effect/landmark/start/captain,
-/turf/template_noop,
-/area/template_noop)
 "Zr" = (
 /obj/structure/sign/clip,
 /turf/closed/wall/mineral/plastitanium,
@@ -4258,7 +4247,7 @@ Bb
 Bb
 Bb
 Bb
-Zm
+Bb
 "}
 (2,1,1) = {"
 Bb
@@ -4290,7 +4279,7 @@ Bb
 Bb
 Bb
 Bb
-kr
+Bb
 "}
 (3,1,1) = {"
 Bb
@@ -4322,7 +4311,7 @@ Bb
 Bb
 Bb
 Bb
-pr
+Bb
 "}
 (4,1,1) = {"
 Bb
@@ -4354,7 +4343,7 @@ Bb
 Bb
 Bb
 Bb
-vg
+Bb
 "}
 (5,1,1) = {"
 Bb
@@ -4386,7 +4375,7 @@ Bb
 Bb
 Bb
 Bb
-Lv
+Bb
 "}
 (6,1,1) = {"
 Bb
@@ -4395,8 +4384,168 @@ Bb
 Bb
 Bb
 Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(7,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(8,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(9,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(10,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
+"}
+(11,1,1) = {"
+Bb
+Bb
+Bb
+Bb
+Bb
+Bb
 KQ
-Vf
+Bd
 VV
 Bb
 Bb
@@ -4411,7 +4560,7 @@ Ny
 Bb
 Bb
 KQ
-sl
+KX
 VV
 Bb
 Bb
@@ -4420,7 +4569,7 @@ Bb
 Bb
 Lv
 "}
-(7,1,1) = {"
+(12,1,1) = {"
 Bb
 Bb
 Bb
@@ -4452,7 +4601,7 @@ Bb
 Bb
 zr
 "}
-(8,1,1) = {"
+(13,1,1) = {"
 Bb
 Bb
 Bb
@@ -4484,7 +4633,7 @@ Bb
 Bb
 Bb
 "}
-(9,1,1) = {"
+(14,1,1) = {"
 aT
 nJ
 PA
@@ -4516,7 +4665,7 @@ iG
 iG
 Wt
 "}
-(10,1,1) = {"
+(15,1,1) = {"
 SE
 Es
 Xh
@@ -4548,7 +4697,7 @@ lR
 lR
 oB
 "}
-(11,1,1) = {"
+(16,1,1) = {"
 SE
 kl
 or
@@ -4580,7 +4729,7 @@ Ul
 nt
 oB
 "}
-(12,1,1) = {"
+(17,1,1) = {"
 SE
 vS
 NK
@@ -4612,7 +4761,7 @@ HW
 qy
 oB
 "}
-(13,1,1) = {"
+(18,1,1) = {"
 SE
 eG
 Ml
@@ -4644,8 +4793,8 @@ Jj
 CN
 oB
 "}
-(14,1,1) = {"
-UW
+(19,1,1) = {"
+aT
 SE
 Ff
 SE
@@ -4676,7 +4825,7 @@ xs
 oB
 Wt
 "}
-(15,1,1) = {"
+(20,1,1) = {"
 Bb
 tI
 SE
@@ -4708,7 +4857,7 @@ oB
 kK
 Bb
 "}
-(16,1,1) = {"
+(21,1,1) = {"
 Bb
 Bb
 Bb
@@ -4740,7 +4889,7 @@ Bb
 Bb
 Bb
 "}
-(17,1,1) = {"
+(22,1,1) = {"
 Bb
 Bb
 Bb
@@ -4772,7 +4921,7 @@ Bb
 Bb
 Bb
 "}
-(18,1,1) = {"
+(23,1,1) = {"
 Bb
 Bb
 Bb
@@ -4804,7 +4953,7 @@ Bb
 Bb
 Bb
 "}
-(19,1,1) = {"
+(24,1,1) = {"
 Bb
 Bb
 Bb
@@ -4836,7 +4985,7 @@ Bb
 Bb
 Bb
 "}
-(20,1,1) = {"
+(25,1,1) = {"
 Bb
 Bb
 Bb
@@ -4868,7 +5017,7 @@ Bb
 Bb
 Bb
 "}
-(21,1,1) = {"
+(26,1,1) = {"
 Bb
 Bb
 Bb
@@ -4900,7 +5049,7 @@ Bb
 Bb
 Bb
 "}
-(22,1,1) = {"
+(27,1,1) = {"
 Bb
 Bb
 Bb
@@ -4932,7 +5081,7 @@ Bb
 Bb
 Bb
 "}
-(23,1,1) = {"
+(28,1,1) = {"
 Bb
 Bb
 Bb
@@ -4948,7 +5097,7 @@ Bf
 mb
 Bb
 Bb
-Bb
+oX
 Bb
 mb
 BN
@@ -4957,166 +5106,6 @@ TW
 BN
 UL
 xJ
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(24,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bf
-vB
-sz
-Bf
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-AN
-GD
-AL
-AN
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(25,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bf
-qF
-QK
-Bf
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-AN
-hj
-jV
-AN
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(26,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-zY
-Bf
-Bf
-vV
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Co
-UL
-UL
-xF
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(27,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-"}
-(28,1,1) = {"
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
 Bb
 Bb
 Bb
@@ -5133,20 +5122,20 @@ Bb
 Bb
 Bb
 Bb
+Bf
+vB
+sz
+Bf
 Bb
 Bb
 Bb
+oX
 Bb
 Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
+AN
+GD
+AL
+AN
 Bb
 Bb
 Bb
@@ -5165,20 +5154,20 @@ Bb
 Bb
 Bb
 Bb
+Bf
+qF
+QK
+Bf
 Bb
 Bb
 Bb
+oX
 Bb
 Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
+AN
+hj
+jV
+AN
 Bb
 Bb
 Bb
@@ -5197,20 +5186,20 @@ Bb
 Bb
 Bb
 Bb
+zY
+Bf
+Bf
+vV
 Bb
 Bb
 Bb
+Yz
 Bb
 Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
-Bb
+Co
+UL
+UL
+xF
 Bb
 Bb
 Bb

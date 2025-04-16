@@ -1378,9 +1378,10 @@
 	dir = 4
 	},
 /obj/docking_port/mobile{
-	dir = 8;
-	launch_status = 0;
-	name = "mining ship";
+	can_move_docking_ports = 1;
+	dir = 4;
+	name = "mining_ship_all";
+	port_direction = 2;
 	preferred_direction = 4
 	},
 /turf/open/floor/plating,

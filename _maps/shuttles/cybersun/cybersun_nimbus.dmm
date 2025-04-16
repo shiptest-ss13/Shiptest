@@ -982,6 +982,16 @@
 	color = "#777777"
 	},
 /area/ship/cargo)
+"so" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 10;
+	height = 30;
+	name = "Nimbus Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "sA" = (
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
@@ -991,13 +1001,6 @@
 	},
 /obj/machinery/door/poddoor{
 	id = "zcd"
-	},
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	name = "Nimbus-class";
-	port_direction = 8;
-	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -1028,6 +1031,15 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable/cyan,
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 2;
+	dwidth = 20;
+	height = 30;
+	name = "Meta Starboard Beam Dock";
+	width = 40;
+	disable_on_owner_ship_dock = 1
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "tg" = (
@@ -2513,18 +2525,6 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"SU" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 15;
-	height = 15;
-	width = 30
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
-	dir = 1
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "SV" = (
 /obj/effect/turf_decal/isf_small/left{
 	dir = 1
@@ -2558,6 +2558,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
+"Tx" = (
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
+/turf/template_noop,
+/area/template_noop)
 "TD" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
@@ -3164,7 +3172,7 @@ eK
 bI
 tf
 VI
-VI
+Tx
 VI
 "}
 (11,1,1) = {"
@@ -3206,7 +3214,7 @@ Gi
 Es
 Dr
 LG
-SU
+cX
 VI
 "}
 (13,1,1) = {"
@@ -3339,7 +3347,7 @@ VI
 VI
 VI
 VI
-VI
+so
 sA
 sl
 Rh

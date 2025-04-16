@@ -62,23 +62,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"bL" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "falmouth_cargo_blast";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2;
-	preferred_direction = 4
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/cargo)
 "bO" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -201,10 +184,12 @@
 	dir = 8
 	},
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 8;
-	dwidth = 15;
-	height = 15;
-	width = 30
+	dwidth = 20;
+	height = 30;
+	name = "Falmouth Stern Dock";
+	width = 40
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1622,6 +1607,19 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"GL" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/external/dark)
+"GO" = (
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "GS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2465,12 +2463,16 @@
 /area/ship/cargo)
 "Vm" = (
 /obj/docking_port/stationary{
-	dwidth = 4;
-	height = 15;
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 3;
+	height = 30;
+	name = "Falmouth Port Dock";
 	width = 9
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "VQ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4,
@@ -2678,7 +2680,7 @@ FJ
 Ly
 AR
 UE
-bL
+UE
 BT
 Fp
 et
@@ -2977,9 +2979,9 @@ ZY
 "}
 (16,1,1) = {"
 ZY
-ZY
-ZY
-ZY
+GL
+GO
+GO
 Vm
 Gx
 BL
