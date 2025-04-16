@@ -171,8 +171,6 @@
 	rapid = 4
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/a762_40
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
-				/obj/item/gun/ballistic/automatic/assault/skm)
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
 

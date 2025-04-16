@@ -835,7 +835,7 @@
 	name = "Evidence Bag"
 	id = "evidencebag"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/plastic = 500)
+	materials = list(/datum/material/plastic = 100)
 	build_path = /obj/item/evidencebag
 	category = list("initial", "Security")
 

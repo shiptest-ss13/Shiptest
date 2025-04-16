@@ -6726,8 +6726,7 @@
 /obj/item/storage/belt/sabre/pgf,
 /obj/effect/landmark/mission_poi/main{
 	already_spawned = 1;
-	type_to_spawn = /mob/living/carbon/human;
-	search_containers = 1
+	spawn_in_containter = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
