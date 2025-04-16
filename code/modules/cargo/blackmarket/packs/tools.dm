@@ -1,7 +1,7 @@
-/datum/supply_pack/blackmarket/tool
+/datum/blackmarket_item/tool
 	category = "Tools"
 
-/datum/supply_pack/blackmarket/tool/combat_wrench
+/datum/blackmarket_item/tool/combat_wrench
 	name = "Combat Wrench"
 	desc = "Under fire while doing repairs? With this dual purpose wrench, never be caught unprepared again!"
 	item = /obj/item/wrench/combat
@@ -11,7 +11,7 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/supply_pack/blackmarket/tool/surgery_duffel
+/datum/blackmarket_item/tool/surgery_duffel
 	name = "Cybersun Advanced Surgical Kit"
 	desc = "You might say it's morally wrong to steal. I say it's justified when it's Cybersun."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
@@ -21,7 +21,7 @@
 	stock = 1
 	availability_prob = 25
 
-/datum/supply_pack/blackmarket/tool/binoculars
+/datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
 	desc = "Twice as effective as a monocular for seeing across long distances."
 	item = /obj/item/binoculars
@@ -32,7 +32,7 @@
 	stock_max = 4
 	availability_prob = 70
 
-/datum/supply_pack/blackmarket/tool/whetstone
+/datum/blackmarket_item/tool/whetstone
 	name = "Whetstone"
 	desc = "Your blades not making the cut? This whetstone will give you the edge you need!"
 	item = /obj/item/sharpener
@@ -43,7 +43,7 @@
 	stock_max = 4
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/tool/cham_stamp
+/datum/blackmarket_item/tool/cham_stamp
 	name = "Chameleon Stamp"
 	desc = "Can't find a forger? Look no further than these handy chameleon stamps, capable of replicating all manner of offical or government seals."
 	item = /obj/item/stamp/chameleon
@@ -54,7 +54,7 @@
 	stock_max = 4
 	availability_prob = 80
 
-/datum/supply_pack/blackmarket/tool/riot_shield
+/datum/blackmarket_item/tool/riot_shield
 	name = "Riot Shield"
 	desc = "Protect yourself from an unexpected Riot at your local Police department!"
 	item = /obj/item/shield/riot
@@ -64,7 +64,7 @@
 	stock_max = 3
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/tool/thermite_bottle
+/datum/blackmarket_item/tool/thermite_bottle
 	name = "Thermite Bottle"
 	desc = "30u of Thermite to assist in creating a quick access point or get away!"
 	item = /obj/item/reagent_containers/glass/bottle/thermite
@@ -74,7 +74,7 @@
 	stock_max = 10
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/tool/thermite_jug
+/datum/blackmarket_item/tool/thermite_jug
 	name = "Thermite Jug"
 	desc = "An extra large 150u jug of thermite. For those hard to reach places."
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
@@ -84,7 +84,7 @@
 	stock_max = 3
 	availability_prob = 20
 
-/datum/supply_pack/blackmarket/tool/science_goggles
+/datum/blackmarket_item/tool/science_goggles
 	name = "Science Goggles"
 	desc = "These glasses scan the contents of containers and projects their contents to the user in an easy to read format."
 	item = /obj/item/clothing/glasses/science
@@ -94,7 +94,7 @@
 	stock_max = 3
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/tool/thermal_eyepatch
+/datum/blackmarket_item/tool/thermal_eyepatch
 	name = "Thermal Eyepatch"
 	desc = "A thermal eyepatch, capable of tracking the heat signatures of living beings through solid objects."
 	item = /obj/item/clothing/glasses/thermal/eyepatch
@@ -105,7 +105,7 @@
 	availability_prob = 10
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/tool/jumpboots
+/datum/blackmarket_item/tool/jumpboots
 	name = "Jump Boots"
 	desc = "Jump ahead of the competition with these specialized mining boots!"
 	item = /obj/item/clothing/shoes/bhop
@@ -115,7 +115,7 @@
 	stock = 3
 	availability_prob = 30
 
-/datum/supply_pack/blackmarket/tool/rocket_gloves
+/datum/blackmarket_item/tool/rocket_gloves
 	name = "Rocket Gloves"
 	desc = "The pinacle of tackling technology, no one will be able to resist a tackle from these rocket propelled gloves. Make sure not to miss though, we don't sell wheelchairs."
 	item = /obj/item/clothing/gloves/tackler/rocket
@@ -126,7 +126,7 @@
 	availability_prob = 30
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/tool/rcd
+/datum/blackmarket_item/tool/rcd
 	name = "Rapid Construction Device"
 	desc = "Borrowed from a GEC construction site, this handy device will make building a cinch."
 	item = /obj/item/construction/rcd
@@ -136,7 +136,7 @@
 	stock = 1
 	availability_prob = 30
 
-/datum/supply_pack/blackmarket/tool/suppressor
+/datum/blackmarket_item/tool/suppressor
 	name = "Suppressor"
 	desc = "A suppressor, for when you to keep your murder on the down low."
 	item = /obj/item/attachment/silencer
@@ -147,7 +147,7 @@
 	stock_max = 6
 	availability_prob = 60
 
-/datum/supply_pack/blackmarket/tool/blastwave
+/datum/blackmarket_item/tool/blastwave
 	name = "Blastwave Jackhammer"
 	desc = "We found a shipment of brand new hypersonic jackhammers in a cargo freighter. So we don't need these old ones anymore."
 	item = /obj/item/pickaxe/drill/jackhammer/old
@@ -157,7 +157,7 @@
 	stock_max = 3
 	availability_prob = 40
 
-/datum/supply_pack/blackmarket/tool/impro_jetpack
+/datum/blackmarket_item/tool/impro_jetpack
 	name = "Improvised Jetpack"
 	desc = "A lovingly handcrafted jetpack built by our salvage techs. For the frugal space explorer."
 	item = /obj/item/tank/jetpack/improvised
@@ -168,7 +168,7 @@
 	stock_max = 6
 	availability_prob = 70
 
-/datum/supply_pack/blackmarket/tool/jetpack_upgrade
+/datum/blackmarket_item/tool/jetpack_upgrade
 	name = "Hardsuit Jetpack Upgrade"
 	desc = "A modular jetpack compatible with most hardsuits. If the screws feel a bit loose, it's because the last suit it was attached to was beyond recovery."
 	item = /obj/item/tank/jetpack/suit

@@ -1,7 +1,7 @@
-/datum/supply_pack/blackmarket/consumable
+/datum/blackmarket_item/consumable
 	category = "Consumables"
 
-/datum/supply_pack/blackmarket/consumable/donk_pocket_box
+/datum/blackmarket_item/consumable/donk_pocket_box
 	name = "Box of Donk Pockets"
 	desc = "A well packaged box containing the favourite snack of every spacefarer."
 	item = /obj/effect/spawner/random/food_or_drink/donkpockets
@@ -12,7 +12,7 @@
 	cost_max = 400
 	availability_prob = 80
 
-/datum/supply_pack/blackmarket/consumable/suspicious_pills
+/datum/blackmarket_item/consumable/suspicious_pills
 	name = "Bottle of Suspicious Pills"
 	desc = "A random cocktail of luxury drugs that are sure to put a smile on your face!"
 	item = /obj/item/storage/pill_bottle
@@ -23,7 +23,7 @@
 	cost_max = 300
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/consumable/suspicious_pills/spawn_item(loc)
+/datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
 	var/pillbottle = pick(list(/obj/item/storage/pill_bottle/zoom,
 				/obj/item/storage/pill_bottle/happy,
 				/obj/item/storage/pill_bottle/lsd,
@@ -31,7 +31,7 @@
 				/obj/item/storage/pill_bottle/stimulant))
 	return new pillbottle(loc)
 
-/datum/supply_pack/blackmarket/consumable/floor_pill
+/datum/blackmarket_item/consumable/floor_pill
 	name = "Strange Pill"
 	desc = "The Russian Roulette of the Maintenance Tunnels."
 	item = /obj/item/reagent_containers/pill/floorpill
@@ -42,7 +42,7 @@
 	cost_max = 60
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/consumable/cannabis
+/datum/blackmarket_item/consumable/cannabis
 	name = "Cannabis Leaves"
 	desc = "Homegrown cannabis, fresh off the garden just for your pleasure!"
 	item = /obj/item/reagent_containers/food/snacks/grown/cannabis
@@ -53,7 +53,7 @@
 	cost_max = 300
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/consumable/syndie_cigs
+/datum/blackmarket_item/consumable/syndie_cigs
 	name = "Syndicate Cigarettes"
 	desc = "Who said smoking was bad for you? These omnizine laced cigarettes will have you feeling like a million bucks!"
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
@@ -64,7 +64,7 @@
 	cost_max = 300
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/consumable/trickwine
+/datum/blackmarket_item/consumable/trickwine
 	name = "Trickwine"
 	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
 	item = /datum/reagent/consumable/ethanol/trickwine/ash_wine
@@ -75,7 +75,7 @@
 	stock_max = 7
 	availability_prob = 30
 
-/datum/supply_pack/blackmarket/consumable/trickwine/spawn_item(loc)
+/datum/blackmarket_item/consumable/trickwine/spawn_item(loc)
 	var/trickwine = pick(list(
 		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
 		/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
@@ -86,7 +86,7 @@
 	))
 	return new trickwine(loc)
 
-/datum/supply_pack/blackmarket/consumable/stimpack
+/datum/blackmarket_item/consumable/stimpack
 	name = "Stimpack"
 	desc = "A quick inject medipen loaded with a cocktail of powerful stimulants. Side effects may include nasuea, heartburn, constipation, weight loss, increased blood pressure, kidney stones, liver damage, mood swings, mania, anemia, weight gain, total organ failure, runny nose and minor retinal irritation."
 	item = /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
@@ -97,7 +97,7 @@
 	cost_max = 500
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/consumable/dimorlin
+/datum/blackmarket_item/consumable/dimorlin
 	name = "Dimorlin Bottle"
 	desc = "Medicinal? Recreational? You can decide with this 30u bottle of dimorlin!"
 	item = /obj/item/reagent_containers/glass/bottle/dimorlin
@@ -108,7 +108,7 @@
 	stock_max = 4
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/consumable/cyanide
+/datum/blackmarket_item/consumable/cyanide
 	name = "Cyanide Bottle"
 	desc = "Cyanide, a tried and true classic for all your poisoning needs."
 	item = /obj/item/reagent_containers/glass/bottle/cyanide
@@ -119,7 +119,7 @@
 	stock_max = 4
 	availability_prob = 30
 
-/datum/supply_pack/blackmarket/consumable/sodium_thiopental
+/datum/blackmarket_item/consumable/sodium_thiopental
 	name = "Sodium Thiopental Bottle"
 	desc = "Sodium Thiopental, a potent and fast acting sedative for any occasion."
 	item = /obj/item/reagent_containers/glass/bottle/sodium_thiopental
@@ -130,7 +130,7 @@
 	stock_max = 4
 	availability_prob = 30
 
-/datum/supply_pack/blackmarket/consumable/amanitin
+/datum/blackmarket_item/consumable/amanitin
 	name = "Amanitin Bottle"
 	desc = "A slow acting, but nearly undetectable poison. For the dignified assassin."
 	item = /obj/item/reagent_containers/glass/bottle/amanitin
@@ -141,7 +141,7 @@
 	stock_max = 4
 	availability_prob = 30
 
-/datum/supply_pack/blackmarket/consumable/gumballs
+/datum/blackmarket_item/consumable/gumballs
 	name = "Gumball"
 	desc = "Looking for a sweet treat? These gumballs are sure to satisfy."
 	item = /obj/item/reagent_containers/food/snacks/gumball
@@ -152,7 +152,7 @@
 	stock_max = 20
 	availability_prob = 80
 
-/datum/supply_pack/blackmarket/consumable/xeno_corpse
+/datum/blackmarket_item/consumable/xeno_corpse
 	name = "Xenomorph Corpse"
 	desc = "The Frontier's most dangerous game, delivered right to your plate! May constitute a violation of your local BARD laws and regulations."
 	item = /mob/living/simple_animal/hostile/alien
@@ -163,12 +163,12 @@
 	availability_prob = 10
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/consumable/xeno_corpse/spawn_item(loc)
+/datum/blackmarket_item/consumable/xeno_corpse/spawn_item(loc)
 	var/mob/living/simple_animal/hostile/alien = ..()
 	alien.stat = DEAD
 	return new alien(loc)
 
-/datum/supply_pack/blackmarket/consumable/berries
+/datum/blackmarket_item/consumable/berries
 	name = "Berries"
 	desc = "Some fresh berries we found growing in the corner of our hangar. We're not 100% sure what species these are."
 	item = /obj/item/reagent_containers/food/snacks/grown/berries
@@ -179,13 +179,13 @@
 	stock_max = 20
 	availability_prob = 40
 
-/datum/supply_pack/blackmarket/consumable/berries/spawn_item(loc)
+/datum/blackmarket_item/consumable/berries/spawn_item(loc)
 	var/berries = pick(list(/obj/item/reagent_containers/food/snacks/grown/berries,
 				/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth,
 				/obj/item/reagent_containers/food/snacks/grown/berries/death/stealth))
 	return new berries(loc)
 
-/datum/supply_pack/blackmarket/consumable/ration
+/datum/blackmarket_item/consumable/ration
 	name = "Ration Pack"
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
 	item = /obj/effect/spawner/random/food_or_drink/ration
@@ -195,7 +195,7 @@
 	availability_prob = 80
 	stock = INFINITY
 
-/datum/supply_pack/blackmarket/consumable/vimukti
+/datum/blackmarket_item/consumable/vimukti
 	name = "Can of Vimukti"
 	desc = "This product was quietly discontinued after multiple health related incidents. But you aren't a coward, are you?"
 	item = /obj/item/reagent_containers/food/drinks/soda_cans/vimukti
@@ -206,7 +206,7 @@
 	stock_max = 20
 	availability_prob = 50
 
-/datum/supply_pack/blackmarket/consumable/sutures
+/datum/blackmarket_item/consumable/sutures
 	name = "Sutures"
 	desc = "A bundle of sutures for stitching up your latest bullet wound."
 	item = /obj/item/stack/medical/suture
@@ -217,7 +217,7 @@
 	stock_max = 6
 	availability_prob = 40
 
-/datum/supply_pack/blackmarket/consumable/regen_mesh
+/datum/blackmarket_item/consumable/regen_mesh
 	name = "Regenerative Mesh"
 	desc = "A smoothing pack of regenerative mesh for your burns."
 	item = /obj/item/stack/medical/mesh
@@ -228,7 +228,7 @@
 	stock_max = 6
 	availability_prob = 40
 
-/datum/supply_pack/blackmarket/consumable/bruise_pack
+/datum/blackmarket_item/consumable/bruise_pack
 	name = "Bruise Packs"
 	desc = "A bundle of old bruise packs, for you guessed it, bruises. Any rumors of these containing hazardous chemicals are just that. Rumors."
 	item = /obj/item/stack/medical/bruise_pack
@@ -239,7 +239,7 @@
 	stock_max = 6
 	availability_prob = 30
 
-/datum/supply_pack/blackmarket/consumable/ointment
+/datum/blackmarket_item/consumable/ointment
 	name = "Burn Ointment"
 	desc = "A tube of burn ointment. It's past the expiry date, but those are only suggestions."
 	item = /obj/item/stack/medical/ointment
@@ -250,7 +250,7 @@
 	stock_max = 6
 	availability_prob = 30
 
-/datum/supply_pack/blackmarket/consumable/goliath
+/datum/blackmarket_item/consumable/goliath
 	name = "A Live Goliath"
 	desc = "We reappropiated an outpost freighter a week back, and the entire thing was packed with goliaths for whatever reason. Point is, we're sick and tired of eating them, so we're selling what's left so we can buy some actual take out."
 	item = /mob/living/simple_animal/hostile/asteroid/goliath/beast
@@ -261,7 +261,7 @@
 	availability_prob = 15
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/consumable/color_salve
+/datum/blackmarket_item/consumable/color_salve
 	name = "Color Salve"
 	desc = "A cosmetic salve used for changing the hue of Elzouse. Now with 20% less harmful chemical dyes!"
 	item = /obj/item/colorsalve
@@ -272,7 +272,7 @@
 	stock_max = 10
 	availability_prob = 80
 
-/datum/supply_pack/blackmarket/consumable/secret_sauce
+/datum/blackmarket_item/consumable/secret_sauce
 	name = "Family Sauce Recipe"
 	desc = "This used to belong to a good friend of mine before the authorities did em in. Best goddamn sauce I've ever tasted, but I could never get it right myself. Maybe you can do it justice."
 	item = /obj/item/paper/secretrecipe
@@ -283,7 +283,7 @@
 	availability_prob = 5
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/consumable/shoalmix
+/datum/blackmarket_item/consumable/shoalmix
 	name = "Combat Cocktail"
 	desc = "Last freighter we hit was a whole medical freighter. Had a bunch of crates with a beak spraypainted on. We knacked it and found these cocktail injectors inside."
 	item = /obj/item/reagent_containers/hypospray/medipen/combat_drug
@@ -293,7 +293,7 @@
 	availability_prob = 25
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/consumable/mammoth
+/datum/blackmarket_item/consumable/mammoth
 	name = "Mammoth Injector"
 	desc = "Found a bunch of kickass injectors hiding under the corpse of a Cliquer. Don't ask bout how they became a corpse Iunno. Doesn't matter. These things boost your strength and keep you going way too damn long..."
 	item = /obj/item/reagent_containers/hypospray/medipen/mammoth
@@ -303,7 +303,7 @@
 	availability_prob = 40
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/consumable/rabbit
+/datum/blackmarket_item/consumable/rabbit
 	name = "Rabbit Injector"
 	desc = "We were bummin around towards CLIP space the other day, and saw this. Ahem. Business opportunity with a bun. Words came to words and after some serious business planning, I'm the distributer for this line for this line of designer injectors. Supposed to make you like a rabbit or somethin."
 	item = /obj/item/reagent_containers/hypospray/medipen/rabbit
@@ -313,7 +313,7 @@
 	availability_prob = 30
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/consumable/finobranc
+/datum/blackmarket_item/consumable/finobranc
 	name = "Finobranc Tablets"
 	desc = "So get this, I know a Solarian Tgirl over the intranet, and we're chatting, and she sends me these things to try. I figure, hell yeah, try them, and got 5 days work done in one day. Now I'm sellin them. Miracle product I tell ya"
 	item = /obj/item/storage/pill_bottle/finobranc
@@ -323,7 +323,7 @@
 	availability_prob = 40
 	spawn_weighting = FALSE
 
-/datum/supply_pack/blackmarket/consumable/shoalmix
+/datum/blackmarket_item/consumable/shoalmix
 	name = "Shoaljuice Vial"
 	desc = "Our guy in back has been working on whipping up some pretty mean syrums. Says that this one is a blend he learned from a Vox. Says that it'll get the heart going on anyone."
 	item = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/combat_drug

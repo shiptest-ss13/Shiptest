@@ -1,7 +1,7 @@
-/datum/supply_pack/blackmarket/emergency
+/datum/blackmarket_item/emergency
 	category = "Emergency"
 
-/datum/supply_pack/blackmarket/emergency/plasma
+/datum/blackmarket_item/emergency/plasma
 	name = "Ten Plasma Sheets"
 	desc = "Low on fuel? We can part with some plasma... for a reasonable cost."
 	item = /obj/item/stack/sheet/mineral/plasma/ten
@@ -11,7 +11,7 @@
 	availability_prob = 100
 	stock = INFINITY
 
-/datum/supply_pack/blackmarket/emergency/uranium
+/datum/blackmarket_item/emergency/uranium
 	name = "Ten Uranium Sheets"
 	desc = "Fuel? Dirty Bomb? Fancy nightlight? Doesn't matter, we'll supply."
 	item = /obj/item/stack/sheet/mineral/uranium/ten
@@ -21,7 +21,7 @@
 	availability_prob = 100
 	stock = INFINITY
 
-/datum/supply_pack/blackmarket/emergency/ion_thruster
+/datum/blackmarket_item/emergency/ion_thruster
 	name = "Ion Thruster"
 	desc = "Need a boost? We have a leftover engine board or two from a ship we happened to find. If you're lucky, you won't be the next."
 	item = /obj/item/circuitboard/machine/shuttle/engine/electric
@@ -31,7 +31,7 @@
 	stock_max = 5
 	availability_prob = 100
 
-/datum/supply_pack/blackmarket/emergency/oyxgen
+/datum/blackmarket_item/emergency/oyxgen
 	name = "Oxygen Canister"
 	desc = "What keeps us all breathing. It'll keep you breathing too, if you know what's good for you."
 	item = /obj/machinery/portable_atmospherics/canister/oxygen
@@ -41,7 +41,7 @@
 	stock_max = 3
 	availability_prob = 100
 
-/datum/supply_pack/blackmarket/emergency/metal_foam
+/datum/blackmarket_item/emergency/metal_foam
 	name = "Metal Foam Grenade"
 	desc = "Poor piloting blow a hole in the side of your hull? These metal foam grenades should keep everything important in."
 	item = /obj/item/grenade/chem_grenade/metalfoam

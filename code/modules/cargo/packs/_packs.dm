@@ -6,11 +6,10 @@
 	var/crate_name = "crate"
 	var/crate_type = /obj/structure/closet/crate
 	var/no_bundle = FALSE
-	#warn remove i think
 	/// "/datum/blackmarket_market"s that this item should be in, used by SSblackmarket on init.
 	var/list/markets = list(/datum/cargo_market/outpost)
 
-	/// Price for the item, if not set creates a cost according to the *_min and *_max vars.
+	/// cost for the item, if not set creates a cost according to the *_min and *_max vars.
 	var/cost
 	/// How many of this type of item is available, if not set creates a cost according to the *_min and *_max vars.
 	var/stock = INFINITY
@@ -43,7 +42,6 @@
 	var/availability_prob = 0
 	/// If this item should be more or less likely to spawn than usual. Positive is more likely, negative is less
 	var/weight = 0
-	#warn remove i think
 	var/spawn_weighting = TRUE
 
 	//FACTION
