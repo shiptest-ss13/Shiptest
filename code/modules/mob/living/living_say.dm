@@ -238,6 +238,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/deaf_type
 
 	if(HAS_TRAIT(speaker, TRAIT_SIGN_LANG)) //Checks if speaker is using sign language
+		if(is_blind(src))
+			return FALSE
 		deaf_message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mods)
 		if(speaker != src)
 			if(!radio_freq) //I'm about 90% sure there's a way to make this less cluttered
@@ -251,8 +253,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		else
 			create_chat_message(speaker, message_language, raw_message, spans)
 
-		if(is_blind(src))
-			return FALSE
+
 
 
 		message = deaf_message
