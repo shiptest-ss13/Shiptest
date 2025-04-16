@@ -138,6 +138,16 @@
 	/*food_flags = FOOD_FINGER_FOOD*/
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/reagent_containers/food/snacks/reti/homemade
+	name = "miras reti"
+	icon_state = ""
+	desc = "Dried miras eggs sealed inside a tin. A great snack for on the trail."
+	trash = /obj/item/trash/mirastin
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "#639fee"
+	tastes = list("egg" = 5)
+	foodtype = MEAT
+
 /obj/item/reagent_containers/food/snacks/lifosa
 	name = "Lifosa Tiris"
 	icon_state = ""
@@ -149,3 +159,11 @@
 	foodtype = DAIRY
 	/*food_flags = FOOD_FINGER_FOOD*/
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/lifosa/homemade
+	name = "tiris pearls"
+	icon_state = ""
+	desc = "Small pearls of Tiris Cheese, sealed in a salty crust. They're fairly oily, and have a savory aroma."
+	trash = /obj/item/trash/mirastin
+	filling_color = "#cac84e"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)

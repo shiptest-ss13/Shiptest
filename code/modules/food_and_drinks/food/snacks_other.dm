@@ -46,6 +46,7 @@
 	desc = "A wedge of cheese, originating from a wheel. You wonder where the original wheel is."
 	icon_state = ""
 	filling_color = "#FFD700"
+	dried_type = /obj/item/reagent_containers/food/snacks/lifosa/homemade
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("rock salt" = 1, "rich cheese" = 4, "faint mushroom" = 1)
 	foodtype = DAIRY
@@ -123,6 +124,15 @@
 	filling_color = "#D2B48C"
 	tastes = list("potato" = 1)
 	foodtype = VEGETABLES | DAIRY
+
+/obj/item/reagent_containers/food/snacks/miras_potato
+	name = "Miras Loaded Potato"
+	desc = "A Lanchester classic, Miras is baked over a potato, and then topped with Luna-Town cheese and sour cream."
+	icon_state = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
+	foodtype = MEAT | SUGAR | VEGETABLES | DAIRY
 
 /obj/item/reagent_containers/food/snacks/fries
 	name = "space fries"
@@ -232,7 +242,7 @@
 	desc = "The eggs of a Miras Lizard are typically extracted from their nest. The individual eggs are small and unfertilized, unless the Miras has mated recently."
 	icon_state = ""
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2)
-	dried_type = /obj/item/reagent_containers/food/snacks/reti
+	dried_type = /obj/item/reagent_containers/food/snacks/reti/homemade
 	filling_color = "#bae1ba"
 	tastes = list("egg" = 1, "hints of spice" = 1)
 	foodtype = MEAT | RAW
@@ -836,7 +846,7 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/refa_remes
-	name = "refa-remes"
+	name = "refa-reti"
 	desc = "The flesh of a refa-li fruit, once all the seeds have been removed, is quite mellow. Adding Remes roe into the flesh creates an experience filled with salty pops."
 	icon_state = ""
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
@@ -845,7 +855,7 @@
 	foodtype = MEAT | FRUIT
 
 /obj/item/reagent_containers/food/snacks/roe_tiris
-	name = "roe tiris"
+	name = "reti-tiris"
 	desc = "Remes roe and Tiris blood mixed together into a thick drink. Acquired taste is the nicest that can be said of it."
 	icon_state = ""
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)

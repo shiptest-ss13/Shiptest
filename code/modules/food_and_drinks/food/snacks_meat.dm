@@ -242,7 +242,7 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/sausage/tiris_dote
-	name = "Tiris Dote"
+	name = "tiris dotesu"
 	desc = "A sweet sausage made with the fats of a Tiris and sweet dote berries."
 	icon_state = ""
 	filling_color = "#CD5C5C"
@@ -254,7 +254,7 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/sausage/tiris_refa //we having jalapeno brats tonight
-	name = "Tiris refa"
+	name = "tiris refasu"
 	desc = "A spicy sausage made with the fats of a Tiris and ground up refa-li fruit."
 	icon_state = ""
 	filling_color = "#CD5C5C"
@@ -306,7 +306,7 @@
 	desc = "Minced Dofitis meat is packed into a small, seedy pastry and baked. The pastries tend to stay shelf stable for several days, but are best eaten warm."
 	icon_state = ""
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
-	bitesize = 3
+	bitesize = 2
 	filling_color = "#F0F0F0"
 	tastes = list("seed flour" = 1, "hearty meat" = 1, "rich fat" = 1)
 	foodtype = MEAT | GRAIN
@@ -315,7 +315,7 @@
 	name = "Timera-Fa"
 	desc = "Tiris meat ground down, dried, and mixed with berries and fruits. The result is a long-lasting survival food."
 	icon_state = ""
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/garlic = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 4)
 	bitesize = 3
 	filling_color = "#F0F0F0"
 	tastes = list("crunchy berry bits" = 1, "dried meat" = 1,)
@@ -334,7 +334,7 @@
 /obj/item/reagent_containers/food/snacks/dofi_tami
 	name = "dofi-tami"
 	desc = "Dofitis, when thinly sliced and dehydrated, becomes a charmingly savoury experience. Lower quality cuts of the meat are often turned into dofi-tami and sold off as a snack."
-	icon_state = "salami"
+	icon_state = ""
 	filling_color = "#CD4122"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("hearty meat" = 2, "desert air" = 1, "rich fats")
@@ -486,18 +486,9 @@
 	name = "Miras Sososi"
 	desc = "A cut of Miras, stretched out over a Sososi leaf and drizzled in Tiris-Sele."
 	icon_state = ""
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/sugar = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/tiris_sele = 1)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("sweet meat" = 3, "gentle umami" = 1, "gel" = 1, "satisfying crunch" = 1)
-	foodtype = MEAT | SUGAR | VEGETABLES
-
-/obj/item/reagent_containers/food/snacks/miras_potato
-	name = "Miras Loaded Potato"
-	desc = "A Lanchester classic, Miras is baked over a potato, and then topped with Luna-Town cheese and sour cream."
-	icon_state = ""
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
-	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
 	foodtype = MEAT | SUGAR | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/siti_miras
@@ -509,8 +500,8 @@
 	tastes = list("sweet meat" = 3, "dried berries" = 1, "satisfying crunch" = 1)
 	foodtype = MEAT | SUGAR | FRUIT
 
-/obj/item/reagent_containers/food/snacks/siti_miras
-	name = "Miras-doli"
+/obj/item/reagent_containers/food/snacks/miras_dola
+	name = "Miras-dola"
 	desc = "Miras stewed with the juices of a cactus until it has absorbed the flavors. The aroma is very prominent."
 	icon_state = ""
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/sugar = 1)
@@ -535,7 +526,7 @@
 	tastes = list("earthiness" = 2, "wine-soaked flesh" = 4)
 	foodtype = MEAT | ALCOHOL
 
-/obj/item/reagent_containers/food/snacks/refa_remes
+/obj/item/reagent_containers/food/snacks/remes_li
 	name = "remes-li"
 	desc = "Remes soaked in Refa-Li juice. An extremely spicy experience for the daring."
 	icon_state = ""

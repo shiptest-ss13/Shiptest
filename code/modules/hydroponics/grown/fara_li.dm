@@ -2,8 +2,8 @@
 // needs - icon state for the plant, unique plant stats i guess
 /*
 /obj/item/seeds/fara_li
-	name = "pack of dotu-fime seeds"
-	desc = "These seeds grow into dotu-fime trees. Remember to keep them watered!"
+	name = "pack of fara-li seeds"
+	desc = "These seeds grow into fara-li bushes. Remember to keep them watered!"
 	icon_state = ""
 	species = "dotu-fime"
 	plantname = "dotu-fime tree"

@@ -19,7 +19,7 @@
 	reagents_add = list(/datum/reagent/consumable/refa_li = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
 */
 
-/obj/item/reagent_containers/food/snacks/grown/refa-li
+/obj/item/reagent_containers/food/snacks/grown/refa_li
 	seed = null
 	name = "refa-li"
 	desc = "the fruit of a small flowering vine common within Tecetian caves. As a defense mechanism, the fruit evolved a pungent sort of heat."
