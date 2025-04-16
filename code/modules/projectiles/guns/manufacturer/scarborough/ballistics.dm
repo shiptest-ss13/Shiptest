@@ -198,9 +198,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	icon_state = "viper23"
 	item_state = "viper23"
-
-	semi_auto = FALSE //not double action
-	safety_wording = "hammer"
+	spread = 6
+	spread_unwielded = 15
 
 	fire_delay = 0.4 SECONDS
 	spread = 4
