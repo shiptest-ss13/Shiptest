@@ -1050,14 +1050,6 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/cargo)
-"pH" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/template_noop,
-/area/template_noop)
 "pN" = (
 /obj/structure/sink{
 	dir = 8;
@@ -1410,6 +1402,15 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/safe,
 /area/ship/roumain)
+"wO" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "wP" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/wood/walnut,
@@ -3387,8 +3388,8 @@ bF
 bF
 "}
 (17,1,1) = {"
-pH
-Cb
+bF
+wO
 NW
 km
 NN
