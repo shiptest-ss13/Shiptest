@@ -40,6 +40,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 		if(!current_pack.contains && !current_pack.item)
 			continue
 		supply_packs += current_pack
+	supply_packs = sortNames(supply_packs)
 
 /datum/cargo_market/proc/cycle_stock()
 	return

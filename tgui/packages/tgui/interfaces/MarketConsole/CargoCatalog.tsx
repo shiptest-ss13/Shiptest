@@ -47,7 +47,7 @@ export const CargoCatalog = (props, context) => {
   };
 
   return (
-    <Section title="Catalog" fill scrollable>
+    <Section title="Catalog">
       <Flex>
         <Flex.Item ml={-1} mr={1.5}>
           <CatalogTabs

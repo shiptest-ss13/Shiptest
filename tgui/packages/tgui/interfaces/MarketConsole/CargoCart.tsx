@@ -28,7 +28,7 @@ export const CargoCart = (props, context) => {
   }
 
   return (
-    <Section title="Cart" scrollable>
+    <Section title="Cart">
       <Table>
         <TableRow header color="gray">
           <Table.Cell>Item</Table.Cell>

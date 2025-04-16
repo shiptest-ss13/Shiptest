@@ -21,11 +21,13 @@ SUBSYSTEM_DEF(cargo)
 	var/list/queued_purchases = list()
 
 /datum/controller/subsystem/cargo/Initialize(timeofday)
+	/*
 	for(var/market in subtypesof(/datum/blackmarket_market))
 		markets += new market
 
 	for(var/datum/cargo_market/market in markets)
 		market.cycle_stock()
+	*/
 	. = ..()
 
 /datum/controller/subsystem/cargo/fire(resumed)
