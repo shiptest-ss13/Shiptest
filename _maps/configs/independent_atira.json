@@ -1,0 +1,39 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"faction": "/datum/faction/independent",
+	"prefix": "IMV",
+	"manufacturer": "Etherbor Lihmona Shipyards",
+	"map_name": "Atira-class Rescue Skiff",
+	"namelists": [
+		"PGF"
+	],
+	"map_short_name": "Atira-class",
+	"description": "A new design of patrol ship designed by Etherbor's Lihmona Navy Shipyards and manufactured by Axilai Orbital Works, the Woeful Cthonian is a small ship with average maneuverability and firepower designed for sustained operations in contested space. While it is not able to hold its own in a firefight with proper warships, lacks specialization into any particular field, and carries no proper marine complement. Despite what some would consider shortcomings, it still finds solid usage as a generalist vessel for the Gezenan navy.",
+	"tags": [
+		"RP Focus",
+		"Medical"
+	],
+	"starting_funds": 1000,
+	"map_path": "_maps/shuttles/independent/independent_atira.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Starship Engineer": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+		"Crewman": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 3
+		}
+	},
+	"enabled":true
+}
