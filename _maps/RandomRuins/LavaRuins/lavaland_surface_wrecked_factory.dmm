@@ -77,7 +77,8 @@
 /obj/item/stock_parts/cell/gun/upgraded,
 /obj/structure/safe,
 /obj/effect/landmark/mission_poi/main{
-	type_to_spawn = /obj/item/documents/nanotrasen
+	type_to_spawn = /obj/item/documents/nanotrasen;
+	spawn_in_containter = 1
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
