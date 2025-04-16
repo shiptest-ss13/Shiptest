@@ -62,7 +62,7 @@
 	icon_state = "ice"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
-	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
+	default_baseturf = /turf/open/floor/plating/asteroid/snowmoon
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
@@ -81,7 +81,7 @@
 	icon_state = "jungle"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
-	default_baseturf = /turf/open/floor/plating/dirt/jungle
+	default_baseturf = /turf/open/floor/plating/asteroid/dirt/jungle
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
@@ -311,7 +311,7 @@
 
 	mapgen = /datum/map_generator/planet_generator/moon
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/moon
 	weather_controller_type = null
 
 	primary_ores = list(\
@@ -367,13 +367,13 @@
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/snowball
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/snow/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/snow
 	weather_controller_type = /datum/weather_controller/snow_planet/severe
 	ruin_type = null
 	weight = 1
 
 /datum/map_generator/single_turf/snowball
-	turf_type = /turf/open/floor/plating/asteroid/snow/lit
+	turf_type = /turf/open/floor/plating/asteroid/snow
 	area_type = /area/overmap_encounter/planetoid/snowball
 
 /datum/planet_type/dustball
@@ -384,12 +384,12 @@
 	color = COLOR_WHITE
 	mapgen = /datum/map_generator/single_turf/dustball
 	gravity = STANDARD_GRAVITY
-	default_baseturf = /turf/open/floor/plating/asteroid/whitesands/lit
+	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
 	weight = 1
 
 /datum/map_generator/single_turf/dustball
-	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
+	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	area_type = /area/overmap_encounter/planetoid/dustball
 
 
@@ -422,5 +422,5 @@
 	weight = 1
 
 /datum/map_generator/single_turf/waterball
-	turf_type = /turf/open/water/stormy_planet_lit
+	turf_type = /turf/open/water/stormy_planet_underground
 	area_type = /area/overmap_encounter/planetoid/waterball

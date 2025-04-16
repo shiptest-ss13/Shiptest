@@ -60,23 +60,6 @@ require only minor tweaks.
 // default trait definitions, used by SSmapping
 #define ZTRAITS_CENTCOM list(ZTRAIT_CENTCOM = TRUE)
 #define ZTRAITS_STATION list(ZTRAIT_STATION = TRUE)
-#define ZTRAITS_SPACE list(ZTRAIT_SPACE_RUINS = TRUE)
-#define ZTRAITS_LAVALAND list( \
-	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_BASETURF = /turf/open/lava/smooth/lava_land_surface)
-#define ZTRAITS_WHITESANDS list( \
-	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/whitesands)
-#define ZTRAITS_ICEMOON list( \
-	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/snow/ice)
-#define ZTRAITS_ICEMOON_UNDERGROUND list( \
-	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_BASETURF = /turf/open/lava/plasma/ice_moon)
 
 #define DL_NAME "name"
 #define DL_TRAITS "traits"

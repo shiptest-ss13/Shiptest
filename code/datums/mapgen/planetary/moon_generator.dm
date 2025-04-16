@@ -82,7 +82,7 @@
 //biomes
 
 /datum/biome/lunar_surface
-	open_turf_types = list(/turf/open/floor/plating/asteroid/moon/lit/surface_craters = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/moon/surface_craters = 1)
 	flora_spawn_chance = 3
 	mob_spawn_chance = 0
 

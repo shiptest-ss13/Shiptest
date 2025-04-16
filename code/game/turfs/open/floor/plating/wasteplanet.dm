@@ -176,7 +176,7 @@
 	planetary_atmos = TRUE
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-/turf/open/floor/plating/dirt/old/waste
+/turf/open/floor/plating/asteroid/dirt/old/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_WASTEPLANET_LIGHT
@@ -231,7 +231,7 @@
 	planetary_atmos = TRUE
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-/turf/open/floor/plating/dirt/old/waste
+/turf/open/floor/plating/asteroid/dirt/old/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet

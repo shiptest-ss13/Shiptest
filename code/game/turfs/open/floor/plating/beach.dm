@@ -1,4 +1,10 @@
 ///it's all sand....
+/turf/open/floor/plating/asteroid/dirt/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/asteroid/dirt/grass/beach
+	baseturfs = /turf/open/floor/plating/asteroid/sand
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/asteroid/sand
 	name = "sand"
@@ -12,7 +18,7 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	layer = SAND_TURF_LAYER
-	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS //custom atmos? lots of oxygen, hot?
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	digResult = /obj/item/stack/ore/glass
 	planetary_atmos = TRUE
 	digResult = /obj/item/stack/ore/glass/beach

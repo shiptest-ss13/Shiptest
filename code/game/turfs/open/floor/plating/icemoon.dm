@@ -52,7 +52,7 @@
 	. = ..()
 	ScrapeAway()
 
-/turf/open/floor/plating/asteroid/snow/icemoon
+/turf/open/floor/plating/asteroid/snowmoon
 	baseturfs = /turf/open/openspace/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
@@ -175,19 +175,19 @@
 	light_color = COLOR_ICEPLANET_LIGHT
 
 /turf/open/floor/wood/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0
 
 /turf/open/floor/wood/ebony/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0
 
 /turf/open/floor/plasteel/stairs/wood/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	slowdown = 0
@@ -195,7 +195,7 @@
 //concrete
 
 /turf/open/floor/concrete/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
@@ -206,7 +206,7 @@
 	light_power = 1
 
 /turf/open/floor/concrete/slab_1/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
@@ -217,7 +217,7 @@
 	light_power = 1
 
 /turf/open/floor/concrete/slab_2/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
@@ -228,7 +228,7 @@
 	light_power = 1
 
 /turf/open/floor/concrete/slab_3/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
@@ -239,7 +239,7 @@
 	light_power = 1
 
 /turf/open/floor/concrete/slab_4/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
@@ -250,7 +250,7 @@
 	light_power = 1
 
 /turf/open/floor/concrete/pavement/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT

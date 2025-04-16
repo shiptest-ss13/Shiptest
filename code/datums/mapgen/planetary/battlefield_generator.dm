@@ -131,7 +131,7 @@
 
 //cave
 /datum/biome/cave/desert/battlefield
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/jungle = 1)
 	closed_turf_types = list(/turf/closed/mineral/random/jungle = 1)
 	flora_spawn_chance = 4
 	flora_spawn_list = list(/obj/structure/flora/rock/beach = 1, /obj/structure/flora/rock/asteroid = 6)

@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/rock
-	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet = 1)
 
 	feature_spawn_chance = 0.25
 	feature_spawn_list = list(
@@ -113,13 +113,13 @@
 
 /datum/biome/rock/icecap
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/snow/lit/rockplanet = 1,
-		/turf/open/floor/plating/asteroid/snow/lit/rockplanet = 5)
+		/turf/open/floor/plating/asteroid/snow/rockplanet = 1,
+		/turf/open/floor/plating/asteroid/snow/rockplanet = 5)
 	flora_spawn_chance = 1
 	mob_spawn_chance = 2
 
 /datum/biome/rock/wetlands
-	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet/wet/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet/wet = 1)
 	flora_spawn_chance = 5
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
