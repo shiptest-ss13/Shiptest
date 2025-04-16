@@ -189,7 +189,8 @@
 	dwidth = 20;
 	height = 30;
 	name = "Falmouth Stern Dock";
-	width = 40
+	width = 40;
+	disable_on_owner_ship_dock = 1
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1314,6 +1315,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
+"Cp" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	port_direction = 2;
+	preferred_direction = 4;
+	launch_status = 0
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Dd" = (
 /obj/structure/closet/secure_closet/armorycage{
 	anchored = 1;
@@ -1607,19 +1621,6 @@
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"GL" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/external/dark)
-"GO" = (
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/external/dark)
 "GS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2464,15 +2465,13 @@
 "Vm" = (
 /obj/docking_port/stationary{
 	dheight = 1;
-	disable_on_owner_ship_dock = 1;
 	dwidth = 3;
 	height = 30;
 	name = "Falmouth Port Dock";
 	width = 9
 	},
-/obj/structure/catwalk/over,
-/turf/open/floor/plating,
-/area/ship/external/dark)
+/turf/template_noop,
+/area/template_noop)
 "VQ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4,
@@ -2658,7 +2657,7 @@ ZY
 FF
 FS
 eC
-FS
+Cp
 FS
 HN
 ZY
@@ -2979,9 +2978,9 @@ ZY
 "}
 (16,1,1) = {"
 ZY
-GL
-GO
-GO
+ZY
+ZY
+ZY
 Vm
 Gx
 BL
