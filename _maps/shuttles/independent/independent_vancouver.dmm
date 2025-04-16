@@ -805,6 +805,12 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-5"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "lJ" = (
@@ -1028,6 +1034,12 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "nH" = (
@@ -1112,6 +1124,9 @@
 /obj/structure/platform/ship_three/corner{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "8-10"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "pw" = (
@@ -1180,6 +1195,9 @@
 	},
 /obj/item/radio/intercom/directional/east,
 /obj/effect/decal/cleanable/greenglow,
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "qk" = (
@@ -1260,6 +1278,9 @@
 /obj/item/flashlight/lamp/green{
 	pixel_x = -7;
 	pixel_y = 3
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -1342,6 +1363,12 @@
 /obj/item/storage/toolbox/electrical{
 	pixel_x = 10;
 	pixel_y = -8
+	},
+/obj/structure/cable{
+	icon_state = "2-6"
+	},
+/obj/structure/cable{
+	icon_state = "4-6"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1952,6 +1979,13 @@
 	dir = 4
 	},
 /obj/machinery/door/window,
+/obj/docking_port/mobile{
+	name = "esquimalt shuttle";
+	dir = 2;
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Ah" = (
@@ -2155,16 +2189,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
-"DF" = (
-/obj/docking_port/mobile{
-	name = "esquimalt shuttle";
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/turf/closed/wall/r_wall,
-/area/ship/engineering/engine)
 "DU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2215,9 +2239,6 @@
 "Ep" = (
 /obj/structure/platform/ship_three{
 	dir = 9
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
@@ -2913,6 +2934,9 @@
 	icon_state = "1-2"
 	},
 /obj/item/radio/intercom/directional/east,
+/obj/structure/cable{
+	icon_state = "8-10"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "NM" = (
@@ -3179,6 +3203,9 @@
 	},
 /obj/structure/platform/ship_three/corner{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "8-9"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -3528,6 +3555,12 @@
 /obj/structure/platform/ship_three{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-5"
+	},
+/obj/structure/cable{
+	icon_state = "4-5"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Wl" = (
@@ -3763,7 +3796,7 @@ Ac
 YV
 Ac
 Ac
-DF
+YV
 UX
 UX
 UX
