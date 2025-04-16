@@ -198,11 +198,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	icon_state = "viper23"
 	item_state = "viper23"
-	spread = 6
-	spread_unwielded = 15
-
-	fire_delay = 0.4 SECONDS
 	spread = 4
+	spread_unwielded = 12
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
