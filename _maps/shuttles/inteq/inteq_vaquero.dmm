@@ -971,12 +971,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "nm" = (
-/obj/docking_port/mobile{
-	dir = 2;
-	launch_status = 0;
-	port_direction = 8;
-	preferred_direction = 4
-	},
 /obj/machinery/porta_turret/ship/inteq{
 	dir = 5;
 	id = "vaquero_grid"
@@ -1299,10 +1293,13 @@
 /area/ship/crew/toilet)
 "vg" = (
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 8;
+	disable_on_owner_ship_dock = 1;
 	dwidth = 15;
-	height = 15;
-	width = 30
+	height = 31;
+	name = "Vaquero Stern Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1450,10 +1447,37 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
+"xJ" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 31;
+	name = "Vaquero Stern Dock";
+	width = 40
+	},
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 15;
+	height = 31;
+	name = "Vaquero Forward Bow Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "xZ" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/external{
 	dir = 4
+	},
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	name = "Salvage Ship";
+	port_direction = 2;
+	preferred_direction = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
@@ -4068,6 +4092,26 @@ te
 te
 te
 VZ
+ww
+ww
+ww
+"}
+(28,1,1) = {"
+ww
+ww
+ww
+ww
+ww
+ww
+ww
+ww
+ww
+xJ
+ww
+ww
+ww
+ww
+ww
 ww
 ww
 ww

@@ -509,6 +509,27 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"hg" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 2;
+	dwidth = 20;
+	height = 30;
+	name = "Dwayne Starboard Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
+"hv" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Dwayne Port Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "hy" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -1353,27 +1374,17 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "uN" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
 /obj/docking_port/mobile{
-	dir = 2;
+	dir = 8;
 	launch_status = 0;
 	name = "mining ship";
-	port_direction = 8;
 	preferred_direction = 4
 	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 8;
-	id = "dwayne_mining_field";
-	locked = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "dwayne_mining"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
-/area/ship/storage/eva)
+/area/ship/engineering)
 "vb" = (
 /obj/machinery/conveyor/inverted{
 	dir = 9;
@@ -1897,6 +1908,18 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
+"Dv" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 31;
+	name = "Dwayne Stern Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "DG" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2145,11 +2168,20 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/canteen)
 "HI" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "dwayne_mining_field";
+	locked = 1
 	},
+/obj/machinery/door/poddoor{
+	id = "dwayne_mining"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
-/area/ship/engineering)
+/area/ship/storage/eva)
 "HP" = (
 /obj/machinery/light/dim/directional/east,
 /obj/structure/toilet{
@@ -3126,13 +3158,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "UP" = (
-/obj/docking_port/stationary{
-	width = 30;
-	height = 15;
-	dwidth = 15;
-	dir = 8
-	},
-/turf/template_noop,
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/template_noop)
 "UX" = (
 /obj/structure/cable/cyan{
@@ -3486,7 +3512,9 @@ OJ
 OJ
 OJ
 OJ
-UP
+OJ
+Dv
+OJ
 OJ
 OJ
 OJ
@@ -3503,11 +3531,13 @@ OJ
 OJ
 OJ
 OJ
+OJ
 CB
 mF
-HI
+uN
 mF
 CB
+OJ
 OJ
 OJ
 OJ
@@ -3516,6 +3546,7 @@ OJ
 OJ
 "}
 (3,1,1) = {"
+OJ
 OJ
 OJ
 OJ
@@ -3533,8 +3564,10 @@ OJ
 OJ
 OJ
 OJ
+OJ
 "}
 (4,1,1) = {"
+OJ
 OJ
 mF
 gF
@@ -3552,10 +3585,12 @@ fi
 gF
 mF
 OJ
+OJ
 "}
 (5,1,1) = {"
 OJ
-mF
+OJ
+UP
 CD
 ea
 mF
@@ -3571,8 +3606,10 @@ Kp
 gm
 mF
 OJ
+OJ
 "}
 (6,1,1) = {"
+OJ
 OJ
 mF
 YE
@@ -3590,8 +3627,10 @@ oa
 AE
 mF
 OJ
+OJ
 "}
 (7,1,1) = {"
+OJ
 OJ
 mF
 kQ
@@ -3609,8 +3648,10 @@ fl
 VP
 mF
 OJ
+OJ
 "}
 (8,1,1) = {"
+OJ
 OJ
 mF
 Ez
@@ -3628,8 +3669,10 @@ hK
 zY
 mF
 OJ
+OJ
 "}
 (9,1,1) = {"
+OJ
 RN
 uc
 uc
@@ -3647,8 +3690,10 @@ eM
 eM
 eM
 gu
+OJ
 "}
 (10,1,1) = {"
+OJ
 uc
 MT
 eH
@@ -3666,8 +3711,10 @@ xP
 SI
 mX
 eM
+OJ
 "}
 (11,1,1) = {"
+OJ
 in
 mr
 as
@@ -3685,8 +3732,10 @@ NW
 YY
 mf
 xl
+OJ
 "}
 (12,1,1) = {"
+OJ
 ZK
 Fn
 vA
@@ -3704,8 +3753,10 @@ UD
 FR
 Nf
 Ip
+OJ
 "}
 (13,1,1) = {"
+OJ
 ZK
 ZA
 QG
@@ -3723,8 +3774,10 @@ WK
 ul
 Qj
 Ip
+OJ
 "}
 (14,1,1) = {"
+hv
 ZK
 eu
 NT
@@ -3742,8 +3795,10 @@ PU
 Is
 Xk
 Ip
+hg
 "}
 (15,1,1) = {"
+OJ
 ZK
 eu
 bO
@@ -3761,8 +3816,10 @@ Jq
 FP
 Nf
 Ip
+OJ
 "}
 (16,1,1) = {"
+OJ
 ZK
 eu
 ww
@@ -3780,9 +3837,11 @@ KO
 vf
 bf
 Ip
+OJ
 "}
 (17,1,1) = {"
-uN
+OJ
+HI
 zK
 JE
 IK
@@ -3799,8 +3858,10 @@ Jn
 bo
 OW
 vL
+OJ
 "}
 (18,1,1) = {"
+OJ
 uc
 RS
 Uj
@@ -3818,8 +3879,10 @@ oy
 cc
 OQ
 eM
+OJ
 "}
 (19,1,1) = {"
+OJ
 RN
 uc
 uc
@@ -3837,8 +3900,10 @@ eM
 eM
 eM
 gu
+OJ
 "}
 (20,1,1) = {"
+OJ
 OJ
 mR
 dQ
@@ -3856,8 +3921,10 @@ Si
 bj
 vm
 OJ
+OJ
 "}
 (21,1,1) = {"
+OJ
 OJ
 zi
 Vg
@@ -3875,8 +3942,10 @@ Tl
 bj
 vm
 OJ
+OJ
 "}
 (22,1,1) = {"
+OJ
 OJ
 za
 Vg
@@ -3894,8 +3963,10 @@ nY
 nY
 dh
 OJ
+OJ
 "}
 (23,1,1) = {"
+OJ
 OJ
 FS
 MG
@@ -3913,8 +3984,10 @@ vw
 LJ
 nY
 OJ
+OJ
 "}
 (24,1,1) = {"
+OJ
 OJ
 FS
 MG
@@ -3932,8 +4005,10 @@ xr
 LZ
 nY
 OJ
+OJ
 "}
 (25,1,1) = {"
+OJ
 OJ
 FS
 KJ
@@ -3951,8 +4026,10 @@ hy
 nY
 HE
 OJ
+OJ
 "}
 (26,1,1) = {"
+OJ
 OJ
 YA
 hS
@@ -3970,8 +4047,10 @@ jS
 Sf
 Aw
 OJ
+OJ
 "}
 (27,1,1) = {"
+OJ
 OJ
 RJ
 KJ
@@ -3989,8 +4068,10 @@ TR
 cV
 RJ
 OJ
+OJ
 "}
 (28,1,1) = {"
+OJ
 OJ
 bW
 Fq
@@ -4008,8 +4089,10 @@ Jk
 HE
 bW
 OJ
+OJ
 "}
 (29,1,1) = {"
+OJ
 OJ
 OJ
 TP
@@ -4027,8 +4110,10 @@ ql
 jz
 OJ
 OJ
+OJ
 "}
 (30,1,1) = {"
+OJ
 OJ
 OJ
 OJ
@@ -4046,8 +4131,10 @@ mv
 OJ
 OJ
 OJ
+OJ
 "}
 (31,1,1) = {"
+OJ
 OJ
 OJ
 OJ
@@ -4065,6 +4152,7 @@ OJ
 OJ
 OJ
 OJ
+OJ
 "}
 (32,1,1) = {"
 OJ
@@ -4073,11 +4161,13 @@ OJ
 OJ
 OJ
 OJ
+OJ
 GW
 cw
 cw
 cw
 GW
+OJ
 OJ
 OJ
 OJ

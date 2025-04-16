@@ -300,10 +300,12 @@
 /area/ship/cargo)
 "bf" = (
 /obj/docking_port/stationary{
-	dwidth = 15;
-	width = 30;
-	height = 15;
-	dir = 2
+	dheight = 1;
+	dir = 2;
+	dwidth = 20;
+	height = 30;
+	name = "Meta Starboard Beam Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2122,6 +2124,16 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
+"mi" = (
+/obj/docking_port/mobile{
+	can_move_docking_ports = 1;
+	dir = 4;
+	name = "Salvage Ship";
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/turf/template_noop,
+/area/template_noop)
 "mk" = (
 /obj/structure/cable/yellow,
 /obj/machinery/power/terminal{
@@ -3853,6 +3865,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"GN" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 15;
+	height = 31;
+	name = "Meta Stern Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "Ha" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4576,6 +4600,16 @@
 /obj/structure/chair/bench/orange/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office/lobby)
+"Pw" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dwidth = 20;
+	height = 30;
+	name = "Meta Port Beam Dock";
+	width = 40
+	},
+/turf/template_noop,
+/area/template_noop)
 "PL" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -4800,12 +4834,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/office/lobby)
 "Sm" = (
-/obj/docking_port/mobile{
-	name = "Salvage Ship";
-	port_direction = 2;
-	preferred_direction = 4;
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
@@ -5631,7 +5659,7 @@ aa
 aa
 aa
 aa
-aa
+mi
 aa
 aa
 aa
@@ -5658,7 +5686,7 @@ ab
 aa
 aa
 aa
-aa
+GN
 aa
 aa
 aa
@@ -5997,7 +6025,7 @@ Rk
 aa
 "}
 (16,1,1) = {"
-qx
+Pw
 fm
 Vd
 hg

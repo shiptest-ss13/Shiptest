@@ -382,17 +382,16 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ib" = (
-/obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	dir = 8;
-	launch_status = 0;
-	preferred_direction = 4
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 21;
+	height = 31;
+	name = "Mudskipper Forward Bow Dock";
+	width = 41
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/cargo)
+/turf/template_noop,
+/area/template_noop)
 "ic" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor4"
@@ -811,6 +810,11 @@
 /obj/structure/catwalk,
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/west,
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "sI" = (
@@ -1658,10 +1662,13 @@
 /area/ship/hallway/central)
 "MB" = (
 /obj/docking_port/stationary{
+	dheight = 1;
 	dir = 2;
-	dwidth = 15;
-	height = 15;
-	width = 30
+	disable_on_owner_ship_dock = 1;
+	dwidth = 10;
+	height = 31;
+	name = "Mudskipper Starboard Quarter Dock";
+	width = 40
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -2890,7 +2897,7 @@ VW
 hn
 Nl
 kY
-ib
+kY
 kY
 kY
 Nl
@@ -2910,7 +2917,7 @@ hH
 cs
 cs
 cs
-cs
+ib
 cs
 cs
 hH
