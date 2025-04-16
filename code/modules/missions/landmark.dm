@@ -79,10 +79,7 @@
 						return item_in_container
 		else if(istype(item_in_poi, type_to_spawn))
 			return item_in_poi
-		if(search_containers && length(item_in_poi.contents))
-			for(var/atom/movable/item_in_thing as anything in item_in_poi.contents)
-				if(istype(item_in_thing, type_to_spawn))
-					return item_in_thing
+
 /*
 /obj/effect/landmark/mission_poi/proc/valid_item(_item, _type)
 	if(istype(_item, _type))
