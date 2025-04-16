@@ -145,7 +145,7 @@
 		return FALSE
 
 	var/datum/gas_mixture/air_contents = airs[1]
-	if(!air_contents.return_pressure() >= 50 * ONE_ATMOSPHERE)
+	if(air_contents.return_pressure() >= 50 * ONE_ATMOSPHERE)
 		return FALSE
 
 	var/turf/location = loc
