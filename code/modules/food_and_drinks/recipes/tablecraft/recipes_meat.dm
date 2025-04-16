@@ -273,7 +273,7 @@
 /datum/crafting_recipe/food/miras_sososi
 	name = "Miras sososi"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/miras = 1
+		/obj/item/reagent_containers/food/snacks/meat/steak/miras = 1,
 		/obj/item/reagent_containers/food/snacks/grown/sososi = 1,
 		/datum/reagent/consumable/tiris_sele = 1
 	)
@@ -302,7 +302,7 @@
 /datum/crafting_recipe/food/miras_li
 	name = "Miras-li"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/miras = 1
+		/obj/item/reagent_containers/food/snacks/meat/slab/miras = 1,
 		/obj/item/reagent_containers/food/snacks/grown/refa_li = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/miras_li
@@ -311,7 +311,7 @@
 /datum/crafting_recipe/food/wine_remes
 	name = "Wine remes"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/remes = 1
+		/obj/item/reagent_containers/food/snacks/meat/slab/remes = 1,
 		/datum/reagent/consumable/ethanol/wine = 10
 	)
 	result = /obj/item/reagent_containers/food/snacks/wine_remes
@@ -320,7 +320,7 @@
 /datum/crafting_recipe/food/remes_li
 	name = "Remes-li"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/remes = 1
+		/obj/item/reagent_containers/food/snacks/meat/slab/remes = 1,
 		/obj/item/reagent_containers/food/snacks/grown/refa_li = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/wine_remes
@@ -329,7 +329,7 @@
 /datum/crafting_recipe/food/dofi_tese
 	name = "dofi-tese"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/dofitis = 1
+		/obj/item/reagent_containers/food/snacks/meat/steak/dofitis = 1,
 		/obj/item/reagent_containers/food/snacks/grown/refa_li = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/dofi_tese
@@ -347,9 +347,9 @@
 /datum/crafting_recipe/food/sososi_dofi
 	name = "dofi-nari"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/dofitis = 1
-		/obj/item/reagent_containers/food/snacks/grown/siti = 1
-		/obj/item/reagent_containers/food/snacks/grown/dotu = 1
+		/obj/item/reagent_containers/food/snacks/meat/steak/dofitis = 1,
+		/obj/item/reagent_containers/food/snacks/grown/siti = 1,
+		/obj/item/reagent_containers/food/snacks/grown/dotu_fime = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/dofi_nari
 	subcategory = CAT_MEAT

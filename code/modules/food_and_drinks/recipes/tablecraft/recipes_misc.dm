@@ -62,7 +62,7 @@
 /datum/crafting_recipe/food/miras_potato
 	name = "Miras loaded potato"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/miras = 1
+		/obj/item/reagent_containers/food/snacks/meat/steak/miras = 1,
 		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
 	)
