@@ -62,7 +62,7 @@
 	icon_state = "ice"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
-	default_baseturf = /turf/open/floor/plating/asteroid/snowmoon
+	default_baseturf = /turf/open/floor/plating/asteroid/snow
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE

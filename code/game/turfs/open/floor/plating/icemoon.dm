@@ -52,7 +52,7 @@
 	. = ..()
 	ScrapeAway()
 
-/turf/open/floor/plating/asteroid/snowmoon
+/turf/open/floor/plating/asteroid/snow
 	baseturfs = /turf/open/openspace/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 

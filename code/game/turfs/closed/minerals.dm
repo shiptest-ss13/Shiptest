@@ -320,7 +320,7 @@
 	mineralType = /obj/item/stack/ore/ice
 
 /turf/closed/mineral/random/snow/underground
-	baseturfs = /turf/open/floor/plating/asteroid/snowmoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	// abundant ore
 	mineralChance = 10
 	mineralSpawnChanceList = list(
@@ -362,8 +362,8 @@
 	no_connector_typecache = list(/turf/closed/mineral/random/labormineral/ice)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snowmoon
-	baseturfs = /turf/open/floor/plating/asteroid/snowmoon
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	defer_change = TRUE
 	mineralSpawnChanceList = list(
@@ -494,8 +494,8 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/snowmountain/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snowmoon
-	baseturfs = /turf/open/floor/plating/asteroid/snowmoon
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/closed/mineral/snowmountain/cavern
