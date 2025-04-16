@@ -40,7 +40,7 @@
 				to_chat(M, "<i>You hear a voice in your head... <b>[msg]</i></b>", confidential = TRUE)
 
 	log_admin("SubtlePM: [key_name(usr)] -> [key_name(M)] : [msg]")
-	msg = "<span class='adminnotice'><b> SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] :</b> [msg]</span>"
+	msg = span_adminnotice("<b> SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] :</b> [msg]")
 	message_admins(msg)
 	admin_ticket_log(M, msg)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Subtle Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -87,7 +87,7 @@
 
 	log_directed_talk(mob, H, input, LOG_ADMIN, "reply")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "<span class='hear'>You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\"</span>", confidential = TRUE)		//WS Edit - SolGov Rep
+	to_chat(H, span_hear("You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\""), confidential = TRUE)		//WS Edit - SolGov Rep
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -104,7 +104,7 @@
 		return
 	to_chat(world, "[msg]", confidential = TRUE)
 	log_admin("GlobalNarrate: [key_name(usr)] : [msg]")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] Sent a global narrate</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] Sent a global narrate"))
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Global Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_direct_narrate(mob/M)
@@ -127,7 +127,7 @@
 
 	to_chat(M, msg, confidential = TRUE)
 	log_admin("DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]): [msg]")
-	msg = "<span class='adminnotice'><b> DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]):</b> [msg]<BR></span>"
+	msg = span_adminnotice("<b> DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]):</b> [msg]<BR>")
 	message_admins(msg)
 	admin_ticket_log(M, msg)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Direct Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -150,7 +150,7 @@
 		to_chat(M, msg, confidential = TRUE)
 
 	log_admin("LocalNarrate: [key_name(usr)] at [AREACOORD(A)]: [msg]")
-	message_admins("<span class='adminnotice'><b> LocalNarrate: [key_name_admin(usr)] at [ADMIN_VERBOSEJMP(A)]:</b> [msg]<BR></span>")
+	message_admins(span_adminnotice("<b> LocalNarrate: [key_name_admin(usr)] at [ADMIN_VERBOSEJMP(A)]:</b> [msg]<BR>"))
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Local Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_godmode(mob/M in GLOB.mob_list)
@@ -160,7 +160,7 @@
 		return
 
 	M.status_flags ^= GODMODE
-	to_chat(usr, "<span class='adminnotice'>Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]</span>", confidential = TRUE)
+	to_chat(usr, span_adminnotice("Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]"), confidential = TRUE)
 
 	log_admin("[key_name(usr)] has toggled [key_name(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]")
 	var/msg = "[key_name_admin(usr)] has toggled [ADMIN_LOOKUPFLW(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]"
@@ -265,7 +265,7 @@
 		if(candidates.len)
 			ckey = input("Pick the player you want to respawn as a xeno.", "Suitable Candidates") as null|anything in sortKey(candidates)
 		else
-			to_chat(usr, "<span class='danger'>Error: create_xeno(): no suitable candidates.</span>", confidential = TRUE)
+			to_chat(usr, span_danger("Error: create_xeno(): no suitable candidates."), confidential = TRUE)
 	if(!istext(ckey))
 		return 0
 
@@ -289,7 +289,7 @@
 			return 0
 
 	new_xeno.ckey = ckey
-	var/msg = "<span class='notice'>[key_name_admin(usr)] has spawned [ckey] as a filthy xeno [alien_caste].</span>"
+	var/msg = span_notice("[key_name_admin(usr)] has spawned [ckey] as a filthy xeno [alien_caste].")
 	message_admins(msg)
 	admin_ticket_log(new_xeno, msg)
 	return 1
@@ -477,7 +477,7 @@
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm == "Yes")
 		log_admin("[key_name(usr)] used gibself.")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] used gibself.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] used gibself."))
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Gib Self") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		mob.gib(1, 1, 1)
 
@@ -521,7 +521,7 @@
 	SSshuttle.request_jump()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Call Shuttle") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] admin-initiated a bluespace jump.")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] admin-initiated a bluespace jump.</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] admin-initiated a bluespace jump."))
 
 /client/proc/admin_cancel_jump()
 	set category = "Event"
@@ -539,7 +539,7 @@
 	SSshuttle.cancel_jump()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Cancel Shuttle") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] admin-cancelled a bluespace jump.")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] admin-cancelled a bluespace jump.</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] admin-cancelled a bluespace jump."))
 
 /client/proc/everyone_random()
 	set category = "Event.Fun"
@@ -566,7 +566,7 @@
 	message_admins("Admin [key_name_admin(usr)] has forced the players to have random appearances.")
 
 	if(notifyplayers == "Yes")
-		to_chat(world, "<span class='adminnotice'>Admin [usr.key] has forced the players to have completely random identities!</span>", confidential = TRUE)
+		to_chat(world, span_adminnotice("Admin [usr.key] has forced the players to have completely random identities!"), confidential = TRUE)
 
 	to_chat(usr, "<i>Remember: you can always disable the randomness by using the verb again, assuming the round hasn't started yet</i>.", confidential = TRUE)
 
@@ -746,7 +746,7 @@
 		if(!M)
 			continue
 
-		M.audible_message("<span class='hear'>...wabbajack...wabbajack...</span>")
+		M.audible_message(span_hear("...wabbajack...wabbajack..."))
 		playsound(M.loc, 'sound/magic/staff_change.ogg', 50, TRUE, -1)
 
 	message_admins("Mass polymorph started by [who_did_it] is complete.")
@@ -835,7 +835,7 @@
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
-	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", DYNAMIC_WORLD_LIST_ALL, 60 SECONDS)
+	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", subtypesof(/datum/planet_type/), 60 SECONDS)
 	if(!planet_type)
 		return
 
@@ -864,13 +864,22 @@
 					ruin_target = select_from[selected_ruin]
 
 	var/list/position = list()
+	var/datum/overmap_star_system/selected_system //the star system we are
+
+	if(length(SSovermap.tracked_star_systems) > 1)
+		selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn Planet/Ruin", SSovermap.tracked_star_systems)
+	else
+		selected_system = SSovermap.tracked_star_systems[1]
+	if(!selected_system)
+		return //if selected_system didnt get selected, we nope out, this is very bad
+
 	if(tgui_alert(usr, "Where do you want to spawn your Planet/Ruin?", "Spawn Planet/Ruin", list("Pick a location", "Random")) == "Pick a location")
-		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,SSovermap.size)) as num
-		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,SSovermap.size)) as num
-		if(locate(/datum/overmap) in SSovermap.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
+		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,selected_system.size)) as num
+		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,selected_system.size)) as num
+		if(locate(/datum/overmap) in selected_system.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
 			return
 	else
-		position = SSovermap.get_unused_overmap_square()
+		position = selected_system.get_unused_overmap_square()
 
 	var/admin_load_instant = FALSE
 	if(tgui_alert(usr, "Instant admin load?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) == "Yes")
@@ -879,15 +888,156 @@
 	message_admins("Creating a new Planet with ruin: [ruin_target].")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
-	var/datum/overmap/dynamic/encounter = new(position, FALSE)
-	message_admins("new Planet token: [ADMIN_JMP(encounter.token)]. new Planet datum: [ADMIN_VV(encounter)]")
+	var/datum/overmap/dynamic/encounter = new(position, selected_system, FALSE)
+
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
 		encounter.ruin_type = null
+		encounter.selected_ruin  = null
 	if(admin_load_instant)
 		encounter.admin_load()
+		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)], and here to go to the dock: [ADMIN_JMP(encounter.reserve_docks[1])]")
+	else
+		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)]")
+
+/client/proc/spawn_overmap()
+	set name = "Spawn Overmap"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/overmap_type = tgui_input_list(usr, "What type of Star System?", "Spawn Overmap", typesof(/datum/overmap_star_system/), 60 SECONDS)
+	var/datum/overmap_star_system/nova
+	if(!overmap_type)
+		return
+
+	if(tgui_alert(usr, "Edit spawn parameters?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		var/inputed
+		nova = new overmap_type(FALSE)
+
+		inputed = input(usr, "Choose sector size", "Spawn Overmap", nova.size) as num
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.size = inputed
+
+		inputed = input(usr, "Choose Maximum amount of Dynamic Events", "Spawn Overmap", nova.max_overmap_dynamic_events) as num
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.max_overmap_dynamic_events = inputed
+
+		inputed = tgui_input_list(usr, "Choose Map Generator", "Spawn Overmap", list(OVERMAP_GENERATOR_SOLAR, OVERMAP_GENERATOR_RANDOM, OVERMAP_GENERATOR_NONE))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.generator_type = inputed
+
+		inputed = tgui_alert(usr, "Have an outpost generate immediatey in this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.has_outpost = TRUE
+			if("No")
+				nova.has_outpost = FALSE
+
+		inputed = tgui_alert(usr, "Should players be able to jump to this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.can_jump_to = TRUE
+			if("No")
+				nova.can_jump_to = FALSE
+
+	if(tgui_alert(usr, "Edit Overmap Colors?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		if(!nova)
+			nova = new overmap_type(FALSE)
+
+		nova.override_object_colors = TRUE
+		var/inputed
+		inputed = input(usr, "Set Primary Color (Planets):", nova.primary_color) as color|null
+		if(inputed)
+			nova.primary_color = inputed
+		inputed = input(usr, "Set Secondary Color (Background):", nova.secondary_color) as color|null
+		if(inputed)
+			nova.secondary_color = inputed
+
+
+		inputed = tgui_alert(usr, "Set a primary hazard color (Dangerous Hazards)? If no then primary hazard color will be set to the color of the sun.", "Spawn Overmap", list("Yes", "No"), 10 SECONDS)
+		switch(inputed)
+			if("Yes")
+				inputed = input(usr, "Set Primary Hazard Color (Dangerous Hazards):", nova.hazard_primary_color) as color|null
+				if(inputed)
+					nova.hazard_primary_color = inputed
+			if("No")
+				nova.hazard_primary_color = null
+		inputed = input(usr, "Set Secondary Hazard Color (Less Dangerous Hazards):", nova.secondary_color) as color|null
+		if(inputed)
+			nova.hazard_secondary_color = inputed
+
+		inputed = input(usr, "Set Primary Structure Color (Ships):", nova.primary_structure_color) as color|null
+		if(inputed)
+			nova.primary_structure_color = inputed
+
+		inputed = input(usr, "Set Secondary Structure Color (Outposts):", nova.secondary_structure_color) as color|null
+		if(inputed)
+			nova.secondary_structure_color = inputed
+
+		inputed = tgui_input_list(usr, "Choose Background sprite", "Spawn Overmap", list("overmap", "overmap_dark", "overmap_black_bg"))
+		if(inputed)
+			nova.overmap_icon_state = inputed
+
+	if(tgui_alert(usr, "Give sector custom name? If no inherits from basetype or picks randomly", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		nova.name = input(usr, "Set Sector name:", "Spawn Overmap") as text|null
+
+	message_admins("Generating Star System type: [overmap_type], this may take some time!")
+	if(nova)
+		nova.setup_system()
+		nova = SSovermap.spawn_new_star_system(nova)
+	else
+		nova = SSovermap.spawn_new_star_system(overmap_type)
+	if(!nova)
+		message_admins("Failed to generate Star System [overmap_type]!")
+		return
+	message_admins(span_big("Overmap [nova.name] successfully generated!"))
+
+/client/proc/spawn_jump_point()
+	set name = "Spawn Overmap Jump Point"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/datum/overmap_star_system/selected_system //the star system we are in
+	var/datum/overmap_star_system/selected_system_2 //the star system we are in
+	var/text_directions = list("NORTH", "NORTHEAST", "EAST", "SOUTHEAST", "SOUTH", "SOUTHWEST", "WEST", "NORTHWEST")
+	var/selected_dir
+	if(length(SSovermap.tracked_star_systems) > 1)
+		selected_system = tgui_input_list(usr, "Which star system should point A be in?", "Creating Jump Point", SSovermap.tracked_star_systems)
+	else
+		to_chat(usr, span_danger("There is only one overmap!"), confidential = TRUE)
+		return // if there's only one star system, ignore
+	if(!selected_system)
+		return //if selected_system didnt get selected, we nope out
+
+	selected_system_2 = tgui_input_list(usr, "Which star system should point B be in?", "Creating Jump Point", SSovermap.tracked_star_systems)
+	if(!selected_system_2)
+		return //if selected_system_2 didnt get selected, we nope out
+
+	selected_dir = tgui_input_list(usr, "Which direction should the jump point be (relative to point A)", "Creating Jump Point", text_directions)
+	if(!selected_dir)
+		return
+
+	var/datum/overmap/jump_point/point =selected_system.create_jump_point_link(selected_system_2, text2dir(selected_dir))
+	if(!point)
+		message_admins("Failed to generate jump point!")
+
+	message_admins(span_big("Click here to jump to the overmap Jump point: " + ADMIN_JMP(point.token)))
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
@@ -914,7 +1064,7 @@
 			if(ishuman(target))
 				var/mob/living/carbon/human/H = target
 				H.electrocution_animation(40)
-			to_chat(target, "<span class='userdanger'>The gods have punished you for your sins!</span>", confidential = TRUE)
+			to_chat(target, span_userdanger("The gods have punished you for your sins!"), confidential = TRUE)
 		if(ADMIN_PUNISHMENT_BRAINDAMAGE)
 			target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 199, 199)
 		if(ADMIN_PUNISHMENT_GIB)
@@ -962,15 +1112,15 @@
 			return //We return here because punish_log() is handled by the centcom_podlauncher datum
 		if(ADMIN_PUNISHMENT_MAZING)
 			if(!puzzle_imprison(target))
-				to_chat(usr,"<span class='warning'>Imprisonment failed!</span>", confidential = TRUE)
+				to_chat(usr,span_warning("Imprisonment failed!"), confidential = TRUE)
 				return
 		if(ADMIN_PUNISHMENT_IMMERSE)
 			immerse_player(target)
 		if(ADMIN_PUNISHMENT_NYA)
 			if(!iscarbon(target))
-				to_chat(usr,"<span class='warning'>This must be used on a carbon mob.</span>")
+				to_chat(usr,span_warning("This must be used on a carbon mob."))
 				return
-			to_chat(target, "<span class='userdanger'>You do nyat feew vewy good!</span>", confidential = TRUE)
+			to_chat(target, span_userdanger("You do nyat feew vewy good!"), confidential = TRUE)
 			var/mob/living/carbon/dude = target
 			var/obj/item/organ/tongue/uwuspeak/tonje = new
 			tonje.Insert(dude, TRUE, FALSE)
@@ -990,7 +1140,7 @@
 		return
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, "<span class='warning'>Tracking is disabled in the server configuration file.</span>", confidential = TRUE)
+		to_chat(usr, span_warning("Tracking is disabled in the server configuration file."), confidential = TRUE)
 		return
 
 	var/list/msg = list()
@@ -1004,10 +1154,10 @@
 	if(!check_rights(R_ADMIN))
 		return
 	if(!client_to_check)
-		to_chat(usr, "<span class='danger'>ERROR: Client not found.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Client not found."), confidential = TRUE)
 		return
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, "<span class='warning'>Tracking is disabled in the server configuration file.</span>", confidential = TRUE)
+		to_chat(usr, span_warning("Tracking is disabled in the server configuration file."), confidential = TRUE)
 		return
 
 	new /datum/job_report_menu(client_to_check, usr)
@@ -1016,11 +1166,11 @@
 	if(!check_rights(R_ADMIN))
 		return
 	if(!C)
-		to_chat(usr, "<span class='danger'>ERROR: Client not found.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Client not found."), confidential = TRUE)
 		return
 
 	if(!C.set_db_player_flags())
-		to_chat(usr, "<span class='danger'>ERROR: Unable read player flags from database. Please check logs.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Unable read player flags from database. Please check logs."), confidential = TRUE)
 	var/dbflags = C.prefs.db_flags
 	var/newstate = FALSE
 	if(dbflags & DB_FLAG_EXEMPT)
@@ -1029,7 +1179,7 @@
 		newstate = TRUE
 
 	if(C.update_flag_db(DB_FLAG_EXEMPT, newstate))
-		to_chat(usr, "<span class='danger'>ERROR: Unable to update player flags. Please check logs.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Unable to update player flags. Please check logs."), confidential = TRUE)
 	else
 		message_admins("[key_name_admin(usr)] has [newstate ? "activated" : "deactivated"] job exp exempt status on [key_name_admin(C)]")
 		log_admin("[key_name(usr)] has [newstate ? "activated" : "deactivated"] job exp exempt status on [key_name(C)]")
@@ -1105,7 +1255,7 @@
 	if(put_in_hands(I))
 		update_inv_hands()
 		if(prompted)
-			to_chat(src, "<span class='adminnotice'>Your prayers have been answered!! You received the <b>best [I.name]!</b></span>", confidential = TRUE)
+			to_chat(src, span_adminnotice("Your prayers have been answered!! You received the <b>best [I.name]!</b>"), confidential = TRUE)
 			SEND_SOUND(src, sound('sound/effects/pray_chaplain.ogg'))
 		return TRUE
 	else

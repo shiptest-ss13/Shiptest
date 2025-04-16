@@ -42,8 +42,9 @@
 	mission_main_signal = COMSIG_DRILL_SAMPLES_DONE
 
 /*
- * Core sampling drill
+	Core sampling drill
 */
+
 /obj/machinery/drill/mission
 	name = "core sampling research drill"
 	desc = "A specialized laser drill designed to extract geological samples."
@@ -51,27 +52,31 @@
 	var/num_current = 0
 	var/mission_class
 	var/num_wanted
+	var/obj/structure/vein/orevein_wanted
 
 /obj/machinery/drill/mission/examine()
 	. = ..()
-	. += "<span class='notice'>The drill contains [num_current] of the [num_wanted] samples needed.</span>"
+	. += span_notice("The drill contains [num_current] of the [num_wanted] samples needed.")
 
 /obj/machinery/drill/mission/start_mining()
+	if(orevein_wanted && !istype(our_vein, orevein_wanted))
+		say("Error: Incorrect class of planetiod for operation.")
+		return
 	if(our_vein.vein_class < mission_class && our_vein)
 		say("Error: A vein class of [mission_class] or greater is required for operation.")
 		return
-	. = ..()
+	return ..()
 
 /obj/machinery/drill/mission/mine_success()
 	num_current++
+
 	if(num_current == num_wanted)
 		SEND_SIGNAL(src, COMSIG_DRILL_SAMPLES_DONE)
 
-//I want this to be a 3x3 machine in future
 /obj/machinery/drill/mission/ruin
 	name = "industrial grade mining drill"
 	desc = "A large scale laser drill. It's able to mine vast amounts of minerals from near-surface ore pockets, this one is designed for mining outposts."
-	mission_class = 4
+	mission_class = 3
 	num_wanted = 10
 
 /obj/item/drill_readout

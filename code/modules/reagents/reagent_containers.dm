@@ -65,20 +65,20 @@
 /obj/item/reagent_containers/examine(mob/user)
 	. = ..()
 	if(istype(src, /obj/item/reagent_containers/glass))
-		. += "<span class='notice'>Currently transferring [amount_per_transfer_from_this]u with each pour.</span>"
+		. += span_notice("Currently transferring [amount_per_transfer_from_this]u with each pour.")
 	if(istype(src, /obj/item/reagent_containers/dropper))
-		. += "<span class='notice'>Currently squeezing out [amount_per_transfer_from_this]u drops.</span>"
+		. += span_notice("Currently squeezing out [amount_per_transfer_from_this]u drops.")
 	if(istype(src, /obj/item/reagent_containers/syringe))
-		. += "<span class='notice'>Currently injecting [amount_per_transfer_from_this]u at a time.</span>"
+		. += span_notice("Currently injecting [amount_per_transfer_from_this]u at a time.")
 	if(!can_have_cap)
 		return
 	else
 		if(cap_lost)
-			. += "<span class='notice'>The cap seems to be missing.</span>"
+			. += span_notice("The cap seems to be missing.")
 		else if(cap_on)
-			. += "<span class='notice'>The cap is firmly on to prevent spilling. Alt-click to remove the cap.</span>"
+			. += span_notice("The cap is firmly on to prevent spilling. Alt-click to remove the cap.")
 		else
-			. += "<span class='notice'>The cap has been taken off. Alt-click to put a cap on.</span>"
+			. += span_notice("The cap has been taken off. Alt-click to put a cap on.")
 
 /obj/item/reagent_containers/is_injectable(mob/user, allowmobs = TRUE)
 	if(can_have_cap && cap_on)
@@ -121,14 +121,14 @@
 	if(ismob(target) || !reagents.total_volume || !check_allowed_items(target, target_self = FALSE))
 		return
 
-	target.visible_message("<span class='notice'>[user] attempts to pour [src] onto [target].</span>")
+	target.visible_message(span_notice("[user] attempts to pour [src] onto [target]."))
 	if(!do_after(user, 3 SECONDS, target=target))
 		return
 	// reagents may have been emptied
 	if(!is_drainable() || !reagents.total_volume)
 		return
 	playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-	target.visible_message("<span class='notice'>[user] pours [src] onto [target].</span>")
+	target.visible_message(span_notice("[user] pours [src] onto [target]."))
 	log_combat(user, target, "poured [english_list(reagents.reagent_list)]", "in [AREACOORD(target)]")
 	log_game("[key_name(user)] poured [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 	var/frac = min(amount_per_transfer_from_this/reagents.total_volume, 1)
@@ -143,20 +143,20 @@
 	. = ..()
 	if(can_have_cap)
 		if(cap_lost)
-			to_chat(user, "<span class='warning'>The cap seems to be missing! Where did it go?</span>")
+			to_chat(user, span_warning("The cap seems to be missing! Where did it go?"))
 			return
 
 		var/fumbled = HAS_TRAIT(user, TRAIT_CLUMSY) && prob(5)
 		if(cap_on || fumbled)
 			set_cap_status(FALSE)
 			if(fumbled)
-				to_chat(user, "<span class='warning'>You fumble with [src]'s cap! The cap falls onto the ground and simply vanishes. Where the hell did it go?</span>")
+				to_chat(user, span_warning("You fumble with [src]'s cap! The cap falls onto the ground and simply vanishes. Where the hell did it go?"))
 				cap_lost = TRUE
 			else
-				to_chat(user, "<span class='notice'>You remove the cap from [src].</span>")
+				to_chat(user, span_notice("You remove the cap from [src]."))
 		else
 			set_cap_status(TRUE)
-			to_chat(user, "<span class='notice'>You put the cap on [src].</span>")
+			to_chat(user, span_notice("You put the cap on [src]."))
 		playsound(src, 'sound/items/glass_cap.ogg', 50, 1)
 
 /obj/item/reagent_containers/proc/canconsume(mob/eater, mob/user)
@@ -170,13 +170,13 @@
 		covered = "mask"
 	if(covered)
 		var/who = (isnull(user) || eater == user) ? "your" : "[eater.p_their()]"
-		to_chat(user, "<span class='warning'>You have to remove [who] [covered] first!</span>")
+		to_chat(user, span_warning("You have to remove [who] [covered] first!"))
 		return 0
 	if(!eater.has_mouth())
 		if(eater == user)
-			to_chat(eater, "<span class='warning'>You have no mouth, and cannot eat.</span>")
+			to_chat(eater, span_warning("You have no mouth, and cannot eat."))
 		else
-			to_chat(user, "<span class='warning'>You can't feed [eater], because they have no mouth!</span>")
+			to_chat(user, span_warning("You can't feed [eater], because they have no mouth!"))
 		return 0
 	return 1
 
@@ -212,8 +212,8 @@
 		var/mob/M = target
 		var/R
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		target.visible_message("<span class='danger'>[M] is splashed with something!</span>", \
-						"<span class='userdanger'>[M] is splashed with something!</span>")
+		target.visible_message(span_danger("[M] is splashed with something!"), \
+						span_userdanger("[M] is splashed with something!"))
 		for(var/datum/reagent/A in reagents.reagent_list)
 			R += "[A.type]  ([num2text(A.volume)]),"
 
@@ -222,7 +222,7 @@
 		reagents.expose(target, TOUCH)
 
 	else if(bartender_check(target) && thrown)
-		visible_message("<span class='notice'>[src] lands onto the [target.name] without spilling a single drop.</span>")
+		visible_message(span_notice("[src] lands onto the [target.name] without spilling a single drop."))
 		return
 
 	else
@@ -231,7 +231,7 @@
 			log_game("[key_name(thrown_by)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [AREACOORD(target)].")
 			message_admins("[ADMIN_LOOKUPFLW(thrown_by)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] in [ADMIN_VERBOSEJMP(target)].")
 		playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
-		visible_message("<span class='notice'>[src] spills its contents all over [target].</span>")
+		visible_message(span_notice("[src] spills its contents all over [target]."))
 		reagents.expose(target, TOUCH)
 		if(QDELETED(src))
 			return
@@ -252,7 +252,7 @@
 			if(R.dip_object(I, user, src))
 				success = TRUE
 		if(success)
-			to_chat(user, "<span class='notice'>You dip [I] into [src], and the solution begins to bubble.</span>")
+			to_chat(user, span_notice("You dip [I] into [src], and the solution begins to bubble."))
 			playsound(src, 'sound/effects/bubbles.ogg', 80, TRUE)
 			return TRUE
 	return ..()

@@ -9,6 +9,7 @@
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	climb_time = 4 SECONDS
 
 /obj/structure/platform/Initialize()
 	. = ..()
@@ -114,7 +115,7 @@
 
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
 		if(obj_integrity < max_integrity)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return
 
 			to_chat(user, span_notice("You begin repairing [src]..."))
@@ -129,7 +130,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 3 SECONDS, volume=0))
 		to_chat(user, span_warning("You cut apart the platform."))
