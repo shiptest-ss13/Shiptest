@@ -269,6 +269,11 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "zeva"
 	},
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 4;
+	preferred_direction = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "eY" = (
@@ -2558,14 +2563,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/ccommons)
-"Tx" = (
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 4;
-	preferred_direction = 4
-	},
-/turf/template_noop,
-/area/template_noop)
 "TD" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
@@ -3172,7 +3169,7 @@ eK
 bI
 tf
 VI
-Tx
+VI
 VI
 "}
 (11,1,1) = {"
