@@ -98,6 +98,7 @@
 			"cost" = current_pack.cost,
 			"discountedcost" = discountedcost ? discountedcost : null,
 			"discountpercent" = current_pack.faction_discount,
+			"stock" = current_pack.stock == INFINITY ? "INF" : current_pack.stock,
 			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
 			"desc" = desc,
 			"no_bundle" = current_pack.no_bundle

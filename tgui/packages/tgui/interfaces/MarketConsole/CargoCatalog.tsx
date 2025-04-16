@@ -159,7 +159,7 @@ export const CatalogList = (props: CatalogListProps, context) => {
         return (
           <Table.Row key={pack.ref} className="candystripe">
             <Table.Cell>{pack.name}</Table.Cell>
-            <Table.Cell>1</Table.Cell>
+            <Table.Cell>{pack.stock}</Table.Cell>
             <Table.Cell textAlign="right">
               <Button
                 fluid

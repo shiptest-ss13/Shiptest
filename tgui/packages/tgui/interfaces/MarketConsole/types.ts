@@ -18,6 +18,7 @@ export type SupplyPack = {
   discountedcost: number;
   discountpercent: number;
   faction_locked: Boolean;
+  stock: any;
   desc: string;
   no_bundle: Boolean;
 };
