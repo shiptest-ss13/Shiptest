@@ -143,7 +143,7 @@
 
 ///the singular snow tile:
 
-/turf/open/floor/plating/asteroid/snow/lit/whitesands
+/turf/open/floor/plating/asteroid/snow/whitesands
 	light_color = COLOR_SANDPLANET_LIGHT
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS

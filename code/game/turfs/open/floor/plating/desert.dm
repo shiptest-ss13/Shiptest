@@ -29,12 +29,6 @@
 	if(prob(floor_variance))
 		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
-/turf/open/floor/plating/asteroid/desert/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_DESERTPLANET_LIGHT
-	baseturfs = /turf/open/floor/plating/asteroid/desert/lit
-
 /turf/open/floor/plating/asteroid/dry_seafloor
 	gender = PLURAL
 	name = "dry seafloor"
@@ -67,9 +61,3 @@
 		transform = translation
 		icon = smooth_icon
 		icon_plating = null
-
-/turf/open/floor/plating/asteroid/dry_seafloor/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_DESERTPLANET_LIGHT
-	baseturfs = /turf/open/floor/plating/asteroid/dry_seafloor/lit

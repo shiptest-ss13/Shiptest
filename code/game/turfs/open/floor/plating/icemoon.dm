@@ -58,11 +58,6 @@
 
 	slowdown = 0
 
-/turf/open/floor/plating/asteroid/snow/lit
-	light_range = 2
-	light_power = 1
-	baseturfs = /turf/open/floor/plating/asteroid/icerock/lit
-
 /turf/open/floor/plating/asteroid/snow/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
@@ -84,10 +79,6 @@
 /turf/open/floor/plating/asteroid/snow/under
 	icon_state = "snow_dug"
 	planetary_atmos = TRUE
-
-/turf/open/floor/plating/asteroid/snow/under/lit
-	light_range = 2
-	light_power = 1
 
 /turf/open/floor/plating/asteroid/icerock
 	gender = PLURAL
@@ -124,10 +115,6 @@
 		translation.Translate(-19, -19)
 		transform = translation
 		icon = smooth_icon
-
-/turf/open/floor/plating/asteroid/icerock/lit
-	light_range = 2
-	light_power = 1
 
 /turf/open/floor/plating/asteroid/icerock/cracked
 	floor_variance = 0
@@ -181,30 +168,11 @@
 	dug = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
 
-/turf/open/floor/plating/asteroid/iceberg/lit
-	light_range = 2
-	light_power = 1
-
 /turf/open/lava/plasma/ice_moon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	baseturfs = /turf/open/lava/plasma/ice_moon
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
-
-//TODO: SUPER LEGACY,  REMOVE
-/turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
-
-//TODO: SUPER LEGACY, REMOVE AS WELL
-/turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	slowdown = 0
-
-/turf/open/floor/plating/asteroid/snow/ice/burn_tile()
-	return FALSE
 
 /turf/open/floor/wood/icemoon
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon

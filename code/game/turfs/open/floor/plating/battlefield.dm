@@ -15,14 +15,8 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	baseturfs = /turf/open/floor/plating/asteroid/battlefield_wasteland
 
-/turf/open/floor/plating/asteroid/battlefield_wasteland/lit
-	baseturfs = /turf/open/floor/plating/asteroid/battlefield_wasteland/lit
-	light_color = COLOR_FOGGY_LIGHT
-	light_range = 2
-	light_power = 1
-
-/turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
-	baseturfs = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/battlefield
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/grass/jungle/battlefield
 	light_color = COLOR_FOGGY_LIGHT
 	light_range = 2
 	light_power = 1
@@ -70,7 +64,7 @@
 		. = TRUE
 
 
-/turf/open/water/battlefield/lit
+/turf/open/water/battlefield
 	light_range = 2
 	light_power = 1
 	light_color = COLOR_FOGGY_LIGHT

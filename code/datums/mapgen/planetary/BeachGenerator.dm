@@ -133,7 +133,7 @@
 	feature_spawn_chance = 1.2
 
 /datum/biome/beach
-	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/sand = 1)
 	mob_spawn_list = list(/mob/living/simple_animal/crab = 7, /mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 5)
 	mob_spawn_chance = 1
 	flora_spawn_list = list(
