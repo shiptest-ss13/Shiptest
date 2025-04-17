@@ -63,6 +63,13 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried,
 /area/overmap_encounter/planetoid/cave/explored)
+"bo" = (
+/obj/item/geiger_counter{
+	pixel_y = -6;
+	pixel_x = 10
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
 "bu" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -627,6 +634,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/ruin/whitesands/cave_base)
+"hj" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "radiation";
+	pixel_y = 28;
+	pixel_x = 2
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
 "hw" = (
 /obj/effect/turf_decal/corner_techfloor_gray/full,
 /obj/structure/flippedtable{
@@ -881,6 +896,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base)
+"kn" = (
+/obj/item/mine/pressure/explosive/rusty/live,
+/obj/effect/radiation,
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
 "kr" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/whitesands/lit,
@@ -2204,7 +2224,6 @@
 	pixel_y = 2;
 	pixel_x = -7
 	},
-/obj/effect/radiation,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/cave_base/engi)
 "yA" = (
@@ -2504,7 +2523,7 @@
 /obj/machinery/syndicatebomb{
 	name = "low yield fusion bomb";
 	payload = /obj/item/bombcore/large;
-	desc = "Are you sure you want to do this, tovai?";
+	desc = "Let's rock!";
 	anchored = 1;
 	can_unanchor = 0
 	},
@@ -3095,6 +3114,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
+"Gm" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/obj/structure/sign/warning/longtermwaste{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/whitesands/dried,
+/area/overmap_encounter/planetoid/cave/explored)
 "Gu" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/glass{
@@ -3522,7 +3548,6 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/wideband/table,
-/obj/effect/radiation,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/whitesands/cave_base/engi)
 "KO" = (
@@ -3822,7 +3847,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/radiation,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/cave_base/engi)
 "Oo" = (
@@ -4809,6 +4833,7 @@
 /area/ruin/whitesands/cave_base/engi)
 "Zh" = (
 /obj/structure/vein,
+/obj/effect/radiation,
 /turf/open/floor/plating/asteroid/whitesands/grass,
 /area/overmap_encounter/planetoid/cave/explored)
 "Zr" = (
@@ -6418,7 +6443,7 @@ tX
 tX
 tX
 mh
-mh
+qR
 mh
 mh
 tX
@@ -6478,8 +6503,8 @@ tX
 LM
 tX
 KG
-tX
-tX
+qR
+hj
 iP
 tX
 fT
@@ -6540,7 +6565,7 @@ iP
 tX
 tX
 tX
-tX
+bo
 tX
 tX
 tX
@@ -6718,8 +6743,8 @@ mh
 tX
 tX
 tX
-tX
-LM
+qR
+Gm
 tX
 tX
 tX
@@ -6767,7 +6792,7 @@ tX
 HA
 tX
 qR
-mh
+qR
 mh
 qZ
 YO
@@ -7000,7 +7025,7 @@ ZX
 tX
 tX
 tX
-tX
+UM
 tX
 mh
 mh
@@ -7361,7 +7386,7 @@ mh
 qR
 GH
 tX
-fT
+kn
 tX
 tX
 mh
@@ -7591,7 +7616,7 @@ tX
 od
 Xe
 ib
-tX
+UM
 tX
 tX
 fT
