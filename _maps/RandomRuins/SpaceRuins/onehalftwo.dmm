@@ -77,10 +77,33 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 10;
+	id = "fuelinghangar"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	pixel_x = 18;
+	pixel_y = 0;
+	id = "fuelingholo"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
+"aW" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "refuelingbridge"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/bridge)
 "aY" = (
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelinghangar"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "aZ" = (
@@ -189,11 +212,12 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "fuelingcargo"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"cd" = (
-/turf/open/floor/plasteel/patterned/grid,
-/area/ruin/space/has_grav/refuelingpost/cargobay)
 "cg" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
@@ -233,8 +257,14 @@
 /obj/structure/grille,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fuelingengineering"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/engineering)
+"cz" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
 "cG" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -259,12 +289,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/upper)
-"cR" = (
-/turf/open/floor/plating/rust,
-/area/ruin/space/has_grav/refuelingpost/upper)
 "du" = (
 /obj/structure/grille,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelhallwayturret"
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -309,17 +338,23 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
+"dP" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/refuelingsolars)
 "dX" = (
-/obj/machinery/door/poddoor/shutters/preopen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "ripleyfueling"
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"el" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/refuelingsolars)
+"en" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
 "eq" = (
 /obj/structure/chair/comfy/blue/corpo/directional/west,
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
@@ -345,6 +380,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/bridge)
+"ev" = (
+/obj/item/stack/tile/plasteel,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/dorms)
 "eA" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
@@ -360,13 +399,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
-"eZ" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
 "fa" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -385,6 +417,10 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "fuelingengineering"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/engineering)
@@ -525,8 +561,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/bridge)
+"gE" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
 "gU" = (
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelhallwayturret"
+	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -797,6 +842,13 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/hivebotshuttle)
+"ji" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
 "jj" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -848,6 +900,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
+"jR" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "fuelingsecurity"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/armory)
 "jS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -886,6 +947,13 @@
 /obj/item/stock_parts/cell/gun/upgraded,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
+"kr" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
 "ku" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -894,11 +962,6 @@
 /mob/living/simple_animal/hostile/hivebot/defender,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/refuelingpost/armory)
-"kx" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/solarstorage)
 "kC" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -918,6 +981,9 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
+"kN" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/upper)
 "kQ" = (
 /obj/structure/salvageable/server,
 /obj/item/stack/rods,
@@ -955,13 +1021,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/upper)
-"la" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/hivebotshuttle)
 "lc" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
@@ -979,6 +1038,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor,
+/obj/machinery/turretid{
+	pixel_x = -1;
+	pixel_y = 3;
+	id = "fuelingpost"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "lp" = (
@@ -1007,14 +1071,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/bridge)
-"ma" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/engineering)
-"mb" = (
-/turf/open/floor/plating/rust,
-/area/ruin/space/has_grav/refuelingpost/engineering)
 "mh" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/effect/decal/cleanable/glass,
@@ -1071,9 +1127,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/starboard)
-"mT" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/engineering)
 "mX" = (
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 4
@@ -1086,6 +1139,9 @@
 "nh" = (
 /obj/item/stack/rods,
 /turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"nk" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/refuelingpost/dorms)
 "nn" = (
 /obj/structure/table/glass,
@@ -1124,13 +1180,6 @@
 "nT" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
-"oa" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
 "oi" = (
 /obj/structure/girder,
 /obj/item/stack/sheet/metal,
@@ -1161,7 +1210,7 @@
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "oD" = (
 /turf/open/floor/plasteel/patterned/grid,
-/area/ruin/space/has_grav/refuelingpost/cargo)
+/area/ruin/space/has_grav/refuelingpost/cargobay)
 "oK" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/siding/white{
@@ -1256,9 +1305,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"pK" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/dorms)
 "pP" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/siding/white{
@@ -1377,9 +1423,6 @@
 "qJ" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"qM" = (
-/turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
 "qV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/south,
@@ -1402,8 +1445,11 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fuelingengineering"
+	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "rm" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -1479,6 +1525,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
+"sr" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
 "su" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	dir = 4;
@@ -1514,8 +1563,17 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/machinery/button{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = 10;
+	id = "fuelingsolarwindow"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
+"sW" = (
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/bridge)
 "tj" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1561,10 +1619,12 @@
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
 "tq" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "elated_bolide_bay";
+	id = "fuelingholo";
 	dir = 4
 	},
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelinghangar"
+	},
 /obj/structure/cable/yellow,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
@@ -1620,6 +1680,9 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/cargo)
+"uv" = (
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "uJ" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1702,6 +1765,9 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
+"vV" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
 "we" = (
 /obj/machinery/door/airlock/external{
 	welded = 1
@@ -1871,6 +1937,13 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
+"xG" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
 "xI" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/siding/white,
@@ -1931,6 +2004,9 @@
 "yl" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "fuelingsecurity"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "yn" = (
@@ -1985,16 +2061,15 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "ze" = (
-/obj/machinery/porta_turret/ship/nt/heavy,
+/obj/machinery/porta_turret/ship/nt/heavy{
+	id = "fuelingpost"
+	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/refuelingsolars)
-"zh" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/armory)
 "zi" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8;
@@ -2028,9 +2103,9 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/refuelingpost/armory)
-"Ai" = (
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/upper)
+"zL" = (
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
 "Aj" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/watertank,
@@ -2118,23 +2193,24 @@
 /obj/structure/door_assembly{
 	dir = 4
 	},
-/obj/machinery/door/firedoor/border_only{
+/obj/structure/firelock_frame/border{
 	dir = 4
 	},
-/obj/machinery/door/firedoor/border_only{
+/obj/structure/firelock_frame/border{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/dorms)
-"Cd" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/infirmary)
 "Cs" = (
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/refuelingpost/engineering)
+"Ct" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/ruin/space/hivebotshuttle)
 "Cv" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
@@ -2150,6 +2226,20 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 9;
+	pixel_y = 8;
+	id = "refuelingbridge";
+	name = "bridge shutters"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 9;
+	pixel_y = -4;
+	name = "hallway turret shutters";
+	id = "fuelhallwayturret"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "CE" = (
@@ -2158,11 +2248,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/bridge)
+"CI" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
 "CN" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	dir = 4
+	dir = 4;
+	id = "fuelingcargo"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargo)
@@ -2279,11 +2373,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/hivebotshuttle)
-"EA" = (
-/turf/open/floor/engine/hull/reinforced,
-/area/ruin/space/has_grav/refuelingpost/cargobay)
 "ES" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/door_assembly,
+/obj/structure/firelock_frame/border,
+/obj/structure/firelock_frame/border{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/dorms)
 "ET" = (
@@ -2313,12 +2409,6 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/bridge)
-"Fi" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/bridge)
-"Fl" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/cargobay)
 "Fv" = (
 /obj/structure/girder,
 /obj/structure/cable{
@@ -2357,13 +2447,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/refuelingpost/starboard)
-"FN" = (
-/obj/item/stack/tile/plasteel,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/refuelingpost/dorms)
 "FO" = (
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/space/has_grav/refuelingpost/lower)
+/area/ruin/space/has_grav/refuelingpost/infirmary)
 "FW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 10
@@ -2380,6 +2466,9 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
+"Gb" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/bridge)
 "Gf" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -2398,13 +2487,12 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
+"Gq" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/cargo)
 "Gu" = (
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/refuelingpost/dorms)
-"GA" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/cargobay)
 "GE" = (
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -2591,11 +2679,6 @@
 /obj/item/stack/tile/plasteel/dark,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/dorms)
-"Ip" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/armory)
 "Iu" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 2
@@ -2662,9 +2745,6 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
-"Ju" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/upper)
 "JD" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
@@ -2755,9 +2835,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
-"Kd" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/cargo)
 "Ki" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 9
@@ -2787,6 +2864,14 @@
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/armory)
+"Ko" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fuelingengineering"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "Kq" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/poddoor_assembly,
@@ -2838,6 +2923,9 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/upper)
+"KX" = (
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargo)
 "La" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
 	dir = 4
@@ -2925,6 +3013,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
+"Mg" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "fuelingengineering"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "Mt" = (
 /obj/structure/girder,
 /turf/open/floor/plating,
@@ -2940,7 +3037,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/hivebotshuttle)
+/area/ruin/space/refuelingsolars)
 "MI" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 8
@@ -2963,9 +3060,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/refuelingpost/upper)
+"ML" = (
+/obj/structure/sign/warning/securearea,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/upper)
 "MO" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fuelingmedbay"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "MX" = (
@@ -3097,11 +3201,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
-"Pn" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/cargobay)
 "Pt" = (
 /obj/structure/spawner/hivebot,
 /turf/open/floor/plasteel/telecomms_floor,
@@ -3124,6 +3223,9 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
+"PJ" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "PO" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/components/unary/portables_connector/layer2{
@@ -3267,7 +3369,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters{
-	dir = 4
+	dir = 4;
+	id = "cargoconveyors"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/cargo)
@@ -3305,6 +3408,10 @@
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating/airless,
 /area/ruin/space/hivebotshuttle)
+"RY" = (
+/obj/structure/sign/warning/securearea,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/upper)
 "Sn" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -3448,6 +3555,11 @@
 /obj/item/paper/crumpled/fluff{
 	pixel_x = 21;
 	pixel_y = -22
+	},
+/obj/machinery/button/door{
+	pixel_x = 8;
+	pixel_y = 21;
+	id = "fuelingmedbay"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
@@ -3597,6 +3709,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/button{
+	dir = 1;
+	pixel_x = -9;
+	pixel_y = -20;
+	id = "fuelingengineering"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "Uv" = (
@@ -3607,6 +3725,9 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/refuelingsolars)
+"UB" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
 "UJ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window{
@@ -3616,23 +3737,11 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	dir = 4
+	dir = 4;
+	id = "fuelingcargo"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"UY" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/engineering)
-"Ve" = (
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/dorms)
-"Vq" = (
-/turf/open/floor/plasteel/mono,
-/area/ruin/space/has_grav/refuelingpost/bridge)
 "Vz" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -3725,6 +3834,10 @@
 "Wb" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "refuelingbridge"
+	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Wc" = (
@@ -3747,11 +3860,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"Ws" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile/shuttle,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/bridge)
 "Wt" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
 /turf/open/floor/plasteel/mono,
@@ -3793,7 +3901,9 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/refuelingsolars)
 "WW" = (
-/obj/machinery/porta_turret/ship/nt/heavy,
+/obj/machinery/porta_turret/ship/nt/heavy{
+	id = "fuelingpost"
+	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/small/broken/directional/north,
 /obj/structure/cable/yellow{
@@ -3809,9 +3919,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
-"Xi" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/refuelingpost/solarstorage)
 "Xm" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/refuelingpost/cargo)
@@ -3826,10 +3933,6 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
-"Xy" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/ruin/space/hivebotshuttle)
 "XA" = (
 /obj/item/stack/tile/plasteel/dark,
 /obj/effect/turf_decal/corner/opaque/black{
@@ -3874,6 +3977,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/bridge)
+"Ym" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"Yo" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "fuelingsolarwindow"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
 "Yp" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/siding/white/end,
@@ -3931,11 +4048,19 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "fuelingsecurity";
+	pixel_x = 9;
+	pixel_y = -18
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "YI" = (
 /obj/structure/grille,
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelhallwayturret"
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -3946,6 +4071,10 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "refuelingbridge"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/bridge)
@@ -3959,13 +4088,26 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/cargo)
+"YT" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/armory)
 "YY" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "elated_bolide_bay";
+	id = "fuelingholo";
 	dir = 8
 	},
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelinghangar"
+	},
 /obj/structure/cable/yellow,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Zi" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "fuelingsecurity"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "Zp" = (
@@ -3977,8 +4119,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "Zr" = (
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/space/has_grav/refuelingpost/infirmary)
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
 "Zz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/grid,
@@ -4000,8 +4142,26 @@
 /obj/structure/table/reinforced,
 /obj/item/trash/energybar,
 /obj/item/trash/energybar{
-	pixel_x = 10;
-	pixel_y = 12
+	pixel_x = 2;
+	pixel_y = 15
+	},
+/obj/machinery/button/door{
+	pixel_x = 6;
+	pixel_y = 9;
+	name = "cargo shutters";
+	id = "fuelingcargo"
+	},
+/obj/machinery/button/door{
+	pixel_x = 6;
+	pixel_y = 0;
+	name = "mechbay shutters";
+	id = "ripleyfueling"
+	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 9;
+	name = "conveyor shutters";
+	id = "cargoconveyors"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/refuelingpost/cargo)
@@ -4339,18 +4499,18 @@ jj
 hw
 hw
 qb
-mT
-mT
+PJ
+PJ
 fh
-ma
+Mg
 fh
-mT
-mT
+PJ
+PJ
 xP
-el
-el
-el
-el
+dP
+dP
+dP
+dP
 At
 At
 mh
@@ -4373,12 +4533,12 @@ At
 At
 At
 xP
-Xi
-Xi
-kx
-kx
-Xi
-mT
+vV
+vV
+Yo
+Yo
+vV
+PJ
 PC
 GL
 PC
@@ -4389,7 +4549,7 @@ cg
 Ni
 YG
 NE
-el
+dP
 kD
 At
 VF
@@ -4412,23 +4572,23 @@ wm
 At
 At
 xP
-Xi
+vV
 So
 Dg
 lK
 sS
-mT
+PJ
 lB
 Ec
 gm
 IY
 Ut
-mT
+PJ
 xP
-el
-el
-el
-el
+dP
+dP
+dP
+dP
 kD
 At
 VF
@@ -4451,21 +4611,21 @@ VF
 At
 bh
 XR
-Xi
+vV
 yh
 tp
 ik
 vB
-mT
+PJ
 KI
 su
 lp
 Wt
 Ie
-mT
+PJ
 xP
-qM
-qM
+sr
+sr
 At
 At
 kD
@@ -4489,24 +4649,24 @@ At
 VF
 At
 xP
-Xi
-Xi
-Xi
+vV
+vV
+vV
 aU
 TG
 dI
-mT
+PJ
 pE
 FW
 uQ
 mk
 Zp
-mT
+PJ
 xP
-el
-el
-el
-el
+dP
+dP
+dP
+dP
 kD
 At
 Bf
@@ -4526,7 +4686,7 @@ At
 JD
 sO
 yW
-eZ
+MG
 fA
 hd
 Wu
@@ -4536,16 +4696,16 @@ Hc
 jI
 VO
 GQ
-mb
+uv
 IY
 SQ
 Ma
-UY
-Bu
 rl
+Bu
+xG
 HB
 ff
-el
+dP
 bh
 hw
 jj
@@ -4567,37 +4727,37 @@ At
 aK
 At
 kD
-Xi
-Xi
-Xi
-Xi
-mT
-mT
-mT
+vV
+vV
+vV
+vV
+PJ
+PJ
+PJ
 fj
 kU
 ix
 La
 Sw
-mT
+PJ
 Su
-el
-el
-el
-el
+dP
+dP
+dP
+dP
 xP
-Fl
-Fl
-Fl
-Fl
-Fl
-Fl
-Fl
-Fl
-Fl
-Fl
-Fl
-Fl
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
 At
 "}
 (16,1,1) = {"
@@ -4610,7 +4770,7 @@ kD
 kD
 kD
 At
-mT
+PJ
 Oa
 Ty
 AN
@@ -4618,7 +4778,7 @@ Uq
 fa
 fT
 Ki
-mT
+PJ
 bD
 TU
 TU
@@ -4649,7 +4809,7 @@ At
 At
 kD
 sO
-ma
+Ko
 RI
 uJ
 Cs
@@ -4657,20 +4817,20 @@ jz
 sQ
 oP
 iT
-mT
-zh
-zh
-zh
-zh
-zh
-zh
-Fl
+PJ
+YT
+YT
+YT
+YT
+YT
+YT
+CI
 IF
 zi
 Wz
-EA
-EA
-EA
+Zr
+Zr
+Zr
 oN
 zi
 Vz
@@ -4688,7 +4848,7 @@ XU
 At
 kD
 At
-mT
+PJ
 GR
 GR
 eH
@@ -4696,14 +4856,14 @@ TR
 tm
 mr
 iZ
-mT
+PJ
 Em
 kq
 nR
-zh
+YT
 Km
 GN
-Fl
+CI
 Gn
 nT
 nT
@@ -4726,23 +4886,23 @@ At
 XU
 At
 kD
-Cd
-Cd
-Cd
-Cd
-Cd
-Cd
-Ju
+cz
+cz
+cz
+cz
+cz
+cz
+kN
 MI
-Ju
-Ju
+kN
+kN
 mX
 Rt
 NV
 qh
 xD
 YH
-Fl
+CI
 Ow
 nT
 NI
@@ -4765,23 +4925,23 @@ At
 XU
 sO
 kD
-Cd
+cz
 Tu
 iJ
 pr
 nn
-Cd
+cz
 RE
 rm
 fr
-Ju
-Ju
-zh
-zh
-zh
+kN
+kN
+YT
+YT
+YT
 ET
 jO
-Pn
+Zi
 Ow
 nT
 kC
@@ -4809,12 +4969,12 @@ bj
 XD
 XD
 wr
-MO
+Ym
 gr
 VW
 ns
 Dl
-Ju
+kN
 uR
 kw
 cl
@@ -4848,18 +5008,18 @@ oq
 XD
 XD
 iM
-Cd
+cz
 Gf
 fW
 TP
 PD
-Ju
+kN
 Pt
 xT
 cl
 WC
 bp
-Fl
+CI
 Ow
 ke
 nT
@@ -4882,7 +5042,7 @@ At
 XU
 At
 kD
-Cd
+cz
 Ka
 Xh
 Ra
@@ -4891,14 +5051,14 @@ Na
 kV
 iL
 hT
-Ju
-Ju
+kN
+kN
 vp
 MB
 mC
 dz
 Qb
-Fl
+CI
 yY
 yi
 ke
@@ -4921,23 +5081,23 @@ At
 XU
 At
 kD
-Cd
-Cd
-Cd
+cz
+cz
+cz
 JN
-Cd
-Ju
-Ju
+cz
+kN
+kN
 wZ
 yQ
-Ju
-Ju
-zh
-zh
-Ip
+kN
+kN
+YT
+YT
+jR
 QH
 zt
-Fl
+CI
 Ow
 sf
 yi
@@ -4962,10 +5122,10 @@ sO
 kD
 MO
 QT
-Zr
+FO
 FY
-Cd
-Ai
+cz
+ML
 YI
 JM
 SB
@@ -4973,13 +5133,13 @@ Lt
 wU
 it
 ms
-FO
+zL
 iv
 Tk
 QQ
 hq
 fZ
-GA
+en
 nT
 VL
 NF
@@ -5003,7 +5163,7 @@ MO
 wO
 Xw
 hy
-Cd
+cz
 WW
 gU
 qH
@@ -5038,34 +5198,34 @@ At
 XU
 sO
 kD
-Cd
+cz
 tn
 km
 aZ
-Cd
-cR
+cz
+RY
 du
 cL
 JG
-Fi
-Ws
-Ws
-Fi
+Gb
+aW
+aW
+Gb
 xl
-Fi
-Fi
-Fl
+Gb
+Gb
+CI
 MX
 iF
 Zz
 rd
-cd
+oD
 vq
 gt
-Fl
-Fl
-Fl
-Fl
+CI
+CI
+CI
+CI
 At
 "}
 (28,1,1) = {"
@@ -5077,31 +5237,31 @@ At
 XU
 At
 Yv
-Cd
-Cd
-Cd
-Cd
-Cd
-Ju
-Ju
+cz
+cz
+cz
+cz
+cz
+kN
+kN
 qz
 TE
-Fi
+Gb
 IV
 et
 Fg
 rX
 et
 vK
-Kd
+Gq
 cb
-Kd
+Gq
 CN
 UJ
 CN
-Kd
+Gq
 Rr
-Kd
+Gq
 TN
 kD
 kD
@@ -5125,14 +5285,14 @@ qI
 TY
 SP
 fU
-Fi
+Gb
 Ya
 CE
 GU
 gB
 WH
 ra
-Kd
+Gq
 ci
 fP
 Hl
@@ -5140,7 +5300,7 @@ ID
 XI
 pJ
 QS
-Kd
+Gq
 kD
 At
 At
@@ -5164,22 +5324,22 @@ mI
 JK
 tj
 qV
-Fi
+Gb
 xn
 IG
 Hd
 FA
 Rx
 Qz
-Kd
+Gq
 xI
 uk
 ZM
 qJ
 YP
-oD
+KX
 QS
-Kd
+Gq
 kD
 At
 At
@@ -5194,23 +5354,23 @@ At
 At
 At
 iQ
-pK
-pK
-pK
-pK
-pK
-pK
-pK
+nk
+nk
+nk
+nk
+nk
+nk
+nk
 En
 BR
-Fi
+Gb
 vr
 wz
 dA
 eq
 Ed
 lQ
-Kd
+Gq
 Ur
 pP
 LV
@@ -5218,7 +5378,7 @@ QD
 qD
 Yp
 BA
-Kd
+Gq
 kD
 At
 At
@@ -5234,30 +5394,30 @@ At
 At
 kD
 kD
-pK
+nk
 Dk
 Ui
 tB
-pK
+nk
 Ig
 jS
 Kw
-Fi
+Gb
 kQ
 Hi
 aI
 JU
 HV
 hU
-Kd
-Kd
-Kd
+Gq
+Gq
+Gq
 Mt
 xV
 Ud
 gx
 QP
-Kd
+Gq
 kD
 At
 At
@@ -5273,22 +5433,22 @@ At
 At
 At
 kD
-pK
+nk
 Xn
 Ui
-FN
+ev
 ES
 Wc
 XA
 vg
-Fi
+Gb
 lj
 fk
 bi
-Vq
+sW
 NM
 cG
-Kd
+Gq
 zq
 ku
 IJ
@@ -5296,7 +5456,7 @@ CR
 Xm
 Xm
 Aj
-Kd
+Gq
 kD
 At
 At
@@ -5312,22 +5472,22 @@ At
 At
 At
 kD
-pK
+nk
 HS
 Wg
 Gu
 Ld
-Ve
+UB
 jS
 Rb
-Fi
+Gb
 iG
 LY
 Cw
 hA
 Kz
 Td
-Kd
+Gq
 bl
 Xm
 dX
@@ -5335,7 +5495,7 @@ xV
 Xm
 Lz
 wn
-Kd
+Gq
 kD
 At
 At
@@ -5355,18 +5515,18 @@ At
 TL
 Cv
 Cv
-pK
+nk
 yc
 Pg
 Dw
-Fi
-Fi
+Gb
+Gb
 Wb
 YJ
-Ws
-Ws
-Fi
-Kd
+aW
+aW
+Gb
+Gq
 ad
 Xm
 dX
@@ -5374,7 +5534,7 @@ oK
 Wm
 GE
 mq
-Kd
+Gq
 kD
 At
 At
@@ -5405,15 +5565,15 @@ cj
 TN
 kD
 kD
-Kd
-Kd
-Kd
-Kd
-Kd
-Kd
-Kd
-Kd
-Kd
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
 kD
 At
 At
@@ -5433,14 +5593,14 @@ oT
 ka
 ka
 RO
-Xy
+Ct
 io
 sw
 OE
 Qs
 kD
 sO
-oa
+ji
 sO
 yS
 kD
@@ -5546,9 +5706,9 @@ At
 At
 Hf
 oT
-la
+gE
 vs
-MG
+kr
 wP
 Kq
 sd
