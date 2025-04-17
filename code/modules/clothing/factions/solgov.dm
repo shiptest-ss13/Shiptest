@@ -134,8 +134,8 @@
 /obj/item/clothing/head/helmet/space/hardsuit/solgov
 	name = "\improper SolGov hardsuit helmet"
 	desc = "An armored spaceproof helmet, its visor is reminiscent of knights of yore."
-	icon = 'icons/obj/clothing/faction/solgov/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/suits.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
 	icon_state = "hardsuit0-solgov"
 	item_state = "hardsuit0-solgov"
 	hardsuit_type = "solgov"
@@ -270,12 +270,16 @@
 /obj/item/clothing/head/solgov/terragov
 	name = "\improper TerraGov officer's cap"
 	desc = "A cap worn by high-ranking officers of SolGov. This one is still in original TerraGov green."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "cap_terragov"
 	item_state = "cap_terragov"
 
 /obj/item/clothing/head/solgov/sonnensoldner
 	name = "\improper Sonnensoldner Hat"
 	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "sonnensoldner_hat"
 	item_state = "sonnensoldner_hat"
 	worn_y_offset = 4
@@ -284,6 +288,8 @@
 /obj/item/clothing/head/solgov/captain
 	name = "\improper SolGov bicorne hat"
 	desc = "A unique bicorne hat given to Solarian Captains on expeditionary missions."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "solgov_bicorne"
 	item_state = "solgov_bicorne"
 	worn_y_offset = 2
@@ -292,36 +298,50 @@
 /obj/item/clothing/head/beret/solgov
 	name = "\improper SolGov beret"
 	desc = "A beret with SolGov's emblem emblazoned on it. Colored in SolGov blue."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "beret_solgov"
 
 /obj/item/clothing/head/beret/solgov/plain
 	name = "\improper SolGov beret"
 	desc = "A plain blue beret. It looks like it's missing something."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "beret_solgovplain"
 
 /obj/item/clothing/head/beret/solgov/terragov
 	name = "\improper TerraGov beret"
 	desc = "A beret with SolGov's emblem emblazoned on it. It's still colored in original TerraGov green."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "beret_terragov"
 
 /obj/item/clothing/head/beret/solgov/terragov/plain
 	name = "\improper TerraGov beret"
 	desc = "A plain beret colored in original TerraGov green. It looks like it's missing something."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "beret_terragovplain"
 
 /obj/item/clothing/head/fedora/solgov
 	name = "solarian hat"
+	desc = "A slick blue hat used by both solarian civilians and physicists."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "hat_solgov"
 	item_state = "hat_solgov"
-	desc = "A slick blue hat used by both solarian civilians and physicists."
 
 /obj/item/clothing/head/flatcap/solgov
 	name = "solarian flat cap"
 	desc = "A working solarian's hat, commonly used by Logistics Deck Officers."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "flatcap_solgov"
 	item_state = "detective"
 
 /obj/item/clothing/head/hardhat/solgov
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 	icon_state = "hardhat_solgov"
 	dog_fashion = null
 
@@ -329,6 +349,8 @@
 	name = "SolGov surgery cap"
 	desc = "It's a surgery cap utilized by solarian doctors."
 	icon_state = "solgov_surgery"
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/head.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/head.dmi'
 
 // Neckwear
 
@@ -338,19 +360,25 @@
 	custom_price = 10
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/neck/cloak/overseer
+/obj/item/clothing/neck/cloak/overseer // someone please repath these under neck/cloak/solgov ok thanks
 	name = "SolGov overseer's cloak"
 	desc = "Worn by the Overseer. It smells faintly of bureaucracy."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/neck.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/neck.dmi'
 	icon_state = "solgov_cloak"
 
 /obj/item/clothing/neck/cloak/solgov
 	name = "SolGov weibel"
 	desc = "Worn by SolGov officials. It smells faintly of bureaucracy."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/neck.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/neck.dmi'
 	icon_state = "solgov_weibel"
 
-/obj/item/clothing/neck/cloak/solgovcap
+/obj/item/clothing/neck/cloak/solgovcap // someone please repath these under neck/cloak/solgov ok thanks
 	name = "SolGov captain's cloak"
 	desc = "Worn by SolGov captains. It smells faintly of bureaucracy."
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/neck.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/neck.dmi'
 	icon_state = "solgov_cap_cloak"
 
 // Accesories
