@@ -977,3 +977,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			client.images += t_ray_images
 		else
 			client.images -= stored_t_ray_images
+
+/mob/dead/observer/proc/has_ship_access() //prevents runtime with admin AI interact
+	if (src.has_unlimited_silicon_privilege)
+		return TRUE
+	return FALSE
