@@ -284,4 +284,4 @@
 
 /area/ruin/space/has_grav/refuelingpost/starboard
 	name = "Refueling Post Starboard Hallway"
-	icon_state = "hallS
+	icon_state = "hallS"
