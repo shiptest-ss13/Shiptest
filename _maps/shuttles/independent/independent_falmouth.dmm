@@ -173,9 +173,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "dB" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -481,9 +479,7 @@
 /turf/open/floor/plating,
 /area/ship/crew)
 "nd" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/port)
 "nJ" = (
@@ -507,9 +503,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/spawner/random/trash/crushed_can,
 /obj/effect/spawner/random/trash/crushed_can,
@@ -724,8 +718,7 @@
 	pixel_x = 14
 	},
 /obj/structure/mirror{
-	pixel_x = 24;
-	pixel_y = 0
+	pixel_x = 24
 	},
 /obj/machinery/light/small/directional/west,
 /obj/item/soap{
@@ -861,9 +854,7 @@
 /area/ship/engineering/engines/port)
 "wi" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech,
@@ -897,9 +888,7 @@
 /area/ship/cargo)
 "xh" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/falsewall,
 /obj/effect/decal/cleanable/dirt,
@@ -985,9 +974,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "zg" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1159,9 +1146,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "AW" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1217,9 +1202,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "BP" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -1278,9 +1261,7 @@
 	icon_state = "4-9"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
 	dir = 8;
@@ -1509,9 +1490,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "FH" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -2325,6 +2304,7 @@
 /obj/machinery/light/small/directional/west,
 /obj/item/blackmarket_uplink,
 /obj/item/computer_hardware/card_slot,
+/obj/item/modular_computer/tablet/preset/cheap,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm/captain)
 "So" = (
@@ -2373,9 +2353,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Tf" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -2485,9 +2463,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "VS" = (
-/obj/machinery/power/shuttle/engine/fire{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/starboard)
 "VV" = (
