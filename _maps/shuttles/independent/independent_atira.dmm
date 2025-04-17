@@ -159,16 +159,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "dQ" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/techfloor{
 	dir = 10
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	piping_layer = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "a_engines"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/engine)
@@ -250,15 +252,12 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "ff" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1;
-	name = "Mix To Engines"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/purple/visible,
+/obj/machinery/meter/atmos,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "fi" = (
@@ -401,13 +400,13 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/purple/visible{
-	dir = 4
-	},
 /obj/item/paper/crumpled{
 	pixel_x = 10;
 	pixel_y = -7;
 	default_raw_text = "Input to 300kpa.<br> Recirculator to 400kpa.<br> To burn to 300kpa.<br> To Fuel to 900kpa.<br> Once started, adjust recirculator and to burn to 2000kpa."
+	},
+/obj/machinery/atmospherics/pipe/manifold/purple/visible/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -421,9 +420,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "hy" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -432,6 +428,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 8;
+	name = "Mix to Engines"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "hK" = (
@@ -625,23 +625,20 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+/obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
-	dir = 10
+	dir = 5
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "kr" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
-	dir = 10
 	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1;
@@ -651,6 +648,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "kD" = (
@@ -1171,6 +1171,9 @@
 /obj/item/paper/crumpled{
 	pixel_x = 6;
 	default_raw_text = "Do NOT set this high. You will cause the cold loop to combust. In fact just. Turn it on and walk away."
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -1916,18 +1919,16 @@
 /turf/template_noop,
 /area/template_noop)
 "CO" = (
-/obj/machinery/atmospherics/pipe/manifold/purple/visible{
-	dir = 8
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
 /obj/item/analyzer{
 	pixel_x = -7;
 	pixel_y = 6
 	},
-/obj/machinery/meter/atmos,
+/obj/machinery/atmospherics/pipe/simple/purple/visible{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "CV" = (
@@ -2004,12 +2005,6 @@
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
-"Dx" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/engine/hull/interior,
-/area/ship/engineering/engine)
 "DG" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -2083,16 +2078,18 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "Eq" = (
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/techfloor{
 	dir = 9
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	piping_layer = 4
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "a_engines"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/engine)
@@ -2104,11 +2101,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/purple/visible,
-/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
-	dir = 5
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "EY" = (
@@ -2148,10 +2144,8 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/visible{
-	dir = 9
-	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/manifold/purple/visible/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Gh" = (
@@ -2613,12 +2607,10 @@
 "MK" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
-	dir = 1
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "a_burn"
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering/engine)
 "MY" = (
@@ -2633,20 +2625,13 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
 "Nk" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	name = "Recirculator"
-	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
-	dir = 6
-	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	dir = 1;
-	name = "Mix to Burn"
-	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "No" = (
@@ -2815,19 +2800,14 @@
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "QB" = (
-/obj/machinery/atmospherics/pipe/simple/purple/visible{
-	dir = 10
-	},
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer2{
 	dir = 5
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4{
-	dir = 10
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/purple/visible,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "QO" = (
@@ -3047,13 +3027,20 @@
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "UX" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/atmospherics/pipe/simple/dark/visible/layer2,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "a_burn"
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater{
+	piping_layer = 4
 	},
-/turf/open/floor/engine/hull/interior,
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "a_engines"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/engine)
 "Vg" = (
 /obj/machinery/computer/operating,
@@ -3158,8 +3145,6 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
 /obj/item/radio/intercom/directional/west{
 	pixel_y = -5
 	},
@@ -3171,6 +3156,7 @@
 	name = "engine shutters";
 	id = "a_engines"
 	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "WM" = (
@@ -3443,7 +3429,7 @@ CM
 Xh
 eb
 Xh
-Eq
+UX
 dQ
 Xh
 Eq
@@ -3480,13 +3466,13 @@ LG
 Dj
 Xh
 yL
-UX
+MK
 tS
 QB
 ff
 CO
 Nk
-Dx
+DG
 vz
 Xh
 Dj
