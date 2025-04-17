@@ -198,3 +198,18 @@
   - balance: Evidence bags are now 100 plastic instead of 500
   iimurpyh:
   - bugfix: Removes Rachnid names from outpost name pool due to TGUI bugs
+2025-04-17:
+  Gristlebee:
+  - rscadd: Dynamic mission objectives can now properly start inside containers
+  - bugfix: Wrecked Factory and Scrapstation retrieval missions
+  SapphicOverload:
+  - bugfix: Fixed exosuit radios being unusable
+  - rscadd: Exosuit radios can be talked into directly using .z
+  - rscadd: exosuit salvage saw now has the angle grinder sound effect when used,
+      instead of nothing
+  - balance: salvage saw no longer locks your exosuit in place
+  - bugfix: fixed salvage saw's action not being canceled properly when moving/turning/swapping
+  - bugfix: fixed salvage saw not being able to deconstruct certain things it's supposed
+      to
+  SomeguyManperson:
+  - bugfix: cables should work now.
