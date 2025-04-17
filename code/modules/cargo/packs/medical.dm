@@ -223,13 +223,13 @@
 	crate_name = "empty vial crate"
 
 /datum/supply_pack/medical/vials/bica_vial
-	name = "Bicardine Vial Crate"
-	desc = "Contains a spare bicardine vial, for usage in a Hypospray."
+	name = "Bicaridine Vial Crate"
+	desc = "Contains a spare bicaridine vial, for usage in a Hypospray."
 	cost = 400
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine,
 	)
-	crate_name = "bicardine vial crate"
+	crate_name = "bicaridine vial crate"
 
 /datum/supply_pack/medical/vials/kelo_vial
 	name = "Kelotane Vial Crate"
