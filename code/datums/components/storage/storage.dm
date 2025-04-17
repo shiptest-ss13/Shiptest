@@ -64,6 +64,8 @@
 
 	var/attack_hand_interact = TRUE					//interact on attack hand.
 	var/quickdraw = FALSE							//altclick interact
+	///can we quickopen storage when it's in a pocket
+	var/pocket_openable = FALSE
 
 	var/datum/action/item_action/storage_gather_mode/modeswitch_action
 
@@ -269,7 +271,7 @@
 		return
 	var/datum/progressbar/progress = new(M, len, I.loc)
 	var/list/rejections = list()
-	while(do_after(M, 10, parent, TRUE, FALSE, CALLBACK(src, PROC_REF(handle_mass_pickup), things, I.loc, rejections, progress)))
+	while(do_after(M, 10, parent, NONE, FALSE, CALLBACK(src, PROC_REF(handle_mass_pickup), things, I.loc, rejections, progress)))
 		stoplag(1)
 	progress.end_progress()
 	to_chat(M, span_notice("You put everything you could [insert_preposition] [parent]."))
@@ -761,16 +763,17 @@
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(H.l_store == A && !H.get_active_held_item())	//Prevents opening if it's in a pocket.
-			. = COMPONENT_NO_ATTACK_HAND
-			INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, put_in_hands), A)
-			H.l_store = null
-			return
-		if(H.r_store == A && !H.get_active_held_item())
-			. = COMPONENT_NO_ATTACK_HAND
-			INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, put_in_hands), A)
-			H.r_store = null
-			return
+		if(!pocket_openable) //some things should be opened in pockets
+			if(H.l_store == A && !H.get_active_held_item())	//Prevents opening if it's in a pocket.
+				. = COMPONENT_NO_ATTACK_HAND
+				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, put_in_hands), A)
+				H.l_store = null
+				return
+			if(H.r_store == A && !H.get_active_held_item())
+				. = COMPONENT_NO_ATTACK_HAND
+				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, put_in_hands), A)
+				H.r_store = null
+				return
 
 	if(A.loc == user)
 		. = COMPONENT_NO_ATTACK_HAND
