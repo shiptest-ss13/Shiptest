@@ -979,6 +979,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			client.images -= stored_t_ray_images
 
 /mob/dead/observer/proc/has_ship_access() //prevents runtime with admin AI interact
-	if (isAdminGhostAI(usr))
+	if (isAdminGhostAI(src))
 		return TRUE
 	return FALSE
