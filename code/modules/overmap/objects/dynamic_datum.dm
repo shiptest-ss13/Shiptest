@@ -183,13 +183,11 @@
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
-	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
-		Rename(planet.name)
-	else
+	if(!is_type_in_list(planet, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin)))
 		planet_name = "[gen_planet_name()]"
-		Rename(planet_name)
+		name = "[planet_name] ([planet.name])"
 
-	alter_token_appearance()
+
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
 	gravity = planet.gravity
@@ -218,10 +216,7 @@
 /datum/overmap/dynamic/alter_token_appearance()
 	if(!planet)
 		return ..()
-	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
-		token.name = "[planet.name]"
-	else
-		token.name = "[planet_name]" + " ([planet.name])"
+	token.name = name
 	token_icon_state = planet.icon_state
 	desc = planet.desc
 	default_color = planet.color
@@ -246,7 +241,7 @@
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
-	switch(rand(1,10))
+	switch(rand(1,12))
 		if(1 to 4)
 			for(var/i in 1 to rand(2,3))
 				. += capitalize(pick(GLOB.alphabet))
@@ -254,8 +249,10 @@
 			. += "[pick(rand(1,999))]"
 		if(4 to 9)
 			. += "[pick(GLOB.planet_names)] \Roman[rand(1,9)]"
-		if(10)
+		if(10, 11)
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
+		if(12)
+			. += "[pick(GLOB.adjectives)] [pick(GLOB.planet_names)]"
 
 /**
  * Load a level for a ship that's visiting the level.
