@@ -13,7 +13,7 @@
 	crate_name = "holster crate"
 
 /datum/supply_pack/sec_supply/securitybarriers
-	name = "Security Barrier Grenades"
+	name = "Security Barrier Grenade"
 	desc = "Halt the opposition with one Security Barrier grenade."
 	contains = list(/obj/item/grenade/barrier)
 	cost = 125
@@ -34,7 +34,7 @@
 	crate_name = "maintenance kit crate"
 
 /datum/supply_pack/sec_supply/flashbangs
-	name = "Flashbangs Crate"
+	name = "Flashbang Crate"
 	desc = "Contains one flashbang for use in door breaching and riot control."
 	cost = 100
 	contains = list(/obj/item/grenade/flashbang)
@@ -48,7 +48,7 @@
 	crate_name = "smoke grenades crate"
 
 /datum/supply_pack/sec_supply/teargas
-	name = "Teargas Grenades Crate"
+	name = "Teargas Grenade Crate"
 	desc = "Contains one teargas grenade for use in crowd dispersion and riot control."
 	cost = 100
 	contains = list(/obj/item/grenade/chem_grenade/teargas)
@@ -196,7 +196,7 @@
 */
 
 /datum/supply_pack/sec_supply/stingpack
-	name = "Stingbang Grenade Pack"
+	name = "Stingbang Grenade"
 	desc = "Contains one \"stingbang\" grenade, perfect for stopping riots and playing morally unthinkable pranks."
 	cost = 150
 	contains = list(/obj/item/grenade/stingbang)
