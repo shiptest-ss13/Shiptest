@@ -21,7 +21,7 @@
 
 /obj/machinery/recycler/Initialize()
 	AddComponent(/datum/component/butchering/recycler, 1, amount_produced,amount_produced/5)
-	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/plasma, /datum/material/gold, /datum/material/diamond, /datum/material/plastic, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/bluespace), INFINITY, FALSE, null, null, null, TRUE)
+	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/copper, /datum/material/glass, /datum/material/silver, /datum/material/plasma, /datum/material/gold, /datum/material/diamond, /datum/material/plastic, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/bluespace, /datum/material/carbon, /datum/material/sulfur, /datum/material/lead, /datum/material/silicon), INFINITY, FALSE, null, null, null, TRUE)
 	. = ..()
 	update_appearance()
 	req_one_access = get_all_accesses() + get_all_centcom_access()
