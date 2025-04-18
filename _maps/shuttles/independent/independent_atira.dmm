@@ -508,7 +508,7 @@
 /obj/item/paper/crumpled{
 	pixel_y = 6;
 	pixel_x = 7;
-	default_raw_text = "Just turn it all on. Don't raise the values too high and it won't blow."
+	default_raw_text = "Just turn it all on. Don't raise the values too high and it won't blow. Manual recommends 500-800kpa"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -1028,7 +1028,7 @@
 /area/ship/medical)
 "pv" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/modular_computer/console/preset/command{
+/obj/machinery/computer/crew{
 	dir = 1;
 	icon_state = "computer-middle"
 	},
@@ -1044,15 +1044,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/structure/rack,
 /obj/machinery/firealarm/directional/west,
-/obj/item/storage/backpack/duffelbag/engineering{
-	pixel_y = -2;
-	pixel_x = -2
-	},
-/obj/item/gps/engineering{
-	pixel_x = 5;
-	pixel_y = 5
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1082,6 +1077,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
@@ -1457,6 +1456,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "uM" = (
@@ -1803,13 +1808,17 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer2{
 	dir = 1
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-02";
-	pixel_x = 7;
-	pixel_y = -1
-	},
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/light/directional/east,
+/obj/structure/rack,
+/obj/item/storage/backpack/duffelbag/engineering{
+	pixel_y = -2;
+	pixel_x = -2
+	},
+/obj/item/gps/engineering{
+	pixel_x = 5;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "yg" = (
@@ -1902,20 +1911,27 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "yR" = (
 /obj/effect/turf_decal/etherbor/center{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2183,6 +2199,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor/orange,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Cy" = (
@@ -2480,7 +2500,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
 	},
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "FY" = (
@@ -2582,6 +2604,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/techfloor/orange,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "HV" = (
@@ -2729,6 +2755,11 @@
 	dir = 10
 	},
 /obj/structure/cable,
+/obj/item/kirbyplants{
+	icon_state = "plant-02";
+	pixel_x = 7;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "JZ" = (
@@ -3350,7 +3381,9 @@
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/structure/table/reinforced,
-/obj/machinery/fax/pgf,
+/obj/machinery/fax/pgf{
+	pixel_y = 9
+	},
 /obj/machinery/light/small/directional/west{
 	pixel_y = 4
 	},
@@ -3361,6 +3394,13 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/item/paper_bin{
+	pixel_x = -10;
+	pixel_y = -1
+	},
+/obj/item/pen{
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3738,10 +3778,13 @@
 /area/ship/cargo)
 "Yg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Yi" = (
