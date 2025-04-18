@@ -81,7 +81,7 @@
 /obj/machinery/drill/mission/ruin
 	name = "industrial grade mining drill"
 	desc = "A large scale laser drill. It's able to mine vast amounts of minerals from near-surface ore pockets, this one is designed for mining outposts."
-	mission_class = 3
+	mission_class = 4
 	num_wanted = 10
 
 /obj/item/drill_readout

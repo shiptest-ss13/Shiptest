@@ -96,4 +96,30 @@
 	id = "abandonedlistening"
 	description = "An abandoned Cybersun listening post. Seems like the Ramzi Clique has an interest in the site."
 	suffix = "lavaland_abandonedlisteningpost.dmm"
-	ruin_mission_types = list(/datum/mission/ruin/blackbox)
+	ruin_mission_types = list(
+		/datum/mission/ruin/syndicate_docs,
+		/datum/mission/ruin/blackbox
+	)
+
+/datum/mission/ruin/syndicate_docs
+	name = "Virtual Solutions Asset Retrieval"
+	author = "Cybersun Virtual Solutions"
+	desc = "Several listening posts previously belonging to Coalition operations during the ICW went dark. We'd like you to retrieve any classified information within their secure data safe, and to do this quietly. We'll pay you well."
+	faction = list(
+		/datum/faction/nt,
+		/datum/faction/syndicate/cybersun
+	)
+	value = 3500
+	mission_limit = 1
+	setpiece_item = /obj/item/documents/syndicate
+
+/datum/mission/ruin/syndicate_docs/generate_mission_details()
+	. = ..()
+	if(faction == /datum/faction/nt)
+		name = "Vigilitas Data Collection"
+		author = "Vigilitas Interstellar"
+		desc = "We've been made aware of a listening post operating within this section of space that may contain information of interest to the Company. We'll pay you well if you bring them to us."
+	if(faction == /datum/faction/syndicate/cybersun)
+		name = "Virtual Solutions Asset Retrieval"
+		author = "Cybersun Virtual Solutions"
+		desc = "A recent audit has revealed the location of a Coalition listening post yet to be fully decommissioned. We'd like you to retrieve any classified information within their secure data safe, and to do this quietly. We'll pay you well."

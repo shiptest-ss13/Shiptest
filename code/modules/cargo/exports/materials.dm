@@ -30,6 +30,14 @@
 
 	return round(amount/MINERAL_MATERIAL_AMOUNT)
 
+/datum/export/material/applies_to(obj/O, apply_elastic = TRUE)
+	. = ..()
+	if(!isitem(O))
+		return FALSE
+	var/obj/item/I = O
+	if(length(I.custom_materials) > 1)
+		return FALSE
+
 // - Material exports.
 // Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
