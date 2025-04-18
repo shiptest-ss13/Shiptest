@@ -20,6 +20,9 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 1
 	},
+/obj/structure/sign/poster/official/moth/hardhats{
+	pixel_x = 27
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "aA" = (
@@ -383,7 +386,7 @@
 	dir = 4;
 	color = "#543C30"
 	},
-/obj/machinery/airalarm/directional/east,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "gW" = (
@@ -511,6 +514,7 @@
 /obj/structure/curtain{
 	color = "#57967f"
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "iC" = (
@@ -739,9 +743,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-8"
 	},
-/obj/structure/sign/poster/official/moth/hardhats{
-	pixel_x = 27
-	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "lN" = (
@@ -786,6 +788,7 @@
 /obj/item/bedsheet/brown{
 	pixel_y = 13
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "my" = (
@@ -1017,6 +1020,7 @@
 /obj/structure/sign/poster/contraband/gec{
 	pixel_y = 30
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "ok" = (
@@ -1339,6 +1343,9 @@
 /obj/machinery/washing_machine,
 /obj/effect/turf_decal/siding{
 	dir = 6
+	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -2669,7 +2676,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Jq" = (
-/obj/structure/chair/comfy/orange,
+/obj/structure/chair/comfy/grey,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -3022,6 +3029,9 @@
 /obj/item/bedsheet/black{
 	pixel_y = 13
 	},
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 32
+	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
 "Oc" = (
@@ -3039,6 +3049,10 @@
 	dir = 4
 	},
 /obj/machinery/vending/coffee,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable/pink{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "Ol" = (
@@ -3087,10 +3101,7 @@
 	pixel_y = 4;
 	pixel_x = -3
 	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable/pink{
-	icon_state = "0-8"
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/ccommons)
 "OG" = (
@@ -3394,6 +3405,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/cable/pink{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "SC" = (
@@ -3642,6 +3656,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
+"VD" = (
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 32
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "VK" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 4
@@ -4506,7 +4526,7 @@ bK
 "}
 (26,1,1) = {"
 bK
-LM
+VD
 BJ
 Vf
 Do
