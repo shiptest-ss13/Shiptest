@@ -260,4 +260,7 @@ FLOOR SAFES
 	. = ..()
 	AddElement(/datum/element/undertile)
 
+/obj/structure/safe/floor/wrench_act(mob/living/user, obj/item/I)
+	return FALSE
+
 #undef SOUND_CHANCE
