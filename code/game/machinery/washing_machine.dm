@@ -137,6 +137,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	var/bloody_mess = 0
 	var/obj/item/color_source
 	var/max_wash_capacity = 5
+	var/should_we_be_dense = TRUE
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
@@ -347,6 +348,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/open_machine(drop = 1)
 	..()
-	if(initial(density))
+	if(should_we_be_dense)
 		density = TRUE //because machinery/open_machine() sets it to 0
 	color_source = null

@@ -184,7 +184,7 @@
 				obj_integrity = max_integrity
 				return
 		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
-			if(!tool.tool_start_check(user, amount=0))
+			if(!tool.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message(span_notice("[user] begins repairing [src]."), \
 				span_notice("You begin repairing [src]..."), \

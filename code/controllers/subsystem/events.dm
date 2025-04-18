@@ -1,6 +1,10 @@
 SUBSYSTEM_DEF(events)
 	name = "Events"
-	init_order = INIT_ORDER_EVENTS
+	/*
+	dependencies = list(
+		/datum/controller/subsystem/processing/station
+	)
+	*/
 	runlevels = RUNLEVEL_GAME
 	///list of all datum/round_event_control. Used for selecting events based on weight and occurrences.
 	var/list/control = list()
@@ -18,7 +22,7 @@ SUBSYSTEM_DEF(events)
 	var/wizardmode = FALSE
 	var/list/holidays
 
-/datum/controller/subsystem/events/Initialize(time, zlevel)
+/datum/controller/subsystem/events/Initialize()
 	for(var/type in typesof(/datum/round_event_control))
 		var/datum/round_event_control/event = new type()
 		if(!event.typepath)

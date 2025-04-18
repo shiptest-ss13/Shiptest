@@ -289,7 +289,7 @@
 	integer = FALSE
 
 /datum/config_entry/number/events_min_players_mul
-	config_entry_value = 1
+	default = 1
 	min_val = 0
 	integer = FALSE
 
