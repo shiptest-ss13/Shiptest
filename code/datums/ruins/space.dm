@@ -80,3 +80,10 @@
 	mission_limit = 1
 	faction = /datum/faction/pgf
 	setpiece_item = /mob/living/carbon/human
+
+/datum/map_template/ruin/space/onefull
+	id = "onefull"
+	suffix = "onefull.dmm"
+	name = "Nanotrasen Refueling Station"
+	description = "An abandoned Nanotrasen refueling post evacuated after an attempted ACLF plasmaflood. Since then, hivebots and a small Ramzi Clique salvage team have attempted to claim the station."
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
