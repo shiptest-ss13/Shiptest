@@ -40,10 +40,13 @@
 	///Is this ship hidden? If true we hide the ships name/class on the token.
 	var/hidden = FALSE
 
+	var/registered_to_docked = FALSE
+
 /datum/overmap/ship/Initialize(position, system_spawned_in, ...)
 	. = ..()
 	if(docked_to)
 		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved))
+		registered_to_docked = TRUE
 
 /datum/overmap/ship/Destroy()
 	if(movement_callback_id)
@@ -52,11 +55,13 @@
 
 /datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	. = ..()
-	// override prevents runtime on controlled ship init due to docking after initializing at a position
-	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved), override = TRUE)
+	if(!registered_to_docked)
+		RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved))
+		registered_to_docked = TRUE
 
 /datum/overmap/ship/complete_undock()
 	UnregisterSignal(docked_to, COMSIG_OVERMAP_MOVED)
+	registered_to_docked = FALSE
 	. = ..()
 
 /datum/overmap/ship/Undock(force = FALSE)
