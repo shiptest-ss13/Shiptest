@@ -699,6 +699,11 @@
 	anchored = FALSE
 	state = WINDOW_OUT_OF_FRAME
 
+/obj/structure/window/reinforced/fulltile/indestructible
+	name = "robust window"
+	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
 /obj/structure/window/reinforced/tinted/fulltile
 	icon = 'icons/obj/smooth_structures/tinted_window.dmi'
 	icon_state = "tinted_window-0"
@@ -779,7 +784,7 @@
 	if (fulltile)
 		. += new /obj/item/shard/plastitanium(location)
 
-/obj/structure/window/plasma/reinforced/plastitanium/indestructable
+/obj/structure/window/plasma/reinforced/plastitanium/indestructible
 	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
