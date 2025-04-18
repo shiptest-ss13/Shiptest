@@ -48,9 +48,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "6-9"
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "shutter_esq"
-	},
 /obj/effect/turf_decal/industrial/warning/dust,
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 1
@@ -67,6 +64,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/preopen{
+	id = "shutter_esq"
+	},
 /turf/open/floor/engine/hull,
 /area/ship/storage)
 "h" = (
