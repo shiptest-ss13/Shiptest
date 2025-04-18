@@ -67,9 +67,9 @@ SUBSYSTEM_DEF(overmap)
 
 /datum/controller/subsystem/overmap/fire()
 	for(var/datum/overmap_star_system/current_system as anything in tracked_star_systems)
-		if(!current_system.mission_system_enabled)
+		if(!current_system.encounters_refresh)
 			continue
-		current_system.handle_dynamic_missions()
+		current_system.handle_dynamic_encounters()
 
 	if(events_enabled)
 		for(var/datum/overmap/event/E as anything in events)
@@ -310,8 +310,8 @@ SUBSYSTEM_DEF(overmap)
 	var/max_overmap_dynamic_events
 	///Do we have a outpost in this system?
 	var/has_outpost = FALSE
-	///Do we modifiy our dynamic encounters every so often for missions? Disbaled on base type so non-main overmaps dont hog up missions(?)
-	var/mission_system_enabled = FALSE
+	///The abliltiy for the system to automaticly spawn and despawn dynamic encounters
+	var/encounters_refresh = FALSE
 	/// Our faction of the outpost
 	var/faction
 
@@ -440,10 +440,10 @@ SUBSYSTEM_DEF(overmap)
 	switch(generator_type)
 		if(OVERMAP_GENERATOR_SOLAR)
 			spawn_events_in_orbits()
-			spawn_ruin_levels_in_orbits()
 		if(OVERMAP_GENERATOR_RANDOM)
 			spawn_events()
-			spawn_ruin_levels()
+
+	spawn_ruin_levels()
 
 	if(has_outpost)
 		spawn_outpost()
@@ -482,18 +482,6 @@ SUBSYSTEM_DEF(overmap)
 			if(!prob(E.spread_chance))
 				continue
 			new event_type(position, src)
-
-/datum/overmap_star_system/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to max_overmap_dynamic_events)
-		new /datum/overmap/dynamic(system_spawned_in = src)
-
-/**
- * Spawns a new dynamic encounter when old one is deleted. Called by dynamic encounters being deleted.
- */
-/datum/overmap_star_system/proc/replace_dynamic_datum()
-	if(length(dynamic_encounters) < max_overmap_dynamic_events)
-		var/list/results = get_unused_overmap_square()
-		new /datum/overmap/dynamic(results, src)
 
 /**
  * Creates an overmap object for each ruin level, making them accessible.
@@ -560,7 +548,7 @@ SUBSYSTEM_DEF(overmap)
 /**
  * This is tangentily related to dynmaic missions, its doing the same despawn thing you added for overmap events. Its meant to cycle out planets very slowly.
  */
-/datum/overmap_star_system/proc/handle_dynamic_missions()
+/datum/overmap_star_system/proc/handle_dynamic_encounters()
 	if(length(dynamic_encounters) < max_overmap_dynamic_events)
 		spawn_ruin_level()
 	if(COOLDOWN_FINISHED(src, dynamic_despawn_cooldown))
@@ -1094,7 +1082,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/shiptest
 	has_outpost = TRUE
 	can_be_selected_randomly = FALSE
-	mission_system_enabled = TRUE
+	encounters_refresh = TRUE
 
 /datum/overmap_star_system/shiptest/New(generate_now=TRUE)
 	//1/10 rounds
