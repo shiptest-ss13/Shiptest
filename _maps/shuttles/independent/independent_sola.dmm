@@ -1797,6 +1797,12 @@
 /obj/effect/turf_decal/solarpanel,
 /turf/closed/wall/mineral/titanium,
 /area/ship/storage)
+"yk" = (
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 32
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "yt" = (
 /obj/effect/turf_decal/siding/white/end{
 	dir = 4
@@ -2829,12 +2835,6 @@
 /obj/effect/turf_decal/borderfloorwhite/full,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
-"KN" = (
-/obj/item/radio/intercom/directional/south{
-	pixel_x = 32
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "KV" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -4546,7 +4546,7 @@ bK
 "}
 (26,1,1) = {"
 bK
-KN
+yk
 BJ
 Vf
 Do
