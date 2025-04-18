@@ -1,0 +1,45 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sola-class Hunting Vessel",
+	"map_short_name": "Sola-class",
+	"description": "Later.....................................................................................................................................................................................................................................................",
+	"tags": [
+		"Generalist",
+		"Combat"
+	],
+	"map_path": "_maps/shuttles/independent/independent_sola.dmm",
+	"namelists": ["GENERAL", "BEASTS", "NATURAL_AGGRESSIVE"],
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Ihejirika Civ. Manufacturing",
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"slots": 1,
+			"officer": true
+		},
+		"Lead Hunter": {
+			"outfit": "/datum/outfit/job/independent/hop/hunter",
+			"slots": 1,
+			"officer": true
+		},
+		"Hunter": {
+			"outfit": "/datum/outfit/job/independent/hunter",
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/independent/doctor",
+			"slots": 1
+		},
+
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}
