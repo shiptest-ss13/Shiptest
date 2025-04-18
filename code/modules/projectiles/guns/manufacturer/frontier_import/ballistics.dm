@@ -108,7 +108,7 @@
 	eject_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 
-	wear_rate = 2 // 30 to malfunction, 90 to critical
+	wear_rate = 0.8
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,

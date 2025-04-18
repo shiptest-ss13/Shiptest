@@ -10,42 +10,36 @@
 	name = "First Aid Kit Single-Pack"
 	desc = "Contains one first aid kit for healing most types of wounds."
 	cost = 400
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/regular)
 
 /datum/supply_pack/medical/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing bruises and broken bones."
 	cost = 700
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/brute)
 
 /datum/supply_pack/medical/firstaidburns_single
 	name = "Burn Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing severe burns."
 	cost = 700
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/fire)
 
 /datum/supply_pack/medical/firstaidoxygen_single
 	name = "Oxygen Deprivation Kit Single-Pack"
 	desc = "Contains one first aid kit focused on helping oxygen deprivation victims."
 	cost = 500
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/o2)
 
 /datum/supply_pack/medical/firstaidtoxins_single
 	name = "Toxin Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on healing damage dealt by heavy toxins."
 	cost = 500
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/toxin)
 
 /datum/supply_pack/medical/firstaid_rad_single
 	name = "Radiation Treatment Kit Single-Pack"
 	desc = "Contains one first aid kit focused on reducing the damage done by radiation."
 	cost = 500
-	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/radiation)
 
 /*
@@ -185,6 +179,7 @@
 	contains = list(/obj/machinery/iv_drip/saline)
 	crate_name = "saline glucose crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/medical/epipen_crate
 	name = "Bulk Epipen Crate"
@@ -228,13 +223,13 @@
 	crate_name = "empty vial crate"
 
 /datum/supply_pack/medical/vials/bica_vial
-	name = "Bicardine Vial Crate"
-	desc = "Contains a spare bicardine vial, for usage in a Hypospray."
+	name = "Bicaridine Vial Crate"
+	desc = "Contains a spare bicaridine vial, for usage in a Hypospray."
 	cost = 400
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/bicaridine,
 	)
-	crate_name = "bicardine vial crate"
+	crate_name = "bicaridine vial crate"
 
 /datum/supply_pack/medical/vials/kelo_vial
 	name = "Kelotane Vial Crate"

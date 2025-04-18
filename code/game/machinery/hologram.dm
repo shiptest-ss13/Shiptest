@@ -277,6 +277,10 @@ Possible to do for anyone motivated enough:
 				var/result = tgui_input_list(usr, "Choose an area to call", "Holocall", sortNames(callnames))
 				if(QDELETED(usr) || !result || outgoing_call)
 					return
+				var/interference = SSovermap.get_overmap_interference(src)
+				if(interference > INTERFERENCE_LEVEL_BREAKUP_HOLOPADS)
+					to_chat(usr, span_warning("There is too much interference here to make a call! Move the ship elsewhere!"))
+					return
 				if(usr.loc == loc)
 					var/input = text2num(params["headcall"])
 					var/headcall = input == 1 ? TRUE : FALSE
@@ -371,6 +375,10 @@ Possible to do for anyone motivated enough:
 				clear_holo(master)
 
 	if(outgoing_call)
+		var/interference = SSovermap.get_overmap_interference(src)
+		if(interference > INTERFERENCE_LEVEL_BREAKUP_HOLOPADS)
+			say("Call broke up due to electromagnetic interference.")
+			outgoing_call.ConnectionFailure(src)
 		outgoing_call.Check()
 
 	ringing = FALSE

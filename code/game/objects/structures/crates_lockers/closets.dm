@@ -258,41 +258,30 @@
 	else
 		return ..()
 
-/obj/structure/closet/proc/try_deconstruct(obj/item/W, mob/user)
-	if(W.tool_behaviour == cutting_tool || W.tool_behaviour == TOOL_DECONSTRUCT)
-		if(!W.tool_start_check(user, amount = 0))
-			return
-		to_chat(user, span_notice("You begin cutting \the [src] apart..."))
-		if(W.use_tool(src, user, 40, volume = 50))
-			if(!opened)
-				return
-			user.visible_message(span_notice("[user] slices apart \the [src]."),
-								span_notice("You cut \the [src] apart with \the [W]."),
-								span_hear("You hear welding."))
-			deconstruct(TRUE)
-		return TRUE
+/obj/structure/closet/proc/try_deconstruct(obj/item/tool, mob/user)
+	if(!tool.tool_start_check(user, src, amount = 0))
+		return
+	to_chat(user, span_notice("You begin cutting \the [src] apart..."))
+	if(tool.use_tool(src, user, 40, volume = 50))
+		user.visible_message(
+			span_notice("[user] slices apart \the [src]."),
+			span_notice("You cut \the [src] apart with \the [tool]."),
+			span_hear("You hear welding."),
+		)
+		deconstruct(TRUE)
+	return TRUE
 
 /obj/structure/closet/proc/tool_interact(obj/item/W, mob/user)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
 	. = TRUE
 	if(opened)
 		if(W.tool_behaviour == cutting_tool && user.a_intent != INTENT_HELP)
-			if(!W.tool_start_check(user, amount=0))
-				return
-
-			to_chat(user, span_notice("You begin cutting \the [src] apart..."))
-			if(W.use_tool(src, user, 40, volume=50))
-				if(!opened)
-					return
-				user.visible_message(span_notice("[user] slices apart \the [src]."),
-								span_notice("You cut \the [src] apart with \the [W]."),
-								span_hear("You hear cutting."))
-				deconstruct(TRUE)
+			try_deconstruct(W, user)
 			return
 		if(user.transferItemToLoc(W, drop_location())) // so we put in unlit welder too
 			return
 		return
 	else if(W.tool_behaviour == TOOL_WELDER && can_weld_shut)
-		if(!W.tool_start_check(user, amount=0))
+		if(!W.tool_start_check(user, src, src, amount=0))
 			return
 
 		to_chat(user, span_notice("You begin [welded ? "unwelding":"welding"] \the [src]..."))
@@ -313,13 +302,6 @@
 		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
 						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
 						span_hear("You hear a ratchet."))
-
-	else if(W.tool_behaviour == TOOL_DECONSTRUCT && locked)
-		user.visible_message(span_warning("[user] is cutting \the [src] open !"), span_notice("You begin to cut \the [src] open."))
-		if (W.use_tool(src, user, 10 SECONDS, volume=0))
-			bust_open()
-			user.visible_message(span_warning("[user] busted \the [src] open !"),  span_notice("You finish cutting \the [src] open."))
-
 	else if(user.a_intent != INTENT_HARM)
 		var/item_is_id = W.GetID()
 		if(!item_is_id)
@@ -328,6 +310,29 @@
 			togglelock(user)
 	else
 		return FALSE
+
+/obj/structure/closet/tool_act(mob/living/user, obj/item/I, tool_type)
+	if(user in src)
+		return FALSE
+	return ..()
+
+/obj/structure/closet/deconstruct_act(mob/living/user, obj/item/tool)
+	if(..())
+		return TRUE
+	if(locked)
+		user.visible_message(
+			span_warning("[user] is cutting \the [src] open!)"),
+			span_notice("You begin to cut \the [src] open."),
+		)
+		if (tool.use_tool(src, user, 10 SECONDS, volume=0))
+			bust_open()
+			user.visible_message(
+				span_warning("[user] busted \the [src] open!"),
+				span_notice("You finish cutting \the [src] open."),
+			)
+	else
+		try_deconstruct(tool, user)
+	return TRUE
 
 /obj/structure/closet/proc/after_weld(weld_state)
 	return

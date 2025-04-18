@@ -6,7 +6,7 @@
 	name = "Hard Disk Drive"
 	id = "hdd_basic"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 400, /datum/material/glass = 100)
+	materials = list(/datum/material/iron = 400, /datum/material/glass = 100, /datum/material/copper = 150)
 	build_path = /obj/item/computer_hardware/hard_drive
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
@@ -15,7 +15,7 @@
 	name = "Advanced Hard Disk Drive"
 	id = "hdd_advanced"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 800, /datum/material/glass = 200)
+	materials = list(/datum/material/iron = 800, /datum/material/glass = 200, /datum/material/copper = 300, /datum/material/silicon = 150)
 	build_path = /obj/item/computer_hardware/hard_drive/advanced
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
@@ -24,7 +24,7 @@
 	name = "Super Hard Disk Drive"
 	id = "hdd_super"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 1600, /datum/material/glass = 400)
+	materials = list(/datum/material/iron = 1600, /datum/material/glass = 400, /datum/material/copper = 600, /datum/material/silicon = 150)
 	build_path = /obj/item/computer_hardware/hard_drive/super
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
@@ -33,7 +33,7 @@
 	name = "Cluster Hard Disk Drive"
 	id = "hdd_cluster"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 3200, /datum/material/glass = 800)
+	materials = list(/datum/material/iron = 3200, /datum/material/glass = 800, /datum/material/copper = 1000, /datum/material/silicon = 150)
 	build_path = /obj/item/computer_hardware/hard_drive/cluster
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
@@ -42,7 +42,7 @@
 	name = "Solid State Drive"
 	id = "ssd_small"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 800, /datum/material/glass = 200)
+	materials = list(/datum/material/iron = 800, /datum/material/glass = 200, /datum/material/copper = 200,  /datum/material/silicon = 500)
 	build_path = /obj/item/computer_hardware/hard_drive/small
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
@@ -51,7 +51,7 @@
 	name = "Micro Solid State Drive"
 	id = "ssd_micro"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 400, /datum/material/glass = 100)
+	materials = list(/datum/material/iron = 400, /datum/material/glass = 100, /datum/material/copper = 150, /datum/material/silicon = 500)
 	build_path = /obj/item/computer_hardware/hard_drive/micro
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
@@ -61,7 +61,7 @@
 	name = "Network Card"
 	id = "netcard_basic"
 	build_type = IMPRINTER
-	materials = list(/datum/material/iron = 250, /datum/material/glass = 100)
+	materials = list(/datum/material/iron = 250, /datum/material/glass = 100, /datum/material/copper = 10)
 	build_path = /obj/item/computer_hardware/network_card
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
@@ -70,7 +70,7 @@
 	name = "Advanced Network Card"
 	id = "netcard_advanced"
 	build_type = IMPRINTER
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 200)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 200, /datum/material/copper = 200)
 	build_path = /obj/item/computer_hardware/network_card/advanced
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
