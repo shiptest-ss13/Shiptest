@@ -2,7 +2,7 @@
 /datum/overmap_star_system/shiptest
 	generator_type = OVERMAP_GENERATOR_NONE
 	has_outpost = FALSE
-	mission_system_enabled = FALSE
+	encounters_refresh = FALSE
 
 /datum/overmap/dynamic/ruin_tester
 	populate_turfs = FALSE
