@@ -536,7 +536,7 @@
 		return
 	var/datum/round_event_control/E = locate(/datum/round_event_control/vent_clog/beer) in SSevents.control
 	if(E)
-		E.runEvent()
+		E.run_event()
 	addtimer(CALLBACK(src, PROC_REF(really_actually_explode)), 110)
 
 /obj/machinery/nuclearbomb/beer/proc/disarm()
