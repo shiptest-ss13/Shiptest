@@ -81,8 +81,6 @@ FLOOR SAFES
 /obj/structure/safe/deconstruct_act(mob/living/user, obj/item/tool)
 	if(open)
 		return FALSE
-	if(..())
-		return TRUE
 	user.visible_message(
 		span_warning("[user] begin to cut through the lock of \the [src]."),
 		span_notice("You start cutting trough the lock of [src]."),
