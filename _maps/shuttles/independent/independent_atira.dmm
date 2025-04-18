@@ -2782,7 +2782,6 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
-/obj/item/disk/surgery/t2,
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = -16;
@@ -2790,6 +2789,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/item/disk/surgery/t3{
+	pixel_y = 10;
+	pixel_x = 6
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical/surgery)
