@@ -939,7 +939,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/directional/east,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "kq" = (
@@ -2739,12 +2739,12 @@
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "Jn" = (
 /obj/machinery/power/smes/shuttle/precharged,
-/obj/machinery/door/poddoor/preopen{
-	dir = 4;
-	id = "bonnieengine"
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "bonnieengine"
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
@@ -3255,6 +3255,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
+"Qs" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
 "Qz" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -3917,8 +3929,8 @@
 /obj/effect/turf_decal/corner/transparent/ntblue/half{
 	dir = 4
 	},
-/obj/machinery/light/dim/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "Xm" = (
@@ -4309,7 +4321,7 @@ At
 At
 At
 At
-VF
+Qs
 At
 At
 At
