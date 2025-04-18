@@ -179,6 +179,15 @@
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	list_reagents = list(/datum/reagent/consumable/milk = 50)
 
+/obj/item/reagent_containers/condiment/tiris_milk
+	name = "Dimidiso's Tiris"
+	desc = "Prepackaged Tiris milk made from pastures within CLIP space. The flavor is usually too strong for humans to drink straight."
+	icon_state = ""
+	item_state = "carton"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	list_reagents = list(/datum/reagent/consumable/milk = 50)
+
 /obj/item/reagent_containers/condiment/flour
 	name = "flour sack"
 	desc = "A big bag of flour. Good for baking!"
