@@ -19,6 +19,8 @@ FLOOR SAFES
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 	max_integrity = 400
 	armor = list("melee" = 30, "bullet" = 60, "laser" = 60, "energy" = 100, "bomb" = 20, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
+	// this shit heavy
+	drag_slowdown = 2.5
 	/// The maximum combined w_class of stuff in the safe
 	var/maxspace = 24
 	/// The amount of tumblers that will be generated
@@ -60,6 +62,11 @@ FLOOR SAFES
 /obj/structure/safe/update_icon_state()
 	icon_state = "[initial(icon_state)][open ? "-open" : null]"
 	return ..()
+
+/obj/structure/safe/wrench_act(mob/living/user, obj/item/I)
+	..()
+	default_unfasten_wrench(user, I)
+	return TRUE
 
 /obj/structure/safe/attackby(obj/item/I, mob/user, params)
 	if(open)
