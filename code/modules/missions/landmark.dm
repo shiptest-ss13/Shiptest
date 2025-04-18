@@ -43,7 +43,7 @@
 /obj/effect/landmark/mission_poi/proc/use_poi(_type_to_spawn, datum/mission/mission)
 	var/atom/item_of_interest
 	use_count--
-	NOTICE("[src] was used!")
+	log_world("[src] was used for [mission.name]!")
 	if(!ispath(type_to_spawn))
 		type_to_spawn = _type_to_spawn
 	if(!ispath(type_to_spawn))
@@ -79,6 +79,12 @@
 						return item_in_container
 		else if(istype(item_in_poi, type_to_spawn))
 			return item_in_poi
+
+/*
+/obj/effect/landmark/mission_poi/proc/valid_item(_item, _type)
+	if(istype(_item, _type))
+		return TRUE
+*/
 
 /obj/effect/landmark/mission_poi/proc/get_container()
 	for(var/atom/movable/container as anything in get_turf(src))
