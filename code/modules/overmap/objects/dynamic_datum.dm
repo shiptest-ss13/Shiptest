@@ -193,16 +193,12 @@
 		for(var/mission_type in used_ruin.ruin_mission_types)
 			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
 
-	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
-		planet_name = "LV-[pick(rand(11111,99999))]"
-		token.icon_state = "sector"
-		Rename(planet_name)
+
 
 /datum/overmap/dynamic/proc/set_planet_type(datum/planet_type/planet)
 	if(!is_type_in_list(planet, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin)))
 		planet_name = "[gen_planet_name()]"
 		name = "[planet_name] ([planet.name])"
-
 
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
@@ -214,6 +210,11 @@
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
+
+	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
+		planet_name = "LV-[pick(rand(11111,99999))]"
+		token.icon_state = "sector"
+		Rename(planet_name)
 
 	alter_token_appearance()
 
