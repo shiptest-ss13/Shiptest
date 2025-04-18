@@ -130,6 +130,3 @@
 /turf/open/floor/plating/asteroid/ship
 	baseturfs = /turf/open/floor/plating
 
-/turf/open/floor/plating/fuelingplasma
-	baseturfs = /turf/open/floor/plasteel/mono/white
-	initial_gas_mix = ATMOS_TANK_PLASMA
