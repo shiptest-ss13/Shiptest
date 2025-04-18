@@ -4,7 +4,7 @@
 ////////////////////////////////////////////FISH////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/cubancarp
-	name = "\improper Cuban carp"
+	name = "carp sandwich"
 	desc = "A sandwich consisting of heavily spiced and batter-fried fish. It's very hot!"
 	icon_state = "cubancarp"
 	trash = /obj/item/trash/plate
@@ -415,13 +415,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
 	tastes = list("meat" = 3, "metal" = 1)
 	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/kebab/human
-	name = "human-kebab"
-	desc = "Chunks of meat that have been cooked and served on a skewer. This one is oddly tender."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 6)
-	tastes = list("tender meat" = 3, "metal" = 1)
-	foodtype = MEAT | GORE
 
 /obj/item/reagent_containers/food/snacks/kebab/monkey
 	name = "meat-kebab"
