@@ -4,7 +4,6 @@
 	icon_state = "honker"
 	step_in = 3
 	max_integrity = 140
-	deflect_chance = 60
 	internal_damage_threshold = 60
 	armor = list("melee" = -20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	max_temperature = 25000
@@ -15,12 +14,6 @@
 	add_req_access = 0
 	max_equip = 3
 	var/squeak = TRUE
-
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 5),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
-		MECHA_BACK_ARMOUR = list(60, 1, 0)
-	)
 
 /obj/mecha/combat/honker/get_stats_part()
 	var/integrity = obj_integrity/max_integrity*100

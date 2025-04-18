@@ -5,16 +5,10 @@
 	step_in = 2
 	max_temperature = 15000
 	max_integrity = 200
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	wreckage = /obj/structure/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
-	deflect_chance = 15
 	base_step_energy_drain = 11
-
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 10),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
-		MECHA_BACK_ARMOUR = list(60, 1, 5)
-	)
 
 /obj/mecha/medical/odysseus/moved_inside(mob/living/carbon/human/H)
 	. = ..()

@@ -26,7 +26,6 @@
 	var/overload_step_energy_drain_min = 100
 
 	max_integrity = 300 //max_integrity is base health
-	var/deflect_chance = 10 //chance to deflect the incoming projectiles, hits, or lesser the effect of ex_act.
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	/// List of internal components per direction , will cause increased mech damge incase of mech AP and block shots from hitting the driver
 	// internal list should be list[ref] = list(occupant_hit_chance, hit_multi, ap_threshold)

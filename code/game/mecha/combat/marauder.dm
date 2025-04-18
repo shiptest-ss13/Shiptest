@@ -4,7 +4,6 @@
 	icon_state = "marauder"
 	step_in = 5
 	max_integrity = 400
-	deflect_chance = 20
 	armor = list("melee" = 50, "bullet" = 75, "laser" = 50, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 60, "fire" = 100, "acid" = 100)
 	max_temperature = 60000
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
@@ -19,9 +18,9 @@
 	bumpsmash = 1
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 60),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 50),
-		MECHA_BACK_ARMOUR = list(60, 1, 40)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 90),
+		MECHA_SIDE_ARMOUR = list(50, 1, 30),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 15)
 	)
 
 /obj/mecha/combat/marauder/GrantActions(mob/living/user, human_occupant = 0)

@@ -5,7 +5,6 @@
 	step_in = 3
 	dir_in = 1 //Facing North.
 	max_integrity = 300
-	deflect_chance = 5
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 40, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	max_temperature = 25000
 	leg_overload_coeff = 80
@@ -17,9 +16,9 @@
 	base_step_energy_drain = 8
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 35),
-		MECHA_BACK_ARMOUR = list(60, 1, 20)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 70),
+		MECHA_SIDE_ARMOUR = list(50, 1, 25),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 40)
 	)
 
 /obj/mecha/combat/gygax/mechturn(direction)
@@ -95,9 +94,9 @@
 	charge_windup = 0
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 25),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 25),
-		MECHA_BACK_ARMOUR = list(60, 1, 10)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
+		MECHA_SIDE_ARMOUR = list(50, 1, 20),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 15)
 	)
 
 /obj/mecha/combat/gygax/charger/mp/loaded/Initialize()

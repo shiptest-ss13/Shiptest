@@ -30,13 +30,11 @@
 	if(damage_flag == "bullet" || damage_flag == "laser" || damage_flag == "energy")
 		for(var/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster/B in equipment)
 			if(B.projectile_react())
-				booster_deflection_modifier = B.deflect_coeff
 				booster_damage_modifier = B.damage_coeff
 				break
 	else if(damage_flag == "melee")
 		for(var/obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster/B in equipment)
 			if(B.attack_react())
-				booster_deflection_modifier *= B.deflect_coeff
 				booster_damage_modifier *= B.damage_coeff
 				break
 
@@ -44,10 +42,6 @@
 		var/facing_modifier = get_armour_facing(abs(dir2angle(dir) - dir2angle(attack_dir)))
 		booster_damage_modifier *= facing_modifier[2]
 		booster_deflection_modifier /= facing_modifier[2]
-	if(prob(deflect_chance * booster_deflection_modifier))
-		visible_message("<span class='danger'>[src]'s armour deflects the attack!</span>")
-		log_message("Armor saved.", LOG_MECHA)
-		return 0
 	if(.)
 		. *= booster_damage_modifier
 
@@ -124,10 +118,10 @@
 	var/ap_threshold = facing_modifiers[3]
 
 	var/damage_taken = run_obj_armor(bullet_proj.damage, bullet_proj.damage_type, bullet_proj.flag, attack_dir, bullet_proj.armour_penetration)
-	var/pen_difference = (get_armor_rating(bullet_proj.flag) / facing_multi) - bullet_proj.armour_penetration
+	var/remaining_armor = (get_armor_rating(bullet_proj.flag) / facing_multi) - bullet_proj.armour_penetration
 	var/damage_left = round(bullet_proj.damage - damage_taken)
 
-	if(pen_difference > ap_threshold && bullet_proj.check_ricochet(src))
+	if(remaining_armor > ap_threshold && bullet_proj.check_ricochet(src))
 		//Does not seem to function very well as it does not have a way to force ricochet regardless of angle unfortunatly
 		//handle_ricochet(bullet_proj)
 		bullet_proj.setAngle(SIMPLIFY_DEGREES(bullet_proj.Angle + rand(40,150)))
@@ -140,7 +134,7 @@
 
 	if(occupant && prob(cabin_pierce_percent))
 		bullet_proj.damage = damage_left
-		if(pen_difference > ap_threshold)
+		if(remaining_armor >= ap_threshold)
 			return
 		if(bullet_proj.damage <= 0)
 			return
@@ -157,9 +151,6 @@
 
 /obj/mecha/ex_act(severity, target)
 	log_message("Affected by explosion of severity: [severity].", LOG_MECHA, color="red")
-	if(prob(deflect_chance))
-		severity++
-		log_message("Armor saved, changing severity to [severity]", LOG_MECHA)
 	. = ..()
 
 /obj/mecha/contents_explosion(severity, target)

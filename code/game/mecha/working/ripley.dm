@@ -10,7 +10,6 @@
 	max_integrity = 200
 	light_range = 7
 	light_power = 1
-	deflect_chance = 15
 	armor = list("melee" = 40, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 20, "fire" = 100, "acid" = 100)
 	max_equip = 6
 	wreckage = /obj/structure/mecha_wreckage/ripley
@@ -23,9 +22,9 @@
 	exit_delay = 10
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 0),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
-		MECHA_BACK_ARMOUR = list(60, 1, 0)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 50),
+		MECHA_SIDE_ARMOUR = list(50, 1, 35), // kinda pointless
+		MECHA_BACK_ARMOUR = list(60, 1.5, 50)
 	)
 
 /obj/mecha/working/ripley/Move()
@@ -83,9 +82,9 @@
 	opacity = TRUE
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 5),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
-		MECHA_BACK_ARMOUR = list(60, 1, 5)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 30),
+		MECHA_SIDE_ARMOUR = list(50, 1, 35),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 35)
 	)
 
 /obj/mecha/working/ripley/firefighter
@@ -100,7 +99,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	light_range = 7
 	light_power = 1
-	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 70, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 70, "fire" = 100, "acid" = 100)
 	max_equip = 5 // More armor, less tools
 	wreckage = /obj/structure/mecha_wreckage/ripley/firefighter
 	enclosed = TRUE
@@ -109,9 +108,9 @@
 	opacity = TRUE
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 10),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 15),
-		MECHA_BACK_ARMOUR = list(60, 1, 5)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 30),
+		MECHA_SIDE_ARMOUR = list(50, 1, 35),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 35)
 	)
 
 /obj/mecha/working/ripley/deathripley
@@ -134,8 +133,8 @@
 
 	facing_modifiers = list(
 		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 20),
-		MECHA_BACK_ARMOUR = list(60, 1, 15)
+		MECHA_SIDE_ARMOUR = list(50, 1, 40),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 40)
 	)
 
 /obj/mecha/working/ripley/deathripley/Initialize()
@@ -201,12 +200,6 @@
 	enclosed = TRUE
 	enter_delay = 20 //slower than a mk. I, faster than the armored Ripleys
 	silicon_icon_state = null
-
-	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 5),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 10),
-		MECHA_BACK_ARMOUR = list(60, 1, 5)
-	)
 
 /obj/mecha/working/ripley/cargo
 	desc = "An ailing, old, repurposed cargo hauler. Most of its equipment wires are frayed or missing and its frame is rusted."

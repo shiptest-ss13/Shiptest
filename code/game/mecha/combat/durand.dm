@@ -5,7 +5,6 @@
 	step_in = 4
 	dir_in = 1 //Facing North.
 	max_integrity = 300
-	deflect_chance = 15
 	repair_multiplier = 0.5
 	armor = list("melee" = 50, "bullet" = 75, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 	max_temperature = 30000
@@ -17,9 +16,9 @@
 	var/shield_passive_drain = 300
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 50),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 40),
-		MECHA_BACK_ARMOUR = list(60, 1, 30)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 100), // Front armor is doubled, so it has to be really high for .50 to pierce. Because higher == worse protection -_-
+		MECHA_SIDE_ARMOUR = list(50, 1, 35),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 35)
 	)
 
 /obj/mecha/combat/durand/clip
@@ -27,15 +26,14 @@
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
-	deflect_chance = 20
 	wreckage = /obj/structure/mecha_wreckage/durand/clip
 	shield_passive_drain = 0
 	shield_type = /obj/durand_shield/clip
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 35),
-		MECHA_BACK_ARMOUR = list(60, 1, 20)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 60),
+		MECHA_SIDE_ARMOUR = list(50, 1, 40),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 45)
 	)
 
 /obj/mecha/combat/durand/Initialize()

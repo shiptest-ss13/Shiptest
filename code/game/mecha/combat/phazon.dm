@@ -6,8 +6,7 @@
 	dir_in = 2 //Facing South.
 	base_step_energy_drain = 8
 	max_integrity = 200
-	deflect_chance = 30
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 	max_temperature = 25000
 	infra_luminosity = 3
 	wreckage = /obj/structure/mecha_wreckage/phazon
@@ -18,9 +17,9 @@
 	phase_state = "phazon-phase"
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 40),
-		MECHA_SIDE_ARMOUR = list(50, 0.75, 25),
-		MECHA_BACK_ARMOUR = list(60, 1, 15)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 50),
+		MECHA_SIDE_ARMOUR = list(50, 1, 35),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 40)
 	)
 
 /obj/mecha/combat/phazon/set_up_unique_action()

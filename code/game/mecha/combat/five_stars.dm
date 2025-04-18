@@ -8,7 +8,7 @@
 	stepsound = 'sound/mecha/mechstep.ogg'
 	turnsound = 'sound/mecha/mechturn.ogg'
 
-	armor = list("melee" = 80, "bullet" = 65, "laser" = 35, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 50, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 
 	wreckage = /obj/structure/mecha_wreckage/tank
 	exit_delay = 40
@@ -19,9 +19,9 @@
 	pixel_y = -6
 
 	facing_modifiers = list(
-		MECHA_FRONT_ARMOUR = list(75, 0.5, 60),
-		MECHA_SIDE_ARMOUR = list(60, 0.75, 50),
-		MECHA_BACK_ARMOUR = list(60, 1, 40)
+		MECHA_FRONT_ARMOUR = list(75, 0.5, 15),
+		MECHA_SIDE_ARMOUR = list(60, 1, 35),
+		MECHA_BACK_ARMOUR = list(60, 1.5, 35)
 	)
 
 /obj/mecha/combat/combat_tank/Initialize()
