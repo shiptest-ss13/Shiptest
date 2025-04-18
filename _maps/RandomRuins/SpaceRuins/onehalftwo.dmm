@@ -696,6 +696,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "ig" = (
@@ -987,6 +988,7 @@
 "kQ" = (
 /obj/structure/salvageable/server,
 /obj/item/stack/rods,
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "kR" = (
@@ -1303,6 +1305,7 @@
 "pJ" = (
 /obj/machinery/conveyor_switch/oneway,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "pP" = (
@@ -1722,10 +1725,10 @@
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "vr" = (
 /obj/item/stack/tile/plasteel,
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "vs" = (
@@ -2266,10 +2269,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/white,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "Dd" = (
@@ -3221,6 +3224,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
 "PJ" = (
@@ -3251,9 +3255,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
-"Qs" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/space)
 "Qz" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -3858,6 +3859,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "Wt" = (
@@ -5558,7 +5560,7 @@ HJ
 nh
 LI
 wu
-Qs
+nk
 TN
 kD
 cj
@@ -5597,7 +5599,7 @@ Ct
 io
 sw
 OE
-Qs
+nk
 kD
 sO
 ji
@@ -5636,7 +5638,7 @@ ha
 oi
 At
 ro
-Qs
+nk
 kD
 sO
 ze
@@ -5675,7 +5677,7 @@ ka
 HF
 Cv
 TL
-Qs
+nk
 kD
 sO
 sO
@@ -5714,7 +5716,7 @@ Kq
 sd
 KL
 Kw
-Qs
+nk
 kD
 yS
 yS
@@ -5752,8 +5754,8 @@ pC
 RO
 HF
 At
-Qs
-Qs
+nk
+nk
 kD
 At
 At
