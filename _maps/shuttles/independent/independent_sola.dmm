@@ -784,7 +784,7 @@
 "ms" = (
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/bounty,
-/obj/item/bedsheet/dorms,
+/obj/item/bedsheet/black,
 /obj/item/bedsheet/brown{
 	pixel_y = 13
 	},
@@ -798,6 +798,9 @@
 	dir = 8;
 	pixel_x = 19;
 	pixel_y = 12
+	},
+/obj/item/kirbyplants/random{
+	pixel_x = 9
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -1005,7 +1008,7 @@
 /area/ship/crew/ccommons)
 "nY" = (
 /obj/effect/spawner/bunk_bed,
-/obj/item/bedsheet/dorms,
+/obj/item/bedsheet/brown,
 /obj/item/bedsheet/black{
 	pixel_y = 13
 	},
@@ -1233,6 +1236,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore)
 "rT" = (
@@ -2530,6 +2534,9 @@
 /obj/machinery/firealarm/directional/west{
 	pixel_y = 6
 	},
+/obj/item/kirbyplants/random{
+	pixel_x = -9
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/aft)
 "He" = (
@@ -2547,6 +2554,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-10"
+	},
+/obj/item/kirbyplants/random{
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/fore)
@@ -2819,6 +2829,12 @@
 /obj/effect/turf_decal/borderfloorwhite/full,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
+"KN" = (
+/obj/item/radio/intercom/directional/south{
+	pixel_x = 32
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "KV" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -3347,6 +3363,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/item/kirbyplants/random{
+	pixel_x = 9
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/aft)
 "Sa" = (
@@ -3517,6 +3536,9 @@
 	id = "sola_commons";
 	dir = 4
 	},
+/obj/item/kirbyplants/random{
+	pixel_x = -9
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "TM" = (
@@ -3632,6 +3654,10 @@
 	dir = 5;
 	color = "#D2BC9D"
 	},
+/obj/item/kirbyplants/random{
+	pixel_x = 9;
+	pixel_y = 17
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "VA" = (
@@ -3656,12 +3682,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
-"VD" = (
-/obj/item/radio/intercom/directional/south{
-	pixel_x = 32
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "VK" = (
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 4
@@ -4526,7 +4546,7 @@ bK
 "}
 (26,1,1) = {"
 bK
-VD
+KN
 BJ
 Vf
 Do
