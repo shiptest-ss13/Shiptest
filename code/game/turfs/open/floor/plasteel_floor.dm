@@ -99,6 +99,7 @@
 	base_icon_state = "kafel_full"
 /turf/open/floor/plasteel/patterned/brushed/cold
 	initial_gas_mix = "o2=22;n2=82;TEMP=275.15" // normal air but 2 degrees
+
 /turf/open/floor/plasteel/patterned/grid
 	icon_state = "grid"
 	base_icon_state = "grid"
