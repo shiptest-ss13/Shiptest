@@ -618,11 +618,10 @@
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
 "hg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/binary/pump/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
+/obj/machinery/atmospherics/components/binary/pump,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "hh" = (
@@ -980,6 +979,7 @@
 "kK" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "kN" = (
@@ -2483,13 +2483,17 @@
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "Gn" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/refuelingpost/cargobay)
+/area/ruin/space/refuelingsolars)
 "Gq" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/refuelingpost/cargo)
@@ -3232,11 +3236,11 @@
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "PO" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/atmospherics/components/unary/portables_connector/layer2{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
@@ -3255,18 +3259,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
-"Qs" = (
-/obj/effect/turf_decal/solarpanel,
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/small/broken/directional/east,
-/turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
 "Qz" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -4321,7 +4313,7 @@ At
 At
 At
 At
-Qs
+Gn
 At
 At
 At
@@ -4878,7 +4870,7 @@ YT
 Km
 GN
 CI
-Gn
+Ow
 nT
 nT
 nT
