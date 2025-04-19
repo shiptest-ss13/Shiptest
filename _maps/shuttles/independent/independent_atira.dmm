@@ -212,6 +212,10 @@
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/canister/fuel,
+/obj/machinery/light/small/directional/north{
+	pixel_x = -7
+	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "eb" = (
@@ -453,21 +457,20 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "gS" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "a_flare"
 	},
-/obj/structure/platform/ship_three{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engine)
 "hd" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "a_bine"
+/obj/machinery/power/compressor{
+	dir = 4
 	},
-/turf/open/floor/engine/hull/interior,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "hu" = (
 /obj/effect/turf_decal/spline/fancy/opaque/blue,
@@ -1732,6 +1735,19 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/computer/helm/viewscreen/directional/west,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = 9;
+	pixel_y = -21;
+	name = "turbine exhaust shutter";
+	id = "a_flare"
+	},
+/obj/machinery/light/small/directional/south{
+	pixel_x = -7
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_x = -5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "xQ" = (
@@ -2152,13 +2168,13 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/ccommons)
 "Bp" = (
-/obj/machinery/power/compressor{
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/platform/ship_three{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Bv" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -2420,6 +2436,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
+"Eq" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "a_thing"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/engineering/engine)
 "EE" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -2436,15 +2460,6 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
-"EN" = (
-/obj/machinery/power/shuttle/engine/turbine{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/engineering/engine)
 "EY" = (
 /obj/machinery/washing_machine,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -3226,7 +3241,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "a_thing"
+	id = "a_bine"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering/engine)
@@ -3334,11 +3349,13 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "Sj" = (
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "a_flare"
+/obj/machinery/power/shuttle/engine/turbine{
+	dir = 8
 	},
-/turf/open/floor/engine/hull/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "Sn" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -3514,21 +3531,15 @@
 /obj/machinery/button/ignition{
 	dir = 4;
 	pixel_x = -21;
-	pixel_y = -8;
+	pixel_y = -1;
 	id = "atira_fire"
 	},
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -23;
+	pixel_y = 10;
 	name = "turbine window shutters";
 	id = "a_bine"
-	},
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_x = -23;
-	pixel_y = 10;
-	name = "turbine exhaust shutter";
-	id = "a_flare"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
@@ -3936,7 +3947,7 @@ CM
 CM
 CM
 Xh
-Sj
+gS
 Xh
 CM
 CM
@@ -3955,7 +3966,7 @@ CM
 Xh
 Xh
 Xh
-EN
+Sj
 Xh
 Xh
 Xh
@@ -3974,7 +3985,7 @@ eb
 tr
 xP
 Xh
-Bp
+hd
 Xh
 dQ
 Xh
@@ -3988,13 +3999,13 @@ CM
 CM
 CM
 CM
-QB
+Eq
 Xc
 UX
 ko
-hd
+QB
 WE
-hd
+QB
 FZ
 DG
 yg
@@ -4007,11 +4018,11 @@ CM
 CM
 LG
 Dj
-QB
+Eq
 yL
 AU
 tS
-hd
+QB
 ff
 CO
 Nk
@@ -4049,9 +4060,9 @@ Xh
 yW
 Uv
 wt
-gS
+Bp
 fT
-gS
+Bp
 kr
 ia
 Sq
