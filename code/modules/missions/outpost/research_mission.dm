@@ -3,7 +3,7 @@
 	desc = " requires data on the behavior of electrical storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data. "
-	value = 1800 // base value, before adding bonus for number of things to fly through
+	value = 1850 // base value, before adding bonus for number of things to fly through
 	duration = 60 MINUTES
 	weight = 8
 
@@ -15,7 +15,7 @@
 	var/num_wanted = 5
 	var/researcher_name
 	///how much is a storm worth to fly through
-	var/storm_value = 300
+	var/storm_value = 150
 
 /datum/mission/outpost/research/New(...)
 	researcher_name = SSmissions.get_researcher_name()
