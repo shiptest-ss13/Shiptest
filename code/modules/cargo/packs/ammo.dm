@@ -205,7 +205,7 @@
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
 	desc = "Contains a box of 32 buckshot shells for use in lethal persuasion."
-	cost = 520 //6.4 ammo efficiency at 104 damage. Yes we are counting point blank.
+	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_buckshot)
 
 /datum/supply_pack/ammo/slugs
@@ -217,13 +217,13 @@
 /datum/supply_pack/ammo/blank_shells
 	name = "Blank Shell Crate"
 	desc = "Contains a box of blank shells."
-	cost = 220
+	cost = 110
 	contains = list(/obj/item/storage/box/ammo/a12g_blank)
 
 /datum/supply_pack/ammo/rubbershot
 	name = "Rubbershot Crate"
 	desc = "Contains a box of 32 12 gauge rubbershot shells. Perfect for crowd control and training."
-	cost = 520
+	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
 
 /datum/supply_pack/ammo/techshells
