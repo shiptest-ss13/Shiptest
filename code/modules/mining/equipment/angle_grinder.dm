@@ -38,24 +38,24 @@
 
 /obj/item/gear_handle/anglegrinder/tool_start_check(mob/living/user, amount)
 	if(!pack)
-		to_chat(user, "<span class='warning'>how do you not have a pack for this. what.</span>")
+		to_chat(user, span_warning("how do you not have a pack for this. what."))
 		return FALSE
 	if(!pack.cell)
-		to_chat(user, "<span class='warning'>You need a cell to start!</span>")
+		to_chat(user, span_warning("You need a cell to start!"))
 		return FALSE
 	var/obj/item/stock_parts/cell/cell = pack.get_cell()
 	if(cell.charge < usecost)
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 	return TRUE
 
-/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, amount)
+/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, atom/target, amount)
 	if(!pack.cell)
 		return FALSE
 	if(pack.deductcharge(usecost))
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 
 /obj/item/gear_handle/anglegrinder/use(used)

@@ -11,7 +11,7 @@
 	var/case_type = ""
 	var/gun_category = /obj/item/gun
 	var/open = TRUE
-	var/capacity = 4
+	var/capacity = 8
 
 /obj/structure/guncloset/examine(mob/user)
 	. = ..()
@@ -43,10 +43,10 @@
 		if(LAZYLEN(contents) < capacity)
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, "<span class='notice'>You place [I] in [src].</span>")
+			to_chat(user, span_notice("You place [I] in [src]."))
 			update_appearance()
 		else
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, span_warning("[src] is full."))
 		return
 	else
 		return ..()
@@ -63,18 +63,34 @@
 				span_hear("You hear a ratchet.")
 		)
 		return
-	else if (I.tool_behaviour == TOOL_WELDER || I.tool_behaviour == TOOL_DECONSTRUCT)
-		if(contents.len)
-			to_chat(user, span_danger("\The [src] is not empty!"))
-			return
-		to_chat(user, span_notice("You begin cutting \the [src] apart..."))
-		if(I.use_tool(src, user, 40, volume=50))
-			user.visible_message(span_notice("[user] slices apart \the [src]."),
-					span_notice("You cut \the [src] apart with \the [I]."),
-					span_hear("You hear cutting."))
-			deconstruct(TRUE)
 	else
 		return FALSE
+
+/obj/structure/guncloset/deconstruct_act(mob/living/user, obj/item/tool)
+	if(..())
+		return TRUE
+	cut_apart(user, tool)
+	return TRUE
+
+/obj/structure/guncloset/welder_act(mob/living/user, obj/item/tool)
+	if(..() || ((resistance_flags & INDESTRUCTIBLE)))
+		return TRUE
+	cut_apart(user, tool)
+	return TRUE
+
+/obj/structure/guncloset/proc/cut_apart(mob/living/user, obj/item/tool)
+	if(contents.len)
+		to_chat(user, span_danger("\The [src] is not empty!"))
+		return
+	to_chat(user, span_notice("You begin cutting \the [src] apart..."))
+	if(!tool.use_tool(src, user, 40, volume=50))
+		return
+	user.visible_message(
+		span_notice("[user] slices apart \the [src]."),
+		span_notice("You cut \the [src] apart with \the [tool]."),
+		span_hear("You hear cutting."),
+	)
+	deconstruct(TRUE)
 
 /obj/structure/guncloset/deconstruct(disassembled = TRUE)
 	if (disassembled)

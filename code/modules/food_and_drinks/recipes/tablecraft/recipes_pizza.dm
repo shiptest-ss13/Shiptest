@@ -68,7 +68,7 @@
 	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/sassysagepizza
-	name = "Sassysage pizza"
+	name = "Sausage pizza"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
 		/obj/item/reagent_containers/food/snacks/meatball = 3,

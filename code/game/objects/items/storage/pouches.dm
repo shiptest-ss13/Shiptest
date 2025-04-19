@@ -18,6 +18,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.attack_hand_interact = TRUE
+	STR.pocket_openable = TRUE
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.max_items = 2
 	STR.max_combined_w_class = 24
@@ -83,7 +84,7 @@
 		/obj/item/ammo_box/c38,
 		/obj/item/ammo_box/a357,
 		/obj/item/ammo_box/a858,
-		/obj/item/ammo_box/vickland_a308,
+		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris,

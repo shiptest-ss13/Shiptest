@@ -155,7 +155,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/OpenFire()
 	var/turf/T = get_ranged_target_turf_direct(src, target, 4)
 	var/list/burn_turfs = getline(src, T) - get_turf(src)
-	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [target.name]!</span>")
+	visible_message(span_danger("<b>[src]</b> [ranged_message] at [target.name]!"))
 	playsound(src, projectilesound, 100, TRUE)
 	fire_line(src, burn_turfs, "flamethrower", TRUE, 10)
 	ranged_cooldown = world.time + ranged_cooldown_time
@@ -171,8 +171,6 @@
 	rapid = 4
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/a762_40
-	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
-				/obj/item/gun/ballistic/automatic/assault/skm)
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
 
@@ -217,7 +215,7 @@
 	projectilesound = 'sound/weapons/gun/hmg/shredder.ogg'
 	rapid = 5
 	rapid_fire_delay = 2
-	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+	casingtype = /obj/item/ammo_casing/shotgun
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier

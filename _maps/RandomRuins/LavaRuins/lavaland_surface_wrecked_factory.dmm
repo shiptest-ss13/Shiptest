@@ -71,12 +71,15 @@
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "aM" = (
-/obj/item/documents/nanotrasen,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/stock_parts/cell/gun/upgraded,
 /obj/structure/safe,
+/obj/effect/landmark/mission_poi/main{
+	type_to_spawn = /obj/item/documents/nanotrasen;
+	spawn_in_containter = 1
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "aW" = (
@@ -223,6 +226,11 @@
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "bubblegumfoot"
+	},
+/obj/effect/landmark/mission_poi/main/implanted{
+	mission_index = 3;
+	type_to_spawn = /mob/living/carbon/human;
+	already_spawned = 1
 	},
 /turf/open/floor/concrete/pavement/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -2354,7 +2362,8 @@
 	on_aggro_say = list("I'll kill all you Ramzi scum! COME AND GET SOME!", "I'll kill every last one of you Ramzi bastards!", "Finally got the nerve to finish me off you scum sucking Ramzi assholes...  YOU WON'T GET ME TOO YOU BASTARDS!!");
 	speak_emote = list("rants","screams","sobs");
 	verb_exclaim = "rants";
-	verb_yell = "rants"
+	verb_yell = "rants";
+	weapon_drop_chance = 100
 	},
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/carpet/blue,
@@ -2530,7 +2539,7 @@
 /area/ruin/lavaland/factory/warehouse)
 "yq" = (
 /obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/gun/energy/e_gun/hades
+	open = 1
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
@@ -4771,8 +4780,7 @@
 	icon_state = "gibmid2"
 	},
 /obj/effect/decal/cleanable/blood{
-	icon_state = "trails_2";
-	dir = 2
+	icon_state = "trails_2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
@@ -5041,6 +5049,11 @@
 	},
 /obj/structure/sign/poster/official/enlist{
 	pixel_y = 32
+	},
+/obj/effect/landmark/mission_poi/main{
+	mission_index = 2;
+	type_to_spawn = /obj/item/clothing/accessory/medal/gold/captain;
+	already_spawned = 1
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/adminstrative)

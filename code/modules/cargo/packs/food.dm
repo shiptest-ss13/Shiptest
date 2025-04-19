@@ -35,14 +35,6 @@
 	crate_name = "pizza crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
-/datum/supply_pack/food/pizza/fill(obj/structure/closet/crate/C)
-	. = ..()
-	for(var/obj/item/pizzabox/P in C)
-		if(prob(0.5)) //0.5% chance for each box
-			var/obj/item/pizzabox/infinite/fourfiveeight = new(C)
-			fourfiveeight.boxtag = P.boxtag
-			qdel(P)
-
 /datum/supply_pack/food/ration
 	name = "Ration Crate"
 	desc = "6 standard issue rations. For your inner jarhead."
@@ -213,6 +205,7 @@
 					/obj/machinery/grill/unwrenched)
 	crate_name = "grilling starter kit crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/food/grillfuel
 	name = "Grilling Fuel Kit"
