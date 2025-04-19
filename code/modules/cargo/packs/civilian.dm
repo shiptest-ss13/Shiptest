@@ -297,9 +297,8 @@
 /datum/supply_pack/civilian/noslipfloor
 	name = "High-traction Floor Tiles"
 	desc = "Make slipping a thing of the past with thirty industrial-grade anti-slip floortiles!"
-	cost = 1000
-	contains = list(/obj/item/stack/tile/noslip/thirty,
-					/obj/item/stack/tile/noslip/thirty)
+	cost = 500
+	contains = list(/obj/item/stack/tile/noslip/thirty)
 	crate_name = "high-traction floor tiles crate"
 
 /datum/supply_pack/civilian/jukebox
