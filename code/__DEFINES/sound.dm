@@ -13,12 +13,16 @@
 #define SOUND_RANGE 17
 ///default extra range for sounds considered to be quieter
 #define SHORT_RANGE_SOUND_EXTRARANGE -9
+///The range added to firearms firing
+#define GUN_SOUND_EXTRARANGE 5
 ///The range deducted from sound range for things that are considered silent / sneaky
-#define SILENCED_SOUND_EXTRARANGE -11
+#define SILENCED_SOUND_EXTRARANGE -8
 ///Percentage of sound's range where no falloff is applied
 #define SOUND_DEFAULT_FALLOFF_DISTANCE 1 //For a normal sound this would be 1 tile of no falloff
 ///The default exponent of sound falloff
 #define SOUND_FALLOFF_EXPONENT 6
+///The default exponent of gun sound falloff
+#define GUN_SOUND_FALLOFF_EXPONENT 3
 
 //THIS SHOULD ALWAYS BE THE LOWEST ONE!
 //KEEP IT UPDATED

@@ -38,6 +38,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/* TODO: either make a better sprite for this or remove
 /datum/supply_pack/attachment/alof
 	name = "Alof Tube Crate"
 	desc = "Contains an antiquated spring operated magazine attachment for the HP Beacon. Has a capacity of three rounds."
@@ -46,6 +47,7 @@
 	crate_name = "alof crate"
 	faction = /datum/faction/srm
 	faction_discount = 10
+*/
 
 /datum/supply_pack/attachment/silencer
 	name = "Suppressor Crate"
@@ -54,19 +56,19 @@
 	contains = list(/obj/item/attachment/silencer)
 	crate_name = "suppressor crate"
 
+/datum/supply_pack/attachment/brake
+	name = "Muzzle Brake Crate"
+	desc = "Contains a single muzzle brake to be mounted on a firearm."
+	cost = 300
+	contains = list(/obj/item/attachment/muzzle_brake)
+	crate_name = "suppressor crate"
+
 /datum/supply_pack/attachment/counter
 	name = "Ammo Counter Crate"
 	desc = "Contains a single ammo counter to mount on a firearm."
 	cost = 100
 	contains = list(/obj/item/attachment/ammo_counter)
 	crate_name = "ammo counter crate"
-
-/datum/supply_pack/attachment/sling
-	name = "Shoulder Sling Crate"
-	desc = "Contains a single shoulder sling to be mounted on a firearm for easy carrying without armor holsters. Only compatible with longarms."
-	cost = 250
-	contains = list(/obj/item/attachment/sling)
-	crate_name = "shoulder sling crate"
 
 /datum/supply_pack/attachment/scope
 	name = "Scope Crate"

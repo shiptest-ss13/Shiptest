@@ -1,4 +1,4 @@
-#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/scope, /obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/muzzle_brake, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/scope, /obj/item/attachment/long_scope, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
 #define CLIP_ATTACHMENT_POINTS list(ATTACHMENT_SLOT_MUZZLE = 1,ATTACHMENT_SLOT_RAIL = 1,ATTACHMENT_SLOT_SCOPE=1)
 
 
@@ -388,6 +388,16 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	fire_select_icon_state_prefix = "clip_"
 	adjust_fire_select_icon_state_on_safety = TRUE
 
+/obj/item/gun/ballistic/automatic/marksman/f4/indie
+	name = "F3"
+	desc = "An older model of the F4 that was used in very early CLIP service. Sold off as surplus at some point. Chambered in .308."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+	icon_state = "f4_indie"
+	item_state = "f4_indie"
+
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq
 	name = "\improper SsG-04"
 	desc = "An F4 rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
@@ -471,7 +481,6 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	item_state = "cm82"
 	show_magazine_on_sprite = TRUE
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
 	bolt_type = BOLT_TYPE_CLIP
 	default_ammo_type = /obj/item/ammo_box/magazine/p16
 	allowed_ammo_types = list(
@@ -553,7 +562,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	manufacturer = MANUFACTURER_MINUTEMAN
 	default_ammo_type = /obj/item/ammo_box/magazine/cm40_762_40_box
 	allowed_ammo_types = list(
@@ -596,6 +605,14 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/gun/ballistic/automatic/hmg/cm40/before_firing(atom/target, mob/user, params)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.set_light_color(COLOR_SOFT_RED)
+		chambered.BB.set_light_range(2)
 
 /obj/item/ammo_box/magazine/cm40_762_40_box
 	name = "CM-40 box magazine (7.62x40mm CLIP)"

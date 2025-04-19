@@ -10,7 +10,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot,
@@ -43,7 +43,6 @@
 
 	gunslinger_recoil_bonus = -1
 
-	min_recoil = 0.1
 	wear_rate = 0
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
@@ -173,7 +172,7 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		var/obj/item/stack/cable_coil/C = A
 		if(C.use(10))
-			slot_flags = ITEM_SLOT_BACK
+			slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_appearance()

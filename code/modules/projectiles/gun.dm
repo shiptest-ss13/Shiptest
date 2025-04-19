@@ -7,7 +7,7 @@
 	lefthand_file = GUN_LEFTHAND_ICON
 	righthand_file = GUN_RIGHTHAND_ICON
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 	custom_materials = list(/datum/material/iron=2000)
 	w_class = WEIGHT_CLASS_NORMAL
 	throwforce = 5
@@ -21,7 +21,6 @@
 	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
 	trigger_guard = TRIGGER_GUARD_NORMAL
 
-	light_system = MOVABLE_LIGHT_DIRECTIONAL
 
 	///The manufacturer of this weapon. For flavor mostly. If none, this will not show.
 	var/manufacturer = MANUFACTURER_NONE
@@ -31,9 +30,13 @@
 */
 	///Effect for the muzzle flash of the gun.
 	var/obj/effect/muzzle_flash/muzzle_flash
+	///Disables muzzle flash effect if false
+	var/has_muzzle_flash = TRUE
 
-	light_range = 3
+	light_range = 2
+	light_power = 2
 	light_color = COLOR_VERY_SOFT_YELLOW
+	light_system = MOVABLE_LIGHT
 	light_on = FALSE
 
 	///Icon state of the muzzle flash effect.
@@ -44,9 +47,15 @@
 */
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
+	var/fire_sound_extrarange = GUN_SOUND_EXTRARANGE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
 	var/dry_fire_text = "click"
+
+	//whether or not a message is displayed when fired
+	var/suppressed = FALSE
+	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg' /// needs replacing, haven never been a fan of movie silencer sounds
+	var/suppressed_volume = 60
 
 /*
  *  Reloading
@@ -126,10 +135,6 @@
 /*
  *  Operation
 */
-	//whether or not a message is displayed when fired
-	var/suppressed = FALSE
-	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
-	var/suppressed_volume = 60
 
 	//true if the gun is wielded via twohanded component, shouldnt affect anything else
 	var/wielded = FALSE
@@ -216,11 +221,6 @@
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
 
-	///Used if the guns recoil is lower then the min, it clamps the highest recoil
-	var/min_recoil = 0
-	///if we want a min recoil (or lack of it) whilst aiming
-	var/min_recoil_aimed = 0
-
 	var/gunslinger_recoil_bonus = 0
 	var/gunslinger_spread_bonus = 0
 
@@ -278,7 +278,10 @@
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
 	var/list/slot_offsets = list()
-	var/underbarrel_prefix = "" // so the action has the right icon for underbarrel gun
+	///What goes before the attachment's icon overlay. Ex: "big_" would turn "silencer-attached" into "big_silencer-attached"
+	var/attachment_icon_overlay_prefix = ""
+	/// so the action has the right icon for underbarrel gun
+	var/underbarrel_prefix = ""
 
 /*
  *  Zooming
@@ -345,6 +348,8 @@
 	build_firemodes()
 	if(sawn_off)
 		sawoff(forced = TRUE)
+	if(slot_flags & ITEM_SLOT_SUITSTORE)
+		ADD_TRAIT(src, TRAIT_FORCE_SUIT_STORAGE, REF(src))
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -623,7 +628,7 @@
 		//Calculate spread
 		sprd = calculate_spread(user, bonus_spread)
 
-	before_firing(target,user)
+	before_firing(target, user, params)
 	//If we cant fire the round, just end the proc here. Otherwise, continue
 	if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, src))
 		shoot_with_empty_chamber(user)
@@ -677,7 +682,7 @@
 
 	user.changeNext_move(clamp(fire_delay, 0, CLICK_CD_RANGE))
 
-	if(muzzle_flash && !muzzle_flash.applied)
+	if(has_muzzle_flash && muzzle_flash && !muzzle_flash.applied)
 		handle_muzzle_flash(user, muzzle_angle)
 
 	if(wielded_fully)
@@ -690,9 +695,9 @@
 		simulate_recoil(user, recoil_temp, actual_angle)
 
 	if(suppressed)
-		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
+		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE)
 	else
-		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
+		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound, fire_sound_extrarange, GUN_SOUND_FALLOFF_EXPONENT)
 		if(message)
 			if(pointblank)
 				user.visible_message(
@@ -849,13 +854,15 @@
 #undef BRAINS_BLOWN_THROW_SPEED
 
 //Happens before the actual projectile creation
-/obj/item/gun/proc/before_firing(atom/target,mob/user)
+/obj/item/gun/proc/before_firing(atom/target, mob/user, params)
+	SIGNAL_HANDLER
+	SEND_SIGNAL(src,COMSIG_GUN_BEFORE_FIRING, target, user, params)
 	return
 
 /obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		recoil_bonus += gunslinger_recoil_bonus
-	return clamp(recoil_bonus, min_recoil , INFINITY)
+	return clamp(recoil_bonus, 0 , INFINITY)
 
 /obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
@@ -1038,7 +1045,6 @@
 
 	var/obj/item/gun/gun = target
 	gun.zoom(owner, owner.dir)
-	gun.min_recoil = gun.min_recoil_aimed
 
 /datum/action/toggle_scope_zoom/Remove(mob/user)
 	if(!istype(target, /obj/item/gun))
@@ -1073,13 +1079,11 @@
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
 		ADD_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
-		min_recoil = min_recoil_aimed
 		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/aiming, multiplicative_slowdown = aimed_wield_slowdown)
 	else
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		REMOVE_TRAIT(user, TRAIT_AIMING, ref(src))
 		user.client.view_size.zoomIn()
-		min_recoil = initial(min_recoil)
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/aiming)
 	return zoomed
 

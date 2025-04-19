@@ -29,6 +29,7 @@
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
+	RegisterSignal(parent, COMSIG_GUN_BEFORE_FIRING, PROC_REF(handle_gun_before_firing))
 	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
 	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(handle_hand_attack))
@@ -45,15 +46,17 @@
 
 /datum/component/attachment_holder/proc/handle_overlays(obj/item/parent, list/overlays)
 	SIGNAL_HANDLER
+	var/obj/item/gun/parent_gun = parent
 
 	for(var/obj/item/attachment/attach as anything in attachments)
 		var/slot = SEND_SIGNAL(attach, COMSIG_ATTACHMENT_GET_SLOT)
 		slot = attachment_slot_from_bflag(slot)
 		var/list/attach_overlays = list()
-		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UPDATE_OVERLAY, attach_overlays)
+		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UPDATE_OVERLAY, attach_overlays, our_gun=parent_gun)
 		for(var/mutable_appearance/overlay as anything in attach_overlays)
 			if(slot_offsets && slot_offsets[slot])
 				var/matrix/overlay_matrix = new
+				//big_raillight-on-attached
 				overlay_matrix.Translate(slot_offsets[slot]["x"] - attach.pixel_shift_x, slot_offsets[slot]["y"] - attach.pixel_shift_y)
 				overlay.transform = overlay_matrix
 			overlays += overlay
@@ -206,6 +209,13 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target_atom, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_gun_before_firing(obj/item/parent, atom/target_atom, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_BEFORE_FIRING, parent, target_atom, user, params))
 			return TRUE
 
 /datum/component/attachment_holder/proc/handle_item_wield(obj/item/parent, mob/user, params)
