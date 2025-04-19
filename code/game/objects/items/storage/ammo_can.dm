@@ -69,6 +69,12 @@
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a762_40(src)
 
+/obj/item/storage/toolbox/ammo/a12g_slug/PopulateContents()
+	name = "ammo can (12g Slugs)"
+	icon_state = "ammobox_12ga"
+	for (var/i in 1 to 4)
+		new /obj/item/storage/box/ammo/a12g_slug(src)
+
 /obj/item/storage/toolbox/ammo/a308/PopulateContents()
 	name = "ammo can (.308)"
 	icon_state = "ammobox_308"

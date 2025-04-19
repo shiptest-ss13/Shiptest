@@ -940,6 +940,10 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
+/obj/item/ammo_box/magazine/m12g_bulldog/slug
+	name = "shotgun box magazine (12g Slugs)"
+	ammo_type = /obj/item/ammo_casing/shotgun
+
 /obj/item/ammo_box/magazine/m12g_bulldog/empty
 	start_empty = TRUE
 
