@@ -132,6 +132,7 @@
 	name = "dueling pistol"
 	desc = "High-tech dueling pistol. Launches chaff and projectile according to preset settings."
 	icon_state = "dueling_pistol"
+	spawn_blacklisted = TRUE
 	item_state = "gun"
 	ammo_x_offset = 2
 	w_class = WEIGHT_CLASS_SMALL

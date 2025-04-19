@@ -94,12 +94,14 @@
 /obj/item/gun/energy/kinetic_accelerator/cyborg
 	name = "chassis_mounted kinetic accelerator"
 	icon_state = "kineticgun_b"
+	bad_type = /obj/item/gun/energy/kinetic_accelerator/cyborg
 	holds_charge = TRUE
 	unique_frequency = TRUE
 	max_mod_capacity = 80
 
 /obj/item/gun/energy/kinetic_accelerator/minebot
 	name = "chassis_mounted kinetic accelerator"
+	bad_type = /obj/item/gun/energy/kinetic_accelerator/minebot
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	overheat_time = 20
 	holds_charge = TRUE

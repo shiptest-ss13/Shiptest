@@ -5,6 +5,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "hunting"
 	item_state = "hunting"
+	bad_type = /obj/item/gun/ballistic/rifle
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/boltaction
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/boltaction,

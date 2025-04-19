@@ -1,6 +1,7 @@
 //TODO: rename this file to lmg.dm and: /obj/item/gun/ballistic/automatic/hmg --> /obj/item/gun/ballistic/automatic/lmg
 
 /obj/item/gun/ballistic/automatic/hmg
+	bad_type = /obj/item/gun/ballistic/automatic/hmg
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = 0
 	weapon_weight = WEAPON_HEAVY

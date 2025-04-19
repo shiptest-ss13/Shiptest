@@ -8,6 +8,8 @@
 
 	hud_type = /datum/hud/living
 
+	bad_type = /mob/living
+
 	var/resize = 1 ///Badminnery resize
 	var/lastattacker = null
 	var/lastattackerckey = null

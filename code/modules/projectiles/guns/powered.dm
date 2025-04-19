@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/powered
+	bad_type = /obj/item/gun/ballistic/automatic/powered
 	default_ammo_type = /obj/item/ammo_box/magazine/gauss
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/gauss,

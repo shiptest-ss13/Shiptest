@@ -7,6 +7,8 @@
 	living_flags = MOVES_ON_ITS_OWN
 	status_flags = CANPUSH
 
+	bad_type = /mob/living/simple_animal
+
 	var/icon_living = ""
 	///Icon when the animal is dead. Don't use animated icons for this.
 	var/icon_dead = ""

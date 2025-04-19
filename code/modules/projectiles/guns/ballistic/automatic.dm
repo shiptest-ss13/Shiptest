@@ -1,5 +1,6 @@
 
 /obj/item/gun/ballistic/automatic
+	bad_type = /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_BULKY
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
