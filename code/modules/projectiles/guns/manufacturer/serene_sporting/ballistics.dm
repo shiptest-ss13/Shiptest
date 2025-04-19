@@ -50,6 +50,7 @@
 	default_attachments = list(/obj/item/attachment/m17_barrel)
 
 EMPTY_GUN_HELPER(automatic/pistol/m17)
+NO_MAG_GUN_HELPER(automatic/pistol/m17)
 
 /obj/item/ammo_box/magazine/m17
 	name = "Model 17 magazine (.22lr)"
@@ -371,6 +372,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	)
 
 EMPTY_GUN_HELPER(automatic/m15)
+NO_MAG_GUN_HELPER(automatic/m15)
 
 /obj/item/ammo_box/magazine/m15
 	name = "Model 15 magazine (5.56x42mm CLIP)"
