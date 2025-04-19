@@ -461,3 +461,8 @@
 	name = "Gauze-class Ambulance Pod"
 	faction = /datum/faction/syndicate/cybersun
 	prefix = "CSSV"
+
+/datum/map_template/shuttle/subshuttles/esquimalt
+	file_name = "independent_esquimalt"
+	name = "Esquimalt-class Salvage Pod"
+	prefix = "SV"
