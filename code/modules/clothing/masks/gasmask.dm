@@ -290,3 +290,10 @@
 	item_state = "inteq_gas_mask"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+
+/obj/item/clothing/mask/foggy
+	desc = "wow. fov. so cool"
+
+/obj/item/clothing/mask/foggy/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/clothing_fov_visor, FOV_90_DEGREES)

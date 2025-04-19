@@ -656,7 +656,7 @@
 	return 0
 
 /obj/mecha/proc/mechturn(direction)
-	setDir(direction)
+	set_dir_mecha(direction)
 	if(turnsound)
 		playsound(src,turnsound,40,TRUE)
 	return 1
@@ -665,7 +665,7 @@
 	var/current_dir = dir
 	. = step(src,direction)
 	if(strafe)
-		setDir(current_dir)
+		set_dir_mecha(current_dir)
 	if(. && !step_silent)
 		play_stepsound()
 	step_silent = FALSE
@@ -1011,7 +1011,7 @@
 		forceMove(loc)
 		log_message("[H] moved in as pilot.", LOG_MECHA)
 		icon_state = initial(icon_state)
-		setDir(dir_in)
+		set_dir_mecha(dir_in)
 		playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
@@ -1064,7 +1064,7 @@
 	SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
 	equipment_check()
 	update_appearance()
-	setDir(dir_in)
+	set_dir_mecha(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
 	if(!internal_damage)
 		SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
@@ -1159,7 +1159,7 @@
 			mmi.set_mecha(null)
 			mmi.update_appearance()
 		icon_state = initial(icon_state)+"-open"
-		setDir(dir_in)
+		set_dir_mecha(dir_in)
 
 	if(L && L.client)
 		L.update_mouse_pointer()
@@ -1325,3 +1325,8 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/charge_end()
 	walk(src,0)
 	charging = FALSE
+
+/// Sets the direction of the mecha and all of its occcupents, required for FOV. Alternatively one could make a recursive contents registration and register topmost direction changes in the fov component
+/obj/mecha/proc/set_dir_mecha(new_dir)
+	setDir(new_dir)
+	occupant.setDir(new_dir)

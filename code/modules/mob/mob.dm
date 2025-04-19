@@ -461,6 +461,7 @@
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
 		return TRUE
+	SEND_SIGNAL(src, COMSIG_MOB_RESET_PERSPECTIVE)
 
 /// Show the mob's inventory to another mob
 /mob/proc/show_inv(mob/user)

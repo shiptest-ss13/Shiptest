@@ -1,6 +1,9 @@
 //Defines for atom layers and planes
 //KEEP THESE IN A NICE ACSCENDING ORDER, PLEASE
-#define LOWEST_EVER_PLANE -100
+#define LOWEST_EVER_PLANE -200
+
+#define FIELD_OF_VISION_BLOCKER_PLANE -199
+#define FIELD_OF_VISION_BLOCKER_RENDER_TARGET "*FIELD_OF_VISION_BLOCKER_RENDER_TARGET"
 
 #define CLICKCATCHER_PLANE -99
 
@@ -10,15 +13,16 @@
 #define PLANE_SPACE_PARALLAX_RENDER_TARGET "PLANE_SPACE_PARALLAX"
 
 
-#define OPENSPACE_LAYER 17 //Openspace layer over all
-#define OPENSPACE_PLANE -4 //Openspace plane below all turfs
-#define OPENSPACE_BACKDROP_PLANE -3 //Black square just over openspace plane to guaranteed cover all in openspace turf
+#define OPENSPACE_LAYER 600 //Openspace layer over all
+#define OPENSPACE_PLANE -9 //Openspace plane below all turfs
+#define OPENSPACE_BACKDROP_PLANE -8 //Black square just over openspace plane to guaranteed cover all in openspace turf
 
 
-#define FLOOR_PLANE -2
+#define FLOOR_PLANE -7
 #define FLOOR_PLANE_RENDER_TARGET "FLOOR_PLANE"
-#define GAME_PLANE -1
+#define GAME_PLANE -4
 #define GAME_PLANE_RENDER_TARGET "GAME_PLANE"
+#define GAME_PLANE_FOV_HIDDEN -4 // should be -3 if its a direct port but could not get it working and messes with layers
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 #define BLACKNESS_PLANE_RENDER_TARGET "BLACKNESS_PLANE"
 
@@ -165,6 +169,7 @@
 #define BLIND_LAYER 31.3
 #define CRIT_LAYER 31.4
 #define CURSE_LAYER 31.5
+#define FOV_EFFECTS_LAYER 10000 //Blindness effects are not layer 4, they lie to you
 #define FULLSCREEN_RENDER_TARGET "FULLSCREEN_PLANE"
 
 // Runechat Interlude

@@ -87,6 +87,7 @@
 
 /obj/structure/mineral_door/proc/Open()
 	isSwitchingStates = TRUE
+	play_fov_effect(src, 6, "note")
 	playsound(src, openSound, 100, TRUE)
 	set_opacity(FALSE)
 	flick("[initial(icon_state)]opening",src)
@@ -108,6 +109,7 @@
 	for(var/mob/living/L in T)
 		return
 	isSwitchingStates = TRUE
+	play_fov_effect(src, 6, "note")
 	playsound(src, closeSound, 100, TRUE)
 	flick("[initial(icon_state)]closing",src)
 	sleep(10)
