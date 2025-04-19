@@ -4,10 +4,10 @@
 	icon_state = "odysseus"
 	step_in = 2
 	max_temperature = 15000
-	max_integrity = 120
+	max_integrity = 200
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	wreckage = /obj/structure/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
-	deflect_chance = 15
 	base_step_energy_drain = 11
 
 /obj/mecha/medical/odysseus/moved_inside(mob/living/carbon/human/H)
