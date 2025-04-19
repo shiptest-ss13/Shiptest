@@ -40,6 +40,32 @@
 /obj/projectile/bullet/incendiary/fnx99
 	damage = 25
 
+// Mech Railgun
+
+/obj/projectile/bullet/p50/penetrator/sabot
+	name = "Iron-tungsten rod"
+	icon_state = "sabot"
+	projectile_piercing = ALL // Little to nothing it can't pierce through
+	projectile_phasing = NONE// Might need adjusting to allow it to pierce things such as computers and what not, uncertain though
+	var/anti_armour_damage = 50
+	ricochet_chance = 0 // Superheated tungsten rod - I'd like to imagine it's impossible for it to ricochet
+	speed = 0.4 // Railgun, go fast
+
+/obj/projectile/bullet/p50/penetrator/sabot/on_hit(atom/target, blocked = FALSE)
+	..()
+	if(pierces > 1)
+		damage -= 30
+		anti_armour_damage -= 25
+		// After the projectile has pierced the damage will be cut in half
+	if(pierces >= 2)
+		qdel(src)
+		// Projectile will immediately delete itself once it pierces something else, so can only punch through one wall
+	if(ismecha(target))
+		var/obj/mecha/M = target
+		M.take_damage(anti_armour_damage)
+		// Mechs take extra damage
+	return BULLET_ACT_HIT
+
 // Turrets
 
 /obj/projectile/bullet/manned_turret
