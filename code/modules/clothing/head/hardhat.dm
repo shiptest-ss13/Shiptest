@@ -119,10 +119,6 @@
 	icon_state = "hardhat_dblue"
 	dog_fashion = null
 
-/obj/item/clothing/head/hardhat/solgov
-	icon_state = "hardhat_solgov"
-	dog_fashion = null
-
 /obj/item/clothing/head/hardhat/atmos
 	icon_state = "hardhat_atmos"
 	dog_fashion = null

@@ -525,6 +525,6 @@
 	name = "\improper CLIP overshirt"
 	desc = "A standard issue shirt designed to be worn over the formal uniform's undershirt."
 	icon_state = "clip_formal_overshirt"
-	icon = 'icons/obj/clothing/accessories.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
+	icon = 'icons/obj/clothing/faction/clip/accessory.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/accessory.dmi'
 	minimize_when_attached = FALSE
