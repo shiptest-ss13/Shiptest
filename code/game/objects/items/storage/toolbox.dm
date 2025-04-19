@@ -58,6 +58,7 @@
 		if(3)
 			new /obj/item/flashlight/flare(src)
 	new /obj/item/radio(src)
+	new /obj/item/oxygen_candle(src)
 
 /obj/item/storage/toolbox/emergency/old
 	name = "rusty red toolbox"

@@ -1,0 +1,55 @@
+#define OXY_CANDLE_RELEASE_TEMP (T20C + 20) // 40 celsius, it's hot. Will be even hotter with hotspot expose
+
+/obj/item/oxygen_candle
+	name = "oxygen candle"
+	desc = "A steel tube with the words \"OXYGEN - PULL CORD TO IGNITE\" stamped on the side."
+	icon = 'icons/obj/oxygen_candle.dmi'
+	icon_state = "oxycandle"
+	w_class = WEIGHT_CLASS_SMALL
+	light_color = LIGHT_COLOR_LAVA // Very warm chemical burn
+	var/pulled = FALSE
+	var/processing = FALSE
+	var/fuel = 50 //seconds of burn time
+
+/obj/item/oxygen_candle/examine_more(mob/user)
+	. = ..()
+	. += "A small label reads: "+ span_warning("\"WARNING: NOT FOR LIGHTING USE. WILL IGNITE FLAMMABLE GASSES\"")
+
+/obj/item/oxygen_candle/attack_self(mob/user)
+	if(!pulled)
+		playsound(src, 'sound/effects/fuse.ogg', 75, 1)
+		to_chat(user, span_notice("You pull the cord on [src], and it starts to burn."))
+		icon_state = "oxycandle_burning"
+		pulled = TRUE
+		processing = TRUE
+		START_PROCESSING(SSobj, src)
+		set_light(2)
+
+/obj/item/oxygen_candle/process(seconds_per_tick)
+	var/turf/pos = get_turf(src)
+	if(!pos)
+		return
+	pos.hotspot_expose(500, 100)
+	pos.atmos_spawn_air("o2=[seconds_per_tick * 10];TEMP=[OXY_CANDLE_RELEASE_TEMP]")
+	fuel = max(fuel -= seconds_per_tick, 0)
+	if(fuel <= 0)
+		set_light(0)
+		STOP_PROCESSING(SSobj, src)
+		processing = FALSE
+		name = "burnt oxygen candle"
+		icon_state = "oxycandle_burnt"
+		desc += "\nThis tube has exhausted its chemicals."
+
+/obj/item/oxygen_candle/burnt
+	name = "burnt oxygen candle"
+	icon_state = "oxycandle_burnt"
+	desc = "A steel tube with the words \"OXYGEN - PULL CORD TO IGNITE\" stamped on the side. \nThis tube has exhausted its chemicals."
+	pulled = TRUE
+	fuel = 0
+
+/obj/item/oxygen_candle/Destroy()
+	if(processing)
+		STOP_PROCESSING(SSobj, src)
+	return ..()
+
+#undef OXY_CANDLE_RELEASE_TEMP
