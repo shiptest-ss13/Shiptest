@@ -27,7 +27,7 @@
 /obj/item/melee/spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
-	AddComponent(/datum/component/jousting)
+	AddComponent(/datum/component/jousting, max_tile_charge = 9, min_tile_charge = 6)
 	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = force_wielded, icon_wielded = "[icon_prefix]_w")
 
 /obj/item/melee/spear/update_icon_state()
