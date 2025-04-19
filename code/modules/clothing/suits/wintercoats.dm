@@ -34,6 +34,21 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	flags_inv = HIDEHAIR|HIDEEARS
 
+/obj/item/clothing/suit/hooded/wintercoat/recolorable
+	desc = "A heavy jacket made from 'synthetic' animal furs. This one can be recolored, but only once."
+	unique_reskin = list(
+		"grey winter coat" = "coatwinter",
+		"red winter coat" = "coatsecurity",
+		"light blue winter coat" = "coatmedical",
+		"blue winter coat" = "coatparamedic",
+		"white-purple winter coat" = "coatscience",
+		"yellow winter coat" = "coatengineer",
+		"yellow-cyan winter coat" = "coatatmos",
+		"green-blue winter coat" = "coathydro",
+		"black-yellow winter coat" = "coatcargo",
+		"purple-orange winter coat" = "coatminer"
+	)
+
 /obj/item/clothing/suit/hooded/wintercoat/captain
 	name = "captain's winter coat"
 	icon_state = "coatcaptain"
@@ -45,7 +60,7 @@
 	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/captain
-	icon_state = "hood_captain"
+	icon_state = "coatcaptain"
 
 /obj/item/clothing/suit/hooded/wintercoat/security
 	name = "security winter coat"
@@ -58,7 +73,7 @@
 	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/security
-	icon_state = "hood_security"
+	icon_state = "coatsecurity"
 
 /obj/item/clothing/suit/hooded/wintercoat/medical
 	name = "medical winter coat"
@@ -68,7 +83,7 @@
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/head/hooded/winterhood/medical
-	icon_state = "hood_medical"
+	icon_state = "coatmedical"
 
 /obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
 	name = "paramedic winter coat"
@@ -77,7 +92,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/paramedic
 
 /obj/item/clothing/head/hooded/winterhood/medical/paramedic
-	icon_state = "hood_paramedic"
+	icon_state = "coatparamedic"
 
 /obj/item/clothing/suit/hooded/wintercoat/science
 	name = "science winter coat"
@@ -107,7 +122,7 @@
 				)
 
 /obj/item/clothing/head/hooded/winterhood/science
-	icon_state = "hood_science"
+	icon_state = "coatscience"
 
 /obj/item/clothing/suit/hooded/wintercoat/engineering
 	name = "engineering winter coat"
@@ -128,7 +143,7 @@
 
 
 /obj/item/clothing/head/hooded/winterhood/engineering
-	icon_state = "hood_engineer"
+	icon_state = "coatengineer"
 
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
 	name = "atmospherics winter coat"
@@ -137,7 +152,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/engineering/atmos
 
 /obj/item/clothing/head/hooded/winterhood/engineering/atmos
-	icon_state = "hood_atmos"
+	icon_state = "coatatmos"
 
 /obj/item/clothing/suit/hooded/wintercoat/hydro
 	name = "hydroponics winter coat"
@@ -161,7 +176,7 @@
 				)
 
 /obj/item/clothing/head/hooded/winterhood/hydro
-	icon_state = "hood_hydro"
+	icon_state = "coathydro"
 
 /obj/item/clothing/suit/hooded/wintercoat/cargo
 	name = "cargo winter coat"
@@ -170,7 +185,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/cargo
 
 /obj/item/clothing/head/hooded/winterhood/cargo
-	icon_state = "hood_cargo"
+	icon_state = "coatcargo"
 
 /obj/item/clothing/suit/hooded/wintercoat/miner
 	name = "mining winter coat"
@@ -187,7 +202,7 @@
 				)
 
 /obj/item/clothing/head/hooded/winterhood/miner
-	icon_state = "hood_miner"
+	icon_state = "coatminer"
 
 // Inteq
 
@@ -200,7 +215,7 @@
 	//supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/hooded/winterhood/security/inteq
-	icon_state = "hood_inteq"
+	icon_state = "coatinteq"
 	//supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
@@ -213,8 +228,8 @@
 /obj/item/clothing/head/hooded/winterhood/security/inteq/alt
 	name = "inteq hood"
 	desc = "A comfortable looking brown hood."
-	icon_state = "hood_inteq_alt"
-	item_state = "hood_inteq_alt"
+	icon_state = "coatinteq_alt"
+	item_state = "coatinteq_alt"
 
 // CentCom
 
@@ -230,7 +245,7 @@
 	allowed += GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/centcom
-	icon_state = "hood_centcom"
+	icon_state = "coatcentcom"
 
 // SolGov
 
@@ -242,4 +257,4 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/solgov
 
 /obj/item/clothing/head/hooded/winterhood/solgov
-	icon_state = "hood_solgov"
+	icon_state = "coatsolgov"

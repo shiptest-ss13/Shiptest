@@ -8,8 +8,8 @@
 	subtype_path = /datum/gear/suit/coat
 
 /datum/gear/suit/coat/plain
-	display_name = "winter coat"
-	path = /obj/item/clothing/suit/hooded/wintercoat
+	display_name = "winter coat, recolorable"
+	path = /obj/item/clothing/suit/hooded/wintercoat/recolorable
 
 //JACKETS
 /datum/gear/suit/jacket
