@@ -30,7 +30,7 @@
 	var/turf/pos = get_turf(src)
 	if(!pos)
 		return
-	pos.hotspot_expose(500 * seconds_per_tick, 100 * seconds_per_tick)
+	pos.hotspot_expose(500, 100 * seconds_per_tick)
 	pos.atmos_spawn_air("o2=[seconds_per_tick * 10];TEMP=[OXY_CANDLE_RELEASE_TEMP]")
 	fuel = max(fuel -= seconds_per_tick, 0)
 	if(fuel <= 0)
