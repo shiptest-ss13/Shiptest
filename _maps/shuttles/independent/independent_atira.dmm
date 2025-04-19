@@ -3029,7 +3029,9 @@
 /area/ship/medical)
 "MI" = (
 /obj/structure/chair/sofa/blue/directional/south,
-/obj/machinery/airalarm/directional/north,
+/obj/machinery/airalarm/directional/north{
+	pixel_x = 3
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -3796,8 +3798,9 @@
 	dir = 9
 	},
 /obj/machinery/light/directional/west,
+/obj/machinery/computer/helm/viewscreen/directional/north,
 /obj/machinery/button/door{
-	pixel_x = 9;
+	pixel_x = 17;
 	pixel_y = 23;
 	name = "window shutters";
 	id = "a_lobby"
