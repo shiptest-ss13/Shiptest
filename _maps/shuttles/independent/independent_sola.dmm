@@ -799,8 +799,10 @@
 	pixel_x = 19;
 	pixel_y = 12
 	},
-/obj/item/kirbyplants/random{
-	pixel_x = 9
+/obj/item/kirbyplants{
+	icon_state = "plant-18";
+	pixel_x = 9;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
@@ -897,7 +899,6 @@
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/storage/belt/mining/alt,
 /obj/item/storage/belt/mining/alt,
-/obj/item/attachment/sling,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
 "mX" = (
@@ -1040,7 +1041,6 @@
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -1048,6 +1048,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "pj" = (
@@ -1174,6 +1175,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "ri" = (
@@ -1253,7 +1255,8 @@
 /obj/structure/sign/poster/contraband/cybersun{
 	pixel_y = 30
 	},
-/turf/open/floor/plasteel/mono/dark,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/crew/cryo)
 "sn" = (
 /turf/closed/wall/mineral/titanium,
@@ -1517,9 +1520,6 @@
 /area/ship/crew/dorm)
 "vw" = (
 /obj/structure/catwalk/over,
-/obj/structure/marker_beacon{
-	picked_color = "Burgundy"
-	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "vx" = (
@@ -1992,7 +1992,10 @@
 	},
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/plasteel/mono/dark,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "zq" = (
 /obj/structure/grille,
@@ -2597,6 +2600,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "HE" = (
@@ -2628,7 +2632,10 @@
 	pixel_y = 9
 	},
 /obj/structure/chair/handrail,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/industrial/caution/red{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "HJ" = (
 /obj/machinery/power/smes/shuttle/precharged,
@@ -2784,7 +2791,10 @@
 	},
 /obj/item/paper,
 /obj/item/ammo_casing/c38/trac,
-/turf/open/floor/plasteel/mono/dark,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Kv" = (
 /obj/structure/cable/pink{
@@ -3348,9 +3358,13 @@
 	pixel_y = 8;
 	pixel_x = -5
 	},
-/obj/item/attachment/scope{
-	pixel_x = 7;
-	pixel_y = -5
+/obj/item/attachment/rail_light{
+	pixel_x = 12;
+	pixel_y = -6
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = 12;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
@@ -4653,7 +4667,7 @@ bK
 bK
 bK
 bK
-Je
+LM
 BG
 dX
 dy
