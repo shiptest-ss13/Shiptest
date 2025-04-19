@@ -472,6 +472,7 @@
 /obj/machinery/atmospherics/pipe/manifold/purple/visible/layer4{
 	dir = 4
 	},
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "hu" = (
@@ -654,16 +655,28 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/item/cutting_board{
-	pixel_y = 2;
-	pixel_x = 2
+/obj/machinery/coffeemaker/premium{
+	pixel_x = 5
 	},
-/obj/item/melee/knife{
-	pixel_y = 3;
-	pixel_x = 1
+/obj/item/storage/fancy/coffee_cart_rack{
+	pixel_x = -11;
+	pixel_y = -2
 	},
-/obj/item/kitchen/rollingpin{
-	pixel_x = 4
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = -12;
+	pixel_y = 15
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = -12;
+	pixel_y = 3
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = -12;
+	pixel_y = 7
+	},
+/obj/item/coffee_cartridge/fancy{
+	pixel_x = -12;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -761,10 +774,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
 /obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "kF" = (
@@ -1132,6 +1145,17 @@
 	pixel_x = -2
 	},
 /obj/structure/cable,
+/obj/item/reagent_containers/condiment/creamer{
+	pixel_x = 11
+	},
+/obj/item/reagent_containers/condiment/creamer{
+	pixel_x = 11;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/condiment/creamer{
+	pixel_x = 11;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "qO" = (
@@ -1836,6 +1860,18 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/structure/table,
+/obj/item/cutting_board{
+	pixel_y = 2;
+	pixel_x = 2
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = 6
+	},
+/obj/item/melee/knife{
+	pixel_y = 3;
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "yx" = (
@@ -2294,6 +2330,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Dj" = (
@@ -2514,6 +2553,7 @@
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/manifold/purple/visible/layer4,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Gh" = (
