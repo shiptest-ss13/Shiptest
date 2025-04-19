@@ -659,25 +659,21 @@
 /obj/machinery/coffeemaker/premium{
 	pixel_x = 5
 	},
-/obj/item/storage/fancy/coffee_cart_rack{
-	pixel_x = -11;
-	pixel_y = -2
-	},
-/obj/item/coffee_cartridge/fancy{
+/obj/item/storage/box/coffeepack/arabica{
 	pixel_x = -12;
-	pixel_y = 15
+	pixel_y = 8
 	},
-/obj/item/coffee_cartridge/fancy{
+/obj/item/storage/box/coffeepack/arabica{
 	pixel_x = -12;
-	pixel_y = 3
+	pixel_y = 5
 	},
-/obj/item/coffee_cartridge/fancy{
+/obj/item/storage/box/coffeepack/arabica{
 	pixel_x = -12;
-	pixel_y = 7
+	pixel_y = 2
 	},
-/obj/item/coffee_cartridge/fancy{
+/obj/item/storage/box/coffeepack/arabica{
 	pixel_x = -12;
-	pixel_y = 11
+	pixel_y = -1
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -1146,16 +1142,13 @@
 	pixel_x = -2
 	},
 /obj/structure/cable,
-/obj/item/reagent_containers/condiment/creamer{
-	pixel_x = 11
+/obj/item/reagent_containers/glass/bottle/syrup_bottle/honey{
+	pixel_x = 10;
+	pixel_y = 12
 	},
-/obj/item/reagent_containers/condiment/creamer{
-	pixel_x = 11;
-	pixel_y = 11
-	},
-/obj/item/reagent_containers/condiment/creamer{
-	pixel_x = 11;
-	pixel_y = 6
+/obj/item/reagent_containers/glass/bottle/syrup_bottle/tea{
+	pixel_x = 10;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -1277,7 +1270,7 @@
 /area/ship/engineering/engine)
 "sf" = (
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
+/turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "ss" = (
 /obj/machinery/airalarm/directional/south,
@@ -1872,6 +1865,14 @@
 /obj/item/melee/knife{
 	pixel_y = 3;
 	pixel_x = 1
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 10;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -10;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -2668,6 +2669,9 @@
 /obj/structure/extinguisher_cabinet/directional/south{
 	pixel_x = -8
 	},
+/obj/structure/closet/crate/bin{
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/ccommons)
 "HW" = (
@@ -2704,7 +2708,7 @@
 /area/ship/cargo)
 "HY" = (
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
+/turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "Ic" = (
 /obj/effect/turf_decal/borderfloor{
@@ -2989,7 +2993,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "LG" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/engine/hull,
@@ -3201,6 +3205,9 @@
 /obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
