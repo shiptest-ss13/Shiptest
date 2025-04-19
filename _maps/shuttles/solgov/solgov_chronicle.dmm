@@ -706,6 +706,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/item/clothing/suit/space/solgov{
+	pixel_y = -9
+	},
+/obj/item/clothing/head/helmet/space/solgov{
+	pixel_y = 2
+	},
+/obj/item/tank/internals/oxygen{
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
 "eA" = (
@@ -3748,9 +3757,6 @@
 "AD" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/toilet)
-"AG" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/hallway/aft)
 "AH" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold{
 	dir = 4
@@ -4024,6 +4030,10 @@
 /obj/item/pen/solgov{
 	pixel_y = 2;
 	pixel_x = 1
+	},
+/obj/item/pipe_dispenser{
+	pixel_y = 6;
+	pixel_x = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -4703,6 +4713,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
+"Hq" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/aft)
 "HH" = (
 /obj/structure/railing/wood{
 	dir = 8
@@ -6448,9 +6461,57 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer5,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/structure/chair/handrail{
-	dir = 8
+/obj/structure/closet/wall/orange/directional/east,
+/obj/item/clothing/gloves/color/yellow{
+	pixel_y = -7
 	},
+/obj/item/clothing/glasses/meson/prescription,
+/obj/item/clothing/shoes/workboots{
+	pixel_y = -7;
+	pixel_x = -6
+	},
+/obj/item/clothing/suit/hazardvest/solgov{
+	pixel_x = -9
+	},
+/obj/item/clothing/head/welding{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = -7;
+	pixel_y = 3
+	},
+/obj/item/clothing/accessory/armband/engine{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/obj/item/pen/solgov{
+	pixel_x = 5
+	},
+/obj/item/clothing/under/solgov{
+	pixel_x = 3;
+	pixel_y = 8
+	},
+/obj/item/clothing/under/solgov/formal{
+	pixel_x = 12;
+	pixel_y = 8
+	},
+/obj/item/clipboard{
+	pixel_x = 7;
+	pixel_y = 5
+	},
+/obj/item/folder/solgov{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/item/clothing/head/hardhat/solgov{
+	pixel_y = 13
+	},
+/obj/item/storage/backpack/satchel/eng,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "UU" = (
@@ -7752,7 +7813,7 @@ Bs
 Bs
 Bs
 Bs
-AG
+Hq
 ez
 VD
 JM
