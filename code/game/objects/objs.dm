@@ -349,7 +349,7 @@
 /obj/deconstruct_act(mob/living/user, obj/item/I)
 	if(resistance_flags & INDESTRUCTIBLE)
 		to_chat(user, span_warning("[src] cannot be deconstructed!"))
-		return FALSE
+		return TRUE
 	return ..()
 
 /obj/analyzer_act(mob/living/user, obj/item/I)

@@ -224,6 +224,7 @@
 	name = "Solar's Best black coffee"
 	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
 	icon_state = "coffee"
+	icon = 'icons/obj/item/coffee.dmi'
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	spillable = TRUE
 	resistance_flags = FREEZE_PROOF

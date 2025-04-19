@@ -146,7 +146,7 @@
 		return
 
 	var/total_force
-	if(istype(src, /obj/structure))
+	if(is_type_in_list(src, list(/obj/structure, /obj/machinery)))
 		total_force = (attacking_item.force * attacking_item.demolition_mod)
 
 	else
@@ -170,7 +170,7 @@
 	send_item_attack_message(attacking_item, user)
 	if(!attacking_item.force)
 		return FALSE
-	apply_damage(attacking_item.force, attacking_item.damtype, break_modifier = attacking_item.force, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
+	apply_damage(attacking_item.force, attacking_item.damtype, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
 	if(attacking_item.damtype == BRUTE && prob(33))
 		attacking_item.add_mob_blood(src)
 		var/turf/location = get_turf(src)

@@ -232,7 +232,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, 1 SECONDS, volume=0))
 		to_chat(user, span_warning("You cut [src] into sheets."))
@@ -552,7 +552,7 @@
 
 /obj/structure/table/reinforced/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HELP)
-		if(!W.tool_start_check(user, amount=0))
+		if(!W.tool_start_check(user, src, amount=0))
 			return
 
 		if(deconstruction_ready)
@@ -803,7 +803,7 @@
 
 /obj/structure/table/wood/reinforced/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_CROWBAR && user.a_intent != INTENT_HELP)
-		if(!W.tool_start_check(user, amount=0))
+		if(!W.tool_start_check(user, src, amount=0))
 			return
 
 		if(deconstruction_ready)
