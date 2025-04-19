@@ -93,6 +93,7 @@
 /obj/machinery/syndicatebomb/Destroy()
 	QDEL_NULL(wires)
 	QDEL_NULL(countdown)
+	qdel(payload)
 	end_processing()
 	return ..()
 
