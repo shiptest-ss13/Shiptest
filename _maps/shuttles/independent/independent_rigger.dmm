@@ -149,6 +149,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "bZ" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 7;
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "cb" = (
@@ -187,10 +192,14 @@
 "cl" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/blue/border,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "cv" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "cx" = (
@@ -565,13 +574,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 20;
-	pixel_y = 5
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
@@ -966,6 +973,9 @@
 	dir = 6
 	},
 /obj/machinery/light/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "mz" = (
@@ -1059,6 +1069,9 @@
 	},
 /obj/effect/turf_decal/corner_steel_grid,
 /obj/machinery/firealarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "ng" = (
@@ -1115,13 +1128,13 @@
 	pixel_y = -20
 	},
 /obj/machinery/button/door{
-	id = "rigg_bathroom";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	name = "Bathroom Lock";
 	dir = 1;
+	id = "rigg_bathroom";
+	name = "Bathroom Lock";
+	normaldoorcontrol = 1;
+	pixel_x = 4;
 	pixel_y = -21;
-	pixel_x = 4
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -1195,6 +1208,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/construction)
 "pO" = (
@@ -1308,6 +1324,9 @@
 "qQ" = (
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/chair/handrail{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -1461,6 +1480,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "sL" = (
@@ -1523,6 +1543,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/chair/handrail,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "tx" = (
@@ -1804,6 +1825,18 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
+"wJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crew/canteen)
 "wS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2291,6 +2324,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small/directional/west,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "AQ" = (
@@ -2302,10 +2338,16 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Bp" = (
 /obj/machinery/light/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "BG" = (
@@ -2388,6 +2430,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 8
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "CL" = (
@@ -2646,8 +2689,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock{
-	name = "Head";
-	id_tag = "rigg_bathroom"
+	id_tag = "rigg_bathroom";
+	name = "Head"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/toilet)
@@ -2667,6 +2710,7 @@
 /area/ship/maintenance/central)
 "FO" = (
 /obj/machinery/computer/cryopod/directional/west,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/cryo)
 "Ga" = (
@@ -2787,6 +2831,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "GT" = (
@@ -3592,6 +3637,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "QI" = (
@@ -3648,6 +3696,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/machinery/firealarm/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Ru" = (
@@ -3693,6 +3744,7 @@
 	},
 /obj/machinery/firealarm/directional/south,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/chair/handrail,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Sa" = (
@@ -3880,6 +3932,7 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/chair/handrail,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Tq" = (
@@ -4193,6 +4246,7 @@
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 32
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "WO" = (
@@ -4204,6 +4258,9 @@
 "WS" = (
 /obj/item/radio/intercom/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/structure/chair/handrail{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -4383,6 +4440,9 @@
 	pixel_x = -32
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/chair/handrail{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Zs" = (
@@ -4620,7 +4680,7 @@ xR
 ab
 Rt
 dU
-IV
+wJ
 IV
 oV
 ID

@@ -10,17 +10,17 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/button/door{
-	pixel_y = -22;
-	pixel_x = -6;
-	name = "bay doors";
+	dir = 1;
 	id = "ra_cargo";
-	dir = 1
+	name = "bay doors";
+	pixel_x = -6;
+	pixel_y = -22
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 3;
-	pixel_y = -20;
+	dir = 1;
 	id = "ra_door";
-	dir = 1
+	pixel_x = 3;
+	pixel_y = -20
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -171,13 +171,13 @@
 	},
 /obj/machinery/light/small/directional/south,
 /obj/machinery/button/door{
+	dir = 1;
+	id = "ra_gay";
+	name = "privacy lock";
+	normaldoorcontrol = 1;
 	pixel_x = -10;
 	pixel_y = -22;
-	dir = 1;
-	name = "privacy lock";
-	id = "ra_gay";
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -214,10 +214,10 @@
 	pixel_y = 24
 	},
 /obj/machinery/button/door{
-	pixel_y = 22;
-	pixel_x = 5;
 	id = "ra_peng";
-	name = "engine shutters"
+	name = "engine shutters";
+	pixel_x = 5;
+	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -409,8 +409,8 @@
 /obj/structure/table,
 /obj/machinery/light/directional/north,
 /obj/item/storage/crayons{
-	pixel_y = 6;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 6
 	},
 /obj/item/taperecorder{
 	pixel_x = 10;
@@ -437,8 +437,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	dir = 4;
-	name = "XO's Quarters";
 	id_tag = "ra_lt";
+	name = "XO's Quarters";
 	req_access_txt = "3"
 	},
 /turf/open/floor/plasteel/dark,
@@ -498,8 +498,8 @@
 "hm" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/ale{
-	pixel_y = 7;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 7
 	},
 /obj/item/reagent_containers/food/drinks/ale{
 	pixel_x = -7;
@@ -594,10 +594,10 @@
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/north,
 /obj/machinery/button/door{
-	pixel_y = 23;
-	pixel_x = 9;
+	id = "ra_capt";
 	name = "window shutters";
-	id = "ra_capt"
+	pixel_x = 9;
+	pixel_y = 23
 	},
 /obj/item/modular_computer/laptop/preset/civilian,
 /turf/open/floor/carpet/royalblue,
@@ -608,8 +608,8 @@
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-09";
-	pixel_y = 14;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 14
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -625,8 +625,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = 22;
-	pixel_x = -12
+	pixel_x = -12;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/electrical)
@@ -663,10 +663,10 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	pixel_y = 22;
-	pixel_x = -6;
+	id = "ra_at";
 	name = "window shutter";
-	id = "ra_at"
+	pixel_x = -6;
+	pixel_y = 22
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -686,8 +686,8 @@
 	},
 /obj/item/clothing/suit/armor/hos/trenchcoat,
 /obj/item/clothing/glasses/hud/security{
-	pixel_y = 10;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 10
 	},
 /obj/item/melee/knife/switchblade,
 /obj/item/storage/backpack/security,
@@ -720,11 +720,11 @@
 "jc" = (
 /obj/structure/chair/sofa/brown/right/directional/south,
 /obj/machinery/button/door{
-	pixel_x = -22;
-	pixel_y = 8;
 	dir = 4;
+	id = "ra_obvs";
 	name = "window shutters";
-	id = "ra_obvs"
+	pixel_x = -22;
+	pixel_y = 8
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -758,8 +758,8 @@
 /obj/structure/table/reinforced,
 /obj/machinery/fax/indie,
 /obj/item/storage/box/matches{
-	pixel_y = 23;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 23
 	},
 /obj/item/radio/intercom/directional/south{
 	pixel_x = -2
@@ -838,9 +838,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
-	pixel_y = -18;
+	dir = 1;
 	pixel_x = 10;
-	dir = 1
+	pixel_y = -18
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/port)
@@ -869,8 +869,8 @@
 	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/snacks/chocolatebar{
-	pixel_y = 11;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
@@ -985,10 +985,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_y = -22;
-	pixel_x = 5;
 	id = "ra_seng";
-	name = "engine shutters"
+	name = "engine shutters";
+	pixel_x = 5;
+	pixel_y = -22
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -1006,18 +1006,18 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock{
-	name = "Observatory";
-	id_tag = "ra_gay"
+	id_tag = "ra_gay";
+	name = "Observatory"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "mq" = (
 /obj/docking_port/stationary{
+	dir = 8;
 	dwidth = 4;
-	width = 11;
 	height = 15;
-	dir = 8
+	width = 11
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -1139,16 +1139,16 @@
 	pixel_y = 5
 	},
 /obj/item/paper_bin{
-	pixel_y = 1;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 1
 	},
 /obj/item/pen/fourcolor{
-	pixel_y = 5;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = 5
 	},
 /obj/item/storage/pill_bottle/stimulant{
-	pixel_y = 13;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 13
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/light/small/directional/east,
@@ -1182,16 +1182,16 @@
 	req_access_txt = "1"
 	},
 /obj/item/clothing/shoes/combat{
-	pixel_y = -7;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -7
 	},
 /obj/item/clothing/shoes/combat{
-	pixel_y = -7;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -7
 	},
 /obj/item/clothing/shoes/combat{
-	pixel_y = -7;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = -7
 	},
 /obj/item/clothing/under/syndicate/camo{
 	pixel_x = 5
@@ -1203,28 +1203,28 @@
 	pixel_x = 5
 	},
 /obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_y = 11;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 11
 	},
 /obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_y = 11;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 11
 	},
 /obj/item/clothing/head/helmet/bulletproof/m10{
-	pixel_y = 11;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 11
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_y = 2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 2
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_y = 2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 2
 	},
 /obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_y = 2;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 6
@@ -1233,16 +1233,16 @@
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = 5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = 5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_y = 5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -1255,8 +1255,8 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
-	name = "Window Shutters";
-	id = "ra_at"
+	id = "ra_at";
+	name = "Window Shutters"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -1265,8 +1265,8 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "ra_cargo";
-	dir = 4
+	dir = 4;
+	id = "ra_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "ra_door"
@@ -1299,9 +1299,9 @@
 	pixel_y = 16
 	},
 /obj/structure/chair/plastic{
+	desc = "Now you just need a shower beer";
 	dir = 4;
-	name = "shower chair";
-	desc = "Now you just need a shower beer"
+	name = "shower chair"
 	},
 /obj/structure/mirror{
 	pixel_x = -24
@@ -1313,13 +1313,13 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
+	dir = 1;
+	id = "ra_shower";
+	name = "privacy lock";
+	normaldoorcontrol = 1;
 	pixel_x = 9;
 	pixel_y = -22;
-	dir = 1;
-	name = "privacy lock";
-	id = "ra_shower";
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
@@ -1335,10 +1335,10 @@
 	dir = 5
 	},
 /obj/machinery/button/door{
-	pixel_y = 20;
-	pixel_x = 16;
+	id = "ra_bridge_ext";
 	name = "bridge shutters";
-	id = "ra_bridge_ext"
+	pixel_x = 16;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -1516,9 +1516,9 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/machinery/light_switch{
+	dir = 1;
 	pixel_x = -10;
-	pixel_y = -20;
-	dir = 1
+	pixel_y = -20
 	},
 /obj/effect/decal/cleanable/generic,
 /obj/item/kirbyplants{
@@ -1565,8 +1565,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "ra_peng";
-	dir = 4
+	dir = 4;
+	id = "ra_peng"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering/engines/port)
@@ -1591,8 +1591,8 @@
 	dir = 1
 	},
 /obj/item/camera{
-	pixel_y = 4;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 4
 	},
 /obj/structure/cabinet/oneshot{
 	dir = 1;
@@ -1647,12 +1647,12 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/button/door{
+	id = "ra_lt";
+	name = "privacy lock";
+	normaldoorcontrol = 1;
 	pixel_x = 10;
 	pixel_y = 22;
-	name = "privacy lock";
-	id = "ra_lt";
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /turf/open/floor/wood,
 /area/ship/security)
@@ -1705,8 +1705,8 @@
 "uv" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/rag{
-	pixel_y = 10;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = 9
@@ -1738,8 +1738,8 @@
 /area/ship/bridge)
 "uy" = (
 /obj/machinery/door/poddoor{
-	id = "ra_cargo";
-	dir = 4
+	dir = 4;
+	id = "ra_cargo"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -1772,7 +1772,6 @@
 	name = "Dr. Flare's Magnificent Lighting Solution"
 	},
 /obj/item/storage/box/sparklers,
-/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "uW" = (
@@ -1789,9 +1788,9 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
+	dir = 1;
 	pixel_x = 10;
-	pixel_y = -22;
-	dir = 1
+	pixel_y = -22
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/grimy,
@@ -1814,9 +1813,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/corners,
-/obj/structure/chair/handrail{
-	dir = 1
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "wb" = (
@@ -1859,10 +1855,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_x = 22;
-	pixel_y = 9;
 	id = "ra_fore";
-	name = "fore airlock shutters"
+	name = "fore airlock shutters";
+	pixel_x = 22;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/ccommons)
@@ -1872,12 +1868,12 @@
 	dir = 8
 	},
 /obj/item/newspaper{
-	pixel_y = 7;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 7
 	},
 /obj/item/reagent_containers/food/drinks/mug/tea{
-	pixel_y = -1;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -1
 	},
 /obj/item/desk_flag/trans{
 	pixel_x = 8;
@@ -1929,13 +1925,13 @@
 	pixel_y = -11
 	},
 /obj/machinery/button/door{
+	dir = 4;
+	id = "ra_capt2";
+	name = "privacy lock";
+	normaldoorcontrol = 1;
 	pixel_x = -20;
 	pixel_y = 15;
-	dir = 4;
-	name = "privacy lock";
-	id = "ra_capt2";
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
@@ -1970,12 +1966,12 @@
 	pixel_y = 14
 	},
 /obj/item/clothing/head/cowboy{
-	pixel_y = 5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /obj/item/clothing/head/cowboy{
-	pixel_y = 5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /obj/item/clothing/shoes/workboots/mining{
 	pixel_x = 7;
@@ -2054,8 +2050,8 @@
 	pixel_y = 6
 	},
 /obj/item/storage/fancy/cigarettes/cigpack_robust{
-	pixel_y = 5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /obj/item/spacecash/bundle/pocketchange,
 /turf/open/floor/carpet,
@@ -2071,6 +2067,9 @@
 /area/ship/engineering/atmospherics)
 "zV" = (
 /obj/machinery/firealarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Ae" = (
@@ -2111,10 +2110,10 @@
 	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_x = 22;
-	pixel_y = -11;
+	id = "ra_arms";
 	name = "window shutters";
-	id = "ra_arms"
+	pixel_x = 22;
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/security/armory)
@@ -2137,6 +2136,9 @@
 "AF" = (
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "AM" = (
@@ -2213,8 +2215,8 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "ra_obvs";
-	dir = 4
+	dir = 4;
+	id = "ra_obvs"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
@@ -2305,8 +2307,8 @@
 	pixel_y = 2
 	},
 /obj/item/pen{
-	pixel_y = 3;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 3
 	},
 /obj/machinery/light/directional/east,
 /obj/item/toy/cards/deck{
@@ -2314,8 +2316,8 @@
 	pixel_y = 6
 	},
 /obj/item/desk_flag{
-	pixel_y = 13;
-	pixel_x = 13
+	pixel_x = 13;
+	pixel_y = 13
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/ccommons)
@@ -2346,6 +2348,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 5
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "DR" = (
@@ -2389,27 +2392,27 @@
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
 	dry = 1;
+	name = "dried mushroom leaves";
 	pixel_x = -10;
-	pixel_y = 1;
-	name = "dried mushroom leaves"
+	pixel_y = 1
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
 	dry = 1;
+	name = "dried mushroom leaves";
 	pixel_x = 3;
-	pixel_y = 8;
-	name = "dried mushroom leaves"
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
 	dry = 1;
+	name = "dried mushroom leaves";
 	pixel_x = -7;
-	pixel_y = 8;
-	name = "dried mushroom leaves"
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf{
 	dry = 1;
+	name = "dried mushroom leaves";
 	pixel_x = -2;
-	pixel_y = 1;
-	name = "dried mushroom leaves"
+	pixel_y = 1
 	},
 /obj/item/clothing/mask/cigarette/pipe{
 	pixel_x = 5
@@ -2474,42 +2477,42 @@
 	},
 /obj/machinery/light/small/directional/north,
 /obj/machinery/button/door{
+	id = "ra_piss";
+	name = "privacy lock";
+	normaldoorcontrol = 1;
 	pixel_x = 10;
 	pixel_y = 22;
-	name = "privacy lock";
-	id = "ra_piss";
-	specialfunctions = 4;
-	normaldoorcontrol = 1
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/canteen)
 "Fv" = (
 /obj/structure/table/wood,
 /obj/item/ammo_casing/a357/hp{
-	name = ".357 execution round casing";
 	desc = "Put it right to their head, and pull the trigger. No witnesses.";
+	name = ".357 execution round casing";
 	pixel_x = 6;
 	pixel_y = 6
 	},
 /obj/item/ammo_casing/a357/hp{
-	name = ".357 execution round casing";
 	desc = "Put it right to their head, and pull the trigger. No witnesses.";
+	name = ".357 execution round casing";
 	pixel_x = 8;
 	pixel_y = 1
 	},
 /obj/item/ammo_casing/a357/hp{
-	name = ".357 execution round casing";
 	desc = "Put it right to their head, and pull the trigger. No witnesses.";
+	name = ".357 execution round casing";
 	pixel_x = 11;
 	pixel_y = 5
 	},
 /obj/item/storage/fancy/cigarettes/cigars{
-	pixel_y = 14;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 14
 	},
 /obj/item/storage/box/matches{
-	pixel_y = 10;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 10
 	},
 /obj/item/spacecash/bundle/pocketchange{
 	pixel_x = -6;
@@ -2562,8 +2565,8 @@
 	req_access_txt = "19"
 	},
 /obj/item/gps{
-	pixel_y = 8;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 8
 	},
 /obj/item/binoculars,
 /turf/open/floor/plasteel/mono/dark,
@@ -2605,8 +2608,8 @@
 	pixel_y = -6
 	},
 /obj/item/clothing/glasses/hud/security{
-	pixel_y = 10;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 10
 	},
 /obj/item/storage/backpack/security,
 /obj/item/clothing/suit/armor/vest/duster,
@@ -2642,8 +2645,8 @@
 	pixel_y = -1
 	},
 /obj/item/stack/sheet/glass/twenty{
-	pixel_y = 2;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 2
 	},
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/grid,
@@ -2651,8 +2654,8 @@
 "Gu" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-18";
-	pixel_y = 20;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 20
 	},
 /obj/effect/turf_decal/corner/opaque/lightgrey/border{
 	dir = 4
@@ -2664,8 +2667,8 @@
 	pixel_x = 3
 	},
 /obj/machinery/light_switch{
-	pixel_y = 22;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
@@ -2712,8 +2715,8 @@
 	},
 /obj/machinery/door/airlock{
 	dir = 4;
-	name = "Bathroom";
-	id_tag = "ra_piss"
+	id_tag = "ra_piss";
+	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -2808,12 +2811,12 @@
 	dir = 1
 	},
 /obj/item/paper_bin{
-	pixel_y = 5;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /obj/item/pen/fourcolor{
-	pixel_y = 5;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /obj/item/stamp{
 	pixel_x = -6;
@@ -2837,9 +2840,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/light_switch{
+	dir = 1;
 	pixel_x = 22;
-	pixel_y = -21;
-	dir = 1
+	pixel_y = -21
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -2913,15 +2916,15 @@
 /obj/structure/railing,
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
-	pixel_y = 22;
-	pixel_x = -1;
+	id = "ra_cargo";
 	name = "bay doors";
-	id = "ra_cargo"
+	pixel_x = -1;
+	pixel_y = 22
 	},
 /obj/machinery/button/shieldwallgen{
+	id = "ra_door";
 	pixel_x = 9;
-	pixel_y = 21;
-	id = "ra_door"
+	pixel_y = 21
 	},
 /obj/item/clipboard{
 	pixel_x = 8;
@@ -2932,12 +2935,12 @@
 	pixel_y = 7
 	},
 /obj/item/pen/fourcolor{
-	pixel_y = 9;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 9
 	},
 /obj/item/reagent_containers/food/drinks/mug/tea{
-	pixel_y = 7;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 5
@@ -2992,8 +2995,8 @@
 "JS" = (
 /obj/structure/table/wood,
 /obj/item/spacecash/bundle/pocketchange{
-	pixel_y = 3;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 3
 	},
 /turf/open/floor/carpet,
 /area/ship/crew/ccommons)
@@ -3099,8 +3102,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = 22;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 22
 	},
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/mono/dark,
@@ -3129,6 +3132,7 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 4
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "LU" = (
@@ -3144,8 +3148,8 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "ra_seng";
-	dir = 4
+	dir = 4;
+	id = "ra_seng"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/engineering/engines/starboard)
@@ -3154,12 +3158,12 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/door/poddoor{
-	id = "ra_cargo";
-	dir = 4
+	dir = 4;
+	id = "ra_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "ra_door";
-	dir = 1
+	dir = 1;
+	id = "ra_door"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -3220,8 +3224,8 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock{
-	name = "Shower";
-	id_tag = "ra_shower"
+	id_tag = "ra_shower";
+	name = "Shower"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -3246,8 +3250,8 @@
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
-	pixel_y = 22;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -3262,8 +3266,8 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters{
-	id = "ra_arms";
-	dir = 4
+	dir = 4;
+	id = "ra_arms"
 	},
 /turf/open/floor/plating,
 /area/ship/security/armory)
@@ -3341,8 +3345,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 12;
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 12
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -3365,8 +3369,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_y = 10;
-	pixel_x = 20
+	pixel_x = 20;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -3492,8 +3496,8 @@
 /area/ship/engineering/electrical)
 "Pt" = (
 /obj/machinery/computer/helm{
-	icon_state = "computer-middle";
-	dir = 8
+	dir = 8;
+	icon_state = "computer-middle"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -3512,8 +3516,8 @@
 /area/ship/crew/canteen)
 "PD" = (
 /obj/machinery/computer/cargo{
-	icon_state = "computer-right";
-	dir = 8
+	dir = 8;
+	icon_state = "computer-right"
 	},
 /obj/effect/turf_decal/box/corners,
 /obj/effect/turf_decal/box/corners{
@@ -3584,16 +3588,16 @@
 	pixel_y = 3
 	},
 /obj/item/pen{
-	pixel_y = 3;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 3
 	},
 /obj/machinery/light/directional/south,
 /obj/machinery/button/door{
 	dir = 1;
-	pixel_y = -20;
-	pixel_x = -19;
 	id = "ra_bridge";
-	name = "privacy shutters"
+	name = "privacy shutters";
+	pixel_x = -19;
+	pixel_y = -20
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -3676,8 +3680,8 @@
 	},
 /obj/machinery/light_switch{
 	dir = 4;
-	pixel_y = 12;
-	pixel_x = -20
+	pixel_x = -20;
+	pixel_y = 12
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 5
@@ -3689,16 +3693,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
 /obj/item/storage/fancy/cigarettes/cigars{
-	pixel_y = 4;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 4
 	},
 /obj/item/storage/box/matches{
-	pixel_y = 10;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 10
 	},
 /obj/item/spacecash/bundle/pocketchange{
-	pixel_y = 10;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 10
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -3711,8 +3715,8 @@
 	},
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = 11
+	pixel_x = 11;
+	pixel_y = 23
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 1
@@ -3802,8 +3806,8 @@
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/yellow/mono,
 /obj/structure/sink/chem{
-	name = "kitchen sink";
-	dir = 1
+	dir = 1;
+	name = "kitchen sink"
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/white,
@@ -3848,8 +3852,8 @@
 "TR" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/mug/tea{
-	pixel_y = 3;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /obj/item/storage/lockbox/medal/sec{
 	pixel_x = 8;
@@ -3869,8 +3873,8 @@
 "Uq" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/head/cowboy{
-	pixel_y = 5;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 5
 	},
 /obj/item/clothing/head/soft/black{
 	pixel_x = 8;
@@ -3889,12 +3893,12 @@
 	pixel_y = -6
 	},
 /obj/item/clothing/head/flatcap{
-	pixel_y = 9;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 9
 	},
 /obj/item/clothing/head/beret/puce{
-	pixel_y = 12;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 12
 	},
 /obj/item/clothing/head/soft/red{
 	pixel_x = 3
@@ -3907,8 +3911,8 @@
 	pixel_x = -7
 	},
 /obj/item/clothing/shoes/cowboy{
-	pixel_y = -9;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -9
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
@@ -3926,9 +3930,9 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/light_switch{
-	pixel_y = -16;
+	dir = 1;
 	pixel_x = 11;
-	dir = 1
+	pixel_y = -16
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3950,9 +3954,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/structure/chair/handrail{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4039,8 +4040,8 @@
 "VP" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/machinery/light_switch{
-	pixel_y = 22;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 22
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/ccommons)
@@ -4206,8 +4207,8 @@
 /obj/structure/cable,
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_y = 11;
-	pixel_x = 20
+	pixel_x = 20;
+	pixel_y = 11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
@@ -4358,7 +4359,6 @@
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/syringe,
 /obj/item/storage/box/gloves,
-/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "YH" = (
@@ -4377,8 +4377,8 @@
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/item/kirbyplants{
 	icon_state = "plant-14";
-	pixel_y = 8;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -4516,8 +4516,8 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/command{
-	name = "Captain's Quarters";
 	id_tag = "ra_capt2";
+	name = "Captain's Quarters";
 	req_access_txt = "20"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
