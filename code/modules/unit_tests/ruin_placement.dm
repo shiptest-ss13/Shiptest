@@ -16,7 +16,7 @@
 			ruin.load(vlevel.get_unreserved_bottom_left_turf())
 
 			var/list/errors = atmosscan(TRUE, TRUE)
-			//errors += powerdebug(TRUE)
+			errors += powerdebug(TRUE)
 
 			for(var/error in errors)
 				Fail("Mapping error in [ruin_name]: [error]", ruin.mappath, 1)
