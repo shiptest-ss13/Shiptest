@@ -62,10 +62,9 @@
 
 /datum/supply_pack/ammo/c38
 	name = ".38 Ammo Boxes Crate"
-	desc = "Contains two 50 round ammo boxes for refilling .38 weapons."
-	cost = 250 //8 ammo efficiency at 20 damage
-	contains = list(/obj/item/storage/box/ammo/c38,
-					/obj/item/storage/box/ammo/c38)
+	desc = "Contains a 50 round ammo box for refilling .38 weapons."
+	cost = 125 //8 ammo efficiency at 20 damage
+	contains = list(/obj/item/storage/box/ammo/c38)
 	crate_name = "ammo crate"
 
 /* 10x22mm */
