@@ -9,7 +9,7 @@
 	light_color = LIGHT_COLOR_LAVA // Very warm chemical burn
 	var/pulled = FALSE
 	var/processing = FALSE
-	var/processes_left = 50
+	var/fuel = 50 //seconds of burn time
 
 /obj/item/oxygen_candle/examine_more(mob/user)
 	. = ..()
@@ -31,14 +31,21 @@
 		return
 	pos.hotspot_expose(500, 100)
 	pos.atmos_spawn_air("o2=[seconds_per_tick * 10];TEMP=[OXY_CANDLE_RELEASE_TEMP]")
-	processes_left -= seconds_per_tick
-	if(processes_left <= 0)
+	fuel = max(fuel -= seconds_per_tick, 0)
+	if(fuel <= 0)
 		set_light(0)
 		STOP_PROCESSING(SSobj, src)
 		processing = FALSE
 		name = "burnt oxygen candle"
 		icon_state = "oxycandle_burnt"
 		desc += "\nThis tube has exhausted its chemicals."
+
+/obj/item/oxygen_candle/burnt
+	name = "burnt oxygen candle"
+	icon_state = "oxycandle_burnt"
+	desc = "A steel tube with the words \"OXYGEN - PULL CORD TO IGNITE\" stamped on the side. \nThis tube has exhausted its chemicals."
+	pulled = TRUE
+	fuel = 0
 
 /obj/item/oxygen_candle/Destroy()
 	if(processing)
