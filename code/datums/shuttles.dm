@@ -461,3 +461,8 @@
 	name = "Gauze-class Ambulance Pod"
 	faction = /datum/faction/syndicate/cybersun
 	prefix = "CSSV"
+
+/datum/map_template/shuttle/subshuttles/watchman
+	file_name = "deathsquad_watchman"
+	name = "Watchman Devastator"
+	prefix = "SV"
