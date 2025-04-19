@@ -240,6 +240,10 @@
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 1
 	},
+/obj/item/binoculars{
+	pixel_x = 6;
+	pixel_y = -8
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "bU" = (
@@ -741,14 +745,14 @@
 "gx" = (
 /obj/structure/rack,
 /obj/machinery/light/directional/west,
-/obj/item/gun/energy/kalix/pgf/heavy/sniper{
-	pixel_x = -4;
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/item/gun/energy/kalix/pgf/medium{
 	pixel_y = -4;
 	pixel_x = -2
+	},
+/obj/item/gun/energy/kalix/pgf/heavy{
+	pixel_x = 0;
+	pixel_y = 5
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
