@@ -1,4 +1,10 @@
 ///it's all sand....
+/turf/open/floor/plating/asteroid/dirt/beach
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/asteroid/dirt/grass/beach
+	baseturfs = /turf/open/floor/plating/asteroid/sand
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/asteroid/sand
 	name = "sand"
@@ -12,7 +18,7 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	layer = SAND_TURF_LAYER
-	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS //custom atmos? lots of oxygen, hot?
+	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	digResult = /obj/item/stack/ore/glass
 	planetary_atmos = TRUE
 	digResult = /obj/item/stack/ore/glass/beach
@@ -33,7 +39,7 @@
 	if(prob(floor_variance))
 		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
-/turf/open/floor/plating/asteroid/sand/lit
+/turf/open/floor/plating/asteroid/sand
 	light_range = 2
 	light_power = 0.80
 
@@ -42,39 +48,22 @@
 	smooth_icon = 'icons/turf/floors/beachsand_wet.dmi'
 	planetary_atmos = TRUE
 
-/turf/open/floor/plating/asteroid/sand/dense/lit
-	light_range = 2
-	light_power = 0.80
-
 /turf/open/floor/plating/grass/beach
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	light_color = COLOR_BEACHPLANET_LIGHT
 	planetary_atmos = TRUE
 
-/turf/open/floor/plating/grass/beach/lit
-	light_color = COLOR_BEACHPLANET_LIGHT
-	light_range = 2
-	light_power = 0.80
-
 /turf/open/floor/plating/grass/beach/dark
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
-
-/turf/open/floor/plating/grass/beach/dark/lit
-	light_range = 2
-	light_power = 0.80
 
 /turf/open/floor/plating/dirt/beach
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	light_color = COLOR_BEACHPLANET_LIGHT
 	planetary_atmos = TRUE
-
-/turf/open/floor/plating/dirt/beach/lit
-	light_range = 2
-	light_power = 0.80
 
 /* non organic */
 

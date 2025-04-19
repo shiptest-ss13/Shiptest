@@ -311,8 +311,8 @@
 	base_icon_state = "icewall"
 	defer_change = TRUE
 	environment_type = "snow_cavern"
-	turf_type = /turf/open/floor/plating/asteroid/iceberg/lit
-	baseturfs = /turf/open/floor/plating/asteroid/iceberg/lit
+	turf_type = /turf/open/floor/plating/asteroid/iceberg
+	baseturfs = /turf/open/floor/plating/asteroid/iceberg
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	opacity = FALSE
 	light_range = 2
@@ -320,7 +320,7 @@
 	mineralType = /obj/item/stack/ore/ice
 
 /turf/closed/mineral/random/snow/underground
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	// abundant ore
 	mineralChance = 10
 	mineralSpawnChanceList = list(
@@ -362,8 +362,8 @@
 	no_connector_typecache = list(/turf/closed/mineral/random/labormineral/ice)
 	defer_change = TRUE
 	environment_type = "snow"
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	defer_change = TRUE
 	mineralSpawnChanceList = list(
@@ -385,8 +385,8 @@
 	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
 	connector_icon_state = "icerock_wall_connector"
 	no_connector_typecache = list(/turf/closed/mineral/iron/ice, /turf/closed/mineral/plasma/ice)
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
@@ -414,8 +414,8 @@
 	scan_state = "rock_Silver"
 
 /turf/closed/mineral/silver/ice/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/closed/mineral/titanium
@@ -436,8 +436,8 @@
 	connector_icon = 'icons/turf/connectors/icerock_wall_connector.dmi'
 	connector_icon_state = "icerock_wall_connector"
 	no_connector_typecache = list(/turf/closed/mineral/plasma/ice, /turf/closed/mineral/iron/ice)
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
@@ -494,8 +494,8 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/snowmountain/icemoon
-	turf_type = /turf/open/floor/plating/asteroid/snow/icemoon
-	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
 /turf/closed/mineral/snowmountain/cavern
@@ -631,8 +631,8 @@
 	icon_state = "rockwall_icemoon-0"
 	base_icon_state = "rockwall_icemoon"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	turf_type = /turf/open/floor/plating/asteroid/snow/ice
-	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
+	turf_type = /turf/open/floor/plating/asteroid/snow
+	baseturfs = /turf/open/floor/plating/asteroid/snow
 	initial_gas_mix = FROZEN_ATMOS
 	defer_change = TRUE
 
@@ -771,8 +771,8 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
-	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
-	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried/lit
+	turf_type = /turf/open/floor/plating/asteroid/whitesands
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 
 /turf/closed/mineral/random/high_chance
 	icon = 'icons/turf/walls/ws_walls.dmi'
@@ -814,8 +814,8 @@
 	base_icon_state = "jungle_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
-	turf_type = /turf/open/floor/plating/dirt/jungle
-	baseturfs = /turf/open/floor/plating/dirt/jungle
+	turf_type = /turf/open/floor/plating/asteroid/dirt/jungle
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
 
 	mineralChance = 16
 

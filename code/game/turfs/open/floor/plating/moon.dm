@@ -41,13 +41,8 @@
 		icon = smooth_icon
 		icon_plating = null
 
-/turf/open/floor/plating/asteroid/moon/lit
-	light_range = 2
-	light_power = 1
-	light_color = "#FFFFFF" // should look liminal, due to moons lighting
-	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
 
-/turf/open/floor/plating/asteroid/moon/lit/surface_craters/Initialize(mapload, inherited_virtual_z)
+/turf/open/floor/plating/asteroid/moon/surface_craters/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(prob(8.3)) //calculator tells me this is 1 in 12
 		getDug(TRUE)

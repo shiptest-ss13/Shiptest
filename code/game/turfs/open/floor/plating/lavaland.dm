@@ -17,10 +17,6 @@
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY, SMOOTH_GROUP_FLOOR_PLASTEEL)
 	smooth_icon = 'icons/turf/floors/basalt.dmi'
 
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit
-	light_range = 2
-	light_power = 0.6
-
 /turf/open/floor/plating/asteroid/basalt/lava //lava underneath
 	baseturfs = /turf/open/lava/smooth
 
@@ -75,18 +71,13 @@
 	if(prob(floor_variance))
 		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
-/turf/open/floor/plating/asteroid/purple/lit
-	light_range = 2
-	light_power = 0.3
-	baseturfs = /turf/open/floor/plating/asteroid/purple/lit
-
 ///Grass
 
 /turf/open/floor/plating/asteroid/dirt/grass/lavaland
 
 	name = "crimson grass"
 	desc = "This grass is actually native to Teceti. It has adapted extremely well to the hot enviroments of lava planets, as it is adept at absorbing the red light that passes the atmosphere."
-	baseturfs = /turf/open/floor/plating/asteroid/purple/lit
+	baseturfs = /turf/open/floor/plating/asteroid/purple
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	icon = 'icons/turf/floors/redgrass.dmi'
@@ -94,28 +85,6 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
-
-//legacy grass tiles, deprecated but not removed yet as to avoid a massive repath
-/turf/open/floor/plating/grass/lava
-	name = "crimson grass"
-	desc = "This grass is actually native to Teceti. It has adapted extremely well to the hot enviroments of lava planets, as well as absorbing the non-absorbed red light of the atmosphere."
-	baseturfs = /turf/open/floor/plating/grass/lava
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	icon_state = "grass-255"
-	base_icon_state = "grass"
-	planetary_atmos = TRUE
-	icon = 'icons/turf/floors/redgrass.dmi'
-	smooth_icon = 'icons/turf/floors/redgrass.dmi'
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_LAVAPLANET_LIGHT
-	gender = PLURAL
-
-/turf/open/floor/plating/grass/lava/orange
-	baseturfs = /turf/open/floor/plating/grass/lava/orange
-
-/turf/open/floor/plating/grass/lava/purple
-	baseturfs = /turf/open/floor/plating/grass/lava/purple
 
 ///The Moss
 /turf/open/floor/plating/moss
@@ -201,8 +170,3 @@
 
 	planetary_atmos = TRUE
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-
-/turf/open/floor/plating/asteroid/obsidian/lit
-	light_range = 2
-	light_power = 0.6
-	light_color = COLOR_LAVAPLANET_LIGHT

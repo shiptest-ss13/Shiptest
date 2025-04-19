@@ -133,7 +133,7 @@
 	feature_spawn_chance = 1.2
 
 /datum/biome/beach
-	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/sand = 1)
 	mob_spawn_list = list(/mob/living/simple_animal/crab = 7, /mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 5)
 	mob_spawn_chance = 1
 	flora_spawn_list = list(
@@ -146,7 +146,7 @@
 	flora_spawn_chance = 5
 
 /datum/biome/beach/dense
-	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/dense/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/dense = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/rock/asteroid = 6,
 		/obj/structure/flora/rock/beach = 2,
@@ -211,7 +211,7 @@
 
 /datum/biome/beach_jungle
 	flora_spawn_chance = 100
-	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit = 1, /turf/open/floor/plating/dirt/beach/lit = 9)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/beach = 1, /turf/open/floor/plating/asteroid/dirt/beach = 9)
 	flora_spawn_list = list(
 		/obj/structure/flora/grass/jungle = 1,
 		/obj/structure/flora/grass/jungle/b = 1,

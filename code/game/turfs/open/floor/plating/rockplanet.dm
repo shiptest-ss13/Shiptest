@@ -27,11 +27,6 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
 
-/turf/open/floor/plating/asteroid/rockplanet/lit
-	light_color = COLOR_ROCKPLANET_LIGHT
-	light_range = 2
-	light_power = 0.6
-
 /turf/open/floor/plating/asteroid/rockplanet/cracked
 	name = "iron cracked sand"
 	icon = 'icons/turf/floors/rockplanet_caves.dmi'
@@ -43,12 +38,6 @@
 	smooth_icon = 'icons/turf/floors/rockplanet_caves.dmi'
 
 	floor_variance = 0
-
-/turf/open/floor/plating/asteroid/rockplanet/cracked/lit
-	light_range = 2
-	light_power = 0.6
-	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
-	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
 
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -62,9 +51,6 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
 
-/turf/open/floor/plating/asteroid/rockplanet/wet/lit
-	light_range = 2
-	light_power = 0.6
 
 //TODO: unused, remove - not anymore
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked
@@ -73,10 +59,6 @@
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
-
-/turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit
-	light_range = 2
-	light_power = 0.6
 
 //safe tiles and whatever., i hate subtypinhg
 
@@ -96,8 +78,8 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit
 	light_range = 2
 	light_power = 0.6
-	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
-	turf_type = /turf/open/floor/plating/asteroid/rockplanet/lit
+	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
+	turf_type = /turf/open/floor/plating/asteroid/rockplanet/safe/lit
 
 /turf/open/floor/plating/asteroid/rockplanet/wet/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -121,7 +103,7 @@
 	name = "dry grass"
 	desc = "A patch of dry grass."
 
-/turf/open/floor/plating/dirt/rockplanet
+/turf/open/floor/plating/asteroid/dirt/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	light_color = COLOR_ROCKPLANET_LIGHT
 	name = "mud"
@@ -295,7 +277,7 @@
 	light_color = COLOR_ROCKPLANET_LIGHT
 
 ///snow
-/turf/open/floor/plating/asteroid/snow/lit/rockplanet
+/turf/open/floor/plating/asteroid/snow/rockplanet
 	light_color = COLOR_ROCKPLANET_LIGHT
-	baseturfs = /turf/open/floor/plating/asteroid/rockplanet/lit
+	baseturfs = /turf/open/floor/plating/asteroid/rockplanet
 	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS

@@ -25,15 +25,6 @@
 
 	floor_variance = 0
 
-
-/turf/open/water/stormy_planet_lit
-	color = "#1b364d"
-	light_color = "#09121a"
-	light_range = 2
-	light_power = 1
-	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
-	baseturfs = /turf/open/water/stormy_planet_lit
-
 /turf/open/water/stormy_planet_underground
 	color = "#1b364d"
 	light_range = 0

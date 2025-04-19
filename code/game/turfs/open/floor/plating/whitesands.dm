@@ -31,11 +31,6 @@
 	if(prob(floor_variance))
 		add_overlay("sandalt_[rand(1,max_icon_states)]")
 
-/turf/open/floor/plating/asteroid/whitesands/lit
-	light_range = 2
-	light_power = 0.6
-	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
-
 /turf/open/floor/plating/asteroid/whitesands/rocky
 	has_footsteps = FALSE
 
@@ -64,11 +59,6 @@
 
 /turf/open/floor/plating/asteroid/whitesands/remove_air(amount)
 	return return_air()
-
-/turf/open/floor/plating/asteroid/whitesands/dried/lit
-	light_range = 2
-	light_power = 0.6
-	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried/lit
 
 ///basalt
 
@@ -121,12 +111,6 @@
 	. = ..()
 	ScrapeAway()
 
-/turf/open/floor/plating/asteroid/whitesands/grass/lit
-	baseturfs = /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
-	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass
-	light_power = 1
-	light_range = 2
-
 /turf/open/floor/plating/asteroid/whitesands/grass/dead
 	name = "dead grass"
 	desc = "The few known flora on Whitesands also don't tend to live for very long, especially after the war."
@@ -135,17 +119,11 @@
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass/dead
 	dug = TRUE
 
-/turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
-	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
-	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass/dead/lit
-	light_power = 1
-	light_range = 2
-
 ///the singular snow tile:
 
-/turf/open/floor/plating/asteroid/snow/lit/whitesands
+/turf/open/floor/plating/asteroid/snow/whitesands
 	light_color = COLOR_SANDPLANET_LIGHT
-	baseturfs = /turf/open/floor/plating/asteroid/whitesands/lit
+	baseturfs = /turf/open/floor/plating/asteroid/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/concrete/whitesands

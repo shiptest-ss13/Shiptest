@@ -13,10 +13,6 @@
 	digResult = /obj/item/stack/ore/glass/wasteplanet
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-/turf/open/floor/plating/asteroid/wasteplanet/lit
-	light_range = 2
-	light_power = 0.2
-
 ///plating turfs
 
 /turf/open/floor/plating/wasteplanet
@@ -156,11 +152,23 @@
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-/turf/open/water/tar/waste/lit
-	light_range = 2
-	light_power = 0.2
-
 ///biological-ish turfs
+/turf/open/floor/plating/asteroid/dirt/grass/wasteplanet
+	icon = 'icons/turf/floors/junglegrass.dmi'
+	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/grass/wasteplanet
+
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_WASTEPLANET_LIGHT
+
+/turf/open/floor/plating/asteroid/dirt/jungle
+	icon_state = "greenerdirt"
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
+
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	light_color = COLOR_WASTEPLANET_LIGHT
 
 /turf/open/floor/plating/grass/wasteplanet
 	icon_state = "junglegrass"
@@ -168,18 +176,10 @@
 	planetary_atmos = TRUE
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-/turf/open/floor/plating/dirt/old/waste
+/turf/open/floor/plating/asteroid/dirt/old/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/grass/wasteplanet/lit
-	light_range = 2
-	light_power = 0.2
-
-/turf/open/floor/plating/dirt/old/waste/lit
-	light_range = 2
-	light_power = 0.2
 
 ///cement turfs
 
@@ -231,7 +231,7 @@
 	planetary_atmos = TRUE
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-/turf/open/floor/plating/dirt/old/waste
+/turf/open/floor/plating/asteroid/dirt/old/waste
 	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
@@ -275,20 +275,6 @@
 	light_power = 0.2
 	light_color = COLOR_WASTEPLANET_LIGHT
 
-/turf/open/floor/plating/dirt/old/waste/lit
-	light_range = 2
-	light_power = 0.2
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/grass/wasteplanet/lit
-	light_range = 2
-	light_power = 0.2
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/water/waste/lit //do not drink
-	light_range = 2
-	light_power = 0.2
-	light_color = COLOR_WASTEPLANET_LIGHT
 
 //closed turfs are a thing
 /turf/closed/wall/r_wall/wasteplanet

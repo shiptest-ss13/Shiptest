@@ -148,7 +148,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	baseturfs = /turf/open/openspace/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	planetary_atmos = TRUE
-	var/replacement_turf = /turf/open/floor/plating/asteroid/snow/icemoon
+	var/replacement_turf = /turf/open/floor/plating/asteroid/snow
 
 /turf/open/openspace/icemoon/Initialize(mapload, inherited_virtual_z)
 	. = ..()
