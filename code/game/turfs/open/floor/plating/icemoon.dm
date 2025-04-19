@@ -191,7 +191,12 @@
 	planetary_atmos = TRUE
 	light_color = COLOR_ICEPLANET_LIGHT
 
+/turf/open/lava/plasma/ice_moon/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
+
 //TODO: SUPER LEGACY,  REMOVE
+
 /turf/open/floor/plating/asteroid/snow/ice
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice
 	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120"
