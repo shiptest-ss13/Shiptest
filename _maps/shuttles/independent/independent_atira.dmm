@@ -9,7 +9,8 @@
 	},
 /obj/machinery/microwave{
 	pixel_y = 6;
-	name = "macrowave oven"
+	name = "macrowave oven";
+	desc = "Imagine, if you will a microwave, but instead of being Micro, it's Macro. This was the thought process of the engineering division at Etherbor Lihoma's Interior Furnishing Group, and this device is the fruit of their labor."
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -592,13 +593,13 @@
 	pixel_x = -7;
 	pixel_y = 6
 	},
-/obj/item/storage/firstaid{
-	pixel_x = -7;
-	pixel_y = -4
+/obj/item/storage/firstaid/regular{
+	pixel_y = -4;
+	pixel_x = -5
 	},
-/obj/item/storage/firstaid{
-	pixel_x = -1;
-	pixel_y = -4
+/obj/item/storage/firstaid/regular{
+	pixel_y = -4;
+	pixel_x = 1
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -3923,13 +3924,13 @@
 /obj/item/storage/firstaid/radiation{
 	pixel_x = -7
 	},
-/obj/item/storage/firstaid{
-	pixel_x = -7;
-	pixel_y = -4
-	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
 	pixel_x = 6;
 	pixel_y = 4
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_y = -4;
+	pixel_x = -7
 	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
