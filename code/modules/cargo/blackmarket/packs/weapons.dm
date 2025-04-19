@@ -6,19 +6,19 @@
 	desc = "Get the janitor back at his own game with this affordable prank kit."
 	item = /obj/item/restraints/legcuffs/beartrap
 
-	price_min = 150
-	price_max = 400
+	cost_min = 150
+	cost_max = 400
 	stock_min = 3
 	stock_max = 7
 	availability_prob = 40
 
 /datum/blackmarket_item/weapon/bone_spear
 	name = "Bone Spear"
-	desc = "Authentic tribal spear, made from real bones! A steal at any price, especially if you're a caveman."
+	desc = "Authentic tribal spear, made from real bones! A steal at any cost, especially if you're a caveman."
 	item = /obj/item/melee/spear/bone
 
-	price_min = 200
-	price_max = 300
+	cost_min = 200
+	cost_max = 300
 	stock_max = 3
 	availability_prob = 60
 
@@ -27,8 +27,8 @@
 	desc = "Extra shrap switchblades for intimidation AND style. Bandages not included if you cut yourself."
 	item = /obj/item/melee/knife/switchblade
 
-	price_min = 500
-	price_max = 700
+	cost_min = 500
+	cost_max = 700
 	stock_max = 3
 	availability_prob = 50
 
@@ -37,8 +37,8 @@
 	desc = "An incredibly sharp axe of reputable make, used by various engineers to settle arguments while hammered. Sold to us by a very friendly man in a suit."
 	item = /obj/item/melee/axe/fire
 
-	price_min = 1200
-	price_max = 2300
+	cost_min = 1200
+	cost_max = 2300
 	stock_max = 3
 	availability_prob = 40
 
@@ -47,8 +47,8 @@
 	desc = "A Clique outfit had to ditch a lot of equipment to evade a Gezenan assault. This little piece breaks legs and walls like no other. You want in?"
 	item = /obj/item/melee/sledgehammer/gorlex
 
-	price_min = 2000
-	price_max = 3000
+	cost_min = 2000
+	cost_max = 3000
 	stock_max = 3
 	availability_prob = 30
 
@@ -56,8 +56,8 @@
 	name = "Powerfist"
 	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."
 	item = /obj/item/melee/powerfist
-	price_min = 1500
-	price_max = 4000
+	cost_min = 1500
+	cost_max = 4000
 	stock_max = 2
 	availability_prob = 50
 
@@ -66,8 +66,8 @@
 	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp, we had to spend hours stitching our fingers back on after getting it."
 	item = /obj/item/storage/belt/sabre/suns
 
-	price_min = 1500
-	price_max = 3500
+	cost_min = 1500
+	cost_max = 3500
 	stock = 1
 	availability_prob = 25
 
@@ -76,8 +76,8 @@
 	desc = "A prototype modification to the standard crusher, featuring an energy blade rather than the standard alloy cutting edge allowing for much more devasting detonations. The guy who sold this to us disappeared the next week, but that's probably a coincidence."
 	item = /obj/item/kinetic_crusher/syndie_crusher
 
-	price_min = 1750
-	price_max = 3000
+	cost_min = 1750
+	cost_max = 3000
 	stock = 2
 	availability_prob = 15
 	spawn_weighting = FALSE
@@ -87,8 +87,8 @@
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
 	item = /obj/item/gun/ballistic/derringer
 
-	price_min = 100
-	price_max = 300
+	cost_min = 100
+	cost_max = 300
 	stock_max = 6
 	availability_prob = 50
 
@@ -98,8 +98,8 @@
 	item = /obj/item/gun/ballistic/derringer/traitor
 	pair_item = list(/datum/blackmarket_item/ammo/a357_box)
 
-	price_min = 300
-	price_max = 800
+	cost_min = 300
+	cost_max = 800
 	stock = 2
 	availability_prob = 30
 
@@ -108,8 +108,8 @@
 	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22 LR. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
 	item = /obj/item/disk/design_disk/disposable_gun
 
-	price_min = 1500
-	price_max = 2500
+	cost_min = 1500
+	cost_max = 2500
 	stock = 1
 	availability_prob = 10
 	spawn_weighting = FALSE
@@ -120,8 +120,8 @@
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
 	pair_item = list(/datum/blackmarket_item/ammo/himehabu_mag)
 
-	price_min = 100
-	price_max = 600
+	cost_min = 100
+	cost_max = 600
 	stock_max = 6
 	availability_prob = 50
 
@@ -130,8 +130,8 @@
 	desc = "Sharplite letting you down? Try these classic Eoehoma Firearms E-10 Laser Pistols."
 	item = /obj/item/gun/energy/laser/e10
 
-	price_min = 500
-	price_max = 1000
+	cost_min = 500
+	cost_max = 1000
 	stock_max = 5
 	availability_prob = 20
 
@@ -140,8 +140,8 @@
 	desc = "Look. I'll be straight with you. These guns are awful. But, they are cheap if you're that desperate."
 	item = /obj/item/gun/energy/e_gun/e11
 
-	price_min = 200
-	price_max = 400
+	cost_min = 200
+	cost_max = 400
 	stock = 5
 	availability_prob = 60
 
@@ -151,8 +151,8 @@
 	item = /obj/item/gun/ballistic/automatic/assault/e40
 	pair_item = list(/datum/blackmarket_item/ammo/e40_mag)
 
-	price_min = 7000
-	price_max = 10000
+	cost_min = 7000
+	cost_max = 10000
 	stock_max = 2
 	availability_prob = 10
 	spawn_weighting = FALSE
@@ -163,8 +163,8 @@
 	item = /obj/item/gun/energy/laser/e50
 	pair_item = list(/datum/blackmarket_item/ammo/huge_weapon_cell)
 
-	price_min = 4000
-	price_max = 7000
+	cost_min = 4000
+	cost_max = 7000
 	stock_max = 2
 	availability_prob = 20
 	spawn_weighting = FALSE
@@ -174,8 +174,8 @@
 	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor<i> chance of painfully burning your hands."
 	item = /obj/item/attachment/gun/energy/e50
 
-	price_min = 4000
-	price_max = 5000
+	cost_min = 4000
+	cost_max = 5000
 	stock_max = 2
 	availability_prob = 20
 	spawn_weighting = FALSE
@@ -185,8 +185,8 @@
 	desc = "Looking for a live capture? This Eoehoma Firearms E-60 disabler will get your man."
 	item = /obj/item/gun/energy/disabler/e60
 
-	price_min = 500
-	price_max = 750
+	cost_min = 500
+	cost_max = 750
 	stock_max = 3
 	availability_prob = 40
 
@@ -196,8 +196,8 @@
 
 	item = /obj/item/gun/ballistic/automatic/pistol/cm23
 	pair_item = list(/datum/blackmarket_item/ammo/cm23_mag)
-	price_min = 500
-	price_max = 1500
+	cost_min = 500
+	cost_max = 1500
 	stock_max = 4
 	availability_prob = 50
 
@@ -207,8 +207,8 @@
 
 	item = /obj/item/gun/ballistic/automatic/pistol/cm70
 	pair_item = list(/datum/blackmarket_item/ammo/cm70_mag)
-	price_min = 900
-	price_max = 2100
+	cost_min = 900
+	cost_max = 2100
 	stock_max = 2
 	availability_prob = 50
 
@@ -218,8 +218,8 @@
 
 	item = /obj/item/gun/ballistic/automatic/smg/cm5
 	pair_item = list(/datum/blackmarket_item/ammo/cm5_mag)
-	price_min = 1750
-	price_max = 3500
+	cost_min = 1750
+	cost_max = 3500
 	stock_max = 2
 	availability_prob = 30
 
@@ -229,8 +229,8 @@
 	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	pair_item = list(/datum/blackmarket_item/ammo/saber_mag)
 
-	price_min = 2250
-	price_max = 3750
+	cost_min = 2250
+	cost_max = 3750
 	stock_max = 2
 	availability_prob = 25
 
@@ -239,8 +239,8 @@
 	desc = "Not satisfied by Etherbor's civilian offerings? Try this military grade one we found!"
 	item = /obj/item/gun/energy/kalix/pgf
 
-	price_min = 2500
-	price_max = 5000
+	cost_min = 2500
+	cost_max = 5000
 	stock = 2
 	availability_prob = 20
 
@@ -249,8 +249,8 @@
 	desc = "Gotta deal for you broski. We got this mod of those shoddy Sporter Rifles an' you can buy one, or two, orreven three if yer int' that."
 	item = /obj/item/storage/guncase/m13
 
-	price_min = 500
-	price_max = 1200
+	cost_min = 500
+	cost_max = 1200
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 40
@@ -260,8 +260,8 @@
 	desc = "We had to saw down the barrels on these to fit them in the smuggling compartment. They don't aim too good, but it still packs a good punch."
 	item = /obj/item/gun/ballistic/rifle/illestren/sawn
 
-	price_min = 600
-	price_max = 1000
+	cost_min = 600
+	cost_max = 1000
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 60
@@ -271,8 +271,8 @@
 	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
 	item = /obj/item/mecha_parts/weapon_bay/concealed
 
-	price_min = 1000
-	price_max = 2000
+	cost_min = 1000
+	cost_max = 2000
 	stock_max = 3
 	availability_prob = 20
 	spawn_weighting = FALSE
@@ -282,8 +282,8 @@
 	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
 	item = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
 
-	price_min = 5000
-	price_max = 7000
+	cost_min = 5000
+	cost_max = 7000
 	stock = 1
 	availability_prob = 10
 	spawn_weighting = FALSE
@@ -294,8 +294,8 @@
 	item = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
 	pair_item = list(/datum/blackmarket_item/ammo/mecha_hades_ammo)
 
-	price_min = 2000
-	price_max = 3000
+	cost_min = 2000
+	cost_max = 3000
 	stock_max = 2
 	availability_prob = 25
 
@@ -305,8 +305,8 @@
 	item = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 	pair_item = list(/datum/blackmarket_item/ammo/model_h_mag)
 
-	price_min = 2000
-	price_max = 3500
+	cost_min = 2000
+	cost_max = 3500
 	stock = 2
 	availability_prob = 35
 
@@ -321,8 +321,8 @@
 	item = /obj/item/gun/ballistic/rifle/solgov
 	pair_item = list(/datum/blackmarket_item/ammo/sgg_stripper)
 
-	price_min = 3000
-	price_max = 6000
+	cost_min = 3000
+	cost_max = 6000
 	stock = 1
 	availability_prob = 20
 
@@ -332,8 +332,8 @@
 	item = /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	pair_item = list(/datum/blackmarket_item/ammo/pistole_c_mag)
 
-	price_min = 900
-	price_max = 1250
+	cost_min = 900
+	cost_max = 1250
 	stock_max = 3
 	availability_prob = 30
 
@@ -343,8 +343,8 @@
 	item = /obj/item/gun/ballistic/automatic/powered/gauss
 	pair_item = list(/datum/blackmarket_item/ammo/proto_gauss_mag)
 
-	price_min = 2500
-	price_max = 4000
+	cost_min = 2500
+	cost_max = 4000
 	stock = 2
 	availability_prob = 25
 
@@ -353,8 +353,8 @@
 	desc = "A compact dart pistol, for clandestine poisoining from a distance."
 	item = /obj/item/gun/syringe/syndicate
 
-	price_min = 750
-	price_max = 1500
+	cost_min = 750
+	cost_max = 1500
 	stock = 2
 	availability_prob = 30
 
@@ -364,8 +364,8 @@
 	item = /obj/item/gun/ballistic/automatic/pistol/mauler
 	pair_item = list(/datum/blackmarket_item/ammo/mauler_mag)
 
-	price_min = 1000
-	price_max = 2000
+	cost_min = 1000
+	cost_max = 2000
 	stock_max = 3
 	availability_prob = 50
 
@@ -375,8 +375,8 @@
 	item = /obj/item/gun/ballistic/automatic/pistol/spitter
 	pair_item = list(/datum/blackmarket_item/ammo/spitter_mag)
 
-	price_min = 1500
-	price_max = 2250
+	cost_min = 1500
+	cost_max = 2250
 	stock_min = 1
 	stock_max = 2
 	availability_prob = 30
@@ -387,8 +387,8 @@
 	item = /obj/item/gun/ballistic/automatic/smg/pounder
 	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag)
 
-	price_min = 1500
-	price_max = 2000
+	cost_min = 1500
+	cost_max = 2000
 	stock = 1
 	availability_prob = 35
 
@@ -398,8 +398,8 @@
 	item = /obj/item/gun/ballistic/rifle/polymer
 	pair_item = list(/datum/blackmarket_item/ammo/polymer_clip)
 
-	price_min = 600
-	price_max = 1250
+	cost_min = 600
+	cost_max = 1250
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 50
@@ -410,8 +410,8 @@
 	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	pair_item = list(/datum/blackmarket_item/ammo/carbine_mag)
 
-	price_min = 3000
-	price_max = 4500
+	cost_min = 3000
+	cost_max = 4500
 	stock_max = 2
 	availability_prob = 20
 
@@ -420,8 +420,8 @@
 	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HE rocket. "
 	item = /obj/item/gun/ballistic/rocketlauncher/oneshot
 
-	price_min = 3000
-	price_max = 4500
+	cost_min = 3000
+	cost_max = 4500
 	stock_min = 1
 	stock_max = 5
 	availability_prob = 25
@@ -431,8 +431,8 @@
 	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HEDP rocket. "
 	item = /obj/item/gun/ballistic/rocketlauncher/oneshot/hedp
 
-	price_min = 4000
-	price_max = 6000
+	cost_min = 4000
+	cost_max = 6000
 	stock_min = 1
 	stock_max = 5
 	availability_prob = 10
@@ -442,8 +442,8 @@
 	desc = "Your regular rifles not have enough oomph for you? This SKM-24 was converted with help from a 'liberated' CM-40 parts shipment into a light machinegun, ready to blow away whatever you point it at. Increased firerate makes it buck like a mule, so keep that bipod on the ground. Drums sold separately!"
 	item = /obj/item/gun/ballistic/automatic/hmg/skm_lmg
 
-	price_min = 5000
-	price_max = 7000
+	cost_min = 5000
+	cost_max = 7000
 	stock_max = 2
 	availability_prob = 15
 	spawn_weighting = FALSE

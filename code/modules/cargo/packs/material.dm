@@ -1,5 +1,5 @@
 /datum/supply_pack/material
-	group = "Materials & Sheets"
+	category = "Materials & Sheets"
 	faction = /datum/faction/nt/ns_logi
 	faction_discount = 20
 
