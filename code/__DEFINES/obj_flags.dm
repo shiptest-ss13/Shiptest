@@ -15,6 +15,7 @@
 #define BLOCK_Z_IN_DOWN (1<<11) //! Should this object block z falling from above?
 #define BLOCK_Z_IN_UP (1<<12) //! Should this object block z uprise from below?
 #define INFINITE_RESKIN (1<<13) // We can reskin this item infinitely
+#define ELEVATED_SURFACE (1<<14) // Should this object prevent open flames left on it from igniting the ground?
 
 
 // If you add new ones, be sure to add them to /obj/Initialize as well for complete mapping support

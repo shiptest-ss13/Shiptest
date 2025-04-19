@@ -24,6 +24,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_SNOWED)
 	digResult = /obj/item/stack/sheet/mineral/snow
 	light_color = COLOR_ICEPLANET_LIGHT
+	flammability = -5
 	has_footsteps = TRUE
 	footstep_icon_state = "ice"
 

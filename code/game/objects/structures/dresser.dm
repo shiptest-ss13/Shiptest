@@ -6,6 +6,7 @@
 	density = TRUE
 	anchored = TRUE
 
+	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/dresser/attackby(obj/item/I, mob/user, params)

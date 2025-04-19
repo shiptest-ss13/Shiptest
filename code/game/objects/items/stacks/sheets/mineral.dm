@@ -474,7 +474,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 		message_admins("Carbon rod ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
 		log_game("Carbon rod ignited by [key_name(user)] in [AREACOORD(T)]")
 		fire_act(W.get_temperature())
-		T.IgniteTurf((W.get_temperature()/20))
+		T.ignite_turf((W.get_temperature()/20))
 		return TRUE
 	else
 		return ..()

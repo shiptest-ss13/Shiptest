@@ -364,7 +364,7 @@
 /datum/status_effect/trickwine/debuff/hearth/tick()
 	//owner.fire_act()
 	var/turf/owner_turf = get_turf(owner)
-	owner_turf.IgniteTurf(duration)
+	owner_turf.ignite_turf(duration)
 	//new /obj/effect/hotspot(owner_turf, 1)
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
