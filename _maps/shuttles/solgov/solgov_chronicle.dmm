@@ -3639,6 +3639,10 @@
 /obj/item/clothing/suit/solgov/jacket{
 	pixel_y = -12
 	},
+/obj/item/storage/box/gloves{
+	pixel_y = 11;
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "Aa" = (
@@ -3782,6 +3786,9 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/wideband/directional/west,
+/obj/item/paper/monitorkey{
+	pixel_x = -4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "AZ" = (
@@ -4278,16 +4285,20 @@
 	},
 /obj/structure/table/wood,
 /obj/machinery/light/dim/directional/west,
-/obj/item/storage/box/drinkingglasses{
-	pixel_y = 3;
-	pixel_x = -6
-	},
-/obj/item/storage/box/drinkingglasses{
-	pixel_y = 3;
-	pixel_x = 5
-	},
 /obj/structure/sign/poster/solgov/alexandria{
 	pixel_y = -30
+	},
+/obj/machinery/coffeemaker/premium,
+/obj/item/storage/box/coffeepack/arabica{
+	pixel_x = 11
+	},
+/obj/item/storage/box/coffeepack/arabica{
+	pixel_y = 4;
+	pixel_x = 11
+	},
+/obj/item/storage/box/coffeepack/arabica{
+	pixel_y = 8;
+	pixel_x = 11
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/ccommons)
@@ -6884,6 +6895,9 @@
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
+"Yj" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/aft)
 "Yo" = (
 /obj/effect/turf_decal/techfloor,
 /obj/structure/window/reinforced{
@@ -6935,6 +6949,14 @@
 	pixel_y = -8
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/item/storage/box/drinkingglasses{
+	pixel_y = 11;
+	pixel_x = 5
+	},
+/obj/item/storage/box/drinkingglasses{
+	pixel_y = 3;
+	pixel_x = 5
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/ccommons)
 "YR" = (
@@ -7728,7 +7750,7 @@ Bs
 Bs
 Bs
 Bs
-VD
+Yj
 ez
 VD
 JM
