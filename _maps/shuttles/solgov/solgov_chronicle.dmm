@@ -551,7 +551,8 @@
 /area/ship/security/armory)
 "ds" = (
 /obj/machinery/door/airlock/solgov{
-	dir = 8
+	dir = 8;
+	name = "Dormitories"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1273,6 +1274,10 @@
 /obj/item/pen/solgov{
 	pixel_x = -5;
 	pixel_y = 5
+	},
+/obj/machinery/recharger{
+	pixel_x = 5;
+	pixel_y = 17
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -3081,7 +3086,8 @@
 /area/ship/storage)
 "ww" = (
 /obj/machinery/door/airlock/solgov{
-	dir = 4
+	dir = 4;
+	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3265,7 +3271,8 @@
 /area/ship/crew)
 "xE" = (
 /obj/machinery/door/airlock/solgov{
-	dir = 4
+	dir = 4;
+	name = "Command"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3288,6 +3295,9 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"xG" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/hallway/aft)
 "xH" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -3651,6 +3661,13 @@
 /obj/item/storage/box/gloves{
 	pixel_y = 11;
 	pixel_x = 7
+	},
+/obj/item/storage/box/bodybags{
+	pixel_y = 11;
+	pixel_x = -8
+	},
+/obj/structure/sink{
+	pixel_y = 17
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -4660,7 +4677,8 @@
 /area/ship/crew/dorm/captain)
 "Hj" = (
 /obj/machinery/door/airlock/solgov{
-	dir = 8
+	dir = 8;
+	name = "Crew Commons"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -4713,9 +4731,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
-"Hq" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/hallway/aft)
 "HH" = (
 /obj/structure/railing/wood{
 	dir = 8
@@ -4886,6 +4901,7 @@
 "Jb" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/aft)
 "Jd" = (
@@ -5051,9 +5067,6 @@
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "Ks" = (
-/obj/machinery/door/airlock/solgov{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -5073,6 +5086,10 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/solgov{
+	dir = 8;
+	name = "Dormitories"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "Ky" = (
@@ -5733,6 +5750,7 @@
 "PF" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/aft)
 "PR" = (
@@ -5770,6 +5788,7 @@
 /obj/structure/sign/poster/solgov/nanomichi_ad{
 	pixel_y = 31
 	},
+/obj/structure/disposalpipe/trunk,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "PV" = (
@@ -6135,6 +6154,13 @@
 "RT" = (
 /obj/structure/chair/sofa/brown/right/directional/east,
 /obj/structure/railing/wood,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 9;
+	id = "ck1";
+	name = "shutter control"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "RX" = (
@@ -6355,6 +6381,9 @@
 	dir = 10
 	},
 /obj/machinery/light/dim/directional/west,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "TS" = (
@@ -7813,7 +7842,7 @@ Bs
 Bs
 Bs
 Bs
-Hq
+xG
 ez
 VD
 JM
