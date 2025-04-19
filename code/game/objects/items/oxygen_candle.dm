@@ -10,6 +10,7 @@
 	var/pulled = FALSE
 	var/processing = FALSE
 	var/fuel = 50 //seconds of burn time
+	grind_results = list(/datum/reagent/oxygen = 10, /datum/reagent/consumable/sodiumchloride = 10) //in case the on_grind doesn't proc for some reason
 
 /obj/item/oxygen_candle/examine_more(mob/user)
 	. = ..()
@@ -29,7 +30,7 @@
 	var/turf/pos = get_turf(src)
 	if(!pos)
 		return
-	pos.hotspot_expose(500, 100)
+	pos.hotspot_expose(500 * seconds_per_tick, 100 * seconds_per_tick)
 	pos.atmos_spawn_air("o2=[seconds_per_tick * 10];TEMP=[OXY_CANDLE_RELEASE_TEMP]")
 	fuel = max(fuel -= seconds_per_tick, 0)
 	if(fuel <= 0)
@@ -51,5 +52,8 @@
 	if(processing)
 		STOP_PROCESSING(SSobj, src)
 	return ..()
+
+/obj/item/oxygen_candle/on_grind()
+	grind_results = list(/datum/reagent/oxygen/ = (fuel / 5), /datum/reagent/consumable/sodiumchloride = (10 / max(fuel, 1)))
 
 #undef OXY_CANDLE_RELEASE_TEMP
