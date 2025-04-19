@@ -2,7 +2,7 @@
 
 /obj/item/oxygen_candle
 	name = "oxygen candle"
-	desc = "A steel tube with the words 'OXYGEN - PULL CORD TO IGNITE' stamped on the side.\nA small label reads <span class='warning'>'WARNING: NOT FOR LIGHTING USE. WILL IGNITE FLAMMABLE GASSES'</span>"
+	desc = "A steel tube with the words \"OXYGEN - PULL CORD TO IGNITE\" stamped on the side."
 	icon = 'icons/obj/oxygen_candle.dmi'
 	icon_state = "oxycandle"
 	w_class = WEIGHT_CLASS_SMALL
@@ -11,10 +11,14 @@
 	var/processing = FALSE
 	var/processes_left = 50
 
+/obj/item/oxygen_candle/examine_more(mob/user)
+	. = ..()
+	. += "A small label reads: "+ span_warning("\"WARNING: NOT FOR LIGHTING USE. WILL IGNITE FLAMMABLE GASSES\"")
+
 /obj/item/oxygen_candle/attack_self(mob/user)
 	if(!pulled)
 		playsound(src, 'sound/effects/fuse.ogg', 75, 1)
-		to_chat(user, span_notice("You pull the cord on the [src]."))
+		to_chat(user, span_notice("You pull the cord on [src], and it starts to burn."))
 		icon_state = "oxycandle_burning"
 		pulled = TRUE
 		processing = TRUE
