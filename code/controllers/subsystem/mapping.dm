@@ -242,7 +242,7 @@ SUBSYSTEM_DEF(mapping)
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
 
-		if(isnum(data["unique_ship_access"] && data["unique_ship_access"]))
+		if(isnum(data["unique_ship_access"]))
 			S.unique_ship_access = data["unique_ship_access"]
 
 		if(istext(data["description"]))

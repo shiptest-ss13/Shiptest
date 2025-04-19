@@ -23,7 +23,6 @@
 	/// If set, picking this will be the same as running the event without admin setup.
 	var/normal_run_option
 	/// if you want a special button, this will add it. Remember to actually handle that case for chosen in `apply_to_event`
-	/// Example is in scrubber_overflow.dm
 	var/special_run_option
 	/// Picked list option to be applied.
 	var/chosen

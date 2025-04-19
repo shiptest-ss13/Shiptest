@@ -1,7 +1,7 @@
 /datum/round_event_control/falsealarm
-	name 			= "False Alarm"
-	typepath 		= /datum/round_event/falsealarm
-	weight			= 20
+	name = "False Alarm"
+	typepath = /datum/round_event/falsealarm
+	weight = 0
 	max_occurrences = 5
 	var/forced_type //Admin abuse
 
@@ -24,8 +24,8 @@
 	return ..() && length(gather_false_events())
 
 /datum/round_event/falsealarm
-	announce_when	= 0
-	end_when			= 1
+	announce_when = 0
+	end_when = 1
 	fakeable = FALSE
 
 /datum/round_event/falsealarm/announce(fake)

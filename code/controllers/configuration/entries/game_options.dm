@@ -284,7 +284,7 @@
 /datum/config_entry/flag/allow_random_events // Enables random events mid-round when set
 
 /datum/config_entry/number/events_min_time_mul // Multipliers for random events minimal starting time and minimal players amounts
-	default = 1
+	config_entry_value = 1
 	min_val = 0
 	integer = FALSE
 
@@ -294,12 +294,12 @@
 	integer = FALSE
 
 /datum/config_entry/number/events_frequency_lower
-	default = 2.5 MINUTES
+	config_entry_value = 30 MINUTES
 	min_val = 0
 	protection = CONFIG_ENTRY_LOCKED
 
 /datum/config_entry/number/events_frequency_upper
-	default = 7 MINUTES
+	config_entry_value = 60 MINUTES
 	min_val = 0
 	protection = CONFIG_ENTRY_LOCKED
 
@@ -392,6 +392,14 @@
 	max_val = 255
 	config_entry_value = 127
 	min_val = 127
+
+
+/datum/config_entry/number/events_frequency_lower
+	config_entry_value = 10 MINUTES
+
+/datum/config_entry/number/events_frequency_upper
+
+	config_entry_value = 20 MINUTES
 
 /datum/config_entry/number/max_dynamic_missions
 	config_entry_value = 1

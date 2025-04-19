@@ -19,35 +19,22 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 /datum/round_event_control/sentience
 	name = "Random Human-level Intelligence"
 	typepath = /datum/round_event/ghost_role/sentience
-	weight = 10
-
+	weight = 0
+	earliest_start = 10 MINUTES
+	max_occurrences = 1
 
 /datum/round_event/ghost_role/sentience
 	minimum_required = 1
 	role_name = "random animal"
 	var/animals = 1
 	var/one = "one"
-	fakeable = TRUE
 
-/datum/round_event/ghost_role/sentience/announce(fake)
-	var/sentience_report = ""
-
-	var/data = pick("scans from our long-range sensors", "our sophisticated probabilistic models", "our omnipotence", "the communications traffic in your sector", "energy emissions we detected", "\[REDACTED\]")
-	var/pets = pick("animals/bots", "bots/animals", "pets", "simple animals", "lesser lifeforms", "\[REDACTED\]")
-	var/strength = pick("human", "moderate", "lizard", "security", "command", "clown", "low", "very low", "\[REDACTED\]")
-
-	sentience_report += "Based on [data], we believe that [one] of the station's [pets] has developed [strength] level intelligence, and the ability to communicate."
-
-	priority_announce(sentience_report,"[command_name()] Medium-Priority Update")
-
+// find our chosen mob to breathe life into
+// Mobs have to be simple animals, mindless, on station, and NOT holograms.
+// prioritize starter animals that people will recognise
 /datum/round_event/ghost_role/sentience/spawn_role()
 	var/list/mob/dead/observer/candidates
-	candidates = get_candidates(ROLE_ALIEN, null, ROLE_ALIEN)
-
-	// find our chosen mob to breathe life into
-	// Mobs have to be simple animals, mindless, on station, and NOT holograms.
-	// prioritize starter animals that people will recognise
-
+	candidates = get_candidates(null, null, null)
 
 	var/list/potential = list()
 
@@ -55,7 +42,7 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 	var/list/low_pri = list()
 
 	for(var/mob/living/simple_animal/L in GLOB.alive_mob_list)
-		if((L in GLOB.player_list) || L.mind || (L.flags_1 & HOLOGRAM_1))
+		if((L in GLOB.player_list))
 			continue
 		if(is_type_in_typecache(L, GLOB.high_priority_sentience))
 			hi_pri += L
@@ -81,20 +68,16 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 
 		SA.key = SG.key
 
-		SA.grant_all_languages(TRUE, FALSE, FALSE)
-
 		SA.sentience_act()
 
 		SA.maxHealth = max(SA.maxHealth, 200)
 		SA.health = SA.maxHealth
-		SA.del_on_death = FALSE
 
 		spawned_mobs += SA
 
 		to_chat(SA, span_userdanger("Hello world!"))
 		to_chat(SA, "<span class='warning'>Due to freak radiation and/or chemicals \
-			and/or lucky chance, you have gained human level intelligence \
-			and the ability to speak and understand human language!</span>")
+			and/or lucky chance, you have gained human level intelligence!</span>")
 
 	return SUCCESSFUL_SPAWN
 

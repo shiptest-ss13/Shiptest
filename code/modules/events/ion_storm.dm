@@ -1,7 +1,7 @@
 /datum/round_event_control/ion_storm
 	name = "Ion Storm"
 	typepath = /datum/round_event/ion_storm
-	weight = 15
+	weight = 0
 	min_players = 2
 
 /datum/round_event/ion_storm
@@ -23,8 +23,7 @@
 
 /datum/round_event/ion_storm/announce(fake)
 	if(prob(announce_chance) || fake)
-		priority_announce("Ion storm detected near the station. Please check all AI-controlled equipment for errors.", "Anomaly Alert", 'sound/ai/ionstorm.ogg')
-
+		priority_announce("Ion storm detected in the sector. Please check all AI-controlled equipment for errors.", "Anomaly Alert", 'sound/ai/ionstorm.ogg')
 
 /datum/round_event/ion_storm/start()
 	//AI laws

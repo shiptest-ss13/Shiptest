@@ -5,6 +5,7 @@
 	weight = -1
 	max_occurrences = 1
 	earliest_start = 0 MINUTES
+	category = EVENT_CATEGORY_HOLIDAY
 
 /datum/round_event/easter/announce(fake)
 	priority_announce(pick("Hip-hop into Easter!","Find some Bunny's stash!","Today is National 'Hunt a Wabbit' Day.","Be kind, give Chocolate Eggs!"))
@@ -16,6 +17,7 @@
 	typepath = /datum/round_event/rabbitrelease
 	weight = 5
 	max_occurrences = 10
+	category = EVENT_CATEGORY_HOLIDAY
 
 /datum/round_event/rabbitrelease/announce(fake)
 	priority_announce("Unidentified furry objects detected coming aboard [station_name()]. Beware of Adorable-ness.", "Fluffy Alert", 'sound/ai/aliens.ogg')
