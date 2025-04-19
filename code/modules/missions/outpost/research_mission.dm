@@ -110,7 +110,7 @@
 	desc = "We require data on the behavior of electromagnetic storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data."
-	value = 1800
+	value = 2500
 	weight = 2
 	storm_value = 100
 	objective_type = /datum/overmap/event/emp
