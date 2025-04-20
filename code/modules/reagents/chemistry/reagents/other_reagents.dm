@@ -2662,6 +2662,12 @@
 		M.ExtinguishMob()
 	..()
 
+
+/datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
+	M.radiation = M.radiation - rand(max(M.radiation * 0.97, M.radiation))
+	..()
+	. = 1
+
 /datum/reagent/sulfur_dioxide
 	name = "Sulfur Dioxide"
 	description = "A transparent gas produced by geological activity and burning certain fuels."
