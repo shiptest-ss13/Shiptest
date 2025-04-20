@@ -43,8 +43,7 @@
 	cost = 1000
 	contains = list(/obj/item/attachment/alof)
 	crate_name = "alof crate"
-	faction = /datum/faction/srm
-	faction_discount = 10
+	faction_unique = list(/datum/faction/srm = 10)
 
 /datum/supply_pack/attachment/silencer
 	name = "Suppressor Crate"

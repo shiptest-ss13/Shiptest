@@ -53,8 +53,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/odysseus/main
 		)
 	crate_name = "202r Construction Kit"
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 40
+	faction_unique = list(/datum/faction/syndicate/cybersun = 40)
 
 /datum/supply_pack/mech/gygax_parts
 	name = "501p construction kit"
@@ -74,8 +73,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
 	crate_name = "501p Construction Kit"
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 40
+	faction_unique = list(/datum/faction/syndicate/cybersun = 40)
 
 /datum/supply_pack/mech/mpgygax_parts
 	name = "NT-501p-MP construction kit"
@@ -116,8 +114,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/durand/targeting
 	)
 	crate_name = "Durand Construction Kit"
-	faction = /datum/faction/clip
-	faction_discount = 20
+	faction_unique = list(/datum/faction/clip = 20)
 
 /*
 Mech Equipment

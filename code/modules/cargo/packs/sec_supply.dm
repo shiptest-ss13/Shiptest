@@ -153,8 +153,7 @@
 	contains = list(/obj/item/flamethrower/full)
 	crate_name = "flamethrower crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction = /datum/faction/syndicate/ngr
-	faction_discount = 20
+	faction_unique = list(/datum/faction/syndicate/ngr = 20)
 
 /datum/supply_pack/sec_supply/frag_grenade
 	name = "Frag Grenade Crate"
@@ -171,8 +170,7 @@
 	contains = list(/obj/item/storage/backpack/duffelbag/syndie/c4)
 	crate_name = "demolitions charge crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction = /datum/faction/syndicate/ngr
-	faction_discount = 10
+	faction_unique = list(/datum/faction/syndicate/ngr = 10)
 
 /datum/supply_pack/sec_supply/halberd
 	name = "Energy Halberd Crate"

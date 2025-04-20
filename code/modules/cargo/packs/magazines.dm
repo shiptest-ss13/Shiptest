@@ -210,8 +210,7 @@
 	desc = "Contains a 9x18mm magazine for the CM-70 machinepistol."
 	contains = list(/obj/item/ammo_box/magazine/m9mm_cm70/empty)
 	cost = 350
-	faction = /datum/faction/clip
-	faction_discount = 20
+	faction_unique = list(/datum/faction/clip = 20)
 
 /datum/supply_pack/magazine/cm357_mag
 	name = "CM-357 Magazine Crate"
@@ -225,8 +224,7 @@
 	desc = "Contains a 9x18mm magazine for the CM-5 SMG with a capacity of 30 rounds."
 	contains = list(/obj/item/ammo_box/magazine/cm5_9mm/empty)
 	cost = 300
-	faction = /datum/faction/clip
-	faction_discount = 20
+	faction_unique = list(/datum/faction/clip = 20)
 
 /datum/supply_pack/magazine/cm82_mag
 	name = "CM-82 Magazine Crate"
@@ -355,8 +353,8 @@
 	name = "Weapon Cell Crate"
 	desc = "Contains a weapon cell, compatible with laser guns."
 	contains = list(/obj/item/stock_parts/cell/gun)
-	faction = /datum/faction/nt
 	cost = 500
+	faction_unique = list(/datum/faction/nt = -1)
 
 /datum/supply_pack/magazine/solgovcell
 	name = "SolCon Weapon Cell Crate"

@@ -38,8 +38,7 @@
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/syndicate/black,
 					/obj/item/clothing/head/helmet/space/syndicate/black)
-	faction = /datum/faction/syndicate
-	faction_discount = 30
+	faction_unique = list(/datum/faction/syndicate = 30)
 
 /datum/supply_pack/spacesuits/armored_engi_spacesuit
 	name = "Coalition Engineering Space Suit Crate"

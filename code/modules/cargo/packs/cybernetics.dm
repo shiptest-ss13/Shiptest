@@ -12,8 +12,7 @@
 	contains = list(/obj/item/organ/cyberimp/arm/surgery)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 50
+	faction_unique = list(/datum/faction/syndicate/cybersun = 50)
 
 /datum/supply_pack/cybernetic/cyberarm_toolset
 	name = "Integrated Engineering Toolset Kit"
@@ -22,8 +21,7 @@
 	contains = list(/obj/item/organ/cyberimp/arm/toolset)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 50
+	faction_unique = list(/datum/faction/syndicate/cybersun = 50)
 
 /datum/supply_pack/cybernetic/cyberhud_sec
 	name = "Integrated Security HUD"
@@ -32,8 +30,7 @@
 	contains = list(/obj/item/organ/cyberimp/eyes/hud/security)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 50
+	faction_unique = list(/datum/faction/syndicate/cybersun = 50)
 
 /datum/supply_pack/cybernetic/cyberhud_med
 	name = "Integrated Medical Analysis HUD"
@@ -42,8 +39,7 @@
 	contains = list(/obj/item/organ/cyberimp/eyes/hud/medical)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 50
+	faction_unique = list(/datum/faction/syndicate/cybersun = 50)
 
 /datum/supply_pack/cybernetic/cyberhud_diagnostic
 	name = "Integrated Exosuit Diagnostic HUD"
@@ -52,8 +48,7 @@
 	contains = list(/obj/item/organ/cyberimp/eyes/hud/diagnostic)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 50
+	faction_unique = list(/datum/faction/syndicate/cybersun = 50)
 
 /datum/supply_pack/cybernetic/cyber_breathing
 	name = "Integrated Breathing Tube"
@@ -62,8 +57,7 @@
 	contains = list(/obj/item/organ/cyberimp/mouth/breathing_tube)
 	crate_name = "implant crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 50
+	faction_unique = list(/datum/faction/syndicate/cybersun = 50)
 
 /datum/supply_pack/cybernetic/cyberorgans
 	name = "Cybernetic Organs Replacement Pack"
@@ -75,5 +69,4 @@
 					/obj/item/organ/heart/cybernetic/tier2)
 	crate_name = "organs crate"
 	crate_type = /obj/structure/closet/crate/freezer
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 50
+	faction_unique = list(/datum/faction/syndicate/cybersun = 50)
