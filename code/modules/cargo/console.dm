@@ -253,18 +253,29 @@
 			)
 		if((current_pack.hidden))
 			continue
-		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.source_template.faction) : FALSE
-		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
-		if(current_pack.faction_locked && !same_faction)
+		var/buying_faction = current_ship.source_template.faction
+		var/pack_factions = current_pack.faction_unique
+		var/discount = null
+		for(var/datum/faction/checked_faction in pack_factions)
+			if(checked_faction.allowed_faction(buying_faction))
+				discount = pack_factions[checked_faction]
+		if(discount == CARGOPACK_BLACKLIST)
 			continue
+		if(current_pack.faction_locked && !discount)
+			continue
+		if(discount == CARGOPACK_NODISCOUNT)
+			discount = null
+
+		var/discountedcost = discount ? ROUND(current_pack.cost - (current_pack.cost * (discount * 0.01))) : null
+
 		supply_pack_data[current_pack.group]["packs"] += list(list(
 			"name" = current_pack.name,
 			"cost" = current_pack.cost,
-			"discountedcost" = discountedcost ? discountedcost : null,
-			"discountpercent" = current_pack.faction_discount,
+			"discountedcost" = discountedcost,
+			"discountpercent" = discount,
 			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
 			"ref" = REF(current_pack),
-			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : ""), // If there is a description, use it. Otherwise use the pack's name.
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : ""), // If there is a description, use it. Otherwise use the pack's name.
 			"no_bundle" = current_pack.no_bundle
 		))
 

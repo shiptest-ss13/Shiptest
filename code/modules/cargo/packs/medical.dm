@@ -86,7 +86,7 @@
 					/obj/item/reagent_containers/medigel/sterilizine,
 					/obj/item/roller)
 	crate_name = "surgical supplies crate"
-	faction_unique = list(/datum/faction/syndicate/suns = 50 //this shouldnt be 3k but if it is...)
+	faction_unique = list(/datum/faction/syndicate/suns = 50) //this shouldnt be 3k but if it is...
 
 /datum/supply_pack/medical/disk
 	name = "Advanced Surgical Procedure Disk"

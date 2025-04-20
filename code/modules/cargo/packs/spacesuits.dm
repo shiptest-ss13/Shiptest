@@ -46,7 +46,7 @@
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/syndicate/black/engie,
 					/obj/item/clothing/head/helmet/space/syndicate/black/engie)
-	faction_unique = (/datum/faction/syndicate = -1)
+	faction_unique = list(/datum/faction/syndicate = -1)
 	faction_locked = TRUE
 
 //inteq
