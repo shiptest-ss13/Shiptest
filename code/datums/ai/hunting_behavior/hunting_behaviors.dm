@@ -62,7 +62,7 @@
 	for(var/atom/possible_dinner as anything in typecache_filter_list(range(hunt_range, living_mob), types_to_hunt))
 		if(!valid_dinner(living_mob, possible_dinner, hunt_range))
 			continue
-		controller.blackboard[hunting_target_key] = WEAKREF(possible_dinner)
+		controller.set_blackboard_key(hunting_target_key, possible_dinner)
 		finish_action(controller, TRUE)
 		return
 
@@ -118,11 +118,11 @@
 /datum/ai_behavior/hunt_target/finish_action(datum/ai_controller/controller, succeeded, hunting_target_key, hunting_cooldown_key)
 	. = ..()
 	if(succeeded)
-		controller.blackboard[hunting_cooldown_key] = world.time + hunt_cooldown
+		controller.set_blackboard_key(hunting_cooldown_key, world.time + hunt_cooldown)
 	else if(hunting_target_key)
-		controller.blackboard[hunting_target_key] = null
+		controller.clear_blackboard_key(hunting_target_key)
 	if(always_reset_target && hunting_target_key)
-		controller.blackboard[hunting_target_key] = null
+		controller.clear_blackboard_key(hunting_target_key)
 
 /datum/ai_behavior/hunt_target/unarmed_attack_target
 

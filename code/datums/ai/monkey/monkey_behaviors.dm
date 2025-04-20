@@ -33,7 +33,7 @@
 	else if(target.force > best_force)
 		living_pawn.drop_all_held_items()
 		living_pawn.put_in_hands(target)
-		controller.blackboard[BB_MONKEY_BEST_FORCE_FOUND] = target.force
+		controller.set_blackboard_key(BB_MONKEY_BEST_FORCE_FOUND, target.force)
 		finish_action(controller, TRUE)
 		return
 
@@ -77,7 +77,7 @@
 
 	victim.visible_message(span_warning("[living_pawn] starts trying to take [target] from [victim]!"), span_danger("[living_pawn] tries to take [target]!"))
 
-	controller.blackboard[BB_MONKEY_PICKPOCKETING] = TRUE
+	controller.set_blackboard_key(BB_MONKEY_PICKPOCKETING, TRUE)
 
 	var/success = FALSE
 
@@ -98,8 +98,8 @@
 
 /datum/ai_behavior/monkey_equip/pickpocket/finish_action(datum/ai_controller/controller, success)
 	. = ..()
-	controller.blackboard[BB_MONKEY_PICKPOCKETING] = FALSE
-	controller.blackboard[BB_MONKEY_PICKUPTARGET] = null
+	controller.set_blackboard_key(BB_MONKEY_PICKPOCKETING, FALSE)
+	controller.clear_blackboard_key(BB_MONKEY_PICKUPTARGET)
 
 /datum/ai_behavior/monkey_flee
 

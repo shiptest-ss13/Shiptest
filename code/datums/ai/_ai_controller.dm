@@ -7,8 +7,18 @@ multiple modular subtrees with behaviors
 /datum/ai_controller
 	///The atom this controller is controlling
 	var/atom/pawn
+	/**
+	 * This is a list of variables the AI uses and can be mutated by actions.
+	 *
+	 * When an action is performed you pass this list and any relevant keys for the variables it can mutate.
+	 *
+	 * DO NOT set values in the blackboard directly, and especially not if you're adding a datum reference to this!
+	 * Use the setters, this is important for reference handing.
+	 */
+	var/list/blackboard = list()
+
 	///Bitfield of traits for this AI to handle extra behavior
-	var/ai_traits
+	var/ai_traits = NONE
 	///Current actions being performed by the AI.
 	var/list/current_behaviors
 	///Current actions and their respective last time ran as an assoc list.
@@ -19,8 +29,6 @@ multiple modular subtrees with behaviors
 	var/atom/current_movement_target
 	///Identifier for what last touched our movement target, so it can be cleared conditionally
 	var/movement_target_source
-	///This is a list of variables the AI uses and can be mutated by actions. When an action is performed you pass this list and any relevant keys for the variables it can mutate.
-	var/list/blackboard = list()
 	///Stored arguments for behaviors given during their initial creation
 	var/list/behavior_args = list()
 	///Tracks recent pathing attempts, if we fail too many in a row we fail our current plans.
