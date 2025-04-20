@@ -178,7 +178,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
 		/obj/item/reagent_containers/food/snacks/grown/whitebeet = 5,
 		/obj/item/reagent_containers/food/snacks/grown/potato = 4,
-		/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 4,
+		/obj/item/reagent_containers/food/snacks/grown/sweet_potato = 4,
 		/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle = 4,
 		/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet = 4,
 		/obj/item/reagent_containers/food/snacks/grown/corn = 4
@@ -282,3 +282,8 @@
 		/obj/item/seeds/berry/glow,
 		/obj/item/seeds/sunflower/moonflower
 	)
+
+/obj/effect/spawner/random/food_or_drink/soda_can
+	name = "soda can spawner"
+	icon_state = "can"
+	loot_type_path = /obj/item/reagent_containers/food/drinks/soda_cans

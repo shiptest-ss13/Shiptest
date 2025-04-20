@@ -14,7 +14,7 @@
 #define FACTION_PLAYER_NANOTRASEN "playerNanotrasen"
 #define FACTION_PLAYER_FRONTIERSMEN "playerFrontiersmen"
 #define FACTION_PLAYER_MINUTEMAN "playerMinuteman"
-#define FACTION_PLAYER_SOLCON "playerSolcon"
+#define FACTION_PLAYER_SOLCON "playerSolCon"
 #define FACTION_PLAYER_INTEQ "playerInteq"
 #define FACTION_PLAYER_ROUMAIN "playerRoumain"
 #define FACTION_PLAYER_GEZENA "playerGezena"

@@ -146,3 +146,13 @@
 /area/ruin/rockplanet/rust_base/tanto2
 	name = "Crashed Moonshiner"
 	icon_state = "green"
+
+//River Valley Stash
+
+/area/ruin/rockplanet/river_valley_stash/shuttle
+	name = "Frontiersmen Shuttle"
+	icon_state = "shuttle"
+
+/area/ruin/rockplanet/river_valley_stash/hut
+	name = "Frontiersmen Hut"
+	icon_state = "red"

@@ -5,7 +5,7 @@
 	species_age_min = 0
 	species_age_max = 300
 	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
-	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT, TRAIT_METALLIC)
+	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 	mutanteyes = /obj/item/organ/eyes/robotic
@@ -23,9 +23,7 @@
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
 	damage_overlay_type = "synth"
-	burnmod = 1.25
 	heatmod = 1.5
-	brutemod = 1
 	siemens_coeff = 1.5
 	reagent_tag = PROCESS_SYNTHETIC
 	species_gibs = "robotic"
@@ -65,6 +63,8 @@
 	)
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
+		mutantbrain = /obj/item/organ/brain/mmi_holder
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
@@ -73,10 +73,6 @@
 			if(species_datum?.has_screen)
 				change_screen = new
 				change_screen.Grant(H)
-		if(H.dna.features["ipc_brain"] == "Man-Machine Interface")
-			mutantbrain = /obj/item/organ/brain/mmi_holder
-		else
-			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
@@ -139,11 +135,11 @@
 	var/mob/living/carbon/human/H = user
 	var/obj/item/organ/stomach/cell/battery = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(!battery)
-		to_chat(H, "<span class='warning'>You try to siphon energy from \the [target], but your power cell is gone!</span>")
+		to_chat(H, span_warning("You try to siphon energy from \the [target], but your power cell is gone!"))
 		return
 
 	if(istype(H) && H.nutrition >= NUTRITION_LEVEL_ALMOST_FULL)
-		to_chat(user, "<span class='warning'>You are already fully charged!</span>")
+		to_chat(user, span_warning("You are already fully charged!"))
 		return
 
 	if(istype(target, /obj/machinery/power/apc))
@@ -152,7 +148,7 @@
 			powerdraw_loop(A, H, TRUE)
 			return
 		else
-			to_chat(user, "<span class='warning'>There is not enough charge to draw from that APC.</span>")
+			to_chat(user, span_warning("There is not enough charge to draw from that APC."))
 			return
 
 	if(iselzuose(target))
@@ -162,11 +158,11 @@
 			powerdraw_loop(eth_stomach, H, FALSE)
 			return
 		else
-			to_chat(user, "<span class='warning'>There is not enough charge to draw from that being!</span>")
+			to_chat(user, span_warning("There is not enough charge to draw from that being!"))
 			return
 
 /obj/item/apc_powercord/proc/powerdraw_loop(atom/target, mob/living/carbon/human/H, apc_target)
-	H.visible_message("<span class='notice'>[H] inserts a power connector into the [target].</span>", "<span class='notice'>You begin to draw power from the [target].</span>")
+	H.visible_message(span_notice("[H] inserts a power connector into the [target]."), span_notice("You begin to draw power from the [target]."))
 	var/obj/item/organ/stomach/cell/battery = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(apc_target)
 		var/obj/machinery/power/apc/A = target
@@ -174,23 +170,23 @@
 			return
 		while(do_after(H, 10, target = A))
 			if(loc != H)
-				to_chat(H, "<span class='warning'>You must keep your connector out while charging!</span>")
+				to_chat(H, span_warning("You must keep your connector out while charging!"))
 				break
 			if(A.cell.charge == 0)
-				to_chat(H, "<span class='warning'>The [A] doesn't have enough charge to spare.</span>")
+				to_chat(H, span_warning("The [A] doesn't have enough charge to spare."))
 				break
 			A.charging = 1
 			if(A.cell.charge >= 500)
 				H.nutrition += 50
 				A.cell.charge -= 250
-				to_chat(H, "<span class='notice'>You siphon off some of the stored charge for your own use.</span>")
+				to_chat(H, span_notice("You siphon off some of the stored charge for your own use."))
 			else
 				H.nutrition += A.cell.charge/10
 				A.cell.charge = 0
-				to_chat(H, "<span class='notice'>You siphon off as much as the [A] can spare.</span>")
+				to_chat(H, span_notice("You siphon off as much as the [A] can spare."))
 				break
 			if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
-				to_chat(H, "<span class='notice'>You are now fully charged.</span>")
+				to_chat(H, span_notice("You are now fully charged."))
 				break
 	else
 		var/obj/item/organ/stomach/ethereal/A = target
@@ -199,22 +195,22 @@
 		var/siphon_amt
 		while(do_after(H, 10, target = A.owner))
 			if(!battery)
-				to_chat(H, "<span class='warning'>You need a battery to recharge!</span>")
+				to_chat(H, span_warning("You need a battery to recharge!"))
 				break
 			if(loc != H)
-				to_chat(H, "<span class='warning'>You must keep your connector out while charging!</span>")
+				to_chat(H, span_warning("You must keep your connector out while charging!"))
 				break
 			if(A.crystal_charge == 0)
-				to_chat(H, "<span class='warning'>[A] is completely drained!</span>")
+				to_chat(H, span_warning("[A] is completely drained!"))
 				break
 			siphon_amt = A.crystal_charge <= (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 			A.adjust_charge(-1 * siphon_amt)
 			H.nutrition += (siphon_amt)
 			if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
-				to_chat(H, "<span class='notice'>You are now fully charged.</span>")
+				to_chat(H, span_notice("You are now fully charged."))
 				break
 
-	H.visible_message("<span class='notice'>[H] unplugs from the [target].</span>", "<span class='notice'>You unplug from the [target].</span>")
+	H.visible_message(span_notice("[H] unplugs from the [target]."), span_notice("You unplug from the [target]."))
 	return
 
 /datum/species/ipc/spec_life(mob/living/carbon/human/H)
@@ -222,7 +218,7 @@
 	if(H.health <= HEALTH_THRESHOLD_CRIT && H.stat != DEAD) // So they die eventually instead of being stuck in crit limbo.
 		H.adjustFireLoss(6) // After BODYTYPE_ROBOTIC resistance this is ~2/second
 		if(prob(5))
-			to_chat(H, "<span class='warning'>Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent.</span>")
+			to_chat(H, span_warning("Alert: Internal temperature regulation systems offline; thermal damage sustained. Shutdown imminent."))
 			H.visible_message("[H]'s cooling system fans stutter and stall. There is a faint, yet rapid beeping coming from inside their chassis.")
 
 

@@ -13,7 +13,7 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!(machine_stat & BROKEN))
-			. += "<span class='notice'>[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.</span>"
+			. += span_notice("[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.")
 
 /obj/machinery/porta_turret/ship/weak
 	max_integrity = 120
@@ -101,9 +101,9 @@
 /obj/machinery/porta_turret/ship/ngr/heavy
 	name = "Cliff Turret"
 	desc = "A heavy turret manufactured by the New Gorlex Republic for its ships and installations. Has a reputation of being extremely dangerous."
-	stun_projectile = /obj/projectile/bullet/a65clip/rubber
+	stun_projectile = /obj/projectile/bullet/a75clip/rubber
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
-	lethal_projectile = /obj/projectile/bullet/a65clip
+	lethal_projectile = /obj/projectile/bullet/a75clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	burst_size = 1
 	scan_range = 14
@@ -158,7 +158,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	lethal_projectile = /obj/projectile/bullet/a556_42
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
-	faction = list(FACTION_SYNDICATE, "turret")
+	faction = list(FACTION_RAMZI, "turret")
 	max_integrity = 180
 	shot_delay = 16
 	burst_delay = 8
@@ -182,9 +182,9 @@
 /obj/machinery/porta_turret/ship/ramzi/heavy
 	name = "Revolt Turret"
 	desc = "A durable turret manufactured by the Gorlex Marauders during the ICW. Some reported examples used anti-vehicle munitions. Most surviving examples are poorly maintained."
-	stun_projectile = /obj/projectile/bullet/a65clip/rubber
+	stun_projectile = /obj/projectile/bullet/a75clip/rubber
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
-	lethal_projectile = /obj/projectile/bullet/a65clip
+	lethal_projectile = /obj/projectile/bullet/a75clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	scan_range = 12
 	shot_delay = 20
@@ -242,10 +242,55 @@
 	scan_range = 12
 	shot_delay = 20
 
-/* Solcon Turrets */
+/* SolCon Turrets */
+/* Gauss with no non-lethal option */
+/* Effective at long range */
 
-/obj/machinery/porta_turret/ship/solgov
+/obj/machinery/porta_turret/ship/solcon
+	name = "Type Fauchard Emplacement" // <- women who cannot do solcon names good
+	desc = "A long range turret manufactured by the Solarbundswaffenkammer. It is rated for combat usage, and has a higher than average lethality index."
 	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	max_integrity = 200
+	integrity_failure = 0.6
+	scan_range = 14
+	shot_delay = 40
+	burst_size = 4
+	burst_delay = 3
+	spread = 10
+
+/obj/machinery/porta_turret/ship/solcon/slug
+	name = "Type Guisarme Emplacement"
+	desc = "A short range turret emplacement manufactured by the Solarbundswaffenkammer. The slug rounds used have given it a reputation for incredible effect against unarmored targets, and performance issues at range."
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/slug/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss/slug
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
+	max_integrity = 300
+	integrity_failure = 0.6
+	scan_range = 8
+	shot_delay = 25
+	burst_size = 2
+	burst_delay = 5
+
+/obj/machinery/porta_turret/ship/solcon/lance
+	name = "Type Glaive Emplacement"
+	desc = "A heavy turret emplacement manufactured by the Solarbundswaffenkammer. Long cycle time between volleys is the only weakness attributed to the turret, as it is effective against targets up to exo-armor."
+	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	stun_projectile = /obj/projectile/bullet/gauss/lance/hc
+	stun_projectile_sound = 'sound/weapons/gun/gauss/gar.ogg'
+	lethal_projectile = /obj/projectile/bullet/gauss/lance
+	lethal_projectile_sound = 'sound/weapons/gun/gauss/gar.ogg'
+	max_integrity = 300
+	integrity_failure = 0.5
+	scan_range = 16
+	shot_delay = 60
+	burst_size = 3
+	burst_delay = 4
 
 /* Pan Gezena Federation Turrets */
 //midline but hitscan
@@ -334,7 +379,7 @@
 /obj/machinery/porta_turret/ship/frontiersmen
 	name = "Spitter Turret"
 	desc = "A juryrigged mishmash of a 9mm SMG and targetting system. Stand clear!"
-	faction = list(FACTION_FRONTIER, "Turret")
+	faction = list(FACTION_FRONTIERSMEN, "Turret")
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	integrity_failure = 0.6
 	max_integrity = 180
