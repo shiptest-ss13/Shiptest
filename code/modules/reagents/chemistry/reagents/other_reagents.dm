@@ -2662,13 +2662,6 @@
 		M.ExtinguishMob()
 	..()
 
-
-/datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(0.5, 200)
-	M.adjust_disgust(4)
-	..()
-	. = 1
-
 /datum/reagent/sulfur_dioxide
 	name = "Sulfur Dioxide"
 	description = "A transparent gas produced by geological activity and burning certain fuels."
