@@ -270,7 +270,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	// class 1 has easy mobs, the ones you find on the surface
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 50,
-		/mob/living/simple_animal/hostile/bear/cave = 30,
+		/mob/living/basic/bear/cave = 30,
 		/mob/living/simple_animal/hostile/poison/giant_spider = 5,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1,
 	)
@@ -293,7 +293,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//We then start to introduce the unused jungle mobs... slowly.
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 75,
-		/mob/living/simple_animal/hostile/bear/cave = 60,
+		/mob/living/basic/bear/cave = 60,
 		/mob/living/simple_animal/hostile/poison/giant_spider = 45,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 20,
 		/mob/living/simple_animal/hostile/jungle/seedling = 1,
@@ -907,7 +907,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 /obj/structure/vein/waterplanet
 	mob_types = list(
-		/mob/living/simple_animal/hostile/bear/cave = 60,
+		/mob/living/basic/bear/cave = 60,
 		/mob/living/simple_animal/hostile/carp = 40,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 20,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 10,
@@ -932,7 +932,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 2
 
 	mob_types = list(
-		/mob/living/simple_animal/hostile/bear/cave = 50,
+		/mob/living/basic/bear/cave = 50,
 		/mob/living/simple_animal/hostile/carp = 30,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 30,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 15,
@@ -960,7 +960,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 3
 
 	mob_types = list(
-		/mob/living/simple_animal/hostile/bear/cave = 10,
+		/mob/living/basic/bear/cave = 10,
 		/mob/living/simple_animal/hostile/carp = 20,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 10,
 		/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 40,

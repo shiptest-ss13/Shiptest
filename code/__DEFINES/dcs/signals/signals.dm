@@ -534,7 +534,7 @@
 ///from base of /mob/living/can_track(): (mob/user)
 #define COMSIG_LIVING_CAN_TRACK "mob_cantrack"
 	#define COMPONENT_CANT_TRACK (1<<0)
-/// from start of /mob/living/handle_breathing(): (delta_time, times_fired)
+/// from start of /mob/living/handle_breathing(): (seconds_per_tick, times_fired)
 #define COMSIG_LIVING_HANDLE_BREATHING "living_handle_breathing"
 
 ///From /datum/component/creamed/Initialize()
