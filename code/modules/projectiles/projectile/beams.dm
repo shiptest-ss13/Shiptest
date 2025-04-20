@@ -49,6 +49,7 @@
 	speed = 0.4
 
 /obj/projectile/beam/laser/eoehoma
+	icon_state = "heavylaser"
 	damage = 35
 	armour_penetration = 0
 	speed = 0.8
