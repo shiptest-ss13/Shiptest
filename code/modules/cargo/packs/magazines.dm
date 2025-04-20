@@ -178,8 +178,7 @@
 	desc = "Contains a 5.56x42mm CLIP magazine for the SAW-80 Squad Automatic Weapon, with a capacity of sixty rounds. Count your shots, they run out fast."
 	contains = list(/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty)
 	cost = 750
-	faction = /datum/faction/syndicate/scarborough
-	faction_discount = 0
+	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/magazine/boomslang_mag
@@ -247,8 +246,7 @@
 	desc = "Contains a 7.62x40mm magazine for the SKM rifles, with a capacity of fourty rounds."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40/extended/empty)
 	cost = 1250
-	faction = /datum/faction/inteq
-	faction_discount = 0
+	faction_unique = list(/datum/faction/inteq = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/magazine/f4_mag
@@ -365,8 +363,7 @@
 	desc = "Contains a Solarian weapon cell, compatible with Solarian gauss weaponry."
 	contains = list(/obj/item/stock_parts/cell/gun/solgov)
 	cost = 500
-	faction = /datum/faction/solgov
-	faction_discount = 0
+	faction_unique = list(/datum/faction/solgov = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/magazine/upgradedguncell
@@ -374,8 +371,7 @@
 	desc = "Contains an upgraded weapon cell, compatible with laser guns. For NT use only."
 	contains = list(/obj/item/stock_parts/cell/gun/upgraded)
 	cost = 1000
-	faction = /datum/faction/nt
-	faction_discount = 0
+	faction_unique = list(/datum/faction/nt = -1)
 	faction_locked = TRUE
 
 /* etherbor */
@@ -392,8 +388,7 @@
 	desc = "Contains a military-grade Etherbor weapon cell produced for the PGFMC, compatible with Etherbor armaments with a significantly higher capacity."
 	contains = list(/obj/item/stock_parts/cell/gun/pgf)
 	cost = 1000
-	faction = /datum/faction/pgf
-	faction_discount = 0
+	faction_unique = list(/datum/faction/pgf = -1)
 	faction_locked = TRUE
 
 /* Expand once the energy weapons have been actually expanded upon */

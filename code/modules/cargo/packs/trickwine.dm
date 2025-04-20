@@ -1,7 +1,6 @@
 /datum/supply_pack/food/trickwine
 	desc = "Trickwines shipped directly from illestern factories. A good replacement for underequipped Roumain ships."
-	faction = /datum/faction/srm
-	faction_discount = 0
+	faction_unique = list(/datum/faction/srm = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/food/trickwine/ashwine

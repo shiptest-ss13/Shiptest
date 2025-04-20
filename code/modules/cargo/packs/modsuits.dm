@@ -32,8 +32,7 @@
 	desc = "Contains an advanced engineering modsuit. We've put it through just about every industrial accident our engineering team could concoct, and the white finish is still untouched."
 	cost = 4000
 	contains = list(/obj/item/mod/control/pre_equipped/advanced)
-	faction = /datum/faction/nt
-	faction_discount = 0
+	faction_unique = list(/datum/faction/nt = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/modsuits/loader
@@ -59,8 +58,7 @@
 	desc = "Contains an advanced medical modsuit with next-gen integrated medical systems."
 	cost = 3500
 	contains = list(/obj/item/mod/control/pre_equipped/rescue)
-	faction = /datum/faction/nt
-	faction_discount = 0
+	faction_unique = list(/datum/faction/nt = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/modsuits/research
@@ -80,8 +78,7 @@
 	desc = "Contains a well armored Safeguard modsuit, the premier of protection solutions."
 	cost = 5500
 	contains = list(/obj/item/mod/control/pre_equipped/safeguard)
-	faction = /datum/faction/nt
-	faction_discount = 0
+	faction_unique = list(/datum/faction/nt = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/modsuits/syndicate

@@ -60,8 +60,7 @@
 	contains = list(/obj/item/clothing/suit/space/inteq,
 					/obj/item/clothing/head/helmet/space/inteq)
 	crate_name = "space suit crate"
-	faction = /datum/faction/inteq
-	faction_discount = 0
+	faction_unique = list(/datum/faction/inteq = -1)
 	faction_locked = TRUE
 
 //solgov
@@ -73,8 +72,7 @@
 	contains = list(/obj/item/clothing/suit/space/solgov,
 					/obj/item/clothing/head/helmet/space/solgov)
 	crate_name = "space suit crate"
-	faction = /datum/faction/solgov
-	faction_discount = 0
+	faction_unique = list(/datum/faction/solgov = -1)
 	faction_locked = TRUE
 
 //fucking gezena
@@ -86,8 +84,7 @@
 	contains = list(/obj/item/clothing/suit/space/gezena,
 					/obj/item/clothing/head/helmet/space/gezena)
 	crate_name = "rakalla suit crate"
-	faction = /datum/faction/pgf
-	faction_discount = 0
+	faction_unique = list(/datum/faction/pgf = -1)
 	faction_locked = TRUE
 
 
@@ -158,8 +155,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/atmos)
 	crate_name = "atmospherics hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
-	faction = /datum/faction/nt
-	faction_discount = 0
+	faction_unique = list(/datum/faction/nt = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/advanced_hardsuit
@@ -169,8 +165,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine/elite)
 	crate_name = "advanced hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
-	faction = /datum/faction/nt
-	faction_discount = 0
+	faction_unique = list(/datum/faction/nt = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/heavy_sec_hardsuit
@@ -180,8 +175,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/hos)
 	crate_name = "advanced hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/nt
-	faction_discount = 0
+	faction_unique = list(/datum/faction/nt = -1)
 	faction_locked = TRUE
 
 //cybersun breaker
@@ -193,8 +187,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/cybersun)
 	crate_name = "neutron star hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 0
+	faction_unique = list(/datum/faction/syndicate/cybersun = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/cmt_hardsuit
@@ -204,8 +197,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed)
 	crate_name = "neutron star hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 0
+	faction_unique = list(/datum/faction/syndicate/cybersun = -1)
 	faction_locked = TRUE
 
 //inteq hardsuits
@@ -227,8 +219,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/security/inteq)
 	crate_name = "inteq hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/inteq
-	faction_discount = 0
+	faction_unique = list(/datum/faction/inteq = -1)
 	faction_locked = TRUE
 
 //solarian hardsuit
@@ -240,8 +231,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov)
 	crate_name = "solarian hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/solgov
-	faction_discount = 0
+	faction_unique = list(/datum/faction/solgov = -1)
 	faction_locked = TRUE
 
 //clip jardsuits
@@ -253,8 +243,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/clip_patroller)
 	crate_name = "patroller hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/clip
-	faction_discount = 0
+	faction_unique = list(/datum/faction/clip = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/spotter_hardsuit
@@ -264,8 +253,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/clip_spotter)
 	crate_name = "patroller hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/clip
-	faction_discount = 0
+	faction_unique = list(/datum/faction/clip = -1)
 	faction_locked = TRUE
 
 //jardline
@@ -277,8 +265,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/hl)
 	crate_name = "white-red hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/hardliners
-	faction_discount = 0
+	faction_unique = list(/datum/faction/syndicate/hardliners = -1)
 	faction_locked = TRUE
 
 //ngr
@@ -290,8 +277,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/ngr)
 	crate_name = "beige-red hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/syndicate/ngr
-	faction_discount = 0
+	faction_unique = list(/datum/faction/syndicate/ngr = -1)
 	faction_locked = TRUE
 
 //srm
@@ -303,6 +289,5 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/solgov/roumain)
 	crate_name = "roumain hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/srm
-	faction_discount = 0
+	faction_unique = list(/datum/faction/srm = -1)
 	faction_locked = TRUE

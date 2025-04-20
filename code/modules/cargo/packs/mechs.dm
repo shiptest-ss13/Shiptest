@@ -254,8 +254,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
 	)
-	faction = /datum/faction/clip
-	faction_discount = 0
+	faction_unique = list(/datum/faction/clip = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/paladin_upgrade
@@ -265,8 +264,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
 	)
-	faction = /datum/faction/clip
-	faction_discount = 0
+	faction_unique = list(/datum/faction/clip = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/basenji_upgrade
@@ -276,8 +274,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	)
-	faction = /datum/faction/inteq
-	faction_discount = 0
+	faction_unique = list(/datum/faction/inteq = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/charger_upgrade
@@ -295,8 +292,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/dark_gygax
 	)
-	faction = /datum/faction/syndicate
-	faction_discount = 0
+	faction_unique = list(/datum/faction/syndicate = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/melee_armor_booster
