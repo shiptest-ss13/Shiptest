@@ -93,7 +93,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
 	crate_name = "NT-501p-MP Construction Kit"
-	faction = /datum/faction/nt
+	faction_unique = list(/datum/faction/nt = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/durand_parts

@@ -46,9 +46,8 @@
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/syndicate/black/engie,
 					/obj/item/clothing/head/helmet/space/syndicate/black/engie)
-	faction = /datum/faction/syndicate
+	faction_unique = (/datum/faction/syndicate = -1)
 	faction_locked = TRUE
-	faction_discount = 0
 
 //inteq
 
@@ -117,7 +116,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/medical)
 	crate_name = "medical hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
-	faction = /datum/faction/nt
+	faction_unique = list(/datum/faction/nt = 15)
 
 /datum/supply_pack/spacesuits/engineering_hardsuit
 	name = "Engineering Hardsuit Crate"
@@ -126,7 +125,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/engine)
 	crate_name = "engineering hardsuit crate"
 	crate_type = /obj/structure/closet/crate/medical
-	faction = /datum/faction/nt
+	faction_unique = list(/datum/faction/nt = 15)
 
 /datum/supply_pack/spacesuits/mining_hardsuit_heavy
 	name = "Heavy Mining Hardsuit Crate"
@@ -136,7 +135,7 @@
 					/obj/item/clothing/shoes/bhop)
 	crate_name = "heavy mining hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-	faction = /datum/faction/nt
+	faction_unique = list(/datum/faction/nt = 15)
 
 /datum/supply_pack/spacesuits/sci_hardsuit
 	name = "Scientific Hardsuit Crate"
@@ -145,7 +144,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/rd)
 	crate_name = "scientific hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/science
-	faction = /datum/faction/nt
+	faction_unique = list(/datum/faction/nt = 15)
 
 /datum/supply_pack/spacesuits/atmos_hardsuit
 	name = "Atmospherics Hardsuit Crate"
@@ -208,7 +207,7 @@
 	contains = list(/obj/item/clothing/suit/space/hardsuit/syndi/inteq)
 	crate_name = "pointman hardsuit crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction = /datum/faction/inteq
+	faction_unique = list(/datum/faction/inteq = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/spacesuits/inteq_hardsuit

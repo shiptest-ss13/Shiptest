@@ -86,7 +86,7 @@
 	desc = "Contains an experimental Blood-Red modsuit with integrated armor assist. Originally meant to replace the hardsuit model, the ICW ended before anything came of these things."
 	cost = 5500
 	contains = list(/obj/item/mod/control/pre_equipped/syndicate)
-	faction = /datum/faction/syndicate
+	faction_unique = list(/datum/faction/syndicate = -1)
 	faction_locked = TRUE
 
 /*

@@ -75,7 +75,7 @@
 		/obj/item/storage/bag/ore,
 		/obj/item/mining_scanner)
 	crate_name = "basic mining crate"
-	faction = /datum/faction/nt/ns_logi
+	faction_unique = list(/datum/faction/nt/ns_logi = 15)
 
 /datum/supply_pack/tools/jackhammer
 	name = "Jackhammer Crate"
@@ -104,7 +104,7 @@
 	cost = 750
 	contains = list(/obj/item/inducer)
 	crate_name = "inducer crate"
-	faction = /datum/faction/nt
+	faction_unique = list(/datum/faction/nt = 15)
 
 /datum/supply_pack/tools/jetpack
 	name = "Jetpack Crate"
@@ -157,9 +157,8 @@
 	cost = 1500
 	contains = list(/obj/item/melee/sledgehammer/gorlex)
 	crate_name = "sledgehammer crate"
-	faction = /datum/faction/syndicate/ngr
+	faction_unique = list(/datum/faction/syndicate/ngr = -1)
 	faction_locked = TRUE
-	faction_discount = 0
 
 /*
 		Liquid tanks

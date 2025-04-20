@@ -10,16 +10,13 @@
 	var/admin_spawned = FALSE
 	var/no_bundle = FALSE
 
-	var/datum/faction/faction
-	//what's the discount for buyers in our faction.
-	var/faction_discount = 15
-	// If buying should be restricted to factions included in faction_unique
-	var/faction_locked = FALSE
-
 	// Associative list of datum/faction with the discount (as a percentage) checked with faction/allowed_faction
 	//-1 if it should be included but not discounted (such as when faction_locked = TRUE)
 	//-2 if it should be blacklisted from purchase
 	var/list/faction_unique = list()
+
+	// If buying should be restricted to factions included in faction_unique
+	var/faction_locked = FALSE
 
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C
