@@ -106,7 +106,7 @@
 	. = ..()
 	if (inspect_src)
 		// This is lifted from paper.dm
-		if(!get_dist(source, user) <= 2 && !isobserver(user))
+		if(!(get_dist(user, src) <= 2) && !isobserver(user))
 			. += span_warning("You're too far away to read it!")
 			return
 
