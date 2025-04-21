@@ -544,16 +544,6 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/evidencebag
-	name = "Evidence Bag"
-	desc = "An empty evidence bag."
-	id = "evidencebag"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/plastic = 100)
-	build_path = /obj/item/evidencebag
-	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
 /datum/design/plumbing_rcd
 	name = "Plumbing Constructor"
 	id = "plumbing_rcd"
