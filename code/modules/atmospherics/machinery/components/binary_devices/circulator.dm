@@ -161,16 +161,16 @@
 		return
 
 	if(!panel_open)
-		to_chat(user, "<span class='warning'>Open the panel first!</span>")
+		to_chat(user, span_warning("Open the panel first!"))
 		return TRUE
 
 	if(generator)
-		to_chat(user, "<span class='warning'>Disconnect [generator] first!</span>")
+		to_chat(user, span_warning("Disconnect [generator] first!"))
 		return TRUE
 
 	set_anchored(!anchored)
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You [anchored?"secure":"unsecure"] [src].</span>")
+	to_chat(user, span_notice("You [anchored?"secure":"unsecure"] [src]."))
 
 	var/obj/machinery/atmospherics/node1 = nodes[1]
 	var/obj/machinery/atmospherics/node2 = nodes[2]
@@ -222,11 +222,11 @@
 	if(user.a_intent == INTENT_HARM)
 		return
 	if(generator)
-		to_chat(user, "<span class='warning'>Disconnect [generator] first!</span>")
+		to_chat(user, span_warning("Disconnect [generator] first!"))
 		return TRUE
 
 	mode = !mode
-	to_chat(user, "<span class='notice'>You set [src] to [mode?"cold":"hot"] mode.</span>")
+	to_chat(user, span_notice("You set [src] to [mode?"cold":"hot"] mode."))
 	return TRUE
 
 /obj/machinery/atmospherics/components/binary/circulator/screwdriver_act(mob/user, obj/item/I)
@@ -235,11 +235,11 @@
 	if(user.a_intent == INTENT_HARM)
 		return
 	if(generator)
-		to_chat(user, "<span class='warning'>Disconnect the generator first!</span>")
+		to_chat(user, span_warning("Disconnect the generator first!"))
 		return TRUE
 	panel_open = !panel_open
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
+	to_chat(user, span_notice("You [panel_open?"open":"close"] the panel on [src]."))
 	update_icon_nopipes()
 	return TRUE
 
@@ -247,7 +247,7 @@
 	if(user.a_intent == INTENT_HARM)
 		return
 	if(anchored)
-		to_chat(user, "<span class='warning'>[src] is anchored!</span>")
+		to_chat(user, span_warning("[src] is anchored!"))
 		return TRUE
 	if(!panel_open)
 		circulator_flip()
@@ -283,7 +283,7 @@
 
 
 	flipped = !flipped
-	to_chat(usr, "<span class='notice'>You flip [src].</span>")
+	to_chat(usr, span_notice("You flip [src]."))
 	playsound(src, 'sound/items/change_drill.ogg', 50)
 	update_icon_nopipes()
 

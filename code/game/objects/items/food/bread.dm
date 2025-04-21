@@ -69,7 +69,7 @@
 
 /obj/item/food/bread/meat
 	name = "meatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman."
+	desc = "A fresh loaf of bread with a hearty meat and cheese filling."
 	icon_state = "meatbread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -163,7 +163,7 @@
 
 /obj/item/food/bread/tofu
 	name = "Tofubread"
-	desc = "Like meatbread but for vegetarians. Not guaranteed to give superpowers."
+	desc = "A loaf of bread with a soft filling of tofu."
 	icon_state = "tofubread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -186,7 +186,7 @@
 
 /obj/item/food/bread/creamcheese
 	name = "cream cheese bread"
-	desc = "Just a schmear."
+	desc = "A luxurious loaf of bread with a smooth cream cheese filling."
 	icon_state = "creamcheesebread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -207,32 +207,6 @@
 	tastes = list("bread" = 10, "cheese" = 10)
 	foodtypes = GRAIN | DAIRY
 
-/obj/item/food/bread/mimana
-	name = "mimana bread"
-	desc = "Best eaten in silence."
-	icon_state = "mimanabread"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 20,
-		/datum/reagent/toxin/mutetoxin = 10,
-		/datum/reagent/consumable/nothing = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 10
-	)
-	tastes = list("bread" = 10, "silence" = 10)
-	foodtypes = GRAIN | FRUIT
-	slice_type = /obj/item/food/breadslice/mimana
-
-/obj/item/food/breadslice/mimana
-	name = "mimana bread slice"
-	desc = "A slice of silence!"
-	icon_state = "mimanabreadslice"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/toxin/mutetoxin = 2,
-		/datum/reagent/consumable/nothing = 2,
-		/datum/reagent/consumable/nutriment/vitamin = 2
-	)
-	foodtypes = GRAIN | FRUIT
-
 /obj/item/food/breadslice/custom
 	name = "bread slice"
 	icon_state = "tofubreadslice"
@@ -240,7 +214,7 @@
 
 /obj/item/food/baguette
 	name = "baguette"
-	desc = "Bon appetit!"
+	desc = "A thin, traditional, solarian bread hailing from the Central Canton. Goes well with soft cheese."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "baguette"
 	item_state = null
@@ -258,7 +232,7 @@
 
 /obj/item/food/garlicbread
 	name = "garlic bread"
-	desc = "Alas, it is limited."
+	desc = "A toasted slice of bread topped with baked garlic."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "garlicbread"
 	item_state = null
@@ -361,7 +335,7 @@
 
 /obj/item/food/butterdog
 	name = "butterdog"
-	desc = "Made from exotic butters."
+	desc = "A stick of butter in a hotdog bun. About as disgusting as it sounds."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "butterdog"
 	bite_consumption = 1
@@ -369,7 +343,7 @@
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 1
 	)
-	tastes = list("butter" = 1, "exotic butter" = 1)
+	tastes = list("butter" = 1)
 	foodtypes = GRAIN | DAIRY
 	w_class = WEIGHT_CLASS_SMALL
 
