@@ -222,6 +222,9 @@
 /obj/structure/cable/pink{
 	icon_state = "0-4"
 	},
+/obj/structure/sign/poster/contraband/twelve_gauge{
+	pixel_x = -27
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "dJ" = (
@@ -424,10 +427,6 @@
 /obj/item/stack/sheet/bone,
 /obj/item/stack/sheet/bone,
 /obj/item/stack/sheet/bone,
-/obj/structure/sign/poster/contraband/twelve_gauge{
-	pixel_y = -30;
-	pixel_x = -8
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "ho" = (
@@ -1197,7 +1196,8 @@
 "rp" = (
 /obj/machinery/door/airlock/freezer{
 	dir = 4;
-	name = "Freezer"
+	name = "Freezer";
+	fast_close = 1
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1843,6 +1843,9 @@
 	},
 /obj/structure/chair/handrail{
 	dir = 8
+	},
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/c38/trac{
+	max_ammo = 5
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/security/armory)
@@ -2810,7 +2813,6 @@
 	icon_state = "0-8"
 	},
 /obj/item/paper,
-/obj/item/ammo_casing/c38/trac,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "Kv" = (
@@ -3376,7 +3378,7 @@
 	},
 /obj/item/melee/knife/hunting{
 	pixel_y = 3;
-	pixel_x = -4
+	pixel_x = 7
 	},
 /obj/item/binoculars{
 	pixel_y = 8;
@@ -3389,6 +3391,10 @@
 /obj/item/attachment/rail_light{
 	pixel_x = 12;
 	pixel_y = -6
+	},
+/obj/item/gps{
+	pixel_x = -11;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/armory)
@@ -3925,7 +3931,7 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/item/toy/plush/moth/punished{
 	pixel_x = 6;
-	desc = "The top part of a mothperson plushie. The bottom half appears to have been ripped off. It smells terribly.";
+	desc = "The top part of a mothperson plushie. The bottom half appears to have been ripped off. It smells terrible.";
 	name = "chew toy"
 	},
 /obj/machinery/firealarm/directional/west{
@@ -3938,7 +3944,8 @@
 /area/ship/crew/dorm)
 "Xx" = (
 /obj/machinery/door/airlock/freezer{
-	name = "Freezer"
+	name = "Freezer";
+	fast_close = 1
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
