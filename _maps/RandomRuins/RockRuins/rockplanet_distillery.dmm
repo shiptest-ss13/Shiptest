@@ -765,7 +765,7 @@
 /area/ruin/rockplanet/distillery/office)
 "ir" = (
 /obj/structure/cable/yellow,
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/distillery/office)
 "iy" = (
@@ -4379,7 +4379,9 @@
 	pixel_y = 24;
 	specialfunctions = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals{
+	weapon_drop_chance = 100
+	},
 /obj/effect/landmark/mission_poi/main/kill{
 	already_spawned = 1;
 	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals

@@ -4002,6 +4002,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bay"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "zM" = (
@@ -6554,6 +6557,17 @@
 	pixel_y = 7;
 	pixel_x = 2
 	},
+/obj/item/gps{
+	pixel_y = -6;
+	pixel_x = -10
+	},
+/obj/item/gps{
+	pixel_y = -6
+	},
+/obj/item/gps{
+	pixel_y = -6;
+	pixel_x = 10
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "PZ" = (
@@ -7750,6 +7764,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bay"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "WN" = (
@@ -7971,7 +7988,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
 "Yv" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},
@@ -8200,27 +8216,17 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 6
+	pixel_y = 4
 	},
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 12
-	},
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = 6
-	},
-/obj/item/gps{
-	pixel_y = -6;
-	pixel_x = 10
-	},
-/obj/item/gps{
-	pixel_y = -6
-	},
-/obj/item/gps{
-	pixel_y = -6;
-	pixel_x = -10
+	pixel_y = 11
 	},
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/gun/energy/kalix/pgf/medium{
+	pixel_y = -3;
+	pixel_x = -2
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Zu" = (

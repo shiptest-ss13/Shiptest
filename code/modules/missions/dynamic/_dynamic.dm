@@ -1,5 +1,5 @@
 /datum/mission/ruin
-	value = 2000
+	value = 1500
 	duration = null
 	desc = "Find my pages. (Please report if you cannot locate pages)"
 	location_specific = TRUE
@@ -68,13 +68,16 @@
 	return
 
 /datum/mission/ruin/can_turn_in(atom/movable/item_to_check)
-	if(istype(required_item))
-		if(specific_item)
-			if(istype(item_to_check, required_item))
-				return TRUE
-		else
-			if(istype(item_to_check, required_item.type))
-				return TRUE
+	if(specific_item)
+		if(!isatom(required_item))
+			return FALSE
+		if(item_to_check == required_item)
+			return TRUE
+	else
+		if(istype(item_to_check, setpiece_item))
+			return TRUE
+		else if(istype(required_item) && istype(item_to_check, required_item.type))
+			return TRUE
 
 /datum/mission/ruin/get_tgui_info(list/items_on_pad = list())
 	. = ..()

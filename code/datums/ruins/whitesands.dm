@@ -17,6 +17,17 @@
 	description = "The former home of a poor sod on observation duty. Now a cunning trap."
 	suffix = "whitesands_cave_base.dmm"
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
+	ruin_mission_types = list(
+		/datum/mission/ruin/radiological,
+	)
+
+/datum/mission/ruin/radiological
+	name = "Radiological Signature"
+	desc = "We've been picking up some sort of radiological signature inconsistent with normal planetary emissions. Observational staff have informed us that the pattern matches a low-yield fusion warhead in an unshielded environment. Investigate the site and retrieve the source so that we may dispose of it."
+	author = "Outpost Authority"
+	mission_limit = 1
+	setpiece_item = /obj/machinery/syndicatebomb
+	value = 3500
 
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors/saloon
@@ -44,7 +55,7 @@
 
 /datum/mission/ruin/multiple/e11_stash
 	name = "recover a stash of Eoehoma weapons"
-	desc = "My first mate found a Eoehoma document detailing a production plant for energy weapons in the sector, we'll pay well if you can recover and deliver 6 guns back to us."
+	desc = "My first mate found an Eoehoma document detailing a production plant for energy weapons in the sector, we'll pay well if you can recover and deliver 6 guns back to us."
 	faction = /datum/faction/independent
 	value = 2750
 	mission_limit = 1

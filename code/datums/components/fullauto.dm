@@ -252,7 +252,7 @@
 		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
-		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
+		to_chat(shooter, span_warning("You need a more secure grip to fire [src]!"))
 		return FALSE
 	return TRUE
 
@@ -268,7 +268,7 @@
 	if(current_cooldown || shooter.incapacitated())
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
-		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
+		to_chat(shooter, span_warning("You need a more secure grip to fire [src]!"))
 		return NONE
 	if(!can_shoot()) //we stop if we cant shoot but also calling pre_fire so the bolt works correctly if it's a weird open bolt weapon.
 		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
