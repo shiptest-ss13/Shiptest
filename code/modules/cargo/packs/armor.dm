@@ -72,7 +72,7 @@
 					/obj/item/clothing/mask/gas/clip)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/armor/clip_riot
@@ -84,7 +84,7 @@
 					/obj/item/clothing/mask/gas/clip)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 //gezena
@@ -96,7 +96,7 @@
 					/obj/item/clothing/head/helmet/gezena)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction_unique = list(/datum/faction/pgf = -1)
+	faction_unique = list(/datum/faction/pgf = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/armor/pgf_armor
@@ -106,7 +106,7 @@
 	contains = list(/obj/item/clothing/suit/armor/gezena)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction_unique = list(/datum/faction/pgf = -1)
+	faction_unique = list(/datum/faction/pgf = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 //jardliner
@@ -119,7 +119,7 @@
 					/obj/item/clothing/head/helmet/hardliners)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction_unique = list(/datum/faction/syndicate/hardliners = -1)
+	faction_unique = list(/datum/faction/syndicate/hardliners = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/armor/hardliner_mecha_armor
@@ -130,7 +130,7 @@
 					/obj/item/clothing/head/helmet/hardliners/swat)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction_unique = list(/datum/faction/syndicate/hardliners = -1)
+	faction_unique = list(/datum/faction/syndicate/hardliners = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 //ngr
@@ -142,7 +142,7 @@
 					/obj/item/clothing/head/helmet/ngr)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction_unique = list(/datum/faction/syndicate/ngr = -1)
+	faction_unique = list(/datum/faction/syndicate/ngr = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 //srm
@@ -154,5 +154,5 @@
 	contains = list(/obj/item/clothing/suit/armor/roumain)
 	crate_name = "duster crate"
 	crate_type = /obj/structure/closet/crate/secure/gear
-	faction_unique = list(/datum/faction/srm = -1)
+	faction_unique = list(/datum/faction/srm = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE

@@ -54,7 +54,7 @@
 	desc = "Contains a noticably smaller military variant of the Ringneck pistol, chambered in 10x22mm."
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/pc76)
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cm23
@@ -62,7 +62,7 @@
 	desc = "Contains a 10x22mm CM-23 Pistol, standard issue of the Colonial Minutemen."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/cm23)
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cm70
@@ -70,7 +70,7 @@
 	desc = "Contains a 9x18mm machinepistol produced proudly within Lanchester City. Colonial Minuteman issue only."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/pistol/cm70)
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/commissioner
@@ -78,7 +78,7 @@
 	desc = "Contains a modified Commander pistol, adjusted to fit the IRMG's standards and painted in the brown and gold of all IRMG firearms."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/commissioner)
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/pinscher
@@ -87,7 +87,7 @@
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/pinscher)
 	crate_name = "pistol crate"
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/candors
@@ -102,7 +102,7 @@
 	desc = "Contains a compact armor-piercing sidearm, chambered in 5.7mm"
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/asp)
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/pistolec
@@ -110,7 +110,7 @@
 	desc = "Contains a compact solarian-produced sidearm, chambered in 5.56mm HITP. Not to be confused with 5.56x42 CLIP."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/pistolec)
-	faction_unique = list(/datum/faction/solgov = -1, /datum/faction/syndicate/suns = -1)
+	faction_unique = list(/datum/faction/solgov = -1, /datum/faction/syndicate/suns = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/modelh
@@ -154,7 +154,7 @@
 	desc = "Contains a double-action military variant of the Viper revolver, chambered in .357 magnum."
 	cost = 1750
 	contains = list(/obj/item/storage/guncase/pistol/a357)
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/ashhand
@@ -162,7 +162,7 @@
 	desc = "Contains a single-action .45-70 hunting revolver manufactured by Hunter's Pride for use against the biggest game."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/pistol/ashhand)
-	faction_unique = list(/datum/faction/srm = -1)
+	faction_unique = list(/datum/faction/srm = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cm357
@@ -170,7 +170,7 @@
 	desc = "Contains a magazine-fed .357 handgun, produced for the CMM-BARD division and available for requisition in small numbers to the Minutemen."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/pistol/cm357)
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /*
@@ -240,7 +240,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/bg16)
 	crate_name = "beam gun crate"
-	faction_unique = list(/datum/faction/pgf = -1)
+	faction_unique = list(/datum/faction/pgf = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/laser/bgc10
@@ -249,7 +249,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/energy/bgc10)
 	crate_name = "beam carbine crate"
-	faction_unique = list(/datum/faction/pgf = -1)
+	faction_unique = list(/datum/faction/pgf = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/energy/disabler
@@ -266,7 +266,7 @@
 	cost = 1250
 	contains = list(/obj/item/gun/energy/e_gun/advtaser)
 	crate_name = "hybrid taser crate"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /*
@@ -318,7 +318,7 @@
 	contains = list(/obj/item/storage/guncase/bulldog)
 	cost = 4000
 	crate_name = "shotgun crate"
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/mastiff
@@ -327,7 +327,7 @@
 	contains = list(/obj/item/storage/guncase/mastiff)
 	cost = 4000
 	crate_name = "shotgun crate"
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cm15
@@ -336,7 +336,7 @@
 	contains = list(/obj/item/storage/guncase/cm15)
 	cost = 4000
 	crate_name = "shotgun crate"
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/ultima
@@ -345,7 +345,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/ultima)
 	crate_name = "shotgun crate"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /*
@@ -366,7 +366,7 @@
 	cost = 2800 // 100 more than the civ variant (counting it's discount), because they are literally the same right now.
 	contains = list(/obj/item/storage/guncase/c20r)
 	crate_name = "SMG crate"
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/vector
@@ -375,7 +375,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/vector)
 	crate_name = "SMG crate"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/mongrel
@@ -384,7 +384,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/mongrel)
 	crate_name = "SMG crate"
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/wt550
@@ -401,7 +401,7 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/saber)
 	crate_name = "SMG crate"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/etar
@@ -410,7 +410,7 @@
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/energy/etar)
 	crate_name = "SMG crate"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/firestorm
@@ -419,7 +419,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/firestorm)
 	crate_name = "SMG crate"
-	faction_unique = list(/datum/faction/srm = -1)
+	faction_unique = list(/datum/faction/srm = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/rattlesnake
@@ -428,7 +428,7 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/rattlesnake)
 	crate_name = "Machinepistol crate"
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/kingsnake
@@ -437,7 +437,7 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/kingsnake)
 	crate_name = "Machinepistol crate"
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cm5
@@ -446,7 +446,7 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/cm5)
 	crate_name = "SMG crate"
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/sidewinder
@@ -455,7 +455,7 @@
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/sidewinder)
 	crate_name = "SMG crate"
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /*
@@ -521,7 +521,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/skm_inteq)
 	crate_name = "auto rifle crate"
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/gar
@@ -530,7 +530,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/gar)
 	crate_name = "auto rifle crate"
-	faction_unique = list(/datum/faction/solgov = -1)
+	faction_unique = list(/datum/faction/solgov = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/hades
@@ -539,7 +539,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hades)
 	crate_name = "laser crate"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/hydra
@@ -548,7 +548,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/hydra)
 	crate_name = "rifle crate"
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cm82
@@ -557,7 +557,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/cm82)
 	crate_name = "rifle crate"
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/cm24
@@ -566,7 +566,7 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/cm24)
 	crate_name = "rifle crate"
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /* Heavy */
@@ -577,7 +577,7 @@
 	cost = 6000
 	contains = list(/obj/item/storage/guncase/cm40)
 	crate_name = "LMG crate"
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/saw80
@@ -586,7 +586,7 @@
 	cost = 7000
 	contains = list(/obj/item/storage/guncase/saw80)
 	crate_name = "LMG crate"
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/rottweiler
@@ -595,7 +595,7 @@
 	cost = 6000
 	contains = list(/obj/item/storage/guncase/rottweiler)
 	crate_name = "LMG crate"
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /* Marksman Rifles */
@@ -606,7 +606,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/cmf4)
 	crate_name = "dmr crate"
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/ssg04
@@ -615,7 +615,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/ssg04)
 	crate_name = "dmr crate"
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/sbr80
@@ -624,7 +624,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/sbr80)
 	crate_name = "dmr crate"
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/woodsman
@@ -640,7 +640,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/vickland)
 	crate_name = "dmr crate"
-	faction_unique = list(/datum/faction/srm = -1)
+	faction_unique = list(/datum/faction/srm = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/gauss
@@ -649,7 +649,7 @@
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/gauss)
 	crate_name = "dmr crate"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/claris
@@ -675,7 +675,7 @@
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
 	crate_name = "marksman rifle crate"
-	faction_unique = list(/datum/faction/syndicate/scarborough = -1)
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/f90
@@ -684,7 +684,7 @@
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/cmf90)
 	crate_name = "marksman rifle crate"
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/scout

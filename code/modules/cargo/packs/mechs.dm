@@ -93,7 +93,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
 	crate_name = "NT-501p-MP Construction Kit"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/durand_parts
@@ -251,7 +251,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
 	)
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/paladin_upgrade
@@ -261,7 +261,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
 	)
-	faction_unique = list(/datum/faction/clip = -1)
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/basenji_upgrade
@@ -271,7 +271,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	)
-	faction_unique = list(/datum/faction/inteq = -1)
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/charger_upgrade
@@ -289,7 +289,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/dark_gygax
 	)
-	faction_unique = list(/datum/faction/syndicate = -1)
+	faction_unique = list(/datum/faction/syndicate = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/melee_armor_booster

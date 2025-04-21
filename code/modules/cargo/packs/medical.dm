@@ -199,7 +199,7 @@
 	cost = 2000
 	contains = list(/obj/item/storage/box/hypospray/mkiii)
 	crate_name = "mk.III hypospray crate"
-	faction_unique = list(/datum/faction/nt = -1)
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/medical/vials

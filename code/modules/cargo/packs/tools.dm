@@ -157,7 +157,7 @@
 	cost = 1500
 	contains = list(/obj/item/melee/sledgehammer/gorlex)
 	crate_name = "sledgehammer crate"
-	faction_unique = list(/datum/faction/syndicate/ngr = -1)
+	faction_unique = list(/datum/faction/syndicate/ngr = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /*
