@@ -356,7 +356,7 @@
 	desc = "Contains a Solarian weapon cell, compatible with Solarian gauss weaponry."
 	contains = list(/obj/item/stock_parts/cell/gun/solgov)
 	cost = 500
-	faction_unique = list(/datum/faction/solgov = -1)
+	faction_unique = list(/datum/faction/solgov = -1, /datum/faction/syndicate/suns = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/magazine/upgradedguncell

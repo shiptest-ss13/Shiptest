@@ -266,7 +266,7 @@
 		if(discount == CARGOPACK_NODISCOUNT)
 			discount = null
 
-		var/discountedcost = discount ? ROUND(current_pack.cost - (current_pack.cost * (discount * 0.01))) : null
+		var/discountedcost = discount ? round(current_pack.cost - (current_pack.cost * (discount * 0.01))) : null
 
 		supply_pack_data[current_pack.group]["packs"] += list(list(
 			"name" = current_pack.name,
@@ -275,7 +275,7 @@
 			"discountpercent" = discount,
 			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
 			"ref" = REF(current_pack),
-			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : ""), // If there is a description, use it. Otherwise use the pack's name.
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n[abs(discount)]% mark[discount > 0 ? "down" : "up"] due to your faction affiliation, \nwas [current_pack.cost]." : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : ""), // If there is a description, use it. Otherwise use the pack's name.
 			"no_bundle" = current_pack.no_bundle
 		))
 

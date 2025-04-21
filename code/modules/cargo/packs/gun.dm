@@ -110,7 +110,7 @@
 	desc = "Contains a compact solarian-produced sidearm, chambered in 5.56mm HITP. Not to be confused with 5.56x42 CLIP."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/pistolec)
-	faction_unique = list(/datum/faction/solgov = -1)
+	faction_unique = list(/datum/faction/solgov = -1, /datum/faction/syndicate/suns = -1)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/modelh
@@ -118,7 +118,7 @@
 	desc = "Contains a compact solarian-produced gauss pistol, chambered in ferromagnetic slugs. Remember to sign your necessary forms upon arrival."
 	cost = 2000
 	contains = list(/obj/item/storage/guncase/pistol/modelh)
-	faction_unique = list(/datum/faction/solgov = -1)
+	faction_unique = list(/datum/faction/solgov = -1, /datum/faction/syndicate/suns = -10)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/pepperbox
@@ -658,7 +658,7 @@
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/claris)
 	crate_name = "dmr crate"
-	faction_unique = list(/datum/faction/solgov = -1)
+	faction_unique = list(/datum/faction/solgov = -1, /datum/faction/syndicate/suns = -10)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/boomslang90
@@ -701,5 +701,5 @@
 	cost = 4000
 	contains = list(/obj/item/storage/guncase/ssg669)
 	crate_name = "sniper rifle crate"
-	faction_unique = list(/datum/faction/solgov = -1)
+	faction_unique = list(/datum/faction/solgov = -1, /datum/faction/syndicate/suns = -10)
 	faction_locked = TRUE

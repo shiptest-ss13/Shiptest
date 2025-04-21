@@ -184,8 +184,9 @@ export const CargoCatalog = (props, context) => {
                         onClick={() => setCart(cart.concat(pack))}
                       >
                         {pack.discountedcost
-                          ? ' (-' +
-                            pack.discountpercent +
+                          ? ' (' +
+                            (pack.discountpercent < 0 ? '+' : '') +
+                            -pack.discountpercent +
                             '%) ' +
                             pack.discountedcost
                           : formatMoney(
