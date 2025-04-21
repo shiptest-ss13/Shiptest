@@ -5,8 +5,8 @@
 	max_occurrences = 3
 
 /datum/round_event/grid_check
-	announceWhen	= 1
-	startWhen = 1
+	announce_when	= 1
+	start_when = 1
 
 /datum/round_event/grid_check/announce(fake)
 	priority_announce("Abnormal activity detected in [station_name()]'s power networks. As a precautionary measure, the sector's power will be remotely shut off for an indeterminate duration.", "Critical Power Failure", 'sound/ai/poweroff.ogg')

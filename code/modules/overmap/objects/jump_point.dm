@@ -55,7 +55,7 @@
 		if(INTERACTION_OVERMAP_JUMPTO)
 			if(tgui_alert(user, "Do you want to bluespace jump to [destination.current_overmap.name]? Your ship will NOT be removed from the round and you will have to stay near [name] doing this.", "Jump Confirmation", list("Yes", "No")) != "Yes")
 				return
-			RegisterSignal(interactor, COMSIG_OVERMAP_MOVE_SELF, PROC_REF(ship_moved))
+			RegisterSignal(interactor, COMSIG_OVERMAP_MOVED, PROC_REF(ship_moved))
 			RegisterSignal(interactor, COMSIG_OVERMAP_MOVE_SYSTEMS, PROC_REF(ship_jumped))
 			SEND_SIGNAL(interactor, COMSIG_OVERMAP_CALIBRATE_JUMP, destination.current_overmap, destination.x, destination.y)
 
@@ -70,10 +70,10 @@
 		if(locate(interactor) in current_overmap.overmap_container[checked_coords["x"]][checked_coords["y"]])
 			return
 	SEND_SIGNAL(interactor, COMSIG_OVERMAP_CANCEL_JUMP)
-	UnregisterSignal(interactor, COMSIG_OVERMAP_MOVE_SELF)
+	UnregisterSignal(interactor, COMSIG_OVERMAP_MOVED)
 	UnregisterSignal(interactor, COMSIG_OVERMAP_MOVE_SYSTEMS)
 
 
 /datum/overmap/jump_point/proc/ship_jumped(datum/overmap/interactor)
-	UnregisterSignal(interactor, COMSIG_OVERMAP_MOVE_SELF)
+	UnregisterSignal(interactor, COMSIG_OVERMAP_MOVED)
 	UnregisterSignal(interactor, COMSIG_OVERMAP_MOVE_SYSTEMS)
