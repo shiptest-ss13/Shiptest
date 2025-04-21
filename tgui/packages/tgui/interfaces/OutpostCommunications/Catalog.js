@@ -176,7 +176,9 @@ export const CargoCatalog = (props, context) => {
                         fluid
                         tooltip={pack.desc}
                         color={
-                          pack.discountedcost || pack.faction_locked
+                          pack.discountpercent < 0
+                            ? 'yellow'
+                            : pack.discountpercent > 0 || pack.faction_locked
                             ? 'green'
                             : 'default'
                         }
