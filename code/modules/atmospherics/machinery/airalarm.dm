@@ -139,7 +139,7 @@
 
 	TLV = list( // Breathable air.
 		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
-		"temperature"				= new/datum/tlv(T0C-10, T0C, T0C+10, T0C+66), // Lowered since it's a freezer
+		"temperature"				= new/datum/tlv(T0C-10, T0C, T0C+23, T0C+66), // Lowered since it's a freezer
 		GAS_O2						= new/datum/tlv(16, 19, 40, 50),
 		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
 		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
