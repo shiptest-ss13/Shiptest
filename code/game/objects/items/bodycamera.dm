@@ -174,8 +174,8 @@
 
 /obj/item/bodycamera/broadcast_camera/Initialize()
 	. = ..()
-	set_frequency(1499)
 	radio = new /obj/item/radio/broadcast(src)
+	radio.set_frequency(1499)
 	radio.sectorwide = TRUE
 	radio.canhear_range = 3
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
