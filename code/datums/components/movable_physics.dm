@@ -96,7 +96,7 @@
 		new_angle = angle_of_movement + 360
 	return new_angle
 
-/datum/component/movable_physics/process(delta_time)
+/datum/component/movable_physics/process(seconds_per_tick)
 	var/atom/movable/moving_atom = parent
 	var/turf/location = get_turf(moving_atom)
 

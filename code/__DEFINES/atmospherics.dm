@@ -1,5 +1,6 @@
 //ATMOS
 //stuff you should probably leave well alone!
+#define MOLES 1
 /// kPa*L/(K*mol)
 #define R_IDEAL_GAS_EQUATION 8.31
 /// kPa
@@ -157,9 +158,9 @@
 /// (kPa) What pressure pumps and powered equipment max out at.
 #define MAX_OUTPUT_PRESSURE 4500
 /// (L/s) Maximum speed powered equipment can work at.
-#define MAX_TRANSFER_RATE 200
-/// 10% of an overclocked volume pump leaks into the air
-#define VOLUME_PUMP_LEAK_AMOUNT 0.1
+#define MAX_TRANSFER_RATE 400
+/// How many percent of the contents that an overclocked volume pumps leak into the air
+#define VOLUME_PUMP_LEAK_AMOUNT 0.2
 //used for device_type vars
 #define UNARY 1
 #define BINARY 2
@@ -221,6 +222,7 @@
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 #define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 
+
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
 #define LAVALAND_EQUIPMENT_EFFECT_PRESSURE 90
@@ -237,9 +239,9 @@
 
 
 //ATMOS MIX IDS
-
-
-
+#define DESERT_DEFAULT_ATMOS "o2=20;n2=80;TEMP=313.15" //TEMP UNTIL  CRASHING STOPS
+//#define DESERT_DEFAULT_ATMOS "DESERT_ATMOS"
+#define SHROUDED_DEFAULT_ATMOS "SHROUDED_ATMOS"
 
 //ATMOSIA GAS MONITOR TAGS
 #define ATMOS_GAS_MONITOR_INPUT_O2 "o2_in"
@@ -351,7 +353,7 @@
 
 // odors
 #define GAS_ODOR_CHEMICAL list(\
-	span_notice("It smells fainly like space cleaner."),\
+	span_notice("It smells faintly like space cleaner."),\
 	span_danger("It smells like chemicals."),\
 	span_danger("There's a strong smell in the air, like chlorine."),\
 	span_userdanger("The smell burns the inside of your nose! It's unbearable!"))

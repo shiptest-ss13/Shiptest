@@ -612,7 +612,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	stack_trace("The [rule.ruletype] rule \"[rule.name]\" failed to execute.")
 	return FALSE
 
-/datum/game_mode/dynamic/process()
+/datum/game_mode/dynamic/process(seconds_per_tick)
 	for (var/datum/dynamic_ruleset/rule in current_rules)
 		if(rule.rule_process() == RULESET_STOP_PROCESSING) // If rule_process() returns 1 (RULESET_STOP_PROCESSING), stop processing.
 			current_rules -= rule

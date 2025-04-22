@@ -41,7 +41,7 @@
 	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/wingfangchu
-	name = "Wingfangchu"
+	name = "Incubator soup"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
 		/datum/reagent/consumable/soysauce = 5,
@@ -130,7 +130,7 @@
 	reqs = list(
 		/datum/reagent/blood = 10,
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/tomato/blood = 2
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/blood
 	subcategory = CAT_SOUP
@@ -195,33 +195,13 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/stew
 	subcategory = CAT_SOUP
 
-/datum/crafting_recipe/food/spacylibertyduff
-	name = "Spacy liberty duff"
-	reqs = list(
-		/datum/reagent/consumable/ethanol/vodka = 5,
-		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap = 3
-	)
-	result = /obj/item/reagent_containers/food/snacks/soup/spacylibertyduff
-	subcategory = CAT_SOUP
-
-/datum/crafting_recipe/food/amanitajelly
-	name = "Amanita jelly"
-	reqs = list(
-		/datum/reagent/consumable/ethanol/vodka = 5,
-		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom/amanita = 3
-	)
-	result = /obj/item/reagent_containers/food/snacks/soup/amanitajelly
-	subcategory = CAT_SOUP
-
 /datum/crafting_recipe/food/sweetpotatosoup
 	name = "Sweet potato soup"
 	reqs = list(
 		/datum/reagent/water = 10,
 		/datum/reagent/consumable/sugar = 5,
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 2
+		/obj/item/reagent_containers/food/snacks/grown/sweet_potato = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/sweetpotato
 	subcategory = CAT_SOUP

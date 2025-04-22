@@ -41,7 +41,7 @@
 	// Get the value from our atom
 	return
 
-/obj/effect/countdown/process()
+/obj/effect/countdown/process(seconds_per_tick)
 	if(!attached_to || QDELETED(attached_to))
 		qdel(src)
 	forceMove(get_turf(attached_to))
@@ -51,7 +51,7 @@
 	displayed_text = new_val
 
 	if(displayed_text)
-		maptext = "<span class='maptext'><font size = [text_size]>[displayed_text]</font></span>"
+		maptext = MAPTEXT("<font size = [text_size]>[displayed_text]</font>")
 	else
 		maptext = null
 

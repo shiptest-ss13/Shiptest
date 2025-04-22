@@ -37,7 +37,7 @@
 			countdown.color = countdown_color
 		countdown.start()
 
-/obj/structure/holosign/process()
+/obj/structure/holosign/process(seconds_per_tick)
 	if(countdown.invisibility && death_time < (world.time + 60 SECONDS))
 		countdown.invisibility = 0
 		playsound(src, 'sound/machines/triple_beep.ogg', 50, TRUE)
@@ -162,7 +162,7 @@
 
 /obj/structure/holosign/barrier/medical/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The biometric scanners are <b>[force_allaccess ? "off" : "on"]</b>.</span>"
+	. += span_notice("The biometric scanners are <b>[force_allaccess ? "off" : "on"]</b>.")
 
 /obj/structure/holosign/barrier/medical/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
@@ -195,7 +195,7 @@
 /obj/structure/holosign/barrier/medical/attack_hand(mob/living/user)
 	if(user.a_intent == INTENT_HELP && CanPass(user, get_dir(src, user)))
 		force_allaccess = !force_allaccess
-		to_chat(user, "<span class='warning'>You [force_allaccess ? "deactivate" : "activate"] the biometric scanners.</span>") //warning spans because you can make the station sick!
+		to_chat(user, span_warning("You [force_allaccess ? "deactivate" : "activate"] the biometric scanners.")) //warning spans because you can make the station sick!
 	else
 		return ..()
 

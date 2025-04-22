@@ -17,7 +17,7 @@
 	var/convert_damage_type = BRUTE //Since simplemobs don't have advanced damagetypes, what to convert damage back into.
 
 	var/mob/living/shapeshift_type
-	var/list/possible_shapes = list(/mob/living/simple_animal/mouse,\
+	var/list/possible_shapes = list(/mob/living/basic/mouse,\
 		/mob/living/simple_animal/pet/dog/corgi,\
 		/mob/living/simple_animal/bot/secbot/ed209,\
 		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,)
@@ -57,7 +57,7 @@
 				else
 					ourpipeline = pipenets
 
-				to_chat(M, "<span class='userdanger'>Casting [src] inside of [pipeyoudiein] quickly turns you into a bloody mush!</span>")
+				to_chat(M, span_userdanger("Casting [src] inside of [pipeyoudiein] quickly turns you into a bloody mush!"))
 				var/gibtype = /obj/effect/gibspawner/generic
 				if(isalien(M))
 					gibtype = /obj/effect/gibspawner/xeno
@@ -73,7 +73,7 @@
 /obj/effect/proc_holder/spell/targeted/shapeshift/proc/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
 	if(H)
-		to_chat(caster, "<span class='warning'>You're already shapeshifted!</span>")
+		to_chat(caster, span_warning("You're already shapeshifted!"))
 		return
 
 	var/mob/living/shape = new shapeshift_type(caster.loc)

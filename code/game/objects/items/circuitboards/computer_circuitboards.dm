@@ -32,13 +32,13 @@
 /obj/item/circuitboard/computer/card/minor/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		target_dept = (target_dept == dept_list.len) ? 1 : (target_dept + 1)
-		to_chat(user, "<span class='notice'>You set the board to \"[dept_list[target_dept]]\".</span>")
+		to_chat(user, span_notice("You set the board to \"[dept_list[target_dept]]\"."))
 	else
 		return ..()
 
 /obj/item/circuitboard/computer/card/minor/examine(user)
 	..()
-	to_chat(user, "<span class='notice'>Currently set to \"[dept_list[target_dept]]\".</span>")
+	to_chat(user, span_notice("Currently set to \"[dept_list[target_dept]]\"."))
 
 
 //obj/item/circuitboard/computer/shield
@@ -146,7 +146,7 @@
 /obj/item/circuitboard/computer/solar_control
 	name = "Solar Control (Computer Board)"  //name fixed 250810
 	icon_state = "engineering"
-	build_path = /obj/machinery/power/solar_control
+	build_path = /obj/machinery/computer/solar_control
 
 /obj/item/circuitboard/computer/stationalert
 	name = "Station Alerts (Computer Board)"
@@ -189,11 +189,11 @@
 		if(build_path == /obj/machinery/computer/bookmanagement)
 			name = "Library Visitor Console (Computer Board)"
 			build_path = /obj/machinery/computer/libraryconsole
-			to_chat(user, "<span class='notice'>Defaulting access protocols.</span>")
+			to_chat(user, span_notice("Defaulting access protocols."))
 		else
 			name = "Book Inventory Management Console (Computer Board)"
 			build_path = /obj/machinery/computer/bookmanagement
-			to_chat(user, "<span class='notice'>Access protocols successfully updated.</span>")
+			to_chat(user, span_notice("Access protocols successfully updated."))
 	else
 		return ..()
 
@@ -351,10 +351,10 @@
 
 //Supply
 
-/obj/item/circuitboard/computer/bounty
-	name = "\improper Nanotrasen Bounty Console (Computer Board)"
+/obj/item/circuitboard/computer/mission
+	name = "\improper Outpost Mission Console (Computer Board)"
 	icon_state = "supply"
-	build_path = /obj/machinery/computer/bounty
+	build_path = /obj/machinery/computer/mission
 
 /obj/item/circuitboard/computer/cargo
 	name = "Outpost Comms Console (Computer Board)"
@@ -366,27 +366,20 @@
 	. = ..()
 	if(!(obj_flags & EMAGGED))
 		contraband = !contraband
-		to_chat(user, "<span class='notice'>Receiver spectrum set to [contraband ? "Broad" : "Standard"].</span>")
+		to_chat(user, span_notice("Receiver spectrum set to [contraband ? "Broad" : "Standard"]."))
 	else
-		to_chat(user, "<span class='alert'>The spectrum chip is unresponsive.</span>")
+		to_chat(user, span_alert("The spectrum chip is unresponsive."))
 
 /obj/item/circuitboard/computer/cargo/emag_act(mob/living/user)
 	if(!(obj_flags & EMAGGED))
 		contraband = TRUE
 		obj_flags |= EMAGGED
-		to_chat(user, "<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
+		to_chat(user, span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 
 /obj/item/circuitboard/computer/mining
 	name = "Outpost Status Display (Computer Board)"
 	icon_state = "supply"
 	build_path = /obj/machinery/computer/security/mining
-
-/obj/item/circuitboard/computer/selling_pad_control
-	name = "Cargo hold control terminal (Computer Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/computer/selling_pad_control
-
-//Shiptesting
 
 /obj/item/circuitboard/computer/shuttle/helm
 	name = "Shuttle Helm (Computer Board)"

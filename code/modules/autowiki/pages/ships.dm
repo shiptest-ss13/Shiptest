@@ -28,25 +28,33 @@
 			"description" = escape_value(ship.description),
 			"manufacturer" = escape_value(ship.manufacturer),
 			"prefix" = escape_value(ship.prefix),
+			"faction" = escape_value(ship.faction.name),
+			"color" = escape_value(copytext_char(ship.faction.color, 2)), // The wiki doesn't want the leading #
 			"tags" = escape_value(ship.tags?.Join(", ")),
+			"startingFunds" = ship.starting_funds,
 			"limit" = ship.limit,
 			"crewCount" = count_crew(ship.job_slots),
 			"crew" = format_crew_list(ship.job_slots),
+			"officerCoeff" = ship.officer_time_coeff,
+			"spawnCoeff" = ship.spawn_time_coeff,
 			"enabled" = ship.enabled ? "Yes" : "No",
-			"size" = size
+			"size" = "[size] ([ship.width]x[ship.height])"
 		))
 
-		//Other fields: manufacturer, faction, color
+		//Other fields: manufacturer
 
 	return output
 
 /datum/autowiki/ship/proc/count_crew(list/crew)
 	var/output = 0
+	var/officers = 0
 
-	for(var/job in crew)
+	for(var/datum/job/job as anything in crew)
+		if(job.officer)
+			officers += crew[job]
 		output += crew[job]
 
-	return output
+	return "[length(crew)] ([officers] officer[length(officers) != 1 ? "s" : ""])"
 
 /datum/autowiki/ship/proc/format_crew_list(list/crew)
 	var/output = ""
@@ -56,19 +64,26 @@
 	wiki_dummy.setDir(SOUTH)
 	for(var/datum/job/job as anything in crew)
 		var/filename = SANITIZE_FILENAME(escape_value(format_text(initial(job.outfit.name))))
+		var/hudname = "[filename]-hud"
 
 		output += include_template("Autowiki/ShipCrewMember", list(
 			"name" = escape_value(job.name),
 			"officer" = job.officer ? "Yes" : "No",
 			"slots" = crew[job],
-			"icon" = filename
+			"icon" = filename,
+			"hudicon" = hudname
 		))
 
 		//Only generate each unique outfit once
-		if(filename in job_icon_list)
-			continue
+		if(!(filename in job_icon_list))
+			upload_icon(get_dummy_image(job), filename)
+			job_icon_list += filename
+		if(!(hudname in job_icon_list))
+			var/icon/hudicon = get_hud_image(job)
+			if(hudicon)
+				upload_icon(hudicon, hudname)
+			job_icon_list += hudname
 
-		upload_icon(get_dummy_image(job, filename), filename)
 
 	return output
 
@@ -87,3 +102,13 @@
 		wiki_icon.Crop(1, 1, 32, 32)
 
 	return wiki_icon
+
+/datum/autowiki/ship/proc/get_hud_image(datum/job/to_equip)
+	if(!icon_exists('icons/mob/hud.dmi', "hud[initial(to_equip.outfit.faction_icon)]"))
+		return FALSE
+
+	var/icon/hudicon = icon('icons/mob/hud.dmi', "hud[initial(to_equip.outfit.faction_icon)]")
+	hudicon.Blend(icon('icons/mob/hud.dmi', "hud[initial(to_equip.outfit.job_icon)]"), ICON_OVERLAY)
+	hudicon.Crop(1, 17, 8, 24)
+
+	return hudicon

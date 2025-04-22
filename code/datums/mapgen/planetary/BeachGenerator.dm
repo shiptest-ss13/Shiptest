@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/grass
-	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/jungle = 1,
 		/obj/structure/flora/ausbushes/brflowers = 1,
@@ -107,11 +107,17 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/butterfly = 1,
 		/mob/living/simple_animal/chicken/rabbit/normal = 1,
-		/mob/living/simple_animal/mouse = 1,
+		/mob/living/basic/mouse = 1,
 		/mob/living/simple_animal/cow = 1,
 		/mob/living/simple_animal/deer = 1
 	)
 	mob_spawn_chance = 1
+
+
+	feature_spawn_chance = 0.8
+	feature_spawn_list = list(
+		/obj/effect/greeble_spawner/grass_patch_spawner/dark = 1,
+	)
 
 /datum/biome/grass/dense
 	flora_spawn_chance = 70
@@ -123,6 +129,8 @@
 	)
 	mob_spawn_chance = 2
 	feature_spawn_chance = 0.1
+
+	feature_spawn_chance = 1.2
 
 /datum/biome/beach
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/lit = 1)
@@ -177,7 +185,7 @@
 	flora_spawn_chance = 6
 
 /datum/biome/cave/beach/magical
-	open_turf_types = list(/turf/open/floor/grass/fairy/beach = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/fairy = 1)
 	flora_spawn_chance = 20
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/grassybush = 1,

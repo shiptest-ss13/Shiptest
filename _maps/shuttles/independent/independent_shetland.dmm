@@ -469,7 +469,7 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/item/trash/candy,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "en" = (
@@ -1148,7 +1148,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
 /obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "jC" = (
@@ -1804,7 +1804,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/vomit/old,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "pI" = (
@@ -4805,7 +4805,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "NR" = (
@@ -5395,6 +5395,7 @@
 "Sp" = (
 /obj/machinery/computer/operating/retro,
 /obj/item/radio/intercom/directional/east,
+/obj/item/disk/surgery/t2,
 /turf/open/floor/plasteel/freezer,
 /area/ship/medical)
 "Ss" = (

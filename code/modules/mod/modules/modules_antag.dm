@@ -1,7 +1,7 @@
 //Antag modules for MODsuits
 
 ///Armor Booster - Grants your suit more armor and speed in exchange for EVA protection. Also acts as a welding screen.
-/obj/item/mod/module/armor_booster
+/obj/item/mod/module/armor_booster // deprecated
 	name = "MOD armor booster module"
 	desc = "A retrofitted series of retractable armor plates, allowing the suit to function as essentially power armor, \
 		giving the user incredible protection against conventional firearms, or everyday attacks in close-quarters. \
@@ -78,6 +78,48 @@
 	overlay_state_inactive = "[initial(overlay_state_inactive)]-[mod.skin]"
 	overlay_state_active = "[initial(overlay_state_active)]-[mod.skin]"
 	return ..()
+
+/obj/item/mod/module/armor_assist
+	name = "MOD armor assist module"
+	desc = "A retrofitted series of integrated servos and motors, allowing the suit to function as essentially power armor, \
+		giving the user increased mobility and move without hinderance as if they were wearing coventional armor. Has a high rate of power consumption."
+	icon_state = "armor_booster"
+	module_type = MODULE_TOGGLE
+	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	removable = TRUE
+	incompatible_modules = list(/obj/item/mod/module/armor_assist)
+	cooldown_time = 0.5 SECONDS
+	overlay_state_inactive = "module_armorbooster_off"
+	overlay_state_active = "module_armorbooster_on"
+	use_mod_colors = TRUE
+	var/drain_per_step = 100
+
+/obj/item/mod/module/armor_assist/on_activation()
+	. = ..()
+	if(!.)
+		return
+	playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	RegisterSignal(mod.wearer, COMSIG_MOVABLE_MOVED,PROC_REF(drain_on_step))
+	mod.wearer.apply_status_effect(/datum/status_effect/armor_assist)
+
+/obj/item/mod/module/armor_assist/on_deactivation(display_message = TRUE, deleting = FALSE)
+	. = ..()
+	if(!.)
+		return
+	if(!deleting)
+		playsound(src, 'sound/mecha/mechmove03.ogg', 25, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
+	UnregisterSignal(mod.wearer, COMSIG_MOVABLE_MOVED)
+	mod.wearer.remove_status_effect(/datum/status_effect/armor_assist)
+
+/obj/item/mod/module/armor_assist/proc/drain_on_step(mob/user)
+	SIGNAL_HANDLER
+	drain_power(drain_per_step, TRUE)
+
+/obj/item/mod/module/armor_assist/generate_worn_overlay(mutable_appearance/standing)
+	overlay_state_inactive = "[initial(overlay_state_inactive)]-[mod.skin]"
+	overlay_state_active = "[initial(overlay_state_active)]-[mod.skin]"
+	return ..()
+
 
 ///Energy Shield - Gives you a rechargeable energy shield that nullifies attacks.
 /obj/item/mod/module/energy_shield
@@ -206,7 +248,7 @@
 
 /obj/item/mod/module/springlock/bite_of_87/on_suit_activation()
 	..()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS] || prob(1))
+	if(check_holidays(APRIL_FOOLS) || prob(1))
 		mod.set_mod_color("#b17f00")
 		mod.wearer.remove_atom_colour(WASHABLE_COLOUR_PRIORITY) // turns purple guy purple
 		mod.wearer.add_atom_colour("#704b96", FIXED_COLOUR_PRIORITY)
@@ -259,7 +301,7 @@
 	mod.wearer.visible_message(span_warning("[mod.wearer] starts charging a kick!"), \
 		blind_message = span_hear("You hear a charging sound."))
 	playsound(src, 'sound/items/modsuit/loader_charge.ogg', 75, TRUE)
-	balloon_alert(mod.wearer, "you start charging...")
+	to_chat(mod.wearer,span_notice("You start charging..."))
 	animate(mod.wearer, 0.3 SECONDS, pixel_z = 16, flags = ANIMATION_RELATIVE, easing = SINE_EASING|EASE_OUT)
 	addtimer(CALLBACK(mod.wearer, TYPE_PROC_REF(/atom, SpinAnimation), 3, 2), 0.3 SECONDS)
 	if(!do_after(mod.wearer, 1 SECONDS, target = mod))
@@ -326,7 +368,7 @@
 
 /obj/item/mod/module/chameleon/on_use()
 	if(mod.active || mod.activating)
-		balloon_alert(mod.wearer, "suit active!")
+		to_chat(mod.wearer,span_warning("You can't activate the disguise while the suit is active!"))
 		return
 	. = ..()
 	if(!.)

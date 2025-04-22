@@ -2,7 +2,7 @@
 	COOLDOWN_DECLARE(heel_cooldown)
 	COOLDOWN_DECLARE(reset_ignore_cooldown)
 
-/datum/ai_planning_subtree/dog/SelectBehaviors(datum/ai_controller/dog/controller, delta_time)
+/datum/ai_planning_subtree/dog/SelectBehaviors(datum/ai_controller/dog/controller, seconds_per_tick)
 	var/mob/living/living_pawn = controller.pawn
 
 	// occasionally reset our ignore list

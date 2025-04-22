@@ -35,24 +35,11 @@
 	crate_name = "pizza crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
-/datum/supply_pack/food/pizza/fill(obj/structure/closet/crate/C)
-	. = ..()
-	for(var/obj/item/pizzabox/P in C)
-		if(prob(0.5)) //0.5% chance for each box
-			var/obj/item/pizzabox/infinite/fourfiveeight = new(C)
-			fourfiveeight.boxtag = P.boxtag
-			qdel(P)
-
 /datum/supply_pack/food/ration
 	name = "Ration Crate"
-	desc = "6 standard issue rations. For your inner jarhead."
-	cost = 500
-	contains = list(/obj/effect/spawner/random/food_or_drink/ration,
-					/obj/effect/spawner/random/food_or_drink/ration,
-					/obj/effect/spawner/random/food_or_drink/ration,
-					/obj/effect/spawner/random/food_or_drink/ration,
-					/obj/effect/spawner/random/food_or_drink/ration,
-					/obj/effect/spawner/random/food_or_drink/ration)
+	desc = "One standard issue ration pack. For your inner jarhead."
+	cost = 80
+	contains = list(/obj/effect/spawner/random/food_or_drink/ration)
 	crate_name = "ration crate"
 	crate_type = /obj/structure/closet/crate
 
@@ -193,11 +180,8 @@
 /datum/supply_pack/food/sugar
 	name = "Sugar Crate"
 	desc = "A crate with a few bags of sugar. Good for cake shops and amateur chemists."
-	cost = 150
-	contains = list(/obj/item/reagent_containers/condiment/sugar,
-					/obj/item/reagent_containers/condiment/sugar,
-					/obj/item/reagent_containers/condiment/sugar
-	)
+	cost = 50
+	contains = list(/obj/item/reagent_containers/condiment/sugar)
 	crate_name = "sugar crate"
 	crate_type = /obj/structure/closet/crate
 
@@ -213,6 +197,7 @@
 					/obj/machinery/grill/unwrenched)
 	crate_name = "grilling starter kit crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/food/grillfuel
 	name = "Grilling Fuel Kit"
@@ -252,14 +237,9 @@
 
 /datum/supply_pack/food/ethanol
 	name = "Ethanol Crate"
-	desc = "Five small bottles of ethanol for the aspiring botanist or amateur chemist."
-	cost = 500
-	contains = list(/obj/item/reagent_containers/glass/bottle/ethanol,
-					/obj/item/reagent_containers/glass/bottle/ethanol,
-					/obj/item/reagent_containers/glass/bottle/ethanol,
-					/obj/item/reagent_containers/glass/bottle/ethanol,
-					/obj/item/reagent_containers/glass/bottle/ethanol
-					)
+	desc = "Contains one small bottle of ethanol for the aspiring botanist or amateur chemist."
+	cost = 100
+	contains = list(/obj/item/reagent_containers/glass/bottle/ethanol)
 	crate_name = "gardening crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
@@ -319,11 +299,9 @@
 
 /datum/supply_pack/food/beekeeping_suits
 	name = "Beekeeper Suit Crate"
-	desc = "Bee business booming? Better be benevolent and boost botany by bestowing bi-Beekeeper-suits! Contains two beekeeper suits and matching headwear."
+	desc = "Bee business booming? Better be benevolent and boost botany by bestowing a bodacious-Beekeeper-suit! Contains one beekeeper suit and matching headwear."
 	cost = 500
 	contains = list(/obj/item/clothing/head/beekeeper_head,
-					/obj/item/clothing/suit/beekeeper_suit,
-					/obj/item/clothing/head/beekeeper_head,
 					/obj/item/clothing/suit/beekeeper_suit)
 	crate_name = "beekeeper suit crate"
 	crate_type = /obj/structure/closet/crate/hydroponics

@@ -222,6 +222,9 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 			if(request.req_type != REQUEST_FAX)
 				to_chat(usr, "Request doesn't have a paper to read.")
 				return TRUE
+			if(!istype(request.additional_information, /obj/item/paper))
+				to_chat(usr, "Request is not a paper! Check the office it was sent to")
+				return TRUE
 			var/obj/item/paper/request_message = request.additional_information
 			request_message.ui_interact(usr)
 			return TRUE

@@ -66,7 +66,7 @@
 	var/turf/T_user = get_turf(user.loc)
 	var/turf/T_current = get_turf(current)
 	if(T_user.virtual_z() != T_current.virtual_z() || !current.can_use())
-		to_chat(user, "<span class='danger'>[src] has lost the signal.</span>")
+		to_chat(user, span_danger("[src] has lost the signal."))
 		current = null
 		user.unset_machine()
 		return 0
@@ -245,7 +245,7 @@
 			if(!same_z_level(C))
 				return
 			if(!C.can_use())
-				to_chat(usr, "<span class='warning'>Something's wrong with that camera! You can't get a feed.</span>")
+				to_chat(usr, span_warning("Something's wrong with that camera! You can't get a feed."))
 				return
 			current = C
 			spawn(6)
@@ -261,7 +261,7 @@
 
 	interact()
 
-/obj/item/camera_bug/process()
+/obj/item/camera_bug/process(seconds_per_tick)
 	if(track_mode == BUGMODE_LIST || (world.time < (last_tracked + refresh_interval)))
 		return
 	last_tracked = world.time
@@ -302,7 +302,7 @@
 	var/turf/T_cam = get_turf(C)
 	var/turf/T_bug = get_turf(loc)
 	if(!T_bug || T_cam.virtual_z() != T_bug.virtual_z())
-		to_chat(usr, "<span class='warning'>You can't get a signal!</span>")
+		to_chat(usr, span_warning("You can't get a signal!"))
 		return FALSE
 	return TRUE
 
