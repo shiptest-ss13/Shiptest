@@ -1,5 +1,7 @@
-
+//claims to be mining.dm
+// has a bunch of mob-butcher loot
 /datum/export/gems
+	desc = "Rare gems and crystals draw many eyes, and just as many buyers."
 	elasticity_coeff = 0.3
 
 /datum/export/gems/rupee
