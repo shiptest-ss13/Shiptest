@@ -10,7 +10,7 @@
 /datum/round_event/easter/announce(fake)
 	priority_announce(pick("Hip-hop into Easter!","Find some Bunny's stash!","Today is National 'Hunt a Wabbit' Day.","Be kind, give Chocolate Eggs!"))
 
-
+/*
 /datum/round_event_control/rabbitrelease
 	name = "Release the Rabbits!"
 	holidayID = EASTER
@@ -22,7 +22,6 @@
 /datum/round_event/rabbitrelease/announce(fake)
 	priority_announce("Unidentified furry objects detected coming aboard [station_name()]. Beware of Adorable-ness.", "Fluffy Alert", 'sound/ai/aliens.ogg')
 
-
 /datum/round_event/rabbitrelease/start()
 	for(var/obj/effect/landmark/R in GLOB.landmarks_list)
 		if(R.name != "blobspawn")
@@ -31,6 +30,7 @@
 					new /mob/living/simple_animal/chicken/rabbit/space(R.loc)
 				else
 					new /mob/living/simple_animal/chicken/rabbit(R.loc)
+*/
 
 /mob/living/simple_animal/chicken/rabbit
 	name = "\improper rabbit"
