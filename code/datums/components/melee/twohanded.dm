@@ -147,7 +147,7 @@
 		return // blocked wield from item
 	wielded = TRUE
 	ADD_TRAIT(parent, TRAIT_WIELDED, REF(src))
-	RegisterSignal(user, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
+	RegisterSignal(user, COMSIG_MOB_SWAPPING_HANDS, PROC_REF(on_swap_hands))
 
 	// update item stats and name
 	var/obj/item/parent_item = parent
@@ -191,7 +191,7 @@
 	// wield update status
 	wielded = FALSE
 	REMOVE_TRAIT(parent, TRAIT_WIELDED, REF(src))
-	UnregisterSignal(user, COMSIG_MOB_SWAP_HANDS)
+	UnregisterSignal(user, COMSIG_MOB_SWAPPING_HANDS)
 	SEND_SIGNAL(parent, COMSIG_TWOHANDED_UNWIELD, user)
 
 	// update item stats

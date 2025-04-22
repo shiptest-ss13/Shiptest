@@ -158,7 +158,7 @@
 	return
 
 /obj/machinery/door/firedoor/try_to_weld(obj/item/weldingtool/W, mob/user)
-	if(!W.tool_start_check(user, amount=0))
+	if(!W.tool_start_check(user, src, amount=0))
 		return
 	user.visible_message(span_notice("[user] starts [welded ? "unwelding" : "welding"] [src]."), span_notice("You start welding [src]."))
 	if(W.use_tool(src, user, 40, volume=50))
@@ -659,7 +659,7 @@
 				return
 		if(CONSTRUCTION_NOCIRCUIT)
 			if(C.tool_behaviour == TOOL_WELDER)
-				if(!C.tool_start_check(user, amount=1))
+				if(!C.tool_start_check(user, src, amount=1))
 					return
 				user.visible_message(
 					span_notice("[user] begins cutting apart [src]'s frame..."), \

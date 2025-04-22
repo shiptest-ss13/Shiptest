@@ -261,7 +261,7 @@
 	return welding
 
 // If welding tool ran out of fuel during a construction task, construction fails.
-/obj/item/weldingtool/tool_use_check(mob/living/user, amount)
+/obj/item/weldingtool/tool_use_check(mob/living/user, atom/target, amount)
 	if(!isOn() || !check_fuel())
 		to_chat(user, span_warning("[src] has to be on to complete this task!"))
 		return FALSE

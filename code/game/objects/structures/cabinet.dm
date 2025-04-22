@@ -40,7 +40,7 @@
 		hack_lock(user)
 	else if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
 		if(obj_integrity < max_integrity)
-			if(!I.tool_start_check(user, amount=2))
+			if(!I.tool_start_check(user, src, amount=2))
 				return
 			to_chat(user, span_notice("You begin repairing [src]"))
 			if(I.use_tool(src, user, 40, volume=50, amount=2))
