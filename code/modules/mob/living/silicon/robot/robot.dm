@@ -1168,7 +1168,9 @@
 /datum/action/innate/brain_undeployment/Trigger(trigger_flags)
 	if(!..())
 		return FALSE
-	var/obj/item/organ/brain/cybernetic/ai/shell_to_disconnect = owner.get_organ_by_type(/obj/item/organ/brain/cybernetic/ai)
+	var/obj/item/organ/brain/cybernetic/ai/shell_to_disconnect = owner.getorgan (/obj/item/organ/brain/cybernetic/ai)
+	if(!istype(shell_to_disconnect))
+		return FALSE
 
 	shell_to_disconnect.undeploy()
 	return TRUE
@@ -1179,6 +1181,9 @@
 	icon = 'icons/obj/assemblies.dmi' ///so its not a fucking brain
 	icon_state = "posibrain"
 	base_icon_state = "posibrain"
+	zone = BODY_ZONE_CHEST
+	status = ORGAN_ROBOTIC
+	organ_flags = ORGAN_SYNTHETIC
 	/// if connected, our AI
 	var/mob/living/silicon/ai/mainframe
 	/// action for undeployment
@@ -1190,6 +1195,18 @@
 	mainframe = null
 	QDEL_NULL(undeployment_action)
 
+/obj/item/organ/brain/cybernetic/ai/on_mob_insert(mob/living/carbon/brain_owner, special, movement_flags)
+	. = ..()
+	ADD_TRAIT(brain_owner, TRAIT_CORPSELOCKED, REF(src))
+	RegisterSignal(brain_owner, COMSIG_LIVING_HEALTH_UPDATE, PROC_REF(update_med_hud_status))
+	RegisterSignal(brain_owner, COMSIG_CLICK, PROC_REF(owner_clicked))
+	RegisterSignal(brain_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
+	RegisterSignal(brain_owner, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(on_organ_gain))
+
+/obj/item/organ/brain/cybernetic/ai/on_mob_remove(mob/living/carbon/organ_owner, special, movement_flags)
+	undeploy()
+	. = ..()
+	UnregisterSignal(organ_owner, list(COMSIG_LIVING_HEALTH_UPDATE, COMSIG_CLICK, COMSIG_MOB_GET_STATUS_TAB_ITEMS))
 
 /obj/item/organ/brain/cybernetic/ai/proc/get_status_tab_item(mob/living/source, list/items)
 	SIGNAL_HANDLER
@@ -1197,6 +1214,23 @@
 		return
 	items += mainframe.get_status_tab_items()
 
+/obj/item/organ/brain/cybernetic/ai/proc/update_med_hud_status(mob/living/mob_parent)
+	SIGNAL_HANDLER
+	var/image/holder = mob_parent.hud_list?[STATUS_HUD]
+	if(isnull(holder))
+		return
+	var/icon/size_check = icon(mob_parent.icon, mob_parent.icon_state, mob_parent.dir)
+	holder.pixel_y = size_check.Height() - 32
+	if(mob_parent.stat == DEAD || HAS_TRAIT(mob_parent, TRAIT_FAKEDEATH) || isnull(mainframe))
+		holder.icon_state = "huddead2"
+		holder.pixel_x = -8 // new icon states? nuh uh
+	else
+		holder.icon_state = "hudtrackingai"
+		holder.pixel_x = -16
+
+// no thoughts only wifi
+/obj/item/organ/brain/cybernetic/ai/can_gain_trauma(datum/brain_trauma/trauma, resilience, natural_gain = FALSE)
+	return FALSE
 
 /obj/item/organ/brain/cybernetic/ai/proc/owner_clicked(datum/source, atom/location, control, params, mob/user)
 	SIGNAL_HANDLER
@@ -1239,6 +1273,7 @@
 	mainframe = AI
 	RegisterSignal(AI, PROC_REF(ai_deleted))
 	undeployment_action.Grant(owner)
+	update_med_hud_status(owner)
 	to_chat(owner, span_bold("You are operating through a remote uplink system to this frame, and remain the same mind."))
 
 /obj/item/organ/brain/cybernetic/ai/proc/undeploy(datum/source)
@@ -1255,14 +1290,21 @@
 	if(mainframe.eyeobj)
 		mainframe.eyeobj.setLoc(loc)
 	mainframe = null
+	update_med_hud_status(owner)
 
 /obj/item/organ/brain/cybernetic/ai/proc/is_sufficiently_augmented()
+	var/mob/living/carbon/carb_owner = owner
 	. = TRUE
-	if((isipc(/mob/living/carbon/human/species/ipc)))
+	if(isipc(carb_owner))
 		return
 	else
 		return FALSE
 
+/obj/item/organ/brain/cybernetic/ai/proc/on_organ_gain(datum/source, obj/item/organ/new_organ, special)
+	SIGNAL_HANDLER
+	if(!is_sufficiently_augmented())
+		to_chat(owner, span_danger("Connection failure. Invalid interface detected."))
+		undeploy()
 
 /obj/item/organ/brain/cybernetic/ai/proc/ai_deleted(datum/source)
 	SIGNAL_HANDLER

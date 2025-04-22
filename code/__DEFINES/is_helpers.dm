@@ -182,6 +182,10 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isorgan(A) (istype(A, /obj/item/organ))
 
+#define IS_ORGANIC_ORGAN(organ) (organ.organ_flags & ORGAN_ORGANIC)
+
+#define IS_ROBOTIC_ORGAN(organ) (organ.organ_flags & ORGAN_ROBOTIC)
+
 #define isclothing(A) (istype(A, /obj/item/clothing))
 
 #define iscash(A) (istype(A, /obj/item/coin) || istype(A, /obj/item/spacecash) || istype(A, /obj/item/holochip))
