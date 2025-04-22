@@ -513,7 +513,8 @@
 #define COMSIG_LIVING_SET_BUCKLED "living_set_buckled"
 ///From post-can inject check of syringe after attack (mob/user)
 #define COMSIG_LIVING_TRY_SYRINGE "living_try_syringe"
-
+/// from base of mob/living/updatehealth()
+#define COMSIG_LIVING_HEALTH_UPDATE "living_health_update"
 ///sent from borg recharge stations: (amount, repairs)
 #define COMSIG_PROCESS_BORGCHARGER_OCCUPANT "living_charge"
 ///sent from borg mobs to itself, for tools to catch an upcoming destroy() due to safe decon (rather than detonation)
@@ -569,6 +570,12 @@
 #define COMSIG_CARBON_GAIN_ORGAN "carbon_gain_organ"
 ///from /item/organ/proc/Remove() (/obj/item/organ/)
 #define COMSIG_CARBON_LOSE_ORGAN "carbon_lose_organ"
+/// Called on the organ when it is implanted into someone
+#define COMSIG_ORGAN_IMPLANTED "organ_implanted"
+/// Called on the organ when it is removed from someone
+#define COMSIG_ORGAN_REMOVED "organ_removed"
+/// Called when an organ is being regenerated with a new copy in species regenerate_organs
+#define COMSIG_ORGAN_BEING_REPLACED "organ_being_replaced"
 ///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
 #define COMSIG_CARBON_EQUIP_HAT "carbon_equip_hat"
 ///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
