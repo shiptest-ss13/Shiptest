@@ -329,8 +329,8 @@ WS End */
 	icon_state = "sprayer"
 	list_reagents = list(/datum/reagent/medicine/rhigoxane = 100)
 
-/obj/item/reagent_containers/pill/water
-	name = "clear pill"
-	desc = "A gel-like capsule filled with some watery fluid."
-	icon_state = "pill3"
-	list_reagents = list(/datum/reagent/water = 10)
+/obj/item/reagent_containers/pill/placebatol
+	name = "prescription pill"
+	desc = "A pill composed of a white, powdery substance. Take as prescribed."
+	icon_state = "pill9"
+	list_reagents = list(/datum/reagent/drug/placebatol = 10)

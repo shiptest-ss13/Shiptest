@@ -507,14 +507,10 @@
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/starlight(src)
 
-/obj/item/storage/pill_bottle/water
-	name = "bottle of water pills"
-	desc = "Contains pills that hold water. Refreshing!"
-
-/obj/item/storage/pill_bottle/water/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/pill/water(src)
-
-/obj/item/storage/pill_bottle/water/loadout
+/obj/item/storage/pill_bottle/placebatol
 	name = "bottle of prescription pills"
 	desc = "Contains pills as prescribed. A tag reads: \"NO MEDICINAL EFFECT\"."
+
+/obj/item/storage/pill_bottle/placebatol/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/placebatol(src)
