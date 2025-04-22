@@ -17,7 +17,7 @@
 			to_chat(world, "<B>Ship Spawning is now disabled.</B>", confidential = TRUE)
 		message_admins(message)
 		log_game(message)
-	BLACKBOX_LOG_ADMIN_VERB(name)
+	BLACKBOX_LOG_ADMIN_VERB("Toggle Ship Spawn")
 
 /client/proc/toggle_ship_auto_locking()
 	set name = "Toggle Automatic Ship Spawn Locking"
@@ -38,4 +38,4 @@
 			to_chat(world, "<B>Ship Automatic Locking is now disabled.</B>", confidential = TRUE)
 		message_admins(message)
 		log_game(message)
-	BLACKBOX_LOG_ADMIN_VERB(name)
+	BLACKBOX_LOG_ADMIN_VERB("Toggle Automatic Ship Spawn Locking")
