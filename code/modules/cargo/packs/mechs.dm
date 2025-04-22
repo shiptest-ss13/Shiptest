@@ -1,6 +1,7 @@
 /datum/supply_pack/mech
 	group = "Exosuit Construction"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 
 /*
@@ -44,7 +45,6 @@ Build Your Own Suit
 		/obj/item/mecha_parts/chassis/odysseus,
 		/obj/item/mecha_parts/part/odysseus_head,
 		/obj/item/mecha_parts/part/odysseus_torso,
-		/obj/item/mecha_parts/part/odysseus_left_arm,
 		/obj/item/mecha_parts/part/odysseus_left_arm,
 		/obj/item/mecha_parts/part/odysseus_right_arm,
 		/obj/item/mecha_parts/part/odysseus_left_leg,
@@ -271,12 +271,31 @@ Mech Equipment
 
 /datum/supply_pack/mech/equipment/basenji_upgrade
 	name = "IRMG Basenji upgrade kit"
-	desc = "Contains an IRMG-custom conversion kit for a Gygax combat exosuit, to convert it to the specialized Basenji breaching exosuit. The upgrade will overclock the Gygax's leg actuators, allowing for short ranged charges capable of smashing through most obstacles."
+	desc = "Contains an IRMG-custom conversion kit for a 501p combat exosuit, to convert it to the specialized Basenji breaching exosuit. The upgrade will overclock the Gygax's leg actuators, allowing for short ranged charges capable of smashing through most obstacles."
 	cost = 500
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	)
 	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/mech/equipment/charger_upgrade
+	name = "501p overclock kit"
+	desc = "Contains a kit to overclock the 501p, allowing it to leap forward instead of its enhanced speed."
+	cost = 1000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/leaper
+	)
+
+/datum/supply_pack/mech/equipment/dark_upgrade
+	name = "515 EX upgrade kit"
+	desc = "Contains a military grade conversion kit for a 501p combat exosuit, to convert it to the fearsome 515 EX models. Features a much stronger set of leg actuators."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/dark_gygax
+	)
+	faction = /datum/faction/syndicate
 	faction_discount = 0
 	faction_locked = TRUE
 

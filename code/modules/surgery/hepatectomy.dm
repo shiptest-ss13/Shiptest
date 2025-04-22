@@ -28,23 +28,24 @@
 		/obj/item/shard = 25)
 	time = 52
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.8) //repeatable so not as much xp
+	fuckup_damage = 15
 
 /datum/surgery_step/hepatectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to cut out a damaged peice of [target]'s liver...</span>",
-		"<span class='notice'>[user] begins to make an incision in [target].</span>",
-		"<span class='notice'>[user] begins to make an incision in [target].</span>")
+	display_results(user, target, span_notice("You begin to cut out a damaged peice of [target]'s liver..."),
+		span_notice("[user] begins to make an incision in [target]."),
+		span_notice("[user] begins to make an incision in [target]."))
 
 /datum/surgery_step/hepatectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/H = target
 	H.setOrganLoss(ORGAN_SLOT_LIVER, 10) //not bad, not great
-	display_results(user, target, "<span class='notice'>You successfully remove the damaged part of [target]'s liver.</span>",
-		"<span class='notice'>[user] successfully removes the damaged part of [target]'s liver.</span>",
-		"<span class='notice'>[user] successfully removes the damaged part of [target]'s liver.</span>")
+	display_results(user, target, span_notice("You successfully remove the damaged part of [target]'s liver."),
+		span_notice("[user] successfully removes the damaged part of [target]'s liver."),
+		span_notice("[user] successfully removes the damaged part of [target]'s liver."))
 	return ..()
 
 /datum/surgery_step/hepatectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
 	var/mob/living/carbon/human/H = target
 	H.adjustOrganLoss(ORGAN_SLOT_LIVER, 20)
-	display_results(user, target, "<span class='warning'>You cut the wrong part of [target]'s liver!</span>",
-		"<span class='warning'>[user] cuts the wrong part of [target]'s liver!</span>",
-		"<span class='warning'>[user] cuts the wrong part of [target]'s liver!</span>")
+	display_results(user, target, span_warning("You cut the wrong part of [target]'s liver!"),
+		span_warning("[user] cuts the wrong part of [target]'s liver!"),
+		span_warning("[user] cuts the wrong part of [target]'s liver!"))

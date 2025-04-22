@@ -113,7 +113,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 
 */
 
-/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff_exponent = SOUND_FALLOFF_EXPONENT, channel = 0, pressure_affected = TRUE, sound/S, max_distance, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, distance_multiplier = 1, use_reverb = TRUE, envwet = -10000, envdry = 0, ignore_direction) //WS Edit Cit #7367 - Env Wet / Dry is Reverb
+/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff_exponent = SOUND_FALLOFF_EXPONENT, channel = 0, pressure_affected = TRUE, sound/S, max_distance, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, distance_multiplier = 1, use_reverb = TRUE, envwet = -10000, envdry = 0, ignore_direction) // Env Wet / Dry is Reverb
 	if(!client || !can_hear())
 		return
 
@@ -155,7 +155,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 			else //space
 				pressure_factor = 0
 
-			S.echo = list(envdry, null, envwet, null, null, null, null, null, null, null, null, null, null, 1, 1, 1, null, null) //WS Edit Cit #7367
+			S.echo = list(envdry, null, envwet, null, null, null, null, null, null, null, null, null, null, 1, 1, 1, null, null)
 
 			if(distance <= 1)
 				pressure_factor = max(pressure_factor, 0.15) //touching the source of the sound
@@ -219,6 +219,20 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 /proc/get_sfx(soundin)
 	if(istext(soundin))
 		switch(soundin)
+
+			if("explosion_large")
+				soundin = pick('sound/effects/explosion_large1.ogg','sound/effects/explosion_large2.ogg','sound/effects/explosion_large3.ogg','sound/effects/explosion_large4.ogg','sound/effects/explosion_large5.ogg','sound/effects/explosion_large6.ogg')
+			if("explosion_micro")
+				soundin = pick('sound/effects/explosion_micro1.ogg','sound/effects/explosion_micro2.ogg','sound/effects/explosion_micro3.ogg')
+			if("explosion_small")
+				soundin = pick('sound/effects/explosion_small1.ogg','sound/effects/explosion_small2.ogg','sound/effects/explosion_small3.ogg','sound/effects/explosion_small4.ogg')
+			if("explosion_med")
+				soundin = pick('sound/effects/explosion_med1.ogg','sound/effects/explosion_med2.ogg','sound/effects/explosion_med3.ogg','sound/effects/explosion_med4.ogg','sound/effects/explosion_med5.ogg','sound/effects/explosion_med6.ogg')
+			if("explosion_small_distant")
+				soundin = pick('sound/effects/explosion_smallfar1.ogg','sound/effects/explosion_smallfar2.ogg','sound/effects/explosion_smallfar3.ogg','sound/effects/explosion_smallfar4.ogg')
+			if("explosion_large_distant")
+				soundin = pick('sound/effects/explosion_far1.ogg','sound/effects/explosion_far2.ogg','sound/effects/explosion_far3.ogg','sound/effects/explosion_far4.ogg','sound/effects/explosion_far5.ogg')
+
 			if ("shatter")
 				soundin = pick('sound/effects/glassbr1.ogg','sound/effects/glassbr2.ogg','sound/effects/glassbr3.ogg')
 			if ("explosion")
@@ -227,6 +241,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 				soundin = pick('sound/effects/explosioncreak1.ogg', 'sound/effects/explosioncreak2.ogg')
 			if ("hull_creaking")
 				soundin = pick('sound/effects/creak1.ogg', 'sound/effects/creak2.ogg', 'sound/effects/creak3.ogg')
+
 			if ("sparks")
 				soundin = pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg','sound/effects/sparks4.ogg')
 			if ("rustle")

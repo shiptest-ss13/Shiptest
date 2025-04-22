@@ -34,7 +34,7 @@
 	target = null
 	return ..()
 
-/datum/forced_movement/process()
+/datum/forced_movement/process(seconds_per_tick)
 	if(QDELETED(victim) || !victim.loc || QDELETED(target) || !target.loc)
 		qdel(src)
 		return
@@ -90,4 +90,4 @@
 	if(force_moving && force_moving.allow_climbing && isstructure(A))
 		var/obj/structure/S = A
 		if(S.climbable)
-			S.do_climb(src)
+			SEND_SIGNAL(S, COMSIG_MOUSEDROPPED_ONTO)

@@ -43,7 +43,7 @@
 	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))
 	START_PROCESSING(SSprocessing, src)
 
-/datum/component/spawner/process()
+/datum/component/spawner/process(seconds_per_tick)
 	if(!parent) //Sanity check for instances where the spawner may be sleeping while the parent is destroyed
 		qdel(src)
 		return
@@ -108,6 +108,6 @@
 		spawned_mobs += L
 		L.nest = src
 		L.faction = src.faction
-		P.visible_message("<span class='danger'>[L] [pick(spawn_text)] [P].</span>")
+		P.visible_message(span_danger("[L] [pick(spawn_text)] [P]."))
 		if(length(spawn_sound))
 			playsound(P, pick(spawn_sound), 50, TRUE)

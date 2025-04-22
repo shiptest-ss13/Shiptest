@@ -56,7 +56,7 @@
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-/obj/structure/hazard_shutoff/powered/process()
+/obj/structure/hazard_shutoff/powered/process(seconds_per_tick)
 	if(siphoned_power >= siphon_max)
 		return
 	update_cable()
@@ -84,8 +84,8 @@
 /obj/structure/hazard_shutoff/powered/examine(mob/user)
 	. = ..()
 	if(!siphoned_power)
-		. += "<span class='notice'>[src] is disabled, and could be charged with a cable connection!</span>"
+		. += span_notice("[src] is disabled, and could be charged with a cable connection!")
 	else if(siphoned_power >= siphon_max)
-		. += "<span class='notice'>[src] is fully charged.</span>"
+		. += span_notice("[src] is fully charged.")
 	else
-		. += "<span class='notice'>[src] is [round((siphoned_power/siphon_max)*100, 0.1)]% charged.</span>"
+		. += span_notice("[src] is [round((siphoned_power/siphon_max)*100, 0.1)]% charged.")

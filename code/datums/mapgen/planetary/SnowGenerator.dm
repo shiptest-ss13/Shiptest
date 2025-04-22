@@ -1,5 +1,5 @@
 /datum/map_generator/planet_generator/snow
-	mountain_height = 0.40
+	mountain_height = 0.45
 	perlin_zoom = 55
 
 	initial_closed_chance = 45
@@ -96,7 +96,6 @@
 		/obj/structure/flora/grass/both = 12,
 		/obj/structure/flora/ash/chilly = 4,
 		/obj/structure/flora/ash/garden/frigid = 2,
-		/obj/item/mine/pressure/explosive/rusty/live = 1
 	)
 	flora_spawn_chance = 10
 	mob_spawn_chance = 1
@@ -104,10 +103,10 @@
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 4,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 10,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
 	feature_spawn_chance = 0.1
@@ -116,7 +115,6 @@
 		/obj/effect/spawner/random/anomaly/big = 1,
 		/obj/structure/spawner/burrow/ice_planet = 80,
 		/obj/structure/vein/ice = 25,
-		/obj/effect/spawner/minefield = 2,
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classthree = 10,
 	)
@@ -136,12 +134,12 @@
 	)
 	flora_spawn_chance = 40
 	flora_spawn_list = list(
-		/obj/structure/flora/ausbushes/fullgrass = 1,
-		/obj/structure/flora/ausbushes/sparsegrass = 1,
-		/obj/structure/flora/ausbushes = 1,
-		/obj/structure/flora/ausbushes/ppflowers = 1,
-		/obj/structure/flora/ausbushes/lavendergrass = 1,
-		/obj/structure/flora/ash/garden/frigid = 1,
+		/obj/structure/flora/ausbushes/fullgrass = 2,
+		/obj/structure/flora/ausbushes/sparsegrass = 2,
+		/obj/structure/flora/ausbushes = 2,
+		/obj/structure/flora/ausbushes/ppflowers = 2,
+		/obj/structure/flora/ausbushes/lavendergrass = 2,
+		/obj/structure/flora/ash/garden/frigid = 2,
 	)
 
 /datum/biome/snow/forest
@@ -150,7 +148,6 @@
 		/obj/structure/flora/tree/pine = 20,
 		/obj/structure/flora/tree/dead = 6,
 		/obj/structure/flora/grass/both = 8,
-		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 
 /datum/biome/snow/forest/dense
@@ -159,7 +156,6 @@
 		/obj/structure/flora/tree/pine = 20,
 		/obj/structure/flora/grass/both = 6,
 		/obj/structure/flora/tree/dead = 3,
-		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 
 /datum/biome/arctic
@@ -179,10 +175,10 @@
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 2,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
 	)
 	mob_spawn_chance = 1
@@ -196,18 +192,17 @@
 
 /datum/biome/iceberg
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/iceberg/lit = 6,
-		/turf/open/floor/plating/ice/iceberg/lit = 1,
+		/turf/open/floor/plating/asteroid/iceberg/lit = 7,
 		/turf/closed/mineral/ice = 10
 	)
 	mob_spawn_chance = 2
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
 	)
 	feature_spawn_chance = 0.3
@@ -247,8 +242,6 @@
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/puce = 2,
 		/obj/structure/flora/ash/garden/frigid = 2,
-		/obj/item/mine/proximity/explosive/live = 1,
-		/obj/item/mine/pressure/explosive/rusty/live = 1
 	)
 	closed_turf_types = list(
 		/turf/closed/mineral/random/snow = 1
@@ -258,10 +251,10 @@
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 4,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
 	feature_spawn_chance = 0.2
@@ -272,7 +265,6 @@
 		/obj/structure/vein/ice = 30,
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classthree = 6,
-		/obj/effect/spawner/minefield = 2,
 	)
 
 /datum/biome/cave/snow/thawed
@@ -303,10 +295,10 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 10,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
 	flora_spawn_chance = 3
@@ -314,7 +306,6 @@
 		/obj/structure/flora/ash/leaf_shroom = 3,
 		/obj/structure/flora/ash/cap_shroom = 3,
 		/obj/structure/flora/ash/stem_shroom = 3,
-		/obj/item/mine/pressure/explosive/fire/live = 1,
 	)
 	feature_spawn_chance = 0.2
 

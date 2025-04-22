@@ -39,7 +39,7 @@
 
 /obj/machinery/computer/monitor/secret/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's operating system seems quite outdated... It doesn't seem like it'd be compatible with the latest remote NTOS monitoring systems.</span>"
+	. += span_notice("It's operating system seems quite outdated... It doesn't seem like it'd be compatible with the latest remote NTOS monitoring systems.")
 
 /obj/machinery/computer/monitor/Initialize()
 	. = ..()
@@ -47,7 +47,7 @@
 	history["supply"] = list()
 	history["demand"] = list()
 
-/obj/machinery/computer/monitor/process()
+/obj/machinery/computer/monitor/process(seconds_per_tick)
 	if(!get_powernet())
 		if(use_static_power != IDLE_POWER_USE)
 			set_idle_power()

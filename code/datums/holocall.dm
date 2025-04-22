@@ -220,7 +220,7 @@
 	var/caller_name = "Unknown" //Caller name
 	var/image/caller_image
 	var/list/entries = list()
-	var/language = /datum/language/common //Initial language, can be changed by HOLORECORD_LANGUAGE entries
+	var/language = /datum/language/galactic_common //Initial language, can be changed by HOLORECORD_LANGUAGE entries
 
 /datum/holorecord/proc/set_caller_image(mob/user)
 	var/olddir = user.dir
@@ -260,10 +260,10 @@
 			record.caller_image = holodiskOriginal.record.caller_image
 			record.entries = holodiskOriginal.record.entries.Copy()
 			record.language = holodiskOriginal.record.language
-			to_chat(user, "<span class='notice'>You copy the record from [holodiskOriginal] to [src] by connecting the ports!</span>")
+			to_chat(user, span_notice("You copy the record from [holodiskOriginal] to [src] by connecting the ports!"))
 			name = holodiskOriginal.name
 		else
-			to_chat(user, "<span class='warning'>[holodiskOriginal] has no record on it!</span>")
+			to_chat(user, span_warning("[holodiskOriginal] has no record on it!"))
 	..()
 
 /obj/item/disk/holodisk/proc/build_record()
@@ -337,14 +337,13 @@
 	SAY He wanted to get to the other side!
 	SOUND clownstep
 	DELAY 30
-	LANGUAGE /datum/language/narsie
 	SAY Helped him get there!
 	DELAY 10
 	SAY ALSO IM SECRETLY A GORILLA
 	DELAY 10
 	PRESET /datum/preset_holoimage/gorilla
 	NAME Gorilla
-	LANGUAGE /datum/language/common
+	LANGUAGE /datum/language/galactic_common
 	SAY OOGA
 	DELAY 20"}
 
@@ -449,11 +448,10 @@
 	SAY Oh, shit!
 	DELAY 10
 	PRESET /datum/preset_holoimage/engineer/atmos/rig
-	LANGUAGE /datum/language/narsie
 	NAME Unknown
 	SAY RISE, MY LORD!!
 	DELAY 10
-	LANGUAGE /datum/language/common
+	LANGUAGE /datum/language/galactic_common
 	NAME Plastic
 	PRESET /datum/preset_holoimage/engineer/rig
 	SAY Fuck, fuck, fuck!

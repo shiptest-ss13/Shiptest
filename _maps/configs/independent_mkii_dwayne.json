@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Mark.II Dwayne-class Long Range Mining Transport",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Nanotrasen Spaceworks",
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"NATURAL",
+		"MERCANTILE"
+	],
+	"map_short_name": "Mk.II Dwayne-class",
+	"tranist_x_offset": -5,
+	"tranist_y_offset": -5,
+	"map_path": "_maps/shuttles/independent/independent_dwayne.dmm",
+	"token_icon_state": "ship_generic",
+	"description": "The Dwayne is one of the older classes of ships commonly seen on the Frontier, and one of the few such classes that doesn’t also carry a reputation for nightmarish conditions or high accident rates. Originally conceived of as a “mothership” for Nanotrasen mining shuttles that could enable long-duration mining missions at minimal cost, severe budget overruns and issues with the mining shuttle docking system left Nanotrasen with a massive number of mostly-completed hulls upon the project’s cancellation. These hulls were then quickly refurbished and sold on the civilian market, where they proved an immediate success on the Frontier. Contemporary Dwaynes can typically be found carrying a variety of mining equipment and extensive modifications unique to their captains.",
+	"tags": [
+		"Mining",
+		"Cargo"
+	],
+	"starting_funds": 4000,
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Foreman": {
+			"outfit": "/datum/outfit/job/independent/quartermaster/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Asteroid Miner": {
+			"outfit": "/datum/outfit/job/independent/miner/hazard",
+			"slots": 2
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

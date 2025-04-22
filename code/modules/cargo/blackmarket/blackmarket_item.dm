@@ -91,6 +91,8 @@
 	if(SSblackmarket.queue_item(purchase))
 		stock--
 		log_game("[key_name(buyer)] has succesfully purchased [name] using [shipping_method] for shipping.")
+		SSblackbox.record_feedback("nested tally", "blackmarket_ordered", 1, list(name, "amount"))
+		SSblackbox.record_feedback("nested tally", "blackmarket_ordered", price, list(name, "cost"))
 		return TRUE
 	return FALSE
 

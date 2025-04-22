@@ -42,12 +42,14 @@
 	var/human_loot = TRUE
 	/// Path of the mob spawner we base the mob's visuals off of.
 	var/mob_spawner
+	/// Path of the species we base the mob's visuals off of.
+	var/species_spawner = /datum/species/human
 	/// Path of the right hand held item we give to the mob's visuals.
 	var/obj/r_hand
 	/// Path of the left hand held item we give to the mob's visuals.
 	var/obj/l_hand
 	// Prob of us dropping l/r hand loot.
-	var/weapon_drop_chance = 30
+	var/weapon_drop_chance = 10
 
 	///Steals the armor datum from this type of armor
 	var/obj/item/clothing/armor_base
@@ -55,7 +57,7 @@
 /mob/living/simple_animal/hostile/human/Initialize(mapload)
 	. = ..()
 	if(mob_spawner)
-		apply_dynamic_human_appearance(src, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
+		apply_dynamic_human_appearance(src, species_path = species_spawner, mob_spawn_path = mob_spawner, r_hand = r_hand, l_hand = l_hand)
 		if(ispath(r_hand,/obj/item/gun))
 			var/obj/item/gun/our_gun = r_hand
 			spread = our_gun.spread
@@ -77,12 +79,16 @@
 		new mob_spawner(loc)
 	if(r_hand && weapon_drop_chance)
 		if(prob(weapon_drop_chance))
-			new r_hand(loc)
+			var/obj/item/gun/ballistic/cosmetic_damage = new r_hand(loc)
+			if(istype(cosmetic_damage))
+				cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum) //my free gun... it's bowowken...
 		else
 			visible_message(span_danger("[src]'s [r_hand.name] is destroyed as they collapse!"))
 	if(l_hand && weapon_drop_chance)
 		if(prob(weapon_drop_chance))
-			new l_hand(loc)
+			var/obj/item/gun/ballistic/cosmetic_damage = new l_hand(loc)
+			if(istype(cosmetic_damage))
+				cosmetic_damage.gun_wear = rand(cosmetic_damage.wear_minor_threshold, cosmetic_damage.wear_maximum)
 		else
 			visible_message(span_danger("[src]'s [l_hand.name] is destroyed as they collapse!"))
 

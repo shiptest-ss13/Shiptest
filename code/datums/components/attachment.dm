@@ -155,8 +155,8 @@
 	if(user.can_put_in_hand(parent))
 		user.put_in_hand(parent)
 		return TRUE
-
-	parent.forceMove(holder.drop_location())
+	else
+		parent.forceMove(holder.drop_location())
 	return TRUE
 
 /datum/component/attachment/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)

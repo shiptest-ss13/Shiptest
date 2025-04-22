@@ -33,11 +33,10 @@
 /obj/structure/flora/tree/attackby(obj/item/W, mob/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.get_sharpness() && W.force > 0)
-			if(W.hitsound)
-				playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
-			user.visible_message("<span class='notice'>[user] begins to cut down [src] with [W].</span>","<span class='notice'>You begin to cut down [src] with [W].</span>", "<span class='hear'>You hear the sound of sawing.</span>")
+			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100, FALSE, FALSE)
+			user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
 			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
-				user.visible_message("<span class='notice'>[user] fells [src] with the [W].</span>","<span class='notice'>You fell [src] with the [W].</span>", "<span class='hear'>You hear the sound of a tree falling.</span>")
+				user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 				playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
 				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
 				for(var/i=1 to log_amount)
@@ -98,9 +97,9 @@
 		return
 
 	if(took_presents[user.ckey] && !unlimited)
-		to_chat(user, "<span class='warning'>There are no presents with your name on.</span>")
+		to_chat(user, span_warning("There are no presents with your name on."))
 		return
-	to_chat(user, "<span class='warning'>After a bit of rummaging, you locate a gift with your name on it!</span>")
+	to_chat(user, span_warning("After a bit of rummaging, you locate a gift with your name on it!"))
 
 	if(!unlimited)
 		took_presents[user.ckey] = TRUE
@@ -441,9 +440,9 @@
 /obj/structure/flora/rock/attackby(obj/item/W, mob/user, params)
 	if(mineResult && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.tool_behaviour == TOOL_MINING)
-			to_chat(user, "<span class='notice'>You start mining...</span>")
+			to_chat(user, span_notice("You start mining..."))
 			if(W.use_tool(src, user, 40, volume=50))
-				to_chat(user, "<span class='notice'>You finish mining the rock.</span>")
+				to_chat(user, span_notice("You finish mining the rock."))
 				new mineResult(get_turf(src), 20)
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, W.type)
 				qdel(src)
@@ -830,7 +829,7 @@
 	START_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/structure/flora/tree/chapel/process()
+/obj/structure/flora/tree/chapel/process(seconds_per_tick)
 	if(world.time > (lastcycle + 200))
 		if(abs(karma) > 100)
 			pulseKarma()
@@ -851,18 +850,18 @@
 		if(istype(container, /obj/item/reagent_containers/syringe))
 			var/obj/item/reagent_containers/syringe/syr = container
 			if(syr.mode != 1)
-				to_chat(user, "<span class='warning'>You can't get any extract out of this plant.</span>")
+				to_chat(user, span_warning("You can't get any extract out of this plant."))
 				return
 		if(!container.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[container] is empty!</span>")
+			to_chat(user, span_warning("[container] is empty!"))
 			return 1
 		if(!container.is_drainable())
 			if(container.can_have_cap)
-				to_chat(user, "<span class='warning'>[container] has a cap on!</span>")
+				to_chat(user, span_warning("[container] has a cap on!"))
 			else
-				to_chat(user, "<span class='warning'>You can't use [container] on [src]!</span>")
+				to_chat(user, span_warning("You can't use [container] on [src]!"))
 			return 1
-		to_chat(user, "<span class='notice'>You feed [src] [container.amount_per_transfer_from_this]u from [container]...</span>")
+		to_chat(user, span_notice("You feed [src] [container.amount_per_transfer_from_this]u from [container]..."))
 		playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 		var/datum/reagents/R = new /datum/reagents()
 		R.my_atom = src
@@ -871,10 +870,10 @@
 	else if(I.get_sharpness() && I.force > 0)
 		if(I.hitsound)
 			playsound(get_turf(src), I.hitsound, 100, FALSE, FALSE)
-		user.visible_message("<span class='notice'>[user] begins to cut down [src] with [I].</span>","<span class='notice'>You begin to cut down [src] with [I].</span>", "<span class='hear'>You hear the sound of sawing.</span>")
+		user.visible_message(span_notice("[user] begins to cut down [src] with [I]."),span_notice("You begin to cut down [src] with [I]."), span_hear("You hear the sound of sawing."))
 		if(do_after(user, 1000/I.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
 			//Regret.dm
-			to_chat(user, "<span class='danger'>As you pierce the bark, a supernatural shock jolts through your body...</span>")
+			to_chat(user, span_danger("As you pierce the bark, a supernatural shock jolts through your body..."))
 			user.log_message("attempted to cut down [src] and was smitten")
 			if(iscarbon(user))
 				var/mob/living/carbon/C = user
@@ -896,7 +895,7 @@
 	if(isliving(user))
 		var/mob/living/M = user
 		if(gainedkarma >= 0)
-			to_chat(M, "<span class='green'>[src] fills with new life as a wave of comfort washes over you.</span>")
+			to_chat(M, span_green("[src] fills with new life as a wave of comfort washes over you."))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/good_tree, name)
 			if(karma >= 0)
 				M.adjustBruteLoss(-0.25*karma, 0)
@@ -904,7 +903,7 @@
 				M.adjustToxLoss(-0.25*karma, 0)
 				M.adjustCloneLoss(-0.25*karma, 0)
 		else
-			to_chat(M, "<span class='danger'>Colors fade from [src] as a wave of guilt crawls into your skin.</span>")
+			to_chat(M, span_danger("Colors fade from [src] as a wave of guilt crawls into your skin."))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "treekarma", /datum/mood_event/bad_tree, name)
 			M.adjustToxLoss(abs(karma)*0.25, 0)
 	adjustKarma(gainedkarma)
@@ -929,10 +928,10 @@
 	var/newkarma = karma + x
 	if(karma < 100 && newkarma >= 100)
 		need_update = 1
-		visible_message("<span class='green'>[src] shifts colors as a heavenly warmth washes over the room.</span>")
+		visible_message(span_green("[src] shifts colors as a heavenly warmth washes over the room."))
 	if(karma > -100 && newkarma <= -100)
 		need_update = 1
-		visible_message("<span class='danger'>As the life fades from [src] something evil seeps into the air.</span>")
+		visible_message(span_danger("As the life fades from [src] something evil seeps into the air."))
 	if(abs(karma) > 100 && newkarma < 100)
 		need_update = 1
 	if(need_update)
@@ -962,22 +961,22 @@
 				adjustKarma(10)
 
 /datum/mood_event/good_tree
-	description = "<span class='nicegreen'>I feel closer to my soul.</span>\n"
+	description = span_nicegreen("I feel closer to my soul.")
 	mood_change = 3
 	timeout = 5 MINUTES
 
 /datum/mood_event/bad_tree
-	description = "<span class='warning'>I should stop gardening.</span>\n"
+	description = span_warning("I should stop gardening.")
 	mood_change = -3
 	timeout = 5 MINUTES
 
 /datum/mood_event/better_tree
-	description = "<span class='nicegreen'>I feel blessed by the gods!</span>\n"
+	description = span_nicegreen("I feel blessed by the gods!")
 	mood_change = 6
 	timeout = 5 MINUTES
 
 /datum/mood_event/worse_tree
-	description = "<span class='warning'>It's like a root is digging into my heart.</span>\n"
+	description = span_warning("It's like a root is digging into my heart.")
 	mood_change = -6
 	timeout = 5 MINUTES
 
@@ -1028,7 +1027,7 @@
 	create_reagents(300, OPENCONTAINER)
 	. = ..()
 
-/obj/structure/flora/tree/srm/process()
+/obj/structure/flora/tree/srm/process(seconds_per_tick)
 	if(world.time > (lastcycle + 100))
 		if(reagents.total_volume > 0)
 			var/gainedhealth = 0
@@ -1044,7 +1043,7 @@
 				apple.name = "illestren Apple"
 				apple.desc = "You can grind this for bacteria."
 				apple.reagents.add_reagent(/datum/reagent/srm_bacteria, 10)
-				visible_message("<span class='green'>An [apple] falls from the tree.</span>")
+				visible_message(span_green("An [apple] falls from the tree."))
 				health -= 25
 		//Clean up the air a bit
 		if(isopenturf(loc))
