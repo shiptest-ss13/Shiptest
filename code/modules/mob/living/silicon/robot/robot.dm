@@ -1176,7 +1176,7 @@
 	return TRUE
 
 /obj/item/organ/brain/cybernetic/ai
-	name = "Remote uplink positronic frame controller"
+	name = "remote uplink positronic frame controller"
 	desc = "Can be inserted into an I.P.C. without a controlling positronic brain to allow stationary positronic interface cores to control it."
 	icon = 'icons/obj/assemblies.dmi' ///so its not a fucking brain
 	icon_state = "posibrain"
@@ -1288,7 +1288,7 @@
 	if(mainframe.laws)
 		mainframe.laws.show_laws(mainframe)
 	if(mainframe.eyeobj)
-		mainframe.eyeobj.setLoc(loc)
+		mainframe.eyeobj.setLoc(get_turf(owner))
 	mainframe = null
 	update_med_hud_status(owner)
 

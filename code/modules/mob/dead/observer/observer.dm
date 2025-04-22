@@ -290,7 +290,7 @@ Works together with spawning an observer, noted above.
 			return ghost
 	if(key)
 		if(key[1] != "@") // Skip aghosts.
-			if(HAS_TRAIT(src, TRAIT_CORPSELOCKED))
+			if(HAS_TRAIT(src, TRAIT_CORPSELOCKED) && !isAdminObserver(src))
 				if(can_reenter_corpse) //If you can re-enter the corpse you can't leave when corpselocked
 					return
 			stop_sound_channel(CHANNEL_HEARTBEAT) //Stop heartbeat sounds because You Are A Ghost Now

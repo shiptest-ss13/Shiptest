@@ -210,6 +210,14 @@
 	crate_type = /obj/structure/closet/crate/science
 	no_bundle = TRUE
 
+/datum/supply_pack/machinery/remoteipc
+	name = "Remote Uplink Postironic Frame Controller Kit"
+	desc = "Contains a NanoTrasen brand R.U.P.F.C." //TODO: get ratvarr to rewrite this
+	cost = 1250 //TODO: get ratvarr to reprice this
+	contains = list(/obj/item/organ/brain/cybernetic/ai)
+	crate_name = "remote chassis crate"
+	crate_type = /obj/structure/closet/crate/science
+
 /*
 		Miscellaneous machines
 */
