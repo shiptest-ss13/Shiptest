@@ -659,6 +659,6 @@
 	taste_description = "sugar" //effectively a sugar pill, but sugar actually has a use
 
 /datum/reagent/drug/placebatol/on_mob_life(mob/living/carbon/M)
-	if(prob(4))
+	if(prob(3))
 		to_chat(M, span_notice("[pick("You feel better.", "You feel normal.", "You feel stable.")]")) //normal pills
 	..()
