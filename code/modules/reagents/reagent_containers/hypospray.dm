@@ -373,7 +373,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/placebatol
 	name = "prescription medipen"
-	desc = "An injector filled with some prescribed substance. A tag reads: \"NO MEDICINAL EFFECT\"."
+	desc = "An injector filled with some prescribed substance."
 	list_reagents = list(/datum/reagent/drug/placebatol = 15)
 	volume = 15
 	amount_per_transfer_from_this = 15
