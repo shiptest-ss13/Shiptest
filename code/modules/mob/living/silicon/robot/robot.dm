@@ -1168,7 +1168,7 @@
 /datum/action/innate/brain_undeployment/Trigger(trigger_flags)
 	if(!..())
 		return FALSE
-	var/obj/item/organ/brain/cybernetic/ai/shell_to_disconnect = owner.get_organ_by_type(/obj/item/organ/brain/cybernetic/ai)
+	var/obj/item/organ/brain/cybernetic/ai/shell_to_disconnect = (/obj/item/organ/brain/cybernetic/ai)
 
 	shell_to_disconnect.undeploy()
 	return TRUE
