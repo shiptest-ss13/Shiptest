@@ -81,9 +81,9 @@
 	if(istype(C) && SPT_PROB(1, seconds_per_tick)) //cursed by bubblegum
 		if(SPT_PROB(7.5, seconds_per_tick))
 			new /datum/hallucination/oh_yeah(C)
-			to_chat(C, "<span class='colossus'><b>[pick("I AM IMMORTAL.","I SHALL TAKE BACK WHAT'S MINE.","I SEE YOU.","YOU CANNOT ESCAPE ME FOREVER.","DEATH CANNOT HOLD ME.")]</b></span>")
+			to_chat(C, span_colossus("<b>[pick("I AM IMMORTAL.","I SHALL TAKE BACK WHAT'S MINE.","I SEE YOU.","YOU CANNOT ESCAPE ME FOREVER.","DEATH CANNOT HOLD ME.")]</b>"))
 		else
-			to_chat(C, "<span class='warning'>[pick("You hear faint whispers.","You smell ash.","You feel hot.","You hear a roar in the distance.")]</span>")
+			to_chat(C, span_warning("[pick("You hear faint whispers.","You smell ash.","You feel hot.","You hear a roar in the distance.")]"))
 
 /obj/item/clothing/head/helmet/space/hostile_environment
 	name = "H.E.C.K. helmet"
@@ -136,9 +136,9 @@
 
 /obj/item/clothing/gloves/explorer
 	name = "explorer gloves"
-	desc = "Thick, fire-resistant gloves with a small armor-plated bracer, sold by EXOCOM to protect your precious fingers from the rigours of planetary exploration."
+	desc = "Thick, fire-resistant gloves with a small bracer, sold by EXOCOM to protect your precious fingers from the rigours of planetary exploration."
 	icon_state = "explorer"
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	resistance_flags = FIRE_PROOF
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
@@ -147,9 +147,9 @@
 
 /obj/item/clothing/gloves/explorer/old
 	name = "prototype exploration gauntlets"
-	desc = "Thick-fingered gloves with a heavy layer of armor plating, meant to stop all but the most brutal of stovetop-touching accidents in the field."
+	desc = "Thick-fingered, durable gloves, meant to stop all but the most brutal of stovetop-touching accidents in the field."
 	icon_state = "explorerold"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 75)
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 

@@ -2770,7 +2770,7 @@
 	layer = 4.1
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/item/bedsheet/blue{
 	pixel_y = 13
 	},
@@ -4962,6 +4962,8 @@
 /obj/machinery/defibrillator_mount/charging{
 	pixel_y = 20
 	},
+/obj/machinery/computer/operating,
+/obj/item/disk/surgery/t3,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "SJ" = (

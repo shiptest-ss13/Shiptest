@@ -87,7 +87,7 @@
 		if(0.25 to 0.5)
 			return "[p_they(TRUE)] appear[p_s()] heavily damaged."
 		if(0 to 0.25)
-			return "<span class='warning'>[p_theyre(TRUE)] falling apart!</span>"
+			return span_warning("[p_theyre(TRUE)] falling apart!")
 	return
 
 /turf/closed/AfterChange()
@@ -144,7 +144,7 @@
 	if(!dam)
 		return
 	if(P.suppressed != SUPPRESSED_VERY)
-		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_danger("[src] is hit by \a [P]!"), null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src))
 		add_dent(WALL_DENT_SHOT)
 		alter_integrity(-dam, shooter)
@@ -179,9 +179,9 @@
 			NT.contents_explosion(severity, target)
 			return
 		if(EXPLODE_HEAVY)
-			alter_integrity(rand(-500, -800))
+			alter_integrity(rand(-300, -500))
 		if(EXPLODE_LIGHT)
-			alter_integrity(rand(-200, -700))
+			alter_integrity(rand(-100, -200))
 
 /turf/closed/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -192,14 +192,14 @@
 	if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	to_chat(user, "<span class='notice'>You push \the [src] but nothing happens!</span>")
+	to_chat(user, span_notice("You push \the [src] but nothing happens!"))
 	playsound(src, 'sound/weapons/genhit.ogg', 25, TRUE)
 	add_fingerprint(user)
 
 /turf/closed/attackby(obj/item/W, mob/user, params)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(W.attack_cooldown)
 	if (!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return
 
 	//get the user's location
@@ -225,7 +225,7 @@
 	var/total_damage = get_item_damage(used_item)
 	user.do_attack_animation(src)
 	if(total_damage <= 0)
-		to_chat(user, "<span class='warning'>[used_item] isn't strong enough to damage [src]!</span>")
+		to_chat(user, span_warning("[used_item] isn't strong enough to damage [src]!"))
 		playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
 		return TRUE
 	log_combat(user, src, "attacked", used_item)
@@ -243,12 +243,12 @@
 /turf/closed/proc/try_decon(obj/item/I, mob/user, turf/T)
 	var/act_duration = breakdown_duration
 	if(I.tool_behaviour == TOOL_WELDER)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return FALSE
-		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+		to_chat(user, span_notice("You begin slicing through the outer plating..."))
 		while(I.use_tool(src, user, act_duration, volume=50))
 			if(iswallturf(src))
-				to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+				to_chat(user, span_notice("You slice through some of the outer plating..."))
 				if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
 					return TRUE
 			else
@@ -261,12 +261,12 @@
 	if(breakdown_duration == -1)
 		to_chat(user, span_warning("[src] cannot be deconstructed!"))
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
-	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+	to_chat(user, span_notice("You begin slicing through the outer plating..."))
 	while(I.use_tool(src, user, act_duration, volume=100))
 		if(iswallturf(src))
-			to_chat(user, "<span class='notice'>You slice through some of the outer plating...</span>")
+			to_chat(user, span_notice("You slice through some of the outer plating..."))
 			if(!alter_integrity(-(I.wall_decon_damage),user,FALSE,TRUE))
 				return TRUE
 		else
@@ -286,13 +286,13 @@
 
 
 	if(prob(hardness + M.force) && M.force > 20)
-		M.visible_message("<span class='danger'>[M.name] hits [src] with great force!</span>", \
-					"<span class='danger'>You hit [src] with incredible force!</span>", null, COMBAT_MESSAGE_RANGE)
+		M.visible_message(span_danger("[M.name] hits [src] with great force!"), \
+					span_danger("You hit [src] with incredible force!"), null, COMBAT_MESSAGE_RANGE)
 		dismantle_wall(TRUE)
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	else
-		M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
-					"<span class='danger'>You hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+		M.visible_message(span_danger("[M.name] hits [src]!"), \
+					span_danger("You hit [src]!"), null, COMBAT_MESSAGE_RANGE)
 		alter_integrity(M.force * 20)
 
 /turf/closed/attack_hulk(mob/living/carbon/user)
@@ -301,9 +301,9 @@
 	if(!arm || arm.bodypart_disabled)
 		return
 	alter_integrity(-250,user)
-	user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-				"<span class='danger'>You smash \the [src]!</span>", \
-				"<span class='hear'>You hear a booming smash!</span>")
+	user.visible_message(span_danger("[user] smashes \the [src]!"), \
+				span_danger("You smash \the [src]!"), \
+				span_hear("You hear a booming smash!"))
 	return TRUE
 
 /turf/closed/attack_animal(mob/living/simple_animal/M)
@@ -313,3 +313,10 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		alter_integrity(-400)
 		return
+
+/turf/closed/zap_act(power, zap_flags, shocked_targets)
+	if(QDELETED(src))
+		return FALSE
+	if(alter_integrity(-power) >= 0)
+		return TRUE
+	return power / 2

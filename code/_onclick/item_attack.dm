@@ -72,7 +72,8 @@
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
 		if(attempt_initiate_surgery(I, src, user))
 			return TRUE
-	user.changeNext_move(CLICK_CD_MELEE)
+	//This should really be in attack but 2 much logic doesnt call parent
+	user.changeNext_move(I.attack_cooldown)
 	return I.attack(src, user)
 
 /mob/living/attack_hand(mob/living/user)
@@ -101,7 +102,7 @@
 		return
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
+		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
 
 	if(item_flags & EYE_STAB && user.zone_selected == BODY_ZONE_PRECISE_EYES)
@@ -126,14 +127,13 @@
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
-
 /// The equivalent of the standard version of [/obj/item/proc/attack] but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ, O, user) & COMPONENT_NO_ATTACK_OBJ)
 		return
 	if(item_flags & NOBLUDGEON)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(attack_cooldown)
 	user.do_attack_animation(O)
 	O.attacked_by(src, user)
 
@@ -146,7 +146,7 @@
 		return
 
 	var/total_force
-	if(istype(src, /obj/structure))
+	if(is_type_in_list(src, list(/obj/structure, /obj/machinery)))
 		total_force = (attacking_item.force * attacking_item.demolition_mod)
 
 	else
@@ -170,7 +170,7 @@
 	send_item_attack_message(attacking_item, user)
 	if(!attacking_item.force)
 		return FALSE
-	apply_damage(attacking_item.force, attacking_item.damtype, break_modifier = attacking_item.force, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
+	apply_damage(attacking_item.force, attacking_item.damtype, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
 	if(attacking_item.damtype == BRUTE && prob(33))
 		attacking_item.add_mob_blood(src)
 		var/turf/location = get_turf(src)
@@ -181,6 +181,12 @@
 
 /mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
 	if(I.force < force_threshold || I.damtype == STAMINA)
+		playsound(loc, 'sound/weapons/tap.ogg', I.get_clamped_volume(), TRUE, -1)
+	else
+		return ..()
+
+/mob/living/basic/attacked_by(obj/item/I, mob/living/user)
+	if(!attack_threshold_check(I.force, I.damtype, MELEE, FALSE))
 		playsound(loc, 'sound/weapons/tap.ogg', I.get_clamped_volume(), TRUE, -1)
 	else
 		return ..()
@@ -226,7 +232,7 @@
 		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I]!"
 	if(user == src)
 		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
-	visible_message("<span class='danger'>[attack_message]</span>",\
-		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
+	visible_message(span_danger("[attack_message]"),\
+		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE)
 	return 1
 
