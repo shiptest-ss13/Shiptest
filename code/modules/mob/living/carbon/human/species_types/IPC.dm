@@ -63,7 +63,7 @@
 	)
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
-	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
+	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface" && (mutantbrain != /obj/item/organ/brain/cybernetic/ai))
 		mutantbrain = /obj/item/organ/brain/mmi_holder
 	. = ..()
 	if(ishuman(C))
@@ -287,3 +287,6 @@
 /mob/living/carbon/proc/charge(datum/source, amount, repairs)
 	if(nutrition < NUTRITION_LEVEL_WELL_FED)
 		adjust_nutrition(amount / 10) // The original amount is capacitor_rating*100
+
+/datum/species/ipc/frame
+	mutantbrain = /obj/item/organ/brain/cybernetic/ai
