@@ -61,6 +61,9 @@
 		return
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Power") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	var/list/results = powerdebug()
+	if(!results.len)
+		to_chat(src, "No power bugs detected", confidential = TRUE)
+		return
 	to_chat(src, "[results.Join("\n")]", confidential = TRUE)
 
 /proc/powerdebug(testing = FALSE)
