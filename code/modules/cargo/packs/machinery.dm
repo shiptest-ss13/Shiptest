@@ -209,6 +209,8 @@
 	crate_name = "robotics assembly crate"
 	crate_type = /obj/structure/closet/crate/science
 	no_bundle = TRUE
+	faction = /datum/faction/nt
+	faction_locked = TRUE
 
 /datum/supply_pack/machinery/remoteipc
 	name = "Remote Uplink Postironic Frame Controller Kit"
