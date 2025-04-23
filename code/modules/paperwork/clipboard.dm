@@ -41,6 +41,8 @@
 
 /// Take out the topmost paper
 /obj/item/clipboard/proc/remove_paper(obj/item/paper/paper, mob/user)
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
 	if(!istype(paper))
 		return
 	paper.forceMove(user.loc)

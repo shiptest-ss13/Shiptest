@@ -649,7 +649,10 @@
 			to_chat(M, "[src] is now set to spray contents on application.")
 
 /obj/item/hypospray/mkii/CtrlClick()
+	. = ..()
 	var/mob/M = usr
+	if(!M.canUseTopic(src, BE_CLOSE))
+		return
 	switch(mode)
 		if(HYPO_SPRAY)
 			mode = HYPO_INJECT
