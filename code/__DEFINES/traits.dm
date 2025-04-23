@@ -494,6 +494,3 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
 #define TRAIT_CLIMBABLE "trait_climbable"
-
-/// Prevents you from leaving your corpse
-#define TRAIT_CORPSELOCKED "corpselocked"

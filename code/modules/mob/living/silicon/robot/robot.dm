@@ -1197,7 +1197,6 @@
 
 /obj/item/organ/brain/cybernetic/ai/on_mob_insert(mob/living/carbon/brain_owner, special, movement_flags)
 	. = ..()
-	ADD_TRAIT(brain_owner, TRAIT_CORPSELOCKED, REF(src))
 	RegisterSignal(brain_owner, COMSIG_LIVING_HEALTH_UPDATE, PROC_REF(update_med_hud_status))
 	RegisterSignal(brain_owner, COMSIG_CLICK, PROC_REF(owner_clicked))
 	RegisterSignal(brain_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
