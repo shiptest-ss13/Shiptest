@@ -198,12 +198,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	icon_state = "viper23"
 	item_state = "viper23"
-
-	semi_auto = FALSE //not double action
-	safety_wording = "hammer"
-
-	fire_delay = 0.4 SECONDS
-	spread = 4
+	spread = 5
+	spread_unwielded = 10
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
