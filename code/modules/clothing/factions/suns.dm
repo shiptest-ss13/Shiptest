@@ -600,7 +600,7 @@
 	name = "\improper SUNS waistcoat"
 	desc = "An academic issued run of the mill waistcoat."
 	icon_state = "suns_waistcoat"
-	icon = 'icons/obj/clothing/accessories.dmi'
+	icon = 'icons/obj/clothing/faction/suns/accessory.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/accessory.dmi'
 	minimize_when_attached = TRUE
 
