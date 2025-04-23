@@ -835,7 +835,7 @@
 	name = "Evidence Bag"
 	id = "evidencebag"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/plastic = 500)
+	materials = list(/datum/material/plastic = 100)
 	build_path = /obj/item/evidencebag
 	category = list("initial", "Security")
 
@@ -917,6 +917,14 @@
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
 	build_path = /obj/item/storage/box/ammo/c556mm_surplus
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/buckshot_surplus
+	name = "surplus buckshot"
+	id = "buckshot-surplus"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 5000)
+	build_path = /obj/item/ammo_casing/shotgun/improvised
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/ammo_can
