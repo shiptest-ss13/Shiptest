@@ -450,7 +450,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 		if(triggered_by == TRIGGER_EXPLO)
 			log_bomber(null, "An explosion has primed a", src, "for detonation", notify_admins)
-		else if(triggered_by == 2)
+		else if(triggered_by == TRIGGER_SIGNAL)
 			var/turf/bombturf = get_turf(src)
 			if(notify_admins)
 				message_admins("A signal has triggered a [name] to detonate at [ADMIN_VERBOSEJMP(bombturf)]. Igniter attacher: [ADMIN_LOOKUPFLW(attacher)]")
