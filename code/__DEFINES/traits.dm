@@ -280,6 +280,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_AIMING "aiming"
 /// This mob overrides certian SSlag_switch measures with this special trait
 #define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
+/// Indicates if the mob is currently speaking with sign language
+#define TRAIT_SIGN_LANG "sign_language"
+/// This mob is able to use sign language over the radio.
+#define TRAIT_CAN_SIGN_ON_COMMS "can_sign_on_comms"
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
@@ -287,6 +291,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BEING_SHOCKED "shocked"
 /// Granted by prismwine, reflects lasers
 #define TRAIT_REFLECTIVE "reflective"
+/// You can't see color!
+#define TRAIT_COLORBLIND "colorblind"
 
 /* Traits for ventcrawling.
  * Both give access to ventcrawling, but *_NUDE requires the user to be
