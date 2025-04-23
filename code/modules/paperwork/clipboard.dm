@@ -81,6 +81,7 @@
 	. += "clipboard_over"
 
 /obj/item/clipboard/CtrlClick(mob/user)
+	. = ..()
 	var/obj/item/paper/toppaper = toppaper_ref?.resolve()
 	remove_paper(toppaper, user)
 	return TRUE
