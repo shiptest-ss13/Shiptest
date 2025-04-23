@@ -290,9 +290,6 @@ Works together with spawning an observer, noted above.
 			return ghost
 	if(key)
 		if(key[1] != "@") // Skip aghosts.
-			if(HAS_TRAIT(src, TRAIT_CORPSELOCKED) && !isAdminObserver(src))
-				if(can_reenter_corpse) //If you can re-enter the corpse you can't leave when corpselocked
-					return
 			stop_sound_channel(CHANNEL_HEARTBEAT) //Stop heartbeat sounds because You Are A Ghost Now
 			var/mob/dead/observer/ghost = new(src)	// Transfer safety to observer spawning proc.
 			SStgui.on_transfer(src, ghost) // Transfer NanoUIs.
@@ -316,9 +313,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(stat != DEAD)
 		succumb()
 	if(stat == DEAD)
-		if(!HAS_TRAIT(src, TRAIT_CORPSELOCKED)) //corpse-locked have to confirm with the alert below
-			ghostize(TRUE)
-			return TRUE
+		ghostize(TRUE)
+		return TRUE
 	var/response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost whilst still alive you may not play again this round! You can't change your mind so choose wisely!!)","Are you sure you want to ghost?","Ghost","Stay in body")
 	if(response != "Ghost")
 		return FALSE//didn't want to ghost after-all
