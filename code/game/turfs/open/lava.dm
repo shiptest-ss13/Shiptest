@@ -30,7 +30,8 @@
 
 /turf/open/lava/Destroy()
 	. = ..()
-	QDEL_NULL(particle_emitter)
+	if(isatom(particle_emitter))
+		QDEL_NULL(particle_emitter)
 
 /turf/open/lava/ex_act(severity, target)
 	contents_explosion(severity, target)
