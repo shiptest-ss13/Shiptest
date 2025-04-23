@@ -214,12 +214,13 @@
 
 /datum/supply_pack/machinery/remoteipc
 	name = "Remote Uplink Postironic Frame Controller Kit"
-	desc = "Contains a NanoTrasen brand R.U.P.F.C." //TODO: get ratvarr to rewrite this
-	cost = 1250 //TODO: get ratvarr to reprice this
+	desc = "Contains a Nanotrasen brand R.U.P.F.C."
+	cost = 500 //so im basing this off the fact that it needs a cost but shouldnt be stupid high, its QOL at the end of the day(?)
 	contains = list(/obj/item/organ/brain/cybernetic/ai)
 	crate_name = "remote chassis crate"
 	crate_type = /obj/structure/closet/crate/science
-
+	faction = /datum/faction/nt
+	faction_locked = TRUE
 /*
 		Miscellaneous machines
 */
