@@ -385,7 +385,7 @@ weapons
 /datum/supply_pack/mech/weapon/railgun
 	name = "PR-05 kit"
 	desc = "Contains a plasma railgun to mount on combat exosuits. Be sure to not overcharge it."
-	cost = 4500
+	cost = 2700
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
 	)

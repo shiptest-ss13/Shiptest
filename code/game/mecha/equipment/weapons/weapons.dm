@@ -366,16 +366,13 @@
 	name = "\improper PR-05 Mounted Plasma Railgun"
 	desc = "A plasma railgun manufactured by NT and taking a different direction from their handheld counterpart. Namely utilizing the plasma NT had such large quantities of to help with heating and accelerating the projectile. Shoots super-heated high-density iron-tungsten rods at ludicrous speeds."
 	icon_state = "mecha_railgun"
-	equip_cooldown = 45
+	equip_cooldown = 34
 	projectile = /obj/projectile/bullet/p50/penetrator/sabot
 	projectiles = 15
 	projectiles_cache = 30
 	projectiles_cache_max = 90
 	ammo_type = "railgun"
 	fire_sound = 'sound/weapons/blastcannon.ogg'
-	scoped = TRUE
-	zoom_mod = 10
-	zoom_out_mod = 3
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/mounted
 	name = "\improper Mounted Heavy Machine Gun"
