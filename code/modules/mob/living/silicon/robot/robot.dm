@@ -1202,6 +1202,7 @@
 	RegisterSignal(brain_owner, COMSIG_CLICK, PROC_REF(owner_clicked))
 	RegisterSignal(brain_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 	RegisterSignal(brain_owner, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(on_organ_gain))
+	RegisterSignal(brain_owner, COMSIG_MOB_DEATH, PROC_REF(shell_death))
 
 /obj/item/organ/brain/cybernetic/ai/on_mob_remove(mob/living/carbon/organ_owner, special, movement_flags)
 	undeploy()
@@ -1309,4 +1310,9 @@
 /obj/item/organ/brain/cybernetic/ai/proc/ai_deleted(datum/source)
 	SIGNAL_HANDLER
 	to_chat(owner, span_danger("Your core has been rendered inoperable..."))
+	undeploy()
+
+/obj/item/organ/brain/cybernetic/ai/proc/shell_death(datum/source)
+	SIGNAL_HANDLER
+	to_chat(owner, span_danger("WARN: Remote chassis has missed [rand(1,4)] health check(s). Restoring to core functions."))
 	undeploy()
