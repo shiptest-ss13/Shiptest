@@ -23,7 +23,7 @@
 		return
 	if(!burning)
 		user.visible_message(span_notice("[user] starts to pull [src] free from the ground...."), span_notice("You start to pull [src] free from the ground..."))
-		if(do_after(user, 20, progress = 1, target = src))
+		if(do_after(user, 20, show_progress = TRUE, target = src))
 			to_chat(user, span_notice("You pull [src] free from the ground."))
 			var/torch = new /obj/item/candle/tribal_torch
 			user.put_in_hands(torch)
