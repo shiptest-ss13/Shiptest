@@ -56,7 +56,8 @@
 
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
-	damage = 50
+	damage = 60
+	knockdown = 50
 	armour_penetration = 20
 	speed = 1
 
