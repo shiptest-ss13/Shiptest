@@ -285,7 +285,3 @@
 		/obj/structure/flora/ash/tall_shroom = 2,
 	)
 
-/datum/biome/cave/lavaland/lava
-	open_turf_types = list(/turf/open/lava/smooth/lava_land_surface = 1)
-	feature_spawn_chance = 1
-	feature_spawn_list = list(/obj/structure/flora/rock/pile/lava = 1)
