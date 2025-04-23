@@ -385,9 +385,9 @@
 	set category = "Event.Overmap"
 	set name = "Create Distress Signal Here"
 
-	var/mob/M = src.mob
+	var/mob/self_mob = src.mob
 	var/datum/overmap/overmap_location
-	if(!istype(M))
+	if(!istype(self_mob))
 		return
 
 	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(M)
