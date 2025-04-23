@@ -292,6 +292,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Granted by prismwine, reflects lasers
 #define TRAIT_REFLECTIVE "reflective"
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
+/// You can't see color!
+#define TRAIT_COLORBLIND "colorblind"
 
 /* Traits for ventcrawling.
  * Both give access to ventcrawling, but *_NUDE requires the user to be
