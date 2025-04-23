@@ -1239,7 +1239,7 @@
 		return
 	var/list/lines = list()
 	lines += span_bold("[owner]")
-	lines += "Target is currently [!HAS_TRAIT(owner, TRAIT_INCAPACITATED) ? "functional" : "incapacitated"]"
+	lines += "Frame is currently [!HAS_TRAIT(owner, TRAIT_INCAPACITATED) ? "functional" : "incapacitated"]"
 	lines += "Estimated frame integrity: [owner.health]"
 	if(is_sufficiently_augmented())
 		lines += "<a href='byond://?src=[REF(src)];ai_take_control=[REF(user)]'>[span_boldnotice("Take control?")]</a><br>"
@@ -1259,12 +1259,14 @@
 		to_chat(AI, span_warning("You are already loaded into an onboard computer!"))
 		return*/   ///this is because we do not have key parts of this and i dont wanna break the rest of this
 	if(!GLOB.cameranet.checkCameraVis(owner))
-		to_chat(AI, span_warning("Target is no longer near active cameras."))
+		to_chat(AI, span_warning("Frame is no longer near active cameras."))
 		return
 	if(!isturf(AI.loc))
 		to_chat(AI, span_warning("You aren't in your core!"))
 		return
-
+	if(owner.stat == DEAD)
+		to_chat(AI, span_warning("Frame is currently offline."))
+		return
 	AI.deployed_shell = owner
 	deploy_init(AI)
 	AI.mind.transfer_to(owner)
@@ -1314,5 +1316,5 @@
 
 /obj/item/organ/brain/cybernetic/ai/proc/shell_death(datum/source)
 	SIGNAL_HANDLER
-	to_chat(owner, span_danger("WARN: Remote chassis has missed [rand(1,4)] health check(s). Restoring to core functions."))
+	to_chat(owner, span_danger("WARN: Remote frame has missed [rand(1,4)] health check(s). Restoring to core functions."))
 	undeploy()
