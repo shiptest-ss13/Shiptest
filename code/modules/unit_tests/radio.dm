@@ -21,8 +21,8 @@
 	TEST_ASSERT_EQUAL(heard_count, 1, "The second human should have only heard 1 message as the radio is not on yet")
 	heard_count = 0
 
-	first_radio.broadcasting = TRUE
-	second_radio.broadcasting = TRUE
+	first_radio.listening = TRUE
+	second_radio.listening = TRUE
 
 	first_human.say("Test")
 	TEST_ASSERT_EQUAL(heard_count, 1, "Mismatch in expected amount of times heard.")
@@ -32,7 +32,7 @@
 	TEST_ASSERT_EQUAL(heard_count, 2, "Mismatch in expected amount of times heard.")
 	heard_count = 0
 
-	first_radio.listening = TRUE
+	first_radio.broadcasting = TRUE
 
 	first_human.say("Test")
 	TEST_ASSERT_EQUAL(heard_count, 2, "Mismatch in expected amount of times heard.")
