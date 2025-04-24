@@ -100,7 +100,7 @@
 /turf/closed/mineral/try_decon(obj/item/I, mob/user, turf/T)
 	var/act_duration = breakdown_duration
 	if(I.tool_behaviour == TOOL_MINING)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return FALSE
 
 		to_chat(user, span_notice("You begin breaking through the rock..."))

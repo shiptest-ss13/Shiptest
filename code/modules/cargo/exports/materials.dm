@@ -1,8 +1,8 @@
 /datum/export/material
-	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000 cm3 (single sheet) as of March 2025.
-	desc = "Credit value is equal to 2000 cm3, the standard printing volume of a single sheet of any material."
+	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of now. when you are reading this. yes. now.
+	desc = "The value for one sheet (or equivalent) of this material."
 
-	elasticity_coeff = 0.0002
+	elasticity_coeff = 0.002
 	recovery_ds = 0.02 MINUTES
 	var/material_id = null
 	export_types = list(
@@ -11,6 +11,7 @@
 		/obj/item/stack/ore,
 		/obj/item/coin
 	)
+
 // Yes, it's a base type containing export_types.
 // But it has no material_id, so any applies_to check will return false, and these types reduce amount of copypasta a lot
 
@@ -30,63 +31,73 @@
 
 	return round(amount/MINERAL_MATERIAL_AMOUNT)
 
+/datum/export/material/applies_to(obj/O, apply_elastic = TRUE)
+	. = ..()
+	if(!isitem(O))
+		return FALSE
+	var/obj/item/I = O
+	if(length(I.custom_materials) > 1)
+		return FALSE
+
 // - Material exports.
 // Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
 /datum/export/material/diamond
 	cost = 125
-	unit_name = "sheet of diamond"
+	unit_name = "cm3 of diamond"
+	///my gay ass does not need industrial quantities of diamonds extracted with the blood of hungry kepori.
+	elasticity_coeff = 0.004
 	material_id = /datum/material/diamond
 
 /datum/export/material/plasma
-	cost = 25
-	unit_name = "sheet of plasma"
+	cost = 20
+	unit_name = "cm3 of plasma"
+	sell_floor = 15
 	material_id = /datum/material/plasma
 
 /datum/export/material/uranium
 	cost = 25
-	unit_name = "sheet of uranium"
+	unit_name = "cm3 of uranium"
+	sell_floor = 20
 	material_id = /datum/material/uranium
 
 /datum/export/material/gold
 	cost = 30
-	unit_name = "sheet of gold"
+	unit_name = "cm3 of gold"
+	sell_floor = 10
 	material_id = /datum/material/gold
 
 /datum/export/material/silver
-	cost = 20
-	unit_name = "sheet of silver"
+	cost = 15
+	unit_name = "cm3 of silver"
+	sell_floor = 10
 	material_id = /datum/material/silver
 
 /datum/export/material/titanium
-	cost = 20
-	unit_name = "sheet of titanium"
+	cost = 30
+	unit_name = "cm3 of titanium"
+	sell_floor = 15
 	material_id = /datum/material/titanium
-
-/*
-/datum/export/material/hellstone
-	cost = 125
-	unit_name = "sheet of hellstone"
-	material_id = /datum/material/hellstone
-*/
 
 /datum/export/material/bscrystal
 	unit_name = "bluespace crystals"
 	cost = 75
+	sell_floor = 50
 	material_id = /datum/material/bluespace
 
 /datum/export/material/plastic
 	unit_name = "sheet of plastic"
 	cost = 2
+	sell_floor = 1
 	material_id = /datum/material/plastic
 
 /datum/export/material/metal
 	unit_name = "sheet of metal"
 	cost = 2
+	sell_floor = 1
 	material_id = /datum/material/iron
 	export_types = list(
 		/obj/item/stack/sheet/metal,
-		/obj/item/stack/tile/plasteel,
 		/obj/item/stack/rods,
 		/obj/item/stack/ore,
 		/obj/item/coin
@@ -94,7 +105,8 @@
 
 /datum/export/material/copper
 	unit_name = "sheet of copper"
-	cost = 1.25
+	cost = 2
+	sell_floor = 1
 	material_id = /datum/material/copper
 
 /datum/export/material/glass
@@ -110,24 +122,29 @@
 /datum/export/material/quartz
 	unit_name = "sheet of quartz"
 	cost = 0.25
+	sell_floor = 0.1
 	material_id = /datum/material/quartz
 
 /datum/export/material/carbon
 	unit_name = "sheet of carbon"
 	cost = 0.5
+	sell_floor = 0.1
 	material_id = /datum/material/carbon
 
 /datum/export/material/silicon
 	cost = 5
+	sell_floor = 1
 	unit_name = "sheet of silicon"
 	material_id = /datum/material/silicon
 
 /datum/export/material/sulfur
 	cost = 15
+	sell_floor = 10
 	unit_name = "sheet of sulfur"
 	material_id = /datum/material/sulfur
 
 /datum/export/material/lead
 	cost = 5
+	sell_floor = 1
 	unit_name = "sheet of lead"
 	material_id = /datum/material/lead

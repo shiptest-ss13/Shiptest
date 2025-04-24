@@ -63,7 +63,7 @@
 	if(obj_integrity == max_integrity)
 		to_chat(user, span_warning("This plaque is already in perfect condition."))
 		return TRUE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return TRUE
 	user.visible_message(
 		span_notice("[user] starts repairing [src]..."), \
@@ -83,7 +83,7 @@
 	if(obj_integrity == max_integrity)
 		to_chat(user, span_warning("This plaque is already in perfect condition."))
 		return TRUE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return TRUE
 	user.visible_message(
 		span_notice("[user] starts repairing [src]..."), \
