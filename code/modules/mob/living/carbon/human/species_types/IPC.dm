@@ -289,4 +289,6 @@
 		adjust_nutrition(amount / 10) // The original amount is capacitor_rating*100
 
 /datum/species/ipc/frame
+	name = "IPC Frame"
+	id = SPECIES_IPCFRAME
 	mutantbrain = /obj/item/organ/brain/cybernetic/ai

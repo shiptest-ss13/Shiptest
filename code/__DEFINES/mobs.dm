@@ -106,6 +106,7 @@
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
 #define SPECIES_XENOMORPH "xenomorph"
+#define SPECIES_IPCFRAME "ipcframe"
 
 #define DIGITIGRADE_NEVER 0
 #define DIGITIGRADE_OPTIONAL 1
