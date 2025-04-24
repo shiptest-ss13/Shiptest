@@ -51,8 +51,8 @@ const LangSpeakIcon = (props: LanguagePropsPassRest) => {
             ? 'good' // could speak and can speak
             : 'bad' // could speak but cannot speak
           : language.can_speak
-            ? 'average' // could not speak but can speak
-            : 'grey' // could not speak and cannot speak
+          ? 'average' // could not speak but can speak
+          : 'grey' // could not speak and cannot speak
       }
       {...rest}
     />
@@ -151,8 +151,8 @@ const LanguageRow = (props: LanguageProps, context) => {
               language.is_default
                 ? 'good'
                 : language.could_speak && language.can_speak
-                  ? 'grey'
-                  : 'transparent'
+                ? 'grey'
+                : 'transparent'
             }
             onClick={() =>
               act('select_default', {
@@ -213,16 +213,16 @@ export const LanguageMenu = (props, context) => {
   // also, push all languages we can speak to the top, then all languagse we can only understand, then alphabetize
   const shown_languages = languages
     .filter(
-            (language) =>
+      (language) =>
         admin_mode ||
         language.can_speak ||
         language.can_understand ||
-        language.partial_understanding > 0,
+        language.partial_understanding > 0
     )
     .sort(
       (a, b) =>
         ((a.can_speak ? 1 : 0) - (b.can_speak ? 1 : 0)) * -2 +
-        (a.name > b.name ? 1 : 0),
+        (a.name > b.name ? 1 : 0)
     );
 
   return (
@@ -231,13 +231,13 @@ export const LanguageMenu = (props, context) => {
       width={admin_mode ? 700 : 500}
       height={Math.min(
         shown_languages.length * 25 + (admin_mode ? 100 : 70),
-        500,
+        500
       )}
     >
       <Window.Content>
         <Section
           scrollable
-          title={admin_mode ? "Admin Mode" : null}
+          title={admin_mode ? 'Admin Mode' : null}
           buttons={admin_mode ? <OmnitongueToggle /> : null}
           fill
         >
@@ -247,9 +247,7 @@ export const LanguageMenu = (props, context) => {
               <Table.Cell>Speak</Table.Cell>
               <Table.Cell>Understand</Table.Cell>
               <Table.Cell>
-                <Tooltip
-                  content="Use this key in your message to speak in this language."
-                >
+                <Tooltip content="Use this key in your message to speak in this language.">
                   <Box
                     inline
                     style={{
@@ -262,9 +260,7 @@ export const LanguageMenu = (props, context) => {
               </Table.Cell>
               {!!is_living && (
                 <Table.Cell>
-                  <Tooltip
-                    content="Determines which language you speak naturally, without using the 'key'."
-                  >
+                  <Tooltip content="Determines which language you speak naturally, without using the 'key'.">
                     <Box
                       inline
                       style={{
