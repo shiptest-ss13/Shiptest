@@ -9,7 +9,7 @@
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
 	var/mob/living/L = parent
-	RegisterSignal(L, list(COMSIG_MOVABLE_Z_CHANGED), PROC_REF(punish))
+	RegisterSignal(L, COMSIG_MOVABLE_Z_CHANGED, PROC_REF(punish))
 	murder = _murder
 	message = _message
 
