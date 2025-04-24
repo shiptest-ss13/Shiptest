@@ -1278,6 +1278,7 @@
 	RegisterSignal(AI, PROC_REF(ai_deleted))
 	undeployment_action.Grant(owner)
 	update_med_hud_status(owner)
+	owner.language_holder = mainframe.get_language_holder() //usually /datum/language_holder/synthetic
 	to_chat(owner, span_bold("You are operating through a remote uplink system to this frame, and remain the same mind."))
 
 /obj/item/organ/brain/cybernetic/ai/proc/undeploy(datum/source)

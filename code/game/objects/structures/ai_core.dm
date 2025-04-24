@@ -180,7 +180,7 @@
 					module.install(laws, user)
 					return
 
-				if(istype(P, /obj/item/mmi) && !brain)
+				if((istype(P, /obj/item/mmi) || istype(P, /obj/item/organ/brain/mmi_holder)) && !brain)
 					var/obj/item/mmi/M = P
 					if(!M.brain_check(user))
 						return
