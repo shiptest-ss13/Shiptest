@@ -181,7 +181,7 @@
 					return
 
 				if((istype(P, /obj/item/mmi) || istype(P, /obj/item/organ/brain/mmi_holder)) && !brain)
-					var/obj/mmi/M
+					var/obj/item/mmi/M
 					if (istype(P, /obj/item/mmi))
 						M = P
 					if (istype(P, /obj/item/organ/brain/mmi_holder))
