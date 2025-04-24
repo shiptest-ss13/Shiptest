@@ -6,6 +6,9 @@
 #define RADIO_KEY "department specific key"
 #define LANGUAGE_EXTENSION "language specific"
 
+/// Message mod which contains a list of bonus "mutual understanding" to allow arbitrary understanding of any speech
+#define LANGUAGE_MUTUAL_BONUS "language mutual bonus"
+
 //Message modes. Each one defines a radio channel, more or less.
 #define MODE_HEADSET "headset"
 #define MODE_ROBOT "robot"

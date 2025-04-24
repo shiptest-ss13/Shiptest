@@ -473,7 +473,6 @@
 
 	new_xeno.a_intent = INTENT_HARM
 	new_xeno.key = key
-	update_atom_languages()
 
 	to_chat(new_xeno, "<B>You are now an alien.</B>")
 	. = new_xeno

@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!can_speak_basic(original_message, ignore_spam, forced))
 		return
 
-	language = message_mods[LANGUAGE_EXTENSION]
+	language ||= message_mods[LANGUAGE_EXTENSION] || get_selected_language()
 
 	if(!language)
 		language = get_selected_language()
@@ -467,11 +467,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!message)
 		return
 	say("#[message]", bubble_type, spans, sanitize, language, ignore_spam, forced)
-
-/mob/living/get_language_holder(get_minds = TRUE)
-	if(get_minds && mind)
-		return mind.get_language_holder()
-	. = ..()
 
 /mob/living/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
 	. = ..()

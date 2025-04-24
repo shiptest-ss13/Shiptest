@@ -144,15 +144,22 @@ GLOBAL_LIST_INIT(freqcolor, list())
 
 /atom/movable/proc/lang_treat(atom/movable/speaker, datum/language/language, raw_message, list/spans, list/message_mods = list(), no_quote = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_TREAT_MESSAGE, args)
-	var/atom/movable/source = speaker.GetSource() || speaker //is the speaker virtual
-	if(has_language(language))
-		return no_quote ? raw_message : source.say_quote(raw_message, spans, message_mods)
-	else if(language)
-		var/datum/language/D = GLOB.language_datum_instances[language]
-		raw_message = D.scramble(raw_message)
-		return no_quote ? raw_message : source.say_quote(raw_message, spans, message_mods)
-	else
+	if(!language)
 		return "makes a strange sound."
+
+	if(!has_language(language))
+		var/list/mutual_languages
+		// Get what we can kinda understand, factor in any bonuses passed in from say mods
+		var/list/partially_understood_languages = get_partially_understood_languages()
+		if(LAZYLEN(partially_understood_languages))
+			mutual_languages = partially_understood_languages.Copy()
+			for(var/bonus_language in message_mods[LANGUAGE_MUTUAL_BONUS])
+				mutual_languages[bonus_language] = max(message_mods[LANGUAGE_MUTUAL_BONUS][bonus_language], mutual_languages[bonus_language])
+
+		var/datum/language/dialect = GLOB.language_datum_instances[language]
+		raw_message = dialect.scramble_paragraph(raw_message, mutual_languages)
+
+	return raw_message
 
 /proc/get_radio_span(freq)
 	if(!freq) // If there's no freq attached to the message, then it's not for a radio.
@@ -196,7 +203,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	return "0"
 
 /atom/movable/proc/GetVoice(if_no_voice = "Unknown")
-	return "[src]"	//Returns the atom's name, prepended with 'The' if it's not a proper noun
+	return "[src]"//Returns the atom's name, prepended with 'The' if it's not a proper noun
 
 /atom/movable/proc/IsVocal()
 	return 1
