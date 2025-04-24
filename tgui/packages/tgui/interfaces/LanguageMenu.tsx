@@ -61,7 +61,7 @@ const LangSpeakIcon = (props: LanguagePropsPassRest) => {
 
 const LangUnderstandIcon = (props: LanguageProps) => {
   const { language } = props;
-    if (!language.can_understand && language.partial_understanding > 0) {
+  if (!language.can_understand && language.partial_understanding > 0) {
     return (
       <Tooltip content={`You can only partially understand ${language.name}.`}>
         <Box
@@ -75,6 +75,7 @@ const LangUnderstandIcon = (props: LanguageProps) => {
       </Tooltip>
     );
   }
+  return <Icon name="brain" color={language.can_understand ? 'good' : 'bad'} />;
 };
 
 const LanguageNameAndDesc = (props: LanguageProps) => {
@@ -204,7 +205,7 @@ const OmnitongueToggle = (props, context) => {
   );
 };
 
-export const LanguageMenu = (props,context) => {
+export const LanguageMenu = (props, context) => {
   const { data } = useBackend<Data>(context);
   const { admin_mode, is_living, languages } = data;
 
