@@ -162,10 +162,10 @@
 				var/obj/item/stock_parts/new_part = tool
 				if(new_part.part_behaviour == part.part_behaviour)
 					user.transferItemToLoc(tool,src)
-					if(user.try_put_in_hand(part))
-						component_parts += new_part
-						component_parts -= part
-						to_chat(user, span_notice("You replace [part] with [new_part]."))
+					try_put_in_hand(part, user)
+					component_parts += new_part
+					component_parts -= part
+					to_chat(user, span_notice("You replace [part] with [new_part]."))
 					break
 				else if(istype(new_part,missing_part))
 					user.transferItemToLoc(tool,src)
@@ -209,11 +209,11 @@
 			return
 		if(tool.tool_behaviour == TOOL_CROWBAR)
 			cell.update_appearance()
-			if(user.try_put_in_hand(cell))
-				cell = null
-				to_chat(user, span_notice("You remove the cell from [src]."))
-				active = FALSE
-				update_appearance()
+			try_put_in_hand(cell, user)
+			cell = null
+			to_chat(user, span_notice("You remove the cell from [src]."))
+			active = FALSE
+			update_appearance()
 			return
 	return ..()
 
