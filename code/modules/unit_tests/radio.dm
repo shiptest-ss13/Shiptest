@@ -17,7 +17,7 @@
 	TEST_ASSERT_EQUAL(heard_count, 1, "The second human should have only heard 1 message as the radio is not on yet")
 	heard_count = 0
 
-	first_human.say(".r Test")
+	first_human.say(".l Test")
 	TEST_ASSERT_EQUAL(heard_count, 1, "The second human should have only heard 1 message as the radio is not on yet")
 	heard_count = 0
 
@@ -28,7 +28,7 @@
 	TEST_ASSERT_EQUAL(heard_count, 1, "Mismatch in expected amount of times heard.")
 	heard_count = 0
 
-	first_human.say(".r Test")
+	first_human.say(".l Test")
 	TEST_ASSERT_EQUAL(heard_count, 2, "Mismatch in expected amount of times heard.")
 	heard_count = 0
 
@@ -38,7 +38,7 @@
 	TEST_ASSERT_EQUAL(heard_count, 2, "Mismatch in expected amount of times heard.")
 	heard_count = 0
 
-	first_human.say(".r Test")
+	first_human.say(".l Test")
 	TEST_ASSERT_EQUAL(heard_count, 2, "Mismatch in expected amount of times heard.")
 	heard_count = 0
 
