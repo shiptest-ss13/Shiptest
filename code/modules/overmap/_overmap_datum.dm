@@ -196,7 +196,6 @@
 	// Updates the token with the new position.
 	token.abstract_move(OVERMAP_TOKEN_TURF(x, y, current_overmap))
 	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y)
-	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVE_SELF, src)
 	return TRUE
 
 /**
