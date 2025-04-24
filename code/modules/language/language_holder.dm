@@ -337,10 +337,6 @@ GLOBAL_LIST_INIT(prototype_language_holders, init_language_holder_prototypes())
 	spoken_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
 	blocked_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM))
 
-/datum/language_holder/construct
-	understood_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM))
-
 /datum/language_holder/drone
 	understood_languages = list(/datum/language/drone = list(LANGUAGE_ATOM),
 								/datum/language/machine = list(LANGUAGE_ATOM),
@@ -456,6 +452,10 @@ GLOBAL_LIST_INIT(prototype_language_holders, init_language_holder_prototypes())
 								/datum/language/solarian_international = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM),
 							/datum/language/solarian_international = list(LANGUAGE_ATOM))
+
+/datum/language_holder/gal_com
+	understood_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM))
 
 /datum/language_holder/empty
 	understood_languages = list()
