@@ -431,10 +431,10 @@
 /turf/open/floor/wood/birch,
 /area/ship/crew/ccommons)
 "gI" = (
-/obj/machinery/holopad,
 /obj/machinery/light/directional/west{
 	pixel_y = -1
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "gQ" = (
@@ -802,7 +802,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "mJ" = (
-/obj/machinery/vending/coffee,
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 4
 	},
@@ -814,6 +813,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals6{
 	dir = 9
 	},
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "mM" = (
@@ -1244,7 +1244,6 @@
 /area/ship/external/dark)
 "ss" = (
 /obj/machinery/airalarm/directional/south,
-/obj/structure/table/reinforced,
 /obj/structure/closet/wall/blue/directional/west,
 /obj/item/megaphone/command{
 	pixel_y = 5;
@@ -1270,6 +1269,7 @@
 	pixel_y = 4;
 	pixel_x = 5
 	},
+/obj/machinery/holopad,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "sw" = (
