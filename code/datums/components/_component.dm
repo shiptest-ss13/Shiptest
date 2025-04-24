@@ -176,19 +176,20 @@
 	if(QDELETED(src) || QDELETED(target))
 		return
 
-	var/list/procs = signal_procs
-	if(!procs)
-		signal_procs = procs = list()
-	if(!procs[target])
-		procs[target] = list()
-	var/list/lookup = target.comp_lookup
-	if(!lookup)
-		target.comp_lookup = lookup = list()
+	var/list/procs = (signal_procs ||= list())
+	var/list/target_procs = (procs[target] ||= list())
+	var/list/lookup = (target.comp_lookup ||= list())
 
 	var/list/sig_types = islist(sig_type_or_types) ? sig_type_or_types : list(sig_type_or_types)
 	for(var/sig_type in sig_types)
-		if(!override && procs[target][sig_type])
-			stack_trace("[sig_type] overridden. Use override = TRUE to suppress this warning")
+		var/exists = target_procs[sig_type]
+		target_procs[sig_type] = proctype
+
+		if(exists)
+			if(!override)
+				var/override_message = "[sig_type] overridden. Use override = TRUE to suppress this warning.\nTarget: [target] ([target.type]) Existing Proc: [exists] New Proc: [proctype]"
+				stack_trace(override_message)
+			return
 
 		procs[target][sig_type] = proctype
 
