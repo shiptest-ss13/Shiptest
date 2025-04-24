@@ -10,9 +10,8 @@
 	max_integrity = 200
 	var/obj/item/bodypart/storedpart
 	var/initial_icon_state
-	var/static/list/style_list_icons = list("standard" = 'icons/mob/augmentation/augments.dmi', "engineer" = 'icons/mob/augmentation/augments_engineer.dmi', "security" = 'icons/mob/augmentation/augments_security.dmi', "mining" = 'icons/mob/augmentation/augments_mining.dmi', "bishop" = 'icons/mob/augmentation/augments_bishop.dmi', "shellguard" = 'icons/mob/augmentation/augments_shellguard.dmi', "wardtakahashi" = 'icons/mob/augmentation/augments_wardtakahashi.dmi', "xion" = 'icons/mob/augmentation/augments_xion.dmi', "zenghu" = 'icons/mob/augmentation/augments_zenghu.dmi')
+	var/static/list/style_list_icons = list("standard" = 'icons/mob/augmentation/augments.dmi', "engineer" = 'icons/mob/augmentation/augments_engineer.dmi', "security" = 'icons/mob/augmentation/augments_security.dmi', "mining" = 'icons/mob/augmentation/augments_mining.dmi')
 	var/static/list/type_whitelist = list(/obj/item/bodypart/head/robot, /obj/item/bodypart/r_arm/robot, /obj/item/bodypart/l_arm/robot, /obj/item/bodypart/chest/robot, /obj/item/bodypart/leg/right/robot, /obj/item/bodypart/leg/left/robot)
-	var/static/list/style_list_bonus_icons = style_list_icons + list("digitigrade" = 'icons/mob/augmentation/digitigrade_legs.dmi')
 
 /obj/machinery/aug_manipulator/examine(mob/user)
 	. = ..()
@@ -111,23 +110,14 @@
 	add_fingerprint(user)
 
 	if(storedpart)
-		var/style_options = style_list_icons
-		if(istype(storedpart, /obj/item/bodypart/leg/right/robot) || istype(storedpart, /obj/item/bodypart/leg/left/robot))
-			style_options = style_list_bonus_icons
-		var/augstyle = input(user, "Select style.", "Augment Custom Fitting") as null|anything in style_options
+		var/augstyle = input(user, "Select style.", "Augment Custom Fitting") as null|anything in style_list_icons
 		if(!augstyle)
 			return
 		if(!in_range(src, user))
 			return
 		if(!storedpart)
 			return
-		storedpart.static_icon = style_options[augstyle]
-		if(augstyle == "digitigrade")
-			storedpart.bodytype |= BODYTYPE_DIGITIGRADE
-			storedpart.limb_id = "digitigrade"
-		else
-			storedpart.bodytype &= ~(BODYTYPE_DIGITIGRADE)
-			storedpart.limb_id = "robotic"
+		storedpart.static_icon = style_list_icons[augstyle]
 		storedpart.should_draw_greyscale = FALSE //Premptive fuck you to greyscale IPCs trying to break something
 		storedpart.update_icon_dropped()
 		eject_part(user)
