@@ -9,9 +9,9 @@
 
 	var/obj/item/radio/second_radio = EASY_ALLOCATE()
 	var/mob/living/carbon/human/second_human = EASY_ALLOCATE()
-	second.put_in_hands(second_radio, forced = TRUE)
+	second_human.put_in_hands(second_radio, forced = TRUE)
 
-	RegisterSignal(second_human, COMSIG_MOVABLE_HEAR, message_heard)
+	RegisterSignal(second_human, COMSIG_MOVABLE_HEAR, PROC_REF(message_heard))
 
 	first_human.say("Test")
 	TEST_ASSERT_EQUAL(heard_count, 1, "The second human should have only heard 1 message as the radio is not on yet")
