@@ -70,7 +70,7 @@
 #endif
 
 /// Helper to allocate a new object with the implied type (the type of the variable it's assigned to) in the corner of the test room
-#define EASY_ALLOCATE(arguments...) allocate(__IMPLIED_TYPE__, ##arguments)
+#define EASY_ALLOCATE(arguments...) allocate(__IMPLIED_TYPE__, run_loc_bottom_left, ##arguments)
 
 #ifdef BASIC_TESTS
 
