@@ -95,6 +95,7 @@
 #include "plantgrowth_tests.dm"
 #include "projectiles.dm"
 #include "quick_swap_sanity.dm"
+#include "radio.dm"
 #include "rcd.dm"
 #include "reactions.dm"
 #include "reagent_id_typos.dm"
