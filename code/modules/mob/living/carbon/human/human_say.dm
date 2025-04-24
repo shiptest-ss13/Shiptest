@@ -2,6 +2,11 @@
 	var/obj/item/organ/tongue/T = src.getorganslot(ORGAN_SLOT_TONGUE)
 	if(T)
 		verb_say = T.say_mod
+		verb_ask = T.ask_mod
+		verb_exclaim = T.exclaim_mod
+		verb_whisper = T.whisper_mod
+		verb_sing = T.sing_mod
+		verb_yell = T.yell_mod
 	if(slurring)
 		return "slurs"
 	else
