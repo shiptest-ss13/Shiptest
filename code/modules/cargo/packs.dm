@@ -17,10 +17,12 @@
 	//TODO: Deprecate contains in favor of item
 	var/list/contains = null
 
+	/*
 	/// Path to or the item itself what this entry is for, this should be set even if you override spawn_item to spawn your item.
 	var/item
 	/// Should another item spawn alongside this one in the catalogue?
 	var/list/pair_item = null
+	*/
 
 	/// The inital cost or the cost it will trend towards.
 	var/base_cost
