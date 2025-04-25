@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 
 		if(current_pack.faction)
 			current_pack.faction = SSfactions.factions[current_pack.faction]
-		if(!current_pack.contains && !current_pack.item)
+		if(!current_pack.contains)
 			continue
 		supply_packs += current_pack
 	supply_packs = sortNames(supply_packs)

@@ -69,10 +69,6 @@
 			spawn_weighting = TRUE
 	base_cost = cost
 
-/// Used for spawning the wanted item, override if you need to do something special with the item.
-/datum/supply_pack/proc/spawn_item(loc)
-	return new item(loc)
-
 /datum/supply_pack/proc/randomize_cost()
 	cost = rand(cost_min, cost_max)
 
