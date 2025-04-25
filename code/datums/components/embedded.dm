@@ -102,7 +102,7 @@
 		RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(jostleCheck))
 		RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, PROC_REF(ripOutCarbon))
 		RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, PROC_REF(safeRemoveCarbon))
-		RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(checkTweeze))
+		RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(check_tweeze))
 	else if(isclosedturf(parent))
 		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examineTurf))
 		RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(itemMoved))
