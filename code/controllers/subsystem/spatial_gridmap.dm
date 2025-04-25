@@ -583,7 +583,7 @@ SUBSYSTEM_DEF(spatial_grid)
 				cells_with_color[cell] = RANDOM_COLOUR
 	for(var/atom/thing in world.contents)
 		var/datum/spatial_grid_cell/things_cell = get_cell_of(thing)
-		if(!isdatum(things_cell))
+		if(!things_cell)
 			continue
 		thing.add_atom_colour(cells_with_color[things_cell], ADMIN_COLOUR_PRIORITY)
 		RegisterSignal(thing, COMSIG_MOVABLE_MOVED, PROC_REF(update_color))
