@@ -10,7 +10,7 @@
 	var/list/markets = list(/datum/cargo_market/outpost)
 
 	/// cost for the item, if not set creates a cost according to the *_min and *_max vars.
-	var/cost
+	var/cost = 700
 	/// How many of this type of item is available, if not set creates a cost according to the *_min and *_max vars.
 	var/stock = INFINITY
 
