@@ -312,7 +312,7 @@
 		if(!victim_human.can_inject(user, TRUE, limb.body_zone))
 			return TRUE
 
-	INVOKE_ASYNC(src, PROC_REF/tweezePluck, possible_tweezers, user)
+	INVOKE_ASYNC(src, PROC_REF(tweeze_pluck), possible_tweezers, user)
 	return COMPONENT_NO_AFTERATTACK
 
 /// The actual action for pulling out an embedded object with a hemostat
