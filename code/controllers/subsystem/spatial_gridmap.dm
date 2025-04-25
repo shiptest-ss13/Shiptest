@@ -103,9 +103,6 @@ SUBSYSTEM_DEF(spatial_grid)
 	///everything that spawns before us is added to this list until we initialize
 	var/list/waiting_to_add_by_type = list(RECURSIVE_CONTENTS_HEARING_SENSITIVE = list(), RECURSIVE_CONTENTS_CLIENT_MOBS = list())
 
-	var/cells_on_x_axis = 0
-	var/cells_on_y_axis = 0
-
 	///empty spatial grid cell content lists are just a reference to this instead of a standalone list to save memory without needed to check if its null when iterating
 	var/list/dummy_list = list()
 
@@ -116,9 +113,6 @@ SUBSYSTEM_DEF(spatial_grid)
 
 /datum/controller/subsystem/spatial_grid/Initialize(start_timeofday)
 	. = ..()
-
-	cells_on_x_axis = SPATIAL_GRID_CELLS_PER_SIDE(world.maxx)
-	cells_on_y_axis = SPATIAL_GRID_CELLS_PER_SIDE(world.maxy)
 
 	for(var/datum/space_level/main_level as anything in SSmapping.z_list)
 		for(var/datum/virtual_level/z_level as anything in main_level.virtual_levels)
@@ -178,9 +172,9 @@ SUBSYSTEM_DEF(spatial_grid)
 
 	grids_by_z_level += list(new_cell_grid)
 
-	for(var/y in 1 to cells_on_y_axis)
+	for(var/y in 1 to z_level.cells_on_y_axis)
 		new_cell_grid += list(list())
-		for(var/x in 1 to cells_on_x_axis)
+		for(var/x in 1 to z_level.cells_on_x_axis)
 			var/datum/spatial_grid_cell/cell = new(x, y, z_level.z_value)
 			new_cell_grid[y] += cell
 
@@ -253,14 +247,19 @@ SUBSYSTEM_DEF(spatial_grid)
 /datum/controller/subsystem/spatial_grid/proc/orthogonal_range_search(atom/center, type, range)
 	var/turf/center_turf = get_turf(center)
 
-	var/center_x = center_turf.x//used inside the macros
-	var/center_y = center_turf.y
+	var/datum/virtual_level/virt_z = center_turf.get_virtual_level()
+	if(!isdatum(virt_z))
+		return list()
+
+	var/list/relative_coords = virt_z.get_relative_coords(center_turf)
+	var/center_x = relative_coords[1]
+	var/center_y = relative_coords[2]
 
 	. = list()
 
 	//cache for sanic speeds
-	var/cells_on_y_axis = src.cells_on_y_axis
-	var/cells_on_x_axis = src.cells_on_x_axis
+	var/cells_on_y_axis = virt_z.cells_on_y_axis
+	var/cells_on_x_axis = virt_z.cells_on_x_axis
 
 	//technically THIS list only contains lists, but inside those lists are grid cell datums and we can go without a SINGLE var init if we do this
 	var/list/datum/spatial_grid_cell/grid_level = grids_by_z_level[center_turf.virtual_z()]
@@ -284,15 +283,25 @@ SUBSYSTEM_DEF(spatial_grid)
 	var/turf/target_turf = get_turf(target)
 	if(!target_turf)
 		return
+	var/datum/virtual_level/virt_z = target.get_virtual_level()
+	if(!isdatum(virt_z))
+		return
 
-	return grids_by_z_level[target_turf.virtual_z()][ROUND_UP(target_turf.y / SPATIAL_GRID_CELLSIZE)][ROUND_UP(target_turf.x / SPATIAL_GRID_CELLSIZE)]
+	var/list/relative_coords = virt_z.get_relative_coords(target)
+
+	return grids_by_z_level[target_turf.virtual_z()][ROUND_UP(relative_coords[2] / SPATIAL_GRID_CELLSIZE)][ROUND_UP(relative_coords[1] / SPATIAL_GRID_CELLSIZE)]
 
 ///get all grid cells intersecting the bounding box around center with sides of length 2 * range
 /datum/controller/subsystem/spatial_grid/proc/get_cells_in_range(atom/center, range)
 	var/turf/center_turf = get_turf(center)
 
-	var/center_x = center_turf.x
-	var/center_y = center_turf.y
+	var/datum/virtual_level/virt_z = center_turf.get_virtual_level()
+	if(!isdatum(virt_z))
+		return
+
+	var/list/relative_coords = virt_z.get_relative_coords(center_turf)
+	var/center_x = relative_coords[1]
+	var/center_y = relative_coords[2]
 
 	var/list/intersecting_grid_cells = list()
 
@@ -301,8 +310,8 @@ SUBSYSTEM_DEF(spatial_grid)
 	var/min_y = max(ROUND_UP((center_y - range) / SPATIAL_GRID_CELLSIZE), 1)//calculating these indices only takes around 2 microseconds
 
 	//the maximum x and y cell indexes to test
-	var/max_x = min(ROUND_UP((center_x + range) / SPATIAL_GRID_CELLSIZE), cells_on_x_axis)
-	var/max_y = min(ROUND_UP((center_y + range) / SPATIAL_GRID_CELLSIZE), cells_on_y_axis)
+	var/max_x = min(ROUND_UP((center_x + range) / SPATIAL_GRID_CELLSIZE), virt_z.cells_on_x_axis)
+	var/max_y = min(ROUND_UP((center_y + range) / SPATIAL_GRID_CELLSIZE), virt_z.cells_on_y_axis)
 
 	var/list/grid_level = grids_by_z_level[center_turf.virtual_z()]
 
@@ -320,9 +329,14 @@ SUBSYSTEM_DEF(spatial_grid)
 	if(!target_turf || !new_target?.important_recursive_contents)
 		CRASH("/datum/controller/subsystem/spatial_grid/proc/enter_cell() was given null arguments or a new_target without important_recursive_contents!")
 
-	var/x_index = ROUND_UP(target_turf.x / SPATIAL_GRID_CELLSIZE)
-	var/y_index = ROUND_UP(target_turf.y / SPATIAL_GRID_CELLSIZE)
 	var/z_index = target_turf.virtual_z()
+	var/datum/virtual_level/virt_z = target_turf.get_virtual_level()
+	if(!isdatum(virt_z))
+		return
+
+	var/list/relative_coords = virt_z.get_relative_coords(target_turf)
+	var/x_index = ROUND_UP(relative_coords[1] / SPATIAL_GRID_CELLSIZE)
+	var/y_index = ROUND_UP(relative_coords[2] / SPATIAL_GRID_CELLSIZE)
 
 	var/datum/spatial_grid_cell/intersecting_cell = grids_by_z_level[z_index][y_index][x_index]
 
