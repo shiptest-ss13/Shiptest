@@ -215,7 +215,7 @@
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.IgniteTurf(rand(8,22), "blue")
+	targets_turf.ignite_turf(rand(8,22), "blue")
 
 /obj/projectile/beam/pulse/sharplite_turret
 	wall_damage_flags = null
@@ -345,4 +345,4 @@
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.IgniteTurf(rand(8,22), "green")
+	targets_turf.ignite_turf(rand(8,22), "green")
