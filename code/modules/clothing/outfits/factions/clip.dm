@@ -59,10 +59,10 @@
 
 	uniform = /obj/item/clothing/under/clip/formal
 	alt_uniform = /obj/item/clothing/under/clip/formal/with_shirt
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip/command
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
-	head = /obj/item/clothing/head/clip/slouch
+	head = /obj/item/clothing/head/clip/slouch/officer
 	id = /obj/item/card/id/gold
 	ears = /obj/item/radio/headset/clip/alt/captain
 	gloves = /obj/item/clothing/gloves/color/white
@@ -78,22 +78,6 @@
 		/obj/item/storage/box/ids = 1,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/modular_computer/tablet/preset/advanced = 1)
-
-/datum/outfit/job/clip/chemist
-	name = "CLIP - Pharmacist"
-	job_icon = "chemist"
-	jobtype = /datum/job/chemist
-
-	glasses = /obj/item/clothing/glasses/science
-	shoes = /obj/item/clothing/shoes/sneakers/white
-
-	backpack = /obj/item/storage/backpack/chemistry
-	satchel = /obj/item/storage/backpack/satchel/chem
-	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/chem
-
-	box = /obj/item/storage/box/survival/medical
-	chameleon_extras = /obj/item/gun/syringe
 
 /datum/outfit/job/clip/ce
 	name = "CLIP - Foreman"
@@ -131,11 +115,11 @@
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/formal
 	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip/fo
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
 
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/clip/slouch/officer
+	head = /obj/item/clothing/head/clip/slouch
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -154,13 +138,10 @@
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 
-	l_hand = /obj/item/storage/firstaid/medical
-
 	box = /obj/item/storage/box/survival/medical
 	chameleon_extras = /obj/item/gun/syringe
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	head = /obj/item/clothing/head/beret/med
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
 	suit_store = /obj/item/flashlight/pen
@@ -175,13 +156,11 @@
 	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 
-	l_hand = null
-
 	uniform = /obj/item/clothing/under/clip/medic
 	head = /obj/item/clothing/head/soft/paramedic
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
-	belt = /obj/item/storage/belt/medical/paramedic
+	belt = /obj/item/storage/belt/medical
 	l_pocket = /obj/item/flashlight/pen
 
 	backpack = /obj/item/storage/backpack/medic
@@ -246,7 +225,7 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/clip/investigator
-	name = "CLIP GOLD - Investigator"
+	name = "CLIP-GOLD - Investigator"
 	jobtype = /datum/job/detective
 	job_icon = "detective"
 
@@ -270,7 +249,7 @@
 		/obj/item/melee/classic_baton=1)
 
 /datum/outfit/job/clip/investigator/cm5
-	name = "CLIP GOLD - Investigator (CM-5c)"
+	name = "CLIP-GOLD - Investigator (CM-5c)"
 
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
@@ -280,7 +259,7 @@
 		)
 
 /datum/outfit/job/clip/bureaucrat
-	name = "CLIP GOLD - Bureaucrat"
+	name = "CLIP-GOLD - Bureaucrat"
 	job_icon = "scribe"
 	jobtype = /datum/job/lawyer
 
@@ -293,7 +272,7 @@
 
 	r_pocket = /obj/item/radio
 
-/datum/outfit/job/clip/correspondant
+/datum/outfit/job/clip/correspondent
 	name = "CLIP - War Correspondent"
 	job_icon = "curator"
 	jobtype = /datum/job/curator
@@ -331,8 +310,9 @@
 	id_assignment = "Deckhand"
 	job_icon = "clip_navy1"
 	jobtype = /datum/job/assistant
-	uniform =  /obj/item/clothing/under/clip
-	shoes = /obj/item/clothing/shoes/sneakers/black
+
+	uniform =  /obj/item/clothing/under/clip/minutemen
+	shoes = /obj/item/clothing/shoes/combat
 
 	r_pocket = /obj/item/radio
 
@@ -379,25 +359,6 @@
 	head = /obj/item/clothing/head/clip/bicorne
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/clip/admiral
 
-///chemist
-
-/datum/outfit/job/clip/minutemen/chemist
-	name = "CLIP Minutemen - Chemist"
-	job_icon = "clip_navy2"
-	jobtype = /datum/job/chemist
-
-	glasses = /obj/item/clothing/glasses/science
-	shoes = /obj/item/clothing/shoes/sneakers/white
-	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
-	uniform = /obj/item/clothing/under/clip/medic
-
-	backpack = /obj/item/storage/backpack/chemistry
-	satchel = /obj/item/storage/backpack/satchel/chem
-	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/chem
-
-	chameleon_extras = /obj/item/gun/syringe
-
 /datum/outfit/job/clip/minutemen/head_of_personnel
 	name = "CLIP Minutemen - Bridge Officer"
 	id_assignment = "Bridge Officer"
@@ -422,7 +383,7 @@
 	jobtype = /datum/job/doctor
 
 	uniform = /obj/item/clothing/under/clip/medic
-	shoes = /obj/item/clothing/shoes/sneakers/white
+	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/clip/corpsman
 	suit = null
 	suit_store = null
@@ -443,7 +404,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	uniform = /obj/item/clothing/under/clip
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/clip
 	suit = null
 
@@ -455,7 +416,7 @@
 
 	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	uniform = /obj/item/clothing/under/clip/minutemen
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/clip
 
 	suit = /obj/item/clothing/suit/armor/vest/alt
@@ -491,7 +452,7 @@
 
 	head = /obj/item/clothing/head/clip/slouch
 	uniform = /obj/item/clothing/under/clip/minutemen
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/hazardvest
 
 /datum/outfit/job/clip/minutemen/engineer
@@ -681,7 +642,7 @@
 	uniform = /obj/item/clothing/under/clip/officer
 
 	head = /obj/item/clothing/head/clip/slouch/officer
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip/command
 
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses

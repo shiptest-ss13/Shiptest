@@ -190,7 +190,7 @@
 /obj/item/stack/ore/sulfur/fire_act(exposed_temperature, exposed_volume)
 	var/turf/current_turf = get_turf(src)
 	if(isopenturf(current_turf))
-		current_turf.IgniteTurf(1*amount, "blue")
+		current_turf.ignite_turf(1*amount, "blue")
 	qdel(src)
 
 
@@ -245,7 +245,7 @@
 		message_admins("Coal ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
 		log_game("Coal ignited by [key_name(user)] in [AREACOORD(T)]")
 		fire_act(W.get_temperature())
-		T.IgniteTurf((W.get_temperature()/20))
+		T.ignite_turf((W.get_temperature()/20))
 		return TRUE
 	else
 		return ..()
