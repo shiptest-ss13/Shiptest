@@ -22,7 +22,10 @@
 /obj/item/oxygen_candle/attack_self(mob/user)
 	if(!pulled)
 		playsound(src, 'sound/effects/fuse.ogg', 75, 1)
-		user.visible_message(span_notice("[user] pulls a cord on \the [src], and it starts to burn."), span_notice("You pull the cord on \the [src], and it starts to burn."))
+		user.visible_message(
+			span_notice("[user] pulls a cord on \the [src], and it starts to burn."),
+			span_notice("You pull the cord on \the [src], and it starts to burn.")
+			)
 		icon_state = "oxycandle_burning"
 		pulled = TRUE
 		processing = TRUE
