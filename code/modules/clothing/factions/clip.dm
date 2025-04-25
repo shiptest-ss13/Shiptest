@@ -28,6 +28,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
 
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
 
 /obj/item/clothing/under/clip/formal
@@ -292,8 +294,11 @@
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/clip/clip_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/clip/clip_righthand.dmi'
 
 	icon_state = "clip_x11"
+	item_state = "clip_x11"
 	unique_reskin = null
 	can_flashlight = TRUE
 
