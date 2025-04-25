@@ -205,7 +205,7 @@
 /turf/closed/mineral/random
 	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/galena = 4, /obj/item/stack/ore/plasma = 40, /obj/item/stack/ore/hematite = 65, /obj/item/stack/ore/rutile = 5,
-		/turf/closed/mineral/gibtonite = 4, /obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/malachite = 50,
+		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/malachite = 50,
 		/obj/item/stack/ore/sulfur = 5)
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 10
@@ -262,7 +262,7 @@
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4, /obj/item/stack/ore/rutile = 4,
 		/obj/item/stack/ore/galena = 6, /obj/item/stack/ore/plasma = 15, /obj/item/stack/ore/hematite = 40,
-		/turf/closed/mineral/gibtonite = 2, /obj/item/stack/ore/bluespace_crystal = 1)
+		/obj/item/stack/ore/bluespace_crystal = 1)
 
 
 /turf/closed/mineral/random/volcanic
@@ -279,7 +279,7 @@
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/sulfur/pyrite = 20, /obj/item/stack/ore/proustite = 11, /obj/item/stack/ore/quartzite = 10,
 		/obj/item/stack/ore/galena = 30, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/magnetite = 20, /obj/item/stack/ore/sulfur = 40,
-		/turf/closed/mineral/gibtonite/volcanic = 4, /obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/gold = 2, /obj/item/stack/ore/graphite= 10,
+		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/gold = 2, /obj/item/stack/ore/graphite= 10,
 		/obj/item/stack/ore/malachite = 20)
 
 /turf/closed/mineral/random/snow
@@ -300,7 +300,7 @@
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 10, /obj/item/stack/ore/diamond = 2, /obj/item/stack/ore/gold = 20, /obj/item/stack/ore/rutile = 15, /obj/item/stack/ore/quartzite = 30,
 		/obj/item/stack/ore/galena = 5, /obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/hematite = 20, /obj/item/stack/ore/malachite = 40,
-		/turf/closed/mineral/gibtonite/ice/icemoon = 4, /obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/graphite= 5, /obj/item/stack/ore/proustite = 10)
+		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/graphite= 5, /obj/item/stack/ore/proustite = 10)
 
 /turf/closed/mineral/ice
 	name = "icy wall"
@@ -326,7 +326,7 @@
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 10, /obj/item/stack/ore/diamond = 4, /obj/item/stack/ore/gold = 20, /obj/item/stack/ore/rutile = 22,
 		/obj/item/stack/ore/galena = 24, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/hematite = 20,
-		/turf/closed/mineral/gibtonite/ice/icemoon = 8, /obj/item/stack/ore/bluespace_crystal = 2)
+		/obj/item/stack/ore/bluespace_crystal = 2)
 
 /turf/closed/mineral/random/snow/high_chance
 	mineralSpawnChanceList = list(
@@ -336,8 +336,7 @@
 /turf/closed/mineral/random/labormineral
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/rutile = 8,
-		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/hematite = 95,
-		/turf/closed/mineral/gibtonite = 2)
+		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/hematite = 95)
 
 
 /turf/closed/mineral/random/labormineral/volcanic
@@ -348,7 +347,7 @@
 	defer_change = 1
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/rutile = 8,
-		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1, /turf/closed/mineral/gibtonite/volcanic = 2,
+		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/hematite = 95)
 
 // Subtypes for mappers placing ores manually.
@@ -368,7 +367,7 @@
 	defer_change = TRUE
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/rutile = 8,
-		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1, /turf/closed/mineral/gibtonite/volcanic = 2,
+		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/hematite = 95)
 
 /turf/closed/mineral/iron
