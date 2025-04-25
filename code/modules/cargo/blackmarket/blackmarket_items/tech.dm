@@ -47,10 +47,10 @@
 	item = /obj/item/circuitboard/aicore
 	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg, /datum/blackmarket_item/tech/rupfc)
 
-	price_min = 5000
-	price_max = 8000
+	price_min = 3000
+	price_max = 6000
 	stock = 1
-	availability_prob = 5
+	availability_prob = 10
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tech/boris
