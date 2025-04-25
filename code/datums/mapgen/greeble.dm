@@ -21,12 +21,13 @@
 	name = "planet greeble spawner"
 	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "x"
-	var/datum/map_template/greeble/template = /datum/map_template/greeble/moon/crater1
+	var/datum/map_template/greeble/template
 	/// Amount of time before the mapgen gives up on loading this greeble.
 	var/timeout = 8 SECONDS
 
 /obj/effect/greeble_spawner/Destroy()
-	template = null // without this, capsules would be one use. per round.
+	if(istype(template))
+		QDEL_NULL(template)
 	. = ..()
 
 /obj/effect/greeble_spawner/Initialize()
@@ -36,6 +37,9 @@
 	INVOKE_ASYNC(src, PROC_REF(start_load))
 
 /obj/effect/greeble_spawner/proc/start_load()
+	if(!template)
+		qdel(src)
+		return
 	template = new template()
 	if(!template)
 		WARNING("Greeble template not found!")
