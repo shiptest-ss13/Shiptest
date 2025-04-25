@@ -111,6 +111,9 @@ SUBSYSTEM_DEF(spatial_grid)
 	///how many pregenerated /mob/oranges_ear instances currently exist. this should hopefully never exceed its starting value
 	var/number_of_oranges_ears = NUMBER_OF_PREGENERATED_ORANGES_EARS
 
+	//For debugging, stores a list of grids with colors to paint atoms with
+	var/list/cells_with_color
+
 /datum/controller/subsystem/spatial_grid/Initialize(start_timeofday)
 	. = ..()
 
@@ -573,7 +576,7 @@ SUBSYSTEM_DEF(spatial_grid)
 
 //A debugging verb that colors objects based on what grid they belong to
 /datum/controller/subsystem/spatial_grid/proc/paint_grids()
-	var/list/cells_with_color = list()
+	cells_with_color = list()
 	for(var/list/z_level_grid as anything in grids_by_z_level)
 		for(var/list/cell_row as anything in z_level_grid)
 			for(var/datum/spatial_grid_cell/cell as anything in cell_row)
@@ -583,6 +586,16 @@ SUBSYSTEM_DEF(spatial_grid)
 		if(!isdatum(things_cell))
 			continue
 		thing.add_atom_colour(cells_with_color[things_cell], ADMIN_COLOUR_PRIORITY)
+		RegisterSignal(thing, COMSIG_MOVABLE_MOVED, PROC_REF(update_color))
+
+//A debugging verb that colors objects based on what grid they belong to
+/datum/controller/subsystem/spatial_grid/proc/update_color(var/atom/movable/thing)
+	SIGNAL_HANDLER
+
+	var/datum/spatial_grid_cell/things_cell = get_cell_of(thing)
+	if(!isdatum(things_cell))
+		return
+	thing.add_atom_colour(cells_with_color[things_cell], ADMIN_COLOUR_PRIORITY)
 
 #undef GRID_CELL_ADD
 #undef GRID_CELL_REMOVE
