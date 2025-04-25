@@ -322,11 +322,19 @@
 	var/self_pluck = (user == victim)
 
 	if(self_pluck)
-		user.visible_message(span_warning("[user] begins plucking [weapon] from [user.p_their()] [limb.name]", span_notice("You start plucking [weapon] from your [limb.name]...")),\
-			vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=victim)
+		user.visible_message(
+			span_warning("[user] begins plucking [weapon] from [user.p_their()] [limb.name]"),
+			span_notice("You start plucking [weapon] from your [limb.name]..."),
+			vision_distance=COMBAT_MESSAGE_RANGE,
+			ignored_mobs=victim
+			)
 	else
-		user.visible_message(span_warning("[user] begins plucking [weapon] from [victim]'s [limb.name]", span_notice("You start plucking [weapon] from [victim]'s [limb.name]...")), \
-			vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=victim)
+		user.visible_message(
+			span_warning("[user] begins plucking [weapon] from [victim]'s [limb.name]"),
+			span_notice("You start plucking [weapon] from [victim]'s [limb.name]..."),
+			vision_distance=COMBAT_MESSAGE_RANGE,
+			ignored_mobs=victim
+			)
 		to_chat(victim, span_warning("[user] begins plucking [weapon] from your [limb.name]..."))
 
 	var/pluck_time = 1.5 SECONDS * weapon.w_class * (self_pluck ? 2 : 1)
