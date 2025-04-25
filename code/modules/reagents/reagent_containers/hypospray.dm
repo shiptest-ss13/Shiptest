@@ -371,6 +371,13 @@
 	base_icon_state = "syndipen"
 	item_state = "syndipen"
 
+/obj/item/reagent_containers/hypospray/medipen/placebatol
+	name = "prescription medipen"
+	desc = "An injector filled with some prescribed substance."
+	list_reagents = list(/datum/reagent/drug/placebatol = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
 	name = "hypospray mk.II"
