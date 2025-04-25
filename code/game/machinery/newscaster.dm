@@ -733,7 +733,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster/security_unit, 30)
 			qdel(src)
 	else if(I.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM)
 		if(machine_stat & BROKEN)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message(span_notice("[user] is repairing [src]."), \
 							span_notice("You begin repairing [src]..."), \

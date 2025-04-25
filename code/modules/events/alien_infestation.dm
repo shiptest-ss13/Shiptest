@@ -6,7 +6,7 @@
 	min_players = 20
 
 /datum/round_event/ghost_role/alien_infestation
-	announceWhen	= 400
+	announce_when	= 400
 
 	minimum_required = 1
 	role_name = "alien larva"
@@ -17,7 +17,7 @@
 	var/spawncount = 2
 
 /datum/round_event/ghost_role/alien_infestation/setup()
-	announceWhen = rand(announceWhen, announceWhen + 50)
+	announce_when = rand(announce_when, announce_when + 50)
 
 /datum/round_event/ghost_role/alien_infestation/announce(fake)
 	var/living_aliens = FALSE
@@ -25,7 +25,7 @@
 		if(A.stat != DEAD)
 			living_aliens = TRUE
 	if(living_aliens || fake)
-		priority_announce("Scanners show that a very rare royal larva has been found in [station_name()]. Because of this, we have valid reason to suspect that a Xenomorph hive has manifested itself. Secure any exterior access, including ducting and ventilation. Beware of very strange looking dogs.", "Lifesign Alert", 'sound/ai/aliens.ogg', sender_override = "CM-BARD")
+		priority_announce("Scanners show that a very rare royal larva has been found in [station_name()]. Because of this, we have valid reason to suspect that a Xenomorph hive has manifested itself. Secure any exterior access, including ducting and ventilation. Beware of very strange looking dogs.", "Lifesign Alert", 'sound/ai/aliens.ogg', sender_override = "CLIP-BARD")
 
 /datum/round_event/ghost_role/alien_infestation/spawn_role()
 	var/list/vents = list()

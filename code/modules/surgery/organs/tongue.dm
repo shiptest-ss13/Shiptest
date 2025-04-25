@@ -7,6 +7,11 @@
 	attack_verb = list("licked", "slobbered", "slapped", "frenched", "tongued")
 	var/list/languages_possible
 	var/say_mod = "says"
+	var/ask_mod = "asks"
+	var/exclaim_mod = "exclaims"
+	var/whisper_mod = "whispers"
+	var/sing_mod = "sings"
+	var/yell_mod = "yells"
 	var/taste_sensitivity = 15 // lower is more sensitive.
 	var/modifies_speech = FALSE
 	var/static/list/languages_possible_base = typecacheof(list(
@@ -52,9 +57,9 @@
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)
-	// Sarathi tongues don't hiss when speaking Kalixcian.
+	// Sarathi tongues don't hiss when speaking Kalixcian. Or when signing.
 	// we should make non-sarathi hiss in Kalixcian
-	if(speech_args[SPEECH_LANGUAGE] == /datum/language/kalixcian_common)
+	if((speech_args[SPEECH_LANGUAGE] == /datum/language/kalixcian_common) || HAS_TRAIT(usr, TRAIT_SIGN_LANG))
 		return
 
 	var/static/regex/lizard_hiss = new("s+", "g")
@@ -125,6 +130,9 @@
 	organ_flags = NONE
 	icon_state = "tonguerobot"
 	say_mod = "states"
+	ask_mod = "queries"
+	exclaim_mod = "declares"
+	yell_mod = "alarms"
 	attack_verb = list("beeped", "booped")
 	modifies_speech = TRUE
 	taste_sensitivity = 25 // not as good as an organic tongue

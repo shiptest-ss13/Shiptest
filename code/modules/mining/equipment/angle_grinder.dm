@@ -49,7 +49,7 @@
 		return FALSE
 	return TRUE
 
-/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, amount)
+/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, atom/target, amount)
 	if(!pack.cell)
 		return FALSE
 	if(pack.deductcharge(usecost))

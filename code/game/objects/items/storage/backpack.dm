@@ -461,6 +461,14 @@
 	name = "surgical duffel bag"
 	desc = "A large duffel bag for holding extra supplies - this one has a material inlay with space for various sharp-looking tools."
 
+/obj/item/storage/backpack/duffelbag/sec/c4
+	name = "tactical duffel bag"
+	desc = "A large duffel bag for holding extra plastic explosives."
+
+/obj/item/storage/backpack/duffelbag/sec/c4/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/grenade/c4(src)
+
 /obj/item/storage/backpack/duffelbag/sec/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
 	new /obj/item/hemostat(src)

@@ -179,9 +179,9 @@
 			NT.contents_explosion(severity, target)
 			return
 		if(EXPLODE_HEAVY)
-			alter_integrity(rand(-500, -800))
+			alter_integrity(rand(-300, -500))
 		if(EXPLODE_LIGHT)
-			alter_integrity(rand(-200, -700))
+			alter_integrity(rand(-100, -200))
 
 /turf/closed/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -243,7 +243,7 @@
 /turf/closed/proc/try_decon(obj/item/I, mob/user, turf/T)
 	var/act_duration = breakdown_duration
 	if(I.tool_behaviour == TOOL_WELDER)
-		if(!I.tool_start_check(user, amount=0))
+		if(!I.tool_start_check(user, src, amount=0))
 			return FALSE
 		to_chat(user, span_notice("You begin slicing through the outer plating..."))
 		while(I.use_tool(src, user, act_duration, volume=50))
@@ -261,7 +261,7 @@
 	if(breakdown_duration == -1)
 		to_chat(user, span_warning("[src] cannot be deconstructed!"))
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	to_chat(user, span_notice("You begin slicing through the outer plating..."))
 	while(I.use_tool(src, user, act_duration, volume=100))
@@ -313,3 +313,10 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		alter_integrity(-400)
 		return
+
+/turf/closed/zap_act(power, zap_flags, shocked_targets)
+	if(QDELETED(src))
+		return FALSE
+	if(alter_integrity(-power) >= 0)
+		return TRUE
+	return power / 2
