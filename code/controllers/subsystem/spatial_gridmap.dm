@@ -248,7 +248,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	var/turf/center_turf = get_turf(center)
 
 	var/datum/virtual_level/virt_z = center_turf.get_virtual_level()
-	if(!isdatum(virt_z))
+	if(!virt_z)
 		return list()
 
 	var/list/relative_coords = virt_z.get_relative_coords(center_turf)
@@ -284,7 +284,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	if(!target_turf)
 		return
 	var/datum/virtual_level/virt_z = target.get_virtual_level()
-	if(!isdatum(virt_z))
+	if(!virt_z)
 		return
 
 	var/list/relative_coords = virt_z.get_relative_coords(target)
@@ -296,7 +296,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	var/turf/center_turf = get_turf(center)
 
 	var/datum/virtual_level/virt_z = center_turf.get_virtual_level()
-	if(!isdatum(virt_z))
+	if(!virt_z)
 		return
 
 	var/list/relative_coords = virt_z.get_relative_coords(center_turf)
@@ -331,7 +331,7 @@ SUBSYSTEM_DEF(spatial_grid)
 
 	var/z_index = target_turf.virtual_z()
 	var/datum/virtual_level/virt_z = target_turf.get_virtual_level()
-	if(!isdatum(virt_z))
+	if(!virt_z)
 		return
 
 	var/list/relative_coords = virt_z.get_relative_coords(target_turf)
@@ -362,8 +362,14 @@ SUBSYSTEM_DEF(spatial_grid)
 	if(!target_turf || !old_target?.important_recursive_contents)
 		CRASH("/datum/controller/subsystem/spatial_grid/proc/exit_cell() was given null arguments or a new_target without important_recursive_contents!")
 
-	var/x_index = ROUND_UP(target_turf.x / SPATIAL_GRID_CELLSIZE)
-	var/y_index = ROUND_UP(target_turf.y / SPATIAL_GRID_CELLSIZE)
+	var/datum/virtual_level/virt_z = target_turf.get_virtual_level()
+	if(!virt_z)
+		return
+
+	var/list/relative_coords = virt_z.get_relative_coords(target_turf)
+
+	var/x_index = ROUND_UP(relative_coords[1] / SPATIAL_GRID_CELLSIZE)
+	var/y_index = ROUND_UP(relative_coords[2] / SPATIAL_GRID_CELLSIZE)
 	var/z_index = target_turf.virtual_z()
 
 	var/list/grid = grids_by_z_level[z_index]
