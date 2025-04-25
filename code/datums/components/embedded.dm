@@ -298,7 +298,7 @@
 		fallOutCarbon()
 
 /// The signal for listening to see if someone is using a hemostat on us to pluck out this object
-/datum/component/embedded/proc/checkTweeze(mob/living/carbon/victim, obj/item/possible_tweezers, mob/user)
+/datum/component/embedded/proc/check_tweeze(mob/living/carbon/victim, obj/item/possible_tweezers, mob/user)
 	SIGNAL_HANDLER
 
 	if(!istype(victim) || possible_tweezers.tool_behaviour != TOOL_HEMOSTAT || user.zone_selected != limb.body_zone)
@@ -312,34 +312,34 @@
 		if(!victim_human.can_inject(user, TRUE, limb.body_zone))
 			return TRUE
 
-	INVOKE_ASYNC(src, .proc/tweezePluck, possible_tweezers, user)
+	INVOKE_ASYNC(src, PROC_REF/tweezePluck, possible_tweezers, user)
 	return COMPONENT_NO_AFTERATTACK
 
 /// The actual action for pulling out an embedded object with a hemostat
-/datum/component/embedded/proc/tweezePluck(obj/item/possible_tweezers, mob/user)
+/datum/component/embedded/proc/tweeze_pluck(obj/item/possible_tweezers, mob/user)
 	var/mob/living/carbon/victim = parent
 
 	var/self_pluck = (user == victim)
 
 	if(self_pluck)
-		user.visible_message("<span class='danger'>[user] begins plucking [weapon] from [user.p_their()] [limb.name]</span>", "<span class='notice'>You start plucking [weapon] from your [limb.name]...</span>",\
+		user.visible_message(span_warning("[user] begins plucking [weapon] from [user.p_their()] [limb.name]", span_notice("You start plucking [weapon] from your [limb.name]...")),\
 			vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=victim)
 	else
-		user.visible_message("<span class='danger'>[user] begins plucking [weapon] from [victim]'s [limb.name]</span>","<span class='notice'>You start plucking [weapon] from [victim]'s [limb.name]...</span>", \
+		user.visible_message(span_warning("[user] begins plucking [weapon] from [victim]'s [limb.name]", span_notice("You start plucking [weapon] from [victim]'s [limb.name]...")), \
 			vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=victim)
-		to_chat(victim, "<span class='userdanger'>[user] begins plucking [weapon] from your [limb.name]...</span>")
+		to_chat(victim, span_warning("[user] begins plucking [weapon] from your [limb.name]..."))
 
 	var/pluck_time = 1.5 SECONDS * weapon.w_class * (self_pluck ? 2 : 1)
 	if(!do_after(user, pluck_time, victim))
 		if(self_pluck)
-			to_chat(user, "<span class='danger'>You fail to pluck [weapon] from your [limb.name].</span>")
+			to_chat(user, span_warning("You fail to pluck [weapon] from your [limb.name]."))
 		else
-			to_chat(user, "<span class='danger'>You fail to pluck [weapon] from [victim]'s [limb.name].</span>")
-			to_chat(victim, "<span class='danger'>[user] fails to pluck [weapon] from your [limb.name].</span>")
+			to_chat(user, span_warning("You fail to pluck [weapon] from [victim]'s [limb.name]."))
+			to_chat(victim, span_warning("[user] fails to pluck [weapon] from your [limb.name]."))
 		return
 
-	to_chat(user, "<span class='notice'>You successfully pluck [weapon] from [victim]'s [limb.name].</span>")
-	to_chat(victim, "<span class='notice'>[user] plucks [weapon] from your [limb.name].</span>")
+	to_chat(user, span_warning("You successfully pluck [weapon] from [victim]'s [limb.name]."))
+	to_chat(victim, span_warning("[user] plucks [weapon] from your [limb.name]."))
 	safeRemoveCarbon(user)
 
 ////////////////////////////////////////
