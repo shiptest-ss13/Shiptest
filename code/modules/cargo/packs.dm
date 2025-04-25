@@ -50,7 +50,7 @@
 	var/datum/faction/faction
 	//what's the discount for buyers in our faction.
 	var/faction_discount = 15
-	//are we locked to one faction and its subcategorys
+	//are we locked to one faction and its subgroups
 	var/faction_locked = FALSE
 
 	var/admin_spawned = FALSE

@@ -39,7 +39,7 @@
 
 /datum/supply_pack/tools/bodycamera
 	name = "Body Camera Crate"
-	desc = "Contains two portable cameras, designed to help keep track of a working category at all times."
+	desc = "Contains two portable cameras, designed to help keep track of a working group at all times."
 	cost = 250
 	contains = list(/obj/item/bodycamera,
 					/obj/item/bodycamera,

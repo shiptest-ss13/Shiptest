@@ -34,7 +34,7 @@
 
 /datum/supply_pack/spacesuits/armored_spacesuit
 	name = "Armored Space Suit Crate"
-	desc = "Contains one armored spacesuit. Generic enough to be manufactured and distributed by most ex-Coalition categorys."
+	desc = "Contains one armored spacesuit. Generic enough to be manufactured and distributed by most ex-Coalition groups."
 	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/syndicate/black,
 					/obj/item/clothing/head/helmet/space/syndicate/black)
@@ -43,7 +43,7 @@
 
 /datum/supply_pack/spacesuits/armored_engi_spacesuit
 	name = "Coalition Engineering Space Suit Crate"
-	desc = "Contains one lightly armored engineering spacesuit. Generic enough to be manufactured by most ex-Coalition categorys."
+	desc = "Contains one lightly armored engineering spacesuit. Generic enough to be manufactured by most ex-Coalition groups."
 	cost = 1000
 	contains = list(/obj/item/clothing/suit/space/syndicate/black/engie,
 					/obj/item/clothing/head/helmet/space/syndicate/black/engie)

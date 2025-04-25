@@ -123,7 +123,7 @@
 	var/the_cost = get_cost(O, apply_elastic)
 	///Quantity of the object in question.
 	var/amount = get_amount(O)
-	///Utilized in the costtag component. Splits the object's profit when it has a costtag by the specified amount.
+	///Utilized in the pricetag component. Splits the object's profit when it has a pricetag by the specified amount.
 	var/profit_ratio = 0
 
 	if(amount <= 0 || the_cost <= 0)
@@ -143,8 +143,8 @@
 
 /datum/export/proc/calc_total_payout(atoms_list = list())
 	var/total_payout = 0
-	for(var/atom/costd_atom in atoms_list)
-		total_payout += get_cost(costd_atom)
+	for(var/atom/priced_atom in atoms_list)
+		total_payout += get_cost(priced_atom)
 	return total_payout
 
 /datum/export/proc/get_payout_text()

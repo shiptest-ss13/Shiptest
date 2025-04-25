@@ -8,7 +8,7 @@
 	/// "/datum/blackmarket_market"s that this item should be in, used by SSblackmarket on init.
 	var/list/markets = list(/datum/blackmarket_market/blackmarket)
 
-	/// cost for the item, if not set creates a cost according to the *_min and *_max vars.
+	/// Cost for the item, if not set creates a cost according to the *_min and *_max vars.
 	var/cost
 	/// How many of this type of item is available, if not set creates a cost according to the *_min and *_max vars.
 	var/stock
