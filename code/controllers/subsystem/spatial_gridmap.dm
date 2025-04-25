@@ -551,6 +551,19 @@ SUBSYSTEM_DEF(spatial_grid)
 	[cells_with_clients] cells have clients and [cells_with_hearables] have hearables, \
 	the average client distance is: [average_client_distance] and the average hearable_distance is [average_hearable_distance].")
 
+//A debugging verb that colors objects based on what grid they belong to
+/datum/controller/subsystem/spatial_grid/proc/paint_grids()
+	var/list/cells_with_color = list()
+	for(var/list/z_level_grid as anything in grids_by_z_level)
+		for(var/list/cell_row as anything in z_level_grid)
+			for(var/datum/spatial_grid_cell/cell as anything in cell_row)
+				cells_with_color[cell] = RANDOM_COLOUR
+	for(var/atom/thing in world.contents)
+		var/datum/spatial_grid_cell/things_cell = get_cell_of(thing)
+		if(!isdatum(things_cell))
+			continue
+		thing.add_atom_colour(cells_with_color[things_cell], ADMIN_COLOUR_PRIORITY)
+
 #undef GRID_CELL_ADD
 #undef GRID_CELL_REMOVE
 #undef GRID_CELL_SET
