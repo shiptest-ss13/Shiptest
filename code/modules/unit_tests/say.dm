@@ -176,8 +176,10 @@
 	listener_radio.forceMove(locate((run_loc_bottom_left.x + 10), run_loc_bottom_left.y, run_loc_bottom_left.z))
 	// Normally speaking, if there isn't a functional telecomms array on the same z-level, then handheld radios
 	// have a short delay before sending the message. We use the centcom frequency to get around this.
+	speaker_radio.set_listening(TRUE)
 	speaker_radio.set_frequency(FREQ_CENTCOM)
 	speaker_radio.independent = TRUE
+	listener_radio.set_listening(TRUE)
 	listener_radio.set_frequency(FREQ_CENTCOM)
 	listener_radio.independent = TRUE
 
