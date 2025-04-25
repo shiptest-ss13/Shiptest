@@ -56,7 +56,7 @@
 
 /obj/item/clothing/under/plasmaman/solgov
 	name = "\improper SolGov envirosuit"
-	desc = "The pride of Solarian plasmamen everywhere- though this tends to be a somewhat exclusive club, due to Sol's agressive workplace safety regulations."
+	desc = "The pride of Solarian plasmamen everywhere- though this tends to be a somewhat exclusive club, due to Sol's aggressive workplace safety regulations."
 	icon = 'icons/obj/clothing/faction/solgov/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/uniforms.dmi'
 	icon_state = "plasma_solgov"
@@ -357,6 +357,8 @@
 /obj/item/clothing/neck/stripedsolgovscarf
 	name = "striped solgov scarf"
 	icon_state = "stripedsolgovscarf"
+	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/neck.dmi'
+	icon = 'icons/obj/clothing/faction/solgov/neck.dmi'
 	custom_price = 10
 	supports_variations = VOX_VARIATION
 
