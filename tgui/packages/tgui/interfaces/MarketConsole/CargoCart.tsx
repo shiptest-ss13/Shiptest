@@ -1,11 +1,5 @@
 import { useBackend } from '../../backend';
-import {
-  Box,
-  Button,
-  RestrictedInput,
-  Section,
-  Table,
-} from '../../components';
+import { Box, Button, RestrictedInput, Section, Table } from '../../components';
 import { TableRow } from '../../components/Table';
 import { formatMoney } from '../../format';
 
