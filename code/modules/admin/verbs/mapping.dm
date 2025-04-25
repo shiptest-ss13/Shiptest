@@ -85,8 +85,8 @@ GLOBAL_PROTECT(admin_verbs_debug_extra)
 				seen[T]++
 		for(var/turf/T in seen)
 			T.maptext = "[seen[T]]"
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Camera Range") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Camera Range")
+	BLACKBOX_LOG_ADMIN_VERB("Show Camera Range")
+	BLACKBOX_LOG_ADMIN_VERB("Show Camera Range")
 
 #ifdef TESTING
 GLOBAL_LIST_EMPTY(dirty_vars)
@@ -143,7 +143,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 
 	output += "</ul>"
 	usr << browse(output,"window=airreport;size=1000x500")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Camera Report") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Show Camera Report")
 
 /client/proc/intercom_view()
 	set category = "Debug.Mapping"
@@ -161,7 +161,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 				var/obj/effect/debugging/marker/F = new/obj/effect/debugging/marker(T)
 				if (!(F in view(7,I.loc)))
 					qdel(F)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Intercom Range") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Show Intercom Range")
 
 /client/proc/cmd_show_at_list()
 	set category = "Debug.Mapping"
@@ -178,7 +178,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 
 	usr << browse(dat, "window=at_list")
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Roundstart Active Turfs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Show Roundstart Active Turfs")
 
 /client/proc/cmd_show_at_markers()
 	set category = "Debug.Mapping"
@@ -198,7 +198,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 			count++
 		to_chat(usr, "[count] AT markers placed.", confidential = TRUE)
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Roundstart Active Turf Markers")
+	BLACKBOX_LOG_ADMIN_VERB("Show Roundstart Active Turf Markers")
 
 /client/proc/enable_debug_verbs()
 	set category = "Debug"
@@ -207,14 +207,14 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 		return
 	remove_verb(src, /client/proc/enable_debug_verbs)
 	add_verb(src, list(/client/proc/disable_debug_verbs, GLOB.admin_verbs_debug_extra))
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Enable Debug Verbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Enable Debug Verbs")
 
 /client/proc/disable_debug_verbs()
 	set category = "Debug"
 	set name = "Debug verbs - Disable"
 	remove_verb(src, list(/client/proc/disable_debug_verbs, GLOB.admin_verbs_debug_extra))
 	add_verb(src, /client/proc/enable_debug_verbs)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Disable Debug Verbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Disable Debug Verbs")
 
 /client/proc/count_objects_on_z_level()
 	set category = "Debug.Mapping"
@@ -253,7 +253,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 					atom_list += A
 
 	to_chat(world, "There are [count] objects of type [type_path] on z-level [num_level]", confidential = TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Count Objects Zlevel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Count Objects Zlevel")
 
 /client/proc/count_objects_all()
 	set category = "Debug.Mapping"
@@ -273,7 +273,7 @@ GLOBAL_LIST_EMPTY(dirty_vars)
 			count++
 
 	to_chat(world, "There are [count] objects of type [type_path] in the game world", confidential = TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Count Objects All") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Count Objects All")
 
 
 //This proc is intended to detect lag problems relating to communication procs
