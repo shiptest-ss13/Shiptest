@@ -3,13 +3,16 @@
 /obj/item/oxygen_candle
 	name = "oxygen candle"
 	desc = "A steel tube with the words \"OXYGEN - PULL CORD TO IGNITE\" stamped on the side."
-	icon = 'icons/obj/oxygen_candle.dmi'
+	icon = 'icons/obj/item/oxygen_candle.dmi'
 	icon_state = "oxycandle"
 	w_class = WEIGHT_CLASS_SMALL
 	light_color = LIGHT_COLOR_LAVA // Very warm chemical burn
+	///sets TRUE when candle is activated, prevents re-use
 	var/pulled = FALSE
+	///is the candle actively making oxygen? needed for Destroy()
 	var/processing = FALSE
-	var/fuel = 50 //seconds of burn time
+	///seconds of burn time
+	var/fuel = 50
 	grind_results = list(/datum/reagent/oxygen = 10, /datum/reagent/consumable/sodiumchloride = 10) //in case the on_grind doesn't proc for some reason
 
 /obj/item/oxygen_candle/examine_more(mob/user)
@@ -19,7 +22,7 @@
 /obj/item/oxygen_candle/attack_self(mob/user)
 	if(!pulled)
 		playsound(src, 'sound/effects/fuse.ogg', 75, 1)
-		to_chat(user, span_notice("You pull the cord on [src], and it starts to burn."))
+		user.visible_message(span_notice("[user] pulls a cord on \the [src], and it starts to burn."), span_notice("You pull the cord on \the [src], and it starts to burn."))
 		icon_state = "oxycandle_burning"
 		pulled = TRUE
 		processing = TRUE
@@ -39,12 +42,12 @@
 		processing = FALSE
 		name = "burnt oxygen candle"
 		icon_state = "oxycandle_burnt"
-		desc += "\nThis tube has exhausted its chemicals."
+		desc += span_notice("\nThis tube has exhausted its chemicals.")
 
 /obj/item/oxygen_candle/burnt
 	name = "burnt oxygen candle"
 	icon_state = "oxycandle_burnt"
-	desc = "A steel tube with the words \"OXYGEN - PULL CORD TO IGNITE\" stamped on the side. \nThis tube has exhausted its chemicals."
+	desc = "A steel tube with the words \"OXYGEN - PULL CORD TO IGNITE\" stamped on the side." + span_notice("\nThis tube has exhausted its chemicals.")
 	pulled = TRUE
 	fuel = 0
 
