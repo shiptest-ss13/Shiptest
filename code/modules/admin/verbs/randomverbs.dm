@@ -390,12 +390,12 @@
 	if(!istype(self_mob))
 		return
 
-	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(M)
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(self_mob)
 	if(istype(ship))
 		overmap_location = ship
 
 	if(!overmap_location)
-		overmap_location = M.get_overmap_location()
+		overmap_location = self_mob.get_overmap_location()
 
 	if(!overmap_location && !istype(overmap_location))
 		return
