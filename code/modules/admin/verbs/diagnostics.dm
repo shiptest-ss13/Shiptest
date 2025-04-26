@@ -5,7 +5,7 @@
 	if(!isturf(target))
 		return
 	atmosanalyzer_scan(usr, target, TRUE)
-	BLACKBOX_LOG_ADMIN_VERB("Show Air Status")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Air Status") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/fix_next_move()
 	set category = "Debug"
@@ -35,7 +35,7 @@
 	message_admins("[ADMIN_LOOKUPFLW(largest_move_mob)] had the largest move delay with [largest_move_time] frames / [DisplayTimeText(largest_move_time)]!")
 	message_admins("[ADMIN_LOOKUPFLW(largest_click_mob)] had the largest click delay with [largest_click_time] frames / [DisplayTimeText(largest_click_time)]!")
 	message_admins("world.time = [world.time]")
-	BLACKBOX_LOG_ADMIN_VERB("Unfreeze Everyone")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Unfreeze Everyone") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
 /client/proc/radio_report()
@@ -63,7 +63,7 @@
 					output += "&nbsp;&nbsp;&nbsp;&nbsp;[device]<br>"
 
 	usr << browse(output,"window=radioreport")
-	BLACKBOX_LOG_ADMIN_VERB("Show Radio Report")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Radio Report") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/reload_admins()
 	set name = "Reload Admins"
@@ -78,7 +78,7 @@
 
 	load_admins()
 	load_mentors()
-	BLACKBOX_LOG_ADMIN_VERB("Reload All Admins")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Reload All Admins") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	message_admins("[key_name_admin(usr)] manually reloaded admins")
 
 /client/proc/toggle_cdn()

@@ -596,12 +596,15 @@
 //Accessories//
 ///////////////
 
+//These are stored in clothing/accessories.dmi instead of a factional variant due to accessory code being dogwater
+//Please transfer them over to a factional file if accessory code is ever fixed
+
 /obj/item/clothing/accessory/waistcoat/suns
 	name = "\improper SUNS waistcoat"
 	desc = "An academic issued run of the mill waistcoat."
 	icon_state = "suns_waistcoat"
-	icon = 'icons/obj/clothing/faction/suns/accessory.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/accessory.dmi'
+	icon = 'icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/waistcoat/suns/ribbon

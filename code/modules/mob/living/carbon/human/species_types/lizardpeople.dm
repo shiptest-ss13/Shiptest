@@ -66,11 +66,6 @@
 		internal_lighter = new
 		internal_lighter.Grant(C)
 
-/datum/species/lizard/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	if(chem.type == /datum/reagent/fuel)
-		return TRUE
-	return ..()
-
 /datum/action/innate/liz_lighter
 	name = "Ignite"
 	desc = "(Requires you to drink welding fuel beforehand)"

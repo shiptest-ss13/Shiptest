@@ -130,8 +130,8 @@
 /obj/item/ammo_box/a762_stripper
 	name = "stripper clip (7.62)"
 	desc = "A 5-round stripper clip for makeshift bolt-action rifles. These rounds do good damage with good armor penetration."
-	icon_state = "300m-5"
-	base_icon_state = "300m"
+	icon_state = "stripper_308-5"
+	base_icon_state = "stripper_308"
 	ammo_type = /obj/item/ammo_casing/a762_40
 	caliber = "7.62x40mm"
 	max_ammo = 5

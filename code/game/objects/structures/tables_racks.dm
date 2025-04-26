@@ -20,7 +20,6 @@
 	base_icon_state = "table"
 	density = TRUE
 	anchored = TRUE
-	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	layer = TABLE_LAYER
 	climbable = TRUE
@@ -660,7 +659,6 @@
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
-	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
 	pass_flags_self = LETPASSTHROW //You can throw objects over this, despite it's density.
 	max_integrity = 20
 

@@ -12,10 +12,10 @@
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
-	spread = 6
-	spread_unwielded = 10
+	spread = 2
+	spread_unwielded = 5
 
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma, /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy)
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma)
 	manufacturer = MANUFACTURER_EOEHOMA
 
 

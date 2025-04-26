@@ -3,17 +3,7 @@
 	max_integrity = 40
 	anchored = TRUE
 
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -100, "acid" = 0) // 2x damage from fire
 	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
-
-	/// How much fuel this provides to fires on its turf
-	var/fuel_power = 4
-
-/obj/structure/flora/fire_act(exposed_temperature, exposed_volume)
-	. = ..()
-	var/turf/open/plant_turf = get_turf(src)
-	if(isopenturf(plant_turf) && prob(plant_turf.flammability >= 1))
-		plant_turf.ignite_turf(fuel_power + plant_turf.flammability)
 
 /obj/structure/flora/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -34,8 +24,6 @@
 	layer = FLY_LAYER
 	var/log_amount = 10
 
-	fuel_power = 1 // trees are more resistant to fire and take much longer to burn
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 0)
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/flora/tree/ComponentInitialize()
@@ -66,8 +54,6 @@
 	icon_state = "tree_stump"
 	density = FALSE
 	pixel_x = -16
-	fuel_power = 2 // it's dead
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
@@ -143,8 +129,6 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	desc = "A dead tree. How it died, you know not."
 	icon_state = "tree_1"
-	fuel_power = 2 // it's dead
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/structure/flora/tree/dead/Initialize()
 	icon_state = "tree_[rand(1, 6)]"

@@ -225,7 +225,7 @@
 	if(location)
 		if(location == get_turf(src))
 			return
-		location.ignite_turf(power)
+		location.IgniteTurf(power)
 		new /obj/effect/hotspot(location)
 		location.hotspot_expose((power*3) + 380,500)
 
@@ -242,7 +242,7 @@
 	operating = FALSE
 
 /obj/item/flamethrower/proc/default_ignite(turf/target, power)
-	target.ignite_turf(power, "red")
+	target.IgniteTurf(power, "red")
 	new /obj/effect/hotspot(target)
 	target.hotspot_expose((power*3) + 380,500)
 
@@ -280,7 +280,7 @@
 		var/turf/target_turf = get_turf(owner)
 		log_game("A projectile ([hitby]) detonated a flamethrower tank held by [key_name(owner)] at [COORD(target_turf)]")
 		var/turf/flamer_turf = get_turf(owner)
-		flamer_turf.ignite_turf(30)
+		flamer_turf.IgniteTurf(30)
 		QDEL_NULL(beaker)
 		return 1 //It hit the flamethrower, not them
 
@@ -306,7 +306,7 @@
 	var/turf/hit_turf = get_turf(target)
 	if(!isopenturf(hit_turf))
 		return
-	hit_turf.ignite_turf(power, flame_color)
+	hit_turf.IgniteTurf(power, flame_color)
 	new /obj/effect/hotspot(hit_turf)
 	hit_turf.hotspot_expose((power*3) + 380,500)
 

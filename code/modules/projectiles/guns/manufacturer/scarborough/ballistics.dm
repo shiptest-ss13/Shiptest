@@ -198,8 +198,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	icon_state = "viper23"
 	item_state = "viper23"
-	spread = 5
-	spread_unwielded = 10
+
+	semi_auto = FALSE //not double action
+	safety_wording = "hammer"
+
+	fire_delay = 0.4 SECONDS
+	spread = 4
 
 /obj/item/gun/ballistic/revolver/viper/ComponentInitialize()
 	. = ..()
@@ -755,11 +759,9 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 	burst_delay = 0.08 SECONDS
 	fire_delay = 0.08 SECONDS
-	spread = 7
-	spread_unwielded = 25
-	recoil = 2
-	recoil_unwielded = 4
-	wield_slowdown = SAW_SLOWDOWN
+	spread = 6
+	spread_unwielded = 20
+	wield_slowdown = SAW_SLOWDOWN //better than the lmgs since it doesnt have a bipod, still not ideal
 	wield_delay = 0.9 SECONDS //ditto
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS

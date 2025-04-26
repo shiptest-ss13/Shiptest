@@ -186,7 +186,7 @@
 	if(!isturf(OldLoc))
 		return
 	var/turf/flame_to_turf = get_turf(OldLoc)
-	flame_to_turf.ignite_turf(10)
+	flame_to_turf.IgniteTurf(10)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub/death(gibbed)
 	. = ..()

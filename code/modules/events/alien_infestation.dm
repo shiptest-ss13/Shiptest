@@ -25,7 +25,7 @@
 		if(A.stat != DEAD)
 			living_aliens = TRUE
 	if(living_aliens || fake)
-		priority_announce("Scanners show that a very rare royal larva has been found in [station_name()]. Because of this, we have valid reason to suspect that a Xenomorph hive has manifested itself. Secure any exterior access, including ducting and ventilation. Beware of very strange looking dogs.", "Lifesign Alert", 'sound/ai/aliens.ogg', sender_override = "CLIP-BARD")
+		priority_announce("Scanners show that a very rare royal larva has been found in [station_name()]. Because of this, we have valid reason to suspect that a Xenomorph hive has manifested itself. Secure any exterior access, including ducting and ventilation. Beware of very strange looking dogs.", "Lifesign Alert", 'sound/ai/aliens.ogg', sender_override = "CM-BARD")
 
 /datum/round_event/ghost_role/alien_infestation/spawn_role()
 	var/list/vents = list()

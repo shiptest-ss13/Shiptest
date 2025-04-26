@@ -259,17 +259,15 @@
 	else if(user.is_holding_item_of_type(/obj/item/areaeditor/blueprints) && !randomize)
 		reveal_wires = TRUE
 
-	var/colorblind = HAS_TRAIT(user, TRAIT_COLORBLIND) || HAS_TRAIT(user, TRAIT_BLIND)
 	for(var/color in colors)
 		payload.Add(list(list(
 			"color" = color,
-			"wire" = ((reveal_wires && !is_dud_color(color) && !colorblind) ? get_wire(color) : null),
+			"wire" = ((reveal_wires && !is_dud_color(color)) ? get_wire(color) : null),
 			"cut" = is_color_cut(color),
 			"attached" = is_attached(color)
 		)))
 	data["wires"] = payload
 	data["status"] = get_status()
-	data["colorblind"] = colorblind
 	return data
 
 /datum/wires/ui_act(action, params)

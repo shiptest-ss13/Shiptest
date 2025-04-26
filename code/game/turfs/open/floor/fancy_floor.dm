@@ -19,7 +19,6 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	color = WOOD_COLOR_GENERIC
-	flammability = 3
 
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
@@ -103,7 +102,6 @@
 	var/ore_type = /obj/item/stack/ore/glass
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
-	flammability = 2 // california simulator
 
 /turf/open/floor/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -154,7 +152,6 @@
 	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	flammability = -5 // absolutely not
 
 /turf/open/floor/grass/snow/spawniconchange()
 	return
@@ -202,7 +199,6 @@
 	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
-	flammability = 5
 
 /turf/open/floor/carpet/examine(mob/user)
 	. = ..()

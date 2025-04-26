@@ -24,7 +24,7 @@
 	if(!check_rights_for(src, R_DEBUG))
 		to_chat(src, "Only administrators may use this command.", confidential = TRUE)
 		return
-	BLACKBOX_LOG_ADMIN_VERB("Check Atmospherics Piping")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Atmospherics Piping") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	var/list/results = atmosscan()
 	to_chat(src, "[results.Join("\n")]", confidential = TRUE)
 
@@ -59,11 +59,8 @@
 	if(!check_rights_for(src, R_DEBUG))
 		to_chat(src, "Only administrators may use this command.", confidential = TRUE)
 		return
-	BLACKBOX_LOG_ADMIN_VERB("Check Power")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Power") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	var/list/results = powerdebug()
-	if(!results.len)
-		to_chat(src, "No power bugs detected", confidential = TRUE)
-		return
 	to_chat(src, "[results.Join("\n")]", confidential = TRUE)
 
 /proc/powerdebug(testing = FALSE)

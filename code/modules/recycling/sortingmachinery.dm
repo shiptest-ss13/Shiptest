@@ -430,8 +430,6 @@
 
 /obj/item/sales_tagger/CtrlClick(mob/user)
 	. = ..()
-	if(!user.canUseTopic(src, BE_CLOSE))
-		return
 	payments_acc = null
 	to_chat(user, span_notice("You clear the registered account."))
 

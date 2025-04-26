@@ -183,9 +183,6 @@
 /turf/open/floor/plating/dirt/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
 
-/turf/open/floor/plating/dirt/burn_tile()
-	return FALSE
-
 /turf/open/floor/plating/dirt/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	baseturfs = /turf/open/floor/plating/dirt/icemoon

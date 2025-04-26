@@ -328,9 +328,3 @@ WS End */
 	desc = "A medical spray bottle.This one contains rhigoxane, it is used to treat burns and cool down temperature if applied with spray."
 	icon_state = "sprayer"
 	list_reagents = list(/datum/reagent/medicine/rhigoxane = 100)
-
-/obj/item/reagent_containers/pill/placebatol
-	name = "prescription pill"
-	desc = "A pill composed of a white, powdery substance. Take as prescribed."
-	icon_state = "pill9"
-	list_reagents = list(/datum/reagent/drug/placebatol = 10)

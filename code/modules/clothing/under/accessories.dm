@@ -2,7 +2,6 @@
 	name = "Accessory"
 	desc = "Something has gone wrong!"
 	icon = 'icons/obj/clothing/accessories.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
 	icon_state = "plasma"
 	item_state = ""	//no inhands
 	slot_flags = 0
@@ -455,6 +454,11 @@
 	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
+
+/obj/item/clothing/accessory/waistcoat/solgov
+	name = "solgov waistcoat"
+	desc = "A standard issue waistcoat in solgov colors."
+	icon_state = "solgov_waistcoat"
 
 //////////
 //RILENA//

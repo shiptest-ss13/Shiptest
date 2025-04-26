@@ -177,8 +177,6 @@
 /obj/machinery/sleeper/proc/replace_chembag(mob/living/user, obj/item/storage/bag/chemistry/new_bag)
 	if(!user)
 		return FALSE
-	if(!user.canUseTopic(src, BE_CLOSE))
-		return
 	if(chembag)
 		to_chat(user, span_notice("You remove the [chembag] from [src]."))
 		user.put_in_hands(chembag)

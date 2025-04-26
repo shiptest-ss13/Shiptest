@@ -17,7 +17,7 @@
 	var/shield_passive_drain = 300
 
 /obj/mecha/combat/durand/clip
-	desc = "An aging combat exosuit specially modified for CLIP-BARD's anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
+	desc = "An aging combat exosuit specially modified for the CMM-BARD anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)

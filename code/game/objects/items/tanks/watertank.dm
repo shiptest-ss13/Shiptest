@@ -245,11 +245,11 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mister_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mister_righthand.dmi'
 	safety = 0
-	max_water = 400 // doubled from before because of doubled water consumption
+	max_water = 200
 	power = 8
 	force = 10
 	precision = 1
-	volume = 2
+	cooling_power = 5
 	w_class = WEIGHT_CLASS_HUGE
 	item_flags = ABSTRACT  // don't put in storage
 	chem = null //holds no chems of its own, it takes from the tank.

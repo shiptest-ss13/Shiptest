@@ -81,7 +81,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c57x39mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
-	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE, "turret")
+	faction = list(FACTION_NGR, "turret")
 	shot_delay = 20
 	burst_delay = 3
 	burst_size = 3
@@ -119,7 +119,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c57x39mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
-	faction = list(FACTION_HARDLINERS, FACTION_PLAYER_SYNDICATE, "turret")
+	faction = list(FACTION_HARDLINERS, "turret")
 	shot_delay = 25
 	burst_delay = 5
 	burst_size = 4

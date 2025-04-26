@@ -22,7 +22,6 @@
 	outfit = /datum/outfit/frontier/officer/internals/ice_lodge
 
 /datum/outfit/frontier/officer/internals/ice_lodge
-	name = "Frontiersman Officer Corpse Internals (Ice Lodge)"
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
 

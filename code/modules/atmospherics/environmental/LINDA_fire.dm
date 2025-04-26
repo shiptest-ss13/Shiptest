@@ -69,9 +69,6 @@
 	if(!istype(location) || !(location.air))
 		return
 
-	if(SEND_SIGNAL(location, COMSIG_TURF_HOTSPOT_EXPOSE) & SUPPRESS_FIRE)
-		return FALSE
-
 	location.active_hotspot = src
 
 	bypassing = volume > CELL_VOLUME*0.95 || location.air.return_temperature() >= FUSION_TEMPERATURE_THRESHOLD
@@ -171,9 +168,7 @@
 		qdel(src)
 		return
 
-	if(!perform_exposure())
-		qdel(src)
-		return
+	perform_exposure()
 
 	if(bypassing)
 		icon_state = "3"

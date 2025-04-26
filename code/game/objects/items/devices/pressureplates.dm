@@ -71,8 +71,6 @@
 	return ..()
 
 /obj/item/pressure_plate/CtrlClick(mob/user)
-	if(!user.canUseTopic(src, BE_CLOSE))
-		return
 	if(protected)
 		to_chat(user, span_warning("You can't quite seem to turn this pressure plate off..."))
 		return

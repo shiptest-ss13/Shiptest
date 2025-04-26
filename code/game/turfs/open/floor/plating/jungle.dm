@@ -93,7 +93,7 @@
 	icon_state = "grass"
 	base_icon_state = "grass"
 	smooth_icon = 'icons/turf/floors/forestgrass.dmi'
-	baseturfs = /turf/open/floor/plating/dirt/jungle
+	baseturfs = /turf/open/floor/plating/grass/jungle
 	light_color = COLOR_JUNGLEPLANET_LIGHT
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 

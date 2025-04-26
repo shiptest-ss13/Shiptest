@@ -52,23 +52,6 @@
 		return
 	cell = new /obj/item/stock_parts/cell/bluespace(src)
 
-/obj/mecha/combat/gygax/dark/ramzi/Initialize()
-	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg(src)
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
-	ME.attach(src)
-	max_ammo()
-
-/obj/mecha/combat/gygax/dark/ramzi/add_cell(obj/item/stock_parts/cell/C=null)
-	if(C)
-		C.forceMove(src)
-		cell = C
-		return
-	cell = new /obj/item/stock_parts/cell/hyper(src)
-
 /obj/mecha/combat/gygax/charger
 	name = "\improper Modified 501p"
 	desc = "A lightweight security exosuit, this one seems to have been modified for short high speed charges instead of enhanced speed."

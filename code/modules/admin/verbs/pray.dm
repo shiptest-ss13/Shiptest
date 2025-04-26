@@ -42,7 +42,7 @@
 	to_chat(usr, span_info("You pray to the gods: \"[msg_tmp]\""), confidential = TRUE)
 	SSredbot.send_discord_message("admin", "Prayer from [src.key]/([src.name]): [msg]")
 
-	BLACKBOX_LOG_ADMIN_VERB("Prayer")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Prayer") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /// Used by communications consoles to message CentCom
 /proc/message_centcom(text, mob/sender)

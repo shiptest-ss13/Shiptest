@@ -184,13 +184,13 @@
 		////////////////////////////UTILITIES//////////////////
 		if("gamePanel")
 			holder.holder.Game()
-			BLACKBOX_LOG_ADMIN_VERB("Game Panel")
+			SSblackbox.record_feedback("tally", "admin_verb", 1, "Game Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 			. = TRUE
 		if("buildMode")
 			var/mob/holder_mob = holder.mob
 			if (holder_mob)
 				togglebuildmode(holder_mob)
-			BLACKBOX_LOG_ADMIN_VERB("Toggle Build Mode")
+			SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggle Build Mode") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 			. = TRUE
 		if("loadDataFromPreset")
 			var/list/savedData = params["payload"]

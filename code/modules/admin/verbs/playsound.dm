@@ -36,7 +36,7 @@
 			SEND_SOUND(M, admin_sound)
 			admin_sound.volume = vol
 
-	BLACKBOX_LOG_ADMIN_VERB("Play Global Sound")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Global Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
 /client/proc/play_local_sound(S as sound)
@@ -49,7 +49,7 @@
 	log_admin("[key_name(src)] played a local sound [S]")
 	message_admins("[key_name_admin(src)] played a local sound [S]")
 	playsound(get_turf(src.mob), S, vol, FALSE, FALSE)
-	BLACKBOX_LOG_ADMIN_VERB("Play Local Sound")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Local Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/play_direct_mob_sound(S as sound, mob/M)
 	set category = "Event.Fun"
@@ -64,7 +64,7 @@
 	log_admin("[key_name(src)] played a direct mob sound [S] to [M].")
 	message_admins("[key_name_admin(src)] played a direct mob sound [S] to [ADMIN_LOOKUPFLW(M)].")
 	SEND_SOUND(M, S)
-	BLACKBOX_LOG_ADMIN_VERB("Play Direct Mob Sound")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Direct Mob Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/play_web_sound()
 	set category = "Event.Fun"
@@ -148,7 +148,7 @@
 					else
 						C.tgui_panel?.stop_music()
 
-	BLACKBOX_LOG_ADMIN_VERB("Play Internet Sound")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Internet Sound")
 
 /client/proc/set_round_end_sound(S as sound)
 	set category = "Event.Fun"
@@ -160,7 +160,7 @@
 
 	log_admin("[key_name(src)] set the round end sound to [S]")
 	message_admins("[key_name_admin(src)] set the round end sound to [S]")
-	BLACKBOX_LOG_ADMIN_VERB("Set Round End Sound")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Set Round End Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/stop_sounds()
 	set category = "Debug"
@@ -174,4 +174,4 @@
 		SEND_SOUND(M, sound(null))
 		var/client/C = M.client
 		C?.tgui_panel?.stop_music()
-	BLACKBOX_LOG_ADMIN_VERB("Stop All Playing Sounds")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Stop All Playing Sounds") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

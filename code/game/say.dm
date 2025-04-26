@@ -121,8 +121,6 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	if (!say_mod)
 		say_mod = say_mod(input, message_mods)
 
-	SEND_SIGNAL(src, COMSIG_MOVABLE_SAY_QUOTE, args)
-
 	var/spanned = attach_spans(input, spans)
 	return "[say_mod], \"[spanned]\""
 
@@ -143,7 +141,6 @@ GLOBAL_LIST_INIT(freqcolor, list())
 #undef ENCODE_HTML_EMPHASIS
 
 /atom/movable/proc/lang_treat(atom/movable/speaker, datum/language/language, raw_message, list/spans, list/message_mods = list(), no_quote = FALSE)
-	SEND_SIGNAL(src, COMSIG_MOVABLE_TREAT_MESSAGE, args)
 	var/atom/movable/source = speaker.GetSource() || speaker //is the speaker virtual
 	if(has_language(language))
 		return no_quote ? raw_message : source.say_quote(raw_message, spans, message_mods)

@@ -25,7 +25,7 @@
 	SSredbot.send_discord_message("admin","[key_name(usr)] has toggled the Panic Bunker, it is now [new_pb ? "enabled with a living minutes requirement of [time_rec]. The interview system is [interview ? "enabled" : "disabled"]" : "disabled"].","admin")
 	if (new_pb && !SSdbcore.Connect())
 		message_admins("The Database is not connected! Panic bunker will not work until the connection is reestablished.")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Panic Bunker", "[new_pb ? "Enabled" : "Disabled"]"))
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Panic Bunker", "[new_pb ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/toggle_interviews()
 	set category = "Server"

@@ -3,7 +3,7 @@
 	desc = " requires data on the behavior of electrical storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data. "
-	value = 1850 // base value, before adding bonus for number of things to fly through
+	value = 2000 // base value, before adding bonus for number of things to fly through
 	duration = 60 MINUTES
 	weight = 8
 
@@ -15,7 +15,7 @@
 	var/num_wanted = 5
 	var/researcher_name
 	///how much is a storm worth to fly through
-	var/storm_value = 150
+	var/storm_value = 300
 
 /datum/mission/outpost/research/New(...)
 	researcher_name = SSmissions.get_researcher_name()
@@ -100,9 +100,8 @@
 	desc = "We require data on the behavior of radiation storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 1500
+	value = 3500
 	weight = 2
-	storm_value = 100
 	objective_type = /datum/overmap/event/rad
 
 /datum/mission/outpost/research/ion
@@ -110,9 +109,8 @@
 	desc = "We require data on the behavior of electromagnetic storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data."
-	value = 2500
+	value = 5500
 	weight = 2
-	storm_value = 100
 	objective_type = /datum/overmap/event/emp
 
 /datum/mission/outpost/research/flare
@@ -120,8 +118,7 @@
 	desc = "We require data on the behavior of solar flares in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 2000
-	storm_value = 200
+	value = 4500
 	weight = 2
 	objective_type = /datum/overmap/event/flare
 

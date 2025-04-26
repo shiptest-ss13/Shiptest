@@ -503,11 +503,11 @@
 	if(firestarter && active)
 		hit_atom.fire_act()
 		var/turf/T = get_turf(hit_atom)
-		T.ignite_turf(30)
+		T.IgniteTurf(30)
 		var/turf/otherT
 		for(var/direction in GLOB.cardinals)
 			otherT = get_step(T, direction)
-			otherT.ignite_turf(30)
+			otherT.IgniteTurf(30)
 			new /obj/effect/hotspot(otherT)
 	..()
 

@@ -49,7 +49,7 @@
 	result = /obj/item/reagent_containers/food/snacks/nachos
 	subcategory = CAT_TORTILLA
 
-/datum/crafting_recipe/food/cheesynachos
+	/datum/crafting_recipe/food/cheesynachos
 	name ="Cheesy nachos"
 	reqs = list(
 		/datum/reagent/consumable/sodiumchloride = 1,

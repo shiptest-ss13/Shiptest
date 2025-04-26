@@ -52,6 +52,21 @@
 	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
 	icon_state = "hopcloak"
 
+/obj/item/clothing/neck/cloak/overseer
+	name = "SolGov overseer's cloak"
+	desc = "Worn by the Overseer. It smells faintly of bureaucracy."
+	icon_state = "solgov_cloak"
+
+/obj/item/clothing/neck/cloak/solgov
+	name = "SolGov weibel"
+	desc = "Worn by SolGov officials. It smells faintly of bureaucracy."
+	icon_state = "solgov_weibel"
+
+/obj/item/clothing/neck/cloak/solgovcap
+	name = "SolGov captain's cloak"
+	desc = "Worn by SolGov captains. It smells faintly of bureaucracy."
+	icon_state = "solgov_cap_cloak"
+
 /obj/item/clothing/neck/cloak/trans
 	name = "vampire cloak"
 	desc = "Worn by high ranking vampires of the transylvanian society of vampires."

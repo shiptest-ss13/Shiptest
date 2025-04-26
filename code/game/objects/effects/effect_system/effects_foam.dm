@@ -30,23 +30,9 @@
 	amount = 0 //no spread
 	slippery_foam = FALSE
 	var/absorbed_plasma = 0
-	var/static/list/loc_connections = list(
-		COMSIG_TURF_HOTSPOT_EXPOSE = PROC_REF(on_hotspot_expose),
-		COMSIG_TURF_IGNITED = PROC_REF(on_turf_ignite),
-	)
-
-/obj/effect/particle_effect/foam/firefighting/Initialize()
-	. = ..()
-	AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/effect/particle_effect/foam/firefighting/proc/on_hotspot_expose()
-	return SUPPRESS_FIRE
-
-/obj/effect/particle_effect/foam/firefighting/proc/on_turf_ignite()
-	return SUPPRESS_FIRE
 
 /obj/effect/particle_effect/foam/firefighting/process(seconds_per_tick)
-	. = ..()
+	..()
 
 	var/turf/open/T = get_turf(src)
 	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)

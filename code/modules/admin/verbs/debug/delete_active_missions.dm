@@ -9,4 +9,4 @@
 	message_admins("[key_name_admin(src)] has deleted all active ruin missions(total of [length(SSmissions.active_ruin_missions)]).")
 	SSmissions.kill_active_missions()
 
-	BLACKBOX_LOG_ADMIN_VERB("Delete active missions")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Delete active missions")

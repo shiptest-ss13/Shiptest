@@ -657,10 +657,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 			continue
 		content.wash(clean_types)
 
-/turf/proc/ignite_turf(power, fire_color = "red")
-	return SEND_SIGNAL(src, COMSIG_TURF_IGNITED, power, fire_color)
-
-/turf/proc/extinguish_turf()
+/turf/proc/IgniteTurf(power, fire_color = "red")
 	return
 
 /turf/proc/on_turf_saved()

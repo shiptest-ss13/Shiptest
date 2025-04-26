@@ -506,11 +506,3 @@
 /obj/item/storage/pill_bottle/starlight/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/starlight(src)
-
-/obj/item/storage/pill_bottle/placebatol
-	name = "bottle of prescription pills"
-	desc = "Contains pills as prescribed. A tag reads: \"NO MEDICINAL EFFECT\"."
-
-/obj/item/storage/pill_bottle/placebatol/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/pill/placebatol(src)

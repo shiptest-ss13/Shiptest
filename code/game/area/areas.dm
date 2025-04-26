@@ -83,9 +83,6 @@
 	///Used to decide what the maximum time between ambience is
 	var/max_ambience_cooldown = 90 SECONDS
 
-	/// The current weather active in this area
-	var/datum/weather/active_weather
-
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE
 

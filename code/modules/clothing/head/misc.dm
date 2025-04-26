@@ -103,10 +103,22 @@
 	icon_state = "fedora_beige"
 	item_state = "fedora_beige"
 
+/obj/item/clothing/head/fedora/solgov
+	name = "solarian hat"
+	icon_state = "hat_solgov"
+	item_state = "hat_solgov"
+	desc = "A slick blue hat used by both solarian civilians and physicists."
+
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
 	desc = "A working man's hat."
 	icon_state = "flat_cap"
+	item_state = "detective"
+
+/obj/item/clothing/head/flatcap/solgov
+	name = "solarian flat cap"
+	desc = "A working solarian's hat, commonly used by Logistics Deck Officers."
+	icon_state = "flatcap_solgov"
 	item_state = "detective"
 
 /obj/item/clothing/head/hunter
@@ -201,6 +213,13 @@
 	icon_state = "intern_hat"
 	item_state = "intern_hat"
 
+/obj/item/clothing/head/inteq_peaked
+	name = "inteq peaked cap"
+	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."
+	icon_state = "inteq_peaked"
+	item_state = "inteq_peaked"
+	flags_inv = 0
+
 /obj/item/clothing/head/maidheadband
 	name = "maid headband"
 	desc = "Just like from one of those chinese cartoons!"
@@ -216,7 +235,12 @@
 
 /obj/item/clothing/head/franks_hat
 	name = "Frank's hat"
-	desc = "You feel ashamed about what you had to do to get this hat."
+	desc = "You feel ashamed about what you had to do to get this hat"
 	icon_state = "cowboy"
 	item_state = "cowboy"
+
+/obj/item/clothing/head/solgov_surgery
+	name = "SolGov surgery cap"
+	desc = "It's a surgery cap utilized by solarian doctors."
+	icon_state = "solgov_surgery"
 

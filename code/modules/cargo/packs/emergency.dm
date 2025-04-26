@@ -20,13 +20,6 @@
 					/obj/item/tank/internals/oxygen)
 	crate_name = "internals crate"
 
-/datum/supply_pack/emergency/oxygen_candle
-	name = "Oxygen Candle Crate"
-	desc = "Contains an oxygen candle, a portable solution to filling rooms with breathable oxygen."
-	cost = 50
-	contains = list(/obj/item/oxygen_candle)
-	crate_name = "oxygen candle crate"
-
 /datum/supply_pack/emergency/plasmaman_tank
 	name = "Phorid Internals Crate"
 	desc = "Contains a Phorid belt tank, for when you just can't bear to refill a normal tank with plasma. Plasma canisters sold separately."
