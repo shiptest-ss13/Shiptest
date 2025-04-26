@@ -59,6 +59,9 @@
 	/// If set to 0, the price will never recover.
 	var/recovery_ds = 5 MINUTES
 
+	///what's the least this item can go for
+	var/sell_floor = 0
+
 	var/list/export_types = list()	// Type of the exported object. If none, the export datum is considered base type.
 	var/include_subtypes = TRUE		// Set to FALSE to make the datum apply only to a strict type.
 	var/list/exclude_types = list()	// Types excluded from export
@@ -89,10 +92,10 @@
 		// definite integral from (old amount sold) to (new amount sold) of the cost function.
 		// this applies even when the amount being sold is one unit, decreasing it slightly,
 		// so that selling even half a unit twice is no more effective than selling the whole unit, ignoring rounding.
-		return round(
+		return max(sell_floor, round(
 			(true_cost/log(1 - elasticity_coeff)) * ((1 - elasticity_coeff)**(amount) - 1),
 			1
-		)
+		))
 	else
 		return round(cost * amount, 1)
 
@@ -106,6 +109,8 @@
 	if(!is_type_in_typecache(O, export_types))
 		return FALSE
 	if(include_subtypes && is_type_in_typecache(O, exclude_types))
+		return FALSE
+	if(!get_amount(O))
 		return FALSE
 	if(!get_cost(O, apply_elastic))
 		return FALSE
@@ -144,6 +149,6 @@
 
 /datum/export/proc/get_payout_text()
 	if(true_cost != cost)
-		return "[round(true_cost, cost/1000)]/[cost]"
+		return "[max(sell_floor,round(true_cost, cost/1000))]/[cost]"
 	else
 		return "[true_cost]"
