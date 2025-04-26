@@ -61,7 +61,7 @@
 			"ref" = REF(current_pack),
 			"name" = current_pack.name,
 			"count" = shopping_cart[item]["count"],
-			"cost" = discountedcost ? discountedcost :current_pack.cost,
+			"cost" = discountedcost ? discountedcost : current_pack.cost,
 		))
 
 	if(charge_account)
