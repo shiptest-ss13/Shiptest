@@ -186,7 +186,7 @@
 
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
-trickwine_examine_text = "SUBJECTPRONOUN is filled with energy and devotion. Their eyes are dialated and they seem to be twitching."
+	trickwine_examine_text = "SUBJECTPRONOUN is filled with energy and devotion. Their eyes are dialated and they seem to be twitching."
 	message_apply_others =  "jolts, their eyes dilating with fervant energy."
 	message_apply_self = "Wonderous thoughts of righteous fervor fill your mind!"
 	message_remove_others = "slows, their fervor subsiding."
@@ -195,7 +195,7 @@ trickwine_examine_text = "SUBJECTPRONOUN is filled with energy and devotion. The
 
 /datum/status_effect/trickwine/debuff/ash
 	id = "ash_wine_debuff"
-	rickwine_examine_text = "SUBJECTPRONOUN is covered in a thin layer of ash. They are twitching and jittery."
+	trickwine_examine_text = "SUBJECTPRONOUN is covered in a thin layer of ash. They are twitching and jittery."
 	message_apply_others =  "begins twitching uncontrolably."
 	message_apply_self = "Your vision spins, a dizzying energy overpowering you!"
 	message_remove_others = "stills, their jittering fit subsiding."
