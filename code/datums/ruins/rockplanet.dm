@@ -40,7 +40,7 @@
 
 /datum/mission/ruin/multiple/moonshine_crates/distillery
 	name = "Assess and Retrieve Booze Supply"
-	desc = "One of the main suppliers of my store's moonshine has stopped shipping out our orders, and we still have several outstanding! Find our sealed crates of booze and bring them back. Be careful to not damage the product, or we will be unable to sell it!"
+	desc = "One of the main suppliers of my store's moonshine has stopped shipping out our orders, and we still have several outstanding! Find our sealed crates of booze and bring them back. Be careful to not damage the product, or I will be unable to sell it!"
 	author = "Tallymere Party Store"
 	mission_limit = 1
 	value = 1750
