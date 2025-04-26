@@ -760,15 +760,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	max_mobs = -1
+	max_mobs = 7
 	spawn_time = 5 SECONDS
-	///His greed was his downfall
-	var/greed_chance = 10
-
-/obj/structure/vein/shrouded/Initialize()
-	. = ..()
-	if(prob(greed_chance))
-		max_mobs = 15
 
 /obj/structure/vein/shrouded/classtwo
 	mining_charges = 10
