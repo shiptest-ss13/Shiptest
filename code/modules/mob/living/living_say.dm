@@ -239,6 +239,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/deaf_type
 
 	var/is_custom_emote = message_mods[MODE_CUSTOM_SAY_ERASE_INPUT]
+
 	var/understood = TRUE
 	if(!is_custom_emote) // we do not translate emotes
 		var/untranslated_raw_message = raw_message
