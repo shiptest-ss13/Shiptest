@@ -760,7 +760,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	max_mobs = -1
+	max_mobs = 6
 	spawn_time = 5 SECONDS
 	///His greed was his downfall
 	var/greed_chance = 10
