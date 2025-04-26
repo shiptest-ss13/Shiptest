@@ -186,21 +186,21 @@
 
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be filled with energy and devotion. There eyes are dialated and they seem to be twitching."
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+trickwine_examine_text = "SUBJECTPRONOUN is filled with energy and devotion. Their eyes are dialated and they seem to be twitching."
+	message_apply_others =  "jolts, their eyes dilating with fervant energy."
+	message_apply_self = "Wonderous thoughts of righteous fervor fill your mind!"
+	message_remove_others = "slows, their fervor subsiding."
+	message_remove_self = "The righteous reverie leaves you."
+	alert_desc = "Glorious visions of hunt and reverie surround you! If you are truly faithful, your toxin damage will slowly heal." //by "truly faithful" we mean "roumain" in M.faction. Militamen only.
 
 /datum/status_effect/trickwine/debuff/ash
 	id = "ash_wine_debuff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be covered in a thin layer of ash. They seem to be twitching and jittery."
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	rickwine_examine_text = "SUBJECTPRONOUN is covered in a thin layer of ash. They are twitching and jittery."
+	message_apply_others =  "begins twitching uncontrolably."
+	message_apply_self = "Your vision spins, a dizzying energy overpowering you!"
+	message_remove_others = "stills, their jittering fit subsiding."
+	message_remove_self = "The overpowering disorientation fades."
+	alert_desc = "Disorienting visions have overcome you! You will randomly become dizzy or druggy while the visions last."
 
 /datum/status_effect/trickwine/debuff/ash/tick()
 	switch(pick("jitter", "dizzy", "drug"))
@@ -233,22 +233,22 @@
 
 /datum/status_effect/trickwine/buff/ice
 	id = "ice_wine_buff"
-	//trickwine_examine_text = ""
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is coated in a thin layer of icy mist."
+	message_apply_others =  "begins emanating icy mist."
+	message_apply_self = "An internal cold flows through your body."
+	message_remove_others = "stops emanating icy mist."
+	message_remove_self = "Your internal cold dissipates, warmth returning to you."
+	alert_desc = "You're being protected by an inner winter! You will thermoregulate faster when overheating, and you cannot be set on fire."
 	trait = TRAIT_NOFIRE
 
 /datum/status_effect/trickwine/debuff/ice
 	id = "ice_wine_debuff"
-	//trickwine_examine_text = ""
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is encased in cloudy ice."
+	message_apply_others = "becomes frozen in a cube!"
+	message_apply_self = "" //the ice cubing has its own big words(tm) messages.
+	message_remove_others = "is freed, the ice cube imprisoning them melting into nothingness."
+	message_remove_self = ""
+	alert_desc = "A block of ice has entrapped you! You will be immobilized until the ice subsides."
 	var/icon/cube
 
 /datum/status_effect/trickwine/debuff/ice/on_apply()
@@ -292,12 +292,12 @@
 
 /datum/status_effect/trickwine/buff/shock
 	id = "shock_wine_buff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be crackling with energy."
-	message_apply_others =  "seems to be crackling with energy!"
+	trickwine_examine_text = "SUBJECTPRONOUN is crackling with energy."
+	message_apply_others = "begins crackling with static energy!"
 	message_apply_self = "You feel like a bolt of lightning!"
-	message_remove_others = "has lost their statis energy."
+	message_remove_others = "has lost their static energy."
 	message_remove_self = "Inertia leaves your body!"
-	alert_desc = "You feel faster than lightning and cracking with energy! You are immune to shock damage and move faster!"
+	alert_desc = "You feel faster then lightning and crackling with energy! You're immune to shock damage and move faster!"
 	trait = TRAIT_SHOCKIMMUNE
 
 /datum/status_effect/trickwine/buff/shock/on_apply()
@@ -310,12 +310,12 @@
 
 /datum/status_effect/trickwine/debuff/shock
 	id = "shock_wine_debuff"
-	//trickwine_examine_text = ""
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is covered in sparking fluid."
+	message_apply_others =  "seizes as a burst of arcing lightning surrounds them!"
+	message_apply_self = "A searing pain tears at your muscles!"
+	message_remove_others = "stops sparking, the trickwines' energy exhausted."
+	message_remove_self = "The electrical energy fades."
+	alert_desc = "You're saturated with residual charge! You will spark intermittently, which may ignite some flammable substances."
 
 /datum/status_effect/trickwine/debuff/shock/tick()
 	if(rand(25))
@@ -344,22 +344,22 @@
 
 /datum/status_effect/trickwine/buff/hearth
 	id = "hearth_wine_buff"
-	//trickwine_examine_text = ""
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is surrounded by a quivering heat haze."
+	message_apply_others =  "begins to exude a faint cloud of steam."
+	message_apply_self = "An energizing warmth spreads from your stomach."
+	message_remove_others = "cools down, their vaporous aura dissipating."
+	message_remove_self = "The warming sensation fades."
+	alert_desc = "You're being fueled by an inner fire! You're resistant to cold temperatures and your bleeding wounds will auto-cauterize."
 	trait = TRAIT_RESISTCOLD
 
 /datum/status_effect/trickwine/debuff/hearth
 	id = "hearth_wine_debuff"
-	//trickwine_examine_text = ""
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is shedding flaming fumes!"
+	message_apply_others =  "becomes covered in burning fluid!"
+	message_apply_self = "Your skin begins to sizzle and spark agonizingly!"
+	message_remove_others = "stops emmanating fire."
+	message_remove_self = "The painful sizzling subsides."
+	alert_desc = "You're covered in flaming residue! You will create fires wherever you step."
 
 /datum/status_effect/trickwine/debuff/hearth/tick()
 	//owner.fire_act()
@@ -382,23 +382,23 @@
 
 /datum/status_effect/trickwine/buff/force
 	id = "force_wine_buff"
-	//trickwine_examine_text = ""
-	message_apply_others =  "glows a dim grey aura."
-	//message_apply_self = "You feel faster than lightning!"
+	trickwine_examine_text = "SUBJECTPRONOUN is glowing a dim grey. "//yes i know grey isnt a real color of light, because you can't make light darker than itself. This is magic forcefield wine. i don't care.
+	message_apply_others =  "begins to exude a viscous aura."
+	message_apply_self = "The space around you thickens, radiating a faint grey."
 	message_remove_others = "'s aura fades away."
-	//message_remove_self = "You feel sluggish."
-	//alert_desc = ""
+	message_remove_self = "Space becomes vulnerably thin once more."
+	alert_desc = "The space around you has become thick and viscous! It will catch pointy things, rendering you immune to piercing effects such as shrapnel."
 	// No shrapnel seems useful
 	trait = TRAIT_PIERCEIMMUNE
 
 /datum/status_effect/trickwine/debuff/force
 	id = "force_wine_debuff"
-	//trickwine_examine_text = ""
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	trickwine_examine_text = "" //instantanious effect
+	message_apply_others =  "is suddenly surrounded by a cloud of resinous foam."
+	message_apply_self = "A resinous foam bursts forth, entrapping you!"
+	message_remove_others = ""
+	message_remove_self = ""//instantanious effect
+	alert_desc = ""
 
 /datum/status_effect/trickwine/debuff/force/on_apply()
 	var/turf/turf = get_turf(owner)
@@ -425,12 +425,12 @@
 #define MAX_REFLECTS 3
 /datum/status_effect/trickwine/buff/prism
 	id = "prism_wine_buff"
-	//trickwine_examine_text = ""
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is sweating a glossy resinous fluid."
+	message_apply_others =  "starts sweating viscous resin."
+	message_apply_self = "Your sweat becomes viscous and glossy."
+	message_remove_others = "stops sweating so much."
+	message_remove_self = "Your sweat thins and drips away."
+	alert_desc = "You're sweating reflective resin! Accumulate charges by moving, up to three at once, and they will be consumed to reflect incoming lasers."
 	var/reflect_count = 0
 	var/recent_movement = FALSE
 
@@ -471,12 +471,12 @@
 
 /datum/status_effect/trickwine/debuff/prism
 	id = "prism_wine_debuff"
-	//trickwine_examine_text = ""
-	//message_apply_others =  ""
-	//message_apply_self = ""
-	//message_remove_others = ""
-	//message_remove_self = ""
-	//alert_desc = ""
+	trickwine_examine_text = "SUBJECTPRONOUN is soaked in refractive resin."
+	message_apply_others =  "is covered in light focusing sludge."
+	message_apply_self = "A refractive fluid covers you!"
+	message_remove_others = "escapes their refractive coating."
+	message_remove_self = "The refractive coating dries and falls away."
+	alert_desc = "You've been innundated in a refractive resin! The lensing effect causes all burns to deal double damage."
 
 /datum/status_effect/trickwine/debuff/prism/on_apply()
 	if(ishuman(owner))
