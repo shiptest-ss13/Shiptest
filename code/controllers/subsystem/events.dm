@@ -36,6 +36,8 @@ SUBSYSTEM_DEF(events)
 	if(isnull(GLOB.holidays))
 		fill_holidays()
 
+	return ..()
+
 /datum/controller/subsystem/events/fire(resumed = FALSE)
 	if(!resumed)
 		check_event() //only check these if we aren't resuming a paused fire
