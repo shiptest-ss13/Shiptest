@@ -94,7 +94,8 @@
 
 /obj/item/towel/CtrlClick(mob/user)
 	. = ..()
-
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
 	if(. == FALSE)
 		return
 	if(shape == TOWEL_FOLDED)
