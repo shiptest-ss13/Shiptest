@@ -16,6 +16,8 @@
 	var/datum/callback/on_attack_hand
 	///Called on the parents preattack
 	var/datum/callback/on_preattack
+	///Called on the parents before_fire
+	var/datum/callback/on_beforefire
 	///Called on the parents wield
 	var/datum/callback/on_wield
 	///Called on the parents unwield
@@ -33,6 +35,7 @@
 		datum/callback/on_detach = null,
 		datum/callback/on_toggle = null,
 		datum/callback/on_preattack = null,
+		datum/callback/on_beforefire = null,
 		datum/callback/on_attacked = null,
 		datum/callback/on_unique_action = null,
 		datum/callback/on_ctrl_click = null,
@@ -54,6 +57,7 @@
 	src.on_detach = on_detach
 	src.on_toggle = on_toggle
 	src.on_preattack = on_preattack
+	src.on_beforefire = on_beforefire
 	src.on_attacked = on_attacked
 	src.on_unique_action = on_unique_action
 	src.on_ctrl_click = on_ctrl_click
@@ -72,6 +76,7 @@
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
 		attachment_toggle_action = new /datum/action/attachment(parent)
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_BEFORE_FIRING, PROC_REF(relay_before_fire))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_WIELD, PROC_REF(try_wield))
@@ -109,7 +114,7 @@
 	parent.attack_self(user)
 	return TRUE
 
-/datum/component/attachment/proc/update_overlays(obj/item/attachment/parent, list/overlays, list/offset)
+/datum/component/attachment/proc/update_overlays(obj/item/attachment/parent, list/overlays, list/offset, obj/item/gun/our_gun)
 	if(!(attach_features_flags & ATTACH_NO_SPRITE))
 		var/overlay_layer = FLOAT_LAYER
 		var/overlay_plane = FLOAT_PLANE
@@ -117,7 +122,10 @@
 			overlay_layer = parent.render_layer
 		if(parent.render_plane)
 			overlay_layer = parent.render_plane
-		overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached",overlay_layer,overlay_plane)
+		if(our_gun)
+			overlays += mutable_appearance(parent.icon, "[parent.allow_icon_state_prefixes ? "[our_gun.attachment_icon_overlay_prefix]" : ""][parent.icon_state]-attached",overlay_layer,overlay_plane)
+		else
+			overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached",overlay_layer,overlay_plane)
 
 /datum/component/attachment/proc/try_attach(obj/item/parent, obj/item/holder, mob/user, bypass_checks)
 	SIGNAL_HANDLER
@@ -173,6 +181,12 @@
 
 	if(on_preattack)
 		return on_preattack.Invoke(gun, target_atom, user, params)
+
+/datum/component/attachment/proc/relay_before_fire(obj/item/parent, obj/item/gun, atom/target_atom, mob/user, params)
+	SIGNAL_HANDLER_DOES_SLEEP
+
+	if(on_beforefire)
+		return on_beforefire.Invoke(gun, target_atom, user, params)
 
 /datum/component/attachment/proc/relay_attacked(obj/item/parent, obj/item/gun, obj/item, mob/user, params)
 	SIGNAL_HANDLER_DOES_SLEEP

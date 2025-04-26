@@ -220,9 +220,10 @@
 		duel.fired[src] = TRUE
 		. = ..()
 
-/obj/item/gun/energy/dueling/before_firing(target,user)
+/obj/item/gun/energy/dueling/before_firing(atom/target, mob/user, params)
 	var/obj/item/ammo_casing/energy/duel/D = chambered
 	D.setting = setting
+	return ..()
 
 /obj/effect/temp_visual/dueling_chaff
 	icon = 'icons/effects/effects.dmi'

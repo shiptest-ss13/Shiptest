@@ -36,6 +36,11 @@
 	speed = BULLET_SPEED_RIFLE
 	bullet_identifier = "large bullet"
 
+	icon_state = "redtrac"
+	light_system = MOVABLE_LIGHT
+	light_color = COLOR_SOFT_RED
+	light_range = 2
+
 /obj/projectile/bullet/a8_50r/hp
 	name = "8x50mmR hollow point bullet"
 	damage = 50

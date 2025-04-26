@@ -41,15 +41,13 @@
 	///If you can examine a gun to see its current ammo count
 	var/ammo_counter = FALSE
 
-	min_recoil = 0.1
-
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
+		/obj/item/attachment/muzzle_brake,
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling,
 		/obj/item/attachment/ammo_counter
 	)
 	slot_available = list(

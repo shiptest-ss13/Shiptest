@@ -10,7 +10,7 @@
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/frontiersmen/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/uniforms.dmi'
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
 /obj/item/clothing/under/frontiersmen/deckhand
 	name = "\improper deckhand jumpsuit"
@@ -60,7 +60,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	blood_overlay_type = "armor"
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	name = "\improper Frontiersmen reinforced armor vest"
@@ -69,7 +69,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	blood_overlay_type = "armor"
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/vest/marine/frontier
 	name = "light tactical armor vest"
@@ -78,6 +78,8 @@
 	item_state = "armor"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	armor = list("melee" = 60, "bullet" = 75, "laser" = 55, "energy" = 25, "bomb" = 50, "bio" = 75, "fire" = 40, "acid" = 50)
+	slowdown = 0.8
 
 /obj/item/clothing/suit/armor/frontier
 	name = "reinforced fur coat"
@@ -92,6 +94,7 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/frontier/fireproof
 	name = "frontiersmen fireproof coat"
@@ -109,6 +112,7 @@
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/tank/internals/plasmaman, /obj/item/extinguisher, /obj/item/crowbar)
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 ///////////////
 //Spacesuits//
@@ -162,6 +166,7 @@
 	name = "frontier surgical cap"
 	desc = "A white surgical cap used by the quite uncommon doctors part of the Frontiersmen."
 	icon_state = "frontier_surgery"
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 
@@ -203,13 +208,13 @@
 	can_flashlight = TRUE
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 
-/obj/item/clothing/head/helmet/frontier
+/obj/item/clothing/head/helmet/heavy_frontier
 	name = "frontiersmen reinforced helmet"
 	desc = "A reinforced Frontiersmen X-11. The front plate has a small window to let the user see."
 	icon_state = "marine_frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
-	armor = list("melee" = 35, "bullet" = 55, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 75, "fire" = 40, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 60, "laser" = 55, "energy" = 25, "bomb" = 50, "bio" = 75, "fire" = 40, "acid" = 50)
 	slowdown = 0.1
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE | SNUG_FIT | BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
@@ -264,12 +269,17 @@
 
 /obj/item/storage/belt/security/military/frontiersmen/mauler_mp_ammo/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m9mm_mauler(src)
+		new /obj/item/ammo_box/magazine/m9mm_mauler/extended(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/spitter_ammo/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/spitter_9mm(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/security/military/frontiersmen/wasp_ammo/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun(src)
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/flamer/PopulateContents()

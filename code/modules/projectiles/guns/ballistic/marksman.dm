@@ -8,6 +8,6 @@
 	zoom_amt = DMR_ZOOM
 	wield_delay = 1 SECONDS
 
-	min_recoil = 0.1
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
 
 	light_range = 2

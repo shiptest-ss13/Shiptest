@@ -13,7 +13,7 @@
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
 
-	light_range = 1
+	light_range = 2
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -30,6 +30,8 @@
 	wear_minor_threshold = 120
 	wear_major_threshold = 360
 	wear_maximum = 600
+
+	attachment_icon_overlay_prefix = "medium_"
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
