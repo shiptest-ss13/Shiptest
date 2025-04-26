@@ -1268,6 +1268,9 @@
 	if(owner.stat == DEAD)
 		to_chat(AI, span_warning("Frame is currently offline."))
 		return
+	if(mainframe) //set to null during undeploy()
+		to_chat(AI, span_warning("Frame already has an active link."))
+		return
 	AI.deployed_shell = owner
 	deploy_init(AI)
 	AI.mind.transfer_to(owner)
