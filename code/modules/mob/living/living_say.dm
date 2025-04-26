@@ -477,7 +477,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		return
 	say("#[message]", bubble_type, spans, sanitize, language, ignore_spam, forced)
 
-/mob/living/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
+/mob/living/grant_language(language, language_flags = ALL, source = LANGUAGE_ATOM)
 	. = ..()
 	if(. && mind)
 		var/datum/language_holder/langauge_holder = get_language_holder()
