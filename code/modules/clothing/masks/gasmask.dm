@@ -283,7 +283,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
 
-/clothing/mask/foggy
+/obj/item/clothing/mask/foggy
 	desc = "wow. fov. so cool"
 
 /obj/item/clothing/mask/foggy/Initialize(mapload)
