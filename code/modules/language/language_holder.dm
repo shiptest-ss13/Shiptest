@@ -464,3 +464,8 @@ GLOBAL_LIST_INIT(prototype_language_holders, init_language_holder_prototypes())
 /datum/language_holder/universal/New()
 	..()
 	grant_all_languages()
+
+// Given to atoms by default
+/datum/language_holder/atom_basic
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
