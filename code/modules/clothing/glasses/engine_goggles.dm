@@ -78,7 +78,7 @@
 	if(!ishuman(loc))
 		return
 	var/mob/living/carbon/human/user = loc
-	if(user.glasses != src || !user.client)
+	if(user.glasses != src)
 		return
 	switch(mode)
 		if(MODE_TRAY)
@@ -106,7 +106,7 @@
 		var/strength = round(rad_places[i] / 1000, 0.1)
 		var/image/pic = image(loc = place)
 		var/mutable_appearance/MA = new()
-		MA.maptext = "<span class='maptext'>[strength]k</span>"
+		MA.maptext = MAPTEXT("[strength]k")
 		MA.color = "#04e604"
 		MA.layer = RAD_TEXT_LAYER
 		MA.plane = GAME_PLANE
@@ -115,6 +115,21 @@
 
 /obj/item/clothing/glasses/meson/engine/proc/show_shuttle()
 	var/mob/living/carbon/human/user = loc
+	for(var/obj/docking_port/port as anything in range(30, user))
+		if(!port)
+			continue
+		if(!istype(port))
+			continue
+		for(var/turf/current_turf as anything in port.return_turfs())
+			var/image/pic
+			if(istype(port, /obj/docking_port/mobile))
+				pic = new('icons/turf/overlays.dmi', current_turf, "greenOverlay", RAD_TEXT_LAYER)
+			else
+				pic = new('icons/turf/overlays.dmi', current_turf, "redOverlay", RAD_TEXT_LAYER)
+
+			flick_overlay(pic, GLOB.clients, 2 SECONDS)
+
+	/*
 	var/obj/docking_port/mobile/port = SSshuttle.get_containing_shuttle(user)
 	if(!port)
 		return
@@ -130,6 +145,7 @@
 			else
 				pic = new('icons/turf/overlays.dmi', place, "redOverlay", AREA_LAYER)
 			flick_overlay(pic, list(user.client), 8)
+	*/
 
 /obj/item/clothing/glasses/meson/engine/update_icon_state()
 	icon_state = item_state = "trayson-[mode]"

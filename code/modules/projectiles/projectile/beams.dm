@@ -49,8 +49,22 @@
 	speed = 0.4
 
 /obj/projectile/beam/laser/eoehoma
-	damage = 25
-	armour_penetration = -10
+	icon_state = "heavylaser"
+	damage = 35
+	armour_penetration = 0
+	speed = 0.8
+
+/obj/projectile/beam/laser/eoehoma/heavy
+	icon_state = "heavylaser"
+	damage = 60
+	knockdown = 50
+	armour_penetration = 20
+	speed = 1
+
+/obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(get_turf(loc),0,0,0,flame_range = 3)
+	return BULLET_ACT_HIT
 
 /obj/projectile/beam/laser/assault
 	icon_state = "heavylaser"
@@ -201,7 +215,7 @@
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.IgniteTurf(rand(8,22), "blue")
+	targets_turf.ignite_turf(rand(8,22), "blue")
 
 /obj/projectile/beam/pulse/sharplite_turret
 	wall_damage_flags = null
@@ -298,7 +312,7 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.visible_message("<span class='danger'>[M] explodes into a shower of gibs!</span>")
+		M.visible_message(span_danger("[M] explodes into a shower of gibs!"))
 		M.gib()
 
 //a shrink ray that shrinks stuff, which grows back after a short while.
@@ -331,4 +345,4 @@
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.IgniteTurf(rand(8,22), "green")
+	targets_turf.ignite_turf(rand(8,22), "green")

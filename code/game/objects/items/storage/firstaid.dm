@@ -277,7 +277,7 @@
 
 	//Making a medibot!
 	if(contents.len >= 1)
-		to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
+		to_chat(user, span_warning("You need to empty [src] out first!"))
 		return
 
 	var/obj/item/bot_assembly/medbot/A = new
@@ -292,7 +292,7 @@
 	else if(istype(src, /obj/item/storage/firstaid/tactical))
 		A.set_skin("medibot_bezerk")
 	user.put_in_hands(A)
-	to_chat(user, "<span class='notice'>You add [S] to [src].</span>")
+	to_chat(user, span_notice("You add [S] to [src]."))
 	A.robot_arm = S.type
 	A.firstaid = type
 	qdel(S)
@@ -506,3 +506,11 @@
 /obj/item/storage/pill_bottle/starlight/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/starlight(src)
+
+/obj/item/storage/pill_bottle/placebatol
+	name = "bottle of prescription pills"
+	desc = "Contains pills as prescribed. A tag reads: \"NO MEDICINAL EFFECT\"."
+
+/obj/item/storage/pill_bottle/placebatol/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/placebatol(src)

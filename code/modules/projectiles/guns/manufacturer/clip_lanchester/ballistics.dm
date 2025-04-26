@@ -52,12 +52,12 @@
 	default_ammo_type = FALSE
 
 /obj/item/ammo_box/magazine/cm23
-	name = "CM-23 pistol magazine (10mm)"
+	name = "CM-23 pistol magazine (10x22mm)"
 	desc = "An 10-round magazine magazine designed for the CM-23 pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
+	caliber = "10x22mm"
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/cm23/update_icon_state()
@@ -112,12 +112,12 @@
 	)
 
 /obj/item/ammo_box/magazine/m9mm_cm70
-	name = "CM-70 machine pistol magazine (9mm)"
+	name = "CM-70 machine pistol magazine (9x18mm)"
 	desc = "A 18-round magazine designed for the CM-70 machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "cm70_mag_18"
 	base_icon_state = "cm70_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 18
 
 
@@ -130,7 +130,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/cm357
 	name = "\improper CM-357"
-	desc = "A semi-automatic magnum handgun designed specifically for BARD's megafauna removal unit, as standard handguns had proven useless as backup weapons. Its heft and power have also made it a status symbol among the few CLIP officers able to requisition one. Chambered in .357."
+	desc = "A powerful semi-automatic handgun designed for CLIP-BARD's megafauna removal unit, as standard handguns had proven ineffective as backup weapons. The heft and power of the weapon have made it a status symbol among the few CLIP officers able to requisition one. Chambered in .357."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'
@@ -233,12 +233,12 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	default_ammo_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
 /obj/item/ammo_box/magazine/cm5_9mm
-	name = "CM-5 magazine (9mm)"
+	name = "CM-5 magazine (9x18mm)"
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rounds do okay damage, but struggle against armor."
 	icon_state = "cm5_mag-1"
 	base_icon_state = "cm5_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -247,7 +247,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 
 /obj/item/ammo_box/magazine/cm5_9mm/rubber
 	desc = "A 30-round magazine for the CM-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
-	caliber = "9mm rubber"
+	caliber = "9x18mm rubber"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
@@ -285,6 +285,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	wield_slowdown = 0.15
 
 	var/obj/item/storage/briefcase/current_case
+
+NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
@@ -444,8 +446,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
-	ammo_type = /obj/item/ammo_casing/a65clip
-	caliber = "6.5CLIP"
+	ammo_type = /obj/item/ammo_casing/a75clip
+	caliber = "7.5x64mm CLIP"
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/f90/update_icon_state()
@@ -458,7 +460,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5)
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
 	name = "\improper CM-82"
-	desc = "CLIP's standard assault rifle, still relatively new in service. Accurate, reliable, and easy to use, the CM-82 replaced the CM-24 as CLIP's assault rifle almost overnight, and has proven immensely popular since. Chambered in 5.56mm."
+	desc = "CLIP's standard assault rifle, a relatively new service weapon. Accurate, reliable, and easy to use, the CM-82 replaced the CM-24 as CLIP's assault rifle almost overnight, and has proven immensely popular since. Chambered in 5.56mm."
 	icon = 'icons/obj/guns/manufacturer/clip_lanchester/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/clip_lanchester/righthand.dmi'

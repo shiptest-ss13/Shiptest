@@ -23,7 +23,7 @@
 	var/res = alert(usr, "Show the title of this song to the players?",, "Yes","No", "Cancel")
 	switch(res)
 		if("Yes")
-			to_chat(world, "<span class='boldannounce'>An admin played: [S]</span>", confidential = TRUE)
+			to_chat(world, span_boldannounce("An admin played: [S]"), confidential = TRUE)
 		if("Cancel")
 			return
 
@@ -36,7 +36,7 @@
 			SEND_SOUND(M, admin_sound)
 			admin_sound.volume = vol
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Global Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Play Global Sound")
 
 
 /client/proc/play_local_sound(S as sound)
@@ -49,7 +49,7 @@
 	log_admin("[key_name(src)] played a local sound [S]")
 	message_admins("[key_name_admin(src)] played a local sound [S]")
 	playsound(get_turf(src.mob), S, vol, FALSE, FALSE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Local Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Play Local Sound")
 
 /client/proc/play_direct_mob_sound(S as sound, mob/M)
 	set category = "Event.Fun"
@@ -64,7 +64,7 @@
 	log_admin("[key_name(src)] played a direct mob sound [S] to [M].")
 	message_admins("[key_name_admin(src)] played a direct mob sound [S] to [ADMIN_LOOKUPFLW(M)].")
 	SEND_SOUND(M, S)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Direct Mob Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Play Direct Mob Sound")
 
 /client/proc/play_web_sound()
 	set category = "Event.Fun"
@@ -74,7 +74,7 @@
 
 	var/ytdl = CONFIG_GET(string/invoke_youtubedl)
 	if(!ytdl)
-		to_chat(src, "<span class='boldwarning'>Youtube-dl was not configured, action unavailable</span>", confidential = TRUE) //Check config.txt for the INVOKE_YOUTUBEDL value
+		to_chat(src, span_boldwarning("Youtube-dl was not configured, action unavailable"), confidential = TRUE) //Check config.txt for the INVOKE_YOUTUBEDL value
 		return
 
 	var/web_sound_input = input("Enter content URL (supported sites only, leave blank to stop playing)", "Play Internet Sound via youtube-dl") as text|null
@@ -86,8 +86,8 @@
 
 			web_sound_input = trim(web_sound_input)
 			if(findtext(web_sound_input, ":") && !findtext(web_sound_input, GLOB.is_http_protocol))
-				to_chat(src, "<span class='boldwarning'>Non-http(s) URIs are not allowed.</span>", confidential = TRUE)
-				to_chat(src, "<span class='warning'>For youtube-dl shortcuts like ytsearch: please use the appropriate full url from the website.</span>", confidential = TRUE)
+				to_chat(src, span_boldwarning("Non-http(s) URIs are not allowed."), confidential = TRUE)
+				to_chat(src, span_warning("For youtube-dl shortcuts like ytsearch: please use the appropriate full url from the website."), confidential = TRUE)
 				return
 			var/shell_scrubbed_input = shell_url_scrub(web_sound_input)
 			var/list/output = world.shelleo("[ytdl] --geo-bypass --format \"bestaudio\[ext=mp3]/best\[ext=mp4]\[height<=360]/bestaudio\[ext=m4a]/bestaudio\[ext=aac]\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
@@ -99,8 +99,8 @@
 				try
 					data = json_decode(stdout)
 				catch(var/exception/e)
-					to_chat(src, "<span class='boldwarning'>Youtube-dl JSON parsing FAILED:</span>", confidential = TRUE)
-					to_chat(src, "<span class='warning'>[e]: [stdout]</span>", confidential = TRUE)
+					to_chat(src, span_boldwarning("Youtube-dl JSON parsing FAILED:"), confidential = TRUE)
+					to_chat(src, span_warning("[e]: [stdout]"), confidential = TRUE)
 					return
 
 				if (data["url"])
@@ -117,7 +117,7 @@
 					var/res = alert(usr, "Show the title of and link to this song to the players?\n[title]",, "No", "Yes", "Cancel")
 					switch(res)
 						if("Yes")
-							to_chat(world, "<span class='boldannounce'>An admin played: [webpage_url]</span>", confidential = TRUE)
+							to_chat(world, span_boldannounce("An admin played: [webpage_url]"), confidential = TRUE)
 						if("Cancel")
 							return
 
@@ -125,8 +125,8 @@
 					log_admin("[key_name(src)] played web sound: [web_sound_input]")
 					message_admins("[key_name(src)] played web sound: [web_sound_input]")
 			else
-				to_chat(src, "<span class='boldwarning'>Youtube-dl URL retrieval FAILED:</span>", confidential = TRUE)
-				to_chat(src, "<span class='warning'>[stderr]</span>", confidential = TRUE)
+				to_chat(src, span_boldwarning("Youtube-dl URL retrieval FAILED:"), confidential = TRUE)
+				to_chat(src, span_warning("[stderr]"), confidential = TRUE)
 
 		else //pressed ok with blank
 			log_admin("[key_name(src)] stopped web sound")
@@ -135,8 +135,8 @@
 			stop_web_sounds = TRUE
 
 		if(web_sound_url && !findtext(web_sound_url, GLOB.is_http_protocol))
-			to_chat(src, "<span class='boldwarning'>BLOCKED: Content URL not using http(s) protocol</span>", confidential = TRUE)
-			to_chat(src, "<span class='warning'>The media provider returned a content URL that isn't using the HTTP or HTTPS protocol</span>", confidential = TRUE)
+			to_chat(src, span_boldwarning("BLOCKED: Content URL not using http(s) protocol"), confidential = TRUE)
+			to_chat(src, span_warning("The media provider returned a content URL that isn't using the HTTP or HTTPS protocol"), confidential = TRUE)
 			return
 		if(web_sound_url || stop_web_sounds)
 			for(var/m in GLOB.player_list)
@@ -148,7 +148,7 @@
 					else
 						C.tgui_panel?.stop_music()
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Internet Sound")
+	BLACKBOX_LOG_ADMIN_VERB("Play Internet Sound")
 
 /client/proc/set_round_end_sound(S as sound)
 	set category = "Event.Fun"
@@ -160,7 +160,7 @@
 
 	log_admin("[key_name(src)] set the round end sound to [S]")
 	message_admins("[key_name_admin(src)] set the round end sound to [S]")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Set Round End Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Set Round End Sound")
 
 /client/proc/stop_sounds()
 	set category = "Debug"
@@ -174,4 +174,4 @@
 		SEND_SOUND(M, sound(null))
 		var/client/C = M.client
 		C?.tgui_panel?.stop_music()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Stop All Playing Sounds") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Stop All Playing Sounds")

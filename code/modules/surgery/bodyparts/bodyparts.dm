@@ -49,7 +49,7 @@
 	var/is_pseudopart = FALSE
 	/// Is it fine, broken, splinted, or just straight up fucking gone
 	var/bone_status = BONE_FLAG_NO_BONES
-	var/bone_break_threshold = 30
+	var/bone_break_threshold = 40
 	/// Threshold at which the limb will start bleeding if damaged by sharp items or projectiles
 	var/bleed_threshold = 10
 	/// Threshold at which the limb will start bleeding if damaged by blunt items
@@ -169,9 +169,9 @@
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>"
+		. += span_warning("This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.")
 	if(burn_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>"
+		. += span_warning("This limb has [burn_dam > 30 ? "severe" : "minor"] burns.")
 
 /obj/item/bodypart/attack(mob/living/carbon/C, mob/user)
 	if(ishuman(C))
@@ -180,14 +180,14 @@
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				if(!attach_limb(C))
-					to_chat(user, "<span class='warning'>[H]'s body rejects [src]!</span>")
+					to_chat(user, span_warning("[H]'s body rejects [src]!"))
 					forceMove(H.loc)
 				if(H == user)
-					H.visible_message("<span class='warning'>[H] jams [src] into [H.p_their()] empty socket!</span>",\
-					"<span class='notice'>You force [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message(span_warning("[H] jams [src] into [H.p_their()] empty socket!"),\
+					span_notice("You force [src] into your empty socket, and it locks into place!"))
 				else
-					H.visible_message("<span class='warning'>[user] jams [src] into [H]'s empty socket!</span>",\
-					"<span class='notice'>[user] forces [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message(span_warning("[user] jams [src] into [H]'s empty socket!"),\
+					span_notice("[user] forces [src] into your empty socket, and it locks into place!"))
 				return
 	..()
 
@@ -195,11 +195,11 @@
 	if(W.get_sharpness())
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, "<span class='warning'>There is nothing left inside [src]!</span>")
+			to_chat(user, span_warning("There is nothing left inside [src]!"))
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message("<span class='warning'>[user] begins to cut open [src].</span>",\
-			"<span class='notice'>You begin to cut open [src]...</span>")
+		user.visible_message(span_warning("[user] begins to cut open [src]."),\
+			span_notice("You begin to cut open [src]..."))
 		if(do_after(user, 54, target = src))
 			drop_organs(user, TRUE)
 	else
@@ -233,8 +233,9 @@
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
-/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, break_modifier = 1, sharpness = FALSE)
+/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, sharpness = FALSE)
 	var/hit_percent = (100-blocked)/100
+	var/attack_force = brute //Used for bone breaking because break_modifier straight up didn't work, ever.
 	if((!brute && !burn && !stamina) || hit_percent <= 0)
 		return FALSE
 	if(owner && (owner.status_flags & GODMODE))
@@ -258,8 +259,10 @@
 		if(ALIEN_BODYPART,LARVA_BODYPART) //aliens take double burn //nothing can burn with so much snowflake code around
 			burn *= 2
 
-	// Is the damage greater than the threshold, and if so, probability of damage + item force
-	if(brute && (brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
+	// Bone breaking. The harder you get hit and the more hurt you already are - the more likely you are to break a bone.
+	// The more damaged your bodypart is, the easier it is to break a bone.
+	//Down to at least 5 force at 70 existing damage for the chest, 30 damage for arms or legs, 100 damage for head.
+	if((brute >= (bone_break_threshold - clamp((brute_dam * 0.5), 0, (bone_break_threshold - 5)))) && prob(attack_force + brute_dam * 0.5))
 		break_bone()
 
 	// Bleeding is applied here
@@ -823,7 +826,7 @@
 //	addtimer(CALLBACK(src, PROC_REF(break_bone_feedback), 1 SECONDS)) testing sommething
 
 ///obj/item/bodypart/proc/break_bone_feedback()
-	owner.visible_message("<span class='danger'>You hear a cracking sound coming from [owner]'s [name].</span>", "<span class='userdanger'>You feel something crack in your [name]!</span>", "<span class='danger'>You hear an awful cracking sound.</span>")
+	owner.visible_message(span_danger("You hear a cracking sound coming from [owner]'s [name]."), span_userdanger("You feel something crack in your [name]!"), span_danger("You hear an awful cracking sound."))
 	playsound(owner, pick(list('sound/health/bone/bone_break1.ogg','sound/health/bone/bone_break2.ogg','sound/health/bone/bone_break3.ogg','sound/health/bone/bone_break4.ogg','sound/health/bone/bone_break5.ogg','sound/health/bone/bone_break6.ogg')), 100, FALSE, -1)
 
 /obj/item/bodypart/proc/fix_bone()
@@ -841,7 +844,7 @@
 		if(HAS_TRAIT(owner, TRAIT_ANALGESIA))
 			to_chat(owner, span_notice("[pick("You feel something shifting inside your [name].", "There is something moving inside [name].", "Something inside your [name] slips.")]"))
 		else
-			to_chat(owner, "<span class='danger'>[pick("You feel broken bones moving around in your [name]!", "There are broken bones moving around in your [name]!", "The bones in your [name] are moving around!")]</span>")
+			to_chat(owner, span_danger("[pick("You feel broken bones moving around in your [name]!", "There are broken bones moving around in your [name]!", "The bones in your [name] are moving around!")]"))
 		receive_damage(rand(1, 3))
 		//1-3 damage every 20 tiles for every broken bodypart.
 		//A single broken bodypart will give you an average of 650 tiles to run before you get a total of 100 damage and fall into crit

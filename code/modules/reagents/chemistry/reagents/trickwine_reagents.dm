@@ -177,11 +177,11 @@
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(prob(10))
 		M.adjust_drugginess(5)
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	if(M.faction && ("roumain" in M.faction))
 		M.adjustToxLoss(-2)
 		if(prob(10))
-			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
+			to_chat(M, span_notice("[cleanse_message]"))
 	return ..()
 
 /datum/status_effect/trickwine/buff/ash
@@ -364,7 +364,7 @@
 /datum/status_effect/trickwine/debuff/hearth/tick()
 	//owner.fire_act()
 	var/turf/owner_turf = get_turf(owner)
-	owner_turf.IgniteTurf(duration)
+	owner_turf.ignite_turf(duration)
 	//new /obj/effect/hotspot(owner_turf, 1)
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine

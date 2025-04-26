@@ -71,7 +71,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/bullet_act(obj/projectile/Proj)
 	if(prob(projectile_deflect_chance))
-		visible_message("<span class='danger'>[src] blocks [Proj] with its shield!</span>")
+		visible_message(span_danger("[src] blocks [Proj] with its shield!"))
 		return BULLET_ACT_BLOCK
 	return ..()
 
@@ -259,13 +259,13 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/sniper
 	name = "Ramzi Clique Overwatch"
-	desc = "A deserter from the Gorlex Marauders turned pirate. They keep their eyes to the horizon, always ready to pull the trigger."
+	desc = "A deserter from the Gorlex Marauders turned pirate. They turn their eyes to the horizon, always ready to pull the trigger."
 	minimum_distance = 7
 	vision_range = 12
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a65clip
+	casingtype = /obj/item/ammo_casing/a75clip
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /* Space Ranged */
@@ -319,7 +319,7 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate__space_shotgun"
-	casingtype = /obj/item/ammo_casing/a65clip
+	casingtype = /obj/item/ammo_casing/a75clip
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
@@ -343,7 +343,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/smg
 	name = "Ramzi Clique Shock Trooper"
-	desc = "Night-black armor traces the silhouette of a soldier equaled by precious few. Their Sidewinder tracks you perfectly, a staccato bark of .45 already in its throat."
+	desc = "Night-black armor traces the silhouette of a soldier equaled by precious few. Their Sidewinder tracks you perfectly, a staccato bark of 5.7 already in its throat."
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
@@ -381,7 +381,7 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a65clip
+	casingtype = /obj/item/ammo_casing/a75clip
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 ///////////////Misc////////////

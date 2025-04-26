@@ -40,7 +40,7 @@
 	/// Bonus mood for being in this area
 	var/mood_bonus = 0
 	/// Mood message for being here, only shows up if mood_bonus != 0
-	var/mood_message = "<span class='nicegreen'>This area is pretty nice!\n</span>"
+	var/mood_message = span_nicegreen("This area is pretty nice!\n")
 
 	///Will objects this area be needing power?
 	var/requires_power = TRUE
@@ -82,6 +82,9 @@
 	var/min_ambience_cooldown = 30 SECONDS
 	///Used to decide what the maximum time between ambience is
 	var/max_ambience_cooldown = 90 SECONDS
+
+	/// The current weather active in this area
+	var/datum/weather/active_weather
 
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE

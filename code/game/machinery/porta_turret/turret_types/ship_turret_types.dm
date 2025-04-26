@@ -13,7 +13,7 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!(machine_stat & BROKEN))
-			. += "<span class='notice'>[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.</span>"
+			. += span_notice("[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.")
 
 /obj/machinery/porta_turret/ship/weak
 	max_integrity = 120
@@ -81,7 +81,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c57x39mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
-	faction = list(FACTION_NGR, "turret")
+	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE, "turret")
 	shot_delay = 20
 	burst_delay = 3
 	burst_size = 3
@@ -101,9 +101,9 @@
 /obj/machinery/porta_turret/ship/ngr/heavy
 	name = "Cliff Turret"
 	desc = "A heavy turret manufactured by the New Gorlex Republic for its ships and installations. Has a reputation of being extremely dangerous."
-	stun_projectile = /obj/projectile/bullet/a65clip/rubber
+	stun_projectile = /obj/projectile/bullet/a75clip/rubber
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
-	lethal_projectile = /obj/projectile/bullet/a65clip
+	lethal_projectile = /obj/projectile/bullet/a75clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	burst_size = 1
 	scan_range = 14
@@ -119,7 +119,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c57x39mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
-	faction = list(FACTION_HARDLINERS, "turret")
+	faction = list(FACTION_HARDLINERS, FACTION_PLAYER_SYNDICATE, "turret")
 	shot_delay = 25
 	burst_delay = 5
 	burst_size = 4
@@ -182,9 +182,9 @@
 /obj/machinery/porta_turret/ship/ramzi/heavy
 	name = "Revolt Turret"
 	desc = "A durable turret manufactured by the Gorlex Marauders during the ICW. Some reported examples used anti-vehicle munitions. Most surviving examples are poorly maintained."
-	stun_projectile = /obj/projectile/bullet/a65clip/rubber
+	stun_projectile = /obj/projectile/bullet/a75clip/rubber
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
-	lethal_projectile = /obj/projectile/bullet/a65clip
+	lethal_projectile = /obj/projectile/bullet/a75clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	scan_range = 12
 	shot_delay = 20
