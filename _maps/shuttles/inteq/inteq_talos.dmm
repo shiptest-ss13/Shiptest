@@ -5871,6 +5871,10 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = 0;
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "HM" = (
@@ -6944,10 +6948,6 @@
 /obj/item/tank/jetpack/oxygen,
 /obj/structure/cable{
 	icon_state = "0-2"
-	},
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_y = -32;
-	pixel_x = 1
 	},
 /obj/machinery/suit_storage_unit/inherit{
 	req_access_txt = "1"
