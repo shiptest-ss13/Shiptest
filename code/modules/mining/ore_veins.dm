@@ -186,7 +186,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/ice
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf = 40,
-		/mob/living/simple_animal/hostile/asteroid/polarbear = 40,
+		/mob/living/basic/bear/polar = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest = 20,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon = 5,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
