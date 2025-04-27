@@ -60,3 +60,11 @@
 	faction = /datum/faction/clip
 	mission_reward = /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	setpiece_item = /mob/living/carbon/human
+
+/datum/map_template/ruin/icemoon/training_facility
+	name = "Ramzi-controlled Training Facility"
+	id = "training_facility"
+	description = "An abandoned training facility located on this ice-world dating back to the early days of the ICW. Strangely, it still seems to be inhabited."
+	suffix = "icemoon_training_center.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS, RUIN_TAG_LAVA)
+
