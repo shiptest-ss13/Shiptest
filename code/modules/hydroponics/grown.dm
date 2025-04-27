@@ -75,7 +75,7 @@
 		var/reag_txt = ""
 		if(seed)
 			for(var/reagent_id in seed.reagents_add)
-				var/datum/reagent/R  = GLOB.chemical_reagents_list[reagent_id]
+				var/datum/reagent/R = GLOB.chemical_reagents_list[reagent_id]
 				var/amt = reagents.get_reagent_amount(reagent_id)
 				reag_txt += "[span_info("- [R.name]: [amt]")]\n"
 
@@ -144,6 +144,25 @@
 		trash = null
 		return
 	return ..()
+
+/// Turns the nutriments and vitamins into the distill reagent or fruit wine
+/obj/item/reagent_containers/food/snacks/grown/proc/ferment()
+	for(var/datum/reagent/reagent in reagents.reagent_list)
+		if(reagent.type != /datum/reagent/consumable/nutriment && reagent.type != /datum/reagent/consumable/nutriment/vitamin)
+			continue
+		if(distill_reagent)
+			reagents.add_reagent(distill_reagent, reagent.volume)
+		else
+			var/data = list()
+			data["names"] = list("[initial(name)]" = 1)
+			data["color"] = filling_color
+			data["boozepwr"] = wine_power
+			if(wine_flavor)
+				data["tastes"] = list(wine_flavor = 1)
+			else
+				data["tastes"] = list(tastes[1] = 1)
+			reagents.add_reagent(/datum/reagent/consumable/ethanol/fruit_wine, reagent.volume, data)
+		reagents.del_reagent(reagent.type)
 
 /obj/item/reagent_containers/food/snacks/grown/grind_requirements()
 	if(dry_grind && !dry)
