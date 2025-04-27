@@ -32,13 +32,11 @@
 		return
 
 	// We're targeting something else for another reason
-	var/datum/weakref/target_weakref = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	var/atom/target = target_weakref?.resolve()
+	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!QDELETED(target))
 		return
 
-	var/datum/weakref/hunting_weakref = controller.blackboard[target_key]
-	var/atom/hunted = hunting_weakref?.resolve()
+	var/atom/hunted = controller.blackboard[target_key]
 	// We're not hunting anything, look around for something
 	if(QDELETED(hunted))
 		controller.queue_behavior(finding_behavior, target_key, hunt_targets, hunt_range)
@@ -86,14 +84,12 @@
 
 /datum/ai_behavior/hunt_target/setup(datum/ai_controller/controller, hunting_target_key, hunting_cooldown_key)
 	. = ..()
-	var/datum/weakref/hunting_weakref = controller.blackboard[hunting_target_key]
-	controller.current_movement_target = hunting_weakref?.resolve()
+	controller.current_movement_target = controller.blackboard[hunting_target_key]
 
 /datum/ai_behavior/hunt_target/perform(seconds_per_tick, datum/ai_controller/controller, hunting_target_key, hunting_cooldown_key)
 	. = ..()
 	var/mob/living/hunter = controller.pawn
-	var/datum/weakref/hunting_weakref = controller.blackboard[hunting_target_key]
-	var/atom/hunted = hunting_weakref?.resolve()
+	var/atom/hunted = controller.blackboard[hunting_target_key]
 
 	if(QDELETED(hunted))
 		finish_action(controller, FALSE, hunting_target_key)

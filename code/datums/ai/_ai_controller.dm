@@ -8,13 +8,13 @@ multiple modular subtrees with behaviors
 	///The atom this controller is controlling
 	var/atom/pawn
 	/**
-	 * This is a list of variables the AI uses and can be mutated by actions.
-	 *
-	 * When an action is performed you pass this list and any relevant keys for the variables it can mutate.
-	 *
-	 * DO NOT set values in the blackboard directly, and especially not if you're adding a datum reference to this!
-	 * Use the setters, this is important for reference handing.
-	 */
+	* This is a list of variables the AI uses and can be mutated by actions.
+	*
+	* When an action is performed you pass this list and any relevant keys for the variables it can mutate.
+	*
+	* DO NOT set values in the blackboard directly, and especially not if you're adding a datum reference to this!
+	* Use the setters, this is important for reference handing.
+	*/
 	var/list/blackboard = list()
 
 	///Bitfield of traits for this AI to handle extra behavior
