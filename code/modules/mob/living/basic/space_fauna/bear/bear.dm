@@ -2,6 +2,7 @@
 /mob/living/basic/bear
 	name = "space bear"
 	desc = "You don't need to be faster than a space bear, you just need to outrun your crewmates."
+	icon = 'icons/mob/basic/bear.dmi'
 	icon_state = "bear"
 	icon_living = "bear"
 	icon_dead = "bear_dead"
@@ -75,20 +76,9 @@
 	gender = MALE
 	desc = "Feared outlaw, this guy is one bad news bear." //I'm sorry...
 
-/mob/living/basic/bear/snow
-	name = "space polar bear"
-	icon_state = "snowbear"
-	icon_living = "snowbear"
-	icon_dead = "snowbear_dead"
-	desc = "It's a polar bear, in space, but not actually in space."
-
-/mob/living/basic/bear/snow/Initialize(mapload)
-	. = ..()
-	ADD_TRAIT(src, TRAIT_SNOWSTORM_IMMUNE, INNATE_TRAIT)
-
 /mob/living/basic/bear/frontier
 	name = "combat bear"
-	desc = "A ferocious brown bear decked out in armor plating, a red star with yellow outlining details the shoulder plating."
+	desc = "A ferocious brown bear decked out in armor plating."
 	icon_state = "combatbear"
 	icon_living = "combatbear"
 	icon_dead = "combatbear_dead"
@@ -114,7 +104,7 @@
 /mob/living/basic/bear/polar
 	name = "polar bear"
 	desc = "An aggressive animal that defends it's territory with incredible power. These beasts don't run from their enemies."
-	icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
+	//icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
 	icon_state = "polarbear"
 	icon_living = "polarbear"
 	icon_dead = "polarbear_dead"
