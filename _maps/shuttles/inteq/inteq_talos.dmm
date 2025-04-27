@@ -1602,15 +1602,6 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
-"jd" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	dwidth = 15;
-	height = 15;
-	width = 30
-	},
-/turf/template_noop,
-/area/template_noop)
 "jk" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
@@ -4496,7 +4487,8 @@
 /area/ship/hallway/central)
 "zq" = (
 /obj/machinery/door/airlock/security/glass{
-	name = "Office"
+	name = "Office";
+	req_access_txt = "3"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -10391,40 +10383,6 @@ Hq
 zC
 Hq
 Ue
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-"}
-(49,1,1) = {"
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-sw
-jd
-sw
-sw
 sw
 sw
 sw
