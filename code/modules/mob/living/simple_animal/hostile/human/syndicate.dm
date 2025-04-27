@@ -62,7 +62,7 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	status_flags = 0
 
-	r_hand = /obj/item/melee/knife/combat
+	l_hand =/obj/item/melee/knife/combat
 
 	melee_damage_lower = 20
 	melee_damage_upper = 20
@@ -81,7 +81,7 @@
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
 
-	r_hand = /obj/item/melee/sword/mass
+	l_hand = /obj/item/melee/sword/mass
 
 	melee_damage_lower = 25
 	melee_damage_upper = 25
@@ -96,7 +96,7 @@
 	attack_verb_simple = "slice"
 	attack_sound = 'sound/weapons/blade1.ogg'
 
-	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
+	l_hand = /obj/item/melee/sledgehammer/gorlex
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -132,7 +132,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
-	r_hand = /obj/item/melee/knife/combat
+	l_hand =/obj/item/melee/knife/combat
 
 	melee_damage_lower = 20
 	melee_damage_upper = 20
@@ -147,7 +147,7 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. Rust silhouttes a well-maintained machete, swinging around their hip."
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
-	r_hand = /obj/item/melee/sword/mass
+	l_hand =/obj/item/melee/sword/mass
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 
@@ -164,7 +164,7 @@
 	attack_verb_simple = "smash"
 	attack_sound = 'sound/weapons/genhit1.ogg'
 
-	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
+	l_hand =/obj/item/melee/sledgehammer/gorlex
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/sledge/AttackingTarget()
@@ -196,7 +196,7 @@
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	r_hand = /obj/item/melee/sledgehammer/gorlex/pre_wielded
+	l_hand =/obj/item/melee/sledgehammer/gorlex
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -226,7 +226,7 @@
 	casingtype = /obj/item/ammo_casing/c10mm
 	projectilesound = 'sound/weapons/gun/pistol/shot.ogg'
 	rapid_melee = 1
-	r_hand = /obj/item/gun/ballistic/automatic/pistol/ringneck
+	l_hand =/obj/item/gun/ballistic/automatic/pistol/ringneck
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/smg
 	name = "Ramzi Clique Commando"
@@ -236,7 +236,7 @@
 	icon_living = "syndicate_smg"
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
-	r_hand = /obj/item/gun/ballistic/automatic/smg/cobra
+	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun
 	name = "Ramzi Clique Breacher"
@@ -248,7 +248,7 @@
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot fired in a two-round burst. This will two-tap unarmored players.
-	r_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
 	shoot_point_blank = TRUE
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/shotgun/incendiary
@@ -266,7 +266,7 @@
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/a75clip
-	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+	l_hand =/obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /* Space Ranged */
 
@@ -292,7 +292,7 @@
 	desc = "A deserter from the Gorlex Marauders turned pirate. Green hardsuit optics glint as they sweep their submachinegun across the room, scanning for threats."
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
-	r_hand = /obj/item/gun/ballistic/automatic/smg/cobra
+	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
 
@@ -304,7 +304,7 @@
 	icon_living = "syndicate_space_shotgun"
 	name = "Ramzi Clique Commando"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
-	r_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
 	rapid = 2
 	rapid_fire_delay = 6
 	retreat_distance = 2
@@ -320,7 +320,7 @@
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate__space_shotgun"
 	casingtype = /obj/item/ammo_casing/a75clip
-	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+	l_hand =/obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
@@ -337,7 +337,7 @@
 	icon_living = "syndicate_stormtrooper_pistol"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	r_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
+	l_hand =/obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	rapid = 3
 	rapid_fire_delay = 2
 
@@ -347,7 +347,7 @@
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	r_hand = /obj/item/gun/ballistic/automatic/smg/sidewinder
+	l_hand =/obj/item/gun/ballistic/automatic/smg/sidewinder
 	rapid = 4
 	rapid_fire_delay = 1.5
 	casingtype = /obj/item/ammo_casing/c57x39mm
@@ -358,7 +358,7 @@
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	r_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	rapid = 3
 	rapid_fire_delay = 5
@@ -382,7 +382,7 @@
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/a75clip
-	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
+	l_hand =/obj/item/gun/ballistic/automatic/marksman/boomslang
 
 ///////////////Misc////////////
 
