@@ -649,3 +649,16 @@
 	metabolization_rate = 0.2
 	vision_trait = TRAIT_GOOD_CHEMICAL_NIGHTVISION
 	taste_description = "sulpheric sweetness"
+
+/datum/reagent/drug/placebatol
+	name = "Placebatol"
+	description = "An odorless, colorless, powdery substance that's sometimes prescribed. May not actually do anything...?"
+	reagent_state = SOLID
+	color = "#f5f5f0"
+	metabolization_rate = REAGENTS_METABOLISM * 0.25
+	taste_description = "sugar" //effectively a sugar pill, but sugar actually has a use
+
+/datum/reagent/drug/placebatol/on_mob_life(mob/living/carbon/M)
+	if(prob(3))
+		to_chat(M, span_notice("[pick("You feel better.", "You feel normal.", "You feel stable.")]")) //normal pills
+	..()

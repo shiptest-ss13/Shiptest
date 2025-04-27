@@ -108,5 +108,5 @@
 
 /obj/effect/temp_visual/burrow_sand_splash
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "splash"
+	icon_state = "explosionOLD"
 	color = "#dbc56b"

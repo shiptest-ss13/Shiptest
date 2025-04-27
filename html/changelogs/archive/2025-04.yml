@@ -261,3 +261,87 @@
       less duplicate items, but with lower proportional prices!
   thearbiber:
   - balance: Replaces the HBG7 with the unscoped version on the crying sun
+2025-04-21:
+  Erikafox:
+  - bugfix: you can no longer random gain carbon monoxide poisoning
+2025-04-23:
+  Burning02:
+  - bugfix: The "Retrieve War Medal" contract will now have you retrieve the proper
+      medal
+2025-04-24:
+  Erikafox:
+  - rscadd: you can use a wrench to unanchor a safe, and very slowly drag it somewhere.
+  - bugfix: you can now grind safes again
+  Rug-Dealer:
+  - rscadd: New signer neutral quirk, allowing you to speak other languages... but
+      signed! Everyone is able to understand sign language regardless of whether they
+      have the quirk or not as long as they can understand the base language.
+  - rscadd: Mute negative quirk. Prevents you from speaking (but not signing).
+  - bugfix: Deafness quirk is now select-able.
+  SapphicOverload:
+  - rscadd: Being unable to see color prevents being able to see the color of wires
+  - bugfix: Fixed monochromacy's effects not being removed when losing the quirk
+  firebudgy:
+  - rscadd: Icemoon Training Facility, operated and controlled by the Ramzi Clique.
+  - balance: Exosuit Pilot AI should now eject at around 20% integrity remaining.
+  generalthrax:
+  - rscadd: E10 uses heavylaser projectile appearance and some slightly changed sounds
+  - bugfix: Gorlex turrets are no longer a separate faction from their crews
+  meemofcourse:
+  - spellcheck: Rewrote a majority of the descriptions of CLIP clothing items
+  - rscadd: Switched a few items around in CLIP outfits
+  - rscdel: CLIP and C-MM Chemist outfit
+  - balance: CLIP Patroller hardsuits can now have guns, oxy tanks and ammo in their
+      suit storage slot
+2025-04-25:
+  FalloutFalcon:
+  - bugfix: few invisible sprites are now fixed
+2025-04-26:
+  DIB-DOG:
+  - bugfix: Fixed the BGC-10 sprite
+  Erikafox:
+  - bugfix: drills now put their parts in a spare hand before putting them on the
+      ground.
+  FalloutFalcon:
+  - balance: devastating explosions should kill everything again.
+  - balance: light and heavy explosions now have a wider range again
+  - bugfix: nachos shouldn't have any issues related to crafting anymore
+  Ical92:
+  - rscadd: end of round BSJ no longer affects docked ships
+  JohnFulpWillard, Nikotheguydude, Erika (ported):
+  - balance: Jousting now works on anything you're buckled to, not just Cyborgs.
+  - balance: Spears need to travel a longer distance to joust now.
+  - balance: Jousting's knockdown and damage now only gets stronger after you've traveled
+      the minimum tiles needed to joust.
+  MeeMOfCourse, RawBread:
+  - imageadd: You can now roll up your sleeves when wearing Minutemen Fatigues. Rejoice.
+  - imageadd: The Minuteman X-11 Helmet is now visible when held on your hands.
+  Rug-Dealer:
+  - rscadd: Oxygen candles! Stocked in emergency (red) toolboxes or purchasable from
+      the outpost; simply pull the cord and place to quickly re-oxygenate rooms.
+  SapphicOverload:
+  - rscadd: turf fires can now spread to other tiles based on said tile's flammability
+  - rscadd: grass tiles turn to dirt tiles when burning for long enough
+  - rscadd: fire extinguishers now put out fires on top of things the particles bump
+      into
+  - rscadd: cigarettes on the ground now have a small chance to ignite flammable turfs
+  - rscadd: rain puts out turf fires
+  - bugfix: fixed dirt tiles looking like metal plating after being burned by turf
+      fires
+  - bugfix: fixed extinguishers not being able to put out turf fires sometimes
+  - refactor: refactored extinguishers and extinguishing fires to be more sane and
+      use less duplicate code
+  - code_imp: turf fires give off fewer particles to reduce client-side lag when a
+      lot of fires are on screen
+  - code_imp: firefighting foam prevents hotspots and turf fires from being created
+      instead of having to repeatedly clear them every process tick
+  generalthrax:
+  - balance: SAW has mildly adjusted spread and has some hefty recoil now
+  thearbiber:
+  - bugfix: removes the extra groin pixel on humans
+2025-04-27:
+  meemofcourse:
+  - code_imp: Accessories icons are no-longer hardcoded to one file
+  - code_imp: Moves SolGov and Inteq clothing into a different file
+  thearbiber:
+  - rscadd: Resprites the indie mining/engi space suits
