@@ -3,7 +3,6 @@
 	var/climb_chance = 35
 
 /datum/ai_planning_subtree/climb_trees/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
-
 	if(!SPT_PROB(climb_chance, seconds_per_tick))
 		return
 

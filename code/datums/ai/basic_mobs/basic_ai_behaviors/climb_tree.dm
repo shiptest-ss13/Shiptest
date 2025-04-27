@@ -1,6 +1,7 @@
 /datum/ai_behavior/find_and_set/valid_tree
+	bb_key_to_set = BB_CLIMBED_TREE
 
-/datum/ai_behavior/find_and_set/valid_tree/search_tactic(datum/ai_controller/controller, locate_path, search_range)
+/datum/ai_behavior/find_and_set/valid_tree/search_tactic(datum/ai_controller/controller)
 	var/list/valid_trees = list()
 	for (var/obj/structure/flora/tree/tree_target in oview(search_range, controller.pawn))
 		if(istype(tree_target, /obj/structure/flora/tree/dead)) //no died trees
