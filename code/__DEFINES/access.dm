@@ -1,3 +1,13 @@
+#define ACCESS_SHIP_CAPTAIN (1<<0)
+#define ACCESS_SHIP_OFFICE (1<<2)
+#define ACCESS_SHIP_COMMAND (1<<3)
+#define ACCESS_SHIP_SECURITY (1<<4)
+#define ACCESS_SHIP_ENGINEERING (1<<5)
+#define ACCESS_SHIP_MEDICAL (1<<6)
+#define ACCESS_SHIP_CARGO (1<<7)
+#define ACCESS_SHIP_SERVICE (1<<8)
+#define ACCESS_SHIP_SCIENCE (1<<9)
+
 // Security equipment, security records, gulag item storage, secbots
 #define ACCESS_SECURITY 1
 /// Brig cells+timers, permabrig, gulag+gulag shuttle, prisoner management console
