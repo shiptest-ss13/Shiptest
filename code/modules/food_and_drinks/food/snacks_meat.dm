@@ -138,10 +138,10 @@
 
 /obj/item/reagent_containers/food/snacks/fishi
 	name = "Zohil temaki roll"
-	desc = "A form of temaki roll originating from Zohil, which consists of a whole, specially prepared fish that is wrapped in seaweed. While this recipe saw success there, space carp's natural toxicity makes this... difficult."
+	desc = "A form of temaki roll originating from Zohil, which consists of a whole, specially prepared fish that is wrapped in seaweed."
 	icon_state = "fi-shi"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 18, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/toxin/carpotoxin = 8)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 18, /datum/reagent/consumable/nutriment/vitamin = 8)
 	filling_color = "#eac57b"
 	tastes = list("raw fish" = 6, "dried seaweed" = 3)
 	foodtype = VEGETABLES | MEAT
