@@ -4,7 +4,7 @@
 	// NO new simple animals are allowed.
 	// Use the new basic mobs system instead.
 	// If you are refactoring a simple_animal, REMOVE it from this list
-	var/list/allowed_types = list(,
+	var/list/allowed_types = list(
 		/mob/living/simple_animal/drone,
 		/mob/living/simple_animal/drone/syndrone,
 		/mob/living/simple_animal/drone/syndrone/badass,
