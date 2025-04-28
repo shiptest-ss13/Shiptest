@@ -60,7 +60,7 @@
 	icon_state = "hematite"
 	item_state = "hematite"
 
-	custom_materials = list(/datum/material/iron=500)
+	custom_materials = list(/datum/material/iron=ORE_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 1
 	scan_state = "hematite"
@@ -71,7 +71,7 @@
 	icon_state = "magnetite"
 	item_state = "magnetite"
 
-	custom_materials = list(/datum/material/iron=ORE_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/metal
 	mine_experience = 1
 	scan_state = "magnetite"
@@ -91,7 +91,7 @@
 	icon_state = "galena"
 	item_state = "galena"
 	material_flags = MATERIAL_NO_EFFECTS
-	custom_materials = list(/datum/material/lead=948,/datum/material/sulfur=50,/datum/material/silver=2)
+	custom_materials = list(/datum/material/lead=1000)
 	refined_type = /obj/item/stack/sheet/mineral/lead
 	scan_state = "galena"
 	spreadChance = 20
@@ -111,7 +111,7 @@
 	item_state = "autunite"
 	points = 30
 	//material_flags = MATERIAL_NO_EFFECTS
-	custom_materials = list(/datum/material/uranium=500)
+	custom_materials = list(/datum/material/uranium=ORE_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 6
 	scan_state = "autunite"
@@ -132,7 +132,7 @@
 	item_state = "phoron"
 
 	points = 15
-	custom_materials = list(/datum/material/plasma=1650, /datum/material/sulfur=50, /datum/material/carbon=100, /datum/material/quartz=200)
+	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 5
 	scan_state = "phoron"
@@ -171,7 +171,7 @@
 	points = 1
 	scan_state = "pyrite"
 	material_flags = MATERIAL_NO_EFFECTS
-	custom_materials = list(/datum/material/sulfur=495,/datum/material/iron=495,/datum/material/gold=10)
+	custom_materials = list(/datum/material/sulfur=1000,/datum/material/iron=1000)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/stack/ore/sulfur/attackby(obj/item/weapon as obj, mob/user as mob, params)
@@ -211,7 +211,7 @@
 	icon_state = "rutile"
 	item_state = "rutile"
 	points = 50
-	custom_materials = list(/datum/material/titanium=900, /datum/material/iron=100)
+	custom_materials = list(/datum/material/titanium=ORE_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/mineral/titanium
 	mine_experience = 3
 	scan_state = "rutile"
@@ -233,7 +233,7 @@
 	name = "coal"
 	singular_name = "coal"
 
-	custom_materials = list(/datum/material/carbon=200)
+	custom_materials = list(/datum/material/carbon=ORE_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 1
 	scan_state = "graphite"
@@ -273,7 +273,7 @@
 	singular_name = "sand pile"
 	grind_results = list(/datum/reagent/quartz = 10)
 	points = 1
-	custom_materials = list(/datum/material/quartz = 500)
+	custom_materials = list(/datum/material/quartz = MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/glass
 	w_class = WEIGHT_CLASS_TINY
 	mine_experience = 0 //its sand
@@ -284,7 +284,6 @@
 	item_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
 	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/quartz = 5)
-	custom_materials = list(/datum/material/quartz = 250, /datum/material/silicon = 50, /datum/material/carbon = 100, /datum/material/sulfur = 10)
 
 /obj/item/stack/ore/glass/whitesands
 	name = "white sand pile"
@@ -292,7 +291,6 @@
 	item_state = "whitesands"
 	singular_name = "white sand pile"
 	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/quartz = 10)
-	custom_materials = list(/datum/material/quartz = 500)
 
 /obj/item/stack/ore/glass/rockplanet
 	name = "oxidized sand pile"
@@ -300,7 +298,6 @@
 	item_state = "rockplanet_sand"
 	singular_name = "iron sand pile"
 	grind_results = list(/datum/reagent/quartz = 10, /datum/reagent/iron = 2)
-	custom_materials = list(/datum/material/quartz = 500, /datum/material/quartz = 50)
 
 /obj/item/stack/ore/glass/wasteplanet
 	name = "oily dust"
@@ -308,7 +305,6 @@
 	item_state = "wasteplanet_sand"
 	singular_name = "rocky dust"
 	grind_results = list(/datum/reagent/quartz = 5, /datum/reagent/lithium = 2, /datum/reagent/uranium/radium = 1, /datum/reagent/chlorine = 1, /datum/reagent/aluminium = 1)//may be unsafe for human consumption
-	custom_materials = list(/datum/material/quartz = 250)
 
 /obj/item/stack/ore/glass/beach
 	name = "beige sand pile"
@@ -316,7 +312,6 @@
 	item_state = "beach_sand"
 	singular_name = "beige sand pile"
 	grind_results = list(/datum/reagent/quartz = 10)
-	custom_materials = list(/datum/material/quartz = 500)
 
 GLOBAL_LIST_INIT(sand_recipes, list(\
 		new /datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
