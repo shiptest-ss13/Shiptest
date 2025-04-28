@@ -57,6 +57,7 @@
 	path = /obj/item/clothing/under/shorts/dolphin
 
 /datum/gear/uniform/jorts
+	display_name = "jorts"
 	path = /obj/item/clothing/under/shorts/jorts
 
 //Pants
