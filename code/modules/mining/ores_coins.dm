@@ -171,7 +171,7 @@
 	points = 1
 	scan_state = "pyrite"
 	material_flags = MATERIAL_NO_EFFECTS
-	custom_materials = list(/datum/material/sulfur=1000,/datum/material/iron=1000)
+	custom_materials = list(/datum/material/sulfur=ORE_MATERIAL_AMOUNT,/datum/material/iron=ORE_MATERIAL_AMOUNT)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/stack/ore/sulfur/attackby(obj/item/weapon as obj, mob/user as mob, params)
