@@ -7,7 +7,6 @@
 	desc = "Fatigues worn by members of the Frontiersmen pirate fleet. Its poor-quality linen is very uncomfortable to move around in."
 	icon_state = "frontier"
 	item_state = "frontier"
-	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/frontiersmen/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/uniforms.dmi'
 	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'

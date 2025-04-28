@@ -4,7 +4,6 @@
 	gender = PLURAL
 	body_parts_covered = GROIN
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-	can_adjust = FALSE
 	icon = 'icons/obj/clothing/under/shorts_pants.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/shorts_pants.dmi'
 	greyscale_colors = list(list(16, 11), list(16, 10), list(16, 9))
