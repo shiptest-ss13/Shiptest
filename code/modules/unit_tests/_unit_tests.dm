@@ -105,6 +105,7 @@
 #include "resist.dm"
 #include "say.dm"
 #include "serving_tray.dm"
+#include "simple_animal_freeze.dm"
 #include "spawn_humans.dm"
 #include "species_unique_id.dm"
 #include "species_whitelists.dm"
