@@ -87,6 +87,8 @@
 	/// checks if we spawned /obj/effect/spawner/random/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
 	var/matbundle_spawned = FALSE
 
+	var/access_namespace = 0
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/old_name = name
 	var/full_name = "[source_template.prefix] [new_name]"
@@ -155,6 +157,7 @@
 #endif
 	SSovermap.controlled_ships += src
 	current_overmap.controlled_ships += src
+	access_namespace = SSaccess.new_namespace(name, creation_template?.faction)
 
 /datum/overmap/ship/controlled/Destroy()
 	//SHOULD be called first
