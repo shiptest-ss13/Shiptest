@@ -397,7 +397,8 @@
 		/mob/living/simple_animal/bot/medbot/derelict,
 		/mob/living/simple_animal/bot/medbot/rockplanet,
 		/mob/living/simple_animal/bot/mulebot,
-		/mob/living/simple_animal/bot/mulebot/paranormal
+		/mob/living/simple_animal/bot/mulebot/paranormal,
+		/mob/living/simple_animal/bot/vibebot
 		// DO NOT ADD NEW ENTRIES TO THIS LIST
 		// READ THE COMMENT ABOVE
 	)
