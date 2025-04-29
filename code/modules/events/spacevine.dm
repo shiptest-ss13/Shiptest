@@ -7,7 +7,7 @@
 
 /datum/round_event/spacevine
 	fakeable = TRUE
-	announceWhen = 1
+	announce_when = 1
 
 /datum/round_event/spacevine/announce(fake)
 	priority_announce("Unidentified plant based lifeform detected aboard the station, contact your local botanist.")

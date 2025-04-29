@@ -56,11 +56,11 @@
 	name = "banana split sundae"
 	desc = "A banana-loaded addition to the sundae."
 	icon = 'icons/obj/food/frozen_treats.dmi'
-	icon_state = "honkdae"
+	icon_state = "sundae" // Same sprite for now I hate that fucking clown
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/banana = 10, /datum/reagent/consumable/nutriment/vitamin = 4)
 	filling_color = "#FFFACD"
-	tastes = list("ice cream" = 1, "banana" = 1, "a bad joke" = 1)
+	tastes = list("ice cream" = 1, "banana" = 1)
 	foodtype = FRUIT | DAIRY | SUGAR
 
 /////////////
@@ -278,7 +278,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "cornuto"
-	desc = "A neapolitan vanilla and chocolate icecream cone. It menaces with a sprinkling of caramelized nuts."
+	desc = "A solarian vanilla and chocolate icecream cone. It menaces with a sprinkling of caramelized nuts."
 	tastes = list("chopped hazelnuts", "waffle")
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 1)
