@@ -1523,6 +1523,10 @@
 	build_path = /obj/machinery/suit_storage_unit
 	req_components = list(/obj/item/stock_parts/micro_laser = 4)
 
+//preset for the industrial suit storage, otherwise identical.
+/obj/item/circuitboard/machine/suit_storage_unit/industrial
+	build_path = /obj/machinery/suit_storage_unit/industrial
+
 /obj/item/circuitboard/machine/suit_storage_unit/examine(mob/user)
 	. = ..()
 	. += span_notice("You can change the resulting storage type by using a multitool.")

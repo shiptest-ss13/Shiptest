@@ -61,6 +61,7 @@
 	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon_state = "industrial"
 	base_icon_state = "industrial"
+	circuit = /obj/item/circuitboard/machine/suit_storage_unit/industrial
 
 /obj/machinery/suit_storage_unit/industrial/atmos_firesuit
 	suit_type = /obj/item/clothing/suit/fire/atmos
@@ -73,6 +74,7 @@
 	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon_state = "industrial"
 	base_icon_state = "industrial"
+	circuit = /obj/item/circuitboard/machine/suit_storage_unit/industrial
 
 /obj/machinery/suit_storage_unit/standard_unit
 	suit_type = /obj/item/clothing/suit/space/eva
@@ -216,15 +218,6 @@
 	if(storage_type)
 		storage = new storage_type(src)
 	update_appearance()
-
-/obj/machinery/suit_storage_unit/industrial/Initialize()
-	. = ..()
-	circuit.build_path = /obj/machinery/suit_storage_unit/industrial
-
-//I hate adding two different initialize procs for basically the same thing, but required without touching a lot of maps.
-/obj/machinery/suit_storage_unit/inherit/industrial/Initialize()
-	. = ..()
-	circuit.build_path = /obj/machinery/suit_storage_unit/industrial
 
 /obj/machinery/suit_storage_unit/examine(mob/user)
 	. = ..()
