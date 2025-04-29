@@ -93,7 +93,7 @@
 						span_notice("You dismantle \the [src].")
 					)
 					var/obj/item/wallframe/turret_control/frame = new /obj/item/wallframe/turret_control()
-					frame.forceMove(user.drop_location())
+					try_put_in_hand(frame, user)
 					playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 					qdel(src)
 			return
