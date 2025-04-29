@@ -123,121 +123,200 @@
 
 /datum/supply_pack/food/ingredients_basic/corn
 	name = "Corn Crate"
-	desc = "Crate containing one ear of corn."
-	cost = 15
+	desc = "Crate containing five ears of corn."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/corn,
+					/obj/item/reagent_containers/food/snacks/grown/corn,
+					/obj/item/reagent_containers/food/snacks/grown/corn,
+					/obj/item/reagent_containers/food/snacks/grown/corn,
+					/obj/item/reagent_containers/food/snacks/grown/corn,
 	)
 
 /datum/supply_pack/food/ingredients_basic/chili
 	name = "Chili Pepper Crate"
-	desc = "Crate containing one chili pepper."
-	cost = 15
+	desc = "Crate containing five chili peppers."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/chili,
+					/obj/item/reagent_containers/food/snacks/grown/chili,
+					/obj/item/reagent_containers/food/snacks/grown/chili,
+					/obj/item/reagent_containers/food/snacks/grown/chili,
+					/obj/item/reagent_containers/food/snacks/grown/chili,
 	)
 
 /datum/supply_pack/food/ingredients_basic/tomato
 	name = "Tomato Crate"
-	desc = "Crate containing one tomato."
-	cost = 15
+	desc = "Crate containing five tomatoes."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/tomato,
+					/obj/item/reagent_containers/food/snacks/grown/tomato,
+					/obj/item/reagent_containers/food/snacks/grown/tomato,
+					/obj/item/reagent_containers/food/snacks/grown/tomato,
+					/obj/item/reagent_containers/food/snacks/grown/tomato,
 	)
 
 /datum/supply_pack/food/ingredients_basic/potato
 	name = "Potato Crate"
-	desc = "Crate containing one potato."
-	cost = 15
+	desc = "Crate containing five potatoes."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/potato,
+					/obj/item/reagent_containers/food/snacks/grown/potato,
+					/obj/item/reagent_containers/food/snacks/grown/potato,
+					/obj/item/reagent_containers/food/snacks/grown/potato,
+					/obj/item/reagent_containers/food/snacks/grown/potato,
 	)
 
 /datum/supply_pack/food/ingredients_basic/carrot
 	name = "Carrot Crate"
-	desc = "Crate containing one carrot."
-	cost = 15
+	desc = "Crate containing five carrots."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/carrot,
+					/obj/item/reagent_containers/food/snacks/grown/carrot,
+					/obj/item/reagent_containers/food/snacks/grown/carrot,
+					/obj/item/reagent_containers/food/snacks/grown/carrot,
+					/obj/item/reagent_containers/food/snacks/grown/carrot,
 	)
 
 /datum/supply_pack/food/ingredients_basic/chanterelle
 	name = "Chanterelle Crate"
-	desc = "Crate containing one chanterelle mushroom."
-	cost = 15
+	desc = "Crate containing five chanterelle mushrooms."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
+					/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
+					/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
+					/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
+					/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle,
 	)
 
 /datum/supply_pack/food/ingredients_basic/onion
 	name = "Onion Crate"
-	desc = "Crate containing one onion."
-	cost = 15
+	desc = "Crate containing five onions."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/onion,
+					/obj/item/reagent_containers/food/snacks/grown/onion,
+					/obj/item/reagent_containers/food/snacks/grown/onion,
+					/obj/item/reagent_containers/food/snacks/grown/onion,
+					/obj/item/reagent_containers/food/snacks/grown/onion,
 	)
 
 /datum/supply_pack/food/ingredients_basic/pumpkin
 	name = "Pumpkin Crate"
-	desc = "Crate containing one chili pepper."
-	cost = 15
+	desc = "Crate containing five pumpkins."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/pumpkin,
+					/obj/item/reagent_containers/food/snacks/grown/pumpkin,
+					/obj/item/reagent_containers/food/snacks/grown/pumpkin,
+					/obj/item/reagent_containers/food/snacks/grown/pumpkin,
+					/obj/item/reagent_containers/food/snacks/grown/pumpkin,
 	)
 
 /datum/supply_pack/food/ingredients_basic/peas
 	name = "Peapod Crate"
-	desc = "Crate containing one peapod."
-	cost = 15
+	desc = "Crate containing five peapods."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/peapod,
+					/obj/item/reagent_containers/food/snacks/grown/peapod,
+					/obj/item/reagent_containers/food/snacks/grown/peapod,
+					/obj/item/reagent_containers/food/snacks/grown/peapod,
+					/obj/item/reagent_containers/food/snacks/grown/peapod,
 	)
 
 /datum/supply_pack/food/ingredients_basic/sweet_potato
 	name = "Sweet Potato Crate"
-	desc = "Crate containing one sweet potato."
-	cost = 15
+	desc = "Crate containing five sweet potatoes."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/sweet_potato,
+					/obj/item/reagent_containers/food/snacks/grown/sweet_potato,
+					/obj/item/reagent_containers/food/snacks/grown/sweet_potato,
+					/obj/item/reagent_containers/food/snacks/grown/sweet_potato,
+					/obj/item/reagent_containers/food/snacks/grown/sweet_potato,
 	)
 
 /datum/supply_pack/food/ingredients_basic/apple
 	name = "Apple Crate"
-	desc = "Crate containing one apple."
-	cost = 15
+	desc = "Crate containing five apples."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/apple,
+					/obj/item/reagent_containers/food/snacks/grown/apple,
+					/obj/item/reagent_containers/food/snacks/grown/apple,
+					/obj/item/reagent_containers/food/snacks/grown/apple,
+					/obj/item/reagent_containers/food/snacks/grown/apple,
 	)
 
 /datum/supply_pack/food/ingredients_basic/lime
 	name = "Lime Crate"
-	desc = "Crate containing one lime."
-	cost = 15
+	desc = "Crate containing five limes."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/lime,
 	)
 
 /datum/supply_pack/food/ingredients_basic/orange
 	name = "Orange Crate"
-	desc = "Crate containing one orange."
-	cost = 15
+	desc = "Crate containing five oranges."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
 	)
 
 /datum/supply_pack/food/ingredients_basic/lemon
 	name = "Lemon Crate"
-	desc = "Crate containing one lemon."
-	cost = 15
+	desc = "Crate containing five lemons."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/citrus/lemon,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon,
+					/obj/item/reagent_containers/food/snacks/grown/citrus/lemon,
 	)
 
 /datum/supply_pack/food/ingredients_basic/watermelon
 	name = "Watermelon Crate"
-	desc = "Crate containing one watermelon."
-	cost = 15
+	desc = "Crate containing five watermelons."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/watermelon,
+					/obj/item/reagent_containers/food/snacks/grown/watermelon,
+					/obj/item/reagent_containers/food/snacks/grown/watermelon,
+					/obj/item/reagent_containers/food/snacks/grown/watermelon,
+					/obj/item/reagent_containers/food/snacks/grown/watermelon,
 	)
 
 /datum/supply_pack/food/ingredients_basic/berries
 	name = "Berries Crate"
-	desc = "Crate containing one bunch of berries."
-	cost = 15
+	desc = "Crate containing five bunches of berries."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/berries,
+					/obj/item/reagent_containers/food/snacks/grown/berries,
+					/obj/item/reagent_containers/food/snacks/grown/berries,
+					/obj/item/reagent_containers/food/snacks/grown/berries,
+					/obj/item/reagent_containers/food/snacks/grown/berries,
 	)
 
 /datum/supply_pack/food/ingredients_basic/banana
 	name = "Banana Crate"
-	desc = "Crate containing one apple."
-	cost = 15
+	desc = "Crate containing five bananas."
+	cost = 75
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/banana,
+					/obj/item/reagent_containers/food/snacks/grown/banana,
+					/obj/item/reagent_containers/food/snacks/grown/banana,
+					/obj/item/reagent_containers/food/snacks/grown/banana,
+					/obj/item/reagent_containers/food/snacks/grown/banana,
+	)
+
+/datum/supply_pack/food/ingredients_basic/grapes
+	name = "Grapes Crate"
+	desc = "Crate containing five bunches of grapes."
+	cost = 75
+	contains = list(/obj/item/reagent/containers/food/snacks/grown/grapes,
+					/obj/item/reagent/containers/food/snacks/grown/grapes,
+					/obj/item/reagent/containers/food/snacks/grown/grapes,
+					/obj/item/reagent/containers/food/snacks/grown/grapes,
+					/obj/item/reagent/containers/food/snacks/grown/grapes,
 	)
 
 /datum/supply_pack/food/ingredients_randomized/grains
