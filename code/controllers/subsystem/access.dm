@@ -6,6 +6,18 @@ SUBSYSTEM_DEF(access)
 	var/list/access_namespaces = list()
 
 /datum/controller/subsystem/access/proc/new_namespace(name, datum/faction/namespace_faction)
-	var/index = access_namespaces + 1
-	access_namespaces[index] = list(name, namespace_faction)
-	return index
+	access_namespaces.len++
+	access_namespaces[access_namespaces.len] = list(name, namespace_faction)
+	return access_namespaces.len
+
+/obj/proc/get_access_namespace()
+	return new_access[1]
+
+/obj/proc/get_access_flags()
+	return new_access[2]
+
+/obj/proc/set_access_namespace(namespace_id)
+	new_access[1] = namespace_id
+
+/obj/proc/set_access_flags(access_flag)
+	new_access[2] = access_flag

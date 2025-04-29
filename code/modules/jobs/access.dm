@@ -19,6 +19,13 @@
 	else if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		//if they are holding or wearing a card that has access, that works
+
+		// HIJACKING IN PROGRESS //
+		if(new_check_access(H.get_active_held_item()))
+			return TRUE
+		else
+			return FALSE
+		// HIJACKING IN PROGRESS //
 		if(check_access(H.get_active_held_item()) || src.check_access(H.wear_id))
 			return TRUE
 	else if(ismonkey(M) || isalienadult(M))
@@ -76,6 +83,21 @@
 
 	if (!(ship?.unique_ship_access))
 		return TRUE
+
+/obj/proc/new_check_access(obj/item/item)
+	var/item_access = item.new_access
+	var/our_access = src.new_access
+	// if(src.get_access_namespace() == null && (item_access[2] == our_access[2])) // If we don't have a namespace and the flags match, accept
+		// return TRUE
+	if(item.get_access_namespace() == 0 || src.get_access_namespace() == 0) // If the item has all access (0) or we don't require access (also 0), accept
+		return TRUE
+	if(item.get_access_namespace() != src.get_access_namespace()) // If namespaces don't match, reject
+		return FALSE
+	if(src.get_access_flags() == 0) // If our access flag is 0, we don't need a flag and can accept
+		return TRUE
+	if(item.get_access_flags() & src.get_access_flags() != src.get_access_flags() ) // If flags don't match, reject
+		return FALSE
+	return TRUE // If everything matches, accept
 
 // Check if an item has access to this object
 /obj/proc/check_access(obj/item/item)

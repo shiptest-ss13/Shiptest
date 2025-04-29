@@ -34,6 +34,8 @@
 	/// Custom fire overlay icon
 	var/custom_fire_overlay
 
+	var/list/new_access = list(null, 0)
+
 	var/renamedByPlayer = FALSE //set when a player uses a pen on a renamable object
 
 	var/drag_slowdown // Amont of multiplicative slowdown applied if pulled. >1 makes you slower, <1 makes you faster.

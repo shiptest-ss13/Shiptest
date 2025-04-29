@@ -11,7 +11,7 @@
 	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
 	var/list/minimal_access = list()		//Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
 	var/list/access = list()				//Useful for servers which either have fewer players, so each person needs to fill more than one role, or servers which like to give more access, so players can't hide forever in their super secure departments (I'm looking at you, chemistry!)
-	var/list/access_flags = 0
+	var/access_flags = 0
 
 	//Bitflags for the job
 	var/auto_deadmin_role_flags = NONE
@@ -121,7 +121,7 @@
 		var/obj/item/card/id/idcard = living_mob.get_idcard(TRUE)
 		if (idcard)
 			idcard.add_ship_access(ship)
-			idcard.new_add_access(ship.access_namespace, access_flags)
+			idcard.set_access_namespace(ship.access_namespace)
 
 	return living_mob
 
@@ -286,6 +286,7 @@
 	var/obj/item/card/id/C = H.get_idcard(TRUE)
 	if(istype(C))
 		C.access = J.get_access()
+		C.set_access_flags(J.access_flags)
 		SEND_SIGNAL(C, COSMIG_ACCESS_UPDATED)
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
