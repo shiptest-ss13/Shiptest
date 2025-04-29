@@ -108,7 +108,7 @@
 
 		if(istype(W, /obj/item/pen))
 			var/new_name = stripped_input(user, "Enter a new name for the button.", "Rename Button", name, MAX_NAME_LEN)
-			if(!new_name || !panel_open || !in_range(src, user) && loc != user) //Mostly copy pasted from airlocks.
+			if(!new_name || !panel_open || !in_range(src, user)) //Mostly copy pasted from airlocks.
 				return
 			else
 				name = new_name
