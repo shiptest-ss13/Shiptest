@@ -16,15 +16,10 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	if(turf_type)
 		ChangeTurf(turf_type, baseturf_type, flags)
 
+//This proc is actually evil. Needs a rewrite.
 /turf/proc/copyTurf(turf/T, copy_air, flags)
 	if(T.type != type)
-		var/obj/O
-		if(underlays.len)	//we have underlays, which implies some sort of transparency, so we want to a snapshot of the previous turf as an underlay
-			O = new()
-			O.underlays.Add(T)
 		T.ChangeTurf(type, null, flags)
-		if(underlays.len)
-			T.underlays = O.underlays
 	if(T.icon_state != icon_state)
 		T.icon_state = icon_state
 	if(T.icon != icon)
@@ -34,14 +29,26 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		T.update_atom_colour()
 	if(T.dir != dir)
 		T.setDir(dir)
+	if(T.alpha != alpha)
+		T.alpha = alpha
+	if(custom_materials)
+		//If it's not a glass floor, it's a material floor with transparency (glass floors are initialized in ChangeTurf()).
+		if(HAS_TRAIT(src, TURF_Z_TRANSPARENT_TRAIT))
+			T.AddElement(/datum/element/turf_z_transparency, TRUE)
+		T.custom_materials = custom_materials
 	return T
 
-/turf/open/copyTurf(turf/T, copy_air = FALSE)
+/turf/open/copyTurf(turf/open/T, copy_air = FALSE)
 	. = ..()
 	if(isopenturf(T))
 		if(copy_air)
 			var/turf/open/openTurf = T
 			openTurf.air.copy_from(air)
+		if(custom_materials) //For custom material floor overrides on footsteps.
+			T.footstep = footstep
+			T.barefootstep = barefootstep
+			T.clawfootstep = clawfootstep
+			T.heavyfootstep = heavyfootstep
 
 //wrapper for ChangeTurf()s that you want to prevent/affect without overriding ChangeTurf() itself
 /turf/proc/TerraformTurf(path, new_baseturf, flags)
@@ -126,6 +133,10 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	W.blueprint_data = old_bp
 
 	W.virtual_z = old_virtual_z
+
+	//We need baseturfs and virtual_z to be set before sending this signal.
+	if(!(flags & CHANGETURF_DEFER_CHANGE)) //Travel transparency initialization is handled in onShuttleMove().
+		SEND_SIGNAL(W, COMSIG_TURF_INITIALIZE_TRANSPARENCY)
 
 	lighting_corner_NE = old_lighting_corner_NE
 	lighting_corner_SE = old_lighting_corner_SE
