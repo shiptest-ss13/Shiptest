@@ -386,7 +386,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 3
 	ore_list = list(
 		/obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/diamonds = 10,
+		/obj/item/stack/ore/diamond = 10,
 		)
 
 //Sand planets - more or less the same as lavaland but with the sand planet variants
