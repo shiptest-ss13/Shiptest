@@ -382,11 +382,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/jungle/classthree/rare
-	mining_Charges = 14
+	mining_charges = 14
 	vein_class = 3
 	ore_list = list(
-		/obj/item/ore/gold = 10,
-		/obj/item/ore/diamonds = 10,
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamonds = 10,
 		)
 
 //Sand planets - more or less the same as lavaland but with the sand planet variants
