@@ -45,6 +45,12 @@
 	icon_state = "jorts"
 
 /obj/item/clothing/under/shorts/dolphin
-	desc = "dolphin shorts"
+	name = "dolphin shorts"
 	desc = "Short shorts made for blistering hot days and athletic use."
 	icon_state = "dolphin"
+
+/obj/item/clothing/under/shorts/explorer
+	name = "explorer shorts"
+	desc = "Bright khaki short shorts for higher humidity, hot planets."
+	icon_state = "explorers"
+
