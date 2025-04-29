@@ -151,6 +151,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/list/access = list()
 	var/list/ship_access = list()
+	var/list/new_access = list()
 	var/registered_name = null // The name registered_name on the card
 	var/assignment = null
 	var/access_txt // mapping aid
@@ -271,6 +272,9 @@
 /obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship)
 	if (ship)
 		return ship in ship_access
+
+/obj/item/card/id/proc/new_add_access(namespace_id, access_flag)
+	new_access = list(namespace_id, access_flag)
 
 /*
 Usage:

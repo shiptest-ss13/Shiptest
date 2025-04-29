@@ -1,7 +1,7 @@
 SUBSYSTEM_DEF(access)
 	name = "Access"
 	flags = SS_NO_INIT | SS_NO_FIRE
-	init_order = INIT_ORDER_ACHIEVEMENTS
+	init_order = INIT_ORDER_ACCESS
 
 	var/list/access_namespaces = list()
 
