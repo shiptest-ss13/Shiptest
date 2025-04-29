@@ -200,7 +200,7 @@
 	item_state = "diamondore"
 
 	points = 50
-	custom_materials = list(/datum/material/diamond=ORE_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/diamond=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 10
 	scan_state = "diamondore"
