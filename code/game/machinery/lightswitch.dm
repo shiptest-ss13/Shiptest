@@ -86,7 +86,7 @@
 				span_notice("You [action_description] [src] from its socket.")
 			)
 			var/obj/item/wallframe/light_switch/frame = new /obj/item/wallframe/light_switch()
-			frame.forceMove(user.drop_location())
+			try_put_in_hand(frame, user)
 			I.play_tool_sound(src)
 			qdel(src)
 		return
