@@ -3,7 +3,7 @@
 // SUIT STORAGE UNIT /////////////////
 /obj/machinery/suit_storage_unit
 	name = "suit storage unit"
-	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
+	desc = "A commercial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon = 'icons/obj/machines/suit_storage.dmi'
 	icon_state = "ssu_classic"
 	base_icon_state = "ssu_classic"
@@ -58,6 +58,7 @@
 
 /obj/machinery/suit_storage_unit/industrial
 	name = "industrial suit storage unit"
+	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon_state = "industrial"
 	base_icon_state = "industrial"
 
@@ -69,6 +70,7 @@
 
 /obj/machinery/suit_storage_unit/inherit/industrial //i know its dirty but, eh you fix it, i am mapping rn
 	name = "industrial suit storage unit"
+	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon_state = "industrial"
 	base_icon_state = "industrial"
 
@@ -214,6 +216,15 @@
 	if(storage_type)
 		storage = new storage_type(src)
 	update_appearance()
+
+/obj/machinery/suit_storage_unit/industrial/Initialize()
+	. = ..()
+	circuit.build_path = /obj/machinery/suit_storage_unit/industrial
+
+//I hate adding two different initialize procs for basically the same thing, but required without touching a lot of maps.
+/obj/machinery/suit_storage_unit/inherit/industrial/Initialize()
+	. = ..()
+	circuit.build_path = /obj/machinery/suit_storage_unit/industrial
 
 /obj/machinery/suit_storage_unit/examine(mob/user)
 	. = ..()
