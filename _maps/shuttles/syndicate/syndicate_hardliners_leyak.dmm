@@ -302,6 +302,9 @@
 /obj/item/clothing/head/helmet/space/syndicate/black/engie,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
 "cx" = (
@@ -358,6 +361,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
+"df" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "dl" = (
 /obj/structure/falsewall/titanium,
 /turf/open/floor/plating,
@@ -421,9 +433,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
 /obj/item/storage/toolbox/syndicate,
 /obj/item/radio/headset/alt,
 /obj/item/clothing/under/syndicate/gec{
@@ -445,6 +454,9 @@
 /obj/item/storage/belt/utility,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/glasses/welding,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines)
 "dS" = (
@@ -569,6 +581,9 @@
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "leyakengine"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
@@ -4460,7 +4475,7 @@ Mp
 Mp
 Mp
 Mp
-QX
+df
 gs
 OI
 Iy
