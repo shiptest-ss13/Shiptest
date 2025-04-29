@@ -79,8 +79,8 @@
 			if(!multitool_check_buffer(user, I))
 				return
 
-			var/obj/item/multitool/M = I
-			M.buffer = src
+			var/obj/item/multitool/tool_to_use = I
+			tool_to_use.buffer = src
 			to_chat(user, span_notice("You store [src] in the buffer."))
 			return
 
