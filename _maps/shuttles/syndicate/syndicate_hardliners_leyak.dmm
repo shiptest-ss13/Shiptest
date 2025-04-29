@@ -268,6 +268,15 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/security)
+"ce" = (
+/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
+	dir = 4
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "cj" = (
 /obj/effect/turf_decal/siding{
 	color = "#730622";
@@ -361,15 +370,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/science/workshop)
-"df" = (
-/obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
-	dir = 4
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "dl" = (
 /obj/structure/falsewall/titanium,
 /turf/open/floor/plating,
@@ -3827,15 +3827,15 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
-	dir = 1;
-	piping_layer = 4
-	},
 /obj/structure/cable{
 	icon_state = "6-8"
 	},
 /obj/structure/cable{
 	icon_state = "1-6"
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
+	dir = 1;
+	piping_layer = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
@@ -3920,13 +3920,13 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
-/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
-	piping_layer = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped/inverse{
+	piping_layer = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines)
 "Uu" = (
@@ -4050,7 +4050,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "WM" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
 	dir = 1;
 	piping_layer = 4
 	},
@@ -4475,7 +4475,7 @@ Mp
 Mp
 Mp
 Mp
-df
+ce
 gs
 OI
 Iy
