@@ -182,7 +182,7 @@
 /obj/item/reagent_containers/condiment/tiris_milk
 	name = "Dimidiso's Tiris"
 	desc = "Prepackaged Tiris milk made from pastures within CLIP space. The flavor is usually too strong for humans to drink straight."
-	icon_state = ""
+	icon_state = "tiris-milk"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
@@ -345,3 +345,15 @@
 	desc = "Oil made from pressed olives. Great for cooking."
 	icon_state = "oliveoil"
 	list_reagents = list(/datum/reagent/consumable/cornoil = 50)
+
+/obj/item/reagent_containers/condiment/tiris_sele
+	name = "tiris sele"
+	desc = "A thick gravy made with the blood of a Tiris. Flour is used to soak up the earthiness, leaving an intensely umami covering behind."
+	icon_state = "tiris_sauce"
+	list_reagents = list(/datum/reagent/consumable/tiris_sele = 50)
+
+/obj/item/reagent_containers/condiment/tiris_sale
+	name = "tiris sele"
+	desc = "A reduction made from the blood of a Tiris and a mixture of savory herbs. The flavor is very intense, and best used to augment a dish."
+	icon_state = "tiris_sauce"
+	list_reagents = list(/datum/reagent/consumable/tiris_sale = 50)

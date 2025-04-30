@@ -15,7 +15,7 @@
 /obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel
 	name = "tiris cheese"
 	desc = "A bold cheese with a salty header. Tradition says to let the cheese age and form a crust before consuming it, but even without being aged, it has a strong, distinctive flavor."
-	icon_state = ""
+	icon_state = "tiris-wheel"
 	slice_path = /obj/item/reagent_containers/food/snacks/tiris_cheese_slice
 	slices_num = 5
 	list_reagents = list(/datum/reagent/consumable/nutriment = 15, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -35,7 +35,7 @@
 /obj/item/reagent_containers/food/snacks/tiris_cheese_slice
 	name = "tiris cheese wedge"
 	desc = "A wedge of cheese, originating from a wheel. You wonder where the original wheel is."
-	icon_state = ""
+	icon_state = "tiris-wedge"
 	filling_color = "#FFD700"
 	dried_type = /obj/item/reagent_containers/food/snacks/lifosa/homemade
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -119,7 +119,7 @@
 /obj/item/reagent_containers/food/snacks/miras_potato
 	name = "Miras Loaded Potato"
 	desc = "A Lanchester classic, Miras is baked over a potato, and then topped with Luna-Town cheese and sour cream."
-	icon_state = ""
+	icon_state = "miras-potato"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
@@ -231,7 +231,7 @@
 /obj/item/reagent_containers/food/snacks/mirasegg
 	name = "miras eggs"
 	desc = "The eggs of a Miras Lizard are typically extracted from their nest. The individual eggs are small and unfertilized, unless the Miras has mated recently."
-	icon_state = ""
+	icon_state = "miras-egg"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2)
 	dried_type = /obj/item/reagent_containers/food/snacks/reti/homemade
 	filling_color = "#bae1ba"
@@ -712,10 +712,10 @@
 	tastes = list("tortilla chips" = 1, "salt" = 1)
 	foodtype = JUNKFOOD | FRIED
 
-/obj/item/reagent_containers/food/snacks/stuffed_fara
-	name = "Stuffed Fara"
-	desc = "Tiris cheese is removed from its crust and added to the fruits of a Fara-Li plant before being baked"
-	icon_state = ""
+/obj/item/reagent_containers/food/snacks/stuffed_refa
+	name = "Stuffed Refa"
+	desc = "Tiris cheese is removed from its crust and added to the fruits of a Refa-Li plant before being baked"
+	icon_state = "stuff-refa"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	filling_color = "#ECA735"
@@ -725,7 +725,7 @@
 /obj/item/reagent_containers/food/snacks/tiris_fondue
 	name = "Fondue Tiris-Dotu"
 	desc = "Fusion cuisine originating from travelling Solarians. This fondue is made of Tiris Cheese, and filled with small cubes of Dotu-Fime fruit. The flavor profile is reputed to be incredibly rich, especially with crackers."
-	icon_state = ""
+	icon_state = "tiris-fondue"
 	bitesize = 8
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/dotu_juice = 2)
 	filling_color = "#ECA735"
@@ -735,17 +735,17 @@
 /obj/item/reagent_containers/food/snacks/remes_roe
 	name = "remes roe"
 	desc = "The roe of a Remes is a topping that rose to prominence due to its serving during talks with Zohilese diplomats. The slight <i>pop</i> of the eggs was hailed as incredibly satisfying."
-	icon_state = ""
+	icon_state = "remes-roe"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	filling_color = "#ECA735"
 	tastes = list("condensed salt" = 1, "satisfying pop" = 2)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/refa_remes
-	name = "refa-reti"
-	desc = "The flesh of a refa-li fruit, once all the seeds have been removed, is quite mellow. Adding Remes roe into the flesh creates an experience filled with salty pops."
-	icon_state = ""
+/obj/item/reagent_containers/food/snacks/fara_reti
+	name = "fara-reti"
+	desc = "The flesh of a fara-li fruit, once all the seeds have been removed, is quite mellow. Adding Remes roe into the flesh creates an experience filled with salty pops."
+	icon_state = "stuffed-refa"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
 	filling_color = "#ECA735"
 	tastes = list("condensed salt" = 1, "satisfying pop" = 1, "mellow fruitflesh" = 3)
@@ -753,8 +753,8 @@
 
 /obj/item/reagent_containers/food/snacks/roe_tiris
 	name = "reti-tiris"
-	desc = "Remes roe and Tiris blood mixed together into a thick drink. Acquired taste is the nicest that can be said of it."
-	icon_state = ""
+	desc = "Remes roe and Tiris plasma mixed together into a thick drink. Acquired taste is the nicest that can be said of it."
+	icon_state = "sludge"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
 	filling_color = "#ECA735"
 	tastes = list("blood and salt" = 3, "umami" = 1, "subdued pops" = 1)

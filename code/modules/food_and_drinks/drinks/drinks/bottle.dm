@@ -467,28 +467,28 @@
 /obj/item/reagent_containers/food/drinks/bottle/dotusira
 	name = "Rakire's Dotusira"
 	desc = "A bottle of Dotusira liquor, decorated in tiny fruits and berries. A small label on the bottle declares it a product of the Southern Teceti Combine."
-	icon_state = ""
+	icon_state = "dotusira"
 	list_reagents = list(/datum/reagent/consumable/ethanol/dotusira = 100)
 	isGlass = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/faraseta
 	name = "Faraseta Lirili!"
 	desc = "A tall, slim bottle of Faraseta cider. Decorative flames run the base of the bottle. A small label declares it the product of the Northern Teceti Coalition."
-	icon_state = ""
+	icon_state = "faraseta"
 	list_reagents = list(/datum/reagent/consumable/ethanol/faraseta = 100)
 	isGlass = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/sosomira
 	name = "Yikiki Sososi-Mira"
 	desc = "A bottle of Sososi-Mira made by Yikiki's Brewery. A particularly small Vox is drawn to make sure you know that there is absolutely no Miras in the bottle (potentially because they ate it)."
-	icon_state = ""
+	icon_state = "sososi-mira"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sosomira = 100)
 	isGlass = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/sososeta
 	name = "Meskili Clear Sososi-Seta"
 	desc = "A bottle of Sososi-Seta sourced from responsibly farmed sosoli plants, heritage dote berries, and enough time to for Solarians to consider it vintage."
-	icon_state = ""
+	icon_state = "sososi-seta"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sososeta = 100)
 	isGlass = TRUE
 

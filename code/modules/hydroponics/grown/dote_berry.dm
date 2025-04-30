@@ -22,11 +22,12 @@
 	seed = null
 	name = "dote berries"
 	desc = "A small purple berry native to Teceti. It takes root in arid locations, and has a tendency to out-compete local species due to its method of propagation."
-	icon_state = ""
+	icon_state = "dote"
 	gender = PLURAL
 	filling_color = "#FF00FF"
 	bitesize_mod = 2
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/dote_juice = 0)
+	dried_type = /obj/item/reagent_containers/food/snacks/dote
 	tastes = list("berry" = 1)
 	distill_reagent = null

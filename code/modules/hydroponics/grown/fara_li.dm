@@ -24,7 +24,7 @@
 	seed = null
 	name = "fara-li"
 	desc = "A neutral-hot fruit grown in orchards on Teceti, and tecetiformed worlds. "
-	icon_state = ""
+	icon_state = "fara-li"
 	filling_color = "#FF0000"
 	bitesize_mod = 2
 	foodtype = FRUIT

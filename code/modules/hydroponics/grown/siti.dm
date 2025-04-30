@@ -22,7 +22,7 @@
 	seed = null
 	name = "siti leaf"
 	desc = "The leaves of a Siti plant have a strong structure, giving them an extremely pleasant (if somewhat lacking in flavor) crunch."
-	icon_state = ""
+	icon_state = "siti"
 	gender = PLURAL
 	filling_color = "#FF00FF"
 	bitesize_mod = 2

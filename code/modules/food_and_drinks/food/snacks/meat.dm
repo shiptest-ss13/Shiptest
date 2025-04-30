@@ -305,7 +305,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/miras
 	name = "miras"
-	icon_state = ""
+	icon_state = "miras"
 	desc = "A cut of meat from the Miras Lizard. When alone, it tends to be a sickly-sweet experience, requiring proper preparation to truly shine."
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/miras
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/miras
@@ -314,7 +314,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/tiris
 	name = "tiris meat"
-	icon_state = ""
+	icon_state = "tiris"
 	desc = "A rough meat with rich deposits of fat. It is typically processed, spiced, and preserved."
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/tiris
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/tiris
@@ -323,7 +323,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/remes
 	name = "remes meat"
-	icon_state = ""
+	icon_state = "remes"
 	desc = "The meat of a properly prepared Remes tends to melt away as it's consumed, leaving behind the flavors that it has soaked in."
 	cooked_type = null
 	slice_path = null
@@ -332,7 +332,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/dofitis
 	name = "dofitis meat"
-	icon_state = ""
+	icon_state = "dofi"
 	desc = "A rich cut of meat with a sublime marble."
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/dofitis
 	slice_path = null
@@ -420,21 +420,21 @@
 /obj/item/reagent_containers/food/snacks/meat/steak/miras
 	name = "miras steak"
 	desc = "A cooked slice of Miras. A sweet meat with gamey overtones."
-	icon_state = ""
+	icon_state = "miras-steak"
 	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
 	foodtype = MEAT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/meat/steak/tiris
 	name = "tiris steak"
 	desc = "A cooked slice of tiris meat. Rough and fatty."
-	icon_state = ""
+	icon_state = "tiris-celima"
 	tastes = list("fatty meat")
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/steak/dofitis
 	name = "dofitis steak"
 	desc = "A cooked slab of dofitis meat. A rich, hearty experience."
-	icon_state = ""
+	icon_state = "dofi-steak"
 	tastes = list("hearty meat" = 1, "buttery fat" = 1)
 	foodtype = MEAT
 

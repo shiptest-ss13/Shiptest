@@ -272,3 +272,24 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/peasoup
 	subcategory = CAT_SOUP
+
+/datum/crafting_recipe/food/miris_dola
+	name = "miras-dola"
+	reqs = list(
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/miras = 1,
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/miras_dola
+	subcategory = CAT_SOUP
+
+/datum/crafting_recipe/food/dotiri_la
+	name = "dotiri-la"
+	reqs = list(
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/food/snacks/grown/dote_berries = 1,
+		/obj/item/reagent_containers/food/snacks/grown/dotu_fime = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/tiris = 1,
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/miras_dola
+	subcategory = CAT_SOUP

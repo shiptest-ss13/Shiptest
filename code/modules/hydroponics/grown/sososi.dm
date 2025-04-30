@@ -22,7 +22,7 @@
 	seed = null
 	name = "sososi leaf"
 	desc = "A thick leaf from a Tecetian succulent. It contains a gel-like concentration in its leaves, which while alive stored water and sugars."
-	icon_state = ""
+	icon_state = "sososi"
 	gender = PLURAL
 	filling_color = "#FF00FF"
 	bitesize_mod = 2

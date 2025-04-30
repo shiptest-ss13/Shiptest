@@ -288,7 +288,7 @@
 	name = "miras parfait"
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/food/frozen_treats.dmi'
-	icon_state = ""
+	icon_state = "miras-parfait"
 	desc = "Miras eggs can be whisked together with milk cream and fruit syrup, making a delightfully flavorful tecetian dessert."
 	tastes = list("sweet berries", "a hint of egg", "heavy cream")
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/eggyolk = 1, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/dote_juice = 4, /datum/reagent/consumable/sugar = 2)

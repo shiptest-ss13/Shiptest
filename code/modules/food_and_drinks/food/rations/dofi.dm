@@ -54,7 +54,7 @@
 	foodtype = MEAT | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/condiment/tiris_sele
-	name = "tiris-sele "
+	name = "tiris-sele"
 	desc = "An incredibly rich sauce made with the blood of a Tiris"
 	filling_color = "#c3bca0"
 	list_reagents = list(/datum/reagent/consumable/tiris_sele = 8)

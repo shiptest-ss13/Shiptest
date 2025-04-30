@@ -23,7 +23,7 @@
 	seed = null
 	name = "refa-li"
 	desc = "the fruit of a small flowering vine common within Tecetian caves. As a defense mechanism, the fruit evolved a pungent sort of heat."
-	icon_state = ""
+	icon_state = "refa-li"
 	filling_color = "#FF0000"
 	bitesize_mod = 2
 	foodtype = FRUIT
