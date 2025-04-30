@@ -170,9 +170,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
@@ -185,35 +183,40 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "q" = (
-/obj/machinery/telecomms/relay/preset/inteq,
 /obj/effect/turf_decal/box,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "r" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/heavy,
-/obj/machinery/atmospherics/components/binary/valve/layer4{
-	dir = 4
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 4;
+	name = "Waste to Dock"
 	},
-/obj/machinery/atmospherics/components/binary/valve/layer2{
-	dir = 4
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 8;
+	name = "Distro to Shuttle"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
-	},
-/obj/docking_port/mobile{
-	dir = 8;
-	name = "Thunder Interceptor";
-	preferred_direction = 8;
-	port_direction = 2
 	},
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
 	id = "thunder_cargo"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "Thunder Interceptor";
+	preferred_direction = 8;
+	port_direction = 2
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "s" = (
@@ -343,6 +346,10 @@
 /obj/effect/turf_decal/box,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light/directional/north,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/bridge)
 "B" = (
@@ -353,6 +360,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
@@ -410,16 +418,9 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow,
-/obj/item/storage/box/flares{
-	pixel_y = -4;
-	pixel_x = -6
+/obj/item/modular_computer/laptop/preset/civilian{
+	pixel_y = -5
 	},
-/obj/item/tank/internals/emergency_oxygen/engi{
-	pixel_x = 8;
-	pixel_y = -6
-	},
-/obj/item/pickaxe/emergency,
-/obj/item/modular_computer/laptop/preset/civilian,
 /obj/item/gps,
 /obj/item/oxygen_candle{
 	pixel_x = -10;
@@ -427,6 +428,10 @@
 	},
 /obj/item/oxygen_candle{
 	pixel_x = -10
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 8;
+	pixel_y = -2
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -443,6 +448,7 @@
 	name = "Port Nacelle";
 	req_ship_access = 0
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "H" = (
@@ -454,9 +460,6 @@
 	pixel_x = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -476,6 +479,10 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/item/wrench,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "J" = (
@@ -512,6 +519,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
@@ -624,17 +634,16 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "Y" = (
-/obj/machinery/power/apc/auto_name/directional/north{
-	req_ship_access = 0
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/box,
+/obj/machinery/telecomms/relay/preset/inteq,
+/obj/item/multitool{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 
 (1,1,1) = {"
