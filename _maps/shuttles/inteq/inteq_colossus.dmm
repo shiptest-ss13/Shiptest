@@ -3376,19 +3376,19 @@
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -8
 	},
-/obj/item/ammo_box/magazine/m12g_bulldog/empty{
+/obj/item/ammo_box/magazine/m12g_bulldog{
 	pixel_x = 6;
 	pixel_y = 2
 	},
-/obj/item/ammo_box/magazine/m12g_bulldog/empty{
+/obj/item/ammo_box/magazine/m12g_bulldog{
 	pixel_x = 6;
 	pixel_y = 2
 	},
-/obj/item/ammo_box/magazine/m12g_bulldog/empty{
+/obj/item/ammo_box/magazine/m12g_bulldog/slug{
 	pixel_x = 6;
 	pixel_y = 2
 	},
-/obj/item/ammo_box/magazine/m12g_bulldog/empty{
+/obj/item/ammo_box/magazine/m12g_bulldog/slug{
 	pixel_x = 6;
 	pixel_y = 2
 	},
@@ -4861,9 +4861,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "FH" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
@@ -4875,6 +4872,9 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -5381,6 +5381,14 @@
 /obj/structure/noticeboard{
 	dir = 1;
 	pixel_y = -25
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 10;
+	pixel_y = 8
+	},
+/obj/item/spacecash/bundle/c1000{
+	pixel_x = 10;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -5971,7 +5979,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
 	},
@@ -5985,6 +5992,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "LE" = (
@@ -7614,17 +7622,17 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/valve/layer2{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/general/hidden/layer4{
+/obj/machinery/atmospherics/components/binary/valve/layer4{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing,
+/obj/machinery/atmospherics/components/binary/valve/layer2{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "UK" = (
