@@ -110,9 +110,6 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "n" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 4
 	},
@@ -127,6 +124,9 @@
 	icon_state = "2-4"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "o" = (
