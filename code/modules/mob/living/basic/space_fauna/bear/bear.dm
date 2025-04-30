@@ -31,7 +31,7 @@
 	friendly_verb_continuous = "bear hugs"
 	friendly_verb_simple = "bear hug"
 
-	faction = list("mining")
+	faction = list(FACTION_MINING)
 
 	habitable_atmos = IMMUNE_ATMOS_REQS
 	minimum_survivable_temperature = TCMB
@@ -42,6 +42,8 @@
 
 /mob/living/basic/bear/Initialize(mapload)
 	. = ..()
+	if(armored)
+		update_icons()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	AddElement(/datum/element/ai_retaliate)
 	AddComponent(/datum/component/tree_climber, climbing_distance = 15)
@@ -79,9 +81,6 @@
 /mob/living/basic/bear/frontier
 	name = "combat bear"
 	desc = "A ferocious brown bear decked out in armor plating."
-	icon_state = "combatbear"
-	icon_living = "combatbear"
-	icon_dead = "combatbear_dead"
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
 	melee_damage_lower = 25
@@ -175,9 +174,3 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3, /obj/item/bear_armor = 1)
 	armored = TRUE
-
-/mob/living/basic/bear/polar/random/Initialize()
-	. = ..()
-	if(prob(15))
-		new /mob/living/basic/bear/polar/warrior(loc)
-		return INITIALIZE_HINT_QDEL
