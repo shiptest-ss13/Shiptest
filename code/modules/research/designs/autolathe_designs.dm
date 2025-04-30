@@ -351,16 +351,6 @@
 	category = list("initial","Construction","Stock Parts")
 	maxstack = 50
 
-
-/datum/design/silicon
-	name = "Refine Quartz into Silicon (Quartz 1:2 Carbon)"
-	id = "silicon"
-	build_type = SMELTER
-	materials = list(/datum/material/quartz = ORE_MATERIAL_AMOUNT, /datum/material/carbon = ORE_MATERIAL_AMOUNT*2)
-	build_path = /obj/item/stack/sheet/mineral/silicon
-	category = list("initial","Construction")
-	maxstack = 50
-
 /datum/design/rods
 	name = "Metal Rod"
 	id = "rods"

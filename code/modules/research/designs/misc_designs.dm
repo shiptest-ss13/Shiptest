@@ -18,7 +18,7 @@
 	desc = "An advanced medical head-up display that allows doctors to find patients in complete darkness."
 	id = "health_hud_night"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/carbon = 300, /datum/material/uranium = 1000)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/uranium = 1000)
 	build_path = /obj/item/clothing/glasses/hud/health/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -58,7 +58,7 @@
 	desc = "Upgraded version of the diagnostic HUD designed to function during a power failure."
 	id = "diagnostic_hud_night"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/carbon = 300, /datum/material/uranium = 1000, /datum/material/gold = 350, /datum/material/silicon = 600, /datum/ = 300)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/uranium = 1000, /datum/material/gold = 350)
 	build_path = /obj/item/clothing/glasses/hud/diagnostic/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

@@ -75,7 +75,7 @@
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/plastic = 300, /datum/material/glass = 100, /datum/material/silicon = 100)
+	materials = list(/datum/material/plastic = 300, /datum/material/glass = 100)
 	build_path = /obj/item/disk/design_disk
 	category = list("Electronics")
 
@@ -84,7 +84,7 @@
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk_adv"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/plastic = 300, /datum/material/glass = 100, /datum/material/silicon = 200, /datum/material/silver=50)
+	materials = list(/datum/material/plastic = 300, /datum/material/glass = 100, /datum/material/silver=50)
 	build_path = /obj/item/disk/design_disk/adv
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -94,7 +94,7 @@
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk_super"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/plastic = 300, /datum/material/glass = 100, /datum/material/silicon = 300, /datum/material/silver=50, /datum/material/gold=50)
+	materials = list(/datum/material/plastic = 300, /datum/material/glass = 100, /datum/material/silver=50, /datum/material/gold=50)
 	build_path = /obj/item/disk/design_disk/super
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -104,7 +104,7 @@
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk_elite"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/plastic=300, /datum/material/glass=100, /datum/material/silicon = 500, /datum/material/silver =100, /datum/material/gold=100, /datum/material/bluespace=50)
+	materials = list(/datum/material/plastic=300, /datum/material/glass=100, /datum/material/silver =100, /datum/material/gold=100, /datum/material/bluespace=50)
 	build_path = /obj/item/disk/design_disk/elite
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -114,7 +114,7 @@
 	desc = "Produce additional disks for storing technology data."
 	id = "tech_disk"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/plastic = 300, /datum/material/glass = 100, /datum/material/silicon = 100)
+	materials = list(/datum/material/plastic = 300, /datum/material/glass = 100)
 	build_path = /obj/item/disk/tech_disk
 	category = list("Electronics")
 

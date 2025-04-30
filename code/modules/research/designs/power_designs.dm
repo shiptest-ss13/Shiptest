@@ -7,7 +7,7 @@
 	desc = "A basic power cell that holds 1 MJ of energy."
 	id = "basic_cell"
 	build_type = PROTOLATHE | AUTOLATHE |MECHFAB
-	materials = list(/datum/material/iron = 200, /datum/material/lead = 500, /datum/material/glass = 50)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 50)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/empty
 	category = list("Misc","Power Designs","Machinery","initial")
@@ -17,7 +17,7 @@
 	desc = "A power cell that holds 10 MJ of energy."
 	id = "high_cell"
 	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 200, /datum/material/lead = 600, /datum/material/glass = 60)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 60)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/high/empty
 	category = list("Misc","Power Designs")
@@ -27,7 +27,7 @@
 	desc = "A power cell that holds 20 MJ of energy."
 	id = "super_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 200, /datum/material/lead = 700, /datum/material/glass = 70)
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 70)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/super/empty
 	category = list("Misc","Power Designs")

@@ -454,42 +454,6 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	. += GLOB.abductor_recipes
 
 /*
- * Carbon
- */
-
-/obj/item/stack/sheet/mineral/coal
-	name = "carbon rods"
-	singular_name = "carbon rod"
-	desc = "A rod of pure carbon."
-	icon = 'icons/obj/materials/ingots.dmi'
-	icon_state = "ingot-graphite"
-
-	custom_materials = list(/datum/material/carbon=MINERAL_MATERIAL_AMOUNT)
-	merge_type = /obj/item/stack/sheet/mineral/coal
-	grind_results = list(/datum/reagent/carbon = 20)
-
-/obj/item/stack/ore/graphite/coal/attackby(obj/item/W, mob/user, params)
-	if(W.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
-		var/turf/T = get_turf(src)
-		message_admins("Carbon rod ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
-		log_game("Carbon rod ignited by [key_name(user)] in [AREACOORD(T)]")
-		fire_act(W.get_temperature())
-		T.ignite_turf((W.get_temperature()/20))
-		return TRUE
-	else
-		return ..()
-
-/obj/item/stack/ore/graphite/coal/fire_act(exposed_temperature, exposed_volume)
-	atmos_spawn_air("co2=[amount*10];TEMP=[exposed_temperature]")
-	qdel(src)
-
-/obj/item/stack/sheet/mineral/coal/five
-	amount = 5
-
-/obj/item/stack/sheet/mineral/coal/ten
-	amount = 10
-
-/*
  * Hellstone
  */
 /obj/item/stack/sheet/mineral/hidden
@@ -522,17 +486,3 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 /obj/item/stack/sheet/mineral/hidden/hellstone/five
 	amount = 5
 
-/*
- * Sulfur
- */
-/obj/item/stack/sheet/mineral/sulfur
-	name = "sulfur crystals"
-	singular_name = "sulfur crystal"
-	icon = 'icons/obj/materials/ingots.dmi'
-	icon_state = "ingot-sulfur"
-	item_state = "ingot-sulfur"
-	custom_materials = list(/datum/material/sulfur=MINERAL_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/sulfur = 20)
-	point_value = 1
-	merge_type = /obj/item/stack/sheet/mineral/sulfur
-	material_type = /datum/material/sulfur
