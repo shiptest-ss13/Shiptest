@@ -18,7 +18,7 @@
 			targets["(No Mob) - [T]"] = T
 	var/target = input(src,"To whom shall we send a message?","Mentor PM",null) as null|anything in sortList(targets)
 	cmd_mentor_pm(targets[target],null)
-	SSblackbox.record_feedback("tally", "mentor_verb", 1, "Mentor PM") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("tally", "mentor_verb", 1, "Mentor PM")
 
 
 //takes input from cmd_mentor_pm_context, cmd_Mentor_pm_panel or /client/Topic and sends them a PM.

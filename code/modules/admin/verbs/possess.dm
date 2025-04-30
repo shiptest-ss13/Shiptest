@@ -23,7 +23,7 @@
 	usr.name = O.name
 	usr.reset_perspective(O)
 	usr.control_object = O
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Possess Object") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Possess Object")
 
 /proc/release()
 	set name = "Release Obj"
@@ -42,7 +42,7 @@
 	usr.forceMove(get_turf(usr.control_object))
 	usr.reset_perspective()
 	usr.control_object = null
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Release Object") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Release Object")
 
 /proc/givetestverbs(mob/M in GLOB.mob_list)
 	set desc = "Give this guy possess/release verbs"
@@ -50,4 +50,4 @@
 	set name = "Give Possessing Verbs"
 	add_verb(M, /proc/possess)
 	add_verb(M, /proc/release)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Give Possessing Verbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Give Possessing Verbs")
