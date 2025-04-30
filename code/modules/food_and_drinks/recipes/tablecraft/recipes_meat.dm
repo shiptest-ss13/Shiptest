@@ -281,15 +281,6 @@
 	result = /obj/item/reagent_containers/food/snacks/siti_miras
 	subcategory = CAT_MEAT
 
-/datum/crafting_recipe/food/miras_dola
-	name = "Miras-dola"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/miras = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/miras_dola
-	subcategory = CAT_MEAT
-
 /datum/crafting_recipe/food/miras_li
 	name = "Miras-li"
 	reqs = list(

@@ -159,7 +159,7 @@
 	name = "Tiris fondue"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/dotu_fime = 1,
-		/obj/item/reagent_containers/food/snacks/tiris_cheese_wheel = 1
+		/obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/tiris_fondue
 	subcategory = CAT_MISCFOOD
@@ -168,7 +168,7 @@
 	name = "tiris fondue"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/dotu_fime = 1,
-		/obj/item/reagent_containers/food/snacks/tiris_cheese_wheel = 1
+		/obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/tiris_fondue
 	subcategory = CAT_MISCFOOD
@@ -176,7 +176,7 @@
 /datum/crafting_recipe/food/roe_tiris
 	name = "reti-tiris"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/remes_roe = 1,
+		/obj/item/reagent_containers/food/snacks/remes_roe = 1,
 		/datum/reagent/consumable/tiris_sale = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/roe_tiris

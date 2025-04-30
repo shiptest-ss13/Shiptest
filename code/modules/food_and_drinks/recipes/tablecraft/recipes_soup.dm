@@ -273,7 +273,7 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/peasoup
 	subcategory = CAT_SOUP
 
-/datum/crafting_recipe/food/miris_dola
+/datum/crafting_recipe/food/miras_dola
 	name = "miras-dola"
 	reqs = list(
 		/datum/reagent/water = 10,

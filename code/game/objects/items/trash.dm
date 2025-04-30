@@ -61,7 +61,7 @@
 	resistance_flags = NONE
 	grind_results = list(/datum/reagent/aluminium = 10) //claims to be tin
 
-/obj/item/trash/raisins
+/obj/item/trash/dote
 	name = "\improper Dote on it!"
 	icon_state= "dote"
 
