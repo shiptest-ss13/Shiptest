@@ -328,3 +328,55 @@
 	contains = list(/obj/item/melee/knife/kitchen)
 	crate_name = "kitchen knife crate"
 	crate_type = /obj/structure/closet/crate/wooden
+
+
+/* move these to be in line with rest of cargo once thrax's food cargo atomization is done */
+/* Probably write better descriptions too */
+
+/datum/supply_pack/food/ingredients_basic/dote
+	name = "Dote Berry Crate"
+	desc = "A crate full of easily dried, flavorful tecetian berries. Given its hardiness these are probably not from Teceti itself."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
+		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
+		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
+		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
+		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
+	)
+
+/datum/supply_pack/food/ingredients_basic/dotu
+	name = "Dotu-Fime Crate"
+	desc = "Small plump fruit from Teceti."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
+		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
+		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
+		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
+		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
+	)
+
+/datum/supply_pack/food/ingredients_basic/fara
+	name = "Fara-Li Crate"
+	desc = "A small, mildly spicy fruit native to Teceti."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/grown/fara_li,
+		/obj/item/reagent_containers/food/snacks/grown/fara_li,
+		/obj/item/reagent_containers/food/snacks/grown/fara_li,
+		/obj/item/reagent_containers/food/snacks/grown/fara_li,
+		/obj/item/reagent_containers/food/snacks/grown/fara_li,
+	)
+
+/datum/supply_pack/food/ingredients_basic/refa
+	name = "Refa-Li Crate"
+	desc = "A small spicy cave fruit native to Teceti."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/grown/refa_li,
+		/obj/item/reagent_containers/food/snacks/grown/refa_li,
+		/obj/item/reagent_containers/food/snacks/grown/refa_li,
+		/obj/item/reagent_containers/food/snacks/grown/refa_li,
+		/obj/item/reagent_containers/food/snacks/grown/refa_li,
+	)
