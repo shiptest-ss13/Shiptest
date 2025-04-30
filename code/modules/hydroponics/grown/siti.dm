@@ -1,22 +1,19 @@
 // siti leaves
-/* ough
 /obj/item/seeds/sososi
 	name = "pack of siti seeds"
 	desc = "These seeds grow into siti plants."
 	icon_state = ""
-	species = "sososi"
-	plantname = "sososi plant"
+	species = "siti"
+	plantname = "siti plant"
 	product = /obj/item/reagent_containers/food/snacks/grown/siti
 	lifespan = 20
 	maturation = 5
 	production = 5
 	yield = 2
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
-	icon_grow = ""
-	icon_dead = ""
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	icon_grow = "cabbage-grow"
+	icon_dead = "cabbage-dead"
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
-*/
 
 /obj/item/reagent_containers/food/snacks/grown/siti
 	seed = null
@@ -30,3 +27,4 @@
 	juice_results = null
 	tastes = list("vegetable crunch" = 1)
 	distill_reagent = null
+	wine_flavor = "stiff leaf"

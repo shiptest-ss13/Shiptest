@@ -1,5 +1,5 @@
 // sososi leaves
-/* ough
+
 /obj/item/seeds/sososi
 	name = "pack of sososi seeds"
 	desc = "These seeds grow into sososi plants."
@@ -11,12 +11,11 @@
 	maturation = 5
 	production = 5
 	yield = 2
-	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
-	icon_grow = ""
-	icon_dead = ""
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
+	//this fills me with a sense of dread. im sorry everyone.
+	icon_grow = "aloe-grow"
+	icon_dead = "aloe-dead"
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
-*/
 
 /obj/item/reagent_containers/food/snacks/grown/sososi
 	seed = null

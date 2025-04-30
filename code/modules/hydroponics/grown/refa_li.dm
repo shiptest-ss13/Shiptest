@@ -1,23 +1,22 @@
 // refa-li
-// needs - icon state for the plant
-/*
-/obj/item/seeds/dotu_fime
+// needs - REAL icon state for the plant i am SHIT SPRITING one RIGHT NOW
+
+/obj/item/seeds/refa_li
 	name = "pack of refa-li seeds"
 	desc = "These seeds grow into a refa-li vine. Feel the heat!"
 	icon_state = ""
-	species = "refa-li"
+	species = "chilirefa"
 	plantname = "refa-li vine"
-	product = /obj/item/reagent_containers/food/snacks/grown/refa-li
+	product = /obj/item/reagent_containers/food/snacks/grown/refa_li
 	lifespan = 12
 	maturation = 4
 	production = 6
 	yield = 6
 	potency = 10
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
-	icon_grow = ""
-	icon_dead = ""
+	icon_grow = "chili-grow"
+	icon_dead = "chili-dead"
 	reagents_add = list(/datum/reagent/consumable/refa_li = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
-*/
 
 /obj/item/reagent_containers/food/snacks/grown/refa_li
 	seed = null

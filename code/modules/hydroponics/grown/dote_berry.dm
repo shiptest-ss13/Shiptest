@@ -1,5 +1,6 @@
 // Berries
-/* needs plant icon state and some actual dev work i cannot tell you how much i wish i had bit less off here
+/* needs plant icon state and some actual dev work i cannot tell you how much i wish i had bit less off here */
+
 /obj/item/seeds/dote_berries
 	name = "pack of dote berry seeds"
 	desc = "These seeds grow into dote berry bushes."
@@ -12,11 +13,10 @@
 	production = 5
 	yield = 2
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
-	icon_grow = ""
-	icon_dead = ""
+	icon_grow = "berry-grow"
+	icon_dead = "berry-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
-*/
 
 /obj/item/reagent_containers/food/snacks/grown/dote_berries
 	seed = null
