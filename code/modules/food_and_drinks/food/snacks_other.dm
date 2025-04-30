@@ -34,7 +34,7 @@
 
 /obj/item/reagent_containers/food/snacks/tiris_cheese_slice
 	name = "tiris cheese wedge"
-	desc = "A wedge of cheese, originating from a wheel. You wonder where the original wheel is."
+	desc = "A wedge of bold tiris cheese. You wonder where the original wheel is."
 	icon_state = "tiris-wedge"
 	filling_color = "#FFD700"
 	dried_type = /obj/item/reagent_containers/food/snacks/lifosa/homemade

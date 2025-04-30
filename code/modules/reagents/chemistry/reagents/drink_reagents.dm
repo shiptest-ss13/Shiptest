@@ -241,14 +241,16 @@
 	taste_description = "milk"
 	glass_icon_state = "glass_white"
 	glass_name = "glass of milk"
-	glass_desc = "A glass of frothy milk. You wonder what animal this could have come from, if at all."
+	glass_desc = "A glass of heavy milk. You wonder what animal this could have come from."
 
-/datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/tiris_milk/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 		. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	if(holder.has_reagent(/datum/reagent/consumable/refa_li))
+		holder.remove_reagent(/datum/reagent/consumable/refa_li, 2)
 	..()
 
 /datum/reagent/consumable/soymilk

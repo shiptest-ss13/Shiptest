@@ -431,7 +431,7 @@
 
 /datum/supply_pack/food/ingredients_basic/remes
 	name = "Remes Meat Crate"
-	desc = "The meat of a small tecetian game animal."
+	desc = "Meat from a tecetian mollusk. Safe to eat raw!"
 	cost = 100
 	contains = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
@@ -443,7 +443,7 @@
 
 /datum/supply_pack/food/ingredients_basic/dofi
 	name = "Dofitis Meat Crate"
-	desc = "The meat of a small tecetian game animal."
+	desc = "The meat of a tecetian beast of burden."
 	cost = 100
 	contains = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
@@ -451,4 +451,16 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
 		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
 		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
+	)
+
+/datum/supply_pack/food/ingredients_basic/tiris_milk
+	name = "Tiris Milk Crate"
+	desc = "Milk from a Tiris. Made and packaged in CLIP space."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/condiment/tiris_milk,
+		/obj/item/reagent_containers/condiment/tiris_milk,
+		/obj/item/reagent_containers/condiment/tiris_milk,
+		/obj/item/reagent_containers/condiment/tiris_milk,
+		/obj/item/reagent_containers/condiment/tiris_milk,
 	)
