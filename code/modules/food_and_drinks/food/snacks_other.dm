@@ -745,7 +745,7 @@
 /obj/item/reagent_containers/food/snacks/fara_reti
 	name = "fara-reti"
 	desc = "The flesh of a fara-li fruit, once all the seeds have been removed, is quite mellow. Adding Remes roe into the flesh creates an experience filled with salty pops."
-	icon_state = "stuffed-refa"
+	icon_state = "stuff-refa"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
 	filling_color = "#ECA735"
 	tastes = list("condensed salt" = 1, "satisfying pop" = 1, "mellow fruitflesh" = 3)
