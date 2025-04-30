@@ -108,6 +108,11 @@
 		return TRUE
 	return FALSE
 
+/obj/item/storage/wallet/get_deep_access()
+	if(front_id)
+		return front_id.new_access // Just take the front ID for now, until access merging is real and true
+	return ..()
+
 /obj/item/storage/wallet/GetAccess()
 	if(LAZYLEN(combined_access))
 		return combined_access

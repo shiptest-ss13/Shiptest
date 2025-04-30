@@ -21,11 +21,12 @@
 		//if they are holding or wearing a card that has access, that works
 
 		// HIJACKING IN PROGRESS //
-		if(new_check_access(H.get_active_held_item()))
+		if(new_check_access(H.get_active_held_item()) || new_check_access(H.wear_id))
 			return TRUE
 		else
 			return FALSE
 		// HIJACKING IN PROGRESS //
+
 		if(check_access(H.get_active_held_item()) || src.check_access(H.wear_id))
 			return TRUE
 	else if(ismonkey(M) || isalienadult(M))
@@ -38,6 +39,9 @@
 		if(check_access(A.get_active_held_item()) || check_access(A.access_card))
 			return TRUE
 	return FALSE
+
+/obj/item/proc/get_deep_access()
+	return new_access
 
 /obj/item/proc/GetAccess()
 	return list()
@@ -86,14 +90,15 @@
 
 /obj/proc/new_check_access(obj/item/item)
 	if(!item) // If there is no item, return TRUE if we're public, FALSE otherwise
-		return (src.get_access_namespace == 0)
-	if(item.get_access_namespace() == 0 || src.get_access_namespace() == 0) // If the item has all access (0) or we don't require access (also 0), accept
+		return (src.get_access_namespace() == 0)
+	var/list/item_access = item.get_deep_access()
+	if(item_access[1] == 0 || src.get_access_namespace() == 0) // If the item has all access (0) or we don't require access (also 0), accept
 		return TRUE
-	if(item.get_access_namespace() != src.get_access_namespace()) // If namespaces don't match, reject
+	if(item_access[1] != src.get_access_namespace()) // If namespaces don't match, reject
 		return FALSE
 	if(src.get_access_flags() == 0) // If our access flag is 0, we don't need a flag and can accept
 		return TRUE
-	if(item.get_access_flags() & src.get_access_flags() != src.get_access_flags() ) // If flags don't match, reject
+	if(item_access[2] & src.get_access_flags() != src.get_access_flags() ) // If flags don't match, reject
 		return FALSE
 	return TRUE // If everything matches, accept
 

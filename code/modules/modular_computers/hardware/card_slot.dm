@@ -36,6 +36,11 @@
 	try_eject()
 	return ..()
 
+/obj/item/computer_hardware/card_slot/get_deep_access()
+	if(stored_card)
+		return stored_card.new_access // Just take the first ID for now, until access merging is real and true
+	return ..()
+
 /obj/item/computer_hardware/card_slot/GetAccess()
 	if(stored_card && stored_card2) // Best of both worlds
 		return (stored_card.GetAccess() | stored_card2.GetAccess())
