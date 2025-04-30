@@ -18,7 +18,7 @@
 	desc = "An advanced medical head-up display that allows doctors to find patients in complete darkness."
 	id = "health_hud_night"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/carbon = 300, /datum/material/uranium = 1000, /datum/material/silver = 350, /datum/material/silicon = 600, /datum/material/copper = 300)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/carbon = 300, /datum/material/uranium = 1000)
 	build_path = /obj/item/clothing/glasses/hud/health/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -168,7 +168,7 @@
 	desc = "Prototype meson scanners fitted with an extra sensor which amplifies the visible light spectrum and overlays it to the UHD display."
 	id = "nvgmesons"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/carbon = 300, /datum/material/uranium = 1000, /datum/material/plasma = 350, /datum/material/silicon = 600, /datum/material/copper = 300)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/uranium = 1000, /datum/material/plasma = 350)
 	build_path = /obj/item/clothing/glasses/meson/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_CARGO
@@ -178,7 +178,7 @@
 	desc = "Goggles that let you see through darkness unhindered."
 	id = "night_visision_goggles"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/carbon = 300, /datum/material/uranium = 1000, /datum/material/gold = 350, /datum/material/silicon = 600, /datum/material/copper = 300)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 300, /datum/material/uranium = 1000, /datum/material/gold = 350)
 	build_path = /obj/item/clothing/glasses/night
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
@@ -208,7 +208,7 @@
 	desc = "Goggles fitted with a portable analyzer capable of determining the research worth of an item or components of a machine."
 	id = "scigoggles"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 250, /datum/material/carbon = 250, /datum/material/silicon = 200, /datum/material/copper = 100)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 250)
 	build_path = /obj/item/clothing/glasses/science
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE

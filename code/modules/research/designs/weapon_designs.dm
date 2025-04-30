@@ -282,7 +282,7 @@
 	name = "Buckshot Shell"
 	id = "buckshot_shell"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/plastic = 2000, /datum/material/lead = 1000, /datum/material/sulfur = 1000)
+	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/ammo_casing/shotgun/buckshot
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -291,7 +291,7 @@
 	name = "Ammo Box (.38 Special)"
 	id = "c38"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 17000)
 	build_path = /obj/item/storage/box/ammo/c38
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -300,7 +300,7 @@
 	name = "Ammo Box (9x18mm)"
 	id = "c9mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 17000)
 	build_path = /obj/item/storage/box/ammo/c9mm
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -309,7 +309,7 @@
 	name = "Ammo Box (10x22mm)"
 	id = "c10mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 17000)
 	build_path = /obj/item/storage/box/ammo/c10mm
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -318,7 +318,7 @@
 	name = "Ammo Box (.45)"
 	id = "c45"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/iron = 17000)
 	build_path = /obj/item/storage/box/ammo/c45
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -327,7 +327,7 @@
 	name = "Ammo Box (5.56mm HITP caseless)"
 	id = "c556mmHITP"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 17000)
 	build_path = /obj/item/storage/box/ammo/c556mm
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -337,7 +337,7 @@
 	desc = "A box full of less-than-lethal 9mm ammunition."
 	id = "rubbershot9mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c9mm_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -347,7 +347,7 @@
 	desc = "A box full of less-than-lethal 10x22mm ammunition."
 	id = "rubbershot10mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c10mm_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -357,7 +357,7 @@
 	desc = "A box full of less-than-lethal .45 ammunition."
 	id = "rubbershot45"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c45_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
@@ -367,7 +367,7 @@
 	desc = "A box full of less-than-lethal 5.56mm HITP ammunition."
 	id = "rubbershot556mmHITP"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000)
+	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/storage/box/ammo/c556mm_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -377,7 +377,7 @@
 	desc = "A box full of armor piercing 9mm ammunition."
 	id = "ap9mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000, /datum/material/uranium = 1000)
+	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
 	build_path = /obj/item/storage/box/ammo/c9mm_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -387,7 +387,7 @@
 	desc = "A box full of armor piercing 10x22mm ammunition."
 	id = "ap10mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000, /datum/material/uranium = 1000)
+	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
 	build_path = /obj/item/storage/box/ammo/c10mm_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -397,7 +397,7 @@
 	desc = "A box full of armor piercing .45 ammunition."
 	id = "ap45"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000, /datum/material/uranium = 1000)
+	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
 	build_path = /obj/item/storage/box/ammo/c45_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
@@ -407,7 +407,7 @@
 	desc = "A box full of armor piercing 5.56mm HITP caseless ammunition."
 	id = "ap556mmHITP"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000, /datum/material/uranium = 1000)
+	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
 	build_path = /obj/item/storage/box/ammo/c556mm_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -417,7 +417,7 @@
 	desc = "A box full of hollow point 9x18mm ammunition."
 	id = "hp9mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000, /datum/material/silver = 1000)
+	materials = list(/datum/material/iron = 17000, /datum/material/silver = 1000)
 	build_path = /obj/item/storage/box/ammo/c9mm_hp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -427,7 +427,7 @@
 	desc = "A box full of hollow point 10x22mm ammunition."
 	id = "hp10mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/carbon = 2000, /datum/material/silver = 1000)
+	materials = list(/datum/material/iron = 17000, /datum/material/silver = 1000)
 	build_path = /obj/item/storage/box/ammo/c10mm_hp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -692,6 +692,6 @@
 	name = "Ammo Box (9mm)"
 	id = "c9mmautolathe"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
+	materials = list(/datum/material/copper = 17000)
 	build_path = /obj/item/storage/box/ammo/c9mm
 	category = list("Imported")

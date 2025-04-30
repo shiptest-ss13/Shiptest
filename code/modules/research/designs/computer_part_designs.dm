@@ -70,7 +70,7 @@
 	name = "Advanced Network Card"
 	id = "netcard_advanced"
 	build_type = IMPRINTER
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 200, /datum/material/copper = 200)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 400)
 	build_path = /obj/item/computer_hardware/network_card/advanced
 	category = list("Computer Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
