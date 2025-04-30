@@ -185,7 +185,7 @@
 	icon_state = "dote-natural"
 	desc = "Lightly seasoned, air-dried dote berries. A quick and crunchy snack."
 	trash = /obj/item/trash/dote
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4/datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#639fee"
 	tastes = list("crunchy berry" = 5)
 	foodtype = FRUIT
