@@ -64,7 +64,7 @@
 		/datum/reagent/consumable/cream = 4,
 		/datum/reagent/consumable/sugar = 4
 	)
-	result = /obj/item/reagent_containers/food/snacks/cornuto
+	result = /obj/item/reagent_containers/food/snacks/miras_parfait
 	subcategory = CAT_ICE
 
 
