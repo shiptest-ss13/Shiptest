@@ -133,7 +133,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(new_ooccolor)
 		prefs.ooccolor = sanitize_ooccolor(new_ooccolor)
 		prefs.save_preferences()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Set OOC Color") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Set OOC Color")
 	return
 
 /client/verb/resetcolorooc()

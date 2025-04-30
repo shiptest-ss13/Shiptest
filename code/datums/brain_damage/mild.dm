@@ -271,6 +271,7 @@
 	scan_desc = "carbon monoxide poisoning"
 	gain_text = span_warning("You get a headache.")
 	lose_text = span_notice("Your headache disapears and you find it easier to focus.")
+	random_gain = FALSE
 
 	var/static/list/common_words = world.file2list("strings/1000_most_common.txt")
 
@@ -335,6 +336,7 @@
 	scan_desc = "critical carbon monoxide poisoning"
 	gain_text = span_warning("You bad get forget you headache don't!")
 	lose_text = span_notice("Your headache gets better.")
+	random_gain = FALSE
 
 /datum/brain_trauma/mild/monoxide_poisoning_stage2/on_gain()
 	ADD_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)

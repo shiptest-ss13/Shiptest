@@ -3042,10 +3042,6 @@
 /area/ship/bridge)
 "Ua" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/jellysandwich{
-	pixel_x = 0;
-	pixel_y = 8
-	},
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = -6;
 	pixel_y = -6
@@ -3053,6 +3049,11 @@
 /obj/item/reagent_containers/condiment/peppermill{
 	pixel_x = 6;
 	pixel_y = -6
+	},
+/obj/item/reagent_containers/food/snacks/jellysandwich/cherry{
+	pixel_x = 0;
+	pixel_y = 8;
+	layer = 2.9
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
