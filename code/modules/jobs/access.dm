@@ -85,10 +85,8 @@
 		return TRUE
 
 /obj/proc/new_check_access(obj/item/item)
-	var/item_access = item.new_access
-	var/our_access = src.new_access
-	// if(src.get_access_namespace() == null && (item_access[2] == our_access[2])) // If we don't have a namespace and the flags match, accept
-		// return TRUE
+	if(!item) // If there is no item, return TRUE if we're public, FALSE otherwise
+		return (src.get_access_namespace == 0)
 	if(item.get_access_namespace() == 0 || src.get_access_namespace() == 0) // If the item has all access (0) or we don't require access (also 0), accept
 		return TRUE
 	if(item.get_access_namespace() != src.get_access_namespace()) // If namespaces don't match, reject

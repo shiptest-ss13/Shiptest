@@ -182,6 +182,63 @@
 	else
 		airlock.abandoned = TRUE
 
+// airlock access helpers
+
+/obj/effect/mapping_helpers/airlock/access
+	name = "airlock access setter"
+	icon = 'icons/effects/mapping/airlock_access.dmi'
+	var/access_flag = 0
+
+/obj/effect/mapping_helpers/airlock/access/payload(obj/machinery/door/airlock/payload)
+	if(payload.get_access_flags())
+		log_mapping("[src] at [AREACOORD(src)] overriding previously set access flags! ([payload.get_access_flags()] -> [access_flag])")
+	payload.set_access_flags(access_flag)
+
+/obj/effect/mapping_helpers/airlock/access/captain
+	icon_state = "access_captain"
+	access_flag = ACCESS_SHIP_CAPTAIN
+
+/obj/effect/mapping_helpers/airlock/access/office
+	icon_state = "access_captain"
+	access_flag = ACCESS_SHIP_OFFICE
+
+/obj/effect/mapping_helpers/airlock/access/command
+	icon_state = "access_command"
+	access_flag = ACCESS_SHIP_COMMAND
+
+/obj/effect/mapping_helpers/airlock/access/security
+	icon_state = "access_security"
+	access_flag = ACCESS_SHIP_SECURITY
+
+/obj/effect/mapping_helpers/airlock/access/engineering
+	icon_state = "access_engineering"
+	access_flag = ACCESS_SHIP_ENGINEERING
+
+/obj/effect/mapping_helpers/airlock/access/medical
+	icon_state = "access_medical"
+	access_flag = ACCESS_SHIP_MEDICAL
+
+/obj/effect/mapping_helpers/airlock/access/cargo
+	icon_state = "access_cargo"
+	access_flag = ACCESS_SHIP_CARGO
+
+/obj/effect/mapping_helpers/airlock/access/service
+	icon_state = "access_service"
+	access_flag = ACCESS_SHIP_SERVICE
+
+/obj/effect/mapping_helpers/airlock/access/science
+	icon_state = "access_science"
+	access_flag = ACCESS_SHIP_SCIENCE
+
+/obj/effect/mapping_helpers/airlock/access/public
+	icon_state = "access_public"
+
+/obj/effect/mapping_helpers/airlock/access/public/payload(obj/machinery/door/airlock/payload)
+	if(payload.get_access_flags())
+		log_mapping("[src] at [AREACOORD(src)] overriding access flags already set! ([payload.get_access_flags()])")
+	payload.set_access_flags(0)
+	payload.set_access_namespace(0)
+
 INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 
 /obj/effect/mapping_helpers/no_lava
