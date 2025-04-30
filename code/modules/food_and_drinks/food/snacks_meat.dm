@@ -520,7 +520,7 @@
 /obj/item/reagent_containers/food/snacks/remes_li
 	name = "remes-li"
 	desc = "Remes soaked in Refa-Li juice. An extremely spicy experience for the daring."
-	icon_state = "remes-steak"
+	icon_state = "remes-li"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/refa_li = 10)
 	tastes = list("earthiness" = 2, "spice-soaked flesh" = 4, "burning sensation" = 1)
 	foodtype = MEAT | FRUIT

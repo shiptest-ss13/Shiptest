@@ -349,11 +349,11 @@
 /obj/item/reagent_containers/condiment/tiris_sele
 	name = "tiris sele"
 	desc = "A thick gravy made with the blood of a Tiris. Flour is used to soak up the earthiness, leaving an intensely umami covering behind."
-	icon_state = "tiris_sauce"
+	icon_state = "tiris-sauce"
 	list_reagents = list(/datum/reagent/consumable/tiris_sele = 50)
 
 /obj/item/reagent_containers/condiment/tiris_sale
 	name = "tiris sele"
 	desc = "A reduction made from the blood of a Tiris and a mixture of savory herbs. The flavor is very intense, and best used to augment a dish."
-	icon_state = "tiris_sauce"
+	icon_state = "tiris-sauce"
 	list_reagents = list(/datum/reagent/consumable/tiris_sale = 50)
