@@ -28,4 +28,3 @@
 	bitesize_mod = 2
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/refa_li = 0)
-	distill_reagent = /datum/reagent/consumable/ethanol/dotusira
