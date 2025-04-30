@@ -10,6 +10,7 @@
 	production = 6
 	yield = 3
 	potency = 20
+	growthstages = 2
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "fara-grow"
 	icon_dead = "fara-dead"

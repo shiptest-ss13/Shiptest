@@ -11,6 +11,7 @@
 	maturation = 5
 	production = 5
 	yield = 2
+	growthstages = 5
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	//this fills me with a sense of dread. im sorry everyone.
 	icon_grow = "aloe-grow"
