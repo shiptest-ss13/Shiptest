@@ -68,8 +68,6 @@
 	ruin_type = RUINTYPE_ICE
 
 	primary_ores = list(\
-		/obj/item/stack/ore/malachite,
-		/obj/item/stack/ore/quartzite,
 		/obj/item/stack/ore/hematite,
 		/obj/item/stack/ore/gold,
 		)
@@ -86,9 +84,6 @@
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
 	primary_ores = list(\
-		/obj/item/stack/ore/graphite/coal,
-		/obj/item/stack/ore/malachite,
-		/obj/item/stack/ore/sulfur,
 		/obj/item/stack/ore/gold,
 		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
 		)
@@ -140,7 +135,6 @@
 	ruin_type = RUINTYPE_BEACH
 	primary_ores = list(\
 		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/malachite,
 		/obj/item/stack/ore/plasma,
 		)
 
@@ -176,7 +170,6 @@
 	primary_ores = list(\
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/malachite,
 		)
 
 /datum/planet_type/spaceruin
@@ -257,7 +250,6 @@
 	primary_ores = list(\
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/malachite,
 		)
 
 /datum/planet_type/desert

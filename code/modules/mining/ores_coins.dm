@@ -113,11 +113,7 @@
 	item_state = "phoron"
 
 	points = 15
-<<<<<<< Updated upstream
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
-=======
-	custom_materials = list(/datum/material/plasma=1650)
->>>>>>> Stashed changes
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 5
 	scan_state = "phoron"

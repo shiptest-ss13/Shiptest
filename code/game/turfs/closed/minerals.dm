@@ -204,9 +204,8 @@
 
 /turf/closed/mineral/random
 	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/gold = 4,
-		/obj/item/stack/ore/galena = 4, /obj/item/stack/ore/plasma = 40, /obj/item/stack/ore/hematite = 65, /obj/item/stack/ore/rutile = 5,
-		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/malachite = 50,
-		/obj/item/stack/ore/sulfur = 5)
+		/obj/item/stack/ore/plasma = 40, /obj/item/stack/ore/hematite = 65, /obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/bluespace_crystal = 1)
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 10
 
@@ -277,10 +276,10 @@
 
 	mineralChance = 10
 	mineralSpawnChanceList = list(
-		/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/sulfur/pyrite = 20, /obj/item/stack/ore/proustite = 11, /obj/item/stack/ore/quartzite = 10,
-		/obj/item/stack/ore/galena = 30, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/magnetite = 20, /obj/item/stack/ore/sulfur = 40,
-		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/gold = 2, /obj/item/stack/ore/graphite= 10,
-		/obj/item/stack/ore/malachite = 20)
+		/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/sulfur/pyrite = 20, /obj/item/stack/ore/proustite = 11,
+		/obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/magnetite = 20,
+		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/gold = 2
+		)
 
 /turf/closed/mineral/random/snow
 	name = "schist"
@@ -298,9 +297,9 @@
 	defer_change = TRUE
 	mineralChance = 20 //as most caves is snowy, might as well bump up the chance
 	mineralSpawnChanceList = list(
-		/obj/item/stack/ore/autunite = 10, /obj/item/stack/ore/diamond = 2, /obj/item/stack/ore/gold = 20, /obj/item/stack/ore/rutile = 15, /obj/item/stack/ore/quartzite = 30,
-		/obj/item/stack/ore/galena = 5, /obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/hematite = 20, /obj/item/stack/ore/malachite = 40,
-		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/graphite= 5, /obj/item/stack/ore/proustite = 10)
+		/obj/item/stack/ore/autunite = 10, /obj/item/stack/ore/diamond = 2, /obj/item/stack/ore/gold = 20, /obj/item/stack/ore/rutile = 15,
+		/obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/hematite = 20,
+		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/proustite = 10)
 
 /turf/closed/mineral/ice
 	name = "icy wall"
@@ -818,9 +817,9 @@
 
 	mineralChance = 16
 
-	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 2, /obj/item/stack/ore/diamond = 10, /obj/item/stack/ore/gold = 30, /obj/item/stack/ore/quartzite = 10,
-		/obj/item/stack/ore/galena = 4, /obj/item/stack/ore/proustite = 20, /obj/item/stack/ore/hematite = 20, /obj/item/stack/ore/rutile = 4,
-		/obj/item/stack/ore/graphite/coal = 60, /obj/item/stack/ore/sulfur = 40, /obj/item/stack/ore/malachite = 50)
+	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 2, /obj/item/stack/ore/diamond = 10, /obj/item/stack/ore/gold = 30,
+		/obj/item/stack/ore/proustite = 20, /obj/item/stack/ore/hematite = 20, /obj/item/stack/ore/rutile = 4
+		)
 
 /turf/closed/mineral/random/beach
 	name = "coastal marl"
@@ -840,8 +839,8 @@
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4,
-		/obj/item/stack/ore/galena = 10, /obj/item/stack/ore/sulfur = 25, /obj/item/stack/ore/hematite = 80, /obj/item/stack/ore/malachite = 20,
-		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/graphite = 10)
+		/obj/item/stack/ore/sulfur = 25, /obj/item/stack/ore/hematite = 80,
+		/obj/item/stack/ore/bluespace_crystal = 1)
 
 /turf/closed/mineral/gibtonite/rockplanet
 	name = "hematite"
@@ -862,7 +861,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 30, /obj/item/stack/ore/diamond = 0.5, /obj/item/stack/ore/gold = 4, /obj/item/stack/ore/proustite = 5,
-		/obj/item/stack/ore/galena = 30, /obj/item/stack/ore/sulfur = 45, /obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/malachite = 20, /obj/item/stack/ore/plasma = 35,
+		/obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/plasma = 35,
 		/obj/item/stack/ore/graphite = 10)
 
 	mineralChance = 20
@@ -878,9 +877,9 @@
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
 	turf_type = /turf/open/floor/plating/asteroid/dry_seafloor
 	baseturfs = /turf/open/floor/plating/asteroid/dry_seafloor
-	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 10, /obj/item/stack/ore/diamond = 5, /obj/item/stack/ore/gold = 20, /obj/item/stack/ore/quartzite = 40,
-		/obj/item/stack/ore/galena = 7, /obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/hematite = 20, /obj/item/stack/ore/rutile = 4,
-		/obj/item/stack/ore/graphite/coal = 60, /obj/item/stack/ore/sulfur = 40, /obj/item/stack/ore/malachite = 5)
+	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 10, /obj/item/stack/ore/diamond = 5, /obj/item/stack/ore/gold = 20,
+		/obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/hematite = 20, /obj/item/stack/ore/rutile = 4
+		)
 
 /turf/closed/mineral/random/shrouded
 	name = "shrouded wall"
@@ -905,10 +904,10 @@
 	defer_change = 1
 	mineralChance = 10
 	mineralSpawnChanceList = list(
-		/obj/item/stack/ore/hematite = 30, /obj/item/stack/ore/diamond = 5, /obj/item/stack/ore/proustite = 11, /obj/item/stack/ore/quartzite = 20,
-		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/magnetite = 30, /obj/item/stack/ore/ice = 10,
-		/obj/item/stack/ore/gold = 2, /obj/item/stack/ore/graphite/coal = 40,
-		/obj/item/stack/ore/malachite = 10)
+		/obj/item/stack/ore/hematite = 30, /obj/item/stack/ore/diamond = 5, /obj/item/stack/ore/proustite = 11,
+		/obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/magnetite = 30, /obj/item/stack/ore/ice = 10,
+		/obj/item/stack/ore/gold = 2,
+		)
 
 
 /turf/closed/mineral/snowmountain/cavern/shipside
