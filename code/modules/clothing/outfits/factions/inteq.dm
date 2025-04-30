@@ -277,7 +277,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/inteq/pilot/empty
-	name = "IRMG - Shuttle Pilot"
+	name = "IRMG - Shuttle Pilot (Naked)"
 	jobtype = /datum/job/mining
 	job_icon = "securityofficer"
 	id_assignment = "Shuttle Pilot"

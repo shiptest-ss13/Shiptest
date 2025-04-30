@@ -2,6 +2,16 @@
 "a" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
+"b" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 5;
+	id = "thunder_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
+"c" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "d" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -30,6 +40,7 @@
 "g" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/trimline/opaque/yellow,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "h" = (
@@ -92,6 +103,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
+/area/ship/bridge)
+"m" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/trimline/opaque/yellow,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "n" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -329,22 +345,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/bridge)
-"A" = (
-/obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/firedoor/heavy,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "thunder_cargo_field"
-	},
-/obj/machinery/door/poddoor/preopen{
-	dir = 4;
-	id = "thunder_cargo"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/bridge)
 "B" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/structure/cable{
@@ -357,12 +357,22 @@
 	dir = 1
 	},
 /area/ship/bridge)
-"C" = (
-/obj/machinery/porta_turret/ship/inteq/light{
-	dir = 6;
-	id = "thunder_grid"
+"D" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/heavy,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "thunder_cargo_field";
+	dir = 1
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "thunder_cargo"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/bridge)
 "E" = (
 /obj/machinery/power/smes/engineering{
@@ -498,12 +508,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/bridge)
-"N" = (
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/trimline/opaque/yellow,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/bridge)
 "O" = (
 /obj/machinery/porta_turret/ship/inteq/light{
 	dir = 10;
@@ -547,8 +551,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"Q" = (
-/turf/closed/wall/mineral/plastitanium,
+"R" = (
+/obj/machinery/porta_turret/ship/inteq/light{
+	dir = 6;
+	id = "thunder_grid"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 "S" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -599,8 +607,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "thunder_cargo_field";
-	dir = 1
+	id = "thunder_cargo_field"
 	},
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
@@ -613,9 +620,6 @@
 /obj/machinery/power/apc/auto_name/directional/north{
 	req_ship_access = 0
 	},
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -624,13 +628,6 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ship/bridge)
-"Z" = (
-/obj/machinery/porta_turret/ship/inteq/light{
-	dir = 5;
-	id = "thunder_grid"
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
 
 (1,1,1) = {"
@@ -647,23 +644,23 @@ h
 (2,1,1) = {"
 h
 h
-Q
+c
 f
 v
 f
-Q
+c
 h
 h
 "}
 (3,1,1) = {"
 h
-N
+g
 a
 o
 u
 F
 a
-g
+m
 h
 "}
 (4,1,1) = {"
@@ -678,7 +675,7 @@ O
 h
 "}
 (5,1,1) = {"
-Q
+c
 a
 a
 a
@@ -686,7 +683,7 @@ P
 a
 a
 a
-Q
+c
 "}
 (6,1,1) = {"
 a
@@ -735,11 +732,11 @@ a
 (10,1,1) = {"
 h
 h
-Z
-A
-r
+b
 V
-C
+r
+D
+R
 h
 h
 "}
