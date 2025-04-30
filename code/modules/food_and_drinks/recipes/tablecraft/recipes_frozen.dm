@@ -48,13 +48,15 @@
 	name = "Cornuto"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/datum/reagent/consumable/cream = 5,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/datum/reagent/consumable/cream = 4,
+		/datum/reagent/consumable/ice = 2,
 		/datum/reagent/consumable/sugar = 4
 	)
 	result = /obj/item/reagent_containers/food/snacks/cornuto
 	subcategory = CAT_ICE
 
-/datum/crafting_recipe/food/cornuto
+/datum/crafting_recipe/food/miras_parfait
 	name = "Miras Parfait"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/mirasegg = 1,
