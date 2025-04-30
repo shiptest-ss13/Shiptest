@@ -244,7 +244,7 @@
 	mineralChance = 13
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 35, /obj/item/stack/ore/diamond = 30, /obj/item/stack/ore/gold = 45, /obj/item/stack/ore/rutile = 45,
-		/obj/item/stack/ore/galena = 50, /obj/item/stack/ore/plasma = 50, /obj/item/stack/ore/bluespace_crystal = 20)
+		/obj/item/stack/ore/plasma = 50, /obj/item/stack/ore/bluespace_crystal = 20)
 
 /turf/closed/mineral/random/high_chance/volcanic
 	environment_type = "basalt"
@@ -254,13 +254,13 @@
 	defer_change = 1
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 35, /obj/item/stack/ore/diamond = 30, /obj/item/stack/ore/gold = 45, /obj/item/stack/ore/rutile = 45,
-		/obj/item/stack/ore/galena = 50, /obj/item/stack/ore/plasma = 50, /obj/item/stack/ore/bluespace_crystal)
+		/obj/item/stack/ore/plasma = 50, /obj/item/stack/ore/bluespace_crystal)
 
 /turf/closed/mineral/random/low_chance
 	mineralChance = 3
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4, /obj/item/stack/ore/rutile = 4,
-		/obj/item/stack/ore/galena = 6, /obj/item/stack/ore/plasma = 15, /obj/item/stack/ore/hematite = 40,
+		/obj/item/stack/ore/plasma = 15, /obj/item/stack/ore/hematite = 40,
 		/obj/item/stack/ore/bluespace_crystal = 1)
 
 
@@ -324,18 +324,18 @@
 	mineralChance = 10
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 10, /obj/item/stack/ore/diamond = 4, /obj/item/stack/ore/gold = 20, /obj/item/stack/ore/rutile = 22,
-		/obj/item/stack/ore/galena = 24, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/hematite = 20,
+		/obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/hematite = 20,
 		/obj/item/stack/ore/bluespace_crystal = 2)
 
 /turf/closed/mineral/random/snow/high_chance
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 35, /obj/item/stack/ore/diamond  = 30, /obj/item/stack/ore/gold = 45, /obj/item/stack/ore/rutile = 45,
-		/obj/item/stack/ore/galena = 50, /obj/item/stack/ore/plasma = 50, /obj/item/stack/ore/bluespace_crystal = 20)
+		/obj/item/stack/ore/plasma = 50, /obj/item/stack/ore/bluespace_crystal = 20)
 
 /turf/closed/mineral/random/labormineral
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/rutile = 8,
-		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/hematite = 95)
+		/obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/hematite = 95)
 
 
 /turf/closed/mineral/random/labormineral/volcanic
@@ -346,7 +346,7 @@
 	defer_change = 1
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/rutile = 8,
-		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1,
+		/obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/hematite = 95)
 
 // Subtypes for mappers placing ores manually.
@@ -366,7 +366,7 @@
 	defer_change = TRUE
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 8, /obj/item/stack/ore/rutile = 8,
-		/obj/item/stack/ore/galena = 20, /obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1,
+		/obj/item/stack/ore/plasma = 30, /obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/hematite = 95)
 
 /turf/closed/mineral/iron
@@ -408,7 +408,7 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/silver
-	mineralType = /obj/item/stack/ore/galena
+	mineralType = /obj/item/stack/ore/proustite
 	scan_state = "rock_Silver"
 
 /turf/closed/mineral/silver/ice/icemoon
@@ -759,7 +759,7 @@
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 3, /obj/item/stack/ore/sulfur/pyrite = 10, /obj/item/stack/ore/quartzite = 50,
-		/obj/item/stack/ore/galena = 10, /obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/hematite = 45, /obj/item/stack/ore/rutile = 20,
+		/obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/hematite = 45, /obj/item/stack/ore/rutile = 20,
 		/turf/closed/mineral/gibtonite/whitesands = 4, /turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 4)
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
@@ -893,8 +893,8 @@
 	turf_type = /turf/open/floor/plating/asteroid/shrouded
 	baseturfs = /turf/open/floor/plating/asteroid/shrouded
 	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 30, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/galena = 12, /obj/item/stack/ore/plasma = 25, /obj/item/stack/ore/magnetite = 20, /obj/item/stack/ore/rutile = 6,
-		/obj/item/stack/ore/bluespace_crystal = 10, /obj/item/stack/ore/quartzite = 5)
+		/obj/item/stack/ore/plasma = 25, /obj/item/stack/ore/magnetite = 20, /obj/item/stack/ore/rutile = 6,
+		/obj/item/stack/ore/bluespace_crystal = 10)
 
 /turf/closed/mineral/random/waterplanet
 	environment_type = "water"
@@ -934,8 +934,8 @@
 	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark
 	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
 	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/galena = 2, /obj/item/stack/ore/plasma = 1, /obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/rutile = 20,
-		/obj/item/stack/ore/bluespace_crystal = 5, /obj/item/stack/ore/quartzite = 80)
+		/obj/item/stack/ore/plasma = 1, /obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/rutile = 20,
+		/obj/item/stack/ore/bluespace_crystal = 5)
 
 /turf/closed/mineral/random/moon/lit
 	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit

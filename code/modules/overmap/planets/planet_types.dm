@@ -46,10 +46,7 @@
 	ruin_type = RUINTYPE_LAVA
 	interference_power = 5
 
-	primary_ores = list(\
-		/obj/item/stack/ore/sulfur,
-		/obj/item/stack/ore/galena,
-		/obj/item/stack/ore/sulfur/pyrite,
+	primary_ores = list(
 		/obj/item/stack/ore/magnetite,
 		/obj/item/stack/ore/plasma,
 		)
@@ -197,11 +194,9 @@
 	ruin_type = RUINTYPE_WASTE
 	interference_power = 5
 	primary_ores = list(\
-		/obj/item/stack/ore/sulfur,
 		/obj/item/stack/ore/hematite,
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/autunite,
-		/obj/item/stack/ore/galena,
 		)
 
 
