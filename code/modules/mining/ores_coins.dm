@@ -77,25 +77,6 @@
 	scan_state = "magnetite"
 	spreadChance = 20
 
-/obj/item/stack/ore/malachite
-	name = "malachite"
-	icon_state = "malachite"
-	item_state = "malachite"
-	custom_materials = list(/datum/material/copper=ORE_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/copper
-	scan_state = "malachite"
-	spreadChance = 30
-
-/obj/item/stack/ore/galena
-	name = "galena"
-	icon_state = "galena"
-	item_state = "galena"
-	material_flags = MATERIAL_NO_EFFECTS
-	custom_materials = list(/datum/material/lead=ORE_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/lead
-	scan_state = "galena"
-	spreadChance = 20
-
 /obj/item/stack/ore/proustite
 	name = "proustite"
 	icon_state = "proustite"
@@ -132,7 +113,11 @@
 	item_state = "phoron"
 
 	points = 15
+<<<<<<< Updated upstream
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
+=======
+	custom_materials = list(/datum/material/plasma=1650)
+>>>>>>> Stashed changes
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 5
 	scan_state = "phoron"
