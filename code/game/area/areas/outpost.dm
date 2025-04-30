@@ -211,6 +211,7 @@
 	icon_state = "green"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
+	allow_weather = TRUE
 
 // this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external
@@ -220,6 +221,7 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	ambientsounds = SPACE
 	sound_environment = SOUND_AREA_SPACE
+	allow_weather = TRUE
 
 
 /area/hangar

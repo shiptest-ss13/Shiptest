@@ -162,7 +162,7 @@
 				var/obj/item/stock_parts/new_part = tool
 				if(new_part.part_behaviour == part.part_behaviour)
 					user.transferItemToLoc(tool,src)
-					part.forceMove(user.loc)
+					try_put_in_hand(part, user)
 					component_parts += new_part
 					component_parts -= part
 					to_chat(user, span_notice("You replace [part] with [new_part]."))
@@ -184,7 +184,7 @@
 				obj_integrity = max_integrity
 				return
 		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
-			if(!tool.tool_start_check(user, amount=0))
+			if(!tool.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message(span_notice("[user] begins repairing [src]."), \
 				span_notice("You begin repairing [src]..."), \
@@ -209,7 +209,7 @@
 			return
 		if(tool.tool_behaviour == TOOL_CROWBAR)
 			cell.update_appearance()
-			cell.forceMove(get_turf(src))
+			try_put_in_hand(cell, user)
 			cell = null
 			to_chat(user, span_notice("You remove the cell from [src]."))
 			active = FALSE

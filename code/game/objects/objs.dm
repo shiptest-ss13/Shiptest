@@ -76,6 +76,11 @@
 	if((obj_flags & ON_BLUEPRINTS) && isturf(loc) && mapload)
 		var/turf/T = loc
 		T.add_blueprints(src)
+	if(obj_flags & ELEVATED_SURFACE)
+		var/static/list/loc_connections = list(
+			COMSIG_TURF_OPEN_FLAME = PROC_REF(on_open_flame),
+		)
+		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/Destroy(force=FALSE)
 	if(!ismachinery(src))
@@ -344,7 +349,7 @@
 /obj/deconstruct_act(mob/living/user, obj/item/I)
 	if(resistance_flags & INDESTRUCTIBLE)
 		to_chat(user, span_warning("[src] cannot be deconstructed!"))
-		return FALSE
+		return TRUE
 	return ..()
 
 /obj/analyzer_act(mob/living/user, obj/item/I)
@@ -354,6 +359,9 @@
 
 /obj/proc/plunger_act(obj/item/plunger/P, mob/living/user)
 	return
+
+/obj/proc/on_open_flame(datum/source, flame_heat)
+	return BLOCK_TURF_IGNITION
 
 // Should move all contained objects to it's location.
 /obj/proc/dump_contents()

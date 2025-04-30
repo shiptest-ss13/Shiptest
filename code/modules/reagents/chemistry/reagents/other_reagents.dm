@@ -135,7 +135,6 @@
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "water"
-	var/cooling_temperature = 2
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments."
@@ -150,21 +149,15 @@
 /datum/reagent/water/expose_turf(turf/open/T, reac_volume)
 	if(!istype(T))
 		return
-	var/CT = cooling_temperature
 
 	if(reac_volume >= 5)
-		T.MakeSlippery(TURF_WET_WATER, 10 SECONDS, min(reac_volume*1.5 SECONDS, 60 SECONDS))
+		T.MakeSlippery(TURF_WET_WATER, 10 SECONDS, min(reac_volume * 1.5 SECONDS, 60 SECONDS))
 
 	for(var/mob/living/simple_animal/slime/M in T)
 		M.apply_water()
 
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot && !isspaceturf(T))
-		if(T.air)
-			var/datum/gas_mixture/G = T.air
-			G.set_temperature(max(min(G.return_temperature()-(CT*1000),G.return_temperature()/CT),TCMB))
-			G.react(src)
-			qdel(hotspot)
+	T.extinguish_turf(min(reac_volume * 2, 5))
+
 	var/obj/effect/acid/A = (locate(/obj/effect/acid) in T)
 	if(A)
 		A.acid_level = max(A.acid_level - reac_volume*50, 0)
@@ -898,6 +891,14 @@
 	color = "#A8A8A8" // rgb: 168, 168, 168
 	taste_description = "metal"
 
+/datum/reagent/quartz
+	name = "Quartz"
+	description = "A fine dust of Quartz, a precursor to silicon and glass."
+	reagent_state = SOLID
+	color = "#fcedff"
+	taste_mult = 0
+	material = /datum/material/quartz
+
 /datum/reagent/silicon
 	name = "Silicon"
 	description = "A tetravalent metalloid, silicon is less reactive than its chemical analog carbon."
@@ -1622,18 +1623,70 @@
 	color = "#328242"
 	taste_description = "primordial essence"
 	reagent_state = LIQUID
+	var/list/turf_whitelist = list(
+	/turf/open/floor/plating/asteroid,
+	/turf/open/lava,
+	/turf/open/water/acid,
+	/turf/open/floor/plating/moss,
+	/turf/open/floor/plating/grass
+	)
 
-/datum/reagent/genesis/expose_turf(turf/T, reac_volume)
-	if(istype(T, /turf/open/floor/grass))//prevents spamming effect via. smoke or such
-		return
-	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
-		var/turf/open/floor/F = T
-		playsound(T, 'sound/effects/bubbles.ogg', 50)
-		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
-		new /obj/effect/spawner/random/flower(T)
-		if(prob(75))
-			new /obj/effect/spawner/random/flora(T)
-	..()
+/datum/reagent/genesis/expose_turf(turf/exposed_turf, reac_volume)
+	var/allowed = FALSE //idk how to do this better
+	for(var/turf/checked_turf as anything in turf_whitelist)
+		if(!istype(exposed_turf, checked_turf))
+			continue
+		else
+			allowed = TRUE
+			break
+	if(!allowed)
+		return ..()
+
+	if(isopenturf(exposed_turf))
+		var/turf/open/floor/terraform_target = exposed_turf
+
+		if(istype(terraform_target, /turf/open/lava) || istype(terraform_target, /turf/open/water/acid)) //if hazard, reeplace with basin
+			if(istype(terraform_target, /turf/open/lava))
+				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin, flags = CHANGETURF_INHERIT_AIR)
+			if(istype(terraform_target, /turf/open/water/acid))
+				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/whitesands/dried, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>As the serum touches [terraform_target.name], it all starts drying up, leaving a dry basin behind!</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin) || istype(terraform_target, /turf/open/floor/plating/asteroid/whitesands/dried)|| istype(terraform_target, /turf/open/floor/plating/asteroid/sand)) //if basin, replace with water
+			return ..()
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/purple))
+			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/sand/terraform, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>The chemicals in the sand disolve, and the sand looks more natural.</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+		if(!istype(terraform_target, /turf/open/floor/plating/asteroid/dirt)) // if not dirt, acutally terraform
+			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/dirt, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>The harsh land becomes fertile dirt, but more work needs to be done for it to be growable and breathable. Perhaps add grass?</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/dirt/grass)) //if grass, plant shit
+			for(var/obj/object as anything in terraform_target.contents)
+				if(!istype(object, /obj/structure/flora))
+					continue
+				terraform_target.visible_message("<span class='danger'>Theres already flora on the tile!</span>")
+				return ..()
+
+			terraform_target.visible_message("<span class='notice'>As the serum touches the grass, suddenly flora grows out of it!</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			if(prob(70))
+				new /obj/effect/spawner/random/flower(exposed_turf)
+			else if(prob(5))
+				new /obj/structure/flora/ash/garden(exposed_turf)
+			else
+				new /obj/effect/spawner/random/flora(exposed_turf)
+
+	return ..()
 
 /datum/reagent/genesis/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
