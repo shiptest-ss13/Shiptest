@@ -380,3 +380,75 @@
 		/obj/item/reagent_containers/food/snacks/grown/refa_li,
 		/obj/item/reagent_containers/food/snacks/grown/refa_li,
 	)
+
+/datum/supply_pack/food/ingredients_basic/sososi
+	name = "Sososi Crate"
+	desc = "A gel-filled leaf native to the Tecetian Arid."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/grown/sososi,
+		/obj/item/reagent_containers/food/snacks/grown/sososi,
+		/obj/item/reagent_containers/food/snacks/grown/sososi,
+		/obj/item/reagent_containers/food/snacks/grown/sososi,
+		/obj/item/reagent_containers/food/snacks/grown/sososi,
+	)
+
+/datum/supply_pack/food/ingredients_basic/siti
+	name = "Siti Crate"
+	desc = "A small crunchy leaf native to Teceti."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/grown/siti,
+		/obj/item/reagent_containers/food/snacks/grown/siti,
+		/obj/item/reagent_containers/food/snacks/grown/siti,
+		/obj/item/reagent_containers/food/snacks/grown/siti,
+		/obj/item/reagent_containers/food/snacks/grown/siti,
+	)
+
+/datum/supply_pack/food/ingredients_basic/miras
+	name = "Miras Meat Crate"
+	desc = "The meat of a small tecetian game animal."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
+		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
+		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
+		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
+		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
+	)
+
+/datum/supply_pack/food/ingredients_basic/tiris
+	name = "Tiris Meat Crate"
+	desc = "The meat of a tecetian herd animal."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
+		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
+		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
+		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
+		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
+	)
+
+/datum/supply_pack/food/ingredients_basic/remes
+	name = "Remes Meat Crate"
+	desc = "The meat of a small tecetian game animal."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
+		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
+		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
+		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
+		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
+	)
+
+/datum/supply_pack/food/ingredients_basic/dofi
+	name = "Dofitis Meat Crate"
+	desc = "The meat of a small tecetian game animal."
+	cost = 100
+	contains = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
+		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
+		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
+		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
+		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
+	)
