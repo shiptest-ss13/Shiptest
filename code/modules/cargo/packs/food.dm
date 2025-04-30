@@ -210,14 +210,14 @@
 	)
 
 /datum/supply_pack/food/ingredients_basic/peas
-	name = "Peapod Crate"
+	name = "Peas Crate"
 	desc = "Crate containing five peapods."
 	cost = 75
-	contains = list(/obj/item/reagent_containers/food/snacks/grown/peapod,
-					/obj/item/reagent_containers/food/snacks/grown/peapod,
-					/obj/item/reagent_containers/food/snacks/grown/peapod,
-					/obj/item/reagent_containers/food/snacks/grown/peapod,
-					/obj/item/reagent_containers/food/snacks/grown/peapod,
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/peas,
+					/obj/item/reagent_containers/food/snacks/grown/peas,
+					/obj/item/reagent_containers/food/snacks/grown/peas,
+					/obj/item/reagent_containers/food/snacks/grown/peas,
+					/obj/item/reagent_containers/food/snacks/grown/peas,
 	)
 
 /datum/supply_pack/food/ingredients_basic/sweet_potato
@@ -312,11 +312,11 @@
 	name = "Grapes Crate"
 	desc = "Crate containing five bunches of grapes."
 	cost = 75
-	contains = list(/obj/item/reagent/containers/food/snacks/grown/grapes,
-					/obj/item/reagent/containers/food/snacks/grown/grapes,
-					/obj/item/reagent/containers/food/snacks/grown/grapes,
-					/obj/item/reagent/containers/food/snacks/grown/grapes,
-					/obj/item/reagent/containers/food/snacks/grown/grapes,
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/grapes,
+					/obj/item/reagent_containers/food/snacks/grown/grapes,
+					/obj/item/reagent_containers/food/snacks/grown/grapes,
+					/obj/item/reagent_containers/food/snacks/grown/grapes,
+					/obj/item/reagent_containers/food/snacks/grown/grapes,
 	)
 
 /datum/supply_pack/food/ingredients_randomized/grains
