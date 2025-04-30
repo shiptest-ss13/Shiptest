@@ -200,7 +200,8 @@
 /obj/machinery/door/airlock/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(id_tag)
 		id_tag = "[REF(port)][id_tag]"
-	set_access_namespace(port.current_ship.access_namespace)
+	if(isnull(get_access_namespace())) // Don't override if we already have a namespace set (ex. by /obj/effect/mapping_helpers/airlock/access/public)
+		set_access_namespace(port.current_ship.access_namespace)
 
 /obj/machinery/door/airlock/CanPass(atom/movable/mover, turf/target)
 	. = ..()

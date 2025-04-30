@@ -190,9 +190,7 @@
 	var/access_flag = 0
 
 /obj/effect/mapping_helpers/airlock/access/payload(obj/machinery/door/airlock/payload)
-	if(payload.get_access_flags())
-		log_mapping("[src] at [AREACOORD(src)] overriding previously set access flags! ([payload.get_access_flags()] -> [access_flag])")
-	payload.set_access_flags(access_flag)
+	payload.set_access_flags(payload.get_access_flags() | access_flag)
 
 /obj/effect/mapping_helpers/airlock/access/captain
 	icon_state = "access_captain"

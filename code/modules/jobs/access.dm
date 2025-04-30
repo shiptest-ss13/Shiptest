@@ -98,7 +98,7 @@
 		return FALSE
 	if(src.get_access_flags() == 0) // If our access flag is 0, we don't need a flag and can accept
 		return TRUE
-	if(item_access[2] & src.get_access_flags() != src.get_access_flags() ) // If flags don't match, reject
+	if((item_access[2] & src.get_access_flags()) != src.get_access_flags() ) // If flags don't match, reject
 		return FALSE
 	return TRUE // If everything matches, accept
 
