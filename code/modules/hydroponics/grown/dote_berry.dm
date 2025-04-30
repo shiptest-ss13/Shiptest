@@ -19,7 +19,7 @@
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/dote_berries
-	seed = null
+	seed = /obj/item/seeds/dote_berries
 	name = "dote berries"
 	desc = "A small purple berry native to Teceti. It takes root in arid locations, and has a tendency to out-compete local species due to its method of propagation."
 	icon_state = "dote"

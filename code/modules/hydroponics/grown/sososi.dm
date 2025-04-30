@@ -19,7 +19,7 @@
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/sososi
-	seed = null
+	seed = /obj/item/seeds/sososi
 	name = "sososi leaf"
 	desc = "A thick leaf from a Tecetian succulent. It contains a gel-like concentration in its leaves, which while alive stored water and sugars."
 	icon_state = "sososi"

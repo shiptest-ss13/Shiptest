@@ -20,7 +20,7 @@
 	reagents_add = list(/datum/reagent/consumable/dotu_juice = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/dotu_fime
-	seed = null
+	seed = /obj/item/seeds/dotu_fime
 	name = "dotu-fime"
 	desc = "A small plump fruit typically found growing on trees near sources of water. The flavor is somewhat bitter, but excels when processed, or fermented."
 	icon_state = "dotu-fime"

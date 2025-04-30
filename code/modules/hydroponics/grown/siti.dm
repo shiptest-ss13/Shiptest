@@ -16,7 +16,7 @@
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/siti
-	seed = null
+	seed = /obj/item/seeds/sososi
 	name = "siti leaf"
 	desc = "The leaves of a Siti plant have a strong structure, giving them an extremely pleasant (if somewhat lacking in flavor) crunch."
 	icon_state = "siti"

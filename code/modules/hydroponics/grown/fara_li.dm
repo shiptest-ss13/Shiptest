@@ -18,7 +18,7 @@
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/fara_li
-	seed = null
+	seed = /obj/item/seeds/fara_li
 	name = "fara-li"
 	desc = "A neutral-hot fruit grown in orchards on Teceti, and tecetiformed worlds. "
 	icon_state = "fara-li"
