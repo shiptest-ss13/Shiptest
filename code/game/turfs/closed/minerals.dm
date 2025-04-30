@@ -276,7 +276,7 @@
 
 	mineralChance = 10
 	mineralSpawnChanceList = list(
-		/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/sulfur/pyrite = 20, /obj/item/stack/ore/proustite = 11,
+		/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/proustite = 11,
 		/obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/magnetite = 20,
 		/obj/item/stack/ore/bluespace_crystal = 1, /obj/item/stack/ore/gold = 2
 		)
@@ -758,7 +758,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 3, /obj/item/stack/ore/sulfur/pyrite = 10, /obj/item/stack/ore/quartzite = 50,
+	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 3,
 		/obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/hematite = 45, /obj/item/stack/ore/rutile = 20,
 		/turf/closed/mineral/gibtonite/whitesands = 4, /turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 4)
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
@@ -839,7 +839,7 @@
 	turf_type = /turf/open/floor/plating/asteroid/rockplanet
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4,
-		/obj/item/stack/ore/sulfur = 25, /obj/item/stack/ore/hematite = 80,
+		/obj/item/stack/ore/hematite = 80,
 		/obj/item/stack/ore/bluespace_crystal = 1)
 
 /turf/closed/mineral/gibtonite/rockplanet
@@ -862,7 +862,7 @@
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/autunite = 30, /obj/item/stack/ore/diamond = 0.5, /obj/item/stack/ore/gold = 4, /obj/item/stack/ore/proustite = 5,
 		/obj/item/stack/ore/hematite = 40, /obj/item/stack/ore/plasma = 35,
-		/obj/item/stack/ore/graphite = 10)
+		)
 
 	mineralChance = 20
 

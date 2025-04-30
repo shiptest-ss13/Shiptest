@@ -316,7 +316,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/hematite = 45,
 		/obj/item/stack/ore/rutile = 20,
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/sulfur/pyrite = 10,
 		/obj/item/stack/ore/autunite = 1,
 		/obj/item/stack/ore/diamond = 1,
 		)
@@ -335,7 +334,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/hematite = 35,
 		/obj/item/stack/ore/rutile = 10,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/sulfur/pyrite = 5,
 		/obj/item/stack/ore/autunite = 4,
 		/obj/item/stack/ore/diamond = 4,
 		)
@@ -350,7 +348,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/hematite = 10,
 		/obj/item/stack/ore/rutile = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/sulfur/pyrite = 5,
 		/obj/item/stack/ore/autunite = 6,
 		/obj/item/stack/ore/diamond = 6,
 		)
@@ -370,7 +367,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/hematite = 80,
-		/obj/item/stack/ore/graphite = 10,
 		/obj/item/stack/ore/autunite = 5,
 		/obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/diamond = 1,
@@ -389,8 +385,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/hematite = 60,
-		/obj/item/stack/ore/sulfur = 15,
-		/obj/item/stack/ore/graphite = 5,
 		/obj/item/stack/ore/autunite = 5,
 		/obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/diamond = 1,
@@ -414,7 +408,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/hematite = 20,
-		/obj/item/stack/ore/graphite = 5,
 		/obj/item/stack/ore/autunite = 5,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/diamond = 5,

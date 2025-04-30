@@ -98,7 +98,6 @@
 	ruin_type = RUINTYPE_ROCK
 	primary_ores = list(\
 		/obj/item/stack/ore/hematite,
-		/obj/item/stack/ore/sulfur,
 		)
 
 /datum/planet_type/sand
@@ -113,7 +112,6 @@
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
 	primary_ores = list(\
-		/obj/item/stack/ore/quartzite,
 		/obj/item/stack/ore/hematite,
 		/obj/item/stack/ore/rutile,
 		)
@@ -260,10 +258,7 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/desert_yellow
-	primary_ores = list(\
-		/obj/item/stack/ore/graphite/coal,
-		/obj/item/stack/ore/sulfur,
-		/obj/item/stack/ore/quartzite,
+	primary_ores = list(
 		/obj/item/stack/ore/gold,
 		)
 
@@ -302,7 +297,6 @@
 	weather_controller_type = null
 
 	primary_ores = list(\
-		/obj/item/stack/ore/quartzite,
 		/obj/item/stack/ore/hematite,
 		/obj/item/stack/ore/rutile,
 		)

@@ -333,15 +333,6 @@
 	category = list("initial","Construction")
 	maxstack = 50
 
-/datum/design/refine_glass
-	name = "Refine Quartz into Glass"
-	id = "quartz2glass"
-	build_type = SMELTER
-	materials = list(/datum/material/quartz = ORE_MATERIAL_AMOUNT)
-	build_path = /obj/item/stack/sheet/glass
-	category = list("initial","Construction")
-	maxstack = 50
-
 /datum/design/rglass
 	name = "Reinforced Glass"
 	id = "rglass"
