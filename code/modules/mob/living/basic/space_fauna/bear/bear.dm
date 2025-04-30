@@ -42,8 +42,9 @@
 
 /mob/living/basic/bear/Initialize(mapload)
 	. = ..()
-	if(armored)
-		update_icons()
+	//Was gonna do this but since we already have sprites for the only two armored varients its a waste of init time.
+	//if(armored)
+	//	update_icons()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	AddElement(/datum/element/ai_retaliate)
 	AddComponent(/datum/component/tree_climber, climbing_distance = 15)
@@ -81,6 +82,9 @@
 /mob/living/basic/bear/frontier
 	name = "combat bear"
 	desc = "A ferocious brown bear decked out in armor plating."
+	icon_state = "combatbear"
+	icon_living = "combatbear"
+	icon_dead = "combatbear_dead"
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
 	melee_damage_lower = 25
@@ -113,7 +117,6 @@
 	friendly_verb_simple = "growl at"
 	speak_emote = list("growls")
 	speed = 12
-	//move_to_delay = 12
 	maxHealth = 100
 	health = 100
 	//armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
@@ -128,10 +131,8 @@
 	move_resist = MOVE_FORCE_VERY_STRONG
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 1)
-	//loot = list()
-	//mob_trophy = /obj/item/mob_trophy/bear_paw
-	//stat_attack = HARD_CRIT
-	//robust_searching = TRUE
+	var/mob_trophy = /obj/item/mob_trophy/bear_paw
+	var/trophy_drop_mod = 25
 	//footstep_type = FOOTSTEP_MOB_CLAW
 	/// Message for when the polar bear starts to attack faster
 	var/aggressive_message_said = FALSE
@@ -150,6 +151,11 @@
 	move_to_delay = 7
 */
 
+/mob/living/basic/bear/polar/Initialize(mapload)
+	. = ..()
+	if(mob_trophy && prob(trophy_drop_mod))
+		AddElement(/datum/element/death_drops, list(mob_trophy))
+
 /mob/living/basic/bear/polar/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
@@ -160,17 +166,19 @@
 /mob/living/basic/bear/polar/warrior
 	name = "polar warbear"
 	desc = "An aggressive animal that defends its territory with incredible power. This one appears to be a remnant of the short-lived Wojtek-Aleph program."
+	icon_state = "warbear"
+	icon_living = "warbear"
+	icon_dead = "warbear_dead"
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	attack_verb_continuous = "CQB's"
 	attack_verb_simple = "CQB"
 	speed = 7
-	//move_to_delay = 7
 	maxHealth = 300
 	health = 300
 	obj_damage = 60
-	//mob_trophy = /obj/item/mob_trophy/war_paw
-	//trophy_drop_mod = 75
+	mob_trophy = /obj/item/mob_trophy/war_paw
+	trophy_drop_mod = 75
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3, /obj/item/bear_armor = 1)
 	armored = TRUE
