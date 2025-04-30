@@ -59,7 +59,7 @@
 	name = "empty can"
 	icon_state = "lifosa"
 	resistance_flags = NONE
-	grind_results = list(/datum/reagent/aluminium = 10) //claims to be tin
+	grind_results = list(/datum/reagent/aluminium = 10)
 
 /obj/item/trash/dote
 	name = "\improper Dote on it!"
