@@ -152,7 +152,7 @@
 	name = "Lifosa Tiris"
 	icon_state = "lifosa-tiris"
 	desc = "Small pearls of Tiris Cheese, sealed in a salty crust, and distributed in a sealed tin. The interior of the tin is somewhat oily."
-	trash = /obj/item/trash/mirastin
+	trash = /obj/item/trash/lifosa
 	filling_color = "#cac84e"
 	tastes = list("rock salts" = 1, "cheese" = 1, "savory herbs" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -164,7 +164,7 @@
 	name = "tiris pearls"
 	icon_state = "lifosa-tiris"
 	desc = "Small pearls of Tiris Cheese, sealed in a salty crust. They're fairly oily, and have a savory aroma."
-	trash = /obj/item/trash/mirastin
+	trash = /obj/item/trash/lifosa
 	filling_color = "#cac84e"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 
@@ -172,7 +172,7 @@
 	name = "Dote on it!"
 	icon_state = "dote"
 	desc = "A quick snack native to Teceti. Dote berries are harvested, lightly seasoned, and dehydrated to make a crunchy fruit-based snack."
-	trash = /obj/item/trash/mirastin
+	trash = /obj/item/trash/dote
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	filling_color = "#639fee"
 	tastes = list("crunchy berry" = 5)
@@ -184,7 +184,7 @@
 	name = "dried dote"
 	icon_state = "dote-natural"
 	desc = "Lightly seasoned, air-dried dote berries. A quick and crunchy snack."
-	trash = /obj/item/trash/dote
+	trash = null
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#639fee"
 	tastes = list("crunchy berry" = 5)
