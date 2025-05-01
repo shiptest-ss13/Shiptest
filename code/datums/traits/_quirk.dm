@@ -8,6 +8,8 @@
 	var/gain_text
 	var/lose_text
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
+	///should this quirk be seen on a scanner pass
+	var/detectable = FALSE
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
 	var/list/mob_traits //if applicable, apply and remove these mob traits
 	var/mob/living/quirk_holder
@@ -85,19 +87,21 @@
 		return
 	on_process(seconds_per_tick)
 
-/mob/living/proc/get_trait_string(medical) //helper string. gets a string of all the traits the mob has
+/mob/living/proc/get_trait_string(medical, see_all=FALSE) //helper string. gets a string of all the traits the mob has
 	var/list/dat = list()
 	if(!medical)
 		for(var/V in roundstart_quirks)
-			var/datum/quirk/T = V
-			dat += T.name
+			if(v.detectable || see_all)
+				var/datum/quirk/T = V
+				dat += T.name
 		if(!dat.len)
 			return "None"
 		return dat.Join(", ")
 	else
 		for(var/V in roundstart_quirks)
-			var/datum/quirk/T = V
-			dat += T.medical_record_text
+			if(v.detectable || see_all)
+				var/datum/quirk/T = V
+				dat += T.medical_record_text
 		if(!dat.len)
 			return "None"
 		return dat.Join("<br>")
