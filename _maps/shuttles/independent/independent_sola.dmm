@@ -501,7 +501,15 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 9
 	},
-/obj/structure/bed/roller,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/structure/curtain{
+	color = "#57967f"
+	},
+/obj/item/bedsheet/medical{
+	dir = 4
+	},
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -915,7 +923,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "nk" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/pink{
 	icon_state = "1-6"
 	},
@@ -934,7 +941,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering/electrical)
 "np" = (
 /obj/effect/turf_decal/siding/white/end{
@@ -970,16 +977,16 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 9
 	},
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 20;
-	clamps_locked = 1
-	},
-/obj/machinery/iv_drip,
 /obj/machinery/firealarm/directional/west{
 	pixel_y = 6
 	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -6
+	},
+/obj/machinery/iv_drip,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 20;
+	clamps_locked = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1485,6 +1492,7 @@
 "uv" = (
 /obj/structure/closet/crate/freezer,
 /obj/effect/mapping_helpers/crate_shelve,
+/obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "uB" = (
@@ -1729,7 +1737,6 @@
 /turf/open/floor/wood/maple,
 /area/ship/bridge)
 "xI" = (
-/obj/effect/turf_decal/borderfloorblack,
 /obj/structure/closet/secure_closet/freezer{
 	anchored = 1;
 	locked = 0;
@@ -1746,7 +1753,7 @@
 /obj/item/reagent_containers/condiment/soymilk,
 /obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/milk,
-/obj/machinery/light/directional/south,
+/obj/machinery/light/dim/directional/south,
 /obj/structure/cable/pink{
 	icon_state = "4-8"
 	},
@@ -1760,6 +1767,7 @@
 /obj/structure/railing/thin{
 	dir = 8
 	},
+/obj/effect/turf_decal/corner/opaque/black/mono,
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "xK" = (
@@ -2206,7 +2214,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "Cs" = (
-/obj/effect/turf_decal/borderfloorblack,
 /obj/structure/closet{
 	name = "cabinet";
 	anchored = 1
@@ -2224,6 +2231,7 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/turf_decal/corner/opaque/black/mono,
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "CC" = (
@@ -2874,6 +2882,7 @@
 /obj/item/storage/box/bodybags,
 /obj/item/storage/box/syringes,
 /obj/item/roller,
+/obj/item/roller,
 /obj/item/reagent_containers/syringe/thializid,
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 6
@@ -3183,6 +3192,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "Pw" = (
@@ -3259,7 +3269,12 @@
 /area/ship/storage)
 "QX" = (
 /obj/effect/turf_decal/corner/opaque/black/mono,
-/obj/structure/kitchenspike,
+/obj/machinery/space_heater{
+	targetTemperature = 275.65;
+	setMode = "cool";
+	anchored = 1
+	},
+/obj/effect/turf_decal/industrial/hatch/blue,
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "Rb" = (
@@ -3538,10 +3553,9 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
 "TM" = (
-/obj/effect/decal/cleanable/blood/gibs/old,
-/obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/turf_decal/corner/opaque/black/mono,
 /obj/structure/kitchenspike,
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "TZ" = (
@@ -3682,11 +3696,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "VK" = (
-/obj/effect/turf_decal/borderfloorblack/corner{
-	dir = 4
-	},
 /obj/structure/crate_shelf,
 /obj/structure/closet/crate/freezer,
+/obj/effect/turf_decal/borderfloorblack/full,
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "VN" = (
