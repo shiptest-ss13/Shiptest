@@ -2048,13 +2048,17 @@
 /obj/structure/table/reinforced,
 /obj/item/mine/pressure/training{
 	pixel_y = 10;
-	pixel_x = -5
+	pixel_x = -8
 	},
 /obj/item/wirecutters{
 	pixel_x = 8;
 	pixel_y = 6
 	},
 /obj/machinery/light/directional/north,
+/obj/item/screwdriver{
+	pixel_y = 2;
+	pixel_x = 12
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "nz" = (
@@ -2878,11 +2882,12 @@
 	pixel_y = 9
 	},
 /obj/item/assembly/signaler{
-	pixel_y = 10
+	pixel_y = 10;
+	pixel_x = 2
 	},
 /obj/item/assembly/signaler{
 	pixel_y = 10;
-	pixel_x = -10
+	pixel_x = -5
 	},
 /obj/item/stack/cable_coil/cut/red{
 	pixel_y = -2
@@ -4116,6 +4121,9 @@
 /obj/machinery/cell_charger{
 	pixel_x = -3;
 	pixel_y = 6
+	},
+/obj/item/stock_parts/cell/high{
+	pixel_x = -7
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
