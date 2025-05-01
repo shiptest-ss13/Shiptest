@@ -107,7 +107,6 @@
 /mob/living/basic/bear/polar
 	name = "polar bear"
 	desc = "An aggressive animal that defends it's territory with incredible power. These beasts don't run from their enemies."
-	//icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
 	icon_state = "polarbear"
 	icon_living = "polarbear"
 	icon_dead = "polarbear_dead"
@@ -119,7 +118,7 @@
 	speed = 12
 	maxHealth = 100
 	health = 100
-	//armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	obj_damage = 40
 	melee_damage_lower = 25
 	melee_damage_upper = 25
