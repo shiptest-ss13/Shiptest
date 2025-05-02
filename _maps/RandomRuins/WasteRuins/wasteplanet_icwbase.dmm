@@ -2283,6 +2283,9 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "iO" = (
@@ -6124,7 +6127,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "yf" = (
-/turf/open/water/acid,
+/turf/open/water/acid/waste,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yk" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
