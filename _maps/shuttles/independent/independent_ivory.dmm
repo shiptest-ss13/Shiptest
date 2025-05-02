@@ -864,14 +864,14 @@
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_y = 8;
-	pixel_x = -10
+	pixel_x = -7
 	},
 /obj/item/reagent_containers/condiment/peppermill{
-	pixel_y = 9;
-	pixel_x = -4
+	pixel_y = 1;
+	pixel_x = -7
 	},
 /obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = -10;
+	pixel_x = -14;
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1026,10 +1026,27 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "qp" = (
-/obj/structure/chair/sofa/blue/corpo/right/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
+/obj/structure/table/wood,
+/obj/item/paper_bin{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/melee/knife/hunting{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/obj/item/clothing/mask/vape/cigar{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/item/clothing/glasses/sunglasses{
+	pixel_y = 11;
+	pixel_x = -5
+	},
+/obj/item/pen/fountain/captain,
 /turf/open/floor/suns/hatch{
 	color = "#792f27"
 	},
@@ -1257,7 +1274,9 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew)
 "uc" = (
-/obj/structure/chair/sofa/blue/corpo/left/directional/north,
+/obj/structure/chair/comfy/purple{
+	dir = 1
+	},
 /turf/open/floor/suns/hatch{
 	color = "#792f27"
 	},
@@ -2401,29 +2420,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "RG" = (
-/obj/structure/table/wood,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/item/paper_bin{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/pen/fountain/captain,
-/obj/item/clothing/mask/vape/cigar{
-	pixel_x = -5;
-	pixel_y = 1
-	},
 /obj/item/radio/intercom/directional/east,
-/obj/item/clothing/glasses/sunglasses{
-	pixel_y = 11;
-	pixel_x = -5
-	},
-/obj/item/melee/knife/hunting{
-	pixel_x = 6;
-	pixel_y = -1
-	},
+/obj/structure/chair/sofa/blue/corpo/right/directional/west,
 /turf/open/floor/suns/hatch{
 	color = "#792f27"
 	},
@@ -2458,9 +2460,6 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "SF" = (
-/obj/structure/chair/comfy/purple{
-	dir = 1
-	},
 /obj/machinery/button/door{
 	pixel_x = 20;
 	dir = 8;
@@ -2474,6 +2473,7 @@
 /obj/machinery/firealarm/directional/east{
 	pixel_y = 15
 	},
+/obj/structure/chair/sofa/blue/corpo/left/directional/west,
 /turf/open/floor/suns/hatch{
 	color = "#792f27"
 	},
@@ -2522,13 +2522,10 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "UM" = (
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1;
 	color = "#FFFFFF"
 	},
-/obj/item/storage/box/flares,
-/obj/item/storage/box/flares,
 /obj/item/storage/box/flares,
 /obj/item/storage/box/flares,
 /obj/item/storage/box/flares,
