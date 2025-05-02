@@ -160,7 +160,7 @@
 
 // Can we cut? Plasma cutter does not use charge continuously.
 // Amount cannot be defaulted to 1: most of the code specifies 0 in the call.
-/obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, amount)
+/obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, atom/target, amount)
 	if(QDELETED(cell))
 		to_chat(user, span_warning("[src] does not have a cell, and cannot be used!"))
 		return FALSE

@@ -305,6 +305,16 @@
 //! from base of turf/proc/afterShuttleMove: (turf/new_turf)
 #define COMSIG_TURF_AFTER_SHUTTLE_MOVE "turf_after_shuttle_move"
 
+///From /datum/hotspot/perform_exposure()
+#define COMSIG_TURF_HOTSPOT_EXPOSE "turf_hotspot_expose"
+///From /turf/ignite_turf(): (power, fire_color)
+#define COMSIG_TURF_IGNITED "turf_ignited"
+	///Prevents hotspots and turf fires
+	#define SUPPRESS_FIRE (1<<0)
+///From /obj/item/open_flame(): (flame_heat)
+#define COMSIG_TURF_OPEN_FLAME "open_flame"
+	#define BLOCK_TURF_IGNITION (1<<0)
+
 // /atom/movable signals
 
 ///from base of atom/movable/Moved(): (/atom)
@@ -373,6 +383,31 @@
 #define COMSIG_MOVABLE_DRIFT_BLOCK_INPUT "movable_drift_block_input"
 	#define DRIFT_ALLOW_INPUT (1<<0)
 
+/// Sent from /obj/item/radio/talk_into(): (obj/item/radio/used_radio)
+#define COMSIG_MOVABLE_USING_RADIO "movable_radio"
+	/// Return to prevent the movable from talking into the radio.
+	#define COMPONENT_CANNOT_USE_RADIO (1<<0)
+
+/// Sent from /atom/movable/proc/say_quote() after say verb is chosen and before spans are applied.
+#define COMSIG_MOVABLE_SAY_QUOTE "movable_say_quote"
+	// Used to access COMSIG_MOVABLE_SAY_QUOTE argslist
+	/// The index of args that corresponds to the actual message
+	#define MOVABLE_SAY_QUOTE_MESSAGE 1
+	#define MOVABLE_SAY_QUOTE_MESSAGE_SPANS 2
+	#define MOVABLE_SAY_QUOTE_MESSAGE_MODS 3
+/// Sent from /atom/movable/proc/lang_treat() before it runs.
+#define COMSIG_MOVABLE_TREAT_MESSAGE "movable_treat_message"
+	// Used to access COMSIG_MOVABLE_TREAT_MESSAGE argslist
+	/// The index of args that corresponds to the mob speaking
+	#define MOVABLE_TREAT_MESSAGE_SPEAKER 1
+	/// The index of args that corresponds to the spoken language
+	#define MOVABLE_TREAT_MESSAGE_LANGUAGE 2
+	/// The index of args that corresponds to the actual message
+	#define MOVABLE_TREAT_MESSAGE_MESSAGE 3
+	#define MOVABLE_TREAT_MESSAGE_SPANS 4
+	#define MOVABLE_TREAT_MESSAGE_MODS 5
+	#define MOVABLE_TREAT_MESSAGE_NOQUOTE 6
+
 ///signal sent out by an atom when it checks if it can be pulled, for additional checks
 #define COMSIG_ATOM_CAN_BE_PULLED "movable_can_be_pulled"
 	#define COMSIG_ATOM_CANT_PULL (1 << 0)
@@ -434,6 +469,8 @@
 ///from base of /obj/item/attack(): (mob/M, mob/user)
 #define COMSIG_MOB_ITEM_ATTACK "mob_item_attack"
 	#define COMPONENT_ITEM_NO_ATTACK (1<<0)
+///from base of /obj/item/attack(): (mob/living, mob/living, params)
+#define COMSIG_ITEM_POST_ATTACK "item_post_attack" // called only if the attack was executed
 ///from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
 #define COMSIG_MOB_APPLY_DAMGE "mob_apply_damage"
 ///from base of obj/item/afterattack(): (atom/target, mob/user, proximity_flag, click_parameters)
@@ -474,9 +511,14 @@
 	#define MOB_DEADSAY_SIGNAL_INTERCEPT (1<<0)
 ///from /mob/living/emote(): ()
 #define COMSIG_MOB_EMOTE "mob_emote"
-///from base of mob/swap_hand(): (obj/item)
-#define COMSIG_MOB_SWAP_HANDS "mob_swap_hands"
+///from base of mob/swap_hand(): (obj/item/currently_held_item)
+#define COMSIG_MOB_SWAPPING_HANDS "mob_swapping_hands"
 	#define COMPONENT_BLOCK_SWAP (1<<0)
+/// from base of mob/swap_hand(): ()
+/// Performed after the hands are swapped.
+#define COMSIG_MOB_SWAP_HANDS "mob_swap_hands"
+///from base of /obj/item/pickup: (obj/item/item)
+#define COMSIG_MOB_PICKUP_ITEM "mob_pickup_item"
 ///from base of /mob/verb/pointed: (atom/A)
 #define COMSIG_MOB_POINTED "mob_pointed"
 /// from mob/get_status_tab_items(): (list/items)
@@ -545,6 +587,18 @@
 /// from start of /mob/living/handle_breathing(): (delta_time, times_fired)
 #define COMSIG_LIVING_HANDLE_BREATHING "living_handle_breathing"
 
+/// From mob/living/try_speak(): (message, ignore_spam, forced)
+#define COMSIG_LIVING_TRY_SPEECH "living_vocal_speech"
+	/// Return if the mob can speak the message, regardless of any other signal returns or checks.
+	#define COMPONENT_CAN_ALWAYS_SPEAK (1<<0)
+	/// Return if the mob cannot speak.
+	#define COMPONENT_CANNOT_SPEAK (1<<1)
+
+/// From mob/living/treat_message(): (list/message_args)
+#define COMSIG_LIVING_TREAT_MESSAGE "living_treat_message"
+	/// The index of message_args that corresponds to the actual message
+	#define TREAT_MESSAGE_MESSAGE 1
+
 ///From /datum/component/creamed/Initialize()
 #define COMSIG_MOB_CREAMED "mob_creamed"
 
@@ -592,6 +646,7 @@
 
 // /obj/item/radio signals
 #define COMSIG_RADIO_NEW_FREQUENCY "radio_new_frequency" //called from base of /obj/item/radio/proc/set_frequency(): (list/args)
+#define COMSIG_RADIO_NEW_MESSAGE "radio_new_message" ///called from base of /obj/item/radio/proc/talk_into(): (atom/movable/M, message, channel)
 
 // /obj/item/pen signals
 #define COMSIG_PEN_ROTATED "pen_rotated" //called after rotation in /obj/item/pen/attack_self(): (rotation, mob/living/carbon/user)
