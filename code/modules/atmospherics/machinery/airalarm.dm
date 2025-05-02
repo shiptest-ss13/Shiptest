@@ -135,7 +135,7 @@
 	)
 
 /obj/machinery/airalarm/freezer // Won't go off for low temps; Won't heat the room
-	desc = "A machine that monitors atmosphere levels. This one is set to go off in room temperature, as to not let freezer contents spoil.
+	desc = "A machine that monitors atmosphere levels. This one is set to go off in room temperature, as to not let freezer contents spoil."
 	heating_manage = FALSE
 
 	TLV = list( // Breathable air.
