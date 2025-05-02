@@ -21,7 +21,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//The design process is that class 1 veins have a small chance of generating with class 2 ores and so on
 	//As higher class veins will be increasingly harder to mine
 	var/list/ore_list = list(
-		/obj/item/stack/ore/magnetite = 20,
+		/obj/item/stack/ore/iron = 20,
 		/obj/item/stack/ore/plasma = 20,
 		)
 	//The post initialize list of all possible drops from the vein
@@ -129,7 +129,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/magnetite = 10,
+		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/plasma = 10,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/gold = 2,
@@ -148,7 +148,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/magnetite = 4,
+		/obj/item/stack/ore/iron = 4,
 		/obj/item/stack/ore/plasma = 5,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/gold = 2,
@@ -183,12 +183,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//Ice planets earn a slightly higher rare ore chance on account of them being notably harder
 	//Alongside being a much more reliable source of plasma
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 20,
+		/obj/item/stack/ore/iron = 20,
 		/obj/item/stack/ore/gold = 20,
-		/obj/item/stack/ore/rutile = 15,
+		/obj/item/stack/ore/titanium = 15,
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/proustite = 10,
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/ice = 7,
 		)
@@ -197,12 +197,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 10,
+		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/proustite = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stack/ore/ice = 8,
 		)
@@ -213,12 +213,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 2,
+		/obj/item/stack/ore/iron = 2,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/proustite = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		/obj/item/stack/ore/ice = 8,
 		)
@@ -229,12 +229,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 30
 	vein_class = 4
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 2,
+		/obj/item/stack/ore/iron = 2,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/proustite = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		/obj/item/stack/ore/ice = 8,
 		)
@@ -254,9 +254,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//same surface ore drop rate too...
 	ore_list = list(
 		/obj/item/stack/ore/gold = 30,
-		/obj/item/stack/ore/proustite = 20,
+		/obj/item/stack/ore/silver = 20,
 		/obj/item/stack/ore/diamond = 10,
-		/obj/item/stack/ore/rutile = 1,
+		/obj/item/stack/ore/titanium = 1,
 		)
 
 /obj/structure/vein/jungle/classtwo
@@ -275,9 +275,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	)
 	ore_list = list(
 		/obj/item/stack/ore/gold = 20,
-		/obj/item/stack/ore/proustite = 10,
+		/obj/item/stack/ore/silver = 10,
 		/obj/item/stack/ore/diamond = 10,
-		/obj/item/stack/ore/rutile = 4,
+		/obj/item/stack/ore/titanium = 4,
 		)
 	max_mobs = 6
 	spawn_time = 15 SECONDS
@@ -295,9 +295,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	)
 	ore_list = list(
 		/obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/proustite = 10,
+		/obj/item/stack/ore/silver = 10,
 		/obj/item/stack/ore/diamond = 10,
-		/obj/item/stack/ore/rutile = 4,
+		/obj/item/stack/ore/titanium = 4,
 		)
 	//jungle mobs are kind of fucking hard, less max
 	max_mobs = 4
@@ -313,10 +313,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 45,
-		/obj/item/stack/ore/rutile = 20,
+		/obj/item/stack/ore/iron = 45,
+		/obj/item/stack/ore/titanium = 20,
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/autunite = 1,
+		/obj/item/stack/ore/uranium = 1,
 		/obj/item/stack/ore/diamond = 1,
 		)
 
@@ -331,10 +331,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 35,
-		/obj/item/stack/ore/rutile = 10,
+		/obj/item/stack/ore/iron = 35,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/autunite = 4,
+		/obj/item/stack/ore/uranium = 4,
 		/obj/item/stack/ore/diamond = 4,
 		)
 	max_mobs = 6
@@ -345,10 +345,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 3
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 10,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/plasma = 5,
-		/obj/item/stack/ore/autunite = 6,
+		/obj/item/stack/ore/uranium = 6,
 		/obj/item/stack/ore/diamond = 6,
 		)
 
@@ -366,8 +366,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 80,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/iron = 80,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/bluespace_crystal = 1,
@@ -384,8 +384,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 60,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/iron = 60,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/gold = 4,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/bluespace_crystal = 1,
@@ -407,8 +407,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 20,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/iron = 20,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/diamond = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
@@ -430,8 +430,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 20,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/iron = 20,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/gold = 6,
 		/obj/item/stack/ore/diamond = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
@@ -451,11 +451,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	//same surface ore drop rate too...
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 40,
+		/obj/item/stack/ore/iron = 40,
 		/obj/item/stack/ore/plasma = 35,
-		/obj/item/stack/ore/autunite = 30,
+		/obj/item/stack/ore/uranium = 30,
 
-		/obj/item/stack/ore/proustite = 5,
+		/obj/item/stack/ore/silver = 5,
 		/obj/item/stack/ore/gold = 4,
 		)
 
@@ -473,11 +473,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/structure/spawner/hivebot = 20
 	)
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 30,
+		/obj/item/stack/ore/iron = 30,
 		/obj/item/stack/ore/plasma = 25,
-		/obj/item/stack/ore/autunite = 20,
+		/obj/item/stack/ore/uranium = 20,
 
-		/obj/item/stack/ore/proustite = 10,
+		/obj/item/stack/ore/silver = 10,
 		/obj/item/stack/ore/gold = 8,
 		/obj/item/stack/ore/diamond = 1,
 		)
@@ -497,11 +497,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/hivebot/defender = 1
 	)
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 15,
+		/obj/item/stack/ore/iron = 15,
 		/obj/item/stack/ore/plasma = 15,
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/uranium = 10,
 
-		/obj/item/stack/ore/proustite = 10,
+		/obj/item/stack/ore/silver = 10,
 		/obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/diamond = 5,
 		)
@@ -526,11 +526,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	//same surface ore drop rate too...
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 40,
-		/obj/item/stack/ore/rutile = 20,
+		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/titanium = 20,
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/autunite = 2,
+		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/diamond = 1,
 		)
 
@@ -548,11 +548,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 30,
-		/obj/item/stack/ore/rutile = 10,
+		/obj/item/stack/ore/iron = 30,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/bluespace_crystal = 7,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/diamond = 2,
 		)
 	max_mobs = 6
@@ -571,11 +571,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 1
 		)
 	ore_list = list(
-		/obj/item/stack/ore/hematite = 15,
-		/obj/item/stack/ore/rutile = 10,
+		/obj/item/stack/ore/iron = 15,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/bluespace_crystal = 7,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/autunite = 7,
+		/obj/item/stack/ore/uranium = 7,
 		/obj/item/stack/ore/diamond = 5,
 		)
 
@@ -594,11 +594,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//same surface ore drop rate too...
 	ore_list = list(
 		/obj/item/stack/ore/gold = 20,
-		/obj/item/stack/ore/hematite = 20,
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/iron = 20,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/plasma = 5,
 		/obj/item/stack/ore/diamond = 5,
-		/obj/item/stack/ore/rutile = 4,
+		/obj/item/stack/ore/titanium = 4,
 		)
 
 /obj/structure/vein/desert/classtwo
@@ -611,11 +611,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/gold = 30,
-		/obj/item/stack/ore/hematite = 10,
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/plasma = 7,
 		/obj/item/stack/ore/diamond = 7,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/titanium = 5,
 		)
 	max_mobs = 6
 	spawn_time = 10 SECONDS
@@ -631,11 +631,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/gold = 15,
-		/obj/item/stack/ore/hematite = 10,
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/iron = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/plasma = 7,
 		/obj/item/stack/ore/diamond = 7,
-		/obj/item/stack/ore/rutile = 7,
+		/obj/item/stack/ore/titanium = 7,
 		)
 
 	max_mobs = 6
@@ -655,11 +655,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	//same surface ore drop rate
 	ore_list = list(
-		/obj/item/stack/ore/autunite = 30,
+		/obj/item/stack/ore/uranium = 30,
 		/obj/item/stack/ore/plasma = 25,
-		/obj/item/stack/ore/magnetite = 20,
+		/obj/item/stack/ore/iron = 20,
 		/obj/item/stack/ore/bluespace_crystal = 10,
-		/obj/item/stack/ore/rutile = 6,
+		/obj/item/stack/ore/titanium = 6,
 		/obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/diamond = 1,
 		)
@@ -685,11 +685,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/autunite = 20,
+		/obj/item/stack/ore/uranium = 20,
 		/obj/item/stack/ore/plasma = 15,
-		/obj/item/stack/ore/magnetite = 10,
+		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/bluespace_crystal = 10,
-		/obj/item/stack/ore/rutile = 6,
+		/obj/item/stack/ore/titanium = 6,
 		/obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/diamond = 1,
 		)
@@ -710,11 +710,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	ore_list = list(
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/magnetite = 10,
+		/obj/item/stack/ore/iron = 10,
 		/obj/item/stack/ore/bluespace_crystal = 10,
-		/obj/item/stack/ore/rutile = 8,
+		/obj/item/stack/ore/titanium = 8,
 		/obj/item/stack/ore/gold = 7,
 		/obj/item/stack/ore/diamond = 5,
 		)
@@ -735,10 +735,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 40,
-		/obj/item/stack/ore/hematite = 65,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/iron = 65,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/gold = 4,
-		/obj/item/stack/ore/autunite = 3,
+		/obj/item/stack/ore/uranium = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 
@@ -758,10 +758,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 30,
-		/obj/item/stack/ore/hematite = 55,
-		/obj/item/stack/ore/rutile = 7,
+		/obj/item/stack/ore/iron = 55,
+		/obj/item/stack/ore/titanium = 7,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
@@ -783,10 +783,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 15,
-		/obj/item/stack/ore/hematite = 30,
-		/obj/item/stack/ore/rutile = 10,
+		/obj/item/stack/ore/iron = 30,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/autunite = 7,
+		/obj/item/stack/ore/uranium = 7,
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
@@ -808,10 +808,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 40,
-		/obj/item/stack/ore/hematite = 65,
-		/obj/item/stack/ore/rutile = 5,
+		/obj/item/stack/ore/iron = 65,
+		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/gold = 4,
-		/obj/item/stack/ore/autunite = 3,
+		/obj/item/stack/ore/uranium = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 
@@ -830,10 +830,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 30,
-		/obj/item/stack/ore/hematite = 55,
-		/obj/item/stack/ore/rutile = 7,
+		/obj/item/stack/ore/iron = 55,
+		/obj/item/stack/ore/titanium = 7,
 		/obj/item/stack/ore/gold = 5,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
@@ -855,10 +855,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 15,
-		/obj/item/stack/ore/hematite = 30,
-		/obj/item/stack/ore/rutile = 10,
+		/obj/item/stack/ore/iron = 30,
+		/obj/item/stack/ore/titanium = 10,
 		/obj/item/stack/ore/gold = 7,
-		/obj/item/stack/ore/autunite = 7,
+		/obj/item/stack/ore/uranium = 7,
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 

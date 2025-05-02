@@ -33,7 +33,7 @@
 	wanted_objects = list(
 		/obj/item/stack/ore/diamond,
 		/obj/item/stack/ore/gold,
-		/obj/item/stack/ore/autunite)
+		/obj/item/stack/ore/uranium)
 
 	armor = list(melee = 25, bullet = 60, laser = 40, energy = 80, bomb = 80, bio = 80, rad = 80, fire = 80, acid = 80, magic = 80)
 
@@ -46,7 +46,7 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub/Initialize()
 	. = ..()
 	for (var/i in 1 to rand(1, 3))
-		loot += pick(/obj/item/stack/ore/gold, /obj/item/stack/ore/autunite, /obj/item/stack/ore/diamond)
+		loot += pick(/obj/item/stack/ore/gold, /obj/item/stack/ore/uranium, /obj/item/stack/ore/diamond)
 	spit = new
 	burrow = new
 	spit.Grant(src)

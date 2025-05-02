@@ -55,30 +55,19 @@
 			new refined_type(drop_location(),amountrefined)
 			qdel(src)
 
-/obj/item/stack/ore/hematite
-	name = "hematite"
+/obj/item/stack/ore/iron
+	name = "iron ore"
 	icon_state = "hematite"
 	item_state = "hematite"
 
 	custom_materials = list(/datum/material/iron=ORE_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/ore/slag
+	refined_type = /obj/item/stack/sheet/metal
 	mine_experience = 1
 	scan_state = "hematite"
 	spreadChance = 45
 
-/obj/item/stack/ore/magnetite
-	name = "magnetite"
-	icon_state = "magnetite"
-	item_state = "magnetite"
-
-	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/metal
-	mine_experience = 1
-	scan_state = "magnetite"
-	spreadChance = 20
-
-/obj/item/stack/ore/proustite
-	name = "proustite"
+/obj/item/stack/ore/silver
+	name = "silver ore"
 	icon_state = "proustite"
 	item_state = "proustite"
 	custom_materials = list(/datum/material/silver=ORE_MATERIAL_AMOUNT)
@@ -86,8 +75,8 @@
 	scan_state = "proustite"
 	spreadChance = 10
 
-/obj/item/stack/ore/autunite
-	name = "autunite"
+/obj/item/stack/ore/uranium
+	name = "uranium ore"
 	icon_state = "autunite"
 	item_state = "autunite"
 	points = 30
@@ -108,7 +97,7 @@
 	spreadChance = 10
 
 /obj/item/stack/ore/plasma
-	name = "phoron"
+	name = "plasma"
 	icon_state = "phoron"
 	item_state = "phoron"
 
@@ -144,8 +133,8 @@
 	scan_state = "diamondore"
 
 
-/obj/item/stack/ore/rutile
-	name = "rutile"
+/obj/item/stack/ore/titanium
+	name = "titanium ore"
 	icon_state = "rutile"
 	item_state = "rutile"
 	points = 50
