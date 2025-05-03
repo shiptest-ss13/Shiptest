@@ -19,8 +19,8 @@
 ///assistants
 
 /datum/outfit/job/inteq/assistant
-	name = "IRMG - Recruit"
-	id_assignment = "Recruit"
+	name = "IRMG - Auxiliary"
+	id_assignment = "Auxiliary"
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 

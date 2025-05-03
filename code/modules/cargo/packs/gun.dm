@@ -676,7 +676,7 @@
 /datum/supply_pack/gun/sbr80
 	name = "SBR-80 'Hydra' Designated Marksman Rifle Crate"
 	desc = "Contains a high-powered marksman rifle chambered in 5.56 CLIP and produced by Scarborough Arms. A modification of the ever-popular SMR-80 platform."
-	cost = 3500
+	cost = 4500
 	contains = list(/obj/item/storage/guncase/sbr80)
 	crate_name = "dmr crate"
 	faction = /datum/faction/syndicate/scarborough

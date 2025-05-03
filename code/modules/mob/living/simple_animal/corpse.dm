@@ -217,8 +217,8 @@
 	name = "Avery Inteq"
 
 /obj/effect/mob_spawn/human/corpse/inteq/recruit
-	name = "IRMG Recruit"
-	id_job = "Recruit"
+	name = "IRMG Auxiliary"
+	id_job = "Auxiliary"
 	outfit = /datum/outfit/job/inteq/assistant
 
 /obj/effect/mob_spawn/human/corpse/inteq/medic
