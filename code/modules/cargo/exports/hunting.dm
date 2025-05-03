@@ -20,7 +20,7 @@
 	unit_name = "animal hide"
 	desc = "Animal hide export. Paid per hide."
 	cost = 10
-	export_types = list(/obj/item/stack/sheet/animalhide/goliath_hide)
+	export_types = list(/obj/item/stack/sheet/animalhide/goliath_hide) // Also includes polar bear hide.
 
 /datum/export/hunting/stack/rarehide
 	unit_name = "rare animal hide"
@@ -31,7 +31,7 @@
 /datum/export/hunting/stack/leather
 	unit_name = "leather"
 	desc = "Processed hide of an animal. Paid per sheet."
-	cost = 30 // you need to process goliath hide, which takes effort
+	cost = 30 // You need to process goliath hide, which takes effort!
 	export_types = list(/obj/item/stack/sheet/leather)
 
 /datum/export/hunting/stack/sinew
