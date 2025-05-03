@@ -105,6 +105,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/cmd_change_command_name,
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/cmd_admin_distress_signal,
+	/client/proc/cmd_admin_distress_signal_here,
 	/client/proc/drop_bomb,
 	/client/proc/set_dynex_scale,
 	/client/proc/drop_dynex_bomb,
@@ -216,6 +217,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
 	/datum/admins/proc/delete_all_missions,
+	/client/proc/cmd_admin_toggle_fov,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
@@ -260,6 +262,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/cmd_admin_distress_signal,
+	/client/proc/cmd_admin_distress_signal_here,
 	/client/proc/cmd_change_command_name,
 	/client/proc/object_say,
 	/client/proc/toggle_random_events,

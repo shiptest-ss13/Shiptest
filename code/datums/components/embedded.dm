@@ -102,12 +102,13 @@
 		RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(jostleCheck))
 		RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, PROC_REF(ripOutCarbon))
 		RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, PROC_REF(safeRemoveCarbon))
+		RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(check_tweeze))
 	else if(isclosedturf(parent))
 		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examineTurf))
 		RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(itemMoved))
 
 /datum/component/embedded/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL, COMSIG_PARENT_EXAMINE))
+	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL, COMSIG_PARENT_EXAMINE, COMSIG_PARENT_ATTACKBY))
 
 /datum/component/embedded/process(seconds_per_tick)
 	if(iscarbon(parent))
@@ -218,7 +219,7 @@
 
 /// This proc handles the final step and actual removal of an embedded/stuck item from a carbon, whether or not it was actually removed safely.
 /// Pass TRUE for to_hands if we want it to go to the victim's hands when they pull it out
-/datum/component/embedded/proc/safeRemoveCarbon(to_hands)
+/datum/component/embedded/proc/safeRemoveCarbon(mob/to_hands)
 	SIGNAL_HANDLER
 
 	var/mob/living/carbon/victim = parent
@@ -242,7 +243,7 @@
 		return
 
 	if(to_hands)
-		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, put_in_hands), weapon)
+		INVOKE_ASYNC(to_hands, TYPE_PROC_REF(/mob, put_in_hands), weapon)
 	else
 		weapon.forceMove(get_turf(victim))
 
@@ -296,7 +297,58 @@
 	if(prob(fall_chance_current))
 		fallOutCarbon()
 
+/// The signal for listening to see if someone is using a hemostat on us to pluck out this object
+/datum/component/embedded/proc/check_tweeze(mob/living/carbon/victim, obj/item/possible_tweezers, mob/user)
+	SIGNAL_HANDLER
 
+	if(!istype(victim) || possible_tweezers.tool_behaviour != TOOL_HEMOSTAT || user.zone_selected != limb.body_zone)
+		return
+
+	if(weapon != limb.embedded_objects[1]) // just pluck the first one, since we can't easily coordinate with other embedded components affecting this limb who is highest priority
+		return
+
+	if(ishuman(victim)) // check to see if the limb is actually exposed
+		var/mob/living/carbon/human/victim_human = victim
+		if(!victim_human.can_inject(user, TRUE, limb.body_zone))
+			return TRUE
+
+	INVOKE_ASYNC(src, PROC_REF(tweeze_pluck), possible_tweezers, user)
+	return COMPONENT_NO_AFTERATTACK
+
+/// The actual action for pulling out an embedded object with a hemostat
+/datum/component/embedded/proc/tweeze_pluck(obj/item/possible_tweezers, mob/user)
+	var/mob/living/carbon/victim = parent
+
+	var/self_pluck = (user == victim)
+
+	if(self_pluck)
+		user.visible_message(
+			span_warning("[user] begins plucking [weapon] from [user.p_their()] [limb.name]"),
+			span_notice("You start plucking [weapon] from your [limb.name]..."),
+			vision_distance=COMBAT_MESSAGE_RANGE,
+			ignored_mobs=victim
+			)
+	else
+		user.visible_message(
+			span_warning("[user] begins plucking [weapon] from [victim]'s [limb.name]"),
+			span_notice("You start plucking [weapon] from [victim]'s [limb.name]..."),
+			vision_distance=COMBAT_MESSAGE_RANGE,
+			ignored_mobs=victim
+			)
+		to_chat(victim, span_warning("[user] begins plucking [weapon] from your [limb.name]..."))
+
+	var/pluck_time = 1.5 SECONDS * weapon.w_class * (self_pluck ? 2 : 1)
+	if(!do_after(user, pluck_time, victim))
+		if(self_pluck)
+			to_chat(user, span_warning("You fail to pluck [weapon] from your [limb.name]."))
+		else
+			to_chat(user, span_warning("You fail to pluck [weapon] from [victim]'s [limb.name]."))
+			to_chat(victim, span_warning("[user] fails to pluck [weapon] from your [limb.name]."))
+		return
+
+	to_chat(user, span_warning("You successfully pluck [weapon] from [victim]'s [limb.name]."))
+	to_chat(victim, span_warning("[user] plucks [weapon] from your [limb.name]."))
+	safeRemoveCarbon(user)
 
 ////////////////////////////////////////
 //////////////TURF PROCS////////////////

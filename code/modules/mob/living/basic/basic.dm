@@ -36,6 +36,7 @@
 
 	/// 1 for full damage , 0 for none , -1 for 1:1 heal from that source.
 	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
+	var/datum/armor/armor
 
 	///Verbs used for speaking e.g. "Says" or "Chitters". This can be elementized
 	var/list/speak_emote = list()
@@ -93,6 +94,12 @@
 
 /mob/living/basic/Initialize(mapload)
 	. = ..()
+	if (islist(armor))
+		armor = getArmor(arglist(armor))
+	else if (!armor)
+		armor = getArmor()
+	else if (!istype(armor, /datum/armor))
+		stack_trace("Invalid type [armor.type] found in .armor during [src.type] Initialize()")
 
 	if(gender == PLURAL)
 		gender = pick(MALE,FEMALE)
@@ -125,11 +132,16 @@
 		return
 	AddElement(/datum/element/basic_body_temp_sensetive, minimum_survivable_temperature, maximum_survivable_temperature, unsuitable_cold_damage, unsuitable_heat_damage, mapload)
 
-/mob/living/basic/Life(delta_time = SSMOBS_DT, times_fired)
+/mob/living/basic/getarmor(def_zone, type)
+	if(armor)
+		return armor.getRating(type)
+	return FALSE
+
+/mob/living/basic/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	///Automatic stamina re-gain
 	if(staminaloss > 0)
-		adjustStaminaLoss(-stamina_recovery * delta_time, FALSE, TRUE)
+		adjustStaminaLoss(-stamina_recovery * seconds_per_tick, FALSE, TRUE)
 
 /mob/living/basic/say_mod(input, list/message_mods = list())
 	if(length(speak_emote))

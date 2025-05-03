@@ -2651,14 +2651,13 @@
 
 /datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR))
-		M.radiation = M.radiation - rand(max(M.radiation * 0.95, M.radiation)) //get the hose
+		M.radiation = M.radiation - rand(max(M.radiation * 0.07, 0)) //get the hose
 		M.ExtinguishMob()
 	..()
 
 
 /datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(0.5, 200)
-	M.adjust_disgust(4)
+	M.radiation = M.radiation - rand(max(M.radiation * 0.03, 0))
 	..()
 	. = 1
 
