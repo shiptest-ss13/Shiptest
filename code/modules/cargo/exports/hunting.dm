@@ -52,7 +52,8 @@
 		/obj/item/mob_trophy/bear_paw,
 		/obj/item/mob_trophy/goliath_tentacle,
 		/obj/item/mob_trophy/watcher_wing,
-		/obj/item/mob_trophy/brimdemon_fang
+		/obj/item/mob_trophy/brimdemon_fang,
+		/obj/item/mob_trophy/lobster_claw
 	)
 
 /datum/export/hunting/trophy/rare
