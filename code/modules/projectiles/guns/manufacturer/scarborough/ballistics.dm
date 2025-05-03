@@ -755,9 +755,11 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra)
 
 	burst_delay = 0.08 SECONDS
 	fire_delay = 0.08 SECONDS
-	spread = 6
-	spread_unwielded = 20
-	wield_slowdown = SAW_SLOWDOWN //better than the lmgs since it doesnt have a bipod, still not ideal
+	spread = 7
+	spread_unwielded = 25
+	recoil = 2
+	recoil_unwielded = 4
+	wield_slowdown = SAW_SLOWDOWN
 	wield_delay = 0.9 SECONDS //ditto
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
@@ -935,6 +937,10 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	caliber = "12ga"
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m12g_bulldog/slug
+	name = "shotgun box magazine (12g Slugs)"
+	ammo_type = /obj/item/ammo_casing/shotgun
 
 /obj/item/ammo_box/magazine/m12g_bulldog/empty
 	start_empty = TRUE

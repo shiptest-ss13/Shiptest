@@ -189,33 +189,6 @@
 /obj/item/clothing/head/hooded/winterhood/miner
 	icon_state = "hood_miner"
 
-// Inteq
-
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	name = "inteq winter coat"
-	desc = "An armored wintercoat in the colors of the IRMG, the zipper tab is the golden shield of the IRMG."
-	icon_state = "coatinteq"
-	item_state = "coatinteq"
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq
-	//supports_variations = KEPORI_VARIATION
-
-/obj/item/clothing/head/hooded/winterhood/security/inteq
-	icon_state = "hood_inteq"
-	//supports_variations = KEPORI_VARIATION
-
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
-	name = "inteq hooded coat"
-	desc = "A hooded coat with a fur trim around the hood, comfy! It has a small 'IRMG' embroidered onto the shoulder."
-	icon_state = "coatinteq_alt"
-	item_state = "coatinteq_alt"
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq/alt
-
-/obj/item/clothing/head/hooded/winterhood/security/inteq/alt
-	name = "inteq hood"
-	desc = "A comfortable looking brown hood."
-	icon_state = "hood_inteq_alt"
-	item_state = "hood_inteq_alt"
-
 // CentCom
 
 /obj/item/clothing/suit/hooded/wintercoat/centcom
@@ -231,15 +204,3 @@
 
 /obj/item/clothing/head/hooded/winterhood/centcom
 	icon_state = "hood_centcom"
-
-// SolGov
-
-/obj/item/clothing/suit/hooded/wintercoat/solgov
-	name = "solgov winter coat"
-	desc = "An environment-resistant wintercoat in the colors of the Solarian Confederation."
-	icon_state = "coatsolgov"
-	item_state = "coatsolgov"
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/solgov
-
-/obj/item/clothing/head/hooded/winterhood/solgov
-	icon_state = "hood_solgov"
