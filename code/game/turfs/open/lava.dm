@@ -18,17 +18,20 @@
 	heavyfootstep = FOOTSTEP_LAVA
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
+	var/particle_prob = 15
 	/// Whether the lava has been dug with hellstone found successfully
 	var/is_mined = FALSE
 
 /turf/open/lava/Initialize(mapload)
 	. = ..()
-	particle_emitter = new /obj/effect/particle_emitter/lava(src)
+	if(prob(particle_prob) && ispath(particle_emitter, /obj/effect/particle_emitter))
+		particle_emitter = new particle_emitter(src)
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_LAVALAND_LAVA)
 
 /turf/open/lava/Destroy()
 	. = ..()
-	QDEL_NULL(particle_emitter)
+	if(isatom(particle_emitter))
+		QDEL_NULL(particle_emitter)
 
 /turf/open/lava/ex_act(severity, target)
 	contents_explosion(severity, target)

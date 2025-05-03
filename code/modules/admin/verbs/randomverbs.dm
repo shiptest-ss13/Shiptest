@@ -17,7 +17,7 @@
 	var/msg = "[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] drop everything!"
 	message_admins(msg)
 	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Everything") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Drop Everything")
 
 /client/proc/cmd_admin_subtle_message(mob/M in GLOB.mob_list)
 	set category = "Event"
@@ -43,7 +43,7 @@
 	msg = span_adminnotice("<b> SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] :</b> [msg]")
 	message_admins(msg)
 	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Subtle Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Subtle Message")
 
 /client/proc/cmd_admin_headset_message(mob/M in GLOB.mob_list)
 	set category = "Event"
@@ -89,7 +89,7 @@
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
 	to_chat(H, span_hear("You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\""), confidential = TRUE)		//WS Edit - SolGov Rep
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Headset Message")
 
 /client/proc/cmd_admin_world_narrate()
 	set category = "Event"
@@ -105,7 +105,7 @@
 	to_chat(world, "[msg]", confidential = TRUE)
 	log_admin("GlobalNarrate: [key_name(usr)] : [msg]")
 	message_admins(span_adminnotice("[key_name_admin(usr)] Sent a global narrate"))
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Global Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Global Narrate")
 
 /client/proc/cmd_admin_direct_narrate(mob/M)
 	set category = "Event"
@@ -130,7 +130,7 @@
 	msg = span_adminnotice("<b> DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]):</b> [msg]<BR>")
 	message_admins(msg)
 	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Direct Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Direct Narrate")
 
 /client/proc/cmd_admin_local_narrate(atom/A)
 	set category = "Event"
@@ -151,7 +151,7 @@
 
 	log_admin("LocalNarrate: [key_name(usr)] at [AREACOORD(A)]: [msg]")
 	message_admins(span_adminnotice("<b> LocalNarrate: [key_name_admin(usr)] at [ADMIN_VERBOSEJMP(A)]:</b> [msg]<BR>"))
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Local Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Local Narrate")
 
 /client/proc/cmd_admin_godmode(mob/M in GLOB.mob_list)
 	set category = "Admin.Game"
@@ -166,7 +166,7 @@
 	var/msg = "[key_name_admin(usr)] has toggled [ADMIN_LOOKUPFLW(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]"
 	message_admins(msg)
 	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Godmode", "[M.status_flags & GODMODE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Godmode", "[M.status_flags & GODMODE ? "Enabled" : "Disabled"]"))
 
 
 /proc/cmd_admin_mute(whom, mute_type, automute = 0)
@@ -231,7 +231,7 @@
 		message_admins("SPAM AUTOMUTE: [muteunmute] [key_name_admin(whom)] from [mute_string].")
 		if(C)
 			to_chat(C, "You have been [muteunmute] from [mute_string] by the SPAM AUTOMUTE system. Contact an admin.", confidential = TRUE)
-		SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Auto Mute [feedback_string]", "1")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Auto Mute [feedback_string]", "1"))
 		return
 
 	if(P.muted & mute_type)
@@ -245,7 +245,7 @@
 	message_admins("[key_name_admin(usr)] has [muteunmute] [key_name_admin(whom)] from [mute_string].")
 	if(C)
 		to_chat(C, "You have been [muteunmute] from [mute_string] by [key_name(usr, include_name = FALSE)].", confidential = TRUE)
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Mute [feedback_string]", "[P.muted & mute_type]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Mute [feedback_string]", "[P.muted & mute_type]"))
 
 
 //I use this proc for respawn character too. /N
@@ -315,7 +315,7 @@
 	ion.announce_chance = announce_ion_laws
 	ion.ionMessage = input
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Add Custom AI Law") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Add Custom AI Law")
 
 /client/proc/cmd_admin_create_centcom_report()
 	set category = "Event"
@@ -344,7 +344,7 @@
 
 	log_admin("[key_name(src)] has created a command report: [input]")
 	message_admins("[key_name_admin(src)] has created a command report")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Create Command Report") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Create Command Report")
 
 /client/proc/cmd_change_command_name()
 	set category = "Event"
@@ -360,13 +360,47 @@
 	message_admins("[key_name_admin(src)] has changed Central Command's name to [input]")
 	log_admin("[key_name(src)] has changed the Central Command name to: [input]")
 
-/client/proc/cmd_admin_distress_signal(datum/overmap/overmap_location as anything in SSovermap.overmap_objects)
-	set category = "Event"
+/client/proc/cmd_admin_distress_signal()
+	set category = "Event.Overmap"
 	set name = "Create Distress Signal"
+
+	var/datum/overmap/overmap_location = tgui_input_list(
+		src,
+		"Select a location to launch a distress signal from.",
+		"Signal Location",
+		SSovermap.overmap_objects
+	)
 
 	if(!istype(overmap_location)) // Sanity check
 		return
-	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name]", "Distress Signal", "Yes", "No")
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
+
+	switch(confirm)
+		if("Yes")
+			create_distress_beacon(overmap_location)
+		if("No")
+			return
+
+/client/proc/cmd_admin_distress_signal_here()
+	set category = "Event.Overmap"
+	set name = "Create Distress Signal Here"
+
+	var/mob/self_mob = src.mob
+	var/datum/overmap/overmap_location
+	if(!istype(self_mob))
+		return
+
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(self_mob)
+	if(istype(ship))
+		overmap_location = ship
+
+	if(!overmap_location)
+		overmap_location = self_mob.get_overmap_location()
+
+	if(!overmap_location && !istype(overmap_location))
+		return
+
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
 
 	switch(confirm)
 		if("Yes")
@@ -414,7 +448,7 @@
 		explosion(O, devastation, heavy, light, flash, null, null,flames)
 		log_admin("[key_name(usr)] created an explosion ([devastation],[heavy],[light],[flames]) at [AREACOORD(O)]")
 		message_admins("[key_name_admin(usr)] created an explosion ([devastation],[heavy],[light],[flames]) at [AREACOORD(O)]")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Explosion") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Explosion")
 		return
 	else
 		return
@@ -438,7 +472,7 @@
 		empulse(O, heavy, light)
 		log_admin("[key_name(usr)] created an EM Pulse ([heavy],[light]) at [AREACOORD(O)]")
 		message_admins("[key_name_admin(usr)] created an EM Pulse ([heavy],[light]) at [AREACOORD(O)]")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "EM Pulse") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("EM Pulse")
 
 		return
 	else
@@ -468,7 +502,7 @@
 		M.gib()
 	else
 		M.gib(1)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Gib") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Gib")
 
 /client/proc/cmd_admin_gib_self()
 	set name = "Gibself"
@@ -478,7 +512,7 @@
 	if(confirm == "Yes")
 		log_admin("[key_name(usr)] used gibself.")
 		message_admins(span_adminnotice("[key_name_admin(usr)] used gibself."))
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Gib Self") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Gib Self")
 		mob.gib(1, 1, 1)
 
 /client/proc/cmd_admin_check_contents(mob/living/M in GLOB.mob_list)
@@ -488,7 +522,7 @@
 	var/list/L = M.get_contents()
 	for(var/atom/t in L)
 		to_chat(usr, "[t]", confidential = TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Contents") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Check Contents")
 
 /client/proc/toggle_view_range()
 	set category = "Admin.Game"
@@ -503,7 +537,7 @@
 	log_admin("[key_name(usr)] changed their view range to [view].")
 	//message_admins("\blue [key_name_admin(usr)] changed their view range to [view].")	//why? removed by order of XSI
 
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Change View Range", "[view]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Change View Range", "[view]"))
 
 /client/proc/admin_initiate_jump()
 	set category = "Event"
@@ -519,7 +553,7 @@
 		return
 
 	SSshuttle.request_jump()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Call Shuttle") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Call Shuttle")
 	log_admin("[key_name(usr)] admin-initiated a bluespace jump.")
 	message_admins(span_adminnotice("[key_name_admin(usr)] admin-initiated a bluespace jump."))
 
@@ -537,7 +571,7 @@
 		return
 
 	SSshuttle.cancel_jump()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Cancel Shuttle") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Cancel Shuttle")
 	log_admin("[key_name(usr)] admin-cancelled a bluespace jump.")
 	message_admins(span_adminnotice("[key_name_admin(usr)] admin-cancelled a bluespace jump."))
 
@@ -571,7 +605,7 @@
 	to_chat(usr, "<i>Remember: you can always disable the randomness by using the verb again, assuming the round hasn't started yet</i>.", confidential = TRUE)
 
 	CONFIG_SET(flag/force_random_names, TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Everyone Random") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Make Everyone Random")
 
 
 /client/proc/toggle_random_events()
@@ -586,7 +620,7 @@
 	else
 		to_chat(usr, "Random events disabled", confidential = TRUE)
 		message_admins("Admin [key_name_admin(usr)] has disabled random events.")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Random Events", "[new_are ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Random Events", "[new_are ? "Enabled" : "Disabled"]"))
 
 
 /client/proc/admin_change_sec_level()
@@ -603,7 +637,7 @@
 
 		log_admin("[key_name(usr)] changed the security level to [level]")
 		message_admins("[key_name_admin(usr)] changed the security level to [level]")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Set Security Level [capitalize(level)]") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Set Security Level [capitalize(level)]")
 
 /client/proc/toggle_nuke(obj/machinery/nuclearbomb/N in GLOB.nuke_list)
 	set name = "Toggle Nuke"
@@ -622,7 +656,7 @@
 
 	log_admin("[key_name(usr)] [N.timing ? "activated" : "deactivated"] a nuke at [AREACOORD(N)].")
 	message_admins("[ADMIN_LOOKUPFLW(usr)] [N.timing ? "activated" : "deactivated"] a nuke at [ADMIN_VERBOSEJMP(N)].")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Nuke", "[N.timing]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Nuke", "[N.timing]"))
 
 /client/proc/toggle_combo_hud()
 	set category = "Admin.Game"
@@ -651,7 +685,7 @@
 	to_chat(usr, "You toggled your admin combo HUD [adding_hud ? "ON" : "OFF"].", confidential = TRUE)
 	message_admins("[key_name_admin(usr)] toggled their admin combo HUD [adding_hud ? "ON" : "OFF"].")
 	log_admin("[key_name(usr)] toggled their admin combo HUD [adding_hud ? "ON" : "OFF"].")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Combo HUD", "[adding_hud ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Combo HUD", "[adding_hud ? "Enabled" : "Disabled"]"))
 
 
 /client/proc/has_antag_hud()
@@ -680,7 +714,7 @@
 
 	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
 	log_admin("[key_name(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
+	BLACKBOX_LOG_ADMIN_VERB("Run Weather")
 
 /client/proc/mass_zombie_infection()
 	set category = "Event.Fun"
@@ -701,7 +735,7 @@
 
 	message_admins("[key_name_admin(usr)] added a latent zombie infection to all humans.")
 	log_admin("[key_name(usr)] added a latent zombie infection to all humans.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Mass Zombie Infection")
+	BLACKBOX_LOG_ADMIN_VERB("Mass Zombie Infection")
 
 /client/proc/mass_zombie_cure()
 	set category = "Event.Fun"
@@ -719,7 +753,7 @@
 
 	message_admins("[key_name_admin(usr)] cured all zombies.")
 	log_admin("[key_name(usr)] cured all zombies.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Mass Zombie Cure")
+	BLACKBOX_LOG_ADMIN_VERB("Mass Zombie Cure")
 
 /client/proc/polymorph_all()
 	set category = "Event.Fun"
@@ -738,7 +772,7 @@
 
 	message_admins("[key_name_admin(usr)] started polymorphed all living mobs.")
 	log_admin("[key_name(usr)] polymorphed all living mobs.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Polymorph All")
+	BLACKBOX_LOG_ADMIN_VERB("Polymorph All")
 
 	for(var/mob/living/M in mobs)
 		CHECK_TICK
@@ -777,7 +811,7 @@
 
 	message_admins("[key_name_admin(usr)] sent a tip of the round.")
 	log_admin("[key_name(usr)] sent \"[input]\" as the Tip of the Round.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Tip")
+	BLACKBOX_LOG_ADMIN_VERB("Show Tip")
 
 /client/proc/modify_goals()
 	set category = "Debug"
@@ -827,7 +861,7 @@
 	if (GLOB.hub_visibility && !world.reachable)
 		message_admins("WARNING: The server will not show up on the hub because byond is detecting that a filewall is blocking incoming connections.")
 
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]"))
 
 /client/proc/spawn_ruin()
 	set name = "Spawn Planet/Ruin"
@@ -901,6 +935,7 @@
 		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)], and here to go to the dock: [ADMIN_JMP(encounter.reserve_docks[1])]")
 	else
 		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)]")
+	BLACKBOX_LOG_ADMIN_VERB("Spawn Planet/Ruin")
 
 /client/proc/spawn_overmap()
 	set name = "Spawn Overmap"
@@ -1006,6 +1041,7 @@
 		message_admins("Failed to generate Star System [overmap_type]!")
 		return
 	message_admins(span_big("Overmap [nova.name] successfully generated!"))
+	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap")
 
 /client/proc/spawn_jump_point()
 	set name = "Spawn Overmap Jump Point"
@@ -1038,6 +1074,7 @@
 		message_admins("Failed to generate jump point!")
 
 	message_admins(span_big("Click here to jump to the overmap Jump point: " + ADMIN_JMP(point.token)))
+	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap Jump Point")
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"

@@ -223,4 +223,4 @@ Difficulty: Hard
 	desc = "Take on the shape of a polar bear."
 	invocation = "RAAAAAAAAWR!"
 	convert_damage = FALSE
-	shapeshift_type = /mob/living/simple_animal/hostile/asteroid/polarbear/lesser
+	shapeshift_type = /mob/living/basic/bear/polar

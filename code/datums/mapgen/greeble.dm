@@ -191,7 +191,7 @@
 
 /obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle
 	name = "dark jungle grass patch spawner"
-	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle_dark
+	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle/dark
 	big_brush = TRUE
 	only_spread_on_spawning_turf = TRUE
 	max_turfs_to_spread = 16
@@ -202,7 +202,7 @@
 
 /obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle
 	name = "yellow jungle grass patch spawner"
-	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle_yellow
+	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow
 	big_brush = FALSE
 	only_spread_on_spawning_turf = FALSE
 	max_turfs_to_spread = 5

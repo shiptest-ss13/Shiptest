@@ -94,10 +94,10 @@
  * * mob/living/M - The mob being hit by this item
  * * mob/living/user - The mob hitting with this item
  */
-/obj/item/proc/attack(mob/living/M, mob/living/user)
-	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
+/obj/item/proc/attack(mob/living/target_mob, mob/living/user)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, target_mob, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
-	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
+	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target_mob, user)
 	if(item_flags & NOBLUDGEON)
 		return
 
@@ -107,24 +107,26 @@
 
 	if(item_flags & EYE_STAB && user.zone_selected == BODY_ZONE_PRECISE_EYES)
 		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-			M = user
-		return eyestab(M,user)
+			target_mob = user
+		return eyestab(target_mob,user)
 
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), TRUE, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
 
-	M.lastattacker = user.real_name
-	M.lastattackerckey = user.ckey
+	target_mob.lastattacker = user.real_name
+	target_mob.lastattackerckey = user.ckey
 
-	if(force && M == user && user.client)
+	if(force && target_mob == user && user.client)
 		user.client.give_award(/datum/award/achievement/misc/selfouch, user)
 
-	user.do_attack_animation(M)
-	M.attacked_by(src, user)
+	user.do_attack_animation(target_mob)
+	target_mob.attacked_by(src, user)
 
-	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
+	SEND_SIGNAL(src, COMSIG_ITEM_POST_ATTACK, target_mob, user)
+
+	log_combat(user, target_mob, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
 /// The equivalent of the standard version of [/obj/item/proc/attack] but for object targets.
@@ -152,7 +154,7 @@
 	else
 		total_force = (attacking_item.force)
 
-	var/damage = take_damage(total_force, attacking_item.damtype, "melee", 1)
+	var/damage = take_damage(total_force, attacking_item.damtype, "melee", TRUE, get_dir(user, src), attacking_item.armour_penetration)
 
 	var/damage_verb = "hit"
 

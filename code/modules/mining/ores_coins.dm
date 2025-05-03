@@ -5,6 +5,9 @@
 
 #define ORESTACK_OVERLAYS_MAX 10
 
+#define TRIGGER_EXPLO 1
+#define TRIGGER_SIGNAL 2
+
 /**********************Mineral ores**************************/
 
 /obj/item/stack/ore
@@ -190,7 +193,7 @@
 /obj/item/stack/ore/sulfur/fire_act(exposed_temperature, exposed_volume)
 	var/turf/current_turf = get_turf(src)
 	if(isopenturf(current_turf))
-		current_turf.IgniteTurf(1*amount, "blue")
+		current_turf.ignite_turf(1*amount, "blue")
 	qdel(src)
 
 
@@ -245,7 +248,7 @@
 		message_admins("Coal ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
 		log_game("Coal ignited by [key_name(user)] in [AREACOORD(T)]")
 		fire_act(W.get_temperature())
-		T.IgniteTurf((W.get_temperature()/20))
+		T.ignite_turf((W.get_temperature()/20))
 		return TRUE
 	else
 		return ..()
@@ -410,7 +413,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 			return
 
 	if(I.tool_behaviour == TOOL_MINING || istype(I, /obj/item/resonator) || I.force >= 10)
-		GibtoniteReaction(user)
+		gibtonite_reaction(user)
 		return
 	if(primed)
 		if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner) || I.tool_behaviour == TOOL_MULTITOOL)
@@ -430,13 +433,13 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		..()
 
 /obj/item/gibtonite/bullet_act(obj/projectile/P)
-	GibtoniteReaction(P.firer)
+	gibtonite_reaction(P.firer)
 	. = ..()
 
 /obj/item/gibtonite/ex_act()
-	GibtoniteReaction(null, 1)
+	gibtonite_reaction(null, TRIGGER_EXPLO)
 
-/obj/item/gibtonite/proc/GibtoniteReaction(mob/user, triggered_by = 0)
+/obj/item/gibtonite/proc/gibtonite_reaction(mob/user, triggered_by = 0)
 	if(!primed)
 		primed = TRUE
 		playsound(src,'sound/effects/hit_on_shattered_glass.ogg',50,TRUE)
@@ -445,9 +448,9 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		if(z != 5)//Only annoy the admins ingame if we're triggered off the mining zlevel
 			notify_admins = TRUE
 
-		if(triggered_by == 1)
+		if(triggered_by == TRIGGER_EXPLO)
 			log_bomber(null, "An explosion has primed a", src, "for detonation", notify_admins)
-		else if(triggered_by == 2)
+		else if(triggered_by == TRIGGER_SIGNAL)
 			var/turf/bombturf = get_turf(src)
 			if(notify_admins)
 				message_admins("A signal has triggered a [name] to detonate at [ADMIN_VERBOSEJMP(bombturf)]. Igniter attacher: [ADMIN_LOOKUPFLW(attacher)]")
@@ -463,11 +466,11 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	if(primed)
 		switch(quality)
 			if(GIBTONITE_QUALITY_HIGH)
-				explosion(src,2,4,9,adminlog = notify_admins)
+				explosion(src,1,3,7,adminlog = notify_admins)
 			if(GIBTONITE_QUALITY_MEDIUM)
-				explosion(src,1,2,5,adminlog = notify_admins)
+				explosion(src,0,2,6,adminlog = notify_admins)
 			if(GIBTONITE_QUALITY_LOW)
-				explosion(src,0,1,3,adminlog = notify_admins)
+				explosion(src,0,1,4,adminlog = notify_admins)
 		qdel(src)
 
 /obj/item/stack/ore/Initialize()
@@ -604,3 +607,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/iron
 
 #undef ORESTACK_OVERLAYS_MAX
+
+#undef TRIGGER_EXPLO
+#undef TRIGGER_SIGNAL
