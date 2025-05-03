@@ -212,7 +212,7 @@
 			var/num_loaded = 0
 			var/num_to_load = magazine.max_ammo
 			var/list/ammo_list_no_empty = get_ammo_list(FALSE)
-			listclearnulls(ammo_list_no_empty)
+			list_clear_nulls(ammo_list_no_empty)
 
 			if(ammo_list_no_empty.len >= num_to_load)
 				to_chat(user, "<span class='warning'>There's no empty space in [src]!</span>")
