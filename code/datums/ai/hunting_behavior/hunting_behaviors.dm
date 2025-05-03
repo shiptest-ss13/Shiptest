@@ -21,8 +21,8 @@
 	. = ..()
 	hunt_targets = typecacheof(hunt_targets)
 
-/datum/ai_planning_subtree/find_and_hunt_target/SelectBehaviors(datum/ai_controller/controller, delta_time)
-	if(!SPT_PROB(hunt_chance, delta_time))
+/datum/ai_planning_subtree/find_and_hunt_target/SelectBehaviors(datum/ai_controller/controller, seconds_per_tick)
+	if(!SPT_PROB(hunt_chance, seconds_per_tick))
 		return
 	if(controller.blackboard[BB_HUNTING_COOLDOWN] >= world.time)
 		return
@@ -32,13 +32,11 @@
 		return
 
 	// We're targeting something else for another reason
-	var/datum/weakref/target_weakref = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
-	var/atom/target = target_weakref?.resolve()
+	var/atom/target = controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET]
 	if(!QDELETED(target))
 		return
 
-	var/datum/weakref/hunting_weakref = controller.blackboard[target_key]
-	var/atom/hunted = hunting_weakref?.resolve()
+	var/atom/hunted = controller.blackboard[target_key]
 	// We're not hunting anything, look around for something
 	if(QDELETED(hunted))
 		controller.queue_behavior(finding_behavior, target_key, hunt_targets, hunt_range)
@@ -54,7 +52,7 @@
 /// Finds a specific atom type to hunt.
 /datum/ai_behavior/find_hunt_target
 
-/datum/ai_behavior/find_hunt_target/perform(delta_time, datum/ai_controller/controller, hunting_target_key, types_to_hunt, hunt_range)
+/datum/ai_behavior/find_hunt_target/perform(seconds_per_tick, datum/ai_controller/controller, hunting_target_key, types_to_hunt, hunt_range)
 	. = ..()
 
 	var/mob/living/living_mob = controller.pawn
@@ -62,7 +60,7 @@
 	for(var/atom/possible_dinner as anything in typecache_filter_list(range(hunt_range, living_mob), types_to_hunt))
 		if(!valid_dinner(living_mob, possible_dinner, hunt_range))
 			continue
-		controller.blackboard[hunting_target_key] = WEAKREF(possible_dinner)
+		controller.set_blackboard_key(hunting_target_key, possible_dinner)
 		finish_action(controller, TRUE)
 		return
 
@@ -78,20 +76,20 @@
 
 /// Hunts down a specific atom type.
 /datum/ai_behavior/hunt_target
-	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT
+	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_REQUIRE_REACH
 	/// How long do we have to wait after a successful hunt?
 	var/hunt_cooldown = 5 SECONDS
+	/// Do we reset the target after attacking something, so we can check for status changes.
+	var/always_reset_target = FALSE
 
 /datum/ai_behavior/hunt_target/setup(datum/ai_controller/controller, hunting_target_key, hunting_cooldown_key)
 	. = ..()
-	var/datum/weakref/hunting_weakref = controller.blackboard[hunting_target_key]
-	controller.current_movement_target = hunting_weakref?.resolve()
+	controller.current_movement_target = controller.blackboard[hunting_target_key]
 
-/datum/ai_behavior/hunt_target/perform(delta_time, datum/ai_controller/controller, hunting_target_key, hunting_cooldown_key)
+/datum/ai_behavior/hunt_target/perform(seconds_per_tick, datum/ai_controller/controller, hunting_target_key, hunting_cooldown_key)
 	. = ..()
 	var/mob/living/hunter = controller.pawn
-	var/datum/weakref/hunting_weakref = controller.blackboard[hunting_target_key]
-	var/atom/hunted = hunting_weakref?.resolve()
+	var/atom/hunted = controller.blackboard[hunting_target_key]
 
 	if(QDELETED(hunted))
 		finish_action(controller, FALSE, hunting_target_key)
@@ -116,9 +114,11 @@
 /datum/ai_behavior/hunt_target/finish_action(datum/ai_controller/controller, succeeded, hunting_target_key, hunting_cooldown_key)
 	. = ..()
 	if(succeeded)
-		controller.blackboard[hunting_cooldown_key] = world.time + hunt_cooldown
+		controller.set_blackboard_key(hunting_cooldown_key, world.time + hunt_cooldown)
 	else if(hunting_target_key)
-		controller.blackboard[hunting_target_key] = null
+		controller.clear_blackboard_key(hunting_target_key)
+	if(always_reset_target && hunting_target_key)
+		controller.clear_blackboard_key(hunting_target_key)
 
 /datum/ai_behavior/hunt_target/unarmed_attack_target
 

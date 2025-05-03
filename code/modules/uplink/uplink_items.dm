@@ -481,8 +481,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/dangerous/pistol
-	name = "Stechkin Pistol"
-	desc = "A small, easily concealable handgun that uses 10mm auto rounds in 8-round magazines and is compatible \
+	name = "Ringneck Pistol"
+	desc = "A small, easily concealable handgun that uses 10x22mm rounds in 8-round magazines and is compatible \
 			with suppressors."
 	item = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	cost = 7
@@ -681,31 +681,31 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	surplus = 40
 
 /datum/uplink_item/ammo/pistol
-	name = "10mm Handgun Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol."
+	name = "10x22mm Handgun Magazine"
+	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 1
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/ammo/pistolap
-	name = "10mm Armour Piercing Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol. \
+	name = "10x22mm Armour Piercing Magazine"
+	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
 			These rounds are less effective at injuring the target but penetrate protective gear."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 2
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/ammo/pistolhp
-	name = "10mm Hollow Point Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol. \
+	name = "10x22mm Hollow Point Magazine"
+	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
 			These rounds are more damaging but ineffective against armour."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 3
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/ammo/pistolfire
-	name = "10mm Incendiary Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol. \
+	name = "10x22mm Incendiary Magazine"
+	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
 			Loaded with incendiary rounds which inflict little damage, but ignite the target."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 2
@@ -832,8 +832,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 6
 
 /datum/uplink_item/ammo/pistolaps
-	name = "9mm Handgun Magazine"
-	desc = "An additional 15-round 9mm magazine, compatible with the Stechkin APS pistol, found in the Spetsnaz Pyro bundle."
+	name = "9x18mm Handgun Magazine"
+	desc = "An additional 15-round 9x18mm magazine, compatible with the Stechkin APS pistol, found in the Spetsnaz Pyro bundle."
 	item = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	cost = 2
 	include_modes = list(/datum/game_mode/nuclear)
@@ -877,7 +877,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/ammo/tec9
 	name = "TEC9 Magazine"
-	desc = "An additional 20 round 9mm magazine for the TEC9."
+	desc = "An additional 20 round 9x18mm magazine for the TEC9."
 	item = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	cost = 3
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)

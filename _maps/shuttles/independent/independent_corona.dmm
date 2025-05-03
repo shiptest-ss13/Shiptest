@@ -315,9 +315,7 @@
 "gp" = (
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /obj/structure/closet/crate/bin,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "gr" = (
@@ -796,9 +794,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pq" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -851,9 +847,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "rF" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -1255,9 +1249,7 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew/canteen/kitchen)
 "zH" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -1611,7 +1603,8 @@
 "Gc" = (
 /obj/machinery/washing_machine{
 	pixel_y = 17;
-	density = 0
+	density = 0;
+	should_we_be_dense = 0
 	},
 /obj/structure/closet/wall/directional/south{
 	name = "cleaning utensil closet";
@@ -1991,9 +1984,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/external/dark)
 "KO" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -2262,8 +2253,7 @@
 	pixel_x = -12
 	},
 /obj/structure/mirror{
-	pixel_x = -24;
-	pixel_y = 0
+	pixel_x = -24
 	},
 /obj/machinery/button/door{
 	pixel_y = 21;
@@ -2383,7 +2373,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
 	color = "#FFFFFF"
 	},
 /obj/item/storage/toolbox/mechanical{
@@ -2575,9 +2564,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)

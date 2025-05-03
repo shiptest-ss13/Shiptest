@@ -63,6 +63,19 @@ export const ShipEditor = (props) => {
               />
             </LabeledList.Item>
 
+            <LabeledList.Item label="Overmap Icon State">
+              <Input
+                value={data.templateShortName}
+                placeholder={data.templateName}
+                maxLength={20}
+                onChange={(e, value) =>
+                  act('setTemplateIconState', {
+                    new_template_icon_state: value,
+                  })
+                }
+              />
+            </LabeledList.Item>
+
             <LabeledList.Item label="Add Ship Tag">
               {
                 <>

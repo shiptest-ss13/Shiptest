@@ -15,8 +15,12 @@ FLOOR SAFES
 	icon_state = "safe"
 	anchored = TRUE
 	density = TRUE
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
+	max_integrity = 400
+	armor = list("melee" = 30, "bullet" = 60, "laser" = 60, "energy" = 100, "bomb" = 20, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
+	// this shit heavy
+	drag_slowdown = 2.5
 	/// The maximum combined w_class of stuff in the safe
 	var/maxspace = 24
 	/// The amount of tumblers that will be generated
@@ -59,6 +63,11 @@ FLOOR SAFES
 	icon_state = "[initial(icon_state)][open ? "-open" : null]"
 	return ..()
 
+/obj/structure/safe/wrench_act(mob/living/user, obj/item/I)
+	..()
+	default_unfasten_wrench(user, I)
+	return TRUE
+
 /obj/structure/safe/attackby(obj/item/I, mob/user, params)
 	if(open)
 		. = TRUE //no afterattack
@@ -74,16 +83,26 @@ FLOOR SAFES
 		if(istype(I, /obj/item/clothing/neck/stethoscope))
 			attack_hand(user)
 			return
-
-		else if(I.tool_behaviour == TOOL_DECONSTRUCT)
-			user.visible_message(span_warning("[user] begin to cut through the lock of \the [src]."),span_notice("You start cutting trough the lock of [src]."))
-			if(I.use_tool(src, user, 45 SECONDS))
-				broken = TRUE
-				user.visible_message(span_warning("[user] successfully cuts trough the lock of \the [src]."),span_notice("You successfully cut trough the lock of [src]."))
-
 		else
 			to_chat(user, span_warning("You can't put [I] into the safe while it is closed!"))
 			return
+
+/obj/structure/safe/deconstruct_act(mob/living/user, obj/item/tool)
+	if(open)
+		return FALSE
+	if(..())
+		return TRUE
+	user.visible_message(
+		span_warning("[user] begin to cut through the lock of \the [src]."),
+		span_notice("You start cutting trough the lock of [src]."),
+	)
+	if(tool.use_tool(src, user, 45 SECONDS))
+		broken = TRUE
+		user.visible_message(
+			span_warning("[user] successfully cuts trough the lock of \the [src]."),
+			span_notice("You successfully cut trough the lock of [src]."),
+		)
+	return TRUE
 
 /obj/structure/safe/ex_act(severity, target)
 	if(((severity == 2 && target == src) || severity == 1) && !safe_broken)
@@ -240,5 +259,8 @@ FLOOR SAFES
 /obj/structure/safe/floor/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/undertile)
+
+/obj/structure/safe/floor/wrench_act(mob/living/user, obj/item/I)
+	return FALSE
 
 #undef SOUND_CHANCE

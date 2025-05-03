@@ -218,8 +218,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		playsound(src, close_sound, 40)
 
 /obj/machinery/cryopod/proc/apply_effects_to_mob(mob/living/carbon/sleepyhead)
-	sleepyhead.set_sleeping(50)
+	sleepyhead.set_sleeping(60)
+	sleepyhead.set_nutrition(200)
 	to_chat(sleepyhead, span_boldnotice("You begin to wake from cryosleep..."))
+	var/ship_name = "<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[linked_ship.current_ship.name]</u></span>"
+	var/sector_name = "[linked_ship.current_ship.current_overmap.name]"
+	var/time = "[station_time_timestamp("hh:mm")]"
+	var/character_name = "[sleepyhead.real_name]"
+
+	sleepyhead.play_screen_text("[ship_name]<br>[sector_name]<br>[time]<br>[character_name]")
 
 /obj/machinery/cryopod/open_machine()
 	..()
@@ -439,18 +446,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 	. = ..()
 	linked_ship = port
 	linked_ship.spawn_points += src
-
-/obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
-	//it always sucks a little to get up
-	sleepyhead.set_nutrition(200)
-	sleepyhead.set_sleeping(60)
-
-	var/wakeupmessage = "The cryopod shudders as the pneumatic seals separating you and the waking world let out a hiss."
-	if(prob(60))
-		wakeupmessage += " A sickly feeling along with the pangs of hunger greet you upon your awakening."
-		sleepyhead.set_nutrition(100)
-		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
-	to_chat(sleepyhead, span_danger(boxed_message(wakeupmessage)))
 
 /obj/machinery/cryopod/syndicate
 	icon_state = "sleeper_s-open"
