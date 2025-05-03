@@ -216,6 +216,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
 	/datum/admins/proc/delete_all_missions,
+	/client/proc/cmd_admin_toggle_fov,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
