@@ -108,8 +108,8 @@
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(15))
-		new mob_trophy(loc)
-		visible_message(span_warning("You notice a damaged ear that might be salvagable."))
+		var/obj/trophy = new mob_trophy(loc)
+		visible_message(span_warning("You notice a [trophy.name] might be salvagable."))
 	..()
 
 //alpha wolf- smaller chance to spawn, practically a miniboss. Has the ability to do a short, untelegraphed lunge with a stun. Be careful!
