@@ -3,6 +3,7 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden/layer4{
 	dir = 9
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "ao" = (
@@ -156,6 +157,12 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew/ccommons)
+"bc" = (
+/obj/structure/marker_beacon{
+	picked_color = "Burgundy"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "bv" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -189,6 +196,12 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/port)
+"cj" = (
+/obj/structure/marker_beacon{
+	picked_color = "Lime"
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "cq" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -2776,7 +2789,7 @@ hB
 hB
 hB
 hB
-Ue
+cj
 iy
 iy
 mp
@@ -2786,7 +2799,7 @@ mh
 uz
 iy
 iy
-Ue
+bc
 hB
 hB
 hB
@@ -2864,7 +2877,7 @@ hB
 "}
 (7,1,1) = {"
 kj
-Ue
+cj
 aR
 lc
 sE
@@ -2882,12 +2895,12 @@ fa
 sf
 HV
 zf
-Ue
+bc
 lr
 "}
 (8,1,1) = {"
 gQ
-iC
+Ue
 lc
 VO
 OX
@@ -2905,7 +2918,7 @@ Cn
 pC
 wh
 HV
-iC
+Ue
 Be
 "}
 (9,1,1) = {"
@@ -2956,7 +2969,7 @@ Gc
 "}
 (11,1,1) = {"
 hB
-iC
+Ue
 aR
 lc
 cD
@@ -2979,7 +2992,7 @@ hB
 "}
 (12,1,1) = {"
 hB
-Ue
+cj
 iC
 aR
 lc
@@ -2997,7 +3010,7 @@ Ef
 XM
 zf
 iC
-Ue
+bc
 hB
 "}
 (13,1,1) = {"
@@ -3164,7 +3177,7 @@ hB
 (20,1,1) = {"
 hB
 hB
-Ue
+cj
 iC
 NG
 jV
@@ -3180,7 +3193,7 @@ cC
 cC
 jL
 iC
-Ue
+bc
 hB
 hB
 "}
@@ -3188,7 +3201,7 @@ hB
 hB
 hB
 iC
-iC
+Ue
 RJ
 Kk
 yC
@@ -3234,7 +3247,7 @@ hB
 hB
 hB
 hB
-iC
+Ue
 RJ
 yA
 WL
@@ -3257,7 +3270,7 @@ hB
 hB
 hB
 hB
-Ue
+cj
 cg
 RJ
 HT
@@ -3271,7 +3284,7 @@ RG
 SF
 vg
 lZ
-Ue
+bc
 hB
 hB
 hB
@@ -3352,7 +3365,7 @@ hB
 hB
 hB
 hB
-Ue
+cj
 pZ
 HA
 XX
@@ -3360,7 +3373,7 @@ EC
 BM
 HA
 pZ
-Ue
+bc
 hB
 hB
 hB
