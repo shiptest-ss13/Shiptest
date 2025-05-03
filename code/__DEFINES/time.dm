@@ -15,7 +15,6 @@
 /// Define that just has the current in-universe year for use in whatever context you might want to display that in. (For example, 2022 -> 2562 given a 540 year offset)
 #define CURRENT_SECTOR_YEAR (GLOB.year_integer + SECTOR_YEAR_OFFSET)
 
-#warn GET REAL OFFSET FROM LORETEAM
 /// In-universe year. Offset from ours by this much.
 #define SECTOR_YEAR_OFFSET -1519
 
