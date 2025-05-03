@@ -361,10 +361,8 @@ Key procs
 							/datum/language/buzzwords = list(LANGUAGE_ATOM))
 
 /datum/language_holder/human
-	understood_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM),
-								/datum/language/solarian_international = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM),
-							/datum/language/solarian_international = list(LANGUAGE_ATOM))
+	understood_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/galactic_common = list(LANGUAGE_ATOM))
 
 /datum/language_holder/empty
 	understood_languages = list()
