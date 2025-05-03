@@ -338,6 +338,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "sola_engineering"
 	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
 "fX" = (
@@ -2182,6 +2183,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-9"
 	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "BN" = (
@@ -2722,7 +2727,10 @@
 	dir = 4;
 	pixel_x = 27
 	},
-/obj/effect/decal/cleanable/blood/drip,
+/obj/item/paper{
+	default_raw_text = "Turned the cooler off for the night to save on power - make sure to turn it back on, or the alarm will go off.";
+	name = "paper- 'freezer memo'"
+	},
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "JG" = (
@@ -3048,9 +3056,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
-/obj/item/stack/rods/twentyfive{
-	pixel_x = -10
-	},
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "Oj" = (
@@ -3265,7 +3271,10 @@
 	setMode = "cool";
 	anchored = 1
 	},
-/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/item/stack/rods/twentyfive{
+	pixel_x = -14
+	},
 /turf/open/floor/plasteel/patterned/brushed/cold,
 /area/ship/storage)
 "Rb" = (
@@ -3564,6 +3573,10 @@
 /obj/structure/cable/pink{
 	icon_state = "2-4"
 	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Ua" = (
@@ -3802,7 +3815,7 @@
 "WQ" = (
 /obj/machinery/door/airlock/engineering{
 	dir = 4;
-	name = "Electrical Bay"
+	name = "Electrical"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
