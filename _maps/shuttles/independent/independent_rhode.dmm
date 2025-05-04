@@ -409,6 +409,7 @@
 /area/ship/bridge)
 "jB" = (
 /obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "jZ" = (
@@ -1023,6 +1024,7 @@
 "yC" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "yP" = (
@@ -1154,6 +1156,7 @@
 /turf/closed/wall,
 /area/ship/crew/dorm)
 "Bb" = (
+/obj/machinery/advanced_airlock_controller/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
 "Bj" = (
