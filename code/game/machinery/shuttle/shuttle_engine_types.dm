@@ -98,14 +98,14 @@
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/plasma
 	fuel_type = GAS_PLASMA
 	fuel_use = 20
-	thrust = 60
+	thrust = 25
 
 /obj/machinery/power/shuttle/engine/fueled/expulsion
 	name = "expulsion thruster"
 	desc = "A thruster that expels gas inefficiently to create thrust."
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	fuel_use = 80
-	thrust = 45
+	thrust = 15
 	//All fuel code already handled
 
 /**
@@ -319,7 +319,7 @@
 	name = "oil thruster"
 	desc = "A highly inefficient thruster that burns oil as a propellant."
 	max_reagents = 1000
-	thrust = 60
+	thrust = 20
 	fuel_reagents = list(/datum/reagent/fuel/oil = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
 
@@ -327,7 +327,7 @@
 	name = "beer thruster"
 	desc = "Beer is quite possibly the worst thing to use as interstellar propulsion, how these even work is a mystery."
 	max_reagents = 1000
-	thrust = 30
+	thrust = 10
 	fuel_reagents= list(/datum/reagent/consumable/ethanol/beer = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/beer
 
