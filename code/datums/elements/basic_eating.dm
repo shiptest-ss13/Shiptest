@@ -72,9 +72,9 @@
 		return FALSE
 	var/eat_verb
 	if(drinking)
-		eat_verb = pick("slurp","sip","guzzle","drink","quaff","suck")
+		eat_verb = pick("slurp","sip","guzzle","drink")
 	else
-		eat_verb = pick("bite","chew","nibble","gnaw","gobble","chomp")
+		eat_verb = pick("bite","chew","nibble","gnaw","chomp")
 
 	if (heal_amt > 0)
 		var/healed = heal_amt && eater.health < eater.maxHealth
