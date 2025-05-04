@@ -143,6 +143,15 @@
 	name = "privacy lock"
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/button/door{
+	pixel_x = -8;
+	pixel_y = -21;
+	id = "RIshit";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	name = "bathroom override";
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cQ" = (
@@ -174,6 +183,8 @@
 /obj/item/storage/belt/utility,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
+/obj/item/clothing/glasses/welding,
+/obj/item/storage/backpack/duffelbag/engineering,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "dg" = (
@@ -1187,6 +1198,8 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
 /obj/machinery/light/small/directional/north,
+/obj/item/clothing/glasses/welding,
+/obj/item/storage/backpack/duffelbag/engineering,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "Cq" = (
@@ -1329,6 +1342,9 @@
 /obj/item/clothing/suit/hazardvest,
 /obj/item/storage/belt/utility/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/under/shorts/explorer,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Fr" = (
