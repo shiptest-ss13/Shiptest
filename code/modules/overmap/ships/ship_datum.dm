@@ -112,7 +112,7 @@
 		deltimer(movement_callback_id, SSovermap_movement)
 		movement_callback_id = null
 		return
-	overmap_move(x + sign(speed_x), y + sign(speed_y))
+	overmap_move(x + SIGN(speed_x), y + SIGN(speed_y))
 	update_visuals()
 
 	if(movement_callback_id)
