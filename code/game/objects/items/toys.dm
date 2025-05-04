@@ -30,6 +30,7 @@
 	throw_speed = 3
 	throw_range = 7
 	force = 0
+	initial_language_holder = /datum/language_holder/universal
 
 
 /*
