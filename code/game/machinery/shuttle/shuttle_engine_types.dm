@@ -98,14 +98,14 @@
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/plasma
 	fuel_type = GAS_PLASMA
 	fuel_use = 20
-	thrust = 25
+	thrust = 75
 
 /obj/machinery/power/shuttle/engine/fueled/expulsion
 	name = "expulsion thruster"
 	desc = "A thruster that expels gas inefficiently to create thrust."
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	fuel_use = 80
-	thrust = 15
+	thrust = 45
 	//All fuel code already handled
 
 /**
@@ -124,7 +124,7 @@
 	///what portion of the mols in the attached heater to "burn"
 	var/fuel_consumption = 0.0125
 	//multiplier for thrust
-	thrust = 8
+	thrust = 24
 	//used by stockparts, efficiency_multiplier
 	var/consumption_multiplier = 1
 	//If this engine should create heat when burned.
@@ -204,20 +204,20 @@
 	icon_state_off = "burst_off"
 	icon_state_closed = "burst"
 	icon_state_open = "burst_open"
-	thrust = 10
+	thrust = 30
 	///Amount, in kilojoules, needed for a full burn.
 	var/power_per_burn = 50000
 
 /obj/machinery/power/shuttle/engine/electric/bad
 	name = "Outdated Ion Thruster"
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/electric/bad
-	thrust = 2
+	thrust = 6
 	power_per_burn = 70000
 
 /obj/machinery/power/shuttle/engine/electric/premium
 	name = "high performance ion thruster"
 	desc = "An expensive variant of a standard ion thruster, using highest quality components in order to achieve much better performance."
-	thrust = 30
+	thrust = 80
 	power_per_burn = 65000
 
 /obj/machinery/power/smes/shuttle
@@ -319,7 +319,7 @@
 	name = "oil thruster"
 	desc = "A highly inefficient thruster that burns oil as a propellant."
 	max_reagents = 1000
-	thrust = 20
+	thrust = 60
 	fuel_reagents = list(/datum/reagent/fuel/oil = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/oil
 
@@ -327,7 +327,7 @@
 	name = "beer thruster"
 	desc = "Beer is quite possibly the worst thing to use as interstellar propulsion, how these even work is a mystery."
 	max_reagents = 1000
-	thrust = 10
+	thrust = 30
 	fuel_reagents= list(/datum/reagent/consumable/ethanol/beer = 50)
 	circuit = /obj/item/circuitboard/machine/shuttle/engine/beer
 
