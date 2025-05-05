@@ -59,3 +59,18 @@
   - bugfix: Fixed improper turfs on the ICW Base Waste Ruin that caused wind and fixed
       one wire
   - bugfix: ICW Base turrets are no longer ship turrets
+2025-05-05:
+  Erikafox:
+  - balance: humans no longer know solarian by default
+  generalthrax:
+  - bugfix: Removed floor tile from one area with catwalk over it on the Shetland
+  melbert, erika (porting fox):
+  - refactor: Refactored language holders, making species changes not delete all of
+      your known languages
+  - rscadd: 'Languages can now have partial understanding of other languages. More
+      common English words are more likely to be mutually understood.qol: If you speak
+      in ALL CAPS in a foreign language, the translated words will also be ALL CAPS.'
+  - refactor: Refactored language translations. Report if you see any super odd looking
+      translations.
+  - bugfix: Force-says forcing you to speak common (such as cult invocations) will
+      now correctly force you to speak common (even if you don't know common)
