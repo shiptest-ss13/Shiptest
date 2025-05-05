@@ -2,6 +2,7 @@ import { filter, sortBy } from 'common/collections';
 import {
   Box,
   Button,
+  Collapsible,
   Flex,
   Icon,
   Input,
