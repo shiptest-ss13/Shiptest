@@ -26,3 +26,51 @@
   generalthrax:
   - rscadd: Added cargo orders for individual types of produce
   - rscdel: Removed fruit and vegetables cargo order
+2025-05-03:
+  firebudgy:
+  - balance: All remaining R&D consoles have been removed from planets.
+  thearbiber:
+  - bugfix: removes the fake oxygen cans on cave base and replaces them with actual
+      oxygen.
+2025-05-04:
+  CluckinAwesome:
+  - rscadd: PR-05 Plasma Railgun to the general cargo catalogue, with small NT discounts
+  Erikafox:
+  - rscadd: Some quirks can no longer be detected by health scanners
+  FalloutFalcon:
+  - rscadd: Blind characters can now see visuals for important sounds like footsteps,
+      attacks, and gunshots.
+  - rscadd: Basic mob bears
+  - rscadd: Bears can climb trees
+  - rscadd: Bears love honey now, did you know we had honey?
+  - refactor: Basic mobs updated to Modern TG code
+  Rug-Dealer:
+  - rscadd: Following a review of shipbuilding standards, all toilets are now equipped
+      with the same set of buckles that chairs have.
+  SapphicOverload:
+  - rscadd: Replaced the Shetland's TEG and combustion engines with a turbine
+  firebudgy:
+  - balance: Recruits are now Auxiliaries.
+  generalthrax:
+  - rscadd: Added jorts, dolphin shorts, and khaki explorer shorts to the game
+  - rscadd: Added these new clothing items to loadout
+  - rscadd: Embedded objects can now be removed using a hemostat
+  - rscdel: Removed embed surgery
+  - bugfix: Fixed improper turfs on the ICW Base Waste Ruin that caused wind and fixed
+      one wire
+  - bugfix: ICW Base turrets are no longer ship turrets
+2025-05-05:
+  Erikafox:
+  - balance: humans no longer know solarian by default
+  generalthrax:
+  - bugfix: Removed floor tile from one area with catwalk over it on the Shetland
+  melbert, erika (porting fox):
+  - refactor: Refactored language holders, making species changes not delete all of
+      your known languages
+  - rscadd: 'Languages can now have partial understanding of other languages. More
+      common English words are more likely to be mutually understood.qol: If you speak
+      in ALL CAPS in a foreign language, the translated words will also be ALL CAPS.'
+  - refactor: Refactored language translations. Report if you see any super odd looking
+      translations.
+  - bugfix: Force-says forcing you to speak common (such as cult invocations) will
+      now correctly force you to speak common (even if you don't know common)

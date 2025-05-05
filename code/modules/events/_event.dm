@@ -7,6 +7,8 @@
 	var/description //The description of the event
 	var/typepath //The typepath of the event datum /datum/round_event
 
+	///Requires atleast ONE ship.
+	var/requires_ship = FALSE
 	var/weight = 10 //The weight this event has in the random-selection process.
 									//Higher weights are more likely to be picked.
 									//10 is the default weight. 20 is twice more likely; 5 is half as likely as this default.
@@ -43,6 +45,7 @@
 		admin_setup += new admin_setup_type(src)
 
 /datum/round_event_control/wizard
+	category = EVENT_CATEGORY_ADMINBUS
 	wizardevent = TRUE
 
 // Checks if the event can be spawned. Used by event controller and "false alarm" event.
@@ -57,6 +60,8 @@
 	if(players_amt < min_players)
 		return FALSE
 	if(holidayID && !check_holidays(holidayID))
+		return FALSE
+	if(requires_ship && !length(SSovermap.controlled_ships))
 		return FALSE
 	return TRUE
 
@@ -138,6 +143,9 @@
 	if(alert_observers)
 		round_event.announce_deadchat(random, event_cause)
 
+	if(weight > 0) //Half the weight of missions to hopefully reduce repeats?
+		weight = weight/2
+
 	SSblackbox.record_feedback("tally", "event_ran", 1, "[round_event]")
 	return round_event
 
@@ -206,6 +214,7 @@
 			notify_ghosts(
 				"[control.name] has an object of interest: [atom_of_interest]!",
 				source = atom_of_interest,
+				action = NOTIFY_ORBIT,
 			)
 	return
 
