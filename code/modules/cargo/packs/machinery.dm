@@ -427,4 +427,4 @@
 	cost = 500
 	contains = list(/obj/item/circuitboard/machine/smartfridge)
 	crate_name = "smart fridge crate"
-	crate_type = /obj/structure/closet/crate/engineering 
+	crate_type = /obj/structure/closet/crate/engineering
