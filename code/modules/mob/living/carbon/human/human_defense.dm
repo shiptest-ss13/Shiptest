@@ -891,7 +891,7 @@
 		combined_msg += span_info("Your [damaged_message] [damaged_plural ? "are" : "is"] hurt.")
 
 	if(roundstart_quirks.len)
-		combined_msg += span_notice("You have these quirks: [get_trait_string()].")
+		combined_msg += span_notice("You have these quirks: [get_trait_string(see_all=TRUE)].")
 
 	to_chat(src, boxed_message(combined_msg.Join("\n")))
 
