@@ -25,7 +25,7 @@ type FishingSlotProps = {
   current_item_icon: string | null;
 };
 
-const FishingRodSlot = (props: FishingSlotprops) => {
+const FishingRodSlot = (props: FishingSlotProps) => {
   const { act } = useBackend();
 
   const icon_wrapper = (icon) => (
