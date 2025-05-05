@@ -1156,7 +1156,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	roundend_category = "borers"
 	antagpanel_category = "borer"
 	job_rank = ROLE_BORER
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 	var/datum/team/borer/borer_team
 
 /datum/antagonist/borer/create_team(datum/team/borer/new_team)

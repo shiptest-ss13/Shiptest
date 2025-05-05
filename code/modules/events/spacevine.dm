@@ -1,33 +1,3 @@
-/datum/round_event_control/spacevine
-	name = "Spacevine"
-	typepath = /datum/round_event/spacevine
-	weight = 15
-	max_occurrences = 3
-	min_players = 10
-
-/datum/round_event/spacevine
-	fakeable = TRUE
-	announce_when = 1
-
-/datum/round_event/spacevine/announce(fake)
-	priority_announce("Unidentified plant based lifeform detected aboard the station, contact your local botanist.")
-
-/datum/round_event/spacevine/start()
-	var/list/turfs = list() //list of all the empty floor turfs in the hallway areas
-
-	var/obj/structure/spacevine/SV = new()
-
-	for(var/area/ship/hallway/A in world)
-		for(var/turf/F in A)
-			if(F.Enter(SV))
-				turfs += F
-
-	qdel(SV)
-
-	if(turfs.len) //Pick a turf to spawn at if we can
-		var/turf/T = pick(turfs)
-		new /datum/spacevine_controller(T, list(pick(subtypesof(/datum/spacevine_mutation))), rand(10,100), rand(5,10), src) //spawn a controller at turf with randomized stats and a single random mutation
-
 
 /datum/spacevine_mutation
 	var/name = ""
