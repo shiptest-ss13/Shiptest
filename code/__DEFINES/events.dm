@@ -32,8 +32,8 @@
 #define EVENT_CATEGORY_JANITORIAL "Janitorial"
 ///Events that summon meteors and other debris, and stationwide waves of harmful space weather
 #define EVENT_CATEGORY_SPACE "Space Threats"
-///Events summoned by a wizard
-#define EVENT_CATEGORY_WIZARD "Wizard"
+///Events generally designed for end of round bullshit, formerlyw what was summoned by a wizard
+#define EVENT_CATEGORY_ADMINBUS "Adminbus"
 
 /// Return from admin setup to stop the event from triggering entirely.
 #define ADMIN_CANCEL_EVENT "cancel event"

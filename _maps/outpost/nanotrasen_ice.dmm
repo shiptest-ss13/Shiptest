@@ -3203,6 +3203,7 @@
 	},
 /obj/machinery/light/broken/directional/north,
 /obj/structure/chair/office,
+/obj/effect/landmark/salesman,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "uE" = (
@@ -7719,7 +7720,7 @@
 	},
 /area/outpost/maintenance/starboard)
 "XO" = (
-/mob/living/simple_animal/hostile/bear/snow{
+/mob/living/basic/bear/polar{
 	faction = list("neutral");
 	name = "polar bear"
 	},
