@@ -41,9 +41,6 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"bo" = (
-/turf/closed/wall/r_wall/yesdiag,
-/area/ship/crew/dorm)
 "bs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -260,6 +257,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/ash,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "fa" = (
@@ -450,6 +450,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ship/engineering/engines)
 "ld" = (
@@ -464,6 +465,8 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/food/flour,
+/obj/effect/decal/cleanable/food/egg_smudge,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "lp" = (
@@ -650,6 +653,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/effect/decal/cleanable/confetti,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "px" = (
@@ -778,6 +783,7 @@
 /obj/structure/closet/crate/trashcart,
 /obj/effect/turf_decal/corner/opaque/black,
 /obj/machinery/airalarm/directional/south,
+/obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "rx" = (
@@ -836,11 +842,9 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"sF" = (
-/turf/closed/wall/r_wall/yesdiag,
-/area/ship/bridge)
 "ti" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/engineering/engines)
@@ -1075,6 +1079,7 @@
 	},
 /obj/machinery/light/floor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/confetti,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "zc" = (
@@ -1144,6 +1149,7 @@
 /obj/item/reagent_containers/condiment/enzyme,
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
+/obj/effect/decal/cleanable/food/tomato_smudge,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Ao" = (
@@ -1276,6 +1282,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Dq" = (
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Dr" = (
@@ -1329,6 +1336,7 @@
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "Ez" = (
@@ -1549,8 +1557,8 @@
 /turf/open/floor/plating/rust,
 /area/ship/cargo)
 "Kz" = (
-/turf/closed/wall/r_wall/yesdiag,
-/area/ship/hallway/central)
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "Le" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock{
@@ -1674,6 +1682,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Nb" = (
@@ -1711,6 +1722,7 @@
 	icon_state = "0-5"
 	},
 /obj/machinery/power/ship_gravity,
+/obj/effect/decal/cleanable/glass/plasma,
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines)
 "Ok" = (
@@ -1952,6 +1964,7 @@
 	name = "APLU \"Big Betch\""
 	},
 /obj/effect/turf_decal/rechargefloor,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/cargo)
 "TG" = (
@@ -1971,6 +1984,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "TS" = (
@@ -2075,6 +2089,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -2287,7 +2304,7 @@ Sv
 Sv
 Sv
 Sv
-Sv
+Kz
 YX
 RP
 an
@@ -2297,14 +2314,14 @@ Nl
 QO
 ik
 YX
-Sv
+Kz
 Sv
 "}
 (5,1,1) = {"
 Sv
 Sv
 Sv
-Sv
+Kz
 YX
 Cj
 ld
@@ -2314,7 +2331,7 @@ UF
 SW
 Zu
 YX
-Sv
+Kz
 Sv
 "}
 (6,1,1) = {"
@@ -2354,7 +2371,7 @@ Sv
 (8,1,1) = {"
 Sv
 Sv
-Kz
+az
 az
 rd
 UH
@@ -2366,7 +2383,7 @@ gr
 FO
 Ao
 MH
-bo
+MH
 "}
 (9,1,1) = {"
 Sv
@@ -2406,7 +2423,7 @@ vr
 Sv
 az
 az
-cc
+UR
 MV
 Cq
 vl
@@ -2541,7 +2558,7 @@ yP
 (19,1,1) = {"
 Sv
 Sv
-sF
+DT
 DT
 WG
 WG
@@ -2661,7 +2678,7 @@ Sv
 Sv
 Sv
 Sv
-wH
+CE
 jZ
 eb
 Gh
@@ -2670,7 +2687,7 @@ Gh
 Gh
 eb
 CE
-wH
+CE
 Sv
 Sv
 "}
