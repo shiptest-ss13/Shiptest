@@ -14,7 +14,7 @@ export const CargoBountyConsole = (props) => {
   const { act, data } = useBackend();
   const { bountydata = [] } = data;
   return (
-    <Window width={750} height={600} resizable>
+    <Window width={750} height={600}>
       <Window.Content scrollable>
         <Section
           title={<BountyHeader />}

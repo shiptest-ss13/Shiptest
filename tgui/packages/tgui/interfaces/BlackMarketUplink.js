@@ -24,7 +24,7 @@ export const BlackMarketUplink = (props) => {
     viewing_category,
   } = data;
   return (
-    <Window width={900} height={480} theme="hackerman" resizable>
+    <Window width={900} height={480} theme="hackerman">
       <ShipmentSelector />
       <Window.Content scrollable>
         <Section

@@ -22,7 +22,7 @@ export const ChemReactionChamber = (props) => {
   const emptying = data.emptying;
   const reagents = data.reagents || [];
   return (
-    <Window width={250} height={225} resizable>
+    <Window width={250} height={225}>
       <Window.Content scrollable>
         <Section
           title="Reagents"

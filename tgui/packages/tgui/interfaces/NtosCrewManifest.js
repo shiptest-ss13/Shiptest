@@ -8,7 +8,7 @@ export const NtosCrewManifest = (props) => {
   const { act, data } = useBackend();
   const { have_printer, manifest = {} } = data;
   return (
-    <NtosWindow width={400} height={480} resizable>
+    <NtosWindow width={400} height={480}>
       <NtosWindow.Content scrollable>
         <Section
           title="Crew Manifest"

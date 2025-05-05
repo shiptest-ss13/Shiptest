@@ -7,7 +7,7 @@ export const StackingConsole = (props) => {
   const { act, data } = useBackend();
   const { machine } = data;
   return (
-    <Window width={320} height={340} resizable>
+    <Window width={320} height={340}>
       <Window.Content scrollable>
         {!machine ? (
           <NoticeBox>No connected stacking machine</NoticeBox>

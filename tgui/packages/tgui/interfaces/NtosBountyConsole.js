@@ -14,7 +14,7 @@ export const NtosBountyConsole = (props) => {
   const { act, data } = useBackend();
   const { bountydata = [] } = data;
   return (
-    <NtosWindow width={750} height={600} resizable>
+    <NtosWindow width={750} height={600}>
       <NtosWindow.Content scrollable>
         <Section
           title={<BountyHeader />}

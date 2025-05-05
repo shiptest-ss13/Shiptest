@@ -23,7 +23,6 @@ export const NtosMain = (props) => {
       theme={device_theme}
       width={400}
       height={500}
-      resizable
     >
       <NtosWindow.Content scrollable>
         {!!has_light && (

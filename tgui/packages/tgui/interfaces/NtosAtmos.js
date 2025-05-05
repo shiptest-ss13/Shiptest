@@ -16,7 +16,7 @@ export const NtosAtmos = (props) => {
   ])(AirData || []);
   const gasMaxPercentage = Math.max(1, ...gases.map((gas) => gas.percentage));
   return (
-    <NtosWindow width={300} height={350} resizable>
+    <NtosWindow width={300} height={350}>
       <NtosWindow.Content scrollable>
         <Section>
           <LabeledList>

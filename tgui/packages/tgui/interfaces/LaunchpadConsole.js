@@ -233,7 +233,7 @@ export const LaunchpadConsole = (props) => {
   const { act, data } = useBackend();
   const { launchpads = [], selected_id } = data;
   return (
-    <Window width={475} height={260} resizable>
+    <Window width={475} height={260}>
       <Window.Content scrollable>
         {(launchpads.length === 0 && (
           <NoticeBox>No Pads Connected</NoticeBox>

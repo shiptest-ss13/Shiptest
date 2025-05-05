@@ -88,7 +88,6 @@ export const Canvas = (props) => {
     <Window
       width={Math.min(700, width * dotsize + 72)}
       height={Math.min(700, height * dotsize + 72)}
-      resizable
     >
       <Window.Content>
         <Box textAlign="center">

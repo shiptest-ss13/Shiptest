@@ -45,7 +45,7 @@ export const SeedExtractor = (props) => {
   const { act, data } = useBackend();
   const seeds = createSeeds(data.seeds);
   return (
-    <Window width={1000} height={400} resizable>
+    <Window width={1000} height={400}>
       <Window.Content scrollable>
         <Section title="Stored seeds:">
           <Table cellpadding="3" textAlign="center">

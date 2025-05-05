@@ -19,7 +19,7 @@ export const EngravedMessage = (props) => {
     realdate,
   } = data;
   return (
-    <Window width={600} height={300} resizable>
+    <Window width={600} height={300}>
       <Window.Content scrollable>
         <Section>
           <Box bold textAlign="center" fontSize="20px" mb={2}>

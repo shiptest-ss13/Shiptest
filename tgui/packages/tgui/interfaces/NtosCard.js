@@ -14,7 +14,7 @@ import { AccessList } from './common/AccessList';
 
 export const NtosCard = (props) => {
   return (
-    <NtosWindow width={450} height={520} resizable>
+    <NtosWindow width={450} height={520}>
       <NtosWindow.Content scrollable>
         <NtosCardContent />
       </NtosWindow.Content>

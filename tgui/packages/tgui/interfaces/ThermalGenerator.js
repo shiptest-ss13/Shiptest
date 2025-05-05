@@ -24,7 +24,7 @@ export const ThermalGenerator = (props) => {
   };
 
   return (
-    <Window width={400} height={250} resizable>
+    <Window width={400} height={250}>
       <Window.Content>
         <Section>
           <LabeledList>

@@ -648,12 +648,7 @@ export const CommunicationsConsole = (props) => {
   } = data;
 
   return (
-    <Window
-      width={400}
-      height={650}
-      theme={emagged ? 'syndicate' : undefined}
-      resizable
-    >
+    <Window width={400} height={650} theme={emagged ? 'syndicate' : undefined}>
       <Window.Content scrollable>
         {!hasConnection && <NoConnectionModal />}
 

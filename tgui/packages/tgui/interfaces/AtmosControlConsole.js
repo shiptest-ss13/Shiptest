@@ -14,7 +14,7 @@ export const AtmosControlConsole = (props) => {
   const { act, data } = useBackend();
   const sensors = data.sensors || [];
   return (
-    <Window width={500} height={315} resizable>
+    <Window width={500} height={315}>
       <Window.Content scrollable>
         <Section title={!!data.tank && sensors[0]?.long_name}>
           {sensors.map((sensor) => {

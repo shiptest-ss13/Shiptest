@@ -24,7 +24,7 @@ export const Biogenerator = (props) => {
   const { data } = useBackend();
   const { beaker, processing } = data;
   return (
-    <Window width={550} height={380} resizable>
+    <Window width={550} height={380}>
       {!!processing && (
         <Dimmer fontSize="32px">
           <Icon name="cog" spin={1} />

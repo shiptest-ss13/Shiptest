@@ -38,7 +38,7 @@ export const ShipSelect = (props) => {
   const [searchText, setSearchText] = useLocalState('searchText', '');
 
   return (
-    <Window title="Ship Select" width={800} height={600} resizable>
+    <Window title="Ship Select" width={800} height={600}>
       <Window.Content scrollable>
         <Tabs>
           {shownTabs.map((tabbing, index) => (

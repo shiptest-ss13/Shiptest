@@ -253,7 +253,7 @@ export const PandemicAntibodyDisplay = (props) => {
 export const Pandemic = (props) => {
   const { data } = useBackend();
   return (
-    <Window width={520} height={550} resizable>
+    <Window width={520} height={550}>
       <Window.Content scrollable>
         <PandemicBeakerDisplay />
         {!!data.has_blood && (

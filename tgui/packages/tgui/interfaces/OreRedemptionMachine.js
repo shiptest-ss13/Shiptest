@@ -15,7 +15,7 @@ export const OreRedemptionMachine = (props) => {
   const { act, data } = useBackend();
   const { unclaimedPoints, materials, alloys, diskDesigns, hasDisk } = data;
   return (
-    <Window title="Ore Redemption Machine" width={440} height={550} resizable>
+    <Window title="Ore Redemption Machine" width={440} height={550}>
       <Window.Content scrollable>
         <Section>
           <BlockQuote mb={1}>

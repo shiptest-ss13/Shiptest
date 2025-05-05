@@ -14,7 +14,6 @@ export const Application = (props) => {
       title={ship_name + ' application as ' + player_name}
       width={500}
       height={600}
-      resizable
     >
       <Window.Content>
         <Stack fill vertical>

@@ -269,7 +269,7 @@ export const NaniteCloudControl = (props) => {
   const { act, data } = useBackend();
   const { has_disk, current_view, new_backup_id } = data;
   return (
-    <Window width={375} height={700} resizable>
+    <Window width={375} height={700}>
       <Window.Content scrollable>
         <Section
           title="Program Disk"

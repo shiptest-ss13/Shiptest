@@ -12,7 +12,7 @@ import { Data, Mission } from './types';
 
 export const MissionBoard = (props) => {
   return (
-    <Window width={600} height={700} theme="ntos_terminal" resizable>
+    <Window width={600} height={700} theme="ntos_terminal">
       <Window.Content scrollable>
         <MissionsContent />
       </Window.Content>

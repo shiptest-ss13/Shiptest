@@ -18,7 +18,7 @@ export const OutpostCommunications = (props) => {
   const { outpostDocked, onShip, points } = data;
   const [tab, setTab] = useSharedState('outpostTab', '');
   return (
-    <Window width={600} height={700} resizable>
+    <Window width={600} height={700}>
       <Window.Content scrollable>
         <Section
           title={Math.round(points) + ' credits'}

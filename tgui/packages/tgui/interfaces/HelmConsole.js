@@ -19,7 +19,7 @@ export const HelmConsole = (_props) => {
   const { data } = useBackend();
   const { mapRef, isViewer } = data;
   return (
-    <Window width={870} height={708} resizable>
+    <Window width={870} height={708}>
       <div className="CameraConsole__left">
         <Window.Content>
           {!isViewer && <ShipControlContent />}

@@ -18,7 +18,7 @@ const logScale = (value) => Math.log2(16 + Math.max(0, value)) - 4;
 
 export const NtosSupermatterMonitor = (props) => {
   return (
-    <NtosWindow width={600} height={350} resizable>
+    <NtosWindow width={600} height={350}>
       <NtosWindow.Content scrollable>
         <NtosSupermatterMonitorContent />
       </NtosWindow.Content>

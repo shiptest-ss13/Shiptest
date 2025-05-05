@@ -18,7 +18,7 @@ export const PlantAnalyzer = (props) => {
   const { act, data } = useBackend<PlantAnalyzerData>();
   const { tray, seed } = data;
   return (
-    <Window width={500} height={600} resizable>
+    <Window width={500} height={600}>
       <Window.Content scrollable>
         {tray.name && <TrayContent />}
         {seed.name && <SeedContent />}

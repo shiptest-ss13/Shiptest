@@ -11,7 +11,7 @@ import { Window } from '../layouts';
 
 export const CryoStorageConsole = (props) => {
   return (
-    <Window width={450} height={620} resizable>
+    <Window width={450} height={620}>
       <Window.Content scrollable>
         <CryoStorageConsoleContent />
       </Window.Content>

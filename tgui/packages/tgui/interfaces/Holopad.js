@@ -16,7 +16,7 @@ export const Holopad = (props) => {
   const { act, data } = useBackend();
   const { calling } = data;
   return (
-    <Window width={440} height={245} resizable>
+    <Window width={440} height={245}>
       {!!calling && (
         <Modal fontSize="36px" fontFamily="monospace">
           <Flex align="center">

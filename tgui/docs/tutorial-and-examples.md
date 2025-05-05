@@ -135,7 +135,7 @@ export const SampleInterface = (props) => {
     color,
   } = data;
   return (
-    <Window resizable>
+    <Window>
       <Window.Content scrollable>
         <Section title="Health status">
           <LabeledList>
@@ -261,7 +261,7 @@ import { Window } from '../layouts';
 
 export const SampleInterface = (props) => {
   return (
-    <Window resizable>
+    <Window>
       <Window.Content scrollable>
         <HealthStatus user="Jerry" />
       </Window.Content>
@@ -338,7 +338,7 @@ export const SampleInterface = (props) => {
     color,
   } = data;
   return (
-    <Window resizable>
+    <Window>
       <Window.Content scrollable>
         <Section title="Health status">
           <LabeledList>

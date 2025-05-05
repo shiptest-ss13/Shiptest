@@ -17,7 +17,7 @@ const directionToIcon = {
 export const BluespaceLocator = (props) => {
   const [tab, setTab] = useSharedState('tab', 'implant');
   return (
-    <Window width={300} height={300} resizable>
+    <Window width={300} height={300}>
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab

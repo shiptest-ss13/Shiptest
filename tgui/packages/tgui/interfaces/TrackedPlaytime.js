@@ -65,7 +65,7 @@ export const TrackedPlaytime = (props) => {
   } = data;
 
   return (
-    <Window title="Tracked Playtime" width={550} height={650} resizable>
+    <Window title="Tracked Playtime" width={550} height={650}>
       <Window.Content scrollable>
         {(failReason &&
           ((failReason === JOB_REPORT_MENU_FAIL_REASON_TRACKING_DISABLED && (

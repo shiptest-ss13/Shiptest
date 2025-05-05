@@ -107,7 +107,7 @@ export const Vending = (props) => {
   // Just in case we still have undefined values in the list
   inventory = inventory.filter((item) => !!item);
   return (
-    <Window title="Vending Machine" width={450} height={600} resizable>
+    <Window title="Vending Machine" width={450} height={600}>
       <Window.Content scrollable>
         {!all_items_free && (
           <Section title="User">

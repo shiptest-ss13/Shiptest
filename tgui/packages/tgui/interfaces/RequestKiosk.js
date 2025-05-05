@@ -16,7 +16,7 @@ import { Window } from '../layouts';
 
 export const RequestKiosk = (props) => {
   return (
-    <Window width={550} height={600} resizable>
+    <Window width={550} height={600}>
       <Window.Content scrollable>
         <RequestKioskContent />
       </Window.Content>

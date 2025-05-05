@@ -31,7 +31,7 @@ export const Tank = (props) => {
     connected,
   } = data;
   return (
-    <Window resizable width={275} height={120}>
+    <Window width={275} height={120}>
       <Window.Content>
         <Section>
           <LabeledControls>

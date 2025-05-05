@@ -34,7 +34,6 @@ export const Limbgrower = (props) => {
       height={
         Math.max(460, 195 + categories.length * 23) + reagents.length * 25
       }
-      resizable
     >
       {!!busy && (
         <Dimmer fontSize="32px">

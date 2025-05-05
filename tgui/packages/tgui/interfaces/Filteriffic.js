@@ -286,7 +286,7 @@ export const Filteriffic = (props) => {
   const [massApplyPath, setMassApplyPath] = useLocalState('massApplyPath', '');
   const [hiddenSecret, setHiddenSecret] = useLocalState('hidden', false);
   return (
-    <Window width={500} height={500} title="Filteriffic" resizable>
+    <Window width={500} height={500} title="Filteriffic">
       <Window.Content scrollable>
         <NoticeBox danger>
           DO NOT MESS WITH EXISTING FILTERS IF YOU DO NOT KNOW THE CONSEQUENCES.

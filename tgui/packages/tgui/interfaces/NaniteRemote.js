@@ -13,7 +13,7 @@ import { Window } from '../layouts';
 
 export const NaniteRemote = (props) => {
   return (
-    <Window width={420} height={500} resizable>
+    <Window width={420} height={500}>
       <Window.Content scrollable>
         <NaniteRemoteContent />
       </Window.Content>

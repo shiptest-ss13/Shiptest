@@ -13,7 +13,7 @@ import { Window } from '../layouts';
 export const ComputerFabricator = (props) => {
   const { act, data } = useBackend();
   return (
-    <Window title="Personal Computer Vendor" width={500} height={400} resizable>
+    <Window title="Personal Computer Vendor" width={500} height={400}>
       <Window.Content>
         <Section italic fontSize="20px">
           Your perfect device, only three steps away...

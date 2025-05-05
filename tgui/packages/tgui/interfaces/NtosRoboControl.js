@@ -17,7 +17,7 @@ export const NtosRoboControl = (props) => {
   const { act, data } = useBackend();
   const { bots, id_owner, has_id } = data;
   return (
-    <NtosWindow width={550} height={550} resizable>
+    <NtosWindow width={550} height={550}>
       <NtosWindow.Content scrollable>
         <Section title="Robot Control Console">
           <LabeledList>

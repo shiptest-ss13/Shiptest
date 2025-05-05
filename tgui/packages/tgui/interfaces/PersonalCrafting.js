@@ -60,7 +60,7 @@ export const PersonalCrafting = (props) => {
   const [tab, setTab] = useLocalState('tab', categories[0]?.name);
   const shownRecipes = recipes.filter((recipe) => recipe.category === tab);
   return (
-    <Window title="Crafting Menu" width={700} height={800} resizable>
+    <Window title="Crafting Menu" width={700} height={800}>
       <Window.Content scrollable>
         {!!busy && (
           <Dimmer fontSize="32px">

@@ -20,7 +20,7 @@ export const OutpostExport = (props) => {
   const { data } = useBackend();
   const { telecrystals } = data;
   return (
-    <Window width={620} height={580} theme="ntos_terminal" resizable>
+    <Window width={620} height={580} theme="ntos_terminal">
       <Window.Content scrollable>
         <GenericExport />
       </Window.Content>

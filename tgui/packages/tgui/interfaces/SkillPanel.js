@@ -23,7 +23,7 @@ export const SkillPanel = (props) => {
   const { act, data } = useBackend();
   const skills = data.skills || [];
   return (
-    <Window title="Manage Skills" width={600} height={500} resizable>
+    <Window title="Manage Skills" width={600} height={500}>
       <Window.Content scrollable>
         <Section title={skills.playername}>
           <LabeledList>

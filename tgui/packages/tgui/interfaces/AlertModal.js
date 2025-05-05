@@ -15,7 +15,7 @@ export const AlertModal = (props) => {
   const { title, message, buttons, timeout } = data;
 
   return (
-    <Window title={title} width={350} height={150} resizable>
+    <Window title={title} width={350} height={150}>
       {timeout !== undefined && <Loader value={timeout} />}
       <Window.Content>
         <Flex direction="column" height="100%">

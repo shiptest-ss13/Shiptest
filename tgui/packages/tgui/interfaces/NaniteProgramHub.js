@@ -17,7 +17,7 @@ export const NaniteProgramHub = (props) => {
   const [selectedCategory, setSelectedCategory] = useSharedState('category');
   const programsInCategory = (programs && programs[selectedCategory]) || [];
   return (
-    <Window width={500} height={700} resizable>
+    <Window width={500} height={700}>
       <Window.Content scrollable>
         <Section
           title="Program Disk"

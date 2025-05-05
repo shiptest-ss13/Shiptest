@@ -48,7 +48,7 @@ type JobData = {
 
 export const ShipOwner = (props) => {
   return (
-    <Window width={620} height={620} resizable>
+    <Window width={620} height={620}>
       <Window.Content scrollable>
         <ShipOwnerContent />
       </Window.Content>

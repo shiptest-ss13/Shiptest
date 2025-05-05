@@ -190,8 +190,8 @@ const LanguageRow = (props: LanguageProps) => {
   );
 };
 
-const OmnitongueToggle = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+const OmnitongueToggle = (props) => {
+  const { act, data } = useBackend<Data>();
   const { omnitongue } = data;
   return (
     <Button
@@ -205,8 +205,8 @@ const OmnitongueToggle = (props, context) => {
   );
 };
 
-export const LanguageMenu = (props, context) => {
-  const { data } = useBackend<Data>(context);
+export const LanguageMenu = (props) => {
+  const { data } = useBackend<Data>();
   const { admin_mode, is_living, languages } = data;
 
   // only show languages we can speak OR understand, UNLESS we're an admin

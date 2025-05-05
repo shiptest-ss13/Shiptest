@@ -7,7 +7,7 @@ export const GulagItemReclaimer = (props) => {
   const { act, data } = useBackend();
   const { mobs = [] } = data;
   return (
-    <Window width={325} height={400} resizable>
+    <Window width={325} height={400}>
       <Window.Content scrollable>
         {mobs.length === 0 && <NoticeBox>No stored items</NoticeBox>}
         {mobs.length > 0 && (

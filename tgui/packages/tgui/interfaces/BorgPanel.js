@@ -20,7 +20,7 @@ export const BorgPanel = (props) => {
   const ais = data.ais || [];
   const laws = data.laws || [];
   return (
-    <Window title="Borg Panel" width={700} height={700} resizable>
+    <Window title="Borg Panel" width={700} height={700}>
       <Window.Content scrollable>
         <Section
           title={borg.name}

@@ -5,7 +5,7 @@ import { Window } from '../layouts';
 
 export const ElevatorButtons = (props) => {
   return (
-    <Window width={200} height={400} resizable>
+    <Window width={200} height={400}>
       <Window.Content scrollable>
         <ElevatorButtonsContent />
       </Window.Content>

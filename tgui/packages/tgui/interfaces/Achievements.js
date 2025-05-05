@@ -14,7 +14,7 @@ export const Achievements = (props) => {
     (x) => x.category === selectedCategory,
   );
   return (
-    <Window title="Achievements" width={540} height={680} resizable>
+    <Window title="Achievements" width={540} height={680}>
       <Window.Content scrollable>
         <Tabs>
           {categories.map((category) => (

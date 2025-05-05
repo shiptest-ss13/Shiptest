@@ -37,7 +37,7 @@ export const Stack = (props) => {
   const height = Math.max(94 + Object.keys(recipes).length * 26, 250);
 
   return (
-    <Window width={400} height={Math.min(height, 500)} resizable>
+    <Window width={400} height={Math.min(height, 500)}>
       <Window.Content scrollable>
         <Section
           title={'Amount: ' + amount}

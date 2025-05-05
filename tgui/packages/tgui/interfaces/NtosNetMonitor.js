@@ -27,7 +27,7 @@ export const NtosNetMonitor = (props) => {
     ntnetlogs = [],
   } = data;
   return (
-    <NtosWindow resizable>
+    <NtosWindow>
       <NtosWindow.Content scrollable>
         <NoticeBox>
           WARNING: Disabling wireless transmitters when using a wireless device

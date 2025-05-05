@@ -8,7 +8,7 @@ export const MiningVendor = (props) => {
   const { act, data } = useBackend();
   let inventory = [...data.product_records];
   return (
-    <Window width={425} height={600} resizable>
+    <Window width={425} height={600}>
       <Window.Content scrollable>
         <Section title="User">
           {(data.user && (

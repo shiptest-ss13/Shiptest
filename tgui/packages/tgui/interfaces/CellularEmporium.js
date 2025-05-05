@@ -7,7 +7,7 @@ export const CellularEmporium = (props) => {
   const { act, data } = useBackend();
   const { abilities } = data;
   return (
-    <Window width={900} height={480} resizable>
+    <Window width={900} height={480}>
       <Window.Content scrollable>
         <Section>
           <LabeledList>

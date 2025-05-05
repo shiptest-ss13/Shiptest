@@ -14,7 +14,7 @@ export const TachyonArray = (props) => {
   const { act, data } = useBackend();
   const { records = [] } = data;
   return (
-    <Window width={500} height={225} resizable>
+    <Window width={500} height={225}>
       <Window.Content scrollable>
         {!records.length ? (
           <NoticeBox>No Records</NoticeBox>

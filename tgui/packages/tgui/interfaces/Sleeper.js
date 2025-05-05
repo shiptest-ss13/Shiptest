@@ -37,7 +37,7 @@ export const Sleeper = (props) => {
   const transferAmounts = data.transferAmounts || [];
   const { open, occupant = {}, occupied, stasis, canStasis, cell = {} } = data;
   return (
-    <Window width={495} height={550} resizable>
+    <Window width={495} height={550}>
       <Window.Content scrollable>
         <Section
           title={occupant.name ? occupant.name : 'No Occupant'}

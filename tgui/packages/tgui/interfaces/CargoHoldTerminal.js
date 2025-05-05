@@ -13,7 +13,7 @@ export const CargoHoldTerminal = (props) => {
   const { act, data } = useBackend();
   const { points, pad, sending, status_report } = data;
   return (
-    <Window width={600} height={230} resizable>
+    <Window width={600} height={230}>
       <Window.Content scrollable>
         <Section>
           <LabeledList>

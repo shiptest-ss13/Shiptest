@@ -13,7 +13,7 @@ import { GenericUplink } from './Uplink';
 export const AbductorConsole = (props) => {
   const [tab, setTab] = useSharedState('tab', 1);
   return (
-    <Window theme="abductor" width={600} height={532} resizable>
+    <Window theme="abductor" width={600} height={532}>
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab
