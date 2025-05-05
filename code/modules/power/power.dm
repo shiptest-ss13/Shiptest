@@ -131,7 +131,7 @@
 	use_static_power = NO_POWER_USE
 
 /obj/machinery/proc/set_static_power(area/A)//used to set the actual draw to the value of use_static_power
-	switch(use_power)
+	switch(use_static_power)
 		if(NO_POWER_USE)
 			set_no_power(A)
 		if(IDLE_POWER_USE)

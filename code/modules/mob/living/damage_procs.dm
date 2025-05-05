@@ -11,12 +11,11 @@
  * * blocked - armor value applied
  * * forced - bypass hit percentage
  * * spread_damage - used in overrides
- * * break_modifier - increases bone breaking chance
  * * sharpness - used for bleeding
  *
  * Returns TRUE if damage applied
  */
-/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)//WS Edit - Breakable Bones
+/mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, sharpness = FALSE)//WS Edit - Breakable Bones
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0) || !(flags_1 & INITIALIZED_1))
@@ -277,6 +276,9 @@
 	if(updating_health)
 		updatehealth()
 		update_stamina()
+
+/// Restore integrity to MANY bodyparts, in random order
+/mob/living/proc/heal_overall_integrity(amount, required_status, updating_health = TRUE)
 
 /// heal MANY bodyparts, in random order
 /mob/living/proc/heal_overall_damage(brute = 0, burn = 0, stamina = 0, required_status, updating_health = TRUE)

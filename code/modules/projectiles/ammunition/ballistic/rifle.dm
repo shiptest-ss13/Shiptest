@@ -34,7 +34,7 @@
 	icon_state = "caseless"
 	caliber = "a858"
 	projectile_type = /obj/projectile/bullet/a858
-	stack_size = 10
+	stack_size = 5
 
 /obj/item/ammo_casing/caseless/a858/trac
 	name = "8x58mm tracker round"
@@ -69,7 +69,6 @@
 	desc = "A 5.56x42mm CLIP rubber bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/a556_42/rubber
-	stack_size = 15
 
 // 7.62x40mm CLIP (SKM Rifles)
 

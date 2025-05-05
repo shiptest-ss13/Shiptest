@@ -160,11 +160,9 @@
 			/obj/item/circuitboard/machine/cell_charger = 5,
 			/obj/item/circuitboard/machine/chem_heater = 5,
 			/obj/item/circuitboard/machine/chem_master = 5,
-			/obj/item/circuitboard/machine/clonescanner = 5,
 			/obj/item/circuitboard/machine/cryo_tube = 5,
 			/obj/item/circuitboard/machine/cyborgrecharger = 5,
 			/obj/item/circuitboard/machine/deep_fryer = 5,
-			/obj/item/circuitboard/machine/experimentor = 5,
 			/obj/item/circuitboard/machine/holopad = 5,
 			/obj/item/circuitboard/machine/hydroponics = 5,
 			/obj/item/circuitboard/machine/limbgrower = 5,
@@ -179,8 +177,8 @@
 			/obj/item/circuitboard/machine/reagentgrinder = 5,
 			/obj/item/circuitboard/machine/recharger = 5,
 			/obj/item/circuitboard/machine/seed_extractor = 5,
-			/obj/item/circuitboard/machine/selling_pad = 5,
 			/obj/item/circuitboard/machine/emitter = 5,
+			/obj/item/circuitboard/machine/smes = 5,
 		)
 
 /obj/effect/spawner/random/circuit
@@ -192,25 +190,24 @@
 			/obj/item/circuitboard/machine/chem_dispenser = 5,
 			/obj/item/circuitboard/machine/circuit_imprinter = 5,
 			/obj/item/circuitboard/machine/protolathe = 5,
-			/obj/item/circuitboard/machine/clonepod/experimental = 5,
 			/obj/item/circuitboard/machine/rad_collector = 5,
 			/obj/item/circuitboard/machine/launchpad = 5,
+			/obj/item/circuitboard/machine/shuttle/engine/electric = 5,
+			/obj/item/circuitboard/machine/shuttle/smes = 5,
 		)
 
 /obj/effect/spawner/random/circuit/machine/mech
 	loot = list(
 			/obj/item/circuitboard/mecha/ripley/main = 100,
 			/obj/item/circuitboard/mecha/ripley/peripherals = 100,
-			/obj/item/circuitboard/mecha/honker/main = 5,
-			/obj/item/circuitboard/mecha/honker/peripherals = 5,
-			/obj/item/circuitboard/mecha/odysseus/main = 5,
-			/obj/item/circuitboard/mecha/odysseus/peripherals = 5,
-			/obj/item/circuitboard/mecha/gygax/main = 1,
-			/obj/item/circuitboard/mecha/gygax/peripherals = 1,
-			/obj/item/circuitboard/mecha/gygax/targeting = 1,
-			/obj/item/circuitboard/mecha/durand/main = 1,
-			/obj/item/circuitboard/mecha/durand/peripherals = 1,
-			/obj/item/circuitboard/mecha/durand/targeting = 1,
+			/obj/item/circuitboard/mecha/odysseus/main = 25,
+			/obj/item/circuitboard/mecha/odysseus/peripherals = 25,
+			/obj/item/circuitboard/mecha/gygax/main = 20,
+			/obj/item/circuitboard/mecha/gygax/peripherals = 20,
+			/obj/item/circuitboard/mecha/gygax/targeting = 20,
+			/obj/item/circuitboard/mecha/durand/main = 20,
+			/obj/item/circuitboard/mecha/durand/peripherals = 20,
+			/obj/item/circuitboard/mecha/durand/targeting = 20,
 		)
 
 //COMPUTER
@@ -222,13 +219,10 @@
 			/obj/item/circuitboard/computer/arcade/orion_trail = 5,
 			/obj/item/circuitboard/computer/atmos_alert = 5,
 			/obj/item/circuitboard/computer/card = 5,
-			/obj/item/circuitboard/computer/cloning = 5,
-			/obj/item/circuitboard/computer/communications = 5,
 			/obj/item/circuitboard/computer/launchpad_console = 5,
 			/obj/item/circuitboard/computer/mech_bay_power_console = 5,
 			/obj/item/circuitboard/computer/pandemic = 5,
 			/obj/item/circuitboard/computer/powermonitor/secret = 5,
-			/obj/item/circuitboard/computer/prototype_cloning = 5,
 			/obj/item/circuitboard/computer/stationalert = 5,
 			/obj/item/circuitboard/computer/teleporter = 5,
 			/obj/item/circuitboard/computer/operating = 5,
@@ -239,7 +233,6 @@
 /obj/effect/spawner/random/circuit/computer/rare
 	loot = list(
 			/obj/item/circuitboard/computer/cargo = 5,
-			/obj/item/circuitboard/computer/communications = 5,
 			/obj/item/circuitboard/computer/shuttle/helm = 5,
 			/obj/item/circuitboard/computer/med_data = 5,
 		)

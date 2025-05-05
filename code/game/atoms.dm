@@ -136,6 +136,9 @@
 	///List of smoothing groups this atom can smooth with. If this is null and atom is smooth, it smooths only with itself.
 	var/list/canSmoothWith = null
 
+	///AI controller that controls this atom. type on init, then turned into an instance during runtime
+	var/datum/ai_controller/ai_controller
+
 	/// The icon file of the connector to use when smoothing.
 	/// Use of connectors requires the smoothing flags SMOOTH_BITMASK and SMOOTH_CONNECTORS.
 	var/connector_icon = null
@@ -265,6 +268,7 @@
 	set_custom_materials(temp_list)
 
 	ComponentInitialize()
+	InitializeAIController()
 
 	return INITIALIZE_HINT_NORMAL
 
@@ -311,6 +315,7 @@
 	LAZYCLEARLIST(managed_overlays)
 
 	QDEL_NULL(light)
+	QDEL_NULL(ai_controller)
 
 	if(smoothing_flags & SMOOTH_QUEUED)
 		SSicon_smooth.remove_from_queues(src)
@@ -622,9 +627,9 @@
 				. += "Nothing."
 		else if(reagents.flags & AMOUNT_VISIBLE)
 			if(reagents.total_volume)
-				. += "<span class='notice'>It has [reagents.total_volume] unit\s left.</span>"
+				. += span_notice("It has [reagents.total_volume] unit\s left.")
 			else
-				. += "<span class='danger'>It's empty.</span>"
+				. += span_danger("It's empty.")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
@@ -675,9 +680,13 @@
 			SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 
 		var/list/new_overlays = update_overlays()
-		if(managed_overlays)
-			cut_overlay(managed_overlays)
-			managed_overlays = null
+		if (managed_overlays)
+			if (length(overlays) == (islist(managed_overlays) ? length(managed_overlays) : 1))
+				overlays = null
+				POST_OVERLAY_CHANGE(src)
+			else
+				cut_overlay(managed_overlays)
+				managed_overlays = null
 		if(length(new_overlays))
 			managed_overlays = new_overlays
 			add_overlay(new_overlays)
@@ -705,7 +714,7 @@
 /atom/proc/relaymove(mob/living/user, direction)
 	if(buckle_message_cooldown <= world.time)
 		buckle_message_cooldown = world.time + 50
-		to_chat(user, "<span class='warning'>You can't move while buckled to [src]!</span>")
+		to_chat(user, span_warning("You can't move while buckled to [src]!"))
 	return
 
 /// Handle what happens when your contents are exploded by a bomb
@@ -737,6 +746,7 @@
  * throw lots of items around - singularity being a notable example)
  */
 /atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum)
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
 		addtimer(CALLBACK(src, PROC_REF(hitby_react), AM), 2)
 
@@ -905,7 +915,7 @@
 	while (do_after(user, 1 SECONDS, src, NONE, FALSE, CALLBACK(STR, TYPE_PROC_REF(/datum/component/storage, handle_mass_item_insertion), things, src_object, user, progress)))
 		stoplag(1)
 	progress.end_progress()
-	to_chat(user, "<span class='notice'>You dump as much of [src_object.parent]'s contents [STR.insert_preposition]to [src] as you can.</span>")
+	to_chat(user, span_notice("You dump as much of [src_object.parent]'s contents [STR.insert_preposition]to [src] as you can."))
 	if(user.active_storage) //refresh the HUD to show the transfered contents
 		user.active_storage.ui_show(user)
 	return TRUE
@@ -1068,6 +1078,7 @@
 	VV_DROPDOWN_OPTION(VV_HK_RADIATE, "Radiate")
 	VV_DROPDOWN_OPTION(VV_HK_EDIT_FILTERS, "Edit Filters")
 	VV_DROPDOWN_OPTION(VV_HK_SELL, "Export Item")
+	VV_DROPDOWN_OPTION(VV_HK_ADD_AI, "Add AI controller")
 
 /atom/vv_do_topic(list/href_list)
 	. = ..()
@@ -1093,7 +1104,7 @@
 						else
 							valid_id = TRUE
 						if(!valid_id)
-							to_chat(usr, "<span class='warning'>A reagent with that ID doesn't exist!</span>")
+							to_chat(usr, span_warning("A reagent with that ID doesn't exist!"))
 				if("Choose from a list")
 					chosen_id = input(usr, "Choose a reagent to add.", "Choose a reagent.") as null|anything in sortList(subtypesof(/datum/reagent), /proc/cmp_typepaths_asc)
 				if("I'm feeling lucky")
@@ -1103,7 +1114,7 @@
 				if(amount)
 					reagents.add_reagent(chosen_id, amount)
 					log_admin("[key_name(usr)] has added [amount] units of [chosen_id] to [src]")
-					message_admins("<span class='notice'>[key_name(usr)] has added [amount] units of [chosen_id] to [src]</span>")
+					message_admins(span_notice("[key_name(usr)] has added [amount] units of [chosen_id] to [src]"))
 	if(href_list[VV_HK_TRIGGER_EXPLOSION] && check_rights(R_FUN))
 		usr.client.cmd_admin_explosion(src)
 	if(href_list[VV_HK_TRIGGER_EMP] && check_rights(R_FUN))
@@ -1112,6 +1123,15 @@
 		var/strength = input(usr, "Choose the radiation strength.", "Choose the strength.") as num|null
 		if(!isnull(strength))
 			AddComponent(/datum/component/radioactive, strength, src)
+
+	if(href_list[VV_HK_ADD_AI])
+		if(!check_rights(R_VAREDIT))
+			return
+		var/result = input(usr, "Choose the AI controller to apply to this atom WARNING: Not all AI works on all atoms.", "AI controller") as null|anything in subtypesof(/datum/ai_controller)
+		if(!result)
+			return
+		ai_controller = new result(src)
+
 	if(href_list[VV_HK_MODIFY_TRANSFORM] && check_rights(R_VAREDIT))
 		var/result = input(usr, "Choose the transformation to apply","Transform Mod") as null|anything in list("Scale","Translate","Rotate")
 		var/matrix/M = transform
@@ -1140,7 +1160,7 @@
 		C?.open_filter_editor(src)
 
 	if(href_list[VV_HK_SELL] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT))
-		export_item_and_contents(src, allowed_categories = ALL, apply_elastic = FALSE)
+		export_item_and_contents(src, apply_elastic = FALSE)
 
 /atom/vv_get_header()
 	. = ..()
@@ -1257,12 +1277,12 @@
 
 
 /atom/proc/StartProcessingAtom(mob/living/user, obj/item/I, list/chosen_option)
-	to_chat(user, "<span class='notice'>You start working on [src]</span>")
+	to_chat(user, span_notice("You start working on [src]"))
 	if(I.use_tool(src, user, chosen_option[TOOL_PROCESSING_TIME], volume=50))
 		var/atom/atom_to_create = chosen_option[TOOL_PROCESSING_RESULT]
 		for(var/i = 1 to chosen_option[TOOL_PROCESSING_AMOUNT])
 			new atom_to_create(loc)
-		to_chat(user, "<span class='notice'>You manage to create [chosen_option[TOOL_PROCESSING_AMOUNT]] [initial(atom_to_create.name)] from [src]</span>")
+		to_chat(user, span_notice("You manage to create [chosen_option[TOOL_PROCESSING_AMOUNT]] [initial(atom_to_create.name)] from [src]"))
 		qdel(src)
 		return
 
@@ -1284,7 +1304,7 @@
 /atom/proc/multitool_check_buffer(user, obj/item/I, silent = FALSE)
 	if(!istype(I, /obj/item/multitool))
 		if(user && !silent)
-			to_chat(user, "<span class='warning'>[I] has no data buffer!</span>")
+			to_chat(user, span_warning("[I] has no data buffer!"))
 		return FALSE
 	return TRUE
 
@@ -1310,6 +1330,8 @@
 
 ///Deconstruct act
 /atom/proc/deconstruct_act(mob/living/user, obj/item/I)
+	if(flags_1 & NODECONSTRUCT_1)
+		return TRUE
 	return SEND_SIGNAL(src, COMSIG_ATOM_DECONSTRUCT_ACT, user, I)
 
 ///Generate a tag for this atom
@@ -1708,3 +1730,12 @@
 */
 /atom/proc/setClosed()
 	return
+
+/**
+* Instantiates the AI controller of this atom. Override this if you want to assign variables first.
+*
+* This will work fine without manually passing arguments.
++*/
+/atom/proc/InitializeAIController()
+	if(ai_controller)
+		ai_controller = new ai_controller(src)

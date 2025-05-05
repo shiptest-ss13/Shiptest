@@ -20,7 +20,7 @@
 ///Machine that lets you play roulette. Odds are pre-defined to be the same as European Roulette without the "En Prison" rule
 /obj/machinery/roulette
 	name = "Roulette Table"
-	desc = "A computerized roulette table. Swipe your ID to play or register yourself as owner!"
+	desc = "A computerized roulette table. Swipe your cash card to play or register yourself as the owner!"
 	icon = 'icons/obj/machines/roulette.dmi'
 	icon_state = "idle"
 	density = TRUE
@@ -80,14 +80,12 @@
 	data["LastSpin"] = last_spin
 	data["Spinning"] = playing
 	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		var/obj/item/card/bank/C = H.get_bankcard()
-		if(C)
-			data["AccountBalance"] = C.registered_account.account_balance
+		var/mob/living/carbon/human/player = user
+		var/obj/item/card/bank/card = player.get_bankcard()
+		if(card)
+			data["AccountBalance"] = card.registered_account.account_balance
 		else
 			data["AccountBalance"] = 0
-		data["CanUnbolt"] = (H.get_idcard() == my_card)
-
 	return data
 
 /obj/machinery/roulette/ui_act(action, params)
@@ -95,9 +93,11 @@
 	if(.)
 		return
 
+	var/mob/living/carbon/human/player = usr
 	switch(action)
 		if("anchor")
-			set_anchored(!anchored)
+			if(my_card == player.get_bankcard())
+				set_anchored(!anchored)
 			. = TRUE
 		if("ChangeBetAmount")
 			chosen_bet_amount = clamp(text2num(params["amount"]), 10, 500)
@@ -108,23 +108,26 @@
 	update_appearance() // Not applicable to all objects.
 
 ///Handles setting ownership and the betting itself.
-/obj/machinery/roulette/attackby(obj/item/W, mob/user, params)
-	if(machine_stat & MAINT && is_wire_tool(W))
+/obj/machinery/roulette/attackby(obj/item/held, mob/user, params)
+	if(machine_stat & MAINT && is_wire_tool(held))
 		wires.interact(user)
 		return
 	if(playing)
 		return ..()
-	if(istype(W, /obj/item/card/bank))
+	if(istype(held, /obj/item/card/bank))
 		playsound(src, 'sound/machines/card_slide.ogg', 50, TRUE)
 
-		if(machine_stat & MAINT || !on || locked)
-			to_chat(user, "<span class='notice'>The machine appears to be disabled.</span>")
+		if(!powered())
+			to_chat(user, span_warning("The machine is unpowered!"))
+			return FALSE
+		else if(machine_stat & MAINT || !on || locked)
+			to_chat(user, span_notice("The machine appears to be disabled."))
 			return FALSE
 
 		if(my_card)
-			var/obj/item/card/bank/player_card = W
+			var/obj/item/card/bank/player_card = held
 			if(player_card.registered_account.account_balance < chosen_bet_amount) //Does the player have enough funds
-				audible_message("<span class='warning'>You do not have the funds to play! Lower your bet or get more money.</span>")
+				audible_message(span_warning("You do not have the funds to play! Lower your bet or get more money."))
 				playsound(src, 'sound/machines/buzz-two.ogg', 30, TRUE)
 				return FALSE
 			if(!chosen_bet_amount || isnull(chosen_bet_type))
@@ -167,15 +170,15 @@
 			addtimer(CALLBACK(src, PROC_REF(play), user, player_card, chosen_bet_type, chosen_bet_amount, potential_payout), 4) //Animation first
 			return TRUE
 		else
-			var/obj/item/card/bank/new_card = W
+			var/obj/item/card/bank/new_card = held
 			if(new_card.registered_account)
 				var/msg = stripped_input(user, "Name of your roulette wheel:", "Roulette Naming", "Roulette Machine")
 				if(!msg)
 					return
 				name = msg
-				desc = "Owned by [new_card.registered_account.account_holder], draws directly from [user.p_their()] account."
+				desc = "Owned by [new_card.registered_account.account_holder]. The wheel draws directly from [user.p_their()] account."
 				my_card = new_card
-				to_chat(user, "<span class='notice'>You link the wheel to your account.</span>")
+				to_chat(user, span_notice("You link the wheel to your account."))
 				power_change()
 				return
 	return ..()
@@ -210,18 +213,18 @@
 	var/color = numbers["[rolled_number]"] //Weird syntax, but dict uses strings.
 	var/result = "[rolled_number] [color]" //e.g. 31 black
 
-	audible_message("<span class='notice'>The result is: [result]</span>")
+	audible_message(span_notice("The result is: [result]."))
 
 	playing = FALSE
-	update_icon(potential_payout, color, rolled_number, is_winner)
+	update_icon(ALL, potential_payout, color, rolled_number, is_winner)
 	handle_color_light(color)
 
 	if(!is_winner)
-		audible_message("<span class='warning'>You lost! Better luck next time</span>")
+		audible_message(span_warning("You lost! Better luck next time!"))
 		playsound(src, 'sound/machines/synth_no.ogg', 50)
 		return FALSE
 
-	audible_message("<span class='notice'>You have won [potential_payout] credits! Congratulations!</span>")
+	audible_message(span_notice("You have won [potential_payout] credits! Congratulations!"))
 	playsound(src, 'sound/machines/synth_yes.ogg', 50)
 
 	dispense_prize(potential_payout)
@@ -284,7 +287,7 @@
 ///Returns TRUE if the player bet correctly.
 /obj/machinery/roulette/proc/check_win(bet_type, bet_amount, rolled_number)
 	var/actual_bet_number = text2num(bet_type) //Only returns the numeric bet types, AKA singles.
-	if(actual_bet_number) //This means we're playing singles
+	if(!isnull(actual_bet_number)) //This means we're playing singles
 		return rolled_number == actual_bet_number
 
 	switch(bet_type) //Otherwise, we are playing a "special" game, switch on all the cases so we can check.
@@ -325,7 +328,7 @@
 /obj/machinery/roulette/proc/check_bartender_funds(payout)
 	if(my_card.registered_account.account_balance >= payout)
 		return TRUE //We got the betting amount
-	audible_message("<span class='warning'>The bank account of [my_card.registered_account.account_holder] does not have enough funds to pay out the potential prize, contact them to fill up their account or lower your bet!</span>")
+	audible_message(span_warning("The bank account of [my_card.registered_account.account_holder] does not have enough funds to pay out the potential prize, contact them to fill up their account or lower your bet!"))
 	playsound(src, 'sound/machines/buzz-two.ogg', 30, TRUE)
 	return FALSE
 
@@ -336,6 +339,7 @@
 		return
 
 	if(playing)
+		remove_overlays += overlays
 		. += "random_numbers"
 
 /obj/machinery/roulette/update_icon(updates=ALL, payout, color, rolled_number, is_winner = FALSE)
@@ -375,20 +379,21 @@
 		if("red")
 			set_light(2,2, COLOR_SOFT_RED)
 
-/obj/machinery/roulette/welder_act(mob/living/user, obj/item/I)
+/obj/machinery/roulette/welder_act(mob/living/user, obj/item/welder)
 	. = ..()
 	if(machine_stat & MAINT)
-		to_chat(user, "<span class='notice'>You start re-attaching the top section of [src]...</span>")
-		if(I.use_tool(src, user, 30, volume=50))
-			to_chat(user, "<span class='notice'>You re-attach the top section of [src].</span>")
+		to_chat(user, span_notice("You start re-attaching the top section of [src]..."))
+		if(welder.use_tool(src, user, 30, volume=50))
+			to_chat(user, span_notice("You re-attach the top section of [src]."))
 			set_machine_stat(machine_stat & ~MAINT)
 			icon_state = "idle"
 	else
-		to_chat(user, "<span class='notice'>You start welding the top section from [src]...</span>")
-		if(I.use_tool(src, user, 30, volume=50))
-			to_chat(user, "<span class='notice'>You removed the top section of [src].</span>")
+		to_chat(user, span_notice("You start welding the top section from [src]..."))
+		if(welder.use_tool(src, user, 30, volume=50))
+			to_chat(user, span_notice("You removed the top section of [src]."))
 			set_machine_stat(machine_stat | MAINT)
 			icon_state = "open"
+	return TRUE
 
 /obj/machinery/roulette/proc/shock(mob/user, prb)
 	if(!on)		// unpowered, no shock
@@ -403,7 +408,7 @@
 
 /obj/item/roulette_wheel_beacon
 	name = "roulette wheel beacon"
-	desc = "N.T. approved roulette wheel beacon, toss it down and you will have a complementary roulette wheel delivered to you."
+	desc = "An NT-approved roulette wheel beacon. Toss it down, and a complementary roulette wheel will be delivered to you."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "floor_beacon"
 	var/used
@@ -411,7 +416,8 @@
 /obj/item/roulette_wheel_beacon/attack_self()
 	if(used)
 		return
-	loc.visible_message("<span class='warning'>\The [src] begins to beep loudly!</span>")
+	loc.visible_message(span_warning("The [src] begins to beep loudly!"))
+	playsound(get_turf(src), 'sound/machines/triple_beep.ogg', 50, TRUE)
 	used = TRUE
 	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 40)
 

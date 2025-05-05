@@ -95,7 +95,7 @@
 	worn_y_offset = 4
 	supports_variations = KEPORI_VARIATION
 
-/obj/item/clothing/suit/space/hardsuit/solgov/roumain
+/obj/item/clothing/suit/space/hardsuit/solgov/roumain //i swear to fuck whoever is subtyping these. you will face my wrath.
 	name = "\improper roumain hardsuit"
 	desc = "A hand-crafted suit of armor either modified from a set of normal plate armor or designed to resemble one. A powered exoskeleton has been cleverly integrated into the design and, surprisingly, it is completely vacuum-proof. Suits like this are a testament to what the master craftsmen of Hunter's Pride are capable of."
 	icon = 'icons/obj/clothing/faction/srm/suits.dmi'
@@ -157,13 +157,10 @@
 //Accessories//
 ///////////////
 
-//These are stored in clothing/accessories.dmi instead of a factional variant due to accessory code being dogwater
-//Please transfer them over to a factional file if accessory code is ever fixed
-
 /obj/item/clothing/accessory/waistcoat/roumain
 	name = "roumain waistcoat"
 	desc = "A warm, red wool waistcoat, worn by any member of the Church of Saint Roumain, though heavily favored by Machinists for the added warmth given to their rather breezy outfit."
 	icon_state = "rouma_waistcoat"
-	icon = 'icons/obj/clothing/accessories.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
+	icon = 'icons/obj/clothing/faction/srm/accessory.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/srm/accessory.dmi'
 	minimize_when_attached = TRUE

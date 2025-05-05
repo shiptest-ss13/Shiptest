@@ -8,26 +8,33 @@
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = GLASSESCOVERSEYES
 	slot_flags = ITEM_SLOT_EYES
-	strip_delay = 20
-	equip_delay_other = 25
 	resistance_flags = NONE
 	custom_materials = list(/datum/material/glass = 250)
 	supports_variations = VOX_VARIATION
 	greyscale_colors = list(list(14, 26), list(17, 26))
 	greyscale_icon_state = "glasses"
-	var/vision_flags = 0
-	var/darkness_view = 2//Base human is 2
-	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
-	var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
-	var/lighting_alpha
-	var/list/icon/current = list() //the current hud icons
+
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_EYEWEAR
+	equip_delay_other = EQUIP_DELAY_EYEWEAR * 1.5
+	strip_delay = EQUIP_DELAY_EYEWEAR * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
+
+	// var/vision_flags = 0
+	// var/darkness_view = 2//Base human is 2
+	// var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
+	// var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
+	// var/lighting_alpha
+	// var/list/icon/current = list() //the current hud icons
 	var/vision_correction = 0 //does wearing these glasses correct some of our vision defects?
 	var/glass_colour_type //colors your vision when worn
 
 /obj/item/clothing/glasses/examine(mob/user)
 	. = ..()
 	if(glass_colour_type && ishuman(user))
-		. += "<span class='notice'>Alt-click to toggle its colors.</span>"
+		. += span_notice("Alt-click to toggle its colors.")
 
 /obj/item/clothing/glasses/visor_toggling()
 	..()
@@ -54,7 +61,7 @@
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 		if(!H.is_blind())
 			if(H.glasses == src)
-				to_chat(H, "<span class='danger'>[src] overloads and blinds you!</span>")
+				to_chat(H, span_danger("[src] overloads and blinds you!"))
 				H.flash_act(visual = 1)
 				H.blind_eyes(3)
 				H.blur_eyes(5)
@@ -130,7 +137,7 @@
 /obj/item/clothing/glasses/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "eyepatch-[flipped]"
 	item_state = "eyepatch-[flipped]"
 	update_appearance()
@@ -144,7 +151,7 @@
 	if(istype(I, /obj/item/clothing/glasses/eyepatch))
 		var/obj/item/clothing/glasses/eyepatch/old_patch = I
 		var/obj/item/clothing/glasses/blindfold/eyepatch/double_patch = new()
-		to_chat(user, "<span class='notice'>You combine the eyepatches with a knot.</span>")
+		to_chat(user, span_notice("You combine the eyepatches with a knot."))
 		qdel(old_patch)
 		qdel(src)
 		user.put_in_hands(double_patch)
@@ -320,8 +327,8 @@
 	var/obj/item/clothing/glasses/eyepatch/patch_two = new/obj/item/clothing/glasses/eyepatch
 	patch_one.forceMove(user.drop_location())
 	patch_two.forceMove(user.drop_location())
-	to_chat(user, "<span class='notice'>You undo the knot on the eyepatches.</span>")
-	Destroy()
+	to_chat(user, span_notice("You undo the knot on the eyepatches."))
+	qdel(src)
 
 /obj/item/clothing/glasses/sunglasses/big
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks flashes."
@@ -379,7 +386,7 @@
 /obj/item/clothing/glasses/thermal/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "eyepatch-[flipped]"
 	item_state = "eyepatch-[flipped]"
 	update_appearance()
@@ -424,9 +431,9 @@
 				if(src == H.glasses)
 					H.client.prefs.uses_glasses_colour = !H.client.prefs.uses_glasses_colour
 					if(H.client.prefs.uses_glasses_colour)
-						to_chat(H, "<span class='notice'>You will now see glasses colors.</span>")
+						to_chat(H, span_notice("You will now see glasses colors."))
 					else
-						to_chat(H, "<span class='notice'>You will no longer see glasses colors.</span>")
+						to_chat(H, span_notice("You will no longer see glasses colors."))
 					H.update_glasses_color(src, 1)
 	else
 		return ..()

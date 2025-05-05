@@ -2,6 +2,7 @@
 	name = "Accessory"
 	desc = "Something has gone wrong!"
 	icon = 'icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
 	icon_state = "plasma"
 	item_state = ""	//no inhands
 	slot_flags = 0
@@ -19,7 +20,7 @@
 	if(!attachment_slot || (U && U.body_parts_covered & attachment_slot))
 		return TRUE
 	if(user)
-		to_chat(user, "<span class='warning'>There doesn't seem to be anywhere to put [src]...</span>")
+		to_chat(user, span_warning("There doesn't seem to be anywhere to put [src]..."))
 
 /obj/item/clothing/accessory/proc/attach(obj/item/clothing/under/U, user)
 	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
@@ -96,9 +97,9 @@
 
 /obj/item/clothing/accessory/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>\The [src] can be attached to a uniform. Ctrl-click to remove it once attached.</span>"
+	. += span_notice("\The [src] can be attached to a uniform. Ctrl-click to remove it once attached.")
 	if(initial(above_suit))
-		. += "<span class='notice'>\The [src] can be worn above or below your suit. Alt-click to toggle.</span>"
+		. += span_notice("\The [src] can be worn above or below your suit. Alt-click to toggle.")
 
 /obj/item/clothing/accessory/waistcoat
 	name = "waistcoat"
@@ -136,7 +137,7 @@
 
 		if(M.wear_suit)
 			if((M.wear_suit.flags_inv & HIDEJUMPSUIT)) //Check if the jumpsuit is covered
-				to_chat(user, "<span class='warning'>Medals can only be pinned on jumpsuits.</span>")
+				to_chat(user, span_warning("Medals can only be pinned on jumpsuits."))
 				return
 
 		if(M.w_uniform)
@@ -146,19 +147,19 @@
 				delay = 0
 			else
 				user.visible_message(
-					"<span class='notice'>[user] is trying to pin [src] on [M]'s chest.</span>", \
-					"<span class='notice'>You try to pin [src] on [M]'s chest.</span>")
+					span_notice("[user] is trying to pin [src] on [M]'s chest."), \
+					span_notice("You try to pin [src] on [M]'s chest."))
 			var/input
 			if(!commended && user != M)
 				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
 			if(do_after(user, delay, target = M))
 				if(U.attach_accessory(src, user, 0)) //Attach it, do not notify the user of the attachment
 					if(user == M)
-						to_chat(user, "<span class='notice'>You attach [src] to [U].</span>")
+						to_chat(user, span_notice("You attach [src] to [U]."))
 					else
 						user.visible_message(
-							"<span class='notice'>[user] pins \the [src] on [M]'s chest.</span>", \
-							"<span class='notice'>You pin \the [src] on [M]'s chest.</span>")
+							span_notice("[user] pins \the [src] on [M]'s chest."), \
+							span_notice("You pin \the [src] on [M]'s chest."))
 						if(input)
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
 							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <span class='medaltext'>[name]</span>! \n- [input]"
@@ -168,13 +169,13 @@
 							message_admins("<b>[key_name_admin(M)]</b> was given the following commendation by <b>[key_name_admin(user)]</b>: [input]")
 
 		else
-			to_chat(user, "<span class='warning'>Medals can only be pinned on jumpsuits!</span>")
+			to_chat(user, span_warning("Medals can only be pinned on jumpsuits!"))
 	else
 		..()
 
 /obj/item/clothing/accessory/medal/conduct
 	name = "distinguished conduct medal"
-	desc = "A bronze medal awarded for distinguished conduct. Whilst a great honor, this is the most basic award given by Nanotrasen. It is often awarded by a captain to a member of his crew."
+	desc = "A bronze medal awarded for distinguished conduct. While an honor to be awarded, it is one of the most common medals next to the bronze heart."
 
 /obj/item/clothing/accessory/medal/bronze_heart
 	name = "bronze heart medal"
@@ -188,7 +189,7 @@
 
 /obj/item/clothing/accessory/medal/ribbon/cargo
 	name = "\"cargo tech of the shift\" award"
-	desc = "An award bestowed only upon those cargotechs who have exhibited devotion to their duty in keeping with the highest traditions of Cargonia."
+	desc = "A common award bestowed by cargo quartermasters everywhere to their outperforming employees. Often paired with Unpaid Time Off."
 
 /obj/item/clothing/accessory/medal/silver
 	name = "silver medal"
@@ -202,8 +203,8 @@
 	desc = "A silver medal awarded for acts of exceptional valor."
 
 /obj/item/clothing/accessory/medal/silver/security
-	name = "robust security award"
-	desc = "An award for distinguished combat and sacrifice in defence of Nanotrasen's commercial interests. Often awarded to security staff."
+	name = "exceptional service award"
+	desc = "A silver medal awarded for exceptional service within one's roles, often ranging from combat operations to triage and first aid."
 
 /obj/item/clothing/accessory/medal/silver/excellence
 	name = "\proper the head of personnel award for outstanding achievement in the field of excellence"
@@ -211,7 +212,7 @@
 
 /obj/item/clothing/accessory/medal/silver/bureaucracy
 	name = "\improper Excellence in Bureaucracy Medal"
-	desc = "Awarded for exemplary managerial services rendered while under contract with Nanotrasen."
+	desc = "An award for excellent bureaucratic work, often seen pinned to the uniforms of middle-managers."
 
 /obj/item/clothing/accessory/medal/gold
 	name = "gold medal"
@@ -232,19 +233,19 @@
 		return ..()
 
 	if(!QDELETED(src.shipkey))
-		to_chat(user, "<span class='notice'>[src] already contains [src.shipkey].</span>")
+		to_chat(user, span_notice("[src] already contains [src.shipkey]."))
 		return TRUE
 
 	src.shipkey = shipkey
 	shipkey.forceMove(src)
-	to_chat(user, "<span class='notice'>You slot [shipkey] into [src].</span>")
+	to_chat(user, span_notice("You slot [shipkey] into [src]."))
 
 /obj/item/clothing/accessory/medal/gold/captain/AltClick(mob/user)
 	if(!shipkey || !Adjacent(user) || !isliving(user))
 		return ..()
 	shipkey.forceMove(get_turf(src))
 	user.put_in_hands(shipkey)
-	to_chat(user, "<span class='notice'>You remove [shipkey] from [src].</span>")
+	to_chat(user, span_notice("You remove [shipkey] from [src]."))
 	shipkey = null
 
 /obj/item/clothing/accessory/medal/gold/captain/examine(mob/user)
@@ -256,7 +257,7 @@
 
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"
-	desc = "An extremely rare golden medal awarded only by CentCom. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
+	desc = "An extremely rare golden medal awarded only by the highest echelons of military service. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded."
 
 /obj/item/clothing/accessory/medal/plasma
 	name = "plasma medal"
@@ -269,7 +270,7 @@
 /obj/item/clothing/accessory/medal/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
 		atmos_spawn_air("plasma=20;TEMP=[exposed_temperature]")
-		visible_message("<span class='danger'>\The [src] bursts into flame!</span>", "<span class='userdanger'>Your [src] bursts into flame!</span>")
+		visible_message(span_danger("\The [src] bursts into flame!"), span_userdanger("Your [src] bursts into flame!"))
 		qdel(src)
 
 /obj/item/clothing/accessory/medal/plasma/nobel_science
@@ -334,7 +335,7 @@
 /obj/item/clothing/accessory/lawyers_badge/attack_self(mob/user)
 	if(prob(1))
 		user.say("The testimony contradicts the evidence!", forced = "attorney's badge")
-	user.visible_message("<span class='notice'>[user] shows [user.p_their()] attorney's badge.</span>", "<span class='notice'>You show your attorney's badge.</span>")
+	user.visible_message(span_notice("[user] shows [user.p_their()] attorney's badge."), span_notice("You show your attorney's badge."))
 
 /obj/item/clothing/accessory/lawyers_badge/on_uniform_equip(obj/item/clothing/under/U, user)
 	var/mob/living/L = user
@@ -454,11 +455,6 @@
 	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
-
-/obj/item/clothing/accessory/waistcoat/solgov
-	name = "solgov waistcoat"
-	desc = "A standard issue waistcoat in solgov colors."
-	icon_state = "solgov_waistcoat"
 
 //////////
 //RILENA//

@@ -91,6 +91,7 @@
 	item_state = "maid"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/costume/maid/Initialize()
 	. = ..()

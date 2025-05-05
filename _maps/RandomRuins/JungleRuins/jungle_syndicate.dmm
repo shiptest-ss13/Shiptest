@@ -4,13 +4,13 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "al" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "an" = (
 /obj/structure/flora/junglebush/b,
@@ -56,7 +56,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/storage/cans/sixbeer,
-/turf/open/floor/plating,
+/obj/effect/landmark/mission_poi/main{
+	blocks_emissive = 1
+	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "bS" = (
 /obj/structure/spacevine/dense,
@@ -67,13 +70,6 @@
 /obj/item/flashlight/lantern,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"bW" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/ruin/jungle/syndifort)
 "ce" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/grass/jungle,
@@ -120,15 +116,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bed,
 /obj/structure/curtain/cloth/fancy,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort)
 "ef" = (
-/mob/living/simple_animal/hostile/human/syndicate{
+/mob/living/simple_animal/hostile/human/ramzi{
 	desc = "God dammit Jerry! Why the fuck are you barricading yourself in with all of our weapon supplies?";
 	name = "Jerry";
 	unsuitable_atmos_damage = 0
 	},
-/turf/open/floor/plating,
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	mission_index = 2
+	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "es" = (
 /obj/structure/flora/junglebush/c,
@@ -150,16 +152,19 @@
 /obj/structure/closet/crate/secure/science,
 /obj/item/research_notes/loot/medium,
 /obj/item/stack/sheet/plastic/twenty,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "eU" = (
 /obj/structure/chair/plastic,
-/turf/open/floor/plating,
+/obj/effect/landmark/mission_poi/guard{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged
+	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "eW" = (
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "eX" = (
 /turf/open/floor/plating/dirt/jungle/lit,
@@ -168,7 +173,7 @@
 /turf/closed/wall,
 /area/ruin/jungle/syndifort)
 "fi" = (
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "fn" = (
 /obj/structure/barricade/sandbags,
@@ -180,11 +185,11 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "fS" = (
-/mob/living/simple_animal/hostile/human/syndicate{
+/mob/living/simple_animal/hostile/human/ramzi{
 	unsuitable_atmos_damage = 0
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "fZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -208,7 +213,7 @@
 	dir = 8;
 	name = "evil chair"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "gG" = (
 /obj/structure/flora/grass/jungle,
@@ -224,10 +229,10 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "gO" = (
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "gP" = (
 /obj/structure/table,
@@ -235,12 +240,12 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "gQ" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "gU" = (
 /obj/structure/table/reinforced,
@@ -258,14 +263,13 @@
 	},
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
 	},
 /area/ruin/jungle/syndifort)
 "ho" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -276,36 +280,37 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "hK" = (
 /obj/effect/decal/remains/human,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/syndifort)
 "hQ" = (
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "hZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/syndicateemblem/top/right,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "ii" = (
 /obj/structure/cable{
 	icon_state = "0-5"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 10;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ruin/ramzi{
+	dir = 10
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort/jerry)
 "ik" = (
 /obj/item/melee/knife/combat{
@@ -314,7 +319,7 @@
 	},
 /obj/structure/table,
 /obj/item/stack/sheet/mineral/plasma/twenty,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "iY" = (
 /turf/closed/wall/mineral/wood,
@@ -324,10 +329,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
-	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "jh" = (
 /obj/structure/spacevine,
@@ -345,10 +347,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
-	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "kp" = (
 /obj/machinery/light/directional/west,
@@ -371,11 +370,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "ks" = (
 /obj/item/trash/syndi_cakes,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "kB" = (
 /obj/structure/flora/stump,
@@ -398,7 +397,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "lc" = (
 /obj/structure/flora/grass/jungle,
@@ -417,10 +416,7 @@
 	pixel_x = 9;
 	pixel_y = 14
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
-	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "mq" = (
 /obj/structure/flora/junglebush/c,
@@ -434,7 +430,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort/jerry)
 "mN" = (
 /obj/structure/flora/junglebush/c,
@@ -455,16 +453,14 @@
 /turf/closed/wall/rust,
 /area/ruin/jungle/syndifort)
 "nO" = (
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/syndifort)
 "oi" = (
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/syndifort)
 "oq" = (
@@ -473,17 +469,17 @@
 	id = "jsyngate";
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "pr" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "pF" = (
 /obj/structure/barricade/sandbags,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "qd" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -512,7 +508,7 @@
 	pixel_x = 35;
 	pixel_y = -4
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "qq" = (
 /obj/structure/flora/grass/jungle,
@@ -528,16 +524,15 @@
 	},
 /obj/effect/turf_decal/syndicateemblem/top/left,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "rg" = (
-/mob/living/simple_animal/hostile/human/syndicate/space,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/syndifort)
 "rk" = (
@@ -553,20 +548,20 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "sq" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "sY" = (
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "tf" = (
 /obj/machinery/power/terminal{
@@ -579,12 +574,12 @@
 	icon_state = "0-8"
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "th" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/cable_coil/cut/red,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "tm" = (
 /obj/structure/flora/junglebush,
@@ -597,7 +592,9 @@
 	name = "Base Gates";
 	id = "jsyngate"
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort/jerry)
 "tv" = (
 /obj/structure/cable{
@@ -623,7 +620,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "ud" = (
 /obj/structure/table,
@@ -638,7 +635,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "uh" = (
 /obj/effect/decal/cleanable/blood,
@@ -646,10 +643,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
-	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "ux" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -663,7 +657,7 @@
 /obj/item/storage/box/donkpockets,
 /obj/item/storage/box/donkpockets/donkpocketberry,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "ve" = (
 /obj/structure/barricade/sandbags,
@@ -693,7 +687,7 @@
 "vJ" = (
 /obj/structure/bed,
 /obj/structure/curtain/cloth/fancy,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "vN" = (
 /obj/structure/flora/stump,
@@ -722,7 +716,7 @@
 	id = "jsyngate";
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "wu" = (
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -743,7 +737,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "wz" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -762,7 +756,10 @@
 /obj/structure/sign/poster/contraband/peacemaker{
 	pixel_x = 32
 	},
-/turf/open/floor/plating,
+/obj/effect/landmark/mission_poi/guard{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi
+	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "xm" = (
 /obj/structure/cable{
@@ -770,7 +767,7 @@
 	},
 /obj/machinery/camera/autoname,
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "xv" = (
 /obj/structure/cable{
@@ -792,7 +789,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "yh" = (
 /obj/structure/flora/grass/jungle,
@@ -804,29 +801,29 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 4;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ruin/ramzi{
+	dir = 6
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort/jerry)
 "yx" = (
 /obj/structure/sign/donk{
 	pixel_y = 33
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "yD" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "yJ" = (
 /obj/item/trash/can/food{
 	pixel_x = 8;
 	pixel_y = -3
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "yL" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -880,7 +877,9 @@
 /obj/item/grenade/frag,
 /obj/item/grenade/frag,
 /obj/item/grenade/frag,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort)
 "Ao" = (
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -906,7 +905,7 @@
 /obj/machinery/computer/security{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "AQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -916,7 +915,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "Ba" = (
 /obj/structure/flora/grass/jungle,
@@ -941,7 +940,12 @@
 "BC" = (
 /obj/structure/chair/plastic,
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plating/rust,
+/obj/effect/landmark/mission_poi/guard{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi
+	},
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort)
 "BH" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -952,7 +956,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "CI" = (
 /obj/structure/cable{
@@ -960,7 +964,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "Dt" = (
 /obj/structure/sign/poster/contraband/syndicate_recruitment,
@@ -971,11 +975,19 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"DO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/jungleplanet,
+/area/ruin/jungle/syndifort)
 "Ee" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ef" = (
 /obj/machinery/suit_storage_unit/open,
@@ -991,7 +1003,9 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Es" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort)
 "Ew" = (
 /obj/structure/cable{
@@ -1031,13 +1045,15 @@
 "Fm" = (
 /obj/effect/turf_decal/syndicateemblem/bottom/right,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "FP" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "Gb" = (
 /obj/structure/flora/junglebush/c,
@@ -1060,7 +1076,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort)
 "GU" = (
 /obj/structure/spacevine/dense,
@@ -1100,9 +1118,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "HR" = (
 /obj/structure/chair/plastic,
-/mob/living/simple_animal/hostile/human/syndicate/ranged{
-	unsuitable_atmos_damage = 0
-	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Il" = (
@@ -1115,19 +1131,19 @@
 /obj/structure/table/reinforced,
 /obj/item/binoculars,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "Iw" = (
 /obj/machinery/power/floodlight,
 /obj/structure/cable,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/overmap_encounter/planetoid/jungle/explored)
 "IA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "Jg" = (
 /obj/structure/flora/junglebush/large,
@@ -1138,14 +1154,14 @@
 /obj/structure/closet/crate/secure/plasma,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "Jt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Jv" = (
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "JB" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -1154,7 +1170,9 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "JY" = (
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort)
 "Kf" = (
 /obj/structure/cable{
@@ -1175,7 +1193,7 @@
 /obj/item/trash/chips{
 	pixel_x = -10
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "Ln" = (
 /obj/structure/cable{
@@ -1186,22 +1204,22 @@
 	pixel_x = -5;
 	pixel_y = 6
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "Lt" = (
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 6;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ruin/ramzi{
+	dir = 6
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort/jerry)
 "Lu" = (
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "LG" = (
 /obj/structure/spacevine/dense,
@@ -1214,7 +1232,7 @@
 "Ma" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "Mo" = (
 /obj/structure/rack,
@@ -1247,9 +1265,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/syndifort)
 "NH" = (
@@ -1278,9 +1295,8 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/syndifort)
 "Oe" = (
@@ -1288,10 +1304,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
-	},
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "Ol" = (
 /obj/structure/flora/grass/jungle/b,
@@ -1305,7 +1318,9 @@
 	icon_state = "6-8"
 	},
 /obj/machinery/power/floodlight,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/overmap_encounter/planetoid/jungle/explored)
 "OC" = (
 /obj/structure/cable,
@@ -1316,14 +1331,14 @@
 /obj/structure/sign/poster/contraband/power{
 	pixel_x = -32
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "OL" = (
 /obj/machinery/nuclearbomb/beer{
 	desc = "A beer keg designed to look like a nuclear fission explosive. Its old and incredibly dusty. There seems to be a tap on the back.";
 	name = "Syndicate Beer Keg"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "OW" = (
 /obj/structure/table/reinforced,
@@ -1359,15 +1374,15 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "Qr" = (
 /obj/structure/table,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "Qs" = (
 /obj/structure/cable,
-/mob/living/simple_animal/hostile/human/syndicate{
+/mob/living/simple_animal/hostile/human/ramzi{
 	unsuitable_atmos_damage = 0
 	},
 /obj/machinery/light/directional/north,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "Qx" = (
 /obj/structure/flora/junglebush,
@@ -1385,14 +1400,14 @@
 	pixel_x = 2;
 	pixel_y = 6
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "Rg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/syndicateemblem/top/middle,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "Rl" = (
 /obj/structure/flora/grass/jungle,
@@ -1402,14 +1417,14 @@
 "Rw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "RD" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "RE" = (
 /obj/structure/spacevine/dense,
@@ -1463,9 +1478,8 @@
 	pixel_x = 10;
 	pixel_y = -2
 	},
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
 	},
 /area/ruin/jungle/syndifort)
 "Tv" = (
@@ -1479,7 +1493,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "TK" = (
 /obj/structure/flora/junglebush,
@@ -1495,7 +1509,7 @@
 	name = "Base Gates";
 	id = "jsyngate"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "Ug" = (
 /obj/item/ammo_casing/spent{
@@ -1506,7 +1520,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "Ur" = (
 /obj/machinery/suit_storage_unit/open,
@@ -1531,7 +1545,7 @@
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "UZ" = (
 /obj/structure/barricade/sandbags,
@@ -1553,12 +1567,12 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/obj/machinery/porta_turret/syndicate/pod{
-	name = "sentry gun";
-	dir = 9;
-	desc = "A ballistic machine gun auto-turret. It's been woven into the plating, and shows signs of use and aging."
+/obj/machinery/porta_turret/ruin/ramzi{
+	dir = 9
 	},
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/syndifort/jerry)
 "VV" = (
 /obj/structure/spacevine,
@@ -1589,14 +1603,14 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "WF" = (
 /obj/effect/turf_decal/syndicateemblem/bottom/left,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "WG" = (
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/gun/ballistic/automatic/smg/cobra,
 /obj/item/ammo_box/magazine/m45_cobra,
 /obj/item/ammo_box/magazine/m45_cobra,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort/jerry)
 "WT" = (
 /obj/structure/barricade/sandbags,
@@ -1635,7 +1649,7 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort/jerry)
 "Yj" = (
 /obj/structure/flora/rock,
@@ -1649,17 +1663,20 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "YF" = (
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating{
-	icon_state = "panelscorched";
-	initial_gas_mix = "ws_atmos"
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "panelscorched"
 	},
+/area/ruin/jungle/syndifort)
+"YK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "YM" = (
 /obj/structure/flora/grass/jungle,
@@ -1683,7 +1700,7 @@
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium/red/jungle,
 /area/ruin/jungle/syndifort)
 "Zr" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1691,7 +1708,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 "ZF" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -1709,7 +1726,7 @@
 	pixel_x = 10;
 	pixel_y = 3
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/jungleplanet,
 /area/ruin/jungle/syndifort)
 
 (1,1,1) = {"
@@ -2043,10 +2060,10 @@ ve
 eX
 nH
 vJ
-BH
+YK
 vJ
 NM
-BH
+YK
 uh
 nH
 Il
@@ -2107,7 +2124,7 @@ Gb
 qx
 nH
 vJ
-BH
+YK
 dP
 fe
 hK
@@ -2170,7 +2187,7 @@ eX
 Jt
 FP
 mt
-bW
+Oe
 gK
 Oe
 bs
@@ -2270,8 +2287,8 @@ BC
 Qr
 Rw
 nH
-nO
-Nz
+Jv
+DO
 fe
 Qs
 fi

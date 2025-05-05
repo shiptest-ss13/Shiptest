@@ -48,6 +48,7 @@
 				if(channel.password == message)
 					channel.add_client(src)
 					return TRUE
+				return
 
 			channel.add_message(message, username)
 			var/mob/living/user = usr
@@ -89,7 +90,7 @@
 					channel.remove_client(src) // We shouldn't be in channel's user list, but just in case...
 				return TRUE
 			var/mob/living/user = usr
-			if(can_run(user, TRUE, ACCESS_NETWORK))
+			if(can_run(user, TRUE, ACCESS_CENT_GENERAL))
 				for(var/C in SSnetworks.station_network.chat_channels)
 					var/datum/ntnet_conversation/chan = C
 					chan.remove_client(src)
@@ -125,9 +126,9 @@
 					// This program shouldn't even be runnable without computer.
 					CRASH("Var computer is null!")
 				if(!hard_drive)
-					computer.visible_message("<span class='warning'>\The [computer] shows an \"I/O Error - Hard drive connection error\" warning.</span>")
+					computer.visible_message(span_warning("\The [computer] shows an \"I/O Error - Hard drive connection error\" warning."))
 				else	// In 99.9% cases this will mean our HDD is full
-					computer.visible_message("<span class='warning'>\The [computer] shows an \"I/O Error - Hard drive may be full. Please free some space and try again. Required space: [logfile.size]GQ\" warning.</span>")
+					computer.visible_message(span_warning("\The [computer] shows an \"I/O Error - Hard drive may be full. Please free some space and try again. Required space: [logfile.size]GQ\" warning."))
 			return TRUE
 		if("PRG_renamechannel")
 			if(!authed)
@@ -178,7 +179,7 @@
 
 /datum/computer_file/program/chatclient/ui_static_data(mob/user)
 	var/list/data = list()
-	data["can_admin"] = can_run(user, FALSE, ACCESS_NETWORK)
+	data["can_admin"] = can_run(user, FALSE, ACCESS_CENT_GENERAL)
 	return data
 
 /datum/computer_file/program/chatclient/ui_data(mob/user)

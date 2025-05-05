@@ -112,6 +112,7 @@
 #define INIT_ORDER_SERVER_MAINT 93
 #define INIT_ORDER_SPEECH_CONTROLLER 92
 #define INIT_ORDER_INPUT 85
+#define INIT_ORDER_SOUND_CACHE 84
 #define INIT_ORDER_SOUNDS 83
 #define INIT_ORDER_INSTRUMENTS 82
 #define INIT_ORDER_VIS 80
@@ -120,6 +121,8 @@
 #define INIT_ORDER_EVENTS 70
 #define INIT_ORDER_JOBS 65
 #define INIT_ORDER_QUIRKS 60
+#define INIT_ORDER_AI_MOVEMENT 57 //We need the movement setup
+#define INIT_ORDER_AI_CONTROLLERS 56 //So the controller can get the ref
 #define INIT_ORDER_TICKER 55
 #define INIT_ORDER_FACTION 53
 #define INIT_ORDER_MAPPING 50
@@ -157,13 +160,15 @@
 #define FIRE_PRIORITY_PING 10
 #define FIRE_PRIORITY_IDLE_NPC 10
 #define FIRE_PRIORITY_SERVER_MAINT 10
-#define FIRE_PRIORITY_RESEARCH 10
 #define FIRE_PRIORITY_VIS 10
 #define FIRE_PRIORITY_AMBIENCE 10
+#define FIRE_PRIORITY_MISSIONS 10
 #define FIRE_PRIORITY_GARBAGE 15
 #define FIRE_PRIORITY_WET_FLOORS 20
 #define FIRE_PRIORITY_AIR 20
 #define FIRE_PRIORITY_NPC 20
+#define FIRE_PRIORITY_NPC_MOVEMENT 21
+#define FIRE_PRIORITY_NPC_ACTIONS 22
 #define FIRE_PRIORITY_PROCESS 25
 #define FIRE_PRIORITY_THROWING 25
 #define FIRE_PRIORITY_SPACEDRIFT 30
@@ -237,31 +242,6 @@
 #define SSEXPLOSIONS_TURFS 2
 #define SSEXPLOSIONS_THROWS 3
 
-//! ## Overlays subsystem
-
-///Compile all the overlays for an atom from the cache lists
-// |= on overlays is not actually guaranteed to not add same appearances but we're optimistically using it anyway.
-#define COMPILE_OVERLAYS(A) \
-	do{ \
-		var/list/ad = A.add_overlays; \
-		var/list/rm = A.remove_overlays; \
-		if(LAZYLEN(rm)){ \
-			A.overlays -= rm; \
-			rm.Cut(); \
-		} \
-		if(LAZYLEN(ad)){ \
-			A.overlays |= ad; \
-			ad.Cut(); \
-		} \
-		for(var/I in A.alternate_appearances){ \
-			var/datum/atom_hud/alternate_appearance/AA = A.alternate_appearances[I]; \
-			if(AA.transfer_overlays){ \
-				AA.copy_overlays(A, TRUE); \
-			} \
-		} \
-		A.flags_1 &= ~OVERLAY_QUEUED_1; \
-	}while(FALSE)
-
 // Vote subsystem counting methods
 /// First past the post. One selection per person, and the selection with the most votes wins.
 #define VOTE_COUNT_METHOD_SINGLE 1
@@ -274,3 +254,10 @@
 #define VOTE_WINNER_METHOD_WEIGHTED_RANDOM "Weighted Random"
 /// There is no winner for this vote.
 #define VOTE_WINNER_METHOD_NONE "None"
+
+// Subsystem delta times or tickrates, in seconds. I.e, how many seconds in between each process() call for objects being processed by that subsystem.
+// Only use these defines if you want to access some other objects processing seconds_per_tick, otherwise use the seconds_per_tick that is sent as a parameter to process()
+#define SSFLUIDS_DT (SSfluids.wait/10)
+#define SSMACHINES_DT (SSmachines.wait/10)
+#define SSMOBS_DT (SSmobs.wait/10)
+#define SSOBJ_DT (SSobj.wait/10)

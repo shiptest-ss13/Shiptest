@@ -27,6 +27,9 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
+	zoom_amt = RIFLE_ZOOM
+	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
+
 	spread = -1
 	spread_unwielded = 48
 	recoil = -3
@@ -40,7 +43,7 @@
 
 /obj/item/gun/ballistic/rifle/rack(mob/living/user)
 	if (bolt_locked == FALSE)
-		to_chat(user, "<span class='notice'>You open the bolt of \the [src].</span>")
+		to_chat(user, span_notice("You open the bolt of \the [src]."))
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		process_chamber(FALSE, FALSE, FALSE, shooter = user)
 		bolt_locked = TRUE
@@ -64,6 +67,8 @@
 
 /obj/item/gun/ballistic/rifle/attackby(obj/item/A, mob/user, params)
 	if (!bolt_locked)
+		if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, A, user, params) & COMPONENT_NO_AFTERATTACK)
+			return TRUE
 		to_chat(user, span_notice("The bolt is closed!"))
 		return
 	return ..()

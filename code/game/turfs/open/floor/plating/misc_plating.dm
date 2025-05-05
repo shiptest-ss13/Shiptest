@@ -54,9 +54,9 @@
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	var/smooth_icon = 'icons/turf/floors/ash.dmi'
@@ -120,9 +120,9 @@
 	gender = PLURAL
 	name = "iron sand"
 	desc = "Like sand, but more <i>metal</i>."
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/ironsand/Initialize(mapload, inherited_virtual_z)
@@ -138,10 +138,9 @@
 /turf/open/floor/plating/ice
 	name = "ice sheet"
 	desc = "A sheet of solid ice. Looks slippery."
-	icon = 'icons/turf/snow.dmi'
-	icon_state = "ice"
+	icon = 'icons/turf/planetary/icemoon.dmi'
+	icon_state = "dark_ice"
 	initial_gas_mix = FROZEN_ATMOS
-	initial_temperature = 180
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/ice
 	slowdown = 1
@@ -151,6 +150,7 @@
 	barefootstep = FOOTSTEP_ICE
 	clawfootstep = FOOTSTEP_ICE
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	flammability = -5
 
 /turf/open/floor/plating/ice/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -172,11 +172,8 @@
 	light_power = 1
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 
-/turf/open/floor/plating/ice/colder
-	initial_temperature = 140
-
 /turf/open/floor/plating/ice/temperate
-	initial_temperature = 255.37
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/open/floor/plating/ice/break_tile()
 	return
@@ -187,11 +184,6 @@
 /turf/open/floor/plating/ice/iceberg
 	name = "cracked ice floor"
 	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
-	icon_state = "ice1"
-
-/turf/open/floor/plating/ice/iceberg/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	icon_state = "ice[rand(1,8)]"
 
 /turf/open/floor/plating/ice/iceberg/lit
 	light_range = 2
@@ -208,12 +200,11 @@
 	icon = 'icons/turf/snow.dmi'
 	icon_state = "snowplating"
 	initial_gas_mix = FROZEN_ATMOS
-	initial_temperature = 180
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/snowed/cavern
@@ -227,12 +218,6 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_SNOWED)
 	planetary_atmos = TRUE
-
-/turf/open/floor/plating/snowed/colder
-	initial_temperature = 140
-
-/turf/open/floor/plating/snowed/temperatre
-	initial_temperature = 255.37
 
 /turf/open/floor/plating/snowed/smoothed/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
@@ -250,16 +235,24 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
-	layer = HIGH_TURF_LAYER
+	layer = GRASS_TURF_LAYER
+	flammability = 1.5 // just a bit more than enough to sustain itself, needs additional fuel (plants) to really get going
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
+	/// How long this takes to burn down to just dirt
+	var/burn_limit = 20
 
 /turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(smoothing_flags)
 		var/matrix/translation = new
-		translation.Translate(-9, -9)
+		translation.Translate(-19, -19)
 		transform = translation
 		icon = smooth_icon
+
+/turf/open/floor/plating/grass/jungle/burn_tile()
+	burn_limit--
+	if(burn_limit <= 0)
+		ScrapeAway()
 
 /turf/open/floor/plating/grass/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
@@ -270,9 +263,13 @@
 	desc = "Upon closer examination, it's still dirt."
 	icon_state = "sand"
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+
+/turf/open/floor/plating/sandy_dirt/ship
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
 

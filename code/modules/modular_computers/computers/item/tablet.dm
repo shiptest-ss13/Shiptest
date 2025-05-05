@@ -12,7 +12,6 @@
 	steel_sheet_cost = 1
 	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT
 	has_light = TRUE //LED flashlight!
-	comp_light_luminosity = 2.3 //Same as the PDA
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000) // WS Edit - Item Materials
 	var/has_variants = TRUE
 	var/finish_color = null
@@ -24,6 +23,11 @@
 		icon_state = icon_state_powered = icon_state_unpowered = "[base_icon_state]-[finish_color]"
 	return ..()
 
+/obj/item/modular_computer/tablet/examine_more(mob/user)
+	. = ..()
+	if(screen_on && enabled)
+		interact(user)
+
 /obj/item/modular_computer/tablet/syndicate_contract_uplink
 	name = "contractor tablet"
 	icon = 'icons/obj/contractor_tablet.dmi'
@@ -33,13 +37,13 @@
 	icon_state_menu = "assign"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT
-	comp_light_luminosity = 6.3
+	light_range = 6.3
 	has_variants = FALSE
 
 /// Given to Nuke Ops members.
 /obj/item/modular_computer/tablet/nukeops
 	icon_state = "tablet-syndicate"
-	comp_light_luminosity = 6.3
+	light_range = 6.3
 	has_variants = FALSE
 	device_theme = "syndicate"
 	light_color = COLOR_RED
@@ -48,9 +52,9 @@
 
 /obj/item/modular_computer/tablet/nukeops/emag_act(mob/user)
 	if(!enabled)
-		to_chat(user, "<span class='warning'>You'd need to turn the [src] on first.</span>")
+		to_chat(user, span_warning("You'd need to turn the [src] on first."))
 		return FALSE
-	to_chat(user, "<span class='notice'>You swipe \the [src]. It's screen briefly shows a message reading \"MEMORY CODE INJECTION DETECTED AND SUCCESSFULLY QUARANTINED\".</span>")
+	to_chat(user, span_notice("You swipe \the [src]. It's screen briefly shows a message reading \"MEMORY CODE INJECTION DETECTED AND SUCCESSFULLY QUARANTINED\"."))
 	return FALSE
 
 /// Borg Built-in tablet interface
@@ -61,7 +65,6 @@
 	icon_state_unpowered = "tablet-silicon"
 	base_icon_state = "tablet-silicon"
 	has_light = FALSE //tablet light button actually enables/disables the borg lamp
-	comp_light_luminosity = 0
 	has_variants = FALSE
 	///Ref to the borg we're installed in. Set by the borg during our creation.
 	var/mob/living/silicon/robot/borgo
@@ -143,7 +146,7 @@
 				if(!new_color || QDELETED(borgo))
 					return
 				if(color_hex2num(new_color) < 200) //Colors too dark are rejected
-					to_chat(user, "<span class='warning'>That color is too dark! Choose a lighter one.</span>")
+					to_chat(user, span_warning("That color is too dark! Choose a lighter one."))
 					new_color = null
 			borgo.lamp_color = new_color
 			borgo.toggle_headlamp(FALSE, TRUE)
@@ -154,7 +157,7 @@
 	if(!caller || !caller.alert_able || caller.alert_silenced || !alerttext) //Yeah, we're checking alert_able. No, you don't get to make alerts that the user can't silence.
 		return
 	borgo.playsound_local(src, sound, 50, TRUE)
-	to_chat(borgo, "<span class='notice'>The [src] displays a [caller.filedesc] notification: [alerttext]</span>")
+	to_chat(borgo, span_notice("The [src] displays a [caller.filedesc] notification: [alerttext]"))
 
 
 /obj/item/modular_computer/tablet/integrated/syndicate

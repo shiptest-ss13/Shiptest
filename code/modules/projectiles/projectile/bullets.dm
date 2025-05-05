@@ -18,6 +18,7 @@
 	near_miss_sound = "bullet_miss"
 	ricochet_sound = "bullet_bounce"
 
+	bullet_identifier = "bullet"
 
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
 	ricochets_max = 5 //should be enough to scare the shit out of someone

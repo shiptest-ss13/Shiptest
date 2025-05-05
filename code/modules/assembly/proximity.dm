@@ -10,7 +10,7 @@
 	///is the assembly arming itself?
 	var/timing = FALSE
 	///seconds until the assembly arms itself
-	var/time = 10
+	var/time = 20
 	var/sensitivity = 1
 	var/hearing_range = 3
 	///Proximity monitor associated with this atom, needed for it to work.
@@ -28,7 +28,7 @@
 
 /obj/item/assembly/prox_sensor/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The proximity sensor is [timing ? "arming" : (scanning ? "armed" : "disarmed")].</span>"
+	. += span_notice("The proximity sensor is [timing ? "arming" : (scanning ? "armed" : "disarmed")].")
 
 /obj/item/assembly/prox_sensor/activate()
 	if(!..())
@@ -71,7 +71,7 @@
 	return secured
 
 /obj/item/assembly/prox_sensor/HasProximity(atom/movable/AM as mob|obj)
-	if(istype(AM, /obj/effect/beam) || istype(AM, /obj/projectile) || istype(AM, /obj/effect/projectile))
+	if(istype(AM, /obj/effect) || istype(AM, /obj/projectile))
 		return
 	sense()
 
@@ -85,10 +85,10 @@
 	next_activate = world.time + 30
 	return TRUE
 
-/obj/item/assembly/prox_sensor/process()
+/obj/item/assembly/prox_sensor/process(seconds_per_tick)
 	if(!timing)
 		return
-	time--
+	time -= seconds_per_tick
 	if(time <= 0)
 		timing = FALSE
 		toggle_scan(TRUE)

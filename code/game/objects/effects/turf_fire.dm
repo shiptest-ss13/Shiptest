@@ -12,6 +12,11 @@
 #define TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED 0.5
 #define TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE 6
 
+/// Minimum fire power required to spread to other turfs
+#define TURF_FIRE_MIN_POWER_TO_SPREAD 20
+/// Multiplier for the probability of spreading to adjacent tiles and how much power the new fires have
+#define TURF_FIRE_SPREAD_RATE 0.3
+
 #define TURF_FIRE_STATE_SMALL 1
 #define TURF_FIRE_STATE_MEDIUM 2
 #define TURF_FIRE_STATE_LARGE 3
@@ -90,6 +95,18 @@
 		color = fire_color
 		base_icon_state = "greyscale"
 
+	switch(base_icon_state) //switches light color depdning on the flame color
+		if("greyscale")
+			light_color = hex_color
+		if("red")
+			light_color = LIGHT_COLOR_FIRE
+		if("blue")
+			light_color = LIGHT_COLOR_CYAN
+		if("green")
+			light_color = LIGHT_COLOR_GREEN
+		else
+			light_color = COLOR_VERY_LIGHT_GRAY
+
 	open_turf.turf_fire = src
 	START_PROCESSING(SSturf_fire, src)
 	if(power)
@@ -130,7 +147,7 @@
 	open_turf.air_update_turf()
 	return TRUE
 
-/obj/effect/abstract/turf_fire/process()
+/obj/effect/abstract/turf_fire/process(seconds_per_tick)
 	var/turf/current_turf = loc
 	if(!isopenturf(current_turf)) //This can happen, how I'm not sure
 		qdel(src)
@@ -142,22 +159,35 @@
 		if(!process_waste())
 			qdel(src)
 			return
+
 	if(passive_loss)
 		if(open_turf.air.return_temperature() < TURF_FIRE_REQUIRED_TEMP)
 			fire_power -= TURF_FIRE_POWER_LOSS_ON_LOW_TEMP
-		fire_power--
+		var/area/fire_area = get_area(src)
+		if(fire_area.active_weather?.fire_suppression)
+			fire_power -= fire_area.active_weather.fire_suppression
+		fire_power = min(fire_power + open_turf.flammability - 1, TURF_FIRE_MAX_POWER)
 		if(fire_power <= 0)
 			qdel(src)
 			return
+		for(var/turf/open/turf_to_spread in open_turf.atmos_adjacent_turfs)
+			if(turf_to_spread.turf_fire)
+				continue
+			if(fire_power + turf_to_spread.flammability < TURF_FIRE_MIN_POWER_TO_SPREAD)
+				continue
+			if(!prob(turf_to_spread.flammability * fire_power * TURF_FIRE_SPREAD_RATE))
+				continue
+			turf_to_spread.ignite_turf(fire_power * TURF_FIRE_SPREAD_RATE)
+		UpdateFireState()
+
 	open_turf.hotspot_expose(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
 	for(var/atom/movable/burning_atom as anything in open_turf)
-		burning_atom.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
+		fire_power += burning_atom.fire_act(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)
 	if(interact_with_atmos)
 		if(prob(fire_power))
 			open_turf.burn_tile()
 		if(prob(TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE))
 			playsound(open_turf, 'sound/effects/comfyfire.ogg', 40, TRUE)
-		UpdateFireState()
 
 /obj/effect/abstract/turf_fire/proc/on_entered(datum/source, atom/movable/atom_crossing)
 	var/turf/open/open_turf = loc
@@ -187,29 +217,18 @@
 		return
 	current_fire_state = new_state
 
-	switch(base_icon_state) //switches light color depdning on the flame color
-		if("greyscale")
-			light_color = hex_color
-		if("red")
-			light_color = LIGHT_COLOR_FIRE
-		if("blue")
-			light_color = LIGHT_COLOR_CYAN
-		if("green")
-			light_color = LIGHT_COLOR_GREEN
-		else
-			light_color = COLOR_VERY_LIGHT_GRAY
-	update_light()
-
 	switch(current_fire_state)
 		if(TURF_FIRE_STATE_SMALL)
 			icon_state = "[base_icon_state]_small"
-			set_light_range(1.5)
+			light_range = 1.5
 		if(TURF_FIRE_STATE_MEDIUM)
 			icon_state = "[base_icon_state]_medium"
-			set_light_range(2.5)
+			light_range = 2
 		if(TURF_FIRE_STATE_LARGE)
 			icon_state = "[base_icon_state]_big"
-			set_light_range(3)
+			light_range = 3
+
+	update_light()
 
 #undef TURF_FIRE_REQUIRED_TEMP
 #undef TURF_FIRE_TEMP_BASE
@@ -217,6 +236,9 @@
 #undef TURF_FIRE_TEMP_INCREMENT_PER_POWER
 #undef TURF_FIRE_VOLUME
 #undef TURF_FIRE_MAX_POWER
+
+#undef TURF_FIRE_MIN_POWER_TO_SPREAD
+#undef TURF_FIRE_SPREAD_RATE
 
 #undef TURF_FIRE_ENERGY_PER_BURNED_OXY_MOL
 #undef TURF_FIRE_BURN_RATE_BASE

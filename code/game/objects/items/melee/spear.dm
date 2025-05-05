@@ -21,12 +21,14 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	species_exception = list(/datum/species/kepori)
 	var/icon_prefix = "spearglass"
+	var/force_wielded = 18
+	demolition_mod = 0.75
 
 /obj/item/melee/spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
-	AddComponent(/datum/component/jousting)
-	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]_w")
+	AddComponent(/datum/component/jousting, max_tile_charge = 9, min_tile_charge = 6)
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = force_wielded, icon_wielded = "[icon_prefix]_w")
 
 /obj/item/melee/spear/update_icon_state()
 	icon_state = "[icon_prefix]"
@@ -36,8 +38,9 @@
 	var/obj/item/shard/tip = locate() in parts_list
 	if (istype(tip, /obj/item/shard/plasma))
 		throwforce = 21
+		force_wielded = 19
 		icon_prefix = "spearplasma"
-		AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=19, icon_wielded="[icon_prefix]_w")
+		AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = force_wielded, icon_wielded = "[icon_prefix]_w")
 	update_appearance()
 	qdel(tip)
 	..()
@@ -53,11 +56,8 @@
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
 	//this should be a plasma spear or worse.
 	force = 11
-	throwforce = 21
-
-/obj/item/melee/spear/bone/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=19, icon_wielded="[icon_prefix]_w")
+	throwforce = 19
+	force_wielded = 17
 
 /obj/item/melee/spear/explosive
 	name = "explosive lance"
@@ -70,10 +70,6 @@
 /obj/item/melee/spear/explosive/Initialize(mapload)
 	. = ..()
 	set_explosive(new /obj/item/grenade/iedcasing/spawned()) //For admin-spawned explosive lances
-
-/obj/item/melee/spear/explosive/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]_w")
 
 /obj/item/melee/spear/explosive/proc/set_explosive(obj/item/grenade/G)
 	if(explosive)
@@ -101,7 +97,7 @@
 
 /obj/item/melee/spear/explosive/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to set your war cry.</span>"
+	. += span_notice("Alt-click to set your war cry.")
 
 /obj/item/melee/spear/explosive/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE))

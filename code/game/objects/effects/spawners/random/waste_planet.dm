@@ -8,7 +8,7 @@
 		/obj/item/trash/cheesie = 1,
 		/obj/item/trash/candy = 1,
 		/obj/item/trash/chips = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+		/obj/item/food/deadmouse = 1,
 		/obj/item/trash/pistachios = 1,
 		/obj/item/trash/plate = 1,
 		/obj/item/trash/popcorn = 1,
@@ -37,16 +37,16 @@
 
 /obj/effect/spawner/random/waste/radiation
 	loot = list(
-		/obj/structure/radioactive = 6,
-		/obj/structure/radioactive/stack = 6,
-		/obj/structure/radioactive/waste = 6
+		/obj/structure/hazard/radioactive = 6,
+		/obj/structure/hazard/radioactive/stack = 6,
+		/obj/structure/hazard/radioactive/waste = 6
 	)
 
 /obj/effect/spawner/random/waste/radiation/more_rads
 	loot = list(
-		/obj/structure/radioactive = 3,
-		/obj/structure/radioactive/stack = 12,
-		/obj/structure/radioactive/waste = 12
+		/obj/structure/hazard/radioactive = 3,
+		/obj/structure/hazard/radioactive/stack = 12,
+		/obj/structure/hazard/radioactive/waste = 12
 	)
 
 /obj/effect/spawner/random/waste/atmos_can
@@ -88,13 +88,13 @@
 
 /obj/effect/spawner/random/waste/hivebot
 	loot = list(
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/metal,
-		/obj/effect/spawner/random/salvage/gold,
-		/obj/effect/spawner/random/salvage/plasma,
-		/obj/effect/spawner/random/salvage/silver,
-		/obj/effect/spawner/random/salvage/titanium,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/metal,
+		/obj/effect/spawner/random/salvage/ore/gold,
+		/obj/effect/spawner/random/salvage/ore/plasma,
+		/obj/effect/spawner/random/salvage/ore/silver,
+		/obj/effect/spawner/random/salvage/ore/titanium,
 		/obj/item/stack/ore/salvage/scrapbluespace,
 		/obj/item/stack/ore/salvage/scrapbluespace,
 		/obj/item/stack/ore/salvage/scrapuranium
@@ -116,6 +116,7 @@
 		/obj/item/stock_parts/manipulator/nano,
 		/obj/item/stock_parts/micro_laser/high,
 		/obj/item/stock_parts/matter_bin/adv,
+		/obj/item/stock_parts/cell/super/empty,
 	)
 	spawn_loot_count = 1
 	spawn_loot_chance = 100
@@ -127,6 +128,7 @@
 		/obj/item/stock_parts/manipulator/pico,
 		/obj/item/stock_parts/micro_laser/ultra,
 		/obj/item/stock_parts/matter_bin/super,
+		/obj/item/stock_parts/cell/hyper/empty,
 	)
 
 
@@ -137,6 +139,7 @@
 		/obj/item/stock_parts/manipulator/femto,
 		/obj/item/stock_parts/micro_laser/quadultra,
 		/obj/item/stock_parts/matter_bin/bluespace,
+		/obj/item/stock_parts/cell/bluespace/empty,
 	)
 
 

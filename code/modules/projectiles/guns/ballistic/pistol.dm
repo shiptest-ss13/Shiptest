@@ -12,55 +12,23 @@
 	recoil_unwielded = 3
 	recoil_backtime_multiplier = 1
 
+	zoom_amt = PISTOL_ZOOM
+
 	wield_delay = 0.2 SECONDS
 	fire_delay = 0.2 SECONDS
 	spread = 5
 	spread_unwielded = 7
+
 	wield_slowdown = PISTOL_SLOWDOWN
+	aimed_wield_slowdown = PISTOL_AIM_SLOWDOWN
 
 	muzzleflash_iconstate = "muzzle_flash_light"
+	light_range = 1
 
-/obj/item/gun/ballistic/automatic/pistol/deagle
-	name = "\improper Desert Eagle"
-	desc = "An oversized handgun chambered in .50 AE. A true hand cannon."
-	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
-	icon_state = "deagle"
-	force = 14
-	default_ammo_type = /obj/item/ammo_box/magazine/m50
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m50,
-	)
-	mag_display = TRUE
-	show_magazine_on_sprite = TRUE
-	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/rack.ogg'
-	manufacturer = MANUFACTURER_NONE
-	load_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
-	fire_delay = 0.6 SECONDS
-	recoil = 2
-	recoil_unwielded = 5
-	recoil_backtime_multiplier = 2
-
-	spread = 7
-	spread_unwielded = 14
-
-/obj/item/gun/ballistic/automatic/pistol/deagle/gold
-	desc = "A gold-plated Desert Eagle folded over a million times by superior Martian gunsmiths. Uses .50 AE ammo."
-	icon_state = "deagleg"
-	item_state = "deagleg"
-
-/obj/item/gun/ballistic/automatic/pistol/deagle/camo
-	desc = "A Deagle-brand Deagle for operators operating operationally. Uses .50 AE ammo." //I hate this joke with a passion
-	icon_state = "deaglecamo"
-	item_state = "deagleg"
+	refused_attachments = list(
+		/obj/item/attachment/gun,
+		/obj/item/attachment/sling
+		)
 
 /obj/item/gun/ballistic/automatic/pistol/commissar
 	name = "\improper Commissar"
@@ -112,7 +80,7 @@
 /obj/item/gun/ballistic/automatic/pistol/commissar/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
 	funnysounds = !funnysounds
-	to_chat(user, "<span class='notice'>You toggle [src]'s vox audio functions.</span>")
+	to_chat(user, span_notice("You toggle [src]'s vox audio functions."))
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/AltClick(mob/user)
 	. = ..()
@@ -126,7 +94,7 @@
 /obj/item/gun/ballistic/automatic/pistol/commissar/examine(mob/user)
 	. = ..()
 	if(funnysounds)
-		. += "<span class='info'>Alt-click to use \the [src] vox hailer.</span>"
+		. += span_info("Alt-click to use \the [src] vox hailer.")
 
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
@@ -145,11 +113,11 @@
 	safety = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user, display_message = TRUE)
-	to_chat(user, "<span class='warning'>Theres no magazine to eject!</span>")
+	to_chat(user, span_warning("Theres no magazine to eject!"))
 	return
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/insert_magazine(mob/user)
-	to_chat(user, "<span class='warning'>Theres no magazine to replace!</span>")
+	to_chat(user, span_warning("Theres no magazine to replace!"))
 	return
 
 //not technically a pistol but whatever
@@ -157,6 +125,7 @@
 	name = ".38 Derringer"
 	desc = "An easily concealable derringer. Uses .38 special ammo."
 	icon_state = "derringer"
+	item_state = "hp_generic"
 
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
@@ -201,6 +170,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 
 	icon_state = "derringer_syndie"
+	item_state = "sa_generic"
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/derr357
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/derr357,

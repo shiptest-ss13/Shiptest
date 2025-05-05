@@ -96,10 +96,6 @@
 /area/ship/medical/morgue)
 "aG" = (
 /obj/structure/table/chem,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_x = -4;
-	pixel_y = 10
-	},
 /obj/item/reagent_containers/medigel/sterilizine{
 	pixel_x = 9;
 	pixel_y = 4
@@ -109,6 +105,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/black/half,
 /obj/machinery/firealarm/directional/south,
+/obj/item/storage/case/surgery{
+	pixel_x = -4;
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical/surgery)
 "aM" = (
@@ -457,6 +457,7 @@
 /obj/item/clothing/glasses/hud/health/sunglasses{
 	pixel_y = 5
 	},
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "dZ" = (
@@ -626,14 +627,11 @@
 /obj/effect/turf_decal/corner/transparent/grey/full,
 /obj/effect/turf_decal/corner/transparent/lightgrey/diagonal,
 /obj/effect/turf_decal/siding/thinplating,
-/obj/item/reagent_containers/condiment/milk,
 /obj/item/reagent_containers/condiment/sugar,
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice,
 /obj/item/reagent_containers/condiment/rice,
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/food/snacks/pie/applepie,
-/obj/item/reagent_containers/food/snacks/meat/steak/chicken,
-/obj/item/reagent_containers/food/snacks/meat/steak/chicken,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/structure/closet/secure_closet/freezer{
@@ -654,6 +652,13 @@
 /obj/item/reagent_containers/food/snacks/grown/potato,
 /obj/item/reagent_containers/food/snacks/grown/oat,
 /obj/item/reagent_containers/food/snacks/grown/cocoapod,
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/soymilk,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/ccommons)
 "fj" = (
@@ -688,6 +693,7 @@
 /obj/item/clothing/glasses/hud/health/prescription{
 	pixel_y = 5
 	},
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "fm" = (
@@ -1248,6 +1254,14 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/hallway/port)
+"jT" = (
+/obj/docking_port/stationary{
+	dwidth = 15;
+	height = 15;
+	width = 30
+	},
+/turf/template_noop,
+/area/template_noop)
 "jY" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
@@ -1945,6 +1959,8 @@
 /obj/item/clothing/glasses/hud/health{
 	pixel_y = 5
 	},
+/obj/item/healthanalyzer,
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/storage/equip)
 "rd" = (
@@ -2754,7 +2770,7 @@
 	layer = 4.1
 	},
 /obj/item/radio/intercom/directional/east,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/item/bedsheet/blue{
 	pixel_y = 13
 	},
@@ -4946,6 +4962,8 @@
 /obj/machinery/defibrillator_mount/charging{
 	pixel_y = 20
 	},
+/obj/machinery/computer/operating,
+/obj/item/disk/surgery/t3,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical/surgery)
 "SJ" = (
@@ -5626,11 +5644,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
-"YV" = (
-/obj/effect/turf_decal/borderfloorblack/full,
-/obj/effect/turf_decal/borderfloorblack/corner,
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/medical/morgue)
 "YY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -5755,6 +5768,7 @@ XT
 XT
 XT
 XT
+XT
 Mu
 nz
 nz
@@ -5770,6 +5784,7 @@ XT
 XT
 "}
 (2,1,1) = {"
+XT
 XT
 XT
 XT
@@ -5793,6 +5808,7 @@ XT
 "}
 (3,1,1) = {"
 XT
+XT
 mD
 Rj
 Rj
@@ -5814,6 +5830,7 @@ XT
 XT
 "}
 (4,1,1) = {"
+XT
 XT
 mD
 uL
@@ -5837,6 +5854,7 @@ XT
 "}
 (5,1,1) = {"
 XT
+XT
 mD
 zA
 mZ
@@ -5859,6 +5877,7 @@ XT
 "}
 (6,1,1) = {"
 XT
+XT
 mD
 uR
 vP
@@ -5880,6 +5899,7 @@ XT
 XT
 "}
 (7,1,1) = {"
+XT
 SJ
 hK
 hK
@@ -5902,6 +5922,7 @@ tP
 XT
 "}
 (8,1,1) = {"
+XT
 hK
 aa
 Jt
@@ -5924,6 +5945,7 @@ TR
 Wm
 "}
 (9,1,1) = {"
+XT
 hK
 Bv
 SD
@@ -5946,6 +5968,7 @@ Vl
 XT
 "}
 (10,1,1) = {"
+XT
 cS
 Vs
 WC
@@ -5968,6 +5991,7 @@ Rc
 XT
 "}
 (11,1,1) = {"
+XT
 Ex
 rq
 ss
@@ -5990,6 +6014,7 @@ Rc
 XT
 "}
 (12,1,1) = {"
+jT
 cm
 pV
 Zi
@@ -6012,6 +6037,7 @@ Rv
 XT
 "}
 (13,1,1) = {"
+XT
 ku
 qM
 Yc
@@ -6034,6 +6060,7 @@ Rv
 XT
 "}
 (14,1,1) = {"
+XT
 AL
 aj
 lu
@@ -6056,6 +6083,7 @@ Rv
 XT
 "}
 (15,1,1) = {"
+XT
 Oe
 ma
 Ra
@@ -6078,6 +6106,7 @@ Rc
 XT
 "}
 (16,1,1) = {"
+XT
 Oe
 Zj
 kv
@@ -6100,6 +6129,7 @@ Rc
 XT
 "}
 (17,1,1) = {"
+XT
 xE
 xE
 lm
@@ -6122,6 +6152,7 @@ TI
 XT
 "}
 (18,1,1) = {"
+XT
 wS
 xE
 RJ
@@ -6145,6 +6176,7 @@ XT
 "}
 (19,1,1) = {"
 XT
+XT
 KO
 HN
 bM
@@ -6166,6 +6198,7 @@ XT
 XT
 "}
 (20,1,1) = {"
+XT
 XT
 KO
 HN
@@ -6189,6 +6222,7 @@ XT
 "}
 (21,1,1) = {"
 XT
+XT
 hE
 Rd
 RQ
@@ -6210,6 +6244,7 @@ XT
 XT
 "}
 (22,1,1) = {"
+XT
 XT
 KO
 Oi
@@ -6233,6 +6268,7 @@ XT
 "}
 (23,1,1) = {"
 XT
+XT
 KO
 gW
 ZZ
@@ -6254,6 +6290,7 @@ XT
 XT
 "}
 (24,1,1) = {"
+XT
 XT
 wB
 wB
@@ -6277,6 +6314,7 @@ XT
 "}
 (25,1,1) = {"
 XT
+XT
 fm
 Pv
 xX
@@ -6299,6 +6337,7 @@ XT
 "}
 (26,1,1) = {"
 XT
+XT
 fm
 je
 RP
@@ -6320,6 +6359,7 @@ XT
 XT
 "}
 (27,1,1) = {"
+XT
 XT
 Sq
 wB
@@ -6344,6 +6384,7 @@ XT
 (28,1,1) = {"
 XT
 XT
+XT
 wB
 hG
 We
@@ -6364,6 +6405,7 @@ XT
 XT
 "}
 (29,1,1) = {"
+XT
 XT
 XT
 wB
@@ -6388,6 +6430,7 @@ XT
 (30,1,1) = {"
 XT
 XT
+XT
 TI
 hC
 ch
@@ -6408,6 +6451,7 @@ XT
 XT
 "}
 (31,1,1) = {"
+XT
 XT
 XT
 wS
@@ -6433,6 +6477,7 @@ XT
 XT
 XT
 XT
+XT
 hC
 nv
 NF
@@ -6452,6 +6497,7 @@ XT
 XT
 "}
 (33,1,1) = {"
+XT
 XT
 XT
 XT
@@ -6477,6 +6523,7 @@ XT
 XT
 XT
 XT
+XT
 hC
 hC
 hC
@@ -6496,6 +6543,7 @@ XT
 XT
 "}
 (35,1,1) = {"
+XT
 XT
 XT
 XT
@@ -6521,6 +6569,7 @@ XT
 XT
 XT
 XT
+XT
 zG
 SS
 VY
@@ -6540,6 +6589,7 @@ XT
 XT
 "}
 (37,1,1) = {"
+XT
 XT
 XT
 XT
@@ -6566,6 +6616,7 @@ XT
 XT
 XT
 XT
+XT
 se
 se
 se
@@ -6588,7 +6639,8 @@ XT
 XT
 XT
 XT
-YV
+XT
+se
 aN
 Jp
 Qu
@@ -6606,6 +6658,7 @@ XT
 XT
 "}
 (40,1,1) = {"
+XT
 XT
 XT
 XT
@@ -6632,6 +6685,7 @@ XT
 XT
 XT
 XT
+XT
 se
 gh
 uX
@@ -6654,6 +6708,7 @@ XT
 XT
 XT
 XT
+XT
 VO
 se
 Jc
@@ -6672,6 +6727,7 @@ XT
 XT
 "}
 (43,1,1) = {"
+XT
 XT
 XT
 XT
@@ -6700,6 +6756,7 @@ XT
 XT
 XT
 XT
+XT
 Mc
 ln
 xr
@@ -6722,6 +6779,7 @@ XT
 XT
 XT
 XT
+XT
 Jc
 Jc
 hB
@@ -6738,6 +6796,7 @@ XT
 XT
 "}
 (46,1,1) = {"
+XT
 XT
 XT
 XT
@@ -6767,6 +6826,7 @@ XT
 XT
 XT
 XT
+XT
 Mc
 dh
 tU
@@ -6782,6 +6842,7 @@ XT
 XT
 "}
 (48,1,1) = {"
+XT
 XT
 XT
 XT
@@ -6824,6 +6885,7 @@ XT
 XT
 XT
 XT
+XT
 "}
 (50,1,1) = {"
 XT
@@ -6846,8 +6908,10 @@ XT
 XT
 XT
 XT
+XT
 "}
 (51,1,1) = {"
+XT
 XT
 XT
 XT

@@ -2,19 +2,9 @@
 	layer = TURF_PLATING_DECAL_LAYER
 	icon_state = "corner_white"
 
-/obj/effect/turf_decal/corner/Initialize()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
-		color = "#[random_short_color()]"
-	. = ..()
-
 /obj/effect/turf_decal/trimline
 	layer = TURF_PLATING_DECAL_LAYER
 	icon_state = "trimline_box"
-
-/obj/effect/turf_decal/trimline/Initialize()
-	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
-		color = "#[random_short_color()]"
-	. = ..()
 
 //forgive me for my sins
 #define TURF_DECAL_COLOR_HELPER(color_name, tile_color, tile_alpha)		\
@@ -388,6 +378,18 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 /obj/effect/turf_decal/industrial/loading/white
 	detail_color = COLOR_WHITE
 	detail_overlay = "loadingarea_stripes"
+
+/obj/effect/turf_decal/industrial/loading/stripes
+	name = "loading area stripes"
+	icon_state = "loadingarea_stripes"
+	color = COLOR_WARNING
+	detail_overlay = null
+
+/obj/effect/turf_decal/industrial/loading/stripes/red
+	color = COLOR_RED_GRAY
+
+/obj/effect/turf_decal/industrial/loading/stripes/white
+	color = COLOR_WHITE
 
 /obj/effect/turf_decal/industrial/caution
 	icon_state = "caution"

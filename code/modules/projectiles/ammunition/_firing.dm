@@ -20,6 +20,9 @@
 			user.changeNext_move(click_cooldown_override)
 
 		user.newtonian_move(get_dir(target, user))
+	var/obj/item/gun/ballistic/foulmouth = fired_from
+	if(istype(foulmouth))
+		foulmouth.adjust_wear(wear_modifier)
 	update_appearance()
 	return TRUE
 
@@ -46,6 +49,7 @@
 		qdel(reagents)
 
 /obj/item/ammo_casing/proc/throw_proj(atom/target, turf/targloc, mob/living/user, params, spread, atom/fired_from)
+	var/modifiers = params2list(params)
 	var/turf/curloc
 	if(user)
 		curloc = get_turf(user)
@@ -66,9 +70,9 @@
 			direct_target = target
 	if(!direct_target)
 		if(user)
-			BB.preparePixelProjectile(target, user, params, spread)
+			BB.preparePixelProjectile(target, user, modifiers, spread)
 		else
-			BB.preparePixelProjectile(target, curloc, params, spread)
+			BB.preparePixelProjectile(target, curloc, modifiers, spread)
 	BB.fire(null, direct_target)
 	BB = null
 	return TRUE

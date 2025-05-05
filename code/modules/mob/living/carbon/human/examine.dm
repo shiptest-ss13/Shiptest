@@ -7,6 +7,7 @@
 	var/t_him = p_them()
 	var/t_has = p_have()
 	var/t_is = p_are()
+	var/t_es = p_es()
 	var/obscure_name
 	var/list/obscured = check_obscured_slots()
 	var/skipface = ((wear_mask?.flags_inv & HIDEFACE) || (head?.flags_inv & HIDEFACE))
@@ -69,16 +70,16 @@
 		. += "[t_He] [t_has] [gloves.get_examine_string(user)] on [t_his] hands."
 	else if(FR && length(FR.blood_DNA))
 		if(num_hands)
-			. += "<span class='warning'>[t_He] [t_has] [num_hands > 1 ? "" : "a"] blood-stained hand[num_hands > 1 ? "s" : ""]!</span>"
+			. += span_warning("[t_He] [t_has] [num_hands > 1 ? "" : "a"] blood-stained hand[num_hands > 1 ? "s" : ""]!")
 
 	//handcuffed?
 
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
-			. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] restrained with cable!</span>"
+			. += span_warning("[t_He] [t_is] [icon2html(handcuffed, user)] restrained with cable!")
 		else
-			. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>"
+			. += span_warning("[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!")
 
 	//belt
 	if(belt)
@@ -99,6 +100,10 @@
 	if(!(ITEM_SLOT_EYES in obscured))
 		if(glasses)
 			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
+		else if(HAS_TRAIT(src, TRAIT_CLOUDED))
+			. += span_notice("[t_His] eyes are clouded in silver.")
+		else if(HAS_TRAIT(src, TRAIT_PINPOINT_EYES))
+			. += span_warning("[t_His] pupils have diliated to pinpricks.")
 
 	//ears
 	if(ears && !(ITEM_SLOT_EARS in obscured))
@@ -113,14 +118,16 @@
 	if (length(status_examines))
 		. += status_examines
 
-	//Jitters
+	//jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>"
+			. += span_boldwarning("[t_He] [t_is] convulsing violently!")
 		if(200 to 300)
-			. += "<span class='warning'>[t_He] [t_is] extremely jittery.</span>"
+			. += span_warning("[t_He] [t_is] extremely jittery.")
 		if(100 to 200)
-			. += "<span class='warning'>[t_He] [t_is] twitching ever so slightly.</span>"
+			. += span_warning("[t_He] [t_is] twitching ever so slightly.")
+		if(50 to 100)
+			. += span_warning("[t_He] [t_is] flinching lightly")
 
 	var/appears_dead = FALSE
 	var/just_sleeping = FALSE
@@ -136,12 +143,12 @@
 
 		if(!just_sleeping)
 			if(hellbound)
-				. += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body. Revival is impossible.</span>"
+				. += span_warning("[t_His] soul seems to have been ripped out of [t_his] body. Revival is impossible.")
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
-				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_he] won't be coming back...</span>"
+				. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_he] won't be coming back...")
 			else
-				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
+				. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life...")
 
 //WSStaion Begin - Broken Bones
 
@@ -150,10 +157,10 @@
 		if(B.bone_status == BONE_FLAG_SPLINTED)
 			splinted_stuff += B.name
 	if(splinted_stuff.len)
-		. += "<span class='warning'><B>[t_His] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B></span>\n"
+		. += "[span_warning("<B>[t_His] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B>")]\n"
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
-		. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"
+		. += span_deadsay("It appears that [t_his] brain is missing...")
 
 	var/temp = getBruteLoss() //no need to calculate each of these twice
 
@@ -165,6 +172,13 @@
 		if(BP.bodypart_disabled)
 			disabled += BP
 		missing -= BP.body_zone
+		if(BP.uses_integrity && (BP.integrity_loss-BP.integrity_ignored) > 0)
+			if ((BP.integrity_loss-BP.integrity_ignored) > BP.max_damage*0.66)
+				msg += "<B>[t_His] [BP.name] is [BP.heavy_integrity_msg]!</B>\n"
+			else if (BP.integrity_loss-BP.integrity_ignored > BP.max_damage*0.33)
+				msg += "[t_His] [BP.name] is [BP.medium_integrity_msg]!\n"
+			else
+				msg += "[t_His] [BP.name] is [BP.light_integrity_msg].\n"
 		for(var/obj/item/I in BP.embedded_objects)
 			if(I.isEmbedHarmless())
 				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"
@@ -203,7 +217,7 @@
 
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.limb_id != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
-			msg += "<span class='info'>[t_He] [t_has] \an [BP.name].</span>\n"
+			msg += "[span_info("[t_He] [t_has] \an [BP.name].")]\n"
 
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
 		if(temp)
@@ -321,12 +335,14 @@
 				if(HAS_TRAIT(src, TRAIT_DUMB))
 					msg += "[t_He] [t_has] a stupid expression on [t_his] face.\n"
 		if(getorgan(/obj/item/organ/brain))
+			if(ai_controller?.ai_status == AI_STATUS_ON)
+				msg += "[span_deadsay("[t_He] do[t_es]n't appear to be [t_him]self.")]\n"
 			if(!key)
-				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
+				msg += "[span_deadsay("[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.")]\n"
 			else if(!client)
-				msg += "<span class='warning'>[t_He] [t_has] been suffering from SSD - Space Sleep Disorder - for [trunc(((world.time - lastclienttime) / (1 MINUTES)))] minutes. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.</span>\n"
+				msg += "[span_warning("[t_He] [t_has] been suffering from SSD - Space Sleep Disorder - for [trunc(((world.time - lastclienttime) / (1 MINUTES)))] minutes. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.")]\n"
 	if (length(msg))
-		. += "<span class='warning'>[msg.Join("")]</span>"
+		. += span_warning("[msg.Join("")]")
 
 	switch(mothdust) //WS edit - moth dust from hugging
 		if(1 to 50)
@@ -340,13 +356,13 @@
 	if (!isnull(trait_exam))
 		. += trait_exam
 
-	var/traitstring = get_trait_string()
+	var/traitstring = get_trait_string(see_all=FALSE)
 
 	var/perpname = get_face_name(get_id_name(""))
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
 		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 		if(R)
-			. += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
+			. += "[span_deptradio("Rank:")] [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
 		if(HAS_TRAIT(user, TRAIT_MEDICAL_HUD))
 			var/cyberimp_detect
 			for(var/obj/item/organ/cyberimp/CI in internal_organs)
@@ -376,13 +392,13 @@
 				if(R)
 					criminal = R.fields["criminal"]
 
-				. += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
-				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
+				. += "[span_deptradio("Criminal status:")] <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
+				. += jointext(list("[span_deptradio("Security record:")] <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
 					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
 	else if(isobserver(user) && traitstring)
-		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
+		. += span_info("<b>Traits:</b> [traitstring]")
 
 	//No flavor text unless the face can be seen. Prevents certain metagaming with impersonation.
 	var/invisible_man = skipface || get_visible_name() == "Unknown"

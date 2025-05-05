@@ -8,9 +8,9 @@
 	. = ..()
 	if(. && silent && !prevent_warning)
 		if(quickdraw)
-			to_chat(user, "<span class='notice'>You discreetly slip [I] into [parent]. Alt-click [parent] to remove it.</span>")
+			to_chat(user, span_notice("You discreetly slip [I] into [parent]. Alt-click [parent] to remove it."))
 		else
-			to_chat(user, "<span class='notice'>You discreetly slip [I] into [parent].</span>")
+			to_chat(user, span_notice("You discreetly slip [I] into [parent]."))
 
 /datum/component/storage/concrete/pockets/small
 	max_items = 1
@@ -86,14 +86,18 @@
 		/obj/item/clothing/glasses/cold,
 		/obj/item/clothing/glasses/heat,
 		/obj/item/clothing/glasses/welding,
+		/obj/item/clothing/glasses/meson,
 		/obj/item/clothing/glasses/thermal,
 		/obj/item/clothing/glasses/night,
 		/obj/item/clothing/glasses/hud/health/night,
 		/obj/item/clothing/glasses/hud/security/night,
 		/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 		/obj/item/clothing/glasses/sunglasses/ballistic,
+		/obj/item/clothing/glasses/hud/security/sunglasses/ngr,
+		/obj/item/clothing/glasses/hud/security/sunglasses/hardliners,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_box/magazine/illestren_a850r,
+		/obj/item/bodycamera,
 	))
 
 /datum/component/storage/concrete/pockets/holster
@@ -108,7 +112,9 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/laser,
+		/obj/item/gun/energy/disabler,
 		/obj/item/gun/energy/e_gun,
+		/obj/item/gun/energy/kalix/pistol,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box)) // this doesnt let you put hades into holsters trust me
 	can_hold_max_of_items = typecacheof(list(

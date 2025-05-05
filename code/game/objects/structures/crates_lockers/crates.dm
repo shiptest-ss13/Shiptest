@@ -18,7 +18,10 @@
 	open_sound_volume = 35
 	close_sound_volume = 50
 	drag_slowdown = 0
+	pass_flags_self = LETPASSCLICKS
 	var/obj/item/paper/fluff/jobs/cargo/manifest/manifest
+	var/shelve = FALSE
+	var/shelve_range = 0
 
 /obj/structure/closet/crate/Initialize()
 	. = ..()
@@ -64,6 +67,9 @@
 	if(istype(drop_atom, /turf/open) && istype(loc, /obj/structure/crate_shelf) && user.Adjacent(drop_atom))
 		var/obj/structure/crate_shelf/shelf = loc
 		return shelf.unload(src, user, drop_atom) // If we're being dropped onto a turf, and we're inside of a crate shelf, unload.
+	if(istype(drop_atom, /obj/structure) && istype(loc, /obj/structure/crate_shelf) && user.Adjacent(drop_atom) && !drop_atom.density)
+		var/obj/structure/crate_shelf/shelf = loc
+		return shelf.unload(src, user, drop_atom.loc) // If we're being dropped onto a turf, and we're inside of a crate shelf, unload.
 	if(istype(drop_atom, /obj/structure/crate_shelf) && isturf(loc) && user.Adjacent(src))
 		var/obj/structure/crate_shelf/shelf = drop_atom
 		return shelf.load(src, user) // If we're being dropped onto a crate shelf, and we're in a turf, load.
@@ -71,14 +77,14 @@
 /obj/structure/closet/crate/open(mob/living/user, force = FALSE)
 	. = ..()
 	if(. && manifest)
-		to_chat(user, "<span class='notice'>The manifest is torn off [src].</span>")
+		to_chat(user, span_notice("The manifest is torn off [src]."))
 		playsound(src, 'sound/items/poster_ripped.ogg', 75, TRUE)
 		manifest.forceMove(get_turf(src))
 		manifest = null
 		update_appearance()
 
 /obj/structure/closet/crate/proc/tear_manifest(mob/user)
-	to_chat(user, "<span class='notice'>You tear the manifest off of [src].</span>")
+	to_chat(user, span_notice("You tear the manifest off of [src]."))
 	playsound(src, 'sound/items/poster_ripped.ogg', 75, TRUE)
 
 	manifest.forceMove(loc)

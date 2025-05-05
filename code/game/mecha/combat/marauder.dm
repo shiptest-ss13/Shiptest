@@ -21,12 +21,10 @@
 /obj/mecha/combat/marauder/GrantActions(mob/living/user, human_occupant = 0)
 	..()
 	smoke_action.Grant(user, src)
-	zoom_action.Grant(user, src)
 
 /obj/mecha/combat/marauder/RemoveActions(mob/living/user, human_occupant = 0)
 	..()
 	smoke_action.Remove(user)
-	zoom_action.Remove(user)
 
 /obj/mecha/combat/marauder/loaded/Initialize()
 	. = ..()

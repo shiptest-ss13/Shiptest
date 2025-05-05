@@ -8,6 +8,7 @@
 /datum/overmap/ship/controlled
 	token_type = /obj/overmap/rendered
 	dock_time = 10 SECONDS
+	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK, INTERACTION_OVERMAP_HAIL, INTERACTION_OVERMAP_INTERDICTION)
 
 	///Vessel estimated thrust per full burn
 	var/est_thrust
@@ -18,7 +19,7 @@
 
 	///The docking port of the linked shuttle. To add a port after creating a controlled ship datum, use [/datum/overmap/ship/controlled/proc/connect_new_shuttle_port].
 	VAR_FINAL/obj/docking_port/mobile/shuttle_port
-	///The map template the shuttle was spawned from, if it was indeed created from a template. CAN BE NULL (ex. custom-built ships).
+	///The map template the shuttle was spawned from, if it was indeed created from a template.
 	var/datum/map_template/shuttle/source_template
 	///Whether objects on the ship require an ID with ship access granted
 	var/unique_ship_access = FALSE
@@ -31,6 +32,10 @@
 	var/helm_locked = FALSE
 	///Shipwide bank account used for cargo consoles and bounty payouts.
 	var/datum/bank_account/ship/ship_account
+	///Crew Owned Bank Accounts.
+	var/list/crew_bank_accounts = list()
+	///magic number for telling us how much of a mission goes into each crew member's bank account
+	var/crew_share = 0.02
 
 	/// List of currently-accepted missions.
 	var/list/datum/mission/missions
@@ -60,6 +65,9 @@
 	/// Lazylist of /datum/ship_applications for this ship. Only used if join_mode == SHIP_JOIN_MODE_APPLY
 	var/list/datum/ship_application/applications
 
+	/// an assoc list
+	var/ship_modules = list()
+
 	/// Short memo of the ship shown to new joins
 	var/memo = null
 	///Assoc list of remaining open job slots (job = remaining slots)
@@ -67,41 +75,62 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
+	///The ship's real name, without the prefix
+	var/real_name
+
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
 
-	var/datum/faction/faction_datum
+	///The cooldown for events hitting this ship. Generally used by events with a big consquence and fires slower than normal, like flares
+	COOLDOWN_DECLARE(event_cooldown)
+
+	/// checks if we spawned /obj/effect/spawner/random/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
+	var/matbundle_spawned = FALSE
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
-	var/oldname = name
-	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
+	var/old_name = name
+	var/full_name = "[source_template.prefix] [new_name]"
+	if(!force && !COOLDOWN_FINISHED(src, rename_cooldown) || !..(full_name, force))
 		return FALSE
-	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
-	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
-	SSblackbox.record_feedback("text", "ship_renames", 1, new_name)
-	shuttle_port?.name = new_name
-	ship_account.account_holder = new_name
+
+	message_admins("[key_name_admin(usr)] renamed vessel '[old_name]' to '[full_name]'")
+	log_admin("[key_name(src)] has renamed vessel '[old_name]' to '[full_name]'")
+	SSblackbox.record_feedback("text", "ship_renames", 1, full_name)
+
+	real_name = new_name
+	shuttle_port?.name = full_name
+	ship_account.account_holder = full_name
+
 	if(shipkey)
-		shipkey.name = "ship key ([new_name])"
+		shipkey.name = "ship key ([full_name])"
+
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
-		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
+		shuttle_area.rename_area("[full_name] [initial(shuttle_area.name)]")
+
+	for(var/datum/weakref/stupid_fax in shuttle_port?.fax_list)
+		var/obj/machinery/fax/our_fax = stupid_fax.resolve()
+		our_fax.fax_name = "[get_area_name(our_fax)] Fax Machine"
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
 		if(shuttle_port?.virtual_z() == null)
 			return TRUE
-		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port?.virtual_z())
+		priority_announce("The [old_name] has been renamed to the [full_name].", "Docking Announcement", sender_override = full_name, zlevel = shuttle_port?.virtual_z())
+
 	return TRUE
 
 /**
  * * creation_template - The template used to create the ship.
  * * target_port - The port to dock the new ship to.
  */
-/datum/overmap/ship/controlled/Initialize(position, datum/map_template/shuttle/creation_template, create_shuttle = TRUE)
+/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE)
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
 		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
+		stationary_icon_state = creation_template.token_icon_state
+		matbundle_spawned = creation_template.matbundle_spawned
+		alter_token_appearance()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
 			if(!shuttle_port) //Loading failed, if the shuttle is supposed to be created, we need to delete ourselves.
@@ -109,23 +138,29 @@
 				return
 			if(istype(position, /datum/overmap))
 				docked_to = null // Dock() complains if you're already docked to something when you Dock, even on force
-				Dock(position, TRUE)
+				Dock(position, force = TRUE)
 
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
-		faction_datum = source_template.faction_datum
 
+	else
+		stack_trace("Attempted to create a controlled ship without a template!")
+		source_template = new(rename = "Overmap Object [length(SSovermap.overmap_objects)]")
+	RegisterSignal(src, COMSIG_OVERMAP_CALIBRATE_JUMP, PROC_REF(do_jump))
+	RegisterSignal(src, COMSIG_OVERMAP_CANCEL_JUMP, PROC_REF(stop_jump))
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
 #else
-	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
+	Rename(pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories)), TRUE)
 #endif
 	SSovermap.controlled_ships += src
+	current_overmap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
 	//SHOULD be called first
 	. = ..()
 	SSovermap.controlled_ships -= src
+	current_overmap.controlled_ships -= src
 	helms.Cut()
 	QDEL_LIST(missions)
 	LAZYCLEARLIST(owner_candidates)
@@ -138,6 +173,7 @@
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
 	manifest.Cut()
+	crew_bank_accounts.Cut()
 	job_holder_refs.Cut()
 	job_slots.Cut()
 	blacklisted.Cut()
@@ -157,8 +193,9 @@
 	if(ticket.target != src || ticket.issuer != to_dock)
 		ticket.docking_error = "Invalid target."
 		return FALSE
-	if(!shuttle_port.check_dock(ticket.target_port))
-		ticket.docking_error = "Targeted docking port invalid."
+	if(!shuttle_port.check_dock(ticket.target_port, ticket=ticket))
+		if(!ticket.docking_error)
+			ticket.docking_error = "Targeted docking port invalid."
 		return FALSE
 	return TRUE
 
@@ -197,33 +234,44 @@
 	log_shuttle("[src] [REF(src)] COMPLETE UNDOCK: FINISHED UNDOCK FROM [docked_to]")
 	return ..()
 
-/datum/overmap/ship/controlled/pre_docked(datum/overmap/ship/controlled/dock_requester)
+/datum/overmap/ship/controlled/pre_docked(datum/overmap/ship/controlled/dock_requester, override_dock)
+	if(override_dock)
+		return new /datum/docking_ticket(override_dock, src, dock_requester)
+
 	for(var/obj/docking_port/stationary/docking_port in shuttle_port.docking_points)
 		if(dock_requester.shuttle_port.check_dock(docking_port))
 			return new /datum/docking_ticket(docking_port, src, dock_requester)
 	return ..()
 
+/datum/overmap/ship/controlled/get_dockable_locations(datum/overmap/requesting_interactor)
+	var/list/docks = list()
+	for(var/obj/docking_port/stationary/docking_port as anything in shuttle_port.docking_points)
+		if(!docking_port.docked && !docking_port.current_docking_ticket)
+			LAZYADD(docks, docking_port)
+	return docks
+
+
 /**
  * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
  */
 /datum/overmap/ship/controlled/proc/dock_in_empty_space()
-	var/datum/overmap/dynamic/empty/E = locate() in SSovermap.overmap_container[x][y]
-	if(!E)
-		E = new(list("x" = x, "y" = y))
-	if(E) //Don't make this an else
-		Dock(E)
+	var/datum/overmap/dynamic/empty/empty_space = locate() in current_overmap.overmap_container[x][y]
+	if(!empty_space)
+		empty_space = new(list("x" = x, "y" = y), current_overmap)
+	if(empty_space) //Don't make this an else
+		Dock(empty_space)
 
-/datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
+/datum/overmap/ship/controlled/burn_engines(percentage = 100, seconds_per_tick)
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()
 	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
 		if(!real_engine.enabled)
 			continue
-		thrust_used += real_engine.burn_engine(percentage, deltatime)
+		thrust_used += real_engine.burn_engine(percentage, seconds_per_tick)
 
 	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
-	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
+	est_thrust = thrust_used * 100 / (percentage * seconds_per_tick) //cheeky way of rechecking the thrust, check it every time it's used
 
 	return thrust_used
 
@@ -310,6 +358,8 @@
 	if(!(human_job in job_holder_refs))
 		job_holder_refs[human_job] = list()
 	job_holder_refs[human_job] += WEAKREF(H)
+	if(H.account_id)
+		crew_bank_accounts += WEAKREF(H.get_bank_account())
 
 /**
  * adds a mob's real name to a crew's guestbooks
@@ -440,8 +490,43 @@
 		SStgui.close_uis(helm)
 		helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
 
-/datum/overmap/ship/controlled/proc/get_faction()
-	return source_template.faction_name
+
+/datum/overmap/ship/controlled/alter_token_appearance()
+	if(!source_template)
+		return ..()
+	desc = {"[span_boldnotice("IFF is reporting the following:")]
+	[span_bold("Affiliation: ")][source_template.faction.name]
+	[span_bold("Class: ")][source_template.short_name]
+	[span_bold("Velocity: ")][round(get_speed(), 0.1)] Gm/s"}
+	return ..()
+
+//when bluespace jumping gets moved to its own machine make this NOT look for non-vewscreen helms
+/datum/overmap/ship/controlled/proc/do_jump(obj/item/source, datum/overmap_star_system/new_system, new_x, new_y)
+	var/obj/machinery/computer/helm/our_helm
+	for(var/obj/machinery/computer/helm/checked_helm as anything in helms)
+		if(checked_helm.viewer)
+			continue
+		our_helm = checked_helm
+		break
+	var/list/newpos
+	if(new_x && new_y)
+		newpos = list("x" = new_x, "y" = new_y)
+
+	if(our_helm)
+		our_helm.calibrate_jump(new_system, newpos)
+
+//ditto
+/datum/overmap/ship/controlled/proc/stop_jump(obj/item/source)
+	var/obj/machinery/computer/helm/our_helm
+	for(var/obj/machinery/computer/helm/checked_helm as anything in helms)
+		if(checked_helm.viewer)
+			continue
+		our_helm = checked_helm
+		break
+
+	if(our_helm)
+		our_helm.cancel_jump()
+
 
 /obj/item/key/ship
 	name = "ship key"
@@ -492,3 +577,4 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
+

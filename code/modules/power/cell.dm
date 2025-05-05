@@ -55,9 +55,9 @@
 				STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/stock_parts/cell/process()
+/obj/item/stock_parts/cell/process(seconds_per_tick)
 	if(self_recharge)
-		give(chargerate * 0.25)
+		give(chargerate * 0.125 * seconds_per_tick)
 	else
 		return PROCESS_KILL
 
@@ -76,14 +76,14 @@
 	return 100*charge/maxcharge
 
 // use power from a cell
-/obj/item/stock_parts/cell/use(amount)
+/obj/item/stock_parts/cell/use(amount, log = TRUE)
 	if(rigged && amount > 0)
 		explode()
 		return 0
 	if(charge < amount)
 		return 0
 	charge = (charge - amount)
-	if(!istype(loc, /obj/machinery/power/apc))
+	if(log)
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
 	return 1
 
@@ -101,7 +101,7 @@
 /obj/item/stock_parts/cell/examine(mob/user)
 	. = ..()
 	if(rigged && show_rigged)
-		. += "<span class='danger'>This power cell seems to be faulty!</span>"
+		. += span_danger("This power cell seems to be faulty!")
 	else
 		. += "The charge meter reads [round(src.percent())]%."
 
@@ -159,23 +159,23 @@
 		if(E.drain_time > world.time)
 			return
 		if(charge < CELL_POWER_DRAIN)
-			to_chat(H, "<span class='warning'>[src] doesn't have enough power!</span>")
+			to_chat(H, span_warning("[src] doesn't have enough power!"))
 			return
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		if(stomach.crystal_charge > charge_limit)
-			to_chat(H, "<span class='warning'>Your charge is full!</span>")
+			to_chat(H, span_warning("Your charge is full!"))
 			return
-		to_chat(H, "<span class='notice'>You begin clumsily channeling power from [src] into your body.</span>")
+		to_chat(H, span_notice("You begin clumsily channeling power from [src] into your body."))
 		E.drain_time = world.time + CELL_DRAIN_TIME
 		if(do_after(user, CELL_DRAIN_TIME, target = src))
 			if((charge < CELL_POWER_DRAIN) || (stomach.crystal_charge > charge_limit))
 				return
 			if(istype(stomach))
-				to_chat(H, "<span class='notice'>You receive some charge from [src], wasting some in the process.</span>")
+				to_chat(H, span_notice("You receive some charge from [src], wasting some in the process."))
 				stomach.adjust_charge(CELL_POWER_GAIN)
 				charge -= CELL_POWER_DRAIN //you waste way more than you receive, so that ethereals cant just steal one cell and forget about hunger
 			else
-				to_chat(H, "<span class='warning'>You can't receive charge from [src]!</span>")
+				to_chat(H, span_warning("You can't receive charge from [src]!"))
 		return
 
 /obj/item/stock_parts/cell/proc/get_electrocute_damage()

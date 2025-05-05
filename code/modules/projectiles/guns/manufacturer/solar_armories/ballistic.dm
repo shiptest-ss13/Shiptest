@@ -1,3 +1,6 @@
+#define SOLAR_ATTACHMENTS list(/obj/item/attachment/laser_sight,/obj/item/attachment/rail_light,/obj/item/attachment/bayonet,/obj/item/attachment/energy_bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/gun, /obj/item/attachment/sling)
+#define SOLAR_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
+
 ///SOLAR ARMORIES
 //fuck you im not typing the full name out
 //solarwaffledesuckenmydickengeschutzenweaponmanufacturinglocation
@@ -36,6 +39,9 @@
 	spread = 6
 	spread_unwielded = 12
 	fire_select_icon_state_prefix = "slug_"
+
+	//gauss doesn't explode so there's not light.
+	light_range = 0
 
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -118,12 +124,10 @@
 
 	slot_flags = ITEM_SLOT_BACK
 
-	valid_attachments = list(
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/energy_bayonet
-	)
+	valid_attachments = SOLAR_ATTACHMENTS
+	slot_available = SOLAR_ATTACH_SLOTS
+	//gauss doesn't explode so there's not light.
+	light_range = 0
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
@@ -160,12 +164,11 @@
 
 	slot_flags = ITEM_SLOT_BACK
 
-	valid_attachments = list(
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/energy_bayonet
-	)
+	valid_attachments = SOLAR_ATTACHMENTS
+	slot_available = SOLAR_ATTACH_SLOTS
+
+	//gauss doesn't explode so there's not light.
+	light_range = 0
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -203,7 +206,8 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = -5
 	spread_unwielded = 20
-	recoil = 0
-	recoil_unwielded = 4
+	recoil = 1
+	recoil_unwielded = 8
 	wield_slowdown = SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS
+

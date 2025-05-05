@@ -3,6 +3,8 @@
 	desc = "An arm mounted dual-mode weapon that fires electrodes and disabler shots."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "taser"
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	item_state = "armcannonstun4"
 	force = 5
 	selfcharge = 1

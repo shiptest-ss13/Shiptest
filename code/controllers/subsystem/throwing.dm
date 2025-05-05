@@ -21,7 +21,7 @@ SUBSYSTEM_DEF(throwing)
 	cust["processing"] = length(processing)
 	.["custom"] = cust
 
-/datum/controller/subsystem/throwing/fire(resumed = 0)
+/datum/controller/subsystem/throwing/fire(resumed = FALSE)
 	if (!resumed)
 		src.currentrun = processing.Copy()
 
@@ -206,5 +206,8 @@ SUBSYSTEM_DEF(throwing)
 		var/turf/T = get_turf(thrownthing)
 		if(T && thrownthing.has_gravity(T))
 			T.zFall(thrownthing)
+
+	if(thrownthing)
+		SEND_SIGNAL(thrownthing, COMSIG_MOVABLE_THROW_LANDED, src)
 
 	qdel(src)

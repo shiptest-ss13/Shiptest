@@ -11,11 +11,11 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = "<span class='warning'>You feel short of breath.</span>"
-	high_threshold_passed = "<span class='warning'>You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.</span>"
-	now_fixed = "<span class='warning'>Your lungs seem to once again be able to hold air.</span>"
-	low_threshold_cleared = "<span class='info'>You can breathe normally again.</span>"
-	high_threshold_cleared = "<span class='info'>The constriction around your chest loosens as your breathing calms down.</span>"
+	low_threshold_passed = span_warning("You feel short of breath.")
+	high_threshold_passed = span_warning("You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.")
+	now_fixed = span_warning("Your lungs seem to once again be able to hold air.")
+	low_threshold_cleared = span_info("You can breathe normally again.")
+	high_threshold_cleared = span_info("The constriction around your chest loosens as your breathing calms down.")
 
 
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/medicine/salbutamol = 5)
@@ -54,7 +54,7 @@
 
 	var/cold_message = "your face freezing and an icicle forming"
 	var/chilly_message = "chilly air"
-	var/chlly_threshold = T20C-7
+	var/chlly_threshold = T20C-20
 	var/cold_level_1_threshold = 240
 	var/cold_level_2_threshold = 220
 	var/cold_level_3_threshold = 200
@@ -65,10 +65,10 @@
 
 	var/hot_message = "your face burning and a searing heat"
 	var/warm_message = "warm air"
-	var/warm_threshold = T20C+10
-	var/heat_level_1_threshold = 316
-	var/heat_level_2_threshold = 323
-	var/heat_level_3_threshold = 343
+	var/warm_threshold = T20C+20
+	var/heat_level_1_threshold = 323
+	var/heat_level_2_threshold = 335
+	var/heat_level_3_threshold = 350
 	var/heat_level_1_damage = HEAT_GAS_DAMAGE_LEVEL_1
 	var/heat_level_2_damage = HEAT_GAS_DAMAGE_LEVEL_2
 	var/heat_level_3_damage = HEAT_GAS_DAMAGE_LEVEL_3
@@ -237,12 +237,14 @@
 			H.Unconscious(60) // 60 gives them one second to wake up and run away a bit!
 			if(SA_pp > SA_sleep_min) // Enough to make us sleep as well
 				H.Sleeping(200)
+				ADD_TRAIT(owner, TRAIT_ANALGESIA, GAS_NITROUS)
 		else if(SA_pp > 0.01)	// There is sleeping gas in their lungs, but only a little, so give them a bit of a warning
 			if(prob(20))
 				H.emote(pick("giggle", "laugh"))
 				SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "chemical_euphoria", /datum/mood_event/chemical_euphoria)
 		else
 			SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "chemical_euphoria")
+			REMOVE_TRAIT(owner, TRAIT_ANALGESIA, GAS_NITROUS)
 
 
 	// BZ
@@ -261,12 +263,12 @@
 	// Freon
 		var/freon_pp = PP(breath,GAS_FREON)
 		if (prob(freon_pp))
-			to_chat(H, "<span class='alert'>Your mouth feels like it's burning!</span>")
+			to_chat(H, span_alert("Your mouth feels like it's burning!"))
 		if (freon_pp >40)
 			H.emote("gasp")
 			H.adjustOxyLoss(15)
 			if (prob(freon_pp/2))
-				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
+				to_chat(H, span_alert("Your throat closes up!"))
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustOxyLoss(freon_pp/4)
@@ -310,10 +312,11 @@
 
 		breath.adjust_moles(GAS_HYDROGEN_CHLORIDE, -gas_breathed)
 
+	//TODO: This probably should be a status effect, While all gas effects are standardized here, monoxide is way too complicated for this system.
 	// Carbon Monoxide
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
 		if (carbon_monoxide_pp > gas_stimulation_min)
-			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 1)
+			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 2)
 			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent.volume > 10)
 				monoxide_reagent.metabolization_rate = (10 - carbon_monoxide_pp)
@@ -461,32 +464,26 @@
 	if(!HAS_TRAIT(breather, TRAIT_RESISTCOLD)) // COLD DAMAGE
 		var/cold_modifier = breather.dna.species.coldmod
 		var/breath_effect_prob = 0
-		var/part_count = 0
 		if(breath_temperature < cold_level_3_threshold)
 			breather.apply_damage(cold_level_3_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 100
-			part_count = 8
 		if(breath_temperature > cold_level_3_threshold && breath_temperature < cold_level_2_threshold)
 			breather.apply_damage(cold_level_2_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 75
-			part_count = 5
 		if(breath_temperature > cold_level_2_threshold && breath_temperature < cold_level_1_threshold)
 			breather.apply_damage(cold_level_1_damage * cold_modifier, cold_damage_type, spread_damage = TRUE)
 			breath_effect_prob = 50
-			part_count = 3
 		if(breath_temperature > cold_level_1_threshold)
 			breath_effect_prob = 25
-			part_count = 2
 
 		if(breath_temperature < cold_level_1_threshold)
 			if(prob(sqrt(breath_effect_prob) * 6))
-				to_chat(breather, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
+				to_chat(breather, span_warning("You feel [cold_message] in your [name]!"))
 		else if(breath_temperature < chlly_threshold)
 			if(!breath_effect_prob)
 				breath_effect_prob = 20
-				part_count = 1
 			if(prob(sqrt(breath_effect_prob) * 6))
-				to_chat(breather, "<span class='warning'>You feel [chilly_message] in your [name].</span>")
+				to_chat(breather, span_warning("You feel [chilly_message] in your [name]."))
 		if(breath_temperature < chlly_threshold)
 			if(breath_effect_prob)
 				// Breathing into your mask, no particle. We can add fogged up glasses later
@@ -513,54 +510,17 @@
 
 		if(breath_temperature > heat_level_1_threshold)
 			if(prob(sqrt(heat_message_prob) * 6))
-				to_chat(breather, "<span class='warning'>You feel [hot_message] in your [name]!</span>")
+				to_chat(breather, span_warning("You feel [hot_message] in your [name]!"))
 		else if(breath_temperature > warm_threshold)
 			if(!heat_message_prob)
 				heat_message_prob = 20
 			if(prob(sqrt(heat_message_prob) * 6))
-				to_chat(breather, "<span class='warning'>You feel [warm_message] in your [name].</span>")
+				to_chat(breather, span_warning("You feel [warm_message] in your [name]."))
 
 
 
 	// The air you breathe out should match your body temperature
 	breath.set_temperature(breather.bodytemperature)
-
-/// Creates a particle effect off the mouth of the passed mob.
-/obj/item/organ/lungs/proc/emit_breath_particle(mob/living/carbon/human/breather, particle_type, part_count)
-	ASSERT(ispath(particle_type, /particles))
-
-	var/obj/effect/abstract/particle_holder/holder = new(breather, particle_type)
-	var/particles/breath_particle = holder.particles
-	var/breath_dir = breather.dir
-
-	var/list/particle_grav = list(0, 0.1, 0)
-	var/list/particle_pos = list(0, 10, 0)
-	if(breath_dir & NORTH)
-		particle_grav[2] = 0.2
-		breath_particle.rotation = pick(-45, 45)
-		// Layer it behind the mob since we're facing away from the camera
-		holder.pixel_w -= 4
-		holder.pixel_y += 4
-	if(breath_dir & WEST)
-		particle_grav[1] = -0.2
-		particle_pos[1] = -5
-		breath_particle.rotation = -45
-	if(breath_dir & EAST)
-		particle_grav[1] = 0.2
-		particle_pos[1] = 5
-		breath_particle.rotation = 45
-	if(breath_dir & SOUTH)
-		particle_grav[2] = 0.2
-		breath_particle.rotation = pick(-45, 45)
-		// Shouldn't be necessary but just for parity
-		holder.pixel_w += 4
-		holder.pixel_y -= 4
-
-	breath_particle.gravity = particle_grav
-	breath_particle.position = particle_pos
-	breath_particle.count = part_count
-
-	QDEL_IN(holder, breath_particle.lifespan)
 
 /obj/item/organ/lungs/on_life()
 	. = ..()
@@ -572,7 +532,7 @@
 		if(do_i_cough)
 			owner.emote("cough")
 	if(organ_flags & ORGAN_FAILING && owner.stat == CONSCIOUS)
-		owner.visible_message("<span class='danger'>[owner] grabs [owner.p_their()] throat, struggling for breath!</span>", "<span class='userdanger'>You suddenly feel like you can't breathe!</span>")
+		owner.visible_message(span_danger("[owner] grabs [owner.p_their()] throat, struggling for breath!"), span_userdanger("You suddenly feel like you can't breathe!"))
 		failed = TRUE
 
 /obj/item/organ/lungs/get_availability(datum/species/S)

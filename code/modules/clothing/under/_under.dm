@@ -16,6 +16,12 @@
 	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))
 	greyscale_icon_state = "under"
 
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_UNDERSUIT
+	equip_delay_other = EQUIP_DELAY_UNDERSUIT * 1.5
+	strip_delay = EQUIP_DELAY_UNDERSUIT * 1.5
+
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE
 	var/sensor_mode = NO_SENSORS
@@ -49,7 +55,7 @@
 		var/obj/item/stack/cable_coil/C = I
 		C.use(1)
 		has_sensor = HAS_SENSORS
-		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
+		to_chat(user,span_notice("You repair the suit sensors on [src] with [C]."))
 		return 1
 	if(attached_accessory && ispath(attached_accessory.pocket_storage_component_path) && loc == user)
 		attached_accessory.attackby(I,user)
@@ -79,7 +85,7 @@
 		sensor_mode = pick(SENSOR_OFF, SENSOR_OFF, SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS)
 		if(ismob(loc))
 			var/mob/M = loc
-			to_chat(M,"<span class='warning'>The sensors on the [src] change rapidly!</span>")
+			to_chat(M,span_warning("The sensors on the [src] change rapidly!"))
 
 /obj/item/clothing/under/visual_equipped(mob/user, slot)
 	..()
@@ -120,7 +126,7 @@
 		var/obj/item/clothing/accessory/A = I
 		if(attached_accessory)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] already has an accessory.</span>")
+				to_chat(user, span_warning("[src] already has an accessory."))
 			return
 		else
 
@@ -132,10 +138,10 @@
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
+				to_chat(user, span_notice("You attach [I] to [src]."))
 
 			var/accessory_color = attached_accessory.icon_state
-			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', "[accessory_color]")
+			accessory_overlay = mutable_appearance(attached_accessory.mob_overlay_icon, "[accessory_color]")
 			accessory_overlay.alpha = attached_accessory.alpha
 			accessory_overlay.color = attached_accessory.color
 
@@ -156,9 +162,9 @@
 		var/obj/item/clothing/accessory/A = attached_accessory
 		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, "<span class='notice'>You detach [A] from [src].</span>")
+			to_chat(user, span_notice("You detach [A] from [src]."))
 		else
-			to_chat(user, "<span class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
+			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc

@@ -22,14 +22,14 @@
 
 		if(!sender_override)
 			if(title == "")
-				GLOB.news_network.SubmitArticle(text, "Central Command Update", "Station Announcements", null)
+				GLOB.news_network.SubmitArticle(text, "Outpost Update", "Station Announcements", null)
 			else
-				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Central Command", "Station Announcements", null)
+				GLOB.news_network.SubmitArticle(title + "<br><br>" + text, "Outpost", "Station Announcements", null)
 
-	announcement += "<br><span class='alert'>[html_encode(text)]</span><br>"
+	announcement += "<br>[span_alert("[html_encode(text)]")]<br>"
 	announcement += "<br>"
 	if(auth_id)															//WS Edit - Make cap's announcement use logged-in name
-		announcement += "<span class='alert'>-[auth_id]</span><br>"		//WS Edit - Make cap's announcement use logged-in name
+		announcement += "[span_alert("-[auth_id]")]<br>"		//WS Edit - Make cap's announcement use logged-in name
 
 	var/sound/S = sound(sound)
 	S.environment = SOUND_ENVIRONMENT_CONCERT_HALL
@@ -70,12 +70,12 @@
 		if(zlevel && (M.virtual_z() != zlevel)) // If a z-level is specified and the mob's z does not equal it
 			continue
 
-		to_chat(M, "<span class='minorannounce'><font color = red>[title]</font color><BR>[message]</span><BR>[from ? "<span class='alert'>-[from.name] ([from.job])</span>" : null]")
+		to_chat(M, "[span_minorannounce("<font color = red>[title]</font color><BR>[message]")]<BR>[from ? "[span_alert("-[from.name] ([from.job])")]" : null]")
 		if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
 			SEND_SOUND(M, S)
 
 /proc/create_distress_beacon(datum/overmap/ship/ship)
 	if(!ship)
 		return
-	var/text = "A distress beacon has been launched by [ship.name], at local sector co-ordinates [ship.x || ship.docked_to.x]/[ship.y || ship.docked_to.y]. No further information available."
+	var/text = "A distress beacon has been launched by [ship.name], at sector '[ship.current_overmap]' co-ordinates [ship.x || ship.docked_to.x]/[ship.y || ship.docked_to.y]. No further information available."
 	priority_announce(text, null, 'sound/effects/alert.ogg', sender_override = "Outpost Distress Beacon System", zlevel = 0)

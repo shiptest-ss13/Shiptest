@@ -19,8 +19,8 @@
 ///assistants
 
 /datum/outfit/job/inteq/assistant
-	name = "IRMG - Recruit"
-	id_assignment = "Recruit"
+	name = "IRMG - Auxiliary"
+	id_assignment = "Auxiliary"
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
@@ -235,7 +235,6 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/inteq/captain
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
-	alt_uniform = /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
 	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman

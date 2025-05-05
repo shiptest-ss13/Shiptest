@@ -8,8 +8,12 @@
 	spread = 6
 	spread_unwielded = 10
 	wield_slowdown = SMG_SLOWDOWN
+	aimed_wield_slowdown = SMG_AIM_SLOWDOWN
+	zoom_amt = SMG_ZOOM
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
+
+	light_range = 1
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -23,6 +27,9 @@
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
+	wear_minor_threshold = 120
+	wear_major_threshold = 360
+	wear_maximum = 600
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -49,7 +56,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Vector carbine"
-	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9mm."
+	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9x18mm."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -98,13 +105,11 @@
 	wield_delay = 0.6 SECONDS
 	wield_slowdown = SMG_SLOWDOWN
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
+	wear_rate = 1.6
+
+	unique_attachments = list(
 		/obj/item/attachment/foldable_stock
-	)
+		)
 
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
@@ -130,7 +135,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
 	name = "\improper SKM-44v Mongrel"
-	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10mm."
+	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10x22mm."
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
@@ -159,18 +164,14 @@
 
 	wield_delay = 0.4 SECONDS
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
+	unique_attachments = list(
 		/obj/item/attachment/foldable_stock/inteq
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	name = "\improper Nanotrasen Saber SMG"
-	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
+	desc = "A prototype full-auto 9x18mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "saber"
 	item_state = "gun"
@@ -195,11 +196,7 @@
 
 	wield_delay = 0.4 SECONDS
 
-	valid_attachments = list(
-		/obj/item/attachment/silencer,
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
+	unique_attachments = list(
 		/obj/item/attachment/foldable_stock
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock)

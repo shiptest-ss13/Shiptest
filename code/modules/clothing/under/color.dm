@@ -1,13 +1,52 @@
 /obj/item/clothing/under/color
+	name = "jumpsuit"
 	desc = "A standard issue colored jumpsuit. Variety is the spice of life!"
 	dying_key = DYE_REGISTRY_UNDER
 	icon = 'icons/obj/clothing/under/color.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/color.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	icon_state = "black"
+	item_state = "bl_suit"
+	unique_reskin = list("black jumpsuit" = "black",
+						"grey jumpsuit" = "grey",
+						"blue jumpsuit" = "blue",
+						"green jumpsuit" = "green",
+						"orange jumpsuit" = "orange",
+						"pink jumpsuit" = "pink",
+						"red jumpsuit" = "red",
+						"white jumpsuit" = "white",
+						"yellow jumpsuit" = "yellow",
+						"dark blue jumpsuit" = "darkblue",
+						"teal jumpsuit" = "teal",
+						"light purple jumpsuit" = "lightpurple",
+						"dark green jumpsuit" = "darkgreen",
+						"light brown jumpsuit" = "lightbrown",
+						"brown jumpsuit" = "brown",
+						"maroon jumpsuit" = "maroon"
+						)
 
 /obj/item/clothing/under/color/jumpskirt
+	name = "jumpskirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = TRUE
+	icon_state = "black_skirt"
+	unique_reskin = list("black jumpskirt" = "black_skirt",
+						"grey jumpskirt" = "grey_skirt",
+						"blue jumpskirt" = "blue_skirt",
+						"green jumpskirt" = "green_skirt",
+						"orange jumpskirt" = "orange_skirt",
+						"pink jumpskirt" = "pink_skirt",
+						"red jumpskirt" = "red_skirt",
+						"white jumpskirt" = "white_skirt",
+						"yellow jumpskirt" = "yellow_skirt",
+						"dark blue jumpskirt" = "darkblue_skirt",
+						"teal jumpskirt" = "teal_skirt",
+						"light purple jumpskirt" = "lightpurple_skirt",
+						"dark green jumpskirt" = "darkgreen_skirt",
+						"light brown jumpskirt" = "lightbrown_skirt",
+						"brown jumpskirt" = "brown_skirt",
+						"maroon jumpskirt" = "maroon_skirt"
+						)
 
 /obj/item/clothing/under/color/random
 	icon_state = "random_jumpsuit"

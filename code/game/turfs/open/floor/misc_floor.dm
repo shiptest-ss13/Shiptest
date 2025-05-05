@@ -9,6 +9,9 @@
 	icon_state = "rockvault"
 	floor_tile = /obj/item/stack/tile/plasteel
 
+/turf/open/floor/vault/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 //Circuit flooring, glows a little
 /turf/open/floor/circuit
 	icon = 'icons/turf/floors.dmi'
@@ -109,6 +112,10 @@
 /turf/open/floor/pod/light
 	icon_state = "podfloor_light"
 	floor_tile = /obj/item/stack/tile/pod/light
+/turf/open/floor/pod/light/external
+	initial_gas_mix = AIRLESS_ATMOS
+/turf/open/floor/pod/light/external/handle_decompression_floor_rip(sum)
+	return
 
 /turf/open/floor/pod/dark
 	icon_state = "podfloor_dark"
@@ -174,6 +181,10 @@
 /turf/open/floor/plasteel/telecomms_floor/tatmos
 	initial_gas_mix = TCOMMS_ATMOS
 
+/turf/open/floor/plasteel/telecomms_floor/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
+
 //ship turfs
 /turf/open/floor/ship
 	name = "Ship Plating"
@@ -183,7 +194,7 @@
 	gender = PLURAL
 	name = "dirt"
 	desc = "Upon closer examination, it's still dirt."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "dirt"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -197,7 +208,7 @@
 /turf/open/floor/ship/dirt/attackby(obj/item/C, mob/user, params)
 	if((C.tool_behaviour == TOOL_SHOVEL) && params)
 		new ore_type(src, 2)
-		user.visible_message("<span class='notice'>[user] digs up [src].</span>", "<span class='notice'>You [turfverb] [src].</span>")
+		user.visible_message(span_notice("[user] digs up [src]."), span_notice("You [turfverb] [src]."))
 		playsound(src, 'sound/effects/shovel_dig.ogg', 50, TRUE)
 		make_plating()
 	if(..())
@@ -213,7 +224,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
 	layer = HIGH_TURF_LAYER
-	icon_state = "grass0"
+	icon_state = "grass-255"
 	base_icon_state = "grass"
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 	baseturfs = /turf/open/floor/ship/dirt
@@ -222,15 +233,15 @@
 	. = ..()
 	if(smoothing_flags)
 		var/matrix/translation = new
-		translation.Translate(-9, -9)
+		translation.Translate(-19, -19)
 		transform = translation
 		icon = smooth_icon
 
 /turf/open/floor/grass/ship/jungle
 	name = "jungle grass"
 	desc = "Greener on the other side."
-	icon_state = "junglegrass"
-	base_icon_state = "junglegrass"
+	icon_state = "grass-255"
+	base_icon_state = "grass"
 	baseturfs = /turf/open/floor/ship/dirt/dark
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
@@ -258,10 +269,10 @@
 	if(!istype(tool, /obj/item/reagent_containers))
 		return ..()
 	if(container.reagents.total_volume >= container.volume)
-		to_chat(user, "<span class='danger'>[container] is full.</span>")
+		to_chat(user, span_danger("[container] is full."))
 		return
 	container.reagents.add_reagent(reagent_to_extract, rand(5, 10))
-	user.visible_message("<span class='notice'>[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container].</span>", "<span class='notice'>You scoop out [extracted_reagent_visible_name] from the [src] using \the [container].</span>")
+	user.visible_message(span_notice("[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container]."), span_notice("You scoop out [extracted_reagent_visible_name] from the [src] using \the [container]."))
 	return TRUE
 
 /turf/open/floor/plating/ship/water/can_have_cabling()
@@ -276,7 +287,7 @@
 /turf/open/floor/plating/ship/water/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			to_chat(user, span_notice("You build a floor."))
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE

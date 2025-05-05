@@ -77,25 +77,6 @@
 	result = /obj/item/food/cake/birthday
 	subcategory = CAT_CAKE
 
-/datum/crafting_recipe/food/energycake
-	name = "Energy cake"
-	reqs = list(
-		/obj/item/food/cake/birthday = 1,
-		/obj/item/melee/energy/sword = 1,
-	)
-	blacklist = list(/obj/item/food/cake/birthday/energy)
-	result = /obj/item/food/cake/birthday/energy
-	subcategory = CAT_CAKE
-
-/datum/crafting_recipe/food/braincake
-	name = "Brain cake"
-	reqs = list(
-		/obj/item/organ/brain = 1,
-		/obj/item/food/cake/plain = 1
-	)
-	result = /obj/item/food/cake/brain
-	subcategory = CAT_CAKE
-
 /datum/crafting_recipe/food/pumpkinspicecake
 	name = "Pumpkin spice cake"
 	reqs = list(
@@ -171,18 +152,3 @@
 	)
 	result = /obj/item/food/cake/trumpet
 	subcategory = CAT_CAKE
-
-
-/datum/crafting_recipe/food/cak
-	name = "Living cat/cake hybrid"
-	reqs = list(
-		/obj/item/organ/brain = 1,
-		/obj/item/organ/heart = 1,
-		/obj/item/food/cake/birthday = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab = 3,
-		/datum/reagent/blood = 30,
-		/datum/reagent/consumable/sprinkles = 5,
-		/datum/reagent/teslium = 1 //To shock the whole thing into life
-	)
-	result = /mob/living/simple_animal/pet/cat/cak
-	subcategory = CAT_CAKE //Cat! Haha, get it? CAT? GET IT? We get it - Love Felines

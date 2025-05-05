@@ -155,6 +155,14 @@
 	color = "#C8C8C8"
 	taste_description = "smoke"
 
+/datum/reagent/dense_smoke_powder
+	name = "Dense Smoke Powder"
+	description = "Makes a large cloud of thick smoke that can carry reagents."
+	category = "Pyrotechnics"
+	reagent_state = LIQUID
+	color = "#C8C8C8"
+	taste_description = "smoke"
+
 /datum/reagent/sonic_powder
 	name = "Sonic Powder"
 	description = "Makes a deafening noise."
@@ -320,14 +328,7 @@
 		else if(istype(F))
 			F.lifetime = initial(F.lifetime) //reduce object churn a little bit when using smoke by keeping existing foam alive a bit longer
 
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot && !isspaceturf(T))
-		if(T.air)
-			var/datum/gas_mixture/G = T.air
-			if(G.return_temperature() > T20C)
-				G.set_temperature(max(G.return_temperature()/2,T20C))
-			G.react(src)
-			qdel(hotspot)
+	T.extinguish_turf()
 
 /datum/reagent/firefighting_foam/expose_obj(obj/O, reac_volume)
 	O.extinguish()

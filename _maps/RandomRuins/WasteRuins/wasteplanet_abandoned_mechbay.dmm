@@ -108,7 +108,6 @@
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "bU" = (
 /obj/effect/gibspawner/human,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "bZ" = (
@@ -180,6 +179,7 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/green,
 /obj/structure/curtain,
+/mob/living/simple_animal/hostile/human/ramzi,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "cP" = (
@@ -480,9 +480,7 @@
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "fe" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/syndicate/melee{
-	name = "Syndicate Mech Pilot"
-	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "fi" = (
@@ -884,7 +882,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "jj" = (
@@ -1008,6 +1005,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
+"kW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/innards,
+/obj/structure/mecha_wreckage/gygax/dark{
+	name = "515 EX 'Lucky #2'"
+	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1;
+	type_to_spawn = /obj/structure/mecha_wreckage/gygax/dark;
+	mission_index = 2
+	},
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "kZ" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning{
 	dir = 4
@@ -1048,7 +1058,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/mecha_wreckage/gygax,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "lh" = (
@@ -1376,7 +1386,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/plastic,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "pA" = (
@@ -1454,7 +1463,7 @@
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "qN" = (
-/obj/machinery/computer/rdconsole{
+/obj/structure/salvageable/computer{
 	dir = 1
 	},
 /obj/effect/turf_decal/box/white,
@@ -1499,7 +1508,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/human/syndicate{
+/mob/living/simple_animal/hostile/human/ramzi{
 	name = "Syndicate Engineer";
 	desc = "Death to bad mechanics."
 	},
@@ -1516,7 +1525,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "ro" = (
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy,
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1558,16 +1567,13 @@
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "rT" = (
 /obj/structure/chair/sofa/brown/right/directional/south,
-/mob/living/simple_animal/hostile/human/syndicate{
-	name = "Syndicate Engineer";
-	desc = "Death to bad mechanics."
-	},
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/human/ramzi,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "rY" = (
@@ -1779,7 +1785,7 @@
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "uM" = (
@@ -1891,6 +1897,23 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
+"vN" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/directional/east,
+/obj/item/paperplane{
+	pixel_y = -3;
+	pixel_x = -5
+	},
+/obj/item/radio/intercom/directional/east,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
+/obj/item/documents/syndicate{
+	pixel_y = 4
+	},
+/obj/effect/landmark/mission_poi/main,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "vO" = (
 /obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/blood/drip,
@@ -1907,7 +1930,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/human/syndicate/ranged/shotgun,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "vS" = (
@@ -1920,19 +1942,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"vW" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/intercom/directional/east,
-/obj/item/paperplane{
-	pixel_y = -3;
-	pixel_x = -5
-	},
-/obj/item/radio/intercom/directional/east,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 10
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "wc" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2047,10 +2056,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/mob/living/simple_animal/hostile/human/syndicate{
-	name = "Syndicate Launderer";
-	desc = "Death to Dirty Laundry?"
-	},
+/mob/living/simple_animal/hostile/human/ramzi,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "xz" = (
@@ -2180,10 +2186,10 @@
 	dir = 8
 	},
 /obj/machinery/light/floor,
-/mob/living/simple_animal/hostile/human/syndicate/ranged/smg/space,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/smg,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "zl" = (
@@ -2473,9 +2479,7 @@
 	pixel_y = 19
 	},
 /obj/structure/curtain,
-/mob/living/simple_animal/hostile/human/syndicate/civilian{
-	desc = "Can an armored mook not shower in peace?"
-	},
+/mob/living/simple_animal/hostile/human/ramzi,
 /turf/open/floor/carpet/blue,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "Dy" = (
@@ -2722,9 +2726,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/syndicate/melee{
-	name = "Syndicate Exosuit Pilot"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
 "GE" = (
@@ -2770,7 +2771,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "Hj" = (
 /obj/machinery/light/dim/directional/south,
-/mob/living/simple_animal/hostile/human/syndicate/melee{
+/mob/living/simple_animal/hostile/human/ramzi/melee{
 	name = "Syndicate Exosuit Pilot"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2909,7 +2910,7 @@
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "Ix" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/mecha_wreckage/gygax,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "Iy" = (
@@ -2950,7 +2951,7 @@
 /area/ruin/wasteplanet/abandoned_mechbay/mainhall)
 "IJ" = (
 /obj/effect/decal/cleanable/oil,
-/obj/structure/mecha_wreckage/gygax,
+/obj/structure/mecha_wreckage/gygax/dark,
 /turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay2)
 "IL" = (
@@ -3015,9 +3016,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/south,
-/mob/living/simple_animal/hostile/human/syndicate/melee{
-	name = "Syndicate Exosuit Pilot"
-	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Js" = (
@@ -3056,10 +3055,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/syndicate{
-	name = "Syndicate Engineer";
-	desc = "Death to bad mechanics."
-	},
+/mob/living/simple_animal/hostile/human/ramzi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/abandoned_mechbay/engineering)
 "JU" = (
@@ -3113,18 +3109,6 @@
 "KG" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/crewquarters)
-"KH" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 9;
-	name = "rusting turret";
-	desc = "A ballistic machine gun auto-turret, it's woven into the hexacrete walls. Despite that, it's age is clear, decay has set in.";
-	max_integrity = 60;
-	armor = list("melee"=25,"bullet"=30,"laser"=30,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=90,"acid"=90);
-	lethal_projectile = /obj/projectile/bullet/lmg;
-	stun_projectile = /obj/projectile/bullet/lmg
-	},
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "KI" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 4
@@ -3375,10 +3359,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom/directional/west,
-/mob/living/simple_animal/hostile/human/syndicate{
-	name = "Syndicate Engineer";
-	desc = "Death to bad mechanics."
-	},
+/mob/living/simple_animal/hostile/human/ramzi/melee/machete,
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "NK" = (
@@ -3506,14 +3487,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/glasses/hud/diagnostic,
 /turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/abandoned_mechbay/bay1)
-"PW" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/mecha/combat/gygax{
-	name = "\improper Gygax #2"
-	},
-/obj/effect/decal/cleanable/blood/innards,
-/turf/open/floor/mech_bay_recharge_floor,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Qe" = (
 /obj/structure/sign/warning/radiation,
@@ -4232,6 +4205,12 @@
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
+"Zw" = (
+/obj/machinery/porta_turret/ruin/ramzi/light{
+	dir = 9
+	},
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/wasteplanet/abandoned_mechbay/commandcontrol)
 "Zx" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/warning,
 /obj/effect/decal/cleanable/dirt,
@@ -4680,7 +4659,7 @@ eb
 tM
 Ww
 Sr
-KH
+Zw
 LX
 dR
 dR
@@ -4872,7 +4851,7 @@ eb
 hU
 gu
 cq
-KH
+Zw
 Yt
 Yt
 dR
@@ -5310,7 +5289,7 @@ kJ
 eb
 eb
 qJ
-KH
+Zw
 KG
 VG
 VJ
@@ -5612,7 +5591,7 @@ BJ
 RY
 kn
 NK
-PW
+kW
 lT
 Rg
 jI
@@ -5897,7 +5876,7 @@ Ur
 aX
 nF
 ey
-vW
+vN
 GM
 Hl
 nF

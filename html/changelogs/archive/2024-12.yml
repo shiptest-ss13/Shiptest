@@ -123,3 +123,27 @@
   - bugfix: Decimal cargo prices
   - balance: Magazines now come completely empty. As a result of this, they have now
       been made cheaper.
+2024-12-23:
+  firebudgy:
+  - balance: SAW-80 is more expensive.
+2024-12-29:
+  Aquidu:
+  - rscadd: Added winter coats to the Harrier
+2024-12-30:
+  Erikafox:
+  - balance: burst fire hivebots now have more time between the shots in their bursts
+  Jedi-Toothpaste:
+  - rscadd: new secondary 'slug' mode for the scatter laser (and other scatter lasers
+      sub-types)
+  - rscadd: scatter laser to cargo, for you freaks who want to buy it
+  - rscdel: removed old secondary mode for scatter lasers (and scatter laser sub-types)
+  - balance: laser scatter mode now fires 10 pellets instead of 5
+  - balance: laser scatter pellets now do 5 damage instead of 3
+  - balance: laser scatter mode variance increased from 25 to 40
+  - balance: doubled laser scatter mode energy cost (6 shots with normal cell, 12
+      with upgraded)
+  MarkSuckerberg:
+  - bugfix: Jukeboxes should not leak across virtual Zs anymore
+  - bugfix: Candles can no longer be used like tiki torches
+  - tweak: Ore silos will now only drop materials when dissasembled or destroyed,
+      instead of any deletion

@@ -150,7 +150,7 @@
 	name = "Cable Coil"
 	id = "cable_coil"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10, /datum/material/glass = 5)
+	materials = list(/datum/material/copper = 10, /datum/material/carbon = 5)
 	build_path = /obj/item/stack/cable_coil/random //WS Edit - Smartwire Revert
 	category = list("initial","Tools","Tool Designs")
 	maxstack = MAXCOIL
@@ -221,6 +221,14 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
 	build_path = /obj/item/wallframe/light_switch
+	category = list("initial", "Misc")
+
+/datum/design/paper_roll
+	name = "Hand Labeler Paper Roll"
+	id = "handlabeler_refill"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 50)
+	build_path = /obj/item/hand_labeler_refill
 	category = list("initial", "Misc")
 
 /datum/design/camera
@@ -325,6 +333,15 @@
 	category = list("initial","Construction")
 	maxstack = 50
 
+/datum/design/refine_glass
+	name = "Refine Quartz into Glass"
+	id = "quartz2glass"
+	build_type = SMELTER
+	materials = list(/datum/material/quartz = ORE_MATERIAL_AMOUNT)
+	build_path = /obj/item/stack/sheet/glass
+	category = list("initial","Construction")
+	maxstack = 50
+
 /datum/design/rglass
 	name = "Reinforced Glass"
 	id = "rglass"
@@ -332,6 +349,16 @@
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/rglass
 	category = list("initial","Construction","Stock Parts")
+	maxstack = 50
+
+
+/datum/design/silicon
+	name = "Refine Quartz into Silicon (Quartz 1:2 Carbon)"
+	id = "silicon"
+	build_type = SMELTER
+	materials = list(/datum/material/quartz = ORE_MATERIAL_AMOUNT, /datum/material/carbon = ORE_MATERIAL_AMOUNT*2)
+	build_path = /obj/item/stack/sheet/mineral/silicon
+	category = list("initial","Construction")
 	maxstack = 50
 
 /datum/design/rods
@@ -457,6 +484,22 @@
 	build_path = /obj/item/reagent_containers/food/drinks/modglass/large
 	category = list("initial", "Dinnerware")
 
+/datum/design/glassbottle
+	name = "Glass Bottle"
+	id = "glass_bottle"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=2500)
+	build_path = /obj/item/reagent_containers/food/drinks/bottle
+	category = list("initial", "Dinnerware")
+
+/datum/design/glassbottle_small
+	name = "Small Glass Bottle"
+	id = "glass_bottle_small"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass=500)
+	build_path = /obj/item/reagent_containers/food/drinks/bottle/small
+	category = list("initial", "Dinnerware")
+
 /datum/design/shaker
 	name = "Shaker"
 	id = "shaker"
@@ -520,7 +563,7 @@
 	name = "Scalpel"
 	id = "scalpel"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000, /datum/material/glass = 1000)
+	materials = list(/datum/material/silver = 4000, /datum/material/glass = 1000)
 	build_path = /obj/item/scalpel
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -529,7 +572,7 @@
 	name = "Circular Saw"
 	id = "circular_saw"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 6000)
+	materials = list(/datum/material/iron = 5000, /datum/material/silver = 5000, /datum/material/glass = 6000)
 	build_path = /obj/item/circular_saw
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -538,7 +581,7 @@
 	name = "Surgical Drill"
 	id = "surgicaldrill"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 6000)
+	materials = list(/datum/material/iron = 5000, /datum/material/silver = 5000, /datum/material/glass = 6000)
 	build_path = /obj/item/surgicaldrill
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -547,7 +590,7 @@
 	name = "Retractor"
 	id = "retractor"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 6000, /datum/material/glass = 3000)
+	materials = list(/datum/material/silver = 6000, /datum/material/glass = 3000)
 	build_path = /obj/item/retractor
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -556,7 +599,7 @@
 	name = "Cautery"
 	id = "cautery"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2500, /datum/material/glass = 750)
+	materials = list(/datum/material/silver = 2500, /datum/material/glass = 750)
 	build_path = /obj/item/cautery
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -565,7 +608,7 @@
 	name = "Hemostat"
 	id = "hemostat"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 5000, /datum/material/glass = 2500)
+	materials = list(/datum/material/silver = 5000, /datum/material/glass = 2500)
 	build_path = /obj/item/hemostat
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -592,6 +635,22 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/plastic = 20, /datum/material/glass = 100)
 	build_path = /obj/item/storage/pill_bottle
+	category = list("initial", "Medical", "Medical Designs")
+
+/datum/design/hypospray_vial
+	name = "Hypospray Vial"
+	id = "vial"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 100, /datum/material/glass = 500)
+	build_path = /obj/item/reagent_containers/glass/bottle/vial/small
+	category = list("initial", "Medical", "Medical Designs")
+
+/datum/design/chemical_bottle
+	name = "Glass Bottle"
+	id = "bottle"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 300)
+	build_path = /obj/item/reagent_containers/glass/bottle
 	category = list("initial", "Medical", "Medical Designs")
 
 /datum/design/chem_jug
@@ -722,12 +781,12 @@
 	build_path = /obj/item/wallframe/newscaster
 	category = list("initial", "Construction")
 
-/datum/design/bounty_board_frame
+/datum/design/mission_board_frame
 	name = "Bounty Board Frame"
 	id = "bountyboard_frame"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 14000, /datum/material/glass = 8000)
-	build_path = /obj/item/wallframe/bounty_board
+	build_path = /obj/item/wallframe/mission_viewer
 	category = list("initial", "Construction")
 
 /datum/design/syringe
@@ -772,6 +831,14 @@
 	build_path = /obj/item/restraints/handcuffs
 	category = list("initial", "Security")
 
+/datum/design/evidencebag
+	name = "Evidence Bag"
+	id = "evidencebag"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 100)
+	build_path = /obj/item/evidencebag
+	category = list("initial", "Security")
+
 /datum/design/receiver
 	name = "Modular Receiver"
 	id = "receiver"
@@ -784,7 +851,7 @@
 	name = "Ammo Box (.38 surplus)"
 	id = "c38_surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
 	build_path = /obj/item/storage/box/ammo/c38_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -821,10 +888,10 @@
 	category = list("initial", "Security")
 
 /datum/design/c10mm_surplus
-	name = "Ammo Box (10mm surplus)"
+	name = "Ammo Box (10x22mm surplus)"
 	id = "c10mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
 	build_path = /obj/item/storage/box/ammo/c10mm_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -832,15 +899,15 @@
 	name = "Ammo Box (.45 surplus)"
 	id = "c45-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
 	build_path = /obj/item/storage/box/ammo/c45_surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/c9mm_surplus
-	name = "Ammo Box (9mm surplus)"
+	name = "Ammo Box (9x18mm surplus)"
 	id = "c9mm-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/copper = 8000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
 	build_path = /obj/item/storage/box/ammo/c9mm_surplus
 	category = list("initial", "Security", "Ammo")
 
@@ -848,8 +915,16 @@
 	name = "Ammo Box (surplus 5.56mm HITP caseless)"
 	id = "c556mmHITP-surplus"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
+	materials = list(/datum/material/iron = 10000, /datum/material/sulfur = 5000, /datum/material/lead = 2000)
 	build_path = /obj/item/storage/box/ammo/c556mm_surplus
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/buckshot_surplus
+	name = "surplus buckshot"
+	id = "buckshot-surplus"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 5000)
+	build_path = /obj/item/ammo_casing/shotgun/improvised
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/ammo_can
@@ -1126,7 +1201,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/zip_ammo_9mm
-	name = "Budget Pistol 9mm Magazine"
+	name = "Budget Pistol 9x18mm Magazine"
 	id = "ZipAmmo9mm"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 20000)
@@ -1145,7 +1220,7 @@
 	name = "8x50 Stripper Clip"
 	id = "IllestrenStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1153,7 +1228,7 @@
 	name = ".300 Scout Stripper Clip"
 	id = "ScoutStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a300/empty
 	category = list("initial", "Security", "Ammo")
 
@@ -1161,24 +1236,40 @@
 	name = "7.62 Stripper Clip"
 	id = "PolymerStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a762_stripper/empty
 	category = list("initial", "Security", "Ammo")
 
-/datum/design/vickland_a308clip
-	name = ".308 Stripper Clip"
+/datum/design/vickland_a8_50rclip
+	name = "8x50mmR Stripper Clip"
 	id = "VicklandStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
-	build_path = /obj/item/ammo_box/vickland_a308/empty
+	materials = list(/datum/material/iron = 1000)
+	build_path = /obj/item/ammo_box/vickland_a8_50r/empty
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/a858clip
 	name = "8x58 Stripper Clip"
 	id = "SSGStripClip"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/a858/empty
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase
+	name = "Guncase"
+	id = "guncase"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 1500)
+	build_path = /obj/item/storage/guncase
+	category = list("initial", "Security", "Ammo")
+
+/datum/design/guncase_pistol
+	name = "Pistol Guncase"
+	id = "guncase-pitol"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/plastic = 1500)
+	build_path = /obj/item/storage/guncase/pistol
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/control

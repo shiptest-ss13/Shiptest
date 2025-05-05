@@ -88,15 +88,6 @@
 	mask = /obj/item/clothing/mask/breath
 	gloves = /obj/item/clothing/gloves/color/plasmaman
 
-/datum/outfit/chrono_agent
-	name = "Timeline Eradication Agent"
-	uniform = /obj/item/clothing/under/color/white
-	suit = /obj/item/clothing/suit/space/chronos
-	back = /obj/item/chrono_eraser
-	head = /obj/item/clothing/head/helmet/space/chronos
-	mask = /obj/item/clothing/mask/breath
-	suit_store = /obj/item/tank/internals/oxygen
-
 /datum/outfit/debug //Debug objs plus hardsuit
 	name = "Debug outfit"
 	uniform = /obj/item/clothing/under/misc/patriotsuit
@@ -104,12 +95,12 @@
 	glasses = /obj/item/clothing/glasses/debug
 	ears = /obj/item/radio/headset/headset_cent/commander
 	mask = /obj/item/clothing/mask/gas/welding/up
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/combat/insul
 	belt = /obj/item/storage/belt/utility/chief/full
 	shoes = /obj/item/clothing/shoes/magboots/advance
 	id = /obj/item/card/id/debug
 	suit_store = /obj/item/tank/internals/oxygen
-	back = /obj/item/storage/backpack/holding
+	back = /obj/item/storage/backpack/holding/debug
 	box = /obj/item/storage/box/debugtools
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(

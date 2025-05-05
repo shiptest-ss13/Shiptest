@@ -45,6 +45,9 @@
 	icon_state = "skm_extended_mag-1"
 	max_ammo = 40
 
+/obj/item/ammo_box/magazine/skm_762_40/extended/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/skm_762_40/drum
 	name = "assault rifle drum (7.62x40mm CLIP)"
 	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
@@ -89,15 +92,6 @@
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
-/obj/item/ammo_box/magazine/e40
-	name = "E-40 magazine (.299 Eoehoma caseless)"
-	icon_state = "e40_mag-1"
-	base_icon_state = "e40_mag"
-	ammo_type = /obj/item/ammo_casing/caseless/c299
-	caliber = ".299 caseless"
-	max_ammo = 30
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-
 // 8x50mmR En Bloc Clip (Illestren Hunting Rifle)
 
 /obj/item/ammo_box/magazine/illestren_a850r //this is a magazine codewise do nothing breaks
@@ -109,6 +103,7 @@
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
+	custom_materials = list(/datum/material/iron = 500)
 
 /obj/item/ammo_box/magazine/illestren_a850r/empty
 	start_empty = TRUE

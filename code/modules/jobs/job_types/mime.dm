@@ -18,7 +18,6 @@
 	job_icon = "mime"
 	jobtype = /datum/job/mime
 
-	belt = /obj/item/pda/mime
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/mime
 	alt_uniform = /obj/item/clothing/under/rank/civilian/mime/sexy //WS Edit - Alt Uniforms
@@ -27,15 +26,12 @@
 	head = /obj/item/clothing/head/frenchberet
 	suit = /obj/item/clothing/suit/toggle/suspenders
 	backpack_contents = list(
-		/obj/item/stamp/mime = 1,
 		/obj/item/book/mimery = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing = 1
 		)
 
 	backpack = /obj/item/storage/backpack/mime
 	satchel = /obj/item/storage/backpack/mime
-
-	chameleon_extras = /obj/item/stamp/mime
 
 /datum/outfit/job/mime/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -81,5 +77,5 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/conjure/mime_chair(null))
 		if (href_list["invisible_box"])
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/conjure/mime_box(null))
-	to_chat(usr, "<span class='notice'>The book disappears into thin air.</span>")
+	to_chat(usr, span_notice("The book disappears into thin air."))
 	qdel(src)

@@ -26,6 +26,8 @@
 #define COMSIG_GLOB_BUTTON_PRESSED "!button_pressed"
 /// a client (re)connected, after all /client/New() checks have passed : (client/connected_client)
 #define COMSIG_GLOB_CLIENT_CONNECT "!client_connect"
+/// a person somewhere has thrown something : (mob/living/carbon/carbon_thrower, target)
+#define COMSIG_GLOB_CARBON_THROW_THING "!throw_thing"
 
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
@@ -74,6 +76,8 @@
 #define COMSIG_ATOM_HULK_ATTACK "hulk_attack"
 ///from base of atom/animal_attack(): (/mob/user)
 #define COMSIG_ATOM_ATTACK_ANIMAL "attack_animal"
+//from base of atom/attack_basic_mob(): (/mob/user)
+#define COMSIG_ATOM_ATTACK_BASIC_MOB "attack_basic_mob"
 ///from base of atom/examine(): (/mob)
 #define COMSIG_PARENT_EXAMINE "atom_examine"
 ///from base of atom/get_examine_name(): (/mob, list/overrides)
@@ -199,21 +203,11 @@
 #define COMSIG_ATOM_ORBIT_BEGIN "atom_orbit_begin"
 ///called when an atom stops orbiting another atom: (atom)
 #define COMSIG_ATOM_ORBIT_STOP "atom_orbit_stop"
-/* Attack signals. They should share the returned flags, to standardize the attack chain. */
-/// tool_act -> pre_attack -> target.attackby (item.attack) -> afterattack
-	///Ends the attack chain. If sent early might cause posterior attacks not to happen.
-	#define COMPONENT_CANCEL_ATTACK_CHAIN (1<<0)
-	///Skips the specific attack step, continuing for the next one to happen.
-	#define COMPONENT_SKIP_ATTACK (1<<1)
-///from base of atom/attack_ghost(): (mob/dead/observer/ghost)
-#define COMSIG_ATOM_ATTACK_GHOST "atom_attack_ghost"
-///from base of atom/attack_hand(): (mob/user)
-#define COMSIG_ATOM_ATTACK_HAND "atom_attack_hand"
-///from base of atom/attack_paw(): (mob/user)
-#define COMSIG_ATOM_ATTACK_PAW "atom_attack_paw"
-	#define COMPONENT_NO_ATTACK_HAND (1<<0) //works on all 3.
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
+
+///from base of atom/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+#define COMSIG_ATOM_HITBY "atom_hitby"
 
 /// from base of /atom/movable/proc/on_virtual_z_change():  (new_virtual_z, old_virtual_z)
 #define COMSIG_ATOM_VIRTUAL_Z_CHANGE "atom_virtual_z_change"
@@ -261,10 +255,17 @@
 #define COMSIG_CLICK_CTRL "ctrl_click"
 //from base of atom/AltClick(): (/mob)
 #define COMSIG_CLICK_ALT "alt_click"
+	#define COMPONENT_CANCEL_CLICK_ALT (1<<0)
 //from base of atom/CtrlShiftClick(/mob)
 #define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"
 ///from base of atom/CtrlShiftRightClick(/mob)
 #define COMSIG_CLICK_CTRL_SHIFT_RIGHT "ctrl_shift_right_click"
+/// from mob/ver/do_unique_action
+#define COMSIG_CLICK_UNIQUE_ACTION "unique_action"
+	#define OVERRIDE_UNIQUE_ACTION 1
+/// from mob/ver/do_unique_action
+#define COMSIG_CLICK_SECONDARY_ACTION "secondary_action"
+	#define OVERRIDE_SECONDARY_ACTION 1
 //from base of atom/MouseDrop(): (/atom/over, /mob/user)
 #define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"
 	#define COMPONENT_NO_MOUSEDROP 1
@@ -290,6 +291,16 @@
 #define COMSIG_TURF_MULTIZ_NEW "turf_multiz_new"
 //! from base of turf/proc/afterShuttleMove: (turf/new_turf)
 #define COMSIG_TURF_AFTER_SHUTTLE_MOVE "turf_after_shuttle_move"
+
+///From /datum/hotspot/perform_exposure()
+#define COMSIG_TURF_HOTSPOT_EXPOSE "turf_hotspot_expose"
+///From /turf/ignite_turf(): (power, fire_color)
+#define COMSIG_TURF_IGNITED "turf_ignited"
+	///Prevents hotspots and turf fires
+	#define SUPPRESS_FIRE (1<<0)
+///From /obj/item/open_flame(): (flame_heat)
+#define COMSIG_TURF_OPEN_FLAME "open_flame"
+	#define BLOCK_TURF_IGNITION (1<<0)
 
 // /atom/movable signals
 
@@ -317,6 +328,8 @@
 	#define COMPONENT_CANCEL_THROW (1<<0)
 ///from base of atom/movable/throw_at(): (datum/thrownthing, spin)
 #define COMSIG_MOVABLE_POST_THROW "movable_post_throw"
+///from base of datum/thrownthing/finalize(): (obj/thrown_object, datum/thrownthing) used for when a throw is finished
+#define COMSIG_MOVABLE_THROW_LANDED "movable_throw_landed"
 ///from base of atom/movable/onTransitZ(): (old_z, new_z)
 #define COMSIG_MOVABLE_Z_CHANGED "movable_ztransit"
 ///called when the movable is placed in an unaccessible area, used for shiploving: ()
@@ -357,6 +370,31 @@
 #define COMSIG_MOVABLE_DRIFT_BLOCK_INPUT "movable_drift_block_input"
 	#define DRIFT_ALLOW_INPUT (1<<0)
 
+/// Sent from /obj/item/radio/talk_into(): (obj/item/radio/used_radio)
+#define COMSIG_MOVABLE_USING_RADIO "movable_radio"
+	/// Return to prevent the movable from talking into the radio.
+	#define COMPONENT_CANNOT_USE_RADIO (1<<0)
+
+/// Sent from /atom/movable/proc/say_quote() after say verb is chosen and before spans are applied.
+#define COMSIG_MOVABLE_SAY_QUOTE "movable_say_quote"
+	// Used to access COMSIG_MOVABLE_SAY_QUOTE argslist
+	/// The index of args that corresponds to the actual message
+	#define MOVABLE_SAY_QUOTE_MESSAGE 1
+	#define MOVABLE_SAY_QUOTE_MESSAGE_SPANS 2
+	#define MOVABLE_SAY_QUOTE_MESSAGE_MODS 3
+/// Sent from /atom/movable/proc/lang_treat() before it runs.
+#define COMSIG_MOVABLE_TREAT_MESSAGE "movable_treat_message"
+	// Used to access COMSIG_MOVABLE_TREAT_MESSAGE argslist
+	/// The index of args that corresponds to the mob speaking
+	#define MOVABLE_TREAT_MESSAGE_SPEAKER 1
+	/// The index of args that corresponds to the spoken language
+	#define MOVABLE_TREAT_MESSAGE_LANGUAGE 2
+	/// The index of args that corresponds to the actual message
+	#define MOVABLE_TREAT_MESSAGE_MESSAGE 3
+	#define MOVABLE_TREAT_MESSAGE_SPANS 4
+	#define MOVABLE_TREAT_MESSAGE_MODS 5
+	#define MOVABLE_TREAT_MESSAGE_NOQUOTE 6
+
 ///signal sent out by an atom when it checks if it can be pulled, for additional checks
 #define COMSIG_ATOM_CAN_BE_PULLED "movable_can_be_pulled"
 	#define COMSIG_ATOM_CANT_PULL (1 << 0)
@@ -378,6 +416,10 @@
 #define COMSIG_LIVING_TRY_PUT_IN_HAND "living_try_put_in_hand"
 	/// Can't pick up
 	#define COMPONENT_LIVING_CANT_PUT_IN_HAND (1<<0)
+
+///Basic mob signals
+///Called on /basic when updating its speed, from base of /mob/living/basic/update_basic_mob_varspeed(): ()
+#define POST_BASIC_MOB_UPDATE_VARSPEED "post_basic_mob_update_varspeed"
 
 // /mob signals
 
@@ -414,6 +456,8 @@
 ///from base of /obj/item/attack(): (mob/M, mob/user)
 #define COMSIG_MOB_ITEM_ATTACK "mob_item_attack"
 	#define COMPONENT_ITEM_NO_ATTACK (1<<0)
+///from base of /obj/item/attack(): (mob/living, mob/living, params)
+#define COMSIG_ITEM_POST_ATTACK "item_post_attack" // called only if the attack was executed
 ///from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
 #define COMSIG_MOB_APPLY_DAMGE "mob_apply_damage"
 ///from base of obj/item/afterattack(): (atom/target, mob/user, proximity_flag, click_parameters)
@@ -422,6 +466,8 @@
 #define COMSIG_MOB_ITEM_ATTACK_QDELETED "mob_item_attack_qdeleted"
 ///from base of mob/RangedAttack(): (atom/A, params)
 #define COMSIG_MOB_ATTACK_RANGED "mob_attack_ranged"
+///From base of mob/update_movespeed():area
+#define COMSIG_MOB_MOVESPEED_UPDATED "mob_update_movespeed"
 ///from base of /mob/throw_item(): (atom/target)
 #define COMSIG_MOB_THROW "mob_throw"
 ///from base of /mob/verb/examinate(): (atom/target)
@@ -452,9 +498,14 @@
 	#define MOB_DEADSAY_SIGNAL_INTERCEPT (1<<0)
 ///from /mob/living/emote(): ()
 #define COMSIG_MOB_EMOTE "mob_emote"
-///from base of mob/swap_hand(): (obj/item)
-#define COMSIG_MOB_SWAP_HANDS "mob_swap_hands"
+///from base of mob/swap_hand(): (obj/item/currently_held_item)
+#define COMSIG_MOB_SWAPPING_HANDS "mob_swapping_hands"
 	#define COMPONENT_BLOCK_SWAP (1<<0)
+/// from base of mob/swap_hand(): ()
+/// Performed after the hands are swapped.
+#define COMSIG_MOB_SWAP_HANDS "mob_swap_hands"
+///from base of /obj/item/pickup: (obj/item/item)
+#define COMSIG_MOB_PICKUP_ITEM "mob_pickup_item"
 ///from base of /mob/verb/pointed: (atom/A)
 #define COMSIG_MOB_POINTED "mob_pointed"
 /// from mob/get_status_tab_items(): (list/items)
@@ -484,6 +535,8 @@
 #define COMSIG_LIVING_DROP_LIMB "living_drop_limb"
 ///from base of mob/living/set_buckled(): (new_buckled)
 #define COMSIG_LIVING_SET_BUCKLED "living_set_buckled"
+///From post-can inject check of syringe after attack (mob/user)
+#define COMSIG_LIVING_TRY_SYRINGE "living_try_syringe"
 
 ///sent from borg recharge stations: (amount, repairs)
 #define COMSIG_PROCESS_BORGCHARGER_OCCUPANT "living_charge"
@@ -518,6 +571,20 @@
 ///from base of /mob/living/can_track(): (mob/user)
 #define COMSIG_LIVING_CAN_TRACK "mob_cantrack"
 	#define COMPONENT_CANT_TRACK (1<<0)
+/// from start of /mob/living/handle_breathing(): (seconds_per_tick, times_fired)
+#define COMSIG_LIVING_HANDLE_BREATHING "living_handle_breathing"
+
+/// From mob/living/try_speak(): (message, ignore_spam, forced)
+#define COMSIG_LIVING_TRY_SPEECH "living_vocal_speech"
+	/// Return if the mob can speak the message, regardless of any other signal returns or checks.
+	#define COMPONENT_CAN_ALWAYS_SPEAK (1<<0)
+	/// Return if the mob cannot speak.
+	#define COMPONENT_CANNOT_SPEAK (1<<1)
+
+/// From mob/living/treat_message(): (list/message_args)
+#define COMSIG_LIVING_TREAT_MESSAGE "living_treat_message"
+	/// The index of message_args that corresponds to the actual message
+	#define TREAT_MESSAGE_MESSAGE 1
 
 ///From /datum/component/creamed/Initialize()
 #define COMSIG_MOB_CREAMED "mob_creamed"
@@ -550,11 +617,6 @@
 ///called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"
 
-// /mob/living/simple_animal/hostile signals
-#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
-	#define COMPONENT_HOSTILE_NO_ATTACK 1
-
-
 /// Admin helps
 /// From /datum/admin_help/RemoveActive().
 /// Fired when an adminhelp is made inactive either due to closing or resolving.
@@ -571,6 +633,7 @@
 
 // /obj/item/radio signals
 #define COMSIG_RADIO_NEW_FREQUENCY "radio_new_frequency" //called from base of /obj/item/radio/proc/set_frequency(): (list/args)
+#define COMSIG_RADIO_NEW_MESSAGE "radio_new_message" ///called from base of /obj/item/radio/proc/talk_into(): (atom/movable/M, message, channel)
 
 // /obj/item/pen signals
 #define COMSIG_PEN_ROTATED "pen_rotated" //called after rotation in /obj/item/pen/attack_self(): (rotation, mob/living/carbon/user)
@@ -672,17 +735,13 @@
 #define COMSIG_ACTION_TRIGGER "action_trigger" //from base of datum/action/proc/Trigger(): (datum/action)
 	#define COMPONENT_ACTION_BLOCK_TRIGGER 1
 
-// /datum/overmap signals
-/// From overmap Move(): (old_x, old_y)
-#define COMSIG_OVERMAP_MOVED "overmap_moved"
-/// From overmap Dock(): (datum/overmap)
-#define COMSIG_OVERMAP_DOCK "overmap_dock"
-/// From overmap Undock(): (datum/overmap)
-#define COMSIG_OVERMAP_UNDOCK "overmap_undock"
-
 // /datum/component/spawner signals
-// Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
+// Called by parent when pausing spawning, returns bool: (datum/source, currently_spawning)
 #define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
+
+// Drill signals
+// Called when a mission drill finishes sampling
+#define COMSIG_DRILL_SAMPLES_DONE "drill_done"
 
 ///Beam Signals
 /// Called before beam is redrawn
@@ -708,10 +767,18 @@
 /// generally called before temporary non-parallel animate()s on the atom (animation_duration)
 #define COMSIG_ATOM_TEMPORARY_ANIMATION_START "atom_temp_animate_start"
 
-/// send when enabling/diabling an autofire component
+/// send when enabling/diabling an autofire component for guns
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
 #define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
+
+/// send when enabling/diabling an autofire component for mechs
+#define COMSIG_MECH_DISABLE_AUTOFIRE "disable_mech_autofire"
+#define COMSIG_MECH_ENABLE_AUTOFIRE "enable_mech_autofire"
+#define COMSIG_MECH_SET_AUTOFIRE_SPEED "set_mech_autofire_speed"
+
+#define COMSIG_MECH_ENTERED "mech_entered"
+#define COMSIG_MECH_EXITED "mech_exited"
 
 ///sent when guns need to notify the gun hud to update. mostly for revolvers.
 #define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
@@ -725,12 +792,16 @@
 ///sent when the access on an id is changed/updated, ensures wallets get updated once ids generate there access
 #define COSMIG_ACCESS_UPDATED "acces_updated"
 
+///sent by carbons to check if they can reflect a projectile
+#define COMSIG_CHECK_REFLECT "check_reflect"
 // Point of interest signals
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_added : (atom/new_poi)
 #define COMSIG_ADDED_POINT_OF_INTEREST "added_point_of_interest"
 /// Sent from base of /datum/controller/subsystem/points_of_interest/proc/on_poi_element_removed : (atom/old_poi)
 #define COMSIG_REMOVED_POINT_OF_INTEREST "removed_point_of_interest"
 
+///Send from overmap areas to their turfs when they need to update their light, might be useful for events?: (light_range, light_power, light_color)
+#define COMSIG_OVERMAPTURF_UPDATE_LIGHT "overmapturf_update_light"
 // Power signals
 /// Sent when an obj/item calls item_use_power: (use_amount, user, check_only)
 #define COMSIG_ITEM_POWER_USE "item_use_power"

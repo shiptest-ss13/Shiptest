@@ -9,10 +9,10 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = "<span class='info'>Your ears begin to resonate with an internal ring sometimes.</span>"
-	now_failing = "<span class='warning'>You are unable to hear at all!</span>"
-	now_fixed = "<span class='info'>Noise slowly begins filling your ears once more.</span>"
-	low_threshold_cleared = "<span class='info'>The ringing in your ears has died down.</span>"
+	low_threshold_passed = span_info("Your ears begin to resonate with an internal ring sometimes.")
+	now_failing = span_warning("You are unable to hear at all!")
+	now_fixed = span_info("Noise slowly begins filling your ears once more.")
+	low_threshold_cleared = span_info("The ringing in your ears has died down.")
 
 	// `deaf` measures "ticks" of deafness. While > 0, the person is unable
 	// to hear anything.
@@ -42,7 +42,7 @@
 		if(prob(damage / 30) && (damage > low_threshold))
 			adjustEarDamage(0, 4)
 			SEND_SOUND(C, sound('sound/weapons/flash_ring.ogg'))
-			to_chat(C, "<span class='warning'>The ringing in your ears grows louder, blocking out any external noises for a moment.</span>")
+			to_chat(C, span_warning("The ringing in your ears grows louder, blocking out any external noises for a moment."))
 	else if((organ_flags & ORGAN_FAILING) && (deaf == 0))
 		deaf = 1	//stop being not deaf you deaf idiot
 
@@ -93,7 +93,6 @@
 	name = "cat ears"
 	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "kitty"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/cat/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -118,13 +117,13 @@
 /obj/item/organ/ears/penguin/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	. = ..()
 	if(istype(ear_owner))
-		to_chat(ear_owner, "<span class='notice'>You suddenly feel like you've lost your balance.</span>")
+		to_chat(ear_owner, span_notice("You suddenly feel like you've lost your balance."))
 		ear_owner.AddElement(/datum/element/waddling)
 
 /obj/item/organ/ears/penguin/Remove(mob/living/carbon/human/ear_owner,  special = 0)
 	. = ..()
 	if(istype(ear_owner))
-		to_chat(ear_owner, "<span class='notice'>Your sense of balance comes back to you.</span>")
+		to_chat(ear_owner, span_notice("Your sense of balance comes back to you."))
 		ear_owner.RemoveElement(/datum/element/waddling)
 
 /obj/item/organ/ears/cat/slime //Not adding insert code since only slimepeople should ever get this through change_form()
@@ -152,7 +151,6 @@
 
 /obj/item/organ/ears/fox
 	name = "fox ears"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/fox/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -172,7 +170,6 @@
 
 /obj/item/organ/ears/rabbit
 	name = "rabbit ears"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/rabbit/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -224,7 +221,6 @@
 
 /obj/item/organ/ears/dog
 	name = "dog ears"
-	damage_multiplier = 2
 
 /obj/item/organ/ears/dog/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -244,7 +240,6 @@
 
 /obj/item/organ/ears/elf
 	name = "elf ears"
-	damage_multiplier = 1.5
 
 /obj/item/organ/ears/elf/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
 	..()
@@ -295,13 +290,13 @@
 /obj/item/organ/ears/robot/emp_act(severity)
 	switch(severity)
 		if(1)
-			owner.Jitter(30)
+			owner.adjust_jitter(30)
 			owner.Dizzy(30)
 			owner.Knockdown(200)
 			deaf = 30
-			to_chat(owner, "<span class='warning'>Your robotic ears are ringing, uselessly.</span>")
+			to_chat(owner, span_warning("Your robotic ears are ringing, uselessly."))
 		if(2)
-			owner.Jitter(15)
+			owner.adjust_jitter(15)
 			owner.Dizzy(15)
 			owner.Knockdown(100)
-			to_chat(owner, "<span class='warning'>Your robotic ears buzz.</span>")
+			to_chat(owner, span_warning("Your robotic ears buzz."))

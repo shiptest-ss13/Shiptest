@@ -33,7 +33,7 @@
 	if(can_interact(user))
 		transfer_rate = MAX_TRANSFER_RATE
 		investigate_log("was set to [transfer_rate] L/s by [key_name(user)]", INVESTIGATE_ATMOS)
-		to_chat(user, "<span class='notice'>You maximize the volume output on [src] to [transfer_rate] L/s.</span>")
+		to_chat(user, span_notice("You maximize the volume output on [src] to [transfer_rate] L/s."))
 		update_appearance()
 	return ..()
 
@@ -59,7 +59,7 @@
 	var/on_state = on && nodes[1] && nodes[2] && nodes[3] && is_operational
 	icon_state = "filter_[on_state ? "on" : "off"]-[set_overlay_offset(piping_layer)][flipped ? "_f" : ""]"
 
-/obj/machinery/atmospherics/components/trinary/filter/process_atmos()
+/obj/machinery/atmospherics/components/trinary/filter/process_atmos(seconds_per_tick)
 	..()
 	if(!on || !(nodes[1] && nodes[2] && nodes[3]) || !is_operational)
 		return
@@ -78,7 +78,7 @@
 		//No need to transfer if target is already full!
 		return
 
-	var/transfer_ratio = transfer_rate/air1.return_volume()
+	var/transfer_ratio = (transfer_rate * seconds_per_tick) / air1.return_volume()
 
 	//Actually transfer the gas
 
@@ -153,7 +153,7 @@
 /obj/machinery/atmospherics/components/trinary/filter/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational)
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
 		return FALSE
 
 // mapping
@@ -216,6 +216,9 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/plasma
 	name = "plasma filter"
 	filter_type = "plasma"
+/obj/machinery/atmospherics/components/trinary/filter/atmos/hydrogen
+	name = "hydrogen filter"
+	filter_type = "h2"
 
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped //This feels wrong, I know
 	icon_state = "filter_on-0_f"
@@ -235,6 +238,9 @@
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/plasma
 	name = "plasma filter"
 	filter_type = "plasma"
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/hydrogen
+	name = "hydrogen filter"
+	filter_type = "h2"
 
 // These two filter types have critical_machine flagged to on and thus causes the area they are in to be exempt from the Grid Check event.
 

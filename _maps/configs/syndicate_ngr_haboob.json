@@ -1,0 +1,50 @@
+{
+	"faction": "/datum/faction/syndicate/ngr",
+	"prefix": "NGRV",
+	"manufacturer": "Hardline Salvage and Mining",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Haboob-class Patrol Boat",
+	"map_short_name": "Haboob-class",
+	"description": "The Haboob-class is a Post ICW Ship commissioned by the NGR, made to patrol the fringes of NGR claimed space. Due to its quick response time and moderate armory, it has become relatively renowned for being able to pursue pirates and other nefarious ilk out of NGR territory near-flawlessly.",
+	"tags": [
+		"RP Focus",
+		"Combat"
+	],
+	"map_path": "_maps/shuttles/syndicate/syndicate_ngr_haboob.dmm",
+	"map_id": "syndicate_gorlex_haboob",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/ngr",
+			"officer": true,
+			"slots": 1
+		},
+		"Lieutenant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/ngr",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/ngr",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/ngr",
+			"slots":1
+		},
+		"Operative": {
+			"outfit": "/datum/outfit/job/syndicate/security/ngr",
+			"slots": 1
+		},
+		"Initiate": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/ngr",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

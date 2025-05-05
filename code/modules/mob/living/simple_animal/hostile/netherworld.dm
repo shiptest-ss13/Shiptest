@@ -70,10 +70,10 @@
 		return
 	var/turf/T = get_turf(N)
 	if (N.can_be_seen(T) || !do_after(N, 60, target = T))
-		to_chat(N, "<span class='warning'>You can't phase in or out while being observed and you must stay still!</span>")
+		to_chat(N, span_warning("You can't phase in or out while being observed and you must stay still!"))
 		return
 	if (get_dist(N, T) != 0 || N.can_be_seen(T))
-		to_chat(N, "<span class='warning'>Action cancelled, as you moved while reappearing or someone is now viewing your location.</span>")
+		to_chat(N, span_warning("Action cancelled, as you moved while reappearing or someone is now viewing your location."))
 		return
 	if(N.is_phased)
 		holder = N.loc
@@ -126,6 +126,7 @@
 	deathmessage = "wails as its form turns into a pulpy mush."
 	deathsound = 'sound/voice/hiss6.ogg'
 	phaser = FALSE
+	var/sound_prob = 1
 
 /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 	faction = list("mining")
@@ -147,7 +148,7 @@
 	..()
 	if(stat)
 		return
-	if(prob(10))
+	if(prob(sound_prob))
 		var/chosen_sound = pick(migo_sounds)
 		playsound(src, chosen_sound, 50, TRUE)
 

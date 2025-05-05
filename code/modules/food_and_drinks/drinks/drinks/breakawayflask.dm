@@ -72,3 +72,13 @@
 	name = "Vintage Hearthflame"
 	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/hearth_wine = 45, /datum/reagent/consumable/ethanol/hcider = 5)
 	desc = "Hearthflame is one of the most important tonics devised by the SRM – both for its potent abilities in staunching wounds or setting enemies aflame, and for its closeness to the divine fire associated with the Ashen Huntsman."
+
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine
+	name = "Vintage Saint-Roumain Forcewine"
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/force_wine = 45, /datum/reagent/consumable/ethanol/tequila = 5)
+	desc = "Forcewine was originally created as a means to create temporary shelters during long tracking expeditions. While the structures proved to be not as versatile in shape as its brewers had hoped, its utility in creating barricades or heming in hostiles was still greatly appreciated."
+
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
+	name = "Vintage Saint-Roumain Prismwine"
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/prism_wine = 45, /datum/reagent/consumable/ethanol/gin = 5)
+	desc = "Prismwine is one of the most recent additions to the Saint-Roumain Militia's reserve of trickwines. It was purpose-created for fighting hostiles that utilized more advanced energy projection attacks, such as the cryonic beams of watchers or the laser guns of interstellar pirates."

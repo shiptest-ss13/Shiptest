@@ -138,7 +138,7 @@
 			new /obj/item/chameleon(src) // 7 tc
 
 		if("darklord")
-			new /obj/item/dualsaber(src)
+			new /obj/item/melee/duelenergy/saber(src)
 			new /obj/item/dnainjector/telemut/darkbundle(src)
 			new /obj/item/card/id/syndicate(src)
 			new /obj/item/clothing/shoes/chameleon/noslip(src) //because slipping while being a dark lord sucks
@@ -182,7 +182,7 @@
 
 		if("made_man")
 			new /obj/effect/spawner/random/clothing/mafia_outfit(src) // 0 TC, just an outfit for the new 'don of this family
-			new /obj/item/gun/ballistic/automatic/smg/firestorm/pan(src) // 20 TC, a gun with 50 .45 bullets on a three round burst is kinda outstanding
+			new /obj/item/gun/ballistic/automatic/smg/firestorm/pan(src) // 20 TC, a gun with 40 .44 bullets on a three round burst is kinda outstanding
 			new /obj/item/melee/knife/switchblade(src) // 3 TC? It's nice, but it's really a stealth/oh fuck I'm out of ammo weapon
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src) // 5 TC, free molotov assemblies
 			new /obj/item/reagent_containers/food/drinks/bottle/vodka (src)

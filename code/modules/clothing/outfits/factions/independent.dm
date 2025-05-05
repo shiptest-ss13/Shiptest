@@ -13,6 +13,7 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
+	uniform = /obj/item/clothing/under/color/black
 	shoes = /obj/item/clothing/shoes/sneakers/black
 
 /datum/outfit/job/independent/assistant/waiter
@@ -26,6 +27,11 @@
 	l_pocket = /obj/item/lighter
 	r_pocket = /obj/item/reagent_containers/glass/rag
 
+/datum/outfit/job/independent/assistant/cheap //for Miskilamo ships
+	name = "Independent - Assistant (Low Budget)"
+
+	uniform = /obj/item/clothing/under/utility
+
 /datum/outfit/job/independent/assistant/waiter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -33,12 +39,12 @@
 	var/obj/item/card/id/W = H.get_idcard()
 	W.access += list(ACCESS_KITCHEN)
 
-/datum/outfit/job/independent/assistant/fancy
-	name = "Independent - Assistant (Formal Uniform)"
+/datum/outfit/job/independent/assistant/fancy //for ISF ships
+	name = "Independent - Assistant (Fancy)"
 
 	shoes = /obj/item/clothing/shoes/laceup
-	uniform = /obj/item/clothing/under/misc/assistantformal
-	head = /obj/item/clothing/head/beret/grey
+	uniform = /obj/item/clothing/under/suit/charcoal
+	accessory = /obj/item/clothing/accessory/waistcoat
 
 /datum/outfit/job/independent/assistant/pirate
 	name = "Independent - Assistant (Pirate)"
@@ -170,8 +176,9 @@
 
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/white
-	uniform = /obj/item/clothing/under/suit/black_really
-	alt_uniform = /obj/item/clothing/under/suit/blacktwopiece
+	uniform = /obj/item/clothing/under/rank/security/detective/grey
+	suit = /obj/item/clothing/suit/toggle/lawyer/charcoal
+	neck = /obj/item/clothing/neck/tie/black
 	dcoat = null
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = null
@@ -198,7 +205,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
+	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
 
 /datum/outfit/job/independent/hop/western
 	name = "Independent - Head of Personnel (Western)"
@@ -676,6 +683,9 @@
 
 /datum/outfit/job/independent/bartender
 	name = "Independent - Bartender"
+	job_icon = "bartender"
+	jobtype = /datum/job/bartender
+
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	ears = /obj/item/radio/headset/headset_srv
@@ -719,8 +729,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/storage/briefcase/lawyer
 	l_pocket = /obj/item/clothing/accessory/lawyers_badge
-
-	chameleon_extras = /obj/item/stamp/law
 
 // Curator
 
@@ -771,14 +779,11 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
 	backpack_contents = list(
-		/obj/item/stamp/chap = 1,
 		/obj/item/camera/spooky = 1
 		)
 
 	backpack = /obj/item/storage/backpack/cultpack
 	satchel = /obj/item/storage/backpack/cultpack
-
-	chameleon_extras = /obj/item/stamp/chap
 
 // Chemist
 

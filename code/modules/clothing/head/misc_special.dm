@@ -30,6 +30,13 @@
 	resistance_flags = FIRE_PROOF
 	clothing_flags = SNUG_FIT
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
 /obj/item/clothing/head/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
 
@@ -53,12 +60,12 @@
 		src.icon_state = "ushankaup"
 		src.item_state = "ushankaup"
 		earflaps = 0
-		to_chat(user, "<span class='notice'>You raise the ear flaps on the trapper.</span>")
+		to_chat(user, span_notice("You raise the ear flaps on the trapper."))
 	else
 		src.icon_state = "ushankadown"
 		src.item_state = "ushankadown"
 		earflaps = 1
-		to_chat(user, "<span class='notice'>You lower the ear flaps on the trapper.</span>")
+		to_chat(user, span_notice("You lower the ear flaps on the trapper."))
 
 /*
  * Pumpkin head
@@ -171,7 +178,7 @@
 		return
 	if(new_style && new_style != hairstyle)
 		hairstyle = new_style
-		user.visible_message("<span class='notice'>[user] changes \the [src]'s hairstyle to [new_style].</span>", "<span class='notice'>You change \the [src]'s hairstyle to [new_style].</span>")
+		user.visible_message(span_notice("[user] changes \the [src]'s hairstyle to [new_style]."), span_notice("You change \the [src]'s hairstyle to [new_style]."))
 	if(newcolor && newcolor != color) // only update if necessary
 		add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	update_appearance()
@@ -179,7 +186,7 @@
 /obj/item/clothing/head/wig/afterattack(mob/living/carbon/human/target, mob/user)
 	. = ..()
 	if (istype(target) && (HAIR in target.dna.species.species_traits) && target.hairstyle != "Bald")
-		to_chat(user, "<span class='notice'>You adjust the [src] to look just like [target.name]'s [target.hairstyle].</span>")
+		to_chat(user, span_notice("You adjust the [src] to look just like [target.name]'s [target.hairstyle]."))
 		add_atom_colour("#[target.hair_color]", FIXED_COLOUR_PRIORITY)
 		hairstyle = target.hairstyle
 		update_appearance()

@@ -47,13 +47,13 @@
 /obj/machinery/turretid/proc/late_connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	SIGNAL_HANDLER
 
-	for(var/datum/weakref/ship_gun in port.turret_list)
+	for(var/datum/weakref/ship_gun as anything in port.turret_list)
 		var/obj/machinery/porta_turret/turret_gun = ship_gun.resolve()
 		//skip if it doesn't exist or if the id doesn't match
 		if(turret_gun?.id != id)
 			continue
 
-		turret_refs |= ship_gun
+		turret_refs += ship_gun
 
 	update_turrets()
 	UnregisterSignal(port, COMSIG_SHIP_DONE_CONNECTING)
@@ -77,7 +77,7 @@
 		var/obj/item/multitool/M = I
 		if(M.buffer && istype(M.buffer, /obj/machinery/porta_turret))
 			turret_refs |= WEAKREF(M.buffer)
-			to_chat(user, "<span class='notice'>You link \the [M.buffer] with \the [src].</span>")
+			to_chat(user, span_notice("You link \the [M.buffer] with \the [src]."))
 			return
 
 	if(issilicon(user))
@@ -134,7 +134,7 @@
 
 /obj/machinery/turretid/ui_act(action, list/params)
 	. = ..()
-	if(.)
+	if(. || locked)
 		return
 
 	switch(action)

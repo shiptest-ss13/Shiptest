@@ -42,6 +42,13 @@
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
 /obj/item/clothing/head/snowman
 	name = "Snowman Head"
 	desc = "A ball of white styrofoam. So festive."
@@ -59,26 +66,6 @@
 	icon_state = "pirate"
 	item_state = "pirate"
 	dog_fashion = /datum/dog_fashion/head/pirate
-
-/obj/item/clothing/head/pirate
-	var/datum/language/piratespeak/L = new
-
-/obj/item/clothing/head/pirate/equipped(mob/user, slot)
-	. = ..()
-	if(!ishuman(user))
-		return
-	if(slot == ITEM_SLOT_HEAD)
-		user.grant_language(/datum/language/piratespeak/, TRUE, TRUE, LANGUAGE_HAT)
-		to_chat(user, "<span class='boldnotice'>You suddenly know how to speak like a pirate!</span>")
-
-/obj/item/clothing/head/pirate/dropped(mob/user)
-	. = ..()
-	if(!ishuman(user))
-		return
-	var/mob/living/carbon/human/H = user
-	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src && !QDELETED(src)) //This can be called as a part of destroy
-		user.remove_language(/datum/language/piratespeak/, TRUE, TRUE, LANGUAGE_HAT)
-		to_chat(user, "<span class='boldnotice'>You can no longer speak like a pirate.</span>")
 
 /obj/item/clothing/head/pirate/captain
 	name = "pirate captain hat"
@@ -116,22 +103,10 @@
 	icon_state = "fedora_beige"
 	item_state = "fedora_beige"
 
-/obj/item/clothing/head/fedora/solgov
-	name = "solarian hat"
-	icon_state = "hat_solgov"
-	item_state = "hat_solgov"
-	desc = "A slick blue hat used by both solarian civilians and physicists."
-
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
 	desc = "A working man's hat."
 	icon_state = "flat_cap"
-	item_state = "detective"
-
-/obj/item/clothing/head/flatcap/solgov
-	name = "solarian flat cap"
-	desc = "A working solarian's hat, commonly used by Logistics Deck Officers."
-	icon_state = "flatcap_solgov"
 	item_state = "detective"
 
 /obj/item/clothing/head/hunter
@@ -226,17 +201,11 @@
 	icon_state = "intern_hat"
 	item_state = "intern_hat"
 
-/obj/item/clothing/head/inteq_peaked
-	name = "inteq peaked cap"
-	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."
-	icon_state = "inteq_peaked"
-	item_state = "inteq_peaked"
-	flags_inv = 0
-
 /obj/item/clothing/head/maidheadband
 	name = "maid headband"
 	desc = "Just like from one of those chinese cartoons!"
 	icon_state = "maid_headband"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/cowboy
 	name = "cowboy hat"
@@ -247,12 +216,7 @@
 
 /obj/item/clothing/head/franks_hat
 	name = "Frank's hat"
-	desc = "You feel ashamed about what you had to do to get this hat"
+	desc = "You feel ashamed about what you had to do to get this hat."
 	icon_state = "cowboy"
 	item_state = "cowboy"
-
-/obj/item/clothing/head/solgov_surgery
-	name = "SolGov surgery cap"
-	desc = "It's a surgery cap utilized by solarian doctors."
-	icon_state = "solgov_surgery"
 

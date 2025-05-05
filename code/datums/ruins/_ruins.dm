@@ -18,10 +18,13 @@
 	var/ruin_type
 	var/ruin_tags = list()
 
+	var/ruin_mission_types
+
 /datum/map_template/ruin/New()
 	if(!name && id)
 		name = id
 
 	mappath = prefix + suffix
+	if(!findtext(mappath, ".dmm"))
+		stack_trace("[src] has a mappath with no .dmm in it. Its mappath is: [mappath].")
 	..(path = mappath)
-

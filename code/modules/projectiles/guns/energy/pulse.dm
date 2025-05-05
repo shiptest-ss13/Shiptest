@@ -25,7 +25,7 @@
 	spread_unwielded = 25
 
 	muzzleflash_iconstate = "muzzle_flash_pulse"
-	muzzle_flash_color = COLOR_BRIGHT_BLUE
+	light_color = COLOR_BRIGHT_BLUE
 
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
@@ -91,4 +91,4 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse)
 
 /obj/item/gun/energy/pulse/destroyer/attack_self(mob/living/user)
-	to_chat(user, "<span class='danger'>[src.name] has three settings, and they are all DESTROY.</span>")
+	to_chat(user, span_danger("[src.name] has three settings, and they are all DESTROY."))

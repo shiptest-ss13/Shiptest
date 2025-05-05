@@ -7,7 +7,7 @@
 	wallet = null
 
 	uniform = /obj/item/clothing/under/clip/formal/with_shirt
-	head = /obj/item/clothing/head/clip
+	head = /obj/item/clothing/head/soft/utility_navy
 	mask = /obj/item/clothing/mask/surgical
 	gloves = /obj/item/clothing/gloves/color/latex
 
@@ -110,6 +110,7 @@
 
 /datum/outfit/job/clip/minutemen/military_police
 	name = "ERT - C-MM Military Police"
+	jobtype = /datum/job/officer
 	id_assignment = "Military Police"
 	job_icon = "clip_cmm3"
 

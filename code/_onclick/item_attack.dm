@@ -72,7 +72,8 @@
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP)
 		if(attempt_initiate_surgery(I, src, user))
 			return TRUE
-	user.changeNext_move(CLICK_CD_MELEE)
+	//This should really be in attack but 2 much logic doesnt call parent
+	user.changeNext_move(I.attack_cooldown)
 	return I.attack(src, user)
 
 /mob/living/attack_hand(mob/living/user)
@@ -93,39 +94,40 @@
  * * mob/living/M - The mob being hit by this item
  * * mob/living/user - The mob hitting with this item
  */
-/obj/item/proc/attack(mob/living/M, mob/living/user)
-	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
+/obj/item/proc/attack(mob/living/target_mob, mob/living/user)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, target_mob, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
-	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
+	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target_mob, user)
 	if(item_flags & NOBLUDGEON)
 		return
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
+		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
 
 	if(item_flags & EYE_STAB && user.zone_selected == BODY_ZONE_PRECISE_EYES)
 		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-			M = user
-		return eyestab(M,user)
+			target_mob = user
+		return eyestab(target_mob,user)
 
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), TRUE, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
 
-	M.lastattacker = user.real_name
-	M.lastattackerckey = user.ckey
+	target_mob.lastattacker = user.real_name
+	target_mob.lastattackerckey = user.ckey
 
-	if(force && M == user && user.client)
+	if(force && target_mob == user && user.client)
 		user.client.give_award(/datum/award/achievement/misc/selfouch, user)
 
-	user.do_attack_animation(M)
-	M.attacked_by(src, user)
+	user.do_attack_animation(target_mob)
+	target_mob.attacked_by(src, user)
 
-	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
+	SEND_SIGNAL(src, COMSIG_ITEM_POST_ATTACK, target_mob, user)
+
+	log_combat(user, target_mob, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
-
 
 /// The equivalent of the standard version of [/obj/item/proc/attack] but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
@@ -133,7 +135,7 @@
 		return
 	if(item_flags & NOBLUDGEON)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(attack_cooldown)
 	user.do_attack_animation(O)
 	O.attacked_by(src, user)
 
@@ -141,30 +143,52 @@
 /atom/movable/proc/attacked_by()
 	return
 
-/obj/attacked_by(obj/item/I, mob/living/user)
-	if(I.force)
-		user.visible_message("<span class='danger'>[user] hits [src] with [I]!</span>", \
-					"<span class='danger'>You hit [src] with [I]!</span>", null, COMBAT_MESSAGE_RANGE)
-		//only witnesses close by and the victim see a hit message.
-		log_combat(user, src, "attacked", I)
-	take_damage(I.force, I.damtype, "melee", 1)
+/obj/attacked_by(obj/item/attacking_item, mob/living/user)
+	if(!attacking_item.force)
+		return
 
-/mob/living/attacked_by(obj/item/I, mob/living/user)
-	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
-	send_item_attack_message(I, user)
-	if(I.force)
-		apply_damage(I.force, I.damtype, break_modifier = I.force, blocked = armor_value, sharpness = I.get_sharpness()) //Bone break modifier = item force
-		if(I.damtype == BRUTE)
-			if(prob(33))
-				I.add_mob_blood(src)
-				var/turf/location = get_turf(src)
-				add_splatter_floor(location)
-				if(get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
-					user.add_mob_blood(src)
+	var/total_force
+	if(is_type_in_list(src, list(/obj/structure, /obj/machinery)))
+		total_force = (attacking_item.force * attacking_item.demolition_mod)
+
+	else
+		total_force = (attacking_item.force)
+
+	var/damage = take_damage(total_force, attacking_item.damtype, "melee", TRUE, get_dir(user, src), attacking_item.armour_penetration)
+
+	var/damage_verb = "hit"
+
+	if(attacking_item.demolition_mod > 1 && damage)
+		damage_verb = "pulverise"
+	if(attacking_item.demolition_mod < 1)
+		damage_verb = "ineffectively pierce"
+
+	user.visible_message(span_danger("[user] [damage_verb]s [src] with [attacking_item][damage ? "." : ", without leaving a mark!"]"), \
+		span_danger("You [damage_verb] [src] with [attacking_item][damage ? "." : ", without leaving a mark!"]"), null, COMBAT_MESSAGE_RANGE)
+	log_combat(user, src, "attacked", attacking_item)
+
+/mob/living/attacked_by(obj/item/attacking_item, mob/living/user)
+	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = attacking_item.armour_penetration)		//WS Edit - Simplemobs can have armor
+	send_item_attack_message(attacking_item, user)
+	if(!attacking_item.force)
+		return FALSE
+	apply_damage(attacking_item.force, attacking_item.damtype, blocked = armor_value, sharpness = attacking_item.get_sharpness()) //Bone break modifier = item force
+	if(attacking_item.damtype == BRUTE && prob(33))
+		attacking_item.add_mob_blood(src)
+		var/turf/location = get_turf(src)
+		add_splatter_floor(location)
+		if(get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
+			user.add_mob_blood(src)
 		return TRUE //successful attack
 
 /mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
 	if(I.force < force_threshold || I.damtype == STAMINA)
+		playsound(loc, 'sound/weapons/tap.ogg', I.get_clamped_volume(), TRUE, -1)
+	else
+		return ..()
+
+/mob/living/basic/attacked_by(obj/item/I, mob/living/user)
+	if(!attack_threshold_check(I.force, I.damtype, MELEE, FALSE))
 		playsound(loc, 'sound/weapons/tap.ogg', I.get_clamped_volume(), TRUE, -1)
 	else
 		return ..()
@@ -210,7 +234,7 @@
 		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I]!"
 	if(user == src)
 		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
-	visible_message("<span class='danger'>[attack_message]</span>",\
-		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
+	visible_message(span_danger("[attack_message]"),\
+		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE)
 	return 1
 

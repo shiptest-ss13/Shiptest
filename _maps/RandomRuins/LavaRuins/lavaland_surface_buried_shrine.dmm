@@ -63,7 +63,17 @@
 /area/ruin/unpowered/buried_shrine)
 "cv" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/glass/bottle/potion,
+/obj/item/reagent_containers/glass/bottle/potion{
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/snacks/grown/cherrybulbs{
+	pixel_x = 12;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/snacks/grown/cherry_bomb{
+	pixel_x = -14;
+	pixel_y = 11
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "cA" = (
@@ -414,7 +424,7 @@
 "kp" = (
 /obj/structure/table_frame/wood,
 /obj/structure/stone_tile/slab,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "kt" = (
 /obj/structure/stone_tile/block{
@@ -615,8 +625,12 @@
 /turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "pK" = (
-/obj/structure/stone_tile/slab,
-/mob/living/simple_animal/hostile/asteroid/brimdemon,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl,
+/obj/item/reagent_containers/food/snacks/grown/meatwheat{
+	pixel_x = -15;
+	pixel_y = 4
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "qh" = (
@@ -664,7 +678,7 @@
 	dir = 5
 	},
 /obj/structure/chair/wood,
-/obj/structure/spawner/burrow/lava_planet,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "qT" = (
@@ -821,6 +835,9 @@
 	pixel_x = -11;
 	pixel_y = 10
 	},
+/obj/item/stack/sheet/bone{
+	pixel_x = 10
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "tL" = (
@@ -866,14 +883,18 @@
 /area/ruin/unpowered/buried_shrine)
 "vi" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/glass/bottle/potion,
+/obj/item/reagent_containers/glass/bottle/potion{
+	list_reagents = list(/datum/reagent/medicine/bonefixingjuice = 30)
+	},
 /obj/item/reagent_containers/glass/bottle/potion{
 	pixel_x = -10;
-	pixel_y = 9
+	pixel_y = 9;
+	list_reagents = list(/datum/reagent/medicine/soulus/pure = 30)
 	},
 /obj/item/reagent_containers/glass/bottle/potion{
 	pixel_x = 10;
-	pixel_y = 9
+	pixel_y = 9;
+	list_reagents = list(/datum/reagent/toxin/coniine = 30)
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
@@ -881,7 +902,7 @@
 /obj/structure/table/wood,
 /obj/item/gun/ballistic/bow/ashen,
 /obj/structure/stone_tile/slab,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "vJ" = (
 /obj/structure/flora/ash/stem_shroom,
@@ -914,11 +935,10 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wt" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 4
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
 	},
-/mob/living/simple_animal/hostile/asteroid/brimdemon,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "wy" = (
 /obj/structure/stone_tile{
@@ -930,13 +950,9 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "wM" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 4
-	},
-/obj/structure/stone_tile/center,
-/obj/structure/spawner/burrow/lava_planet,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/buried_shrine)
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
 "wS" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
@@ -1165,6 +1181,7 @@
 /obj/item/chair/wood/wings{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "CD" = (
@@ -1266,6 +1283,7 @@
 	dir = 1
 	},
 /obj/structure/chair/wood/wings,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "FC" = (
@@ -1529,7 +1547,7 @@
 	pixel_y = 12
 	},
 /obj/structure/stone_tile/slab,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/plating/moss,
 /area/ruin/unpowered/buried_shrine)
 "LW" = (
 /obj/structure/destructible/tribal_torch{
@@ -1586,6 +1604,9 @@
 /area/template_noop)
 "Ni" = (
 /obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/grown/apple/gold{
+	pixel_y = 9
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "Nk" = (
@@ -1650,7 +1671,6 @@
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
-/obj/structure/spawner/burrow/lava_planet,
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
@@ -1674,8 +1694,10 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "RK" = (
-/obj/structure/stone_tile/center/cracked,
-/mob/living/simple_animal/hostile/asteroid/brimdemon,
+/obj/structure/stone_tile/slab/cracked,
+/obj/item/flashlight/flare/torch{
+	pixel_x = -18
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/buried_shrine)
 "RN" = (
@@ -1923,6 +1945,10 @@
 "YK" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/moss,
+/area/ruin/unpowered/buried_shrine)
+"Zd" = (
+/obj/item/reagent_containers/food/snacks/grown/random,
+/turf/open/floor/plating/grass/lava,
 /area/ruin/unpowered/buried_shrine)
 "Zk" = (
 /obj/structure/stone_tile{
@@ -2688,7 +2714,7 @@ WZ
 TO
 Qb
 Mt
-eI
+Zd
 Hv
 FC
 Qb
@@ -3033,7 +3059,7 @@ Td
 TO
 TO
 TO
-TO
+eI
 TO
 TO
 WZ
@@ -3089,8 +3115,8 @@ WZ
 WZ
 WZ
 TO
-TO
-TO
+eI
+eI
 WZ
 WZ
 WZ
@@ -3431,7 +3457,7 @@ TO
 Xr
 Ht
 Td
-pK
+Ad
 on
 Ii
 Tp
@@ -3681,7 +3707,7 @@ Eh
 nh
 aD
 nh
-nh
+wM
 nh
 nh
 nh
@@ -3932,7 +3958,7 @@ LJ
 ta
 NN
 ta
-wM
+Xv
 Ad
 mM
 Ad
@@ -3953,12 +3979,12 @@ LZ
 WZ
 Ka
 dB
-RK
+qt
 uP
 di
 zN
 Ad
-Td
+RK
 Ad
 BF
 yz
@@ -4042,7 +4068,7 @@ WZ
 WZ
 Yh
 Fw
-SA
+pK
 lJ
 WZ
 ta
@@ -4308,7 +4334,7 @@ Eh
 Eh
 nh
 nh
-nh
+wM
 aD
 nh
 nh
@@ -4333,7 +4359,7 @@ WZ
 WZ
 Td
 lJ
-wt
+yM
 ta
 TO
 TO
@@ -4915,10 +4941,10 @@ TO
 Xr
 hn
 Xr
+Fq
+Fq
 TO
-TO
-TO
-Wd
+wt
 kp
 WZ
 Eh
@@ -4973,9 +4999,9 @@ TO
 TO
 TO
 TO
-TO
-TO
-TO
+BF
+Ws
+Ws
 LP
 WZ
 Eh
@@ -5146,7 +5172,7 @@ YK
 WZ
 WZ
 TO
-Fq
+Ws
 WZ
 DB
 yJ

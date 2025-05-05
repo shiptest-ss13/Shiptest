@@ -47,8 +47,18 @@
 	/// If the turret is currently manually controlled
 	var/manual_control = FALSE
 
-	/// Ticks until next shot If this needs to go below 5, use SSFastProcess
+	/// Ticks until next shot/burst If this needs to go below 5, use SSFastProcess
 	var/shot_delay = 1.5 SECONDS
+
+	/// How many shots a turret fires in one "burst"
+	var/burst_size = 1
+
+	/// time between shots in a burst.
+	var/burst_delay = 5
+
+	/// turret spread.
+	var/spread = 5
+
 	/// Cooldown until we can shoot again
 	COOLDOWN_DECLARE(fire_cooldown)
 
@@ -69,6 +79,9 @@
 	var/list/faction = list("neutral", "turret")
 
 	var/list/target_faction = list("hostile")
+
+	/// does our turret give a flying fuck about what accesses someone has?
+	var/turret_respects_id = TRUE
 
 	/// The spark system, used for generating... sparks?
 	var/datum/effect_system/spark_spread/spark_system
@@ -116,6 +129,7 @@
 		/mob/living/carbon,
 		/mob/living/silicon,
 		/mob/living/simple_animal,
+		/mob/living/basic,
 		/obj/mecha,
 	))
 
@@ -151,7 +165,7 @@
 	return gun_properties
 
 /obj/machinery/porta_turret/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	id = "[text_ref(port)][initial(id)]"
+	id = "[text_ref(port)][id]"
 	port.turret_list |= WEAKREF(src)
 
 /obj/machinery/porta_turret/proc/toggle_on(set_to)
@@ -184,10 +198,7 @@
 	if(machine_stat & BROKEN)
 		icon_state = "[base_icon_state]_broken"
 		return ..()
-	if(!powered())
-		icon_state = "[base_icon_state]_unpowered"
-		return ..()
-	if(!on)
+	if(!on || !powered())
 		icon_state = "[base_icon_state]_off"
 		return ..()
 	if(lethal)
@@ -244,7 +255,7 @@
 				toggle_on()
 				return TRUE
 			else
-				to_chat(usr, "<span class='warning'>It has to be secured first!</span>")
+				to_chat(usr, span_warning("It has to be secured first!"))
 		if("manual")
 			if(!issilicon(usr))
 				return
@@ -295,33 +306,33 @@
 	if(machine_stat & BROKEN && I.tool_behaviour == TOOL_CROWBAR)
 		//If the turret is destroyed, you can remove it with a crowbar to
 		//try and salvage its components
-		to_chat(user, "<span class='notice'>You begin prying the metal coverings off...</span>")
+		to_chat(user, span_notice("You begin prying the metal coverings off..."))
 		if(I.use_tool(src, user, 20))
 			if(prob(70))
 				var/obj/item/gun/stored_gun = locate() in component_parts
 				if(stored_gun)
 					stored_gun.forceMove(loc)
-				to_chat(user, "<span class='notice'>You remove the turret and salvage some components.</span>")
+				to_chat(user, span_notice("You remove the turret and salvage some components."))
 				if(prob(50))
 					new /obj/item/stack/sheet/metal(loc, rand(1,4))
 				if(prob(50))
 					new /obj/item/assembly/prox_sensor(loc)
 			else
-				to_chat(user, "<span class='notice'>You remove the turret but did not manage to salvage anything.</span>")
+				to_chat(user, span_notice("You remove the turret but did not manage to salvage anything."))
 			qdel(src)
 		return
 
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
 		if(obj_integrity >= max_integrity)
-			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
+			to_chat(user, span_warning("[src] is already in good condition!"))
 			return
 
-		to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+		to_chat(user, span_notice("You begin repairing [src]..."))
 		while(obj_integrity < max_integrity)
 			if(!I.use_tool(src, user, 4 SECONDS, 2, 50))
 				break
 			obj_integrity = max(obj_integrity + 20, max_integrity)
-			to_chat(user, "<span class='notice'>You repair [src].</span>")
+			to_chat(user, span_notice("You repair [src]."))
 
 			if(obj_integrity > (max_integrity * integrity_failure) && (machine_stat & BROKEN))
 				obj_integrity = max_integrity
@@ -337,10 +348,10 @@
 		if(!anchored && !isinspace())
 			set_anchored(TRUE)
 			update_appearance(UPDATE_ICON_STATE)
-			to_chat(user, "<span class='notice'>You secure the exterior bolts on the turret.</span>")
+			to_chat(user, span_notice("You secure the exterior bolts on the turret."))
 		else if(anchored)
 			set_anchored(FALSE)
-			to_chat(user, "<span class='notice'>You unsecure the exterior bolts on the turret.</span>")
+			to_chat(user, span_notice("You unsecure the exterior bolts on the turret."))
 			power_change()
 		return
 
@@ -352,7 +363,7 @@
 			return
 		var/obj/item/multitool/M = I
 		M.buffer = src
-		to_chat(user, "<span class='notice'>You add [src] to multitool buffer.</span>")
+		to_chat(user, span_notice("You add [src] to multitool buffer."))
 		return
 
 	if(istype(I, /obj/item/card/id))
@@ -382,8 +393,8 @@
 /obj/machinery/porta_turret/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, "<span class='warning'>You short out [src]'s threat assessment circuits.</span>")
-	audible_message("<span class='hear'>[src] hums oddly...</span>")
+	to_chat(user, span_warning("You short out [src]'s threat assessment circuits."))
+	audible_message(span_hear("[src] hums oddly..."))
 	obj_flags |= EMAGGED
 	locked = TRUE
 	toggle_on(FALSE) //turns off the turret temporarily
@@ -445,7 +456,7 @@
 		power_change()
 		spark_system.start()	//creates some sparks because they look cool
 
-/obj/machinery/porta_turret/process()
+/obj/machinery/porta_turret/process(seconds_per_tick)
 	if(!on || (machine_stat & (NOPOWER|BROKEN)) || manual_control)
 		return PROCESS_KILL
 
@@ -508,14 +519,11 @@
 		if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 			return target(target_mob)
 
-		//this is gross
-		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/carbon/alien, /mob/living/carbon/monkey))
-		if(!is_type_in_typecache(target_mob, dangerous_fauna))
+		//this is still a bit gross, but less gross than before
+		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/basic, /mob/living/carbon/alien, /mob/living/carbon/monkey))
+		if(!is_type_in_typecache(target_mob, dangerous_fauna) || faction_check(list("neutral"), target_mob.faction))
 			return FALSE
 
-		if(ismonkey(target_mob))
-			var/mob/living/carbon/monkey/monke = target_mob
-			return monke.mode == MONKEY_HUNT && target(target_mob)
 		if(istype(target_mob, /mob/living/simple_animal/hostile/retaliate))
 			var/mob/living/simple_animal/hostile/retaliate/target_animal = target_mob
 			return length(target_animal.enemies) && target(target_mob)
@@ -525,8 +533,9 @@
 	//We know the target must be a human now
 	var/mob/living/carbon/human/target_carbon = target_mob
 
-	if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
-		return FALSE
+	if(turret_respects_id)
+		if(req_ship_access && (check_access(target_carbon.get_active_held_item()) || check_access(target_carbon.wear_id)))
+			return FALSE
 
 	if(!(check_flags & TURRET_FLAG_SHOOT_DANGEROUS_ONLY))
 		return target(target_carbon)
@@ -535,8 +544,17 @@
 	if(target_carbon.handcuffed || !(target_carbon.mobility_flags & MOBILITY_USE))
 		return FALSE
 
+	if(target_carbon.stat != CONSCIOUS)
+		return FALSE
+
 	if(target_carbon.is_holding_item_of_type(/obj/item/gun) || target_carbon.is_holding_item_of_type(/obj/item/melee))
 		return target(target_carbon)
+
+/obj/machinery/porta_turret/proc/in_faction(mob/target)
+	for(var/faction1 in faction)
+		if(faction1 in target.faction)
+			return TRUE
+	return FALSE
 
 //Returns whether or not we should stop searching for targets
 /obj/machinery/porta_turret/proc/target(mob/living/target)
@@ -583,6 +601,15 @@
 	COOLDOWN_START(src, fire_cooldown, shot_delay)
 
 	update_appearance(UPDATE_ICON_STATE)
+
+	//Shooting Code:
+	var/turf/target_turf = get_turf(target)
+	for(var/i = 1 to burst_size)
+		addtimer(CALLBACK(src, PROC_REF(turret_fire), our_turf, target_turf), burst_delay * (i - 1))
+
+	return TRUE
+
+/obj/machinery/porta_turret/proc/turret_fire(our_turf, target_turf)
 	var/obj/projectile/shot
 	//any lethaling turrets drain 2x the power and use a different projectile
 	if(lethal)
@@ -593,14 +620,11 @@
 		use_power(reqpower)
 		shot = new stun_projectile(our_turf)
 		playsound(loc, stun_projectile_sound, 75, TRUE)
-
-
-	//Shooting Code:
-	shot.preparePixelProjectile(target, our_turf)
+	shot.spread = spread
+	shot.preparePixelProjectile(target_turf, our_turf)
 	shot.firer = src
 	shot.fired_from = src
 	shot.fire()
-	return TRUE
 
 /obj/machinery/porta_turret/proc/set_target(atom/movable/target = null)
 	if(current_target)
@@ -613,14 +637,11 @@
 	if(current_target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(set_target))
 
-/obj/machinery/porta_turret/proc/set_state(on, new_mode, new_flags)
-	if(locked)
-		return
-
+/obj/machinery/porta_turret/proc/set_state(on, new_lethal, new_flags)
 	if(!isnull(new_flags))
 		turret_flags = new_flags
 
-	lethal = new_mode
+	lethal = new_lethal
 	toggle_on(on)
 	power_change()
 

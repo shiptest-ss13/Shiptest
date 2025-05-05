@@ -76,6 +76,21 @@
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM 10
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_HIGH 15
 
+//aiming down sights values
+#define PISTOL_ZOOM 2
+#define SHOTGUN_ZOOM 2
+#define SMG_ZOOM 2
+#define RIFLE_ZOOM 2
+#define DMR_ZOOM 6
+
+//ads slowdown
+#define PISTOL_AIM_SLOWDOWN 0.1
+#define SHOTGUN_AIM_SLOWDOWN 0.3
+#define SMG_AIM_SLOWDOWN 0.2
+#define RIFLE_AIM_SLOWDOWN 0.3
+#define LONG_RIFLE_AIM_SLOWDOWN 0.4
+#define HEAVY_AIM_SLOWDOWN 0.6
+
 //slowdown defines
 #define NO_SLOWDOWN 0.0
 #define LIGHT_PISTOL_SLOWDOWN 0.05
@@ -114,8 +129,15 @@
 #define COMSIG_ATTACHMENT_EXAMINE "attach-examine"
 #define COMSIG_ATTACHMENT_EXAMINE_MORE "attach-examine-more"
 #define COMSIG_ATTACHMENT_PRE_ATTACK "attach-pre-attack"
+#define COMSIG_ATTACHMENT_AFTER_ATTACK "attach-after-attack"
 #define COMSIG_ATTACHMENT_ATTACK "attach-attacked"
+#define COMSIG_ATTACHMENT_WIELD "attach-wield"
+#define COMSIG_ATTACHMENT_UNWIELD "attach-unwield"
 #define COMSIG_ATTACHMENT_UPDATE_OVERLAY "attach-overlay"
+#define COMSIG_ATTACHMENT_UNIQUE_ACTION "attach-unique-action"
+#define COMSIG_ATTACHMENT_CTRL_CLICK "attach-ctrl-click"
+#define COMSIG_ATTACHMENT_ALT_CLICK "attach-alt-click"
+#define COMSIG_ATTACHMENT_ATTACK_HAND "attach-attack-hand"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 
@@ -199,6 +221,7 @@
 #define FIREMODE_FULLAUTO "auto"
 #define FIREMODE_OTHER "other"
 #define FIREMODE_OTHER_TWO "other2"
+#define FIREMODE_UNDERBARREL "underbarrel"
 
 #define GUN_LEFTHAND_ICON 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 #define GUN_RIGHTHAND_ICON 'icons/mob/inhands/weapons/guns_righthand.dmi'

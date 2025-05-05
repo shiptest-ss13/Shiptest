@@ -17,6 +17,9 @@
 	max_equip = 3
 	phase_state = "phazon-phase"
 
+/obj/mecha/combat/phazon/set_up_unique_action()
+	mech_unique_action = phasing_action
+
 /obj/mecha/combat/phazon/GrantActions(mob/living/user, human_occupant = 0)
 	..()
 	switch_damtype_action.Grant(user, src)

@@ -103,7 +103,6 @@
 	dir = 6
 	},
 /obj/structure/destructible/tribal_torch/lit{
-	pixel_y = 0;
 	pixel_x = 10
 	},
 /turf/open/floor/wood/ebony,
@@ -122,7 +121,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6{
-	pixel_y = 0;
 	pixel_x = 30
 	},
 /obj/item/reagent_containers/food/drinks/bottle/absinthe{
@@ -428,27 +426,15 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/c45_firestorm_mag/pan{
+/obj/item/ammo_box/magazine/c44_firestorm_mag/pan{
 	start_empty = 1
 	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "gs" = (
@@ -566,7 +552,7 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "je" = (
 /obj/structure/table/wood,
-/obj/item/modular_computer/laptop,
+/obj/item/modular_computer/laptop/preset,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "jk" = (
@@ -692,7 +678,9 @@
 "kq" = (
 /obj/structure/chair/wood/wings,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals{
+	weapon_drop_chance = 100
+	},
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "kG" = (
@@ -778,7 +766,12 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "ms" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/brimstone,
+/obj/item/storage/box/techshot{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/shotgun/brimstone{
+	pixel_y = -5
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "mz" = (
@@ -868,9 +861,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken3"
 	},
@@ -1029,42 +1020,18 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/candle/tribal_torch,
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/gun/ballistic/automatic/smg/firestorm{
 	default_ammo_type = 0
 	},
@@ -1149,9 +1116,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "qY" = (
@@ -1161,6 +1126,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
+"rc" = (
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/ice_lodge{
+	environment_smash = 0
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/icemoon/lodge/montagne_office)
 "rm" = (
 /turf/open/floor/ship/dirt/dark,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -1297,18 +1268,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken7"
 	},
@@ -1404,18 +1364,10 @@
 /area/ruin/powered/icemoon/lodge/mainhall)
 "tG" = (
 /obj/effect/decal/cleanable/oil/slippery,
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plasteel/stairs/wood{
 	dir = 8
 	},
@@ -1510,11 +1462,14 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 10
 	},
-/obj/item/gun/ballistic/automatic/zip_pistol,
 /obj/item/chisel{
 	pixel_x = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/shotgun/techshell{
+	auto_rotate = 0;
+	auto_scatter = 0
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "uM" = (
@@ -1598,21 +1553,11 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
@@ -1671,24 +1616,14 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/item/ammo_box/magazine/c45_firestorm_mag/pan{
+/obj/item/ammo_box/magazine/c44_firestorm_mag/pan{
 	start_empty = 1
 	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "wT" = (
@@ -1704,8 +1639,7 @@
 "wU" = (
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1;
-	shoot_point_blank = 1
+	minimum_distance = 1
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
@@ -1724,7 +1658,6 @@
 	pixel_x = 5
 	},
 /obj/item/storage/box/ammo/c38{
-	pixel_y = 0;
 	pixel_x = -11
 	},
 /obj/item/storage/box/ammo/c38{
@@ -1736,9 +1669,6 @@
 "xk" = (
 /obj/effect/turf_decal/spline/fancy/wood,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered{
-	aggro_vision_range = 12
-	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "xu" = (
@@ -1885,9 +1815,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Aq" = (
@@ -1949,11 +1877,20 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "AO" = (
 /obj/structure/table/wood,
-/obj/item/weaponcrafting/stock,
-/obj/item/weaponcrafting/receiver{
-	pixel_y = 6
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/capacitor,
+/obj/item/stock_parts/capacitor{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/stock_parts/micro_laser{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/stock_parts/cell/empty{
+	pixel_x = 10;
+	pixel_y = -3
+	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "AX" = (
@@ -2183,9 +2120,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner,
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Fy" = (
@@ -2248,15 +2183,9 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered/icemoon/lodge/residential)
 "Gs" = (
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Gv" = (
@@ -2355,7 +2284,6 @@
 	pixel_x = 4
 	},
 /obj/item/candle/infinite{
-	pixel_y = 0;
 	pixel_x = 10
 	},
 /obj/item/candle/infinite{
@@ -2423,15 +2351,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Jq" = (
@@ -2737,8 +2661,8 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/gun/ballistic/automatic/marksman/vickland,
-/obj/item/ammo_box/vickland_a308/empty,
-/obj/item/ammo_box/vickland_a308/empty,
+/obj/item/ammo_box/vickland_a8_50r/empty,
+/obj/item/ammo_box/vickland_a8_50r/empty,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
 "Oa" = (
@@ -2925,8 +2849,7 @@
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
 	retreat_distance = null;
-	minimum_distance = 1;
-	shoot_point_blank = 1
+	minimum_distance = 1
 	},
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
@@ -3278,9 +3201,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "WS" = (
@@ -3310,9 +3231,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/c45{
-	projectile_type = null
-	},
+/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Xd" = (
@@ -3408,6 +3327,9 @@
 	range_light = 5
 	},
 /obj/effect/mob_spawn/human/corpse/srm/montagne,
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Yo" = (
@@ -3426,7 +3348,6 @@
 	pixel_x = 1
 	},
 /obj/item/toy/cards/deck{
-	pixel_y = 0;
 	pixel_x = -4
 	},
 /obj/item/storage/pill_bottle/dice{
@@ -5039,7 +4960,7 @@ Tj
 fw
 Se
 Vz
-Vz
+rc
 xk
 Ws
 Mt

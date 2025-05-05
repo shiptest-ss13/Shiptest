@@ -19,7 +19,7 @@
 		add_overlay(cap)
 	icon_state = "passive_vent"
 
-/obj/machinery/atmospherics/components/unary/passive_vent/process_atmos()
+/obj/machinery/atmospherics/components/unary/passive_vent/process_atmos(seconds_per_tick)
 	..()
 
 	if(!isopenturf(loc))

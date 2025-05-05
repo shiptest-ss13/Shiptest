@@ -28,10 +28,10 @@
 	else if(isitem(parent))
 		RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, PROC_REF(item_afterattack))
 	else if(ishostile(parent))
-		RegisterSignal(parent, COMSIG_HOSTILE_ATTACKINGTARGET, PROC_REF(hostile_attackingtarget))
+		RegisterSignal(parent, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, PROC_REF(hostile_attackingtarget))
 
 /datum/component/summoning/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_ITEM_AFTERATTACK, COMSIG_HOSTILE_ATTACKINGTARGET, COMSIG_PROJECTILE_ON_HIT))
+	UnregisterSignal(parent, list(COMSIG_ITEM_AFTERATTACK, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, COMSIG_PROJECTILE_ON_HIT))
 
 /datum/component/summoning/proc/item_afterattack(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
 	SIGNAL_HANDLER
@@ -68,7 +68,7 @@
 		L.faction = faction
 	RegisterSignal(L, COMSIG_MOB_DEATH, PROC_REF(on_spawned_death)) // so we can remove them from the list, etc (for mobs with corpses)
 	playsound(spawn_location,spawn_sound, 50, TRUE)
-	spawn_location.visible_message("<span class='danger'>[L] [spawn_text].</span>")
+	spawn_location.visible_message(span_danger("[L] [spawn_text]."))
 
 /datum/component/summoning/proc/on_spawned_death(mob/killed, gibbed)
 	SIGNAL_HANDLER

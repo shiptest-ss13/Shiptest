@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/sandwich
 	name = "sandwich"
-	desc = "A grand creation of meat, cheese, bread, and several leaves of lettuce! Arthur Dent would be proud."
+	desc = "A sandwich consisting of meat, cheese, and lettuce of the creator's choice."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "sandwich"
 	trash = /obj/item/trash/plate
@@ -14,7 +14,7 @@
 
 /obj/item/reagent_containers/food/snacks/toastedsandwich
 	name = "toasted sandwich"
-	desc = "Now if you only had a pepper bar."
+	desc = "A toasted sandwich consisting of meat, cheese, and lettuce."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "toastedsandwich"
 	trash = /obj/item/trash/plate
@@ -25,7 +25,7 @@
 
 /obj/item/reagent_containers/food/snacks/grilledcheese
 	name = "cheese sandwich"
-	desc = "Goes great with Tomato soup!"
+	desc = "A sandwich consisting of cheddar or solarian emulsified cheese between two slices of bread. Commonly grilled in a pan."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "toastedsandwich"
 	trash = /obj/item/trash/plate
@@ -38,7 +38,7 @@
 
 /obj/item/reagent_containers/food/snacks/jellysandwich
 	name = "jelly sandwich"
-	desc = "You wish you had some peanut butter to go with this..."
+	desc = "A sandwich consisting of primarily spread jelly or jam."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "jellysandwich"
 	trash = /obj/item/trash/plate
@@ -56,20 +56,9 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/cherryjelly = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
 	foodtype = GRAIN | FRUIT | SUGAR
 
-/obj/item/reagent_containers/food/snacks/notasandwich
-	name = "not-a-sandwich"
-	desc = "Something seems to be wrong with this, you can't quite figure what. Maybe it's his moustache."
-	icon = 'icons/obj/food/burgerbread.dmi'
-	icon_state = "notasandwich"
-	trash = /obj/item/trash/plate
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 6)
-	tastes = list("nothing suspicious" = 1)
-	foodtype = GRAIN | GROSS
-
 /obj/item/reagent_containers/food/snacks/jelliedtoast
 	name = "jellied toast"
-	desc = "A slice of toast covered with delicious jam."
+	desc = "A slice of toast coated with fruit jelly."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "jellytoast"
 	trash = /obj/item/trash/plate
@@ -101,7 +90,7 @@
 
 /obj/item/reagent_containers/food/snacks/twobread
 	name = "two bread"
-	desc = "This seems awfully bitter."
+	desc = "Two pieces of bread loosely placed atop of each other. You're not sure why this is considered a separate meal."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "twobread"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -111,7 +100,7 @@
 
 /obj/item/reagent_containers/food/snacks/blt
 	name = "BLT"
-	desc = "A classic bacon, lettuce, and tomato sandwich."
+	desc = "A bacon, lettuce, and tomato sandwich. Usually served with mayo, this sandwich is a staple."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "blt"
 	bitesize = 4

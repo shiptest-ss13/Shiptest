@@ -16,6 +16,13 @@
 	greyscale_icon_state = "belt"
 	greyscale_colors = list(list(16, 12), list(15, 11), list(13, 12))
 
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_BELT
+	equip_delay_other = EQUIP_DELAY_BELT * 1.5
+	strip_delay = EQUIP_DELAY_BELT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
+
 /obj/item/storage/belt/update_overlays()
 	. = ..()
 	if(!content_overlays)
@@ -75,7 +82,8 @@
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
-		/obj/item/gun/energy/plasmacutter
+		/obj/item/gun/energy/plasmacutter,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -87,11 +95,11 @@
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/electric(src)
 	new /obj/item/multitool(src)
 	new /obj/item/stack/cable_coil(src,MAXCOIL,pick("red","yellow","orange"))
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/analyzer(src)
-	//much roomier now that we've managed to remove two tools
 
 /obj/item/storage/belt/utility/full/PopulateContents()
 	new /obj/item/screwdriver(src)
@@ -142,6 +150,7 @@
 /obj/item/storage/belt/utility/full/ert/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/electric(src)
 	new /obj/item/multitool(src)
 	new /obj/item/construction/rcd/combat(src)
 	new /obj/item/extinguisher/mini(src)
@@ -160,6 +169,7 @@
 	icon_state = "medicwebbing"
 	item_state = "medicwebbing"
 	custom_premium_price = 900
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 /obj/item/storage/belt/medical/ComponentInitialize()
 	. = ..()
@@ -216,7 +226,8 @@
 		/obj/item/construction/plumbing,
 		/obj/item/plunger,
 		/obj/item/reagent_containers/spray,
-		/obj/item/shears
+		/obj/item/shears,
+		/obj/item/bodycamera
 		))
 
 /obj/item/storage/belt/medical/paramedic/PopulateContents()
@@ -288,12 +299,13 @@
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash/handheld,
 		/obj/item/clothing/glasses,
+		/obj/item/binoculars,
 		/obj/item/ammo_casing/shotgun,
 		/obj/item/ammo_box/magazine,
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
 		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
-		/obj/item/ammo_box/vickland_a308,
+		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
@@ -302,11 +314,14 @@
 		/obj/item/flashlight/seclite,
 		/obj/item/melee/classic_baton/telescopic,
 		/obj/item/radio,
+		/obj/item/attachment,
+		/obj/item/extinguisher/mini,
 		/obj/item/clothing/gloves,
 		/obj/item/restraints/legcuffs/bola,
 		/obj/item/holosign_creator/security,
 		/obj/item/stock_parts/cell/gun,
 		/obj/item/ammo_box/magazine/ammo_stack, //handfuls of bullets
+		/obj/item/bodycamera,
 		))
 
 /obj/item/storage/belt/security/full/PopulateContents()
@@ -392,7 +407,10 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/melee/sword/bone
+		/obj/item/melee/sword/bone,
+		/obj/item/bodycamera,
+		/obj/item/binoculars,
+		/obj/item/tank/internals/emergency_oxygen,
 		))
 
 
@@ -436,6 +454,7 @@
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 
 	unique_reskin = list(
 		"None" = "militarywebbing",
@@ -444,18 +463,6 @@
 		"Snow" = "militarywebbing_snow",
 		"Urban" = "militarywebbing_urban",
 		)
-
-//this might seem obtuse instead of setting allow_post_reskins to TRUE, but reskin menu would open every time on alt click, which is not good for this
-/obj/item/storage/belt/military/examine(mob/user)
-	. = ..()
-	if(unique_reskin && current_skin)
-		. += "You can <b>Ctrl-Click</b> [src] to reskin it again after skinning it."
-
-/obj/item/storage/belt/military/CtrlClick(mob/user)
-	. = ..()
-	if(isliving(user) && in_range(src, user))
-		current_skin = null
-		to_chat(user, "You can reskin [src] again wtih <b>Alt-Click</b>.")
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
@@ -806,18 +813,18 @@
 /obj/item/storage/belt/sabre/examine(mob/user)
 	. = ..()
 	if(length(contents))
-		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
+		. += span_notice("Alt-click it to quickly draw the blade.")
 
 /obj/item/storage/belt/sabre/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(length(contents))
 		var/obj/item/I = contents[1]
-		user.visible_message("<span class='notice'>[user] takes [I] out of [src].</span>", "<span class='notice'>You take [I] out of [src].</span>")
+		user.visible_message(span_notice("[user] takes [I] out of [src]."), span_notice("You take [I] out of [src]."))
 		user.put_in_hands(I)
 		update_appearance()
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 
 /obj/item/storage/belt/sabre/update_icon_state()
 	icon_state = "[base_icon_state]"
@@ -888,31 +895,3 @@
 	icon_state = "sheath-pgf"
 	item_state = "sheath-pgf"
 	sabre_type = /obj/item/melee/sword/sabre/pgf
-
-/obj/item/storage/belt/security/webbing/inteq
-	name = "inteq webbing"
-	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
-	icon_state = "inteq_webbing"
-	item_state = "inteq_webbing"
-	supports_variations = VOX_VARIATION
-
-/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
-
-/obj/item/storage/belt/security/webbing/inteq/skm_carabine/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm10mm(src)
-
-/obj/item/storage/belt/security/webbing/inteq/alt
-	name = "inteq drop pouch harness"
-	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
-	icon_state = "inteq_droppouch"
-	item_state = "inteq_droppouch"
-
-/obj/item/storage/belt/security/webbing/inteq/alt/bulldog/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m12g_bulldog(src)

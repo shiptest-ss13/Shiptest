@@ -16,6 +16,13 @@
 	flags_cover = HEADCOVERSEYES
 	//flags_inv = HIDEHAIR // nah
 
+	equip_sound = 'sound/items/equip/armor_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+	equip_delay_self = EQUIP_DELAY_HELMET
+	equip_delay_other = EQUIP_DELAY_HELMET * 1.5
+	strip_delay = EQUIP_DELAY_HELMET * 1.5
+
 	dog_fashion = /datum/dog_fashion/head/helmet
 
 	//if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
@@ -45,7 +52,7 @@
 	if(attached_light)
 		. += "It has \a [attached_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight)
-			. += "<span class='info'>[attached_light] looks like it can be <b>unscrewed</b> from [src].</span>"
+			. += span_info("[attached_light] looks like it can be unclipped from [src]. You can <b>Alt-Click</b> to detatch it.")
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
 
@@ -85,7 +92,7 @@
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
 			icon_state = "[initial(icon_state)][up ? "up" : ""]"
-			to_chat(user, "<span class='notice'>[up ? alt_toggle_message : toggle_message] \the [src].</span>")
+			to_chat(user, span_notice("[up ? alt_toggle_message : toggle_message] \the [src]."))
 
 			user.update_inv_head()
 			if(iscarbon(user))
@@ -110,7 +117,7 @@
 		if(can_flashlight && !attached_light)
 			if(!user.transferItemToLoc(attaching_seclite, src))
 				return
-			to_chat(user, "<span class='notice'>You click [attaching_seclite] into place on [src].</span>")
+			to_chat(user, span_notice("You click [attaching_seclite] into place on [src]."))
 			set_attached_light(attaching_seclite)
 			update_appearance()
 			update_helmlight()
@@ -120,11 +127,10 @@
 		return
 	return ..()
 
-/obj/item/clothing/head/helmet/screwdriver_act(mob/living/user, obj/item/tool)
+/obj/item/clothing/head/helmet/AltClick(mob/living/user)
 	. = ..()
 	if(can_flashlight && attached_light) //if it has a light but can_flashlight is false, the light is permanently attached.
-		tool.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You unscrew [attached_light] from [src].</span>")
+		to_chat(user, span_notice("You unclip [attached_light] from [src]."))
 		attached_light.forceMove(drop_location())
 		if(Adjacent(user) && !issilicon(user))
 			user.put_in_hands(attached_light)
@@ -150,7 +156,7 @@
 		return
 	attached_light.on = !attached_light.on
 	attached_light.update_brightness()
-	to_chat(user, "<span class='notice'>You toggle the helmet light [attached_light.on ? "on":"off"].</span>")
+	to_chat(user, span_notice("You toggle the helmet light [attached_light.on ? "on":"off"]."))
 
 	playsound(user, attached_light.on ? attached_light.toggle_on_sound : attached_light.toggle_off_sound, 100, TRUE)
 	update_helmlight()
@@ -198,14 +204,14 @@
 	if(issignaler(I))
 		var/obj/item/assembly/signaler/S = I
 		if(attached_light) //Has a flashlight. Player must remove it, else it will be lost forever.
-			to_chat(user, "<span class='warning'>The mounted flashlight is in the way, remove it first!</span>")
+			to_chat(user, span_warning("The mounted flashlight is in the way, remove it first!"))
 			return
 
 		if(S.secured)
 			qdel(S)
 			var/obj/item/bot_assembly/secbot/A = new
 			user.put_in_hands(A)
-			to_chat(user, "<span class='notice'>You add the signaler to the helmet.</span>")
+			to_chat(user, span_notice("You add the signaler to the helmet."))
 			qdel(src)
 			return
 	return ..()
@@ -218,7 +224,6 @@
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	can_flashlight = TRUE
 	dog_fashion = null
-	allow_post_reskins = TRUE
 	supports_variations = KEPORI_VARIATION
 	unique_reskin = list(
 		"None" = "helmetalt",
@@ -306,6 +311,7 @@
 	strip_delay = 80
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	dog_fashion = null
+	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/police
 	name = "police officer's hat"
@@ -465,71 +471,21 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	strip_delay = 80
 
-/obj/item/clothing/head/helmet/swat/inteq
-	name = "inteq SWAT helmet"
-	desc = "A robust and spaceworthy helmet with an opaque gold visor. There is an insignia on the earpad with the letters 'IRMG' on it."
-	icon_state = "inteq_swat"
-	item_state = "inteq_swat"
-	flags_inv = HIDEHAIR
-	supports_variations = KEPORI_VARIATION | VOX_VARIATION
-	content_overlays = TRUE
-
-/obj/item/clothing/head/helmet/inteq
-	name = "inteq helmet"
-	desc = "A standard issue helmet in the colors of the IRMG. It doesn't feel special in any way."
-	icon_state = "inteq_helmet"
-	icon_state = "inteq_helmet"
-	can_flashlight = TRUE
-	supports_variations = KEPORI_VARIATION | VOX_VARIATION
-	content_overlays = TRUE
-
-/obj/item/clothing/head/solgov
-	name = "\improper SolGov officer's cap"
-	desc = "A blue cap worn by high-ranking officers of SolGov."
-	icon_state = "cap_solgov"
-	item_state = "cap_solgov"
-	strip_delay = 80
-
-/obj/item/clothing/head/solgov/terragov
-	name = "\improper TerraGov officer's cap"
-	desc = "A cap worn by high-ranking officers of SolGov. This one is still in original TerraGov green."
-	icon_state = "cap_terragov"
-	item_state = "cap_terragov"
-
-/obj/item/clothing/head/solgov/sonnensoldner
-	name = "\improper Sonnensoldner Hat"
-	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
-	icon_state = "sonnensoldner_hat"
-	item_state = "sonnensoldner_hat"
-	worn_y_offset = 4
-	dog_fashion = null
-
-/obj/item/clothing/head/solgov/captain
-	name = "\improper SolGov bicorne hat"
-	desc = "A unique bicorne hat given to Solarian Captains on expeditionary missions."
-	icon_state = "solgov_bicorne"
-	item_state = "solgov_bicorne"
-	worn_y_offset = 2
-	dog_fashion = null
-
-/obj/item/clothing/head/helmet/space/plasmaman/solgov
-	name = "\improper SolGov envirosuit helmet"
-	desc = "A generic white envirohelmet with a secondary blue."
-	icon_state = "solgov_envirohelm"
-	item_state = "solgov_envirohelm"
-
 /obj/item/clothing/head/helmet/syndie
 	name = "\improper operator helmet"
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"
 	item_state = "operator"
 	content_overlays = TRUE
+	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/medical
 	name = "\improper trauma team helmet"
 	desc = "A robust combat helmet commonly employed by cybersun medical trauma teams, with its distinctive turquoise."
 	icon_state = "traumahelm"
 	item_state = "traumahelm"
+	can_flashlight = TRUE
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/m10
 	name = "\improper M10 pattern Helmet"
@@ -552,7 +508,6 @@
 	icon_state = "x11helm"
 	can_flashlight = TRUE
 	dog_fashion = null
-	allow_post_reskins = TRUE
 	supports_variations = null
 	unique_reskin = list(
 		"None" = "x11helm",

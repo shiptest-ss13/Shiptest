@@ -7,7 +7,7 @@
 	return ..()
 
 /datum/buildmode_mode/outfit/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Select outfit to equip")] -> Right Mouse Button on buildmode button\n\
 		[span_bold("Equip the selected outfit")] -> Left Mouse Button on mob/living/carbon/human\n\
 		[span_bold("Strip and delete current outfit")] -> Right Mouse Button on mob/living/carbon/human"))
@@ -31,7 +31,7 @@
 
 	if(left_click)
 		if(isnull(dressuptime))
-			to_chat(target_client, "<span class='warning'>Pick an outfit first.</span>")
+			to_chat(target_client, span_warning("Pick an outfit first."))
 			return
 
 		for (var/item in dollie.get_equipped_items(TRUE))

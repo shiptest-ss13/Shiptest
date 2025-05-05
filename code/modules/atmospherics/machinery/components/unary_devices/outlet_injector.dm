@@ -13,7 +13,7 @@
 
 	var/injecting = 0
 
-	var/volume_rate = 50
+	var/volume_rate = 100
 
 	var/frequency = 0
 	var/id = null
@@ -35,7 +35,7 @@
 	if(can_interact(user))
 		volume_rate = MAX_TRANSFER_RATE
 		investigate_log("was set to [volume_rate] L/s by [key_name(user)]", INVESTIGATE_ATMOS)
-		to_chat(user, "<span class='notice'>You maximize the volume output on [src] to [volume_rate] L/s.</span>")
+		to_chat(user, span_notice("You maximize the volume output on [src] to [volume_rate] L/s."))
 		update_appearance()
 	return ..()
 
@@ -54,7 +54,7 @@
 	else
 		icon_state = "inje_on"
 
-/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos()
+/obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos(seconds_per_tick)
 	..()
 
 	injecting = TRUE
@@ -179,7 +179,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational)
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
 		return FALSE
 
 // mapping
@@ -206,7 +206,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos
 	frequency = FREQ_ATMOS_STORAGE
 	on = TRUE
-	volume_rate = 200
+	volume_rate = 400
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste
 	name = "atmos waste outlet injector"

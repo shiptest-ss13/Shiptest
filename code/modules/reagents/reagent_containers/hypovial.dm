@@ -9,15 +9,17 @@
 	volume = 10
 	possible_transfer_amounts = list(1,2,5,10)
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("hypovial" = "hypovial",
-						"red hypovial" = "hypovial-b",
-						"blue hypovial" = "hypovial-d",
-						"green hypovial" = "hypovial-a",
-						"orange hypovial" = "hypovial-k",
-						"purple hypovial" = "hypovial-p",
-						"black hypovial" = "hypovial-t",
-						"pink hypovial" = "hypovial-pink"
-						)
+	unique_reskin = list(
+		"hypovial" = "hypovial",
+		"red hypovial" = "hypovial-b",
+		"blue hypovial" = "hypovial-d",
+		"green hypovial" = "hypovial-a",
+		"orange hypovial" = "hypovial-k",
+		"purple hypovial" = "hypovial-p",
+		"black hypovial" = "hypovial-t",
+		"pink hypovial" = "hypovial-pink"
+	)
+	unique_reskin_changes_name = TRUE
 	can_have_cap = FALSE
 	cap_icon_state = null
 	cap_on = FALSE
@@ -78,14 +80,16 @@
 	icon_state = "hypoviallarge"
 	volume = 120
 	possible_transfer_amounts = list(5,10,15,20)
-	unique_reskin = list("large hypovial" = "hypoviallarge",
-						"large red hypovial" = "hypoviallarge-b",
-						"large blue hypovial" = "hypoviallarge-d",
-						"large green hypovial" = "hypoviallarge-a",
-						"large orange hypovial" = "hypoviallarge-k",
-						"large purple hypovial" = "hypoviallarge-p",
-						"large black hypovial" = "hypoviallarge-t"
-						)
+	unique_reskin = list(
+		"large hypovial" = "hypoviallarge",
+		"large red hypovial" = "hypoviallarge-b",
+		"large blue hypovial" = "hypoviallarge-d",
+		"large green hypovial" = "hypoviallarge-a",
+		"large orange hypovial" = "hypoviallarge-k",
+		"large purple hypovial" = "hypoviallarge-p",
+		"large black hypovial" = "hypoviallarge-t"
+	)
+	unique_reskin_changes_name = TRUE
 
 /obj/item/reagent_containers/glass/bottle/vial/large/update_appearance()
 	cut_overlays()
@@ -141,6 +145,44 @@
 	name = "hypovial (tricordrazine)"
 	icon_state = "hypovial"
 	comes_with = list(/datum/reagent/medicine/tricordrazine = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/morphine
+	name = "hypovial (morphine)"
+	icon_state = "hypovial-pink"
+	comes_with = list(/datum/reagent/medicine/morphine = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/atropine
+	name = "hypovial (atropine)"
+	icon_state = "hypovial-t"
+	comes_with = list(/datum/reagent/medicine/atropine = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/erp //its not what it looks like i swear
+	name = "hypovial (radiation purgant)"
+	icon_state = "hypovial-k"
+	comes_with = list(/datum/reagent/medicine/anti_rad = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/salclu
+	name = "hypovial (SalGlu Solution)"
+	icon_state = "hypovial"
+	comes_with = list(/datum/reagent/medicine/salglu_solution = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/chitosan
+	name = "hypovial (chitosan)"
+	icon_state = "hypovial-b"
+	amount_per_transfer_from_this = 5
+	comes_with = list(/datum/reagent/medicine/chitosan = 60)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/combat_drug
+	name = "hypovial (shoal juice)"
+	icon_state = "hypovial-b"
+	amount_per_transfer_from_this = 10
+	comes_with = list(/datum/reagent/drug/combat_drug = 20, /datum/reagent/medicine/bicaridinep = 10, /datum/reagent/medicine/dermaline = 10, /datum/reagent/medicine/synaptizine = 20)
+
+/obj/item/reagent_containers/glass/bottle/vial/small/preloaded/stasis
+	name = "hypovial (stasis)"
+	icon_state = "hypovial-b"
+	amount_per_transfer_from_this = 5
+	comes_with = list(/datum/reagent/medicine/stasis = 60)
 
 /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/CMO
 	name = "deluxe hypovial"
