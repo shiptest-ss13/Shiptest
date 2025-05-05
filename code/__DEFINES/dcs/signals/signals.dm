@@ -203,19 +203,6 @@
 #define COMSIG_ATOM_ORBIT_BEGIN "atom_orbit_begin"
 ///called when an atom stops orbiting another atom: (atom)
 #define COMSIG_ATOM_ORBIT_STOP "atom_orbit_stop"
-/* Attack signals. They should share the returned flags, to standardize the attack chain. */
-/// tool_act -> pre_attack -> target.attackby (item.attack) -> afterattack
-	///Ends the attack chain. If sent early might cause posterior attacks not to happen.
-	#define COMPONENT_CANCEL_ATTACK_CHAIN (1<<0)
-	///Skips the specific attack step, continuing for the next one to happen.
-	#define COMPONENT_SKIP_ATTACK (1<<1)
-///from base of atom/attack_ghost(): (mob/dead/observer/ghost)
-#define COMSIG_ATOM_ATTACK_GHOST "atom_attack_ghost"
-///from base of atom/attack_hand(): (mob/user)
-#define COMSIG_ATOM_ATTACK_HAND "atom_attack_hand"
-///from base of atom/attack_paw(): (mob/user)
-#define COMSIG_ATOM_ATTACK_PAW "atom_attack_paw"
-	#define COMPONENT_NO_ATTACK_HAND (1<<0) //works on all 3.
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
 
@@ -584,7 +571,7 @@
 ///from base of /mob/living/can_track(): (mob/user)
 #define COMSIG_LIVING_CAN_TRACK "mob_cantrack"
 	#define COMPONENT_CANT_TRACK (1<<0)
-/// from start of /mob/living/handle_breathing(): (delta_time, times_fired)
+/// from start of /mob/living/handle_breathing(): (seconds_per_tick, times_fired)
 #define COMSIG_LIVING_HANDLE_BREATHING "living_handle_breathing"
 
 /// From mob/living/try_speak(): (message, ignore_spam, forced)

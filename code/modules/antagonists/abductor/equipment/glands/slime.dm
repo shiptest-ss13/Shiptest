@@ -10,11 +10,11 @@
 /obj/item/organ/heart/gland/slime/Insert(mob/living/carbon/M, special = 0)
 	..()
 	owner.faction |= "slime"
-	owner.grant_language(/datum/language/slime, TRUE, TRUE, LANGUAGE_GLAND)
+	owner.grant_language(/datum/language/slime, source=LANGUAGE_GLAND)
 
 /obj/item/organ/heart/gland/slime/Remove(mob/living/carbon/M, special = 0)
 	owner.faction -= "slime"
-	owner.remove_language(/datum/language/slime, TRUE, TRUE, LANGUAGE_GLAND)
+	owner.remove_language(/datum/language/slime, source=LANGUAGE_GLAND)
 	..()
 
 /obj/item/organ/heart/gland/slime/activate()

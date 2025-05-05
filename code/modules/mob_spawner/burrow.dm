@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 /obj/structure/spawner/burrow/ice_planet
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf,
-		/mob/living/simple_animal/hostile/asteroid/polarbear
+		/mob/living/basic/bear/polar
 	)
 
 /obj/structure/spawner/burrow/ice_planet/hard
