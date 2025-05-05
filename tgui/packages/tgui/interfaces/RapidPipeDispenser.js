@@ -1,5 +1,3 @@
-import { classes } from 'tgui-core/react';
-import { useBackend, useLocalState } from '../backend';
 import {
   Box,
   Button,
@@ -9,17 +7,20 @@ import {
   Section,
   Tabs,
 } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const ROOT_CATEGORIES = ['Atmospherics', 'Disposals', 'Transit Tubes'];
 
 const ICON_BY_CATEGORY_NAME = {
-  'Atmospherics': 'wrench',
-  'Disposals': 'trash-alt',
+  Atmospherics: 'wrench',
+  Disposals: 'trash-alt',
   'Transit Tubes': 'bus',
-  'Pipes': 'grip-lines',
+  Pipes: 'grip-lines',
   'Disposal Pipes': 'grip-lines',
-  'Devices': 'microchip',
+  Devices: 'microchip',
   'Heat Exchange': 'thermometer-half',
   'Station Equipment': 'microchip',
 };
@@ -68,9 +69,7 @@ export const RapidPipeDispenser = (props) => {
     mode,
   } = data;
   const previews = data.preview_rows.flatMap((row) => row.previews);
-  const [categoryName, setCategoryName] = useLocalState(
-    'categoryName'
-  );
+  const [categoryName, setCategoryName] = useLocalState('categoryName');
   const shownCategory =
     categories.find((category) => category.cat_name === categoryName) ||
     categories[0];

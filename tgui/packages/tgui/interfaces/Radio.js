@@ -1,15 +1,16 @@
 import { map } from 'common/collections';
-import { toFixed } from 'tgui-core/math';
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
+  Divider,
   LabeledList,
   NumberInput,
   Section,
-  Divider,
   Table,
 } from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
 
@@ -30,7 +31,7 @@ export const Radio = (props) => {
     chatloglist = [],
   } = data;
   const tunedChannel = RADIO_CHANNELS.find(
-    (channel) => channel.freq === frequency
+    (channel) => channel.freq === frequency,
   );
   const channels = map(data.channels, (value, key) => ({
     name: key,

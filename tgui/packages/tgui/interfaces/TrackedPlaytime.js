@@ -1,6 +1,7 @@
 import { sortBy } from 'common/collections';
-import { useBackend } from '../backend';
 import { Box, Flex, ProgressBar, Section, Table } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const JOB_REPORT_MENU_FAIL_REASON_TRACKING_DISABLED = 1;
@@ -37,8 +38,8 @@ const PlaytimeSection = (props) => {
 
                   <Flex.Item>
                     {(playtime / 60).toLocaleString(undefined, {
-                      'minimumFractionDigits': 1,
-                      'maximumFractionDigits': 1,
+                      minimumFractionDigits: 1,
+                      maximumFractionDigits: 1,
                     })}
                     h
                   </Flex.Item>
@@ -77,8 +78,8 @@ export const TrackedPlaytime = (props) => {
             <Section title="Total">
               <PlaytimeSection
                 playtimes={{
-                  'Ghost': ghostTime,
-                  'Living': livingTime,
+                  Ghost: ghostTime,
+                  Living: livingTime,
                 }}
               />
             </Section>

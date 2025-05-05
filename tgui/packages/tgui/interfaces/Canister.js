@@ -1,5 +1,3 @@
-import { toFixed } from 'tgui-core/math';
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -14,6 +12,9 @@ import {
   Tooltip,
 } from 'tgui-core/components';
 import { formatSiUnit } from 'tgui-core/format';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const formatPressure = (value) => {
@@ -179,12 +180,12 @@ export const Canister = (props) => {
                       maxValue={holdingTankFragPressure * 1.15}
                       alertAfter={holdingTankLeakPressure}
                       ranges={{
-                        'good': [0, holdingTankLeakPressure],
-                        'average': [
+                        good: [0, holdingTankLeakPressure],
+                        average: [
                           holdingTankLeakPressure,
                           holdingTankFragPressure,
                         ],
-                        'bad': [
+                        bad: [
                           holdingTankFragPressure,
                           holdingTankFragPressure * 1.15,
                         ],

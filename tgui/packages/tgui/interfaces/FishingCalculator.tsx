@@ -24,24 +24,12 @@ export const FishingCalculator = (props) => {
 
   const [bait, setBait] = useLocalState<string>(
     'bait',
-    '/obj/item/reagent_containers/food/snacks/bait/worm'
+    '/obj/item/reagent_containers/food/snacks/bait/worm',
   );
-  const [spot, setSpot] = useLocalState<string>(
-    'spot',
-    data.spot_types[0]
-  );
-  const [rod, setRod] = useLocalState<string>(
-    'rod',
-    data.rod_types[0]
-  );
-  const [hook, setHook] = useLocalState<string>(
-    'hook',
-    data.hook_types[0]
-  );
-  const [line, setLine] = useLocalState<string>(
-    'line',
-    data.line_types[0]
-  );
+  const [spot, setSpot] = useLocalState<string>('spot', data.spot_types[0]);
+  const [rod, setRod] = useLocalState<string>('rod', data.rod_types[0]);
+  const [hook, setHook] = useLocalState<string>('hook', data.hook_types[0]);
+  const [line, setLine] = useLocalState<string>('line', data.line_types[0]);
 
   const weight_sum = data.info?.reduce((s, w) => s + w.weight, 0) || 1;
 
@@ -83,11 +71,11 @@ export const FishingCalculator = (props) => {
             <Button
               onClick={() =>
                 act('recalc', {
-                  'rod': rod,
-                  'bait': bait,
-                  'hook': hook,
-                  'line': line,
-                  'spot': spot,
+                  rod: rod,
+                  bait: bait,
+                  hook: hook,
+                  line: line,
+                  spot: spot,
                 })
               }
             >

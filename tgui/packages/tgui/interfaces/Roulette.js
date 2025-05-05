@@ -1,6 +1,7 @@
-import { classes } from 'tgui-core/react';
-import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Flex, NumberInput } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const getNumberColor = (number) => {
@@ -59,7 +60,7 @@ export const RouletteBoard = (props) => {
       className="Table"
       style={{
         // Setting it to 1 px makes sure it always takes up minimum width
-        'width': '1px',
+        width: '1px',
       }}
     >
       <tr className="Roulette__board-row">

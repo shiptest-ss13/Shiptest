@@ -1,5 +1,4 @@
 import { sortBy } from 'common/collections';
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -9,6 +8,8 @@ import {
   ProgressBar,
   Section,
 } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const Photocopier = (props) => {
@@ -180,7 +181,7 @@ const Blanks = (props) => {
 
   const selectedCategory = category ?? categories[0];
   const visibleBlanks = sortedBlanks.filter(
-    (blank) => blank.category === selectedCategory
+    (blank) => blank.category === selectedCategory,
   );
 
   return (

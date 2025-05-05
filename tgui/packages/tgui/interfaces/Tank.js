@@ -1,5 +1,3 @@
-import { toFixed } from 'tgui-core/math';
-import { useBackend } from '../backend';
 import {
   Button,
   LabeledControls,
@@ -8,6 +6,9 @@ import {
   Section,
 } from 'tgui-core/components';
 import { formatSiUnit } from 'tgui-core/format';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const formatPressure = (value) => {
@@ -41,9 +42,9 @@ export const Tank = (props) => {
                 maxValue={fragmentPressure * 1.15}
                 alertAfter={leakPressure}
                 ranges={{
-                  'good': [0, leakPressure],
-                  'average': [leakPressure, fragmentPressure],
-                  'bad': [fragmentPressure, fragmentPressure * 1.15],
+                  good: [0, leakPressure],
+                  average: [leakPressure, fragmentPressure],
+                  bad: [fragmentPressure, fragmentPressure * 1.15],
                 }}
                 format={formatPressure}
                 size={2}

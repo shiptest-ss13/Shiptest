@@ -1,15 +1,16 @@
-import { useBackend } from '../backend';
+import { sortBy } from 'common/collections';
 import {
   AnimatedNumber,
   Box,
-  Section,
-  LabeledList,
   Button,
+  LabeledList,
   ProgressBar,
+  Section,
 } from 'tgui-core/components';
-import { Window } from '../layouts';
-import { sortBy } from 'common/collections';
 import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
+import { Window } from '../layouts';
 
 const damageTypes = [
   {

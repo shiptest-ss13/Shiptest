@@ -1,5 +1,11 @@
-
-import { Button, Divider, Flex, Icon, Input, Section } from 'tgui-core/components';
+import {
+  Button,
+  Divider,
+  Flex,
+  Icon,
+  Input,
+  Section,
+} from 'tgui-core/components';
 
 import { useBackend, useLocalState } from '../../backend';
 import { Window } from '../../layouts';
@@ -11,10 +17,7 @@ export const Orbit = (props) => {
   const { act, data } = useBackend<OrbitData>();
 
   const [searchText, setSearchText] = useLocalState('searchText', '');
-  const [autoObserve, setAutoObserve] = useLocalState(
-    'autoObserve',
-    false
-  );
+  const [autoObserve, setAutoObserve] = useLocalState('autoObserve', false);
 
   const orbitMostRelevant = () => {
     const mostRelevant = [

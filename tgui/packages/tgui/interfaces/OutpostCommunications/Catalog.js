@@ -24,20 +24,17 @@ export const CargoCatalog = (props) => {
 
   const [activeSupplyName, setActiveSupplyName] = useSharedState(
     'supply',
-    supplies[0]?.name
+    supplies[0]?.name,
   );
 
-  const [searchText, setSearchText] = useSharedState(
-    'search_text',
-    ''
-  );
+  const [searchText, setSearchText] = useSharedState('search_text', '');
 
   const [cart, setCart] = useSharedState(context, 'cart', []);
 
   const cartTotal = cart.reduce(
     (cartTotal, entry) =>
       cartTotal + (entry.discountedcost ? entry.discountedcost : entry.cost),
-    0
+    0,
   );
 
   const activeSupply =
@@ -189,7 +186,7 @@ export const CargoCatalog = (props) => {
                           : formatMoney(
                               (self_paid && !pack.goody) || app_cost
                                 ? Math.round(pack.cost * 1.1)
-                                : pack.cost
+                                : pack.cost,
                             )}
                         {' cr'}
                       </Button>
@@ -221,7 +218,7 @@ const searchForSupplies = (supplies, search) => {
     filter(
       (pack) =>
         pack.name?.toLowerCase().includes(search.toLowerCase()) ||
-        pack.desc?.toLowerCase().includes(search.toLowerCase())
+        pack.desc?.toLowerCase().includes(search.toLowerCase()),
     ),
     sortBy((pack) => pack.name),
     (packs) => packs.slice(0, 25),

@@ -1,6 +1,7 @@
-import { useBackend } from '../backend';
+import { Box, LabeledList, ProgressBar, Section } from 'tgui-core/components';
 import { formatSiUnit } from 'tgui-core/format';
-import { Box, LabeledList, Section, ProgressBar } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const ThermalGenerator = (props) => {

@@ -1,6 +1,7 @@
-import { classes } from 'tgui-core/react';
-import { useBackend } from '../backend';
 import { Box, Button, Section, Table } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const MiningVendor = (props) => {
@@ -49,7 +50,7 @@ export const MiningVendor = (props) => {
                       content={product.price + ' points'}
                       onClick={() =>
                         act('purchase', {
-                          'ref': product.ref,
+                          ref: product.ref,
                         })
                       }
                     />

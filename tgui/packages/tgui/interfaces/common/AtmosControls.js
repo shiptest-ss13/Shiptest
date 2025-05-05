@@ -1,4 +1,9 @@
-import { Button, LabeledList, NumberInput, Section } from 'tgui-core/components';
+import {
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
 import { decodeHtmlEntities } from 'tgui-core/string';
 
 import { useBackend } from '../../backend';

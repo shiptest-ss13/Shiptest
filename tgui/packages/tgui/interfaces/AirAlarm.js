@@ -1,7 +1,14 @@
-import { toFixed } from 'tgui-core/math';
 import { Fragment } from 'react';
+import {
+  Box,
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, LabeledList, Section, NumberInput } from 'tgui-core/components';
 import { Window } from '../layouts';
 import { Scrubber, Vent } from './common/AtmosControls';
 import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
@@ -24,7 +31,7 @@ export const AirAlarm = (props) => {
 const AirAlarmStatus = (props) => {
   const { data } = useBackend();
   const entries = (data.environment_data || []).filter(
-    (entry) => entry.value >= 0.01
+    (entry) => entry.value >= 0.01,
   );
   const dangerMap = {
     0: {
@@ -76,8 +83,8 @@ const AirAlarmStatus = (props) => {
                 data.heating.mode === 'Heat'
                   ? 'average'
                   : !data.heating.mode
-                  ? 'gray'
-                  : 'good'
+                    ? 'gray'
+                    : 'good'
               }
             >
               {data.heating.enabled ? data.heating.mode : 'Disabled'}

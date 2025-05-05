@@ -1,12 +1,13 @@
-import { useBackend, useLocalState } from '../backend';
 import { Button, Collapsible, NoticeBox, Section } from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 type OvermapDatumType = string;
 
 type OvermapPosition = [
   number, // x
-  number // y
+  number, // y
 ];
 
 type NameAndRef = {
@@ -67,9 +68,10 @@ const VvButton = (props: { target_ref: string }) => {
   );
 };
 
-const JumpButton = (
-  props: { target_ref: string; tooltip_override?: string }
-) => {
+const JumpButton = (props: {
+  target_ref: string;
+  tooltip_override?: string;
+}) => {
   const { target_ref } = props;
   const { act } = useBackend();
   return (
@@ -113,7 +115,7 @@ export const OvermapTokenManager = (_props: any) => {
   const { act, data } = useBackend<OvermapTokenManagerData>();
   const [activePane, setActivePane] = useLocalState<DatumType | undefined>(
     'activePane',
-    undefined
+    undefined,
   );
 
   const filteredData: OvermapDatumData[] = [];

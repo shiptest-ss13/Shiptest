@@ -1,6 +1,7 @@
+import { Box, Button, LabeledList, Section, Table } from 'tgui-core/components';
+
 import { sortBy } from '../../common/collections';
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, Section, Table } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 type FaxData = {
@@ -44,8 +45,8 @@ export const Fax = (props) => {
           ? data.faxes.filter((filterFax: FaxInfo) => filterFax.visible)
           : data.faxes.filter(
               (filterFax: FaxInfo) =>
-                filterFax.visible && !filterFax.frontier_network
-            )
+                filterFax.visible && !filterFax.frontier_network,
+            ),
       )
     : [];
   return (
@@ -85,7 +86,7 @@ export const Fax = (props) => {
               {(data.frontier_network
                 ? data.special_faxes
                 : data.special_faxes.filter(
-                    (fax: FaxSpecial) => !fax.emag_needed
+                    (fax: FaxSpecial) => !fax.emag_needed,
                   )
               ).map((special: FaxSpecial) => (
                 <Button

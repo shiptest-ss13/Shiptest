@@ -1,5 +1,6 @@
-import { useBackend } from '../backend';
 import { Box, Button, Icon, Section, Stack } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const OutfitEditor = (props) => {
@@ -27,7 +28,7 @@ export const OutfitEditor = (props) => {
               <Stack.Item
                 grow={1}
                 style={{
-                  'overflow': 'hidden',
+                  overflow: 'hidden',
                   'white-space': 'nowrap',
                   'text-overflow': 'ellipsis',
                 }}
@@ -161,7 +162,7 @@ const OutfitSlot = (props) => {
       <Box
         color="label"
         style={{
-          'overflow': 'hidden',
+          overflow: 'hidden',
           'white-space': 'nowrap',
           'text-overflow': 'ellipsis',
         }}

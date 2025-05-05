@@ -383,3 +383,17 @@ export const TgsTarget = new Juke.Target({
 const TGS_MODE = process.env.CBT_BUILD_MODE === "TGS";
 
 export default TGS_MODE ? TgsTarget : BuildTarget;
+
+export const TguiPrettierFix = new Juke.Target({
+  dependsOn: [YarnTarget],
+  executes: () => yarn('tgui:prettier-fix'),
+});
+
+export const TguiEslintFix = new Juke.Target({
+  dependsOn: [YarnTarget],
+  executes: () => yarn('tgui:eslint-fix'),
+});
+
+export const TguiFix = new Juke.Target({
+  dependsOn: [TguiPrettierFix, TguiEslintFix],
+});

@@ -1,19 +1,17 @@
-import { useBackend } from '../../backend';
 import {
-  ProgressBar,
+  AnimatedNumber,
+  Box,
   Button,
+  ProgressBar,
   Section,
   Stack,
-  AnimatedNumber,
   Tooltip,
-  Box,
 } from 'tgui-core/components';
-import { Window } from '../../layouts';
-
 import { capitalizeFirst } from 'tgui-core/string';
 
+import { useBackend } from '../../backend';
+import { Window } from '../../layouts';
 import { PLANTSTATUS2COLOR } from './constants';
-
 import { PlantAnalyzerData } from './types';
 
 export const PlantAnalyzer = (props) => {

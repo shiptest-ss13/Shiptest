@@ -1,14 +1,14 @@
-import { useBackend } from '../../backend';
 import {
-  ProgressBar,
-  Section,
+  Box,
   Button,
   LabeledList,
-  Box,
+  ProgressBar,
+  Section,
 } from 'tgui-core/components';
-import { Window } from '../../layouts';
 
-import { Mission, Data } from './types';
+import { useBackend } from '../../backend';
+import { Window } from '../../layouts';
+import { Data, Mission } from './types';
 
 export const MissionBoard = (props) => {
   return (

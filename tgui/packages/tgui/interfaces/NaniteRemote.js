@@ -1,13 +1,14 @@
-import { useBackend } from '../backend';
 import {
   Button,
+  Input,
   LabeledList,
+  NoticeBox,
   NumberInput,
   Section,
-  NoticeBox,
-  Input,
   Table,
 } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const NaniteRemote = (props) => {

@@ -17,14 +17,14 @@ export const RequestManager = (props) => {
   const [filteredTypes, _] = useLocalState(
     'filteredTypes',
     Object.fromEntries(
-      Object.entries(displayTypeMap).map(([type, _]) => [type, true])
-    )
+      Object.entries(displayTypeMap).map(([type, _]) => [type, true]),
+    ),
   );
   const [searchText, setSearchText] = useLocalState('searchText');
 
   // Handle filtering
   let displayedRequests = requests.filter(
-    (request) => filteredTypes[request.req_type]
+    (request) => filteredTypes[request.req_type],
   );
   if (searchText) {
     const filterText = searchText.toLowerCase();
@@ -33,7 +33,7 @@ export const RequestManager = (props) => {
         decodeHtmlEntities(request.message)
           .toLowerCase()
           .includes(filterText) ||
-        request.owner_name.toLowerCase().includes(filterText)
+        request.owner_name.toLowerCase().includes(filterText),
     );
   }
 
@@ -81,11 +81,11 @@ export const RequestManager = (props) => {
 };
 
 const displayTypeMap = {
-  'request_prayer': 'PRAYER',
-  'request_centcom': 'CENTCOM',
-  'request_syndicate': 'SYNDICATE',
-  'request_nuke': 'NUKE CODE',
-  'request_fax': 'FAX',
+  request_prayer: 'PRAYER',
+  request_centcom: 'CENTCOM',
+  request_syndicate: 'SYNDICATE',
+  request_nuke: 'NUKE CODE',
+  request_fax: 'FAX',
 };
 
 const RequestType = (props) => {
@@ -129,13 +129,13 @@ const RequestControls = (props) => {
 const FilterPanel = (_) => {
   const [filterVisible, setFilterVisible] = useLocalState(
     'filterVisible',
-    false
+    false,
   );
   const [filteredTypes, setFilteredTypes] = useLocalState(
     'filteredTypes',
     Object.fromEntries(
-      Object.entries(displayTypeMap).map(([type, _]) => [type, true])
-    )
+      Object.entries(displayTypeMap).map(([type, _]) => [type, true]),
+    ),
   );
 
   return (

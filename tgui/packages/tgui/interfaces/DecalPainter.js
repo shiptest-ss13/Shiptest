@@ -1,5 +1,6 @@
-import { useBackend } from '../backend';
 import { Button, Section } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const DecalPainter = (props) => {
@@ -33,8 +34,8 @@ export const DecalPainter = (props) => {
                   color.colors === 'red'
                     ? 'Red'
                     : color.colors === 'white'
-                    ? 'White'
-                    : 'Yellow'
+                      ? 'White'
+                      : 'Yellow'
                 }
                 selected={color.colors === data.decal_color}
                 onClick={() =>
@@ -55,10 +56,10 @@ export const DecalPainter = (props) => {
                   dir.dirs === 1
                     ? 'North'
                     : dir.dirs === 2
-                    ? 'South'
-                    : dir.dirs === 4
-                    ? 'East'
-                    : 'West'
+                      ? 'South'
+                      : dir.dirs === 4
+                        ? 'East'
+                        : 'West'
                 }
                 selected={dir.dirs === data.decal_direction}
                 onClick={() =>

@@ -1,7 +1,8 @@
+import { Button, ProgressBar, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Section, ProgressBar } from 'tgui-core/components';
-import { BeakerContents } from './common/BeakerContents';
 import { Window } from '../layouts';
+import { BeakerContents } from './common/BeakerContents';
 
 export const Cloner = (props) => {
   const { act, data } = useBackend();

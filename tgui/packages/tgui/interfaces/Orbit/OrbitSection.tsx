@@ -1,4 +1,5 @@
 import { Collapsible, Flex, Tooltip } from 'tgui-core/components';
+
 import { isJobOrNameMatch } from './helpers';
 import { OrbitItem } from './OrbitItem';
 import { OrbitTooltip } from './OrbitTooltip';
@@ -20,7 +21,7 @@ export const OrbitSection = (props: Props) => {
   const { color, section = [], title, searchQuery, autoObserve } = props;
 
   const filteredSection = section.filter((observable) =>
-    isJobOrNameMatch(observable, searchQuery)
+    isJobOrNameMatch(observable, searchQuery),
   );
 
   if (!filteredSection.length) {

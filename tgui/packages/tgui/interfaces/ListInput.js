@@ -18,33 +18,21 @@ export const ListInput = (props) => {
   const { title, message, buttons, timeout } = data;
 
   // Search
-  const [showSearchBar, setShowSearchBar] = useLocalState(
-    'search_bar',
-    false
-  );
+  const [showSearchBar, setShowSearchBar] = useLocalState('search_bar', false);
   const [displayedArray, setDisplayedArray] = useLocalState(
     'displayed_array',
-    buttons
+    buttons,
   );
 
   // KeyPress
-  const [searchArray, setSearchArray] = useLocalState(
-    'search_array',
-    []
-  );
-  const [searchIndex, setSearchIndex] = useLocalState(
-    'search_index',
-    0
-  );
-  const [lastCharCode, setLastCharCode] = useLocalState(
-    'last_char_code',
-    null
-  );
+  const [searchArray, setSearchArray] = useLocalState('search_array', []);
+  const [searchIndex, setSearchIndex] = useLocalState('search_index', 0);
+  const [lastCharCode, setLastCharCode] = useLocalState('last_char_code', null);
 
   // Selected Button
   const [selectedButton, setSelectedButton] = useLocalState(
     'selected_button',
-    buttons[0]
+    buttons[0],
   );
 
   const handleKeyDown = (e) => {
@@ -92,7 +80,7 @@ export const ListInput = (props) => {
       }
     } else {
       const resultArray = displayedArray.filter(
-        (value) => value.substring(0, 1).toLowerCase() === charCode
+        (value) => value.substring(0, 1).toLowerCase() === charCode,
       );
 
       if (resultArray.length > 0) {
@@ -166,8 +154,8 @@ export const ListInput = (props) => {
                   setDisplayedArray(
                     buttons.filter(
                       (val) =>
-                        val.toLowerCase().search(value.toLowerCase()) !== -1
-                    )
+                        val.toLowerCase().search(value.toLowerCase()) !== -1,
+                    ),
                   )
                 }
               />

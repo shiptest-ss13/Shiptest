@@ -1,6 +1,7 @@
+import { Button, Stack, TextArea } from 'tgui-core/components';
+
 import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
-import { Button, TextArea, Stack } from 'tgui-core/components';
 
 export const Application = (props) => {
   const { act, data } = useBackend();

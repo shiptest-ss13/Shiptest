@@ -1,5 +1,12 @@
+import {
+  Button,
+  Icon,
+  Input,
+  LabeledList,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Icon, Input, LabeledList, Section } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const HypnoChair = (props) => {
@@ -25,15 +32,15 @@ export const HypnoChair = (props) => {
                   data.occupant.stat === 0
                     ? 'good'
                     : data.occupant.stat === 1
-                    ? 'average'
-                    : 'bad'
+                      ? 'average'
+                      : 'bad'
                 }
               >
                 {data.occupant.stat === 0
                   ? 'Conscious'
                   : data.occupant.stat === 1
-                  ? 'Unconcious'
-                  : 'Dead'}
+                    ? 'Unconcious'
+                    : 'Dead'}
               </LabeledList.Item>
             )}
           </LabeledList>

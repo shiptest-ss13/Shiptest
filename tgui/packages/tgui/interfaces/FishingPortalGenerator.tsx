@@ -1,6 +1,7 @@
+import { Button, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import { Button, LabeledList, Section } from 'tgui-core/components';
 
 type FishingPortalData = {
   active: boolean;
@@ -21,7 +22,7 @@ export const FishingPortalGenerator = (props) => {
                 <LabeledList.Item key={x}>
                   <Button
                     disabled={data.active}
-                    onClick={() => act('preset', { 'preset': x })}
+                    onClick={() => act('preset', { preset: x })}
                     content={x}
                     selected={x === data.active_preset}
                   />

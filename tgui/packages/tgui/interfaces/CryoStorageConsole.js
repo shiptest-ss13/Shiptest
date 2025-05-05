@@ -1,5 +1,12 @@
+import {
+  Button,
+  Divider,
+  LabeledList,
+  Section,
+  Table,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section, Table, Divider } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const CryoStorageConsole = (props) => {

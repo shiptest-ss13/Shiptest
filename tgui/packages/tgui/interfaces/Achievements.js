@@ -8,10 +8,10 @@ export const Achievements = (props) => {
   const { categories } = data;
   const [selectedCategory, setSelectedCategory] = useLocalState(
     'category',
-    categories[0]
+    categories[0],
   );
   const achievements = data.achievements.filter(
-    (x) => x.category === selectedCategory
+    (x) => x.category === selectedCategory,
   );
   return (
     <Window title="Achievements" width={540} height={680} resizable>
@@ -80,10 +80,7 @@ const Achievement = (props) => {
 const HighScoreTable = (props) => {
   const { data } = useBackend();
   const { highscore: highscores, user_ckey } = data;
-  const [highScoreIndex, setHighScoreIndex] = useLocalState(
-    'highscore',
-    0
-  );
+  const [highScoreIndex, setHighScoreIndex] = useLocalState('highscore', 0);
   const highscore = highscores[highScoreIndex];
   if (!highscore) {
     return null;

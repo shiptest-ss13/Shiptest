@@ -1,6 +1,7 @@
 import { map } from 'common/collections';
-import { useBackend } from '../backend';
 import { Button, Section, Table } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { NtosWindow } from '../layouts';
 
 export const NtosCrewManifest = (props) => {

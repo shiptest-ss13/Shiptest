@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -9,6 +8,8 @@ import {
   Slider,
 } from 'tgui-core/components';
 import { formatPower } from 'tgui-core/format';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 // Common power multiplier
@@ -151,8 +152,8 @@ export const Smes = (props) => {
                 {outputting
                   ? 'Sending'
                   : charge > 0
-                  ? 'Not Sending'
-                  : 'No Charge'}
+                    ? 'Not Sending'
+                    : 'No Charge'}
               </Box>
             </LabeledList.Item>
             <LabeledList.Item label="Target Output">

@@ -1,8 +1,7 @@
-import { useBackend } from '../../backend';
-import { Stack, Button, Flex, Icon } from 'tgui-core/components';
-
+import { Button, Flex, Icon, Stack } from 'tgui-core/components';
 import { capitalizeFirst } from 'tgui-core/string';
 
+import { useBackend } from '../../backend';
 import { getDisplayColor, getDisplayName } from './helpers';
 import { Antagonist, Observable, OrbitData } from './types';
 

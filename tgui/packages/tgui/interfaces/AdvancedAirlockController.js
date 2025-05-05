@@ -1,18 +1,19 @@
-import { toFixed } from 'tgui-core/math';
-import { decodeHtmlEntities } from 'tgui-core/string';
 import { Fragment } from 'react';
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
   LabeledList,
   NumberInput,
-  Section,
   ProgressBar,
+  Section,
 } from 'tgui-core/components';
-import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
+import { toFixed } from 'tgui-core/math';
 import { classes } from 'tgui-core/react';
+import { decodeHtmlEntities } from 'tgui-core/string';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
+import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
 
 const STATE_INOPEN = 0;
 const STATE_INOPENING = 1;
@@ -373,7 +374,7 @@ export const Airlock = (props) => {
               data.vis_target === airlock_id ? 'clear_vis' : 'set_vis_airlock',
               {
                 airlock_id,
-              }
+              },
             )
           }
         />

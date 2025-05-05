@@ -1,8 +1,9 @@
 import { filter, sortBy } from 'common/collections';
+import { LabeledList, ProgressBar, Section } from 'tgui-core/components';
 import { flow } from 'tgui-core/fp';
 import { toFixed } from 'tgui-core/math';
+
 import { useBackend } from '../backend';
-import { LabeledList, ProgressBar, Section } from 'tgui-core/components';
 import { getGasColor } from '../constants';
 import { NtosWindow } from '../layouts';
 

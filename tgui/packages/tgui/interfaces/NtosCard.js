@@ -1,4 +1,3 @@
-import { useBackend, useLocalState } from '../backend';
 import {
   Box,
   Button,
@@ -8,6 +7,8 @@ import {
   Section,
   Tabs,
 } from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { NtosWindow } from '../layouts';
 import { AccessList } from './common/AccessList';
 
@@ -41,7 +42,7 @@ export const NtosCardContent = (props) => {
   } = data;
   const [selectedDepartment, setSelectedDepartment] = useLocalState(
     'department',
-    Object.keys(jobs)[0]
+    Object.keys(jobs)[0],
   );
   if (!have_id_slot) {
     return (
@@ -123,7 +124,7 @@ export const NtosCardContent = (props) => {
                       color={id_has_ship_access ? 'bad' : 'good'}
                       onClick={() =>
                         act(
-                          id_has_ship_access ? 'PRG_denyship' : 'PRG_grantship'
+                          id_has_ship_access ? 'PRG_denyship' : 'PRG_grantship',
                         )
                       }
                     />
@@ -224,7 +225,7 @@ export const NtosCardContent = (props) => {
                       act(
                         ship_has_unique_access
                           ? 'PRG_disableuniqueaccess'
-                          : 'PRG_enableuniqueaccess'
+                          : 'PRG_enableuniqueaccess',
                       )
                     }
                   />

@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
-import { useBackend, useLocalState } from '../backend';
 import { Button, Input, Section, Stack } from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 export const ChemFilterPane = (props) => {

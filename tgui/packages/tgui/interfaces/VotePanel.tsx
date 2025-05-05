@@ -72,7 +72,7 @@ export const VotePanel = (props) => {
     windowTitle +=
       ': ' +
       (currentVote.question || currentVote.vote.name).replace(/^\w/, (c) =>
-        c.toUpperCase()
+        c.toUpperCase(),
       );
   }
 

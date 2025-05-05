@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -9,6 +8,8 @@ import {
   Modal,
   Section,
 } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const ShuttleConsole = (props) => {
@@ -61,12 +62,12 @@ const getLocationIdByName = (locations, name) => {
 
 const STATUS_COLOR_KEYS = {
   'In Transit': 'good',
-  'Idle': 'average',
-  'Igniting': 'average',
-  'Recharging': 'average',
-  'Missing': 'bad',
+  Idle: 'average',
+  Igniting: 'average',
+  Recharging: 'average',
+  Missing: 'bad',
   'Unauthorized Access': 'bad',
-  'Locked': 'bad',
+  Locked: 'bad',
 };
 
 const ShuttleConsoleContent = (props) => {

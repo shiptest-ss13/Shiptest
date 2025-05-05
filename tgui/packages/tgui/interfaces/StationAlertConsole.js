@@ -1,5 +1,6 @@
-import { useBackend } from '../backend';
 import { Section } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const StationAlertConsole = () => {

@@ -46,10 +46,7 @@ const GenericExport = (props) => {
   const { act, data } = useBackend();
   const { redeemExports = [], allExports = [] } = data;
   const [searchText, setSearchText] = useLocalState('searchText', '');
-  const [compactMode, setCompactMode] = useLocalState(
-    'compactMode',
-    false
-  );
+  const [compactMode, setCompactMode] = useLocalState('compactMode', false);
   const testSearch = createSearch(searchText, (item) => {
     return item.name + item.desc;
   });
@@ -110,10 +107,7 @@ const GenericExport = (props) => {
 const ExportList = (props) => {
   const { compactMode, exportList = [], redeemable = false } = props;
   const { act } = useBackend();
-  const [hoveredItem, setHoveredItem] = useLocalState(
-    'hoveredItem',
-    {}
-  );
+  const [hoveredItem, setHoveredItem] = useLocalState('hoveredItem', {});
 
   // append some extra data depending on whether we're in redeemable mode
   const items = exportList.map((item) => {

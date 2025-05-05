@@ -1,15 +1,14 @@
-import { useBackend } from '../../backend';
-
 import {
-  Button,
-  Box,
-  Section,
-  LabeledList,
   AnimatedNumber,
+  Box,
+  Button,
+  LabeledList,
+  Section,
 } from 'tgui-core/components';
-import { Window } from '../../layouts';
-
 import { decodeHtmlEntities } from 'tgui-core/string';
+
+import { useBackend } from '../../backend';
+import { Window } from '../../layouts';
 
 export type OvermapData = {
   admin_rights: Boolean;

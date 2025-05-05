@@ -424,10 +424,7 @@ const EFFECTS_ALL = [
 
 const ViewTabHolder = (props) => {
   const { act, data } = useBackend();
-  const [tabPageIndex, setTabPageIndex] = useLocalState(
-    'tabPageIndex',
-    1
-  );
+  const [tabPageIndex, setTabPageIndex] = useLocalState('tabPageIndex', 1);
   const { mapRef } = data;
   const TabPageComponent = TABPAGES[tabPageIndex].component();
   return (
@@ -685,10 +682,7 @@ const PodStatusPage = (props) => {
 
 const ReverseMenu = (props) => {
   const { act, data } = useBackend();
-  const [tabPageIndex, setTabPageIndex] = useLocalState(
-    'tabPageIndex',
-    1
-  );
+  const [tabPageIndex, setTabPageIndex] = useLocalState('tabPageIndex', 1);
   return (
     <Section
       fill
@@ -835,18 +829,9 @@ class PresetsPage extends Component {
   render() {
     const { presets } = this.state;
     const { act, data } = useBackend();
-    const [presetIndex, setSelectedPreset] = useLocalState(
-      'presetIndex',
-      0
-    );
-    const [settingName, setEditingNameStatus] = useLocalState(
-      'settingName',
-      0
-    );
-    const [newNameText, setText] = useLocalState(
-      'newNameText',
-      ''
-    );
+    const [presetIndex, setSelectedPreset] = useLocalState('presetIndex', 0);
+    const [settingName, setEditingNameStatus] = useLocalState('settingName', 0);
+    const [newNameText, setText] = useLocalState('newNameText', '');
     const [hue, setHue] = useLocalState('hue', 0);
     return (
       <Section
@@ -1026,8 +1011,8 @@ const StylePage = (props) => {
                 ? 'top-start'
                 : 'top-end'
               : i % 2 === 1
-              ? 'bottom-start'
-              : 'bottom-end'
+                ? 'bottom-start'
+                : 'bottom-end'
           }
           tooltip={page.title}
           style={{
@@ -1041,7 +1026,7 @@ const StylePage = (props) => {
           <Box
             className={classes(['supplypods64x64', 'pod_asset' + (i + 1)])}
             style={{
-              'transform': 'rotate(45deg) translate(-25%,-10%)',
+              transform: 'rotate(45deg) translate(-25%,-10%)',
               'pointer-events': 'none',
             }}
           />

@@ -1,5 +1,5 @@
-import { RequestKioskContent } from './RequestKiosk';
 import { NtosWindow } from '../layouts';
+import { RequestKioskContent } from './RequestKiosk';
 
 export const NtosRequestKiosk = (props) => {
   return (

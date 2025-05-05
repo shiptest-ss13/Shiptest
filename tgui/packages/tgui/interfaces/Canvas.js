@@ -1,6 +1,7 @@
 import { Component, createRef } from 'react';
-import { useBackend } from '../backend';
 import { Box, Button } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const PX_PER_UNIT = 24;

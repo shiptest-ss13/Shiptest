@@ -1,4 +1,3 @@
-import { useBackend, useSharedState } from '../backend';
 import {
   Button,
   Flex,
@@ -7,6 +6,8 @@ import {
   Section,
   Tabs,
 } from 'tgui-core/components';
+
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 
 export const TachyonArray = (props) => {
@@ -30,7 +31,7 @@ export const TachyonArrayContent = (props) => {
   const { records = [] } = data;
   const [activeRecordName, setActiveRecordName] = useSharedState(
     'record',
-    records[0]?.name
+    records[0]?.name,
   );
   const activeRecord = records.find((record) => {
     return record.name === activeRecordName;
@@ -65,7 +66,7 @@ export const TachyonArrayContent = (props) => {
                     color="bad"
                     onClick={() =>
                       act('delete_record', {
-                        'ref': activeRecord.ref,
+                        ref: activeRecord.ref,
                       })
                     }
                   />
@@ -74,7 +75,7 @@ export const TachyonArrayContent = (props) => {
                     content="Print"
                     onClick={() =>
                       act('print_record', {
-                        'ref': activeRecord.ref,
+                        ref: activeRecord.ref,
                       })
                     }
                   />

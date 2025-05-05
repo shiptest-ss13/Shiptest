@@ -33,7 +33,7 @@ export const getAntagCategories = (antagonists: Antagonist[]): AntagGroup[] => {
 /** Returns a disguised name in case the person is wearing someone else's ID */
 export const getDisplayName = (
   full_name: string,
-  nickname?: string
+  nickname?: string,
 ): string => {
   if (!nickname) {
     return full_name;
@@ -45,7 +45,7 @@ export const getDisplayName = (
 /** Displays color for buttons based on the health or orbiter count. */
 export const getDisplayColor = (
   item: Observable,
-  override?: string
+  override?: string,
 ): string => {
   const { job, health, orbiters } = item;
 
@@ -77,7 +77,7 @@ const getHealthColor = (health: number): string => {
 /** Checks if a full name or job title matches the search. */
 export const isJobOrNameMatch = (
   observable: Observable,
-  searchQuery: string
+  searchQuery: string,
 ): boolean => {
   if (!searchQuery) return true;
 

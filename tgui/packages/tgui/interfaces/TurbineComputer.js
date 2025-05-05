@@ -1,6 +1,7 @@
-import { useBackend } from '../backend';
 import { Button, LabeledList, Section } from 'tgui-core/components';
 import { formatSiUnit } from 'tgui-core/format';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const TurbineComputer = (props) => {
@@ -9,7 +10,7 @@ export const TurbineComputer = (props) => {
     data.compressor &&
       !data.compressor_broke &&
       data.turbine &&
-      !data.turbine_broke
+      !data.turbine_broke,
   );
   return (
     <Window width={310} height={180}>

@@ -1,5 +1,6 @@
+import { Button, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Section, Button } from 'tgui-core/components';
 import { Window } from '../layouts';
 
 export const NotificationPreferences = (props) => {

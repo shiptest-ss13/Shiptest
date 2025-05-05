@@ -20,10 +20,7 @@ export const ShipSelect = (props) => {
   const templates = data.templates || [];
 
   const [currentTab, setCurrentTab] = useLocalState('tab', 1);
-  const [selectedShip, setSelectedShip] = useLocalState(
-    'selectedShip',
-    null
-  );
+  const [selectedShip, setSelectedShip] = useLocalState('selectedShip', null);
 
   const applyStates = {
     open: 'Open',
@@ -114,7 +111,8 @@ export const ShipSelect = (props) => {
                           // check if the tab already exists
                           const tabExists = shownTabs.some(
                             (tab) =>
-                              tab.name === newTab.name && tab.tab === newTab.tab
+                              tab.name === newTab.name &&
+                              tab.tab === newTab.tab,
                           );
                           if (tabExists) {
                             return;
@@ -295,7 +293,7 @@ export const ShipSelect = (props) => {
                     {formatShipTime(
                       template.minTime,
                       data.playMin,
-                      data.autoMeet
+                      data.autoMeet,
                     )}
                   </LabeledList.Item>
                   <LabeledList.Item label="Wiki Link">

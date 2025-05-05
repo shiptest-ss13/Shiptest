@@ -1,15 +1,16 @@
-import { useBackend, useSharedState } from '../backend';
 import {
   Box,
   Button,
   Dimmer,
   Icon,
   LabeledList,
-  Stack,
   Section,
+  Stack,
   Tabs,
 } from 'tgui-core/components';
 import { capitalize } from 'tgui-core/string';
+
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 
 export const Limbgrower = (props) => {
@@ -21,12 +22,9 @@ export const Limbgrower = (props) => {
     categories = [],
     busy,
   } = data;
-  const [tab, setTab] = useSharedState(
-    'category',
-    categories[0]?.name
-  );
+  const [tab, setTab] = useSharedState('category', categories[0]?.name);
   const designList = categories.find(
-    (category) => category.name === tab
+    (category) => category.name === tab,
   )?.designs;
 
   return (

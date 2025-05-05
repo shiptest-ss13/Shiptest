@@ -1,5 +1,6 @@
-import { useBackend } from '../backend';
 import { Box, Button, ColorBox, Section, Table } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { COLORS } from '../constants';
 import { Window } from '../layouts';
 
@@ -98,7 +99,7 @@ const CrewTable = (props) => {
                 sensor.oxydam,
                 sensor.toxdam,
                 sensor.burndam,
-                sensor.brutedam
+                sensor.brutedam,
               )}
             />
           </Table.Cell>

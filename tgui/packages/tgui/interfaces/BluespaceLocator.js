@@ -1,5 +1,6 @@
-import { useBackend, useSharedState } from '../backend';
 import { Icon, ProgressBar, Tabs } from 'tgui-core/components';
+
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 
 const directionToIcon = {

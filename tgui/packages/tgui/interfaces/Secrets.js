@@ -1,5 +1,3 @@
-import { toFixed } from 'tgui-core/math';
-import { useBackend, useLocalState } from '../backend';
 import {
   Button,
   Flex,
@@ -8,6 +6,9 @@ import {
   RoundGauge,
   Section,
 } from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const TAB2NAME = [
@@ -618,9 +619,9 @@ export const Secrets = (props) => {
                         maxValue={100}
                         alertAfter={100 * 0.7}
                         ranges={{
-                          'good': [-2, 100 * 0.25],
-                          'average': [100 * 0.25, 100 * 0.75],
-                          'bad': [100 * 0.75, 100],
+                          good: [-2, 100 * 0.25],
+                          average: [100 * 0.25, 100 * 0.75],
+                          bad: [100 * 0.75, 100],
                         }}
                         format={(value) => toFixed(value) + '%'}
                       />

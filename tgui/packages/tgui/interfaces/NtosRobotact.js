@@ -1,4 +1,3 @@
-import { useBackend, useSharedState } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -10,6 +9,8 @@ import {
   Slider,
   Tabs,
 } from 'tgui-core/components';
+
+import { useBackend, useSharedState } from '../backend';
 import { NtosWindow } from '../layouts';
 
 export const NtosRobotact = (props) => {
@@ -227,8 +228,8 @@ export const NtosRobotactContent = (props) => {
                         wireAI === 'FAULT'
                           ? 'red'
                           : wireAI === 'READY'
-                          ? 'yellow'
-                          : 'green'
+                            ? 'yellow'
+                            : 'green'
                       }
                     >
                       {wireAI}
@@ -245,8 +246,8 @@ export const NtosRobotactContent = (props) => {
                         wireCamera === 'FAULT'
                           ? 'red'
                           : wireCamera === 'DISABLED'
-                          ? 'yellow'
-                          : 'green'
+                            ? 'yellow'
+                            : 'green'
                       }
                     >
                       {wireCamera}
@@ -263,8 +264,8 @@ export const NtosRobotactContent = (props) => {
                         locomotion === 'FAULT'
                           ? 'red'
                           : locomotion === 'DISABLED'
-                          ? 'yellow'
-                          : 'green'
+                            ? 'yellow'
+                            : 'green'
                       }
                     >
                       {locomotion}

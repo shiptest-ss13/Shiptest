@@ -1,21 +1,22 @@
-import { useBackend, useLocalState } from '../backend';
 import {
+  AnimatedNumber,
+  Box,
   Button,
+  Collapsible,
   ColorBox,
+  Dimmer,
+  Dropdown,
+  Flex,
+  Icon,
   LabeledList,
+  NumberInput,
   ProgressBar,
   Section,
-  Collapsible,
-  Box,
-  Icon,
   Stack,
   Table,
-  Dimmer,
-  NumberInput,
-  Flex,
-  AnimatedNumber,
-  Dropdown,
 } from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const ConfigureNumberEntry = (props) => {
@@ -30,9 +31,9 @@ const ConfigureNumberEntry = (props) => {
       width="39px"
       onChange={(e, value) =>
         act('configure', {
-          'key': name,
-          'value': value,
-          'ref': module_ref,
+          key: name,
+          value: value,
+          ref: module_ref,
         })
       }
     />
@@ -47,9 +48,9 @@ const ConfigureBoolEntry = (props) => {
       checked={value}
       onClick={() =>
         act('configure', {
-          'key': name,
-          'value': !value,
-          'ref': module_ref,
+          key: name,
+          value: !value,
+          ref: module_ref,
         })
       }
     />
@@ -65,8 +66,8 @@ const ConfigureColorEntry = (props) => {
         icon="paint-brush"
         onClick={() =>
           act('configure', {
-            'key': name,
-            'ref': module_ref,
+            key: name,
+            ref: module_ref,
           })
         }
       />
@@ -84,9 +85,9 @@ const ConfigureListEntry = (props) => {
       options={values}
       onSelected={(value) =>
         act('configure', {
-          'key': name,
-          'value': value,
-          'ref': module_ref,
+          key: name,
+          value: value,
+          ref: module_ref,
         })
       }
     />
@@ -505,8 +506,8 @@ const ParametersSection = (props) => {
   const status = malfunctioning
     ? 'Malfunctioning'
     : active
-    ? 'Active'
-    : 'Inactive';
+      ? 'Active'
+      : 'Inactive';
   return (
     <Section title="Parameters">
       <LabeledList>
@@ -633,7 +634,7 @@ const ModuleSection = (props) => {
   const { complexity_max, modules } = data;
   const [configureState, setConfigureState] = useLocalState(
     'module_configuration',
-    null
+    null,
   );
   return (
     <Section title="Modules">
@@ -721,7 +722,7 @@ const ModuleSection = (props) => {
                         </Table.Cell>
                         <Table.Cell textAlign="center">
                           <Button
-                            onClick={() => act('select', { 'ref': module.ref })}
+                            onClick={() => act('select', { ref: module.ref })}
                             icon="bullseye"
                             selected={module.module_active}
                             tooltip={displayText(module.module_type)}
@@ -737,7 +738,7 @@ const ModuleSection = (props) => {
                             disabled={module.configuration_data.length === 0}
                           />
                           <Button
-                            onClick={() => act('pin', { 'ref': module.ref })}
+                            onClick={() => act('pin', { ref: module.ref })}
                             icon="thumbtack"
                             selected={module.pinned}
                             tooltip="Pin"

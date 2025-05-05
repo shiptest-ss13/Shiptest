@@ -1,4 +1,9 @@
-import { Button, LabeledList, ProgressBar, Section } from 'tgui-core/components';
+import {
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+} from 'tgui-core/components';
 import { toFixed } from 'tgui-core/math';
 
 import { useBackend } from '../backend';

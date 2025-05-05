@@ -1,6 +1,4 @@
 import { sortBy } from 'common/collections';
-import { capitalize } from 'tgui-core/string';
-import { useBackend, useLocalState } from '../backend';
 import {
   Blink,
   Box,
@@ -13,6 +11,9 @@ import {
   Section,
   TextArea,
 } from 'tgui-core/components';
+import { capitalize } from 'tgui-core/string';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 import { sanitizeText } from '../sanitize';
 
@@ -325,15 +326,15 @@ const PageMain = (props) => {
 
   const [messagingAssociates, setMessagingAssociates] = useLocalState(
     'messaging_associates',
-    false
+    false,
   );
   const [messagingSector, setMessagingSector] = useLocalState(
     'messaing_sector',
-    null
+    null,
   );
   const [requestingNukeCodes, setRequestingNukeCodes] = useLocalState(
     'requesting_nuke_codes',
-    false
+    false,
   );
 
   const [
@@ -571,7 +572,7 @@ const PageMessages = (props) => {
         content="Back"
         onClick={() => act('setState', { state: STATE_MAIN })}
       />
-    </Section>
+    </Section>,
   );
 
   const messageElements = [];
@@ -626,7 +627,7 @@ const PageMessages = (props) => {
         <Box dangerouslySetInnerHTML={textHtml} />
 
         {answers}
-      </Section>
+      </Section>,
     );
   }
 

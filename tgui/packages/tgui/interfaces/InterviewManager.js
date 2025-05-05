@@ -1,6 +1,7 @@
 import { Button, Section } from 'tgui-core/components';
-import { Window } from '../layouts';
+
 import { useBackend } from '../backend';
+import { Window } from '../layouts';
 
 export const InterviewManager = (props) => {
   const { act, data } = useBackend();
@@ -26,7 +27,7 @@ export const InterviewManager = (props) => {
               key={id}
               content={ckey + (disconnected ? ' (DC)' : '')}
               color={queued ? 'default' : colorMap(status)}
-              onClick={() => act('open', { 'id': id })}
+              onClick={() => act('open', { id: id })}
             />
           ))}
         </Section>
@@ -36,7 +37,7 @@ export const InterviewManager = (props) => {
               key={id}
               content={ckey + (disconnected ? ' (DC)' : '')}
               color={colorMap(status)}
-              onClick={() => act('open', { 'id': id })}
+              onClick={() => act('open', { id: id })}
             />
           ))}
         </Section>

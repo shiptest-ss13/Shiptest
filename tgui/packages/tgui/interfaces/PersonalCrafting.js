@@ -1,4 +1,3 @@
-import { useBackend, useLocalState } from '../backend';
 import {
   Button,
   Dimmer,
@@ -8,6 +7,8 @@ import {
   Section,
   Tabs,
 } from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 export const PersonalCrafting = (props) => {

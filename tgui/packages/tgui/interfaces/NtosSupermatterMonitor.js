@@ -1,7 +1,4 @@
 import { sortBy } from 'common/collections';
-import { flow } from 'tgui-core/fp';
-import { toFixed } from 'tgui-core/math';
-import { useBackend } from '../backend';
 import {
   Button,
   LabeledList,
@@ -10,6 +7,10 @@ import {
   Stack,
   Table,
 } from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { getGasColor } from '../constants';
 import { NtosWindow } from '../layouts';
 

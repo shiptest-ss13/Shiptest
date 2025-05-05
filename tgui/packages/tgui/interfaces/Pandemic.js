@@ -1,5 +1,4 @@
 import { map } from 'common/collections';
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -10,6 +9,8 @@ import {
   NoticeBox,
   Section,
 } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const PandemicBeakerDisplay = (props) => {
@@ -171,7 +172,7 @@ export const PandemicSymptomDisplay = (props) => {
     neutered,
   } = symptom;
   const thresholds = map((desc, label) => ({ desc, label }))(
-    symptom.threshold_desc || {}
+    symptom.threshold_desc || {},
   );
   return (
     <Section

@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -7,6 +6,8 @@ import {
   NumberInput,
   Section,
 } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const ChemDebugSynthesizer = (props) => {

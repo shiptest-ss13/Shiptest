@@ -1,5 +1,3 @@
-import { toTitleCase } from 'tgui-core/string';
-import { useBackend, useLocalState } from '../backend';
 import {
   BlockQuote,
   Box,
@@ -8,6 +6,9 @@ import {
   Section,
   Table,
 } from 'tgui-core/components';
+import { toTitleCase } from 'tgui-core/string';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 export const OreRedemptionMachine = (props) => {
@@ -114,10 +115,7 @@ export const OreRedemptionMachine = (props) => {
 const MaterialRow = (props) => {
   const { material, onRelease } = props;
 
-  const [amount, setAmount] = useLocalState(
-    'amount' + material.name,
-    1
-  );
+  const [amount, setAmount] = useLocalState('amount' + material.name, 1);
 
   const amountAvailable = Math.floor(material.amount);
   return (

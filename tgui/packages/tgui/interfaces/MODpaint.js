@@ -1,15 +1,16 @@
-import { useBackend } from '../backend';
 import {
   Box,
-  Stack,
-  Section,
-  ByondUi,
-  Slider,
-  Flex,
   Button,
+  ByondUi,
+  Flex,
+  Section,
+  Slider,
+  Stack,
 } from 'tgui-core/components';
-import { Window } from '../layouts';
 import { capitalize } from 'tgui-core/string';
+
+import { useBackend } from '../backend';
+import { Window } from '../layouts';
 
 const colorToMatrix = (param) => {
   switch (param) {

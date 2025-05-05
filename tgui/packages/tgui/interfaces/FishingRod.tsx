@@ -1,6 +1,7 @@
+import { Box, Button, Flex, Section, Stack } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import { Box, Stack, Button, Section, Flex } from 'tgui-core/components';
 
 type Quality = {
   name: string;

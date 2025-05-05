@@ -1,4 +1,11 @@
-import { Box, Button, Flex, Icon, NoticeBox, Section } from 'tgui-core/components';
+import {
+  Box,
+  Button,
+  Flex,
+  Icon,
+  NoticeBox,
+  Section,
+} from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 
 import { resolveAsset } from '../assets';
@@ -61,7 +68,7 @@ export const NtosRadarContent = (props) => {
             'url("' + resolveAsset('ntosradarbackground.png') + '")',
           'background-position': 'center',
           'background-repeat': 'no-repeat',
-          'top': '20px',
+          top: '20px',
         }}
         position="relative"
         m={1.5}
@@ -89,7 +96,7 @@ export const NtosRadarContent = (props) => {
                 top="20px"
                 left="243px"
                 style={{
-                  'transform': `rotate(${target.rot}deg)`,
+                  transform: `rotate(${target.rot}deg)`,
                 }}
               />
             )) || (

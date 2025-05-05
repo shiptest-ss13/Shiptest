@@ -1,11 +1,16 @@
+import {
+  NoticeBox,
+  Section,
+  Stack,
+  Table,
+  Tooltip,
+} from 'tgui-core/components';
 import { toTitleCase } from 'tgui-core/string';
 
 import { useBackend } from '../../backend';
-import { NoticeBox, Section, Stack, Table, Tooltip } from 'tgui-core/components';
-
 import { getAntagCategories } from './helpers';
-import { AntagGroup, Observable, OrbitData } from './types';
 import { OrbitSection } from './OrbitSection';
+import { AntagGroup, Observable, OrbitData } from './types';
 
 type ContentSection = {
   content: Observable[];

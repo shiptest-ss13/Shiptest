@@ -1,16 +1,17 @@
-import { useBackend, useLocalState } from '../backend';
 import {
-  Section,
   Box,
-  Dropdown,
   Button,
-  Input,
-  TextArea,
   Divider,
-  NumberInput,
-  Tooltip,
+  Dropdown,
+  Input,
   Knob,
+  NumberInput,
+  Section,
+  TextArea,
+  Tooltip,
 } from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 export const AdminFax = (props) => {
@@ -32,14 +33,8 @@ export const FaxMainPanel = (props) => {
   const [fromWho, setFromWho] = useLocalState('fromWho', '');
   const [rawText, setRawText] = useLocalState('rawText', '');
   const [stamp, setStamp] = useLocalState('stampType', '');
-  const [stampCoordX, setStampCoordX] = useLocalState(
-    'stampCoordX',
-    0
-  );
-  const [stampCoordY, setStampCoordY] = useLocalState(
-    'stampCoordY',
-    0
-  );
+  const [stampCoordX, setStampCoordX] = useLocalState('stampCoordX', 0);
+  const [stampCoordY, setStampCoordY] = useLocalState('stampCoordY', 0);
   const [stampAngle, setStampAngle] = useLocalState('stampAngle', 0);
   if (stamp && data.stamps[0] !== 'None') {
     data.stamps.unshift('None');

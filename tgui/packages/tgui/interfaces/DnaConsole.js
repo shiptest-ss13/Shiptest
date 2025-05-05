@@ -1,9 +1,4 @@
 import { filter, uniqBy } from 'common/collections';
-import { flow } from 'tgui-core/fp';
-import { classes } from 'tgui-core/react';
-import { capitalize } from 'tgui-core/string';
-import { resolveAsset } from '../assets';
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -19,6 +14,12 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { classes } from 'tgui-core/react';
+import { capitalize } from 'tgui-core/string';
+
+import { resolveAsset } from '../assets';
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const SUBJECT_CONCIOUS = 0;
@@ -464,7 +465,7 @@ const StorageMutations = (props) => {
 
   let mutationRef = data.view[`storage${mode}MutationRef`];
   let mutation = mutations.find(
-    (mutation) => mutation.ByondRef === mutationRef
+    (mutation) => mutation.ByondRef === mutationRef,
   );
 
   // If no mutation is selected but there are stored mutations, pick the first
@@ -595,7 +596,7 @@ const MutationInfo = (props) => {
     );
   }
   const savedToConsole = mutationStorage.find((x) =>
-    isSameMutation(x, mutation)
+    isSameMutation(x, mutation),
   );
   const savedToDisk = diskMutations.find((x) => isSameMutation(x, mutation));
   const combinedMutations = flow([
@@ -787,7 +788,7 @@ const DnaConsoleSequencer = (props) => {
   const { isJokerReady, isMonkey, jokerSeconds, subjectStatus } = data;
   const { sequencerMutation, jokerActive } = data.view;
   const mutation = mutations.find(
-    (mutation) => mutation.Alias === sequencerMutation
+    (mutation) => mutation.Alias === sequencerMutation,
   );
   return (
     <>
@@ -1028,7 +1029,7 @@ const GenomeSequencer = (props) => {
           width="8px"
           height="2px"
           backgroundColor="label"
-        />
+        />,
       );
     }
 
@@ -1402,7 +1403,7 @@ const DnaConsoleAdvancedInjectors = (props) => {
           <StorageMutations
             mutations={injector.mutations}
             customMode={`advinj${advInjectors.findIndex(
-              (e) => injector.name === e.name
+              (e) => injector.name === e.name,
             )}`}
           />
         </Collapsible>

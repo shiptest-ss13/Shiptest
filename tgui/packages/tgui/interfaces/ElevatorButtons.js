@@ -1,5 +1,6 @@
-import { useBackend } from '../backend';
 import { Button, Table } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const ElevatorButtons = (props) => {
@@ -68,11 +69,19 @@ const ElevatorButtonsContent = (props) => {
         )}
         <Table.Cell>
           {/* these don't do anything; it's unfinished. oh well */}
-          <Button disabled content={'◀|▶'} onClick={() => act('open_doors')} />
+          <Button
+            disabled
+            content={'◀|▶'}
+            onClick={() => act('open_doors')}
+          />
         </Table.Cell>
         <Table.Cell>
           {/* interestingly, this button doesn't work even on real elevators */}
-          <Button disabled content={'▶|◀'} onClick={() => act('close_doors')} />
+          <Button
+            disabled
+            content={'▶|◀'}
+            onClick={() => act('close_doors')}
+          />
         </Table.Cell>
       </Table.Row>
     </Table>

@@ -1,5 +1,4 @@
 import { map } from 'common/collections';
-import { useBackend, useSharedState } from '../backend';
 import {
   Button,
   Flex,
@@ -8,14 +7,14 @@ import {
   Section,
   Tabs,
 } from 'tgui-core/components';
+
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 
 export const NaniteProgramHub = (props) => {
   const { act, data } = useBackend();
   const { detail_view, disk, has_disk, has_program, programs = {} } = data;
-  const [selectedCategory, setSelectedCategory] = useSharedState(
-    'category'
-  );
+  const [selectedCategory, setSelectedCategory] = useSharedState('category');
   const programsInCategory = (programs && programs[selectedCategory]) || [];
   return (
     <Window width={500} height={700} resizable>

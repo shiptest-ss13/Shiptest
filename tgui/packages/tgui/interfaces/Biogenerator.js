@@ -1,6 +1,3 @@
-import { classes } from 'tgui-core/react';
-import { createSearch } from 'tgui-core/string';
-import { useBackend, useLocalState } from '../backend';
 import {
   Box,
   Button,
@@ -15,6 +12,10 @@ import {
   Tabs,
 } from 'tgui-core/components';
 import { formatMoney } from 'tgui-core/format';
+import { classes } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const MAX_SEARCH_RESULTS = 25;
@@ -44,7 +45,7 @@ export const BiogeneratorContent = (props) => {
   const [searchText, setSearchText] = useLocalState('searchText', '');
   const [selectedCategory, setSelectedCategory] = useLocalState(
     'category',
-    categories[0]?.name
+    categories[0]?.name,
   );
   const testSearch = createSearch(searchText, (item) => {
     return item.name;
@@ -120,10 +121,7 @@ export const BiogeneratorContent = (props) => {
 
 const ItemList = (props) => {
   const { act } = useBackend();
-  const [hoveredItem, setHoveredItem] = useLocalState(
-    'hoveredItem',
-    {}
-  );
+  const [hoveredItem, setHoveredItem] = useLocalState('hoveredItem', {});
   const hoveredCost = hoveredItem.cost || 0;
   // Append extra hover data to items
   const items = props.items.map((item) => {

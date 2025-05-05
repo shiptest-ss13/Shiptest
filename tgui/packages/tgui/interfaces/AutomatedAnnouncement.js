@@ -1,5 +1,6 @@
-import { useBackend } from '../backend';
 import { Button, Input, LabeledList, Section } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const TOOLTIP_TEXT = `

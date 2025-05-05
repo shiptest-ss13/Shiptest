@@ -1,13 +1,14 @@
-import { useBackend, useLocalState } from '../backend';
 import {
   Button,
+  Divider,
   LabeledList,
+  NumberInput,
   Section,
   Table,
   Tabs,
-  Divider,
-  NumberInput,
 } from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 type ShipOwnerData = {
@@ -104,8 +105,8 @@ const ShipOwnerContent = (_) => {
                   joinMode === 'Open'
                     ? 'good'
                     : joinMode === 'Apply'
-                    ? 'average'
-                    : 'bad'
+                      ? 'average'
+                      : 'bad'
                 }
                 onClick={() => act('cycleJoin')}
               />
