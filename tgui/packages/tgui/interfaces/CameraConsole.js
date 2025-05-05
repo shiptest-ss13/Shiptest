@@ -1,9 +1,11 @@
 import { filter, sortBy } from 'common/collections';
+import { useState } from 'react';
+import { Button, ByondUi, Flex, Input, Section } from 'tgui-core/components';
 import { flow } from 'tgui-core/fp';
 import { classes } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
-import { useBackend, useLocalState } from '../backend';
-import { Button, ByondUi, Input, Section, Flex } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 /**
@@ -15,7 +17,7 @@ export const prevNextCamera = (cameras, activeCamera) => {
     return [];
   }
   const index = cameras.findIndex(
-    (camera) => camera.name === activeCamera.name
+    (camera) => camera.name === activeCamera.name,
   );
   return [cameras[index - 1]?.name, cameras[index + 1]?.name];
 };
@@ -43,7 +45,7 @@ export const CameraConsole = (props) => {
   const cameras = selectCameras(data.cameras);
   const [prevCameraName, nextCameraName] = prevNextCamera(
     cameras,
-    activeCamera
+    activeCamera,
   );
   return (
     <Window width={870} height={708} resizable>
@@ -94,7 +96,7 @@ export const CameraConsole = (props) => {
 
 export const CameraConsoleContent = (props) => {
   const { act, data } = useBackend();
-  const [searchText, setSearchText] = useLocalState('searchText', '');
+  const [searchText, setSearchText] = useState('');
   const { activeCamera } = data;
   const cameras = selectCameras(data.cameras, searchText);
   return (
