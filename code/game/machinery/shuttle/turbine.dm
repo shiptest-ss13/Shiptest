@@ -381,6 +381,11 @@
 	var/obj/machinery/power/compressor/compressor
 	var/id = 0
 
+/obj/machinery/computer/turbine_computer/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
 /obj/machinery/computer/turbine_computer/Initialize()
 	. = ..()
 	return INITIALIZE_HINT_LATELOAD

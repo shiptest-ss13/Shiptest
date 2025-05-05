@@ -355,6 +355,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Emergency response team briefing officer spawn"
 	icon_state = "ert_brief_spawn"
 
+/obj/effect/landmark/salesman
+	name = "Salesman spawn"
+	icon_state = "ert_spawn"
+
 //ninja energy nets teleport victims here
 /obj/effect/landmark/holding_facility
 	name = "Holding Facility"
