@@ -119,13 +119,6 @@
 	if(queue.len)
 		recieving = pick_n_take(queue)
 
-/obj/machinery/ltsrbt/ui_act(action, list/params)
-	. = ..()
-
-	if(.)
-		return
-
-
 /datum/crafting_recipe/blackmarket_telepad
 	name = "Black Market LTRSBT Board"
 	result = /obj/item/circuitboard/machine/ltsrbt
@@ -139,6 +132,3 @@
 		/obj/item/circuitboard = 1
 	)
 	category = CAT_MISC
-
-#undef EXPORT_PRICE
-#undef EXPORT_TAX_PERCENTAGE
