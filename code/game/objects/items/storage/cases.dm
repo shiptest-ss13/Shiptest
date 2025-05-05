@@ -32,7 +32,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = INFINITY //workaround for the differently sized items, case is still limited to 7 items max and to the list.
 	STR.max_combined_w_class = INFINITY //part of the workaround, not setting a max combined weight defaults to some weird number.
-	STR.max_items = 7
+	STR.max_items = 8
 	STR.set_holdable(list(
 		/obj/item/healthanalyzer,
 		/obj/item/healthanalyzer/advanced,
@@ -59,5 +59,6 @@
 		/obj/item/circular_saw = 1,
 		/obj/item/surgicaldrill = 1,
 		/obj/item/cautery = 1,
+		/obj/item/blood_filter = 1,
 		/obj/item/healthanalyzer = 1)
 	generate_items_inside(items_inside,src)
