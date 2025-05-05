@@ -164,7 +164,7 @@ GENE SCANNER
 	//WS begin - Borers
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		if(C.has_brain_worms() && (!C.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
+		if(C.has_brain_worms() && (!C.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
 			render_list += "[span_danger("Foreign organism detected in subject's cranium. Recommended treatment: Dosage of sucrose solution and removal of object via surgery.")]\n"
 	//WS end
 

@@ -331,7 +331,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 		if(stat != DEAD && victim.stat != DEAD)
 
-			if(victim.reagents.has_reagent(/datum/reagent/consumable/sugar))
+			if(victim.has_reagent(/datum/reagent/consumable/sugar))
 				if(!docile || waketimerid)
 					if(controlling)
 						to_chat(victim, span_warning("You feel the soporific flow of sugar in your host's blood, lulling you into docility."))
