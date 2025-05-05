@@ -220,7 +220,7 @@
 
 /obj/item/clothing/head/warden/inteq
 	name = "master at arms' campaign hat"
-	desc = "A special brown campaign hat with the IRMG insignia emblazoned on it. For yelling at clueless recruits in style."
+	desc = "A special brown campaign hat with the IRMG insignia emblazoned on it. For yelling at clueless auxiliaries in style."
 	icon = 'icons/obj/clothing/faction/inteq/hats.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/hats.dmi'
 	icon_state = "maahat"
