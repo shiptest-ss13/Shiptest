@@ -8,5 +8,5 @@
 	food.attack(human, human)
 	human.reagents.add_reagent(/datum/reagent/medicine/epinephrine, 5)
 
-	TEST_ASSERT(human.reagents.has_reagent(/datum/reagent/consumable/ketchup), "Human doesn't have ketchup after eating")
-	TEST_ASSERT(human.reagents.has_reagent(/datum/reagent/medicine/epinephrine), "Human doesn't have epinephrine after injecting")
+	TEST_ASSERT(human.has_reagent(/datum/reagent/consumable/ketchup), "Human doesn't have ketchup after eating")
+	TEST_ASSERT(human.has_reagent(/datum/reagent/medicine/epinephrine), "Human doesn't have epinephrine after injecting")
