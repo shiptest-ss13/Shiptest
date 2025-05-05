@@ -33,16 +33,20 @@
 	src.add_to_contents = add_to_contents
 	src.food_types = food_types
 
-	RegisterSignal(target, COMSIG_ATOM_ITEM_INTERACTION, PROC_REF(try_feed))
-	RegisterSignal(target, COMSIG_LIVING_UNARMED_ATTACK, PROC_REF(on_unarm_attack))
+	#warn fix
+	//RegisterSignal(target, COMSIG_ATOM_ITEM_INTERACTION, PROC_REF(try_feed))
+	//RegisterSignal(target, COMSIG_LIVING_UNARMED_ATTACK, PROC_REF(on_unarm_attack))
 
 /datum/element/basic_eating/Detach(datum/target)
 	REMOVE_TRAIT(target, TRAIT_MOB_EATER, REF(src))
 
+	#warn fix
+	/*
 	UnregisterSignal(target, list(
 		COMSIG_LIVING_UNARMED_ATTACK,
 		COMSIG_ATOM_ITEM_INTERACTION,
 	))
+	*/
 	return ..()
 
 /datum/element/basic_eating/proc/try_feed(atom/source, mob/living/user, atom/possible_food)
@@ -52,7 +56,9 @@
 	var/mob/living/living_source = source
 	if(living_source.stat != CONSCIOUS)
 		return NONE
-	return try_eating(source, possible_food, user) ? ITEM_INTERACT_SUCCESS : NONE
+	#warn work on this
+	//return try_eating(source, possible_food, user) ? ITEM_INTERACT_SUCCESS : NONE
+	try_eating(source, possible_food, user)
 
 /datum/element/basic_eating/proc/on_unarm_attack(mob/living/eater, atom/target, proximity, modifiers)
 	SIGNAL_HANDLER

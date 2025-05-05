@@ -35,6 +35,7 @@
 	/// What kind of juice do we produce?
 	var/milked_reagent = /datum/reagent/consumable/milk
 
+/* I hate that it shows that it needs rebinding for every player for such a useless emote. Uncomment if someone makes that not happen
 /datum/emote/cow
 	mob_type_allowed_typecache = /mob/living/basic/cow
 	mob_type_blacklist_typecache = list()
@@ -44,6 +45,7 @@
 	key_third_person = "moos"
 	message = "moos happily!"
 	emote_type = EMOTE_VISIBLE | EMOTE_AUDIBLE
+*/
 
 /mob/living/basic/cow/Initialize(mapload)
 	AddComponent(/datum/component/tippable, \

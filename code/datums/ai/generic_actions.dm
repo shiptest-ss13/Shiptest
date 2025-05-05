@@ -154,6 +154,12 @@
 /datum/ai_behavior/find_and_set/proc/search_tactic(datum/ai_controller/controller)
 	return locate(locate_path) in oview(search_range, controller.pawn)
 
+#warn port the search tactic for this
+/**
+ * Variant of find and set that takes a list of things to find.
+ */
+/datum/ai_behavior/find_and_set/in_list
+
 
 /// This behavior involves attacking a target.
 /datum/ai_behavior/attack
