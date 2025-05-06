@@ -322,7 +322,7 @@ const Categories = (props: CategoriesProps) => {
         />
       }
     >
-      <Stack fill vertical zebra g={0.2}>
+      <Stack fill vertical zebra>
         <Stack.Item>
           <Button
             fluid
@@ -390,7 +390,7 @@ const Blanks = (props: BlanksProps) => {
         />
       }
     >
-      <Stack fill vertical zebra g={0.5}>
+      <Stack fill vertical zebra>
         {visibleBlanks.map((blank) => (
           <Stack.Item key={blank.code}>
             <Button
