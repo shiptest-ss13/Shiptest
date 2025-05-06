@@ -102,7 +102,7 @@ export const AirlockElectronics = (props) => {
               minValue={2}
               maxValue={30}
               value={close_speed / 10}
-              onDrag={(e, value) =>
+              onDrag={(value) =>
                 act('close_speed', {
                   adjust: value - close_speed / 10,
                 })

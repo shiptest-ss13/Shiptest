@@ -220,7 +220,7 @@ const ShipOwnerContent = (_) => {
                 minValue={0}
                 maxValue={7}
                 value={crew_share * 100}
-                onDrag={(e, value) =>
+                onDrag={(value) =>
                   act('adjustshare', {
                     adjust: value,
                   })
