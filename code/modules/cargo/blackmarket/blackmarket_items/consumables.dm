@@ -27,13 +27,13 @@
 
 	stock_min = 5
 	stock_max = 35
-	price_min = 10
-	price_max = 60
+	price_min = 5
+	price_max = 15
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/cannabis
 	name = "Cannabis Leaves"
-	desc = "Homegrown cannabis, fresh off the garden just for your pleasure!"
+	desc = "Homegrown cannabis, fresh from the garden just for your pleasure!"
 	item = /obj/item/reagent_containers/food/snacks/grown/cannabis
 
 	stock_min = 4
@@ -102,8 +102,8 @@
 	desc = "Cyanide, a tried and true classic for all your poisoning needs."
 	item = /obj/item/reagent_containers/glass/bottle/cyanide
 
-	price_min = 200
-	price_max = 400
+	price_min = 100
+	price_max = 200
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -113,8 +113,8 @@
 	desc = "Sodium Thiopental, a potent and fast acting sedative for any occasion."
 	item = /obj/item/reagent_containers/glass/bottle/sodium_thiopental
 
-	price_min = 250
-	price_max = 600
+	price_min = 100
+	price_max = 250
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -124,8 +124,8 @@
 	desc = "A slow acting, but nearly undetectable poison. For the dignified assassin."
 	item = /obj/item/reagent_containers/glass/bottle/amanitin
 
-	price_min = 300
-	price_max =  600
+	price_min = 150
+	price_max = 250
 	stock_max = 2
 	stock_max = 4
 	availability_prob = 30
@@ -153,10 +153,11 @@
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/xeno_corpse/spawn_item(loc)
-	var/mob/living/simple_animal/hostile/alien = ..()
+	var/mob/living/simple_animal/hostile/alien/corpse = ..()
 	if(prob(95))
-		alien.stat = DEAD
-	return new alien(loc)
+		corpse.stat = DEAD
+		corpse.density = FALSE
+	return new corpse(loc)
 
 /datum/blackmarket_item/consumable/berries
 	name = "Berries"
@@ -180,8 +181,8 @@
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
 	item = /obj/effect/spawner/random/food_or_drink/ration
 
-	price_min = 150
-	price_max = 300
+	price_min = 40
+	price_max = 100
 	availability_prob = 80
 	unlimited =  TRUE
 

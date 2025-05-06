@@ -48,7 +48,7 @@
 	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
 
 	price_min = 5000
-	price_max = 8000
+	price_max = 7000
 	stock = 1
 	availability_prob = 25
 	spawn_weighting = FALSE
@@ -58,9 +58,9 @@
 	desc = "A Bluespace Optimi-blah blah blah, I'm bored already. This module will convert a cyborg frame into an AI compatible shell."
 	item = /obj/item/borg/upgrade/ai
 
-	price_min = 250
-	price_max = 500
-	stock = 1
+	price_min = 100
+	price_max = 250
+	stock = 3
 	availability_prob = 0
 
 /datum/blackmarket_item/tech/mmi

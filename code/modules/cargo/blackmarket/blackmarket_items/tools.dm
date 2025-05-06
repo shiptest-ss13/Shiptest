@@ -6,11 +6,12 @@
 	desc = "Under fire while doing repairs? With this dual purpose wrench, never be caught unprepared again!"
 	item = /obj/item/wrench/combat
 
-	price_min = 500
-	price_max = 1000
+	price_min = 250
+	price_max = 500
 	stock = 1
 	availability_prob = 20
 
+//need a better joke
 /datum/blackmarket_item/tool/surgery_duffel
 	name = "Cybersun Advanced Surgical Kit"
 	desc = "You might say it's morally wrong to steal. I say it's justified when it's Cybersun."
@@ -58,8 +59,8 @@
 	desc = "30u of Thermite to assist in creating a quick access point or get away!"
 	item = /obj/item/reagent_containers/glass/bottle/thermite
 
-	price_min = 75
-	price_max = 300
+	price_min = 50
+	price_max = 100
 	stock_max = 10
 	availability_prob = 50
 
@@ -69,7 +70,7 @@
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
 
 	price_min = 200
-	price_max = 1000
+	price_max = 500
 	stock_max = 3
 	availability_prob = 20
 
@@ -91,7 +92,7 @@
 	price_min = 1000
 	price_max = 3000
 	stock = 1
-	availability_prob = 10
+	availability_prob = 15
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tool/jumpboots

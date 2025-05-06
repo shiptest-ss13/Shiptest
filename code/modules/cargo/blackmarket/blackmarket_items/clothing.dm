@@ -11,23 +11,13 @@
 	stock_max = 5
 	availability_prob = 80
 
-/datum/blackmarket_item/clothing/straitjacket
-	name = "Straitjacket"
-	desc = "These straitjackets might be a tight fit, but you can certain the poor sod wont be getting away anytime soon."
-	item = /obj/item/clothing/suit/straight_jacket
-
-	price_min = 500
-	price_max = 1000
-	stock_max = 3
-	availability_prob = 40
-
 /datum/blackmarket_item/clothing/surplus_uniform
 	name = "Surplus Combat Uniforms"
 	desc = "A mass produced and non-descript surplus combat uniform. For when you need to look like another faceless thug in the crowd."
 	item = /obj/item/clothing/under/rank/security/officer/military
 
-	price_min = 50
-	price_max = 100
+	price_min = 25
+	price_max = 50
 	stock_min = 5
 	stock_max = 10
 	availability_prob = 80
@@ -143,7 +133,7 @@
 /datum/blackmarket_item/clothing/frontiersmen_armor_fireproof/spawn_item(loc)
 	var/obj/item/storage/box/B = ..()
 	B.name = "Armor Set Box"
-	B.desc = "A beat up looking box with some armor inside."
+	B.desc = "A beat up looking box with the words \"ARMOR\" messily written on the front in crayon."
 	new /obj/item/clothing/suit/armor/frontier/fireproof(B)
 	new /obj/item/clothing/head/helmet/gezena(B)
 	return B
@@ -167,7 +157,7 @@
 	return B
 
 /datum/blackmarket_item/clothing/syndie_spacesuit_set
-	name = "\improper Syndicate Branded Spacesuit Box"
+	name = "\improper Coalition Branded Spacesuit Box"
 	desc = "An armored syndicate softsuit, popular among the ACLF operatives who were too broke to get an actual hardsuit."
 	item = /obj/item/storage/box/syndie_kit
 
@@ -179,8 +169,8 @@
 /datum/blackmarket_item/clothing/syndie_spacesuit_set/spawn_item(loc)
 	var/obj/item/storage/box/syndie_kit/B = ..()
 	B.name = "Spacesuit Box"
-	B.desc = "It has a Syndicate logo on it."
-	var/suit_color = pick(list("red","green","dark-green","blue","orange","black","black-green","black-blue","black-orange","black-red"))
+	B.desc = "It has a Coalition logo stamped on the front."
+	var/suit_color = pick(list("red","green","dark-green","orange","blue","black","black-green","black-blue","black-orange","black-red"))
 	switch(suit_color)
 		if("red")
 			new /obj/item/clothing/head/helmet/space/syndicate(B)
@@ -216,8 +206,8 @@
 
 /datum/blackmarket_item/clothing/chameleon_hat
 	name = "Chameleon Hat"
-	desc = "Pick any hat you want with this Handy device. Not Quality Tested."
-	item = /obj/item/clothing/head/chameleon/broken
+	desc = "This all in one hat is always in style with it's adaptive color changing weave!."
+	item = /obj/item/clothing/head/chameleon
 
 	price_min = 100
 	price_max = 200

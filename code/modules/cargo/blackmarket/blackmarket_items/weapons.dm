@@ -3,11 +3,11 @@
 
 /datum/blackmarket_item/weapon/bear_trap
 	name = "Bear Trap"
-	desc = "A solid steel bear trap, good for bears, or the most dangerous game."
+	desc = "A pressure activated solid steel bear trap. Good for both bears, and the most dangerous game."
 	item = /obj/item/restraints/legcuffs/beartrap
 
-	price_min = 150
-	price_max = 400
+	price_min = 100
+	price_max = 300
 	stock_min = 3
 	stock_max = 7
 	availability_prob = 40
@@ -17,8 +17,8 @@
 	desc = "Extra shrap switchblades for intimidation AND style. Bandages not included if you cut yourself."
 	item = /obj/item/melee/knife/switchblade
 
-	price_min = 500
-	price_max = 700
+	price_min = 250
+	price_max = 500
 	stock_max = 3
 	availability_prob = 50
 
@@ -27,8 +27,8 @@
 	desc = "An incredibly sharp axe of reputable make, used by various engineers to settle arguments while hammered. Sold to us by a very friendly man in a suit."
 	item = /obj/item/melee/axe/fire
 
-	price_min = 1200
-	price_max = 2300
+	price_min = 750
+	price_max = 1250
 	stock_max = 3
 	availability_prob = 40
 
@@ -37,8 +37,8 @@
 	desc = "A Clique outfit had to ditch a lot of equipment to evade a Gezenan assault. This little piece breaks legs and walls like no other. You want in?"
 	item = /obj/item/melee/sledgehammer/gorlex
 
-	price_min = 2000
-	price_max = 3000
+	price_min = 1250
+	price_max = 2000
 	stock_max = 3
 	availability_prob = 30
 
@@ -56,8 +56,8 @@
 	desc = "A mastercrafted sabre formerly wielded by a SUNS academic. It's very sharp, we had to spend hours stitching our fingers back on after getting it."
 	item = /obj/item/storage/belt/sabre/suns
 
-	price_min = 1500
-	price_max = 3500
+	price_min = 1250
+	price_max = 2000
 	stock = 1
 	availability_prob = 25
 
@@ -66,8 +66,8 @@
 	desc = "A prototype modification to the standard crusher, featuring an energy blade rather than the standard alloy cutting edge allowing for much more devasting detonations. The guy who sold this to us disappeared the next week, but that's probably a coincidence."
 	item = /obj/item/kinetic_crusher/syndie_crusher
 
-	price_min = 1750
-	price_max = 3000
+	price_min = 1500
+	price_max = 2500
 	stock = 2
 	availability_prob = 15
 	spawn_weighting = FALSE
@@ -77,8 +77,8 @@
 	desc = "An autolathe compatible fabrication disk for printing disposable guns chambered in .22 LR. Improper disposal or recycling of these guns is an enviromental felony misdemeanor in Solarian space. Luckily, we aren't in Solarian space, so litter all you want."
 	item = /obj/item/disk/design_disk/disposable_gun
 
-	price_min = 1500
-	price_max = 2500
+	price_min = 1000
+	price_max = 2000
 	stock = 1
 	availability_prob = 10
 	spawn_weighting = FALSE
@@ -232,7 +232,7 @@
 	item = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	pair_item = list(/datum/blackmarket_item/ammo/saber_mag)
 
-	price_min = 2250
+	price_min = 2000
 	price_max = 3750
 	stock_max = 2
 	availability_prob = 25
@@ -268,6 +268,8 @@
 	stock_min = 2
 	stock_max = 5
 	availability_prob = 60
+
+/// mecha equipment
 
 /datum/blackmarket_item/weapon/mecha_weapon_bay
 	name = "Concealed Weapons Bay"
@@ -315,13 +317,13 @@
 /datum/blackmarket_item/weapon/guncase/model_h/spawn_item(loc)
 	var/model_h = pick(list(/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns,
 				/obj/item/gun/ballistic/automatic/powered/gauss/modelh))
-	return new model_h(loc)
+	item = model_h
+	return ..()
 
 /datum/blackmarket_item/weapon/guncase/sgg
 	name = "SSG-669C Rotary Sniper Rifle"
 	desc = "I could tell you it's full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm caseless."
 	item = /obj/item/gun/ballistic/rifle/solgov
-	pair_item = list(/datum/blackmarket_item/ammo/sgg_stripper)
 
 	price_min = 3000
 	price_max = 6000
@@ -335,7 +337,7 @@
 	pair_item = list(/datum/blackmarket_item/ammo/pistole_c_mag)
 
 	price_min = 900
-	price_max = 1250
+	price_max = 1600
 	stock_max = 3
 	availability_prob = 30
 
@@ -345,8 +347,8 @@
 	item = /obj/item/gun/ballistic/automatic/powered/gauss
 	pair_item = list(/datum/blackmarket_item/ammo/proto_gauss_mag)
 
-	price_min = 2500
-	price_max = 4000
+	price_min = 1500
+	price_max = 3500
 	stock = 2
 	availability_prob = 25
 
@@ -366,8 +368,8 @@
 	item = /obj/item/gun/ballistic/automatic/pistol/mauler
 	pair_item = list(/datum/blackmarket_item/ammo/mauler_mag)
 
-	price_min = 1000
-	price_max = 2000
+	price_min = 500
+	price_max = 1500
 	stock_max = 3
 	availability_prob = 50
 
@@ -389,7 +391,7 @@
 	item = /obj/item/gun/ballistic/automatic/smg/pounder
 	pair_item = list(/datum/blackmarket_item/ammo/pounder_mag)
 
-	price_min = 1500
+	price_min = 1250
 	price_max = 2000
 	stock = 1
 	availability_prob = 35
