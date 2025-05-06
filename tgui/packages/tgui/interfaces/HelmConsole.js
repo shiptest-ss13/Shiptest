@@ -500,7 +500,7 @@ const ShipControlContent = (_props) => {
             // 5 times a second, 60 seconds in a minute (5 * 60 = 300)
             maxValue={estThrust * 500}
             unit="Gm/s²"
-            onDrag={(e, value) =>
+            onDrag={(value) =>
               act('change_burn_percentage', {
                 percentage: Math.round((value / (estThrust * 500)) * 100),
               })

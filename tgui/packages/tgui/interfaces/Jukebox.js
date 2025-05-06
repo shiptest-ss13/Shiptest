@@ -64,7 +64,7 @@ export const Jukebox = (props) => {
                   step={1}
                   stepPixelSize={1}
                   disabled={active}
-                  onDrag={(value) =>
+                  onDrag={(e, value) =>
                     act('set_volume', {
                       volume: value,
                     })
