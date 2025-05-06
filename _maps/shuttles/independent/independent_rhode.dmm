@@ -42,8 +42,11 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "bo" = (
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
 "bs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -877,8 +880,8 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "sF" = (
-/turf/closed/wall/rust,
-/area/ship/crew/toilet)
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "ti" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/engineering/engines)
@@ -1166,7 +1169,9 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "Ai" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/structure/closet/secure_closet/freezer/fridge{
+	populate = 0
+	},
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/item/storage/cans/sixbeer,
 /obj/item/reagent_containers/food/snacks/meat/slab,
@@ -1602,6 +1607,9 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating/rust,
 /area/ship/cargo)
+"Kz" = (
+/turf/closed/wall/rust,
+/area/ship/crew/toilet)
 "Le" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock{
@@ -2307,7 +2315,7 @@ Sv
 Sv
 Sv
 Sv
-Sv
+bo
 Sv
 ti
 hM
@@ -2356,7 +2364,7 @@ Sv
 Sv
 Sv
 Sv
-bo
+sF
 YX
 RP
 an
@@ -2366,14 +2374,14 @@ Nl
 QO
 ik
 YX
-bo
+sF
 Sv
 "}
 (5,1,1) = {"
 Sv
 Sv
 Sv
-bo
+sF
 YX
 Cj
 ld
@@ -2383,7 +2391,7 @@ UF
 SW
 Zu
 YX
-bo
+sF
 Sv
 "}
 (6,1,1) = {"
@@ -2499,7 +2507,7 @@ MK
 VU
 rQ
 LQ
-sF
+Kz
 Qw
 SM
 mU
