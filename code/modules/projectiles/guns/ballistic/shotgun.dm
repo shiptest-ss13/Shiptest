@@ -100,7 +100,6 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to pump it.")
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
@@ -110,7 +109,6 @@
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/proc/toggle_tube(mob/living/user)
 	var/current_mag = magazine
 	var/alt_mag = alternate_magazine
-	//alt_mag.moveToNullspace
 	magazine = alt_mag
 	alternate_magazine = current_mag
 	toggled = !toggled
