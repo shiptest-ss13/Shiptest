@@ -41,6 +41,9 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"bo" = (
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "bs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -61,6 +64,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines)
@@ -361,6 +370,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "hM" = (
@@ -605,6 +620,12 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1101,6 +1122,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "zT" = (
@@ -1237,6 +1262,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "Ct" = (
@@ -1557,13 +1586,19 @@
 /turf/open/floor/plating/rust,
 /area/ship/cargo)
 "Kz" = (
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/turf/closed/wall/rust,
+/area/ship/crew/toilet)
 "Le" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Cryo Room"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
@@ -2027,6 +2062,12 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "UR" = (
@@ -2304,7 +2345,7 @@ Sv
 Sv
 Sv
 Sv
-Kz
+bo
 YX
 RP
 an
@@ -2314,14 +2355,14 @@ Nl
 QO
 ik
 YX
-Kz
+bo
 Sv
 "}
 (5,1,1) = {"
 Sv
 Sv
 Sv
-Kz
+bo
 YX
 Cj
 ld
@@ -2331,7 +2372,7 @@ UF
 SW
 Zu
 YX
-Kz
+bo
 Sv
 "}
 (6,1,1) = {"
@@ -2447,7 +2488,7 @@ MK
 VU
 rQ
 LQ
-xS
+Kz
 Qw
 SM
 mU
