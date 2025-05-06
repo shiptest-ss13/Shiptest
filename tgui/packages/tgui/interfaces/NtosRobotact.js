@@ -128,7 +128,7 @@ export const NtosRobotactContent = (props) => {
                   stepPixelSize={25}
                   maxValue={5}
                   minValue={1}
-                  onChange={(value) =>
+                  onChange={(e, value) =>
                     act('lampIntensity', {
                       ref: value,
                     })

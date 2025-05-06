@@ -56,7 +56,7 @@ export function SettingsStatPanel(props) {
                     value={statFontSize}
                     unit="px"
                     format={(value) => toFixed(value)}
-                    onChange={(value) =>
+                    onChange={(e, value) =>
                       dispatch(updateSettings({ statFontSize: value }))
                     }
                   />

@@ -172,7 +172,7 @@ function TextHighlightSetting(props) {
         height="3em"
         value={highlightText}
         placeholder="Put words to highlight here. Separate terms with commas, i.e. (term1, term2, term3)"
-        onChange={(value) =>
+        onChange={(e, value) =>
           dispatch(
             updateHighlightSetting({
               id: id,
