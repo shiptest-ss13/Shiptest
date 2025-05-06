@@ -30,7 +30,7 @@ export const CargoCatalog = (props) => {
 
   const [searchText, setSearchText] = useSharedState('search_text', '');
 
-  const [cart, setCart] = useSharedState(context, 'cart', []);
+  const [cart, setCart] = useSharedState('cart', []);
 
   const cartTotal = cart.reduce(
     (cartTotal, entry) =>
