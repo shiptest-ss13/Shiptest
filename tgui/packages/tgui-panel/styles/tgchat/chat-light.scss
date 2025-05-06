@@ -292,6 +292,11 @@ em {
   font-weight: bold;
 }
 
+.looc {
+  color: hsl(225, 100%, 36.1%);
+  font-weight: bold;
+}
+
 .adminobserverooc {
   color: hsl(195, 100%, 40%);
   font-weight: bold;
@@ -312,6 +317,11 @@ em {
   font-weight: bold;
 }
 
+.admindebug {
+  color: #f9a825;
+  font-weight: bold;
+}
+
 .name {
   font-weight: bold;
 }
@@ -320,6 +330,7 @@ em {
 .emote,
 .infoplain,
 .oocplain,
+.loocplain,
 .warningplain {
 }
 
@@ -343,55 +354,47 @@ em {
 }
 
 .radio {
-  color: hsl(120, 100%, 25.1%);
+  color: #008000;
 }
 
-.sciradio {
-  color: hsl(300, 50%, 40%);
+.ntradio {
+  color: #4e3399;
 }
 
-.comradio {
-  color: hsl(57.9, 97.3%, 29.4%);
+.emrgradio {
+  color: #dd3535;
 }
 
-.secradio {
-  color: hsl(0, 100%, 32%);
+.pirradio {
+  color: #fcdf03;
 }
 
-.medradio {
-  color: hsl(201.8, 49.3%, 39.4%);
+.clipradio {
+  color: #337296;
 }
 
-.engradio {
-  color: hsl(17.3, 96.7%, 52.9%);
+.irmgradio {
+  color: #885231;
 }
 
-.suppradio {
-  color: hsl(34.6, 59.2%, 41.4%);
-}
-
-.servradio {
-  color: hsl(88.6, 58.9%, 42%);
+.pgfradio {
+  color: #127a35;
 }
 
 .syndradio {
-  color: hsl(358.7, 26.7%, 33.7%);
-}
-
-.gangradio {
-  color: hsl(305.2, 57.8%, 42.7%);
+  color: #612425;
 }
 
 .centcomradio {
-  color: hsl(0, 0%, 40.8%);
+  color: #686868;
 }
 
-.aiprivradio {
-  color: hsl(300, 100%, 50%);
+.solgovradio {
+  color: #444e5f;
 }
 
-.enteradio {
-  color: hsl(176.1, 20%, 45.1%);
+.widebandradio {
+  color: #508166;
 }
 
 .redteamradio {

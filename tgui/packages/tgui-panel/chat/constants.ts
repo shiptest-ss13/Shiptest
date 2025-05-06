@@ -62,7 +62,7 @@ export const MESSAGE_TYPES = [
     name: 'Radio',
     description: 'All radio messages',
     selector:
-     '.alert, .minorannounce, .syndradio, .centcomradio, .aiprivradio, .emrgradio, .pirradio,  .clipradio, .irmgradio, .pgfradio, .ntradio, .radio, .deptradio, .binarysay, .newscaster, .resonate',
+     '.alert, .minorannounce, .syndradio, .centcomradio, .aiprivradio, .emrgradio, .pirradio,  .clipradio, .irmgradio, .pgfradio, .ntradio, .radio, .deptradio, .binarysay, .resonate',
   },
   {
     type: MESSAGE_TYPE_ENTERTAINMENT,
