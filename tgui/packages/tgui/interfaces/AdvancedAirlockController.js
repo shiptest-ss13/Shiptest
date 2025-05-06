@@ -214,7 +214,7 @@ export const AACControl = (props) => {
             minValue={0}
             maxValue={102}
             step={1}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('interior_pressure', {
                 pressure: value,
               })
@@ -230,7 +230,7 @@ export const AACControl = (props) => {
             minValue={0}
             maxValue={101.325}
             step={1}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('exterior_pressure', {
                 pressure: value,
               })
@@ -246,7 +246,7 @@ export const AACControl = (props) => {
             minValue={0.15}
             maxValue={40}
             step={1}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('depressurization_margin', {
                 pressure: value,
               })
@@ -262,7 +262,7 @@ export const AACControl = (props) => {
             minValue={0}
             maxValue={120}
             step={1}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('skip_delay', {
                 skip_delay: value * 10,
               })

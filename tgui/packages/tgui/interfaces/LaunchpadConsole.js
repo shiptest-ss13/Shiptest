@@ -135,7 +135,7 @@ export const LaunchpadControl = (props) => {
         <Input
           value={pad_name}
           width="170px"
-          onChange={(e, value) =>
+          onChange={(value) =>
             act('rename', {
               name: value,
             })
@@ -174,7 +174,7 @@ export const LaunchpadControl = (props) => {
                   width="90px"
                   height="30px"
                   stepPixelSize={10}
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('set_pos', {
                       x: value,
                     })
@@ -194,7 +194,7 @@ export const LaunchpadControl = (props) => {
                   fontSize="26px"
                   width="90px"
                   height="30px"
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('set_pos', {
                       y: value,
                     })

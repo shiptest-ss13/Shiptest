@@ -99,7 +99,7 @@ export const Mule = (props) => {
               <LabeledList.Item label="ID">
                 <Input
                   value={id}
-                  onChange={(e, value) => act('setid', { value })}
+                  onChange={(value) => act('setid', { value })}
                 />
               </LabeledList.Item>
               <LabeledList.Item label="Destination">

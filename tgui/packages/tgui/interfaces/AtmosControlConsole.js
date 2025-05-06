@@ -74,7 +74,7 @@ export const AtmosControlConsole = (props) => {
                   // This takes an exceptionally long time to update
                   // due to being an async signal
                   suppressFlicker={2000}
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('rate', {
                       rate: value,
                     })
@@ -100,7 +100,7 @@ export const AtmosControlConsole = (props) => {
                   // This takes an exceptionally long time to update
                   // due to being an async signal
                   suppressFlicker={2000}
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('pressure', {
                       pressure: value,
                     })

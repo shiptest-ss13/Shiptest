@@ -58,7 +58,7 @@ export const Telecomms = (props) => {
                 <Input
                   width={13}
                   value={id}
-                  onChange={(e, value) => act('id', { value })}
+                  onChange={(value) => act('id', { value })}
                 />
               }
             />
@@ -69,7 +69,7 @@ export const Telecomms = (props) => {
                   width={10}
                   value={network}
                   defaultValue={'tcommsat'}
-                  onChange={(e, value) => act('network', { value })}
+                  onChange={(value) => act('network', { value })}
                 />
               }
             />
@@ -123,7 +123,7 @@ export const Telecomms = (props) => {
                       minValue={minfreq / 10}
                       maxValue={maxfreq / 10}
                       value={changefrequency / 10}
-                      onChange={(e, value) => act('change_freq', { value })}
+                      onChange={(value) => act('change_freq', { value })}
                     />
                     <Button
                       icon={'times'}
@@ -241,7 +241,7 @@ export const Telecomms = (props) => {
                         minValue={minfreq / 10}
                         maxValue={maxfreq / 10}
                         value={frequency / 10}
-                        onChange={(e, value) => act('tempfreq', { value })}
+                        onChange={(value) => act('tempfreq', { value })}
                       />
                     </Table.Cell>
                     <Button

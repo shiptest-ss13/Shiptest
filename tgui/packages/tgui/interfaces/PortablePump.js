@@ -43,7 +43,7 @@ export const PortablePump = (props) => {
                 minValue={min_pressure}
                 maxValue={max_pressure}
                 step={10}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('pressure', {
                     pressure: value,
                   })

@@ -24,7 +24,7 @@ export const AtmosRelief = (props) => {
                 minValue={0}
                 maxValue={4500}
                 step={10}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('open_pressure', {
                     open_pressure: value,
                   })
@@ -51,7 +51,7 @@ export const AtmosRelief = (props) => {
                 minValue={0}
                 maxValue={data.open_pressure}
                 step={10}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('close_pressure', {
                     close_pressure: value,
                   })

@@ -30,7 +30,7 @@ export const ShipEditor = (props) => {
               <Input
                 value={data.templateName}
                 width={20}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateName', { new_template_name: value })
                 }
               />
@@ -41,7 +41,7 @@ export const ShipEditor = (props) => {
                 value={data.templateShortName}
                 placeholder={data.templateName}
                 maxLength={20}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateShortName', {
                     new_template_short_name: value,
                   })
@@ -55,7 +55,7 @@ export const ShipEditor = (props) => {
                 width={20}
                 height={10}
                 placeholder={'No description'}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateDescription', {
                     new_template_description: value,
                   })
@@ -68,7 +68,7 @@ export const ShipEditor = (props) => {
                 value={data.templateShortName}
                 placeholder={data.templateName}
                 maxLength={20}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateIconState', {
                     new_template_icon_state: value,
                   })
@@ -114,7 +114,7 @@ export const ShipEditor = (props) => {
             <LabeledList.Item label="Ship Category">
               <Input
                 value={data.templateCategory}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateCategory', { new_template_category: value })
                 }
               />
@@ -126,7 +126,7 @@ export const ShipEditor = (props) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={30}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setTemplateLimit', { new_template_limit: value })
                 }
               />
@@ -138,7 +138,7 @@ export const ShipEditor = (props) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={30}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setSpawnCoeff', { new_spawn_coeff: value })
                 }
               />
@@ -150,7 +150,7 @@ export const ShipEditor = (props) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={30}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('setOfficerCoeff', { new_officer_coeff: value })
                 }
               />
@@ -195,7 +195,7 @@ export const ShipEditor = (props) => {
                   <Input
                     value={job.name}
                     placeholder={'No name'}
-                    onChange={(e, value) =>
+                    onChange={(value) =>
                       act('setJobName', {
                         job_ref: job.ref,
                         job_name: value,
@@ -223,7 +223,7 @@ export const ShipEditor = (props) => {
                     value={job.slots}
                     minValue={0}
                     maxValue={100}
-                    onChange={(e, value) =>
+                    onChange={(value) =>
                       act('setJobSlots', {
                         job_ref: job.ref,
                         job_slots: value,

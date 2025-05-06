@@ -343,7 +343,7 @@ export const RouletteBetTable = (props) => {
                   step={10}
                   stepPixelSize={4}
                   width="40px"
-                  onChange={(e, value) => setCustomBet(value)}
+                  onChange={(value) => setCustomBet(value)}
                 />
               </Flex.Column>
             </Flex>

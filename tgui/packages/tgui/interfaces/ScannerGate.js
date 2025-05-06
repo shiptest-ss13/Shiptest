@@ -299,7 +299,7 @@ const ScannerGateNanites = (props) => {
               minValue={1}
               maxValue={100}
               stepPixelSize={2}
-              onChange={(e, value) =>
+              onChange={(value) =>
                 act('set_nanite_cloud', {
                   new_cloud: value,
                 })

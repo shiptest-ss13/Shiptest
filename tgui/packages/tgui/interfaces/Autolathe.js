@@ -95,7 +95,7 @@ export const Autolathe = (props) => {
             fluid
             placeholder="Search Recipes..."
             selfClear
-            onChange={(e, value) => {
+            onChange={(value) => {
               if (value.length) {
                 act('search', {
                   to_search: value,
@@ -292,7 +292,7 @@ const MaterialRow = (props) => {
               minValue={1}
               maxValue={material.sheets_amount}
               value={amount}
-              onChange={(e, value) => setAmount(value)}
+              onChange={(value) => setAmount(value)}
             />
             <Button
               disabled={material.sheets_amount < 1}

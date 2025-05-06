@@ -23,7 +23,7 @@ export const NaniteCodes = (props) => {
             width="47px"
             minValue={0}
             maxValue={9999}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('set_code', {
                 target_code: 'activation',
                 code: value,
@@ -37,7 +37,7 @@ export const NaniteCodes = (props) => {
             width="47px"
             minValue={0}
             maxValue={9999}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('set_code', {
                 target_code: 'deactivation',
                 code: value,
@@ -51,7 +51,7 @@ export const NaniteCodes = (props) => {
             width="47px"
             minValue={0}
             maxValue={9999}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('set_code', {
                 target_code: 'kill',
                 code: value,
@@ -66,7 +66,7 @@ export const NaniteCodes = (props) => {
               width="47px"
               minValue={0}
               maxValue={9999}
-              onChange={(e, value) =>
+              onChange={(value) =>
                 act('set_code', {
                   target_code: 'trigger',
                   code: value,
@@ -93,7 +93,7 @@ export const NaniteDelays = (props) => {
             width="57px"
             minValue={0}
             maxValue={3600}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('set_restart_timer', {
                 delay: value,
               })
@@ -107,7 +107,7 @@ export const NaniteDelays = (props) => {
             width="57px"
             minValue={0}
             maxValue={3600}
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('set_shutdown_timer', {
                 delay: value,
               })
@@ -123,7 +123,7 @@ export const NaniteDelays = (props) => {
                 width="57px"
                 minValue={0}
                 maxValue={3600}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('set_trigger_timer', {
                     delay: value,
                   })
@@ -137,7 +137,7 @@ export const NaniteDelays = (props) => {
                 width="57px"
                 minValue={0}
                 maxValue={3600}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('set_timer_trigger_delay', {
                     delay: value,
                   })

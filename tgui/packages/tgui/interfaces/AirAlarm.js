@@ -309,7 +309,7 @@ const AirAlarmHeatingControls = (props) => {
             value={setPoint}
             minValue={minValue}
             maxValue={maxValue}
-            onChange={(e, value) => act('heat_setpoint', { setPoint: value })}
+            onChange={(value) => act('heat_setpoint', { setPoint: value })}
             unit="K"
             tooltip="Change the Setpoint of the heater"
           />
