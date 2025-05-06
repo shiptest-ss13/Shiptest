@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Box,
   Button,
@@ -9,7 +10,7 @@ import {
 import { formatMoney } from 'tgui-core/format';
 import { createSearch, decodeHtmlEntities } from 'tgui-core/string';
 
-import { useBackend, useLocalState } from '../../backend';
+import { useBackend } from '../../backend';
 import { Window } from '../../layouts';
 
 const MAX_SEARCH_RESULTS = 25;
@@ -45,8 +46,8 @@ export const OutpostExport = (props) => {
 const GenericExport = (props) => {
   const { act, data } = useBackend();
   const { redeemExports = [], allExports = [] } = data;
-  const [searchText, setSearchText] = useLocalState('searchText', '');
-  const [compactMode, setCompactMode] = useLocalState('compactMode', false);
+  const [searchText, setSearchText] = useState('');
+  const [compactMode, setCompactMode] = useState(false);
   const testSearch = createSearch(searchText, (item) => {
     return item.name + item.desc;
   });
@@ -107,7 +108,7 @@ const GenericExport = (props) => {
 const ExportList = (props) => {
   const { compactMode, exportList = [], redeemable = false } = props;
   const { act } = useBackend();
-  const [hoveredItem, setHoveredItem] = useLocalState('hoveredItem', {});
+  const [hoveredItem, setHoveredItem] = useState({});
 
   // append some extra data depending on whether we're in redeemable mode
   const items = exportList.map((item) => {
