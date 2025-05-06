@@ -312,7 +312,7 @@
 	price_min = 2000
 	price_max = 3500
 	stock = 2
-	availability_prob = 35
+	availability_prob = 100
 
 /datum/blackmarket_item/weapon/guncase/model_h/spawn_item(loc)
 	var/model_h = pick(list(/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns,
@@ -400,7 +400,7 @@
 	name = "Polymer Survivor Rifle"
 	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
 	item = /obj/item/gun/ballistic/rifle/polymer
-	pair_item = list(/datum/blackmarket_item/ammo/polymer_clip)
+	//pair_item = list(/datum/blackmarket_item/ammo/polymer_clip)
 
 	price_min = 600
 	price_max = 1250
