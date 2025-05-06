@@ -435,6 +435,9 @@
 /obj/effect/turf_decal/dash
 	icon_state = "dash"
 
+/obj/effect/turf_decal/dot
+	icon_state = "dot"
+
 
 
 /obj/effect/turf_decal/dept/hop
