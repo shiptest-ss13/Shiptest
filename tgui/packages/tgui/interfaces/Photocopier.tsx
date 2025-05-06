@@ -386,7 +386,7 @@ const Blanks = (props: BlanksProps) => {
           width={8.75}
           value={searchText}
           placeholder="Search blank..."
-          onChange={(e, value) => (setSearchText(value))}
+          onChange={(e, value) => setSearchText(value)}
         />
       }
     >

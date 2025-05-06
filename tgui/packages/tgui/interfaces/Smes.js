@@ -37,7 +37,7 @@ export const Smes = (props) => {
   const outputState =
     (outputting && 'good') || (charge > 0 && 'average') || 'bad';
   return (
-    <Window width={340} height={420}>
+    <Window width={340} height={350}>
       <Window.Content>
         <Section title="Stored Energy">
           <ProgressBar
@@ -49,20 +49,20 @@ export const Smes = (props) => {
             }}
           />
         </Section>
-        <Section title="Input">
-          <LabeledList>
-            <LabeledList.Item
-              label="Charge Mode"
-              buttons={
-                <Button
-                  icon={inputAttempt ? 'sync-alt' : 'times'}
-                  selected={inputAttempt}
-                  onClick={() => act('tryinput')}
-                >
-                  {inputAttempt ? 'Auto' : 'Off'}
-                </Button>
-              }
+        <Section
+          title="Input"
+          buttons={
+            <Button
+              icon={inputAttempt ? 'sync-alt' : 'times'}
+              selected={inputAttempt}
+              onClick={() => act('tryinput')}
             >
+              {inputAttempt ? 'Auto' : 'Off'}
+            </Button>
+          }
+        >
+          <LabeledList>
+            <LabeledList.Item label="Charge Mode">
               <Box color={inputState}>
                 {(capacityPercent >= 100 && 'Fully Charged') ||
                   (inputting && 'Charging') ||
@@ -70,7 +70,7 @@ export const Smes = (props) => {
               </Box>
             </LabeledList.Item>
             <LabeledList.Item label="Target Input">
-              <Flex inline width="100%">
+              <Flex width="100%">
                 <Flex.Item>
                   <Button
                     icon="fast-backward"
@@ -134,20 +134,20 @@ export const Smes = (props) => {
             </LabeledList.Item>
           </LabeledList>
         </Section>
-        <Section title="Output">
-          <LabeledList>
-            <LabeledList.Item
-              label="Output Mode"
-              buttons={
-                <Button
-                  icon={outputAttempt ? 'power-off' : 'times'}
-                  selected={outputAttempt}
-                  onClick={() => act('tryoutput')}
-                >
-                  {outputAttempt ? 'On' : 'Off'}
-                </Button>
-              }
+        <Section
+          title="Output"
+          buttons={
+            <Button
+              icon={outputAttempt ? 'power-off' : 'times'}
+              selected={outputAttempt}
+              onClick={() => act('tryoutput')}
             >
+              {outputAttempt ? 'On' : 'Off'}
+            </Button>
+          }
+        >
+          <LabeledList>
+            <LabeledList.Item label="Output Mode">
               <Box color={outputState}>
                 {outputting
                   ? 'Sending'
@@ -157,7 +157,7 @@ export const Smes = (props) => {
               </Box>
             </LabeledList.Item>
             <LabeledList.Item label="Target Output">
-              <Flex inline width="100%">
+              <Flex width="100%">
                 <Flex.Item>
                   <Button
                     icon="fast-backward"
