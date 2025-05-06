@@ -14,6 +14,7 @@ import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const ShuttleManipulator = (props) => {
+  const { act, data } = useBackend();
   const [tab, setTab] = useState(1);
 
   return (
@@ -134,7 +135,7 @@ export const ShuttleManipulatorTemplates = (props) => {
               >
                 {template.category}
               </Tabs.Tab>
-            ))(templateObject)}
+            ))}
           </Tabs>
         </Flex.Item>
         <Flex.Item grow={1} basis={0}>
