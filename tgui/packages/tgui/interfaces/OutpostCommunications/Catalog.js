@@ -14,6 +14,8 @@ import {
 import { formatMoney } from 'tgui-core/format';
 import { flow } from 'tgui-core/fp';
 
+import { searchForSupplies } from './helpers';
+
 import { useBackend, useSharedState } from '../../backend';
 
 export const CargoCatalog = (props) => {
@@ -126,7 +128,7 @@ export const CargoCatalog = (props) => {
                         }
                         setSearchText(value);
                       }}
-                      onChange={(e, value) => {
+                      onChange={(value) => {
                         // Allow edge cases like the X button to work
                         const onInput = e.target?.props?.onInput;
                         if (onInput) {
@@ -201,27 +203,4 @@ export const CargoCatalog = (props) => {
       </Section>
     </>
   );
-};
-
-/**
- * Take entire supplies tree
- * and return a flat supply pack list that matches search,
- * sorted by name and only the first page.
- * @param {any[]} supplies Supplies list.
- * @param {string} search The search term
- * @returns {any[]} The flat list of supply packs.
- */
-const searchForSupplies = (supplies, search) => {
-  search = search.toLowerCase();
-
-  return flow([
-    (categories) => categories.flatMap((category) => category.packs),
-    filter(
-      (pack) =>
-        pack.name?.toLowerCase().includes(search.toLowerCase()) ||
-        pack.desc?.toLowerCase().includes(search.toLowerCase()),
-    ),
-    sortBy((pack) => pack.name),
-    (packs) => packs.slice(0, 25),
-  ])(supplies);
 };
