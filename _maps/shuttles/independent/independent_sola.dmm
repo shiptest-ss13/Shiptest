@@ -336,7 +336,7 @@
 "fH" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/machinery/door/poddoor/shutters{
-	id = "sola_engineering"
+	id = "sola_airlock"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech/grid,
@@ -3397,7 +3397,7 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/shutters{
-	id = "sola_engineering"
+	id = "sola_airlock"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3695,7 +3695,15 @@
 	pixel_x = -20;
 	name = "engineering lockdown";
 	id = "sola_engineering";
-	dir = 4
+	dir = 4;
+	pixel_y = 6
+	},
+/obj/machinery/button/door{
+	pixel_x = -20;
+	name = "airlock lockdown";
+	id = "sola_airlock";
+	dir = 4;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
