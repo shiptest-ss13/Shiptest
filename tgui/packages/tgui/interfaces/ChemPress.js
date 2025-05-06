@@ -75,7 +75,7 @@ export const ChemPress = (props) => {
               <Input
                 value={product_name}
                 placeholder={product_name}
-                onChange={(value) =>
+                onChange={(e, value) =>
                   act('change_product_name', {
                     name: value,
                   })

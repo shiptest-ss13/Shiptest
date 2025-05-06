@@ -30,7 +30,7 @@ export const ShipEditor = (props) => {
               <Input
                 value={data.templateName}
                 width={20}
-                onChange={(value) =>
+                onChange={(e, value) =>
                   act('setTemplateName', { new_template_name: value })
                 }
               />
@@ -41,7 +41,7 @@ export const ShipEditor = (props) => {
                 value={data.templateShortName}
                 placeholder={data.templateName}
                 maxLength={20}
-                onChange={(value) =>
+                onChange={(e, value) =>
                   act('setTemplateShortName', {
                     new_template_short_name: value,
                   })
@@ -68,7 +68,7 @@ export const ShipEditor = (props) => {
                 value={data.templateShortName}
                 placeholder={data.templateName}
                 maxLength={20}
-                onChange={(value) =>
+                onChange={(e, value) =>
                   act('setTemplateIconState', {
                     new_template_icon_state: value,
                   })

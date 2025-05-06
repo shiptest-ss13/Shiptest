@@ -1,3 +1,5 @@
+/// Name of the blanks file
+#define BLANKS_FILE_NAME "strings/blanks/nt_blanks.json"
 
 /// For use with the `color_mode` var. Photos will be printed in greyscale while the var has this value.
 #define PHOTO_GREYSCALE "Greyscale"
@@ -9,11 +11,48 @@
 /// How much toner is used for making a copy of a photo.
 #define PHOTO_TONER_USE 0.625
 /// How much toner is used for making a copy of a document.
-#define DOCUMENT_TONER_USE 0.75
+#define DOCUMENT_TONER_USE (PAPER_TONER_USE * DOCUMENT_PAPER_USE)
 /// How much toner is used for making a copy of an ass.
-#define ASS_TONER_USE 0.625
+#define ASS_TONER_USE PHOTO_TONER_USE
+/// How much toner is used for making a copy of paperwork.
+#define PAPERWORK_TONER_USE (PAPER_TONER_USE * PAPERWORK_PAPER_USE)
+
+/// At which toner charge amount we start losing color. Toner cartridges are scams.
+#define TONER_CHARGE_LOW_AMOUNT 2
+
+// please use integers here
+/// How much paper is used for making a copy of paper. What, are you seriously surprised by this?
+#define PAPER_PAPER_USE 1
+/// How much paper is used for making a copy of a photo.
+#define PHOTO_PAPER_USE 1
+/// How much paper is used for making a copy of a document.
+#define DOCUMENT_PAPER_USE 20
+/// How much paper is used for making a copy of a photo.
+#define ASS_PAPER_USE PHOTO_PAPER_USE
+/// How much paper is used for making a copy of paperwork.
+#define PAPERWORK_PAPER_USE 10
+
+/// Maximum capacity of a photocopier
+#define MAX_PAPER_CAPACITY 60
 /// The maximum amount of copies you can make with one press of the copy button.
 #define MAX_COPIES_AT_ONCE 10
+
+/// Paper blanks (form templates, basically). Loaded from `config/blanks.json`.
+/// If invalid or not found, set to null.
+GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
+
+/proc/init_paper_blanks()
+	if(!fexists(BLANKS_FILE_NAME))
+		return null
+	var/list/blanks_json = json_decode(file2text(BLANKS_FILE_NAME))
+	if(!length(blanks_json))
+		return null
+
+	var/list/parsed_blanks = list()
+	for(var/paper_blank in blanks_json)
+		parsed_blanks += list("[paper_blank["code"]]" = paper_blank)
+
+	return parsed_blanks
 
 /obj/machinery/photocopier
 	name = "photocopier"
@@ -78,30 +117,41 @@
 		ui = new(user, src, "Photocopier")
 		ui.open()
 
+/obj/machinery/photocopier/ui_static_data(mob/user)
+	var/list/static_data = list()
+
+	var/list/blank_infos = list()
+	var/list/category_names = list()
+	if(GLOB.paper_blanks)
+		for(var/blank_id in GLOB.paper_blanks)
+			var/list/paper_blank = GLOB.paper_blanks[blank_id]
+			blank_infos += list(list(
+				name = paper_blank["name"],
+				category = paper_blank["category"],
+				code = blank_id,
+			))
+			category_names |= paper_blank["category"]
+
+	static_data["blanks"] = blank_infos
+	static_data["categories"] = category_names
+	static_data["max_paper_count"] = MAX_PAPER_CAPACITY
+	static_data["max_copies"] = MAX_COPIES_AT_ONCE
+
+	return static_data
+
 /obj/machinery/photocopier/ui_data(mob/user)
 	var/list/data = list()
 	data["has_item"] = !copier_empty()
 	data["num_copies"] = num_copies
+	data["copies_left"] = 100
 
-	try
-		var/list/blanks = json_decode(file2text("strings/blanks/nt_blanks.json"))
-		if (blanks != null)
-			data["blanks"] = blanks
-			data["category"] = category
-			data["forms_exist"] = TRUE
-		else
-			data["forms_exist"] = FALSE
-	catch()
-		data["forms_exist"] = FALSE
-
-
-	if(photo_copy)
+	if(istype(paper_copy, /obj/item/photo))
 		data["is_photo"] = TRUE
 		data["color_mode"] = color_mode
 
 	if(isAI(user))
 		data["isAI"] = TRUE
-		data["can_AI_print"] = toner_cartridge ? toner_cartridge.charges >= PHOTO_TONER_USE : FALSE
+		data["can_AI_print"] = toner_cartridge && (toner_cartridge.charges >= PHOTO_TONER_USE) && (100 >= PHOTO_PAPER_USE)
 	else
 		data["isAI"] = FALSE
 
@@ -109,10 +159,10 @@
 		data["has_toner"] = TRUE
 		data["current_toner"] = toner_cartridge.charges
 		data["max_toner"] = toner_cartridge.max_charges
-		data["has_enough_toner"] = has_enough_toner()
 	else
 		data["has_toner"] = FALSE
-		data["has_enough_toner"] = FALSE
+
+	data["paper_count"] = 100
 
 	return data
 

@@ -52,7 +52,7 @@ const Story = (props) => {
             />
           </LabeledList.Item>
           <LabeledList.Item label="Override color">
-            <Input value={color} onChange={(value) => setColor(value)} />
+            <Input value={color} onChange={(e, value) => setColor(value)} />
           </LabeledList.Item>
         </LabeledList>
       </Box>

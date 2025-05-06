@@ -58,7 +58,7 @@ export const HypnoChair = (props) => {
             <LabeledList.Item label="Trigger Phrase">
               <Input
                 value={data.trigger}
-                onChange={(value) =>
+                onChange={(e, value) =>
                   act('set_phrase', {
                     phrase: value,
                   })
