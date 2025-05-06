@@ -134,6 +134,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/proc/update_label()
 	name = "PDA-[owner] ([ownjob])" //Name generalisation
 
+/obj/item/pda/get_deep_access()
+	if(id)
+		return id.new_access
+	return ..()
+
 /obj/item/pda/GetAccess()
 	if(id)
 		return id.GetAccess()

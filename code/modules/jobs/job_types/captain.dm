@@ -9,6 +9,7 @@
 
 	access = list() 			//See get_access()
 	minimal_access = list() 	//See get_access()
+	access_flags = ACCESS_SHIP_ALL
 
 	mind_traits = list(TRAIT_DISK_VERIFIER)
 
