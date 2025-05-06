@@ -141,23 +141,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner_techfloor_grid/full,
-/obj/machinery/button/door{
-	pixel_x = 3;
-	pixel_y = -21;
-	dir = 1;
-	id = "RIprivate";
-	name = "privacy lock"
-	},
 /obj/machinery/airalarm/directional/west,
-/obj/machinery/button/door{
-	pixel_x = -8;
-	pixel_y = -21;
-	id = "RIshit";
-	specialfunctions = 4;
-	normaldoorcontrol = 1;
-	name = "bathroom override";
-	dir = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cQ" = (
@@ -225,6 +209,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono{
 	dir = 1
@@ -718,6 +705,29 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = 1;
+	dir = 8;
+	id = "RIprivate";
+	name = "privacy lock"
+	},
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = 12;
+	dir = 8;
+	id = "RIbridge";
+	name = "viewing shield"
+	},
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = -10;
+	id = "RIshit";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	name = "bathroom override";
+	dir = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "qf" = (
@@ -866,6 +876,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"sF" = (
+/turf/closed/wall/rust,
+/area/ship/crew/toilet)
 "ti" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/engineering/engines)
@@ -1396,6 +1409,7 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/under/shorts/explorer,
+/obj/item/radio/headset/alt,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Fr" = (
@@ -1440,6 +1454,9 @@
 /area/ship/cargo)
 "Gh" = (
 /obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono{
@@ -1585,9 +1602,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating/rust,
 /area/ship/cargo)
-"Kz" = (
-/turf/closed/wall/rust,
-/area/ship/crew/toilet)
 "Le" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock{
@@ -1827,6 +1841,10 @@
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
+/obj/item/radio/headset/alt{
+	pixel_x = 4;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Qw" = (
@@ -1978,13 +1996,6 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/wideband/directional/south,
-/obj/machinery/button/door{
-	pixel_x = -18;
-	pixel_y = -21;
-	dir = 1;
-	id = "RIbridge";
-	name = "viewing shield"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -2488,7 +2499,7 @@ MK
 VU
 rQ
 LQ
-Kz
+sF
 Qw
 SM
 mU
