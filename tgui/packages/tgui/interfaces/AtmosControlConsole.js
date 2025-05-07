@@ -34,11 +34,11 @@ export const AtmosControlConsole = (props) => {
                       {toFixed(sensor.temperature, 2) + ' K'}
                     </LabeledList.Item>
                   )}
-                  {map((gasPercent, gasId) => (
+                  {map(gases, (gasPercent, gasId) => (
                     <LabeledList.Item label={gasId}>
                       {toFixed(gasPercent, 2) + '%'}
                     </LabeledList.Item>
-                  ))(gases)}
+                  ))}
                 </LabeledList>
               </Section>
             );

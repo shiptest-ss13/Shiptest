@@ -171,9 +171,10 @@ export const PandemicSymptomDisplay = (props) => {
     level,
     neutered,
   } = symptom;
-  const thresholds = map((desc, label) => ({ desc, label }))(
-    symptom.threshold_desc || {},
-  );
+  const thresholds = map(symptom.threshold_desc || {}, (desc, label) => ({
+    desc,
+    label,
+  }));
   return (
     <Section
       title={name}

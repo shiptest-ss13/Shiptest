@@ -152,7 +152,7 @@ const FilterFlagsEntry = (props) => {
 
   const filterInfo = data.filter_info;
   const flags = filterInfo[filterType]['flags'];
-  return map((bitField, flagName) => (
+  return map(flags, (bitField, flagName) => (
     <Button.Checkbox
       checked={value & bitField}
       content={flagName}
@@ -165,7 +165,7 @@ const FilterFlagsEntry = (props) => {
         })
       }
     />
-  ))(flags);
+  ));
 };
 
 const FilterDataEntry = (props) => {

@@ -21,7 +21,7 @@ export const NtosCrewManifest = (props) => {
             />
           }
         >
-          {map((entries, department) => (
+          {map(manifest, (entries, department) => (
             <Section key={department} level={2} title={department}>
               <Table>
                 {entries.map((entry) => (
@@ -32,7 +32,7 @@ export const NtosCrewManifest = (props) => {
                 ))}
               </Table>
             </Section>
-          ))(manifest)}
+          ))}
         </Section>
       </NtosWindow.Content>
     </NtosWindow>

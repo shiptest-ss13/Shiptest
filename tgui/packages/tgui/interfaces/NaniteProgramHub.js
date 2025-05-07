@@ -74,7 +74,7 @@ export const NaniteProgramHub = (props) => {
             <Flex>
               <Flex.Item minWidth="110px">
                 <Tabs vertical>
-                  {map((cat_contents, category) => {
+                  {map(programs, (cat_contents, category) => {
                     const progs = cat_contents || [];
                     // Backend was sending stupid data that would have been
                     // annoying to fix
@@ -88,7 +88,7 @@ export const NaniteProgramHub = (props) => {
                         {tabLabel}
                       </Tabs.Tab>
                     );
-                  })(programs)}
+                  })}
                 </Tabs>
               </Flex.Item>
               <Flex.Item grow={1} basis={0}>
