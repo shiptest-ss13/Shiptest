@@ -116,6 +116,7 @@
 		to_chat(user, span_notice("You switch to tube B."))
 	else
 		to_chat(user, span_notice("You switch to tube A."))
+	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 
 /datum/action/item_action/toggle_tube
 	name = "Toggle Tube"
