@@ -162,7 +162,7 @@
 	result = /obj/item/blackmarket_uplink
 	time = 30
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_MULTITOOL)
-	blacklist = list(/obj/item/radio/headset)
+	blacklist = list(/obj/item/radio/headset, /obj/item/radio/intercom)
 	reqs = list(
 		/obj/item/stock_parts/scanning_module = 1,
 		/obj/item/stack/cable_coil = 15,
