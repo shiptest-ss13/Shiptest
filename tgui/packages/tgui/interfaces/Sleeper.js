@@ -33,7 +33,7 @@ const damageTypes = [
 
 export const Sleeper = (props) => {
   const { act, data } = useBackend();
-  const chemicals = sortBy((chem) => chem.title)(data.chemicals);
+  const chemicals = sortBy(data.chemicals, (chem) => chem.title);
   const transferAmounts = data.transferAmounts || [];
   const { open, occupant = {}, occupied, stasis, canStasis, cell = {} } = data;
   return (
