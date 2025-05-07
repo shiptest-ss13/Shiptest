@@ -45,7 +45,7 @@
 	window.initialize(
 		strict_mode = TRUE,
 		assets = list(
-			get_asset_datum(/datum/asset/simple/tgui_common),
+			//get_asset_datum(/datum/asset/simple/tgui_common),
 			get_asset_datum(/datum/asset/simple/tgui_panel),
 		))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/fontawesome))
