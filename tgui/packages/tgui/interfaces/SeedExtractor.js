@@ -38,7 +38,7 @@ const createSeeds = (seedStrings) => {
     obj.name = toTitleCase(obj.name.replace('pack of ', ''));
     return obj;
   });
-  return flow([sortBy((item) => item.name)])(objs);
+  return sortBy(objs || [], (item) => item.name);
 };
 
 export const SeedExtractor = (props) => {
