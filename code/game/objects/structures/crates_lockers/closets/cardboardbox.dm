@@ -62,12 +62,22 @@
 				L.do_alert_animation(L)
 		playsound(loc, 'sound/machines/chime.ogg', 50, FALSE, -5)
 
-/mob/living/proc/do_alert_animation(atom/A)
-	var/image/I = image('icons/obj/closet.dmi', A, "cardboard_special", A.layer+1)
-	flick_overlay_view(I, A, 8)
-	I.alpha = 0
-	animate(I, pixel_z = 32, alpha = 255, time = 5, easing = ELASTIC_EASING)
+/// Does the MGS ! animation
+/atom/proc/do_alert_animation()
+	var/mutable_appearance/alert = mutable_appearance('icons/obj/closet.dmi', "cardboard_special")
+	SET_PLANE_EXPLICIT(alert, ABOVE_LIGHTING_PLANE, src)
+	var/atom/movable/flick_visual/exclamation = flick_overlay_view(alert, 1 SECONDS)
+	exclamation.alpha = 0
+	exclamation.pixel_x = -pixel_x
+	animate(exclamation, pixel_z = 32, alpha = 255, time = 0.5 SECONDS, easing = ELASTIC_EASING)
+	// We use this list to update plane values on parent z change, which is why we need the timer too
+	// I'm sorry :(
+	LAZYADD(update_on_z, exclamation)
+	// Intentionally less time then the flick so we don't get weird shit
+	addtimer(CALLBACK(src, PROC_REF(forget_alert), exclamation), 0.8 SECONDS, TIMER_CLIENT_TIME)
 
+/atom/proc/forget_alert(atom/movable/flick_visual/exclamation)
+	LAZYREMOVE(update_on_z, exclamation)
 
 /obj/structure/closet/cardboard/metal
 	name = "large metal box"
