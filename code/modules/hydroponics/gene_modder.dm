@@ -166,8 +166,8 @@
 				dat += "[span_highlight("[target.get_name()]")] gene with [span_highlight("[disk.gene.get_name()]")]?<br>"
 			if("insert")
 				dat += "[span_highlight("[disk.gene.get_name()]")] gene into \the [span_highlight("[seed]")]?<br>"
-		dat += "</div><div class='line'><a href='?src=[REF(src)];gene=[REF(target)];op=[operation]'>Confirm</a> "
-		dat += "<a href='?src=[REF(src)];abort=1'>Abort</a></div>"
+		dat += "</div><div class='line'><a href='byond://?src=[REF(src)];gene=[REF(target)];op=[operation]'>Confirm</a> "
+		dat += "<a href='byond://?src=[REF(src)];abort=1'>Abort</a></div>"
 		popup.set_content(dat)
 		popup.open()
 		return
