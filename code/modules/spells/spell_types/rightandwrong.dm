@@ -54,14 +54,8 @@ GLOBAL_VAR_INIT(summon_guns_triggered, FALSE)
 	if(H.stat == DEAD || !(H.client))
 		return
 	if(H.mind)
-		if(iswizard(H) || H.mind.has_antag_datum(/datum/antagonist/survivalist/guns))
+		if(iswizard(H))
 			return
-
-	if(prob(GLOB.summon_guns_triggered) && !(H.mind.has_antag_datum(/datum/antagonist)))
-		SSticker.mode.traitors += H.mind
-
-		H.mind.add_antag_datum(/datum/antagonist/survivalist/guns)
-		H.log_message("was made into a survivalist, and trusts no one!", LOG_ATTACK, color="red")
 
 	var/gun_type = pick(GLOB.summoned_guns)
 	var/obj/item/gun/G = new gun_type(get_turf(H))

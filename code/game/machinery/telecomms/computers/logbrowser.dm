@@ -107,8 +107,8 @@
 					if (universal_translate || user.has_language(language))
 						message = "\"[message]\""
 					else if (!user.has_language(language))
-						var/datum/language/D = GLOB.language_datum_instances[language]
-						message = "\"[D.scramble(message)]\""
+						var/datum/language/dialect = GLOB.language_datum_instances[language]
+						message = "\"[dialect.scramble_paragraph(message)]\""
 					else if (language)
 						message = "<i>(unintelligible)</i>"
 
