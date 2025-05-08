@@ -85,3 +85,13 @@
   - rscadd: Readded events, mostly replacing them with new ones
   FslashN:
   - rscadd: Industrial suit storage can now be built by using a multitool on the circuitboard.
+2025-05-08:
+  generalthrax:
+  - rscdel: Removed carbon steel and all Overmap 5 minerals like copper, silicon,
+      quartzite, lead
+  - rscadd: Re-added plasteel
+  - balance: Ore yield returned to pre-Overmap 5 levels, all lathe recipes (more or
+      less) returned to their old costs
+  - bugfix: Stops blackmarket uplink crafting from eating your headset
+  - rscdel: Reverts fixes to plasma and ion thrusters that ended up slowing down ships
+      to a crawl
