@@ -973,7 +973,7 @@
 					return
 			if(AIRLOCK_SECURITY_METAL)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, span_notice("You begin cutting the panel's shielding..."))
 					if(C.use_tool(src, user, 40, volume=50, amount = 2))
@@ -1005,7 +1005,7 @@
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_I)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, span_notice("You begin cutting the inner layer of shielding..."))
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
@@ -1031,7 +1031,7 @@
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_O)
 				if(C.tool_behaviour == TOOL_WELDER)
-					if(!C.tool_start_check(user, amount=2))
+					if(!C.tool_start_check(user, src, amount=2))
 						return
 					to_chat(user, span_notice("You begin cutting the outer layer of shielding..."))
 					if(C.use_tool(src, user, 40, volume=50, amount=2))
@@ -1123,7 +1123,7 @@
 			to_chat(user, span_warning("[src] is blocked by a seal!"))
 			return
 		if(user.a_intent != INTENT_HELP)
-			if(!W.tool_start_check(user, amount=0))
+			if(!W.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message(span_notice("[user] begins [welded ? "unwelding":"welding"] the airlock."), \
 							span_notice("You begin [welded ? "unwelding":"welding"] the airlock..."), \
@@ -1135,7 +1135,7 @@
 				update_appearance()
 		else
 			if(obj_integrity < max_integrity)
-				if(!W.tool_start_check(user, amount=0))
+				if(!W.tool_start_check(user, src, amount=0))
 					return
 				user.visible_message(span_notice("[user] begins welding the airlock."), \
 								span_notice("You begin repairing the airlock..."), \
@@ -1236,7 +1236,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	var/decon_time = 5 SECONDS
 	if(welded)
@@ -1260,6 +1260,7 @@
 		if(obj_flags & EMAGGED)
 			return FALSE
 		use_power(50)
+		play_fov_effect(src, 6, "note")
 		playsound(src, doorOpen, 30, FALSE, mono_adj = TRUE)
 		if(closeOther != null && istype(closeOther, /obj/machinery/door/airlock/) && !closeOther.density)
 			closeOther.close()
@@ -1308,6 +1309,7 @@
 		if(obj_flags & EMAGGED)
 			return
 		use_power(50)
+		play_fov_effect(src, 6, "note")
 		playsound(src, doorClose, 30, FALSE, mono_adj = TRUE)
 	else
 		playsound(src, pry_close_sound, 30, TRUE, mono_adj = TRUE)

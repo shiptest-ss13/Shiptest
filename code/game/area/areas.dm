@@ -85,6 +85,9 @@
 	///Used to decide what kind of reverb the area makes sound have
 	var/sound_environment = SOUND_ENVIRONMENT_NONE
 
+	/// The current weather active in this area
+	var/datum/weather/active_weather
+
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE
 

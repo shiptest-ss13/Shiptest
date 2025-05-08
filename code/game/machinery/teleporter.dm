@@ -23,6 +23,7 @@
 /obj/machinery/teleport/hub/Destroy()
 	if (power_station)
 		power_station.teleporter_hub = null
+		power_station.engaged = FALSE
 		power_station = null
 	return ..()
 
@@ -37,15 +38,15 @@
 	if(in_range(user, src) || isobserver(user))
 		. += span_notice("The status display reads: Probability of malfunction decreased by <b>[(accuracy*25)-25]%</b>.")
 
+//Instead of recursive processing, this now signals the power source, if it exists, to link up with the other pieces.
 /obj/machinery/teleport/hub/proc/link_power_station()
-	if(power_station)
-		return
-	for(var/direction in GLOB.cardinals)
-		power_station = locate(/obj/machinery/teleport/station, get_step(src, direction))
-		if(power_station)
-			power_station.link_console_and_hub()
-			break
-	return power_station
+	if(!power_station) //This only runs on initialize() but maybe it will not in the future.
+		var/obj/machinery/teleport/station/unlinked_station //Temporary variables are good so we don't have to reset them all the time.
+		for(var/direction in GLOB.cardinals)
+			unlinked_station = locate(/obj/machinery/teleport/station, get_step(src, direction))
+			if(unlinked_station && unlinked_station.link_console_and_hub(unlinked_hub = src)) //Signal that this hub requires a power source.
+				power_station = unlinked_station //This is not handled by the power source if linking directly.
+				break //Only break if it actually links it to the power source.
 
 /obj/machinery/teleport/hub/Bumped(atom/movable/AM)
 	if(is_centcom_level(src))
@@ -102,7 +103,7 @@
 
 /obj/machinery/teleport/station
 	name = "teleporter station"
-	desc = "The power control station for a bluespace teleporter. Used for toggling power, and can activate a test-fire to prevent malfunctions."
+	desc = "The power control station for a bluespace teleporter. Used for toggling power."
 	icon_state = "controller"
 	base_icon_state = "controller"
 	use_power = IDLE_POWER_USE
@@ -134,19 +135,38 @@
 	if(in_range(user, src) || isobserver(user))
 		. += span_notice("The status display reads: This station can be linked to <b>[efficiency]</b> other station(s).")
 
-/obj/machinery/teleport/station/proc/link_console_and_hub()
-	for(var/direction in GLOB.cardinals)
-		teleporter_hub = locate(/obj/machinery/teleport/hub, get_step(src, direction))
-		if(teleporter_hub)
-			teleporter_hub.link_power_station()
-			break
-	for(var/direction in GLOB.cardinals)
-		teleporter_console = locate(/obj/machinery/computer/teleporter, get_step(src, direction))
-		if(teleporter_console)
-			teleporter_console.link_power_station()
-			break
-	return teleporter_hub && teleporter_console
+/obj/machinery/teleport/station/proc/link_console_and_hub(obj/machinery/teleport/hub/unlinked_hub, obj/machinery/computer/teleporter/unlinked_console)
+	if(!teleporter_hub)
+		if(unlinked_hub) //We have a hub already.
+			teleporter_hub = unlinked_hub
+			. = TRUE //Only matters if we are directly linking via arguments passed.
+		else //Otherwise we look for one.
+			for(var/direction in GLOB.cardinals)
+				unlinked_hub = locate(/obj/machinery/teleport/hub, get_step(src, direction))
+				if(unlinked_hub && !unlinked_hub.power_station) //To make sure they aren't already linked to another set.
+					teleporter_hub = unlinked_hub
+					teleporter_hub.power_station = src
+					break
 
+	if(!teleporter_console)
+		if(unlinked_console)
+			teleporter_console = unlinked_console
+			. = TRUE
+		else
+			for(var/direction in GLOB.cardinals)
+				unlinked_console = locate(/obj/machinery/computer/teleporter, get_step(src, direction))
+				if(unlinked_console && !unlinked_console.power_station)
+					teleporter_console = unlinked_console
+					teleporter_console.power_station = src
+					break
+			//A little copypasta but a lot easier to digest than the previous iteration.
+			if(teleporter_hub && !teleporter_console) //Hub present, no console detected. Let's try looking for a console next to the hub.
+				for(var/direction in GLOB.cardinals)
+					unlinked_console = locate(/obj/machinery/computer/teleporter, get_step(teleporter_hub, direction))
+					if(unlinked_console && !unlinked_console.power_station)
+						teleporter_console = unlinked_console
+						teleporter_console.power_station = src
+						break
 
 /obj/machinery/teleport/station/Destroy()
 	if(teleporter_hub)

@@ -25,6 +25,7 @@
 	check_friendly_fire = 1
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM)
+	initial_language_holder = /datum/language_holder/gal_com
 	minbodytemp = 0
 	verb_say = "states"
 	verb_ask = "queries"
