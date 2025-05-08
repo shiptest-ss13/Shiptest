@@ -29,8 +29,8 @@ SUBSYSTEM_DEF(statpanels)
 			"\n",
 			"Local Sector Time: [SSticker.round_start_timeofday ? "[station_time_timestamp()] [sector_datestamp()]" : "The round hasn't started yet!"]",
 			"\n",
-			"Internal Round Timer: [SSticker.round_start_timeofday ? ROUND_TIME : "The round hasn't started yet!"]",
-			"Actual Round Timer: [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]",
+			"Internal Round Timer: [SSticker.round_start_timeofday ? ROUND_TIME() : "The round hasn't started yet!"]",
+			"Actual Round Timer: [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY() : "The round hasn't started yet!"]",
 			"\n",
 			"Playing/Connected: [get_active_player_count()]/[length(GLOB.clients)]",
 			"Crew Percentage/Ship Locking Cap: [SSovermap.ship_crew_percentage()]%/[SSovermap.ship_locking_percentage()]%"
