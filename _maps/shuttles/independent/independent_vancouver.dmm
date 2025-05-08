@@ -1971,6 +1971,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/airlock/maintenance/glass{
+	name = "Cargo Bay"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "Ac" = (
@@ -3586,9 +3589,6 @@
 	icon_state = "5-6"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/door/airlock/maintenance/glass{
-	name = "Cargo Bay"
-	},
 /turf/open/floor/plating,
 /area/ship/crew/ccommons)
 "Wh" = (
