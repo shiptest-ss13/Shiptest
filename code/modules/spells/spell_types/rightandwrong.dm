@@ -13,12 +13,6 @@ GLOBAL_VAR_INIT(summon_guns_triggered, FALSE)
 		if(iswizard(H))
 			return
 
-	if(prob(GLOB.summon_guns_triggered) && !(H.mind.has_antag_datum(/datum/antagonist)))
-		SSticker.mode.traitors += H.mind
-
-		H.mind.add_antag_datum(/datum/antagonist/survivalist/guns)
-		H.log_message("was made into a survivalist, and trusts no one!", LOG_ATTACK, color="red")
-
 	var/turf/human_turf = get_turf(H)
 	new /obj/effect/spawner/random/weapon/full_gun(human_turf)
 	var/obj/item/gun/spawned_gun = locate(/obj/item/gun, human_turf)
