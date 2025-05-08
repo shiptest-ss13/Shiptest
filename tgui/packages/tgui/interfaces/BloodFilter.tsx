@@ -10,7 +10,7 @@ type Data = {
 
 export const BloodFilter = (props, context) => {
   const { act, data } = useBackend<Data>(context);
-  const { whitelist } = data;
+  const { whitelist = [] } = data;
 
   return (
     <Window width={500} height={300}>
