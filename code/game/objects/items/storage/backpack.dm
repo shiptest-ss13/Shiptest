@@ -404,12 +404,6 @@
 	icon_state = "courierbagsec"
 	item_state = "courierbagsec"
 
-/obj/item/storage/backpack/messenger/inteq
-	name = "inteq messenger bag"
-	desc = "A comfortable leather strapped messenger bag worn over one shoulder. This one denotes the wearer as an IRMG operator"
-	icon_state = "courierbaginteq"
-	item_state = "courierbaginteq"
-
 /*
 * Duffelbag Types
 */
@@ -466,6 +460,14 @@
 /obj/item/storage/backpack/duffelbag/sec/surgery
 	name = "surgical duffel bag"
 	desc = "A large duffel bag for holding extra supplies - this one has a material inlay with space for various sharp-looking tools."
+
+/obj/item/storage/backpack/duffelbag/sec/c4
+	name = "tactical duffel bag"
+	desc = "A large duffel bag for holding extra plastic explosives."
+
+/obj/item/storage/backpack/duffelbag/sec/c4/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/grenade/c4(src)
 
 /obj/item/storage/backpack/duffelbag/sec/surgery/PopulateContents()
 	new /obj/item/scalpel(src)

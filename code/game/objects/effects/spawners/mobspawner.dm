@@ -82,3 +82,10 @@
 	)
 	spawn_loot_count = 7
 	spawn_loot_double = TRUE
+
+/obj/effect/spawner/random/polar_bear
+	name = "bear spawner"
+	loot = list(
+		/mob/living/basic/bear/polar = 85,
+		/mob/living/basic/bear/polar/warrior = 15
+	)

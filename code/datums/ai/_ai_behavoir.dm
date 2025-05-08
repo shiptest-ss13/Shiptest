@@ -23,3 +23,13 @@
 	controller.behavior_args -= type
 	if(behavior_flags & AI_BEHAVIOR_REQUIRE_MOVEMENT) //If this was a movement task, reset our movement target.
 		controller.current_movement_target = null
+
+/// Helper proc to ensure consistency in setting the source of the movement target
+/datum/ai_behavior/proc/set_movement_target(datum/ai_controller/controller, atom/target, datum/ai_movement/new_movement)
+	controller.set_movement_target(type, target, new_movement)
+
+/// Clear the controller's movement target only if it was us who last set it
+/datum/ai_behavior/proc/clear_movement_target(datum/ai_controller/controller)
+	if (controller.movement_target_source != type)
+		return
+	controller.set_movement_target(type, null)
