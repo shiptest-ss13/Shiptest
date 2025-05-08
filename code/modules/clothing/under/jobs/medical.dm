@@ -2,6 +2,7 @@
 	icon = 'icons/obj/clothing/under/medical.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/medical.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
+	roll_down = TRUE
 
 /obj/item/clothing/under/rank/medical/chief_medical_officer
 	desc = "It's a jumpsuit worn by those with the experience to be \"Chief Medical Officer\". It provides minor biological protection."
@@ -18,7 +19,7 @@
 	item_state = "w_suit"
 	icon = 'icons/obj/clothing/under/syndicate.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
-	can_adjust = FALSE
+	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/rank/medical/chief_medical_officer/skirt
@@ -27,7 +28,7 @@
 	icon_state = "cmo_skirt"
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/geneticist
@@ -46,7 +47,7 @@
 	icon_state = "geneticswhite_skirt"
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/virologist
@@ -63,7 +64,7 @@
 	icon_state = "virology_skirt"
 	item_state = "w_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/doctor/nurse
@@ -74,7 +75,7 @@
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+	roll_down = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/medical/doctor
@@ -89,25 +90,25 @@
 	name = "medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in baby blue."
 	icon_state = "scrubsblue"
-	can_adjust = FALSE
+	roll_down = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/green
 	name = "medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in dark green."
 	icon_state = "scrubsgreen"
-	can_adjust = FALSE
+	roll_down = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/purple
 	name = "medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in deep purple."
 	icon_state = "scrubspurple"
-	can_adjust = FALSE
+	roll_down = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/red
 	name = "medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in dark red."
 	icon_state = "scrubsred"
-	can_adjust = FALSE
+	roll_down = FALSE
 
 /obj/item/clothing/under/rank/medical/doctor/skirt
 	name = "medical doctor's jumpskirt"
@@ -153,7 +154,7 @@
 	name = "white psychiatrist's suit"
 	desc = "A turtleneck for personnel trained to deal with psychological issues, such as terrible work place incidents or the clown's bad jokes. This one has a white turtleneck."
 	icon_state = "psychiatrist-white"
-	can_adjust = FALSE
+	roll_down = FALSE
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
@@ -175,7 +176,7 @@
 	icon_state = "gownwhite"
 	item_state = "gownwhite"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-	can_adjust = FALSE
+	roll_down = FALSE
 
 /obj/item/clothing/under/rank/medical/gown/green
 	desc = "A mint green gown that allows medics to save time."
