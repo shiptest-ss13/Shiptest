@@ -187,7 +187,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/door/airlock/command{
 	name = "Bridge";
-	req_access_txt = "19"
+	req_access_txt = "41"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/tech,
@@ -3466,6 +3466,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/card,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "UD" = (
@@ -3671,7 +3672,7 @@
 /obj/structure/closet/secure_closet/engineering_chief{
 	name = "Foremans Locker";
 	populate = 0;
-	req_access_txt = "19"
+	req_access_txt = "41"
 	},
 /obj/item/storage/belt/utility/chief,
 /obj/effect/decal/cleanable/dirt,
