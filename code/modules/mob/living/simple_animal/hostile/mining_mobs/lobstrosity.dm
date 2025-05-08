@@ -9,7 +9,7 @@
 	icon_state = "arctic_lobstrosity"
 	icon_living = "arctic_lobstrosity"
 	icon_dead = "arctic_lobstrosity_dead"
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST|MOB_CRUSTACEAN|MOB_AQUATIC
 	mouse_opacity = MOUSE_OPACITY_ICON
 	friendly_verb_continuous = "chitters at"
 	friendly_verb_simple = "chits at"

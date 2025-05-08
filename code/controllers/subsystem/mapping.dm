@@ -22,6 +22,8 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+
+	var/list/greeble_templates = list()
 	// List mapping TYPES of outpost map templates to instances of their singletons.
 	var/list/outpost_templates = list()
 
@@ -113,10 +115,14 @@ SUBSYSTEM_DEF(mapping)
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 
+	greeble_templates = SSmapping.greeble_templates
+
 	outpost_templates = SSmapping.outpost_templates
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
+
+	greeble_templates = SSmapping.greeble_templates
 
 	areas_in_z = SSmapping.areas_in_z
 	map_zones = SSmapping.map_zones
@@ -205,6 +211,9 @@ SUBSYSTEM_DEF(mapping)
 		else
 			S.short_name = copytext(S.name, 1, 20)
 
+		if(istext(data["token_icon_state"]))
+			S.token_icon_state = data["token_icon_state"]
+
 		if(istext(data["faction"]))
 			var/type = text2path(data["faction"])
 			if(!(type in SSfactions.factions))
@@ -231,7 +240,7 @@ SUBSYSTEM_DEF(mapping)
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
 
-		if(isnum(data["unique_ship_access"] && data["unique_ship_access"]))
+		if(isnum(data["unique_ship_access"]))
 			S.unique_ship_access = data["unique_ship_access"]
 
 		if(istext(data["description"]))
@@ -277,6 +286,12 @@ SUBSYSTEM_DEF(mapping)
 
 		if(isnum(data["starting_funds"]))
 			S.starting_funds = data["starting_funds"]
+
+		if(isnum(data["tranist_x_offset"]))
+			S.tranist_x_offset = data["tranist_x_offset"]
+
+		if(isnum(data["tranist_y_offset"]))
+			S.tranist_y_offset = data["tranist_y_offset"]
 
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE

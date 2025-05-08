@@ -259,6 +259,7 @@ Difficulty: Very Hard
 	eyeblur = 0
 	damage_type = BRUTE
 	pass_flags = PASSTABLE
+	plane = GAME_PLANE
 
 /obj/projectile/colossus/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -496,7 +497,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 
 	switch(terrain_theme)
 		if("lavaland")//Depressurizes the place... and free cult metal, I guess.
-			NewTerrainFloors = /turf/open/floor/grass/snow/basalt
+			NewTerrainFloors = /turf/open/floor/plating/asteroid/basalt
 			NewTerrainWalls = /turf/closed/wall/mineral/cult
 			NewFlora = list(/mob/living/simple_animal/hostile/asteroid/goldgrub)
 			florachance = 1

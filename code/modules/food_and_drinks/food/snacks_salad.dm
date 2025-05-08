@@ -32,7 +32,7 @@
 	foodtype = VEGETABLES | FRUIT
 
 /obj/item/reagent_containers/food/snacks/salad/validsalad
-	name = "valid salad"
+	name = "full salad"
 	desc = "A salad consisting of a traditional caesar salad, with the inclusion of meatballs and fried potato chunks."
 	icon_state = "validsalad"
 	bonus_reagents = list(/datum/reagent/consumable/doctor_delight = 5, /datum/reagent/consumable/nutriment/vitamin = 4)

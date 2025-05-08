@@ -5,6 +5,8 @@
 	icon_state = "toilet00"
 	density = FALSE
 	anchored = TRUE
+	can_buckle = TRUE
+	buckle_lying = 0
 	var/open = FALSE			//if the lid is up
 	var/cistern = 0			//if the cistern bit is open
 	var/w_items = 0			//the combined w_class of all the items in the cistern
@@ -126,6 +128,20 @@
 		to_chat(user, span_notice("You fill [RG] from [src]. Gross."))
 	else
 		return ..()
+
+/obj/structure/toilet/proc/handle_layer()
+	if(has_buckled_mobs() && dir == NORTH)
+		layer = ABOVE_MOB_LAYER
+	else
+		layer = OBJ_LAYER
+
+/obj/structure/toilet/post_buckle_mob(mob/living/M)
+	. = ..()
+	handle_layer()
+
+/obj/structure/toilet/post_unbuckle_mob()
+	. = ..()
+	handle_layer()
 
 /obj/structure/toilet/secret
 	var/obj/item/secret

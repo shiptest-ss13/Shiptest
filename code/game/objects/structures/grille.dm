@@ -234,7 +234,7 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, 1 SECONDS, volume=100))
 		to_chat(user, span_warning("You slice [src] apart."))
@@ -292,6 +292,10 @@
 
 /obj/structure/grille/get_dumping_location(datum/component/storage/source,mob/user)
 	return null
+
+/obj/structure/grille/indestructible
+	flags_1 = CONDUCT_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/structure/grille/broken // Pre-broken grilles for map placement
 	icon_state = "brokengrille"
