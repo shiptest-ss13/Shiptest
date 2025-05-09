@@ -193,7 +193,7 @@
 	mob_spawn_chance = 1
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 1,
-		/mob/living/simple_animal/hostile/bear/cave = 1,
+		/mob/living/basic/bear/cave = 1,
 		/mob/living/simple_animal/hostile/retaliate/bat = 1,
 		/mob/living/simple_animal/hostile/retaliate/poison/snake = 1
 	)
