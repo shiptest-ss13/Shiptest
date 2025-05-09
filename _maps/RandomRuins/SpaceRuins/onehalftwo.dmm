@@ -293,6 +293,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/item/stack/tile/plasteel,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "du" = (
@@ -408,6 +409,7 @@
 /area/ruin/space/hivebotshuttle)
 "eH" = (
 /obj/machinery/airalarm/directional/east,
+/obj/item/stack/tile/plasteel,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "fa" = (
@@ -1149,7 +1151,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	welded = 1
 	},
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "nh" = (
 /obj/item/stack/rods,
