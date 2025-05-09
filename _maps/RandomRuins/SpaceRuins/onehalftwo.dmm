@@ -359,6 +359,7 @@
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "en" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/mob/living/simple_animal/hostile/hivebot/ranged,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "eq" = (
@@ -638,7 +639,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/starboard)
 "hq" = (
-/mob/living/simple_animal/hostile/hivebot/ranged,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -659,7 +659,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "hA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -757,7 +757,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "iF" = (
-/mob/living/simple_animal/hostile/hivebot/ranged,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/yellow,
 /turf/open/floor/plasteel/patterned/grid,
@@ -957,7 +956,7 @@
 /obj/structure/closet/wall/red/directional/west,
 /obj/item/gun/energy/e_gun/iot,
 /obj/item/stock_parts/cell/gun/upgraded,
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/mono/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "kr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -1186,7 +1185,7 @@
 "nR" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/mono/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "nT" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1458,6 +1457,7 @@
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "rd" = (
 /obj/item/ammo_casing/spent/slug/buck,
+/mob/living/simple_animal/hostile/hivebot/ranged,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "rl" = (
@@ -2381,7 +2381,7 @@
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/mono/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "En" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
@@ -2501,7 +2501,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "Gb" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -2864,7 +2864,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/tech/grid,
+/turf/open/floor/plasteel/tech/grid/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "JU" = (
 /obj/effect/turf_decal/borderfloorblack{
@@ -3215,7 +3215,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/mono/dark,
+/turf/open/floor/plasteel/mono/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "Oa" = (
 /obj/machinery/atmospherics/components/unary/portables_connector,
@@ -4003,7 +4003,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	welded = 1
 	},
-/turf/open/floor/plasteel/mono/white,
+/turf/open/floor/plasteel/mono/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "XA" = (
 /obj/item/stack/tile/plasteel/dark,
