@@ -82,11 +82,12 @@
 	//throngles u cutely
 	visible_message(span_warning("[src] implodes into itself, light itself bending for a split second!"))
 	for(var/mob/living/carbon/carbon in range(1,src))
-		if(carbon.run_armor_check(attack_flag = "melee") >= 20)
-			carbon.break_random_bone()
-		else if(carbon.run_armor_check(attack_flag = "melee") >= 40)
+		if(carbon.run_armor_check(attack_flag = "melee") >= 40)
 			carbon.break_all_bones() //crunch
+		else if(carbon.run_armor_check(attack_flag = "melee") >= 20)
+			carbon.break_random_bone()
 		carbon.apply_damage(20, BRUTE)
+	..()
 
 ///Hallucination Anomaly
 /obj/item/assembly/signaler/anomaly/hallucination

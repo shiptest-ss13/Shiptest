@@ -36,6 +36,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		if(HAS_TRAIT(src, TURF_Z_TRANSPARENT_TRAIT))
 			T.AddElement(/datum/element/turf_z_transparency, TRUE)
 		T.custom_materials = custom_materials
+	if(T.smoothing_flags != smoothing_flags)
+		T.smoothing_flags = smoothing_flags
 	return T
 
 /turf/open/copyTurf(turf/open/T, copy_air = FALSE)

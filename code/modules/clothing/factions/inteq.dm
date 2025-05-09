@@ -10,7 +10,7 @@
 	has_sensor = HAS_SENSORS
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
-	alt_covers_chest = TRUE
+	roll_sleeves = TRUE
 	vox_override_icon = 'icons/mob/clothing/faction/inteq/vox.dmi'
 	kepori_override_icon = 'icons/mob/clothing/faction/inteq/kepori.dmi'
 
@@ -23,7 +23,6 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
-	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/syndicate/inteq/artificer
 	name = "inteq artificer overalls"
