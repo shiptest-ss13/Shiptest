@@ -855,6 +855,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/item/stock_parts/capacitor/quadratic,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/hivebotshuttle)
 "ji" = (
@@ -2633,7 +2634,9 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
-/obj/effect/landmark/mission_poi/main,
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Hf" = (
