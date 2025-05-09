@@ -110,3 +110,17 @@
 	scan_range = 8
 	burst_size = 6
 	burst_delay = 2
+
+/* Nanotrasen Derelict Turrets */
+
+/obj/machinery/porta_turret/ruin/nt/light/sniper
+	name = "Sharplite Long-Range LDS"
+	desc = "A long-ranged 'defensive system' designed by Sharplite for installation on Nanotrasen stations."
+	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+	shot_delay = 10
+	scan_range = 8
+	burst_size = 2
+	burst_delay = 3

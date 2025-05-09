@@ -240,6 +240,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "cj" = (
@@ -271,6 +272,10 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
+	},
+/obj/item/paper_bin{
+	pixel_x = 4;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
@@ -487,6 +492,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "fU" = (
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/starboard)
 "fV" = (
@@ -606,6 +612,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/lower)
 "hd" = (
@@ -663,6 +670,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "hG" = (
@@ -772,6 +782,7 @@
 	pixel_x = 11;
 	pixel_y = 14
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "iL" = (
@@ -1124,6 +1135,7 @@
 	pixel_y = 5;
 	color = "#FF0000"
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/starboard)
 "mX" = (
@@ -1247,6 +1259,14 @@
 "oT" = (
 /turf/closed/wall/rust,
 /area/ruin/space/hivebotshuttle)
+"oW" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
 "pr" = (
 /obj/structure/chair/bench/blue/directional/east,
 /obj/effect/turf_decal/corner/transparent/ntblue/half{
@@ -1707,11 +1727,21 @@
 /area/ruin/space/refuelingsolars)
 "vg" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/refuelingpost/dorms)
 "vp" = (
 /obj/structure/table/reinforced,
-/obj/item/flashlight/lamp/green,
+/obj/item/flashlight/lamp/green{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/obj/machinery/button/door{
+	pixel_x = -8;
+	pixel_y = 8;
+	name = "cargo lockdown button";
+	id = "fuelingcargo"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "vq" = (
@@ -1953,6 +1983,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "xK" = (
@@ -2032,6 +2063,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
+"yt" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/refuelingpost/armory)
 "yQ" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/airalarm/directional/south,
@@ -2062,7 +2097,8 @@
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "ze" = (
 /obj/machinery/porta_turret/ship/nt/heavy{
-	id = "fuelingpost"
+	id = "fuelingpost";
+	lethal = 1
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow{
@@ -2605,16 +2641,24 @@
 "Hl" = (
 /obj/structure/table/reinforced,
 /obj/item/trash/energybar{
-	pixel_x = 0;
-	pixel_y = 0
-	},
-/obj/item/trash/energybar{
 	pixel_x = 20;
 	pixel_y = -41
 	},
 /obj/item/trash/energybar{
 	pixel_x = 29;
 	pixel_y = -22
+	},
+/obj/item/stamp/qm{
+	pixel_x = 26;
+	pixel_y = -1
+	},
+/obj/item/clipboard{
+	pixel_x = 13;
+	pixel_y = 2
+	},
+/obj/item/paper_bin{
+	pixel_x = -2;
+	pixel_y = 3
 	},
 /obj/item/trash/energybar{
 	pixel_x = -3;
@@ -2695,6 +2739,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/trash/energybar{
+	pixel_x = -5;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "IF" = (
@@ -2857,6 +2905,7 @@
 	pixel_y = -10;
 	color = "#8000b6"
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "Km" = (
@@ -3187,6 +3236,7 @@
 /obj/effect/turf_decal/corner/opaque/black/three_quarters{
 	dir = 8
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/dorms)
 "Pg" = (
@@ -3262,6 +3312,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "QD" = (
@@ -3399,6 +3450,7 @@
 	},
 /obj/structure/closet/emcloset/wall/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "RI" = (
@@ -3415,6 +3467,14 @@
 /obj/structure/sign/warning/securearea,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/upper)
+"Sa" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
 "Sn" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -3511,6 +3571,14 @@
 	},
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 1
+	},
+/obj/item/clipboard{
+	pixel_x = -13;
+	pixel_y = 0
+	},
+/obj/item/stamp/nanotrasen/captain{
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
@@ -3906,7 +3974,8 @@
 /area/ruin/space/refuelingsolars)
 "WW" = (
 /obj/machinery/porta_turret/ship/nt/heavy{
-	id = "fuelingpost"
+	id = "fuelingpost";
+	lethal = 1
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/small/broken/directional/north,
@@ -3979,6 +4048,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Ym" = (
@@ -4980,7 +5050,7 @@ ns
 Dl
 kN
 uR
-xT
+yt
 cl
 SF
 bX
@@ -5024,7 +5094,7 @@ cl
 WC
 bp
 CI
-Ow
+Sa
 ke
 nT
 TH
@@ -5102,7 +5172,7 @@ jR
 QH
 zt
 CI
-Ow
+oW
 sf
 yi
 nT
