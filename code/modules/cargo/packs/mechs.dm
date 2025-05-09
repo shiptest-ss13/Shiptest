@@ -46,7 +46,6 @@ Build Your Own Suit
 		/obj/item/mecha_parts/part/odysseus_head,
 		/obj/item/mecha_parts/part/odysseus_torso,
 		/obj/item/mecha_parts/part/odysseus_left_arm,
-		/obj/item/mecha_parts/part/odysseus_left_arm,
 		/obj/item/mecha_parts/part/odysseus_right_arm,
 		/obj/item/mecha_parts/part/odysseus_left_leg,
 		/obj/item/mecha_parts/part/odysseus_right_leg,
@@ -382,6 +381,16 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
 	)
 
+/datum/supply_pack/mech/weapon/railgun
+	name = "PR-05 kit"
+	desc = "Contains a plasma railgun to mount on combat exosuits. Be sure to not overcharge it."
+	cost = 2700
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
+	)
+	faction = /datum/faction/nt
+	faction_discount = 20
+
 /datum/supply_pack/mech/weapon/missile_rack
 	name = "BRM-6 kit"
 	desc = "Contains a low-explosive missile launcher, excellent for breaching through obstacles."
@@ -414,6 +423,16 @@ ammo
 	contains = list(
 		/obj/item/mecha_ammo/lmg
 	)
+
+/datum/supply_pack/mech/ammo/railgun_ammo
+	name = "Railgun ammo box"
+	desc = "A box containing thirty iron-tungsten rods for the PR-05 Plasma Railgun."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_ammo/railgun_ammo
+	)
+	faction = /datum/faction/nt
+	faction_discount = 20
 
 /datum/supply_pack/mech/ammo/missile_rack_ammo
 	name = "BRM-6 missile box"

@@ -27,12 +27,13 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle
 	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
-/turf/open/floor/plating/asteroid/dirt/grass/jungle_dark
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark
 	icon = 'icons/turf/floors/darkjunglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/darkjunglegrass.dmi'
 
-/turf/open/floor/plating/asteroid/dirt/grass/jungle_yellow
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow
 	icon = 'icons/turf/floors/yellowgrass.dmi'
 	smooth_icon = 'icons/turf/floors/yellowgrass.dmi'
 
@@ -93,7 +94,7 @@
 	icon_state = "grass"
 	base_icon_state = "grass"
 	smooth_icon = 'icons/turf/floors/forestgrass.dmi'
-	baseturfs = /turf/open/floor/plating/grass/jungle
+	baseturfs = /turf/open/floor/plating/dirt/jungle
 	light_color = COLOR_JUNGLEPLANET_LIGHT
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 

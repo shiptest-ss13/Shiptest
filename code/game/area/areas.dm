@@ -63,9 +63,6 @@
 	var/list/firealarms
 	var/firedoors_last_closed_on = 0
 
-	///Boolean to limit the areas (subtypes included) that atoms in this area can smooth with. Used for shuttles.
-	var/area_limited_icon_smoothing = FALSE
-
 	var/list/power_usage
 
 	var/lighting_colour_tube = "#FFF6ED"
@@ -82,6 +79,9 @@
 	var/min_ambience_cooldown = 30 SECONDS
 	///Used to decide what the maximum time between ambience is
 	var/max_ambience_cooldown = 90 SECONDS
+
+	/// The current weather active in this area
+	var/datum/weather/active_weather
 
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE
