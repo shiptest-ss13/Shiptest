@@ -254,3 +254,27 @@
 
 /turf/open/floor/plating/asteroid/ship
 	baseturfs = /turf/open/floor/plating
+
+//the smoothed version we use for actual asteroids
+/turf/open/floor/plating/asteroid/smoothed
+	icon = 'icons/turf/floors/asteroid.dmi'
+	icon_state = "rock-255"
+	base_icon_state = "rock"
+	layer = STONE_TURF_LAYER
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+	smoothing_flags = SMOOTH_BITMASK
+	smooth_icon = 'icons/turf/floors/asteroid.dmi'
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH_ROCKY)
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH_ROCKY, SMOOTH_GROUP_FLOOR_PLASTEEL)
+
+	baseturfs = /turf/open/floor/plating/asteroid/smoothed
+	turf_type = /turf/open/floor/plating/asteroid/smoothed
+
+/turf/open/floor/plating/asteroid/smoothed/airless
+	initial_gas_mix = AIRLESS_ATMOS
+	baseturfs = /turf/open/floor/plating/asteroid/airless
+	turf_type = /turf/open/floor/plating/asteroid/airless
