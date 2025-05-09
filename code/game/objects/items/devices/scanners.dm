@@ -388,21 +388,52 @@ GENE SCANNER
 	// we handled the last <br> so we don't need handholding
 	to_chat(user, boxed_message(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
-/proc/chemscan(mob/living/user, mob/living/M)
-	if(istype(M) && M.reagents)
-		var/render_list = list()
-		if(M.reagents.reagent_list.len)
-			render_list += "<span class='notice ml-1'>Subject contains the following reagents:</span>\n"
-			for(var/datum/reagent/R in M.reagents.reagent_list)
-				render_list += "<span class='notice ml-2'>[round(R.volume, 0.001)] units of [R.name][R.overdosed == 1 ? "</span> - [span_boldannounce("OVERDOSING")]" : ".</span>"]\n"
+/proc/chemscan(mob/living/user, mob/living/target)
+	if(user.incapacitated())
+		return
+
+	if(istype(target) && target.reagents)
+		var/list/render_list = list() //The master list of readouts, including reagents in the blood/stomach, addictions, quirks, etc.
+		var/list/render_block = list() //A second block of readout strings. If this ends up empty after checking stomach/blood contents, we give the "empty" header.
+
+		// Blood reagents
+		if(target.reagents.reagent_list.len)
+			for(var/r in target.reagents.reagent_list)
+				var/datum/reagent/reagent = r
+				render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] units of [reagent.name][reagent.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+
+		if(!length(render_block)) //If no VISIBLY DISPLAYED reagents are present, we report as if there is nothing.
+			render_list += "<span class='notice ml-1'>Subject contains no reagents in their blood.</span><br>"
 		else
-			render_list += "<span class='notice ml-1'>Subject contains no reagents.</span>\n"
-		if(M.reagents.addiction_list.len)
-			render_list += "<span class='boldannounce ml-1'>Subject is addicted to the following reagents:</span>\n"
-			for(var/datum/reagent/R in M.reagents.addiction_list)
+			render_list += "<span class='notice ml-1'>Subject contains the following reagents in their blood:</span><br>"
+			render_list += render_block //Otherwise, we add the header, reagent readouts, and clear the readout block for use on the stomach.
+			render_block.Cut()
+
+		// Stomach reagents
+		var/obj/item/organ/stomach/belly = target.getorganslot(ORGAN_SLOT_STOMACH)
+		if(belly)
+			if(belly.reagents.reagent_list.len)
+				for(var/bile in belly.reagents.reagent_list)
+					var/datum/reagent/bit = bile
+					if(!belly.food_reagents[bit.type])
+						render_block += "<span class='notice ml-2'>[round(bit.volume, 0.001)] units of [bit.name][bit.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+					else
+						var/bit_vol = bit.volume - belly.food_reagents[bit.type]
+						if(bit_vol > 0)
+							render_block += "<span class='notice ml-2'>[round(bit_vol, 0.001)] units of [bit.name][bit.overdosed ? "</span> - [span_bolddanger("OVERDOSING")]" : ".</span>"]<br>"
+
+			if(!length(render_block))
+				render_list += "<span class='notice ml-1'>Subject contains no reagents in their stomach.</span><br>"
+			else
+				render_list += "<span class='notice ml-1'>Subject contains the following reagents in their stomach:</span><br>"
+				render_list += render_block
+
+		// Addictions
+		if(LAZYLEN(target.reagents.addiction_list.len))
+			render_list += "<span class='boldannounce ml-1'>Subject is addicted to the following types of drug:</span><br>"
+			for(var/datum/reagent/R in target.reagents.addiction_list)
 				render_list += "<span class='alert ml-2'>[R.name]</span>\n"
-		else
-			render_list += "<span class='notice ml-1'>Subject is not addicted to any reagents.</span>\n"
+
 		// we handled the last <br> so we don't need handholding
 		to_chat(user, boxed_message(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
