@@ -395,7 +395,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 2
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/autunite = 5,
+		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/diamond = 2,
 		)
 
@@ -419,7 +419,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 3
 	ore_list = list(
 		/obj/item/stack/ore/plasma = 10,
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/diamond = 4,
 		)
 
@@ -557,7 +557,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 12
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/uranium = 10,
 		)
 
 /obj/structure/vein/waste/classthree
@@ -588,7 +588,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 14
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/autunite = 10,
+		/obj/item/stack/ore/uranium = 10,
 		)
 
 /obj/structure/vein/waste/classfour
