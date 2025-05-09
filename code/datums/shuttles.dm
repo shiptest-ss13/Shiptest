@@ -46,9 +46,6 @@
 
 	var/static/list/outfits
 
-	/// checks if we should NOT spawn /obj/effect/spawner/random/test_ship_matspawn, delete this when ships have new mats mapped in
-	var/matbundle_spawned = FALSE
-
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
 
@@ -346,6 +343,7 @@
 	category = "subshuttles"
 	faction = /datum/faction/independent
 	starting_funds = 0
+	unique_ship_access = FALSE
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
