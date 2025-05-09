@@ -1354,7 +1354,6 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/refuelingsolars)
 "qh" = (
-/obj/machinery/door/airlock/security,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -1364,6 +1363,9 @@
 /obj/machinery/door/firedoor/border_only/closed,
 /obj/machinery/door/firedoor/border_only/closed{
 	dir = 1
+	},
+/obj/machinery/door/airlock/security/glass{
+	name = "Armory"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
