@@ -13,7 +13,7 @@
 
 		item_blacklist[target] = TRUE
 
-	controller.blackboard[BB_MONKEY_PICKUPTARGET] = null
+	controller.clear_blackboard_key(BB_MONKEY_PICKUPTARGET)
 
 /datum/ai_behavior/monkey_equip/proc/equip_item(datum/ai_controller/controller)
 	var/mob/living/living_pawn = controller.pawn
@@ -33,7 +33,7 @@
 	else if(target.force > best_force)
 		living_pawn.drop_all_held_items()
 		living_pawn.put_in_hands(target)
-		controller.blackboard[BB_MONKEY_BEST_FORCE_FOUND] = target.force
+		controller.set_blackboard_key(BB_MONKEY_BEST_FORCE_FOUND, target.force)
 		finish_action(controller, TRUE)
 		return
 
@@ -77,7 +77,7 @@
 
 	victim.visible_message(span_warning("[living_pawn] starts trying to take [target] from [victim]!"), span_danger("[living_pawn] tries to take [target]!"))
 
-	controller.blackboard[BB_MONKEY_PICKPOCKETING] = TRUE
+	controller.set_blackboard_key(BB_MONKEY_PICKPOCKETING, TRUE)
 
 	var/success = FALSE
 
@@ -98,8 +98,8 @@
 
 /datum/ai_behavior/monkey_equip/pickpocket/finish_action(datum/ai_controller/controller, success)
 	. = ..()
-	controller.blackboard[BB_MONKEY_PICKPOCKETING] = FALSE
-	controller.blackboard[BB_MONKEY_PICKUPTARGET] = null
+	controller.set_blackboard_key(BB_MONKEY_PICKPOCKETING, FALSE)
+	controller.clear_blackboard_key(BB_MONKEY_PICKUPTARGET)
 
 /datum/ai_behavior/monkey_flee
 
@@ -155,7 +155,7 @@
 
 /datum/ai_behavior/monkey_attack_mob/finish_action(datum/ai_controller/controller, succeeded)
 	. = ..()
-	controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET] = null
+	controller.clear_blackboard_key(BB_MONKEY_CURRENT_ATTACK_TARGET)
 
 /// attack using a held weapon otherwise bite the enemy, then if we are angry there is a chance we might calm down a little
 /datum/ai_behavior/monkey_attack_mob/proc/monkey_attack(datum/ai_controller/controller, mob/living/target, seconds_per_tick)
@@ -218,9 +218,9 @@
 
 /datum/ai_behavior/disposal_mob/finish_action(datum/ai_controller/controller, succeeded)
 	. = ..()
-	controller.blackboard[BB_MONKEY_CURRENT_ATTACK_TARGET] = null //Reset attack target
+	controller.clear_blackboard_key(BB_MONKEY_CURRENT_ATTACK_TARGET) //Reset attack target
 	controller.blackboard[BB_MONKEY_DISPOSING] = FALSE //No longer disposing
-	controller.blackboard[BB_MONKEY_TARGET_DISPOSAL] = null //No target disposal
+	controller.clear_blackboard_key(BB_MONKEY_TARGET_DISPOSAL) //No target disposal
 
 /datum/ai_behavior/disposal_mob/perform(seconds_per_tick, datum/ai_controller/controller)
 	. = ..()

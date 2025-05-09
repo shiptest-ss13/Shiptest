@@ -97,6 +97,8 @@ Class Procs:
 
 	hitsound_type = PROJECTILE_HITSOUND_METAL
 
+	initial_language_holder = /datum/language_holder/gal_com
+
 	var/machine_stat = NONE
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
