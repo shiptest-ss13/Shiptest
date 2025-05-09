@@ -128,4 +128,4 @@
 
 /obj/item/paper/crumpled/fluff/fueling/command
 	name = "\improper Hastily Written Note"
-	default_raw_text = "dont trust Ozeen-Jur, big plume of plasma came up in medical during break. saw them welding scrubbers, said it was 'maintenance'. load of BULLSHIT, sent out an order to close off ventilation to prevent any leakage elsewhere until the evac came in. any cleanup crews coming in, do NOT under ANY circumstances unweld the vents or use the airlocks. you will regret it"
+	default_raw_text = "dont trust Ozeen-Jur, big plume of plasma came up in medical during break. saw them welding scrubbers, said it was 'maintenance'. ACLF traitor piece of SHIT , sent out an order to close off ventilation to prevent any leakage elsewhere until the evac came in. any cleanup crews coming in, do NOT under ANY circumstances unweld the vents or use the airlocks"
