@@ -229,7 +229,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "ci" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/siding/white,
@@ -345,8 +345,12 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
 "dP" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/refuelingsolars)
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "dX" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ripleyfueling"
@@ -418,7 +422,7 @@
 	dir = 1
 	},
 /turf/open/floor/engine/plasma,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "fh" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -1547,7 +1551,7 @@
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "sr" = (
 /turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "su" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	dir = 4;
@@ -1583,9 +1587,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/button{
+/obj/machinery/button/door{
 	dir = 4;
-	pixel_x = -21;
+	pixel_x = -20;
 	pixel_y = 10;
 	id = "fuelingsolarwindow"
 	},
@@ -1973,7 +1977,7 @@
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
 /turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "xI" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/siding/white,
@@ -2219,7 +2223,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "BA" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/mono,
@@ -2673,7 +2677,7 @@
 	},
 /obj/effect/turf_decal/atmos/plasma,
 /turf/open/floor/engine/plasma,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "HF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3160,13 +3164,13 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "NE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/engine/air,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "NF" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -3507,7 +3511,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "Sw" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
@@ -3780,10 +3784,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/button{
+/obj/machinery/button/door{
 	dir = 1;
-	pixel_x = -9;
-	pixel_y = -20;
+	pixel_x = -10;
+	pixel_y = -18;
 	id = "fuelingengineering"
 	},
 /turf/open/floor/plating,
@@ -4112,7 +4116,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/atmos/air,
 /turf/open/floor/engine/air,
-/area/ruin/space/refuelingsolars)
+/area/ruin/space/has_grav/refuelingpost/engineering)
 "YH" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4579,11 +4583,11 @@ Mg
 fh
 PJ
 PJ
-xP
 dP
-dP
-dP
-dP
+PJ
+PJ
+PJ
+PJ
 At
 At
 mh
@@ -4622,7 +4626,7 @@ cg
 Ni
 YG
 NE
-dP
+PJ
 kD
 At
 VF
@@ -4657,11 +4661,11 @@ gm
 IY
 Ut
 PJ
-xP
 dP
-dP
-dP
-dP
+PJ
+PJ
+PJ
+PJ
 kD
 At
 VF
@@ -4696,7 +4700,7 @@ lp
 Wt
 Ie
 PJ
-xP
+dP
 sr
 sr
 At
@@ -4735,11 +4739,11 @@ uQ
 mk
 Zp
 PJ
-xP
 dP
-dP
-dP
-dP
+PJ
+PJ
+PJ
+PJ
 kD
 At
 Bf
@@ -4778,7 +4782,7 @@ Bu
 xG
 HB
 ff
-dP
+PJ
 bh
 hw
 jj
@@ -4814,10 +4818,10 @@ La
 Sw
 PJ
 Su
-dP
-dP
-dP
-dP
+PJ
+PJ
+PJ
+PJ
 xP
 CI
 CI
