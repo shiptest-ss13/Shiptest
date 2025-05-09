@@ -379,7 +379,8 @@
 	target_shuttle.shuttle_areas[newA] = TRUE
 
 	newA.connect_to_shuttle(target_shuttle, target_shuttle.docked)
-	newA.mobile_port = target_shuttle
+	newA.reset_shuttle_smoothing(target_shuttle)
+
 	for(var/atom/thing in newA)
 		thing.connect_to_shuttle(target_shuttle, target_shuttle.docked)
 
