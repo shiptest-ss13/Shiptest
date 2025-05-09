@@ -719,13 +719,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "pj" = (
-/obj/docking_port{
-	dwidth = 3;
-	width = 6;
-	height = 15
+/obj/docking_port/stationary{
+	dheight = 1;
+	disable_on_owner_ship_dock = 1;
+	dwidth = 2;
+	height = 30;
+	name = "Haboob Beam Dock";
+	width = 40
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "po" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1209,6 +1213,17 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/dorm)
+"xp" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 4;
+	dwidth = 2;
+	height = 31;
+	name = "Haboob Starboard Bow Dock";
+	width = 5
+	},
+/turf/template_noop,
+/area/template_noop)
 "ye" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 10
@@ -1317,16 +1332,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
-"AQ" = (
-/obj/structure/catwalk/over,
-/obj/docking_port/mobile{
-	dir = 2;
-	port_direction = 8;
-	preferred_direction = 4;
-	launch_status = 0
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "AZ" = (
 /obj/machinery/porta_turret/ship/ngr/light{
 	dir = 9;
@@ -1863,6 +1868,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
+"Mz" = (
+/obj/docking_port/mobile{
+	dir = 2;
+	port_direction = 8;
+	preferred_direction = 4
+	},
+/obj/structure/catwalk/over,
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "MI" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 9
@@ -3069,7 +3083,7 @@ UO
 kG
 HF
 HO
-AQ
+or
 "}
 (19,1,1) = {"
 Oy
@@ -3157,7 +3171,7 @@ Aa
 Fq
 "}
 (24,1,1) = {"
-Fq
+Mz
 pj
 cj
 Om
@@ -3251,7 +3265,7 @@ Ph
 si
 Fq
 Fq
-Fq
+xp
 Fq
 Fq
 Aa
