@@ -199,7 +199,8 @@
 "cb" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/mining{
-	dir = 4
+	dir = 4;
+	name = "Cargo"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1918,9 +1919,6 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "xl" = (
-/obj/machinery/door/airlock/command{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1936,6 +1934,10 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	name = "Command"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/refuelingpost/bridge)
@@ -2128,7 +2130,8 @@
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "zt" = (
 /obj/machinery/door/airlock/security{
-	dir = 8
+	dir = 8;
+	name = "Security"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
@@ -2399,7 +2402,8 @@
 "En" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock{
-	dir = 4
+	dir = 4;
+	name = "Dorms"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3110,7 +3114,8 @@
 /area/ruin/space/refuelingsolars)
 "MI" = (
 /obj/machinery/door/airlock/engineering{
-	dir = 8
+	dir = 8;
+	name = "Engineering"
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
@@ -3157,7 +3162,9 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "Na" = (
-/obj/machinery/door/airlock/medical/glass,
+/obj/machinery/door/airlock/medical/glass{
+	name = "Infirmary"
+	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
