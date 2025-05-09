@@ -131,7 +131,7 @@
 	dir = 8
 	},
 /obj/item/clothing/neck/stethoscope,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "bh" = (
 /obj/structure/catwalk,
@@ -151,7 +151,7 @@
 /obj/effect/turf_decal/corner/transparent/ntblue/half{
 	dir = 1
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "bl" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -783,7 +783,7 @@
 	pixel_y = 14
 	},
 /obj/item/radio/intercom/directional/west,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "iL" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -806,7 +806,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "iO" = (
 /obj/machinery/power/terminal{
@@ -951,7 +951,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/broken/directional/east,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "kq" = (
 /obj/structure/closet/wall/red/directional/west,
@@ -1166,7 +1166,7 @@
 	desc = "A dead potted plant."
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "ns" = (
 /obj/effect/turf_decal/borderfloor,
@@ -1205,7 +1205,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "ot" = (
 /obj/structure/cable{
@@ -1274,7 +1274,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "pu" = (
 /obj/effect/turf_decal/solarpanel,
@@ -1373,7 +1373,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "qv" = (
 /obj/structure/salvageable/destructive_analyzer,
@@ -1626,7 +1626,7 @@
 /obj/effect/turf_decal/borderfloorwhite/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "tp" = (
 /obj/structure/chair/office{
@@ -1829,7 +1829,7 @@
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "wr" = (
 /obj/effect/turf_decal/corner/transparent/ntblue/half,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "wu" = (
 /obj/item/stack/tile/plasteel/dark,
@@ -1879,7 +1879,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloorwhite,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "wP" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -2096,13 +2096,13 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "ze" = (
-/obj/machinery/porta_turret/ship/nt/heavy{
-	id = "fuelingpost";
-	lethal = 1
-	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
+	},
+/obj/machinery/porta_turret/ruin/nt/light/sniper{
+	dir = 6;
+	id = "fuelingpost"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/refuelingsolars)
@@ -2886,7 +2886,7 @@
 /obj/structure/table_frame,
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "Ki" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
@@ -3377,7 +3377,7 @@
 	pixel_x = -7;
 	pixel_y = 5
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "QU" = (
 /obj/effect/turf_decal/solarpanel,
@@ -3405,7 +3405,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "Rb" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3632,7 +3632,7 @@
 	pixel_y = 21;
 	id = "fuelingmedbay"
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "Ty" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden,
@@ -3973,14 +3973,13 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/refuelingsolars)
 "WW" = (
-/obj/machinery/porta_turret/ship/nt/heavy{
-	id = "fuelingpost";
-	lethal = 1
-	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/small/broken/directional/north,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
+	},
+/obj/machinery/porta_turret/ruin/nt/light/sniper{
+	id = "fuelingpost"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/upper)
@@ -3990,7 +3989,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/light/broken/directional/east,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "Xm" = (
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -4021,7 +4020,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/dorms)
 "XD" = (
-/turf/open/floor/carpet/blue,
+/turf/open/floor/carpet/blue/airless,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "XI" = (
 /obj/machinery/modular_computer/console/preset/civilian{
