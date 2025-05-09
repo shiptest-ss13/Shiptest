@@ -186,9 +186,9 @@
 		return
 	if(attached_light)
 		if(attached_light.on)
-			flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', "[flashlight_state]_on")
+			flashlightlight_overlay = mutable_appearance(mob_overlay_icon, "[flashlight_state]_on")
 		else
-			flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', flashlight_state)
+			flashlightlight_overlay = mutable_appearance(mob_overlay_icon, flashlight_state)
 		. += flashlightlight_overlay
 	if(content_overlays)
 		for(var/obj/item/I in contents)

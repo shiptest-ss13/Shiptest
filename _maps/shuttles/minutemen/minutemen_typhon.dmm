@@ -171,7 +171,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding{
-	dir = 2;
 	color = "#474747"
 	},
 /obj/effect/turf_decal/siding/wood,
@@ -312,7 +311,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	name = "Captain's Quarters";
 	req_one_access = list(20)
 	},
@@ -925,9 +923,7 @@
 	pixel_y = -20;
 	dir = 1
 	},
-/obj/structure/cable/cyan{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/cyan,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "nB" = (
@@ -1078,9 +1074,7 @@
 /obj/item/folder/red,
 /obj/item/folder/white,
 /obj/item/folder/yellow,
-/obj/effect/turf_decal/corner/opaque/black/half{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black/half,
 /obj/effect/turf_decal/minutemen/edge,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -1141,8 +1135,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "typhon_canteen";
-	dir = 2
+	id = "typhon_canteen"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -1315,9 +1308,6 @@
 /obj/item/clothing/shoes/combat{
 	pixel_y = -8
 	},
-/obj/item/clothing/head/clip/slouch{
-	pixel_y = 12
-	},
 /obj/item/clothing/under/clip/minutemen{
 	pixel_x = -5
 	},
@@ -1338,6 +1328,9 @@
 	pixel_y = -13
 	},
 /obj/item/melee/knife/combat,
+/obj/item/clothing/head/soft/utility_navy{
+	pixel_y = 13
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "qG" = (
@@ -1427,7 +1420,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding{
-	dir = 2;
 	color = "#474747"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1522,7 +1514,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding{
-	dir = 2;
 	color = "#474747"
 	},
 /obj/effect/turf_decal/siding/blue/corner{
@@ -1638,7 +1629,6 @@
 	icon_state = "0-6"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 2;
 	id = "typhon_starboard_holo"
 	},
 /turf/open/floor/pod/light/external,
@@ -1795,7 +1785,6 @@
 	pixel_y = 14
 	},
 /obj/structure/toilet{
-	dir = 2;
 	pixel_x = -4;
 	pixel_y = 11
 	},
@@ -2068,7 +2057,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding{
-	dir = 2;
 	color = "#474747"
 	},
 /obj/effect/turf_decal/siding/wood,
@@ -2194,8 +2182,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "typhon_bridge";
-	dir = 2
+	id = "typhon_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2577,9 +2564,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/grunge{
-	dir = 2
-	},
+/obj/machinery/door/airlock/grunge,
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
@@ -2638,7 +2623,6 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	dir = 2;
 	pixel_y = 19;
 	pixel_x = 12
 	},
@@ -3029,7 +3013,6 @@
 	icon_state = "0-6"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 2;
 	id = "typhon_port_holo"
 	},
 /turf/open/floor/pod/light/external,
@@ -3729,9 +3712,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/structure/cable/cyan{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/cyan,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
@@ -3953,16 +3934,13 @@
 	pixel_y = -13
 	},
 /obj/item/clothing/under/clip/minutemen{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/under/clip/minutemen{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/under/clip/minutemen{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/under/clip/formal/alt{
 	pixel_x = 5
