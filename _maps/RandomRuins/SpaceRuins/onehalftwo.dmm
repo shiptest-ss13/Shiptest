@@ -2280,6 +2280,10 @@
 	name = "hallway turret shutters";
 	id = "fuelhallwayturret"
 	},
+/obj/item/paper/crumpled/fluff/fueling/command{
+	pixel_x = -8;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "CE" = (
@@ -2629,6 +2633,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Hf" = (
