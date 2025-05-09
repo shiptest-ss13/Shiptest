@@ -14,22 +14,6 @@
 	The last received message was a distress call from one of the on-board officers, but we had no success in making contact again."
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
 
-/datum/map_template/ruin/space/onehalf
-	id = "onehalf"
-	suffix = "onehalf.dmm"
-	name = "DK Excavator 453"
-	description = "Formerly a thriving planetary mining outpost, now a bit of an exploded mess. One has to wonder how it got here"
-	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_INHOSPITABLE)
-
-/datum/map_template/ruin/space/power_puzzle
-	id = "power_puzzle"
-	suffix = "power_puzzle.dmm"
-	name = "Power Puzzle"
-	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
-	You will have to power areas to raise the bolts on the doors. look out for secrets."
-	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-	ruin_mission_types = list(/datum/mission/ruin/data_retrieval)
-
 /datum/map_template/ruin/space/singularitylab
 	id = "singularitylab"
 	suffix = "singularity_lab.dmm"
