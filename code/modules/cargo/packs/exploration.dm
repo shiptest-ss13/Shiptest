@@ -6,28 +6,22 @@
 
 /datum/supply_pack/exploration/lava
 	name = "Lava Exploration Kit"
-	desc = "Contains 60 lavaproof rods, two pocket extinguishers and goggles to protect yourself from the heat."
-	cost = 500
+	desc = "Contains 30 lavaproof rods, a pocket extinguisher, and goggles to protect yourself from the heat."
+	cost = 250
 	contains = list(
 		/obj/item/extinguisher/mini,
-		/obj/item/extinguisher/mini,
 		/obj/item/clothing/glasses/heat,
-		/obj/item/clothing/glasses/heat,
-		/obj/item/stack/rods/lava/thirty,
 		/obj/item/stack/rods/lava/thirty,
 	)
 	crate_name = "Lava Exploration Kit"
 
 /datum/supply_pack/exploration/ice
 	name = "Ice Exploration Kit"
-	desc = "Contains 2 sets of winter clothes and ice hiking boots, along with goggles to protect eyes from the cold."
-	cost = 500
+	desc = "Contains a set of winter clothes and ice hiking boots, along with goggles to protect eyes from the cold."
+	cost = 250
 	contains = list(
 		/obj/item/clothing/glasses/cold,
-		/obj/item/clothing/glasses/cold,
 		/obj/item/clothing/suit/hooded/wintercoat,
-		/obj/item/clothing/suit/hooded/wintercoat,
-		/obj/item/clothing/shoes/winterboots/ice_boots,
 		/obj/item/clothing/shoes/winterboots/ice_boots,
 	)
 	crate_name = "Ice Exploration Kit"
@@ -39,10 +33,9 @@
 
 /datum/supply_pack/exploration/lavaproof_rods
 	name ="Lavaproof Rods Crate"
-	desc = "Contains 60 lavaproof rods for safely traversing molten pits."
-	cost = 200
+	desc = "Contains 30 lavaproof rods for safely traversing molten pits."
+	cost = 100
 	contains = list(
-		/obj/item/stack/rods/lava/thirty,
 		/obj/item/stack/rods/lava/thirty,
 		)
 	crate_name = "Lavaproof Rod Crate"
@@ -89,12 +82,9 @@
 
 /datum/supply_pack/exploration/flares
 	name = "Flare Supply Pack"
-	desc = "Contains 4 boxes of flares (28 total)! Great for lighting things up."
-	cost = 100
+	desc = "Contains a box of flares (7 total)! Great for lighting things up."
+	cost = 25
 	contains = list(
-		/obj/item/storage/box/flares,
-		/obj/item/storage/box/flares,
-		/obj/item/storage/box/flares,
 		/obj/item/storage/box/flares,
 	)
 

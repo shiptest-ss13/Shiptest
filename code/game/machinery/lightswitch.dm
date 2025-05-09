@@ -18,7 +18,7 @@
 		dir_amount = 8\
 	)
 
-/obj/machinery/light_switch/Initialize()
+/obj/machinery/light_switch/Initialize(mapload, ndir, building = FALSE)
 	. = ..()
 	if(istext(area))
 		area = text2path(area)
@@ -26,9 +26,20 @@
 		area = GLOB.areas_by_type[area]
 	if(!area)
 		area = get_area(src)
-
 	if(!name)
 		name = "light switch ([area.name])"
+
+	if(building)
+		setDir(ndir)
+		switch(dir) //Not great, but necessary as with buttons. Otherwise requires altering a ton of files.
+			if(NORTH)
+				pixel_y = -18 //Yes, NORTH is actually the south-facing mount.
+			if(SOUTH)
+				pixel_y = 20
+			if(EAST)
+				pixel_x = -20
+			if(WEST)
+				pixel_x = 20
 
 	update_appearance()
 
@@ -64,6 +75,24 @@
 
 	area.power_change()
 
+/obj/machinery/light_switch/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_SCREWDRIVER || I.tool_behaviour == TOOL_CROWBAR)
+		var/action_description = I.tool_behaviour == TOOL_SCREWDRIVER ? "unscrew" : "pry"
+		to_chat(user, span_notice("You start [action_description]ing \the [src]..."))
+
+		if(I.use_tool(src, user, 15, volume=60))
+			user.visible_message(
+				span_notice("[user] [action_description == "pry" ? "pries" : "unscrews"] [src] from its socket."),
+				span_notice("You [action_description] [src] from its socket.")
+			)
+			var/obj/item/wallframe/light_switch/frame = new /obj/item/wallframe/light_switch()
+			try_put_in_hand(frame, user)
+			I.play_tool_sound(src)
+			qdel(src)
+		return
+	else
+		return ..()
+
 /obj/machinery/light_switch/power_change()
 	SHOULD_CALL_PARENT(0)
 	if(area == get_area(src))
@@ -81,6 +110,5 @@
 	desc = "A ready-to-go light switch. Just slap it on a wall!"
 	icon_state = "button"
 	result_path = /obj/machinery/light_switch
-	pixel_shift = 24
 	inverse = FALSE
 	custom_materials = list(/datum/material/iron = 75)

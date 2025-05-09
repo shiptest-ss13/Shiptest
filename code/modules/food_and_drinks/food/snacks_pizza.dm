@@ -144,7 +144,7 @@
 	foodtype = GRAIN | VEGETABLES | DAIRY
 
 /obj/item/reagent_containers/food/snacks/pizza/pineapple
-	name = "\improper Hawaiian pizza"
+	name = "pineapple pizza"
 	desc = "A cheese pizza that's been topped with pineapple squares and ham."
 	icon_state = "pineapplepizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/pineapple
@@ -153,7 +153,7 @@
 	foodtype = GRAIN | VEGETABLES | DAIRY | MEAT | FRUIT | PINEAPPLE
 
 /obj/item/reagent_containers/food/snacks/pizzaslice/pineapple
-	name = "\improper Hawaiian pizza slice"
+	name = "pineapple pizza slice"
 	desc = "A slice of cheese pizza, topped with ham and pineapple squares."
 	icon_state = "pineapplepizzaslice"
 	filling_color = "#FF4500"

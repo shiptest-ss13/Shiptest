@@ -78,7 +78,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	var/threat = 0 // used for determining which meteors are most interesting
 	var/lifetime = DEFAULT_METEOR_LIFETIME
 	var/timerid = null
-	var/list/meteordrop = list(/obj/item/stack/ore/hematite)
+	var/list/meteordrop = list(/obj/item/stack/ore/iron)
 	var/dropamt = 2
 
 /obj/effect/meteor/Move()
@@ -250,7 +250,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	name = "glowing meteor"
 	icon_state = "glowing"
 	heavy = 1
-	meteordrop = list(/obj/item/stack/ore/autunite)
+	meteordrop = list(/obj/item/stack/ore/uranium)
 	threat = 15
 
 

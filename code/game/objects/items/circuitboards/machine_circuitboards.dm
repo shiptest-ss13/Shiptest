@@ -1160,6 +1160,28 @@
 		/obj/item/stock_parts/cell/bluespace = 1,
 	)
 
+/obj/item/circuitboard/machine/coffeemaker
+	name = "Coffeemaker (Machine Board)"
+	icon_state = "service"
+	build_path = /obj/machinery/coffeemaker
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/micro_laser = 1,
+	)
+
+/obj/item/circuitboard/machine/coffeemaker/premium
+	name = "Premium Coffeemaker (Machine Board)"
+	icon_state = "service"
+	build_path = /obj/machinery/coffeemaker/premium
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/capacitor/adv = 1,
+		/obj/item/stock_parts/micro_laser/high = 2,
+	)
+
 /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
 	name = "Booze Dispenser (Machine Board)"
 	icon_state = "service"
@@ -1500,6 +1522,28 @@
 	icon_state = "engineering"
 	build_path = /obj/machinery/suit_storage_unit
 	req_components = list(/obj/item/stock_parts/micro_laser = 4)
+
+//preset for the industrial suit storage, otherwise identical.
+/obj/item/circuitboard/machine/suit_storage_unit/industrial
+	build_path = /obj/machinery/suit_storage_unit/industrial
+
+/obj/item/circuitboard/machine/suit_storage_unit/examine(mob/user)
+	. = ..()
+	. += span_notice("You can change the resulting storage type by using a multitool.")
+	var/obj/machinery/suit_storage_unit/information_holder = build_path
+	. += span_notice("It is currently set to: [initial(information_holder.name)].")
+
+/obj/item/circuitboard/machine/suit_storage_unit/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour == TOOL_MULTITOOL)
+		var/list/possible_results = list(/obj/machinery/suit_storage_unit, /obj/machinery/suit_storage_unit/industrial)
+		var/list_length = length(possible_results)
+		var/list_position = possible_results.Find(build_path)
+		if(list_position) //FALSE position should never happen, but could with var editing.
+			//There is a modulus way to do this, but no real need to get fancy.
+			build_path = list_position == list_length ? possible_results[1] : possible_results[++list_position]
+			var/obj/machinery/suit_storage_unit/information_holder = build_path
+			to_chat(user, span_notice("You modify the resulting construction. It is now set to [initial(information_holder.name)]."))
+	return ..()
 
 /obj/item/circuitboard/machine/turret
 	name = "Turret"
