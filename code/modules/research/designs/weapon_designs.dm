@@ -581,8 +581,8 @@
 	category = list("Misc","Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/colt_1911_magazine
-	name = "Colt 1911 Magazine"
+/datum/design/candor_magazine
+	name = "Candor Magazine"
 	id = "ammo_1911"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 4000)

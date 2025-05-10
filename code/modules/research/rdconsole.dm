@@ -182,25 +182,29 @@ Nothing else in the console has ID requirements.
 	if(istype(D, /obj/item/disk))
 		if(istype(D, /obj/item/disk/tech_disk))
 			if(t_disk)
-				to_chat(user, span_warning("A technology disk is already loaded!"))
+				balloon_alert(user, "disk in the way!")
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, span_warning("[D] is stuck to your hand!"))
+				balloon_alert(user, "disk stuck to hand!")
 				return
 			t_disk = D
 		else if (istype(D, /obj/item/disk/design_disk))
+			var/obj/item/disk/design_disk/inserted_disk = D
 			if(d_disk)
-				to_chat(user, span_warning("A design disk is already loaded!"))
+				balloon_alert(user, "disk in the way!")
 				return
-			if(!user.transferItemToLoc(D, src))
-				to_chat(user, span_warning("[D] is stuck to your hand!"))
+			if(!inserted_disk.modifiable)
+				balloon_alert(user, "can't modify!")
 				return
-			d_disk = D
+			if(!user.transferItemToLoc(inserted_disk, src))
+				balloon_alert(user, "disk stuck to hand!")
+				return
+			d_disk = inserted_disk
 		else
 			to_chat(user, span_warning("Machine cannot accept disks in that format."))
 			return
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
-		to_chat(user, span_notice("You insert [D] into \the [src]!"))
+		balloon_alert(user, "disk inserted")
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
 
