@@ -37,6 +37,8 @@
 	var/wear_major_threshold = 180
 	/// Highest wear value so the gun doesn't end up completely irreperable
 	var/wear_maximum = 300
+	/// Doesn't ever keep ammo when loading a new round into the chamber. Mainly for BOLT_TYPE_NO_BOLT guns.
+	var/doesnt_keep_bullet = FALSE
 
 	///If you can examine a gun to see its current ammo count
 	var/ammo_counter = FALSE
@@ -165,7 +167,10 @@
 	if (chambered || !magazine)
 		return
 	if (magazine.ammo_count())
-		chambered = magazine.get_round(keep_bullet || bolt_type == BOLT_TYPE_NO_BOLT)
+		if(doesnt_keep_bullet)
+			chambered = magazine.get_round(FALSE)
+		else
+			chambered = magazine.get_round(keep_bullet || bolt_type == BOLT_TYPE_NO_BOLT)
 		if (bolt_type != BOLT_TYPE_OPEN)
 			chambered.forceMove(src)
 
