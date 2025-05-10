@@ -89,7 +89,7 @@
 	user.set_machine(src)
 
 	var/dat = 	"<div align='center'><b>Inventory of [name]</b></div><p>"
-	dat += "<br><B>Glasses:</B> <A href='?src=[REF(src)];[glasses ? "remove_inv=glasses'>[glasses]" : "add_inv=glasses'>Nothing"]</A>"
+	dat += "<br><B>Glasses:</B> <A href='byond://?src=[REF(src)];[glasses ? "remove_inv=glasses'>[glasses]" : "add_inv=glasses'>Nothing"]</A>"
 
 	var/datum/browser/popup = new(usr, "window=mob[REF(src)]", "<div align='center'>Inventory of [name]</div>", 325, 500)
 	popup.set_content(dat)
