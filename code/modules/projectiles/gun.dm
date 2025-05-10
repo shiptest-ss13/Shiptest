@@ -865,7 +865,7 @@
 	final_spread += bonus_spread
 
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
-		randomized_bonus_spread += rand(0, gunslinger_spread_bonus)
+		randomized_bonus_spread += min(gunslinger_spread_bonus, rand(0, gunslinger_spread_bonus))
 
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 		randomized_bonus_spread += rand(0, 25)
