@@ -116,7 +116,9 @@
 		/obj/structure/spawner/burrow/ice_planet = 80,
 		/obj/structure/vein/ice = 25,
 		/obj/structure/vein/ice/classtwo = 50,
+		/obj/structure/vein/ice/classtwo/rare = 10,
 		/obj/structure/vein/ice/classthree = 10,
+		/obj/structure/vein/ice/classthree/rare = 5,
 	)
 
 /datum/biome/snow/lush

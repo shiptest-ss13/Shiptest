@@ -136,7 +136,9 @@
 		/obj/effect/spawner/random/anomaly/waste = 1,
 		/obj/structure/vein/waste = 4,
 		/obj/structure/vein/waste/classtwo = 6,
+		/obj/structure/vein/waste/classtwo/rare = 2,
 		/obj/structure/vein/waste/classthree = 2,
+		/obj/structure/vein/waste/classthree/rare = 1,
 	)
 
 	mob_spawn_list = list(
