@@ -14,6 +14,8 @@
 	mutual_understanding = list(
 		/datum/language/solarian_international = 20,
 		/datum/language/kalixcian_common = 20,
+		/datum/language/miners_cant = 50,
+		/datum/language/clip_kalixcian = 60
 	)
 
 

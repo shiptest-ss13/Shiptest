@@ -11,8 +11,8 @@
 	sentence_chance = 0
 	between_word_sentence_chance = 10
 	between_word_space_chance = 75
-	additional_syllable_low = 0
-	additional_syllable_high = 3
+	additional_syllable_low = -1
+	additional_syllable_high = 2
 	syllables = list(
 		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
 		"ha", "ah", "he", "eh", "hi", "ih", "ho", "oh", "hu", "uh", "hs", "sh",
@@ -24,3 +24,8 @@
 	)
 	icon_state = "lizard"
 	default_priority = 90
+	mutual_understanding = list(
+		/datum/language/galactic_common = 40,
+		/datum/language/miners_cant = 5,
+		/datum/language/clip_kalixcian = 20
+	)
