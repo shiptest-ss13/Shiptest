@@ -1,5 +1,5 @@
 /datum/supply_pack/ammo
-	group = "Bulk Ammunition"
+	category = "Bulk Ammunition"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	crate_name = "ammo crate"
 

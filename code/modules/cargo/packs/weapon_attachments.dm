@@ -3,7 +3,7 @@
 /* Attachments */
 
 /datum/supply_pack/attachment
-	group = "Gun Attachments"
+	category = "Gun Attachments"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 	faction_discount = 10
 
