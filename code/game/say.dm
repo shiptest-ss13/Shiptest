@@ -198,11 +198,6 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	if(!language)
 		return "makes a strange sound."
 
-	if(HAS_TRAIT(speaker, TRAIT_SIGN_LANG) && !GetComponent(/datum/component/sign_language))
-		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
-		message_mods[MODE_CUSTOM_SAY_EMOTE] = "signs something."
-		return message_mods[MODE_CUSTOM_SAY_EMOTE]
-
 	if(!has_language(language))
 		var/list/mutual_languages
 		// Get what we can kinda understand, factor in any bonuses passed in from say mods
