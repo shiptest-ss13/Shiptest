@@ -225,3 +225,63 @@
 /area/ruin/space/has_grav/powered/ramzi_station/solars
 	name = "Solars"
 	icon_state = "panelsAP"
+
+// Onehalf (Two)
+
+/area/ruin/space/refuelingsolars
+	name = "Refueling Post"
+	icon_state = "panelsAP"
+
+/area/ruin/space/hivebotshuttle
+
+/area/ruin/space/has_grav/refuelingpost
+	name = "Refueling Post"
+	icon_state = "away"
+
+/area/ruin/space/has_grav/refuelingpost/armory
+	name = "Refueling Post Security"
+	icon_state = "security"
+
+/area/ruin/space/has_grav/refuelingpost/bridge
+	name = "Refueling Post Bridge"
+	icon_state = "bridge"
+
+/area/ruin/space/has_grav/refuelingpost/cargo
+	name = "Refueling Post Cargo Storage"
+	icon_state = "storage"
+
+/area/ruin/space/has_grav/refuelingpost/cargobay
+	name = "Refueling Post Cargo Bay"
+	icon_state = "quartstorage"
+
+/area/ruin/space/has_grav/refuelingpost/engineering
+	name = "Refueling Post Engineering"
+	icon_state = "engine"
+
+/area/ruin/space/has_grav/refuelingpost/solarstorage
+	name = "Refueling Post Solars Control"
+	icon_state = "engine"
+
+/area/ruin/space/has_grav/refuelingpost/infirmary
+	name = "Refueling Post Infirmary"
+	icon_state = "surgery"
+
+/area/ruin/space/has_grav/refuelingpost/dorms
+	name = "Refueling Post Dorms"
+	icon_state = "crew_quarters"
+
+/area/ruin/space/has_grav/refuelingpost/bonnie
+	name = "ISV Clyde"
+	icon_state = "red"
+
+/area/ruin/space/has_grav/refuelingpost/upper
+	name = "Refueling Post Upper Hallway"
+	icon_state = "hallF"
+
+/area/ruin/space/has_grav/refuelingpost/lower
+	name = "Refueling Post Lower Hallway"
+	icon_state = "entry"
+
+/area/ruin/space/has_grav/refuelingpost/starboard
+	name = "Refueling Post Starboard Hallway"
+	icon_state = "hallS"
