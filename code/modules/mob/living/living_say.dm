@@ -260,11 +260,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Create map text prior to modifying message for goonchat, sign lang edition
 		if (message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
 			create_chat_message(speaker, null, message_mods[MODE_CUSTOM_SAY_EMOTE], spans, EMOTE_MESSAGE)
-		else
+		else if(GetComponent(/datum/component/sign_language))
 			create_chat_message(speaker, message_language, raw_message, spans)
-
-
-
+		else
+			create_chat_message(speaker, null, "signs something.", spans, EMOTE_MESSAGE)
 
 		message = deaf_message
 

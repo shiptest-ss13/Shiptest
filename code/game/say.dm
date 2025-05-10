@@ -196,9 +196,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 /atom/movable/proc/lang_treat(atom/movable/speaker, datum/language/language, raw_message, list/spans, list/message_mods = list(), no_quote = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_TREAT_MESSAGE, args)
 	if(!language)
-		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
-		message_mods[MODE_CUSTOM_SAY_EMOTE] = "makes a strange sound."
-		return message_mods[MODE_CUSTOM_SAY_EMOTE]
+		return "makes a strange sound."
 
 	if(HAS_TRAIT(speaker, TRAIT_SIGN_LANG) && !GetComponent(/datum/component/sign_language))
 		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
