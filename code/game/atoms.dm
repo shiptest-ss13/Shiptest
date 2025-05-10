@@ -164,6 +164,11 @@
 	///volume wanted for being hit
 	var/hitsound_volume = 50
 
+	/// Generally for niche objects, atoms blacklisted can spawn if enabled by spawner.
+	var/spawn_blacklisted = FALSE
+	/// Use path Ex:(bad_type = obj/item). Generally for abstract code objects, atoms with a set bad_type can never be selected by spawner. Examples include parent objects which should only exist within the code, or deployable embedded items.
+	var/bad_type
+
 /**
  * Called when an atom is created in byond (built in engine proc)
  *
