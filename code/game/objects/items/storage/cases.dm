@@ -47,6 +47,7 @@
 		/obj/item/cautery,
 		/obj/item/hemostat,
 		/obj/item/shears,
+		/obj/item/blood_filter = 1,
 		))
 
 /obj/item/storage/case/surgery/PopulateContents()
