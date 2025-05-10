@@ -173,7 +173,6 @@
 /area/ruin/space/has_grav/refuelingpost/armory)
 "bD" = (
 /obj/structure/catwalk,
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
 	dir = 10
 	},
@@ -1348,19 +1347,8 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/cargo)
-"qb" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
 "qh" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/firedoor/border_only/closed,
@@ -1817,7 +1805,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/starboard)
 "wl" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -3811,14 +3798,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
-"Uv" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/refuelingsolars)
 "UB" = (
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/dorms)
@@ -3884,14 +3863,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "VU" = (
@@ -3932,7 +3909,7 @@
 	dir = 4;
 	id = "refuelingbridge"
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/open/space/basic,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Wc" = (
 /mob/living/simple_animal/hostile/hivebot,
@@ -4555,7 +4532,7 @@ At
 Bf
 At
 At
-Uv
+bh
 hw
 hw
 GP
@@ -4594,7 +4571,7 @@ hw
 jj
 hw
 hw
-qb
+XR
 PJ
 PJ
 fh
@@ -5358,7 +5335,7 @@ CN
 Gq
 Rr
 Gq
-TN
+kD
 kD
 kD
 At
