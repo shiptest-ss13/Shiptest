@@ -1372,7 +1372,8 @@
 	},
 /obj/effect/landmark/mission_poi/main/kill{
 	already_spawned = 1;
-	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/officer/rifle
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/officer/rifle;
+	mission_index = 2
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
