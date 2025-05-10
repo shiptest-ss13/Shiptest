@@ -537,6 +537,8 @@
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ey" = (
@@ -675,7 +677,7 @@
 	icon_door = "prisoner";
 	icon_state = "prisoner";
 	name = "shuttle pilot locker";
-	req_access = list(3)
+	req_access = list(48)
 	},
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/head/soft/inteq,
@@ -4372,7 +4374,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/grunge{
-	req_access = list(3)
+	req_access = list(48)
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/office)
