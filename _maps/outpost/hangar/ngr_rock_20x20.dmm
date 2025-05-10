@@ -210,13 +210,13 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "oR" = (
-/obj/effect/landmark/outpost/hangar_numbers,
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 5
 	},
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/dash,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "pm" = (
@@ -476,6 +476,10 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
 	},
+/obj/effect/landmark/outpost/hangar_numbers{
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "SF" = (
@@ -514,6 +518,7 @@
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
+/obj/effect/landmark/outpost/shaft_number,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "Wl" = (
