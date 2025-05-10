@@ -2,9 +2,20 @@
 #define MIDNIGHT_ROLLOVER 864000
 
 ///displays the current time into the round, with a lot of extra code just there for ensuring it looks okay after an entire day passes
-#define ROUND_TIME ( "[world.time - SSticker.round_start_time > MIDNIGHT_ROLLOVER ? "[round((world.time - SSticker.round_start_time)/MIDNIGHT_ROLLOVER)]:[game_timestamp()]" : game_timestamp()]" )
+#define ROUND_TIME(...) ( "[SECTOR_TIME_PASSED() > MIDNIGHT_ROLLOVER ? "[round(SECTOR_TIME_PASSED()/MIDNIGHT_ROLLOVER)]:[game_timestamp(wtime = SECTOR_TIME_PASSED())]" : game_timestamp(wtime = SECTOR_TIME_PASSED())]" )
+
 ///same as above, but based on real time of day
-#define ROUND_REALTIMEOFDAY ( "[REALTIMEOFDAY - SSticker.round_start_timeofday > MIDNIGHT_ROLLOVER ? "[round((REALTIMEOFDAY - SSticker.round_start_timeofday)/MIDNIGHT_ROLLOVER)]:[time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]" : time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]" )
+#define ROUND_REALTIMEOFDAY(...) ( "[REALTIMEOFDAY - SSticker.round_start_timeofday > MIDNIGHT_ROLLOVER ? "[round((REALTIMEOFDAY - SSticker.round_start_timeofday)/MIDNIGHT_ROLLOVER)]:[time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]" : time2text(world.timeofday - SSticker.round_start_timeofday, "hh:mm:ss", 0)]" )
+
+///Returns the time that has passed since the game started
+#define SECTOR_TIME_PASSED(...) (world.time - SSticker.round_start_time)
+
+/// Define that just has the current in-universe year for use in whatever context you might want to display that in. (For example, 2022 -> 2562 given a 540 year offset)
+#define CURRENT_SECTOR_YEAR (GLOB.year_integer + SECTOR_YEAR_OFFSET)
+
+/// In-universe year. Offset from ours by this much.
+#define SECTOR_YEAR_OFFSET -1519
+
 
 #define JANUARY 1
 #define FEBRUARY 2
