@@ -7,7 +7,6 @@
 	desc = "A simple, hard-wearing suit designed for the hardworking hunters of the Saint-Roumain Militia."
 	icon_state = "rouma_work"
 	item_state = "rouma_work"
-	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/srm/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/srm/uniforms.dmi'
 	supports_variations = KEPORI_VARIATION
