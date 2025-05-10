@@ -90,7 +90,14 @@
 			path = our_turf.baseturfs[1] //The first element is going to be a floor of some kind.
 
 	if(!path) //Fallback to the regular, bland, method of determining a level baseturf.
-		path = our_turf.get_z_base_turf()
+		//linters fix, change to this in the future:
+		//path = our_turf.get_z_base_turf()
+		path = our_turf.virtual_level_trait(ZTRAIT_BASETURF) || /turf/open/space
+		if(!ispath(path))
+			path = text2path(path)
+			if(!ispath(path))
+				warning("Z-level [our_turf.z] has invalid baseturf '[our_turf.virtual_level_trait(ZTRAIT_BASETURF)]'")
+				path = /turf/open/space
 
 	//PLANE_SPACE to show the parallax if it's a space tile.
 	var/mutable_appearance/underlay_appearance = mutable_appearance(initial(path.icon), initial(path.icon_state), layer = TURF_LAYER-0.02, plane = (ispath(path, /turf/open/space) ? PLANE_SPACE : null))
