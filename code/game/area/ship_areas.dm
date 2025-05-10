@@ -84,12 +84,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	always_unpowered = FALSE
-	area_flags = VALID_TERRITORY // Loading the same shuttle map at a different time will produce distinct area instances.
+	area_flags = VALID_TERRITORY | SHIP_SMOOTHING // Loading the same shuttle map at a different time will produce distinct area instances.
 	icon_state = "shuttle"
 	flags_1 = CAN_BE_DIRTY_1
 	lighting_colour_tube = "#fff0dd"
 	lighting_colour_bulb = "#ffe1c1"
-	area_limited_icon_smoothing = TRUE
 	sound_environment = SOUND_ENVIRONMENT_ROOM
 	lightswitch = FALSE
 	/// The mobile port attached to this area
@@ -124,11 +123,24 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	for(var/i in 1 to get_missing_shuttles(T)) //Keep track of shuttles with hull breaches on this turf
 		new_baseturfs.Insert(1,/turf/baseturf_skipover/shuttle)
 
+/area/ship/connect_to_shuttle(obj/docking_port/mobile/M)
+	link_to_shuttle(M)
+
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
 
-/area/ship/connect_to_shuttle(obj/docking_port/mobile/M)
-	link_to_shuttle(M)
+/area/ship/proc/reset_shuttle_smoothing(obj/docking_port/mobile/requesting_shuttle)
+	if(mobile_port == requesting_shuttle) //We only proceed with smoothing if the mobile ports match.
+		//A bit of copypasta since we don't want to run Initialize().
+		for(var/turf/updated_turf as turf in src)
+			QUEUE_SMOOTH(updated_turf)
+			QUEUE_SMOOTH_NEIGHBORS(updated_turf)
+		for(var/obj/structure/updated_structure as obj in src)
+			if(updated_structure.smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
+				QUEUE_SMOOTH(updated_structure)
+				QUEUE_SMOOTH_NEIGHBORS(updated_structure)
+				if(updated_structure.smoothing_flags & SMOOTH_CORNERS)
+					icon_state = ""
 
 /area/ship/virtual_z()
 	if(mobile_port)

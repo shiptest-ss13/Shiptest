@@ -15,11 +15,12 @@ SUBSYSTEM_DEF(events)
 	///The next world.time that a naturally occurring random event can be selected.
 	var/scheduled = 0
 	///The lower bound for how soon another random event can be scheduled.
-	var/frequency_lower = 3 MINUTES
+	var/frequency_lower = 30 MINUTES
 	///The upper bound for how soon another random event can be scheduled.
-	var/frequency_upper = 10 MINUTES
+	var/frequency_upper = 60 MINUTES
 	///Will wizard events be included in the event pool?
 	var/wizardmode = FALSE
+	var/list/holidays
 
 /datum/controller/subsystem/events/Initialize()
 	for(var/type in typesof(/datum/round_event_control))
@@ -35,6 +36,8 @@ SUBSYSTEM_DEF(events)
 	// Instantiate our holidays list if it hasn't been already
 	if(isnull(GLOB.holidays))
 		fill_holidays()
+
+	return ..()
 
 /datum/controller/subsystem/events/fire(resumed = FALSE)
 	if(!resumed)
@@ -95,6 +98,8 @@ SUBSYSTEM_DEF(events)
 				continue //like it never happened
 			if(res == EVENT_CANT_RUN)
 				return
+		else if(event_to_check.weight == 0) //Weight 0 are admin spawn or otherwise cant be pulled from spawn event
+			continue
 		else
 			event_roster[event_to_check] = event_to_check.weight
 
