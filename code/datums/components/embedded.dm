@@ -137,7 +137,7 @@
 
 	limb.embedded_objects |= weapon // on the inside... on the inside...
 	weapon.forceMove(victim)
-	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(byeItemCarbon))
+	RegisterSignals(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(byeItemCarbon))
 
 	if(harmful)
 		victim.visible_message(span_danger("[weapon] embeds itself in [victim]'s [limb.name]!"),ignored_mobs=victim)

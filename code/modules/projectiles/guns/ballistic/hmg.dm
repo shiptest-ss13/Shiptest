@@ -54,7 +54,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, list(COMSIG_ITEM_EQUIPPED,COMSIG_MOVABLE_MOVED), PROC_REF(retract_bipod))
+	RegisterSignals(src, list(COMSIG_ITEM_EQUIPPED,COMSIG_MOVABLE_MOVED), PROC_REF(retract_bipod))
 
 /datum/action/item_action/deploy_bipod //TODO: Make this an accessory when that's added
 	name = "Deploy Bipod"

@@ -36,7 +36,7 @@
 	src.inventory_icon_state = inventory_icon_state
 	RegisterSignal(target, COMSIG_ATOM_UPDATE_ICON, PROC_REF(update_icon))
 	RegisterSignal(target, COMSIG_ATOM_UPDATE_ICON_STATE, PROC_REF(update_icon_state))
-	RegisterSignal(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_STORAGE_ENTERED, COMSIG_ITEM_DROPPED, COMSIG_STORAGE_EXITED), PROC_REF(inventory_updated))
+	RegisterSignals(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_STORAGE_ENTERED, COMSIG_ITEM_DROPPED, COMSIG_STORAGE_EXITED), PROC_REF(inventory_updated))
 	target.update_appearance(UPDATE_ICON)
 	target.update_appearance(UPDATE_ICON_STATE)
 
