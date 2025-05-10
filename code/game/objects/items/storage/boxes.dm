@@ -706,6 +706,11 @@
 	if(istype(W, /obj/item/match))
 		W.matchignite()
 
+/obj/item/storage/box/matches/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.set_holdable(list(/obj/item/match, null))
+
 /obj/item/storage/box/lights
 	name = "box of replacement bulbs"
 	icon = 'icons/obj/storage.dmi'
