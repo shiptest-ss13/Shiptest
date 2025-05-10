@@ -2,8 +2,8 @@
 	name = "Miner's Cant"
 	desc = "A constructed language spread among industrial miners and salvors. It allows for somewhat condensed communications in tense situations."
 	speech_verb = "ambles"
-	ask_verb = ""
-	exclaim_verb = ""
+	ask_verb = "inquires"
+	exclaim_verb = "yells"
 	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	key = "k"
 	space_chance = 30
