@@ -161,7 +161,9 @@
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
 	weight = 0
+#ifndef RUIN_PLACEMENT_TEST
 	selfloop = TRUE
+#endif
 	primary_ores = list(\
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/iron,
@@ -177,7 +179,9 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = RUINTYPE_SPACE
+#ifndef RUIN_PLACEMENT_TEST
 	selfloop = TRUE
+#endif
 
 /datum/planet_type/waste
 	name = "waste disposal planetoid"
