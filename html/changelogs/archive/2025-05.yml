@@ -1,0 +1,113 @@
+2025-05-01:
+  Cloudbreak, Latency:
+  - balance: Talos now has a small basic medical space, and the wings have been shortened
+      to compensate. Armory completely re-arranged as well.
+  Erikafox:
+  - rscadd: Lihoma Navy Yard has begun another production run of Atira-class skiffs
+      (and Tearful Quasar-class Orbital Interceptors, your tax dollars are going *somewhere*)
+  - balance: increases efficiency of combustion engines by 2.66x
+  FslashN:
+  - refactor: Teleporter pieces can now be arranged to have the hub in the middle.
+  - bugfix: Light switches can now be properly dismantled into frames with crowbar
+      or screwdriver.
+  - bugfix: Light switches are mounted with the right directional set and with the
+      correct offset.
+  - rscadd: You can now rename buttons with a pen after opening the maintenance panel
+      with a screwdriver.
+  thearbiber:
+  - rscadd: Adds the Leyak-class to the game
+  - rscdel: the hardliner sergeant getting a free ringneck for some reason
+  zimon9:
+  - rscadd: Added a 10mm ammo box, three weapon refurbishment kits, an angle grinder,
+      a mineral vein scanner, and an assault belt to the Derecho
+  - rscadd: Added goliath pup scooping
+  - rscdel: Removed wrecker power tools from the Derecho
+2025-05-02:
+  generalthrax:
+  - rscadd: Added cargo orders for individual types of produce
+  - rscdel: Removed fruit and vegetables cargo order
+2025-05-03:
+  firebudgy:
+  - balance: All remaining R&D consoles have been removed from planets.
+  thearbiber:
+  - bugfix: removes the fake oxygen cans on cave base and replaces them with actual
+      oxygen.
+2025-05-04:
+  CluckinAwesome:
+  - rscadd: PR-05 Plasma Railgun to the general cargo catalogue, with small NT discounts
+  Erikafox:
+  - rscadd: Some quirks can no longer be detected by health scanners
+  FalloutFalcon:
+  - rscadd: Blind characters can now see visuals for important sounds like footsteps,
+      attacks, and gunshots.
+  - rscadd: Basic mob bears
+  - rscadd: Bears can climb trees
+  - rscadd: Bears love honey now, did you know we had honey?
+  - refactor: Basic mobs updated to Modern TG code
+  Rug-Dealer:
+  - rscadd: Following a review of shipbuilding standards, all toilets are now equipped
+      with the same set of buckles that chairs have.
+  SapphicOverload:
+  - rscadd: Replaced the Shetland's TEG and combustion engines with a turbine
+  firebudgy:
+  - balance: Recruits are now Auxiliaries.
+  generalthrax:
+  - rscadd: Added jorts, dolphin shorts, and khaki explorer shorts to the game
+  - rscadd: Added these new clothing items to loadout
+  - rscadd: Embedded objects can now be removed using a hemostat
+  - rscdel: Removed embed surgery
+  - bugfix: Fixed improper turfs on the ICW Base Waste Ruin that caused wind and fixed
+      one wire
+  - bugfix: ICW Base turrets are no longer ship turrets
+2025-05-05:
+  Erikafox:
+  - balance: humans no longer know solarian by default
+  generalthrax:
+  - bugfix: Removed floor tile from one area with catwalk over it on the Shetland
+  melbert, erika (porting fox):
+  - refactor: Refactored language holders, making species changes not delete all of
+      your known languages
+  - rscadd: 'Languages can now have partial understanding of other languages. More
+      common English words are more likely to be mutually understood.qol: If you speak
+      in ALL CAPS in a foreign language, the translated words will also be ALL CAPS.'
+  - refactor: Refactored language translations. Report if you see any super odd looking
+      translations.
+  - bugfix: Force-says forcing you to speak common (such as cult invocations) will
+      now correctly force you to speak common (even if you don't know common)
+2025-05-06:
+  Aquidu:
+  - rscdel: Sarathi, Elzuosa, Mothpeople, and Kepori no longer have free extra languages.
+  Erikafox:
+  - rscadd: The Solar Confederation has decided to issue Chronicle-classes to the
+      Pionierskompanien. Expect the usual Chronicle antics in a frontier sector near
+      you
+  FalloutFalcon:
+  - rscadd: Readded events, mostly replacing them with new ones
+  FslashN:
+  - rscadd: Industrial suit storage can now be built by using a multitool on the circuitboard.
+2025-05-08:
+  generalthrax:
+  - rscdel: Removed carbon steel and all Overmap 5 minerals like copper, silicon,
+      quartzite, lead
+  - rscadd: Re-added plasteel
+  - balance: Ore yield returned to pre-Overmap 5 levels, all lathe recipes (more or
+      less) returned to their old costs
+  - bugfix: Stops blackmarket uplink crafting from eating your headset
+  - rscdel: Reverts fixes to plasma and ion thrusters that ended up slowing down ships
+      to a crawl
+2025-05-09:
+  FslashN:
+  - bugfix: Chisel corners will now be preserved when the ship moves.
+  Overteh:
+  - bugfix: Nimbus got an actual mk2 hypospray vials.
+  - bugfix: organ freezer in Cirrus is no longer anchored.
+  SomeguyManperson:
+  - bugfix: detonating a grav anomaly core can now break bones as intended and also
+      deletes the core as intended
+  meemofcourse:
+  - code_imp: Uniforms may now roll down their sleeves or their top separately
+  - rscadd: Alt-Clicking an uniform will roll its top down, if possible
+2025-05-10:
+  Erikafox:
+  - rscadd: remaps the ivory. a little less gear, a bit more shape, a smidge more
+      size.

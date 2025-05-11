@@ -134,7 +134,6 @@
 	name = ""
 	desc = ""
 	icon_state = "captain_parade"
-	can_adjust = FALSE
 */
 
 /obj/item/clothing/under/nanotrasen/officer
