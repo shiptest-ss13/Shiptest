@@ -26,7 +26,7 @@
 	desc = "The latest in Artificial Intelligences."
 	id = "mmi_posi"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 1700, /datum/material/glass = 1350, /datum/material/gold = 500) //Gold, because SWAG.
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 5000, /datum/material/gold = 500)
 	construction_time = 75
 	build_path = /obj/item/mmi/posibrain
 	category = list("Misc", "Medical Designs")
@@ -115,7 +115,7 @@
 	desc = "Allows tracking of someone's location if their suit sensors are turned to tracking beacon."
 	id = "crewpinpointer"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1500, /datum/material/gold = 500)
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 750, /datum/material/gold = 500)
 	build_path = /obj/item/pinpointer/crew
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SECURITY
@@ -136,7 +136,7 @@
 	id = "defibrillator"
 	build_type = PROTOLATHE
 	build_path = /obj/item/defibrillator
-	materials = list(/datum/material/iron = 8000, /datum/material/glass = 4000, /datum/material/silver = 3000, /datum/material/gold = 1500)
+	materials = list(/datum/material/iron = 6000, /datum/material/glass = 4000, /datum/material/silver = 3000, /datum/material/gold = 1500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -167,7 +167,7 @@
 	id = "defibrillator_compact"
 	build_type = PROTOLATHE
 	build_path = /obj/item/defibrillator/compact
-	materials = list(/datum/material/iron = 16000, /datum/material/glass = 8000, /datum/material/silver = 6000, /datum/material/gold = 3000)
+	materials = list(/datum/material/iron = 16000, /datum/material/glass = 4000, /datum/material/silver = 6000, /datum/material/gold = 3000)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -187,7 +187,7 @@
 	id = "medigel"
 	build_path = /obj/item/reagent_containers/medigel
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2500, /datum/material/glass = 500)
+	materials = list(/datum/material/iron = 2500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -197,7 +197,7 @@
 	id = "laserscalpel"
 	build_path = /obj/item/scalpel/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 6000, /datum/material/glass = 1500, /datum/material/silver = 2000, /datum/material/gold = 1500, /datum/material/diamond = 200, /datum/material/titanium = 4000)
+	materials = list(/datum/material/silver = 6000, /datum/material/glass = 750, /datum/material/gold = 1500, /datum/material/diamond = 200, /datum/material/titanium = 4000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -207,7 +207,7 @@
 	id = "mechanicalpinches"
 	build_path = /obj/item/retractor/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 12000, /datum/material/glass = 4000, /datum/material/silver = 4000, /datum/material/titanium = 5000)
+	materials = list(/datum/material/silver = 12000, /datum/material/glass = 2000, /datum/material/titanium = 5000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -217,7 +217,7 @@
 	id = "searingtool"
 	build_path = /obj/item/surgicaldrill/advanced
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000, /datum/material/glass = 2000, /datum/material/plasma = 2000, /datum/material/uranium = 3000, /datum/material/titanium = 3000)
+	materials = list(/datum/material/silver = 4000, /datum/material/glass = 1000, /datum/material/titanium = 3000)
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -282,7 +282,7 @@
 	id = "ci-gloweyes"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 1000)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 2000)
 	build_path = /obj/item/organ/eyes/robotic/glow
 	category = list("Misc", "Medical Designs")
 
@@ -292,7 +292,7 @@
 	id = "ci-breather"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 35
-	materials = list(/datum/material/iron = 600, /datum/material/glass = 250)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 1000)
 	build_path = /obj/item/organ/cyberimp/mouth/breathing_tube
 	category = list("Misc", "Medical Designs")
 
@@ -526,7 +526,7 @@
 	desc = "An upgraded cybernetic liver."
 	id = "cybernetic_liver_tier3"
 	construction_time = 50
-	materials = list(/datum/material/iron = 500, /datum/material/glass = 500, /datum/material/silver=500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/organ/liver/cybernetic/tier3
 
 /datum/design/cybernetic_heart

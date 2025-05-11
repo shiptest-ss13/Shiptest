@@ -4,7 +4,7 @@
 	set name = "Secrets"
 	set desc = "Abuse harder than you ever have before with this handy dandy semi-misc stuff menu"
 	set category = "Admin.Game"
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Secrets Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Secrets Panel")
 	var/datum/secrets_menu/tgui  = new(usr)//create the datum
 	tgui.ui_interact(usr)//datum has a tgui component, here we open the window
 
@@ -192,22 +192,6 @@
 			message_admins(span_adminnotice("[key_name_admin(holder)] reset the sector's name."))
 			priority_announce("[command_name()] has renamed the sector to \"[new_name]\".")
 		//!fun! buttons.
-		if("virus")
-			if(!is_funmin)
-				return
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Virus Outbreak"))
-			switch(alert("Do you want this to be a random disease or do you have something in mind?",,"Make Your Own","Random","Choose"))
-				if("Make Your Own")
-					AdminCreateVirus(holder)
-				if("Random")
-					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
-					E = DC.runEvent()
-				if("Choose")
-					var/virus = input("Choose the virus to spread", "BIOHAZARD") as null|anything in sortList(typesof(/datum/disease), /proc/cmp_typepaths_asc)
-					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
-					var/datum/round_event/disease_outbreak/DO = DC.runEvent()
-					DO.virus_type = virus
-					E = DO
 		if("allspecies")
 			if(!is_funmin)
 				return
@@ -431,15 +415,15 @@
 			log_admin("[key_name(holder)] has Un-Fully Immersed everyone.")
 	if(E)
 		E.processing = FALSE
-		if(E.announceWhen>0)
+		if(E.announce_when>0)
 			switch(alert(holder, "Would you like to alert the crew?", "Alert", "Yes", "No", "Cancel"))
 				if("Yes")
-					E.announceChance = 100
+					E.announce_chance = 100
 				if("Cancel")
 					E.kill()
 					return
 				if("No")
-					E.announceChance = 0
+					E.announce_chance = 0
 		E.processing = TRUE
 	if(holder)
 		log_admin("[key_name(holder)] used secret [action]")

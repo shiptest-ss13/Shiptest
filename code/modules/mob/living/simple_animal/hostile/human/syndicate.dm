@@ -343,7 +343,7 @@
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/smg
 	name = "Ramzi Clique Shock Trooper"
-	desc = "Night-black armor traces the silhouette of a soldier equaled by precious few. Their Sidewinder tracks you perfectly, a staccato bark of .45 already in its throat."
+	desc = "Night-black armor traces the silhouette of a soldier equaled by precious few. Their Sidewinder tracks you perfectly, a staccato bark of 5.7 already in its throat."
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi

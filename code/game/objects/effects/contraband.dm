@@ -954,13 +954,13 @@
 	icon_state = "poster-clip_enlist"
 
 /obj/structure/sign/poster/clip/bard
-	name = "CMM-BARD"
-	desc = "A poster made by soldiers to recruit people into the BARD, depecting a \"Sergeant Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Something tells you that service is a lot less interesting than this."
+	name = "CLIP-BARD"
+	desc = "A poster made by soldiers to recruit people into CLIP-BARD, depecting a \"Sergeant Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Something tells you that service is a lot less interesting than this."
 	icon_state = "poster-clip_bard"
 
 /obj/structure/sign/poster/clip/gold
 	name = "CLIP-GOLD"
-	desc = "A poster listing job positions open in the CLIP GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
+	desc = "A poster listing job positions open in the CLIP-GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
 	icon_state = "poster-clip_gold"
 
 /obj/structure/sign/poster/clip/lunatown

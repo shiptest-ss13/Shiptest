@@ -16,7 +16,6 @@
 	var/repair_multiplier = 1 //multiply incoming repairs by this value. used to make some mechs less efficient and slower to repair.
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
-	var/stopped = FALSE
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
 	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
@@ -140,6 +139,7 @@
 	hud_possible = list (DIAG_STAT_HUD, DIAG_BATT_HUD, DIAG_MECH_HUD, DIAG_TRACK_HUD)
 
 /obj/item/radio/mech //this has to go somewhere
+	canhear_range = 0
 
 /obj/mecha/Initialize()
 	. = ..()
@@ -305,7 +305,6 @@
 	radio.name = "[src] radio"
 	radio.icon = icon
 	radio.icon_state = icon_state
-	radio.subspace_transmission = TRUE
 
 /obj/mecha/proc/can_use(mob/user)
 	if(user != occupant)
@@ -615,8 +614,6 @@
 /obj/mecha/proc/domove(direction)
 	if(can_move >= world.time)
 		return 0
-	if(stopped)
-		return 0
 	if(!Process_Spacemove(direction))
 		return 0
 	if(!has_charge(step_energy_drain))
@@ -659,7 +656,7 @@
 	return 0
 
 /obj/mecha/proc/mechturn(direction)
-	setDir(direction)
+	set_dir_mecha(direction)
 	if(turnsound)
 		playsound(src,turnsound,40,TRUE)
 	return 1
@@ -668,7 +665,7 @@
 	var/current_dir = dir
 	. = step(src,direction)
 	if(strafe)
-		setDir(current_dir)
+		set_dir_mecha(current_dir)
 	if(. && !step_silent)
 		play_stepsound()
 	step_silent = FALSE
@@ -1014,7 +1011,7 @@
 		forceMove(loc)
 		log_message("[H] moved in as pilot.", LOG_MECHA)
 		icon_state = initial(icon_state)
-		setDir(dir_in)
+		set_dir_mecha(dir_in)
 		playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
@@ -1067,7 +1064,7 @@
 	SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
 	equipment_check()
 	update_appearance()
-	setDir(dir_in)
+	set_dir_mecha(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
 	if(!internal_damage)
 		SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
@@ -1162,7 +1159,7 @@
 			mmi.set_mecha(null)
 			mmi.update_appearance()
 		icon_state = initial(icon_state)+"-open"
-		setDir(dir_in)
+		set_dir_mecha(dir_in)
 
 	if(L && L.client)
 		L.update_mouse_pointer()
@@ -1328,3 +1325,8 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/charge_end()
 	walk(src,0)
 	charging = FALSE
+
+/// Sets the direction of the mecha and all of its occcupents, required for FOV. Alternatively one could make a recursive contents registration and register topmost direction changes in the fov component
+/obj/mecha/proc/set_dir_mecha(new_dir)
+	setDir(new_dir)
+	occupant.setDir(new_dir)

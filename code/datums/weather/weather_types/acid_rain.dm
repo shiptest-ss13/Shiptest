@@ -27,6 +27,7 @@
 	sound_weak_outside = /datum/looping_sound/weather/rain/indoors
 	sound_weak_inside = /datum/looping_sound/weather/rain
 
+	fire_suppression = 6
 
 /datum/weather/acid_rain/weather_act(mob/living/L)
 	/// Think of some good solution of how weather should affect monsters and how they should be resistant to things like this
@@ -34,4 +35,4 @@
 		return
 	var/resist = L.getarmor(null, "acid")
 	if(prob(max(0,100-resist)))
-		L.acid_act(20,20)
+		L.acid_act(20,1)

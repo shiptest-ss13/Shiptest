@@ -7,9 +7,9 @@
 	desc = "Fatigues worn by members of the Frontiersmen pirate fleet. Its poor-quality linen is very uncomfortable to move around in."
 	icon_state = "frontier"
 	item_state = "frontier"
-	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/frontiersmen/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/uniforms.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/frontiersmen/deckhand
@@ -30,12 +30,14 @@
 	name = "\improper Frontiersmen officer's uniform"
 	desc = "Worn by officers of the Frontiersmen pirate fleet. It's less comfortable than it looks."
 	icon_state = "frontier_officer"
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/frontiersmen/admiral
 	name = "\improper frontiersmen admiral uniform"
 	desc = "Worn by admirals of the Frontiersmen pirate fleet, adorned with a tasteful amount of gold and completed with a very-stylish all-white aesthetic. Quite snobby for a bunch of pirates."
 	icon_state = "frontier_admiral"
 	item_state = "frontier_admiral"
+	supports_variations = VOX_VARIATION
 
 ////////////////////
 //Unarmored suits//
@@ -59,6 +61,7 @@
 	icon_state = "frontier_armor"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	blood_overlay_type = "armor"
 	supports_variations = VOX_VARIATION
 
@@ -68,6 +71,7 @@
 	icon_state = "frontier_armor"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	blood_overlay_type = "armor"
 	supports_variations = VOX_VARIATION
 
@@ -97,6 +101,8 @@
 	name = "frontiersmen fireproof coat"
 	desc = "A stiff olive-green coat, used particularly by Frontiersmen flame troopers. It seems to be lined with asbestos, to provide maximum heat and fire deterrence... At the cost of comfort. And mesothelioma."
 	icon_state = "frontier_fireproof_suit"
+	supports_variations = VOX_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.9
@@ -142,6 +148,8 @@
 	current_skin = "frontiersoft"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
+	supports_variations = VOX_VARIATION
 	unique_reskin = null
 	current_skin = null
 
@@ -176,12 +184,14 @@
 	name = "\improper frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
 	icon_state = "frontier_cap"
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/frontier/admiral
 	name = "\improper frontiersmen admiral's cap"
 	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier
@@ -189,12 +199,13 @@
 	desc = "A heavily modified X-11 pattern helmet used by the Frontiersmen pirate fleet."
 	icon_state = "x11helm_frontier"
 	unique_reskin = null
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
 	supports_variations = VOX_VARIATION
 	can_flashlight = TRUE
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof
 	name = "\improper fireproof frontiersmen X-11 helmet"
-	desc = "A subtly but helpful modifcation of the Frontiersmen X11 to make it fireproof."
+	desc = "A subtle, but helpful modifcation of the Frontiersmen X11 to make it fireproof."
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
 	cold_protection = HEAD
@@ -248,6 +259,8 @@
 	item_state = "frontierwebbing"
 	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
+	vox_override_icon = 'icons/mob/clothing/faction/frontiersmen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 	unique_reskin = null
 
