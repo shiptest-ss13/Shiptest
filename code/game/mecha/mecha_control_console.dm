@@ -143,8 +143,8 @@
 	recharging = FALSE
 
 /obj/item/mecha_parts/mecha_tracking/ai_control
-	name = "exosuit R.P.C.P. control beacon"
-	desc = "A device used to transmit exosuit data. Also allows active R.P.C.P. units to take control of said exosuit."
+	name = "exosuit P.C.C. control beacon"
+	desc = "A device used to transmit exosuit data. Also allows active P.C.C. units to take control of said exosuit."
 	ai_beacon = TRUE
 
 /obj/item/storage/box/mechabeacons

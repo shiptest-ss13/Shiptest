@@ -799,7 +799,7 @@
 			to_chat(user, "[span_notice("[icon2html(src, user)] Status of [name]:")]\n[A.get_mecha_info()]")
 			break
 		if(!can_control_mech)
-			to_chat(user, span_warning("You cannot control exosuits without R.P.C.P. control beacons installed."))
+			to_chat(user, span_warning("You cannot control exosuits without P.C.C. control beacons installed."))
 			return
 		to_chat(user, "<a href='?src=[REF(user)];ai_take_control=[REF(src)]'>[span_boldnotice("Take control of exosuit?")]</a><br>")
 

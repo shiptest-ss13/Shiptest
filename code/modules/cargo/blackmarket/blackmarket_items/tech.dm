@@ -42,8 +42,8 @@
 	availability_prob = 30
 
 /datum/blackmarket_item/tech/ai_core
-	name = "R.P.C.P. Frame Board"
-	desc = "The future is now! Become one with your ship with this R.P.C.P. Frame board! (Some assembly required.)"
+	name = "P.C.C. Frame Board"
+	desc = "The future is now! Become one with your ship with this P.C.C. Frame board! (Some assembly required.)"
 	item = /obj/item/circuitboard/aicore
 	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
 

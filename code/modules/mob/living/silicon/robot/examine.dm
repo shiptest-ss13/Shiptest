@@ -36,7 +36,7 @@
 	switch(stat)
 		if(CONSCIOUS)
 			if(shell)
-				. += "It appears to be an [deployed ? "active" : "empty"] R.P.C.P. shell."
+				. += "It appears to be an [deployed ? "active" : "empty"] P.C.C. shell."
 			else if(!client)
 				. += "It appears to be in stand-by mode." //afk
 		if(SOFT_CRIT, UNCONSCIOUS, HARD_CRIT)

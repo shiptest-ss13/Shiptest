@@ -492,7 +492,7 @@
 	. = ..()
 	if(.)
 		if(R.shell)
-			to_chat(user, span_warning("This unit is already an R.P.C.P. shell!"))
+			to_chat(user, span_warning("This unit is already an P.C.C. shell!"))
 			return FALSE
 		if(R.key) //You cannot replace a player unless the key is completely removed.
 			to_chat(user, span_warning("Intelligence patterns detected in this [R.braintype]. Aborting."))
@@ -618,7 +618,7 @@
 
 /obj/item/borg/upgrade/ship_access_chip
 	name = "silicon ship access chip"
-	desc = "A module that grants specialist positronic frames and R.P.C.P. units access to the ship this was printed from."
+	desc = "A module that grants specialist positronic frames and P.C.C. units access to the ship this was printed from."
 	icon_state = "card_mod"
 	var/datum/overmap/ship/controlled/ship
 

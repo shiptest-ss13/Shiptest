@@ -1,10 +1,10 @@
 /obj/structure/AIcore
 	density = TRUE
 	anchored = FALSE
-	name = "\improper Remote Positronic Connection Point unit"
+	name = "\improper Positronic Computing Core unit"
 	icon = 'icons/mob/ai.dmi'
 	icon_state = "0"
-	desc = "The framework for an Remote Positronic Connection Point."
+	desc = "The framework for an Positronic Computing Core."
 	max_integrity = 500
 	var/state = EMPTY_CORE
 	var/datum/ai_laws/laws
@@ -145,7 +145,7 @@
 							state = CABLED_CORE
 							update_appearance()
 					else
-						to_chat(user, span_warning("You need five lengths of cable to wire the R.P.C.P. frame!"))
+						to_chat(user, span_warning("You need five lengths of cable to wire the P.C.C. frame!"))
 					return
 			if(CABLED_CORE)
 				if(P.tool_behaviour == TOOL_WIRECUTTER)
@@ -169,7 +169,7 @@
 							state = GLASS_CORE
 							update_appearance()
 					else
-						to_chat(user, span_notice("You need two sheets of reinforced glass to insert them into the R.P.C.P. frame!"))
+						to_chat(user, span_notice("You need two sheets of reinforced glass to insert them into the P.C.C. frame!"))
 					return
 
 				if(istype(P, /obj/item/aiModule))
@@ -282,7 +282,7 @@
 	qdel(src)
 
 /obj/structure/AIcore/deactivated
-	name = "inactive R.P.C.P."
+	name = "inactive P.C.C."
 	icon_state = "ai-empty"
 	anchored = TRUE
 	state = AI_READY_CORE
@@ -323,5 +323,5 @@ That prevents a few funky behaviors.
 	else //If for some reason you use an empty card on an empty AI terminal.
 		to_chat(user, span_alert("There is no Positronic Intelligence loaded on this terminal.</span>"))
 /obj/item/circuitboard/aicore
-	name = "R.P.C.P. unit (R.P.C.P. unit Board)" //Well, duh, but best to be consistent
+	name = "P.C.C. unit (P.C.C. unit Board)" //Well, duh, but best to be consistent
 	var/battery = 200 //backup battery for when the AI loses power. Copied to/from AI mobs when carding, and placed here to avoid recharge via deconning the core

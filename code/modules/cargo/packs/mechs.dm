@@ -325,11 +325,11 @@ Mech Equipment
 	)
 
 /datum/supply_pack/mech/equipment/AI_mech_controller
-	name = "Exosuit R.P.C.P. Control Beacon "
-	desc = "A dual use tracking/remote control beacon for use with R.P.C.P. units."
+	name = "Exosuit P.C.C. Control Beacon "
+	desc = "A dual use tracking/remote control beacon for use with P.C.C. units."
 	cost = 750
 	contains = list(
-		/obj/item/mecha_parts/chassis/mp_gygax,
+		/obj/item/mecha_parts/mecha_tracking/ai_control,
 	)
 	faction = /datum/faction/nt
 	faction_locked = TRUE
