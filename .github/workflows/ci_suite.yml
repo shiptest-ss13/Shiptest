@@ -202,12 +202,6 @@ jobs:
             ${{ runner.os }}-yarn-
             ${{ runner.os }}-
 
-      - name: Restore BYOND cache
-        uses: actions/cache@v4
-        with:
-          path: C:\\byond
-          key: ${{ runner.os }}-byond-${{ hashFiles('dependencies.sh') }}
-
       - name: Compile
         run: pwsh tools/ci/build.ps1
         env:
