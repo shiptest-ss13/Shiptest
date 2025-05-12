@@ -620,8 +620,8 @@
 
 //Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
-	name = "Vigilitas Guardian hardsuit helmet"
-	desc = "A hardsuit commonly fielded by most divisons of vigilitas interstellar, often used for basic patrol duty and light engagements."
+	name = "\improper Vigilitas Guardian hardsuit helmet"
+	desc = "A helmet with a wide visor commonly seen with Vigilitas Interstellar security contractors."
 	icon_state = "hardsuit0-sec"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
@@ -629,8 +629,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/security
 	icon_state = "hardsuit-sec"
-	name = "Vigilitas Guardian hardsuit"
-	desc = "A hardsuit commonly fielded by most divisons of vigilitas interstellar, often used for basic patrol duty and light engagements."
+	name = "\improper Vigilitas Guardian hardsuit"
+	desc = "A hardsuit commonly employed in security operations by Vigilitas Interstellar, often used for basic patrol duty and light engagements."
 	item_state = "sec_hardsuit"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
@@ -643,16 +643,16 @@
 
 //Head of Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security/hos
-	name = "Vigilitas Sentinel hardsuit helmet"
-	desc = "A particularly bulky suit, fielded by the higher ranking in vigilitas interstellar. Often used in drawn out raids and quick breaching."
+	name = "\improper Vigilitas Sentinel hardsuit helmet"
+	desc = "An especially armored helmet with a narrow visor and armored facemask, commonly seen with high ranking Vigilitas Interstellar security contractors."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
 	icon_state = "hardsuit-hos"
-	name = "Vigilitas Sentinel hardsuit"
-	desc = "A particularly bulky suit, fielded by the higher ranking in vigilitas interstellar. Often used in drawn out raids and quick breaching."
+	name = "\improper Vigilitas Sentinel hardsuit"
+	desc = "A modified heavy hardsuit commonly employed by higher ranking members of Vigilitas Interstellar during security operations."
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 50, "fire" = 95, "acid" = 95)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
