@@ -169,6 +169,8 @@
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
 
+NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
+
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	name = "\improper Nanotrasen Saber SMG"
 	desc = "A prototype full-auto 9x18mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
