@@ -11,12 +11,10 @@
 	icon_state = "clip_deck"
 	item_state = "b_suit"
 
-	alt_covers_chest = TRUE
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
 	dying_key = DYE_REGISTRY_UNDER //??? // it's for washing machines don't worry about it
 
-	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION // a new record! UPDATE 2 MONTHS LATER: :'(
 
 /obj/item/clothing/under/clip/minutemen
@@ -28,8 +26,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
 
-	can_adjust = TRUE
-	alt_covers_chest = TRUE
+	roll_sleeves = TRUE
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
 
 /obj/item/clothing/under/clip/formal
