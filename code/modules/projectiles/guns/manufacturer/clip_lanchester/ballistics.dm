@@ -398,6 +398,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	icon_state = "f4_inteq"
 	item_state = "f4_inteq"
 
+NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
+
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
 	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, capable of impressive range and penetrating power. Chambered in 6.5mm CLIP."

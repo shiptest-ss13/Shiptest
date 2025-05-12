@@ -103,12 +103,6 @@
 		/obj/item/coin
 	)
 
-/datum/export/material/copper
-	unit_name = "sheet of copper"
-	cost = 2
-	sell_floor = 1
-	material_id = /datum/material/copper
-
 /datum/export/material/glass
 	unit_name = "sheet of glass"
 	cost = 1
@@ -118,33 +112,3 @@
 		/obj/item/stack/ore,
 		/obj/item/shard
 	)
-
-/datum/export/material/quartz
-	unit_name = "sheet of quartz"
-	cost = 0.25
-	sell_floor = 0.1
-	material_id = /datum/material/quartz
-
-/datum/export/material/carbon
-	unit_name = "sheet of carbon"
-	cost = 0.5
-	sell_floor = 0.1
-	material_id = /datum/material/carbon
-
-/datum/export/material/silicon
-	cost = 5
-	sell_floor = 1
-	unit_name = "sheet of silicon"
-	material_id = /datum/material/silicon
-
-/datum/export/material/sulfur
-	cost = 15
-	sell_floor = 10
-	unit_name = "sheet of sulfur"
-	material_id = /datum/material/sulfur
-
-/datum/export/material/lead
-	cost = 5
-	sell_floor = 1
-	unit_name = "sheet of lead"
-	material_id = /datum/material/lead
