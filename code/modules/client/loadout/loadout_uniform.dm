@@ -52,6 +52,18 @@
 	display_name = "athletic shorts, purple"
 	path = /obj/item/clothing/under/shorts/purple
 
+/datum/gear/uniform/dolphinshorts
+	display_name = "dolphin shorts"
+	path = /obj/item/clothing/under/shorts/dolphin
+
+/datum/gear/uniform/jorts
+	display_name = "jorts"
+	path = /obj/item/clothing/under/shorts/jorts
+
+/datum/gear/uniform/explorershorts
+	display_name = "explorer shorts"
+	path = /obj/item/clothing/under/shorts/explorer
+
 //Pants
 /datum/gear/uniform/pants
 	subtype_path = /datum/gear/uniform/pants
