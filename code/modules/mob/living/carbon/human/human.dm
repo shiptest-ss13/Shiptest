@@ -874,7 +874,7 @@
 						icon_num = 0
 					if(icon_num)
 						hud_used.healthdoll.add_overlay(mutable_appearance('icons/hud/screen_gen.dmi', "[BP.body_zone][icon_num]"))
-					if (BP.uses_integrity) // Same, but for integrity
+					if (BP.limb_integrity) // Same, but for integrity
 						var/integ_loss = max(0,BP.integrity_loss-BP.integrity_ignored)
 						var/integ_icon_num
 						if(integ_loss)

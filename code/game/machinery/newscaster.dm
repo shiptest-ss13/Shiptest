@@ -742,7 +742,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/newscaster/security_unit, 30)
 				if(!(machine_stat & BROKEN))
 					return
 				to_chat(user, span_notice("You repair [src]."))
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				set_machine_stat(machine_stat & ~BROKEN)
 				update_appearance()
 		else

@@ -258,7 +258,7 @@
 			if(new_dir == NORTH)
 				flipped.layer = BELOW_MOB_LAYER
 			flipped.max_integrity = src.max_integrity
-			flipped.obj_integrity = src.obj_integrity
+			flipped.atom_integrity = src.atom_integrity
 			flipped.table_type = src.type
 			user.visible_message(span_danger("[user] flips over the [src]!"), span_notice("You flip over the [src]!"))
 			playsound(src, 'sound/items/trayhit2.ogg', 100)

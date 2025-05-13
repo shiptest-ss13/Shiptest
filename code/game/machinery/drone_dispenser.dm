@@ -211,7 +211,7 @@
 			span_notice("You restore [src] to operation."))
 
 		set_machine_stat(machine_stat & ~BROKEN)
-		obj_integrity = max_integrity
+		atom_integrity = max_integrity
 		update_appearance()
 	else
 		return ..()

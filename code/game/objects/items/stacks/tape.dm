@@ -279,7 +279,7 @@
 	if(.)
 		return .
 	if(user.a_intent == INTENT_HELP)
-		if(O.obj_integrity < O.max_integrity)
+		if(O.atom_integrity < O.max_integrity)
 			to_chat(user, span_notice("Nothing a little [src] can't fix..."))
 			play_tool_sound(O, 30)
 			if(src.use_tool(O, user, other_delay, 1))

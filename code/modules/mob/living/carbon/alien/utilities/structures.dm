@@ -11,7 +11,7 @@
 	icon = 'icons/mob/alien.dmi'
 	max_integrity = 100
 
-/obj/structure/alien/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
+/obj/structure/alien/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	if(damage_flag == "melee")
 		switch(damage_type)
 			if(BRUTE)
@@ -322,7 +322,7 @@
 		addtimer(CALLBACK(src, PROC_REF(Grow)), GROWTH_TIME)
 	proximity_monitor = new(src, status == GROWN ? 1 : 0)
 	if(status == BURST)
-		obj_integrity = integrity_failure * max_integrity
+		atom_integrity = integrity_failure * max_integrity
 
 /obj/structure/alien/egg/update_icon_state()
 	switch(status)

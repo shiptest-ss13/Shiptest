@@ -191,12 +191,12 @@
 /mob/living/simple_animal/hostile/hivebot/mechanic/AttackingTarget()
 	if(istype(target, /obj/machinery))
 		var/obj/machinery/fixable = target
-		if(fixable.obj_integrity >= fixable.max_integrity)
+		if(fixable.atom_integrity >= fixable.max_integrity)
 			to_chat(src, span_warning("Diagnostics indicate that this machine is at peak integrity."))
 			return
 		to_chat(src, span_warning("You begin repairs..."))
 		if(do_after(src, 50, target = fixable))
-			fixable.obj_integrity = fixable.max_integrity
+			fixable.atom_integrity = fixable.max_integrity
 			do_sparks(3, TRUE, fixable)
 			to_chat(src, span_warning("Repairs complete."))
 		return

@@ -45,7 +45,7 @@
 			to_chat(user, span_notice("You reseal the insulation for [src]."))
 			icon_state = "cablerelay"
 			broken_status = RELAY_OK
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 		else
 			to_chat(user, "You need 10 metal to mend [src].")
 

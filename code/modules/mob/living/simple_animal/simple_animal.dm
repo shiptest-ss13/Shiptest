@@ -140,9 +140,6 @@
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
-	/// Base armor value on this mob for running armor checks
-	var/datum/armor/armor
-
 
 /mob/living/simple_animal/Initialize(mapload)
 	. = ..()

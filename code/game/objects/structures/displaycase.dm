@@ -108,13 +108,13 @@
 		else
 			to_chat(user,  span_alert("Access denied."))
 	else if(W.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
-		if(obj_integrity < max_integrity)
+		if(atom_integrity < max_integrity)
 			if(!W.tool_start_check(user, src, amount=5))
 				return
 
 			to_chat(user, span_notice("You begin repairing [src]..."))
 			if(W.use_tool(src, user, 40, amount=5, volume=50))
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				update_appearance()
 				to_chat(user, span_notice("You repair [src]."))
 		else
@@ -149,7 +149,7 @@
 		if(do_after(user, 20, target = src))
 			G.use(2)
 			broken = 0
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 			update_appearance()
 	else
 		return ..()
@@ -520,11 +520,11 @@
 
 /obj/structure/displaycase/forsale/multitool_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(obj_integrity <= (integrity_failure *  max_integrity))
+	if(atom_integrity <= (integrity_failure *  max_integrity))
 		to_chat(user, span_notice("You start recalibrating [src]'s hover field..."))
 		if(do_after(user, 20, target = src))
 			broken = 0
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 			update_appearance()
 		return TRUE
 

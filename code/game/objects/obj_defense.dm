@@ -1,3 +1,5 @@
+/obj
+	uses_integrity = TRUE
 
 ///the essential proc to call when an obj must receive damage of any kind.
 /obj/proc/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
@@ -6,32 +8,19 @@
 		return
 	if(sound_effect)
 		play_attack_sound(damage_amount, damage_type, damage_flag)
-	if((resistance_flags & INDESTRUCTIBLE) || obj_integrity <= 0)
+	if((resistance_flags & INDESTRUCTIBLE) || atom_integrity <= 0)
 		return
-	damage_amount = run_obj_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
+	damage_amount = run_atom_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
 	if(damage_amount < DAMAGE_PRECISION)
 		return
 	. = damage_amount
-	obj_integrity = max(obj_integrity - damage_amount, 0)
+	atom_integrity = max(atom_integrity - damage_amount, 0)
 	//BREAKING FIRST
-	if(integrity_failure && obj_integrity <= integrity_failure * max_integrity)
+	if(integrity_failure && atom_integrity <= integrity_failure * max_integrity)
 		obj_break(damage_flag)
 	//DESTROYING SECOND
-	if(obj_integrity <= 0)
+	if(atom_integrity <= 0)
 		obj_destruction(damage_flag)
-
-///returns the damage value of the attack after processing the obj's various armor protections
-/obj/proc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armour_penetration = 0)
-	if(damage_flag == "melee" && damage_amount < damage_deflection)
-		return 0
-	if(damage_type != BRUTE && damage_type != BURN)
-		return 0
-	var/armor_protection = 0
-	if(damage_flag)
-		armor_protection = armor.getRating(damage_flag)
-	if(armor_protection)		//Only apply weak-against-armor/hollowpoint effects if there actually IS armor.
-		armor_protection = clamp(armor_protection - armour_penetration, min(armor_protection, 0), 100)
-	return round(damage_amount * (100 - armor_protection)*0.01, DAMAGE_PRECISION)
 
 ///the sound played when the obj is damaged.
 /obj/proc/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
@@ -275,13 +264,13 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 ///changes max_integrity while retaining current health percentage, returns TRUE if the obj got broken.
 /obj/proc/modify_max_integrity(new_max, can_break = TRUE, damage_type = BRUTE)
-	var/current_integrity = obj_integrity
+	var/current_integrity = atom_integrity
 	var/current_max = max_integrity
 
 	if(current_integrity != 0 && current_max != 0)
 		var/percentage = current_integrity / current_max
 		current_integrity = max(1, round(percentage * new_max))	//don't destroy it as a result
-		obj_integrity = current_integrity
+		atom_integrity = current_integrity
 
 	max_integrity = new_max
 

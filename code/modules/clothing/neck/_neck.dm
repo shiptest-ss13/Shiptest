@@ -448,7 +448,7 @@
 
 /obj/item/clothing/neck/crystal_amulet/examine(mob/user)
 	. = ..()
-	var/healthpercent = (obj_integrity/max_integrity) * 100
+	var/healthpercent = (atom_integrity/max_integrity) * 100
 	switch(healthpercent)
 		if(50 to 99)
 			. += "It looks slightly damaged."

@@ -122,7 +122,7 @@
 			if(do_after(user, 2 SECONDS, target = src))
 				glass.use(2)
 				broken = FALSE
-				obj_integrity = max_integrity
+				atom_integrity = max_integrity
 				update_appearance()
 			return TRUE
 	else

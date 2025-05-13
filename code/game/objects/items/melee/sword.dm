@@ -90,7 +90,7 @@
 		if(I.use_tool(src, user, 0, volume = 40))
 			name = src::name
 			broken = FALSE
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 		return TRUE
 
 /obj/item/melee/sword/mass/obj_break(damage_flag)
@@ -103,7 +103,7 @@
 
 /obj/item/melee/sword/mass/examine(mob/user)
 	. = ..()
-	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
+	var/healthpercent = round((atom_integrity/max_integrity) * 100, 1)
 	switch(healthpercent)
 		if(50 to 99)
 			. += span_info("It looks slightly damaged.")

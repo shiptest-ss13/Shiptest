@@ -62,7 +62,7 @@
 	var/bleeding = 0
 
 	/// Whether this limb can decay, limiting its' ability to heal
-	var/uses_integrity = FALSE
+	var/limb_integrity = FALSE
 	/// How many hit points worth of integrity this limb has lost. 10 integrity = 10 HP
 	var/integrity_loss = 0
 	/// The amount of integrity_loss that this limb can have without any effects.
@@ -301,13 +301,13 @@
 
 // Removes integrity from the limb, if it uses integrity.
 /obj/item/bodypart/proc/take_integrity_damage(loss)
-	if (uses_integrity)
+	if (limb_integrity)
 		integrity_loss = clamp(integrity_loss + loss, 0, max_damage+integrity_ignored)
 
 
 // Heals integrity for the limb, if it uses integrity.
 /obj/item/bodypart/proc/heal_integrity(amount)
-	if (uses_integrity)
+	if (limb_integrity)
 		integrity_loss = clamp(integrity_loss - amount, 0, max_damage)
 
 //Heals brute and burn damage for the organ. Returns 1 if the damage-icon states changed at all.
@@ -318,7 +318,7 @@
 	if(required_status && !(bodytype & required_status)) //So we can only heal certain kinds of limbs, ie robotic vs organic.
 		return
 
-	if (uses_integrity && (burn > 0 || brute > 0))
+	if (limb_integrity && (burn > 0 || brute > 0))
 		var/max_heal = max(0, burn_dam + brute_dam - max(0,integrity_loss-integrity_ignored))
 		var/total_heal = min(brute,brute_dam)+min(burn,burn_dam) //in case we're trying to heal nonexistent dmg
 		var/heal_mult = min(1,max_heal/total_heal)
