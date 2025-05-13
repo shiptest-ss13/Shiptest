@@ -12,9 +12,9 @@
 	additional_syllable_low = -6
 	additional_syllable_high = -2
 	syllables = list( //slang cut with some assorted syllables.
-		"innit", "sod", "toff", "bloody", "'s", "slag", "frog",
-		"blast", "vent", "cour", "'em", "'im", "stars", "frag", "haah",
-		"shaft", "movvit", "camon", "burn", "gods", "fore",
+		"innit", "sod", "toff", "blo", "ody", "'s", "slag", "frog",
+		"bla", "vent", "cour", "'em", "'im", "stars", "frag", "ha",
+		"sha", "mov", "camon", "burn", "gods", "fore",
 		"lah", "kah", "sah", "rawh", "leh", "keh", "seh", "reh",
 		"ze", "ke", "sie", "rye", "kou", "sou",
 		"gros", "sic", "die", "ich", "end", "auf", "ach",
