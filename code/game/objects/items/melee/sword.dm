@@ -93,7 +93,7 @@
 			atom_integrity = max_integrity
 		return TRUE
 
-/obj/item/melee/sword/mass/obj_break(damage_flag)
+/obj/item/melee/sword/mass/atom_break(damage_flag)
 	. = ..()
 	if(!broken)
 		if(isliving(loc))

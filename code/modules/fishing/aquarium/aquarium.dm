@@ -220,7 +220,7 @@
 		ui = new(user, src, "Aquarium", name)
 		ui.open()
 
-/obj/structure/aquarium/obj_break(damage_flag)
+/obj/structure/aquarium/atom_break(damage_flag)
 	. = ..()
 	if(!broken)
 		aquarium_smash()

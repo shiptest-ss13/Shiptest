@@ -69,7 +69,7 @@
 			trigger_alarm()
 	qdel(src)
 
-/obj/structure/displaycase/obj_break(damage_flag)
+/obj/structure/displaycase/atom_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		density = FALSE
 		broken = 1
@@ -561,7 +561,7 @@
 	if(broken)
 		. += span_notice("[src] is sparking and the hover field generator seems to be overloaded. Use a multitool to fix it.")
 
-/obj/structure/displaycase/forsale/obj_break(damage_flag)
+/obj/structure/displaycase/forsale/atom_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		broken = TRUE
 		playsound(src, "shatter", 70, TRUE)

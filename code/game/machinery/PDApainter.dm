@@ -101,7 +101,7 @@
 		return ..()
 
 /obj/machinery/pdapainter/deconstruct(disassembled = TRUE)
-	obj_break()
+	atom_break()
 
 /obj/machinery/pdapainter/attack_hand(mob/user)
 	. = ..()

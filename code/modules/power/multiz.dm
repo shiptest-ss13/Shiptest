@@ -52,7 +52,7 @@
 	else
 		return ..()
 
-/obj/machinery/power/deck_relay/obj_break()
+/obj/machinery/power/deck_relay/atom_break()
 	..()
 	if(broken_status == RELAY_OK)
 		break_connections()

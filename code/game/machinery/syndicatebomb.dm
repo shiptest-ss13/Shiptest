@@ -39,7 +39,7 @@
 	if(.)
 		payload.detonate()
 
-/obj/machinery/syndicatebomb/obj_break()
+/obj/machinery/syndicatebomb/atom_break()
 	if(!try_detonate())
 		..()
 

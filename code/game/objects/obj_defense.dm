@@ -1,8 +1,8 @@
 /obj
 	uses_integrity = TRUE
 
-///the essential proc to call when an obj must receive damage of any kind.
-/obj/proc/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
+/*
+/obj/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
 	if(QDELETED(src))
 		stack_trace("[src] taking damage after deletion")
 		return
@@ -17,21 +17,11 @@
 	atom_integrity = max(atom_integrity - damage_amount, 0)
 	//BREAKING FIRST
 	if(integrity_failure && atom_integrity <= integrity_failure * max_integrity)
-		obj_break(damage_flag)
+		atom_break(damage_flag)
 	//DESTROYING SECOND
 	if(atom_integrity <= 0)
 		obj_destruction(damage_flag)
-
-///the sound played when the obj is damaged.
-/obj/proc/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
-	switch(damage_type)
-		if(BRUTE)
-			if(damage_amount)
-				playsound(src, 'sound/weapons/smash.ogg', 50, TRUE)
-			else
-				playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
-		if(BURN)
-			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
+*/
 
 /obj/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	..()
@@ -75,11 +65,6 @@
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 	take_damage(hulk_damage(), BRUTE, "melee", 0, get_dir(src, user))
 	return TRUE
-
-/obj/proc/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0) //used by attack_alien, attack_animal, and attack_slime
-	user.do_attack_animation(src)
-	user.changeNext_move(CLICK_CD_MELEE)
-	return take_damage(damage_amount, damage_type, damage_flag, sound_effect, get_dir(src, user), armor_penetration)
 
 /obj/attack_alien(mob/living/carbon/alien/humanoid/user)
 	if(attack_generic(user, 60, BRUTE, "melee", 0))
@@ -247,10 +232,6 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 	SEND_SIGNAL(src, COMSIG_OBJ_DECONSTRUCT, disassembled)
 	qdel(src)
 
-///called after the obj takes damage and integrity is below integrity_failure level
-/obj/proc/obj_break(damage_flag)
-	return
-
 ///what happens when the obj's integrity reaches zero.
 /obj/proc/obj_destruction(damage_flag)
 	if(resistance_flags & INDESTRUCTIBLE) //sod off
@@ -262,6 +243,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 	else
 		deconstruct(FALSE)
 
+/*
 ///changes max_integrity while retaining current health percentage, returns TRUE if the obj got broken.
 /obj/proc/modify_max_integrity(new_max, can_break = TRUE, damage_type = BRUTE)
 	var/current_integrity = atom_integrity
@@ -275,9 +257,10 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 	max_integrity = new_max
 
 	if(can_break && integrity_failure && current_integrity <= integrity_failure * max_integrity)
-		obj_break(damage_type)
+		atom_break(damage_type)
 		return TRUE
 	return FALSE
+*/
 
 ///returns how much the object blocks an explosion. Used by subtypes.
 /obj/proc/GetExplosionBlock()

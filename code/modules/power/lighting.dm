@@ -567,7 +567,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		newlight.pixel_y = pixel_y
 		newlight.stage = cur_stage
 		if(!disassembled)
-			newlight.atom_integrity = newlight.max_integrity * 0.5
+			newlight.update_integrity(newlight.max_integrity * 0.5)
 			if(status != LIGHT_BROKEN)
 				break_light_tube()
 			if(status != LIGHT_EMPTY)

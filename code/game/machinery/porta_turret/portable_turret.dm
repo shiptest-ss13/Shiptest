@@ -452,7 +452,7 @@
 		return
 	retaliate(user)
 
-/obj/machinery/porta_turret/obj_break(damage_flag)
+/obj/machinery/porta_turret/atom_break(damage_flag)
 	. = ..()
 	if(.)
 		power_change()

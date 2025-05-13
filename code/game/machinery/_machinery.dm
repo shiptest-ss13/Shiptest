@@ -470,7 +470,7 @@ Class Procs:
 	transfer_fingerprints_to(new_frame)
 
 
-/obj/machinery/obj_break(damage_flag)
+/obj/machinery/atom_break(damage_flag)
 	SHOULD_CALL_PARENT(1)
 	. = ..()
 	if(!(machine_stat & BROKEN) && !(flags_1 & NODECONSTRUCT_1))

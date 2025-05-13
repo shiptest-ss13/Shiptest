@@ -798,7 +798,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return damage_amount
 	. = ..()
 
-/obj/machinery/power/apc/obj_break(damage_flag)
+/obj/machinery/power/apc/atom_break(damage_flag)
 	. = ..()
 	if(.)
 		set_broken()
@@ -1514,7 +1514,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(malfai && operating)
 		malfai.malf_picker.processing_time = clamp(malfai.malf_picker.processing_time - 10,0,1000)
 	operating = FALSE
-	obj_break()
+	atom_break()
 	if(occupier)
 		malfvacate(1)
 	update()

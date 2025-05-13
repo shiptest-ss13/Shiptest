@@ -824,7 +824,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/advanced_airlock_controller/internal,
 	visible_message(span_warning("Sparks fly out of [src]!"), span_notice("You emag [src], disabling its safeties."))
 	playsound(src, "sparks", 50, 1)
 
-/obj/machinery/advanced_airlock_controller/obj_break(damage_flag)
+/obj/machinery/advanced_airlock_controller/atom_break(damage_flag)
 	..()
 	update_appearance()
 

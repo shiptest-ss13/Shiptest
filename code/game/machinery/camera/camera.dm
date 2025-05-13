@@ -404,7 +404,7 @@
 		return damage_amount
 	. = ..()
 
-/obj/machinery/camera/obj_break(damage_flag)
+/obj/machinery/camera/atom_break(damage_flag)
 	if(!status)
 		return
 	. = ..()

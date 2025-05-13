@@ -39,7 +39,7 @@
 		return TRUE
 	return ..()
 
-/obj/vehicle/ridden/secway/obj_break()
+/obj/vehicle/ridden/secway/atom_break()
 	START_PROCESSING(SSobj, src)
 	return ..()
 

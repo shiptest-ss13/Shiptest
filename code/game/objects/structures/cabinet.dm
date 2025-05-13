@@ -95,7 +95,7 @@
 	if(.)
 		update_appearance()
 
-/obj/structure/cabinet/obj_break(damage_flag)
+/obj/structure/cabinet/atom_break(damage_flag)
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		update_appearance()
 		broken = TRUE

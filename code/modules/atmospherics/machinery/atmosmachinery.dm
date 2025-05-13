@@ -260,7 +260,7 @@
 			var/obj/item/pipe/stored = new construction_type(loc, null, dir, src)
 			stored.setPipingLayer(piping_layer)
 			if(!disassembled)
-				stored.atom_integrity = stored.max_integrity * 0.5
+				stored.update_integrity(stored.max_integrity * 0.5)
 			transfer_fingerprints_to(stored)
 	..()
 

@@ -89,7 +89,7 @@
 			playsound(loc, 'sound/items/welder.ogg', 100, TRUE)
 
 
-/obj/machinery/power/solar/obj_break(damage_flag)
+/obj/machinery/power/solar/atom_break(damage_flag)
 	. = ..()
 	if(.)
 		playsound(loc, 'sound/effects/glassbr3.ogg', 100, TRUE)

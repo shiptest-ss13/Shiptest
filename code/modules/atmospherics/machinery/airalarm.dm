@@ -946,7 +946,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		new /obj/item/stack/sheet/metal(loc, 2)
 		var/obj/item/I = new /obj/item/electronics/airalarm(loc)
 		if(!disassembled)
-			I.atom_integrity = I.max_integrity * 0.5
+			I.update_integrity(I.max_integrity * 0.5)
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
 

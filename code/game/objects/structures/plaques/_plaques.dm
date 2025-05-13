@@ -51,7 +51,7 @@
 		unwrenched_plaque.name = name //Copy over the plaque structure variables to the plaque item we're creating when we unwrench it.
 		unwrenched_plaque.desc = desc
 		unwrenched_plaque.engraved = engraved
-	unwrenched_plaque.atom_integrity = atom_integrity
+	unwrenched_plaque.update_integrity(integrity)
 	unwrenched_plaque.setDir(dir)
 	qdel(src) //The plaque structure on the wall goes poof and only the plaque item from unwrenching remains.
 	return TRUE
@@ -189,6 +189,6 @@
 		placed_plaque.name = name
 		placed_plaque.desc = desc
 		placed_plaque.engraved = engraved
-	placed_plaque.atom_integrity = atom_integrity
+	placed_plaque.update_integrity(integrity)
 	placed_plaque.setDir(dir)
 	qdel(src)

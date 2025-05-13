@@ -8,7 +8,6 @@
 	var/damtype = BRUTE
 	var/force = 0
 
-	var/resistance_flags = NONE // INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 
 	var/acid_level = 0 //how much acid is on that obj
 
@@ -46,15 +45,6 @@
 	return ..()
 
 /obj/Initialize(mapload)
-	if (islist(armor))
-		armor = getArmor(arglist(armor))
-	else if (!armor)
-		armor = getArmor()
-	else if (!istype(armor, /datum/armor))
-		stack_trace("Invalid type [armor.type] found in .armor during /obj Initialize()")
-	if(atom_integrity == null)
-		atom_integrity = max_integrity
-
 	. = ..() //Do this after, else mat datums is mad.
 
 	if (set_obj_flags)

@@ -80,7 +80,7 @@
 		unwrenched_sign.desc = "[desc] It can be placed on a wall."
 		unwrenched_sign.icon_state = icon_state
 		unwrenched_sign.sign_path = type
-	unwrenched_sign.atom_integrity = atom_integrity //Transfer how damaged it is.
+	unwrenched_sign.update_integrity(atom_integrity) //Transfer how damaged it is.
 	unwrenched_sign.setDir(dir)
 	qdel(src) //The sign structure on the wall goes poof and only the sign item from unwrenching remains.
 	return TRUE
@@ -204,7 +204,7 @@
 		span_notice("[user] fastens [src] to [target_turf]."), \
 		span_notice("You attach the sign to [target_turf]."))
 	playsound(target_turf, 'sound/items/deconstruct.ogg', 50, TRUE)
-	placed_sign.atom_integrity = atom_integrity
+	placed_sign.update_integrity(atom_integrity)
 	placed_sign.setDir(turn(dir,180)) //SinguloStation13 Edit (Normally all wallframes's dir point away from the wall, not look into it when placed.)
 	qdel(src)
 

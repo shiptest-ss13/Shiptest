@@ -290,7 +290,7 @@
 		deconstruct()
 	..()
 
-/obj/machinery/firealarm/obj_break(damage_flag)
+/obj/machinery/firealarm/atom_break(damage_flag)
 	if(buildstage == 0) //can't break the electronics if there isn't any inside.
 		return
 	. = ..()

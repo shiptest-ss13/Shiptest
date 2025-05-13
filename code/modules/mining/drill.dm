@@ -92,7 +92,7 @@
 		say("Drill integrity failure. Engaging emergency shutdown procedure.")
 		//Just to make sure mobs don't spawn infinitely from the vein and as a failure state for players
 		our_vein.deconstruct()
-	obj_break()
+	atom_break()
 	update_icon_state()
 	update_overlays()
 

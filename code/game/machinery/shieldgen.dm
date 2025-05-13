@@ -93,7 +93,7 @@
 
 
 /obj/machinery/shieldgen/deconstruct(disassembled = TRUE)
-	obj_break()
+	atom_break()
 	locked = pick(0,1)
 
 /obj/machinery/shieldgen/interact(mob/user)
