@@ -60,7 +60,7 @@
 		return TRUE
 	take_damage(damage)
 
-/obj/item/shield/obj_destruction(damage_flag)
+/obj/item/shield/atom_destruction(damage_flag)
 	playsound(src, shield_break_sound, 50)
 	new shield_break_leftover(get_turf(src))
 	if(isliving(loc))

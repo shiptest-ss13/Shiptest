@@ -462,7 +462,7 @@
 	if(!isinhands)
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 
-/obj/item/clothing/neck/crystal_amulet/obj_destruction(damage_flag)
+/obj/item/clothing/neck/crystal_amulet/atom_destruction(damage_flag)
 	visible_message(span_danger("[src] shatters into a million pieces!"))
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))

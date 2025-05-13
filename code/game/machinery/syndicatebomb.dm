@@ -43,7 +43,7 @@
 	if(!try_detonate())
 		..()
 
-/obj/machinery/syndicatebomb/obj_destruction()
+/obj/machinery/syndicatebomb/atom_destruction()
 	if(!try_detonate())
 		..()
 

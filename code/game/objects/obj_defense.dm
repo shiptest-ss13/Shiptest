@@ -20,7 +20,7 @@
 		atom_break(damage_flag)
 	//DESTROYING SECOND
 	if(atom_integrity <= 0)
-		obj_destruction(damage_flag)
+		atom_destruction(damage_flag)
 */
 
 /obj/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
@@ -233,12 +233,13 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 	qdel(src)
 
 ///what happens when the obj's integrity reaches zero.
-/obj/proc/obj_destruction(damage_flag)
+/obj/atom_destruction(damage_flag)
+	. = ..()
 	if(resistance_flags & INDESTRUCTIBLE) //sod off
 		return
-	if(damage_flag == "acid")
+	if(damage_flag == ACID)
 		acid_melt()
-	else if(damage_flag == "fire")
+	else if(damage_flag == FIRE)
 		burn()
 	else
 		deconstruct(FALSE)

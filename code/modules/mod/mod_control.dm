@@ -182,7 +182,7 @@
 	QDEL_NULL(wires)
 	return ..()
 
-/obj/item/mod/control/obj_destruction(damage_flag)
+/obj/item/mod/control/atom_destruction(damage_flag)
 	for(var/obj/item/mod/module/module as anything in modules)
 		uninstall(module)
 	for(var/obj/item/part as anything in mod_parts)
@@ -702,7 +702,7 @@
 		overslotting_parts[part] = null
 	if(QDELETED(src))
 		return
-	obj_destruction(damage_flag)
+	atom_destruction(damage_flag)
 
 /obj/item/mod/control/proc/on_part_deletion(obj/item/part)
 	SIGNAL_HANDLER

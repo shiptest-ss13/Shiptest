@@ -59,7 +59,7 @@
 		return TRUE
 	return ..()
 
-/obj/vehicle/ridden/atv/obj_destruction()
+/obj/vehicle/ridden/atv/atom_destruction()
 	explosion(src, -1, 0, 2, 4, flame_range = 3)
 	return ..()
 

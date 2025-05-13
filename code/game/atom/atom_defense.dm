@@ -32,7 +32,7 @@
 		atom_break(damage_flag)
 	//DESTROYING SECOND
 	if(atom_integrity <= 0)
-		obj_destruction(damage_flag)
+		atom_destruction(damage_flag)
 
 /// Proc for recovering atom_integrity. Returns the amount repaired by
 /atom/proc/repair_damage(amount)

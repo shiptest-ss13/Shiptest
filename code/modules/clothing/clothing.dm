@@ -567,7 +567,7 @@
 	return 0
 
 
-/obj/item/clothing/obj_destruction(damage_flag)
+/obj/item/clothing/atom_destruction(damage_flag)
 	if(damage_flag == "bomb" || damage_flag == "melee")
 		var/turf/T = get_turf(src)
 		//so the shred survives potential turf change from the explosion.

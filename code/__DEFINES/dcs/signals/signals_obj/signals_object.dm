@@ -10,8 +10,8 @@
 #define COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH "obj_default_unfasten_wrench"
 ///from base of /turf/proc/levelupdate(). (intact) true to hide and false to unhide
 #define COMSIG_OBJ_HIDE "obj_hide"
-/// from base of [/atom/proc/obj_destruction]: (damage_flag)
-#define COMSIG_OBJ_DESTRUCTION "obj_destruction"
+/// from base of [/atom/proc/atom_destruction]: (damage_flag)
+#define COMSIG_OBJ_DESTRUCTION "atom_destruction"
 
 /// from /obj/item/obj_reskin: (mob/user, skin)
 #define COMSIG_ITEM_RESKIN "obj_reskin"

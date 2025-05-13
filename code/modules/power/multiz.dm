@@ -61,7 +61,7 @@
 		icon_state = "cablerelay-broken"
 		broken_status = RELAY_ADD_CABLE
 
-/obj/machinery/power/deck_relay/obj_destruction()
+/obj/machinery/power/deck_relay/atom_destruction()
 	return //this shouldn't break under usual means
 
 /obj/machinery/power/deck_relay/Destroy()

@@ -359,7 +359,7 @@
 				visual_effect_icon = ATTACK_EFFECT_MECHTOXIN
 	..()
 
-/obj/mecha/obj_destruction()
+/obj/mecha/atom_destruction()
 	if(wreckage)
 		var/mob/living/silicon/ai/AI
 		if(isAI(occupant))
