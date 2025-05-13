@@ -1,28 +1,6 @@
 /obj
 	uses_integrity = TRUE
 
-/*
-/obj/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
-	if(QDELETED(src))
-		stack_trace("[src] taking damage after deletion")
-		return
-	if(sound_effect)
-		play_attack_sound(damage_amount, damage_type, damage_flag)
-	if((resistance_flags & INDESTRUCTIBLE) || atom_integrity <= 0)
-		return
-	damage_amount = run_atom_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
-	if(damage_amount < DAMAGE_PRECISION)
-		return
-	. = damage_amount
-	atom_integrity = max(atom_integrity - damage_amount, 0)
-	//BREAKING FIRST
-	if(integrity_failure && atom_integrity <= integrity_failure * max_integrity)
-		atom_break(damage_flag)
-	//DESTROYING SECOND
-	if(atom_integrity <= 0)
-		atom_destruction(damage_flag)
-*/
-
 /obj/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	..()
 	take_damage(AM.throwforce, BRUTE, "melee", 1, get_dir(src, AM))
@@ -243,25 +221,6 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 		burn()
 	else
 		deconstruct(FALSE)
-
-/*
-///changes max_integrity while retaining current health percentage, returns TRUE if the obj got broken.
-/obj/proc/modify_max_integrity(new_max, can_break = TRUE, damage_type = BRUTE)
-	var/current_integrity = atom_integrity
-	var/current_max = max_integrity
-
-	if(current_integrity != 0 && current_max != 0)
-		var/percentage = current_integrity / current_max
-		current_integrity = max(1, round(percentage * new_max))	//don't destroy it as a result
-		atom_integrity = current_integrity
-
-	max_integrity = new_max
-
-	if(can_break && integrity_failure && current_integrity <= integrity_failure * max_integrity)
-		atom_break(damage_type)
-		return TRUE
-	return FALSE
-*/
 
 ///returns how much the object blocks an explosion. Used by subtypes.
 /obj/proc/GetExplosionBlock()
