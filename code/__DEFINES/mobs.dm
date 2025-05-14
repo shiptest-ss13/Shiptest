@@ -340,7 +340,6 @@
 #define SHADOW_SPECIES_LIGHT_THRESHOLD 0.2
 
 //MINOR TWEAKS/MISC
-#warn these defines need to be updated / likely removed, due to changed nature of age
 #define AGE_MIN 18 //youngest a character can be
 #define AGE_MAX 85 //oldest a character can be
 #define AGE_MINOR 20 //legal age of space drinking and smoking
