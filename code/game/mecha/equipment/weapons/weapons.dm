@@ -221,9 +221,9 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic
 	name = "general ballistic weapon"
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
-	var/projectiles
+	var/projectiles = 0
 	var/projectiles_max //maximum amount of projectiles that can be chambered.
-	var/projectiles_cache //ammo to be loaded in, if possible.
+	var/projectiles_cache = 0 //ammo to be loaded in, if possible.
 	var/projectiles_cache_max
 	var/projectile_energy_cost
 	var/disabledreload //For weapons with no cache (like the rockets) which are reloaded by hand
@@ -252,6 +252,10 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/rearm()
+	chassis.balloon_alert(chassis.occupant, "rearming...")
+	if(!do_after(chassis.occupant, 4 SECONDS, chassis))
+		chassis.balloon_alert(chassis.occupant, "rearm failed!")
+		return FALSE
 	if(projectiles < projectiles_max)
 		var/projectiles_to_add = projectiles_max - projectiles
 
@@ -272,6 +276,7 @@
 				projectiles_cache = 0
 
 		send_byjax(chassis.occupant,"exosuit.browser","[REF(src)]",src.get_equip_info())
+		chassis.balloon_alert(chassis.occupant, "weapon rearmed!")
 		log_message("Rearmed [src.name].", LOG_MECHA)
 		return TRUE
 
@@ -309,9 +314,8 @@
 	icon_state = "mecha_carbine"
 	equip_cooldown = 10
 	projectile = /obj/projectile/bullet/incendiary/fnx99
-	projectiles = 24
-	projectiles_cache = 24
-	projectiles_cache_max = 96
+	projectiles_max = 24
+	projectiles_cache_max = 48
 	harmful = TRUE
 	ammo_type = "incendiary"
 	eject_casings = TRUE
@@ -326,9 +330,8 @@
 	icon_state = "mecha_scatter"
 	equip_cooldown = 10
 	projectile = /obj/projectile/bullet/pellet/scattershot
-	projectiles = 12
-	projectiles_cache = 24
-	projectiles_cache_max = 72
+	projectiles_max = 24
+	projectiles_cache_max = 48
 	projectiles_per_shot = 8
 	variance = 25
 	harmful = TRUE
@@ -348,9 +351,8 @@
 	icon_state = "mecha_uac2"
 	equip_cooldown = 2
 	projectile = /obj/projectile/bullet/lmg
-	projectiles = 100
-	projectiles_cache = 200
-	projectiles_cache_max = 600
+	projectiles_max = 50
+	projectiles_cache_max = 200
 	variance = 6
 	randomspread = TRUE
 	harmful = TRUE
@@ -368,9 +370,8 @@
 	icon_state = "mecha_railgun"
 	equip_cooldown = 34
 	projectile = /obj/projectile/bullet/p50/penetrator/sabot
-	projectiles = 15
-	projectiles_cache = 30
-	projectiles_cache_max = 90
+	projectiles_max = 15
+	projectiles_cache_max = 60
 	ammo_type = "railgun"
 	fire_sound = 'sound/weapons/blastcannon.ogg'
 
@@ -379,9 +380,7 @@
 	desc = "A heavy calibre machine gun commonly used by motorized forces, famed for it's ability to give people on the recieving end more holes than normal. It is modified to be attached to vehicles"
 	projectile = /obj/projectile/bullet/lmg
 	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
-	projectiles = 0
 	projectiles_max = 100
-	projectiles_cache = 0
 	projectiles_cache_max = 100
 	equip_cooldown = 1 SECONDS
 
@@ -412,8 +411,6 @@
 	icon_state = "mecha_missilerack_six"
 	projectile = /obj/projectile/bullet/a84mm_br
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
-	projectiles = 6
-	projectiles_cache = 0
 	projectiles_cache_max = 0
 	disabledreload = TRUE
 	equip_cooldown = 60
@@ -448,8 +445,6 @@
 	icon_state = "mecha_grenadelnchr"
 	projectile = /obj/item/grenade/flashbang
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
-	projectiles = 6
-	projectiles_cache = 6
 	projectiles_cache_max = 24
 	missile_speed = 1.5
 	equip_cooldown = 60
@@ -465,8 +460,6 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/clusterbang //Because I am a heartless bastard -Sieve //Heartless? for making the poor man's honkblast? - Kaze
 	name = "\improper SOB-3 grenade launcher"
 	desc = "A weapon for combat exosuits. Launches primed clusterbangs. You monster."
-	projectiles = 3
-	projectiles_cache = 0
 	projectiles_cache_max = 0
 	disabledreload = TRUE
 	projectile = /obj/item/grenade/clusterbuster
