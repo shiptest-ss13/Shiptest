@@ -1,3 +1,7 @@
+/proc/random_prosthetic()
+	. = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	.[pick(.)] = PROSTHETIC_ROBOTIC
+
 /proc/random_eye_color()
 	switch(pick(20;"brown",20;"hazel",20;"grey",15;"blue",15;"green",1;"amber",1;"albino"))
 		if("brown")
@@ -17,30 +21,44 @@
 		else
 			return "000000"
 
-#warn note that this is used for randomized prefs (via random_character); we need to be careful about features overlapping with our prefs, before we remove the former
-#warn remove
-// /proc/random_features()
-// 	var/feature_list = list(
-// 		FEATURE_FLAVOR_TEXT = "",
+/proc/random_underwear(gender)
+	if(!GLOB.underwear_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list)
+	return pick(GLOB.underwear_list)
 
-// 		FEATURE_MUTANT_COLOR = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-// 		FEATURE_MUTANT_COLOR2 = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-// 		// FEATURE_IPC_BRAIN = pick(GLOB.ipc_brain_list),
-// 		FEATURE_IPC_CHASSIS = pick(GLOB.ipc_chassis_list),
-// 		FEATURE_BODY_SIZE = pick(GLOB.body_sizes),
+/proc/random_undershirt()
+	if(!GLOB.undershirt_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list)
+	return pick(GLOB.undershirt_list)
 
-// 		FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS,
-// 	)
+/proc/random_socks()
+	if(!GLOB.socks_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/socks, GLOB.socks_list)
+	return pick(GLOB.socks_list)
 
-// 	for(var/datum/sprite_accessory/mutant_part/abstr_part_type as anything in GLOB.mut_part_name_datum_lookup)
-// 		// do not consider non-randomizable part types
-// 		if(!initial(abstr_part_type.randomizable))
-// 			continue
-// 		// look into the list to get the list of options
-// 		var/list/part_option_names = GLOB.mut_part_name_datum_lookup[abstr_part_type]
-// 		// pick an option to add to features
-// 		var/part_type_id = initial(abstr_part_type.mutant_string)
-// 		feature_list[part_type_id] = pick(part_option_names)
+// ! randomization
+/proc/random_features()
+	var/feature_list = list(
+		FEATURE_FLAVOR_TEXT = "",
+
+		FEATURE_MUTANT_COLOR = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		FEATURE_MUTANT_COLOR2 = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		// FEATURE_IPC_BRAIN = pick(GLOB.ipc_brain_list),
+		FEATURE_IPC_CHASSIS = pick(GLOB.ipc_chassis_list),
+		FEATURE_BODY_SIZE = pick(GLOB.body_sizes),
+
+		FEATURE_LEGS_TYPE = FEATURE_NORMAL_LEGS,
+	)
+
+	for(var/datum/sprite_accessory/mutant_part/abstr_part_type as anything in GLOB.mut_part_name_datum_lookup)
+		// do not consider non-randomizable part types
+		if(!initial(abstr_part_type.randomizable))
+			continue
+		// look into the list to get the list of options
+		var/list/part_option_names = GLOB.mut_part_name_datum_lookup[abstr_part_type]
+		// pick an option to add to features
+		var/part_type_id = initial(abstr_part_type.mutant_string)
+		feature_list[part_type_id] = pick(part_option_names)
 
 // 	return feature_list
 

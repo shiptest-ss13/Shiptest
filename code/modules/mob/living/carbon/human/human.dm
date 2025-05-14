@@ -58,7 +58,8 @@
 
 	// randomizes "downwards" from list pref_value_preset, in the process coming up with other settings for the mob
 	var/list/full_pref_preset = get_randomized_pref_value_list(pref_value_preset)
-	apply_pref_value_list_to_human(src, full_pref_preset, PREFS_NO_GEAR)
+	// ! This was written to include PREFS_NO_GEAR but nothing in the code uses this mystery define
+	apply_pref_value_list_to_human(src, full_pref_preset)
 
 	. = ..()
 
