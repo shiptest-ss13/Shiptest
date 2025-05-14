@@ -429,7 +429,7 @@ ammo
 /datum/supply_pack/mech/ammo/missile_rack_ammo
 	name = "BRM-6 missile box"
 	desc = "Contains a box of six breaching missiles designed to explode upon striking hard surfaces."
-	cost = 600 //these are remarkably inefficient against anything except mechs
+	cost = 600 //these are remarkably inefficient against anything except exosuits
 	contains = list(
 		/obj/item/mecha_ammo/missiles_br
 	)
