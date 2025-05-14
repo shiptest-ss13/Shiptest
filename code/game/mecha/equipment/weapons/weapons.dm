@@ -253,7 +253,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/rearm()
 	chassis.balloon_alert(chassis.occupant, "rearming...")
-	if(!do_after(chassis.occupant, 4 SECONDS, chassis))
+	if(!do_after(chassis.occupant, 4 SECONDS, chassis, IGNORE_TARGET_LOC_CHANGE))
 		chassis.balloon_alert(chassis.occupant, "rearm failed!")
 		return FALSE
 	if(projectiles < projectiles_max)
