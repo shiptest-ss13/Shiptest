@@ -824,3 +824,20 @@
 			. += sanitize_simple("[item]", list("{"="", "}"="", "\""="", ";"="", ","=""))
 		first_entry = FALSE
 	. += ")"
+
+/// Turns an associative list into a flat list of keys
+/proc/assoc_to_keys(list/input)
+	var/list/keys = list()
+	for(var/key in input)
+		UNTYPED_LIST_ADD(keys, key)
+	return keys
+
+/// Turns an associative list into a flat list of keys, but for sprite accessories, respecting the locked variable
+/proc/assoc_to_keys_features(list/input)
+	var/list/keys = list()
+	for(var/key in input)
+		var/datum/sprite_accessory/value = input[key]
+		if(value?.locked)
+			continue
+		UNTYPED_LIST_ADD(keys, key)
+	return keys
