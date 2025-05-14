@@ -1,4 +1,5 @@
-#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach)
+#define ELZUOSE_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
+#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach, /turf/open/floor/plating/asteroid/dirt)
 #define DIG_TIME (7.5 SECONDS)
 #define ROOT_TIME (3 SECONDS)
 #define ROOT_CHARGE_GAIN (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
@@ -13,7 +14,6 @@
 	mutantstomach = /obj/item/organ/stomach/ethereal
 	mutanttongue = /obj/item/organ/tongue/ethereal
 	siemens_coeff = 0.5 //They thrive on energy
-	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR)
@@ -24,11 +24,12 @@
 	toxic_food = NONE
 	// Body temperature for ethereals is much higher then humans as they like hotter environments
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
-	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_SPREAD // about 150C
+	bodytemp_heat_damage_limit = (HUMAN_BODYTEMP_NORMAL + 65)
 	// Cold temperatures hurt faster as it is harder to move with out the heat energy
-	bodytemp_cold_damage_limit = (T20C - 10) // about 10c
+	bodytemp_cold_damage_limit = (HUMAN_BODYTEMP_NORMAL - 20)
 
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 100
+	min_temp_comfortable = (HUMAN_BODYTEMP_NORMAL - 10)
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 55
 
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
@@ -244,8 +245,11 @@
 		var/turf/terrain = get_turf(_human)
 		if(_human.has_status_effect(/datum/status_effect/rooted))
 			return FALSE
-		if(is_type_in_list(terrain,GOOD_SOIL))
+		if(is_type_in_list(terrain, GOOD_SOIL))
 			return TRUE
+		for(var/atom/movable/thing in terrain.contents)
+			if(is_type_in_list(thing, list(/obj/machinery/hydroponics/wooden, /obj/machinery/hydroponics/soil)))
+				return TRUE
 		return FALSE
 
 /* Color mechanics */
@@ -329,4 +333,58 @@
 	emp_effect = FALSE
 	update_elzu_color(H)
 
-	to_chat(H, span_notice("You feel more energized as your shine comes back."))
+/datum/species/elzuose/proc/stop_emp(mob/living/carbon/human/_human)
+	EMPeffect = FALSE
+	spec_updatehealth(_human)
+	to_chat(_human, span_notice("You feel more energized as your shine comes back."))
+
+/datum/species/elzuose/proc/handle_charge(mob/living/carbon/human/_human)
+	brutemod = 1.25
+	switch(get_charge(_human))
+		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
+			if(get_charge(_human) == ELZUOSE_CHARGE_NONE)
+				_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 3)
+			else
+				_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 2)
+			if(_human.health > 10.5)
+				apply_damage(0.2, TOX, null, null, _human)
+		if(ELZUOSE_CHARGE_LOWPOWER to ELZUOSE_CHARGE_NORMAL)
+			_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 1)
+		if(ELZUOSE_CHARGE_FULL to ELZUOSE_CHARGE_OVERLOAD)
+			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 1)
+		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
+			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 2)
+			if(prob(10)) //10% each tick for ethereals to explosively release excess energy if it reaches dangerous levels
+				discharge_process(_human)
+		else
+			_human.clear_alert("ELZUOSE_CHARGE")
+			_human.clear_alert("ethereal_overcharge")
+
+/datum/species/elzuose/proc/discharge_process(mob/living/carbon/human/_human)
+	_human.visible_message(span_danger("[_human] begins to spark violently!"),_human,span_warning("You begin to lose control over your charge!"))
+	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
+	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
+	_human.add_overlay(overcharge)
+	if(do_after(_human, 50, _human, TRUE))
+		_human.flash_lighting_fx(5, 7, current_color)
+		var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
+		playsound(_human, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
+		_human.cut_overlay(overcharge)
+		tesla_zap(_human, 2, (stomach.crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
+		if(istype(stomach))
+			stomach.adjust_charge(ELZUOSE_CHARGE_FULL - stomach.crystal_charge)
+		to_chat(_human,span_warning("You violently discharge energy!"))
+		_human.visible_message(span_danger("[_human] violently discharges energy!"))
+		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
+			var/datum/disease/D = new /datum/disease/heart_failure
+			_human.ForceContractDisease(D)
+			to_chat(_human, span_userdanger("You're pretty sure you just felt your heart stop for a second there."))
+			_human.playsound_local(_human, 'sound/effects/singlebeat.ogg', 100, 0)
+		_human.Paralyze(100)
+		return
+
+/datum/species/elzuose/proc/get_charge(mob/living/carbon/_human) //this feels like it should be somewhere else. Eh?
+	var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
+	if(istype(stomach))
+		return stomach.crystal_charge
+	return ELZUOSE_CHARGE_NONE

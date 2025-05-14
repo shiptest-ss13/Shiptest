@@ -3,7 +3,7 @@
 	name = "\improper Vox"
 	id = SPECIES_VOX
 	species_age_max = 280
-	species_traits = list(EYECOLOR, NO_UNDERWEAR)
+	species_traits = list(EYECOLOR)
 	mutant_bodyparts = list()
 	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
@@ -15,7 +15,7 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	species_clothing_path = 'icons/mob/clothing/species/vox.dmi'
-	species_eye_path = 'icons/mob/vox_parts.dmi'
+	species_eye_path = 'icons/mob/species/vox/vox_parts.dmi'
 	punchdamagelow = 6
 	punchdamagehigh = 12
 	mutanttongue = /obj/item/organ/tongue/vox
@@ -25,8 +25,11 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 20
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 10
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 20
+
+	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 10
+	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 20
 
 	bodytype = BODYTYPE_VOX
 
@@ -116,7 +119,7 @@
 	if(allergic_to[chem.type]) //Is_type_in_typecache is BAD.
 		H.reagents.add_reagent(/datum/reagent/toxin/histamine, chem.metabolization_rate * 3)
 		if(prob(5))
-			to_chat(H, "<span class='danger'>[pick(allergy_reactions)]</span>")
+			to_chat(H, span_danger("[pick(allergy_reactions)]"))
 		else if(prob(5))
 			H.emote("clack")
 		return FALSE //Its a bit TOO mean to have the chems not work at all.
@@ -174,17 +177,17 @@
 		if(I && I.w_class <= WEIGHT_CLASS_SMALL)
 			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
 				held_item = I
-				to_chat(H,"<span class='notice'>You move \the [I] into your tail's grip.</span>")
+				to_chat(H,span_notice("You move \the [I] into your tail's grip."))
 				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 				handle_sprite_magic(force = TRUE)
 				return
 
-		to_chat(H, "<span class='warning'>You are unable to hold that item in your tail!</span>")
+		to_chat(H, span_warning("You are unable to hold that item in your tail!"))
 
 /datum/action/innate/tail_hold/proc/on_examine(datum/source, mob/user, list/examine_list)
 	var/mob/living/carbon/human/H = owner
 	if(held_item)
-		examine_list += "<span class='notice'>[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.</span>"
+		examine_list += span_notice("[capitalize(H.p_they())] [H.p_are()] holding \a [held_item] in [H.p_their()] tail.")
 
 /datum/action/innate/tail_hold/proc/handle_sprite_magic(mob/M, olddir, newdir, force = FALSE)
 	if(!held_item)

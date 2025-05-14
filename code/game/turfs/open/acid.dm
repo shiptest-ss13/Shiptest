@@ -1,6 +1,7 @@
 /turf/open/water/acid
 	name = "acid lake"
 	desc = "A lake of acid."
+	icon = 'icons/turf/floors/ws_floors.dmi'
 	icon_state = "acid"
 	baseturfs = /turf/open/water/acid
 	slowdown = 2
@@ -49,7 +50,7 @@
 	if(melt_stuff(AM))
 		START_PROCESSING(SSobj, src)
 
-/turf/open/water/acid/process()
+/turf/open/water/acid/process(seconds_per_tick)
 	if(!melt_stuff())
 		STOP_PROCESSING(SSobj, src)
 
@@ -109,7 +110,7 @@
 				object_to_melt.resistance_flags &= ~UNACIDABLE
 			if(object_to_melt.armor.acid == 100) //acid proof armor will probably be acid proof
 				continue
-			object_to_melt.acid_act(10, 20)
+			object_to_melt.acid_act(10, 1)
 
 		else if (isliving(thing))
 			. = TRUE
@@ -145,4 +146,8 @@
 
 /turf/open/water/acid/whitesands
 	planetary_atmos = TRUE
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+
+/turf/open/water/acid/waste
+	planetary_atmos = TRUE
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS

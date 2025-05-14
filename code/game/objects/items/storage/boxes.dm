@@ -57,12 +57,12 @@
 	if(!foldable)
 		return
 	if(contents.len)
-		to_chat(user, "<span class='warning'>You can't fold this box with items still inside!</span>")
+		to_chat(user, span_warning("You can't fold this box with items still inside!"))
 		return
 	if(!ispath(foldable))
 		return
 
-	to_chat(user, "<span class='notice'>You fold [src] flat.</span>")
+	to_chat(user, span_notice("You fold [src] flat."))
 	var/obj/item/I = new foldable
 	qdel(src)
 	user.put_in_hands(I)
@@ -101,6 +101,14 @@
 /obj/item/storage/box/disks/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)
+
+/obj/item/storage/box/holodisc
+	name = "holodisc box"
+	illustration = "disk_kit"
+
+/obj/item/storage/box/holodisc/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/disk/holodisk(src)
 
 //guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
@@ -161,7 +169,7 @@
 
 // Security survival box
 /obj/item/storage/box/survival/security
-	mask_type = /obj/item/clothing/mask/gas/sechailer
+	mask_type = /obj/item/clothing/mask/gas
 
 // Medical survival box
 /obj/item/storage/box/survival/medical
@@ -171,8 +179,12 @@
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
 
 /obj/item/storage/box/survival/clip/balaclava
-	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
+	mask_type = /obj/item/clothing/mask/balaclava
 	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+
+/obj/item/storage/box/survival/inteq
+	mask_type = /obj/item/clothing/mask/balaclava/inteq
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/item/storage/box/survival/frontier
 	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
@@ -273,11 +285,11 @@
 	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/kelotane(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/dexalin(src)
 
-/obj/item/storage/box/hypospray/CMO
-	name = "advanced hypospray mk. II kit"
+/obj/item/storage/box/hypospray/mkiii
+	name = "hypospray mk. III kit"
 
-/obj/item/storage/box/hypospray/CMO/PopulateContents()
-	new /obj/item/hypospray/mkii/CMO(src)
+/obj/item/storage/box/hypospray/mkiii/PopulateContents()
+	new /obj/item/hypospray/mkii/mkiii(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/bicaridine(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/antitoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/vial/large/preloaded/kelotane(src)
@@ -302,6 +314,16 @@
 		/obj/item/dnainjector/h2m = 3,
 		/obj/item/dnainjector/m2h = 3)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/smokebombs
+	name = "box of smoke grenades (WARNING)"
+	desc = "<B>WARNING: Do not use in enclosed areas. Protective mask must be worn when in smoke cloud.</B>"
+	icon_state = "secbox"
+	illustration = "flashbang"
+
+/obj/item/storage/box/smokebombs/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/grenade/smokebomb(src)
 
 /obj/item/storage/box/flashbangs
 	name = "box of flashbangs (WARNING)"
@@ -640,7 +662,7 @@
 
 /obj/item/storage/box/mousetraps
 	name = "box of Pest-B-Gon mousetraps"
-	desc = "<span class='alert'>Keep out of reach of children.</span>"
+	desc = span_alert("Keep out of reach of children.")
 	illustration = "mousetrap"
 
 /obj/item/storage/box/mousetraps/PopulateContents()
@@ -675,7 +697,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	drop_sound = 'sound/items/handling/matchbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/matchbox_pickup.ogg'
-	custom_price = 20
+	custom_price = 2
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)
@@ -683,6 +705,11 @@
 /obj/item/storage/box/matches/attackby(obj/item/match/W as obj, mob/user as mob, params)
 	if(istype(W, /obj/item/match))
 		W.matchignite()
+
+/obj/item/storage/box/matches/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.set_holdable(list(/obj/item/match, null))
 
 /obj/item/storage/box/lights
 	name = "box of replacement bulbs"
@@ -733,6 +760,14 @@
 	for(var/i in 1 to 7)
 		new /obj/item/flashlight/flare(src)
 
+/obj/item/storage/box/glowsticks
+	name = "box of glowsticks"
+	illustration = "sparkler"
+
+/obj/item/storage/box/glowsticks/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/effect/spawner/random/decoration/glowstick(src)
+
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"
 	desc = "To be issued to those authorized to act as deputy of security."
@@ -772,28 +807,7 @@
 	..()
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, "rustle", 50, TRUE, -5)
-	user.visible_message("<span class='notice'>[user] hugs \the [src].</span>","<span class='notice'>You hug \the [src].</span>")
-
-/////clown box & honkbot assembly
-/obj/item/storage/box/clown
-	name = "clown box"
-	desc = "A colorful cardboard box for the clown"
-	illustration = "clown"
-
-/obj/item/storage/box/clown/attackby(obj/item/I, mob/user, params)
-	if((istype(I, /obj/item/bodypart/l_arm/robot)) || (istype(I, /obj/item/bodypart/r_arm/robot)))
-		if(contents.len) //prevent accidently deleting contents
-			to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
-			return
-		if(!user.temporarilyRemoveItemFromInventory(I))
-			return
-		qdel(I)
-		to_chat(user, "<span class='notice'>You add some wheels to the [src]! You've got a honkbot assembly now! Honk!</span>")
-		var/obj/item/bot_assembly/honkbot/A = new
-		qdel(src)
-		user.put_in_hands(A)
-	else
-		return ..()
+	user.visible_message(span_notice("[user] hugs \the [src]."),span_notice("You hug \the [src]."))
 
 //////
 /obj/item/storage/box/hug/medical/PopulateContents()
@@ -920,19 +934,19 @@
 				desc = "A paper sack with a crude smile etched onto the side."
 			else
 				return FALSE
-		to_chat(user, "<span class='notice'>You make some modifications to [src] using your pen.</span>")
+		to_chat(user, span_notice("You make some modifications to [src] using your pen."))
 		icon_state = "paperbag_[choice]"
 		item_state = "paperbag_[choice]"
 		return FALSE
 	else if(W.get_sharpness())
 		if(!contents.len)
 			if(item_state == "paperbag_None")
-				user.show_message("<span class='notice'>You cut eyeholes into [src].</span>", MSG_VISUAL)
+				user.show_message(span_notice("You cut eyeholes into [src]."), MSG_VISUAL)
 				new /obj/item/clothing/head/papersack(user.loc)
 				qdel(src)
 				return FALSE
 			else if(item_state == "paperbag_SmileyFace")
-				user.show_message("<span class='notice'>You cut eyeholes into [src] and modify the design.</span>", MSG_VISUAL)
+				user.show_message(span_notice("You cut eyeholes into [src] and modify the design."), MSG_VISUAL)
 				new /obj/item/clothing/head/papersack/smiley(user.loc)
 				qdel(src)
 				return FALSE
@@ -951,10 +965,10 @@
 	if(user.incapacitated())
 		return FALSE
 	if(contents.len)
-		to_chat(user, "<span class='warning'>You can't modify [src] with items still inside!</span>")
+		to_chat(user, span_warning("You can't modify [src] with items still inside!"))
 		return FALSE
 	if(!P || !user.is_holding(P))
-		to_chat(user, "<span class='warning'>You need a pen to modify [src]!</span>")
+		to_chat(user, span_warning("You need a pen to modify [src]!"))
 		return FALSE
 	return TRUE
 
@@ -987,7 +1001,7 @@
 			/obj/item/reagent_containers/food/snacks/grown/tomato,
 			/obj/item/reagent_containers/food/snacks/grown/carrot,
 			/obj/item/reagent_containers/food/snacks/grown/potato,
-			/obj/item/reagent_containers/food/snacks/grown/potato/sweet,
+			/obj/item/reagent_containers/food/snacks/grown/sweet_potato,
 			/obj/item/reagent_containers/food/snacks/grown/apple,
 			/obj/item/reagent_containers/food/snacks/chocolatebar,
 			/obj/item/reagent_containers/food/snacks/grown/cherries,
@@ -1067,7 +1081,7 @@
 
 /obj/item/storage/box/ingredients/delights/PopulateContents()
 	for(var/i in 1 to 2)
-		new /obj/item/reagent_containers/food/snacks/grown/potato/sweet(src)
+		new /obj/item/reagent_containers/food/snacks/grown/sweet_potato(src)
 		new /obj/item/reagent_containers/food/snacks/grown/bluecherries(src)
 	new /obj/item/reagent_containers/food/snacks/grown/vanillapod(src)
 	new /obj/item/reagent_containers/food/snacks/grown/cocoapod(src)
@@ -1260,6 +1274,41 @@
 		/obj/item/stock_parts/matter_bin/adv = 2)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/stockparts/t2/capacitor
+
+/obj/item/storage/box/stockparts/t2/capacitor/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/adv = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/scan
+
+/obj/item/storage/box/stockparts/t2/scan/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/scanning_module/adv = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/manipulator
+
+/obj/item/storage/box/stockparts/t2/manipulator/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/manipulator/nano = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/laser
+
+/obj/item/storage/box/stockparts/t2/laser/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/micro_laser/high = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t2/matter
+
+/obj/item/storage/box/stockparts/t2/matter/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/matter_bin/adv = 10)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/stockparts/t3
 	name = "box of T3 stock parts"
 	desc = "Contains a variety of super stock parts."
@@ -1271,6 +1320,41 @@
 		/obj/item/stock_parts/manipulator/pico = 2,
 		/obj/item/stock_parts/micro_laser/ultra = 2,
 		/obj/item/stock_parts/matter_bin/super = 2)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/capacitor
+
+/obj/item/storage/box/stockparts/t3/capacitor/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/super = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/scan
+
+/obj/item/storage/box/stockparts/t3/scan/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/scanning_module/phasic = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/manipulator
+
+/obj/item/storage/box/stockparts/t3/manipulator/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/manipulator/pico = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/laser
+
+/obj/item/storage/box/stockparts/t3/laser/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/micro_laser/ultra = 10)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3/matter
+
+/obj/item/storage/box/stockparts/t3/matter/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/matter_bin/super = 10)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/stockparts/deluxe
@@ -1303,30 +1387,6 @@
 		/obj/item/screwdriver = 1)
 	generate_items_inside(items_inside,src)
 
-//It's a maid costume from the IRMG and Syndicate, what else.
-/obj/item/storage/box/inteqmaid
-	name = "IRMG non standard issue maid outfit"
-	desc = "A box containing a 'tactical' and 'practical' maid outfit from the IRMG."
-
-/obj/item/storage/box/inteqmaid/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/clothing/head/maidheadband/inteq = 1,
-		/obj/item/clothing/under/syndicate/inteq/skirt/maid = 1,
-		/obj/item/clothing/gloves/combat/maid/inteq = 1,)
-	generate_items_inside(items_inside,src)
-
-/obj/item/storage/box/syndimaid
-	name = "Syndicate maid outfit"
-	desc = "A box containing a 'tactical' and 'practical' maid outfit."
-	icon_state = "syndiebox"
-
-/obj/item/storage/box/syndimaid/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/clothing/head/maidheadband/syndicate = 1,
-		/obj/item/clothing/under/syndicate/skirt/maid = 1,
-		/obj/item/clothing/gloves/combat/maid = 1,)
-	generate_items_inside(items_inside,src)
-
 // because i have no idea where the fuck to put this
 /obj/item/storage/box/maid
 	name = "Maid box"
@@ -1337,7 +1397,8 @@
 		/obj/item/clothing/head/maidheadband = 1,
 		/obj/item/clothing/under/costume/maid = 1,
 		/obj/item/clothing/gloves/maid = 1,
-		/obj/item/clothing/neck/maid = 1,)
+		/obj/item/clothing/neck/maid = 1,
+		/obj/item/clothing/accessory/maidapron = 1,)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/material
@@ -1449,7 +1510,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	illustration = null
 	foldable = null
-	custom_price = 120
+	custom_price = 5
 
 /obj/item/storage/box/gum/ComponentInitialize()
 	. = ..()
@@ -1464,7 +1525,7 @@
 	name = "nicotine gum packet"
 	desc = "Designed to help with nicotine addiction and oral fixation all at once without destroying your lungs in the process. Mint flavored!"
 	icon_state = "bubblegum_nicotine"
-	custom_premium_price = 275
+	custom_premium_price = 10
 
 /obj/item/storage/box/gum/nicotine/PopulateContents()
 	for(var/i in 1 to 4)
@@ -1474,8 +1535,8 @@
 	name = "HP+ gum packet"
 	desc = "A seemingly homemade packaging with an odd smell. It has a weird drawing of a smiling face sticking out its tongue."
 	icon_state = "bubblegum_happiness"
-	custom_price = 300
-	custom_premium_price = 300
+	custom_price = 10
+	custom_premium_price = 10
 
 /obj/item/storage/box/gum/happiness/Initialize()
 	. = ..()

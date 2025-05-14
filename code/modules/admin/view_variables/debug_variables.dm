@@ -26,10 +26,10 @@
 			name_part = "<a href='?_src_=vars;[HrefToken()];Vars=[REF(name)]'> /list ([length(L)]) [REF(name)]</a>"
 
 	if (isnull(value))
-		item = "[name_part] = <span class='value'>null</span>"
+		item = "[name_part] = [span_value("null")]"
 
 	else if (istext(value))
-		item = "[name_part] = <span class='value'>\"[VV_HTML_ENCODE(value)]\"</span>"
+		item = "[name_part] = [span_value("\"[VV_HTML_ENCODE(value)]\"")]"
 
 	else if (isicon(value))
 		#ifdef VARSICON
@@ -37,13 +37,13 @@
 		var/rnd = rand(1,10000)
 		var/rname = "tmp[REF(I)][rnd].png"
 		usr << browse_rsc(I, rname)
-		item = "[name_part] = (<span class='value'>[value]</span>) <img class=icon src=\"[rname]\">"
+		item = "[name_part] = ([span_value("[value]")]) <img class=icon src=\"[rname]\">"
 		#else
-		item = "[name_part] = /icon (<span class='value'>[value]</span>)"
+		item = "[name_part] = /icon ([span_value("[value]")])"
 		#endif
 
 	else if (isfile(value))
-		item = "[name_part] = <span class='value'>'[value]'</span>"
+		item = "[name_part] = [span_value("'[value]'")]"
 
 	else if(istype(value,/matrix)) // Needs to be before datum
 		var/matrix/M = value
@@ -95,7 +95,7 @@
 			// in that case it should be easier to realize that the value isn't fully encapsulated by the listed bitflags
 			item = "[name_part] = [VV_HTML_ENCODE(jointext(flags, ", "))] = <span class='value'>[VV_HTML_ENCODE(value)] (Raw)</span>"
 	else
-		item = "[name_part] = <span class='value'>[VV_HTML_ENCODE(value)]</span>"
+		item = "[name_part] = [span_value("[VV_HTML_ENCODE(value)]")]"
 
 	return "[header][item]</li>"
 

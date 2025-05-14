@@ -26,6 +26,8 @@
 	hud_type = /datum/hud/monkey
 	melee_damage_lower = 1
 	melee_damage_upper = 3
+	ai_controller = /datum/ai_controller/monkey
+	faction = list("neutral", "monkey")
 
 /mob/living/carbon/monkey/Initialize(mapload, cubespawned=FALSE, mob/spawner)
 	add_verb(src, /mob/living/proc/mob_sleep)
@@ -45,7 +47,7 @@
 		var/cap = CONFIG_GET(number/monkeycap)
 		if (LAZYLEN(SSmobs.cubemonkeys) > cap)
 			if (spawner)
-				to_chat(spawner, "<span class='warning'>Bluespace harmonics prevent the spawning of more than [cap] monkeys in this sector at one time!</span>")
+				to_chat(spawner, span_warning("Bluespace harmonics prevent the spawning of more than [cap] monkeys in this sector at one time!"))
 			return INITIALIZE_HINT_QDEL
 		SSmobs.cubemonkeys += src
 
@@ -115,7 +117,7 @@
 
 /mob/living/carbon/monkey/can_use_guns(obj/item/G)
 	if(G.trigger_guard == TRIGGER_GUARD_NONE)
-		to_chat(src, "<span class='warning'>You are unable to fire this!</span>")
+		to_chat(src, span_warning("You are unable to fire this!"))
 		return FALSE
 	return TRUE
 
@@ -169,10 +171,10 @@
 	return 1
 
 /mob/living/carbon/monkey/angry
-	aggressive = TRUE
 
 /mob/living/carbon/monkey/angry/Initialize()
 	. = ..()
+	ai_controller.blackboard[BB_MONKEY_AGRESSIVE] = TRUE
 	if(prob(10))
 		var/obj/item/clothing/head/helmet/justice/escape/helmet = new(src)
 		equip_to_slot_or_del(helmet,ITEM_SLOT_HEAD)

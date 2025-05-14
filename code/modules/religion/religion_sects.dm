@@ -100,7 +100,7 @@
 	for(var/X in H.bodyparts)
 		var/obj/item/bodypart/BP = X
 		if(BODYTYPE_ROBOTIC in BP.bodytype)
-			to_chat(user, "<span class='warning'>[GLOB.deity] refuses to heal this metallic taint!</span>")
+			to_chat(user, span_warning("[GLOB.deity] refuses to heal this metallic taint!"))
 			return TRUE
 
 	var/heal_amt = 10
@@ -111,8 +111,8 @@
 			var/obj/item/bodypart/affecting = X
 			if(affecting.heal_damage(heal_amt, heal_amt, null, BODYTYPE_ORGANIC))
 				H.update_damage_overlays()
-		H.visible_message("<span class='notice'>[user] heals [H] with the power of [GLOB.deity]!</span>")
-		to_chat(H, "<span class='boldnotice'>May the power of [GLOB.deity] compel you to be healed!</span>")
+		H.visible_message(span_notice("[user] heals [H] with the power of [GLOB.deity]!"))
+		to_chat(H, span_boldnotice("May the power of [GLOB.deity] compel you to be healed!"))
 		playsound(user, "punch", 25, TRUE, -1)
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
 	return TRUE
@@ -136,8 +136,8 @@
 		var/mob/living/silicon/robot/R = L
 		var/charge_amt = 50
 		R.cell?.charge += charge_amt
-		R.visible_message("<span class='notice'>[user] charges [R] with the power of [GLOB.deity]!</span>")
-		to_chat(R, "<span class='boldnotice'>You are charged by the power of [GLOB.deity]!</span>")
+		R.visible_message(span_notice("[user] charges [R] with the power of [GLOB.deity]!"))
+		to_chat(R, span_boldnotice("You are charged by the power of [GLOB.deity]!"))
 		SEND_SIGNAL(R, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
 		playsound(user, 'sound/effects/bang.ogg', 25, TRUE, -1)
 		return TRUE
@@ -156,10 +156,10 @@
 	var/obj/item/bodypart/BP = H.get_bodypart(user.zone_selected)
 	if(IS_ORGANIC_LIMB(BP))
 		if(!did_we_charge)
-			to_chat(user, "<span class='warning'>[GLOB.deity] scoffs at the idea of healing such fleshy matter!</span>")
+			to_chat(user, span_warning("[GLOB.deity] scoffs at the idea of healing such fleshy matter!"))
 		else
-			H.visible_message("<span class='notice'>[user] charges [H] with the power of [GLOB.deity]!</span>")
-			to_chat(H, "<span class='boldnotice'>You feel charged by the power of [GLOB.deity]!</span>")
+			H.visible_message(span_notice("[user] charges [H] with the power of [GLOB.deity]!"))
+			to_chat(H, span_boldnotice("You feel charged by the power of [GLOB.deity]!"))
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
 			playsound(user, 'sound/machines/synth_yes.ogg', 25, TRUE, -1)
 		return TRUE
@@ -168,8 +168,8 @@
 	if(BP.heal_damage(5,5,null,BODYTYPE_ROBOTIC))
 		H.update_damage_overlays()
 
-	H.visible_message("<span class='notice'>[user] [did_we_charge ? "repairs" : "repairs and charges"] [H] with the power of [GLOB.deity]!</span>")
-	to_chat(H, "<span class='boldnotice'>The inner machinations of [GLOB.deity] [did_we_charge ? "repairs" : "repairs and charges"] you!</span>")
+	H.visible_message(span_notice("[user] [did_we_charge ? "repairs" : "repairs and charges"] [H] with the power of [GLOB.deity]!"))
+	to_chat(H, span_boldnotice("The inner machinations of [GLOB.deity] [did_we_charge ? "repairs" : "repairs and charges"] you!"))
 	playsound(user, 'sound/effects/bang.ogg', 25, TRUE, -1)
 	SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
 	return TRUE
@@ -179,7 +179,7 @@
 		return FALSE
 	var/obj/item/stock_parts/cell/the_cell = I
 	if(the_cell.charge < 3000)   // stops people from grabbing cells out of APCs
-		to_chat(L, "<span class='notice'>[GLOB.deity] does not accept pity amounts of power.</span>")
+		to_chat(L, span_notice("[GLOB.deity] does not accept pity amounts of power."))
 		return FALSE
 	return TRUE
 
@@ -189,7 +189,7 @@
 		return
 	var/obj/item/stock_parts/cell/the_cell = I
 	adjust_favor(round(the_cell.charge/500), L)
-	to_chat(L, "<span class='notice'>You offer [the_cell]'s power to [GLOB.deity], pleasing them.</span>")
+	to_chat(L, span_notice("You offer [the_cell]'s power to [GLOB.deity], pleasing them."))
 	qdel(I)
 
 
@@ -204,16 +204,16 @@
 
 /datum/religion_sect/clockwork/on_conversion(mob/living/L)
 	..()
-	L.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_MIND)
-	to_chat(L, "<span class='boldnotice'>The words of [GLOB.deity] fill your head!</span>")
+	L.grant_language(/datum/language/ratvar, source=LANGUAGE_MIND)
+	to_chat(L, span_boldnotice("The words of [GLOB.deity] fill your head!"))
 
 /datum/religion_sect/clockwork/sect_bless(mob/living/L, mob/living/user)
 	if(!L.has_language(/datum/language/ratvar, TRUE))
-		L.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_MIND)
-		L.visible_message("<span class='notice'>[user] enlightens [L] with the power of [GLOB.deity]!</span>")
-		to_chat(L, "<span class='boldnotice'>The words of [GLOB.deity] fill your head!</span>")
+		L.grant_language(/datum/language/ratvar, source=LANGUAGE_MIND)
+		L.visible_message(span_notice("[user] enlightens [L] with the power of [GLOB.deity]!"))
+		to_chat(L, span_boldnotice("The words of [GLOB.deity] fill your head!"))
 
-	L.visible_message("<span class='notice'>[user] blesses [L] with the power of [GLOB.deity]!</span>")
+	L.visible_message(span_notice("[user] blesses [L] with the power of [GLOB.deity]!"))
 	playsound(user, 'sound/effects/bang.ogg', 25, TRUE, -1)
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
 	return TRUE
@@ -223,5 +223,5 @@
 		return
 	var/obj/item/stack/sheet/sheets = I
 	adjust_favor(sheets.amount, L)
-	to_chat(L, "<span class='notice'>You offer [sheets] to [GLOB.deity], pleasing them.</span>")
+	to_chat(L, span_notice("You offer [sheets] to [GLOB.deity], pleasing them."))
 	qdel(I)

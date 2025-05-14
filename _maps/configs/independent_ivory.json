@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "F-80 Ivory-class Yacht",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "ISF Spacecraft",
+	"namelists": [
+		"CRUISE",
+		"SPACE",
+		"NATURAL"
+	],
+	"map_short_name": "Ivory-class",
+	"map_path": "_maps/shuttles/independent/independent_ivory.dmm",
+	"description": "Manufactured by ISF Shipyards, the F-80 is a small, nimble yacht popular as a leisure craft throughout the core worlds. While rare on the Frontier, F-80s are occasionally seen touring the CLIP worlds or taking part in hunting trips by wealthy coreworlders pursuing the Frontier's infamous megafauna. Frequently, a Saint-Roumain Militia hunter will be hired as a hunting guide for such trips, with appropriate quarters provided- few others are as well versed in the many dangers of the Frontier's wildlands.",
+	"tags": [
+		"RP Focus",
+		"Combat"
+	],
+	"starting_funds": 7000,
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"SRM Guide": {
+			"outfit": "/datum/outfit/job/roumain/security",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant/fancy",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}

@@ -213,13 +213,13 @@
 		if (merge_stacks)
 			if (istype(active_stack) && active_stack.can_merge(item_stack))
 				if (item_stack.merge(active_stack))
-					to_chat(usr, "<span class='notice'>Your [active_stack.name] stack now contains [active_stack.get_amount()] [active_stack.singular_name]\s.</span>")
+					to_chat(usr, span_notice("Your [active_stack.name] stack now contains [active_stack.get_amount()] [active_stack.singular_name]\s."))
 					return TRUE
 			else
 				var/obj/item/stack/inactive_stack = get_inactive_held_item()
 				if (istype(inactive_stack) && inactive_stack.can_merge(item_stack))
 					if (item_stack.merge(inactive_stack))
-						to_chat(usr, "<span class='notice'>Your [inactive_stack.name] stack now contains [inactive_stack.get_amount()] [inactive_stack.singular_name]\s.</span>")
+						to_chat(usr, span_notice("Your [inactive_stack.name] stack now contains [inactive_stack.get_amount()] [inactive_stack.singular_name]\s."))
 						return TRUE
 
 	if(put_in_active_hand(I, forced))
@@ -254,10 +254,10 @@
 		return FALSE
 	return TRUE
 
-/mob/proc/putItemFromInventoryInHandIfPossible(obj/item/I, hand_index, force_removal = FALSE)
+/mob/proc/putItemFromInventoryInHandIfPossible(obj/item/I, hand_index, force_removal = FALSE, use_unequip_delay = FALSE)
 	if(!can_put_in_hand(I, hand_index))
 		return FALSE
-	if(!temporarilyRemoveItemFromInventory(I, force_removal))
+	if(!temporarilyRemoveItemFromInventory(I, force_removal, use_unequip_delay = use_unequip_delay))
 		return FALSE
 	I.remove_item_from_storage(src)
 	if(!put_in_hand(I, hand_index))
@@ -273,8 +273,8 @@
  * * Will pass FALSE if the item can not be dropped due to TRAIT_NODROP via doUnEquip()
  * If the item can be dropped, it will be forceMove()'d to the ground and the turf's Entered() will be called.
 */
-/mob/proc/dropItemToGround(obj/item/I, force = FALSE, silent = FALSE)
-	. = doUnEquip(I, force, drop_location(), FALSE, silent = silent)
+/mob/proc/dropItemToGround(obj/item/I, force = FALSE, silent = FALSE, use_unequip_delay = FALSE)
+	. = doUnEquip(I, force, drop_location(), FALSE, silent = silent, use_unequip_delay = use_unequip_delay)
 	if(. && I && !(I.item_flags & NO_PIXEL_RANDOM_DROP)) //ensure the item exists and that it was dropped properly.
 		I.pixel_x = rand(-6,6)
 		I.pixel_y = rand(-6,6)
@@ -285,13 +285,13 @@
 
 //visibly unequips I but it is NOT MOVED AND REMAINS IN SRC
 //item MUST BE FORCEMOVE'D OR QDEL'D
-/mob/proc/temporarilyRemoveItemFromInventory(obj/item/I, force = FALSE, idrop = TRUE)
-	return doUnEquip(I, force, null, TRUE, idrop, silent = TRUE)
+/mob/proc/temporarilyRemoveItemFromInventory(obj/item/I, force = FALSE, idrop = TRUE, use_unequip_delay = FALSE)
+	return doUnEquip(I, force, null, TRUE, idrop, silent = TRUE, use_unequip_delay = use_unequip_delay)
 
 //DO NOT CALL THIS PROC
 //use one of the above 3 helper procs
 //you may override it, but do not modify the args
-/mob/proc/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE) //Force overrides TRAIT_NODROP for things like wizarditis and admin undress.
+/mob/proc/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE, use_unequip_delay = FALSE) //Force overrides TRAIT_NODROP for things like wizarditis and admin undress.
 													//Use no_move if the item is just gonna be immediately moved afterward
 													//Invdrop is used to prevent stuff in pockets dropping. only set to false if it's going to immediately be replaced
 	PROTECTED_PROC(TRUE)
@@ -299,6 +299,14 @@
 		return TRUE
 
 	if(HAS_TRAIT(I, TRAIT_NODROP) && !force)
+		return FALSE
+
+	if(HAS_TRAIT(src, TRAIT_EQUIPPING_OR_UNEQUIPPING))//shim because our do_after is less neat than daedalus's
+		to_chat(src, span_warning("You're already unequipping something!"))
+		return FALSE
+
+	var/static/list/exclude_from_unequip_delay = list(null, ITEM_SLOT_RPOCKET, ITEM_SLOT_LPOCKET, ITEM_SLOT_SUITSTORE, ITEM_SLOT_HANDS)
+	if(use_unequip_delay && !(get_slot_by_item(I) in exclude_from_unequip_delay) && !unequip_delay_self_check(I))
 		return FALSE
 
 	var/hand_index = get_held_index_of_item(I)
@@ -402,7 +410,7 @@
 
 /obj/item/proc/equip_to_best_slot(mob/M, swap=FALSE)
 	if(src != M.get_active_held_item())
-		to_chat(M, "<span class='warning'>You are not holding anything to equip!</span>")
+		to_chat(M, span_warning("You are not holding anything to equip!"))
 		return FALSE
 
 	if(M.equip_to_appropriate_slot(src, swap))
@@ -423,7 +431,7 @@
 		if(SEND_SIGNAL(I, COMSIG_TRY_STORAGE_INSERT, src, M))
 			return TRUE
 
-	to_chat(M, "<span class='warning'>You are unable to equip that!</span>")
+	to_chat(M, span_warning("You are unable to equip that!"))
 	return FALSE
 
 
@@ -449,7 +457,7 @@
 	var/obj/item/I = get_active_held_item()
 	if (I)
 		if(!do_after(src, 1 SECONDS, target = I))
-			to_chat(src, "<span class='warning'>You fumble with your equipment, accidentally dropping it on the floor!</span>")
+			to_chat(src, span_warning("You fumble with your equipment, accidentally dropping it on the floor!"))
 			dropItemToGround(I)
 			return
 		I.equip_to_best_slot(src, TRUE)
@@ -500,3 +508,84 @@
 			add_bodypart(BP)
 			hand_bodyparts[i] = BP
 	..() //Don't redraw hands until we have organs for them
+
+
+/// Called when a mob is equipping an item to itself.
+/mob/proc/equip_delay_self_check(obj/item/equipped, bypass_delay)
+	return TRUE
+
+/// Called when a mob is unequipping an item from itself.
+/mob/proc/unequip_delay_self_check(obj/item/unequipped, bypass_delay)
+	return TRUE
+
+#define EQUIPPING_INTERACTION_KEY(item) "equipping_item_[ref(item)]"
+
+/mob/living/carbon/human/equip_delay_self_check(obj/item/equipped, bypass_delay)
+	if(!equipped.equip_delay_self || bypass_delay)
+		return TRUE
+
+	if(DOING_INTERACTION(src, EQUIPPING_INTERACTION_KEY(equipped)))
+		return FALSE
+
+	visible_message(
+		span_notice("[src] starts to put on [equipped]..."),
+		span_notice("You start to put on [equipped]...")
+	)
+
+	. = equipped.do_equip_wait(src, equipped.equipping_sound)
+
+	if(.)
+		visible_message(
+			span_notice("[src] puts on [equipped]."),
+			span_notice("You put on [equipped].")
+		)
+
+/mob/living/carbon/human/unequip_delay_self_check(obj/item/unequipped)
+	if(!unequipped.equip_delay_self || is_holding(unequipped))
+		return TRUE
+
+	if(DOING_INTERACTION(src, EQUIPPING_INTERACTION_KEY(unequipped)))
+		return FALSE
+
+	visible_message(
+		span_notice("[src] starts to take off [unequipped]..."),
+		span_notice("You start to take off [unequipped]...")
+	)
+
+	. = unequipped.do_equip_wait(src, unequipped.unequipping_sound)
+
+	if(.)
+		visible_message(
+			span_notice("[src] takes off [unequipped]."),
+			span_notice("You takes off [unequipped].")
+		)
+
+
+/// Called by equip_delay_self and unequip_delay_self.
+/obj/item/proc/do_equip_wait(mob/living/equipping, soundtoplay)
+
+	var/flags = NONE
+	if(equip_self_flags & EQUIP_ALLOW_MOVEMENT)
+		flags |= IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE
+
+	if(equip_self_flags & EQUIP_SLOWDOWN)
+		equipping.add_movespeed_modifier(/datum/movespeed_modifier/equipping)
+
+	var/ourchannel
+	if(soundtoplay)
+		ourchannel = SSsounds.random_available_channel()
+		playsound(equipping.loc, soundtoplay, 35, channel = ourchannel)
+
+	ADD_TRAIT(equipping, TRAIT_EQUIPPING_OR_UNEQUIPPING, ref(src))
+
+	. = do_after(equipping, equip_delay_self, equipping, flags, interaction_key = EQUIPPING_INTERACTION_KEY(src))
+
+	if(ourchannel)
+		playsound(equipping.loc, null, 35, channel = ourchannel)
+
+	REMOVE_TRAIT(equipping, TRAIT_EQUIPPING_OR_UNEQUIPPING, ref(src))
+
+	if(!HAS_TRAIT(equipping, TRAIT_EQUIPPING_OR_UNEQUIPPING))
+		equipping.remove_movespeed_modifier(/datum/movespeed_modifier/equipping)
+
+#undef EQUIPPING_INTERACTION_KEY

@@ -34,6 +34,8 @@
 
 /datum/holocall
 	var/mob/living/user	//the one that called
+	///area of the caller
+	var/area/caller_location
 	var/obj/machinery/holopad/calling_holopad	//the one that sent the call
 	var/obj/machinery/holopad/connected_holopad	//the one that answered the call (may be null)
 	var/list/dialed_holopads	//all things called, will be cleared out to just connected_holopad once answered
@@ -48,6 +50,7 @@
 /datum/holocall/New(mob/living/caller, obj/machinery/holopad/calling_pad, list/callees, elevated_access = FALSE)
 	call_start_time = world.time
 	user = caller
+	caller_location = get_area_name(caller)
 	calling_pad.outgoing_call = src
 	calling_holopad = calling_pad
 	dialed_holopads = list()
@@ -109,7 +112,7 @@
 		var/area/A = get_area(connected_holopad)
 		calling_holopad.say("[A] holopad disconnected.")
 	else if(H == calling_holopad && connected_holopad)
-		connected_holopad.say("[user] disconnected.")
+		connected_holopad.say("[caller_location] disconnected.")
 
 	ConnectionFailure(H, TRUE)
 
@@ -217,7 +220,7 @@
 	var/caller_name = "Unknown" //Caller name
 	var/image/caller_image
 	var/list/entries = list()
-	var/language = /datum/language/common //Initial language, can be changed by HOLORECORD_LANGUAGE entries
+	var/language = /datum/language/galactic_common //Initial language, can be changed by HOLORECORD_LANGUAGE entries
 
 /datum/holorecord/proc/set_caller_image(mob/user)
 	var/olddir = user.dir
@@ -227,7 +230,7 @@
 
 /obj/item/disk/holodisk
 	name = "holorecord disk"
-	desc = "Stores recorder holocalls."
+	desc = "Stores recorded holocalls."
 	random_color = FALSE
 	color = "#A7A3A6"
 	blueshift_pallete = FALSE
@@ -257,10 +260,10 @@
 			record.caller_image = holodiskOriginal.record.caller_image
 			record.entries = holodiskOriginal.record.entries.Copy()
 			record.language = holodiskOriginal.record.language
-			to_chat(user, "<span class='notice'>You copy the record from [holodiskOriginal] to [src] by connecting the ports!</span>")
+			to_chat(user, span_notice("You copy the record from [holodiskOriginal] to [src] by connecting the ports!"))
 			name = holodiskOriginal.name
 		else
-			to_chat(user, "<span class='warning'>[holodiskOriginal] has no record on it!</span>")
+			to_chat(user, span_warning("[holodiskOriginal] has no record on it!"))
 	..()
 
 /obj/item/disk/holodisk/proc/build_record()
@@ -321,7 +324,6 @@
 		if(outfit_type)
 			mannequin.equipOutfit(outfit_type,TRUE)
 		mannequin.setDir(SOUTH)
-		COMPILE_OVERLAYS(mannequin)
 		. = image(mannequin)
 		unset_busy_human_dummy("HOLODISK_PRESET")
 
@@ -335,14 +337,13 @@
 	SAY He wanted to get to the other side!
 	SOUND clownstep
 	DELAY 30
-	LANGUAGE /datum/language/narsie
 	SAY Helped him get there!
 	DELAY 10
 	SAY ALSO IM SECRETLY A GORILLA
 	DELAY 10
 	PRESET /datum/preset_holoimage/gorilla
 	NAME Gorilla
-	LANGUAGE /datum/language/common
+	LANGUAGE /datum/language/galactic_common
 	SAY OOGA
 	DELAY 20"}
 
@@ -362,7 +363,7 @@
 	outfit_type = /datum/outfit/job/captain
 
 /datum/preset_holoimage/nanotrasenprivatesecurity
-	outfit_type = /datum/outfit/nanotrasensoldiercorpse2
+	outfit_type = /datum/outfit/vigilitas/trooper
 
 /datum/preset_holoimage/gorilla
 	nonhuman_mobtype = /mob/living/simple_animal/hostile/gorilla
@@ -447,11 +448,10 @@
 	SAY Oh, shit!
 	DELAY 10
 	PRESET /datum/preset_holoimage/engineer/atmos/rig
-	LANGUAGE /datum/language/narsie
 	NAME Unknown
 	SAY RISE, MY LORD!!
 	DELAY 10
-	LANGUAGE /datum/language/common
+	LANGUAGE /datum/language/galactic_common
 	NAME Plastic
 	PRESET /datum/preset_holoimage/engineer/rig
 	SAY Fuck, fuck, fuck!

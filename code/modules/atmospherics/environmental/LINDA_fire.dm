@@ -69,6 +69,9 @@
 	if(!istype(location) || !(location.air))
 		return
 
+	if(SEND_SIGNAL(location, COMSIG_TURF_HOTSPOT_EXPOSE) & SUPPRESS_FIRE)
+		return FALSE
+
 	location.active_hotspot = src
 
 	bypassing = volume > CELL_VOLUME*0.95 || location.air.return_temperature() >= FUSION_TEMPERATURE_THRESHOLD
@@ -153,7 +156,7 @@
 	alpha = heat_a
 
 #define INSUFFICIENT(path) (location.air.get_moles(path) < 0.5)
-/obj/effect/hotspot/process()
+/obj/effect/hotspot/process(seconds_per_tick)
 	var/turf/open/location = loc
 	if(!istype(location))
 		qdel(src)
@@ -168,7 +171,9 @@
 		qdel(src)
 		return
 
-	perform_exposure()
+	if(!perform_exposure())
+		qdel(src)
+		return
 
 	if(bypassing)
 		icon_state = "3"

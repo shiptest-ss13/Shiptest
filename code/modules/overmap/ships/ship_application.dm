@@ -35,7 +35,7 @@
 		LAZYREMOVE(parent_ship.applications, ckey(app_key))
 		if(app_mob)
 			SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
-			to_chat(app_mob, "<span class='warning'>Your application to [parent_ship] has been deleted.</span>", MESSAGE_TYPE_INFO)
+			to_chat(app_mob, span_warning("Your application to [parent_ship] has been deleted."), MESSAGE_TYPE_INFO)
 	app_mob = null
 	parent_ship = null
 	. = ..()
@@ -136,7 +136,7 @@
 	if(status != SHIP_APPLICATION_PENDING)
 		return
 	status = new_status
-	to_chat(usr, "<span class='notice'>Application [status].</span>", MESSAGE_TYPE_INFO)
+	to_chat(usr, span_notice("Application [status]."), MESSAGE_TYPE_INFO)
 
 	if(parent_ship.owner_act)
 		parent_ship.owner_act.check_blinking()
@@ -146,6 +146,6 @@
 	SEND_SOUND(app_mob, sound('sound/misc/server-ready.ogg', volume=50))
 	switch(status)
 		if(SHIP_APPLICATION_ACCEPTED)
-			to_chat(app_mob, "<span class='notice'>Your application to [parent_ship] was accepted!</span>", MESSAGE_TYPE_INFO)
+			to_chat(app_mob, span_notice("Your application to [parent_ship] was accepted!"), MESSAGE_TYPE_INFO)
 		if(SHIP_APPLICATION_DENIED)
-			to_chat(app_mob, "<span class='warning'>Your application to [parent_ship] was denied!</span>", MESSAGE_TYPE_INFO)
+			to_chat(app_mob, span_warning("Your application to [parent_ship] was denied!"), MESSAGE_TYPE_INFO)

@@ -31,6 +31,8 @@
 
 //SLOT GROUP HELPERS
 #define ITEM_SLOT_POCKETS (ITEM_SLOT_LPOCKET|ITEM_SLOT_RPOCKET)
+//All the item slots that are allowed to be held in Kepori beaks (their mask slot)
+#define ITEM_SLOT_KEPORI_BEAK (ITEM_SLOT_MASK|ITEM_SLOT_ID|ITEM_SLOT_POCKETS|ITEM_SLOT_DEX_STORAGE|ITEM_SLOT_SUITSTORE)
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
 //Make sure to update check_obscured_slots() if you add more.
@@ -73,8 +75,8 @@
 
 //flags for alternate styles: These are hard sprited so don't set this if you didn't put the effort in
 #define NORMAL_STYLE 0
-#define ALT_STYLE 1
-#define DIGITIGRADE_STYLE 2
+#define ALT_STYLE 1 // rolled down/alt uniform
+#define ROLLED_STYLE 2 // rolled sleeves
 
 //This system takes priority over Sprite Sheets.
 #define NO_VARIATION (1<<0)

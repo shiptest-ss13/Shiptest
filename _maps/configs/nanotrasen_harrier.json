@@ -2,6 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Harrier-class Exploration Cruiser",
 	"prefix": "NTSV",
+	"manufacturer": "Nanotrasen Spaceworks",
 	"faction": "/datum/faction/nt",
 	"namelists": [
 		"NANOTRASEN",
@@ -11,6 +12,7 @@
 	],
 	"map_short_name": "Harrier-class",
 	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_harrier.dmm",
+	"token_icon_state": "ship_big_generic",
 	"description": "Originally an advanced ICW-era command cruiser, the surviving Harriers have been refurbished as exploration and \"reclamation\" ships in the post-ICW era. Large, well-rounded, and boasting excellent crew accomodations, Harriers are exceedingly popular with Nanotrasen crews in spite of their lack of specialized equipment.",
 	"tags": ["Generalist"],
 	"limit": 1,
@@ -59,12 +61,12 @@
 			"outfit": "/datum/outfit/job/nanotrasen/cargo_tech",
 			"slots": 1
 		},
-		"Cook": {
-			"outfit": "/datum/outfit/job/independent/cook",
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/nanotrasen/miner/no_equipment",
 			"slots": 1
 		},
-		"Janitor": {
-			"outfit": "/datum/outfit/job/nanotrasen/janitor",
+		"Cook": {
+			"outfit": "/datum/outfit/job/independent/cook",
 			"slots": 1
 		},
 		"Assistant": {

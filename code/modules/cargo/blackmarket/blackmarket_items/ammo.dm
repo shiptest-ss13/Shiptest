@@ -46,9 +46,42 @@
 	stock = 6
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/cm23_mag
+	name = "CM-23 Magazines"
+	desc = "10 round 10x22mm magazines for use in the CM-23 pistol."
+	item = /obj/item/ammo_box/magazine/cm23
+
+	price_min = 150
+	price_max = 300
+	stock_min = 6
+	stock_max = 10
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cm70_mag
+	name = "CM-70 Magazines"
+	desc = "18 round 9x18mm magazines for use in the CM-70 pistol."
+	item = /obj/item/ammo_box/magazine/m9mm_cm70
+
+	price_min = 200
+	price_max = 300
+	stock_min = 4
+	stock_max = 8
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/cm5_mag
+	name = "CM-5 Magazines"
+	desc = "30 round 9x18mm magazines for use in the CM-5 SMG."
+	item = /obj/item/ammo_box/magazine/cm5_9mm
+
+	price_min = 300
+	price_max = 600
+	stock_min = 2
+	stock_max = 6
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/saber_mag
-	name = "Saber 9mm SMG Magazines"
-	desc = "Magazines for use in the Saber 9mm SMG. No, they don't work as swords."
+	name = "Saber 9x18mm SMG Magazines"
+	desc = "Magazines for use in the Saber 9x18mm SMG. No, they don't work as swords."
 	item = /obj/item/ammo_box/magazine/smgm9mm
 
 	price_min = 500
@@ -113,7 +146,7 @@
 /datum/blackmarket_item/ammo/carbine_mag
 	name = "SKM-24v Magazine"
 	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
-	item = /obj/item/ammo_box/magazine/skm_545_39
+	item = /obj/item/ammo_box/magazine/skm_46_30
 
 	price_min = 500
 	price_max = 1000
@@ -199,7 +232,7 @@
 
 /datum/blackmarket_item/ammo/mauler_mag
 	name = "Mauler Magazine"
-	desc = "A 12 round 9mm magazine for the Mauler Machine Pistol."
+	desc = "A 12 round 9x18mm magazine for the Mauler machine pistol."
 	item = /obj/item/ammo_box/magazine/m9mm_mauler
 	price_min = 250
 	price_max = 750
@@ -209,7 +242,7 @@
 
 /datum/blackmarket_item/ammo/spitter_mag
 	name = "Spitter Magazine"
-	desc = "A 30 round 9mm magazine for the Spitter submachine gun."
+	desc = "A 30 round 9x18mm magazine for the Spitter submachine gun."
 	item = /obj/item/ammo_box/magazine/spitter_9mm
 
 	price_min = 250
@@ -252,8 +285,8 @@
 
 /datum/blackmarket_item/ammo/c38hotshot
 	name = ".38 Hearth Ammo Box"
-	desc = "We got our ship cook to marinade some .38 in some hearthwine we pocketed off some hunters. It'll cook your targets to a nice well done."
-	item = /obj/item/ammo_box/c38/hotshot
+	desc = "We got our ship cook to marinade some .38 in some hearthflame we pocketed off some hunters. It'll cook your targets to a nice well done."
+	item = /obj/item/storage/box/ammo/c38_hotshot
 
 	price_min = 300
 	price_max = 500
@@ -263,11 +296,40 @@
 
 /datum/blackmarket_item/ammo/c38iceblox
 	name = ".38 Chilled Ammo Box"
-	desc = "One of our runners accidentally spilled some .38 into a fucking pristine icewine shipment. It'll freeze your targets faster than our runner froze solid outside for making a mess."
-	item = /obj/item/ammo_box/c38/iceblox
+	desc = "One of our runners accidentally spilled some .38 into a fucking pristine wine of ice shipment. It'll freeze your targets faster than our runner froze solid outside for making a mess."
+	item = /obj/item/storage/box/ammo/c38_iceblox
 
 	price_min = 300
 	price_max = 500
 	stock_min = 3
 	stock_max = 8
 	availability_prob = 50
+
+/datum/blackmarket_item/ammo/a8x50match
+	name = "8x50mm Match Box"
+	desc = "We found this dead guy with a recording of him going \"Watch this!\", and richoetting something before crumbling over. This is the ammo he had!"
+	item = /obj/item/storage/box/ammo/a8_50r/match
+	price_min = 500
+	price_max = 1000
+	stock_min = 1
+	stock_max = 4
+	availability_prob = 30
+
+/datum/blackmarket_item/ammo/c22rub
+	name = ".22lr Rubbers"
+	desc = "A 100 round box of .22 rubbershot from some godsforsaken frontier world. We're pretty sure the use-case is making someone think that they just pissed off a beehive"
+	item = /obj/item/storage/box/ammo/c22lr/rubber
+	price_min = 400
+	price_max = 800
+	stock_min = 1
+	stock_max = 4
+	availability_prob = 40
+
+/datum/blackmarket_item/ammo/a8x58trac
+	name = "8x58mm Tracker"
+	desc = "We hot glued a GPS onto the inside of this 8x58mm shell! For the low low price of. Whatever the price is. You can have it!"
+	item = /obj/item/ammo_casing/caseless/a858/trac
+	price_min = 50
+	price_max = 500
+	stock_min = 4
+	stock_max = 8

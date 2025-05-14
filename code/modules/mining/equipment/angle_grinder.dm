@@ -27,9 +27,9 @@
 	hitsound = 'sound/weapons/anglegrinder.ogg'
 	usesound = 'sound/weapons/anglegrinder.ogg'
 	tool_behaviour = null // is set to TOOL_DECONSTRUCT once wielded
-	toolspeed = 1
-	wall_decon_damage = 250
-	usecost = 5
+	toolspeed = 0.6
+	wall_decon_damage = 350
+	usecost = 2.5
 	pack = /obj/item/gear_pack/anglegrinder
 	var/startsound = 'sound/weapons/chainsawhit.ogg'
 	var/adv = FALSE
@@ -38,24 +38,24 @@
 
 /obj/item/gear_handle/anglegrinder/tool_start_check(mob/living/user, amount)
 	if(!pack)
-		to_chat(user, "<span class='warning'>how do you not have a pack for this. what.</span>")
+		to_chat(user, span_warning("how do you not have a pack for this. what."))
 		return FALSE
 	if(!pack.cell)
-		to_chat(user, "<span class='warning'>You need a cell to start!</span>")
+		to_chat(user, span_warning("You need a cell to start!"))
 		return FALSE
 	var/obj/item/stock_parts/cell/cell = pack.get_cell()
 	if(cell.charge < usecost)
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 	return TRUE
 
-/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, amount)
+/obj/item/gear_handle/anglegrinder/tool_use_check(mob/living/user, atom/target, amount)
 	if(!pack.cell)
 		return FALSE
 	if(pack.deductcharge(usecost))
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 
 /obj/item/gear_handle/anglegrinder/use(used)
@@ -127,8 +127,8 @@
 	hitsound = 'sound/weapons/blade1.ogg'
 	usesound = 'sound/weapons/blade1.ogg'
 	startsound = 'sound/weapons/saberon.ogg'
-	toolspeed = 0.7
-	usecost = 10
+	toolspeed = 0.4
+	usecost = 4
 	pack = /obj/item/gear_pack/anglegrinder/energy
 	light_system = MOVABLE_LIGHT
 	light_range = 3

@@ -18,8 +18,17 @@
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
-	var/move_to_delay = 3 //delay for the automated movement.
+
+	//spread, set on humans during init by checking what gun they're holding.
+	var/spread = 0
+
+	///delay for the automated movement.
+	var/move_to_delay = 3
 	var/list/friends = list()
+
+	var/list/on_aggro_say = list()
+	var/aggro_say_chance = 0
+
 	var/list/emote_taunt = list()
 	var/taunt_chance = 0
 
@@ -240,11 +249,11 @@
 
 		if(istype(the_target, /obj/machinery/porta_turret))
 			var/obj/machinery/porta_turret/P = the_target
-			if(P.in_faction(src)) //Don't attack if the turret is in the same faction
-				return FALSE
-			if(P.has_cover &&!P.raised) //Don't attack invincible turrets
+			if(!(P.turret_flags & TURRET_FLAG_SHOOT_FAUNA)) //Don't attack turrets that won't shoot us
 				return FALSE
 			if(P.machine_stat & BROKEN) //Or turrets that are already broken
+				return FALSE
+			if(faction_check(P.faction, faction)) //Or turrets in the same faction
 				return FALSE
 			return TRUE
 
@@ -360,24 +369,29 @@
 
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
-	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, target)
-	//Target can be removed by the signal's effects
-	if(QDELETED(target))
-		return
 	in_melee = TRUE
-	return target.attack_animal(src)
+	if(SEND_SIGNAL(src, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, target) & COMPONENT_HOSTILE_NO_ATTACK)
+		return FALSE //but more importantly return before attack_animal called
+	var/result = target.attack_animal(src)
+	SEND_SIGNAL(src, COMSIG_HOSTILE_POST_ATTACKINGTARGET, target, result)
+	return result
 
 /mob/living/simple_animal/hostile/proc/Aggro()
 	vision_range = aggro_vision_range
-	if(target && emote_taunt.len && prob(taunt_chance))
-		manual_emote("[pick(emote_taunt)] at [target].")
-		taunt_chance = max(taunt_chance-7,2)
+	if(target)
+		if(on_aggro_say.len && prob(aggro_say_chance))
+			INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, say), "[pick(on_aggro_say)]")
+			aggro_say_chance = max(taunt_chance-7,2)
+		if(emote_taunt.len && prob(taunt_chance))
+			manual_emote("[pick(emote_taunt)] at [target].")
+			taunt_chance = max(taunt_chance-7,2)
 
 
 /mob/living/simple_animal/hostile/proc/LoseAggro()
 	stop_automated_movement = 0
 	vision_range = initial(vision_range)
 	taunt_chance = initial(taunt_chance)
+	aggro_say_chance = initial(aggro_say_chance)
 
 /mob/living/simple_animal/hostile/proc/LoseTarget()
 	GiveTarget(null)
@@ -415,7 +429,7 @@
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
 	if(CheckFriendlyFire(A))
 		return
-	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
+	visible_message(span_danger("<b>[src]</b> [ranged_message] at [A]!"))
 
 
 	if(rapid > 1)
@@ -435,7 +449,7 @@
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
-		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0,  src)
+		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), rand(-spread, spread),  src)
 	else if(projectiletype)
 		var/obj/projectile/P = new projectiletype(startloc)
 		playsound(src, projectilesound, 100, TRUE)
@@ -620,7 +634,7 @@
 	Shake(15, 15, 1 SECONDS)
 	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 3)
-	target.visible_message("<span class='danger'>[src] prepares to pounce!</span>")
+	target.visible_message(span_danger("[src] prepares to pounce!"))
 	addtimer(CALLBACK(src, PROC_REF(handle_charge_target), target), 1.5 SECONDS, TIMER_STOPPABLE)
 
 /**
@@ -664,7 +678,7 @@
 				if(H.check_shields(src, 0, "the [name]", attack_type = LEAP_ATTACK))
 					blocked = TRUE
 			if(!blocked)
-				L.visible_message(("<span class='danger'>[src] pounces onto[L]!</span>"), ("<span class='userdanger'>[src] pounces on you!</span>"))
+				L.visible_message((span_danger("[src] pounces onto[L]!")), (span_userdanger("[src] pounces on you!")))
 				L.Knockdown(knockdown_time)
 			else
 				Stun((knockdown_time * 2), ignore_canstun = TRUE)
@@ -710,13 +724,13 @@
 		new /obj/effect/hotspot(T)
 		T.hotspot_expose(700,50,1)
 		if(ignite_turfs)
-			T.IgniteTurf(power,flame_color)
+			T.ignite_turf(power,flame_color)
 		for(var/mob/living/L in T.contents)
 			if((L in hit_list) || L == source)
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by [source]'s [fire_source]!</span>")
+			to_chat(L, span_userdanger("You're hit by [source]'s [fire_source]!"))
 
 		// deals damage to mechs
 		for(var/obj/mecha/M in T.contents)

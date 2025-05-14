@@ -21,7 +21,7 @@
 	var/obj/item/gun/parent_gun = parent
 
 	src.slot_room = slot_room
-	src.valid_types = valid_types
+	src.valid_types = typecacheof(valid_types)
 	src.slot_offsets = slot_offsets
 
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_attack))
@@ -29,8 +29,13 @@
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
+	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD, PROC_REF(handle_item_wield))
+	RegisterSignal(parent, COMSIG_TWOHANDED_UNWIELD, PROC_REF(handle_item_unwield))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(handle_hand_attack))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
+	RegisterSignal(parent, COMSIG_CLICK_CTRL, PROC_REF(handle_ctrl_click))
 	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(handle_alt_click))
+	RegisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION, PROC_REF(handle_unique_action))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 
 	if(length(default_attachments))
@@ -80,7 +85,20 @@
 /datum/component/attachment_holder/proc/handle_alt_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
+	if(user.a_intent == INTENT_HARM)
+		INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
+		return TRUE
+	else
+		for(var/obj/item/attach as anything in attachments)
+			if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ALT_CLICK, parent, user))
+				return TRUE
+
+/datum/component/attachment_holder/proc/handle_ctrl_click(obj/item/parent, mob/user)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_CTRL_CLICK, parent, user))
+			return TRUE
 
 /datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
 	var/list/attachments_as_list = attachments_to_list(TRUE)
@@ -93,6 +111,7 @@
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	if(length(attachments))
 		examine_list += span_notice("It has [length(attachments)] attachment\s.")
+		examine_list += span_notice("You can remove them by pressing alt-click on the [parent] on harm intent.")
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
@@ -114,7 +133,7 @@
 /datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user, bypass_checks)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
-	if(!(attachment.type in valid_types))
+	if(!(is_type_in_typecache(attachment,valid_types)))
 		to_chat(user, span_notice("[attachment] is not a valid attachment for this [parent]!"))
 		return
 	if(!slot_room[slot])
@@ -152,13 +171,15 @@
 		var/selected = tgui_input_list(user, "Select Attachment", "Detach", tool_list)
 		if(!parent.Adjacent(user) || !selected || !tool || !tool.use_tool(parent, user, 2 SECONDS * tool.toolspeed))
 			return
-		do_detach(tool_list[selected], user)
+		if(selected)
+			do_detach(tool_list[selected], user)
 	else
 		if(!length(hand_list))
 			return
 		var/selected = tgui_input_list(user, "Select Attachment", "Detach", hand_list)
-		if(do_after(user, 2 SECONDS, parent))
-			do_detach(hand_list[selected], user)
+		if(selected)
+			if(do_after(user, 2 SECONDS, parent))
+				do_detach(hand_list[selected], user)
 
 
 /datum/component/attachment_holder/proc/handle_attack(obj/item/parent, obj/item/item, mob/user)
@@ -185,4 +206,32 @@
 
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_PRE_ATTACK, parent, target_atom, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_item_wield(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_WIELD , parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_item_unwield(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNWIELD, parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_hand_attack(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_ATTACK_HAND, parent, user, params))
+			return TRUE
+
+/datum/component/attachment_holder/proc/handle_unique_action(obj/item/parent, mob/user, params)
+	SIGNAL_HANDLER
+
+	for(var/obj/item/attach as anything in attachments)
+		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNIQUE_ACTION, parent, user, params))
 			return TRUE

@@ -1,5 +1,6 @@
 //ATMOS
 //stuff you should probably leave well alone!
+#define MOLES 1
 /// kPa*L/(K*mol)
 #define R_IDEAL_GAS_EQUATION 8.31
 /// kPa
@@ -157,9 +158,9 @@
 /// (kPa) What pressure pumps and powered equipment max out at.
 #define MAX_OUTPUT_PRESSURE 4500
 /// (L/s) Maximum speed powered equipment can work at.
-#define MAX_TRANSFER_RATE 200
-/// 10% of an overclocked volume pump leaks into the air
-#define VOLUME_PUMP_LEAK_AMOUNT 0.1
+#define MAX_TRANSFER_RATE 400
+/// How many percent of the contents that an overclocked volume pumps leak into the air
+#define VOLUME_PUMP_LEAK_AMOUNT 0.2
 //used for device_type vars
 #define UNARY 1
 #define BINARY 2
@@ -210,8 +211,6 @@
 #define KITCHEN_COLDROOM_ATMOS "o2=33;n2=124;TEMP=193.15"
 /// used in the holodeck burn test program
 #define BURNMIX_ATMOS "o2=2500;plasma=5000;TEMP=370"
-/// used in rockplanet
-#define ROCKPLANET_DEFAULT_ATMOS "co2=95;n2=3;TEMP=210.15"
 //ATMOSPHERICS DEPARTMENT GAS TANK TURFS
 #define ATMOS_TANK_N2O "n2o=6000;TEMP=293.15"
 #define ATMOS_TANK_CO2 "co2=50000;TEMP=293.15"
@@ -223,20 +222,26 @@
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 #define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 
+
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
 #define LAVALAND_EQUIPMENT_EFFECT_PRESSURE 90
-#define ICEMOON_DEFAULT_ATMOS "ICEMOON_ATMOS"
 #define GAS_GIANT_ATMOS "GAS_GIANT_ATMOS"
 #define PLASMA_GIANT_ATMOS "PLASMA_GIANT_ATMOS"
-#define WASTEPLANET_DEFAULT_ATMOS "WASTEPLANET_ATMOS"
+#define DEFAULT_ATMOS_DETECTOR "plasma=70000;TEMP=293.15"
 #define LAVALAND_DEFAULT_ATMOS "LAVALAND_ATMOS"
+#define ICEMOON_DEFAULT_ATMOS "ICEMOON_ATMOS"
+#define WASTEPLANET_DEFAULT_ATMOS "WASTEPLANET_ATMOS"
+#define ROCKPLANET_DEFAULT_ATMOS "ROCKPLANET_ATMOS"
+#define BEACHPLANET_DEFAULT_ATMOS "BEACHPLANET_ATMOS"
+#define JUNGLEPLANET_DEFAULT_ATMOS "JUNGLEPLANET_ATMOS"
+#define SANDPLANET_DEFAULT_ATMOS "SANDPLANET_ATMOS"
 
 
 //ATMOS MIX IDS
-
-
-
+#define DESERT_DEFAULT_ATMOS "o2=20;n2=80;TEMP=313.15" //TEMP UNTIL  CRASHING STOPS
+//#define DESERT_DEFAULT_ATMOS "DESERT_ATMOS"
+#define SHROUDED_DEFAULT_ATMOS "SHROUDED_ATMOS"
 
 //ATMOSIA GAS MONITOR TAGS
 #define ATMOS_GAS_MONITOR_INPUT_O2 "o2_in"
@@ -325,23 +330,45 @@
 // Gas defines because i hate typepaths
 #define GAS_O2 "o2"
 #define GAS_N2 "n2"
+#define GAS_CO "co"
+#define GAS_O3 "ozone"
 #define GAS_CO2 "co2"
 #define GAS_PLASMA "plasma"
 #define GAS_H2O "water_vapor"
-#define GAS_HYPERNOB "nob"
 #define GAS_NITROUS "n2o"
-#define GAS_NITRYL "no2"
 #define GAS_TRITIUM "tritium"
 #define GAS_BZ "bz"
-#define GAS_STIMULUM "stim"
-#define GAS_PLUOXIUM "pluox"
 #define GAS_FREON "freon"
 #define GAS_HYDROGEN "h2"
 #define GAS_CHLORINE "cl2"
 #define GAS_HYDROGEN_CHLORIDE "hcl"
 
+#define GAS_SO2 "so2"
+#define GAS_ARGON "ar"
+#define GAS_METHANE "methane"
+#define GAS_AMMONIA "ammonia"
+
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
+
+// odors
+#define GAS_ODOR_CHEMICAL list(\
+	span_notice("It smells faintly like space cleaner."),\
+	span_danger("It smells like chemicals."),\
+	span_danger("There's a strong smell in the air, like chlorine."),\
+	span_userdanger("The smell burns the inside of your nose! It's unbearable!"))
+
+#define GAS_ODOR_SULFUR list(\
+	span_notice("Somebody passed gas in here."),\
+	span_danger("It smells like rotten eggs."),\
+	span_danger("There's a strong smell in the air, like something died here."),\
+	span_userdanger("The smell of chemical rot overwhelms you! It's unbearable!"))
+
+#define GAS_ODOR_SMOG list(\
+	null,\
+	span_notice("Theres a charred smell in the air."),\
+	span_danger("There's a strong smell in the air, like something's burning."),\
+	span_userdanger("The acidic smell overwhelms you! It's unbearable!"))
 
 // Flag for update_air_ref()
 #define AIR_REF_CLOSED_TURF -1

@@ -119,7 +119,7 @@
 	uniform = /obj/item/clothing/under/suit/burgundy
 	neck = /obj/item/clothing/neck/tie/red
 	shoes = /obj/item/clothing/shoes/sneakers/black
-	head = /obj/item/clothing/head/soft/mime
+	head = /obj/item/clothing/head/soft
 	suit = null
 	ears = null
 	belt = null

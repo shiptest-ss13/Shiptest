@@ -65,28 +65,7 @@
 	icon_state = "coatmedical"
 	item_state = "coatmedical"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical
-	allowed = list(
-				/obj/item/analyzer,
-				/obj/item/sensor_device,
-				/obj/item/stack/medical,
-				/obj/item/dnainjector,
-				/obj/item/reagent_containers/dropper,
-				/obj/item/reagent_containers/syringe,
-				/obj/item/reagent_containers/hypospray,
-				/obj/item/healthanalyzer,
-				/obj/item/flashlight/pen,
-				/obj/item/reagent_containers/glass/bottle,
-				/obj/item/reagent_containers/glass/beaker,
-				/obj/item/reagent_containers/pill,
-				/obj/item/storage/pill_bottle,
-				/obj/item/paper,
-				/obj/item/melee/classic_baton/telescopic,
-				/obj/item/toy,
-				/obj/item/storage/fancy/cigarettes,
-				/obj/item/lighter,
-				/obj/item/tank/internals/emergency_oxygen,
-				/obj/item/tank/internals/plasmaman,
-				)
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/head/hooded/winterhood/medical
 	icon_state = "hood_medical"
@@ -210,33 +189,6 @@
 /obj/item/clothing/head/hooded/winterhood/miner
 	icon_state = "hood_miner"
 
-// Inteq
-
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	name = "inteq winter coat"
-	desc = "An armored wintercoat in the colors of the IRMG, the zipper tab is the golden shield of the IRMG."
-	icon_state = "coatinteq"
-	item_state = "coatinteq"
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq
-	//supports_variations = KEPORI_VARIATION
-
-/obj/item/clothing/head/hooded/winterhood/security/inteq
-	icon_state = "hood_inteq"
-	//supports_variations = KEPORI_VARIATION
-
-/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
-	name = "inteq hooded coat"
-	desc = "A hooded coat with a fur trim around the hood, comfy! It has a small 'IRMG' embroidered onto the shoulder."
-	icon_state = "coatinteq_alt"
-	item_state = "coatinteq_alt"
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq/alt
-
-/obj/item/clothing/head/hooded/winterhood/security/inteq/alt
-	name = "inteq hood"
-	desc = "A comfortable looking brown hood."
-	icon_state = "hood_inteq_alt"
-	item_state = "hood_inteq_alt"
-
 // CentCom
 
 /obj/item/clothing/suit/hooded/wintercoat/centcom
@@ -252,15 +204,3 @@
 
 /obj/item/clothing/head/hooded/winterhood/centcom
 	icon_state = "hood_centcom"
-
-// SolGov
-
-/obj/item/clothing/suit/hooded/wintercoat/solgov
-	name = "solgov winter coat"
-	desc = "An environment-resistant wintercoat in the colors of the Solarian Confederation."
-	icon_state = "coatsolgov"
-	item_state = "coatsolgov"
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/solgov
-
-/obj/item/clothing/head/hooded/winterhood/solgov
-	icon_state = "hood_solgov"

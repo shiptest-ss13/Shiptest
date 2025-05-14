@@ -70,7 +70,7 @@ export const CSS_COLORS = [
 /* IF YOU CHANGE THIS KEEP IT IN SYNC WITH CHAT CSS */
 export const RADIO_CHANNELS = [
   {
-    name: 'Syndicate',
+    name: 'Coalition',
     freq: 1213,
     color: '#8f4a4b',
   },
@@ -95,54 +95,54 @@ export const RADIO_CHANNELS = [
     color: '#fdfd34',
   },
   {
-    name: 'CentCom',
+    name: 'NT-CC',
     freq: 1337,
     color: '#2681a5',
   },
   {
-    name: 'Supply',
+    name: 'SolCon',
+    freq: 1345,
+    color: '#7589af',
+  },
+  {
+    name: 'IRMG',
     freq: 1347,
     color: '#b88646',
   },
   {
-    name: 'Service',
+    name: 'PGF',
     freq: 1349,
-    color: '#6ca729',
+    color: '#199943',
   },
   {
-    name: 'Science',
+    name: 'Nanotrasen',
     freq: 1351,
     color: '#c68cfa',
   },
   {
-    name: 'Command',
+    name: 'Emergency',
     freq: 1353,
-    color: '#fcdf03',
+    color: '#dd3535',
   },
   {
-    name: 'Medical',
+    name: 'Minutemen',
     freq: 1355,
     color: '#57b8f0',
   },
   {
-    name: 'Engineering',
-    freq: 1357,
-    color: '#f37746',
-  },
-  {
-    name: 'Security',
+    name: 'Unidentified',
     freq: 1359,
-    color: '#dd3535',
-  },
-  {
-    name: 'AI Private',
-    freq: 1447,
-    color: '#d65d95',
+    color: '#fcdf03',
   },
   {
     name: 'Common',
     freq: 1459,
     color: '#1ecc43',
+  },
+  {
+    name: 'Wideband',
+    freq: 1681,
+    color: '#8de7b6',
   },
 ] as const;
 

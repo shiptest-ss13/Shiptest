@@ -1,7 +1,7 @@
 /obj/effect/anomaly/veins
-	name = "veins"
+	name = "fountain"
 	icon_state = "veins"
-	desc = "Throbbing purple veins, an exposed artery of the world. It thirsts."
+	desc = "Throbbing purple veins, an exposed artery of the world. It leaks into the world beyond it."
 	density = TRUE
 	core = /obj/item/assembly/signaler/anomaly/veins
 	effectrange = 3

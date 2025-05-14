@@ -12,11 +12,12 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
+	wield_slowdown = HMG_SLOWDOWN
+
 	spread = 4
 	spread_unwielded = 80
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 3
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 20
@@ -26,7 +27,7 @@
 	///is the bipod deployed?
 	var/bipod_deployed = FALSE
 	///how long do we need to deploy the bipod?
-	var/deploy_time = 2 SECONDS
+	var/deploy_time = 0.5 SECONDS
 
 	///we add these two values to recoi/spread when we have the bipod deployed
 	var/deploy_recoil_bonus = -1
@@ -40,6 +41,9 @@
 	/obj/structure/railing,
 	/obj/structure/flippedtable
 	)
+	wear_minor_threshold = 300
+	wear_major_threshold = 900
+	wear_maximum = 1500
 
 
 /obj/item/gun/ballistic/automatic/hmg/Initialize()
@@ -64,6 +68,22 @@
 	else
 		retract_bipod(user=user)
 
+/obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/total_recoil = recoil_bonus
+
+	if(bipod_deployed)
+		total_recoil += deploy_recoil_bonus
+
+	return ..(user, total_recoil)
+
+/obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
+	var/total_spread = bonus_spread
+
+	if(bipod_deployed)
+		total_spread += deploy_spread_bonus
+
+	return ..(user, total_spread)
+
 /obj/item/gun/ballistic/automatic/hmg/proc/deploy_bipod(mob/user)
 	//we check if we can actually deploy the thing
 	var/can_deploy = TRUE
@@ -73,7 +93,7 @@
 		return
 
 	if(!wielded_fully)
-		to_chat(user, "<span class='warning'>You need to fully grip [src] to deploy it's bipod!</span>")
+		to_chat(user, span_warning("You need to fully grip [src] to deploy it's bipod!"))
 		return
 
 	if(wielder.body_position != LYING_DOWN) //are we braced against the ground? if not, we check for objects to brace against
@@ -89,13 +109,13 @@
 
 
 	if(!can_deploy)
-		to_chat(user, "<span class='warning'>You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!</span>")
+		to_chat(user, span_warning("You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!"))
 		return
 	if(!do_after(user, deploy_time, src, NONE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
-		to_chat(user, "<span class='warning'>You need to hold still to deploy [src]'s bipod!</span>")
+		to_chat(user, span_warning("You need to hold still to deploy [src]'s bipod!"))
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
-	to_chat(user, "<span class='notice'>You deploy [src]'s bipod.</span>")
+	to_chat(user, span_notice("You deploy [src]'s bipod."))
 	bipod_deployed = TRUE
 
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(retract_bipod))
@@ -108,7 +128,7 @@
 	if(!user || !ismob(user))
 		user = loc
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
-	to_chat(user, "<span class='notice'>The bipod undeploys itself.</span>")
+	to_chat(user, span_notice("The bipod undeploys itself."))
 	bipod_deployed = FALSE
 
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
@@ -184,8 +204,6 @@
 	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/skm_762_40,
-		/obj/item/ammo_box/magazine/skm_762_40/extended,
-		/obj/item/ammo_box/magazine/skm_762_40/drum
 	)
 
 	fire_delay = 0.13 SECONDS
@@ -196,7 +214,7 @@
 	recoil = 1 //identical to other LMGS
 	recoil_unwielded = 4 //same as skm
 
-	wield_slowdown = 1 //not as severe as other lmgs, but worse than the normal skm
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
 	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
 
 	has_bipod = TRUE

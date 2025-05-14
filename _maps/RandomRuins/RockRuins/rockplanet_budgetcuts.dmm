@@ -96,7 +96,6 @@
 	req_access_txt = "3"
 	},
 /obj/item/gun/energy/e_gun/hos,
-/obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/storage/belt/military,
 /obj/item/clothing/suit/armor/vest/leather,
@@ -106,6 +105,7 @@
 /obj/item/clothing/under/rank/security/head_of_security/alt/skirt,
 /obj/item/clothing/under/rank/security/head_of_security/nt,
 /obj/item/clothing/under/rank/security/head_of_security/nt/skirt,
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/nanotrasen)
 "by" = (
@@ -187,7 +187,7 @@
 /turf/open/floor/carpet/purple,
 /area/ruin/rockplanet/nanotrasen)
 "cy" = (
-/obj/machinery/computer/crew{
+/obj/machinery/computer/crew/retro{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -309,7 +309,7 @@
 /turf/open/floor/engine,
 /area/ruin/rockplanet/nanotrasen)
 "eW" = (
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "bubblegumfoot"
 	},
@@ -364,11 +364,11 @@
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "fH" = (
-/obj/machinery/rnd/destructive_analyzer,
 /obj/structure/railing{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/salvageable/destructive_analyzer,
 /turf/open/floor/pod/light,
 /area/ruin/rockplanet/nanotrasen)
 "fN" = (
@@ -429,13 +429,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
 "gv" = (
-/obj/machinery/rnd/production/circuit_imprinter,
 /obj/structure/railing{
 	dir = 4
 	},
 /obj/structure/sign/poster/official/random{
 	pixel_x = 32
 	},
+/obj/structure/salvageable/circuit_imprinter,
 /turf/open/floor/pod/light,
 /area/ruin/rockplanet/nanotrasen)
 "gE" = (
@@ -455,11 +455,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
 "he" = (
-/obj/machinery/computer/rdconsole/experiment,
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/sign/poster/official/random{
 	pixel_y = 32
 	},
+/obj/structure/salvageable/computer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/nanotrasen)
 "ho" = (
@@ -566,8 +566,8 @@
 "jb" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
-	color = "#808080"
+	color = "#808080";
+	dir = 2
 	},
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/decal/cleanable/blood/old,
@@ -944,8 +944,8 @@
 "oO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wallframe/light_fixture{
-	pixel_y = -14;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = -14
 	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
@@ -1185,8 +1185,8 @@
 	pixel_y = 5
 	},
 /obj/item/trash/sosjerky{
-	pixel_y = 8;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
@@ -1304,7 +1304,7 @@
 	pixel_x = -9;
 	pixel_y = 3
 	},
-/obj/item/stamp/hos{
+/obj/item/stamp/nanotrasen/vigilitas/security{
 	pixel_x = -9;
 	pixel_y = 9
 	},
@@ -1348,8 +1348,8 @@
 	pixel_x = -32
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#808080"
+	color = "#808080";
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -1387,11 +1387,11 @@
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "wj" = (
-/obj/machinery/computer/rdconsole/core{
-	dir = 1
-	},
 /obj/structure/railing{
 	dir = 8
+	},
+/obj/structure/salvageable/computer{
+	dir = 1
 	},
 /turf/open/floor/pod/light,
 /area/ruin/rockplanet/nanotrasen)
@@ -1559,8 +1559,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/nanotrasen)
 "Az" = (
-/obj/machinery/rnd/experimentor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/salvageable/machine,
 /turf/open/floor/engine,
 /area/ruin/rockplanet/nanotrasen)
 "AD" = (
@@ -1615,8 +1615,8 @@
 "Bl" = (
 /obj/structure/bed,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 1;
-	color = "#808080"
+	color = "#808080";
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -2139,8 +2139,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
-	color = "#808080"
+	color = "#808080";
+	dir = 2
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
@@ -2187,7 +2187,7 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
-/obj/item/stamp/rd{
+/obj/item/stamp/nanotrasen/science{
 	pixel_x = -6;
 	pixel_y = 12
 	},
@@ -2302,11 +2302,11 @@
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/nanotrasen)
 "NP" = (
-/obj/machinery/vending/security,
 /obj/item/radio/intercom/directional/north{
 	pixel_x = 1;
 	pixel_y = 23
 	},
+/obj/structure/salvageable/machine,
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
 "Od" = (
@@ -2408,11 +2408,11 @@
 /turf/open/floor/plastic,
 /area/ruin/rockplanet/nanotrasen)
 "PH" = (
-/obj/machinery/computer/rdconsole{
-	dir = 1
-	},
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = -32
+	},
+/obj/structure/salvageable/computer{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ruin/rockplanet/nanotrasen)
@@ -2592,10 +2592,10 @@
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "TI" = (
-/obj/machinery/rnd/production/protolathe/department/science,
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/structure/salvageable/protolathe,
 /turf/open/floor/pod/light,
 /area/ruin/rockplanet/nanotrasen)
 "TL" = (
@@ -2730,10 +2730,10 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/nanotrasen)
 "WY" = (
-/obj/structure/frame/computer{
+/obj/effect/turf_decal/corner/opaque/red/diagonal,
+/obj/structure/salvageable/computer{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/red/diagonal,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/rockplanet/nanotrasen)
 "Xv" = (
@@ -2893,7 +2893,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/nanotrasen/ranged/assault,
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/nanotrasen)
 "ZZ" = (

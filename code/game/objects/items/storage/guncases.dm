@@ -15,6 +15,7 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound = 'sound/items/handling/toolbox_pickup.ogg'
+	custom_materials = list(/datum/material/plastic = 1500)
 	var/max_items = 10
 	var/max_w_class = WEIGHT_CLASS_BULKY
 	var/gun_type
@@ -25,7 +26,8 @@
 	var/holdable_items = list(
 		/obj/item/gun,
 		/obj/item/ammo_box,
-		/obj/item/stock_parts/cell/gun
+		/obj/item/stock_parts/cell/gun,
+		/obj/item/attachment/gun
 	)
 
 /obj/item/storage/guncase/Initialize(mapload)

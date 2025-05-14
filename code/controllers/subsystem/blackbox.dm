@@ -132,8 +132,8 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "common")
 		if(FREQ_NANOTRASEN)
 			record_feedback("tally", "radio_usage", 1, "nanotrasen")
-		if(FREQ_COMMAND)
-			record_feedback("tally", "radio_usage", 1, "command")
+		if(FREQ_EMERGENCY)
+			record_feedback("tally", "radio_usage", 1, "emergency")
 		if(FREQ_MINUTEMEN)
 			record_feedback("tally", "radio_usage", 1, "minutemen")
 		if(FREQ_INTEQ)
@@ -148,8 +148,6 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "centcom")
 		if(FREQ_SOLGOV)		//WS Edit - SolGov Rep
 			record_feedback("tally", "radio_usage", 1, "solgov")		//WS Edit - SolGov Rep
-		if(FREQ_AI_PRIVATE)
-			record_feedback("tally", "radio_usage", 1, "ai private")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 

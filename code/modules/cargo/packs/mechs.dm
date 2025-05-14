@@ -1,6 +1,7 @@
 /datum/supply_pack/mech
 	group = "Exosuit Construction"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 
 /*
@@ -37,14 +38,13 @@ Build Your Own Suit
 	crate_name = "APLU construction kit"
 
 /datum/supply_pack/mech/odysseus_parts
-	name = "Odysseus construction kit"
-	desc = "DeForest Medical's premier solution to on the go medical treatment. Some assembly required."
+	name = "202r construction kit"
+	desc = "Cybersun Biodynamics' premier solution to on-the-go medical treatment. Some assembly required."
 	cost = 5000
 	contains = list(
 		/obj/item/mecha_parts/chassis/odysseus,
 		/obj/item/mecha_parts/part/odysseus_head,
 		/obj/item/mecha_parts/part/odysseus_torso,
-		/obj/item/mecha_parts/part/odysseus_left_arm,
 		/obj/item/mecha_parts/part/odysseus_left_arm,
 		/obj/item/mecha_parts/part/odysseus_right_arm,
 		/obj/item/mecha_parts/part/odysseus_left_leg,
@@ -52,11 +52,13 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/odysseus/peripherals,
 		/obj/item/circuitboard/mecha/odysseus/main
 		)
-	crate_name = "Odysseus Construction Kit"
+	crate_name = "202r Construction Kit"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 40
 
 /datum/supply_pack/mech/gygax_parts
-	name = "Gygax construction kit"
-	desc = "An agile exosuit made famous by Nanotrasen security personnel during the ICW. Or at least the parts to it."
+	name = "501p construction kit"
+	desc = "An agile combat exosuit sold across the galaxy by Cybersun. Or at least the parts to it."
 	cost = 12000
 	contains = list(
 		/obj/item/mecha_parts/chassis/gygax,
@@ -71,7 +73,30 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/main,
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
-	crate_name = "Gygax Construction Kit"
+	crate_name = "501p Construction Kit"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 40
+
+/datum/supply_pack/mech/mpgygax_parts
+	name = "NT-501p-MP construction kit"
+	desc = "A set of parts for the NT-501p-MP exosuit model, dervived from the original Cybersun designs and modified for mass production. The armor plating was reduced to cut costs for mass production, but the lighter weight allows the NT-501p-MP's modified servos to perform swift moderate distance charges without heavily taxing the power supply. "
+	cost = 8000
+	contains = list(
+		/obj/item/mecha_parts/chassis/mp_gygax,
+		/obj/item/mecha_parts/part/gygax_head,
+		/obj/item/mecha_parts/part/gygax_torso,
+		/obj/item/mecha_parts/part/gygax_left_arm,
+		/obj/item/mecha_parts/part/gygax_right_arm,
+		/obj/item/mecha_parts/part/gygax_left_leg,
+		/obj/item/mecha_parts/part/gygax_right_leg,
+		/obj/item/mecha_parts/part/mpgygax_armor,
+		/obj/item/circuitboard/mecha/gygax/peripherals,
+		/obj/item/circuitboard/mecha/gygax/main,
+		/obj/item/circuitboard/mecha/gygax/targeting
+	)
+	crate_name = "NT-501p-MP Construction Kit"
+	faction = /datum/faction/nt
+	faction_locked = TRUE
 
 /datum/supply_pack/mech/durand_parts
 	name = "Durand construction kit"
@@ -91,6 +116,8 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/durand/targeting
 	)
 	crate_name = "Durand Construction Kit"
+	faction = /datum/faction/clip
+	faction_discount = 20
 
 /*
 Mech Equipment
@@ -115,6 +142,14 @@ Mech Equipment
 	cost = 750
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/drill/diamonddrill
+	)
+
+/datum/supply_pack/mech/equipment/salvage_saw
+	name = "Exosuit Salvage Saw"
+	desc = "Contains an upsized angle grinder for an Exosuit, for all your larger salvage problems."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/salvage_saw
 	)
 
 /datum/supply_pack/mech/equipment/scanner
@@ -196,13 +231,73 @@ Mech Equipment
 		/obj/item/mecha_parts/mecha_equipment/thrusters/gas
 	)
 
+/datum/supply_pack/mech/equipment/ionthrust
+	name = "Exosuit Ion thruster kit"
+	desc = "An electrical powered thruster pack, perfect for exosuits without a functional way to refill more tradional RCS thrusters."
+	cost = 2000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/thrusters/ion
+	)
+
 /datum/supply_pack/mech/equipment/ripley_upgrade
 	name = "APLU upgrade kit"
 	desc = "Contains an APLU MK II upgrade kit. The upgrade will replace the cockpit with a spaceworthy canopy, but the added weight makes it slower."
-	cost = 1500
+	cost = 500
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley
 	)
+
+/datum/supply_pack/mech/equipment/ripley_upgrade/clip
+	name = "CLIP Ripley MK-IV upgrade kit"
+	desc = "Contains a CLIP-custom APLU MK-IV upgrade kit. The upgrade will replace the cockpit with a lightweight spaceworthy canopy, and parts to overclock the leg servos. Maintains the speed of the MK-1, but consumes more power."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
+	)
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/mech/equipment/paladin_upgrade
+	name = "CLIP Durand Paladin upgrade kit"
+	desc = "Contains a CLIP-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit. Features an electrical replusion field that repels any melee attacks, but loses the ability to defend against ranged projectiles."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
+	)
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/mech/equipment/basenji_upgrade
+	name = "IRMG Basenji upgrade kit"
+	desc = "Contains an IRMG-custom conversion kit for a 501p combat exosuit, to convert it to the specialized Basenji breaching exosuit. The upgrade will overclock the Gygax's leg actuators, allowing for short ranged charges capable of smashing through most obstacles."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
+	)
+	faction = /datum/faction/inteq
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/mech/equipment/charger_upgrade
+	name = "501p overclock kit"
+	desc = "Contains a kit to overclock the 501p, allowing it to leap forward instead of its enhanced speed."
+	cost = 1000
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/leaper
+	)
+
+/datum/supply_pack/mech/equipment/dark_upgrade
+	name = "515 EX upgrade kit"
+	desc = "Contains a military grade conversion kit for a 501p combat exosuit, to convert it to the fearsome 515 EX models. Features a much stronger set of leg actuators."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/conversion_kit/dark_gygax
+	)
+	faction = /datum/faction/syndicate
+	faction_discount = 0
+	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/melee_armor_booster
 	name = "Exosuit CCW armor kit"
@@ -246,20 +341,20 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
 	)
 
-/datum/supply_pack/mech/weapon/laser
-	name = "Immolator kit"
-	desc = "A light laser cannon designed for combat usage."
+/datum/supply_pack/mech/weapon/carbine
+	name = "Downpour kit"
+	desc = "A rapid fire energy carbine designed for combat usage."
 	cost = 1000
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
+		/obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine
 	)
 
 /datum/supply_pack/mech/weapon/biglaser
 	name = "Solaris kit"
-	desc = "A heavy laser cannon designed for combat usage."
+	desc = "A heavy beam sniper cannon designed for combat usage."
 	cost = 2000
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
+		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	)
 
 /datum/supply_pack/mech/weapon/ion_cannon
@@ -280,11 +375,21 @@ weapons
 
 /datum/supply_pack/mech/weapon/lmg
 	name = "UMG-2 kit"
-	desc = "Contains a mounted gun which fires in three round bursts."
+	desc = "Contains a fully automatic mounted machine gun for combat exosuits."
 	cost = 2250
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
 	)
+
+/datum/supply_pack/mech/weapon/railgun
+	name = "PR-05 kit"
+	desc = "Contains a plasma railgun to mount on combat exosuits. Be sure to not overcharge it."
+	cost = 2700
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
+	)
+	faction = /datum/faction/nt
+	faction_discount = 20
 
 /datum/supply_pack/mech/weapon/missile_rack
 	name = "BRM-6 kit"
@@ -305,7 +410,7 @@ ammo
 
 /datum/supply_pack/mech/ammo/scattershot_ammo
 	name = "LBX-10 ammo box"
-	desc = "Contains a fourty-round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
+	desc = "Contains a twenty four round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
 	cost = 500
 	contains = list(
 		/obj/item/mecha_ammo/scattershot
@@ -313,11 +418,21 @@ ammo
 
 /datum/supply_pack/mech/ammo/lmg_ammo
 	name = "UMG-2 ammo box"
-	desc = "Contains a three hundred-round box of heavy ammunition for the UMG-2."
-	cost = 750
+	desc = "Contains a two hundred-round box of heavy ammunition for the UMG-2."
+	cost = 500
 	contains = list(
 		/obj/item/mecha_ammo/lmg
 	)
+
+/datum/supply_pack/mech/ammo/railgun_ammo
+	name = "Railgun ammo box"
+	desc = "A box containing thirty iron-tungsten rods for the PR-05 Plasma Railgun."
+	cost = 500
+	contains = list(
+		/obj/item/mecha_ammo/railgun_ammo
+	)
+	faction = /datum/faction/nt
+	faction_discount = 20
 
 /datum/supply_pack/mech/ammo/missile_rack_ammo
 	name = "BRM-6 missile box"

@@ -805,3 +805,7 @@
 /datum/sprite_accessory/hair_gradient/long_fade_down
 	name = "Long Fade Down"
 	icon_state = "long_fade_down"
+
+/datum/sprite_accessory/hair_gradient/splotches
+	name = "Splotches"
+	icon_state = "splotches"

@@ -24,7 +24,7 @@
 	start_time = world.time
 	QDEL_IN(src, 5 SECONDS) // vanishes after 5 seconds
 
-/obj/singularity/boh_tear/process()
+/obj/singularity/boh_tear/process(seconds_per_tick)
 	//Backup to catch timerss errors
 	if(start_time + (10 SECONDS) < world.time)
 		stack_trace("The timer subsytem isn't firing properly, yell at your local coders posthaste")
@@ -42,7 +42,7 @@
 /obj/singularity/boh_tear/attack_tk(mob/living/user)
 	if(!istype(user))
 		return
-	to_chat(user, "<span class='userdanger'>You don't feel like you are real anymore.</span>")
+	to_chat(user, span_userdanger("You don't feel like you are real anymore."))
 	user.dust_animation()
 	user.spawn_dust()
 	addtimer(CALLBACK(src, PROC_REF(consume), user), 5)

@@ -1,6 +1,6 @@
 
 
-/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)
+/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, sharpness = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0))
@@ -21,7 +21,7 @@
 	switch(damagetype)
 		if(BRUTE)
 			if(BP)
-				if(BP.receive_damage(damage_amount, 0, break_modifier, sharpness = sharpness))
+				if(BP.receive_damage(damage_amount, 0, sharpness = sharpness))
 					update_damage_overlays()
 			else //no bodypart, we deal damage with a more general method.
 				adjustBruteLoss(damage_amount, forced = forced)
@@ -29,7 +29,7 @@
 				shake_animation(damage_amount)
 		if(BURN)
 			if(BP)
-				if(BP.receive_damage(0, damage_amount, break_modifier, sharpness = sharpness))
+				if(BP.receive_damage(0, damage_amount, sharpness = sharpness))
 					update_damage_overlays()
 			else
 				adjustFireLoss(damage_amount, forced = forced)
@@ -160,12 +160,15 @@
 ////////////////////////////////////////////
 
 //Returns a list of damaged bodyparts
-/mob/living/carbon/proc/get_damaged_bodyparts(brute = FALSE, burn = FALSE, stamina = FALSE, status)
+//ignore_integrity shows limbs that can't be healed due to low integrity
+/mob/living/carbon/proc/get_damaged_bodyparts(brute = FALSE, burn = FALSE, stamina = FALSE, status, ignore_integrity = FALSE)
 	var/list/obj/item/bodypart/parts = list()
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(status && !(BP.bodytype & status))
 			continue
 		if((brute && BP.brute_dam) || (burn && BP.burn_dam) || (stamina && BP.stamina_dam))
+			if (!ignore_integrity && BP.get_curable_damage() <= 0)
+				continue
 			parts += BP
 	return parts
 
@@ -211,6 +214,17 @@
 	var/obj/item/bodypart/picked = pick(parts)
 	if(picked.receive_damage(brute, burn, stamina, check_armor ? run_armor_check(picked, (brute ? "melee" : burn ? "fire" : stamina ? "bullet" : null)) : FALSE))
 		update_damage_overlays()
+
+///Fix integrity in MANY bodyparts, in random order
+/mob/living/carbon/heal_overall_integrity(amount = 0, required_status, updating_health = TRUE)
+	var/list/obj/item/bodypart/parts = get_damaged_bodyparts(required_status, FALSE)
+	var/update = NONE
+	while(parts.len && (amount > 0))
+		var/obj/item/bodypart/picked = pick(parts)
+		var/integrity_was = picked.integrity_loss
+		update |= picked.heal_integrity(amount, required_status, FALSE)
+		amount -= round(amount - (integrity_was - picked.integrity_loss), DAMAGE_PRECISION)
+		parts -= picked
 
 ///Heal MANY bodyparts, in random order
 /mob/living/carbon/heal_overall_damage(brute = 0, burn = 0, stamina = 0, required_status, updating_health = TRUE)

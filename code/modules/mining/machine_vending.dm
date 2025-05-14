@@ -105,7 +105,6 @@
 	icon_state = "mining_voucher"
 	w_class = WEIGHT_CLASS_TINY
 
-
 ///Conscript kit
 
 /obj/item/storage/backpack/duffelbag/mining_conscript

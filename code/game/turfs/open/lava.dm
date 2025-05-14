@@ -18,17 +18,20 @@
 	heavyfootstep = FOOTSTEP_LAVA
 
 	var/particle_emitter = /obj/effect/particle_emitter/lava
+	var/particle_prob = 15
 	/// Whether the lava has been dug with hellstone found successfully
 	var/is_mined = FALSE
 
 /turf/open/lava/Initialize(mapload)
 	. = ..()
-	particle_emitter = new /obj/effect/particle_emitter/lava(src)
+	if(prob(particle_prob) && ispath(particle_emitter, /obj/effect/particle_emitter))
+		particle_emitter = new particle_emitter(src)
 	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_LAVALAND_LAVA)
 
 /turf/open/lava/Destroy()
 	. = ..()
-	QDEL_NULL(particle_emitter)
+	if(isatom(particle_emitter))
+		QDEL_NULL(particle_emitter)
 
 /turf/open/lava/ex_act(severity, target)
 	contents_explosion(severity, target)
@@ -65,8 +68,8 @@
 	if(burn_stuff(AM))
 		START_PROCESSING(SSobj, src)
 
-/turf/open/lava/process()
-	if(!burn_stuff())
+/turf/open/lava/process(seconds_per_tick)
+	if(!burn_stuff(null, seconds_per_tick))
 		STOP_PROCESSING(SSobj, src)
 
 /turf/open/lava/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
@@ -78,7 +81,7 @@
 /turf/open/lava/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			to_chat(user, span_notice("You build a floor."))
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE
@@ -108,14 +111,14 @@
 		var/obj/item/stack/rods/lava/R = attacking_item
 		var/obj/structure/lattice/lava/H = locate(/obj/structure/lattice/lava, src)
 		if(H)
-			to_chat(user, "<span class='warning'>There is already a lattice here!</span>")
+			to_chat(user, span_warning("There is already a lattice here!"))
 			return
 		if(R.use(1))
-			to_chat(user, "<span class='notice'>You construct a lattice.</span>")
+			to_chat(user, span_notice("You construct a lattice."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			new /obj/structure/lattice/lava(locate(x, y, z))
 		else
-			to_chat(user, "<span class='warning'>You need one rod to build a heatproof lattice.</span>")
+			to_chat(user, span_warning("You need one rod to build a heatproof lattice."))
 		return
 	if(attacking_item.tool_behaviour == TOOL_MINING && (attacking_item.custom_materials[SSmaterials.GetMaterialRef(/datum/material/diamond)]))
 		if(is_mined)
@@ -141,7 +144,7 @@
 	return LAZYLEN(found_safeties)
 
 
-/turf/open/lava/proc/burn_stuff(AM)
+/turf/open/lava/proc/burn_stuff(AM, seconds_per_tick = 1)
 	. = 0
 
 	if(is_safe())
@@ -164,7 +167,7 @@
 				O.resistance_flags &= ~FIRE_PROOF
 			if(O.armor.fire > 50) //obj with 100% fire armor still get slowly burned away.
 				O.armor = O.armor.setRating(fire = 50)
-			O.fire_act(10000, 1000)
+			O.fire_act(10000, 1000 * seconds_per_tick)
 
 		else if (isliving(thing))
 			. = 1
@@ -197,9 +200,9 @@
 			if("lava" in L.weather_immunities)
 				continue
 
-			L.adjustFireLoss(20)
+			L.adjustFireLoss(20 * seconds_per_tick)
 			if(L) //mobs turning into object corpses could get deleted here.
-				L.adjust_fire_stacks(20)
+				L.adjust_fire_stacks(20 * seconds_per_tick)
 				L.IgniteMob()
 
 /turf/open/lava/smooth
@@ -209,12 +212,13 @@
 	icon_state = "lava-255"
 	base_icon_state = "lava"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_LAVA)
+	smoothing_groups = list(SMOOTH_GROUP_FLOOR_LAVA)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_LAVA)
 
 /turf/open/lava/smooth/lava_land_surface
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
+
 	baseturfs = /turf/open/lava/smooth/lava_land_surface
 
 /turf/open/lava/smooth/airless

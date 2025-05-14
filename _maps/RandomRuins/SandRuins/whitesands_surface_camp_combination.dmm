@@ -55,8 +55,10 @@
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "cI" = (
-/obj/item/clothing/glasses/thermal/eyepatch,
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/item/garnish/gold{
+	pixel_x = 10
+	},
 /turf/open/floor/plating/asteroid/whitesands{
 	light_range = 2
 	},
@@ -387,15 +389,15 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "nV" = (
 /obj/structure/fence/corner{
-	dir = 8
+	dir = 10
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "nW" = (
-/obj/machinery/biogenerator,
-/obj/machinery/door/window/northleft,
+/obj/structure/frame/machine,
+/obj/machinery/door/window/northright,
 /turf/open/floor/wood,
 /area/ruin)
 "nZ" = (
@@ -543,7 +545,7 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/item/gun/ballistic/shotgun/doublebarrel,
+/obj/item/gun/ballistic/shotgun/doublebarrel/improvised,
 /turf/open/floor/wood,
 /area/ruin)
 "uf" = (
@@ -854,7 +856,6 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
-/obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/concrete,
 /area/ruin)
 "Hb" = (
@@ -880,49 +881,29 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "Hn" = (
 /obj/structure/closet/secure_closet/hydroponics,
-/obj/item/circuitboard/machine/plantgenes,
 /obj/item/gun/ballistic/rifle/polymer,
 /turf/open/floor/wood,
 /area/ruin)
 "HP" = (
 /obj/structure/closet/crate/hydroponics,
-/obj/item/seeds/apple,
-/obj/item/seeds/banana,
-/obj/item/seeds/berry,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/carrot,
-/obj/item/seeds/chili,
-/obj/item/seeds/cherry,
-/obj/item/seeds/cocoapod,
-/obj/item/seeds/cotton,
-/obj/item/seeds/corn,
-/obj/item/seeds/garlic,
-/obj/item/seeds/eggplant,
-/obj/item/seeds/orange,
-/obj/item/seeds/onion,
-/obj/item/seeds/lemon,
-/obj/item/seeds/lime,
-/obj/item/seeds/pineapple,
-/obj/item/seeds/potato,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/sugarcane,
-/obj/item/seeds/tea,
-/obj/item/seeds/tobacco,
-/obj/item/seeds/tomato,
-/obj/item/seeds/wheat,
-/obj/item/seeds/watermelon,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/seeds/chili,
+/obj/item/seeds/garlic,
+/obj/item/seeds/tomato,
+/obj/item/seeds/onion,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/potato,
 /turf/open/floor/wood,
 /area/ruin)
 "HX" = (
-/obj/effect/spawner/random/exotic/armory,
+/obj/effect/spawner/random/medical/supplies,
 /turf/open/floor/plating/asteroid/whitesands/dried{
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/sand/explored)
 "Ig" = (
 /obj/structure/table,
-/obj/item/gun/ballistic/automatic/pistol/candor,
+/obj/item/tank/internals/emergency_oxygen/double,
 /turf/open/floor/concrete,
 /area/ruin)
 "Io" = (
@@ -963,12 +944,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/sand/explored)
-"JE" = (
-/obj/effect/spawner/random/engineering/tool/sydnie,
-/turf/open/floor/plating/asteroid/whitesands{
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/sand/explored)
 "JI" = (
 /obj/item/shard{
 	icon_state = "tiny"
@@ -986,16 +961,10 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/wood,
 /area/ruin)
-"KH" = (
-/obj/structure/reagent_dispensers/watertank/high,
-/turf/open/floor/plating/asteroid/whitesands/dried{
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/sand/explored)
 "KJ" = (
 /obj/structure/table,
 /obj/item/gun/ballistic/automatic/smg/skm_carbine,
-/obj/item/ammo_box/magazine/skm_545_39,
+/obj/item/ammo_box/magazine/skm_46_30,
 /turf/open/floor/concrete,
 /area/ruin)
 "Ld" = (
@@ -1028,7 +997,6 @@
 	pixel_x = -17
 	},
 /obj/effect/decal/remains/human,
-/obj/item/clothing/mask/gas/clown_hat,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/ammo_casing/a357{
 	pixel_x = 9;
@@ -1072,7 +1040,6 @@
 	pixel_x = 13
 	},
 /obj/effect/decal/remains/human,
-/obj/item/clothing/mask/gas/mime,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/ammo_casing/a357{
 	dir = 10;
@@ -1093,11 +1060,6 @@
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
-/area/ruin)
-"Px" = (
-/obj/structure/closet/cabinet,
-/obj/item/storage/bag/money,
-/turf/open/floor/wood,
 /area/ruin)
 "PX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1301,7 +1263,6 @@
 "XP" = (
 /obj/structure/table,
 /obj/item/trash/can,
-/obj/item/storage/box/ammo/c45_surplus,
 /turf/open/floor/concrete,
 /area/ruin)
 "XS" = (
@@ -2659,7 +2620,7 @@ rx
 Bw
 yc
 YI
-KH
+mv
 mv
 iK
 iK
@@ -3683,7 +3644,7 @@ iK
 iK
 kK
 WD
-Px
+er
 Pi
 er
 wX
@@ -3887,7 +3848,7 @@ lG
 kK
 kO
 ql
-JE
+kK
 OZ
 kK
 kK

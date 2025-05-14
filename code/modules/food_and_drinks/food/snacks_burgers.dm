@@ -9,7 +9,7 @@
 
 /obj/item/reagent_containers/food/snacks/burger/plain
 	name = "burger"
-	desc = "The cornerstone of every nutritious breakfast."
+	desc = "A Solarian culinary cornerstone: a beef patty between a sliced bun or roll, with additional condiments and ingredients included between them."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
 	foodtype = GRAIN | MEAT
 
@@ -18,7 +18,7 @@
 	if(prob(1))
 		new/obj/effect/particle_effect/smoke(get_turf(src))
 		playsound(src, 'sound/effects/smoke.ogg', 50, TRUE)
-		visible_message("<span class='warning'>Oh, ye gods! [src] is ruined! But what if...?</span>")
+		visible_message(span_warning("Oh, ye gods! [src] is ruined! But what if...?"))
 		name = "steamed ham"
 		desc = pick("Ahh, Head of Personnel, welcome. I hope you're prepared for an unforgettable luncheon!",
 		"And you call these steamed hams despite the fact that they are obviously microwaved?",
@@ -26,45 +26,9 @@
 		"You know, these hamburgers taste quite similar to the ones they have at the Maltese Falcon.")
 		tastes = list("fast food hamburger" = 1)
 
-/obj/item/reagent_containers/food/snacks/burger/human
-	var/subjectname = ""
-	var/subjectjob = null
-	name = "human burger"
-	desc = "A bloody burger."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
-	tastes = list("bun" = 2, "long pig" = 4)
-	foodtype = MEAT | GRAIN | GORE
-
-/obj/item/reagent_containers/food/snacks/burger/human/CheckParts(list/parts_list)
-	..()
-	var/obj/item/reagent_containers/food/snacks/meat/M = locate(/obj/item/reagent_containers/food/snacks/meat/steak/plain/human) in contents
-	if(M)
-		subjectname = M.subjectname
-		subjectjob = M.subjectjob
-		if(subjectname)
-			name = "[subjectname] burger"
-		else if(subjectjob)
-			name = "[subjectjob] burger"
-		qdel(M)
-
-
-/obj/item/reagent_containers/food/snacks/burger/corgi
-	name = "corgi burger"
-	desc = "You monster."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT | GORE
-
-/obj/item/reagent_containers/food/snacks/burger/appendix
-	name = "appendix burger"
-	desc = "Tastes like appendicitis."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 6)
-	icon_state = "appendixburger"
-	tastes = list("bun" = 4, "grass" = 2)
-	foodtype = GRAIN | MEAT | GORE
-
 /obj/item/reagent_containers/food/snacks/burger/fish
 	name = "fillet -o- carp sandwich"
-	desc = "Almost like a carp is yelling somewhere... Give me back that fillet -o- carp, give me that carp."
+	desc = "A breaded and fried square of space carp, usually with tartar sauce and cheese kept between a sliced, steamed bun."
 	icon_state = "fishburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 3)
 	tastes = list("bun" = 4, "fish" = 4)
@@ -72,191 +36,42 @@
 
 /obj/item/reagent_containers/food/snacks/burger/tofu
 	name = "tofu burger"
-	desc = "What.. is that meat?"
+	desc = "A vegetarian alternative to a hamburger. The tofu is noticeably softer than meat."
 	icon_state = "tofuburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	tastes = list("bun" = 4, "tofu" = 4)
+	tastes = list("bun" = 4, "firm tofu" = 4)
 	foodtype = GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/burger/roburger
 	name = "roburger"
-	desc = "The lettuce is the only organic component. Beep."
+	desc = "A hamburger made from metal parts. You can't imagine how you'll manage to get a bite in..."
 	icon_state = "roburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/nanomachines = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/nanomachines = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
-	tastes = list("bun" = 4, "lettuce" = 2, "sludge" = 1)
+	tastes = list("bun" = 4, "lettuce" = 2, "copper" = 1)
 	foodtype = GRAIN | TOXIC
 
 /obj/item/reagent_containers/food/snacks/burger/roburgerbig
 	name = "roburger"
-	desc = "This massive patty looks like poison. Beep."
+	desc = "A hamburger made from a \"cut\" of some machinery. Your mind struggles to understand how this came to be."
 	icon_state = "roburger"
 	volume = 120
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/nanomachines = 70, /datum/reagent/consumable/nutriment/vitamin = 10)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/nanomachines = 70, /datum/reagent/consumable/nutriment/vitamin = 5)
-	tastes = list("bun" = 4, "lettuce" = 2, "sludge" = 1)
+	tastes = list("bun" = 4, "lettuce" = 2, "wires" = 1)
 	foodtype = GRAIN | TOXIC
 
 /obj/item/reagent_containers/food/snacks/burger/xeno
 	name = "xenoburger"
-	desc = "Smells caustic. Tastes like heresy."
+	desc = " hamburger made with a neon green patty of... something. You notice that the meat is starting to emulcify the rest of the burger."
 	icon_state = "xburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 6)
-	tastes = list("bun" = 4, "acid" = 4)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/bearger
-	name = "bearger"
-	desc = "Best served rawr."
-	icon_state = "bearger"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 6)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/clown
-	name = "clown burger"
-	desc = "This tastes funny..."
-	icon_state = "clownburger"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/consumable/banana = 6)
-	foodtype = GRAIN | FRUIT
-
-/obj/item/reagent_containers/food/snacks/burger/mime
-	name = "mime burger"
-	desc = "Its taste defies language."
-	icon_state = "mimeburger"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/consumable/nothing = 6)
-	foodtype = GRAIN
-
-/obj/item/reagent_containers/food/snacks/burger/brain
-	name = "brainburger"
-	desc = "A strange looking burger. It looks almost sentient."
-	icon_state = "brainburger"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/medicine/mannitol = 6, /datum/reagent/consumable/nutriment/vitamin = 5)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/medicine/mannitol = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
-	tastes = list("bun" = 4, "brains" = 2)
-	foodtype = GRAIN | MEAT | GORE
-
-/obj/item/reagent_containers/food/snacks/burger/ghost
-	name = "ghost burger"
-	desc = "Too Spooky!"
-	icon_state = "ghostburger"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 12, /datum/reagent/consumable/sodiumchloride = 5)
-	tastes = list("bun" = 2, "ectoplasm" = 4)
-	foodtype = GRAIN
-	alpha = 170
-	verb_say = "moans"
-	verb_yell = "wails"
-
-/obj/item/reagent_containers/food/snacks/burger/ghost/Initialize()
-	. = ..()
-	START_PROCESSING(SSobj, src)
-
-/obj/item/reagent_containers/food/snacks/burger/ghost/process()
-	if(!isturf(loc)) //no floating out of bags
-		return
-	var/paranormal_activity = rand(100)
-	switch(paranormal_activity)
-		if(97 to 100)
-			audible_message("[src] rattles a length of chain.")
-			playsound(loc,'sound/spookoween/chain_rattling.ogg', 300, TRUE)
-		if(91 to 96)
-			say(pick("OoOoOoo.", "OoooOOooOoo!!"))
-		if(84 to 90)
-			dir = pick(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
-			step(src, dir)
-		if(71 to 83)
-			step(src, dir)
-		if(65 to 70)
-			var/obj/machinery/light/L = locate(/obj/machinery/light) in view(4, src)
-			if(L)
-				L.flicker()
-		if(62 to 64)
-			playsound(loc,pick('sound/hallucinations/i_see_you1.ogg', 'sound/hallucinations/i_see_you2.ogg'), 50, TRUE, ignore_walls = FALSE)
-		if(61)
-			visible_message("[src] spews out a glob of ectoplasm!")
-			new /obj/effect/decal/cleanable/greenglow/ecto(loc)
-			playsound(loc,'sound/effects/splat.ogg', 200, TRUE)
-
-		//If i was less lazy i would make the burger forcefeed itself to a nearby mob here.
-
-/obj/item/reagent_containers/food/snacks/burger/ghost/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	. = ..()
-
-/obj/item/reagent_containers/food/snacks/burger/red
-	name = "red burger"
-	desc = "Perfect for hiding the fact it's burnt to a crisp."
-	icon_state = "cburger"
-	color = "#DA0000FF"
-	bonus_reagents = list(/datum/reagent/colorful_reagent/powder/red = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/orange
-	name = "orange burger"
-	desc = "Contains 0% juice."
-	icon_state = "cburger"
-	color = "#FF9300FF"
-	bonus_reagents = list(/datum/reagent/colorful_reagent/powder/orange = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/yellow
-	name = "yellow burger"
-	desc = "Bright to the last bite."
-	icon_state = "cburger"
-	color = "#FFF200FF"
-	bonus_reagents = list(/datum/reagent/colorful_reagent/powder/yellow = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/green
-	name = "green burger"
-	desc = "It's not tainted meat, it's painted meat!"
-	icon_state = "cburger"
-	color = "#A8E61DFF"
-	bonus_reagents = list(/datum/reagent/colorful_reagent/powder/green = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/blue
-	name = "blue burger"
-	desc = "Is this blue rare?"
-	icon_state = "cburger"
-	color = "#00B7EFFF"
-	bonus_reagents = list(/datum/reagent/colorful_reagent/powder/blue = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/purple
-	name = "purple burger"
-	desc = "Regal and low class at the same time."
-	icon_state = "cburger"
-	color = "#DA00FFFF"
-	bonus_reagents = list(/datum/reagent/colorful_reagent/powder/purple = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/black
-	name = "black burger"
-	desc = "This is overcooked."
-	icon_state = "cburger"
-	color = "#1C1C1C"
-	bonus_reagents = list(/datum/reagent/colorful_reagent/powder/black = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/white
-	name = "white burger"
-	desc = "Delicous Titanium!"
-	icon_state = "cburger"
-	color = "#FFFFFF"
-	bonus_reagents = list(/datum/reagent/colorful_reagent/powder/white = 10, /datum/reagent/consumable/nutriment/vitamin = 5)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/burger/spell
-	name = "spell burger"
-	desc = "This is absolutely Ei Nath."
-	icon_state = "spellburger"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 10)
-	tastes = list("bun" = 4, "magic" = 2)
+	tastes = list("bun" = 4, "coppery acid" = 4)
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/burger/bigbite
 	name = "big bite burger"
-	desc = "Forget the Big Mac. THIS is the future!"
+	desc = "A hamburger biled high with tons of beef patties and add-ons. You steel yourself for the meal to come..."
 	icon_state = "bigbiteburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -265,7 +80,7 @@
 
 /obj/item/reagent_containers/food/snacks/burger/jelly
 	name = "jelly burger"
-	desc = "Culinary delight..?"
+	desc = "A hamburger made from a shaped patty of some sort of fruit jelly. How very... sweet?"
 	icon_state = "jellyburger"
 	tastes = list("bun" = 4, "jelly" = 2)
 	foodtype = GRAIN | MEAT
@@ -282,7 +97,7 @@
 
 /obj/item/reagent_containers/food/snacks/burger/superbite
 	name = "super bite burger"
-	desc = "This is a mountain of a burger. FOOD!"
+	desc = "A true spire of a hamburger, stretching up and threatening the ceiling. You better hope this wasn't made <i>just</i> for you."
 	icon_state = "superbiteburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 10)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 40, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -294,7 +109,7 @@
 
 /obj/item/reagent_containers/food/snacks/burger/fivealarm
 	name = "five alarm burger"
-	desc = "HOT! HOT!"
+	desc = "An extremely spicy hamburger, prepared typically for challenges to bear the heat. Remember to tap out before you can't breathe anymore!"
 	icon_state = "fivealarmburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/capsaicin = 5, /datum/reagent/consumable/condensedcapsaicin = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -302,21 +117,14 @@
 
 /obj/item/reagent_containers/food/snacks/burger/rat
 	name = "rat burger"
-	desc = "Pretty much what you'd expect..."
+	desc = "A burger made with an entire rat in lieu of a bun. Any port in a storm...?"
 	icon_state = "ratburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	foodtype = GRAIN | MEAT | GORE
 
-/obj/item/reagent_containers/food/snacks/burger/baseball
-	name = "home run baseball burger"
-	desc = "It's still warm. The steam coming off of it looks like baseball."
-	icon_state = "baseball"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
-	foodtype = GRAIN | GROSS
-
 /obj/item/reagent_containers/food/snacks/burger/baconburger
 	name = "bacon burger"
-	desc = "The perfect combination of all things American."
+	desc = "A commonly observed variation of the Solarian hamburger. The cuts of bacon add a pleasant crunch."
 	icon_state = "baconburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("bacon" = 4, "bun" = 2)
@@ -324,15 +132,15 @@
 
 /obj/item/reagent_containers/food/snacks/burger/empoweredburger
 	name = "empowered burger"
-	desc = "It's shockingly good, if you live off of electricity that is."
+	desc = "An experiment in attempting to adapt food for consumption by elzuose. While they still can't taste it, you shouldn't go eating it for them."
 	icon_state = "empoweredburger"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/liquidelectricity = 5)
-	tastes = list("bun" = 2, "pure electricity" = 4)
+	tastes = list("bun" = 2, "painful tingling" = 4)
 	foodtype = GRAIN | TOXIC
 
 /obj/item/reagent_containers/food/snacks/burger/crab
 	name = "crab burger"
-	desc = "A delicious patty of the crabby kind, slapped in between a bun."
+	desc = "A hamburger made with a compressed patty of crab meat. It's very savory, if a little too easy to come apart."
 	icon_state = "crabburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 3)
 	tastes = list("bun" = 2, "crab meat" = 4)
@@ -340,39 +148,39 @@
 
 /obj/item/reagent_containers/food/snacks/burger/soylent
 	name = "soylent burger"
-	desc = "A eco-friendly burger made using upcycled low value biomass."
+	desc = "A hamburger made out of recycled biomass, shaped and textured into a meat patty. The origins of said biomass isn't known."
 	icon_state = "soylentburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
 	tastes = list("bun" = 2, "assistant" = 4)
 	foodtype = GRAIN | MEAT | DAIRY
 
 /obj/item/reagent_containers/food/snacks/burger/rib
-	name = "mcrib"
-	desc = "An elusive rib shaped burger with limited availablity across the galaxy. Not as good as you remember it."
+	name = "rib sandwich"
+	desc = "A long hamburger with an imitiation of a shortrib, smothered in barbeque sauce and onions, of terran origin."
 	icon_state = "mcrib"
 	bonus_reagents = list(/datum/reagent/consumable/bbqsauce = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
 	tastes = list("bun" = 2, "pork patty" = 4)
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/burger/mcguffin
-	name = "mcguffin"
-	desc = "A cheap and greasy imitation of an eggs benedict."
+	name = "breakfast sandwich"
+	desc = "A sliced intersolar muffin with a patty-shaped steamed and fried egg between, of terran origin."
 	icon_state = "mcguffin"
 	tastes = list("muffin" = 2, "bacon" = 3)
 	bonus_reagents = list(/datum/reagent/consumable/eggyolk = 3, /datum/reagent/consumable/nutriment = 1)
 	foodtype = GRAIN | MEAT | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/burger/chicken
-	name = "chicken sandwich" //Apparently the proud people of Americlapstan object to this thing being called a burger. Apparently McDonald's just calls it a burger in Europe as to not scare and confuse us.
-	desc = "A delicious chicken sandwich, it is said the proceeds from this treat helps criminalize disarming people on the space frontier."
+	name = "chicken sandwich"
+	desc = "A breaded and fried chicken breast, usually with lettuce and mayo between a sliced bun. A popular alternative to the beef-based hamburger."
 	icon_state = "chickenburger"
-	tastes = list("bun" = 2, "chicken" = 4, "God's covenant" = 1)
+	tastes = list("bun" = 2, "chicken" = 4, "lettuce" = 1)
 	bonus_reagents = list(/datum/reagent/consumable/mayonnaise = 3, /datum/reagent/consumable/cooking_oil = 2, /datum/reagent/consumable/nutriment = 2)
 	foodtype = GRAIN | MEAT | FRIED
 
 /obj/item/reagent_containers/food/snacks/burger/cheese
 	name = "cheese burger"
-	desc = "This noble burger stands proudly clad in golden cheese."
+	desc = "A common enough variant of the hamburger with the inclusion of a slice of specifically made cheese. This type of cheese is not often used for any other cheese-based meals, interestingly enough."
 	icon_state = "cheeseburger"
 	tastes = list("bun" = 2, "beef patty" = 4, "cheese" = 3)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)

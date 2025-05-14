@@ -80,7 +80,7 @@
 		start_time = world.time
 		QDEL_IN(src, timeout)
 
-/datum/tgui_modal/Destroy(force, ...)
+/datum/tgui_modal/Destroy(force)
 	SStgui.close_uis(src)
 	QDEL_NULL(buttons)
 	. = ..()
@@ -141,7 +141,7 @@
 	..(user, title, message, buttons, timeout)
 	src.callback = callback
 
-/datum/tgui_modal/async/Destroy(force, ...)
+/datum/tgui_modal/async/Destroy(force)
 	QDEL_NULL(callback)
 	. = ..()
 

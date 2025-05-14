@@ -30,7 +30,7 @@
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
 	var/turns_since_scan = 0
-	var/mob/living/simple_animal/mouse/movement_target
+	var/mob/living/basic/mouse/movement_target
 	///Limits how often cats can spam chasing mice.
 	var/emote_cooldown = 0
 	collar_type = "cat"
@@ -38,7 +38,7 @@
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
-	var/grace = RAD_GRACE_PERIOD
+	var/grace = RAD_GEIGER_GRACE_PERIOD
 	var/radiation_count = 0
 	var/current_tick_amount = 0
 	var/last_tick_amount = 0
@@ -212,7 +212,7 @@
 	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
 
 	if(current_tick_amount)
-		grace = RAD_GRACE_PERIOD
+		grace = RAD_GEIGER_GRACE_PERIOD
 		last_tick_amount = current_tick_amount
 	else
 		grace--
@@ -242,10 +242,10 @@
 	//MICE!
 	if((src.loc) && isturf(src.loc))
 		if(!stat && !resting && !buckled)
-			for(var/mob/living/simple_animal/mouse/M in view(1,src))
-				if(istype(M, /mob/living/simple_animal/mouse/brown/Tom) && (name == "Jerry")) //Turns out there's no jerry subtype.
+			for(var/mob/living/basic/mouse/M in view(1,src))
+				if(istype(M, /mob/living/basic/mouse/brown/tom) && (name == "Jerry")) //Turns out there's no jerry subtype.
 					if (emote_cooldown < (world.time - 600))
-						visible_message("<span class='warning'>[src] chases [M] around, to no avail!</span>")
+						visible_message(span_warning("[src] chases [M] around, to no avail!"))
 						step(M, pick(GLOB.cardinals))
 						emote_cooldown = world.time
 					break
@@ -275,7 +275,7 @@
 			if(!movement_target || !(movement_target.loc in oview(src, 3)))
 				movement_target = null
 				stop_automated_movement = 0
-				for(var/mob/living/simple_animal/mouse/snack in oview(src,3))
+				for(var/mob/living/basic/mouse/snack in oview(src,3))
 					if(isturf(snack.loc) && !snack.stat)
 						movement_target = snack
 						break
@@ -334,7 +334,7 @@
 	free cake to the universe!</b>")
 	var/new_name = stripped_input(src, "Enter your name, or press \"Cancel\" to stick with Keeki.", "Name Change")
 	if(new_name)
-		to_chat(src, "<span class='notice'>Your name is now <b>\"new_name\"</b>!</span>")
+		to_chat(src, span_notice("Your name is now <b>\"new_name\"</b>!"))
 		name = new_name
 
 /mob/living/simple_animal/pet/cat/cak/Life()

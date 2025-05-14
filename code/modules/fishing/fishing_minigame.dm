@@ -64,7 +64,7 @@
 		if(rod.hook.fishing_hook_traits & FISHING_HOOK_WEIGHTED)
 			special_effects += FISHING_MINIGAME_RULE_WEIGHTED_BAIT
 
-/datum/fishing_challenge/Destroy(force, ...)
+/datum/fishing_challenge/Destroy(force)
 	if(!completed)
 		complete(win = FALSE)
 	if(fishing_line)

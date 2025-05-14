@@ -15,7 +15,7 @@
 		var/mob/living/carbon/human/U = user
 		if(!istype(U.dna.species, /datum/species/skeleton))
 			U.adjustStaminaLoss(35) //Extra Damage
-			U.Jitter(35)
+			U.set_jitter(35)
 			U.stuttering = 20
 			if(U.getStaminaLoss() > 95)
 				to_chat(U, "<font color ='red', size ='4'><B>Your ears weren't meant for this spectral sound.</B></font>")
@@ -29,7 +29,7 @@
 		if(istype(H.dna.species, /datum/species/zombie))
 			H.adjustStaminaLoss(25)
 			H.Paralyze(15) //zombies can't resist the doot
-		C.Jitter(35)
+		C.set_jitter(35)
 		C.stuttering = 20
 		if((!istype(H.dna.species, /datum/species/skeleton)) && (!istype(H.dna.species, /datum/species/android)) && (!istype(H.dna.species, /datum/species/jelly)))
 			C.adjustStaminaLoss(25) //boneless humanoids don't lose the will to live
@@ -37,14 +37,14 @@
 		spectral_change(H)
 
 	else //the sound will spook monkeys.
-		C.Jitter(15)
+		C.set_jitter(15)
 		C.stuttering = 20
 
 /datum/component/spooky/proc/spectral_change(mob/living/carbon/human/H, mob/user)
 	if((H.getStaminaLoss() > 95) && (!istype(H.dna.species, /datum/species/skeleton)) && (!istype(H.dna.species, /datum/species/android)) && (!istype(H.dna.species, /datum/species/jelly)))
 		H.Paralyze(20)
 		H.set_species(/datum/species/skeleton)
-		H.visible_message("<span class='warning'>[H] has given up on life as a mortal.</span>")
+		H.visible_message(span_warning("[H] has given up on life as a mortal."))
 		var/T = get_turf(H)
 		if(too_spooky)
 			if(prob(30))
@@ -54,9 +54,9 @@
 			else if(prob(30))
 				new/obj/item/instrument/trombone/spectral(T)
 			else
-				to_chat(H, "<span class='boldwarning'>The spooky gods forgot to ship your instrument. Better luck next unlife.</span>")
-		to_chat(H, "<span class='boldnotice'>You are the spooky skeleton!</span>")
-		to_chat(H, "<span class='boldnotice'>A new life and identity has begun. Help your fellow skeletons into bringing out the spooky-pocalypse. You haven't forgotten your past life, and are still beholden to past loyalties.</span>")
+				to_chat(H, span_boldwarning("The spooky gods forgot to ship your instrument. Better luck next unlife."))
+		to_chat(H, span_boldnotice("You are the spooky skeleton!"))
+		to_chat(H, span_boldnotice("A new life and identity has begun. Help your fellow skeletons into bringing out the spooky-pocalypse. You haven't forgotten your past life, and are still beholden to past loyalties."))
 		change_name(H)	//time for a new name!
 
 /datum/component/spooky/proc/change_name(mob/living/carbon/human/H)

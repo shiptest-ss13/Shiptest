@@ -41,6 +41,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
+/obj/item/ammo_box/c38/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c38/trac
 	name = "speed loader (.38 TRAC)"
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These TRAC rounds do pitiful damage, but embed a tracking device in targets hit."
@@ -84,24 +87,26 @@
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	instant_load = TRUE
+	custom_materials = list(/datum/material/iron = 500)
 
 /obj/item/ammo_box/a858/empty
 	start_empty = TRUE
 
-// .308 Stripper Clip
+//8x50mmR Stripper Clip
 
-/obj/item/ammo_box/vickland_a308
-	name = "stripper clip (.308)"
-	desc = "A 5-round stripper clip for the Vickland Battle Rifle. The Vickland itself has a 10 round capacity, so keep in mind two of these are needed to fully reload it. These rounds do good damage with significant armor penetration."
-	icon_state = "stripper_308-5"
-	base_icon_state = "stripper_308"
-	ammo_type = /obj/item/ammo_casing/a308
-	max_ammo = 5
+/obj/item/ammo_box/vickland_a8_50r
+	name = "stripper clip (8x50mmR)"
+	desc = "An 8-round stripper clip for the Vickland battle rifle. These rounds do good damage with significant armor penetration."
+	icon_state = "stripper_8_50r-8"
+	base_icon_state = "stripper_8_50r"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	max_ammo = 8
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
+	custom_materials = list(/datum/material/iron = 500)
 
-/obj/item/ammo_box/vickland_a308/empty
+/obj/item/ammo_box/vickland_a8_50r/empty
 	start_empty = TRUE
 
 // .300 Magnum Stripper Clip
@@ -115,6 +120,7 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
+	custom_materials = list(/datum/material/iron = 500)
 
 /obj/item/ammo_box/a300/empty
 	start_empty = TRUE
@@ -124,14 +130,15 @@
 /obj/item/ammo_box/a762_stripper
 	name = "stripper clip (7.62)"
 	desc = "A 5-round stripper clip for makeshift bolt-action rifles. These rounds do good damage with good armor penetration."
-	icon_state = "stripper_308-5"
-	base_icon_state = "stripper_308"
+	icon_state = "300m-5"
+	base_icon_state = "300m"
 	ammo_type = /obj/item/ammo_casing/a762_40
 	caliber = "7.62x40mm"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
+	custom_materials = list(/datum/material/iron = 500)
 
 /obj/item/ammo_box/a762_stripper/empty
 	start_empty = TRUE
@@ -148,6 +155,9 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	item_flags = NO_MAT_REDEMPTION
 	instant_load = TRUE
+
+/obj/item/ammo_box/amagpellet_claris/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm grenades)"

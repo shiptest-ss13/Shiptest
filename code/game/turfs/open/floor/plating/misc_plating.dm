@@ -54,9 +54,9 @@
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	var/smooth_icon = 'icons/turf/floors/ash.dmi'
@@ -116,68 +116,13 @@
 	icon_state = "[icon_state][rand(1, 9)]"
 	. = ..()
 
-
-/turf/open/floor/plating/beach
-	name = "beach"
-	icon = 'icons/misc/beach.dmi'
-	flags_1 = NONE
-	attachment_holes = FALSE
-	bullet_bounce_sound = null
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-
-/turf/open/floor/plating/beach/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
-	return
-
-/turf/open/floor/plating/beach/ex_act(severity, target)
-	contents_explosion(severity, target)
-
-/turf/open/floor/plating/beach/sand
-	gender = PLURAL
-	name = "sand"
-	desc = "Surf's up."
-	icon_state = "sand"
-	baseturfs = /turf/open/floor/plating/beach/sand
-
-/turf/open/floor/plating/beach/coastline_t
-	name = "coastline"
-	desc = "Tide's high tonight. Charge your batons."
-	icon_state = "sandwater_t"
-	baseturfs = /turf/open/floor/plating/beach/coastline_t
-
-/turf/open/floor/plating/beach/coastline_b //need to make this water subtype.
-	name = "coastline"
-	icon_state = "sandwater_b"
-	baseturfs = /turf/open/floor/plating/beach/coastline_b
-	footstep = FOOTSTEP_LAVA
-	barefootstep = FOOTSTEP_LAVA
-	clawfootstep = FOOTSTEP_LAVA
-	heavyfootstep = FOOTSTEP_LAVA
-
-/turf/open/floor/plating/beach/water
-	gender = PLURAL
-	name = "water"
-	desc = "You get the feeling that nobody's bothered to actually make this water functional..."
-	icon_state = "water"
-	baseturfs = /turf/open/floor/plating/beach/water
-	footstep = FOOTSTEP_LAVA //placeholder, kinda.
-	barefootstep = FOOTSTEP_LAVA
-	clawfootstep = FOOTSTEP_LAVA
-	heavyfootstep = FOOTSTEP_LAVA
-
-/turf/open/floor/plating/beach/coastline_t/sandwater_inner
-	icon_state = "sandwater_inner"
-	baseturfs = /turf/open/floor/plating/beach/coastline_t/sandwater_inner
-
 /turf/open/floor/plating/ironsand
 	gender = PLURAL
 	name = "iron sand"
 	desc = "Like sand, but more <i>metal</i>."
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/ironsand/Initialize(mapload, inherited_virtual_z)
@@ -193,10 +138,9 @@
 /turf/open/floor/plating/ice
 	name = "ice sheet"
 	desc = "A sheet of solid ice. Looks slippery."
-	icon = 'icons/turf/snow.dmi'
-	icon_state = "ice"
+	icon = 'icons/turf/planetary/icemoon.dmi'
+	icon_state = "dark_ice"
 	initial_gas_mix = FROZEN_ATMOS
-	initial_temperature = 180
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/ice
 	slowdown = 1
@@ -206,6 +150,7 @@
 	barefootstep = FOOTSTEP_ICE
 	clawfootstep = FOOTSTEP_ICE
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	flammability = -5
 
 /turf/open/floor/plating/ice/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -227,11 +172,8 @@
 	light_power = 1
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 
-/turf/open/floor/plating/ice/colder
-	initial_temperature = 140
-
 /turf/open/floor/plating/ice/temperate
-	initial_temperature = 255.37
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 /turf/open/floor/plating/ice/break_tile()
 	return
@@ -242,11 +184,6 @@
 /turf/open/floor/plating/ice/iceberg
 	name = "cracked ice floor"
 	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
-	icon_state = "ice1"
-
-/turf/open/floor/plating/ice/iceberg/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	icon_state = "ice[rand(1,8)]"
 
 /turf/open/floor/plating/ice/iceberg/lit
 	light_range = 2
@@ -263,12 +200,11 @@
 	icon = 'icons/turf/snow.dmi'
 	icon_state = "snowplating"
 	initial_gas_mix = FROZEN_ATMOS
-	initial_temperature = 180
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/snowed/cavern
@@ -282,12 +218,6 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_SNOWED)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_SNOWED)
 	planetary_atmos = TRUE
-
-/turf/open/floor/plating/snowed/colder
-	initial_temperature = 140
-
-/turf/open/floor/plating/snowed/temperatre
-	initial_temperature = 255.37
 
 /turf/open/floor/plating/snowed/smoothed/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
@@ -305,16 +235,24 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
-	layer = HIGH_TURF_LAYER
+	layer = GRASS_TURF_LAYER
+	flammability = 1.5 // just a bit more than enough to sustain itself, needs additional fuel (plants) to really get going
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
+	/// How long this takes to burn down to just dirt
+	var/burn_limit = 20
 
 /turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(smoothing_flags)
 		var/matrix/translation = new
-		translation.Translate(-9, -9)
+		translation.Translate(-19, -19)
 		transform = translation
 		icon = smooth_icon
+
+/turf/open/floor/plating/grass/jungle/burn_tile()
+	burn_limit--
+	if(burn_limit <= 0)
+		ScrapeAway()
 
 /turf/open/floor/plating/grass/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
@@ -325,39 +263,13 @@
 	desc = "Upon closer examination, it's still dirt."
 	icon_state = "sand"
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 
-/turf/open/floor/plating/grass/beach
-	baseturfs = /turf/open/floor/plating/beach/sand
-	planetary_atmos = TRUE
+/turf/open/floor/plating/sandy_dirt/ship
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	planetary_atmos = FALSE
 
-/turf/open/floor/plating/grass/beach/lit
-	light_range = 2
-	light_power = 0.80
-
-
-
-/turf/open/floor/plating/moss
-	name = "mossy carpet"
-	desc = "When the forests burned away and the sky grew dark, the moss learned to feed on the falling ash."
-	baseturfs = /turf/open/floor/plating/ashplanet //explosions and damage can destroy the moss
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	icon_state = "moss"
-	icon = 'icons/turf/lava_moss.dmi'
-	base_icon_state = "moss"
-	bullet_bounce_sound = null
-	footstep = FOOTSTEP_GRASS
-	barefootstep = FOOTSTEP_GRASS
-	clawfootstep = FOOTSTEP_GRASS
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	layer = HIGH_TURF_LAYER
-	gender = PLURAL
-	light_power = 1
-	light_range = 2
-	pixel_x = -9
-	pixel_y = -9

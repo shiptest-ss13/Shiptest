@@ -28,54 +28,14 @@
 		cut_overlay(atvcover)
 	return ..()
 
-//TURRETS!
-/obj/vehicle/ridden/atv/turret
-	var/obj/machinery/porta_turret/syndicate/vehicle_turret/turret = null
-
-/obj/machinery/porta_turret/syndicate/vehicle_turret
-	name = "mounted turret"
-	scan_range = 7
-	density = FALSE
-
-/obj/vehicle/ridden/atv/turret/Initialize()
-	. = ..()
-	turret = new(loc)
-	turret.base = src
-
-/obj/vehicle/ridden/atv/turret/Moved()
-	. = ..()
-	if(!turret)
-		return
-	var/turf/our_turf = get_turf(src)
-	if(!our_turf)
-		return
-	turret.forceMove(our_turf)
-	switch(dir)
-		if(NORTH)
-			turret.pixel_x = base_pixel_x
-			turret.pixel_y = base_pixel_y + 4
-			turret.layer = ABOVE_MOB_LAYER
-		if(EAST)
-			turret.pixel_x = base_pixel_x - 12
-			turret.pixel_y = base_pixel_y + 4
-			turret.layer = OBJ_LAYER
-		if(SOUTH)
-			turret.pixel_x = base_pixel_x
-			turret.pixel_y = base_pixel_y + 4
-			turret.layer = OBJ_LAYER
-		if(WEST)
-			turret.pixel_x = base_pixel_x + 12
-			turret.pixel_y = base_pixel_y + 4
-			turret.layer = OBJ_LAYER
-
 /obj/vehicle/ridden/atv/attackby(obj/item/W as obj, mob/user as mob, params)
 	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM)
 		if(obj_integrity < max_integrity)
 			if(W.use_tool(src, user, 0, volume=50, amount=1))
-				user.visible_message("<span class='notice'>[user] repairs some damage to [name].</span>", "<span class='notice'>You repair some damage to \the [src].</span>")
+				user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("You repair some damage to \the [src]."))
 				obj_integrity += min(10, max_integrity-obj_integrity)
 				if(obj_integrity == max_integrity)
-					to_chat(user, "<span class='notice'>It looks to be fully repaired now.</span>")
+					to_chat(user, span_notice("It looks to be fully repaired now."))
 		return TRUE
 	return ..()
 
@@ -83,10 +43,10 @@
 	START_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/vehicle/ridden/atv/process()
+/obj/vehicle/ridden/atv/process(seconds_per_tick)
 	if(obj_integrity >= integrity_failure * max_integrity)
 		return PROCESS_KILL
-	if(prob(20))
+	if(SPT_PROB(10, seconds_per_tick))
 		return
 	var/datum/effect_system/smoke_spread/smoke = new
 	smoke.set_up(0, src)

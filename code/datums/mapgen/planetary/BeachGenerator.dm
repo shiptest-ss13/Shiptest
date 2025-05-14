@@ -17,7 +17,7 @@
 			BIOME_LOW_HUMIDITY = /datum/biome/ocean,
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/beach,
 			BIOME_HIGH_HUMIDITY = /datum/biome/grass/dense,
-			BIOME_HIGHEST_HUMIDITY = /datum/biome/jungle/dense
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/beach_jungle
 		),
 		BIOME_WARM = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/ocean/deep,
@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/grass
-	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/jungle = 1,
 		/obj/structure/flora/ausbushes/brflowers = 1,
@@ -107,11 +107,17 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/butterfly = 1,
 		/mob/living/simple_animal/chicken/rabbit/normal = 1,
-		/mob/living/simple_animal/mouse = 1,
+		/mob/living/basic/mouse = 1,
 		/mob/living/simple_animal/cow = 1,
 		/mob/living/simple_animal/deer = 1
 	)
 	mob_spawn_chance = 1
+
+
+	feature_spawn_chance = 0.8
+	feature_spawn_list = list(
+		/obj/effect/greeble_spawner/grass_patch_spawner/dark = 1,
+	)
 
 /datum/biome/grass/dense
 	flora_spawn_chance = 70
@@ -123,6 +129,8 @@
 	)
 	mob_spawn_chance = 2
 	feature_spawn_chance = 0.1
+
+	feature_spawn_chance = 1.2
 
 /datum/biome/beach
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/lit = 1)
@@ -167,7 +175,7 @@
 	flora_spawn_list = list(/obj/structure/flora/rock/beach = 1, /obj/structure/flora/rock/asteroid = 6)
 	mob_spawn_chance = 1
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/bear/cave = 5,
+		/mob/living/basic/bear/cave = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 1,
 	)
 
@@ -177,7 +185,7 @@
 	flora_spawn_chance = 6
 
 /datum/biome/cave/beach/magical
-	open_turf_types = list(/turf/open/floor/grass/fairy/beach = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass/fairy = 1)
 	flora_spawn_chance = 20
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/grassybush = 1,
@@ -200,3 +208,26 @@
 		/mob/living/simple_animal/slime/pet = 1,
 		/mob/living/simple_animal/hostile/lightgeist = 1
 	)
+
+/datum/biome/beach_jungle
+	flora_spawn_chance = 100
+	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit = 1, /turf/open/floor/plating/dirt/beach/lit = 9)
+	flora_spawn_list = list(
+		/obj/structure/flora/grass/jungle = 1,
+		/obj/structure/flora/grass/jungle/b = 1,
+		/obj/structure/flora/tree/jungle = 5,
+		/obj/structure/flora/rock/jungle = 1,
+		/obj/structure/flora/junglebush = 1,
+		/obj/structure/flora/junglebush/b = 1,
+		/obj/structure/flora/junglebush/c = 1,
+		/obj/structure/flora/junglebush/large = 1,
+		/obj/structure/spacevine/dense = 20,
+		/obj/structure/flora/ash/garden = 1,
+	)
+	mob_spawn_chance = 0.6
+	mob_spawn_list = list(
+		/mob/living/simple_animal/hostile/gorilla = 1,
+		/mob/living/carbon/monkey = 6,
+		/mob/living/simple_animal/hostile/retaliate/chicken = 4,
+		/obj/effect/spawner/random/chicken/jungle/flock = 1
+		)

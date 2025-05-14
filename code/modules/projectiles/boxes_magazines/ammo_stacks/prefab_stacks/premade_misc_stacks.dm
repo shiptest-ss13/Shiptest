@@ -7,7 +7,6 @@
 	icon_state = "foambox"
 
 /obj/item/storage/box/ammo/foam_darts/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/foam_darts = 4)
 	generate_items_inside(items_inside,src)
@@ -20,7 +19,6 @@
 	icon_state = "foambox_riot"
 
 /obj/item/storage/box/ammo/foam_darts/riot/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/foam_darts/riot = 4)
 	generate_items_inside(items_inside,src)

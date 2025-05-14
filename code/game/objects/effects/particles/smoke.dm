@@ -16,6 +16,7 @@
 	grow = 0.05
 
 /particles/smoke/turf_fire
+	spawning = 1 // don't turn this up or forest fires cause way too much lag
 	position = generator(GEN_SPHERE, 16, 24, NORMAL_RAND)
 
 /particles/smoke/burning
@@ -34,6 +35,12 @@
 	spawning = 1
 	velocity = list(0, 0.3, 0)
 	friction = 0.25
+
+/particles/smoke/steam/mild/coffeemaker_premium
+	position = list(-2, 1, 0)
+
+/particles/smoke/steam/mild/coffeemaker
+	position = list(-6, 0, 0)
 
 /particles/smoke/steam/bad
 	icon_state = list("steam_1" = 1, "smoke_1" = 1, "smoke_2" = 1, "smoke_3" = 1)
@@ -64,3 +71,7 @@
 	fadein = 0.7 SECONDS
 	position = generator(GEN_VECTOR, list(-3, 5, 0), list(3, 6.5, 0), NORMAL_RAND)
 	velocity = generator(GEN_VECTOR, list(-0.1, 0.4, 0), list(0.1, 0.5, 0), NORMAL_RAND)
+
+/particles/fog
+	icon = 'icons/effects/particles/smoke.dmi'
+	icon_state = list("chill_1" = 2, "chill_2" = 2, "chill_3" = 1)

@@ -242,22 +242,8 @@ function createBody({ title, failures }, runUrl) {
 	`.replace(/^\s*/gm, "");
 }
 
-function createComment(failures, runUrl) {
-	return `
-	Flaky tests were detected again in [this test run](${runUrl}).
-
-	Failures:
-	\`\`\`
-	${failures
-		.map(
-			(failure) =>
-				`${failure.group}: ${
-					failure.headline
-				}\n\t${failure.details.join("\n")}`
-		)
-		.join("\n")}
-	\`\`\`
-	`.replace(/^\s*/gm, "");
+function createComment(runUrl) {
+	return `Flaky tests were detected again in [this test run](${runUrl}).`;
 }
 
 export async function reportFlakyTests({ github, context }) {
@@ -304,7 +290,6 @@ export async function reportFlakyTests({ github, context }) {
 				repo: context.repo.repo,
 				issue_number: existingIssueId,
 				body: createComment(
-					details.failures,
 					`https://github.com/${context.repo.owner}/${
 						context.repo.repo
 					}/actions/runs/${

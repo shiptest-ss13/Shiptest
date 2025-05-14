@@ -36,9 +36,9 @@
 /obj/machinery/recharge_station/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Recharging <b>[recharge_speed]J</b> per cycle.</span>"
+		. += span_notice("The status display reads: Recharging <b>[recharge_speed]J</b> per cycle.")
 		if(repairs)
-			. += "<span class='notice'>[src] has been upgraded to support automatic repairs.</span>"
+			. += span_notice("[src] has been upgraded to support automatic repairs.")
 
 
 /obj/machinery/recharge_station/on_set_is_operational(old_value)
@@ -48,9 +48,9 @@
 		begin_processing()
 
 
-/obj/machinery/recharge_station/process()
+/obj/machinery/recharge_station/process(seconds_per_tick)
 	if(occupant)
-		process_occupant()
+		process_occupant(seconds_per_tick)
 	return 1
 
 /obj/machinery/recharge_station/relaymove(mob/living/user, direction)
@@ -105,7 +105,7 @@
 	icon_state = "borgcharger[state_open ? 0 : (occupant ? 1 : 2)]"
 	return ..()
 
-/obj/machinery/recharge_station/proc/process_occupant()
+/obj/machinery/recharge_station/proc/process_occupant(seconds_per_tick)
 	if(!occupant)
 		return
-	SEND_SIGNAL(occupant, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, recharge_speed, repairs)
+	SEND_SIGNAL(occupant, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, recharge_speed * seconds_per_tick / 2, repairs)

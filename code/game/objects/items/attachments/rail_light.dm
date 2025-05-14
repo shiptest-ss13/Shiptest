@@ -4,8 +4,8 @@
 	icon_state = "raillight"
 	light_color = COLOR_LIGHT_ORANGE
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
-	light_range = 4
-	light_power = 0.8
+	light_range = 5
+	light_power = 0.9
 	light_on = FALSE
 
 	attach_features_flags = ATTACH_REMOVABLE_HAND|ATTACH_TOGGLE

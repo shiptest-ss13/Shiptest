@@ -9,7 +9,7 @@
 	desc = "This blank bottle is unyieldingly anonymous, offering no clues to its contents."
 	icon_state = "glassbottle"
 	fill_icon_thresholds = list(0, 10, 20, 30, 40, 50, 60, 70, 80, 90)
-	custom_price = 65
+	custom_price = 15
 	amount_per_transfer_from_this = 10
 	volume = 100
 	force = 15 //Smashing bottles over someone's head hurts.
@@ -32,7 +32,7 @@
 	desc = "This blank bottle is unyieldingly anonymous, offering no clues to its contents."
 	icon_state = "glassbottlesmall"
 	volume = 50
-	custom_price = 55
+	custom_price = 1
 
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
 	if(!target)
@@ -42,7 +42,7 @@
 		return ..()
 
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm [target]!</span>")
+		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return
 
 	var/obj/item/bodypart/affecting = user.zone_selected //Find what the player is aiming at
@@ -85,11 +85,11 @@
 
 	//Display an attack message.
 	if(target != user)
-		target.visible_message("<span class='danger'>[user] hits [target][head_attack_message] with a bottle of [src.name]!</span>", \
-				"<span class='userdanger'>[user] hits you [head_attack_message] with a bottle of [src.name]!</span>")
+		target.visible_message(span_danger("[user] hits [target][head_attack_message] with a bottle of [src.name]!"), \
+				span_userdanger("[user] hits you [head_attack_message] with a bottle of [src.name]!"))
 	else
-		target.visible_message("<span class='danger'>[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!</span>", \
-				"<span class='userdanger'>You hit yourself with a bottle of [src.name][head_attack_message]!</span>")
+		target.visible_message(span_danger("[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!"), \
+				span_userdanger("You hit yourself with a bottle of [src.name][head_attack_message]!"))
 
 	//Attack logs
 	log_combat(user, target, "attacked", src)
@@ -134,11 +134,6 @@
 	desc = "An equivalent to single-malt whiskey, commonly enjoyed and brewed in a brewery originally founded Zohil. While different from traditionally used wheat, it can be safely enjoyed by every species."
 	icon_state = "whiskeybottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/kong
-	name = "Kong"
-	desc = "Makes You Go Ape!"
-	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey/kong = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/candycornliquor
 	name = "candy corn liquor"
@@ -268,9 +263,12 @@
 	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it."
 	icon_state = "sakebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sake = 100)
+	var/random = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/sake/Initialize()
 	. = ..()
+	if(!random)
+		return FALSE
 	if(prob(10))
 		name = "Fluffy Tail"
 		desc += "This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
@@ -279,6 +277,18 @@
 		name = "Inubashiri's Home Brew"
 		desc += "This particular brand's mascot is a human with vaguely canine ears and a tail."
 		icon_state = "sakebottle_i"
+
+/obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl
+	name = "Fluffy Tail"
+	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it. This particular brand's mascot is a human with vaguely canine ears and a tail."
+	icon_state = "sakebottle_k"
+	random = FALSE
+
+/obj/item/reagent_containers/food/drinks/bottle/sake/wolfgirl
+	name = "Inubashiri's Home Brew"
+	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it. This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
+	icon_state = "sakebottle_i"
+	random = FALSE
 
 /obj/item/reagent_containers/food/drinks/bottle/fernet
 	name = "Fernet Bronca"
@@ -297,7 +307,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
 	name = "orange juice"
 	desc = "Sweet and tart orange juice. Usually found fortified to make it more nutritious. Full of vitamin C!"
-	custom_price = 100
+	custom_price = 10
 	icon_state = "orangejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -309,7 +319,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/lemonjuice
 	name = "lemon juice"
 	desc = "Lemonade for everyone!"
-	custom_price = 100
+	custom_price = 10
 	icon_state = "lemonjuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -321,7 +331,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "milk cream"
 	desc = "Cream made from milk. It's thicker than milk, which hopefully prevents any mixups."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "cream"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -333,7 +343,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
 	name = "tomato juice"
 	desc = "Juice from tomatoes and salt. You'll often find some technicians soaking in this if they've been working with plasma."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "tomatojuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -345,7 +355,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
 	name = "lime juice"
 	desc = "Lime juice. You might want to mix something with this instead of drinking it straight..."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "limejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -357,7 +367,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/pineapplejuice
 	name = "pineapple juice"
 	desc = "Tart, sweet juice from the tropical pineapple."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "pineapplejuice"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -370,7 +380,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/menthol
 	name = "menthol"
 	desc = "Tastes naturally minty, and imparts a very mild numbing sensation."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "mentholbox"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -381,7 +391,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Three-Star Grenadine"
 	desc = "A commonly seen bottle of grenadine - or sweet fruit syrup. It might even contain real cherries, as well as some blackcurrant for color."
-	custom_price = 100
+	custom_price = 10
 	icon_state = "grenadine"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/grenadine = 100)
@@ -391,7 +401,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/applejack
 	name = "Mars Lightning"
 	desc = "A strong brandy originating from apples, considered the older sibling to hard cider. Mars Lightning is often partnered with anti-gravity racing companies, leading to it often being served straight or for impromptu mixes."
-	custom_price = 100
+	custom_price = 15
 	icon_state = "applejack_bottle"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/applejack = 100)
@@ -400,7 +410,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/champagne
 	name = "Treu Champagne"
 	desc = "Finely sourced from entire canton planets dedicated to faithful reproduction of pre-Night Of Fire vineyards. Typically enjoyed for celebrations and the turn of new years."
-	custom_premium_price = 250
+	custom_premium_price = 25
 	icon_state = "champagne_bottle"
 	isGlass = TRUE
 	list_reagents = list(/datum/reagent/consumable/ethanol/champagne = 100)
@@ -414,7 +424,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/trappist
 	name = "Roumain Trapper's"
 	desc = "Traditionally (and heavily monitored for authenticity) made beer brewed on Illestren. Trapper's beer must be brewed by Saint Roumain Hunters or Shadows, made to fit the needs of their community first, and must never be made for profit... which makes it a common sight in the Frontier."
-	custom_premium_price = 170
+	custom_premium_price = 17
 	icon_state = "trappistbottle"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/ethanol/trappist = 50)
@@ -453,14 +463,27 @@
 	isGlass = TRUE
 
 ////////////////////////// MOLOTOV ///////////////////////
-/obj/item/reagent_containers/food/drinks/bottle/molotov
+/obj/item/reagent_containers/food/drinks/molotov
 	name = "molotov cocktail"
 	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by desperate militias and revolutionaries. Light and toss."
 	icon_state = "vodkabottle"
+	fill_icon_thresholds = list(0, 10, 20, 30, 40, 50, 60, 70, 80, 90)
+	amount_per_transfer_from_this = 10
+	volume = 100
+	force = 15 //Smashing bottles over someone's head hurts.
+	throwforce = 15
+	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
+	drop_sound = 'sound/items/handling/bottle_drop.ogg'
+	var/const/duration = 13 //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
+	isGlass = TRUE
+	foodtype = ALCOHOL
 	list_reagents = list()
 	var/active = 0
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/CheckParts(list/parts_list)
+/obj/item/reagent_containers/food/drinks/molotov/CheckParts(list/parts_list)
 	..()
 	var/obj/item/reagent_containers/food/drinks/bottle/B = locate() in contents
 	if(B)
@@ -471,7 +494,7 @@
 			isGlass = FALSE
 	return
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+/obj/item/reagent_containers/food/drinks/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/firestarter = FALSE
 	for(var/datum/reagent/reagent as anything in reagents.reagent_list)
 		if(reagent.accelerant_quality)
@@ -480,25 +503,25 @@
 	if(firestarter && active)
 		hit_atom.fire_act()
 		var/turf/T = get_turf(hit_atom)
-		T.IgniteTurf(30)
+		T.ignite_turf(30)
 		var/turf/otherT
 		for(var/direction in GLOB.cardinals)
 			otherT = get_step(T, direction)
-			otherT.IgniteTurf(30)
+			otherT.ignite_turf(30)
 			new /obj/effect/hotspot(otherT)
 	..()
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/food/drinks/molotov/attackby(obj/item/I, mob/user, params)
 	if(I.get_temperature() && !active)
 		active = TRUE
 		log_bomber(user, "has primed a", src, "for detonation")
 
-		to_chat(user, "<span class='info'>You light [src] on fire.</span>")
+		to_chat(user, span_info("You light [src] on fire."))
 		add_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 		if(!isGlass)
 			addtimer(CALLBACK(src, PROC_REF(explode)), 5 SECONDS)
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/proc/explode()
+/obj/item/reagent_containers/food/drinks/molotov/proc/explode()
 	if(!active)
 		return
 	if(get_turf(src))
@@ -510,14 +533,17 @@
 		target.fire_act()
 	qdel(src)
 
-/obj/item/reagent_containers/food/drinks/bottle/molotov/attack_self(mob/user)
+/obj/item/reagent_containers/food/drinks/molotov/attack_self(mob/user)
 	if(active)
 		if(!isGlass)
-			to_chat(user, "<span class='danger'>The flame's spread too far on it!</span>")
+			to_chat(user, span_danger("The flame's spread too far on it!"))
 			return
-		to_chat(user, "<span class='info'>You snuff out the flame on [src].</span>")
+		to_chat(user, span_info("You snuff out the flame on [src]."))
 		cut_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
 		active = 0
+
+/obj/item/reagent_containers/food/drinks/molotov/full
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/pruno
 	name = "pruno mix"
@@ -568,7 +594,7 @@
 	desc = "Fermented prison wine made from fruit, sugar, and despair."
 	icon_state = "trashbag1" // pruno releases air as it ferments, we don't want to simulate this in atmos, but we can make it look like it did
 	for (var/mob/living/M in view(2, get_turf(src))) // letting people and/or narcs know when the pruno is done
-		to_chat(M, "<span class='info'>A pungent smell emanates from [src], like fruit puking out its guts.</span>")
+		to_chat(M, span_info("A pungent smell emanates from [src], like fruit puking out its guts."))
 		playsound(get_turf(src), 'sound/effects/bubbles2.ogg', 25, TRUE)
 
 /obj/item/reagent_containers/food/drinks/colocup/lean
@@ -589,25 +615,25 @@
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
 	if(!is_drainable()) // Uses the reagents.flags cause reagent_flags is only the init value
 		playsound(src, 'sound/items/openbottle.ogg', 30, 1)
-		user.visible_message("<span class='notice'>[user] takes the cap off \the [src].</span>", "<span class='notice'>You take the cap off [src].</span>")
+		user.visible_message(span_notice("[user] takes the cap off \the [src]."), span_notice("You take the cap off [src]."))
 		reagents.flags |= OPENCONTAINER //Cap's off
 		if(prob(1)) //Lucky you
 			var/S = new /obj/item/sandstar(src)
 			user.put_in_hands(S)
-			to_chat(user, "<span class='notice'>You found a Sandblast Star!</span>")
+			to_chat(user, span_notice("You found a Sandblast Star!"))
 	else
 		. = ..()
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/examine(mob/user)
 	. = ..()
 	if(!is_drainable())
-		. += "<span class='info'>The cap is still sealed.</span>"
+		. += span_info("The cap is still sealed.")
 
 /obj/item/sandstar
 	name = "SandBlast Sarsaparilla star"
 	desc = "Legend says something amazing happens when you collect enough of these."
-	custom_price = 100
-	custom_premium_price = 110
+	custom_price = 10
+	custom_premium_price = 11
 	icon = 'icons/obj/items.dmi'
 	icon_state = "sandstar"
 	w_class = WEIGHT_CLASS_TINY
@@ -652,13 +678,13 @@
 /obj/item/storage/bottles/examine(mob/user)
 	. = ..()
 	if(sealed)
-		. += "<span class='info'>It is sealed. You could pry it open with a <i>crowbar</i> to access its contents.</span>"
+		. += span_info("It is sealed. You could pry it open with a <i>crowbar</i> to access its contents.")
 
 /obj/item/storage/bottles/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(sealed)
 		var/datum/component/storage/S = GetComponent(/datum/component/storage)
-		user.visible_message("<span class='notice'>[user] pries open \the [src].</span>", "You pry open \the [src]")
+		user.visible_message(span_notice("[user] pries open \the [src]."), "You pry open \the [src]")
 		playsound(src, 'sound/machines/wooden_closet_close.ogg', 20, 1)
 		sealed = FALSE
 		S.locked = FALSE

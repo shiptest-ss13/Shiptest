@@ -4,7 +4,7 @@
 	var/rating = null
 
 /datum/buildmode_mode/tweakcomps/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Choose the rating of the components")] -> Right Mouse Button on buildmode button\n\
 		[span_bold("Sets the chosen rating of the components on the machinery")] -> Left Mouse Button on machinery"))
 	)
@@ -31,4 +31,4 @@
 		P.rating = rating
 	object.RefreshParts()
 
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Machine Upgrade", "[rating]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Machine Upgrade", "[rating]"))

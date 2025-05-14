@@ -19,7 +19,7 @@
 	else
 		dry()
 
-/obj/effect/decal/cleanable/blood/process()
+/obj/effect/decal/cleanable/blood/process(seconds_per_tick)
 	if(world.time > drytime)
 		dry()
 
@@ -66,8 +66,6 @@
 /obj/effect/decal/cleanable/blood/splatter
 	icon_state = "gibbl1"
 	random_icon_states = list("gibbl1", "gibbl2", "gibbl3", "gibbl4", "gibbl5")
-	dryname = "dried tracks"
-	drydesc = "Some old bloody tracks left by wheels. Machines are evil, perhaps."
 	///Absorb the /squirt subtype when it exists on the turf
 	var/absorb_squirts = TRUE
 
@@ -178,6 +176,16 @@
 	var/drips = 1
 	dryname = "drips of blood"
 	drydesc = "It's red."
+	var/move_on_init = TRUE
+
+/obj/effect/decal/cleanable/blood/drip/Initialize(mapload, list/datum/disease/diseases)
+	. = ..()
+	dry()
+	add_blood_DNA(list("Non-human DNA" = random_blood_type()))
+	if(move_on_init)
+		pixel_x = rand(-16,16)
+		pixel_y = rand(-16, 16)
+
 
 /obj/effect/decal/cleanable/blood/drip/can_bloodcrawl_in()
 	return TRUE

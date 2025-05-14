@@ -9,6 +9,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	resistance_flags = ACID_PROOF
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
 
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"
@@ -29,6 +30,8 @@
 	strip_delay = 70
 	equip_delay_other = 70
 	resistance_flags = ACID_PROOF
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equip_self_flags = null
 
 //Standard biosuit, orange stripe
 /obj/item/clothing/head/bio_hood/general

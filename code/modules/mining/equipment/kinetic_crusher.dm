@@ -28,20 +28,22 @@
 	var/charge_time = 15
 	var/detonation_damage = 20
 	var/backstab_bonus = 10
+	var/unwielded_force = 0
+	var/wielded_force = 25
 
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=15)
+	AddComponent(/datum/component/two_handed, force_unwielded=unwielded_force, force_wielded=wielded_force)
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
+	. += span_notice("Induce magnetism in an enemy by striking them with a magnetospheric wave, then hit them in melee to force a waveform collapse for <b>[force + detonation_damage]</b> damage.")
+	. += span_notice("Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.")
 
 /obj/item/kinetic_crusher/attack(mob/living/target, mob/living/carbon/user)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		to_chat(user, "<span class='warning'>[src] is too heavy to use with one hand! You fumble and drop everything.</span>")
+		to_chat(user, span_warning("[src] is too heavy to use with one hand! You fumble and drop everything."))
 		user.drop_all_held_items()
 		return
 	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
@@ -52,6 +54,7 @@
 
 /obj/item/kinetic_crusher/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
 	. = ..()
+	var/modifiers = params2list(clickparams)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		return
 	if(!proximity_flag && charged)//Mark a target, or mine a tile.
@@ -59,7 +62,7 @@
 		if(!isturf(proj_turf))
 			return
 		var/obj/projectile/destabilizer/D = new /obj/projectile/destabilizer(proj_turf)
-		D.preparePixelProjectile(target, user, clickparams)
+		D.preparePixelProjectile(target, user, modifiers)
 		D.firer = user
 		D.hammer_synced = src
 		playsound(user, 'sound/weapons/plasma_cutter.ogg', 100, TRUE)
@@ -154,15 +157,12 @@
 	detonation_damage = 10
 	slowdown = 0.5//hevy
 	attack_verb = list("mashed", "flattened", "bisected", "eradicated","destroyed")
+	unwielded_force = 0
+	wielded_force = 30
 
 /obj/item/kinetic_crusher/old/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...</span>"
-
-/obj/item/kinetic_crusher/old/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 60, 110)
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=25)//big choppa!
+	. += span_notice("This hunk of junk's so heavy that you can barely swing it! Though, that blade looks pretty sharp...")
 
 /obj/item/kinetic_crusher/old/melee_attack_chain(mob/user, atom/target, params)
 	..()
@@ -204,17 +204,13 @@
 	detonation_damage = 35
 	backstab_bonus = 15
 	actions_types = list()
-
+	unwielded_force = 0
+	wielded_force = 22
 
 /obj/item/kinetic_crusher/syndie_crusher/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-
-/obj/item/kinetic_crusher/syndie_crusher/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 60, 150)
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=10)
 
 /// triggered on wield of two handed item
 /obj/item/kinetic_crusher/syndie_crusher/proc/on_wield(obj/item/source, mob/user)

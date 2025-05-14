@@ -17,12 +17,13 @@
 	drop_sound = 'sound/items/handling/toolbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/toolbox_pickup.ogg'
 	material_flags = MATERIAL_COLOR
-	var/latches = "single_latch"
+	var/latches = null
 	var/has_latches = TRUE
 
 /obj/item/storage/toolbox/Initialize()
 	. = ..()
-	if(has_latches)
+	if(has_latches && !latches)
+		latches = "single_latch"
 		if(prob(10))
 			latches = "double_latch"
 			if(prob(1))
@@ -57,6 +58,7 @@
 		if(3)
 			new /obj/item/flashlight/flare(src)
 	new /obj/item/radio(src)
+	new /obj/item/oxygen_candle(src)
 
 /obj/item/storage/toolbox/emergency/old
 	name = "rusty red toolbox"
@@ -71,12 +73,10 @@
 	material_flags = NONE
 
 /obj/item/storage/toolbox/mechanical/PopulateContents()
-	//WS Edit - Better Tool sprites
 	if(prob(50))
 		new /obj/item/wrench(src)
 	else
 		new /obj/item/wrench/crescent(src)
-	//WS End
 	new /obj/item/screwdriver(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)
@@ -268,6 +268,26 @@
 	STR.max_combined_w_class = 4
 	STR.max_items = 2
 
+/obj/item/storage/toolbox/bounty/hunt
+	name = "dogtag case"
+	desc = "Store pirate dogtags in here."
+
+/obj/item/storage/toolbox/bounty/hunt/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 6
+	STR.max_items = 3
+
+/obj/item/storage/toolbox/bounty/salvage
+	name = "research case"
+	desc = "Store salvaged science equipment in here."
+
+/obj/item/storage/toolbox/bounty/salvage/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 2
+	STR.max_items = 1
+
 //floorbot assembly
 /obj/item/storage/toolbox/attackby(obj/item/stack/tile/plasteel/T, mob/user, params)
 	var/list/allowed_toolbox = list(/obj/item/storage/toolbox/emergency,	//which toolboxes can be made into floorbots
@@ -282,7 +302,7 @@
 	if(!is_type_in_list(src, allowed_toolbox) && (type != /obj/item/storage/toolbox))
 		return
 	if(contents.len >= 1)
-		to_chat(user, "<span class='warning'>They won't fit in, as there is already stuff inside!</span>")
+		to_chat(user, span_warning("They won't fit in, as there is already stuff inside!"))
 		return
 	if(T.use(10))
 		var/obj/item/bot_assembly/floorbot/B = new
@@ -300,8 +320,8 @@
 				B.toolbox_color = "s"
 		user.put_in_hands(B)
 		B.update_appearance()
-		to_chat(user, "<span class='notice'>You add the tiles into the empty [name]. They protrude from the top.</span>")
+		to_chat(user, span_notice("You add the tiles into the empty [name]. They protrude from the top."))
 		qdel(src)
 	else
-		to_chat(user, "<span class='warning'>You need 10 floor tiles to start building a floorbot!</span>")
+		to_chat(user, span_warning("You need 10 floor tiles to start building a floorbot!"))
 		return

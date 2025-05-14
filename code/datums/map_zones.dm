@@ -116,6 +116,8 @@
 	var/reserved_margin = 0
 	/// Margin for dockers and ruins to avoid placing things
 	var/mapping_margin = MAPPING_MARGIN
+	///what is our star system? usually null
+	var/datum/overmap_star_system/current_systen
 
 /datum/virtual_level/proc/is_in_mapping_bounds(atom/Atom)
 	if(Atom.x >= low_x + mapping_margin && Atom.x <= high_x - mapping_margin && Atom.y >= low_y + mapping_margin && Atom.y <= high_y - mapping_margin && Atom.z == z_value)
@@ -164,7 +166,7 @@
 	if(!crosslinked["[direction]"])
 		CRASH("Virtual level tried to unlink a direction that wasn't linked.")
 	var/datum/virtual_level/other_zone = crosslinked["[direction]"]
-	var/reversed_dir = REVERSE_DIR(direction)
+	var/reversed_dir = REVERSE_DIR(text2num(direction))
 	crosslinked -= "[direction]"
 	other_zone.crosslinked -= "[reversed_dir]"
 	clear_dir_linkage(direction)
@@ -205,6 +207,8 @@
 	var/turf/ending = locate(end_x, end_y, z_value)
 	var/list/turfblock = block(beginning, ending)
 	for(var/turf/closed/indestructible/edge/edgy_turf as anything in turfblock)
+		if(!istype(edgy_turf))
+			continue
 		edgy_turf.density = TRUE
 		edgy_turf.opacity = TRUE
 		edgy_turf.destination_z = null
@@ -561,6 +565,25 @@
 	var/abs_x = Turf.x - low_x
 	var/abs_y = Turf.y - low_y
 	return locate(up_linkage.low_x + abs_x, up_linkage.low_y + abs_y, up_linkage.z_value)
+
+/datum/virtual_level/proc/get_zone_step(turf/source, direction)
+	// multiz dir is just the up/down dir flags
+	var/multiz_dir = direction & (UP|DOWN)
+	// while the passed dir is normalized to just the cardinals
+	direction &= ~(UP|DOWN)
+	var/turf/my_turf = get_step(source, direction)
+	if(isnull(my_turf))
+		return
+	switch(multiz_dir)
+		// the old version of this code prioritized UP over DOWN when
+		// both were passed. i don't want to fuck with that, so here it is preserved
+		if(UP|DOWN)
+			return get_above_turf(my_turf)
+		if(UP)
+			return get_above_turf(my_turf)
+		if(DOWN)
+			return get_below_turf(my_turf)
+	return my_turf
 
 /datum/virtual_level/proc/get_client_mobs()
 	return get_alive_client_mobs() + get_dead_client_mobs()

@@ -55,7 +55,7 @@
 	tastes = list("dried raisins" = 1)
 	foodtype = JUNKFOOD | FRUIT | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
-	custom_price = 90
+	custom_price = 5
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/no_raisin/healthy
@@ -74,7 +74,7 @@
 	filling_color = "#FFD700"
 	foodtype = JUNKFOOD | GRAIN | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
-	custom_price = 30
+	custom_price = 5
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/candy_trash
@@ -101,7 +101,7 @@
 	filling_color = "#FFD700"
 	tastes = list("cheese" = 5, "crisps" = 2)
 	foodtype = JUNKFOOD | DAIRY | SUGAR
-	custom_price = 45
+	custom_price = 5
 
 /obj/item/reagent_containers/food/snacks/syndicake
 	name = "syndi-cakes"
@@ -115,13 +115,13 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/energybar
-	name = "High-power energy bars"
+	name = "Minute Energy bar"
 	icon_state = "energybar"
-	desc = "An energy bar with a lot of punch, you probably shouldn't eat this if you're not an Elzuosa."
+	desc = "Referred to by many colorful names by the Minutemen it was issued to, this bar was produced by the Lanchester Foods Co. in order to supplement Minuteman rations in the field and improve morale. Though the initial version was infamous for being used more as a blunt weapon than anything else, nowadays it has found a place within the Minuteman and Civilian markets as a reliable source of nutrition."
 	trash = /obj/item/trash/energybar
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/liquidelectricity = 3)
-	filling_color = "#97ee63"
-	tastes = list("pure electricity" = 3, "fitness" = 2)
-	foodtype = TOXIC
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/calcium = 2)
+	filling_color = "#639fee"
+	tastes = list("orange chocolate" = 3, "an awful lemon filling" = 2, "something hard" = 1)
+	foodtype = JUNKFOOD | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
 	w_class = WEIGHT_CLASS_SMALL

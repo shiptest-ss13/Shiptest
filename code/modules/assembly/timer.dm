@@ -8,8 +8,8 @@
 	pickup_sound =  'sound/items/handling/component_pickup.ogg'
 
 	var/timing = FALSE
-	var/time = 5
-	var/saved_time = 5
+	var/time = 10
+	var/saved_time = 10
 	var/loop = FALSE
 	var/hearing_range = 3
 
@@ -23,7 +23,7 @@
 
 /obj/item/assembly/timer/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The timer is [timing ? "counting down from [time]":"set for [time] seconds"].</span>"
+	. += span_notice("The timer is [timing ? "counting down from [time]":"set for [time] seconds"].")
 
 /obj/item/assembly/timer/activate()
 	if(!..())
@@ -53,10 +53,10 @@
 		timing = TRUE
 	update_appearance()
 
-/obj/item/assembly/timer/process()
+/obj/item/assembly/timer/process(seconds_per_tick)
 	if(!timing)
 		return
-	time--
+	time -= seconds_per_tick
 	if(time <= 0)
 		timing = FALSE
 		timer_end()

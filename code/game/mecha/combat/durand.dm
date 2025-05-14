@@ -1,12 +1,13 @@
 /obj/mecha/combat/durand
-	desc = "An aging combat exosuit utilized by the Nanotrasen corporation. Originally developed to combat hostile alien lifeforms."
+	desc = "An aging and extremely well-armored combat exosuit utilized by the Nanotrasen corporation. Originally developed to combat hostile alien lifeforms."
 	name = "\improper Durand"
 	icon_state = "durand"
 	step_in = 4
 	dir_in = 1 //Facing North.
-	max_integrity = 400
-	deflect_chance = 20
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
+	max_integrity = 300
+	deflect_chance = 15
+	repair_multiplier = 0.5
+	armor = list("melee" = 50, "bullet" = 75, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 	max_temperature = 30000
 	infra_luminosity = 8
 	force = 40
@@ -15,14 +16,13 @@
 	var/shield_type = /obj/durand_shield
 	var/shield_passive_drain = 300
 
-
-
 /obj/mecha/combat/durand/clip
-	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division. The defence grid has been modified to disperse controlled electric shocks on contact, at the cost of its ability to block ranged projectiles."
+	desc = "An aging combat exosuit specially modified for CLIP-BARD's anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
+	armor = list("melee" = 75, "bullet" = 50, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
+	deflect_chance = 20
 	wreckage = /obj/structure/mecha_wreckage/durand/clip
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 	shield_passive_drain = 0
 	shield_type = /obj/durand_shield/clip
 
@@ -31,6 +31,8 @@
 	shield = new shield_type(loc, src, layer, dir)
 	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
 
+/obj/mecha/combat/durand/set_up_unique_action()
+	mech_unique_action = defense_action
 
 /obj/mecha/combat/durand/Destroy()
 	if(shield)
@@ -46,7 +48,7 @@
 	..()
 	defense_action.Remove(user)
 
-/obj/mecha/combat/durand/process()
+/obj/mecha/combat/durand/process(seconds_per_tick)
 	. = ..()
 	if(defense_mode && !use_power(max(0, shield_passive_drain - (scanmod.rating * 10))))
 		defense_action.Activate(forced_state = TRUE)
@@ -198,13 +200,13 @@ the shield is disabled by means other than the action button (like running out o
 	if(switching && !signal_args[1])
 		return
 	if(!chassis.defense_mode && (!chassis.cell || chassis.cell.charge < 100)) //If it's off, and we have less than 100 units of power
-		chassis.occupant_message("<span class='warn'>Insufficient power; cannot activate defense mode.</span>")
+		chassis.occupant_message(span_warning("Insufficient power; cannot activate defense mode."))
 		return
 	switching = TRUE
 	chassis.defense_mode = !chassis.defense_mode
 	chassis.defense_action.button_icon_state = "mech_defense_mode_[chassis.defense_mode ? "on" : "off"]" //This is backwards because we haven't changed the var yet
 	if(!signal_args[1])
-		chassis.occupant_message("<span class='notice'>Defense mode [chassis.defense_mode?"enabled":"disabled"].</span>")
+		chassis.occupant_message(span_notice("Defense mode [chassis.defense_mode?"enabled":"disabled"]."))
 		chassis.log_message("User has toggled defense mode -- now [chassis.defense_mode?"enabled":"disabled"].", LOG_MECHA)
 	else
 		chassis.log_message("defense mode state changed -- now [chassis.defense_mode?"enabled":"disabled"].", LOG_MECHA)
@@ -230,7 +232,7 @@ the shield is disabled by means other than the action button (like running out o
 	icon_state = "shield_null"
 	invisibility = INVISIBILITY_MAXIMUM //no showing on right-click
 
-/obj/durand_shield/take_damage()
+/obj/durand_shield/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
 	if(!chassis)
 		qdel(src)
 		return

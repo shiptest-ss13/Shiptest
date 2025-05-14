@@ -190,7 +190,7 @@
 	var/next_move_dir_sub
 
 	/// If the client is currently under the restrictions of the interview system
-	var/interviewee = FALSE
+	var/interviewee = TRUE
 
 	/// Used by SSserver_maint to detect if a client is newly AFK.
 	var/last_seen_afk = 0

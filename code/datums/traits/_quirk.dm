@@ -8,6 +8,8 @@
 	var/gain_text
 	var/lose_text
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
+	///should this quirk be seen on a scanner pass
+	var/detectable = TRUE
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
 	var/list/mob_traits //if applicable, apply and remove these mob traits
 	var/mob/living/quirk_holder
@@ -72,32 +74,32 @@
 /datum/quirk/proc/add() //special "on add" effects
 /datum/quirk/proc/on_spawn() //these should only trigger when the character is being created for the first time, i.e. roundstart/latejoin
 /datum/quirk/proc/remove() //special "on remove" effects
-/datum/quirk/proc/on_process() //process() has some special checks, so this is the actual process
+/datum/quirk/proc/on_process(seconds_per_tick) //process() has some special checks, so this is the actual process
 /datum/quirk/proc/post_add() //for text, disclaimers etc. given after you spawn in with the trait
 /datum/quirk/proc/on_transfer() //code called when the trait is transferred to a new mob
 
-/datum/quirk/process()
+/datum/quirk/process(seconds_per_tick)
 	if(QDELETED(quirk_holder))
 		quirk_holder = null
 		qdel(src)
 		return
 	if(quirk_holder.stat == DEAD)
 		return
-	on_process()
+	on_process(seconds_per_tick)
 
-/mob/living/proc/get_trait_string(medical) //helper string. gets a string of all the traits the mob has
+/mob/living/proc/get_trait_string(medical, see_all=FALSE) //helper string. gets a string of all the traits the mob has
 	var/list/dat = list()
 	if(!medical)
-		for(var/V in roundstart_quirks)
-			var/datum/quirk/T = V
-			dat += T.name
+		for(var/datum/quirk/our_quirk in roundstart_quirks)
+			if(our_quirk.detectable || see_all)
+				dat += our_quirk.name
 		if(!dat.len)
 			return "None"
 		return dat.Join(", ")
 	else
-		for(var/V in roundstart_quirks)
-			var/datum/quirk/T = V
-			dat += T.medical_record_text
+		for(var/datum/quirk/our_quirk in roundstart_quirks)
+			if(our_quirk.detectable || see_all)
+				dat += our_quirk.medical_record_text
 		if(!dat.len)
 			return "None"
 		return dat.Join("<br>")
@@ -135,8 +137,8 @@ Use this as a guideline
 	///You'll need to use "HAS_TRAIT_FROM(src, X, sources)" checks around the code to check this; for instance, the Ageusia trait is checked in taste code
 	///If you need help finding where to put it, the declaration finder on GitHub is the best way to locate it
 
-	gain_text = "<span class='danger'>Things far away from you start looking blurry.</span>"
-	lose_text = "<span class='notice'>You start seeing faraway things normally again.</span>"
+	gain_text = span_danger("Things far away from you start looking blurry.")
+	lose_text = span_notice("You start seeing faraway things normally again.")
 	medical_record_text = "Subject has permanent nearsightedness."
 	///These three are self-explanatory
 

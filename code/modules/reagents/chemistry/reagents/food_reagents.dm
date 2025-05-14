@@ -114,7 +114,7 @@
 /datum/reagent/consumable/cooking_oil/expose_obj(obj/O, reac_volume)
 	if(holder && holder.chem_temp >= fry_temperature)
 		if(isitem(O) && !istype(O, /obj/item/food/deepfryholder))
-			O.loc.visible_message("<span class='warning'>[O] rapidly fries as it's splashed with hot oil! Somehow.</span>")
+			O.loc.visible_message(span_warning("[O] rapidly fries as it's splashed with hot oil! Somehow."))
 			var/obj/item/food/deepfryholder/F = new(O.drop_location(), O)
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
@@ -134,8 +134,8 @@
 		oil_damage *= 1 - M.get_permeability_protection()
 	var/FryLoss = round(min(38, oil_damage * reac_volume))
 	if(!HAS_TRAIT(M, TRAIT_OIL_FRIED))
-		M.visible_message("<span class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
-		"<span class='userdanger'>You're covered in boiling oil!</span>")
+		M.visible_message(span_warning("The boiling oil sizzles as it covers [M]!"), \
+		span_userdanger("You're covered in boiling oil!"))
 		if(FryLoss)
 			M.force_scream()
 		playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
@@ -165,7 +165,7 @@
 	taste_description = "sweetness"
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>You go into hyperglycaemic shock! Lay off the twinkies!</span>")
+	to_chat(M, span_userdanger("You go into hyperglycaemic shock! Lay off the twinkies!"))
 	M.AdjustSleeping(600)
 	. = 1
 
@@ -223,24 +223,24 @@
 			if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 				holder.remove_reagent(/datum/reagent/consumable/capsaicin, 5)
 			if(isslime(M))
-				cooling = -rand(5,20)
+				cooling = -rand(1,2)
 		if(15 to 25)
 			cooling = -20 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(isslime(M))
-				cooling = -rand(10,20)
+				cooling = -rand(2,4)
 		if(25 to 35)
 			cooling = -30 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(1))
 				M.emote("shiver")
 			if(isslime(M))
-				cooling = -rand(15,20)
+				cooling = -rand(4,8)
 		if(35 to INFINITY)
 			cooling = -40 * TEMPERATURE_DAMAGE_COEFFICIENT
 			if(prob(5))
 				M.emote("shiver")
 			if(isslime(M))
-				cooling = -rand(20,25)
-	M.adjust_bodytemperature(cooling, 50)
+				cooling = -rand(8,10)
+	M.adjust_bodytemperature(cooling, 10)
 	..()
 
 /datum/reagent/consumable/frostoil/expose_turf(turf/T, reac_volume)
@@ -282,7 +282,7 @@
 	if(method == INGEST)
 		if(!holder.has_reagent(/datum/reagent/consumable/milk))
 			if(prob(15))
-				to_chat(M, "<span class='danger'>[pick("Your head pounds.", "Your mouth feels like it's on fire.", "You feel dizzy.")]</span>")
+				to_chat(M, span_danger("[pick("Your head pounds.", "Your mouth feels like it's on fire.", "You feel dizzy.")]"))
 			if(prob(10))
 				victim.blur_eyes(1)
 			if(prob(10))
@@ -293,7 +293,7 @@
 /datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/M)
 	if(!holder.has_reagent(/datum/reagent/consumable/milk))
 		if(prob(10))
-			M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>")
+			M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"))
 	..()
 
 /datum/reagent/consumable/sodiumchloride
@@ -340,11 +340,11 @@
 			M.Dizzy(5)
 			M.set_drugginess(30)
 		if(5 to 10)
-			M.Jitter(10)
+			M.adjust_jitter(10)
 			M.Dizzy(10)
 			M.set_drugginess(35)
 		if (10 to INFINITY)
-			M.Jitter(20)
+			M.adjust_jitter(20)
 			M.Dizzy(20)
 			M.set_drugginess(40)
 	..()
@@ -359,9 +359,9 @@
 /datum/reagent/consumable/garlic/on_mob_life(mob/living/carbon/M)
 	if(isvampire(M)) //incapacitating but not lethal. Unfortunately, vampires cannot vomit.
 		if(prob(min(25,current_cycle)))
-			to_chat(M, "<span class='danger'>You can't get the scent of garlic out of your nose! You can barely think...</span>")
+			to_chat(M, span_danger("You can't get the scent of garlic out of your nose! You can barely think..."))
 			M.Paralyze(10)
-			M.Jitter(10)
+			M.adjust_jitter(10)
 	else if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.job == "Cook")
@@ -393,12 +393,7 @@
 	if (!istype(T))
 		return
 	T.MakeSlippery(TURF_WET_LUBE, min_wet_time = 10 SECONDS, wet_time_to_add = reac_volume*2 SECONDS)
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot)
-		var/datum/gas_mixture/lowertemp = T.return_air()
-		lowertemp.set_temperature(max(min(lowertemp.return_temperature()-2000,lowertemp.return_temperature() / 2) ,TCMB))
-		lowertemp.react(src)
-		qdel(hotspot)
+	T.extinguish_turf()
 
 /datum/reagent/consumable/enzyme
 	name = "Universal Enzyme"
@@ -428,7 +423,7 @@
 	taste_description = "your imprisonment"
 
 /datum/reagent/consumable/hot_ramen/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
 	..()
 
 /datum/reagent/consumable/hell_ramen
@@ -439,7 +434,7 @@
 	taste_description = "wet and cheap noodles on fire"
 
 /datum/reagent/consumable/hell_ramen/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT)
+	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT)
 	..()
 
 /datum/reagent/consumable/flour
@@ -565,10 +560,10 @@
 				unprotected = TRUE
 	if(unprotected)
 		if(!M.getorganslot(ORGAN_SLOT_EYES))	//can't blind somebody with no eyes
-			to_chat(M, "<span class='notice'>Your eye sockets feel wet.</span>")
+			to_chat(M, span_notice("Your eye sockets feel wet."))
 		else
 			if(!M.eye_blurry)
-				to_chat(M, "<span class='warning'>Tears well up in your eyes!</span>")
+				to_chat(M, span_warning("Tears well up in your eyes!"))
 			M.blind_eyes(2)
 			M.blur_eyes(5)
 	..()
@@ -578,7 +573,7 @@
 	if(M.eye_blurry)	//Don't worsen vision if it was otherwise fine
 		M.blur_eyes(4)
 		if(prob(10))
-			to_chat(M, "<span class='warning'>Your eyes sting!</span>")
+			to_chat(M, span_warning("Your eyes sting!"))
 			M.blind_eyes(2)
 
 
@@ -776,7 +771,7 @@
 	..()
 
 /datum/reagent/consumable/pyre_elementum/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())		// Doesn't kill you like capsaicin
+	M.adjust_bodytemperature(2 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)		// Doesn't kill you like capsaicin
 	if(!ingested)							// Unless you didn't eat it
 		M.adjustFireLoss(0.25*REM, 0)
 	..()

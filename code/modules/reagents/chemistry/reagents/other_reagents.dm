@@ -135,7 +135,6 @@
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "water"
-	var/cooling_temperature = 2
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments."
@@ -150,21 +149,15 @@
 /datum/reagent/water/expose_turf(turf/open/T, reac_volume)
 	if(!istype(T))
 		return
-	var/CT = cooling_temperature
 
 	if(reac_volume >= 5)
-		T.MakeSlippery(TURF_WET_WATER, 10 SECONDS, min(reac_volume*1.5 SECONDS, 60 SECONDS))
+		T.MakeSlippery(TURF_WET_WATER, 10 SECONDS, min(reac_volume * 1.5 SECONDS, 60 SECONDS))
 
 	for(var/mob/living/simple_animal/slime/M in T)
 		M.apply_water()
 
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot && !isspaceturf(T))
-		if(T.air)
-			var/datum/gas_mixture/G = T.air
-			G.set_temperature(max(min(G.return_temperature()-(CT*1000),G.return_temperature()/CT),TCMB))
-			G.react(src)
-			qdel(hotspot)
+	T.extinguish_turf(min(reac_volume * 2, 5))
+
 	var/obj/effect/acid/A = (locate(/obj/effect/acid) in T)
 	if(A)
 		A.acid_level = max(A.acid_level - reac_volume*50, 0)
@@ -421,7 +414,7 @@
 
 		if(method == INGEST)
 			if(show_message)
-				to_chat(M, "<span class='notice'>That tasted horrible.</span>")
+				to_chat(M, span_notice("That tasted horrible."))
 	..()
 
 /datum/reagent/mulligan
@@ -435,7 +428,7 @@
 	..()
 	if (!istype(H))
 		return
-	to_chat(H, "<span class='warning'><b>You grit your teeth in pain as your body rapidly mutates!</b></span>")
+	to_chat(H, span_warning("<b>You grit your teeth in pain as your body rapidly mutates!</b>"))
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
 
@@ -473,17 +466,56 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_mult = 0 // oderless and tasteless
 
+/datum/reagent/oxygen/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	var/obj/item/stock_parts/cell/current_cell
+	if(istype(I, /obj/item/stock_parts/cell))
+		if(!current_cell.use(1))
+			return
+		H.reagents.add_reagent(/datum/reagent/ozone, (H.reagents.remove_reagent(/datum/reagent/oxygen, 0.05*I.get_part_rating())))
+		return TRUE
+	return
+
 /datum/reagent/oxygen/expose_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("o2=[reac_volume/2];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_O2]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/oxygen/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("o2=[reac_volume/2];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_O2]=[reac_volume/2];TEMP=[temp]")
 	return
+
+/datum/reagent/ozone
+	name = "Ozone"
+	description = "A pale blue gas, with a distinct smell. While it is oxygen with an extra molecule attached, it is quite dangerous."
+	reagent_state = GAS
+	metabolization_rate = REAGENTS_METABOLISM * 0.5
+	color = "#a1a1e6"
+	taste_mult = 0
+
+/datum/reagent/ozone/on_mob_life(mob/living/carbon/M)
+	if(prob(30))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM)
+	if(prob(40))
+		M.adjustOrganLoss(ORGAN_SLOT_HEART,2*REM)
+	. = 1
+	return ..()
+
+/datum/reagent/ozone/expose_obj(obj/exposed_object, reac_volume)
+	if((!exposed_object) || (!reac_volume))
+		return 0
+	var/temp = holder ? holder.chem_temp : T20C
+	exposed_object.atmos_spawn_air("[GAS_O3]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/ozone/expose_turf(turf/open/exposed_turf, reac_volume)
+	if(istype(exposed_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		exposed_turf.atmos_spawn_air("[GAS_O3]=[reac_volume/2];TEMP=[temp]")
+	return
+
 
 /datum/reagent/copper
 	name = "Copper"
@@ -510,12 +542,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("n2=[reac_volume/2];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_N2]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/nitrogen/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("n2=[reac_volume/2];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_N2]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/hydrogen
@@ -548,7 +580,7 @@
 	name = "Sulfur"
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
 	reagent_state = SOLID
-	color = "#BF8C00" // rgb: 191, 140, 0
+	color = "#f0e518"
 	taste_description = "rotten eggs"
 
 /datum/reagent/carbon
@@ -598,12 +630,12 @@
 	if((!exposed_object) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	exposed_object.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
+	exposed_object.atmos_spawn_air("[GAS_CHLORINE]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/chlorine/expose_turf(turf/open/exposed_turf, reac_volume)
 	if(istype(exposed_turf))
 		var/temp = holder ? holder.chem_temp : T20C
-		exposed_turf.atmos_spawn_air("cl2=[reac_volume/2];TEMP=[temp]")
+		exposed_turf.atmos_spawn_air("[GAS_CHLORINE]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/hydrogen_chloride
@@ -625,12 +657,12 @@
 	if((!exposed_object) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	exposed_object.atmos_spawn_air("hcl=[reac_volume/2];TEMP=[temp]")
+	exposed_object.atmos_spawn_air("[GAS_HYDROGEN_CHLORIDE]=[reac_volume/2];TEMP=[temp]")
 
 /datum/reagent/hydrogen_chloride/expose_turf(turf/open/exposed_turf, reac_volume)
 	if(istype(exposed_turf))
 		var/temp = holder ? holder.chem_temp : T20C
-		exposed_turf.atmos_spawn_air("hcl=[reac_volume/2];TEMP=[temp]")
+		exposed_turf.atmos_spawn_air("[GAS_HYDROGEN_CHLORIDE]=[reac_volume/2];TEMP=[temp]")
 	return
 
 /datum/reagent/fluorine
@@ -842,8 +874,8 @@
 
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
-		to_chat(M, "<span class='warning'>You feel unstable...</span>")
-		M.Jitter(2)
+		to_chat(M, span_warning("You feel unstable..."))
+		M.adjust_jitter(2)
 		current_cycle = 1
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
@@ -971,7 +1003,7 @@
 	taste_description = "numbness"
 
 /datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
-	M.jitteriness = max(M.jitteriness-5,0)
+	M.adjust_jitter(5)
 	if(prob(80))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	if(prob(50))
@@ -1084,12 +1116,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("co2=[reac_volume/5];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_CO2]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/carbondioxide/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("co2=[reac_volume/5];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_CO2]=[reac_volume/5];TEMP=[temp]")
 	return
 
 // This is more bad ass, and pests get hurt by the corrosive nature of it, not the plant. The new trade off is it culls stability.
@@ -1114,12 +1146,12 @@
 	if((!O) || (!reac_volume))
 		return 0
 	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("n2o=[reac_volume/5];TEMP=[temp]")
+	O.atmos_spawn_air("[GAS_NITROUS]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/nitrous_oxide/expose_turf(turf/open/T, reac_volume)
 	if(istype(T))
 		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("n2o=[reac_volume/5];TEMP=[temp]")
+		T.atmos_spawn_air("[GAS_NITROUS]=[reac_volume/5];TEMP=[temp]")
 
 /datum/reagent/nitrous_oxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == VAPOR)
@@ -1134,6 +1166,80 @@
 		M.losebreath += 2
 		M.confused = min(M.confused + 2, 5)
 	..()
+
+/datum/reagent/carbon_monoxide
+	name = "Carbon Monoxide"
+	description = "A highly dangerous gas for sapients."
+	reagent_state = GAS
+	metabolization_rate = REAGENTS_METABOLISM
+	color = "#96898c"
+	var/accumulation
+
+/datum/reagent/carbon_monoxide/on_mob_life(mob/living/carbon/victim)
+	if(holder.has_reagent(/datum/reagent/oxygen))
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, 2*REM)
+		accumulation = accumulation/4
+
+	accumulation += volume
+	switch(accumulation)
+		if(10 to 50)
+			to_chat(src, span_warning("You feel dizzy."))
+		if(50 to 150)
+			to_chat(victim, span_warning("[pick("Your head hurts.", "Your head pounds.")]"))
+			victim.Dizzy(5)
+		if(150 to 250)
+			to_chat(victim, span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"))
+			victim.Stun(10)
+			victim.Dizzy(5)
+			victim.confused = (accumulation/50)
+			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+
+		if(250 to 350)
+			to_chat(victim, span_userdanger("[pick("What were you doing...?", "Where are you...?", "What's going on...?")]"))
+			victim.adjustStaminaLoss(3)
+
+			victim.Dizzy(5)
+			victim.confused = (accumulation/50)
+			victim.drowsyness = (accumulation/50)
+
+			victim.adjustToxLoss(accumulation/100*REM, 0)
+
+			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
+
+		if(350 to 1000)
+			victim.Unconscious(20 SECONDS)
+
+			victim.drowsyness += (accumulation/100)
+			victim.adjustToxLoss(accumulation/100*REM, 0)
+		if(1000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
+			victim.death()
+			victim.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
+
+			qdel(src)
+			return TRUE
+	accumulation -= (metabolization_rate * victim.metabolism_efficiency)
+	if(accumulation <  0)
+		holder.remove_reagent(/datum/reagent/carbon_monoxide, volume)
+		return TRUE //to avoid a runtime
+	return ..()
+
+/datum/reagent/carbon_monoxide/expose_obj(obj/O, reac_volume)
+	if((!O) || (!reac_volume))
+		return FALSE
+	var/temp = holder ? holder.chem_temp : T20C
+	O.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/carbon_monoxide/expose_turf(turf/open/T, reac_volume)
+	if(istype(T))
+		var/temp = holder ? holder.chem_temp : T20C
+		T.atmos_spawn_air("[GAS_CO]=[reac_volume/2];TEMP=[temp]")
+	return
+
+/datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
+	var/mob/living/carbon/living_carbon = living_mob
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
+	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
 
 /datum/reagent/stimulum
 	name = "Stimulum"
@@ -1508,18 +1614,70 @@
 	color = "#328242"
 	taste_description = "primordial essence"
 	reagent_state = LIQUID
+	var/list/turf_whitelist = list(
+	/turf/open/floor/plating/asteroid,
+	/turf/open/lava,
+	/turf/open/water/acid,
+	/turf/open/floor/plating/moss,
+	/turf/open/floor/plating/grass
+	)
 
-/datum/reagent/genesis/expose_turf(turf/T, reac_volume)
-	if(istype(T, /turf/open/floor/grass))//prevents spamming effect via. smoke or such
-		return
-	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
-		var/turf/open/floor/F = T
-		playsound(T, 'sound/effects/bubbles.ogg', 50)
-		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
-		new /obj/effect/spawner/random/flower(T)
-		if(prob(75))
-			new /obj/effect/spawner/random/flora(T)
-	..()
+/datum/reagent/genesis/expose_turf(turf/exposed_turf, reac_volume)
+	var/allowed = FALSE //idk how to do this better
+	for(var/turf/checked_turf as anything in turf_whitelist)
+		if(!istype(exposed_turf, checked_turf))
+			continue
+		else
+			allowed = TRUE
+			break
+	if(!allowed)
+		return ..()
+
+	if(isopenturf(exposed_turf))
+		var/turf/open/floor/terraform_target = exposed_turf
+
+		if(istype(terraform_target, /turf/open/lava) || istype(terraform_target, /turf/open/water/acid)) //if hazard, reeplace with basin
+			if(istype(terraform_target, /turf/open/lava))
+				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin, flags = CHANGETURF_INHERIT_AIR)
+			if(istype(terraform_target, /turf/open/water/acid))
+				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/whitesands/dried, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>As the serum touches [terraform_target.name], it all starts drying up, leaving a dry basin behind!</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin) || istype(terraform_target, /turf/open/floor/plating/asteroid/whitesands/dried)|| istype(terraform_target, /turf/open/floor/plating/asteroid/sand)) //if basin, replace with water
+			return ..()
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/purple))
+			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/sand/terraform, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>The chemicals in the sand disolve, and the sand looks more natural.</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+		if(!istype(terraform_target, /turf/open/floor/plating/asteroid/dirt)) // if not dirt, acutally terraform
+			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/dirt, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>The harsh land becomes fertile dirt, but more work needs to be done for it to be growable and breathable. Perhaps add grass?</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/dirt/grass)) //if grass, plant shit
+			for(var/obj/object as anything in terraform_target.contents)
+				if(!istype(object, /obj/structure/flora))
+					continue
+				terraform_target.visible_message("<span class='danger'>Theres already flora on the tile!</span>")
+				return ..()
+
+			terraform_target.visible_message("<span class='notice'>As the serum touches the grass, suddenly flora grows out of it!</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			if(prob(70))
+				new /obj/effect/spawner/random/flower(exposed_turf)
+			else if(prob(5))
+				new /obj/structure/flora/ash/garden(exposed_turf)
+			else
+				new /obj/effect/spawner/random/flora(exposed_turf)
+
+	return ..()
 
 /datum/reagent/genesis/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -1671,7 +1829,7 @@
 			var/mob/living/carbon/human/H = M
 			var/datum/sprite_accessory/hair/picked_hair = pick(GLOB.hairstyles_list)
 			var/datum/sprite_accessory/facial_hair/picked_beard = pick(GLOB.facial_hairstyles_list)
-			to_chat(H, "<span class='notice'>Hair starts sprouting from your scalp.</span>")
+			to_chat(H, span_notice("Hair starts sprouting from your scalp."))
 			H.hairstyle = picked_hair
 			H.facial_hairstyle = picked_beard
 			H.update_hair()
@@ -1687,7 +1845,7 @@
 	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='notice'>Your hair starts growing at an incredible speed!</span>")
+			to_chat(H, span_notice("Your hair starts growing at an incredible speed!"))
 			H.hairstyle = "Very Long Hair"
 			H.facial_hairstyle = "Beard (Very Long)"
 			H.update_hair()
@@ -1703,7 +1861,7 @@
 	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='danger'>Your hair is falling out in clumps!</span>")
+			to_chat(H, span_danger("Your hair is falling out in clumps!"))
 			H.hairstyle = "Bald"
 			H.facial_hairstyle = "Shaved"
 			H.update_hair()
@@ -1829,25 +1987,14 @@
 
 /datum/reagent/growthserum
 	name = "Growth Serum"
-	description = "A commercial chemical designed to help older men in the bedroom."//not really it just makes you a giant
+	description = "A strange chemical that causes growth, but wears off over time. The growth effect is limited."
 	color = "#ff0000"//strong red. rgb 255, 0, 0
 	var/current_size = RESIZE_DEFAULT_SIZE
-	taste_description = "bitterness" // apparently what viagra tastes like
+	taste_description = "bitterness"
 
 /datum/reagent/growthserum/on_mob_life(mob/living/carbon/H)
 	var/newsize = current_size
-	switch(volume)
-		if(0 to 19)
-			newsize = 1.25*RESIZE_DEFAULT_SIZE
-		if(20 to 49)
-			newsize = 1.5*RESIZE_DEFAULT_SIZE
-		if(50 to 99)
-			newsize = 2*RESIZE_DEFAULT_SIZE
-		if(100 to 199)
-			newsize = 2.5*RESIZE_DEFAULT_SIZE
-		if(200 to INFINITY)
-			newsize = 3.5*RESIZE_DEFAULT_SIZE
-
+	newsize = (1 + (clamp(volume, 0, 25) / 100)) * RESIZE_DEFAULT_SIZE
 	H.resize = newsize/current_size
 	current_size = newsize
 	H.update_transform()
@@ -2004,7 +2151,7 @@
 			var/dread = pick("Something is moving in your stomach...", \
 				"A wet growl echoes from your stomach...", \
 				"For a moment you feel like your surroundings are moving, but it's your stomach...")
-			to_chat(C, "<span class='userdanger'>[dread]</span>")
+			to_chat(C, span_userdanger("[dread]"))
 			yuck_cycle = current_cycle
 	else
 		var/yuck_cycles = current_cycle - yuck_cycle
@@ -2147,12 +2294,12 @@
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.Jitter(rand(0,2))
+		H.adjust_jitter(rand(0,2))
 		H.Dizzy(rand(0,2))
 
 
 		if(prob(33))
-			to_chat(H,"<span class='danger'>Your body is trying to give up, but your heart is still beating!</span>")
+			to_chat(H,span_danger("Your body is trying to give up, but your heart is still beating!"))
 	. = ..()
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/M)
@@ -2160,7 +2307,7 @@
 	. = ..()
 
 /datum/reagent/determination/overdose_process(mob/living/carbon/human/H)
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
@@ -2184,7 +2331,7 @@
 	. = 1
 
 /datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H) //TODO port bee's regen cores legioning miners, and make it only do that if overdosed on crystal
-	to_chat(H,"<span class='danger'>You feel your heart rupturing in two!</span>")
+	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)
 	H.set_heartattack(TRUE)
@@ -2247,9 +2394,9 @@
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
-		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
-		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
-		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, SetSleeping), 40 SECONDS), 10 SECONDS)
+		L.visible_message(span_danger("<font size = 6>Grips their head and dances around, collapsing to the floor!</font>"), \
+		span_danger("<font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font>"))
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, set_sleeping), 40 SECONDS), 10 SECONDS)
 		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
 
@@ -2261,14 +2408,14 @@
 	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
 		M.reagents.remove_reagent(chem.type, chem.volume)
 
-	M.Jitter(3)
+	M.adjust_jitter(3)
 	M.Dizzy(3)
 	if(prob(0.1) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.seizure()
 		H.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(2, 4))
 	if(prob(7))
-		to_chat(M, "<span class='warning'><font size = [rand(1,3)]>[pick(dose_messages)]</font></span>")
+		to_chat(M, span_warning("<font size = [rand(1,3)]>[pick(dose_messages)]</font>"))
 
 /datum/reagent/three_eye/overdose_start(mob/living/M)
 	on_mob_metabolize(M) //set worthy
@@ -2289,13 +2436,13 @@
 		var/mob/living/carbon/C = M
 		C.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1, 2))
 	if(prob(7))
-		to_chat(M, "<span class='danger'><font size = [rand(2,4)]>[pick(overdose_messages)]</font></span>")
+		to_chat(M, span_danger("<font size = [rand(2,4)]>[pick(overdose_messages)]</font>"))
 
 /datum/reagent/three_eye/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_client_colour(/datum/client_colour/thirdeye)
 	if(overdosed && !worthy)
-		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
+		to_chat(L, span_danger("<font size = 6>Your mind reels and the world begins to fade away...</font>"))
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
@@ -2495,13 +2642,38 @@
 
 /datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR))
-		M.radiation = M.radiation - rand(max(M.radiation * 0.95, M.radiation)) //get the hose
+		M.radiation = M.radiation - rand(max(M.radiation * 0.07, 0)) //get the hose
 		M.ExtinguishMob()
 	..()
 
 
 /datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(0.5, 200)
-	M.adjust_disgust(4)
+	M.radiation = M.radiation - rand(max(M.radiation * 0.03, 0))
 	..()
 	. = 1
+
+/datum/reagent/sulfur_dioxide
+	name = "Sulfur Dioxide"
+	description = "A transparent gas produced by geological activity and burning certain fuels."
+	reagent_state = GAS
+	color = "#f0e518"
+	taste_mult = 0 // tasteless
+
+/datum/reagent/sulfur_dioxide/on_mob_life(mob/living/carbon/M)
+	M.adjustOxyLoss(1*REM, 0)
+	if(prob(40))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS,1*REM)
+	. = 1
+	..()
+
+/datum/reagent/sulfur_dioxide/expose_obj(obj/exposed_object, reac_volume)
+	if((!exposed_object) || (!reac_volume))
+		return 0
+	var/temp = holder ? holder.chem_temp : T20C
+	exposed_object.atmos_spawn_air("[GAS_SO2]=[reac_volume/2];TEMP=[temp]")
+
+/datum/reagent/sulfur_dioxide/expose_turf(turf/open/exposed_turf, reac_volume)
+	if(istype(exposed_turf))
+		var/temp = holder ? holder.chem_temp : T20C
+		exposed_turf.atmos_spawn_air("[GAS_SO2]=[reac_volume/2];TEMP=[temp]")
+	return

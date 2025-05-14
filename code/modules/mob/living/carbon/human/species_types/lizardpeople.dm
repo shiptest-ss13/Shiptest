@@ -44,12 +44,11 @@
 
 	robotic_eyes = /obj/item/organ/eyes/robotic/lizard
 
-	// Lizards are coldblooded and can stand a greater temperature range than humans
-	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 20 // This puts lizards 10 above lavaland max heat for ash lizards.
+	// Sarathi are coldblooded and can stand a greater temperature range than humans
+	bodytemp_heat_damage_limit = HUMAN_BODYTEMP_HEAT_DAMAGE_LIMIT + 30
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 10
-
-	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 25
-	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 3
+	max_temp_comfortable = HUMAN_BODYTEMP_NORMAL + 20
+	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL
 	loreblurb = "The Sarathi are a cold-blooded reptilian species originating from the planet Kalixcis, where they evolved alongside the Elzuosa. Kalixcian culture places no importance on blood-bonds, and those from it tend to consider their family anyone they are sufficiently close to, and choose their own names."
 
 	ass_image = 'icons/ass/asslizard.png'
@@ -66,6 +65,11 @@
 		internal_lighter = new
 		internal_lighter.Grant(C)
 
+/datum/species/lizard/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(chem.type == /datum/reagent/fuel)
+		return TRUE
+	return ..()
+
 /datum/action/innate/liz_lighter
 	name = "Ignite"
 	desc = "(Requires you to drink welding fuel beforehand)"
@@ -78,11 +82,11 @@
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/lighter/liz/N = new(H)
 	if(H.put_in_hands(N))
-		to_chat(H, "<span class='notice'>You ignite a small flame in your mouth.</span>")
+		to_chat(H, span_notice("You ignite a small flame in your mouth."))
 		H.reagents.del_reagent(/datum/reagent/fuel,4)
 	else
 		qdel(N)
-		to_chat(H, "<span class='warning'>You don't have any free hands.</span>")
+		to_chat(H, span_warning("You don't have any free hands."))
 
 /datum/action/innate/liz_lighter/IsAvailable()
 	if(..())

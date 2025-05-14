@@ -11,7 +11,6 @@
 	inherent_factions = list("faithless")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	mutanteyes = /obj/item/organ/eyes/night_vision
-	species_language_holder = /datum/language_holder/shadowpeople
 
 	species_chest = /obj/item/bodypart/chest/shadow
 	species_head = /obj/item/bodypart/head/shadow
@@ -56,7 +55,7 @@
 	if(istype(T))
 		var/light_amount = T.get_lumcount()
 		if(light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD)
-			H.visible_message("<span class='danger'>[H] dances in the shadows, evading [P]!</span>")
+			H.visible_message(span_danger("[H] dances in the shadows, evading [P]!"))
 			playsound(T, "bullet_miss", 75, TRUE)
 			return BULLET_ACT_FORCE_PIERCE
 	return ..()
@@ -74,14 +73,12 @@
 
 /obj/item/organ/brain/nightmare/Insert(mob/living/carbon/M, special = 0)
 	..()
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(H.dna.species.id != "nightmare" && ishuman(H))
-			H.set_species(/datum/species/shadow/nightmare)
-			visible_message("<span class='warning'>[H] thrashes as [src] takes root in [H.p_their()] body!</span>")
-		var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
-		H.AddSpell(SW)
-		shadowwalk = SW
+	if(M.dna.species.id != "nightmare")
+		M.set_species(/datum/species/shadow/nightmare)
+		visible_message(span_warning("[M] thrashes as [src] takes root in [M.p_their()] body!"))
+	var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
+	M.AddSpell(SW)
+	shadowwalk = SW
 
 
 /obj/item/organ/brain/nightmare/Remove(mob/living/carbon/M, special = 0)
@@ -109,14 +106,14 @@
 	if(M != user)
 		return ..()
 	user.visible_message(
-		"<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
-		"<span class='danger'>[src] feels unnaturally cold in your hands. You raise [src] your mouth and devour it!</span>")
+		span_warning("[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!"), \
+		span_danger("[src] feels unnaturally cold in your hands. You raise [src] your mouth and devour it!"))
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
 
 
 	user.visible_message(
-		"<span class='warning'>Blood erupts from [user]'s arm as it reforms into a weapon!</span>", \
-		"<span class='userdanger'>Icy blood pumps through your veins as your arm reforms itself!</span>")
+		span_warning("Blood erupts from [user]'s arm as it reforms into a weapon!"), \
+		span_userdanger("Icy blood pumps through your veins as your arm reforms itself!"))
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	Insert(user)
 
@@ -129,7 +126,7 @@
 /obj/item/organ/heart/nightmare/Remove(mob/living/carbon/M, special = 0)
 	respawn_progress = 0
 	if(blade && special != HEART_SPECIAL_SHADOWIFY)
-		M.visible_message("<span class='warning'>\The [blade] disintegrates!</span>")
+		M.visible_message(span_warning("\The [blade] disintegrates!"))
 		QDEL_NULL(blade)
 	..()
 
@@ -216,9 +213,9 @@
 		PDA.set_light_on(FALSE)
 		PDA.set_light_range(0) //It won't be turning on again.
 		PDA.update_appearance()
-		visible_message("<span class='danger'>The light in [PDA] shorts out!</span>")
+		visible_message(span_danger("The light in [PDA] shorts out!"))
 	else
-		visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")
+		visible_message(span_danger("[O] is disintegrated by [src]!"))
 		O.burn()
 	playsound(src, 'sound/items/welder.ogg', 50, TRUE)
 

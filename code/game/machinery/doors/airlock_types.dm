@@ -207,7 +207,7 @@
 	has_hatch = FALSE
 	var/last_event = 0
 
-/obj/machinery/door/airlock/uranium/process()
+/obj/machinery/door/airlock/uranium/process(seconds_per_tick)
 	if(world.time > last_event+20)
 		if(prob(50))
 			radiate()
@@ -487,12 +487,20 @@
 /obj/machinery/door/airlock/outpost //secure anti-tiding airlock
 	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
 	overlays_file = 'icons/obj/doors/airlocks/centcom/overlays.dmi'
-	assemblytype = /obj/structure/door_assembly/door_assembly_centcom //all of the above needs to be changed if editing the icon
+	assemblytype = /obj/structure/door_assembly/door_assembly_centcom //all of the above needs to be changed if editing the icon //yes im worried about changing the ASSEMBLY for DECONSTRUCTING an INDESTRUCTIBLE ADMIN AIRLOCK
 	desc = "It opens and closes. Effectively impervious to conventional methods of destruction."
 	normal_integrity = INFINITY
 	explosion_block = INFINITY
+	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1 | HTML_USE_INITAL_ICON_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	has_hatch = FALSE
 	req_one_access_txt = "101" //109 for command areas
+	aiControlDisabled = AI_WIRE_DISABLED
+	hackProof = TRUE
+
+/obj/machinery/door/airlock/outpost/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/empprotection, EMP_PROTECT_SELF|EMP_PROTECT_WIRES)
 
 /obj/machinery/door/airlock/outpost/attackby(obj/item/C, mob/user, params) //maintenance panel cannot be opened
 	if(C.tool_behaviour == TOOL_SCREWDRIVER)

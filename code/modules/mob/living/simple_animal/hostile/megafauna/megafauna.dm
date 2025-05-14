@@ -6,7 +6,7 @@
 	a_intent = INTENT_HARM
 	sentience_type = SENTIENCE_BOSS
 	environment_smash = ENVIRONMENT_SMASH_RWALLS
-	mob_biotypes = MOB_ORGANIC|MOB_EPIC
+	mob_biotypes = MOB_ORGANIC|MOB_SPECIAL
 	obj_damage = 400
 	light_range = 3
 	faction = list("mining", "boss")
@@ -86,7 +86,8 @@
 		..()
 
 /mob/living/simple_animal/hostile/megafauna/proc/spawn_mob_trophy()
-	loot += mob_trophy
+	if(mob_trophy)
+		loot += mob_trophy
 
 /mob/living/simple_animal/hostile/megafauna/gib()
 	if(health > 0)
@@ -116,8 +117,8 @@
 	if(!L)
 		return FALSE
 	visible_message(
-		"<span class='danger'>[src] devours [L]!</span>",
-		"<span class='userdanger'>You feast on [L], restoring your health!</span>")
+		span_danger("[src] devours [L]!"),
+		span_userdanger("You feast on [L], restoring your health!"))
 	adjustBruteLoss(-L.maxHealth/2)
 	L.gib()
 	return TRUE

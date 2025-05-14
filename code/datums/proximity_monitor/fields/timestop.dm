@@ -163,7 +163,7 @@
 /datum/proximity_monitor/advanced/timestop/proc/unfreeze_structure(obj/O)
 	escape_the_negative_zone(O)
 
-/datum/proximity_monitor/advanced/timestop/process()
+/datum/proximity_monitor/advanced/timestop/process(seconds_per_tick)
 	for(var/i in frozen_mobs)
 		var/mob/living/m = i
 		m.Stun(20, ignore_canstun = TRUE)

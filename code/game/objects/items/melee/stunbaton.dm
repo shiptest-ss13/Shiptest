@@ -26,7 +26,7 @@
 	var/activate_sound = SFX_SPARKS
 
 	var/attack_cooldown_check = 0 SECONDS
-	var/attack_cooldown = 2.5 SECONDS
+	var/baton_attack_cooldown = 2.5 SECONDS
 	var/stun_sound = 'sound/weapons/egloves.ogg'
 
 	var/confusion_amt = 10
@@ -217,7 +217,7 @@
 			return FALSE
 	/// After a target is hit, we do a chunk of stamina damage, along with other effects.
 	/// After a period of time, we then check to see what stun duration we give.
-	L.Jitter(20)
+	L.set_jitter(20)
 	L.confused = max(confusion_amt, L.confused)
 	L.stuttering = max(8, L.stuttering)
 	L.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
@@ -234,10 +234,10 @@
 
 	playsound(src, stun_sound, 50, TRUE, -1)
 
-	attack_cooldown_check = world.time + attack_cooldown
+	attack_cooldown_check = world.time + baton_attack_cooldown
 
 	ADD_TRAIT(L, TRAIT_IWASBATONED, user)
-	addtimer(TRAIT_CALLBACK_REMOVE(L, TRAIT_IWASBATONED, user), attack_cooldown)
+	addtimer(TRAIT_CALLBACK_REMOVE(L, TRAIT_IWASBATONED, user), baton_attack_cooldown)
 
 	return 1
 
@@ -561,5 +561,5 @@
 	return span_danger("The baton is still charging!")
 
 /obj/item/melee/classic_baton/telescopic/contractor_baton/additional_effects_carbon(mob/living/target, mob/living/user)
-	target.Jitter(20)
+	target.adjust_jitter(20)
 	target.stuttering += 20

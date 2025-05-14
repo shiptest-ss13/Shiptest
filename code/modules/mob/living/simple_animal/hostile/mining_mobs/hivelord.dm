@@ -51,7 +51,8 @@
 	return TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/spawn_mob_trophy()
-	loot += mob_trophy //we don't butcher
+	if(mob_trophy)
+		loot += mob_trophy //we don't butcher
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/death(gibbed)
 	mouse_opacity = MOUSE_OPACITY_ICON
@@ -132,7 +133,7 @@
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(15))
 		new /obj/item/mob_trophy/legion_skull(loc)
-		visible_message("<span class='warning'>One of the [src]'s skulls looks intact.</span>")
+		visible_message(span_warning("One of the [src]'s skulls looks intact."))
 	..()
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/random/Initialize()
@@ -150,15 +151,15 @@
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	//mob_trophy = /obj/item/mob_trophy/dwarf_skull
-	maxHealth = 150
-	health = 150
+	mob_trophy = /obj/item/mob_trophy/dwarf_skull
+	maxHealth = 75
+	health = 75
 	move_to_delay = 2
 	speed = 1 //much faster!
 	dwarf_mob = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
-	visible_message("<span class='warning'>The skulls on [src] wail in anger as they flee from their dying host!</span>")
+	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)
@@ -242,7 +243,8 @@
 					return //This will qdelete the legion.
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/proc/infest(mob/living/carbon/human/H)
-	visible_message(span_warning("[name] burrows into the flesh of [H]!"))
+	visible_message(span_warning("[name] burrows into [H]!"))
+	to_chat(H, span_boldwarning("You feel something digging into your body..."))
 	if(H.stat != DEAD)
 		var/obj/item/organ/legion_skull/throwyouabone = new()
 		throwyouabone.Insert(H)
@@ -382,7 +384,7 @@
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
-	visible_message("<span class='userwarning'>[src] falls over with a mighty crash, the remaining legions within it falling apart!</span>")
+	visible_message(span_userwarning("[src] falls over with a mighty crash, the remaining legions within it falling apart!"))
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)
 	new /mob/living/simple_animal/hostile/asteroid/hivelord/legion(loc)

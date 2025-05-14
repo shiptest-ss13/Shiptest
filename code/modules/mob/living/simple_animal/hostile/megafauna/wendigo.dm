@@ -32,7 +32,7 @@ Difficulty: Hard
 	loot = list()
 	butcher_results = list()
 	guaranteed_butcher_results = list(/obj/item/wendigo_blood = 1)
-	//mob_trophy = /obj/item/mob_trophy/demon_claws
+	mob_trophy = /obj/item/mob_trophy/demon_claws
 	wander = FALSE
 	del_on_death = FALSE
 	blood_volume = BLOOD_VOLUME_NORMAL
@@ -61,21 +61,21 @@ Difficulty: Hard
 	name = "Heavy Stomp"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	chosen_message = "<span class='colossus'>You are now stomping the ground around you.</span>"
+	chosen_message = span_colossus("You are now stomping the ground around you.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/teleport
 	name = "Teleport"
 	icon_icon = 'icons/effects/bubblegum.dmi'
 	button_icon_state = "smack ya one"
-	chosen_message = "<span class='colossus'>You are now teleporting at the target you click on.</span>"
+	chosen_message = span_colossus("You are now teleporting at the target you click on.")
 	chosen_attack_num = 2
 
 /datum/action/innate/megafauna_attack/disorienting_scream
 	name = "Disorienting Scream"
 	icon_icon = 'icons/turf/walls/wall.dmi'
 	button_icon_state = "wall-0"
-	chosen_message = "<span class='colossus'>You are now screeching, disorienting targets around you.</span>"
+	chosen_message = span_colossus("You are now screeching, disorienting targets around you.")
 	chosen_attack_num = 3
 
 /mob/living/simple_animal/hostile/megafauna/wendigo/Initialize()
@@ -150,7 +150,7 @@ Difficulty: Hard
 			for(var/mob/living/L in T)
 				if(L == src || L.throwing)
 					continue
-				to_chat(L, "<span class='userdanger'>[src]'s ground slam shockwave sends you flying!</span>")
+				to_chat(L, span_userdanger("[src]'s ground slam shockwave sends you flying!"))
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
 				L.throw_at(thrownat, 8, 2, src, TRUE, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
 				L.apply_damage(20, BRUTE)
@@ -185,7 +185,7 @@ Difficulty: Hard
 	animate(pixel_z = 0, time = 1)
 	for(var/mob/living/L in get_hearers_in_view(7, src) - src)
 		L.Dizzy(6)
-		to_chat(L, "<span class='danger'>[capitalize(src)] screams loudly!</span>")
+		to_chat(L, span_danger("[capitalize(src)] screams loudly!"))
 	SetRecoveryTime(30, 0)
 	SLEEP_CHECK_DEATH(12)
 	can_move = TRUE
@@ -212,7 +212,7 @@ Difficulty: Hard
 	var/mob/living/carbon/human/H = user
 	if(!H.mind)
 		return
-	to_chat(H, "<span class='danger'>Power courses through you! You can now shift your form at will.</span>")
+	to_chat(H, span_danger("Power courses through you! You can now shift your form at will."))
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/polar_bear/P = new
 	H.mind.AddSpell(P)
 	playsound(H.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
@@ -223,4 +223,4 @@ Difficulty: Hard
 	desc = "Take on the shape of a polar bear."
 	invocation = "RAAAAAAAAWR!"
 	convert_damage = FALSE
-	shapeshift_type = /mob/living/simple_animal/hostile/asteroid/polarbear/lesser
+	shapeshift_type = /mob/living/basic/bear/polar

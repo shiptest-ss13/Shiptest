@@ -32,7 +32,7 @@
 
 	l_pocket = /obj/item/ammo_box/a44roum_speedloader
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/c45_firestorm_mag/pan = 3, /obj/item/ammo_box/a44roum_speedloader = 2, /obj/item/storage/box/ammo/a44roum)
+	backpack_contents = list(/obj/item/ammo_box/magazine/c44_firestorm_mag/pan = 2, /obj/item/ammo_box/a44roum_speedloader = 2, /obj/item/storage/box/ammo/a44roum)
 
 /datum/outfit/job/roumain/ert/vickland
 	name = "ERT - Saint-Roumain Hunter (Vickland)" // vickland and candor
@@ -42,7 +42,7 @@
 
 	l_pocket = /obj/item/ammo_box/magazine/m45
 
-	backpack_contents = list(/obj/item/ammo_box/vickland_a308 = 6, /obj/item/storage/box/ammo/a308, /obj/item/ammo_box/magazine/m45 = 2)
+	backpack_contents = list(/obj/item/ammo_box/vickland_a8_50r = 6, /obj/item/storage/box/ammo/a8_50r, /obj/item/ammo_box/magazine/m45 = 2)
 
 /datum/outfit/job/roumain/ert/scout
 	name = "ERT - Saint-Roumain Hunter (Scout)" // scout and detective special

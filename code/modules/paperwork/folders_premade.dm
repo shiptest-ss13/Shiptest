@@ -75,9 +75,27 @@
 	desc = "A green folder with a Terran Regency seal."
 	icon_state = "folder_terragovred"
 
+/obj/item/folder/documents/eoehoma
+	document = /obj/item/documents/eoehoma
+	icon_state = "folder_blue"
+	name = "folder"
+	desc = "A blue folder."
+
 /obj/item/folder/suns
 	desc = "A purple folder with a SUNS seal."
 	icon_state = "folder_suns"
 
 /obj/item/folder/suns/red
 	icon_state = "folder_sunsred" // i'm not sure why SUNS would need secret documents
+
+//pgf folders
+
+/obj/item/folder/pgf
+	desc = "A green folder with Pan Gezenan Federation iconography."
+	icon_state = "folder_pgf"
+
+/obj/item/folder/pgf/red
+	icon_state = "folder_pgfred"
+
+/obj/item/folder/pgf/blue
+	icon_state = "folder_pgfblue"

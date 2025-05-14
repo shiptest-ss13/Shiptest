@@ -82,12 +82,13 @@
 	update_appearance()
 
 /obj/item/assembly/signaler/attackby(obj/item/W, mob/user, params)
-	if(issignaler(W))
+	if(issignaler(W) && secured)
 		var/obj/item/assembly/signaler/signaler2 = W
-		if(secured && signaler2.secured)
+		if(signaler2.secured)
 			code = signaler2.code
 			set_frequency(signaler2.frequency)
 			to_chat(user, "You transfer the frequency and code of \the [signaler2.name] to \the [name]")
+			return TRUE
 	..()
 
 /obj/item/assembly/signaler/proc/signal()
@@ -137,7 +138,7 @@
 
 /obj/item/assembly/signaler/receiver/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The radio receiver is [on?"on":"off"].</span>"
+	. += span_notice("The radio receiver is [on?"on":"off"].")
 
 /obj/item/assembly/signaler/receiver/receive_signal(datum/signal/signal)
 	if(!on)

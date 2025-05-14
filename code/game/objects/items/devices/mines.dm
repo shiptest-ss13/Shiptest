@@ -131,6 +131,8 @@
 
 ///NOW we actually blow up
 /obj/item/mine/proc/blast_now(atom/movable/triggerer)
+	if(QDELETED(src))
+		return
 	var/datum/effect_system/spark_spread/sporks = new /datum/effect_system/spark_spread
 	sporks.set_up(3, 1, src)
 	sporks.start()
@@ -270,11 +272,11 @@
 /obj/item/mine/pressure/attackby(obj/item/I, mob/user)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(sealed)
-			to_chat(user, "<span class='notice'>You can't see any way to access \the [src]'s wiring.</span>")
+			to_chat(user, span_notice("You can't see any way to access \the [src]'s wiring."))
 			return
 		open_panel = !open_panel
 		update_appearance(UPDATE_ICON_STATE)
-		to_chat(user, "<span class='notice'>You [open_panel ? "reveal" : "hide"] \the [src]'s wiring.</span>")
+		to_chat(user, span_notice("You [open_panel ? "reveal" : "hide"] \the [src]'s wiring."))
 		I.play_tool_sound(src, 50)
 		return
 	else if(is_wire_tool(I) && open_panel)
@@ -322,7 +324,7 @@
 	if(!iscarbon(triggerer))
 		return
 	//Quick and dirty solution for preventing activations behind walls.
-	if(!(triggerer in view(proximity_range, src)))
+	if(!can_see(src, triggerer))
 		return
 	if(!can_trigger(triggerer))
 		return
@@ -471,11 +473,11 @@
 /obj/item/mine/pressure/explosive/fire/mine_effect(mob/victim)
 	if(victim?.is_holding(src))//in case it's been picked up
 		for(var/turf/T in view(4,victim))
-			T.IgniteTurf(15)
+			T.ignite_turf(15)
 			new /obj/effect/hotspot(T)
 	else
 		for(var/turf/T in view(4,src))
-			T.IgniteTurf(15)
+			T.ignite_turf(15)
 			new /obj/effect/hotspot(T)
 	. = ..()
 
@@ -590,10 +592,10 @@
 /obj/item/mine/proximity/explosive/plasma/mine_effect(mob/victim)
 	if(victim.is_holding(src))//in case it's been picked up
 		for(var/turf/T in view(3,victim))
-			T.IgniteTurf(25, "green")
+			T.ignite_turf(25, "green")
 	else
 		for(var/turf/T in view(3,src))
-			T.IgniteTurf(25, "green")
+			T.ignite_turf(25, "green")
 	. = ..()
 
 //Manhacks... so pretty...
@@ -631,8 +633,8 @@
 
 	//customize explosive power
 	var/range_devastation = -1
-	var/range_heavy = 1
-	var/range_light = 2
+	var/range_heavy = 0
+	var/range_light = 1
 	var/range_flame = 0
 
 	//using this to indicate pb
@@ -651,10 +653,10 @@
 
 /obj/item/mine/directional/claymore/attackby(obj/item/I, mob/user)
 	if (I.tool_behaviour == TOOL_SCREWDRIVER && armed)
-		to_chat(user, "<span class='notice'>You begin unscrewing \the [src]'s arming pin...</span>")
+		to_chat(user, span_notice("You begin unscrewing \the [src]'s arming pin..."))
 		I.play_tool_sound(src, 50)
 		if(do_after(user, 10 SECONDS, target = src))
-			to_chat(user, "<span class='notice'>You unscrew \the [src]'s arming pin, disarming it.</span>")
+			to_chat(user, span_notice("You unscrew \the [src]'s arming pin, disarming it."))
 			disarm()
 	else
 		. = ..()
@@ -761,7 +763,7 @@
 	victim.put_in_hands(chainsaw, forced = TRUE)
 	chainsaw.attack_self(victim)
 	victim.reagents.add_reagent(/datum/reagent/medicine/adminordrazine,25)
-	to_chat(victim, "<span class='warning'>KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, KILL THEM ALL!</span>")
+	to_chat(victim, span_warning("KILL, KILL, KILL! YOU HAVE NO ALLIES ANYMORE, KILL THEM ALL!"))
 
 	var/datum/client_colour/colour = victim.add_client_colour(/datum/client_colour/bloodlust)
 	QDEL_IN(colour, 11)
@@ -771,7 +773,7 @@
 
 /obj/item/mine/pressure/pickup/bloodbath/proc/end_blood_frenzy()
 	if(doomslayer)
-		to_chat(doomslayer, "<span class='notice'>Your bloodlust seeps back into the bog of your subconscious and you regain self control.</span>")
+		to_chat(doomslayer, span_notice("Your bloodlust seeps back into the bog of your subconscious and you regain self control."))
 		doomslayer.log_message("exited a blood frenzy", LOG_ATTACK)
 	if(chainsaw)
 		qdel(chainsaw)
@@ -786,7 +788,7 @@
 /obj/item/mine/pressure/pickup/healing/mine_effect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
-	to_chat(victim, "<span class='notice'>You feel great!</span>")
+	to_chat(victim, span_notice("You feel great!"))
 	victim.revive(full_heal = TRUE, admin_revive = TRUE)
 
 /obj/item/mine/pressure/pickup/speed
@@ -797,13 +799,13 @@
 /obj/item/mine/pressure/pickup/speed/mine_effect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
-	to_chat(victim, "<span class='notice'>You feel fast!</span>")
+	to_chat(victim, span_notice("You feel fast!"))
 	victim.add_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
 	addtimer(CALLBACK(src, PROC_REF(finish_effect), victim), duration)
 
 /obj/item/mine/pressure/pickup/speed/proc/finish_effect(mob/living/carbon/victim)
 	victim.remove_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
-	to_chat(victim, "<span class='notice'>You slow down.</span>")
+	to_chat(victim, span_notice("You slow down."))
 
 
 

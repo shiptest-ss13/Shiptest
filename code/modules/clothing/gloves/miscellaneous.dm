@@ -41,19 +41,14 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 50)
 	//supports_variations = KEPORI_VARIATION
 
-/obj/item/clothing/gloves/combat/maid
-	name = "combat maid sleeves"
-	desc = "These 'tactical' gloves and sleeves are fireproof and acid-resistant. Warm to boot."
-	icon_state = "syndimaid_arms"
-
-/obj/item/clothing/gloves/combat/maid/inteq
-	name = "inteq combat maid sleeves"
-	desc = "Tacticute and comfy, along with being both fireproof and acid-resistant."
-	icon_state = "inteqmaid_arms"
+/obj/item/clothing/gloves/combat/insul
+	name = "insulated combat gloves"
+	desc = "Durable insulated combat gloves providing both protection from electrical shocks and industrial hazards like fire and acid."
+	siemens_coefficient = 0
 
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"
-	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."
+	desc = "Looks like they'd provide some measure of arm protection, but they're too flimsy to offer anything beside their \"stylish\" looks."
 	icon_state = "bracers"
 	transfer_prints = TRUE
 	strip_delay = 40
@@ -63,7 +58,6 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list("melee" = 15, "bullet" = 25, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/rapid
 	name = "Gloves of the North Star"

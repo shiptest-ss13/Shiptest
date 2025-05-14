@@ -11,8 +11,8 @@
 //Recover from stuns.
 /datum/action/changeling/adrenaline/sting_action(mob/living/user)
 	..()
-	to_chat(user, "<span class='notice'>Energy rushes through us.[(!(user.mobility_flags & MOBILITY_STAND)) ? " We arise." : ""]</span>")
-	user.SetSleeping(0)
+	to_chat(user, span_notice("Energy rushes through us.[(!(user.mobility_flags & MOBILITY_STAND)) ? " We arise." : ""]"))
+	user.set_sleeping(0)
 	user.SetUnconscious(0)
 	user.SetStun(0)
 	user.SetKnockdown(0)

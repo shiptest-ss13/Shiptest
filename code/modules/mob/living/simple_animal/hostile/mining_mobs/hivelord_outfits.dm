@@ -95,10 +95,7 @@
 			/obj/item/clothing/neck/scarf/red = 1,
 			/obj/item/clothing/neck/scarf/green = 1,
 			/obj/item/clothing/neck/scarf/darkblue = 1,
-			/obj/item/clothing/neck/shemagh = 1,
-			/obj/item/clothing/neck/stripedredscarf = 1,
-			/obj/item/clothing/neck/stripedgreenscarf = 1,
-			/obj/item/clothing/neck/stripedbluescarf = 1
+			/obj/item/clothing/neck/shemagh = 1
 			)
 		)
 	ears = pick(/obj/item/radio/headset, /obj/item/radio/headset/alt)
@@ -376,7 +373,7 @@
 			/obj/item/stock_parts/micro_laser/high = 2,
 			/obj/item/stock_parts/matter_bin/adv = 2,
 			/obj/item/survey_handheld = 1,
-			/obj/item/weldingtool/experimental = 1,
+			/obj/item/weldingtool/electric = 1,
 			/obj/item/mmi/posibrain = 1,
 			/obj/item/reagent_containers/glass/beaker/plastic = 1,
 			/obj/item/organ/eyes/robotic/shield = 1,
@@ -445,7 +442,7 @@
 	if(prob(75))
 		head = pick(/obj/item/clothing/head/helmet/sec, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
 	if(prob(75))
-		mask = /obj/item/clothing/mask/gas/sechailer
+		mask = /obj/item/clothing/mask/gas
 	if(prob(75))
 		ears = /obj/item/radio/headset/headset_sec
 	if(prob(75))
@@ -453,7 +450,7 @@
 	if(prob(75))
 		r_pocket = pick(/obj/item/flashlight/seclite, /obj/item/assembly/flash/handheld, /obj/item/restraints/handcuffs)
 	if(prob(50))
-		suit_store = pick(/obj/item/gun/energy/e_gun, /obj/item/gun/energy/e_gun/smg, /obj/item/gun/energy/e_gun/iot)
+		suit_store = pick(/obj/item/gun/energy/e_gun, /obj/item/gun/energy/e_gun/smg)
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pick_weight(list(

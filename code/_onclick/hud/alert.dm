@@ -175,18 +175,18 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	icon_state = "starving"
 
 /atom/movable/screen/alert/gross
-	name = "Grossed out."
-	desc = "That was kind of gross..."
+	name = "Queasy."
+	desc = "You're starting to feel queasy.."
 	icon_state = "gross"
 
 /atom/movable/screen/alert/verygross
-	name = "Very grossed out."
-	desc = "You're not feeling very well..."
+	name = "Nauseated."
+	desc = "You're feeling discomforted as unease creeps into your throat..."
 	icon_state = "gross2"
 
 /atom/movable/screen/alert/disgusted
-	name = "DISGUSTED"
-	desc = "ABSOLUTELY DISGUSTIN'"
+	name = "Very Nauseated"
+	desc = "You can barely think against the grains of discomfort ravaging your body!"
 	icon_state = "gross3"
 
 /atom/movable/screen/alert/hot
@@ -211,7 +211,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 /atom/movable/screen/alert/sweat
 	name = "Sweating"
-	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler and take off any insulating clothing like a fire suit."
+	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler, and take off any insulating clothing like a fire suit."
 	icon_state = "sweat"
 
 /atom/movable/screen/alert/shiver
@@ -261,7 +261,7 @@ or something covering your eyes."
 	var/mob/living/L = usr
 	if(L != owner)
 		return
-	to_chat(L, "<span class='mind_control'>[command]</span>")
+	to_chat(L, span_mind_control("[command]"))
 
 /atom/movable/screen/alert/drunk //Not implemented
 	name = "Drunk"
@@ -336,7 +336,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, PROC_REF(check_in_range), override = TRUE) //Override to prevent runtimes when people offer a item multiple times
 
 /atom/movable/screen/alert/give/proc/removeAlert()
-	to_chat(owner, "<span class='warning'>You moved out of range of [offerer]!</span>")
+	to_chat(owner, span_warning("You moved out of range of [offerer]!"))
 	owner.clear_alert("[offerer]")
 
 /atom/movable/screen/alert/give/Click(location, control, params)
@@ -420,9 +420,11 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 		return
 
 	if (length(last_whisper))
-		living_owner.dying_breath("[last_whisper]")
 		living_owner.say("#[last_whisper]")
-	living_owner.succumb(whispered = length(last_whisper) > 0)
+		//Say handles everything else for us
+		return
+
+	living_owner.succumb(FALSE)
 
 //ALIENS
 
@@ -449,25 +451,24 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 /atom/movable/screen/alert/nocell
 	name = "Missing Power Cell"
-	desc = "Unit has no power cell. No modules available until a power cell is reinstalled. Robotics may provide assistance."
+	desc = "Unit has no power cell. No modules are available until a power cell is reinstalled."
 	icon_state = "nocell"
 
 /atom/movable/screen/alert/emptycell
 	name = "Out of Power"
-	desc = "Unit's power cell has no charge remaining. No modules available until power cell is recharged. \
-Recharging stations are available in robotics, the dormitory bathrooms, and the AI satellite."
+	desc = "Unit's power cell has no charge remaining. No modules are available until power cell is recharged."
 	icon_state = "emptycell"
 
 /atom/movable/screen/alert/lowcell
 	name = "Low Charge"
-	desc = "Unit's power cell is running low. Recharging stations are available in robotics, the dormitory bathrooms, and the AI satellite."
+	desc = "Unit's power cell is running low. All modules may be disabled soon unless recharged."
 	icon_state = "lowcell"
 
 //Ethereal
 
 /atom/movable/screen/alert/etherealcharge
 	name = "Low Blood Charge"
-	desc = "Your blood's electric charge is running low, find a source of charge for your blood. Use a recharging station found in robotics or the dormitory bathrooms, or eat some Ethereal-friendly food."
+	desc = "Your blood's electric charge is running low, find a source of charge for your blood. Use a recharging station, or eat some Elzuose-friendly food."
 	icon_state = "etherealcharge"
 
 /atom/movable/screen/alert/ethereal_overcharge
@@ -478,12 +479,12 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 //MODsuit unique
 /atom/movable/screen/alert/nocore
 	name = "Missing Core"
-	desc = "Unit has no core. No modules available until a core is reinstalled. Robotics may provide assistance."
+	desc = "Unit has no core. No modules are available until a core is reinstalled."
 	icon_state = "no_cell"
 
 /atom/movable/screen/alert/emptycell/plasma
 	name = "Out of Power"
-	desc = "Unit's plasma core has no charge remaining. No modules available until plasma core is recharged. \
+	desc = "Unit's plasma core has no charge remaining. No modules are available until plasma core is recharged. \
 		Unit can be refilled through plasma fuel."
 
 /atom/movable/screen/alert/emptycell/plasma/update_desc()
@@ -506,8 +507,8 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 
 /atom/movable/screen/alert/locked
 	name = "Locked Down"
-	desc = "Unit has been remotely locked down. Usage of a Robotics Control Console like the one in the Research Director's \
-office by your AI master or any qualified human may resolve this matter. Robotics may provide further assistance if necessary."
+	desc = "Unit has been remotely locked down. Usage of a Robotics Control Console by an AI or any qualified \
+	humanoid may resolve this matter."
 	icon_state = "locked"
 
 /atom/movable/screen/alert/newlaw
@@ -686,7 +687,7 @@ so as to remain in compliance with the most up-to-date laws."
 		return
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, SHIFT_CLICK)) // screen objects don't do the normal Click() stuff so we'll cheat
-		to_chat(usr, "<span class='boldnotice'>[name]</span> - <span class='info'>[desc]</span>")
+		to_chat(usr, span_boldnotice("[name]</span> - <span class='info'>[desc]"))
 		return
 	if(usr != owner)
 		return

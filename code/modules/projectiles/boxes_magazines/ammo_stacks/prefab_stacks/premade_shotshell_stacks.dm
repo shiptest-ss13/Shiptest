@@ -11,7 +11,6 @@
 	icon_state = "12gbox-buckshot"
 
 /obj/item/storage/box/ammo/a12g_buckshot/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot = 4)
 	generate_items_inside(items_inside,src)
@@ -25,7 +24,6 @@
 	icon_state = "12gbox-slug"
 
 /obj/item/storage/box/ammo/a12g_slug/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/slug = 4)
 	generate_items_inside(items_inside,src)
@@ -39,7 +37,6 @@
 	icon_state = "12gbox-beanbag"
 
 /obj/item/storage/box/ammo/a12g_beanbag/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/beanbag = 4)
 	generate_items_inside(items_inside,src)
@@ -53,7 +50,6 @@
 	icon_state = "12gbox-rubbershot"
 
 /obj/item/storage/box/ammo/a12g_rubbershot/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/rubber = 4)
 	generate_items_inside(items_inside,src)
@@ -67,7 +63,6 @@
 	icon_state = "12gbox-slug" //needs icon
 
 /obj/item/storage/box/ammo/a12g_blank/PopulateContents()
-	..()
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/blank = 4)
 	generate_items_inside(items_inside,src)
@@ -77,3 +72,16 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/improvised
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
+
+/obj/item/storage/box/ammo/pulseslug
+	name = "box of 12ga pulse slugs"
+	desc = "A box of 12-gauge pulse shells, designed for increased accuracy and destruction."
+	icon_state = "12gbox-rubbershot"
+
+/obj/item/storage/box/ammo/pulseslug/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug = 4)
+	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug
+	ammo_type = /obj/item/ammo_casing/shotgun/pulseslug
