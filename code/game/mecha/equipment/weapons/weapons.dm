@@ -224,7 +224,7 @@
 	var/projectiles = 0
 	var/projectiles_max //maximum amount of projectiles that can be chambered.
 	/// the amount of spare ammunition that this weapon is attached with
-	var/projectiles_cache = 0 
+	var/projectiles_cache = 0
 	var/projectiles_cache_max
 	var/projectile_energy_cost
 	var/disabledreload //For weapons with no cache (like the rockets) which are reloaded by hand
