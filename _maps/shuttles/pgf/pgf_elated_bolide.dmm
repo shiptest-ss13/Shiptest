@@ -3993,6 +3993,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bay"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "zM" = (
@@ -7746,6 +7749,9 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "bolide_bay"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "WN" = (
@@ -7967,7 +7973,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
 "Yv" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 6
 	},

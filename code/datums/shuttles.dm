@@ -8,6 +8,11 @@
 
 	var/list/movement_force // If set, overrides default movement_force on shuttle
 
+	/// This offsets where the ship is in the transit level.
+	var/tranist_x_offset
+	/// This offsets where the ship is in the transit level.
+	var/tranist_y_offset
+
 	var/port_x_offset
 	var/port_y_offset
 	var/port_dir
@@ -17,6 +22,8 @@
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
+	/// The icon state the ship usesship_generic
+	var/token_icon_state = "ship_generic"
 	/// The prefix of the ship's name.
 	var/prefix = "ISV"
 	/// The name of the ship's manufacturer.
@@ -246,6 +253,10 @@
 			short_name = params["new_template_short_name"]
 			update_static_data(usr, ui)
 			return TRUE
+		if("setTemplateIconState")
+			token_icon_state = params["new_template_icon_state"]
+			update_static_data(usr, ui)
+			return TRUE
 		if("setTemplateDescription")
 			description = params["new_template_description"]
 			update_static_data(usr, ui)
@@ -330,34 +341,41 @@
 
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
+	faction = /datum/faction/independent
 	starting_funds = 0
+	unique_ship_access = FALSE
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
 	name = "Pill-class Torture Device"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
 	name = "Blackpill-class Manned Torpedo"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
 	name = "Superpill-class Experimental Engineering Platform"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
 	name = "Kunai Dropship"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/sugarcube
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
 //your subshuttle here //why is my subshuttle here // its no longer there
@@ -365,39 +383,52 @@
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
 	name = "Crux Dropship"
+	token_icon_state = "ship_tiny_generic"
+	faction = /datum/faction/clip
 	prefix = "CMSV"
 
 /datum/map_template/shuttle/subshuttles/ancon
 	file_name = "nanotrasen_ancon"
 	name = "Nanotrasen Ancon-class Command Ship"
+	token_icon_state = "ship_tiny_generic"
+	faction = /datum/faction/nt
 	prefix = "NTSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
 	file_name = "frontiersmen_gut"
 	name = "Gut Combat Freighter"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
 /datum/map_template/shuttle/subshuttles/anvil
 	file_name = "inteq_anvil"
 	name = "Anvil-class Dropship"
+	faction = /datum/faction/inteq
+	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
 	name = "Runner-class Ambulance"
+	faction = /datum/faction/syndicate/cybersun
+	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/haste
 	file_name = "inteq_haste"
 	name = "Haste-class Ambulance"
+	faction = /datum/faction/inteq
+	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 
 /datum/map_template/shuttle/subshuttles/nail
 	file_name = "pgf_nail"
 	name = "Nail-class Boarding Vessel"
+	faction = /datum/faction/pgf
+	token_icon_state = "ship_tiny_generic"
 	prefix = "PGF"
 
 /datum/map_template/shuttle/subshuttles/tanto
@@ -408,6 +439,7 @@
 /datum/map_template/shuttle/subshuttles/brawler
 	file_name = "frontiersmen_brawler"
 	name = "Brawler-class Dropship"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
 
 /datum/map_template/shuttle/subshuttles/haymaker
@@ -418,9 +450,18 @@
 /datum/map_template/shuttle/subshuttles/skink
 	file_name = "nanotrasen_skink"
 	name = "Skink-class Cargo Runner"
+	faction = /datum/faction/nt
+	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
 
 /datum/map_template/shuttle/subshuttles/bambulance
 	file_name = "cybersun_bambulance"
 	name = "Gauze-class Ambulance Pod"
+	faction = /datum/faction/syndicate/cybersun
 	prefix = "CSSV"
+/datum/map_template/shuttle/subshuttles/thunder
+	file_name = "inteq_thunder"
+	name = "Thunder-class Interceptor"
+	faction = /datum/faction/inteq
+	token_icon_state = "ship_tiny_generic"
+	prefix = "IRMV"
