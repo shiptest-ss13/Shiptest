@@ -174,9 +174,9 @@
 	if(!attached_light)
 		return
 	if(attached_light.on)
-		flashlightlight_overlay = mutable_appearance(icon, "[flashlight_state]_on")
+		flashlightlight_overlay = mutable_appearance('icons/obj/clothing/head/armor.dmi', "[flashlight_state]_on")
 	else
-		flashlightlight_overlay = mutable_appearance(icon, flashlight_state)
+		flashlightlight_overlay = mutable_appearance('icons/obj/clothing/head/armor.dmi', flashlight_state)
 	. += flashlightlight_overlay
 
 /obj/item/clothing/head/helmet/worn_overlays(isinhands)
