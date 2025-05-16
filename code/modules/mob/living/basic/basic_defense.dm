@@ -3,7 +3,8 @@
 	if (..())
 		return TRUE
 
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	//if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.a_intent == INTENT_DISARM)
 		user.do_attack_animation(src, ATTACK_EFFECT_DISARM)
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		var/shove_dir = get_dir(user, src)
@@ -18,8 +19,7 @@
 			span_danger("You shove [src], pushing [p_them()]!"), span_hear("You hear aggressive shuffling!"), COMBAT_MESSAGE_RANGE, list(src))
 		to_chat(src, span_userdanger("You're pushed by [user.name]!"))
 		return TRUE
-
-	if(!(user.a_intent == INTENT_HARM))
+	else if(!(user.a_intent == INTENT_HARM))
 		if (stat == DEAD)
 			return
 		visible_message(span_notice("[user] [response_help_continuous] [src]."), \
@@ -69,7 +69,8 @@
 
 /mob/living/basic/attack_alien(mob/living/carbon/alien/humanoid/user, list/modifiers)
 	if(..()) //if harm or disarm intent.
-		if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		//if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		if(user.a_intent == INTENT_DISARM)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
 			visible_message(span_danger("[user] [response_disarm_continuous] [name]!"), \
 							span_userdanger("[user] [response_disarm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, user)

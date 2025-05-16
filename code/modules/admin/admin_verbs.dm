@@ -105,6 +105,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/cmd_change_command_name,
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/cmd_admin_distress_signal,
+	/client/proc/cmd_admin_distress_signal_here,
 	/client/proc/drop_bomb,
 	/client/proc/set_dynex_scale,
 	/client/proc/drop_dynex_bomb,
@@ -115,6 +116,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/toggle_random_events,
 	/client/proc/set_ooc,
 	/client/proc/reset_ooc,
+	/client/proc/force_event,
 	/client/proc/admin_change_sec_level,
 	/client/proc/toggle_nuke,
 	/client/proc/run_weather,
@@ -215,6 +217,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
 	/datum/admins/proc/delete_all_missions,
+	/client/proc/cmd_admin_toggle_fov,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
@@ -259,6 +262,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/cmd_admin_distress_signal,
+	/client/proc/cmd_admin_distress_signal_here,
 	/client/proc/cmd_change_command_name,
 	/client/proc/object_say,
 	/client/proc/toggle_random_events,
@@ -355,7 +359,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	add_verb(src, /client/proc/show_verbs)
 
 	to_chat(src, span_interface("Almost all of your adminverbs have been hidden."), confidential = TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Hide All Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Hide All Adminverbs")
 	return
 
 /client/proc/show_verbs()
@@ -366,7 +370,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	add_admin_verbs()
 
 	to_chat(src, span_interface("All of your adminverbs are now visible."), confidential = TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Show Adminverbs")
 
 
 
@@ -387,7 +391,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			message_admins("[key_name_admin(usr)] re-entered corpse")
 		ghost.can_reenter_corpse = 1 //force re-entering even when otherwise not possible
 		ghost.reenter_corpse()
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Admin Reenter") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Admin Reenter")
 	else if(isnewplayer(mob))
 		to_chat(src, "<font color='red'>Error: Aghost: Can't admin-ghost whilst in the lobby. Join or Observe first.</font>", confidential = TRUE)
 		return FALSE
@@ -400,7 +404,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		init_verbs()
 		if(body && !body.key)
 			body.key = "@[key]"	//Haaaaaaaack. But the people have spoken. If it breaks; blame adminbus
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Admin Ghost") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Admin Ghost")
 
 /client/proc/invisimin()
 	set name = "Invisimin"
@@ -424,7 +428,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		log_admin("[key_name(usr)] checked antagonists.")	//for tsar~
 		if(!isobserver(usr) && SSticker.HasRoundStarted())
 			message_admins("[key_name_admin(usr)] checked antagonists.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Antagonists") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Check Antagonists")
 
 /client/proc/ban_panel()
 	set name = "Banning Panel"
@@ -432,7 +436,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!check_rights(R_BAN))
 		return
 	holder.ban_panel()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Banning Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Banning Panel")
 
 /client/proc/unban_panel()
 	set name = "Unbanning Panel"
@@ -440,14 +444,14 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!check_rights(R_BAN))
 		return
 	holder.unban_panel()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Unbanning Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Unbanning Panel")
 
 /client/proc/game_panel()
 	set name = "Game Panel"
 	set category = "Admin.Game"
 	if(holder)
 		holder.Game()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Game Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Game Panel")
 
 /client/proc/poll_panel()
 	set name = "Server Poll Management"
@@ -455,7 +459,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!check_rights(R_POLL))
 		return
 	holder.poll_list_panel()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Server Poll Management") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Server Poll Management")
 
 /client/proc/findStealthKey(txt)
 	if(txt)
@@ -506,7 +510,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 				mob.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 		log_admin("[key_name(usr)] has turned stealth mode [holder.fakekey ? "ON" : "OFF"]")
 		message_admins("[key_name_admin(usr)] has turned stealth mode [holder.fakekey ? "ON" : "OFF"]")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Stealth Mode") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Stealth Mode")
 
 /client/proc/drop_bomb()
 	set category = "Event.Fun"
@@ -548,7 +552,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			explosion(epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, TRUE, TRUE)
 	message_admins("[ADMIN_LOOKUPFLW(usr)] creating an admin explosion at [epicenter.loc].")
 	log_admin("[key_name(usr)] created an admin explosion at [epicenter.loc].")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Bomb") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Drop Bomb")
 
 /client/proc/drop_dynex_bomb()
 	set category = "Event.Fun"
@@ -561,7 +565,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		dyn_explosion(epicenter, ex_power)
 		message_admins("[ADMIN_LOOKUPFLW(usr)] creating an admin explosion at [epicenter.loc].")
 		log_admin("[key_name(usr)] created an admin explosion at [epicenter.loc].")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Dynamic Bomb") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Drop Dynamic Bomb")
 
 /client/proc/get_dynex_range()
 	set category = "Debug"
@@ -610,7 +614,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!S)
 		return
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Give Spell") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Give Spell")
 	log_admin("[key_name(usr)] gave [key_name(T)] the spell [S].")
 	message_admins(span_adminnotice("[key_name_admin(usr)] gave [key_name_admin(T)] the spell [S]."))
 
@@ -632,7 +636,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			T.mind.RemoveSpell(S)
 			log_admin("[key_name(usr)] removed the spell [S] from [key_name(T)].")
 			message_admins(span_adminnotice("[key_name_admin(usr)] removed the spell [S] from [key_name_admin(T)]."))
-			SSblackbox.record_feedback("tally", "admin_verb", 1, "Remove Spell") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+			BLACKBOX_LOG_ADMIN_VERB("Remove Spell")
 
 /client/proc/give_disease(mob/living/T in GLOB.mob_living_list)
 	set category = "Event.Fun"
@@ -645,7 +649,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!D)
 		return
 	T.ForceContractDisease(new D, FALSE, TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Give Disease") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Give Disease")
 	log_admin("[key_name(usr)] gave [key_name(T)] the disease [D].")
 	message_admins(span_adminnotice("[key_name_admin(usr)] gave [key_name_admin(T)] the disease [D]."))
 
@@ -659,7 +663,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	O.say(message)
 	log_admin("[key_name(usr)] made [O] at [AREACOORD(O)] say \"[message]\"")
 	message_admins(span_adminnotice("[key_name_admin(usr)] made [O] at [AREACOORD(O)]. say \"[message]\""))
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Object Say") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Object Say")
 
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
@@ -668,7 +672,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		return
 	if(src.mob)
 		togglebuildmode(src.mob)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggle Build Mode") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Toggle Build Mode")
 
 /client/proc/check_ai_laws()
 	set name = "Check AI Laws"
@@ -692,7 +696,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	to_chat(src, span_interface("You are now a normal player."))
 	log_admin("[src] deadminned themselves.")
 	message_admins("[src] deadminned themselves.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Deadmin")
+	BLACKBOX_LOG_ADMIN_VERB("Deadmin")
 
 /client/proc/readmin()
 	set name = "Readmin"
@@ -717,7 +721,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	to_chat(src, span_interface("You are now an admin."), confidential = TRUE)
 	message_admins("[src] re-adminned themselves.")
 	log_admin("[src] re-adminned themselves.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Readmin")
+	BLACKBOX_LOG_ADMIN_VERB("Readmin")
 
 /client/proc/populate_world(amount = 50 as num)
 	set name = "Populate World"

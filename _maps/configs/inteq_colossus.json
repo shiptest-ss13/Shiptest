@@ -4,7 +4,7 @@
 	"faction": "/datum/faction/inteq",
 	"prefix": "IRMV",
 	"manufacturer": "Hardline Salvage and Mining",
-	"description": "The mainstay of Inteq’s mercenary fleet, the Colossus is a professionally-militarized freighter like most of Inteq’s ships, and is designed to operate independently for some time, serving IRMG’s interests and providing vital mercenary services wherever they are needed. Key features include a secure and well-stocked armory and ample crew space, as well as a spacious cargo bay, which crews often refurbish into additional recreational or training space.",
+	"description": "The mainstay of Inteq’s mercenary fleet, the Colossus is a professionally-militarized freighter like most of Inteq’s ships, and is designed to operate independently for some time, serving IRMG’s interests and providing vital mercenary services wherever they are needed. Key features include a secure and well-stocked armory, a shuttle hangar, ample crew space, as well as a spacious cargo bay, which crews often refurbish into additional recreational or training space.",
 	"tags": [
 		"Combat",
 		"Riot"
@@ -25,23 +25,28 @@
 			"slots": 1
 		},
 		"Master At Arms": {
-			"outfit": "/datum/outfit/job/inteq/warden",
+			"outfit": "/datum/outfit/job/inteq/warden/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Shuttle Pilot": {
+			"outfit": "/datum/outfit/job/inteq/pilot/empty",
 			"officer": true,
 			"slots": 1
 		},
 		"Artificer": {
-			"outfit": "/datum/outfit/job/inteq/engineer",
-			"slots": 1
+			"outfit": "/datum/outfit/job/inteq/engineer/empty",
+			"slots": 2
 		},
 		"Corpsman": {
-			"outfit": "/datum/outfit/job/inteq/paramedic",
+			"outfit": "/datum/outfit/job/inteq/paramedic/empty",
 			"slots": 1
 		},
 		"Enforcer": {
-			"outfit": "/datum/outfit/job/inteq/security",
+			"outfit": "/datum/outfit/job/inteq/security/empty",
 			"slots": 3
 		},
-		"Recruit": {
+		"Auxiliary": {
 			"outfit": "/datum/outfit/job/inteq/assistant",
 			"slots": 2
 		}
