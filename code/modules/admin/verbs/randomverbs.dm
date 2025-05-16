@@ -1082,7 +1082,7 @@
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
 		return
 
-	var/list/punishment_list = list(ADMIN_PUNISHMENT_BREAK_BONES, ADMIN_PUNISHMENT_LIGHTNING, ADMIN_PUNISHMENT_BRAINDAMAGE, ADMIN_PUNISHMENT_GIB, ADMIN_PUNISHMENT_BSA, ADMIN_PUNISHMENT_FIREBALL, ADMIN_PUNISHMENT_ROD, ADMIN_PUNISHMENT_SUPPLYPOD_QUICK, ADMIN_PUNISHMENT_SUPPLYPOD, ADMIN_PUNISHMENT_MAZING, ADMIN_PUNISHMENT_IMMERSE, ADMIN_PUNISHMENT_NYA, ADMIN_PUNISHMENT_PIE)
+	var/list/punishment_list = list(ADMIN_PUNISHMENT_BREAK_BONES, ADMIN_PUNISHMENT_LIGHTNING, ADMIN_PUNISHMENT_BRAINDAMAGE, ADMIN_PUNISHMENT_GIB, ADMIN_PUNISHMENT_BSA, ADMIN_PUNISHMENT_FIREBALL, ADMIN_PUNISHMENT_SUPPLYPOD_QUICK, ADMIN_PUNISHMENT_SUPPLYPOD, ADMIN_PUNISHMENT_MAZING, ADMIN_PUNISHMENT_IMMERSE, ADMIN_PUNISHMENT_NYA, ADMIN_PUNISHMENT_PIE)
 
 	var/punishment = input("Choose a punishment", "DIVINE SMITING") as null|anything in sortList(punishment_list)
 
@@ -1110,13 +1110,6 @@
 			bluespace_artillery(target)
 		if(ADMIN_PUNISHMENT_FIREBALL)
 			new /obj/effect/temp_visual/target(get_turf(target))
-		if(ADMIN_PUNISHMENT_ROD)
-			var/turf/T = get_turf(target)
-			var/startside = pick(GLOB.cardinals)
-			var/datum/virtual_level/vlevel = T.get_virtual_level()
-			var/turf/startT = vlevel.get_side_turf(startside)
-			var/turf/endT = vlevel.get_side_turf(REVERSE_DIR(startside))
-			new /obj/effect/immovablerod(startT, endT,target)
 		if(ADMIN_PUNISHMENT_SUPPLYPOD_QUICK)
 			var/target_path = input(usr,"Enter typepath of an atom you'd like to send with the pod (type \"empty\" to send an empty pod):" ,"Typepath","/obj/item/reagent_containers/food/snacks/grown/harebell") as null|text
 			var/obj/structure/closet/supplypod/centcompod/pod = new()

@@ -454,8 +454,8 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	RemoveBorerActions()
 	GrantInfestActions()
 
-	if(src.mind && src.mind.language_holder && C.mind.language_holder)
-		src.mind.language_holder.copy_languages(C.mind.language_holder)
+	if(get_language_holder() && C.get_language_holder())
+		get_language_holder().copy_languages(C.get_language_holder())
 
 	log_game("[src]/([src.ckey]) has infested [victim]/([victim.ckey]")
 
@@ -570,10 +570,9 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	if(controlling)
 		detach()
 
-	if(src.mind.language_holder)
-		var/datum/language_holder/language_holder = src.mind.language_holder
-		language_holder.remove_all_languages()
-		language_holder.grant_language(/datum/language/galactic_common)
+	if(get_language_holder())
+		get_language_holder().remove_all_languages()
+		get_language_holder().grant_language(/datum/language/galactic_common)
 
 	GrantBorerActions()
 	RemoveInfestActions()
@@ -1157,7 +1156,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	roundend_category = "borers"
 	antagpanel_category = "borer"
 	job_rank = ROLE_BORER
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 	var/datum/team/borer/borer_team
 
 /datum/antagonist/borer/create_team(datum/team/borer/new_team)

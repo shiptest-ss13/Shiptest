@@ -25,9 +25,10 @@
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE
 	var/sensor_mode = NO_SENSORS
-	var/can_adjust = TRUE
+	var/roll_down = FALSE
+	var/roll_sleeves = FALSE
 	var/adjusted = NORMAL_STYLE
-	var/alt_covers_chest = FALSE // for adjusted/rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = exposes arms only
+	var/alt_covers_chest = FALSE // for rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = does not expose any part
 	var/obj/item/clothing/accessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
 	var/freshly_laundered = FALSE
@@ -78,6 +79,10 @@
 		sensor_mode = pick(SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS, SENSOR_COORDS)
 	if(!(body_parts_covered & LEGS) && greyscale_icon_state == "under")
 		greyscale_icon_state = "under_skirt"
+	if(!roll_down)
+		verbs -= /obj/item/clothing/under/verb/jumpsuit_rolldown
+	if(!roll_sleeves)
+		verbs -= /obj/item/clothing/under/verb/jumpsuit_rollsleeves
 
 /obj/item/clothing/under/emp_act()
 	. = ..()
@@ -176,11 +181,11 @@
 	. = ..()
 	if(freshly_laundered)
 		. += "It looks fresh and clean."
-	if(can_adjust)
-		if(adjusted == ALT_STYLE)
-			. += "Alt-click on [src] to wear it normally."
+	if(roll_down)
+		if(adjusted == ROLLED_STYLE)
+			. += "Alt-click on [src] to roll your suit back up."
 		else
-			. += "Alt-click on [src] to wear it casually."
+			. += "Alt-click on [src] to roll your suit down."
 	if (has_sensor == BROKEN_SENSORS)
 		. += "Its sensors appear to be shorted out."
 	else if(has_sensor > NO_SENSORS)

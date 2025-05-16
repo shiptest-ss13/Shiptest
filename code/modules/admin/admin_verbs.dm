@@ -116,6 +116,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/toggle_random_events,
 	/client/proc/set_ooc,
 	/client/proc/reset_ooc,
+	/client/proc/force_event,
 	/client/proc/admin_change_sec_level,
 	/client/proc/toggle_nuke,
 	/client/proc/run_weather,
@@ -216,6 +217,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
 	/datum/admins/proc/delete_all_missions,
+	/client/proc/cmd_admin_toggle_fov,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)

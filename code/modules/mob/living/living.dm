@@ -17,6 +17,7 @@
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+	update_fov()
 
 /mob/living/prepare_huds()
 	..()
@@ -648,7 +649,6 @@
 		adjustToxLoss(-20, TRUE, TRUE) //slime friendly
 		updatehealth()
 		grab_ghost()
-	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
 	if(full_heal)
 		fully_heal(admin_revive = admin_revive)
 	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
@@ -667,6 +667,8 @@
 		if(excess_healing)
 			INVOKE_ASYNC(src, PROC_REF(emote), "gasp")
 			log_combat(src, src, "revived")
+	// The signal is called after everything else so components can properly check the updated values
+	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
 
 /mob/living/proc/remove_CC()
 	SetStun(0)
@@ -1851,6 +1853,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	bubble_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 	if(typing_indicator)
 		add_overlay(bubble_overlay)
+		play_fov_effect(src, 6, "talk", ignore_self = TRUE)
 	else
 		cut_overlay(bubble_overlay)
 
