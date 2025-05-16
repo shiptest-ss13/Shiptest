@@ -24,11 +24,11 @@
 			pick_faxes += fax_machine
 
 /datum/round_event/fax_spam/tick()
-	if(activeFor % spam_frequency == 0)
-		var/obj/item/paper/spam/spam_message = new spam_type
+	if((activeFor % spam_frequency) == 0)
 		for(var/obj/machinery/fax/fax_machine in pick_faxes)
 			if(!prob(spam_prob))
 				continue
+			var/obj/item/paper/spam/spam_message = new spam_type
 			fax_machine.receive(spam_message, spam_message.sender)
 
 /obj/item/paper/spam

@@ -48,14 +48,6 @@
 		/datum/mission/ruin/signaled/kill/foreman
 	)
 
-/datum/mission/ruin/signaled/kill/foreman
-	name = "Kill Foreman Bonsha"
-	desc = "Defector Verron Bonsha has established a Ramzi Clique post inside a former Coalation FOB. Killing him should send the local Clique into disarray and disrupt their supply lines."
-	author = "2nd Battlegroup Headquarters"
-	faction = /datum/faction/syndicate/ngr
-	value = 2000
-	mission_limit = 1
-
 /datum/mission/ruin/pgf_captain
 	name = "MIA Vessel Investigation"
 	desc = "The recovery beacon for a PFGN vessel that went missing on patrol has activated. Intellegence suggests they may have been assaulted by pirates. Recover the vessel captain's body and you will be compensated for your services."
@@ -97,3 +89,11 @@
 		name = "Virtual Solutions Asset Retrieval"
 		author = "Cybersun Virtual Solutions"
 		desc = "Cybersun has found an orbital Nanotrasen facility that was improperly scuttled. Virtual Solutions would gladly receive any unsecured site data, and will reward you for your work."
+
+/datum/mission/ruin/signaled/kill/foreman
+	name = "Kill Foreman Bonsha"
+	desc = "Defector Verron Bonsha has established a Ramzi Clique post inside a former Coalation FOB. Killing him should send the local Clique into disarray and disrupt their supply lines."
+	author = "2nd Battlegroup Headquarters"
+	faction = /datum/faction/syndicate/ngr
+	value = 2000
+	mission_limit = 1
