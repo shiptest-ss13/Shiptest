@@ -6,7 +6,12 @@
 
 /datum/quirk/phobia/post_add()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.gain_trauma(new /datum/brain_trauma/mild/phobia(H.client?.prefs.phobia), TRAUMA_RESILIENCE_ABSOLUTE)
+		H.gain_trauma(
+		new /datum/brain_trauma/mild/phobia(
+			H.client?.prefs.get_pref_data(/datum/preference/choiced_string/phobia)
+		),
+		TRAUMA_RESILIENCE_ABSOLUTE
+	)
 
 /datum/quirk/phobia/remove()
 	var/mob/living/carbon/human/H = quirk_holder
