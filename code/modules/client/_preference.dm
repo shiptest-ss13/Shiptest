@@ -169,7 +169,9 @@
 #warn note that this proc need not reject "invalid" values, so long as is_invalid does.
 // note that a null or falsey result from this proc is allowed and expected -- available prefs may have null data!
 /datum/preference/proc/deserialize(serialized_data)
-
+	SHOULD_NOT_SLEEP(TRUE)
+	SHOULD_CALL_PARENT(FALSE)
+	CRASH("`deserialize()` was not implemented on [type]!")
 
 /datum/preference/proc/button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
 	// mob sent href_list containing our pref and an action.

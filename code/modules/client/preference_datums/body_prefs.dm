@@ -171,12 +171,12 @@
 	application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE - 1
 
 	default_value = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
-	dependencies = list(/datum/preference/bool/fbp)
+	dependencies = list(/datum/preference/toggle/fbp)
 
 	randomization_flags = NONE
 
 /datum/preference/prosthetic_limbs/_is_available(list/dependency_data)
-	if(dependency_data[/datum/preference/bool/fbp])
+	if(dependency_data[/datum/preference/toggle/fbp])
 		return FALSE
 	return TRUE
 
@@ -322,7 +322,7 @@
 // CORRESPONDING VARIABLE NAME:
 // fbp
 // default value: FALSE
-/datum/preference/bool/fbp
+/datum/preference/toggle/fbp
 	name = "Full-Body Positronic"
 	external_key = "is_fbp"
 
@@ -331,18 +331,18 @@
 
 	randomization_flags = NONE // not for now.
 
-/datum/preference/bool/fbp/_is_available(list/dependency_data)
+/datum/preference/toggle/fbp/_is_available(list/dependency_data)
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
 	if(istype(chosen_species, /datum/species/ipc))
 		// no FBP IPCs. what the fuck would that even mean?
 		return FALSE
 	return TRUE
 
-/datum/preference/bool/fbp/apply_to_human(mob/living/carbon/human/target, data)
+/datum/preference/toggle/fbp/apply_to_human(mob/living/carbon/human/target, data)
 	// kind of an evil way of doing it, but oh well!
 	target.fbp = data
 
-/datum/preference/bool/fbp/randomize(list/dependency_data, list/rand_dependency_data)
+/datum/preference/toggle/fbp/randomize(list/dependency_data, list/rand_dependency_data)
 	return FALSE
 
 // UI CREATION
@@ -764,7 +764,7 @@
 // CORRESPONDING VARIABLE NAME:
 // features[FEATURE_LEGS_TYPE]
 // default value: FEATURE_NORMAL_LEGS
-/datum/preference/bool/digitigrade
+/datum/preference/toggle/digitigrade
 	name = "Digitigrade"
 	external_key = "digitigrade"
 
@@ -773,13 +773,13 @@
 
 	randomization_flags = PREF_RAND_FLAG_APPEARANCE
 
-/datum/preference/bool/digitigrade/_is_available(list/dependency_data)
+/datum/preference/toggle/digitigrade/_is_available(list/dependency_data)
 	var/datum/species/chosen_species = dependency_data[/datum/preference/species]
 	if(chosen_species.digitigrade_customization == DIGITIGRADE_OPTIONAL)
 		return TRUE
 	return FALSE
 
-/datum/preference/bool/digitigrade/apply_to_human(mob/living/carbon/human/target, data)
+/datum/preference/toggle/digitigrade/apply_to_human(mob/living/carbon/human/target, data)
 	// so, a note about how digitigrade works:
 	// the feature FEATURE_LEGS_TYPE is not actually used by much code, and neither is the species var digitigrade_customization == DIGITIGRADE_FORCED.
 	//
@@ -792,7 +792,7 @@
 	else
 		target.dna.features[FEATURE_LEGS_TYPE] = FEATURE_NORMAL_LEGS
 
-/datum/preference/bool/digitigrade/randomize(list/dependency_data, list/rand_dependency_data)
+/datum/preference/toggle/digitigrade/randomize(list/dependency_data, list/rand_dependency_data)
 	// idk. 70% of lizards are digitigrade. sure
 	return prob(70)
 

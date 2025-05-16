@@ -1,4 +1,3 @@
-#warn would be nice if it had rotation buttons.
 /// Base class for preferences which consist of directly-serialized strings, which are found as options in a global list.
 /datum/preference/choiced_string
 	abstract_type = /datum/preference/choiced_string
@@ -115,26 +114,81 @@
 
 
 
-/datum/preference/bool
-	abstract_type = /datum/preference/bool
+/datum/preference/toggle
+	abstract_type = /datum/preference/toggle
 
 // is_available left unimplemented
 
-/datum/preference/bool/_is_invalid(data, list/dependency_data)
+/datum/preference/toggle/_is_invalid(data, list/dependency_data)
 	if(data != TRUE && data != FALSE)
 		return "[data] is not a boolean (1 or 0)!"
 	return FALSE
 
 // apply_to_human left unimplemented, obviously
 
-/datum/preference/bool/_serialize(data)
+/datum/preference/toggle/_serialize(data)
 	return data
 
-/datum/preference/bool/deserialize(serialized_data)
+/datum/preference/toggle/deserialize(serialized_data)
 	return serialized_data
 
-/datum/preference/bool/button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
+/datum/preference/toggle/button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
 	return !old_data
 
 // no randomization either, because it's pretty fucking simple
 
+
+/// A numeric preference with a minimum and maximum value
+/datum/preference/numeric
+	/// The minimum value
+	var/minimum
+
+	/// The maximum value
+	var/maximum
+
+	/// The step of the number, such as 1 for integers or 0.5 for half-steps.
+	var/step = 1
+
+	abstract_type = /datum/preference/numeric
+
+/*
+/datum/preference/numeric/deserialize(input, datum/preferences/preferences)
+	if(istext(input)) // Sometimes TGUI will return a string instead of a number, so we take that into account.
+		input = text2num(input) // Worst case, it's null, it'll just use create_default_value()
+	return sanitize_float(input, minimum, maximum, step, create_default_value())
+*/
+
+/datum/preference/numeric/serialize(input)
+	return sanitize_float(input, minimum, maximum, step, create_default_value())
+
+/datum/preference/numeric/create_default_value()
+	return rand(minimum, maximum)
+
+/datum/preference/numeric/_is_invalid(value)
+	if(isnum(value) && value >= round(minimum, step) && value <= round(maximum, step))
+		return FALSE
+
+
+/// A string-based preference accepting arbitrary string values entered by the user, with a maximum length.
+/datum/preference/text
+	abstract_type = /datum/preference/text
+
+	/// What is the maximum length of the value allowed in this field?
+	var/maximum_value_length = 256
+
+	/// Should we strip HTML the input or simply restrict it to the maximum_value_length?
+	var/should_strip_html = TRUE
+
+/*
+/datum/preference/text/deserialize(input, datum/preferences/preferences)
+	return should_strip_html ? STRIP_HTML_SIMPLE(input, maximum_value_length) : copytext(input, 1, maximum_value_length)
+*/
+
+/datum/preference/text/create_default_value()
+	return ""
+
+/datum/preference/text/_is_invalid(value)
+	return !istext(value) || length(value) >= maximum_value_length
+
+/datum/preference/text/compile_constant_data()
+	return list("maximum_length" = maximum_value_length)
