@@ -484,10 +484,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	C.deathsound = deathsound
 	// movespeed
 	C.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/species, multiplicative_slowdown=speedmod)
-	// reset the mob's language holder
-	qdel(C.language_holder)
-	C.language_holder = new species_language_holder(C)
-	C.update_atom_languages()
 	C.bodytemperature = bodytemp_normal
 
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src)

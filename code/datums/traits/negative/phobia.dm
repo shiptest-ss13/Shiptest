@@ -6,7 +6,7 @@
 
 /datum/quirk/phobia/post_add()
 	var/mob/living/carbon/human/human_holder = quirk_holder
-	var/phobia = human_holder.client?.prefs.read_preference(/datum/preference/choiced_string/phobia)
+	var/phobia = human_holder.client?.prefs.get_pref_data(/datum/preference/choiced_string/phobia)
 	if(!phobia)
 		return
 
