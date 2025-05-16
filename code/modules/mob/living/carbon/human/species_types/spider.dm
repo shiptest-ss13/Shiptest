@@ -4,15 +4,6 @@
 	see_in_dark = 4
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 
-
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
-	icon_state = "spidermeat"
-	desc = "The stringy meat jokes have been done to death, just like this Arachnid."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	filling_color = "#00FFFF"
-	tastes = list("meat" = 3, "stringy" = 1)
-	foodtype = MEAT | RAW | TOXIC
-
 /datum/species/spider
 	name = "Rachnid"
 	id = SPECIES_RACHNID
@@ -25,7 +16,7 @@
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
+	meat = /obj/item/food/meat/slab/human/mutant/spider
 	liked_food = MEAT | RAW | GORE // Regular spiders literally liquify the insides of their prey and drink em like a smoothie. I think this fits
 	disliked_food = FRUIT | GROSS
 	toxic_food = VEGETABLES | DAIRY | CLOTH

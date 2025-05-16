@@ -61,7 +61,7 @@
 	//We can't pass a mind into this
 	ignore += typesof(/obj/item/phylactery)
 	//This expects a seed, we can't pass it
-	ignore += typesof(/obj/item/reagent_containers/food/snacks/grown)
+	ignore += typesof(/obj/item/food/grown)
 	//Nothing to hallucinate if there's nothing to hallicinate
 	ignore += typesof(/obj/effect/hallucination)
 	//We don't have a pod
