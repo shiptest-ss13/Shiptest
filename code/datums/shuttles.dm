@@ -470,5 +470,5 @@
 /datum/map_template/shuttle/subshuttles/esquimalt
 	file_name = "independent_esquimalt"
 	name = "Esquimalt-class Salvage Pod"
-  token_icon_state = "ship_tiny_generic"
+	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
