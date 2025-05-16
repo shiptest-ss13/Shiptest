@@ -107,71 +107,11 @@
 
 	return randname
 
-/* Charge mechanics */
 
 /datum/species/elzuose/spec_life(mob/living/carbon/human/H)
 	.=..()
 	handle_charge(H)
 
-/datum/species/elzuose/proc/handle_charge(mob/living/carbon/human/H)
-	brutemod = 1.25
-	switch(get_charge(H))
-		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
-			if(get_charge(H) == ELZUOSE_CHARGE_NONE)
-				H.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 3)
-			else
-				H.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 2)
-			if(H.health > 10.5)
-				apply_damage(0.2, TOX, null, null, H)
-			brutemod = 1.75
-		if(ELZUOSE_CHARGE_LOWPOWER to ELZUOSE_CHARGE_NORMAL)
-			H.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 1)
-			brutemod = 1.5
-		if(ELZUOSE_CHARGE_FULL to ELZUOSE_CHARGE_OVERLOAD)
-			H.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 1)
-			brutemod = 1.5
-		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
-			H.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 2)
-			brutemod = 1.75
-			if(prob(10)) //10% each tick for ethereals to explosively release excess energy if it reaches dangerous levels
-				discharge_process(H)
-		else
-			H.clear_alert("ELZUOSE_CHARGE")
-			H.clear_alert("ethereal_overcharge")
-
-/datum/species/elzuose/proc/discharge_process(mob/living/carbon/human/H)
-	to_chat(H, span_warning("You begin to lose control over your charge!"))
-	H.visible_message(span_danger("[H] begins to spark violently!"))
-
-	//shameless copycode from lightning spell
-	var/static/mutable_appearance/overcharge
-	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
-	H.add_overlay(overcharge)
-
-	if(do_after(H, 50, H, IGNORE_USER_LOC_CHANGE))
-		H.flash_lighting_fx(5, 7, "#" + H.dna.features[FEATURE_MUTANT_COLOR])
-		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
-		playsound(H, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
-		H.cut_overlay(overcharge)
-		tesla_zap(H, 2, (stomach.crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
-		if(istype(stomach))
-			stomach.adjust_charge(ELZUOSE_CHARGE_FULL - stomach.crystal_charge)
-		to_chat(H, span_warning("You violently discharge energy!"))
-		H.visible_message(span_danger("[H] violently discharges energy!"))
-
-		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
-			var/datum/disease/D = new /datum/disease/heart_failure
-			H.ForceContractDisease(D)
-			to_chat(H, span_userdanger("You're pretty sure you just felt your heart stop for a second there..."))
-			H.playsound_local(H, 'sound/effects/singlebeat.ogg', 100, 0)
-		H.Paralyze(100)
-		return
-
-/datum/species/elzuose/proc/get_charge(mob/living/carbon/H) //this feels like it should be somewhere else. Eh?
-	var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
-	if(istype(stomach))
-		return stomach.crystal_charge
-	return ELZUOSE_CHARGE_NONE
 
 /* Root mechanics */
 
@@ -329,12 +269,8 @@
 		if(EMP_HEAVY)
 			addtimer(CALLBACK(src, PROC_REF(stop_emp), H), 20 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 20 seconds
 
-/datum/species/elzuose/proc/stop_emp(mob/living/carbon/human/H)
-	emp_effect = FALSE
-	update_elzu_color(H)
-
 /datum/species/elzuose/proc/stop_emp(mob/living/carbon/human/_human)
-	EMPeffect = FALSE
+	emp_effect = FALSE
 	spec_updatehealth(_human)
 	to_chat(_human, span_notice("You feel more energized as your shine comes back."))
 
