@@ -157,7 +157,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		return
 	path = "data/player_saves/[ckey[1]]/[ckey]/[filename]"
 
-#warn make the read/write procs use /datum/save_backend
 /datum/preferences/proc/load_preferences()
 	if(!path)
 		return FALSE

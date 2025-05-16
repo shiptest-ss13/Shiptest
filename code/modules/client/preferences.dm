@@ -206,9 +206,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	VAR_PRIVATE/list/pref_values = list()
 
-	#warn currently unused. sorry. either use or remove
-	VAR_PRIVATE/datum/save_backend/save
-
 
 	///Someone thought we were nice! We get a little heart in OOC until we join the server past the below time (we can keep it until the end of the round otherwise)
 	var/hearted
