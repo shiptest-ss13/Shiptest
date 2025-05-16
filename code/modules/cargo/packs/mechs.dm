@@ -381,8 +381,7 @@ weapons
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
 	)
-	faction = /datum/faction/nt
-	faction_discount = 20
+	faction_unique = list(/datum/faction/nt = 20)
 
 /datum/supply_pack/mech/weapon/missile_rack
 	name = "BRM-6 kit"
@@ -424,8 +423,7 @@ ammo
 	contains = list(
 		/obj/item/mecha_ammo/railgun_ammo
 	)
-	faction = /datum/faction/nt
-	faction_discount = 20
+	faction_unique = list(/datum/faction/nt = 20)
 
 /datum/supply_pack/mech/ammo/missile_rack_ammo
 	name = "BRM-6 missile box"

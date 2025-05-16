@@ -257,8 +257,7 @@
 	desc = "Contains an ECM-6 Beam Gun, a modernization of the ECM-1 manufactured by Clover Photonics for Minutemen use."
 	cost = 1500
 	contains = list(/obj/item/storage/guncase/ecm6)
-	faction = /datum/faction/clip
-	faction_discount = 0
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/energy/disabler
