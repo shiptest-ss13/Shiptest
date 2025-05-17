@@ -160,13 +160,13 @@
 /// Called when [TRAIT_EYESCLOSED] is added to the mob.
 /mob/living/proc/on_eyesclosed_trait_gain(datum/source)
 	SIGNAL_HANDLER
-	become_blind("eyes closed")
+	become_blind(TRAIT_EYESCLOSED)
 	update_body()
 
 /// Called when [TRAIT_EYESCLOSED] is removed from the mob.
 /mob/living/proc/on_eyesclosed_trait_loss(datum/source)
 	SIGNAL_HANDLER
-	cure_blind("eyes closed")
+	cure_blind(TRAIT_EYESCLOSED)
 	update_body()
 
 
