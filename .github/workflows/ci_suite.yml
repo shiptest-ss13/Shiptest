@@ -202,6 +202,16 @@ jobs:
             ${{ runner.os }}-yarn-
             ${{ runner.os }}-
 
+      - name: Restore BYOND cache
+        id: cache-byond
+        uses: actions/cache@v4
+        with:
+          path: ~/BYOND
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}-${{ hashFiles('.github/workflows/ci_suite.yml') }}
+      - name: Install BYOND
+        if: steps.cache-byond.outputs.cache-hit != 'true'
+        run: bash tools/ci/install_byond.sh
+
       - name: Compile
         run: pwsh tools/ci/build.ps1
         env:
