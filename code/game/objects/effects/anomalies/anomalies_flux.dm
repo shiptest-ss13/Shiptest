@@ -74,7 +74,7 @@
 /obj/effect/anomaly/flux/big
 	immortal = TRUE
 	shockdamage = 30
-	pulse_delay = 1 SECOND
+	pulse_delay = 1 SECONDS
 	effectrange = 1
 
 	zap_range = 2
