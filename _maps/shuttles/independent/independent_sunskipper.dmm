@@ -358,9 +358,7 @@
 	dir = 4;
 	layer = 2.89
 	},
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/hydroponics)
 "eb" = (
@@ -672,6 +670,7 @@
 	},
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/machinery/light/small/directional/north,
+/obj/item/stack/sheet/mineral/wood/twentyfive,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "gU" = (
@@ -865,9 +864,7 @@
 	layer = 2;
 	pixel_y = 11
 	},
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/hydroponics)
 "jy" = (
@@ -1032,8 +1029,7 @@
 /obj/structure/table/wood/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 8;
-	pixel_x = -6;
-	pixel_y = 0
+	pixel_x = -6
 	},
 /obj/item/table_bell{
 	pixel_x = -7;
@@ -1467,9 +1463,7 @@
 	},
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/hydroponics)
 "qP" = (
@@ -1678,7 +1672,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/contraband/space_cube{
-	pixel_y = 0;
 	pixel_x = -29
 	},
 /turf/open/floor/plasteel/tech,
@@ -2300,9 +2293,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "yW" = (
-/obj/structure/chair/handrail{
-	dir = 2
-	},
+/obj/structure/chair/handrail,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
 	pixel_x = 11;
@@ -3814,9 +3805,7 @@
 	pixel_y = 11
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
 /obj/item/reagent_containers/glass/bucket{
 	pixel_x = 7;
 	pixel_y = -5
