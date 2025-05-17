@@ -4,10 +4,7 @@
 #define UPLOAD_LIMIT 1048576	//Restricts client uploads to the server to 1MB //Could probably do with being lower.
 
 GLOBAL_LIST_INIT(blacklisted_builds, list(
-	"1407" = "bug preventing client display overrides from working leads to clients being able to see things/mobs they shouldn't be able to see",
-	"1408" = "bug preventing client display overrides from working leads to clients being able to see things/mobs they shouldn't be able to see",
-	"1428" = "bug causing right-click menus to show too many verbs that's been fixed in version 1429",
-
+	"1622" = "Bug breaking rendering can lead to wallhacks.",
 	))
 
 #define LIMITER_SIZE 5
@@ -64,7 +61,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			return
 
 	var/stl = CONFIG_GET(number/second_topic_limit)
-	if (!holder && stl)
+	if (!holder && stl && href_list["window_id"] != "statbrowser")
 		var/second = round(world.time, 10)
 		if (!topiclimiter)
 			topiclimiter = new(LIMITER_SIZE)
