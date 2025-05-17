@@ -60,6 +60,13 @@
 /obj/effect/spawner/random/circuit/machine/common,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/template_noop)
+"q" = (
+/obj/structure/fence/cut/medium{
+	dir = 4
+	},
+/obj/structure/barricade/wooden/crude/snow,
+/turf/open/floor/plating/snowed/smoothed/icemoon,
+/area/template_noop)
 "r" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -183,6 +190,24 @@
 "R" = (
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/template_noop)
+"S" = (
+/obj/structure/fence/cut/large{
+	dir = 4
+	},
+/obj/structure/barricade/wooden/crude/snow,
+/turf/open/floor/plating/snowed/smoothed/icemoon,
+/area/template_noop)
+"T" = (
+/obj/structure/barricade/wooden/snowed,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/template_noop)
+"U" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/obj/structure/barricade/wooden/crude/snow,
+/turf/open/floor/plating/snowed/smoothed/icemoon,
+/area/template_noop)
 "V" = (
 /obj/structure/salvageable/remains,
 /obj/structure/cable/yellow{
@@ -266,9 +291,9 @@ a
 a
 R
 R
-R
-R
-R
+T
+T
+T
 k
 a
 a
@@ -333,12 +358,12 @@ a
 a
 R
 e
-C
+S
 c
 r
 O
 P
-C
+q
 R
 a
 R
@@ -369,7 +394,7 @@ a
 R
 R
 A
-C
+U
 E
 u
 C
@@ -389,7 +414,7 @@ R
 C
 y
 u
-C
+U
 R
 R
 a
