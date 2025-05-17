@@ -6,16 +6,11 @@
 
 /datum/outfit/job/nanotrasen
 	name = "Nanotrasen - Base Outfit"
+	faction = FACTION_PLAYER_NANOTRASEN
 	faction_icon = "bg_nanotrasen"
 
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
-
-/datum/outfit/job/nanotrasen/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_NANOTRASEN)
 
 // Command //
 

@@ -76,7 +76,7 @@
 	var/retaliating = FALSE
 
 	/// Same faction mobs will never be shot at, no matter the other settings
-	var/list/faction = list("neutral", "turret")
+	var/list/faction = list("neutral", FACTION_TURRET)
 
 	var/list/target_faction = list("hostile")
 

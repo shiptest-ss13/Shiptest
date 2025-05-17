@@ -188,6 +188,7 @@
 	name = "Standard Gear"
 
 	var/datum/job/jobtype = null
+	var/faction
 
 	uniform = /obj/item/clothing/under/color/grey
 	wallet = /obj/item/storage/wallet
@@ -276,6 +277,9 @@
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source = null)
 	if(visualsOnly)
 		return
+
+	if(faction)
+		H.faction |= list(faction)
 
 	var/datum/job/J = GLOB.type_occupations[jobtype]
 	if(!J)
