@@ -118,7 +118,7 @@
 			to_chat(user, span_notice("You fail to fix the damage on [src]."))
 			return TRUE
 		update_clothes_damaged_state(FALSE)
-		obj_integrity = max_integrity
+		atom_integrity = max_integrity
 		to_chat(user, span_notice("You fix the damage on [src] with [cloth]."))
 		return TRUE
 	return ..()
@@ -286,7 +286,7 @@
 			. = "X"
 	return .
 
-/obj/item/clothing/obj_break(damage_flag)
+/obj/item/clothing/atom_break(damage_flag)
 	if(!damaged_clothes)
 		update_clothes_damaged_state(TRUE)
 	if(ismob(loc)) //It's not important enough to warrant a message if nobody's wearing it
@@ -567,7 +567,7 @@
 	return 0
 
 
-/obj/item/clothing/obj_destruction(damage_flag)
+/obj/item/clothing/atom_destruction(damage_flag)
 	if(damage_flag == "bomb" || damage_flag == "melee")
 		var/turf/T = get_turf(src)
 		//so the shred survives potential turf change from the explosion.
