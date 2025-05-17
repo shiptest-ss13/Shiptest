@@ -44,7 +44,7 @@
 		var/stackamount = S.get_amount()
 		to_chat(user, span_notice("You put [stackamount] [I]s in [src]."))
 		if(istype(I, /obj/item/stack/sheet/mineral/wood))
-			grill_fuel += (5 * stackamount)
+			grill_fuel += (20 * stackamount)
 		S.use(stackamount)
 		update_appearance()
 		return
