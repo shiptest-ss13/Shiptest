@@ -27,6 +27,7 @@
 	strip_delay = 50
 
 	roll_sleeves = TRUE
+	roll_down = TRUE
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE | VOX_VARIATION
 
 /obj/item/clothing/under/clip/formal
@@ -296,7 +297,10 @@
 
 	icon_state = "clip_x11"
 	item_state = "clip_x11"
-	unique_reskin = null
+	unique_reskin = list("Standard Issue" = "clip_x11",
+						"Blank" = "clip_x11_a",
+						"White Stripe" = "clip_x11_b"
+						)
 	can_flashlight = TRUE
 
 	supports_variations = VOX_VARIATION
@@ -309,7 +313,9 @@
 	vox_override_icon = 'icons/mob/clothing/faction/clip/vox.dmi'
 
 	icon_state = "clip_m10_vc"
-	unique_reskin = null
+	unique_reskin = list("Standard Issue" = "clip_m10_vc",
+						"Arctic" = "clip_m10_vc_a",
+						)
 	can_flashlight = TRUE
 
 	supports_variations = VOX_VARIATION
@@ -448,11 +454,6 @@
 		new /obj/item/ammo_box/magazine/cm15_12g(src)
 	new /obj/item/grenade/frag(src)
 
-/obj/item/storage/belt/military/clip/cm15_inc/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/ammo_box/magazine/cm15_12g/incendiary(src)
-	new /obj/item/grenade/frag(src)
-
 /obj/item/storage/belt/military/clip/e50/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -461,8 +462,9 @@
 /obj/item/storage/belt/military/clip/e50/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/stock_parts/cell/gun/large(src)
+	for(var/i in 1 to 2)
+		new /obj/item/ammo_box/magazine/m9mm_cm70(src)
 	new /obj/item/grenade/frag(src)
-	new /obj/item/screwdriver(src)
 
 /obj/item/storage/belt/military/clip/engi/PopulateContents()
 	new /obj/item/screwdriver/power(src)
@@ -473,10 +475,21 @@
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/stack/cable_coil(src)
 
-/obj/item/storage/belt/military/clip/flamer/PopulateContents()
-	for(var/i in 1 to 3)
-		new /obj/item/reagent_containers/glass/beaker/large/fuel(src)
-	new /obj/item/ammo_box/magazine/cm23(src)
+/obj/item/storage/belt/military/clip/alt
+	name = "\improper Minutemen belt rig"
+	desc = "This belt features many large pouches colored in Confederated League blue. The bulk of the pouches makes it only slightly uncomfortable to wear."
+
+	icon_state = "clipwebbing-alt"
+	item_state = "clipwebbing-alt"
+
+/obj/item/storage/belt/military/clip/alt/ecm6/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun/kalix(src)
+
+/obj/item/storage/belt/military/clip/alt/cm15_inc/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/ammo_box/magazine/cm15_12g/incendiary(src)
+	new /obj/item/grenade/smokebomb(src)
 
 /obj/item/storage/belt/medical/webbing/clip
 	name = "CLIP medical webbing"
