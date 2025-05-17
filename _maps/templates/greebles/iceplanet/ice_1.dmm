@@ -26,6 +26,10 @@
 "k" = (
 /turf/open/water,
 /area/overmap_encounter/planetoid/cave/explored)
+"r" = (
+/obj/effect/spawner/random/trash,
+/turf/open/water,
+/area/overmap_encounter/planetoid/cave/explored)
 "B" = (
 /obj/structure/chair/wood,
 /mob/living/simple_animal/hostile/human/frontier/internals,
@@ -41,6 +45,10 @@
 /obj/structure/table/wood,
 /obj/item/storage/cans/sixbeer{
 	pixel_y = 6
+	},
+/obj/effect/spawner/random/trash/cigbutt{
+	spawn_random_offset = 1;
+	spawn_loot_count = 3
 	},
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -72,7 +80,7 @@ a
 (4,1,1) = {"
 G
 a
-k
+r
 k
 k
 G
