@@ -12,6 +12,17 @@
 	tastes = list("cheese" = 1)
 	foodtype = DAIRY
 
+/obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel
+	name = "tiris cheese"
+	desc = "A bold cheese with a salty header. Tradition says to let the cheese age and form a crust before consuming it, but even without being aged, it has a strong, distinctive flavor."
+	icon_state = "tiris-wheel"
+	slice_path = /obj/item/reagent_containers/food/snacks/tiris_cheese_slice
+	slices_num = 5
+	list_reagents = list(/datum/reagent/consumable/nutriment = 15, /datum/reagent/consumable/nutriment/vitamin = 5)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("rock salt" = 1, "rich cheese" = 4, "faint mushroom" = 1)
+	foodtype = DAIRY
+
 /obj/item/reagent_containers/food/snacks/cheesewedge
 	name = "cheese wedge"
 	desc = "A wedge of cheese, originating from a wheel. You wonder where the original wheel is."
@@ -19,6 +30,16 @@
 	filling_color = "#FFD700"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("cheese" = 1)
+	foodtype = DAIRY
+
+/obj/item/reagent_containers/food/snacks/tiris_cheese_slice
+	name = "tiris cheese wedge"
+	desc = "A wedge of bold tiris cheese. You wonder where the original wheel is."
+	icon_state = "tiris-wedge"
+	filling_color = "#FFD700"
+	dried_type = /obj/item/reagent_containers/food/snacks/lifosa/homemade
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("rock salt" = 1, "rich cheese" = 4, "faint mushroom" = 1)
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/snacks/watermelonslice
@@ -94,6 +115,15 @@
 	filling_color = "#D2B48C"
 	tastes = list("potato" = 1)
 	foodtype = VEGETABLES | DAIRY
+
+/obj/item/reagent_containers/food/snacks/miras_potato
+	name = "Miras Loaded Potato"
+	desc = "A Lanchester classic, Miras is baked over a potato, and then topped with Luna-Town cheese and sour cream."
+	icon_state = "miras-potato"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
+	foodtype = MEAT | SUGAR | VEGETABLES | DAIRY
 
 /obj/item/reagent_containers/food/snacks/fries
 	name = "space fries"
@@ -197,6 +227,16 @@
 	filling_color = "#008000"
 	tastes = list("warm not-grapes" = 1)
 	foodtype = MEAT | TOXIC
+
+/obj/item/reagent_containers/food/snacks/mirasegg
+	name = "miras eggs"
+	desc = "The eggs of a Miras Lizard are typically extracted from their nest. The individual eggs are small and unfertilized, unless the Miras has mated recently."
+	icon_state = "miras-egg"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2)
+	dried_type = /obj/item/reagent_containers/food/snacks/reti/homemade
+	filling_color = "#bae1ba"
+	tastes = list("egg" = 1, "hints of spice" = 1)
+	foodtype = MEAT | RAW
 
 /obj/item/reagent_containers/food/snacks/spiderling
 	name = "spiderling"
@@ -672,93 +712,50 @@
 	tastes = list("tortilla chips" = 1, "salt" = 1)
 	foodtype = JUNKFOOD | FRIED
 
-//////////// Tortilla
+/obj/item/reagent_containers/food/snacks/stuffed_refa
+	name = "Stuffed Refa"
+	desc = "Tiris cheese is removed from its crust and added to the fruits of a Refa-Li plant before being baked"
+	icon_state = "stuff-refa"
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	filling_color = "#ECA735"
+	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
+	foodtype = FRUIT | DAIRY
 
-/obj/item/reagent_containers/food/snacks/carneburrito
-	name = "carne asada burrito"
-	desc = "A tortilla filled with thin strips of grilled steak."
-	icon_state = "carneburrito"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
-	filling_color = "#A0522D"
-	tastes = list("torilla" = 2, "meat" = 4)
-	foodtype = GRAIN | MEAT
+/obj/item/reagent_containers/food/snacks/tiris_fondue
+	name = "Fondue Tiris-Dotu"
+	desc = "Fusion cuisine originating from travelling Solarians. This fondue is made of Tiris Cheese, and filled with small cubes of Dotu-Fime fruit. The flavor profile is reputed to be incredibly rich, especially with crackers."
+	icon_state = "tiris-fondue"
+	bitesize = 8
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/dotu_juice = 2)
+	filling_color = "#ECA735"
+	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
+	foodtype = FRUIT | DAIRY
 
-/obj/item/reagent_containers/food/snacks/fuegoburrito
-	name = "chili con carne burrito"
-	desc = "A tortilla filled with meat and chili peppers."
-	icon_state = "fuegoburrito"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/capsaicin = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
-	filling_color = "#FF2000"
-	tastes = list("torilla" = 2, "meat" = 3, "hot peppers" = 1)
-	foodtype = GRAIN | MEAT
+/obj/item/reagent_containers/food/snacks/remes_roe
+	name = "remes roe"
+	desc = "The roe of a Remes is a topping that rose to prominence due to its serving during talks with Zohilese diplomats. The slight <i>pop</i> of the eggs was hailed as incredibly satisfying."
+	icon_state = "remes-roe"
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	filling_color = "#ECA735"
+	tastes = list("condensed salt" = 1, "satisfying pop" = 2)
+	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/cheesyburrito
-	name = "cheesy burrito"
-	desc = "A tortilla filled with meat and cheese."
-	icon_state = "cheesyburrito"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
-	filling_color = "#FFD800"
-	tastes = list("torilla" = 2, "meat" = 3, "cheese" = 1)
-	foodtype = GRAIN | MEAT | DAIRY
+/obj/item/reagent_containers/food/snacks/fara_reti
+	name = "fara-reti"
+	desc = "The flesh of a fara-li fruit, once all the seeds have been removed, is quite mellow. Adding Remes roe into the flesh creates an experience filled with salty pops."
+	icon_state = "stuff-refa"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
+	filling_color = "#ECA735"
+	tastes = list("condensed salt" = 1, "satisfying pop" = 1, "mellow fruitflesh" = 3)
+	foodtype = MEAT | FRUIT
 
-/obj/item/reagent_containers/food/snacks/burrito
-	name = "burrito"
-	desc = "A tortilla filled with ground meat and cooked."
-	icon_state = "burrito"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1)
-	filling_color = "#FFEFD5"
-	tastes = list("torilla" = 2, "meat" = 3)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/taco
-	name = "taco"
-	desc = "A taco shell filled with meat, cheese, and lettuce."
-	icon_state = "taco"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
-	filling_color = "F0D830"
-	tastes = list("taco" = 4, "meat" = 2, "cheese" = 2, "lettuce" = 1)
-	foodtype = MEAT | DAIRY | GRAIN | VEGETABLES
-
-/obj/item/reagent_containers/food/snacks/taco/plain
-	desc = "A taco filled with meat and cheese."
-	icon_state = "taco_plain"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
-	tastes = list("taco" = 4, "meat" = 2, "cheese" = 2)
-	foodtype = MEAT | DAIRY | GRAIN
-
-/obj/item/reagent_containers/food/snacks/nachos
-	name = "nachos"
-	desc = "A tortilla shredded into pieces and fried."
-	icon_state = "nachos"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
-	filling_color = "#F4A460"
-	tastes = list("nachos" = 1)
-	foodtype = VEGETABLES | FRIED
-
-/obj/item/reagent_containers/food/snacks/cheesynachos
-	name = "cheesy nachos"
-	desc = "A tortilla shredded into pieces and fried, and served with a coating of queso cheese."
-	icon_state = "cheesynachos"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
-	filling_color = "#FFD700"
-	tastes = list("nachos" = 2, "cheese" = 1)
-	foodtype = VEGETABLES | FRIED | DAIRY
-
-/obj/item/reagent_containers/food/snacks/cubannachos
-	name = "spicy nachos"
-	desc = "A tortilla shredded into pieces, fried, and served with hot peppers and cheese."
-	icon_state = "cubannachos"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 7, /datum/reagent/consumable/capsaicin = 8, /datum/reagent/consumable/nutriment/vitamin = 4)
-	filling_color = "#DC143C"
-	tastes = list("nachos" = 2, "hot pepper" = 1)
-	foodtype = VEGETABLES | FRIED | DAIRY
-
+/obj/item/reagent_containers/food/snacks/roe_tiris
+	name = "reti-tiris"
+	desc = "Remes roe and Tiris plasma mixed together into a thick drink. Acquired taste is the nicest that can be said of it."
+	icon_state = "sludge"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
+	filling_color = "#ECA735"
+	tastes = list("blood and salt" = 3, "umami" = 1, "subdued pops" = 1)
+	foodtype = MEAT | GROSS | GORE
