@@ -150,7 +150,7 @@
 
 /mob/proc/put_in_hand(obj/item/I, hand_index, forced = FALSE, ignore_anim = TRUE)
 	if(forced || can_put_in_hand(I, hand_index))
-		if(isturf(I.loc) && !ignore_anim)
+		if(!ignore_anim)
 			I.do_pickup_animation(src)
 		if(hand_index == null)
 			return FALSE
