@@ -178,7 +178,8 @@
 				if(user.a_intent == INTENT_HELP)
 					if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 						return
-					var/new_style = input(user, "Select a fluff style", "Grooming")  as null|anything in GLOB.moth_fluff_list
+					var/fluff_list = GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/moth_fluff]
+					var/new_style = input(user, "Select a fluff style", "Grooming")  as null|anything in fluff_list
 					if(!get_location_accessible(H, location))
 						to_chat(user, span_warning("The headgear is in the way!"))
 						return

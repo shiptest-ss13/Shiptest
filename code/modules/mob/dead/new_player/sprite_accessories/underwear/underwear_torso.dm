@@ -1,7 +1,5 @@
 /datum/sprite_accessory/undershirt
 	icon = 'icons/mob/clothing/underwear/underwear_torso.dmi'
-	//freedom
-	gender = NEUTER
 
 /datum/sprite_accessory/undershirt/nude
 	name = "Nude"

@@ -7,7 +7,6 @@
 	var/causes_damage = TRUE
 	var/datum/species/old_species = /datum/species/human
 	var/living_transformation_time = 30
-	var/converts_living = FALSE
 
 	var/revive_time_min = 450
 	var/revive_time_max = 700
@@ -30,8 +29,9 @@
 /obj/item/organ/zombie_infection/Remove(mob/living/carbon/M, special = 0)
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
-	if(iszombie(M) && old_species && !QDELETED(M) && !special)
-		M.set_species(old_species)
+	if(ishuman(M) && iszombie(M) && old_species && !QDELETED(M) && !special)
+		var/mob/living/carbon/human/H = M
+		H.set_species(old_species)
 	if(timer_id)
 		deltimer(timer_id)
 
@@ -45,7 +45,7 @@
 		return
 	if(!(src in owner.internal_organs))
 		Remove(owner)
-	if(owner.mob_biotypes & MOB_MINERAL)//does not process in inorganic things
+	if((owner.mob_biotypes & MOB_MINERAL) || !ishuman(owner))//does not process in inorganic things or monkeys
 		return
 	if (causes_damage && !iszombie(owner) && owner.stat != DEAD)
 		owner.adjustToxLoss(0.5 * seconds_per_tick)
@@ -53,7 +53,7 @@
 			to_chat(owner, span_danger("You feel sick..."))
 	if(timer_id)
 		return
-	if(owner.stat != DEAD && !converts_living)
+	if(owner.stat != DEAD)
 		return
 	if(!owner.getorgan(/obj/item/organ/brain))
 		return
@@ -65,32 +65,32 @@
 	var/flags = TIMER_STOPPABLE
 	timer_id = addtimer(CALLBACK(src, PROC_REF(zombify), owner), revive_time, flags)
 
-/obj/item/organ/zombie_infection/proc/zombify(mob/living/carbon/C)
+/obj/item/organ/zombie_infection/proc/zombify(mob/living/carbon/human/H)
 	timer_id = null
 
-	if(!converts_living && owner.stat != DEAD)
+	if(owner.stat != DEAD || H != owner || !ishuman(H))
 		return
 
 	if(!iszombie(owner))
 		old_species = owner.dna.species.type
-		C.set_species(/datum/species/zombie/infectious)
+		H.set_species(/datum/species/zombie/infectious)
 
-	var/stand_up = (C.stat == DEAD) || (C.stat == UNCONSCIOUS)
+	var/stand_up = (H.stat == DEAD) || (H.stat == UNCONSCIOUS)
 
 	//Fully heal the zombie's damage the first time they rise
-	C.setToxLoss(0, 0)
-	C.setOxyLoss(0, 0)
-	C.heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE)
+	H.setToxLoss(0, 0)
+	H.setOxyLoss(0, 0)
+	H.heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE)
 
-	if(!C.revive())
+	if(!H.revive())
 		return
 
-	C.grab_ghost()
-	C.visible_message(span_danger("[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!"), span_alien("You HUNGER!"))
-	playsound(C.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
-	C.do_jitter_animation(living_transformation_time)
-	C.Stun(living_transformation_time)
-	to_chat(C, span_alertalien("You are now a zombie! Do not seek to be cured, do not help any non-zombies in any way, do not harm your zombie brethren and spread the disease by killing others. You are a creature of hunger and violence."))
+	H.grab_ghost()
+	H.visible_message(span_danger("[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!"), span_alien("You HUNGER!"))
+	playsound(H.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
+	H.do_jitter_animation(living_transformation_time)
+	H.Stun(living_transformation_time)
+	to_chat(H, span_alertalien("You are now a zombie! Do not seek to be cured, do not help any non-zombies in any way, do not harm your zombie brethren and spread the disease by killing others. You are a creature of hunger and violence."))
 
 /obj/item/organ/zombie_infection/nodamage
 	causes_damage = FALSE

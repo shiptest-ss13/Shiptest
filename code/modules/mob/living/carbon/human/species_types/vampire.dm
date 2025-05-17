@@ -1,14 +1,12 @@
 /datum/species/vampire
 	name = "\improper Vampire"
 	id = SPECIES_VAMPIRE
-	default_color = "FFFFFF"
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,DRINKSBLOOD)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,DRINKSBLOOD,SKINCOLORS)
 	inherent_traits = list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
-	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", "body_size" = "Normal")
+	default_features = list(FEATURE_MUTANT_COLOR = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | ERT_SPAWN
 	exotic_bloodtype = "U"
-	use_skintones = TRUE
 	mutantheart = /obj/item/organ/heart/vampire
 	mutanttongue = /obj/item/organ/tongue/vampire
 	examine_limb_id = SPECIES_HUMAN
@@ -16,7 +14,7 @@
 	var/info_text = "You are a <span class='danger'>Vampire</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 
-/datum/species/vampire/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
+/datum/species/vampire/on_species_gain(mob/living/carbon/human/C)
 	. = ..()
 	to_chat(C, "[info_text]")
 	C.skin_tone = "albino"

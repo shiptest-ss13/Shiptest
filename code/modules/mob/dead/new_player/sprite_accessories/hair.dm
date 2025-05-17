@@ -4,7 +4,11 @@
 
 /datum/sprite_accessory/hair
 	icon = 'icons/mob/human_face.dmi'	  // default icon for all hairs
-	body_zone = BODY_ZONE_HEAD
+
+// breaks alphabetical sorting, but it's useful given that it's "no hair"
+/datum/sprite_accessory/hair/bald
+	name = "Bald"
+	icon_state = null
 
 /datum/sprite_accessory/hair/afro
 	name = "Afro"
@@ -21,10 +25,6 @@
 /datum/sprite_accessory/hair/antenna
 	name = "Ahoge"
 	icon_state = "hair_antenna"
-
-/datum/sprite_accessory/hair/bald
-	name = "Bald"
-	icon_state = null
 
 /datum/sprite_accessory/hair/balding
 	name = "Balding Hair"
@@ -765,7 +765,6 @@
 
 /datum/sprite_accessory/hair_gradient
 	icon = 'icons/mob/hair_gradients.dmi'
-	body_zone = BODY_ZONE_HEAD
 
 /datum/sprite_accessory/hair_gradient/none
 	name = "None"

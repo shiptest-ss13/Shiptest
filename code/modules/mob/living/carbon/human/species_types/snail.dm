@@ -1,8 +1,7 @@
 /datum/species/snail
 	name = "\improper Snailperson"
 	id = SPECIES_SNAIL
-	default_color = "336600" //vomit green
-	species_traits = list(MUTCOLORS, NO_UNDERWEAR)
+	species_traits = list(NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN, TRAIT_NOSLIPALL)
 	attack_verb = "slap"
 	coldmod = 0.5 //snails only come out when its cold and wet
@@ -11,7 +10,6 @@
 	punchdamagehigh = 0.5 //snails are soft and squishy
 	siemens_coeff = 2 //snails are mostly water
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP
-	sexes = FALSE //snails are hermaphrodites
 
 	mutanteyes = /obj/item/organ/eyes/snail
 	mutanttongue = /obj/item/organ/tongue/snail
@@ -38,7 +36,7 @@
 		return TRUE
 	return ..()
 
-/datum/species/snail/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/snail/on_species_gain(mob/living/carbon/C)
 	. = ..()
 	C.AddElement(/datum/element/snailcrawl)
 

@@ -1,100 +1,102 @@
 //Wings for various species
+/datum/sprite_accessory/mutant_part/wings
+	mutant_string = "wings"
+	abstract_type = /datum/sprite_accessory/mutant_part/wings
+	randomizable = TRUE
 
-/datum/sprite_accessory/wings/none
+	icon = 'icons/mob/clothing/wings.dmi'
+	color_src = null
+
+/datum/sprite_accessory/mutant_part/wings_open
+	mutant_string = "wingsopen"
+	abstract_type = /datum/sprite_accessory/mutant_part/wings_open
+
+	// flapping wings still use the data stored as "wings"
+	feature_lookup_override_string = "wings"
+
+	icon = 'icons/mob/clothing/wings.dmi'
+	color_src = null
+
+// bit skeptical of this, for a few reasons. the nonexistence of the open type should be irrelevant,
+// due to name = "None" preventing further rendering.
+/datum/sprite_accessory/mutant_part/wings/none
 	name = "None"
 	icon_state = "none"
 
-/datum/sprite_accessory/wings
-	icon = 'icons/mob/clothing/wings.dmi'
-
-/datum/sprite_accessory/wings_open
-	icon = 'icons/mob/clothing/wings.dmi'
-
 //Human/Misc wings
 
-/datum/sprite_accessory/wings/angel
+/datum/sprite_accessory/mutant_part/wings/angel
 	name = "Angel"
 	icon_state = "angel"
-	color_src = 0
 	dimension_x = 46
 	center = TRUE
 	dimension_y = 34
-	locked = TRUE
 
-/datum/sprite_accessory/wings_open/angel
+/datum/sprite_accessory/mutant_part/wings_open/angel
 	name = "Angel"
 	icon_state = "angel"
-	color_src = 0
 	dimension_x = 46
 	center = TRUE
 	dimension_y = 34
 
 //Sarathi wings
 
-/datum/sprite_accessory/wings/dragon
+/datum/sprite_accessory/mutant_part/wings/dragon
 	name = "Dragon"
 	icon_state = "dragon"
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32
-	locked = TRUE
+	color_src = COLOR_SRC_MUT_COLOR
 
-/datum/sprite_accessory/wings_open/dragon
+/datum/sprite_accessory/mutant_part/wings_open/dragon
 	name = "Dragon"
 	icon_state = "dragon"
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32
+	color_src = COLOR_SRC_MUT_COLOR
 
-/datum/sprite_accessory/wings/megamoth
+/datum/sprite_accessory/mutant_part/wings/megamoth
 	name = "Megamoth"
 	icon_state = "megamoth"
-	color_src = 0
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32
-	locked = TRUE
 
-/datum/sprite_accessory/wings_open/megamoth
+/datum/sprite_accessory/mutant_part/wings_open/megamoth
 	name = "Megamoth"
 	icon_state = "megamoth"
-	color_src = 0
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32
 
-/datum/sprite_accessory/wings/mothra
+/datum/sprite_accessory/mutant_part/wings/mothra
 	name = "Mothra"
 	icon_state = "mothra"
-	color_src = 0
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32
-	locked = TRUE
 
-/datum/sprite_accessory/wings_open/mothra
+/datum/sprite_accessory/mutant_part/wings_open/mothra
 	name = "Mothra"
 	icon_state = "mothra"
-	color_src = 0
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32
 
 //Robotic species wings
 
-/datum/sprite_accessory/wings/robotic
+/datum/sprite_accessory/mutant_part/wings/robotic
 	name = "Robotic"
 	icon_state = "robotic"
-	color_src = 0
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32
-	locked = TRUE
 
-/datum/sprite_accessory/wings_open/robotic
+/datum/sprite_accessory/mutant_part/wings_open/robotic
 	name = "Robotic"
 	icon_state = "robotic"
-	color_src = 0
 	dimension_x = 96
 	center = TRUE
 	dimension_y = 32

@@ -1,11 +1,10 @@
 /datum/species/moth
 	name = "\improper Moth"
 	id = SPECIES_MOTH
-	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
-	mutant_bodyparts = list("moth_wings", "moth_fluff", "moth_markings")
-	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", "body_size" = "Normal")
+	mutant_bodyparts = list()
+	default_features = list("moth_wings" = "Plain", "moth_fluff" = "Plain", "moth_markings" = "None", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	mutant_organs = list(/obj/item/organ/moth_wings)
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -33,7 +32,7 @@
 	min_temp_comfortable = HUMAN_BODYTEMP_NORMAL - 5
 	bodytemp_cold_damage_limit = HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT - 5
 
-/datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
+/datum/species/moth/regenerate_organs(mob/living/carbon/C, replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C

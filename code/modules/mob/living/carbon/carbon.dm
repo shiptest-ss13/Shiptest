@@ -1174,11 +1174,6 @@
 		update_inv_gloves()
 		. = TRUE
 
-/mob/living/carbon/proc/update_flavor_text_feature(new_text)
-	if(!dna)
-		return
-	dna.features["flavor_text"] = new_text
-
 /// Returns whether or not the carbon should be able to be shocked
 /mob/living/carbon/proc/should_electrocute(power_source)
 	if (ismecha(loc))

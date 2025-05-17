@@ -234,7 +234,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 			line+=locate(px,py,M.z)
 	return line
 
-//Returns whether or not a player is a guest using their ckey as an input
+//Returns whether or not a player is a guest using their key (NOT CKEY) as an input
 /proc/IsGuestKey(key)
 	if (findtext(key, "Guest-", 1, 7) != 1) //was findtextEx
 		return FALSE

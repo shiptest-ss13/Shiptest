@@ -51,7 +51,6 @@
 
 	//handle DNA and other attributes
 	dna.transfer_identity(O)
-	O.set_species(/datum/species/monkey)
 	O.updateappearance(icon_update=0)
 
 	if(tr_flags & TR_KEEPSE)
@@ -326,6 +325,7 @@
 				changeling.purchasedpowers -= HF
 				changeling.regain_powers()
 
+	#warn another potential instance of using set_species() to copy over non-temporary vars...
 	if(O.dna.species && !istype(O.dna.species, /datum/species/monkey))
 		O.set_species(O.dna.species)
 	else

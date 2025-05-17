@@ -4,8 +4,8 @@
 	var/unique_enzymes
 	var/uni_identity
 	var/datum/blood_type/blood_type
-	var/datum/species/species = new /datum/species/human //The type of mutant race the player is if applicable (i.e. potato-man)
-	var/list/features = list("FFF") //first value is mutant color
+	var/datum/species/species //The type of mutant race the player is if applicable (i.e. potato-man)
+	var/list/features = list()
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
@@ -15,7 +15,7 @@
 	var/default_mutation_genes[DNA_MUTATION_BLOCKS] //List of the default genes from this mutation to allow DNA Scanner highlighting
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
-	var/current_body_size = BODY_SIZE_NORMAL //This is a size multiplier, it starts at "1".
+	var/current_body_size = BODY_SIZE_NORMAL_SCALE //This is a size multiplier, it starts at "1".
 
 
 	var/delete_species = TRUE //Set to FALSE when a body is scanned by a cloner to fix #38875. WS Edit - Cloning
@@ -48,11 +48,15 @@
 	destination.dna.unique_enzymes = unique_enzymes
 	destination.dna.uni_identity = uni_identity
 	destination.dna.blood_type = blood_type
-	destination.set_species(species.type, icon_update=0)
+
+	if(ishuman(destination))
+		var/mob/living/carbon/human/H = destination
+		H.set_species(species.type, icon_update=0)
+
 	destination.dna.features = features.Copy()
 	destination.dna.real_name = real_name
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
-	destination.flavor_text = destination.dna.features["flavor_text"] //Update the flavor_text to use new dna text
+	destination.flavor_text = destination.dna.features[FEATURE_FLAVOR_TEXT] //Update the flavor_text to use new dna text
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
 		destination.dna.default_mutation_genes = default_mutation_genes
@@ -110,11 +114,11 @@
 	if(ishuman(holder))
 		var/mob/living/carbon/human/H = holder
 		if(!GLOB.hairstyles_list.len)
-			init_sprite_accessory_subtypes(/datum/sprite_accessory/hair,GLOB.hairstyles_list, GLOB.hairstyles_male_list, GLOB.hairstyles_female_list)
+			init_sprite_accessory_subtypes(/datum/sprite_accessory/hair,GLOB.hairstyles_list)
 		L[DNA_HAIRSTYLE_BLOCK] = construct_block(GLOB.hairstyles_list.Find(H.hairstyle), GLOB.hairstyles_list.len)
 		L[DNA_HAIR_COLOR_BLOCK] = sanitize_hexcolor(H.hair_color)
 		if(!GLOB.facial_hairstyles_list.len)
-			init_sprite_accessory_subtypes(/datum/sprite_accessory/facial_hair, GLOB.facial_hairstyles_list, GLOB.facial_hairstyles_male_list, GLOB.facial_hairstyles_female_list)
+			init_sprite_accessory_subtypes(/datum/sprite_accessory/facial_hair, GLOB.facial_hairstyles_list)
 		L[DNA_FACIAL_HAIRSTYLE_BLOCK] = construct_block(GLOB.facial_hairstyles_list.Find(H.facial_hairstyle), GLOB.facial_hairstyles_list.len)
 		L[DNA_FACIAL_HAIR_COLOR_BLOCK] = sanitize_hexcolor(H.facial_hair_color)
 		L[DNA_SKIN_TONE_BLOCK] = construct_block(GLOB.skin_tones.Find(H.skin_tone), GLOB.skin_tones.len)
@@ -271,7 +275,6 @@
 	uni_identity = generate_uni_identity()
 	if(!skip_index) //I hate this
 		generate_dna_blocks()
-	features = random_features()
 
 
 /datum/dna/stored //subtype used by brain mob's stored_dna
@@ -295,12 +298,12 @@
 /datum/dna/proc/update_body_size()
 	if(!holder)
 		return
-	var/desired_size = GLOB.body_sizes[features["body_size"]]
+	var/desired_size = GLOB.body_sizes[features[FEATURE_BODY_SIZE]]
 
 	if(desired_size == current_body_size)
 		return
 
-	if(!features["body_size"])
+	if(!features[FEATURE_BODY_SIZE])
 		return
 
 	var/change_multiplier = desired_size / current_body_size
@@ -319,7 +322,6 @@
 		else
 			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
 
-
 /mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
 	if(mrace && has_dna())
 		var/datum/species/new_race
@@ -329,7 +331,6 @@
 			new_race = mrace
 		else
 			return
-		deathsound = new_race.deathsound
 		dna.species.on_species_loss(src, new_race, pref_load)
 		var/datum/species/old_species = dna.species
 		dna.species = new_race
@@ -359,6 +360,41 @@
 		update_mutations_overlay()// no lizard with human hulk overlay please.
 	AddComponent(/datum/component/bloodysoles/feet)
 
+#warn redocument, including procs on_species_loss and on_species_gain -- note that they're used for clearing and finalizing the new species, simplifying bodyplan logic.
+#warn both procs could arguably just be pushed down...
+/mob/living/carbon/human/proc/set_species_prelim(datum/species/spec_type)
+	if(!spec_type || !has_dna())
+		return
+	if(!ispath(spec_type, /datum/species))
+		return
+	var/datum/species/new_race = new spec_type
+	dna.species.on_species_loss(src, new_race)
+	dna.species = new_race
+
+	#warn needs to go somewhere
+		// //Solves quirk conflicts on species change if there's any
+		// var/list/quirks_to_remove = list()
+		// var/list/quirks_resolved = client?.prefs.handle_quirk_conflict("species", new_race, src)
+		// for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
+		// 	quirks_to_remove += quirk_instance.type
+		// for(var/quirk_name in quirks_resolved)
+		// 	var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+		// 	quirks_resolved += quirk_type
+		// 	quirks_resolved -= quirk_name
+		// quirks_to_remove -= quirks_resolved
+		// for(var/quirk_type in quirks_to_remove)
+		// 	remove_quirk(quirk_type)
+
+/mob/living/carbon/human/proc/finalize_species(icon_update = TRUE)
+	var/is_robotic = fbp
+
+	dna.species.on_species_gain(src, is_robotic)
+
+	if(icon_update)
+		update_hair()
+		update_mutations_overlay()
+
+
 /mob/proc/has_dna()
 	return
 
@@ -370,8 +406,9 @@
 //Do not use force_transfer_mutations for stuff like cloners without some precautions, otherwise some conditional mutations could break (timers, drill hat etc)
 	if(newfeatures)
 		dna.features = newfeatures
-		flavor_text = dna.features["flavor_text"] //Update the flavor_text to use new dna text
+		flavor_text = dna.features[FEATURE_FLAVOR_TEXT] //Update the flavor_text to use new dna text
 
+	#warn this uses the ability to pass an instanced datum into set_species(), which is potentially problematic
 	if(mrace)
 		var/datum/species/newrace = new mrace.type
 		newrace.copy_properties_from(mrace)
@@ -407,12 +444,6 @@
 			var/datum/mutation/human/HM = M
 			if(HM.allow_transfer || force_transfer_mutations)
 				dna.force_give(new HM.type(HM.class, copymut=HM)) //using force_give since it may include exotic mutations that otherwise wont be handled properly
-
-/mob/living/carbon/proc/create_dna()
-	dna = new /datum/dna(src)
-	if(!dna.species)
-		var/rando_race = pick(GLOB.roundstart_races)
-		dna.species = new rando_race()
 
 //proc used to update the mob's appearance after its dna UI has been changed
 /mob/living/carbon/proc/updateappearance(icon_update=1, mutcolor_update=0, mutations_overlay_update=0)

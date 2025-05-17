@@ -82,6 +82,7 @@
 	return
 
 /obj/effect/mob_spawn/proc/create(ckey, newname)
+	#warn human initialization
 	var/mob/living/M = new mob_type(get_turf(src)) //living mobs only
 	if(!random || newname)
 		if(newname)
@@ -184,6 +185,7 @@
 		outfit = new /datum/outfit
 	return ..()
 
+#warn randomization. more. ugh
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H)
 	if(mob_species)
 		H.set_species(mob_species)
@@ -197,7 +199,7 @@
 	if(hairstyle)
 		H.hairstyle = hairstyle
 	else
-		H.hairstyle = random_hairstyle(H.gender)
+		H.hairstyle = random_hairstyle()
 	if(facial_hairstyle)
 		H.facial_hairstyle = facial_hairstyle
 	else

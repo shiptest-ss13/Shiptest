@@ -19,6 +19,7 @@
 	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
 	limb_id = SPECIES_MOTH
 	should_draw_greyscale = FALSE
+
 /obj/item/bodypart/leg/left/moth
 	static_icon = 'icons/mob/species/moth/bodyparts.dmi'
 	limb_id = SPECIES_MOTH

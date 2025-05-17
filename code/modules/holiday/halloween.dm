@@ -58,7 +58,6 @@
 		return
 	else
 		var/mob/living/carbon/human/H = new(loc)
-		H.makeSkeleton()
 		H.health = 1e5
 		insert(H)
 		trapped_mob = H

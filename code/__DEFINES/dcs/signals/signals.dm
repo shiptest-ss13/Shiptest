@@ -656,7 +656,7 @@
 #define COMSIG_MECHA_ACTION_ACTIVATE "mecha_action_activate"	//sent from mecha action buttons to the mecha they're linked to
 
 // /datum/species signals
-#define COMSIG_SPECIES_GAIN "species_gain" //from datum/species/on_species_gain(): (datum/species/new_species, datum/species/old_species)
+#define COMSIG_SPECIES_GAIN "species_gain" //from datum/species/on_species_gain(): (datum/species/new_species)
 #define COMSIG_SPECIES_LOSS "species_loss" //from datum/species/on_species_loss(): (datum/species/lost_species)
 
 // /datum/song signals

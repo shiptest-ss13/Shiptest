@@ -91,7 +91,9 @@
 		for (var/i in GLOB.bitfields[name])
 			if (value & GLOB.bitfields[name][i])
 				flags += i
-			item = "[name_part] = [VV_HTML_ENCODE(jointext(flags, ", "))]"
+			// includes the "raw" value of the variable, as some bitfields may not be updated and
+			// in that case it should be easier to realize that the value isn't fully encapsulated by the listed bitflags
+			item = "[name_part] = [VV_HTML_ENCODE(jointext(flags, ", "))] = <span class='value'>[VV_HTML_ENCODE(value)] (Raw)</span>"
 	else
 		item = "[name_part] = [span_value("[VV_HTML_ENCODE(value)]")]"
 

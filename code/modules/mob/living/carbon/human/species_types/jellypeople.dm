@@ -2,8 +2,7 @@
 	// Entirely alien beings that seem to be made entirely out of gel. They have three eyes and a skeleton visible within them.
 	name = "\improper Jellyperson"
 	id = SPECIES_JELLYPERSON
-	default_color = "00FF90"
-	species_traits = list(MUTCOLORS,EYECOLOR,NOBLOOD,NO_BONES,HAIR,FACEHAIR)
+	species_traits = list(EYECOLOR,NOBLOOD,NO_BONES,HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_TOXINLOVER)
 	hair_color = "mutcolor"
 	hair_alpha = 150
@@ -40,7 +39,7 @@
 		humanoid_customization.Remove(C)
 	..()
 
-/datum/species/jelly/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/jelly/on_species_gain(mob/living/carbon/C)
 	..()
 	if(ishuman(C))
 		regenerate_limbs = new
@@ -90,24 +89,6 @@
 	if(H)
 		stop_wagging_tail(H)
 	. = ..()
-
-/datum/species/jelly/can_wag_tail(mob/living/carbon/human/H)
-	return ("tail_human" in mutant_bodyparts) || ("waggingtail_human" in mutant_bodyparts)
-
-/datum/species/jelly/is_wagging_tail(mob/living/carbon/human/H)
-	return ("waggingtail_human" in mutant_bodyparts)
-
-/datum/species/jelly/start_wagging_tail(mob/living/carbon/human/H)
-	if("tail_human" in mutant_bodyparts)
-		mutant_bodyparts -= "tail_human"
-		mutant_bodyparts |= "waggingtail_human"
-	H.update_body()
-
-/datum/species/jelly/stop_wagging_tail(mob/living/carbon/human/H)
-	if("waggingtail_human" in mutant_bodyparts)
-		mutant_bodyparts -= "waggingtail_human"
-		mutant_bodyparts |= "tail_human"
-	H.update_body()
 
 /datum/action/innate/regenerate_limbs
 	name = "Regenerate Limbs"
@@ -165,9 +146,9 @@
 	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "Cancel") in list("Body Color", "Hair Style", "Ears", "Tail") //Select what you want to alter
 	switch(select_alteration) //fuck you i like readability
 		if("Body Color")
-			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
+			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features[FEATURE_MUTANT_COLOR]) as color|null
 			if(new_color)
-				H.dna.features["mcolor"] = sanitize_hexcolor(new_color)
+				H.dna.features[FEATURE_MUTANT_COLOR] = sanitize_hexcolor(new_color)
 				H.update_body()
 				H.update_hair()
 
@@ -195,7 +176,7 @@
 						H.update_body()
 					if("Cat")
 						H.dna.species.mutant_bodyparts |= "ears"
-						H.dna.features["ears"] = "Slimecat"
+						H.dna.features["ears"] = "Cat"
 						H.update_body()
 				//Tails
 		if("Tail")
@@ -208,7 +189,7 @@
 						H.update_body()
 					if("Cat")
 						H.dna.species.mutant_bodyparts |= "tail_human"
-						H.dna.features["tail_human"] = "Slimecat"
+						H.dna.features["tail_human"] = "Cat"
 						H.update_body()
 
 ////////////////////////////////////////////////////////SLIMEPEOPLE///////////////////////////////////////////////////////////////////
@@ -218,8 +199,7 @@
 /datum/species/jelly/slime
 	name = "Slimeperson"
 	id = SPECIES_SLIMEPERSON
-	default_color = "00FFFF"
-	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
 	hair_color = "mutcolor"
 	hair_alpha = 150
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN
@@ -245,7 +225,7 @@
 	C.blood_volume = min(C.blood_volume, BLOOD_VOLUME_NORMAL)
 	..()
 
-/datum/species/jelly/slime/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/jelly/slime/on_species_gain(mob/living/carbon/C)
 	..()
 	if(ishuman(C))
 		slime_split = new
@@ -331,7 +311,7 @@
 
 	spare.underwear = "Nude"
 	H.dna.transfer_identity(spare, transfer_SE=1)
-	spare.dna.features["mcolor"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	spare.dna.features[FEATURE_MUTANT_COLOR] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
 	spare.real_name = spare.dna.real_name
 	spare.name = spare.dna.real_name
 	spare.updateappearance(mutcolor_update=1)
@@ -406,7 +386,7 @@
 
 		var/list/L = list()
 		// HTML colors need a # prefix
-		L["htmlcolor"] = "#[body.dna.features["mcolor"]]"
+		L["htmlcolor"] = "#[body.dna.features[FEATURE_MUTANT_COLOR]]"
 		L["area"] = get_area_name(body, TRUE)
 		var/stat = "error"
 		switch(body.stat)
@@ -529,7 +509,7 @@
 	..()
 	QDEL_NULL(glow)
 
-/datum/species/jelly/luminescent/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/jelly/luminescent/on_species_gain(mob/living/carbon/C)
 	..()
 	glow = new(C)
 	update_glow(C)
@@ -537,7 +517,7 @@
 /datum/species/jelly/luminescent/proc/update_glow(mob/living/carbon/C, intensity)
 	if(intensity)
 		glow_intensity = intensity
-	glow.set_light_range_power_color(glow_intensity, glow_intensity, C.dna.features["mcolor"])
+	glow.set_light_range_power_color(glow_intensity, glow_intensity, C.dna.features[FEATURE_MUTANT_COLOR])
 
 /obj/effect/dummy/luminescent_glow
 	name = "luminescent glow"
@@ -594,7 +574,7 @@
 	for(var/mob/living/link_to_clear as anything in linked_mobs)
 		unlink_mob(link_to_clear)
 
-/datum/species/jelly/stargazer/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/jelly/stargazer/on_species_gain(mob/living/carbon/C)
 	..()
 	project_thought = new(src)
 	project_thought.Grant(C)

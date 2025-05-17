@@ -2,7 +2,11 @@
 
 /datum/sprite_accessory/facial_hair
 	icon = 'icons/mob/human_face.dmi'
-	gender = MALE
+
+// This is the fallback.
+/datum/sprite_accessory/facial_hair/shaved
+	name = "Shaved"
+	icon_state = null
 
 /datum/sprite_accessory/facial_hair/abe
 	name = "Beard (Abraham Lincoln)"
@@ -143,9 +147,3 @@
 /datum/sprite_accessory/facial_hair/sideburn
 	name = "Sideburns"
 	icon_state = "facial_sideburn"
-
-/datum/sprite_accessory/facial_hair/shaved
-	name = "Shaved"
-	icon_state = null
-	gender = NEUTER
-
