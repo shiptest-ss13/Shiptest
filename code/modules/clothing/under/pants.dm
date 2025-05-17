@@ -1,7 +1,6 @@
 /obj/item/clothing/under/pants
 	gender = PLURAL
 	body_parts_covered = GROIN|LEGS
-	can_adjust = FALSE
 	custom_price = 60
 	icon = 'icons/obj/clothing/under/shorts_pants.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/shorts_pants.dmi'
