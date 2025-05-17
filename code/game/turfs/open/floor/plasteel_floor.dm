@@ -56,6 +56,15 @@
 	icon_state = "monotile_light"
 	base_icon_state = "monotile_light"
 
+/turf/open/floor/plasteel/mono/white/plasma
+	initial_gas_mix = ATMOS_TANK_PLASMA
+/turf/open/floor/plasteel/mono/dark/plasma
+	initial_gas_mix = ATMOS_TANK_PLASMA
+/turf/open/floor/plasteel/mono/white/airless
+	initial_gas_mix = AIRLESS_ATMOS
+/turf/open/floor/plasteel/mono/dark/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
 /turf/open/floor/plasteel/tech
 	icon = 'icons/turf/floors/techfloor.dmi'
 	icon_state = "techfloor"
