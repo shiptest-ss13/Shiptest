@@ -15,51 +15,18 @@
 	tastes = list("fish" = 4, "batter" = 1, "hot peppers" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/fishmeat
+/obj/item/food/fishmeat
 	name = "fish fillet"
 	desc = "A fillet of fresh fish."
 	icon_state = "fishfillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
-	bitesize = 6
-	filling_color = "#FA8072"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bite_consumption = 6
 	tastes = list("fish" = 1)
-	foodtype = MEAT
+	foodtypes = MEAT
 
-/obj/item/reagent_containers/food/snacks/fishmeat/Initialize()
+/obj/item/food/fishmeat/Initialize()
 	. = ..()
-	eatverb = pick("bite","chew","gnaw","swallow","chomp")
-
-/obj/item/reagent_containers/food/snacks/fishmeat/moonfish
-	name = "moonfish fillet"
-	desc = "A fillet of moonfish, native to Kalxicis and notable for its unique hue and texture."
-	icon_state = "moonfish_fillet"
-
-/obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish
-	name = "filleted gunner jellyfish"
-	desc = "A gunner jellyfish's main mass, with the stingers safely removed. Mildly hallucinogenic when consumed raw."
-	icon_state = "jellyfish_fillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/mindbreaker = 2)
-
-/obj/item/reagent_containers/food/snacks/fishmeat/armorfish
-	name = "cleaned armorfish"
-	desc = "An armorfish, properly gutted and unshelled."
-	icon_state = "armorfish_fillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-
-/obj/item/reagent_containers/food/snacks/fishmeat/donkfish
-	name = "donkfillet"
-	desc = "A fillet of the proprietary organism and affront to Solarian ethical genetic experimentation known as the \"donkfish\". The interior mass is a mess of chaotic meat and cancerous growths, with semi-formed organs and teratomas giving it a dire texture."
-	icon_state = "donkfillet"
-	list_reagents = list(/datum/reagent/yuck = 3)
-
-/obj/item/reagent_containers/food/snacks/fishmeat/carp
-	name = "carp fillet"
-	desc = "A fillet of space carp meat. It's not suitable for consumption raw, due to their unique biology of bearing an unsafe chemical within its body."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-
-/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation
-	name = "imitation carp fillet"
-	desc = "Firm, shaped tofu in the style of a fish fillet."
+	eatverbs = list("bite","chew","gnaw","swallow","chomp")
 
 /obj/item/reagent_containers/food/snacks/fishfingers
 	name = "fish fingers"
@@ -173,15 +140,14 @@
 	tastes = list("sour, rotten water" = 1)
 	foodtype = GROSS
 
-/obj/item/reagent_containers/food/snacks/spiderleg
+/obj/item/food/spiderleg
 	name = "spider leg"
 	desc = "A monstrously-sized leg of a giant arachnid. Their bizarre anatomy reveals smaller venom sacs stored in their muscle tissue - each twitch threatens you with its payload."
 	icon_state = "spiderleg"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin = 2)
-	cooked_type = /obj/item/reagent_containers/food/snacks/boiledspiderleg
-	filling_color = "#000000"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin = 2)
+	microwaved_type = /obj/item/reagent_containers/food/snacks/boiledspiderleg
 	tastes = list("venom-laden meat" = 1)
-	foodtype = MEAT | TOXIC
+	foodtypes = MEAT | TOXIC
 
 /obj/item/reagent_containers/food/snacks/cornedbeef
 	name = "corned beef and cabbage"
@@ -260,55 +226,6 @@
 	tastes = list("meat" = 1, "onions" = 1, "garlic" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/monkeycube
-	name = "monkey cube"
-	desc = "Specially created by for use in research labs by the Student-Union Association of Naturalistic Sciences, this cube contains a lifeform \"technically considered adjacent enough to qualify as\" the Terran chimpanzee. Just add water!"
-	icon_state = "monkeycube"
-	bitesize = 12
-	list_reagents = list(/datum/reagent/monkey_powder = 30)
-	filling_color = "#CD853F"
-	tastes = list("hypercompressed proteins" = 1, "bananas" = 1)
-	foodtype = MEAT | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_TINY
-	var/faction
-	var/spawned_mob = /mob/living/carbon/monkey
-	custom_price = 5
-
-/obj/item/reagent_containers/food/snacks/monkeycube/proc/Expand()
-	var/mob/spammer = get_mob_by_key(fingerprintslast)
-	var/mob/living/bananas = new spawned_mob(drop_location(), TRUE, spammer)
-	if(faction)
-		bananas.faction = faction
-	if (!QDELETED(bananas))
-		visible_message(span_notice("[src] expands!"))
-		bananas.log_message("Spawned via [src] at [AREACOORD(src)], Last attached mob: [key_name(spammer)].", LOG_ATTACK)
-	else if (!spammer) // Visible message in case there are no fingerprints
-		visible_message(span_notice("[src] fails to expand!"))
-	qdel(src)
-
-/obj/item/reagent_containers/food/snacks/monkeycube/syndicate
-	faction = list("neutral", ROLE_SYNDICATE)
-
-/obj/item/reagent_containers/food/snacks/monkeycube/gorilla
-	name = "gorilla cube"
-	desc = "Specially created by for use in research labs by the The Student-Union Association of Naturalistic Sciences (then modified by an unscruplus third party), this cube contains a lifeform \"technically considered adjacent enough to qualify as\" the Terran silverback gorilla. These ones are often seen deployed in combat situations."
-	bitesize = 20
-	list_reagents = list(/datum/reagent/monkey_powder = 30, /datum/reagent/medicine/strange_reagent = 5)
-	tastes = list("hypercompressed matter" = 1, "bananas" = 1, "rage" = 1)
-	spawned_mob = /mob/living/simple_animal/hostile/gorilla
-
-/obj/item/reagent_containers/food/snacks/enchiladas
-	name = "enchiladas"
-	desc = "A warm meal of filled corn tortillas and coated in a savory, chili-based sauce."
-	icon_state = "enchiladas"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
-	bitesize = 4
-	filling_color = "#FFA07A"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/capsaicin = 6)
-	tastes = list("hot peppers" = 1, "meat" = 3, "cheese" = 1, "sour cream" = 1)
-	foodtype = MEAT
-
 /obj/item/reagent_containers/food/snacks/stewedsoymeat
 	name = "stewed soy meat"
 	desc = "Heavily stewed firm tofu, meant to emulate braised beef."
@@ -347,15 +264,13 @@
 	tastes = list("meat" = 1, "the color green" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/sashimi
+/obj/item/food/sashimi
 	name = "carp sashimi"
 	desc = "Carefully prepared, thinly cut space carp sashimi. Thanks to the preparation, the carpotoxin has denatured into an intensely pungent spice."
 	icon_state = "sashimi"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/capsaicin = 4, /datum/reagent/consumable/nutriment/vitamin = 4)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/capsaicin = 5)
-	filling_color = "#FA8072"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/capsaicin = 5)
 	tastes = list("fish" = 1, "tongue-searing heat" = 1)
-	foodtype = MEAT
+	foodtypes = MEAT
 
 /obj/item/reagent_containers/food/snacks/nugget
 	name = "chicken nugget"

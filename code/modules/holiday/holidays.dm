@@ -282,7 +282,7 @@
 	name = "ANZAC Day"
 	begin_day = 25
 	begin_month = APRIL
-	drone_hat = /obj/item/reagent_containers/food/snacks/grown/poppy
+	drone_hat = /obj/item/food/grown/poppy
 
 /datum/holiday/anz/getStationPrefix()
 	return pick("Australian","New Zealand","Poppy", "Southern Cross")
@@ -418,7 +418,7 @@
 	name = "Flowers Day"
 	begin_day = 19
 	begin_month = NOVEMBER
-	drone_hat = /obj/item/reagent_containers/food/snacks/grown/moonflower
+	drone_hat = /obj/item/food/grown/moonflower
 
 /datum/holiday/hello
 	name = "Saying-'Hello' Day"
@@ -569,41 +569,6 @@
 
 /datum/holiday/friday_thirteenth/getStationPrefix()
 	return pick("Mike","Friday","Evil","Myers","Murder","Deathly","Stabby")
-
-/datum/holiday/easter
-	name = EASTER
-	var/const/days_early = 1 //to make editing the holiday easier
-	var/const/days_extra = 1
-
-/datum/holiday/easter/shouldCelebrate(dd, mm, yy, ww, ddd)
-	if(!begin_month)
-		current_year = text2num(time2text(world.timeofday, "YYYY"))
-		var/list/easterResults = EasterDate(current_year+year_offset)
-
-		begin_day = easterResults["day"]
-		begin_month = easterResults["month"]
-
-		end_day = begin_day + days_extra
-		end_month = begin_month
-		if(end_day >= 32 && end_month == MARCH) //begins in march, ends in april
-			end_day -= 31
-			end_month++
-		if(end_day >= 31 && end_month == APRIL) //begins in april, ends in june
-			end_day -= 30
-			end_month++
-
-		begin_day -= days_early
-		if(begin_day <= 0)
-			if(begin_month == APRIL)
-				begin_day += 31
-				begin_month-- //begins in march, ends in april
-
-	return ..()
-
-/datum/holiday/easter/celebrate()
-	GLOB.maintenance_loot += list(
-		/obj/item/reagent_containers/food/snacks/egg/loaded = 15,
-		/obj/item/storage/bag/easterbasket = 15)
 
 /datum/holiday/easter/greet()
 	return "Greetings! Have a Happy Easter and keep an eye out for Easter Bunnies!"

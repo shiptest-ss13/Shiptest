@@ -1447,11 +1447,11 @@
 /turf/open/floor/wood/walnut,
 /area/ruin/jungle/paradise/dorms)
 "iV" = (
-/obj/item/reagent_containers/food/snacks/dough{
+/obj/item/food/dough{
 	pixel_x = 14;
 	pixel_y = -4
 	},
-/obj/item/reagent_containers/food/snacks/dough{
+/obj/item/food/dough{
 	pixel_x = 9
 	},
 /obj/structure/table/reinforced,
@@ -1905,7 +1905,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "lx" = (
 /obj/machinery/hydroponics/soil,
-/obj/item/reagent_containers/food/snacks/grown/berries,
+/obj/item/food/grown/berries,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
 "ly" = (
@@ -2612,7 +2612,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
+/obj/item/food/meat/slab/human/mutant/zombie,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib3-old";
 	pixel_x = -6
@@ -3088,16 +3088,16 @@
 "sB" = (
 /obj/structure/fermenting_barrel,
 /obj/effect/decal/cleanable/cobweb,
-/obj/item/reagent_containers/food/snacks/grown/berries,
-/obj/item/reagent_containers/food/snacks/grown/berries{
+/obj/item/food/grown/berries,
+/obj/item/food/grown/berries{
 	pixel_x = 6;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/grown/berries{
+/obj/item/food/grown/berries{
 	pixel_x = 1;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/grown/berries{
+/obj/item/food/grown/berries{
 	pixel_x = -2;
 	pixel_y = 10
 	},
@@ -4289,15 +4289,15 @@
 	pixel_x = -1;
 	pixel_y = -3
 	},
-/obj/item/reagent_containers/food/snacks/grown/berries/poison{
+/obj/item/food/grown/berries/poison{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/grown/berries/poison{
+/obj/item/food/grown/berries/poison{
 	pixel_x = 9;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/food/snacks/grown/berries/poison{
+/obj/item/food/grown/berries/poison{
 	pixel_x = -2;
 	pixel_y = 12
 	},
@@ -5166,7 +5166,7 @@
 /area/ruin/jungle/paradise/construction)
 "Gx" = (
 /obj/machinery/hydroponics/soil,
-/obj/item/reagent_containers/food/snacks/grown/berries/poison,
+/obj/item/food/grown/berries/poison,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
 "Gy" = (
@@ -5378,10 +5378,7 @@
 "Ih" = (
 /obj/structure/table/wood,
 /obj/machinery/light/directional/south,
-/obj/item/food/breadslice/moldy{
-	pixel_x = -8
-	},
-/obj/item/reagent_containers/food/snacks/grown/berries/poison{
+/obj/item/food/grown/berries/poison{
 	pixel_x = -6;
 	pixel_y = 6
 	},
@@ -5768,11 +5765,11 @@
 /obj/effect/spawner/random/food_or_drink/three_course_meal,
 /obj/effect/spawner/random/food_or_drink/three_course_meal,
 /obj/effect/spawner/random/food_or_drink/three_course_meal,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/paradise/cargo)
 "Lc" = (
@@ -6567,7 +6564,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "PH" = (
 /obj/machinery/hydroponics/soil,
-/obj/item/reagent_containers/food/snacks/grown/ambrosia,
+/obj/item/food/grown/ambrosia,
 /obj/item/seeds/ambrosia,
 /turf/open/floor/plating/grass/jungle,
 /area/ruin/jungle/paradise/misc)
@@ -7513,11 +7510,7 @@
 	},
 /obj/effect/mob_spawn/human/corpse/vigilitas_private,
 /obj/effect/decal/cleanable/vomit/old,
-/obj/item/food/breadslice/moldy{
-	pixel_x = -4;
-	pixel_y = 16
-	},
-/obj/item/reagent_containers/food/snacks/grown/berries/poison{
+/obj/item/food/grown/berries/poison{
 	pixel_x = 2;
 	pixel_y = 19
 	},
@@ -7616,13 +7609,13 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "WZ" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
-/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
-/obj/item/reagent_containers/food/snacks/meat/slab/bear,
-/obj/item/reagent_containers/food/snacks/meat/slab/bear,
-/obj/item/reagent_containers/food/snacks/meat/slab/corgi,
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/corgi,
+/obj/item/food/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
 /turf/open/floor/pod/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "Xd" = (

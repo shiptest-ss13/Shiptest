@@ -194,7 +194,7 @@
 	var/product_count = getYield()
 
 	while(t_amount < product_count)
-		var/obj/item/reagent_containers/food/snacks/grown/t_prod
+		var/obj/item/food/grown/t_prod
 		if(instability >= 30 && (seed_flags & MUTATE_EARLY) && LAZYLEN(mutatelist) && prob(instability/3))
 			var/obj/item/seeds/new_prod = pick(mutatelist)
 			t_prod = initial(new_prod.product)
@@ -239,7 +239,7 @@
 	var/output_loc =  parent.loc
 	var/product_name
 	while(t_amount < getYield())
-		var/obj/item/reagent_containers/food/snacks/grown/t_prod = new product(output_loc, src)
+		var/obj/item/food/grown/t_prod = new product(output_loc, src)
 		if(parent.myseed.plantname != initial(parent.myseed.plantname))
 			t_prod.name = lowertext(parent.myseed.plantname)
 		if(productdesc)
@@ -258,7 +258,7 @@
 	parent.update_tray()
 	return result
 
-/obj/item/seeds/proc/prepare_result(obj/item/reagent_containers/food/snacks/grown/T)
+/obj/item/seeds/proc/prepare_result(obj/item/food/grown/T)
 	if(!T.reagents)
 		CRASH("[T] has no reagents.")
 
@@ -608,7 +608,7 @@
 /obj/item/proc/get_plant_seed()
 	return null
 
-/obj/item/reagent_containers/food/snacks/grown/get_plant_seed()
+/obj/item/food/grown/get_plant_seed()
 	return seed
 
 /obj/item/grown/get_plant_seed()

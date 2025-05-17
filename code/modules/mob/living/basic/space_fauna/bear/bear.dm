@@ -9,7 +9,7 @@
 	icon_gib = "bear_gib"
 	status_flags = NONE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1)
+	butcher_results = list(/obj/item/food/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1)
 
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
@@ -86,7 +86,7 @@
 	icon_living = "combatbear"
 	icon_dead = "combatbear_dead"
 	faction = list(FACTION_ANTAG_FRONTIERSMEN)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
+	butcher_results = list(/obj/item/food/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 	armour_penetration = 20
@@ -128,7 +128,7 @@
 	//vision_range = 2 // don't aggro unless you basically antagonize it, though they will kill you worse than a goliath will
 	//aggro_vision_range = 9
 	move_resist = MOVE_FORCE_VERY_STRONG
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2)
+	butcher_results = list(/obj/item/food/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 1)
 	var/mob_trophy = /obj/item/mob_trophy/bear_paw
 	var/trophy_drop_mod = 25
@@ -178,6 +178,6 @@
 	obj_damage = 60
 	mob_trophy = /obj/item/mob_trophy/war_paw
 	trophy_drop_mod = 75
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3)
+	butcher_results = list(/obj/item/food/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3, /obj/item/bear_armor = 1)
 	armored = TRUE

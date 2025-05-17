@@ -5,7 +5,7 @@
 	name = "Candied apple"
 	reqs = list(
 		/datum/reagent/consumable/caramel = 5,
-		/obj/item/reagent_containers/food/snacks/grown/apple = 1
+		/obj/item/food/grown/apple = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/candiedapple
 	subcategory = CAT_CANDIED
@@ -41,7 +41,7 @@
 /datum/crafting_recipe/food/chocoorange
 	name = "Choco orange"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 1,
+		/obj/item/food/grown/citrus/orange = 1,
 		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/chocoorange
@@ -52,7 +52,7 @@
 	reqs = list(
 		/datum/reagent/consumable/ethanol/vodka = 5,
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap = 3
+		/obj/item/food/grown/mushroom/libertycap = 3
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/spacylibertyduff
 	subcategory = CAT_CANDIED
@@ -62,7 +62,7 @@
 	reqs = list(
 		/datum/reagent/consumable/ethanol/vodka = 5,
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom/amanita = 3
+		/obj/item/food/grown/mushroom/amanita = 3
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/amanitajelly
 	subcategory = CAT_CANDIED

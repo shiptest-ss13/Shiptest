@@ -4,49 +4,49 @@
 /datum/crafting_recipe/food/burrito
 	name ="Burrito"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/tortilla = 1,
-		/obj/item/reagent_containers/food/snacks/grown/soybeans = 2
+		/obj/item/food/tortilla = 1,
+		/obj/item/food/grown/soybeans = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/burrito
+	result = /obj/item/food/burrito
 	subcategory = CAT_TORTILLA
 
 /datum/crafting_recipe/food/cheesyburrito
 	name ="Cheesy burrito"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/tortilla = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
-		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1
+		/obj/item/food/tortilla = 1,
+		/obj/item/food/grown/soybeans = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/cheesyburrito
+	result = /obj/item/food/cheesyburrito
 	subcategory = CAT_TORTILLA
 
 /datum/crafting_recipe/food/carneburrito
 	name ="Carne de asada burrito"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/tortilla = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet = 2,
-		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1
+		/obj/item/food/tortilla = 1,
+		/obj/item/food/meat/cutlet = 2,
+		/obj/item/food/grown/soybeans = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/carneburrito
+	result = /obj/item/food/carneburrito
 	subcategory = CAT_TORTILLA
 
 /datum/crafting_recipe/food/fuegoburrito
-	name ="chili con carne burrito"
+	name ="Fuego plasma burrito"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/tortilla = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ghost_chili = 2,
-		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1
+		/obj/item/food/tortilla = 1,
+		/obj/item/food/grown/ghost_chili = 2,
+		/obj/item/food/grown/soybeans = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/fuegoburrito
+	result = /obj/item/food/fuegoburrito
 	subcategory = CAT_TORTILLA
 
 /datum/crafting_recipe/food/nachos
 	name ="Nachos"
 	reqs = list(
 		/datum/reagent/consumable/sodiumchloride = 1,
-		/obj/item/reagent_containers/food/snacks/tortilla = 1
+		/obj/item/food/tortilla = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/nachos
+	result = /obj/item/food/nachos
 	subcategory = CAT_TORTILLA
 
 /datum/crafting_recipe/food/cheesynachos
@@ -54,38 +54,48 @@
 	reqs = list(
 		/datum/reagent/consumable/sodiumchloride = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/tortilla = 1
+		/obj/item/food/tortilla = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/cheesynachos
+	result = /obj/item/food/cheesynachos
 	subcategory = CAT_TORTILLA
 
 /datum/crafting_recipe/food/cubannachos
 	name ="Cuban nachos"
 	reqs = list(
 		/datum/reagent/consumable/ketchup = 5,
-		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
-		/obj/item/reagent_containers/food/snacks/tortilla = 1
+		/obj/item/food/grown/chili = 2,
+		/obj/item/food/tortilla = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/cubannachos
+	result = /obj/item/food/cubannachos
 	subcategory = CAT_TORTILLA
 
 /datum/crafting_recipe/food/taco
 	name ="Classic Taco"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/tortilla = 1,
+		/obj/item/food/tortilla = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1,
-		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/food/meat/cutlet = 1,
+		/obj/item/food/grown/cabbage = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/taco
+	result = /obj/item/food/taco
 	subcategory = CAT_TORTILLA
 
 /datum/crafting_recipe/food/tacoplain
 	name ="Plain Taco"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/tortilla = 1,
+		/obj/item/food/tortilla = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1,
+		/obj/item/food/meat/cutlet = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/taco/plain
+	result = /obj/item/food/taco/plain
+	subcategory = CAT_TORTILLA
+
+/datum/crafting_recipe/food/enchiladas
+	name = "Enchiladas"
+	reqs = list(
+		/obj/item/food/meat/cutlet = 2,
+		/obj/item/food/grown/chili = 2,
+		/obj/item/food/tortilla = 2
+	)
+	result = /obj/item/food/enchiladas
 	subcategory = CAT_TORTILLA

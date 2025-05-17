@@ -56,17 +56,6 @@
 		/datum/reagent/consumable/nutriment = 2
 	)
 
-/obj/item/food/breadslice/moldy
-	name = "moldy bread slice"
-	desc = "Entire stations have been ripped apart over arguing whether this is still good to eat."
-	icon_state = "moldybreadslice"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 2,
-		/datum/reagent/consumable/mold = 10,
-	)
-	tastes = list("decaying fungus" = 1)
-	foodtypes = GROSS
-
 /obj/item/food/bread/meat
 	name = "meatbread loaf"
 	desc = "A fresh loaf of bread with a hearty meat and cheese filling."

@@ -30,7 +30,7 @@
 	move_force = MOVE_FORCE_WEAK
 	move_resist = MOVE_FORCE_WEAK
 	pull_force = MOVE_FORCE_WEAK
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew/wolf = 2, /obj/item/stack/sheet/bone = 2, /obj/item/mob_trophy/wolf_ear = 0.5)
+	butcher_results = list(/obj/item/food/meat/slab = 2, /obj/item/stack/sheet/sinew/wolf = 2, /obj/item/stack/sheet/bone = 2, /obj/item/mob_trophy/wolf_ear = 0.5)
 	loot = list()
 	mob_trophy = /obj/item/mob_trophy/wolf_ear
 	stat_attack = HARD_CRIT
@@ -125,7 +125,7 @@
 	charge_distance = 7
 	knockdown_time = 1 SECONDS
 	charge_frequency = 20 SECONDS
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew/wolf = 4, /obj/item/stack/sheet/sinew/wolf = 4, /obj/item/stack/sheet/bone = 5)
+	butcher_results = list(/obj/item/food/meat/slab = 2, /obj/item/stack/sheet/sinew/wolf = 4, /obj/item/stack/sheet/sinew/wolf = 4, /obj/item/stack/sheet/bone = 5)
 	loot = list()
 	mob_trophy = /obj/item/mob_trophy/fang
 

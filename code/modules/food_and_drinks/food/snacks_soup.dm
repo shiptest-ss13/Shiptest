@@ -214,7 +214,7 @@
 	tastes = list("tomato" = 1, "carrot" = 1)
 	foodtype = VEGETABLES
 
-/obj/item/reagent_containers/food/snacks/soup/sweetpotato
+/obj/item/reagent_containers/food/snacks/soup/sweet_potato
 	name = "sweet potato soup"
 	desc = "A soup consisting of sweet potatoes boiled for extended periods of time with ginger and crystal sugar."
 	icon_state = "sweetpotatosoup"
