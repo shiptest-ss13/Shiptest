@@ -3,6 +3,7 @@
 	desc = "Used for long-distance surveillance."
 	item_state = "binoculars"
 	icon_state = "binoculars"
+	mob_overlay_icon = 'icons/mob/binoculars.dmi'
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	w_class = WEIGHT_CLASS_SMALL
 	var/mob/listeningTo
