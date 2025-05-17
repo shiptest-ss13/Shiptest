@@ -39,8 +39,8 @@
 	if(_spawn_amount)
 		spawn_amount = _spawn_amount
 
-	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), PROC_REF(stop_spawning))
-	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(stop_spawning))
+	RegisterSignal(parent, COMSIG_SPAWNER_TOGGLE_SPAWNING, PROC_REF(toggle_spawning))
 	START_PROCESSING(SSprocessing, src)
 
 /datum/component/spawner/process(seconds_per_tick)
