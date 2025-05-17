@@ -5,7 +5,7 @@
 		var/mob/living/silicon/S = src
 		desig = trim_left(S.designation + " " + S.job)
 	var/message_a = say_quote(message)
-	var/rendered = "Robotic Talk, [span_name("[name]")] [span_message("[message_a]")]"
+	var/rendered = "Robotic Talk, [span_name("[real_name]")] [span_message("[message_a]")]" //over binary you can't hide who you are
 	for(var/mob/M in GLOB.player_list)
 		if(M.binarycheck())
 			if(isAI(M))
