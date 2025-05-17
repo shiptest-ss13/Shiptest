@@ -2,10 +2,6 @@
 "a" = (
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
-"f" = (
-/obj/item/trash/semki,
-/turf/open/floor/plating/ice/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
 "m" = (
 /obj/structure/table/wood,
 /obj/item/storage/toolbox/fishing{
@@ -28,7 +24,7 @@
 /area/ruin/powered)
 "p" = (
 /obj/structure/chair/wood,
-/mob/living/simple_animal/hostile/frontier,
+/mob/living/simple_animal/hostile/human/frontier/internals,
 /turf/open/floor/plating/ice/icemoon,
 /area/ruin/powered)
 "u" = (
@@ -49,11 +45,7 @@
 /turf/open/floor/plating/ice/icemoon,
 /area/ruin/powered)
 "T" = (
-/obj/item/trash/popcorn,
-/turf/open/floor/plating/ice/icemoon,
-/area/overmap_encounter/planetoid/cave/explored)
-"U" = (
-/obj/item/trash/raisins,
+/obj/effect/spawner/random/trash/food_packaging,
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 
@@ -92,7 +84,7 @@ u
 "}
 (4,1,1) = {"
 a
-f
+T
 z
 p
 I
@@ -120,7 +112,7 @@ z
 z
 z
 a
-U
+T
 u
 "}
 (7,1,1) = {"
@@ -139,7 +131,7 @@ u
 u
 u
 u
-f
+T
 a
 a
 a
