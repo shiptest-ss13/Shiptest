@@ -9,7 +9,6 @@
 	item_state = "solgov_tunic"
 	armor = list("melee" = 0, "fire" = 30, "acid" = 30)
 	strip_delay = 50
-	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/solgov/terragov
@@ -18,7 +17,6 @@
 	icon_state = "terragov_tunic"
 	item_state = "terragov_tunic"
 	armor = list("melee" = 0, "fire" = 30, "acid" = 30)
-	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/dress
 	name = "\improper SolGov dress"
@@ -31,28 +29,25 @@
 	desc = "A formal SolGov uniform, commonly used by representatives and officials."
 	icon_state = "formal_solgov"
 	item_state = "formal_solgov"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/formal/skirt
 	name = "\improper SolGov formal suitskirt"
 	desc = "A formal SolGov uniform, commonly used by representatives and officials."
 	icon_state = "formal_solgov_skirt"
 	item_state = "formal_solgov_skirt"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/formal/terragov
 	name = "\improper TerraGov formal uniform"
 	desc = "A formal SolGov uniform, for special occasions. This one is colored in original TerraGov green."
 	icon_state = "formal_terragov"
 	item_state = "formal_terragov"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/solgov/formal/captain
 	name = "\improper SolGov captain uniform"
 	desc = "A formal SolGov uniform, utilized by captains of SolGov vessels."
 	icon_state = "solgov_captain"
 	item_state = "solgov_captain"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/plasmaman/solgov
 	name = "\improper SolGov envirosuit"
@@ -61,7 +56,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/solgov/uniforms.dmi'
 	icon_state = "plasma_solgov"
 	item_state = "plasma_solgov"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"
