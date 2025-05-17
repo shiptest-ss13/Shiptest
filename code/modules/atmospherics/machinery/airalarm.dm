@@ -134,6 +134,33 @@
 		GAS_O3						= new/datum/tlv/dangerous,
 	)
 
+/obj/machinery/airalarm/freezer // Won't go off for low temps; Won't heat the room
+	desc = "A machine that monitors atmosphere levels. This one is set to go off in room temperature, as to not let freezer contents spoil."
+	heating_manage = FALSE
+
+	TLV = list( // Breathable air.
+		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
+		"temperature"				= new/datum/tlv(T0C-10, T0C, T0C+10, T0C+66), // Lowered since it's a freezer
+		GAS_O2						= new/datum/tlv(16, 19, 40, 50),
+		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
+		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
+		GAS_PLASMA					= new/datum/tlv/dangerous,
+		GAS_NITROUS					= new/datum/tlv/dangerous,
+		GAS_BZ						= new/datum/tlv/dangerous,
+		GAS_H2O						= new/datum/tlv/dangerous,
+		GAS_TRITIUM					= new/datum/tlv/dangerous,
+		GAS_FREON 					= new/datum/tlv/dangerous,
+		GAS_HYDROGEN				= new/datum/tlv/dangerous,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000),
+		GAS_AMMONIA					= new/datum/tlv/dangerous,
+		GAS_METHANE					= new/datum/tlv/dangerous,
+		GAS_SO2						= new/datum/tlv/dangerous,
+		GAS_O3						= new/datum/tlv/dangerous,
+	)
+
 /obj/machinery/airalarm/server // No checks here.
 	TLV = list(
 		"pressure"					= new/datum/tlv/no_checks,
