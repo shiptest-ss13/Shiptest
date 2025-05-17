@@ -27,6 +27,7 @@
 	name = "multi grenade launcher"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_grenadelnchr"
+	bad_type = /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder/grenademulti,
