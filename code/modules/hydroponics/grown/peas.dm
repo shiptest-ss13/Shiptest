@@ -38,7 +38,7 @@
 	plantname = "Laughin' Peas"
 	product = /obj/item/reagent_containers/food/snacks/grown/laugh
 	maturation = 7
-	potency = 10
+	potency = 15
 	yield = 7
 	production = 5
 	growthstages = 3
