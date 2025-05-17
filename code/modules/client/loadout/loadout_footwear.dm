@@ -33,34 +33,20 @@
 /datum/gear/footwear/color
 	subtype_path = /datum/gear/footwear/color
 
-/datum/gear/footwear/color/black
-	display_name = "black shoes"
-	path = /obj/item/clothing/shoes/sneakers/black
-
-/datum/gear/footwear/color/brown
-	display_name = "brown shoes"
-	path = /obj/item/clothing/shoes/sneakers/brown
-
-/datum/gear/footwear/color/blue
-	display_name = "blue shoes"
-	path = /obj/item/clothing/shoes/sneakers/blue
-
-/datum/gear/footwear/color/green
-	display_name = "green shoes"
-	path = /obj/item/clothing/shoes/sneakers/green
-
-/datum/gear/footwear/color/purple
-	display_name = "purple shoes"
-	path = /obj/item/clothing/shoes/sneakers/purple
-
-/datum/gear/footwear/color/red
-	display_name = "red shoes"
-	path = /obj/item/clothing/shoes/sneakers/red
-
-/datum/gear/footwear/color/orange
-	display_name = "orange shoes"
-	path = /obj/item/clothing/shoes/sneakers/orange
-
 /datum/gear/footwear/color/white
-	display_name = "white shoes"
-	path = /obj/item/clothing/shoes/sneakers/white
+	display_name = "white shoes, recolorable"
+	path = /obj/item/clothing/shoes/sneakers
+
+//Cowboy boots
+
+/datum/gear/footwear/cowboy
+	display_name = "cowboy boots, brown"
+	path = /obj/item/clothing/shoes/cowboy
+
+/datum/gear/footwear/cowboy/black
+	display_name = "cowboy boots, black"
+	path = /obj/item/clothing/shoes/cowboy/black
+
+/datum/gear/footwear/cowboy/white
+	display_name = "cowboy boots, white"
+	path = /obj/item/clothing/shoes/cowboy/white

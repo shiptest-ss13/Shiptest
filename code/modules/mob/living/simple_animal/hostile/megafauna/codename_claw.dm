@@ -21,7 +21,6 @@
 	ranged = TRUE
 	speed = 4
 	move_to_delay = 4
-	crusher_loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	loot = list(/obj/item/card/id/ert/deathsquad, /obj/item/documents/nanotrasen)
 	wander = FALSE
 	blood_volume = BLOOD_VOLUME_NORMAL
@@ -59,8 +58,8 @@
 	speed = 5
 	move_to_delay = 5
 	speak_emote = list("verbalizes")
-	crusher_loot = list(/obj/effect/spawner/clawloot)
-	loot = list(/obj/effect/spawner/clawloot/crusher)
+	mob_trophy = /obj/item/melee/synthetic_arm_blade
+	loot = list(/obj/effect/spawner/clawloot)
 	health = 2250
 	maxHealth = 2250
 	shouldnt_move = TRUE //we want to show the transforming animation
@@ -76,9 +75,6 @@
 	new /obj/item/gun/energy/pulse/pistol(get_turf(src))
 	qdel(src)
 
-/obj/effect/spawner/clawloot/crusher/spawn_loot()
-	new /obj/item/nullrod/armblade/tentacle(get_turf(src)) //idk what to put here, memed is the loot person
-	return ..()
 ///LOOT END
 
 //PHASE ONE
@@ -86,42 +82,42 @@
 	name = "Swift Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "rift"
-	chosen_message = "<span class='colossus'>You will now dash forward for a short distance.</span>"
+	chosen_message = span_colossus("You will now dash forward for a short distance.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/swift_dash_long
 	name = "Long Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "plasmasoul"
-	chosen_message = "<span class='colossus'>You will now dash forward for a long distance.</span>"
+	chosen_message = span_colossus("You will now dash forward for a long distance.")
 	chosen_attack_num = 2
 //PHASE TWO
 /datum/action/innate/megafauna_attack/emp_pulse
 	name = "Dissonant Shriek"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "emppulse"
-	chosen_message = "<span class='colossus'>You will now create a EMP pulse.</span>"
+	chosen_message = span_colossus("You will now create a EMP pulse.")
 	chosen_attack_num = 3
 
 /datum/action/innate/megafauna_attack/tentacle
 	name = "Tentacle"
 	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
 	button_icon_state = "tentacle"
-	chosen_message = "<span class='colossus'>You will now shoot your tentacle, bringing mobs ever so closer.</span>"
+	chosen_message = span_colossus("You will now shoot your tentacle, bringing mobs ever so closer.")
 	chosen_attack_num = 4
 
 /datum/action/innate/megafauna_attack/summon_creatures
 	name = "Lie Spider"
 	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
 	button_icon_state = "plasmasoul"
-	chosen_message = "<span class='colossus'>You will now summon a weak spider.</span>"
+	chosen_message = span_colossus("You will now summon a weak spider.")
 	chosen_attack_num = 5
 
 /datum/action/innate/megafauna_attack/sting_attack
 	name = "Sting shotgun"
 	icon_icon = 'icons/mob/actions/actions_changeling.dmi'
 	button_icon_state = "sting_cryo"
-	chosen_message = "<span class='colossus'>You stop, and telegraph a shotgun of stings.</span>"
+	chosen_message = span_colossus("You stop, and telegraph a shotgun of stings.")
 	chosen_attack_num = 6
 
 /mob/living/simple_animal/hostile/megafauna/claw/phase2/Initialize()
@@ -220,7 +216,7 @@
 /////DISSONANT SHREK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/emp_pulse()
 	shake_animation(0.5)
-	visible_message("<span class='danger'>[src] stops and shudders for a moment... </span>")
+	visible_message(span_danger("[src] stops and shudders for a moment... "))
 	shouldnt_move = TRUE
 	addtimer(CALLBACK(src, PROC_REF(emp_pulse2)), 1 SECONDS)
 
@@ -236,13 +232,12 @@
 	projectiletype = /obj/projectile/tentacle
 	projectilesound = 'sound/effects/splat.ogg'
 	Shoot(target)
-
 /////TENTACLE END
 
 /////STING ATTACK
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack(target)
 	shouldnt_move = TRUE
-	visible_message("<span class='danger'>[src] stops suddenly and spikes apear all over it's body!</span>")
+	visible_message(span_danger("[src] stops suddenly and spikes apear all over it's body!"))
 	icon_state = "claw-phase2_sting_attack"
 	flick("claw-phase2_sting_attack_transform", src)
 	projectiletype = /obj/projectile/claw_projectille
@@ -250,7 +245,7 @@
 	addtimer(CALLBACK(src, PROC_REF(sting_attack2), target), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack2(target)
-	visible_message("<span class='danger'>[src] shoots all the spikes!</span>")
+	visible_message(span_danger("[src] shoots all the spikes!"))
 	icon_state = "claw-phase2"
 	shoot_projectile(Get_Angle(src,target) + 10)
 	shoot_projectile(Get_Angle(src,target) + 5)
@@ -272,14 +267,14 @@
 /////LIE SPIDER
 /mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures()
 	shake_animation(20)
-	visible_message("<span class='danger'>[src] shudders violently and starts to split a flesh spider from it's body!</span>")
+	visible_message(span_danger("[src] shudders violently and starts to split a flesh spider from it's body!"))
 	shouldnt_move = TRUE
 	addtimer(CALLBACK(src, PROC_REF(summon_creatures2)), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures2()
 	shake_animation(5)
 	var/mob/living/summoned_spider = new /mob/living/simple_animal/hostile/poison/giant_spider/hunter(get_turf(src))
-	visible_message("<span class='danger'>[summoned_spider] violently tears apart from [src]!</span>")
+	visible_message(span_danger("[summoned_spider] violently tears apart from [src]!"))
 	shouldnt_move = FALSE
 
 /////LIE SPIDER END
@@ -319,3 +314,102 @@
 	empulse(src, 5, 8)
 	new /obj/effect/gibspawner/human(get_turf(src))
 	qdel(src)
+
+/obj/projectile/tentacle
+	name = "tentacle"
+	icon_state = "tentacle_end"
+	pass_flags = PASSTABLE
+	damage = 0
+	damage_type = BRUTE
+	range = 8
+	hitsound = 'sound/weapons/thudswoosh.ogg'
+	var/chain
+
+/obj/projectile/tentacle/fire(setAngle)
+	if(firer)
+		chain = firer.Beam(src, icon_state = "tentacle", emissive = FALSE)
+	..()
+
+/obj/projectile/tentacle/proc/reset_throw(mob/living/carbon/human/H)
+	if(H.throw_mode)
+		H.throw_mode_off() //Don't annoy the changeling if he doesn't catch the item
+
+/obj/projectile/tentacle/proc/tentacle_grab(mob/living/carbon/human/H, mob/living/carbon/C)
+	if(H.Adjacent(C))
+		if(H.get_active_held_item() && !H.get_inactive_held_item())
+			H.swap_hand()
+		if(H.get_active_held_item())
+			return
+		C.grabbedby(H)
+		C.grippedby(H, instant = TRUE) //instant aggro grab
+
+/obj/projectile/tentacle/proc/tentacle_stab(mob/living/carbon/human/H, mob/living/carbon/C)
+	if(H.Adjacent(C))
+		for(var/obj/item/I in H.held_items)
+			if(I.get_sharpness())
+				C.visible_message(span_danger("[H] impales [C] with [H.p_their()] [I.name]!"), span_userdanger("[H] impales you with [H.p_their()] [I.name]!"))
+				C.apply_damage(I.force, BRUTE, BODY_ZONE_CHEST)
+				H.do_item_attack_animation(C, used_item = I)
+				H.add_mob_blood(C)
+				playsound(get_turf(H),I.hitsound,75,TRUE)
+				return
+
+/obj/projectile/tentacle/on_hit(atom/target, blocked = FALSE)
+	var/mob/living/carbon/human/H = firer
+	if(blocked >= 100)
+		return BULLET_ACT_BLOCK
+	if(isitem(target))
+		var/obj/item/I = target
+		if(!I.anchored)
+			to_chat(firer, span_notice("You pull [I] towards yourself."))
+			H.throw_mode_on()
+			I.throw_at(H, 10, 2)
+			. = BULLET_ACT_HIT
+
+	else if(isliving(target))
+		var/mob/living/L = target
+		if(!L.anchored && !L.throwing)//avoid double hits
+			if(iscarbon(L))
+				var/mob/living/carbon/C = L
+				var/firer_intent = INTENT_HARM
+				var/mob/M = firer
+				if(istype(M))
+					firer_intent = M.a_intent
+				switch(firer_intent)
+					if(INTENT_HELP)
+						C.visible_message(span_danger("[L] is pulled by [H]'s tentacle!"),span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
+						C.throw_at(get_step_towards(H,C), 8, 2)
+						return BULLET_ACT_HIT
+
+					if(INTENT_DISARM)
+						var/obj/item/I = C.get_active_held_item()
+						if(I)
+							if(C.dropItemToGround(I))
+								C.visible_message(span_danger("[I] is yanked off [C]'s hand by [src]!"),span_userdanger("A tentacle pulls [I] away from you!"))
+								on_hit(I) //grab the item as if you had hit it directly with the tentacle
+								return BULLET_ACT_HIT
+							else
+								to_chat(firer, span_warning("You can't seem to pry [I] off [C]'s hands!"))
+								return BULLET_ACT_BLOCK
+						else
+							to_chat(firer, span_danger("[C] has nothing in hand to disarm!"))
+							return BULLET_ACT_HIT
+
+					if(INTENT_GRAB)
+						C.visible_message(span_danger("[L] is grabbed by [H]'s tentacle!"),span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
+						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(tentacle_grab), H, C))
+						return BULLET_ACT_HIT
+
+					if(INTENT_HARM)
+						C.visible_message(span_danger("[L] is thrown towards [H] by a tentacle!"),span_userdanger("A tentacle grabs you and throws you towards [H]!"))
+						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(tentacle_stab), H, C))
+						return BULLET_ACT_HIT
+			else
+				L.visible_message(span_danger("[L] is pulled by [H]'s tentacle!"),span_userdanger("A tentacle grabs you and pulls you towards [H]!"))
+				L.throw_at(get_step_towards(H,L), 8, 2)
+				. = BULLET_ACT_HIT
+
+/obj/projectile/tentacle/Destroy()
+	qdel(chain)
+	return ..()
+

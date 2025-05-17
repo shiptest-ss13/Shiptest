@@ -5,9 +5,11 @@
 
 //NORTH default dir
 /obj/docking_port
-	invisibility = INVISIBILITY_ABSTRACT
-	icon = 'icons/obj/device.dmi'
-	icon_state = "pinonfar"
+	desc = "Where the ships dock and undock. Ask ruinyard about this."
+	invisibility = INVISIBILITY_OBSERVER
+	layer = MID_LANDMARK_LAYER
+	icon = 'icons/effects/mapping/docking_ports.dmi'
+	icon_state = "static"
 
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 	anchored = TRUE
@@ -29,6 +31,9 @@
 	//The shuttle docked here/dock we're parked at.
 	var/obj/docking_port/docked
 
+	// the connected cargo spawner, if applicable
+	var/obj/hangar_crate_spawner/crate_spawner = null
+
 /obj/docking_port/Destroy(force)
 	if(docked)
 		docked.docked = null
@@ -38,7 +43,7 @@
 /obj/docking_port/has_gravity(turf/T)
 	return FALSE
 
-/obj/docking_port/take_damage()
+/obj/docking_port/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
 	return
 
 /obj/docking_port/singularity_pull()
@@ -202,6 +207,9 @@
 /obj/docking_port/stationary
 	name = "dock"
 
+	/// can we even dock?
+	var/enabled = TRUE
+
 	var/last_dock_time
 
 	//The ship that has this port as a docking_point, ships docked to this port will be towed by the owner_ship
@@ -213,10 +221,23 @@
 	var/load_template_on_initialize = TRUE
 	/// The docking ticket of the ship docking to this port.
 	var/datum/docking_ticket/current_docking_ticket
+	/// Moves docking port around in it's "box" so that any ship can land in this "box" think of this as, whatever the height and width are set to on initialize, anything smaller than the "box" can land in it with this on
+	var/adjust_dock_for_landing = FALSE
+	/// Is set to TRUE when we are adjusting the dock for landing, this is to prevent the dock from getting messed up by TWO ships adjusting the dock
+	var/is_adjusting_now = FALSE
+
+
+	/// disables the port from being docked to when the mobile port the ship is attatched to is docked. Useless on non-ships.
+	var/disable_on_owner_ship_dock = FALSE
+	/// Our inital location, used for fixing docks
+	var/list/initial_location
+	///ditto
+	var/datum/map_template/outpost/hangar/initial_hangar_template
 
 /obj/docking_port/stationary/Initialize(mapload)
 	. = ..()
 	SSshuttle.stationary += src
+	initial_location = list("x" = x, "y" = y, "z" = z)
 	if(name == "dock")
 		name = "dock[SSshuttle.stationary.len]"
 
@@ -242,14 +263,116 @@
 		if(!roundstart_template)
 			CRASH("Invalid path ([template]) passed to docking port.")
 
-		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), template, FALSE) //Don't instantiate, we handle that ourselves
+		var/datum/overmap/ship/controlled/new_ship = new(SSovermap.get_overmap_object_by_location(src), , template, FALSE) //Don't instantiate, we handle that ourselves
 		new_ship.connect_new_shuttle_port(SSshuttle.action_load(template, new_ship, src))
+
+/**
+ * Helper proc for docking. Alters the position and orientation of a stationary docking port to ensure that any mobile port small enough can dock within its bounds
+ */
+
+/obj/docking_port/stationary/proc/adjust_dock_to_shuttle(obj/docking_port/mobile/shuttle)
+	if(!adjust_dock_for_landing || is_adjusting_now)
+		return
+	is_adjusting_now = TRUE
+	if(!istype(shuttle))
+		is_adjusting_now = FALSE
+		CRASH("Invalid docking port ([shuttle]) passed to adjust_dock_to_shuttle().")
+	log_shuttle("[src] [REF(src)] DOCKING: ADJUST [src] [REF(src)] TO [shuttle][REF(shuttle)]")
+	// the shuttle's dimensions where "true height" measures distance from the shuttle's fore to its aft
+	var/shuttle_true_height = shuttle.height
+	var/shuttle_true_width = shuttle.width
+	// if the port's location is perpendicular to the shuttle's fore, the "true height" is the port's "width" and vice-versa
+	if(EWCOMPONENT(shuttle.port_direction))
+		shuttle_true_height = shuttle.width
+		shuttle_true_width = shuttle.height
+
+	// the dir the stationary port should be facing (note that it points inwards)
+	var/final_facing_dir = angle2dir(dir2angle(shuttle_true_height > shuttle_true_width ? EAST : NORTH)+dir2angle(shuttle.port_direction)+180)
+
+	var/oldloc = loc
+	var/olddir = dir
+	var/olddheight = dheight
+	var/olddwidth = dwidth
+	var/oldheight = height
+	var/oldwidth = width
+	var/list/old_corners = return_coords() // coords for "bottom left" / "top right" of dock's covered area, rotated by dock's current dir
+	var/list/new_dock_location // TBD coords of the new location
+	if(final_facing_dir == dir)
+		new_dock_location = list(old_corners[1], old_corners[2]) // don't move the corner
+	else if(final_facing_dir == angle2dir(dir2angle(dir)+180))
+		new_dock_location = list(old_corners[3], old_corners[4]) // flip corner to the opposite
+	else
+		var/combined_dirs = final_facing_dir | dir
+		if(combined_dirs == (NORTH|EAST) || combined_dirs == (SOUTH|WEST))
+			new_dock_location = list(old_corners[1], old_corners[4]) // move the corner vertically
+		else
+			new_dock_location = list(old_corners[3], old_corners[2]) // move the corner horizontally
+		// we need to flip the height and width
+		var/dock_height_store = height
+		height = width
+		width = dock_height_store
+
+	dir = final_facing_dir
+	if(shuttle.height > height || shuttle.width > width)
+		is_adjusting_now = FALSE
+		return
+
+	// offset for the dock within its area
+	var/new_dheight = round((height-shuttle.height)/2) + shuttle.dheight
+	var/new_dwidth = round((width-shuttle.width)/2) + shuttle.dwidth
+
+	// use the relative-to-dir offset above to find the absolute position offset for the dock
+	switch(final_facing_dir)
+		if(NORTH)
+			new_dock_location[1] += new_dwidth
+			new_dock_location[2] += new_dheight
+		if(SOUTH)
+			new_dock_location[1] -= new_dwidth
+			new_dock_location[2] -= new_dheight
+		if(EAST)
+			new_dock_location[1] += new_dheight
+			new_dock_location[2] -= new_dwidth
+		if(WEST)
+			new_dock_location[1] -= new_dheight
+			new_dock_location[2] += new_dwidth
+
+	forceMove(locate(new_dock_location[1], new_dock_location[2], z))
+	dheight = new_dheight
+	dwidth = new_dwidth
+	// we verify if the new position is lodged in a edge turf
+	for(var/turf/closed/indestructible/edgeturf as anything in return_turfs())
+		if(!istype(edgeturf))
+			continue
+		if(!initial_hangar_template)
+			message_admins("[src] [ADMIN_VV(src)] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge tile ([ADMIN_JMP(edgeturf)])! This doesn't seem right so resetting it back to how it was before as a failsafe!")
+			stack_trace("[src] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge! This doesn't seem right so resetting it back to how it was before as a failsafe!")
+
+			forceMove(oldloc)
+			dir = olddir
+			dheight = olddheight
+			dwidth = olddwidth
+			height = oldheight
+			width = oldwidth
+		else
+			forceMove(oldloc)
+			var/datum/overmap/outpost/our_overmap_object = SSovermap.get_overmap_object_by_location(src)
+			if(istype(our_overmap_object) && our_overmap_object.fix_docking_port(src))
+				message_admins("[src] [ADMIN_VV(src)] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge tile ([ADMIN_JMP(edgeturf)])! Setting to default values in an attempt to fix!")
+				stack_trace("[src] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge! Setting to default values in an attempt to fix!")
+			else
+				message_admins("[src] [ADMIN_VV(src)] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge tile ([ADMIN_JMP(edgeturf)])! Unable to fix because we ended up on a non-outpost!! Disabling until a manual fix!")
+				stack_trace("[src] adjusted to fit a vessel ([shuttle.current_ship.name]) but somehow it's bounds ended up in an edge! Unable to fix because we ended up on a non-outpost!! Disabling until a manual fix!")
+				enabled = FALSE
+		break
+
+	is_adjusting_now = FALSE
+
 
 /obj/docking_port/stationary/transit
 	name = "transit dock"
 
 	var/datum/map_zone/reserved_mapzone
-	var/area/shuttle/transit/assigned_area
+	var/area/hyperspace/assigned_area
 	var/obj/docking_port/mobile/owner
 
 /obj/docking_port/stationary/transit/Initialize()
@@ -272,7 +395,7 @@
 
 /obj/docking_port/mobile
 	name = "shuttle"
-	icon_state = "pinonclose"
+	icon_state = "mobile"
 
 	var/area_type = SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE
 
@@ -320,6 +443,12 @@
 
 	///A list of all gravity generators  currently linked to the shuttle.
 	var/list/gravgen_list = list()
+
+	///A list of all turrets currently linked to the shuttle.
+	var/list/turret_list = list()
+
+	///A list of all Fax Machines Linked To The Shuttle. God we have a list of all linked
+	var/list/fax_list = list()
 
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = TRUE
@@ -406,7 +535,7 @@
 	shuttle_areas = list()
 	var/list/all_turfs = return_ordered_turfs(x, y, z, dir)
 	for(var/turf/curT as anything in all_turfs)
-		var/area/shuttle/cur_area = curT.loc
+		var/area/ship/cur_area = curT.loc
 		if(istype(cur_area, area_type))
 			turf_count++
 			shuttle_areas[cur_area] = TRUE
@@ -428,6 +557,7 @@
 		for(var/each in place)
 			var/atom/atom = each
 			atom.connect_to_shuttle(src, dock)
+	SEND_SIGNAL(src, COMSIG_SHIP_DONE_CONNECTING, dock)
 
 //this is a hook for custom behaviour. Maybe at some point we could add checks to see if engines are intact
 /obj/docking_port/mobile/proc/can_move()
@@ -472,15 +602,35 @@
 		CRASH("The towed shuttles of [src] is cyclic, a shuttle is ontop of itself!")
 
 //this is to check if this shuttle can physically dock at dock S
-/obj/docking_port/mobile/proc/canDock(obj/docking_port/stationary/S)
+/obj/docking_port/mobile/proc/canDock(obj/docking_port/stationary/S, intention_to_dock = TRUE)
 	//coordinate of combined shuttle bounds in our dock's vector space (positive Y towards shuttle direction, positive determinant, our dock at (0,0))
 	var/list/bounds = return_union_bounds(get_all_towed_shuttles())
 	var/tow_dwidth = bounds[1]
 	var/tow_dheight = bounds[2]
 	var/tow_rwidth = bounds[3] - tow_dwidth
 	var/tow_rheight = bounds[4] - tow_dheight
+
 	if(!istype(S))
 		return SHUTTLE_NOT_A_DOCKING_PORT
+
+	if(!S.enabled)
+		return SHUTTLE_PORT_DISABLED
+
+	//check the dock isn't occupied
+	var/currently_docked = S.docked
+	if(currently_docked)
+		// by someone other than us
+		if(currently_docked != src)
+			return SHUTTLE_SOMEONE_ELSE_DOCKED
+		else
+		// This isn't an error, per se, but we can't let the shuttle code
+		// attempt to move us where we currently are, it will get weird.
+			return SHUTTLE_ALREADY_DOCKED
+
+	if(S.adjust_dock_for_landing && intention_to_dock)
+		if(S.is_adjusting_now)
+			return SHUTTLE_PORT_IS_ADJUSTING
+		S.adjust_dock_to_shuttle(src)
 
 	if(istype(S, /obj/docking_port/stationary/transit))
 		return SHUTTLE_CAN_DOCK
@@ -497,21 +647,24 @@
 	if(tow_rheight > S.height-S.dheight)
 		return SHUTTLE_HEIGHT_TOO_LARGE
 
-	//check the dock isn't occupied
-	var/currently_docked = S.docked
-	if(currently_docked)
-		// by someone other than us
-		if(currently_docked != src)
-			return SHUTTLE_SOMEONE_ELSE_DOCKED
-		else
-		// This isn't an error, per se, but we can't let the shuttle code
-		// attempt to move us where we currently are, it will get weird.
-			return SHUTTLE_ALREADY_DOCKED
+	for(var/obj/docking_port/stationary/current_port as anything in docking_points)
+		//if any of our docks has disable_on_owner_ship_dock set, has something docked to us, and we aren't going to a transit zone or an adjustable dock(usually planetary), don't land
+		if(current_port.disable_on_owner_ship_dock && current_port.docked && (!istype(S, /obj/docking_port/stationary/transit) || !S.adjust_dock_for_landing))
+			return SHUTTLE_OUR_MOBILEDOCK_FORBIDS_DOCKING
+
+	//if the docking port has disable_on_owner_ship_dock set and the target ship is docked to something, don't land. very much don't land.
+	if(S.disable_on_owner_ship_dock && S.owner_ship.docked)
+		return SHUTTLE_TARGET_MOBILEDOCK_FORBIDS_DOCKING
+
+	for(var/turf/closed/indestructible/edgeturf as anything in return_ordered_turfs(S.x, S.y, S.z, S.dir))
+		if(!istype(edgeturf))
+			continue
+		return SHUTTLE_TOUCHES_EDGE
 
 	return SHUTTLE_CAN_DOCK
 
-/obj/docking_port/mobile/proc/check_dock(obj/docking_port/stationary/S, silent=FALSE)
-	var/status = canDock(S)
+/obj/docking_port/mobile/proc/check_dock(obj/docking_port/stationary/S, silent=FALSE, intention_to_dock = TRUE, datum/docking_ticket/ticket)
+	var/status = canDock(S, intention_to_dock)
 	if(status == SHUTTLE_CAN_DOCK)
 		return TRUE
 	else
@@ -520,6 +673,8 @@
 			message_admins(msg)
 		// We're already docked there, don't need to do anything.
 		// Triggering shuttle movement code in place is weird
+		if(ticket)
+			ticket.docking_error = "WARNING: Unable to dock at [S]: [status]"
 		return FALSE
 
 //call the shuttle to destination S
@@ -647,7 +802,7 @@
 			continue  // out of bounds
 		if(T0.type == T0.baseturfs)
 			continue  // indestructible
-		if(!all_shuttle_areas[T0.loc] || istype(T0.loc, /area/shuttle/transit))
+		if(!all_shuttle_areas[T0.loc] || istype(T0.loc, /area/hyperspace))
 			continue  // not part of the shuttle
 		ripple_turfs += T1
 
@@ -718,13 +873,13 @@
 	var/obj/docking_port/stationary/S0 = docked
 	if(istype(S0, /obj/docking_port/stationary/transit) && timeLeft(1) <= PARALLAX_LOOP_TIME)
 		for(var/place in shuttle_areas)
-			var/area/shuttle/shuttle_area = place
+			var/area/ship/shuttle_area = place
 			if(shuttle_area.parallax_movedir)
 				parallax_slowdown()
 
 /obj/docking_port/mobile/proc/parallax_slowdown()
 	for(var/place in shuttle_areas)
-		var/area/shuttle/shuttle_area = place
+		var/area/ship/shuttle_area = place
 		shuttle_area.parallax_movedir = FALSE
 	if(assigned_transit && assigned_transit.assigned_area)
 		assigned_transit.assigned_area.parallax_movedir = FALSE

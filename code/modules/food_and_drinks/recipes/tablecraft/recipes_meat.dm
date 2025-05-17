@@ -2,15 +2,6 @@
 
 ////////////////////////////////////////////////KEBABS////////////////////////////////////////////////
 
-/datum/crafting_recipe/food/humankebab
-	name = "Human kebab"
-	reqs = list(
-		/obj/item/stack/rods = 1,
-		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 2
-	)
-	result = /obj/item/reagent_containers/food/snacks/kebab/human
-	subcategory = CAT_MEAT
-
 /datum/crafting_recipe/food/kebab
 	name = "Kebab"
 	reqs = list(
@@ -85,7 +76,7 @@
 /datum/crafting_recipe/food/spicyfiletsushiroll
 	name = "Spicy sushi roll"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/fishmeat = 1,
 		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
@@ -95,10 +86,10 @@
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/fishi
-	name = "Fi-shi roll"
+	name = "Zohil temaki roll"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 8,
-		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 4
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 8,
+		/obj/item/reagent_containers/food/snacks/fishmeat = 4
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishi
 	subcategory = CAT_MEAT
@@ -106,7 +97,7 @@
 /datum/crafting_recipe/food/nigiri_sushi
 	name = "Nigiri sushi"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/seaweed = 1,
+		/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet = 1,
 		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/fishmeat = 1,
 		/datum/reagent/consumable/soysauce = 2
@@ -209,7 +200,7 @@
 	name = "Rat Kebab"
 	reqs = list(
 		/obj/item/stack/rods = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 1
+		/obj/item/food/deadmouse = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/kebab/rat
 	subcategory = CAT_MEAT
@@ -218,7 +209,7 @@
 	name = "Double Rat Kebab"
 	reqs = list(
 		/obj/item/stack/rods = 1,
-		/obj/item/reagent_containers/food/snacks/deadmouse = 2
+		/obj/item/food/deadmouse = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/kebab/rat/double
 	subcategory = CAT_MEAT
@@ -242,15 +233,6 @@
 	result = /obj/item/reagent_containers/food/snacks/bbqribs
 	subcategory = CAT_MEAT
 
-/datum/crafting_recipe/food/meatclown
-	name = "Meat Clown"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/plain = 1,
-		/obj/item/reagent_containers/food/snacks/grown/banana = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/meatclown
-	subcategory = CAT_MEAT
-
 /datum/crafting_recipe/food/gumbo
 	name = "Black eyed gumbo"
 	reqs = list(
@@ -270,4 +252,15 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishfry
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/crab_rangoon
+	name = "Crab Rangoon"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/doughslice = 1,
+		/datum/reagent/consumable/cream = 5,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/meat/rawcrab = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/crab_rangoon
 	subcategory = CAT_MEAT

@@ -47,6 +47,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	icon_state = "generic"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	verb_say = "beeps"
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"
@@ -54,7 +56,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	integrity_failure = 0.33
 	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
 	circuit = /obj/item/circuitboard/machine/vendor
-	var/datum/weakref/payment_account_ref
 	light_power = 0.5
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	clicksound = 'sound/machines/pda_button1.ogg'
@@ -122,8 +123,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/seconds_electrified = MACHINE_NOT_ELECTRIFIED
 	///When this is TRUE, we fire items at customers! We're broken!
 	var/shoot_inventory = 0
-	///How likely this is to happen (prob 100)
-	var/shoot_inventory_chance = 2
+	///How likely this is to happen (prob 100) per second
+	var/shoot_inventory_chance = 1
 	//Stop spouting those godawful pitches!
 	var/shut_up = 0
 	///can we access the hidden inventory?
@@ -137,9 +138,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Does this machine accept mining points?
 	var/mining_point_vendor = FALSE
 	///Default price of items if not overridden
-	var/default_price = 25
+	var/default_price = 15
 	///Default price of premium items if not overridden
-	var/extra_price = 50
+	var/extra_price = 30
 	///Whether our age check is currently functional
 	var/age_restrictions = TRUE
 
@@ -192,6 +193,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
+	if(istype(get_area(src.loc), /area/outpost) || istype(get_area(src.loc), /area/ruin))
+		all_items_free = FALSE
 
 /obj/machinery/vending/Destroy()
 	QDEL_NULL(wires)
@@ -387,7 +390,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			add_overlay("[initial(icon_state)]-panel")
 		updateUsrDialog()
 	else
-		to_chat(user, "<span class='warning'>You must first secure [src].</span>")
+		to_chat(user, span_warning("You must first secure [src]."))
 	return TRUE
 
 /obj/machinery/vending/attackby(obj/item/I, mob/user, params)
@@ -397,21 +400,21 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	if(refill_canister && istype(I, refill_canister))
 		if (!panel_open)
-			to_chat(user, "<span class='warning'>You should probably unscrew the service panel first!</span>")
+			to_chat(user, span_warning("You should probably unscrew the service panel first!"))
 		else if (machine_stat & (BROKEN|NOPOWER))
-			to_chat(user, "<span class='notice'>[src] does not respond.</span>")
+			to_chat(user, span_notice("[src] does not respond."))
 		else
 			//if the panel is open we attempt to refill the machine
 			var/obj/item/vending_refill/canister = I
 			if(canister.get_part_rating() == 0)
-				to_chat(user, "<span class='warning'>[canister] is empty!</span>")
+				to_chat(user, span_warning("[canister] is empty!"))
 			else
 				// instantiate canister if needed
 				var/transferred = restock(canister)
 				if(transferred)
-					to_chat(user, "<span class='notice'>You loaded [transferred] items in [src].</span>")
+					to_chat(user, span_notice("You loaded [transferred] items in [src]."))
 				else
-					to_chat(user, "<span class='warning'>There's nothing to restock!</span>")
+					to_chat(user, span_warning("There's nothing to restock!"))
 			return
 	if(compartmentLoadAccessCheck(user) && user.a_intent != INTENT_HARM)
 		if(canLoadItem(I))
@@ -424,7 +427,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			var/denied_items = 0
 			for(var/obj/item/the_item in T.contents)
 				if(contents.len >= MAX_VENDING_INPUT_AMOUNT) // no more than 30 item can fit inside, legacy from snack vending although not sure why it exists
-					to_chat(user, "<span class='warning'>[src]'s compartment is full.</span>")
+					to_chat(user, span_warning("[src]'s compartment is full."))
 					break
 				if(canLoadItem(the_item) && loadingAttempt(the_item,user))
 					SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, the_item, src, TRUE)
@@ -432,9 +435,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				else
 					denied_items++
 			if(denied_items)
-				to_chat(user, "<span class='warning'>[src] refuses some items!</span>")
+				to_chat(user, span_warning("[src] refuses some items!"))
 			if(loaded)
-				to_chat(user, "<span class='notice'>You insert [loaded] dishes into [src]'s compartment.</span>")
+				to_chat(user, span_notice("You insert [loaded] dishes into [src]'s compartment."))
 				updateUsrDialog()
 	else
 		. = ..()
@@ -454,7 +457,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					tilt(user, crit=TRUE)
 
 /obj/machinery/vending/proc/freebie(mob/fatty, freebies)
-	visible_message("<span class='notice'>[src] yields [freebies > 1 ? "several free goodies" : "a free goody"]!</span>")
+	visible_message(span_notice("[src] yields [freebies > 1 ? "several free goodies" : "a free goody"]!"))
 
 	for(var/i in 1 to freebies)
 		playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
@@ -471,7 +474,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			break
 
 /obj/machinery/vending/proc/tilt(mob/fatty, crit=FALSE)
-	visible_message("<span class='danger'>[src] tips over!</span>")
+	visible_message(span_danger("[src] tips over!"))
 	tilted = TRUE
 	layer = ABOVE_MOB_LAYER
 
@@ -493,8 +496,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				var/crit_rebate = 0 // lessen the normal damage we deal for some of the crits
 
 				if(crit_case != 5) // the head asplode case has its own description
-					C.visible_message("<span class='danger'>[C] is crushed by [src]!</span>", \
-						"<span class='userdanger'>You are crushed by [src]!</span>")
+					C.visible_message(span_danger("[C] is crushed by [src]!"), \
+						span_userdanger("You are crushed by [src]!"))
 
 				switch(crit_case) // only carbons can have the fun crits
 					if(1) // shatter their legs and bleed 'em
@@ -507,13 +510,13 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						if(r)
 							r.receive_damage(brute=200, updating_health=TRUE)
 						if(l || r)
-							C.visible_message("<span class='danger'>[C]'s legs shatter with a sickening crunch!</span>", \
-								"<span class='userdanger'>Your legs shatter with a sickening crunch!</span>")
+							C.visible_message(span_danger("[C]'s legs shatter with a sickening crunch!"), \
+								span_userdanger("Your legs shatter with a sickening crunch!"))
 					if(2) // pin them beneath the machine until someone untilts it
 						forceMove(get_turf(C))
 						buckle_mob(C, force=TRUE)
-						C.visible_message("<span class='danger'>[C] is pinned underneath [src]!</span>", \
-							"<span class='userdanger'>You are pinned down by [src]!</span>")
+						C.visible_message(span_danger("[C] is pinned underneath [src]!"), \
+							span_userdanger("You are pinned down by [src]!"))
 					if(3) // glass candy
 						crit_rebate = 50
 						for(var/i = 0, i < num_shards, i++)
@@ -525,13 +528,13 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 							shard.updateEmbedding()
 					if(4) // paralyze this binch
 						// the new paraplegic gets like 4 lines of losing their legs so skip them
-						visible_message("<span class='danger'>[C]'s spinal cord is obliterated with a sickening crunch!</span>", ignored_mobs = list(C))
+						visible_message(span_danger("[C]'s spinal cord is obliterated with a sickening crunch!"), ignored_mobs = list(C))
 						C.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic)
 					if(5) // skull squish!
 						var/obj/item/bodypart/head/O = C.get_bodypart(BODY_ZONE_HEAD)
 						if(O)
-							C.visible_message("<span class='danger'>[O] explodes in a shower of gore beneath [src]!</span>", \
-								"<span class='userdanger'>Oh f-</span>")
+							C.visible_message(span_danger("[O] explodes in a shower of gore beneath [src]!"), \
+								span_userdanger("Oh f-"))
 							O.dismember()
 							O.drop_organs()
 							qdel(O)
@@ -540,8 +543,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				C.apply_damage(max(0, squish_damage - crit_rebate), forced=TRUE, spread_damage=TRUE)
 				C.AddElement(/datum/element/squish, 80 SECONDS)
 			else
-				L.visible_message("<span class='danger'>[L] is crushed by [src]!</span>", \
-				"<span class='userdanger'>You are crushed by [src]!</span>")
+				L.visible_message(span_danger("[L] is crushed by [src]!"), \
+				span_userdanger("You are crushed by [src]!"))
 				L.apply_damage(squish_damage, forced=TRUE)
 				if(crit_case)
 					L.apply_damage(squish_damage, forced=TRUE)
@@ -550,7 +553,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				L.client.give_award(/datum/award/achievement/misc/vendor_squish, L) // good job losing a fight with an inanimate object idiot
 
 			L.Paralyze(60)
-			L.emote("scream")
+			L.force_scream()
 			playsound(L, 'sound/effects/blobattack.ogg', 40, TRUE)
 			playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
 
@@ -562,8 +565,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		throw_at(get_turf(fatty), 1, 1, spin=FALSE)
 
 /obj/machinery/vending/proc/untilt(mob/user)
-	user.visible_message("<span class='notice'>[user] rights [src].</span>", \
-		"<span class='notice'>You right [src].</span>")
+	user.visible_message(span_notice("[user] rights [src]."), \
+		span_notice("You right [src]."))
 
 	unbuckle_all_mobs(TRUE)
 
@@ -582,7 +585,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		vending_machine_input[format_text(I.name)]++
 	else
 		vending_machine_input[format_text(I.name)] = 1
-	to_chat(user, "<span class='notice'>You insert [I] into [src]'s input compartment.</span>")
+	to_chat(user, span_notice("You insert [I] into [src]'s input compartment."))
 	loaded_items++
 
 /obj/machinery/vending/unbuckle_mob(mob/living/buckled_mob, force=FALSE)
@@ -613,7 +616,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		if(do_you_have_access)
 			return TRUE
 		else
-			to_chat(user, "<span class='warning'>[src]'s input compartment blinks red: Access denied.</span>")
+			to_chat(user, span_warning("[src]'s input compartment blinks red: Access denied."))
 			return FALSE
 
 /obj/machinery/vending/exchange_parts(mob/user, obj/item/storage/part_replacer/W)
@@ -634,7 +637,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	else
 		display_parts(user)
 	if(moved)
-		to_chat(user, "<span class='notice'>[moved] items restocked.</span>")
+		to_chat(user, span_notice("[moved] items restocked."))
 		W.play_rped_sound()
 	return TRUE
 
@@ -646,7 +649,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, "<span class='notice'>You short out the product lock on [src].</span>")
+	to_chat(user, span_notice("You short out the product lock on [src]."))
 
 /obj/machinery/vending/_try_interact(mob/user)
 	if(seconds_electrified && !(machine_stat & NOPOWER))
@@ -654,7 +657,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			return
 
 	if(tilted && !user.buckled && !isAI(user))
-		to_chat(user, "<span class='notice'>You begin righting [src].</span>")
+		to_chat(user, span_notice("You begin righting [src]."))
 		if(do_after(user, 50, target=src))
 			untilt(user)
 		return
@@ -712,15 +715,13 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/ui_data(mob/user)
 	. = list()
 	var/mob/living/carbon/human/H
-	var/obj/item/card/id/card
+	var/obj/item/card/bank/card
 	if(ishuman(user))
 		H = user
-		card = H.get_idcard(TRUE)
+		card = H.get_bankcard()
 		if(card)
 			.["user"] = list()
 			.["user"]["points"] = card.mining_points
-			.["user"]["name"] = card.registered_name
-			.["user"]["job"] = card.assignment || "No Job"
 			if(card.registered_account)
 				.["user"]["name"] = card.registered_account.account_holder
 				.["user"]["cash"] = card.registered_account.account_balance
@@ -739,7 +740,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			if(!vend_ready)
 				return
 			if(panel_open)
-				to_chat(usr, "<span class='warning'>The vending machine cannot dispense products while its service panel is open!</span>")
+				to_chat(usr, span_warning("The vending machine cannot dispense products while its service panel is open!"))
 				return
 			vend_ready = FALSE //One thing at a time!!
 			var/datum/data/vending_product/R = locate(params["ref"])
@@ -767,7 +768,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 				return
 			if(!all_items_free && ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/C = H.get_idcard(TRUE)
+				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
 					say("No card found.")
@@ -795,12 +796,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						flick(icon_deny,src)
 						vend_ready = TRUE
 						return
-
-					var/datum/bank_account/payment_account = payment_account_ref.resolve()
-					if(payment_account)
-						payment_account.transfer_money(account, price_to_use)
-					else
-						account.adjust_money(-price_to_use, "vendor_purchase")
+					account.adjust_money(-price_to_use, CREDIT_LOG_VENDOR_PURCHASE)
 					SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
 					log_econ("[price_to_use] credits were inserted into [src] by [H] to buy [R].")
 			if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
@@ -811,13 +807,17 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			if(icon_vend) //Show the vending animation if needed
 				flick(icon_vend,src)
 			playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
-			new R.product_path(get_turf(src))
+			var/obj/item/vended_item = new R.product_path(get_turf(src))
 			if(R.max_amount >= 0)
 				R.amount--
+			if(usr.CanReach(src) && usr.put_in_hands(vended_item))
+				to_chat(usr, span_notice("You take [R.name] out of the slot."))
+			else
+				to_chat(usr, span_warning("[capitalize(R.name)] falls onto the floor!"))
 			SSblackbox.record_feedback("nested tally", "vending_machine_usage", 1, list("[type]", "[R.product_path]"))
 			vend_ready = TRUE
 
-/obj/machinery/vending/process()
+/obj/machinery/vending/process(seconds_per_tick)
 	if(machine_stat & (BROKEN|NOPOWER))
 		return PROCESS_KILL
 	if(!active)
@@ -827,12 +827,12 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		seconds_electrified--
 
 	//Pitch to the people!  Really sell it!
-	if(last_slogan + slogan_delay <= world.time && slogan_list.len > 0 && !shut_up && prob(5))
+	if(last_slogan + slogan_delay <= world.time && slogan_list.len > 0 && !shut_up && SPT_PROB(2.5, seconds_per_tick))
 		var/slogan = pick(slogan_list)
 		speak(slogan)
 		last_slogan = world.time
 
-	if(shoot_inventory && prob(shoot_inventory_chance))
+	if(shoot_inventory && SPT_PROB(shoot_inventory_chance, seconds_per_tick))
 		throw_item()
 /**
 	* Speak the given message verbally
@@ -848,7 +848,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(!message)
 		return
 
-	say(message)
+	say(message, language=/datum/language/galactic_common)
 
 /obj/machinery/vending/power_change()
 	. = ..()
@@ -884,7 +884,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	pre_throw(throw_item)
 
 	throw_item.throw_at(target, 16, 3)
-	visible_message("<span class='danger'>[src] launches [throw_item] at [target]!</span>")
+	visible_message(span_danger("[src] launches [throw_item] at [target]!"))
 	return 1
 /**
 	* A callback called before an item is tossed out
@@ -944,10 +944,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/compartmentLoadAccessCheck(mob/user)
 	. = FALSE
 	var/mob/living/carbon/human/H
-	var/obj/item/card/id/C
+	var/obj/item/card/bank/C
 	if(ishuman(user))
 		H = user
-		C = H.get_idcard(FALSE)
+		C = H.get_bankcard(FALSE)
 		if(C?.registered_account && C.registered_account == private_a)
 			return TRUE
 
@@ -1001,7 +1001,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			vend_ready = FALSE
 			if(ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/C = H.get_idcard(TRUE)
+				var/obj/item/card/bank/C = H.get_bankcard()
 
 				if(!C)
 					say("No card found.")
@@ -1032,7 +1032,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						if(owner)
 							owner.transfer_money(account, S.custom_price)
 						else
-							account.adjust_money(-S.custom_price, "vendor_purchase")
+							account.adjust_money(-S.custom_price, CREDIT_LOG_VENDOR_PURCHASE)
 						SSblackbox.record_feedback("amount", "vending_spent", S.custom_price)
 						log_econ("[S.custom_price] credits were spent on [src] buying a [S] by [owner.account_holder], owned by [private_a.account_holder].")
 						vending_machine_input[N] = max(vending_machine_input[N] - 1, 0)
@@ -1053,10 +1053,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/custom/attackby(obj/item/I, mob/user, params)
 	if(!private_a)
 		var/mob/living/carbon/human/H
-		var/obj/item/card/id/C
+		var/obj/item/card/bank/C
 		if(ishuman(user))
 			H = user
-			C = H.get_idcard(TRUE)
+			C = H.get_bankcard(TRUE)
 			if(C?.registered_account)
 				private_a = C.registered_account
 				say("\The [src] has been linked to [C].")
@@ -1114,7 +1114,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 /obj/item/price_tagger/attack_self(mob/user)
 	price = max(1, round(input(user,"set price","price") as num|null, 1))
-	to_chat(user, "<span class='notice'> The [src] will now give things a [price] cr tag.</span>")
+	to_chat(user, span_notice(" The [src] will now give things a [price] cr tag."))
 
 /obj/item/price_tagger/afterattack(atom/target, mob/user, proximity)
 	. = ..()
@@ -1123,4 +1123,4 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(isitem(target))
 		var/obj/item/I = target
 		I.custom_price = price
-		to_chat(user, "<span class='notice'>You set the price of [I] to [price] cr.</span>")
+		to_chat(user, span_notice("You set the price of [I] to [price] cr."))

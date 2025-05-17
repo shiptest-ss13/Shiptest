@@ -39,18 +39,21 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/i = 0; i < number; i++)
 		spawn_meteor(meteortypes)
 
-/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
+/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD, obj/docking_port/mobile/shuttle_port)
 	var/turf/pickedstart
 	var/turf/pickedgoal
 	var/max_i = 10//number of tries to spawn meteor.
 	while(!isspaceturf(pickedstart))
 		var/startSide = pick(GLOB.cardinals)
+		if(shuttle_port)
+			startSide = shuttle_port.preferred_direction
+
 		pickedstart = vlevel.get_side_turf(startSide, padding)
-		pickedgoal = vlevel.get_side_turf(REVERSE_DIR(startSide), padding)
+		pickedgoal = vlevel.get_side_turf(REVERSE_DIR(startSide), padding, TRUE)
 		max_i--
 		if(max_i<=0)
 			return
-	var/Me = pickweight(meteortypes)
+	var/Me = pick_weight(meteortypes)
 	var/obj/effect/meteor/M = new Me(pickedstart, pickedgoal)
 	M.dest = pickedgoal
 
@@ -120,7 +123,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/atom/A in T)
 		if(A != src)
 			if(isliving(A))
-				A.visible_message("<span class='warning'>[src] slams into [A].</span>", "<span class='userdanger'>[src] slams into you!.</span>")
+				A.visible_message(span_warning("[src] slams into [A]."), span_userdanger("[src] slams into you!."))
 			switch(hitpwr)
 				if(EXPLODE_DEVASTATE)
 					SSexplosions.highobj += A

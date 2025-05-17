@@ -50,7 +50,7 @@ Difficulty: Very Hard
 	achievement_type = /datum/award/achievement/boss/colossus_kill
 	crusher_achievement_type = /datum/award/achievement/boss/colossus_crusher
 	score_achievement_type = /datum/award/score/colussus_score
-	crusher_loot = list(/obj/structure/closet/crate/necropolis/colossus/crusher)
+	mob_trophy = /obj/item/mob_trophy/blaster_tubes
 	loot = list(/obj/structure/closet/crate/necropolis/colossus)
 	deathmessage = "disintegrates, leaving a glowing core in its wake."
 	deathsound = 'sound/magic/demon_dies.ogg'
@@ -65,28 +65,28 @@ Difficulty: Very Hard
 	name = "Spiral Shots"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	chosen_message = "<span class='colossus'>You are now firing in a spiral.</span>"
+	chosen_message = span_colossus("You are now firing in a spiral.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/aoe_attack
 	name = "All Directions"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "at_shield2"
-	chosen_message = "<span class='colossus'>You are now firing in all directions.</span>"
+	chosen_message = span_colossus("You are now firing in all directions.")
 	chosen_attack_num = 2
 
 /datum/action/innate/megafauna_attack/shotgun
 	name = "Shotgun Fire"
 	icon_icon = 'icons/obj/guns/projectile.dmi'
 	button_icon_state = "shotgun"
-	chosen_message = "<span class='colossus'>You are now firing shotgun shots where you aim.</span>"
+	chosen_message = span_colossus("You are now firing shotgun shots where you aim.")
 	chosen_attack_num = 3
 
 /datum/action/innate/megafauna_attack/alternating_cardinals
 	name = "Alternating Shots"
 	icon_icon = 'icons/obj/guns/projectile.dmi'
 	button_icon_state = "pistol"
-	chosen_message = "<span class='colossus'>You are now firing in alternating cardinal directions.</span>"
+	chosen_message = span_colossus("You are now firing in alternating cardinal directions.")
 	chosen_attack_num = 4
 
 /mob/living/simple_animal/hostile/megafauna/colossus/OpenFire()
@@ -107,7 +107,7 @@ Difficulty: Very Hard
 
 	if(enrage(target))
 		if(move_to_delay == initial(move_to_delay))
-			visible_message("<span class='colossus'>\"<b>You can't dodge.</b>\"</span>")
+			visible_message(span_colossus("\"<b>You can't dodge.</b>\""))
 		ranged_cooldown = world.time + 30
 		telegraph()
 		dir_shots(GLOB.alldirs)
@@ -147,11 +147,11 @@ Difficulty: Very Hard
 	telegraph()
 	if(health < maxHealth/3)
 		return double_spiral()
-	visible_message("<span class='colossus'>\"<b>Judgement.</b>\"</span>")
+	visible_message(span_colossus("\"<b>Judgement.</b>\""))
 	return spiral_shoot()
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/double_spiral()
-	visible_message("<span class='colossus'>\"<b>Die.</b>\"</span>")
+	visible_message(span_colossus("\"<b>Die.</b>\""))
 
 	SLEEP_CHECK_DEATH(10)
 	INVOKE_ASYNC(src, PROC_REF(spiral_shoot), FALSE)
@@ -221,7 +221,7 @@ Difficulty: Very Hard
 
 
 /mob/living/simple_animal/hostile/megafauna/colossus/devour(mob/living/L)
-	visible_message("<span class='colossus'>[src] disintegrates [L]!</span>")
+	visible_message(span_colossus("[src] disintegrates [L]!"))
 	L.dust()
 
 /obj/effect/temp_visual/at_shield
@@ -259,6 +259,7 @@ Difficulty: Very Hard
 	eyeblur = 0
 	damage_type = BRUTE
 	pass_flags = PASSTABLE
+	plane = GAME_PLANE
 
 /obj/projectile/colossus/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -293,7 +294,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	if(!istype(O))
 		return FALSE
 	if(blacklist[O])
-		visible_message("<span class='boldwarning'>[src] ripples as it rejects [O]. The device will not accept items that have been removed from it.</span>")
+		visible_message(span_boldwarning("[src] ripples as it rejects [O]. The device will not accept items that have been removed from it."))
 		return FALSE
 	return TRUE
 
@@ -304,7 +305,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	GLOB.blackbox = src
 	ReadMemory()
 
-/obj/machinery/smartfridge/black_box/process()
+/obj/machinery/smartfridge/black_box/process(seconds_per_tick)
 	..()
 	if(!memory_saved && SSticker.current_state == GAME_STATE_FINISHED)
 		WriteMemory()
@@ -496,7 +497,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 
 	switch(terrain_theme)
 		if("lavaland")//Depressurizes the place... and free cult metal, I guess.
-			NewTerrainFloors = /turf/open/floor/grass/snow/basalt
+			NewTerrainFloors = /turf/open/floor/plating/asteroid/basalt
 			NewTerrainWalls = /turf/closed/wall/mineral/cult
 			NewFlora = list(/mob/living/simple_animal/hostile/asteroid/goldgrub)
 			florachance = 1
@@ -607,12 +608,12 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	var/ready_to_deploy = FALSE
 
 /obj/machinery/anomalous_crystal/helpers/Destroy()
-	GLOB.poi_list -= src
+	SSpoints_of_interest.remove_point_of_interest(src)
 	. = ..()
 
 /obj/machinery/anomalous_crystal/helpers/ActivationReaction(mob/user, method)
 	if(..() && !ready_to_deploy)
-		GLOB.poi_list |= src
+		SSpoints_of_interest.make_point_of_interest(src)
 		ready_to_deploy = TRUE
 		notify_ghosts("An anomalous crystal has been activated in [get_area(src)]! This crystal can always be used by ghosts hereafter.", enter_link = "<a href=?src=[REF(src)];ghostjoin=1>(Click to enter)</a>", ghost_sound = 'sound/effects/ghost2.ogg', source = src, action = NOTIFY_ATTACK, header = "Anomalous crystal activated")
 
@@ -659,7 +660,6 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	ventcrawler = VENTCRAWLER_ALWAYS
 	mob_size = MOB_SIZE_TINY
-	gold_core_spawnable = HOSTILE_SPAWN
 	verb_say = "warps"
 	verb_ask = "floats inquisitively"
 	verb_exclaim = "zaps"
@@ -690,7 +690,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 		if(L.stat != DEAD)
 			L.heal_overall_damage(melee_damage_upper, melee_damage_upper)
 			new /obj/effect/temp_visual/heal(get_turf(target), "#80F5FF")
-			visible_message("<span class='notice'>[src] mends the wounds of [target].</span>","<span class='notice'>You mend the wounds of [target].</span>")
+			visible_message(span_notice("[src] mends the wounds of [target]."),span_notice("You mend the wounds of [target]."))
 
 /mob/living/simple_animal/hostile/lightgeist/ghost()
 	. = ..()
@@ -736,7 +736,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 				mobcheck = TRUE
 				break
 			if(!mobcheck)
-				new /mob/living/simple_animal/hostile/cockroach(get_step(src,dir)) //Just in case there aren't any animals on the station, this will leave you with a terrible option to possess if you feel like it //i found it funny that in the file for a giant angel beast theres a cockroach
+				new /mob/living/basic/cockroach(get_step(src,dir)) //Just in case there aren't any animals on the station, this will leave you with a terrible option to possess if you feel like it //i found it funny that in the file for a giant angel beast theres a cockroach
 
 /obj/structure/closet/stasis
 	name = "quantum entanglement stasis warp field"
@@ -747,7 +747,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	resistance_flags = FIRE_PROOF | ACID_PROOF | INDESTRUCTIBLE
 	var/mob/living/simple_animal/holder_animal
 
-/obj/structure/closet/stasis/process()
+/obj/structure/closet/stasis/process(seconds_per_tick)
 	if(holder_animal)
 		if(holder_animal.stat == DEAD)
 			dump_contents()

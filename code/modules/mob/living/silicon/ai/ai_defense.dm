@@ -3,7 +3,7 @@
 	if(istype(W, /obj/item/aiModule))
 		var/obj/item/aiModule/MOD = W
 		if(!mind) //A player mind is required for law procs to run antag checks.
-			to_chat(user, "<span class='warning'>[src] is entirely unresponsive!</span>")
+			to_chat(user, span_warning("[src] is entirely unresponsive!"))
 			return
 		MOD.install(laws, user) //Proc includes a success mesage so we don't need another one
 		return
@@ -19,13 +19,6 @@
 
 /mob/living/silicon/ai/attack_slime(mob/living/simple_animal/slime/user)
 	return //immune to slimes
-
-/mob/living/silicon/ai/blob_act(obj/structure/blob/B)
-	if (stat != DEAD)
-		adjustBruteLoss(60)
-		updatehealth()
-		return 1
-	return 0
 
 /mob/living/silicon/ai/emp_act(severity)
 	. = ..()

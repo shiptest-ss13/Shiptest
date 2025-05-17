@@ -26,7 +26,7 @@ Contents:
 	var/datum/effect_system/spark_spread/spark_system
 	var/datum/techweb/stored_research
 	var/obj/item/disk/tech_disk/t_disk//To copy design onto disk.
-	var/obj/item/energy_katana/energyKatana //For teleporting the katana back to the ninja (It's an ability)
+	var/obj/item/melee/sword/energy_katana/energyKatana //For teleporting the katana back to the ninja (It's an ability)
 
 	//Other articles of ninja gear worn together, used to easily reference them after initializing.
 	var/obj/item/clothing/head/helmet/space/space_ninja/n_hood
@@ -36,8 +36,8 @@ Contents:
 	//Main function variables.
 	var/s_initialized = 0//Suit starts off.
 	var/s_coold = 0//If the suit is on cooldown. Can be used to attach different cooldowns to abilities. Ticks down every second based on suit ntick().
-	var/s_cost = 5//Base energy cost each ntick.
-	var/s_acost = 25//Additional cost for additional powers active.
+	var/s_cost = 2.5//Base energy cost each ntick.
+	var/s_acost = 12.5//Additional cost for additional powers active.
 	var/s_delay = 40//How fast the suit does certain things, lower is faster. Can be overridden in specific procs. Also determines adverse probability.
 	var/a_transfer = 20//How much radium is used per adrenaline boost.
 	var/a_maxamount = 7//Maximum number of adrenaline boosts.
@@ -78,7 +78,7 @@ Contents:
 	return ..()
 
 // Space Suit temperature regulation and power usage
-/obj/item/clothing/suit/space/space_ninja/process()
+/obj/item/clothing/suit/space/space_ninja/process(seconds_per_tick)
 	var/mob/living/carbon/human/user = src.loc
 	if(!user || !ishuman(user) || !(user.wear_suit == src))
 		return
@@ -88,11 +88,11 @@ Contents:
 		if(!affecting)
 			terminate() // Kills the suit and attached objects.
 		else if(cell.charge > 0)
-			if(s_coold)
-				s_coold-- // Checks for ability s_cooldown first.
-			cell.charge -= s_cost // s_cost is the default energy cost each ntick, usually 5.
+			if(s_coold > 0)
+				s_coold -= seconds_per_tick // Checks for ability s_cooldown first.
+			cell.charge -= s_cost * seconds_per_tick // s_cost is the default energy cost each ntick, usually 5.
 			if(stealth) // If stealth is active.
-				cell.charge -= s_acost
+				cell.charge -= s_acost * seconds_per_tick
 		else
 			cell.charge = 0
 			cancel_stealth()
@@ -109,8 +109,8 @@ Contents:
 
 //Randomizes suit parameters.
 /obj/item/clothing/suit/space/space_ninja/proc/randomize_param()
-	s_cost = rand(1,20)
-	s_acost = rand(20,100)
+	s_cost = rand(1,10)
+	s_acost = rand(10,50)
 	s_delay = rand(10,100)
 	s_bombs = rand(5,20)
 	a_boost = rand(1,7)
@@ -121,17 +121,17 @@ Contents:
 	if(!istype(H))
 		return FALSE
 	if(!is_ninja(H))
-		to_chat(H, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
+		to_chat(H, span_danger("<B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR..."))
 		H.gib()
 		return FALSE
 	if(!istype(H.head, /obj/item/clothing/head/helmet/space/space_ninja))
-		to_chat(H, "<span class='userdanger'>ERROR</span>: 100113 UNABLE TO LOCATE HEAD GEAR\nABORTING...")
+		to_chat(H, "[span_userdanger("ERROR")]: 100113 UNABLE TO LOCATE HEAD GEAR\nABORTING...")
 		return FALSE
 	if(!istype(H.shoes, /obj/item/clothing/shoes/space_ninja))
-		to_chat(H, "<span class='userdanger'>ERROR</span>: 122011 UNABLE TO LOCATE FOOT GEAR\nABORTING...")
+		to_chat(H, "[span_userdanger("ERROR")]: 122011 UNABLE TO LOCATE FOOT GEAR\nABORTING...")
 		return FALSE
 	if(!istype(H.gloves, /obj/item/clothing/gloves/space_ninja))
-		to_chat(H, "<span class='userdanger'>ERROR</span>: 110223 UNABLE TO LOCATE HAND GEAR\nABORTING...")
+		to_chat(H, "[span_userdanger("ERROR")]: 110223 UNABLE TO LOCATE HAND GEAR\nABORTING...")
 		return FALSE
 	affecting = H
 	ADD_TRAIT(src, TRAIT_NODROP, NINJA_SUIT_TRAIT)
@@ -184,7 +184,7 @@ Contents:
 		toggle_on_off()
 		return TRUE
 	if(!s_initialized)
-		to_chat(user, "<span class='warning'><b>ERROR</b>: suit offline. Please activate suit.</span>")
+		to_chat(user, span_warning("<b>ERROR</b>: suit offline. Please activate suit."))
 		return FALSE
 	if(istype(action, /datum/action/item_action/ninjasmoke))
 		ninjasmoke()

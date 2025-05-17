@@ -1,7 +1,7 @@
 /datum/admins/proc/spawn_objasmob(object as text)
-	set category = "Debug"
-	set desc = "(obj path) Spawn object-mob"
-	set name = "Spawn object-mob"
+	set category = "Event.Spawning"
+	set desc = "(obj path) Spawn object-mob from Object"
+	set name = "Spawn Living Mob"
 
 	if(!check_rights(R_SPAWN))
 		return
@@ -67,4 +67,4 @@
 
 
 		log_admin("[key_name(usr)] spawned a sentient object-mob [basemob] from [chosen_obj] at [AREACOORD(usr)]")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Spawn object-mob") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Spawn object-mob")

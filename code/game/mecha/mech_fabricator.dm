@@ -5,8 +5,8 @@
 	desc = "Nothing is being built."
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 20
-	active_power_usage = 5000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_HIGH
 	req_access = list(ACCESS_ROBOTICS)
 	circuit = /obj/item/circuitboard/machine/mechfab
 	var/time_coeff = 1
@@ -26,8 +26,8 @@
 								"Cyborg",
 								"Ripley",
 								"Firefighter",
-								"Odysseus",
-								"Gygax",
+								"200 Series",
+								"500 Series",
 								"Durand",
 								"H.O.N.K",
 								"Phazon",
@@ -68,7 +68,7 @@
 /obj/machinery/mecha_part_fabricator/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Storing up to <b>[rmat.local_size]</b> material units.<br>Material consumption at <b>[component_coeff*100]%</b>.<br>Build time reduced by <b>[100-time_coeff*100]%</b>.</span>"
+		. += span_notice("The status display reads: Storing up to <b>[rmat.local_size]</b> material units.<br>Material consumption at <b>[component_coeff*100]%</b>.<br>Build time reduced by <b>[100-time_coeff*100]%</b>.")
 
 /obj/machinery/mecha_part_fabricator/emag_act()
 	if(obj_flags & EMAGGED)
@@ -196,10 +196,10 @@
 	rmat.silo_log(src, "built", -1, "[D.name]", res_coef)
 
 	add_overlay("fab-active")
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	updateUsrDialog()
 	sleep(get_construction_time_w_coeff(D))
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	cut_overlay("fab-active")
 	desc = initial(desc)
 
@@ -471,10 +471,10 @@
 
 /obj/machinery/mecha_part_fabricator/proc/is_insertion_ready(mob/user)
 	if(panel_open)
-		to_chat(user, "<span class='warning'>You can't load [src] while it's opened!</span>")
+		to_chat(user, span_warning("You can't load [src] while it's opened!"))
 		return FALSE
 	if(being_built)
-		to_chat(user, "<span class='warning'>\The [src] is currently processing! Please wait until completion.</span>")
+		to_chat(user, span_warning("\The [src] is currently processing! Please wait until completion."))
 		return FALSE
 
 	return TRUE

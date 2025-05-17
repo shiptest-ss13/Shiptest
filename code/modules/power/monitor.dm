@@ -7,8 +7,8 @@
 	icon_keyboard = "power_key"
 	light_color = LIGHT_COLOR_YELLOW
 	use_power = ACTIVE_POWER_USE
-	idle_power_usage = 20
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/computer/powermonitor
 	tgui_id = "PowerMonitor"
 
@@ -39,7 +39,7 @@
 
 /obj/machinery/computer/monitor/secret/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's operating system seems quite outdated... It doesn't seem like it'd be compatible with the latest remote NTOS monitoring systems.</span>"
+	. += span_notice("It's operating system seems quite outdated... It doesn't seem like it'd be compatible with the latest remote NTOS monitoring systems.")
 
 /obj/machinery/computer/monitor/Initialize()
 	. = ..()
@@ -47,12 +47,14 @@
 	history["supply"] = list()
 	history["demand"] = list()
 
-/obj/machinery/computer/monitor/process()
+/obj/machinery/computer/monitor/process(seconds_per_tick)
 	if(!get_powernet())
-		use_power = IDLE_POWER_USE
+		if(use_static_power != IDLE_POWER_USE)
+			set_idle_power()
 		search()
 	else
-		use_power = ACTIVE_POWER_USE
+		if(use_static_power != ACTIVE_POWER_USE)
+			set_active_power()
 		record()
 
 /obj/machinery/computer/monitor/proc/search() //keep in sync with /datum/computer_file/program/power_monitor's version

@@ -23,7 +23,6 @@
 				),
 				CAT_ROBOT = CAT_NONE,
 				CAT_MISC = CAT_NONE,
-				CAT_PRIMAL = CAT_NONE,
 				CAT_FOOD = list(
 					CAT_BREAD,
 					CAT_BURGER,
@@ -32,6 +31,9 @@
 					CAT_ICE,
 					CAT_MEAT,
 					CAT_MISCFOOD,
+					CAT_TORTILLA,
+					CAT_CANDIED,
+					CAT_DONUT,
 					CAT_PASTRY,
 					CAT_PIE,
 					CAT_PIZZA,
@@ -403,9 +405,9 @@
 					user.put_in_hands(result)
 				else
 					result.forceMove(user.drop_location())
-				to_chat(user, "<span class='notice'>[TR.name] constructed.</span>")
+				to_chat(user, span_notice("[TR.name] constructed."))
 			else
-				to_chat(user, "<span class='warning'>Construction failed[result]</span>")
+				to_chat(user, span_warning("Construction failed[result]"))
 			busy = FALSE
 		if("toggle_recipes")
 			display_craftable_only = !display_craftable_only

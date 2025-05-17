@@ -50,7 +50,7 @@
 	if(!ishuman(user))
 		return
 	used_wrench.play_tool_sound(user)
-	to_chat(user, "<span class='notice'>You start undeploying the [src]...</span>")
+	to_chat(user, span_notice("You start undeploying the [src]..."))
 	if(!do_after(user, undeploy_time))
 		return
 	var/obj/undeployed_object = new spawned_on_undeploy(src)
@@ -97,7 +97,7 @@
 		M.client.view_size.setTo(view_range)
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/machinery/deployable_turret/process()
+/obj/machinery/deployable_turret/process(seconds_per_tick)
 	if (!update_positioning())
 		return PROCESS_KILL
 
@@ -214,7 +214,7 @@
 
 /obj/item/gun_control
 	name = "turret controls"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "offhand"
 	w_class = WEIGHT_CLASS_HUGE
 	item_flags = ABSTRACT | NOBLUDGEON | DROPDEL

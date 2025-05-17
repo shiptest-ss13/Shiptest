@@ -13,10 +13,11 @@
 		return
 	if(absorb_stun(0)) //continuous effect, so we don't want it to increment the stuns absorbed.
 		return
-	to_chat(src, "<span class='notice'>You're too exhausted to keep going...</span>")
+	to_chat(src, span_notice("You're too exhausted to keep going..."))
 	ADD_TRAIT(src, TRAIT_INCAPACITATED, STAMINA)
 	ADD_TRAIT(src, TRAIT_IMMOBILIZED, STAMINA)
 	ADD_TRAIT(src, TRAIT_FLOORED, STAMINA)
+	ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, STAMINA)
 	if((maxHealth - health + getStaminaLoss()) > 120) // Puts you a little further into the initial stamcrit, makes stamcrit harder to outright counter with chems.		//WS Edit - Stamina stacks with health damage
 		adjustStaminaLoss(30, FALSE)
 

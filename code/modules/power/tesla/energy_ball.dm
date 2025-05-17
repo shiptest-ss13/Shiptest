@@ -59,7 +59,7 @@
 	..()
 
 
-/obj/singularity/energy_ball/process()
+/obj/singularity/energy_ball/process(seconds_per_tick)
 	if(!orbiting)
 		handle_energy()
 
@@ -97,9 +97,6 @@
 		if(can_move(T))
 			forceMove(T)
 			setDir(move_dir)
-			for(var/mob/living/carbon/C in loc)
-				dust_mobs(C)
-
 
 /obj/singularity/energy_ball/proc/handle_energy()
 	if(energy >= energy_to_raise)
@@ -132,17 +129,10 @@
 
 	EB.orbit(src, orbitsize, pick(FALSE, TRUE), rand(10, 25), pick(3, 4, 5, 6, 36))
 
-
-/obj/singularity/energy_ball/Bump(atom/A)
-	dust_mobs(A)
-
-/obj/singularity/energy_ball/Bumped(atom/movable/AM)
-	dust_mobs(AM)
-
 /obj/singularity/energy_ball/attack_tk(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		to_chat(C, "<span class='userdanger'>That was a shockingly dumb idea.</span>")
+		to_chat(C, span_userdanger("That was a shockingly dumb idea."))
 		var/obj/item/organ/brain/rip_u = locate(/obj/item/organ/brain) in C.internal_organs
 		C.ghostize(0)
 		qdel(rip_u)
@@ -151,7 +141,7 @@
 /obj/singularity/energy_ball/orbit(obj/singularity/energy_ball/target)
 	if (istype(target))
 		target.orbiting_balls += src
-		GLOB.poi_list -= src
+		SSpoints_of_interest.remove_point_of_interest(src)
 		target.dissipate_strength = target.orbiting_balls.len
 	. = ..()
 
@@ -163,20 +153,6 @@
 	. = ..()
 	if (!QDELETED(src))
 		qdel(src)
-
-
-/obj/singularity/energy_ball/proc/dust_mobs(atom/A)
-	if(isliving(A))
-		var/mob/living/L = A
-		if(L.incorporeal_move || L.status_flags & GODMODE)
-			return
-	if(!iscarbon(A))
-		return
-	for(var/obj/machinery/power/grounding_rod/GR in orange(src, 2))
-		if(GR.anchored)
-			return
-	var/mob/living/carbon/C = A
-	C.dust()
 
 /proc/tesla_zap(atom/source, zap_range = 3, power, zap_flags = ZAP_DEFAULT_FLAGS, list/shocked_targets = list())
 	if(QDELETED(source))
@@ -190,7 +166,7 @@
 	*/
 	var/atom/closest_atom
 	var/closest_type = 0
-	var/static/things_to_shock = typecacheof(list(/obj/machinery, /mob/living, /obj/structure, /obj/vehicle/ridden))
+	var/static/things_to_shock = typecacheof(list(/obj/machinery, /turf/closed/wall, /obj/structure, /obj/vehicle/ridden))
 	var/static/blacklisted_tesla_types = typecacheof(list(/obj/machinery/atmospherics,
 										/obj/machinery/power/emitter,
 										/obj/machinery/field/generator,
@@ -222,6 +198,8 @@
 	for(var/a in typecache_filter_multi_list_exclusion(oview(zap_range+2, source), things_to_shock, blacklisted_tesla_types))
 		var/atom/A = a
 		if(!(zap_flags & ZAP_ALLOW_DUPLICATES) && LAZYACCESS(shocked_targets, A))
+			continue
+		if(source.virtual_z() != A.virtual_z())
 			continue
 		if(closest_type >= BIKE)
 			break
@@ -280,12 +258,6 @@
 		else if(closest_type >= BLOB)
 			continue
 
-		else if(istype(A, /obj/structure/blob))
-			var/obj/structure/blob/B = A
-			if(!(B.obj_flags & BEING_SHOCKED))
-				closest_type = BLOB
-				closest_atom = A
-
 		else if(closest_type >= STRUCTURE)
 			continue
 
@@ -294,6 +266,13 @@
 			if(!(S.obj_flags & BEING_SHOCKED))
 				closest_type = STRUCTURE
 				closest_atom = A
+
+		else if(isclosedturf(A))
+			var/turf/closed/closed_turf = A
+			if(istype(closed_turf))
+				closest_type = STRUCTURE
+				closest_atom = A
+
 
 	//Alright, we've done our loop, now lets see if was anything interesting in range
 	if(!closest_atom)

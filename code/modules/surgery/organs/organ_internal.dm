@@ -38,7 +38,14 @@
 /obj/item/organ/Initialize()
 	. = ..()
 	if(organ_flags & ORGAN_EDIBLE)
-		AddComponent(/datum/component/edible, food_reagents, null, RAW | MEAT | GORE, null, 10, null, null, null, CALLBACK(src, PROC_REF(OnEatFrom)))
+		AddComponent(/datum/component/edible,\
+		initial_reagents = food_reagents,\
+		foodtypes = RAW | MEAT | GORE,\
+		volume = 10,\
+		filling_color = COLOR_PINK,\
+		pre_eat = CALLBACK(src, PROC_REF(pre_eat)),\
+		on_compost = CALLBACK(src, PROC_REF(pre_compost)),\
+		after_eat = CALLBACK(src, PROC_REF(on_eat_from)))
 
 	///When you take a bite you cant jam it in for surgery anymore.
 /obj/item/organ/proc/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
@@ -89,13 +96,13 @@
 /obj/item/organ/proc/on_find(mob/living/finder)
 	return
 
-/obj/item/organ/process()
-	on_death() //Kinda hate doing it like this, but I really don't want to call process directly.
+/obj/item/organ/process(seconds_per_tick)
+	on_death(seconds_per_tick) //Kinda hate doing it like this, but I really don't want to call process directly.
 
-/obj/item/organ/proc/on_death()	//runs decay when outside of a person
+/obj/item/organ/proc/on_death(seconds_per_tick = 2)	//runs decay when outside of a person
 	if(organ_flags & (ORGAN_SYNTHETIC | ORGAN_FROZEN))
 		return
-	applyOrganDamage(maxHealth * decay_factor)
+	applyOrganDamage(maxHealth * decay_factor * 0.5 * seconds_per_tick)
 
 /obj/item/organ/proc/on_life()	//repair organ damage if the organ is not failing
 	if(organ_flags & ORGAN_FAILING)
@@ -113,12 +120,12 @@
 	. = ..()
 	if(organ_flags & ORGAN_FAILING)
 		if(status == ORGAN_ROBOTIC)
-			. += "<span class='warning'>[src] seems to be broken.</span>"
+			. += span_warning("[src] seems to be broken.")
 			return
-		. += "<span class='warning'>[src] has decayed for too long, and has turned a sickly color. It probably won't work without repairs.</span>"
+		. += span_warning("[src] has decayed for too long, and has turned a sickly color. It probably won't work without repairs.")
 		return
 	if(damage > high_threshold)
-		. += "<span class='warning'>[src] is starting to look discolored.</span>"
+		. += span_warning("[src] is starting to look discolored.")
 
 /obj/item/organ/Initialize()
 	. = ..()
@@ -133,8 +140,21 @@
 		STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/organ/proc/OnEatFrom(eater, feeder)
-	useable = FALSE //You can't use it anymore after eating it you spaztic
+// Put any "can we eat this" checks for edible organs here
+/obj/item/organ/proc/pre_eat(eater, feeder)
+	if(iscarbon(eater))
+		var/mob/living/carbon/target = eater
+		for(var/S in target.surgeries)
+			var/datum/surgery/surgery = S
+			if(surgery.location == zone)
+				return FALSE
+	return TRUE
+
+/obj/item/organ/proc/pre_compost(user)
+	return TRUE
+
+/obj/item/organ/proc/on_eat_from(eater, feeder)
+	useable = FALSE //You bit it, no more using it
 
 /obj/item/organ/item_action_slot_check(slot,mob/user)
 	return //so we don't grant the organ's action to mobs who pick up the organ.

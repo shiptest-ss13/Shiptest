@@ -18,6 +18,10 @@
 	can_unwrench = TRUE
 	shift_underlay_only = FALSE
 
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = ACTIVE_DRAW_MINIMAL
+
 	var/target_pressure = ONE_ATMOSPHERE
 
 	var/frequency = 0
@@ -30,6 +34,10 @@
 /obj/machinery/atmospherics/components/binary/pump/CtrlClick(mob/user)
 	if(can_interact(user))
 		on = !on
+		if(on)
+			set_active_power()
+		else
+			set_idle_power()
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 		update_appearance()
 	return ..()
@@ -38,7 +46,7 @@
 	if(can_interact(user))
 		target_pressure = MAX_OUTPUT_PRESSURE
 		investigate_log("was set to [target_pressure] kPa by [key_name(user)]", INVESTIGATE_ATMOS)
-		to_chat(user, "<span class='notice'>You maximize the pressure output on [src] to [target_pressure] kPa.</span>")
+		to_chat(user, span_notice("You maximize the pressure output on [src] to [target_pressure] kPa."))
 		update_appearance()
 	return ..()
 
@@ -51,7 +59,7 @@
 /obj/machinery/atmospherics/components/binary/pump/update_icon_nopipes()
 	icon_state = (on && is_operational) ? "pump_on-[set_overlay_offset(piping_layer)]" : "pump_off-[set_overlay_offset(piping_layer)]"
 
-/obj/machinery/atmospherics/components/binary/pump/process_atmos()
+/obj/machinery/atmospherics/components/binary/pump/process_atmos(seconds_per_tick)
 //	..()
 	if(!on || !is_operational)
 		return
@@ -110,6 +118,10 @@
 	switch(action)
 		if("power")
 			on = !on
+			if(on)
+				set_active_power()
+			else
+				set_idle_power()
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 		if("pressure")
@@ -158,7 +170,7 @@
 /obj/machinery/atmospherics/components/binary/pump/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational)
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
 		return FALSE
 
 

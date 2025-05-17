@@ -128,11 +128,11 @@
 
 	var/datum/gas_mixture/environment = loc.return_air()
 
-	var/t =	"<span class='notice'>Coordinates: [x],[y] \n</span>"
-	t +=	"<span class='danger'>Temperature: [environment.return_temperature()] \n</span>"
+	var/t =	span_notice("Coordinates: [x],[y] \n")
+	t +=	span_danger("Temperature: [environment.return_temperature()] \n")
 	for(var/id in environment.get_gases())
 		if(environment.get_moles(id))
-			t+="<span class='notice'>[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n</span>"
+			t+=span_notice("[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n")
 
 	to_chat(usr, t)
 
@@ -225,7 +225,7 @@
 				if(known_name)
 					shown_name = known_name
 
-			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+			msg = span_emote("<b>[shown_name]</b>[separation][message]")
 
 		if(!msg)
 			continue
@@ -269,7 +269,7 @@
 				if(known_name)
 					shown_name = known_name
 
-			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+			msg = span_emote("<b>[shown_name]</b>[separation][message]")
 
 			if(runechat_prefs_check(M, audible_message_flags) && M.can_hear())
 				M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
@@ -313,6 +313,14 @@
 /mob/proc/get_item_by_slot(slot_id)
 	return null
 
+/// Gets what slot the item on the mob is held in.
+/// Returns null if the item isn't in any slots on our mob.
+/// Does not check if the passed item is null, which may result in unexpected outcoms.
+/mob/proc/get_slot_by_item(obj/item/looking_for)
+	if(looking_for in held_items)
+		return ITEM_SLOT_HANDS
+
+	return null
 
 ///Is the mob incapacitated
 /mob/proc/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
@@ -361,7 +369,7 @@
 			qdel(W)
 		else
 			if(!disable_warning)
-				to_chat(src, "<span class='warning'>You are unable to equip that!</span>")
+				to_chat(src, span_warning("You are unable to equip that!"))
 		return FALSE
 	equip_to_slot(W, slot, initial, redraw_mob, swap) //This proc should not ever fail.
 	return TRUE
@@ -444,8 +452,6 @@
 				else
 					client.eye = client.mob
 					client.perspective = MOB_PERSPECTIVE
-			else
-				//Do nothing
 		else
 			//Reset to common defaults: mob if on turf, otherwise current loc
 			if(isturf(loc))
@@ -454,7 +460,8 @@
 			else
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
-		return 1
+		return TRUE
+	SEND_SIGNAL(src, COMSIG_MOB_RESET_PERSPECTIVE)
 
 /// Show the mob's inventory to another mob
 /mob/proc/show_inv(mob/user)
@@ -496,14 +503,17 @@
 			handle_eye_contact(examinify)
 		else
 			result = examinify.examine_more(src)
+
+			if(!LAZYLEN(result))
+				result = list(span_notice("<i>You examine [examinify] closer, but find nothing of interest...</i>"))
 	else
 		result = examinify.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(result.len)
+	if(length(result))
 		for(var/i in 1 to (length(result) - 1))
 			result[i] += "\n"
 
-	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+	to_chat(src, boxed_message(span_infoplain("[result.Join()]")))
 
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, examinify)
 
@@ -515,30 +525,30 @@
 /mob/living/blind_examine_check(atom/examined_thing)
 	//need to be next to something and awake
 	if(!in_range(examined_thing, src) || incapacitated())
-		to_chat(src, "<span class='warning'>Something is there, but you can't see it!</span>")
+		to_chat(src, span_warning("Something is there, but you can't see it!"))
 		return FALSE
 	//also neeed an empty hand, and you can only initiate as many examines as you have hands
 	if(LAZYLEN(do_afters) >= usable_hands || get_active_held_item())
-		to_chat(src, "<span class='warning'>You don't have a free hand to examine this!</span>")
+		to_chat(src, span_warning("You don't have a free hand to examine this!"))
 		return FALSE
 	//can only queue up one examine on something at a time
-	if(examined_thing in do_afters)
+	if(DOING_INTERACTION_WITH_TARGET(src, examined_thing))
 		return FALSE
 
-	to_chat(src, "<span class='notice'>You start feeling around for something...</span>")
-	visible_message("<span class='notice'> [name] begins feeling around for \the [examined_thing.name]...</span>")
+	to_chat(src, span_notice("You start feeling around for something..."))
+	visible_message(span_notice(" [name] begins feeling around for \the [examined_thing.name]..."))
 
 	/// how long it takes for the blind person to find the thing they're examining
-	var/examine_delay_length = rand(1 SECONDS, 2 SECONDS)
+	var/examine_delay_length = rand(0.5 SECONDS, 1 SECONDS)
 	if(client?.recent_examines && client?.recent_examines[examined_thing]) //easier to find things we just touched
-		examine_delay_length = 0.5 SECONDS
+		examine_delay_length = 0.25 SECONDS
 	else if(isobj(examined_thing))
 		examine_delay_length *= 1.5
 	else if(ismob(examined_thing) && examined_thing != src)
 		examine_delay_length *= 2
 
 	if(examine_delay_length > 0 && !do_after(src, examine_delay_length, target = examined_thing))
-		to_chat(src, "<span class='notice'>You can't get a good feel for what is there.</span>")
+		to_chat(src, span_notice("You can't get a good feel for what is there."))
 		return FALSE
 
 	//now we touch the thing we're examining
@@ -577,11 +587,11 @@
 
 	// check to see if their face is blocked or, if not, a signal blocks it
 	if(examined_mob.is_face_visible() && SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
-		var/msg = "<span class='smallnotice'>You make eye contact with [examined_mob].</span>"
+		var/msg = span_smallnotice("You make eye contact with [examined_mob].")
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	if(is_face_visible() && SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
-		var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
+		var/msg = span_smallnotice("[src] makes eye contact with you.")
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), examined_mob, msg), 3)
 
 /**
@@ -653,20 +663,65 @@
 		return
 	limb_attack_self()
 
+///proc to call unique action on whatever we're holding.
 /mob/verb/do_unique_action()
 	set name = "Do Unique Action"
 	set category = "Object"
 	set src = usr
 
 	if(ismecha(loc))
-		return
+		var/obj/mecha/mech = loc
+		return mech.handle_unique_action(src)
 
 	if(incapacitated())
 		return
 
 	var/obj/item/I = get_active_held_item()
 	if(I)
+		if(I.pre_unique_action(src))
+			update_inv_hands()
+			return
 		I.unique_action(src)
+		update_inv_hands()
+
+///proc to call zoom on whatever we're holding.
+/mob/verb/do_zoom()
+	set name = "Aim Down Sights"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		var/obj/mecha/mecha = loc
+		if(mecha.zoom_action)
+			mecha.zoom_action.Activate()
+			return
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(istype(I, /obj/item/gun))
+		var/obj/item/gun/our_gun = I
+		if(our_gun.wielded_fully)
+			our_gun.zoom(src, src.dir)
+		update_inv_hands()
+		return
+	return
+
+/mob/verb/do_secondary_action()
+	set name = "Do Secondary Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		if(I.pre_secondary_action(src))
+			update_inv_hands()
+			return
+		I.secondary_action(src)
 		update_inv_hands()
 
 /**
@@ -730,7 +785,7 @@
 	set category = "OOC"
 
 	if ((stat != DEAD || !(SSticker)) || !isobserver(usr))
-		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
+		to_chat(usr, span_boldnotice("You must be dead to use this!"))
 		return
 
 	var/respawn_timer = CONFIG_GET(number/respawn_timer)
@@ -755,14 +810,14 @@
 	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
 		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - REALTIMEOFDAY
 		if(time_left > 0)
-			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(time_left)] left before you can respawn.</span>")
+			to_chat(usr, span_boldnotice("You still have [DisplayTimeText(time_left)] left before you can respawn."))
 			return
 
 	GLOB.respawn_timers -= usrkey
 
 	log_game("[key_name(usr)] used abandon mob.")
 
-	to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
+	to_chat(usr, span_boldnotice("Please roleplay correctly!"))
 
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")
@@ -821,8 +876,10 @@
 		src << browse(null, t1)
 
 	if(href_list["flavor_more"])
-		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(flavor_text, "\n", "<BR>")), text("window=[];size=500x200", name))
-		onclose(usr, "[name]")
+		var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text (expanded)", 500, 200)
+		popup.set_content(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", "[name]'s flavor text (expanded)", replacetext(flavor_text, "\n", "<BR>")))
+		popup.open()
+		return
 
 	if(user != src)
 		if(href_list["item"] && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
@@ -996,9 +1053,10 @@
 
 /mob/proc/swap_hand()
 	var/obj/item/held_item = get_active_held_item()
-	if(SEND_SIGNAL(src, COMSIG_MOB_SWAP_HANDS, held_item) & COMPONENT_BLOCK_SWAP)
-		to_chat(src, "<span class='warning'>Your other hand is too busy holding [held_item].</span>")
+	if(SEND_SIGNAL(src, COMSIG_MOB_SWAPPING_HANDS, held_item) & COMPONENT_BLOCK_SWAP)
+		to_chat(src, span_warning("Your other hand is too busy holding [held_item]."))
 		return FALSE
+	SEND_SIGNAL(src, COMSIG_MOB_SWAP_HANDS)
 	return TRUE
 
 /mob/proc/activate_hand(selhand)
@@ -1200,6 +1258,7 @@
 	var/list/searching = GetAllContents()
 	var/search_id = 1
 	var/search_pda = 1
+	var/search_bankcard = 1
 
 	for(var/A in searching)
 		if(search_id && istype(A, /obj/item/card/id))
@@ -1207,18 +1266,24 @@
 			if(ID.registered_name == oldname)
 				ID.registered_name = newname
 				ID.update_label()
-				if(ID.registered_account?.account_holder == oldname)
-					ID.registered_account.account_holder = newname
-				if(!search_pda)
+				if(!search_pda || !search_bankcard)
 					break
 				search_id = 0
+
+		if(search_bankcard && istype(A, /obj/item/card/bank))
+			var/obj/item/card/bank/bank_card = A
+			if(bank_card.registered_account?.account_holder == oldname)
+				bank_card.registered_account.account_holder = newname
+				if(!search_id || !search_pda)
+					break
+				search_bankcard = 0
 
 		else if(search_pda && istype(A, /obj/item/pda))
 			var/obj/item/pda/PDA = A
 			if(PDA.owner == oldname)
 				PDA.owner = newname
 				PDA.update_label()
-				if(!search_id)
+				if(!search_id || !search_bankcard)
 					break
 				search_pda = 0
 
@@ -1267,10 +1332,10 @@
 ///Can this mob read (is literate and not blind)
 /mob/proc/can_read(obj/O)
 	if(is_blind())
-		to_chat(src, "<span class='warning'>As you are trying to read [O], you suddenly feel very stupid!</span>")
+		to_chat(src, span_warning("As you are trying to read [O], you suddenly feel very stupid!"))
 		return
 	if(!is_literate())
-		to_chat(src, "<span class='notice'>You try to read [O], but can't comprehend any of it.</span>")
+		to_chat(src, span_notice("You try to read [O], but can't comprehend any of it."))
 		return
 	return TRUE
 
@@ -1299,6 +1364,9 @@
 
 ///Get the id card on this mob
 /mob/proc/get_idcard(hand_first)
+	return
+
+/mob/proc/get_bankcard()
 	return
 
 /mob/proc/get_id_in_hand()
@@ -1388,12 +1456,11 @@
 	fully_replace_character_name(real_name, new_name)
 
 ///Show the language menu for this mob
-/mob/verb/open_language_menu()
+/mob/verb/open_language_menu_verb()
 	set name = "Open Language Menu"
 	set category = "IC"
 
-	var/datum/language_holder/H = get_language_holder()
-	H.open_language_menu(usr)
+	get_language_holder().open_language_menu(usr)
 
 ///Adjust the nutrition of a mob
 /mob/proc/adjust_nutrition(change) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks

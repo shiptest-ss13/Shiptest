@@ -3,7 +3,7 @@
 /////////////////////////
 
 /obj/item/mecha_parts
-	name = "mecha part"
+	name = "exosuit part"
 	icon = 'icons/mecha/mech_construct.dmi'
 	icon_state = "blank"
 	w_class = WEIGHT_CLASS_GIGANTIC
@@ -11,16 +11,16 @@
 
 /obj/item/mecha_parts/proc/try_attach_part(mob/user, obj/mecha/M) //For attaching parts to a finished mech
 	if(!user.transferItemToLoc(src, M))
-		to_chat(user, "<span class='warning'>\The [src] is stuck to your hand, you cannot put it in \the [M]!</span>")
+		to_chat(user, span_warning("\The [src] is stuck to your hand, you cannot put it in \the [M]!"))
 		return FALSE
-	user.visible_message("<span class='notice'>[user] attaches [src] to [M].</span>", "<span class='notice'>You attach [src] to [M].</span>")
+	user.visible_message(span_notice("[user] attaches [src] to [M]."), span_notice("You attach [src] to [M]."))
 	return TRUE
 
 /obj/item/mecha_parts/part/try_attach_part(mob/user, obj/mecha/M)
 	return
 
 /obj/item/mecha_parts/chassis
-	name = "Mecha Chassis"
+	name = "Exosuit Chassis"
 	icon_state = "backbone"
 	interaction_flags_item = NONE			//Don't pick us up!!
 	var/construct_type
@@ -64,80 +64,90 @@
 ///////// Odysseus
 
 /obj/item/mecha_parts/chassis/odysseus
-	name = "\improper Odysseus chassis"
+	name = "\improper 200 Series chassis"
 	construct_type = /datum/component/construction/unordered/mecha_chassis/odysseus
 
 /obj/item/mecha_parts/part/odysseus_head
-	name = "\improper Odysseus head"
-	desc = "An Odysseus head. Contains an integrated medical HUD scanner."
+	name = "\improper 200 Series head"
+	desc = "A 200 Series head. Contains an integrated medical HUD scanner."
 	icon_state = "odysseus_head"
 
 /obj/item/mecha_parts/part/odysseus_torso
-	name = "\improper Odysseus torso"
-	desc="A torso part of Odysseus. Contains power unit, processing core and life support systems along with an attachment port for a mounted sleeper."
+	name = "\improper 200 Series torso"
+	desc="The torso of a 200 Series exosuit. Contains power unit, processing core and life support systems along with an attachment port for a mounted sleeper."
 	icon_state = "odysseus_torso"
 
 /obj/item/mecha_parts/part/odysseus_left_arm
-	name = "\improper Odysseus left arm"
-	desc = "An Odysseus left arm. Data and power sockets are compatible with specialized medical equipment."
+	name = "\improper 200 Series left arm"
+	desc = "A 200 Series left arm. Data and power sockets are compatible with specialized medical equipment."
 	icon_state = "odysseus_l_arm"
 
 /obj/item/mecha_parts/part/odysseus_right_arm
-	name = "\improper Odysseus right arm"
-	desc = "An Odysseus right arm. Data and power sockets are compatible with specialized medical equipment."
+	name = "\improper 200 Series right arm"
+	desc = "A 200 Series right arm. Data and power sockets are compatible with specialized medical equipment."
 	icon_state = "odysseus_r_arm"
 
 /obj/item/mecha_parts/part/odysseus_left_leg
-	name = "\improper Odysseus left leg"
-	desc = "An Odysseus left leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
+	name = "\improper 200 Series left leg"
+	desc = "A 200 Series left leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
 	icon_state = "odysseus_l_leg"
 
 /obj/item/mecha_parts/part/odysseus_right_leg
-	name = "\improper Odysseus right leg"
-	desc = "An odysseus right leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
+	name = "\improper 200 Series right leg"
+	desc = "A 200 Series right leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
 	icon_state = "odysseus_r_leg"
 
 ///////// Gygax
 
 /obj/item/mecha_parts/chassis/gygax
-	name = "\improper Gygax chassis"
+	name = "\improper 500 Series chassis"
 	construct_type = /datum/component/construction/unordered/mecha_chassis/gygax
 
 /obj/item/mecha_parts/part/gygax_torso
-	name = "\improper Gygax torso"
-	desc = "A torso part of Gygax. Contains power unit, processing core and life support systems."
+	name = "\improper 500 Series torso"
+	desc = "The torso of a 500 Series exosuit. Contains power unit, processing core and life support systems."
 	icon_state = "gygax_harness"
 
 /obj/item/mecha_parts/part/gygax_head
-	name = "\improper Gygax head"
-	desc = "A Gygax head. Houses advanced surveillance and targeting sensors."
+	name = "\improper 500 Series head"
+	desc = "A 500 Series head. Houses advanced surveillance and targeting sensors."
 	icon_state = "gygax_head"
 
 /obj/item/mecha_parts/part/gygax_left_arm
-	name = "\improper Gygax left arm"
-	desc = "A Gygax left arm. Data and power sockets are compatible with most exosuit tools and weapons."
+	name = "\improper 500 Series left arm"
+	desc = "A 500 Series left arm. Data and power sockets are compatible with most exosuit tools and weapons."
 	icon_state = "gygax_l_arm"
 
 /obj/item/mecha_parts/part/gygax_right_arm
-	name = "\improper Gygax right arm"
-	desc = "A Gygax right arm. Data and power sockets are compatible with most exosuit tools and weapons."
+	name = "\improper 500 Series right arm"
+	desc = "A 500 Series right arm. Data and power sockets are compatible with most exosuit tools and weapons."
 	icon_state = "gygax_r_arm"
 
 /obj/item/mecha_parts/part/gygax_left_leg
-	name = "\improper Gygax left leg"
-	desc = "A Gygax left leg. Constructed with advanced servomechanisms and actuators to enable faster speed."
+	name = "\improper 500 Series left leg"
+	desc = "A 500 Series left leg. Constructed with advanced servomechanisms and actuators to enable faster speed."
 	icon_state = "gygax_l_leg"
 
 /obj/item/mecha_parts/part/gygax_right_leg
-	name = "\improper Gygax right leg"
-	desc = "A Gygax right leg. Constructed with advanced servomechanisms and actuators to enable faster speed."
+	name = "\improper 500 Series right leg"
+	desc = "A 500 Series right leg. Constructed with advanced servomechanisms and actuators to enable faster speed."
 	icon_state = "gygax_r_leg"
 
 /obj/item/mecha_parts/part/gygax_armor
 	gender = PLURAL
-	name = "\improper Gygax armor plates"
-	desc = "A set of armor plates designed for the Gygax. Designed to effectively deflect damage with a lightweight construction."
+	name = "\improper 500 Series armor plates"
+	desc = "A set of armor plates designed for the 500 Series. Designed to effectively deflect damage with a lightweight construction."
 	icon_state = "gygax_armor"
+
+/obj/item/mecha_parts/chassis/mp_gygax
+	name = "\improper MP-Gygax chassis"
+	construct_type = /datum/component/construction/unordered/mecha_chassis/mpgygax
+
+/obj/item/mecha_parts/part/mpgygax_armor
+	gender = PLURAL
+	name = "\improper MP-Gygax armor plates"
+	desc = "A set of stripped down armor plates designed for the MP-Gygax. Designed to moderately deflect damage with a lightweight construction."
+	icon_state = "mpgygax_armor"
 
 
 //////////// Durand
@@ -294,15 +304,15 @@
 
 
 /obj/item/circuitboard/mecha/gygax/peripherals
-	name = "Gygax Peripherals Control module (Exosuit Board)"
+	name = "500 Series Peripherals Control module (Exosuit Board)"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/gygax/targeting
-	name = "Gygax Weapon Control and Targeting module (Exosuit Board)"
+	name = "500 Series Weapon Control and Targeting module (Exosuit Board)"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/gygax/main
-	name = "Gygax Central Control module (Exosuit Board)"
+	name = "500 Series Central Control module (Exosuit Board)"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/durand/peripherals
@@ -330,11 +340,11 @@
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/odysseus/peripherals
-	name = "Odysseus Peripherals Control module (Exosuit Board)"
+	name = "200 Series Peripherals Control module (Exosuit Board)"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/odysseus/main
-	name = "Odysseus Central Control module (Exosuit Board)"
+	name = "200 Series Central Control module (Exosuit Board)"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/phazon/peripherals

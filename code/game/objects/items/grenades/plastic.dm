@@ -34,7 +34,7 @@
 
 /obj/item/grenade/c4/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		to_chat(user, "<span class='notice'>The wire panel can be accessed without a screwdriver.</span>")
+		to_chat(user, span_notice("The wire panel can be accessed without a screwdriver."))
 	else if(is_wire_tool(I))
 		wires.interact(user)
 	else
@@ -52,6 +52,9 @@
 			target.cut_overlay(plastic_overlay, TRUE)
 			if(!ismob(target) || full_damage_on_mobs)
 				target.ex_act(EXPLODE_HEAVY, target)
+			if(iswallturf(target))
+				var/turf/closed/wall/wall = target
+				wall.dismantle_wall(TRUE)
 	else
 		location = get_turf(src)
 	if(location)
@@ -64,7 +67,12 @@
 
 //assembly stuff
 /obj/item/grenade/c4/receive_signal()
-	prime()
+	if(!active)
+		active = TRUE
+		icon_state = "[item_state]2"
+		balloon_alert_to_viewers("[src] begins ticking!")
+		addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
+	return
 
 /obj/item/grenade/c4/attack_self(mob/user)
 	var/newtime = input(usr, "Please set the timer.", "Timer", 10) as num|null
@@ -73,7 +81,7 @@
 		return
 
 	if(user.get_active_held_item() == src)
-		newtime = clamp(newtime, 10, 60000)
+		newtime = clamp(newtime, 0, 60000)
 		det_time = newtime
 		to_chat(user, "Timer set for [det_time] seconds.")
 
@@ -83,7 +91,7 @@
 	if(!flag)
 		return
 
-	to_chat(user, "<span class='notice'>You start planting [src]. The timer is set to [det_time]...</span>")
+	to_chat(user, span_notice("You start planting [src]. The timer is set to [det_time]..."))
 
 	if(do_after(user, 30, target = AM))
 		if(!user.temporarilyRemoveItemFromInventory(src))
@@ -108,7 +116,7 @@
 			plastic_overlay.layer = FLOAT_LAYER
 
 		target.add_overlay(plastic_overlay)
-		to_chat(user, "<span class='notice'>You plant the bomb. Timer counting down from [det_time].</span>")
+		to_chat(user, span_notice("You plant the bomb. Timer counting down from [det_time]."))
 		addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
 
 // X4 is an upgraded directional variant of c4 which is relatively safe to be standing next to. And much less safe to be standing on the other side of.
@@ -122,3 +130,16 @@
 	item_state = "plasticx4"
 	directional = TRUE
 	boom_sizes = list(0, 2, 5)
+
+
+// x-com ufo defense high ex charge 1993
+/obj/item/grenade/c4/satchel_charge
+	name = "\improper satchel charge"
+	desc = "Used to put craters into places without too much hassle. An engineer's favorite."
+	w_class = WEIGHT_CLASS_NORMAL
+	icon_state = "satchel_charge0"
+	item_state = "satchel_charge"
+	throw_range = 3
+	lefthand_file = 'icons/mob/inhands/weapons/bombs_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
+	boom_sizes = list(0, 3, 5)

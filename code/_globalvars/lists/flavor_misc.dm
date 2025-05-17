@@ -46,6 +46,7 @@ GLOBAL_LIST_EMPTY(spider_legs_list)
 GLOBAL_LIST_EMPTY(spider_spinneret_list)
 GLOBAL_LIST_EMPTY(kepori_feathers_list)
 GLOBAL_LIST_EMPTY(kepori_body_feathers_list)
+GLOBAL_LIST_EMPTY(kepori_head_feathers_list)
 GLOBAL_LIST_EMPTY(kepori_tail_feathers_list)
 GLOBAL_LIST_EMPTY(vox_head_quills_list)
 GLOBAL_LIST_EMPTY(vox_neck_quills_list)
@@ -189,6 +190,17 @@ GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR
 #define UPLINK_PEN "Pen" //like a real spy!
 GLOBAL_LIST_INIT(uplink_spawn_loc_list, list(UPLINK_PDA, UPLINK_RADIO, UPLINK_PEN))
 
+//favorite cigarette brand
+#define PREF_CIG_SPACE "Space Cigarettes"
+#define PREF_CIG_DROMEDARY "DromedaryCo Cigarettes"
+#define PREF_CIG_UPLIFT "Uplift Smooth Cigarettes"
+#define PREF_CIG_ROBUST "Robust Cigarettes"
+#define PREF_CIG_ROBUSTGOLD "Robust Gold Cigarettes"
+#define PREF_CIG_CARP "Carp Classic Cigarettes"
+#define PREF_CIG_MIDORI "Midori Taboko Rollies"
+
+GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI)))
+
 	//Female Uniforms
 GLOBAL_LIST_EMPTY(female_clothing_icons)
 	//Alternate species icons
@@ -230,9 +242,8 @@ GLOBAL_LIST_INIT(scarySounds, list('sound/weapons/thudswoosh.ogg','sound/weapons
 25 Toxins
 26 Dormitories
 27 Virology
-28 Xenobiology
-29 Law Office
-30 Detective's Office
+28 Law Office
+29 Detective's Office
 */
 
 //The whole system for the sorttype var is determined based on the order of this list,
@@ -248,7 +259,7 @@ GLOBAL_LIST_INIT(TAGGERLOCATIONS, list("Disposals",
 	"Robotics", "Head of Personnel's Office", "Library", "Chapel", "Theatre",
 	"Bar", "Kitchen", "Hydroponics", "Janitor Closet","Genetics",
 	"Experimentor Lab", "Toxins", "Dormitories", "Virology",
-	"Xenobiology", "Law Office","Detective's Office"))
+	"Law Office","Detective's Office"))
 
 GLOBAL_LIST_INIT(station_prefixes, world.file2list("strings/station_prefixes.txt"))
 
@@ -281,4 +292,13 @@ GLOBAL_LIST_INIT(planet_prefixes, world.file2list("strings/planet_prefixes.txt")
 
 GLOBAL_LIST_INIT(station_numerals, greek_letters + phonetic_alphabet + numbers_as_words + generate_number_strings())
 
-GLOBAL_LIST_INIT(admiral_messages, list("Do you know how expensive these stations are?","Stop wasting my time.","I was sleeping, thanks a lot.","Stand and fight you cowards!","You knew the risks coming in.","Stop being paranoid.","Whatever's broken just build a new one.","No.", "<i>null</i>","<i>Error: No comment given.</i>", "It's a good day to die!"))
+/// 1000 element long list containing the 1000 most common words in the English language.
+/// Indexed by word, value is the rank of the word in the list. So accessing it is fasta.
+GLOBAL_LIST_INIT(most_common_words, init_common_words())
+
+/proc/init_common_words()
+	. = list()
+	var/i = 1
+	for(var/word in world.file2list("strings/1000_most_common.txt"))
+		.[word] = i
+		i += 1

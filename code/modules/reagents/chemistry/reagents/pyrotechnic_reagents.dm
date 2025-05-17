@@ -155,6 +155,14 @@
 	color = "#C8C8C8"
 	taste_description = "smoke"
 
+/datum/reagent/dense_smoke_powder
+	name = "Dense Smoke Powder"
+	description = "Makes a large cloud of thick smoke that can carry reagents."
+	category = "Pyrotechnics"
+	reagent_state = LIQUID
+	color = "#C8C8C8"
+	taste_description = "smoke"
+
 /datum/reagent/sonic_powder
 	name = "Sonic Powder"
 	description = "Makes a deafening noise."
@@ -230,7 +238,7 @@
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
 		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
-		M.adjust_bodytemperature(-15)
+		M.adjust_bodytemperature(-5)
 	..()
 
 /datum/reagent/cryostylane/expose_turf(turf/T, reac_volume)
@@ -251,7 +259,7 @@
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
 		M.reagents.remove_reagent(/datum/reagent/oxygen, 0.5)
-		M.adjust_bodytemperature(15)
+		M.adjust_bodytemperature(5)
 	..()
 
 /datum/reagent/teslium //Teslium. Causes periodic shocks, and makes shocks against the target much more effective.
@@ -299,10 +307,6 @@
 		shock_timer = 0 //immune to shocks
 		M.AdjustAllImmobility(-40)
 		M.adjustStaminaLoss(-2, 0)
-		if(isluminescent(M))
-			var/mob/living/carbon/human/H = M
-			var/datum/species/jelly/luminescent/L = H.dna.species
-			L.extract_cooldown = max(0, L.extract_cooldown - 20)
 	..()
 
 /datum/reagent/firefighting_foam
@@ -324,14 +328,7 @@
 		else if(istype(F))
 			F.lifetime = initial(F.lifetime) //reduce object churn a little bit when using smoke by keeping existing foam alive a bit longer
 
-	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
-	if(hotspot && !isspaceturf(T))
-		if(T.air)
-			var/datum/gas_mixture/G = T.air
-			if(G.return_temperature() > T20C)
-				G.set_temperature(max(G.return_temperature()/2,T20C))
-			G.react(src)
-			qdel(hotspot)
+	T.extinguish_turf()
 
 /datum/reagent/firefighting_foam/expose_obj(obj/O, reac_volume)
 	O.extinguish()

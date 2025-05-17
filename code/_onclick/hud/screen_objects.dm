@@ -89,7 +89,7 @@
 		return TRUE
 	var/area/A = get_area(usr)
 	if(!A.outdoors)
-		to_chat(usr, "<span class='warning'>There is already a defined structure here.</span>")
+		to_chat(usr, span_warning("There is already a defined structure here."))
 		return TRUE
 	create_area(usr)
 
@@ -100,9 +100,7 @@
 	screen_loc = ui_language_menu
 
 /atom/movable/screen/language_menu/Click()
-	var/mob/M = usr
-	var/datum/language_holder/H = M.get_language_holder()
-	H.open_language_menu(usr)
+	usr.get_language_holder().open_language_menu(usr)
 
 /atom/movable/screen/inventory
 	var/slot_id	// The indentifier for the slot. It has nothing to do with ID cards.
@@ -184,7 +182,7 @@
 	var/image/item_overlay = image(holding)
 	item_overlay.alpha = 92
 
-	if(!user.can_equip(holding, slot_id, TRUE))
+	if(!user.can_equip(holding, slot_id, TRUE, TRUE))
 		item_overlay.color = "#FF0000"
 	else
 		item_overlay.color = "#00ff00"
@@ -316,7 +314,7 @@
 
 	if(breather.internal)
 		breather.internal = null
-		to_chat(breather, "<span class='notice'>You are no longer running on internals.</span>")
+		to_chat(breather, span_notice("You are no longer running on internals."))
 		icon_state = "internal0"
 	else
 		if(!breather.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
@@ -335,37 +333,37 @@
 					internals = TRUE
 
 			if(!internals)
-				to_chat(breather, "<span class='warning'>You are not wearing an internals mask!</span>")
+				to_chat(breather, span_warning("You are not wearing an internals mask!"))
 				return
 
 		var/obj/item/I = breather.is_holding_item_of_type(/obj/item/tank)
 		if(I)
-			to_chat(breather, "<span class='notice'>You are now running on internals from [I] in your [breather.get_held_index_name(breather.get_held_index_of_item(I))].</span>")
+			to_chat(breather, span_notice("You are now running on internals from [I] in your [breather.get_held_index_name(breather.get_held_index_of_item(I))]."))
 			breather.internal = I
 		else if(ishuman(breather))
 			var/mob/living/carbon/human/H = breather
 			if(istype(H.s_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>You are now running on internals from [H.s_store] on your [H.wear_suit.name].</span>")
+				to_chat(H, span_notice("You are now running on internals from [H.s_store] on your [H.wear_suit.name]."))
 				H.internal = H.s_store
 			else if(istype(H.belt, /obj/item/tank))
-				to_chat(H, "<span class='notice'>You are now running on internals from [H.belt] on your belt.</span>")
+				to_chat(H, span_notice("You are now running on internals from [H.belt] on your belt."))
 				H.internal = H.belt
 			else if(istype(H.l_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>You are now running on internals from [H.l_store] in your left pocket.</span>")
+				to_chat(H, span_notice("You are now running on internals from [H.l_store] in your left pocket."))
 				H.internal = H.l_store
 			else if(istype(H.r_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>You are now running on internals from [H.r_store] in your right pocket.</span>")
+				to_chat(H, span_notice("You are now running on internals from [H.r_store] in your right pocket."))
 				H.internal = H.r_store
 
 		//Separate so CO2 jetpacks are a little less cumbersome.
 		if(!breather.internal && istype(breather.back, /obj/item/tank))
-			to_chat(breather, "<span class='notice'>You are now running on internals from [breather.back] on your back.</span>")
+			to_chat(breather, span_notice("You are now running on internals from [breather.back] on your back."))
 			breather.internal = breather.back
 
 		if(breather.internal)
 			icon_state = "internal1"
 		else
-			to_chat(breather, "<span class='warning'>You don't have an oxygen tank!</span>")
+			to_chat(breather, span_warning("You don't have an oxygen tank!"))
 			return
 	breather.update_action_buttons_icon()
 
@@ -597,28 +595,6 @@
 	icon = 'icons/hud/screen_cyborg.dmi'
 	screen_loc = ui_borg_health
 
-/atom/movable/screen/healths/blob
-	name = "blob health"
-	icon_state = "block"
-	screen_loc = ui_internal
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/atom/movable/screen/healths/blob/naut
-	name = "health"
-	icon = 'icons/mob/blob.dmi'
-	icon_state = "nauthealth"
-
-/atom/movable/screen/healths/blob/naut/core
-	name = "overmind health"
-	icon_state = "corehealth"
-	screen_loc = ui_health
-
-/atom/movable/screen/healths/guardian
-	name = "summoner health"
-	icon = 'icons/mob/guardian.dmi'
-	icon_state = "base"
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
 /atom/movable/screen/healths/revenant
 	name = "essence"
 	icon = 'icons/mob/actions/backgrounds.dmi'
@@ -733,3 +709,42 @@
 		intent_icon.pixel_x = 16 * (i - 1) - 8 * length(streak)
 		add_overlay(intent_icon)
 	return ..()
+
+/atom/movable/screen/progbar_container
+	name = "swing cooldown"
+	icon_state = ""
+	screen_loc = "CENTER,SOUTH:16"
+	var/datum/world_progressbar/progbar
+	var/iteration = 0
+
+/atom/movable/screen/progbar_container/Initialize(mapload)
+	. = ..()
+	progbar = new(src)
+	progbar.qdel_when_done = FALSE
+	progbar.bar.vis_flags = VIS_INHERIT_ID | VIS_INHERIT_LAYER | VIS_INHERIT_PLANE
+	progbar.bar.appearance_flags = APPEARANCE_UI
+
+/atom/movable/screen/progbar_container/Destroy()
+	QDEL_NULL(progbar)
+	return ..()
+
+/atom/movable/screen/progbar_container/proc/on_changenext(datum/source, next_move)
+	SIGNAL_HANDLER
+
+	iteration++
+	progbar.goal = next_move - world.time
+	progbar.bar.icon_state = "prog_bar_0"
+
+	progbar_process(next_move)
+
+/atom/movable/screen/progbar_container/proc/progbar_process(next_move)
+	set waitfor = FALSE
+
+	var/start_time = world.time
+	var/iteration = src.iteration
+	while(iteration == src.iteration && (world.time < next_move))
+		progbar.update(world.time - start_time)
+		sleep(1)
+
+	if(iteration == src.iteration)
+		progbar.end_progress()

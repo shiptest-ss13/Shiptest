@@ -6,6 +6,7 @@
 	desc = "Heats or cools gas in connected pipes."
 
 	density = TRUE
+	idle_power_usage = IDLE_DRAW_LOW
 	max_integrity = 300
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 30)
 	layer = OBJ_LAYER
@@ -62,12 +63,12 @@
 
 /obj/machinery/atmospherics/components/unary/thermomachine/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The thermostat is set to [target_temperature]K ([(T0C-target_temperature)*-1]C).</span>"
+	. += span_notice("The thermostat is set to [target_temperature]K ([(T0C-target_temperature)*-1]C).")
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Efficiency <b>[(heat_capacity/5000)*100]%</b>.</span>"
-		. += "<span class='notice'>Temperature range <b>[min_temperature]K - [max_temperature]K ([(T0C-min_temperature)*-1]C - [(T0C-max_temperature)*-1]C)</b>.</span>"
+		. += span_notice("The status display reads: Efficiency <b>[(heat_capacity/5000)*100]%</b>.")
+		. += span_notice("Temperature range <b>[min_temperature]K - [max_temperature]K ([(T0C-min_temperature)*-1]C - [(T0C-max_temperature)*-1]C)</b>.")
 
-/obj/machinery/atmospherics/components/unary/thermomachine/process_atmos()
+/obj/machinery/atmospherics/components/unary/thermomachine/process_atmos(seconds_per_tick)
 	..()
 	if(!on || !nodes[1])
 		return
@@ -83,7 +84,7 @@
 
 	var/temperature_delta= abs(old_temperature - air_contents.return_temperature())
 	if(temperature_delta > 1)
-		active_power_usage = (heat_capacity * temperature_delta) / 10 + idle_power_usage
+		active_power_usage = (heat_capacity * temperature_delta) / 5 + idle_power_usage
 		update_parents()
 	else
 		active_power_usage = idle_power_usage
@@ -152,7 +153,10 @@
 	switch(action)
 		if("power")
 			on = !on
-			use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
+			if(on)
+				set_active_power()
+			else
+				set_idle_power()
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 		if("target")
@@ -182,6 +186,10 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	on = !on
+	if(on)
+		set_active_power()
+	else
+		set_idle_power()
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 	update_appearance()
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
@@ -229,7 +237,7 @@
 	target_temperature = min_temperature
 	investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
 	message_admins("[src.name] was minimized by [ADMIN_LOOKUPFLW(user)] at [ADMIN_COORDJMP(T)], [A]")
-	to_chat(user, "<span class='notice'>You minimize the target temperature on [src] to [target_temperature] K.</span>")
+	to_chat(user, span_notice("You minimize the target temperature on [src] to [target_temperature] K."))
 
 /obj/machinery/atmospherics/components/unary/thermomachine/heater
 	name = "heater"
@@ -261,4 +269,4 @@
 	target_temperature = max_temperature
 	investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
 	message_admins("[src.name] was maximized by [ADMIN_LOOKUPFLW(user)] at [ADMIN_COORDJMP(T)], [A]")
-	to_chat(user, "<span class='notice'>You maximize the target temperature on [src] to [target_temperature] K.</span>")
+	to_chat(user, span_notice("You maximize the target temperature on [src] to [target_temperature] K."))

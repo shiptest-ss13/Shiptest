@@ -3,7 +3,7 @@
 /area/outpost
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
-	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | NOTELEPORT // not unique, in case multiple outposts get loaded. all derivatives should also be NOTELEPORT
+	area_flags = VALID_TERRITORY | NOTELEPORT // not unique, in case multiple outposts get loaded. all derivatives should also be NOTELEPORT
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_STANDARD_STATION
 	lighting_colour_tube = "#ffce99"
@@ -211,6 +211,7 @@
 	icon_state = "green"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
+	allow_weather = TRUE
 
 // this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external
@@ -220,6 +221,7 @@
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	ambientsounds = SPACE
 	sound_environment = SOUND_AREA_SPACE
+	allow_weather = TRUE
 
 
 /area/hangar

@@ -28,10 +28,10 @@
 /obj/structure/barricade/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM && bar_material == METAL)
 		if(obj_integrity < max_integrity)
-			if(!I.tool_start_check(user, amount=0))
+			if(!I.tool_start_check(user, src, amount=0))
 				return
 
-			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+			to_chat(user, span_notice("You begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=40))
 				obj_integrity = clamp(obj_integrity + 20, 0, max_integrity)
 	else
@@ -67,10 +67,10 @@
 	if(istype(I,/obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = I
 		if(W.amount < 5)
-			to_chat(user, "<span class='warning'>You need at least five wooden planks to make a wall!</span>")
+			to_chat(user, span_warning("You need at least five wooden planks to make a wall!"))
 			return
 		else
-			to_chat(user, "<span class='notice'>You start adding [I] to [src]...</span>")
+			to_chat(user, span_notice("You start adding [I] to [src]..."))
 			if(do_after(user, 50, target=src))
 				W.use(5)
 				var/turf/T = get_turf(src)
@@ -79,6 +79,16 @@
 				return
 	return ..()
 
+/obj/structure/barricade/wooden/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return FALSE
+	if(!I.tool_start_check(user, src, amount=0))
+		return FALSE
+	if (I.use_tool(src, user, 2 SECONDS, volume=0))
+		to_chat(user, span_warning("You cut apart [src]."))
+		deconstruct()
+		return TRUE
 
 /obj/structure/barricade/wooden/crude
 	name = "crude plank barricade"
@@ -111,6 +121,24 @@
 	smoothing_groups = list(SMOOTH_GROUP_SANDBAGS)
 	canSmoothWith = list(SMOOTH_GROUP_SANDBAGS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_SECURITY_BARRICADE)
 
+/obj/structure/barricade/sandbags/MouseDrop(over_object, src_location, over_location)
+	. = ..()
+	if(over_object == usr && Adjacent(usr))
+		if(src.flags_1 & NODECONSTRUCT_1)
+			return
+		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
+			return
+		usr.visible_message(span_notice("[usr] begins pulling apart \the [src.name]..."), span_notice("You begin pulling apart \the [src.name]..."))
+		if(do_after(usr, 30, usr))
+			deconstruct()
+
+/obj/structure/barricade/sandbags/make_debris()
+	new /obj/item/stack/sheet/mineral/sandbags(get_turf(src), 1)
+
+/obj/structure/barricade/sandbags/examine(mob/user)
+	. = ..()
+	. += span_notice("You could probably <b>pull</b> the [src.name] by dragging it onto yourself.")
+
 /obj/structure/barricade/security
 	name = "security barrier"
 	desc = "A deployable barrier. Provides good cover in fire fights."
@@ -135,7 +163,7 @@
 	density = TRUE
 	anchored = TRUE
 	if(deploy_message)
-		visible_message("<span class='warning'>[src] deploys!</span>")
+		visible_message(span_warning("[src] deploys!"))
 
 
 /obj/item/grenade/barrier
@@ -149,7 +177,7 @@
 
 /obj/item/grenade/barrier/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to toggle modes.</span>"
+	. += span_notice("Alt-click to toggle modes.")
 
 /obj/item/grenade/barrier/AltClick(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
@@ -165,7 +193,7 @@
 		if(HORIZONTAL)
 			mode = SINGLE
 
-	to_chat(user, "<span class='notice'>[src] is now in [mode] mode.</span>")
+	to_chat(user, span_notice("[src] is now in [mode] mode."))
 
 /obj/item/grenade/barrier/prime()
 	. = ..()

@@ -35,6 +35,7 @@
 	icon_state = "plasma"
 	floor_tile = /obj/item/stack/tile/mineral/plasma
 	icons = list("plasma","plasma_dam")
+	flammability = 25 // oh fuck-
 
 /turf/open/floor/mineral/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
@@ -81,6 +82,8 @@
 	icon_state = "titanium"
 	floor_tile = /obj/item/stack/tile/mineral/titanium
 	broken_states = list("titanium_dam1","titanium_dam2","titanium_dam3","titanium_dam4","titanium_dam5")
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
 
 /turf/open/floor/mineral/titanium/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -162,6 +165,10 @@
 /turf/open/floor/mineral/plastitanium/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
+/turf/open/floor/mineral/plastitanium/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
+
+
 /turf/open/floor/mineral/plastitanium/red
 	icon_state = "plastitanium_red"
 	floor_tile = /obj/item/stack/tile/mineral/plastitanium/red
@@ -169,51 +176,14 @@
 /turf/open/floor/mineral/plastitanium/red/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
+/turf/open/floor/mineral/plastitanium/red/jungle
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
 /turf/open/floor/mineral/plastitanium/red/brig
 	name = "brig floor"
 
-//BANANIUM
-
-/turf/open/floor/mineral/bananium
-	name = "bananium floor"
-	icon_state = "bananium"
-	floor_tile = /obj/item/stack/tile/mineral/bananium
-	icons = list("bananium","bananium_dam")
-	var/spam_flag = 0
-
-/turf/open/floor/mineral/bananium/Entered(atom/movable/AM)
-	.=..()
-	if(!.)
-		if(isliving(AM))
-			squeak()
-
-/turf/open/floor/mineral/bananium/attackby(obj/item/W, mob/user, params)
-	.=..()
-	if(!.)
-		honk()
-
-/turf/open/floor/mineral/bananium/attack_hand(mob/user)
-	.=..()
-	if(!.)
-		honk()
-
-/turf/open/floor/mineral/bananium/attack_paw(mob/user)
-	.=..()
-	if(!.)
-		honk()
-
-/turf/open/floor/mineral/bananium/proc/honk()
-	if(spam_flag < world.time)
-		playsound(src, 'sound/items/bikehorn.ogg', 50, TRUE)
-		spam_flag = world.time + 20
-
-/turf/open/floor/mineral/bananium/proc/squeak()
-	if(spam_flag < world.time)
-		playsound(src, "clownstep", 50, TRUE)
-		spam_flag = world.time + 10
-
-/turf/open/floor/mineral/bananium/airless
-	initial_gas_mix = AIRLESS_ATMOS
+/turf/open/floor/mineral/plastitanium/red/wasteplanet
+	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
 
 //DIAMOND
 

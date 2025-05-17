@@ -28,7 +28,7 @@
 		if(WIRE_PIN)
 			if(ourmine.clicked == TRUE)
 				holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] You hear something inside \the [ourmine] click softly."))
-				playsound(ourmine, 'sound/weapons/empty.ogg', 30, TRUE)
+				playsound(ourmine, SOUND_EMPTY_MAG, 30, TRUE)
 				ourmine.clicked = FALSE
 			else
 				holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s detonation pad shifts slightly. Nothing happens."))
@@ -61,7 +61,7 @@
 				ourmine.dud = TRUE
 				if(ourmine.clicked == TRUE)
 					holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] You hear something inside \the [ourmine] shift out of place."))
-					playsound(ourmine, 'sound/weapons/empty.ogg', 30, TRUE)
+					playsound(ourmine, SOUND_EMPTY_MAG, 30, TRUE)
 					ourmine.clicked = FALSE
 				else
 					holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s detonation pad goes loose."))

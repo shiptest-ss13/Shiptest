@@ -1,16 +1,22 @@
 /obj/item/gun/energy/e_gun
 	name = "energy rifle"
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
-	modifystate = 1
-	can_flashlight = TRUE
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
+	modifystate = TRUE
 	ammo_x_offset = 2
-	flight_x_offset = 15
-	flight_y_offset = 10
 	dual_wield_spread = 60
+	wield_slowdown = LASER_RIFLE_SLOWDOWN
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gun/energy/e_gun/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/e_gun/mini
 	name = "miniature energy gun"
@@ -18,69 +24,59 @@
 	icon_state = "mini"
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
-	cell_type = /obj/item/stock_parts/cell/gun/mini
-	small_gun = TRUE
+	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/mini,
+	)
 	throwforce = 11 //This is funny, trust me.
 	ammo_x_offset = 2
 	charge_sections = 3
-	can_flashlight = FALSE // Can't attach or detach the flashlight, and override it's icon update
-	gunlight_state = "mini-light"
-	flight_x_offset = 19
-	flight_y_offset = 13
-
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
 
-/obj/item/gun/energy/e_gun/mini/Initialize()
-	set_gun_light(new /obj/item/flashlight/seclite(src))
-	return ..()
+/obj/item/gun/energy/e_gun/mini/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
 	desc = "The standard issue rifle of Nanotrasen's Security Forces. Most have been put in long term storage following the ICW, and usually aren't issued to low ranking security divisions."
-	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "energytac"
 	ammo_x_offset = 2
 	charge_sections = 5
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault, /obj/item/ammo_casing/energy/disabler)
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault/sharplite, /obj/item/ammo_casing/energy/disabler/sharplite)
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
-	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
-	spread_unwielded = 20
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
-/obj/item/gun/energy/e_gun/hades/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	fire_delay = 0.2 SECONDS
+
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
+	spread_unwielded = 20
 
 /obj/item/gun/energy/e_gun/old
 	name = "prototype energy gun"
 	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has a multifaceted energy lens, allowing the gun to alter the form of projectile it fires on command. The project was a dud, and Nanotrasen later acquired Sharplite to suit its laser weapon needs."
 	icon_state = "protolaser"
 	ammo_x_offset = 2
-	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/electrode/old)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/sharplite, /obj/item/ammo_casing/energy/electrode/old)
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-
-/obj/item/gun/energy/e_gun/mini/practice_phaser
-	name = "practice phaser"
-	desc = "A modified version of the basic phaser gun, this one fires less concentrated energy bolts designed for target practice."
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/practice)
-	icon_state = "decloner"
 
 /obj/item/gun/energy/e_gun/hos
 	name = "\improper X-01 MultiPhase Energy Gun"
 	desc = "This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes, but lacks the ability to recharge over time."
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	icon_state = "hoslaser"
 	force = 10
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
 	shaded_charge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
@@ -89,13 +85,13 @@
 	name = "modified antique laser gun"
 	desc = "It's somehow modified to have more firemodes."
 	icon_state = "capgun_brazil_hos"
-	item_state = "hoslaser"
+	item_state = "hoslaserkill0"
 	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/e_gun/hos/brazil/true
 	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is now truly one of the finest weapons in the frontier."
 	icon_state = "capgun_hos"
-	item_state = "hoslaser"
+	item_state = "hoslaserkill0"
 	selfcharge = 1
 	manufacturer = MANUFACTURER_SHARPLITE
 
@@ -104,10 +100,9 @@
 	desc = "The \"Dynamic Rapid-Apprehension of the Guilty\" net is a revolution in law enforcement technology."
 	icon_state = "dragnet"
 	item_state = "dragnet"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	ammo_type = list(/obj/item/ammo_casing/energy/net, /obj/item/ammo_casing/energy/trap)
-	can_flashlight = FALSE
 	ammo_x_offset = 1
 
 /obj/item/gun/energy/e_gun/dragnet/snare
@@ -117,25 +112,35 @@
 
 /obj/item/gun/energy/e_gun/turret
 	name = "hybrid turret gun"
-	desc = "A heavy hybrid energy cannon with two settings: Stun and kill."
+	desc = "A heavy hybrid energy cannon with two settings: Stun and kill. ...It doesn't seem have a trigger, seems it can only be used as a turret."
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
 	icon_state = "turretlaser"
 	item_state = "turretlaser"
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
+	default_ammo_type = null
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
 	weapon_weight = WEAPON_HEAVY
-	can_flashlight = FALSE
 	trigger_guard = TRIGGER_GUARD_NONE
 	ammo_x_offset = 2
+
+/obj/item/gun/energy/e_gun/turret/pre_fire(atom/target, mob/living/user, message, flag, params, zone_override, bonus_spread, dual_wielded_gun)
+	to_chat(user, span_notice("[src] is not designed to be fired by hand."))
+	return FALSE
 
 /obj/item/gun/energy/e_gun/nuclear
 	name = "advanced energy gun"
 	desc = "An energy gun with an experimental miniaturized nuclear reactor that automatically charges the internal power cell."
 	icon_state = "nucgun"
 	item_state = "nucgun"
-	charge_delay = 5
+
+	lefthand_file = GUN_LEFTHAND_ICON
+	righthand_file = GUN_RIGHTHAND_ICON
+
+	charge_delay = 10
 	can_charge = FALSE
-	internal_cell = TRUE
+	internal_magazine = TRUE
 	ammo_x_offset = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/disabler)
 	selfcharge = 1
@@ -144,9 +149,9 @@
 	var/fail_chance = 0
 	manufacturer = MANUFACTURER_NONE
 
-/obj/item/gun/energy/e_gun/nuclear/process()
+/obj/item/gun/energy/e_gun/nuclear/process(seconds_per_tick)
 	if(fail_tick > 0)
-		fail_tick--
+		fail_tick -= seconds_per_tick * 0.5
 	..()
 
 /obj/item/gun/energy/e_gun/nuclear/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
@@ -161,12 +166,12 @@
 			if(0 to 200)
 				fail_tick += (2*(fail_chance))
 				M.rad_act(40)
-				to_chat(M, "<span class='userdanger'>Your [name] feels warmer.</span>")
+				to_chat(M, span_userdanger("Your [name] feels warmer."))
 			if(201 to INFINITY)
 				SSobj.processing.Remove(src)
 				M.rad_act(80)
 				reactor_overloaded = TRUE
-				to_chat(M, "<span class='userdanger'>Your [name]'s reactor overloads!</span>")
+				to_chat(M, span_userdanger("Your [name]'s reactor overloads!"))
 
 /obj/item/gun/energy/e_gun/nuclear/emp_act(severity)
 	. = ..()
@@ -194,16 +199,18 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 6
-	small_gun = TRUE
 
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
 
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/ion/cheap)
-	cell_type = /obj/item/stock_parts/cell/gun/mini
+	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/mini,
+	)
 
 /obj/item/gun/energy/e_gun/adv_stopping
 	name = "advanced stopping revolver"
@@ -211,7 +218,7 @@
 	icon_state = "bsgun"
 	item_state = "gun"
 	force = 7
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/trap)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/trap)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
 
@@ -219,14 +226,16 @@
 	name = "\improper E-TAR SMG"
 	desc = "A dual-mode energy gun capable of discharging weaker shots at a much faster rate than the standard energy gun."
 	icon_state = "esmg"
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/smg, /obj/item/ammo_casing/energy/laser/smg)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/smg, /obj/item/ammo_casing/energy/laser/sharplite/smg)
 	ammo_x_offset = 2
 	charge_sections = 3
 	weapon_weight = WEAPON_LIGHT
 
-/obj/item/gun/energy/e_gun/smg/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
+	fire_delay = 0.13 SECONDS
+	wield_slowdown = LASER_SMG_SLOWDOWN
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper E-SG 500 Second Edition"
@@ -237,23 +246,8 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	shaded_charge = 1
-	w_class = WEIGHT_CLASS_BULKY
+	shaded_charge = TRUE
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
+	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
-
-/obj/item/gun/energy/e_gun/e11
-	name = "E-11 hybrid energy rifle"
-	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made. It hurts, but that's only if it manages to hit its target."
-	icon_state = "e11"
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
-	can_flashlight = TRUE
-	ammo_x_offset = 0
-	flight_x_offset = 20
-	flight_y_offset = 9
-	spread = 80
-	spread_unwielded = 140
-	dual_wield_spread = 140
-	shaded_charge = TRUE
-	manufacturer = MANUFACTURER_EOEHOMA

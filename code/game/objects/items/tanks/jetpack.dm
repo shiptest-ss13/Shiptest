@@ -11,7 +11,7 @@
 	var/gas_type = GAS_O2
 	var/on = FALSE
 	var/stabilizers = FALSE
-	var/full_speed = TRUE // If the jetpack will have a speedboost in space/nograv or not
+	var/full_speed = TRUE // Whether damage slowdown will affect the jetpack
 	var/datum/effect_system/trail_follow/ion/ion_trail
 
 /obj/item/tank/jetpack/Initialize()
@@ -28,33 +28,33 @@
 	if(gas_type)
 		air_contents.set_moles(gas_type, ((6 * ONE_ATMOSPHERE) * volume / (R_IDEAL_GAS_EQUATION * T20C)))
 
-/obj/item/tank/jetpack/ui_action_click(mob/user, action)
+/obj/item/tank/jetpack/ui_action_click(mob/living/user, action)
 	if(istype(action, /datum/action/item_action/toggle_jetpack))
 		cycle(user)
 	else if(istype(action, /datum/action/item_action/jetpack_stabilization))
 		if(on)
 			stabilizers = !stabilizers
-			to_chat(user, "<span class='notice'>You turn the jetpack stabilization [stabilizers ? "on" : "off"].</span>")
+			to_chat(user, span_notice("You turn the jetpack stabilization [stabilizers ? "on" : "off"]."))
 	else
 		toggle_internals(user)
 
 
-/obj/item/tank/jetpack/proc/cycle(mob/user)
+/obj/item/tank/jetpack/proc/cycle(mob/living/user)
 	if(user.incapacitated())
 		return
 
 	if(!on)
 		turn_on(user)
-		to_chat(user, "<span class='notice'>You turn the jetpack on.</span>")
+		to_chat(user, span_notice("You turn the jetpack on."))
 	else
 		turn_off(user)
-		to_chat(user, "<span class='notice'>You turn the jetpack off.</span>")
+		to_chat(user, span_notice("You turn the jetpack off."))
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
 
-/obj/item/tank/jetpack/proc/turn_on(mob/user)
+/obj/item/tank/jetpack/proc/turn_on(mob/living/user)
 	if(!allow_thrust(0.01, user))
 		return
 	on = TRUE
@@ -63,18 +63,18 @@
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(move_react))
 	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(pre_move_react))
 	if(full_speed)
-		user.add_movespeed_modifier(/datum/movespeed_modifier/jetpack/fullspeed)
+		user.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown_flying)
 
-/obj/item/tank/jetpack/proc/turn_off(mob/user)
+/obj/item/tank/jetpack/proc/turn_off(mob/living/user)
 	on = FALSE
 	stabilizers = FALSE
 	icon_state = initial(icon_state)
 	ion_trail.stop()
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(user, COMSIG_MOVABLE_PRE_MOVE)
-	user.remove_movespeed_modifier(/datum/movespeed_modifier/jetpack/fullspeed)
+	user.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown_flying)
 
-/obj/item/tank/jetpack/proc/move_react(mob/user)
+/obj/item/tank/jetpack/proc/move_react(mob/living/user)
 	if(!on)//If jet dont work, it dont work
 		return
 	if(!user)//Don't allow jet self using
@@ -90,7 +90,7 @@
 	if(length(user.client.keys_held & user.client.movement_keys))//You use jet when press keys. yes.
 		allow_thrust(0.01, user)
 
-/obj/item/tank/jetpack/proc/pre_move_react(mob/user)
+/obj/item/tank/jetpack/proc/pre_move_react(mob/living/user)
 	ion_trail.oldposition = get_turf(src)
 
 /obj/item/tank/jetpack/proc/allow_thrust(num, mob/living/user)
@@ -110,11 +110,11 @@
 	item_state = "jetpack-sec"
 	volume = 20 //normal jetpacks have 70 volume
 	gas_type = null //it starts empty
-	full_speed = FALSE //moves at hardsuit jetpack speeds
+	full_speed = FALSE // affected by damage slowdown
 
 /obj/item/tank/jetpack/improvised/allow_thrust(num, mob/living/user)
 	if(rand(0,250) == 0)
-		to_chat(user, "<span class='notice'>You feel your jetpack's engines cut out.</span>")
+		to_chat(user, span_notice("You feel your jetpack's engines cut out."))
 		turn_off(user)
 		return
 	..()
@@ -173,7 +173,7 @@
 /obj/item/tank/jetpack/suit
 	name = "hardsuit jetpack upgrade"
 	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It is fueled by a tank inserted into the suit's storage compartment."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "jetpack_upgrade"
 	item_state = "jetpack-black"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -181,7 +181,6 @@
 	volume = 1
 	slot_flags = null
 	gas_type = null
-	full_speed = FALSE
 	custom_price = 2000
 	var/datum/gas_mixture/temp_air_contents
 	var/obj/item/tank/internals/tank = null
@@ -197,12 +196,12 @@
 
 /obj/item/tank/jetpack/suit/cycle(mob/user)
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit))
-		to_chat(user, "<span class='warning'>\The [src] must be connected to a hardsuit!</span>")
+		to_chat(user, span_warning("\The [src] must be connected to a hardsuit!"))
 		return
 
 	var/mob/living/carbon/human/H = user
 	if(!istype(H.s_store, /obj/item/tank/internals))
-		to_chat(user, "<span class='warning'>You need a tank in your suit storage!</span>")
+		to_chat(user, span_warning("You need a tank in your suit storage!"))
 		return
 	..()
 
@@ -223,7 +222,7 @@
 	cur_user = null
 	..()
 
-/obj/item/tank/jetpack/suit/process()
+/obj/item/tank/jetpack/suit/process(seconds_per_tick)
 	if(!istype(loc, /obj/item/clothing/suit/space/hardsuit) || !ishuman(loc.loc))
 		turn_off(cur_user)
 		return

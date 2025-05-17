@@ -4,7 +4,7 @@
 	name = "Computer Design ( NULL ENTRY )"
 	desc = "I promise this doesn't give you syndicate goodies!"
 	build_type = IMPRINTER
-	materials = list(/datum/material/glass = 1000)
+	materials = list(/datum/material/glass = 250)
 
 /datum/design/board/arcade_battle
 	name = "Computer Design (Battle Arcade Machine)"
@@ -35,14 +35,6 @@
 	desc = "Allows for the construction of circuit boards used to build research camera computers."
 	id = "rdcamera"
 	build_path = /obj/item/circuitboard/computer/research
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/xenobiocamera
-	name = "Computer Design (Xenobiology Console)"
-	desc = "Allows for the construction of circuit boards used to build xenobiology camera computers."
-	id = "xenobioconsole"
-	build_path = /obj/item/circuitboard/computer/xenobiology
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
@@ -183,28 +175,13 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/mechapower
-	name = "Computer Design (Mech Bay Power Control Console)"
-	desc = "Allows for the construction of circuit boards used to build a mech bay power control console."
+	name = "Computer Design (Exosuit) Bay Power Control Console)"
+	desc = "Allows for the construction of circuit boards used to build an exosuit bay power control console."
 	id = "mechapower"
 	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
-/datum/design/board/rdconsole
-	name = "Computer Design (R&D Console)"
-	desc = "Allows for the construction of circuit boards used to build a new R&D console."
-	id = "rdconsole"
-	build_path = /obj/item/circuitboard/computer/rdconsole
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/bounty
-	name = "Computer Design (Bounty Console)"
-	desc = "Allows for the construction of circuit boards used to build a Bounty Console."
-	id = "bounty"
-	build_path = /obj/item/circuitboard/computer/bounty
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/mining
 	name = "Computer Design (Outpost Status Display)"
@@ -213,14 +190,6 @@
 	build_path = /obj/item/circuitboard/computer/mining
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/board/selling
-	name = "Computer Design (Cargo Hold Control Terminal)"
-	desc = "Allows for the construction of circuit boards used to build a Cargo Hold Control Terminal."
-	id = "selling_console"
-	build_path = /obj/item/circuitboard/computer/selling_pad_control
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/comm_monitor
 	name = "Computer Design (Telecommunications Monitoring Console)"

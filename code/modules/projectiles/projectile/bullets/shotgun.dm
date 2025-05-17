@@ -1,8 +1,9 @@
 /obj/projectile/bullet/slug
 	name = "12g shotgun slug"
 	damage = 40
-	armour_penetration = -10
-	speed = 0.5
+	armour_penetration = 0
+	speed = BULLET_SPEED_SHOTGUN
+	bullet_identifier = "large slug"
 
 /obj/projectile/bullet/slug/beanbag
 	name = "beanbag slug"
@@ -14,11 +15,11 @@
 	name = "incendiary slug"
 	damage = 25
 	armour_penetration = -10
-	speed = 0.5
+	speed = BULLET_SPEED_SHOTGUN
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
-	damage = 5
+	damage = 8
 	armour_penetration = -35
 
 /obj/projectile/bullet/slug/stun
@@ -54,7 +55,7 @@
 /obj/projectile/bullet/slug/frag12
 	name = "frag12 slug"
 	damage = 25
-	paralyze = 50
+	paralyze = 20
 
 /obj/projectile/bullet/slug/frag12/on_hit(atom/target, blocked = FALSE)
 	..()
@@ -67,9 +68,13 @@
 	///How much stamina damage is subtracted per tile?
 	var/tile_dropoff_stamina = 1.5 //As above
 
+	var/ap_dropoff = 5
+	var/ap_dropoff_cutoff = -35
+
 	icon_state = "pellet"
-	armour_penetration = -35
-	speed = 0.5
+	armour_penetration = -20
+	speed = BULLET_SPEED_SHOTGUN
+	bullet_identifier = "pellet"
 
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
@@ -80,7 +85,8 @@
 	damage = 2.5
 	tile_dropoff = 0.15
 	stamina = 15
-	armour_penetration = -70
+	armour_penetration = -35
+	bullet_identifier = "rubber pellet"
 
 /obj/projectile/bullet/pellet/rubbershot/incapacitate
 	name = "incapacitating pellet"
@@ -95,17 +101,21 @@
 		damage -= tile_dropoff
 	if(stamina > 0)
 		stamina -= tile_dropoff_stamina
+	if(armour_penetration > ap_dropoff_cutoff)
+		armour_penetration -= ap_dropoff
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
 	if(damage < 0 && stamina < 0)
 		qdel(src)
 
 /obj/projectile/bullet/pellet/improvised
 	damage = 6
-	armour_penetration = -35
+	armour_penetration = -60
 	tile_dropoff = 0.6
 
 // Mech Scattershot
 
-/obj/projectile/bullet/scattershot
+/obj/projectile/bullet/pellet/scattershot
 	damage = 24
 	armour_penetration = -20
 
@@ -114,3 +124,10 @@
 	damage = 30
 	armour_penetration = -25
 	tile_dropoff = 3
+	bullet_identifier = "massive pellet"
+
+/obj/projectile/bullet/pellet/blank
+	name = "blank"
+	damage = 30
+	range = 2
+	armour_penetration = -70

@@ -23,9 +23,7 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "cB" = (
@@ -40,7 +38,7 @@
 "fD" = (
 /obj/structure/bed,
 /obj/effect/decal/cleanable/blood/bubblegum,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "fQ" = (
@@ -78,6 +76,13 @@
 "hI" = (
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/plating/ice/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
+"hY" = (
+/obj/effect/landmark/mission_poi/main/drill{
+	mission_index = 2
+	},
+/obj/structure/vein/ice/classfour,
+/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "iz" = (
 /obj/structure/fence/door/opened{
@@ -138,6 +143,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "mI" = (
@@ -175,8 +181,8 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "pP" = (
-/obj/structure/chair/sofa/brown/left/directional/north,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa/brown/right/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "pV" = (
@@ -204,9 +210,7 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "tg" = (
@@ -242,15 +246,13 @@
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
-/obj/item/reagent_containers/food/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
+/obj/item/reagent_containers/condiment/pack/ketchup,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "us" = (
@@ -306,7 +308,7 @@
 /turf/open/floor/carpet,
 /area/ruin/powered)
 "yb" = (
-/obj/structure/chair/sofa/brown/right/directional/north,
+/obj/structure/chair/sofa/brown/left/directional/north,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "yS" = (
@@ -332,7 +334,7 @@
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/reagent_containers/glass/bottle/venom,
 /obj/item/reagent_containers/glass/bottle/curare,
-/obj/item/kitchen/knife/combat/survival,
+/obj/item/melee/knife/survival,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
@@ -383,8 +385,8 @@
 "EF" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/structure/safe,
-/obj/item/ammo_box/a12g/slug,
-/obj/item/kitchen/knife/combat,
+/obj/item/storage/box/ammo/a12g_slug,
+/obj/item/melee/knife/combat,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -437,7 +439,6 @@
 /obj/item/clothing/under/rank/cargo/miner,
 /obj/item/clothing/suit/hooded/wintercoat/miner,
 /obj/item/clothing/shoes/winterboots,
-/obj/item/card/id/mining,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -460,7 +461,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "LZ" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Nq" = (
@@ -477,13 +478,22 @@
 /obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/carpet,
 /area/ruin/powered)
+"OI" = (
+/obj/effect/landmark/mission_poi/guard{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals;
+	mission_index = 2
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "Pp" = (
-/obj/machinery/vending/snack/random,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/holofloor/wood,
 /area/ruin/powered)
 "PQ" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/mob/living/simple_animal/hostile/frontier/ranged/trooper,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper{
+	weapon_drop_chance = 100
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -555,7 +565,7 @@
 "WH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Ze" = (
@@ -982,7 +992,7 @@ Og
 Og
 Og
 zT
-Og
+OI
 Og
 zT
 Og
@@ -1071,9 +1081,9 @@ Vn
 Og
 zT
 Og
-Og
-Og
 Bq
+Og
+hY
 Og
 Og
 Og

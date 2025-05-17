@@ -22,6 +22,7 @@
 #define VV_BITFIELD "Bitfield"
 #define VV_TEXT_LOCATE "Custom Reference Locate"
 #define VV_PROCCALL_RETVAL "Return Value of Proccall"
+#define VV_HK_ADD_AI "add_ai"
 
 #define VV_MSG_MARKED "<br><font size='1' color='red'><b>Marked Object</b></font>"
 #define VV_MSG_EDITED "<br><font size='1' color='red'><b>Var Edited</b></font>"
@@ -92,6 +93,8 @@
 #define VV_HK_AUTO_RENAME "auto_rename"
 #define VV_HK_RADIATE "radiate"
 #define VV_HK_EDIT_FILTERS "edit_filters"
+#define VV_HK_SELL "sell_item"
+#define VV_HK_EDIT_PARTICLES "edit_particles"
 
 // /obj
 #define VV_HK_OSAY "osay"
@@ -142,3 +145,7 @@
 #define VV_HK_TO_OUTFIT_EDITOR "outfit_editor"
 
 #define VV_HK_WEAKREF_RESOLVE "weakref_resolve"
+
+//overmap objects
+#define VV_HK_VV_PARENT "vv_parent"
+#define VV_HK_UNFSCK_OBJECT "unfsck"

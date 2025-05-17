@@ -13,7 +13,7 @@
 		message_admins("[key_name(src)] toggled debugging on.")
 		log_admin("[key_name(src)] toggled debugging on.")
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggle Debug Two") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Toggle Debug Two")
 
 
 
@@ -26,8 +26,8 @@ Because if you select a player mob as owner it tries to do the proc for
 But you can call procs that are of type /mob/living/carbon/human/proc/ for that player.
 */
 
-/client/proc/Cell()
-	set category = "Debug"
+/client/proc/air_status_loc()
+	set category = "Debug.Debug"
 	set name = "Air Status in Location"
 	if(!mob)
 		return
@@ -35,10 +35,10 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	if(!isturf(T))
 		return
 	atmosanalyzer_scan(usr, T, TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Air Status In Location") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Air Status In Location")
 
 /client/proc/cmd_admin_robotize(mob/M in GLOB.mob_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Make Robot"
 
 	if(!SSticker.HasRoundStarted())
@@ -52,23 +52,8 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	else
 		alert("Invalid mob")
 
-/client/proc/cmd_admin_blobize(mob/M in GLOB.mob_list)
-	set category = "Fun"
-	set name = "Make Blob"
-
-	if(!SSticker.HasRoundStarted())
-		alert("Wait until the game starts")
-		return
-	if(ishuman(M))
-		log_admin("[key_name(src)] has blobized [M.key].")
-		var/mob/living/carbon/human/H = M
-		H.become_overmind()
-	else
-		alert("Invalid mob")
-
-
 /client/proc/cmd_admin_animalize(mob/M in GLOB.mob_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Make Simple Animal"
 
 	if(!SSticker.HasRoundStarted())
@@ -88,7 +73,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 
 /client/proc/makepAI(turf/T in GLOB.mob_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Make pAI"
 	set desc = "Specify a location to spawn a pAI device, then specify a key to play that pAI"
 
@@ -118,10 +103,10 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	for(var/datum/paiCandidate/candidate in SSpai.candidates)
 		if(candidate.key == choice.key)
 			SSpai.candidates.Remove(candidate)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Make pAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Make pAI")
 
 /client/proc/cmd_admin_alienize(mob/M in GLOB.mob_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Make Alien"
 
 	if(!SSticker.HasRoundStarted())
@@ -129,14 +114,14 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		return
 	if(ishuman(M))
 		INVOKE_ASYNC(M, TYPE_PROC_REF(/mob/living/carbon/human, Alienize))
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Alien") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Make Alien")
 		log_admin("[key_name(usr)] made [key_name(M)] into an alien at [AREACOORD(M)].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into an alien.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into an alien."))
 	else
 		alert("Invalid mob")
 
 /client/proc/cmd_admin_slimeize(mob/M in GLOB.mob_list)
-	set category = "Fun"
+	set category = "Event.Fun"
 	set name = "Make slime"
 
 	if(!SSticker.HasRoundStarted())
@@ -144,9 +129,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		return
 	if(ishuman(M))
 		INVOKE_ASYNC(M, TYPE_PROC_REF(/mob/living/carbon/human, slimeize))
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Slime") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Make Slime")
 		log_admin("[key_name(usr)] made [key_name(M)] into a slime at [AREACOORD(M)].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into a slime.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into a slime."))
 	else
 		alert("Invalid mob")
 
@@ -173,7 +158,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			CHECK_TICK
 		log_admin("[key_name(src)] has deleted all ([counter]) instances of [hsbitem].")
 		message_admins("[key_name_admin(src)] has deleted all ([counter]) instances of [hsbitem].")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Delete All") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Delete All")
 
 
 /client/proc/cmd_debug_make_powernets()
@@ -182,10 +167,10 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	SSmachines.makepowernets()
 	log_admin("[key_name(src)] has remade the powernet. makepowernets() called.")
 	message_admins("[key_name_admin(src)] has remade the powernets. makepowernets() called.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Powernets") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Make Powernets")
 
 /client/proc/cmd_admin_grantfullaccess(mob/M in GLOB.mob_list)
-	set category = "Debug"
+	set category = "Debug.Debug"
 	set name = "Grant Full Access"
 
 	if(!SSticker.HasRoundStarted())
@@ -223,12 +208,12 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 	else
 		alert("Invalid mob")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Grant Full Access") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Grant Full Access")
 	log_admin("[key_name(src)] has granted [M.key] full access.")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has granted [M.key] full access.</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] has granted [M.key] full access."))
 
 /client/proc/cmd_assume_direct_control(mob/M in GLOB.mob_list)
-	set category = "Admin.Game"
+	set category = "Debug.Debug"
 	set name = "Assume direct control"
 	set desc = "Direct intervention"
 
@@ -236,9 +221,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		if(alert("This mob is being controlled by [M.key]. Are you sure you wish to assume control of it? [M.key] will be made a ghost.",,"Yes","No") != "Yes")
 			return
 	if(!M || QDELETED(M))
-		to_chat(usr, "<span class='warning'>The target mob no longer exists.</span>")
+		to_chat(usr, span_warning("The target mob no longer exists."))
 		return
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] assumed direct control of [M].</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] assumed direct control of [M]."))
 	log_admin("[key_name(usr)] assumed direct control of [M].")
 	var/mob/adminmob = mob
 	if(M.ckey)
@@ -246,10 +231,10 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	M.ckey = ckey
 	if(isobserver(adminmob))
 		qdel(adminmob)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Assume Direct Control") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Assume Direct Control")
 
 /client/proc/cmd_give_direct_control(mob/M in GLOB.mob_list)
-	set category = "Admin.Game"
+	set category = "Debug.Debug"
 	set name = "Give direct control"
 
 	if(!M)
@@ -263,19 +248,19 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	if((isobserver(oldmob) || alert("Do you want to delete [newkey]'s old mob?","Delete?","Yes","No") != "No"))
 		delmob = TRUE
 	if(!M || QDELETED(M))
-		to_chat(usr, "<span class='warning'>The target mob no longer exists, aborting.</span>")
+		to_chat(usr, span_warning("The target mob no longer exists, aborting."))
 		return
 	if(M.ckey)
 		M.ghostize(FALSE)
 	M.ckey = newkey.key
 	if(delmob)
 		qdel(oldmob)
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] gave away direct control of [M] to [newkey].</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] gave away direct control of [M] to [newkey]."))
 	log_admin("[key_name(usr)] gave away direct control of [M] to [newkey].")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Give Direct Control") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Give Direct Control")
 
 /client/proc/cmd_admin_test_atmos_controllers()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Test Atmos Monitoring Consoles"
 
 	var/list/dat = list()
@@ -284,7 +269,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		to_chat(usr, "Game still loading, please hold!", confidential = TRUE)
 		return
 
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used the Test Atmos Monitor debug command.</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] used the Test Atmos Monitor debug command."))
 	log_admin("[key_name(usr)] used the Test Atmos Monitor debug command.")
 
 	var/bad_shit = 0
@@ -311,7 +296,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	popup.open()
 
 /client/proc/cmd_admin_areatest()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Test Areas"
 
 	var/list/dat = list()
@@ -328,7 +313,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		to_chat(usr, "Game still loading, please hold!", confidential = TRUE)
 		return
 
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used the Test Areas debug command checking all z-levels.</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] used the Test Areas debug command checking all z-levels."))
 	log_admin("[key_name(usr)] used the Test Areas debug command checking z-levels.")
 
 	for(var/area/A in world)
@@ -465,12 +450,12 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 
 /client/proc/cmd_admin_areatest_station()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Test Areas (STATION Z)"
 	cmd_admin_areatest(TRUE)
 
 /client/proc/cmd_admin_areatest_all()
-	set category = "Mapping"
+	set category = "Debug.Mapping"
 	set name = "Test Areas (ALL)"
 	cmd_admin_areatest(FALSE)
 
@@ -529,9 +514,8 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 	return dresscode
 
-/client/proc/startSinglo()
-
-	set category = "Debug"
+/client/proc/start_singlo()
+	set category = "Debug.Debug"
 	set name = "Start Singularity"
 	set desc = "Sets up the singularity and all machines to get power flowing through the station"
 
@@ -630,6 +614,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			dellog += "<li>Ignored force: [I.no_respect_force]</li>"
 		if (I.no_hint)
 			dellog += "<li>No hint: [I.no_hint]</li>"
+		if(LAZYLEN(I.extra_details))
+			var/details = I.extra_details.Join("</li><li>")
+			dellog += "<li>Extra Info: <ul><li>[details]</li></ul>"
 		dellog += "</ul></li>"
 
 	dellog += "</ol>"
@@ -688,24 +675,24 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	if(istype(landmark))
 		var/datum/map_template/ruin/template = landmark.ruin_template
 		usr.forceMove(get_turf(landmark))
-		to_chat(usr, "<span class='name'>[template.name]</span>", confidential = TRUE)
-		to_chat(usr, "<span class='italics'>[template.description]</span>", confidential = TRUE)
+		to_chat(usr, span_name("[template.name]"), confidential = TRUE)
+		to_chat(usr, span_italics("[template.description]"), confidential = TRUE)
 
 /client/proc/fucky_wucky()
-	set category = "Debug"
+	set category = "Event.Fun"
 	set name = "Fucky Wucky"
 	set desc = "Inform the players that the code monkeys at our headquarters are working very hard to fix this."
 
-	if(!check_rights(R_DEBUG))
+	if(!check_rights(R_FUN))
 		return
 	remove_verb(/client/proc/fucky_wucky)
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] did a fucky wucky.</span>")
+	message_admins(span_adminnotice("[key_name_admin(src)] did a fucky wucky."))
 	log_admin("[key_name(src)] did a fucky wucky.")
 	for(var/m in GLOB.player_list)
 		var/datum/asset/fuckywucky = get_asset_datum(/datum/asset/simple/fuckywucky)
 		fuckywucky.send(m)
 		SEND_SOUND(m, 'sound/misc/fuckywucky.ogg')
-		to_chat(m, span_purple(examine_block("<img src='[SSassets.transport.get_asset_url("fuckywucky.png")]'>")))
+		to_chat(m, span_purple(boxed_message("<img src='[SSassets.transport.get_asset_url("fuckywucky.png")]'>")))
 
 	addtimer(CALLBACK(src, PROC_REF(restore_fucky_wucky)), 600)
 
@@ -722,8 +709,8 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 	SSachievements.achievements_enabled = !SSachievements.achievements_enabled
 
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] [SSachievements.achievements_enabled ? "disabled" : "enabled"] the medal hub lockout.</span>")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggle Medal Disable") // If...
+	message_admins(span_adminnotice("[key_name_admin(src)] [SSachievements.achievements_enabled ? "disabled" : "enabled"] the medal hub lockout."))
+	BLACKBOX_LOG_ADMIN_VERB("Toggle Medal Disable") // If...
 	log_admin("[key_name(src)] [SSachievements.achievements_enabled ? "disabled" : "enabled"] the medal hub lockout.")
 
 /client/proc/view_runtimes()
@@ -745,34 +732,34 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 	SSevents.scheduled = world.time
 
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] pumped a random event.</span>")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Pump Random Event")
+	message_admins(span_adminnotice("[key_name_admin(src)] pumped a random event."))
+	BLACKBOX_LOG_ADMIN_VERB("Pump Random Event")
 	log_admin("[key_name(src)] pumped a random event.")
 
 /client/proc/start_line_profiling()
-	set category = "Profile"
+	set category = "Debug.Profile"
 	set name = "Start Line Profiling"
 	set desc = "Starts tracking line by line profiling for code lines that support it"
 
 	LINE_PROFILE_START
 
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] started line by line profiling.</span>")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Start Line Profiling")
+	message_admins(span_adminnotice("[key_name_admin(src)] started line by line profiling."))
+	BLACKBOX_LOG_ADMIN_VERB("Start Line Profiling")
 	log_admin("[key_name(src)] started line by line profiling.")
 
 /client/proc/stop_line_profiling()
-	set category = "Profile"
+	set category = "Debug.Profile"
 	set name = "Stops Line Profiling"
 	set desc = "Stops tracking line by line profiling for code lines that support it"
 
 	LINE_PROFILE_STOP
 
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] stopped line by line profiling.</span>")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Stop Line Profiling")
+	message_admins(span_adminnotice("[key_name_admin(src)] stopped line by line profiling."))
+	BLACKBOX_LOG_ADMIN_VERB("Stop Line Profiling")
 	log_admin("[key_name(src)] stopped line by line profiling.")
 
 /client/proc/show_line_profiling()
-	set category = "Profile"
+	set category = "Debug.Profile"
 	set name = "Show Line Profiling"
 	set desc = "Shows tracked profiling info from code lines that support it"
 
@@ -798,7 +785,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 
 /// A debug verb to check the sources of currently running timers
 /client/proc/check_timer_sources()
-	set category = "Debug"
+	set category = "Debug.Debug"
 	set name = "Check Timer Sources"
 	set desc = "Checks the sources of the running timers"
 	if (!check_rights(R_DEBUG))

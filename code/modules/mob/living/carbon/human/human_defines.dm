@@ -54,7 +54,6 @@
 	var/obj/item/clothing/wear_suit = null
 	var/obj/item/clothing/w_uniform = null
 	var/obj/item/belt = null
-	var/obj/item/wear_id = null
 	var/obj/item/r_store = null
 	var/obj/item/l_store = null
 	var/obj/item/s_store = null
@@ -63,9 +62,7 @@
 
 	/// Adjective used in get_generic_name(), if any
 	var/generic_adjective
-
-	var/bleed_rate = 0 //how much are we bleeding
-	var/bleedsuppress = 0 //for stopping bloodloss, eventually this will be limb-based like bleeding
+	var/bleedsuppress = 0 //for stopping bloodloss body-wide
 
 	var/name_override //For temporary visible name changes
 
@@ -80,3 +77,7 @@
 
 	/// How many "units of blood" we have on our hands
 	var/blood_in_hands = 0
+	///blood particle effect
+	var/obj/effect/abstract/particle_holder/blood_particle
+
+	COOLDOWN_DECLARE(bloodloss_message)

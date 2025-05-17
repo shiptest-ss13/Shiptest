@@ -112,7 +112,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 
 /datum/gateway_destination/gateway/home/proc/check_exile_implant(mob/living/L)
 	for(var/obj/item/implant/exile/E in L.implants)//Checking that there is an exile implant
-		to_chat(L, "<span class='userdanger'>The station gate has detected your exile implant and is blocking your entry.</span>")
+		to_chat(L, span_userdanger("The station gate has detected your exile implant and is blocking your entry."))
 		return TRUE
 	return FALSE
 
@@ -157,8 +157,8 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	density = TRUE
 
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 100
-	active_power_usage = 5000
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_EXTREME
 
 	var/calibrated = TRUE
 	/// Type of instanced gateway destination, needs to be subtype of /datum/gateway_destination/gateway
@@ -198,11 +198,11 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	target = null
 	dest.deactivate(src)
 	QDEL_NULL(portal)
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	update_appearance()
 	portal_visuals.reset_visuals()
 
-/obj/machinery/gateway/process()
+/obj/machinery/gateway/process(seconds_per_tick)
 	if((machine_stat & (NOPOWER)) && use_power)
 		if(target)
 			deactivate()
@@ -221,7 +221,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	target.activate(destination)
 	portal_visuals.setup_visuals(target)
 	generate_bumper()
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	update_appearance()
 
 /obj/machinery/gateway/proc/Transfer(atom/movable/AM)
@@ -247,9 +247,9 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 
 /obj/machinery/gateway/multitool_act(mob/living/user, obj/item/I)
 	if(calibrated)
-		to_chat(user, "<span class='alert'>The gate is already calibrated, there is no work for you to do here.</span>")
+		to_chat(user, span_alert("The gate is already calibrated, there is no work for you to do here."))
 	else
-		to_chat(user, "<span class='boldnotice'>Recalibration successful!</span>: \black This gate's systems have been fine tuned. Travel to this gate will now be on target.")
+		to_chat(user, "[span_boldnotice("Recalibration successful!")]: \black This gate's systems have been fine tuned. Travel to this gate will now be on target.")
 		calibrated = TRUE
 	return TRUE
 
@@ -262,9 +262,9 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	. = ..()
 	if(!target)
 		if(!GLOB.the_gateway)
-			to_chat(user,"<span class='warning'>Home gateway is not responding!</span>")
+			to_chat(user,span_warning("Home gateway is not responding!"))
 		if(GLOB.the_gateway.target)
-			to_chat(user,"<span class='warning'>Home gateway already in use!</span>")
+			to_chat(user,span_warning("Home gateway already in use!"))
 			return
 		activate(GLOB.the_gateway.destination)
 	else

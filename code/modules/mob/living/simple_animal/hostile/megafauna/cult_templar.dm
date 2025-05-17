@@ -23,8 +23,8 @@
 	ranged_cooldown_time = 20
 	vision_range = 10
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 0.5)
-	loot = list(/obj/item/claymore/cursed, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)
-	crusher_loot = list(/obj/item/claymore/cursed, /obj/item/clothing/suit/space/hardsuit/cult/enchanted, /obj/item/upgradescroll)
+	loot = list(/obj/item/melee/sword/claymore, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)
+	mob_trophy = list(/obj/item/melee/sword/claymore, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)
 	wander = FALSE
 	del_on_death = TRUE
 	blood_volume = BLOOD_VOLUME_NORMAL
@@ -40,7 +40,7 @@
 								/datum/action/innate/megafauna_attack/rapid_fire)
 	move_force = MOVE_FORCE_NORMAL
 	var/turf/starting
-	var/obj/item/claymore/cursed/mob/weapon
+	var/obj/item/melee/sword/claymore/weapon
 	var/charging = FALSE
 	var/dash_cooldown = 6 SECONDS
 	var/runic_blast_cooldown = 14 SECONDS
@@ -49,23 +49,6 @@
 	var/dash_mod = 0.9
 	var/dash_num = 3
 	var/newcolor = rgb(149, 10, 10)
-
-/obj/item/claymore/cursed
-	name = "cursed longsword"
-	desc = "For those who overcame a great challenge. It glows with a dim red light."
-	icon_state = "cultblade"
-	item_state = "cultblade"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	throwforce = 25
-	block_chance = 65
-	armour_penetration = 50
-	sharpness = IS_SHARP
-
-/obj/item/claymore/cursed/mob
-	block_chance = 0
-	force = 16
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/Initialize()
 	. = ..()
@@ -85,42 +68,42 @@
 	name = "Blood Dash"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "rift"
-	chosen_message = "<span class='colossus'>You are now dashing through your enemies, piercing everyone caught in your path.</span>"
+	chosen_message = span_colossus("You are now dashing through your enemies, piercing everyone caught in your path.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/runic_blast
 	name = "Runic Blast"
 	icon_icon = 'icons/obj/rune.dmi'
 	button_icon_state = "4"
-	chosen_message = "<span class='colossus'>You are now setting up a big explosion, with a delay.</span>"
+	chosen_message = span_colossus("You are now setting up a big explosion, with a delay.")
 	chosen_attack_num = 2
 
 /datum/action/innate/megafauna_attack/blast
 	name = "Blast"
 	icon_icon = 'icons/obj/guns/projectile.dmi'
 	button_icon_state = "arg"
-	chosen_message = "<span class='colossus'>You are now shooting at your enemy with explosive bullets.</span>"
+	chosen_message = span_colossus("You are now shooting at your enemy with explosive bullets.")
 	chosen_attack_num = 3
 
 /datum/action/innate/megafauna_attack/infernal_summon
 	name = "Infernal Summon"
 	icon_icon = 'icons/mob/mob.dmi'
 	button_icon_state = "imp"
-	chosen_message = "<span class='colossus'>You will now summon demons to assist you.</span>"
+	chosen_message = span_colossus("You will now summon demons to assist you.")
 	chosen_attack_num = 4
 
 /datum/action/innate/megafauna_attack/teleport_b
 	name = "Teleport"
 	icon_icon = 'icons/obj/projectiles.dmi'
 	button_icon_state = "bluespace"
-	chosen_message = "<span class='colossus'>You will now teleport next to your target.</span>"
+	chosen_message = span_colossus("You will now teleport next to your target.")
 	chosen_attack_num = 5
 
 /datum/action/innate/megafauna_attack/rapid_fire
 	name = "Rapid Fire"
 	icon_icon = 'icons/obj/guns/projectile.dmi'
 	button_icon_state = "arg"
-	chosen_message = "<span class='colossus'>You are now rapidly shooting at your enemy with explosive bullets (5).</span>"
+	chosen_message = span_colossus("You are now rapidly shooting at your enemy with explosive bullets (5).")
 	chosen_attack_num = 6
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/AttackingTarget()
@@ -130,8 +113,8 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.health <= HEALTH_THRESHOLD_DEAD || L.stat == DEAD) //To prevent memento mori limbo
-			visible_message("<span class='danger'>[src] butchers [L]!</span>",
-			"<span class='userdanger'>You butcher [L], restoring your health!</span>")
+			visible_message(span_danger("[src] butchers [L]!"),
+			span_userdanger("You butcher [L], restoring your health!"))
 //			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
 			adjustHealth(-(L.maxHealth * 0.5))
 			L.gib()
@@ -277,8 +260,8 @@
 	playsound(src,"sound/effects/footstep/heavy[pick(1,2)].ogg", 200, 1)
 	for(var/mob/living/L in T.contents - src)
 		if(!faction_check_mob(L))
-			visible_message("<span class='boldwarning'>[src] runs through [L]!</span>")
-			to_chat(L, "<span class='userdanger'>[src] pierces you with a longsword!</span>")
+			visible_message(span_boldwarning("[src] runs through [L]!"))
+			to_chat(L, span_userdanger("[src] pierces you with a longsword!"))
 			explosion(L, -1, 0, 0, 0, 0, flame_range = 2)
 			shake_camera(L, 4, 3)
 			L.adjustBruteLoss(30)
@@ -319,7 +302,7 @@
 /mob/living/simple_animal/hostile/megafauna/cult_templar/proc/blast()
 	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
 		ranged_cooldown = world.time + ranged_cooldown_time
-		visible_message("<span class='danger'>[src] fires with bolter gun!</span>")
+		visible_message(span_danger("[src] fires with bolter gun!"))
 		face_atom(target)
 		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
 		Shoot(target)
@@ -329,7 +312,7 @@
 	if(ranged_cooldown <= world.time && !Adjacent(target) && !charging)
 		ranged_cooldown = world.time + ranged_cooldown_time
 		charging = TRUE
-		visible_message("<span class='danger'>[src] rapidly fires with bolter gun!</span>")
+		visible_message(span_danger("[src] rapidly fires with bolter gun!"))
 		face_atom(target)
 		for(var/i = 1 to 5)
 			new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
@@ -421,7 +404,7 @@
 /obj/item/clothing/suit/space/hardsuit/cult/enchanted
 	name = "\improper Cursed Nar'Sien hardened armor"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. This one is cursed, screaming voices into the mind of the wearer."
-	allowed = list(/obj/item/gun, /obj/item/nullrod, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/tank/internals)
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 80, "fire" = 100, "acid" = 100)
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
@@ -435,13 +418,13 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
-/obj/item/clothing/head/helmet/space/hardsuit/cult/enchanted/process()
+/obj/item/clothing/head/helmet/space/hardsuit/cult/enchanted/process(seconds_per_tick)
 	. = ..()
 	var/mob/living/carbon/C = loc
 	if(istype(C) && prob(4))
 		if(prob(25))
 			C.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 60)
-			to_chat(C, "<span class='danger'>[pick("Voices... Voices everywhere", "Your mind shatters.", "Voices echo inside your head.")].</span>")
+			to_chat(C, span_danger("[pick("Voices... Voices everywhere", "Your mind shatters.", "Voices echo inside your head.")]."))
 		SEND_SOUND(C, sound(pick('sound/hallucinations/over_here3.ogg', 'sound/hallucinations/behind_you2.ogg', 'sound/magic/exit_blood.ogg', 'sound/hallucinations/im_here1.ogg', 'sound/hallucinations/turn_around1.ogg', 'sound/hallucinations/turn_around2.ogg')))
 
 //DEMONS
@@ -465,7 +448,7 @@
 	stop_automated_movement = 1
 	status_flags = CANPUSH
 	attack_sound = 'sound/magic/demon_attack1.ogg'
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	faction = list("cult")
 	maxHealth = 60
 	health = 60

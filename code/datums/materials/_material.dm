@@ -18,8 +18,6 @@ Simple datum which is instanced once per type and is used for every object of sa
 	var/list/categories = list()
 	///The type of sheet this material creates. This should be replaced as soon as possible by greyscale sheets
 	var/sheet_type
-	/// WS - The type of ore this material is derrived from. Used by deepcore
-	var/ore_type
 	///This is a modifier for force, and resembles the strength of the material
 	var/strength_modifier = 1
 	///This is a modifier for integrity, and resembles the strength of the material
@@ -78,6 +76,16 @@ Simple datum which is instanced once per type and is used for every object of sa
 ///This proc is called when a material updates an object's description
 /atom/proc/mat_update_desc(/datum/material/mat)
 	return
+
+
+/**
+ * This proc is called when the mat is found in an item that's consumed by accident. see /obj/item/proc/on_accidental_consumption.
+ * Arguments
+ * * M - person consuming the mat
+ * * S - (optional) item the mat is contained in (NOT the item with the mat itself)
+ */
+/datum/material/proc/on_accidental_mat_consumption(mob/living/carbon/M, obj/item/S)
+	return FALSE
 
 ///This proc is called when the material is added to an object specifically.
 /datum/material/proc/on_applied_obj(obj/o, amount, material_flags)

@@ -60,8 +60,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
 "dJ" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 5
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 5;
+	id = "gut_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/storage)
@@ -305,6 +306,10 @@
 	dir = 9
 	},
 /obj/machinery/computer/helm,
+/obj/machinery/turretid/ship{
+	pixel_y = 24;
+	id = "gut_grid"
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/storage)
 "sk" = (
@@ -396,8 +401,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "vJ" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 9
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 9;
+	id = "gut_grid"
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ship/storage)
@@ -477,8 +483,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
 "GQ" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 5
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 5;
+	id = "gut_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
@@ -506,6 +513,13 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"Jn" = (
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 6;
+	id = "gut_grid"
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
 "JX" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -575,8 +589,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "RY" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 9
+/obj/machinery/porta_turret/ship/frontiersmen{
+	dir = 9;
+	id = "gut_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
@@ -810,6 +825,6 @@ Xf
 Xf
 Xf
 Xf
-ii
+Jn
 rv
 "}

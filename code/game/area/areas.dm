@@ -13,7 +13,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
 
-	var/area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA
+	var/area_flags = VALID_TERRITORY | UNIQUE_AREA
 
 	var/fire = null
 	///Whether there is an atmos alarm in this area
@@ -40,7 +40,7 @@
 	/// Bonus mood for being in this area
 	var/mood_bonus = 0
 	/// Mood message for being here, only shows up if mood_bonus != 0
-	var/mood_message = "<span class='nicegreen'>This area is pretty nice!\n</span>"
+	var/mood_message = span_nicegreen("This area is pretty nice!\n")
 
 	///Will objects this area be needing power?
 	var/requires_power = TRUE
@@ -63,12 +63,6 @@
 	var/list/firealarms
 	var/firedoors_last_closed_on = 0
 
-	///Boolean to limit the areas (subtypes included) that atoms in this area can smooth with. Used for shuttles.
-	var/area_limited_icon_smoothing = FALSE
-
-	///WS Addition - Color on minimaps, if it's null (which is default) it makes one at random.
-	var/minimap_color
-
 	var/list/power_usage
 
 	var/lighting_colour_tube = "#FFF6ED"
@@ -85,6 +79,9 @@
 	var/min_ambience_cooldown = 30 SECONDS
 	///Used to decide what the maximum time between ambience is
 	var/max_ambience_cooldown = 90 SECONDS
+
+	/// The current weather active in this area
+	var/datum/weather/active_weather
 
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE
@@ -110,7 +107,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /proc/process_teleport_locs()
 	for(var/V in GLOB.sortedAreas)
 		var/area/AR = V
-		if(istype(AR, /area/shuttle) || AR.area_flags & NOTELEPORT)
+		if(AR.area_flags & NOTELEPORT)
 			continue
 		if(GLOB.teleportlocs[AR.name])
 			continue
@@ -128,14 +125,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  *  Adds the item to the GLOB.areas_by_type list based on area type
  */
 /area/New()
-	if(!minimap_color) // goes in New() because otherwise it doesn't fucking work
-		// generate one using the icon_state
-		if(icon_state && icon_state != "unknown")
-			var/icon/I = new(icon, icon_state, dir)
-			I.Scale(1,1)
-			minimap_color = I.GetPixel(1,1)
-		else // no icon state? use random.
-			minimap_color = rgb(rand(50,70),rand(50,70),rand(50,70))
 	// This interacts with the map loader, so it needs to be set immediately
 	// rather than waiting for atoms to initialize.
 	if (area_flags & UNIQUE_AREA)
@@ -399,7 +388,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /**
  * If 100 ticks has elapsed, toggle all the firedoors closed again
  */
-/area/process()
+/area/process(seconds_per_tick)
 	if(firedoors_last_closed_on + 100 < world.time)	//every 10 seconds
 		ModifyFiredoors(FALSE)
 
@@ -633,7 +622,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	power_environ = FALSE
 	always_unpowered = FALSE
 	area_flags &= ~VALID_TERRITORY
-	area_flags &= ~BLOBS_ALLOWED
 	addSorted()
 /**
  * Set the area size of the area

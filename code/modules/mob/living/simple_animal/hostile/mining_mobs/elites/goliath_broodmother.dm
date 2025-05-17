@@ -18,7 +18,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother
 	name = "goliath broodmother"
-	desc = "An example of sexual dimorphism, this female goliath looks much different than the males of her species.  She is, however, just as dangerous, if not more."
+	desc = "Goliaths are sequential hermaphrodites, and will rarely enter an egg-bearing or \"female\" phase. As this specimen clearly demonstrates, Goliaths in this phase become significantly larger and more aggressive. These \"Broodmothers\" are even more dangerous than the common variety, and are best avoided entirely."
 	gender = FEMALE
 	icon = 'icons/mob/lavaland/lavaland_elites_64.dmi'
 	icon_state = "broodmother"
@@ -37,13 +37,13 @@
 	attack_verb_continuous = "beats down on"
 	attack_verb_simple = "beat down on"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	throw_message = "does nothing to the rocky hide of the"
+	throw_message = "does nothing to the thick hide of the"
 	speed = 2
 	move_to_delay = 5
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
 	deathmessage = "explodes into gore!"
-	loot_drop = /obj/item/crusher_trophy/broodmother_tongue
+	//loot_drop = /obj/item/mob_trophy/broodmother_tongue
 
 	attack_action_types = list(/datum/action/innate/elite_attack/tentacle_patch,
 								/datum/action/innate/elite_attack/spawn_children,
@@ -60,25 +60,25 @@
 /datum/action/innate/elite_attack/tentacle_patch
 	name = "Tentacle Patch"
 	button_icon_state = "tentacle_patch"
-	chosen_message = "<span class='boldwarning'>You are now attacking with a patch of tentacles.</span>"
+	chosen_message = span_boldwarning("You are now attacking with a patch of tentacles.")
 	chosen_attack_num = TENTACLE_PATCH
 
 /datum/action/innate/elite_attack/spawn_children
 	name = "Spawn Children"
 	button_icon_state = "spawn_children"
-	chosen_message = "<span class='boldwarning'>You will spawn two children at your location to assist you in combat.  You can have up to 8.</span>"
+	chosen_message = span_boldwarning("You will spawn two children at your location to assist you in combat.  You can have up to 8.")
 	chosen_attack_num = SPAWN_CHILDREN
 
 /datum/action/innate/elite_attack/rage
 	name = "Rage"
 	button_icon_state = "rage"
-	chosen_message = "<span class='boldwarning'>You will temporarily increase your movement speed.</span>"
+	chosen_message = span_boldwarning("You will temporarily increase your movement speed.")
 	chosen_attack_num = RAGE
 
 /datum/action/innate/elite_attack/call_children
 	name = "Call Children"
 	button_icon_state = "call_children"
-	chosen_message = "<span class='boldwarning'>You will summon your children to your location.</span>"
+	chosen_message = span_boldwarning("You will summon your children to your location.")
 	chosen_attack_num = CALL_CHILDREN
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/OpenFire()
@@ -123,25 +123,25 @@
 	var/tturf = get_turf(target)
 	if(!isturf(tturf))
 		return
-	visible_message("<span class='warning'>[src] digs its tentacles under [target]!</span>")
+	visible_message(span_warning("[src] digs its tentacles under [target]!"))
 	new /obj/effect/temp_visual/goliath_tentacle/broodmother/patch(tturf, src)
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/spawn_children(target)
 	ranged_cooldown = world.time + 40
-	visible_message("<span class='boldwarning'>The ground churns behind [src]!</span>")
+	visible_message(span_boldwarning("The ground churns behind [src]!"))
 	for(var/i in 1 to 2)
 		if(children_list.len >= 8)
 			return
 		var/mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/newchild = new /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child(loc, src)
 		newchild.GiveTarget(target)
 		newchild.faction = faction.Copy()
-		visible_message("<span class='boldwarning'>[newchild] appears below [src]!</span>")
+		visible_message(span_boldwarning("[newchild] appears below [src]!"))
 		children_list += newchild
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/rage()
 	ranged_cooldown = world.time + 70
 	playsound(src,'sound/spookoween/insane_low_laugh.ogg', 200, 1)
-	visible_message("<span class='warning'>[src] starts picking up speed!</span>")
+	visible_message(span_warning("[src] starts picking up speed!"))
 	color = "#FF0000"
 	set_varspeed(0)
 	move_to_delay = 3
@@ -154,7 +154,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother/proc/call_children()
 	ranged_cooldown = world.time + 60
-	visible_message("<span class='warning'>The ground shakes near [src]!</span>")
+	visible_message(span_warning("The ground shakes near [src]!"))
 	var/list/directions = GLOB.cardinals.Copy() + GLOB.diagonals.Copy()
 	for(var/mob/child in children_list)
 		var/spawndir = pick_n_take(directions)
@@ -166,7 +166,7 @@
 //The goliath's children.  Pretty weak, simple mobs which are able to put a single tentacle under their target when at range.
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child
 	name = "baby goliath"
-	desc = "A young goliath recently born from it's mother.  While they hatch from eggs, said eggs are incubated in the mother until they are ready to be born."
+	desc = "Goliaths are ovoviviparous; While egg-bearing, they incubate their eggs inside the mother. Newly-hatched Goliaths like this one are precocious and can defend themselves and their mother from the moment they hatch."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "goliath_baby"
 	icon_living = "goliath_baby"
@@ -180,12 +180,11 @@
 	attack_verb_continuous = "bashes against"
 	attack_verb_simple = "bash against"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	throw_message = "does nothing to the rocky hide of the"
+	throw_message = "does nothing to the hide of the"
 	speed = 2
 	move_to_delay = 5
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
-	butcher_results = list()
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	deathmessage = "falls to the ground."
 	status_flags = CANPUSH
@@ -207,12 +206,12 @@
 	if(!isturf(tturf))
 		return
 	if(get_dist(src, target) <= 7)//Screen range check, so it can't attack people off-screen
-		visible_message("<span class='warning'>[src] digs one of its tentacles under [target]!</span>")
+		visible_message(span_warning("[src] digs one of its tentacles under [target]!"))
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(tturf, src)
 
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/death()
 	. = ..()
-	visible_message("<span class='warning'>[src] explodes!</span>")
+	visible_message(span_warning("[src] explodes!"))
 	explosion(get_turf(loc),0,0,0,flame_range = 3, adminlog = FALSE)
 	gib()
 
@@ -222,7 +221,7 @@
 	for(var/mob/living/L in loc)
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
-		visible_message("<span class='danger'>[src] grabs hold of [L]!</span>")
+		visible_message(span_danger("[src] grabs hold of [L]!"))
 		L.Stun(10)
 		L.adjustBruteLoss(rand(30,35))
 		latched = TRUE
@@ -246,25 +245,9 @@
 		T = get_step(T, i)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)
 
-// Broodmother's loot: Broodmother Tongue
-/obj/item/crusher_trophy/broodmother_tongue
-	name = "broodmother tongue"
-	desc = "The tongue of a broodmother.  If attached a certain way, makes for a suitable crusher trophy."
-	icon = 'icons/obj/lavaland/elite_trophies.dmi'
-	icon_state = "broodmother_tongue"
-	denied_type = /obj/item/crusher_trophy/broodmother_tongue
-	bonus_value = 35
-
-/obj/item/crusher_trophy/broodmother_tongue/effect_desc()
-	return "waveform collapse to have a <b>[bonus_value]%</b> chance to summon a patch of goliath tentacles at the target's location"
-
-/obj/item/crusher_trophy/broodmother_tongue/on_mark_detonation(mob/living/target, mob/living/user)
-	if(rand(1, 100) <= bonus_value && target.stat != DEAD)
-		new /obj/effect/temp_visual/goliath_tentacle/broodmother/patch(get_turf(target), user)
-
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother_child/rockplanet
 	name = "baby gruboid"
-	desc = "A young gruboid recently born. As a defense mechanism, they violently explode if killed."
+	desc = "A newly-born gruboid. As a defense mechanism, they violently explode if killed."
 	icon_state = "gruboid_baby"
 	icon_living = "gruboid_baby"
 	icon_aggro = "gruboid_baby"

@@ -9,8 +9,8 @@
 	icon_state = "shipgrav"
 	base_icon_state = "shipgrav"
 	density = TRUE
-	idle_power_usage = 10
-	active_power_usage = 5000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_EXTREME
 	circuit = /obj/item/circuitboard/machine/ship_gravity
 	var/charging = FALSE
 	var/active = FALSE
@@ -29,7 +29,7 @@
 	if(anchored)
 		connect_to_network()
 
-/obj/machinery/power/ship_gravity/process()
+/obj/machinery/power/ship_gravity/process(seconds_per_tick)
 	if(charging && (!active_power_usage || surplus() >= active_power_usage))
 		add_load(active_power_usage)
 		charge = min(charge+1, 5)

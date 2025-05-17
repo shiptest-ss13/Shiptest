@@ -44,7 +44,7 @@
 	mouse_opacity = MOUSE_OPACITY_ICON
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 	deathmessage = "screeches as its wings turn to dust and it collapses on the floor, life estinguished."
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500
 	faction = list("carp")
@@ -93,10 +93,10 @@
 		return
 	riftTimer = min(riftTimer + 1, maxRiftTimer + 1)
 	if(riftTimer == (maxRiftTimer - 60))
-		to_chat(src, "<span class='boldwarning'>You have a minute left to summon the rift!  Get to it!</span>")
+		to_chat(src, span_boldwarning("You have a minute left to summon the rift!  Get to it!"))
 		return
 	if(riftTimer == maxRiftTimer)
-		to_chat(src, "<span class='boldwarning'>You've failed to summon the rift in a timely manner!  You're being pulled back from whence you came!</span>")
+		to_chat(src, span_boldwarning("You've failed to summon the rift in a timely manner!  You're being pulled back from whence you came!"))
 		destroy_rifts()
 		QDEL_NULL(src)
 
@@ -104,11 +104,11 @@
 	if(using_special)
 		return
 	if(target == src)
-		to_chat(src, "<span class='warning'>You almost bite yourself, but then decide against it.</span>")
+		to_chat(src, span_warning("You almost bite yourself, but then decide against it."))
 		return
 	if(istype(target, /turf/closed/wall))
 		var/turf/closed/wall/thewall = target
-		to_chat(src, "<span class='warning'>You begin tearing through the wall...</span>")
+		to_chat(src, span_warning("You begin tearing through the wall..."))
 		playsound(src, 'sound/machines/creaking.ogg', 100, TRUE)
 		var/timetotear = 40
 		if(istype(target, /turf/closed/wall/r_wall))
@@ -122,7 +122,7 @@
 	if(isliving(target)) //Swallows corpses like a snake to regain health.
 		var/mob/living/L = target
 		if(L.stat == DEAD)
-			to_chat(src, "<span class='warning'>You begin to swallow [L] whole...</span>")
+			to_chat(src, span_warning("You begin to swallow [L] whole..."))
 			if(do_after(src, 30, target = L))
 				if(eat(L))
 					adjustHealth(-L.maxHealth * 0.5)
@@ -219,7 +219,7 @@
 			continue
 		hit_list += L
 		L.adjustFireLoss(30)
-		to_chat(L, "<span class='userdanger'>You're hit by [src]'s fire breath!</span>")
+		to_chat(L, span_userdanger("You're hit by [src]'s fire breath!"))
 	// deals damage to mechs
 	for(var/obj/mecha/M in T.contents)
 		if(M in hit_list)
@@ -238,7 +238,7 @@
 /mob/living/simple_animal/hostile/space_dragon/proc/eat(atom/movable/A)
 	if(A && A.loc != src)
 		playsound(src, 'sound/magic/demon_attack1.ogg', 100, TRUE)
-		visible_message("<span class='warning'>[src] swallows [A] whole!</span>")
+		visible_message(span_warning("[src] swallows [A] whole!"))
 		A.forceMove(src)
 		return TRUE
 	return FALSE
@@ -324,12 +324,12 @@
 			if(L == src)
 				continue
 			hit_things += L
-			visible_message("<span class='boldwarning'>[L] is knocked back by the gust!</span>")
-			to_chat(L, "<span class='userdanger'>You're knocked back by the gust!</span>")
+			visible_message(span_boldwarning("[L] is knocked back by the gust!"))
+			to_chat(L, span_userdanger("You're knocked back by the gust!"))
 			var/dir_to_target = get_dir(get_turf(src), get_turf(L))
 			var/throwtarget = get_edge_target_turf(target, dir_to_target)
 			L.safe_throw_at(throwtarget, 10, 1, src)
-			L.Paralyze(50)
+			L.Paralyze(1 SECONDS)
 	addtimer(CALLBACK(src, PROC_REF(reset_status)), 4 + ((tiredness * tiredness_mult) / 10))
 	tiredness = tiredness + (30 * tiredness_mult)
 
@@ -383,14 +383,14 @@
 		return
 	var/area/A = get_area(S)
 	if(!(A.area_flags & VALID_TERRITORY))
-		to_chat(S, "<span class='warning'>You can't summon a rift here!  Try summoning somewhere secure within the station!</span>")
+		to_chat(S, span_warning("You can't summon a rift here!  Try summoning somewhere secure within the station!"))
 		return
 	for(var/obj/structure/carp_rift/rift in S.rift_list)
 		var/area/RA = get_area(rift)
 		if(RA == A)
-			to_chat(S, "<span class='warning'>You've already summoned a rift in this area!  You have to summon again somewhere else!</span>")
+			to_chat(S, span_warning("You've already summoned a rift in this area!  You have to summon again somewhere else!"))
 			return
-	to_chat(S, "<span class='warning'>You begin to open a rift...</span>")
+	to_chat(S, span_warning("You begin to open a rift..."))
 	if(do_after(S, 100, target = S))
 		for(var/obj/structure/carp_rift/c in S.loc.contents)
 			return
@@ -399,7 +399,7 @@
 		S.riftTimer = -1
 		CR.dragon = S
 		S.rift_list += CR
-		to_chat(S, "<span class='boldwarning'>The rift has been summoned.  Prevent the crew from destroying it at all costs!</span>")
+		to_chat(S, span_boldwarning("The rift has been summoned.  Prevent the crew from destroying it at all costs!"))
 		notify_ghosts("The Space Dragon has opened a rift!", source = CR, action = NOTIFY_ORBIT, flashwindow = FALSE, header = "Carp Rift Opened")
 		qdel(src)
 
@@ -427,7 +427,7 @@
 	/// The amount of time the rift has charged for.
 	var/time_charged = 0
 	/// The maximum charge the rift can have.  It actually goes to max_charge + 1, as to prevent constantly retriggering the effects on full charge.
-	var/max_charge = 240
+	var/max_charge = 480
 	/// How many carp spawns it has available.
 	var/carp_stored = 0
 	/// A reference to the Space Dragon that created it.
@@ -445,19 +445,19 @@
 /obj/structure/carp_rift/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	if(time_charged != max_charge + 1)
-		to_chat(dragon, "<span class='boldwarning'>The rift has been destroyed!  You have failed, and find yourself brought down by the weight of your failure.</span>")
+		to_chat(dragon, span_boldwarning("The rift has been destroyed!  You have failed, and find yourself brought down by the weight of your failure."))
 		dragon.set_varspeed(5)
 		dragon.tiredness_mult = 5
 		dragon.destroy_rifts()
 		playsound(src, 'sound/vehicles/rocketlaunch.ogg', 100, TRUE)
 	return ..()
 
-/obj/structure/carp_rift/process()
-	time_charged = min(time_charged + 1, max_charge + 1)
+/obj/structure/carp_rift/process(seconds_per_tick)
+	time_charged = min(time_charged + seconds_per_tick, max_charge + 1)
 	update_check()
 	for(var/mob/living/simple_animal/hostile/hostilehere in loc)
 		if("carp" in hostilehere.faction)
-			hostilehere.adjustHealth(-10)
+			hostilehere.adjustHealth(-5 * seconds_per_tick)
 			var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(hostilehere))
 			H.color = "#0000FF"
 	if(time_charged < max_charge)
@@ -469,8 +469,7 @@
 			icon_state = "carp_rift_carpspawn"
 			light_color = LIGHT_COLOR_PURPLE
 	else
-		var/spawncarp = rand(1,40)
-		if(spawncarp == 1)
+		if(SPT_PROB(1.25, seconds_per_tick))
 			new /mob/living/simple_animal/hostile/carp(loc)
 
 /obj/structure/carp_rift/attack_ghost(mob/user)
@@ -524,13 +523,13 @@
 	if(carp_ask == "No" || !src || QDELETED(src) || QDELETED(user))
 		return FALSE
 	if(carp_stored == 0)
-		to_chat(user, "<span class='warning'>The rift already summoned enough carp!</span>")
+		to_chat(user, span_warning("The rift already summoned enough carp!"))
 		return FALSE
 	var/mob/living/simple_animal/hostile/carp/newcarp = new /mob/living/simple_animal/hostile/carp(loc)
 	newcarp.key = user.key
 	var/datum/antagonist/space_dragon/S = dragon.mind.has_antag_datum(/datum/antagonist/space_dragon)
 	if(S)
 		S.carp += newcarp.mind
-	to_chat(newcarp, "<span class='boldwarning'>You have arrived in order to assist the space dragon with securing the rift.  Do not jeopardize the mission, and protect the rift at all costs!</span>")
+	to_chat(newcarp, span_boldwarning("You have arrived in order to assist the space dragon with securing the rift.  Do not jeopardize the mission, and protect the rift at all costs!"))
 	carp_stored -= 1
 	return TRUE

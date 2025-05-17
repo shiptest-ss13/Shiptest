@@ -8,7 +8,7 @@
 	icon = 'icons/obj/plumbing/plumbers.dmi'
 	icon_state = "pump"
 	density = TRUE
-	active_power_usage = 30
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	use_power = ACTIVE_POWER_USE
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	///Plumbing machinery is always gonna need reagents, so we might aswell put it here
@@ -33,7 +33,7 @@
 
 /obj/machinery/plumbing/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The maximum volume display reads: <b>[reagents.maximum_volume] units</b>.</span>"
+	. += span_notice("The maximum volume display reads: <b>[reagents.maximum_volume] units</b>.")
 
 /obj/machinery/plumbing/wrench_act(mob/living/user, obj/item/I)
 	..()
@@ -41,9 +41,9 @@
 	return TRUE
 
 /obj/machinery/plumbing/plunger_act(obj/item/plunger/P, mob/living/user)
-	to_chat(user, "<span class='notice'>You start furiously plunging [name].</span>")
+	to_chat(user, span_notice("You start furiously plunging [name]."))
 	if(do_after(user, 30, target = src))
-		to_chat(user, "<span class='notice'>You finish plunging the [name].</span>")
+		to_chat(user, span_notice("You finish plunging the [name]."))
 		reagents.expose(get_turf(src), TOUCH) //splash on the floor
 		reagents.clear_reagents()
 
@@ -51,7 +51,7 @@
 	. = ..()
 	if(anchored)
 		to_chat(user, "<span class='warning'>The [name] needs to be unbolted to do that!</span")
-	if(I.tool_start_check(user, amount=0))
+	if(I.tool_start_check(user, src, amount=0))
 		to_chat(user, "<span class='notice'>You start slicing the [name] apart.</span")
 		if(I.use_tool(src, user, rcd_delay * 2, volume=50))
 			deconstruct(TRUE)

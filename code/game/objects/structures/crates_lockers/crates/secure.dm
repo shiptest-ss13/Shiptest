@@ -28,7 +28,7 @@
 
 /obj/structure/closet/crate/secure/proc/boom(mob/user)
 	if(user)
-		to_chat(user, "<span class='danger'>The crate's anti-tamper system activates!</span>")
+		to_chat(user, span_danger("The crate's anti-tamper system activates!"))
 		log_bomber(user, "has detonated a", src)
 	for(var/atom/movable/AM as anything in src)
 		qdel(AM)
@@ -74,7 +74,7 @@
 
 /obj/structure/closet/crate/secure/owned/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's locked with a privacy lock, and can only be unlocked by the buyer's ID.</span>"
+	. += span_notice("It's locked with a privacy lock, and can only be unlocked by the buyer's ID.")
 
 /obj/structure/closet/crate/secure/owned/Initialize(mapload, datum/bank_account/_buyer_account)
 	. = ..()
@@ -83,25 +83,25 @@
 /obj/structure/closet/crate/secure/owned/togglelock(mob/living/user, silent)
 	if(privacy_lock)
 		if(!broken)
-			var/obj/item/card/id/id_card = user.get_idcard(TRUE)
-			if(id_card)
-				if(id_card.registered_account)
-					if(id_card.registered_account == buyer_account)
+			var/obj/item/card/bank/bank_card = user.get_bankcard()
+			if(bank_card)
+				if(bank_card.registered_account)
+					if(bank_card.registered_account == buyer_account)
 						if(iscarbon(user))
 							add_fingerprint(user)
 						locked = !locked
-						user.visible_message("<span class='notice'>[user] unlocks [src]'s privacy lock.</span>",
-										"<span class='notice'>You unlock [src]'s privacy lock.</span>")
+						user.visible_message(span_notice("[user] unlocks [src]'s privacy lock."),
+										span_notice("You unlock [src]'s privacy lock."))
 						privacy_lock = FALSE
 						update_appearance()
 					else if(!silent)
-						to_chat(user, "<span class='notice'>Bank account does not match with buyer!</span>")
+						to_chat(user, span_notice("Bank account does not match with buyer!"))
 				else if(!silent)
-					to_chat(user, "<span class='notice'>No linked bank account detected!</span>")
+					to_chat(user, span_notice("No linked bank account detected!"))
 			else if(!silent)
-				to_chat(user, "<span class='notice'>No ID detected!</span>")
+				to_chat(user, span_notice("No ID detected!"))
 		else if(!silent)
-			to_chat(user, "<span class='warning'>[src] is broken!</span>")
+			to_chat(user, span_warning("[src] is broken!"))
 	else ..()
 
 /obj/structure/closet/crate/secure/exo

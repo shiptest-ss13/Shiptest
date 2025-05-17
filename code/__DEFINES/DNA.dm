@@ -24,14 +24,10 @@
 #define MUT_MUTE /datum/mutation/human/mute
 #define STONER /datum/mutation/human/stoner
 #define UNINTELLIGIBLE /datum/mutation/human/unintelligible
-#define SWEDISH /datum/mutation/human/swedish
-#define CHAV /datum/mutation/human/chav
-#define ELVIS /datum/mutation/human/elvis
 #define RADIOACTIVE /datum/mutation/human/radioactive
 #define GLOWY /datum/mutation/human/glow
 #define ANTIGLOWY /datum/mutation/human/glow/anti
 #define TELEPATHY /datum/mutation/human/telepathy
-#define FIREBREATH /datum/mutation/human/firebreath
 #define VOID /datum/mutation/human/void
 #define TONGUESPIKE /datum/mutation/human/tonguespike
 #define TONGUESPIKECHEM /datum/mutation/human/tongue_spike/chem
@@ -103,6 +99,7 @@
 #define TR_KEEPORGANS (1<<8)
 #define TR_KEEPSTUNS (1<<9)
 #define TR_KEEPREAGENTS (1<<10)
+#define TR_KEEPAI (1<<11)
 
 //species traits for mutantraces
 #define MUTCOLORS 1

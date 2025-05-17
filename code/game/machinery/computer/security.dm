@@ -38,7 +38,7 @@
 	if(isliving(user))
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 	if(src.z > 6)
-		to_chat(user, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
+		to_chat(user, "[span_boldannounce("Unable to establish a connection")]: \black You're too far away from the station!")
 		return
 	var/dat
 
@@ -228,7 +228,6 @@
 						dat += "<A href='?src=[REF(src)];choice=New Record (Security)'>New Security Record</A><br><br>"
 					dat += "<A href='?src=[REF(src)];choice=Delete Record (ALL)'>Delete Record (ALL)</A><br><A href='?src=[REF(src)];choice=Print Record'>Print Record</A><BR><A href='?src=[REF(src)];choice=Print Poster'>Print Wanted Poster</A><BR><A href='?src=[REF(src)];choice=Print Missing'>Print Missing Persons Poster</A><BR><A href='?src=[REF(src)];choice=Return'>Back</A><BR><BR>"
 					dat += "<A href='?src=[REF(src)];choice=Log Out'>{Log Out}</A>"
-				else
 		else
 			dat += "<A href='?src=[REF(src)];choice=Log In'>{Log In}</A>"
 	var/datum/browser/popup = new(user, "secure_rec", "Security Records Console", 600, 400)
@@ -301,7 +300,7 @@ What a mess.*/
 					rank = I.assignment
 					screen = 1
 				else
-					to_chat(usr, "<span class='danger'>Unauthorized Access.</span>")
+					to_chat(usr, span_danger("Unauthorized Access."))
 				playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 
 //RECORD FUNCTIONS

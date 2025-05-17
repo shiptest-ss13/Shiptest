@@ -1,9 +1,9 @@
 /obj/effect/anomaly/phantom
 	name = "phantom"
 	icon_state = "phantom"
-	desc = "A mysterious anomaly, the outline of a humanoid, endlessly screaming in agony."
+	desc = "A familiar outline, it calls out for companionship. It screams for you."
 	density = FALSE
-	aSignal = /obj/item/assembly/signaler/anomaly/phantom
+	core = /obj/item/assembly/signaler/anomaly/phantom
 	effectrange = 3
 	pulse_delay = 2 SECONDS
 

@@ -173,3 +173,16 @@
 
 /// Color used for default blood
 #define COLOR_BLOOD "#CC0000"
+
+
+/*Planetary color defines*/
+
+#define COLOR_BEACHPLANET_LIGHT "#faeacb"
+#define COLOR_ICEPLANET_LIGHT "#e1d1e6"
+#define COLOR_LAVAPLANET_LIGHT "#f5b85d"
+#define COLOR_JUNGLEPLANET_LIGHT "#b39981"
+#define COLOR_ROCKPLANET_LIGHT "#db9e9f"
+#define COLOR_SANDPLANET_LIGHT "#EEEEEE" //EEEEEEEEEE
+#define COLOR_WASTEPLANET_LIGHT "#FA644B"
+#define COLOR_FOGGY_LIGHT "#849abf"
+#define COLOR_DESERTPLANET_LIGHT "#ffd2bd"

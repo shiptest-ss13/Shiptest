@@ -35,7 +35,7 @@
 
 /obj/item/assembly/infra/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The infrared trigger is [on?"on":"off"].</span>"
+	. += span_notice("The infrared trigger is [on?"on":"off"].")
 
 /obj/item/assembly/infra/activate()
 	if(!..())
@@ -78,7 +78,7 @@
 	else
 		refreshBeam()
 
-/obj/item/assembly/infra/process()
+/obj/item/assembly/infra/process(seconds_per_tick)
 	if(!on || !secured)
 		refreshBeam()
 		return

@@ -19,6 +19,7 @@
 	tool_behaviour = TOOL_CROWBAR
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
+	demolition_mod = 1.25
 	var/force_opens = FALSE
 
 /obj/item/crowbar/red
@@ -65,13 +66,13 @@
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_CROWBAR)
 		tool_behaviour = TOOL_WIRECUTTER
-		to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
+		to_chat(user, span_notice("You attach the cutting jaws to [src]."))
 		usesound = 'sound/items/jaws_cut.ogg'
 		icon_state = "jaws_cutter"
 		update_appearance()
 	else
 		tool_behaviour = TOOL_CROWBAR
-		to_chat(user, "<span class='notice'>You attach the prying jaws to [src].</span>")
+		to_chat(user, span_notice("You attach the prying jaws to [src]."))
 		usesound = 'sound/items/jaws_pry.ogg'
 		icon_state = "jaws_pry"
 		update_appearance()
@@ -101,7 +102,7 @@
 
 /obj/item/crowbar/power/attack(mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && tool_behaviour == TOOL_WIRECUTTER)
-		user.visible_message("<span class='notice'>[user] cuts [C]'s restraints with [src]!</span>")
+		user.visible_message(span_notice("[user] cuts [C]'s restraints with [src]!"))
 		qdel(C.handcuffed)
 		return
 	else
@@ -117,10 +118,7 @@
 	toolspeed = 0.5
 
 /obj/item/crowbar/syndie
-	name = "suspicious-looking crowbar"
-	desc = "It has special counterweights that adjust to the amount of pressure put on it by using a complex array of springs and screws."
 	icon_state = "crowbar_syndie"
-	toolspeed = 0.5
 	force = 8
 
 /obj/item/crowbar/old

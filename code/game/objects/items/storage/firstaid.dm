@@ -108,7 +108,7 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
-		/obj/item/stack/medical/gauze = 1,
+		/obj/item/stack/medical/gauze/twelve = 1,
 		/obj/item/stack/medical/suture = 2,
 		/obj/item/stack/medical/mesh = 2,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
@@ -277,7 +277,7 @@
 
 	//Making a medibot!
 	if(contents.len >= 1)
-		to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
+		to_chat(user, span_warning("You need to empty [src] out first!"))
 		return
 
 	var/obj/item/bot_assembly/medbot/A = new
@@ -292,7 +292,7 @@
 	else if(istype(src, /obj/item/storage/firstaid/tactical))
 		A.set_skin("medibot_bezerk")
 	user.put_in_hands(A)
-	to_chat(user, "<span class='notice'>You add [S] to [src].</span>")
+	to_chat(user, span_notice("You add [S] to [src]."))
 	A.robot_arm = S.type
 	A.firstaid = type
 	qdel(S)
@@ -472,3 +472,45 @@
 /obj/item/storage/pill_bottle/trophazole/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/pill/trophazole(src)
+
+/obj/item/storage/pill_bottle/licarb
+	name = "bottle of lithium carbonate pills"
+	desc = "Contains pills used to stabilize mood."
+	custom_price = 50
+
+/obj/item/storage/pill_bottle/licarb/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/licarb(src)
+
+/obj/item/storage/pill_bottle/finobranc
+	name = "bottle of finobranc tablets"
+	desc = "Party in the Solar Cantons, tonight."
+
+/obj/item/storage/pill_bottle/finobranc/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/finobranc(src)
+
+/obj/item/storage/pill_bottle/stardrop
+	name = "bottle of stardrop capsules"
+	desc = "Contains vision-enhancing pills."
+	custom_price = 300
+
+/obj/item/storage/pill_bottle/stardrop/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/stardrop(src)
+
+/obj/item/storage/pill_bottle/starlight
+	name = "bottle of starlight capsules"
+	desc = "Contains vision-enhancing pills."
+
+/obj/item/storage/pill_bottle/starlight/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/pill/starlight(src)
+
+/obj/item/storage/pill_bottle/placebatol
+	name = "bottle of prescription pills"
+	desc = "Contains pills as prescribed. A tag reads: \"NO MEDICINAL EFFECT\"."
+
+/obj/item/storage/pill_bottle/placebatol/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/placebatol(src)

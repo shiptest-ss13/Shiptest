@@ -28,6 +28,13 @@
 #define BLOOD_VOLUME_BAD 224
 #define BLOOD_VOLUME_SURVIVE 122
 
+// Bloodloss
+#define BLOOD_LOSS_MAXIMUM 30
+#define BLOOD_LOSS_DAMAGE_MAXIMUM 2
+#define BLOOD_LOSS_DAMAGE_BASE 0.013
+#define BLOOD_CAUTERIZATION_RATIO 10
+#define BLOOD_CAUTERIZATION_DAMAGE_RATIO 300
+
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0
 #define MOB_SIZE_SMALL 1
@@ -45,16 +52,32 @@
 #define BLOODCRAWL_EAT 2 /// crawling+mob devour
 
 //Mob bio-types flags
-#define MOB_ORGANIC 1 << 0
-#define MOB_MINERAL 1 << 1
-#define MOB_ROBOTIC 1 << 2
-#define MOB_UNDEAD 1 << 3
-#define MOB_HUMANOID 1 << 4
-#define MOB_BUG 1 << 5
-#define MOB_BEAST 1 << 6
-#define MOB_EPIC 1 << 7 //megafauna
-#define MOB_REPTILE 1 << 8
-#define MOB_SPIRIT 1 << 9
+///The mob is organic, can heal from medical sutures.
+#define MOB_ORGANIC (1 << 0)
+///The mob is of a rocky make, most likely a golem. Iron within, iron without!
+#define MOB_MINERAL (1 << 1)
+///The mob is a synthetic lifeform, like station borgs.
+#define MOB_ROBOTIC (1 << 2)
+///The mob is an shambling undead corpse. Or a halloween species. Pick your poison.
+#define MOB_UNDEAD (1 << 3)
+///The mob is a human-sized human-like human-creature.
+#define MOB_HUMANOID (1 << 4)
+///The mob is a bug/insect/arachnid/some other kind of scuttly thing.
+#define MOB_BUG (1 << 5)
+///The mob is a wild animal. Domestication may apply.
+#define MOB_BEAST (1 << 6)
+///The mob is some kind of a creature that should be exempt from certain **fun** interactions for balance reasons, i.e. megafauna or a headslug.
+#define MOB_SPECIAL (1 << 7)
+///The mob is some kind of a scaly reptile creature
+#define MOB_REPTILE (1 << 8)
+///The mob is a spooky phantasm or an evil ghast of such nature.
+#define MOB_SPIRIT (1 << 9)
+///The mob is a plant-based species, benefitting from light but suffering from darkness and plantkillers.
+#define MOB_PLANT (1 << 10)
+///The mob is fish or water-related.
+#define MOB_AQUATIC (1 << 11)
+///The mob is a crustacean. Like crabs. Or lobsters.
+#define MOB_CRUSTACEAN (1 << 12)
 
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC 1
@@ -69,7 +92,6 @@
 #define MONKEY_BODYPART "monkey"
 #define ALIEN_BODYPART "alien"
 #define LARVA_BODYPART "larva"
-#define DEVIL_BODYPART "devil"
 
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"
@@ -99,7 +121,6 @@
 #define SPECIES_VAMPIRE "vampire"
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
-#define SPECIES_GOOFZOMBIE "krokodil_zombie"
 #define SPECIES_XENOMORPH "xenomorph"
 
 #define DIGITIGRADE_NEVER 0
@@ -129,10 +150,11 @@
 #define BODYTYPE_ROBOTIC (1<<1)
 #define BODYTYPE_HUMANOID (1<<2) //Everything
 #define BODYTYPE_SNOUT (1<<3) //Snouts
-#define BODYTYPE_BOXHEAD (1<<4) //TV Head
-#define BODYTYPE_DIGITIGRADE (1<<5) //Lizard legs
-#define BODYTYPE_KEPORI (1<<6) //Just Kepori
-#define BODYTYPE_VOX (1<<7) //Big Vox
+#define BODYTYPE_SNOUT_SMALL (1<<4) //Elzuose snouts
+#define BODYTYPE_BOXHEAD (1<<5) //TV Head
+#define BODYTYPE_DIGITIGRADE (1<<6) //Lizard legs
+#define BODYTYPE_KEPORI (1<<7) //Just Kepori
+#define BODYTYPE_VOX (1<<8) //Big Vox
 
 // Health/damage defines
 #define MAX_LIVING_HEALTH 100
@@ -235,8 +257,8 @@
 #define NUTRITION_LEVEL_START_MAX 400
 
 //Disgust levels for humans
-#define DISGUST_LEVEL_MAXEDOUT 150
-#define DISGUST_LEVEL_DISGUSTED 75
+#define DISGUST_LEVEL_MAXEDOUT 200
+#define DISGUST_LEVEL_DISGUSTED 100
 #define DISGUST_LEVEL_VERYGROSS 50
 #define DISGUST_LEVEL_GROSS 25
 
@@ -318,6 +340,8 @@
 #define SHOCK_ILLUSION (1 << 2)
 ///The shock doesn't stun.
 #define SHOCK_NOSTUN (1 << 3)
+/// No default message is sent from the shock
+#define SHOCK_SUPPRESS_MESSAGE (1 << 4)
 
 #define INCORPOREAL_MOVE_BASIC 1 /// normal movement, see: [/mob/living/var/incorporeal_move]
 #define INCORPOREAL_MOVE_SHADOW 2 /// leaves a trail of shadows
@@ -349,6 +373,13 @@
 #define ELZUOSE_CHARGE_FACTOR (0.05 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
+///Greater numbers mean that less alcohol has greater intoxication potential
+#define ALCOHOL_THRESHOLD_MODIFIER 1
+///The rate at which alcohol affects you
+#define ALCOHOL_RATE 0.005
+///The exponent applied to boozepwr to make higher volume alcohol at least a little bit damaging to the liver
+#define ALCOHOL_EXPONENT 1.6
+#define ETHANOL_METABOLISM 0.5 * REAGENTS_METABOLISM
 
 // Eye protection
 #define FLASH_PROTECTION_SENSITIVE -1
@@ -358,7 +389,7 @@
 
 // Roundstart trait system
 
-#define MAX_QUIRKS 6 //The maximum amount of quirks one character can have at roundstart
+#define MAX_QUIRKS 4 //The maximum amount of quirks one character can have at roundstart
 
 // AI Toggles
 #define AI_CAMERA_LUMINOSITY 5
@@ -390,13 +421,15 @@
 #define RACE_SWAP (1<<3)
 //ERT spawn template (avoid races that don't function without correct gear)
 #define ERT_SPAWN (1<<4)
-//xenobio black crossbreed
-#define SLIME_EXTRACT (1<<5)
 //Wabbacjack staff projectiles
-#define WABBAJACK (1<<6)
+#define WABBAJACK (1<<5)
 
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;
-#define INTERACTING_WITH(X, Y) (Y in X.do_afters)
+
+#define DOING_INTERACTION(user, interaction_key) (LAZYACCESS(user.do_afters, interaction_key))
+#define DOING_INTERACTION_LIMIT(user, interaction_key, max_interaction_count) ((LAZYACCESS(user.do_afters, interaction_key) || 0) >= max_interaction_count)
+#define DOING_INTERACTION_WITH_TARGET(user, target) (LAZYACCESS(user.do_afters, target))
+#define DOING_INTERACTION_WITH_TARGET_LIMIT(user, target, max_interaction_count) ((LAZYACCESS(user.do_afters, target) || 0) >= max_interaction_count)
 
 /// If you examine the same atom twice in this timeframe, we call examine_more() instead of examine()
 #define EXAMINE_MORE_TIME 1 SECONDS
@@ -404,9 +437,6 @@
 #define EYE_CONTACT_RANGE 5
 
 #define SILENCE_RANGED_MESSAGE (1<<0)
-
-///Swarmer flags
-#define SWARMER_LIGHT_ON (1<<0)
 
 /// Returns whether or not the given mob can succumb
 #define CAN_SUCCUMB(target) (HAS_TRAIT(target, TRAIT_CRITICAL_CONDITION) && !HAS_TRAIT(target, TRAIT_NODEATH))
@@ -431,3 +461,17 @@
 
 //Saves a proc call, life is suffering. If who has no targets_from var, we assume it's just who
 #define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)
+
+///Squash flags. For squashable component
+///Whether or not the squashing requires the squashed mob to be lying down
+#define SQUASHED_SHOULD_BE_DOWN (1<<0)
+///Whether or not to gib when the squashed mob is moved over
+#define SQUASHED_SHOULD_BE_GIBBED (1<<0)
+
+/// Default minimum body temperature mobs can exist in before taking damage
+#define NPC_DEFAULT_MIN_TEMP 250
+/// Default maximum body temperature mobs can exist in before taking damage
+#define NPC_DEFAULT_MAX_TEMP 350
+
+/// In dynamic human icon gen we don't replace the held item.
+#define NO_REPLACE 0

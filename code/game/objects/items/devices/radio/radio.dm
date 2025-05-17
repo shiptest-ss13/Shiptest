@@ -16,43 +16,62 @@
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
-	custom_materials = list(/datum/material/iron=75, /datum/material/glass=25)
+	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+	slot_flags = ITEM_SLOT_NECK //Allows to be worn on neck so it's not eating pocket slots.
 	obj_flags = USES_TGUI
 
 	var/on = TRUE
 	var/frequency = FREQ_COMMON
-	var/canhear_range = 3  // The range around the radio in which mobs can hear what it receives.
-	var/emped = 0  // Tracks the number of EMPs currently stacked.
-	var/headset = FALSE // It can be used for hotkeys
-	var/last_chatter_time // The time since we last played a radio chatter sound. (WS edit - Radio Chatter #434)
+	///The range around the radio in which mobs can hear what it receives.
+	var/canhear_range = 3
+	///Tracks the number of EMPs currently stacked.
+	var/emped = 0
+	///It can be used for hotkeys
+	var/headset = FALSE
+	///Whether the radio will transmit dialogue it hears nearby.
+	var/broadcasting = FALSE
+	///Whether the radio is currently receiving.
+	var/listening = FALSE
+	///If true, the transmit wire starts cut.
+	var/prison_radio = FALSE
+	///Whether wires are accessible. Toggleable by screwdrivering.
+	var/unscrewed = FALSE
+	///If true, the radio has access to the full spectrum.
+	var/freerange = FALSE
+	///If true, the radio transmits and receives on subspace exclusively.
+	var/subspace_transmission = FALSE
+	///If true, subspace_transmission can be toggled at will.
+	var/subspace_switchable = FALSE
+	///Frequency lock to stop the user from untuning specialist radios.
+	var/freqlock = FALSE
+	///If true, broadcasts will be large and BOLD.
+	var/use_command = FALSE
+	///If true, use_command can be toggled at will.
+	var/command = FALSE
+	///If true, the UI will display the voice log for the frequency
+	var/log = FALSE
+	///the voice log
+	var/list/loglist = list()
 
-	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
-	var/listening = FALSE  // Whether the radio is currently receiving.
-	var/prison_radio = FALSE  // If true, the transmit wire starts cut.
-	var/unscrewed = FALSE  // Whether wires are accessible. Toggleable by screwdrivering.
-	var/freerange = FALSE  // If true, the radio has access to the full spectrum.
-	var/subspace_transmission = FALSE  // If true, the radio transmits and receives on subspace exclusively.
-	var/subspace_switchable = FALSE  // If true, subspace_transmission can be toggled at will.
-	var/freqlock = FALSE  // Frequency lock to stop the user from untuning specialist radios.
-	var/use_command = FALSE  // If true, broadcasts will be large and BOLD.
-	var/command = FALSE  // If true, use_command can be toggled at will.
-	var/log = FALSE // If true, the UI will display the voice log for the frequency
-	var/list/loglist = list() //the voice log
-
-	// Encryption key handling
+	///Encryption key handling
 	var/obj/item/encryptionkey/keyslot
-	var/translate_binary = FALSE  // If true, can hear the special binary channel.
-	var/independent = FALSE  // If true, can say/hear on the special CentCom channel.
-	var/list/channels = list()  // Map from name (see communications.dm) to on/off. First entry is current department (:h)
+	///If true, can hear the special binary channel.
+	var/translate_binary = FALSE
+	///If true, can say/hear on the special CentCom channel.
+	var/independent = FALSE
+	// If true, can broadcast across z-levels but not recieve across z-levels.
+	var/sectorwide = FALSE
+	///Map from name (see communications.dm) to on/off. First entry is current department (:h)
+	var/list/channels = list()
 	var/list/secure_radio_connections
 
 	var/const/FREQ_LISTENING = 1
 	//FREQ_BROADCASTING = 2
 
 /obj/item/radio/proc/set_frequency(new_frequency)
-	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
 	remove_radio(src, frequency)
 	frequency = add_radio(src, new_frequency)
+	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
 
 /obj/item/radio/proc/recalculateChannels()
 	channels = list()
@@ -99,16 +118,20 @@
 /obj/item/radio/AltClick(mob/user)
 	if(headset)
 		. = ..()
+	else if(sectorwide == TRUE) // prevents incompatibility with broadcast cameras
+		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		broadcasting = !broadcasting
-		to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle broadcasting [broadcasting ? "on" : "off"]."))
 
 /obj/item/radio/CtrlShiftClick(mob/user)
 	if(headset)
 		. = ..()
+	else if(sectorwide == TRUE) // prevents incompatibility with broadcast cameras
+		return
 	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
 		listening = !listening
-		to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle speaker [listening ? "on" : "off"]."))
 
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
@@ -198,6 +221,10 @@
 				. = TRUE
 
 /obj/item/radio/talk_into(atom/movable/M, message, channel, list/spans, datum/language/language, list/message_mods)
+	if(SEND_SIGNAL(M, COMSIG_MOVABLE_USING_RADIO, src) & COMPONENT_CANNOT_USE_RADIO)
+		return
+	if(SEND_SIGNAL(src, COMSIG_RADIO_NEW_MESSAGE, M, message, channel) & COMPONENT_CANNOT_USE_RADIO)
+		return
 	if(!spans)
 		spans = list(M.speech_span)
 	if(!language)
@@ -250,23 +277,33 @@
 	// Determine the identity information which will be attached to the signal.
 	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
 
+	// Check for the overmap's interference level
+	var/interference_level = SSovermap.get_overmap_interference(src)
+
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
+	signal.data["interference"] = interference_level
+	signal.data["sfx"] = 'sound/effects/radio_chatter.ogg'
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		//WS Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.map_zones = list(0)  // reaches all Z-levels
+		signal.data["sfx"] = 'sound/effects/overmap/wideband.ogg'
 		signal.broadcast()
-		playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
+		return
+
+	// News Broadcast Radios and Similar, for devices you want to transmit across z-levels but not recieve across.
+	if (sectorwide)
+		signal.data["compression"] = 0
+		signal.transmission_method = TRANSMISSION_SECTOR
+		signal.map_zones = list(0)  // reaches all Z-levels
+		signal.broadcast()
 		return
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
-
-	//At this point the signal was transmitted so play a sound			//WS Edit - Radio chatter
-	playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)
@@ -337,22 +374,22 @@
 /obj/item/radio/examine(mob/user)
 	. = ..()
 	if (frequency && in_range(src, user))
-		. += "<span class='notice'>It is set to broadcast over the [frequency/10] frequency.</span>"
+		. += span_notice("It is set to broadcast over the [frequency/10] frequency.")
 	if (unscrewed)
-		. += "<span class='notice'>It can be attached and modified.</span>"
+		. += span_notice("It can be attached and modified.")
 	else
-		. += "<span class='notice'>It cannot be modified or attached.</span>"
+		. += span_notice("It cannot be modified or attached.")
 	if (in_range(src, user)&& !headset)
-		. += "<span class='info'>Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.</span>"
+		. += span_info("Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.")
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		unscrewed = !unscrewed
 		if(unscrewed)
-			to_chat(user, "<span class='notice'>The radio can now be attached and modified!</span>")
+			to_chat(user, span_notice("The radio can now be attached and modified!"))
 		else
-			to_chat(user, "<span class='notice'>The radio can no longer be modified or attached!</span>")
+			to_chat(user, span_notice("The radio can no longer be modified or attached!"))
 	else
 		return ..()
 
@@ -363,7 +400,7 @@
 	emped++ //There's been an EMP; better count it
 	var/curremp = emped //Remember which EMP this was
 	if (listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-		to_chat(loc, "<span class='warning'>\The [src] overloads.</span>")
+		to_chat(loc, span_warning("\The [src] overloads."))
 	broadcasting = FALSE
 	listening = FALSE
 	for (var/ch_name in channels)
@@ -419,14 +456,14 @@
 					keyslot = null
 
 			recalculateChannels()
-			to_chat(user, "<span class='notice'>You pop out the encryption key in the radio.</span>")
+			to_chat(user, span_notice("You pop out the encryption key in the radio."))
 
 		else
-			to_chat(user, "<span class='warning'>This radio doesn't have any encryption keys!</span>")
+			to_chat(user, span_warning("This radio doesn't have any encryption keys!"))
 
 	else if(istype(W, /obj/item/encryptionkey/))
 		if(keyslot)
-			to_chat(user, "<span class='warning'>The radio can't hold another key!</span>")
+			to_chat(user, span_warning("The radio can't hold another key!"))
 			return
 
 		if(!keyslot)

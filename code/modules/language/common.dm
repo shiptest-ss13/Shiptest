@@ -1,5 +1,5 @@
 // 'basic' language; spoken by default.
-/datum/language/common
+/datum/language/galactic_common
 	name = "Galactic Common"
 	desc = "The common galactic tongue."
 	speech_verb = "says"
@@ -11,6 +11,12 @@
 
 	icon_state = "galcom"
 
+	mutual_understanding = list(
+		/datum/language/solarian_international = 20,
+		/datum/language/kalixcian_common = 20,
+	)
+
+
 //Syllable Lists
 /*
 	This list really long, mainly because I can't make up my mind about which mandarin syllables should be removed,
@@ -20,7 +26,7 @@
 	http://www.sttmedia.com/syllablefrequency-english
 	http://www.chinahighlights.com/travelguide/learning-chinese/pinyin-syllables.htm
 */
-/datum/language/common/syllables = list(
+/datum/language/galactic_common/syllables = list(
 "a", "ai", "an", "ang", "ao", "ba", "bai", "ban", "bang", "bao", "bei", "ben", "beng", "bi", "bian", "biao",
 "bie", "bin", "bing", "bo", "bu", "ca", "cai", "can", "cang", "cao", "ce", "cei", "cen", "ceng", "cha", "chai",
 "chan", "chang", "chao", "che", "chen", "cheng", "chi", "chong", "chou", "chu", "chua", "chuai", "chuan", "chuang", "chui", "chun",

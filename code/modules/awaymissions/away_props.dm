@@ -1,7 +1,7 @@
 /obj/effect/oneway
 	name = "one way effect"
 	desc = "Only lets things in from it's dir."
-	icon = 'icons/effects/mapping_helpers.dmi'
+	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = "field_dir"
 	invisibility = INVISIBILITY_MAXIMUM
 	anchored = TRUE
@@ -14,7 +14,7 @@
 /obj/effect/wind
 	name = "wind effect"
 	desc = "Creates pressure effect in it's direction. Use sparingly."
-	icon = 'icons/effects/mapping_helpers.dmi'
+	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = "field_dir"
 	invisibility = INVISIBILITY_MAXIMUM
 	var/strength = 30
@@ -23,7 +23,7 @@
 	. = ..()
 	START_PROCESSING(SSobj,src)
 
-/obj/effect/wind/process()
+/obj/effect/wind/process(seconds_per_tick)
 	var/turf/open/T = get_turf(src)
 	if(istype(T))
 		T.consider_pressure_difference(get_step(T,dir),strength)
@@ -32,7 +32,7 @@
 /obj/effect/path_blocker
 	name = "magic barrier"
 	desc = "You shall not pass."
-	icon = 'icons/effects/mapping_helpers.dmi'
+	icon = 'icons/effects/mapping/mapping_helpers.dmi'
 	icon_state = "blocker" //todo make this actually look fine when visible
 	anchored = TRUE
 	var/list/blocked_types = list()

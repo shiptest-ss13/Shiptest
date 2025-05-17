@@ -55,10 +55,8 @@
 	var/damnation_type = 0
 	var/datum/mind/soulOwner //who owns the soul.  Under normal circumstances, this will point to src
 	var/hasSoul = TRUE // If false, renders the character unable to sell their soul.
-	var/holy_role = NONE //is this person a chaplain or admin role allowed to use bibles, Any rank besides 'NONE' allows for this.
 
 	var/mob/living/enslaved_to //If this mind's master is another mob
-	var/datum/language_holder/language_holder
 	var/unconvertable = FALSE
 	var/late_joiner = FALSE
 
@@ -105,7 +103,6 @@
 	SSticker.minds -= src
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
-	QDEL_NULL(language_holder)
 	QDEL_NULL(guestbook)
 	set_current(null)
 	soulOwner = null
@@ -123,11 +120,6 @@
 /datum/mind/proc/clear_current(datum/source)
 	SIGNAL_HANDLER
 	set_current(null)
-
-/datum/mind/proc/get_language_holder()
-	if(!language_holder)
-		language_holder = new (src)
-	return language_holder
 
 /datum/mind/proc/transfer_to(mob/new_character, force_key_move = 0)
 	set_original_character(null)
@@ -148,7 +140,19 @@
 	var/datum/atom_hud/antag/hud_to_transfer = antag_hud//we need this because leave_hud() will clear this list
 	var/mob/living/old_current = current
 	if(current)
-		current.transfer_observers_to(new_character) //transfer anyone observing the old character to the new one
+		//transfer anyone observing the old character to the new one
+		current.transfer_observers_to(new_character)
+
+		// Offload all mind languages from the old holder to a temp one
+		var/datum/language_holder/empty/temp_holder = new()
+		var/datum/language_holder/old_holder = old_current.get_language_holder()
+		var/datum/language_holder/new_holder = new_character.get_language_holder()
+		// Off load mind languages to the temp holder momentarily
+		new_holder.transfer_mind_languages(temp_holder)
+		// Transfer the old holder's mind languages to the new holder
+		old_holder.transfer_mind_languages(new_holder)
+		// And finally transfer the temp holder's mind languages back to the old holder
+		temp_holder.transfer_mind_languages(old_holder)
 	set_current(new_character) //associate ourself with our new body
 	new_character.mind = src //and associate our new body with ourself
 	for(var/a in antag_datums) //Makes sure all antag datums effects are applied in the new body
@@ -166,7 +170,6 @@
 	if(new_character.client)
 		LAZYCLEARLIST(new_character.client.recent_examines)
 		new_character.client.init_verbs() // re-initialize character specific verbs
-	current.update_atom_languages()
 
 //I cannot trust you fucks to do this properly
 /datum/mind/proc/set_original_character(new_original_character)
@@ -241,14 +244,14 @@
 		if(known_skills[i][SKILL_LVL] > SKILL_LEVEL_NONE) //Do we actually have a level in this?
 			shown_skills += i
 	if(!length(shown_skills))
-		to_chat(user, "<span class='notice'>You don't seem to have any particularly outstanding skills.</span>")
+		to_chat(user, span_notice("You don't seem to have any particularly outstanding skills."))
 		return
 	var/msg = "[span_info("<EM>Your skills</EM>")]\n<span class='notice'>"
 	for(var/i in shown_skills)
 		var/datum/skill/the_skill = i
 		msg += "[initial(the_skill.name)] - [get_skill_level_name(the_skill)]\n"
 	msg += "</span>"
-	to_chat(user, examine_block(msg))
+	to_chat(user, boxed_message(msg))
 
 /datum/mind/proc/set_death_time()
 	SIGNAL_HANDLER
@@ -346,12 +349,6 @@
 	remove_antag_datum(/datum/antagonist/wizard)
 	special_role = null
 
-/datum/mind/proc/remove_cultist()
-	if(src in SSticker.mode.cult)
-		SSticker.mode.remove_cultist(src, 0, 0)
-	special_role = null
-	remove_antag_equip()
-
 /datum/mind/proc/remove_antag_equip()
 	var/list/Mob_Contents = current.get_contents()
 	for(var/obj/item/I in Mob_Contents)
@@ -364,7 +361,6 @@
 	remove_traitor()
 	remove_nukeop()
 	remove_wizard()
-	remove_cultist()
 
 /datum/mind/proc/equip_traitor(employer = "The Syndicate", silent = FALSE, datum/antagonist/uplink_owner)
 	if(!current)
@@ -412,7 +408,7 @@
 
 	if (!uplink_loc)
 		if(!silent)
-			to_chat(traitor_mob, "<span class='boldwarning'>Unfortunately, [employer] wasn't able to get you an Uplink.</span>")
+			to_chat(traitor_mob, span_boldwarning("Unfortunately, [employer] wasn't able to get you an Uplink."))
 		. = 0
 	else
 		. = uplink_loc
@@ -422,11 +418,11 @@
 		U.setup_unlock_code()
 		if(!silent)
 			if(uplink_loc == R)
-				to_chat(traitor_mob, "<span class='boldnotice'>[employer] has cunningly disguised a Syndicate Uplink as your [R.name]. Simply dial the frequency [format_frequency(U.unlock_code)] to unlock its hidden features.</span>")
+				to_chat(traitor_mob, span_boldnotice("[employer] has cunningly disguised a Syndicate Uplink as your [R.name]. Simply dial the frequency [format_frequency(U.unlock_code)] to unlock its hidden features."))
 			else if(uplink_loc == PDA)
-				to_chat(traitor_mob, "<span class='boldnotice'>[employer] has cunningly disguised a Syndicate Uplink as your [PDA.name]. Simply enter the code \"[U.unlock_code]\" into the ringtone select to unlock its hidden features.</span>")
+				to_chat(traitor_mob, span_boldnotice("[employer] has cunningly disguised a Syndicate Uplink as your [PDA.name]. Simply enter the code \"[U.unlock_code]\" into the ringtone select to unlock its hidden features."))
 			else if(uplink_loc == P)
-				to_chat(traitor_mob, "<span class='boldnotice'>[employer] has cunningly disguised a Syndicate Uplink as your [P.name]. Simply twist the top of the pen [english_list(U.unlock_code)] from its starting position to unlock its hidden features.</span>")
+				to_chat(traitor_mob, span_boldnotice("[employer] has cunningly disguised a Syndicate Uplink as your [P.name]. Simply twist the top of the pen [english_list(U.unlock_code)] from its starting position to unlock its hidden features."))
 
 		if(uplink_owner)
 			uplink_owner.antag_memory += U.unlock_note + "<br>"
@@ -437,10 +433,7 @@
 //Link a new mobs mind to the creator of said mob. They will join any team they are currently on, and will only switch teams when their creator does.
 
 /datum/mind/proc/enslave_mind_to_creator(mob/living/creator)
-	if(iscultist(creator))
-		SSticker.mode.add_cultist(src)
-
-	else if(is_nuclear_operative(creator))
+	if(is_nuclear_operative(creator))
 		var/datum/antagonist/nukeop/converter = creator.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE)
 		var/datum/antagonist/nukeop/N = new()
 		N.send_to_spawnpoint = FALSE
@@ -455,7 +448,7 @@
 
 	if(creator.mind.special_role)
 		message_admins("[ADMIN_LOOKUPFLW(current)] has been created by [ADMIN_LOOKUPFLW(creator)], an antagonist.")
-		to_chat(current, "<span class='userdanger'>Despite your creator's current allegiances, your true master remains [creator.real_name]. If their loyalties change, so do yours. This will never change unless your creator's body is destroyed.</span>")
+		to_chat(current, span_userdanger("Despite your creator's current allegiances, your true master remains [creator.real_name]. If their loyalties change, so do yours. This will never change unless your creator's body is destroyed."))
 
 /datum/mind/proc/show_memory(mob/recipient, window=1)
 	if(!recipient)
@@ -497,7 +490,7 @@
 	if(href_list["remove_antag"])
 		var/datum/antagonist/A = locate(href_list["remove_antag"]) in antag_datums
 		if(!istype(A))
-			to_chat(usr,"<span class='warning'>Invalid antagonist ref to be removed.</span>")
+			to_chat(usr,span_warning("Invalid antagonist ref to be removed."))
 			return
 		A.admin_remove(usr)
 
@@ -649,7 +642,7 @@
 							log_admin("[key_name(usr)] changed [current]'s telecrystal count to [crystals].")
 			if("uplink")
 				if(!equip_traitor())
-					to_chat(usr, "<span class='danger'>Equipping a syndicate failed!</span>")
+					to_chat(usr, span_danger("Equipping a syndicate failed!"))
 					log_admin("[key_name(usr)] tried and failed to give [current] an uplink.")
 				else
 					log_admin("[key_name(usr)] gave [current] an uplink.")
@@ -671,7 +664,7 @@
 
 /datum/mind/proc/announce_objectives()
 	var/obj_count = 1
-	to_chat(current, "<span class='notice'>Your current objectives:</span>")
+	to_chat(current, span_notice("Your current objectives:"))
 	for(var/objective in get_all_objectives())
 		var/datum/objective/O = objective
 		to_chat(current, "<B>Objective #[obj_count]</B>: [O.explanation_text]")
@@ -708,14 +701,6 @@
 		special_role = ROLE_WIZARD
 		assigned_role = ROLE_WIZARD
 		add_antag_datum(/datum/antagonist/wizard)
-
-
-/datum/mind/proc/make_Cultist()
-	if(!has_antag_datum(/datum/antagonist/cult,TRUE))
-		SSticker.mode.add_cultist(src,FALSE,equip=TRUE)
-		special_role = ROLE_CULTIST
-		to_chat(current, "<font color=\"purple\"><b><i>You catch a glimpse of the Realm of Nar'Sie, The Geometer of Blood. You now see how flimsy your world is, you see that it should be open to the knowledge of Nar'Sie.</b></i></font>")
-		to_chat(current, "<font color=\"purple\"><b><i>Assist your new brethren in their dark dealings. Their goal is yours, and yours is theirs. You serve the Dark One above all else. Bring It back.</b></i></font>")
 
 /datum/mind/proc/AddSpell(obj/effect/proc_holder/spell/S)
 	spell_list += S

@@ -5,21 +5,22 @@
 	weight = -1
 	max_occurrences = 1
 	earliest_start = 0 MINUTES
+	category = EVENT_CATEGORY_HOLIDAY
 
 /datum/round_event/easter/announce(fake)
 	priority_announce(pick("Hip-hop into Easter!","Find some Bunny's stash!","Today is National 'Hunt a Wabbit' Day.","Be kind, give Chocolate Eggs!"))
 
-
+/*
 /datum/round_event_control/rabbitrelease
 	name = "Release the Rabbits!"
 	holidayID = EASTER
 	typepath = /datum/round_event/rabbitrelease
 	weight = 5
 	max_occurrences = 10
+	category = EVENT_CATEGORY_HOLIDAY
 
 /datum/round_event/rabbitrelease/announce(fake)
 	priority_announce("Unidentified furry objects detected coming aboard [station_name()]. Beware of Adorable-ness.", "Fluffy Alert", 'sound/ai/aliens.ogg')
-
 
 /datum/round_event/rabbitrelease/start()
 	for(var/obj/effect/landmark/R in GLOB.landmarks_list)
@@ -29,6 +30,7 @@
 					new /mob/living/simple_animal/chicken/rabbit/space(R.loc)
 				else
 					new /mob/living/simple_animal/chicken/rabbit(R.loc)
+*/
 
 /mob/living/simple_animal/chicken/rabbit
 	name = "\improper rabbit"
@@ -55,7 +57,7 @@
 	icon_state = "s_rabbit_white"
 	icon_living = "s_rabbit_white"
 	icon_dead = "s_rabbit_white_dead"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500
 	unsuitable_atmos_damage = 0
@@ -84,24 +86,6 @@
 	. = ..()
 	countEggs()
 
-//Bunny Suit
-/obj/item/clothing/head/bunnyhead
-	name = "Easter Bunny Head"
-	icon_state = "bunnyhead"
-	item_state = "bunnyhead"
-	desc = "Considerably more cute than 'Frank'."
-	slowdown = -1
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/suit/bunnysuit
-	name = "Easter Bunny Suit"
-	desc = "Hop Hop Hop!"
-	icon_state = "bunnysuit"
-	item_state = "bunnysuit"
-	slowdown = -1
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-
 //Bunny bag!
 /obj/item/storage/backpack/satchel/bunnysatchel
 	name = "Easter Bunny Satchel"
@@ -122,9 +106,7 @@
 	icon_state = "egg-[eggcolor]"
 
 /obj/item/reagent_containers/food/snacks/egg/proc/dispensePrize(turf/where)
-	var/won = pick(/obj/item/clothing/head/bunnyhead,
-	/obj/item/clothing/suit/bunnysuit,
-	/obj/item/storage/backpack/satchel/bunnysatchel,
+	var/won = pick(/obj/item/storage/backpack/satchel/bunnysatchel,
 	/obj/item/reagent_containers/food/snacks/grown/carrot,
 	/obj/item/toy/balloon,
 	/obj/item/toy/gun,
@@ -143,7 +125,7 @@
 	/obj/item/toy/prize/durand,
 	/obj/item/toy/prize/marauder,
 	/obj/item/toy/prize/seraph,
-	/obj/item/toy/prize/mauler,
+	/obj/item/toy/prize/touro,
 	/obj/item/toy/prize/odysseus,
 	/obj/item/toy/prize/phazon,
 	/obj/item/toy/prize/reticence,
@@ -151,15 +133,14 @@
 	/obj/item/toy/plush/carpplushie,
 	/obj/item/toy/plush/spider,
 	/obj/item/toy/redbutton,
-	/obj/item/toy/windupToolbox,
-	/obj/item/clothing/head/collectable/rabbitears)
+	/obj/item/toy/windupToolbox)
 	new won(where)
 	new/obj/item/reagent_containers/food/snacks/chocolateegg(where)
 
 /obj/item/reagent_containers/food/snacks/egg/attack_self(mob/user)
 	..()
 	if(containsPrize)
-		to_chat(user, "<span class='notice'>You unwrap [src] and find a prize inside!</span>")
+		to_chat(user, span_notice("You unwrap [src] and find a prize inside!"))
 		dispensePrize(get_turf(user))
 		containsPrize = FALSE
 		qdel(src)
@@ -174,34 +155,10 @@
 /datum/crafting_recipe/food/hotcrossbun
 	name = "Hot-Cross Bun"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1,
+		/obj/item/food/bread/plain = 1,
 		/datum/reagent/consumable/sugar = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/hotcrossbun
-	subcategory = CAT_MISCFOOD
-
-
-/obj/item/reagent_containers/food/snacks/store/cake/brioche
-	name = "brioche cake"
-	desc = "A ring of sweet, glazed buns."
-	icon_state = "briochecake"
-	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/brioche
-	slices_num = 6
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 2)
-
-/obj/item/reagent_containers/food/snacks/cakeslice/brioche
-	name = "brioche cake slice"
-	desc = "Delicious sweet-bread. Who needs anything else?"
-	icon_state = "briochecake_slice"
-	filling_color = "#FFD700"
-
-/datum/crafting_recipe/food/briochecake
-	name = "Brioche cake"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/store/cake/plain = 1,
-		/datum/reagent/consumable/sugar = 2
-	)
-	result = /obj/item/reagent_containers/food/snacks/store/cake/brioche
 	subcategory = CAT_MISCFOOD
 
 /obj/item/reagent_containers/food/snacks/scotchegg
@@ -234,7 +191,7 @@
 /datum/crafting_recipe/food/mammi
 	name = "Mammi"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1,
+		/obj/item/food/bread/plain = 1,
 		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
 		/datum/reagent/consumable/milk = 5
 	)

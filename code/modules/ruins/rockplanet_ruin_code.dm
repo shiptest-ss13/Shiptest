@@ -58,7 +58,7 @@
 	. = ..()
 	is_open = FALSE
 
-/obj/machinery/door/poddoor/crusher/automatic/process(delta_time)
+/obj/machinery/door/poddoor/crusher/automatic/process(seconds_per_tick)
 	if(is_open)
 		close()
 	else
@@ -81,12 +81,12 @@
 		else if(istype(target, /obj/item/gun/energy/laser/captain)) //a actual antique gun, only on the skipper as of writing and a lavaland ruin
 			created_gun = /obj/item/gun/energy/e_gun/hos/brazil/true // hos gun with a fancy skin, but also recharging!!
 		else
-			to_chat(user, "<span class='warning'>You can't upgrade this gun!.</span>") //wrong gun
+			to_chat(user, span_warning("You can't upgrade this gun!.")) //wrong gun
 			return
 		playsound(src, 'sound/items/drill_use.ogg', 50, FALSE)
 		if(do_after(user, 60, target = target))
 			new created_gun(get_turf(src))
-			to_chat(user, "<span class='notice'>With the [src], you upgrade the [target]!</span>")
+			to_chat(user, span_notice("With the [src], you upgrade the [target]!"))
 			qdel(target)
 			qdel(src)
 			return
@@ -100,10 +100,10 @@
 
 /obj/item/strange_crystal/attackby(obj/item/item, mob/user, params)
 	. = ..()
-	if(!istype(item, /obj/item/kitchen/knife))
+	if(!istype(item, /obj/item/melee/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
+	to_chat(user, span_notice("You start breaking [src] up into shards..."))
 	if(!do_after(user, 1 SECONDS, src))
 		return
 	var/obj/item/result = new /obj/item/garnish/crystal(drop_location())
@@ -111,4 +111,9 @@
 	qdel(src)
 	if(give_to_user)
 		user.put_in_hands(result)
-	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
+	to_chat(user, span_notice("You finish breaking [src]"))
+
+/obj/item/paper/crumpled/muddy/fluff/distillery
+	name = "distillery instructions"
+	desc = "A crumpled note soaked in alcohol."
+	default_raw_text = "<center><h3>Moonshine Instructions</h3><BR>Alright, I know some of y'all ain't literate enough for this, but if I'm ever found dead or missing, <i>read this note.</i> Gotta keep the craft alive.</center><br><br>1. Fill the still with around 5 units of enzyme. We keep the whole supply in the green crate in the storeroom.<br>2. Grind a cob of corn into bits, and add the mash to the still.<br>3. Pour an equal amount of sugar into the still, and stir.<br>4. Now, you'll have to scoop the product out and filter it by hand. We used to have a better still that'd filter the product itself, until last year's incident. This has to do for now.<br>5. Evaluate your product. Good 'shine is clear like water, and burns blue. If it ain't good, dump it.<BR><BR><i>PS: If you've got some leftover sugar, mix it into bicaridine. Equal parts sugar, carbon, and oxygen makes a potent salve for your wounds.</i>"

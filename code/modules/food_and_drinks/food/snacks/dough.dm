@@ -7,7 +7,7 @@
 	desc = "A piece of dough."
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "dough"
-	cooked_type = /obj/item/reagent_containers/food/snacks/store/bread/plain
+	cooked_type = /obj/item/food/bread/plain
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("dough" = 1)
@@ -19,10 +19,10 @@
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/flatdough(loc)
-			to_chat(user, "<span class='notice'>You flatten [src].</span>")
+			to_chat(user, span_notice("You flatten [src]."))
 			qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a surface to roll it out!</span>")
+			to_chat(user, span_warning("You need to put [src] on a surface to roll it out!"))
 	else
 		..()
 
@@ -82,7 +82,7 @@
 	desc = "Cook it to get a cake."
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "cakebatter"
-	cooked_type = /obj/item/reagent_containers/food/snacks/store/cake/plain
+	cooked_type = /obj/item/food/cake/plain
 	list_reagents = list(/datum/reagent/consumable/nutriment = 9)
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("batter" = 1)
@@ -93,10 +93,10 @@
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/piedough(loc)
-			to_chat(user, "<span class='notice'>You flatten [src].</span>")
+			to_chat(user, span_notice("You flatten [src]."))
 			qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a surface to roll it out!</span>")
+			to_chat(user, span_warning("You need to put [src] on a surface to roll it out!"))
 	else
 		..()
 

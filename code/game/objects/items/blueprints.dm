@@ -5,7 +5,7 @@
 
 /obj/item/areaeditor
 	name = "area modification item"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
 	attack_verb = list("attacked", "bapped", "hit")
 	var/fluffnotice = "Nobody's gonna read this stuff!"
@@ -35,7 +35,7 @@
 			return
 		var/area/A = get_area(usr)
 		if(A.area_flags & NOTELEPORT)
-			to_chat(usr, "<span class='warning'>You cannot edit restricted areas.</span>")
+			to_chat(usr, span_warning("You cannot edit restricted areas."))
 			return
 		in_use = TRUE
 		create_area(usr)
@@ -46,7 +46,7 @@
 /obj/item/areaeditor/blueprints
 	name = "station blueprints"
 	desc = "Blueprints of what appear to be an experimental station design, with a large spinal weapon mounted to the front. There is a \"Classified\" stamp and several coffee stains on it."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
 	fluffnotice = "Property of Nanotrasen. For heads of staff only. Store in high-secure storage."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
@@ -105,9 +105,9 @@
 	if(href_list["view_wireset"])
 		legend = href_list["view_wireset"];
 	if(href_list["view_blueprints"])
-		set_viewer(usr, "<span class='notice'>You flip the blueprints over to view the complex information diagram.</span>")
+		set_viewer(usr, span_notice("You flip the blueprints over to view the complex information diagram."))
 	if(href_list["hide_blueprints"])
-		clear_viewer(usr,"<span class='notice'>You flip the blueprints over to view the simple information diagram.</span>")
+		clear_viewer(usr,span_notice("You flip the blueprints over to view the simple information diagram."))
 	if(href_list["refresh"])
 		clear_viewer(usr)
 		set_viewer(usr)
@@ -150,7 +150,6 @@
 	if(A.outdoors)
 		return AREA_SPACE
 	var/list/SPECIALS = list(
-		/area/shuttle,
 		/area/centcom,
 		/area/asteroid,
 		/area/tdome,
@@ -188,12 +187,12 @@
 	if(!str || !length(str) || str==prevname) //cancel
 		return
 	if(length(str) > 50)
-		to_chat(usr, "<span class='warning'>The given name is too long. The area's name is unchanged.</span>")
+		to_chat(usr, span_warning("The given name is too long. The area's name is unchanged."))
 		return
 
 	A.rename_area(str)
 
-	to_chat(usr, "<span class='notice'>You rename the '[prevname]' to '[str]'.</span>")
+	to_chat(usr, span_notice("You rename the '[prevname]' to '[str]'."))
 	log_game("[key_name(usr)] has renamed [prevname] to [str]")
 	A.update_areasize()
 	interact()
@@ -204,7 +203,7 @@
 /obj/item/areaeditor/blueprints/cyborg
 	name = "construction schematics"
 	desc = "A digital copy of the local blueprints and zoning permits stored in your memory."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
 	fluffnotice = "Intellectual Property of Nanotrasen. For use in engineering cyborgs only. Wipe from memory upon departure from company ownership."
 
@@ -215,27 +214,31 @@
 	sortTim(GLOB.sortedAreas, /proc/cmp_name_asc)
 	return TRUE
 
-/proc/set_area_machinery_title(area/A, title, oldtitle)
+/proc/set_area_machinery_title(area/target, title, oldtitle)
 	if(!oldtitle) // or replacetext goes to infinite loop
 		return
-	for(var/obj/machinery/airalarm/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/power/apc/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/atmospherics/components/unary/vent_scrubber/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/atmospherics/components/unary/vent_pump/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/door/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/fax/M in A)
-		M.fax_name = replacetext(M.fax_name,oldtitle,title)
-	//TODO: much much more. Unnamed airlocks, cameras, etc.
+
+	var/static/typecache = typecacheof(list(
+		/obj/machinery/airalarm,
+		/obj/machinery/power/apc,
+		/obj/machinery/atmospherics/components/unary/vent_scrubber,
+		/obj/machinery/atmospherics/components/unary/vent_pump,
+		/obj/machinery/door,
+		/obj/machinery/fax
+	))
+
+	for(var/obj/machinery/machine as anything in GLOB.machines)
+		if(get_area(machine) != target)
+			continue
+		if(!is_type_in_typecache(machine, typecache))
+			continue
+
+		machine.name = replacetext(machine.name,oldtitle,title)
 
 /obj/item/areaeditor/shuttle
 	name = "shuttle expansion permit"
 	desc = "A set of paperwork which is used to expand flyable shuttles."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "blueprints"
 	color = COLOR_ASSEMBLY_WHITE
 	fluffnotice = "Not to be used for non-sanctioned shuttle construction and maintenance."
@@ -262,11 +265,11 @@
 		if(in_use)
 			return
 		if(!target_shuttle)
-			to_chat(usr, "<span class='warning'>You need to designate a shuttle to expand by linking the helm console to these plans.</span>")
+			to_chat(usr, span_warning("You need to designate a shuttle to expand by linking the helm console to these plans."))
 			return
 		var/area/A = get_area(usr)
 		if(A.area_flags & NOTELEPORT)
-			to_chat(usr, "<span class='warning'>You cannot edit restricted areas.</span>")
+			to_chat(usr, span_warning("You cannot edit restricted areas."))
 			return
 		in_use = TRUE
 		create_shuttle_area(usr)
@@ -286,16 +289,16 @@
 
 	if(creator)
 		if(creator.create_area_cooldown >= world.time)
-			to_chat(creator, "<span class='warning'>You're trying to create a new area a little too fast.</span>")
+			to_chat(creator, span_warning("You're trying to create a new area a little too fast."))
 			return
 		creator.create_area_cooldown = world.time + 10
 
 	var/list/turfs = detect_room(get_turf(creator), area_or_turf_fail_types, BP_MAX_ROOM_SIZE*2)
 	if(!turfs)
-		to_chat(creator, "<span class='warning'>The new area must be completely airtight.</span>")
+		to_chat(creator, span_warning("The new area must be completely airtight."))
 		return
 	if(turfs.len > BP_MAX_ROOM_SIZE)
-		to_chat(creator, "<span class='warning'>The room you're in is too big. It is [turfs.len >= BP_MAX_ROOM_SIZE *2 ? "more than 100" : ((turfs.len / BP_MAX_ROOM_SIZE)-1)*100]% larger than allowed.</span>")
+		to_chat(creator, span_warning("The room you're in is too big. It is [turfs.len >= BP_MAX_ROOM_SIZE *2 ? "more than 100" : ((turfs.len / BP_MAX_ROOM_SIZE)-1)*100]% larger than allowed."))
 		return
 	var/list/areas = list("New Area" = /area/ship)
 	var/list/shuttle_coords = target_shuttle.return_coords()
@@ -308,11 +311,11 @@
 			continue // No expanding powerless rooms etc
 		var/area/ship/underlying_area = target_shuttle?.underlying_turf_area[turfs[i]]
 		if(istype(underlying_area) && underlying_area.mobile_port)
-			to_chat(creator, "<span class='warning'>Shuttle expansion protocals are disabled while docked to another ship.</span>")
+			to_chat(creator, span_warning("Shuttle expansion protocals are disabled while docked to another ship."))
 			return // While this could possibly work, it'll be a lot of effort to implement and will likely be a buggy mess
 		var/area/ship/ship_place = place
 		if(istype(ship_place) && ship_place.mobile_port != target_shuttle)
-			to_chat(creator, "<span class='warning'>The new area must not be in or next to a different shuttle.</span>")
+			to_chat(creator, span_warning("The new area must not be in or next to a different shuttle."))
 			return // No stealing other ship's areas please
 		areas[place.name] = place
 
@@ -325,13 +328,13 @@
 				if(T.y >= (min(shuttle_coords[2], shuttle_coords[4]) - 1) && T.y <= (max(shuttle_coords[2], shuttle_coords[4]) + 1))
 					near_shuttle = TRUE
 	if(!near_shuttle)
-		to_chat(creator, "<span class='warning'>The new area must be next to the shuttle.</span>")
+		to_chat(creator, span_warning("The new area must be next to the shuttle."))
 		return
 	var/area_choice = input(creator, "Choose an area to expand or make a new area.", "Area Expansion") as null|anything in areas
 	area_choice = areas[area_choice]
 
 	if(!area_choice)
-		to_chat(creator, "<span class='warning'>No choice selected. The area remains undefined.</span>")
+		to_chat(creator, span_warning("No choice selected. The area remains undefined."))
 		return
 	var/area/ship/newA
 	var/area/oldA = get_area(get_turf(creator))
@@ -340,7 +343,7 @@
 		if(!str || !length(str)) //cancel
 			return
 		if(length(str) > 50)
-			to_chat(creator, "<span class='warning'>The given name is too long. The area remains undefined.</span>")
+			to_chat(creator, span_warning("The given name is too long. The area remains undefined."))
 			return
 		newA = new area_choice
 		newA.setup(str)
@@ -376,13 +379,14 @@
 	target_shuttle.shuttle_areas[newA] = TRUE
 
 	newA.connect_to_shuttle(target_shuttle, target_shuttle.docked)
-	newA.mobile_port = target_shuttle
+	newA.reset_shuttle_smoothing(target_shuttle)
+
 	for(var/atom/thing in newA)
 		thing.connect_to_shuttle(target_shuttle, target_shuttle.docked)
 
 	target_shuttle.recalculate_bounds()
 
-	to_chat(creator, "<span class='notice'>You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered.</span>")
+	to_chat(creator, span_notice("You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered."))
 	return TRUE
 
 /obj/item/areaeditor/shuttle/cyborg

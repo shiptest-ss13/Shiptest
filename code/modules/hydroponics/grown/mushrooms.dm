@@ -177,7 +177,7 @@
 	M.move_to_delay -= round(seed.production / 50)
 	M.health = M.maxHealth
 	qdel(src)
-	to_chat(user, "<span class='notice'>You plant the walking mushroom.</span>")
+	to_chat(user, span_notice("You plant the walking mushroom."))
 
 
 // Chanterelle
@@ -220,7 +220,7 @@
 	endurance = 8
 	yield = 4
 	growthstages = 2
-	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/reagent/liquidelectricity, /datum/plant_gene/trait/plant_type/carnivory)
+	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/reagent/liquidelectricity, /datum/plant_gene/trait/carnivory)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1)
 	research = PLANT_RESEARCH_TIER_3
@@ -229,7 +229,7 @@
 	. = ..()
 	if(!nogenes)
 		unset_mutability(/datum/plant_gene/reagent/liquidelectricity, PLANT_GENE_EXTRACTABLE)
-		unset_mutability(/datum/plant_gene/trait/plant_type/carnivory, PLANT_GENE_REMOVABLE)
+		unset_mutability(/datum/plant_gene/trait/carnivory, PLANT_GENE_REMOVABLE)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/jupitercup
 	seed = /obj/item/seeds/chanter/jupitercup
@@ -276,7 +276,7 @@
 	if(isspaceturf(user.loc))
 		return FALSE
 	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You need more space to plant [src].</span>")
+		to_chat(user, span_warning("You need more space to plant [src]."))
 		return FALSE
 	var/count = 0
 	var/maxcount = 1
@@ -287,10 +287,10 @@
 	for(var/obj/structure/glowshroom/G in user.loc)
 		count++
 	if(count >= maxcount)
-		to_chat(user, "<span class='warning'>There are too many shrooms here to plant [src].</span>")
+		to_chat(user, span_warning("There are too many shrooms here to plant [src]."))
 		return FALSE
 	new effect_path(user.loc, seed)
-	to_chat(user, "<span class='notice'>You plant [src].</span>")
+	to_chat(user, span_notice("You plant [src]."))
 	qdel(src)
 	return TRUE
 

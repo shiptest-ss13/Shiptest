@@ -6,16 +6,45 @@
 	density = TRUE
 	anchored = TRUE
 
+	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/dresser/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_WRENCH)
-		to_chat(user, "<span class='notice'>You begin to [anchored ? "unwrench" : "wrench"] [src].</span>")
-		if(I.use_tool(src, user, 20, volume=50))
-			to_chat(user, "<span class='notice'>You successfully [anchored ? "unwrench" : "wrench"] [src].</span>")
-			set_anchored(!anchored)
+	var/list/modifiers = params2list(params)
+	if(user.transferItemToLoc(I, drop_location(), silent = FALSE))
+		//Center the icon where the user clicked.
+		if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
+			return
+		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
+		I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
+		I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
+		return TRUE
 	else
 		return ..()
+
+/obj/structure/dresser/wrench_act(mob/living/user, obj/item/I)
+	. = ..()
+	to_chat(user, span_notice("You begin to [anchored ? "unwrench" : "wrench"] [src]."))
+	if(I.use_tool(src, user, 20, volume=50))
+		to_chat(user, span_notice("You successfully [anchored ? "unwrench" : "wrench"] [src]."))
+		set_anchored(!anchored)
+
+/obj/structure/dresser/crowbar_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!anchored)
+		to_chat(user, span_notice("You begin to pull apart [src]."))
+		if(I.use_tool(src, user, 30, volume=50))
+			to_chat(user, span_notice("You successfully deconstruct [src]."))
+			deconstruct()
+
+/obj/structure/dresser/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return FALSE
+	to_chat(user, span_notice("You begin to disassemble [src]."))
+	if(I.use_tool(src, user, 10, volume=50))
+		to_chat(user, span_notice("You successfully deconstruct [src]."))
+		deconstruct()
 
 /obj/structure/dresser/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
@@ -31,7 +60,7 @@
 		var/mob/living/carbon/human/H = user
 
 		if(H.dna && H.dna.species && (NO_UNDERWEAR in H.dna.species.species_traits))
-			to_chat(user, "<span class='warning'>You are not capable of wearing underwear.</span>")
+			to_chat(user, span_warning("You are not capable of wearing underwear."))
 			return
 
 		var/choice = input(user, "Underwear, Undershirt, or Socks?", "Changing") as null|anything in list("Underwear", "Underwear Color", "Undershirt", "Undershirt Color", "Socks", "Socks Color")

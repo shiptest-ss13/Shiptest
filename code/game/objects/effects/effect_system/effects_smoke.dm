@@ -45,7 +45,7 @@
 	INVOKE_ASYNC(src, PROC_REF(fade_out))
 	QDEL_IN(src, 10)
 
-/obj/effect/particle_effect/smoke/process()
+/obj/effect/particle_effect/smoke/process(seconds_per_tick)
 	lifetime--
 	if(lifetime < 1)
 		kill_smoke()
@@ -76,7 +76,7 @@
 	if(!t_loc)
 		return
 	var/list/newsmokes = list()
-	for(var/turf/T in t_loc.GetAtmosAdjacentTurfs())
+	for(var/turf/T in t_loc.get_atmos_adjacent_turfs())
 		var/obj/effect/particle_effect/smoke/foundsmoke = locate() in T //Don't spread smoke where there's already smoke!
 		if(foundsmoke)
 			continue
@@ -136,6 +136,22 @@
 	effect_type = /obj/effect/particle_effect/smoke/bad
 
 /////////////////////////////////////////////
+// Hazard smoke
+/////////////////////////////////////////////
+
+/obj/effect/particle_effect/smoke/hazard
+	lifetime = 8
+
+/obj/effect/particle_effect/smoke/hazard/smoke_mob(mob/living/carbon/M)
+	if(..())
+		M.adjustOxyLoss(4)
+		M.emote(pick("cough","gasp"))
+		return 1
+
+/datum/effect_system/smoke_spread/hazard
+	effect_type = /obj/effect/particle_effect/smoke/hazard
+
+/////////////////////////////////////////////
 // Nanofrost smoke
 /////////////////////////////////////////////
 
@@ -169,7 +185,7 @@
 				if(!isnull(U.welded) && !U.welded) //must be an unwelded vent pump or vent scrubber.
 					U.welded = TRUE
 					U.update_appearance()
-					U.visible_message("<span class='danger'>[U] is frozen shut!</span>")
+					U.visible_message(span_danger("[U] is frozen shut!"))
 		for(var/mob/living/L in T)
 			L.ExtinguishMob()
 		for(var/obj/item/Item in T)
@@ -213,10 +229,15 @@
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/smoke/chem
+
 	lifetime = 10
 
+/obj/effect/particle_effect/smoke/chem/thin
+	alpha = 100
+	opaque = FALSE
+	opaque = TRUE
 
-/obj/effect/particle_effect/smoke/chem/process()
+/obj/effect/particle_effect/smoke/chem/process(seconds_per_tick)
 	if(..())
 		var/turf/T = get_turf(src)
 		var/fraction = 1/initial(lifetime)
@@ -304,6 +325,8 @@
 	if(S.amount)
 		S.spread_smoke() //calling process right now so the smoke immediately attacks mobs.
 
+/datum/effect_system/smoke_spread/chem/thin
+	effect_type = /obj/effect/particle_effect/smoke/chem/thin
 
 /////////////////////////////////////////////
 // Transparent smoke

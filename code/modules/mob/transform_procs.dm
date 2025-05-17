@@ -1,6 +1,6 @@
 #define TRANSFORMATION_DURATION 22
 
-/mob/living/carbon/proc/monkeyize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG))
+/mob/living/carbon/proc/monkeyize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG| TR_KEEPAI))
 	if (notransform || transformation_timer)
 		return
 
@@ -150,6 +150,8 @@
 			changeling.purchasedpowers += hf
 			changeling.regain_powers()
 
+	if(tr_flags & TR_KEEPAI)
+		ai_controller.PossessPawn(O)
 
 	if (tr_flags & TR_DEFAULTMSG)
 		to_chat(O, "<B>You are now a monkey.</B>")
@@ -167,7 +169,7 @@
 //////////////////////////           Humanize               //////////////////////////////
 //Could probably be merged with monkeyize but other transformations got their own procs, too
 
-/mob/living/carbon/proc/humanize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG))
+/mob/living/carbon/proc/humanize(tr_flags = (TR_KEEPITEMS | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_DEFAULTMSG | TR_KEEPAI))
 	if (notransform || transformation_timer)
 		return
 
@@ -329,6 +331,9 @@
 	else
 		O.set_species(/datum/species/human)
 
+	if(tr_flags & TR_KEEPAI)
+		ai_controller.PossessPawn(O)
+
 	O.a_intent = INTENT_HELP
 	if (tr_flags & TR_DEFAULTMSG)
 		to_chat(O, "<B>You are now a human.</B>")
@@ -468,7 +473,6 @@
 
 	new_xeno.a_intent = INTENT_HARM
 	new_xeno.key = key
-	update_atom_languages()
 
 	to_chat(new_xeno, "<B>You are now an alien.</B>")
 	. = new_xeno
@@ -506,13 +510,6 @@
 	to_chat(new_slime, "<B>You are now a slime. Skreee!</B>")
 	. = new_slime
 	qdel(src)
-
-/mob/proc/become_overmind(starting_points = 60)
-	var/mob/camera/blob/B = new /mob/camera/blob(get_turf(src), starting_points)
-	B.key = key
-	. = B
-	qdel(src)
-
 
 /mob/living/carbon/human/proc/corgize()
 	if (notransform)
@@ -566,10 +563,6 @@
 	var/list/mobtypes = typesof(/mob/living/simple_animal)
 	var/mobpath = input("Which type of mob should [src] turn into?", "Choose a type") in sortList(mobtypes, /proc/cmp_typepaths_asc)
 
-	if(!safe_animal(mobpath))
-		to_chat(usr, "<span class='danger'>Sorry but this mob type is currently unavailable.</span>")
-		return
-
 	if(notransform)
 		return
 	notransform = TRUE
@@ -591,7 +584,7 @@
 	new_mob.a_intent = INTENT_HARM
 
 
-	to_chat(new_mob, "<span class='boldnotice'>You suddenly feel more... animalistic.</span>")
+	to_chat(new_mob, span_boldnotice("You suddenly feel more... animalistic."))
 	. = new_mob
 	qdel(src)
 
@@ -600,56 +593,13 @@
 	var/list/mobtypes = typesof(/mob/living/simple_animal)
 	var/mobpath = input("Which type of mob should [src] turn into?", "Choose a type") in sortList(mobtypes, /proc/cmp_typepaths_asc)
 
-	if(!safe_animal(mobpath))
-		to_chat(usr, "<span class='danger'>Sorry but this mob type is currently unavailable.</span>")
-		return
-
 	var/mob/new_mob = new mobpath(src.loc)
 
 	new_mob.key = key
 	new_mob.a_intent = INTENT_HARM
-	to_chat(new_mob, "<span class='boldnotice'>You feel more... animalistic.</span>")
+	to_chat(new_mob, span_boldnotice("You feel more... animalistic."))
 
 	. = new_mob
 	qdel(src)
-
-/* Certain mob types have problems and should not be allowed to be controlled by players.
- *
- * This proc is here to force coders to manually place their mob in this list, hopefully tested.
- * This also gives a place to explain -why- players shouldnt be turn into certain mobs and hopefully someone can fix them.
- */
-/mob/proc/safe_animal(MP)
-
-//Bad mobs! - Remember to add a comment explaining what's wrong with the mob
-	if(!MP)
-		return 0	//Sanity, this should never happen.
-
-	if(ispath(MP, /mob/living/simple_animal/hostile/construct))
-		return 0 //Verbs do not appear for players.
-
-//Good mobs!
-	if(ispath(MP, /mob/living/simple_animal/pet/cat))
-		return 1
-	if(ispath(MP, /mob/living/simple_animal/pet/dog/corgi))
-		return 1
-	if(ispath(MP, /mob/living/simple_animal/crab))
-		return 1
-	if(ispath(MP, /mob/living/simple_animal/hostile/carp))
-		return 1
-	if(ispath(MP, /mob/living/simple_animal/hostile/mushroom))
-		return 1
-	if(ispath(MP, /mob/living/simple_animal/shade))
-		return 1
-	if(ispath(MP, /mob/living/simple_animal/hostile/killertomato))
-		return 1
-	if(ispath(MP, /mob/living/simple_animal/mouse))
-		return 1 //It is impossible to pull up the player panel for mice (Fixed! - Nodrak)
-	if(ispath(MP, /mob/living/simple_animal/hostile/bear))
-		return 1 //Bears will auto-attack mobs, even if they're player controlled (Fixed! - Nodrak)
-	if(ispath(MP, /mob/living/simple_animal/parrot))
-		return 1 //Parrots are no longer unfinished! -Nodrak
-
-	//Not in here? Must be untested!
-	return 0
 
 #undef TRANSFORMATION_DURATION

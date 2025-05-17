@@ -7,7 +7,7 @@
 
 /obj/item/toy/xmas_cracker/attack(mob/target, mob/user)
 	if(!cracked && ishuman(target) && (target.stat == CONSCIOUS) && !target.get_active_held_item())
-		target.visible_message("<span class='notice'>[user] and [target] pop \an [src]! *pop*</span>", "<span class='notice'>You pull \an [src] with [target]! *pop*</span>", "<span class='hear'>You hear a pop.</span>")
+		target.visible_message(span_notice("[user] and [target] pop \an [src]! *pop*"), span_notice("You pull \an [src] with [target]! *pop*"), span_hear("You hear a pop."))
 		var/obj/item/paper/joke_paper = new /obj/item/paper(user.loc)
 		joke_paper.name = "[pick("awful","terrible","unfunny")] joke"
 		joke_paper.add_raw_text(pick("What did one snowman say to the other?\n\n<i>'Is it me or can you smell carrots?'</i>",
@@ -42,7 +42,7 @@
 
 /obj/effect/spawner/xmastree
 	name = "christmas tree spawner"
-	icon = 'icons/effects/landmarks_static.dmi'
+	icon = 'icons/effects/mapping/landmarks_static.dmi'
 	icon_state = "x2"
 	layer = FLY_LAYER
 
@@ -51,9 +51,9 @@
 
 /obj/effect/spawner/xmastree/Initialize(mapload)
 	. = ..()
-	if((CHRISTMAS in SSevents.holidays) && christmas_tree)
+	if(check_holidays(CHRISTMAS) && christmas_tree)
 		new christmas_tree(get_turf(src))
-	else if((FESTIVE_SEASON in SSevents.holidays) && festive_tree)
+	else if(check_holidays(FESTIVE_SEASON) && festive_tree)
 		new festive_tree(get_turf(src))
 
 /obj/effect/spawner/xmastree/rdrod
@@ -68,19 +68,10 @@
 	weight = 20
 	max_occurrences = 1
 	earliest_start = 30 MINUTES
+	category = EVENT_CATEGORY_HOLIDAY
 
 /datum/round_event/santa
 	var/mob/living/carbon/human/santa //who is our santa?
 
 /datum/round_event/santa/announce(fake)
 	priority_announce("Santa is coming to town!", "Unknown Transmission")
-
-/datum/round_event/santa/start()
-	var/list/candidates = pollGhostCandidates("Santa is coming to town! Do you want to be Santa?", poll_time=150)
-	if(LAZYLEN(candidates))
-		var/mob/dead/observer/C = pick(candidates)
-		santa = new /mob/living/carbon/human(pick(GLOB.blobstart))
-		santa.key = C.key
-
-		var/datum/antagonist/santa/A = new
-		santa.mind.add_antag_datum(A)

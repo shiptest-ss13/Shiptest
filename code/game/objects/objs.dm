@@ -20,12 +20,9 @@
 	var/acid_level = 0 //how much acid is on that obj
 
 	var/persistence_replacement //have something WAY too amazing to live to the next round? Set a new path here. Overuse of this var will make me upset.
-	//Allow the item to be reskinned again?
-	var/allow_post_reskins = FALSE
-	///Has the item been reskinned?
-	var/current_skin
-	///List of options to reskin.
-	var/list/unique_reskin
+
+	/// A multiplier to an objecet's force when used against a stucture, vechicle, machine, or robot.
+	var/demolition_mod = 1
 
 	// Access levels, used in modules\jobs\access.dm
 	var/list/req_access
@@ -42,6 +39,8 @@
 	var/drag_slowdown // Amont of multiplicative slowdown applied if pulled. >1 makes you slower, <1 makes you faster.
 
 	vis_flags = VIS_INHERIT_PLANE //when this be added to vis_contents of something it inherit something.plane, important for visualisation of obj in openspace.
+
+	var/obj/effect/abstract/particle_holder/burning_particles
 
 	FASTDMM_PROP(\
 		pinned_vars = list("name", "dir")\
@@ -77,18 +76,25 @@
 	if((obj_flags & ON_BLUEPRINTS) && isturf(loc) && mapload)
 		var/turf/T = loc
 		T.add_blueprints(src)
+	if(obj_flags & ELEVATED_SURFACE)
+		var/static/list/loc_connections = list(
+			COMSIG_TURF_OPEN_FLAME = PROC_REF(on_open_flame),
+		)
+		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/Destroy(force=FALSE)
 	if(!ismachinery(src))
 		STOP_PROCESSING(SSobj, src) // TODO: Have a processing bitflag to reduce on unnecessary loops through the processing lists
 	SStgui.close_uis(src)
-	. = ..()
+	if(burning_particles)
+		QDEL_NULL(burning_particles)
+	return ..()
 
 
 /obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	. = ..()
 	if(obj_flags & FROZEN)
-		visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+		visible_message(span_danger("[src] shatters into a million pieces!"))
 		qdel(src)
 
 
@@ -239,11 +245,20 @@
 /obj/get_dumping_location(datum/component/storage/source,mob/user)
 	return get_turf(src)
 
-/obj/proc/CanAStarPass(ID, dir, caller)
-	if(ismovable(caller))
-		var/atom/movable/AM = caller
-		if(AM.pass_flags & pass_flags_self)
-			return TRUE
+/**
+ * This proc is used for telling whether something can pass by this object in a given direction, for use by the pathfinding system.
+ *
+ * Trying to generate one long path across the station will call this proc on every single object on every single tile that we're seeing if we can move through, likely
+ * multiple times per tile since we're likely checking if we can access said tile from multiple directions, so keep these as lightweight as possible.
+ *
+ * Arguments:
+ * * ID- An ID card representing what access we have (and thus if we can open things like airlocks or windows to pass through them). The ID card's physical location does not matter, just the reference
+ * * to_dir- What direction we're trying to move in, relevant for things like directional windows that only block movement in certain directions
+ * * caller- The movable we're checking pass flags for, if we're making any such checks
+ **/
+/obj/proc/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
+	if(istype(caller) && (caller.pass_flags & pass_flags_self))
+		return TRUE
 	. = !density
 
 /obj/proc/check_uplink_validity()
@@ -286,7 +301,7 @@
 					acid = text2num(result["values"]["acid"])
 				)
 				log_admin("[key_name(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]")
-				message_admins("<span class='notice'>[key_name_admin(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]</span>")
+				message_admins(span_notice("[key_name_admin(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]"))
 	if(href_list[VV_HK_MASS_DEL_TYPE])
 		if(check_rights(R_DEBUG|R_SERVER))
 			var/action_type = alert("Strict type ([type]) or type and all subtypes?",,"Strict type","Type and subtypes","Cancel")
@@ -312,7 +327,7 @@
 						to_chat(usr, "No objects of this type exist")
 						return
 					log_admin("[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted) ")
-					message_admins("<span class='notice'>[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted) </span>")
+					message_admins(span_notice("[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted) "))
 				if("Type and subtypes")
 					var/i = 0
 					for(var/obj/Obj in world)
@@ -324,64 +339,18 @@
 						to_chat(usr, "No objects of this type exist")
 						return
 					log_admin("[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted) ")
-					message_admins("<span class='notice'>[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted) </span>")
+					message_admins(span_notice("[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted) "))
 
 /obj/examine(mob/user)
 	. = ..()
 	if(obj_flags & UNIQUE_RENAME)
-		. += "<span class='notice'>Use a pen on it to rename it or change its description.</span>"
-	if(unique_reskin && !current_skin)
-		. += "<span class='notice'>Alt-click it to reskin it.</span>"
+		. += span_notice("Use a pen on it to rename it or change its description.")
 
-/obj/AltClick(mob/user)
-	. = ..()
-	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		reskin_obj(user)
-
-/**
- * Reskins object based on a user's choice
- *
- * Arguments:
- * * M The mob choosing a reskin option
-*/
-
-/obj/proc/reskin_obj(mob/M)
-	if(!LAZYLEN(unique_reskin))
-		return
-
-	var/list/items = list()
-	for(var/reskin_option in unique_reskin)
-		var/image/item_image = image(icon = src.icon, icon_state = unique_reskin[reskin_option])
-		items += list("[reskin_option]" = item_image)
-	sortList(items)
-
-	var/pick = show_radial_menu(M, src, items, custom_check = CALLBACK(src, PROC_REF(check_reskin_menu), M), radius = 38, require_near = TRUE)
-	if(!pick)
-		return
-	if(!unique_reskin[pick])
-		return
-	if(!allow_post_reskins)
-		current_skin = pick
-	icon_state = unique_reskin[pick]
-	to_chat(M, "[src] is now skinned as '[pick].'")
-	update_appearance()
-
-/**
- * Checks if we are allowed to interact with a radial menu for reskins
- *
- * Arguments:
- * * user The mob interacting with the menu
-*/
-/obj/proc/check_reskin_menu(mob/user)
-	if(QDELETED(src))
-		return FALSE
-	if(current_skin)
-		return FALSE
-	if(!istype(user))
-		return FALSE
-	if(user.incapacitated())
-		return FALSE
-	return TRUE
+/obj/deconstruct_act(mob/living/user, obj/item/I)
+	if(resistance_flags & INDESTRUCTIBLE)
+		to_chat(user, span_warning("[src] cannot be deconstructed!"))
+		return TRUE
+	return ..()
 
 /obj/analyzer_act(mob/living/user, obj/item/I)
 	if(atmosanalyzer_scan(user, src))
@@ -390,6 +359,9 @@
 
 /obj/proc/plunger_act(obj/item/plunger/P, mob/living/user)
 	return
+
+/obj/proc/on_open_flame(datum/source, flame_heat)
+	return BLOCK_TURF_IGNITION
 
 // Should move all contained objects to it's location.
 /obj/proc/dump_contents()

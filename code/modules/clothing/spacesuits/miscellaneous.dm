@@ -36,7 +36,7 @@ Contains:
 	desc = "A prototype designed to replace the ageing MK.II SWAT suit. Based on the streamlined MK.II model, the traditional ceramic and graphene plate construction was replaced with plasteel, allowing superior armor against most threats. There's room for some kind of energy projection device on the back."
 	icon_state = "deathsquad"
 	item_state = "swat_suit"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/knife/combat)
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 60, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
@@ -50,7 +50,7 @@ Contains:
 	desc = "A tactical space suit first developed in a joint effort by the defunct IS-ERI and Nanotrasen in 20XX for military space operations. A tried and true workhorse, it is very difficult to move in but offers robust protection against all threats!"
 	icon_state = "heavy"
 	item_state = "swat_suit"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/knife/combat)
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
 	strip_delay = 120
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -153,7 +153,7 @@ Contains:
 	desc = "Yarr."
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_inv = 0
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/transforming/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
 	slowdown = 0
 	armor = list("melee" = 30, "bullet" = 50, "laser" = 30,"energy" = 40, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 75)
 	strip_delay = 40
@@ -332,10 +332,6 @@ Contains:
 	actions_types = list()
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_OCLOTHING)
-
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal
 	name = "paranormal response team hardsuit"
 	desc = "Powerful wards are built into this hardsuit, protecting the user from all manner of paranormal threats."
@@ -344,10 +340,6 @@ Contains:
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_OCLOTHING)
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
 	name = "inquisitor's hardsuit"
@@ -371,12 +363,7 @@ Contains:
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 10, "fire" = 100, "acid" = 100)
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife, /obj/item/kinetic_crusher, /obj/item/resonator, /obj/item/melee/transforming/cleaving_saw)
-
-
-/obj/item/clothing/suit/space/hardsuit/berserker/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, TRUE, ITEM_SLOT_OCLOTHING)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/melee/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kinetic_crusher, /obj/item/resonator, /obj/item/melee/cleaving_saw)
 
 /obj/item/clothing/suit/space/hardsuit/berserker/RemoveHelmet()
 	var/obj/item/clothing/head/helmet/space/hardsuit/berserker/helm = helmet
@@ -412,12 +399,12 @@ Contains:
 
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/examine()
 	. = ..()
-	. += "<span class='notice'>Berserk mode is [berserk_charge]% charged.</span>"
+	. += span_notice("Berserk mode is [berserk_charge]% charged.")
 
-/obj/item/clothing/head/helmet/space/hardsuit/berserker/process(delta_time)
+/obj/item/clothing/head/helmet/space/hardsuit/berserker/process(seconds_per_tick)
 	. = ..()
 	if(berserk_active)
-		berserk_charge = clamp(berserk_charge - CHARGE_DRAINED_PER_SECOND * delta_time, 0, MAX_BERSERK_CHARGE)
+		berserk_charge = clamp(berserk_charge - CHARGE_DRAINED_PER_SECOND * seconds_per_tick, 0, MAX_BERSERK_CHARGE)
 	if(!berserk_charge)
 		if(ishuman(loc))
 			end_berserk(loc)
@@ -434,11 +421,11 @@ Contains:
 		berserk_value *= PROJECTILE_HIT_MULTIPLIER
 	berserk_charge = clamp(round(berserk_charge + berserk_value), 0, MAX_BERSERK_CHARGE)
 	if(berserk_charge >= MAX_BERSERK_CHARGE)
-		to_chat(owner, "<span class='notice'>Berserk mode is fully charged.</span>")
+		to_chat(owner, span_notice("Berserk mode is fully charged."))
 
 /// Starts berserk, giving the wearer 50 melee armor, doubled attacking speed, NOGUNS trait, adding a color and giving them the berserk movespeed modifier
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/proc/berserk_mode(mob/living/carbon/human/user)
-	to_chat(user, "<span class='warning'>You enter berserk mode.</span>")
+	to_chat(user, span_warning("You enter berserk mode."))
 	playsound(user, 'sound/magic/staff_healing.ogg', 50)
 	user.add_movespeed_modifier(/datum/movespeed_modifier/berserk)
 	user.physiology.armor.melee += BERSERK_MELEE_ARMOR_ADDED
@@ -452,7 +439,7 @@ Contains:
 /obj/item/clothing/head/helmet/space/hardsuit/berserker/proc/end_berserk(mob/living/carbon/human/user)
 	if(!berserk_active)
 		return
-	to_chat(user, "<span class='warning'>You exit berserk mode.</span>")
+	to_chat(user, span_warning("You exit berserk mode."))
 	playsound(user, 'sound/magic/summonitems_generic.ogg', 50)
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/berserk)
 	user.physiology.armor.melee -= BERSERK_MELEE_ARMOR_ADDED
@@ -489,7 +476,7 @@ Contains:
 
 /obj/item/clothing/suit/space/fragile/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(!torn && prob(50))
-		to_chat(owner, "<span class='warning'>[src] tears from the damage, breaking the air-tight seal!</span>")
+		to_chat(owner, span_warning("[src] tears from the damage, breaking the air-tight seal!"))
 		clothing_flags &= ~STOPSPRESSUREDAMAGE
 		name = "torn [src]."
 		desc = "A bulky suit meant to protect the user during emergency situations, at least until someone tore a hole in the suit."
@@ -502,7 +489,7 @@ Contains:
 	desc = "A custom version of the MK.II SWAT suit, modified to look rugged and tough. Works as a space suit, if you can find a helmet."
 	icon_state = "hunter"
 	item_state = "swat_suit"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/knife/combat)
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -513,7 +500,7 @@ Contains:
 	desc = "The integrated helmet of the combat medic hardsuit, this has a bright, glowing facemask."
 	icon_state = "hardsuit0-combatmedic"
 	item_state = "hardsuit0-combatmedic"
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
 	hardsuit_type = "combatmedic"
 
 /obj/item/clothing/suit/space/hardsuit/combatmedic
@@ -522,40 +509,6 @@ Contains:
 	icon_state = "combatmedic"
 	item_state = "combatmedic"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/combatmedic
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
 	allowed = list(/obj/item/gun, /obj/item/melee/baton, /obj/item/circular_saw, /obj/item/tank/internals, /obj/item/storage/box/pillbottles,\
 	/obj/item/storage/firstaid, /obj/item/stack/medical/gauze, /obj/item/stack/medical/suture, /obj/item/stack/medical/mesh, /obj/item/storage/bag/chemistry)
-
-/obj/item/clothing/head/helmet/space/solgov
-	name = "\improper SolGov Vacuum Helmet"
-	icon_state = "vachelmet_solgov"
-	desc = "This space-proof helmet is meant to be worn with a matching T-MA suit."
-	item_state = "vachelmet_solgov"
-	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
-
-/obj/item/clothing/suit/space/solgov
-	name = "\improper SolGov Vacuum Suit"
-	icon_state = "vacsuit_solgov"
-	desc = "Originally designed by independent contractors on Luna for the purposes of survival in hazardous environments, the lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's exploration teams."
-	item_state = "vacsuit_solgov"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
-	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
-	slowdown = 0.5
-	w_class = WEIGHT_CLASS_NORMAL
-	supports_variations = DIGITIGRADE_VARIATION
-
-/obj/item/clothing/suit/space/inteq
-	name = "inteq space suit"
-	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
-	item_state = "space-inteq"
-	icon_state = "space-inteq"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/clothing/head/helmet/space/inteq
-	name = "inteq space helmet"
-	desc = "A black space helmet with an opaque yellow visor, there is a small 'IRMG' written on the earpad."
-	item_state = "space-inteq"
-	icon_state = "space-inteq"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
-	w_class = WEIGHT_CLASS_NORMAL

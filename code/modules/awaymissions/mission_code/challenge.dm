@@ -1,20 +1,3 @@
-//Challenge Areas
-
-/area/awaymission/challenge/start
-	name = "Where Am I?"
-	icon_state = "away"
-
-/area/awaymission/challenge/main
-	name = "Danger Room"
-	icon_state = "away1"
-	requires_power = FALSE
-
-/area/awaymission/challenge/end
-	name = "Administration"
-	icon_state = "away2"
-	requires_power = FALSE
-
-
 /obj/machinery/power/emitter/energycannon
 	name = "Energy Cannon"
 	desc = "A heavy duty industrial laser."
@@ -35,3 +18,13 @@
 
 /obj/machinery/power/emitter/energycannon/RefreshParts()
 	return
+
+/obj/machinery/power/emitter/energycannon/ctf
+	processing_flags = START_PROCESSING_MANUALLY
+
+/obj/machinery/power/emitter/energycannon/ctf/proc/toggle_ctf(ctf_enabled)
+	src.active = ctf_enabled
+	if(ctf_enabled)
+		START_PROCESSING(SSmachines, src)
+	else
+		STOP_PROCESSING(SSmachines, src)

@@ -8,18 +8,16 @@
 
 /datum/supply_pack/machinery/lightbulbs
 	name = "Replacement Lights"
-	desc = "May the light of Aether shine upon this sector! Or at least, the light of forty two light tubes and twenty one light bulbs."
-	cost = 1000
-	contains = list(/obj/item/storage/box/lights/mixed,
-					/obj/item/storage/box/lights/mixed,
-					/obj/item/storage/box/lights/mixed)
+	desc = "May the light of Aether shine upon this sector! Or at least, the light of fourteen light tubes and seven light bulbs."
+	cost = 100
+	contains = list(/obj/item/storage/box/lights/mixed)
 	crate_name = "replacement lights"
 	crate_type = /obj/structure/closet/crate
 
 /datum/supply_pack/machinery/t1
 	name = "T1 parts crate"
 	desc = "A bundle of basic machine parts, containing 3 of each common part type for when you're too lazy to print them yourself."
-	cost = 500
+	cost = 100
 	contains = list(/obj/item/storage/box/stockparts/basic)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate
@@ -27,28 +25,104 @@
 /datum/supply_pack/machinery/t2
 	name = "T2 parts crate"
 	desc = "A bundle of advanced machine parts, containing 2 of each common part type."
-	cost = 1500
+	cost = 750
 	contains = list(/obj/item/storage/box/stockparts/t2)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_laser
+	name = "T2 lasers crate"
+	desc = "A bundle of advanced machine lasers, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/laser)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_matter
+	name = "T2 matter bins crate"
+	desc = "A bundle of advanced machine parts, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/matter)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_manipulator
+	name = "T2 manipulators crate"
+	desc = "A bundle of advanced machine parts, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/manipulator)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_scan
+	name = "T2 scanning modules crate"
+	desc = "A bundle of advanced machine parts, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/scan)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/science
+
+/datum/supply_pack/machinery/t2_capacitor
+	name = "T2 capacitors crate"
+	desc = "A bundle of advanced machine parts, containing 10 parts."
+	cost = 750
+	contains = list(/obj/item/storage/box/stockparts/t2/capacitor)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
 
 /datum/supply_pack/machinery/t3
 	name = "T3 parts crate"
 	desc = "A bundle of high-tech machine parts, containing 2 of each common part type."
-	cost = 3000
+	cost = 1500
 	contains = list(/obj/item/storage/box/stockparts/t3)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_capacitor
+	name = "T3 capacitors crate"
+	desc = "A bundle of high-tech machine parts, containing 10 parts."
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/capacitor)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_scan
+	name = "T3 scanning module crate"
+	desc = "A bundle of high-tech machine parts, containing 10 parts"
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/scan)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_manipulator
+	name = "T3 manipulators crate"
+	desc = "A bundle of high-tech machine parts, containing 10 parts."
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/manipulator)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_laser
+	name = "T3 lasers crate"
+	desc = "A bundle of high-tech machine parts, containing 10."
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/laser)
+	crate_name = "\improper stock parts crate"
+	crate_type = /obj/structure/closet/crate/secure/science
+
+/datum/supply_pack/machinery/t3_matter
+	name = "T3 matter bins crate"
+	desc = "A bundle of high-tech machine parts, containing 10 parts."
+	cost = 1500
+	contains = list(/obj/item/storage/box/stockparts/t3/matter)
 	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
 /datum/supply_pack/machinery/power
 	name = "Power Cell Crate"
-	desc = "Looking for power overwhelming? Look no further. Contains five high-voltage power cells."
-	cost = 1000
-	contains = list(/obj/item/stock_parts/cell/high,
-					/obj/item/stock_parts/cell/high,
-					/obj/item/stock_parts/cell/high,
-					/obj/item/stock_parts/cell/high,
-					/obj/item/stock_parts/cell/high)
+	desc = "Looking for power overwhelming? Look no further. Contains one high-voltage power cell."
+	cost = 300 //it should be a bit more expensive for a full ship recharge
+	contains = list(/obj/item/stock_parts/cell/high)
 	crate_name = "power cell crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
@@ -62,38 +136,40 @@
 	cost = 500
 	contains = list(/obj/machinery/space_heater)
 	crate_name = "space heater crate"
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/thermomachine
 	name = "Thermomachine Crate"
 	desc = "Freeze or heat your air."
-	cost = 2000
-	contains = list(/obj/item/circuitboard/machine/thermomachine,
-					/obj/item/circuitboard/machine/thermomachine)
+	cost = 1000
+	contains = list(/obj/item/circuitboard/machine/thermomachine)
 	crate_name = "thermomachine crate"
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/portapump
 	name = "Portable Air Pump Crate"
-	desc = "Want to drain a room of air without losing a drop? We've got you covered. Contains two portable air pumps."
-	cost = 3000
-	contains = list(/obj/machinery/portable_atmospherics/pump,
-					/obj/machinery/portable_atmospherics/pump)
+	desc = "Want to drain a room of air without losing a drop? We've got you covered. Contains a portable air pump."
+	cost = 750
+	contains = list(/obj/machinery/portable_atmospherics/pump)
 	crate_name = "portable air pump crate"
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/portascrubber
 	name = "Portable Scrubber Crate"
-	desc = "Clean up that pesky plasma leak with your very own set of two portable scrubbers."
-	cost = 3000
-	contains = list(/obj/machinery/portable_atmospherics/scrubber,
-					/obj/machinery/portable_atmospherics/scrubber)
+	desc = "Clean up that pesky plasma leak with your very own portable scrubber."
+	cost = 750
+	contains = list(/obj/machinery/portable_atmospherics/scrubber)
 	crate_name = "portable scrubber crate"
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/hugescrubber
 	name = "Huge Portable Scrubber Crate"
 	desc = "A huge portable scrubber for huge atmospherics mistakes."
-	cost = 5000
+	cost = 2000
 	contains = list(/obj/machinery/portable_atmospherics/scrubber/huge/movable/cargo)
 	crate_name = "huge portable scrubber crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /*
 		Bots
@@ -101,11 +177,12 @@
 
 /datum/supply_pack/machinery/mule
 	name = "MULEbot Crate"
-	desc = "Pink-haired Quartermaster not doing her job? Replace her with this tireless worker, today!"
+	desc = "A dilligent MULEbot from the N+S Factories, happy to carry everything you could possibly need, if it's a crate that is." //this description screamed TG. It has been changed.
 	cost = 2000
 	contains = list(/mob/living/simple_animal/bot/mulebot)
 	crate_name = "\improper MULEbot Crate"
 	crate_type = /obj/structure/closet/crate/large
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/robotics
 	name = "Robotics Assembly Crate"
@@ -131,6 +208,7 @@
 					/obj/item/bot_assembly/cleanbot)
 	crate_name = "robotics assembly crate"
 	crate_type = /obj/structure/closet/crate/science
+	no_bundle = TRUE
 
 /*
 		Miscellaneous machines
@@ -143,26 +221,26 @@
 	contains = list(/obj/machinery/power/ship_gravity/unanchored)
 	crate_name = "gravity generator crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/breach_shield_gen
 	name = "Anti-breach Shield Projector Crate"
-	desc = "Hull breaches again? Say no more with the Nanotrasen Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains two shield projectors."
-	cost = 2500
-	contains = list(/obj/machinery/shieldgen,
-					/obj/machinery/shieldgen)
+	desc = "Hull breaches again? Say no more with the Nanotrasen Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains one shield projector."
+	cost = 1250
+	contains = list(/obj/machinery/shieldgen)
 	crate_name = "anti-breach shield projector crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/wall_shield_gen
 	name = "Shield Generator Crate"
-	desc = "These four shield wall generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Not rated for containing singularities or tesla balls."
-	cost = 2000
+	desc = "These two shield wall generators are guaranteed to keep any unwanted lifeforms on the outside, where they belong! Not rated for containing singularities or tesla balls."
+	cost = 1000
 	contains = list(/obj/machinery/power/shieldwallgen,
-					/obj/machinery/power/shieldwallgen,
-					/obj/machinery/power/shieldwallgen,
 					/obj/machinery/power/shieldwallgen)
 	crate_name = "shield generators crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/holofield_generator
 	name = "Holofield Generator Crate"
@@ -172,30 +250,6 @@
 					/obj/item/circuitboard/machine/shieldwallgen/atmos)
 	crate_name = "holofield generator crate"
 	crate_type = /obj/structure/closet/crate/engineering
-
-/datum/supply_pack/machinery/blackmarket_telepad
-	name = "Black Market LTSRBT"
-	desc = "Need a faster and better way of transporting your illegal goods from and to the sector? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."
-	cost = 1000
-	contains = list(
-		/obj/item/circuitboard/machine/ltsrbt,
-		/obj/item/stack/ore/bluespace_crystal/artificial,
-		/obj/item/stack/ore/bluespace_crystal/artificial,
-		/obj/item/stock_parts/subspace/ansible
-	)
-	crate_type = /obj/structure/closet/crate/science
-
-/datum/supply_pack/machinery/shuttle_in_a_box
-	name = "Shuttle in a Box"
-	desc = "The bare minimum amount of machine and computer boards required to create a working spacecraft."
-	cost = 8000
-	contains = list(
-		/obj/item/circuitboard/computer/shuttle/helm,
-		/obj/item/circuitboard/machine/shuttle/smes,
-		/obj/item/circuitboard/machine/shuttle/engine/electric,
-		/obj/item/shuttle_creator
-	)
-	crate_name = "Shuttle in a Box"
 
 /datum/supply_pack/machinery/ion_thruster
 	name = "Ion Thruster Crate"
@@ -215,6 +269,15 @@
 	crate_name = "plasma thruster crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
+/datum/supply_pack/machinery/combustion_thruster
+	name = "Combustion Thruster Crate"
+	desc = "A crate containing a combustion thruster and its heater's electronics. For when you need complicated thrust."
+	cost = 2000
+	contains = list(/obj/item/circuitboard/machine/shuttle/fire_heater,
+					/obj/item/circuitboard/machine/shuttle/engine/fire)
+	crate_name = "combustion thruster crate"
+	crate_type = /obj/structure/closet/crate/engineering
+
 /datum/supply_pack/machinery/drill_crate
 	name = "Heavy duty laser mining drill"
 	desc = "An experimental laser-based mining drill that Nanotrasen is kindly allowing YOU, the customer, to opt into testing of."
@@ -227,6 +290,15 @@
 	crate_name = "laser mining drill crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
+/datum/supply_pack/machinery/ehf_beacon
+	name = "EHF point beacon"
+	desc = "A crate containing an EHF point beacon, used to mark points of interest and semi-permanent constructions."
+	cost = 1000 // This sounds reasonable? You'll still need everything else if you want to make an outpost (Apparently it wasn't, and is cheaper now)
+	contains = list(
+		/obj/machinery/power/planet_beacon
+	)
+	crate_name = "point beacon crate"
+	crate_type = /obj/structure/closet/crate/engineering
 
 /*
 		Power generation machines
@@ -270,6 +342,7 @@
 					/obj/item/paper/guides/jobs/engi/solars)
 	crate_name = "solar panel crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
+	no_bundle = TRUE
 
 /datum/supply_pack/machinery/teg
 	name = "Thermoelectric Generator Crate"
@@ -293,22 +366,17 @@
 
 /datum/supply_pack/machinery/collector
 	name = "Radiation Collector Crate"
-	desc = "Contains three radiation collectors. Put that radiation to work on something other than your DNA!"
-	cost = 3000
-	contains = list(/obj/machinery/power/rad_collector,
-					/obj/machinery/power/rad_collector,
-					/obj/machinery/power/rad_collector)
+	desc = "Contains one radiation collector. Put that radiation to work on something other than your DNA!"
+	cost = 1000
+	contains = list(/obj/machinery/power/rad_collector)
 	crate_name = "collector crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
 /datum/supply_pack/machinery/tesla_coils
 	name = "Tesla Coil Crate"
-	desc = "Whether it's high-voltage executions, creating research points, or just plain old power generation, this pack of four Tesla coils can do it all!"
-	cost = 2500
-	contains = list(/obj/machinery/power/tesla_coil,
-					/obj/machinery/power/tesla_coil,
-					/obj/machinery/power/tesla_coil,
-					/obj/machinery/power/tesla_coil)
+	desc = "Whether it's high-voltage executions, creating research points, or just plain old power generation, this Tesla coil can do it all!"
+	cost = 625
+	contains = list(/obj/machinery/power/tesla_coil)
 	crate_name = "tesla coil crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
@@ -318,10 +386,9 @@
 
 /datum/supply_pack/machinery/emitter
 	name = "Emitter Crate"
-	desc = "Useful for powering forcefield generators while destroying locked crates and intruders alike. Contains two high-powered energy emitters."
-	cost = 3000
-	contains = list(/obj/machinery/power/emitter,
-					/obj/machinery/power/emitter)
+	desc = "Useful for powering forcefield generators while destroying locked crates and intruders alike. Contains one high-powered energy emitter."
+	cost = 1500
+	contains = list(/obj/machinery/power/emitter)
 	crate_name = "emitter crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
@@ -336,12 +403,9 @@
 
 /datum/supply_pack/machinery/grounding_rods
 	name = "Grounding Rod Crate"
-	desc = "Four grounding rods guaranteed to keep any uppity tesla's lightning under control."
-	cost = 1750
-	contains = list(/obj/machinery/power/grounding_rod,
-					/obj/machinery/power/grounding_rod,
-					/obj/machinery/power/grounding_rod,
-					/obj/machinery/power/grounding_rod)
+	desc = "Contains one grounding rod guaranteed to keep any uppity tesla's lightning under control."
+	cost = 450
+	contains = list(/obj/machinery/power/grounding_rod)
 	crate_name = "grounding rod crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
@@ -357,3 +421,10 @@
 	crate_name = "supermatter shard crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
+/datum/supply_pack/machine/smartfridge_board
+	name = "Smart Fridge Board"
+	desc = "A spacious alternative to the run-of-the-mill fridges that most vessels come pre-equipped with."
+	cost = 500
+	contains = list(/obj/item/circuitboard/machine/smartfridge)
+	crate_name = "smart fridge crate"
+	crate_type = /obj/structure/closet/crate/engineering

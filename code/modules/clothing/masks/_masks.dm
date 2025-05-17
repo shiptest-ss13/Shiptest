@@ -11,12 +11,13 @@
 	var/mask_adjusted = 0
 	var/adjusted_flags = null
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	blood_overlay_type = "mask"
 
 /obj/item/clothing/mask/attack_self(mob/user)
 	if((clothing_flags & VOICEBOX_TOGGLABLE))
 		clothing_flags ^= (VOICEBOX_DISABLED)
 		var/status = !(clothing_flags & VOICEBOX_DISABLED)
-		to_chat(user, "<span class='notice'>You turn the voice box in [src] [status ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You turn the voice box in [src] [status ? "on" : "off"]."))
 
 /obj/item/clothing/mask/equipped(mob/M, slot)
 	. = ..()
@@ -32,15 +33,13 @@
 /obj/item/clothing/mask/proc/handle_speech()
 
 /obj/item/clothing/mask/worn_overlays(isinhands = FALSE)
-	. = list()
+	. = ..()
 	if(!isinhands)
 		if(body_parts_covered & HEAD)
 			if(damaged_clothes)
 				. += mutable_appearance('icons/effects/item_damage.dmi', "damagedmask")
 			if(HAS_BLOOD_DNA(src))
-				var/mutable_appearance/bloody_mask = mutable_appearance('icons/effects/blood.dmi', "maskblood")
-				bloody_mask.color = get_blood_dna_color(return_blood_DNA())
-				. += bloody_mask
+				. += setup_blood_overlay()
 
 /obj/item/clothing/mask/update_clothes_damaged_state(damaging = TRUE)
 	..()
@@ -60,11 +59,11 @@
 		clothing_flags |= visor_flags
 		flags_inv |= visor_flags_inv
 		flags_cover |= visor_flags_cover
-		to_chat(user, "<span class='notice'>You push \the [src] back into place.</span>")
+		to_chat(user, span_notice("You push \the [src] back into place."))
 		slot_flags = initial(slot_flags)
 	else
 		icon_state += "_up"
-		to_chat(user, "<span class='notice'>You push \the [src] out of the way.</span>")
+		to_chat(user, span_notice("You push \the [src] out of the way."))
 		gas_transfer_coefficient = null
 		permeability_coefficient = null
 		clothing_flags &= ~visor_flags

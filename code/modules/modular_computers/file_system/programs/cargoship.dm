@@ -35,21 +35,21 @@
 	// Get components
 	var/obj/item/computer_hardware/card_slot/card_slot = computer.all_components[MC_CARD]
 	var/obj/item/computer_hardware/printer/printer = computer.all_components[MC_PRINT]
-	var/obj/item/card/id/id_card = card_slot ? card_slot.stored_card : null
+	var/obj/item/card/bank/bank_card = card_slot ? card_slot.stored_card : null
 	if(!card_slot || !printer) //We need both to successfully use this app.
 		return
 
 	switch(action)
 		if("ejectid")
-			if(id_card)
+			if(bank_card)
 				card_slot.try_eject(TRUE, usr)
 		if("selectid")
-			if(!id_card)
+			if(!bank_card)
 				return
-			if(!id_card.registered_account)
+			if(!bank_card.registered_account)
 				playsound(get_turf(ui_host()), 'sound/machines/buzz-sigh.ogg', 50, TRUE, -1)
 				return
-			payments_acc = id_card.registered_account
+			payments_acc = bank_card.registered_account
 			playsound(get_turf(ui_host()), 'sound/machines/ping.ogg', 50, TRUE, -1)
 		if("resetid")
 			payments_acc = null
@@ -58,16 +58,16 @@
 			percent_cut = potential_cut ? clamp(round(potential_cut, 1), 1, 50) : 20
 		if("print")
 			if(!printer)
-				to_chat(usr, "<span class='notice'>Hardware error: A printer is required to print barcodes.</span>")
+				to_chat(usr, span_notice("Hardware error: A printer is required to print barcodes."))
 				return
 			if(printer.stored_paper <= 0)
-				to_chat(usr, "<span class='notice'>Hardware error: Printer is out of paper.</span>")
+				to_chat(usr, span_notice("Hardware error: Printer is out of paper."))
 				return
 			if(!payments_acc)
-				to_chat(usr, "<span class='notice'>Software error: Please set a current user first.</span>")
+				to_chat(usr, span_notice("Software error: Please set a current user first."))
 				return
 			var/obj/item/barcode/barcode = new /obj/item/barcode(get_turf(ui_host()))
 			barcode.payments_acc = payments_acc
 			barcode.percent_cut = percent_cut
 			printer.stored_paper--
-			to_chat(usr, "<span class='notice'>The computer prints out a barcode.</span>")
+			to_chat(usr, span_notice("The computer prints out a barcode."))

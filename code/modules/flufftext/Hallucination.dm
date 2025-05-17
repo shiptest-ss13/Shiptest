@@ -29,17 +29,19 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(!hallucination)
 		return
 
-	hallucination--
+	hallucination = max(hallucination - 1, 0)
 
 	if(world.time < next_hallucination)
 		return
 
-	var/halpick = pickweight(GLOB.hallucination_list)
+	var/halpick = pick_weight(GLOB.hallucination_list)
 	new halpick(src, FALSE)
 
 	next_hallucination = world.time + rand(100, 600)
 
 /mob/living/carbon/proc/set_screwyhud(hud_type)
+	if(HAS_TRAIT(src, TRAIT_ANALGESIA))
+		hud_type = SCREWYHUD_HEALTHY
 	hal_screwyhud = hud_type
 	update_health_hud()
 
@@ -55,7 +57,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 /datum/hallucination/proc/wake_and_restore()
 	target.set_screwyhud(SCREWYHUD_NONE)
-	target.SetSleeping(0)
+	target.set_sleeping(0)
 
 /datum/hallucination/Destroy()
 	target.investigate_log("was afflicted with a hallucination of type [type] by [natural?"hallucination status":"an external source"]. [feedback_details]", INVESTIGATE_HALLUCINATIONS)
@@ -193,7 +195,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	next_expand = world.time + FAKE_FLOOD_EXPAND_TIME
 	START_PROCESSING(SSobj, src)
 
-/datum/hallucination/fake_flood/process()
+/datum/hallucination/fake_flood/process(seconds_per_tick)
 	if(next_expand <= world.time)
 		radius++
 		if(radius > FAKE_FLOOD_MAX_RADIUS)
@@ -246,7 +248,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	update_icon("alienh_pounce")
 	if(hit_atom == target && target.stat!=DEAD)
 		target.Paralyze(100)
-		target.visible_message("<span class='danger'>[target] flails around wildly.</span>","<span class='userdanger'>[name] pounces on you!</span>")
+		target.visible_message(span_danger("[target] flails around wildly."),span_userdanger("[name] pounces on you!"))
 
 /datum/hallucination/xeno_attack
 	//Xeno crawls from nearby vent,jumps at you, and goes back in
@@ -271,10 +273,10 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		xeno.throw_at(pump,7,1, xeno, FALSE, TRUE)
 		sleep(10)
 		var/xeno_name = xeno.name
-		to_chat(target, "<span class='notice'>[xeno_name] begins climbing into the ventilation system...</span>")
+		to_chat(target, span_notice("[xeno_name] begins climbing into the ventilation system..."))
 		sleep(30)
 		qdel(xeno)
-		to_chat(target, "<span class='notice'>[xeno_name] scrambles into the ventilation ducts!</span>")
+		to_chat(target, span_notice("[xeno_name] scrambles into the ventilation ducts!"))
 	qdel(src)
 
 /obj/effect/hallucination/simple/clown
@@ -336,7 +338,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			target.adjustStaminaLoss(40)
 			step_away(target, bubblegum)
 			shake_camera(target, 4, 3)
-			target.visible_message("<span class='warning'>[target] jumps backwards, falling on the ground!</span>","<span class='userdanger'>[bubblegum] slams into you!</span>")
+			target.visible_message(span_warning("[target] jumps backwards, falling on the ground!"),span_userdanger("[bubblegum] slams into you!"))
 		sleep(2)
 	sleep(30)
 	qdel(src)
@@ -476,15 +478,15 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 				A = image(image_file,H,"dualsaberred1", layer=ABOVE_MOB_LAYER)
 			if("taser")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+					image_file = GUN_RIGHTHAND_ICON
 				else
-					image_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+					image_file = GUN_LEFTHAND_ICON
 				A = image(image_file,H,"advtaserstun4", layer=ABOVE_MOB_LAYER)
 			if("ebow")
 				if(side == "right")
-					image_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+					image_file = GUN_RIGHTHAND_ICON
 				else
-					image_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+					image_file = GUN_LEFTHAND_ICON
 				A = image(image_file,H,"crossbow", layer=ABOVE_MOB_LAYER)
 			if("baton")
 				if(side == "right")
@@ -525,11 +527,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/delusion
 	var/list/image/delusions = list()
 
-/datum/hallucination/delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = 300,skip_nearby = TRUE, custom_icon = null, custom_icon_file = null, custom_name = null)
+/datum/hallucination/delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = rand(30,300),skip_nearby = TRUE, custom_icon = null, custom_icon_file = null, custom_name = null)
 	set waitfor = FALSE
 	. = ..()
 	var/image/A = null
-	var/kind = force_kind ? force_kind : pick("nothing","monkey","corgi","carp","skeleton","demon","zombie")
+	var/kind = force_kind ? force_kind : pick("doe","mi-go","carp","hermit","frontiersman","ramzi")
 	feedback_details += "Type: [kind]"
 	var/list/nearby
 	if(skip_nearby)
@@ -540,27 +542,24 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(skip_nearby && (H in nearby))
 			continue
 		switch(kind)
-			if("nothing")
-				A = image('icons/effects/effects.dmi',H,"nothing")
-				A.name = "..."
-			if("monkey")//Monkey
-				A = image('icons/mob/monkey.dmi',H,"monkey1")
-				A.name = "Monkey ([rand(1,999)])"
+			if("doe")//Doe
+				A = image('icons/mob/animal.dmi',H,"deer-doe")
+				A.name = "Doe"
 			if("carp")//Carp
 				A = image('icons/mob/carp.dmi',H,"carp")
 				A.name = "Space Carp"
-			if("corgi")//Corgi
-				A = image('icons/mob/pets.dmi',H,"corgi")
-				A.name = "Corgi"
-			if("skeleton")//Skeletons
-				A = image('icons/mob/human.dmi',H,"skeleton")
-				A.name = "Skeleton"
-			if("zombie")//Zombies
-				A = image('icons/mob/human.dmi',H,"zombie")
-				A.name = "Zombie"
-			if("demon")//Demon
-				A = image('icons/mob/mob.dmi',H,"daemon")
-				A.name = "Demon"
+			if("mi-go")//Mi-go
+				A = image('icons/mob/animal.dmi',H,"mi-go")
+				A.name = "Mi-go"
+			if("hermit")//Hermit
+				A = image('icons/mob/simple_human.dmi',H,"survivor_gunslinger")
+				A.name = "Hermit Soldier"
+			if("frontiersman")//Frontiersman
+				A = image('icons/mob/simple_human.dmi',H,"frontiersmanrangedminigun")
+				A.name = "Frontiersman"
+			if("ramzi")//Ramzi
+				A = image('icons/mob/simple_human.dmi',H,"ramzi_base")
+				A.name = "Ramzi Commando"
 			if("custom")
 				A = image(custom_icon_file, H, custom_icon)
 				A.name = custom_name
@@ -568,8 +567,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(target.client)
 			delusions |= A
 			target.client.images |= A
-	if(duration)
-		QDEL_IN(src, duration)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), duration)
 
 /datum/hallucination/delusion/Destroy()
 	for(var/image/I in delusions)
@@ -580,25 +578,28 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /datum/hallucination/self_delusion
 	var/image/delusion
 
-/datum/hallucination/self_delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = 300, custom_icon = null, custom_icon_file = null, wabbajack = TRUE) //set wabbajack to false if you want to use another fake source
+/datum/hallucination/self_delusion/New(mob/living/carbon/C, forced, force_kind = null , duration = rand(30,300), custom_icon = null, custom_icon_file = null, wabbajack = TRUE) //set wabbajack to false if you want to use another fake source
 	set waitfor = FALSE
 	..()
 	var/image/A = null
-	var/kind = force_kind ? force_kind : pick("monkey","corgi","carp","skeleton","demon","zombie","robot")
+	var/kind = force_kind ? force_kind : pick("doe","mi-go","carp","hermit","frontiersman","ramzi","pai","robot")
 	feedback_details += "Type: [kind]"
 	switch(kind)
-		if("monkey")//Monkey
-			A = image('icons/mob/monkey.dmi',target,"monkey1")
+		if("doe")//Doe
+			A = image('icons/mob/animal.dmi',target,"deer-doe")
 		if("carp")//Carp
 			A = image('icons/mob/animal.dmi',target,"carp")
-		if("corgi")//Corgi
-			A = image('icons/mob/pets.dmi',target,"corgi")
-		if("skeleton")//Skeletons
-			A = image('icons/mob/human.dmi',target,"skeleton")
-		if("zombie")//Zombies
-			A = image('icons/mob/human.dmi',target,"zombie")
-		if("demon")//Demon
-			A = image('icons/mob/mob.dmi',target,"daemon")
+		if("mi-go")//Mi-go
+			A = image('icons/mob/animal.dmi',target,"mi-go")
+		if("hermit")//Hermit
+			A = image('icons/mob/simple_human.dmi',target,"survivor_base")
+		if("frontiersman")//Frontiersman
+			A = image('icons/mob/simple_human.dmi',target,"frontiersmanranged")
+		if("ramzi")//Ramzi
+			A = image('icons/mob/simple_human.dmi',target,"ramzi_base")
+		if("pai")//pAI
+			A = image('icons/mob/pai.dmi',target,"repairbot")
+			target.playsound_local(target,'sound/effects/pai_boot.ogg', 75, 1)
 		if("robot")//Cyborg
 			A = image('icons/mob/robots.dmi',target,"robot")
 			target.playsound_local(target,'sound/voice/liveagain.ogg', 75, 1)
@@ -607,10 +608,10 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	A.override = 1
 	if(target.client)
 		if(wabbajack)
-			to_chat(target, "<span class='hear'>...you look down and notice... you aren't the same as you used to be...</span>")
+			to_chat(target, span_hear("...you look down and notice... you aren't the same as you used to be..."))
 		delusion = A
 		target.client.images |= A
-	QDEL_IN(src, duration)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), duration)
 
 /datum/hallucination/self_delusion/Destroy()
 	if(target.client)
@@ -755,7 +756,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(other)
 		if(close_other) //increase the odds
 			for(var/i in 1 to 5)
-				message_pool.Add("<span class='warning'>You feel a tiny prick!</span>")
+				message_pool.Add(span_warning("You feel a tiny prick!"))
 		var/obj/item/storage/equipped_backpack = other.get_item_by_slot(ITEM_SLOT_BACK)
 		if(istype(equipped_backpack))
 			for(var/i in 1 to 5) //increase the odds
@@ -769,27 +770,27 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
 
-	message_pool.Add("<span class='notice'>You hear something squeezing through the pipes...</span>",
-		"<span class='warning'>You hear something squelching in the ground beneath you...</span>",
-		"<span class='warning'>You feel something inside your [pick("arm","leg","back","head")].</span>",
-		"<span class='warning'>You feel [pick("angry","empty","dry","woozy")].</span>",
-		"<span class='warning'>Your stomach rumbles.</span>",
-		"<span class='warning'>Your head hurts.</span>",
-		"<span class='warning'>You hear a faint buzz in your head.</span>",
-		"<span class='warning'>The edges of your vision go dark.</span>",
-		"<span class='warning'>You feel your head slowly splitting in two.</span>",
-		"<span class='warning'>Your fingers feel like they're melting off.</span>",
-		"<span class='warning'>You can't count how many fingers you have... there are too many.</span>",
-		"<span class='warning'>You start sinking into the ground beneath you.</span>")
+	message_pool.Add(span_notice("You hear something squeezing through the pipes..."),
+		span_warning("You hear something squelching in the ground beneath you..."),
+		span_warning("You feel something inside your [pick("arm","leg","back","head")]."),
+		span_warning("You feel [pick("angry","empty","dry","woozy")]."),
+		span_warning("Your stomach rumbles."),
+		span_warning("Your head hurts."),
+		span_warning("You hear a faint buzz in your head."),
+		span_warning("The edges of your vision go dark."),
+		span_warning("You feel your head slowly splitting in two."),
+		span_warning("Your fingers feel like they're melting off."),
+		span_warning("You can't count how many fingers you have... there are too many."),
+		span_warning("You start sinking into the ground beneath you."))
 	if(prob(20))
-		message_pool.Add("<span class='warning'>Behind you.</span>",\
-			"<span class='warning'>You hear a faint laughter approaching you.</span>",
-			"<span class='warning'>Something darts across your vision.</span>",
-			"<span class='warning'>You hear skittering on the ceiling.</span>",
-			"<span class='warning'>There's something squirming around inside of you.</span>",
-			"<span class='warning'>It has found you.</span>",
-			"<span class='warning'>You hear skittering on the ceiling.</span>",
-			"<span class='warning'>You see an inhumanly tall silhouette moving in the distance.</span>")
+		message_pool.Add(span_warning("Behind you."),\
+			span_warning("You hear a faint laughter approaching you."),
+			span_warning("Something darts across your vision."),
+			span_warning("You hear skittering on the ceiling."),
+			span_warning("There's something squirming around inside of you."),
+			span_warning("It has found you."),
+			span_warning("You hear skittering on the ceiling."),
+			span_warning("You see an inhumanly tall silhouette moving in the distance."))
 	if(prob(10))
 		message_pool.Add("[pick_list_replacements(HAL_LINES_FILE, "advice")]")
 	var/chosen = pick(message_pool)
@@ -910,11 +911,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	switch(message)
 		if("blob alert")
 			to_chat(target, "<h1 class='alert'>Biohazard Alert</h1>")
-			to_chat(target, "<br><br><span class='alert'>Confirmed outbreak of level 5 biohazard aboard the ship. All personnel must contain the outbreak.</span><br><br>")
+			to_chat(target, "<br><br>[span_alert("Confirmed outbreak of level 5 biohazard aboard the ship. All personnel must contain the outbreak.")]<br><br>")
 			SEND_SOUND(target, 'sound/ai/outbreak5.ogg')
 		if("supermatter")
 			SEND_SOUND(target, 'sound/magic/charge.ogg')
-			to_chat(target, "<span class='boldannounce'>You feel reality distort for a moment...</span>")
+			to_chat(target, span_boldannounce("You feel reality distort for a moment..."))
 
 /datum/hallucination/hudscrew
 
@@ -1024,11 +1025,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 					if(prob(25))
 						target.halitem.icon_state = "plasticx40"
 				if(3) //sword
-					target.halitem.icon = 'icons/obj/transforming_energy.dmi'
+					target.halitem.icon = 'icons/obj/weapon/energy.dmi'
 					target.halitem.icon_state = "sword0"
 					target.halitem.name = "Energy Sword"
 				if(4) //stun baton
-					target.halitem.icon = 'icons/obj/items_and_weapons.dmi'
+					target.halitem.icon = 'icons/obj/items.dmi'
 					target.halitem.icon_state = "stunbaton"
 					target.halitem.name = "Stun Baton"
 				if(5) //emag
@@ -1131,9 +1132,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(AM == target)
 		if(istype(target, /obj/effect/dummy/phased_mob))
 			return
-		to_chat(target, "<span class='userdanger'>You fall into the chasm!</span>")
+		to_chat(target, span_userdanger("You fall into the chasm!"))
 		target.Paralyze(40)
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), target, "<span class='notice'>It's surprisingly shallow.</span>"), 15)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), target, span_notice("It's surprisingly shallow.")), 15)
 		QDEL_IN(src, 30)
 
 /obj/effect/hallucination/danger/anomaly
@@ -1147,8 +1148,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/effect/hallucination/danger/anomaly/process()
-	if(prob(70))
+/obj/effect/hallucination/danger/anomaly/process(seconds_per_tick)
+	if(SPT_PROB(45, seconds_per_tick))
 		step(src,pick(GLOB.alldirs))
 
 /obj/effect/hallucination/danger/anomaly/Destroy()
@@ -1173,7 +1174,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	target.set_screwyhud(SCREWYHUD_DEAD)
 	target.Paralyze(300)
 	target.silent += 10
-	to_chat(target, "<span class='deadsay'><b>[target.real_name]</b> has died at <b>[get_area_name(target)]</b>.</span>")
+	to_chat(target, span_deadsay("<b>[target.real_name]</b> has died at <b>[get_area_name(target)]</b>."))
 	if(prob(50))
 		var/mob/fakemob
 		var/list/dead_people = list()
@@ -1185,7 +1186,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			fakemob = target //ever been so lonely you had to haunt yourself?
 		if(fakemob)
 			sleep(rand(20, 50))
-			to_chat(target, "<span class='deadsay'><b>DEAD: [fakemob.name]</b> says, [pick("We've missed you","That whole ship is dying","Heyyyy [target.first_name()]","Come watch this with us [target.first_name()]","I think someone poisoned everyone on that ship")]</span>")
+			to_chat(target, span_deadsay("<b>DEAD: [fakemob.name]</b> says, [pick("We've missed you","That whole ship is dying","Heyyyy [target.first_name()]","Come watch this with us [target.first_name()]","I think someone poisoned everyone on that ship")]"))
 	sleep(rand(70,90))
 	target.set_screwyhud(SCREWYHUD_NONE)
 	target.SetParalyzed(0)
@@ -1204,7 +1205,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	fire_overlay = image('icons/mob/OnFire.dmi', target, "Standing", ABOVE_MOB_LAYER)
 	if(target.client)
 		target.client.images += fire_overlay
-	to_chat(target, "<span class='userdanger'>You're set on fire!</span>")
+	to_chat(target, span_userdanger("You're set on fire!"))
 	target.throw_alert("fire", /atom/movable/screen/alert/fire, override = TRUE)
 	sleep(20)
 	for(var/i in 1 to 3)
@@ -1256,7 +1257,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	shock_image.override = TRUE
 	electrocution_skeleton_anim = image('icons/mob/human.dmi', target, icon_state = "electrocuted_base", layer=ABOVE_MOB_LAYER)
 	electrocution_skeleton_anim.appearance_flags |= RESET_COLOR|KEEP_APART
-	to_chat(target, "<span class='userdanger'>You feel a powerful shock course through your body!</span>")
+	to_chat(target, span_userdanger("You feel a powerful shock course through your body!"))
 	if(target.client)
 		target.client.images |= shock_image
 		target.client.images |= electrocution_skeleton_anim
@@ -1264,7 +1265,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	target.playsound_local(get_turf(src), "sparks", 100, 1)
 	target.staminaloss += 50
 	target.Stun(40)
-	target.jitteriness += 1000
+	target.adjust_jitter(1000, max = 1500)
 	target.do_jitter_animation(target.jitteriness)
 	addtimer(CALLBACK(src, PROC_REF(shock_drop)), 20)
 
@@ -1351,11 +1352,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		for(var/i=0, i<11, i++)
 			walk_to(borer, get_step(borer, get_cardinal_dir(borer, C)))
 			if(borer.Adjacent(C))
-				target.visible_message("<span class='warning'>Shivers slightly.","<span class='userdanger'>You feel a creeping, horrible sense of dread come over you, freezing your limbs and setting your heart racing.</span>")
+				target.visible_message(span_warning("Shivers slightly."),span_userdanger("You feel a creeping, horrible sense of dread come over you, freezing your limbs and setting your heart racing."))
 				C.Paralyze(60)
 				QDEL_IN(50, borer)
 				sleep(rand(60, 90))
-				to_chat(C, "<span class='changeling'><i>Primary [rand(1000,9999)] states:</i> [pick("Hello","Hi","You're my slave now!","Don't try to get rid of me...")]</span>")
+				to_chat(C, span_changeling("<i>Primary [rand(1000,9999)] states:</i> [pick("Hello","Hi","You're my slave now!","Don't try to get rid of me...")]"))
 				break
 			sleep(4)
 		if(!QDELETED(borer))

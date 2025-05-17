@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 			return
 		CC.use(5)
 		use(1)
-		to_chat(user, "<span class='notice'>You attach wire to the [name].</span>")
+		to_chat(user, span_notice("You attach wire to the [name]."))
 		var/obj/item/stack/light_w/new_tile = new(user.loc)
 		new_tile.add_fingerprint(user)
 	else if(istype(W, /obj/item/stack/rods))
@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 			if(QDELETED(src) && replace)
 				user.put_in_hands(reinforced)
 		else
-			to_chat(user, "<span class='warning'>You need one rod and one sheet of glass to make reinforced glass!</span>")
+			to_chat(user, span_warning("You need one rod and one sheet of glass to make reinforced glass!"))
 			return
 	else
 		return ..()
@@ -127,7 +127,7 @@ GLOBAL_LIST_INIT(pglass_recipes, list ( \
 			if(QDELETED(src) && replace)
 				user.put_in_hands(reinforced)
 		else
-			to_chat(user, "<span class='warning'>You need one rod and one sheet of plasma glass to make reinforced plasma glass!</span>")
+			to_chat(user, span_warning("You need one rod and one sheet of plasma glass to make reinforced plasma glass!"))
 			return
 	else
 		return ..()
@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(reinforced_glass_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("directional reinforced window", /obj/structure/window/reinforced/unanchored, time = 0, on_floor = TRUE, window_checks = TRUE), \
 	new/datum/stack_recipe("fulltile reinforced window", /obj/structure/window/reinforced/fulltile/unanchored, 2, time = 0, on_floor = TRUE, window_checks = TRUE), \
-	new/datum/stack_recipe(" reinforced glass tile", /obj/item/stack/tile/glass/reinforced, 1, 4, 20), \
+	new/datum/stack_recipe("reinforced glass tile", /obj/item/stack/tile/glass/reinforced, 1, 4, 20), \
 	new/datum/stack_recipe("glass shard", /obj/item/shard, 1) \
 ))
 
@@ -282,7 +282,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	var/obj/item/stack/sheet/weld_material = /obj/item/stack/sheet/glass
 	embedding = list("embed_chance" = 65)
 
-/obj/item/shard/Initialize()
+/obj/item/shard/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/caltrop, force)
 	AddComponent(/datum/component/butchering, 150, 65)
@@ -300,16 +300,13 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	if (icon_prefix)
 		icon_state = "[icon_prefix][icon_state]"
 
-	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
+	if(!mapload)
+		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/item/shard/Destroy()
-	. = ..()
-	SSblackbox.record_feedback("tally", "station_mess_destroyed", 1, name)
 
 /obj/item/shard/afterattack(atom/A as mob|obj, mob/user, proximity)
 	. = ..()
@@ -323,12 +320,12 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(!H.gloves && !HAS_TRAIT(H, TRAIT_PIERCEIMMUNE))
-			to_chat(H, "<span class='warning'>[src] cuts into your hand!</span>")
+			to_chat(H, span_warning("[src] cuts into your hand!"))
 			H.apply_damage(force*0.5, BRUTE, hit_hand)
 	else if(ismonkey(user))
 		var/mob/living/carbon/monkey/M = user
 		if(!HAS_TRAIT(M, TRAIT_PIERCEIMMUNE))
-			to_chat(M, "<span class='warning'>[src] cuts into your hand!</span>")
+			to_chat(M, span_warning("[src] cuts into your hand!"))
 			M.apply_damage(force*0.5, BRUTE, hit_hand)
 
 /obj/item/shard/attackby(obj/item/I, mob/user, params)
@@ -337,11 +334,11 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 		L.attackby(src, user)
 	else if(istype(I, /obj/item/stack/sheet/cotton/cloth))
 		var/obj/item/stack/sheet/cotton/cloth/C = I
-		to_chat(user, "<span class='notice'>You begin to wrap the [C] around the [src]...</span>")
+		to_chat(user, span_notice("You begin to wrap the [C] around the [src]..."))
 		if(do_after(user, 35, target = src))
-			var/obj/item/kitchen/knife/shiv/S = new /obj/item/kitchen/knife/shiv
+			var/obj/item/melee/knife/shiv/S = new /obj/item/melee/knife/shiv
 			C.use(1)
-			to_chat(user, "<span class='notice'>You wrap the [C] around the [src] forming a makeshift weapon.</span>")
+			to_chat(user, span_notice("You wrap the [C] around the [src] forming a makeshift weapon."))
 			remove_item_from_storage(src)
 			qdel(src)
 			user.put_in_hands(S)
@@ -359,7 +356,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 			if(G.amount >= G.max_amount)
 				continue
 			G.attackby(NG, user)
-		to_chat(user, "<span class='notice'>You add the newly-formed [NG.name] to the stack. It now contains [NG.amount] sheet\s.</span>")
+		to_chat(user, span_notice("You add the newly-formed [NG.name] to the stack. It now contains [NG.amount] sheet\s."))
 		qdel(src)
 	return TRUE
 
@@ -371,7 +368,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 			playsound(src, 'sound/effects/glass_step.ogg', HAS_TRAIT(L, TRAIT_LIGHT_STEP) ? 30 : 50, TRUE)
 
 /obj/item/shard/plasma
-	name = "purple shard"
+	name = "plasmaglass shard"
 	desc = "A nasty looking shard of plasma glass."
 	force = 6
 	throwforce = 11
@@ -379,3 +376,13 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "plasma"
 	weld_material = /obj/item/stack/sheet/plasmaglass
+
+/obj/item/shard/plastitanium
+	name = "plastitanium glass shard"
+	desc = "A nasty looking shard of plastitanium glass."
+	force = 6
+	throwforce = 11
+	icon_state = "plastitaniumlarge"
+	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/glass=MINERAL_MATERIAL_AMOUNT)
+	icon_prefix = "plastitanium"
+	weld_material = /obj/item/stack/sheet/plastitaniumglass

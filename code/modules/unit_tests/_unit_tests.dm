@@ -41,6 +41,13 @@
 /// Intended to be used in the manner of `TEST_FOCUS(/datum/unit_test/math)`
 #define TEST_FOCUS(test_path) ##test_path { focus = TRUE; }
 
+/// Logs a noticable message on GitHub, but will not mark as an error.
+/// Use this when something shouldn't happen and is of note, but shouldn't block CI.
+/// Does not mark the test as failed.
+#define TEST_NOTICE(source, message) source.log_for_test((##message), "notice", __FILE__, __LINE__)
+/// TEST_NOTICE but more important
+#define TEST_WARNING(source, message) source.log_for_test((##message), "warning", __FILE__, __LINE__)
+
 /// Constants indicating unit test completion status
 #define UNIT_TEST_PASSED 0
 #define UNIT_TEST_FAILED 1
@@ -62,14 +69,14 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
-
 #ifdef BASIC_TESTS
 
-//#include "icons/inhands.dm"
+#include "icons/inhands.dm"
 #include "icons/missing_icons.dm"
 #include "icons/spritesheets.dm"
 #include "icons/worn_icons.dm"
 #include "anchored_mobs.dm"
+#include "atmospheres.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
 #include "binary_insert.dm"
@@ -78,10 +85,10 @@
 #include "connect_loc.dm"
 #include "biome_lists.dm"
 #include "emoting.dm"
+#include "gun_sanity.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "open_air.dm"
-#include "outfit_names.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"
 #include "pills.dm"
@@ -127,7 +134,7 @@
 #endif //RUIN_PLACEMENT_TEST
 
 #ifdef SHIP_PLACEMENT_TEST
-#include "ship_outpost_placement.dm"
+#include "ship_placement.dm"
 #endif //SHIP_PLACEMENT_TEST
 
 #include "unit_test.dm"
@@ -135,5 +142,5 @@
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #undef TEST_ASSERT_NOTEQUAL
-#undef TEST_FOCUS
+//#undef TEST_FOCUS - This define is used by vscode unit test extension to pick specific unit tests to run and appended later so needs to be used out of scope here
 #endif

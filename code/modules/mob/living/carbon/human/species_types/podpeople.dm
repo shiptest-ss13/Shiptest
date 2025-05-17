@@ -3,10 +3,14 @@
 	name = "\improper Podperson"
 	id = SPECIES_POD
 	default_color = "59CE00"
-	species_traits = list(MUTCOLORS,EYECOLOR)
-	inherent_traits = list(TRAIT_ALWAYS_CLEAN)
+	species_traits = list(MUTCOLORS,EYECOLOR,SCLERA)
+	inherent_traits = list(
+		TRAIT_ALWAYS_CLEAN,
+		TRAIT_PLANT_SAFE,
+	)
 	inherent_factions = list("plants", "vines")
-	fixed_mut_color = "59CE00"
+	//fixed_mut_color = "59CE00" //wtf tg
+	exotic_bloodtype = "E"
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slice.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
@@ -15,7 +19,7 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/plant
 	disliked_food = MEAT | DAIRY
 	liked_food = VEGETABLES | FRUIT | GRAIN | CLOTH //cannibals apparentely
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/plant
 
 	species_chest = /obj/item/bodypart/chest/pod
@@ -57,7 +61,7 @@
 			if(prob(15))
 				H.rad_act(rand(30,80))
 				H.Paralyze(100)
-				H.visible_message("<span class='warning'>[H] writhes in pain as [H.p_their()] vacuoles boil.</span>", "<span class='userdanger'>You writhe in pain as your vacuoles boil!</span>", "<span class='hear'>You hear the crunching of leaves.</span>")
+				H.visible_message(span_warning("[H] writhes in pain as [H.p_their()] vacuoles boil."), span_userdanger("You writhe in pain as your vacuoles boil!"), span_hear("You hear the crunching of leaves."))
 				if(prob(80))
 					H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
 				else
@@ -66,11 +70,11 @@
 				H.domutcheck()
 			else
 				H.adjustFireLoss(rand(5,15))
-				H.show_message("<span class='userdanger'>The radiation beam singes you!</span>")
+				H.show_message(span_userdanger("The radiation beam singes you!"))
 		if(/obj/projectile/energy/florayield)
 			H.set_nutrition(min(H.nutrition+30, NUTRITION_LEVEL_FULL))
 		if(/obj/projectile/energy/florarevolution)
-			H.show_message("<span class='notice'>The radiation beam leaves you feeling disoriented!</span>")
+			H.show_message(span_notice("The radiation beam leaves you feeling disoriented!"))
 			H.Dizzy(15)
 			H.emote("flip")
 			H.emote("spin")

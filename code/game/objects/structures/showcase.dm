@@ -69,14 +69,14 @@
 	icon_state = "showcase_7"
 
 /obj/structure/showcase/mecha/marauder
-	name = "combat mech exhibit"
-	desc = "A stand with an empty old Nanotrasen Corporation combat mech bolted to it. It is described as the premier unit used to defend corporate interests and employees."
+	name = "combat exosuit exhibit"
+	desc = "A stand with an empty old Nanotrasen Corporation combat exosuit bolted to it. It is described as the premier unit used to defend corporate interests and employees."
 	icon = 'icons/mecha/mecha.dmi'
 	icon_state = "marauder"
 
 /obj/structure/showcase/mecha/ripley
-	name = "construction mech exhibit"
-	desc = "A stand with a retired construction mech bolted to it. The clamps are rated at 9300PSI. It seems to be falling apart."
+	name = "construction exosuit exhibit"
+	desc = "A stand with a retired construction exosuit bolted to it. The clamps are rated at 9300PSI. It seems to be falling apart."
 	icon = 'icons/mecha/mecha.dmi'
 	icon_state = "firefighter"
 
@@ -123,17 +123,17 @@
 /obj/structure/showcase/attackby(obj/item/W, mob/user)
 	if(W.tool_behaviour == TOOL_SCREWDRIVER && !anchored)
 		if(deconstruction_state == SHOWCASE_SCREWDRIVERED)
-			to_chat(user, "<span class='notice'>You screw the screws back into the showcase.</span>")
+			to_chat(user, span_notice("You screw the screws back into the showcase."))
 			W.play_tool_sound(src, 100)
 			deconstruction_state = SHOWCASE_CONSTRUCTED
 		else if (deconstruction_state == SHOWCASE_CONSTRUCTED)
-			to_chat(user, "<span class='notice'>You unscrew the screws.</span>")
+			to_chat(user, span_notice("You unscrew the screws."))
 			W.play_tool_sound(src, 100)
 			deconstruction_state = SHOWCASE_SCREWDRIVERED
 
 	if(W.tool_behaviour == TOOL_CROWBAR && deconstruction_state == SHOWCASE_SCREWDRIVERED)
 		if(W.use_tool(src, user, 20, volume=100))
-			to_chat(user, "<span class='notice'>You start to crowbar the showcase apart...</span>")
+			to_chat(user, span_notice("You start to crowbar the showcase apart..."))
 			new /obj/item/stack/sheet/metal(drop_location(), 4)
 			qdel(src)
 

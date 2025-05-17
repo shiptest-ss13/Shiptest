@@ -6,6 +6,7 @@ import {
   Table,
   Tabs,
   Divider,
+  NumberInput,
 } from '../components';
 import { Window } from '../layouts';
 
@@ -16,6 +17,7 @@ type ShipOwnerData = {
   memo: string;
   pending: boolean;
   joinMode: string;
+  crew_share: number;
   cooldown: number;
   applications: [ApplicationData];
   isAdmin: boolean;
@@ -62,6 +64,7 @@ const ShipOwnerContent = (_, context: any) => {
     memo,
     pending,
     joinMode,
+    crew_share,
     cooldown = 1,
     applications = [],
     isAdmin,
@@ -206,6 +209,27 @@ const ShipOwnerContent = (_, context: any) => {
               </Table.Cell>
             </Table.Row>
           ))}
+          <LabeledList>
+            <LabeledList.Item label="Crew Profit Share">
+              <NumberInput
+                animate
+                unit="%"
+                step={1}
+                stepPixelSize={15}
+                minValue={0}
+                maxValue={7}
+                value={crew_share * 100}
+                onDrag={(e, value) =>
+                  act('adjustshare', {
+                    adjust: value,
+                  })
+                }
+              />
+            </LabeledList.Item>
+            <LabeledList.Item label="Total Profit Shared">
+              {crew_share * 100 * crew.length}
+            </LabeledList.Item>
+          </LabeledList>
         </Table>
       )}
       {tab === 3 && (

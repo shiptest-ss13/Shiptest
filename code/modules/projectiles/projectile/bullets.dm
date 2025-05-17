@@ -2,7 +2,7 @@
 	name = "bullet"
 	icon_state = "gauss"
 	damage = 60
-	speed = 0.4
+	speed = BULLET_SPEED_RIFLE
 	damage_type = BRUTE
 	nodamage = FALSE
 	flag = "bullet"
@@ -18,6 +18,7 @@
 	near_miss_sound = "bullet_miss"
 	ricochet_sound = "bullet_bounce"
 
+	bullet_identifier = "bullet"
 
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
 	ricochets_max = 5 //should be enough to scare the shit out of someone

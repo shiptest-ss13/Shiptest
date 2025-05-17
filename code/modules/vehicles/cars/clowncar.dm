@@ -54,7 +54,7 @@
 /obj/vehicle/sealed/car/clowncar/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
 	if(prob(33))
-		visible_message("<span class='danger'>[src] spews out a ton of space lube!</span>")
+		visible_message(span_danger("[src] spews out a ton of space lube!"))
 		new /obj/effect/particle_effect/foam(loc) //YEET
 
 /obj/vehicle/sealed/car/clowncar/attacked_by(obj/item/I, mob/living/user)
@@ -62,7 +62,7 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/grown/banana))
 		var/obj/item/reagent_containers/food/snacks/grown/banana/banana = I
 		obj_integrity += min(banana.seed.potency, max_integrity-obj_integrity)
-		to_chat(user, "<span class='danger'>You use the [banana] to repair the [src]!</span>")
+		to_chat(user, span_danger("You use the [banana] to repair the [src]!"))
 		qdel(banana)
 
 /obj/vehicle/sealed/car/clowncar/Bump(atom/A)
@@ -74,12 +74,12 @@
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			C.Paralyze(40) //I play to make sprites go horizontal
-		L.visible_message("<span class='warning'>[src] rams into [L] and sucks [L.p_them()] up!</span>") //fuck off shezza this isn't ERP.
+		L.visible_message(span_warning("[src] rams into [L] and sucks [L.p_them()] up!")) //fuck off shezza this isn't ERP.
 		mob_forced_enter(L)
 		playsound(src, pick('sound/vehicles/clowncar_ram1.ogg', 'sound/vehicles/clowncar_ram2.ogg', 'sound/vehicles/clowncar_ram3.ogg'), 75)
 		log_combat(src, A, "sucked up")
 	else if(istype(A, /turf/closed))
-		visible_message("<span class='warning'>[src] rams into [A] and crashes!</span>")
+		visible_message(span_warning("[src] rams into [A] and crashes!"))
 		playsound(src, pick('sound/vehicles/clowncar_crash1.ogg', 'sound/vehicles/clowncar_crash2.ogg'), 75)
 		playsound(src, 'sound/vehicles/clowncar_crashpins.ogg', 75)
 		DumpMobs(TRUE)
@@ -89,7 +89,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, "<span class='danger'>You scramble \the [src]'s child safety lock, and a panel with six colorful buttons appears!</span>")
+	to_chat(user, span_danger("You scramble \the [src]'s child safety lock, and a panel with six colorful buttons appears!"))
 	initialize_controller_action_type(/datum/action/vehicle/sealed/RollTheDice, VEHICLE_CONTROL_DRIVE)
 	initialize_controller_action_type(/datum/action/vehicle/sealed/Cannon, VEHICLE_CONTROL_DRIVE)
 	AddElement(/datum/element/waddling)
@@ -105,16 +105,15 @@
 
 /obj/vehicle/sealed/car/clowncar/proc/RollTheDice(mob/user)
 	if(world.time - lastRTDtime < RTDcooldown)
-		to_chat(user, "<span class='notice'>The button panel is currently recharging.</span>")
+		to_chat(user, span_notice("The button panel is currently recharging."))
 		return
 	lastRTDtime = world.time
 	var/randomnum = rand(1,6)
 	switch(randomnum)
 		if(1)
-			visible_message("<span class='danger'>[user] presses one of the colorful buttons on [src], and a special banana peel drops out of it.</span>")
-			new /obj/item/grown/bananapeel/specialpeel(loc)
+			visible_message(span_danger("[user] presses one of the colorful buttons on [src], and doesn't do anything. Oops."))
 		if(2)
-			visible_message("<span class='danger'>[user] presses one of the colorful buttons on [src], and unknown chemicals flood out of it.</span>")
+			visible_message(span_danger("[user] presses one of the colorful buttons on [src], and unknown chemicals flood out of it."))
 			var/datum/reagents/R = new/datum/reagents(300)
 			R.my_atom = src
 			R.add_reagent(get_random_reagent_id(), 100)
@@ -122,12 +121,12 @@
 			foam.set_up(200, loc, R)
 			foam.start()
 		if(3)
-			visible_message("<span class='danger'>[user] presses one of the colorful buttons on [src], and the clown car turns on its singularity disguise system.</span>")
+			visible_message(span_danger("[user] presses one of the colorful buttons on [src], and the clown car turns on its singularity disguise system."))
 			icon = 'icons/obj/singularity.dmi'
 			icon_state = "singularity_s1"
 			addtimer(CALLBACK(src, PROC_REF(ResetIcon)), 100)
 		if(4)
-			visible_message("<span class='danger'>[user] presses one of the colorful buttons on [src], and the clown car spews out a cloud of laughing gas.</span>")
+			visible_message(span_danger("[user] presses one of the colorful buttons on [src], and the clown car spews out a cloud of laughing gas."))
 			var/datum/reagents/R = new/datum/reagents(300)
 			R.my_atom = src
 			R.add_reagent(/datum/reagent/consumable/superlaughter, 50)
@@ -136,11 +135,11 @@
 			smoke.attach(src)
 			smoke.start()
 		if(5)
-			visible_message("<span class='danger'>[user] presses one of the colorful buttons on [src], and the clown car starts dropping an oil trail.</span>")
+			visible_message(span_danger("[user] presses one of the colorful buttons on [src], and the clown car starts dropping an oil trail."))
 			droppingoil = TRUE
 			addtimer(CALLBACK(src, PROC_REF(StopDroppingOil)), 30)
 		if(6)
-			visible_message("<span class='danger'>[user] presses one of the colorful buttons on [src], and the clown car lets out a comedic toot.</span>")
+			visible_message(span_danger("[user] presses one of the colorful buttons on [src], and the clown car lets out a comedic toot."))
 			playsound(src, 'sound/vehicles/clowncar_fart.ogg', 100)
 			for(var/mob/living/L in orange(loc, 6))
 				L.emote("laughs")
@@ -162,12 +161,12 @@
 		icon_state = "clowncar"
 		addtimer(CALLBACK(src, PROC_REF(LeaveCannonMode)), 20)
 		playsound(src, 'sound/vehicles/clowncar_cannonmode2.ogg', 75)
-		visible_message("<span class='danger'>The [src] starts going back into mobile mode.</span>")
+		visible_message(span_danger("The [src] starts going back into mobile mode."))
 	else
 		canmove = FALSE
 		flick("clowncar_tofire", src)
 		icon_state = "clowncar_fire"
-		visible_message("<span class='danger'>The [src] opens up and reveals a large cannon.</span>")
+		visible_message(span_danger("The [src] opens up and reveals a large cannon."))
 		addtimer(CALLBACK(src, PROC_REF(EnterCannonMode)), 20)
 		playsound(src, 'sound/vehicles/clowncar_cannonmode1.ogg', 75)
 

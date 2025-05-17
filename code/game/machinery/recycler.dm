@@ -7,6 +7,8 @@
 	icon_state = "grinder-o0"
 	layer = ABOVE_ALL_MOB_LAYER // Overhead
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/recycler
 	var/safety_mode = FALSE // Temporarily stops machine if it detects a mob
 	var/icon_name = "grinder-o"
@@ -19,7 +21,7 @@
 
 /obj/machinery/recycler/Initialize()
 	AddComponent(/datum/component/butchering/recycler, 1, amount_produced,amount_produced/5)
-	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/plasma, /datum/material/gold, /datum/material/diamond, /datum/material/plastic, /datum/material/uranium, /datum/material/bananium, /datum/material/titanium, /datum/material/bluespace), INFINITY, FALSE, null, null, null, TRUE)
+	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/plasma, /datum/material/gold, /datum/material/diamond, /datum/material/plastic, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/bluespace), INFINITY, FALSE, null, null, null, TRUE)
 	. = ..()
 	update_appearance()
 	req_one_access = get_all_accesses() + get_all_centcom_access()
@@ -46,7 +48,7 @@
 
 /obj/machinery/recycler/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Reclaiming <b>[amount_produced]%</b> of materials salvaged.</span>"
+	. += span_notice("Reclaiming <b>[amount_produced]%</b> of materials salvaged.")
 	. += {"The power light is [(machine_stat & NOPOWER) ? "off" : "on"].
 	The safety-mode light is [safety_mode ? "on" : "off"].
 	The safety-sensors status light is [obj_flags & EMAGGED ? "off" : "on"]."}
@@ -74,7 +76,7 @@
 		safety_mode = FALSE
 		update_appearance()
 	playsound(src, "sparks", 75, TRUE, SILENCED_SOUND_EXTRARANGE)
-	to_chat(user, "<span class='notice'>You use the cryptographic sequencer on [src].</span>")
+	to_chat(user, span_notice("You use the cryptographic sequencer on [src]."))
 
 /obj/machinery/recycler/update_icon_state()
 	var/is_powered = !(machine_stat & (BROKEN|NOPOWER))

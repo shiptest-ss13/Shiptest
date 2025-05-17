@@ -5,13 +5,13 @@
 
 # byond version
 export BYOND_MAJOR=515
-export BYOND_MINOR=1633
+export BYOND_MINOR=1642
 
 #rust version
-export RUST_VERSION=1.73.0
+export RUST_VERSION=1.81.0
 
 #rust_g git tag
-export RUST_G_VERSION=3.0.0
+export RUST_G_VERSION=3.6.0
 
 #node version
 export NODE_VERSION=16
@@ -24,7 +24,7 @@ export SPACEMAN_DMM_VERSION=suite-1.8
 export PYTHON_VERSION=3.9.0
 
 #auxmos repository
-export AUXMOS_REPO=https://github.com/Putnam3145/auxmos
+export AUXMOS_REPO=https://github.com/shiptest-ss13/auxmos
 
 #auxmos version
-export AUXMOS_VERSION=v2.5.1
+export AUXMOS_VERSION=v2.5.5.3

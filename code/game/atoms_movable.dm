@@ -13,8 +13,10 @@
 	var/throw_speed = 2 //How many tiles to move per ds when being thrown. Float values are fully supported
 	var/throw_range = 7
 	var/mob/pulledby = null
-	var/initial_language_holder = /datum/language_holder
-	var/datum/language_holder/language_holder	// Mindless mobs and objects need language too, some times. Mind holder takes prescedence.
+	/// What language holder type to init as
+	var/initial_language_holder = /datum/language_holder/atom_basic
+	/// Holds all languages this mob can speak and understand
+	VAR_PRIVATE/datum/language_holder/language_holder
 	var/verb_say = "says"
 	var/verb_ask = "asks"
 	var/verb_exclaim = "exclaims"
@@ -259,8 +261,8 @@
 		var/mob/M = AM
 		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!supress_message)
-			M.visible_message("<span class='warning'>[src] grabs [M] passively.</span>", \
-				"<span class='danger'>[src] grabs you passively.</span>")
+			M.visible_message(span_warning("[src] grabs [M] passively."), \
+				span_danger("[src] grabs you passively."))
 	return TRUE
 
 /atom/movable/proc/stop_pulling()
@@ -540,7 +542,7 @@
 
 	var/previous_virtual_z = OldLoc?.virtual_z() || 0
 	var/current_virtual_z = virtual_z()
-	if(current_virtual_z && current_virtual_z != previous_virtual_z)
+	if(current_virtual_z != previous_virtual_z)
 		on_virtual_z_change(current_virtual_z, previous_virtual_z)
 
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, OldLoc, Dir, Forced, old_locs)
@@ -552,6 +554,9 @@
 	SHOULD_NOT_SLEEP(TRUE)
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_ATOM_VIRTUAL_Z_CHANGE, new_virtual_z, previous_virtual_z)
+
+	for(var/atom/movable/thing as anything in contents)
+		thing.on_virtual_z_change(new_virtual_z, previous_virtual_z)
 
 /mob/living/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	. = ..()
@@ -624,7 +629,7 @@
 	SEND_SIGNAL(src, COMSIG_MOVABLE_BUMP, A)
 	. = ..()
 	if(!QDELETED(throwing))
-		throwing.hit_atom(A)
+		throwing.finalize(hit = TRUE, target = A)
 		. = TRUE
 		if(QDELETED(A))
 			return
@@ -773,6 +778,44 @@
 	movement_type = newval
 
 /**
+ * Called when a movable changes z-levels.
+ *
+ * Arguments:
+ * * old_turf - The previous turf they were on before.
+ * * new_turf - The turf they have now entered.
+ * * same_z_layer - If their old and new z levels are on the same level of plane offsets or not
+ * * notify_contents - Whether or not to notify the movable's contents that their z-level has changed. NOTE, IF YOU SET THIS, YOU NEED TO MANUALLY SET PLANE OF THE CONTENTS LATER
+ */
+/atom/movable/proc/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents = TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_turf, new_turf, same_z_layer)
+
+	// If our turfs are on different z "layers", recalc our planes
+	if(!same_z_layer && !QDELETED(src))
+		SET_PLANE(src, PLANE_TO_TRUE(src.plane), new_turf)
+		// a TON of overlays use planes, and thus require offsets
+		// so we do this. sucks to suck
+		update_appearance()
+
+		if(update_on_z)
+			// I so much wish this could be somewhere else. alas, no.
+			for(var/image/update in update_on_z)
+				SET_PLANE(update, PLANE_TO_TRUE(update.plane), new_turf)
+		if(update_overlays_on_z)
+			// This EVEN more so
+			cut_overlay(update_overlays_on_z)
+			// This even more so
+			for(var/mutable_appearance/update in update_overlays_on_z)
+				SET_PLANE(update, PLANE_TO_TRUE(update.plane), new_turf)
+			add_overlay(update_overlays_on_z)
+
+	if(!notify_contents)
+		return
+
+	for (var/atom/movable/content as anything in src) // Notify contents of Z-transition.
+		content.on_changed_z_level(old_turf, new_turf, same_z_layer)
+
+/**
  * Called whenever an object moves and by mobs when they attempt to move themselves through space
  * And when an object or action applies a force on src, see [newtonian_move][/atom/movable/proc/newtonian_move]
  *
@@ -784,6 +827,9 @@
  * * movement_dir - 0 when stopping or any dir when trying to move
  */
 /atom/movable/proc/Process_Spacemove(movement_dir = 0)
+	if(SEND_SIGNAL(src, COMSIG_MOVABLE_SPACEMOVE, movement_dir) & COMSIG_MOVABLE_STOP_SPACEMOVE)
+		return TRUE
+
 	if(has_gravity(src))
 		return 1
 
@@ -821,7 +867,9 @@
 	var/impact_signal = SEND_SIGNAL(src, COMSIG_MOVABLE_IMPACT, hit_atom, throwingdatum)
 	if(impact_signal & COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH)
 		hitpush = FALSE // hacky, tie this to something else or a proper workaround later
-
+	if(isturf(loc))
+		var/turf/T = loc
+		T.Entered(src)
 	if(impact_signal & ~COMPONENT_MOVABLE_IMPACT_NEVERMIND) // in case a signal interceptor broke or deleted the thing before we could process our hit
 		return hit_atom.hitby(src, throwingdatum=throwingdatum, hitpush=hitpush)
 
@@ -883,7 +931,7 @@
 	else
 		target_zone = thrower.zone_selected
 
-	var/datum/thrownthing/TT = new(src, target, get_turf(target), get_dir(src, target), range, speed, thrower, diagonals_first, force, gentle, callback, target_zone)
+	var/datum/thrownthing/TT = new(src, target, get_dir(src, target), range, speed, thrower, diagonals_first, force, gentle, callback, target_zone)
 
 	var/dist_x = abs(target.x - src.x)
 	var/dist_y = abs(target.y - src.y)
@@ -938,12 +986,12 @@
 /atom/movable/proc/force_push(atom/movable/AM, force = move_force, direction, silent = FALSE)
 	. = AM.force_pushed(src, force, direction)
 	if(!silent && .)
-		visible_message("<span class='warning'>[src] forcefully pushes against [AM]!</span>", "<span class='warning'>You forcefully push against [AM]!</span>")
+		visible_message(span_warning("[src] forcefully pushes against [AM]!"), span_warning("You forcefully push against [AM]!"))
 
 /atom/movable/proc/move_crush(atom/movable/AM, force = move_force, direction, silent = FALSE)
 	. = AM.move_crushed(src, force, direction)
 	if(!silent && .)
-		visible_message("<span class='danger'>[src] crushes past [AM]!</span>", "<span class='danger'>You crush [AM]!</span>")
+		visible_message(span_danger("[src] crushes past [AM]!"), span_danger("You crush [AM]!"))
 
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE
@@ -991,7 +1039,7 @@
 	return
 
 
-/atom/movable/proc/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
+/atom/movable/proc/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect, fov_effect = TRUE)
 	if(!no_effect && (visual_effect_icon || used_item))
 		do_item_attack_animation(A, visual_effect_icon, used_item)
 
@@ -1013,6 +1061,9 @@
 		pixel_x_diff = 8
 	else if(direction & WEST)
 		pixel_x_diff = -8
+
+	if(fov_effect)
+		play_fov_effect(A, 5, "attack")
 
 	var/matrix/initial_transform = matrix(transform)
 	var/matrix/rotated_transform = transform.Turn(15 * turn_dir)
@@ -1084,91 +1135,105 @@
 		setMovetype(movement_type & ~FLOATING)
 
 
-/* 	Language procs
-*	Unless you are doing something very specific, these are the ones you want to use.
+/* Language procs
+* Unless you are doing something very specific, these are the ones you want to use.
 */
-
 /// Gets or creates the relevant language holder. For mindless atoms, gets the local one. For atom with mind, gets the mind one.
-/atom/movable/proc/get_language_holder(get_minds = TRUE)
+/atom/movable/proc/get_language_holder()
+	RETURN_TYPE(/datum/language_holder)
+	if(QDELING(src))
+		CRASH("get_language_holder() called on a QDELing atom, \
+			this will try to re-instantiate the language holder that's about to be deleted, which is bad.")
 	if(!language_holder)
 		language_holder = new initial_language_holder(src)
 	return language_holder
 
 /// Grants the supplied language and sets omnitongue true.
-/atom/movable/proc/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.grant_language(language, understood, spoken, source)
+/atom/movable/proc/grant_language(language, language_flags = ALL, source = LANGUAGE_ATOM)
+	return get_language_holder().grant_language(language, language_flags, source)
 
 /// Grants every language.
-/atom/movable/proc/grant_all_languages(understood = TRUE, spoken = TRUE, grant_omnitongue = TRUE, source = LANGUAGE_MIND)
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.grant_all_languages(understood, spoken, grant_omnitongue, source)
+/atom/movable/proc/grant_all_languages(language_flags = ALL, grant_omnitongue = TRUE, source = LANGUAGE_MIND)
+	return get_language_holder().grant_all_languages(language_flags, grant_omnitongue, source)
+
+/// Grants partial understanding of a language.
+/atom/movable/proc/grant_partial_language(language, amount = 50, source = LANGUAGE_ATOM)
+	return get_language_holder().grant_partial_language(language, amount, source)
 
 /// Removes a single language.
-/atom/movable/proc/remove_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ALL)
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.remove_language(language, understood, spoken, source)
+/atom/movable/proc/remove_language(language, language_flags = ALL, source = LANGUAGE_ALL)
+	return get_language_holder().remove_language(language, language_flags, source)
 
 /// Removes every language and sets omnitongue false.
 /atom/movable/proc/remove_all_languages(source = LANGUAGE_ALL, remove_omnitongue = FALSE)
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.remove_all_languages(source, remove_omnitongue)
+	return get_language_holder().remove_all_languages(source, remove_omnitongue)
+
+/// Removes partial understanding of a language.
+/atom/movable/proc/remove_partial_language(language, source = LANGUAGE_ALL)
+	return get_language_holder().remove_partial_language(language, source)
+
+/// Removes all partial languages.
+/atom/movable/proc/remove_all_partial_languages(source = LANGUAGE_ALL)
+	return get_language_holder().remove_all_partial_languages(source)
 
 /// Adds a language to the blocked language list. Use this over remove_language in cases where you will give languages back later.
 /atom/movable/proc/add_blocked_language(language, source = LANGUAGE_ATOM)
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.add_blocked_language(language, source)
+	return get_language_holder().add_blocked_language(language, source)
 
 /// Removes a language from the blocked language list.
 /atom/movable/proc/remove_blocked_language(language, source = LANGUAGE_ATOM)
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.remove_blocked_language(language, source)
+	return get_language_holder().remove_blocked_language(language, source)
 
 /// Checks if atom has the language. If spoken is true, only checks if atom can speak the language.
-/atom/movable/proc/has_language(language, spoken = FALSE)
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.has_language(language, spoken)
+/atom/movable/proc/has_language(language, flags_to_check)
+	return get_language_holder().has_language(language, flags_to_check)
 
 /// Checks if atom can speak the language.
 /atom/movable/proc/can_speak_language(language)
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.can_speak_language(language)
+	return get_language_holder().can_speak_language(language)
 
 /// Returns the result of tongue specific limitations on spoken languages.
-/atom/movable/proc/could_speak_language(language)
+/atom/movable/proc/could_speak_language(datum/language/language_path)
 	return TRUE
-
 /// Returns selected language, if it can be spoken, or finds, sets and returns a new selected language if possible.
 /atom/movable/proc/get_selected_language()
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.get_selected_language()
+	return get_language_holder().get_selected_language()
 
 /// Gets a random understood language, useful for hallucinations and such.
 /atom/movable/proc/get_random_understood_language()
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.get_random_understood_language()
+	return get_language_holder().get_random_understood_language()
+
+/// Gets a lazylist of all mutually understood languages.
+/atom/movable/proc/get_partially_understood_languages()
+	return get_language_holder().best_mutual_languages
 
 /// Gets a random spoken language, useful for forced speech and such.
 /atom/movable/proc/get_random_spoken_language()
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.get_random_spoken_language()
+	return get_language_holder().get_random_spoken_language()
 
 /// Copies all languages into the supplied atom/language holder. Source should be overridden when you
 /// do not want the language overwritten by later atom updates or want to avoid blocked languages.
-/atom/movable/proc/copy_languages(from_holder, source_override)
-	if(isatom(from_holder))
+/atom/movable/proc/copy_languages(datum/language_holder/from_holder, source_override)
+	if(ismovable(from_holder))
 		var/atom/movable/thing = from_holder
 		from_holder = thing.get_language_holder()
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.copy_languages(from_holder, source_override)
+	return get_language_holder().copy_languages(from_holder, source_override)
 
-/// Empties out the atom specific languages and updates them according to the current atoms language holder.
-/// As a side effect, it also creates missing language holders in the process.
-/atom/movable/proc/update_atom_languages()
-	var/datum/language_holder/LH = get_language_holder()
-	return LH.update_atom_languages(src)
+/// Sets the passed path as the active language
+/// Returns the currently selected language if successful, if the language was not valid, returns null
+/atom/movable/proc/set_active_language(language_path)
+	var/datum/language_holder/our_holder = get_language_holder()
+	our_holder.selected_language = language_path
+	return our_holder.get_selected_language() // verifies its validity, returns it if successful.
 
 /* End language procs */
+/**
+ * Returns an atom's power cell, if it has one. Overload for individual items.
+ * Args
+ *
+ * * /atom/movable/interface - the atom that is trying to interact with this cell
+ * * mob/user - the mob that is holding the interface
+*/
 
 
 /atom/movable/proc/ConveyorMove(movedir)
@@ -1178,7 +1243,7 @@
 
 //Returns an atom's power cell, if it has one. Overload for individual items.
 /atom/movable/proc/get_cell()
-	return
+	return null
 
 /atom/movable/proc/can_be_pulled(user, grab_state, force)
 	if(src == user || !isturf(loc))

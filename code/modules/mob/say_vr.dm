@@ -11,7 +11,7 @@
 
 	if(usr != src)
 		to_chat(usr, span_warning("You can't set someone else's flavour text!"))
-	var/msg = sanitize(input(usr,"Set the flavor text in your 'examine' verb. Can also be used for OOC notes about your character.","Flavor Text",html_decode(flavor_text)) as message|null)
+	var/msg = input(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode("flavor_text")) as message|null
 
 	if(msg)
 		msg = copytext(msg, 1, MAX_MESSAGE_LEN)
@@ -22,10 +22,10 @@
 /mob/proc/print_flavor_text()
 	if(flavor_text && flavor_text != "")
 		var/msg = replacetext(flavor_text, "\n", " ")
-		if(length(msg) <= 100)
-			return "<span class='notice'>[msg]</span>"
+		if(length(msg) <= MAX_SHORTFLAVOR_LEN)
+			return span_notice("[msg]")
 		else
-			return "<span class='notice'>[copytext(msg, 1, 97)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...</span></a>"
+			return "[span_notice("[copytext(msg, 1, MAX_SHORTFLAVOR_LEN)]... <a href=\"byond://?src=[text_ref(src)];flavor_more=1\">More...")]</a>"
 
 /mob/proc/get_top_level_mob()
 	if(istype(src.loc,/mob)&&src.loc!=src)
@@ -53,7 +53,7 @@ SUBTLER
 
 /datum/emote/living/subtler/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+		to_chat(user, span_danger("Invalid emote."))
 		return TRUE
 	return FALSE
 
@@ -100,6 +100,6 @@ SUBTLER
 	set name = "Subtler"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	usr.emote("subtler")

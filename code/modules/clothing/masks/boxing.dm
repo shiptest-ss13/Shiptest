@@ -1,15 +1,42 @@
 /obj/item/clothing/mask/balaclava
 	name = "balaclava"
-	desc = "LOADSAMONEY"
+	desc = "A stretchy fabric hood with eye holes meant for keeping the face warm in cold weather. Also useful for concealing one's identity."
 	icon_state = "balaclava"
 	item_state = "balaclava"
-	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
+	clothing_flags = ALLOWINTERNALS
+	visor_flags = ALLOWINTERNALS
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDEHAIR
+	visor_flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	alternate_worn_layer = BODY_LAYER
 	w_class = WEIGHT_CLASS_SMALL
+	gas_transfer_coefficient = 0.1
+	permeability_coefficient = 0.5
 	actions_types = list(/datum/action/item_action/adjust)
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_cover = MASKCOVERSMOUTH
+	resistance_flags = NONE
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | VOX_VARIATION | KEPORI_VARIATION
+
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_MASK
+	equip_delay_other = EQUIP_DELAY_MASK * 1.5
+	strip_delay = EQUIP_DELAY_MASK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
 
 /obj/item/clothing/mask/balaclava/attack_self(mob/user)
 	adjustmask(user)
+
+/obj/item/clothing/mask/balaclava/AltClick(mob/user)
+	..()
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	else
+		adjustmask(user)
+
+/obj/item/clothing/mask/balaclava/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-click [src] to adjust it.")
 
 /obj/item/clothing/mask/infiltrator
 	name = "infiltrator balaclava"
@@ -51,6 +78,13 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	modifies_speech = TRUE
+
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_MASK
+	equip_delay_other = EQUIP_DELAY_MASK * 1.5
+	strip_delay = EQUIP_DELAY_MASK * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
 
 /obj/item/clothing/mask/luchador/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]

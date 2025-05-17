@@ -29,6 +29,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = SPACE
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_SPACE
+	allow_weather = TRUE
 
 /area/space/nearstation
 	icon_state = "space_near"
@@ -45,6 +46,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	requires_power = FALSE
 	name = "Test Room"
 	icon_state = "storage"
+
+/area/hyperspace
+	icon_state = "space"
+	requires_power = TRUE
+	always_unpowered = TRUE
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	power_light = FALSE
+	power_equip = FALSE
+	power_environ = FALSE
+	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
+	outdoors = TRUE
+	ambientsounds = SPACE
+	flags_1 = CAN_BE_DIRTY_1
+	sound_environment = SOUND_AREA_SPACE
 
 //EXTRA
 
@@ -69,12 +84,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	always_unpowered = FALSE
-	area_flags = VALID_TERRITORY | BLOBS_ALLOWED // Loading the same shuttle map at a different time will produce distinct area instances.
+	area_flags = VALID_TERRITORY | SHIP_SMOOTHING // Loading the same shuttle map at a different time will produce distinct area instances.
 	icon_state = "shuttle"
 	flags_1 = CAN_BE_DIRTY_1
 	lighting_colour_tube = "#fff0dd"
 	lighting_colour_bulb = "#ffe1c1"
-	area_limited_icon_smoothing = TRUE
 	sound_environment = SOUND_ENVIRONMENT_ROOM
 	lightswitch = FALSE
 	/// The mobile port attached to this area
@@ -109,11 +123,24 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	for(var/i in 1 to get_missing_shuttles(T)) //Keep track of shuttles with hull breaches on this turf
 		new_baseturfs.Insert(1,/turf/baseturf_skipover/shuttle)
 
+/area/ship/connect_to_shuttle(obj/docking_port/mobile/M)
+	link_to_shuttle(M)
+
 /area/ship/proc/link_to_shuttle(obj/docking_port/mobile/M)
 	mobile_port = M
 
-/area/ship/connect_to_shuttle(obj/docking_port/mobile/M)
-	link_to_shuttle(M)
+/area/ship/proc/reset_shuttle_smoothing(obj/docking_port/mobile/requesting_shuttle)
+	if(mobile_port == requesting_shuttle) //We only proceed with smoothing if the mobile ports match.
+		//A bit of copypasta since we don't want to run Initialize().
+		for(var/turf/updated_turf as turf in src)
+			QUEUE_SMOOTH(updated_turf)
+			QUEUE_SMOOTH_NEIGHBORS(updated_turf)
+		for(var/obj/structure/updated_structure as obj in src)
+			if(updated_structure.smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
+				QUEUE_SMOOTH(updated_structure)
+				QUEUE_SMOOTH_NEIGHBORS(updated_structure)
+				if(updated_structure.smoothing_flags & SMOOTH_CORNERS)
+					icon_state = ""
 
 /area/ship/virtual_z()
 	if(mobile_port)
@@ -149,6 +176,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/crewfive
 	name = "Crew Quarters 5"
 
+/area/ship/crew/specialized
+	name = "???"
+
+/area/ship/crew/specialized/medical
+	name = "Medical Specialist's Quarters"
+
+/area/ship/crew/specialized/security
+	name = "Security Specialist's Quarters"
+
+/area/ship/crew/specialized/engineering
+	name = "Engineering Specialist's Quarters"
+
+/area/ship/crew/specialized/cargo
+	name = "Cargo Specialist's Quarters"
+
 /area/ship/crew/cryo
 	name = "Cryopod Room"
 	icon_state = "cryo"
@@ -171,9 +213,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/crew/dorm/dormfive
 	name = "Dormitory 5"
 
+/area/ship/crew/dorm/captain
+	name = "Captain's Quarters"
+
 /area/ship/crew/toilet
 	name = "Restroom"
 	icon_state = "toilet"
+
+/area/ship/crew/toilet/two
+	name = "Restroom 2"
+
+/area/ship/crew/toilet/three
+	name = "Restroom 3"
 
 /area/ship/crew/canteen
 	name = "Canteen"
@@ -198,6 +249,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Chapel Office"
 	icon_state = "chapeloffice"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
 /area/ship/crew/library
 	name = "Library"
 	icon_state = "library"
@@ -219,6 +271,13 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Office"
 	icon_state = "vacant_office"
 	sound_environment = SOUND_AREA_WOODFLOOR
+
+/area/ship/crew/office/lobby
+	name = "Lobby"
+
+/area/ship/crew/ccommons
+	name = "Commons"
+	icon_state = "vacant_office"
 
 /area/ship/crew/janitor
 	name = "Custodial Closet"
@@ -243,6 +302,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Morgue"
 	icon_state = "morgue"
 	ambientsounds = SPOOKY
+
+/area/ship/medical/psych
+	name = "Psych's Office"
 
 /// Science Lab ///
 /area/ship/science
@@ -271,6 +333,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
 	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg')
+
+/area/ship/science/workshop
+	name = "Workshop"
+	icon_state = "workshop"
 
 /// Engineering ///
 /area/ship/engineering
@@ -303,6 +369,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "tcomsatcham"
 	lighting_colour_tube = "#e2feff"
 	lighting_colour_bulb = "#d5fcff"
+
+/area/ship/engineering/communications/room
+	name = "Communications Room"
 
 /area/ship/engineering/engine
 	name = "Engine Room"
@@ -444,9 +513,18 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "storage"
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
+/area/ship/storage/port
+	name = "Port Storage Bay"
+
+/area/ship/storage/starboard
+	name = "Starboard Storage Bay"
+
 /area/ship/storage/eva
 	name = "EVA Storage"
 	icon_state = "eva"
+
+/area/ship/storage/equip
+	name = "Equipment Room"
 
 /// External Areas ///
 /area/ship/external

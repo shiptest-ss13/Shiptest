@@ -13,8 +13,6 @@
 		/turf/template_noop,
 		//Never meant to be created, errors out the ass for mobcode reasons
 		/mob/living/carbon,
-		//And another
-		/obj/item/slimecross/recurring,
 		//This should be obvious
 		/obj/machinery/doomsday_device,
 		//Template type
@@ -35,8 +33,6 @@
 		/obj/machinery/power/shuttle/engine/liquid,
 		//needs a template
 		/obj/effect/landmark/subship,
-		//needs a friend :(
-		/obj/effect/mob_spawn/human/demonic_friend,
 		//needs a derg
 		/obj/structure/carp_rift,
 		//doesn't have icons
@@ -72,7 +68,7 @@
 	ignore += typesof(/obj/effect/pod_landingzone_effect)
 	ignore += typesof(/obj/effect/pod_landingzone)
 	//These want fried food to take on the shape of, we can't pass that in
-	ignore += typesof(/obj/item/reagent_containers/food/snacks/deepfryholder)
+	ignore += typesof(/obj/item/food/deepfryholder)
 	//Can't pass in a thing to glow
 	ignore += typesof(/obj/effect/abstract/eye_lighting)
 	//It wants a lot more context then we have
@@ -108,12 +104,16 @@
 	//Needs an elevator
 	ignore += typesof(/obj/machinery/status_display/elevator)
 	ignore += typesof(/obj/machinery/elevator_floor_button)
+	ignore += typesof(/obj/effect/greeble_spawner)
+	//Flakey by design
+	ignore += typesof(/obj/effect/spawner/random)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/original_turf_type = spawn_at.type
 	var/original_baseturfs = islist(spawn_at.baseturfs) ? spawn_at.baseturfs.Copy() : spawn_at.baseturfs
 	var/original_baseturf_count = length(original_baseturfs)
 
+	GLOB.running_create_and_destroy = TRUE
 	for(var/type_path in typesof(/atom/movable, /turf) - ignore) //No areas please
 		if(ispath(type_path, /turf))
 			spawn_at.ChangeTurf(type_path)
@@ -145,14 +145,12 @@
 
 	// Drastically lower the amount of time it takes to GC, since we don't have clients that can hold it up.
 	SSgarbage.collection_timeout[GC_QUEUE_CHECK] = 10 SECONDS
-	//Prevent the garbage subsystem from harddeling anything, if only to save time
-	SSgarbage.collection_timeout[GC_QUEUE_HARDDELETE] = 10000 HOURS
 	//Clear it, just in case
 	cached_contents.Cut()
 
 	var/list/queues_we_care_about = list()
-	// All up to harddel
-	for(var/i in 1 to GC_QUEUE_HARDDELETE - 1)
+	// All of em, I want hard deletes too, since we rely on the debug info from them
+	for(var/i in 1 to GC_QUEUE_HARDDELETE)
 		queues_we_care_about += i
 
 	//Now that we've qdel'd everything, let's sleep until the gc has processed all the shit we care about
@@ -162,6 +160,7 @@
 		time_needed += SSgarbage.collection_timeout[index]
 
 	var/start_time = world.time
+	var/real_start_time = REALTIMEOFDAY
 	var/garbage_queue_processed = FALSE
 
 	sleep(time_needed)
@@ -179,11 +178,12 @@
 			oldest_packet_creation = min(qdeld_at, oldest_packet_creation)
 
 		//If we've found a packet that got del'd later then we finished, then all our shit has been processed
-		if(oldest_packet_creation > start_time)
+		//That said, if there are any pending hard deletes you may NOT sleep, we gotta handle that shit
+		if(oldest_packet_creation > start_time && !length(SSgarbage.queues[GC_QUEUE_HARDDELETE]))
 			garbage_queue_processed = TRUE
 			break
 
-		if(world.time > start_time + time_needed + 30 MINUTES) //If this gets us gitbanned I'm going to laugh so hard
+		if(REALTIMEOFDAY > real_start_time + time_needed + 50 MINUTES) //If this gets us gitbanned I'm going to laugh so hard
 			TEST_FAIL("Something has gone horribly wrong, the garbage queue has been processing for well over 30 minutes. What the hell did you do")
 			break
 
@@ -202,6 +202,9 @@
 			TEST_FAIL("[item.name] failed to respect force deletion [item.no_respect_force] times out of a total del count of [item.qdels]")
 		if(item.no_hint)
 			TEST_FAIL("[item.name] failed to return a qdel hint [item.no_hint] times out of a total del count of [item.qdels]")
+		if(LAZYLEN(item.extra_details))
+			var/details = item.extra_details.Join("\n")
+			TEST_FAIL("[item.name] failed with extra info: \n[details]")
 
 	cache_for_sonic_speed = SSatoms.BadInitializeCalls
 	for(var/path in cache_for_sonic_speed)
@@ -209,11 +212,11 @@
 		if(fails & BAD_INIT_NO_HINT)
 			TEST_FAIL("[path] didn't return an Initialize hint")
 		if(fails & BAD_INIT_QDEL_BEFORE)
-			TEST_FAIL("[path] qdel'd in New()")
+			TEST_FAIL("[path] qdel'd before we could call Initialize()")
 		if(fails & BAD_INIT_SLEPT)
 			TEST_FAIL("[path] slept during Initialize()")
 
+	GLOB.running_create_and_destroy = FALSE
 	SSticker.delay_end = FALSE
 	//This shouldn't be needed, but let's be polite
 	SSgarbage.collection_timeout[GC_QUEUE_CHECK] = GC_CHECK_QUEUE
-	SSgarbage.collection_timeout[GC_QUEUE_HARDDELETE] = GC_DEL_QUEUE

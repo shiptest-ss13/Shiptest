@@ -59,7 +59,7 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 				var/turf_type = /turf/template_noop
 				var/area/place_area = get_area(place_turf)
 				var/area_type = /area/template_noop
-				var/is_shuttle_area = istype(place_area, /area/shuttle)
+				var/is_shuttle_area = istype(place_area, /area/ship)
 				//If there is nothing there, save as a noop (For odd shapes)
 				if(!place_turf)
 					turf_type = /turf/template_noop

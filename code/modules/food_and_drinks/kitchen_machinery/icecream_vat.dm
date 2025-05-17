@@ -109,7 +109,7 @@
 		var/obj/item/reagent_containers/food/snacks/icecream/I = O
 		if(!I.ice_creamed)
 			if(product_types[dispense_flavour] > 0)
-				visible_message("[icon2html(src, viewers(src))] <span class='info'>[user] scoops delicious [flavour_name] ice cream into [I].</span>")
+				visible_message("[icon2html(src, viewers(src))] [span_info("[user] scoops delicious [flavour_name] ice cream into [I].")]")
 				product_types[dispense_flavour] -= 1
 				if(beaker && beaker.reagents.total_volume)
 					I.add_ice_cream(flavour_name, beaker.reagents)
@@ -119,9 +119,9 @@
 					I.reagents.add_reagent(/datum/reagent/consumable/sugar, 10 - I.reagents.total_volume)
 				updateDialog()
 			else
-				to_chat(user, "<span class='warning'>There is not enough ice cream left!</span>")
+				to_chat(user, span_warning("There is not enough ice cream left!"))
 		else
-			to_chat(user, "<span class='warning'>[O] already has ice cream in it!</span>")
+			to_chat(user, span_warning("[O] already has ice cream in it!"))
 		return 1
 	if(istype(O, /obj/item/reagent_containers) && !(O.item_flags & ABSTRACT) && O.is_open_container())
 		. = TRUE //no afterattack
@@ -129,7 +129,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
+		to_chat(user, span_notice("You add [B] to [src]."))
 		updateUsrDialog()
 		update_appearance()
 		return
@@ -163,11 +163,11 @@
 		product_types[make_type] += amount
 		var/flavour = get_flavour_name(make_type)
 		if(make_type > 5)
-			src.visible_message("<span class='info'>[user] cooks up some [flavour] cones.</span>")
+			src.visible_message(span_info("[user] cooks up some [flavour] cones."))
 		else
-			src.visible_message("<span class='info'>[user] whips up some [flavour] icecream.</span>")
+			src.visible_message(span_info("[user] whips up some [flavour] icecream."))
 	else
-		to_chat(user, "<span class='warning'>You don't have the ingredients to make this!</span>")
+		to_chat(user, span_warning("You don't have the ingredients to make this!"))
 
 /obj/machinery/icecream_vat/Topic(href, href_list)
 	if(..())
@@ -175,7 +175,7 @@
 	if(href_list["select"])
 		dispense_flavour = text2num(href_list["select"])
 		flavour_name = get_flavour_name(dispense_flavour)
-		src.visible_message("<span class='notice'>[usr] sets [src] to dispense [flavour_name] flavoured ice cream.</span>")
+		src.visible_message(span_notice("[usr] sets [src] to dispense [flavour_name] flavoured ice cream."))
 
 	if(href_list["cone"])
 		var/dispense_cone = text2num(href_list["cone"])
@@ -184,9 +184,9 @@
 			product_types[dispense_cone] -= 1
 			var/obj/item/reagent_containers/food/snacks/icecream/I = new(src.loc)
 			I.set_cone_type(cone_name)
-			src.visible_message("<span class='info'>[usr] dispenses a crunchy [cone_name] cone from [src].</span>")
+			src.visible_message(span_info("[usr] dispenses a crunchy [cone_name] cone from [src]."))
 		else
-			to_chat(usr, "<span class='warning'>There are no [cone_name] cones left!</span>")
+			to_chat(usr, span_warning("There are no [cone_name] cones left!"))
 
 	if(href_list["make"])
 		var/amount = (text2num(href_list["amount"]))
@@ -210,7 +210,7 @@
 	return
 
 /obj/item/reagent_containers/food/snacks/icecream
-	name = "ice cream cone"
+	name = "waffle cone"
 	desc = "Delicious waffle cone, but no ice cream."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "icecream_cone_waffle" //default for admin-spawned cones, href_list["cone"] should overwrite this all the time
@@ -220,6 +220,7 @@
 	var/cone_type
 	bitesize = 4
 	foodtype = DAIRY | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
 
 /obj/item/reagent_containers/food/snacks/icecream/Initialize()
 	. = ..()

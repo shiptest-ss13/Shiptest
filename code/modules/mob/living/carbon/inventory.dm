@@ -14,6 +14,30 @@
 			return legcuffed
 	return null
 
+/mob/living/carbon/get_slot_by_item(obj/item/looking_for)
+	if(looking_for == back)
+		return ITEM_SLOT_BACK
+
+	if(back && (looking_for in back))
+		return ITEM_SLOT_BACKPACK
+
+	if(looking_for == wear_mask)
+		return ITEM_SLOT_MASK
+
+	if(looking_for == wear_neck)
+		return ITEM_SLOT_NECK
+
+	if(looking_for == head)
+		return ITEM_SLOT_HEAD
+
+	if(looking_for == handcuffed)
+		return ITEM_SLOT_HANDCUFFED
+
+	if(looking_for == legcuffed)
+		return ITEM_SLOT_LEGCUFFED
+
+	return ..()
+
 /mob/living/carbon/proc/equip_in_one_of_slots(obj/item/I, list/slots, qdel_on_fail = 1)
 	for(var/slot in slots)
 		if(equip_to_slot_if_possible(I, slots[slot], qdel_on_fail = 0, disable_warning = TRUE))
@@ -82,7 +106,10 @@
 			put_in_hands(I)
 			update_inv_hands()
 		if(ITEM_SLOT_BACKPACK)
-			if(!back || !SEND_SIGNAL(back, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
+			if(!back || !SEND_SIGNAL(back, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE, FALSE, TRUE))
+				not_handled = TRUE
+		if(ITEM_SLOT_ID)
+			if(!wear_id || !SEND_SIGNAL(wear_id, COMSIG_TRY_STORAGE_INSERT, I, src, TRUE))
 				not_handled = TRUE
 		else
 			not_handled = TRUE
@@ -102,7 +129,7 @@
 /mob/living/carbon/proc/has_equipped(obj/item/item, slot, initial = FALSE)
 	return item.equipped(src, slot, initial)
 
-/mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE)
+/mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE, use_unequip_delay = FALSE)
 	. = ..() //Sets the default return value to what the parent returns.
 	if(!. || !I) //We don't want to set anything to null if the parent returned 0.
 		return
@@ -171,7 +198,7 @@
 
 	var/obj/item/offered_item = get_active_held_item()
 	if(!offered_item)
-		to_chat(src, "<span class='warning'>You're not holding anything to give!</span>")
+		to_chat(src, span_warning("You're not holding anything to give!"))
 		return
 
 	if(has_status_effect(STATUS_EFFECT_OFFERING))
@@ -204,7 +231,7 @@
 		to_chat(src, span_warning("[offerer] is no longer holding the item they were offering!"))
 		return
 	if(!get_empty_held_indexes())
-		to_chat(src, "<span class='warning'>You have no empty hands!</span>")
+		to_chat(src, span_warning("You have no empty hands!"))
 		return
 
 	if(I.on_offer_taken(offerer, src)) // see if the item has special behavior for being accepted

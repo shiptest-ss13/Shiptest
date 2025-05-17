@@ -6,9 +6,7 @@
 	shaded_charge = FALSE
 	ammo_x_offset = 2
 	ammo_y_offset = 2
-	can_flashlight = FALSE
 	w_class = WEIGHT_CLASS_HUGE
-	big_gun = TRUE //yes, you can put the comically large cell in it. No, you aren't getting it roundstart. You slut.
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
@@ -16,6 +14,9 @@
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
+
+/obj/item/gun/energy/ionrifle/empty_cell
+	spawn_no_ammo = TRUE
 
 /obj/item/gun/energy/ionrifle/carbine
 	name = "ion carbine"
@@ -25,9 +26,6 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_x_offset = 2
 	ammo_y_offset = 0
-	can_flashlight = TRUE
-	flight_x_offset = 18
-	flight_y_offset = 11
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -48,10 +46,10 @@
 	icon_state = "flora"
 	item_state = "gun"
 	ammo_type = list(/obj/item/ammo_casing/energy/flora/yield, /obj/item/ammo_casing/energy/flora/mut, /obj/item/ammo_casing/energy/flora/revolution)
-	modifystate = 1
+	modifystate = TRUE
 	ammo_x_offset = 1
 	selfcharge = 1
-	shaded_charge = 1
+	shaded_charge = TRUE
 
 /obj/item/gun/energy/meteorgun
 	name = "meteor gun"
@@ -60,7 +58,10 @@
 	item_state = "c20r"
 	w_class = WEIGHT_CLASS_BULKY
 	ammo_type = list(/obj/item/ammo_casing/energy/meteor)
-	cell_type = /obj/item/stock_parts/cell/potato
+	default_ammo_type = /obj/item/stock_parts/cell/potato
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/potato,
+	)
 	selfcharge = 1
 
 /obj/item/gun/energy/meteorgun/pen
@@ -95,16 +96,8 @@
 	overheat_time = 20
 	holds_charge = TRUE
 	unique_frequency = TRUE
-	can_flashlight = FALSE
 	max_mod_capacity = 0
 	manufacturer = MANUFACTURER_SCARBOROUGH
-
-/obj/item/gun/energy/kinetic_accelerator/crossbow/halloween
-	name = "candy corn crossbow"
-	desc = "A weapon favored by Syndicate trick-or-treaters."
-	icon_state = "crossbow_halloween"
-	item_state = "crossbow"
-	ammo_type = list(/obj/item/ammo_casing/energy/bolt/halloween)
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/large
 	name = "energy crossbow"
@@ -112,14 +105,14 @@
 	icon_state = "crossbowlarge"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=4000)
-	suppressed = null
+	suppressed = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	manufacturer = MANUFACTURER_NONE
 
 
 /obj/item/gun/energy/plasmacutter
 	name = "plasma cutter"
-	desc = "A mining tool capable of expelling concentrated plasma bursts. You could use it to cut limbs off xenos! Or, you know, mine stuff."
+	desc = "An engineering tool capable of expelling concentrated plasma bursts. You could use it to cut limbs off xenos! Or, you know, cut through walls."
 	icon_state = "plasmacutter"
 	item_state = "plasmacutter"
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
@@ -131,10 +124,12 @@
 
 	heat = 3800
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
-	tool_behaviour = TOOL_WELDER
-	toolspeed = 0.7 //plasmacutters can be used as welders, and are faster than standard welders
-	internal_cell = TRUE //so you don't cheese through the need for plasma - WS EDIT
-	var/charge_weld = 25 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of welding
+	tool_behaviour = TOOL_DECONSTRUCT
+	wall_decon_damage = 200
+	toolspeed = 1 //plasmacutters can be used like angle grinders
+	internal_magazine = TRUE //so you don't cheese through the need for plasma - WS EDIT
+	var/charge_cut = 100 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
+	var/adv = FALSE
 
 /obj/item/gun/energy/plasmacutter/ComponentInitialize()
 	. = ..()
@@ -145,7 +140,7 @@
 /obj/item/gun/energy/plasmacutter/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
+		. += span_notice("[src] is [round(cell.percent())]% charged.")
 
 /obj/item/gun/energy/plasmacutter/attackby(obj/item/I, mob/user)
 	var/charge_multiplier = 0 //2 = Refined stack, 1 = Ore
@@ -155,37 +150,58 @@
 		charge_multiplier = 1
 	if(charge_multiplier)
 		if(cell.charge == cell.maxcharge)
-			to_chat(user, "<span class='notice'>You try to insert [I] into [src], but it's fully charged.</span>") //my cell is round and full
+			to_chat(user, span_notice("You try to insert [I] into [src], but it's fully charged.")) //my cell is round and full
 			return
 		I.use(1)
 		cell.give(500*charge_multiplier)
-		to_chat(user, "<span class='notice'>You insert [I] in [src], recharging it.</span>")
+		to_chat(user, span_notice("You insert [I] in [src], recharging it."))
 	else
 		..()
 
-// Can we weld? Plasma cutter does not use charge continuously.
+// Can we cut? Plasma cutter does not use charge continuously.
 // Amount cannot be defaulted to 1: most of the code specifies 0 in the call.
-/obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, amount)
+/obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, atom/target, amount)
 	if(QDELETED(cell))
-		to_chat(user, "<span class='warning'>[src] does not have a cell, and cannot be used!</span>")
+		to_chat(user, span_warning("[src] does not have a cell, and cannot be used!"))
 		return FALSE
-	// Amount cannot be used if drain is made continuous, e.g. amount = 5, charge_weld = 25
+	// Amount cannot be used if drain is made continuous, e.g. amount = 5, charge_cut = 25
 	// Then it'll drain 125 at first and 25 periodically, but fail if charge dips below 125 even though it still can finish action
-	// Alternately it'll need to drain amount*charge_weld every period, which is either obscene or makes it free for other uses
-	if(amount ? cell.charge < charge_weld * amount : cell.charge < charge_weld)
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+	// Alternately it'll need to drain amount*charge_cut every period, which is either obscene or makes it free for other uses
+	if(amount ? cell.charge < charge_cut * amount : cell.charge < charge_cut)
+		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 
 	return TRUE
 
+/obj/item/gun/energy/plasmacutter/attack(mob/living/carbon/human/target, mob/user)
+	if(!istype(target))
+		return ..()
+	var/obj/item/bodypart/attackedLimb = target.get_bodypart(check_zone(user.zone_selected))
+	if(!attackedLimb || IS_ORGANIC_LIMB(attackedLimb) || (user.a_intent == INTENT_HARM))
+		return ..()
+	if(!tool_start_check(user, amount = 1))
+		return TRUE
+	user.visible_message(span_notice("[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)]."),
+			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
+	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
+		return TRUE
+	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
+	return TRUE
+
 /obj/item/gun/energy/plasmacutter/use(amount)
-	return (!QDELETED(cell) && cell.use(amount ? amount * charge_weld : charge_weld))
+	return (!QDELETED(cell) && cell.use(amount ? amount * charge_cut : charge_cut))
 
 /obj/item/gun/energy/plasmacutter/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks)
 	if(amount)
-		target.add_overlay(GLOB.welding_sparks)
+		if(adv)
+			target.add_overlay(GLOB.advanced_cutting_effect)
+		else
+			target.add_overlay(GLOB.cutting_effect)
 		. = ..()
-		target.cut_overlay(GLOB.welding_sparks)
+		if(adv)
+			target.cut_overlay(GLOB.advanced_cutting_effect)
+		else
+			target.cut_overlay(GLOB.cutting_effect)
 	else
 		. = ..(amount=1)
 
@@ -194,6 +210,7 @@
 	icon_state = "adv_plasmacutter"
 	item_state = "adv_plasmacutter"
 	force = 15
+	wall_decon_damage = 300
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/adv)
 
 /obj/item/gun/energy/wormhole_projector
@@ -221,7 +238,7 @@
 			if(istype(WH))
 				WH.gun = WEAKREF(src)
 
-/obj/item/gun/energy/wormhole_projector/process_chamber()
+/obj/item/gun/energy/wormhole_projector/process_chamber(atom/shooter)
 	..()
 	select_fire()
 
@@ -272,15 +289,22 @@
 	desc = "A modified energy weapon re-designed to fire 3D-printed flechettes, pulled directly from the cyborg's internal power source."
 	icon_state = "l6_cyborg"
 	icon = 'icons/obj/guns/projectile.dmi'
-	cell_type = /obj/item/stock_parts/cell/secborg
+	default_ammo_type = /obj/item/stock_parts/cell/secborg
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/secborg,
+	)
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
 
+	fire_delay = 0.3 SECONDS
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
 /obj/item/gun/energy/printer/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_blocker)
-	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/energy/printer/emp_act()
 	return
@@ -294,7 +318,7 @@
 
 /obj/item/gun/energy/printer/commando/examine()
 	. = ..()
-	. += "<span class='notice'> Can be reconfigured inhand to print different projectile designs.</span>"
+	. += span_notice(" Can be reconfigured inhand to print different projectile designs.")
 
 /obj/item/gun/energy/printer/commando/attack_self(mob/living/user as mob)
 	if(ammo_type.len > 1)
@@ -311,11 +335,11 @@
 	if (shot.select_name)
 		playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
 		if(shot.select_name == "tactical")
-			to_chat(user, "<span class='notice'>You configure the [src] to fire CY-TACTICAL high-velocity impact rounds.</span>")
+			to_chat(user, span_notice("You configure the [src] to fire CY-TACTICAL high-velocity impact rounds."))
 		if(shot.select_name == "sweet")
-			to_chat(user, "<span class='notice'>You set your [src] to fire CY-SWEET distruptor rounds, which travel slowly and do little damage, but irradiate and ignite targets.</span>")
+			to_chat(user, span_notice("You set your [src] to fire CY-SWEET distruptor rounds, which travel slowly and do little damage, but irradiate and ignite targets."))
 		if(shot.select_name == "sour")
-			to_chat(user, "<span class='notice'>You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies.</span>")
+			to_chat(user, span_notice("You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies."))
 	chambered = null
 	recharge_newshot(TRUE)
 	update_appearance()
@@ -326,7 +350,7 @@
 	icon_state = "freezegun"
 	desc = "A gun that changes temperatures."
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+	default_ammo_type = /obj/item/stock_parts/cell/gun/upgraded
 	ammo_x_offset = 2
 
 /obj/item/gun/energy/temperature/security
@@ -370,7 +394,7 @@
 
 /obj/item/gun/energy/gravity_gun/attackby(obj/item/C, mob/user)
 	if(istype(C, /obj/item/assembly/signaler/anomaly)) //WS Edit - Any anomaly core for phazons
-		to_chat(user, "<span class='notice'>You insert [C] into the gravitational manipulator and the weapon gently hums to life.</span>")
+		to_chat(user, span_notice("You insert [C] into the gravitational manipulator and the weapon gently hums to life."))
 		firing_core = TRUE
 		playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
 		qdel(C)
@@ -391,9 +415,9 @@
 	shaded_charge = TRUE
 	weapon_weight = WEAPON_HEAVY
 
-/obj/item/gun/energy/tesla_cannon/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+	fire_delay = 0.1 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/energy/buster
 	name = "replica buster cannon"

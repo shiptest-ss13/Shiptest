@@ -7,9 +7,14 @@
 	var/crate_name = "crate"
 	var/desc = ""//no desc by default
 	var/crate_type = /obj/structure/closet/crate
-	// var/DropPodOnly = FALSE//only usable by the Bluespace Drop Pod via the express cargo console
 	var/admin_spawned = FALSE
-	var/small_item = FALSE //Small items can be grouped into a single crate.
+	var/no_bundle = FALSE
+
+	var/datum/faction/faction
+	//what's the discount for buyers in our faction.
+	var/faction_discount = 15
+	//are we locked to one faction and its subgroups
+	var/faction_locked = FALSE
 
 /datum/supply_pack/proc/generate(atom/A, datum/bank_account/paying_account)
 	var/obj/structure/closet/crate/C

@@ -3,11 +3,8 @@
 	icon_state = "bluespacearray"
 	build_path = /obj/machinery/ltsrbt
 	req_components = list(
-		/obj/item/stack/ore/bluespace_crystal = 2,
-		/obj/item/stock_parts/subspace/ansible = 1,
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stock_parts/scanning_module = 2)
-	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
 
 /obj/machinery/ltsrbt
 	name = "Long-To-Short-Range-Bluespace-Transciever"
@@ -16,7 +13,7 @@
 	circuit = /obj/item/circuitboard/machine/ltsrbt
 	density = TRUE
 
-	idle_power_usage = 200
+	idle_power_usage = IDLE_DRAW_LOW
 
 	/// Divider for power_usage_per_teleport.
 	var/power_efficiency = 1
@@ -27,7 +24,7 @@
 	/// Current recharge progress.
 	var/recharge_cooldown = 0
 	/// Base recharge time which is used to get recharge_time.
-	var/base_recharge_time = 10
+	var/base_recharge_time = 20
 	/// Current /datum/blackmarket_purchase being recieved.
 	var/recieving
 	/// Current /datum/blackmarket_purchase being sent to the target uplink.
@@ -64,7 +61,7 @@
 	if(istype(O, /obj/item/blackmarket_uplink))
 		var/obj/item/blackmarket_uplink/uplink = O
 		uplink.target = src
-		to_chat(user, "<span class='notice'>[src] linked to [O].</span>")
+		to_chat(user, span_notice("[src] linked to [O]."))
 		return TRUE
 
 	return ..()
@@ -76,12 +73,12 @@
 		return
 	queue += purchase
 
-/obj/machinery/ltsrbt/process()
+/obj/machinery/ltsrbt/process(seconds_per_tick)
 	if(machine_stat & NOPOWER)
 		return
 
-	if(recharge_cooldown)
-		recharge_cooldown--
+	if(recharge_cooldown > 0)
+		recharge_cooldown -= seconds_per_tick
 		return
 
 	var/turf/T = get_turf(src)
@@ -121,3 +118,17 @@
 
 	if(queue.len)
 		recieving = pick_n_take(queue)
+
+/datum/crafting_recipe/blackmarket_telepad
+	name = "Black Market LTRSBT Board"
+	result = /obj/item/circuitboard/machine/ltsrbt
+	time = 30
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_MULTITOOL)
+	reqs = list(
+		/obj/item/stack/ore/bluespace_crystal = 2,
+		/obj/item/stack/tape/industrial = 5,
+		/obj/item/card/bank = 1,
+		/obj/item/computer_hardware/network_card = 1,
+		/obj/item/circuitboard = 1
+	)
+	category = CAT_MISC

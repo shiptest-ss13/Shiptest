@@ -60,11 +60,11 @@
 	GLOB.interviews.approved_ckeys |= owner_ckey
 	GLOB.interviews.close_interview(src)
 	log_admin_private("[key_name(approved_by)] has approved interview #[id] for [owner_ckey][!owner ? "(DC)": ""].")
-	message_admins("<span class='adminnotice'>[key_name(approved_by)] has approved [link_self()] for [owner_ckey][!owner ? "(DC)": ""].</span>")
+	message_admins(span_adminnotice("[key_name(approved_by)] has approved [link_self()] for [owner_ckey][!owner ? "(DC)": ""]."))
 	if (owner)
 		SEND_SOUND(owner, sound('sound/effects/adminhelp.ogg'))
 		to_chat(owner, "<font color='red' size='4'><b>-- Interview Update --</b></font>" \
-			+ "\n<span class='adminsay'>Your interview was approved, you will now be reconnected in 5 seconds.</span>", confidential = TRUE)
+			+ "\n[span_adminsay("Your interview was approved, you will now be reconnected in 5 seconds.")]", confidential = TRUE)
 		addtimer(CALLBACK(src, PROC_REF(reconnect_owner)), 50)
 
 /**
@@ -79,7 +79,7 @@
 	GLOB.interviews.close_interview(src)
 	GLOB.interviews.cooldown_ckeys |= owner_ckey
 	log_admin_private("[key_name(denied_by)] has denied interview #[id] for [owner_ckey][!owner ? "(DC)": ""].")
-	message_admins("<span class='adminnotice'>[key_name(denied_by)] has denied [link_self()] for [owner_ckey][!owner ? "(DC)": ""].</span>")
+	message_admins(span_adminnotice("[key_name(denied_by)] has denied [link_self()] for [owner_ckey][!owner ? "(DC)": ""]."))
 	addtimer(CALLBACK(GLOB.interviews, TYPE_PROC_REF(/datum/interview_manager, release_from_cooldown), owner_ckey), 180)
 	if (owner)
 		SEND_SOUND(owner, sound('sound/effects/adminhelp.ogg'))
@@ -102,13 +102,14 @@
 	set name = "Open Interview"
 	set category = "Admin.Interview"
 	var/mob/dead/new_player/M = usr
-	if (M?.client?.interviewee)
-		var/datum/interview/I = GLOB.interviews.interview_for_client(M.client)
-		if (I) // we can be returned nothing if the user is on cooldown
-			I.ui_interact(M)
-		else
-			to_chat(usr, "<span class='adminsay'>You are on cooldown for interviews. Please" \
-				+ " wait at least 3 minutes before starting a new questionnaire.</span>", confidential = TRUE)
+	if (!M?.client?.interviewee)
+		return
+	var/datum/interview/I = GLOB.interviews.interview_for_client(M.client)
+	if (I) // we can be returned nothing if the user is on cooldown
+		I.ui_interact(M)
+	else
+		to_chat(usr, "<span class='adminsay'>You are on cooldown for interviews. Please" \
+			+ " wait at least 3 minutes before starting a new questionnaire.</span>", confidential = TRUE)
 
 /datum/interview/ui_interact(mob/user, datum/tgui/ui = null)
 	ui = SStgui.try_update_ui(user, src, ui)

@@ -31,6 +31,8 @@
 
 //SLOT GROUP HELPERS
 #define ITEM_SLOT_POCKETS (ITEM_SLOT_LPOCKET|ITEM_SLOT_RPOCKET)
+//All the item slots that are allowed to be held in Kepori beaks (their mask slot)
+#define ITEM_SLOT_KEPORI_BEAK (ITEM_SLOT_MASK|ITEM_SLOT_ID|ITEM_SLOT_POCKETS|ITEM_SLOT_DEX_STORAGE|ITEM_SLOT_SUITSTORE)
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
 //Make sure to update check_obscured_slots() if you add more.
@@ -46,6 +48,7 @@
 #define HIDEFACIALHAIR (1<<9)
 #define HIDENECK (1<<10)
 #define HIDEHORNS (1<<11) 	// Used for hiding Sarathi horns.
+#define HIDESNOUT (1<<11)
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)
@@ -72,8 +75,8 @@
 
 //flags for alternate styles: These are hard sprited so don't set this if you didn't put the effort in
 #define NORMAL_STYLE 0
-#define ALT_STYLE 1
-#define DIGITIGRADE_STYLE 2
+#define ALT_STYLE 1 // rolled down/alt uniform
+#define ROLLED_STYLE 2 // rolled sleeves
 
 //This system takes priority over Sprite Sheets.
 #define NO_VARIATION (1<<0)
@@ -81,8 +84,9 @@
 #define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
 #define DIGITIGRADE_VARIATION_SAME_ICON_FILE (1<<3) //intended for use with factional icon files for organization purposes, otherwise use either above. Ex of naming: a state called "nameof_thing" can be named "nameof_thing_digi"
 #define SNOUTED_VARIATION (1<<4) //Ex of naming: a state called "nameof_thing" can be named "nameof_thing_snouted"
-#define VOX_VARIATION (1<<5)
-#define KEPORI_VARIATION (1<<6)
+#define SNOUTED_SMALL_VARIATION (1<<5) //For Elzuose snouts
+#define VOX_VARIATION (1<<6)
+#define KEPORI_VARIATION (1<<7)
 
 #define NOT_DIGITIGRADE 0
 #define FULL_DIGITIGRADE 1
@@ -149,7 +153,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
 	/obj/item/flamethrower,
-	/obj/item/kitchen/knife/combat,
+	/obj/item/melee/knife/combat,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
@@ -174,5 +178,4 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/tank/internals/plasmaman,
 	/obj/item/toy)))
 
-//WS Port - Internals checker
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)

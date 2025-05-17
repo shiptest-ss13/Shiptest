@@ -40,6 +40,45 @@
 			return s_store
 	return null
 
+/mob/living/carbon/human/get_slot_by_item(obj/item/looking_for)
+	if(looking_for == belt)
+		return ITEM_SLOT_BELT
+
+	if(looking_for == wear_id)
+		return ITEM_SLOT_ID
+
+	if(looking_for == ears)
+		return ITEM_SLOT_EARS
+
+	if(looking_for == glasses)
+		return ITEM_SLOT_EYES
+
+	if(looking_for == gloves)
+		return ITEM_SLOT_GLOVES
+
+	if(looking_for == head)
+		return ITEM_SLOT_HEAD
+
+	if(looking_for == shoes)
+		return ITEM_SLOT_FEET
+
+	if(looking_for == wear_suit)
+		return ITEM_SLOT_OCLOTHING
+
+	if(looking_for == w_uniform)
+		return ITEM_SLOT_ICLOTHING
+
+	if(looking_for == r_store)
+		return ITEM_SLOT_RPOCKET
+
+	if(looking_for == l_store)
+		return ITEM_SLOT_LPOCKET
+
+	if(looking_for == s_store)
+		return ITEM_SLOT_SUITSTORE
+
+	return ..()
+
 /mob/living/carbon/human/proc/get_all_slots()
 	. = get_head_slots() | get_body_slots()
 
@@ -82,7 +121,9 @@
 /mob/living/carbon/human/equip_to_slot(obj/item/I, slot, initial = FALSE, redraw_mob = FALSE, swap = FALSE)
 	if(!..()) //a check failed or the item has already found its slot
 		return
-
+	if(isclothing(I))//needs to be set very early, because clothing overlays need it assigned before update_inv calls
+		var/obj/item/clothing/ouritem = I
+		ouritem.wearer = WEAKREF(src)
 	var/current_equip
 	var/not_handled = FALSE //Added in case we make this type path deeper one day
 	switch(slot)
@@ -164,8 +205,10 @@
 			s_store = I
 			update_inv_s_store()
 		else
-			to_chat(src, "<span class='danger'>You are trying to equip this item to an unsupported inventory slot. Report this to a coder!</span>")
-
+			to_chat(src, span_danger("You are trying to equip this item to an unsupported inventory slot. Report this to a coder!"))
+			if(isclothing(I))//just in case
+				var/obj/item/clothing/ouritem = I
+				ouritem.wearer = null
 	if (current_equip)
 		put_in_active_hand(current_equip)
 
@@ -185,7 +228,7 @@
 		var/obj/item/thing = sloties
 		. += thing?.slowdown
 
-/mob/living/carbon/human/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE)
+/mob/living/carbon/human/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE, use_unequip_delay = FALSE)
 	var/index = get_held_index_of_item(I)
 	. = ..() //See mob.dm for an explanation on this and some rage about people copypasting instead of calling ..() like they should.
 	if(!. || !I)
@@ -329,25 +372,27 @@
 	var/obj/item/equipped_item = get_item_by_slot(slot_type)
 	if(!equipped_item) // We also let you equip an item like this
 		if(!thing)
-			to_chat(src, "<span class='warning'>You have no [slot_item_name] to take something out of!</span>")
+			to_chat(src, span_warning("You have no [slot_item_name] to take something out of!"))
 			return
 		if(equip_to_slot_if_possible(thing, slot_type))
 			update_inv_hands()
 		return
-	if(!SEND_SIGNAL(equipped_item, COMSIG_CONTAINS_STORAGE)) // not a storage item
+	var/datum/component/storage/storage = equipped_item.GetComponent(/datum/component/storage)
+	if(!storage)
 		if(!thing)
 			equipped_item.attack_hand(src)
 		else
-			to_chat(src, "<span class='warning'>You can't fit [thing] into your [equipped_item.name]!</span>")
+			to_chat(src, span_warning("You can't fit [thing] into your [equipped_item.name]!"))
 		return
 	if(thing) // put thing in storage item
 		if(!SEND_SIGNAL(equipped_item, COMSIG_TRY_STORAGE_INSERT, thing, src))
-			to_chat(src, "<span class='warning'>You can't fit [thing] into your [equipped_item.name]!</span>")
+			to_chat(src, span_warning("You can't fit [thing] into your [equipped_item.name]!"))
 		return
-	if(!equipped_item.contents.len) // nothing to take out
-		to_chat(src, "<span class='warning'>There's nothing in your [equipped_item.name] to take out!</span>")
+	var/atom/real_location = storage.real_location()
+	if(!real_location.contents.len) // nothing to take out
+		to_chat(src, span_warning("There's nothing in your [equipped_item.name] to take out!"))
 		return
-	var/obj/item/stored = equipped_item.contents[equipped_item.contents.len]
+	var/obj/item/stored = real_location.contents[real_location.contents.len]
 	if(!stored || stored.on_found(src))
 		return
 	stored.attack_hand(src) // take out thing from item in storage slot

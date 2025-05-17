@@ -31,7 +31,7 @@
 /obj/machinery/atmospherics/components/binary/temperature_pump/update_icon_nopipes()
 	icon_state = "tpump_[on && is_operational ? "on" : "off"]-[set_overlay_offset(piping_layer)]"
 
-/obj/machinery/atmospherics/components/binary/temperature_pump/process_atmos()
+/obj/machinery/atmospherics/components/binary/temperature_pump/process_atmos(seconds_per_tick)
 
 	if(!on || !is_operational)
 		return

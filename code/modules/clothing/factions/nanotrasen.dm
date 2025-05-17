@@ -9,7 +9,8 @@
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
 	icon_state = "deckhand"
 	item_state = "graycloth"
-	supports_variations = DIGITIGRADE_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 // Engineering uniforms
 /obj/item/clothing/under/nanotrasen/engineering
@@ -29,6 +30,7 @@
 	desc = "Thick black overalls over a blue office shirt. Unlike most managerial staff, Nanotrasen engineering directors still need to get hands-on with their work."
 	icon_state = "engi_director"
 	item_state = "blackcloth"
+
 
 //Supply uniforms
 /obj/item/clothing/under/nanotrasen/supply
@@ -132,7 +134,6 @@
 	name = ""
 	desc = ""
 	icon_state = "captain_parade"
-	can_adjust = FALSE
 */
 
 /obj/item/clothing/under/nanotrasen/officer
@@ -163,6 +164,7 @@
 	desc = "A thick fluid-repelling smock rendered in what is unmistakeably Nanotrasen Blue. The tag on the inside declares it property of Nanotrasen, Inc."
 	icon_state = "med_smock"
 	item_state = "bluecloth"
+	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
 
 /obj/item/clothing/suit/nanotrasen/suitjacket
 	name = "fancy black suit jacket"
@@ -230,19 +232,23 @@
 	icon_state = "armor"
 	item_state = "blackcloth"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 30, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/nanotrasen/slim
 	name = "slim armor vest"
 	icon_state = "armor_slim"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	name = "security director's overcoat"
 	desc = "A tailored black overcoat, made from cutting-edge ballistic fabrics and composites. Vigilitas's 'VI' logo is embossed on every button. Intimidating and profoundly stylish."
 	icon_state = "command_coat"
-	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list("melee" = 30, "bullet" = 0, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/armor/nanotrasen/captain
 	name = "captain's jacket"
@@ -250,7 +256,7 @@
 	icon_state = "armor_captain"
 	item_state = "bluecloth"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 60, "energy" = 50, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/nanotrasen/captain/parade
@@ -258,7 +264,7 @@
 	desc = "An exquisitely-decorated fine blue jacket, suitable for especially formal situations, or for a commanding officer who wants to flaunt their status even more than usual. Richly decorated with gold thread and embroidered Nanotrasen logos."
 	icon_state = "captain_formal"
 	item_state = "bluecloth"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 30, "bullet" = 0, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
 
 // Hats //
@@ -336,8 +342,10 @@
 	desc = "A blue peaked hat with red silk decoration and an embroidered Nanotrasen logo, worn exclusively by management."
 	icon_state = "officer_peaked"
 	item_state = "bluecloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/head/nanotrasen/officer
+/obj/item/clothing/head/nanotrasen/officer/fedora
 	name = "officer's fedora"
 	desc = "A fedora in a violent shade of Nanotrasen Blue, with a red silk band."
 	icon_state = "officer_fedora"
@@ -354,6 +362,8 @@
 	desc = "A decorated blue peaked cap, rife with laurels and gold thread, with a large badge on the front displaying the Nanotrasen, Inc. logo. This hat practically oozes authority."
 	icon_state = "com_peaked"
 	item_state = "bluecloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/hardhat/nanotrasen //TODO: inhands for hardhats
 	name = "black heavy-duty hat"
@@ -364,18 +374,24 @@
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
 	icon_state = "hardhat_black"
 	item_state = "blackcloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/hardhat/nanotrasen/blue
 	name = "blue heavy-duty hat"
 	desc = "A tough plastic helmet with suspension rig, designed to protect against blunt impacts. This one is brightly colored in Nanotrasen Blue, with the company logo on the front."
 	icon_state = "hardhat_blue"
 	item_state = "bluecloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/hardhat/nanotrasen/white
 	name = "white heavy-duty hat"
 	desc = "An extremely tough plastic helmet with suspension rig, designed to protect against blunt impacts. This one is colored bright white, typical of managerial staff, and has a Nanotrasen logo on the front."
 	icon_state = "hardhat_white"
 	item_state = "graycloth"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	supports_variations = VOX_VARIATION
 
 
 // Neck //
@@ -389,3 +405,19 @@
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
 	icon_state = "sash"
 	item_state = "redcloth"
+
+// Mask //
+
+/obj/item/clothing/mask/gas/vigilitas
+	name = "Vigilitas gas mask"
+	desc = "A protective gas mask designed for first response, specialist operations, and counter terrorism by Vigilitas Interstellar officers. It features a wide scratch resistant visor, ports for connecting an oxygen supply, and secure, comfortable straps."
+	icon = 'icons/obj/clothing/faction/nanotrasen/mask.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/mask.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/nanotrasen/mask_kepori.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
+	icon_state = "vigi_gas_mask"
+	item_state = "vigi_gas_mask"
+	vox_override_icon = 'icons/mob/clothing/faction/nanotrasen/vox.dmi'
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION

@@ -20,31 +20,31 @@
 /obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 		return FALSE
 
 	if(!canconsume(M, user))
 		return FALSE
 
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>[src]'s lid hasn't been opened!</span>")
+		to_chat(user, span_warning("[src]'s lid hasn't been opened!"))
 		return FALSE
 
 	if(M == user)
-		user.visible_message("<span class='notice'>[user] swallows a gulp of [src].</span>", \
-			"<span class='notice'>You swallow a gulp of [src].</span>")
+		user.visible_message(span_notice("[user] swallows a gulp of [src]."), \
+			span_notice("You swallow a gulp of [src]."))
 		if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 			M.changeNext_move(CLICK_CD_MELEE * 0.5) //chug! chug! chug!
 
 	else
-		M.visible_message("<span class='danger'>[user] attempts to feed [M] the contents of [src].</span>", \
-			"<span class='userdanger'>[user] attempts to feed you the contents of [src].</span>")
-		if(!do_mob(user, M))
+		M.visible_message(span_danger("[user] attempts to feed [M] the contents of [src]."), \
+			span_userdanger("[user] attempts to feed you the contents of [src]."))
+		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The drink might be empty after the delay, such as by spam-feeding
-		M.visible_message("<span class='danger'>[user] fed [M] the contents of [src].</span>", \
-			"<span class='userdanger'>[user] fed you the contents of [src].</span>")
+		M.visible_message(span_danger("[user] fed [M] the contents of [src]."), \
+			span_userdanger("[user] fed you the contents of [src]."))
 		log_combat(user, M, "fed", reagents.log_list())
 
 	var/fraction = min(gulp_size/reagents.total_volume, 1)
@@ -60,20 +60,20 @@
 
 	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!is_drainable())
-			to_chat(user, "<span class='warning'>[src] isn't open!</span>")
+			to_chat(user, span_warning("[src] isn't open!"))
 			return
 
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty.</span>")
+			to_chat(user, span_warning("[src] is empty."))
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			to_chat(user, span_warning("[target] is full."))
 			return
 
 		var/refill = reagents.get_master_reagent_id()
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You transfer [trans] units of the solution to [target].</span>")
+		to_chat(user, span_notice("You transfer [trans] units of the solution to [target]."))
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 		if(iscyborg(user)) //Cyborg modules that include drinks automatically refill themselves, but drain the borg's cell
@@ -83,27 +83,27 @@
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if (!is_refillable())
-			to_chat(user, "<span class='warning'>[src] isn't open!</span>")
+			to_chat(user, span_warning("[src] isn't open!"))
 			return
 
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty.</span>")
+			to_chat(user, span_warning("[target] is empty."))
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, span_warning("[src] is full."))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
 
 	else if(reagents.total_volume && is_drainable())
 		switch(user.a_intent)
 			if(INTENT_HELP)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
+									span_notice("You splash the contents of [src] onto [target]."))
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
 				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
@@ -112,7 +112,7 @@
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, "<span class='notice'>You heat [name] with [I]!</span>")
+		to_chat(user, span_notice("You heat [name] with [I]!"))
 	..()
 
 /obj/item/reagent_containers/food/drinks/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -120,27 +120,36 @@
 	if(!.) //if the bottle wasn't caught
 		smash(hit_atom, throwingdatum?.thrower, TRUE)
 
-/obj/item/reagent_containers/food/drinks/proc/smash(atom/target, mob/thrower, ranged = FALSE)
+/obj/item/reagent_containers/food/drinks/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	smash()
+	..()
+
+/obj/item/reagent_containers/food/drinks/proc/smash(atom/target = FALSE, mob/thrower = FALSE, ranged = FALSE)
 	if(!isGlass)
 		return
-	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
+	if(QDELING(src) || !(flags_1 & INITIALIZED_1))	//Invalid loc
 		return
-	if(bartender_check(target) && ranged)
-		return
-	var/obj/item/broken_bottle/B = new (loc)
-	B.icon_state = icon_state
-	var/icon/I = new(icon, icon_state)
-	I.Blend(B.broken_outline, ICON_OVERLAY, rand(5), 1)
-	I.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
-	B.icon = I
-	B.name = "broken [name]"
+	if(target)
+		if(bartender_check(target) && ranged)
+			return
+	var/obj/item/broken_bottle/smashed_bottle = new (loc)
+	if(!ranged && thrower)
+		thrower.put_in_hands(smashed_bottle)
+	smashed_bottle.icon_state = icon_state
+	var/icon/new_icon = new(icon, icon_state)
+	new_icon.Blend(smashed_bottle.broken_outline, ICON_OVERLAY, rand(5), 1)
+	new_icon.SwapColor(rgb(255, 0, 220, 255), rgb(0, 0, 0, 0))
+	smashed_bottle.icon = new_icon
+	smashed_bottle.name = "broken [name]"
 	if(prob(33))
-		var/obj/item/shard/S = new(drop_location())
-		target.Bumped(S)
+		var/obj/item/shard/new_shard = new(drop_location())
+		if(target)
+			target.Bumped(new_shard)
 	playsound(src, "shatter", 70, TRUE)
-	transfer_fingerprints_to(B)
+	transfer_fingerprints_to(smashed_bottle)
 	qdel(src)
-	target.Bumped(B)
+	if(target)
+		target.Bumped(smashed_bottle)
 
 /obj/item/reagent_containers/food/drinks/bullet_act(obj/projectile/P)
 	. = ..()
@@ -212,9 +221,10 @@
 //	Formatting is the same as food.
 
 /obj/item/reagent_containers/food/drinks/coffee
-	name = "robust coffee"
-	desc = "Careful, the beverage you're about to enjoy is extremely hot."
+	name = "Solar's Best black coffee"
+	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
 	icon_state = "coffee"
+	icon = 'icons/obj/item/coffee.dmi'
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	spillable = TRUE
 	resistance_flags = FREEZE_PROOF
@@ -224,7 +234,7 @@
 /obj/item/reagent_containers/food/drinks/ice
 	name = "ice cup"
 	desc = "Careful, cold ice, do not chew."
-	custom_price = 15
+	custom_price = 5
 	icon_state = "coffee"
 	list_reagents = list(/datum/reagent/consumable/ice = 30)
 	spillable = TRUE
@@ -249,54 +259,54 @@
 		icon_state = "tea_empty"
 
 /obj/item/reagent_containers/food/drinks/mug/tea
-	name = "Duke Purple tea"
-	desc = "An insult to Duke Purple is an insult to the Space Queen! Any proper gentleman will fight you, if you sully this tea."
+	name = "Guildmaiden's tea"
+	desc = "Dark tea, made from pressed, fermented tea leaves. Originally from Sol, it became wildly popular among the Rachnid Guilds, and has become a staple."
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
 
 /obj/item/reagent_containers/food/drinks/mug/coco
-	name = "Pearl Hot Chocolate"
-	desc = "A rich delicacy from the humid regions of Terra."
+	name = "Solar's Best Hot Cocoa"
+	desc = "A cup of hot water mixed with chocolate and malted milk powder. A classic hot drink from the Solarian Confederation."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
 	resistance_flags = FREEZE_PROOF
-	custom_price = 120
+	custom_price = 5
 
 /obj/item/reagent_containers/food/drinks/cafelatte
 	name = "cafe latte"
 	desc = "A nice, strong and refreshing beverage while you're reading."
 	icon_state = "cafe_latte"
 	list_reagents = list(/datum/reagent/consumable/cafe_latte = 30)
-	custom_price = 200
+	custom_price = 5
 
 /obj/item/reagent_containers/food/drinks/soylatte
 	name = "soy latte"
 	desc = "A nice and refreshing beverage while you're reading."
 	icon_state = "soy_latte"
 	list_reagents = list(/datum/reagent/consumable/soy_latte = 30)
-	custom_price = 200
+	custom_price = 5
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
-	desc = "Just add 5ml of water, self heats! A taste that reminds you of your school years. Now new with salty flavour!"
+	desc = "A cup full of dried noodles, premixed with a flavor powder. Adding 5 units of water will cause the cup to self-heat, cooking it rapidly. Commonly eaten under dozens of brands, from students to eating on a budget. Always umami!"
 	icon_state = "ramen"
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 15, /datum/reagent/consumable/sodiumchloride = 3)
 	foodtype = GRAIN
 	isGlass = FALSE
-	custom_price = 95
+	custom_price = 5
 
 /obj/item/reagent_containers/food/drinks/waterbottle
-	name = "bottle of water"
-	desc = "A bottle of water filled at an old Earth bottling facility."
+	name = "Ryuunosuke Reserve" //we still have to find a way to make multiple variants as per the plan
+	desc = "Water bottled from a plant somewhere on Ryuunosuke. It has a mild, mineral-y flavor."
 	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
-	list_reagents = list(/datum/reagent/water = 49.5, /datum/reagent/fluorine = 0.5)//see desc, don't think about it too hard
+	list_reagents = list(/datum/reagent/water = 50)
 	custom_materials = list(/datum/material/plastic=1000)
 	volume = 50
 	amount_per_transfer_from_this = 10
 	fill_icon_thresholds = list(0, 10, 25, 50, 75, 80, 90)
 	isGlass = FALSE
-	custom_price = 30
+	custom_price = 8
 	can_have_cap = TRUE
 	// The 2 bottles have separate cap overlay icons because if the bottle falls over while bottle flipping the cap stays fucked on the moved overlay
 	cap_icon_state = "bottle_cap_small"
@@ -306,7 +316,7 @@
 /obj/item/reagent_containers/food/drinks/waterbottle/attack(mob/target, mob/user, def_zone)
 	if(target && user.a_intent == INTENT_HARM)
 		if(!spillable)
-			to_chat(user, "<span class='warning'>[src] is closed!</span>")
+			to_chat(user, span_warning("[src] is closed!"))
 		else
 			SplashReagents(target)
 		return
@@ -318,7 +328,7 @@
 	. = ..()
 	if(!QDELETED(src) && !spillable && reagents.total_volume)
 		if(prob(flip_chance)) // landed upright
-			src.visible_message("<span class='notice'>[src] lands upright!</span>")
+			src.visible_message(span_notice("[src] lands upright!"))
 			if(throwingdatum.thrower)
 				SEND_SIGNAL(throwingdatum.thrower, COMSIG_ADD_MOOD_EVENT, "bottle_flip", /datum/mood_event/bottle_flip)
 		else // landed on it's side
@@ -356,16 +366,16 @@
 	var/datum/reagent/random_reagent = new reagent_id
 	list_reagents = list(random_reagent.type = 50)
 	. = ..()
-	desc +=  "<span class='notice'>The writing reads '[random_reagent.name]'.</span>"
+	desc +=  span_notice("The writing reads '[random_reagent.name]'.")
 	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
-	name = "space beer"
-	desc = "Beer. In space."
+	name = "Bizircan Brewery GDM" //ditto the plan for bottled water, need to find a way to make multiple variants
+	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
-	foodtype = GRAIN | ALCOHOL
-	custom_price = 60
+	foodtype = SUGAR | ALCOHOL
+	custom_price = 10
 
 /obj/item/reagent_containers/food/drinks/beer/light
 	name = "Carp Lite"
@@ -373,13 +383,13 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
 
 /obj/item/reagent_containers/food/drinks/ale
-	name = "Magm-Ale"
-	desc = "A true dorf's drink of choice."
+	name = "RHIMBASA TAP"
+	desc = "An ale that is brewed on Reh'himl, named after the planet that shields it from their sun. Telh'aim Pale Ales are shortened to TAP, with most breweries reducing their names to acronyms alongside it."
 	icon_state = "alebottle"
 	item_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 	foodtype = GRAIN | ALCOHOL
-	custom_price = 60
+	custom_price = 15
 
 /obj/item/reagent_containers/food/drinks/sillycup
 	name = "paper cup"
@@ -445,17 +455,17 @@
 			if(/datum/reagent/consumable/pineapplejuice)
 				icon_state = "pineapplebox"
 				name = "pineapple juice box"
-				desc = "Why would you even want this?"
+				desc = "Sweet, tart pineapple juice."
 				foodtype = FRUIT | PINEAPPLE
 			if(/datum/reagent/consumable/milk/chocolate_milk)
 				icon_state = "chocolatebox"
 				name = "carton of chocolate milk"
-				desc = "Milk for cool kids!"
+				desc = "Milk mixed with chocolate, a common childhood favorite!"
 				foodtype = SUGAR
 			if(/datum/reagent/consumable/ethanol/eggnog)
 				icon_state = "nog2"
 				name = "carton of eggnog"
-				desc = "For enjoying the most wonderful time of the year."
+				desc = "A carton of eggnog, a drink of choice for celebrating Winter Solstice."
 				foodtype = MEAT
 	else
 		icon_state = "juicebox"
@@ -502,8 +512,8 @@
 
 /obj/item/reagent_containers/food/drinks/flask
 	name = "flask"
-	desc = "Every good spaceman knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
-	custom_price = 200
+	desc = "Every good spacer knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
+	custom_price = 20
 	icon_state = "flask"
 	custom_materials = list(/datum/material/iron=250)
 	volume = 60
@@ -521,10 +531,10 @@
 	icon_state = "detflask"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 30)
 
-/obj/item/reagent_containers/food/drinks/britcup
+/obj/item/reagent_containers/food/drinks/mug
 	name = "cup"
-	desc = "A cup with the british flag emblazoned on it."
-	icon_state = "britcup"
+	desc = "A mug. Stylishly plain."
+	icon_state = "tea_empty"
 	volume = 30
 	spillable = TRUE
 
@@ -545,30 +555,17 @@
 	reagent_flags = NONE
 	spillable = FALSE
 	isGlass = FALSE
-	custom_price = 45
+	custom_price = 5
 	var/pierced = FALSE
 	obj_flags = CAN_BE_HIT
-
-
-/obj/item/reagent_containers/food/drinks/soda_cans/random/Initialize()
-	..()
-	var/T = pick(subtypesof(/obj/item/reagent_containers/food/drinks/soda_cans) - /obj/item/reagent_containers/food/drinks/soda_cans/random)
-	new T(loc)
-	return INITIALIZE_HINT_QDEL
-
-/obj/item/reagent_containers/food/drinks/soda_cans/random/Initialize()
-	..()
-	var/T = pick(subtypesof(/obj/item/reagent_containers/food/drinks/soda_cans) - /obj/item/reagent_containers/food/drinks/soda_cans/random)
-	new T(loc)
-	return INITIALIZE_HINT_QDEL
 
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
 	if(istype(M, /mob/living/carbon) && !reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
 		if(M == user)
-			user.visible_message("<span class='warning'>[user] crushes the can of [src] on [user.p_their()] forehead!</span>", "<span class='notice'>You crush the can of [src] on your forehead.</span>")
+			user.visible_message(span_warning("[user] crushes the can of [src] on [user.p_their()] forehead!"), span_notice("You crush the can of [src] on your forehead."))
 		else
-			user.visible_message("<span class='warning'>[user] crushes the can of [src] on [M]'s forehead!</span>", "<span class='notice'>You crush the can of [src] on [M]'s forehead.</span>")
+			user.visible_message(span_warning("[user] crushes the can of [src] on [M]'s forehead!"), span_notice("You crush the can of [src] on [M]'s forehead."))
 		playsound(M,'sound/weapons/pierce.ogg', rand(10,50), TRUE)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(M.loc)
 		crushed_can.icon_state = icon_state
@@ -584,6 +581,7 @@
 			broh.losebreath++
 			switch(broh.losebreath)
 				if(-INFINITY to 0)
+					EMPTY_BLOCK_GUARD
 				if(1 to 2)
 					if(prob(30))
 						user.visible_message("<b>[broh]</b>'s eyes water as [broh.p_they()] chug the can of [src]!")
@@ -617,12 +615,12 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attacked_by(obj/item/I, mob/living/user)
 	if(I.sharpness && !pierced && user && user.a_intent != INTENT_HARM)
-		user.visible_message("<b>[user]</b> pierces [src] with [I].", "<span class='notice'>You pierce \the [src] with [I].</span>")
+		user.visible_message("<b>[user]</b> pierces [src] with [I].", span_notice("You pierce \the [src] with [I]."))
 		playsound(src, "can_open", 50, TRUE)
 		pierced = TRUE
 		return
 	else if(I.force)
-		user.visible_message("<b>[user]</b> crushes [src] with [I]! Party foul!", "<span class='warning'>You crush \the [src] with [I]! Party foul!</span>")
+		user.visible_message("<b>[user]</b> crushes [src] with [I]! Party foul!", span_warning("You crush \the [src] with [I]! Party foul!"))
 		playsound(src, "can_open", 50, TRUE)
 		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(src.loc)
 		crushed_can.icon_state = icon_state
@@ -634,39 +632,35 @@
 	. = ..()
 
 /obj/item/reagent_containers/food/drinks/soda_cans/cola
-	name = "Space Cola"
-	desc = "Cola. in space."
+	name = "Master Cola"
+	desc = "Originally a commission to the Rachnid culinary guilds from Solarian historical reenactors on creating an authentic cola that, at some point, dominated the globe in popularity, this soft drink comes as close to anyone might be able to taste the sodas of yore... But it's still a pretty alright drink."
 	icon_state = "cola"
 	list_reagents = list(/datum/reagent/consumable/space_cola = 30)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/drinks/soda_cans/tonic
-	name = "T-Borg's tonic water"
-	desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
+	name = "Sixikirtchia's Tonic"
+	desc = "A can of water mixed with quinine, which the label purportedly states that it has more health benefits for the Vox than fending off malaria. Most people use it for mixing drinks, Vox or otherwise."
 	icon_state = "tonic"
 	list_reagents = list(/datum/reagent/consumable/tonic = 50)
 	foodtype = ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sodawater
-	name = "soda water"
-	desc = "A can of soda water. Why not make a scotch and soda?"
+	name = "Stitiamix Club"
+	desc = "Mineral-flavored carbonated water, infused on some part of The Shoal. Touts being made out of minerals from embedded asteroids, apparently!"
 	icon_state = "sodawater"
 	list_reagents = list(/datum/reagent/consumable/sodawater = 50)
 
-/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime
-	name = "orange soda"
-	desc = "You wanted ORANGE. It gave you Lemon Lime."
-	icon_state = "lemon-lime"
-	list_reagents = list(/datum/reagent/consumable/lemon_lime = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda
+	name = "Sol Sparkler: Orange Remembrance"
+	desc = "A line of flavored seltzer water from the Solarian Confederation. Its infamy stems from being flavored sparingly enough to warrant it being referred to as being vague memories of the fruit in question."
+	icon_state = "orange_soda"
+	list_reagents = list(/datum/reagent/consumable/orangejuice = 5, /datum/reagent/consumable/sodawater = 25)
 	foodtype = FRUIT
-
-/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime/Initialize()
-	. = ..()
-	name = "lemon-lime soda"
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry
 	name = "Sol Dry"
-	desc = "Maybe this will help your tummy feel better. Maybe not."
+	desc = "A can of ginger ale, known for helping those with upset stomachs. Popularized due to a widespread belief from Solarians that drinking it will alleviate the nausea from bluespace travel."
 	icon_state = "sol_dry"
 	list_reagents = list(/datum/reagent/consumable/sol_dry = 30)
 	foodtype = SUGAR
@@ -678,93 +672,86 @@
 	list_reagents = list(/datum/reagent/consumable/space_up = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/starkist
-	name = "Star-kist"
-	desc = "The taste of a star in liquid form. And, a bit of tuna...?"
-	icon_state = "starkist"
-	list_reagents = list(/datum/reagent/consumable/space_cola = 15, /datum/reagent/consumable/orangejuice = 15)
+/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch
+	name = "Lunapunch"
+	desc = "A soda with a distinctly herbal sweetness and a bitter aftertaste, popular across the C.L.I.P. colonies. Originally marketed as a health soft-drink for members of the CMM, the herbs used in its recipe claim to have health benefits... to dubious results."
+	icon_state = "lunapunch"
+	list_reagents = list(/datum/reagent/consumable/lunapunch = 30)
 	foodtype = SUGAR | FRUIT | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind
-	name = "Space Mountain Wind"
-	desc = "Blows right through you like a space wind."
-	icon_state = "space_mountain_wind"
-	list_reagents = list(/datum/reagent/consumable/spacemountainwind = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail
+	name = "Comet Trail"
+	desc = "A citrusy drink from the Kepori space installation known as The Ring. Known for its sharp flavor and refreshing carbonation -- best served cold."
+	icon_state = "comet_trail"
+	list_reagents = list(/datum/reagent/consumable/comet_trail = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko
-	name = "Thirteen Loko"
-	desc = "The CMO has advised crew members that consumption of Thirteen Loko may result in seizures, blindness, drunkenness, or even death. Please Drink Responsibly."
+/obj/item/reagent_containers/food/drinks/soda_cans/vimukti
+	name = "Vimukti"
+	desc = "A liquor brewed from sweet lichen scraped off the walls of Shoal water condensers. Stamped with the thirteen-spoked wheel of enlightenment. Spiritual Vox consider it to open the mind's boundaries."
 	icon_state = "thirteen_loko"
-	list_reagents = list(/datum/reagent/consumable/ethanol/thirteenloko = 30)
+	list_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb
-	name = "Dr. Gibb"
-	desc = "A delicious mixture of 42 different flavors."
-	icon_state = "dr_gibb"
-	list_reagents = list(/datum/reagent/consumable/dr_gibb = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx
+	name = "Tadrixx"
+	desc = "A Kalixcian drink made from a plant that tastes similar to sassafrass, which is used in root beer. A stumpy drake holding a mug of it is on the front."
+	icon_state = "tadrixx"
+	list_reagents = list(/datum/reagent/consumable/tadrixx = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game
-	name = "Pwr Game"
-	desc = "The only drink with the PWR that true gamers crave. When a gamer talks about gamerfuel, this is what they're literally referring to."
+/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel
+	name = "PAC-Fuel"
+	desc = "A carbonated energy drink themed after the purple coloration, similar to plasma. It seems to have gotten a sponsorship with the the G.E.C., with a special offer for some sort of deal on... gaming gear and industrial equipment?"
 	icon_state = "purple_can"
-	list_reagents = list(/datum/reagent/consumable/pwr_game = 30)
+	list_reagents = list(/datum/reagent/consumable/pacfuel = 30)
 
-/obj/item/reagent_containers/food/drinks/soda_cans/shamblers
-	name = "Shambler's juice"
-	desc = "~Shake me up some of that Shambler's Juice!~"
-	icon_state = "shamblers"
-	list_reagents = list(/datum/reagent/consumable/shamblers = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch
+	name = "Shoal Punch"
+	desc = "Carbonated fruit soda, made from a mix of dozens of fruits collected and grown on The Shoal. There's an extensive list of potential allergens on the back."
+	icon_state = "shoal_punch"
+	list_reagents = list(/datum/reagent/consumable/shoal_punch = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull
-	name = "Grey Bull"
-	desc = "Grey Bull, it gives you gloves!"
+/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk
+	name = "Crosstalk"
+	desc = "Crosstalk! Share the energy with everyone! The can is a little thin to be passing it around to actually share the energy drink around, though."
 	icon_state = "energy_drink"
-	list_reagents = list(/datum/reagent/consumable/grey_bull = 20)
+	list_reagents = list(/datum/reagent/consumable/crosstalk = 20)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy
-	name = "Monkey Energy"
-	desc = "Unleash the ape!"
-	icon_state = "monkey_energy"
-	item_state = "monkey_energy"
-	list_reagents = list(/datum/reagent/consumable/monkey_energy = 40, /datum/reagent/consumable/electrolytes = 10)
+/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy
+	name = "Xeno-Energy"
+	desc = "A sickly green energy drink that poses itself as made from the real blood of xenomorphs. Deeply controversial among the BARD ranks."
+	icon_state = "xeno_energy"
+	item_state = "xeno_energy"
+	list_reagents = list(/datum/reagent/consumable/xeno_energy = 40, /datum/reagent/consumable/electrolytes = 10)
 	foodtype = SUGAR | JUNKFOOD
-
-/obj/item/reagent_containers/food/drinks/soda_cans/efuel
-	name = "E-Fuel"
-	desc = "Shocking for the Elzu!"
-	icon_state = "monkey_energy"
-	item_state = "monkey_energy"
-	list_reagents = list(/datum/reagent/consumable/electrolytes = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/air
-	name = "canned air"
-	desc = "There is no air shortage. Do not drink."
+	name = "Tradewind Canned"
+	desc = "Intended to be filled with air from home planets for the sake of nostalgia after it's initial failure as an emergency method of 'canning air'. Tradewind Canned - a breath from home."
 	icon_state = "air"
 	list_reagents = list(/datum/reagent/nitrogen = 24, /datum/reagent/oxygen = 6)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/molten
 	name = "Molten Bubbles"
-	desc = "A spicy cola to cool the nerves and burn the soul."
+	desc = "A spicy soft drink made from a coca-like plant from Kalixcis. Popularly served both cold -and- hot, depending on the weather."
 	icon_state = "molten"
-	list_reagents = list(/datum/reagent/medicine/molten_bubbles = 50)
+	list_reagents = list(/datum/reagent/consumable/molten = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/plasma
 	name = "Plasma Fizz"
-	desc = "A dangerous fusion of flavors!"
+	desc = "A spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
 	icon_state = "plasma"
-	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
+	list_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 50)
 
 /obj/item/reagent_containers/food/drinks/ration
 	name = "empty ration pouch"
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
 	icon = 'icons/obj/food/ration.dmi'
-	icon_state = "ration_package"
+	icon_state = "ration_drink"
 	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
 	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	in_container = TRUE
@@ -774,8 +761,8 @@
 	volume = 50
 
 /obj/item/reagent_containers/food/drinks/ration/proc/open_ration(mob/user)
-	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
-	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	to_chat(user, span_notice("You tear open \the [src]."))
+	playsound(user.loc, 'sound/items/glass_cap.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	spillable = TRUE
 
@@ -787,7 +774,7 @@
 
 /obj/item/reagent_containers/food/drinks/ration/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		to_chat(user, span_warning("The [src] is sealed shut!"))
 		return 0
 	return ..()
 
