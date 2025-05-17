@@ -379,7 +379,7 @@
 /obj/structure/window/get_dumping_location(obj/item/storage/source,mob/user)
 	return null
 
-/obj/structure/window/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
+/obj/structure/window/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/requester)
 	if(!density)
 		return TRUE
 	if(fulltile || (dir == to_dir))

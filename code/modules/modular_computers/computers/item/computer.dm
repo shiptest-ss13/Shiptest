@@ -260,14 +260,14 @@
  * The message that the program wishes to display.
  */
 
-/obj/item/modular_computer/proc/alert_call(datum/computer_file/program/caller, alerttext, sound = 'sound/machines/twobeep_high.ogg')
-	if(!caller || !caller.alert_able || caller.alert_silenced || !alerttext) //Yeah, we're checking alert_able. No, you don't get to make alerts that the user can't silence.
+/obj/item/modular_computer/proc/alert_call(datum/computer_file/program/call_source, alerttext, sound = 'sound/machines/twobeep_high.ogg')
+	if(!call_source || !call_source.alert_able || call_source.alert_silenced || !alerttext) //Yeah, we're checking alert_able. No, you don't get to make alerts that the user can't silence.
 		return
 	playsound(src, sound, 50, TRUE)
-	visible_message(span_notice("The [src] displays a [caller.filedesc] notification: [alerttext]"))
+	visible_message(span_notice("The [src] displays a [call_source.filedesc] notification: [alerttext]"))
 	var/mob/living/holder = loc
 	if(istype(holder))
-		to_chat(holder, "[icon2html(src)] [span_notice("The [src] displays a [caller.filedesc] notification: [alerttext]")]")
+		to_chat(holder, "[icon2html(src)] [span_notice("The [src] displays a [call_source.filedesc] notification: [alerttext]")]")
 
 // Function used by NanoUI's to obtain data for header. All relevant entries begin with "PC_"
 /obj/item/modular_computer/proc/get_header_data()
