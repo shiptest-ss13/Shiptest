@@ -3,7 +3,7 @@
 	desc = "Used for long-distance surveillance."
 	item_state = "binoculars"
 	icon_state = "binoculars"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	w_class = WEIGHT_CLASS_SMALL
 	var/mob/listeningTo
 	var/zoom_out_amt = 5.5
