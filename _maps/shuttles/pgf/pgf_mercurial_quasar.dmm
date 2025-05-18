@@ -3,7 +3,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/gezena,
 /obj/item/clothing/head/helmet/space/gezena,
 /obj/effect/turf_decal/borderfloor{
@@ -12,7 +11,8 @@
 /obj/machinery/light/directional/south{
 	pixel_x = 5
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "at" = (
 /obj/effect/turf_decal/techfloor/orange,
@@ -160,13 +160,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "cx" = (
-/obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/gezena,
 /obj/item/clothing/head/helmet/space/gezena,
 /obj/effect/turf_decal/borderfloor{
 	dir = 6
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "cy" = (
 /obj/structure/table,
@@ -658,6 +658,12 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "gX" = (
@@ -1021,6 +1027,9 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 2
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "lJ" = (
@@ -1174,6 +1183,9 @@
 /turf/open/floor/engine/air,
 /area/ship/engineering)
 "qd" = (
+/obj/effect/turf_decal/spline/fancy/opaque/orange{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "qg" = (
@@ -1309,6 +1321,12 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "rI" = (
@@ -1373,7 +1391,13 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "sQ" = (
 /obj/structure/platform/military,
@@ -1787,7 +1811,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "yE" = (
 /obj/machinery/porta_turret/ship/pgf{
@@ -1849,6 +1876,12 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 1
 	},
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 2
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/corner{
+	dir = 2
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "zv" = (
@@ -1872,6 +1905,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/orange{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "zC" = (
@@ -1889,11 +1925,21 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/green/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "zM" = (
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
+"Ab" = (
+/obj/structure/sign/number/random,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering)
 "At" = (
 /obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
@@ -2137,6 +2183,12 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
+"Ff" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 2
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "Fh" = (
 /obj/machinery/porta_turret/ship/pgf/light{
 	dir = 5;
@@ -2344,9 +2396,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "HU" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/patterned/cargo_one,
-/area/ship/cargo)
+/obj/structure/sign/number/random,
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/engineering)
 "Iq" = (
 /obj/structure/closet/crate/bin{
 	pixel_y = 13;
@@ -2704,6 +2756,21 @@
 	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
+"LH" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/cargo)
 "LL" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/turf_decal/corner_steel_grid{
@@ -2748,7 +2815,13 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/machinery/power/apc/auto_name/directional/south,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/orange{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "MK" = (
 /obj/machinery/door/airlock{
@@ -2850,6 +2923,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/green/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -3252,7 +3331,10 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "Ve" = (
 /obj/machinery/computer/atmos_control/tank/air_tank{
@@ -3348,6 +3430,12 @@
 	pixel_y = -11
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/effect/turf_decal/trimline/opaque/green/filled/corner{
+	dir = 2
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/corner{
+	dir = 2
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "WG" = (
@@ -3396,7 +3484,10 @@
 /obj/structure/railing/corner{
 	dir = 2
 	},
-/turf/open/floor/plasteel/patterned/cargo_one,
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
 "XX" = (
 /obj/machinery/porta_turret/ship/pgf/light{
@@ -3463,6 +3554,12 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/green/corner{
+	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
@@ -3583,6 +3680,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/green/corner{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 
@@ -3620,7 +3723,7 @@ sB
 "}
 (3,1,1) = {"
 sB
-fY
+Ab
 jR
 fY
 IF
@@ -3636,7 +3739,7 @@ sB
 "}
 (4,1,1) = {"
 sB
-fY
+Ab
 fZ
 di
 au
@@ -3652,7 +3755,7 @@ sB
 "}
 (5,1,1) = {"
 sB
-fY
+Ab
 nL
 xS
 fv
@@ -3668,7 +3771,7 @@ sB
 "}
 (6,1,1) = {"
 sB
-oO
+HU
 fY
 fC
 uY
@@ -4057,7 +4160,7 @@ sB
 at
 Cj
 eL
-cV
+LH
 XW
 Tv
 vh
@@ -4106,8 +4209,8 @@ sB
 CH
 ZY
 qt
-HU
 NL
+Ff
 cx
 CH
 sB
