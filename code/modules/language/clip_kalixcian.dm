@@ -12,7 +12,7 @@
 	additional_syllable_low = -1
 	additional_syllable_high = 2
 	key = "2"
-	flags = TONGUELESS_SPEECH
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	icon_state = "clip_kalixcian"
 	space_chance = 30
 	syllables = list(
