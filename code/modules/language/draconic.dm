@@ -11,8 +11,8 @@
 	sentence_chance = 0
 	between_word_sentence_chance = 10
 	between_word_space_chance = 75
-	additional_syllable_low = -1
-	additional_syllable_high = 2
+	additional_syllable_low = 0
+	additional_syllable_high = 3
 	syllables = list(
 		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
 		"ha", "ah", "he", "eh", "hi", "ih", "ho", "oh", "hu", "uh", "hs", "sh",
