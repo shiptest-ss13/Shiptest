@@ -12,13 +12,14 @@
 	additional_syllable_low = -6
 	additional_syllable_high = -2
 	syllables = list( //slang cut with some assorted syllables.
-		"innit", "sod", "toff", "blo", "ody", "'s", "slag", "frog",
-		"bla", "vent", "cour", "'em", "'im", "stars", "frag", "ha",
-		"sha", "mov", "camon", "burn", "gods", "fore",
+		"inn","it", "sod", "toff", "blo", "ody", "slag", "frog",
+		"bla", "st", "ve", "nt", "co", "ur", "'em", "'im", "sta", "rs", "frag", "ha",
+		"sha", "mov", "cam", "on", "bu", "rn", "gods", "fore",
 		"lah", "kah", "sah", "rawh", "leh", "keh", "seh", "reh",
 		"ze", "ke", "sie", "rye", "kou", "sou",
 		"gros", "sic", "die", "ich", "end", "auf", "ach",
-		"mar", "mark", "marg", "chur", "sha", "bis"
+		"mar", "mark", "marg", "chur", "sha", "bis",
+		"'", "'s", "'m","'em","'et","'ve", "mh",
 	)
 	icon_state = "cant"
 	default_priority = 80

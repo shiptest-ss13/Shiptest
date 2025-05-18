@@ -7,7 +7,7 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_GEZENA)
-	H.grant_language(/datum/language/kalixcian_common)
+	H.grant_language(/datum/language/kalixcian_common, source=LANGUAGE_FACTION)
 
 //Playable Roles (put in ships):
 /datum/outfit/job/gezena/assistant

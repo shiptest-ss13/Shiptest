@@ -18,6 +18,9 @@
 /// If applied to a non-human (no species) atom, this is effectively the same as [LANGUAGE_ATOM].
 #define LANGUAGE_SPECIES "species"
 
+/// Language is linked to the spawn faction
+#define LANGUAGE_FACTION "faction"
+
 // More specific language sources.
 // Only ever goes away when dismissed directly.
 
