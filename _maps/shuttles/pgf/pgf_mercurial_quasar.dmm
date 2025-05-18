@@ -97,7 +97,6 @@
 "bn" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
-/obj/structure/grille,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -121,9 +120,6 @@
 	icon_state = "4-8"
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/effect/turf_decal/etherbor/right{
-	pixel_y = 16
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "bC" = (
@@ -309,9 +305,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/etherbor/left{
-	pixel_y = 16
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "dn" = (
@@ -325,10 +318,6 @@
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "dA" = (
-/obj/machinery/power/apc/auto_name/directional/south{
-	pixel_y = -26;
-	pixel_x = 4
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 10
 	},
@@ -337,7 +326,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -10;
+	pixel_x = -12;
 	pixel_y = -19
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -346,6 +335,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "dN" = (
@@ -1139,9 +1129,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/etherbor/center{
-	pixel_y = 16
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ok" = (
@@ -1297,6 +1284,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/etherbor/right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "rr" = (
@@ -1358,9 +1346,6 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south,
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = -2
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -1369,8 +1354,9 @@
 	},
 /obj/machinery/light_switch{
 	pixel_y = 23;
-	pixel_x = 10
+	pixel_x = 11
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "sK" = (
@@ -1533,6 +1519,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/etherbor/left,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "tV" = (
@@ -1930,15 +1917,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_y = 25;
-	pixel_x = 6
-	},
 /obj/machinery/light_switch{
 	dir = 2;
 	pixel_y = 22;
-	pixel_x = -7
+	pixel_x = -12
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Cb" = (
@@ -2083,13 +2067,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/directional/east{
-	pixel_y = 3
-	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/machinery/light_switch{
 	dir = 8;
-	pixel_y = -10;
+	pixel_y = -12;
 	pixel_x = 20
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -2103,6 +2084,7 @@
 	dir = 1;
 	pixel_y = 31
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "EU" = (
@@ -2191,19 +2173,17 @@
 	pixel_y = 0
 	},
 /obj/machinery/newscaster/directional/west{
-	pixel_y = 9
+	pixel_y = 15
 	},
 /obj/structure/window/reinforced{
 	dir = 4;
 	pixel_x = 3
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_y = -7
-	},
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
 "FI" = (
@@ -2738,6 +2718,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/etherbor/center,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Md" = (
@@ -2765,10 +2746,8 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/obj/machinery/power/apc/auto_name/directional/south{
-	pixel_y = -26
-	},
 /obj/machinery/light/directional/west,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "MK" = (
@@ -2789,7 +2768,6 @@
 /area/ship/crew/dorm)
 "MZ" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
-/obj/structure/grille,
 /obj/structure/grille,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -3171,15 +3149,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "TW" = (
-/obj/machinery/power/apc/auto_name/directional/east{
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm)
 "TZ" = (
@@ -3366,17 +3342,15 @@
 /obj/effect/turf_decal/spline/fancy/opaque/green{
 	dir = 9
 	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_y = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = -10
+	pixel_y = -11
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "WG" = (
