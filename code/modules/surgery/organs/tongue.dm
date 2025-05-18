@@ -260,7 +260,7 @@
 		/datum/language/aphasia,
 		/datum/language/moffic,
 		/datum/language/rachnidian,
-		/datum/language/buzzwords
+		/datum/language/buzzwords,
 		/datum/language/miners_cant,
 		/datum/language/clip_kalixcian,
 	))

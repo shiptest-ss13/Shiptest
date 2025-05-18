@@ -303,7 +303,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mods)
 
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
-	return (message, understood)
+	return list(message, understood)
 
 /mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, list/message_mods = list())
 	var/eavesdrop_range = 0
