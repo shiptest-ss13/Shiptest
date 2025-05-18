@@ -96,6 +96,8 @@
 	var/thunder_chance = 0
 	/// Whether the main stage will block vision
 	var/opacity_in_main_stage = FALSE
+	/// This weather's effect on fires
+	var/fire_suppression = 0
 
 /datum/weather/New(datum/weather_controller/passed_controller)
 	..()
@@ -304,6 +306,7 @@
 		N.plane = overlay_plane
 		N.icon = 'icons/effects/weather_effects.dmi'
 		N.color = weather_color
+		N.active_weather = src
 		set_area_icon_state(N)
 		if(stage == END_STAGE)
 			N.color = null
@@ -311,6 +314,7 @@
 			N.layer = initial(N.layer)
 			N.plane = initial(N.plane)
 			N.set_opacity(FALSE)
+			N.active_weather = null
 
 /datum/weather/proc/set_area_icon_state(area/Area)
 	switch(stage)

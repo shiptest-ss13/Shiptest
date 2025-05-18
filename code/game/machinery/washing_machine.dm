@@ -137,6 +137,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	var/bloody_mess = 0
 	var/obj/item/color_source
 	var/max_wash_capacity = 5
+	var/should_we_be_dense = TRUE
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
@@ -241,9 +242,14 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	. = ..()
 	if(.)
 		var/obj/item/clothing/under/U = .
-		can_adjust = initial(U.can_adjust)
-		if(!can_adjust && adjusted) //we deadjust the uniform if it's now unadjustable
-			toggle_jumpsuit_adjust()
+		//we deadjust the uniform if it's now unadjustable
+		roll_down = initial(U.roll_down)
+		roll_sleeves = initial(U.roll_sleeves)
+		switch(adjusted)
+			if(ALT_STYLE)
+				toggle_jumpsuit_adjust(ALT_STYLE)
+			if(ROLLED_STYLE)
+				toggle_jumpsuit_adjust(ROLLED_STYLE)
 
 /obj/item/clothing/under/machine_wash(obj/machinery/washing_machine/WM)
 	freshly_laundered = TRUE
@@ -347,6 +353,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 /obj/machinery/washing_machine/open_machine(drop = 1)
 	..()
-	if(initial(density))
+	if(should_we_be_dense)
 		density = TRUE //because machinery/open_machine() sets it to 0
 	color_source = null

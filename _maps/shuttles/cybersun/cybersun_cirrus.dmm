@@ -4516,8 +4516,7 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/freezer{
-	name = "organ freezer";
-	anchored = 1
+	name = "organ freezer"
 	},
 /obj/item/organ/heart/cybernetic/tier2,
 /obj/item/organ/heart/cybernetic/tier3,
@@ -4863,7 +4862,8 @@
 /obj/machinery/washing_machine{
 	pixel_x = -10;
 	pixel_y = -3;
-	density = 0
+	density = 0;
+	should_we_be_dense = 0
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)

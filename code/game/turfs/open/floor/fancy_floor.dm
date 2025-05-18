@@ -19,6 +19,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	color = WOOD_COLOR_GENERIC
+	flammability = 3
 
 /turf/open/floor/wood/mahogany
 	color = WOOD_COLOR_RICH
@@ -102,6 +103,7 @@
 	var/ore_type = /obj/item/stack/ore/glass
 	var/turfverb = "uproot"
 	tiled_dirt = FALSE
+	flammability = 2 // california simulator
 
 /turf/open/floor/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -148,10 +150,11 @@
 	initial_gas_mix = FROZEN_ATMOS
 	slowdown = 2
 	bullet_sizzle = TRUE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	flammability = -5 // absolutely not
 
 /turf/open/floor/grass/snow/spawniconchange()
 	return
@@ -161,20 +164,6 @@
 
 /turf/open/floor/grass/snow/crowbar_act(mob/living/user, obj/item/I)
 	return
-
-/turf/open/floor/grass/snow/basalt //By your powers combined, I am captain planet
-	gender = NEUTER
-	name = "volcanic floor"
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "basalt"
-	ore_type = /obj/item/stack/ore/glass/basalt
-	initial_gas_mix = OPENTURF_LOW_PRESSURE
-	slowdown = 0
-
-/turf/open/floor/grass/snow/basalt/spawniconchange()
-	if(prob(15))
-		icon_state = "basalt[rand(0, 12)]"
-		set_basalt_light(src)
 
 /turf/open/floor/grass/snow/safe
 	slowdown = 1.5
@@ -190,15 +179,10 @@
 	ore_type = /obj/item/stack/ore/glass/basalt
 	turfverb = "dig up"
 	slowdown = 0
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-
-/turf/open/floor/grass/fakebasalt/spawniconchange()
-	if(prob(15))
-		icon_state = "basalt[rand(0, 12)]"
-		set_basalt_light(src)
 
 /turf/open/floor/carpet
 	name = "carpet"
@@ -218,6 +202,7 @@
 	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+	flammability = 5
 
 /turf/open/floor/carpet/examine(mob/user)
 	. = ..()

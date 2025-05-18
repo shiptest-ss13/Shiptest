@@ -14,6 +14,7 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
+	uniform = /obj/item/clothing/under/color/black
 	shoes = /obj/item/clothing/shoes/sneakers/black
 
 /datum/outfit/job/independent/assistant/waiter
@@ -27,6 +28,11 @@
 	l_pocket = /obj/item/lighter
 	r_pocket = /obj/item/reagent_containers/glass/rag
 
+/datum/outfit/job/independent/assistant/cheap //for Miskilamo ships
+	name = "Independent - Assistant (Low Budget)"
+
+	uniform = /obj/item/clothing/under/utility
+
 /datum/outfit/job/independent/assistant/waiter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -34,7 +40,7 @@
 	var/obj/item/card/id/W = H.get_idcard()
 	W.access += list(ACCESS_KITCHEN)
 
-/datum/outfit/job/independent/assistant/fancy
+/datum/outfit/job/independent/assistant/fancy //for ISF ships
 	name = "Independent - Assistant (Fancy)"
 
 	shoes = /obj/item/clothing/shoes/laceup

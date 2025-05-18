@@ -6186,7 +6186,6 @@
 "IL" = (
 /obj/structure/rack,
 /obj/item/ammo_box/magazine/m556_42_hydra{
-	pixel_y = 0;
 	pixel_x = 8
 	},
 /obj/machinery/light/directional/west,
@@ -6726,7 +6725,8 @@
 /obj/effect/mob_spawn/human/corpse/pgf/captain,
 /obj/item/storage/belt/sabre/pgf,
 /obj/effect/landmark/mission_poi/main{
-	already_spawned = 1
+	already_spawned = 1;
+	spawn_in_containter = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)

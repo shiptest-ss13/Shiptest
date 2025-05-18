@@ -18,8 +18,10 @@
 	name = "metal"
 	desc = "Sheets made out of metal."
 	singular_name = "metal sheet"
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-metal"
 	item_state = "sheet-metal"
+
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
 	throwforce = 10
 	flags_1 = CONDUCT_1
@@ -79,6 +81,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	name = "plasteel"
 	singular_name = "plasteel sheet"
 	desc = "This sheet is an alloy of iron and plasma."
+	icon = 'icons/obj/materials/sheets.dmi'
 	icon_state = "sheet-plasteel"
 	item_state = "sheet-plasteel"
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)

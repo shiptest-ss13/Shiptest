@@ -373,10 +373,9 @@
 			user,
 			wield_delay,
 			user,
-			FALSE,
+			IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE,
 			TRUE,
-			CALLBACK(src, PROC_REF(is_wielded)),
-			timed_action_flags = IGNORE_USER_LOC_CHANGE
+			CALLBACK(src, PROC_REF(is_wielded))
 			)
 			)
 			wielded_fully = TRUE
@@ -866,7 +865,7 @@
 	final_spread += bonus_spread
 
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
-		randomized_bonus_spread += rand(0, gunslinger_spread_bonus)
+		randomized_bonus_spread += min(gunslinger_spread_bonus, rand(0, gunslinger_spread_bonus))
 
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 		randomized_bonus_spread += rand(0, 25)

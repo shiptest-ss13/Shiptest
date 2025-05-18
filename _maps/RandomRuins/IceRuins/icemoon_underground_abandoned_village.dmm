@@ -491,7 +491,9 @@
 /area/ruin/powered)
 "PQ" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper{
+	weapon_drop_chance = 100
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
