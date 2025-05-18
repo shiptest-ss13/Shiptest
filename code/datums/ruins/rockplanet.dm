@@ -49,7 +49,6 @@
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
 	ruin_mission_types = list(
 		/datum/mission/ruin/signaled/drill/mining_base,
-		/datum/mission/ruin/ns_manager,
 	)
 
 /datum/mission/ruin/signaled/drill/mining_base
