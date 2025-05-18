@@ -60,11 +60,6 @@ Interstellar Frontier Mining Conglormerate Board of Directors"}
 
 HEEEEEEEEEEEEELP ME"}
 
-/obj/item/paper/spam/troll
-	name = "important message"
-	sender = "unknown sender"
-	default_raw_text = "<p>░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░<br>░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░<br>░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░<br>░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░<br>░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░<br>█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█<br>█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█<br>░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░<br>░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░<br>░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░<br>░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░<br>░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░<br>░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░<br>░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░<br>░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░</p> </span>"
-
 /obj/item/paper/spam/pgf_marine_test
 	name = "Aptitude Test"
 	sender = "Pan-Gezeanan Mariner Cores Recruitment Office"
