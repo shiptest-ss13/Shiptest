@@ -5,7 +5,7 @@
 	icon_state = "red_suit"
 	item_state = "red_suit"
 	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/curator/skirt
 	name = "sensible suitskirt"
@@ -15,7 +15,7 @@
 	item_state = "red_suit"
 	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/civilian/curator/treasure_hunter
@@ -41,5 +41,5 @@
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
-	can_adjust = FALSE
+
 	resistance_flags = NONE
