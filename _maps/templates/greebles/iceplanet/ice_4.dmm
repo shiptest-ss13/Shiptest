@@ -31,7 +31,9 @@
 /turf/template_noop,
 /area/template_noop)
 "Y" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals,
+/obj/effect/spawner/random/rare_frontiersmen{
+	loot = list(/mob/living/simple_animal/hostile/human/frontier/ranged/internals)
+	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/template_noop)
 
