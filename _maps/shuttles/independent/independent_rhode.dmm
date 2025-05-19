@@ -41,12 +41,6 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"bo" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/template_noop,
-/area/template_noop)
 "bs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -145,6 +139,7 @@
 	},
 /obj/effect/turf_decal/corner_techfloor_grid/full,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cQ" = (
@@ -576,6 +571,9 @@
 	dir = 8;
 	launch_status = 0;
 	preferred_direction = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
@@ -1244,6 +1242,9 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
 "Cj" = (
@@ -1528,14 +1529,18 @@
 "Il" = (
 /obj/structure/rack,
 /obj/item/storage/bag/ore{
-	pixel_x = 0;
+	pixel_x = 8;
 	pixel_y = -4
 	},
 /obj/item/pickaxe/drill{
-	pixel_x = 0;
+	pixel_x = 10;
 	pixel_y = 7
 	},
 /obj/effect/turf_decal/box,
+/obj/item/stack/sheet/mineral/wood/fifty{
+	pixel_x = -9;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Ir" = (
@@ -1791,6 +1796,9 @@
 "Ov" = (
 /obj/machinery/light/floor,
 /obj/structure/railing,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
 "OQ" = (
@@ -1950,6 +1958,9 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "SP" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/engine/hull,
 /area/ship/cargo)
 "ST" = (
@@ -2315,7 +2326,7 @@ Sv
 Sv
 Sv
 Sv
-bo
+Sv
 Sv
 ti
 hM
