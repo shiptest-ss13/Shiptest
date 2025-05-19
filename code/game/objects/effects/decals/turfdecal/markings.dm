@@ -431,12 +431,8 @@
 /obj/effect/turf_decal/number/left_zero
 	icon_state = "0-"
 
-// Dash decal
 /obj/effect/turf_decal/dash
 	icon_state = "dash"
-
-/obj/effect/turf_decal/dot
-	icon_state = "dot"
 
 
 

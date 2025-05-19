@@ -216,7 +216,10 @@
 /obj/effect/turf_decal/trimline/opaque/bar/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/dash,
+/obj/effect/landmark/outpost/hangar_numbers{
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "pm" = (
@@ -475,10 +478,6 @@
 	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
-	},
-/obj/effect/landmark/outpost/hangar_numbers{
-	pixel_x = 0;
-	pixel_y = 0
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)

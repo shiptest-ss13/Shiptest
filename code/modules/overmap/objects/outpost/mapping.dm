@@ -42,8 +42,9 @@ GLOBAL_LIST_EMPTY(outpost_landmarks)
 /obj/effect/landmark/outpost/shaft_number/proc/write_number(num)
 	num = text2num(num)
 
-	var/decal_type = get_number_decal(num, EAST)
+	var/decal_type = get_number_decal(num, WEST)
 	new decal_type(loc)
+	new /obj/effect/turf_decal/dash(loc)
 
 	qdel(src)
 
