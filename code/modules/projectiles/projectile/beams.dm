@@ -170,6 +170,11 @@
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'
+	hitsound_glass = null
+	hitsound_stone = null
+	hitsound_metal = null
+	hitsound_wood = null
+	hitsound_snow = null
 	eyeblur = 0
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
