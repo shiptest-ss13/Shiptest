@@ -1,3 +1,5 @@
+//Gives these guys a shared type path at some point
+
 /obj/effect/spawner/random/randomthreat
 	var/static/mob_category = rand(1, 3)
 
