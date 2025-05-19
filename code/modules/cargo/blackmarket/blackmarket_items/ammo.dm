@@ -36,6 +36,28 @@
 	stock_max = 6
 	availability_prob = 0
 
+/datum/blackmarket_item/ammo/a762_box
+	name = "7.62x40mm CLIP Ammo Box"
+	desc = "A 60 round ammo box of 7.62x40mm CLIP."
+	item = /datum/supply_pack/ammo/a762_ammo_box
+
+	price_min = 250
+	price_max = 600
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0
+
+/datum/blackmarket_item/ammo/a858_box
+	name = "8x58mm Caseless Ammo Box"
+	desc = "A 20 round ammo box of 8x58 caseless."
+	item = /obj/item/storage/box/ammo/a858
+
+	price_min = 150
+	price_max = 300
+	stock_min = 3
+	stock_max = 6
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/e40_mag
 	name = "Eoehoma .299 Caseless Magazine"
 	desc = "A 30 round magazine for the E-40 Hybrid Rifle."

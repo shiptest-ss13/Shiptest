@@ -324,6 +324,7 @@
 	name = "SSG-669C Rotary Sniper Rifle"
 	desc = "I could tell you it's full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm caseless."
 	item = /obj/item/gun/ballistic/rifle/solgov
+	pair_item = list(/datum/blackmarket_item/ammo/a858_box)
 
 	price_min = 3000
 	price_max = 6000
@@ -400,7 +401,7 @@
 	name = "Polymer Survivor Rifle"
 	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
 	item = /obj/item/gun/ballistic/rifle/polymer
-	//pair_item = list(/datum/blackmarket_item/ammo/polymer_clip)
+	pair_item = list(/datum/blackmarket_item/ammo/a762_box)
 
 	price_min = 600
 	price_max = 1250
