@@ -88,7 +88,7 @@
 
 	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/greeble/random_ruin_greeble = 15,
+		/obj/effect/spawner/random/greeble/moon_crater = 15,
 		/obj/structure/vein/moon = 2,
 		/obj/structure/vein/moon/classtwo = 4,
 		/obj/structure/vein/moon/classthree = 1,
@@ -100,7 +100,7 @@
 
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/greeble/random_ruin_greeble = 1
+		/obj/effect/spawner/random/greeble/moon_crater = 1
 	)
 
 /datum/biome/cave/moon
@@ -114,48 +114,35 @@
 		/obj/structure/vein/moon/classthree = 1,
 	)
 
+//Redudent, possibly remove.
+/obj/effect/spawner/random/greeble/moon_crater
+	name = "random planet greeble chance"
+	loot = list(/obj/effect/greeble_spawner/moon)
 
 /obj/effect/greeble_spawner/moon
 	name = "moon greeble spawner"
+	template_subtype_path = /datum/map_template/greeble/moon/crater
 
-/obj/effect/greeble_spawner/moon/crater1
-	template = /datum/map_template/greeble/moon/crater1
-
-/obj/effect/greeble_spawner/moon/crater2
-	template = /datum/map_template/greeble/moon/crater2
-
-/obj/effect/greeble_spawner/moon/crater3
-	template = /datum/map_template/greeble/moon/crater3
-
-/obj/effect/greeble_spawner/moon/crater4
-	template = /datum/map_template/greeble/moon/crater4
-
-/obj/effect/greeble_spawner/moon/crater5
-	template = /datum/map_template/greeble/moon/crater5
-
-/obj/effect/greeble_spawner/moon/crater6
-	template = /datum/map_template/greeble/moon/crater6
-
-/datum/map_template/greeble/moon/crater1
+/datum/map_template/greeble/moon/crater/crater_1
 	name = "Crater 1"
 	mappath = "_maps/templates/greebles/moon/moon_crater_1.dmm"
 
-/datum/map_template/greeble/moon/crater2
+/datum/map_template/greeble/moon/crater/crater_2
 	name = "Crater 2"
 	mappath = "_maps/templates/greebles/moon/moon_crater_2.dmm"
 
-/datum/map_template/greeble/moon/crater3
+/datum/map_template/greeble/moon/crater/crater_3
 	name = "Crater 3"
 	mappath = "_maps/templates/greebles/moon/moon_crater_3.dmm"
 
-/datum/map_template/greeble/moon/crater4
+/datum/map_template/greeble/moon/crater/crater_4
 	name = "Crater 4"
 	mappath = "_maps/templates/greebles/moon/moon_crater_4.dmm"
 
-/datum/map_template/greeble/moon/crater5
+/datum/map_template/greeble/moon/crater/crater_5
 	name = "Crater 5"
 	mappath = "_maps/templates/greebles/moon/moon_crater_5.dmm"
 
-/datum/map_template/greeble/moon/crater6
+/datum/map_template/greeble/moon/crater/crater_6
 	name = "Crater 6"
 	mappath = "_maps/templates/greebles/moon/moon_crater_6.dmm"
