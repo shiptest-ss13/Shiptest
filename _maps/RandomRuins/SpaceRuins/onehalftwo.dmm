@@ -1,16 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/space/has_grav/refuelingpost/lower)
 "ad" = (
 /obj/machinery/mech_bay_recharge_port{
 	dir = 8
@@ -547,8 +535,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "gt" = (
-/obj/machinery/conveyor/auto{
-	dir = 4
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "conveyors"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
@@ -665,7 +654,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/plasteel/mono/white/airless,
+/turf/open/floor/plasteel/mono/white/plasma,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "hA" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1326,7 +1315,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
 "pJ" = (
-/obj/machinery/conveyor_switch/oneway,
+/obj/machinery/conveyor_switch/oneway{
+	id = "conveyors"
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/patterned/grid,
@@ -1356,7 +1347,8 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/security/glass{
-	name = "Armory"
+	name = "Armory";
+	welded = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
@@ -1636,14 +1628,14 @@
 /turf/open/floor/plasteel/patterned,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
 "tq" = (
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "fuelingholo";
-	dir = 4
-	},
 /obj/machinery/door/poddoor/preopen{
 	id = "fuelinghangar"
 	},
 /obj/structure/cable/yellow,
+/obj/machinery/power/shieldwallgen/atmos/strong{
+	dir = 4;
+	id = "fuelingholo"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "tw" = (
@@ -2118,7 +2110,8 @@
 "zt" = (
 /obj/machinery/door/airlock/security{
 	dir = 8;
-	name = "Security"
+	name = "Security";
+	welded = 1
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only{
@@ -2505,7 +2498,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/mono/white/airless,
+/turf/open/floor/plasteel/mono/white/plasma,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "Gb" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -3012,10 +3005,6 @@
 /area/ruin/space/has_grav/refuelingpost/starboard)
 "Lt" = (
 /obj/machinery/door/airlock/glass_large,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/lower)
 "Lz" = (
@@ -3123,7 +3112,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "ML" = (
-/obj/structure/sign/warning/securearea,
+/obj/structure/sign/warning/securearea{
+	pixel_x = 0;
+	pixel_y = 30
+	},
+/obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "MO" = (
@@ -3358,8 +3351,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "QS" = (
-/obj/machinery/conveyor/auto{
-	dir = 4
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "conveyors"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/refuelingpost/cargo)
@@ -3429,8 +3423,9 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/conveyor/auto{
-	dir = 4
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "conveyors"
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -3441,6 +3436,7 @@
 "Rt" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/mono/dark/plasma,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "Rv" = (
@@ -3474,7 +3470,11 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/hivebotshuttle)
 "RY" = (
-/obj/structure/sign/warning/securearea,
+/obj/structure/sign/warning/securearea{
+	pixel_x = 0;
+	pixel_y = 30
+	},
+/obj/effect/turf_decal/industrial/caution,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/refuelingpost/upper)
 "Sa" = (
@@ -3904,7 +3904,7 @@
 	dir = 4;
 	id = "refuelingbridge"
 	},
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Wc" = (
 /mob/living/simple_animal/hostile/hivebot,
@@ -3998,7 +3998,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	welded = 1
 	},
-/turf/open/floor/plasteel/mono/white/airless,
+/turf/open/floor/plasteel/mono/white/plasma,
 /area/ruin/space/has_grav/refuelingpost/infirmary)
 "XA" = (
 /obj/item/stack/tile/plasteel/dark,
@@ -4160,14 +4160,14 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "YY" = (
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "fuelingholo";
-	dir = 8
-	},
 /obj/machinery/door/poddoor/preopen{
 	id = "fuelinghangar"
 	},
 /obj/structure/cable/yellow,
+/obj/machinery/power/shieldwallgen/atmos/strong{
+	dir = 8;
+	id = "fuelingholo"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "Zi" = (
@@ -5236,7 +5236,7 @@ WW
 gU
 qH
 KT
-aa
+vQ
 vQ
 pH
 KE

@@ -45,6 +45,8 @@
 	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/white/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
+/turf/open/floor/plasteel/white/plasma
+	initial_gas_mix = ATMOS_TANK_PLASMA
 
 /turf/open/floor/plasteel/mono
 	icon_state = "monotile_gray"
