@@ -49,7 +49,7 @@
 /*	ruin_mission_types = list(
 		/datum/mission/ruin/blackbox,
 		/datum/mission/ruin/daughter
-			)
+	)
 */
 
 /datum/mission/ruin/daughter
