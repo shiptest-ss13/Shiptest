@@ -36,7 +36,7 @@
 		if(anchored)
 			. += span_notice("[src] is <b>bolted</b> to the floor.")
 		else
-			. += span_notice("[src] is un<b>bolted</b> from the floor.")
+			. += span_notice("[src] is <b>unbolted</b> from the floor.")
 
 /obj/structure/reagent_dispensers/Initialize()
 	create_reagents(tank_volume, DRAINABLE | AMOUNT_VISIBLE)
