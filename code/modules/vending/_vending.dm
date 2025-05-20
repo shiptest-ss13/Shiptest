@@ -167,6 +167,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 
+	var/custom = FALSE
+
 /**
 	* Initialize the vending machine
 	*
@@ -725,9 +727,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			if(card.registered_account)
 				.["user"]["name"] = card.registered_account.account_holder
 				.["user"]["cash"] = card.registered_account.account_balance
-	.["stock"] = list()
-	for (var/datum/data/vending_product/R in product_records + coin_records + hidden_records)
-		.["stock"][R.name] = R.amount
+	if(!custom)
+		.["stock"] = list()
+		for (var/datum/data/vending_product/R in product_records + coin_records + hidden_records)
+			.["stock"][R.name] = R.amount
 	.["extended_inventory"] = extended_inventory
 
 /obj/machinery/vending/ui_act(action, params)
@@ -940,6 +943,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/max_loaded_items = 20
 	/// Base64 cache of custom icons.
 	var/list/base64_cache = list()
+	custom = TRUE
+
 
 /obj/machinery/vending/custom/compartmentLoadAccessCheck(mob/user)
 	. = FALSE
@@ -966,13 +971,17 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	. = ..()
 	.["access"] = compartmentLoadAccessCheck(user)
 	.["vending_machine_input"] = list()
+	.["stock"] = list()
 	for (var/O in vending_machine_input)
 		if(vending_machine_input[O] > 0)
 			var/base64
+			var/item_name = O
 			var/price = 0
+			var/stock_amount = 0
 			for(var/obj/T in contents)
 				if(T.name == O)
 					price = T.custom_price
+					stock_amount++
 					if(!base64)
 						if(base64_cache[T.type])
 							base64 = base64_cache[T.type]
@@ -981,11 +990,13 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 							base64_cache[T.type] = base64
 					break
 			var/list/data = list(
-				name = O,
+				name = item_name,
 				price = price,
 				img = base64
+
 			)
 			.["vending_machine_input"] += list(data)
+			.["stock"][O] = stock_amount
 
 /obj/machinery/vending/custom/ui_act(action, params)
 	. = ..()
@@ -1031,6 +1042,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 						var/datum/bank_account/owner = private_a
 						if(owner)
 							owner.transfer_money(account, S.custom_price)
+							owner.bank_card_talk("\The [S] was purchased from your vendor. [S.custom_price] credits deposited to account, balance is now [owner.account_balance].")
 						else
 							account.adjust_money(-S.custom_price, CREDIT_LOG_VENDOR_PURCHASE)
 						SSblackbox.record_feedback("amount", "vending_spent", S.custom_price)
