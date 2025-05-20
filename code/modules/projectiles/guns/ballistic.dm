@@ -34,7 +34,7 @@
 	/// Gun will start to jam at this level of wear
 	var/wear_minor_threshold = 60
 	/// Gun will start to jam more at this level of wear. The grace period between jams is also removed for extra fun
-	var/wear_major_threshold = 180
+	var/wear_major_threshold = 120
 	/// Highest wear value so the gun doesn't end up completely irreperable
 	var/wear_maximum = 300
 
