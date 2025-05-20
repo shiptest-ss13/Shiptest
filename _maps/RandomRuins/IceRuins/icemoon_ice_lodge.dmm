@@ -3379,27 +3379,39 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/a8_50r{
 	pixel_x = 0;
-	pixel_y = -6
+	pixel_y = -6;
+	auto_scatter = 0;
+	auto_rotate = 0
 	},
 /obj/item/ammo_casing/a8_50r{
 	pixel_x = 6;
-	pixel_y = -6
+	pixel_y = -6;
+	auto_rotate = 0;
+	auto_scatter = 0
 	},
 /obj/item/ammo_casing/a8_50r{
 	pixel_x = -6;
-	pixel_y = -6
+	pixel_y = -6;
+	auto_rotate = 0;
+	auto_scatter = 0
 	},
 /obj/item/ammo_casing/a8_50r{
 	pixel_x = 6;
-	pixel_y = 8
+	pixel_y = 8;
+	auto_rotate = 0;
+	auto_scatter = 0
 	},
 /obj/item/ammo_casing/a8_50r{
 	pixel_x = 0;
-	pixel_y = 8
+	pixel_y = 8;
+	auto_rotate = 0;
+	auto_scatter = 0
 	},
 /obj/item/ammo_casing/a8_50r{
 	pixel_x = -6;
-	pixel_y = 8
+	pixel_y = 8;
+	auto_rotate = 0;
+	auto_scatter = 0
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
