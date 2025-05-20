@@ -1,3 +1,5 @@
+/obj/item/storage/backpack/satchel/flat/onehalftwo
+
 /obj/item/storage/backpack/satchel/flat/onehalftwo/PopulateContents()
 	new /obj/item/grenade/c4(src)
 	new /obj/item/grenade/c4(src)
