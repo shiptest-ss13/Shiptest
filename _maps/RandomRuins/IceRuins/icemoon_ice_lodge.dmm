@@ -2985,7 +2985,7 @@
 "Tk" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/box/ammo/a308/hunterspride,
+/obj/item/storage/box/ammo/a8_50r,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "To" = (
@@ -3377,45 +3377,29 @@
 "YO" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/a308{
-	pixel_y = 11;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = 0;
+	pixel_y = -6
 	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 3;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 11;
+/obj/item/ammo_casing/a8_50r{
 	pixel_x = 6;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
+	pixel_y = -6
 	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 11;
+/obj/item/ammo_casing/a8_50r{
 	pixel_x = -6;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
+	pixel_y = -6
 	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 3;
-	pixel_x = -6;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
-	},
-/obj/item/ammo_casing/a308{
-	pixel_y = 3;
+/obj/item/ammo_casing/a8_50r{
 	pixel_x = 6;
-	projectile_type = null;
-	auto_rotate = 0;
-	auto_scatter = 0
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = 0;
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/a8_50r{
+	pixel_x = -6;
+	pixel_y = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
