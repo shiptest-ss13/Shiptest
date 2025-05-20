@@ -836,7 +836,7 @@
 /proc/assoc_to_keys_features(list/input)
 	var/list/keys = list()
 	for(var/key in input)
-		var/datum/sprite_accessory/value = input[key]
+		//var/datum/sprite_accessory/value = input[key]
 		//if(value?.locked)
 		//	continue
 		UNTYPED_LIST_ADD(keys, key)

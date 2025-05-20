@@ -79,7 +79,7 @@
 
 /datum/quirk/junkie/smoker/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	switch(H.client?.prefs.preferred_smoke_brand)
+	switch(H.client?.prefs.get_pref_data(/datum/preference/choiced_string/pref_cig))
 		if(PREF_CIG_SPACE)
 			drug_container_type = /obj/item/storage/fancy/cigarettes
 		if(PREF_CIG_DROMEDARY)
