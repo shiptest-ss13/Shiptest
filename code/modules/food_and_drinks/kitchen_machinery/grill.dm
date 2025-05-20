@@ -39,14 +39,12 @@
 		. += span_warning("\The [src] is out of fuel! Add some wood or coal!")
 
 /obj/machinery/grill/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/stack/sheet/mineral/coal) || istype(I, /obj/item/stack/sheet/mineral/wood))
+	if(istype(I, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/S = I
 		var/stackamount = S.get_amount()
 		to_chat(user, span_notice("You put [stackamount] [I]s in [src]."))
-		if(istype(I, /obj/item/stack/sheet/mineral/coal))
-			grill_fuel += (50 * stackamount)
-		else
-			grill_fuel += (5 * stackamount)
+		if(istype(I, /obj/item/stack/sheet/mineral/wood))
+			grill_fuel += (20 * stackamount)
 		S.use(stackamount)
 		update_appearance()
 		return

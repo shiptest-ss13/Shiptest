@@ -7,7 +7,6 @@
 	desc = "Ancient Roman armor. Made of metallic and leather straps."
 	icon_state = "roman"
 	item_state = "armor"
-	can_adjust = FALSE
 	strip_delay = 100
 	resistance_flags = NONE
 
@@ -16,13 +15,11 @@
 	desc = "The leather club is two sectors down."
 	icon_state = "darkholme"
 	item_state = "darkholme"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/owl
 	name = "owl uniform"
 	desc = "A soft brown jumpsuit made of synthetic feathers and strong conviction."
 	icon_state = "owl"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/schoolgirl
 	name = "blue schoolgirl uniform"
@@ -30,7 +27,6 @@
 	icon_state = "schoolgirl"
 	item_state = "schoolgirl"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/schoolgirl/red
 	name = "red schoolgirl uniform"
@@ -52,7 +48,6 @@
 	desc = "Yarr."
 	icon_state = "pirate"
 	item_state = "pirate"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/kilt
 	name = "kilt"
@@ -60,7 +55,6 @@
 	icon_state = "kilt"
 	item_state = "kilt"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/kilt/highlander
 	desc = "You're the only one worthy of this kilt."
@@ -75,7 +69,6 @@
 	icon_state = "gladiator"
 	item_state = "gladiator"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 	resistance_flags = NONE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
@@ -90,7 +83,6 @@
 	icon_state = "maid"
 	item_state = "maid"
 	body_parts_covered = CHEST|GROIN
-	can_adjust = FALSE
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/costume/maid/Initialize()
@@ -103,14 +95,12 @@
 	desc = "Cute space ninja senpai not included."
 	icon_state = "geisha"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/sailor
 	name = "sailor suit"
 	desc = "Skipper's in the wardroom drinkin gin'."
 	icon_state = "sailor"
 	item_state = "b_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/mummy
 	name = "mummy wrapping"
@@ -118,7 +108,6 @@
 	icon_state = "mummy"
 	item_state = "mummy"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	can_adjust = FALSE
 	resistance_flags = NONE
 
 /obj/item/clothing/under/costume/scarecrow
@@ -127,7 +116,6 @@
 	icon_state = "scarecrow"
 	item_state = "scarecrow"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	can_adjust = FALSE
 	resistance_flags = NONE
 
 /obj/item/clothing/under/costume/draculass
@@ -136,28 +124,24 @@
 	icon_state = "draculass"
 	item_state = "draculass"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/drfreeze
 	name = "doctor freeze's jumpsuit"
 	desc = "A modified scientist jumpsuit to look extra cool."
 	icon_state = "drfreeze"
 	item_state = "drfreeze"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/lobster
 	name = "foam lobster suit"
 	desc = "Who beheaded the college mascot?"
 	icon_state = "lobster"
 	item_state = "lobster"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/gondola
 	name = "gondola hide suit"
 	desc = "Now you're cooking."
 	icon_state = "gondola"
 	item_state = "lb_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/skeleton
 	name = "skeleton jumpsuit"
@@ -165,7 +149,6 @@
 	icon_state = "skeleton"
 	item_state = "skeleton"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	can_adjust = FALSE
 	resistance_flags = NONE
 
 /obj/item/clothing/under/costume/mech_suit //these still have "mech" in the name because they're costumes, not serious utility wear
@@ -176,7 +159,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	alternate_worn_layer = GLOVES_LAYER //covers hands but gloves can go over it. This is how these things work in my head.
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/mech_suit/white
 	name = "white mech pilot's suit"
@@ -195,18 +177,15 @@
 	desc = "For when it's time to hee some hos."
 	icon_state = "JackFrostUniform"
 	item_state = "JackFrostUniform"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/yakuza
 	name = "tojo clan pants"
 	desc = "For those long nights under the traffic cone."
 	icon_state = "MajimaPants"
 	item_state = "MajimaPants"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/dutch
 	name = "dutch's suit"
 	desc = "You can feel a <b>god damn plan</b> coming on."
 	icon_state = "DutchUniform"
 	item_state = "DutchUniform"
-	can_adjust = FALSE
