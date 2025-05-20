@@ -1730,7 +1730,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "office_s"
+	id = "office_a"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -1861,7 +1861,6 @@
 /obj/effect/turf_decal/corner/opaque/lime/half,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/machinery/power/terminal,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/bridge)
 "lh" = (
@@ -2162,7 +2161,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "office_s"
+	id = "office_a"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -2829,7 +2828,6 @@
 /obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/machinery/power/terminal,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_y = -20;
@@ -3176,9 +3174,6 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/pgf_wreck/cargo)
 "st" = (
@@ -4518,15 +4513,11 @@
 "zz" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/structure/cable/yellow,
-/obj/machinery/porta_turret/ship/ramzi/heavy{
-	turret_respects_id = 0;
-	turret_flags = 62;
-	lethal = 1
-	},
 /obj/effect/decal/cleanable/glass,
 /obj/item/solar_assembly{
 	layer = 2.8
 	},
+/obj/machinery/porta_turret/ruin/ramzi/light,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
 "zA" = (
@@ -4563,9 +4554,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-8"
-	},
-/obj/machinery/power/terminal{
-	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 4
@@ -5486,11 +5474,7 @@
 /obj/item/solar_assembly{
 	layer = 2.8
 	},
-/obj/machinery/porta_turret/ship/ramzi/heavy{
-	turret_respects_id = 0;
-	turret_flags = 62;
-	lethal = 1
-	},
+/obj/machinery/porta_turret/ruin/ramzi/heavy,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Ez" = (
@@ -5722,7 +5706,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/terminal,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
 "FK" = (
@@ -6564,7 +6547,6 @@
 /area/ruin/space/pgf_wreck)
 "KB" = (
 /obj/structure/closet/cabinet,
-/obj/item/storage/guncase/pistol/viper,
 /obj/item/storage/box/ammo/a357,
 /obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
@@ -6575,6 +6557,7 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/line{
 	dir = 6
 	},
+/obj/item/storage/guncase/pistol/a357,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "KD" = (
@@ -8152,7 +8135,7 @@
 /area/ruin/space)
 "SE" = (
 /obj/structure/lattice,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/sniper,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
 /turf/open/space/basic,
 /area/ruin/space)
 "SG" = (
@@ -8733,6 +8716,16 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
+"Vu" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow,
+/obj/effect/decal/cleanable/glass,
+/obj/item/solar_assembly{
+	layer = 2.8
+	},
+/obj/machinery/porta_turret/ruin/ramzi/heavy,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Vv" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -8790,7 +8783,7 @@
 	},
 /obj/machinery/door/window/southleft,
 /obj/machinery/door/poddoor/shutters{
-	id = "office_s"
+	id = "office_a"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -13385,7 +13378,7 @@ jR
 jR
 jR
 aD
-zz
+Vu
 Fm
 Fm
 Fm
