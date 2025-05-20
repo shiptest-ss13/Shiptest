@@ -137,7 +137,7 @@
 
 // no randomization either, because it's pretty fucking simple
 
-
+/*
 /// A numeric preference with a minimum and maximum value
 /datum/preference/numeric
 	/// The minimum value
@@ -167,8 +167,9 @@
 /datum/preference/numeric/_is_invalid(value)
 	if(isnum(value) && value >= round(minimum, step) && value <= round(maximum, step))
 		return FALSE
+*/
 
-
+/*
 /// A string-based preference accepting arbitrary string values entered by the user, with a maximum length.
 /datum/preference/text
 	abstract_type = /datum/preference/text
@@ -192,3 +193,4 @@
 
 /datum/preference/text/compile_constant_data()
 	return list("maximum_length" = maximum_value_length)
+*/

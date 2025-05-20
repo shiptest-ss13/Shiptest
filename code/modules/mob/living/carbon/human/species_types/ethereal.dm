@@ -21,6 +21,8 @@
 	species_age_max = 300
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)
+	// Tmt had removed this line but its unrelated to prefs
+	//sexes = FALSE //no fetish content allowed
 	toxic_food = NONE
 	// Body temperature for ethereals is much higher then humans as they like hotter environments
 	bodytemp_normal = (HUMAN_BODYTEMP_NORMAL + 50)
@@ -302,7 +304,7 @@
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
 	_human.add_overlay(overcharge)
 	if(do_after(_human, 50, _human, TRUE))
-		_human.flash_lighting_fx(5, 7, current_color)
+		_human.flash_lighting_fx(5, 7, "#" + _human.dna.features[FEATURE_MUTANT_COLOR])
 		var/obj/item/organ/stomach/ethereal/stomach = _human.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(_human, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		_human.cut_overlay(overcharge)
