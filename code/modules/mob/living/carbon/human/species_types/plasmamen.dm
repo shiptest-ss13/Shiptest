@@ -70,6 +70,11 @@
 		no_protection = TRUE
 	. = ..()
 
+/datum/species/plasmaman/after_equip_job(datum/job/J, mob/living/carbon/human/H)
+	. = ..()
+	H.internals = H.get_item_by_slot(ITEM_SLOT_RPOCKET)
+	H.update_internals_hud_icon(1)
+
 /datum/species/plasmaman/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_plasmaman_name()
