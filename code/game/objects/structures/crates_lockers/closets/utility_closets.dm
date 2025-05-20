@@ -30,6 +30,7 @@
 	new /obj/item/tank/internals/emergency_oxygen(src)
 	new /obj/item/tank/internals/plasmaman/belt/full(src)
 	new /obj/item/tank/internals/plasmaman/belt/full(src)
+	new /obj/item/extinguisher_refill(src)
 	new /obj/item/clothing/mask/breath(src)
 	new /obj/item/clothing/mask/breath(src)
 
