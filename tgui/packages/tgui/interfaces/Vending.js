@@ -41,7 +41,7 @@ const VendingRow = (props, context) => {
             'good'
           }
         >
-           {custom ? product.amount : productStock.amount} in stock
+          {custom ? product.amount : productStock.amount} in stock
         </Box>
       </Table.Cell>
       <Table.Cell collapsing textAlign="center">
