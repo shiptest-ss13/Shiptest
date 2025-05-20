@@ -115,7 +115,9 @@
 		/obj/item/scalpel = 1,
 		/obj/item/hemostat = 1,
 		/obj/item/cautery = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/healthanalyzer = 1,
+		/obj/item/storage/pill_bottle/tramal
+		)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
@@ -514,3 +516,11 @@
 /obj/item/storage/pill_bottle/placebatol/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/placebatol(src)
+
+/obj/item/storage/pill_bottle/tramal
+	name = "bottle of tramal pills"
+	desc = "Contains tramal pills, a mild painkiller."
+
+/obj/item/storage/pill_bottle/tramal/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/tramal(src)
