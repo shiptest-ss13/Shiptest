@@ -995,7 +995,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 	recoil = 0
 	recoil_unwielded = 5
 
-	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
 	unique_attachments = list(
