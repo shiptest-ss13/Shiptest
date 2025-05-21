@@ -338,6 +338,10 @@
 	name = "Officer's Quarters";
 	req_access_txt = "57"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/captain)
 "fD" = (
@@ -439,6 +443,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/poddoor/shutters{
 	id = "magpie_cargo";
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
@@ -639,6 +647,10 @@
 	id = "magpie_cargo";
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "jB" = (
@@ -736,6 +748,12 @@
 	dir = 8;
 	id = "magpie_bridge"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "kM" = (
@@ -745,6 +763,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "ld" = (
@@ -1048,6 +1070,10 @@
 	req_access_txt = "2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/security)
 "sE" = (
@@ -1255,6 +1281,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/engineering/engines/port)
 "ua" = (
@@ -1276,6 +1303,12 @@
 /obj/machinery/door/airlock/public/glass{
 	dir = 4;
 	name = "Canteen"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
@@ -1847,6 +1880,10 @@
 	id_tag = "magpie_bathroom"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/crew/toilet)
 "Bs" = (
@@ -2268,6 +2305,12 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "Fe" = (
@@ -2419,6 +2462,12 @@
 	dir = 4;
 	name = "Portside Nacelle";
 	req_access_txt = "10"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engines/port)
@@ -2680,6 +2729,10 @@
 /obj/machinery/door/airlock/public/glass{
 	name = "Break Room"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
 "LE" = (
@@ -2786,6 +2839,10 @@
 /obj/machinery/door/airlock/mining/glass{
 	name = "Equipment Room"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/storage/equip)
 "NI" = (
@@ -2801,6 +2858,10 @@
 /obj/machinery/door/airlock/glass{
 	name = "Crew Quarters"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ship/crew/dorm)
 "NJ" = (
@@ -2952,7 +3013,8 @@
 	launch_status = 0;
 	port_direction = 2;
 	preferred_direction = 4;
-	name = "Magpie-class"
+	name = "Magpie-class";
+	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/locked,
@@ -3059,6 +3121,10 @@
 	id = "magpie_cargo";
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "Sn" = (
@@ -3143,6 +3209,12 @@
 	req_access_txt = "5"
 	},
 /obj/effect/mapping_helpers/airlock/unres{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -3272,6 +3344,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/visible/layer2,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engines/starboard)
 "Ve" = (
@@ -3597,6 +3670,12 @@
 	dir = 4;
 	name = "Starboard Nacelle";
 	req_access_txt = "10"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/ship/engineering/engines/starboard)
