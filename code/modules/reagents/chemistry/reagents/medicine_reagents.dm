@@ -910,7 +910,7 @@
 	color = "#71adad"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = 15
-	addiction_threshold = 7
+	addiction_threshold = 11
 
 /datum/reagent/medicine/dimorlin/on_mob_metabolize(mob/living/L)
 	..()

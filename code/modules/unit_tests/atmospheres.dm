@@ -1,5 +1,4 @@
 /datum/unit_test/atmospheres
-	focus = TRUE
 
 /datum/unit_test/atmospheres/Run()
 	for(var/id in SSair.string_mixes)

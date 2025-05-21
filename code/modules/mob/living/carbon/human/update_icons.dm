@@ -117,6 +117,8 @@ There are several things that need to be remembered:
 			t_color = U.icon_state
 		if(U.adjusted == ALT_STYLE)
 			t_color = "[t_color]_d"
+		if(U.adjusted == ROLLED_STYLE)
+			t_color = "[t_color]_s"
 
 		///The final thing we overlay. Set on build_worn_icon.
 		var/mutable_appearance/uniform_overlay
@@ -127,6 +129,8 @@ There are several things that need to be remembered:
 		var/target_overlay = U.icon_state
 		if(U.adjusted == ALT_STYLE)
 			target_overlay = "[target_overlay]_d"
+		if(U.adjusted == ROLLED_STYLE)
+			target_overlay = "[target_overlay]_s"
 		/// Does this clothing need to be generated via greyscale?
 		var/handled_by_bodytype = FALSE
 

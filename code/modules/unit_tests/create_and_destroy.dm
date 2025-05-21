@@ -105,6 +105,8 @@
 	ignore += typesof(/obj/machinery/status_display/elevator)
 	ignore += typesof(/obj/machinery/elevator_floor_button)
 	ignore += typesof(/obj/effect/greeble_spawner)
+	//Flakey by design
+	ignore += typesof(/obj/effect/spawner/random)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/original_turf_type = spawn_at.type

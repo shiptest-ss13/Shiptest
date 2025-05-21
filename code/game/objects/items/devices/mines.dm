@@ -473,11 +473,11 @@
 /obj/item/mine/pressure/explosive/fire/mine_effect(mob/victim)
 	if(victim?.is_holding(src))//in case it's been picked up
 		for(var/turf/T in view(4,victim))
-			T.IgniteTurf(15)
+			T.ignite_turf(15)
 			new /obj/effect/hotspot(T)
 	else
 		for(var/turf/T in view(4,src))
-			T.IgniteTurf(15)
+			T.ignite_turf(15)
 			new /obj/effect/hotspot(T)
 	. = ..()
 
@@ -592,10 +592,10 @@
 /obj/item/mine/proximity/explosive/plasma/mine_effect(mob/victim)
 	if(victim.is_holding(src))//in case it's been picked up
 		for(var/turf/T in view(3,victim))
-			T.IgniteTurf(25, "green")
+			T.ignite_turf(25, "green")
 	else
 		for(var/turf/T in view(3,src))
-			T.IgniteTurf(25, "green")
+			T.ignite_turf(25, "green")
 	. = ..()
 
 //Manhacks... so pretty...

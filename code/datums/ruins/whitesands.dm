@@ -61,6 +61,7 @@
 	mission_limit = 1
 	setpiece_item = /obj/item/gun/energy/e_gun/e11
 	required_count = 6
+	requires_poi = FALSE
 
 /datum/mission/ruin/multiple/e11_stash/can_turn_in(atom/movable/item_to_check)
 	if(istype(item_to_check, /obj/item/gun))
