@@ -286,7 +286,7 @@
 	name = "Berries Crate"
 	desc = "Crate containing five bunches of berries."
 	cost = 75
-	contains = list(/obj/item/food/grown/berries,,
+	contains = list(/obj/item/food/grown/berries,
 					/obj/item/food/grown/berries,
 					/obj/item/food/grown/berries,
 					/obj/item/food/grown/berries,
