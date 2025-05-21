@@ -36,6 +36,14 @@
 	species = "sweetpotato"
 	plantname = "Sweet Potato Plants"
 	product = /obj/item/food/grown/sweet_potato
+	lifespan = 30
+	maturation = 10
+	production = 1
+	yield = 4
+	growthstages = 4
+	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
+	icon_grow = "sweetpotato-grow"
+	icon_dead = "sweetpotato-dead"
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.1, /datum/reagent/consumable/sugar = 0.1, /datum/reagent/consumable/nutriment = 0.1)
 	research = PLANT_RESEARCH_TIER_0
