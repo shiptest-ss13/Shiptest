@@ -123,7 +123,7 @@
 				fire_sound = 'sound/weapons/taser2.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine/get_equip_info()
-	return "[..()] \[<a href='?src=[REF(src)];mode=0'>Laser</a>|<a href='?src=[REF(src)];mode=1'>Disabler</a>\]"
+	return "[..()] \[<a href='byond://?src=[REF(src)];mode=0'>Laser</a>|<a href='byond://?src=[REF(src)];mode=1'>Disabler</a>\]"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 16
@@ -248,7 +248,7 @@
 	return 1
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_equip_info()
-	return "[..()] \[[src.projectiles][projectiles_cache_max &&!projectile_energy_cost?"/[projectiles_cache]":""]\][!disabledreload &&(src.projectiles < projectiles_max)?" - <a href='?src=[REF(src)];rearm=1'>Rearm</a>":null]"
+	return "[..()] \[[src.projectiles][projectiles_cache_max &&!projectile_energy_cost?"/[projectiles_cache]":""]\][!disabledreload &&(src.projectiles < projectiles_max)?" - <a href='byond://?src=[REF(src)];rearm=1'>Rearm</a>":null]"
 
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/rearm()
