@@ -173,6 +173,10 @@
 	SHOULD_CALL_PARENT(FALSE)
 	CRASH("`deserialize()` was not implemented on [type]!")
 
+/datum/preference/proc/button_data(dat, pref_data)
+	dat += "<h3>[name]</h3>"
+	dat += "<a href='byond://?_src_=prefs;preference=pref_datum;id=[savefile_key]'>[pref_data]</a><BR>"
+
 /datum/preference/proc/button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
 	// mob sent href_list containing our pref and an action.
 	// using the action, current data, and the dependency data, handle the input, eventually returning a new valid value for the pref.

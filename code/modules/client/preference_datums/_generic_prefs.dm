@@ -86,6 +86,10 @@
 /datum/preference/color/deserialize(serialized_data)
 	return serialized_data
 
+/datum/preference/color/button_data(dat, pref_data)
+	dat += "<h3>[name]</h3>"
+	dat += "<span style='border:1px solid #161616; background-color: #[pref_data];'>&nbsp;&nbsp;&nbsp;</span> <a href='byond://?_src_=prefs;preference=pref_datum;id=[savefile_key]'>[pref_data]</a><BR>"
+
 /datum/preference/color/button_action(mob/user, old_data, list/dependency_data, list/href_list, list/hints)
 	// adds a hash sign to the old data if necessary
 	var/fixed_old_data = include_hash ? old_data : "#" + old_data

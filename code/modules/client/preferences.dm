@@ -415,8 +415,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(row_id == 0)
 			dat += APPEARANCE_CATEGORY_COLUMN
 
-		dat += "<h3>[pref.name]</h3>"
-		dat += "<a href='byond://?_src_=prefs;preference=pref_datum;id=[pref.savefile_key]'>[p_data]</a><BR>"
+		pref.button_data(dat, p_data)
 
 		row_id++
 		if(row_id >= MAX_MUTANT_ROWS)
