@@ -1930,13 +1930,10 @@
 	name = "fridge";
 	anchored = 1
 	},
-/obj/item/food/hotdog/,
+/obj/item/food/hotdog,
 /obj/item/storage/cans/sixbeer,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/item/food/hotdog/{
-	name = "chili dog";
-	desc = "Anything you can do, I can do worse-er!"
-	},
+/obj/item/food/hotdog,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/item/storage/fancy/egg_box,
 /turf/open/floor/plasteel/white,
