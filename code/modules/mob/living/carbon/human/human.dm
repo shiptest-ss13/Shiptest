@@ -172,8 +172,8 @@
 		dat += "<tr><td><B>Uniform:</B></td><td><A href='byond://?src=[REF(src)];item=[ITEM_SLOT_ICLOTHING]'>[(w_uniform && !(w_uniform.item_flags & ABSTRACT)) ? w_uniform : "<font color=grey>Empty</font>"]</A>"
 		if(w_uniform)
 			var/obj/item/clothing/under/U = w_uniform
-			if (U.can_adjust)
-				dat += "&nbsp;<A href='byond://?src=[REF(src)];toggle_uniform=[ITEM_SLOT_ICLOTHING]'>Adjust</A>"
+			if (U.roll_down)
+				dat += "&nbsp;<A href='byond://?src=[REF(src)];toggle_uniform=[ITEM_SLOT_ICLOTHING]'>Roll Down</A>"
 		dat += "</td></tr>"
 
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_CHEST)
@@ -263,10 +263,10 @@
 
 	if(href_list["toggle_uniform"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		var/obj/item/clothing/under/U = get_item_by_slot(ITEM_SLOT_ICLOTHING)
-		to_chat(src, span_notice("[usr.name] is trying to adjust your [U]."))
+		to_chat(src, span_notice("[usr.name] is trying to roll down your [U]."))
 		if(do_after(usr, U.strip_delay/2, src))
-			to_chat(src, span_notice("[usr.name] successfully adjusted your [U]."))
-			U.toggle_jumpsuit_adjust()
+			to_chat(src, span_notice("[usr.name] successfully rolled down your [U]."))
+			U.toggle_jumpsuit_adjust(ROLLED_STYLE)
 			update_inv_w_uniform()
 			update_body()
 

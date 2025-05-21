@@ -1,0 +1,8 @@
+author: FslashN
+changes:
+  - {rscadd: 'Mech fabricator can now print in all cardinal directions, selectable
+      from the menu.'}
+  - {bugfix: 'The fabricator will not print into tiles with dense objects/turfs/mobs,
+      fallback to its own tile.'}
+  - {refactor: The fabricator menu should be snappier with switch().}
+delete-after: true

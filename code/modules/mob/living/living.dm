@@ -1620,12 +1620,14 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		if(CONSCIOUS)
 			if(stat >= UNCONSCIOUS)
 				ADD_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT)
+				ADD_TRAIT(src, TRAIT_EYESCLOSED, TRAIT_KNOCKEDOUT)
 			ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, STAT_TRAIT)
 			ADD_TRAIT(src, TRAIT_INCAPACITATED, STAT_TRAIT)
 			ADD_TRAIT(src, TRAIT_FLOORED, STAT_TRAIT)
 		if(SOFT_CRIT)
 			if(stat >= UNCONSCIOUS)
 				ADD_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT) //adding trait sources should come before removing to avoid unnecessary updates
+				ADD_TRAIT(src, TRAIT_EYESCLOSED, TRAIT_KNOCKEDOUT)
 			if(pulledby)
 				REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, PULLED_WHILE_SOFTCRIT_TRAIT)
 		if(UNCONSCIOUS)
@@ -1638,6 +1640,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		if(CONSCIOUS)
 			if(. >= UNCONSCIOUS)
 				REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT)
+				REMOVE_TRAIT(src, TRAIT_EYESCLOSED, TRAIT_KNOCKEDOUT)
 			REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, STAT_TRAIT)
 			REMOVE_TRAIT(src, TRAIT_INCAPACITATED, STAT_TRAIT)
 			REMOVE_TRAIT(src, TRAIT_FLOORED, STAT_TRAIT)
@@ -1647,6 +1650,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 				ADD_TRAIT(src, TRAIT_IMMOBILIZED, PULLED_WHILE_SOFTCRIT_TRAIT) //adding trait sources should come before removing to avoid unnecessary updates
 			if(. >= UNCONSCIOUS)
 				REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, TRAIT_KNOCKEDOUT)
+				REMOVE_TRAIT(src, TRAIT_EYESCLOSED, TRAIT_KNOCKEDOUT)
 			ADD_TRAIT(src, TRAIT_CRITICAL_CONDITION, STAT_TRAIT)
 		if(UNCONSCIOUS)
 			if(. != HARD_CRIT)
@@ -1906,12 +1910,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	set category = "IC"
 	set name = "Open/Close Eyes"
 
-	if(HAS_TRAIT(src, TRAIT_EYESCLOSED))
+	if(HAS_TRAIT_FROM(src, TRAIT_EYESCLOSED, "[type]"))
 		REMOVE_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
-		src.cure_blind("[type]")
-		src.update_body()
-		return
-	ADD_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
-	src.become_blind("[type]")
-	src.update_body()
-	return
+	else
+		ADD_TRAIT(src, TRAIT_EYESCLOSED, "[type]")

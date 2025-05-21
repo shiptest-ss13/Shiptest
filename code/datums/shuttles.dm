@@ -46,9 +46,6 @@
 
 	var/static/list/outfits
 
-	/// checks if we should NOT spawn /obj/effect/spawner/random/test_ship_matspawn, delete this when ships have new mats mapped in
-	var/matbundle_spawned = FALSE
-
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
 
@@ -462,3 +459,9 @@
 	name = "Gauze-class Ambulance Pod"
 	faction = /datum/faction/syndicate/cybersun
 	prefix = "CSSV"
+/datum/map_template/shuttle/subshuttles/thunder
+	file_name = "inteq_thunder"
+	name = "Thunder-class Interceptor"
+	faction = /datum/faction/inteq
+	token_icon_state = "ship_tiny_generic"
+	prefix = "IRMV"

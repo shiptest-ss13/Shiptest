@@ -177,11 +177,11 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 
 			if(REQ_SCREEN_SENT)
 				dat += "[span_good("Message sent.")]<BR><BR>"
-				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
+				dat += "<A href='byond://?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
 
 			if(REQ_SCREEN_ERR)
 				dat += "[span_bad("An error occurred.")]<BR><BR>"
-				dat += "<A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
+				dat += "<A href='byond://?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
 
 			if(REQ_SCREEN_VIEW_MSGS)
 				for (var/obj/machinery/requests_console/Console in GLOB.allConsoles)
@@ -218,7 +218,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 					dat += "<A href='byond://?src=[REF(src)];sendAnnouncement=1'>Announce Message</A><BR>"
 				else
 					dat += "[span_linkoff("Announce Message")]<BR>"
-				dat += "<BR><A href='?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
+				dat += "<BR><A href='byond://?src=[REF(src)];setScreen=[REQ_SCREEN_MAIN]'><< Back</A><BR>"
 
 		if(!dat)
 			CRASH("No UI for src. Screen var is: [screen]")
