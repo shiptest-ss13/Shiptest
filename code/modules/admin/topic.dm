@@ -1162,7 +1162,7 @@
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 
 		else if(islizard(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/nugget
+			cookiealt = /obj/item/food/nugget
 
 		if(H.recieve_gift(cookiealt))
 			log_admin("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")

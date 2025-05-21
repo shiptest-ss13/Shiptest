@@ -612,7 +612,6 @@
 		/obj/item/multitool,
 		/obj/item/reagent_containers/food/drinks/molotov,
 		/obj/item/grenade/c4,
-		/obj/item/food/grown/cherry_bomb,
 		/obj/item/food/grown/firelemon,
 		))
 

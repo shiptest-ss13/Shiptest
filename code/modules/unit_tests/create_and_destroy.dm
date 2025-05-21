@@ -42,8 +42,6 @@
 		/obj/item/bodypart/l_arm,
 		/obj/item/bodypart/r_arm,
 		/obj/item/bodypart/leg,
-		//fucking explodes when created
-		/obj/item/grown/bananapeel/bombanana,
 	)
 	//This turf existing is an error in and of itself
 	ignore += typesof(/turf/baseturf_skipover)

@@ -81,13 +81,13 @@ datum/crafting_recipe/food/kebab
 	result = /obj/item/food/spicyfiletsushiroll
 	subcategory = CAT_MEAT
 
-/datum/crafting_recipe/food/fishi
+/datum/crafting_recipe/food/temakiroll
 	name = "Zohil temaki roll"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 8,
 		/obj/item/food/fishmeat = 4
 	)
-	result = /obj/item/food/fishi
+	result = /obj/item/food/temakiroll
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/nigiri_sushi
@@ -198,7 +198,7 @@ datum/crafting_recipe/food/kebab
 		/obj/item/stack/rods = 1,
 		/obj/item/food/deadmouse = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/kebab/rat
+	result = /obj/item/food/kebab/rat
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/doubleratkebab
@@ -207,7 +207,7 @@ datum/crafting_recipe/food/kebab
 		/obj/item/stack/rods = 1,
 		/obj/item/food/deadmouse = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/kebab/rat/double
+	result = /obj/item/food/kebab/rat/double
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/ricepork

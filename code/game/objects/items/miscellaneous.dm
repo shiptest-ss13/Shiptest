@@ -342,7 +342,7 @@
 /obj/item/roastingstick/attackby(atom/target, mob/user)
 	. = ..()
 
-	if(istype(target, /obj/item/reagent_containers/food/snacks/sausage))
+	if(istype(target, /obj/item/food/sausage))
 		if(!on)
 			to_chat(user, span_warning("You must extend [src] to attach anything to it!"))
 			return

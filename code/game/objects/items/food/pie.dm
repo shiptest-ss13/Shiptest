@@ -22,13 +22,16 @@
 	name = "pie slice"
 	icon = 'icons/obj/food/piecake.dmi'
 	w_class = WEIGHT_CLASS_TINY
-	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+		)
 	tastes = list("pie" = 1, "uncertainty" = 1)
 	foodtypes = GRAIN
 
 /obj/item/food/pie/plain
 	name = "plain pie"
-	desc = "A simple pie, still delicious."
+	desc = "A baked pie crust with no fillings. Edible as is, but..."
 	icon_state = "pie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -39,7 +42,7 @@
 
 /obj/item/food/pie/cream
 	name = "banana cream pie"
-	desc = "Just like back home, on clown planet! HONK!"
+	desc = "A custard and baked banana pie, topped with whipped cream. Ever popular in human cuisine, a brief extranet fad of using it as a throwing projectile made it a favorite of pranksters."
 	icon_state = "pie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -120,7 +123,7 @@
 
 /obj/item/food/pie/berryclafoutis
 	name = "berry clafoutis"
-	desc = "No black birds, this is a good sign."
+	desc = "A tart consisting of berries smothered in a thick batter before being baked and coated with powdered sugar. A pleasant treat from the outer cantons."
 	icon_state = "berryclafoutis"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
@@ -132,7 +135,7 @@
 
 /obj/item/food/pie/bearypie
 	name = "beary pie"
-	desc = "No brown bears, this is a good sign."
+	desc = "A particularly heavy meat pie. The name stems from a rumor of a sort of spaceborne ursine that stalks asteroids and hunts unfortunate asteroid miners, known for their starry pelts."
 	icon_state = "bearypie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 12,
@@ -145,7 +148,7 @@
 /obj/item/food/pie/meatpie
 	name = "meat-pie"
 	icon_state = "meatpie"
-	desc = "An old barber's recipe, very delicious!"
+	desc = "A pie crust, filled with meat and other savory ingredients. A source of culinary debate between which culture on Terra and Kalixcis invented it first still goes on today, with both early species having used ancient recipes to use pie dough to allow cooked meat to be held and eaten thousands of years ago."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 10,
 		/datum/reagent/consumable/nutriment/vitamin = 4,
@@ -157,7 +160,7 @@
 /obj/item/food/pie/tofupie
 	name = "tofu-pie"
 	icon_state = "meatpie"
-	desc = "A delicious tofu pie."
+	desc = "A vegetarian variant of the meat pie, usually of firm tofu that's been seasoned thoroughly beforehand and paired with a sauce."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
 		/datum/reagent/consumable/nutriment/protein = 1,
@@ -168,7 +171,7 @@
 
 /obj/item/food/pie/amanita_pie
 	name = "amanita pie"
-	desc = "Sweet and tasty poison pie."
+	desc = "A culinary experiment, the amanita pie, or fly agaric pie, is still notoriously poisonous and hallucinogenic in spite of the culinary preparation."
 	icon_state = "amanita_pie"
 	bite_consumption = 4
 	food_reagents = list(
@@ -182,7 +185,7 @@
 
 /obj/item/food/pie/plump_pie
 	name = "plump pie"
-	desc = "I bet you love stuff made out of plump helmets!"
+	desc = "A common method of preparing the savory mushroom from Syeben'Altch, the plump pie is full of baked, softened mushrooms."
 	icon_state = "plump_pie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
@@ -206,7 +209,7 @@
 /obj/item/food/pie/xemeatpie
 	name = "xeno-pie"
 	icon_state = "xenomeatpie"
-	desc = "A delicious meatpie. Probably heretical."
+	desc = "A meat pie prepared from the dangerous xenomorph's prepared flesh. The crust is actively melting and smoking from the acid."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
 		/datum/reagent/consumable/nutriment/protein = 4,
@@ -217,7 +220,7 @@
 
 /obj/item/food/pie/applepie
 	name = "apple pie"
-	desc = "A pie containing sweet sweet love... or apple."
+	desc = "A pie consisting of sweetened, baked apples and cinnamon. A hallmark of Solar dessert cuisine."
 	icon_state = "applepie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
@@ -228,7 +231,7 @@
 
 /obj/item/food/pie/cherrypie
 	name = "cherry pie"
-	desc = "Taste so good, make a grown man cry."
+	desc = "A pie filled with sour cherries mixed with sugar and baked. Considered a sibling to the other fruit-filled pies of Solar make."
 	icon_state = "cherrypie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
@@ -239,7 +242,7 @@
 
 /obj/item/food/pie/pumpkinpie
 	name = "pumpkin pie"
-	desc = "A delicious treat for the autumn months."
+	desc = "A pie filled with a pumpkin-based custard, spiced heavily. Despite catching on as a flavoring, the actual pumpkin gourd is relatively plain."
 	icon_state = "pumpkinpie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
@@ -251,14 +254,14 @@
 
 /obj/item/food/pieslice/pumpkin
 	name = "pumpkin pie slice"
-	desc = "A slice of pumpkin pie, with whipped cream on top. Perfection."
+	desc = "A slice of pumpkin pie."
 	icon_state = "pumpkinpieslice"
 	tastes = list("pie" = 1, "pumpkin" = 1)
 	foodtypes = GRAIN | VEGETABLES | SUGAR
 
 /obj/item/food/pie/appletart
 	name = "golden apple streusel tart"
-	desc = "A tasty dessert that won't make it through a metal detector."
+	desc = "Baked, cinnamon-coated apples mixed with streusel. Particularly crumbly."
 	icon_state = "gappletart"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -270,7 +273,7 @@
 
 /obj/item/food/pie/grapetart
 	name = "grape tart"
-	desc = "A tasty dessert that reminds you of the wine you didn't make."
+	desc = "A thin tart, filled with sweetened grapes."
 	icon_state = "grapetart"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -279,21 +282,9 @@
 	tastes = list("pie" = 1, "grape" = 1)
 	foodtypes = GRAIN | FRUIT | SUGAR
 
-/obj/item/food/pie/mimetart
-	name = "mime tart"
-	desc = "..."
-	icon_state = "mimetart"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 5,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-		/datum/reagent/consumable/nothing = 10,
-	)
-	tastes = list("nothing" = 3)
-	foodtypes = GRAIN
-
 /obj/item/food/pie/berrytart
 	name = "berry tart"
-	desc = "A tasty dessert of many different small barries on a thin pie crust."
+	desc = "A thin tart, filled with various berries."
 	icon_state = "berrytart"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
@@ -304,7 +295,7 @@
 
 /obj/item/food/pie/cocoalavatart
 	name = "chocolate lava tart"
-	desc = "A tasty dessert made of chocolate, with a liquid core."
+	desc = "A smaller version of the lava cake, this is essentially a miniature cake filled with molten chocolate."
 	icon_state = "cocoalavatart"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -315,7 +306,7 @@
 
 /obj/item/food/pie/blumpkinpie
 	name = "blumpkin pie"
-	desc = "An odd blue pie made with toxic blumpkin."
+	desc = "A pie filled with a botanical experiment-based custard, which stings the eyes and nose heavily. The smell of chlorine is almost unbearable."
 	icon_state = "blumpkinpie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 13,
@@ -327,14 +318,14 @@
 
 /obj/item/food/pieslice/blumpkin
 	name = "blumpkin pie slice"
-	desc = "A slice of blumpkin pie, with whipped cream on top. Is this edible?"
+	desc = "A slice of blumpkin pie."
 	icon_state = "blumpkinpieslice"
 	tastes = list("pie" = 1, "a mouthful of pool water" = 1)
 	foodtypes = GRAIN | VEGETABLES
 
 /obj/item/food/pie/dulcedebatata
 	name = "dulce de batata"
-	desc = "A delicious jelly made with sweet potatoes."
+	desc = "A jelly derived from sweet potatoes, often found canned or mixed with chocolate."
 	icon_state = "dulcedebatata"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 14,
@@ -346,14 +337,14 @@
 
 /obj/item/food/pieslice/dulcedebatata
 	name = "dulce de batata slice"
-	desc = "A slice of sweet dulce de batata jelly."
+	desc = "A slice of dulce de batata."
 	icon_state = "dulcedebatataslice"
 	tastes = list("jelly" = 1, "sweet potato" = 1)
 	foodtypes = VEGETABLES | SUGAR
 
 /obj/item/food/pie/frostypie
 	name = "frosty pie"
-	desc = "Tastes like blue and cold."
+	desc = "An extremely minty pie, served cold. It's difficult to eat from the sheer strength of its contents..."
 	icon_state = "frostypie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 14,
@@ -364,7 +355,7 @@
 
 /obj/item/food/pie/baklava
 	name = "baklava"
-	desc = "A delightful healthy snack made of nut layers with thin bread."
+	desc = "A pastry made up of layers of filo, chopped nuts, and brushed with honey."
 	icon_state = "baklava"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 12,
@@ -377,7 +368,7 @@
 
 /obj/item/food/pieslice/baklava
 	name = "baklava dish"
-	desc = "A portion of a delightful healthy snack made of nut layers with thin bread"
+	desc = "A portion of a many-layered baklava."
 	icon_state = "baklavaslice"
 	tastes = list("nuts" = 1, "pie" = 1)
 	foodtypes = /*NUTS | */SUGAR

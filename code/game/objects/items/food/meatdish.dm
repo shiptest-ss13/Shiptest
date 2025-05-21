@@ -2,7 +2,7 @@
 
 /obj/item/food/cubancarp
 	name = "\improper Cuban carp"
-	desc = "A grifftastic sandwich that burns your tongue and then leaves it numb!"
+	desc = "A sandwich consisting of heavily spiced and batter-fried fish. It's very hot!"
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "cubancarp"
 	bite_consumption = 3
@@ -18,7 +18,7 @@
 
 /obj/item/food/fishmeat
 	name = "fish fillet"
-	desc = "A fillet of some fish meat."
+	desc = "A fillet of fresh fish."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "fishfillet"
 	food_reagents = list(
@@ -83,10 +83,9 @@
 	name = "imitation carp fillet"
 	desc = "Almost just like the real thing, kinda."
 
-
 /obj/item/food/fishfingers
 	name = "fish fingers"
-	desc = "A finger of fish."
+	desc = "A rectangular serving of fish, battered and fried."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "fishfingers"
 	food_reagents = list(
@@ -101,7 +100,7 @@
 
 /obj/item/food/fishandchips
 	name = "fish and chips"
-	desc = "I do say so myself chap."
+	desc = "Battered, fried fish alongside a side of potato fries."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "fishandchips"
 	food_reagents = list(
@@ -114,7 +113,7 @@
 
 /obj/item/food/fishfry
 	name = "fish fry"
-	desc = "All that and no bag of chips..."
+	desc = "A plate full of pan-fried fish and vegetables. A side of fries would be nice."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "fish_fry"
 	food_reagents = list(
@@ -127,7 +126,7 @@
 
 /obj/item/food/vegetariansushiroll
 	name = "vegetarian sushi roll"
-	desc = "A roll of simple vegetarian sushi with rice, carrots, and potatoes. Sliceable into pieces!"
+	desc = "A sushi roll consisting of rice, carrots, and potatoes wrapped in seaweed. A techncial sibling to the \"california\" roll, but the origins of the name are unknown. Can be sliced into individual servings."
 	icon_state = "vegan-sushi-roll"
 	food_reagents = list(
 	/datum/reagent/consumable/nutriment = 12,
@@ -140,7 +139,7 @@
 
 /obj/item/food/vegetariansushislice
 	name = "vegetarian sushi slice"
-	desc = "A slice of simple vegetarian sushi with rice, carrots, and potatoes."
+	desc = "A slice of sushi consisting of rice, carrots, and potatoes."
 	icon_state = "vegan-sushi-slice"
 	food_reagents = list(
 	/datum/reagent/consumable/nutriment = 3,
@@ -151,7 +150,7 @@
 
 /obj/item/food/spicyfiletsushiroll
 	name = "spicy filet sushi roll"
-	desc = "A roll of tasty, spicy sushi made with fish and vegetables. Sliceable into pieces!"
+	desc = "A makizushi roll containing spicy, raw fish wrapped with rice and other vegetables. can be sliced into individual servings."
 	icon_state = "spicy-sushi-roll"
 	food_reagents = list(
 	/datum/reagent/consumable/nutriment = 12,
@@ -165,7 +164,7 @@
 
 /obj/item/food/spicyfiletsushislice
 	name = "spicy filet sushi slice"
-	desc = "A slice of tasty, spicy sushi made with fish and vegetables. Don't eat it too fast!."
+	desc = "A slice of a makizushi roll containing spicy, raw fish wrapped with rice and other vegetables."
 	icon_state = "spicy-sushi-slice"
 	food_reagents = list(
 	/datum/reagent/consumable/nutriment = 3,
@@ -176,7 +175,7 @@
 
 /obj/item/food/onigiri
 	name = "onigiri"
-	desc = "A ball of cooked rice surrounding a filling formed into a triangular shape and wrapped in seaweed."
+	desc = "A specially-shaped rice ball shaped around a filling, wrapped in seaweed. This one seems to lack a filling entirely..."
 	icon_state = "onigiri"
 	food_reagents = list(
 	/datum/reagent/consumable/nutriment = 3,
@@ -185,9 +184,9 @@
 	tastes = list("rice" = 1, "dried seaweed" = 1)
 	foodtypes = VEGETABLES
 
-/obj/item/food/fishi
-	name = "Fi-shi roll"
-	desc = "An entire fish, surrounded by a thick layer of seaweed. is this... edible?"
+/obj/item/food/temakiroll
+	name = "Zohil temaki roll"
+	desc = "A form of temaki roll originating from Zohil, which consists of a whole, specially prepared fish that is wrapped in seaweed."
 	icon_state = "fi-shi"
 	food_reagents = list(
 	/datum/reagent/consumable/nutriment = 18,
@@ -199,7 +198,7 @@
 
 /obj/item/food/nigiri_sushi
 	name = "nigiri sushi"
-	desc = "A simple nigiri of fish atop a packed rice ball with a seaweed wrapping and a side of soy sauce."
+	desc = "A form of sushi, consisting of a hand-shaped rice mound with a topping of choice bound to it with seaweed. This one appears to have a topping of raw fish."
 	icon_state = "nigiri_sushi"
 	food_reagents = list(
 	/datum/reagent/consumable/nutriment = 10,
@@ -223,7 +222,7 @@
 
 /obj/item/food/tofu
 	name = "tofu"
-	desc = "We all love tofu."
+	desc = "A culinary cornerstone of soy milk bean curds. Comes in many consistencies."
 	icon_state = "tofu"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 2,
@@ -234,27 +233,13 @@
 
 /obj/item/food/tofu/prison
 	name = "soggy tofu"
-	desc = "You refuse to eat this strange bean curd."
+	desc = "Tofu, while made of curds of soybean milk, isn't supposed to end up this way..."
 	tastes = list("sour, rotten water" = 1)
 	foodtypes = GROSS
 
-/obj/item/food/spiderleg
-	name = "spider leg"
-	desc = "A still twitching leg of a giant spider... you don't really want to eat this, do you?"
-	icon = 'icons/obj/food/meat.dmi'
-	icon_state = "spiderleg"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment/protein = 3,
-		/datum/reagent/consumable/nutriment = 3,
-		/datum/reagent/toxin = 2
-	)
-	tastes = list("cobwebs" = 1)
-	foodtypes = MEAT | TOXIC
-	w_class = WEIGHT_CLASS_SMALL
-
 /obj/item/food/cornedbeef
 	name = "corned beef and cabbage"
-	desc = "A nice hearty meal."
+	desc = "A meal consisting of cured beef boiled alongside a serving of cabbage. Fairly simple, but still filling."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "cornedbeef"
 	food_reagents = list(
@@ -268,7 +253,7 @@
 
 /obj/item/food/bearsteak
 	name = "Filet migrawr"
-	desc = "Because eating bear wasn't manly enough."
+	desc = "A sauteed cut of \"ursus aurora\", or a space bear. With enough heat, it neutralizes the naturally produced morphine within it."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "bearsteak"
 	food_reagents = list(
@@ -282,7 +267,7 @@
 
 /obj/item/food/meatball
 	name = "meatball"
-	desc = "A great meal all round. Not a cord of wood."
+	desc = "Ground meat shaped into small balls, popularly eaten in sandwiches and alongside pasta."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "meatball"
 	food_reagents = list(
@@ -296,7 +281,7 @@
 
 /obj/item/food/sausage
 	name = "sausage"
-	desc = "A piece of mixed, long meat."
+	desc = "A serving of sausage, created by grinding meat and storing it in lengths of sausage casing."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "sausage"
 	food_reagents = list(
@@ -315,7 +300,7 @@
 
 /obj/item/food/salami
 	name = "salami"
-	desc = "A slice of cured salami. Surely they can have a little..."
+	desc = "A slice of cured, fermented meat."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "salami"
 	food_reagents = list(
@@ -328,7 +313,7 @@
 
 /obj/item/food/rawkhinkali
 	name = "raw khinkali"
-	desc = "One hundred khinkalis? Do I look like a pig?"
+	desc = "One of the many Solarian dumplings. This one is in the shape of a twisted knob, filled with meat, vegetables, and garlic. This one needs to be boiled."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "khinkali"
 	food_reagents = list(
@@ -343,7 +328,7 @@
 
 /obj/item/food/khinkali
 	name = "khinkali"
-	desc = "One hundred khinkalis? Do I look like a pig?"
+	desc = "One of the many Solarian dumplings. This one is in the shape of a twisted knob, filled with meat, vegetables, and garlic."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "khinkali"
 	food_reagents = list(
@@ -359,7 +344,7 @@
 
 /obj/item/food/stewedsoymeat
 	name = "stewed soy meat"
-	desc = "Even non-vegetarians will LOVE this!"
+	desc = "Heavily stewed firm tofu, meant to emulate braised beef."
 	icon_state = "stewedsoymeat"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 5,
@@ -371,9 +356,23 @@
 	foodtypes = VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/food/spiderleg
+	name = "spider leg"
+	desc = "A monstrously-sized leg of a giant arachnid. Their bizarre anatomy reveals smaller venom sacs stored in their muscle tissue - each twitch threatens you with its payload."
+	icon = 'icons/obj/food/meat.dmi'
+	icon_state = "spiderleg"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 3,
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/toxin = 2
+	)
+	tastes = list("venom-laden meat" = 1)
+	foodtypes = MEAT | TOXIC
+	w_class = WEIGHT_CLASS_SMALL
+
 /obj/item/food/boiledspiderleg
 	name = "boiled spider leg"
-	desc = "A giant spider's leg that's still twitching after being cooked. Gross!"
+	desc = "A monstrously-sized leg from an immense spider, now rendered palatable after being boiled and steamed. The venom has neutralized into an intense spice, and the meat is not disimilar to crab." //Its cooked and not GORE, so it shouldnt imply that its gross to eat
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "spiderlegcooked"
 	food_reagents = list(
@@ -387,7 +386,7 @@
 
 /obj/item/food/spidereggsham
 	name = "green eggs and ham"
-	desc = "Would you eat them on a train? Would you eat them on a plane? Would you eat them on a state of the art corporate deathtrap floating through space?"
+	desc = "Food color-dyed fried eggs and ham. Would you eat them on Zohil? Would you eat them to have your fill? Would you eat it with a kepori? Would you eat it with just you and me?"
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "spidereggsham"
 	food_reagents = list(
@@ -401,7 +400,7 @@
 
 /obj/item/food/sashimi
 	name = "carp sashimi"
-	desc = "Celebrate surviving attack from hostile alien lifeforms by hospitalising yourself. You sure hope whoever made this is skilled."
+	desc = "Carefully prepared, thinly cut space carp sashimi. Thanks to the preparation, the carpotoxin has denatured into an intensely pungent spice."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "sashimi"
 	food_reagents = list(
@@ -434,7 +433,7 @@
 
 /obj/item/food/pigblanket
 	name = "pig in a blanket"
-	desc = "A tiny sausage wrapped in a flakey, buttery roll. Free this pig from its blanket prison by eating it."
+	desc = "A small sausage wrapped in a buttery breadroll."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "pigblanket"
 	food_reagents = list(
@@ -448,7 +447,7 @@
 
 /obj/item/food/bbqribs
 	name = "bbq ribs"
-	desc = "BBQ ribs, slathered in a healthy coating of BBQ sauce. The least vegan thing to ever exist."
+	desc = "A rack of ribs slathered in a healthy coating of BBQ sauce before being braised."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "ribs"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -462,7 +461,7 @@
 
 /obj/item/food/meatclown
 	name = "meat clown"
-	desc = "A delicious, round piece of meat clown. How horrifying."
+	desc = "A cylindrical slice of bologna, rendered into the expression of a clown. Its cheerful, meaty smile weakens you."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "meatclown"
 	food_reagents = list(
@@ -470,14 +469,10 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 		/datum/reagent/consumable/banana = 2
 	)
-	tastes = list("meat" = 5, "clowns" = 3, "sixteen teslas" = 1)
+	tastes = list("meat" = 5, "poor decisions" = 3, "discomfort" = 1)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/food/meatclown/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/slippery, 3 SECONDS)
-
-//////////////////////////////////////////// KEBABS AND OTHER SKEWERS ////////////////////////////////////////////
+//Kebabs and Skewers
 
 /obj/item/food/kebab
 	trash_type = /obj/item/stack/rods
@@ -490,19 +485,9 @@
 	tastes = list("meat" = 3, "metal" = 1)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/food/kebab/human
-	name = "human-kebab"
-	desc = "A human meat, on a stick."
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment/protein = 16,
-		/datum/reagent/consumable/nutriment/vitamin = 6
-	)
-	tastes = list("tender meat" = 3, "metal" = 1)
-	foodtypes = MEAT | GORE
-
 /obj/item/food/kebab/monkey
 	name = "meat-kebab"
-	desc = "Delicious meat, on a stick."
+	desc = "Chunks of meat that have been cooked and served on a skewer."
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 16,
 		/datum/reagent/consumable/nutriment/vitamin = 2
@@ -512,7 +497,7 @@
 
 /obj/item/food/kebab/tofu
 	name = "tofu-kebab"
-	desc = "Vegan meat, on a stick."
+	desc = "Chunks of firm, seasoned tofu that have been cooked and served on a skewer."
 	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 15)
 	tastes = list("tofu" = 3, "metal" = 1)
 	foodtypes = VEGETABLES
@@ -529,7 +514,7 @@
 
 /obj/item/food/kebab/rat
 	name = "rat-kebab"
-	desc = "Not so delicious rat meat, on a stick."
+	desc = "A body of a rat that has been cooked and served on a skewer. Not for the faint of heart."
 	icon_state = "ratkebab"
 	w_class = WEIGHT_CLASS_NORMAL
 	trash_type = null
