@@ -427,8 +427,7 @@
 	tastes = list("fish" = 1,"cruelty" = 2)
 	foodtypes = MEAT | RAW
 
-
-//Steaks 
+//Steaks
 
 /obj/item/food/meat/steak
 	name = "steak"

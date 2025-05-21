@@ -42,7 +42,7 @@
 	butcher_results = list(/obj/item/food/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
 	loot = list()
-	food_type = list(/obj/item/food/meat, /obj/item/food/grown/ash_flora/cactus_fruit, /obj/item/food/grown/ash_flora/mushroom_leaf)	
+	food_type = list(/obj/item/food/meat, /obj/item/food/grown/ash_flora/cactus_fruit, /obj/item/food/grown/ash_flora/mushroom_leaf)
 	tame_chance = 0
 	bonus_tame_chance = 10
 	search_objects = 1

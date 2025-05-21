@@ -319,7 +319,7 @@
 	effect_path = /obj/structure/glowshroom/glowcap
 	tastes = list("glowcap" = 1)
 	wine_power = 60
-	wine_flavor = "battery acid" 
+	wine_flavor = "battery acid"
 
 //Shadowshroom
 /obj/item/seeds/glowshroom/shadowshroom

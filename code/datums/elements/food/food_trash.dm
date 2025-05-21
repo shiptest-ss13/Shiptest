@@ -61,7 +61,7 @@
 		span_danger("You step on \the [source], popping the bag!"),
 		span_danger("You hear a sharp crack!"),
 		vision_distance = COMBAT_MESSAGE_RANGE)
-	
+
 	INVOKE_ASYNC(src, PROC_REF(async_generate_trash), source)
 	qdel(source)
 
