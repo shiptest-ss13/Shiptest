@@ -172,22 +172,22 @@
 	dat += hack(user)
 	dat += showpai(user)
 	dat += "<TT><B>Medical Unit Controls v1.1</B></TT><BR><BR>"
-	dat += "Status: <A href='?src=[REF(src)];power=1'>[on ? "On" : "Off"]</A><BR>"
+	dat += "Status: <A href='byond://?src=[REF(src)];power=1'>[on ? "On" : "Off"]</A><BR>"
 	dat += "Maintenance panel panel is [open ? "opened" : "closed"]<BR>"
 	dat += "<br>Behaviour controls are [locked ? "locked" : "unlocked"]<hr>"
 	if(!locked || issilicon(user) || isAdminGhostAI(user))
 		dat += "<TT>Healing Threshold: "
-		dat += "<a href='?src=[REF(src)];adj_threshold=-10'>--</a> "
-		dat += "<a href='?src=[REF(src)];adj_threshold=-5'>-</a> "
+		dat += "<a href='byond://?src=[REF(src)];adj_threshold=-10'>--</a> "
+		dat += "<a href='byond://?src=[REF(src)];adj_threshold=-5'>-</a> "
 		dat += "[heal_threshold] "
-		dat += "<a href='?src=[REF(src)];adj_threshold=5'>+</a> "
-		dat += "<a href='?src=[REF(src)];adj_threshold=10'>++</a>"
+		dat += "<a href='byond://?src=[REF(src)];adj_threshold=5'>+</a> "
+		dat += "<a href='byond://?src=[REF(src)];adj_threshold=10'>++</a>"
 		dat += "</TT><br>"
-		dat += "The speaker switch is [shut_up ? "off" : "on"]. <a href='?src=[REF(src)];togglevoice=[1]'>Toggle</a><br>"
-		dat += "Critical Patient Alerts: <a href='?src=[REF(src)];critalerts=1'>[declare_crit ? "Yes" : "No"]</a><br>"
-		dat += "Patrol Station: <a href='?src=[REF(src)];operation=patrol'>[auto_patrol ? "Yes" : "No"]</a><br>"
-		dat += "Stationary Mode: <a href='?src=[REF(src)];stationary=1'>[stationary_mode ? "Yes" : "No"]</a><br>"
-		dat += "<a href='?src=[REF(src)];hptech=1'>Search for Technological Advancements</a><br>"
+		dat += "The speaker switch is [shut_up ? "off" : "on"]. <a href='byond://?src=[REF(src)];togglevoice=[1]'>Toggle</a><br>"
+		dat += "Critical Patient Alerts: <a href='byond://?src=[REF(src)];critalerts=1'>[declare_crit ? "Yes" : "No"]</a><br>"
+		dat += "Patrol Station: <a href='byond://?src=[REF(src)];operation=patrol'>[auto_patrol ? "Yes" : "No"]</a><br>"
+		dat += "Stationary Mode: <a href='byond://?src=[REF(src)];stationary=1'>[stationary_mode ? "Yes" : "No"]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];hptech=1'>Search for Technological Advancements</a><br>"
 
 	return dat
 

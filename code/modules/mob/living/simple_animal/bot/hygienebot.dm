@@ -215,12 +215,12 @@
 	dat += showpai(user)
 	dat += {"
 <TT><B>Hygienebot X2 controls</B></TT><BR><BR>
-Status: ["<A href='?src=[REF(src)];power=[TRUE]'>[on ? "On" : "Off"]</A>"]<BR>
+Status: ["<A href='byond://?src=[REF(src)];power=[TRUE]'>[on ? "On" : "Off"]</A>"]<BR>
 Behaviour controls are [locked ? "locked" : "unlocked"]<BR>
 Maintenance panel is [open ? "opened" : "closed"]"}
 
 	if(!locked || issilicon(user) || isAdminGhostAI(user))
-		dat += {"<BR> Auto Patrol: ["<A href='?src=[REF(src)];operation=patrol'>[auto_patrol ? "On" : "Off"]</A>"]"}
+		dat += {"<BR> Auto Patrol: ["<A href='byond://?src=[REF(src)];operation=patrol'>[auto_patrol ? "On" : "Off"]</A>"]"}
 
 	return	dat.Join("")
 
