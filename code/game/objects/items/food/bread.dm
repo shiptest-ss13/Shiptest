@@ -323,14 +323,13 @@
 	name = "hotdog"
 	desc = "A meal consisting of a sausage placed in a specially-shaped bun to hold it with your hands."
 	icon_state = "hotdog"
-	bitesize = 3
-	bonus_reagents = list(
+	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/ketchup = 2,
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 		)
 	tastes = list("bun" = 3, "meat" = 2)
-	foodtype = GRAIN | MEAT
+	foodtypes = GRAIN | MEAT
 	food_flags = FOOD_FINGER_FOOD
 
 /obj/item/food/butterdog
