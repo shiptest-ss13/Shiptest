@@ -3,7 +3,7 @@
 // default value = "Nude"
 /datum/preference/choiced_string/underwear_bottom
 	name = "Underwear"
-	external_key = "underwear_bottom"
+	savefile_key = "underwear_bottom"
 
 	default_value = /datum/sprite_accessory/underwear/nude::name
 	dependencies = list(/datum/preference/species)
@@ -67,7 +67,7 @@
 // default value: "Nude" // in the far future of shiptest we have finally freed the nipple
 /datum/preference/choiced_string/undershirt
 	name = "Undershirt"
-	external_key = "underwear_undershirt"
+	savefile_key = "underwear_undershirt"
 
 	default_value = /datum/sprite_accessory/undershirt/nude::name
 	dependencies = list(/datum/preference/species)
@@ -136,7 +136,7 @@
 // default value: "Nude" // let those dogs bark
 /datum/preference/choiced_string/socks
 	name = "Socks"
-	external_key = "underwear_socks"
+	savefile_key = "underwear_socks"
 
 	default_value = /datum/sprite_accessory/socks/nude::name
 	dependencies = list(/datum/preference/species)
@@ -206,7 +206,7 @@
 // default value: "000"
 /datum/preference/color/underwear_bottom_color
 	name = "Underwear Color"
-	external_key = "underwear_bottom_color"
+	savefile_key = "underwear_bottom_color"
 
 	default_value = "#FFFFFF"
 	include_hash = TRUE
@@ -272,7 +272,7 @@
 // default value: "000"
 /datum/preference/color/undershirt_color
 	name = "Undershirt Color"
-	external_key = "underwear_undershirt_color"
+	savefile_key = "underwear_undershirt_color"
 
 	default_value = "#FFFFFF"
 	include_hash = TRUE
@@ -339,7 +339,7 @@
 // default_value = "000"
 /datum/preference/color/socks_color
 	name = "Sock Color"
-	external_key = "underwear_socks_color"
+	savefile_key = "underwear_socks_color"
 
 	default_value = "#FFFFFF"
 	include_hash = TRUE

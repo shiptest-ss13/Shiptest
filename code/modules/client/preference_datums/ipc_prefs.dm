@@ -7,7 +7,7 @@
 // default value: "None"
 /datum/preference/choiced_string/mutant_bodypart/ipc_tail
 	name = "Tail (IPC)"
-	external_key = "feature_ipc_tail"
+	savefile_key = "feature_ipc_tail"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/ipc_tail
 	default_value = /datum/sprite_accessory/mutant_part/ipc_tail/none::name
@@ -72,7 +72,7 @@
 // default value: "Blue"
 /datum/preference/choiced_string/mutant_bodypart/ipc_screen
 	name = "IPC Screen"
-	external_key = "feature_ipc_screen"
+	savefile_key = "feature_ipc_screen"
 
 	dependencies = list(/datum/preference/species, /datum/preference/choiced_string/ipc_chassis)
 
@@ -226,7 +226,7 @@
 // default value: "Morpheus Cyberkinetics (Custom)"
 /datum/preference/choiced_string/ipc_chassis
 	name = "IPC Chassis"
-	external_key = "feature_ipc_chassis"
+	savefile_key = "feature_ipc_chassis"
 
 	application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE - 1
 
@@ -396,7 +396,7 @@
 /datum/preference/choiced_string/indiv_organs/ipc_brain
 	name = "IPC Brain"
 
-	external_key = "feature_ipc_brain"
+	savefile_key = "feature_ipc_brain"
 	dependencies = list(/datum/preference/species)
 
 	string_type_lookup = list(

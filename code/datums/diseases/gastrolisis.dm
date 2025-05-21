@@ -12,26 +12,25 @@
 
 /datum/disease/gastrolosis/stage_act()
 	..()
-	var/mob/living/carbon/human/affected_human = affected_mob
-	if(is_species(affected_human, /datum/species/snail))
+	if(is_species(affected_mob, /datum/species/snail))
 		cure()
 	switch(stage)
 		if(2)
 			if(prob(2))
-				affected_human.emote("gag")
+				affected_mob.emote("gag")
 			if(prob(1))
-				var/turf/open/OT = get_turf(affected_human)
+				var/turf/open/OT = get_turf(affected_mob)
 				if(isopenturf(OT))
 					OT.MakeSlippery(TURF_WET_LUBE, 40)
 		if(3)
 			if(prob(5))
-				affected_human.emote("gag")
+				affected_mob.emote("gag")
 			if(prob(5))
-				var/turf/open/OT = get_turf(affected_human)
+				var/turf/open/OT = get_turf(affected_mob)
 				if(isopenturf(OT))
 					OT.MakeSlippery(TURF_WET_LUBE, 100)
 		if(4)
-			var/obj/item/organ/eyes/eyes = locate(/obj/item/organ/eyes/snail) in affected_human.internal_organs
+			var/obj/item/organ/eyes/eyes = locate(/obj/item/organ/eyes/snail) in affected_mob.internal_organs
 			if(!eyes && prob(5))
 				var/obj/item/organ/eyes/snail/new_eyes = new()
 				new_eyes.Insert(affected_mob, drop_if_replaced = TRUE)
@@ -39,7 +38,7 @@
 				span_userdanger("You scream in pain as your eyes are pushed out by your new snail eyes!"))
 				affected_mob.force_scream()
 				return
-			var/obj/item/organ/tongue/tongue = locate(/obj/item/organ/tongue/snail) in affected_human.internal_organs
+			var/obj/item/organ/tongue/tongue = locate(/obj/item/organ/tongue/snail) in affected_mob.internal_organs
 			if(!tongue && prob(5))
 				var/obj/item/organ/tongue/snail/new_tongue = new()
 				new_tongue.Insert(affected_mob)
@@ -52,9 +51,9 @@
 				span_boldnotice("You turned into a snail person! You feel an urge to cccrrraaawwwlll..."))
 				cure()
 			if(prob(10))
-				affected_human.emote("gag")
+				affected_mob.emote("gag")
 			if(prob(10))
-				var/turf/open/OT = get_turf(affected_human)
+				var/turf/open/OT = get_turf(affected_mob)
 				if(isopenturf(OT))
 					OT.MakeSlippery(TURF_WET_LUBE, 100)
 

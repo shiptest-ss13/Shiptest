@@ -3,7 +3,7 @@
 // default value: DBACKPACK
 /datum/preference/choiced_string/default_backpack
 	name = "Backpack Style"
-	external_key = "default_backpack"
+	savefile_key = "default_backpack"
 
 	default_value = DBACKPACK
 	// you could argue it should depend on species, since some sprites not be implemented, but... shrug.
@@ -65,7 +65,7 @@
 // default value: PREF_SUIT
 /datum/preference/choiced_string/default_jumpsuit
 	name = "Jumpsuit Style"
-	external_key = "default_jumpsuit"
+	savefile_key = "default_jumpsuit"
 
 	default_value = PREF_SUIT
 	randomization_flags = PREF_RAND_FLAG_SPAWN_HINTS
@@ -134,7 +134,7 @@
 // default value: PREF_EXOWEAR
 /datum/preference/choiced_string/default_exowear
 	name = "Exowear Style"
-	external_key = "default_exowear"
+	savefile_key = "default_exowear"
 
 	default_value = PREF_EXOWEAR
 	randomization_flags = PREF_RAND_FLAG_SPAWN_HINTS
@@ -195,7 +195,7 @@
 /datum/preference/choiced_string/pref_cig
 	name = "Preferred Cigarette Brand"
 
-	external_key = "pref_cig"
+	savefile_key = "pref_cig"
 	default_value = PREF_CIG_SPACE
 
 	randomization_flags = PREF_RAND_FLAG_SPAWN_HINTS

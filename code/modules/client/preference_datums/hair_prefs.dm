@@ -3,7 +3,7 @@
 // default value: "Bald"
 /datum/preference/choiced_string/hairstyle
 	name = "Hairstyle"
-	external_key = "hairstyle"
+	savefile_key = "hairstyle"
 
 	default_value = /datum/sprite_accessory/hair/bald::name
 	dependencies = list(/datum/preference/species)
@@ -122,7 +122,7 @@
 // default value: "Shaved"
 /datum/preference/choiced_string/facial_hairstyle
 	name = "Facial Hairstyle"
-	external_key = "facial_hairstyle"
+	savefile_key = "facial_hairstyle"
 
 	default_value = /datum/sprite_accessory/facial_hair/shaved::name
 	dependencies = list(/datum/preference/species)
@@ -238,7 +238,7 @@
 // default value: "None"
 /datum/preference/choiced_string/hair_gradient_style
 	name = "Hair Gradient"
-	external_key = "hair_gradient_style"
+	savefile_key = "hair_gradient_style"
 
 	default_value = /datum/sprite_accessory/hair_gradient/none::name
 	dependencies = list(/datum/preference/choiced_string/hairstyle)
@@ -319,7 +319,7 @@
 // default value: "000"
 /datum/preference/color/hair_color
 	name = "Hair Color"
-	external_key = "hair_color"
+	savefile_key = "hair_color"
 
 	default_value = "202020"
 	// turns out it controls horns color too, and kepori feathers, and IPC antennae, and certain types of human tails / ears.
@@ -407,7 +407,7 @@
 // default value: "000"
 /datum/preference/color/facial_hair_color
 	name = "Facial Hair Color"
-	external_key = "facial_hair_color"
+	savefile_key = "facial_hair_color"
 
 	default_value = "202020"
 	// unlike normal hair color, no other accessories depend on facial hair color, so we don't need to add a bunch to this list.
@@ -488,7 +488,7 @@
 // default value: "FFF"
 /datum/preference/color/hair_gradient_color
 	name = "Hair Gradient Color"
-	external_key = "hair_gradient_color"
+	savefile_key = "hair_gradient_color"
 
 	// gradients are already anime bullshit. and what's more "anime bullshit" than hair with snow-white tips?
 	default_value = "FFFFFF"

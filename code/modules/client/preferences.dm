@@ -416,7 +416,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 
 		dat += "<h3>[pref.name]</h3>"
-		dat += "<a href='?_src_=prefs;preference=pref_datum;id=[pref.external_key]'>[p_data]</a><BR>"
+		dat += "<a href='?_src_=prefs;preference=pref_datum;id=[pref.savefile_key]'>[p_data]</a><BR>"
 
 		row_id++
 		if(row_id >= MAX_MUTANT_ROWS)

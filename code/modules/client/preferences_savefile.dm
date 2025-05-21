@@ -421,7 +421,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		pref_values[pref.type] = pref.default_value
 
 		var/pref_str_data = null
-		READ_FILE(S[pref.external_key], pref_str_data)
+		READ_FILE(S[pref.savefile_key], pref_str_data)
 		if(isnull(pref_str_data)) // no data, so just move on. not using !pref_str_data here since the empty string is falsey
 			continue
 
@@ -527,7 +527,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// now we actually do the write.
 	for(var/datum/preference/p_datum as anything in serialized_pref_data)
-		WRITE_FILE(S[p_datum.external_key], serialized_pref_data[p_datum])
+		WRITE_FILE(S[p_datum.savefile_key], serialized_pref_data[p_datum])
 
 	S.cd = oldcd
 

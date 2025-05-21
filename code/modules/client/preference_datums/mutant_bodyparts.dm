@@ -33,63 +33,63 @@
 
 /datum/preference/choiced_string/mutant_bodypart/body_markings
 	name = "Body Markings"
-	external_key = "feature_lizard_body_markings"
+	savefile_key = "feature_lizard_body_markings"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/body_markings
 	default_value = /datum/sprite_accessory/mutant_part/body_markings/none::name
 
 /datum/preference/choiced_string/mutant_bodypart/face_markings
 	name = "Face Markings"
-	external_key = "feature_lizard_face_markings"
+	savefile_key = "feature_lizard_face_markings"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/face_markings
 	default_value = /datum/sprite_accessory/mutant_part/face_markings/none::name
 
 /datum/preference/choiced_string/mutant_bodypart/squid_face
 	name = "Squid Face"
-	external_key = "feature_squid_face"
+	savefile_key = "feature_squid_face"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/squid_face
 	default_value = /datum/sprite_accessory/mutant_part/squid_face/squidward::name
 
 /datum/preference/choiced_string/mutant_bodypart/spider_legs
 	name = "Spider Legs"
-	external_key = "feature_spider_legs"
+	savefile_key = "feature_spider_legs"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/spider_legs
 	default_value = /datum/sprite_accessory/mutant_part/spider_legs/carapace::name
 
 /datum/preference/choiced_string/mutant_bodypart/spider_spinneret
 	name = "Spider Spinneret"
-	external_key = "feature_spider_spinneret"
+	savefile_key = "feature_spider_spinneret"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/spider_spinneret
 	default_value = /datum/sprite_accessory/mutant_part/spider_spinneret/spikecore::name
 
 /datum/preference/choiced_string/mutant_bodypart/moth_markings
 	name = "Moth Markings"
-	external_key = "feature_moth_markings"
+	savefile_key = "feature_moth_markings"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/moth_markings
 	default_value = /datum/sprite_accessory/mutant_part/moth_markings/none::name
 
 /datum/preference/choiced_string/mutant_bodypart/moth_fluff
 	name = "Moth Fluff"
-	external_key = "feature_moth_fluff"
+	savefile_key = "feature_moth_fluff"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/moth_fluff
 	default_value = /datum/sprite_accessory/mutant_part/moth_fluff/plain::name
 
 /datum/preference/choiced_string/mutant_bodypart/kepori_feathers
 	name = "Kepori Feathers"
-	external_key = "feature_kepori_feathers"
+	savefile_key = "feature_kepori_feathers"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/kepori_feathers
 	default_value = /datum/sprite_accessory/mutant_part/kepori_feathers/none::name
 
 /datum/preference/choiced_string/mutant_bodypart/kepori_body_feathers
 	name = "Kepori Body Feathers"
-	external_key = "feature_kepori_body_feathers"
+	savefile_key = "feature_kepori_body_feathers"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/kepori_body_feathers
 	default_value = /datum/sprite_accessory/mutant_part/kepori_body_feathers/none::name
@@ -99,7 +99,7 @@
 // default value: "None"
 /datum/preference/choiced_string/mutant_bodypart/kepori_head_feathers
 	name = "Kepori Head Feathers"
-	external_key = "feature_kepori_head_feathers"
+	savefile_key = "feature_kepori_head_feathers"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/kepori_head_feathers
 	default_value = /datum/sprite_accessory/mutant_part/kepori_head_feathers/none::name
@@ -137,35 +137,35 @@
 
 /datum/preference/choiced_string/mutant_bodypart/kepori_tail_feathers
 	name = "Kepori Tail Feathers"
-	external_key = "feature_kepori_tail_feathers"
+	savefile_key = "feature_kepori_tail_feathers"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/kepori_tail_feathers
 	default_value = /datum/sprite_accessory/mutant_part/kepori_tail_feathers/fan::name
 
 /datum/preference/choiced_string/mutant_bodypart/vox_head_quills
 	name = "Vox Head Quills"
-	external_key = "feature_vox_head_quills"
+	savefile_key = "feature_vox_head_quills"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/vox_head_quills
 	default_value = /datum/sprite_accessory/mutant_part/vox_head_quills/none::name
 
 /datum/preference/choiced_string/mutant_bodypart/vox_neck_quills
 	name = "Vox Neck Quills"
-	external_key = "feature_vox_neck_quills"
+	savefile_key = "feature_vox_neck_quills"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/vox_neck_quills
 	default_value = /datum/sprite_accessory/mutant_part/vox_neck_quills/plain::name
 
 /datum/preference/choiced_string/mutant_bodypart/elzu_horns
 	name = "Elzu Horns"
-	external_key = "feature_elzu_horns"
+	savefile_key = "feature_elzu_horns"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/elzu_horns
 	default_value = /datum/sprite_accessory/mutant_part/elzu_horns/none::name
 
 /datum/preference/choiced_string/mutant_bodypart/ipc_antenna
 	name = "IPC Antennae"
-	external_key = "feature_ipc_antenna"
+	savefile_key = "feature_ipc_antenna"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/ipc_antennas
 	default_value = /datum/sprite_accessory/mutant_part/ipc_antennas/none::name
@@ -175,7 +175,7 @@
 // default value: "None"
 /datum/preference/choiced_string/mutant_bodypart/spines
 	name = "Spines"
-	external_key = "feature_spines"
+	savefile_key = "feature_spines"
 
 	// unlike other mutant_bodyparts, this one doesn't depend directly on the species, since it's more like a corollary to the tail.
 	dependencies = list(/datum/preference/choiced_string/mutant_bodypart/organ_linked/sarathi_tail)
@@ -254,7 +254,7 @@
 // default value: "None"
 /datum/preference/choiced_string/mutant_bodypart/horns
 	name = "Horns"
-	external_key = "feature_lizard_horns"
+	savefile_key = "feature_lizard_horns"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/horns
 	default_value = /datum/sprite_accessory/mutant_part/horns/none::name
@@ -320,7 +320,7 @@
 // default value: "None"
 /datum/preference/choiced_string/mutant_bodypart/frills
 	name = "Frills"
-	external_key = "feature_lizard_frills"
+	savefile_key = "feature_lizard_frills"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/frills
 	default_value = /datum/sprite_accessory/mutant_part/frills/none::name
@@ -428,7 +428,7 @@
 // default value: "Smooth"
 /datum/preference/choiced_string/mutant_bodypart/organ_linked/sarathi_tail
 	name = "Tail (Sarathi)"
-	external_key = "feature_lizard_tail"
+	savefile_key = "feature_lizard_tail"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/tails/lizard
 	default_value = /datum/sprite_accessory/mutant_part/tails/lizard/smooth::name
@@ -493,7 +493,7 @@
 // default value: "None"
 /datum/preference/choiced_string/mutant_bodypart/organ_linked/elzu_tail
 	name = "Tail (Elzu)"
-	external_key = "feature_elzu_tail"
+	savefile_key = "feature_elzu_tail"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/tails/elzu
 	default_value = /datum/sprite_accessory/mutant_part/tails/elzu/none::name
@@ -560,7 +560,7 @@
 // default value: "Plain"
 /datum/preference/choiced_string/mutant_bodypart/organ_linked/moth_wings
 	name = "Moth Wings"
-	external_key = "feature_moth_wings"
+	savefile_key = "feature_moth_wings"
 
 	mut_part_type = /datum/sprite_accessory/mutant_part/moth_wings
 	default_value = /datum/sprite_accessory/mutant_part/moth_wings/plain::name
@@ -665,7 +665,7 @@
 // default value: "None"
 /datum/preference/choiced_string/indiv_organs/human_tail
 	name = "Tail (Human)"
-	external_key = "feature_human_tail"
+	savefile_key = "feature_human_tail"
 
 	dependencies = list(/datum/preference/species)
 
@@ -760,7 +760,7 @@
 // default value: "None"
 /datum/preference/choiced_string/indiv_organs/human_ears
 	name = "Ears"
-	external_key = "feature_human_ears"
+	savefile_key = "feature_human_ears"
 
 	dependencies = list(/datum/preference/species)
 

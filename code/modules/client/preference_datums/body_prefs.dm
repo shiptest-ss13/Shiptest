@@ -6,7 +6,7 @@
 // default value: "caucasian1"
 /datum/preference/choiced_string/skin_tone
 	name = "Skin Tone"
-	external_key = "skin_tone"
+	savefile_key = "skin_tone"
 
 	default_value = "caucasian1"
 	dependencies = list(/datum/preference/species)
@@ -84,7 +84,7 @@
 // default value: "000"
 /datum/preference/color/eye_color
 	name = "Eye Color"
-	external_key = "eye_color"
+	savefile_key = "eye_color"
 
 	default_value = "000000"
 	dependencies = list(/datum/preference/species)
@@ -165,7 +165,7 @@
 // default value: list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
 /datum/preference/prosthetic_limbs
 	name = "Prosthetic Limbs"
-	external_key = "prosthetic_limbs"
+	savefile_key = "prosthetic_limbs"
 
 	// needs to happen after finalization so we can lop the limbs off correctly
 	application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE - 1
@@ -324,7 +324,7 @@
 // default value: FALSE
 /datum/preference/toggle/fbp
 	name = "Full-Body Positronic"
-	external_key = "is_fbp"
+	savefile_key = "is_fbp"
 
 	default_value = FALSE
 	dependencies = list(/datum/preference/species)
@@ -385,7 +385,7 @@
 // default value: "FFF"
 /datum/preference/color/mutant_color
 	name = "Mutant Color"
-	external_key = "mutant_color"
+	savefile_key = "mutant_color"
 
 	default_value = "FFFFFF"
 	min_hsv_value = 9
@@ -473,7 +473,7 @@
 // default value: "FFF"
 /datum/preference/color/mutant_color_2
 	name = "Mutant Color 2"
-	external_key = "mutant_color_2"
+	savefile_key = "mutant_color_2"
 
 	default_value = "FFFFFF"
 	dependencies = list(/datum/preference/species)
@@ -543,7 +543,7 @@
 // default value: ""
 /datum/preference/flavor_text
 	name = "Flavor Text"
-	external_key = "flavor_text"
+	savefile_key = "flavor_text"
 
 	default_value = ""
 	randomization_flags = NONE // doesn't really make sense to randomize this ever
@@ -680,7 +680,7 @@
 // default value: "Normal" (BODY_SIZE_NORMAL)
 /datum/preference/choiced_string/body_size
 	name = "Body Size"
-	external_key = "body_size"
+	savefile_key = "body_size"
 
 	default_value = BODY_SIZE_NORMAL
 	dependencies = list(/datum/preference/species)
@@ -766,7 +766,7 @@
 // default value: FEATURE_NORMAL_LEGS
 /datum/preference/toggle/digitigrade
 	name = "Digitigrade"
-	external_key = "digitigrade"
+	savefile_key = "digitigrade"
 
 	default_value = FALSE
 	dependencies = list(/datum/preference/species)
@@ -858,7 +858,7 @@
 
 	// name =
 
-	// external_key =
+	// savefile_key =
 	// application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE
 
 	// default_value =

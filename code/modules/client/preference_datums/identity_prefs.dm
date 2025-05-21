@@ -3,7 +3,7 @@
 // no default, always randomized
 /datum/preference/real_name
 	name = "Name"
-	external_key = "real_name"
+	savefile_key = "real_name"
 	#warn this really demonstrates the failing of "always valid" default values... i HATE john trasen!!!!
 	default_value = "John Trasen"
 
@@ -139,7 +139,7 @@
 // default male
 /datum/preference/choiced_string/gender
 	name = "Gender"
-	external_key = "gender"
+	savefile_key = "gender"
 	default_value = MALE
 
 	dependencies = list(/datum/preference/species)
@@ -243,7 +243,7 @@
 /datum/preference/age
 	name = "Age"
 	// having a key this short feels weird to me. doesn't affect anything though
-	external_key = "age"
+	savefile_key = "age"
 	default_value = 30 // sure
 
 	dependencies = list(/datum/preference/species)
@@ -333,7 +333,7 @@
 // default value "Unremarkable"
 /datum/preference/generic_adjective
 	name = "Adjective"
-	external_key = "generic_adjective"
+	savefile_key = "generic_adjective"
 	default_value = "Unremarkable"
 
 	dependencies = list(/datum/preference/species)
@@ -442,7 +442,7 @@
 // default value: "spiders"
 /datum/preference/choiced_string/phobia
 	name = "Phobia"
-	external_key = "phobia"
+	savefile_key = "phobia"
 
 	default_value = "spiders"
 

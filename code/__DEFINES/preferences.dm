@@ -94,6 +94,12 @@
 //Flags in the players table in the db
 #define DB_FLAG_EXEMPT (1<<0)
 
+// Values for /datum/preference/savefile_identifier
+/// This preference is character specific.
+#define PREFERENCE_CHARACTER "character"
+/// This preference is account specific.
+#define PREFERENCE_PLAYER "player"
+
 #define DEFAULT_CYBORG_NAME "Default Cyborg Name"
 
 #warn remove

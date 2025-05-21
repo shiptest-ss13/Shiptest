@@ -7,7 +7,7 @@
 // default human
 /datum/preference/species
 	name = "Species"
-	external_key = "species"
+	savefile_key = "species"
 
 	application_priority = PREF_APPLICATION_PRIORITY_SPECIES_PRELIMINARY
 	randomization_flags = PREF_RAND_FLAG_APPEARANCE | PREF_RAND_FLAG_IDENTITY
@@ -172,7 +172,7 @@
 
 	// name =
 
-	// external_key =
+	// savefile_key =
 	// application_priority = PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE
 
 	// default_value =

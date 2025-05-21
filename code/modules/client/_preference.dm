@@ -4,15 +4,15 @@
 	// the name shown in the prefs menu to identify this option, if applicable. technically need not be unique
 	var/name = "TEST PREF"
 
-	#warn due to being relatively unimplemented, this has been temporarily removed.
-	/*
-	//#warn all this code needs to throw errors depending on pref_type -- if pref_type is PREFERENCE_ACCOUNT, random deps and children are disallowed!!!!
-	//var/pref_type
-	*/
-
 	// name used in savefiles and various parts of UI code to identify the preference.
 	// once this is set for a preference, you probably shouldn't change it.
-	var/external_key
+	var/savefile_key
+	#warn implement
+	/// What savefile should this preference be read from?
+	/// Valid values are PREFERENCE_CHARACTER and PREFERENCE_PLAYER.
+	/// See the documentation in [code/__DEFINES/preferences.dm].
+	var/savefile_identifier
+
 	/// Controls the order with which the preference is applied to characters; higher priority datums are applied first.
 	/// The order in which preferences with the same application priority are applied is undefined.
 	/// After all preferences with priority PREF_APPLICATION_PRIORITY_SPECIES_FINALIZE are applied, finalize_species()
@@ -46,8 +46,8 @@
 
 	if(abstract_type == type)
 		CRASH("Attempted to instance an abstract preference! Don't do this!")
-	else if(!external_key || !istext(external_key))
-		CRASH("Non-abstract preference datum [type] lacks a valid external_key!")
+	else if(!savefile_key || !istext(savefile_key))
+		CRASH("Non-abstract preference datum [type] lacks a valid savefile_key!")
 
 	var/list/overlapping_deps = dependencies & rand_dependencies
 	if(length(overlapping_deps) != 0)
@@ -95,8 +95,8 @@
 			stack_trace("Preference [type] has randomization flags which its randomization dependency [rand_pref_type] lacks, allowing for invalid randomization!")
 
 	// ! better error messages?
-	if(external_key in GLOB.pref_ext_key_lookup)
-		stack_trace("Duplicate external key \"[external_key]\" for preference [type]!")
+	if(savefile_key in GLOB.pref_ext_key_lookup)
+		stack_trace("Duplicate external key \"[savefile_key]\" for preference [type]!")
 		return // again, no duplicates
 
 	if(src in GLOB.pref_datums)
@@ -106,7 +106,7 @@
 
 	GLOB.pref_datums += src
 	GLOB.pref_type_lookup[type] = src
-	GLOB.pref_ext_key_lookup[external_key] = src
+	GLOB.pref_ext_key_lookup[savefile_key] = src
 
 
 	if((length(dependencies) + length(rand_dependencies)) == 0)
