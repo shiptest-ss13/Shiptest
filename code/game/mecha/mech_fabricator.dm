@@ -93,8 +93,8 @@
 				continue
 			output += "<div class='part'>[output_part_info(D)]<br>"
 			if(check_resources(D))
-				output += "<a href='?src=[REF(src)];command=build;part=[D.id]'>Build</a> | "
-			output += "<a href='?src=[REF(src)];command=add;add_to_queue=[D.id]'>Add to queue</a><a href='?src=[REF(src)];command=describe;part_desc=[D.id]'>?</a></div>"
+				output += "<a href='byond://?src=[REF(src)];command=build;part=[D.id]'>Build</a> | "
+			output += "<a href='byond://?src=[REF(src)];command=add;add_to_queue=[D.id]'>Add to queue</a><a href='byond://?src=[REF(src)];command=describe;part_desc=[D.id]'>?</a></div>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/output_part_info(datum/design/D)
@@ -116,11 +116,11 @@
 	output += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]<br>"
 	output += "Linked to server: [(linked_to_server == FALSE)? "<font color='red'>Unlinked</font>" : "<font color='green'>Linked</font>"]<br>"
 	if (rmat.mat_container)
-		output += "<a href='?src=[REF(src)];command=change_screen;screen=resources'><B>Material Amount:</B> [rmat.format_amount()]</A>"
+		output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=resources'><B>Material Amount:</B> [rmat.format_amount()]</A>"
 	else
 		output += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
-	output += "<a href='?src=[REF(src)];command=change_screen;screen=direction'>Outputting: [uppertext(dir2text(output_direction))]</a>"
-	output += "<a href='?src=[REF(src)];command=change_screen;screen=main'>Main Screen</a>"
+	output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=direction'>Outputting: [uppertext(dir2text(output_direction))]</a>"
+	output += "<a href='byond://?src=[REF(src)];command=change_screen;screen=main'>Main Screen</a>"
 	output += "</div>"
 	output += "<form name='search' action='?src=[REF(src)]'>\
 	<input type='hidden' name='src' value='[REF(src)]'>\
@@ -153,9 +153,9 @@
 		var/amount = rmat.mat_container.materials[mat_id]
 		var/ref = REF(M)
 		output += "* [amount] of [M.name]: "
-		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<A href='?src=[REF(src)];command=eject;remove_mat=1;material=[ref]'>Eject</A>"
-		if(amount >= MINERAL_MATERIAL_AMOUNT*5) output += "<A href='?src=[REF(src)];command=eject;remove_mat=5;material=[ref]'>5x</A>"
-		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<A href='?src=[REF(src)];command=eject;remove_mat=50;material=[ref]'>All</A>"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<a href='byond://?src=[REF(src)];command=eject;remove_mat=1;material=[ref]'>Eject</A>"
+		if(amount >= MINERAL_MATERIAL_AMOUNT*5) output += "<a href='byond://?src=[REF(src)];command=eject;remove_mat=5;material=[ref]'>5x</A>"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) output += "<a href='byond://?src=[REF(src)];command=eject;remove_mat=50;material=[ref]'>All</A>"
 		output += "<br>"
 	output += "</div>"
 	return output
@@ -175,15 +175,15 @@
 	for(var/datum/design/D in matching_designs)
 		output += "<div class='part'>[output_part_info(D)]<br>"
 		if(check_resources(D))
-			output += "<a href='?src=[REF(src)];command=build;part=[D.id]'>Build</a> | "
-		output += "<a href='?src=[REF(src)];command=add;add_to_queue=[D.id]'>Add to queue</a><a href='?src=[REF(src)];command=describe;part_desc=[D.id]'>?</a></div>"
+			output += "<a href='byond://?src=[REF(src)];command=build;part=[D.id]'>Build</a> | "
+		output += "<a href='byond://?src=[REF(src)];command=add;add_to_queue=[D.id]'>Add to queue</a><a href='byond://?src=[REF(src)];command=describe;part_desc=[D.id]'>?</a></div>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/output_ui_direction()
 	var/output
 	output += "<h2>Output Direction:</h2>"
 	for(var/direction in GLOB.cardinals)
-		output += "<a href='?src=[REF(src)];command=direction;new_direction=[direction]'>[uppertext(dir2text(direction))]</a>"
+		output += "<a href='byond://?src=[REF(src)];command=direction;new_direction=[direction]'>[uppertext(dir2text(direction))]</a>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/build_part(datum/design/D)
@@ -283,12 +283,12 @@
 			var/obj/part = D.build_path
 			output += "<li[!check_resources(D)?" style='color: #f00;'":null]>"
 			output += initial(part.name) + " - "
-			output += "[i>1?"<a href='?src=[REF(src)];command=move;queue_move=-1;index=[i]' class='arrow'>&uarr;</a>":null] "
-			output += "[i<queue.len?"<a href='?src=[REF(src)];command=move;queue_move=+1;index=[i]' class='arrow'>&darr;</a>":null] "
-			output += "<a href='?src=[REF(src)];command=remove;remove_from_queue=[i]'>Remove</a></li>"
+			output += "[i>1?"<a href='byond://?src=[REF(src)];command=move;queue_move=-1;index=[i]' class='arrow'>&uarr;</a>":null] "
+			output += "[i<queue.len?"<a href='byond://?src=[REF(src)];command=move;queue_move=+1;index=[i]' class='arrow'>&darr;</a>":null] "
+			output += "<a href='byond://?src=[REF(src)];command=remove;remove_from_queue=[i]'>Remove</a></li>"
 
 		output += "</ol>"
-		output += "<a href='?src=[REF(src)];command=process_queue'>Process queue</a> | <a href='?src=[REF(src)];command=clear_queue'>Clear queue</a>"
+		output += "<a href='byond://?src=[REF(src)];command=process_queue'>Process queue</a> | <a href='byond://?src=[REF(src)];command=clear_queue'>Clear queue</a>"
 	return output
 
 /obj/machinery/mecha_part_fabricator/proc/get_resource_cost_w_coeff(datum/design/D, datum/material/resource, roundto = 1)
@@ -312,7 +312,7 @@
 		switch(screen)
 			if("main")
 				for(var/part_set in part_sets)
-					left_part += "<a href='?src=[REF(src)];command=category;part_set=[part_set]'>[part_set]</a> - <a href='?src=[REF(src)];command=send_all;partset_to_queue=[part_set]'>Add all parts to queue</a><br>"
+					left_part += "<a href='byond://?src=[REF(src)];command=category;part_set=[part_set]'>[part_set]</a> - <a href='byond://?src=[REF(src)];command=send_all;partset_to_queue=[part_set]'>Add all parts to queue</a><br>"
 			if("parts")
 				left_part += output_parts_list(part_set)
 			if("resources")
@@ -424,7 +424,7 @@
 						var/obj/part = D.build_path
 						temp = {"<h1>[initial(part.name)] description:</h1>
 									[initial(part.desc)]<br>
-									<a href='?src=[REF(src)];command=clear_temp'>Return</a>
+									<a href='byond://?src=[REF(src)];command=clear_temp'>Return</a>
 									"}
 						break
 		if("search") //Search for designs with name matching pattern
