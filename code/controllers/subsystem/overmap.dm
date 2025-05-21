@@ -780,7 +780,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/proc/overmap_container_view(user = usr) //this is broken rn, idfk know html viewers works
 	if(!overmap_container)
 		return
-	. += "<a href='?src=[REF(src)];refresh=1'>\[Refresh\]</a><br><code>"
+	. += "<a href='byond://?src=[REF(src)];refresh=1'>\[Refresh\]</a><br><code>"
 	for(var/y in size to 1 step -1)
 		for(var/x in 1 to size)
 			var/tile
@@ -795,7 +795,7 @@ SUBSYSTEM_DEF(overmap)
 			else
 				tile = "."
 				thing_to_link = overmap_container[x][y]
-			. += "<a href='?src=[REF(src)];view_object=[REF(thing_to_link)]' title='[x]x, [y]y'>[add_leading(add_trailing(tile, 2), 3)]</a>" //"centers" the character
+			. += "<a href='byond://?src=[REF(src)];view_object=[REF(thing_to_link)]' title='[x]x, [y]y'>[add_leading(add_trailing(tile, 2), 3)]</a>" //"centers" the character
 		. += "<br>"
 		CHECK_TICK
 	. += "</code>"
