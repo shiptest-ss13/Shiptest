@@ -2,6 +2,7 @@
 	name = "shotgun"
 	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	item_state = "shotgun"
+	bad_type = /obj/item/gun/ballistic/shotgun
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
@@ -59,6 +60,7 @@
 
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
+	bad_type = /obj/item/gun/ballistic/shotgun/automatic
 	spread = 3
 	spread_unwielded = 15
 	recoil = 1
