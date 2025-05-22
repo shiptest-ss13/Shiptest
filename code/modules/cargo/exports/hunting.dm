@@ -31,7 +31,7 @@
 /datum/export/hunting/stack/leather
 	unit_name = "leather"
 	desc = "Processed hide of an animal. Paid per sheet."
-	cost = 30 // You need to process goliath hide, which takes effort!
+	cost = 100 // You need to process goliath hide, which takes effort!
 	export_types = list(/obj/item/stack/sheet/leather)
 
 /datum/export/hunting/stack/sinew
