@@ -500,7 +500,7 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/bad_touch_bear_hug)
 
 		// Let people know if they hugged someone really warm or really cold
-		if (M.grab_state >= GRAB_PASSIVE)
+		if ((M.grab_state == GRAB_PASSIVE) && (M.pulling))
 			if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
 				to_chat(src, span_warning("It feels like [M] is over heating as they hug you."))
 			else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
