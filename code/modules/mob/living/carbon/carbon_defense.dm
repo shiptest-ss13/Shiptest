@@ -434,7 +434,7 @@
 		if(istype(dna.species, /datum/species/moth))
 			M.mothdust += 10; // End WS edit
 
-	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
+	else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
 		nosound = TRUE
 		playsound(src, 'sound/effects/boop.ogg', 50, 0)
 		if (HAS_TRAIT(M, TRAIT_FRIENDLY))
