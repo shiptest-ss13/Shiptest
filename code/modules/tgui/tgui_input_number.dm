@@ -25,10 +25,8 @@
 		else
 			return
 	/// Client does NOT have tgui_fancy on: Returns regular input
-	/* implement with prefs that don't suck
-	if(!user.client.prefs.read_preference(/datum/preference/toggle/tgui_input))
+	if(!user.client.prefs.tgui_input)
 		return input(user, message, title, default) as null | num
-		*/
 	var/datum/tgui_input_number/numbox = new(user, message, title, default, max_value, min_value, timeout)
 	numbox.ui_interact(user)
 	numbox.wait()
@@ -130,10 +128,8 @@
 	. = list(
 		"preferences" = list()
 	)
-	/* implement with prefs that don't suck
-	.["preferences"]["large_buttons"] = user.client.prefs.read_preference(/datum/preference/toggle/tgui_input_large)
-	.["preferences"]["swapped_buttons"] = user.client.prefs.read_preference(/datum/preference/toggle/tgui_input_swapped)
-	*/
+	.["preferences"]["large_buttons"] = user.client.prefs.large_tgui_buttons
+	.["preferences"]["swapped_buttons"] = user.client.prefs.swapped_tgui_buttons
 
 /datum/tgui_input_number/ui_data(mob/user)
 	. = list(

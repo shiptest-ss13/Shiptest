@@ -67,7 +67,8 @@
 	BLACKBOX_LOG_ADMIN_VERB("Play Direct Mob Sound")
 
 GLOBAL_VAR_INIT(web_sound_cooldown, 0)
-///Takes an input from either proc/play_web_sound or the request manager and runs it through youtube-dl and prompts the user before playing it to the server.
+
+///Takes an input from proc/play_web_sound and runs it through yt-dlp and prompts the user before playing it to the server.
 /proc/web_sound(mob/user, input)
 	if(!check_rights(R_SOUND))
 		return
@@ -125,9 +126,9 @@ GLOBAL_VAR_INIT(web_sound_cooldown, 0)
 		switch(anon)
 			if("Yes")
 				if(res == "Yes")
-					to_chat(world, span_boldannounce("[user] played: [webpage_url]"), confidential = TRUE)
+					to_chat(world, span_boldannounce("[user.mind.key] played: [webpage_url]"), confidential = TRUE)
 				else
-					to_chat(world, span_boldannounce("[user] played some music"), confidential = TRUE)
+					to_chat(world, span_boldannounce("[user.mind.key] played some music"), confidential = TRUE)
 			if("No")
 				if(res == "Yes")
 					to_chat(world, span_boldannounce("An admin played: [webpage_url]"), confidential = TRUE)

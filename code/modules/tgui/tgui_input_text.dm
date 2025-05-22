@@ -29,8 +29,7 @@
 		return null
 
 	// Client does NOT have tgui_input on: Returns regular input
-	/* implement with prefs that don't suck
-	if(!user.client.prefs.read_preference(/datum/preference/toggle/tgui_input))
+	if(!user.client.prefs.tgui_input)
 		if(encode)
 			if(multiline)
 				return stripped_multiline_input(user, message, title, default, PREVENT_CHARACTER_TRIM_LOSS(max_length))
@@ -41,7 +40,6 @@
 				return input(user, message, title, default) as message|null
 			else
 				return input(user, message, title, default) as text|null
-	*/
 	var/datum/tgui_input_text/text_input = new(user, message, title, default, max_length, multiline, encode, timeout, ui_state)
 	text_input.ui_interact(user)
 	text_input.wait()
@@ -120,10 +118,8 @@
 
 /datum/tgui_input_text/ui_static_data(mob/user)
 	var/list/data = list()
-	/* implement with prefs that don't suck
-	data["large_buttons"] = user.client.prefs.read_preference(/datum/preference/toggle/tgui_input_large)
-	data["swapped_buttons"] = user.client.prefs.read_preference(/datum/preference/toggle/tgui_input_swapped)
-	*/
+	data["large_buttons"] = user.client.prefs.large_tgui_buttons
+	data["swapped_buttons"] = user.client.prefs.swapped_tgui_buttons
 	data["max_length"] = max_length
 	data["message"] = message
 	data["multiline"] = multiline
