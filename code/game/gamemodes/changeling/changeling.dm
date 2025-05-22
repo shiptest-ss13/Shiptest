@@ -1,7 +1,3 @@
-GLOBAL_LIST_INIT(possible_changeling_IDs, list("Alpha","Beta","Gamma","Delta","Epsilon","Zeta","Eta","Theta","Iota","Kappa","Lambda","Mu","Nu","Xi","Omicron","Pi","Rho","Sigma","Tau","Upsilon","Phi","Chi","Psi","Omega"))
-GLOBAL_LIST_INIT(slots, list("head", "wear_mask", "back", "wear_suit", "w_uniform", "shoes", "belt", "gloves", "glasses", "ears", "wear_id", "s_store"))
-GLOBAL_LIST_INIT(slot2slot, list("head" = ITEM_SLOT_HEAD, "wear_mask" = ITEM_SLOT_MASK, "neck" = ITEM_SLOT_NECK, "back" = ITEM_SLOT_BACK, "wear_suit" = ITEM_SLOT_OCLOTHING, "w_uniform" = ITEM_SLOT_ICLOTHING, "shoes" = ITEM_SLOT_FEET, "belt" = ITEM_SLOT_BELT, "gloves" = ITEM_SLOT_GLOVES, "glasses" = ITEM_SLOT_EYES, "ears" = ITEM_SLOT_EARS, "wear_id" = ITEM_SLOT_ID, "s_store" = ITEM_SLOT_SUITSTORE))
-GLOBAL_LIST_INIT(slot2type, list("head" = /obj/item/clothing/head/changeling, "wear_mask" = /obj/item/clothing/mask/changeling, "back" = /obj/item/changeling, "wear_suit" = /obj/item/clothing/suit/changeling, "w_uniform" = /obj/item/clothing/under/changeling, "shoes" = /obj/item/clothing/shoes/changeling, "belt" = /obj/item/changeling, "gloves" = /obj/item/clothing/gloves/changeling, "glasses" = /obj/item/clothing/glasses/changeling, "ears" = /obj/item/changeling, "wear_id" = /obj/item/changeling, "s_store" = /obj/item/changeling))
 GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our this objective to all lings
 
 
@@ -99,53 +95,6 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 			codenamed \"Thing\", and it was highly adaptive and extremely dangerous. We have reason to believe that the Thing has allied with the Syndicate, and you should note that likelihood \
 			of the Thing being sent to a station in this sector is highly likely. It may be in the guise of any crew member. Trust nobody - suspect everybody. Do not announce this to the crew, \
 			as paranoia may spread and inhibit workplace efficiency."
-
-/proc/changeling_transform(mob/living/carbon/human/user, datum/changelingprofile/chosen_prof)
-	var/datum/dna/chosen_dna = chosen_prof.dna
-	user.real_name = chosen_prof.name
-	user.underwear = chosen_prof.underwear
-	user.undershirt = chosen_prof.undershirt
-	user.socks = chosen_prof.socks
-
-	chosen_dna.transfer_identity(user, 1)
-	user.updateappearance(mutcolor_update=1)
-
-	///Bodypart data hack. Will rewrite when I rewrite changelings soon-ish
-	for(var/obj/item/bodypart/BP as anything in user.bodyparts)
-		if(IS_ORGANIC_LIMB(BP))
-			BP.update_limb(is_creating = TRUE)
-
-	user.domutcheck()
-
-	//vars hackery. not pretty, but better than the alternative.
-	for(var/slot in GLOB.slots)
-		if(istype(user.vars[slot], GLOB.slot2type[slot]) && !(chosen_prof.exists_list[slot])) //remove unnecessary flesh items
-			qdel(user.vars[slot])
-			continue
-
-		if((user.vars[slot] && !istype(user.vars[slot], GLOB.slot2type[slot])) || !(chosen_prof.exists_list[slot]))
-			continue
-
-		var/obj/item/C
-		var/equip = 0
-		if(!user.vars[slot])
-			var/thetype = GLOB.slot2type[slot]
-			equip = 1
-			C = new thetype(user)
-
-		else if(istype(user.vars[slot], GLOB.slot2type[slot]))
-			C = user.vars[slot]
-
-		C.appearance = chosen_prof.appearance_list[slot]
-		C.name = chosen_prof.name_list[slot]
-		C.flags_cover = chosen_prof.flags_cover_list[slot]
-		C.item_state = chosen_prof.item_state_list[slot]
-		C.mob_overlay_icon = chosen_prof.mob_overlay_icon_list[slot]
-		C.mob_overlay_state = chosen_prof.mob_overlay_state_list[slot] //WS EDIT - Mob Overlay State
-		if(equip)
-			user.equip_to_slot_or_del(C, GLOB.slot2slot[slot])
-
-	user.regenerate_icons()
 
 
 /datum/game_mode/changeling/generate_credit_text()

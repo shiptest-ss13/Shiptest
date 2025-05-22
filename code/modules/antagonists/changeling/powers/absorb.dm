@@ -83,6 +83,18 @@
 							var/datum/mind/M = mind
 							user.mind.memory += "<li>Conspirator: [M.name]</li>"
 						user.mind.memory += "</ul>"
+
+		// guestbook
+		if(user.mind.guestbook && suckedbrain.guestbook)
+			var/datum/guestbook/ling_guestbook = user.mind.guestbook
+			var/datum/guestbook/victim_guestbook = suckedbrain.guestbook
+			// iterate through the real names that the victim knows
+			for(var/potential_guest in victim_guestbook.known_names)
+				// skip people that the ling already knows
+				if((LAZYACCESS(ling_guestbook.known_names, potential_guest)))
+					continue
+				ling_guestbook.known_names += potential_guest // there should be a proc for adding a guest without needing a mob, probably
+
 		user.mind.memory += "<b>That's all [target] had.</b><BR>"
 		user.memory() //I can read your mind, kekeke. Output all their notes.
 
