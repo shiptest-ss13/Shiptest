@@ -47,6 +47,31 @@
 	min_recoil = 0.1
 	wear_rate = 0
 
+/obj/item/gun/ballistic/shotgun/attack_obj(obj/O, mob/living/user)
+	if(istype(O, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/breaching = O
+		if(chambered && chambered.BB)
+			user.visible_message(
+				span_warning("[user] put the barrel of [src] to [breaching]'s electronics!"),
+				span_warning("You puts the barrel of [src] to [breaching]'s electronics, preparing to shred them!"),
+				span_warning("Metal brushes against metal")
+			)
+			if(do_after(user, 5 SECONDS, breaching))
+				if(process_fire(breaching, user, FALSE))
+
+					if(!breaching.open())
+						update_icon(ALL, 1, 1)
+					//im not rewriting the behavior to do exactly what this does with a different name
+					breaching.obj_flags |= EMAGGED
+					breaching.lights = FALSE
+					breaching.locked = TRUE
+					breaching.loseMainPower()
+					breaching.loseBackupPower()
+					return TRUE
+				return FALSE
+			return FALSE
+	. = ..()
+
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
