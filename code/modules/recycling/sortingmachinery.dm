@@ -342,7 +342,7 @@
 
 	dat += "<table style='width:100%; padding:4px;'><tr>"
 	for (var/i = 1, i <= GLOB.TAGGERLOCATIONS.len, i++)
-		dat += "<td><a href='?src=[REF(src)];nextTag=[i]'>[GLOB.TAGGERLOCATIONS[i]]</a></td>"
+		dat += "<td><a href='byond://?src=[REF(src)];nextTag=[i]'>[GLOB.TAGGERLOCATIONS[i]]</a></td>"
 
 		if(i%4==0)
 			dat += "</tr><tr>"

@@ -244,7 +244,7 @@
 	else if(runechat_flags & LOOC_MESSAGE)
 		new /datum/chatmessage(raw_message, speaker, src, list("looc", "italics"))
 	else
-		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans, message_language = message_language)
+		new /datum/chatmessage(raw_message, speaker, src, spans, message_language = message_language)
 
 
 // Tweak these defines to change the available color ranges

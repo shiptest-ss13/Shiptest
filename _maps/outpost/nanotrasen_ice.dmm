@@ -2506,7 +2506,7 @@
 "qA" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 1;
-	req_one_access_txt = "101"
+	req_one_access_txt = null
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only,
@@ -3203,6 +3203,7 @@
 	},
 /obj/machinery/light/broken/directional/north,
 /obj/structure/chair/office,
+/obj/effect/landmark/salesman,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "uE" = (
@@ -3355,7 +3356,7 @@
 	},
 /obj/machinery/door/airlock/maintenance{
 	dir = 4;
-	req_one_access_txt = "101"
+	req_one_access_txt = null
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/fore)
@@ -4193,7 +4194,7 @@
 	},
 /obj/machinery/door/airlock/maintenance{
 	dir = 4;
-	req_one_access_txt = "101"
+	req_one_access_txt = null
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/fore)
@@ -4881,7 +4882,7 @@
 "FA" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 1;
-	req_one_access_txt = "101"
+	req_one_access_txt = null
 	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only,
@@ -6058,7 +6059,7 @@
 	},
 /obj/machinery/door/airlock/maintenance{
 	dir = 4;
-	req_one_access_txt = "101"
+	req_one_access_txt = null
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -7719,7 +7720,7 @@
 	},
 /area/outpost/maintenance/starboard)
 "XO" = (
-/mob/living/simple_animal/hostile/bear/snow{
+/mob/living/basic/bear/polar{
 	faction = list("neutral");
 	name = "polar bear"
 	},

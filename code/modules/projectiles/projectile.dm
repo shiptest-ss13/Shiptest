@@ -7,6 +7,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	movement_type = FLYING
 	generic_canpass = FALSE
+	plane = GAME_PLANE_FOV_HIDDEN
 	//The sound this plays on impact.
 	var/hitsound = 'sound/weapons/pierce.ogg'
 	var/hitsound_non_living = ""
@@ -701,6 +702,7 @@
 	last_projectile_move = world.time
 	name = bullet_identifier
 	fired = TRUE
+	play_fov_effect(starting, 6, "gunfire", dir = NORTH, angle = Angle)
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_FIRE)
 	if(hitscan)
 		process_hitscan()
