@@ -141,7 +141,6 @@
 	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
 	if (gen_ship_access(ship))
 		return TRUE
-
 	if(!item)
 		return FALSE
 	var/obj/item/card/id/id = item?.GetID()

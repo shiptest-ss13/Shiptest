@@ -129,6 +129,7 @@
 		/mob/living/carbon,
 		/mob/living/silicon,
 		/mob/living/simple_animal,
+		/mob/living/basic,
 		/obj/mecha,
 	))
 
@@ -360,10 +361,12 @@
 			return
 		if(!multitool_check_buffer(user, I))
 			return
-		var/obj/item/multitool/M = I
-		M.buffer = src
-		to_chat(user, span_notice("You add [src] to multitool buffer."))
-		return
+		var/obj/item/multitool/m_tool = I
+		if(istype(m_tool.buffer, /obj/machinery/turretid))
+			var/obj/machinery/turretid/turret_controls = m_tool.buffer
+			turret_controls.turret_refs |= WEAKREF(src)
+			to_chat(user, span_notice("You link \the [src] with \the [turret_controls]."))
+			return
 
 	if(istype(I, /obj/item/card/id))
 		toggle_lock(user)
@@ -519,7 +522,7 @@
 			return target(target_mob)
 
 		//this is still a bit gross, but less gross than before
-		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/carbon/alien, /mob/living/carbon/monkey))
+		var/static/list/dangerous_fauna = typecacheof(list(/mob/living/simple_animal/hostile, /mob/living/basic, /mob/living/carbon/alien, /mob/living/carbon/monkey))
 		if(!is_type_in_typecache(target_mob, dangerous_fauna) || faction_check(list("neutral"), target_mob.faction))
 			return FALSE
 

@@ -83,7 +83,8 @@
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
 		/obj/item/gun/energy/plasmacutter,
-		/obj/item/bodycamera
+		/obj/item/bodycamera,
+		/obj/item/stack/tape/industrial
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -895,31 +896,3 @@
 	icon_state = "sheath-pgf"
 	item_state = "sheath-pgf"
 	sabre_type = /obj/item/melee/sword/sabre/pgf
-
-/obj/item/storage/belt/security/webbing/inteq
-	name = "inteq webbing"
-	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
-	icon_state = "inteq_webbing"
-	item_state = "inteq_webbing"
-	supports_variations = VOX_VARIATION | KEPORI_VARIATION
-
-/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
-
-/obj/item/storage/belt/security/webbing/inteq/skm_carabine/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm10mm(src)
-
-/obj/item/storage/belt/security/webbing/inteq/alt
-	name = "inteq drop pouch harness"
-	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
-	icon_state = "inteq_droppouch"
-	item_state = "inteq_droppouch"
-
-/obj/item/storage/belt/security/webbing/inteq/alt/bulldog/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m12g_bulldog(src)

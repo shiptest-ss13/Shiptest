@@ -84,9 +84,6 @@
 	///The cooldown for events hitting this ship. Generally used by events with a big consquence and fires slower than normal, like flares
 	COOLDOWN_DECLARE(event_cooldown)
 
-	/// checks if we spawned /obj/effect/spawner/random/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
-	var/matbundle_spawned = FALSE
-
 	var/access_namespace = 0
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
@@ -132,7 +129,6 @@
 		access_namespace = SSaccess.new_namespace(name, creation_template.faction)
 		job_slots = source_template.job_slots?.Copy()
 		stationary_icon_state = creation_template.token_icon_state
-		matbundle_spawned = creation_template.matbundle_spawned
 		alter_token_appearance()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)

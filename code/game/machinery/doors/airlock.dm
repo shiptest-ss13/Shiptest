@@ -1262,6 +1262,7 @@
 		if(obj_flags & EMAGGED)
 			return FALSE
 		use_power(50)
+		play_fov_effect(src, 6, "note")
 		playsound(src, doorOpen, 30, FALSE, mono_adj = TRUE)
 		if(closeOther != null && istype(closeOther, /obj/machinery/door/airlock/) && !closeOther.density)
 			closeOther.close()
@@ -1310,6 +1311,7 @@
 		if(obj_flags & EMAGGED)
 			return
 		use_power(50)
+		play_fov_effect(src, 6, "note")
 		playsound(src, doorClose, 30, FALSE, mono_adj = TRUE)
 	else
 		playsound(src, pry_close_sound, 30, TRUE, mono_adj = TRUE)
