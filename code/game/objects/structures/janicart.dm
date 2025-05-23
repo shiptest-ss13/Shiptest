@@ -101,17 +101,17 @@
 	user.set_machine(src)
 	var/dat
 	if(mybag)
-		dat += "<a href='?src=[REF(src)];garbage=1'>[mybag.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];garbage=1'>[mybag.name]</a><br>"
 	if(mymop)
-		dat += "<a href='?src=[REF(src)];mop=1'>[mymop.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];mop=1'>[mymop.name]</a><br>"
 	if(mybroom)
-		dat += "<a href='?src=[REF(src)];broom=1'>[mybroom.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];broom=1'>[mybroom.name]</a><br>"
 	if(myspray)
-		dat += "<a href='?src=[REF(src)];spray=1'>[myspray.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];spray=1'>[myspray.name]</a><br>"
 	if(myreplacer)
-		dat += "<a href='?src=[REF(src)];replacer=1'>[myreplacer.name]</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];replacer=1'>[myreplacer.name]</a><br>"
 	if(signs)
-		dat += "<a href='?src=[REF(src)];sign=1'>[signs] sign\s</a><br>"
+		dat += "<a href='byond://?src=[REF(src)];sign=1'>[signs] sign\s</a><br>"
 	var/datum/browser/popup = new(user, "janicart", name, 240, 160)
 	popup.set_content(dat)
 	popup.open()

@@ -111,3 +111,80 @@
   Erikafox:
   - rscadd: remaps the ivory. a little less gear, a bit more shape, a smidge more
       size.
+2025-05-13:
+  moffball19:
+  - rscadd: Remapped the Colossus-class Armored Frigate
+  - rscadd: Added the Thunder-class Interceptor subshuttle
+  - rscadd: A few new empty outfits for Inteq roles
+  - rscadd: no_mag subtypes for 2 Inteq guns
+  - balance: Removed the ballistic goggles from the empty enforcer outfit.
+  - balance: Tweaked the IRMG Shuttle Pilot access, now with mining access instead
+      of warden.
+  - balance: Tweaks the Valor, adding ballistic goggles to the armoury and changing
+      the access restrictions for the Pilot's workplace.
+2025-05-14:
+  Ical92:
+  - bugfix: Dried blood splatters now retain proper name & description
+  Majkl-J:
+  - bugfix: The spam fax event now actually spams faxes
+  - bugfix: Disablers no longer make a loud searing sound when impacting walls
+  SomeguyManperson:
+  - bugfix: the spread reduction for gunslinger provided to revolvers is no randomized
+      when applied
+  - balance: Retrieve vanguard mission can no longer have duplicates at the same time
+  generalthrax:
+  - rscadd: Added rare ore veins to planets, containing exclusively that planet's
+      rare materials
+2025-05-17:
+  FalloutFalcon:
+  - bugfix: fixes both ramzi scraping station missions
+  - bugfix: fixes the beachbunker frontiersmen mission
+  - code_imp: ruin placement unit test is more robust and tests missions
+  - code_imp: fixes all ruin mission hard dels exposed by these tests
+2025-05-19:
+  Apogee-dev:
+  - rscadd: Added handrails to Riggs
+  - bugfix: Moved handrails out of the way on Raleigh, Scarab, Elated Bolide
+  Erikafox:
+  - bugfix: reduces the chance of random space wind on beach planets
+  FalloutFalcon:
+  - bugfix: ambience should no longer have any chance of overlapping eachother
+  Sadhorizon, No_Originality:
+  - rscadd: Added Sola-class Hunting Vessel - an independent hunting ship!
+  SomeguyManperson:
+  - balance: wood is now significantly better at being used as fuel for a grill
+2025-05-20:
+  Gristlebee:
+  - bugfix: Scrapping station wreck no longer has extra terminals, foreman's office
+      has correct revolver, armory shutters IDs
+  - balance: Removes a deadeye and replaces a revolt turret with a strike on Scrapping
+      Station
+  - bugfix: Gauss guns properly consume charge.
+  - bugfix: Claris no longer has ghost bullets haunting it.
+  - rscdel: Outpost maint access restrictions.
+  Sadhorizon:
+  - bugfix: You can use the Sunskipper grill again.
+  firebudgy:
+  - balance: Icemoon Training Center mech is no longer as easily cheesable.
+  generalthrax:
+  - rscdel: removed trollface and nigerian prince spam fax
+2025-05-22:
+  FalloutFalcon:
+  - bugfix: fancy chat should now consistently load. Please ping @_fallcon if it doesn't.
+  FslashN:
+  - rscadd: Mech fabricator can now print in all cardinal directions, selectable from
+      the menu.
+  - bugfix: The fabricator will not print into tiles with dense objects/turfs/mobs,
+      fallback to its own tile.
+  - refactor: The fabricator menu should be snappier with switch().
+  Gristlebee:
+  - rscadd: Custom vendors notify owners when a purchase is made
+  - bugfix: Custom vendor inventory icons, stock and purchasing
+  Meemofcourse:
+  - rscadd: Added the ability to wear binoculars around one's neck
+  Zevotech:
+  - bugfix: improvised Shotgun sprites are now fixed and are actually in your hand
+      again.
+  zimon9:
+  - balance: increases industrial tape stack sizes from 10 to 15, allows industrial
+      tape to fit in toolbelts and engineering pouches
