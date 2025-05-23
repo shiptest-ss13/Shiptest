@@ -258,10 +258,6 @@
 	pixel_x = 5;
 	pixel_y = 2
 	},
-/obj/item/gps{
-	pixel_x = 4;
-	pixel_y = 16
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "cX" = (
@@ -355,10 +351,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "dS" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2{
-	dir = 2
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "dX" = (
@@ -622,8 +616,8 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/pump,
 /obj/machinery/light/directional/north,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "fR" = (
@@ -738,6 +732,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
+"hQ" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_toxmix,
+/turf/template_noop,
+/area/template_noop)
 "ib" = (
 /obj/machinery/door/poddoor{
 	id = "quasar_starboard_gate"
@@ -944,45 +942,41 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/fore)
 "lo" = (
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 6;
-	pixel_x = -3
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 6;
-	pixel_x = -3
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = 6;
-	pixel_x = -3
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = -7;
-	pixel_x = -3
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = -7;
-	pixel_x = -3
-	},
-/obj/item/stock_parts/cell/gun/pgf{
-	pixel_y = -7;
-	pixel_x = -3
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = 6;
-	pixel_y = 0
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = 6;
-	pixel_y = 0
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = 6;
-	pixel_y = 0
-	},
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/neutral/full,
 /obj/machinery/light/small/directional/west,
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = -7;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = -7;
+	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/cell/gun/kalix{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = -7;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = -7;
+	pixel_x = 8
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "lw" = (
@@ -1455,20 +1449,7 @@
 	pixel_y = 1
 	},
 /obj/item/attachment/rail_light{
-	pixel_y = -8;
-	pixel_x = -3
-	},
-/obj/item/attachment/rail_light{
-	pixel_y = -12;
-	pixel_x = -3
-	},
-/obj/item/melee/knife/survival{
-	pixel_y = 3;
-	pixel_x = -9
-	},
-/obj/item/melee/knife/survival{
-	pixel_y = 3;
-	pixel_x = -4
+	pixel_y = -12
 	},
 /obj/item/grenade/smokebomb{
 	pixel_x = 10;
@@ -1488,6 +1469,26 @@
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "equipment locker"
+	},
+/obj/item/attachment/rail_light{
+	pixel_y = -12;
+	pixel_x = -3
+	},
+/obj/item/attachment/rail_light{
+	pixel_y = -8;
+	pixel_x = -3
+	},
+/obj/item/melee/knife/survival{
+	pixel_y = 3;
+	pixel_x = -9
+	},
+/obj/item/melee/knife/survival{
+	pixel_y = 1;
+	pixel_x = -6
+	},
+/obj/item/melee/knife/survival{
+	pixel_y = 3;
+	pixel_x = -9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -1644,6 +1645,16 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/item/clothing/suit/armor/gezena/marine{
+	pixel_y = 11
+	},
+/obj/item/storage/belt/military/gezena{
+	pixel_y = 11
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 1;
+	pixel_x = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vN" = (
@@ -1738,18 +1749,6 @@
 	pixel_x = 8;
 	pixel_y = 11
 	},
-/obj/item/storage/pouch/medical{
-	pixel_y = -10;
-	pixel_x = -7
-	},
-/obj/item/storage/pouch/medical{
-	pixel_y = -10;
-	pixel_x = 7
-	},
-/obj/item/binoculars{
-	pixel_y = -1;
-	pixel_x = -4
-	},
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "supply cabinet";
@@ -1757,20 +1756,39 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/item/gps{
-	pixel_x = 7;
-	pixel_y = 3
-	},
-/obj/item/gps{
-	pixel_x = 7;
-	pixel_y = -3
-	},
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -10;
 	pixel_y = -19
 	},
+/obj/item/storage/box/flares{
+	pixel_x = 1;
+	pixel_y = 11
+	},
+/obj/item/storage/pouch/medical{
+	pixel_y = -10;
+	pixel_x = 7
+	},
+/obj/item/storage/pouch/medical{
+	pixel_y = -10;
+	pixel_x = -7
+	},
+/obj/item/storage/pouch/medical{
+	pixel_y = -10
+	},
+/obj/item/gps{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/gps{
+	pixel_y = 0;
+	pixel_x = 9
+	},
+/obj/item/gps{
+	pixel_y = 0
+	},
+/obj/item/binoculars,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "xu" = (
@@ -2062,6 +2080,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Ea" = (
@@ -2138,21 +2159,20 @@
 /area/ship/crew/cryo)
 "EU" = (
 /obj/structure/table/chem,
-/obj/item/storage/case/surgery{
+/obj/item/storage/firstaid/fire{
 	pixel_y = 5;
-	pixel_x = -8
+	pixel_x = 8
 	},
-/obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = -2;
-	pixel_y = -1
+/obj/item/storage/firstaid/brute{
+	pixel_x = 8
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_y = 5;
+	pixel_x = -10
 	},
 /obj/item/storage/firstaid/regular{
-	pixel_y = 3;
-	pixel_x = 9
-	},
-/obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = -2;
-	pixel_y = -1
+	pixel_x = -10;
+	pixel_y = 0
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -2174,9 +2194,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_y = 5
 	},
 /obj/item/clothing/head/helmet/bulletproof/x11{
 	pixel_y = 5
@@ -2380,6 +2397,7 @@
 	id = "quasar_engineering_shutters";
 	dir = 4
 	},
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "HK" = (
@@ -2444,10 +2462,6 @@
 	pixel_y = 3;
 	pixel_x = -11
 	},
-/obj/item/clothing/under/gezena{
-	pixel_x = -11;
-	pixel_y = -4
-	},
 /obj/item/storage/backpack/satchel/med{
 	pixel_x = 8;
 	pixel_y = -6
@@ -2501,10 +2515,6 @@
 	pixel_y = -2;
 	pixel_x = 7
 	},
-/obj/item/bodycamera{
-	pixel_x = -1;
-	pixel_y = -2
-	},
 /obj/item/multitool{
 	pixel_y = -1;
 	pixel_x = -9
@@ -2515,6 +2525,14 @@
 /obj/structure/railing{
 	dir = 2;
 	layer = 3.10
+	},
+/obj/item/bodycamera{
+	pixel_x = -1;
+	pixel_y = -2
+	},
+/obj/item/bodycamera{
+	pixel_x = 3;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/hallway/fore)
@@ -2585,6 +2603,33 @@
 	},
 /obj/item/radio/headset/pgf{
 	pixel_y = -15
+	},
+/obj/item/clothing/head/gezena/marine{
+	pixel_y = 10;
+	pixel_x = -5
+	},
+/obj/item/clothing/head/gezena/flap/marine{
+	pixel_y = 1;
+	pixel_x = -6
+	},
+/obj/item/clothing/under/gezena/marine{
+	pixel_x = -6;
+	pixel_y = -7
+	},
+/obj/item/storage/backpack/satchel/sec{
+	pixel_x = 5;
+	pixel_y = -8
+	},
+/obj/item/radio/headset/pgf{
+	pixel_y = -15
+	},
+/obj/item/clothing/shoes/combat/gezena{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = 11;
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
@@ -2683,7 +2728,6 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/hallway/fore)
 "KX" = (
-/obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 2
 	},
@@ -2691,6 +2735,7 @@
 	pixel_y = 32;
 	pixel_x = 2
 	},
+/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Lr" = (
@@ -2725,13 +2770,17 @@
 	dir = 10
 	},
 /obj/machinery/airalarm/directional/south,
-/obj/item/binoculars{
-	pixel_y = 3;
-	pixel_x = -1
-	},
 /obj/item/desk_flag/gezena{
 	pixel_x = 10;
 	pixel_y = 2
+	},
+/obj/item/gps{
+	pixel_y = 2;
+	pixel_x = -9
+	},
+/obj/item/binoculars{
+	pixel_y = 3;
+	pixel_x = -1
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -2958,6 +3007,10 @@
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/item/radio/intercom/directional/west,
+/obj/item/reagent_containers/glass/bottle/morphine{
+	pixel_x = -10;
+	pixel_y = 12
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "Oe" = (
@@ -3267,13 +3320,13 @@
 /area/ship/bridge)
 "Uj" = (
 /obj/item/gun/energy/kalix/pistol{
-	pixel_y = -3
+	pixel_y = -8
 	},
 /obj/item/gun/energy/kalix/pgf/medium{
-	pixel_y = 11
+	pixel_y = 13
 	},
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 4
+	pixel_y = -1
 	},
 /obj/structure/rack,
 /obj/machinery/light/small/directional/west,
@@ -3281,6 +3334,9 @@
 	pixel_y = 32
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/full,
+/obj/item/gun/energy/kalix/pgf{
+	pixel_y = 6
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "Ur" = (
@@ -3454,7 +3510,8 @@
 /obj/machinery/washing_machine{
 	pixel_y = 12;
 	pixel_x = -8;
-	density = 0
+	density = 0;
+	should_we_be_dense = 0
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
@@ -3990,7 +4047,7 @@ ST
 Pt
 cO
 ST
-sB
+hQ
 sB
 "}
 (20,1,1) = {"

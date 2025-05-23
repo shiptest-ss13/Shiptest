@@ -14,7 +14,7 @@
 		"Exploration",
 		"RP Focus"
 	],
-	"starting_funds": 1000,
+	"starting_funds": 3000,
 	"map_path": "_maps/shuttles/pgf/pgf_mercurial_quasar.dmm",
 	"token_icon_state": "ship_small_generic",
 	"limit": 1,
@@ -32,13 +32,14 @@
 			"outfit": "/datum/outfit/job/gezena/doctor",
 			"slots": 1
 		},
+		"Marine Lieutenant": {
+			"outfit": "/datum/outfit/job/gezena/hos",
+			"officer": true,
+			"slots": 1
+		},
 		"Marine": {
 			"outfit": "/datum/outfit/job/gezena/security",
 			"slots": 2
-		},
-		"Crewman": {
-			"outfit": "/datum/outfit/job/gezena/assistant",
-			"slots": 1
 		}
 	},
 	"enabled":true
