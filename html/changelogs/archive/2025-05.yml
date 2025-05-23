@@ -168,3 +168,28 @@
   - balance: Icemoon Training Center mech is no longer as easily cheesable.
   generalthrax:
   - rscdel: removed trollface and nigerian prince spam fax
+2025-05-22:
+  FalloutFalcon:
+  - bugfix: fancy chat should now consistently load. Please ping @_fallcon if it doesn't.
+  FslashN:
+  - rscadd: Mech fabricator can now print in all cardinal directions, selectable from
+      the menu.
+  - bugfix: The fabricator will not print into tiles with dense objects/turfs/mobs,
+      fallback to its own tile.
+  - refactor: The fabricator menu should be snappier with switch().
+  Gristlebee:
+  - rscadd: Custom vendors notify owners when a purchase is made
+  - bugfix: Custom vendor inventory icons, stock and purchasing
+  Meemofcourse:
+  - rscadd: Added the ability to wear binoculars around one's neck
+  Zevotech:
+  - bugfix: improvised Shotgun sprites are now fixed and are actually in your hand
+      again.
+  zimon9:
+  - balance: increases industrial tape stack sizes from 10 to 15, allows industrial
+      tape to fit in toolbelts and engineering pouches
+2025-05-23:
+  FalloutFalcon:
+  - rscadd: New spawner that spawns a random fully loaded guns (This can include non-lethals
+      like foam guns atm)
+  - rscadd: Summon Guns now includes all functional and loaded guns

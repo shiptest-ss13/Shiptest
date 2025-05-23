@@ -18,6 +18,9 @@
 /obj/item/gun/ballistic
 	desc = "Now comes in flavors like GUN. Uses 10x22mm ammo, for some reason."
 	name = "projectile gun"
+
+	bad_type = /obj/item/gun/ballistic
+
 	w_class = WEIGHT_CLASS_NORMAL
 	has_safety = TRUE
 	safety = TRUE
