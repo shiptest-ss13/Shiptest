@@ -8,7 +8,7 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_SOLCON)
-	H.grant_language(/datum/language/solarian_international)
+	H.grant_language(/datum/language/solarian_international, source=LANGUAGE_FACTION)
 
 /datum/outfit/job/solgov/assistant
 	name = "SolGov - Scribe"
