@@ -11,7 +11,6 @@
 /datum/round_event/cataclysm
 */
 
-//https://hackmd.io/@shiptest/H1DRZzjggg#Cataclysm-Planets
 /datum/round_event_control/cataclysm_broadcast
 	name = "Cataclysm Planet Morning Broadcast"
 	holidayID = CATACLYSM_DAY

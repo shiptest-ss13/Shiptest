@@ -247,7 +247,7 @@
 	begin_month = MAY
 
 /datum/holiday/cataclysm_day/greet()
-	return "It's near or is Memorial Day! In-universe our version is <a href=\"https://hackmd.io/@shiptest/H1DRZzjggg\">Cataclysm Day</a>."
+	return "It's near or is Memorial Day! In-universe our version is <a href=\"https://hackmd.io/@shiptest/B1y-5Y1fge\">Cataclysm Day</a>."
 
 /datum/holiday/cataclysm_day/getStationPrefix()
 	return pick("Reverent", "Precious", "Vibrant", "Ashen", "Vital", "Exuberant")
