@@ -33,11 +33,11 @@
 	. = ..()
 	if(has_grass)
 		return
-	if(!istype(item_attacked_by, /obj/item/reagent_containers/food/snacks/grown/grass))
+	if(!istype(item_attacked_by, /obj/item/food/grown/grass))
 		return FALSE
 	var/grass_to_plant = /turf/open/floor/plating/asteroid/dirt/grass
 
-	if(istype(item_attacked_by, /obj/item/reagent_containers/food/snacks/grown/grass/fairy))
+	if(istype(item_attacked_by, /obj/item/food/grown/grass/fairy))
 		grass_to_plant = /turf/open/floor/plating/asteroid/dirt/grass/fairy
 
 	visible_message("<span class='notice'>You plant the [item_attacked_by], and the dirt accepts it. It should be breathable now.</span>")

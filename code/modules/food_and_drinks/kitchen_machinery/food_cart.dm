@@ -88,7 +88,9 @@
 			to_chat(user, span_notice("[src] accepts a sheet of glass."))
 	else if(istype(O, /obj/item/storage/bag/tray))
 		var/obj/item/storage/bag/tray/T = O
-		for(var/obj/item/reagent_containers/food/snacks/S in T.contents)
+		for(var/obj/S in T.contents)
+			if(!IS_EDIBLE(S))
+				continue
 			if(isFull())
 				to_chat(user, span_warning("[src] is at full capacity."))
 				break

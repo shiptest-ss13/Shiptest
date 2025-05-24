@@ -30,7 +30,7 @@
 	aggro_vision_range = 7
 	charger = TRUE
 	charge_distance = 4
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/rawcrab = 2, /obj/item/stack/sheet/bone = 2)
+	butcher_results = list(/obj/item/food/meat/rawcrab = 2, /obj/item/stack/sheet/bone = 2)
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
 	mob_trophy = /obj/item/mob_trophy/lobster_claw

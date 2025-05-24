@@ -808,6 +808,26 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/pgf_wreck/bridge)
+"eA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = 12
+	},
+/turf/open/floor/plating,
+/area/ruin/space/pgf_wreck/engineering)
 "eF" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/warning{
 	dir = 4
@@ -1720,20 +1740,6 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/ruin/space)
-"kv" = (
-/obj/structure/table/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced,
-/obj/machinery/computer/secure_data/laptop{
-	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "office_a"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station/armory)
 "kz" = (
 /obj/structure/table/reinforced,
 /obj/item/clipboard{
@@ -1857,12 +1863,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/starboard)
-"lg" = (
-/obj/effect/turf_decal/corner/opaque/lime/half,
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable,
-/turf/open/floor/plasteel/dark/airless,
-/area/ruin/space/pgf_wreck/bridge)
 "lh" = (
 /obj/machinery/door/airlock,
 /obj/effect/mapping_helpers/airlock/sealed,
@@ -1957,6 +1957,14 @@
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/bridge)
+"lz" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "office_a"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/armory)
 "lB" = (
 /obj/structure/chair/plastic{
 	dir = 4
@@ -2157,14 +2165,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
-"na" = (
-/obj/structure/grille,
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "office_a"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station/armory)
 "nc" = (
 /obj/item/ammo_casing/spent/pistol_steel{
 	name = "spent .45 casing"
@@ -2344,6 +2344,17 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
+"nS" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/window/southleft,
+/obj/machinery/door/poddoor/shutters{
+	id = "office_a"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/armory)
 "nT" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/firedoor/border_only,
@@ -2815,26 +2826,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
-"pL" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable,
-/obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/machinery/light_switch{
-	dir = 1;
-	pixel_y = -20;
-	pixel_x = 12
-	},
-/turf/open/floor/plating,
-/area/ruin/space/pgf_wreck/engineering)
 "pM" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /obj/structure/cable{
@@ -2978,6 +2969,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/external)
+"qY" = (
+/obj/effect/turf_decal/corner/opaque/lime/half,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/pgf_wreck/bridge)
 "rd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3096,6 +3093,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
+"rP" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/machinery/computer/secure_data/laptop{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "office_a"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/armory)
 "rU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -3167,15 +3178,6 @@
 /obj/structure/falsewall/plastitanium,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
-"ss" = (
-/obj/effect/turf_decal/borderfloorblack,
-/obj/effect/turf_decal/industrial/traffic,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/directional/west,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/pgf_wreck/cargo)
 "st" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -3348,6 +3350,25 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
+"tc" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/decal/cleanable/blood/squirt{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/pgf_wreck/dorms)
 "te" = (
 /obj/structure/railing{
 	dir = 4
@@ -3907,15 +3928,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
-"we" = (
-/obj/structure/table,
-/obj/item/storage/bag/tray/cafeteria,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat{
-	name = "the Meal"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "wm" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/nanoweave/red,
@@ -4252,6 +4264,12 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/space/pgf_wreck/external)
+"yc" = (
+/obj/structure/table,
+/obj/item/storage/bag/tray/cafeteria,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "yd" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 5
@@ -4453,6 +4471,21 @@
 /obj/structure/railing/corner,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
+"yW" = (
+/obj/structure/closet/cabinet,
+/obj/item/storage/box/ammo/a357,
+/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
+/obj/item/clothing/head/HoS/syndicate,
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/opaque/syndiered/line{
+	dir = 6
+	},
+/obj/item/storage/guncase/pistol/a357,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "yX" = (
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4510,16 +4543,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
-"zz" = (
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/yellow,
-/obj/effect/decal/cleanable/glass,
-/obj/item/solar_assembly{
-	layer = 2.8
-	},
-/obj/machinery/porta_turret/ruin/ramzi/light,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "zA" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4541,25 +4564,6 @@
 /obj/item/radio/intercom/table,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
-"zF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/effect/decal/cleanable/blood/squirt{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark/airless,
-/area/ruin/space/pgf_wreck/dorms)
 "zG" = (
 /obj/structure/foamedmetal,
 /turf/open/floor/plating/foam,
@@ -5125,13 +5129,6 @@
 /obj/effect/gibspawner/human,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/pgf_wreck/external)
-"CA" = (
-/obj/structure/table,
-/obj/item/storage/bag/tray/cafeteria,
-/obj/item/reagent_containers/food/snacks/tofu/prison,
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "CG" = (
 /turf/open/floor/carpet/red_gold,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
@@ -5229,6 +5226,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/canteen)
+"Dg" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/glass,
+/obj/item/solar_assembly{
+	layer = 2.8
+	},
+/obj/machinery/porta_turret/ruin/ramzi/heavy,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Dh" = (
 /obj/machinery/light/directional/south,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -5465,18 +5474,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
-"Et" = (
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/effect/decal/cleanable/glass,
-/obj/item/solar_assembly{
-	layer = 2.8
-	},
-/obj/machinery/porta_turret/ruin/ramzi/heavy,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Ez" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5571,35 +5568,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station)
-"EY" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table,
-/obj/item/candle/infinite{
-	pixel_y = 12;
-	pixel_x = -8
-	},
-/obj/item/candle/infinite{
-	pixel_y = 12;
-	pixel_x = -16
-	},
-/obj/item/candle/infinite{
-	pixel_y = 12
-	},
-/obj/item/candle/infinite{
-	pixel_y = 12;
-	pixel_x = 8
-	},
-/obj/item/clothing/neck/dogtag/ramzi{
-	pixel_x = 9;
-	pixel_y = -3
-	},
-/obj/item/clothing/neck/dogtag/ramzi{
-	pixel_x = -8;
-	pixel_y = -3
-	},
-/obj/item/reagent_containers/food/snacks/grown/poppy,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station/upper)
 "Fd" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -5637,6 +5605,17 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
+"Fv" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/corner/opaque/syndiered{
+	dir = 5
+	},
+/obj/item/storage/bag/tray/cafeteria,
+/obj/item/food/meat/slab/meatwheat{
+	name = "the Meal"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "Fx" = (
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 4
@@ -5688,26 +5667,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
-"FH" = (
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 10
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/lime,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/space/pgf_wreck)
 "FK" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer4{
 	dir = 4
@@ -6166,18 +6125,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
-"IL" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/m556_42_hydra{
-	pixel_x = 8
-	},
-/obj/machinery/light/directional/west,
-/obj/item/ammo_box/magazine/m556_42_hydra,
-/obj/item/ammo_box/magazine/m556_42_hydra{
-	pixel_x = -7
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/ramzi_station/armory)
 "IM" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 1
@@ -6326,17 +6273,6 @@
 /obj/machinery/flasher/portable/anchored,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
-"Jz" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/syndiered{
-	dir = 5
-	},
-/obj/item/storage/bag/tray/cafeteria,
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat{
-	name = "the Meal"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "JB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -6545,21 +6481,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
-"KB" = (
-/obj/structure/closet/cabinet,
-/obj/item/storage/box/ammo/a357,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/head/HoS/syndicate,
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/opaque/syndiered/line{
-	dir = 6
-	},
-/obj/item/storage/guncase/pistol/a357,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "KD" = (
 /turf/open/floor/plasteel/sepia,
 /area/ruin/space/pgf_wreck/dorms)
@@ -6695,6 +6616,16 @@
 	dir = 1
 	},
 /obj/structure/railing,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
+"Lh" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow,
+/obj/effect/decal/cleanable/glass,
+/obj/item/solar_assembly{
+	layer = 2.8
+	},
+/obj/machinery/porta_turret/ruin/ramzi/heavy,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Li" = (
@@ -7146,6 +7077,15 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/space/pgf_wreck/dorms)
+"NA" = (
+/obj/structure/table,
+/obj/item/storage/bag/tray/cafeteria,
+/obj/item/food/meat/slab/meatwheat{
+	name = "the Meal"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ruin/space/has_grav/powered/ramzi_station/canteen)
 "NB" = (
 /obj/machinery/door/airlock{
 	dir = 4
@@ -7191,6 +7131,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/pgf_wreck)
+"NH" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/industrial/traffic,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/pgf_wreck/cargo)
 "NK" = (
 /obj/structure/chair/plastic{
 	dir = 8
@@ -7495,6 +7444,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
+"Pi" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow,
+/obj/effect/decal/cleanable/glass,
+/obj/item/solar_assembly{
+	layer = 2.8
+	},
+/obj/machinery/porta_turret/ruin/ramzi/light,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Pm" = (
 /obj/structure/closet{
 	icon_state = "sec";
@@ -8018,6 +7977,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/pgf_wreck/external)
+"Sa" = (
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
+/turf/open/space/basic,
+/area/ruin/space)
 "Sb" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/yellow{
@@ -8133,11 +8097,6 @@
 	},
 /turf/open/space/basic,
 /area/ruin/space)
-"SE" = (
-/obj/structure/lattice,
-/mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg,
-/turf/open/space/basic,
-/area/ruin/space)
 "SG" = (
 /obj/effect/turf_decal/etherbor/center,
 /obj/structure/flippedtable{
@@ -8158,6 +8117,35 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/pgf_wreck/dorms)
+"SI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/obj/item/candle/infinite{
+	pixel_y = 12;
+	pixel_x = -8
+	},
+/obj/item/candle/infinite{
+	pixel_y = 12;
+	pixel_x = -16
+	},
+/obj/item/candle/infinite{
+	pixel_y = 12
+	},
+/obj/item/candle/infinite{
+	pixel_y = 12;
+	pixel_x = 8
+	},
+/obj/item/clothing/neck/dogtag/ramzi{
+	pixel_x = 9;
+	pixel_y = -3
+	},
+/obj/item/clothing/neck/dogtag/ramzi{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/food/grown/poppy,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/ramzi_station/upper)
 "SK" = (
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/dark,
@@ -8439,6 +8427,18 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/airless,
 /area/ruin/space/pgf_wreck/bridge)
+"Ug" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/m556_42_hydra{
+	pixel_x = 8
+	},
+/obj/machinery/light/directional/west,
+/obj/item/ammo_box/magazine/m556_42_hydra,
+/obj/item/ammo_box/magazine/m556_42_hydra{
+	pixel_x = -7
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/ramzi_station/armory)
 "Uh" = (
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
@@ -8716,16 +8716,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/pgf_wreck)
-"Vu" = (
-/obj/effect/turf_decal/solarpanel,
-/obj/structure/cable/yellow,
-/obj/effect/decal/cleanable/glass,
-/obj/item/solar_assembly{
-	layer = 2.8
-	},
-/obj/machinery/porta_turret/ruin/ramzi/heavy,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/powered/ramzi_station/solars)
 "Vv" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -8776,17 +8766,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/pgf_wreck/external)
-"VG" = (
-/obj/structure/table/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/door/window/southleft,
-/obj/machinery/door/poddoor/shutters{
-	id = "office_a"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/ramzi_station/armory)
 "VK" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -9341,6 +9320,26 @@
 /mob/living/simple_animal/hostile/human/ramzi/ranged,
 /turf/open/floor/plating/rust,
 /area/ruin/space/has_grav/powered/ramzi_station/hangar)
+"Ys" = (
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/lime,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/pgf_wreck)
 "Yv" = (
 /obj/machinery/door/airlock/security/glass{
 	dir = 4
@@ -10376,7 +10375,7 @@ Aw
 px
 Wn
 Sd
-CA
+yc
 hX
 my
 XU
@@ -10636,7 +10635,7 @@ oG
 yd
 zA
 Sd
-we
+NA
 hX
 my
 sL
@@ -10745,7 +10744,7 @@ SL
 Av
 bg
 or
-pL
+eA
 SL
 Qd
 Fm
@@ -10825,7 +10824,7 @@ Ef
 Eh
 gc
 Cc
-Jz
+Fv
 Iz
 oG
 yd
@@ -11151,7 +11150,7 @@ Ef
 WL
 GL
 Ef
-EY
+SI
 cM
 MG
 DZ
@@ -11419,7 +11418,7 @@ bX
 pC
 yq
 xN
-IL
+Ug
 Bg
 Xh
 Pr
@@ -11453,7 +11452,7 @@ GI
 PE
 sM
 QB
-FH
+Ys
 sM
 sM
 sM
@@ -11496,7 +11495,7 @@ oC
 jl
 UG
 DH
-KB
+yW
 jl
 qp
 YF
@@ -11707,7 +11706,7 @@ wN
 rH
 cc
 NC
-zF
+tc
 zR
 yM
 yM
@@ -11748,10 +11747,10 @@ Gs
 ie
 tl
 YB
-na
+lz
 bm
 gt
-kv
+rP
 GU
 ou
 NY
@@ -11776,7 +11775,7 @@ db
 zR
 yM
 jb
-ss
+NH
 yJ
 OR
 YH
@@ -11813,10 +11812,10 @@ Xc
 wa
 QH
 PA
-na
+lz
 sK
 fq
-VG
+nS
 cj
 ig
 eM
@@ -12033,7 +12032,7 @@ EE
 em
 IY
 sl
-lg
+qY
 yM
 yK
 Me
@@ -12492,7 +12491,7 @@ kt
 Fm
 Qd
 kt
-SE
+Sa
 kt
 Qd
 kt
@@ -13102,7 +13101,7 @@ Fm
 Fm
 Fm
 Fm
-Et
+Dg
 aD
 gR
 gR
@@ -13118,7 +13117,7 @@ jR
 jR
 DQ
 aD
-zz
+Pi
 Fm
 Fm
 Fm
@@ -13378,7 +13377,7 @@ jR
 jR
 jR
 aD
-Vu
+Lh
 Fm
 Fm
 Fm

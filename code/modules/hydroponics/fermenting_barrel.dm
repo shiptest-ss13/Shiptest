@@ -20,7 +20,7 @@
 	. = ..()
 	. += span_notice("It is currently [open?"open, letting you pour liquids in.":"closed, letting you draw liquids from the tap."]")
 
-/obj/structure/fermenting_barrel/proc/makeWine(obj/item/reagent_containers/food/snacks/grown/fruit)
+/obj/structure/fermenting_barrel/proc/makeWine(obj/item/food/grown/fruit)
 	if(fruit.reagents)
 		fruit.reagents.trans_to(src, fruit.reagents.total_volume)
 	var/amount = fruit.seed.potency / 4
@@ -40,7 +40,7 @@
 	playsound(src, 'sound/effects/bubbles.ogg', 50, TRUE)
 
 /obj/structure/fermenting_barrel/attackby(obj/item/I, mob/user, params)
-	var/obj/item/reagent_containers/food/snacks/grown/fruit = I
+	var/obj/item/food/grown/fruit = I
 	if(istype(fruit))
 		if(!fruit.can_distill)
 			to_chat(user, span_warning("You can't distill this into anything..."))

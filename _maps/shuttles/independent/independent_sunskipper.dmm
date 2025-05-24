@@ -273,6 +273,24 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/hydroponics)
+"cB" = (
+/obj/structure/closet/secure_closet/freezer/meat/open,
+/obj/effect/turf_decal/box,
+/obj/item/radio/intercom/directional/east,
+/obj/item/food/meat/slab/monkey,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
+/obj/item/food/fishmeat,
+/obj/item/food/fishmeat,
+/obj/item/food/fishmeat,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen/kitchen)
 "cC" = (
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -344,23 +362,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
-"dX" = (
-/obj/structure/cable/orange{
-	icon_state = "6-9"
-	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 19;
-	pixel_y = -10
-	},
-/obj/machinery/vending/hydronutrients,
-/obj/structure/chair/handrail{
-	dir = 4;
-	layer = 2.89
-	},
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/hydroponics)
 "eb" = (
 /obj/structure/closet/emcloset/anchored{
 	populate = 0
@@ -462,6 +463,21 @@
 /turf/open/floor/suns/hatch{
 	color = "#543C30"
 	},
+/area/ship/crew/office/lobby)
+"eo" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 8;
+	pixel_x = -6
+	},
+/obj/item/table_bell{
+	pixel_x = -7;
+	pixel_y = 26
+	},
+/obj/effect/turf_decal/siding/wood/end{
+	color = "#543C30"
+	},
+/turf/open/floor/wood/walnut,
 /area/ship/crew/office/lobby)
 "eI" = (
 /obj/effect/turf_decal/siding/wood{
@@ -647,32 +663,6 @@
 /obj/machinery/jukebox/boombox,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
-"gL" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/cable/green{
-	icon_state = "0-6"
-	},
-/obj/item/stack/sheet/mineral/plasma/ten,
-/obj/structure/closet/crate/engineering/electrical{
-	name = "fuel crate"
-	},
-/obj/effect/decal/cleanable/cobweb,
-/obj/machinery/button/door{
-	name = "Engine Blast Doors";
-	id = "sunskipper_engine_shutters";
-	pixel_y = 22;
-	pixel_x = 16
-	},
-/obj/item/stack/sheet/mineral/plasma/five,
-/obj/machinery/light/small/directional/north,
-/obj/item/stack/sheet/mineral/wood/twentyfive,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "gU" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -855,18 +845,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/hydroponics)
-"jw" = (
-/obj/machinery/light/directional/north,
-/obj/structure/cable/orange{
-	icon_state = "5-10"
-	},
-/obj/machinery/hydroponics/constructable{
-	layer = 2;
-	pixel_y = 11
-	},
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/hydroponics)
 "jy" = (
 /obj/structure/cable/green{
 	icon_state = "1-6"
@@ -1025,21 +1003,6 @@
 /obj/item/weldingtool/hugetank,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"lv" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/radio/intercom/wideband/table{
-	dir = 8;
-	pixel_x = -6
-	},
-/obj/item/table_bell{
-	pixel_x = -7;
-	pixel_y = 26
-	},
-/obj/effect/turf_decal/siding/wood/end{
-	color = "#543C30"
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew/office/lobby)
 "mk" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1456,16 +1419,6 @@
 /obj/structure/chair/stool,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
-"qC" = (
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable/green{
-	icon_state = "0-6"
-	},
-/obj/structure/reagent_dispensers/watertank/high,
-/obj/effect/turf_decal/industrial/hatch/blue,
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/hydroponics)
 "qP" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/canteen/kitchen)
@@ -1663,17 +1616,6 @@
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/stack/sheet/plastic/five,
 /obj/item/stack/sheet/metal/five,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
-"sT" = (
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable/green{
-	icon_state = "0-4"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/contraband/space_cube{
-	pixel_x = -29
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "sW" = (
@@ -1879,6 +1821,16 @@
 "uQ" = (
 /turf/closed/wall,
 /area/ship/crew/dorm)
+"uW" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/green{
+	icon_state = "0-6"
+	},
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/effect/turf_decal/industrial/hatch/blue,
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/hydroponics)
 "vn" = (
 /obj/machinery/button/door{
 	pixel_x = -21;
@@ -2292,24 +2244,6 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
-"yW" = (
-/obj/structure/chair/handrail,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/machinery/light_switch{
-	pixel_x = 11;
-	pixel_y = 21
-	},
-/obj/structure/cable/green{
-	icon_state = "0-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew/cryo)
 "zj" = (
 /obj/structure/table/wood/reinforced,
 /obj/effect/turf_decal/siding/wood{
@@ -2791,6 +2725,18 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
+"FM" = (
+/obj/machinery/light/directional/north,
+/obj/structure/cable/orange{
+	icon_state = "5-10"
+	},
+/obj/machinery/hydroponics/constructable{
+	layer = 2;
+	pixel_y = 11
+	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/hydroponics)
 "FO" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -3345,6 +3291,24 @@
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
+"OI" = (
+/obj/structure/chair/handrail,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 21
+	},
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew/cryo)
 "OM" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -3799,19 +3763,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"Ty" = (
-/obj/machinery/hydroponics/constructable{
-	layer = 2;
-	pixel_y = 11
-	},
-/obj/machinery/airalarm/directional/north,
-/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
-/obj/item/reagent_containers/glass/bucket{
-	pixel_x = 7;
-	pixel_y = -5
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/hydroponics)
 "TF" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
@@ -3871,24 +3822,6 @@
 /obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"UM" = (
-/obj/structure/closet/secure_closet/freezer/meat/open,
-/obj/effect/turf_decal/box,
-/obj/item/radio/intercom/directional/east,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/bear,
-/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
-/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
-/obj/item/reagent_containers/food/snacks/fishmeat,
-/obj/item/reagent_containers/food/snacks/fishmeat,
-/obj/item/reagent_containers/food/snacks/fishmeat,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen/kitchen)
 "UV" = (
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -4003,6 +3936,17 @@
 "WA" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/dorm)
+"WB" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/space_cube{
+	pixel_x = -29
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "WD" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge";
@@ -4022,6 +3966,62 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
+"WL" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "0-6"
+	},
+/obj/item/stack/sheet/mineral/plasma/ten,
+/obj/structure/closet/crate/engineering/electrical{
+	name = "fuel crate"
+	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/button/door{
+	name = "Engine Blast Doors";
+	id = "sunskipper_engine_shutters";
+	pixel_y = 22;
+	pixel_x = 16
+	},
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/machinery/light/small/directional/north,
+/obj/item/stack/sheet/mineral/wood/twentyfive,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
+"WR" = (
+/obj/structure/cable/orange{
+	icon_state = "6-9"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = -10
+	},
+/obj/machinery/vending/hydronutrients,
+/obj/structure/chair/handrail{
+	dir = 4;
+	layer = 2.89
+	},
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/hydroponics)
+"Xf" = (
+/obj/machinery/hydroponics/constructable{
+	layer = 2;
+	pixel_y = 11
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/corner/opaque/bottlegreen/border,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = 7;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/hydroponics)
 "Xt" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -4335,12 +4335,12 @@ Cu
 bQ
 UY
 BA
-gL
+WL
 NH
 kO
 tq
 BA
-qC
+uW
 AF
 dO
 IO
@@ -4363,7 +4363,7 @@ Gw
 hC
 lf
 BA
-Ty
+Xf
 ta
 Ju
 IQ
@@ -4386,7 +4386,7 @@ tQ
 ZT
 Gp
 BA
-jw
+FM
 YT
 Bg
 jt
@@ -4414,7 +4414,7 @@ jU
 DN
 rF
 Lp
-yW
+OI
 pq
 jp
 ZO
@@ -4432,7 +4432,7 @@ gk
 rr
 rm
 BA
-dX
+WR
 ni
 xI
 Pq
@@ -4449,7 +4449,7 @@ Nk
 aD
 up
 Nk
-UM
+cB
 fl
 cN
 rr
@@ -4795,7 +4795,7 @@ IW
 jo
 sO
 UK
-sT
+WB
 uj
 Kl
 hh
@@ -4911,7 +4911,7 @@ rM
 BT
 dv
 oa
-lv
+eo
 yJ
 HK
 rU

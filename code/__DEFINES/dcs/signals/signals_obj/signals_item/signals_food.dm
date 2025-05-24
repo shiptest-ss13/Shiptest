@@ -1,6 +1,8 @@
 // Eating stuff
 /// From datum/component/edible/proc/TakeBite: (mob/living/eater, mob/feeder, bitecount, bitesize)
 #define COMSIG_FOOD_EATEN "food_eaten"
+/// From base of datum/component/edible/on_entered: (mob/crosser, bitecount)
+#define COMSIG_FOOD_CROSSED "food_crossed"
 /// From base of Component/edible/On_Consume: (mob/living/eater, mob/living/feeder)
 #define COMSIG_FOOD_CONSUMED "food_consumed"
 

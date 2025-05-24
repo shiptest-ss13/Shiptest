@@ -1930,13 +1930,10 @@
 	name = "fridge";
 	anchored = 1
 	},
-/obj/item/reagent_containers/food/snacks/hotdog,
+/obj/item/food/hotdog,
 /obj/item/storage/cans/sixbeer,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/item/reagent_containers/food/snacks/hotdog{
-	name = "chili dog";
-	desc = "Anything you can do, I can do worse-er!"
-	},
+/obj/item/food/hotdog,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/item/storage/fancy/egg_box,
 /turf/open/floor/plasteel/white,
@@ -2846,7 +2843,7 @@
 	pixel_x = 2;
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/food/snacks/donut/caramel{
+/obj/item/food/donut/caramel{
 	pixel_x = -7;
 	pixel_y = 9
 	},
@@ -4933,11 +4930,11 @@
 /obj/item/reagent_containers/blood/random,
 /obj/item/reagent_containers/blood/random,
 /obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat{
+/obj/item/food/meat/slab/synthmeat{
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
-/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat{
+/obj/item/food/meat/slab/synthmeat,
+/obj/item/food/meat/slab/synthmeat{
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
