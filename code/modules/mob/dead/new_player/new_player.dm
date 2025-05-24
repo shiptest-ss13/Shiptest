@@ -390,8 +390,8 @@
 
 		var/list/choices = list()
 		choices["SRM Hunting Ban Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
+		choices["Exchanging Cards"] = icon('icons/obj/bureaucracy.dmi', "paperslip")
 		//choices["Planet Painting"] = icon('icons/obj/clothing/masks.dmi', "death")
-		//choices["Exchanging Cards"]
 		var/choice = show_radial_menu(
 			humanc,
 			humanc,
@@ -402,6 +402,12 @@
 				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 				if(backpack)
 					new /obj/item/storage/box/papersack/srm_rations(backpack)
+			if("Exchanging Cards")
+				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
+				if(backpack)
+					new /obj/item/paper/paperslip(backpack)
+					new /obj/item/paper/paperslip(backpack)
+					new /obj/item/paper/paperslip(backpack)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
