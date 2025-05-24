@@ -45,12 +45,12 @@
 	name = "AI Core Board"
 	desc = "The future is now! Become one with your ship with this AI core board! (Some assembly required.)"
 	item = /obj/item/circuitboard/aicore
-	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg, /datum/blackmarket_item/tech/rupfc)
+	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
 
-	price_min = 3000
-	price_max = 6000
+	price_min = 5000
+	price_max = 8000
 	stock = 1
-	availability_prob = 10
+	availability_prob = 5
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tech/boris
@@ -83,16 +83,6 @@
 	price_max = 2000
 	stock_max = 2
 	availability_prob = 0
-
-/datum/blackmarket_item/tech/rupfc
-	name = "Remote Uplink Positronic Frame Controller"
-	desc = "We went in after some Cliquers raided some NT joint, found some weird controllers or something. Seem to be uused with some NT positronic research shit."
-	item = /obj/item/organ/brain/cybernetic/ai
-
-	price_min = 250
-	price_max = 1500
-	stock_max = 2
-	availability_prob = 5
 
 /datum/blackmarket_item/tech/t4_capacitor
 	name = "Quadratic Capacitor"
