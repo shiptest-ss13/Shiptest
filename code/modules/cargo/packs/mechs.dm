@@ -324,16 +324,6 @@ Mech Equipment
 		/obj/item/circuitboard/machine/mech_recharger
 	)
 
-/datum/supply_pack/mech/equipment/AI_mech_controller
-	name = "Exosuit P.C.C. Control Beacon "
-	desc = "A dual use tracking/remote control beacon for use with P.C.C. units."
-	cost = 750
-	contains = list(
-		/obj/item/mecha_parts/mecha_tracking/ai_control,
-	)
-	faction = /datum/faction/nt
-	faction_locked = TRUE
-
 /*
 weapons
 */
