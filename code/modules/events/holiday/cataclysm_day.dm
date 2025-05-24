@@ -45,3 +45,20 @@
 	loot = list(
 			/obj/item/food/breadslice/plain = 10,
 		)
+
+/obj/item/terrarium
+	name = "empty terrarium"
+	desc = "An empty jar waiting to be filled with flora"
+	icon_state = "jar_empty"
+	icon = 'icons/obj/item/terrarium.dmi'
+	obj_flags = UNIQUE_RENAME
+
+/obj/item/terrarium/attackby(obj/item/O, mob/user, params)
+	. = ..()
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
+		to_chat(user, span_notice("You begin sealing the flora inside the jar to create a lovely terrarium. I encourage you to rename it with a pen <3."))
+		if(do_after(user, 15 SECONDS, O))
+			name = "filled terrarium"
+			icon_state = "jar_plants"
+			desc = "A handmade sealed terrarium"
+			qdel(O)

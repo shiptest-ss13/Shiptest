@@ -391,6 +391,7 @@
 		choices["SRM Hunting Ban Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
 		choices["Exchanging Cards"] = icon('icons/obj/bureaucracy.dmi', "paperslip")
 		choices["Planet Painting"] = icon('icons/obj/crayons.dmi', "crayonbox")
+		choices["Terrarium"] = icon('icons/obj/item/terrarium.dmi', "jar_plants")
 		var/choice = show_radial_menu(
 			humanc,
 			humanc,
@@ -409,6 +410,9 @@
 			if("Planet Painting")
 				if(backpack)
 					new /obj/item/storage/crayons(backpack)
+			if("Terrarium")
+				if(backpack)
+					new /obj/item/terrarium(backpack)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
