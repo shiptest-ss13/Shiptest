@@ -1,6 +1,6 @@
 /datum/outfit/job/frontiersmen
 	name = "Frontiersmen - Base Outfit"
-
+	faction = FACTION_PLAYER_FRONTIERSMEN
 	// faction_icon = "bg_frontiersmen"
 
 	uniform = /obj/item/clothing/under/frontiersmen
@@ -14,12 +14,6 @@
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
-
-/datum/outfit/job/frontiersmen/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_FRONTIERSMEN)
 
 // Assistant
 

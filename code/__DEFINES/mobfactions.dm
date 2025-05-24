@@ -3,6 +3,7 @@
 /// Acts as a default faction for most peaceful creatures
 #define FACTION_NEUTRAL "neutral"
 #define FACTION_RAT "rat"
+#define FACTION_TURRET "turret"
 #define FACTION_MINING "mining"
 
 //"Antag" factions
