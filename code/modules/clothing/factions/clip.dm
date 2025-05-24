@@ -430,7 +430,9 @@
 	icon_state = "clipwebbing"
 	item_state = "clipwebbing"
 
-	unique_reskin = null
+	unique_reskin = list("Suspenders Up" = "clipwebbing",
+						"Suspenders Down" = "clipwebbing-alt"
+						)
 
 	supports_variations = VOX_VARIATION
 
