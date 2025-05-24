@@ -391,6 +391,7 @@
 		var/list/choices = list()
 		choices["SRM Hunting Ban Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
 		//choices["Planet Painting"] = icon('icons/obj/clothing/masks.dmi', "death")
+		//choices["Exchanging Cards"]
 		var/choice = show_radial_menu(
 			humanc,
 			humanc,

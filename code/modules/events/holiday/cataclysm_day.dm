@@ -33,6 +33,7 @@
 	target_outpost = pick(SSovermap.outposts)
 
 /datum/round_event/cataclysm_morning_broadcast/start()
+	//List off a bunch of planets
 	return
 
 
