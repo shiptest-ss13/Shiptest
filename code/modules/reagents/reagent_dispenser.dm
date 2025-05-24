@@ -9,6 +9,7 @@
 	max_integrity = 300
 	var/tank_volume = 1000 //In units, how much the dispenser can hold
 	var/reagent_id = /datum/reagent/water //The ID of the reagent that the dispenser uses
+	var/anchorable = TRUE //whether you can unwrench this thing
 
 /obj/structure/reagent_dispensers/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
@@ -21,6 +22,21 @@
 		return 0 //so we can refill them via their afterattack.
 	else
 		return ..()
+
+/obj/structure/reagent_dispensers/wrench_act(mob/living/user, obj/item/tool)
+	if(anchorable && user.a_intent != INTENT_HARM)
+		default_unfasten_wrench(user, tool)
+		return TRUE
+	else
+		return ..()
+
+/obj/structure/reagent_dispensers/examine(mob/user)
+	. = ..()
+	if(anchorable)
+		if(anchored)
+			. += span_notice("[src] is <b>bolted</b> to the floor.")
+		else
+			. += span_notice("[src] is <b>unbolted</b> from the floor.")
 
 /obj/structure/reagent_dispensers/Initialize()
 	create_reagents(tank_volume, DRAINABLE | AMOUNT_VISIBLE)
@@ -119,6 +135,7 @@
 	desc = "Contains condensed capsaicin for use in law \"enforcement.\""
 	icon_state = "pepper"
 	anchored = TRUE
+	anchorable = FALSE
 	density = FALSE
 	reagent_id = /datum/reagent/consumable/condensedcapsaicin
 
@@ -178,6 +195,7 @@
 	desc = "A huge metal vat with a tap on the front. Filled with cooking oil for use in frying food."
 	icon_state = "vat"
 	anchored = TRUE
+	anchorable = FALSE
 	reagent_id = /datum/reagent/consumable/cooking_oil
 
 /obj/structure/reagent_dispensers/servingdish
@@ -188,21 +206,11 @@
 	anchored = TRUE
 	reagent_id = /datum/reagent/consumable/nutraslop
 
-/obj/structure/reagent_dispensers/servingdish/wrench_act(mob/living/user, obj/item/tool)
-	. = ..()
-	default_unfasten_wrench(user, tool)
-	return TRUE
-
 /obj/structure/reagent_dispensers/plumbed
 	name = "stationairy water tank"
 	anchored = TRUE
 	icon_state = "water_stationairy"
 	desc = "A stationairy, plumbed, water tank."
-
-/obj/structure/reagent_dispensers/plumbed/wrench_act(mob/living/user, obj/item/I)
-	..()
-	default_unfasten_wrench(user, I)
-	return TRUE
 
 /obj/structure/reagent_dispensers/plumbed/ComponentInitialize()
 	AddComponent(/datum/component/plumbing/simple_supply)
