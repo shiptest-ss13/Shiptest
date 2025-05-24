@@ -1223,19 +1223,15 @@
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 1
 	},
-/obj/machinery/computer/crew{
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 8;
 	icon_state = "computer-right"
 	},
-/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "ys" = (
-/obj/machinery/autolathe,
 /obj/machinery/airalarm/directional/south,
-/obj/item/stack/sheet/metal/ten,
-/obj/item/stack/sheet/glass/five,
-/obj/item/stack/sheet/glass/five,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2425,6 +2421,10 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/autolathe,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/metal/ten,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "TH" = (
