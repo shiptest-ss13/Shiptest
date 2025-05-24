@@ -280,7 +280,7 @@
 			addtimer(CALLBACK(victim, TYPE_PROC_REF(/mob, remove_movespeed_modifier), /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
 		victim.update_damage_hud()
 	if(method == INGEST)
-		if(!holder.has_reagent(/datum/reagent/consumable/milk))
+		if(!M.has_reagent(/datum/reagent/consumable/milk))
 			if(prob(15))
 				to_chat(M, span_danger("[pick("Your head pounds.", "Your mouth feels like it's on fire.", "You feel dizzy.")]"))
 			if(prob(10))
@@ -291,7 +291,7 @@
 				victim.vomit()
 
 /datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/M)
-	if(!holder.has_reagent(/datum/reagent/consumable/milk))
+	if(!M.has_reagent(/datum/reagent/consumable/milk))
 		if(prob(10))
 			M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"))
 	..()
@@ -512,7 +512,7 @@
 	taste_description = "sweetness"
 
 /datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/M)
-	M.reagents.add_reagent(/datum/reagent/consumable/sugar,3)
+	holder.add_reagent(/datum/reagent/consumable/sugar,3)
 	if(prob(55))
 		M.adjustBruteLoss(-1*REM, 0)
 		M.adjustFireLoss(-1*REM, 0)
