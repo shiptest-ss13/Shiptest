@@ -64,7 +64,8 @@
 
 /datum/crafting_recipe/food/wrap
 	name = "Wrap"
-	reqs = list(/datum/reagent/consumable/soysauce = 10,
+	reqs = list(
+		/datum/reagent/consumable/soysauce = 10,
 		/obj/item/reagent_containers/food/snacks/friedegg = 1,
 		/obj/item/food/grown/cabbage = 1,
 	)
