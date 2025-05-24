@@ -473,13 +473,15 @@
 
 /obj/mecha/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
-	if(speaker == occupant)
-		//flick speech bubble
-		var/list/speech_bubble_recipients = list()
-		for(var/mob/M in get_hearers_in_view(7,src))
-			if(M.client)
-				speech_bubble_recipients.Add(M.client)
-		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), image('icons/mob/talk.dmi', src, "machine[say_test(raw_message)]",MOB_LAYER+1), speech_bubble_recipients, 30)
+	if(speaker != occupant)
+		return
+	//flick speech bubble
+	var/list/speech_bubble_recipients = list()
+	for(var/mob/M in get_hearers_in_view(7,src))
+		if(M.client)
+			speech_bubble_recipients.Add(M.client)
+	var/image/mech_speech = image('icons/mob/talk.dmi', src, "machine[say_test(say_test(raw_message))]",MOB_LAYER+1)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), mech_speech, speech_bubble_recipients, 3 SECONDS)
 
 ////////////////////////////
 ///// Action processing ////
