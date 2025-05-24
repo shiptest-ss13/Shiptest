@@ -451,6 +451,10 @@ GLOBAL_LIST_INIT(prototype_language_holders, init_language_holder_prototypes())
 	understood_languages = list()
 	spoken_languages = list()
 
+/datum/language_holder/hivebot
+	understood_languages = list(/datum/language/machine = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/machine = list(LANGUAGE_ATOM))
+
 /datum/language_holder/universal/New()
 	..()
 	grant_all_languages()
