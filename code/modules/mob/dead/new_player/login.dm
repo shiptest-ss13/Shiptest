@@ -20,10 +20,6 @@
 	if(GLOB.admin_notice)
 		to_chat(src, span_notice("<b>Admin Notice:</b>\n \t [GLOB.admin_notice]"))
 
-	#warn remember to remove
-	to_chat(src, "<span class='notice'><b>516 PR</b>\n \t</span>")
-	to_chat(src, "<span class='notice'><b>IF YOU EXPERIENCE ANY UI BUGS REPORT THEM HERE:</b> https://github.com/shiptest-ss13/Shiptest/pull/4574 \n \t</span>")
-
 	var/spc = CONFIG_GET(number/soft_popcap)
 	if(spc && living_player_count() >= spc)
 		to_chat(src, span_notice("<b>Server Notice:</b>\n \t [CONFIG_GET(string/soft_popcap_message)]"))
