@@ -28,13 +28,24 @@
 /datum/round_event/cataclysm_morning_broadcast
 	end_when = 50
 	var/datum/overmap/outpost/target_outpost
+	var/turf/target_turf
+	var/list/planets_to_name = list("Terra", "Teceti", "Sitami's Folly", "Mikiliwolo", "Gorlex VII", "Re'tex'himl", "Lowell B29-C", "Curie H2H-B")
 
 /datum/round_event/cataclysm_morning_broadcast/setup()
 	target_outpost = pick(SSovermap.outposts)
+	target_turf = target_outpost.get_jump_to_turf()
 
 /datum/round_event/cataclysm_morning_broadcast/start()
-	//List off a bunch of planets
+	target_outpost.broadcast_message(target_turf, "Today we remember the worlds of Cataclysm, where the flame of life faltered. Take a moment of silence. Remember...")
 	return
+
+/datum/round_event/cataclysm_morning_broadcast/tick()
+	if(!length(planets_to_name))
+		return
+	if(activeFor % 4 == 0)
+		var/planet_to_name = pick(planets_to_name)
+		target_outpost.broadcast_message(target_turf, "[planet_to_name]...")
+		planets_to_name -= planet_to_name
 
 
 /obj/item/storage/box/papersack/srm_rations/PopulateContents()
