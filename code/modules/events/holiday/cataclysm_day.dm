@@ -21,8 +21,20 @@
 	earliest_start = 5 MINUTES
 	category = EVENT_CATEGORY_HOLIDAY
 
+/datum/round_event_control/cataclysm_morning_broadcast/can_spawn_event(players_amt, gamemode)
+	if(!(length(SSovermap.outposts)))
+		return FALSE
+
+/datum/round_event/cataclysm_morning_broadcast
+	end_when = 50
+	var/datum/overmap/outpost/target_outpost
+
+/datum/round_event/cataclysm_morning_broadcast/setup()
+	target_outpost = pick(SSovermap.outposts)
+
 /datum/round_event/cataclysm_morning_broadcast/start()
 	return
+
 
 /obj/item/storage/box/papersack/srm_rations/PopulateContents()
 	new /obj/effect/spawner/random/food_or_drink/srm_rations(src)

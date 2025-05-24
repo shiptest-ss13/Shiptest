@@ -220,6 +220,7 @@
 	foodtype = FRUIT | SUGAR
 	w_class = WEIGHT_CLASS_TINY
 
+//A debug item
 /obj/item/storage/box/ingredients/one_large_brextak
 	theme_name = "wildcard"
 

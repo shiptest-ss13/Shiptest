@@ -177,7 +177,7 @@
 	density = TRUE
 
 /obj/structure/bonfire/prelit
-	fuel = 10 MINUTES
+	fuel = 60 MINUTES
 
 /obj/structure/bonfire/prelit/Initialize()
 	. = ..()
@@ -258,7 +258,7 @@
 	return TRUE
 
 /obj/structure/bonfire/proc/adjust_fuel(fuel_amount)
-	fuel = clamp(fuel + fuel_amount, 0, 30 MINUTES)
+	fuel = clamp(fuel + fuel_amount, 0, 60 MINUTES)
 	if(!check_fuel())
 		if(burning)
 			extinguish()
