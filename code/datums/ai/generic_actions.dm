@@ -136,30 +136,30 @@
  */
 /datum/ai_behavior/find_and_set
 	action_cooldown = 5 SECONDS
-	///search range in how many tiles around the pawn to look for the path
-	var/search_range = 7
-	//optional, don't use if you're changing search_tactic()
-	var/locate_path
-	var/bb_key_to_set
 
-/datum/ai_behavior/find_and_set/perform(seconds_per_tick, datum/ai_controller/controller)
-	. = ..()
-	var/find_this_thing = search_tactic(controller)
-	if(find_this_thing)
-		controller.set_blackboard_key(bb_key_to_set, find_this_thing)
-		finish_action(controller, TRUE)
-	else
-		finish_action(controller, FALSE)
+/datum/ai_behavior/find_and_set/perform(seconds_per_tick, datum/ai_controller/controller, set_key, locate_path, search_range)
+	if (controller.blackboard_key_exists(set_key))
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+	if(QDELETED(controller.pawn))
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+	var/find_this_thing = search_tactic(controller, locate_path, search_range)
+	if(isnull(find_this_thing))
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
+	controller.set_blackboard_key(set_key, find_this_thing)
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
 
-/datum/ai_behavior/find_and_set/proc/search_tactic(datum/ai_controller/controller)
+/datum/ai_behavior/find_and_set/proc/search_tactic(datum/ai_controller/controller, locate_path, search_range = 3)
 	return locate(locate_path) in oview(search_range, controller.pawn)
 
-#warn port the search tactic for this
 /**
  * Variant of find and set that takes a list of things to find.
  */
 /datum/ai_behavior/find_and_set/in_list
 
+/datum/ai_behavior/find_and_set/in_list/search_tactic(datum/ai_controller/controller, locate_paths, search_range)
+	var/list/found = typecache_filter_list(oview(search_range, controller.pawn), locate_paths)
+	if(length(found))
+		return pick(found)
 
 /// This behavior involves attacking a target.
 /datum/ai_behavior/attack

@@ -34,8 +34,8 @@
 
 /datum/ai_behavior/interact_with_target/eat_food/perform(seconds_per_tick, datum/ai_controller/controller, target_key, emotes_blackboard_list)
 	. = ..()
-	//if(. & AI_BEHAVIOR_FAILED)
-	//	return
+	if(. & AI_BEHAVIOR_FAILED)
+		return
 	var/list/emotes_to_pick = controller.blackboard[emotes_blackboard_list] || food_actions
 	if(!length(emotes_to_pick))
 		return
