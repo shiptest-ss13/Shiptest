@@ -1,10 +1,12 @@
-
+	// ! randomization. be careful. all procs in this file should eventually be removed
 	//The mob should have a gender you want before running this proc. Will run fine without H
 /datum/preferences/proc/random_character(gender_override, antag_override = FALSE)
 	if(randomise[RANDOM_SPECIES])
 		random_species()
+	/*
 	else if(randomise[RANDOM_NAME])
-		real_name = pref_species.random_name(gender,1)
+		var/datum/species/chosen_species = get_pref_data(/datum/preference/species)
+		real_name = chosen_species.random_name(gender,1)
 	if(gender_override && !(randomise[RANDOM_GENDER] || randomise[RANDOM_GENDER_ANTAG] && antag_override))
 		gender = gender_override
 	else
@@ -16,7 +18,7 @@
 	if(randomise[RANDOM_UNDERWEAR_COLOR])
 		underwear_color = random_color()
 	if(randomise[RANDOM_UNDERSHIRT])
-		undershirt = random_undershirt(gender)
+		undershirt = random_undershirt(get_pref_data(/datum/preference/gender)) // nvm the nipple remains unfreed
 	if(randomise[RANDOM_UNDERSHIRT_COLOR])
 		undershirt_color = random_short_color()
 	if(randomise[RANDOM_SOCKS])
@@ -30,9 +32,9 @@
 	if(randomise[RANDOM_EXOWEAR_STYLE])
 		exowear = PREF_EXOWEAR
 	if(randomise[RANDOM_HAIRSTYLE])
-		hairstyle = random_hairstyle(gender)
+		hairstyle = random_hairstyle(get_pref_data(/datum/preference/gender))
 	if(randomise[RANDOM_FACIAL_HAIRSTYLE])
-		facial_hairstyle = random_facial_hairstyle(gender)
+		facial_hairstyle = random_facial_hairstyle(get_pref_data(/datum/preference/gender))
 	if(randomise[RANDOM_HAIR_COLOR])
 		hair_color = random_color_natural()
 	if(randomise[RANDOM_FACIAL_HAIR_COLOR])
@@ -47,19 +49,23 @@
 		var/rando_race = pick(GLOB.roundstart_races)
 		pref_species = new rando_race()
 	features = random_features()
+	*/
 
 /datum/preferences/proc/random_species()
+	return
+	/*
 	var/random_species_type = GLOB.species_list[pick(GLOB.roundstart_races)]
 	pref_species = new random_species_type
 	if(randomise[RANDOM_NAME])
-		real_name = pref_species.random_name(gender, TRUE)
+		real_name = pref_species.random_name(gender,1)
 	if(randomise[RANDOM_AGE])
 		age = rand(pref_species.species_age_min, pref_species.species_age_max)
+	*/
 
 /datum/preferences/proc/update_preview_icon(show_gear = TRUE, show_loadout = FALSE)
 	// Set up the dummy for its photoshoot
 	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
-	copy_to(mannequin, 1, TRUE, TRUE, loadout = show_loadout)
+	copy_to(mannequin, TRUE, TRUE, TRUE, loadout = show_loadout)
 
 	if(selected_outfit && show_gear)
 		selected_outfit.equip(mannequin, TRUE, preference_source = parent)

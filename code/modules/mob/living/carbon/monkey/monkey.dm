@@ -51,7 +51,7 @@
 			return INITIALIZE_HINT_QDEL
 		SSmobs.cubemonkeys += src
 
-	create_dna(src)
+	dna = new /datum/dna(src)
 	dna.initialize_dna(random_blood_type())
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, -6)
 	AddComponent(/datum/component/bloodysoles/feet)

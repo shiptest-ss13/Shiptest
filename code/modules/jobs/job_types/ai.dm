@@ -14,11 +14,8 @@
 /datum/job/ai/after_spawn(mob/H, mob/M)
 	. = ..()
 	var/mob/living/silicon/ai/AI = H
-	if(SSticker.anonymousnames)
-		AI.fully_replace_character_name(AI.real_name, anonymous_ai_name(is_ai = TRUE))
-	else
-		AI.apply_pref_name("ai", M.client)			//If this runtimes oh well jobcode is fucked. //what is this no energy attitude man
-	AI.set_core_display_icon(null, M.client)
+	AI.apply_pref_name("ai", M.client)			//If this runtimes oh well jobcode is fucked. //what is this no energy attitude man
+	AI.set_core_display_icon() // relic of old prefs code
 
 	//we may have been created after our borg
 	if(SSticker.current_state == GAME_STATE_SETTING_UP)

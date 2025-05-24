@@ -50,6 +50,7 @@
 	var/tinttotal = 0	/// Total level of visualy impairing items
 
 	var/list/icon_render_keys = list()
+	#warn this is dumb, but also necessary because replace_body() works only off the bodyparts which already exist
 	var/list/bodyparts = list(
 		/obj/item/bodypart/chest,
 		/obj/item/bodypart/head,
@@ -59,7 +60,8 @@
 		/obj/item/bodypart/leg/left
 	)
 
-	var/list/hand_bodyparts = list() ///a collection of arms (or actually whatever the fug /bodyparts you monsters use to wreck my systems)
+	/// a collection of arms (or actually whatever the fug /bodyparts you monsters use to wreck my systems)
+	var/list/hand_bodyparts = list()
 
 	var/static/list/limb_icon_cache = list()
 

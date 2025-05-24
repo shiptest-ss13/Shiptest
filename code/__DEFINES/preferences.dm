@@ -27,7 +27,9 @@
 
 #define TOGGLES_DEFAULT (SOUND_ADMINHELP|SOUND_MIDI|SOUND_AMBIENCE|SOUND_LOBBY|SOUND_ENDOFROUND|SOUND_RADIO|MEMBER_PUBLIC|INTENT_STYLE|MIDROUND_ANTAG|SOUND_INSTRUMENTS|SOUND_SHIP_AMBIENCE|SOUND_PRAYERS|SOUND_ANNOUNCEMENTS)
 
-//Chat toggles
+// Legacy chat toggles.
+// !!! DO NOT ADD ANY NEW ONES HERE !!!
+// Use `/datum/preference/toggle` instead.
 #define CHAT_OOC (1<<0)
 #define CHAT_DEAD (1<<1)
 #define CHAT_GHOSTEARS (1<<2)
@@ -66,13 +68,6 @@
 #define PARALLAX_DELAY_MED 1
 #define PARALLAX_DELAY_LOW 2
 
-#define SEC_DEPT_NONE "None"
-#define SEC_DEPT_RANDOM "Random"
-#define SEC_DEPT_ENGINEERING "Engineering"
-#define SEC_DEPT_MEDICAL "Medical"
-#define SEC_DEPT_SCIENCE "Science"
-#define SEC_DEPT_SUPPLY "Supply"
-
 // Playtime tracking system, see jobs_exp.dm
 // Due to changes to job experience requirements, many of these are effectively unused.
 #define EXP_TYPE_LIVING "Living"
@@ -99,8 +94,15 @@
 //Flags in the players table in the db
 #define DB_FLAG_EXEMPT (1<<0)
 
+// Values for /datum/preference/savefile_identifier
+/// This preference is character specific.
+#define PREFERENCE_CHARACTER "character"
+/// This preference is account specific.
+#define PREFERENCE_PLAYER "player"
+
 #define DEFAULT_CYBORG_NAME "Default Cyborg Name"
 
+#warn remove
 //randomised elements
 #define RANDOM_NAME "random_name"
 #define RANDOM_NAME_ANTAG "random_name_antag"
@@ -135,5 +137,176 @@
 #define PROSTHETIC_AMPUTATED "amputated"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
-#define NOT_SYNTHETIC FALSE
-#define IS_SYNTHETIC TRUE
+#warn file could do with some sorting.
+// Strings used as keys in the "features" list on mobs, signifying various attributes.
+// THESE SHOULD NOT OVERLAP WITH THE mutant_string VARIABLE
+// ON ANY /datum/sprite_accessory/mutant_part SUBTYPE!!
+// THINGS WILL BREAK!!!!
+#define FEATURE_MUTANT_COLOR "feature_mcolor"
+#define FEATURE_MUTANT_COLOR2 "feature_mcolor2"
+#define FEATURE_BODY_SIZE "feature_body_size"
+
+#define FEATURE_FLAVOR_TEXT "feature_flavor_text"
+#define FEATURE_IPC_CHASSIS "feature_ipc_chassis"
+#define FEATURE_IPC_BRAIN "feature_ipc_brain"
+#define FEATURE_LEGS_TYPE "feature_legs"
+
+
+//Hairstyles
+GLOBAL_LIST_EMPTY(hairstyles_list)			//stores /datum/sprite_accessory/hair indexed by name
+GLOBAL_LIST_EMPTY(facial_hairstyles_list)	//stores /datum/sprite_accessory/facial_hair indexed by name
+GLOBAL_LIST_EMPTY(hair_gradients_list) //stores /datum/sprite_accessory/hair_gradient indexed by name
+
+//Underwear
+GLOBAL_LIST_EMPTY(underwear_list)		//stores /datum/sprite_accessory/underwear indexed by name
+
+//Undershirts
+GLOBAL_LIST_EMPTY(undershirt_list) 	//stores /datum/sprite_accessory/undershirt indexed by name
+
+//Socks
+GLOBAL_LIST_EMPTY(socks_list)		//stores /datum/sprite_accessory/socks indexed by name
+
+// IPC chassises
+GLOBAL_LIST_EMPTY(ipc_chassis_list) // stores /datum/sprite_accessory/ipc_chassis indexed by name
+
+
+// These are the *values* in the features list which are keyed by FEATURE_LEGS_TYPE, used to distinguish normal legs from digitigrade ones.
+#define FEATURE_NORMAL_LEGS "Normal Legs"
+#define FEATURE_DIGITIGRADE_LEGS "Digitigrade Legs"
+GLOBAL_LIST_INIT(legs_list, list(FEATURE_NORMAL_LEGS, FEATURE_DIGITIGRADE_LEGS))
+
+
+// Backpacks
+#define GBACKPACK "Grey Backpack"
+#define GSATCHEL "Grey Satchel"
+#define GDUFFELBAG "Grey Duffel Bag"
+#define GCOURIERBAG "Grey Messenger Bag"
+#define LSATCHEL "Leather Satchel"
+#define DBACKPACK "Department Backpack"
+#define DSATCHEL "Department Satchel"
+#define DDUFFELBAG "Department Duffel Bag"
+#define DCOURIERBAG "Department Messenger Bag"
+GLOBAL_LIST_INIT(backpacklist, list(DBACKPACK, DSATCHEL, DCOURIERBAG, DDUFFELBAG, GBACKPACK, GSATCHEL, GCOURIERBAG, GDUFFELBAG, LSATCHEL))
+
+// Uniforms
+#define PREF_SUIT "Standard Jumpsuit"
+#define PREF_SKIRT "Standard Jumpskirt"
+#define PREF_ALTSUIT "Alternate Jumpsuit"
+#define PREF_GREYSUIT "Grey Jumpsuit"
+GLOBAL_LIST_INIT(jumpsuitlist, list(PREF_SUIT, PREF_SKIRT, PREF_ALTSUIT, PREF_GREYSUIT))
+
+// Exowear
+#define PREF_NOEXOWEAR "No Exowear"
+#define PREF_EXOWEAR "Standard Exowear"
+#define PREF_ALTEXOWEAR "Alternate Exowear"
+#define PREF_COATEXOWEAR "Departmental Winter Coat"
+GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR, PREF_COATEXOWEAR))
+
+//favorite cigarette brand
+#define PREF_CIG_SPACE "Space Cigarettes"
+#define PREF_CIG_DROMEDARY "DromedaryCo Cigarettes"
+#define PREF_CIG_UPLIFT "Uplift Smooth Cigarettes"
+#define PREF_CIG_ROBUST "Robust Cigarettes"
+#define PREF_CIG_ROBUSTGOLD "Robust Gold Cigarettes"
+#define PREF_CIG_CARP "Carp Classic Cigarettes"
+#define PREF_CIG_MIDORI "Midori Taboko Rollies"
+#define PREF_CIGAR "Premium Cigars"
+#define PREF_CIGAR_SOLAR "Solarian Cigars"
+#define PREF_CIGAR_COHIBA "Cohiba Cigars"
+#define PREF_VAPE "Vape Pen"
+#define PREF_PIPE "Fancy Pipe"
+
+GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI, PREF_CIGAR, PREF_CIGAR_SOLAR, PREF_CIGAR_COHIBA, PREF_VAPE, PREF_PIPE)))
+
+// Body sizes
+#define BODY_SIZE_NORMAL "Normal"
+#define BODY_SIZE_SHORT "Short"
+#define BODY_SIZE_TALL "Tall"
+
+#define BODY_SIZE_NORMAL_SCALE 1
+#define BODY_SIZE_SHORT_SCALE 0.93
+#define BODY_SIZE_TALL_SCALE 1.03
+
+GLOBAL_LIST_INIT(body_sizes, list(BODY_SIZE_NORMAL = BODY_SIZE_NORMAL_SCALE, BODY_SIZE_SHORT = BODY_SIZE_SHORT_SCALE, BODY_SIZE_TALL = BODY_SIZE_TALL_SCALE))
+
+
+GLOBAL_LIST_INIT(ghost_forms_with_directions_list, list(
+	"ghost",
+	"ghostian",
+	"ghostian2",
+	"ghostking",
+	"ghost_red",
+	"ghost_black",
+	"ghost_blue",
+	"ghost_yellow",
+	"ghost_green",
+	"ghost_pink",
+	"ghost_cyan",
+	"ghost_dblue",
+	"ghost_dred",
+	"ghost_dgreen",
+	"ghost_dcyan",
+	"ghost_grey",
+	"ghost_dyellow",
+	"ghost_dpink",
+	"skeleghost",
+	"ghost_purpleswirl",
+	"ghost_rainbow",
+	"ghost_fire",
+	"ghost_funkypurp",
+	"ghost_pinksherbert",
+	"ghost_blazeit",
+	"ghost_mellow",
+	"ghost_camo",
+	"catghost")) //stores the ghost forms that support directional sprites
+
+GLOBAL_LIST_INIT(ghost_forms_with_accessories_list, list("ghost")) //stores the ghost forms that support hair and other such things
+
+GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
+	":thinking:",
+	"Alien",
+	"Angel",
+	"Banned",
+	"Bliss",
+	"Blue",
+	"Clown",
+	"Database",
+	"Dorf",
+	"Firewall",
+	"Fuzzy",
+	"Gentoo",
+	"Glitchman",
+	"Gondola",
+	"Goon",
+	"Hades",
+	"HAL 9000",
+	"Heartline",
+	"Helios",
+	"House",
+	"Inverted",
+	"Lamp",
+	"Matrix",
+	"Monochrome",
+	"Murica",
+	"Nanotrasen",
+	"Not Malf",
+	"President",
+	"Random",
+	"Rainbow",
+	"Red",
+	"Red October",
+	"Static",
+	"Syndicat Meow",
+	"Text",
+	"Too Deep",
+	"Triumvirate",
+	"Triumvirate-M",
+	"Weird")))
+
+/proc/resolve_ai_icon(input)
+	if(!input || !(input in GLOB.ai_core_display_screens))
+		return "ai"
+	else
+		if(input == "Random")
+			input = pick(GLOB.ai_core_display_screens - "Random")
+		return "ai-[lowertext(input)]"

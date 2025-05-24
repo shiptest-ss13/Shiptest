@@ -1,11 +1,10 @@
 /datum/species/kepori
 	name = "\improper Kepori"
 	id = SPECIES_KEPORI
-	default_color = "6060FF"
-	species_traits = list(SCLERA, MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)
+	species_traits = list(SCLERA, EYECOLOR)
 	inherent_traits = list(TRAIT_SCOOPABLE)
-	mutant_bodyparts = list("kepori_body_feathers", "kepori_head_feathers", "kepori_tail_feathers", "kepori_feathers")
-	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "None", "kepori_head_feathers" = "None",  "kepori_body_feathers" = "None", "kepori_tail_feathers" = "None")
+	mutant_bodyparts = list()
+	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_head_feathers" = "None", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = FRIED | GROSS | CLOTH
 	liked_food = MEAT | GORE
@@ -147,7 +146,7 @@
 		return FALSE
 	return H.equip_delay_self_check(I, bypass_equip_delay_self)
 
-/datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/kepori/on_species_gain(mob/living/carbon/C)
 	. = ..()
 
 	C.base_pixel_x -= 8
@@ -158,7 +157,7 @@
 		keptackle = new
 		keptackle.Grant(C)
 
-/datum/species/kepori/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
+/datum/species/kepori/on_species_loss(mob/living/carbon/human/C, datum/species/new_species)
 	. = ..()
 
 	C.base_pixel_x += 8

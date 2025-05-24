@@ -483,7 +483,7 @@
 	unset_wearer()
 	old_wearer.temporarilyRemoveItemFromInventory(src)
 
-/obj/item/mod/control/proc/on_species_gain(datum/source, datum/species/new_species, datum/species/old_species)
+/obj/item/mod/control/proc/on_species_gain(datum/source, datum/species/new_species)
 	SIGNAL_HANDLER
 
 	var/list/all_parts = mod_parts + src

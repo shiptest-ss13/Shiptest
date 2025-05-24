@@ -123,10 +123,6 @@
 #define SPECIES_ZOMBIE "zombie"
 #define SPECIES_XENOMORPH "xenomorph"
 
-#define DIGITIGRADE_NEVER 0
-#define DIGITIGRADE_OPTIONAL 1
-#define DIGITIGRADE_FORCED 2
-
 //Reagent Metabolization flags, defines the type of reagents that affect this mob
 #define PROCESS_ORGANIC 1 //Only processes reagents with "ORGANIC" or "ORGANIC | SYNTHETIC"
 #define PROCESS_SYNTHETIC 2 //Only processes reagents with "SYNTHETIC" or "ORGANIC | SYNTHETIC"
@@ -146,6 +142,7 @@
 #define FLAG_MONKEY (1<<7)
 
 //Bodytype defines for how things can be worn.
+// For ease of debugging it's pretty fucking vital that this be kept in sync with the bitfields in /code/_globalvars/bitfields.dm
 #define BODYTYPE_ORGANIC (1<<0)
 #define BODYTYPE_ROBOTIC (1<<1)
 #define BODYTYPE_HUMANOID (1<<2) //Everything

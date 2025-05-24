@@ -52,16 +52,15 @@
 	var/mob/living/carbon/human/H = user
 	var/datum/species/elzuose/species_datum = H.dna.species
 		// select new color
-	var/new_etherealcolor = input(user, "Choose your Elzuose color:", "Character Preference", species_datum.default_color) as color|null
+	var/new_etherealcolor = input(user, "Choose your Elzuose color:", "Character Preference", "#" + H.dna.features[FEATURE_MUTANT_COLOR]) as color|null
 	if(new_etherealcolor)
 		var/temp_hsv = RGBtoHSV(new_etherealcolor)
 		if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright ok??
 			if(!do_after(usr, 30 SECONDS, user))
 				return
 			playsound(src, 'sound/effects/ointment.ogg', 5, TRUE, 5)
-			species_datum.default_color = sanitize_hexcolor(new_etherealcolor, 6, TRUE)
-			species_datum.current_color = species_datum.health_adjusted_color(user, species_datum.default_color)
-			species_datum.spec_updatehealth(user)
+			H.dna.features[FEATURE_MUTANT_COLOR] = sanitize_hexcolor(new_etherealcolor, 6, include_crunch = FALSE)
+			species_datum.update_elzu_color(H)
 			user.visible_message(span_notice("[user] applies the salve, changing [user.p_their()] color to [new_etherealcolor]"))
 		else
 			to_chat(user, span_danger("Invalid color. Your color is not bright enough."))

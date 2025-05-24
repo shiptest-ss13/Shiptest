@@ -19,7 +19,7 @@
 /datum/ship_application/New(mob/dead/new_player/applicant, datum/overmap/ship/controlled/parent)
 	// If the admin is in stealth mode, we use their fakekey.
 	app_mob = applicant
-	app_name = app_mob.client?.prefs.real_name
+	app_name = app_mob.client?.prefs.get_pref_data(/datum/preference/real_name)
 	app_key = app_mob.client?.holder?.fakekey ? app_mob.client.holder.fakekey : applicant.key
 	parent_ship = parent
 

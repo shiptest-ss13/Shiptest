@@ -1,10 +1,10 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
 	name = "\improper Positronic" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
-	sexes = FALSE
+	//sexes = FALSE
 	species_age_min = 0
 	species_age_max = 300
-	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
+	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
@@ -17,8 +17,8 @@
 	mutantlungs = null //no more collecting change for you
 	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
-	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_tail", "ipc_brain")
-	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_tail" = "None", "ipc_brain" = "Posibrain", "body_size" = "Normal")
+	mutant_bodyparts = list()
+	default_features = list(FEATURE_MUTANT_COLOR = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_tail" = "None", FEATURE_IPC_CHASSIS = "Morpheus Cyberkinetics (Custom)", FEATURE_IPC_BRAIN = "Posibrain", FEATURE_BODY_SIZE = BODY_SIZE_NORMAL)
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
@@ -62,7 +62,7 @@
 		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 0), "[EAST]" = list("x" = 2, "y" = 0), "[SOUTH]" = list("x" = 0, "y" = 0), "[WEST]" = list("x" = -2, "y" = 0)),
 	)
 
-/datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+/datum/species/ipc/on_species_gain(mob/living/carbon/C) // Let's make that IPC actually robotic.
 	if(C.dna?.features["ipc_brain"] == "Man-Machine Interface")
 		mutantbrain = /obj/item/organ/brain/mmi_holder
 	. = ..()
@@ -81,6 +81,7 @@
 		change_screen.Remove(C)
 	C.UnregisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
 
+#warn direct string modifications... ugh.
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
 	if(!has_screen)
 		return
@@ -104,7 +105,8 @@
 	button_icon_state = "drone_vision"
 
 /datum/action/innate/change_screen/Activate()
-	var/screen_choice = input(usr, "Which screen do you want to use?", "Screen Change") as null | anything in GLOB.ipc_screens_list
+	var/screen_list = GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_screens]
+	var/screen_choice = input(usr, "Which screen do you want to use?", "Screen Change") as null | anything in screen_list
 	var/color_choice = input(usr, "Which color do you want your screen to be?", "Color Change") as null | color
 	if(!screen_choice)
 		return
@@ -240,7 +242,7 @@
 /datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	..()
 
-	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
+	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features[FEATURE_IPC_CHASSIS]]
 
 	if(chassis_of_choice.use_eyes)
 		LAZYREMOVE(species_traits, NOEYESPRITES)
@@ -258,7 +260,11 @@
 
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
 		if(BP.limb_id=="synth")
-			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
+			var/mutcolor_bodyparts = chassis_of_choice.use_mutcolors ? TRUE : FALSE
+			if(mutcolor_bodyparts)
+				BP.should_draw_greyscale = TRUE
+				BP.effective_skin_color = C.dna?.features[FEATURE_MUTANT_COLOR]
+				BP.species_secondary_color = C.dna?.features[FEATURE_MUTANT_COLOR2]
 
 			if(chassis_of_choice.icon)
 				BP.static_icon = chassis_of_choice.icon
@@ -274,11 +280,6 @@
 			if(chassis_of_choice.has_snout)
 				if(istype(BP,/obj/item/bodypart/head))
 					BP.bodytype |= BODYTYPE_SNOUT //hate. hate. (tik tok tts)
-
-			if(BP.uses_mutcolor)
-				BP.should_draw_greyscale = TRUE
-				BP.species_color = C.dna?.features["mcolor"]
-				BP.species_secondary_color = C.dna?.features["mcolor2"]
 
 			BP.limb_id = chassis_of_choice.limbs_id
 			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"

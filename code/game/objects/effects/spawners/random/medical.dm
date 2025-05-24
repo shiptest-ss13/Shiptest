@@ -22,7 +22,6 @@
 		/obj/item/organ/heart/gland/chem = 5,
 		/obj/item/organ/heart/gland/mindshock = 5,
 		/obj/item/organ/heart/gland/plasma = 7,
-		/obj/item/organ/heart/gland/transform = 5,
 		/obj/item/organ/heart/gland/slime = 4,
 		/obj/item/organ/heart/gland/spiderman = 5,
 		/obj/item/organ/heart/gland/ventcrawling = 1,

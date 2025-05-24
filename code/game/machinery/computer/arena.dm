@@ -187,7 +187,7 @@
 	var/mob/oldbody = get_mob_by_key(ckey)
 	if(!isobserver(oldbody))
 		return
-	var/mob/living/carbon/human/M = new/mob/living/carbon/human(get_turf(spawnpoint))
+	var/mob/living/carbon/human/M = new /mob/living/carbon/human(get_turf(spawnpoint))
 	oldbody.client.prefs.copy_to(M)
 	M.set_species(/datum/species/human) // Could use setting per team
 	M.equipOutfit(outfits[team] ? outfits[team] : default_outfit)
