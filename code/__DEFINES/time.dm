@@ -31,6 +31,7 @@
 #define MONKEYDAY "Monkey Day"
 #define PRIDE_WEEK "Pride Week"
 #define MOTH_WEEK "Moth Week"
+#define CATACLYSM_DAY "Cataclysm Day"
 
 /*
 

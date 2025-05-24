@@ -240,7 +240,7 @@
 	return pick("Bee","Honey","Hive","Africanized","Mead","Buzz")
 
 /datum/holiday/cataclysm_day
-	name = "Cataclysm Day"
+	name = CATACLYSM_DAY
 	//Gives us a range of 2~ uptimes
 	begin_day = 24
 	end_day = 28
