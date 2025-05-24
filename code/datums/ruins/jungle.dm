@@ -70,10 +70,11 @@
 	description = "An abandoned airbase dating back to the ICW, partially scuttled, and moved right back into by the Ramzi Clique."
 	suffix = "jungle_bombed_starport.dmm"
 	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_LIVEABLE)
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/signaled/kill/ramzi/airbase,
 		/datum/mission/ruin/icw_documents
 	)
+*/
 
 /datum/mission/ruin/signaled/kill/ramzi/airbase
 	mission_limit = 1

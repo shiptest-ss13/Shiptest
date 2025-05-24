@@ -17,9 +17,10 @@
 	description = "The former home of a poor sod on observation duty. Now a cunning trap."
 	suffix = "whitesands_cave_base.dmm"
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/radiological,
 	)
+*/
 
 /datum/mission/ruin/radiological
 	name = "Radiological Signature"

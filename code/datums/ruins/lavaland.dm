@@ -29,11 +29,12 @@
 	id = "wreck_factory"
 	description = "A Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/nanotrasen_docs,
 		/datum/mission/ruin/captain_medal,
 		/datum/mission/ruin/brainchip
 	)
+*/
 
 /datum/mission/ruin/nanotrasen_docs
 	name = "Nanotrasen Asset Recovery Program."
