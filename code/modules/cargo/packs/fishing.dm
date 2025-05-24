@@ -1,5 +1,5 @@
 /datum/supply_pack/fish
-	group = "Fishing Essentials"
+	category = "Fishing Essentials"
 
 
 /datum/supply_pack/fish/fishingkit
