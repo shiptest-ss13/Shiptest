@@ -82,7 +82,7 @@
 		if(BP.limb_id == SPECIES_ELZUOSE)
 			BP.update_limb(is_creating = TRUE)
 
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
+	if(GLOB.holidays && GLOB.holidays[HALLOWEEN])
 		if(!leaves_particle)
 			leaves_particle = new(_carbon, /particles/elzouse_leaves, PARTICLE_ATTACH_MOB)
 		leaves_particle.particles.color = default_color

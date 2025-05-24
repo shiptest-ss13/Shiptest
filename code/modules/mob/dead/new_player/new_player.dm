@@ -352,9 +352,12 @@
 		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
 	return TRUE
 
+// ! I will want to refactor this if it gets larger then two holidays. Move behavoir onto the datums themselves
 /mob/dead/new_player/proc/holiday_choices(mob/living/carbon/human/humanc)
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
+	if(!GLOB.holidays)
+		return
 
+	if(GLOB.holidays[HALLOWEEN])
 		to_chat(humanc, span_big("Happy Halloween! You can choose which holiday your character celebrates."))
 		to_chat(humanc, span_notice("Read up about Mexapix <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a><br>Dia de Los Muretos does not have lore atm!"))
 
@@ -380,6 +383,24 @@
 				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 				if(backpack)
 					new /obj/effect/spawner/random/clothing/day_of_dead(backpack)
+
+	if(GLOB.holidays[CATACLYSM_DAY])
+		to_chat(humanc, span_big("It's Cataclysm Day! You can choose how your character celebrates."))
+		to_chat(humanc, span_notice("Read up about Cataclysm Day <a href=\"https://hackmd.io/@shiptest/H1DRZzjggg\">Here!</a>"))
+
+		var/list/choices = list()
+		choices["SRM Hunting Ban Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
+		//choices["Planet Painting"] = icon('icons/obj/clothing/masks.dmi', "death")
+		var/choice = show_radial_menu(
+			humanc,
+			humanc,
+			choices,
+		)
+		switch(choice)
+			if("SRM Hunting Ban Rations")
+				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
+				if(backpack)
+					new /obj/item/storage/srm_rations(backpack)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
