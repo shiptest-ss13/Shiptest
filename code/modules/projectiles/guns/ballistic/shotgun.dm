@@ -50,7 +50,7 @@
 /obj/item/gun/ballistic/shotgun/attack_obj(obj/O, mob/living/user)
 	if(istype(O, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/breaching = O
-		if(chambered && chambered.BB)
+		if(chambered && chambered.BB && !is_type_in_list(chambered, list(/obj/item/ammo_casing/shotgun/blank, /obj/item/ammo_casing/shotgun/beanbag, /obj/item/ammo_casing/shotgun/rubbershot)))
 			user.visible_message(
 				span_warning("[user] put the barrel of [src] to [breaching]'s electronics!"),
 				span_warning("You puts the barrel of [src] to [breaching]'s electronics, preparing to shred them!"),
