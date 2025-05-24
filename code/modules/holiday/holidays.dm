@@ -239,6 +239,16 @@
 /datum/holiday/bee/getStationPrefix()
 	return pick("Bee","Honey","Hive","Africanized","Mead","Buzz")
 
+/datum/holiday/cataclysm_day
+	name = "Cataclysm Day"
+	//Gives us a range of 2~ uptimes
+	begin_day = 24
+	end_day = 28
+	begin_month = MAY
+
+/datum/holiday/cataclysm_day/greet()
+	return "It's near or is Memorial Day! In-universe our version is <a href=\"https://hackmd.io/@shiptest/H1DRZzjggg\">Cataclysm Day</a>."
+
 /datum/holiday/summersolstice
 	name = "Summer Solstice"
 	begin_day = 21
