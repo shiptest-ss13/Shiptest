@@ -92,13 +92,14 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -19;
 	pixel_y = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -211,9 +212,6 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -270,6 +268,15 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/yellow/warning{
 	dir = 5
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -1632,7 +1639,7 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -2359,9 +2366,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -3197,6 +3201,15 @@
 	dir = 9
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "rS" = (
@@ -4561,14 +4574,17 @@
 /area/ship/engineering/communications)
 "zC" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /obj/machinery/door/airlock/maintenance/external{
 	dir = 4;
 	req_access_txt = "1"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/mapping_helpers/airlock/locked,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "zE" = (
 /obj/structure/cable{
@@ -4876,6 +4892,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hangar)
+"Br" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/crew/canteen)
 "Bv" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -4952,6 +4972,12 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Cm" = (
@@ -6057,6 +6083,9 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Jd" = (
@@ -6169,11 +6198,21 @@
 /area/ship/cargo)
 "Ka" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/airlock/maintenance/external{
 	dir = 4;
 	req_access_txt = "1"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Kd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -7010,6 +7049,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "OC" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -7497,11 +7539,14 @@
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "RR" = (
-/obj/structure/table/reinforced,
 /obj/machinery/recharger{
 	pixel_x = 5;
 	pixel_y = 4
 	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "RV" = (
@@ -7884,6 +7929,12 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Ul" = (
@@ -8268,8 +8319,14 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer5{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -9121,7 +9178,7 @@ pD
 sT
 Mf
 NN
-xI
+Br
 yM
 eb
 NK
