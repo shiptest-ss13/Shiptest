@@ -24,13 +24,14 @@
 #define VALENTINES "Valentine's Day"
 #define APRIL_FOOLS "April Fool's Day"
 #define EASTER "Easter"
-#define HALLOWEEN "Halloween"
+#define HALLOWEEN "Mexapix"
 #define CHRISTMAS "Christmas"
 #define FESTIVE_SEASON "Festive Season"
 #define GARBAGEDAY "Garbage Day"
 #define MONKEYDAY "Monkey Day"
 #define PRIDE_WEEK "Pride Week"
 #define MOTH_WEEK "Moth Week"
+
 /*
 
 Days of the week to make it easier to reference them.

@@ -234,7 +234,7 @@
 	name = "Bee Day"
 	begin_day = 20
 	begin_month = MAY
-	drone_hat = /obj/item/clothing/mask/rat/bee
+	drone_hat = /obj/item/clothing/mask/spooky/bee
 
 /datum/holiday/bee/getStationPrefix()
 	return pick("Bee","Honey","Hive","Africanized","Mead","Buzz")
@@ -397,7 +397,7 @@
 	end_month = NOVEMBER
 
 /datum/holiday/halloween/greet()
-	return "Have a spooky Halloween!"
+	return "Have a spooky Halloween! In-universe, enjoy your <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Mexapix</a> and Dia de Los Muertos."
 
 /datum/holiday/halloween/getStationPrefix()
 	return pick("Bone-Rattling","Mr. Bones' Own","2SPOOKY","Spooky","Scary","Skeletons")
@@ -526,7 +526,7 @@
 	name = "Mayan Doomsday Anniversary"
 	begin_day = 21
 	begin_month = DECEMBER
-	drone_hat = /obj/item/clothing/mask/rat/tribal
+	drone_hat = /obj/item/clothing/mask/spooky/tribal
 
 /datum/holiday/xmas
 	name = CHRISTMAS
