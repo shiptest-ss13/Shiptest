@@ -1,4 +1,5 @@
 /mob/living/carbon
+	bad_type = /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
 	gender = MALE
 	pressure_resistance = 15

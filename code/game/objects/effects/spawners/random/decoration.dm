@@ -16,6 +16,10 @@
 		/obj/item/stack/tile/pod/dark{amount = 20} = 3,
 	)
 
+//modified types dont count as paths
+/obj/effect/spawner/random/decoration/material/can_spawn(atom/loot)
+	return TRUE
+
 /obj/effect/spawner/random/decoration/carpet
 	name = "carpet spawner"
 	icon_state = "carpet"
@@ -23,6 +27,10 @@
 		/obj/item/stack/tile/carpet{amount = 30} = 35,
 		/obj/item/stack/tile/carpet/black{amount = 30} = 20,
 	)
+
+//modified types dont count as paths
+/obj/effect/spawner/random/decoration/carpet/can_spawn(atom/loot)
+	return TRUE
 
 /obj/effect/spawner/random/decoration/ornament
 	name = "ornament spawner"

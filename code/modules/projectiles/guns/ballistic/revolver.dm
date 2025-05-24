@@ -10,6 +10,7 @@
 	name = "i demand"
 	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	icon_state = "revolver"
+	bad_type = /obj/item/gun/ballistic/revolver
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder,
@@ -460,7 +461,6 @@
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
 
-EMPTY_GUN_HELPER(revolver)
 EMPTY_GUN_HELPER(revolver/viper)
 
 /obj/item/gun/ballistic/revolver/mateba
