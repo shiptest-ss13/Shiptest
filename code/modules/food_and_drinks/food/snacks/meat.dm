@@ -68,14 +68,6 @@
 	tastes = list("slime" = 1, "jelly" = 1)
 	foodtype = MEAT | RAW | TOXIC
 
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
-	icon_state = "lizardmeat"
-	desc = "Delicious dino damage."
-	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/plain/human/lizard
-	filling_color = "#6B8E23"
-	tastes = list("meat" = 4, "scales" = 1)
-	foodtype = MEAT | RAW | GORE
-
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/plant
 	icon_state = "plantmeat"
 	desc = "All the joys of healthy eating with all the fun of cannibalism."
@@ -88,6 +80,14 @@
 	desc = "Ow, the edge."
 	filling_color = "#202020"
 	tastes = list("darkness" = 1, "meat" = 1)
+	foodtype = MEAT | RAW | GORE
+
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
+	icon_state = "lizardmeat"
+	desc = "Delicious dino damage."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/plain/human/lizard
+	filling_color = "#6B8E23"
+	tastes = list("meat" = 4, "scales" = 1)
 	foodtype = MEAT | RAW | GORE
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/fly
@@ -226,7 +226,6 @@
 	tastes = list("cobwebs" = 1)
 	foodtype = RAW | MEAT | TOXIC
 
-
 /obj/item/reagent_containers/food/snacks/meat/slab/goliath
 	name = "goliath meat"
 	desc = "A slab of goliath meat. It's not very edible now, but it cooks great in lava."
@@ -254,27 +253,6 @@
 	name = "gorilla meat"
 	desc = "Much meatier than monkey meat."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/cooking_oil = 5) //Plenty of fat!
-
-/obj/item/reagent_containers/food/snacks/meat/rawbacon
-	name = "raw piece of bacon"
-	desc = "A raw piece of bacon."
-	icon_state = "bacon"
-	cooked_type = /obj/item/reagent_containers/food/snacks/meat/bacon
-	bitesize = 2
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/cooking_oil = 3)
-	filling_color = "#B22222"
-	tastes = list("bacon" = 1)
-	foodtype = RAW | MEAT
-
-/obj/item/reagent_containers/food/snacks/meat/bacon
-	name = "piece of bacon"
-	desc = "A delicious piece of bacon."
-	icon_state = "baconcooked"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/cooking_oil = 2)
-	filling_color = "#854817"
-	tastes = list("bacon" = 1)
-	foodtype = MEAT | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/meat/slab/gondola
 	name = "gondola meat"
@@ -325,6 +303,42 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/chicken
 	tastes = list("chicken" = 1)
 
+/obj/item/reagent_containers/food/snacks/meat/slab/miras
+	name = "miras"
+	icon_state = "miras"
+	desc = "A cut of meat from the Miras Lizard. When alone, it tends to be a sickly-sweet experience, requiring proper preparation to truly shine."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/miras
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/miras
+	tastes = list("sweet meat" = 1, "sickening sweetness" = 1, "gamey meat" = 1)
+	foodtype = MEAT | SUGAR | RAW
+
+/obj/item/reagent_containers/food/snacks/meat/slab/tiris
+	name = "tiris meat"
+	icon_state = "tiris"
+	desc = "A rough meat with rich deposits of fat. It is typically processed, spiced, and preserved."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/tiris
+	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/tiris
+	tastes = list("fatty meat" = 1, "raw fat" = 1)
+	foodtype = MEAT | RAW
+
+/obj/item/reagent_containers/food/snacks/meat/slab/remes
+	name = "remes meat"
+	icon_state = "remes"
+	desc = "The meat of a properly prepared Remes tends to melt away as it's consumed, leaving behind the flavors that it has soaked in."
+	cooked_type = null
+	slice_path = null
+	tastes = list("mellow flesh" = 1, "earthiness" =1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/meat/slab/dofitis
+	name = "dofitis meat"
+	icon_state = "dofi"
+	desc = "A rich cut of meat with a sublime marble."
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/dofitis
+	slice_path = null
+	tastes = list("hearty meat" = 1, "buttery fat" =1)
+	foodtype = MEAT | RAW
+
 ////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
 
 
@@ -345,6 +359,12 @@
 /obj/item/reagent_containers/food/snacks/meat/steak/plain/human
 	tastes = list("tender meat" = 1)
 	foodtype = MEAT | GORE
+
+/obj/item/reagent_containers/food/snacks/meat/steak/plain/human/lizard
+	name = "lizard steak"
+	icon_state = "birdsteak"
+	tastes = list("juicy chicken" = 3, "scales" = 1)
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/steak/killertomato
 	name = "killer tomato steak"
@@ -386,12 +406,6 @@
 	icon_state = "birdsteak"
 	tastes = list("chicken" = 1)
 
-/obj/item/reagent_containers/food/snacks/meat/steak/plain/human/lizard
-	name = "lizard steak"
-	icon_state = "birdsteak"
-	tastes = list("juicy chicken" = 3, "scales" = 1)
-	foodtype = MEAT
-
 /obj/item/reagent_containers/food/snacks/meat/steak/meatproduct
 	name = "thermally processed meat product"
 	icon_state = "meatproductsteak"
@@ -402,6 +416,27 @@
 	desc = "A synthetic meat steak. It doesn't look quite right, now does it?"
 	icon_state = "meatsteak_old"
 	tastes = list("meat" = 4, "cryoxandone" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/steak/miras
+	name = "miras steak"
+	desc = "A cooked slice of Miras. A sweet meat with gamey overtones."
+	icon_state = "miras-steak"
+	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
+	foodtype = MEAT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/meat/steak/tiris
+	name = "tiris steak"
+	desc = "A cooked slice of tiris meat. Rough and fatty."
+	icon_state = "tiris-celima"
+	tastes = list("fatty meat")
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/meat/steak/dofitis
+	name = "dofitis steak"
+	desc = "A cooked slab of dofitis meat. A rich, hearty experience."
+	icon_state = "dofi-steak"
+	tastes = list("hearty meat" = 1, "buttery fat" = 1)
+	foodtype = MEAT
 
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////
 
@@ -475,6 +510,18 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/cutlet/chicken
 	tastes = list("chicken" = 1)
 
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet/miras
+	name = "raw miras cutlet"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/cutlet/miras
+	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
+	foodtype = MEAT | SUGAR | RAW
+
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet/tiris
+	name = "raw tiris cutlet"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/cutlet/tiris
+	tastes = list("fatty meat" = 1, "raw fat" = 1)
+	foodtype = MEAT | RAW
+
 //Cooked cutlets
 
 /obj/item/reagent_containers/food/snacks/meat/cutlet
@@ -522,3 +569,36 @@
 /obj/item/reagent_containers/food/snacks/meat/cutlet/chicken
 	name = "chicken cutlet"
 	tastes = list("chicken" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/cutlet/miras
+	name = "miras cutlet"
+	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
+	foodtype = MEAT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/meat/cutlet/tiris
+	name = "tiris cutlet"
+	tastes = list("fatty meat")
+	foodtype = MEAT
+
+/* Bacon */
+
+/obj/item/reagent_containers/food/snacks/meat/rawbacon
+	name = "raw piece of bacon"
+	desc = "A raw piece of bacon."
+	icon_state = "bacon"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/bacon
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/cooking_oil = 3)
+	filling_color = "#B22222"
+	tastes = list("bacon" = 1)
+	foodtype = RAW | MEAT
+
+/obj/item/reagent_containers/food/snacks/meat/bacon
+	name = "piece of bacon"
+	desc = "A delicious piece of bacon."
+	icon_state = "baconcooked"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/cooking_oil = 2)
+	filling_color = "#854817"
+	tastes = list("bacon" = 1)
+	foodtype = MEAT | BREAKFAST
