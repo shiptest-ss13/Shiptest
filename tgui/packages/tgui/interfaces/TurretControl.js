@@ -1,10 +1,11 @@
+import { Button, Flex, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Flex, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 import { InterfaceLockNoticeBox } from './common/InterfaceLockNoticeBox';
 
-export const TurretControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const TurretControl = (props) => {
+  const { act, data } = useBackend();
   const {
     allow_manual_control,
     manual_control,

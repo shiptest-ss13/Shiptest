@@ -1,13 +1,14 @@
+import { Button, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
-export const Crayon = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Crayon = (props) => {
+  const { act, data } = useBackend();
   const capOrChanges = data.has_cap || data.can_change_colour;
   const drawables = data.drawables || [];
   return (
-    <Window width={600} height={600} resizable>
+    <Window width={600} height={600}>
       <Window.Content scrollable>
         {!!capOrChanges && (
           <Section title="Basic">

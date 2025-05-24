@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -6,12 +5,14 @@ import {
   NoticeBox,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const AiRestorer = () => {
   return (
-    <Window width={370} height={360} resizable>
+    <Window width={370} height={360}>
       <Window.Content scrollable>
         <AiRestorerContent />
       </Window.Content>
@@ -19,8 +20,8 @@ export const AiRestorer = () => {
   );
 };
 
-export const AiRestorerContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AiRestorerContent = (props) => {
+  const { act, data } = useBackend();
   const {
     AI_present,
     error,

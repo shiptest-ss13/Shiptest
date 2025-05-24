@@ -1,18 +1,18 @@
-import { useBackend } from '../../backend';
 import {
-  ProgressBar,
-  Section,
+  Box,
   Button,
   LabeledList,
-  Box,
-} from '../../components';
+  ProgressBar,
+  Section,
+} from 'tgui-core/components';
+
+import { useBackend } from '../../backend';
 import { Window } from '../../layouts';
+import { Data, Mission } from './types';
 
-import { Mission, Data } from './types';
-
-export const MissionBoard = (props, context) => {
+export const MissionBoard = (props) => {
   return (
-    <Window width={600} height={700} theme="ntos_terminal" resizable>
+    <Window width={600} height={700} theme="ntos_terminal">
       <Window.Content scrollable>
         <MissionsContent />
       </Window.Content>
@@ -20,8 +20,8 @@ export const MissionBoard = (props, context) => {
   );
 };
 
-export const MissionsContent = (props, context) => {
-  const { act, data } = useBackend<Data>(context);
+export const MissionsContent = (props) => {
+  const { act, data } = useBackend<Data>();
   const { missions, pad, id_inserted } = data;
   return (
     <Section
@@ -47,9 +47,9 @@ export const MissionsContent = (props, context) => {
   );
 };
 
-const MissionsList = (props, context) => {
+const MissionsList = (props) => {
   const missionsArray = props.missions as Array<Mission>;
-  const { act, data } = useBackend<Data>(context);
+  const { act, data } = useBackend<Data>();
   const { pad, id_inserted } = data;
 
   const missionTimer = (mission: Mission) => (

@@ -38,7 +38,7 @@ standards:
 
     - exactly:
           [
-              261,
+              260,
               "non-bitwise << uses",
               '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
           ]
@@ -52,7 +52,7 @@ standards:
               '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)',
           ]
 
-    - exactly: [1, "Old-style proc references", '\.proc/(\w+)']
+    - exactly: [0, "Old-style proc references", '\.proc/(\w+)']
     - exactly: [0, "Old-style typed proc references", '([\w/]+?)/?\.proc/(\w+)']
 
     - no_more:

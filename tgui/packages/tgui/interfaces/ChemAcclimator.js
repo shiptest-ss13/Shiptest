@@ -1,9 +1,15 @@
+import {
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const ChemAcclimator = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemAcclimator = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={320} height={271}>
       <Window.Content>
@@ -21,7 +27,7 @@ export const ChemAcclimator = (props, context) => {
                 maxValue={1000}
                 step={5}
                 stepPixelSize={2}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('set_target_temperature', {
                     temperature: value,
                   })
@@ -36,7 +42,7 @@ export const ChemAcclimator = (props, context) => {
                 minValue={1}
                 maxValue={data.target_temperature}
                 stepPixelSize={2}
-                onChange={(e, value) => {
+                onChange={(value) => {
                   act('set_allowed_temperature_difference', {
                     temperature: value,
                   });
@@ -66,7 +72,7 @@ export const ChemAcclimator = (props, context) => {
                 maxValue={200}
                 step={2}
                 stepPixelSize={2}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('change_volume', {
                     volume: value,
                   })

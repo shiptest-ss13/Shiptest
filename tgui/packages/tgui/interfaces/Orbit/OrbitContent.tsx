@@ -1,11 +1,16 @@
-import { toTitleCase } from 'common/string';
+import {
+  NoticeBox,
+  Section,
+  Stack,
+  Table,
+  Tooltip,
+} from 'tgui-core/components';
+import { toTitleCase } from 'tgui-core/string';
 
 import { useBackend } from '../../backend';
-import { NoticeBox, Section, Stack, Table, Tooltip } from '../../components';
-
 import { getAntagCategories } from './helpers';
-import { AntagGroup, Observable, OrbitData } from './types';
 import { OrbitSection } from './OrbitSection';
+import { AntagGroup, Observable, OrbitData } from './types';
 
 type ContentSection = {
   content: Observable[];
@@ -13,8 +18,8 @@ type ContentSection = {
   color?: string;
 };
 
-export const OrbitContent = (props, context) => {
-  const { act, data } = useBackend<OrbitData>(context);
+export const OrbitContent = (props) => {
+  const { act, data } = useBackend<OrbitData>();
   const { antagonists = [], critical = [] } = data;
   const { searchText, autoObserve } = props;
 
