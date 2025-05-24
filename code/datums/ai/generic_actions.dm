@@ -146,7 +146,7 @@
 	. = ..()
 	var/find_this_thing = search_tactic(controller)
 	if(find_this_thing)
-		controller.blackboard[bb_key_to_set] = find_this_thing
+		controller.set_blackboard_key(bb_key_to_set, find_this_thing)
 		finish_action(controller, TRUE)
 	else
 		finish_action(controller, FALSE)
@@ -166,8 +166,7 @@
 	if(!istype(living_pawn) || !isturf(living_pawn.loc))
 		return
 
-	var/datum/weakref/attack_ref = controller.blackboard[BB_ATTACK_TARGET]
-	var/atom/movable/attack_target = attack_ref?.resolve()
+	var/atom/movable/attack_target = controller.blackboard[BB_ATTACK_TARGET]
 	if(!attack_target || !can_see(living_pawn, attack_target, length=controller.blackboard[BB_VISION_RANGE]))
 		finish_action(controller, FALSE)
 		return
@@ -182,7 +181,7 @@
 
 /datum/ai_behavior/attack/finish_action(datum/ai_controller/controller, succeeded)
 	. = ..()
-	controller.blackboard[BB_ATTACK_TARGET] = null
+	controller.clear_blackboard_key(BB_ATTACK_TARGET)
 
 /// A proc representing when the mob is pushed to actually attack the target. Again, subtypes can be used to represent different attacks from different animals, or it can be some other generic behavior
 /datum/ai_behavior/attack/proc/attack(datum/ai_controller/controller, mob/living/living_target)
@@ -202,8 +201,7 @@
 	if(!istype(living_pawn) || !isturf(living_pawn.loc))
 		return
 
-	var/datum/weakref/follow_ref = controller.blackboard[BB_FOLLOW_TARGET]
-	var/atom/movable/follow_target = follow_ref?.resolve()
+	var/atom/movable/follow_target = controller.blackboard[BB_FOLLOW_TARGET]
 	if(!follow_target || get_dist(living_pawn, follow_target) > controller.blackboard[BB_VISION_RANGE])
 		finish_action(controller, FALSE)
 		return
@@ -217,7 +215,7 @@
 
 /datum/ai_behavior/follow/finish_action(datum/ai_controller/controller, succeeded)
 	. = ..()
-	controller.blackboard[BB_FOLLOW_TARGET] = null
+	controller.clear_blackboard_key(BB_FOLLOW_TARGET)
 
 
 

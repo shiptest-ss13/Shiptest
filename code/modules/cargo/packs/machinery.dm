@@ -1,5 +1,5 @@
 /datum/supply_pack/machinery
-	group = "Machines & Parts"
+	category = "Machines & Parts"
 	crate_type = /obj/structure/closet/crate/engineering
 
 /*
@@ -432,3 +432,10 @@
 	crate_name = "supermatter shard crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
+/datum/supply_pack/machine/smartfridge_board
+	name = "Smart Fridge Board"
+	desc = "A spacious alternative to the run-of-the-mill fridges that most vessels come pre-equipped with."
+	cost = 500
+	contains = list(/obj/item/circuitboard/machine/smartfridge)
+	crate_name = "smart fridge crate"
+	crate_type = /obj/structure/closet/crate/engineering
