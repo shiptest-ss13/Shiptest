@@ -71,9 +71,9 @@
 
 	gunslinger_recoil_bonus = 1
 	wear_rate = 1
-	wear_minor_threshold = 30
-	wear_major_threshold = 90
-	wear_maximum = 150
+	wear_minor_threshold = 60
+	wear_major_threshold = 180
+	wear_maximum = 300
 
 //Dual Feed Shotgun
 

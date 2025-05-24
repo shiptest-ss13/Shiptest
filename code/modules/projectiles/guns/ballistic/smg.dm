@@ -28,9 +28,9 @@
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
-	wear_minor_threshold = 120
-	wear_major_threshold = 360
-	wear_maximum = 600
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
