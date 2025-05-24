@@ -162,7 +162,7 @@
 * Arguments:
 * * text - The text to send out
 */
-/mob/proc/manual_emote(text) //Just override the song and dance
+/atom/proc/manual_emote(text) //Just override the song and dance
 	. = TRUE
 	if(findtext(text, "their"))
 		text = replacetext(text, "their", p_their())
@@ -171,23 +171,31 @@
 	if(findtext(text, "%s"))
 		text = replacetext(text, "%s", p_s())
 
-	if(stat != CONSCIOUS)
-		return
-
 	if(!text)
 		CRASH("Someone passed nothing to manual_emote(), fix it")
 
 	log_message(text, LOG_EMOTE)
 	text = "<b>[src]</b> " + text
 
-	for(var/mob/M in GLOB.dead_mob_list)
-		if(!M.client || isnewplayer(M))
-			continue
-		var/T = get_turf(src)
-		if(M.stat == DEAD && M.client && (M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(M in viewers(T, null)))
-			M.show_message(text)
+	visible_message(text, visible_message_flags = EMOTE_MESSAGE)
+	return TRUE
 
-	visible_message(text)
+/mob/manual_emote(text)
+	if (stat != CONSCIOUS)
+		return FALSE
+	. = ..()
+	if (!.)
+		return FALSE
+	if (!client)
+		return TRUE
+	var/ghost_text = "<b>[src]</b> [text]"
+	var/origin_turf = get_turf(src)
+	for(var/mob/ghost as anything in GLOB.dead_mob_list)
+		if(!ghost.client || isnewplayer(ghost))
+			continue
+		if(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT && !(ghost in viewers(origin_turf, null)))
+			ghost.show_message("[FOLLOW_LINK(ghost, src)] [ghost_text]")
+	return TRUE
 
 /**
  * Returns a boolean based on whether or not the string contains a comma or an apostrophe,
