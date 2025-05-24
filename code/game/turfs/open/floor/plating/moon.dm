@@ -14,7 +14,7 @@
 	layer = SAND_TURF_LAYER
 	planetary_atmos = TRUE
 	initial_gas_mix = AIRLESS_ATMOS
-	slowdown = 0.8 //hardsuits will slow enough
+	slowdown = 0
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)

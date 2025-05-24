@@ -2,7 +2,7 @@
 /turf/open/floor/plating/asteroid/dirt/jungle
 	name = "mud"
 	desc = "Upon closer examination, it's still dirt, just more wet than usual."
-	slowdown = 0.5
+	slowdown = 0
 	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 	footstep = FOOTSTEP_MUD
@@ -19,7 +19,7 @@
 	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "wasteland"
 	base_icon_state = "wasteland"
-	slowdown = 0.7
+	slowdown = 0
 	baseturfs = /turf/open/floor/plating/asteroid/dirt/wasteland
 	floor_variance = 15
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
@@ -42,7 +42,7 @@
 /turf/open/floor/plating/dirt/jungle
 	name = "mud"
 	desc = "Upon closer examination, it's still dirt, just more wet than usual."
-	slowdown = 0.5
+	slowdown = 0
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 	light_color = COLOR_JUNGLEPLANET_LIGHT
@@ -72,7 +72,7 @@
 	desc = "Looks a bit dry."
 	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "wasteland"
-	slowdown = 1
+	slowdown = 0
 	baseturfs = /turf/open/floor/plating/dirt/jungle/wasteland
 	var/floor_variance = 15
 
