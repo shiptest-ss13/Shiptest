@@ -5,7 +5,7 @@
 	limb_id = "synth" //Overriden in /species/ipc/replace_body()
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_BOXHEAD
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -23,7 +23,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -40,7 +40,7 @@
 	limb_id = "synth"
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -57,7 +57,7 @@
 	limb_id = "synth"
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -74,7 +74,7 @@
 	limb_id = "synth"
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
@@ -91,7 +91,7 @@
 	limb_id = "synth"
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	light_brute_msg = "scratched"
 	medium_brute_msg = "dented"
