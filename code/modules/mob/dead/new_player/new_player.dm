@@ -369,10 +369,10 @@
 			humanc,
 			choices,
 		)
+		var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 		switch(choice)
 			if("Kalixican Mexapix")
 				to_chat(humanc, span_notice("You brought a arxa and armlet in your bag."))
-				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 				if(backpack)
 					new /obj/item/storage/box/papersack/mexapix_candy(backpack)
 					if(islizard(humanc))
@@ -380,7 +380,6 @@
 					else
 						new /obj/item/clothing/accessory/tooth_armlet/plastic(backpack)
 			if("Dia de Los Muertos")
-				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 				if(backpack)
 					new /obj/effect/spawner/random/clothing/day_of_dead(backpack)
 
@@ -391,23 +390,25 @@
 		var/list/choices = list()
 		choices["SRM Hunting Ban Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
 		choices["Exchanging Cards"] = icon('icons/obj/bureaucracy.dmi', "paperslip")
-		//choices["Planet Painting"] = icon('icons/obj/clothing/masks.dmi', "death")
+		choices["Planet Painting"] = icon('icons/obj/crayons.dmi', "crayonbox")
 		var/choice = show_radial_menu(
 			humanc,
 			humanc,
 			choices,
 		)
+		var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 		switch(choice)
 			if("SRM Hunting Ban Rations")
-				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 				if(backpack)
 					new /obj/item/storage/box/papersack/srm_rations(backpack)
 			if("Exchanging Cards")
-				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 				if(backpack)
 					new /obj/item/paper/paperslip(backpack)
 					new /obj/item/paper/paperslip(backpack)
 					new /obj/item/paper/paperslip(backpack)
+			if("Planet Painting")
+				if(backpack)
+					new /obj/item/storage/crayons(backpack)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
