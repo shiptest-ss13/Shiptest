@@ -2,6 +2,7 @@
 	name = "Saint-Roumain Militia - Base Outfit"
 
 	uniform = /obj/item/clothing/under/suit/roumain
+	skirt_uniform = /obj/item/clothing/under/suit/roumain // skirts are bad for hunting (not really, we just dont have any lmao)
 	faction_icon = "bg_srm"
 
 
