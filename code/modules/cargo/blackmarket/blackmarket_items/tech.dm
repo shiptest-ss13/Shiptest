@@ -84,8 +84,6 @@
 	stock_max = 2
 	availability_prob = 0
 
-///my empty commit goes bozoinga
-
 /datum/blackmarket_item/tech/t4_capacitor
 	name = "Quadratic Capacitor"
 	desc = "A top grade quadractic capacitor. These highly effiecent capacitors are capable of storing massive amounts of electricity. Keep away from open plugs."
