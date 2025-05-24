@@ -5,7 +5,6 @@
 /datum/supply_pack/attachment
 	group = "Gun Attachments"
 	crate_type = /obj/structure/closet/crate/secure/weapon
-	faction_discount = 10
 
 /datum/supply_pack/attachment/rail_light
 	name = "Tactical Rail Light Crate"
@@ -34,8 +33,7 @@
 	cost = 500
 	contains = list(/obj/item/attachment/energy_bayonet)
 	crate_name = "bayonet crate"
-	faction = /datum/faction/syndicate/scarborough
-	faction_discount = 0
+	faction_unique = list(/datum/faction/syndicate/scarborough = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/attachment/alof
@@ -44,8 +42,7 @@
 	cost = 1000
 	contains = list(/obj/item/attachment/alof)
 	crate_name = "alof crate"
-	faction = /datum/faction/srm
-	faction_discount = 10
+	faction_unique = list(/datum/faction/srm = 10)
 
 /datum/supply_pack/attachment/silencer
 	name = "Suppressor Crate"
