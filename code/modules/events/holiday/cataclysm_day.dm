@@ -24,12 +24,11 @@
 /datum/round_event/cataclysm_morning_broadcast/start()
 	return
 
-/obj/item/storage/srm_rations/Initialize()
-	. = ..()
+/obj/item/storage/box/papersack/srm_rations/PopulateContents()
 	new /obj/effect/spawner/random/food_or_drink/srm_rations(src)
 
 /obj/effect/spawner/random/food_or_drink/srm_rations
-	spawn_loot_count = 5
+	spawn_loot_count = 4
 	loot = list(
-			/obj/item/food/breadslice = 10,
+			/obj/item/food/breadslice/plain = 10,
 		)

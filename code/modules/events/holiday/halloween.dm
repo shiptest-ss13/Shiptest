@@ -16,7 +16,7 @@
 		var/mob/living/carbon/human/human = i
 		var/obj/item/storage/backpack/backpack = locate() in human.contents
 		if(backpack)
-			new /obj/item/storage/mexapix_candy(backpack)
+			new /obj/item/storage/box/papersack/mexapix_candy(backpack)
 
 /datum/round_event/spooky/announce(fake)
 	priority_announce("Happy Mexapix. Read up about it <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a>")
@@ -28,13 +28,12 @@
 	icon = 'icons/obj/halloween_items.dmi'
 	icon_state = "skeletoncookie"
 
-/obj/item/storage/mexapix_candy
+/obj/item/storage/box/papersack/mexapix_candy
 	name = "folded arxa"
 	desc = "A bag with a random assorment of treats to celebrate Mexapix!"
 	icon_state = "paperbag_None_closed"
 
-/obj/item/storage/mexapix_candy/Initialize()
-	. = ..()
+/obj/item/storage/box/papersack/mexapix_candy/PopulateContents()
 	new /obj/effect/spawner/random/food_or_drink/mexapix(src)
 
 /obj/effect/spawner/random/food_or_drink/mexapix
@@ -91,9 +90,9 @@
 		/obj/item/clothing/accessory/tooth_armlet/plastic,
 		/obj/item/clothing/accessory/tooth_armlet/plastic,
 		/obj/item/clothing/accessory/tooth_armlet/plastic,
-		/obj/item/storage/mexapix_candy,
-		/obj/item/storage/mexapix_candy,
-		/obj/item/storage/mexapix_candy,
+		/obj/item/storage/box/papersack/mexapix_candy,
+		/obj/item/storage/box/papersack/mexapix_candy,
+		/obj/item/storage/box/papersack/mexapix_candy,
 		/obj/item/reagent_containers/food/drinks/bottle/koerbalk,
 		/obj/item/reagent_containers/food/drinks/bottle/koerbalk,
 	)

@@ -374,7 +374,7 @@
 				to_chat(humanc, span_notice("You brought a arxa and armlet in your bag."))
 				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 				if(backpack)
-					new /obj/item/storage/mexapix_candy(backpack)
+					new /obj/item/storage/box/papersack/mexapix_candy(backpack)
 					if(islizard(humanc))
 						new /obj/item/clothing/accessory/tooth_armlet(backpack)
 					else
@@ -400,7 +400,7 @@
 			if("SRM Hunting Ban Rations")
 				var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 				if(backpack)
-					new /obj/item/storage/srm_rations(backpack)
+					new /obj/item/storage/box/papersack/srm_rations(backpack)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
