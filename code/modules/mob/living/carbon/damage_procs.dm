@@ -53,15 +53,19 @@
 
 
 //These procs fetch a cumulative total damage from all bodyparts
-/mob/living/carbon/getBruteLoss()
+/mob/living/carbon/getBruteLoss(ignore_integrity = TRUE)
 	var/amount = 0
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if (!ignore_integrity && BP.get_curable_damage() <= 0)
+			continue
 		amount += BP.brute_dam
 	return amount
 
-/mob/living/carbon/getFireLoss()
+/mob/living/carbon/getFireLoss(ignore_integrity = TRUE)
 	var/amount = 0
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if (!ignore_integrity && BP.get_curable_damage() <= 0)
+			continue
 		amount += BP.burn_dam
 	return amount
 
