@@ -126,6 +126,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 			O.heavyfootstep = turf_sound_override
 	if(alpha < 255)
 		T.AddElement(/datum/element/turf_z_transparency, TRUE)
+		SEND_SIGNAL(T, COMSIG_TURF_INITIALIZE_TRANSPARENCY)
 	return
 
 ///This proc is called when the material is removed from an object.
@@ -159,8 +160,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 		o.throwforce = initial(o.throwforce)
 
 /datum/material/proc/on_removed_turf(turf/T, amount, material_flags)
-	if(alpha != 255)
-		RemoveElement(/datum/element/turf_z_transparency, FALSE)
+	return
 
 /** Returns the composition of this material.
  *

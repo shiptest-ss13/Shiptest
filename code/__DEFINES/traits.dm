@@ -449,6 +449,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define WARPWHISTLE_TRAIT "warpwhistle"
 ///Turf trait for when a turf is transparent
 #define TURF_Z_TRANSPARENT_TRAIT "turf_z_transparent"
+///Turf trait for when a transparent turf should display the bottom.
+#define TURF_Z_SHOW_BOTTOM_TRAIT "turf_z_show_bottom"
 /// Trait applied to slimes by low temperature
 #define SLIME_COLD "slime-cold"
 /// Trait applied to bots by being tipped over
