@@ -53,8 +53,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/odysseus/main
 		)
 	crate_name = "202r Construction Kit"
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 40
+	faction_unique = list(/datum/faction/syndicate/cybersun = 40)
 
 /datum/supply_pack/mech/gygax_parts
 	name = "501p construction kit"
@@ -74,8 +73,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
 	crate_name = "501p Construction Kit"
-	faction = /datum/faction/syndicate/cybersun
-	faction_discount = 40
+	faction_unique = list(/datum/faction/syndicate/cybersun = 40)
 
 /datum/supply_pack/mech/mpgygax_parts
 	name = "NT-501p-MP construction kit"
@@ -95,7 +93,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/gygax/targeting
 	)
 	crate_name = "NT-501p-MP Construction Kit"
-	faction = /datum/faction/nt
+	faction_unique = list(/datum/faction/nt = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/durand_parts
@@ -116,8 +114,7 @@ Build Your Own Suit
 		/obj/item/circuitboard/mecha/durand/targeting
 	)
 	crate_name = "Durand Construction Kit"
-	faction = /datum/faction/clip
-	faction_discount = 20
+	faction_unique = list(/datum/faction/clip = 20)
 
 /*
 Mech Equipment
@@ -254,8 +251,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
 	)
-	faction = /datum/faction/clip
-	faction_discount = 0
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/paladin_upgrade
@@ -265,8 +261,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
 	)
-	faction = /datum/faction/clip
-	faction_discount = 0
+	faction_unique = list(/datum/faction/clip = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/basenji_upgrade
@@ -276,8 +271,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/inteq_gygax
 	)
-	faction = /datum/faction/inteq
-	faction_discount = 0
+	faction_unique = list(/datum/faction/inteq = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/charger_upgrade
@@ -295,8 +289,7 @@ Mech Equipment
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/conversion_kit/dark_gygax
 	)
-	faction = /datum/faction/syndicate
-	faction_discount = 0
+	faction_unique = list(/datum/faction/syndicate = CARGOPACK_NODISCOUNT)
 	faction_locked = TRUE
 
 /datum/supply_pack/mech/equipment/melee_armor_booster
@@ -388,8 +381,7 @@ weapons
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/railgun
 	)
-	faction = /datum/faction/nt
-	faction_discount = 20
+	faction_unique = list(/datum/faction/nt = 20)
 
 /datum/supply_pack/mech/weapon/missile_rack
 	name = "BRM-6 kit"
@@ -431,8 +423,7 @@ ammo
 	contains = list(
 		/obj/item/mecha_ammo/railgun_ammo
 	)
-	faction = /datum/faction/nt
-	faction_discount = 20
+	faction_unique = list(/datum/faction/nt = 20)
 
 /datum/supply_pack/mech/ammo/missile_rack_ammo
 	name = "BRM-6 missile box"
