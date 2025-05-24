@@ -1,4 +1,5 @@
 /obj/item/reagent_containers/food/snacks/meat
+	name = "meat"
 	var/subjectname = ""
 	var/subjectjob = null
 	custom_materials = list(/datum/material/meat = MINERAL_MATERIAL_AMOUNT * 4)

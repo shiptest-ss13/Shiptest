@@ -224,13 +224,5 @@
 /turf/open/lava/smooth/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/obj/effect/particle_holder
-	name = ""
-	anchored = TRUE
-	mouse_opacity = 0
-
-/obj/effect/particle_emitter/Initialize(mapload, time)
-	. = ..()
-
 /obj/effect/particle_emitter/lava
 	particles = new/particles/embers/lava

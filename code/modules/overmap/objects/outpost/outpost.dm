@@ -272,22 +272,7 @@
 		if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
 			M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[name]</u></span><br>[station_time_timestamp("hh:mm")]")
 
-	// Instance the virtual speaker for use in radio messages. It needs an atom to trace things back to; we use the token.
-	// You might think "but wait, can't we just keep one speaker around instead of instancing it for each fucking radio message?"
-	// You'd think so, but you can't. It gets deleted after sending the radio message. Because GOD FORBID you send a message over radio
-	// without creating a fucking ATOM first to give it a rubber fucking stamp.
-	// Using the token for the virtual speaker gives the message an appropriate name.
-	var/atom/movable/virtualspeaker/v_speaker = new(null, token, null)
-	var/datum/signal/subspace/vocal/signal = new(
-		dock_requester.shuttle_port.docked, // source: controls the physical space the message originates from. the docking port is in the mapzone so we use it
-		FREQ_COMMON, // frequency: Common
-		v_speaker, // speaker: a weird dummy atom not used for much of import but which will cause runtimes if omitted or improperly initialized.
-		/datum/language/galactic_common, // language: Common
-		"[dock_requester.name] confirmed touchdown at [dock_requester.shuttle_port.docked].", // the message itself
-		list(SPAN_ROBOT), // message font
-		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb, consistent with robots
-	)
-	signal.send_to_receivers()
+	broadcast_message(dock_requester.shuttle_port.docked, "[dock_requester.name] confirmed touchdown at [dock_requester.shuttle_port.docked].")
 	return
 
 /datum/overmap/outpost/post_undocked(datum/overmap/ship/controlled/dock_requester)
@@ -301,17 +286,24 @@
 			message_src = shaft.hangar_docks[1]
 			break
 
-	// Prepare and send a radio message about the undock over Common, in Common.
-	// See outpost post_docked() for some notes on what we're doing here.
+	broadcast_message(message_src, "[dock_requester.name] has departed from [src].")
+
+///Sends a message on the local radio in the outpost
+/datum/overmap/outpost/proc/broadcast_message(message_src, message)
+	// Instance the virtual speaker for use in radio messages. It needs an atom to trace things back to; we use the token.
+	// You might think "but wait, can't we just keep one speaker around instead of instancing it for each fucking radio message?"
+	// You'd think so, but you can't. It gets deleted after sending the radio message. Because GOD FORBID you send a message over radio
+	// without creating a fucking ATOM first to give it a rubber fucking stamp.
+	// Using the token for the virtual speaker gives the message an appropriate name.
 	var/atom/movable/virtualspeaker/v_speaker = new(null, token, null)
 	var/datum/signal/subspace/vocal/signal = new(
-		message_src,
-		FREQ_COMMON,
-		v_speaker,
-		/datum/language/galactic_common,
-		"[dock_requester.name] has departed from [src].",
-		list(SPAN_ROBOT),
-		list(MODE_CUSTOM_SAY_EMOTE = "coldly states")
+		message_src, // source: controls the physical space the message originates from.
+		FREQ_COMMON, // frequency: Common
+		v_speaker, // speaker: a weird dummy atom not used for much of import but which will cause runtimes if omitted or improperly initialized.
+		/datum/language/galactic_common, // language: Common
+		message, // the message itself
+		list(SPAN_ROBOT), // message font
+		list(MODE_CUSTOM_SAY_EMOTE = "coldly states") // custom say verb, consistent with robots
 	)
 	signal.send_to_receivers()
 
