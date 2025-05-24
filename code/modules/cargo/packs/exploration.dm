@@ -1,5 +1,5 @@
 /datum/supply_pack/exploration
-	group = "Exploration"
+	category = "Exploration"
 	crate_type = /obj/structure/closet/crate/wooden
 
 /* Exploration Gear */
