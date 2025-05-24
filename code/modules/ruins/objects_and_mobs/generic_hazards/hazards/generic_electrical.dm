@@ -5,6 +5,8 @@
 	density = FALSE
 	contact_sparks = TRUE
 	contact_stun = TRUE
+	can_be_disabled = TRUE
+	time_to_disable = 2 SECONDS
 	stun_time = 30
 	contact_damage = 15
 	shock_flags = SHOCK_NOGLOVES | SHOCK_NOSTUN
