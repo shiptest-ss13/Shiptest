@@ -603,15 +603,16 @@
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/office_2)
 "cI" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
 /obj/effect/turf_decal,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "mecharena";
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "mecharena"
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/classroom)
@@ -1214,10 +1215,6 @@
 "fU" = (
 /turf/open/floor/concrete/slab_1/icemoon/lit,
 /area/ruin/icemoon/training_facility)
-"gb" = (
-/obj/structure/flora/rock/icy,
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/ruin/icemoon/training_facility/course)
 "gc" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -1801,10 +1798,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/range)
-"iG" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/icerock/lit,
-/area/ruin/icemoon/training_facility/course)
 "iH" = (
 /obj/structure/platform/industrial_alt/corner{
 	dir = 4
@@ -2044,7 +2037,6 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/office_2)
 "jZ" = (
-/obj/structure/flora/rock/pile/icy,
 /obj/structure/cable{
 	icon_state = "1-5"
 	},
@@ -2215,20 +2207,24 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/icemoon/training_facility)
 "kW" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
 /obj/effect/turf_decal,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "mecharena";
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "mecharena"
 	},
-/obj/effect/mapping_helpers/airlock/sealed,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/classroom)
 "lb" = (
@@ -2669,11 +2665,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 2
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
@@ -2726,7 +2719,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
-	id = "secoffice";
+	id = "mecharena";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -3012,9 +3005,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
 "ph" = (
@@ -3071,22 +3061,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/dorms)
-"pr" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
-/obj/effect/turf_decal,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/icemoon/training_facility/classroom)
 "ps" = (
 /obj/effect/spawner/bunk_bed,
 /obj/effect/turf_decal/techfloor{
@@ -3802,20 +3776,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/engineering)
-"sn" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
-/obj/effect/turf_decal,
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/airlock/sealed,
-/turf/open/floor/plating,
-/area/ruin/icemoon/training_facility/classroom)
 "ss" = (
 /obj/machinery/door/airlock/security,
 /obj/structure/cable{
@@ -3847,11 +3807,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/light/directional/south,
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
 "sy" = (
@@ -4109,17 +4068,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/armory)
-"tS" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/south,
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/icemoon/training_facility/classroom)
 "tV" = (
 /obj/structure/mopbucket{
 	pixel_y = 10;
@@ -4440,7 +4388,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/button/door{
-	dir = 8;
 	pixel_x = 24;
 	pixel_y = 0;
 	id = "office"
@@ -4772,7 +4719,6 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/dorms)
 "xb" = (
-/obj/structure/flora/rock/icy,
 /obj/structure/cable{
 	icon_state = "2-6"
 	},
@@ -5642,7 +5588,7 @@
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 4;
-	id = "mechgarage"
+	id = "mecharena"
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "garageshutter"
@@ -7381,13 +7327,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/office_2)
-"JW" = (
-/obj/structure/flora/rock/icy,
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
-/turf/open/floor/plating/asteroid/snow/lit,
-/area/ruin/icemoon/training_facility/course)
 "JX" = (
 /obj/effect/decal/cleanable/blood/squirt{
 	dir = 5
@@ -8377,10 +8316,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/classroom)
 "OT" = (
@@ -9064,13 +9003,20 @@
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/light/directional/north,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/machinery/button/door{
+	pixel_x = -5;
+	pixel_y = 19;
+	id = "mecharena"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 3;
+	pixel_y = 17;
+	id = "mecharena"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
 "RY" = (
@@ -9379,13 +9325,6 @@
 /obj/structure/fence/door/opened,
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility)
-"Tm" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/icemoon/training_facility/classroom)
 "Tn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
@@ -9930,14 +9869,6 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/demo_course)
-"VY" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/icemoon/training_facility/classroom)
 "Wb" = (
 /obj/structure/sign/warning/biohazard,
 /turf/closed/wall/concrete/reinforced,
@@ -10480,16 +10411,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/training_facility/dorms)
-"Yy" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/icemoon/training_facility/classroom)
 "YB" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 4
@@ -14642,9 +14563,9 @@ KG
 rT
 rT
 rT
-qP
-VY
-tS
+EG
+EG
+WD
 qO
 qO
 qO
@@ -14716,10 +14637,10 @@ Rn
 KG
 KG
 KG
-qP
-Tm
-Yy
-qP
+EG
+EG
+WD
+KG
 xj
 xj
 xj
@@ -14790,10 +14711,10 @@ Rn
 Rn
 Rn
 Rn
-qP
-sn
-pr
-qP
+EG
+EG
+DD
+KG
 xj
 EG
 EG
@@ -14938,7 +14859,7 @@ Rn
 Rn
 Rn
 Rn
-GK
+Rn
 Rn
 WD
 KG
@@ -15015,7 +14936,7 @@ Ac
 Rn
 xb
 BN
-iG
+KG
 KG
 Rn
 Rn
@@ -15230,7 +15151,7 @@ Rn
 HY
 Rc
 Fp
-JW
+xN
 Jk
 kG
 Rn
@@ -15456,7 +15377,7 @@ Rn
 Rn
 Rn
 Rn
-gb
+Rn
 Rn
 EG
 KG

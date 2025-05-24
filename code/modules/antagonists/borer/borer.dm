@@ -484,7 +484,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	for(var/datum in typesof(/datum/borer_chem))
 		var/datum/borer_chem/C = new datum()
 		if(C.chem)
-			content += "<tr><td><a class='chem-select' href='?_src_=[text_ref(src)];src=[text_ref(src)];borer_use_chem=[C.chemname]'>[C.chemname] ([C.quantity]u, takes [C.chemuse] chemical)</a><p>[C.chem_desc]</p></td></tr>"
+			content += "<tr><td><a class='chem-select' href='byond://?_src_=[text_ref(src)];src=[text_ref(src)];borer_use_chem=[C.chemname]'>[C.chemname] ([C.quantity]u, takes [C.chemuse] chemical)</a><p>[C.chem_desc]</p></td></tr>"
 	content += "</table>"
 
 	var/html = get_html_template(content)
@@ -1156,7 +1156,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	roundend_category = "borers"
 	antagpanel_category = "borer"
 	job_rank = ROLE_BORER
-	show_in_antagpanel = TRUE
+	show_in_antagpanel = FALSE
 	var/datum/team/borer/borer_team
 
 /datum/antagonist/borer/create_team(datum/team/borer/new_team)

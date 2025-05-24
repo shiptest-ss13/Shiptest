@@ -140,7 +140,7 @@
 		to_chat(H, "<span class='warning'>You pull out a strand from your spinneret, ready to wrap a target. <BR> \
 		(Press ALT+CLICK or MMB on the target to start wrapping.)</span>")
 		addtimer(VARSET_CALLBACK(E, web_ready, TRUE), E.web_cooldown)
-		RegisterSignal(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(cocoonAtom))
+		RegisterSignals(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(cocoonAtom))
 		return
 	else
 		to_chat(H, span_warning("You're too hungry to spin web right now, eat something first!"))

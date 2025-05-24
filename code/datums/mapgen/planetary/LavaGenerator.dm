@@ -101,9 +101,11 @@
 		/obj/effect/spawner/random/anomaly/lava = 2,
 		/obj/structure/flora/rock/hell = 14,
 		/obj/structure/vein/lavaland = 5,
-		/obj/structure/vein/lavaland/classtwo = 2,
+		/obj/structure/vein/lavaland/classtwo = 4,
+		/obj/structure/vein/lavaland/classtwo/rare = 2,
 		/obj/structure/geyser/random = 2,
-		/obj/structure/vein/lavaland/classthree = 1,
+		/obj/structure/vein/lavaland/classthree = 2,
+		/obj/structure/vein/lavaland/classthree/rare = 1,
 		/obj/effect/spawner/random/anomaly/lava = 1,
 	)
 	mob_spawn_chance = 4

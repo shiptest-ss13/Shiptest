@@ -848,6 +848,7 @@
 "dP" = (
 /obj/structure/chair,
 /obj/item/radio/intercom/directional/north,
+/obj/effect/landmark/salesman,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/vacant_rooms)
 "dQ" = (
@@ -2674,9 +2675,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "lq" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access = list("101")
-	},
+/obj/machinery/door/airlock/maintenance,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2689,7 +2688,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/oil/slippery,
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/fore)
@@ -4558,10 +4556,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/library)
-"sP" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/reinforced,
-/area/outpost/maintenance/central)
 "sR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -6343,8 +6337,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance{
-	dir = 4;
-	req_access = list("101")
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/central)
@@ -7160,9 +7153,7 @@
 "Ed" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/maintenance{
-	req_access = list("101")
-	},
+/obj/machinery/door/airlock/maintenance,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -7171,7 +7162,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -7561,7 +7551,6 @@
 	},
 /obj/machinery/door/airlock/maintenance{
 	dir = 4;
-	req_access = list("101");
 	id_tag = "meeting"
 	},
 /obj/structure/cable/yellow{
@@ -7892,7 +7881,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -7900,8 +7888,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance{
-	dir = 4;
-	req_access = list("101")
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/lounge)
@@ -8630,7 +8617,6 @@
 /obj/machinery/door/airlock/maintenance{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/mapping_helpers/airlock/welded,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -8839,8 +8825,7 @@
 /area/outpost/crew/bar)
 "KZ" = (
 /obj/machinery/door/airlock/maintenance{
-	dir = 4;
-	req_access = list("101")
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -8860,7 +8845,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
 "Lb" = (
@@ -19623,7 +19607,7 @@ bk
 bk
 cq
 cq
-sP
+cq
 Mu
 DV
 Gg
