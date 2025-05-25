@@ -352,7 +352,7 @@
 			if(!affecting)
 				affecting = get_bodypart(BODY_ZONE_CHEST)
 			var/armor_block = run_armor_check(affecting, "melee")
-			apply_damage(damage, BRUTE, affecting, armor_block, wound_bonus=wound_mod)
+			apply_damage(damage, BRUTE, affecting, armor_block)
 
 
 /mob/living/carbon/human/attack_basic_mob(mob/living/basic/user, list/modifiers)

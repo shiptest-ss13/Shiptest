@@ -130,6 +130,9 @@
 	deltimer(timer_id)
 	return ..()
 
+/obj/item/shrapnel/bullet/c38/dumdum
+	name = ".38 Dumdum"
+
 /obj/item/shrapnel/bullet/tracker/c38
 	name = ".38 Tracker"
 

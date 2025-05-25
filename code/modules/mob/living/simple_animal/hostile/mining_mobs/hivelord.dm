@@ -280,7 +280,6 @@
 	malignance = new()
 	malignance.infect(M, FALSE) //we handle all the fancy virus stuff in the organ, so we need a reference for it
 	malignance_tracker = addtimer(CALLBACK(src, PROC_REF(update_stage)), malignance_countdown, TIMER_STOPPABLE|TIMER_DELETE_ME)
-	M.heal_overall_bleeding(12) //stop dying so fast
 
 /obj/item/organ/legion_skull/Remove(mob/living/carbon/M, special = 0)
 	malignance_countdown = initial(malignance_countdown)

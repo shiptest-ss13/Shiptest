@@ -82,10 +82,6 @@
 	/// if you're a lazy git and just throw them in cryo, the wound will go away after accumulating severity * 25 power
 	var/cryo_progress
 
-	/// What kind of scars this wound will create description wise once healed
-	var/scar_keyword = "generic"
-	/// If we've already tried scarring while removing (since remove_wound calls qdel, and qdel calls remove wound, .....) TODO: make this cleaner
-	var/already_scarred = FALSE
 	/// If we forced this wound through badmin smite, we won't count it towards the round totals
 	var/from_smite
 
@@ -188,7 +184,6 @@
  */
 /datum/wound/proc/replace_wound(new_type, smited = FALSE)
 	var/datum/wound/new_wound = new new_type
-	already_scarred = TRUE
 	remove_wound(replaced=TRUE)
 	new_wound.apply_wound(limb, old_wound = src, smited = smited)
 	. = new_wound

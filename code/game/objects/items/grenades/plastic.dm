@@ -40,7 +40,7 @@
 	else
 		return ..()
 
-/obj/item/grenade/c4/prime(mob/living/lanced_by)
+/obj/item/grenade/c4/prime()
 	if(QDELETED(src))
 		return
 

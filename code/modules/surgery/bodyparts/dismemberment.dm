@@ -22,7 +22,7 @@
 			if(!HAS_TRAIT(C, TRAIT_ANALGESIA)) //and do we actually feel pain?
 				INVOKE_ASYNC(C, TYPE_PROC_REF(/mob, emote), "scream")
 
-	playsound(get_turf(C), 'sound/effects/dismember.ogg', 80, TRUE)
+	playsound(get_turf(C), 'sound/effects/wounds/dismember.ogg', 80, TRUE)
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
 
 	drop_limb()
@@ -447,7 +447,6 @@
 	return
 
 /mob/living/carbon/regenerate_limb(limb_zone, noheal, robotic = FALSE)
-	var/obj/item/bodypart/L
 	if(get_bodypart(limb_zone))
 		return FALSE
 	return TRUE

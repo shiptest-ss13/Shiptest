@@ -27,9 +27,6 @@
 	/// The maximum flow we've had so far
 	var/highest_flow
 
-	/// A bad system I'm using to track the worst scar we earned (since we can demote, we want the biggest our wound has been, not what it was when it was cured (probably moderate))
-	var/datum/scar/highest_scar
-
 /datum/wound/slash/show_wound_topic(mob/user)
 	return (user == victim && blood_flow)
 
@@ -44,12 +41,6 @@
 	blood_flow = initial_flow
 	if(old_wound)
 		blood_flow = max(old_wound.blood_flow, initial_flow)
-
-/datum/wound/slash/remove_wound(ignore_limb, replaced)
-	if(!replaced && highest_scar)
-		already_scarred = TRUE
-		highest_scar.lazy_attach(limb)
-	return ..()
 
 /datum/wound/slash/get_examine_description(mob/user)
 	if(!limb.current_gauze)
@@ -227,7 +218,6 @@
 	threshold_minimum = 20
 	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/slash/moderate
-	scar_keyword = "slashmoderate"
 
 /datum/wound/slash/severe
 	name = "Open Laceration"
@@ -244,7 +234,6 @@
 	threshold_penalty = 25
 	demotes_to = /datum/wound/slash/moderate
 	status_effect_type = /datum/status_effect/wound/slash/severe
-	scar_keyword = "slashsevere"
 
 /datum/wound/slash/critical
 	name = "Weeping Avulsion"
@@ -261,5 +250,4 @@
 	threshold_penalty = 40
 	demotes_to = /datum/wound/slash/severe
 	status_effect_type = /datum/status_effect/wound/slash/critical
-	scar_keyword = "slashcritical"
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)

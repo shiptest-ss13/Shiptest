@@ -6,7 +6,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	var/flashbang_range = 7 //how many tiles away the mob will be stunned.
 
-/obj/item/grenade/flashbang/prime(mob/living/lanced_by)
+/obj/item/grenade/flashbang/prime()
 	. = ..()
 	update_mob()
 	var/flashbang_turf = get_turf(src)
@@ -57,7 +57,7 @@
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball/mega
 	shrapnel_radius = 12
 
-/obj/item/grenade/stingbang/prime(mob/living/lanced_by)
+/obj/item/grenade/stingbang/prime()
 	if(iscarbon(loc))
 		var/mob/living/carbon/C = loc
 		var/obj/item/bodypart/B = C.get_holding_bodypart_of_item(src)
@@ -116,7 +116,7 @@
 		rots++
 		user.changeNext_move(CLICK_CD_RAPID)
 
-/obj/item/grenade/primer/prime(mob/living/lanced_by)
+/obj/item/grenade/primer/prime()
 	shrapnel_radius = round(rots / rots_per_mag)
 	. = ..()
 	resolve()

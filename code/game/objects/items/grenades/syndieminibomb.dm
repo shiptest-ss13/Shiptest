@@ -9,7 +9,7 @@
 	ex_light = 4
 	ex_flame = 2
 
-/obj/item/grenade/syndieminibomb/prime(mob/living/lanced_by)
+/obj/item/grenade/syndieminibomb/prime()
 	. = ..()
 	update_mob()
 	resolve()
@@ -38,7 +38,7 @@
 	shrapnel_type = /obj/projectile/bullet/shrapnel/mega
 	shrapnel_radius = 12
 
-/obj/item/grenade/frag/prime(mob/living/lanced_by)
+/obj/item/grenade/frag/prime()
 	. = ..()
 	update_mob()
 	resolve()
@@ -53,7 +53,7 @@
 	var/rad_damage = 350
 	var/stamina_damage = 30
 
-/obj/item/grenade/gluon/prime(mob/living/lanced_by)
+/obj/item/grenade/gluon/prime()
 	. = ..()
 	update_mob()
 	playsound(loc, 'sound/effects/empulse.ogg', 50, TRUE)

@@ -138,8 +138,8 @@ GENE SCANNER
 		healthscan(user, M, mode, advanced)
 	else if(scanmode == SCANMODE_CHEMICAL)
 		chemscan(user, M)
-	else
-		woundscan(user, M, src)
+	// else
+	// 	woundscan(user, M, src)
 
 	add_fingerprint(user)
 
@@ -247,7 +247,7 @@ GENE SCANNER
 	// Body part damage report
 	if(iscarbon(M) && mode == SCANNER_VERBOSE)
 		var/mob/living/carbon/C = M
-		var/list/damaged = C.get_damaged_bodyparts(1,1,ignore_integrity=TRUE)
+		var/list/damaged = C.get_damaged_bodyparts(1,1)
 		if(length(damaged)>0 || oxy_loss>0 || tox_loss>0 || fire_loss>0)
 			var/dmgreport = "<span class='info ml-1'>General status:</span>\
 							<table class='ml-2'><tr><font face='Verdana'>\
@@ -336,13 +336,6 @@ GENE SCANNER
 		//Genetic damage
 		if(advanced && H.has_dna())
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
-
-		var/list/damaged_structure = list()
-		for(var/obj/item/bodypart/B in H.bodyparts)
-			if(B.integrity_loss)
-				damaged_structure += B.plaintext_zone
-		if(damaged_structure.len)
-			render_list+= "\t[span_alert("Structure rod damage detected. Subject's [english_list(damaged_structure)] [damaged_structure.len > 1 ? "rod require" : "rods requires"] replacement!")]\n"
 
 		// Species and body temperature
 		var/datum/species/S = H.dna.species

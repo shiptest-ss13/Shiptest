@@ -161,14 +161,13 @@
 	if(user.mind?.martial_art.smashes_tables && user.mind?.martial_art.can_use(user))
 		deconstruct(FALSE)
 
-	playsound(pushed_mob, 'sound/effects/tablelimbsmash.ogg', 90, TRUE)
+	// playsound(pushed_mob, 'sound/effects/tablelimbsmash.ogg', 90, TRUE)
 	pushed_mob.visible_message(
 		span_danger("[user] smashes [pushed_mob]'s [banged_limb.name] against \the [src]!"),
 		span_userdanger("[user] smashes your [banged_limb.name] against \the [src]"),
 		span_userdanger("You hear a loud bang!"),
 	)
 	log_combat(user, pushed_mob, "head slammed", null, "against [src]")
-	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table_limbsmash, banged_limb)
 
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
 	var/list/modifiers = params2list(params)

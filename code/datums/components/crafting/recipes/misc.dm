@@ -160,17 +160,6 @@
 		/obj/item/stack/sheet/cotton/cloth = 2,
 	)
 
-/datum/crafting_recipe/replacement_structure
-	name = "Structure Repair Kit"
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER) //hole punching and scissors
-	reqs = list(
-			/obj/item/stack/rods = 3,
-			/obj/item/stack/sheet/mineral/titanium = 1,
-			/obj/item/stack/cable_coil = 2
-	)
-	result = /obj/item/stack/medical/structure
-	category = CAT_MISC
-
 /datum/crafting_recipe/portableseedextractor
 	name = "Portable seed extractor"
 	reqs = list(

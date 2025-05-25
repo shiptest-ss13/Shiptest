@@ -334,13 +334,13 @@
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
 	dip_ammo_type = /obj/item/ammo_casing/c38/hotshot
 
-//This needs a buff
-/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
-	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		H.heal_bleeding(0.25)
-	return ..()
+//This needs a buff //todo: wounds integration?
+// /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
+// 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
+// 	if(ishuman(M))
+// 		var/mob/living/carbon/human/H = M
+// 		H.heal_bleeding(0.25)
+// 	return ..()
 
 /datum/status_effect/trickwine/buff/hearth
 	id = "hearth_wine_buff"

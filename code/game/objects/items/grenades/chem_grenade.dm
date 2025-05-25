@@ -174,7 +174,7 @@
 	active = TRUE
 	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
-/obj/item/grenade/chem_grenade/prime(mob/living/lanced_by)
+/obj/item/grenade/chem_grenade/prime()
 	if(stage != GRENADE_READY)
 		return
 
@@ -213,7 +213,7 @@
 	ignition_temp = 25 // Large grenades are slightly more effective at setting off heat-sensitive mixtures than smaller grenades.
 	threatscale = 1.1	// 10% more effective.
 
-/obj/item/grenade/chem_grenade/large/prime(mob/living/lanced_by)
+/obj/item/grenade/chem_grenade/large/prime()
 	if(stage != GRENADE_READY)
 		return
 
@@ -252,7 +252,7 @@
 			to_chat(user, span_notice("The new value is out of bounds. Minimum spread is 5 units, maximum is 100 units."))
 	..()
 
-/obj/item/grenade/chem_grenade/prime(mob/living/lanced_by)
+/obj/item/grenade/chem_grenade/adv_release/prime()
 	if(stage != GRENADE_READY)
 		return
 

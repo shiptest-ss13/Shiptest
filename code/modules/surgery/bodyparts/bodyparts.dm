@@ -48,16 +48,6 @@
 	///For limbs that don't really exist, eg chainsaws
 	var/is_pseudopart = FALSE
 
-	/// Whether this limb can decay, limiting its' ability to heal
-	var/uses_integrity = FALSE
-	/// How many hit points worth of integrity this limb has lost. 10 integrity = 10 HP
-	var/integrity_loss = 0
-	/// The amount of integrity_loss that this limb can have without any effects.
-	var/integrity_ignored = 20
-	/// If the limb has lost less than this amount of health, integrity loss should not be accrued.
-	/// Ignored if this is is greater or equal to the remaining health of the limb.
-	var/integrity_threshold = 15
-
 	///If disabled, limb is as good as missing.
 	var/bodypart_disabled = FALSE
 	///Multiplied by max_damage it returns the threshold which defines a limb being disabled or not. From 0 to 1. 0 means no disable thru damage
@@ -555,30 +545,12 @@
 
 	return injury_mod
 
-// Removes integrity from the limb, if it uses integrity.
-/obj/item/bodypart/proc/take_integrity_damage(loss)
-	if (uses_integrity)
-		integrity_loss = clamp(integrity_loss + loss, 0, max_damage+integrity_ignored)
-
-
-// Heals integrity for the limb, if it uses integrity.
-/obj/item/bodypart/proc/heal_integrity(amount)
-	if (uses_integrity)
-		integrity_loss = clamp(integrity_loss - amount, 0, max_damage)
-
 //Heals brute and burn damage for the organ. Returns 1 if the damage-icon states changed at all.
 //Damage cannot go below zero.
 //Cannot remove negative damage (i.e. apply damage)
 /obj/item/bodypart/proc/heal_damage(brute, burn, stamina, required_status, updating_health = TRUE)
 	if(required_status && !(bodytype & required_status)) //So we can only heal certain kinds of limbs, ie robotic vs organic.
 		return
-
-	if (uses_integrity && (burn > 0 || brute > 0))
-		var/max_heal = max(0, burn_dam + brute_dam - max(0,integrity_loss-integrity_ignored))
-		var/total_heal = min(brute,brute_dam)+min(burn,burn_dam) //in case we're trying to heal nonexistent dmg
-		var/heal_mult = min(1,max_heal/total_heal)
-		brute *= heal_mult
-		burn *= heal_mult
 	if(brute)
 		set_brute_dam(round(max(brute_dam - brute, 0), DAMAGE_PRECISION))
 	if(burn)
@@ -623,12 +595,6 @@
 	var/total = brute_dam + burn_dam
 	if(include_stamina)
 		total = max(total, stamina_dam)
-	return total
-
-///Returns damage that can be healed on a limb.
-/// integrity_cost: Optional, returns how much damage can be healed after losing X integrity
-/obj/item/bodypart/proc/get_curable_damage(integrity_cost=0)
-	var/total = brute_dam + burn_dam - max(0,(integrity_loss+integrity_cost)-integrity_ignored)
 	return total
 
 //Checks disabled status thresholds

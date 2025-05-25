@@ -84,7 +84,7 @@
 	)
 	log_combat(attacker, target, "started aiming a swing to break the kneecaps of", weapon)
 
-	if(do_after(attacker, SECONDS, target))
+	if(do_after(attacker, 2 SECONDS, target))
 		attacker.visible_message(
 		span_warning("[attacker] swings [attacker.p_their()] [weapon] at [target]'s kneecaps!"),
 		span_danger("You swing \the [weapon] at [target]'s kneecaps!"),

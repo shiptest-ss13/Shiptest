@@ -185,7 +185,7 @@
 	return TRUE
 
 /datum/surgery_step/saw/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
-	target.apply_damage(20, BRUTE, "[target_zone]")
+	target.apply_damage(50, BRUTE, "[target_zone]", wound_bonus = CANT_WOUND)
 	display_results(user, target, span_notice("You saw [target]'s [parse_zone(target_zone)] open."),
 		span_notice("[user] saws [target]'s [parse_zone(target_zone)] open!"),
 		span_notice("[user] saws [target]'s [parse_zone(target_zone)] open!"))
@@ -194,12 +194,10 @@
 /datum/surgery_step/saw/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-		var/obj/item/bodypart/affected = target.get_bodypart(check_zone(target_zone))
 		display_results(user, target, span_warning("You screw up, breaking the bone!"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"))
-		affected.break_bone() //todo bone fix
-		target.apply_damage(25, BRUTE, "[target_zone]")
+		target.apply_damage(50, BRUTE, "[target_zone]", wound_bonus = CANT_WOUND)
 
 //drill bone
 /datum/surgery_step/drill

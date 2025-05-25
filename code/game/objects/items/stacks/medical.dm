@@ -14,10 +14,6 @@
 	item_flags = NOBLUDGEON
 	merge_type = /obj/item/stack/medical
 
-	var/heals_organic = TRUE
-	var/heals_inorganic = FALSE
-	var/restore_integrity = 
-
 	/// How long it takes to apply it to yourself
 	var/self_delay = 5 SECONDS
 	/// How long it takes to apply it to someone else
@@ -26,7 +22,7 @@
 	var/repeating = FALSE
 	/// How much medical XP is given per use?
 	var/experience_given = 1
-	///Sound/Sounds to play when this is applied
+	/// Sound/Sounds to play when this is applied
 	var/apply_sounds
 	/// How much brute we heal per application. This is the only number that matters for simplemobs
 	var/heal_brute
@@ -40,8 +36,6 @@
 	var/flesh_regeneration
 	/// This is a multiplier used to speed up burn recoveries
 	var/burn_cleanliness_bonus
-	///Sound/Sounds to play when this is applied
-	var/apply_sounds
 
 /obj/item/stack/medical/attack(mob/living/patient, mob/user)
 	. = ..()
@@ -105,20 +99,16 @@
 	to_chat(user, span_warning("You can't heal [patient] with [src]!"))
 
 /// The healing effects on a carbon patient. Since we have extra details for dealing with bodyparts, we get our own fancy proc. Still returns TRUE on success and FALSE on fail
-/obj/item/stack/medical/proc/heal_carbon(mob/living/carbon/C, mob/user, brute, burn, integrity = 0)
+/obj/item/stack/medical/proc/heal_carbon(mob/living/carbon/C, mob/user, brute, burn)
 	var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
 
 	if(!affecting) //Missing limb?
 		to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]!"))
 		return FALSE
 
-	if(!heals_inorganic && !IS_ORGANIC_LIMB(affecting)) //does it work on robotic limbs?
+	if(!IS_ORGANIC_LIMB(affecting)) //does it work on robotic limbs?
 		to_chat(user, span_warning("\The [src] won't work on a robotic limb!"))
 		return FALSE
-
-	if(!heals_organic && IS_ORGANIC_LIMB(affecting)) //does it work on organic limbs?
-		to_chat(user, span_warning("\The [src] won't work on an organic limb!"))
-		return
 
 	if(affecting.brute_dam && brute || affecting.burn_dam && burn)
 		user.visible_message(
@@ -132,25 +122,6 @@
 		return TRUE
 	to_chat(user, span_warning("[C]'s [affecting.name] can not be healed with [src]!"))
 	return FALSE
-
-	if(restore_integrity)
-		if(affecting.integrity_loss == 0)
-			to_chat(user, span_warning("[C]'s [affecting.name] has no integrity damage!"))
-		else
-			var/integ_healed = min(integrity, affecting.integrity_loss)
-			//check how much limb health we've lost to integrity_loss
-			var/integ_damage_removed = max(integ_healed, affecting.integrity_loss-affecting.integrity_ignored)
-			var/brute_heal = min(affecting.brute_dam,integ_damage_removed)
-			var/burn_heal = max(0,integ_damage_removed-brute_heal)
-			affecting.integrity_loss -= integ_healed
-			affecting.heal_damage(brute_heal,burn_heal,0,null,BODYTYPE_ROBOTIC)
-			// C.update_inv_splints() something breaks
-			successful_heal = TRUE
-
-	if(successful_heal)
-		user.visible_message(span_green("[user] applies \the [src] on [C]'s [affecting.name]."), span_green("You apply \the [src] on [C]'s [affecting.name]."))
-		return TRUE
-	to_chat(user, span_warning("[C]'s [affecting.name] can not be healed with \the [src]!"))
 
 ///Override this proc for special post heal effects.
 /obj/item/stack/medical/proc/post_heal_effects(amount_healed, mob/living/carbon/healed_mob, mob/user)
@@ -297,7 +268,7 @@
 	heal_burn = 5
 	flesh_regeneration = 2.5
 	sanitization = 0.25
-	grind_results = list(/datum/reagent/medicine/C2/lenturi = 10)
+	// grind_results = list(/datum/reagent/medicine/C2/lenturi = 10)
 	merge_type = /obj/item/stack/medical/ointment
 
 /obj/item/stack/medical/mesh
@@ -438,7 +409,7 @@
 	desc = "Used to secure limbs following a fracture."
 	gender = PLURAL
 	singular_name = "splint"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "splint"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 5 SECONDS
@@ -508,25 +479,3 @@
 	amount = 1
 	splint_type = /datum/bodypart_aid/splint/improvised
 	merge_type = /obj/item/stack/medical/splint/improvised
-
-//Structural rods
-/obj/item/stack/medical/structure
-	name = "replacement structural rods"
-	desc = "Steel rods and cable with adjustable titanium fasteners, for quickly repairing structural damage to robotic limbs."
-	gender = PLURAL
-	icon = 'icons/obj/items.dmi'
-	icon_state = "ipc_splint"
-	amount = 2
-	max_amount = 3
-	novariants = FALSE
-	self_delay = 50
-	other_delay = 20
-	heals_inorganic = TRUE
-	heals_organic = FALSE
-	restore_integrity = TRUE
-
-/obj/item/stack/medical/structure/heal(mob/living/target, mob/user)
-	. = ..()
-	if(iscarbon(target))
-		return heal_carbon(target, user, integrity = 150)
-	to_chat(user, span_warning("You can't repair [target]'s limb' with the \the [src]!"))

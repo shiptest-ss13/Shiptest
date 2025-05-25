@@ -1269,9 +1269,6 @@
 
 /datum/reagent/medicine/bicaridinep/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-2*REM, 0)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		H.heal_bleeding(0.25)
 	..()
 	. = 1
 
@@ -2343,9 +2340,9 @@
 	overdose_threshold = 11
 
 /datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		H.heal_bleeding(1)
+	// if(ishuman(M))
+	// 	var/mob/living/carbon/human/H = M //todo: wounds integration
+	// 	H.heal_bleeding(1)
 	..()
 	. = 1
 

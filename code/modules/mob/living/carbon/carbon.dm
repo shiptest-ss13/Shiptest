@@ -16,8 +16,6 @@
 	QDEL_LIST(implants)
 	for(var/wound in all_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
 		qdel(wound)
-	for(var/scar in all_scars)
-		qdel(scar)
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
 	GLOB.carbon_list -= src
@@ -889,7 +887,6 @@
 		if(reagents)
 			reagents.addiction_list = list()
 	cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
-	mend_fractures()
 	..()
 	// heal ears after healing traits, since ears check TRAIT_DEAF trait
 	// when healing.
@@ -1002,9 +999,9 @@
 			if(SANITY_NEUTRAL to INFINITY)
 				. *= 0.90
 
-	for(var/i in status_effects)
-		var/datum/status_effect/S = i
-		. *= S.interact_speed_modifier()
+	// for(var/i in status_effects)
+	// 	var/datum/status_effect/S = i
+	// 	. *= S.interact_speed_modifier() //todo: fix/remove
 
 /mob/living/carbon/proc/create_internal_organs()
 	for(var/X in internal_organs)
@@ -1224,34 +1221,6 @@
 		total_bleed_rate += BP.get_bleed_rate()
 
 	return total_bleed_rate
-
-/**
- * generate_fake_scars()- for when you want to scar someone, but you don't want to hurt them first. These scars don't count for temporal scarring (hence, fake)
- *
- * If you want a specific wound scar, pass that wound type as the second arg, otherwise you can pass a list like WOUND_LIST_SLASH to generate a random cut scar.
- *
- * Arguments:
- * * num_scars- A number for how many scars you want to add
- * * forced_type- Which wound or category of wounds you want to choose from, WOUND_LIST_BLUNT, WOUND_LIST_SLASH, or WOUND_LIST_BURN (or some combination). If passed a list, picks randomly from the listed wounds. Defaults to all 3 types
- */
-/mob/living/carbon/proc/generate_fake_scars(num_scars, forced_type)
-	for(var/i in 1 to num_scars)
-		var/datum/scar/scaries = new
-		var/obj/item/bodypart/scar_part = pick(bodyparts)
-
-		var/wound_type
-		if(forced_type)
-			if(islist(forced_type))
-				wound_type = pick(forced_type)
-			else
-				wound_type = forced_type
-		else
-			wound_type = pick(GLOB.global_all_wound_types)
-
-		var/datum/wound/phantom_wound = new wound_type
-		scaries.generate(scar_part, phantom_wound)
-		scaries.fake = TRUE
-		QDEL_NULL(phantom_wound)
 
 /mob/living/carbon/proc/update_flavor_text_feature(new_text)
 	if(!dna)

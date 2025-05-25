@@ -157,7 +157,6 @@
 	threshold_minimum = 30
 	threshold_penalty = 20
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
-	scar_keyword = "piercemoderate"
 
 /datum/wound/pierce/severe
 	name = "Open Puncture"
@@ -174,7 +173,6 @@
 	threshold_minimum = 50
 	threshold_penalty = 35
 	status_effect_type = /datum/status_effect/wound/pierce/severe
-	scar_keyword = "piercesevere"
 
 /datum/wound/pierce/critical
 	name = "Ruptured Cavity"
@@ -191,5 +189,4 @@
 	threshold_minimum = 100
 	threshold_penalty = 50
 	status_effect_type = /datum/status_effect/wound/pierce/critical
-	scar_keyword = "piercecritical"
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)

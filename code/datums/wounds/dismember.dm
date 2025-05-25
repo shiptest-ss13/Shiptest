@@ -1,15 +1,13 @@
 
 /datum/wound/loss
 	name = "Dismemberment Wound"
-	desc = "oof ouch!!"
+	desc = "Tis but a flesh wound."
 
-	sound_effect = 'sound/effects/dismember.ogg'
+	sound_effect = 'sound/effects/wounds/dismember.ogg'
 	severity = WOUND_SEVERITY_LOSS
 	threshold_minimum = WOUND_DISMEMBER_OUTRIGHT_THRESH // not actually used since dismembering is handled differently, but may as well assign it since we got it
 	status_effect_type = null
-	scar_keyword = "dismember"
 	wound_flags = null
-	already_scarred = TRUE // We manually assign scars for dismembers through endround missing limbs and aheals
 
 /// Our special proc for our special dismembering, the wounding type only matters for what text we have
 /datum/wound/loss/proc/apply_dismember(obj/item/bodypart/dismembered_part, wounding_type=WOUND_SLASH, outright = FALSE)

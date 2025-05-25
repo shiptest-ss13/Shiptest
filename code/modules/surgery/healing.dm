@@ -76,15 +76,14 @@
 /datum/surgery_step/heal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/umsg = "You succeed in fixing some of [target]'s wounds" //no period, add initial space to "addons"
 	var/tmsg = "[user] fixes some of [target]'s wounds" //see above
-	var/urhealedamt_brute = brutehealing
-	var/urhealedamt_burn = burnhealing
+	var/brute_healed = brutehealing
+	var/burn_healed = burnhealing
 	if(target.stat == DEAD) //dead patients get way less additional heal from the damage they have.
 		brute_healed += round((target.getBruteLoss() * (brute_multiplier * 0.2)),0.1)
 		burn_healed += round((target.getFireLoss() * (burn_multiplier * 0.2)),0.1)
 	else
 		brute_healed += round((target.getBruteLoss() * brute_multiplier),0.1)
 		burn_healed += round((target.getFireLoss() * burn_multiplier),0.1)
-
 	if(!get_location_accessible(target, target_zone))
 		brute_healed *= 0.55
 		burn_healed *= 0.55

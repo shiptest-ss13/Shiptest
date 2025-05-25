@@ -227,7 +227,7 @@
 /mob/living/proc/send_item_attack_message(obj/item/attacking_item, mob/living/user, hit_area, obj/item/bodypart/hit_bodypart)
 	var/message_verb = "attacked"
 	if(length(attacking_item.attack_verb.len))
-		message_verb = "[pick(I.attack_verb)]"
+		message_verb = "[pick(attacking_item.attack_verb)]"
 	else if(!attacking_item.force)
 		return
 

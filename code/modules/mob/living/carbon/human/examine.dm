@@ -176,14 +176,6 @@
 			var/datum/wound/iter_wound = i
 			msg += "[iter_wound.get_examine_description(user)]\n"
 
-		if(body_part.uses_integrity && (body_part.integrity_loss-body_part.integrity_ignored) > 0)
-			if ((body_part.integrity_loss-body_part.integrity_ignored) > body_part.max_damage*0.66)
-				msg += "<B>[t_His] [body_part.name] is [body_part.heavy_integrity_msg]!</B>\n"
-			else if (body_part.integrity_loss-body_part.integrity_ignored > body_part.max_damage*0.33)
-				msg += "[t_His] [body_part.name] is [body_part.medium_integrity_msg]!\n"
-			else
-				msg += "[t_His] [body_part.name] is [body_part.light_integrity_msg].\n"
-
 	for(var/X in disabled)
 		var/obj/item/bodypart/body_part = X
 		var/damage_text

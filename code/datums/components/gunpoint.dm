@@ -131,8 +131,6 @@
 		return
 	point_of_no_return = TRUE
 
-	var/mob/living/shooter = parent
-
 	if(!weapon.can_shoot() || !weapon.can_trigger_gun(shooter) || (weapon.weapon_weight == WEAPON_HEAVY && shooter.get_inactive_held_item()))
 		shooter.visible_message(span_danger("[shooter] fumbles [weapon]!"), \
 			span_danger("You fumble [weapon] and fail to fire at [target]!"), target)

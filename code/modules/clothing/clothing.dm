@@ -35,6 +35,10 @@
 	/// What items can be consumed to repair this clothing (must by an /obj/item/stack)
 	var/repairable_by = /obj/item/stack/sheet/cotton/cloth
 
+	//Var modification - PLEASE be careful with this I know who you are and where you live
+	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
+	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
+
 	var/can_be_bloody = TRUE
 
 	//set during equip_to_slot, removed when taking off.
@@ -101,13 +105,13 @@
 
 /obj/item/clothing/attack(mob/M, mob/user, def_zone)
 	if(user.a_intent != INTENT_HARM && moth_edible && ismoth(M))
-	if(damaged_clothes == CLOTHING_SHREDDED)
-		to_chat(user, span_notice("[src] seem[p_s()] pretty torn apart... [p_they(TRUE)] probably wouldn't be too tasty."))
-		return
-	var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
-	clothing_as_food.name = name
-	if(clothing_as_food.attack(M, user, def_zone))
-		take_damage(15, sound_effect=FALSE)
+		if(damaged_clothes == CLOTHING_SHREDDED)
+			to_chat(user, span_notice("[src] seem[p_s()] pretty torn apart... [p_they(TRUE)] probably wouldn't be too tasty."))
+			return
+		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
+		clothing_as_food.name = name
+		if(clothing_as_food.attack(M, user, def_zone))
+			take_damage(15, sound_effect=FALSE)
 		qdel(clothing_as_food)
 	else
 		return ..()
@@ -240,7 +244,7 @@
 			if(variable in user.vars)
 				if(user.vars[variable] == user_vars_to_edit[variable]) //Is it still what we set it to? (if not we best not change it)
 					user.vars[variable] = user_vars_remembered[variable]
-		user_vars_remembered = initial(user_vars_remembered) // Effectively this sets it to null.
+		user_vars_remembered = null
 
 /obj/item/clothing/equipped(mob/user, slot)
 	..()

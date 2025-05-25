@@ -272,7 +272,7 @@
 		return
 	been_places = TRUE
 	chems = new
-	chems.transfered = embedded_mob
+	// chems.transfered = embedded_mob
 	chems.spikey = src
 	to_chat(fired_by, span_notice("Link established! Use the \"Transfer Chemicals\" ability to send your chemicals to the linked target!"))
 	chems.Grant(fired_by)

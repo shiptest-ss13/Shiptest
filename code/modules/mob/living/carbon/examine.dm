@@ -208,20 +208,4 @@
 	if(!any_bodypart_damage)
 		msg += "\t<span class='smallnotice'><i>[t_He] [t_Has] no significantly damaged bodyparts.</i></span>"
 
-	var/list/visible_scars
-	if(all_scars)
-		for(var/i in all_scars)
-			var/datum/scar/S = i
-			if(S.is_visible(user))
-				LAZYADD(visible_scars, S)
-
-	if(!visible_scars)
-		msg |= "\t<span class='smallnotice'><i>[t_He] [t_Has] no visible scars.</i></span>"
-	else
-		for(var/i in visible_scars)
-			var/datum/scar/S = i
-			var/scar_text = S.get_examine_description(user)
-			if(scar_text)
-				msg += "[scar_text]"
-
 	return msg

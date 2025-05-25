@@ -543,7 +543,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 							span_userdanger("Your body is maimed underneath the mass of [src]!"),
 							span_userdanger("You hear a sickening crunch."),
 						)
-					if(6) // skull squish!
 
 				if(prob(30))
 					C.apply_damage(max(0, squish_damage - crit_rebate), forced=TRUE, spread_damage=TRUE) // the 30% chance to spread the damage means you escape breaking any bones

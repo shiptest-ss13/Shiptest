@@ -109,7 +109,7 @@
 	icon_state = initial(icon_state) + "_active"
 	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
-/obj/item/grenade/firecracker/prime(mob/living/lanced_by)
+/obj/item/grenade/firecracker/prime()
 	. = ..()
 	update_mob()
 	var/explosion_loc = get_turf(src)

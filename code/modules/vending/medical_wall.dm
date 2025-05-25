@@ -24,7 +24,6 @@
 					/obj/item/reagent_containers/medigel/silver_sulf = 2,
 					/obj/item/reagent_containers/medigel/sterilizine = 1,
 					/obj/item/stack/sticky_tape/surgical = 3,
-					/obj/item/healthanalyzer/wound = 4,
 					/obj/item/stack/medical/ointment = 2,
 					/obj/item/stack/medical/suture = 2,
 					/obj/item/stack/medical/bone_gel/four = 4,
@@ -48,7 +47,7 @@
 					/obj/item/storage/belt/medical = 3,
 					/obj/item/storage/firstaid/advanced = 2,
 					/obj/item/shears = 1,
-					/obj/item/plunger/reinforced = 2)
+	)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/wallmed
