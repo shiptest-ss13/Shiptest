@@ -38,9 +38,9 @@
 /datum/bioware/reinforced_ligaments/on_gain()
 	..()
 	ADD_TRAIT(owner, TRAIT_NODISMEMBER, "reinforced_ligaments")
-	ADD_TRAIT(owner, TRAIT_EASYLIMBDISABLE, "reinforced_ligaments")
+	ADD_TRAIT(owner, TRAIT_EASILY_WOUNDED, "reinforced_ligaments")
 
 /datum/bioware/reinforced_ligaments/on_lose()
 	..()
 	REMOVE_TRAIT(owner, TRAIT_NODISMEMBER, "reinforced_ligaments")
-	REMOVE_TRAIT(owner, TRAIT_EASYLIMBDISABLE, "reinforced_ligaments")
+	REMOVE_TRAIT(owner, TRAIT_EASILY_WOUNDED, "reinforced_ligaments")

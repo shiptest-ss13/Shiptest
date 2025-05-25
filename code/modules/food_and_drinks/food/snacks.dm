@@ -227,7 +227,7 @@ All foods are distributed among various categories. Use common sense.
 /obj/item/reagent_containers/food/snacks/proc/slice(accuracy, obj/item/W, mob/user)
 	if((slices_num <= 0 || !slices_num) || !slice_path) //is the food sliceable?
 		return FALSE
-
+	//who wrote this fucking proc?
 	if ( \
 			!isturf(src.loc) || \
 			!(locate(/obj/structure/table) in src.loc) && \
@@ -237,21 +237,10 @@ All foods are distributed among various categories. Use common sense.
 		to_chat(user, span_warning("You cannot slice [src] here! You need a table or at least a tray."))
 		return FALSE
 
-	var/slices_lost = 0
-	if (accuracy >= IS_SHARP_ACCURATE)
-		user.visible_message( \
-			"[user] slices [src].", \
-			span_notice("You slice [src].") \
-		)
-	else
-		user.visible_message( \
-			"[user] inaccurately slices [src] with [W]!", \
-			span_notice("You inaccurately slice [src] with your [W]!") \
-		)
-		slices_lost = rand(1,min(1,round(slices_num/2)))
+	user.visible_message("[user] slices [src].", "<span class='notice'>You slice [src].</span>")
 
 	var/reagents_per_slice = reagents.total_volume/slices_num
-	for(var/i=1 to (slices_num-slices_lost))
+	for(var/i in 1 to slices_num)
 		var/obj/item/reagent_containers/food/snacks/slice = new slice_path (loc)
 		initialize_slice(slice, reagents_per_slice)
 	qdel(src)

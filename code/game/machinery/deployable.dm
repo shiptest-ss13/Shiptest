@@ -215,7 +215,7 @@
 			var/turf/target_turf2 = get_step(src, WEST)
 			if(!target_turf2.is_blocked_turf())
 				new /obj/structure/barricade/security(target_turf2)
-	qdel(src)
+	resolve()
 
 /obj/item/grenade/barrier/ui_action_click(mob/user)
 	toggle_mode(user)
