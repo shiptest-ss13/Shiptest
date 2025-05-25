@@ -859,6 +859,7 @@
 	name = "engineer's locker"
 	},
 /obj/item/clothing/glasses/welding,
+/obj/item/storage/belt/utility/full,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "jQ" = (
@@ -1474,6 +1475,14 @@
 	pixel_y = -8;
 	pixel_x = -3
 	},
+/obj/item/attachment/rail_light{
+	pixel_y = -10;
+	pixel_x = -6
+	},
+/obj/item/melee/knife/survival{
+	pixel_y = 3;
+	pixel_x = -9
+	},
 /obj/item/melee/knife/survival{
 	pixel_y = 3;
 	pixel_x = -9
@@ -1481,10 +1490,6 @@
 /obj/item/melee/knife/survival{
 	pixel_y = 1;
 	pixel_x = -6
-	},
-/obj/item/melee/knife/survival{
-	pixel_y = 3;
-	pixel_x = -9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -2105,7 +2110,6 @@
 /area/ship/cargo)
 "Ey" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/syndicate,
 /obj/item/folder/pgf{
 	pixel_y = 9;
 	pixel_x = 5
@@ -2127,6 +2131,7 @@
 	pixel_x = 25
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/fax/pgf,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/hallway/fore)
 "EC" = (
@@ -2166,7 +2171,7 @@
 	pixel_y = 5;
 	pixel_x = -10
 	},
-/obj/item/storage/firstaid/regular{
+/obj/item/storage/firstaid/medical{
 	pixel_x = -10;
 	pixel_y = 0
 	},
@@ -2594,12 +2599,6 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 10
 	},
-/obj/item/radio/headset/pgf{
-	pixel_y = -15
-	},
-/obj/item/radio/headset/pgf{
-	pixel_y = -15
-	},
 /obj/item/clothing/head/gezena/marine{
 	pixel_y = 10;
 	pixel_x = -5
@@ -2615,9 +2614,6 @@
 /obj/item/storage/backpack/satchel/sec{
 	pixel_x = 5;
 	pixel_y = -8
-	},
-/obj/item/radio/headset/pgf{
-	pixel_y = -15
 	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_x = 6;
@@ -2993,19 +2989,19 @@
 /area/ship/bridge)
 "NX" = (
 /obj/structure/table/chem,
-/obj/item/storage/box/syringes{
-	pixel_y = -1;
-	pixel_x = -7
-	},
 /obj/item/storage/box/bodybags{
-	pixel_x = 4;
-	pixel_y = 5
+	pixel_x = -5;
+	pixel_y = 8
 	},
 /obj/machinery/airalarm/directional/south,
 /obj/item/radio/intercom/directional/west,
+/obj/item/storage/box/syringes{
+	pixel_y = 0;
+	pixel_x = -5
+	},
 /obj/item/reagent_containers/glass/bottle/morphine{
-	pixel_x = -10;
-	pixel_y = 12
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -3193,10 +3189,6 @@
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/cargo)
 "SW" = (
-/obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Engineering"
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -3217,6 +3209,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/engineering{
+	req_one_access = list(1, 10);
+	dir = 4;
+	name = "Engine Bay"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -3430,11 +3427,10 @@
 	dir = 8
 	},
 /obj/item/radio{
-	pixel_x = -5;
+	pixel_x = -9;
 	pixel_y = 8
 	},
 /obj/item/radio{
-	pixel_x = 5;
 	pixel_y = 8
 	},
 /obj/item/radio{
@@ -3444,16 +3440,40 @@
 /obj/item/radio{
 	pixel_y = -2
 	},
-/obj/item/radio{
-	pixel_x = 9;
-	pixel_y = -2
-	},
-/obj/item/radio{
-	pixel_y = -2
-	},
 /obj/structure/closet/wall/directional/south{
 	icon_door = null;
 	name = "radio locker"
+	},
+/obj/item/radio{
+	pixel_x = -9;
+	pixel_y = -2
+	},
+/obj/item/radio{
+	pixel_y = -2
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = 11;
+	pixel_y = -3
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = 11;
+	pixel_y = -3
+	},
+/obj/item/radio/headset/pgf{
+	pixel_x = 11;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
