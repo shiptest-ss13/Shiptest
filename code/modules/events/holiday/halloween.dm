@@ -22,7 +22,7 @@
 	priority_announce("Happy Mexapix. Read up about it <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Here!</a>")
 */
 
-/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull
+/obj/item/food/cookie/sugar/spookyskull
 	name = "skull cookie"
 	desc = "Spooky! It's got delicious calcium flavouring!"
 	icon = 'icons/obj/halloween_items.dmi'
@@ -41,7 +41,7 @@
 	loot = list(
 			/obj/item/reagent_containers/food/snacks/sucrika = 10,
 			/obj/effect/spawner/random/entertainment/mexapix_trinkets = 2,
-			/obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull = 1,
+			/obj/item/food/cookie/sugar/spookyskull = 1,
 			/obj/item/reagent_containers/food/snacks/candy_corn = 1,
 			/obj/item/reagent_containers/food/snacks/candy = 1,
 			/obj/item/reagent_containers/food/snacks/candiedapple = 1,
@@ -146,8 +146,8 @@
 /datum/crafting_recipe/food/brextak
 	name = "Brextak"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat = 5,
-		/obj/item/reagent_containers/food/snacks/grown = 5,
+		/obj/item/food/meat = 5,
+		/obj/item/food/grown = 5,
 		/datum/reagent/consumable/ethanol/wine = 10
 	)
 	result = /obj/item/reagent_containers/food/brextak_uncooked
@@ -156,8 +156,8 @@
 /datum/crafting_recipe/food/brextak_big
 	name = "Communal Brextak"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat = 20,
-		/obj/item/reagent_containers/food/snacks/grown = 20,
+		/obj/item/food/meat = 20,
+		/obj/item/food/grown = 20,
 		/datum/reagent/consumable/ethanol/wine = 40
 	)
 	result = /obj/item/reagent_containers/food/brextak_uncooked/big
@@ -227,13 +227,13 @@
 /obj/item/storage/box/ingredients/one_large_brextak/PopulateContents()
 	for(var/i in 1 to 20)
 		var/randomFood = pick(
-			/obj/item/reagent_containers/food/snacks/grown/chili,
-			/obj/item/reagent_containers/food/snacks/grown/tomato,
-			/obj/item/reagent_containers/food/snacks/grown/carrot)
+			/obj/item/food/grown/chili,
+			/obj/item/food/grown/tomato,
+			/obj/item/food/grown/carrot)
 		new randomFood(src)
 	for(var/i in 1 to 20)
 		var/randomFood = pick(
-			/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
-			/obj/item/reagent_containers/food/snacks/meat/slab/bear)
+			/obj/item/food/meat/slab/goliath,
+			/obj/item/food/meat/slab/bear)
 		new randomFood(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/wine(src)

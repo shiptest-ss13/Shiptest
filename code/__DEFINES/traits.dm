@@ -354,6 +354,15 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CHEMICAL_NIGHTVISION "chemical_nightvision"
 #define TRAIT_GOOD_CHEMICAL_NIGHTVISION "good_chemical_nightvision"
 
+///Trait for dryable items
+#define TRAIT_DRYABLE "trait_dryable"
+///Trait for dried items
+#define TRAIT_DRIED "trait_dried"
+/// Trait for customizable reagent holder
+//#define TRAIT_CUSTOMIZABLE_REAGENT_HOLDER "customizable_reagent_holder"
+/// Trait for allowing an item that isn't food into the customizable reagent holder
+//#define TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT "odd_customizable_food_ingredient"
+
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
 
@@ -500,3 +509,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// Climbable trait, given and taken by the climbable element when added or removed. Exists to be easily checked via HAS_TRAIT().
 #define TRAIT_CLIMBABLE "trait_climbable"
+
+/// Trait applied by element
+#define ELEMENT_TRAIT(source) "element_trait_[source]"

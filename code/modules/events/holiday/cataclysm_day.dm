@@ -78,7 +78,7 @@
 
 /obj/item/terrarium/attackby(obj/item/O, mob/user, params)
 	. = ..()
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
+	if(istype(O, /obj/item/food/grown))
 		to_chat(user, span_notice("You begin sealing the flora inside the jar to create a lovely terrarium. I encourage you to rename it with a pen <3."))
 		if(do_after(user, 15 SECONDS, O))
 			name = "filled terrarium"

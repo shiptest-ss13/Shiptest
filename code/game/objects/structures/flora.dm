@@ -1055,7 +1055,7 @@
 			reagents.clear_reagents()
 		if(health > 25)
 			if(prob(50))
-				var/obj/item/reagent_containers/food/snacks/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
+				var/obj/item/food/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
 				apple.name = "illestren Apple"
 				apple.desc = "You can grind this for bacteria."
 				apple.reagents.add_reagent(/datum/reagent/srm_bacteria, 10)
