@@ -891,13 +891,11 @@
 /obj/item/storage/box/ammo/c9mm,
 /obj/item/ammo_box/magazine/co9mm/empty,
 /obj/item/ammo_box/magazine/co9mm/empty,
-/obj/item/ammo_box/magazine/co9mm/empty,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun/upgraded,
 /obj/item/storage/box/ammo/c9mm,
 /obj/item/storage/box/ammo/c9mm,
-/obj/item/ammo_box/magazine/smgm9mm/empty,
 /obj/item/ammo_box/magazine/smgm9mm/empty,
 /obj/item/ammo_box/magazine/smgm9mm/empty,
 /obj/effect/decal/cleanable/dirt,
@@ -1849,8 +1847,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/crate/freezer/surplus_limbs,
-/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "AL" = (
@@ -3323,6 +3319,7 @@
 /area/ship/cargo)
 "TY" = (
 /obj/machinery/cryopod,
+/obj/machinery/computer/cryopod/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "TZ" = (
