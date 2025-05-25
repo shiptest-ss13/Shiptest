@@ -4,7 +4,6 @@
 	gender = PLURAL
 	body_parts_covered = GROIN
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
-	can_adjust = FALSE
 	icon = 'icons/obj/clothing/under/shorts_pants.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/shorts_pants.dmi'
 	greyscale_colors = list(list(16, 11), list(16, 10), list(16, 9))
@@ -38,3 +37,19 @@
 	name = "grilling shorts"
 	desc = "For when all you want in life is to grill for god's sake!"
 	icon_state = "greyshorts"
+
+/obj/item/clothing/under/shorts/jorts
+	name = "jorts"
+	desc = "Jean shorts cut from denim."
+	icon_state = "jorts"
+
+/obj/item/clothing/under/shorts/dolphin
+	name = "dolphin shorts"
+	desc = "Short shorts made for blistering hot days and athletic use."
+	icon_state = "dolphin"
+
+/obj/item/clothing/under/shorts/explorer
+	name = "explorer shorts"
+	desc = "Bright khaki short shorts for higher humidity, hot planets."
+	icon_state = "explorers"
+

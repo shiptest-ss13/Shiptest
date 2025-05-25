@@ -4,9 +4,12 @@
 	see_in_dark = 2
 	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD)
 	pressure_resistance = 10
+	plane = GAME_PLANE_FOV_HIDDEN
 	flags_1 = SHOW_BEHIND_LARGE_ICONS_1
 
 	hud_type = /datum/hud/living
+
+	bad_type = /mob/living
 
 	var/resize = 1 ///Badminnery resize
 	var/lastattacker = null
@@ -182,6 +185,13 @@
 	var/body_pixel_x_offset = 0
 	///Default Y offset
 	var/body_pixel_y_offset = 0
+
+	/// FOV view that is applied from either nativeness or traits
+	var/fov_view
+	/// Native FOV that will be applied if a config is enabled
+	var/native_fov = FOV_90_DEGREES
+	/// Lazy list of FOV traits that will apply a FOV view when handled.
+	var/list/fov_traits
 
 	/// World time of the last time this mob heard a radio crackle, to reduce spamminess.
 	COOLDOWN_DECLARE(radio_crackle_cooldown)

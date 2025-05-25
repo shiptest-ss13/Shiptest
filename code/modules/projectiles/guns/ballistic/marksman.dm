@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/marksman
+	bad_type = /obj/item/gun/ballistic/automatic/marksman
 	show_magazine_on_sprite = TRUE
 
 	burst_size = 1

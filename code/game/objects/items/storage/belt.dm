@@ -83,7 +83,8 @@
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
 		/obj/item/gun/energy/plasmacutter,
-		/obj/item/bodycamera
+		/obj/item/bodycamera,
+		/obj/item/stack/tape/industrial
 		))
 
 /obj/item/storage/belt/utility/chief
