@@ -1,21 +1,20 @@
 /obj/item/shrapnel // frag grenades
 	name = "shrapnel shard"
-	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=2, embed_chance_turf_mod=-100)
 	custom_materials = list(/datum/material/iron=50)
 	armour_penetration = -20
 	icon = 'icons/obj/shards.dmi'
 	icon_state = "large"
 	w_class = WEIGHT_CLASS_TINY
 	item_flags = DROPDEL
+	sharpness = SHARP_EDGED
 
 /obj/item/shrapnel/hot
 	name = "molten slag"
-	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=2, embed_chance_turf_mod=-100)
 	damtype =  BURN
+	sharpness = SHARP_NONE
 
 /obj/item/shrapnel/stingball
 	name = "clump of ballistic gel"
-	embedding = list(embed_chance=15, fall_chance=2, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.8, pain_mult=3, jostle_pain_mult=5, rip_time=15, embed_chance_turf_mod=-100)
 	icon_state = "tiny"
 
 /obj/item/shrapnel/bullet // bullets
@@ -23,56 +22,22 @@
 	icon = 'icons/obj/ammunition/ammo_bullets.dmi'
 	icon_state = "pistol-brass"
 	item_flags = NONE
-
-/obj/item/shrapnel/bullet/c38 // .38 round
-	name = "\improper .38 bullet"
-
-/obj/item/shrapnel/bullet/c38/dumdum // .38 DumDum round
-	name = "\improper .38 prism bullet"
-	embedding = list(embed_chance=70, fall_chance=7, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=-100)
-
-/obj/item/shrapnel/bullet/tracker
-	name = "\improper bullet tracker"
-	embedding = list(embed_chance=100, fall_chance=0, jostle_chance=1, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=1, jostle_pain_mult=2, rip_time=100, embed_chance_turf_mod=-100)
-	var/lifespan = 3000
-	var/gps_tag = "*TRAC"
-	var/timer_id
-
-/obj/item/shrapnel/bullet/tracker/Initialize()
-	. = ..()
-	timer_id = QDEL_IN(src, lifespan)
-	AddComponent(/datum/component/gps/item, gps_tag)
-
-/obj/item/shrapnel/bullet/tracker/Destroy()
-	deltimer(timer_id)
-	return ..()
-
-/obj/item/shrapnel/bullet/tracker/c38
-	name = ".38 Tracker"
-
-/obj/item/shrapnel/bullet/tracker/a8_50r
-	name = "8x50mm Tracker"
-
-/obj/item/shrapnel/bullet/tracker/a858
-	name = "8x58mm Tracker"
-
-/obj/item/shrapnel/bullet/tracker/a75clip
-	name = "7.5x64mm Tracker"
-
-/obj/item/shrapnel/bullet/tracker/a308
-	name = ".308 Tracker"
+	embedding = null
 
 /obj/projectile/bullet/shrapnel
 	name = "flying shrapnel shard"
-	damage = 10
-	range = 10
+	damage = 15
+	range = 15
 	armour_penetration = -5
-	dismemberment = 25
+	dismemberment = 5
 	ricochets_max = 2
-	ricochet_chance = 40
+	ricochet_chance = 60
 	shrapnel_type = /obj/item/shrapnel
 	ricochet_incidence_leeway = 60
 	hit_stunned_targets = TRUE
+	sharpness = SHARP_EDGED
+	wound_bonus = 30
+	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=1)
 
 /obj/projectile/bullet/shrapnel/Initialize()
 	. = ..()
@@ -88,10 +53,11 @@
 /obj/projectile/bullet/shrapnel/mega
 	damage = 20
 	name = "flying shrapnel hunk"
-	range = 25
-	dismemberment = 35
-	ricochets_max = 4
-	ricochet_chance = 90
+	range = 45
+	dismemberment = 15
+	ricochets_max = 6
+	ricochet_chance = 130
+	ricochet_incidence_leeway = 0
 	ricochet_decay_chance = 0.9
 
 /obj/projectile/bullet/shrapnel/hot
@@ -136,8 +102,9 @@
 	ricochet_auto_aim_angle = 10
 	ricochet_auto_aim_range = 2
 	ricochet_incidence_leeway = 0
-	knockdown = 20
+	embed_falloff_tile = -2
 	shrapnel_type = /obj/item/shrapnel/stingball
+	embedding = list(embed_chance=55, fall_chance=2, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=3, jostle_pain_mult=3, rip_time=15)
 
 /obj/projectile/bullet/pellet/stingball/mega
 	name = "megastingball pellet"
@@ -147,6 +114,36 @@
 /obj/projectile/bullet/pellet/stingball/on_ricochet(atom/A)
 	hit_stunned_targets = TRUE // ducking will save you from the first wave, but not the rebounds
 
+// Tracking rounds
+/obj/item/shrapnel/bullet/tracker
+	name = "\improper bullet tracker"
+	var/lifespan = 3000
+	var/gps_tag = "*TRAC"
+	var/timer_id
+
+/obj/item/shrapnel/bullet/tracker/Initialize()
+	. = ..()
+	timer_id = QDEL_IN(src, lifespan)
+	AddComponent(/datum/component/gps/item, gps_tag)
+
+/obj/item/shrapnel/bullet/tracker/Destroy()
+	deltimer(timer_id)
+	return ..()
+
+/obj/item/shrapnel/bullet/tracker/c38
+	name = ".38 Tracker"
+
+/obj/item/shrapnel/bullet/tracker/a8_50r
+	name = "8x50mm Tracker"
+
+/obj/item/shrapnel/bullet/tracker/a858
+	name = "8x58mm Tracker"
+
+/obj/item/shrapnel/bullet/tracker/a75clip
+	name = "7.5x64mm Tracker"
+
+/obj/item/shrapnel/bullet/tracker/a308
+	name = ".308 Tracker"
 
 //claymore shrapnel stuff//
 //2 small bursts- one that harasses people passing by a bit aways, one that brutalizes point-blank targets.

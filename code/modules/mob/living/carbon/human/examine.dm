@@ -150,14 +150,6 @@
 			else
 				. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life...")
 
-//WSStaion Begin - Broken Bones
-
-	var/list/splinted_stuff = list()
-	for(var/obj/item/bodypart/B in bodyparts)
-		if(B.bone_status == BONE_FLAG_SPLINTED)
-			splinted_stuff += B.name
-	if(splinted_stuff.len)
-		. += "[span_warning("<B>[t_His] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B>")]\n"
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
 		. += span_deadsay("It appears that [t_his] brain is missing...")
@@ -168,31 +160,40 @@
 
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/list/disabled = list()
-	for(var/obj/item/bodypart/BP as anything in bodyparts)
-		if(BP.bodypart_disabled)
-			disabled += BP
-		missing -= BP.body_zone
-		if(BP.uses_integrity && (BP.integrity_loss-BP.integrity_ignored) > 0)
-			if ((BP.integrity_loss-BP.integrity_ignored) > BP.max_damage*0.66)
-				msg += "<B>[t_His] [BP.name] is [BP.heavy_integrity_msg]!</B>\n"
-			else if (BP.integrity_loss-BP.integrity_ignored > BP.max_damage*0.33)
-				msg += "[t_His] [BP.name] is [BP.medium_integrity_msg]!\n"
-			else
-				msg += "[t_His] [BP.name] is [BP.light_integrity_msg].\n"
-		for(var/obj/item/I in BP.embedded_objects)
+
+	for(var/obj/item/bodypart/body_part as anything in bodyparts)
+		if(body_part.bodypart_disabled)
+			disabled += body_part
+		missing -= body_part.body_zone
+
+		for(var/obj/item/I in body_part.embedded_objects)
 			if(I.isEmbedHarmless())
-				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"
+				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [body_part.name]!</B>\n"
 			else
-				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] embedded in [t_his] [BP.name]!</B>\n"
+				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] embedded in [t_his] [body_part.name]!</B>\n"
+
+		for(var/i in body_part.wounds)
+			var/datum/wound/iter_wound = i
+			msg += "[iter_wound.get_examine_description(user)]\n"
+
+		if(body_part.uses_integrity && (body_part.integrity_loss-body_part.integrity_ignored) > 0)
+			if ((body_part.integrity_loss-body_part.integrity_ignored) > body_part.max_damage*0.66)
+				msg += "<B>[t_His] [body_part.name] is [body_part.heavy_integrity_msg]!</B>\n"
+			else if (body_part.integrity_loss-body_part.integrity_ignored > body_part.max_damage*0.33)
+				msg += "[t_His] [body_part.name] is [body_part.medium_integrity_msg]!\n"
+			else
+				msg += "[t_His] [body_part.name] is [body_part.light_integrity_msg].\n"
 
 	for(var/X in disabled)
-		var/obj/item/bodypart/BP = X
+		var/obj/item/bodypart/body_part = X
 		var/damage_text
-		if(!(BP.get_damage(include_stamina = FALSE) >= BP.max_damage)) //Stamina is disabling the limb
+		if(HAS_TRAIT(body_part, TRAIT_DISABLED_BY_WOUND))
+			continue // skip if it's disabled by a wound (cuz we'll be able to see the bone sticking out!)
+		if(!(body_part.get_damage(include_stamina = FALSE) >= body_part.max_damage)) //we don't care if it's stamcritted
 			damage_text = "limp and lifeless"
 		else
-			damage_text = (BP.brute_dam >= BP.burn_dam) ? BP.heavy_brute_msg : BP.heavy_burn_msg
-		msg += "<B>[capitalize(t_his)] [BP.name] is [damage_text]!</B>\n"
+			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
+		msg += "<B>[capitalize(t_his)] [body_part.name] is [damage_text]!</B>\n"
 
 	//stores missing limbs
 	var/l_limbs_missing = 0
@@ -266,19 +267,60 @@
 		if(DISGUST_LEVEL_DISGUSTED to INFINITY)
 			msg += "[t_He] look[p_s()] extremely disgusted.\n"
 
-	if(blood_volume < BLOOD_VOLUME_SAFE || skin_tone == "albino")
-		msg += "[t_He] [t_has] pale skin.\n"
+	var/apparent_blood_volume = blood_volume
+	if(skin_tone == "albino")
+		apparent_blood_volume -= 150 // enough to knock you down one tier
+	switch(apparent_blood_volume)
+		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
+			msg += "[t_He] [t_has] pale skin.\n"
+		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
+			msg += "<b>[t_He] look[p_s()] like pale death.</b>\n"
+		if(-INFINITY to BLOOD_VOLUME_BAD)
+			msg += "<span class='deadsay'><b>[t_He] looks drained of blood...</b></span>\n"
 
+	if(bleedsuppress)
+		msg += "[t_He] [t_is] imbued with a power that defies bleeding.\n"
+	else if(is_bleeding())
+		var/list/obj/item/bodypart/bleeding_limbs = list()
+		var/list/obj/item/bodypart/grasped_limbs = list()
 
-	if(LAZYLEN(get_bandaged_parts()))
-		msg += "[t_He] [t_has] some dressed bleeding.\n"
+		for(var/i in bodyparts)
+			var/obj/item/bodypart/body_part = i
+			if(body_part.get_bleed_rate())
+				bleeding_limbs += body_part
+			if(body_part.grasped_by)
+				grasped_limbs += body_part
 
-	var/list/obj/item/bodypart/bleed_check = get_bleeding_parts(TRUE)
-	if(LAZYLEN(bleed_check))
-		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
-			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
+		var/num_bleeds = LAZYLEN(bleeding_limbs)
+
+		var/list/bleed_text
+		if(appears_dead)
+			bleed_text = list("<span class='deadsay'><B>Blood is visible in [t_his] open")
 		else
-			msg += "<B>[t_He] [t_is] bleeding!</B>\n"
+			bleed_text = list("<B>[t_He] [t_is] bleeding from [t_his]")
+
+		switch(num_bleeds)
+			if(1 to 2)
+				bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].name]" : ""]"
+			if(3 to INFINITY)
+				for(var/i in 1 to (num_bleeds - 1))
+					var/obj/item/bodypart/body_part = bleeding_limbs[i]
+					bleed_text += " [body_part.name],"
+				bleed_text += " and [bleeding_limbs[num_bleeds].name]"
+		
+		if(appears_dead)
+			bleed_text += ", but it has pooled and is not flowing.</span></B>\n"
+		else
+			if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
+				bleed_text += " incredibly quickly"
+
+		bleed_text += "!</B>\n"
+
+		for(var/i in grasped_limbs)
+			var/obj/item/bodypart/grasped_part = i
+			bleed_text += "[t_He] [t_is] holding [t_his] [grasped_part.name] to slow the bleeding!\n"
+
+		msg += bleed_text.Join()
 
 	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
 		msg += "[t_He] [t_is] emitting a gentle blue glow!\n"
@@ -427,22 +469,6 @@
 
 /mob/living/carbon/human/examine_more(mob/user)
 	. = ..()
-	for(var/obj/item/bodypart/BP as anything in get_bandaged_parts())
-		var/datum/component/bandage/B = BP.GetComponent(/datum/component/bandage)
-		. += span_notice("[p_their(TRUE)] [parse_zone(BP.body_zone)] is dressed with [B.bandage_name]")
-	for(var/obj/item/bodypart/BP as anything in get_bleeding_parts(TRUE))
-		var/bleed_text
-		switch(BP.bleeding)
-			if(0 to 0.5)
-				bleed_text = "lightly."
-			if(0.5 to 1)
-				bleed_text = "moderately."
-			if(1 to 1.5)
-				bleed_text = "heavily!"
-			else
-				bleed_text = "significantly!!"
-		. += span_warning("[p_their(TRUE)] [parse_zone(BP.body_zone)] is bleeding [bleed_text]")
-
 	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 		return
 	if(get_age())

@@ -32,7 +32,7 @@
 				"")
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
 		if(BP)
-			BP.adjust_bleeding(3)
+			BP.generic_bleedstacks += 10
 	return ..()
 
 /datum/surgery_step/incise/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -79,7 +79,7 @@
 		var/mob/living/carbon/human/H = target
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
 		if(BP)
-			BP.adjust_bleeding(-3)
+			BP.generic_bleedstacks -= 3
 	return ..()
 
 /datum/surgery_step/clamp_bleeders/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -145,7 +145,7 @@
 		var/mob/living/carbon/human/H = target
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
 		if(BP)
-			BP.adjust_bleeding(-3)
+			BP.generic_bleedstacks -= 3
 	return ..()
 
 //saw bone
@@ -198,7 +198,7 @@
 		display_results(user, target, span_warning("You screw up, breaking the bone!"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s [parse_zone(target_zone)]"))
-		affected.break_bone()
+		affected.break_bone() //todo bone fix
 		target.apply_damage(25, BRUTE, "[target_zone]")
 
 //drill bone

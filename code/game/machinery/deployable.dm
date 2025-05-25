@@ -195,7 +195,7 @@
 
 	to_chat(user, span_notice("[src] is now in [mode] mode."))
 
-/obj/item/grenade/barrier/prime()
+/obj/item/grenade/barrier/prime(mob/living/lanced_by)
 	. = ..()
 	new /obj/structure/barricade/security(get_turf(src.loc))
 	switch(mode)
@@ -215,7 +215,7 @@
 			var/turf/target_turf2 = get_step(src, WEST)
 			if(!target_turf2.is_blocked_turf())
 				new /obj/structure/barricade/security(target_turf2)
-	qdel(src)
+	resolve()
 
 /obj/item/grenade/barrier/ui_action_click(mob/user)
 	toggle_mode(user)

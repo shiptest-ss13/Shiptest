@@ -27,11 +27,13 @@
 	var/active_sound = null
 	var/toggle_cooldown = null
 	var/cooldown = 0
+	var/clothing_flags = NONE
 
 	var/cuttable = FALSE //If you can cut the clothing with anything sharp
 	var/clothamnt = 0 //How much cloth
 
-	var/clothing_flags = NONE
+	/// What items can be consumed to repair this clothing (must by an /obj/item/stack)
+	var/repairable_by = /obj/item/stack/sheet/cotton/cloth
 
 	var/can_be_bloody = TRUE
 
@@ -47,6 +49,13 @@
 	var/list/durability_list = list()
 	/// If this can be eaten by a moth
 	var/moth_edible = TRUE
+
+	/// How much clothing damage has been dealt to each of the limbs of the clothing, assuming it covers more than one limb
+	var/list/damage_by_parts
+	/// How much integrity is in a specific limb before that limb is disabled (for use in [/obj/item/clothing/proc/take_damage_zone], and only if we cover multiple zones.) Set to 0 to disable shredding.
+	var/limb_integrity = 0
+	/// How many zones (body parts, not precise) we have disabled so far, for naming purposes
+	var/zones_disabled
 
 	// Not used yet
 	/// Trait modification, lazylist of traits to add/take away, on equipment/drop in the correct slot
@@ -92,10 +101,13 @@
 
 /obj/item/clothing/attack(mob/M, mob/user, def_zone)
 	if(user.a_intent != INTENT_HARM && moth_edible && ismoth(M))
-		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
-		clothing_as_food.name = name
-		if(clothing_as_food.attack(M, user, def_zone))
-			take_damage(15, sound_effect=FALSE)
+	if(damaged_clothes == CLOTHING_SHREDDED)
+		to_chat(user, span_notice("[src] seem[p_s()] pretty torn apart... [p_they(TRUE)] probably wouldn't be too tasty."))
+		return
+	var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
+	clothing_as_food.name = name
+	if(clothing_as_food.attack(M, user, def_zone))
+		take_damage(15, sound_effect=FALSE)
 		qdel(clothing_as_food)
 	else
 		return ..()
@@ -112,35 +124,136 @@
 		user.put_in_hands(cloth)
 		qdel(src)
 
-	if(damaged_clothes && istype(tool, /obj/item/stack/sheet/cotton/cloth))
-		var/obj/item/stack/sheet/cotton/cloth/cloth = tool
-		if(!cloth.use(1))
-			to_chat(user, span_notice("You fail to fix the damage on [src]."))
-			return TRUE
-		update_clothes_damaged_state(FALSE)
-		obj_integrity = max_integrity
-		to_chat(user, span_notice("You fix the damage on [src] with [cloth]."))
-		return TRUE
+	if(damaged_clothes && istype(tool, repairable_by))
+		var/obj/item/stack/S = tool
+		switch(damaged_clothes)
+			if(CLOTHING_DAMAGED)
+				S.use(1)
+				repair(user, params)
+			if(CLOTHING_SHREDDED)
+				if(S.amount < 3)
+					to_chat(user, span_warning("You require 3 [S.name] to repair [src]."))
+					return
+				to_chat(user, span_notice("You begin fixing the damage to [src] with [S]..."))
+				if(do_after(user, 6 SECONDS, TRUE, src))
+					if(S.use(3))
+						repair(user, params)
+		return 1
+	return ..()
+
+/// Set the clothing's integrity back to 100%, remove all damage to bodyparts, and generally fix it up
+/obj/item/clothing/proc/repair(mob/user, params)
+	update_clothes_damaged_state(CLOTHING_PRISTINE)
+	obj_integrity = max_integrity
+	name = initial(name) // remove "tattered" or "shredded" if there's a prefix
+	body_parts_covered = initial(body_parts_covered)
+	slot_flags = initial(slot_flags)
+	damage_by_parts = null
+	if(user)
+		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
+		to_chat(user, span_notice(">You fix the damage on [src]."))
+
+
+/**
+ * take_damage_zone() is used for dealing damage to specific bodyparts on a worn piece of clothing, meant to be called from [/obj/item/bodypart/proc/check_woundings_mods()]
+ *
+ *	This proc only matters when a bodypart that this clothing is covering is harmed by a direct attack (being on fire or in space need not apply), and only if this clothing covers
+ * more than one bodypart to begin with. No point in tracking damage by zone for a hat, and I'm not cruel enough to let you fully break them in a few shots.
+ * Also if limb_integrity is 0, then this clothing doesn't have bodypart damage enabled so skip it.
+ *
+ * Arguments:
+ * * def_zone: The bodypart zone in question
+ * * damage_amount: Incoming damage
+ * * damage_type: BRUTE or BURN
+ * * armour_penetration: If the attack had armour_penetration
+ */
+/obj/item/clothing/proc/take_damage_zone(def_zone, damage_amount, damage_type, armour_penetration)
+	if(!def_zone || !limb_integrity || (initial(body_parts_covered) in GLOB.bitflags)) // the second check sees if we only cover one bodypart anyway and don't need to bother with this
+		return
+	var/list/covered_limbs = body_parts_covered2organ_names(body_parts_covered) // what do we actually cover?
+	if(!(def_zone in covered_limbs))
+		return
+
+	var/damage_dealt = take_damage(damage_amount * 0.1, damage_type, armour_penetration, FALSE) * 10 // only deal 10% of the damage to the general integrity damage, then multiply it by 10 so we know how much to deal to limb
+	LAZYINITLIST(damage_by_parts)
+	damage_by_parts[def_zone] += damage_dealt
+	if(damage_by_parts[def_zone] > limb_integrity)
+		disable_zone(def_zone, damage_type)
+
+/**
+ * disable_zone() is used to disable a given bodypart's protection on our clothing item, mainly from [/obj/item/clothing/proc/take_damage_zone()]
+ *
+ * This proc disables all protection on the specified bodypart for this piece of clothing: it'll be as if it doesn't cover it at all anymore (because it won't!)
+ * If every possible bodypart has been disabled on the clothing, we put it out of commission entirely and mark it as shredded, whereby it will have to be repaired in
+ * order to equip it again. Also note we only consider it damaged if there's more than one bodypart disabled.
+ *
+ * Arguments:
+ * * def_zone: The bodypart zone we're disabling
+ * * damage_type: Only really relevant for the verb for describing the breaking, and maybe obj_destruction()
+ */
+/obj/item/clothing/proc/disable_zone(def_zone, damage_type)
+	var/list/covered_limbs = body_parts_covered2organ_names(body_parts_covered)
+	if(!(def_zone in covered_limbs))
+		return
+
+	var/zone_name = parse_zone(def_zone)
+	var/break_verb = ((damage_type == BRUTE) ? "torn" : "burned")
+
+	if(iscarbon(loc))
+		var/mob/living/carbon/C = loc
+		C.visible_message(
+			span_danger("The [zone_name] on [C]'s [src.name] is [break_verb] away!"),
+			span_userdanger("The [zone_name] on your [src.name] is [break_verb] away!"),
+			vision_distance = COMBAT_MESSAGE_RANGE,
+		)
+		RegisterSignal(C, COMSIG_MOVABLE_MOVED, PROC_REF(bristle))
+
+	zones_disabled++
+	for(var/i in zone2body_parts_covered(def_zone))
+		body_parts_covered &= ~i
+
+	if(body_parts_covered == NONE) // if there are no more parts to break then the whole thing is kaput
+		obj_destruction((damage_type == BRUTE ? "melee" : "laser")) // melee/laser is good enough since this only procs from direct attacks anyway and not from fire/bombs
+		return
+
+	switch(zones_disabled)
+		if(1)
+			name = "damaged [initial(name)]"
+		if(2)
+			name = "mangy [initial(name)]"
+		if(3 to INFINITY) // take better care of your shit, dude
+			name = "tattered [initial(name)]"
+
+	update_clothes_damaged_state(CLOTHING_DAMAGED)
+
+/obj/item/clothing/Destroy()
+	user_vars_remembered = null //Oh god somebody put REFERENCES in here? not to worry, we'll clean it up
 	return ..()
 
 /obj/item/clothing/dropped(mob/user)
 	..()
 	if(!istype(user))
 		return
-	for(var/trait in clothing_traits)
-		REMOVE_CLOTHING_TRAIT(user, trait)
-	if(wearer?.resolve())
-		wearer = null
+	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
+	if(LAZYLEN(user_vars_remembered))
+		for(var/variable in user_vars_remembered)
+			if(variable in user.vars)
+				if(user.vars[variable] == user_vars_to_edit[variable]) //Is it still what we set it to? (if not we best not change it)
+					user.vars[variable] = user_vars_remembered[variable]
+		user_vars_remembered = initial(user_vars_remembered) // Effectively this sets it to null.
 
 /obj/item/clothing/equipped(mob/user, slot)
 	..()
-	if (!istype(user))
+	if(!istype(user))
 		return
 	if(slot_flags & slot) //Was equipped to a valid slot for this item?
-		for(var/trait in clothing_traits)
-			ADD_CLOTHING_TRAIT(user, trait)
-		if(!wearer?.resolve())
-			wearer = WEAKREF(user)
+		if(iscarbon(user) && LAZYLEN(zones_disabled))
+			RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/bristle)
+		if(LAZYLEN(user_vars_to_edit))
+			for(var/variable in user_vars_to_edit)
+				if(variable in user.vars)
+					LAZYSET(user_vars_remembered, variable, user.vars[variable])
+					user.vv_edit_var(variable, user_vars_to_edit[variable])
 
 /**
  * Inserts a trait (or multiple traits) into the clothing traits list
@@ -178,6 +291,10 @@
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
+	if(damaged_clothes == CLOTHING_SHREDDED)
+		. += "<span class='warning'><b>[p_theyre(TRUE)] completely shredded and require[p_s()] mending before [p_they()] can be worn again!</b></span>"
+		return
+
 	switch (max_heat_protection_temperature)
 		if (400 to 1000)
 			. += "[src] offers the wearer limited protection from fire."
@@ -185,8 +302,18 @@
 			. += "[src] offers the wearer some protection from fire."
 		if (1601 to 35000)
 			. += "[src] offers the wearer robust protection from fire."
-	if(damaged_clothes)
-		. += span_warning("It looks damaged!")
+
+	for(var/zone in damage_by_parts)
+		var/pct_damage_part = damage_by_parts[zone] / limb_integrity * 100
+		var/zone_name = parse_zone(zone)
+		switch(pct_damage_part)
+			if(100 to INFINITY)
+				. += span_warning("The [zone_name] is useless and requires mending!")
+			if(60 to 99)
+				. += span_warning("The [zone_name] is heavily shredded!")
+			if(30 to 59)
+				. += span_danger("The [zone_name] is partially shredded")
+
 	var/datum/component/storage/pockets = GetComponent(/datum/component/storage)
 	if(pockets)
 		var/list/how_cool_are_your_threads = list("<span class='notice'>")
@@ -287,26 +414,26 @@
 	return .
 
 /obj/item/clothing/obj_break(damage_flag)
-	if(!damaged_clothes)
-		update_clothes_damaged_state(TRUE)
-	if(ismob(loc)) //It's not important enough to warrant a message if nobody's wearing it
-		var/mob/M = loc
-		to_chat(M, span_warning("Your [name] starts to fall apart!"))
+	update_clothes_damaged_state(CLOTHING_DAMAGED)
+
+	if(isliving(loc)) //It's not important enough to warrant a message if it's not on someone
+		var/mob/living/M = loc
+		if(src in M.get_equipped_items(FALSE))
+			to_chat(M, span_warning("Your [name] start[p_s()] to fall apart!"))
+		else
+			to_chat(M, span_warning("[src] start[p_s()] to fall apart!"))
 
 //This mostly exists so subtypes can call appriopriate update icon calls on the wearer.
-/obj/item/clothing/proc/update_clothes_damaged_state(damaging = TRUE)
-	if(damaging)
-		damaged_clothes = 1
-	else
-		damaged_clothes = 0
+/obj/item/clothing/proc/update_clothes_damaged_state()
+	return
 
 /obj/item/clothing/update_overlays()
 	. = ..()
+	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+	var/static/list/damaged_clothes_icons = list()
 	if(!damaged_clothes)
 		return
 
-	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
-	var/static/list/damaged_clothes_icons = list()
 	var/icon/damaged_clothes_icon = damaged_clothes_icons[index]
 	if(!damaged_clothes_icon)
 		damaged_clothes_icon = icon(initial(icon), initial(icon_state), , 1) //we only want to apply damaged effect to the initial icon_state for each object
@@ -315,15 +442,6 @@
 		damaged_clothes_icon = fcopy_rsc(damaged_clothes_icon)
 		damaged_clothes_icons[index] = damaged_clothes_icon
 	. += damaged_clothes_icon
-/*
-* SEE_SELF  // can see self, no matter what
-* SEE_MOBS  // can see all mobs, no matter what
-* SEE_OBJS  // can see all objs, no matter what
-* SEE_TURFS // can see all turfs (and areas), no matter what
-* SEE_PIXELS// if an object is located on an unlit area, but some of its pixels are
-*           // in a lit area (via pixel_x,y or smooth movement), can see those pixels
-* BLIND     // can't see anything
-*/
 
 /obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
 	if(!icon_exists(file2use, state2use))
@@ -507,17 +625,28 @@
 				adjusted = ROLLED_STYLE
 				return adjusted
 	else // we are, toggle stuff back to normal
-		switch(style)
+		switch(style) // this is hellish please rework it
 			if(ALT_STYLE)
 				if(!alt_covers_chest)
 					body_parts_covered |= CHEST | ARMS
-					adjusted = NORMAL_STYLE
+					if(!LAZYLEN(damage_by_parts))
+						return adjusted
+					for(var/zone in list(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)) // ugly check to make sure we don't reenable protection on a disabled part
+						if(damage_by_parts[zone] > limb_integrity)
+							for(var/part in zone2body_parts_covered(zone))
+								body_parts_covered &= part
 					return adjusted
 				else
 					adjusted = NORMAL_STYLE
 					return adjusted
 			if(ROLLED_STYLE)
 				body_parts_covered |= ARMS
+				if(!LAZYLEN(damage_by_parts))
+					return adjusted
+				for(var/zone in list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)) // ugly check to make sure we don't reenable protection on a disabled part
+					if(damage_by_parts[zone] > limb_integrity)
+						for(var/part in zone2body_parts_covered(zone))
+							body_parts_covered &= part
 				adjusted = NORMAL_STYLE
 				return adjusted
 
@@ -573,8 +702,36 @@
 		//so the shred survives potential turf change from the explosion.
 		addtimer(CALLBACK_NEW(/obj/effect/decal/cleanable/shreds, list(T, name)), 1)
 		deconstruct(FALSE)
+	else if(!(damage_flag in list("acid", "fire")))
+		body_parts_covered = NONE
+		slot_flags = NONE
+		update_clothes_damaged_state(CLOTHING_SHREDDED)
+
+		if(isliving(loc))
+			var/mob/living/M = loc
+			if(src in M.get_equipped_items(FALSE)) //make sure they were wearing it and not attacking the item in their hands / eating it if they were a moth.
+				M.visible_message(
+					span_danger("[M]'s [src.name] fall[p_s()] off, [p_theyre()] completely shredded!"),
+					span_userdanger("Your [src.name] fall[p_s()] off, [p_theyre()] completely shredded!"), 
+					vision_distance = COMBAT_MESSAGE_RANGE,
+				)
+				M.dropItemToGround(src)
+			else
+				M.visible_message(
+					span_danger("[src] fall[p_s()] apart, completely shredded!"),
+					vision_distance = COMBAT_MESSAGE_RANGE,
+				)
+
+		name = "shredded [initial(name)]" // change the name -after- the message, not before.
 	else
 		..()
+
+/// If we're a clothing with at least 1 shredded/disabled zone, give the wearer a periodic heads up letting them know their clothes are damaged
+/obj/item/clothing/proc/bristle(mob/living/L)
+	if(!istype(L))
+		return
+	if(prob(0.1))
+		to_chat(L, span_warning("The damaged threads on your [src.name] chafe!"))
 
 ///sets up the proper bloody overlay for a clothing object, using species data
 /obj/item/clothing/proc/setup_blood_overlay()

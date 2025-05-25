@@ -30,5 +30,5 @@
 
 /datum/surgery_step/set_bone/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] successfully sets the bones in [target]'s [parse_zone(target_zone)]!", span_notice("You successfully set the bones in [target]'s [parse_zone(target_zone)]."))
-	surgery.operated_bodypart.fix_bone()
+	surgery.operated_bodypart.fix_bone() //todo: fix
 	return TRUE

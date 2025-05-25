@@ -28,7 +28,7 @@
 	for(var/i in 1 to 6)
 		new /obj/item/grenade/discogrenade/subgrenade(current_turf, TRUE)
 
-	qdel(src)
+	resolve()
 
 //////////////////////
 //   Sub grenades   //
@@ -74,7 +74,7 @@
 
 	for(var/mob/living/carbon/human/victim in hearers(4, src))
 		forcedance(get_turf(victim), victim)
-	qdel(src)
+	resolve()
 
 /obj/item/grenade/discogrenade/subgrenade/proc/randomiseLightColor()
 	remove_atom_colour(TEMPORARY_COLOUR_PRIORITY)

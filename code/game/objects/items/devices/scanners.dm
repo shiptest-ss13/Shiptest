@@ -13,8 +13,8 @@ GENE SCANNER
 // Describes the two modes of scanning available for health analyzers
 #define SCANMODE_HEALTH 0
 #define SCANMODE_CHEMICAL 1
-#define SCANNER_CONDENSED 0
-#define SCANNER_VERBOSE 1
+#define SCANMODE_WOUND 2
+#define SCANNER_VERBOSE 3
 
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
@@ -102,15 +102,20 @@ GENE SCANNER
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
-	scanmode = !scanmode
-	if(scanmode == 1)
-		balloon_alert(user, "scanning reagents")
-		icon_state = reagentmode
-		item_state = reagentmodeinhand
-	else
-		balloon_alert(user, "scanning health")
-		icon_state = healthmode
-		item_state = healthmodeinhand
+	scanmode = (scanmode + 1) % 3
+	switch(scanmode)
+		if(SCANMODE_HEALTH)
+			to_chat(user, span_notice("You switch the health analyzer to check physical health."))
+			icon_state = healthmode
+			item_state = healthmodeinhand
+		if(SCANMODE_CHEMICAL)
+			to_chat(user, span_notice("You switch the health analyzer to scan chemical contents."))
+			icon_state = reagentmode
+			item_state = reagentmodeinhand
+		if(SCANMODE_WOUND)
+			to_chat(user, span_notice("You switch the health analyzer to report extra info on wounds."))
+			icon_state = healthmode
+			item_state = healthmodeinhand
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	flick("[icon_state]-anim", src) //makes it so that it plays the scan animation upon scanning, including clumsy scanning
@@ -131,11 +136,12 @@ GENE SCANNER
 
 	if(scanmode == SCANMODE_HEALTH)
 		healthscan(user, M, mode, advanced)
-	else
+	else if(scanmode == SCANMODE_CHEMICAL)
 		chemscan(user, M)
+	else
+		woundscan(user, M, src)
 
 	add_fingerprint(user)
-
 
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE, see_all_quirks = FALSE)
@@ -161,34 +167,51 @@ GENE SCANNER
 		if(H.undergoing_cardiac_arrest() && H.stat != DEAD)
 			render_list += "[span_alert("Subject suffering from heart attack: Apply defibrillation or other electric shock immediately!")]\n"
 
-	//WS begin - Borers
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(C.has_brain_worms() && (!C.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) || advanced))
 			render_list += "[span_danger("Foreign organism detected in subject's cranium. Recommended treatment: Dosage of sucrose solution and removal of object via surgery.")]\n"
-	//WS end
 
 	render_list += "[span_info("Analyzing results for [M]:")]\n<span class='info ml-1'>Overall status: [mob_status]</span>\n"
 
 	// Damage descriptions
 	if(brute_loss > 10)
 		render_list += "<span class='alert ml-1'>[brute_loss > 50 ? "Severe" : "Minor"] tissue damage detected.</span>\n"
+
 	if(fire_loss > 10)
 		render_list += "<span class='alert ml-1'>[fire_loss > 50 ? "Severe" : "Minor"] burn damage detected.</span>\n"
+
 	if(oxy_loss > 10)
 		render_list += "<span class='info ml-1'>[span_alert("[oxy_loss > 50 ? "Severe" : "Minor"] oxygen deprivation detected.")]\n"
+
 	if(tox_loss > 10)
 		render_list += "<span class='alert ml-1'>[tox_loss > 50 ? "Severe" : "Minor"] amount of toxin damage detected.</span>\n"
+
 	if(M.getStaminaLoss())
 		render_list += "<span class='alert ml-1'>Subject appears to be suffering from fatigue.</span>\n"
 		if(advanced)
 			render_list += "<span class='info ml-1'>Fatigue Level: [M.getStaminaLoss()]%.</span>\n"
-	if (M.getCloneLoss())
+
+	if(M.getCloneLoss())
 		render_list += "<span class='alert ml-1'>Subject appears to have [M.getCloneLoss() > 30 ? "Severe" : "Minor"] cellular damage.</span>\n"
 		if(advanced)
 			render_list += "<span class='info ml-1'>Cellular Damage Level: [M.getCloneLoss()].</span>\n"
-	if (!M.getorgan(/obj/item/organ/brain))
+
+	if(!M.getorganslot(ORGAN_SLOT_BRAIN)) // brain not added to carbon/human check because it's funny to get to bully simple mobs
 		render_list += "<span class='alert ml-1'>Subject lacks a brain.</span>\n"
+
+	if(ishuman(M))
+		var/mob/living/carbon/human/the_dude = M
+		var/datum/species/the_dudes_species = the_dude.dna.species
+		if(!(NOBLOOD in the_dudes_species.species_traits) && !the_dude.getorganslot(ORGAN_SLOT_HEART))
+			render_list += "<span class='alert ml-1'>Subject lacks a heart.</span>\n"
+		if(!(TRAIT_NOBREATH in the_dudes_species.species_traits) && !the_dude.getorganslot(ORGAN_SLOT_LUNGS))
+			render_list += "<span class='alert ml-1'>Subject lacks lungs.</span>\n"
+		if(!(TRAIT_NOMETABOLISM in the_dudes_species.species_traits) && !the_dude.getorganslot(ORGAN_SLOT_LIVER))
+			render_list += "<span class='alert ml-1'>Subject lacks a liver.</span>\n"
+		if(!(NOSTOMACH in the_dudes_species.species_traits) && !the_dude.getorganslot(ORGAN_SLOT_STOMACH))
+			render_list += "<span class='alert ml-1'>Subject lacks a stomach.</span>\n"
+
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		if(LAZYLEN(C.get_traumas()))
@@ -200,6 +223,8 @@ GENE SCANNER
 						trauma_desc += "severe "
 					if(TRAUMA_RESILIENCE_LOBOTOMY)
 						trauma_desc += "deep-rooted "
+					if(TRAUMA_RESILIENCE_WOUND)
+						trauma_desc += "fracture-derived "
 					if(TRAUMA_RESILIENCE_MAGIC, TRAUMA_RESILIENCE_ABSOLUTE)
 						trauma_desc += "permanent "
 				trauma_desc += B.scan_desc
@@ -207,10 +232,11 @@ GENE SCANNER
 			render_list += "<span class='alert ml-1'>Cerebral traumas detected: subject appears to be suffering from [english_list(trauma_text)].</span>\n"
 		if(C.roundstart_quirks.len)
 			render_list += "<span class='info ml-1'>Subject has the following physiological traits: [C.get_trait_string(see_all=see_all_quirks)].</span>\n"
+
 	if(advanced)
 		render_list += "<span class='info ml-1'>Brain Activity Level: [(200 - M.getOrganLoss(ORGAN_SLOT_BRAIN))/2]%.</span>\n"
 
-	if (M.radiation)
+	if(M.radiation)
 		render_list += "<span class='alert ml-1'>Subject is irradiated.</span>\n"
 		if(advanced)
 			render_list += "<span class='info ml-1'>Radiation Level: [M.radiation]%.</span>\n"
@@ -311,15 +337,10 @@ GENE SCANNER
 		if(advanced && H.has_dna())
 			render_list += "<span class='info ml-1'>Genetic Stability: [H.dna.stability]%.</span>\n"
 
-		var/list/broken_stuff = list()
 		var/list/damaged_structure = list()
 		for(var/obj/item/bodypart/B in H.bodyparts)
-			if(B.bone_status >= BONE_FLAG_BROKEN)		// Checks if bone is broken or splinted
-				broken_stuff += B.plaintext_zone
 			if(B.integrity_loss)
 				damaged_structure += B.plaintext_zone
-		if(broken_stuff.len)
-			render_list += "\t[span_alert("Bone fractures detected. Subject's [english_list(broken_stuff)] [broken_stuff.len > 1 ? "require" : "requires"] surgical treatment!")]\n"
 		if(damaged_structure.len)
 			render_list+= "\t[span_alert("Structure rod damage detected. Subject's [english_list(damaged_structure)] [damaged_structure.len > 1 ? "rod require" : "rods requires"] replacement!")]\n"
 
@@ -347,6 +368,16 @@ GENE SCANNER
 		var/tdelta = round(world.time - M.timeofdeath)
 		render_list += "<span class='alert ml-1'><b>Subject died [DisplayTimeText(tdelta)] ago.</b></span>\n"
 
+// Wounds
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		var/list/wounded_parts = C.get_wounded_bodyparts()
+		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
+			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
+			for(var/datum/wound/W as anything in wounded_part.wounds)
+				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
+			render_list += "</span>"
+
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
 		if(!(D.visibility_flags & HIDDEN_SCANNER))
@@ -361,7 +392,7 @@ GENE SCANNER
 		if(blood_id)
 			if(ishuman(C))
 				var/mob/living/carbon/human/H = C
-				if(LAZYLEN(H.get_bleeding_parts()))
+				if(H.is_bleeding())
 					render_list += "<span class='alert ml-1'><b>Subject is bleeding!</b></span>\n"
 			var/blood_percent =  round((C.blood_volume / BLOOD_VOLUME_NORMAL)*100)
 			var/blood_type = C.dna.blood_type.name
@@ -456,6 +487,8 @@ GENE SCANNER
 /obj/item/analyzer/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click [src] to activate the barometer function.")
+
+
 
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)
@@ -834,5 +867,6 @@ GENE SCANNER
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL
+#undef SCANMODE_WOUND
 #undef SCANNER_CONDENSED
 #undef SCANNER_VERBOSE

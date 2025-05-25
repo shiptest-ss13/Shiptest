@@ -25,6 +25,7 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
+	sharpness = SHARP_POINTY
 	vision_range = 7
 	aggro_vision_range = 7
 	move_force = MOVE_FORCE_WEAK

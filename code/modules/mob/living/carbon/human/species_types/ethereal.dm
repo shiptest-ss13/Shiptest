@@ -17,7 +17,7 @@
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
 	species_age_max = 300
-	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR)
+	species_traits = list(DYNCOLORS, EYECOLOR, HAIR, FACEHAIR, HAS_FLESH, HAS_BONE)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	species_language_holder = /datum/language_holder/ethereal
 	inherent_traits = list(TRAIT_NOHUNGER)

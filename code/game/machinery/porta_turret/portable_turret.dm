@@ -592,7 +592,7 @@
 			COOLDOWN_START(src, reaction_cooldown, reaction_time)
 
 			if(ishuman(target) || target.client)
-				target.do_alert_animation(target)
+				target.do_alert_animation()
 
 			return TRUE
 

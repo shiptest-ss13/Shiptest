@@ -7,7 +7,7 @@
 	slot_flags = ITEM_SLOT_BELT
 
 ///Here we generate some smoke and also damage blobs??? for some reason. Honestly not sure why we do that.
-/obj/item/grenade/smokebomb/prime()
+/obj/item/grenade/smokebomb/prime(mob/living/lanced_by)
 	. = ..()
 	update_mob()
 	playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)

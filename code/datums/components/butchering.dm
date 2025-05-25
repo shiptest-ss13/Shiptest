@@ -6,7 +6,7 @@
 	/// Percentage increase to bonus item chance
 	var/bonus_modifier = 0
 	/// Sound played when butchering
-	var/butcher_sound = 'sound/weapons/slice.ogg'
+	var/butcher_sound = 'sound/effects/butcher.ogg'
 	/// Whether or not this component can be used to butcher currently. Used to temporarily disable butchering
 	var/butchering_enabled = TRUE
 	/// Whether or not this component is compatible with blunt tools.
@@ -56,18 +56,27 @@
 
 /datum/component/butchering/proc/startNeckSlice(obj/item/source, mob/living/carbon/human/H, mob/living/user)
 	if(DOING_INTERACTION_WITH_TARGET(user, H))
-		to_chat(user, "<span class = 'warning'>You're already interacting with [H]!</span>")
+		to_chat(user, span_warning("You're already interacting with [H]!"))
 		return
 
-	user.visible_message(span_danger("[user] is slitting [H]'s throat!"), \
-					span_danger("You start slicing [H]'s throat!"), \
-					span_hear("You hear a cutting noise!"), ignored_mobs = H)
-	H.show_message(span_userdanger("Your throat is being slit by [user]!"), MSG_VISUAL, \
-					"<span class = 'userdanger'>Something is cutting into your neck!</span>", NONE)
+	user.visible_message(
+		span_danger("[user] is slitting [H]'s throat!"),
+		span_danger("You start slicing [H]'s throat!"),
+		span_hear("You hear a sickening slash!"), ignored_mobs = H,
+		)
+
+	H.show_message(
+		span_userdanger("Your throat is being slit by [user]!"),
+		MSG_VISUAL,
+		span_userdanger("Something is cutting into your neck!"),
+		NONE
+		)
+
 	log_combat(user, H, "starts slicing the throat of")
 
 	playsound(H.loc, butcher_sound, 50, TRUE, -1)
 	if(do_after(user, clamp(500 / source.force, 30, 100), H) && H.Adjacent(source))
+
 		if(H.has_status_effect(/datum/status_effect/neck_slice))
 			user.show_message(span_warning("[H]'s neck has already been already cut, you can't make the bleeding any worse!"), MSG_VISUAL, \
 							span_warning("Their neck has already been already cut, you can't make the bleeding any worse!"))
@@ -82,8 +91,13 @@
 		H.visible_message(span_danger("[user] slits [H]'s throat!"), \
 					span_userdanger("[user] slits your throat..."))
 		log_combat(user, H, "finishes slicing the throat of")
-		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD)
-		throat_in_question.adjust_bleeding(20)
+
+		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
+
+		var/obj/item/bodypart/slit_throat = H.get_bodypart(BODY_ZONE_HEAD)
+		if(slit_throat)
+			var/datum/wound/slash/critical/screaming_through_a_slit_throat = new
+			screaming_through_a_slit_throat.apply_wound(slit_throat)
 		H.apply_status_effect(/datum/status_effect/neck_slice)
 
 /datum/component/butchering/proc/Butcher(mob/living/butcher, mob/living/meat)

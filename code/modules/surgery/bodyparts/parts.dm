@@ -11,6 +11,7 @@
 	px_y = 0
 	stam_damage_coeff = 1
 	max_stamina_damage = 120
+	wound_resistance = 10
 	is_dimorphic = TRUE
 	var/obj/item/cavity_item
 	var/acceptable_bodytype = BODYTYPE_HUMANOID
@@ -57,7 +58,7 @@
 		be possessed by the devil? This arm appears to be possessed by no \
 		one though."
 	icon_state = "human_l_arm"
-	attack_verb = list("slaps", "punches")
+	attack_verb = list("slapped", "punched")
 	max_damage = 50
 	max_stamina_damage = 50
 	body_zone = BODY_ZONE_L_ARM
@@ -154,7 +155,7 @@
 	desc = "Over 87% of humans are right handed. That figure is much lower \
 		among humans missing their right arm."
 	icon_state = "human_r_arm"
-	attack_verb = list("slaps", "punches")
+	attack_verb = list("slapped", "punched")
 	max_damage = 50
 	body_zone = BODY_ZONE_R_ARM
 	body_part = ARM_RIGHT
