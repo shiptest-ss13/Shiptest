@@ -1,4 +1,4 @@
-datum/crafting_recipe/food/kebab
+/datum/crafting_recipe/food/kebab
 	name = "Kebab"
 	reqs = list(
 		/obj/item/stack/rods = 1,

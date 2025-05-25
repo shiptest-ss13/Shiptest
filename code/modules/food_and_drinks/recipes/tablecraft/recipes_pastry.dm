@@ -8,7 +8,6 @@
 	result = /obj/item/food/waffles
 	subcategory = CAT_PASTRY
 
-
 /datum/crafting_recipe/food/soylenviridians
 	name = "Soylent viridians"
 	reqs = list(
@@ -26,7 +25,6 @@
 	)
 	result = /obj/item/food/soylentgreen
 	subcategory = CAT_PASTRY
-
 
 /datum/crafting_recipe/food/rofflewaffles
 	name = "Roffle waffles"
@@ -236,7 +234,7 @@
 	result = /obj/item/food/chococornet
 	subcategory = CAT_PASTRY
 
-datum/crafting_recipe/food/oatmealcookie
+/datum/crafting_recipe/food/oatmealcookie
 	name = "Oatmeal cookie"
 	reqs = list(
 		/obj/item/food/pastrybase = 1,

@@ -274,7 +274,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 		/obj/item/organ/heart,
 		/obj/item/organ/lungs,
 		/obj/item/organ/tongue,
-		/obj/item/organ/appendix/,
+		/obj/item/organ/appendix,
 		)
 	var/meteorgibs = /obj/effect/gibspawner/generic
 	threat = 2

@@ -546,7 +546,7 @@
 	desc = "Nutritious?"
 	icon_state = "berrypile"
 
-obj/item/food/grown/berries/death/stealth //I warned you!
+/obj/item/food/grown/berries/death/stealth //I warned you!
 	seed = /obj/item/seeds/berry/death
 	name = "bunch of berries"
 	desc = "Nutritious?"

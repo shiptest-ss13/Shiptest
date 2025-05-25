@@ -499,4 +499,4 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(spawn_type = /obj/item/food/nugget))
+	STR.set_holdable(list(/obj/item/food/nugget))
