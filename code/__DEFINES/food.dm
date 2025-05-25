@@ -14,10 +14,10 @@
 #define BREAKFAST (1<<13)
 #define CLOTH (1<<14)
 #define GRILLED (1<<15)
-#define NUTS (1<<16)
+/*#define NUTS (1<<16)
 #define SEAFOOD (1<<17)
 #define ORANGES (1<<18)
-#define BUGS (1<<19)
+#define BUGS (1<<19)*/
 #define GORE (1<<20)
 
 DEFINE_BITFIELD(foodtypes, list(
@@ -39,9 +39,6 @@ DEFINE_BITFIELD(foodtypes, list(
 	"GRILLED" = GRILLED,
 	"GORE" = GORE,
 	"NUTS" = NUTS,
-	"SEAFOOD" = SEAFOOD,
-	"ORANGES" = ORANGES,
-	"BUGS" = BUGS,
 ))
 
 /// IC meaning (more or less) for food flags
