@@ -385,7 +385,7 @@
 
 	if(GLOB.holidays[CATACLYSM_DAY])
 		to_chat(humanc, span_big("It's Cataclysm Day! You can choose how your character celebrates."))
-		to_chat(humanc, span_notice("Read up about Cataclysm Day <a href=\"https://hackmd.io/@shiptest/B1y-5Y1fge\">Here!</a>"))
+		to_chat(humanc, span_notice("Read up about Cataclysm Day <a href=\"https://shiptest.net/wiki/Cataclysm_Day\">Here!</a>"))
 
 		var/list/choices = list()
 		choices["SRM Hunting Ban Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
