@@ -1,0 +1,60 @@
+{
+	"faction": "/datum/faction/syndicate/hardliners",
+	"prefix": "ISV",
+	"manufacturer": "ISF Spacecraft",
+	"namelists": [
+		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS"
+	],
+	"map_name": "Y600-H Leyak-class Covert Frigate",
+	"map_short_name": "Leyak-class",
+	"description": "The Leyak-class found its origin as a personal commission by the earliest Hardliner groups associated with cybersun, requested to be under the radar at a glance, but to also be suitable for surprise ambushes and direct combat, or other mercenary work. Notably, these vessels have found varying success rates due to crew composition, some deemed too dysfunctional to function, and others garnering a reputation of being brutal and effective.",
+	"tags": [
+		"RP Focus",
+		"Combat"
+	],
+	"map_path": "_maps/shuttles/syndicate/syndicate_hardliners_leyak.dmm",
+	"map_id": "syndicate_hardliners_leyak",
+	"limit": 1,
+	"starting_funds": 1500,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Sergeant": {
+			"outfit": "/datum/outfit/job/syndicate/hos/gorlex",
+			"officer": true,
+			"slots": 1
+		},
+		"Supervisor": {
+			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
+			"officer": true,
+			"slots": 1
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/syndicate/doctor/gorlex",
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"slots": 1
+		},
+		"Wrecker": {
+			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+			"slots":1
+		},
+		"Trooper": {
+			"outfit": "/datum/outfit/job/syndicate/security/gorlex",
+			"slots": 2
+		},
+		"Junior Agent": {
+			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

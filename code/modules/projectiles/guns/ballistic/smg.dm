@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/smg
+	bad_type = /obj/item/gun/ballistic/automatic/smg
 	show_magazine_on_sprite = TRUE
 
 	burst_size = 2
@@ -168,6 +169,8 @@
 		/obj/item/attachment/foldable_stock/inteq
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
+
+NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	name = "\improper Nanotrasen Saber SMG"

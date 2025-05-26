@@ -102,7 +102,7 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 4,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
+		/obj/effect/spawner/random/polar_bear = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
@@ -116,7 +116,9 @@
 		/obj/structure/spawner/burrow/ice_planet = 80,
 		/obj/structure/vein/ice = 25,
 		/obj/structure/vein/ice/classtwo = 50,
+		/obj/structure/vein/ice/classtwo/rare = 10,
 		/obj/structure/vein/ice/classthree = 10,
+		/obj/structure/vein/ice/classthree/rare = 5,
 	)
 
 /datum/biome/snow/lush
@@ -174,7 +176,7 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 2,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
+		/obj/effect/spawner/random/polar_bear = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
@@ -198,7 +200,7 @@
 	mob_spawn_chance = 2
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
+		/obj/effect/spawner/random/polar_bear = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
@@ -250,7 +252,7 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 4,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
+		/obj/effect/spawner/random/polar_bear = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
@@ -294,7 +296,7 @@
 	mob_spawn_chance = 2
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
+		/obj/effect/spawner/random/polar_bear = 30,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,

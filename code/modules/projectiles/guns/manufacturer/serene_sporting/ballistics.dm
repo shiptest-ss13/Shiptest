@@ -50,6 +50,7 @@
 	default_attachments = list(/obj/item/attachment/m17_barrel)
 
 EMPTY_GUN_HELPER(automatic/pistol/m17)
+NO_MAG_GUN_HELPER(automatic/pistol/m17)
 
 /obj/item/ammo_box/magazine/m17
 	name = "Model 17 magazine (.22lr)"
@@ -126,11 +127,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	desc = "A large handgun chambered .44 Roumain and manufactured by Serene Outdoors. Modified to Inteq Risk Management Group's standards and issued as a heavy sidearm for officers."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/serene_outdoors/onmob.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "m20_inteq"
-	item_state = "inteq_generic"
+	item_state = "m20_inteq"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m20_auto_elite
 	allowed_ammo_types = list(
@@ -371,6 +372,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
 	)
 
 EMPTY_GUN_HELPER(automatic/m15)
+NO_MAG_GUN_HELPER(automatic/m15)
 
 /obj/item/ammo_box/magazine/m15
 	name = "Model 15 magazine (5.56x42mm CLIP)"

@@ -29,7 +29,7 @@
 
 /datum/brain_trauma/severe/aphasia/on_gain()
 	owner.add_blocked_language(subtypesof(/datum/language/) - /datum/language/aphasia, LANGUAGE_APHASIA)
-	owner.grant_language(/datum/language/aphasia, TRUE, TRUE, LANGUAGE_APHASIA)
+	owner.grant_language(/datum/language/aphasia, source=LANGUAGE_APHASIA)
 	..()
 
 /datum/brain_trauma/severe/aphasia/on_lose()

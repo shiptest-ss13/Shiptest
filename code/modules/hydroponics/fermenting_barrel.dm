@@ -43,7 +43,7 @@
 
 /obj/structure/fermenting_barrel/attackby(obj/item/object, mob/user, params)
 	if(open)
-		if(istype(object, /obj/item/reagent_containers/food/snacks/grown) && insert_fruit(user, object))
+		if(istype(object, /obj/item/food/grown) && insert_fruit(user, object))
 			balloon_alert(user, "added fruit")
 			return
 	else if(object.is_refillable())
@@ -75,7 +75,7 @@
 	return ..()
 
 /// Adds the fruit to the barrel to queue the fermentation
-/obj/structure/fermenting_barrel/proc/insert_fruit(mob/user, obj/item/reagent_containers/food/snacks/grown/fruit)
+/obj/structure/fermenting_barrel/proc/insert_fruit(mob/user, obj/item/food/grown/fruit)
 	if(reagents.total_volume + potential_volume > reagents.maximum_volume)
 		balloon_alert(user, "it's full!")
 		return FALSE
@@ -110,7 +110,7 @@
 		return stop_fermentation()
 	if(reagents.total_volume >= reagents.maximum_volume)
 		return stop_fermentation()
-	var/obj/item/reagent_containers/food/snacks/grown/fruit = locate(/obj/item/reagent_containers/food/snacks/grown) in contents
+	var/obj/item/food/grown/fruit = locate(/obj/item/food/grown) in contents
 	if(!fruit)
 		return stop_fermentation()
 	fruit.ferment()

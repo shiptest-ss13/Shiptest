@@ -12,7 +12,7 @@ const VendingRow = (props, context) => {
   return (
     <Table.Row>
       <Table.Cell collapsing>
-        {(product.base64 && (
+        {(product.img && (
           <img
             src={`data:image/jpeg;base64,${product.img}`}
             style={{
@@ -41,10 +41,7 @@ const VendingRow = (props, context) => {
             'good'
           }
         >
-          {(!productStock && '0') ||
-            (product.max_amount >= 0 && productStock) ||
-            (product.max_amount < 0 && '∞')}{' '}
-          in stock
+          {custom ? product.amount : productStock.amount} in stock
         </Box>
       </Table.Cell>
       <Table.Cell collapsing textAlign="center">

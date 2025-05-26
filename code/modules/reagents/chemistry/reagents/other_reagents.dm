@@ -170,8 +170,8 @@
 	O.extinguish()
 	O.acid_level = 0
 	// Monkey cube
-	if(istype(O, /obj/item/reagent_containers/food/snacks/monkeycube))
-		var/obj/item/reagent_containers/food/snacks/monkeycube/cube = O
+	if(istype(O, /obj/item/food/monkeycube))
+		var/obj/item/food/monkeycube/cube = O
 		cube.Expand()
 
 	// Dehydrated carp
@@ -890,14 +890,6 @@
 	reagent_state = SOLID
 	color = "#A8A8A8" // rgb: 168, 168, 168
 	taste_description = "metal"
-
-/datum/reagent/quartz
-	name = "Quartz"
-	description = "A fine dust of Quartz, a precursor to silicon and glass."
-	reagent_state = SOLID
-	color = "#fcedff"
-	taste_mult = 0
-	material = /datum/material/quartz
 
 /datum/reagent/silicon
 	name = "Silicon"
@@ -2651,14 +2643,13 @@
 
 /datum/reagent/anti_radiation_foam/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR))
-		M.radiation = M.radiation - rand(max(M.radiation * 0.95, M.radiation)) //get the hose
+		M.radiation = M.radiation - rand(max(M.radiation * 0.07, 0)) //get the hose
 		M.ExtinguishMob()
 	..()
 
 
 /datum/reagent/anti_radiation_foam/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(0.5, 200)
-	M.adjust_disgust(4)
+	M.radiation = M.radiation - rand(max(M.radiation * 0.03, 0))
 	..()
 	. = 1
 

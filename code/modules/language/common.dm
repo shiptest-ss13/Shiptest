@@ -11,6 +11,12 @@
 
 	icon_state = "galcom"
 
+	mutual_understanding = list(
+		/datum/language/solarian_international = 20,
+		/datum/language/kalixcian_common = 20,
+	)
+
+
 //Syllable Lists
 /*
 	This list really long, mainly because I can't make up my mind about which mandarin syllables should be removed,
