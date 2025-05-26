@@ -25,15 +25,12 @@
 /obj/item/reagent_containers/food/snacks/salad/@SUBTYPES: /obj/item/food/salad{@OLD}
 /obj/item/reagent_containers/food/snacks/soup/@subtypes: /obj/item/food/soup{@OLD}
 
-/obj/item/reagent_containers/food/snacks/grilledcheese : /obj/item/food/grilled_cheese_sandwich
-/obj/item/reagent_containers/food/snacks/jellysandwich : /obj/item/food/jellysandwich
-/obj/item/reagent_containers/food/snacks/sandwich : /obj/item/food/sandwich{@OLD)
-/obj/item/reagent_containers/food/snacks/grilledcheese : /obj/item/food/grilled_cheese_sandwich
-/obj/item/reagent_containers/food/snacks/jellysandwich : /obj/item/food/jellysandwich
+/obj/item/food/sandwich : /obj/item/reagent_containers/food/snacks/sandwich{@OLD}
 
 /obj/item/food/grilled_cheese_sandwich : /obj/item/reagent_containers/food/snacks/grilledcheese{@OLD}
 /obj/item/food/jellysandwich : /obj/item/reagent_containers/food/snacks/jellysandwich{@OLD}
-
+/obj/item/food/notasandwich : /obj/item/reagent_containers/food/snacks/notasandwich{@OLD}
+/obj/item/food/hotdog : /obj/item/reagent_containers/food/snacks/hotdog{@OLD}
 
 /obj/item/reagent_containers/food/snacks/donkpocket/@SUBTYPES : /obj/item/food/donkpocket/@SUBTYPES{@OLD}
 
@@ -59,6 +56,7 @@
 /obj/item/reagent_containers/food/snacks/cherrycupcake : /obj/item/food/cherrycupcake{@OLD}
 /obj/item/reagent_containers/food/snacks/cherrycupcake/blue : /obj/item/food/cherrycupcake/blue{@OLD}
 /obj/item/reagent_containers/food/snacks/honeybun : /obj/item/food/honeybun{@OLD}
+
 
 /obj/item/reagent_containers/food/snacks/meat/@SUBTYPES : /obj/item/food/meat/@SUBTYPES{@OLD}
 /obj/item/reagent_containers/food/snacks/fishmeat/@SUBTYPES : /obj/item/food/fishmeat/@SUBTYPES{@OLD}
@@ -96,7 +94,9 @@
 /obj/item/reagent_containers/food/snacks/monkeycube : /obj/item/food/monkeycube{@OLD}
 /obj/item/reagent_containers/food/snacks/vegetariansushiroll : /obj/item/food/vegetariansushiroll{@OLD}
 
+
 /obj/item/reagent_containers/food/snacks/pie/@SUBTYPES : /obj/item/food/pie/@SUBTYPES{@OLD}
+
 
 /obj/item/reagent_containers/food/snacks/grown/@SUBTYPES : /obj/item/food/grown/@SUBTYPES{@OLD}
 /obj/item/food/breadslice/moldy : @DELETE
