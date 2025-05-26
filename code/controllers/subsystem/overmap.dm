@@ -621,6 +621,9 @@ SUBSYSTEM_DEF(overmap)
 	if(dynamic_datum.populate_turfs)
 		mapgen.populate_turfs(vlevel.get_unreserved_block())
 
+	///post generation things, such as greebles or smoothening out terrain generation.
+	mapgen.post_generation(vlevel.get_unreserved_block())
+
 	if(dynamic_datum.weather_controller_type)
 		new dynamic_datum.weather_controller_type(mapzone)
 
