@@ -115,45 +115,6 @@
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 
-// Gum
-
-///obj/item/food/bubblegum Need to port this some time
-
-/obj/item/food/gumball
-	name = "gumball"
-	desc = "A colorful, sugary gumball."
-	// icon = 'icons/obj/food/lollipop.dmi'
-	icon_state = "gumball"
-	food_reagents = list(
-		/datum/reagent/consumable/sugar = 5,
-		/datum/reagent/medicine/bicaridine = 2,
-		/datum/reagent/medicine/kelotane = 2
-	)
-	tastes = list("candy")
-	foodtypes = JUNKFOOD
-	food_flags = FOOD_FINGER_FOOD
-	slot_flags = ITEM_SLOT_MASK
-	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/food/gumball/Initialize(mapload)
-	. = ..()
-	color = rgb(rand(0, 255), rand(0, 255), rand(0, 255))
-
-/obj/item/food/gumball/cyborg
-	var/spamchecking = TRUE
-
-/obj/item/food/gumball/cyborg/Initialize(mapload)
-	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(spamcheck)), 1200)
-
-/obj/item/food/gumball/cyborg/equipped(mob/living/user, slot)
-	. = ..(user, slot)
-	spamchecking = FALSE
-
-/obj/item/food/gumball/cyborg/proc/spamcheck()
-	if(spamchecking)
-		qdel(src)
-
 /obj/item/food/spiderlollipop
 	name = "spider lollipop"
 	desc = "Still gross, but at least it has a mountain of sugar on it."
