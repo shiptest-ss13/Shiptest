@@ -65,8 +65,8 @@
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "alarm"
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 4
-	active_power_usage = 1200
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	power_channel = AREA_USAGE_ENVIRON
 	//req_access = list(ACCESS_ATMOSPHERICS)
 	max_integrity = 250
@@ -106,6 +106,11 @@
 	var/alarm_frequency = FREQ_ATMOS_ALARMS
 	var/datum/radio_frequency/radio_connection
 
+	//anything outright hazardous (flammable, toxic, generally Weird)
+	var/list/filter_basic = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_CO, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
+	//anything that isn't o2 or n2.
+	var/list/filter_extra = list(GAS_CO2, GAS_PLASMA, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_FREON, GAS_HYDROGEN, GAS_CHLORINE, GAS_HYDROGEN_CHLORIDE, GAS_H2O, GAS_CO, GAS_ARGON, GAS_AMMONIA, GAS_METHANE, GAS_SO2, GAS_O3)
+
 	var/list/TLV = list( // Breathable air.
 		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
 		"temperature"				= new/datum/tlv(T0C, T0C+10, T0C+40, T0C+66),
@@ -115,13 +120,45 @@
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
-		GAS_HYPERNOB				= new/datum/tlv(-1, -1, 1000, 1000), // Hyper-Noblium is inert and nontoxic
 		GAS_H2O						= new/datum/tlv/dangerous,
 		GAS_TRITIUM					= new/datum/tlv/dangerous,
-		GAS_STIMULUM				= new/datum/tlv/dangerous,
-		GAS_NITRYL					= new/datum/tlv/dangerous,
-		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 5, 6), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
-		GAS_FREON 					= new/datum/tlv/dangerous
+		GAS_FREON 					= new/datum/tlv/dangerous,
+		GAS_HYDROGEN				= new/datum/tlv/dangerous,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000), //inert and nontoxic
+		GAS_AMMONIA					= new/datum/tlv/dangerous,
+		GAS_METHANE					= new/datum/tlv/dangerous,
+		GAS_SO2						= new/datum/tlv/dangerous,
+		GAS_O3						= new/datum/tlv/dangerous,
+	)
+
+/obj/machinery/airalarm/freezer // Won't go off for low temps; Won't heat the room
+	desc = "A machine that monitors atmosphere levels. This one is set to go off in room temperature, as to not let freezer contents spoil."
+	heating_manage = FALSE
+
+	TLV = list( // Breathable air.
+		"pressure"					= new/datum/tlv(HAZARD_LOW_PRESSURE, WARNING_LOW_PRESSURE, WARNING_HIGH_PRESSURE, HAZARD_HIGH_PRESSURE), // kPa. Values are min2, min1, max1, max2
+		"temperature"				= new/datum/tlv(T0C-10, T0C, T0C+10, T0C+66), // Lowered since it's a freezer
+		GAS_O2						= new/datum/tlv(16, 19, 40, 50),
+		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
+		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
+		GAS_PLASMA					= new/datum/tlv/dangerous,
+		GAS_NITROUS					= new/datum/tlv/dangerous,
+		GAS_BZ						= new/datum/tlv/dangerous,
+		GAS_H2O						= new/datum/tlv/dangerous,
+		GAS_TRITIUM					= new/datum/tlv/dangerous,
+		GAS_FREON 					= new/datum/tlv/dangerous,
+		GAS_HYDROGEN				= new/datum/tlv/dangerous,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000),
+		GAS_AMMONIA					= new/datum/tlv/dangerous,
+		GAS_METHANE					= new/datum/tlv/dangerous,
+		GAS_SO2						= new/datum/tlv/dangerous,
+		GAS_O3						= new/datum/tlv/dangerous,
 	)
 
 /obj/machinery/airalarm/server // No checks here.
@@ -134,13 +171,18 @@
 		GAS_PLASMA					= new/datum/tlv/no_checks,
 		GAS_NITROUS					= new/datum/tlv/no_checks,
 		GAS_BZ						= new/datum/tlv/no_checks,
-		GAS_HYPERNOB				= new/datum/tlv/no_checks,
 		GAS_H2O						= new/datum/tlv/no_checks,
 		GAS_TRITIUM					= new/datum/tlv/no_checks,
-		GAS_STIMULUM				= new/datum/tlv/no_checks,
-		GAS_NITRYL					= new/datum/tlv/no_checks,
-		GAS_PLUOXIUM				= new/datum/tlv/no_checks,
-		GAS_FREON					= new/datum/tlv/no_checks
+		GAS_FREON					= new/datum/tlv/no_checks,
+		GAS_HYDROGEN				= new/datum/tlv/no_checks,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv/no_checks,
+		GAS_AMMONIA					= new/datum/tlv/no_checks,
+		GAS_METHANE					= new/datum/tlv/no_checks,
+		GAS_SO2						= new/datum/tlv/no_checks,
+		GAS_O3						= new/datum/tlv/no_checks,
 	)
 	heating_manage = FALSE
 
@@ -154,13 +196,18 @@
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
-		GAS_HYPERNOB				= new/datum/tlv(-1, -1, 1000, 1000), // Hyper-Noblium is inert and nontoxic
 		GAS_H2O						= new/datum/tlv/dangerous,
 		GAS_TRITIUM					= new/datum/tlv/dangerous,
-		GAS_STIMULUM				= new/datum/tlv/dangerous,
-		GAS_NITRYL					= new/datum/tlv/dangerous,
-		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 1000, 1000), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
-		GAS_FREON					=  new/datum/tlv/dangerous
+		GAS_FREON					= new/datum/tlv/dangerous,
+		GAS_HYDROGEN				= new/datum/tlv/dangerous,
+		GAS_CHLORINE				= new/datum/tlv/dangerous,
+		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
+		GAS_CO						= new/datum/tlv/dangerous,
+		GAS_ARGON					= new/datum/tlv(-1, -1, 1000, 1000), //inert and nontoxic
+		GAS_AMMONIA					= new/datum/tlv/dangerous,
+		GAS_METHANE					= new/datum/tlv/dangerous,
+		GAS_SO2						= new/datum/tlv/dangerous,
+		GAS_O3						= new/datum/tlv/dangerous,
 	)
 	heating_manage = FALSE
 
@@ -225,8 +272,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 /obj/machinery/airalarm/Destroy()
 	SSradio.remove_object(src, frequency)
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	var/area/ourarea = get_area(src)
 	ourarea.atmosalert(FALSE, src)
 	return ..()
@@ -239,11 +285,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 	. = ..()
 	switch(buildstage)
 		if(0)
-			. += "<span class='notice'>It is missing air alarm electronics.</span>"
+			. += span_notice("It is missing air alarm electronics.")
 		if(1)
-			. += "<span class='notice'>It is missing wiring.</span>"
+			. += span_notice("It is missing wiring.")
 		if(2)
-			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] the interface.</span>"
+			. += span_notice("Alt-click to [locked ? "unlock" : "lock"] the interface.")
+
+/obj/machinery/airalarm/examine_more(mob/user)
+	. = ..()
+	if(buildstage == 2)
+		ui_interact(user)
+
 
 /obj/machinery/airalarm/ui_status(mob/user)
 	if(user.has_unlimited_silicon_privilege && aidisabled)
@@ -539,7 +591,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(GAS_CO2, GAS_BZ),
+					"set_filters" = filter_basic,
 					"scrubbing" = 1,
 					"widenet" = 0
 				), signal_source)
@@ -553,19 +605,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(
-						GAS_CO2,
-						GAS_PLASMA,
-						GAS_H2O,
-						GAS_HYPERNOB,
-						GAS_NITROUS,
-						GAS_NITRYL,
-						GAS_TRITIUM,
-						GAS_BZ,
-						GAS_STIMULUM,
-						GAS_PLUOXIUM,
-						GAS_FREON
-					),
+					"set_filters" = filter_extra,
 					"scrubbing" = 1,
 					"widenet" = 1
 				), signal_source)
@@ -592,7 +632,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			for(var/device_id in A.air_scrub_names)
 				send_signal(device_id, list(
 					"power" = 1,
-					"set_filters" = list(GAS_CO2, GAS_BZ),
+					"set_filters" = filter_basic,
 					"scrubbing" = 1,
 					"widenet" = 0
 				), signal_source)
@@ -684,7 +724,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		. += mutable_appearance(icon, "alarm_sign")
 		. += mutable_appearance(icon, "alarm_sign", layer, EMISSIVE_PLANE)
 
-/obj/machinery/airalarm/process()
+/obj/machinery/airalarm/process(seconds_per_tick)
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
 		return
 
@@ -725,7 +765,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 /obj/machinery/airalarm/proc/airalarm_toggleheat()
 	if(heating_manage)
 		if(heating_current_mode == "Heat")
-			visible_message("<span class='notice'>The air alarm makes a quiet click as it stops heating the area</span>")
+			visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area"))
 			heating_current_mode = "Idle"
 			heating_manage = FALSE
 			return
@@ -750,17 +790,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		wanted_mode = "Idle"
 
 	if(wanted_mode == "Idle" & heating_current_mode == "Heat")
-		visible_message("<span class='notice'>The air alarm makes a quiet click as it stops heating the area</span>")
+		visible_message(span_notice("The air alarm makes a quiet click as it stops heating the area"))
 		playsound(src, 'sound/machines/terminal_off.ogg', 40)
 		heating_current_mode = "Idle"
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		return
 
 	if(wanted_mode == "Heat" & heating_current_mode == "Idle")
-		visible_message("<span class='notice'>The air alarm makes a quiet click as it starts heating the area</span>")
+		visible_message(span_notice("The air alarm makes a quiet click as it starts heating the area"))
 		playsound(src, 'sound/machines/terminal_on.ogg', 40)
 		heating_current_mode = "Heat"
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 
 	if(heating_current_mode == "Heat")
 		var/temperature = environment.return_temperature()
@@ -808,7 +848,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		if(2)
 			if(W.tool_behaviour == TOOL_WIRECUTTER && panel_open && wires.is_all_cut())
 				W.play_tool_sound(src)
-				to_chat(user, "<span class='notice'>You cut the final wires.</span>")
+				to_chat(user, span_notice("You cut the final wires."))
 				new /obj/item/stack/cable_coil(loc, 5)
 				buildstage = 1
 				update_appearance()
@@ -816,7 +856,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			else if(W.tool_behaviour == TOOL_SCREWDRIVER)  // Opening that Air Alarm up.
 				W.play_tool_sound(src)
 				panel_open = !panel_open
-				to_chat(user, "<span class='notice'>The wires have been [panel_open ? "exposed" : "unexposed"].</span>")
+				to_chat(user, span_notice("The wires have been [panel_open ? "exposed" : "unexposed"]."))
 				update_appearance()
 				return
 			else if(istype(W, /obj/item/card/id) || istype(W, /obj/item/pda))// trying to unlock the interface with an ID card
@@ -827,12 +867,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 				return
 		if(1)
 			if(W.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message("<span class='notice'>[user.name] removes the electronics from [src.name].</span>", \
-									"<span class='notice'>You start prying out the circuit...</span>")
+				user.visible_message(span_notice("[user.name] removes the electronics from [src.name]."), \
+									span_notice("You start prying out the circuit..."))
 				W.play_tool_sound(src)
 				if (W.use_tool(src, user, 20))
 					if (buildstage == 1)
-						to_chat(user, "<span class='notice'>You remove the air alarm electronics.</span>")
+						to_chat(user, span_notice("You remove the air alarm electronics."))
 						new /obj/item/electronics/airalarm(src.loc)
 						playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 						buildstage = 0
@@ -842,14 +882,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 			if(istype(W, /obj/item/stack/cable_coil))
 				var/obj/item/stack/cable_coil/cable = W
 				if(cable.get_amount() < 5)
-					to_chat(user, "<span class='warning'>You need five lengths of cable to wire the air alarm!</span>")
+					to_chat(user, span_warning("You need five lengths of cable to wire the air alarm!"))
 					return
-				user.visible_message("<span class='notice'>[user.name] wires the air alarm.</span>", \
-									"<span class='notice'>You start wiring the air alarm...</span>")
+				user.visible_message(span_notice("[user.name] wires the air alarm."), \
+									span_notice("You start wiring the air alarm..."))
 				if (do_after(user, 20, target = src))
 					if (cable.get_amount() >= 5 && buildstage == 1)
 						cable.use(5)
-						to_chat(user, "<span class='notice'>You wire the air alarm.</span>")
+						to_chat(user, span_notice("You wire the air alarm."))
 						wires.repair()
 						aidisabled = 0
 						locked = FALSE
@@ -862,7 +902,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		if(0)
 			if(istype(W, /obj/item/electronics/airalarm))
 				if(user.temporarilyRemoveItemFromInventory(W))
-					to_chat(user, "<span class='notice'>You insert the circuit.</span>")
+					to_chat(user, span_notice("You insert the circuit."))
 					buildstage = 1
 					update_appearance()
 					qdel(W)
@@ -872,14 +912,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 				var/obj/item/electroadaptive_pseudocircuit/P = W
 				if(!P.adapt_circuit(user, 25))
 					return
-				user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
-				"<span class='notice'>You adapt an air alarm circuit and slot it into the assembly.</span>")
+				user.visible_message(span_notice("[user] fabricates a circuit and places it into [src]."), \
+				span_notice("You adapt an air alarm circuit and slot it into the assembly."))
 				buildstage = 1
 				update_appearance()
 				return
 
 			if(W.tool_behaviour == TOOL_WRENCH)
-				to_chat(user, "<span class='notice'>You detach \the [src] from the wall.</span>")
+				to_chat(user, span_notice("You detach \the [src] from the wall."))
 				W.play_tool_sound(src)
 				new /obj/item/wallframe/airalarm(user.loc)
 				qdel(src)
@@ -895,8 +935,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 /obj/machinery/airalarm/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_UPGRADE_SIMPLE_CIRCUITS)
-			user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
-			"<span class='notice'>You adapt an air alarm circuit and slot it into the assembly.</span>")
+			user.visible_message(span_notice("[user] fabricates a circuit and places it into [src]."), \
+			span_notice("You adapt an air alarm circuit and slot it into the assembly."))
 			buildstage = 1
 			update_appearance()
 			return TRUE
@@ -911,21 +951,21 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 /obj/machinery/airalarm/proc/togglelock(mob/living/user)
 	if(machine_stat & (NOPOWER|BROKEN))
-		to_chat(user, "<span class='warning'>It does nothing!</span>")
+		to_chat(user, span_warning("It does nothing!"))
 	else
 		if(src.allowed(usr) && !wires.is_cut(WIRE_IDSCAN))
 			locked = !locked
-			to_chat(user, "<span class='notice'>You [ locked ? "lock" : "unlock"] the air alarm interface.</span>")
+			to_chat(user, span_notice("You [ locked ? "lock" : "unlock"] the air alarm interface."))
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='danger'>Access denied.</span>")
+			to_chat(user, span_danger("Access denied."))
 	return
 
 /obj/machinery/airalarm/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	visible_message("<span class='warning'>Sparks fly out of [src]!</span>", "<span class='notice'>You emag [src], disabling its safeties.</span>")
+	visible_message(span_warning("Sparks fly out of [src]!"), span_notice("You emag [src], disabling its safeties."))
 	playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 
 /obj/machinery/airalarm/deconstruct(disassembled = TRUE)

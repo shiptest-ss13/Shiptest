@@ -199,7 +199,7 @@
 	icon_state = "dwarf_moonfish"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 2
-	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/moonfish
+	fillet_type = /obj/item/food/fishmeat/moonfish
 	average_size = 100
 	average_weight = 2000
 
@@ -211,7 +211,7 @@
 	icon_state = "gunner_jellyfish"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 4
-	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish
+	fillet_type = /obj/item/food/fishmeat/gunner_jellyfish
 	fishing_traits = list(/datum/fishing_trait/wary)
 
 	fishing_difficulty_modifier = 5
@@ -233,7 +233,7 @@
 	icon_state = "armorfish"
 	required_fluid_type = AQUARIUM_FLUID_SALTWATER
 	stable_population = 10
-	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/armorfish
+	fillet_type = /obj/item/food/fishmeat/armorfish
 
 /obj/item/storage/box/fish_debug
 	name = "box full of fish"
@@ -249,7 +249,7 @@
 	random_case_rarity = FISH_RARITY_VERY_RARE
 	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
 	stable_population = 4
-	fillet_type = /obj/item/reagent_containers/food/snacks/fishmeat/donkfish
+	fillet_type = /obj/item/food/fishmeat/donkfish
 
 	fishing_difficulty_modifier = 10
 
@@ -261,17 +261,17 @@
 	required_fluid_type = AQUARIUM_FLUID_ANADROMOUS
 	stable_population = 3
 
-/obj/item/fish/emulsijack/process(delta_time)
+/obj/item/fish/emulsijack/process(seconds_per_tick)
 	var/emulsified = FALSE
 	var/obj/structure/aquarium/aquarium = loc
 	if(istype(aquarium))
 		for(var/obj/item/fish/victim in aquarium)
 			if(istype(victim, /obj/item/fish/emulsijack))
 				continue //no team killing
-			victim.adjust_health((victim.health - 3) * delta_time) //the victim may heal a bit but this will quickly kill
+			victim.adjust_health((victim.health - 3) * seconds_per_tick) //the victim may heal a bit but this will quickly kill
 			emulsified = TRUE
 	if(emulsified)
-		adjust_health((health + 3) * delta_time)
+		adjust_health((health + 3) * seconds_per_tick)
 		last_feeding = world.time //emulsijack feeds on the emulsion!
 	..()
 
@@ -282,7 +282,7 @@
 	random_case_rarity = FISH_RARITY_RARE
 	required_fluid_type = AQUARIUM_FLUID_FRESHWATER
 	stable_population = 10 //set by New, but this is the default config value
-	fillet_type = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie //eww...
+	fillet_type = /obj/item/food/meat/slab/human/mutant/zombie
 
 	fish_ai_type = FISH_AI_ZIPPY
 	favorite_bait = list(

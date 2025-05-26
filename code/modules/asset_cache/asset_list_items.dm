@@ -96,32 +96,50 @@
 /datum/asset/spritesheet/simple/paper
 	name = "paper"
 	assets = list(
-		"stamp-clown" = 'icons/stamp_icons/large_stamp-clown.png',
 		"stamp-deny" = 'icons/stamp_icons/large_stamp-deny.png',
 		"stamp-ok" = 'icons/stamp_icons/large_stamp-ok.png',
 		"stamp-void" = 'icons/stamp_icons/large_stamp-void.png',
-		"stamp-hop" = 'icons/stamp_icons/large_stamp-hop.png',
+		"stamp-fo" = 'icons/stamp_icons/large_stamp-fo.png',
 		"stamp-cmo" = 'icons/stamp_icons/large_stamp-cmo.png',
 		"stamp-ce" = 'icons/stamp_icons/large_stamp-ce.png',
 		"stamp-hos" = 'icons/stamp_icons/large_stamp-hos.png',
 		"stamp-rd" = 'icons/stamp_icons/large_stamp-rd.png',
 		"stamp-cap" = 'icons/stamp_icons/large_stamp-cap.png',
 		"stamp-qm" = 'icons/stamp_icons/large_stamp-qm.png',
-		"stamp-law" = 'icons/stamp_icons/large_stamp-law.png',
 		"stamp-chap" = 'icons/stamp_icons/large_stamp-chap.png',
-		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
-		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
 		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
 		"stamp-solgov" = 'icons/stamp_icons/large_stamp-solgov.png',
 		"stamp-inteq" = 'icons/stamp_icons/large_stamp-inteq.png',
-		"stamp-vanguard" = 'icons/stamp_icons/large_stamp-vanguard.png',
-		"stamp-maa" = 'icons/stamp_icons/large_stamp-maa.png',
-		"stamp-artificer" = 'icons/stamp_icons/large_stamp-artificer.png',
+		"stamp-inteq_vanguard" = 'icons/stamp_icons/large_stamp-inteq_vanguard.png',
+		"stamp-inteq_maa" = 'icons/stamp_icons/large_stamp-inteq_maa.png',
+		"stamp-inteq_artificer" = 'icons/stamp_icons/large_stamp-inteq_artificer.png',
+		"stamp-inteq_corpsman" = 'icons/stamp_icons/large_stamp-inteq_corpsman.png',
 		"stamp-clip" = 'icons/stamp_icons/large_stamp-clip.png',
 		"stamp-bard" = 'icons/stamp_icons/large_stamp-bard.png',
 		"stamp-gold" = 'icons/stamp_icons/large_stamp-gold.png',
 		"stamp-cybersun" = 'icons/stamp_icons/large_stamp-cybersun.png',
-		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png'
+		"stamp-biodynamics" = 'icons/stamp_icons/large_stamp-biodynamics.png',
+		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png',
+		"stamp-ngr" = 'icons/stamp_icons/large_stamp-ngr.png',
+		"stamp-ngr_cap" = 'icons/stamp_icons/large_stamp-ngr_captain.png',
+		"stamp-ngr_fore" = 'icons/stamp_icons/large_stamp-ngr_foreman.png',
+		"stamp-ngr_lieu" = 'icons/stamp_icons/large_stamp-ngr_lieutenant.png',
+		"stamp-ngr_ensign" = 'icons/stamp_icons/large_stamp-ngr_ensign.png',
+		"stamp-hardliners" = 'icons/stamp_icons/large_stamp-hardliners.png',
+		"stamp-nt" = 'icons/stamp_icons/large_stamp-nt_generic.png',
+		"stamp-nt_cap" = 'icons/stamp_icons/large_stamp-nt_captain.png',
+		"stamp-nt_fo" = 'icons/stamp_icons/large_stamp-nt_officer.png',
+		"stamp-nt_engdir" = 'icons/stamp_icons/large_stamp-nt_eng_dir.png',
+		"stamp-nt_meddir" = 'icons/stamp_icons/large_stamp-nt_med_dir.png',
+		"stamp-nt_scidir" = 'icons/stamp_icons/large_stamp-nt_sci_dir.png',
+		"stamp-ns" = 'icons/stamp_icons/large_stamp-ns_generic.png',
+		"stamp-ns_cap" = 'icons/stamp_icons/large_stamp-ns_captain.png',
+		"stamp-ns_supdir" = 'icons/stamp_icons/large_stamp-ns_sup_dir.png',
+		"stamp-vi" = 'icons/stamp_icons/large_stamp-vi_generic.png',
+		"stamp-vi_cap" = 'icons/stamp_icons/large_stamp-vi_captain.png',
+		"stamp-vi_secdir" = 'icons/stamp_icons/large_stamp-vi_sec_dir.png',
+		"stamp-vi_lp" = 'icons/stamp_icons/large_stamp-vi_loss_prevention.png',
+		"stamp-nt_central" = 'icons/stamp_icons/large_stamp-nt_central.png'
 	)
 
 /datum/asset/simple/fuckywucky
@@ -147,13 +165,11 @@
 	)
 
 /datum/asset/simple/namespaced/fontawesome
-	legacy = TRUE
 	assets = list(
-		"fa-regular-400.eot"  = 'html/font-awesome/webfonts/fa-regular-400.eot',
-		"fa-regular-400.woff" = 'html/font-awesome/webfonts/fa-regular-400.woff',
-		"fa-solid-900.eot"    = 'html/font-awesome/webfonts/fa-solid-900.eot',
-		"fa-solid-900.woff"   = 'html/font-awesome/webfonts/fa-solid-900.woff',
-		"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
+		"fa-regular-400.ttf" = 'html/font-awesome/webfonts/fa-regular-400.ttf',
+		"fa-solid-900.ttf" = 'html/font-awesome/webfonts/fa-solid-900.ttf',
+		"fa-v4compatibility.ttf" = 'html/font-awesome/webfonts/fa-v4compatibility.ttf',
+		"v4shim.css" = 'html/font-awesome/css/v4-shims.min.css',
 	)
 	parents = list("font-awesome.css" = 'html/font-awesome/css/all.min.css')
 
@@ -162,17 +178,11 @@
 		"sga.ttf" = 'html/sga.ttf'
 	)
 
-/// Override this in order to start the creation of the spritehseet.
-/// This is where all your Insert, InsertAll, etc calls should be inside.
-/datum/asset/spritesheet/proc/create_spritesheets()
-	SHOULD_CALL_PARENT(FALSE)
-	CRASH("create_spritesheets() not implemented for [type]!")
-
 /datum/asset/spritesheet/chat
 	name = "chat"
 
 /datum/asset/spritesheet/chat/register()
-	InsertAll("emoji", 'icons/emoji.dmi')
+	InsertAll("emoji", EMOJI_SET)
 	// pre-loading all lanugage icons also helps to avoid meta
 	InsertAll("language", 'icons/misc/language.dmi')
 	// catch languages which are pulling icons from another file
@@ -182,7 +192,7 @@
 		if (icon != 'icons/misc/language.dmi')
 			var/icon_state = initial(L.icon_state)
 			Insert("language-[icon_state]", icon, icon_state=icon_state)
-	..()
+		..()
 
 /datum/asset/simple/lobby
 	assets = list(
@@ -235,7 +245,6 @@
 		"hierophant" = 'icons/UI_Icons/Achievements/Boss/hierophant.png',
 		"legion" = 'icons/UI_Icons/Achievements/Boss/legion.png',
 		"miner" = 'icons/UI_Icons/Achievements/Boss/miner.png',
-		"swarmer" = 'icons/UI_Icons/Achievements/Boss/swarmer.png',
 		"tendril" = 'icons/UI_Icons/Achievements/Boss/tendril.png',
 		"featofstrength" = 'icons/UI_Icons/Achievements/Misc/featofstrength.png',
 		"helbital" = 'icons/UI_Icons/Achievements/Misc/helbital.png',
@@ -337,8 +346,8 @@
 				continue
 			I = icon(icon_file, icon_state, SOUTH)
 
-			// computers (and snowflakes) get their screen and keyboard sprites
-			if (ispath(item, /obj/machinery/computer) || ispath(item, /obj/machinery/power/solar_control))
+			// computers get their screen and keyboard sprites
+			if (ispath(item, /obj/machinery/computer))
 				var/obj/machinery/computer/C = item
 				var/screen = initial(C.icon_screen)
 				var/keyboard = initial(C.icon_keyboard)
@@ -431,8 +440,8 @@
 /datum/asset/spritesheet/fish
 	name = "fish"
 
-/datum/asset/spritesheet/fish/create_spritesheets()
-	for (var/path in subtypesof(/obj/item/fish))
+/datum/asset/spritesheet/fish/register()
+	for(var/path in subtypesof(/obj/item/fish))
 		var/obj/item/fish/fish_type = path
 		var/fish_icon = initial(fish_type.icon)
 		var/fish_icon_state = initial(fish_type.icon_state)

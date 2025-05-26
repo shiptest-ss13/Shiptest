@@ -13,6 +13,7 @@
 	var/lastgen = 0
 	var/lastgenlev = -1
 
+	var/max_efficiency = 0.45
 
 /obj/machinery/power/generator/Initialize(mapload)
 	. = ..()
@@ -57,7 +58,7 @@
 
 #define GENRATE 800		// generator output coefficient from Q
 
-/obj/machinery/power/generator/process_atmos()
+/obj/machinery/power/generator/process_atmos(seconds_per_tick)
 
 	if(!cold_circ || !hot_circ)
 		return
@@ -75,12 +76,13 @@
 
 
 			if(delta_temperature > 0 && cold_air_heat_capacity > 0 && hot_air_heat_capacity > 0)
-				var/efficiency = 0.45 //WS Edit - Nerfed down to Cit's efficiency
+				var/efficiency = LOGISTIC_FUNCTION(max_efficiency,0.0009,delta_temperature,10000)
+				//2nd (0.0009) effects how 'steep' the curve is, and 4th (10000) effects where the 'middle' is.
 
 				var/energy_transfer = delta_temperature*hot_air_heat_capacity*cold_air_heat_capacity/(hot_air_heat_capacity+cold_air_heat_capacity)
 
+				lastgen += energy_transfer * efficiency
 				var/heat = energy_transfer*(1-efficiency)
-				lastgen += LOGISTIC_FUNCTION(500000,0.0009,delta_temperature,10000) //WS Edit - Buries the 3x3 freezer heater TEG into the ground
 
 				hot_air.set_temperature(hot_air.return_temperature() - energy_transfer/hot_air_heat_capacity)
 				cold_air.set_temperature(cold_air.return_temperature() + heat/cold_air_heat_capacity)
@@ -101,7 +103,7 @@
 
 	src.updateDialog()
 
-/obj/machinery/power/generator/process()
+/obj/machinery/power/generator/process(seconds_per_tick)
 	//Setting this number higher just makes the change in power output slower, it doesnt actualy reduce power output cause **math**
 	var/power_output = round(lastgen / 10)
 	add_avail(power_output)
@@ -175,31 +177,31 @@
 
 	if(!panel_open) //connect/disconnect circulators
 		if(!anchored)
-			to_chat(user, "<span class='warning'>Anchor [src] before trying to connect the circulators!</span>")
+			to_chat(user, span_warning("Anchor [src] before trying to connect the circulators!"))
 			return TRUE
 		else
 			if(hot_circ && cold_circ)
-				to_chat(user, "<span class='notice'>You start removing the circulators...</span>")
+				to_chat(user, span_notice("You start removing the circulators..."))
 				if(I.use_tool(src, user, 30, volume=50))
 					kill_circs()
 					update_appearance()
-					to_chat(user, "<span class='notice'>You disconnect [src]'s circulator links.</span>")
+					to_chat(user, span_notice("You disconnect [src]'s circulator links."))
 					playsound(src, 'sound/misc/box_deploy.ogg', 50)
 				return TRUE
 
-			to_chat(user, "<span class='notice'>You attempt to attach the circulators...</span>")
+			to_chat(user, span_notice("You attempt to attach the circulators..."))
 			if(I.use_tool(src, user, 30, volume=50))
 				switch(find_circs())
 					if(0)
-						to_chat(user, "<span class='warning'>No circulators found!</span>")
+						to_chat(user, span_warning("No circulators found!"))
 					if(1)
-						to_chat(user, "<span class='warning'>Only one circulator found!</span>")
+						to_chat(user, span_warning("Only one circulator found!"))
 					if(2)
-						to_chat(user, "<span class='notice'>You connect [src]'s circulator links.</span>")
+						to_chat(user, span_notice("You connect [src]'s circulator links."))
 						playsound(src, 'sound/misc/box_deploy.ogg', 50)
 						return TRUE
 					if(3)
-						to_chat(user, "<span class='warning'>Both circulators are the same mode!</span>")
+						to_chat(user, span_warning("Both circulators are the same mode!"))
 				return TRUE
 
 	set_anchored(!anchored)
@@ -207,7 +209,7 @@
 	if(!anchored)
 		kill_circs()
 	connect_to_network()
-	to_chat(user, "<span class='notice'>You [anchored?"secure":"unsecure"] [src].</span>")
+	to_chat(user, span_notice("You [anchored?"secure":"unsecure"] [src]."))
 	update_appearance()
 	return TRUE
 
@@ -218,11 +220,11 @@
 		return
 
 	if(hot_circ && cold_circ)
-		to_chat(user, "<span class='warning'>Disconnect the circulators first!</span>")
+		to_chat(user, span_warning("Disconnect the circulators first!"))
 		return TRUE
 	panel_open = !panel_open
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
+	to_chat(user, span_notice("You [panel_open?"open":"close"] the panel on [src]."))
 	update_appearance()
 	return TRUE
 
@@ -231,10 +233,10 @@
 		return
 
 	if(anchored)
-		to_chat(user, "<span class='warning'>[src] is anchored!</span>")
+		to_chat(user, span_warning("[src] is anchored!"))
 		return TRUE
 	else if(!panel_open)
-		to_chat(user, "<span class='warning'>Open the panel first!</span>")
+		to_chat(user, span_warning("Open the panel first!"))
 		return TRUE
 	else
 		default_deconstruction_crowbar(I)

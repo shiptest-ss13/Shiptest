@@ -18,9 +18,6 @@
 // Ammo counter
 #define ui_ammocounter "EAST-1:28,CENTER+1:25"
 
-///The gun needs to update the gun hud!
-#define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
-
 /datum/hud
 	var/atom/movable/screen/ammo_counter
 
@@ -102,6 +99,7 @@
 	var/atom/movable/screen/ammo_counter/hud
 	/// The prefix used for the hud
 	var/prefix = ""
+	var/indicator = ""
 	var/backing_color = "#FFFFFF" // why was this hardcoded dlfhakhjdfj
 
 /datum/component/ammo_hud/Initialize()
@@ -130,7 +128,7 @@
 	SIGNAL_HANDLER
 
 	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(turn_off))
-	RegisterSignal(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
+	RegisterSignals(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
 
 	hud.turn_on()
 	update_hud()
@@ -175,7 +173,6 @@
 		hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]empty_flash")
 		return
 
-	var/indicator
 	var/rounds = num2text(get_accurate_ammo_count(pew))
 	var/oth_o
 	var/oth_t
@@ -208,7 +205,6 @@
 		hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]empty_flash")
 		return
 
-	var/indicator
 	var/rounds = num2text(get_accurate_laser_count(pew))
 	var/oth_o
 	var/oth_t
@@ -233,6 +229,7 @@
 /datum/component/ammo_hud/laser/cybersun
 	prefix = "cybersun_"
 
+//please be aware, this only supports 6 round revolvers. It is comically easy to support more or less rounds,like in game there are 7 round and 5 round revolvers, but that requires sprites, and i'm lasy
 /datum/component/ammo_hud/revolver
 	prefix = "revolver_"
 
@@ -285,3 +282,59 @@
 		round_images += current_bullet_image
 
 	hud.update_overlays(round_images)
+
+/datum/component/ammo_hud/eoehoma
+	backing_color = "#cb001a"
+
+/datum/component/ammo_hud/eoehoma/update_hud()
+	var/obj/item/gun/ballistic/automatic/assault/e40/pew = parent
+	var/obj/item/gun/energy/laser/e40_laser_secondary/pew_secondary = pew.secondary
+	hud.maptext = null
+	hud.icon_state = "[prefix]backing"
+
+	var/rounds = num2text(get_accurate_ammo_count(pew))
+	var/oth_o
+	var/oth_t
+	var/oth_h
+
+	var/current_firemode = pew.gun_firemodes[pew.firemode_index]
+	if(current_firemode == FIREMODE_FULLAUTO)
+		if(!pew.magazine)
+			hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]no_mag")
+			return
+		if(!pew.get_ammo())
+			hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]empty_flash")
+			return
+		rounds = num2text(get_accurate_ammo_count(pew))
+		indicator = "bullet"
+	else
+		if(!pew_secondary.cell)
+			hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]no_mag")
+			return
+		if(!get_accurate_laser_count(pew_secondary))
+			hud.set_hud(backing_color, "[prefix]oe", "[prefix]te", "[prefix]he", "[prefix]empty_flash_laser")
+			return
+		rounds = num2text(get_accurate_laser_count(pew_secondary))
+		indicator = "laser"
+
+
+	switch(length(rounds))
+		if(1)
+			oth_o = "[prefix]o[rounds[1]]"
+		if(2)
+			oth_o = "[prefix]o[rounds[2]]"
+			oth_t = "[prefix]t[rounds[1]]"
+		if(3)
+			oth_o = "[prefix]o[rounds[3]]"
+			oth_t = "[prefix]t[rounds[2]]"
+			oth_h = "[prefix]h[rounds[1]]"
+		else
+			oth_o = "[prefix]o9"
+			oth_t = "[prefix]t9"
+			oth_h = "[prefix]h9"
+	hud.set_hud(backing_color, oth_o, oth_t, oth_h, indicator)
+
+/datum/component/ammo_hud/counter
+	backing_color = "#ff0000ff"
+	prefix = null
+	indicator = "bullet"

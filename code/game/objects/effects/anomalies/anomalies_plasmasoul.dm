@@ -1,9 +1,9 @@
 /obj/effect/anomaly/plasmasoul
 	name = "plasma soul"
 	icon_state = "plasmasoul"
-	desc = "A mysterious anomaly, it slowly leaks plasma into the world around it."
+	desc = "A plasmatic pool, small crystals growing around it, spreading into the ground."
 	density = TRUE
-	aSignal = /obj/item/assembly/signaler/anomaly/plasmasoul
+	core = /obj/item/assembly/signaler/anomaly/plasmasoul
 	effectrange = 3
 	pulse_delay = 6 SECONDS
 	var/reagent_amount = 5
@@ -18,6 +18,10 @@
 	harm_surrounding_mobs()
 
 /obj/effect/anomaly/plasmasoul/Bumped(atom/movable/AM)
+	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
+		return
+
+	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 	var/turf/open/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
 	harm_surrounding_mobs()
 	if(istype(spot))

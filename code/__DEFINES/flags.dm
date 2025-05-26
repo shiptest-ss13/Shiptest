@@ -21,31 +21,29 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define CONDUCT_1 (1<<5)
 /// For machines and structures that should not break into parts, eg, holodeck stuff
 #define NODECONSTRUCT_1 (1<<7)
-/// atom queued to SSoverlay
-#define OVERLAY_QUEUED_1 (1<<8)
 /// item has priority to check when entering or leaving
-#define ON_BORDER_1 (1<<9)
+#define ON_BORDER_1 (1<<8)
 //Whether or not this atom shows screentips when hovered over
-#define NO_SCREENTIPS_1 (1<<10)
+#define NO_SCREENTIPS_1 (1<<9)
 /// Prevent clicking things below it on the same turf eg. doors/ fulltile windows
-#define PREVENT_CLICK_UNDER_1 (1<<11)
-#define HOLOGRAM_1 (1<<12)
+#define PREVENT_CLICK_UNDER_1 (1<<10)
+#define HOLOGRAM_1 (1<<11)
 /// Prevents mobs from getting chainshocked by teslas and the supermatter
-#define SHOCKED_1 (1<<13)
+#define SHOCKED_1 (1<<12)
 ///Whether /atom/Initialize() has already run for the object
-#define INITIALIZED_1 (1<<14)
+#define INITIALIZED_1 (1<<13)
 /// was this spawned by an admin? used for stat tracking stuff.
-#define ADMIN_SPAWNED_1 (1<<15)
+#define ADMIN_SPAWNED_1 (1<<14)
 /// should not get harmed if this gets caught by an explosion?
-#define PREVENT_CONTENTS_EXPLOSION_1 (1<<16)
+#define PREVENT_CONTENTS_EXPLOSION_1 (1<<15)
 /// should the contents of this atom be acted upon
-#define RAD_PROTECT_CONTENTS_1 (1 << 17)
+#define RAD_PROTECT_CONTENTS_1 (1 << 16)
 /// should this object be allowed to be contaminated
-#define RAD_NO_CONTAMINATE_1 (1 << 18)
+#define RAD_NO_CONTAMINATE_1 (1 << 17)
 ///Use when this shouldn't be obscured by large icons, like trees.
-#define SHOW_BEHIND_LARGE_ICONS_1 (1<<12)
+#define SHOW_BEHIND_LARGE_ICONS_1 (1<<18)
 /// Should we use the initial icon for display? Mostly used by overlay only objects
-#define HTML_USE_INITAL_ICON_1 (1<<20)
+#define HTML_USE_INITAL_ICON_1 (1<<19)
 
 // Update flags for [/atom/proc/update_appearance]
 /// Update the atom's name
@@ -83,8 +81,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 ////////////////Area flags\\\\\\\\\\\\\\
 /// If it's a valid territory for cult summoning or the CRAB-17 phone to spawn
 #define VALID_TERRITORY (1<<0)
-/// If blobs can spawn there and if it counts towards their score.
-#define BLOBS_ALLOWED (1<<1)
 /// If mining tunnel generation is allowed in this area
 #define CAVES_ALLOWED (1<<2)
 /// If flora are allowed to spawn in this area randomly through tunnel generation
@@ -97,8 +93,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define HIDDEN_AREA (1<<6)
 /// If false, loading multiple maps with this area type will create multiple instances.
 #define UNIQUE_AREA (1<<7)
-/// Can the Xenobio management console transverse this area by default?
-#define XENOBIOLOGY_COMPATIBLE (1<<8)
+///Refers to ship areas with docking ports, telling the smoothing subsytem to only smooth tiles within the same ship.
+#define SHIP_SMOOTHING (1<<8)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask
@@ -108,13 +104,14 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define PASSTABLE (1<<0)
 #define PASSGLASS (1<<1)
 #define PASSGRILLE (1<<2)
-#define PASSBLOB (1<<3)
 #define PASSMOB (1<<4)
 #define PASSCLOSEDTURF (1<<5)
 /// Let thrown things past us. **ONLY MEANINGFUL ON pass_flags_self!**
 #define LETPASSTHROW (1<<6)
 #define PASSDOORHATCH (1<<7)
 #define PASSPLATFORM (1<<8)
+/// Do not intercept click attempts during Adjacent() checks. See [turf/proc/ClickCross]. **ONLY MEANINGFUL ON pass_flags_self!**
+#define LETPASSCLICKS (1<<9)
 
 //Movement Types
 #define GROUND (1<<0)
@@ -123,6 +120,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define FLOATING (1<<3)
 /// When moving, will Cross()/Uncross() everything, but won't stop or Bump() anything.
 #define PHASING (1<<4)
+#define THROWN (1<<5)
 
 //Fire and Acid stuff, for resistance_flags
 #define LAVA_PROOF (1<<0)

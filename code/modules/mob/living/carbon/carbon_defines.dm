@@ -1,4 +1,5 @@
 /mob/living/carbon
+	bad_type = /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
 	gender = MALE
 	pressure_resistance = 15
@@ -27,6 +28,7 @@
 	var/obj/item/tank/internal = null
 	var/obj/item/clothing/head = null
 
+	var/obj/item/wear_id = null //only used by humans
 	var/obj/item/clothing/gloves = null ///only used by humans
 	var/obj/item/clothing/shoes/shoes = null ///only used by humans.
 	var/obj/item/clothing/glasses/glasses = null ///only used by humans.
@@ -39,7 +41,7 @@
 
 	var/co2overloadtime = null
 	var/temperature_resistance = T0C+75
-	var/obj/item/reagent_containers/food/snacks/meat/slab/type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab
+	var/obj/item/food/meat/slab/type_of_meat = /obj/item/food/meat/slab
 
 	var/gib_type = /obj/effect/decal/cleanable/blood/gibs
 

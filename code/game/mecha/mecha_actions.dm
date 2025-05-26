@@ -19,6 +19,9 @@
 	lights_action.Remove(user)
 	stats_action.Remove(user)
 	strafing_action.Remove(user)
+	if(zoom_action)
+		zoom_action.Remove(user)
+		user.client.view_size.zoomIn()
 
 
 /datum/action/innate/mecha
@@ -36,7 +39,7 @@
 	return ..()
 
 /datum/action/innate/mecha/mech_eject
-	name = "Eject From Mech"
+	name = "Eject From Exosuit"
 	button_icon_state = "mech_eject"
 
 /datum/action/innate/mecha/mech_eject/Activate()
@@ -55,7 +58,7 @@
 		return
 	chassis.use_internal_tank = !chassis.use_internal_tank
 	button_icon_state = "mech_internals_[chassis.use_internal_tank ? "on" : "off"]"
-	chassis.occupant_message("<span class='notice'>Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"].</span>")
+	chassis.occupant_message(span_notice("Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"]."))
 	chassis.log_message("Now taking air from [chassis.use_internal_tank?"internal airtank":"environment"].", LOG_MECHA)
 	UpdateButtonIcon()
 
@@ -73,14 +76,15 @@
 			available_equipment += M
 
 	if(available_equipment.len == 0)
-		chassis.occupant_message("<span class='warning'>No equipment available!</span>")
+		chassis.occupant_message(span_warning("No equipment available!"))
 		return
 	if(!chassis.selected)
 		chassis.selected = available_equipment[1]
-		chassis.occupant_message("<span class='notice'>You select [chassis.selected].</span>")
+		chassis.occupant_message(span_notice("You select [chassis.selected]."))
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
 		UpdateButtonIcon()
+		chassis.equipment_check()
 		return
 	var/number = 0
 	for(var/A in available_equipment)
@@ -88,13 +92,14 @@
 		if(A == chassis.selected)
 			if(available_equipment.len == number)
 				chassis.selected = null
-				chassis.occupant_message("<span class='notice'>You switch to no equipment.</span>")
+				chassis.occupant_message(span_notice("You switch to no equipment."))
 				button_icon_state = "mech_cycle_equip_off"
 			else
 				chassis.selected = available_equipment[number+1]
-				chassis.occupant_message("<span class='notice'>You switch to [chassis.selected].</span>")
+				chassis.occupant_message(span_notice("You switch to [chassis.selected]."))
 				button_icon_state = "mech_cycle_equip_on"
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
+			chassis.equipment_check()
 			UpdateButtonIcon()
 			return
 
@@ -112,7 +117,7 @@
 	else
 		button_icon_state = "mech_lights_off"
 	chassis.set_light_on(chassis.lights)
-	chassis.occupant_message("<span class='notice'>Toggled lights [chassis.lights?"on":"off"].</span>")
+	chassis.occupant_message(span_notice("Toggled lights [chassis.lights?"on":"off"]."))
 	chassis.log_message("Toggled lights [chassis.lights?"on":"off"].", LOG_MECHA)
 	UpdateButtonIcon()
 
@@ -143,7 +148,7 @@
 /obj/mecha/proc/toggle_strafe()
 	strafe = !strafe
 
-	occupant_message("<span class='notice'>Toggled strafing mode [strafe?"on":"off"].</span>")
+	occupant_message(span_notice("Toggled strafing mode [strafe?"on":"off"]."))
 	log_message("Toggled strafing mode [strafe?"on":"off"].", LOG_MECHA)
 	strafing_action.UpdateButtonIcon()
 
@@ -175,13 +180,27 @@
 		chassis.leg_overload_mode = 1
 		chassis.step_in = min(1, round(chassis.step_in/2))
 		chassis.step_energy_drain = max(chassis.overload_step_energy_drain_min,chassis.step_energy_drain*chassis.leg_overload_coeff)
-		chassis.occupant_message("<span class='danger'>You enable leg actuators overload.</span>")
+		chassis.occupant_message(span_danger("You enable leg actuators overload."))
 	else
 		chassis.leg_overload_mode = 0
 		chassis.step_in = initial(chassis.step_in)
-		chassis.step_energy_drain = chassis.normal_step_energy_drain
-		chassis.occupant_message("<span class='notice'>You disable leg actuators overload.</span>")
+		chassis.update_part_values()
+		chassis.occupant_message(span_notice("You disable leg actuators overload."))
 	UpdateButtonIcon()
+
+/datum/action/innate/mecha/mech_charge_mode
+	name = "Charge"
+	button_icon_state = "mech_overload_off"
+
+/datum/action/innate/mecha/mech_charge_mode/Activate()
+	if(!owner || !chassis || chassis.occupant != owner)
+		return
+	if(chassis.charge_ready && !chassis.charging)
+		chassis.start_charge()
+		chassis.charge_ready = FALSE
+		addtimer(VARSET_CALLBACK(chassis, charge_ready, TRUE), chassis.charge_cooldown)
+	else
+		chassis.occupant_message(span_warning("The leg actuators are still recharging!"))
 
 /datum/action/innate/mecha/mech_smoke
 	name = "Smoke"
@@ -210,10 +229,10 @@
 		chassis.log_message("Toggled zoom mode.", LOG_MECHA)
 		chassis.occupant_message("<font color='[chassis.zoom_mode?"blue":"red"]'>Zoom mode [chassis.zoom_mode?"en":"dis"]abled.</font>")
 		if(chassis.zoom_mode)
-			owner.client.view_size.setTo(4.5)
+			owner.client.view_size.zoomOut(chassis.zoom_out_mod, chassis.zoom_mod, chassis.dir)
 			SEND_SOUND(owner, sound('sound/mecha/imag_enh.ogg',volume=50))
 		else
-			owner.client.view_size.resetToDefault() //Let's not let this stack shall we?
+			owner.client.view_size.zoomIn()
 		UpdateButtonIcon()
 
 /datum/action/innate/mecha/mech_switch_damtype
@@ -227,13 +246,13 @@
 	switch(chassis.damtype)
 		if("tox")
 			new_damtype = "brute"
-			chassis.occupant_message("<span class='notice'>Your exosuit's hands form into fists.</span>")
+			chassis.occupant_message(span_notice("Your exosuit's hands form into fists."))
 		if("brute")
 			new_damtype = "fire"
-			chassis.occupant_message("<span class='notice'>A torch tip extends from your exosuit's hand, glowing red.</span>")
+			chassis.occupant_message(span_notice("A torch tip extends from your exosuit's hand, glowing red."))
 		if("fire")
 			new_damtype = "tox"
-			chassis.occupant_message("<span class='notice'>A bone-chillingly thick plasteel needle protracts from the exosuit's palm.</span>")
+			chassis.occupant_message(span_notice("A bone-chillingly thick plasteel needle protracts from the exosuit's palm."))
 	chassis.damtype = new_damtype
 	button_icon_state = "mech_damtype_[new_damtype]"
 	playsound(src, 'sound/mecha/mechmove01.ogg', 50, TRUE)

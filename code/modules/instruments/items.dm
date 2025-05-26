@@ -28,7 +28,7 @@
 
 /obj/item/instrument/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return TRUE
 	interact(user)
 
@@ -244,7 +244,7 @@
 
 /obj/item/instrument/harmonica/proc/handle_speech(datum/source, list/speech_args)
 	if(song.playing && ismob(loc))
-		to_chat(loc, "<span class='warning'>You stop playing the harmonica to talk...</span>")
+		to_chat(loc, span_warning("You stop playing the harmonica to talk..."))
 		song.playing = FALSE
 
 /obj/item/instrument/harmonica/equipped(mob/M, slot)
@@ -271,9 +271,8 @@
 	hitsound = 'sound/items/bikehorn.ogg'
 
 /obj/item/choice_beacon/music
-	name = "instrument delivery beacon"
-	desc = "Summon your tool of art."
-	icon_state = "gangtool-red"
+	name = "instrument box"
+	desc = "Contains your tool of art."
 
 /obj/item/choice_beacon/music/generate_display_names()
 	var/static/list/instruments
@@ -299,9 +298,8 @@
 	return instruments
 
 /obj/item/choice_beacon/rnd
-	name = "C.R.E.W.M.A.T.E type R&D Choice Beacon"
-	desc = "This aging launch beacon summons a limited production RND package from a nearby orbital satellite, delivered via impact pod."
-	icon_state = "gangtool-sus"
+	name = "C.R.E.W.M.A.T.E type R&D box"
+	desc = "This box contains a limited production RND package."
 
 /obj/item/choice_beacon/rnd/generate_display_names()
 	var/static/list/rndboxes

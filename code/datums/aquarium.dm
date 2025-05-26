@@ -68,7 +68,7 @@
 	src.animation_getter = animation_getter
 	src.animation_update_signals = animation_update_signals
 	if(animation_update_signals)
-		RegisterSignal(parent, animation_update_signals, PROC_REF(generate_animation))
+		RegisterSignals(parent, animation_update_signals, PROC_REF(generate_animation))
 
 	if(istype(parent,/obj/item/fish))
 		InitializeFromFish()
@@ -136,7 +136,7 @@
 	. = ..()
 	REMOVE_TRAIT(parent, TRAIT_FISH_CASE_COMPATIBILE, REF(src))
 
-/datum/component/aquarium_content/Destroy(force, silent)
+/datum/component/aquarium_content/Destroy(force)
 	if(current_aquarium)
 		remove_from_aquarium()
 	QDEL_NULL(vc_obj)

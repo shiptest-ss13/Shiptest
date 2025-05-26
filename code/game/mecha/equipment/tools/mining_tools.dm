@@ -17,6 +17,7 @@
 	toolspeed = 0.9
 	var/drill_delay = 7
 	var/drill_level = DRILL_BASIC
+	wall_decon_damage = 100
 
 /obj/item/mecha_parts/mecha_equipment/drill/Initialize()
 	. = ..()
@@ -32,9 +33,9 @@
 		if(target_obj.resistance_flags & UNACIDABLE)
 			return
 	target.visible_message(
-		"<span class='warning'>[chassis] starts to drill [target].</span>",
-		"<span class='userdanger'>[chassis] starts to drill [target]...</span>",
-		"<span class='hear'>You hear drilling.</span>"
+		span_warning("[chassis] starts to drill [target]."),
+		span_userdanger("[chassis] starts to drill [target]..."),
+		span_hear("You hear drilling.")
 	)
 
 	if(do_after_cooldown(target))
@@ -62,17 +63,24 @@
 	return
 
 /turf/closed/wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
-	if(drill.do_after_mecha(src, 60 / drill.drill_level))
+	while(drill.do_after_mecha(src, 15 / drill.drill_level))
 		drill.log_message("Drilled through [src]", LOG_MECHA)
-		dismantle_wall(devastated = TRUE)
+		drill.occupant_message(span_notice("You drill through some of the outer plating..."))
+		playsound(src,'sound/weapons/drill.ogg',60,TRUE)
+		if(!alter_integrity(-drill.wall_decon_damage))
+			return TRUE
 
 /turf/closed/wall/r_wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	if(drill.drill_level >= DRILL_HARDENED)
-		if(drill.do_after_mecha(src, 120 / drill.drill_level))
+		while(drill.do_after_mecha(src, 20 / drill.drill_level))
 			drill.log_message("Drilled through [src]", LOG_MECHA)
-			dismantle_wall(devastated = TRUE)
+			drill.occupant_message(span_notice("You drill through some of the outer plating..."))
+			playsound(src,'sound/weapons/drill.ogg',60,TRUE)
+			if(!alter_integrity(-drill.wall_decon_damage))
+				return TRUE
+
 	else
-		drill.occupant_message("<span class='danger'>[src] is too durable to drill through.</span>")
+		drill.occupant_message(span_danger("[src] is too durable to drill through."))
 
 /turf/closed/mineral/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	for(var/turf/closed/mineral/M in range(drill.chassis,1))
@@ -104,15 +112,27 @@
 	..()
 	var/datum/component/butchering/butchering = src.GetComponent(/datum/component/butchering)
 	butchering.butchering_enabled = TRUE
+	RegisterSignal(chassis, COMSIG_MOVABLE_BUMP, PROC_REF(bump_mine))
+
+///Called whenever the mech bumps into something; action() handles checking if it is a mineable turf
+/obj/item/mecha_parts/mecha_equipment/drill/proc/bump_mine(obj/mecha/bumper, atom/bumped_into)
+	SIGNAL_HANDLER
+
+	if(chassis.selected == src)
+		if(!chassis.occupant) //prevents exosuit from digging if it pushed with something, like an explosion
+			return
+		if(istype(bumped_into, /turf/closed/mineral/))
+			INVOKE_ASYNC(src, PROC_REF(action), bumped_into, null, TRUE)
 
 /obj/item/mecha_parts/mecha_equipment/drill/detach(atom/moveto)
-	..()
 	var/datum/component/butchering/butchering = src.GetComponent(/datum/component/butchering)
 	butchering.butchering_enabled = FALSE
+	UnregisterSignal(chassis, COMSIG_MOVABLE_BUMP)
+	..()
 
 /obj/item/mecha_parts/mecha_equipment/drill/proc/drill_mob(mob/living/target, mob/user)
-	target.visible_message("<span class='danger'>[chassis] is drilling [target] with [src]!</span>", \
-						"<span class='userdanger'>[chassis] is drilling you with [src]!</span>")
+	target.visible_message(span_danger("[chassis] is drilling [target] with [src]!"), \
+						span_userdanger("[chassis] is drilling you with [src]!"))
 	log_combat(user, target, "drilled", "[name]", "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	if(target.stat == DEAD && target.getBruteLoss() >= 200)
 		log_combat(user, target, "gibbed", name)
@@ -150,6 +170,7 @@
 	drill_level = DRILL_HARDENED
 	force = 15
 	toolspeed = 0.7
+	wall_decon_damage = 300
 
 
 /obj/item/mecha_parts/mecha_equipment/mining_scanner
@@ -164,7 +185,7 @@
 	. = ..()
 	START_PROCESSING(SSfastprocess, src)
 
-/obj/item/mecha_parts/mecha_equipment/mining_scanner/process()
+/obj/item/mecha_parts/mecha_equipment/mining_scanner/process(seconds_per_tick)
 	if(!loc)
 		STOP_PROCESSING(SSfastprocess, src)
 		qdel(src)

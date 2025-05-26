@@ -23,67 +23,25 @@
 	flags_inv = 0
 	dog_fashion = /datum/dog_fashion/head/captain
 
-//Captain: This is no longer space-worthy
 /obj/item/clothing/head/caphat/parade
 	name = "captain's parade cap"
 	desc = "Worn only by Captains with an abundance of class."
 	icon_state = "capcap"
-
-	dog_fashion = null
 
 /obj/item/clothing/head/caphat/cowboy
 	name = "general's hat"
 	desc = "A commanding white stetson adorned with a general's badge. Why this belongs to a captain is anybody's guess."
 	icon_state = "cowboycap"
 
-/obj/item/clothing/head/caphat/nt
-	name = "captain's hat"
-	icon_state = "captain_nt"
-
-/obj/item/clothing/head/caphat/frontier
+/obj/item/clothing/head/frontier/peaked
 	name = "\improper Frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
 	icon_state = "frontier_cap"
 
-/obj/item/clothing/head/caphat/frontier/admiral
+/obj/item/clothing/head/frontier/peaked/admiral
 	name = "\improper Frontiersmen admiral's cap"
 	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
-
-//Head of Personnel
-/obj/item/clothing/head/hopcap
-	name = "head of personnel's cap"
-	icon_state = "hopcap"
-	desc = "The symbol of true bureaucratic micromanagement."
-	dog_fashion = /datum/dog_fashion/head/head_of_personnel
-
-/obj/item/clothing/head/hopcap/nt
-	icon_state = "hopcap_nt"
-	dog_fashion = /datum/dog_fashion/head/head_of_personnel
-
-//Cargo
-/obj/item/clothing/head/supply_chief
-	name = "supply chief's cap"
-	desc = "The one thing between you and 40 boxes of orderable pizza is the person wearing this hat."
-	icon_state = "supply_chief_cap"
-
-/obj/item/clothing/head/deliveries_officer
-	name = "deliveries officer's cap"
-	desc = "Whether through fires, the vacuum of space, or hordes of souless husks of grey suited criminals, your crate will always be delivered!"
-	icon_state = "deliveries_officer_cap"
-
-//Chaplain
-/obj/item/clothing/head/nun_hood
-	name = "nun hood"
-	desc = "Maximum piety in this star system."
-	icon_state = "nun_hood"
-	flags_inv = HIDEHAIR
-	flags_cover = HEADCOVERSEYES
-
-/obj/item/clothing/head/bishopmitre
-	name = "bishop mitre"
-	desc = "An opulent hat that functions as a radio to God. Or as a lightning rod, depending on who you ask."
-	icon_state = "bishopmitre"
 
 //Detective
 /obj/item/clothing/head/fedora/det_hat
@@ -99,10 +57,11 @@
 	new /obj/item/reagent_containers/food/drinks/flask/det(src)
 
 /obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
+	. = ..()
 	if(!in_range(src, user) || !isobserver(user)) //hide the easter egg a little more
-		. = "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
+		. += span_warning("You try to examine [src] closer, but you're too far away.")
 		return
-	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
+	. += span_notice("Alt-click to take a candy corn.")
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -111,10 +70,10 @@
 			if(candy_cooldown < world.time)
 				var/obj/item/reagent_containers/food/snacks/candy_corn/CC = new /obj/item/reagent_containers/food/snacks/candy_corn(src)
 				user.put_in_hands(CC)
-				to_chat(user, "<span class='notice'>You slip a candy corn from your hat.</span>")
+				to_chat(user, span_notice("You slip a candy corn from your hat."))
 				candy_cooldown = world.time+1200
 			else
-				to_chat(user, "<span class='warning'>You just took a candy corn! You should wait a couple minutes, lest you burn through your stash.</span>")
+				to_chat(user, span_warning("You just took a candy corn! You should wait a couple minutes, lest you burn through your stash."))
 
 //Curator
 /obj/item/clothing/head/fedora/curator
@@ -141,26 +100,6 @@
 	desc = "A robust stetson adorned with a deputy's badge. Its imitation leather is thick and worn."
 	icon_state = "cowboysec"
 
-/obj/item/clothing/head/cowboy/sec/roumain
-	name = "hunter's hat"
-	desc = "A fancy hat with a nice feather. The way it covers your eyes makes you feel like a badass."
-	icon_state = "rouma_hat"
-
-/obj/item/clothing/head/cowboy/sec/roumain/shadow
-	name = "shadow's hat"
-	desc = "A rough, simple hat. The way it covers your eyes makes you feel badass, but you just look like a wannabe hunter."
-	icon_state = "rouma_shadow_hat"
-
-/obj/item/clothing/head/cowboy/sec/roumain/med
-	name = "medical hunter's hat"
-	desc = "A very wide-brimmed, round hat treated with oil and wax. Somehow manages to look stylish and creepy at the same time."
-	icon_state = "rouma_med_hat"
-
-/obj/item/clothing/head/HoS/cowboy/montagne
-	name = "montagne's hat"
-	desc = "A very fancy hat with a large feather plume to signal that you are, in fact, a Hunter Montagne. The exotic fur lining is impeccably soft and bafflingly bulletproof."
-	icon_state = "rouma_montagne_hat"
-
 /obj/item/clothing/head/HoS/syndicate
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
@@ -180,6 +119,8 @@
 /obj/item/clothing/head/warden
 	name = "warden's police hat"
 	desc = "It's a special hat issued to the Warden of a security force. A classic symbol of middling authority."
+	icon = 'icons/obj/clothing/head/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/armor.dmi'
 	icon_state = "policehelm"
 	dog_fashion = /datum/dog_fashion/head/warden
 
@@ -196,11 +137,6 @@
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
 
-/obj/item/clothing/head/warden/inteq
-	name = "master at arms' campaign hat"
-	desc = "A special brown campaign hat with the IRMG insignia emblazoned on it. For yelling at clueless recruits in style."
-	icon_state = "maahat"
-
 /obj/item/clothing/head/warden/drill
 	name = "warden's campaign hat"
 	desc = "A special campaign hat with the security insignia emblazoned on it."
@@ -214,22 +150,22 @@
 		return TRUE
 	switch(mode)
 		if(DRILL_DEFAULT)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the middle position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the middle position."))
 			mode = DRILL_SHOUTING
 		if(DRILL_SHOUTING)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the last position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the last position."))
 			mode = DRILL_YELLING
 		if(DRILL_YELLING)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the first position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the first position."))
 			mode = DRILL_DEFAULT
 		if(DRILL_CANADIAN)
-			to_chat(user, "<span class='danger'>You adjust voice circuit but nothing happens, probably because it's broken.</span>")
+			to_chat(user, span_danger("You adjust voice circuit but nothing happens, probably because it's broken."))
 	return TRUE
 
 /obj/item/clothing/head/warden/drill/wirecutter_act(mob/living/user, obj/item/I)
 	..()
 	if(mode != DRILL_CANADIAN)
-		to_chat(user, "<span class='danger'>You broke the voice circuit!</span>")
+		to_chat(user, span_danger("You broke the voice circuit!"))
 		mode = DRILL_CANADIAN
 	return TRUE
 
@@ -244,7 +180,7 @@
 	. = ..()
 	UnregisterSignal(M, COMSIG_MOB_SAY)
 
-/obj/item/clothing/head/warden/drill/proc/handle_speech(datum/source, mob/speech_args)
+/obj/item/clothing/head/warden/drill/proc/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message[1] != "*")
 		switch (mode)

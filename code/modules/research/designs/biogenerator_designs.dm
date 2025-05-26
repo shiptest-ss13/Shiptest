@@ -63,7 +63,7 @@
 	id = "mcube"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 250)
-	build_path = /obj/item/reagent_containers/food/snacks/monkeycube
+	build_path = /obj/item/food/monkeycube
 	category = list("initial","Food")
 
 /datum/design/ez_nut   //easy nut :)
@@ -199,7 +199,7 @@
 	id = "rngplant"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass= 2000)
-	build_path = /obj/effect/spawner/lootdrop/seeded
+	build_path = /obj/effect/spawner/random/food_or_drink/seed
 	category = list("initial","LIFESEED_2.0")
 
 /datum/design/genesis
@@ -223,5 +223,5 @@
 	id = "seaweedsheet"
 	build_type = BIOGENERATOR
 	materials = list(/datum/material/biomass = 60)
-	build_path = /obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
+	build_path = /obj/item/food/grown/seaweed
 	category = list("initial","Food")

@@ -123,7 +123,7 @@
 /obj/machinery/power/compressor/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Efficiency at <b>[efficiency*100]%</b>.</span>"
+		. += span_notice("The status display reads: Efficiency at <b>[efficiency*100]%</b>.")
 
 /obj/machinery/power/compressor/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, initial(icon_state), initial(icon_state), I))
@@ -131,10 +131,10 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(turbine)
-			to_chat(user, "<span class='notice'>Turbine connected.</span>")
+			to_chat(user, span_notice("Turbine connected."))
 			set_machine_stat(machine_stat & ~BROKEN)
 		else
-			to_chat(user, "<span class='alert'>Turbine not connected.</span>")
+			to_chat(user, span_alert("Turbine not connected."))
 		return
 
 	default_deconstruction_crowbar(I)
@@ -155,10 +155,10 @@
 	. = ..()
 	locate_machinery()
 
-/obj/machinery/power/compressor/process(delta_time)
+/obj/machinery/power/compressor/process(seconds_per_tick)
 	return
 
-/obj/machinery/power/compressor/process_atmos(delta_time)
+/obj/machinery/power/compressor/process_atmos(seconds_per_tick)
 	// RPM function to include compression friction - be advised that too low/high of a compfriction value can make things screwy
 	rpm -= 1
 	rpm = (0.9 * rpm) + (0.1 * rpmtarget)
@@ -181,7 +181,7 @@
 
 	// Equalize the gas between the environment and the internal gas mix
 	if(pressure_delta > 0)
-		var/datum/gas_mixture/removed = environment.remove_ratio((1 - ((1 - intake_ratio)**delta_time)) * pressure_delta / (external_pressure * 2)) // silly math to keep it consistent with delta_time
+		var/datum/gas_mixture/removed = environment.remove_ratio((1 - ((1 - intake_ratio)**seconds_per_tick)) * pressure_delta / (external_pressure * 2)) // silly math to keep it consistent with seconds_per_tick
 		gas_contained.merge(removed)
 		inturf.air_update_turf()
 
@@ -226,7 +226,7 @@
 /obj/machinery/power/shuttle/engine/turbine/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.</span>"
+		. += span_notice("The status display reads: Productivity at <b>[productivity*100]%</b>.")
 
 /obj/machinery/power/shuttle/engine/turbine/locate_machinery()
 	if(compressor)
@@ -239,11 +239,11 @@
 		compressor = null
 		obj_break()
 
-/obj/machinery/power/shuttle/engine/turbine/process(delta_time)
+/obj/machinery/power/shuttle/engine/turbine/process(seconds_per_tick)
 	add_avail(lastgen) // add power in process() so it doesn't update power output separately from the rest of the powernet (bad)
 	update_overlays()
 
-/obj/machinery/power/shuttle/engine/turbine/process_atmos(delta_time)
+/obj/machinery/power/shuttle/engine/turbine/process_atmos(seconds_per_tick)
 	if(!compressor)
 		set_machine_stat(BROKEN)
 		locate_machinery() // try to find the missing piece
@@ -280,8 +280,8 @@
 		outturf.air_update_turf()
 
 // Return the current thrust amount
-/obj/machinery/power/shuttle/engine/turbine/burn_engine(percentage, deltatime)
-	return thrust * deltatime * (percentage / 100)
+/obj/machinery/power/shuttle/engine/turbine/burn_engine(percentage, seconds_per_tick)
+	return thrust * seconds_per_tick * (percentage / 100)
 
 // Return the current power output
 /obj/machinery/power/shuttle/engine/turbine/return_fuel()
@@ -310,9 +310,9 @@
 
 	if(default_change_direction_wrench(user, I))
 		if(compressor)
-			to_chat(user, "<span class='notice'>Compressor connected.</span>")
+			to_chat(user, span_notice("Compressor connected."))
 		else
-			to_chat(user, "<span class='alert'>Compressor not connected.</span>")
+			to_chat(user, span_alert("Compressor not connected."))
 			obj_break()
 		return
 
@@ -380,6 +380,11 @@
 	circuit = /obj/item/circuitboard/computer/turbine_computer
 	var/obj/machinery/power/compressor/compressor
 	var/id = 0
+
+/obj/machinery/computer/turbine_computer/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
 
 /obj/machinery/computer/turbine_computer/Initialize()
 	. = ..()

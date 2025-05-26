@@ -12,7 +12,7 @@
 	desc = "This machine is used to process large quantities of information."
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 30
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/telecomms/processor
 	var/process_mode = 1 // 1 = Uncompress Signals, 0 = Compress Signals
 
@@ -24,6 +24,10 @@
 		signal.data["compression"] = 100 // even more compressed signal
 	else if (signal.data["compression"])
 		signal.data["compression"] = 0 // uncompress subspace signal
+	if (process_mode && signal.data["interference"])
+		signal.data["interference"] -= 50 //we filter out interference
+		if(signal.data["interference"] < 0 )
+			signal.data["interference"] = 0 // we set interference to 0 if we are negative
 
 	if(istype(machine_from, /obj/machinery/telecomms/bus))
 		relay_direct_information(signal, machine_from) // send the signal back to the machine
@@ -64,7 +68,7 @@
 	autolinkers = list("processor6")
 
 /obj/machinery/telecomms/processor/preset_seven
-	id = "Solgov Communications Processor"
+	id = "SolGov Communications Processor"
 	network = "tcommsat"
 	autolinkers = list("processor7")
 

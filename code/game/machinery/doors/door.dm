@@ -25,7 +25,10 @@
 	var/operating = FALSE
 	var/glass = FALSE
 	var/welded = FALSE
-	var/normalspeed = 1
+	///does this airlock close quickly
+	var/fast_close = 0
+	///how long this door takes to close, if it is autoclosing
+	var/close_speed = 6 SECONDS
 	var/heat_proof = FALSE // For rglass-windowed airlocks and firedoors
 	var/emergency = FALSE // Emergency access override
 	var/sub_door = FALSE // true if it's meant to go under another door.
@@ -47,13 +50,13 @@
 	. = ..()
 	if(red_alert_access)
 		if(GLOB.security_level >= SEC_LEVEL_RED)
-			. += "<span class='notice'>Due to a security threat, its access requirements have been lifted!</span>"
+			. += span_notice("Due to a security threat, its access requirements have been lifted!")
 		else
-			. += "<span class='notice'>In the event of a red alert, its access requirements will automatically lift.</span>"
+			. += span_notice("In the event of a red alert, its access requirements will automatically lift.")
 	if(!poddoor)
-		. += "<span class='notice'>Its maintenance panel is <b>screwed</b> in place.</span>"
+		. += span_notice("Its maintenance panel is <b>screwed</b> in place.")
 	if(safety_mode)
-		. += "<span class='notice'>It has labels indicating that it has an emergency mechanism to open it with <b>just your hands</b> if there's no power.</span>"
+		. += span_notice("It has labels indicating that it has an emergency mechanism to open it with <b>just your hands</b> if there's no power.")
 
 /obj/machinery/door/check_access_list(list/access_list)
 	if(red_alert_access && GLOB.security_level >= SEC_LEVEL_RED)
@@ -94,10 +97,10 @@
 /obj/machinery/door/proc/try_safety_unlock(mob/user, closing = FALSE)
 	if(safety_mode && !hasPower() && (closing || density))
 		if(locked)
-			to_chat(user, "<span class='notice'>You begin to lift [src]'s bolt with the safety mechanism...</span>")
+			to_chat(user, span_notice("You begin to lift [src]'s bolt with the safety mechanism..."))
 			if(do_after(user, 20 SECONDS, target = src)) //unbolting takes 20 seconds
 				unlock()
-		to_chat(user, "<span class='notice'>You begin [density ? "opening" : "closing"] [src] with the safety mechanism...</span>")
+		to_chat(user, span_notice("You begin [density ? "opening" : "closing"] [src] with the safety mechanism..."))
 		if((!density && do_after(user, 5 SECONDS, target = src)) || do_after(user, 15 SECONDS, target = src)) //closing takes 5 seconds, opening takes 15
 			try_to_crowbar(null, user)
 			return TRUE
@@ -253,7 +256,7 @@
 	return max_moles - min_moles > 20
 
 /obj/machinery/door/attackby(obj/item/I, mob/user, params)
-	if(user.a_intent != INTENT_HARM && (I.tool_behaviour == TOOL_CROWBAR || istype(I, /obj/item/fireaxe)))
+	if(user.a_intent != INTENT_HARM && (I.tool_behaviour == TOOL_CROWBAR || istype(I, /obj/item/melee/axe/fire)))
 		var/forced_open = FALSE
 		if(istype(I, /obj/item/crowbar))
 			var/obj/item/crowbar/C = I
@@ -353,7 +356,7 @@
 		for(var/atom/movable/M in get_turf(src))
 			if(M.density && M != src) //something is blocking the door
 				if(autoclose)
-					autoclose_in(60)
+					autoclose_in(fast_close ? close_speed/10 : close_speed)
 				return
 
 	operating = TRUE
@@ -389,13 +392,13 @@
 
 /obj/machinery/door/proc/crush()
 	for(var/mob/living/L in get_turf(src))
-		L.visible_message("<span class='warning'>[src] closes on [L], crushing [L.p_them()]!</span>", "<span class='userdanger'>[src] closes on you and crushes you!</span>")
+		L.visible_message(span_warning("[src] closes on [L], crushing [L.p_them()]!"), span_userdanger("[src] closes on you and crushes you!"))
 		if(isalien(L))  //For xenos
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE * 1.5) //Xenos go into crit after aproximately the same amount of crushes as humans.
 			L.manual_emote("roar")
 		else if(ishuman(L)) //For humans
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)
-			L.manual_emote("scream")
+			L.force_manual_scream()
 			L.Paralyze(100)
 		else if(ismonkey(L)) //For monkeys
 			L.adjustBruteLoss(DOOR_CRUSH_DAMAGE)

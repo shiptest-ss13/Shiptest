@@ -7,7 +7,8 @@
 	icon_state = ""
 	slot_flags = NONE
 	moth_edible = FALSE
-	w_class = 20 // so that only one can fit in a duffel bag
+	w_class = WEIGHT_CLASS_BULKY
+	w_volume = ITEM_VOLUME_MOB// so that only one can fit in a duffel bag
 	var/mob/living/held_mob
 
 /obj/item/clothing/head/mob_holder/Initialize(mapload, mob/living/M, worn_state, head_icon, lh_icon, rh_icon, worn_slot_flags = NONE)
@@ -69,13 +70,13 @@
 		return
 	if(isliving(loc))
 		var/mob/living/L = loc
-		to_chat(L, "<span class='warning'>[held_mob] wriggles free!</span>")
+		to_chat(L, span_warning("[held_mob] wriggles free!"))
 		L.dropItemToGround(src)
 		return
 	held_mob.forceMove(get_turf(held_mob))
 	held_mob.reset_perspective()
 	held_mob.setDir(SOUTH)
-	held_mob.visible_message("<span class='warning'>[held_mob] uncurls!</span>")
+	held_mob.visible_message(span_warning("[held_mob] uncurls!"))
 	held_mob = null
 	qdel(src)
 

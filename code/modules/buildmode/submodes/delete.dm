@@ -2,7 +2,7 @@
 	key = "delete"
 
 /datum/buildmode_mode/delete/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Delete an object")] -> Left Mouse Button on obj/turf/mob\n\
 		[span_bold("Delete all objects of a type")] -> Right Mouse Button on obj/turf/mob"))
 	)
@@ -46,7 +46,7 @@
 						to_chat(usr, "No instances of this type exist")
 						return
 					log_admin("[key_name(usr)] deleted all instances of type [O_type] ([i] instances deleted) ")
-					message_admins("<span class='notice'>[key_name(usr)] deleted all instances of type [O_type] ([i] instances deleted) </span>")
+					message_admins(span_notice("[key_name(usr)] deleted all instances of type [O_type] ([i] instances deleted) "))
 				if("Type and subtypes")
 					var/i = 0
 					for(var/Obj in world)
@@ -58,4 +58,4 @@
 						to_chat(usr, "No instances of this type exist")
 						return
 					log_admin("[key_name(usr)] deleted all instances of type or subtype of [O_type] ([i] instances deleted) ")
-					message_admins("<span class='notice'>[key_name(usr)] deleted all instances of type or subtype of [O_type] ([i] instances deleted) </span>")
+					message_admins(span_notice("[key_name(usr)] deleted all instances of type or subtype of [O_type] ([i] instances deleted) "))

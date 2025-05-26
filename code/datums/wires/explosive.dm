@@ -66,7 +66,7 @@
 
 /datum/wires/explosive/c4/explode()
 	var/obj/item/grenade/c4/P = holder
-	P.prime()
+	P.receive_signal()
 
 /datum/wires/explosive/pizza
 	holder_type = /obj/item/pizzabox
@@ -118,4 +118,4 @@
 
 /datum/wires/explosive/gibtonite/explode()
 	var/obj/item/gibtonite/P = holder
-	P.GibtoniteReaction(null, 2)
+	P.gibtonite_reaction(null, 2)

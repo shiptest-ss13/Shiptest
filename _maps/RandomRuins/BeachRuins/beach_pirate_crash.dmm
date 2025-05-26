@@ -16,7 +16,7 @@
 /area/ruin/beach/piratecrash/storage)
 "af" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife,
+/obj/item/melee/knife/kitchen,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -36,8 +36,8 @@
 	icon_state = "6-10"
 	},
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/fishfry,
-/obj/item/kitchen/knife/shiv{
+/obj/item/food/fishfry,
+/obj/item/melee/knife/shiv{
 	pixel_x = -6;
 	pixel_y = 5
 	},
@@ -385,10 +385,7 @@
 	},
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "jE" = (
-/mob/living/simple_animal/hostile/pirate/ranged{
-	environment_smash = 0;
-	faction = list("pirate","mining")
-	},
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/cave/explored)
 "jT" = (
@@ -403,6 +400,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
+/obj/effect/landmark/mission_poi/main/kill,
 /turf/open/floor/plating/asteroid/sand,
 /area/overmap_encounter/planetoid/cave/explored)
 "jZ" = (
@@ -522,13 +520,10 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/mob/living/simple_animal/hostile/pirate/melee{
-	environment_smash = 0;
-	faction = list("pirate","mining")
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/storage)
 "nQ" = (
@@ -581,10 +576,10 @@
 /obj/structure/closet/crate/freezer{
 	desc = "Fish Crate."
 	},
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/meat/rawcrab,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcrab,
+/obj/item/food/meat/rawcutlet,
 /turf/open/floor/wood{
 	light_range = 2
 	},
@@ -1042,9 +1037,9 @@
 /obj/structure/closet/crate/freezer{
 	desc = "Fish Crate."
 	},
-/obj/item/reagent_containers/food/snacks/meat/rawcrab,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/food/meat/rawcrab,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
 /turf/open/floor/plating{
 	light_range = 2
 	},
@@ -1106,6 +1101,7 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/shuttle)
 "GS" = (
@@ -1116,7 +1112,7 @@
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/box,
 /obj/item/stack/cable_coil/red,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash/shuttle)
@@ -1200,10 +1196,10 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Kj" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/meat/rawcrab{
+/obj/item/food/meat/rawcrab{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/meat/rawcrab,
+/obj/item/food/meat/rawcrab,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1355,7 +1351,7 @@
 "Pf" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance/two,
+/obj/effect/spawner/random/maintenance/two,
 /obj/item/stack/sheet/mineral/gold/five,
 /obj/item/stack/sheet/mineral/silver/five,
 /obj/item/stack/sheet/mineral/silver/five,
@@ -1370,16 +1366,12 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/light/small/directional/east,
-/obj/machinery/porta_turret/syndicate/pod{
-	desc = "A turret built with substandard parts and run down further with age. Still capable of delivering lethal lasers to the odd space carp, but not much else.";
-	dir = 8;
-	faction = list("Syndicate","pirate");
-	lethal_projectile = /obj/projectile/beam/weak/penetrator;
-	lethal_projectile_sound = 'sound/weapons/plasma_cutter.ogg';
-	name = "laser turret"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/porta_turret/ship/frontiersmen/light{
+	dir = 10;
+	faction = list("Frontiersmen","Turret")
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/beach/piratecrash)
 "PH" = (
@@ -1438,9 +1430,9 @@
 "QG" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/random_machine_circuit_rare,
-/obj/effect/spawner/lootdrop/maintenance/four,
-/obj/effect/spawner/lootdrop/random_machine_circuit_common,
+/obj/effect/spawner/random/circuit/machine/rare,
+/obj/effect/spawner/random/maintenance/four,
+/obj/effect/spawner/random/circuit/machine/common,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
@@ -1508,10 +1500,7 @@
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "Vc" = (
-/mob/living/simple_animal/hostile/pirate/melee{
-	environment_smash = 0;
-	faction = list("pirate","mining")
-	},
+/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "Vh" = (

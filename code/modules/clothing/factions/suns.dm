@@ -10,8 +10,8 @@
 	desc = "A fancy-looking tailored suit with purple slacks. Worn typically by students in the first half of their academic journey."
 	icon_state = "suns_uniform1"
 	item_state = "suns_uniwhite"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
-	can_adjust = TRUE
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	roll_sleeves = TRUE
 	icon = 'icons/obj/clothing/faction/suns/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/uniforms.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
@@ -27,7 +27,7 @@
 	desc = "A uniform typically worn by students in the final years of their academic journey."
 	icon_state = "suns_uniform2"
 	item_state = "suns_uniwhite"
-	can_adjust = TRUE
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/syndicate/suns/uniform2/alt
 	desc = "A long skirt and blouse typically worn by students in the final years of their academic journey."
@@ -38,7 +38,7 @@
 	desc = "A suit typically worn by SUNS graduates and SUNS academic staff. You've come a long way, friend."
 	icon_state = "suns_uniform3"
 	item_state = "suns_unipurple"
-	can_adjust = TRUE
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/syndicate/suns/uniform3/alt
 	desc = "A skirt and blouse typically worn by SUNS graduates and SUNS academic staff. You've come a long way, friend."
@@ -56,35 +56,36 @@
 	desc = "A casual uniform worn by students and staff to protect from blue collar work."
 	icon_state = "suns_workerjumpsuit"
 	item_state = "suns_unipurple"
-	can_adjust = TRUE
+	roll_sleeves = FALSE
+	roll_down = TRUE
 
 /obj/item/clothing/under/syndicate/suns/captain
 	name = "\improper SUNS captain suit"
 	desc = "An elaborate uniform to set high ranking staff from academia apart from the rest."
 	icon_state = "suns_captain"
 	item_state = "suns_uniblack"
-	can_adjust = TRUE
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/syndicate/suns/xo
 	name = "\improper SUNS academic suit"
 	desc = "A style of suit typically worn by academic staff."
 	icon_state = "suns_xo"
 	item_state = "suns_uniblack"
-	can_adjust = TRUE
+	roll_sleeves = TRUE
 
 /obj/item/clothing/under/syndicate/suns/sciencejumpsuit
 	name = "\improper SUNS lab jumpsuit"
 	desc = "A comfortable suit meant to protect the individual from exposure to harmful objects."
 	icon_state = "suns_sciencejumpsuit"
 	item_state = "suns_uniwhite"
-	can_adjust = FALSE
+	roll_sleeves = FALSE
 
 /obj/item/clothing/under/syndicate/suns/doctorscrubs
 	name = "\improper SUNS medical scrubs"
 	desc = "Work safe medical scrubs for both the professionals and the trainees."
 	icon_state = "suns_doctorscrubs"
 	item_state = "suns_unipurple"
-	can_adjust = FALSE
+	roll_sleeves = FALSE
 
 
 ////////////////////
@@ -162,7 +163,7 @@
 /////////////////
 
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns
+/obj/item/clothing/suit/armor/vest/suns
 	name = "peacekeeper plating"
 	desc = "A standard issue set of plate assigned to peacekeepers, both durable and stylish."
 	icon_state = "suns_pkarmor"
@@ -171,21 +172,22 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/hos
+/obj/item/clothing/suit/armor/vest/suns/hos
 	name = "gilded peacekeeper plating"
 	desc = "A set of plate assigned to peacekeepers, both durable and stylish. This one has a gold lining to indicate rank."
 	icon_state = "suns_lpkarmor"
 	item_state = "suns_pkarmor"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/ehos //remind me to make this something to buy
+/obj/item/clothing/suit/armor/vest/suns/ehos //remind me to make this something to buy
 	name = "peacekeeper greatcoat"
 	desc = "A funky armored coat worn by eccentric peacekeepers. Closing the coat is socially improper."
 	icon_state = "suns_greatcoat"
 	item_state = "suns_greatcoat"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/toggle/suns/pkcoat
 	name = "peacekeeper coat"
@@ -195,22 +197,22 @@
 	armor = list("melee" = 15, "bullet" = 30, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 25)
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	body_parts_covered = CHEST|GROIN
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
+/obj/item/clothing/suit/armor/vest/suns/captain
 	name = "decorated academic coat"
 	desc = "An armored coat intended for SUNS captains on the frontier. Go forth, and spread the message of the academy."
 	icon_state = "suns_captaincoat"
 	item_state = "suns_overblack"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns/xo
+/obj/item/clothing/suit/armor/vest/suns/xo
 	name = "academic staff coat"
 	desc = "A white coat used by SUNS academic staff. It designates the second in command on the ship."
 	icon_state = "suns_xojacket"
 	item_state = "suns_overwhite"
-
 
 ///////////////
 //Spacesuits//
@@ -343,7 +345,7 @@
 	icon_state = "sunsvisor"
 	item_state = "suns_pkhelmet"
 	tint = 0
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // identical stats to bulletproof helmet, as chest matches bulletproof vest
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // identical stats to vest
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //Why? Because I'm not giving PK's sec masks nor hud sunglasses.
 	icon = 'icons/obj/clothing/faction/suns/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
@@ -465,10 +467,10 @@
 
 /obj/item/clothing/gloves/suns/captain
 	name = "\improper SUNS captain's gloves"
-	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
+	desc = "Fancy black gloves for trusted SUNS members."
 	icon_state = "suns_captaingloves"
 	item_state = "suns_blackgloves"
-	siemens_coefficient = 0
+	siemens_coefficient = 0.5
 	permeability_coefficient = 0.05
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
@@ -595,15 +597,12 @@
 //Accessories//
 ///////////////
 
-//These are stored in clothing/accessories.dmi instead of a factional variant due to accessory code being dogwater
-//Please transfer them over to a factional file if accessory code is ever fixed
-
 /obj/item/clothing/accessory/waistcoat/suns
 	name = "\improper SUNS waistcoat"
 	desc = "An academic issued run of the mill waistcoat."
 	icon_state = "suns_waistcoat"
-	icon = 'icons/obj/clothing/accessories.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
+	icon = 'icons/obj/clothing/faction/suns/accessory.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/accessory.dmi'
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/waistcoat/suns/ribbon

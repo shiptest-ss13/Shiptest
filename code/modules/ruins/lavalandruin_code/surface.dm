@@ -1,9 +1,3 @@
-//////lavaland surface papers
-
-/obj/item/paper/fluff/stations/lavaland/surface/henderson_report
-	name = "Important Notice - Mrs. Henderson"
-	default_raw_text = "Nothing of interest to report."
-
 //ratvar
 
 /obj/structure/dead_ratvar

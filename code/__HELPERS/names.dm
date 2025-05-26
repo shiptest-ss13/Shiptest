@@ -11,10 +11,7 @@
 	return "[pick(GLOB.squid_names)][pick("-", "", " ")][capitalize(pick(GLOB.squid_names) + pick(GLOB.squid_names))]"
 
 /proc/kepori_name()
-	var/first_syllables = list("Fa", "Fe", "Fi", "Ma", "Me", "Mi", "Na", "Ne", "Ni", "Sa", "Se", "Si", "Ta", "Te", "Ti")
-	var/second_syllables = list("fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti")
-	var/third_syllables = list("ca", "ce", "ci", "fa", "fe", "fi", "la", "le", "li", "ma", "me", "mi", "na", "ne", "ni", "ra", "re", "ri", "sa", "se", "si", "sha", "she", "shi", "ta", "te", "ti")
-	return "[pick(first_syllables)][pick(second_syllables)][pick(third_syllables)]"
+	return "[pick(GLOB.kepori_names)] [pick(GLOB.kepori_names)]-[pick(GLOB.kepori_names)]"
 
 /proc/vox_name()
 	. = ""
@@ -23,6 +20,11 @@
 	for(var/x = rand(3,8) to 0 step -1)
 		. += pick(syllables)
 	. = capitalize(.)
+
+/proc/spider_name()
+	. = pick(GLOB.spider_names)
+	for (var/x = rand(0,4) to 0 step -1)
+		. += "'[pick(GLOB.spider_names)]"
 
 GLOBAL_VAR(command_name)
 /proc/command_name()
@@ -75,9 +77,9 @@ GLOBAL_VAR(command_name)
 		name = ""
 
 	// Prefix
-	var/holiday_name = pick(SSevents.holidays)
+	var/holiday_name = pick(GLOB.holidays)
 	if(holiday_name)
-		var/datum/holiday/holiday = SSevents.holidays[holiday_name]
+		var/datum/holiday/holiday = GLOB.holidays[holiday_name]
 		if(istype(holiday, /datum/holiday/friday_thirteenth))
 			random = 13
 		name = holiday.getStationPrefix()
@@ -232,63 +234,3 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 				. += "."
 			else
 				. += ", "
-
-/// List of all ship factions to their prefixes.
-GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
-	"Syndicate" = list(
-		"SEV",
-		"SSV",
-	),
-	"New Gorlex Republic" = list(
-		"NGRV",
-	),
-	"CyberSun" = list(
-		"CSSV",
-	),
-	"Student-Union of Naturalistic Sciences" = list(
-		"SUNS",
-	),
-	"SolGov" = list(
-		"SCSV",
-	),
-	"Saint-Roumain Militia" = list(
-		"SRSV",
-	),
-	"Independent" = list(
-		"SV",
-		"IMV",
-		"ISV",
-		"XSV",
-	),
-	"Inteq Risk Management Group" = list(
-		"IRMV",
-	),
-	"CLIP Minutemen" = list(
-		"CMSV",
-		"CMGSV",
-	),
-	"Nanotrasen" = list(
-		"NTSV",
-	),
-	"Frontiersmen Fleet" = list(
-		"FFV",
-	),
-	"Saint-Roumaine Militia" = list(
-		"SRSV",
-	),
-	"Pan-Gezenan Federation" = list(
-		"PGF",
-		"PGFMC",
-		"PGFN",
-	),
-))
-
-/proc/ship_prefix_to_faction(prefix)
-	for(var/faction in GLOB.ship_faction_to_prefixes)
-		if(prefix in GLOB.ship_faction_to_prefixes[faction])
-			return faction
-	var/static/list/screamed = list()
-	if(!(prefix in screamed))
-		screamed += prefix
-		stack_trace("attempted to get faction for unknown prefix [prefix]")
-	return "?!ERR!?"

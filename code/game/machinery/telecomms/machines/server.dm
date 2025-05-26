@@ -11,7 +11,7 @@
 	desc = "A machine used to store data and network statistics."
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 15
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/telecomms/server
 	var/list/log_entries = list()
 	var/totaltraffic = 0 // gigabytes (if > 1024, divide by 1024 -> terrabytes)
@@ -116,7 +116,7 @@
 
 /obj/machinery/telecomms/server/presets/command
 	id = "Command Server"
-	freq_listening = list(FREQ_COMMAND, FREQ_COMMON)
+	freq_listening = list(FREQ_EMERGENCY, FREQ_COMMON)
 	autolinkers = list("command")
 
 /obj/machinery/telecomms/server/presets/common/birdstation/Initialize()

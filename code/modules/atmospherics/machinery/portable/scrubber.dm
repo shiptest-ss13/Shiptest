@@ -8,7 +8,7 @@
 	var/volume_rate = 1000
 	var/overpressure_m = 80
 	var/use_overlays = TRUE
-	var/list/scrubbing = list(GAS_PLASMA, GAS_CO2, GAS_NITROUS, GAS_BZ, GAS_NITRYL, GAS_TRITIUM, GAS_HYPERNOB, GAS_H2O, GAS_FREON)
+	var/list/scrubbing = list(GAS_PLASMA, GAS_CO2, GAS_NITROUS, GAS_BZ, GAS_TRITIUM, GAS_H2O, GAS_FREON, GAS_HYDROGEN, GAS_CO)
 
 /obj/machinery/portable_atmospherics/scrubber/Destroy()
 	var/turf/T = get_turf(src)
@@ -29,7 +29,7 @@
 	if(connected_port)
 		. += "scrubber-connector"
 
-/obj/machinery/portable_atmospherics/scrubber/process_atmos()
+/obj/machinery/portable_atmospherics/scrubber/process_atmos(seconds_per_tick)
 	..()
 	if(!on)
 		return
@@ -40,7 +40,7 @@
 		var/turf/T = get_turf(src)
 		scrub(T.return_air())
 
-/obj/machinery/portable_atmospherics/scrubber/proc/scrub(datum/gas_mixture/mixture)
+/obj/machinery/portable_atmospherics/scrubber/proc/scrub(datum/gas_mixture/mixture, seconds_per_tick = 2)
 	if(air_contents.return_pressure() >= overpressure_m * ONE_ATMOSPHERE)
 		return
 
@@ -113,8 +113,8 @@
 	name = "huge air scrubber"
 	icon_state = "scrubber:0"
 	anchored = TRUE
-	active_power_usage = 500
-	idle_power_usage = 10
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 
 	overpressure_m = 200
 	volume_rate = 1500
@@ -133,19 +133,21 @@
 	icon_state = "scrubber:[on]"
 	return ..()
 
-/obj/machinery/portable_atmospherics/scrubber/huge/process_atmos()
+/obj/machinery/portable_atmospherics/scrubber/huge/process_atmos(seconds_per_tick)
 	if((!anchored && !movable) || !is_operational)
 		on = FALSE
 		update_appearance()
-	use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
-	if(!on)
+	if(on)
+		set_active_power()
+	else
+		set_idle_power()
 		return
 
 	..()
 	if(!holding)
 		var/turf/T = get_turf(src)
-		for(var/turf/AT in T.GetAtmosAdjacentTurfs(alldir = TRUE))
-			scrub(AT.return_air())
+		for(var/turf/AT as anything in T.get_atmos_all_adjacent_turfs())
+			scrub(AT.return_air(), seconds_per_tick)
 
 /obj/machinery/portable_atmospherics/scrubber/huge/attackby(obj/item/W, mob/user)
 	if(default_unfasten_wrench(user, W))

@@ -7,12 +7,20 @@
 		/datum/surgery_step/mechanic_open,
 		/datum/surgery_step/open_hatch,
 		/datum/surgery_step/prepare_electronics,
-		/datum/surgery_step/fix_brain,
+		/datum/surgery_step/fix_brain/mechanic,
 		/datum/surgery_step/close_hatch,
 		/datum/surgery_step/mechanic_close
 	)
 	lying_required = FALSE
 	self_operable = TRUE
+
+/datum/surgery_step/fix_brain/mechanic
+	implements = list(
+		TOOL_MULTITOOL = 85,
+		TOOL_HEMOSTAT = 85,
+		TOOL_SCREWDRIVER = 40,
+		/obj/item/pen = 5
+	)
 
 /datum/surgery/healing/mechanic
 	name = "Repair machinery"
@@ -24,7 +32,7 @@
 		/datum/surgery_step/mechanic_close
 	)
 	lying_required = FALSE
-	self_operable = TRUE
+	self_operable = FALSE
 
 /datum/surgery_step/heal/mechanic
 	name = "repair components"
@@ -33,14 +41,14 @@
 				TOOL_CAUTERY = 60,
 				TOOL_HEMOSTAT = 60,
 				TOOL_RETRACTOR = 60,
-				/obj/item/melee/transforming/energy = 40,
+				/obj/item/melee/energy = 40,
 				/obj/item/gun/energy/laser = 20)
 	time = 2 SECONDS
 	missinghpbonus = 10
 
 /datum/surgery_step/heal/mechanic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/repairtype
-	if(tool.tool_behaviour == TOOL_WELDER || tool.tool_behaviour == TOOL_CAUTERY || istype(tool, /obj/item/melee/transforming/energy) || istype(tool, /obj/item/gun/energy/laser))
+	if(tool.tool_behaviour == TOOL_WELDER || tool.tool_behaviour == TOOL_CAUTERY || istype(tool, /obj/item/melee/energy) || istype(tool, /obj/item/gun/energy/laser))
 		brutehealing = 5
 		burnhealing = 0
 		repairtype = "dents"
@@ -54,9 +62,9 @@
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)
-			display_results(user, target, "<span class='notice'>You attempt to fix some of [target]'s [repairtype].</span>",
-		"<span class='notice'>[user] attempts to fix some of [target]'s [repairtype].</span>",
-		"<span class='notice'>[user] attempts to fix some of [target]'s [repairtype].</span>")
+			display_results(user, target, span_notice("You attempt to fix some of [target]'s [repairtype]."),
+		span_notice("[user] attempts to fix some of [target]'s [repairtype]."),
+		span_notice("[user] attempts to fix some of [target]'s [repairtype]."))
 
 /datum/surgery_step/heal/mechanic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/umsg = "You succeed in fixing some of [target]'s damages" //no period, add initial space to "addons"
@@ -73,7 +81,7 @@
 		umsg += " as best as you can while they have clothing on"
 		tmsg += " as best as they can while [target] has clothing on"
 	experience_given = CEILING((target.heal_bodypart_damage(urhealedamt_brute,urhealedamt_burn)/5),1)
-	display_results(user, target, "<span class='notice'>[umsg].</span>",
+	display_results(user, target, span_notice("[umsg]."),
 		"[tmsg].",
 		"[tmsg].")
 	if(istype(surgery, /datum/surgery/healing))
@@ -82,9 +90,9 @@
 	return TRUE
 
 /datum/surgery_step/heal/mechanic/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob)
-	display_results(user, target, "<span class='warning'>You screwed up!</span>",
-		"<span class='warning'>[user] screws up!</span>",
-		"<span class='notice'>[user] fixes some of [target]'s damages.</span>", TRUE)
+	display_results(user, target, span_warning("You screwed up!"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] fixes some of [target]'s damages."), TRUE)
 	var/urdamageamt_burn = brutehealing * 0.8
 	var/urdamageamt_brute = burnhealing * 0.8
 	//Reset heal checks
@@ -126,3 +134,52 @@
 	var/mob/living/carbon/C = target
 	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
 		return TRUE
+
+/datum/surgery_step/repair_structure
+	name = "replace structural rods"
+	time = 3.4 SECONDS
+	implements = list(
+		/obj/item/stack/rods = 100
+		)
+	preop_sound = 'sound/items/ratchet.ogg'
+	success_sound = 'sound/items/taperecorder_close.ogg'
+
+/datum/surgery_step/repair_structure/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	var/obj/item/stack/rods = tool
+	if(!tool || rods.get_amount() < 2)
+		to_chat(user, span_warning("You need at least two rods to do this!"))
+		return -1
+	if(target_zone == BODY_ZONE_HEAD)
+		user.visible_message("[user] begins to reinforce [target]'s skull with [tool]...", span_notice("You begin to reinforce [target]'s skull with [tool]..."))
+	else
+		user.visible_message("[user] begins to replace the rods in [target]'s [parse_zone(target_zone)]...", span_notice("You begin replacing the rods in [target]'s [parse_zone(target_zone)]..."))
+
+/datum/surgery_step/repair_structure/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	var/obj/item/stack/rods = tool
+	if(!tool || rods.get_amount() < 2)
+		to_chat(user, span_warning("You need at least two rods to do this!"))
+		return FALSE
+	user.visible_message("[user] successfully restores integrity to [target]'s [parse_zone(target_zone)]!", span_notice("You successfully restore integrity to [target]'s [parse_zone(target_zone)]."))
+	//restore all integrity-induced damage, so that they don't just weld themselves into a mess again
+	var/integ_heal = surgery.operated_bodypart.integrity_loss //ignore integrity_ignored as a little surgery bonus
+	var/brute_heal = min(surgery.operated_bodypart.brute_dam,integ_heal)
+	var/burn_heal = max(0,integ_heal-brute_heal)
+	surgery.operated_bodypart.integrity_loss = 0
+	surgery.operated_bodypart.heal_damage(brute_heal,burn_heal,0,null,BODYTYPE_ROBOTIC)
+	tool.use(2)
+	return TRUE
+
+
+/datum/surgery/integrity
+	name = "Replace structure"
+	possible_locs = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD, BODY_ZONE_CHEST)
+	requires_bodypart_type = BODYTYPE_ROBOTIC
+	steps = list(
+		/datum/surgery_step/mechanic_open,
+		/datum/surgery_step/mechanic_wrench,
+		/datum/surgery_step/repair_structure,
+		/datum/surgery_step/mechanic_close
+	)
+	requires_bodypart = TRUE
+	lying_required = TRUE
+	self_operable = FALSE

@@ -114,10 +114,10 @@
 /obj/machinery/satellite/proc/toggle(mob/user)
 	if(!active && !isinspace())
 		if(user)
-			to_chat(user, "<span class='warning'>You can only activate [src] in space.</span>")
+			to_chat(user, span_warning("You can only activate [src] in space."))
 		return FALSE
 	if(user)
-		to_chat(user, "<span class='notice'>You [active ? "deactivate": "activate"] [src].</span>")
+		to_chat(user, span_notice("You [active ? "deactivate": "activate"] [src]."))
 	set_anchored(!anchored)
 
 /obj/machinery/satellite/update_icon_state()
@@ -126,7 +126,7 @@
 
 /obj/machinery/satellite/multitool_act(mob/living/user, obj/item/I)
 	..()
-	to_chat(user, "<span class='notice'>// NTSAT-[id] // Mode : [active ? "PRIMARY" : "STANDBY"] //[(obj_flags & EMAGGED) ? "DEBUG_MODE //" : ""]</span>")
+	to_chat(user, span_notice("// NTSAT-[id] // Mode : [active ? "PRIMARY" : "STANDBY"] //[(obj_flags & EMAGGED) ? "DEBUG_MODE //" : ""]"))
 	return TRUE
 
 /obj/machinery/satellite/meteor_shield
@@ -143,7 +143,7 @@
 			return FALSE
 	return TRUE
 
-/obj/machinery/satellite/meteor_shield/process()
+/obj/machinery/satellite/meteor_shield/process(seconds_per_tick)
 	if(!active)
 		return
 	for(var/obj/effect/meteor/M in GLOB.meteor_list)
@@ -158,26 +158,3 @@
 /obj/machinery/satellite/meteor_shield/toggle(user)
 	if(!..(user))
 		return FALSE
-	if(obj_flags & EMAGGED)
-		if(active)
-			change_meteor_chance(2)
-		else
-			change_meteor_chance(0.5)
-
-/obj/machinery/satellite/meteor_shield/proc/change_meteor_chance(mod)
-	var/datum/round_event_control/E = locate(/datum/round_event_control/meteor_wave) in SSevents.control
-	if(E)
-		E.weight *= mod
-
-/obj/machinery/satellite/meteor_shield/Destroy()
-	. = ..()
-	if(active && (obj_flags & EMAGGED))
-		change_meteor_chance(0.5)
-
-/obj/machinery/satellite/meteor_shield/emag_act(mob/user)
-	if(obj_flags & EMAGGED)
-		return
-	obj_flags |= EMAGGED
-	to_chat(user, "<span class='notice'>You access the satellite's debug mode, increasing the chance of meteor strikes.</span>")
-	if(active)
-		change_meteor_chance(2)

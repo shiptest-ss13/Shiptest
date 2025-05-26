@@ -11,7 +11,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	in_use = FALSE
 	return ..()
 
-/mob/living/carbon/human/dummy/Life(delta_time, times_fired)
+/mob/living/carbon/human/dummy/Life(seconds_per_tick, times_fired)
 	return
 
 /mob/living/carbon/human/dummy/has_equipped(obj/item/item, slot, initial = FALSE)

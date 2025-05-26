@@ -1,41 +1,11 @@
-
-//tropical ruins here
-
-//Beachside Town
-
-/area/ruin/beach/oceantown
-	name = "Beachside Town"
-	icon_state = "dk_yellow"
-	mood_bonus = 10
-	mood_message = "<span class='nicegreen''>I feel serene. This place is so peaceful. </span>\n"
-	always_unpowered = FALSE
-
-/area/ruin/beach/oceantown/hotel
-	name = "Beachside Hotel"
-	icon_state = "green"
-
-/area/ruin/beach/oceantown/bar
-	name = "Beachside bar"
-	icon_state = "crew_quarters"
-
-/area/ruin/beach/oceantown/shop
-	name = "Beachside Shop"
-	icon_state = "red"
-
-/area/ruin/beach/oceantown/house
-
-//Knight's Rest
-
-/area/ruin/beachplanet/knight
-	name = "Knight's Rest"
-	icon_state = "dkyellow"
+//beach ruins here
 
 //Ancient Complex
 
 /area/ruin/beach/complex //seems quite simple to me
 	name = "Cybersun Complex"
 	icon_state = "hallC"
-	ambientsounds = MAINTENANCE
+	ambience_index = AMBIENCE_MAINT
 
 /area/ruin/beach/complex/wall
 	name = "Cybersun Complex Exterior Wall"
@@ -58,25 +28,26 @@
 /area/ruin/beach/piratecrash/storage
 	name = "Scrap Hut"
 
-//beach_crashed_starwalker
-
-/area/ruin/beach/starwalker
-	name = "Crashed Pirate Ship"
-	icon_state = "green"
-
 //beach_treasure_cove, the beeginning
 
 /area/ruin/beach/treasure_cove
 	name = "Pirate Cavern"
 	icon_state = "purple"
 
-//beach_float_resort --> keeping resort open for a land based ruin
+// bunkerg
 
-/area/ruin/beach/float_resort
-	name = "Beach Resort"
-	icon_state = "yellow"
-	always_unpowered = FALSE
+/area/ruin/beach/bunker
+	name = "Frontiersmen Bunker"
+	icon_state = "hallC"
 
-/area/ruin/beach/float_resort/villa
-	name = "Resort Villa"
+/area/ruin/beach/bunker/office
+	icon_state = "purple"
+
+/area/ruin/beach/bunker/living
+	icon_state = "crew_quarters"
+
+/area/ruin/beach/bunker/side_one
+	icon_state = "red"
+
+/area/ruin/beach/bunker/side_two
 	icon_state = "green"

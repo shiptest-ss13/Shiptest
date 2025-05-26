@@ -42,12 +42,15 @@
 /obj/machinery/air_sensor/atmos/incinerator_tank
 	name = "incinerator chamber gas sensor"
 	id_tag = ATMOS_GAS_MONITOR_SENSOR_INCINERATOR
+/obj/machinery/air_sensor/external
+	name = "external atmosphere sensor"
+	id_tag = GAS_MONITOR_SENSOR_EXTERNAL
 
 /obj/machinery/air_sensor/update_icon_state()
 	icon_state = "gsensor[on]"
 	return ..()
 
-/obj/machinery/air_sensor/process_atmos()
+/obj/machinery/air_sensor/process_atmos(seconds_per_tick)
 	if(on)
 		var/datum/gas_mixture/air_sample = return_air()
 
@@ -306,7 +309,11 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 	icon_state = "computer-solgov"
 	deconpath = /obj/structure/frame/computer/solgov
 
-// This hacky madness is the evidence of the fact that a lot of machines were never meant to be constructable, im so sorry you had to see this
+/obj/machinery/computer/atmos_control/external
+	sensors = list(GAS_MONITOR_SENSOR_EXTERNAL = "External Atmospherics Monitoring")
+	name = "External Atmospherics Monitoring"
+//tbh I would love it if someone could make this like. Unique like ship camera networks & etc.
+//This hacky madness is the evidence of the fact that a lot of machines were never meant to be constructable, im so sorry you had to see this
 /obj/machinery/computer/atmos_control/tank/proc/reconnect(mob/user)
 	var/list/IO = list()
 	var/datum/radio_frequency/freq = SSradio.return_frequency(frequency)
@@ -318,7 +325,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 		var/list/text = splittext(U.id, "_")
 		IO |= text[1]
 	if(!IO.len)
-		to_chat(user, "<span class='alert'>No machinery detected.</span>")
+		to_chat(user, span_alert("No machinery detected."))
 	var/S = input("Select the device set: ", "Selection", IO[1]) as anything in sortList(IO)
 	if(src)
 		src.input_tag = "[S]_in"

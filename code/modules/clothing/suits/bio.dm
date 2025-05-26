@@ -8,7 +8,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 20, "fire" = 30, "acid" = 100)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	resistance_flags = ACID_PROOF
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
 
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"
@@ -29,6 +30,8 @@
 	strip_delay = 70
 	equip_delay_other = 70
 	resistance_flags = ACID_PROOF
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equip_self_flags = null
 
 //Standard biosuit, orange stripe
 /obj/item/clothing/head/bio_hood/general
@@ -98,4 +101,4 @@
 
 /obj/item/clothing/suit/bio_suit/plaguedoctorsuit/Initialize()
 	. = ..()
-	allowed += list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/cane)
+	allowed += list(/obj/item/storage/book/bible, /obj/item/cane)

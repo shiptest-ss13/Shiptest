@@ -37,7 +37,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, "<span class='warning'>PZZTTPFFFT</span>")
+	to_chat(user, span_warning("PZZTTPFFFT"))
 	desc = "[desc] The display is flickering slightly."
 
 /obj/item/clothing/glasses/hud/health
@@ -135,7 +135,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the hudpatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the hudpatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "hudpatch-[flipped]"
 	item_state = "hudpatch-[flipped]"
 	update_appearance()
@@ -161,26 +161,6 @@
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
-
-/obj/item/clothing/glasses/hud/security/sunglasses/gars
-	name = "\improper HUD gar glasses"
-	desc = "GAR glasses with a HUD."
-	icon_state = "gars"
-	item_state = "garb"
-	force = 10
-	throwforce = 10
-	throw_speed = 4
-	attack_verb = list("sliced")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
-
-/obj/item/clothing/glasses/hud/security/sunglasses/gars/supergars
-	name = "giga HUD gar glasses"
-	desc = "GIGA GAR glasses with a HUD."
-	icon_state = "supergars"
-	item_state = "garb"
-	force = 12
-	throwforce = 12
 
 /obj/item/clothing/glasses/hud/toggle
 	name = "Toggle HUD"
@@ -248,20 +228,11 @@
 	tint = 1
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 
-
 /obj/item/clothing/glasses/hud/spacecop/hidden // for the undercover cop
 	name = "sunglasses"
 	desc = "These sunglasses are special, and let you view potential criminals."
 	icon_state = "sun"
 	item_state = "sunglasses"
-
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	name = "inteq ballistic HUD"
-	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."
-	icon_state = "inteq_goggles"
-	item_state = "inteq_goggles"
-	supports_variations = KEPORI_VARIATION
-	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"
@@ -274,4 +245,3 @@
 	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records. This pair also corrects nearsightedness."
 	icon_state = "prescriptionsecurityhud"
 	vision_correction = 1
-

@@ -18,7 +18,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/c38_hotshot
-	name = "Speed Loader (.38 Hot Shot)"
+	name = "Speed Loader (.38 Hearth)"
 	desc = "Designed to quickly reload revolvers. Hot Shot bullets contain an incendiary payload."
 	id = "c38_hotshot"
 	build_type = PROTOLATHE
@@ -28,7 +28,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/c38_iceblox
-	name = "Speed Loader (.38 Iceblox)"
+	name = "Speed Loader (.38 Chilled)"
 	desc = "Designed to quickly reload revolvers. Iceblox bullets contain a cryogenic payload."
 	id = "c38_iceblox"
 	build_type = PROTOLATHE
@@ -238,19 +238,9 @@
 	build_path = /obj/item/ammo_box/magazine/wt550m9/ap
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/mag_oldsmg/ic_mag
-	name = "WT-550 Auto Gun Incendiary Magazine (4.6x30mm IC)"
-	desc = "A 20 round armour piercing magazine for the out of date security WT-550 Auto Rifle"
-	id = "mag_oldsmg_ic"
-	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600, /datum/material/glass = 1000)
-	build_path = /obj/item/ammo_box/magazine/wt550m9/inc
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-//WS edit - free lethals
-
 /datum/design/commanderammo
-	name = "Commander magazine (9mm)"
-	desc = "A single stack magazine chambered in 9mm for Commander sidearms."
+	name = "Commander magazine (9x18mm)"
+	desc = "A single stack magazine chambered in 9x18mm for Commander sidearms."
 	id = "commanderammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
@@ -258,13 +248,13 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/stechkinammo
-	name = "Stechkin magazine (10mm)"
-	desc = "A single stack Stechkin magazine, designed to chamber 10mm and fit into the Syndicate's Stechkin sidearms."
-	id = "stechkinammo"
+/datum/design/ringneckammo
+	name = "Ringneck magazine (10x22mm)"
+	desc = "A single stack Ringneck magazine, designed to chamber 10x22mm and fit into Scarborough Arm's Ringneck series of sidearms."
+	id = "ringneckammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/magazine/m10mm
+	build_path = /obj/item/ammo_box/magazine/m10mm_ringneck
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -288,13 +278,11 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-//Shiptest edit - standard ammunition
-
 /datum/design/buckshot_shell
 	name = "Buckshot Shell"
 	id = "buckshot_shell"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/ammo_casing/shotgun/buckshot
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -303,26 +291,26 @@
 	name = "Ammo Box (.38 Special)"
 	id = "c38"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c38_box
+	materials = list(/datum/material/iron = 17000)
+	build_path = /obj/item/storage/box/ammo/c38
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/c9mm
-	name = "Ammo Box (9mm)"
+	name = "Ammo Box (9x18mm)"
 	id = "c9mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c9mm
+	materials = list(/datum/material/iron = 17000)
+	build_path = /obj/item/storage/box/ammo/c9mm
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/c10mm
-	name = "Ammo Box (10mm)"
+	name = "Ammo Box (10x22mm)"
 	id = "c10mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c10mm
+	materials = list(/datum/material/iron = 17000)
+	build_path = /obj/item/storage/box/ammo/c10mm
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -330,8 +318,8 @@
 	name = "Ammo Box (.45)"
 	id = "c45"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c45
+	materials = list(/datum/material/iron = 17000)
+	build_path = /obj/item/storage/box/ammo/c45
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -339,12 +327,10 @@
 	name = "Ammo Box (5.56mm HITP caseless)"
 	id = "c556mmHITP"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c556mmHITP
+	materials = list(/datum/material/iron = 17000)
+	build_path = /obj/item/storage/box/ammo/c556mm
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-// WS edit - not so free rubbershot
 
 /datum/design/rubbershot9mm
 	name = "Rubbershot 9mm ammo box"
@@ -352,17 +338,17 @@
 	id = "rubbershot9mm"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c9mm/rubbershot
+	build_path = /obj/item/storage/box/ammo/c9mm_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/rubbershot10mm
-	name = "Rubbershot 10mm ammo box"
-	desc = "A box full of less-than-lethal 10mm ammunition."
+	name = "Rubbershot 10x22mm ammo box"
+	desc = "A box full of less-than-lethal 10x22mm ammunition."
 	id = "rubbershot10mm"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c10mm/rubbershot
+	build_path = /obj/item/storage/box/ammo/c10mm_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -372,7 +358,7 @@
 	id = "rubbershot45"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c45/rubbershot
+	build_path = /obj/item/storage/box/ammo/c45_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -381,28 +367,28 @@
 	desc = "A box full of less-than-lethal 5.56mm HITP ammunition."
 	id = "rubbershot556mmHITP"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 18000)
-	build_path = /obj/item/ammo_box/c556mmHITP/rubbershot
+	materials = list(/datum/material/iron = 15000)
+	build_path = /obj/item/storage/box/ammo/c556mm_rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/ap9mm
-	name = "AP 9mm ammo box"
+	name = "AP 9x18mm ammo box"
 	desc = "A box full of armor piercing 9mm ammunition."
 	id = "ap9mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/uranium = 1000)
-	build_path = /obj/item/ammo_box/c9mm/ap
+	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
+	build_path = /obj/item/storage/box/ammo/c9mm_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/ap10mm
-	name = "AP 10mm ammo box"
-	desc = "A box full of armor piercing 10mm ammunition."
+	name = "AP 10x22mm ammo box"
+	desc = "A box full of armor piercing 10x22mm ammunition."
 	id = "ap10mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/uranium = 1000)
-	build_path = /obj/item/ammo_box/c10mm/ap
+	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
+	build_path = /obj/item/storage/box/ammo/c10mm_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -411,8 +397,8 @@
 	desc = "A box full of armor piercing .45 ammunition."
 	id = "ap45"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/uranium = 1000)
-	build_path = /obj/item/ammo_box/c45/ap
+	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
+	build_path = /obj/item/storage/box/ammo/c45_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -421,28 +407,28 @@
 	desc = "A box full of armor piercing 5.56mm HITP caseless ammunition."
 	id = "ap556mmHITP"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 18000, /datum/material/uranium = 1000)
-	build_path = /obj/item/ammo_box/c556mmHITP/ap
+	materials = list(/datum/material/iron = 17000, /datum/material/uranium = 1000)
+	build_path = /obj/item/storage/box/ammo/c556mm_ap
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/hp9mm
-	name = "HP 9mm ammo box"
-	desc = "A box full of hollow point 9mm ammunition."
+	name = "HP 9x18mm ammo box"
+	desc = "A box full of hollow point 9x18mm ammunition."
 	id = "hp9mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/silver = 1000)
-	build_path = /obj/item/ammo_box/c9mm/hp
+	materials = list(/datum/material/iron = 17000, /datum/material/silver = 1000)
+	build_path = /obj/item/storage/box/ammo/c9mm_hp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/hp10mm
-	name = "HP 10mm ammo box"
-	desc = "A box full of hollow point 10mm ammunition."
+	name = "HP 10x22mm ammo box"
+	desc = "A box full of hollow point 10x22mm ammunition."
 	id = "hp10mm"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/silver = 1000)
-	build_path = /obj/item/ammo_box/c10mm/hp
+	materials = list(/datum/material/iron = 17000, /datum/material/silver = 1000)
+	build_path = /obj/item/storage/box/ammo/c10mm_hp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -452,7 +438,7 @@
 	id = "hp45"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000, /datum/material/silver = 1000)
-	build_path = /obj/item/ammo_box/c45/hp
+	build_path = /obj/item/storage/box/ammo/c45_hp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -461,46 +447,16 @@
 	desc = "A box full of hollow point 5.56mm HITP caseless ammunition."
 	id = "hp556mmHITP"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 18000, /datum/material/silver = 1000)
-	build_path = /obj/item/ammo_box/c556mmHITP/hp
+	materials = list(/datum/material/iron = 17000, /datum/material/silver = 1000)
+	build_path = /obj/item/storage/box/ammo/c556mm_hp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/inc9mm
-	name = "Incendiary 9mm ammo box"
-	desc = "A box full of incendiary 9mm ammunition."
-	id = "inc9mm"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
-	build_path = /obj/item/ammo_box/c9mm/fire
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/inc10mm
-	name = "Incendiary 10mm ammo box"
-	desc = "A box full of incendiary 10mm ammunition."
-	id = "inc10mm"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
-	build_path = /obj/item/ammo_box/c10mm/fire
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-/datum/design/inc45
-	name = "Incendiary .45 ammo box"
-	desc = "A box full of incendiary .45 ammunition."
-	id = "inc45"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/plasma = 5000)
-	build_path = /obj/item/ammo_box/c45/fire
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/rubbershot
 	name = "Rubber Shot"
 	id = "rubber_shot"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/plastic = 2000)
 	build_path = /obj/item/ammo_casing/shotgun/rubbershot
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
@@ -509,7 +465,7 @@
 	name = "Shotgun Slug"
 	id = "shotgun_slug"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/ammo_casing/shotgun
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
@@ -527,7 +483,7 @@
 	name = "Incendiary Slug"
 	id = "incendiary_slug"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 4000)
+	materials = list(/datum/material/iron = 2000, /datum/material/plasma = 2000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
@@ -537,7 +493,7 @@
 	desc = "A stunning shell for a shotgun."
 	id = "stunshell"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 200)
+	materials = list(/datum/material/iron = 2767587)
 	build_path = /obj/item/ammo_casing/shotgun/stunslug
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_BALLISTICS
@@ -558,7 +514,7 @@
 	id = "suppressor"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 2000, /datum/material/silver = 500)
-	build_path = /obj/item/suppressor
+	build_path = /obj/item/attachment/silencer
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -582,15 +538,6 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/cleric_mace
-	name = "Cleric Mace"
-	desc = "A mace fit for a cleric. Useful for bypassing plate armor, but too bulky for much else."
-	id = "cleric_mace"
-	build_type = AUTOLATHE
-	materials = list(MAT_CATEGORY_RIGID = 12000)
-	build_path = /obj/item/melee/cleric_mace
-	category = list("Imported")
-
 /datum/design/stun_boomerang
 	name = "OZtek Boomerang"
 	desc = "Uses reverse flow gravitodynamics to flip its personal gravity back to the thrower mid-flight. Also functions similar to a stun baton."
@@ -606,7 +553,7 @@
 	desc = "A power cell for weapons holds 10 MJ of energy."
 	id = "gun_cell"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(/datum/material/iron = 700, /datum/material/glass = 70)
+	materials = list(/datum/material/iron = 200, /datum/material/glass = 70)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/gun/empty
 	category = list("Misc","Weapons")
@@ -617,7 +564,7 @@
 	desc = "A upgraded power cell for weapons holds 20 MJ of energy."
 	id = "gun_cell_upgraded"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 700, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80)
+	materials = list(/datum/material/iron = 200, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/gun/upgraded/empty
 	category = list("Misc","Weapons")
@@ -648,14 +595,6 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/plastic = 4000)
 	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable
-	category = list("Imported")
-
-/datum/design/pizza_disposable_gun
-	name = "Pizza Disposable Gun"
-	id = "disposable_pizza"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/pizza = 4000)
-	build_path = /obj/item/gun/ballistic/automatic/pistol/disposable/pizza
 	category = list("Imported")
 
 //SRM Ballistics
@@ -724,7 +663,7 @@
 	desc = "A stripperclip of 8x50mmR."
 	id = "stripper762"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_box/magazine/illestren_a850r
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
@@ -753,6 +692,6 @@
 	name = "Ammo Box (9mm)"
 	id = "c9mmautolathe"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c9mm
+	materials = list(/datum/material/iron = 17000)
+	build_path = /obj/item/storage/box/ammo/c9mm
 	category = list("Imported")

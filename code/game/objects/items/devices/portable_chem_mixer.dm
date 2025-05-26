@@ -1,7 +1,7 @@
 /obj/item/storage/portable_chem_mixer
 	name = "Portable Chemical Mixer"
 	desc = "A portable device that dispenses and mixes chemicals. Can be upgraded to hold more beakers by inserting a vortex anomaly core. All necessary reagents need to be supplied with beakers. A label indicates that a screwdriver is required to open it for refills. This device can be worn on a belt. The letters 'S&T' are imprinted on the side."
-	icon = 'icons/obj/chemical.dmi'
+	icon = 'icons/obj/chemical/misc.dmi'
 	icon_state = "portablechemicalmixer_open"
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BELT
@@ -37,7 +37,7 @@
 		var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 		STR.max_items = STR.max_items + 40
 		QDEL_NULL(I)
-		to_chat(user, "<span class='notice'>You insert the vortex anomaly core, and the storage space inside [src] seems to grow much larger!</span>")
+		to_chat(user, span_notice("You insert the vortex anomaly core, and the storage space inside [src] seems to grow much larger!"))
 		return
 	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
 	if (I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -134,7 +134,7 @@
 			ui_interact(user)
 			return
 		else
-			to_chat(user, "<span class='notice'>The portable chemical mixer is currently open and its contents can be accessed.</span>")
+			to_chat(user, span_notice("The portable chemical mixer is currently open and its contents can be accessed."))
 			return
 	return
 

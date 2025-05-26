@@ -14,6 +14,7 @@
 	custom_materials = list(/datum/material/iron = 500)
 	actions_types = list(/datum/action/item_action/set_internals)
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 30)
+	demolition_mod = 1.25
 	var/datum/gas_mixture/air_contents = null
 	var/distribute_pressure = ONE_ATMOSPHERE
 	var/integrity = 3
@@ -30,7 +31,7 @@
 		return
 
 	if(breather.internal == src)
-		to_chat(breather, "<span class='notice'>You close [src] valve.</span>")
+		to_chat(breather, span_notice("You close [src] valve."))
 		breather.internal = null
 		breather.update_internals_hud_icon(0)
 	else
@@ -50,13 +51,13 @@
 					internals = TRUE
 
 			if(!internals)
-				to_chat(breather, "<span class='warning'>You are not wearing an internals mask!</span>")
+				to_chat(breather, span_warning("You are not wearing an internals mask!"))
 				return
 
 		if(breather.internal)
-			to_chat(breather, "<span class='notice'>You switch your internals to [src].</span>")
+			to_chat(breather, span_notice("You switch your internals to [src]."))
 		else
-			to_chat(breather, "<span class='notice'>You open [src] valve.</span>")
+			to_chat(breather, span_notice("You open [src] valve."))
 		breather.internal = src
 		breather.update_internals_hud_icon(1)
 	breather.update_action_buttons_icon()
@@ -87,10 +88,10 @@
 		icon = src.loc
 	if(!in_range(src, user) && !isobserver(user))
 		if(icon == src)
-			. += "<span class='notice'>If you want any more information you'll need to get closer.</span>"
+			. += span_notice("If you want any more information you'll need to get closer.")
 		return
 
-	. += "<span class='notice'>The gauge reads [round(air_contents.total_moles(), 0.01)] mol at [round(src.air_contents.return_pressure(),0.01)] kPa.</span>"	//yogs can read mols
+	. += span_notice("The gauge reads [round(air_contents.total_moles(), 0.01)] mol at [round(src.air_contents.return_pressure(),0.01)] kPa.")	//yogs can read mols
 
 	var/celsius_temperature = src.air_contents.return_temperature()-T0C
 	var/descriptive
@@ -108,18 +109,7 @@
 	else
 		descriptive = "furiously hot"
 
-	. += "<span class='notice'>It feels [descriptive].</span>"
-
-/obj/item/tank/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		var/turf/location = get_turf(src)
-		if(!location)
-			qdel(src)
-
-		if(air_contents)
-			location.assume_air(air_contents)
-
-		qdel(src)
+	. += span_notice("It feels [descriptive].")
 
 /obj/item/tank/deconstruct(disassembled = TRUE)
 	if(!disassembled)
@@ -227,7 +217,7 @@
 
 	return remove_air(moles_needed)
 
-/obj/item/tank/process()
+/obj/item/tank/process(seconds_per_tick)
 	//Allow for reactions
 	air_contents.react()
 	check_status()

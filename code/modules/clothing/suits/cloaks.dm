@@ -5,12 +5,17 @@
 	desc = "It's a cape that can be worn around your neck."
 	icon = 'icons/obj/clothing/cloaks.dmi'
 	icon_state = "qmcloak"
-	item_state = "qmcloak"
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESUITSTORAGE
 	greyscale_colors = list(list(11, 15), list(12, 22), list(12, 22))
 	greyscale_icon_state = "cloak"
+
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equip_delay_self = EQUIP_DELAY_COAT
+	equip_delay_other = EQUIP_DELAY_COAT * 1.5
+	strip_delay = EQUIP_DELAY_COAT * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT | EQUIP_SLOWDOWN
 
 /obj/item/clothing/neck/cloak/hos
 	name = "head of security's cloak"
@@ -47,31 +52,21 @@
 	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
 	icon_state = "hopcloak"
 
-/obj/item/clothing/neck/cloak/overseer
-	name = "SolGov overseer's cloak"
-	desc = "Worn by the Overseer. It smells faintly of bureaucracy."
-	icon_state = "solgov_cloak"
-
-/obj/item/clothing/neck/cloak/solgov
-	name = "SolGov weibel"
-	desc = "Worn by SolGov officials. It smells faintly of bureaucracy."
-	icon_state = "solgov_weibel"
-
-/obj/item/clothing/neck/cloak/solgovcap
-	name = "SolGov captain's cloak"
-	desc = "Worn by SolGov captains. It smells faintly of bureaucracy."
-	icon_state = "solgov_cap_cloak"
-
 /obj/item/clothing/neck/cloak/trans
 	name = "vampire cloak"
 	desc = "Worn by high ranking vampires of the transylvanian society of vampires."
 	icon_state = "trans"
 
+/obj/item/clothing/neck/cloak/bi
+	name = "solarian marine biologist cloak"
+	desc = "Commonly worn by members of the Solarian Marine Biologist Society, dedicated to the study and preservation of marine wildlife."
+	icon_state = "bi"
+
 /obj/item/clothing/suit/hooded/cloak/goliath
 	name = "goliath cloak"
 	icon_state = "goliath_cloak"
 	desc = "A staunch, practical cape made out of numerous monster materials, it is coveted amongst exiles & hermits."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/melee/spear, /obj/item/organ/regenerative_core/legion, /obj/item/melee/knife/bone, /obj/item/melee/knife/survival)
 	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -89,7 +84,7 @@
 	name = "drake armour"
 	icon_state = "dragon"
 	desc = "A suit of armour fashioned from the remains of an ash drake."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/spear)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/melee/spear)
 	armor = list("melee" = 50, "bullet" = 10, "laser" = 40, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 100, "acid" = 100)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/drake
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -114,7 +109,7 @@
 
 /obj/item/clothing/neck/cloak/skill_reward/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>You notice a powerful aura about this cloak, suggesting that only the truly experienced may wield it.</span>"
+	. += span_notice("You notice a powerful aura about this cloak, suggesting that only the truly experienced may wield it.")
 
 /obj/item/clothing/neck/cloak/skill_reward/equipped(mob/user, slot)
 	if (user.mind?.get_skill_level(associated_skill_path) < SKILL_LEVEL_LEGENDARY)
@@ -175,19 +170,3 @@
 	resistance_flags = NONE
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	flags_cover = HEADCOVERSEYES
-
-/obj/item/clothing/suit/hooded/cloak/goliath/polar
-	name = "polar cloak"
-	icon_state = "polarcloak"
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/polar
-	desc = "A tribal hood made from a polar bears pelt. Keeps it's wearer warm and looks badass while doing it."
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS
-
-/obj/item/clothing/head/hooded/cloakhood/goliath/polar
-	name = "polar cloak"
-	icon_state = "hoodie_gray"
-	mob_overlay_state = "polhood"
-	desc = "Wear bear on head show little man you big man, kill bear for cloak."
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	cold_protection = HEAD

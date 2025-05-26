@@ -13,10 +13,10 @@
 
 	if(battery_module && battery_module.battery && battery_module.battery.charge)
 		var/obj/item/stock_parts/cell/cell = battery_module.battery
-		if(cell.use(amount * GLOB.CELLRATE))
+		if(cell.use(amount * GLOB.CELLRATE, FALSE))
 			return TRUE
 		else // Discharge the cell anyway.
-			cell.use(min(amount*GLOB.CELLRATE, cell.charge))
+			cell.use(min(amount*GLOB.CELLRATE, cell.charge), FALSE)
 			return FALSE
 	return FALSE
 
@@ -42,10 +42,10 @@
 		shutdown_computer(0)
 
 // Handles power-related things, such as battery interaction, recharging, shutdown when it's discharged
-/obj/item/modular_computer/proc/handle_power()
+/obj/item/modular_computer/proc/handle_power(seconds_per_tick)
 	var/obj/item/computer_hardware/recharger/recharger = all_components[MC_CHARGE]
 	if(recharger)
-		recharger.process()
+		recharger.process(seconds_per_tick)
 
 	var/power_usage = screen_on ? base_active_power_usage : base_idle_power_usage
 

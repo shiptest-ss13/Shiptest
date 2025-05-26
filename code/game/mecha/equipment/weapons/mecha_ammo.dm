@@ -21,10 +21,10 @@
 /obj/item/mecha_ammo/attack_self(mob/user)
 	..()
 	if(rounds)
-		to_chat(user, "<span class='warning'>You cannot flatten the ammo box until it's empty!</span>")
+		to_chat(user, span_warning("You cannot flatten the ammo box until it's empty!"))
 		return
 
-	to_chat(user, "<span class='notice'>You fold [src] flat.</span>")
+	to_chat(user, span_notice("You fold [src] flat."))
 	var/I = new /obj/item/stack/sheet/metal(user.loc)
 	qdel(src)
 	user.put_in_hands(I)
@@ -45,15 +45,22 @@
 	name = "scattershot ammo"
 	desc = "A box of scaled-up buckshot, for use in exosuit shotguns."
 	icon_state = "scattershot"
-	rounds = 40
+	rounds = 24
 	ammo_type = "scattershot"
 
 /obj/item/mecha_ammo/lmg
 	name = "machine gun ammo"
-	desc = "A box of linked ammunition, designed for the Ultra AC 2 exosuit weapon."
+	desc = "A box of linked ammunition, designed for the UMG-2 exosuit weapon."
 	icon_state = "lmg"
-	rounds = 300
+	rounds = 200
 	ammo_type = "lmg"
+
+/obj/item/mecha_ammo/railgun_ammo
+	name = "Railgun rods"
+	desc = "A box of iron-tungsten rods, designed for the PR-05 exosuit weapon."
+	icon_state = "railgun"
+	rounds = 30
+	ammo_type = "railgun"
 
 /obj/item/mecha_ammo/lmg/tank
 	name = "HMG ammo"
@@ -83,7 +90,7 @@
 /obj/item/mecha_ammo/tank_shell
 	name = "anti-armor missile"
 	desc = "A large missle, intended to be loaded into a Type 207."
-	icon = 'icons/obj/ammo_bullets.dmi'
+	icon = 'icons/obj/ammunition/ammo_bullets.dmi'
 	icon_state = "srm-8"
 	rounds = 1
 	throw_range = 0

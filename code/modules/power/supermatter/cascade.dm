@@ -12,7 +12,7 @@
 
 /turf/open/indestructible/supermatter_cascade/examine(mob/user)
 	. = ..()
-	. += "<span class='warning'>Run away! Touching this will result in dusting!</span>"
+	. += span_warning("Run away! Touching this will result in dusting!")
 
 /turf/open/indestructible/supermatter_cascade/Initialize(mapload, inherited_virtual_z)
 	. = ..()
@@ -29,7 +29,7 @@
 		START_PROCESSING(SSobj, reactivate_turfs)
 	. = ..()
 
-/turf/open/indestructible/supermatter_cascade/process(delta_time)
+/turf/open/indestructible/supermatter_cascade/process(seconds_per_tick)
 	if(!COOLDOWN_FINISHED(src, spreading_cooldown))
 		return
 	COOLDOWN_START(src, spreading_cooldown, 3 SECONDS)
@@ -61,21 +61,13 @@
 	if(!iscarbon(user))
 		return
 	var/mob/living/carbon/jedi = user
-	to_chat(jedi, "<span class='userdanger'>That was a really dense idea.</span>")
+	to_chat(jedi, span_userdanger("That was a really dense idea."))
 	jedi.ghostize()
 	var/obj/item/organ/brain/rip_u = locate(/obj/item/organ/brain) in jedi.internal_organs
 	if(rip_u)
 		rip_u.Remove(jedi)
 		qdel(rip_u)
 	return
-
-/turf/open/indestructible/supermatter_cascade/blob_act(obj/structure/blob/blob)
-	if(!blob || isspaceturf(loc)) //does nothing in space
-		return
-	playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
-	blob.visible_message("<span class='danger'>\The [blob] strikes at \the [src] and rapidly flashes to ash.</span>",
-		"<span class='danger'>You hear a loud crack as you are washed with a wave of heat.</span>")
-	Consume(blob)
 
 /turf/open/indestructible/supermatter_cascade/attack_paw(mob/user, list/modifiers)
 	dust_mob(user, cause = "monkey attack")
@@ -90,8 +82,8 @@
 	else
 		murder = user.attack_verb_continuous
 	dust_mob(user, \
-	"<span class='danger'>[user] unwisely [murder] [src], and [user.p_their()] body burns brilliantly before flashing into ash!</span>", \
-	"<span class='userdanger'>You unwisely touch [src], and your vision glows brightly as your body crumbles to dust. Oops.</span>", \
+	span_danger("[user] unwisely [murder] [src], and [user.p_their()] body burns brilliantly before flashing into ash!"), \
+	span_userdanger("You unwisely touch [src], and your vision glows brightly as your body crumbles to dust. Oops."), \
 	"simple animal attack")
 
 /turf/open/indestructible/supermatter_cascade/attack_robot(mob/user)
@@ -122,8 +114,8 @@
 	if(!user.is_mouth_covered())
 		if(user.a_intent == INTENT_HARM)
 			dust_mob(user,
-				"<span class='danger'>As [user] tries to take a bite out of [src] everything goes silent before [user.p_their()] body starts to glow and burst into flames before flashing to ash.</span>",
-				"<span class='userdanger'>You try to take a bite out of [src], but find [p_them()] far too hard to get anywhere before everything starts burning and your ears fill with ringing!</span>",
+				span_danger("As [user] tries to take a bite out of [src] everything goes silent before [user.p_their()] body starts to glow and burst into flames before flashing to ash."),
+				span_userdanger("You try to take a bite out of [src], but find [p_them()] far too hard to get anywhere before everything starts burning and your ears fill with ringing!"),
 				"attempted bite"
 			)
 			return
@@ -131,15 +123,15 @@
 	var/obj/item/bodypart/head/forehead = user.get_bodypart(BODY_ZONE_HEAD)
 	if(forehead)
 		dust_mob(user,
-			"<span class='danger'>As [user]'s forehead bumps into [src], inducing a resonance... Everything goes silent before [user.p_their()] [forehead] flashes to ash!</span>",
-			"<span class='userdanger'>You feel your forehead bump into [src] and everything suddenly goes silent. As your head fills with ringing you come to realize that that was not a wise decision.</span>",
+			span_danger("As [user]'s forehead bumps into [src], inducing a resonance... Everything goes silent before [user.p_their()] [forehead] flashes to ash!"),
+			span_userdanger("You feel your forehead bump into [src] and everything suddenly goes silent. As your head fills with ringing you come to realize that that was not a wise decision."),
 			"failed lick"
 		)
 		return
 
 	dust_mob(user,
-		"<span class='danger'>[user] leans in and tries to lick [src], inducing a resonance... [user.p_their()] body starts to glow and burst into flames before flashing into dust!</span>",
-		"<span class='userdanger'>You lean in and try to lick [src]. Everything starts burning and all you can hear is ringing. Your last thought is \"That was not a wise decision.\"</span>",
+		span_danger("[user] leans in and tries to lick [src], inducing a resonance... [user.p_their()] body starts to glow and burst into flames before flashing into dust!"),
+		span_userdanger("You lean in and try to lick [src]. Everything starts burning and all you can hear is ringing. Your last thought is \"That was not a wise decision.\""),
 		"failed lick"
 	)
 
@@ -152,7 +144,7 @@
 		mob_msg = "<span class='userdanger'>You reach out and touch [src]. Everything starts burning and all you can hear is ringing. Your last thought is \"That was not a wise decision.\""
 	if(!cause)
 		cause = "contact"
-	nom.visible_message(vis_msg, mob_msg, "<span class='hear'>You hear an unearthly noise as a wave of heat washes over you.</span>")
+	nom.visible_message(vis_msg, mob_msg, span_hear("You hear an unearthly noise as a wave of heat washes over you."))
 	investigate_log("has been attacked ([cause]) by [key_name(nom)]", INVESTIGATE_SUPERMATTER)
 	playsound(get_turf(src), 'sound/effects/supermatter.ogg', 50, TRUE)
 	Consume(nom)

@@ -3,9 +3,11 @@
 	var/sizzlealpha = 0
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
-/datum/component/sizzle/Initialize()
+/datum/component/sizzle/Initialize(_alpha)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
+	if(_alpha)
+		sizzlealpha = _alpha
 	setup_sizzle()
 
 /datum/component/sizzle/InheritComponent(datum/component/C, i_am_original)

@@ -23,7 +23,7 @@
 
 /obj/machinery/teambuilder/examine_more(mob/user)
 	. = ..()
-	. += "<span class='notice'>You see a hastily written note on the side, it says '1215-1217, PICK A SIDE'.</span>"
+	. += span_notice("You see a hastily written note on the side, it says '1215-1217, PICK A SIDE'.")
 
 /obj/machinery/teambuilder/proc/on_entered(datum/source, atom/movable/AM, oldloc)
 	SIGNAL_HANDLER
@@ -43,11 +43,9 @@
 	desc = "A machine that, when passed, colors you based on the color of your team. Go red team!"
 	color = "#ff0000"
 	team_color = "#ff0000"
-	team_radio = FREQ_CTF_RED
 
 /obj/machinery/teambuilder/blue
 	name = "Teambuilding Machine (Blue)"
 	desc = "A machine that, when passed, colors you based on the color of your team. Go blue team!"
 	color = "#0000ff"
 	team_color = "#0000ff"
-	team_radio = FREQ_CTF_BLUE

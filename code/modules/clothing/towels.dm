@@ -32,7 +32,7 @@
 	item_flags = NOBLUDGEON
 	resistance_flags = FLAMMABLE
 	flags_inv = HIDEHAIR // Only relevant when in head shape, but useful to keep around regardless.
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 	/// The shape we're currently in.
 	var/shape = TOWEL_FOLDED
 
@@ -88,13 +88,14 @@
 			transfer_fingerprints_to(shreds)
 			shreds.add_fingerprint(user)
 		qdel(src)
-		to_chat(user, "<span class='notice'>You tear [src] up.</span>")
+		to_chat(user, span_notice("You tear [src] up."))
 	else
 		return ..()
 
 /obj/item/towel/CtrlClick(mob/user)
 	. = ..()
-
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
 	if(. == FALSE)
 		return
 	if(shape == TOWEL_FOLDED)

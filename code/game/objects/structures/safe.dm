@@ -6,8 +6,6 @@ FLOOR SAFES
 
 /// Chance for a sound clue
 #define SOUND_CHANCE 10
-/// Explosion number threshold for opening safe
-#define BROKEN_THRESHOLD 3
 
 //SAFES
 /obj/structure/safe
@@ -17,8 +15,12 @@ FLOOR SAFES
 	icon_state = "safe"
 	anchored = TRUE
 	density = TRUE
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
+	max_integrity = 400
+	armor = list("melee" = 30, "bullet" = 60, "laser" = 60, "energy" = 100, "bomb" = 20, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
+	// this shit heavy
+	drag_slowdown = 2.5
 	/// The maximum combined w_class of stuff in the safe
 	var/maxspace = 24
 	/// The amount of tumblers that will be generated
@@ -35,15 +37,16 @@ FLOOR SAFES
 	var/current_tumbler_index = 1
 	/// The combined w_class of everything in the safe
 	var/space = 0
-	/// Tough, but breakable if explosion counts reaches set value
-	var/explosion_count = 0
+	/// The lock is broken if this is true
+	var/safe_broken = FALSE
 
 /obj/structure/safe/Initialize(mapload)
 	. = ..()
 
 	// Combination generation
-	for(var/i in 1 to number_of_tumblers)
-		tumblers.Add(rand(0, 99))
+	if(!tumblers.len)
+		for(var/i in 1 to number_of_tumblers)
+			tumblers.Add(rand(0, 99))
 
 	if(!mapload)
 		return
@@ -60,38 +63,52 @@ FLOOR SAFES
 	icon_state = "[initial(icon_state)][open ? "-open" : null]"
 	return ..()
 
+/obj/structure/safe/wrench_act(mob/living/user, obj/item/I)
+	..()
+	default_unfasten_wrench(user, I)
+	return TRUE
+
 /obj/structure/safe/attackby(obj/item/I, mob/user, params)
 	if(open)
 		. = TRUE //no afterattack
 		if(I.w_class + space <= maxspace)
 			space += I.w_class
 			if(!user.transferItemToLoc(I, src))
-				to_chat(user, "<span class='warning'>\The [I] is stuck to your hand, you cannot put it in the safe!</span>")
+				to_chat(user, span_warning("\The [I] is stuck to your hand, you cannot put it in the safe!"))
 				return
-			to_chat(user, "<span class='notice'>You put [I] in [src].</span>")
+			to_chat(user, span_notice("You put [I] in [src]."))
 		else
-			to_chat(user, "<span class='warning'>[I] won't fit in [src].</span>")
+			to_chat(user, span_warning("[I] won't fit in [src]."))
 	else
 		if(istype(I, /obj/item/clothing/neck/stethoscope))
 			attack_hand(user)
 			return
 		else
-			to_chat(user, "<span class='warning'>You can't put [I] into the safe while it is closed!</span>")
+			to_chat(user, span_warning("You can't put [I] into the safe while it is closed!"))
 			return
 
-/obj/structure/safe/blob_act(obj/structure/blob/B)
-	return
+/obj/structure/safe/deconstruct_act(mob/living/user, obj/item/tool)
+	if(open)
+		return FALSE
+	if(..())
+		return TRUE
+	user.visible_message(
+		span_warning("[user] begin to cut through the lock of \the [src]."),
+		span_notice("You start cutting trough the lock of [src]."),
+	)
+	if(tool.use_tool(src, user, 45 SECONDS))
+		broken = TRUE
+		user.visible_message(
+			span_warning("[user] successfully cuts trough the lock of \the [src]."),
+			span_notice("You successfully cut trough the lock of [src]."),
+		)
+	return TRUE
 
 /obj/structure/safe/ex_act(severity, target)
-	if(((severity == 2 && target == src) || severity == 1) && explosion_count < BROKEN_THRESHOLD)
-		explosion_count++
-		switch(explosion_count)
-			if(1)
-				desc = initial(desc) + "\nIt looks a little banged up."
-			if(2)
-				desc = initial(desc) + "\nIt's pretty heavily damaged."
-			if(3)
-				desc = initial(desc) + "\nThe lock seems to be broken."
+	if(((severity == 2 && target == src) || severity == 1) && !safe_broken)
+		safe_broken = TRUE
+		if(safe_broken)
+			desc = initial(desc) + "\nThe lock seems to be broken."
 
 /obj/structure/safe/ui_assets(mob/user)
 	return list(
@@ -141,9 +158,9 @@ FLOOR SAFES
 	switch(action)
 		if("open")
 			if(!check_unlocked() && !open && !broken)
-				to_chat(user, "<span class='warning'>You cannot open [src], as its lock is engaged!</span>")
+				to_chat(user, span_warning("You cannot open [src], as its lock is engaged!"))
 				return
-			to_chat(user, "<span class='notice'>You [open ? "close" : "open"] [src].</span>")
+			to_chat(user, span_notice("You [open ? "close" : "open"] [src]."))
 			open = !open
 			update_appearance()
 			return TRUE
@@ -151,7 +168,7 @@ FLOOR SAFES
 			if(open)
 				return
 			if(broken)
-				to_chat(user, "<span class='warning'>The dial will not turn, as the mechanism is destroyed!</span>")
+				to_chat(user, span_warning("The dial will not turn, as the mechanism is destroyed!"))
 				return
 			var/ticks = text2num(params["num"])
 			for(var/i = 1 to ticks)
@@ -172,7 +189,7 @@ FLOOR SAFES
 			if(open)
 				return
 			if(broken)
-				to_chat(user, "<span class='warning'>The dial will not turn, as the mechanism is destroyed!</span>")
+				to_chat(user, span_warning("The dial will not turn, as the mechanism is destroyed!"))
 				return
 			var/ticks = text2num(params["num"])
 			for(var/i = 1 to ticks)
@@ -206,7 +223,7 @@ FLOOR SAFES
 * Checks if safe is considered in a broken state for force-opening the safe
 */
 /obj/structure/safe/proc/check_broken()
-	return broken || explosion_count >= BROKEN_THRESHOLD
+	return broken || safe_broken
 
 /**
 * Called every dial turn to determine whether the safe should unlock or not.
@@ -216,7 +233,7 @@ FLOOR SAFES
 		return TRUE
 	if(current_tumbler_index > number_of_tumblers)
 		locked = FALSE
-		visible_message("<span class='boldnotice'>[pick("Spring", "Sprang", "Sproing", "Clunk", "Krunk")]!</span>")
+		visible_message(span_boldnotice("[pick("Spring", "Sprang", "Sproing", "Clunk", "Krunk")]!"))
 		return TRUE
 	locked = TRUE
 	return FALSE
@@ -228,9 +245,9 @@ FLOOR SAFES
 	if(!canhear)
 		return
 	if(current_tick == 2)
-		to_chat(user, "<span class='italics'>The sounds from [src] are too fast and blend together.</span>")
+		to_chat(user, span_italics("The sounds from [src] are too fast and blend together."))
 	if(total_ticks == 1 || prob(SOUND_CHANCE))
-		to_chat(user, "<span class='italics'>You hear a [pick(sounds)] from [src].</span>")
+		to_chat(user, span_italics("You hear a [pick(sounds)] from [src]."))
 
 //FLOOR SAFES
 /obj/structure/safe/floor
@@ -243,5 +260,7 @@ FLOOR SAFES
 	. = ..()
 	AddElement(/datum/element/undertile)
 
+/obj/structure/safe/floor/wrench_act(mob/living/user, obj/item/I)
+	return FALSE
+
 #undef SOUND_CHANCE
-#undef BROKEN_THRESHOLD

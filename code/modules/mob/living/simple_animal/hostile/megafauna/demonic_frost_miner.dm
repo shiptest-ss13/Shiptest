@@ -28,7 +28,7 @@ Difficulty: Extremely Hard
 	speed = 20
 	move_to_delay = 20
 	ranged = TRUE
-	crusher_loot = list(/obj/effect/decal/remains/plasma, /obj/item/crusher_trophy/ice_block_talisman)
+	mob_trophy = /obj/item/mob_trophy/ice_block_talisman
 	loot = list(/obj/effect/decal/remains/plasma)
 	wander = FALSE
 	del_on_death = TRUE
@@ -59,21 +59,21 @@ Difficulty: Extremely Hard
 	name = "Fire Frost Orbs"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	chosen_message = "<span class='colossus'>You are now sending out frost orbs to track in on a target.</span>"
+	chosen_message = span_colossus("You are now sending out frost orbs to track in on a target.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/snowball_machine_gun
 	name = "Fire Snowball Machine Gun"
 	icon_icon = 'icons/obj/guns/energy.dmi'
 	button_icon_state = "kineticgun"
-	chosen_message = "<span class='colossus'>You are now firing a snowball machine gun at a target.</span>"
+	chosen_message = span_colossus("You are now firing a snowball machine gun at a target.")
 	chosen_attack_num = 2
 
 /datum/action/innate/megafauna_attack/ice_shotgun
 	name = "Fire Ice Shotgun"
 	icon_icon = 'icons/obj/guns/projectile.dmi'
 	button_icon_state = "shotgun"
-	chosen_message = "<span class='colossus'>You are now firing shotgun ice blasts.</span>"
+	chosen_message = span_colossus("You are now firing shotgun ice blasts.")
 	chosen_attack_num = 3
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/OpenFire()
@@ -148,7 +148,7 @@ Difficulty: Extremely Hard
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/ex_act(severity, target)
 	adjustBruteLoss(30 * severity - 120)
-	visible_message("<span class='danger'>[src] absorbs the explosion!</span>", "<span class='userdanger'>You absorb the explosion!</span>")
+	visible_message(span_danger("[src] absorbs the explosion!"), span_userdanger("You absorb the explosion!"))
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/Goto(target, delay, minimum_distance)
 	if(enraging)
@@ -293,11 +293,11 @@ Difficulty: Extremely Hard
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/ui_action_click(mob/user)
 	on = !on
-	to_chat(user, "<span class='notice'>You [on ? "activate" : "deactivate"] [src].</span>")
+	to_chat(user, span_notice("You [on ? "activate" : "deactivate"] [src]."))
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>The shoes are [on ? "enabled" : "disabled"].</span>"
+	. += span_notice("The shoes are [on ? "enabled" : "disabled"].")
 
 /obj/item/clothing/shoes/winterboots/ice_boots/ice_trail/step_action()
 	. = ..()
@@ -322,48 +322,3 @@ Difficulty: Extremely Hard
 	var/turf/T = get_turf(target)
 	mineral_scan_pulse(T, world.view + 1)
 	. = ..()
-
-/obj/item/crusher_trophy/ice_block_talisman
-	name = "ice block talisman"
-	desc = "A glowing trinket that a demonic miner had on him, it seems he couldn't utilize it for whatever reason."
-	icon_state = "freeze_cube"
-	denied_type = /obj/item/crusher_trophy/ice_block_talisman
-
-/obj/item/crusher_trophy/ice_block_talisman/effect_desc()
-	return "waveform collapse to freeze a creature in a block of ice for a period, preventing them from moving"
-
-/obj/item/crusher_trophy/ice_block_talisman/on_mark_detonation(mob/living/target, mob/living/user)
-	target.apply_status_effect(/datum/status_effect/ice_block_talisman)
-
-/datum/status_effect/ice_block_talisman
-	id = "ice_block_talisman"
-	duration = 40
-	status_type = STATUS_EFFECT_REFRESH
-	alert_type = /atom/movable/screen/alert/status_effect/ice_block_talisman
-	/// Stored icon overlay for the hit mob, removed when effect is removed
-	var/icon/cube
-
-/atom/movable/screen/alert/status_effect/ice_block_talisman
-	name = "Frozen Solid"
-	desc = "You're frozen inside an ice cube, and cannot move!"
-	icon_state = "frozen"
-
-/datum/status_effect/ice_block_talisman/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
-	if(!owner.stat)
-		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
-	cube = icon('icons/effects/freeze.dmi', "ice_cube")
-	var/icon/size_check = icon(owner.icon, owner.icon_state)
-	cube.Scale(size_check.Width(), size_check.Height())
-	owner.add_overlay(cube)
-	return ..()
-
-/// Blocks movement from the status effect owner
-/datum/status_effect/ice_block_talisman/proc/owner_moved()
-	return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
-
-/datum/status_effect/ice_block_talisman/on_remove()
-	if(!owner.stat)
-		to_chat(owner, "<span class='notice'>The cube melts!</span>")
-	owner.cut_overlay(cube)
-	UnregisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE)

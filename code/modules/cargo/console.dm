@@ -1,33 +1,37 @@
+#define SP_LINKED 1
+#define SP_READY 2
+#define SP_LAUNCH 3
+#define SP_UNLINK 4
+#define SP_UNREADY 5
+
 /obj/machinery/computer/cargo
-	name = "supply console"
-	desc = "Used to order supplies, approve requests, and control the shuttle."
-	icon_screen = "supply"
+	name = "outpost communications console"
+	desc = "This console allows the user to communicate with a nearby outpost to \
+			purchase supplies and manage missions. Purchases will be delivered to your hangar's delivery zone."
+	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo
 	light_color = COLOR_BRIGHT_ORANGE
 
-	var/requestonly = FALSE
+	/// The ship we reside on for ease of access
+	var/datum/overmap/ship/controlled/current_ship
+	var/datum/faction/current_faction
+
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
 		cannot transport live organisms, human remains, classified nuclear weaponry, \
 		homing beacons or machinery housing any form of artificial intelligence."
-	var/blockade_warning = "Bluespace instability detected. Shuttle movement impossible."
-	/// radio used by the console to send messages on supply channel
-	var/obj/item/radio/headset/radio
 	/// var that tracks message cooldown
 	var/message_cooldown
 
-
-/obj/machinery/computer/cargo/request
-	name = "supply request console"
-	desc = "Used to request supplies from cargo."
-	icon_screen = "request"
-	circuit = /obj/item/circuitboard/computer/cargo/request
-	requestonly = TRUE
+	var/blockade_warning = "Bluespace instability detected. Delivery impossible."
+	var/message
+	var/list/supply_pack_data
+	/// The account to charge purchases to, defaults to the cargo budget
+	var/datum/bank_account/charge_account
 
 /obj/machinery/computer/cargo/Initialize()
 	. = ..()
-	radio = new /obj/item/radio/headset/headset_cargo(src)
 	var/obj/item/circuitboard/computer/cargo/board = circuit
 	contraband = board.contraband
 	if (board.obj_flags & EMAGGED)
@@ -35,23 +39,12 @@
 	else
 		obj_flags &= ~EMAGGED
 
-/obj/machinery/computer/cargo/Destroy()
-	QDEL_NULL(radio)
-	return ..()
-
-/obj/machinery/computer/cargo/proc/get_export_categories()
-	. = EXPORT_CARGO
-	if(contraband)
-		. |= EXPORT_CONTRABAND
-	if(obj_flags & EMAGGED)
-		. |= EXPORT_EMAG
-
 /obj/machinery/computer/cargo/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
 	if(user)
-		user.visible_message("<span class='warning'>[user] swipes a suspicious card through [src]!</span>",
-		"<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
+		user.visible_message(span_warning("[user] swipes a suspicious card through [src]!"),
+		span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
@@ -62,70 +55,61 @@
 	board.obj_flags |= EMAGGED
 	update_static_data(user)
 
+/obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	current_ship = port.current_ship
+	reconnect(port)
+
+/obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
+	if(current_ship)
+		current_faction = current_ship.source_template.faction
+		charge_account = current_ship.ship_account
+
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "Cargo", name)
+		ui = new(user, src, "OutpostCommunications", name)
 		ui.open()
+		if(!charge_account)
+			reconnect()
 
-/obj/machinery/computer/cargo/ui_data()
+/obj/machinery/computer/cargo/ui_static_data(mob/user)
+	. = ..()
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
+	if(outpost_docked)
+		generate_pack_data()
+	else
+		supply_pack_data = list()
+
+/obj/machinery/computer/cargo/ui_data(mob/user)
 	var/list/data = list()
-	data["location"] = SSshuttle.supply.getStatusText()
-	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
-	if(D)
-		data["points"] = D.account_balance
-	data["away"] = SSshuttle.supply.get_docked() == SSshuttle.supply_away_port
-	data["self_paid"] = self_paid
-	data["docked"] = SSshuttle.supply.mode == SHUTTLE_IDLE
-	var/message = "Remember to stamp and send back the supply manifests."
-	if(SSshuttle.centcom_message)
-		message = SSshuttle.centcom_message
+
+	var/outpost_docked = istype(current_ship.docked_to, /datum/overmap/outpost)
+
+	data["onShip"] = !isnull(current_ship)
+	data["shipFaction"] = current_ship.source_template.faction.name
+	data["numMissions"] = current_ship ? LAZYLEN(current_ship.missions) : 0
+	data["maxMissions"] = current_ship ? current_ship.max_missions : 0
+	data["outpostDocked"] = outpost_docked
+	data["points"] = charge_account ? charge_account.account_balance : 0
+	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
+	message = "Purchases will be delivered to your hangar's delivery zone."
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
 	data["message"] = message
-	data["cart"] = list()
-	for(var/datum/supply_order/SO in SSshuttle.shoppinglist)
-		data["cart"] += list(list(
-			"object" = SO.pack.name,
-			"cost" = SO.pack.cost,
-			"id" = SO.id,
-			"orderer" = SO.orderer,
-			"paid" = !isnull(SO.paying_account) //paid by requester
-		))
+	data["supplies"] = supply_pack_data
 
-	data["requests"] = list()
-	for(var/datum/supply_order/SO in SSshuttle.requestlist)
-		data["requests"] += list(list(
-			"object" = SO.pack.name,
-			"cost" = SO.pack.cost,
-			"orderer" = SO.orderer,
-			"reason" = SO.reason,
-			"id" = SO.id
-		))
+	data["shipMissions"] = list()
+	data["outpostMissions"] = list()
 
-	return data
+	if(current_ship)
+		for(var/datum/mission/outpost/M as anything in current_ship.missions)
+			data["shipMissions"] += list(M.get_tgui_info())
+		if(outpost_docked)
+			var/datum/overmap/outpost/out = current_ship.docked_to
+			for(var/datum/mission/outpost/M as anything in out.missions)
+				data["outpostMissions"] += list(M.get_tgui_info())
 
-/obj/machinery/computer/cargo/ui_static_data(mob/user)
-	var/list/data = list()
-	data["requestonly"] = requestonly
-	data["supplies"] = list()
-	for(var/pack in SSshuttle.supply_packs)
-		var/datum/supply_pack/P = SSshuttle.supply_packs[pack]
-		if(!data["supplies"][P.group])
-			data["supplies"][P.group] = list(
-				"name" = P.group,
-				"packs" = list()
-			)
-		if((P.hidden && !(obj_flags & EMAGGED)) || (P.contraband && !contraband) || (P.special && !P.special_enabled) || P.DropPodOnly)
-			continue
-		data["supplies"][P.group]["packs"] += list(list(
-			"name" = P.name,
-			"cost" = P.cost,
-			"id" = pack,
-			"desc" = P.desc || P.name, // If there is a description, use it. Otherwise use the pack's name.
-			"small_item" = P.small_item,
-			"access" = P.access
-		))
 	return data
 
 /obj/machinery/computer/cargo/ui_act(action, params, datum/tgui/ui)
@@ -133,115 +117,114 @@
 	if(.)
 		return
 	switch(action)
-		if("send")
-			if(!SSshuttle.supply.canMove())
-				say(safety_warning)
+		if("withdrawCash")
+			var/val = text2num(params["value"])
+			// no giving yourself money
+			if(!charge_account || !val || val <= 0)
 				return
-			if(SSshuttle.supplyBlocked)
-				say(blockade_warning)
-				return
-			if(SSshuttle.supply.get_docked() == SSshuttle.supply_home_port)
-				SSshuttle.supply.export_categories = get_export_categories()
-				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_away_port, TRUE)
-				say("The supply shuttle is departing.")
-				investigate_log("[key_name(usr)] sent the supply shuttle away.", INVESTIGATE_CARGO)
-			else
-				investigate_log("[key_name(usr)] called the supply shuttle.", INVESTIGATE_CARGO)
-				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
-				SSshuttle.moveShuttle(SSshuttle.supply, SSshuttle.supply_home_port, TRUE)
-			. = TRUE
-		if("add")
-			if(istype(src, /obj/machinery/computer/cargo/express))
-				return
-			var/id = text2path(params["id"])
-			var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
-			if(!istype(pack))
-				return
-			if((pack.hidden && !(obj_flags & EMAGGED)) || (pack.contraband && !contraband) || pack.DropPodOnly)
+			if(charge_account.adjust_money(-val, CREDIT_LOG_WITHDRAW))
+				var/obj/item/holochip/cash_chip = new /obj/item/holochip(drop_location(), val)
+				if(ishuman(usr))
+					var/mob/living/carbon/human/user = usr
+					user.put_in_hands(cash_chip)
+				playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+				src.visible_message(span_notice("[src] dispenses a holochip."))
+			return TRUE
+
+		if("purchase")
+			var/list/purchasing = params["cart"]
+			var/total_cost = text2num(params["total"])
+			var/datum/overmap/outpost/current_outpost = current_ship.docked_to
+			if(!istype(current_ship.docked_to) || purchasing.len == 0)
 				return
 
-			var/name = "*None Provided*"
-			var/rank = "*None Provided*"
-			var/ckey = usr.ckey
-			if(ishuman(usr))
-				var/mob/living/carbon/human/H = usr
-				name = H.get_authentification_name()
-				rank = H.get_assignment(hand_first = TRUE)
-			else if(issilicon(usr))
-				name = usr.real_name
-				rank = "Silicon"
+			if(!charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
+				say("Insufficent funds!")
+				return
 
-			var/datum/bank_account/account
-			if(self_paid && ishuman(usr))
-				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-				if(!istype(id_card))
-					say("No ID card detected.")
+			playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+			say("Order incoming!")
+
+			var/list/unprocessed_packs = list()
+			for(var/list/current_item as anything in purchasing)
+				unprocessed_packs += locate(current_item["ref"]) in current_outpost.market.supply_packs
+
+			current_outpost.market.make_order(usr, unprocessed_packs, return_crate_spawner())
+
+		if("mission-act")
+			var/datum/mission/outpost/mission = locate(params["ref"])
+			var/obj/docking_port/mobile/D = SSshuttle.get_containing_shuttle(src)
+			var/datum/overmap/ship/controlled/ship = D.current_ship
+			var/datum/overmap/outpost/outpost = ship.docked_to
+			if(!istype(outpost) || mission.source_outpost != outpost) // important to check these to prevent href fuckery
+				return
+			if(!mission.accepted)
+				if(LAZYLEN(ship.missions) >= ship.max_missions)
 					return
-				account = id_card.registered_account
-				if(!istype(account))
-					say("Invalid bank account.")
-					return
+				mission.accept(ship, loc)
+				return TRUE
+			else if(mission.servant == ship)
+				if(mission.can_complete())
+					mission.turn_in()
+				else if(tgui_alert(usr, "Give up on [mission]?", src, list("Yes", "No")) == "Yes")
+					mission.give_up()
+				return TRUE
 
-			var/reason = ""
-			if(requestonly && !self_paid)
-				reason = stripped_input("Reason:", name, "")
-				if(isnull(reason) || ..())
-					return
+/obj/machinery/computer/cargo/attackby(obj/item/W, mob/living/user, params)
+	var/value = W.get_item_credit_value()
+	if(value && charge_account)
+		charge_account.adjust_money(value, CREDIT_LOG_DEPOSIT)
+		to_chat(user, span_notice("You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr."))
+		qdel(W)
+		return TRUE
+	..()
 
-			var/turf/T = get_turf(src)
-			var/datum/supply_order/SO = new(pack, name, rank, ckey, reason, account)
-			SO.generateRequisition(T)
-			if(requestonly && !self_paid)
-				SSshuttle.requestlist += SO
-			else
-				SSshuttle.shoppinglist += SO
-				if(self_paid)
-					say("Order processed. The price will be charged to [account.account_holder]'s bank account on delivery.")
-			if(requestonly && message_cooldown < world.time)
-				radio.talk_into(src, "A new order has been requested.", RADIO_CHANNEL_COMMAND)
-				message_cooldown = world.time + 30 SECONDS
-			. = TRUE
-		if("remove")
-			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.shoppinglist)
-				if(SO.id == id)
-					SSshuttle.shoppinglist -= SO
-					. = TRUE
-					break
-		if("clear")
-			SSshuttle.shoppinglist.Cut()
-			. = TRUE
-		if("approve")
-			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.requestlist)
-				if(SO.id == id)
-					SSshuttle.requestlist -= SO
-					SSshuttle.shoppinglist += SO
-					. = TRUE
-					break
-		if("deny")
-			var/id = text2num(params["id"])
-			for(var/datum/supply_order/SO in SSshuttle.requestlist)
-				if(SO.id == id)
-					SSshuttle.requestlist -= SO
-					. = TRUE
-					break
-		if("denyall")
-			SSshuttle.requestlist.Cut()
-			. = TRUE
-		if("toggleprivate")
-			self_paid = !self_paid
-			. = TRUE
-	if(.)
-		post_signal("supply")
+/obj/machinery/computer/cargo/proc/generate_pack_data()
+	supply_pack_data = list()
 
-/obj/machinery/computer/cargo/proc/post_signal(command)
+	if(!current_ship.docked_to)
+		return supply_pack_data
 
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
+	var/datum/overmap/outpost/outpost_docked = current_ship.docked_to
 
-	if(!frequency)
-		return
+	if(!istype(outpost_docked))
+		return supply_pack_data
 
-	var/datum/signal/status_signal = new(list("command" = command))
-	frequency.post_signal(src, status_signal)
+	for(var/datum/supply_pack/current_pack as anything in outpost_docked.market.supply_packs)
+		if(!supply_pack_data[current_pack.category])
+			supply_pack_data[current_pack.category] = list(
+				"name" = current_pack.category,
+				"packs" = list()
+			)
+		if((!current_pack.available))
+			continue
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
+		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
+		if(current_pack.faction_locked && !same_faction)
+			continue
+		supply_pack_data[current_pack.category]["packs"] += list(list(
+			"name" = current_pack.name,
+			"cost" = current_pack.cost,
+			"discountedcost" = discountedcost ? discountedcost : null,
+			"discountpercent" = current_pack.faction_discount,
+			"faction_locked" = current_pack.faction_locked, //this will only show if you are same faction, so no issue
+			"ref" = REF(current_pack),
+			"desc" = (current_pack.desc || current_pack.name) + (discountedcost ? "\n-[current_pack.faction_discount]% off due to your faction affiliation.\nWas [current_pack.cost]" : "") + (current_pack.faction_locked ? "\nYou are able to purchase this item due to your faction affiliation." : ""), // If there is a description, use it. Otherwise use the pack's name.
+			"no_bundle" = current_pack.no_bundle
+		))
+
+
+/obj/machinery/computer/cargo/proc/return_crate_spawner()
+	var/obj/hangar_crate_spawner/spawner
+	spawner = current_ship.shuttle_port.docked.crate_spawner
+	return spawner
+
+/obj/machinery/computer/cargo/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/cargo/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov

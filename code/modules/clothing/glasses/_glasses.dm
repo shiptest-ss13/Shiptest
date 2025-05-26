@@ -1,32 +1,40 @@
 //Glasses
 /obj/item/clothing/glasses
 	name = "glasses"
-	icon = 'icons/obj/clothing/glasses.dmi'
+	icon = 'icons/obj/clothing/eyes/eyes.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/eyes/eyes.dmi'
 	lefthand_file = 'icons/mob/inhands/clothing/glasses_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing/glasses_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = GLASSESCOVERSEYES
 	slot_flags = ITEM_SLOT_EYES
-	strip_delay = 20
-	equip_delay_other = 25
 	resistance_flags = NONE
 	custom_materials = list(/datum/material/glass = 250)
 	supports_variations = VOX_VARIATION
 	greyscale_colors = list(list(14, 26), list(17, 26))
 	greyscale_icon_state = "glasses"
-	var/vision_flags = 0
-	var/darkness_view = 2//Base human is 2
-	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
-	var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
-	var/lighting_alpha
-	var/list/icon/current = list() //the current hud icons
+
+	equip_sound = 'sound/items/equip/straps_equip.ogg'
+	equipping_sound = EQUIP_SOUND_VFAST_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_VFAST_GENERIC
+	equip_delay_self = EQUIP_DELAY_EYEWEAR
+	equip_delay_other = EQUIP_DELAY_EYEWEAR * 1.5
+	strip_delay = EQUIP_DELAY_EYEWEAR * 1.5
+	equip_self_flags = EQUIP_ALLOW_MOVEMENT
+
+	// var/vision_flags = 0
+	// var/darkness_view = 2//Base human is 2
+	// var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
+	// var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
+	// var/lighting_alpha
+	// var/list/icon/current = list() //the current hud icons
 	var/vision_correction = 0 //does wearing these glasses correct some of our vision defects?
 	var/glass_colour_type //colors your vision when worn
 
 /obj/item/clothing/glasses/examine(mob/user)
 	. = ..()
 	if(glass_colour_type && ishuman(user))
-		. += "<span class='notice'>Alt-click to toggle its colors.</span>"
+		. += span_notice("Alt-click to toggle its colors.")
 
 /obj/item/clothing/glasses/visor_toggling()
 	..()
@@ -43,8 +51,6 @@
 		user.update_sight()
 		if(icon_state == "welding-g")
 			change_glass_color(user, /datum/client_colour/glass_colour/gray)
-		else if(icon_state == "bustin-g")
-			change_glass_color(user, /datum/client_colour/glass_colour/green)
 		else
 			change_glass_color(user, null)
 
@@ -55,7 +61,7 @@
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 		if(!H.is_blind())
 			if(H.glasses == src)
-				to_chat(H, "<span class='danger'>[src] overloads and blinds you!</span>")
+				to_chat(H, span_danger("[src] overloads and blinds you!"))
 				H.flash_act(visual = 1)
 				H.blind_eyes(3)
 				H.blur_eyes(5)
@@ -81,19 +87,6 @@
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
-
-/obj/item/clothing/glasses/meson/gar
-	name = "gar mesons"
-	icon_state = "garm"
-	item_state = "garm"
-	desc = "Do the impossible, see the invisible!"
-	force = 10
-	throwforce = 10
-	throw_speed = 4
-	attack_verb = list("sliced")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
-	custom_price = 500
 
 /obj/item/clothing/glasses/science
 	name = "science goggles"
@@ -144,7 +137,7 @@
 /obj/item/clothing/glasses/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "eyepatch-[flipped]"
 	item_state = "eyepatch-[flipped]"
 	update_appearance()
@@ -158,16 +151,10 @@
 	if(istype(I, /obj/item/clothing/glasses/eyepatch))
 		var/obj/item/clothing/glasses/eyepatch/old_patch = I
 		var/obj/item/clothing/glasses/blindfold/eyepatch/double_patch = new()
-		to_chat(user, "<span class='notice'>You combine the eyepatches with a knot.</span>")
+		to_chat(user, span_notice("You combine the eyepatches with a knot."))
 		qdel(old_patch)
 		qdel(src)
 		user.put_in_hands(double_patch)
-
-/obj/item/clothing/glasses/monocle
-	name = "monocle"
-	desc = "Such a dapper eyepiece!"
-	icon_state = "monocle"
-	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/material
 	name = "optical material scanner"
@@ -181,19 +168,6 @@
 	name = "optical material scanner"
 	desc = "Used by miners to detect ores deep within the rock."
 	darkness_view = 0
-
-/obj/item/clothing/glasses/material/mining/gar
-	name = "gar material scanner"
-	icon_state = "garm"
-	item_state = "garm"
-	desc = "Do the impossible, see the invisible!"
-	force = 10
-	throwforce = 20
-	throw_speed = 4
-	attack_verb = list("sliced")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
-	glass_colour_type = /datum/client_colour/glass_colour/lightgreen
 
 /obj/item/clothing/glasses/regular
 	name = "prescription glasses"
@@ -263,47 +237,13 @@
 	clothing_flags = SCAN_REAGENTS
 	glass_colour_type = /datum/client_colour/glass_colour/darkpurple
 
-/obj/item/clothing/glasses/sunglasses/garb
-	name = "black gar glasses"
-	desc = "Go beyond impossible and kick reason to the curb!"
-	icon_state = "garb"
-	item_state = "garb"
-	force = 10
-	throwforce = 10
-	throw_speed = 4
-	attack_verb = list("sliced")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
-
-/obj/item/clothing/glasses/sunglasses/garb/supergarb
-	name = "black giga gar glasses"
-	desc = "Believe in us humans."
-	icon_state = "supergarb"
-	item_state = "garb"
-	force = 12
-	throwforce = 12
-
-/obj/item/clothing/glasses/sunglasses/gar
-	name = "gar glasses"
-	desc = "Just who the hell do you think I am?!"
-	icon_state = "gar"
-	item_state = "gar"
-	force = 10
-	throwforce = 10
-	throw_speed = 4
-	attack_verb = list("sliced")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
-	glass_colour_type = /datum/client_colour/glass_colour/orange
-
-/obj/item/clothing/glasses/sunglasses/gar/supergar
-	name = "giga gar glasses"
-	desc = "We evolve past the person we were a minute before. Little by little we advance with each turn. That's how a drill works!"
-	icon_state = "supergar"
-	item_state = "gar"
-	force = 12
-	throwforce = 12
-	glass_colour_type = /datum/client_colour/glass_colour/red
+/obj/item/clothing/glasses/sunglasses/ballistic
+	name = "ballistic goggles"
+	desc = "A pair of flash-proof ballistic goggles."
+	icon_state = "ballistic_goggles"
+	item_state = "ballistic_goggles"
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	glass_colour_type = /datum/client_colour/glass_colour/lightblue
 
 /obj/item/clothing/glasses/welding
 	name = "welding goggles"
@@ -314,24 +254,13 @@
 	flash_protect = FLASH_PROTECTION_WELDER
 	custom_materials = list(/datum/material/iron = 250)
 	tint = 2
-	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT
+	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT | SEALS_EYES
 	flags_cover = GLASSESCOVERSEYES
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
-
-/obj/item/clothing/glasses/welding/ghostbuster
-	name = "optical ecto-scanner"
-	desc = "A bulky pair of unwieldy glasses that lets you see things best left unseen. Obscures vision, but also gives a bit of eye protection"
-	icon_state = "bustin-g"
-	item_state = "bustin-g"
-	invis_view = SEE_INVISIBLE_OBSERVER
-	invis_override = null
-	flash_protect = 1
-	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT | VISOR_INVISVIEW
-	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/blindfold
 	name = "blindfold"
@@ -378,10 +307,10 @@
 		colored_before = TRUE
 
 /obj/item/clothing/glasses/blindfold/white/worn_overlays(isinhands = FALSE, file2use)
-	. = list()
+	. = ..()
 	if(!isinhands && ishuman(loc) && !colored_before)
 		var/mob/living/carbon/human/H = loc
-		var/mutable_appearance/M = mutable_appearance('icons/mob/clothing/eyes.dmi', "blindfoldwhite")
+		var/mutable_appearance/M = mutable_appearance('icons/mob/clothing/eyes/eyes.dmi', "blindfoldwhite")
 		M.appearance_flags |= RESET_COLOR
 		M.color = "#[H.eye_color]"
 		. += M
@@ -398,8 +327,8 @@
 	var/obj/item/clothing/glasses/eyepatch/patch_two = new/obj/item/clothing/glasses/eyepatch
 	patch_one.forceMove(user.drop_location())
 	patch_two.forceMove(user.drop_location())
-	to_chat(user, "<span class='notice'>You undo the knot on the eyepatches.</span>")
-	Destroy()
+	to_chat(user, span_notice("You undo the knot on the eyepatches."))
+	qdel(src)
 
 /obj/item/clothing/glasses/sunglasses/big
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks flashes."
@@ -447,20 +376,6 @@
 		return
 	chameleon_action.emp_randomise()
 
-/obj/item/clothing/glasses/thermal/monocle
-	name = "thermoncle"
-	desc = "Never before has seeing through walls felt so gentlepersonly."
-	icon_state = "thermoncle"
-	flags_1 = null //doesn't protect eyes because it's a monocle, duh
-
-/obj/item/clothing/glasses/thermal/monocle/examine(mob/user) //Different examiners see a different description!
-	if(user.gender == MALE)
-		desc = replacetext(desc, "person", "man")
-	else if(user.gender == FEMALE)
-		desc = replacetext(desc, "person", "woman")
-	. = ..()
-	desc = initial(desc)
-
 /obj/item/clothing/glasses/thermal/eyepatch
 	name = "optical thermal eyepatch"
 	desc = "An eyepatch with built-in thermal optics."
@@ -471,7 +386,7 @@
 /obj/item/clothing/glasses/thermal/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "eyepatch-[flipped]"
 	item_state = "eyepatch-[flipped]"
 	update_appearance()
@@ -485,12 +400,14 @@
 	desc = "A pair of goggles meant for low temperatures."
 	icon_state = "cold"
 	item_state = "cold"
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 /obj/item/clothing/glasses/heat
 	name = "heat goggles"
 	desc = "A pair of goggles meant for high temperatures."
 	icon_state = "heat"
 	item_state = "heat"
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 
 /obj/item/clothing/glasses/orange
 	name = "orange glasses"
@@ -506,35 +423,6 @@
 	item_state = "redglasses"
 	glass_colour_type = /datum/client_colour/glass_colour/red
 
-/obj/item/clothing/glasses/godeye
-	name = "eye of god"
-	desc = "A strange eye, said to have been torn from an omniscient creature that used to roam the wastes."
-	icon_state = "godeye"
-	item_state = "godeye"
-	vision_flags = SEE_TURFS|SEE_MOBS|SEE_OBJS
-	darkness_view = 8
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	clothing_flags = SCAN_REAGENTS
-
-/obj/item/clothing/glasses/godeye/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, EYE_OF_GOD_TRAIT)
-
-/obj/item/clothing/glasses/godeye/attackby(obj/item/W as obj, mob/user as mob, params)
-	if(istype(W, src) && W != src && W.loc == user)
-		if(W.icon_state == "godeye")
-			W.icon_state = "doublegodeye"
-			W.item_state = "doublegodeye"
-			W.desc = "A pair of strange eyes, said to have been torn from an omniscient creature that used to roam the wastes. There's no real reason to have two, but that isn't stopping you."
-			if(iscarbon(user))
-				var/mob/living/carbon/C = user
-				C.update_inv_wear_mask()
-		else
-			to_chat(user, "<span class='notice'>The eye winks at you and vanishes into the abyss, you feel really unlucky.</span>")
-		qdel(src)
-	..()
-
 /obj/item/clothing/glasses/AltClick(mob/user)
 	if(glass_colour_type && ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -543,9 +431,9 @@
 				if(src == H.glasses)
 					H.client.prefs.uses_glasses_colour = !H.client.prefs.uses_glasses_colour
 					if(H.client.prefs.uses_glasses_colour)
-						to_chat(H, "<span class='notice'>You will now see glasses colors.</span>")
+						to_chat(H, span_notice("You will now see glasses colors."))
 					else
-						to_chat(H, "<span class='notice'>You will no longer see glasses colors.</span>")
+						to_chat(H, span_notice("You will no longer see glasses colors."))
 					H.update_glasses_color(src, 1)
 	else
 		return ..()
@@ -572,7 +460,7 @@
 	desc = "Medical, security and diagnostic hud. Alt click to toggle xray."
 	icon_state = "nvgmeson"
 	item_state = "nvgmeson"
-	flags_cover = GLASSESCOVERSEYES
+	flags_cover = GLASSESCOVERSEYES | SEALS_EYES
 	darkness_view = 8
 	flash_protect = FLASH_PROTECTION_WELDER
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE

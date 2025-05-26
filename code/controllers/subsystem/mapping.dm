@@ -16,12 +16,14 @@ SUBSYSTEM_DEF(mapping)
 	var/list/ruin_types_probabilities = list()
 	var/list/ruins_templates = list()
 	var/list/planet_types = list()
+	var/list/mission_pois = list()
 
-	var/list/maplist
 	var/list/ship_purchase_list
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+
+	var/list/greeble_templates = list()
 	// List mapping TYPES of outpost map templates to instances of their singletons.
 	var/list/outpost_templates = list()
 
@@ -41,6 +43,28 @@ SUBSYSTEM_DEF(mapping)
 	var/list/map_zones = list()
 	/// Translation of virtual level ID to a virtual level reference
 	var/list/virtual_z_translation = list()
+
+	/// List of z level (as number) -> plane offset of that z level
+	/// Used to maintain the plane cube
+	var/list/z_level_to_plane_offset = list()
+	/// List of z level (as number) -> The lowest plane offset in that z stack
+	var/list/z_level_to_lowest_plane_offset = list()
+	// This pair allows for easy conversion between an offset plane, and its true representation
+	// Both are in the form "input plane" -> output plane(s)
+	/// Assoc list of string plane values to their true, non offset representation
+	var/list/plane_offset_to_true
+	/// Assoc list of true string plane values to a list of all potential offset planess
+	var/list/true_to_offset_planes
+	/// Assoc list of string plane to the plane's offset value
+	var/list/plane_to_offset
+	/// List of planes that do not allow for offsetting
+	var/list/plane_offset_blacklist
+	/// List of render targets that do not allow for offsetting
+	var/list/render_offset_blacklist
+	/// List of plane masters that are of critical priority
+	var/list/critical_planes
+	/// The largest plane offset we've generated so far
+	var/max_plane_offset = 0
 
 /datum/controller/subsystem/mapping/Initialize(timeofday)
 	if(initialized)
@@ -91,23 +115,26 @@ SUBSYSTEM_DEF(mapping)
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
 
+	greeble_templates = SSmapping.greeble_templates
+
 	outpost_templates = SSmapping.outpost_templates
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
+
+	greeble_templates = SSmapping.greeble_templates
 
 	areas_in_z = SSmapping.areas_in_z
 	map_zones = SSmapping.map_zones
 	biomes = SSmapping.biomes
 	planet_types = SSmapping.planet_types
 
-	maplist = SSmapping.maplist
 	ship_purchase_list = SSmapping.ship_purchase_list
 
 	virtual_z_translation = SSmapping.virtual_z_translation
 	z_list = SSmapping.z_list
 
-#define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
+#define INIT_ANNOUNCE(X) to_chat(world, span_boldannounce("[X]")); log_world(X)
 
 /datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
 	var/list/filelist = flist(path)
@@ -150,25 +177,27 @@ SUBSYSTEM_DEF(mapping)
 
 		shuttle_templates[S.file_name] = S
 
-#define CHECK_STRING_EXISTS(X) if(!istext(data[X])) { log_world("[##X] missing from json!"); continue; }
-#define CHECK_LIST_EXISTS(X) if(!islist(data[X])) { log_world("[##X] missing from json!"); continue; }
+#define CHECK_STRING_EXISTS(X) if(!istext(data[X])) { stack_trace("[##X] missing from json!"); continue; }
+#define CHECK_LIST_EXISTS(X) if(!islist(data[X])) { stack_trace("[##X] missing from json!"); continue; }
 /datum/controller/subsystem/mapping/proc/load_ship_templates()
-	maplist = list()
 	ship_purchase_list = list()
 	var/list/filelist = flist("_maps/configs/")
+
+	filelist = sortList(filelist)
+
 	for(var/filename in filelist)
 		var/file = file("_maps/configs/" + filename)
 		if(!file)
-			log_world("Could not open map config: [filename]")
+			stack_trace("Could not open map config: [filename]")
 			continue
 		file = file2text(file)
 		if(!file)
-			log_world("map config is not text: [filename]")
+			stack_trace("Map config is not text: [filename]")
 			continue
 
 		var/list/data = json_decode(file)
 		if(!data)
-			log_world("map config is not json: [filename]")
+			stack_trace("Map config is not json: [filename]")
 			continue
 
 		CHECK_STRING_EXISTS("map_name")
@@ -182,20 +211,37 @@ SUBSYSTEM_DEF(mapping)
 		else
 			S.short_name = copytext(S.name, 1, 20)
 
+		if(istext(data["token_icon_state"]))
+			S.token_icon_state = data["token_icon_state"]
+
+		if(istext(data["faction"]))
+			var/type = text2path(data["faction"])
+			if(!(type in SSfactions.factions))
+				stack_trace("Invalid faction path: [data["faction"]] on [S.name]'s config! Defaulting to Independent.")
+			else
+				S.faction = SSfactions.factions[type]
+
+		if(!S.faction)
+			S.faction = SSfactions.factions[/datum/faction/independent]
+
+		S.category = S.faction.name
+
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
-			if(istext(data["faction_name"]))
-				S.faction_name = data["faction_name"]
-			else
-				S.faction_name = ship_prefix_to_faction(S.prefix)
+		if(istext(data["manufacturer"]))
+			S.manufacturer = data["manufacturer"]
 
-		S.category = S.faction_name
+		if(S.faction.check_prefix && !(S.prefix in S.faction.prefixes))
+			stack_trace("Faction prefix mismatch for [S.faction.name]: [data["prefix"]] on [S.name]'s config!")
+
+		if(!S.prefix)
+			S.prefix = S.faction.prefixes[1]
 
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
 
-		if(isnum(data[ "unique_ship_access" ] && data["unique_ship_access"]))
-			S.unique_ship_access = data[ "unique_ship_access" ]
+		if(isnum(data["unique_ship_access"]))
+			S.unique_ship_access = data["unique_ship_access"]
 
 		if(istext(data["description"]))
 			S.description = data["description"]
@@ -213,9 +259,9 @@ SUBSYSTEM_DEF(mapping)
 				job_slot = GLOB.name_occupations[job]
 				slots = value
 			else if(islist(value))
-				var/datum/outfit/job_outfit = text2path(value["outfit"])
+				var/datum/outfit/job/job_outfit = text2path(value["outfit"])
 				if(isnull(job_outfit))
-					stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
+					stack_trace("Invalid job outfit: [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
 					job_outfit = /datum/outfit/job/assistant
 				job_slot = new /datum/job(job, job_outfit)
 				job_slot.display_order = length(S.job_slots)
@@ -228,6 +274,7 @@ SUBSYSTEM_DEF(mapping)
 				continue
 
 			S.job_slots[job_slot] = slots
+
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
 
@@ -240,12 +287,15 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["starting_funds"]))
 			S.starting_funds = data["starting_funds"]
 
+		if(isnum(data["tranist_x_offset"]))
+			S.tranist_x_offset = data["tranist_x_offset"]
+
+		if(isnum(data["tranist_y_offset"]))
+			S.tranist_y_offset = data["tranist_y_offset"]
+
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
-
-		if(isnum(data["roundstart"]) && data["roundstart"])
-			maplist[S.name] = S
 
 		if(isnum(data["space_spawn"]) && data["space_spawn"])
 			S.space_spawn = TRUE
@@ -343,6 +393,8 @@ SUBSYSTEM_DEF(mapping)
 				allocation_name = "Free Allocation"
 			if(ALLOCATION_QUADRANT)
 				allocation_name = "Quadrant Allocation"
+			if(ALLOCATION_OCTODRANT)
+				allocation_name = "Octodrant Allocation"
 			else
 				allocation_name = "Unaccounted Allocation"
 

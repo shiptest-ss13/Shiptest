@@ -5,6 +5,10 @@
 	name = "gas mixer"
 	desc = "Very useful for mixing gasses."
 
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = ACTIVE_DRAW_MINIMAL
+
 	can_unwrench = TRUE
 
 	var/target_pressure = ONE_ATMOSPHERE
@@ -19,6 +23,10 @@
 /obj/machinery/atmospherics/components/trinary/mixer/CtrlClick(mob/user)
 	if(can_interact(user))
 		on = !on
+		if(on)
+			set_active_power()
+		else
+			set_idle_power()
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 		update_appearance()
 	return ..()
@@ -27,7 +35,7 @@
 	if(can_interact(user))
 		target_pressure = MAX_OUTPUT_PRESSURE
 		investigate_log("was set to [target_pressure] kPa by [key_name(user)]", INVESTIGATE_ATMOS)
-		to_chat(user, "<span class='notice'>You maximize the pressure output on [src] to [target_pressure] kPa.</span>")
+		to_chat(user, span_notice("You maximize the pressure output on [src] to [target_pressure] kPa."))
 		update_appearance()
 	return ..()
 
@@ -50,7 +58,7 @@
 	air3.set_volume(300)
 	airs[3] = air3
 
-/obj/machinery/atmospherics/components/trinary/mixer/process_atmos()
+/obj/machinery/atmospherics/components/trinary/mixer/process_atmos(seconds_per_tick)
 	..()
 	if(!on || !(nodes[1] && nodes[2] && nodes[3]) && !is_operational)
 		return
@@ -137,6 +145,10 @@
 	switch(action)
 		if("power")
 			on = !on
+			if(on)
+				set_active_power()
+			else
+				set_idle_power()
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 		if("pressure")
@@ -169,7 +181,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational)
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
 		return FALSE
 
 // mapping

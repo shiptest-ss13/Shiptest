@@ -5,7 +5,7 @@
 //Drone hands
 
 
-/mob/living/simple_animal/hologram/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE)
+/mob/living/simple_animal/hologram/doUnEquip(obj/item/I, force, newloc, no_move, invdrop = TRUE, silent = FALSE, use_unequip_delay = FALSE)
 	if(..())
 		update_inv_hands()
 		if(I == internal_storage)
@@ -84,7 +84,7 @@
 			r_store = I
 			update_inv_pockets()
 		else
-			to_chat(src, "<span class='danger'>You are trying to equip this item to an unsupported inventory slot. Report this to a coder!</span>")
+			to_chat(src, span_danger("You are trying to equip this item to an unsupported inventory slot. Report this to a coder!"))
 			return
 
 	//Call back for item being equipped to drone

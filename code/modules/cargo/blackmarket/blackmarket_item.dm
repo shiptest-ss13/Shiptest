@@ -8,36 +8,69 @@
 	/// "/datum/blackmarket_market"s that this item should be in, used by SSblackmarket on init.
 	var/list/markets = list(/datum/blackmarket_market/blackmarket)
 
-	/// Price for the item, if not set creates a price according to the *_min and *_max vars.
-	var/price
-	/// How many of this type of item is available, if not set creates a price according to the *_min and *_max vars.
+	/// Cost for the item, if not set creates a cost according to the *_min and *_max vars.
+	var/cost
+	/// How many of this type of item is available, if not set creates a cost according to the *_min and *_max vars.
 	var/stock
 
 	/// Path to or the item itself what this entry is for, this should be set even if you override spawn_item to spawn your item.
 	var/item
 
-	/// Minimum price for the item if generated randomly.
-	var/price_min	= 0
-	/// Maximum price for the item if generated randomly.
-	var/price_max	= 0
+	/// Minimum cost for the item if generated randomly.
+	var/cost_min	= 0
+	/// Maximum cost for the item if generated randomly.
+	var/cost_max	= 0
 	/// Minimum amount that there should be of this item in the market if generated randomly. This defaults to 1 as most items will have it as 1.
 	var/stock_min	= 1
 	/// Maximum amount that there should be of this item in the market if generated randomly.
 	var/stock_max	= 0
+	/// Whether the item is visible and purchasable on the market
+	var/available = TRUE
 	/// Probability for this item to be available. Used by SSblackmarket on init.
 	var/availability_prob = 0
-	// Should there be an unlimited stock of an item
-	var/unlimited = FALSE
+	/// If this item should be more or less likely to spawn than usual. Positive is more likely, negative is less
+	var/weight = 0
+	/// If this item is affected by avalibility weight. For items that shouldnt appear on their own (paired items), should always appear, or items paticularly rare or powerful that we dont want showing up too often
+	var/spawn_weighting
+	/// Should another item spawn alongside this one in the catalogue?
+	var/list/pair_item = null
+
 
 /datum/blackmarket_item/New()
-	if(isnull(price))
-		price = rand(price_min, price_max)
+	if(isnull(cost))
+		randomize_price()
 	if(isnull(stock))
-		stock = rand(stock_min, stock_max)
+		randomize_stock()
+	if(isnull(spawn_weighting))
+		if(availability_prob == 0 || availability_prob == 100)
+			spawn_weighting = FALSE
+		else
+			spawn_weighting = TRUE
 
 /// Used for spawning the wanted item, override if you need to do something special with the item.
 /datum/blackmarket_item/proc/spawn_item(loc)
 	return new item(loc)
+
+/datum/blackmarket_item/proc/randomize_price()
+	cost = rand(cost_min, cost_max)
+
+/datum/blackmarket_item/proc/randomize_stock()
+	stock = rand(stock_min, stock_max)
+
+/datum/blackmarket_item/proc/cycle(cost = TRUE, availibility = TRUE, stock = FALSE, force_appear = FALSE)
+	if(cost)
+		randomize_price()
+	if(stock)
+		randomize_stock()
+	if(availibility)
+		if(spawn_weighting ? prob(max(0, (availability_prob + (weight * 10)))) : prob(availability_prob))
+			available = TRUE
+			weight--
+		else
+			available = FALSE
+			weight++
+	if(force_appear)
+		available = TRUE
 
 /// Buys the item and makes SSblackmarket handle it.
 /datum/blackmarket_item/proc/buy(obj/item/blackmarket_uplink/uplink, mob/buyer, shipping_method)
@@ -46,7 +79,7 @@
 		return FALSE
 
 	// This shouldn't be able to happen unless there was some manipulation or admin fuckery.
-	if(!item || stock <= 0 && !unlimited)
+	if(!item || stock <= 0)
 		return FALSE
 
 	// Alright, the item has been purchased.
@@ -54,8 +87,11 @@
 
 	// SSblackmarket takes care of the shipping.
 	if(SSblackmarket.queue_item(purchase))
-		stock--
+		if(stock != INFINITY)
+			stock--
 		log_game("[key_name(buyer)] has succesfully purchased [name] using [shipping_method] for shipping.")
+		SSblackbox.record_feedback("nested tally", "blackmarket_ordered", 1, list(name, "amount"))
+		SSblackbox.record_feedback("nested tally", "blackmarket_ordered", cost, list(name, "cost"))
 		return TRUE
 	return FALSE
 

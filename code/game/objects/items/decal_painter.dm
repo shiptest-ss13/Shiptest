@@ -34,7 +34,7 @@
 
 	var/turf/open/floor/plasteel/F = A
 	if(!istype(F) || istype(F, /turf/open/floor/plasteel/tech))
-		to_chat(user, "<span class='warning'>\The [src] can only be used on plasteel flooring.</span>")
+		to_chat(user, span_warning("\The [src] can only be used on plasteel flooring."))
 		return
 
 	F.icon_state = floor_state
@@ -58,15 +58,15 @@
 			<img style="-ms-interpolation-mode: nearest-neighbor;" src="floor.png" width=128 height=128 border=4>
 		</center>
 		<center>
-			<a href="?src=[UID()];cycleleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_state=1">Choose Style</a>
-			<a href="?src=[UID()];cycleright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycleleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_state=1">Choose Style</a>
+			<a href="byond://?src=[UID()];cycleright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Style: [floor_state]</div>
 		<center>
-			<a href="?src=[UID()];cycledirleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_dir=1">Choose Direction</a>
-			<a href="?src=[UID()];cycledirright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycledirleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_dir=1">Choose Direction</a>
+			<a href="byond://?src=[UID()];cycledirright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Direction: [dir2text(floor_dir)]</div>
 	"}
@@ -198,12 +198,12 @@
 
 	var/turf/open/floor/F = A
 	if(!istype(F))
-		to_chat(user, "<span class='warning'>\The [src] can only be used on flooring.</span>")
+		to_chat(user, span_warning("\The [src] can only be used on flooring."))
 		return
 	if(color_disallowed.Find(decal_state))
-		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, FALSE, color, null, null, alpha)
+		F.AddElement(/datum/element/decal, 'icons/turf/decals/decals.dmi', decal_state, decal_dir, FALSE, color, null, null, alpha)
 	else
-		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', decal_state, decal_dir, FALSE, decal_color, null, null, alpha)
+		F.AddElement(/datum/element/decal, 'icons/turf/decals/decals.dmi', decal_state, decal_dir, FALSE, decal_color, null, null, alpha)
 	playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE)
 
 /obj/item/decal_painter/attack_self(mob/user)
@@ -215,26 +215,26 @@
 
 /obj/item/decal_painter/interact(mob/user as mob) //TODO: Make TGUI for this because ouch
 	if(!decal_icon)
-		decal_icon = icon('icons/turf/decals.dmi', decal_state, decal_dir)
+		decal_icon = icon('icons/turf/decals/decals.dmi', decal_state, decal_dir)
 	user << browse_rsc(decal_icon, "floor.png")
 	var/dat = {"
 		<center>
 			<img style="-ms-interpolation-mode: nearest-neighbor;" src="floor.png" width=128 height=128 border=4>
 		</center>
 		<center>
-			<a href="?src=[UID()];cycleleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_state=1">Choose Style</a>
-			<a href="?src=[UID()];cycleright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycleleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_state=1">Choose Style</a>
+			<a href="byond://?src=[UID()];cycleright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Style: [decal_state]</div>
 		<center>
-			<a href="?src=[UID()];cycledirleft=1">&lt;-</a>
-			<a href="?src=[UID()];choose_dir=1">Choose Direction</a>
-			<a href="?src=[UID()];cycledirright=1">-&gt;</a>
+			<a href="byond://?src=[UID()];cycledirleft=1">&lt;-</a>
+			<a href="byond://?src=[UID()];choose_dir=1">Choose Direction</a>
+			<a href="byond://?src=[UID()];cycledirright=1">-&gt;</a>
 		</center>
 		<div class='statusDisplay'>Direction: [dir2text(decal_dir)]</div>
 		<center>
-			<a href="?src=[UID()];choose_color=1">Choose Color</a>
+			<a href="byond://?src=[UID()];choose_color=1">Choose Color</a>
 		</center>
 	"}
 
@@ -288,7 +288,7 @@
 				decal_color = chosen_colour
 
 
-	decal_icon = icon('icons/turf/decals.dmi', decal_state, decal_dir)
+	decal_icon = icon('icons/turf/decals/decals.dmi', decal_state, decal_dir)
 	if(usr)
 		attack_self(usr)
 

@@ -2,17 +2,16 @@
 /obj/effect/anomaly/pyro
 	name = "plasmaball"
 	icon_state = "pyroclastic"
-	desc = "A mysterious anomaly, made of an everburning gas. Those who approach it tend to absorb it's heat, or even ignite."
+	desc = "A floating orb of everburning gas, not unlike a sun. It radiates a dangerous amount of heat."
 	effectrange = 4
 	pulse_delay = 10 SECONDS
-	aSignal = /obj/item/assembly/signaler/anomaly/pyro
+	core = /obj/item/assembly/signaler/anomaly/pyro
 
 /obj/effect/anomaly/pyro/anomalyEffect(seconds_per_tick)
 	..()
 
 	for(var/mob/living/carbon/nearby in range(effectrange, src))
 		nearby.adjust_bodytemperature(20)
-		visible_message("[src] pulses!")
 
 	if(!COOLDOWN_FINISHED(src, pulse_cooldown))
 		return
@@ -21,7 +20,7 @@
 	for(var/mob/living/carbon/nearby in range(effectrange/2, src))
 		nearby.fire_stacks += 3
 		nearby.IgniteMob()
-		visible_message("<span class='warning'>[src] ignites [nearby]!")
+		visible_message("<span class='warning'>[src] lets out a flare, igniting [nearby]!")
 
 
 /obj/effect/anomaly/pyro/Bumped(atom/movable/AM)
@@ -84,3 +83,6 @@
 /obj/effect/anomaly/pyro/big/planetary
 	immortal = TRUE
 	immobile = TRUE
+
+/obj/effect/anomaly/pyro/storm
+	drops_core = FALSE

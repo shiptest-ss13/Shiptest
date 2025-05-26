@@ -5,30 +5,35 @@
 
 /obj/item/reagent_containers/food/snacks/icecreamsandwich
 	name = "icecream sandwich"
-	desc = "Portable Ice-cream in its own packaging."
+	desc = "A small slab of vanilla ice cream, sandwiched between two soft cookies."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "icecreamsandwich"
+	w_class = WEIGHT_CLASS_TINY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/ice = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/ice = 2)
 	tastes = list("ice cream" = 1)
 	foodtype = GRAIN | DAIRY | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
 
 /obj/item/reagent_containers/food/snacks/strawberryicecreamsandwich
 	name = "strawberry ice cream sandwich"
-	desc = "Portable ice-cream in its own packaging of the strawberry variety."
+	desc = "A small slab of strawberry ice cream, sandwiched between two soft cookies."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "strawberryicecreamsandwich"
+	w_class = WEIGHT_CLASS_TINY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/ice = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/ice = 2)
 	tastes = list("ice cream" = 2, "berry" = 2)
 	foodtype = FRUIT | DAIRY | SUGAR
+	/*food_flags = FOOD_FINGER_FOOD*/
 
 
 /obj/item/reagent_containers/food/snacks/spacefreezy
-	name = "space freezy"
-	desc = "The best icecream in space."
+	name = "blue cherry icecream cone"
+	desc = "An ice cream with specially-prepared \"blue cherry\" ice cream, a flavor that has since been made by genetic engineers into reality in the passing centuries."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "spacefreezy"
+	w_class = WEIGHT_CLASS_TINY
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/bluecherryjelly = 5, /datum/reagent/consumable/nutriment/vitamin = 4)
 	filling_color = "#87CEFA"
@@ -37,9 +42,10 @@
 
 /obj/item/reagent_containers/food/snacks/sundae
 	name = "sundae"
-	desc = "A classic dessert."
+	desc = "A classic dessert, featuring multiple scoops of vanilla ice cream, topped with syrup, cuts of banana, and a cherry."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "sundae"
+	w_class = WEIGHT_CLASS_SMALL
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/banana = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#FFFACD"
@@ -47,14 +53,14 @@
 	foodtype = FRUIT | DAIRY | SUGAR
 
 /obj/item/reagent_containers/food/snacks/honkdae
-	name = "honkdae"
-	desc = "The clown's favorite dessert."
+	name = "banana split sundae"
+	desc = "A banana-loaded addition to the sundae."
 	icon = 'icons/obj/food/frozen_treats.dmi'
-	icon_state = "honkdae"
+	icon_state = "sundae" // Same sprite for now I hate that fucking clown
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/banana = 10, /datum/reagent/consumable/nutriment/vitamin = 4)
 	filling_color = "#FFFACD"
-	tastes = list("ice cream" = 1, "banana" = 1, "a bad joke" = 1)
+	tastes = list("ice cream" = 1, "banana" = 1)
 	foodtype = FRUIT | DAIRY | SUGAR
 
 /////////////
@@ -63,15 +69,17 @@
 
 /obj/item/reagent_containers/food/snacks/snowcones //We use this as a base for all other snowcones
 	name = "flavorless snowcone"
-	desc = "It's just shaved ice. Still fun to chew on."
+	desc = "Finely shaved ice, put atop a paper cone. Usually added with flavored syrup, but..."
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "flavorless_sc"
+	w_class = WEIGHT_CLASS_SMALL
 	trash = /obj/item/reagent_containers/food/drinks/sillycup //We dont eat paper cups
 	bonus_reagents = list(/datum/reagent/water = 10) //Base line will allways give water
 	list_reagents = list(/datum/reagent/water = 1) // We dont get food for water/juices
 	filling_color = "#FFFFFF" //Ice is white
 	tastes = list("ice" = 1, "water" = 1)
 	foodtype = SUGAR //We use SUGAR as a base line to act in as junkfood, other wise we use fruit
+	/*food_flags = FOOD_FINGER_FOOD*/
 
 /obj/item/reagent_containers/food/snacks/snowcones/lime
 	name = "lime snowcone"
@@ -115,7 +123,7 @@
 
 /obj/item/reagent_containers/food/snacks/snowcones/blue
 	name = "bluecherry snowcone"
-	desc = "Bluecherry syrup drizzled over a snowball in a paper cup, how rare!"
+	desc = "Blue cherry syrup drizzled over a snowball in a paper cup."
 	icon_state = "blue_sc"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/bluecherryjelly = 5)
 	tastes = list("ice" = 1, "water" = 1, "blue" = 5, "cherries" = 5)
@@ -138,7 +146,7 @@
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/snowcones/fruitsalad
-	name = "fruit salad snowcone"
+	name = "triple citrus snowcone"
 	desc = "A delightful mix of citrus syrups drizzled over a snowball in a paper cup."
 	icon_state = "fruitsalad_sc"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/lemonjuice = 5, /datum/reagent/consumable/limejuice = 5, /datum/reagent/consumable/orangejuice = 5)
@@ -155,17 +163,12 @@
 
 /obj/item/reagent_containers/food/snacks/snowcones/mime
 	name = "mime snowcone"
-	desc = "..."
+	desc = "Nothing syrup drizzled over a snowball in a paper cup. It tastes like it wasn't flavored at all..."
 	icon_state = "mime_sc"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nothing = 5)
 	tastes = list("ice" = 1, "water" = 1, "nothing" = 5)
 
-/obj/item/reagent_containers/food/snacks/snowcones/clown
-	name = "clown snowcone"
-	desc = "Laughter drizzled over a snowball in a paper cup."
-	icon_state = "clown_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/laughter = 5)
-	tastes = list("ice" = 1, "water" = 1, "jokes" = 5, "brainfreeze" = 5, "joy" = 5)
+
 
 /obj/item/reagent_containers/food/snacks/snowcones/soda
 	name = "space cola snowcone"
@@ -175,18 +178,18 @@
 	tastes = list("ice" = 1, "water" = 1, "cola" = 5)
 
 /obj/item/reagent_containers/food/snacks/snowcones/spacemountainwind
-	name = "Space Mountain Wind snowcone"
-	desc = "Space Mountain Wind drizzled over a snowball in a paper cup."
+	name = "Comet Trail snowcone"
+	desc = "Comet Trail drizzled over a snowball in a paper cup."
 	icon_state = "mountainwind_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/spacemountainwind = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/comet_trail = 5)
 	tastes = list("ice" = 1, "water" = 1, "mountain wind" = 5)
 
 
 /obj/item/reagent_containers/food/snacks/snowcones/pwrgame
-	name = "pwrgame snowcone"
-	desc = "Pwrgame soda drizzled over a snowball in a paper cup."
+	name = "PAC-Fuel snowcone"
+	desc = "PAC-Fuel soda drizzled over a snowball in a paper cup."
 	icon_state = "pwrgame_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/pwr_game = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/pacfuel = 5)
 	tastes = list("ice" = 1, "water" = 1, "valid" = 5, "salt" = 5, "wats" = 5)
 
 /obj/item/reagent_containers/food/snacks/snowcones/honey
@@ -256,8 +259,8 @@
 	foodtype = FRUIT | DAIRY | SUGAR
 
 /obj/item/reagent_containers/food/snacks/popsicle/jumbo
-	name = "jumbo icecream"
-	desc = "A luxurius icecream covered in rich chocolate. It seems smaller than you remember it being."
+	name = "Je'Tir'Nix bar"
+	desc = "A luxurious, chocolate-covered bar of vanilla ice cream. Made by the rachnid culinarian guild."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 3, /datum/reagent/consumable/sugar = 4)
 	bonus_reagents = list(/datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 3, /datum/reagent/consumable/sugar = 2)
 	overlay_state = "jumbo"
@@ -275,7 +278,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "cornuto"
-	desc = "A neapolitan vanilla and chocolate icecream cone. It menaces with a sprinkling of caramelized nuts."
+	desc = "A solarian vanilla and chocolate icecream cone. It menaces with a sprinkling of caramelized nuts."
 	tastes = list("chopped hazelnuts", "waffle")
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 1)

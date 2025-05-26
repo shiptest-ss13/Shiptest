@@ -32,7 +32,7 @@
 	aggro_vision_range = 9
 	mob_size = MOB_SIZE_SMALL
 	environment_smash = ENVIRONMENT_SMASH_NONE
-	gold_core_spawnable = HOSTILE_SPAWN
+	armor = list(melee = 20, bullet = 10, laser = 30, energy = 80, bomb = 80, bio = 80, rad = 80, fire = 80, acid = 80, magic = 80)
 	var/wumbo = 0
 	var/inflate_cooldown = 0
 	var/datum/action/innate/fugu/expand/E
@@ -58,11 +58,6 @@
 		E.Activate()
 	..()
 
-/mob/living/simple_animal/hostile/asteroid/fugu/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced && wumbo)
-		return FALSE
-	. = ..()
-
 /mob/living/simple_animal/hostile/asteroid/fugu/Aggro()
 	..()
 	E.Activate()
@@ -79,13 +74,13 @@
 /datum/action/innate/fugu/expand/Activate()
 	var/mob/living/simple_animal/hostile/asteroid/fugu/F = owner
 	if(F.wumbo)
-		to_chat(F, "<span class='warning'>YOU'RE ALREADY WUMBO!</span>")
+		to_chat(F, span_warning("YOU'RE ALREADY WUMBO!"))
 		return
 	if(F.inflate_cooldown)
-		to_chat(F, "<span class='warning'>You need time to gather your strength!</span>")
+		to_chat(F, span_warning("You need time to gather your strength!"))
 		return
 	if(F.buffed)
-		to_chat(F, "<span class='warning'>Something is interfering with your growth!</span>")
+		to_chat(F, span_warning("Something is interfering with your growth!"))
 		return
 	F.wumbo = 1
 	F.icon_state = "Fugu1"
@@ -100,6 +95,7 @@
 	F.environment_smash = ENVIRONMENT_SMASH_WALLS
 	F.mob_size = MOB_SIZE_LARGE
 	F.speed = 1
+	F.armor = list(melee = 80, bullet = 60, laser = 80, energy = 80, bomb = 80, bio = 80, rad = 80, fire = 80, acid = 80, magic = 80)
 	addtimer(CALLBACK(F, TYPE_PROC_REF(/mob/living/simple_animal/hostile/asteroid/fugu, Deflate)), 100)
 
 /mob/living/simple_animal/hostile/asteroid/fugu/proc/Deflate()
@@ -139,7 +135,7 @@
 	if(proximity_flag && isanimal(target))
 		var/mob/living/simple_animal/A = target
 		if(A.buffed || (A.type in banned_mobs) || A.stat)
-			to_chat(user, "<span class='warning'>Something's interfering with [src]'s effects. It's no use.</span>")
+			to_chat(user, span_warning("Something's interfering with [src]'s effects. It's no use."))
 			return
 		A.buffed++
 		A.maxHealth *= 1.5
@@ -148,5 +144,5 @@
 		A.melee_damage_upper = max((A.melee_damage_upper * 2), 10)
 		A.transform *= 2
 		A.environment_smash |= ENVIRONMENT_SMASH_STRUCTURES | ENVIRONMENT_SMASH_RWALLS
-		to_chat(user, "<span class='info'>You increase the size of [A], giving it a surge of strength!</span>")
+		to_chat(user, span_info("You increase the size of [A], giving it a surge of strength!"))
 		qdel(src)

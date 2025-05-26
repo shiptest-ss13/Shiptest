@@ -10,7 +10,7 @@
 /mob/living/carbon/alien
 	name = "alien"
 	icon = 'icons/mob/alien.dmi'
-	gender = FEMALE //All xenos are girls!!
+	gender = FEMALE //All xenos are girls!! //slay
 	dna = null
 	faction = list(ROLE_ALIEN)
 	ventcrawler = VENTCRAWLER_ALWAYS
@@ -19,9 +19,8 @@
 	verb_say = "hisses"
 	initial_language_holder = /datum/language_holder/alien
 	bubble_icon = "alien"
-	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
+	type_of_meat = /obj/item/food/meat/slab/xeno
 
-	var/obj/item/card/id/wear_id = null // Fix for station bounced radios -- Skie
 	var/has_fine_manipulation = FALSE
 
 	status_flags = CANUNCONSCIOUS|CANPUSH
@@ -156,8 +155,8 @@
 	return initial(pixel_y)
 
 /mob/living/carbon/alien/proc/alien_evolve(mob/living/carbon/alien/new_xeno)
-	to_chat(src, "<span class='noticealien'>You begin to evolve!</span>")
-	visible_message("<span class='alertalien'>[src] begins to twist and contort!</span>")
+	to_chat(src, span_noticealien("You begin to evolve!"))
+	visible_message(span_alertalien("[src] begins to twist and contort!"))
 	new_xeno.setDir(dir)
 	if(numba && unique_name)
 		new_xeno.numba = numba
@@ -180,3 +179,7 @@
 /mob/living/carbon/alien/on_standing_up()
 	. = ..()
 	update_icons()
+
+/mob/living/carbon/alien/examine(mob/user)
+	. = ..()
+	. += "It's a strange creature."

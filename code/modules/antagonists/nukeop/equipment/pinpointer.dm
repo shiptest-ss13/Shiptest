@@ -16,7 +16,7 @@
 		if(bomb.timing)
 			. += "Extreme danger. Arming signal detected. Time remaining: [bomb.get_time_left()]."
 
-/obj/item/pinpointer/nuke/process()
+/obj/item/pinpointer/nuke/process(seconds_per_tick)
 	..()
 	if(active) // If shit's going down
 		for(var/obj/machinery/nuclearbomb/bomb in GLOB.nuke_list)
@@ -26,13 +26,13 @@
 					playsound(src, 'sound/items/nuke_toy_lowpower.ogg', 50, FALSE)
 					if(isliving(loc))
 						var/mob/living/L = loc
-						to_chat(L, "<span class='userdanger'>Your [name] vibrates and lets out a tinny alarm. Uh oh.</span>")
+						to_chat(L, span_userdanger("Your [name] vibrates and lets out a tinny alarm. Uh oh."))
 
 /obj/item/pinpointer/nuke/scan_for_target()
 	target = null
 	switch(mode)
 		if(TRACK_NUKE_DISK)
-			var/obj/item/disk/nuclear/N = locate() in GLOB.poi_list
+			var/obj/item/disk/nuclear/N = locate() in SSpoints_of_interest.other_points_of_interest
 			target = N
 		if(TRACK_MALF_AI)
 			for(var/V in GLOB.ai_list)
@@ -48,7 +48,7 @@
 /obj/item/pinpointer/nuke/proc/switch_mode_to(new_mode)
 	if(isliving(loc))
 		var/mob/living/L = loc
-		to_chat(L, "<span class='userdanger'>Your [name] beeps as it reconfigures it's tracking algorithms.</span>")
+		to_chat(L, span_userdanger("Your [name] beeps as it reconfigures it's tracking algorithms."))
 		playsound(L, 'sound/machines/triple_beep.ogg', 50, TRUE)
 	mode = new_mode
 	scan_for_target()

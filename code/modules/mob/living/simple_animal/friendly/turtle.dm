@@ -11,7 +11,7 @@
 	emote_see = list("Stretches out their neck.", "looks around slowly.")
 	speak_chance = 1
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1, /obj/item/clothing/head/franks_hat = 1)
+	butcher_results = list(/obj/item/food/meat/slab = 1, /obj/item/clothing/head/franks_hat = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_simple = "gently pushes aside"
@@ -19,7 +19,6 @@
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	gold_core_spawnable = NO_SPAWN
 	melee_damage_lower = 0.5
 	melee_damage_upper = 1
 	health = 2500

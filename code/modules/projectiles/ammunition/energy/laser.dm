@@ -2,12 +2,35 @@
 	projectile_type = /obj/projectile/beam/laser
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/sharplite
+	projectile_type = /obj/projectile/beam/laser/sharplite
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/laser/underbarrel
+	projectile_type = /obj/projectile/beam/laser
+	e_cost =  1250
+
+/obj/item/ammo_casing/energy/laser/slug
+	projectile_type = /obj/projectile/beam/laser/slug
+	select_name = "slug"
+	delay = 0.9 SECONDS
+	fire_sound = 'sound/weapons/gun/laser/cs-fire.ogg'
+
 /obj/item/ammo_casing/energy/laser/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
+/obj/projectile/beam/laser/eoehoma/hermit // Used for the Hermits with E-11 because apparently you can only set it on projectile for simple mobs? That's fun!
+	spread = 30
+
 /obj/item/ammo_casing/energy/laser/assault
 	projectile_type = /obj/projectile/beam/laser/assault
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	delay = 2
+	e_cost = 666 //30 per upgraded cell
+
+/obj/item/ammo_casing/energy/laser/assault/sharplite
+	projectile_type = /obj/projectile/beam/laser/assault/sharplite
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 	delay = 2
 	e_cost = 666 //30 per upgraded cell
@@ -23,22 +46,42 @@
 	e_cost = 830
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/lasergun/sharplite
+	projectile_type = /obj/projectile/beam/laser/sharplite
+	e_cost = 830
+	select_name = "kill"
+
 /obj/item/ammo_casing/energy/lasergun/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
-	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	e_cost = 1428
+	delay = 0.3 SECONDS
+
+/obj/item/ammo_casing/energy/lasergun/eoehoma/heavy
+	projectile_type = /obj/projectile/beam/laser/eoehoma/heavy
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 10000
+	select_name = "overcharge"
+	delay = 1 SECONDS
 
 /obj/item/ammo_casing/energy/laser/smg
-	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
+	projectile_type = /obj/projectile/beam/laser/weak
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
-	delay = 0.1 SECONDS
+	delay = 0.13 SECONDS
+
+/obj/item/ammo_casing/energy/laser/sharplite/smg
+	projectile_type = /obj/projectile/beam/weak/sharplite
+	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
+	select_name = "kill"
+	delay = 0.13 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
 	e_cost = 2000
 	select_name = "kill"
 
-/obj/item/ammo_casing/energy/laser/hos
+/obj/item/ammo_casing/energy/laser/sharplite/hos
 	e_cost = 1200
 
 /obj/item/ammo_casing/energy/laser/practice
@@ -46,17 +89,23 @@
 	select_name = "practice"
 	harmful = FALSE
 
+/obj/item/ammo_casing/energy/laser/practice/sharplite
+	projectile_type = /obj/projectile/beam/practice/sharplite
+	select_name = "practice"
+	harmful = FALSE
+
 /obj/item/ammo_casing/energy/laser/scatter
 	projectile_type = /obj/projectile/beam/scatter
-	pellets = 5
-	variance = 25
+	pellets = 10
+	variance = 40
+	e_cost = 1598 //12 shots upgraded cell, 6 with normal cell
 	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/ultima
-	projectile_type = /obj/projectile/beam/laser/weak/negative_ap/low_range
-	pellets = 3
-	variance = 35
-	e_cost = 2000
+	projectile_type = /obj/projectile/beam/weak
+	pellets = 6
+	variance = 25
+	e_cost = 1000
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/ultima/alt
@@ -168,6 +217,11 @@
 	impact_light_intensity = 6
 	impact_light_range = 2.5
 	impact_light_color_override = COLOR_CYAN
+
+/obj/projectile/beam/hitscan/disabler/heavy
+	damage = 30
+	armour_penetration = -10
+
 
 /obj/item/ammo_casing/energy/laser/minigun
 	select_name = "kill"

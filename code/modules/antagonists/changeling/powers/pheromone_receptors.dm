@@ -15,11 +15,11 @@
 	..()
 	var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 	if(!receptors_active)
-		to_chat(user, "<span class='warning'>We search for the scent of any nearby changelings.</span>")
+		to_chat(user, span_warning("We search for the scent of any nearby changelings."))
 		changeling.chem_recharge_slowdown += 0.5
 		user.apply_status_effect(/datum/status_effect/agent_pinpointer/changeling)
 	else
-		to_chat(user, "<span class='notice'>We stop searching for now.</span>")
+		to_chat(user, span_notice("We stop searching for now."))
 		changeling.chem_recharge_slowdown -= 0.5
 		user.remove_status_effect(/datum/status_effect/agent_pinpointer/changeling)
 
@@ -48,7 +48,7 @@
 					changelings[C] = (CHANGELING_PHEROMONE_MAX_DISTANCE ** 2) - (distance ** 2)
 
 	if(changelings.len)
-		scan_target = pickweight(changelings) //Point at a 'random' changeling, biasing heavily towards closer ones.
+		scan_target = pick_weight(changelings) //Point at a 'random' changeling, biasing heavily towards closer ones.
 	else
 		scan_target = null
 
