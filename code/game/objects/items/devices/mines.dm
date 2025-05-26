@@ -873,6 +873,8 @@ LIVE_MINE_HELPER(pressure/sound)
 	. = ..()
 	if(spawn_mines())
 		spawn_signs()
+	//Please dont leave this in..
+	//message_admins(span_big("Click here to jump to minefield: " + ADMIN_JMP(src.loc)))
 
 /obj/effect/spawner/minefield/proc/spawn_mines()
 	var/mines_spawned = 0
