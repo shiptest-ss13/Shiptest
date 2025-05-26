@@ -230,17 +230,3 @@
 	junkiness = 20
 	tastes = list("fried corn" = 1)
 	foodtypes = JUNKFOOD | FRIED
-
-/obj/item/food/pingles
-	name = "pingles"
-	desc = "A perfect blend of sour cream and onion on a potato chip. May cause space lag."
-	icon_state = "pingles"
-	trash_type = /obj/item/c_tube
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 6,
-		/datum/reagent/consumable/cooking_oil = 2,
-		/datum/reagent/consumable/sodiumchloride = 2
-	)
-
-	tastes = list("sour cream" = 2, "onion" = 1)
-	foodtypes = FRIED

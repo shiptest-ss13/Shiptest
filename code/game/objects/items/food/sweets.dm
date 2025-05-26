@@ -226,24 +226,6 @@
 		attack(M, M)
 		timer_id = addtimer(CALLBACK(src, PROC_REF(chew)), bite_frequency, TIMER_STOPPABLE)
 
-/obj/item/food/lollipop/long
-	name = "longpop"
-	desc = "Twice the size, half the flavour!"
-	icon = 'icons/obj/lollipop.dmi'
-	icon_state = "lollipop_stick_long"
-
-/obj/item/food/lollipop/long/equipped(mob/user, slot)
-	..()
-	if(chewing)
-		RegisterSignal(user, COMSIG_LIVING_STATUS_KNOCKDOWN, PROC_REF(on_trip), user)
-	else
-		UnregisterSignal(user, COMSIG_LIVING_STATUS_KNOCKDOWN)
-
-/obj/item/food/lollipop/long/proc/on_trip(mob/living/carbon/user)
-	visible_message("<span class='danger'>[user] is impaled by the [src]!</span>", "<span class='danger'>You are impaled by the [src]!</span>")
-	user.adjustBruteLoss(50)
-	user.adjustOxyLoss(50)
-
 /obj/item/food/lollipop/cyborg
 	var/spamchecking = TRUE
 

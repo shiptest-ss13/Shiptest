@@ -106,10 +106,6 @@
 /obj/structure/table,
 /obj/item/flashlight/lamp,
 /obj/machinery/light/small/directional/east,
-/obj/item/reagent_containers/food/snacks/chewable/bubblegum/nicotine{
-	pixel_x = -8;
-	pixel_y = 11
-	},
 /turf/open/floor/plasteel/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/dorms)
 "bi" = (
@@ -351,15 +347,15 @@
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "dP" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/snacks/ration/side/white_sandwich_bread,
-/obj/item/reagent_containers/food/snacks/ration/snack/cherry_snackers{
+/obj/item/food/ration/side/white_sandwich_bread,
+/obj/item/food/ration/snack/cherry_snackers{
 	pixel_x = 10;
 	pixel_y = 8
 	},
 /obj/item/trash/plate{
 	pixel_x = -13
 	},
-/obj/item/reagent_containers/food/snacks/ration/snack/sour_gummy_worms{
+/obj/item/food/ration/snack/sour_gummy_worms{
 	pixel_x = 1;
 	pixel_y = 7
 	},
@@ -2638,7 +2634,7 @@
 "FH" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp,
-/obj/item/reagent_containers/food/snacks/ration/side/beef_sticks{
+/obj/item/food/ration/side/beef_sticks{
 	pixel_x = 10
 	},
 /obj/item/food/chips,
@@ -3540,7 +3536,7 @@
 /obj/effect/turf_decal/corner/transparent/lime/border{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/snacks/ration/entree/beef_strips,
+/obj/item/food/ration/entree/beef_strips,
 /turf/open/floor/plasteel/dark/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shipbreaking/ship)
 "Ts" = (
@@ -3683,7 +3679,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/broken/directional/east,
-/obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage{
+/obj/item/food/ration/pack/orange_beverage{
 	pixel_x = 9
 	},
 /turf/open/floor/plasteel/dark/wasteplanet,
