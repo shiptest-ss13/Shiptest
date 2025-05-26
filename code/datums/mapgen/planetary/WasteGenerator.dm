@@ -126,7 +126,7 @@
 		//the illusive shrapnel plant
 		/obj/item/mine/pressure/explosive/shrapnel/live = 30,
 		/obj/effect/spawner/random/mine = 8,
-		/obj/effect/spawner/minefield = 2
+		/obj/effect/spawner/minefield/tiny = 2
 	)
 
 	feature_spawn_list = list(
@@ -209,7 +209,7 @@
 		/obj/structure/flora/ash/glowshroom = 1800,
 		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
-		/obj/effect/spawner/minefield = 2
+		/obj/effect/spawner/minefield/tiny = 2
 	)
 
 /datum/biome/waste/tar_bed //tar colorings
@@ -262,7 +262,7 @@
 		/obj/effect/spawner/random/waste/salvageable = 300,
 		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
-		/obj/effect/spawner/minefield = 2
+		/obj/effect/spawner/minefield/tiny = 2
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
 		/mob/living/simple_animal/hostile/hivebot/strong = 20,
@@ -322,13 +322,14 @@
 		/obj/structure/flora/ash/glowshroom = 400, //more common in caves
 		/obj/item/mine/pressure/explosive/rusty/live = 10,
 		/obj/effect/spawner/random/mine = 8,
-		/obj/effect/spawner/minefield = 2
+		/obj/effect/spawner/minefield/tiny = 2
 	)
 
 	feature_spawn_list = list(
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
+		/obj/effect/spawner/minefield = 5,
 		/obj/effect/spawner/random/anomaly/waste/cave = 1,
 		/obj/structure/vein/waste = 8,
 		/obj/structure/vein/waste/classtwo = 4,
@@ -387,7 +388,7 @@
 		/obj/structure/flora/ash/glowshroom = 1800,
 		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
-		/obj/effect/spawner/minefield = 2
+		/obj/effect/spawner/minefield/tiny = 2
 	)
 	feature_spawn_chance = 12
 
