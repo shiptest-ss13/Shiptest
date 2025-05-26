@@ -92,7 +92,7 @@
 
 /obj/item/clothing/attack(mob/M, mob/user, def_zone)
 	if(user.a_intent != INTENT_HARM && moth_edible && ismoth(M))
-		var/obj/item/food/clothing/clothing_as_food = new 
+		var/obj/item/food/clothing/clothing_as_food = new
 		clothing_as_food.name = name
 		if(clothing_as_food.attack(M, user, def_zone))
 			take_damage(15, sound_effect=FALSE)
