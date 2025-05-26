@@ -34,7 +34,7 @@
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
 		/obj/item/food/grown/eggplant = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/eggplantparm
+	result = /obj/item/food/eggplantparm
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/melonfruitbowl

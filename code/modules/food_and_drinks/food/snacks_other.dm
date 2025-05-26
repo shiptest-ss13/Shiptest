@@ -183,26 +183,6 @@
 	/*food_flags = FOOD_FINGER_FOOD*/
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/reagent_containers/food/snacks/eggwrap
-	name = "egg wrap"
-	desc = "Thinly cooked egg, intended as a wrapper for a filling."
-	icon_state = "eggwrap"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	filling_color = "#F0E68C"
-	tastes = list("egg" = 1)
-	foodtype = MEAT | VEGETABLES
-
-/obj/item/reagent_containers/food/snacks/chawanmushi
-	name = "chawanmushi"
-	desc = "A savory egg custard originating from Earth, named after being prepared by being steamed in a tea bowl or teacup."
-	icon_state = "chawanmushi"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	filling_color = "#FFE4E1"
-	tastes = list("custard" = 1)
-	foodtype = GRAIN | MEAT | VEGETABLES
-
 /obj/item/reagent_containers/food/snacks/spidereggs
 	name = "spider eggs"
 	desc = "A cluster of immense, translucent eggs. The spawn inside quicken to life at being disturbed..."
@@ -269,7 +249,7 @@
 	/*food_flags = FOOD_FINGER_FOOD*/
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/reagent_containers/food/snacks/eggplantparm
+/obj/item/food/eggplantparm
 	name = "eggplant parmigiana"
 	desc = "Sliced and breaded eggplant, baked in cheese and marinara sauce."
 	icon_state = "eggplantparm"
