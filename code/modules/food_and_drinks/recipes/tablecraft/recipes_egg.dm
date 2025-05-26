@@ -44,19 +44,19 @@
 /datum/crafting_recipe/food/eggbowl
 	name = "Egg bowl"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/food/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/boiledegg = 1,
 		/obj/item/food/grown/carrot = 1,
 		/obj/item/food/grown/corn = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/salad/eggbowl
+	result = /obj/item/food/salad/eggbowl
 	subcategory = CAT_EGG
 
 /datum/crafting_recipe/food/eggrolls
 	name = "Eggrolls"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 1,
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/food/salad/boiledrice = 1,
 		/obj/item/reagent_containers/food/snacks/friedegg = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/eggrolls

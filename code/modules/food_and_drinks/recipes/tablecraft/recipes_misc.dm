@@ -75,9 +75,9 @@
 	reqs = list(
 		/datum/reagent/consumable/milk = 5,
 		/datum/reagent/consumable/sugar = 5,
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
+		/obj/item/food/salad/boiledrice = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/salad/ricepudding
+	result = /obj/item/food/salad/ricepudding
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/poutine
@@ -94,7 +94,7 @@
 	name = "Vegetarian sushi roll"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 1,
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/food/salad/boiledrice = 1,
 		/obj/item/food/grown/carrot = 1,
 		/obj/item/food/grown/potato = 1
 	)
@@ -105,7 +105,7 @@
 	name = "Onigiri"
 	reqs = list(
 		/obj/item/food/grown/seaweed/sheet = 1,
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
+		/obj/item/food/salad/boiledrice = 1
 	)
 	result = /obj/item/food/onigiri
 	subcategory = CAT_MISCFOOD

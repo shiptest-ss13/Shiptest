@@ -1,4 +1,15 @@
 //Soup
+
+/datum/crafting_recipe/food/oatmeal //is oatmeal a soup? this topic is heavily debated by scholars
+	name = "Oatmeal"
+	reqs = list(
+		/datum/reagent/consumable/milk = 10,
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/grown/oat = 1
+	)
+	result = /obj/item/food/soup/oatmeal
+	subcategory = CAT_SOUP
+
 /datum/crafting_recipe/food/meatballsoup
 	name = "Meatball soup"
 	reqs = list(
@@ -230,7 +241,7 @@
 		/obj/item/food/grown/onion = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/soup/onion
+	result = /obj/item/food/soup/onionn
 	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/bisque
@@ -239,7 +250,7 @@
 		/datum/reagent/water = 10,
 		/obj/item/reagent_containers/glass/bowl = 1,
 		/obj/item/food/meat/crab = 1,
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
+		/obj/item/food/salad/boiledrice = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/bisque
 	subcategory = CAT_SOUP
