@@ -215,25 +215,25 @@
 	tastes = list("ice" = 1, "water" = 1, "cola" = 5)
 	foodtypes = SUGAR
 
-/obj/item/food/snowcones/spacemountainwind
+/obj/item/food/snowcones/comettrail
 	name = "Comet Trail snowcone"
 	desc = "Comet Trail drizzled over a snowball in a paper cup."
 	icon_state = "mountainwind_sc"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 1,
-		/datum/reagent/consumable/spacemountainwind = 5,
+		/datum/reagent/consumable/comet_trail = 5,
 		/datum/reagent/water = 11
 	)
 	tastes = list("ice" = 1, "water" = 1, "mountain wind" = 5)
 	foodtypes = SUGAR
 
-/obj/item/food/snowcones/pwrgame
+/obj/item/food/snowcones/pacfuel
 	name = "PAC-Fuel snowcone"
 	desc = "PAC-Fuel soda drizzled over a snowball in a paper cup."
 	icon_state = "pwrgame_sc"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 1,
-		/datum/reagent/consumable/pwr_game = 5,
+		/datum/reagent/consumable/pacfuel = 5,
 		/datum/reagent/water = 11
 	)
 	tastes = list("ice" = 1, "water" = 1, "valid" = 5, "salt" = 5, "wats" = 5)
@@ -276,28 +276,11 @@
 		/datum/reagent/consumable/sugar = 4
 	)
 	tastes = list("beetlejuice")
-	trash = /obj/item/popsicle_stick
+	trash_type = /obj/item/popsicle_stick
 	w_class = WEIGHT_CLASS_SMALL
 	foodtypes = DAIRY | SUGAR
 	///T his is the edible part of the popsicle.
 	var/overlay_state = "creamsicle_o"
-	/// This value value is used for correctly setting the bitesize to ensure every bite changes the sprite. Do not set to zero.
-	var/bite_states = 4
-
-/obj/item/food/popsicle/Initialize()
-	. = ..()
-	bitesize = reagents.total_volume / bite_states
-
-/obj/item/food/popsicle/update_overlays()
-	. = ..()
-	if(!bitecount)
-		. += initial(overlay_state)
-		return
-	. += "[initial(overlay_state)]_[min(bitecount, 3)]"
-
-/obj/item/food/popsicle/On_Consume(mob/living/eater)
-	. = ..()
-	update_appearance()
 
 /obj/item/popsicle_stick
 	name = "popsicle stick"
@@ -371,4 +354,4 @@
 		/datum/reagent/consumable/vanilla = 4,
 		/datum/reagent/consumable/sugar = 2
 	)
-	foodtype = DAIRY | SUGAR
+	foodtypes = DAIRY | SUGAR

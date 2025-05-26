@@ -32,7 +32,7 @@
 /datum/crafting_recipe/food/eggplantparm
 	name ="Eggplant parmigiana"
 	reqs = list(
-		/obj/item/food/food/cheesewedge = 2,
+		/obj/item/food/cheese/wedge = 2,
 		/obj/item/food/grown/eggplant = 1
 	)
 	result = /obj/item/food/eggplantparm
@@ -46,7 +46,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/vodka = 1
 	)
 	parts = list(/obj/item/reagent_containers/food/drinks/bottle/vodka = 1)
-	result = /obj/item/reagent_containers/food/snacks/melonkeg
+	result = /obj/item/food/melonkeg
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/branrequests
@@ -55,7 +55,7 @@
 		/obj/item/food/grown/wheat = 1,
 		/obj/item/food/no_raisin = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/branrequests
+	result = /obj/item/food/branrequests
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/ricepudding
@@ -68,15 +68,15 @@
 	result = /obj/item/food/salad/ricepudding
 	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/poutine
-	name = "Poutine"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fries = 1,
-		/obj/item/food/cheese/wedge = 1,
-		/datum/reagent/consumable/gravy = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/customizable/poutine
-	subcategory = CAT_MISCFOOD
+// /datum/crafting_recipe/food/poutine
+// 	name = "Poutine"
+// 	reqs = list(
+// 		/obj/item/food/fries = 1,
+// 		/obj/item/food/cheese/wedge = 1,
+// 		/datum/reagent/consumable/gravy = 1
+// 	)
+// 	result = /obj/item/food/customizable/poutine
+// 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/vegetariansushiroll
 	name = "Vegetarian sushi roll"

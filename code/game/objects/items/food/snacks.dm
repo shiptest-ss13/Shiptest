@@ -10,7 +10,6 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 1,
 		/datum/reagent/consumable/sugar = 3,
-		/datum/reagent/consumable/maltodextrin = 2
 	)
 	junkiness = 25
 	tastes = list("candy" = 1)
@@ -27,7 +26,6 @@
 		/datum/reagent/consumable/nutriment/protein = 3,
 		/datum/reagent/consumable/sugar = 2,
 		/datum/reagent/consumable/sodiumchloride = 2,
-		/datum/reagent/consumable/maltodextrin = 3
 	)
 	junkiness = 25
 	tastes = list("dried meat" = 1)
@@ -53,7 +51,6 @@
 		/datum/reagent/consumable/nutriment = 1,
 		/datum/reagent/consumable/sugar = 3,
 		/datum/reagent/consumable/sodiumchloride = 1,
-		/datum/reagent/consumable/maltodextrin = 2
 	)
 	junkiness = 20
 	tastes = list("salt" = 1, "crisps" = 1)
@@ -68,13 +65,11 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 2,
 		/datum/reagent/consumable/sugar = 4,
-		/datum/reagent/consumable/maltodextrin = 3.35
 	)
 	junkiness = 25
 	tastes = list("dried raisins" = 1)
 	foodtypes = JUNKFOOD | FRUIT | SUGAR
 	food_flags = FOOD_FINGER_FOOD
-	custom_price = PAYCHECK_MEDIUM * 0.7
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/no_raisin/healthy
@@ -94,12 +89,10 @@
 	desc = "Guaranteed to survive longer than you will."
 	food_reagents = list(
 		/datum/reagent/consumable/sugar = 4,
-		/datum/reagent/consumable/maltodextrin = 1.35
 	)
 	junkiness = 25
 	foodtypes = JUNKFOOD | GRAIN | SUGAR
 	food_flags = FOOD_FINGER_FOOD
-	custom_price = PAYCHECK_EASY
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/cheesiehonkers
@@ -110,7 +103,6 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 1,
 		/datum/reagent/consumable/sugar = 3,
-		/datum/reagent/consumable/maltodextrin = 2
 	)
 	junkiness = 25
 	tastes = list("cheese" = 5, "crisps" = 2)
@@ -125,7 +117,6 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/doctor_delight = 5,
-		/datum/reagent/consumable/maltodextrin = 4
 	)
 	tastes = list("sweetness" = 3, "cake" = 1)
 	foodtypes = GRAIN | FRUIT | VEGETABLES
@@ -139,7 +130,6 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/consumable/liquidelectricity = 10,
-		/datum/reagent/consumable/maltodextrin = 3
 	)
 	tastes = list("pure electricity" = 3, "fitness" = 2)
 	foodtypes = TOXIC

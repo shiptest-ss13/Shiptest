@@ -131,13 +131,13 @@
 	desc = "A bacon, lettuce, and tomato sandwich. Usually served with mayo, this sandwich is a staple."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "blt"
-	list_reagents = list(
+	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 7,
-		/datum/reagent/consumable/nutriment/protein = 2
+		/datum/reagent/consumable/nutriment/protein = 2,
 		/datum/reagent/consumable/nutriment/vitamin = 3
 	)
 	tastes = list("meat" = 1, "cabbage" = 1, "bread" = 2)
-	foodtype = MEAT | VEGETABLES | GRAIN | BREAKFAST
+	foodtypes = MEAT | VEGETABLES | GRAIN | BREAKFAST
 
 /obj/item/food/hotdog
 	name = "hotdog"

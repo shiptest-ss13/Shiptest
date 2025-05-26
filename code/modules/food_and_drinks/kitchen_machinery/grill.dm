@@ -52,11 +52,11 @@
 		to_chat(user, span_warning("You don't feel it would be wise to grill [I]..."))
 		return ..()
 
-	if(istype(I, /obj/item/reagent_containers/food/snacks))
+	if(istype(I, /obj/item/food))
 		var/obj/item/food/food_item = I
 		if(HAS_TRAIT(food_item, TRAIT_NODROP) || (food_item.item_flags & (ABSTRACT | DROPDEL)))
 			return ..()
-		else if(food_item.foodtype & GRILLED)
+		else if(food_item.foodtypes & GRILLED)
 			to_chat(user, span_notice("[food_item] has already been grilled!"))
 			return
 		else if(grill_fuel <= 0)
@@ -132,7 +132,7 @@
 	return ..()
 
 /obj/machinery/grill/proc/finish_grill()
-	if(grill_time >= 10 && grilled_item.cooked_type)
+	if(grill_time >= 10 && grilled_item.microwaved_type)
 		grilled_item = grilled_item.microwave_act()
 	switch(grill_time) //no 0-20 to prevent spam
 		if(20 to 30)
@@ -141,17 +141,17 @@
 		if(30 to 80)
 			grilled_item.name = "grilled [grilled_item.name]"
 			grilled_item.desc = "[grilled_item.desc] It's been grilled."
-			grilled_item.foodtype |= FRIED
+			grilled_item.foodtypes |= FRIED
 		if(80 to 100)
 			grilled_item.name = "heavily grilled [grilled_item.name]"
 			grilled_item.desc = "[grilled_item.desc] It's been heavily grilled."
-			grilled_item.foodtype |= FRIED
+			grilled_item.foodtypes |= FRIED
 		if(100 to INFINITY) //grill marks reach max alpha
 			grilled_item.name = "Powerfully Grilled [grilled_item.name]"
 			grilled_item.desc = "A [grilled_item.name]. Reminds you of your wife, wait, no, it's prettier!"
-			grilled_item.foodtype |= FRIED
+			grilled_item.foodtypes |= FRIED
 	grilled_item.AddComponent(/datum/component/sizzle, (grill_time * 7.5))
-	grilled_item.foodtype |= GRILLED
+	grilled_item.foodtypes |= GRILLED
 	grill_time = 0
 	grill_loop.stop()
 	grilled_item = null

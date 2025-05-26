@@ -53,7 +53,7 @@
 		/datum/reagent/consumable/ice = 2,
 		/datum/reagent/consumable/sugar = 4
 	)
-	result = /obj/item/reagent_containers/food/snacks/cornuto
+	result = /obj/item/food/cornuto
 	subcategory = CAT_ICE
 
 //////////////////////////SNOW CONES///////////////////////
@@ -187,17 +187,17 @@
 		/datum/reagent/consumable/ice = 15,
 		/datum/reagent/consumable/comet_trail = 5
 	)
-	result = /obj/item/food/snowcones/spacemountainwind
+	result = /obj/item/food/snowcones/comettrail
 	subcategory = CAT_ICE
 
-/datum/crafting_recipe/food/pwrgame_sc
+/datum/crafting_recipe/food/pacfuel_sc
 	name = "Pacfuel snowcone"
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,
 		/datum/reagent/consumable/pacfuel = 15
 	)
-	result = /obj/item/food/snowcones/pwrgame
+	result = /obj/item/food/snowcones/pacfuel
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/honey_sc
@@ -235,7 +235,7 @@
 		/datum/reagent/consumable/vanilla = 2,
 		/datum/reagent/consumable/sugar = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange
+	result = /obj/item/food/popsicle/creamsicle_orange
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/berry_popsicle
@@ -248,7 +248,7 @@
 		/datum/reagent/consumable/vanilla = 2,
 		/datum/reagent/consumable/sugar = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_berry
+	result = /obj/item/food/popsicle/creamsicle_berry
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/jumbo
@@ -261,7 +261,7 @@
 		/datum/reagent/consumable/vanilla = 3,
 		/datum/reagent/consumable/sugar = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/popsicle/jumbo
+	result = /obj/item/food/popsicle/jumbo
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/licorice
@@ -275,5 +275,5 @@
 		/datum/reagent/consumable/vanilla = 2,
 		/datum/reagent/consumable/sugar = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/popsicle/licorice
+	result = /obj/item/food/popsicle/licorice
 	subcategory = CAT_ICE

@@ -15,7 +15,7 @@
 	reqs = list(/obj/item/stack/rods = 1,
 		/datum/reagent/consumable/sugar = 5,
 		/datum/reagent/water = 5,
-		/obj/item/reagent_containers/food/snacks/spiderling = 1
+		/obj/item/food/spiderling = 1
 	)
 	result = /obj/item/food/spiderlollipop
 	subcategory = CAT_CANDIED
@@ -54,7 +54,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1,
 		/obj/item/food/grown/mushroom/libertycap = 3
 	)
-	result = /obj/item/reagent_containers/food/snacks/soup/spacylibertyduff
+	result = /obj/item/food/soup/spacylibertyduff
 	subcategory = CAT_CANDIED
 
 /datum/crafting_recipe/food/amanitajelly
@@ -64,6 +64,6 @@
 		/obj/item/reagent_containers/glass/bowl = 1,
 		/obj/item/food/grown/mushroom/amanita = 3
 	)
-	result = /obj/item/reagent_containers/food/snacks/soup/amanitajelly
+	result = /obj/item/food/soup/amanitajelly
 	subcategory = CAT_CANDIED
 

@@ -304,7 +304,7 @@
 	tastes = list("sweet potato" = 1)
 	foodtypes = VEGETABLES | SUGAR
 
-/obj/item/food/soup/beet/red
+/obj/item/food/soup/redbeet
 	name = "red beet soup"
 	desc = "A simplified form of borscht soup, notably lacking the meat broth."
 	icon_state = "redbeetsoup"
@@ -326,7 +326,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 5
 	)
 	tastes = list("caramelized onions" = 1)
-	foodtype = VEGETABLES
+	foodtypes = VEGETABLES
 
 /obj/item/food/soup/bisque
 	name = "bisque"

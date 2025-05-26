@@ -43,7 +43,7 @@
 /datum/crafting_recipe/food/fishandchips
 	name = "Fish and chips"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fries = 1,
+		/obj/item/food/fries = 1,
 		/obj/item/food/fishmeat = 1
 	)
 	result = /obj/item/food/fishandchips

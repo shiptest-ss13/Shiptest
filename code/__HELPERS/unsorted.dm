@@ -1379,7 +1379,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 			/obj/item/food/breadslice,
 			/obj/item/food/cake,
 			/obj/item/food/cakeslice,
-			/obj/item/reagent_containers/food/snacks/store,
 			/obj/item/food/pie,
 			/obj/item/food/kebab,
 			/obj/item/food/pizza,
@@ -1391,7 +1390,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 			/obj/item/food/grown,
 			/obj/item/food/grown/mushroom,,
 			/obj/item/food/deepfryholder,
-			/obj/item/reagent_containers/food/snacks/clothing,
+			/obj/item/food/clothing,
 			/obj/item/food/grown/shell, //base types
 			/obj/item/food/bread,
 			/obj/item/food/grown/nettle,

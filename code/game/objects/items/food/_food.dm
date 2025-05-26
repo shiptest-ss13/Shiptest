@@ -36,6 +36,8 @@
 	var/trash_type
 	///How much junkiness this food has? God I should remove junkiness soon
 	var/junkiness
+	///How much of the reagent within is transfered at once, mostly for things like drink packets and ration condiments
+	var/amount_per_transfer
 
 /obj/item/food/Initialize()
 	. = ..()

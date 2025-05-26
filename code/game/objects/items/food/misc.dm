@@ -135,29 +135,6 @@
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/food/powercrepe
-	name = "Powercrepe"
-	desc = "With great power, comes great crepes.  It looks like a pancake filled with jelly but packs quite a punch."
-	icon_state = "powercrepe"
-	item_state = "powercrepe"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-		/datum/reagent/consumable/cherryjelly = 5,
-	)
-	force = 30
-	throwforce = 15
-	block_level = 2
-	block_upgrade_walk = 1
-	block_power = 55
-	attack_weight = 2
-	armour_penetration = 80
-	//wound_bonus = -50
-	attack_verb = list("slapped", "slathered")
-	w_class = WEIGHT_CLASS_BULKY
-	tastes = list("cherry" = 1, "crepe" = 1)
-	foodtypes = GRAIN | FRUIT | SUGAR
-
 /obj/item/food/branrequests
 	name = "Bran Requests Cereal"
 	desc = "A dry cereal that satiates your requests for bran. Tastes uniquely like raisins and salt."
@@ -267,21 +244,3 @@
 
 	tastes = list("sour cream" = 2, "onion" = 1)
 	foodtypes = FRIED
-
-/obj/item/food/rationpack
-	name = "ration pack"
-	desc = "A square bar that sadly <i>looks</i> like chocolate, packaged in a nondescript grey wrapper. Has saved soldiers' lives before - usually by stopping bullets."
-	icon_state = "rationpack"
-	bite_consumption = 3
-	junkiness = 15
-	tastes = list("cardboard" = 3, "sadness" = 3)
-	foodtypes = null //Don't ask what went into them. You're better off not knowing.
-	food_reagents = list(/datum/reagent/consumable/nutriment/stabilized = 10, /datum/reagent/consumable/nutriment = 2) //Won't make you fat. Will make you question your sanity.
-
-///Override for checkliked callback
-/obj/item/food/rationpack/make_edible()
-	. = ..()
-	AddComponent(/datum/component/edible, check_liked = CALLBACK(src, PROC_REF(check_liked)))
-
-/obj/item/food/rationpack/proc/check_liked(fraction, mob/M)	//Nobody likes rationpacks. Nobody.
-	return FOOD_DISLIKED

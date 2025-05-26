@@ -7,7 +7,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 5,
 		/datum/reagent/consumable/sugar = 2,
-		/datum/reagent/consumable/cocoa = 2,
+		/datum/reagent/consumable/coco = 2,
 		/datum/reagent/consumable/nutriment/vitamin = 1
 	)
 	tastes = list("chocolate" = 4, "sweetness" = 1)
@@ -35,18 +35,18 @@
 /obj/item/food/egg/gland
 	desc = "An egg from... something other than a chicken. It doesn't look right."
 
-/obj/item/food/egg/gland/Initialize(mapload)
-	. = ..()
-	reagents.add_reagent(get_random_reagent_id(CHEMICAL_RNG_GENERAL), 15)
+// /obj/item/food/egg/gland/Initialize(mapload)
+// 	. = ..()
+// 	reagents.add_reagent(get_random_reagent_id(CHEMICAL_RNG_GENERAL), 15)
 
-	var/color = mix_color_from_reagents(reagents.reagent_list)
-	add_atom_colour(color, FIXED_COLOUR_PRIORITY)
+// 	var/color = mix_color_from_reagents(reagents.reagent_list)
+// 	add_atom_colour(color, FIXED_COLOUR_PRIORITY)
 
 /obj/item/food/egg/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(!..()) //was it caught by a mob?
 		var/turf/T = get_turf(hit_atom)
 		new/obj/effect/decal/cleanable/food/egg_smudge(T)
-		reagents.reaction(hit_atom, TOUCH)
+		// reagents.reaction(hit_atom, TOUCH)
 		qdel(src)
 
 /obj/item/food/egg/attackby(obj/item/W, mob/user, params)
@@ -173,7 +173,7 @@
 		/datum/reagent/consumable/nutriment = 2
 	)
 	tastes = list("rice" = 1, "dried seaweed" = 1, "eggs" = 1)
-	foodtype = BREAKFAST | FRIED
+	foodtypes = BREAKFAST | FRIED
 
 /obj/item/food/eggwrap
 	name = "egg wrap"

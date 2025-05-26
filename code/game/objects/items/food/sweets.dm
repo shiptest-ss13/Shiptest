@@ -52,7 +52,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 2,
 		/datum/reagent/consumable/sugar = 2,
-		/datum/reagent/consumable/cocoa = 2,
+		/datum/reagent/consumable/coco = 2,
 	)
 	tastes = list("chocolate" = 1)
 	foodtypes = JUNKFOOD | SUGAR
@@ -65,7 +65,7 @@
 	icon_state = "chococoin"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/cocoa = 1,
+		/datum/reagent/consumable/coco = 1,
 		/datum/reagent/consumable/sugar = 1,
 	)
 	tastes = list("chocolate" = 1)
@@ -79,7 +79,7 @@
 	icon_state = "chocodice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
-		/datum/reagent/consumable/cocoa = 1,
+		/datum/reagent/consumable/coco = 1,
 		/datum/reagent/consumable/sugar = 1,
 	)
 	trash_type = /obj/item/dice/fudge
@@ -108,7 +108,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 1,
 		/datum/reagent/consumable/sugar = 1,
-		/datum/reagent/consumable/cocoa = 1,
+		/datum/reagent/consumable/coco = 1,
 	)
 	tastes = list("chocolate" = 1)
 	foodtypes = DAIRY | JUNKFOOD | SUGAR
@@ -122,14 +122,13 @@
 /obj/item/food/gumball
 	name = "gumball"
 	desc = "A colorful, sugary gumball."
-	icon = 'icons/obj/food/lollipop.dmi'
+	// icon = 'icons/obj/food/lollipop.dmi'
 	icon_state = "gumball"
-	worn_icon_state = "bubblegum"
 	food_reagents = list(
 		/datum/reagent/consumable/sugar = 5,
 		/datum/reagent/medicine/bicaridine = 2,
 		/datum/reagent/medicine/kelotane = 2
-	)	//Kek
+	)
 	tastes = list("candy")
 	foodtypes = JUNKFOOD
 	food_flags = FOOD_FINGER_FOOD
@@ -264,7 +263,6 @@
 	name = "spider lollipop"
 	desc = "Still gross, but at least it has a mountain of sugar on it."
 	icon_state = "spiderlollipop"
-	worn_icon_state = "lollipop_stick"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment/protein = 2,
 		/datum/reagent/toxin = 1,

@@ -85,7 +85,7 @@
 	name = "carrot fries"
 	desc = "Thinly sliced sticks of carrots, salted and fried."
 	icon_state = "carrotfries"
-	list_reagents = list(
+	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
 		/datum/reagent/medicine/oculine = 3,
 		/datum/reagent/consumable/nutriment/vitamin = 2

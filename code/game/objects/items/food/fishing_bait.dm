@@ -7,7 +7,7 @@
 	/// Icon state added to main fishing rod icon when this bait is equipped
 	var/rod_overlay_icon_state
 
-/obj/item/reagent_containers/food/snacks/bait/Initialize(mapload)
+/obj/item/food/bait/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, bait_quality, INNATE_TRAIT)
 
@@ -23,7 +23,7 @@
 	bait_quality = BASIC_QUALITY_BAIT_TRAIT
 	rod_overlay_icon_state = "worm_overlay"
 
-/obj/item/reagent_containers/food/snacks/bait/worm/premium
+/obj/item/food/bait/worm/premium
 	name = "extra slimy worm"
 	desc = "This worm looks very sophisticated."
 	bait_quality = GOOD_QUALITY_BAIT_TRAIT
