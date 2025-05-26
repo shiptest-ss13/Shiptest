@@ -49,7 +49,12 @@
 	if(!length(planets_to_name))
 		return
 	if(activeFor % 4 == 0)
-		var/planet_to_name = pick(planets_to_name)
+		var/planet_to_name
+		//Make up a randon planet to list
+		if(prob(20))
+			planet_to_name = gen_planet_name()
+		else
+			planet_to_name = pick(planets_to_name)
 		target_outpost.broadcast_message(target_turf, "[planet_to_name]...")
 		planets_to_name -= planet_to_name
 
