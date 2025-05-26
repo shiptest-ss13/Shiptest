@@ -103,7 +103,7 @@
 	if(!proximity_flag)
 		return
 
-	if(istype(attack_target, /obj/item/reagent_containers/food/snacks/store/cheesewheel))
+	if(istype(attack_target, /obj/item/food/cheese/wheel))
 		try_consume_cheese(attack_target)
 		return TRUE
 

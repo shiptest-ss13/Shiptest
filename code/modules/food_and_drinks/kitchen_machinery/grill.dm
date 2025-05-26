@@ -12,7 +12,7 @@
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
 	var/grill_fuel = 0
-	var/obj/item/reagent_containers/food/snacks/grilled_item
+	var/obj/item/food/grilled_item
 	var/grill_time = 0
 	var/datum/looping_sound/grill/grill_loop
 
@@ -53,7 +53,7 @@
 		return ..()
 
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
-		var/obj/item/reagent_containers/food/snacks/food_item = I
+		var/obj/item/food/food_item = I
 		if(HAS_TRAIT(food_item, TRAIT_NODROP) || (food_item.item_flags & (ABSTRACT | DROPDEL)))
 			return ..()
 		else if(food_item.foodtype & GRILLED)

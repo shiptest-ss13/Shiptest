@@ -199,8 +199,8 @@
 
 	if(bait)
 		var/bait_state = "worm_overlay" //default to worm overlay for anything without specific one
-		if(istype(bait, /obj/item/reagent_containers/food/snacks/bait))
-			var/obj/item/reagent_containers/food/snacks/bait/real_bait = bait
+		if(istype(bait, var/obj/item/food/bait))
+			var/obj/item/food/bait/real_bait = bait
 			bait_state = real_bait.rod_overlay_icon_state
 		. += bait_state
 

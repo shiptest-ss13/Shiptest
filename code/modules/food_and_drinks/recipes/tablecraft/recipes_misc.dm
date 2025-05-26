@@ -5,24 +5,25 @@
 	time = 40
 	reqs = list(
 		/obj/item/food/grown/potato = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
+		/obj/item/food/cheese/wedge = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/loadedbakedpotato
-	subcategory = CAT_MISCFOOD
+	result = /obj/item/food/loaded_baked_potato
+	category = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/cheesyfries
 	name = "Cheesy fries"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fries = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
+		/obj/item/food/fries = 1,
+		/obj/item/food/cheese/wedge = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/cheesyfries
+	result = /obj/item/food/cheesyfries
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/beans
 	name = "Beans"
 	time = 40
-	reqs = list(/datum/reagent/consumable/ketchup = 5,
+	reqs = list(
+		/datum/reagent/consumable/ketchup = 5,
 		/obj/item/food/grown/soybeans = 2
 	)
 	result = /obj/item/food/canned/beans
@@ -31,23 +32,10 @@
 /datum/crafting_recipe/food/eggplantparm
 	name ="Eggplant parmigiana"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/obj/item/food/food/cheesewedge = 2,
 		/obj/item/food/grown/eggplant = 1
 	)
 	result = /obj/item/food/eggplantparm
-	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/melonfruitbowl
-	name ="Melon fruit bowl"
-	reqs = list(
-		/obj/item/food/grown/watermelon = 1,
-		/obj/item/food/grown/apple = 1,
-		/obj/item/food/grown/citrus/orange = 1,
-		/obj/item/food/grown/citrus/lemon = 1,
-		/obj/item/food/grown/banana = 1,
-		/obj/item/food/grown/ambrosia = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/melonfruitbowl
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/melonkeg
@@ -65,7 +53,7 @@
 	name = "Bran Requests Cereal"
 	reqs = list(
 		/obj/item/food/grown/wheat = 1,
-		/obj/item/reagent_containers/food/snacks/no_raisin = 1,
+		/obj/item/food/no_raisin = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/branrequests
 	subcategory = CAT_MISCFOOD
@@ -84,7 +72,7 @@
 	name = "Poutine"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/fries = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/food/cheese/wedge = 1,
 		/datum/reagent/consumable/gravy = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/customizable/poutine

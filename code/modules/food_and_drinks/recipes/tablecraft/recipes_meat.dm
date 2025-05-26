@@ -63,7 +63,7 @@
 	name = "Sashimi"
 	reqs = list(
 		/datum/reagent/consumable/soysauce = 5,
-		/obj/item/reagent_containers/food/snacks/spidereggs = 1,
+		/obj/item/food/spidereggs = 1,
 		/obj/item/food/fishmeat = 1
 	)
 	result = /obj/item/food/sashimi
@@ -107,7 +107,7 @@
 	name = "Spider eggs ham"
 	reqs = list(
 		/datum/reagent/consumable/sodiumchloride = 1,
-		/obj/item/reagent_containers/food/snacks/spidereggs = 1,
+		/obj/item/food/spidereggs = 1,
 		/obj/item/food/meat/cutlet/spider = 2
 	)
 	result = /obj/item/food/spidereggsham
@@ -148,7 +148,7 @@
 /datum/crafting_recipe/food/stewedsoymeat
 	name = "Stewed soymeat"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/soydope = 2,
+		/obj/item/food/soydope = 2,
 		/obj/item/food/grown/carrot = 1,
 		/obj/item/food/grown/tomato = 1
 	)
@@ -186,7 +186,7 @@
 	name = "Pig in a Blanket"
 	reqs = list(
 		/obj/item/food/bun = 1,
-		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/obj/item/food/butter = 1,
 		/obj/item/food/meat/cutlet = 1
 	)
 	result = /obj/item/food/pigblanket
