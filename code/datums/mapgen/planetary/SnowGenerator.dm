@@ -119,6 +119,7 @@
 		/obj/structure/vein/ice/classtwo/rare = 10,
 		/obj/structure/vein/ice/classthree = 10,
 		/obj/structure/vein/ice/classthree/rare = 5,
+		/obj/effect/spawner/minefield = 2,
 	)
 
 /datum/biome/snow/lush

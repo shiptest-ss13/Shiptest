@@ -106,6 +106,7 @@
 		/obj/structure/geyser/random = 2,
 		/obj/structure/vein/lavaland/classthree = 2,
 		/obj/structure/vein/lavaland/classthree/rare = 1,
+		/obj/effect/spawner/minefield/tiny = 1,
 		/obj/effect/spawner/random/anomaly/lava = 1,
 	)
 	mob_spawn_chance = 4
