@@ -105,8 +105,8 @@
 	popup.open()
 
 /obj/machinery/icecream_vat/attackby(obj/item/O, mob/user, params)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/icecream))
-		var/obj/item/reagent_containers/food/snacks/icecream/I = O
+	if(istype(O, /obj/item/food/icecream))
+		var/obj/item/food/icecream/I = O
 		if(!I.ice_creamed)
 			if(product_types[dispense_flavour] > 0)
 				visible_message("[icon2html(src, viewers(src))] [span_info("[user] scoops delicious [flavour_name] ice cream into [I].")]")
@@ -182,7 +182,7 @@
 		var/cone_name = get_flavour_name(dispense_cone)
 		if(product_types[dispense_cone] >= 1)
 			product_types[dispense_cone] -= 1
-			var/obj/item/reagent_containers/food/snacks/icecream/I = new(src.loc)
+			var/obj/item/food/icecream/I = new(src.loc)
 			I.set_cone_type(cone_name)
 			src.visible_message(span_info("[usr] dispenses a crunchy [cone_name] cone from [src]."))
 		else
@@ -209,12 +209,16 @@
 		usr << browse(null,"window=icecreamvat")
 	return
 
-/obj/item/reagent_containers/food/snacks/icecream
+/obj/item/food/icecream
 	name = "waffle cone"
 	desc = "Delicious waffle cone, but no ice cream."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "icecream_cone_waffle" //default for admin-spawned cones, href_list["cone"] should overwrite this all the time
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	bite_consumption = 4
+	foodtypes = DAIRY | SUGAR
+	max_volume = 20
+	food_flags = FOOD_FINGER_FOOD
 	tastes = list("cream" = 2, "waffle" = 1)
 	var/ice_creamed = 0
 	var/cone_type
@@ -222,11 +226,11 @@
 	foodtype = DAIRY | SUGAR
 	/*food_flags = FOOD_FINGER_FOOD*/
 
-/obj/item/reagent_containers/food/snacks/icecream/Initialize()
+/obj/item/food/icecream/Initialize()
 	. = ..()
 	reagents.maximum_volume = 20
 
-/obj/item/reagent_containers/food/snacks/icecream/proc/set_cone_type(cone_name)
+/obj/item/food/icecream/proc/set_cone_type(cone_name)
 	cone_type = cone_name
 	icon_state = "icecream_cone_[cone_name]"
 	switch (cone_type)
@@ -237,8 +241,7 @@
 
 	desc = "Delicious [cone_name] cone, but no ice cream."
 
-
-/obj/item/reagent_containers/food/snacks/icecream/proc/add_ice_cream(flavour_name, datum/reagents/R = null)
+/obj/item/food/icecream/proc/add_ice_cream(flavour_name, datum/reagents/R = null)
 	name = "[flavour_name] icecream"
 	switch (flavour_name) // adding the actual reagents advertised in the ingredient list
 		if ("vanilla")
@@ -279,7 +282,7 @@
 		src.add_overlay("icecream_[flavour_name]")
 	ice_creamed = 1
 
-/obj/item/reagent_containers/food/snacks/icecream/proc/add_mob_flavor(mob/M)
+/obj/item/food/icecream/proc/add_mob_flavor(mob/M)
 	add_ice_cream("mob")
 	name = "[M.name] icecream"
 
