@@ -35,7 +35,7 @@
 	end_when = 50
 	var/datum/overmap/outpost/target_outpost
 	var/turf/target_turf
-	var/list/planets_to_name = list("Terra", "Teceti", "Sitami's Folly", "Mikiliwolo", "Gorlex VII", "Re'tex'himl", "Lowell B29-C", "Curie H2H-B")
+	var/list/planets_to_name = list("Terra", "Teceti", "Sitami's Folly", "Mikiliwolo", "Gorlex VII", "Re'tex'himl", "Iakono-XZT2", "Curie H2H-B")
 
 /datum/round_event/cataclysm_broadcast/setup()
 	target_outpost = pick(SSovermap.outposts)
