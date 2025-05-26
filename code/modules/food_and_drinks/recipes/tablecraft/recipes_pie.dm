@@ -145,7 +145,7 @@
 		/datum/reagent/consumable/milk = 5,
 		/datum/reagent/consumable/sugar = 5,
 		/obj/item/food/pie/plain = 1,
-		/obj/item/reagent_containers/food/snacks/chocolatebar = 3,
+		/obj/item/food/chocolatebar = 3,
 	)
 	result = /obj/item/food/pie/cocoalavatart
 	subcategory = CAT_PIE

@@ -36,7 +36,7 @@
 	juice_results = list(/datum/reagent/consumable/watermelonjuice = 5)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/reagent_containers/food/snacks/candy_corn
+/obj/item/food/candy_corn
 	name = "candy corn"
 	desc = "A singular candy corn, originating as a Solarian tradition. Interestingly, they are traditionally stored in the interior of a fedora or trilby."
 	icon_state = "candy_corn"
@@ -47,7 +47,7 @@
 	//food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/reagent_containers/food/snacks/candy_corn/prison
+/obj/item/food/candy_corn/prison
 	name = "desiccated candy corn"
 	desc = "A thoroughly dried, dense piece of candy corn. It's difficult to even leave bite marks on."
 	force = 1 // the description isn't lying
@@ -55,7 +55,7 @@
 	tastes = list("bitter wax" = 1)
 	foodtype = GROSS
 
-/obj/item/reagent_containers/food/snacks/chocolatebar
+/obj/item/food/chocolatebar
 	name = "chocolate bar"
 	desc = "A bar of tempered milk chocolate, arranged into pre-shaped squares for easy measurement."
 	icon_state = "chocolatebar"
@@ -160,29 +160,6 @@
 	. = ..()
 	AddElement(/datum/element/dunkable, 10)
 
-/obj/item/reagent_containers/food/snacks/candiedapple
-	name = "candied apple"
-	desc = "An apple coated in caramel and skewered on a stick. A common treat."
-	icon_state = "candiedapple"
-	bitesize = 3
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/caramel = 5)
-	filling_color = "#FF4500"
-	tastes = list("apple" = 2, "caramel" = 3)
-	foodtype = JUNKFOOD | FRUIT | SUGAR
-
-/obj/item/reagent_containers/food/snacks/mint
-	name = "mint"
-	desc = "A small mint chocolate wafer. The confectionary company's symbol on the top isn't any you recognize..."
-	icon_state = "mint"
-	bitesize = 1
-	trash = /obj/item/trash/plate
-	list_reagents = list(/datum/reagent/toxin/minttoxin = 2)
-	filling_color = "#800000"
-	foodtype = TOXIC | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_TINY
-
 /obj/item/reagent_containers/food/snacks/spidereggs
 	name = "spider eggs"
 	desc = "A cluster of immense, translucent eggs. The spawn inside quicken to life at being disturbed..."
@@ -200,54 +177,6 @@
 	filling_color = "#00800"
 	tastes = list("crunchy exterior" = 1, "silty filling" = 2)
 	foodtype = MEAT | TOXIC
-
-/obj/item/reagent_containers/food/snacks/spiderlollipop
-	name = "spider lollipop"
-	desc = "A spider encased in candy. Sometimes sold as a gag souvenir, or as a genuine confection... though you're not sure if the species of spider inside is safe to eat."
-	icon_state = "spiderlollipop"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin = 1, /datum/reagent/iron = 10, /datum/reagent/consumable/sugar = 5, /datum/reagent/medicine/omnizine = 2) //lollipop, but vitamins = toxins
-	filling_color = "#00800"
-	tastes = list("candied insect" = 1, "sugar" = 2)
-	foodtype = JUNKFOOD | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/reagent_containers/food/snacks/chococoin
-	name = "chocolate coin"
-	desc = "A wafer of chocolate stylized as a coin."
-	icon_state = "chococoin"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/coco = 1)
-	filling_color = "#A0522D"
-	tastes = list("chocolate" = 1)
-	foodtype = JUNKFOOD | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/fudgedice
-	name = "fudge dice"
-	desc = "A little cube of solid fudge, with each face marked with a numerical pip."
-	icon_state = "chocodice"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/coco = 1)
-	filling_color = "#A0522D"
-	trash = /obj/item/dice/fudge
-	tastes = list("fudge" = 1)
-	foodtype = JUNKFOOD | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/chocoorange
-	name = "chocolate orange"
-	desc = "A traditional Solarian confectionary consisting of orange-infused chocolate, made in the mimicry of the orange fruit."
-	icon_state = "chocoorange"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 1)
-	filling_color = "#A0522D"
-	tastes = list("chocolate" = 3, "oranges" = 1)
-	foodtype = JUNKFOOD | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/food/eggplantparm
 	name = "eggplant parmigiana"
@@ -313,25 +242,6 @@
 	tastes = list("grain alcohol" = 1, "fruit" = 1)
 	foodtype = FRUIT | ALCOHOL
 
-/obj/item/food/honeybar
-	name = "honey nut bar"
-	desc = "Oats and nuts compressed together into a bar, held together with a honey glaze."
-	icon_state = "honeybar"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/honey = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
-	tastes = list("oats" = 3, "nuts" = 2, "honey" = 1)
-	foodtypes = GRAIN | SUGAR
-	food_flags = FOOD_FINGER_FOOD
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/food/crepe
-	name = "jelly crepe"
-	desc = "A crepe filled with jelly. It's very sticky."
-	icon_state = "powercrepe"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/cherryjelly = 5)
-	attack_verb = list("slapped", "slathered")
-	tastes = list("cherry" = 1, "crepe" = 1)
-	foodtypes = GRAIN | FRUIT | SUGAR
-
 /obj/item/reagent_containers/food/snacks/chewable
 	slot_flags = ITEM_SLOT_MASK
 	///How long it lasts before being deleted in seconds
@@ -372,54 +282,6 @@
 /obj/item/reagent_containers/food/snacks/chewable/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
-
-/obj/item/reagent_containers/food/snacks/chewable/lollipop
-	name = "lollipop"
-	desc = "A sugary candy suspended atop a small stick, intended to be placed into the mouth and sucked on to slowly dissolve. Often used as a medium for chemicals, due to their ubiquity in doctor's offices."
-	icon = 'icons/obj/lollipop.dmi'
-	icon_state = "lollipop_stick"
-	item_state = "lollipop_stick"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/iron = 10, /datum/reagent/consumable/sugar = 5, /datum/reagent/medicine/omnizine = 2)	//Honk
-	var/mutable_appearance/head
-	var/headcolor = rgb(0, 0, 0)
-	succ_dur = 15 * 60
-	succ_int = 100
-	next_succ = 0
-	tastes = list("candy" = 1)
-	foodtype = JUNKFOOD | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/reagent_containers/food/snacks/chewable/lollipop/Initialize()
-	. = ..()
-	head = mutable_appearance('icons/obj/lollipop.dmi', "lollipop_head")
-	change_head_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
-
-/obj/item/reagent_containers/food/snacks/chewable/lollipop/proc/change_head_color(C)
-	headcolor = C
-	cut_overlay(head)
-	head.color = C
-	add_overlay(head)
-
-/obj/item/reagent_containers/food/snacks/chewable/lollipop/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	..(hit_atom)
-	throw_speed = 1
-	throwforce = 0
-
-/obj/item/reagent_containers/food/snacks/chewable/lollipop/cyborg
-	var/spamchecking = TRUE
-
-/obj/item/reagent_containers/food/snacks/chewable/lollipop/cyborg/Initialize()
-	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(spamcheck)), 1200)
-
-/obj/item/reagent_containers/food/snacks/chewable/lollipop/cyborg/equipped(mob/living/user, slot)
-	. = ..(user, slot)
-	spamchecking = FALSE
-
-/obj/item/reagent_containers/food/snacks/chewable/lollipop/cyborg/proc/spamcheck()
-	if(spamchecking)
-		qdel(src)
 
 /obj/item/reagent_containers/food/snacks/chewable/bubblegum
 	name = "bubblegum"
@@ -471,36 +333,6 @@
 		to_chat(victim, span_colossus("<b>[pick("I AM IMMORTAL.","I SHALL TAKE YOUR WORLD.","I SEE YOU.","YOU CANNOT ESCAPE ME FOREVER.","NOTHING CAN HOLD ME.")]</b>"))
 	else
 		to_chat(victim, span_warning("[pick("You hear faint whispers.","You smell ash.","You feel hot.","You hear a roar in the distance.")]"))
-
-/obj/item/reagent_containers/food/snacks/gumball
-	name = "gumball"
-	desc = "A colorful, sugary gumball."
-	icon = 'icons/obj/lollipop.dmi'
-	icon_state = "gumball"
-	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/medicine/bicaridine = 2, /datum/reagent/medicine/kelotane = 2)	//Kek
-	tastes = list("candy")
-	foodtype = JUNKFOOD
-	/*food_flags = FOOD_FINGER_FOOD*/
-	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/reagent_containers/food/snacks/gumball/Initialize()
-	. = ..()
-	color = rgb(rand(0, 255), rand(0, 255), rand(0, 255))
-
-/obj/item/reagent_containers/food/snacks/gumball/cyborg
-	var/spamchecking = TRUE
-
-/obj/item/reagent_containers/food/snacks/gumball/cyborg/Initialize()
-	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(spamcheck)), 1200)
-
-/obj/item/reagent_containers/food/snacks/gumball/cyborg/equipped(mob/living/user, slot)
-	. = ..(user, slot)
-	spamchecking = FALSE
-
-/obj/item/reagent_containers/food/snacks/gumball/cyborg/proc/spamcheck()
-	if(spamchecking)
-		qdel(src)
 
 /obj/item/reagent_containers/food/snacks/branrequests
 	name = "Bran Cereal"
@@ -563,15 +395,6 @@
 	tastes = list("pineapple" = 1)
 	foodtypes = FRUIT | PINEAPPLE
 	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/reagent_containers/food/snacks/tinychocolate
-	name = "chocolate"
-	desc = "A small, sweet milk chocolate."
-	icon_state = "tiny_chocolate"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/coco = 1)
-	filling_color = "#A0522D"
-	tastes = list("chocolate" = 1)
-	foodtype = JUNKFOOD | SUGAR
 
 /obj/item/reagent_containers/food/snacks/crab_rangoon
 	name = "crab rangoon"
