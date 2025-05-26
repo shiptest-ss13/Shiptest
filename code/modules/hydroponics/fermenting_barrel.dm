@@ -137,7 +137,7 @@
 
 /obj/structure/fermenting_barrel/trickwine
 	name = "barrel of trickwine"
-	desc = "finely crafted trickwine."
+	desc = "A wooden barrel full of finely crafted trickwine."
 
 /obj/structure/fermenting_barrel/trickwine/Initialize()
 	. = ..()
