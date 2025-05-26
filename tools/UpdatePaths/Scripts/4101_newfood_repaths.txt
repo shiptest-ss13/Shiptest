@@ -25,11 +25,13 @@
 /obj/item/reagent_containers/food/snacks/salad/@SUBTYPES: /obj/item/food/salad{@OLD}
 /obj/item/reagent_containers/food/snacks/soup/@subtypes: /obj/item/food/soup{@OLD}
 
-/obj/item/reagent_containers/food/snacks/grilledcheese : /obj/item/food/grilled_cheese_sandwich
-/obj/item/reagent_containers/food/snacks/jellysandwich : /obj/item/food/jellysandwich
+/obj/item/reagent_containers/food/snacks/canned : /obj/item/food/canned{@OLD}
+
+/obj/item/reagent_containers/food/snacks/grilledcheese : /obj/item/food/grilled_cheese_sandwich{@OLD)
+/obj/item/reagent_containers/food/snacks/jellysandwich : /obj/item/food/jellysandwich{@OLD)
 /obj/item/reagent_containers/food/snacks/sandwich : /obj/item/food/sandwich{@OLD)
-/obj/item/reagent_containers/food/snacks/grilledcheese : /obj/item/food/grilled_cheese_sandwich
-/obj/item/reagent_containers/food/snacks/jellysandwich : /obj/item/food/jellysandwich
+/obj/item/reagent_containers/food/snacks/grilledcheese : /obj/item/food/grilled_cheese_sandwich{@OLD)
+/obj/item/reagent_containers/food/snacks/jellysandwich : /obj/item/food/jellysandwich{@OLD)
 
 /obj/item/food/grilled_cheese_sandwich : /obj/item/reagent_containers/food/snacks/grilledcheese{@OLD}
 /obj/item/food/jellysandwich : /obj/item/reagent_containers/food/snacks/jellysandwich{@OLD}
