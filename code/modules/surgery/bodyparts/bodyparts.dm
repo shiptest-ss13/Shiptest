@@ -135,11 +135,6 @@
 	/// If something is currently grasping this bodypart and trying to staunch bleeding (see [/obj/item/grasp_self])
 	var/obj/item/self_grasp/grasped_by
 
-	//todo: make ipc integrity use wounds system
-	var/light_integrity_msg = "misaligned"
-	var/medium_integrity_msg = "twisted"
-	var/heavy_integrity_msg = "falling apart"
-
 //band-aid for blood overlays & other external overlays until they get refactored
 	var/stored_icon_state
 
@@ -166,15 +161,15 @@
 	if(owner)
 		owner.remove_bodypart(src)
 		set_owner(null)
-	for(var/wound in wounds)
-		qdel(wound) // wounds is a lazylist, and each wound removes itself from it on deletion.
-	if(length(wounds))
-		stack_trace("[type] qdeleted with [length(wounds)] uncleared wounds")
-		wounds.Cut()
-	if(current_gauze)
-		qdel(current_gauze)
-	if(current_splint)
-		qdel(current_splint)
+	// for(var/wound in wounds)
+	// 	qdel(wound) // wounds is a lazylist, and each wound removes itself from it on deletion.
+	// if(length(wounds))
+	// 	stack_trace("[type] qdeleted with [length(wounds)] uncleared wounds")
+	// 	wounds.Cut()
+	// if(current_gauze)
+	// 	qdel(current_gauze)
+	// if(current_splint)
+	// 	qdel(current_splint)
 	return ..()
 
 /obj/item/bodypart/examine(mob/user)
