@@ -44,7 +44,7 @@
 /obj/structure/fermenting_barrel/attackby(obj/item/object, mob/user, params)
 	if(open)
 		if(istype(object, /obj/item/food/grown) && insert_fruit(user, object))
-			balloon_alert(user, "added fruit")
+			to_chat(user, span_notice("You place [object] into [src]."))
 			return
 	else if(object.is_refillable())
 		return //so we can refill them via their afterattack.
@@ -77,13 +77,13 @@
 /// Adds the fruit to the barrel to queue the fermentation
 /obj/structure/fermenting_barrel/proc/insert_fruit(mob/user, obj/item/food/grown/fruit)
 	if(reagents.total_volume + potential_volume > reagents.maximum_volume)
-		balloon_alert(user, "it's full!")
+		balloon_alert(user, span_warning("The [src] is already full!"))
 		return FALSE
 	if(!fruit.can_distill)
-		balloon_alert(user, "can't ferment this!")
+		to_chat(user, span_warning("You can't distill this into anything..."))
 		return FALSE
 	else if (!user.transferItemToLoc(fruit, src))
-		balloon_alert(user, "can't take fruit!")
+		to_chat(user, span_warning("[fruit] is stuck to your hand!"))
 		return FALSE
 	potential_volume += fruit.reagents.total_volume
 	return TRUE
@@ -96,7 +96,7 @@
 		return
 	if(reagents.total_volume >= reagents.maximum_volume)
 		return
-	if(!(locate(/obj/item/reagent_containers/food) in contents))
+	if(!(locate(/obj/item/food/grown) in contents))
 		return
 	fermenting = TRUE
 	soundloop.start()
