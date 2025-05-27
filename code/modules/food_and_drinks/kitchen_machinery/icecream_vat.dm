@@ -79,26 +79,26 @@
 	var/dat
 	dat += "<b>ICE CREAM</b><br><div class='statusDisplay'>"
 	dat += "<b>Dispensing: [flavour_name] icecream </b> <br><br>"
-	dat += "<b>Vanilla ice cream:</b> <a href='?src=[REF(src)];select=[ICECREAM_VANILLA]'><b>Select</b></a> <a href='?src=[REF(src)];make=[ICECREAM_VANILLA];amount=1'><b>Make</b></a> <a href='?src=[REF(src)];make=[ICECREAM_VANILLA];amount=5'><b>x5</b></a> [product_types[ICECREAM_VANILLA]] scoops left. (Ingredients: milk, ice, vanilla)<br>"
-	dat += "<b>Strawberry ice cream:</b> <a href='?src=[REF(src)];select=[ICECREAM_STRAWBERRY]'><b>Select</b></a> <a href='?src=[REF(src)];make=[ICECREAM_STRAWBERRY];amount=1'><b>Make</b></a> <a href='?src=[REF(src)];make=[ICECREAM_STRAWBERRY];amount=5'><b>x5</b></a> [product_types[ICECREAM_STRAWBERRY]] dollops left. (Ingredients: milk, ice, berry juice)<br>"
-	dat += "<b>Chocolate ice cream:</b> <a href='?src=[REF(src)];select=[ICECREAM_CHOCOLATE]'><b>Select</b></a> <a href='?src=[REF(src)];make=[ICECREAM_CHOCOLATE];amount=1'><b>Make</b></a> <a href='?src=[REF(src)];make=[ICECREAM_CHOCOLATE];amount=5'><b>x5</b></a> [product_types[ICECREAM_CHOCOLATE]] dollops left. (Ingredients: milk, ice, coco powder)<br>"
-	dat += "<b>Blue ice cream:</b> <a href='?src=[REF(src)];select=[ICECREAM_BLUE]'><b>Select</b></a> <a href='?src=[REF(src)];make=[ICECREAM_BLUE];amount=1'><b>Make</b></a> <a href='?src=[REF(src)];make=[ICECREAM_BLUE];amount=5'><b>x5</b></a> [product_types[ICECREAM_BLUE]] dollops left. (Ingredients: milk, ice, singulo)<br>"
-	dat += "<b>Custom ice cream:</b> <a href='?src=[REF(src)];select=[ICECREAM_CUSTOM]'><b>Select</b></a> <a href='?src=[REF(src)];make=[ICECREAM_CUSTOM];amount=1'><b>Make</b></a> <a href='?src=[REF(src)];make=[ICECREAM_CUSTOM];amount=5'><b>x5</b></a> [product_types[ICECREAM_CUSTOM]] dollops left. (Ingredients: milk, ice, optional flavoring)<br></div>"
+	dat += "<b>Vanilla ice cream:</b> <a href='byond://?src=[REF(src)];select=[ICECREAM_VANILLA]'><b>Select</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_VANILLA];amount=1'><b>Make</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_VANILLA];amount=5'><b>x5</b></a> [product_types[ICECREAM_VANILLA]] scoops left. (Ingredients: milk, ice, vanilla)<br>"
+	dat += "<b>Strawberry ice cream:</b> <a href='byond://?src=[REF(src)];select=[ICECREAM_STRAWBERRY]'><b>Select</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_STRAWBERRY];amount=1'><b>Make</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_STRAWBERRY];amount=5'><b>x5</b></a> [product_types[ICECREAM_STRAWBERRY]] dollops left. (Ingredients: milk, ice, berry juice)<br>"
+	dat += "<b>Chocolate ice cream:</b> <a href='byond://?src=[REF(src)];select=[ICECREAM_CHOCOLATE]'><b>Select</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_CHOCOLATE];amount=1'><b>Make</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_CHOCOLATE];amount=5'><b>x5</b></a> [product_types[ICECREAM_CHOCOLATE]] dollops left. (Ingredients: milk, ice, coco powder)<br>"
+	dat += "<b>Blue ice cream:</b> <a href='byond://?src=[REF(src)];select=[ICECREAM_BLUE]'><b>Select</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_BLUE];amount=1'><b>Make</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_BLUE];amount=5'><b>x5</b></a> [product_types[ICECREAM_BLUE]] dollops left. (Ingredients: milk, ice, singulo)<br>"
+	dat += "<b>Custom ice cream:</b> <a href='byond://?src=[REF(src)];select=[ICECREAM_CUSTOM]'><b>Select</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_CUSTOM];amount=1'><b>Make</b></a> <a href='byond://?src=[REF(src)];make=[ICECREAM_CUSTOM];amount=5'><b>x5</b></a> [product_types[ICECREAM_CUSTOM]] dollops left. (Ingredients: milk, ice, optional flavoring)<br></div>"
 	dat += "<br><b>CONES</b><br><div class='statusDisplay'>"
-	dat += "<b>Waffle cones:</b> <a href='?src=[REF(src)];cone=[CONE_WAFFLE]'><b>Dispense</b></a> <a href='?src=[REF(src)];make=[CONE_WAFFLE];amount=1'><b>Make</b></a> <a href='?src=[REF(src)];make=[CONE_WAFFLE];amount=5'><b>x5</b></a> [product_types[CONE_WAFFLE]] cones left. (Ingredients: flour, sugar)<br>"
-	dat += "<b>Chocolate cones:</b> <a href='?src=[REF(src)];cone=[CONE_CHOC]'><b>Dispense</b></a> <a href='?src=[REF(src)];make=[CONE_CHOC];amount=1'><b>Make</b></a> <a href='?src=[REF(src)];make=[CONE_CHOC];amount=5'><b>x5</b></a> [product_types[CONE_CHOC]] cones left. (Ingredients: flour, sugar, coco powder)<br></div>"
+	dat += "<b>Waffle cones:</b> <a href='byond://?src=[REF(src)];cone=[CONE_WAFFLE]'><b>Dispense</b></a> <a href='byond://?src=[REF(src)];make=[CONE_WAFFLE];amount=1'><b>Make</b></a> <a href='byond://?src=[REF(src)];make=[CONE_WAFFLE];amount=5'><b>x5</b></a> [product_types[CONE_WAFFLE]] cones left. (Ingredients: flour, sugar)<br>"
+	dat += "<b>Chocolate cones:</b> <a href='byond://?src=[REF(src)];cone=[CONE_CHOC]'><b>Dispense</b></a> <a href='byond://?src=[REF(src)];make=[CONE_CHOC];amount=1'><b>Make</b></a> <a href='byond://?src=[REF(src)];make=[CONE_CHOC];amount=5'><b>x5</b></a> [product_types[CONE_CHOC]] cones left. (Ingredients: flour, sugar, coco powder)<br></div>"
 	dat += "<br>"
 	if(beaker)
 		dat += "<b>BEAKER CONTENT</b><br><div class='statusDisplay'>"
 		for(var/datum/reagent/R in beaker.reagents.reagent_list)
 			dat += "[R.name]: [R.volume]u<br>"
-		dat += "<a href='?src=[REF(src)];refill=1'><b>Refill from beaker</b></a></div>"
+		dat += "<a href='byond://?src=[REF(src)];refill=1'><b>Refill from beaker</b></a></div>"
 	dat += "<br>"
 	dat += "<b>VAT CONTENT</b><br>"
 	for(var/datum/reagent/R in reagents.reagent_list)
 		dat += "[R.name]: [R.volume]"
-		dat += "<A href='?src=[REF(src)];disposeI=[R.type]'>Purge</A><BR>"
-	dat += "<a href='?src=[REF(src)];refresh=1'>Refresh</a> <a href='?src=[REF(src)];close=1'>Close</a>"
+		dat += "<A href='byond://?src=[REF(src)];disposeI=[R.type]'>Purge</A><BR>"
+	dat += "<a href='byond://?src=[REF(src)];refresh=1'>Refresh</a> <a href='byond://?src=[REF(src)];close=1'>Close</a>"
 
 	var/datum/browser/popup = new(user, "icecreamvat","Icecream Vat", 700, 500, src)
 	popup.set_content(dat)

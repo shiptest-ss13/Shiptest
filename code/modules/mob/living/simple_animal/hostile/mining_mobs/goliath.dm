@@ -39,10 +39,10 @@
 	var/pre_attack = 0
 	var/pre_attack_icon = "ancient_goliath_preattack"
 	var/tentacle_type = /obj/effect/temp_visual/goliath_tentacle
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
 	loot = list()
-	food_type = list(/obj/item/reagent_containers/food/snacks/meat, /obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit, /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf)		// Omnivorous
+	food_type = list(/obj/item/food/meat, /obj/item/food/grown/ash_flora/cactus_fruit, /obj/item/food/grown/ash_flora/mushroom_leaf)
 	tame_chance = 0
 	bonus_tame_chance = 10
 	search_objects = 1
@@ -151,7 +151,7 @@
 	throw_message = "does nothing to the thick hide of the"
 	pre_attack_icon = "goliath_preattack"
 	mob_trophy = /obj/item/mob_trophy/goliath_tentacle
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
 	loot = list()
 	stat_attack = UNCONSCIOUS
@@ -281,7 +281,7 @@
 				cached_tentacle_turfs -= t
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/nest
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
 	from_nest = TRUE
 
 //tentacles
@@ -382,7 +382,7 @@
 	base_pixel_x = 0
 	throw_message = "does nothing to the calcified hide of the"
 	pre_attack_icon = "crystal_goliath2"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10, /obj/item/strange_crystal = 2)
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10, /obj/item/strange_crystal = 2)
 	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/crystal
 	tentacle_recheck_cooldown = 50
 	speed = 2
@@ -476,7 +476,7 @@
 	health = 30
 	armor = list("melee" = 25, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
 
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
 	loot = list()
 	stat_attack = UNCONSCIOUS
@@ -489,7 +489,7 @@
 		return INITIALIZE_HINT_QDEL
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/whitesands/nest
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
 	from_nest = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/whitesands

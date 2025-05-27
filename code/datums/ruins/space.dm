@@ -36,7 +36,7 @@
 	name = "Singularity Lab"
 	description = "An overgrown facility, home to an inactive singularity and many plants"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
-	ruin_mission_types = list(/datum/mission/ruin/oh_fuck)
+//	ruin_mission_types = list(/datum/mission/ruin/oh_fuck)
 
 /datum/mission/ruin/oh_fuck
 	name = "Singularity Generator Signature"
@@ -59,18 +59,11 @@
 	name = "Ramzi Scrapping Station"
 	description = "A Syndicate FOB dating back to the ICW, now home to the Ramzi Clique and their latest haul."
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/pgf_captain,
 		/datum/mission/ruin/signaled/kill/foreman
 	)
-
-/datum/mission/ruin/signaled/kill/foreman
-	name = "Kill Foreman Bonsha"
-	desc = "Defector Verron Bonsha has established a Ramzi Clique post inside a former Coalation FOB. Killing him should send the local Clique into disarray and disrupt their supply lines."
-	author = "2nd Battlegroup Headquarters"
-	faction = /datum/faction/syndicate/ngr
-	value = 2000
-	mission_limit = 1
+*/
 
 /datum/mission/ruin/pgf_captain
 	name = "MIA Vessel Investigation"
@@ -80,3 +73,11 @@
 	mission_limit = 1
 	faction = /datum/faction/pgf
 	setpiece_item = /mob/living/carbon/human
+
+/datum/mission/ruin/signaled/kill/foreman
+	name = "Kill Foreman Bonsha"
+	desc = "Defector Verron Bonsha has established a Ramzi Clique post inside a former Coalation FOB. Killing him should send the local Clique into disarray and disrupt their supply lines."
+	author = "2nd Battlegroup Headquarters"
+	faction = /datum/faction/syndicate/ngr
+	value = 2000
+	mission_limit = 1
