@@ -58,7 +58,19 @@
 			)
 			if(do_after(user, 5 SECONDS, breaching))
 				if(process_fire(breaching, user, FALSE))
-
+					switch(breaching.security_level)
+						if(0)
+							EMPTY_BLOCK_GUARD
+						if (1) // thin metal plate. blast through it and create debris
+							var/obj/item/debris = new /obj/item/stack/ore/salvage/scrapmetal
+							debris.safe_throw_at(user, 2, 5, null, 1)
+							breaching.security_level = 0
+						if(2 to 6) //two shots to break
+							var/obj/item/debris = new /obj/item/stack/ore/salvage/scrapmetal
+							debris.safe_throw_at(user, 2, 5, null, 1)
+							breaching.security_level -= 3
+							breaching.security_level = max(breaching.security_level, 0)
+							return
 					if(!breaching.open())
 						update_icon(ALL, 1, 1)
 					//im not rewriting the behavior to do exactly what this does with a different name
