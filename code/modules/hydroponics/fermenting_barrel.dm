@@ -77,7 +77,7 @@
 /// Adds the fruit to the barrel to queue the fermentation
 /obj/structure/fermenting_barrel/proc/insert_fruit(mob/user, obj/item/food/grown/fruit)
 	if(reagents.total_volume + potential_volume > reagents.maximum_volume)
-		balloon_alert(user, span_warning("The [src] is already full!"))
+		to_chat(user, span_warning("The [src] is already full!"))
 		return FALSE
 	if(!fruit.can_distill)
 		to_chat(user, span_warning("You can't distill this into anything..."))
