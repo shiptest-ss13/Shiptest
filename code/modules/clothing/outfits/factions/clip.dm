@@ -2,6 +2,7 @@
 
 /datum/outfit/job/clip
 	name = "CLIP - Base Outfit"
+	faction = FACTION_PLAYER_MINUTEMAN
 
 	uniform = /obj/item/clothing/under/clip
 	alt_uniform = null
@@ -20,7 +21,6 @@
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
 	H.grant_language(/datum/language/clip_kalixcian, source=LANGUAGE_FACTION)
 /* 	if(selectable_alt_titles)
 		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)

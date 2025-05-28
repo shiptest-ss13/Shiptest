@@ -268,6 +268,8 @@
 	name = "duct tape"
 	desc = "This roll of silver sorcery can fix just about anything."
 	icon_state = "tape_d"
+	amount = 15
+	max_amount = 15
 
 	lifespan = 400
 	nonorganic_heal = 20
