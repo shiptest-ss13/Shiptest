@@ -36,18 +36,19 @@
 /datum/component/aggro_speech/RegisterWithParent()
 	. = ..()
 	RegisterSignal(parent, COMSIG_AI_BLACKBOARD_KEY_SET(target_key), PROC_REF(on_target_changed))
-/datum/component/aggro_emote/UnregisterFromParent()
+
+/datum/component/aggro_speech/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_AI_BLACKBOARD_KEY_SET(target_key))
 	return ..()
 /// When we get a new target, see if we want to bark at it
 
 
-/datum/component/aggro_speech/proc/on_target_changed(atom/source)
+/datum/component/aggro_speech/proc/on_target_changed(atom/movable/source)
 	SIGNAL_HANDLER
 	var/atom/new_target = source.ai_controller.blackboard[target_key]
-	if (isnull(new_target) || !prob(emote_chance))
+	if (isnull(new_target) || !prob(phrase_chance))
 		return
 	if (living_only && !isliving(new_target))
 		return // If we don't want to bark at food items or chairs or windows
-	phrase_chance = max(emote_chance - subtract_chance, minimum_chance)
+	phrase_chance = max(phrase_chance - subtract_chance, minimum_chance)
 	source.say("[pick(phrase_list)]")

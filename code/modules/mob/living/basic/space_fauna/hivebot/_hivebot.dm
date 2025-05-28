@@ -37,7 +37,7 @@
 	minimum_survivable_temperature = TCMB
 	ai_controller = /datum/ai_controller/basic_controller/hivebot
 
-	initial_language_holder = /datum/language_holder/hivebot
+	initial_language_holder = /datum/language_holder/ipc
 
 	//cooldown to scrap things
 	COOLDOWN_DECLARE(salvage_cooldown)
@@ -53,12 +53,26 @@
 	///what does a hivebot shooting sound like
 	var/firing_sound = 'sound/weapons/gun/pistol/shot.ogg'
 
+	///aggro phrases on our hivebot
+	var/list/aggro_quips = list("CODE 7-34!!",
+		"CODE 7-11!!",
+		"DEFEND TERMINUS!!",
+		"ACTIVITY WITHIN AO!!",
+		"INFILTRATOR WITHIN AO!!",
+		"TERMINATE HOSTILE!!",
+		"PLAN IMPLEMENTATION!!",
+		"ASSESS - ENGAGE!!",
+		"RECLAIM AREA!!",
+		"ENFORCING CLAIM!!"
+	)
+
 
 /mob/living/basic/hivebot/Initialize(mapload)
 	. = ..()
 
 	AddElement(/datum/element/death_drops, death_loot)
 	AddComponent(/datum/component/appearance_on_aggro, overlay_icon = icon, overlay_state = "[initial(icon_state)]_attack")
+	AddComponent(/datum/component/aggro_speech, phrase_list = aggro_quips, phrase_chance = 10)
 	if(!ranged_attacker)
 		return
 	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound)
@@ -123,6 +137,16 @@
 		/obj/effect/spawner/random/waste/hivebot/part/superheavy, /obj/effect/spawner/random/waste/hivebot/part/heavy)
 
 	speed = 8
+
+	aggro_quips = list("CODE 87-22!!",
+	"SLAVED TO SYSTEM!!",
+	"DEFENDING AREA!!",
+	"CONTACT MADE!!",
+	"ERADICATE HOSTILES!!",
+	"RECEIVING COURSE!!",
+	"TARGET LOCKED!!",
+	"CANNON ARMED!!",
+	)
 
 /mob/living/basic/hivebot/core/death(gibbed)
 	//once we get better sprites i want this to be like the claw's death. aka fucking cool.

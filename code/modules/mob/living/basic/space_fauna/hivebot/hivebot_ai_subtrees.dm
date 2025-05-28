@@ -10,7 +10,6 @@
 		/datum/ai_planning_subtree/basic_melee_attack_subtree,
 		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
-		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 /datum/ai_controller/basic_controller/hivebot/mechanic
@@ -21,7 +20,6 @@
 		/datum/ai_planning_subtree/find_and_hunt_target/repair_machines,
 		/datum/ai_planning_subtree/find_and_hunt_target/salvage_machines,
 		/datum/ai_planning_subtree/hive_communicate,
-		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 /datum/ai_controller/basic_controller/hivebot/ranged
@@ -95,10 +93,3 @@
 	hunt_targets = list(/obj/structure/salvageable)
 	hunt_range = 12
 	hunt_chance = 20
-
-/*
-/datum/ai_planning_subtree/random_speech/hivebot
-	speech_chance = 5
-	emote_hear = list("whirrs.","clunks.","thunks.", "stomps!")
-	speech_chance = list("CODE 7-34!!", "CODE 7-11!!", "EXPAND TERMINUS!!", "ACTIVITY WITHIN AO!!", "PLAN IMPLEMENTATION!!", "ASSESS - ENGAGE!!", "RECLAIM AREA!!", "CLAIM STAKED!!")
-*/
