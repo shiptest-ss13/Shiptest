@@ -8,7 +8,7 @@
 
 	floor_variance = 83
 	max_icon_states = 5
-	slowdown = 1.05
+	slowdown = 0
 	planetary_atmos = TRUE
 	initial_gas_mix = SHROUDED_DEFAULT_ATMOS
 	footstep = FOOTSTEP_SAND
