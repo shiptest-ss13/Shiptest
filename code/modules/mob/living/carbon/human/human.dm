@@ -1169,7 +1169,7 @@
 	visible_message(span_notice("[src] starts [skills_space] lifting [target] onto their back.."),
 	//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
 	span_notice("[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
-	//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
+	//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
 	if(!do_after(src, carrydelay, target))
 		to_chat(src, span_warning("You can't fireman carry [target] while they're standing!"))
 		return
