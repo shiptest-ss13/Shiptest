@@ -72,7 +72,7 @@
 
 	AddElement(/datum/element/death_drops, death_loot)
 	AddComponent(/datum/component/appearance_on_aggro, overlay_icon = icon, overlay_state = "[initial(icon_state)]_attack")
-	AddComponent(/datum/component/aggro_speech, phrase_list = aggro_quips, phrase_chance = 10)
+	AddComponent(/datum/component/aggro_speech, phrase_list = aggro_quips, phrase_chance = 30)
 	if(!ranged_attacker)
 		return
 	AddComponent(/datum/component/ranged_attacks, calibre, null, firing_sound)
