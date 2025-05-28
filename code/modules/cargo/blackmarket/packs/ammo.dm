@@ -8,8 +8,8 @@
 	Not recommended for comercial use."
 	item = /obj/item/ammo_casing/shotgun/dart
 
-	price_min = 10
-	price_max = 50
+	cost_min = 10
+	cost_max = 50
 	stock_min = 10
 	stock_max = 60
 	availability_prob = 40
@@ -19,8 +19,8 @@
 	desc = "Compact 10 round .22 LR magazines for use in the Himehabu pistol."
 	item = /obj/item/ammo_box/magazine/m22lr_himehabu
 
-	price_min = 100
-	price_max = 200
+	cost_min = 100
+	cost_max = 200
 	stock_min = 6
 	stock_max = 10
 	availability_prob = 0
@@ -171,8 +171,8 @@
 	This 75 round 7.62x40mm CLIP drum magazine is perfect for you! (SKM not included.)"
 	item = /obj/item/ammo_box/magazine/skm_762_40/drum
 
-	price_min = 1500
-	price_max = 3500
+	cost_min = 1500
+	cost_max = 3500
 	stock = 2
 	availability_prob = 20
 
@@ -213,7 +213,7 @@
 	desc = "We're way past double A now. These extra-large power cells (in both charge and size!) are purpose built for the most heavy duty energy weapons."
 	item = /obj/item/stock_parts/cell/gun/large
 
-	price_min = 2000
+	price_min = 2500
 	price_max = 4000
 	stock = 2
 	availability_prob = 20
@@ -224,8 +224,8 @@
 	desc = "A box of 24 incendiary shells for the FNX-99 mounted carbine."
 	item = /obj/item/mecha_ammo/incendiary
 
-	price_min = 250
-	price_max = 350
+	cost_min = 250
+	cost_max = 350
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 0
@@ -266,8 +266,8 @@
 	desc = "Put the hollow in hollow point by blowing a crater in some random sod with this devastating .45-70 cartridge."
 	item = /obj/item/storage/box/ammo/a4570_hp
 
-	price_min = 250
-	price_max = 550
+	cost_min = 500
+	cost_max = 1000
 	stock_min = 3
 	stock_max = 5
 	availability_prob = 20
@@ -277,8 +277,8 @@
 	desc = "If you need to fuck someone, hard, we got just the thing. Only one round, though, hope you got good aim."
 	item = /obj/item/ammo_casing/a4570/explosive
 
-	price_min = 400
-	price_max = 800 //still an exorbitantly high price for one round that you might not even hit
+	cost_min = 400
+	cost_max = 800 //still an exorbitantly high cost for one round that you might not even hit
 	stock_min = 2
 	stock_max = 10
 	availability_prob = 10
@@ -327,9 +327,9 @@
 
 /datum/blackmarket_item/ammo/a8x58trac
 	name = "8x58mm Tracker"
-	desc = "We hot glued a GPS onto the inside of this 8x58mm shell! For the low low price of. Whatever the price is. You can have it!"
+	desc = "We hot glued a GPS onto the inside of this 8x58mm shell! For the low low cost of. Whatever the cost is. You can have it!"
 	item = /obj/item/ammo_casing/caseless/a858/trac
-	price_min = 50
-	price_max = 500
+	cost_min = 50
+	cost_max = 500
 	stock_min = 4
 	stock_max = 8

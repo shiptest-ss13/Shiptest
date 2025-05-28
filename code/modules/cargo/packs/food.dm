@@ -1,5 +1,5 @@
 /datum/supply_pack/food
-	group = "Food & Agricultural"
+	category = "Food & Agricultural"
 
 /*
 		Ready-to-eat
@@ -360,18 +360,10 @@
 	name = "Grilling Starter Kit"
 	desc = "Sometimes the stresses of the world are too much to bear. Some times, for God's sake, you just want to grill. This crate is for those times."
 	cost = 1000
-	contains = list(/obj/item/stack/sheet/mineral/coal/five,
-					/obj/machinery/grill/unwrenched)
+	contains = list(/obj/machinery/grill/unwrenched)
 	crate_name = "grilling starter kit crate"
 	crate_type = /obj/structure/closet/crate/large
 	no_bundle = TRUE
-
-/datum/supply_pack/food/grillfuel
-	name = "Grilling Fuel Kit"
-	desc = "Contains propane and propane accessories. (Note: doesn't contain any actual propane.)"
-	cost = 250
-	contains = list(/obj/item/stack/sheet/mineral/coal/ten)
-	crate_name = "grilling fuel kit crate"
 
 /*
 		Botanical
