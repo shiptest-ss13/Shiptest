@@ -496,6 +496,8 @@
 /obj/item/clothing/accessory/rank_pin/inteq
 	name = "generic Inteq rank patch"
 	desc = "You really shouldn't be seeing this!"
+	icon = 'icons/obj/clothing/faction/inteq/accessories.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/inteq/accessories.dmi'
 	icon_state = "pin_inteq_recruit" // lazymaxxing
 
 /obj/item/clothing/accessory/rank_pin/inteq/recruit
@@ -515,7 +517,7 @@
 
 /obj/item/clothing/accessory/rank_pin/inteq/corpsman
 	name = "rank patch - IRMG-E2"
-	desc = "A brown patch with golden embossing, designating the wearer as a Corpsman of the IRMG. You've probably grown used to the blood.."
+	desc = "A brown patch with golden embossing, designating the wearer as a Corpsman of the IRMG. You've probably grown used to the blood."
 	icon_state = "pin_inteq_corpsman"
 
 /obj/item/clothing/accessory/rank_pin/inteq/enforcer_c1
@@ -525,12 +527,12 @@
 
 /obj/item/clothing/accessory/rank_pin/inteq/artificer_c1
 	name = "rank patch - IRMG-E3"
-	desc = "A brown patch with golden embossing, designating the wearer as an Artificer Class One of the IRMG. The engine room is a temple raised to the God of the Engineer."
+	desc = "A brown patch with golden embossing, designating the wearer as an Artificer Class One of the IRMG. A bad worker blames their tools."
 	icon_state = "pin_inteq_artificer_c1"
 
 /obj/item/clothing/accessory/rank_pin/inteq/corpsman_c1
 	name = "rank patch - IRMG-E3"
-	desc = "A brown patch with golden embossing, designating the wearer as a Corpsman Class One of the IRMG. Nobody has to die under your watch."
+	desc = "A brown patch with golden embossing, designating the wearer as a Corpsman Class One of the IRMG. Nobody dies under your watch."
 	icon_state = "pin_inteq_corpsman_c1"
 
 /obj/item/clothing/accessory/rank_pin/inteq/pilot
