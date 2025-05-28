@@ -94,6 +94,10 @@
 	maxHealth = 80
 	ranged_attacker = TRUE
 	calibre = /obj/item/ammo_casing/a308
+
+	death_loot = list(/obj/effect/decal/cleanable/robot_debris,/obj/effect/spawner/random/waste/hivebot,
+		/obj/effect/spawner/random/waste/hivebot/part/heavy)
+
 	firing_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged
 
@@ -114,6 +118,9 @@
 	calibre = /obj/item/ammo_casing/a308
 	firing_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	ai_controller = /datum/ai_controller/basic_controller/hivebot/ranged/core
+
+	death_loot = list(/obj/effect/decal/cleanable/robot_debris,/obj/effect/spawner/random/waste/hivebot/more,
+		/obj/effect/spawner/random/waste/hivebot/part/superheavy, /obj/effect/spawner/random/waste/hivebot/part/heavy)
 
 	speed = 8
 
