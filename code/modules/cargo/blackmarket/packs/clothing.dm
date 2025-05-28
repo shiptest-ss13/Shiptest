@@ -16,8 +16,8 @@
 	desc = "A mass produced and non-descript surplus combat uniform. For when you need to look like another faceless thug in the crowd."
 	item = /obj/item/clothing/under/rank/security/officer/military
 
-	price_min = 25
-	price_max = 50
+	cost_min = 25
+	cost_max = 50
 	stock_min = 5
 	stock_max = 10
 	availability_prob = 80
@@ -125,8 +125,8 @@
 	desc = "Genuine armor vests used by the PGF Marine Corp. If a military guy in a cape comes by, play dumb."
 	item =  /obj/item/storage/box
 
-	price_min = 750
-	price_max = 1750
+	cost_min = 750
+	cost_max = 1750
 	stock_max = 3
 	availability_prob = 20
 

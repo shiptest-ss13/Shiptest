@@ -36,8 +36,8 @@
 	desc = "Need some fresh organs in a jiffy? We got you covered. Make good use of them, someone died to get these to you."
 	item = /obj/structure/closet/crate/freezer/surplus_limbs/organs
 
-	price_min = 750
-	price_max = 2000
+	cost_min = 750
+	cost_max = 2000
 	stock_max = 3
 	availability_prob = 30
 
@@ -124,8 +124,8 @@
 	desc = "Need to make a blacksite in a jiffy? Skip the fuss with this 150u jug of hexacrete!"
 	item = /obj/item/reagent_containers/glass/chem_jug/hexacrete
 
-	price_min = 250
-	price_max = 500
+	cost_min = 250
+	cost_max = 500
 	stock_min = 3
 	stock_max = 10
 	availability_prob = 30

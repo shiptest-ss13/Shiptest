@@ -6,10 +6,10 @@
 	desc = "A random cocktail of luxury drugs that are sure to put a smile on your face!"
 	item = /obj/item/storage/pill_bottle
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
@@ -25,10 +25,9 @@
 	desc = "The Russian Roulette of the Maintenance Tunnels."
 	item = /obj/item/reagent_containers/pill/floorpill
 
-	stock_min = 5
-	stock_max = 35
-	price_min = 5
-	price_max = 15
+	cost_min = 5
+	cost_max = 15
+	stock = INFINITY
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/cannabis
@@ -36,10 +35,10 @@
 	desc = "Homegrown cannabis, fresh from the garden just for your pleasure!"
 	item = /obj/item/reagent_containers/food/snacks/grown/cannabis
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/syndie_cigs
@@ -47,15 +46,15 @@
 	desc = "Who said smoking was bad for you? These omnizine laced cigarettes will have you feeling like a million bucks!"
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/trickwine
 	name = "Trickwine"
-	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
+	desc = "The SRM keeps the recipes for their trickwines closely guarded. The Hunters carrying those bottles? Less so."
 	item = /datum/reagent/consumable/ethanol/trickwine/ash_wine
 
 	cost_min = 300
@@ -102,8 +101,8 @@
 	desc = "Cyanide, a tried and true classic for all your poisoning needs."
 	item = /obj/item/reagent_containers/glass/bottle/cyanide
 
-	price_min = 100
-	price_max = 200
+	cost_min = 100
+	cost_max = 200
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -113,8 +112,8 @@
 	desc = "Sodium Thiopental, a potent and fast acting sedative for any occasion."
 	item = /obj/item/reagent_containers/glass/bottle/sodium_thiopental
 
-	price_min = 100
-	price_max = 250
+	cost_min = 100
+	cost_max = 250
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -124,8 +123,8 @@
 	desc = "A slow acting, but nearly undetectable poison. For the dignified assassin."
 	item = /obj/item/reagent_containers/glass/bottle/amanitin
 
-	price_min = 150
-	price_max = 250
+	cost_min = 150
+	cost_max = 250
 	stock_max = 2
 	stock_max = 4
 	availability_prob = 30
@@ -181,8 +180,8 @@
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
 	item = /obj/effect/spawner/random/food_or_drink/ration
 
-	price_min = 40
-	price_max = 100
+	cost_min = 40
+	cost_max = 100
 	availability_prob = 80
 	stock = INFINITY
 
