@@ -108,7 +108,7 @@
 				var/last_editor = query_memoshow.item[4]
 				output += "[span_memo("Mentor memo by <span class='prefix'>[ckey]")] on [timestamp]"
 				if(last_editor)
-					output += "<br>[span_memoedit("Last edit by [last_editor] <A href='?_src_=holder;mentormemoeditlist=[ckey]'>(Click here to see edit log)</A>")]"
+					output += "<br>[span_memoedit("Last edit by [last_editor] <A href='byond://?_src_=holder;mentormemoeditlist=[ckey]'>(Click here to see edit log)</A>")]"
 				output += "<br>[memotext]</span><br>"
 			if(!output)
 				to_chat(src, "No memos found in database.")
