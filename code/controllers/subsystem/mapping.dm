@@ -214,8 +214,6 @@ SUBSYSTEM_DEF(mapping)
 		if(istext(data["token_icon_state"]))
 			S.token_icon_state = data["token_icon_state"]
 
-		if(istext(data["spawn_matbundle"]))
-			S.matbundle_spawned = data["spawn_matbundle"]
 		if(istext(data["faction"]))
 			var/type = text2path(data["faction"])
 			if(!(type in SSfactions.factions))
@@ -242,7 +240,7 @@ SUBSYSTEM_DEF(mapping)
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
 
-		if(isnum(data["unique_ship_access"] && data["unique_ship_access"]))
+		if(isnum(data["unique_ship_access"]))
 			S.unique_ship_access = data["unique_ship_access"]
 
 		if(istext(data["description"]))

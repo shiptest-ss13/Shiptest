@@ -237,6 +237,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/unique_reskin_changes_inhand = FALSE
 	var/unique_reskin_changes_name = FALSE
 
+	bad_type = /obj/item
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -883,6 +885,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			location = get_turf(M)
 	if(isturf(location))
 		location.hotspot_expose(flame_heat, 5)
+		if(SEND_SIGNAL(location, COMSIG_TURF_OPEN_FLAME, flame_heat) & BLOCK_TURF_IGNITION)
+			return
+		var/turf/open/open_location = loc // NOT the location variable used earlier else cigarettes in mouths start fires
+		if(isopenturf(open_location) && open_location.flammability >= 1 && prob(open_location.flammability))
+			open_location.ignite_turf(2) // if there's enough flammability for a fire to sustain itself..
 
 /obj/item/proc/ignition_effect(atom/A, mob/user)
 	if(get_temperature())

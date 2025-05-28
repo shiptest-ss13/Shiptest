@@ -2061,6 +2061,13 @@
 	},
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"hG" = (
+/obj/structure/cable,
+/obj/machinery/porta_turret/ruin/frontiersmen{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "hH" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercee{
 	dir = 4
@@ -2282,6 +2289,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/engine/waste/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -2666,9 +2676,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "kG" = (
 /obj/structure/cable,
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -3290,10 +3298,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "nn" = (
@@ -4787,9 +4792,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -6124,7 +6127,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/wasteplanet/wasteplanet_icwbase/warehouse)
 "yf" = (
-/turf/open/water/acid,
+/turf/open/water/acid/waste,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yk" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
@@ -6363,10 +6366,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "zp" = (
@@ -6678,10 +6678,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "Ao" = (
@@ -8493,9 +8490,7 @@
 /obj/structure/cable{
 	icon_state = "0-6"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen/heavy{
-	faction = list("Frontiersmen")
-	},
+/obj/machinery/porta_turret/ruin/frontiersmen/heavy,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_icwbase/TURRETS)
 "Ib" = (
@@ -9653,9 +9648,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -10038,7 +10031,7 @@
 /area/ruin/wasteplanet/wasteplanet_icwbase/tcom1)
 "Oo" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/pizza/dank,
+/obj/item/food/pizza/dank,
 /obj/item/melee/knife/pizza_cutter{
 	pixel_x = -5;
 	pixel_y = 5
@@ -10977,8 +10970,6 @@
 "Sr" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/effect/turf_decal/corner/opaque/cybersunteal/bordercee,
-/obj/item/food/breadslice/moldy,
-/obj/item/food/breadslice/moldy,
 /obj/item/reagent_containers/food/drinks/bottle/moonshine,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_icwbase/cybersun)
@@ -11608,9 +11599,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 1
 	},
 /turf/open/floor/plating/wasteplanet{
@@ -12057,9 +12046,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/porta_turret/ship/frontiersmen{
-	reqpower = 0;
-	faction = list("Frontiersmen");
+/obj/machinery/porta_turret/ruin/frontiersmen{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
@@ -16143,7 +16130,7 @@ yf
 Nx
 Kp
 nX
-kG
+hG
 Wt
 Cd
 fg

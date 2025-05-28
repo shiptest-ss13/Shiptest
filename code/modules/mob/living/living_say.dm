@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!can_speak_basic(original_message, ignore_spam, forced))
 		return
 
-	language = message_mods[LANGUAGE_EXTENSION]
+	language ||= message_mods[LANGUAGE_EXTENSION] || get_selected_language()
 
 	if(!language)
 		language = get_selected_language()
@@ -237,6 +237,15 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/deaf_message
 	var/deaf_type
+
+	var/is_custom_emote = message_mods[MODE_CUSTOM_SAY_ERASE_INPUT]
+
+	var/understood = TRUE
+	if(!is_custom_emote) // we do not translate emotes
+		var/untranslated_raw_message = raw_message
+		raw_message = lang_treat(speaker, message_language, raw_message, spans, message_mods) // translate
+		if(raw_message != untranslated_raw_message)
+			understood = FALSE
 
 	if(HAS_TRAIT(speaker, TRAIT_SIGN_LANG)) //Checks if speaker is using sign language
 		if(is_blind(src))
@@ -341,7 +350,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			speech_bubble_recipients.Add(M.client)
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), I, speech_bubble_recipients, 3 SECONDS)
 
 /mob/proc/binarycheck()
 	return FALSE
@@ -471,12 +480,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		return
 	say("#[message]", bubble_type, spans, sanitize, language, ignore_spam, forced)
 
-/mob/living/get_language_holder(get_minds = TRUE)
-	if(get_minds && mind)
-		return mind.get_language_holder()
-	. = ..()
-
-/mob/living/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
+/mob/living/grant_language(language, language_flags = ALL, source = LANGUAGE_ATOM)
 	. = ..()
 	if(. && mind)
 		var/datum/language_holder/langauge_holder = get_language_holder()

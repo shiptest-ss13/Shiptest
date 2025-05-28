@@ -52,7 +52,7 @@
 	planetary_atmos = TRUE
 	light_color = COLOR_LAVAPLANET_LIGHT
 
-	slowdown = 1.05
+	slowdown = 0
 
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -110,6 +110,7 @@
 	light_power = 0.6
 	light_color = COLOR_LAVAPLANET_LIGHT
 	gender = PLURAL
+	flammability = 0.5 // a little bit flammable, but not enough to sustain a fire
 
 /turf/open/floor/plating/grass/lava/orange
 	baseturfs = /turf/open/floor/plating/grass/lava/orange

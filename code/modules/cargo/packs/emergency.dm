@@ -1,5 +1,5 @@
 /datum/supply_pack/emergency
-	group = "Emergency & Life Support"
+	category = "Emergency & Life Support"
 	crate_type = /obj/structure/closet/crate/internals
 
 /*
@@ -19,6 +19,13 @@
 					/obj/item/tank/internals/emergency_oxygen/engi,
 					/obj/item/tank/internals/oxygen)
 	crate_name = "internals crate"
+
+/datum/supply_pack/emergency/oxygen_candle
+	name = "Oxygen Candle Crate"
+	desc = "Contains an oxygen candle, a portable solution to filling rooms with breathable oxygen."
+	cost = 50
+	contains = list(/obj/item/oxygen_candle)
+	crate_name = "oxygen candle crate"
 
 /datum/supply_pack/emergency/plasmaman_tank
 	name = "Phorid Internals Crate"

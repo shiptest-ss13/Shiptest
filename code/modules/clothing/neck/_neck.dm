@@ -339,12 +339,6 @@
 	custom_price = 10
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/neck/stripedsolgovscarf
-	name = "striped solgov scarf"
-	icon_state = "stripedsolgovscarf"
-	custom_price = 10
-	supports_variations = VOX_VARIATION
-
 /obj/item/clothing/neck/petcollar
 	name = "pet collar"
 	desc = "It's for pets. But some people wear it anyways for reasons unknown."
@@ -366,6 +360,7 @@
 	resistance_flags = FIRE_PROOF
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
+	strip_delay = 10
 
 /obj/item/clothing/neck/dogtag/gold
 	icon_state = "dogtag_gold"

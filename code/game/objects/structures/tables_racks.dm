@@ -20,6 +20,7 @@
 	base_icon_state = "table"
 	density = TRUE
 	anchored = TRUE
+	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	layer = TABLE_LAYER
 	climbable = TRUE
@@ -109,10 +110,10 @@
 	if(mover.movement_type & FLOATING)
 		return TRUE
 
-/obj/structure/table/CanAStarPass(ID, dir, caller)
+/obj/structure/table/CanAStarPass(ID, dir, requester)
 	. = !density
-	if(ismovable(caller))
-		var/atom/movable/mover = caller
+	if(ismovable(requester))
+		var/atom/movable/mover = requester
 		. = . || (mover.pass_flags & PASSTABLE)
 
 /obj/structure/table/proc/tableplace(mob/living/user, mob/living/pushed_mob)
@@ -659,6 +660,7 @@
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
+	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
 	pass_flags_self = LETPASSTHROW //You can throw objects over this, despite it's density.
 	max_integrity = 20
 
