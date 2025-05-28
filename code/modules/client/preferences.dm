@@ -47,7 +47,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/tgui_fancy = TRUE
 	var/tgui_lock = FALSE
-	var/ui_scale = TRUE
+	var/ui_scale = FALSE
 
 	var/windowflashing = TRUE
 	var/toggles = TOGGLES_DEFAULT
