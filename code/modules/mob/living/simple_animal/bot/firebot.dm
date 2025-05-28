@@ -44,7 +44,7 @@
 	emagged = 2
 	remote_disabled = 1
 	locked = TRUE
-	faction = list("mining", "silicon" , "turret")
+	faction = list("mining", "silicon" , FACTION_TURRET)
 	extinguish_fires = FALSE
 	extinguish_people = TRUE
 

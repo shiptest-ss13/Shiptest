@@ -1917,6 +1917,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/port)
+"iJ" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/food/grown/citrus/orange,
+/obj/effect/spawner/random/salvage/part/capacitor,
+/turf/open/floor/plating,
+/area/outpost/maintenance/fore)
 "iK" = (
 /obj/structure/falsewall/reinforced,
 /obj/structure/disposalpipe/segment{
@@ -4121,6 +4128,27 @@
 /obj/structure/railing/thin,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
+"rc" = (
+/obj/item/radio/intercom/directional/north,
+/obj/item/trash/can/food/beans{
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/can/food/beans{
+	pixel_x = 9;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -14;
+	pixel_y = -7
+	},
+/obj/item/food/grown/soybeans{
+	pixel_x = -12;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/asteroid,
+/area/outpost/maintenance/central)
 "rf" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -6199,27 +6227,6 @@
 /obj/structure/grille,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/starboard)
-"Ao" = (
-/obj/item/radio/intercom/directional/north,
-/obj/item/trash/can/food/beans{
-	pixel_y = -1
-	},
-/obj/effect/decal/cleanable/generic,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/trash/can/food/beans{
-	pixel_x = 9;
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/food/snacks/canned/beans{
-	pixel_x = -14;
-	pixel_y = -7
-	},
-/obj/item/reagent_containers/food/snacks/grown/soybeans{
-	pixel_x = -12;
-	pixel_y = 8
-	},
-/turf/open/floor/plating/asteroid,
-/area/outpost/maintenance/central)
 "Ap" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -9526,13 +9533,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
-"NU" = (
-/obj/structure/table/wood,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
-/obj/effect/spawner/random/salvage/part/capacitor,
-/turf/open/floor/plating,
-/area/outpost/maintenance/fore)
 "NV" = (
 /obj/structure/table,
 /obj/item/stack/wrapping_paper,
@@ -17007,7 +17007,7 @@ bV
 NK
 CR
 NK
-NU
+iJ
 ue
 AP
 Cc
@@ -20104,7 +20104,7 @@ ER
 XP
 cq
 cq
-Ao
+rc
 Vq
 cq
 cq
