@@ -200,7 +200,7 @@
 	incompatible_modules = list(/obj/item/mod/module/dispenser)
 	cooldown_time = 5 SECONDS
 	/// Path we dispense.
-	var/dispense_type = /obj/item/reagent_containers/food/snacks/burger
+	var/dispense_type = /obj/item/food/burger
 	/// Time it takes for us to dispense.
 	var/dispense_time = 0 SECONDS
 

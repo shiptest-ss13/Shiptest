@@ -128,7 +128,7 @@
 	SIGNAL_HANDLER
 
 	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(turn_off))
-	RegisterSignal(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
+	RegisterSignals(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
 
 	hud.turn_on()
 	update_hud()

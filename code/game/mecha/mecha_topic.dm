@@ -73,7 +73,7 @@
 		<b>Airtank temperature: </b>[internal_tank?"[tank_temperature]&deg;K|[tank_temperature - T0C]&deg;C":"N/A"]<br>
 		<b>Cabin pressure: </b>[internal_tank?"[cabin_pressure>WARNING_HIGH_PRESSURE ? span_danger("[cabin_pressure]"): cabin_pressure]kPa":"N/A"]<br>
 		<b>Cabin temperature: </b> [internal_tank?"[return_temperature()]&deg;K|[return_temperature() - T0C]&deg;C":"N/A"]<br>
-		[dna_lock?"<b>DNA-locked:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna_lock]</span> \[<a href='?src=[REF(src)];reset_dna=1'>Reset</a>\]<br>":""]<br>"}
+		[dna_lock?"<b>DNA-locked:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna_lock]</span> \[<a href='byond://?src=[REF(src)];reset_dna=1'>Reset</a>\]<br>":""]<br>"}
 	. += "[get_actions()]<br>"
 
 ///Returns HTML for mech actions. Ideally, this proc would be empty for the base mecha. Segmented for easy refactoring.
@@ -93,7 +93,7 @@
 		"[MECHA_INT_FIRE]" = span_userdanger("INTERNAL FIRE"),
 		"[MECHA_INT_TEMP_CONTROL]" = span_userdanger("LIFE SUPPORT SYSTEM MALFUNCTION"),
 		"[MECHA_INT_TANK_BREACH]" = span_userdanger("GAS TANK BREACH"),
-		"[MECHA_INT_CONTROL_LOST]" = "[span_userdanger("COORDINATION SYSTEM CALIBRATION FAILURE")] - <a href='?src=[REF(src)];repair_int_control_lost=1'>Recalibrate</a>",
+		"[MECHA_INT_CONTROL_LOST]" = "[span_userdanger("COORDINATION SYSTEM CALIBRATION FAILURE")] - <a href='byond://?src=[REF(src)];repair_int_control_lost=1'>Recalibrate</a>",
 		"[MECHA_INT_SHORT_CIRCUIT]" = span_userdanger("SHORT CIRCUIT")
 								)
 	for(var/tflag in dam_reports)
@@ -121,27 +121,27 @@
 		<div class='links'>
 			<b>Radio settings:</b><br>
 			Microphone:
-			[radio? "<a href='?src=[REF(src)];rmictoggle=1'>\
+			[radio? "<a href='byond://?src=[REF(src)];rmictoggle=1'>\
 			<span id=\"rmicstate\">[radio.broadcasting?"Engaged":"Disengaged"]</span></a>":"Error"]<br>
 			Speaker:
-			[radio? "<a href='?src=[REF(src)];rspktoggle=1'><span id=\"rspkstate\">\
+			[radio? "<a href='byond://?src=[REF(src)];rspktoggle=1'><span id=\"rspkstate\">\
 			[radio.listening?"Engaged":"Disengaged"]</span></a>":"Error"]<br>
 			Frequency:
-			[radio? "<a href='?src=[REF(src)];rfreq=-10'>-</a>":"-"]
-			[radio? "<a href='?src=[REF(src)];rfreq=-2'>-</a>":"-"]
+			[radio? "<a href='byond://?src=[REF(src)];rfreq=-10'>-</a>":"-"]
+			[radio? "<a href='byond://?src=[REF(src)];rfreq=-2'>-</a>":"-"]
 			<span id=\"rfreq\">[radio?"[format_frequency(radio.frequency)]":"Error"]</span>
-			[radio? "<a href='?src=[REF(src)];rfreq=2'>+</a>":"+"]
-			[radio? "<a href='?src=[REF(src)];rfreq=10'>+</a>":"+"]<br>
+			[radio? "<a href='byond://?src=[REF(src)];rfreq=2'>+</a>":"+"]
+			[radio? "<a href='byond://?src=[REF(src)];rfreq=10'>+</a>":"+"]<br>
 		</div>
 	</div>
 	<div class='wr'>
 		<div class='header'>Permissions & Logging</div>
 		<div class='links'>
-			<a href='?src=[REF(src)];toggle_id_upload=1'><span id='t_id_upload'>[add_req_access?"L":"Unl"]ock ID upload panel</span></a><br>
-			<a href='?src=[REF(src)];toggle_maint_access=1'><span id='t_maint_access'>[maint_access?"Forbid":"Permit"] maintenance protocols</span></a><br>
-			[internal_tank?"<a href='?src=[REF(src)];toggle_port_connection=1'><span id='t_port_connection'>[internal_tank.connected_port?"Disconnect from":"Connect to"] gas port</span></a><br>":""]
-			<a href='?src=[REF(src)];dna_lock=1'>DNA-lock</a><br>
-			<a href='?src=[REF(src)];change_name=1'>Change exosuit name</a>
+			<a href='byond://?src=[REF(src)];toggle_id_upload=1'><span id='t_id_upload'>[add_req_access?"L":"Unl"]ock ID upload panel</span></a><br>
+			<a href='byond://?src=[REF(src)];toggle_maint_access=1'><span id='t_maint_access'>[maint_access?"Forbid":"Permit"] maintenance protocols</span></a><br>
+			[internal_tank?"<a href='byond://?src=[REF(src)];toggle_port_connection=1'><span id='t_port_connection'>[internal_tank.connected_port?"Disconnect from":"Connect to"] gas port</span></a><br>":""]
+			<a href='byond://?src=[REF(src)];dna_lock=1'>DNA-lock</a><br>
+			<a href='byond://?src=[REF(src)];change_name=1'>Change exosuit name</a>
 		</div>
 	</div>"}
 
@@ -154,7 +154,7 @@
 	if(equipment.len)
 		for(var/X in equipment)
 			var/obj/item/mecha_parts/mecha_equipment/W = X
-			. += "[W.name] [W.detachable?"<a href='?src=[REF(W)];detach=1'>Detach</a><br>":"\[Non-removable\]<br>"]"
+			. += "[W.name] [W.detachable?"<a href='byond://?src=[REF(W)];detach=1'>Detach</a><br>":"\[Non-removable\]<br>"]"
 	. += {"<b>Available equipment slots:</b> [max_equip-equipment.len]
 	</div>
 	</div>"}
@@ -174,7 +174,7 @@
 			<body>
 				<h1>Following keycodes are present in this system:</h1>"}
 	for(var/a in operation_req_access)
-		. += "[get_access_desc(a)] - <a href='?src=[REF(src)];del_req_access=[a];user=[REF(user)];id_card=[REF(id_card)]'>Delete</a><br>"
+		. += "[get_access_desc(a)] - <a href='byond://?src=[REF(src)];del_req_access=[a];user=[REF(user)];id_card=[REF(id_card)]'>Delete</a><br>"
 	. += "<hr><h1>Following keycodes were detected on portable device:</h1>"
 	for(var/a in id_card.access)
 		if(a in operation_req_access)
@@ -182,8 +182,8 @@
 		var/a_name = get_access_desc(a)
 		if(!a_name)
 			continue //there's some strange access without a name
-		. += "[a_name] - <a href='?src=[REF(src)];add_req_access=[a];user=[REF(user)];id_card=[REF(id_card)]'>Add</a><br>"
-	. +={"<hr><a href='?src=[REF(src)];finish_req_access=1;user=[REF(user)]'>Lock ID panel</a><br>
+		. += "[a_name] - <a href='byond://?src=[REF(src)];add_req_access=[a];user=[REF(user)];id_card=[REF(id_card)]'>Add</a><br>"
+	. +={"<hr><a href='byond://?src=[REF(src)];finish_req_access=1;user=[REF(user)]'>Lock ID panel</a><br>
 		[span_danger("(Warning! The ID upload panel can be unlocked only through Exosuit Interface.)")]
 		</body>
 		</html>"}
@@ -203,14 +203,14 @@
 				</style>
 			</head>
 			<body>
-				[add_req_access?"<a href='?src=[REF(src)];req_access=1;id_card=[REF(id_card)];user=[REF(user)]'>Edit operation keycodes</a>":null]
-				[maint_access?"<a href='?src=[REF(src)];maint_access=1;id_card=[REF(id_card)];user=[REF(user)]'>[(construction_state > MECHA_LOCKED) ? "Terminate" : "Initiate"] maintenance protocol</a>":null]
+				[add_req_access?"<a href='byond://?src=[REF(src)];req_access=1;id_card=[REF(id_card)];user=[REF(user)]'>Edit operation keycodes</a>":null]
+				[maint_access?"<a href='byond://?src=[REF(src)];maint_access=1;id_card=[REF(id_card)];user=[REF(user)]'>[(construction_state > MECHA_LOCKED) ? "Terminate" : "Initiate"] maintenance protocol</a>":null]
 				[(construction_state == MECHA_OPEN_HATCH) ?"--------------------</br>":null]
-				[(construction_state == MECHA_OPEN_HATCH) ?"[cell?"<a href='?src=[REF(src)];drop_cell=1;id_card=[REF(id_card)];user=[REF(user)]'>Drop power cell</a>":"No cell installed</br>"]":null]
-				[(construction_state == MECHA_OPEN_HATCH) ?"[scanmod?"<a href='?src=[REF(src)];drop_scanmod=1;id_card=[REF(id_card)];user=[REF(user)]'>Drop scanning module</a>":"No scanning module installed</br>"]":null]
-				[(construction_state == MECHA_OPEN_HATCH) ?"[capacitor?"<a href='?src=[REF(src)];drop_cap=1;id_card=[REF(id_card)];user=[REF(user)]'>Drop capacitor</a>":"No capacitor installed</br>"]":null]
+				[(construction_state == MECHA_OPEN_HATCH) ?"[cell?"<a href='byond://?src=[REF(src)];drop_cell=1;id_card=[REF(id_card)];user=[REF(user)]'>Drop power cell</a>":"No cell installed</br>"]":null]
+				[(construction_state == MECHA_OPEN_HATCH) ?"[scanmod?"<a href='byond://?src=[REF(src)];drop_scanmod=1;id_card=[REF(id_card)];user=[REF(user)]'>Drop scanning module</a>":"No scanning module installed</br>"]":null]
+				[(construction_state == MECHA_OPEN_HATCH) ?"[capacitor?"<a href='byond://?src=[REF(src)];drop_cap=1;id_card=[REF(id_card)];user=[REF(user)]'>Drop capacitor</a>":"No capacitor installed</br>"]":null]
 				[(construction_state == MECHA_OPEN_HATCH) ?"--------------------</br>":null]
-				[(construction_state > MECHA_LOCKED) ?"<a href='?src=[REF(src)];set_internal_tank_valve=1;user=[REF(user)]'>Set Cabin Air Pressure</a>":null]
+				[(construction_state > MECHA_LOCKED) ?"<a href='byond://?src=[REF(src)];set_internal_tank_valve=1;user=[REF(user)]'>Set Cabin Air Pressure</a>":null]
 			</body>
 		</html>"}
 	user << browse(., "window=exosuit_maint_console")
