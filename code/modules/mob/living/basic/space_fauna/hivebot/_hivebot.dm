@@ -42,7 +42,7 @@
 	//cooldown to scrap things
 	COOLDOWN_DECLARE(salvage_cooldown)
 
-	var/static/list/death_loot = list(/obj/effect/decal/cleanable/robot_debris,/obj/effect/spawner/random/waste/hivebot,
+	var/list/death_loot = list(/obj/effect/decal/cleanable/robot_debris,/obj/effect/spawner/random/waste/hivebot,
 		/obj/effect/spawner/random/waste/hivebot/part)
 
 	///does this type do range attacks?
