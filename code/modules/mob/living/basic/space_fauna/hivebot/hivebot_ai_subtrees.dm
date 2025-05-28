@@ -10,6 +10,7 @@
 		/datum/ai_planning_subtree/basic_melee_attack_subtree,
 		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
+		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 /datum/ai_controller/basic_controller/hivebot/mechanic
@@ -20,33 +21,37 @@
 		/datum/ai_planning_subtree/find_and_hunt_target/repair_machines,
 		/datum/ai_planning_subtree/find_and_hunt_target/salvage_machines,
 		/datum/ai_planning_subtree/hive_communicate,
+		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 /datum/ai_controller/basic_controller/hivebot/ranged
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
-		//replace with ranged skirmish once you're done porting this stupid bullshit
+		//replace with ranged skirmish in follow-up PR
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot,
 		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
+		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 /datum/ai_controller/basic_controller/hivebot/ranged/rapid
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
-		//replace with ranged skirmish once you're done porting this stupid bullshit
+		//replace with ranged skirmish in follow-up PR
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_rapid,
 		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
+		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 /datum/ai_controller/basic_controller/hivebot/ranged/core
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
-		//replace with ranged skirmish once you're done porting this stupid bullshit
+		//replace with ranged skirmish in follow-up PR
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_core,
 		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
+		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 
@@ -94,3 +99,8 @@
 	hunt_range = 12
 	hunt_chance = 20
 
+
+/datum/ai_planning_subtree/random_speech/hivebot
+	speech_chance = 5
+	emote_hear = list("whirrs.","clunks.","thunks.", "stomps!")
+	speech_chance = list("CODE 7-34!!", "CODE 7-11!!", "EXPAND TERMINUS!!", "ACTIVITY WITHIN AO!!", "PLAN IMPLEMENTATION!!", "ASSESS - ENGAGE!!", "RECLAIM AREA!!", "CLAIM STAKED!!")
