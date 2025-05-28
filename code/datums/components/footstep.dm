@@ -23,7 +23,7 @@
 		if(FOOTSTEP_MOB_HUMAN)
 			if(!ishuman(parent))
 				return COMPONENT_INCOMPATIBLE
-			RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), PROC_REF(play_humanstep))
+			RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(play_humanstep))
 			return
 		if(FOOTSTEP_MOB_CLAW)
 			footstep_sounds = GLOB.clawfootstep
@@ -35,7 +35,7 @@
 			footstep_sounds = GLOB.footstep
 		if(FOOTSTEP_MOB_SLIME)
 			footstep_sounds = 'sound/effects/footstep/slime1.ogg'
-	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), PROC_REF(play_simplestep)) //Note that this doesn't get called for humans.
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(play_simplestep)) //Note that this doesn't get called for humans.
 
 ///Prepares a footstep. Determines if it should get played. Returns the turf it should get played on. Note that it is always a /turf/open
 /datum/component/footstep/proc/prepare_step()
@@ -70,7 +70,7 @@
 		return
 	return T
 
-/datum/component/footstep/proc/play_simplestep()
+/datum/component/footstep/proc/play_simplestep(mob/living/source, atom/oldloc, direction)
 	SIGNAL_HANDLER
 
 	if (SHOULD_DISABLE_FOOTSTEPS(parent))
@@ -79,6 +79,7 @@
 	var/turf/open/T = prepare_step()
 	if(!T)
 		return
+	play_fov_effect(source, 5, "footstep", direction, ignore_self = TRUE)
 	if(isfile(footstep_sounds) || istext(footstep_sounds))
 		playsound(T, footstep_sounds, volume, falloff_distance = 1)
 		return
@@ -96,7 +97,7 @@
 		return
 	playsound(T, pick(footstep_sounds[turf_footstep][1]), footstep_sounds[turf_footstep][2] * volume, TRUE, footstep_sounds[turf_footstep][3] + e_range, falloff_distance = 1)
 
-/datum/component/footstep/proc/play_humanstep()
+/datum/component/footstep/proc/play_humanstep(mob/living/carbon/human/source, atom/oldloc, direction)
 	SIGNAL_HANDLER
 
 	if (SHOULD_DISABLE_FOOTSTEPS(parent))
@@ -108,6 +109,7 @@
 	var/mob/living/carbon/human/H = parent
 	var/feetCover = (H.wear_suit && (H.wear_suit.body_parts_covered & FEET)) || (H.w_uniform && (H.w_uniform.body_parts_covered & FEET))
 
+	play_fov_effect(H, 5, "footstep", direction, ignore_self = TRUE)
 	if(H.shoes || feetCover) //are we wearing shoes
 		playsound(T, pick(GLOB.footstep[T.footstep][1]),
 			GLOB.footstep[T.footstep][2] * volume,
