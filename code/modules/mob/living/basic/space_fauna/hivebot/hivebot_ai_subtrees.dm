@@ -31,7 +31,6 @@
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot,
 		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
-		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 /datum/ai_controller/basic_controller/hivebot/ranged/rapid
@@ -41,7 +40,6 @@
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_rapid,
 		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
-		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 /datum/ai_controller/basic_controller/hivebot/ranged/core
@@ -51,7 +49,6 @@
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_core,
 		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
-		/datum/ai_planning_subtree/random_speech/hivebot
 	)
 
 
@@ -99,8 +96,9 @@
 	hunt_range = 12
 	hunt_chance = 20
 
-
+/*
 /datum/ai_planning_subtree/random_speech/hivebot
 	speech_chance = 5
 	emote_hear = list("whirrs.","clunks.","thunks.", "stomps!")
 	speech_chance = list("CODE 7-34!!", "CODE 7-11!!", "EXPAND TERMINUS!!", "ACTIVITY WITHIN AO!!", "PLAN IMPLEMENTATION!!", "ASSESS - ENGAGE!!", "RECLAIM AREA!!", "CLAIM STAKED!!")
+*/
