@@ -381,7 +381,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	enable_text = span_notice("You tap into the station's powernet. Click on a machine to animate it, or use the ability again to cancel.")
 	disable_text = span_notice("You release your hold on the powernet.")
 
-/obj/effect/proc_holder/ranged_ai/override_machine/InterceptClickOn(mob/living/caller, params, obj/machinery/target)
+/obj/effect/proc_holder/ranged_ai/override_machine/InterceptClickOn(mob/living/clicker, params, obj/machinery/target)
 	if(..())
 		return
 	if(ranged_ability_user.incapacitated())
@@ -464,7 +464,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	enable_text = span_notice("You tap into the local powernet. Click on a machine to detonate it, or use the ability again to cancel.")
 	disable_text = span_notice("You release your hold on the powernet.")
 
-/obj/effect/proc_holder/ranged_ai/overload_machine/InterceptClickOn(mob/living/caller, params, obj/machinery/target)
+/obj/effect/proc_holder/ranged_ai/overload_machine/InterceptClickOn(mob/living/clicker, params, obj/machinery/target)
 	if(..())
 		return
 	if(ranged_ability_user.incapacitated())

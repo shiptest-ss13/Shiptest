@@ -6,8 +6,8 @@
 	desc = "Ever wanted to learn how to sew? This lovely selection of cloth is perfect to get some practice with."
 	item = /obj/item/stack/sheet/cotton/cloth/ten
 
-	price_min = 200
-	price_max = 400
+	cost_min = 200
+	cost_max = 400
 	stock_max = 5
 	availability_prob = 80
 
@@ -16,8 +16,8 @@
 	desc = "These straitjackets might be a tight fit, but you can certain the poor sod wont be getting away anytime soon."
 	item = /obj/item/clothing/suit/straight_jacket
 
-	price_min = 500
-	price_max = 1000
+	cost_min = 500
+	cost_max = 1000
 	stock_max = 3
 	availability_prob = 40
 
@@ -26,8 +26,8 @@
 	desc = "A mass produced and non-descript surplus combat uniform. For when you need to look like another faceless thug in the crowd."
 	item = /obj/item/clothing/under/rank/security/officer/military
 
-	price_min = 50
-	price_max = 200
+	cost_min = 50
+	cost_max = 200
 	stock_min = 5
 	stock_max = 10
 	availability_prob = 80
@@ -37,8 +37,8 @@
 	desc = "A handsome silk suit, treated with a finish of bluespace dust for an out of this world sheen."
 	item = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
 
-	price_min = 500
-	price_max = 2000
+	cost_min = 500
+	cost_max = 2000
 	stock = 1
 	availability_prob = 20
 
@@ -47,8 +47,8 @@
 	desc = "A handsome silk suit, treated with a finish of telecrystal dust. It cuts a menacing figure."
 	item = /obj/item/clothing/under/rank/civilian/lawyer/galaxy/red
 
-	price_min = 500
-	price_max = 2000
+	cost_min = 500
+	cost_max = 2000
 	stock = 1
 	availability_prob = 20
 
@@ -57,8 +57,8 @@
 	desc = "Don't let them tell you this stuff is \"Like asbestos\" or \"Pulled from the market for safety concerns\". It could be the difference between a robusting and a retaliation."
 	item = /obj/item/clothing/suit/armor/vest/durathread
 
-	price_min = 200
-	price_max = 400
+	cost_min = 200
+	cost_max = 400
 	stock_max = 4
 	availability_prob = 50
 
@@ -67,8 +67,8 @@
 	desc = "Customers ask why it's called a helmet when it's just made from armoured fabric and I always say the same thing: No refunds."
 	item = /obj/item/clothing/head/helmet/durathread
 
-	price_min = 100
-	price_max = 200
+	cost_min = 100
+	cost_max = 200
 	stock_max = 4
 	availability_prob = 50
 
@@ -77,8 +77,8 @@
 	desc = "Looking to protect yourself, but on a tight budget? These previously used vest and helmets served their former owners well! (May they rest in peace.)"
 	item = /obj/item/storage/box
 
-	price_min = 100
-	price_max = 400
+	cost_min = 100
+	cost_max = 400
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 80
@@ -96,8 +96,8 @@
 	desc = "We got a good deal on some extra armor from a Frontiersmen Quartermaster, and we're passing those savings onto you!"
 	item = /obj/item/storage/box
 
-	price_min = 500
-	price_max = 1250
+	cost_min = 500
+	cost_max = 1250
 	stock_max = 3
 	availability_prob = 50
 
@@ -114,8 +114,8 @@
 	desc = "Get it while it's hot! This fireproofed armor and uniform set is made with a pre-Night Of Fire miracle material that renders it almost impervious to flames. The Frontiersmen swear by the stuff. It's kept each of it's previous owners safe until they passed away from illness."
 	item = /obj/item/storage/box
 
-	price_min = 1000
-	price_max = 1750
+	cost_min = 1000
+	cost_max = 1750
 	stock_max = 3
 	availability_prob = 50
 
@@ -135,8 +135,8 @@
 	item = /obj/item/clothing/suit/armor/gezena/marine
 	pair_item = list(/datum/blackmarket_item/clothing/gezena_helmet)
 
-	price_min = 750
-	price_max = 1250
+	cost_min = 750
+	cost_max = 1250
 	stock_max = 3
 	availability_prob = 20
 
@@ -145,8 +145,8 @@
 	desc = "A helmet used by the PGF Marine Corp. They won't miss it. Not like there's much to protect up there anyways."
 	item = /obj/item/clothing/head/helmet/gezena
 
-	price_min = 500
-	price_max = 600
+	cost_min = 500
+	cost_max = 600
 	stock_max = 3
 	availability_prob = 0
 
@@ -155,8 +155,8 @@
 	desc = "A few boxes of \"Old Style\" space suits fell off the back of a space truck."
 	item = /obj/item/storage/box
 
-	price_min = 250
-	price_max = 750
+	cost_min = 250
+	cost_max = 750
 	stock_max = 3
 	availability_prob = 70
 
@@ -173,8 +173,8 @@
 	desc = "An armored syndicate softsuit, popular among the ACLF operatives who were too broke to get an actual hardsuit."
 	item = /obj/item/storage/box/syndie_kit
 
-	price_min = 750
-	price_max = 2500
+	cost_min = 750
+	cost_max = 2500
 	stock_max = 3
 	availability_prob = 50
 
@@ -221,8 +221,8 @@
 	desc = "Pick any hat you want with this Handy device. Not Quality Tested."
 	item = /obj/item/clothing/head/chameleon/broken
 
-	price_min = 100
-	price_max = 200
+	cost_min = 100
+	cost_max = 200
 	stock_max = 2
 	availability_prob = 70
 
@@ -231,8 +231,8 @@
 	desc = "Not sure what to wear? This adaptive set of clothing can change to suit whatever you desire! Quality tested."
 	item = /obj/item/storage/box/syndie_kit/chameleon
 
-	price_min = 1000
-	price_max = 2500
+	cost_min = 1000
+	cost_max = 2500
 	stock_max = 2
 	availability_prob = 10
 	spawn_weighting = FALSE
@@ -242,8 +242,8 @@
 	desc = "A discarded combat medic hardsuit, found in the ruins of a carpet bombed xeno hive. Definitely used, but as sturdy as an anchor."
 	item = /obj/item/clothing/suit/space/hardsuit/combatmedic
 
-	price_min = 1000
-	price_max = 2500
+	cost_min = 1000
+	cost_max = 2500
 	stock_max = 3
 	availability_prob = 30
 
@@ -252,8 +252,8 @@
 	desc = "A vintage ICW Era Gorlex Maruader hardsuit. The previous owner said we could have it when we pried it off their cold dead hands. Dry cleaning not included."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 
-	price_min = 1500
-	price_max = 2500
+	cost_min = 1500
+	cost_max = 2500
 	stock_max = 3
 	availability_prob = 30
 
@@ -262,7 +262,7 @@
 	desc = "An old but durable hardsuit typically used by the Frontiersmen. We accept no liability if you're shot by CLIP while wearing this."
 	item = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
-	price_min = 1000
-	price_max = 2000
+	cost_min = 1000
+	cost_max = 2000
 	stock_max = 3
 	availability_prob = 40

@@ -95,6 +95,10 @@
 	spread = 8
 	spread_unwielded = 20
 
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
+
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1
@@ -397,6 +401,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "f4_inteq"
 	item_state = "f4_inteq"
+
+NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
