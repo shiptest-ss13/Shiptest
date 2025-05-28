@@ -72,7 +72,7 @@
 	icon = 'icons/obj/food/donuts.dmi'
 	icon_state = "donutbox_inner"
 	base_icon_state = "donutbox"
-	spawn_type = /obj/item/reagent_containers/food/snacks/donut
+	spawn_type = /obj/item/food/donut
 	is_open = TRUE
 	appearance_flags = KEEP_TOGETHER
 	contents_tag = "donut"
@@ -81,7 +81,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/donut))
+	STR.set_holdable(list(/obj/item/food/donut))
 
 /obj/item/storage/fancy/donut_box/PopulateContents()
 	. = ..()
@@ -100,7 +100,7 @@
 	var/donuts = 0
 
 	for(var/_donut in contents)
-		var/obj/item/reagent_containers/food/snacks/donut/donut = _donut
+		var/obj/item/food/donut/donut = _donut
 		if (!istype(donut))
 			continue
 
@@ -207,7 +207,7 @@
 
 /obj/item/storage/fancy/cigarettes/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to extract contents.</span>"
+	. += span_notice("Alt-click to extract contents.")
 
 /obj/item/storage/fancy/cigarettes/AltClick(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -217,9 +217,9 @@
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
 		contents -= W
-		to_chat(user, "<span class='notice'>You take \a [W] out of the pack.</span>")
+		to_chat(user, span_notice("You take \a [W] out of the pack."))
 	else
-		to_chat(user, "<span class='notice'>There are no [contents_tag]s left in the pack.</span>")
+		to_chat(user, span_notice("There are no [contents_tag]s left in the pack."))
 
 /obj/item/storage/fancy/cigarettes/update_icon_state()
 	. = ..()
@@ -255,7 +255,7 @@
 
 	var/obj/item/clothing/mask/cigarette/cig = locate() in contents
 	if(!cig)
-		to_chat(user, "<span class='notice'>There are no [contents_tag]s left in the pack.</span>")
+		to_chat(user, span_notice("There are no [contents_tag]s left in the pack."))
 		return
 	if(target != user || !contents.len || user.wear_mask)
 		return ..()
@@ -263,7 +263,7 @@
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, cig, target)
 	target.equip_to_slot_if_possible(cig, ITEM_SLOT_MASK)
 	contents -= cig
-	to_chat(user, "<span class='notice'>You take \a [cig] out of the pack.</span>")
+	to_chat(user, span_notice("You take \a [cig] out of the pack."))
 	return
 
 /obj/item/storage/fancy/cigarettes/dromedaryco
@@ -397,9 +397,9 @@
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
 		contents -= W
-		to_chat(user, "<span class='notice'>You take \a [W] out of the pack.</span>")
+		to_chat(user, span_notice("You take \a [W] out of the pack."))
 	else
-		to_chat(user, "<span class='notice'>There are no items left in the pack.</span>")
+		to_chat(user, span_notice("There are no items left in the pack."))
 
 /obj/item/storage/fancy/cigarettes/derringer/PopulateContents()
 	new spawn_type(src)
@@ -493,10 +493,10 @@
 	icon_state = "nuggetbox"
 	base_icon_state = "nuggetbox"
 	contents_tag = "nugget"
-	spawn_type = /obj/item/reagent_containers/food/snacks/nugget
+	spawn_type = /obj/item/food/nugget
 
 /obj/item/storage/fancy/nugget_box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/nugget))
+	STR.set_holdable(list(/obj/item/food/nugget))

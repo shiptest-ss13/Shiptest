@@ -2,6 +2,7 @@
 	name = "shotgun"
 	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	item_state = "shotgun"
+	bad_type = /obj/item/gun/ballistic/shotgun
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
@@ -36,14 +37,15 @@
 
 	zoom_amt = SHOTGUN_ZOOM
 
-	spread = 4
-	spread_unwielded = 10
+	spread = 3
+	spread_unwielded = 9
 	recoil = 1
 	recoil_unwielded = 4
 
 	gunslinger_recoil_bonus = -1
 
 	min_recoil = 0.1
+	wear_rate = 0
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	if(chambered && chambered.BB)
@@ -58,8 +60,9 @@
 
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
-	spread = 4
-	spread_unwielded = 16
+	bad_type = /obj/item/gun/ballistic/shotgun/automatic
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
@@ -67,6 +70,10 @@
 	semi_auto = TRUE
 
 	gunslinger_recoil_bonus = 1
+	wear_rate = 1
+	wear_minor_threshold = 60
+	wear_major_threshold = 180
+	wear_maximum = 300
 
 //Dual Feed Shotgun
 
@@ -92,7 +99,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to pump it.</span>"
+	. += span_notice("Alt-click to pump it.")
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
@@ -112,9 +119,9 @@
 	alternate_magazine = current_mag
 	toggled = !toggled
 	if(toggled)
-		to_chat(user, "<span class='notice'>You switch to tube B.</span>")
+		to_chat(user, span_notice("You switch to tube B."))
 	else
-		to_chat(user, "<span class='notice'>You switch to tube A.</span>")
+		to_chat(user, span_notice("You switch to tube A."))
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/AltClick(mob/living/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -145,7 +152,8 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	mob_overlay_icon = null
-
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	base_icon_state = "ishotgun"
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
@@ -169,11 +177,11 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
 		var/obj/item/stack/cable_coil/C = A
 		if(C.use(10))
 			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, "<span class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
+			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_appearance()
 		else
-			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
+			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/update_icon_state()
 	. = ..()

@@ -3,7 +3,8 @@
 	name = "\improper Phazon"
 	icon_state = "phazon"
 	step_in = 2
-	dir_in = 2 //Facing South.
+	dir = SOUTH
+	dir_in = SOUTH
 	base_step_energy_drain = 8
 	max_integrity = 200
 	deflect_chance = 30
@@ -16,6 +17,9 @@
 	force = 15
 	max_equip = 3
 	phase_state = "phazon-phase"
+
+/obj/mecha/combat/phazon/set_up_unique_action()
+	mech_unique_action = phasing_action
 
 /obj/mecha/combat/phazon/GrantActions(mob/living/user, human_occupant = 0)
 	..()

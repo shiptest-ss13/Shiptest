@@ -34,7 +34,7 @@
 	autofire_off()
 	return ..()
 
-/datum/component/automatic_fire/process(delta_time)
+/datum/component/automatic_fire/process(seconds_per_tick)
 	if(autofire_stat != AUTOFIRE_STAT_FIRING)
 		STOP_PROCESSING(SSprojectiles, src)
 		return
@@ -69,7 +69,7 @@
 	if(!QDELETED(shooter))
 		RegisterSignal(shooter, COMSIG_MOB_LOGOUT, PROC_REF(autofire_off))
 		UnregisterSignal(shooter, COMSIG_MOB_LOGIN)
-	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(autofire_off))
+	RegisterSignals(parent, list(COMSIG_PARENT_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(autofire_off))
 	parent.RegisterSignal(src, COMSIG_AUTOFIRE_ONMOUSEDOWN, TYPE_PROC_REF(/obj/item/gun, autofire_bypass_check))
 	parent.RegisterSignal(parent, COMSIG_AUTOFIRE_SHOT, TYPE_PROC_REF(/obj/item/gun, do_autofire))
 
@@ -252,7 +252,7 @@
 		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
-		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
+		to_chat(shooter, span_warning("You need a more secure grip to fire [src]!"))
 		return FALSE
 	return TRUE
 
@@ -268,7 +268,7 @@
 	if(current_cooldown || shooter.incapacitated())
 		return NONE
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
-		to_chat(shooter, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
+		to_chat(shooter, span_warning("You need a more secure grip to fire [src]!"))
 		return NONE
 	if(!can_shoot()) //we stop if we cant shoot but also calling pre_fire so the bolt works correctly if it's a weird open bolt weapon.
 		INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)

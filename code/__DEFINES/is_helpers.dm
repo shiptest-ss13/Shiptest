@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define iszombie(A) (is_species(A, /datum/species/zombie))
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
 #define ismoth(A) (is_species(A, /datum/species/moth))
-#define ishumanbasic(A) (is_species(A, /datum/species/human) && !is_species(A, /datum/species/human/krokodil_addict))
+#define ishumanbasic(A) (is_species(A, /datum/species/human))
 #define iselzuose(A) (is_species(A, /datum/species/elzuose))
 #define isvampire(A) (is_species(A,/datum/species/vampire))
 #define isdullahan(A) (is_species(A, /datum/species/dullahan))
@@ -111,6 +111,9 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define ispAI(A) (istype(A, /mob/living/silicon/pai))
 
+// basic mobs
+#define isbasicmob(A) (istype(A, /mob/living/basic))
+
 //Simple animals
 #define isanimal(A) (istype(A, /mob/living/simple_animal))
 
@@ -120,7 +123,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isshade(A) (istype(A, /mob/living/simple_animal/shade))
 
-#define ismouse(A) (istype(A, /mob/living/simple_animal/mouse))
+#define ismouse(A) (istype(A, /mob/living/basic/mouse))
 
 #define iscow(A) (istype(A, /mob/living/simple_animal/cow))
 
@@ -139,8 +142,6 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isconstruct(A) (istype(A, /mob/living/simple_animal/hostile/construct))
 
 #define ismegafauna(A) (istype(A, /mob/living/simple_animal/hostile/megafauna))
-
-#define isclown(A) (istype(A, /mob/living/simple_animal/hostile/retaliate/clown))
 
 #define isborer(A) (istype(A, /mob/living/simple_animal/borer))
 

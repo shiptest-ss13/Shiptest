@@ -5,6 +5,8 @@
 	icon_state = "laser"
 	item_state = "spur"
 
+	bad_type = /obj/item/gun/energy
+
 	muzzleflash_iconstate = "muzzle_flash_laser"
 	light_color = COLOR_SOFT_RED
 
@@ -38,15 +40,24 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/gun,
-		/obj/item/attachment/sling
+		/obj/item/attachment/sling,
 	)
 	slot_available = list(
-		ATTACHMENT_SLOT_RAIL = 1
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1
 	)
 	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 19,
 			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
 		)
 	)
 
@@ -106,12 +117,12 @@
 		update_appearance()
 	return ..()
 
-/obj/item/gun/energy/process()
+/obj/item/gun/energy/process(seconds_per_tick)
 	if(selfcharge && cell && cell.percent() < 100)
-		charge_tick++
-		if(charge_tick < charge_delay)
+		charge_timer += seconds_per_tick
+		if(charge_timer < charge_delay)
 			return
-		charge_tick = 0
+		charge_timer = 0
 		cell.give(1000) //WS Edit - Egun energy cells
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
@@ -119,7 +130,7 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/energy/attack_hand(mob/user)
-	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads)
+	if(!internal_magazine && loc == user && user.is_holding(src) && cell && tac_reloads && !(gun_firemodes[firemode_index] == FIREMODE_UNDERBARREL))
 		eject_cell(user)
 		return
 	return ..()
@@ -191,7 +202,7 @@
 	if(!internal_magazine && latch_closed)
 		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
 		if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + "<span class='red'>OPEN</span>" + "."))
+			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + span_red("OPEN") + "."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 			tac_reloads = TRUE
 			latch_closed = FALSE
@@ -201,7 +212,7 @@
 		// 	return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
 		to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
 		if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + "<span class='green'>CLOSED</span>" + "."))
+			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + span_green("CLOSED") + "."))
 			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 			tac_reloads = FALSE
 			latch_closed = TRUE
@@ -375,7 +386,7 @@
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
 	if(!internal_magazine)
-		. += "The cell retainment latch is [latch_closed ? "<span class='green'>CLOSED</span>" : "<span class='red'>OPEN</span>"]. Alt-Click on <b>help</b> intent to toggle the latch."
+		. += "The cell retainment latch is [latch_closed ? span_green("CLOSED") : span_red("OPEN")]. Alt-Click to toggle the latch."
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	if(ammo_type.len > 1)
 		. += "You can switch firemodes by pressing the <b>unique action</b> key. By default, this is <b>space</b>"

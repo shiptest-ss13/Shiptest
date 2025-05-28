@@ -133,7 +133,12 @@
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/random/anomaly/waste = 1
+		/obj/effect/spawner/random/anomaly/waste = 1,
+		/obj/structure/vein/waste = 4,
+		/obj/structure/vein/waste/classtwo = 6,
+		/obj/structure/vein/waste/classtwo/rare = 2,
+		/obj/structure/vein/waste/classthree = 2,
+		/obj/structure/vein/waste/classthree/rare = 1,
 	)
 
 	mob_spawn_list = list(
@@ -149,7 +154,7 @@
 	)
 
 	flora_spawn_chance = 25
-	feature_spawn_chance = 0.5
+	feature_spawn_chance = 0.75
 	mob_spawn_chance = 2
 
 /datum/biome/waste/crater
@@ -202,7 +207,7 @@
 		/obj/effect/spawner/random/maintenance/four = 20,
 		/obj/structure/flora/ash/garden/waste = 300,
 		/obj/structure/flora/ash/glowshroom = 1800,
-		/obj/item/mine/pressure/explosive/shrapnel/live = 30,
+		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -218,6 +223,13 @@
 		/turf/open/water/tar/waste/lit = 1
 	)
 	flora_spawn_chance = 0
+
+	feature_spawn_list = list(
+		/obj/effect/radiation/waste = 30,
+		/obj/effect/radiation/waste/intense = 10,
+		/obj/structure/geyser/random = 1,
+		/obj/effect/spawner/random/anomaly/waste = 1,
+	)
 
 /datum/biome/waste/metal
 	open_turf_types = list(
@@ -248,7 +260,7 @@
 		/obj/effect/spawner/random/waste/atmos_can = 180,
 		/obj/effect/spawner/random/waste/atmos_can/rare = 1,
 		/obj/effect/spawner/random/waste/salvageable = 300,
-		/obj/item/mine/pressure/explosive/rad/live = 30,
+		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -308,7 +320,7 @@
 		/obj/effect/spawner/random/waste/salvageable = 400,
 		/obj/structure/flora/ash/garden/waste = 70,
 		/obj/structure/flora/ash/glowshroom = 400, //more common in caves
-		/obj/item/mine/pressure/explosive/rad/live = 10,
+		/obj/item/mine/pressure/explosive/rusty/live = 10,
 		/obj/effect/spawner/random/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -317,7 +329,10 @@
 		/obj/effect/radiation/waste = 30,
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/random/anomaly/waste/cave = 1
+		/obj/effect/spawner/random/anomaly/waste/cave = 1,
+		/obj/structure/vein/waste = 8,
+		/obj/structure/vein/waste/classtwo = 4,
+		/obj/structure/vein/waste/classthree = 1,
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/hivebot/strong = 20,
@@ -345,6 +360,12 @@
 		/turf/open/water/tar/waste = 1
 	)
 	flora_spawn_chance = 0
+	feature_spawn_list = list(
+		/obj/effect/radiation/waste = 30,
+		/obj/effect/radiation/waste/intense = 10,
+		/obj/structure/geyser/random = 1,
+		/obj/effect/spawner/random/anomaly/waste/cave = 1
+	)
 
 /datum/biome/cave/waste/rad
 	flora_spawn_list = list(
@@ -364,7 +385,7 @@
 		/obj/effect/spawner/random/maintenance/three = 100,
 		/obj/effect/spawner/random/maintenance/four = 200,
 		/obj/structure/flora/ash/glowshroom = 1800,
-		/obj/item/mine/pressure/explosive/rad/live = 30,
+		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/random/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -438,8 +459,9 @@
 	)
 	mob_spawn_chance = 30
 	feature_spawn_list = list(
-		/obj/structure/spawner/hivebot = 1,
+		/obj/structure/spawner/hivebot = 10,
 		)
+
 	feature_spawn_chance = 2 //hivebot biomes should have their dongles
 
 /datum/biome/cave/waste/conc //da concrete jungle baybee

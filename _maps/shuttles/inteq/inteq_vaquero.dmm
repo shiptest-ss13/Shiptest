@@ -271,7 +271,7 @@
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq{
 	pixel_y = -5
 	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
+/obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "fc" = (
@@ -935,6 +935,8 @@
 	dir = 1
 	},
 /obj/item/clothing/head/inteq_peaked,
+/obj/item/storage/guncase/pistol/pinscher,
+/obj/item/storage/box/ammo/a44roum,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mE" = (
@@ -1247,6 +1249,7 @@
 /obj/structure/platform/ship_three{
 	dir = 8
 	},
+/obj/item/clothing/gloves/color/latex/nitrile/inteq,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "uy" = (
@@ -1814,7 +1817,6 @@
 	normaldoorcontrol = 1;
 	pixel_x = 10;
 	pixel_y = -20;
-	req_access_txt = "3";
 	specialfunctions = 4
 	},
 /obj/item/radio/intercom/directional/west,
@@ -1963,9 +1965,6 @@
 	pixel_x = -5
 	},
 /obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm{
 	pixel_x = -5
 	},
 /obj/item/ammo_box/magazine/co9mm{
@@ -1985,6 +1984,8 @@
 /obj/item/storage/toolbox/ammo/c9mm{
 	pixel_y = 12
 	},
+/obj/item/ammo_box/magazine/m9mm_rattlesnake,
+/obj/item/ammo_box/magazine/m9mm_rattlesnake,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Dh" = (
@@ -3112,7 +3113,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/tank/jetpack/oxygen,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
@@ -3293,7 +3294,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/security/independent/inteq,
+/obj/item/clothing/suit/space/hardsuit/security/inteq,
 /obj/item/clothing/mask/gas/inteq,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -3307,7 +3308,7 @@
 /obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/item/storage/cans/sixbeer,
-/obj/item/reagent_containers/food/snacks/carneburrito,
+/obj/item/food/carneburrito,
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},

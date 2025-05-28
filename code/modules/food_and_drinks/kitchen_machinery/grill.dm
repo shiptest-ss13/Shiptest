@@ -1,5 +1,8 @@
 //I JUST WANNA GRILL FOR GOD'S SAKE
 
+#define GRILL_FUELUSAGE_IDLE 0.5
+#define GRILL_FUELUSAGE_ACTIVE 5
+
 /obj/machinery/grill
 	name = "grill"
 	desc = "Just like the old days."
@@ -36,14 +39,12 @@
 		. += span_warning("\The [src] is out of fuel! Add some wood or coal!")
 
 /obj/machinery/grill/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/stack/sheet/mineral/coal) || istype(I, /obj/item/stack/sheet/mineral/wood))
+	if(istype(I, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/S = I
 		var/stackamount = S.get_amount()
 		to_chat(user, span_notice("You put [stackamount] [I]s in [src]."))
-		if(istype(I, /obj/item/stack/sheet/mineral/coal))
-			grill_fuel += (50 * stackamount)
-		else
-			grill_fuel += (5 * stackamount)
+		if(istype(I, /obj/item/stack/sheet/mineral/wood))
+			grill_fuel += (20 * stackamount)
 		S.use(stackamount)
 		update_appearance()
 		return
@@ -73,9 +74,9 @@
 			return
 	..()
 
-/obj/machinery/grill/process()
+/obj/machinery/grill/process(seconds_per_tick)
 	..()
-	if(!grilled_item)
+	if(grill_fuel <= 0)
 		return PROCESS_KILL
 	update_appearance()
 	if(grill_fuel <= 0)
@@ -85,8 +86,8 @@
 			grilled_item.forceMove(loc)
 			finish_grill()
 		return
-	grill_time += 1
-	grill_fuel -= 1
+	grill_time += seconds_per_tick
+	grill_fuel -= GRILL_FUELUSAGE_ACTIVE * seconds_per_tick
 	if(prob(1))
 		var/datum/effect_system/smoke_spread/bad/smoke = new
 		smoke.set_up(1, loc)
@@ -133,19 +134,19 @@
 /obj/machinery/grill/proc/finish_grill()
 	if(grill_time >= 10 && grilled_item.cooked_type)
 		grilled_item = grilled_item.microwave_act()
-	switch(grill_time) //no 0-9 to prevent spam
-		if(10 to 15)
+	switch(grill_time) //no 0-20 to prevent spam
+		if(20 to 30)
 			grilled_item.name = "lightly-grilled [grilled_item.name]"
 			grilled_item.desc = "[grilled_item.desc] It's been lightly grilled."
-		if(16 to 39)
+		if(30 to 80)
 			grilled_item.name = "grilled [grilled_item.name]"
 			grilled_item.desc = "[grilled_item.desc] It's been grilled."
 			grilled_item.foodtype |= FRIED
-		if(40 to 50)
+		if(80 to 100)
 			grilled_item.name = "heavily grilled [grilled_item.name]"
 			grilled_item.desc = "[grilled_item.desc] It's been heavily grilled."
 			grilled_item.foodtype |= FRIED
-		if(51 to INFINITY) //grill marks reach max alpha
+		if(100 to INFINITY) //grill marks reach max alpha
 			grilled_item.name = "Powerfully Grilled [grilled_item.name]"
 			grilled_item.desc = "A [grilled_item.name]. Reminds you of your wife, wait, no, it's prettier!"
 			grilled_item.foodtype |= FRIED
@@ -189,3 +190,6 @@
 /obj/machinery/grill/cat/finish_grill()
 	..()
 	owoify()
+
+#undef GRILL_FUELUSAGE_IDLE
+#undef GRILL_FUELUSAGE_ACTIVE

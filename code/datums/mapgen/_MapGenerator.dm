@@ -1,6 +1,34 @@
 /// Management class used to handle successive calls used to generate a list of turfs.
 /datum/map_generator
 
+/// Gets the overmap object this is tied to and do checks before generating
+/datum/map_generator/proc/pre_generation(datum/overmap/our_planet)
+	return
+
+/// Goes through the planet's turfs again, for touchups or more importantly, greebles.
+/datum/map_generator/proc/post_generation(list/turf/turfs)
+	var/start_time = REALTIMEOFDAY
+	var/message = "MAPGEN: MAPGEN REF [REF(src)] ([type]) STARTING POST GEN"
+	log_shuttle(message)
+	log_world(message)
+
+	for(var/turf/gen_turf as anything in turfs)
+		gen_turf.AfterChange(CHANGETURF_IGNORE_AIR)
+
+		QUEUE_SMOOTH(gen_turf)
+		QUEUE_SMOOTH_NEIGHBORS(gen_turf)
+
+		for(var/turf/open/space/adj in RANGE_TURFS(1, gen_turf))
+			adj.check_starlight(gen_turf)
+
+		// CHECK_TICK here is fine -- we are assuming that the turfs we're generating are staying relatively constant
+		CHECK_TICK
+
+	message = "MAPGEN: MAPGEN REF [REF(src)] ([type]) HAS FINISHED POST GEN IN [(REALTIMEOFDAY - start_time)/10]s"
+	log_shuttle(message)
+	log_world(message)
+	return
+
 /// Given a list of turfs, asynchronously changes a list of turfs and their areas.
 /// Does not fill them with objects; this should be done with populate_turfs.
 /// This is a wrapper proc for generate_turf(), handling batch processing of turfs.
@@ -13,18 +41,6 @@
 	for(var/turf/gen_turf as anything in turfs)
 		// deferring AfterChange() means we don't get huge atmos flows in the middle of making changes
 		generate_turf(gen_turf, CHANGETURF_IGNORE_AIR|CHANGETURF_DEFER_CHANGE|CHANGETURF_DEFER_BATCH)
-		CHECK_TICK
-
-	for(var/turf/gen_turf as anything in turfs)
-		gen_turf.AfterChange(CHANGETURF_IGNORE_AIR)
-
-		QUEUE_SMOOTH(gen_turf)
-		QUEUE_SMOOTH_NEIGHBORS(gen_turf)
-
-		for(var/turf/open/space/adj in RANGE_TURFS(1, gen_turf))
-			adj.check_starlight(gen_turf)
-
-		// CHECK_TICK here is fine -- we are assuming that the turfs we're generating are staying relatively constant
 		CHECK_TICK
 
 	message = "MAPGEN: MAPGEN REF [REF(src)] ([type]) HAS FINISHED TURF GEN IN [(REALTIMEOFDAY - start_time)/10]s"

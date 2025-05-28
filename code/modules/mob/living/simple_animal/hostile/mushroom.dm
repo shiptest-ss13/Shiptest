@@ -44,9 +44,9 @@
 /mob/living/simple_animal/hostile/mushroom/examine(mob/user)
 	. = ..()
 	if(health >= maxHealth)
-		. += "<span class='info'>It looks healthy.</span>"
+		. += span_info("It looks healthy.")
 	else
-		. += "<span class='info'>It looks like it's been roughed up.</span>"
+		. += span_info("It looks like it's been roughed up.")
 
 /mob/living/simple_animal/hostile/mushroom/Life()
 	..()
@@ -98,10 +98,10 @@
 	if(istype(L, /mob/living/simple_animal/hostile/mushroom) && stat == DEAD)
 		var/mob/living/simple_animal/hostile/mushroom/M = L
 		if(faint_ticker < 2)
-			M.visible_message("<span class='notice'>[M] chews a bit on [src].</span>")
+			M.visible_message(span_notice("[M] chews a bit on [src]."))
 			faint_ticker++
 			return TRUE
-		M.visible_message("<span class='warning'>[M] devours [src]!</span>")
+		M.visible_message(span_warning("[M] devours [src]!"))
 		var/level_gain = (powerlevel - M.powerlevel)
 		if(level_gain >= -1 && !bruised && !M.ckey)//Player shrooms can't level up to become robust gods.
 			if(level_gain < 1)//So we still gain a level if two mushrooms were the same level
@@ -132,7 +132,7 @@
 		add_overlay(cap_living)
 
 /mob/living/simple_animal/hostile/mushroom/proc/Recover()
-	visible_message("<span class='notice'>[src] slowly begins to recover.</span>")
+	visible_message(span_notice("[src] slowly begins to recover."))
 	faint_ticker = 0
 	revive(full_heal = TRUE, admin_revive = FALSE)
 	UpdateMushroomCap()
@@ -154,16 +154,16 @@
 
 /mob/living/simple_animal/hostile/mushroom/proc/Bruise()
 	if(!bruised && !stat)
-		src.visible_message("<span class='notice'>The [src.name] is bruised!</span>")
+		src.visible_message(span_notice("The [src.name] is bruised!"))
 		bruised = 1
 
 /mob/living/simple_animal/hostile/mushroom/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/reagent_containers/food/snacks/grown/mushroom))
+	if(istype(I, /obj/item/food/grown/mushroom))
 		if(stat == DEAD && !recovery_cooldown)
 			Recover()
 			qdel(I)
 		else
-			to_chat(user, "<span class='warning'>[src] won't eat it!</span>")
+			to_chat(user, span_warning("[src] won't eat it!"))
 		return
 	if(I.force)
 		Bruise()

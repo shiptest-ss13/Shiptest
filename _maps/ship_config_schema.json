@@ -1,20 +1,21 @@
 {
-	"$schema": "https://json-schema.org/draft-04/schema",
+	"$schema": "https://json-schema.org/draft-07/schema",
 	"title": "Ship Configuration Schema",
 	"description": "A ship configuration, used for defining new ship classes.",
-	"tags": "A list of tags, used for searching ships by quality.",
 	"type": "object",
 
 	"properties": {
 		"map_name": {
 			"title": "Class Name",
 			"type": "string",
-			"description": "The name of the ship class, as viewable in-game."
+			"pattern": "-class",
+			"description": "The name of the ship class, as viewable in-game. The -class suffix must be lowercase."
 		},
 		"map_short_name": {
 			"title": "Shortened Class Name",
 			"type": "string",
-			"description": "A shortened version of the ship class name, used in things such as the manifest.",
+			"pattern": "-class$",
+			"description": "A shortened version of the ship class name, used in things such as the manifest. The -class suffix must be lowercase, and the end of the value.",
 			"maxLength": 20
 		},
 		"description": {
@@ -30,18 +31,20 @@
 		},
 		"faction": {
 			"title": "Ship Faction Datum",
-			"type": [ "null", "string" ],
-			"description": "Default faction datum"
+			"type": "string",
+			"pattern": "^/datum/faction/(.*)$",
+			"default": "/datum/faction/independent",
+			"description": "The path of the ship's original faction datum. If null, the ship will be considered independent."
 		},
 		"prefix": {
 			"title": "Ship Default Prefix",
-			"type": [ "null", "string" ],
+			"type": ["null", "string"],
 			"description": "The prefix of the ship class, appended to randomly generated names when they're first purchased.",
 			"maxLength": 5
 		},
 		"manufacturer": {
 			"title": "Ship Manufacturer",
-			"type": [ "null", "string" ],
+			"type": ["null", "string"],
 			"description": "The manufacturer of the ship class, used in autowiki templates."
 		},
 		"namelists": {
@@ -81,7 +84,7 @@
 					"INSTALLATION",
 					"SOLGOV",
 					"CMM-GOLD",
-					"CMM-BARD",
+					"CLIP-BARD",
 					"PGF"
 				]
 			}
@@ -127,12 +130,6 @@
 				]
 			}
 		},
-		"roundstart": {
-			"title": "Random Roundstart Selection",
-			"type": "boolean",
-			"description": "Whether or not the ship has a chance to be randomly selected as the free roundstart ship.",
-			"default": false
-		},
 		"limit": {
 			"title": "Ship Spawning Limit",
 			"type": "integer",
@@ -141,7 +138,7 @@
 			"maximum": 100,
 			"default": 1
 		},
-		"starting_funds":{
+		"starting_funds": {
 			"title": "Ship Starting Funds",
 			"Type": "integer",
 			"description": "The amount of money a ship's bank account starts with",
@@ -177,5 +174,11 @@
 		}
 	},
 
-	"required": ["map_name", "map_path"]
+	"required": [
+		"map_name",
+		"map_short_name",
+		"map_path",
+		"faction",
+		"job_slots"
+	]
 }

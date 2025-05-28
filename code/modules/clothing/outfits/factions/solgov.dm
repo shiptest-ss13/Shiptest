@@ -1,13 +1,13 @@
 /datum/outfit/job/solgov
 	name = "SolGov Base Outfit"
-
+	faction = FACTION_PLAYER_SOLCON
 	faction_icon = "bg_solgov"
 
 /datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list(FACTION_PLAYER_SOLCON)
+	H.grant_language(/datum/language/solarian_international)
 
 /datum/outfit/job/solgov/assistant
 	name = "SolGov - Scribe"
@@ -121,7 +121,7 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
-	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
+	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/officer)
 
 /datum/outfit/job/solgov/doctor
 	name = "SolGov - Medical Doctor"

@@ -18,7 +18,7 @@ SUBSYSTEM_DEF(spacedrift)
 	cust["processing"] = length(processing)
 	.["custom"] = cust
 
-/datum/controller/subsystem/spacedrift/fire(resumed = 0)
+/datum/controller/subsystem/spacedrift/fire(resumed = FALSE)
 	if (!resumed)
 		src.currentrun = processing.Copy()
 

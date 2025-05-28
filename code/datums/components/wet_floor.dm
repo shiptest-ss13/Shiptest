@@ -110,7 +110,7 @@
 	for(var/i in time_left_list)
 		. = max(., time_left_list[i])
 
-/datum/component/wet_floor/process()
+/datum/component/wet_floor/process(seconds_per_tick)
 	var/turf/open/T = parent
 	var/diff = world.time - last_process
 	var/decrease = 0

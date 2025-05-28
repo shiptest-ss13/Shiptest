@@ -36,7 +36,7 @@
 	icon_state = "6-10"
 	},
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/fishfry,
+/obj/item/food/fishfry,
 /obj/item/melee/knife/shiv{
 	pixel_x = -6;
 	pixel_y = 5
@@ -400,6 +400,7 @@
 /obj/effect/turf_decal/weather/sand{
 	dir = 6
 	},
+/obj/effect/landmark/mission_poi/main/kill,
 /turf/open/floor/plating/asteroid/sand,
 /area/overmap_encounter/planetoid/cave/explored)
 "jZ" = (
@@ -575,10 +576,10 @@
 /obj/structure/closet/crate/freezer{
 	desc = "Fish Crate."
 	},
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/meat/rawcrab,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcrab,
+/obj/item/food/meat/rawcutlet,
 /turf/open/floor/wood{
 	light_range = 2
 	},
@@ -1036,9 +1037,9 @@
 /obj/structure/closet/crate/freezer{
 	desc = "Fish Crate."
 	},
-/obj/item/reagent_containers/food/snacks/meat/rawcrab,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/food/meat/rawcrab,
+/obj/item/food/meat/rawcutlet,
+/obj/item/food/meat/rawcutlet,
 /turf/open/floor/plating{
 	light_range = 2
 	},
@@ -1195,10 +1196,10 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Kj" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/meat/rawcrab{
+/obj/item/food/meat/rawcrab{
 	pixel_y = 5
 	},
-/obj/item/reagent_containers/food/snacks/meat/rawcrab,
+/obj/item/food/meat/rawcrab,
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1

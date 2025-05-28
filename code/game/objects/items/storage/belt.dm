@@ -83,7 +83,8 @@
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding, //WS end
 		/obj/item/gun/energy/plasmacutter,
-		/obj/item/bodycamera
+		/obj/item/bodycamera,
+		/obj/item/stack/tape/industrial
 		))
 
 /obj/item/storage/belt/utility/chief
@@ -305,11 +306,11 @@
 		/obj/item/ammo_box/c38, //speed loaders don't have a common path like magazines. pain.
 		/obj/item/ammo_box/a357, //some day we should refactor these into an ammo_box/speedloader type
 		/obj/item/ammo_box/a858, //oh boy stripper clips too
-		/obj/item/ammo_box/vickland_a308,
+		/obj/item/ammo_box/vickland_a8_50r,
 		/obj/item/ammo_box/a300,
 		/obj/item/ammo_box/a762_stripper,
 		/obj/item/ammo_box/amagpellet_claris, //that's the last of the clips
-		/obj/item/reagent_containers/food/snacks/donut,
+		/obj/item/food/donut,
 		/obj/item/melee/knife/combat,
 		/obj/item/flashlight/seclite,
 		/obj/item/melee/classic_baton/telescopic,
@@ -409,6 +410,8 @@
 		/obj/item/restraints/legcuffs/bola/watcher,
 		/obj/item/melee/sword/bone,
 		/obj/item/bodycamera,
+		/obj/item/binoculars,
+		/obj/item/tank/internals/emergency_oxygen,
 		))
 
 
@@ -461,18 +464,6 @@
 		"Snow" = "militarywebbing_snow",
 		"Urban" = "militarywebbing_urban",
 		)
-
-//this might seem obtuse instead of setting allow_post_reskins to TRUE, but reskin menu would open every time on alt click, which is not good for this
-/obj/item/storage/belt/military/examine(mob/user)
-	. = ..()
-	if(unique_reskin && current_skin)
-		. += "You can <b>Ctrl-Click</b> [src] to reskin it again after skinning it."
-
-/obj/item/storage/belt/military/CtrlClick(mob/user)
-	. = ..()
-	if(isliving(user) && in_range(src, user))
-		current_skin = null
-		to_chat(user, "You can reskin [src] again wtih <b>Alt-Click</b>.")
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
@@ -532,13 +523,13 @@
 		/obj/item/reagent_containers/food/snacks/syndicake,
 		/obj/item/reagent_containers/food/snacks/spacetwinkie,
 		/obj/item/reagent_containers/food/snacks/cheesiehonkers,
-		/obj/item/reagent_containers/food/snacks/nachos,
-		/obj/item/reagent_containers/food/snacks/cheesynachos,
-		/obj/item/reagent_containers/food/snacks/cubannachos,
-		/obj/item/reagent_containers/food/snacks/nugget,
+		/obj/item/food/nachos,
+		/obj/item/food/cheesynachos,
+		/obj/item/food/cubannachos,
+		/obj/item/food/nugget,
 		/obj/item/food/spaghetti/pastatomato,
-		/obj/item/reagent_containers/food/snacks/rofflewaffles,
-		/obj/item/reagent_containers/food/snacks/donkpocket,
+		/obj/item/food/rofflewaffles,
+		/obj/item/food/donkpocket,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cola,
 		/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail,
 		/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx,
@@ -622,8 +613,7 @@
 		/obj/item/multitool,
 		/obj/item/reagent_containers/food/drinks/molotov,
 		/obj/item/grenade/c4,
-		/obj/item/reagent_containers/food/snacks/grown/cherry_bomb,
-		/obj/item/reagent_containers/food/snacks/grown/firelemon
+		/obj/item/food/grown/firelemon,
 		))
 
 /obj/item/storage/belt/grenade/full/PopulateContents()
@@ -823,18 +813,18 @@
 /obj/item/storage/belt/sabre/examine(mob/user)
 	. = ..()
 	if(length(contents))
-		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
+		. += span_notice("Alt-click it to quickly draw the blade.")
 
 /obj/item/storage/belt/sabre/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(length(contents))
 		var/obj/item/I = contents[1]
-		user.visible_message("<span class='notice'>[user] takes [I] out of [src].</span>", "<span class='notice'>You take [I] out of [src].</span>")
+		user.visible_message(span_notice("[user] takes [I] out of [src]."), span_notice("You take [I] out of [src]."))
 		user.put_in_hands(I)
 		update_appearance()
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 
 /obj/item/storage/belt/sabre/update_icon_state()
 	icon_state = "[base_icon_state]"
@@ -905,31 +895,3 @@
 	icon_state = "sheath-pgf"
 	item_state = "sheath-pgf"
 	sabre_type = /obj/item/melee/sword/sabre/pgf
-
-/obj/item/storage/belt/security/webbing/inteq
-	name = "inteq webbing"
-	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
-	icon_state = "inteq_webbing"
-	item_state = "inteq_webbing"
-	supports_variations = VOX_VARIATION | KEPORI_VARIATION
-
-/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/skm_762_40(src)
-
-/obj/item/storage/belt/security/webbing/inteq/skm_carabine/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm10mm(src)
-
-/obj/item/storage/belt/security/webbing/inteq/alt
-	name = "inteq drop pouch harness"
-	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
-	icon_state = "inteq_droppouch"
-	item_state = "inteq_droppouch"
-
-/obj/item/storage/belt/security/webbing/inteq/alt/bulldog/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/m12g_bulldog(src)

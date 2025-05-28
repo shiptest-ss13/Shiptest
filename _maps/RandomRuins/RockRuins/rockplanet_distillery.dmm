@@ -210,6 +210,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-5"
 	},
+/obj/item/storage/bottles/moonshine/sealed,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/shuttle)
 "bS" = (
@@ -307,14 +308,14 @@
 /area/ruin/rockplanet/distillery/crew)
 "cP" = (
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/item/reagent_containers/food/snacks/grown/corn,
-/obj/item/reagent_containers/food/snacks/grown/corn,
+/obj/item/food/grown/corn,
+/obj/item/food/grown/corn,
 /obj/item/reagent_containers/condiment/sugar,
 /obj/item/reagent_containers/condiment/sugar,
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 3
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 3
 	},
 /obj/structure/closet/crate/freezer,
@@ -607,22 +608,19 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	layer = 3.1;
-	pixel_x = 12;
-	pixel_y = 6
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_casing/c9mm,
+/obj/item/ammo_box/magazine/m9mm_mauler{
+	pixel_x = 2;
+	pixel_y = 3
 	},
-/obj/item/ammo_box/magazine/m9mm_rattlesnake{
-	layer = 3.1;
-	pixel_x = 6;
-	pixel_y = 6;
-	start_empty = 1
+/obj/item/ammo_box/magazine/m9mm_mauler{
+	pixel_x = 10;
+	pixel_y = 3
 	},
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
-/obj/item/ammo_casing/c9mm,
 /turf/open/floor/carpet,
 /area/ruin/rockplanet/distillery/office)
 "gM" = (
@@ -767,7 +765,7 @@
 /area/ruin/rockplanet/distillery/office)
 "ir" = (
 /obj/structure/cable/yellow,
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ruin/frontiersmen,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/ruin/rockplanet/distillery/office)
 "iy" = (
@@ -928,7 +926,7 @@
 /obj/item/trash/plate{
 	pixel_y = 16
 	},
-/obj/item/reagent_containers/food/snacks/donkpocket/warm/pizza{
+/obj/item/food/donkpocket/warm/pizza{
 	pixel_y = 18
 	},
 /turf/open/floor/plasteel/patterned/brushed,
@@ -1890,14 +1888,14 @@
 /obj/item/seeds/corn{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 6
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_x = 3;
 	pixel_y = -2
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_x = 4;
 	pixel_y = 3
 	},
@@ -2113,7 +2111,7 @@
 	name = "Dog"
 	},
 /obj/structure/bed/dogbed,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton,
+/obj/item/food/meat/slab/human/mutant/skeleton,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
@@ -2196,7 +2194,8 @@
 "yW" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/guncloset,
-/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/obj/item/gun/ballistic/rifle/illestren/factory,
+/obj/item/gun/ballistic/automatic/pistol/commander,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/office)
 "ze" = (
@@ -2449,7 +2448,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/wrapping,
-/obj/item/storage/bottles/moonshine,
+/obj/item/storage/bottles/moonshine/sealed,
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery/shuttle)
 "BJ" = (
@@ -2865,12 +2864,12 @@
 "GH" = (
 /obj/structure/catwalk/over,
 /obj/structure/closet/crate/hydroponics,
-/obj/item/reagent_containers/food/snacks/grown/corn,
-/obj/item/reagent_containers/food/snacks/grown/corn,
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn,
+/obj/item/food/grown/corn,
+/obj/item/food/grown/corn{
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 2
 	},
 /obj/item/seeds/corn,
@@ -2880,10 +2879,10 @@
 	pixel_x = -8
 	},
 /obj/item/reagent_containers/condiment/enzyme,
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/grown/corn{
+/obj/item/food/grown/corn{
 	pixel_y = 4
 	},
 /turf/open/floor/plating/rockplanet/lit,
@@ -3069,21 +3068,8 @@
 /obj/structure/closet/crate/secure/weapon{
 	name = "ammo crate"
 	},
-/obj/item/ammo_box/a357{
-	pixel_x = -3
-	},
 /obj/item/ammo_box/magazine/illestren_a850r,
 /obj/item/storage/box/ammo/c9mm_ap,
-/obj/item/ammo_box/magazine/illestren_a850r,
-/obj/item/ammo_box/magazine/co9mm{
-	start_empty = 1
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	start_empty = 1
-	},
-/obj/item/ammo_box/a357{
-	pixel_x = 3
-	},
 /obj/machinery/button/door{
 	dir = 4;
 	id = "frontier_armory";
@@ -3093,6 +3079,10 @@
 	pixel_y = -6;
 	specialfunctions = 4
 	},
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/storage/box/ammo/a8_50r/match,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/distillery/office)
 "Jc" = (
@@ -4389,7 +4379,13 @@
 	pixel_y = 24;
 	specialfunctions = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals{
+	weapon_drop_chance = 100
+	},
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals
+	},
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/office)
 "XD" = (
@@ -4515,7 +4511,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 6
 	},
-/obj/item/reagent_containers/food/snacks/deadmouse{
+/obj/item/food/deadmouse{
 	layer = 2.9;
 	pixel_x = 8;
 	pixel_y = 6

@@ -8,6 +8,10 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	new/datum/stack_recipe("modern railing", /obj/structure/railing/modern, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("modern railing corner", /obj/structure/railing/modern/corner, 1, time = 10, window_checks = TRUE), \
 	new/datum/stack_recipe("modern railing end", /obj/structure/railing/modern/end, 3, time = 18, window_checks = TRUE), \
+	new/datum/stack_recipe("thin railing", /obj/structure/railing/thin, 3, time = 18, window_checks = TRUE), \
+	new/datum/stack_recipe("thin railing corner", /obj/structure/railing/thin/corner, 1, time = 10, window_checks = TRUE), \
+	new/datum/stack_recipe("thick railing", /obj/structure/railing/thick, 3, time = 18, window_checks = TRUE), \
+	new/datum/stack_recipe("thick railing corner", /obj/structure/railing/thick/corner, 1, time = 10, window_checks = TRUE), \
 	new/datum/stack_recipe("ladder", /obj/structure/ladder/crafted, 15, time = 150, one_per_turf = TRUE, on_floor = FALSE), \
 	new/datum/stack_recipe("handrail", /obj/structure/chair/handrail, 4, time = 15, one_per_turf = TRUE), \
 	))
@@ -50,15 +54,15 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 /obj/item/stack/rods/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_WELDER)
 		if(get_amount() < 2)
-			to_chat(user, "<span class='warning'>You need at least two rods to do this!</span>")
+			to_chat(user, span_warning("You need at least two rods to do this!"))
 			return
 
 		if(W.use_tool(src, user, 0, volume=40))
 			var/obj/item/stack/sheet/metal/new_item = new(usr.loc)
 			user.visible_message(
-				"<span class='notice'>[user.name] shaped [src] into metal with [W].</span>", \
-				"<span class='notice'>You shape [src] into metal with [W].</span>", \
-				"<span class='hear'>You hear welding.</span>")
+				span_notice("[user.name] shaped [src] into metal with [W]."), \
+				span_notice("You shape [src] into metal with [W]."), \
+				span_hear("You hear welding."))
 			var/obj/item/stack/rods/R = src
 			src = null
 			var/replace = (user.get_inactive_held_item()==R)
@@ -69,9 +73,9 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	else if(istype(W, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = W
 		if(amount != 1)
-			to_chat(user, "<span class='warning'>You must use a single rod!</span>")
+			to_chat(user, span_warning("You must use a single rod!"))
 		else if(S.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, span_warning("The ingredient is too big for [src]!"))
 		else
 			var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/kebab(get_turf(src))
 			A.initialize_custom_food(src, S, user)

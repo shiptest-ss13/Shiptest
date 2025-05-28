@@ -40,7 +40,7 @@
 	impact_type = /obj/effect/projectile/impact/laser
 
 /obj/projectile/beam/laser/sharplite
-	speed = 0.4
+	speed = 0.25
 
 /obj/projectile/beam/laser/light
 	damage = 15
@@ -49,13 +49,33 @@
 	speed = 0.4
 
 /obj/projectile/beam/laser/eoehoma
-	damage = 25
-	armour_penetration = -10
+	icon_state = "heavylaser"
+	damage = 35
+	armour_penetration = 0
+	speed = 0.8
+
+/obj/projectile/beam/laser/eoehoma/heavy
+	icon_state = "heavylaser"
+	damage = 60
+	knockdown = 50
+	armour_penetration = 20
+	speed = 1
+
+/obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(get_turf(loc),0,0,0,flame_range = 3)
+	return BULLET_ACT_HIT
 
 /obj/projectile/beam/laser/assault
 	icon_state = "heavylaser"
 	damage = 25
 	armour_penetration = 20
+
+/obj/projectile/beam/laser/assault/sharplite
+	icon_state = "heavylaser"
+	damage = 25
+	armour_penetration = 20
+	speed = 0.25
 
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
@@ -82,6 +102,10 @@
 /obj/projectile/beam/weak
 	damage = 15
 
+/obj/projectile/beam/weak/sharplite
+	damage = 15
+	speed = 0.25
+
 /obj/projectile/beam/weaker
 	damage = 10
 
@@ -104,6 +128,12 @@
 	name = "practice laser"
 	damage = 0
 	nodamage = TRUE
+
+/obj/projectile/beam/practice/sharplite
+	name = "practice laser"
+	damage = 0
+	nodamage = TRUE
+	speed = 0.25
 
 /obj/projectile/beam/laser/slug
 	name = "laser slug"
@@ -139,7 +169,13 @@
 	armour_penetration = -20
 	damage_type = STAMINA
 	flag = "energy"
+	bullet_identifier = "disabler"
 	hitsound = 'sound/weapons/tap.ogg'
+	hitsound_glass = null
+	hitsound_stone = null
+	hitsound_metal = null
+	hitsound_wood = null
+	hitsound_snow = null
 	eyeblur = 0
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
@@ -148,7 +184,7 @@
 	impact_type = /obj/effect/projectile/impact/disabler
 
 /obj/projectile/beam/disabler/sharplite
-	speed = 0.4
+	speed = 0.25
 
 /obj/projectile/beam/disabler/weak
 	damage = 15
@@ -160,6 +196,11 @@
 	armour_penetration = -30
 	range = 9
 
+/obj/projectile/beam/disabler/weak/negative_ap/sharplite
+	armour_penetration = -30
+	range = 9
+	speed = 0.25
+
 /obj/projectile/beam/disabler/weak/negative_ap/low_range
 	range = 6
 
@@ -167,6 +208,7 @@
 	name = "pulse"
 	icon_state = "u_laser"
 	damage = 40
+	bullet_identifier = "pulse"
 	wall_damage_flags = PROJECTILE_BONUS_DAMAGE_MINERALS | PROJECTILE_BONUS_DAMAGE_WALLS | PROJECTILE_BONUS_DAMAGE_WALLS
 	wall_damage_override = 200
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -180,7 +222,7 @@
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.IgniteTurf(rand(8,22), "blue")
+	targets_turf.ignite_turf(rand(8,22), "blue")
 
 /obj/projectile/beam/pulse/sharplite_turret
 	wall_damage_flags = null
@@ -277,7 +319,7 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.visible_message("<span class='danger'>[M] explodes into a shower of gibs!</span>")
+		M.visible_message(span_danger("[M] explodes into a shower of gibs!"))
 		M.gib()
 
 //a shrink ray that shrinks stuff, which grows back after a short while.
@@ -310,4 +352,4 @@
 	var/turf/targets_turf = target.loc
 	if(!isopenturf(targets_turf))
 		return
-	targets_turf.IgniteTurf(rand(8,22), "green")
+	targets_turf.ignite_turf(rand(8,22), "green")

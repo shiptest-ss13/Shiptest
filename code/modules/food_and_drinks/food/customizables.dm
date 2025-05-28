@@ -42,11 +42,9 @@
 	var/obj/item/reagent_containers/food/snacks/S = I
 	if(istype(S) || E)
 		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, span_warning("The ingredient is too big for [src]!"))
 		else if((ingredients.len >= ingMax) || (reagents.total_volume >= volume))
-			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
-		else if(istype(I, /obj/item/reagent_containers/food/snacks/pizzaslice/custom))
-			to_chat(user, "<span class='warning'>Adding [I.name] to [src] would make a mess.</span>")
+			to_chat(user, span_warning("You can't add more ingredients to [src]!"))
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
@@ -62,7 +60,7 @@
 				mix_filling_color(E.filling_color)
 				foodtype |= E.foodtypes
 				update_customizable_overlays(E.filling_color)
-			to_chat(user, "<span class='notice'>You add the [I.name] to the [name].</span>")
+			to_chat(user, span_notice("You add the [I.name] to the [name]."))
 			update_food_name(I)
 	else
 		. = ..()
@@ -74,8 +72,8 @@
 			customname = "custom"
 			break
 	if(ingredients.len == 1) //first ingredient
-		if(istype(S, /obj/item/reagent_containers/food/snacks/meat))
-			var/obj/item/reagent_containers/food/snacks/meat/M = S
+		if(istype(S, /obj/item/food/meat))
+			var/obj/item/food/meat/M = S
 			if(M.subjectname)
 				customname = "[M.subjectname]"
 			else if(M.subjectjob)
@@ -153,32 +151,18 @@
 		qdel(ingredient)
 	return ..()
 
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////
 //////////////      Customizable Food Types     /////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-/obj/item/reagent_containers/food/snacks/customizable/burger
-	name = "burger"
-	desc = "A timeless classic."
-	ingredients_placement = INGREDIENTS_STACKPLUSTOP
-	icon = 'icons/obj/food/burgerbread.dmi'
-	icon_state = "custburg"
-	foodtype = GRAIN
-
-
 /obj/item/reagent_containers/food/snacks/customizable/kebab
 	name = "kebab"
-	desc = "Delicious food on a stick."
+	desc = "A meal consisting of ingredients cooked and served while skewered on a stick."
 	ingredients_placement = INGREDIENTS_LINE
 	trash = /obj/item/stack/rods
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	ingMax = 6
 	icon_state = "rod"
-
 
 /obj/item/reagent_containers/food/snacks/customizable/pie
 	name = "pie"
@@ -187,22 +171,9 @@
 	icon_state = "pie"
 	foodtype = GRAIN | DAIRY
 
-
-/obj/item/reagent_containers/food/snacks/customizable/pizza
-	name = "pizza"
-	desc = "A personalized pan pizza meant for only one person."
-	ingredients_placement = INGREDIENTS_SCATTER
-	ingMax = 8
-	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/custom
-	slices_num = 6
-	icon = 'icons/obj/food/pizzaspaghetti.dmi'
-	icon_state = "pizzamargherita"
-	foodtype = GRAIN | DAIRY
-
-
 /obj/item/reagent_containers/food/snacks/customizable/salad
 	name = "salad"
-	desc = "Very tasty."
+	desc = "A bowl of salad, made of various ingredients tossed together."
 	trash = /obj/item/reagent_containers/glass/bowl
 	ingMax = 6
 	icon = 'icons/obj/food/soupsalad.dmi'
@@ -211,7 +182,7 @@
 
 /obj/item/reagent_containers/food/snacks/customizable/soup
 	name = "soup"
-	desc = "A bowl with liquid and... stuff in it."
+	desc = "A bowl full of broth, typically including other ingredients cooked in it."
 	trash = /obj/item/reagent_containers/glass/bowl
 	ingMax = 8
 	icon = 'icons/obj/food/soupsalad.dmi'
@@ -254,9 +225,9 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, span_warning("The ingredient is too big for [src]!"))
 		else if(contents.len >= 20)
-			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
+			to_chat(user, span_warning("You can't add more ingredients to [src]!"))
 		else
 			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
 				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup(get_turf(src))

@@ -28,7 +28,7 @@
 	name = "\improper .38 bullet"
 
 /obj/item/shrapnel/bullet/c38/dumdum // .38 DumDum round
-	name = "\improper .38 DumDum bullet"
+	name = "\improper .38 prism bullet"
 	embedding = list(embed_chance=70, fall_chance=7, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=-100)
 
 /obj/item/shrapnel/bullet/tracker
@@ -56,8 +56,8 @@
 /obj/item/shrapnel/bullet/tracker/a858
 	name = "8x58mm Tracker"
 
-/obj/item/shrapnel/bullet/tracker/a65clip
-	name = "6.5x57mm Tracker"
+/obj/item/shrapnel/bullet/tracker/a75clip
+	name = "7.5x64mm Tracker"
 
 /obj/item/shrapnel/bullet/tracker/a308
 	name = ".308 Tracker"
@@ -67,7 +67,6 @@
 	damage = 10
 	range = 10
 	armour_penetration = -5
-	dismemberment = 25
 	ricochets_max = 2
 	ricochet_chance = 40
 	shrapnel_type = /obj/item/shrapnel
@@ -81,7 +80,6 @@
 /obj/projectile/bullet/shrapnel/rusty
 	damage = 8
 	armour_penetration = -10
-	dismemberment = 15
 	ricochets_max = 3//duller = less likely to stick in a wall
 	ricochet_chance = 60
 
@@ -89,7 +87,6 @@
 	damage = 20
 	name = "flying shrapnel hunk"
 	range = 25
-	dismemberment = 35
 	ricochets_max = 4
 	ricochet_chance = 90
 	ricochet_decay_chance = 0.9
@@ -99,7 +96,6 @@
 	damage = 8
 	range = 8
 	armour_penetration = -35
-	dismemberment = 10
 	shrapnel_type = /obj/item/shrapnel/hot
 	damage_type = BURN
 
@@ -115,7 +111,6 @@
 	damage_type = BURN
 	damage = 10
 	range = 8
-	dismemberment = 10
 	armour_penetration = -35
 	shrapnel_type = /obj/item/shrapnel/hot
 

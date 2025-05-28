@@ -4,6 +4,7 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
 	item_state = "pipebow"
+	spawn_blacklisted = TRUE
 	load_sound = null
 	fire_sound = 'sound/weapons/bowfire.ogg'
 	slot_flags = ITEM_SLOT_BACK
@@ -33,7 +34,7 @@
 
 /obj/item/gun/ballistic/bow/unique_action(mob/living/user)
 	if(chambered)
-		to_chat(user, "<span class='notice'>You [drawn ? "release" : "draw"] [src]'s string.</span>")
+		to_chat(user, span_notice("You [drawn ? "release" : "draw"] [src]'s string."))
 		if(!drawn)
 			playsound(src, 'sound/weapons/bowdraw.ogg', 75, 0)
 		drawn = !drawn

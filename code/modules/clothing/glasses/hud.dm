@@ -37,7 +37,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, "<span class='warning'>PZZTTPFFFT</span>")
+	to_chat(user, span_warning("PZZTTPFFFT"))
 	desc = "[desc] The display is flickering slightly."
 
 /obj/item/clothing/glasses/hud/health
@@ -135,7 +135,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch/AltClick(mob/user)
 	. = ..()
 	flipped = !flipped
-	to_chat(user, "<span class='notice'>You shift the hudpatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	to_chat(user, span_notice("You shift the hudpatch to cover the [flipped == 0 ? "right" : "left"] eye."))
 	icon_state = "hudpatch-[flipped]"
 	item_state = "hudpatch-[flipped]"
 	update_appearance()
@@ -233,14 +233,6 @@
 	desc = "These sunglasses are special, and let you view potential criminals."
 	icon_state = "sun"
 	item_state = "sunglasses"
-
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	name = "inteq ballistic HUD"
-	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."
-	icon_state = "inteq_goggles"
-	item_state = "inteq_goggles"
-	supports_variations = KEPORI_VARIATION | VOX_VARIATION
-	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"

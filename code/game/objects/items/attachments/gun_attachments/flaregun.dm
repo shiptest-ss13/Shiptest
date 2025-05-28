@@ -51,7 +51,7 @@
 		to_chat(user, span_notice("You unload the flare from \the [name]."))
 		loaded_flare = null
 	playsound(src,'sound/weapons/gun/shotgun/rack.ogg',100)
-	return OVERIDE_UNIQUE_ACTION
+	return OVERRIDE_UNIQUE_ACTION
 
 /obj/item/attachment/gun/flare/on_examine(obj/item/gun/gun, mob/user, list/examine_list)
 	. = ..()

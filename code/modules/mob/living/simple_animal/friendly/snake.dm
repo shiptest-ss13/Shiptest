@@ -51,7 +51,7 @@
 	var/list/mice = list()
 	for (var/HM in .)
 		//Yum a tasty mouse
-		if(istype(HM, /mob/living/simple_animal/mouse))
+		if(istype(HM, /mob/living/basic/mouse))
 			mice += HM
 		if(isliving(HM))
 			living_mobs += HM
@@ -63,8 +63,8 @@
 	return mice
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/AttackingTarget()
-	if(istype(target, /mob/living/simple_animal/mouse))
-		visible_message("<span class='notice'>[name] consumes [target] in a single gulp!</span>", "<span class='notice'>You consume [target] in a single gulp!</span>")
+	if(istype(target, /mob/living/basic/mouse))
+		visible_message(span_notice("[name] consumes [target] in a single gulp!"), span_notice("You consume [target] in a single gulp!"))
 		QDEL_NULL(target)
 		adjustBruteLoss(-2)
 	else
@@ -89,7 +89,7 @@
 	user.set_machine(src)
 
 	var/dat = 	"<div align='center'><b>Inventory of [name]</b></div><p>"
-	dat += "<br><B>Glasses:</B> <A href='?src=[REF(src)];[glasses ? "remove_inv=glasses'>[glasses]" : "add_inv=glasses'>Nothing"]</A>"
+	dat += "<br><B>Glasses:</B> <A href='byond://?src=[REF(src)];[glasses ? "remove_inv=glasses'>[glasses]" : "add_inv=glasses'>Nothing"]</A>"
 
 	var/datum/browser/popup = new(usr, "window=mob[REF(src)]", "<div align='center'>Inventory of [name]</div>", 325, 500)
 	popup.set_content(dat)
@@ -107,7 +107,7 @@
 		switch(remove_from)
 			if("glasses")
 				if(!glasses)
-					to_chat(usr, "<span class='warning'>There is nothing to remove from it!</span>")
+					to_chat(usr, span_warning("There is nothing to remove from it!"))
 					return
 				if(!stat)
 					say("HISSSS!")
@@ -119,12 +119,12 @@
 	else if(href_list["add_inv"])
 		var/add_to = href_list["add_inv"]
 		if(!usr.get_active_held_item())
-			to_chat(usr, "<span class='warning'>You have nothing in your hand to put on it!</span>")
+			to_chat(usr, span_warning("You have nothing in your hand to put on it!"))
 			return
 		switch(add_to)
 			if("glasses")
 				if(glasses)
-					to_chat(usr, "<span class='warning'>It's already wearing something!</span>")
+					to_chat(usr, span_warning("It's already wearing something!"))
 					return
 				else
 					var/obj/item/item_to_add = usr.get_active_held_item()
@@ -132,7 +132,7 @@
 						return
 
 					if(!istype(item_to_add, /obj/item/clothing/glasses))
-						to_chat(usr, "<span class='warning'>This object won't fit!</span>")
+						to_chat(usr, span_warning("This object won't fit!"))
 						return
 
 					var/obj/item/clothing/glasses/glasses_to_add = item_to_add
@@ -140,7 +140,7 @@
 					if(!usr.transferItemToLoc(glasses_to_add, src))
 						return
 					glasses = glasses_to_add
-					to_chat(usr, "<span class='notice'>You fit the glasses onto [src].</span>")
+					to_chat(usr, span_notice("You fit the glasses onto [src]."))
 					update_overlays()
 
 #define MAX_BOOKWORM_BOOKS 20
@@ -209,7 +209,7 @@
 			else
 				say("I've already read that one.")
 				return
-	if(istype(O, /obj/item/reagent_containers/food/snacks/deadmouse))
+	if(istype(O, /obj/item/food/deadmouse))
 		if(speak_chance >= 75)
 			user.visible_message("[src] doesn't seem to want the [O]...")
 		else

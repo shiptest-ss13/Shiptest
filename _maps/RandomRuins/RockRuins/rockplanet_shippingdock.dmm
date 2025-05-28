@@ -935,12 +935,6 @@
 	},
 /turf/open/floor/concrete/pavement/rockplanet,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"jR" = (
-/obj/machinery/power/shuttle/engine/electric/bad{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/rockplanet/shippingdock)
 "jT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1507,18 +1501,6 @@
 /obj/item/mine/proximity/explosive/sting/live,
 /turf/open/floor/concrete/pavement/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"pv" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/solar_control{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/concrete/slab_4/rockplanet/lit,
-/area/ruin/rockplanet/shippingdockoffice)
 "pw" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/dirt/rockplanet{
@@ -1864,7 +1846,7 @@
 /area/ruin/rockplanet/shippingdocksecure)
 "sO" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/donut/choco,
+/obj/item/food/donut/choco,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/rockplanet/shippingdockoffice)
@@ -2655,15 +2637,6 @@
 /obj/item/clothing/mask/gas/atmos,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"zT" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/brown/border,
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/pet/mothroach,
-/turf/open/floor/mineral/titanium/tiled/white,
-/area/ruin/rockplanet/shippingdock)
 "zU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4/rockplanet/lit,
@@ -3322,6 +3295,18 @@
 "GP" = (
 /turf/template_noop,
 /area/template_noop)
+"GQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/computer/solar_control{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_4/rockplanet/lit,
+/area/ruin/rockplanet/shippingdockoffice)
 "GW" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -3603,6 +3588,15 @@
 	},
 /turf/open/floor/concrete/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Ka" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-6"
+	},
+/obj/machinery/computer/solar_control{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "Kc" = (
 /obj/effect/decal/cleanable/shreds{
 	pixel_x = 7;
@@ -3927,14 +3921,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/rockplanet/shippingdockoffice)
+"Nk" = (
+/obj/machinery/power/shuttle/engine/electric/bad,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/shippingdock)
 "Np" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/shippingdock)
-"Nq" = (
-/turf/closed/wall/mineral/titanium,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ns" = (
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
 	dir = 4
@@ -4606,15 +4601,6 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"Ui" = (
-/obj/structure/cable/yellow{
-	icon_state = "0-6"
-	},
-/obj/machinery/power/solar_control{
-	dir = 4
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/rockplanet/shippingdockwarehouse)
 "Uj" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-9"
@@ -4810,6 +4796,21 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/concrete/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Wg" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/brown/border,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/pet/mothroach{
+	name = "Baffles"
+	},
+/obj/effect/landmark/mission_poi/main{
+	type_to_spawn = /mob/living/simple_animal/pet/mothroach;
+	already_spawned = 1
+	},
+/turf/open/floor/mineral/titanium/tiled/white,
+/area/ruin/rockplanet/shippingdock)
 "Wh" = (
 /obj/machinery/door/poddoor,
 /turf/open/floor/plating,
@@ -6427,7 +6428,7 @@ Ev
 zH
 xi
 SO
-jR
+Nk
 xi
 Nh
 zL
@@ -7067,7 +7068,7 @@ um
 um
 um
 qn
-pv
+GQ
 Ov
 MA
 Vh
@@ -7556,7 +7557,7 @@ SO
 TW
 nr
 SO
-Nq
+SO
 XI
 bo
 So
@@ -7629,7 +7630,7 @@ xi
 ZM
 SO
 ns
-zT
+Wg
 SO
 qW
 xi
@@ -10028,7 +10029,7 @@ Ks
 wb
 KR
 SJ
-Ui
+Ka
 Nb
 pY
 XP

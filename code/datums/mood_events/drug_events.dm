@@ -59,6 +59,11 @@
 	timeout = 30 SECONDS
 	special_screen_obj = "mood_happiness_bad"
 
+/datum/mood_event/narcotic_light
+	description = span_nicegreen("I feel so soft.")
+	mood_change = 2
+	timeout = 3 MINUTES
+
 /datum/mood_event/narcotic_medium
 	description = span_nicegreen("I feel comfortably numb.")
 	mood_change = 4
@@ -86,3 +91,7 @@
 /datum/mood_event/legion_bad
 	mood_change = -4
 	description = span_warning("Something is slithering through my veins")
+
+/datum/mood_event/stoned
+	mood_change = 6
+	description = span_nicegreen("The world is so comfortable...")

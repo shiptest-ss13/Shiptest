@@ -19,13 +19,11 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "cj" = (
 /obj/structure/table,
-/obj/item/reagent_containers/food/snacks/fishandchips,
+/obj/item/food/fishandchips,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "cB" = (
@@ -51,7 +49,7 @@
 /area/ruin/powered)
 "gG" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/sashimi{
+/obj/item/food/sashimi{
 	pixel_y = 10
 	},
 /obj/item/reagent_containers/food/drinks/mug/coco{
@@ -78,6 +76,13 @@
 "hI" = (
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/plating/ice/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
+"hY" = (
+/obj/effect/landmark/mission_poi/main/drill{
+	mission_index = 2
+	},
+/obj/structure/vein/ice/classfour,
+/turf/open/floor/plating/asteroid/snow/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "iz" = (
 /obj/structure/fence/door/opened{
@@ -138,6 +143,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/mission_poi/main,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "mI" = (
@@ -204,9 +210,7 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "tg" = (
@@ -239,18 +243,16 @@
 /area/ruin/powered)
 "up" = (
 /obj/structure/closet/secure_closet/freezer,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/food/fishmeat/carp,
+/obj/item/food/fishmeat/carp,
+/obj/item/food/fishmeat/carp,
 /obj/item/reagent_containers/condiment/pack/ketchup,
 /obj/item/reagent_containers/condiment/pack/ketchup,
 /obj/item/reagent_containers/condiment/pack/ketchup,
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "us" = (
@@ -334,9 +336,9 @@
 /obj/item/reagent_containers/glass/bottle/curare,
 /obj/item/melee/knife/survival,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/meat/slab/human,
-/obj/item/reagent_containers/food/snacks/meat/slab/human,
-/obj/item/reagent_containers/food/snacks/meat/slab/human,
+/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Bq" = (
@@ -412,7 +414,7 @@
 "GK" = (
 /obj/item/clothing/head/bearpelt,
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/burger/fish,
+/obj/item/food/burger/fish,
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = -4
 	},
@@ -476,13 +478,22 @@
 /obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/carpet,
 /area/ruin/powered)
+"OI" = (
+/obj/effect/landmark/mission_poi/guard{
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals;
+	mission_index = 2
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "Pp" = (
 /obj/effect/spawner/random/vending/snack,
 /turf/open/floor/holofloor/wood,
 /area/ruin/powered)
 "PQ" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper{
+	weapon_drop_chance = 100
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/ruin/powered)
@@ -539,7 +550,7 @@
 "UI" = (
 /obj/machinery/washing_machine,
 /obj/effect/decal/cleanable/blood,
-/obj/item/reagent_containers/food/snacks/meat/slab/corgi,
+/obj/item/food/meat/slab/corgi,
 /turf/open/floor/wood,
 /area/ruin/powered)
 "Vn" = (
@@ -981,7 +992,7 @@ Og
 Og
 Og
 zT
-Og
+OI
 Og
 zT
 Og
@@ -1070,9 +1081,9 @@ Vn
 Og
 zT
 Og
-Og
-Og
 Bq
+Og
+hY
 Og
 Og
 Og

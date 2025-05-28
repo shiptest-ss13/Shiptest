@@ -208,10 +208,6 @@
 	},
 /obj/structure/table/wood/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/food/breadslice/moldy{
-	pixel_x = 3;
-	pixel_y = 6
-	},
 /obj/item/storage/fancy/nugget_box{
 	pixel_y = 10;
 	pixel_x = -5
@@ -240,7 +236,7 @@
 	pixel_y = 16;
 	pixel_x = 3
 	},
-/obj/item/reagent_containers/food/snacks/grown/berries{
+/obj/item/food/grown/berries{
 	pixel_x = -8;
 	pixel_y = 12
 	},
@@ -270,7 +266,7 @@
 /turf/open/water/beach,
 /area/ruin/unpowered)
 "km" = (
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -298,7 +294,7 @@
 /area/ruin/unpowered)
 "lL" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "mG" = (
@@ -562,7 +558,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "sC" = (
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "sQ" = (
@@ -1278,7 +1274,7 @@
 	pixel_x = 16;
 	pixel_y = 6
 	},
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
 "SD" = (
@@ -1289,6 +1285,11 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured,
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured;
+	mission_index = 1
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
 "SX" = (
@@ -1429,7 +1430,7 @@
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
 	pixel_y = 32
 	},
-/mob/living/simple_animal/hostile/cockroach,
+/mob/living/basic/cockroach,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/treasure_cove)
 "Xp" = (
@@ -1469,7 +1470,7 @@
 	pixel_y = -20
 	},
 /obj/structure/flora/ausbushes/ppflowers,
-/mob/living/simple_animal/hostile/rat,
+/mob/living/basic/mouse/rat,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
 "YL" = (

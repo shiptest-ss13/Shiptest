@@ -8,7 +8,7 @@
 	item_state = "combat"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 	strip_delay = 40
 	resistance_flags = NONE
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
@@ -51,12 +51,13 @@
 	desc = "A pair of magic black shoes."
 	name = "magic shoes"
 	icon_state = "black"
-	resistance_flags = FIRE_PROOF |  ACID_PROOF
+	icon = 'icons/obj/clothing/feet/color.dmi'
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/shoes/sandal/magic
 	name = "magical sandals"
 	desc = "A pair of sandals imbued with magic."
-	resistance_flags = FIRE_PROOF |  ACID_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/shoes/galoshes
 	desc = "A pair of yellow rubber boots, designed to prevent slipping on wet surfaces."
@@ -177,7 +178,7 @@
 	strip_delay = 30
 	custom_price = 2500
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 	var/jumpdistance = 5 //-1 from to see the actual distance, e.g 4 goes over 3 tiles
 	var/jumpspeed = 3
 	var/recharging_rate = 60 //default 6 seconds between each dash
@@ -196,17 +197,17 @@
 		return
 
 	if(recharging_time > world.time)
-		to_chat(user, "<span class='warning'>The boot's internal propulsion needs to recharge still!</span>")
+		to_chat(user, span_warning("The boot's internal propulsion needs to recharge still!"))
 		return
 
 	var/atom/target = get_edge_target_turf(user, user.dir) //gets the user's direction
 
 	if (user.throw_at(target, jumpdistance, jumpspeed, spin = FALSE, diagonals_first = TRUE))
 		playsound(src, 'sound/effects/stealthoff.ogg', 50, TRUE, TRUE)
-		user.visible_message("<span class='warning'>[usr] dashes forward into the air!</span>")
+		user.visible_message(span_warning("[usr] dashes forward into the air!"))
 		recharging_time = world.time + recharging_rate
 	else
-		to_chat(user, "<span class='warning'>Something prevents you from dashing forward!</span>")
+		to_chat(user, span_warning("Something prevents you from dashing forward!"))
 
 /obj/item/clothing/shoes/kindleKicks
 	name = "Kindle Kicks"
@@ -273,7 +274,7 @@
 	if(slot == ITEM_SLOT_FEET)
 		for(var/mob/living/occupant in occupants)
 			occupant.forceMove(user.drop_location())
-			user.visible_message("<span class='warning'>[user] recoils as something slithers out of [src].</span>", "<span class='userdanger'>You feel a sudden stabbing pain in your [pick("foot", "toe", "ankle")]!</span>")
+			user.visible_message(span_warning("[user] recoils as something slithers out of [src]."), span_userdanger("You feel a sudden stabbing pain in your [pick("foot", "toe", "ankle")]!"))
 			user.Knockdown(20) //Is one second paralyze better here? I feel you would fall on your ass in some fashion.
 			user.apply_damage(5, BRUTE, pick(BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))
 			if(istype(occupant, /mob/living/simple_animal/hostile/retaliate/poison))
@@ -285,12 +286,12 @@
 	if(!(user.mobility_flags & MOBILITY_USE) || user.stat != CONSCIOUS || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) || !Adjacent(user) || !user.Adjacent(target) || target.stat == DEAD)
 		return
 	if(occupants.len >= max_occupants)
-		to_chat(user, "<span class='warning'>[src] are full!</span>")
+		to_chat(user, span_warning("[src] are full!"))
 		return
 	if(istype(target, /mob/living/simple_animal/hostile/retaliate/poison/snake) || istype(target, /mob/living/simple_animal/hostile/headcrab) || istype(target, /mob/living/carbon/alien/larva))
 		occupants += target
 		target.forceMove(src)
-		to_chat(user, "<span class='notice'>[target] slithers into [src].</span>")
+		to_chat(user, span_notice("[target] slithers into [src]."))
 
 /obj/item/clothing/shoes/cowboy/container_resist_act(mob/living/user)
 	if(!do_after(user, 10, target = user))

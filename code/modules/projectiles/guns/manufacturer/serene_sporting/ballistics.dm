@@ -1,4 +1,4 @@
-#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun)
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
 #define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
 
 /* Micro Target */
@@ -27,8 +27,8 @@
 
 	w_class = WEIGHT_CLASS_SMALL
 
-	spread = 25
-	spread_unwielded = 45
+	spread = 15
+	spread_unwielded = 35
 	recoil = -2
 	recoil_unwielded = -2
 
@@ -50,6 +50,7 @@
 	default_attachments = list(/obj/item/attachment/m17_barrel)
 
 EMPTY_GUN_HELPER(automatic/pistol/m17)
+NO_MAG_GUN_HELPER(automatic/pistol/m17)
 
 /obj/item/ammo_box/magazine/m17
 	name = "Model 17 magazine (.22lr)"
@@ -95,6 +96,17 @@ EMPTY_GUN_HELPER(automatic/pistol/m17)
 	recoil_unwielded = 4
 	recoil = 1
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 33,
+			"y" = 22,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 17,
+		)
+	)
+
 NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 
 /obj/item/ammo_box/magazine/m20_auto_elite
@@ -115,11 +127,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	desc = "A large handgun chambered .44 Roumain and manufactured by Serene Outdoors. Modified to Inteq Risk Management Group's standards and issued as a heavy sidearm for officers."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/serene_outdoors/onmob.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "m20_inteq"
-	item_state = "inteq_generic"
+	item_state = "m20_inteq"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m20_auto_elite
 	allowed_ammo_types = list(
@@ -209,11 +221,101 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 	icon_state = "larker"
 	item_state = "larker"
 
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "triptych")
 	default_firemode = FIREMODE_BURST
 
 EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
+
+/* woodsman */
+
+/obj/item/gun/ballistic/automatic/marksman/woodsman
+	name = "Model 23 Woodsman"
+	desc = "A large semi-automatic hunting rifle manufactured by Serene Outdoors. Its powerful cartridge, excellent ergonomics and ease of use make it highly popular for hunting big game Chambered in 8x50mmR."
+
+	icon = 'icons/obj/guns/manufacturer/serene_outdoors/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/serene_outdoors/onmob.dmi'
+	icon_state = "woodsman"
+	item_state = "woodsman"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/m23
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m23,
+	)
+
+	unique_mag_sprites_for_variants = TRUE
+
+	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
+
+	manufacturer = MANUFACTURER_SERENE
+	show_magazine_on_sprite = TRUE
+
+	bolt_type = BOLT_TYPE_LOCKING
+
+	slot_flags = ITEM_SLOT_BACK
+
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+
+	slot_flags = ITEM_SLOT_BACK
+
+	spread = -4
+	spread_unwielded = 20
+	recoil = 1.25
+	recoil_unwielded = 6
+	fire_delay = 0.5 SECONDS
+	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
+	zoom_out_amt = 2
+
+	can_be_sawn_off = FALSE
+
+	valid_attachments = SERENE_ATTACHMENTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+		)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 32,
+			"y" = 18,
+		)
+	)
+
+EMPTY_GUN_HELPER(automatic/marksman/woodsman)
+NO_MAG_GUN_HELPER(automatic/marksman/woodsman)
+
+/obj/item/ammo_box/magazine/m23
+	name = "Model 23 magazine (8x50mmR)"
+	desc = "A 5-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
+	icon_state = "woodsman_mag-1"
+	base_icon_state = "woodsman_mag"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	caliber = "8x50mmR"
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m23/empty
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/m23/extended
+	name = "Model 23 Extended Magazine (8x50mmR)"
+	desc = "A 10-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
+	icon_state = "woodsman_extended-1"
+	base_icon_state = "woodsman_extended"
+	max_ammo = 10
+
+/obj/item/ammo_box/magazine/m23/extended/empty
+	start_empty = TRUE
 
 /* super soaker */
 
@@ -273,6 +375,7 @@ EMPTY_GUN_HELPER(automatic/m12_sporter/mod)
 	)
 
 EMPTY_GUN_HELPER(automatic/m15)
+NO_MAG_GUN_HELPER(automatic/m15)
 
 /obj/item/ammo_box/magazine/m15
 	name = "Model 15 magazine (5.56x42mm CLIP)"
@@ -311,8 +414,8 @@ EMPTY_GUN_HELPER(automatic/m15)
 
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 
-	spread = 4
-	spread_unwielded = 16
+	spread = 3
+	spread_unwielded = 15
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = SHOTGUN_SLOWDOWN
@@ -331,8 +434,8 @@ EMPTY_GUN_HELPER(automatic/m15)
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 16,
-			"y" = 22,
+			"x" = 35,
+			"y" = 17,
 		)
 	)
 

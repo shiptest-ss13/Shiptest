@@ -14,13 +14,16 @@
 		/obj/item/reagent_containers/hypospray/medipen/synap = 6,
 		/obj/item/reagent_containers/hypospray/medipen/mannitol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/tricord = 6,
-		/obj/item/reagent_containers/hypospray/medipen/morphine = 6,
+		/obj/item/reagent_containers/hypospray/medipen/tramal = 6,
 		/obj/item/reagent_containers/hypospray/medipen/antihol = 10,
 		/obj/item/reagent_containers/hypospray/medipen/anti_rad = 10,
+		/obj/item/storage/pill_bottle/licarb = 4,
+		/obj/item/reagent_containers/syringe/stasis = 4
 	)
 	premium = list(
 		/obj/item/reagent_containers/medigel/styptic = 3,
 		/obj/item/reagent_containers/medigel/silver_sulf = 3,
+		/obj/item/storage/pill_bottle/stardrop = 5
 		)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF

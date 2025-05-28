@@ -3,8 +3,8 @@
 #define JUMP_STATE_IONIZING 2
 #define JUMP_STATE_FIRING 3
 #define JUMP_STATE_FINALIZED 4
-#define JUMP_CHARGE_DELAY (20 SECONDS)
-#define JUMP_CHARGEUP_TIME (3 MINUTES)
+#define JUMP_CHARGE_DELAY (7 SECONDS)
+#define JUMP_CHARGEUP_TIME (1 MINUTES)
 
 /obj/machinery/computer/helm
 	name = "helm control console"
@@ -23,16 +23,20 @@
 	var/viewer = FALSE
 	/// When are we allowed to jump
 	var/jump_allowed
-	/// Current state of our jump
+	/// The current state of our jump
 	var/jump_state = JUMP_STATE_OFF
-	///if we are calibrating the jump
+	/// Are we calibrating the jump?
 	var/calibrating = FALSE
-	///holding jump timer ID
+	/// Jump timer ID holder
 	var/jump_timer
-	///is the AI allowed to control this helm console
+	/// Is the AI allowed to control this helm console?
 	var/allow_ai_control = FALSE
-	/// store an ntnet relay for tablets on the ship
+	/// Store an ntnet relay for tablets on the ship
 	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
+	/// Where are we jumping to, if null, deletes the ship
+	var/datum/overmap_star_system/jump_destination
+	/// If we are jumping, what cords are we jumping to?
+	var/list/jump_coords
 
 /obj/machinery/computer/helm/retro
 	icon = 'icons/obj/machines/retro_computer.dmi'
@@ -45,16 +49,21 @@
 	deconpath = /obj/structure/frame/computer/solgov
 
 /datum/config_entry/number/bluespace_jump_wait
-	default = 30 MINUTES
+	default = 5 MINUTES
 
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	if(!viewer)
-		SSpoints_of_interest.make_point_of_interest(src)
 	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
 
-/obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
+/obj/machinery/computer/helm/examine(mob/user)
+	. = ..()
+	ui_interact(usr)
+
+/obj/machinery/computer/helm/proc/calibrate_jump(datum/overmap_star_system/new_system, list/newpos)
+	///We are already jumping, don't calibrate again!
+	if(jump_state != JUMP_STATE_OFF || calibrating)
+		return
 	if(jump_allowed < 0)
 		say("Bluespace Jump Calibration offline. Please contact your system administrator.")
 		return
@@ -65,11 +74,15 @@
 		var/jump_wait = DisplayTimeText(jump_allowed - world.time)
 		say("Bluespace Jump Calibration is currently recharging. ETA: [jump_wait].")
 		return
-	if(jump_state != JUMP_STATE_OFF && !inline)
-		return // This exists to prefent Href exploits to call process_jump more than once by a client
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
-	priority_announce("Bluespace jump calibration initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+	if(new_system)
+		priority_announce("Bluespace jump calibration to destination [new_system.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+		jump_destination = new_system
+		jump_coords = newpos
+	else
+		priority_announce("Bluespace jump calibration initialized. Exitting Frontier. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+
 	calibrating = TRUE
 	return TRUE
 
@@ -84,8 +97,11 @@
 		current_ship = null
 
 /obj/machinery/computer/helm/proc/cancel_jump()
+	if(!calibrating)
+		return
 	priority_announce("Bluespace Pylon spooling down. Jump calibration aborted.", sender_override = "[current_ship.name] Bluespace Pylon", zlevel = virtual_z())
 	calibrating = FALSE
+	jump_coords = null
 	deltimer(jump_timer)
 
 /obj/machinery/computer/helm/proc/jump_sequence()
@@ -107,10 +123,25 @@
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGE_DELAY, TIMER_STOPPABLE)
 
 /obj/machinery/computer/helm/proc/do_jump()
-	priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
-	qdel(current_ship)
+	if(jump_destination)
+		priority_announce("Bluespace Jump Initiated. Welcome to [jump_destination.name]", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+	else
+		priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
+	if(!jump_destination)
+		qdel(current_ship)
+		return
+	if(jump_coords)
+		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
+	else
+		current_ship.move_overmaps(jump_destination)
+	jump_destination = null
+	jump_state = JUMP_STATE_OFF
+	jump_coords = null
+	calibrating = FALSE
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	if(!viewer)
+		SSpoints_of_interest.make_point_of_interest(src)
 	if(current_ship && current_ship != port.current_ship)
 		current_ship.helms -= src
 	current_ship = port.current_ship
@@ -170,8 +201,9 @@
 		return
 
 	.["calibrating"] = calibrating
+	.["canRename"] = COOLDOWN_FINISHED(current_ship, rename_cooldown)
 	.["otherInfo"] = list()
-	var/list/objects = current_ship.get_nearby_overmap_objects()
+	var/list/objects = current_ship.get_nearby_overmap_objects(empty_if_src_docked = FALSE)
 	var/dequeue_pointer = 0
 	while (dequeue_pointer++ < objects.len)
 		var/datum/overmap/ship/controlled/object = objects[dequeue_pointer]
@@ -181,23 +213,21 @@
 		var/available_dock = FALSE
 
 		//Even if its full or incompatible with us, it should still show up.
-		if(object in SSovermap.overmap_container[current_ship.x][current_ship.y])
+		if(object in current_ship.current_overmap.overmap_container[current_ship.x][current_ship.y])
 			available_dock = TRUE
 
 		//Detect any ships in this location we can dock to
-		if(istype(object))
+		if(istype(object) && object.shuttle_port)
 			for(var/obj/docking_port/stationary/docking_port as anything in object.shuttle_port.docking_points)
-				if(current_ship.shuttle_port.check_dock(docking_port, silent = TRUE))
+				if(current_ship.shuttle_port.check_dock(docking_port, silent = TRUE, intention_to_dock = FALSE))
 					available_dock = TRUE
 					break
 
 		objects |= object.contents
 
-		if(!available_dock)
-			continue
-
 		var/list/other_data = list(
 			name = object.name,
+			candock = available_dock,
 			ref = REF(object)
 		)
 		.["otherInfo"] += list(other_data)
@@ -207,6 +237,7 @@
 	.["docking"] = current_ship.docking
 	.["docked"] = current_ship.docked_to
 	.["heading"] = dir2text(current_ship.get_heading()) || "None"
+	.["sector"] = current_ship.current_overmap.name
 	.["speed"] = current_ship.get_speed()
 	.["eta"] = current_ship.get_eta()
 	.["estThrust"] = current_ship.est_thrust
@@ -243,8 +274,9 @@
 	.["isViewer"] = viewer || (!allow_ai_control && issilicon(user))
 	.["mapRef"] = current_ship.token.map_name
 	.["shipInfo"] = list(
-		name = current_ship.name,
-		class = current_ship.source_template?.name,
+		name = current_ship.real_name,
+		prefixed = current_ship.name,
+		class = current_ship.source_template.name,
 		mass = current_ship.shuttle_port.turf_count,
 		sensor_range = 4
 	)
@@ -269,13 +301,16 @@
 			if(!new_name)
 				return
 			new_name = trim(new_name)
-			if (!length(new_name) || new_name == current_ship.name)
+			if (!length(new_name) || new_name == current_ship.real_name)
 				return
-			if(!reject_bad_text(new_name, MAX_CHARTER_LEN))
+			if(!reject_bad_text(new_name, MAX_CHARTER_LEN) || CHAT_FILTER_CHECK(new_name))
 				say("Error: Replacement designation rejected by system.")
+				return
+			if(tgui_alert(usr, "Are you sure you want to rename the ship to the \"[current_ship.source_template.prefix] [new_name]\"?", "Rename Confirmation", list("Yes", "No")) != "Yes")
 				return
 			if(!current_ship.Rename(new_name))
 				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed.")
+				return
 			update_static_data(usr, ui)
 			return
 		if("reload_ship")
@@ -287,10 +322,19 @@
 			return
 		if("toggle_ai_control")
 			if(issilicon(usr))
-				to_chat(usr, "<span class='warning'>You are unable to toggle AI controls.</span>")
+				to_chat(usr, span_warning("You are unable to toggle AI controls."))
 				return
 			allow_ai_control = !allow_ai_control
 			say(allow_ai_control ? "AI Control has been enabled." : "AI Control is now disabled.")
+			return
+		if("act_overmap")
+			if(SSshuttle.jump_mode > BS_JUMP_CALLED)
+				to_chat(usr, "<span class='warning'>Cannot interact due to bluespace jump preperations!</span>")
+				return
+			var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE, empty_if_src_docked = FALSE)
+			var/feedback_text = current_ship.show_interaction_menu(usr, to_act)
+			if(feedback_text)
+				say(feedback_text)
 			return
 
 	if(jump_state != JUMP_STATE_OFF)
@@ -299,9 +343,9 @@
 
 	if(!current_ship.docked_to && !current_ship.docking)
 		switch(action)
-			if("act_overmap")
+			if("quick_dock")
 				if(SSshuttle.jump_mode > BS_JUMP_CALLED)
-					to_chat(usr, "<span class='warning'>Cannot dock due to bluespace jump preperations!</span>")
+					to_chat(usr, span_warning("Cannot dock due to bluespace jump preperations!"))
 					return
 				var/datum/overmap/to_act = locate(params["ship_to_act"]) in current_ship.get_nearby_overmap_objects(include_docked = TRUE)
 				say(current_ship.Dock(to_act))
@@ -338,10 +382,33 @@
 					cancel_jump()
 					return
 				else
-					if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+					if(length(SSovermap.tracked_star_systems) >= 1)
+						var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
+						for(var/datum/overmap_star_system/current_system as anything in choices)
+							if(!current_system.can_jump_to)
+								LAZYREMOVE(choices, current_system)
+
+						LAZYADD(choices, "Out of the Frontier")
+						LAZYREMOVE(choices, current_ship.current_overmap)
+						var/selected_system = tgui_input_list(usr, "To which system?", "Bluespace Jump", choices)
+						if(selected_system == "Out of the Frontier")
+							if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+								return
+							calibrate_jump()
+							return
+						if(!selected_system)
+							return
+						else
+							jump_destination = selected_system
+						calibrate_jump(selected_system)
 						return
-					calibrate_jump()
-					return
+
+
+					else
+						if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+							return
+						calibrate_jump()
+						return
 			if("dock_empty")
 				current_ship.dock_in_empty_space(usr)
 				return
@@ -390,7 +457,7 @@
 	if(!Adjacent(user))
 		return
 
-	to_chat(user, "<span class='warning'>You begin to manually override the local database...</span>")
+	to_chat(user, span_warning("You begin to manually override the local database..."))
 	if(!do_after(user, 2 SECONDS, list(src)))
 		return COMPONENT_BLOCK_TOOL_ATTACK
 

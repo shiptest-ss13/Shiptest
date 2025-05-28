@@ -159,6 +159,13 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/structure/bed/dogbed{
+	name = "Kitty's Bed"
+	},
+/mob/living/simple_animal/hostile/asteroid/gutlunch/guthen{
+	name = "Kitty";
+	faction = list("neutral")
+	},
 /turf/open/floor/carpet,
 /area/ship/crew)
 "dT" = (
@@ -476,9 +483,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/ship/hallway/central)
 "lj" = (
-/obj/machinery/power/shuttle/engine/fueled/plasma{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/fire,
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engine)
 "mt" = (
@@ -984,7 +989,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "xo" = (
-/obj/structure/dresser,
+/obj/structure/closet/cabinet,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
@@ -992,6 +997,16 @@
 	pixel_x = 22;
 	pixel_y = -6
 	},
+/obj/item/storage/backpack,
+/obj/item/storage/backpack/satchel,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/shoes/sneakers/black,
+/obj/item/clothing/under/utility,
+/obj/item/clothing/under/utility,
+/obj/item/clothing/under/utility/skirt,
+/obj/item/clothing/under/utility/skirt,
+/obj/item/clothing/head/soft/utility_olive,
+/obj/item/clothing/head/soft/utility_olive,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "xp" = (
@@ -1099,22 +1114,20 @@
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/portable_atmospherics/canister/fuel,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "zx" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /obj/machinery/door/poddoor{
 	dir = 4;
 	id = "mudskipper_engine"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -1212,9 +1225,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "BA" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = 24
-	},
+/obj/machinery/advanced_airlock_controller/directional/north,
 /obj/structure/chair/handrail,
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4{
 	dir = 8
@@ -1404,8 +1415,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
 "Ft" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/structure/curtain/bounty,
 /obj/machinery/light_switch{
 	dir = 1;
@@ -1961,8 +1976,8 @@
 	anchored = 1;
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/spline/fancy/opaque/grey,
 /turf/open/floor/plasteel/dark,
@@ -2068,11 +2083,16 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "UZ" = (
-/obj/structure/table,
+/obj/structure/dresser{
+	dir = 4;
+	pixel_x = -4
+	},
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/flashlight/lamp/green{
-	pixel_y = 4
+	pixel_y = 11;
+	pixel_x = -4;
+	layer = 3.41
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -2095,8 +2115,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Vy" = (
-/obj/structure/bed,
-/obj/effect/spawner/random/bedsheet,
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /obj/structure/curtain/bounty,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/dim/directional/north,

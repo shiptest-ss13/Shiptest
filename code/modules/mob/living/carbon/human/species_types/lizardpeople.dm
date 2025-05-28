@@ -16,7 +16,7 @@
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
+	meat = /obj/item/food/meat/slab/human/mutant/lizard
 	skinned_type = /obj/item/stack/sheet/animalhide/lizard
 	exotic_bloodtype = "L"
 	disliked_food = GRAIN | DAIRY | CLOTH | GROSS
@@ -66,6 +66,11 @@
 		internal_lighter = new
 		internal_lighter.Grant(C)
 
+/datum/species/lizard/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(chem.type == /datum/reagent/fuel)
+		return TRUE
+	return ..()
+
 /datum/action/innate/liz_lighter
 	name = "Ignite"
 	desc = "(Requires you to drink welding fuel beforehand)"
@@ -78,11 +83,11 @@
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/lighter/liz/N = new(H)
 	if(H.put_in_hands(N))
-		to_chat(H, "<span class='notice'>You ignite a small flame in your mouth.</span>")
+		to_chat(H, span_notice("You ignite a small flame in your mouth."))
 		H.reagents.del_reagent(/datum/reagent/fuel,4)
 	else
 		qdel(N)
-		to_chat(H, "<span class='warning'>You don't have any free hands.</span>")
+		to_chat(H, span_warning("You don't have any free hands."))
 
 /datum/action/innate/liz_lighter/IsAvailable()
 	if(..())

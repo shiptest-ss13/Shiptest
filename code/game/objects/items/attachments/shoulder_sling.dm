@@ -10,7 +10,7 @@
 	render_plane = BELOW_OBJ_LAYER
 	wield_delay = 0.2 SECONDS
 
-	var/check_size = TRUE
+	var/check_size = FALSE
 
 /obj/item/attachment/sling/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()

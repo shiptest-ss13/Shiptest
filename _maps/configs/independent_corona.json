@@ -1,0 +1,37 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "S-700i Corona-class Touring Vessel",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "ISF Spacecraft",
+	"namelists": [
+		"GENERAL",
+		"SPACE"
+	],
+	"map_short_name": "Corona-class",
+	"map_path": "_maps/shuttles/independent/independent_corona.dmm",
+	"token_icon_state": "ship_small_generic",
+	"description": "Designed by Cybersun Industries with production outsourced to ISF Spacecraft, the S-700i Corona-class Touring Vessel is Cybersun's premier solution to eco-friendly travel. Boasting a powerful clean energy solar array down it's sleek profile, the Corona is not just a mode of transportation; but a statement of opulence and eco-mindfulness in an ever-boorish Frontier.",
+	"tags": [
+		"Generalist",
+		"Service"
+	],
+	"starting_funds": 6000,
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/independent/assistant/fancy",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

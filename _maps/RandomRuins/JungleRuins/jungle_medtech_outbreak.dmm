@@ -1041,8 +1041,7 @@
 	},
 /obj/machinery/computer/cargo{
 	dir = 4;
-	name = "Cargo computer";
-	obj_integrity = null
+	name = "Cargo computer"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
@@ -1256,7 +1255,7 @@
 	pixel_x = 1;
 	pixel_y = 10
 	},
-/obj/item/reagent_containers/food/snacks/donut/choco{
+/obj/item/food/donut/choco{
 	pixel_x = -2;
 	pixel_y = 2
 	},
@@ -2119,7 +2118,7 @@
 	pixel_y = -33;
 	specialfunctions = 4
 	},
-/obj/machinery/computer/rdconsole{
+/obj/structure/salvageable/computer{
 	dir = 1
 	},
 /obj/machinery/button/door{

@@ -53,12 +53,12 @@
 		give_payout(balance)
 	return ..()
 
-/obj/machinery/computer/slot_machine/process()
+/obj/machinery/computer/slot_machine/process(seconds_per_tick)
 	. = ..() //Sanity checks.
 	if(!.)
 		return .
 
-	money++ //SPESSH MAJICKS
+	money += round(seconds_per_tick / 2) //SPESSH MAJICKS
 
 /obj/machinery/computer/slot_machine/update_icon_state()
 	if(machine_stat & NOPOWER)
@@ -114,12 +114,12 @@
 		<B>Credit Remaining:</B> [balance]<BR>
 		[plays] players have tried their luck today, and [jackpots] have won a jackpot!<BR>
 		<HR><BR>
-		<A href='?src=[REF(src)];spin=1'>Play!</A><BR>
+		<A href='byond://?src=[REF(src)];spin=1'>Play!</A><BR>
 		<BR>
 		[reeltext]
 		<BR>"}
 		if(balance > 0)
-			dat+="<font size='1'><A href='?src=[REF(src)];refund=1'>Refund Balance</A><BR>"
+			dat+="<font size='1'><A href='byond://?src=[REF(src)];refund=1'>Refund Balance</A><BR>"
 
 	var/datum/browser/popup = new(user, "slotmachine", "Slot Machine")
 	popup.set_content(dat)

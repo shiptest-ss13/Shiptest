@@ -17,14 +17,14 @@
 		return
 	var/msg
 	if(!can_cast(user))
-		msg = "<span class='warning'>You can no longer cast [name]!</span>"
+		msg = span_warning("You can no longer cast [name]!")
 		remove_ranged_ability(msg)
 		return
 	if(active)
-		msg = "<span class='notice'>[deactive_msg]</span>"
+		msg = span_notice("[deactive_msg]")
 		remove_ranged_ability(msg)
 	else
-		msg = "<span class='notice'>[active_msg] <B>Left-click to activate spell on a target!</B></span>"
+		msg = span_notice("[active_msg] <B>Left-click to activate spell on a target!</B>")
 		add_ranged_ability(user, msg, TRUE)
 
 /obj/effect/proc_holder/spell/pointed/on_lose(mob/living/user)
@@ -64,21 +64,21 @@
 	action.button_icon_state = "[action_icon_state][active ? 1 : null]"
 	action.UpdateButtonIcon()
 
-/obj/effect/proc_holder/spell/pointed/InterceptClickOn(mob/living/caller, params, atom/target)
+/obj/effect/proc_holder/spell/pointed/InterceptClickOn(mob/living/clicker, params, atom/target)
 	if(..())
 		return TRUE
 	if(aim_assist && isturf(target))
 		var/list/possible_targets = list()
 		for(var/A in target)
-			if(intercept_check(caller, A, TRUE))
+			if(intercept_check(clicker, A, TRUE))
 				possible_targets += A
 		if(possible_targets.len == 1)
 			target = possible_targets[1]
-	if(!intercept_check(caller, target))
+	if(!intercept_check(clicker, target))
 		return TRUE
-	if(!cast_check(FALSE, caller))
+	if(!cast_check(FALSE, clicker))
 		return TRUE
-	perform(list(target), user = caller)
+	perform(list(target), user = clicker)
 	remove_ranged_ability()
 	return TRUE // Do not do any underlying actions after the spell cast
 
@@ -93,11 +93,11 @@
 /obj/effect/proc_holder/spell/pointed/proc/intercept_check(mob/user, atom/target, silent = FALSE)
 	if(!self_castable && target == user)
 		if(!silent)
-			to_chat(user, "<span class='warning'>You cannot cast the spell on yourself!</span>")
+			to_chat(user, span_warning("You cannot cast the spell on yourself!"))
 		return FALSE
 	if(!(target in view_or_range(range, user, selection_type)))
 		if(!silent)
-			to_chat(user, "<span class='warning'>[target.p_theyre(TRUE)] too far away!</span>")
+			to_chat(user, span_warning("[target.p_theyre(TRUE)] too far away!"))
 		return FALSE
 	if(!can_target(target, user, silent))
 		return FALSE

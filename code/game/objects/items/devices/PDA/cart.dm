@@ -239,15 +239,15 @@ Code:
 		if (42) //status displays
 			menu = "<h4>[PDAIMG(status)] Station Status Display Interlink</h4>"
 
-			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=blank'>Clear</A> \]<BR>"
-			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=shuttle'>Shuttle ETA</A> \]<BR>"
-			menu += "\[ <A HREF='?src=[REF(src)];choice=Status;statdisp=message'>Message</A> \]"
-			menu += "<ul><li> Line 1: <A HREF='?src=[REF(src)];choice=Status;statdisp=setmsg1'>[ message1 ? message1 : "(None)"]</A>"
-			menu += "<li> Line 2: <A HREF='?src=[REF(src)];choice=Status;statdisp=setmsg2'>[ message2 ? message2 : "(None)"]</A></ul><br>"
-			menu += "\[ Alert: <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=default'>None</A> |"
-			menu += " <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=redalert'>Red Alert</A> |"
-			menu += " <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=lockdown'>Lockdown</A> |"
-			menu += " <A HREF='?src=[REF(src)];choice=Status;statdisp=alert;alert=biohazard'>Biohazard</A> \]<BR>"
+			menu += "\[ <A href='byond://?src=[REF(src)];choice=Status;statdisp=blank'>Clear</A> \]<BR>"
+			menu += "\[ <A href='byond://?src=[REF(src)];choice=Status;statdisp=shuttle'>Shuttle ETA</A> \]<BR>"
+			menu += "\[ <A href='byond://?src=[REF(src)];choice=Status;statdisp=message'>Message</A> \]"
+			menu += "<ul><li> Line 1: <A href='byond://?src=[REF(src)];choice=Status;statdisp=setmsg1'>[ message1 ? message1 : "(None)"]</A>"
+			menu += "<li> Line 2: <A href='byond://?src=[REF(src)];choice=Status;statdisp=setmsg2'>[ message2 ? message2 : "(None)"]</A></ul><br>"
+			menu += "\[ Alert: <A href='byond://?src=[REF(src)];choice=Status;statdisp=alert;alert=default'>None</A> |"
+			menu += " <A href='byond://?src=[REF(src)];choice=Status;statdisp=alert;alert=redalert'>Red Alert</A> |"
+			menu += " <A href='byond://?src=[REF(src)];choice=Status;statdisp=alert;alert=lockdown'>Lockdown</A> |"
+			menu += " <A href='byond://?src=[REF(src)];choice=Status;statdisp=alert;alert=biohazard'>Biohazard</A> \]<BR>"
 
 		if (43)
 			menu = "<h4>[PDAIMG(power)] Power Monitors - Please select one</h4><BR>"
@@ -270,7 +270,7 @@ Code:
 
 
 			if(!powercount)
-				menu += "<span class='danger'>No connection<BR></span>"
+				menu += span_danger("No connection<BR>")
 			else
 
 				menu += "<FONT SIZE=-1>"
@@ -284,7 +284,7 @@ Code:
 		if (433)
 			menu = "<h4>[PDAIMG(power)] Power Monitor </h4><BR>"
 			if(!powmonitor || !powmonitor.get_powernet())
-				menu += "<span class='danger'>No connection<BR></span>"
+				menu += span_danger("No connection<BR>")
 			else
 				var/list/L = list()
 				var/datum/powernet/connected_powernet = powmonitor.get_powernet()

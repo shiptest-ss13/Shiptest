@@ -11,7 +11,7 @@
 	icon_state = "mime_skirt"
 	item_state = "mime"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/civilian/mime/sexy
@@ -20,7 +20,7 @@
 	icon_state = "sexymime"
 	item_state = "sexymime"
 	body_parts_covered = CHEST|GROIN|LEGS
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown
 	name = "clown suit"
@@ -33,48 +33,48 @@
 	desc = "<i>'BLUE HONK!'</i>"
 	icon_state = "blueclown"
 	item_state = "blueclown"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown/green
 	name = "green clown suit"
 	desc = "<i>'GREEN HONK!'</i>"
 	icon_state = "greenclown"
 	item_state = "greenclown"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown/yellow
 	name = "yellow clown suit"
 	desc = "<i>'YELLOW HONK!'</i>"
 	icon_state = "yellowclown"
 	item_state = "yellowclown"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown/purple
 	name = "purple clown suit"
 	desc = "<i>'PURPLE HONK!'</i>"
 	icon_state = "purpleclown"
 	item_state = "purpleclown"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown/orange
 	name = "orange clown suit"
 	desc = "<i>'ORANGE HONK!'</i>"
 	icon_state = "orangeclown"
 	item_state = "orangeclown"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown/rainbow
 	name = "rainbow clown suit"
 	desc = "<i>'R A I N B O W HONK!'</i>"
 	icon_state = "rainbowclown"
 	item_state = "rainbowclown"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown/jester
 	name = "jester suit"
 	desc = "A jolly dress, well suited to entertain your master, nuncle."
 	icon_state = "jester"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown/jester/alt
 	icon_state = "jester2"
@@ -84,7 +84,7 @@
 	desc = "It makes you look HONKable!"
 	icon_state = "sexyclown"
 	item_state = "sexyclown"
-	can_adjust = FALSE
+
 
 /obj/item/clothing/under/rank/civilian/clown/Initialize()
 	. = ..()

@@ -55,6 +55,13 @@
 	///sets the icon path of the onmob blood overlay created by this object. syntax is "[var]blood"
 	var/blood_overlay_type = "uniform"
 
+	var/vision_flags = 0
+	var/darkness_view = 2//Base human is 2
+	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
+	var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
+	var/lighting_alpha
+	var/list/icon/current = list() //the current hud icons
+
 /obj/item/clothing/Initialize()
 	if((clothing_flags & VOICEBOX_TOGGLABLE))
 		actions_types += /datum/action/item_action/toggle_voice_box
@@ -100,7 +107,7 @@
 		if(QDELETED(src))
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
-		to_chat(user, "<span class='notice'>You cut the [src] into strips with [tool].</span>")
+		to_chat(user, span_notice("You cut the [src] into strips with [tool]."))
 		var/obj/item/stack/sheet/cotton/cloth/cloth = new (get_turf(src), clothamnt)
 		user.put_in_hands(cloth)
 		qdel(src)
@@ -108,11 +115,11 @@
 	if(damaged_clothes && istype(tool, /obj/item/stack/sheet/cotton/cloth))
 		var/obj/item/stack/sheet/cotton/cloth/cloth = tool
 		if(!cloth.use(1))
-			to_chat(user, "<span class='notice'>You fail to fix the damage on [src].</span>")
+			to_chat(user, span_notice("You fail to fix the damage on [src]."))
 			return TRUE
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damage on [src] with [cloth].</span>")
+		to_chat(user, span_notice("You fix the damage on [src] with [cloth]."))
 		return TRUE
 	return ..()
 
@@ -179,7 +186,7 @@
 		if (1601 to 35000)
 			. += "[src] offers the wearer robust protection from fire."
 	if(damaged_clothes)
-		. += "<span class='warning'>It looks damaged!</span>"
+		. += span_warning("It looks damaged!")
 	var/datum/component/storage/pockets = GetComponent(/datum/component/storage)
 	if(pockets)
 		var/list/how_cool_are_your_threads = list("<span class='notice'>")
@@ -188,7 +195,7 @@
 		else
 			how_cool_are_your_threads += "[src]'s storage opens when dragged to yourself.\n"
 		if (pockets.can_hold?.len) // If pocket type can hold anything, vs only specific items
-			how_cool_are_your_threads += "[src] can store [pockets.max_items] <a href='?src=[REF(src)];show_valid_pocket_items=1'>item\s</a>.\n"
+			how_cool_are_your_threads += "[src] can store [pockets.max_items] <a href='byond://?src=[REF(src)];show_valid_pocket_items=1'>item\s</a>.\n"
 		else
 			how_cool_are_your_threads += "[src] can store [pockets.max_items] item\s that are [weightclass2text(pockets.max_w_class)] or smaller.\n"
 		if(pockets.quickdraw)
@@ -225,7 +232,7 @@
 		durability_list += list("ACID" = armor.acid)
 
 	if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
-		. += "<span class='notice'>It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.</span>"
+		. += span_notice("It has a <a href='byond://?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.")
 
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()
@@ -284,7 +291,7 @@
 		update_clothes_damaged_state(TRUE)
 	if(ismob(loc)) //It's not important enough to warrant a message if nobody's wearing it
 		var/mob/M = loc
-		to_chat(M, "<span class='warning'>Your [name] starts to fall apart!</span>")
+		to_chat(M, span_warning("Your [name] starts to fall apart!"))
 
 //This mostly exists so subtypes can call appriopriate update icon calls on the wearer.
 /obj/item/clothing/proc/update_clothes_damaged_state(damaging = TRUE)
@@ -389,20 +396,20 @@
 	var/list/modes = list("Off", "Binary vitals", "Exact vitals", "Tracking beacon")
 	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
 	if(get_dist(usr, src) > 1)
-		to_chat(usr, "<span class='warning'>You have moved too far away!</span>")
+		to_chat(usr, span_warning("You have moved too far away!"))
 		return
 	sensor_mode = modes.Find(switchMode) - 1
 
 	if (src.loc == usr)
 		switch(sensor_mode)
 			if(0)
-				to_chat(usr, "<span class='notice'>You disable your suit's remote sensing equipment.</span>")
+				to_chat(usr, span_notice("You disable your suit's remote sensing equipment."))
 			if(1)
-				to_chat(usr, "<span class='notice'>Your suit will now only report whether you are alive or dead.</span>")
+				to_chat(usr, span_notice("Your suit will now only report whether you are alive or dead."))
 			if(2)
-				to_chat(usr, "<span class='notice'>Your suit will now only report your exact vital lifesigns.</span>")
+				to_chat(usr, span_notice("Your suit will now only report your exact vital lifesigns."))
 			if(3)
-				to_chat(usr, "<span class='notice'>Your suit will now report your exact vital lifesigns as well as your coordinate position.</span>")
+				to_chat(usr, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position."))
 
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
@@ -426,7 +433,7 @@
 			attached_accessory.attack_hand(user)
 			return
 		else
-			rolldown()
+			toggle_rolldown()
 
 /obj/item/clothing/under/CtrlClick(mob/user)
 	if(..())
@@ -435,38 +442,84 @@
 		remove_accessory(user)
 
 
-/obj/item/clothing/under/verb/jumpsuit_adjust()
-	set name = "Adjust Jumpsuit Style"
+/obj/item/clothing/under/verb/jumpsuit_rollsleeves()
+	set name = "Roll Up/Down Sleeves"
 	set category = null
 	set src in usr
-	rolldown()
+	toggle_sleeves()
 
-/obj/item/clothing/under/proc/rolldown()
+/obj/item/clothing/under/verb/jumpsuit_rolldown()
+	set name = "Roll Down/Up Jumpsuit"
+	set category = null
+	set src in usr
+	toggle_rolldown()
+
+/obj/item/clothing/under/proc/toggle_sleeves()
 	if(!can_use(usr))
 		return
-	if(!can_adjust)
-		to_chat(usr, "<span class='warning'>You cannot wear this suit any differently!</span>")
+	if(!roll_sleeves)
+		to_chat(usr, span_warning("You cannot adjust this uniform's sleeves!"))
 		return
-	if(toggle_jumpsuit_adjust())
-		to_chat(usr, "<span class='notice'>You adjust the suit to wear it more casually.</span>")
+	if(adjusted == ALT_STYLE)
+		to_chat(usr, span_warning("You cannot adjust your uniform's sleeves while your top is rolled down!"))
+		return
+	else if(toggle_jumpsuit_adjust(ROLLED_STYLE))
+		to_chat(usr, span_notice("You roll up your uniform's sleeves."))
 	else
-		to_chat(usr, "<span class='notice'>You adjust the suit back to normal.</span>")
+		to_chat(usr, span_notice("You roll down your uniform's sleeves."))
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		H.update_inv_w_uniform()
 		H.update_body()
 
-/obj/item/clothing/under/proc/toggle_jumpsuit_adjust()
-	if(adjusted == DIGITIGRADE_STYLE)
+/obj/item/clothing/under/proc/toggle_rolldown()
+	if(!can_use(usr))
 		return
-	adjusted = !adjusted
-	if(adjusted)
-		if(!alt_covers_chest) // for the special snowflake suits that expose the chest when adjusted
-			body_parts_covered &= ~CHEST
+	if(!roll_down)
+		to_chat(usr, span_warning("You cannot roll down this uniform's top!"))
+		return
+	if(toggle_jumpsuit_adjust(ALT_STYLE))
+		to_chat(usr, span_notice("You roll down your uniform's top."))
 	else
-		if(!alt_covers_chest)
-			body_parts_covered |= CHEST
-	return adjusted
+		to_chat(usr, span_notice("You roll up your uniform's top."))
+	if(ishuman(usr))
+		var/mob/living/carbon/human/H = usr
+		H.update_inv_w_uniform()
+		H.update_body()
+
+// handles logic of toggling uniform rolling and sleeve rolling
+// if i had more time i would've written a shorter letter
+/obj/item/clothing/under/proc/toggle_jumpsuit_adjust(style)
+	adjusted = !adjusted
+	// are we already using an alternative uniform style?
+	if(adjusted) // we aren't
+		switch(style)
+			if(ALT_STYLE) // we want to roll down our uniform
+				if(!alt_covers_chest) // for outfits that expose the chest when rolled down
+					body_parts_covered &= ~CHEST | ARMS
+					adjusted = ALT_STYLE
+					return adjusted
+				else
+					adjusted = ALT_STYLE
+					return adjusted
+			if(ROLLED_STYLE) // we want to roll up our sleeves
+				body_parts_covered &= ~ARMS
+				adjusted = ROLLED_STYLE
+				return adjusted
+	else // we are, toggle stuff back to normal
+		switch(style)
+			if(ALT_STYLE)
+				if(!alt_covers_chest)
+					body_parts_covered |= CHEST | ARMS
+					adjusted = NORMAL_STYLE
+					return adjusted
+				else
+					adjusted = NORMAL_STYLE
+					return adjusted
+			if(ROLLED_STYLE)
+				body_parts_covered |= ARMS
+				adjusted = NORMAL_STYLE
+				return adjusted
 
 /obj/item/clothing/proc/weldingvisortoggle(mob/user) //proc to toggle welding visors on helmets, masks, goggles, etc.
 	if(!can_use(user))
@@ -474,7 +527,7 @@
 
 	visor_toggling()
 
-	to_chat(user, "<span class='notice'>You adjust \the [src] [up ? "up" : "down"].</span>")
+	to_chat(user, span_notice("You adjust \the [src] [up ? "up" : "down"]."))
 
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
@@ -486,6 +539,7 @@
 
 /obj/item/clothing/proc/visor_toggling() //handles all the actual toggling of flags
 	up = !up
+	SEND_SIGNAL(src, COMSIG_CLOTHING_VISOR_TOGGLE, up)
 	clothing_flags ^= visor_flags
 	flags_inv ^= visor_flags_inv
 	flags_cover ^= initial(flags_cover)
@@ -497,6 +551,7 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/visor_toggling() //handles all the actual toggling of flags
 	up = !up
+	SEND_SIGNAL(src, COMSIG_CLOTHING_VISOR_TOGGLE, up)
 	clothing_flags ^= visor_flags
 	flags_inv ^= visor_flags_inv
 	icon_state = "[initial(icon_state)]"

@@ -74,7 +74,7 @@
 	var/obj/item/multitool/M = I
 	if(M.buffer != null)
 		network = M.buffer
-		to_chat(user, "<span class='notice'>You input network '[M.buffer]' from the multitool's buffer into [src].</span>")
+		to_chat(user, span_notice("You input network '[M.buffer]' from the multitool's buffer into [src]."))
 	return
 
 /obj/machinery/computer/security/ui_interact(mob/user, datum/tgui/ui)
@@ -157,12 +157,6 @@
 			))
 	return data
 
-//This is the only way to refresh the UI, from what I've found
-/obj/machinery/computer/security/proc/ui_refresh(mob/user, datum/tgui/ui)
-	ui.close()
-	ui_interact(user, ui)
-	show_camera_static()
-
 /obj/machinery/computer/security/ui_act(action, params, ui)
 	. = ..()
 	if(.)
@@ -170,13 +164,13 @@
 
 	if(action == "set_network")
 		network = temp_network
-		ui_refresh(usr, ui)
+		update_static_data_for_all_viewers()
 
 	if(action == "set_temp_network")
 		temp_network = sanitize_filename(params["name"])
 
 	if(action == "refresh")
-		ui_refresh(usr, ui)
+		update_static_data_for_all_viewers()
 
 	if(action == "switch_camera")
 		var/c_tag = params["name"]
@@ -386,7 +380,7 @@
 	desc = "A screen displaying various entertainment channels. I hope they have that new Gezenan sitcom on this."
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "entertainment_blank"
-	network = list("thunder")
+	network = list("IntraNet")
 	density = FALSE
 	circuit = null
 	interaction_flags_atom = NONE  // interact() is called by BigClick()
@@ -403,13 +397,9 @@
 
 	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom, interact), usr)
 
-/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on)
+/obj/machinery/computer/security/telescreen/entertainment/proc/notify(on, string="IntraNet is proud to present the latest in unique content!")
 	if(on && icon_state == icon_state_off)
-		say(pick(
-			"Feats of bravery live now at the thunderdome!",
-			"Two enter, one leaves! Tune in now!",
-			"Violence like you've never seen it before!",
-			"Spears! Camera! Action! LIVE NOW!"))
+		say(string)
 		icon_state = icon_state_on
 	else
 		icon_state = icon_state_off

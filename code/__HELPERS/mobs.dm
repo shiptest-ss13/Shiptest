@@ -193,6 +193,13 @@
 		if(!findname(.))
 			break
 
+/proc/random_unique_spider_name(attempts_to_find_unique_name=10)
+	for(var/i in 1 to attempts_to_find_unique_name)
+		. = spider_name()
+
+		if(!findname(.))
+			break
+
 /proc/random_skin_tone()
 	return pick(GLOB.skin_tones)
 
@@ -279,18 +286,21 @@ GLOBAL_LIST_EMPTY(species_list)
  * * delay - how long the do_after takes. Defaults to 3 SECONDS.
  * * target - the (optional) target mob of the do_after. If they move/cease to exist, the do_after is cancelled.
  * * timed_action_flags - optional flags to override certain do_after checks (see DEFINES/timed_action.dm).
- * * progress - if TRUE, a progress bar is displayed.
+ * * show_progress - if TRUE, a progress bar is displayed.
  * * extra_checks - a callback that can be used to add extra checks to the do_after. Returning false in this callback will cancel the do_after.
  */
-/proc/do_after(mob/user, delay = 3 SECONDS, atom/target, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks, interaction_key, max_interact_count = 1, hidden = FALSE)
+/proc/do_after(mob/user, delay = 3 SECONDS, atom/target, timed_action_flags = NONE, show_progress = TRUE, datum/callback/extra_checks, interaction_key, max_interact_count = 1, hidden = FALSE)
 	if(!user)
 		return FALSE
 	if(!isnum(delay))
 		CRASH("do_after was passed a non-number delay: [delay || "null"].")
 
 	if(target && DOING_INTERACTION_WITH_TARGET(user, target))
-		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
+		to_chat(user, span_warning("You're already interacting with [target]!"))
 		return
+
+	if(delay <= 0) // finishes instantly (or in negative time somehow??), skip the progress bar to save performance
+		return TRUE
 
 	if(!interaction_key && target)
 		interaction_key = target //Use the direct ref to the target
@@ -300,27 +310,13 @@ GLOBAL_LIST_EMPTY(species_list)
 			return
 		LAZYSET(user.do_afters, interaction_key, current_interaction_count + 1)
 
-	var/atom/user_loc = user.loc
-	var/atom/target_loc = target?.loc
-
-	var/drifting = FALSE
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = TRUE
-
-	var/holding = user.get_active_held_item()
-	var/whichhand = user.active_hand_index
-
 	delay *= user.do_after_coefficent()
 
-	var/datum/progressbar/progbar
+	var/datum/progressbar/progbar = new(user, delay, target || user, timed_action_flags, extra_checks, show_progress)
 	var/datum/cogbar/cog
 
-	if(progress)
-		if(user.client)
-			progbar = new(user, delay, target || user)
-
-		if(!hidden && delay >= 1 SECONDS)
-			cog = new(user)
+	if(show_progress && !hidden && delay >= 1 SECONDS)
+		cog = new(user)
 
 	var/endtime = world.time + delay
 	var/starttime = world.time
@@ -328,27 +324,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	while (world.time < endtime)
 		stoplag(1)
 
-		if(!QDELETED(progbar))
-			progbar.update(world.time - starttime)
-
-		if(drifting && !user.inertia_dir)
-			drifting = FALSE
-			user_loc = user.loc
-
-		// Check flags
-		if(QDELETED(user) \
-			|| (!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc) \
-			|| (!(timed_action_flags & IGNORE_HAND_CHANGE) && user.active_hand_index != whichhand) \
-			|| (!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding) \
-			|| (!(timed_action_flags & IGNORE_INCAPACITATED) && HAS_TRAIT(user, TRAIT_INCAPACITATED)) \
-			|| (extra_checks && !extra_checks.Invoke()))
-			. = FALSE
-			break
-
-		// If we have a target, we check for them moving here. We don't care about it if we're drifting or we ignore target loc change
-		if(target && (user != target) && \
-			(QDELETED(target) \
-			|| (!(timed_action_flags & IGNORE_TARGET_LOC_CHANGE) && target.loc != target_loc)))
+		if(QDELETED(progbar) || !progbar.update(world.time - starttime))
 			. = FALSE
 			break
 
@@ -422,7 +398,7 @@ GLOBAL_LIST_EMPTY(species_list)
 // Displays a message in deadchat, sent by source. Source is not linkified, message is, to avoid stuff like character names to be linkified.
 // Automatically gives the class deadsay to the whole message (message + source)
 /proc/deadchat_broadcast(message, source=null, mob/follow_target=null, turf/turf_target=null, speaker_key=null, message_type=DEADCHAT_REGULAR, admin_only=FALSE)
-	message = "<span class='deadsay'>[source]<span class='linkify'>[message]</span></span>"
+	message = span_deadsay("[source][span_linkify("[message]")]")
 
 	for(var/mob/M in GLOB.player_list)
 		var/chat_toggles = TOGGLES_DEFAULT_CHAT
@@ -437,7 +413,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			if (!M.client.holder)
 				return
 			else
-				message += "<span class='deadsay'> (This is viewable to admins only).</span>"
+				message += span_deadsay(" (This is viewable to admins only).")
 		var/override = FALSE
 		if(M.client.holder && (chat_toggles & CHAT_DEAD))
 			override = TRUE

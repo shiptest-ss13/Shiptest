@@ -42,8 +42,6 @@
 		/obj/item/bodypart/l_arm,
 		/obj/item/bodypart/r_arm,
 		/obj/item/bodypart/leg,
-		//fucking explodes when created
-		/obj/item/grown/bananapeel/bombanana,
 	)
 	//This turf existing is an error in and of itself
 	ignore += typesof(/turf/baseturf_skipover)
@@ -61,7 +59,7 @@
 	//We can't pass a mind into this
 	ignore += typesof(/obj/item/phylactery)
 	//This expects a seed, we can't pass it
-	ignore += typesof(/obj/item/reagent_containers/food/snacks/grown)
+	ignore += typesof(/obj/item/food/grown)
 	//Nothing to hallucinate if there's nothing to hallicinate
 	ignore += typesof(/obj/effect/hallucination)
 	//We don't have a pod
@@ -104,12 +102,16 @@
 	//Needs an elevator
 	ignore += typesof(/obj/machinery/status_display/elevator)
 	ignore += typesof(/obj/machinery/elevator_floor_button)
+	ignore += typesof(/obj/effect/greeble_spawner)
+	//Flakey by design
+	ignore += typesof(/obj/effect/spawner/random)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/original_turf_type = spawn_at.type
 	var/original_baseturfs = islist(spawn_at.baseturfs) ? spawn_at.baseturfs.Copy() : spawn_at.baseturfs
 	var/original_baseturf_count = length(original_baseturfs)
 
+	GLOB.running_create_and_destroy = TRUE
 	for(var/type_path in typesof(/atom/movable, /turf) - ignore) //No areas please
 		if(ispath(type_path, /turf))
 			spawn_at.ChangeTurf(type_path)
@@ -212,6 +214,7 @@
 		if(fails & BAD_INIT_SLEPT)
 			TEST_FAIL("[path] slept during Initialize()")
 
+	GLOB.running_create_and_destroy = FALSE
 	SSticker.delay_end = FALSE
 	//This shouldn't be needed, but let's be polite
 	SSgarbage.collection_timeout[GC_QUEUE_CHECK] = GC_CHECK_QUEUE

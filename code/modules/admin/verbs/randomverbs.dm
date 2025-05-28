@@ -17,7 +17,7 @@
 	var/msg = "[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] drop everything!"
 	message_admins(msg)
 	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Everything") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Drop Everything")
 
 /client/proc/cmd_admin_subtle_message(mob/M in GLOB.mob_list)
 	set category = "Event"
@@ -40,10 +40,10 @@
 				to_chat(M, "<i>You hear a voice in your head... <b>[msg]</i></b>", confidential = TRUE)
 
 	log_admin("SubtlePM: [key_name(usr)] -> [key_name(M)] : [msg]")
-	msg = "<span class='adminnotice'><b> SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] :</b> [msg]</span>"
+	msg = span_adminnotice("<b> SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] :</b> [msg]")
 	message_admins(msg)
 	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Subtle Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Subtle Message")
 
 /client/proc/cmd_admin_headset_message(mob/M in GLOB.mob_list)
 	set category = "Event"
@@ -87,9 +87,9 @@
 
 	log_directed_talk(mob, H, input, LOG_ADMIN, "reply")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "<span class='hear'>You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\"</span>", confidential = TRUE)		//WS Edit - SolGov Rep
+	to_chat(H, span_hear("You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\""), confidential = TRUE)		//WS Edit - SolGov Rep
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Headset Message")
 
 /client/proc/cmd_admin_world_narrate()
 	set category = "Event"
@@ -104,8 +104,8 @@
 		return
 	to_chat(world, "[msg]", confidential = TRUE)
 	log_admin("GlobalNarrate: [key_name(usr)] : [msg]")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] Sent a global narrate</span>")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Global Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	message_admins(span_adminnotice("[key_name_admin(usr)] Sent a global narrate"))
+	BLACKBOX_LOG_ADMIN_VERB("Global Narrate")
 
 /client/proc/cmd_admin_direct_narrate(mob/M)
 	set category = "Event"
@@ -127,10 +127,10 @@
 
 	to_chat(M, msg, confidential = TRUE)
 	log_admin("DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]): [msg]")
-	msg = "<span class='adminnotice'><b> DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]):</b> [msg]<BR></span>"
+	msg = span_adminnotice("<b> DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]):</b> [msg]<BR>")
 	message_admins(msg)
 	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Direct Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Direct Narrate")
 
 /client/proc/cmd_admin_local_narrate(atom/A)
 	set category = "Event"
@@ -150,8 +150,8 @@
 		to_chat(M, msg, confidential = TRUE)
 
 	log_admin("LocalNarrate: [key_name(usr)] at [AREACOORD(A)]: [msg]")
-	message_admins("<span class='adminnotice'><b> LocalNarrate: [key_name_admin(usr)] at [ADMIN_VERBOSEJMP(A)]:</b> [msg]<BR></span>")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Local Narrate") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	message_admins(span_adminnotice("<b> LocalNarrate: [key_name_admin(usr)] at [ADMIN_VERBOSEJMP(A)]:</b> [msg]<BR>"))
+	BLACKBOX_LOG_ADMIN_VERB("Local Narrate")
 
 /client/proc/cmd_admin_godmode(mob/M in GLOB.mob_list)
 	set category = "Admin.Game"
@@ -160,13 +160,13 @@
 		return
 
 	M.status_flags ^= GODMODE
-	to_chat(usr, "<span class='adminnotice'>Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]</span>", confidential = TRUE)
+	to_chat(usr, span_adminnotice("Toggled [(M.status_flags & GODMODE) ? "ON" : "OFF"]"), confidential = TRUE)
 
 	log_admin("[key_name(usr)] has toggled [key_name(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]")
 	var/msg = "[key_name_admin(usr)] has toggled [ADMIN_LOOKUPFLW(M)]'s nodamage to [(M.status_flags & GODMODE) ? "On" : "Off"]"
 	message_admins(msg)
 	admin_ticket_log(M, msg)
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Godmode", "[M.status_flags & GODMODE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Godmode", "[M.status_flags & GODMODE ? "Enabled" : "Disabled"]"))
 
 
 /proc/cmd_admin_mute(whom, mute_type, automute = 0)
@@ -231,7 +231,7 @@
 		message_admins("SPAM AUTOMUTE: [muteunmute] [key_name_admin(whom)] from [mute_string].")
 		if(C)
 			to_chat(C, "You have been [muteunmute] from [mute_string] by the SPAM AUTOMUTE system. Contact an admin.", confidential = TRUE)
-		SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Auto Mute [feedback_string]", "1")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Auto Mute [feedback_string]", "1"))
 		return
 
 	if(P.muted & mute_type)
@@ -245,7 +245,7 @@
 	message_admins("[key_name_admin(usr)] has [muteunmute] [key_name_admin(whom)] from [mute_string].")
 	if(C)
 		to_chat(C, "You have been [muteunmute] from [mute_string] by [key_name(usr, include_name = FALSE)].", confidential = TRUE)
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Mute [feedback_string]", "[P.muted & mute_type]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Mute [feedback_string]", "[P.muted & mute_type]"))
 
 
 //I use this proc for respawn character too. /N
@@ -265,7 +265,7 @@
 		if(candidates.len)
 			ckey = input("Pick the player you want to respawn as a xeno.", "Suitable Candidates") as null|anything in sortKey(candidates)
 		else
-			to_chat(usr, "<span class='danger'>Error: create_xeno(): no suitable candidates.</span>", confidential = TRUE)
+			to_chat(usr, span_danger("Error: create_xeno(): no suitable candidates."), confidential = TRUE)
 	if(!istext(ckey))
 		return 0
 
@@ -289,7 +289,7 @@
 			return 0
 
 	new_xeno.ckey = ckey
-	var/msg = "<span class='notice'>[key_name_admin(usr)] has spawned [ckey] as a filthy xeno [alien_caste].</span>"
+	var/msg = span_notice("[key_name_admin(usr)] has spawned [ckey] as a filthy xeno [alien_caste].")
 	message_admins(msg)
 	admin_ticket_log(new_xeno, msg)
 	return 1
@@ -312,10 +312,10 @@
 	var/announce_ion_laws = (show_log == "Yes" ? 100 : 0)
 
 	var/datum/round_event/ion_storm/add_law_only/ion = new()
-	ion.announceChance = announce_ion_laws
+	ion.announce_chance = announce_ion_laws
 	ion.ionMessage = input
 
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Add Custom AI Law") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Add Custom AI Law")
 
 /client/proc/cmd_admin_create_centcom_report()
 	set category = "Event"
@@ -344,7 +344,7 @@
 
 	log_admin("[key_name(src)] has created a command report: [input]")
 	message_admins("[key_name_admin(src)] has created a command report")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Create Command Report") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Create Command Report")
 
 /client/proc/cmd_change_command_name()
 	set category = "Event"
@@ -361,18 +361,51 @@
 	log_admin("[key_name(src)] has changed the Central Command name to: [input]")
 
 /client/proc/cmd_admin_distress_signal()
-	set category = "Event"
+	set category = "Event.Overmap"
 	set name = "Create Distress Signal"
 
-	var/datum/overmap/ship/ship = SSshuttle.get_ship(usr)
-	if(!ship)
+	var/datum/overmap/overmap_location = tgui_input_list(
+		src,
+		"Select a location to launch a distress signal from.",
+		"Signal Location",
+		SSovermap.overmap_objects
+	)
+
+	if(!istype(overmap_location)) // Sanity check
 		return
-	var/confirm = alert(src, "Do you want to create a distress signal for [ship.name]", "Distress Signal", "Yes", "Cancel")
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
 
 	switch(confirm)
 		if("Yes")
-			create_distress_beacon(ship)
-		if("Cancel")
+			create_distress_beacon(overmap_location)
+		if("No")
+			return
+
+/client/proc/cmd_admin_distress_signal_here()
+	set category = "Event.Overmap"
+	set name = "Create Distress Signal Here"
+
+	var/mob/self_mob = src.mob
+	var/datum/overmap/overmap_location
+	if(!istype(self_mob))
+		return
+
+	var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(self_mob)
+	if(istype(ship))
+		overmap_location = ship
+
+	if(!overmap_location)
+		overmap_location = self_mob.get_overmap_location()
+
+	if(!overmap_location && !istype(overmap_location))
+		return
+
+	var/confirm = alert(src, "Do you want to create a distress signal for [overmap_location.name] [overmap_location.docked_to ? "docked to [overmap_location.docked_to]" : "at ([overmap_location.x], [overmap_location.y])"]?", "Distress Signal", "Yes", "No")
+
+	switch(confirm)
+		if("Yes")
+			create_distress_beacon(overmap_location)
+		if("No")
 			return
 
 /client/proc/cmd_admin_delete(atom/A as obj|mob|turf in world)
@@ -415,7 +448,7 @@
 		explosion(O, devastation, heavy, light, flash, null, null,flames)
 		log_admin("[key_name(usr)] created an explosion ([devastation],[heavy],[light],[flames]) at [AREACOORD(O)]")
 		message_admins("[key_name_admin(usr)] created an explosion ([devastation],[heavy],[light],[flames]) at [AREACOORD(O)]")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Explosion") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Explosion")
 		return
 	else
 		return
@@ -439,7 +472,7 @@
 		empulse(O, heavy, light)
 		log_admin("[key_name(usr)] created an EM Pulse ([heavy],[light]) at [AREACOORD(O)]")
 		message_admins("[key_name_admin(usr)] created an EM Pulse ([heavy],[light]) at [AREACOORD(O)]")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "EM Pulse") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("EM Pulse")
 
 		return
 	else
@@ -469,7 +502,7 @@
 		M.gib()
 	else
 		M.gib(1)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Gib") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Gib")
 
 /client/proc/cmd_admin_gib_self()
 	set name = "Gibself"
@@ -478,8 +511,8 @@
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
 	if(confirm == "Yes")
 		log_admin("[key_name(usr)] used gibself.")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] used gibself.</span>")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Gib Self") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		message_admins(span_adminnotice("[key_name_admin(usr)] used gibself."))
+		BLACKBOX_LOG_ADMIN_VERB("Gib Self")
 		mob.gib(1, 1, 1)
 
 /client/proc/cmd_admin_check_contents(mob/living/M in GLOB.mob_list)
@@ -489,7 +522,7 @@
 	var/list/L = M.get_contents()
 	for(var/atom/t in L)
 		to_chat(usr, "[t]", confidential = TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Check Contents") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Check Contents")
 
 /client/proc/toggle_view_range()
 	set category = "Admin.Game"
@@ -504,7 +537,7 @@
 	log_admin("[key_name(usr)] changed their view range to [view].")
 	//message_admins("\blue [key_name_admin(usr)] changed their view range to [view].")	//why? removed by order of XSI
 
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Change View Range", "[view]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Change View Range", "[view]"))
 
 /client/proc/admin_initiate_jump()
 	set category = "Event"
@@ -520,9 +553,9 @@
 		return
 
 	SSshuttle.request_jump()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Call Shuttle") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Call Shuttle")
 	log_admin("[key_name(usr)] admin-initiated a bluespace jump.")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] admin-initiated a bluespace jump.</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] admin-initiated a bluespace jump."))
 
 /client/proc/admin_cancel_jump()
 	set category = "Event"
@@ -538,9 +571,9 @@
 		return
 
 	SSshuttle.cancel_jump()
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Cancel Shuttle") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Cancel Shuttle")
 	log_admin("[key_name(usr)] admin-cancelled a bluespace jump.")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] admin-cancelled a bluespace jump.</span>")
+	message_admins(span_adminnotice("[key_name_admin(usr)] admin-cancelled a bluespace jump."))
 
 /client/proc/everyone_random()
 	set category = "Event.Fun"
@@ -567,12 +600,12 @@
 	message_admins("Admin [key_name_admin(usr)] has forced the players to have random appearances.")
 
 	if(notifyplayers == "Yes")
-		to_chat(world, "<span class='adminnotice'>Admin [usr.key] has forced the players to have completely random identities!</span>", confidential = TRUE)
+		to_chat(world, span_adminnotice("Admin [usr.key] has forced the players to have completely random identities!"), confidential = TRUE)
 
 	to_chat(usr, "<i>Remember: you can always disable the randomness by using the verb again, assuming the round hasn't started yet</i>.", confidential = TRUE)
 
 	CONFIG_SET(flag/force_random_names, TRUE)
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Everyone Random") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Make Everyone Random")
 
 
 /client/proc/toggle_random_events()
@@ -587,7 +620,7 @@
 	else
 		to_chat(usr, "Random events disabled", confidential = TRUE)
 		message_admins("Admin [key_name_admin(usr)] has disabled random events.")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Random Events", "[new_are ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Random Events", "[new_are ? "Enabled" : "Disabled"]"))
 
 
 /client/proc/admin_change_sec_level()
@@ -604,7 +637,7 @@
 
 		log_admin("[key_name(usr)] changed the security level to [level]")
 		message_admins("[key_name_admin(usr)] changed the security level to [level]")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Set Security Level [capitalize(level)]") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+		BLACKBOX_LOG_ADMIN_VERB("Set Security Level [capitalize(level)]")
 
 /client/proc/toggle_nuke(obj/machinery/nuclearbomb/N in GLOB.nuke_list)
 	set name = "Toggle Nuke"
@@ -623,7 +656,7 @@
 
 	log_admin("[key_name(usr)] [N.timing ? "activated" : "deactivated"] a nuke at [AREACOORD(N)].")
 	message_admins("[ADMIN_LOOKUPFLW(usr)] [N.timing ? "activated" : "deactivated"] a nuke at [ADMIN_VERBOSEJMP(N)].")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Nuke", "[N.timing]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Nuke", "[N.timing]"))
 
 /client/proc/toggle_combo_hud()
 	set category = "Admin.Game"
@@ -652,7 +685,7 @@
 	to_chat(usr, "You toggled your admin combo HUD [adding_hud ? "ON" : "OFF"].", confidential = TRUE)
 	message_admins("[key_name_admin(usr)] toggled their admin combo HUD [adding_hud ? "ON" : "OFF"].")
 	log_admin("[key_name(usr)] toggled their admin combo HUD [adding_hud ? "ON" : "OFF"].")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Combo HUD", "[adding_hud ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Combo HUD", "[adding_hud ? "Enabled" : "Disabled"]"))
 
 
 /client/proc/has_antag_hud()
@@ -681,7 +714,7 @@
 
 	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
 	log_admin("[key_name(usr)] started weather of type [weather_type] on the map-zone [mapzone].")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
+	BLACKBOX_LOG_ADMIN_VERB("Run Weather")
 
 /client/proc/mass_zombie_infection()
 	set category = "Event.Fun"
@@ -702,7 +735,7 @@
 
 	message_admins("[key_name_admin(usr)] added a latent zombie infection to all humans.")
 	log_admin("[key_name(usr)] added a latent zombie infection to all humans.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Mass Zombie Infection")
+	BLACKBOX_LOG_ADMIN_VERB("Mass Zombie Infection")
 
 /client/proc/mass_zombie_cure()
 	set category = "Event.Fun"
@@ -720,7 +753,7 @@
 
 	message_admins("[key_name_admin(usr)] cured all zombies.")
 	log_admin("[key_name(usr)] cured all zombies.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Mass Zombie Cure")
+	BLACKBOX_LOG_ADMIN_VERB("Mass Zombie Cure")
 
 /client/proc/polymorph_all()
 	set category = "Event.Fun"
@@ -739,7 +772,7 @@
 
 	message_admins("[key_name_admin(usr)] started polymorphed all living mobs.")
 	log_admin("[key_name(usr)] polymorphed all living mobs.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Polymorph All")
+	BLACKBOX_LOG_ADMIN_VERB("Polymorph All")
 
 	for(var/mob/living/M in mobs)
 		CHECK_TICK
@@ -747,7 +780,7 @@
 		if(!M)
 			continue
 
-		M.audible_message("<span class='hear'>...wabbajack...wabbajack...</span>")
+		M.audible_message(span_hear("...wabbajack...wabbajack..."))
 		playsound(M.loc, 'sound/magic/staff_change.ogg', 50, TRUE, -1)
 
 	message_admins("Mass polymorph started by [who_did_it] is complete.")
@@ -778,7 +811,7 @@
 
 	message_admins("[key_name_admin(usr)] sent a tip of the round.")
 	log_admin("[key_name(usr)] sent \"[input]\" as the Tip of the Round.")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Tip")
+	BLACKBOX_LOG_ADMIN_VERB("Show Tip")
 
 /client/proc/modify_goals()
 	set category = "Debug"
@@ -792,8 +825,8 @@
 /datum/admins/proc/modify_goals()
 	var/dat = ""
 	for(var/datum/station_goal/S in SSticker.mode.station_goals)
-		dat += "[S.name] - <a href='?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | <a href='?src=[REF(S)];[HrefToken()];remove=1'>Remove</a><br>"
-	dat += "<br><a href='?src=[REF(src)];[HrefToken()];add_station_goal=1'>Add New Goal</a>"
+		dat += "[S.name] - <a href='byond://?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | <a href='byond://?src=[REF(S)];[HrefToken()];remove=1'>Remove</a><br>"
+	dat += "<br><a href='byond://?src=[REF(src)];[HrefToken()];add_station_goal=1'>Add New Goal</a>"
 	usr << browse(dat, "window=goals;size=400x400")
 
 /proc/immerse_player(mob/living/carbon/target, toggle=TRUE, remove=FALSE)
@@ -814,7 +847,7 @@
 /proc/pie_smite(mob/living/target)
 	if(QDELETED(target))
 		return
-	var/obj/item/reagent_containers/food/snacks/pie/cream/creamy = new(get_turf(target))
+	var/obj/item/food/pie/cream/creamy = new(get_turf(target))
 	creamy.splat(target)
 
 /client/proc/toggle_hub()
@@ -828,15 +861,15 @@
 	if (GLOB.hub_visibility && !world.reachable)
 		message_admins("WARNING: The server will not show up on the hub because byond is detecting that a filewall is blocking incoming connections.")
 
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]"))
 
 /client/proc/spawn_ruin()
 	set name = "Spawn Planet/Ruin"
-	set category = "Event.Spawning"
+	set category = "Event.Overmap"
 	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
 		return
 
-	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", DYNAMIC_WORLD_LIST_ALL, 60 SECONDS)
+	var/planet_type = tgui_input_list(usr, "What type of planet?", "Spawn Ruin", subtypesof(/datum/planet_type/), 60 SECONDS)
 	if(!planet_type)
 		return
 
@@ -865,31 +898,183 @@
 					ruin_target = select_from[selected_ruin]
 
 	var/list/position = list()
+	var/datum/overmap_star_system/selected_system //the star system we are
+
+	if(length(SSovermap.tracked_star_systems) > 1)
+		selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn Planet/Ruin", SSovermap.tracked_star_systems)
+	else
+		selected_system = SSovermap.tracked_star_systems[1]
+	if(!selected_system)
+		return //if selected_system didnt get selected, we nope out, this is very bad
+
 	if(tgui_alert(usr, "Where do you want to spawn your Planet/Ruin?", "Spawn Planet/Ruin", list("Pick a location", "Random")) == "Pick a location")
-		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,SSovermap.size)) as num
-		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,SSovermap.size)) as num
-		if(locate(/datum/overmap) in SSovermap.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
+		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,selected_system.size)) as num
+		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,selected_system.size)) as num
+		if(locate(/datum/overmap) in selected_system.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
 			return
 	else
-		position = SSovermap.get_unused_overmap_square()
+		position = selected_system.get_unused_overmap_square()
 
-	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
+	var/admin_load_instant = FALSE
+	if(tgui_alert(usr, "Instant admin load?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) == "Yes")
+		admin_load_instant = TRUE
+
+	message_admins("Creating a new Planet with ruin: [ruin_target].")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
 		return
-	var/datum/overmap/dynamic/encounter = new(position, FALSE)
+	var/datum/overmap/dynamic/encounter = new(position, selected_system, FALSE)
+
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
 		encounter.ruin_type = null
-	encounter.preserve_level = TRUE
-	encounter.load_level()
+		encounter.selected_ruin  = null
+	if(admin_load_instant)
+		encounter.admin_load()
+		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)], and here to go to the dock: [ADMIN_JMP(encounter.reserve_docks[1])]")
+	else
+		message_admins("Click here to jump to the overmap token: [ADMIN_JMP(encounter.token)]")
+	BLACKBOX_LOG_ADMIN_VERB("Spawn Planet/Ruin")
 
-	message_admins(span_big("Click here to jump to the overmap token: " + ADMIN_JMP(encounter.token)))
-	message_admins(span_big("Click here to jump to the overmap dock: " + ADMIN_JMP(encounter.reserve_docks[1])))
-	for(var/ruin in encounter.ruin_turfs)
-		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
-		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+/client/proc/spawn_overmap()
+	set name = "Spawn Overmap"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/overmap_type = tgui_input_list(usr, "What type of Star System?", "Spawn Overmap", typesof(/datum/overmap_star_system/), 60 SECONDS)
+	var/datum/overmap_star_system/nova
+	if(!overmap_type)
+		return
+
+	if(tgui_alert(usr, "Edit spawn parameters?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		var/inputed
+		nova = new overmap_type(FALSE)
+
+		inputed = input(usr, "Choose sector size", "Spawn Overmap", nova.size) as num
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.size = inputed
+
+		inputed = input(usr, "Choose Maximum amount of Dynamic Events", "Spawn Overmap", nova.max_overmap_dynamic_events) as num
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.max_overmap_dynamic_events = inputed
+
+		inputed = tgui_input_list(usr, "Choose Map Generator", "Spawn Overmap", list(OVERMAP_GENERATOR_SOLAR, OVERMAP_GENERATOR_RANDOM, OVERMAP_GENERATOR_NONE))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.generator_type = inputed
+
+		inputed = tgui_alert(usr, "Have an outpost generate immediatey in this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.has_outpost = TRUE
+			if("No")
+				nova.has_outpost = FALSE
+
+		inputed = tgui_alert(usr, "Should players be able to jump to this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.can_jump_to = TRUE
+			if("No")
+				nova.can_jump_to = FALSE
+
+	if(tgui_alert(usr, "Edit Overmap Colors?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		if(!nova)
+			nova = new overmap_type(FALSE)
+
+		nova.override_object_colors = TRUE
+		var/inputed
+		inputed = input(usr, "Set Primary Color (Planets):", nova.primary_color) as color|null
+		if(inputed)
+			nova.primary_color = inputed
+		inputed = input(usr, "Set Secondary Color (Background):", nova.secondary_color) as color|null
+		if(inputed)
+			nova.secondary_color = inputed
+
+
+		inputed = tgui_alert(usr, "Set a primary hazard color (Dangerous Hazards)? If no then primary hazard color will be set to the color of the sun.", "Spawn Overmap", list("Yes", "No"), 10 SECONDS)
+		switch(inputed)
+			if("Yes")
+				inputed = input(usr, "Set Primary Hazard Color (Dangerous Hazards):", nova.hazard_primary_color) as color|null
+				if(inputed)
+					nova.hazard_primary_color = inputed
+			if("No")
+				nova.hazard_primary_color = null
+		inputed = input(usr, "Set Secondary Hazard Color (Less Dangerous Hazards):", nova.secondary_color) as color|null
+		if(inputed)
+			nova.hazard_secondary_color = inputed
+
+		inputed = input(usr, "Set Primary Structure Color (Ships):", nova.primary_structure_color) as color|null
+		if(inputed)
+			nova.primary_structure_color = inputed
+
+		inputed = input(usr, "Set Secondary Structure Color (Outposts):", nova.secondary_structure_color) as color|null
+		if(inputed)
+			nova.secondary_structure_color = inputed
+
+		inputed = tgui_input_list(usr, "Choose Background sprite", "Spawn Overmap", list("overmap", "overmap_dark", "overmap_black_bg"))
+		if(inputed)
+			nova.overmap_icon_state = inputed
+
+	if(tgui_alert(usr, "Give sector custom name? If no inherits from basetype or picks randomly", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		nova.name = input(usr, "Set Sector name:", "Spawn Overmap") as text|null
+
+	message_admins("Generating Star System type: [overmap_type], this may take some time!")
+	if(nova)
+		nova.setup_system()
+		nova = SSovermap.spawn_new_star_system(nova)
+	else
+		nova = SSovermap.spawn_new_star_system(overmap_type)
+	if(!nova)
+		message_admins("Failed to generate Star System [overmap_type]!")
+		return
+	message_admins(span_big("Overmap [nova.name] successfully generated!"))
+	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap")
+
+/client/proc/spawn_jump_point()
+	set name = "Spawn Overmap Jump Point"
+	set category = "Event.Spawning"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/datum/overmap_star_system/selected_system //the star system we are in
+	var/datum/overmap_star_system/selected_system_2 //the star system we are in
+	var/text_directions = list("NORTH", "NORTHEAST", "EAST", "SOUTHEAST", "SOUTH", "SOUTHWEST", "WEST", "NORTHWEST")
+	var/selected_dir
+	if(length(SSovermap.tracked_star_systems) > 1)
+		selected_system = tgui_input_list(usr, "Which star system should point A be in?", "Creating Jump Point", SSovermap.tracked_star_systems)
+	else
+		to_chat(usr, span_danger("There is only one overmap!"), confidential = TRUE)
+		return // if there's only one star system, ignore
+	if(!selected_system)
+		return //if selected_system didnt get selected, we nope out
+
+	selected_system_2 = tgui_input_list(usr, "Which star system should point B be in?", "Creating Jump Point", SSovermap.tracked_star_systems)
+	if(!selected_system_2)
+		return //if selected_system_2 didnt get selected, we nope out
+
+	selected_dir = tgui_input_list(usr, "Which direction should the jump point be (relative to point A)", "Creating Jump Point", text_directions)
+	if(!selected_dir)
+		return
+
+	var/datum/overmap/jump_point/point =selected_system.create_jump_point_link(selected_system_2, text2dir(selected_dir))
+	if(!point)
+		message_admins("Failed to generate jump point!")
+
+	message_admins(span_big("Click here to jump to the overmap Jump point: " + ADMIN_JMP(point.token)))
+	BLACKBOX_LOG_ADMIN_VERB("Spawn Overmap Jump Point")
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
@@ -897,7 +1082,7 @@
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
 		return
 
-	var/list/punishment_list = list(ADMIN_PUNISHMENT_BREAK_BONES, ADMIN_PUNISHMENT_LIGHTNING, ADMIN_PUNISHMENT_BRAINDAMAGE, ADMIN_PUNISHMENT_GIB, ADMIN_PUNISHMENT_BSA, ADMIN_PUNISHMENT_FIREBALL, ADMIN_PUNISHMENT_ROD, ADMIN_PUNISHMENT_SUPPLYPOD_QUICK, ADMIN_PUNISHMENT_SUPPLYPOD, ADMIN_PUNISHMENT_MAZING, ADMIN_PUNISHMENT_IMMERSE, ADMIN_PUNISHMENT_NYA, ADMIN_PUNISHMENT_PIE)
+	var/list/punishment_list = list(ADMIN_PUNISHMENT_BREAK_BONES, ADMIN_PUNISHMENT_LIGHTNING, ADMIN_PUNISHMENT_BRAINDAMAGE, ADMIN_PUNISHMENT_GIB, ADMIN_PUNISHMENT_BSA, ADMIN_PUNISHMENT_FIREBALL, ADMIN_PUNISHMENT_SUPPLYPOD_QUICK, ADMIN_PUNISHMENT_SUPPLYPOD, ADMIN_PUNISHMENT_MAZING, ADMIN_PUNISHMENT_IMMERSE, ADMIN_PUNISHMENT_NYA, ADMIN_PUNISHMENT_PIE)
 
 	var/punishment = input("Choose a punishment", "DIVINE SMITING") as null|anything in sortList(punishment_list)
 
@@ -916,7 +1101,7 @@
 			if(ishuman(target))
 				var/mob/living/carbon/human/H = target
 				H.electrocution_animation(40)
-			to_chat(target, "<span class='userdanger'>The gods have punished you for your sins!</span>", confidential = TRUE)
+			to_chat(target, span_userdanger("The gods have punished you for your sins!"), confidential = TRUE)
 		if(ADMIN_PUNISHMENT_BRAINDAMAGE)
 			target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 199, 199)
 		if(ADMIN_PUNISHMENT_GIB)
@@ -925,15 +1110,8 @@
 			bluespace_artillery(target)
 		if(ADMIN_PUNISHMENT_FIREBALL)
 			new /obj/effect/temp_visual/target(get_turf(target))
-		if(ADMIN_PUNISHMENT_ROD)
-			var/turf/T = get_turf(target)
-			var/startside = pick(GLOB.cardinals)
-			var/datum/virtual_level/vlevel = T.get_virtual_level()
-			var/turf/startT = vlevel.get_side_turf(startside)
-			var/turf/endT = vlevel.get_side_turf(REVERSE_DIR(startside))
-			new /obj/effect/immovablerod(startT, endT,target)
 		if(ADMIN_PUNISHMENT_SUPPLYPOD_QUICK)
-			var/target_path = input(usr,"Enter typepath of an atom you'd like to send with the pod (type \"empty\" to send an empty pod):" ,"Typepath","/obj/item/reagent_containers/food/snacks/grown/harebell") as null|text
+			var/target_path = input(usr,"Enter typepath of an atom you'd like to send with the pod (type \"empty\" to send an empty pod):" ,"Typepath","/obj/item/food/grown/harebell") as null|text
 			var/obj/structure/closet/supplypod/centcompod/pod = new()
 			pod.damage = 40
 			pod.explosionSize = list(0,0,0,2)
@@ -964,15 +1142,15 @@
 			return //We return here because punish_log() is handled by the centcom_podlauncher datum
 		if(ADMIN_PUNISHMENT_MAZING)
 			if(!puzzle_imprison(target))
-				to_chat(usr,"<span class='warning'>Imprisonment failed!</span>", confidential = TRUE)
+				to_chat(usr,span_warning("Imprisonment failed!"), confidential = TRUE)
 				return
 		if(ADMIN_PUNISHMENT_IMMERSE)
 			immerse_player(target)
 		if(ADMIN_PUNISHMENT_NYA)
 			if(!iscarbon(target))
-				to_chat(usr,"<span class='warning'>This must be used on a carbon mob.</span>")
+				to_chat(usr,span_warning("This must be used on a carbon mob."))
 				return
-			to_chat(target, "<span class='userdanger'>You do nyat feew vewy good!</span>", confidential = TRUE)
+			to_chat(target, span_userdanger("You do nyat feew vewy good!"), confidential = TRUE)
 			var/mob/living/carbon/dude = target
 			var/obj/item/organ/tongue/uwuspeak/tonje = new
 			tonje.Insert(dude, TRUE, FALSE)
@@ -992,13 +1170,13 @@
 		return
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, "<span class='warning'>Tracking is disabled in the server configuration file.</span>", confidential = TRUE)
+		to_chat(usr, span_warning("Tracking is disabled in the server configuration file."), confidential = TRUE)
 		return
 
 	var/list/msg = list()
 	msg += "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Playtime Report</title></head><body>Playtime:<BR><UL>"
 	for(var/client/C in GLOB.clients)
-		msg += "<LI> - [key_name_admin(C)]: <A href='?_src_=holder;[HrefToken()];getplaytimewindow=[REF(C.mob)]'>" + C.get_exp_living() + "</a></LI>"
+		msg += "<LI> - [key_name_admin(C)]: <A href='byond://?_src_=holder;[HrefToken()];getplaytimewindow=[REF(C.mob)]'>" + C.get_exp_living() + "</a></LI>"
 	msg += "</UL></BODY></HTML>"
 	src << browse(msg.Join(), "window=Player_playtime_check")
 
@@ -1006,10 +1184,10 @@
 	if(!check_rights(R_ADMIN))
 		return
 	if(!client_to_check)
-		to_chat(usr, "<span class='danger'>ERROR: Client not found.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Client not found."), confidential = TRUE)
 		return
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, "<span class='warning'>Tracking is disabled in the server configuration file.</span>", confidential = TRUE)
+		to_chat(usr, span_warning("Tracking is disabled in the server configuration file."), confidential = TRUE)
 		return
 
 	new /datum/job_report_menu(client_to_check, usr)
@@ -1018,11 +1196,11 @@
 	if(!check_rights(R_ADMIN))
 		return
 	if(!C)
-		to_chat(usr, "<span class='danger'>ERROR: Client not found.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Client not found."), confidential = TRUE)
 		return
 
 	if(!C.set_db_player_flags())
-		to_chat(usr, "<span class='danger'>ERROR: Unable read player flags from database. Please check logs.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Unable read player flags from database. Please check logs."), confidential = TRUE)
 	var/dbflags = C.prefs.db_flags
 	var/newstate = FALSE
 	if(dbflags & DB_FLAG_EXEMPT)
@@ -1031,7 +1209,7 @@
 		newstate = TRUE
 
 	if(C.update_flag_db(DB_FLAG_EXEMPT, newstate))
-		to_chat(usr, "<span class='danger'>ERROR: Unable to update player flags. Please check logs.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("ERROR: Unable to update player flags. Please check logs."), confidential = TRUE)
 	else
 		message_admins("[key_name_admin(usr)] has [newstate ? "activated" : "deactivated"] job exp exempt status on [key_name_admin(C)]")
 		log_admin("[key_name(usr)] has [newstate ? "activated" : "deactivated"] job exp exempt status on [key_name(C)]")
@@ -1107,7 +1285,7 @@
 	if(put_in_hands(I))
 		update_inv_hands()
 		if(prompted)
-			to_chat(src, "<span class='adminnotice'>Your prayers have been answered!! You received the <b>best [I.name]!</b></span>", confidential = TRUE)
+			to_chat(src, span_adminnotice("Your prayers have been answered!! You received the <b>best [I.name]!</b>"), confidential = TRUE)
 			SEND_SOUND(src, sound('sound/effects/pray_chaplain.ogg'))
 		return TRUE
 	else

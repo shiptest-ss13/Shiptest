@@ -87,7 +87,7 @@
 					<tr>
 						<td>logo here (one day)</td>
 						<td style="padding-top:10%">
-							<b>Pan Gezenan Federation Navy<br> Bolide-Class Lander</b>
+							<b>Pan Gezenan Federation Navy<br> Bolide-class Lander</b>
 						</td>
 						<td>XX - XX - 506</td>
 					</tr>
@@ -122,7 +122,7 @@
 			<strong>SUBJECT: Briefing Crew of Vessel</strong>
 			<hr>
 			<br>
-			<p>1. The Office of Naval Deployment has seen fit to deploy you in command of an Elated Bolide class Frigate Assault Lander (Bolide-Class). Congratulations on your assignment. You are expected to coordinate with the Marine Lieutenant assigned to the vessel for the duration of this deployment.</p>
+			<p>1. The Office of Naval Deployment has seen fit to deploy you in command of an Elated Bolide class Frigate Assault Lander (Bolide-class). Congratulations on your assignment. You are expected to coordinate with the Marine Lieutenant assigned to the vessel for the duration of this deployment.</p>
 			<p>2. A Bolide-class Lander's mission profile is traditionally; landing in occupied regions, planetary assault in contested systems, construction of Navy Infrastructure, assistance of CLIP colonists, and aiding in conducting Federation Readiness Drills.</p>
 			<p>3. The assignment issued to your vessel is as follows: Identify locations of interest, construct infrastructure, avoid non-decisive confrontations, conduct readiness drills if possible. Deviation from these goals is accepted and expected. Failure to meet any of them will result in an investigatory effort on your command.</p>
 			<p>4. The Office Of Naval Deployment directs that it is supplied with the following: Reports on construction projects, reports on conflict in area, reports on crew readiness. Failure to supply pertinent reports in a timely fashion will lead to termination of your command.</p>
@@ -235,7 +235,7 @@
 			<p>The Office of Personnel recommends that the Captain of a PGFN vessel in deployment establish a chain of command that encompasses all crew aboard the vessel.</p>
 			<p>The ranks of all serving members aboard a vessel creates a natural chain of command for the Captain and any other officers to base any further Chain Of Command alterations upon. It should be stressed that a Captain should avoid issuing field promotions to fulfill an artifical chain of command.</p>
 			<p>A Captain should discuss any change in chain of command with any other officers aboard before putting it into action. This allows multiple opinions to be fed into the process, thus creating a stronger product. </p>
-			<p>Aboard a Bolide-Class Lander, the Office of Personnel recommends that the captain designate one 'team leader' per three marines aboard. These team leaders should report directly to the Marine Lieutenant, They should be reported to by the two marines in their team. It is not suggested to work the naval engineers into this program, as they are not expected to deploy in combat.</p>
+			<p>Aboard a Bolide-class Lander, the Office of Personnel recommends that the captain designate one 'team leader' per three marines aboard. These team leaders should report directly to the Marine Lieutenant, They should be reported to by the two marines in their team. It is not suggested to work the naval engineers into this program, as they are not expected to deploy in combat.</p>
 			<p>Marines should be made aware that being declared team leader carries no authority unless delegated. In the event of a conflicted chain of command, or contested order, the figure with rank should be obeyed.</p>
 			<p>This Office recommends monitoring marines for behavioral patterns before assigning a team leader. The ideal marine team leader is cool-headed, rational, and able to make tough choices.</p>
 			<br>

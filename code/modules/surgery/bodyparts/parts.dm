@@ -70,6 +70,7 @@
 	px_x = -6
 	px_y = 0
 	can_be_disabled = TRUE
+	bone_break_threshold = 25
 
 
 /obj/item/bodypart/l_arm/set_owner(new_owner)
@@ -119,7 +120,7 @@
 		if(bodypart_disabled)
 			owner.set_usable_hands(owner.usable_hands - 1)
 			if(owner.stat < UNCONSCIOUS)
-				to_chat(owner, "<span class='userdanger'>Your lose control of your [name]!</span>")
+				to_chat(owner, span_userdanger("Your lose control of your [name]!"))
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(!bodypart_disabled)
@@ -166,6 +167,7 @@
 	px_y = 0
 	max_stamina_damage = 50
 	can_be_disabled = TRUE
+	bone_break_threshold = 25
 
 
 /obj/item/bodypart/r_arm/set_owner(new_owner)
@@ -215,7 +217,7 @@
 		if(bodypart_disabled)
 			owner.set_usable_hands(owner.usable_hands - 1)
 			if(owner.stat < UNCONSCIOUS)
-				to_chat(owner, "<span class='userdanger'>Your lose control of your [name]!</span>")
+				to_chat(owner, span_userdanger("Your lose control of your [name]!"))
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(!bodypart_disabled)
@@ -259,6 +261,7 @@
 	px_y = 12
 	max_stamina_damage = 50
 	can_be_disabled = TRUE
+	bone_break_threshold = 25
 
 
 /obj/item/bodypart/leg/left/set_owner(new_owner)
@@ -307,7 +310,7 @@
 		if(bodypart_disabled)
 			owner.set_usable_legs(owner.usable_legs - 1)
 			if(owner.stat < UNCONSCIOUS)
-				to_chat(owner, "<span class='userdanger'>Your lose control of your [name]!</span>")
+				to_chat(owner, span_userdanger("Your lose control of your [name]!"))
 	else if(!bodypart_disabled)
 		owner.set_usable_legs(owner.usable_legs + 1)
 
@@ -346,6 +349,7 @@
 	px_y = 12
 	max_stamina_damage = 50
 	can_be_disabled = TRUE
+	bone_break_threshold = 25
 
 
 /obj/item/bodypart/leg/right/set_owner(new_owner)
@@ -394,7 +398,7 @@
 		if(bodypart_disabled)
 			owner.set_usable_legs(owner.usable_legs - 1)
 			if(owner.stat < UNCONSCIOUS)
-				to_chat(owner, "<span class='userdanger'>Your lose control of your [name]!</span>")
+				to_chat(owner, span_userdanger("Your lose control of your [name]!"))
 	else if(!bodypart_disabled)
 		owner.set_usable_legs(owner.usable_legs + 1)
 

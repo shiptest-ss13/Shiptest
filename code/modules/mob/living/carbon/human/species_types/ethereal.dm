@@ -1,5 +1,5 @@
 #define ELZUOSE_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
-#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach)
+#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach, /turf/open/floor/plating/asteroid/dirt)
 #define DIG_TIME (7.5 SECONDS)
 #define ROOT_TIME (3 SECONDS)
 #define ROOT_CHARGE_GAIN (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
@@ -10,11 +10,10 @@
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal
+	meat = /obj/item/food/meat/slab/human/mutant/ethereal
 	mutantstomach = /obj/item/organ/stomach/ethereal
 	mutanttongue = /obj/item/organ/tongue/ethereal
 	siemens_coeff = 0.5 //They thrive on energy
-	brutemod = 1.25 //They're weak to punches
 	attack_type = BURN //burn bish
 	exotic_bloodtype = "E"
 	species_age_max = 300
@@ -159,8 +158,11 @@
 		var/turf/terrain = get_turf(_human)
 		if(_human.has_status_effect(/datum/status_effect/rooted))
 			return FALSE
-		if(is_type_in_list(terrain,GOOD_SOIL))
+		if(is_type_in_list(terrain, GOOD_SOIL))
 			return TRUE
+		for(var/atom/movable/thing in terrain.contents)
+			if(is_type_in_list(thing, list(/obj/machinery/hydroponics/wooden, /obj/machinery/hydroponics/soil)))
+				return TRUE
 		return FALSE
 
 /datum/species/elzuose/random_name(gender,unique,lastname)
@@ -253,16 +255,12 @@
 				_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 2)
 			if(_human.health > 10.5)
 				apply_damage(0.2, TOX, null, null, _human)
-			brutemod = 1.75
 		if(ELZUOSE_CHARGE_LOWPOWER to ELZUOSE_CHARGE_NORMAL)
 			_human.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 1)
-			brutemod = 1.5
 		if(ELZUOSE_CHARGE_FULL to ELZUOSE_CHARGE_OVERLOAD)
 			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 1)
-			brutemod = 1.5
 		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
 			_human.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 2)
-			brutemod = 1.75
 			if(prob(10)) //10% each tick for ethereals to explosively release excess energy if it reaches dangerous levels
 				discharge_process(_human)
 		else

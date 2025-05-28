@@ -55,7 +55,7 @@
 /obj/item/melee/energy/sword/bananium/attackby(obj/item/I, mob/living/user, params)
 	if((world.time > next_trombone_allowed) && istype(I, /obj/item/melee/energy/sword/bananium))
 		next_trombone_allowed = world.time + 50
-		to_chat(user, "<span class='warning'>You slap the two swords together. Sadly, they do not seem to fit!</span>")
+		to_chat(user, span_warning("You slap the two swords together. Sadly, they do not seem to fit!"))
 		playsound(src, 'sound/misc/sadtrombone.ogg', 50)
 		return TRUE
 	return ..()
@@ -117,39 +117,6 @@
 			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, throw_at), thrown_by, throw_range+2, throw_speed, null, TRUE), 1)
 	else
 		return ..()
-
-
-//BOMBANANA
-
-/obj/item/reagent_containers/food/snacks/grown/banana/bombanana
-	trash = /obj/item/grown/bananapeel/bombanana
-	bitesize = 1
-	customfoodfilling = FALSE
-	seed = null
-	tastes = list("explosives" = 10)
-	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
-
-/obj/item/grown/bananapeel/bombanana
-	desc = "A peel from a banana. Why is it beeping?"
-	seed = null
-	var/det_time = 50
-	var/obj/item/grenade/syndieminibomb/bomb
-
-/obj/item/grown/bananapeel/bombanana/Initialize()
-	. = ..()
-	bomb = new /obj/item/grenade/syndieminibomb(src)
-	bomb.det_time = det_time
-	if(iscarbon(loc))
-		to_chat(loc, "<span class='danger'>[src] begins to beep.</span>")
-	bomb.preprime(loc, null, FALSE)
-
-/obj/item/grown/bananapeel/bombanana/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/slippery, det_time)
-
-/obj/item/grown/bananapeel/bombanana/Destroy()
-	. = ..()
-	QDEL_NULL(bomb)
 
 //TEARSTACHE GRENADE
 

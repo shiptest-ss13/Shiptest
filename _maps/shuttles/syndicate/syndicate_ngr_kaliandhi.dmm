@@ -266,7 +266,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "bX" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 8;
 	icon_state = "computer-right"
 	},
@@ -1275,8 +1275,8 @@
 "jL" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Armory";
 	fast_close = 1;
+	name = "Armory";
 	req_access = list(3)
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2153,8 +2153,8 @@
 /area/ship/crew)
 "oc" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Bridge";
 	fast_close = 1;
+	name = "Bridge";
 	req_access_txt = "19"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -2684,6 +2684,8 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "rz" = (
@@ -3008,6 +3010,8 @@
 /obj/structure/table/optable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/airalarm/directional/north,
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/medical)
 "tO" = (
@@ -3132,8 +3136,8 @@
 "vl" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 8;
-	name = "Armory";
 	fast_close = 1;
+	name = "Armory";
 	req_access = list(3)
 	},
 /obj/structure/cable{
@@ -3202,8 +3206,26 @@
 	pixel_y = 4
 	},
 /obj/structure/table,
-/obj/item/screwdriver,
+/obj/item/screwdriver{
+	pixel_y = 3;
+	pixel_x = 10
+	},
 /obj/effect/turf_decal/corner/opaque/red/mono,
+/obj/item/attachment/rail_light{
+	pixel_x = 2;
+	pixel_y = -5
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = 1
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = -4;
+	pixel_y = -5
+	},
+/obj/item/attachment/rail_light{
+	pixel_x = -4;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "vP" = (
@@ -3302,7 +3324,7 @@
 "ws" = (
 /obj/structure/table,
 /obj/item/storage/guncase{
-	pixel_y = 4
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/corner/opaque/red/mono,
 /turf/open/floor/plasteel/dark,
@@ -3845,6 +3867,7 @@
 /obj/effect/turf_decal/industrial/outline{
 	color = "#791500"
 	},
+/obj/item/stack/sheet/mineral/uranium/twenty,
 /obj/item/stack/sheet/mineral/uranium/ten,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
@@ -4179,6 +4202,7 @@
 	open = 0;
 	req_access_txt = "3"
 	},
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Ba" = (
@@ -4439,6 +4463,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/corner/opaque/red/mono,
+/obj/item/folder/syndicate,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security/armory)
 "CK" = (
@@ -4465,6 +4490,10 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/item/storage/firstaid/medical{
+	pixel_x = -10;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "CQ" = (
@@ -4970,6 +4999,7 @@
 /obj/item/storage/belt/military/assault,
 /obj/item/storage/guncase/pistol/asp,
 /obj/item/megaphone,
+/obj/item/clothing/accessory/holster,
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
 "GD" = (
@@ -5508,8 +5538,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "Control Room";
 	fast_close = 1;
+	name = "Control Room";
 	req_access_txt = "10"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5834,8 +5864,8 @@
 /area/ship/hallway/fore)
 "MS" = (
 /obj/machinery/door/airlock/hatch{
-	name = "Command Deck";
 	fast_close = 1;
+	name = "Command Deck";
 	req_access_txt = "19"
 	},
 /obj/structure/cable{
@@ -5874,8 +5904,8 @@
 "MU" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4;
-	name = "Engineering";
 	fast_close = 1;
+	name = "Engineering";
 	req_access_txt = "10"
 	},
 /obj/structure/cable{
@@ -6109,7 +6139,7 @@
 "Ol" = (
 /obj/structure/rack,
 /obj/machinery/airalarm/directional/south,
-/obj/item/melee/axe/sledgehammer,
+/obj/item/melee/sledgehammer/gorlex,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "On" = (
@@ -6814,10 +6844,7 @@
 	pixel_x = 6;
 	pixel_y = 12
 	},
-/obj/item/storage/firstaid/medical{
-	pixel_x = -5;
-	pixel_y = 4
-	},
+/obj/item/storage/case/surgery,
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_x = 32
 	},
@@ -6986,47 +7013,27 @@
 /obj/item/storage/box/ammo/c10mm{
 	pixel_x = -7
 	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = 14;
-	pixel_y = -7
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = 14;
-	pixel_y = -7
-	},
-/obj/item/ammo_box/magazine/m556_42_hydra/small{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/m556_42_hydra/small{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder{
-	pixel_x = 4;
-	pixel_y = -9
-	},
-/obj/item/ammo_box/magazine/m57_39_sidewinder{
-	pixel_x = 4;
-	pixel_y = -9
-	},
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty,
+/obj/item/ammo_box/magazine/m556_42_hydra/small/empty,
+/obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
+/obj/item/ammo_box/magazine/m57_39_sidewinder/empty,
 /obj/effect/turf_decal/corner/opaque/red/half{
 	dir = 8
 	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = 14;
-	pixel_y = -7
-	},
-/obj/item/ammo_box/magazine/m57_39_asp{
-	pixel_x = 14;
-	pixel_y = -7
-	},
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
+/obj/item/ammo_box/magazine/m57_39_asp/empty,
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_x = 32
 	},
+/obj/item/ammo_box/magazine/m12g_bulldog/empty,
+/obj/item/ammo_box/magazine/m12g_bulldog/empty,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/storage/box/ammo/a12g_buckshot,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "UM" = (
@@ -7589,8 +7596,8 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch{
-	name = "Life Support";
 	fast_close = 1;
+	name = "Life Support";
 	req_access_txt = "10"
 	},
 /obj/machinery/door/firedoor/border_only,

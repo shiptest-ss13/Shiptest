@@ -25,6 +25,9 @@
 	var/obj/effect/hotspot/active_hotspot
 	var/planetary_atmos = FALSE //air will revert to initial_gas_mix over time
 
+	/// How much fuel this open turf provides to turf fires, and how easily they can be ignited in the first place. Can be negative to make fires die out faster.
+	var/flammability = 0.3
+
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
 
 /turf/open/Initialize(mapload, inherited_virtual_z)

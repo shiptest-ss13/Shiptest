@@ -26,15 +26,6 @@
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/survivor
 	)
 
-/mob/living/simple_animal/hostile/human/hermit/survivor/random/Initialize()
-	. = ..()
-	if(prob(35))
-		new /mob/living/simple_animal/hostile/human/hermit/ranged/hunter(loc)
-		return INITIALIZE_HINT_QDEL
-	if(prob(10))
-		new /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger(loc)
-		return INITIALIZE_HINT_QDEL
-
 /mob/living/simple_animal/hostile/human/hermit/ranged
 	icon_state = "survivor_hunter"
 	icon_living = "survivor_hunter"
@@ -67,14 +58,13 @@
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/gunslinger,
 	)
 
-/mob/living/simple_animal/hostile/human/hermit/ranged/e11 // Intended for the e11_manufactory ruin.
+/mob/living/simple_animal/hostile/human/hermit/ranged/e11
 	name = "Hermit Trooper"
-	desc = "Quality weapons are hard to get by in the sandworlds, which forces many survivors to improvise with that they have. This one is hoping that an E-11 of all things will save his life."
+	desc = "Quality weapons are hard to get by in the sandworlds, which forces many survivors to improvise with that they have. This one is hoping that an E-11 of all things will save their life."
 	icon_state = "survivor_e11"
 	icon_living = "survivor_e11"
 	projectilesound = 'sound/weapons/gun/laser/e-fire.ogg'
 	speed = 10
-	faction = list("eoehoma")
 	rapid_fire_delay = 1
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/eoehoma/hermit
@@ -179,6 +169,8 @@
 		)
 	if(prob(30)) //some pens maybe?
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
+	if(prob(5))
+		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/combat_drug
 
 	//masks
 	mask = pick_weight(list(
@@ -232,7 +224,7 @@
 				)
 			)
 			if(prob(30))
-				l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
+				l_pocket = /obj/item/food/meat/slab/goliath
 			if(prob(20))
 				r_pocket = /obj/item/spacecash/bundle/smallrand
 
@@ -256,7 +248,7 @@
 				)
 			)
 			if(prob(20))
-				l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
+				l_pocket = /obj/item/food/meat/slab/goliath
 			else if(prob(60))
 				l_pocket = /obj/item/ammo_box/a762_stripper
 			if(prob(20))
@@ -307,7 +299,7 @@
 				)
 			)
 			shoes = /obj/item/clothing/shoes/workboots
-			if(prob(50)) // Hilarious, ain't it?
+			if(prob(40)) // Hilarious, ain't it?
 				new /obj/item/gun/energy/e_gun/e11 (loc)
 			else
 				visible_message(span_warning("The trooper's weapon shatters as they impact the ground!"))

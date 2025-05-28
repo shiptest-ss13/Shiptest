@@ -4,8 +4,7 @@
 	name = ".50 BMG bullet"
 	speed = BULLET_SPEED_SNIPER
 	damage = 70
-	knockdown = 100
-	dismemberment = 50
+	knockdown = 50
 	armour_penetration = 60
 	var/breakthings = TRUE
 	bullet_identifier = "huge bullet"
@@ -40,10 +39,10 @@
 	knockdown = 0
 	breakthings = FALSE
 
-//6.5x57mm CLIP (F90)
+//7.5x64mm CLIP (F90, Boomslang)
 
-/obj/projectile/bullet/a65clip
-	name = "6.5x57mm CLIP bullet"
+/obj/projectile/bullet/a75clip
+	name = "7.5x64mm CLIP bullet"
 	stamina = 10
 	damage = 40
 	armour_penetration = 50
@@ -56,14 +55,14 @@
 	light_color = COLOR_SOFT_RED
 	light_range = 2
 
-/obj/projectile/bullet/a65clip/trac
+/obj/projectile/bullet/a75clip/trac
 	damage = 10
 	armour_penetration = 0
-	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a65clip
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a75clip
 
 //this should only exist on the big ass turrets. don't fucking give players this.
-/obj/projectile/bullet/a65clip/rubber //"rubber"
-	name = "6.5x57mm CLIP rubber bullet"
+/obj/projectile/bullet/a75clip/rubber //"rubber"
+	name = "7.5x64mm CLIP rubber bullet"
 	damage = 10
 	stamina = 40
 	speed_mod = BULLET_SPEED_RUBBER_MOD
@@ -73,8 +72,9 @@
 
 /obj/projectile/bullet/a858
 	name = "8x58mm caseless bullet"
-	damage = 40
-	armour_penetration = 45
+	damage = 45
+	stamina = 10
+	armour_penetration = 50
 	speed = BULLET_SPEED_SNIPER
 	bullet_identifier = "huge bullet"
 
@@ -88,7 +88,7 @@
 
 /obj/projectile/bullet/a300
 	name = ".300 Magnum bullet"
-	damage = 45
+	damage = 50
 	stamina = 10
 	armour_penetration = 40
 	speed = BULLET_SPEED_RIFLE

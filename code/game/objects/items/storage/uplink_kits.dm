@@ -138,7 +138,7 @@
 			new /obj/item/chameleon(src) // 7 tc
 
 		if("darklord")
-			new /obj/item/dualsaber(src)
+			new /obj/item/melee/duelenergy/saber(src)
 			new /obj/item/dnainjector/telemut/darkbundle(src)
 			new /obj/item/card/id/syndicate(src)
 			new /obj/item/clothing/shoes/chameleon/noslip(src) //because slipping while being a dark lord sucks

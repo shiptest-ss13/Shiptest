@@ -2,7 +2,7 @@
 	COOLDOWN_DECLARE(heel_cooldown)
 	COOLDOWN_DECLARE(reset_ignore_cooldown)
 
-/datum/ai_planning_subtree/dog/SelectBehaviors(datum/ai_controller/dog/controller, delta_time)
+/datum/ai_planning_subtree/dog/SelectBehaviors(datum/ai_controller/dog/controller, seconds_per_tick)
 	var/mob/living/living_pawn = controller.pawn
 
 	// occasionally reset our ignore list
@@ -24,8 +24,8 @@
 			else if(isitem(interact_target))
 				LAZYADD(controller.current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/simple_equip))
 			else
-				controller.blackboard[BB_FETCH_TARGET] = null
-				controller.blackboard[BB_FETCH_DELIVER_TO] = null
+				controller.clear_blackboard_key(BB_FETCH_TARGET)
+				controller.clear_blackboard_key(BB_FETCH_DELIVER_TO)
 			return
 
 	// if we're carrying something and we have a destination to deliver it, do that
@@ -33,7 +33,7 @@
 		var/atom/return_target = controller.blackboard[BB_FETCH_DELIVER_TO]
 		if(!can_see(controller.pawn, return_target, length=AI_DOG_VISION_RANGE))
 			// if the return target isn't in sight, we'll just forget about it and carry the thing around
-			controller.blackboard[BB_FETCH_DELIVER_TO] = null
+			controller.clear_blackboard_key(BB_FETCH_DELIVER_TO)
 			return
 		controller.current_movement_target = return_target
 		LAZYADD(controller.current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/deliver_item))

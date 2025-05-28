@@ -133,9 +133,9 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	if(ishuman(user) && istype(A, /obj/item))
 		var/mob/living/carbon/human/H = user
 		if(H.put_in_hands(A))
-			to_chat(H, "<span class='boldnotice'>[A] materializes into your hands!</span>")
+			to_chat(H, span_boldnotice("[A] materializes into your hands!"))
 			return A
-	to_chat(user, "<span class='boldnotice'>[A] materializes onto the floor!</span>")
+	to_chat(user, span_boldnotice("[A] materializes onto the floor!"))
 	return A
 
 //Discounts (dynamically filled above)
@@ -405,7 +405,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Double-Bladed Energy Sword"
 	desc = "The double-bladed energy sword does slightly more damage than a standard energy sword and will deflect \
 			all energy projectiles, but requires two hands to wield."
-	item = /obj/item/dualsaber
+	item = /obj/item/melee/duelenergy/saber
 	player_minimum = 25
 	cost = 16
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
@@ -481,8 +481,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/dangerous/pistol
-	name = "Stechkin Pistol"
-	desc = "A small, easily concealable handgun that uses 10mm auto rounds in 8-round magazines and is compatible \
+	name = "Ringneck Pistol"
+	desc = "A small, easily concealable handgun that uses 10x22mm rounds in 8-round magazines and is compatible \
 			with suppressors."
 	item = /obj/item/gun/ballistic/automatic/pistol/ringneck
 	cost = 7
@@ -527,24 +527,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/gun/ballistic/automatic/toy/pistol/riot
 	cost = 2
 	surplus = 10
-
-/datum/uplink_item/dangerous/semiautoturret
-	name = "Semi-Auto Turret"
-	desc = "An autoturret which shoots semi-automatic ballistic rounds. The turret is bulky \
-			and cannot be moved; upon ordering this item, a smaller beacon will be transported to you \
-			that will teleport the actual turret to it upon activation."
-	item = /obj/item/sbeacondrop/semiautoturret
-	cost = 8
-	include_modes = list(/datum/game_mode/nuclear)
-
-/datum/uplink_item/dangerous/heavylaserturret
-	name = "Heavy Laser Turret"
-	desc = "An autoturret which shoots heavy lasers. The turret is bulky \
-			and cannot be moved; upon ordering this item, a smaller beacon will be transported to you \
-			that will teleport the actual turret to it upon activation."
-	item = /obj/item/sbeacondrop/heavylaserturret
-	cost = 12
-	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/dangerous/weebstick
 	name = "Nanoforged Katana"
@@ -699,31 +681,31 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	surplus = 40
 
 /datum/uplink_item/ammo/pistol
-	name = "10mm Handgun Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol."
+	name = "10x22mm Handgun Magazine"
+	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 1
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/ammo/pistolap
-	name = "10mm Armour Piercing Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol. \
+	name = "10x22mm Armour Piercing Magazine"
+	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
 			These rounds are less effective at injuring the target but penetrate protective gear."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 2
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/ammo/pistolhp
-	name = "10mm Hollow Point Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol. \
+	name = "10x22mm Hollow Point Magazine"
+	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
 			These rounds are more damaging but ineffective against armour."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 3
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/ammo/pistolfire
-	name = "10mm Incendiary Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol. \
+	name = "10x22mm Incendiary Magazine"
+	desc = "An additional 8-round 10x22mm magazine; compatible with the Ringneck Pistol. \
 			Loaded with incendiary rounds which inflict little damage, but ignite the target."
 	item = /obj/item/ammo_box/magazine/m10mm_ringneck
 	cost = 2
@@ -850,8 +832,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 6
 
 /datum/uplink_item/ammo/pistolaps
-	name = "9mm Handgun Magazine"
-	desc = "An additional 15-round 9mm magazine, compatible with the Stechkin APS pistol, found in the Spetsnaz Pyro bundle."
+	name = "9x18mm Handgun Magazine"
+	desc = "An additional 15-round 9x18mm magazine, compatible with the Stechkin APS pistol, found in the Spetsnaz Pyro bundle."
 	item = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	cost = 2
 	include_modes = list(/datum/game_mode/nuclear)
@@ -895,7 +877,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/ammo/tec9
 	name = "TEC9 Magazine"
-	desc = "An additional 20 round 9mm magazine for the TEC9."
+	desc = "An additional 20 round 9x18mm magazine for the TEC9."
 	item = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 	cost = 3
 	exclude_modes = list(/datum/game_mode/nuclear/clown_ops)
@@ -920,15 +902,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 5
 	surplus = 35
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
-
-/datum/uplink_item/explosives/bombanana
-	name = "Bombanana"
-	desc = "A banana with an explosive taste! discard the peel quickly, as it will explode with the force of a Syndicate minibomb \
-		a few seconds after the banana is eaten."
-	item = /obj/item/reagent_containers/food/snacks/grown/banana/bombanana
-	cost = 4 //it is a bit cheaper than a minibomb because you have to take off your helmet to eat it, which is how you arm it
-	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/explosives/buzzkill
 	name = "Buzzkill Grenade Box"
@@ -962,18 +935,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/storage/backpack/duffelbag/syndie/x4
 	cost = 4 //
 	cant_discount = TRUE
-
-/datum/uplink_item/explosives/clown_bomb_clownops
-	name = "Clown Bomb"
-	desc = "The Clown bomb is a hilarious device capable of massive pranks. It has an adjustable timer, \
-			with a minimum of 60 seconds, and can be bolted to the floor with a wrench to prevent \
-			movement. The bomb is bulky and cannot be moved; upon ordering this item, a smaller beacon will be \
-			transported to you that will teleport the actual bomb to it upon activation. Note that this bomb can \
-			be defused, and some crew may attempt to do so."
-	item = /obj/item/sbeacondrop/clownbomb
-	cost = 15
-	surplus = 0
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/explosives/detomatix
 	name = "Detomatix PDA Cartridge"
@@ -1373,7 +1334,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 		return
 	U.failsafe_code = U.generate_code()
 	var/code = "[islist(U.failsafe_code) ? english_list(U.failsafe_code) : U.failsafe_code]"
-	to_chat(user, "<span class='warning'>The new failsafe code for this uplink is now : [code].</span>")
+	to_chat(user, span_warning("The new failsafe code for this uplink is now : [code]."))
 	if(user.mind)
 		user.mind.store_memory("Failsafe code for [U.parent] : [code]")
 	return U.parent //For log icon
@@ -1689,14 +1650,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 14							//High cost because of the potential for extreme damage in the hands of a skilled scientist.
 	restricted_roles = list("Research Director", "Scientist")
 
-/datum/uplink_item/role_restricted/gorillacubes
-	name = "Box of Gorilla Cubes"
-	desc = "A box with three Waffle Co. brand gorilla cubes. Eat big to get big. \
-			Caution: Product may rehydrate when exposed to water."
-	item = /obj/item/storage/box/gorillacubes
-	cost = 6
-	restricted_roles = list("Geneticist", "Chief Medical Officer")
-
 /datum/uplink_item/role_restricted/brainwash_disk
 	name = "Brainwashing Surgery Program"
 	desc = "A disk containing the procedure to perform a brainwashing surgery, allowing you to implant an objective onto a target. \
@@ -1704,17 +1657,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/disk/surgery/brainwashing
 	restricted_roles = list("Medical Doctor", "Chief Medical Officer", "Roboticist")
 	cost = 5
-
-/datum/uplink_item/role_restricted/clown_bomb
-	name = "Clown Bomb"
-	desc = "The Clown bomb is a hilarious device capable of massive pranks. It has an adjustable timer, \
-			with a minimum of 60 seconds, and can be bolted to the floor with a wrench to prevent \
-			movement. The bomb is bulky and cannot be moved; upon ordering this item, a smaller beacon will be \
-			transported to you that will teleport the actual bomb to it upon activation. Note that this bomb can \
-			be defused, and some crew may attempt to do so."
-	item = /obj/item/sbeacondrop/clownbomb
-	cost = 15
-	restricted_roles = list("Clown")
 
 /datum/uplink_item/role_restricted/clumsinessinjector //clown ops can buy this too, but it's in the pointless badassery section for them
 	name = "Clumsiness Injector"
@@ -1751,7 +1693,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	desc = "A modification for civilian exosuits that allows them to equip one piece of equipment designed for combat exosuits. \
 			It also hides the equipped weapon from plain sight. \
 			Only one can fit on an exosuit."
-	item = /obj/item/mecha_parts/concealed_weapon_bay
+	item = /obj/item/mecha_parts/weapon_bay/concealed
 	cost = 3
 	restricted_roles = list("Roboticist", "Research Director")
 

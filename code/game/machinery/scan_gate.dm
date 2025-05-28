@@ -50,9 +50,9 @@
 /obj/machinery/scanner_gate/examine(mob/user)
 	. = ..()
 	if(locked)
-		. += "<span class='notice'>The control panel is ID-locked. Swipe a valid ID to unlock it.</span>"
+		. += span_notice("The control panel is ID-locked. Swipe a valid ID to unlock it.")
 	else
-		. += "<span class='notice'>The control panel is unlocked. Swipe an ID to lock it.</span>"
+		. += span_notice("The control panel is unlocked. Swipe an ID to lock it.")
 
 /obj/machinery/scanner_gate/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -77,14 +77,14 @@
 			if(allowed(user))
 				locked = FALSE
 				req_access = list()
-				to_chat(user, "<span class='notice'>You unlock [src].</span>")
+				to_chat(user, span_notice("You unlock [src]."))
 		else if(!(obj_flags & EMAGGED))
-			to_chat(user, "<span class='notice'>You lock [src] with [W].</span>")
+			to_chat(user, span_notice("You lock [src] with [W]."))
 			var/list/access = W.GetAccess()
 			req_access = access
 			locked = TRUE
 		else
-			to_chat(user, "<span class='warning'>You try to lock [src] with [W], but nothing happens.</span>")
+			to_chat(user, span_warning("You try to lock [src] with [W], but nothing happens."))
 	else
 		return ..()
 
@@ -94,7 +94,7 @@
 	locked = FALSE
 	req_access = list()
 	obj_flags |= EMAGGED
-	to_chat(user, "<span class='notice'>You fry the ID checking system.</span>")
+	to_chat(user, span_notice("You fry the ID checking system."))
 
 /obj/machinery/scanner_gate/proc/perform_scan(mob/living/M)
 	var/beep = FALSE
@@ -173,9 +173,9 @@
 	if(next_beep <= world.time)
 		next_beep = world.time + 20
 		playsound(src, 'sound/machines/scanbuzz.ogg', 100, FALSE)
-	var/image/I = image(icon, src, "alarm_light", layer+1)
-	flick_overlay_view(I, src, 20)
-	set_scanline("alarm", 20)
+	var/mutable_appearance/alarm_display = mutable_appearance(icon, "alarm_light")
+	flick_overlay_view(alarm_display, 2 SECONDS)
+	set_scanline("alarm", 2 SECONDS)
 
 /obj/machinery/scanner_gate/can_interact(mob/user)
 	if(locked)

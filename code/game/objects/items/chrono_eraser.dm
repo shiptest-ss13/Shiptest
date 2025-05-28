@@ -8,6 +8,7 @@
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	spawn_blacklisted = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	slowdown = 1
@@ -47,6 +48,7 @@
 	icon = 'icons/obj/chronos.dmi'
 	icon_state = "chronogun"
 	item_state = "chronogun"
+	spawn_blacklisted = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
 	item_flags = DROPDEL
 	ammo_type = list(/obj/item/ammo_casing/energy/chrono_beam)
@@ -86,14 +88,14 @@
 	var/mob/living/user = loc
 	if(F.gun)
 		if(isliving(user) && F.captured)
-			to_chat(user, "<span class='alert'><b>FAIL: <i>[F.captured]</i> already has an existing connection.</b></span>")
+			to_chat(user, span_alert("<b>FAIL: <i>[F.captured]</i> already has an existing connection.</b>"))
 		field_disconnect(F)
 	else
 		startpos = get_turf(src)
 		field = F
 		F.gun = src
 		if(isliving(user) && F.captured)
-			to_chat(user, "<span class='notice'>Connection established with target: <b>[F.captured]</b></span>")
+			to_chat(user, span_notice("Connection established with target: <b>[F.captured]</b>"))
 
 
 /obj/item/gun/energy/chrono_gun/proc/field_disconnect(obj/structure/chrono_field/F)
@@ -102,7 +104,7 @@
 		if(F.gun == src)
 			F.gun = null
 		if(isliving(user) && F.captured)
-			to_chat(user, "<span class='alert'>Disconnected from target: <b>[F.captured]</b></span>")
+			to_chat(user, span_alert("Disconnected from target: <b>[F.captured]</b>"))
 	field = null
 	startpos = null
 
@@ -174,7 +176,7 @@
 	interaction_flags_atom = NONE
 	var/mob/living/captured = null
 	var/obj/item/gun/energy/chrono_gun/gun = null
-	var/tickstokill = 15
+	var/timetokill = 15
 	var/mutable_appearance/mob_underlay
 	var/preloaded = 0
 	var/RPpos = null
@@ -198,7 +200,7 @@
 		mob_underlay = mutable_appearance(cached_icon, "frame1")
 		update_appearance()
 
-		desc = initial(desc) + "<br><span class='info'>It appears to contain [target.name].</span>"
+		desc = initial(desc) + "<br>[span_info("It appears to contain [target.name].")]"
 	START_PROCESSING(SSobj, src)
 	return ..()
 
@@ -209,7 +211,7 @@
 
 /obj/structure/chrono_field/update_overlays()
 	. = ..()
-	var/ttk_frame = 1 - (tickstokill / initial(tickstokill))
+	var/ttk_frame = 1 - (timetokill / initial(timetokill))
 	ttk_frame = clamp(CEILING(ttk_frame * CHRONO_FRAME_COUNT, 1), 1, CHRONO_FRAME_COUNT)
 	if(ttk_frame != RPpos)
 		RPpos = ttk_frame
@@ -217,14 +219,14 @@
 		underlays = list() //hack: BYOND refuses to update the underlay to match the icon_state otherwise
 		underlays += mob_underlay
 
-/obj/structure/chrono_field/process()
+/obj/structure/chrono_field/process(seconds_per_tick)
 	if(captured)
-		if(tickstokill > initial(tickstokill))
+		if(timetokill > initial(timetokill))
 			for(var/atom/movable/AM in contents)
 				AM.forceMove(drop_location())
 			qdel(src)
-		else if(tickstokill <= 0)
-			to_chat(captured, "<span class='boldnotice'>As the last essence of your being is erased from time, you are taken back to your most enjoyable memory. You feel happy...</span>")
+		else if(timetokill <= 0)
+			to_chat(captured, span_boldnotice("As the last essence of your being is erased from time, you are taken back to your most enjoyable memory. You feel happy..."))
 			var/mob/dead/observer/ghost = captured.ghostize(1)
 			if(captured.mind)
 				if(ghost)
@@ -240,14 +242,14 @@
 			update_appearance()
 			if(gun)
 				if(gun.field_check(src))
-					tickstokill--
+					timetokill -= seconds_per_tick
 				else
 					gun = null
 					return .()
 			else if(!attached)
-				tickstokill--
+				timetokill -= seconds_per_tick
 			else
-				tickstokill++
+				timetokill += seconds_per_tick
 	else
 		qdel(src)
 

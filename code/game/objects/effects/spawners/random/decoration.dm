@@ -16,6 +16,10 @@
 		/obj/item/stack/tile/pod/dark{amount = 20} = 3,
 	)
 
+//modified types dont count as paths
+/obj/effect/spawner/random/decoration/material/can_spawn(atom/loot)
+	return TRUE
+
 /obj/effect/spawner/random/decoration/carpet
 	name = "carpet spawner"
 	icon_state = "carpet"
@@ -24,6 +28,10 @@
 		/obj/item/stack/tile/carpet/black{amount = 30} = 20,
 	)
 
+//modified types dont count as paths
+/obj/effect/spawner/random/decoration/carpet/can_spawn(atom/loot)
+	return TRUE
+
 /obj/effect/spawner/random/decoration/ornament
 	name = "ornament spawner"
 	icon_state = "lamp"
@@ -31,7 +39,6 @@
 		/obj/item/flashlight/lamp = 35,
 		/obj/item/flashlight/lamp/green = 35,
 		/obj/item/flashlight/lantern = 10,
-		/obj/item/flashlight/lamp/bananalamp = 5,
 	)
 /obj/effect/spawner/random/decoration/glowstick
 	name = "random colored glowstick"
@@ -60,9 +67,9 @@
 	name = "random grown flower spawner"
 	icon_state = "flower"
 	loot = list(
-		/obj/item/reagent_containers/food/snacks/grown/poppy,
-		/obj/item/reagent_containers/food/snacks/grown/harebell,
-		/obj/item/reagent_containers/food/snacks/grown/trumpet,
+		/obj/item/food/grown/poppy,
+		/obj/item/food/grown/harebell,
+		/obj/item/food/grown/trumpet,
 	)
 
 /obj/effect/spawner/random/flora
