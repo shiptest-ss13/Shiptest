@@ -18,7 +18,7 @@
 	var/can_move = 0 //time of next allowed movement
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
-	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
+	var/dir_in = SOUTH //What direction will the mech face when entered/powered on?
 	var/base_step_energy_drain = 15 //The base amount of energy the mech should consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
 	var/step_energy_drain  // How much energy the mech actually consumes when moving after modifiers (Eg, stock parts, leg actuators)
 	var/melee_energy_drain = 15
@@ -473,13 +473,15 @@
 
 /obj/mecha/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
-	if(speaker == occupant)
-		//flick speech bubble
-		var/list/speech_bubble_recipients = list()
-		for(var/mob/M in get_hearers_in_view(7,src))
-			if(M.client)
-				speech_bubble_recipients.Add(M.client)
-		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), image('icons/mob/talk.dmi', src, "machine[say_test(raw_message)]",MOB_LAYER+1), speech_bubble_recipients, 30)
+	if(speaker != occupant)
+		return
+	//flick speech bubble
+	var/list/speech_bubble_recipients = list()
+	for(var/mob/M in get_hearers_in_view(7,src))
+		if(M.client)
+			speech_bubble_recipients.Add(M.client)
+	var/image/mech_speech = image('icons/mob/talk.dmi', src, "machine[say_test(say_test(raw_message))]",MOB_LAYER+1)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), mech_speech, speech_bubble_recipients, 3 SECONDS)
 
 ////////////////////////////
 ///// Action processing ////

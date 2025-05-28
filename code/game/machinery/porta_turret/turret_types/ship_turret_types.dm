@@ -22,7 +22,7 @@
 	desc = "A turret built with substandard parts and run down further with age. Still capable of delivering lethal lasers to the odd space carp, but not much else."
 	stun_projectile = /obj/projectile/beam/disabler/weak
 	lethal_projectile = /obj/projectile/beam/weak/penetrator
-	faction = list("neutral", "turret")
+	faction = list("neutral", FACTION_TURRET)
 
 /obj/machinery/porta_turret/ship/ballistic
 	stun_projectile = /obj/projectile/bullet/turret/rubber
@@ -37,7 +37,7 @@
 /obj/machinery/porta_turret/ship/nt
 	name = "Sharplite Defense Turret"
 	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Nanotrasen Vessels."
-	faction = list(FACTION_PLAYER_NANOTRASEN, "turret")
+	faction = list(FACTION_PLAYER_NANOTRASEN, FACTION_TURRET)
 	max_integrity = 160
 	integrity_failure = 0.6
 	icon_state = "standard_lethal"
@@ -81,7 +81,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c57x39mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
-	faction = list(FACTION_NGR, FACTION_PLAYER_SYNDICATE, "turret")
+	faction = list(FACTION_NGR, FACTION_TURRET)
 	shot_delay = 20
 	burst_delay = 3
 	burst_size = 3
@@ -119,7 +119,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
 	lethal_projectile = /obj/projectile/bullet/c57x39mm
 	lethal_projectile_sound = 'sound/weapons/gun/smg/sidewinder.ogg'
-	faction = list(FACTION_HARDLINERS, FACTION_PLAYER_SYNDICATE, "turret")
+	faction = list(FACTION_HARDLINERS, FACTION_PLAYER_SYNDICATE, FACTION_TURRET)
 	shot_delay = 25
 	burst_delay = 5
 	burst_size = 4
@@ -158,7 +158,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	lethal_projectile = /obj/projectile/bullet/a556_42
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
-	faction = list(FACTION_RAMZI, "turret")
+	faction = list(FACTION_RAMZI, FACTION_TURRET)
 	max_integrity = 180
 	shot_delay = 16
 	burst_delay = 8
@@ -218,7 +218,7 @@
 	scan_range = 9
 	shot_delay = 20
 	integrity_failure = 0.4
-	faction = list(FACTION_PLAYER_INTEQ, "turret")
+	faction = list(FACTION_PLAYER_INTEQ, FACTION_TURRET)
 
 /obj/machinery/porta_turret/ship/inteq/light
 	name = "Close-In Vanguard Turret"
@@ -249,7 +249,7 @@
 /obj/machinery/porta_turret/ship/solcon
 	name = "Type Fauchard Emplacement" // <- women who cannot do solcon names good
 	desc = "A long range turret manufactured by the Solarbundswaffenkammer. It is rated for combat usage, and has a higher than average lethality index."
-	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	faction = list(FACTION_PLAYER_SOLCON, FACTION_TURRET)
 	stun_projectile = /obj/projectile/bullet/gauss/hc
 	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
 	lethal_projectile = /obj/projectile/bullet/gauss
@@ -265,7 +265,7 @@
 /obj/machinery/porta_turret/ship/solcon/slug
 	name = "Type Guisarme Emplacement"
 	desc = "A short range turret emplacement manufactured by the Solarbundswaffenkammer. The slug rounds used have given it a reputation for incredible effect against unarmored targets, and performance issues at range."
-	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	faction = list(FACTION_PLAYER_SOLCON, FACTION_TURRET)
 	stun_projectile = /obj/projectile/bullet/gauss/slug/hc
 	stun_projectile_sound = 'sound/weapons/gun/gauss/claris.ogg'
 	lethal_projectile = /obj/projectile/bullet/gauss/slug
@@ -280,7 +280,7 @@
 /obj/machinery/porta_turret/ship/solcon/lance
 	name = "Type Glaive Emplacement"
 	desc = "A heavy turret emplacement manufactured by the Solarbundswaffenkammer. Long cycle time between volleys is the only weakness attributed to the turret, as it is effective against targets up to exo-armor."
-	faction = list(FACTION_PLAYER_SOLCON, "turret")
+	faction = list(FACTION_PLAYER_SOLCON, FACTION_TURRET)
 	stun_projectile = /obj/projectile/bullet/gauss/lance/hc
 	stun_projectile_sound = 'sound/weapons/gun/gauss/gar.ogg'
 	lethal_projectile = /obj/projectile/bullet/gauss/lance
@@ -298,7 +298,7 @@
 /obj/machinery/porta_turret/ship/pgf
 	name = "Etherbor Defensive Mount"
 	desc = "A less portable Etherbor offering, the EDM is a self-directed linkage of energy weapons, designed to keep intruders away from Gezenan vessels."
-	faction = list(FACTION_PLAYER_GEZENA, "Turret")
+	faction = list(FACTION_PLAYER_GEZENA, FACTION_TURRET)
 	stun_projectile = /obj/projectile/beam/hitscan/disabler
 	stun_projectile_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	lethal_projectile = /obj/projectile/beam/hitscan/kalix/pgf/assault
@@ -330,7 +330,7 @@
 /obj/machinery/porta_turret/ship/clip
 	name = "Clover Mintaka"
 	desc = "Clover Photonic's offering for the Confederated League's 476FS \"Defense System\" competition, the Mintaka (and its sister systems, the Alnitak and Ori) handily beat out the Lunatex \"Vigil\" line during the final round of testing, and earned a prestigous contract."
-	faction = list(FACTION_PLAYER_MINUTEMAN, "Turret")
+	faction = list(FACTION_PLAYER_MINUTEMAN, FACTION_TURRET)
 	stun_projectile = /obj/projectile/beam/disabler
 	stun_projectile_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/assault
@@ -379,7 +379,7 @@
 /obj/machinery/porta_turret/ship/frontiersmen
 	name = "Spitter Turret"
 	desc = "A juryrigged mishmash of a 9mm SMG and targetting system. Stand clear!"
-	faction = list(FACTION_FRONTIERSMEN, "Turret")
+	faction = list(FACTION_FRONTIERSMEN, FACTION_TURRET)
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	integrity_failure = 0.6
 	max_integrity = 180

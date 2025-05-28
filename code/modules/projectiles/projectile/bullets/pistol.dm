@@ -2,7 +2,7 @@
 
 /obj/projectile/bullet/c22lr
 	name = ".22LR bullet"
-	damage = 16
+	damage = 20
 	armour_penetration = -40
 	ricochet_incidence_leeway = 20
 	ricochet_chance = 65
@@ -11,14 +11,14 @@
 
 /obj/projectile/bullet/c22lr/hp
 	name = ".22LR HP bullet"
-	damage = 22
+	damage = 24
 	armour_penetration = -50
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/projectile/bullet/c22lr/ap
 	name = ".22LR armor piercing bullet"
-	damage = 15
+	damage = 18
 	armour_penetration = -20
 	ricochet_incidence_leeway = 20
 	ricochet_chance = 30

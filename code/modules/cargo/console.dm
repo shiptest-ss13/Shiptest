@@ -14,6 +14,8 @@
 
 	/// The ship we reside on for ease of access
 	var/datum/overmap/ship/controlled/current_ship
+	var/datum/faction/current_faction
+
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "For safety reasons, the automated supply shuttle \
@@ -54,7 +56,14 @@
 	update_static_data(user)
 
 /obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
 	current_ship = port.current_ship
+	reconnect(port)
+
+/obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
+	if(current_ship)
+		current_faction = current_ship.source_template.faction
+		charge_account = current_ship.ship_account
 
 /obj/machinery/computer/cargo/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -84,7 +93,6 @@
 	data["outpostDocked"] = outpost_docked
 	data["points"] = charge_account ? charge_account.account_balance : 0
 	data["siliconUser"] = user.has_unlimited_silicon_privilege && check_ship_ai_access(user)
-	data["supplies"] = list()
 	message = "Purchases will be delivered to your hangar's delivery zone."
 	if(SSshuttle.supplyBlocked)
 		message = blockade_warning
@@ -131,34 +139,17 @@
 				return
 
 			if(!charge_account.adjust_money(-total_cost, CREDIT_LOG_CARGO))
+				say("Insufficent funds!")
 				return
+
+			playsound(src, 'sound/machines/twobeep_high.ogg', 50, TRUE)
+			say("Order incoming!")
 
 			var/list/unprocessed_packs = list()
 			for(var/list/current_item as anything in purchasing)
-				unprocessed_packs += locate(current_item["ref"]) in current_outpost.supply_packs
+				unprocessed_packs += locate(current_item["ref"]) in current_outpost.market.supply_packs
 
-			while(unprocessed_packs.len > 0)
-				var/datum/supply_pack/initial_pack = unprocessed_packs[1]
-				if(initial_pack.no_bundle)
-					make_single_order(usr, initial_pack)
-					unprocessed_packs -= initial_pack
-					continue
-
-				var/list/combo_packs = list()
-				var/combo_group = initial_pack.group
-				for(var/datum/supply_pack/current_pack in unprocessed_packs)
-					if(current_pack.group != combo_group || current_pack.no_bundle)
-						continue
-					combo_packs += current_pack
-					unprocessed_packs -= current_pack
-
-				if(combo_packs.len == 1) // No items could be bundled with the initial pack, make a single order
-					make_single_order(usr, initial_pack)
-					unprocessed_packs -= initial_pack
-					continue
-
-				make_combo_order(usr, combo_packs)
-				unprocessed_packs -= combo_packs
+			current_outpost.market.make_order(usr, unprocessed_packs, return_crate_spawner())
 
 		if("mission-act")
 			var/datum/mission/outpost/mission = locate(params["ref"])
@@ -178,52 +169,6 @@
 				else if(tgui_alert(usr, "Give up on [mission]?", src, list("Yes", "No")) == "Yes")
 					mission.give_up()
 				return TRUE
-
-/obj/machinery/computer/cargo/proc/make_single_order(mob/user, datum/supply_pack/pack)
-	var/name = "*None Provided*"
-	var/rank = "*None Provided*"
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		name = H.get_authentification_name()
-		rank = H.get_assignment(hand_first = TRUE)
-	else if(issilicon(user))
-		name = user.real_name
-		rank = "Silicon"
-	var/datum/supply_order/SO = new(pack, name, rank, user.ckey, "", ordering_outpost = current_ship.docked_to)
-	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
-	crate_spawner.handle_order(SO)
-	update_appearance() // ??????????????????
-	return TRUE
-
-/obj/machinery/computer/cargo/proc/make_combo_order(mob/user, list/combo_packs)
-	var/name = "*None Provided*"
-	var/rank = "*None Provided*"
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		name = H.get_authentification_name()
-		rank = H.get_assignment(hand_first = TRUE)
-	else if(issilicon(user))
-		name = user.real_name
-		rank = "Silicon"
-	var/datum/supply_order/combo/SO = new(combo_packs, name, rank, user.ckey, "", ordering_outpost = current_ship.docked_to)
-	var/obj/hangar_crate_spawner/crate_spawner = return_crate_spawner()
-	crate_spawner.handle_order(SO)
-	update_appearance() // ??????????????????
-	return TRUE
-
-/obj/machinery/computer/cargo/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
-	. = ..()
-	reconnect(port)
-
-/obj/machinery/computer/cargo/proc/reconnect(obj/docking_port/mobile/port)
-	if(!port)
-		var/area/ship/current_area = get_area(src)
-		if(!istype(current_area))
-			return
-		port = current_area.mobile_port
-	if(!port)
-		return
-	charge_account = port.current_ship.ship_account
 
 /obj/machinery/computer/cargo/attackby(obj/item/W, mob/living/user, params)
 	var/value = W.get_item_credit_value()
@@ -245,19 +190,19 @@
 	if(!istype(outpost_docked))
 		return supply_pack_data
 
-	for(var/datum/supply_pack/current_pack as anything in outpost_docked.supply_packs)
-		if(!supply_pack_data[current_pack.group])
-			supply_pack_data[current_pack.group] = list(
-				"name" = current_pack.group,
+	for(var/datum/supply_pack/current_pack as anything in outpost_docked.market.supply_packs)
+		if(!supply_pack_data[current_pack.category])
+			supply_pack_data[current_pack.category] = list(
+				"name" = current_pack.category,
 				"packs" = list()
 			)
-		if((current_pack.hidden))
+		if((!current_pack.available))
 			continue
-		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_ship.source_template.faction) : FALSE
+		var/same_faction = current_pack.faction ? current_pack.faction.allowed_faction(current_faction) : FALSE
 		var/discountedcost = (same_faction && current_pack.faction_discount) ? current_pack.cost - (current_pack.cost * (current_pack.faction_discount * 0.01)) : null
 		if(current_pack.faction_locked && !same_faction)
 			continue
-		supply_pack_data[current_pack.group]["packs"] += list(list(
+		supply_pack_data[current_pack.category]["packs"] += list(list(
 			"name" = current_pack.name,
 			"cost" = current_pack.cost,
 			"discountedcost" = discountedcost ? discountedcost : null,

@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/pistol
+	bad_type = /obj/item/gun/ballistic/automatic/pistol
 	bolt_type = BOLT_TYPE_LOCKING
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -186,4 +187,4 @@
 		/obj/item/ammo_box/magazine/internal/derr357,
 	)
 
-EMPTY_GUN_HELPER(ballistic/derringer)
+EMPTY_GUN_HELPER(derringer)

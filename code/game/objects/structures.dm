@@ -9,6 +9,8 @@
 
 	hitsound_type = PROJECTILE_HITSOUND_METAL
 
+	bad_type = /obj/structure
+
 	///is this assigned the climbable element on init?
 	var/climbable = FALSE
 	///How long it takes to climb this object
