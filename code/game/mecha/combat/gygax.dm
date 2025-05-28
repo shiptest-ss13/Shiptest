@@ -3,7 +3,8 @@
 	name = "\improper 501p Security Exosuit"
 	icon_state = "gygax"
 	step_in = 3
-	dir_in = 1 //Facing North.
+	dir = NORTH
+	dir_in = NORTH
 	max_integrity = 300
 	deflect_chance = 5
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 40, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)

@@ -153,3 +153,76 @@
   - rscadd: Added Sola-class Hunting Vessel - an independent hunting ship!
   SomeguyManperson:
   - balance: wood is now significantly better at being used as fuel for a grill
+2025-05-20:
+  Gristlebee:
+  - bugfix: Scrapping station wreck no longer has extra terminals, foreman's office
+      has correct revolver, armory shutters IDs
+  - balance: Removes a deadeye and replaces a revolt turret with a strike on Scrapping
+      Station
+  - bugfix: Gauss guns properly consume charge.
+  - bugfix: Claris no longer has ghost bullets haunting it.
+  - rscdel: Outpost maint access restrictions.
+  Sadhorizon:
+  - bugfix: You can use the Sunskipper grill again.
+  firebudgy:
+  - balance: Icemoon Training Center mech is no longer as easily cheesable.
+  generalthrax:
+  - rscdel: removed trollface and nigerian prince spam fax
+2025-05-22:
+  FalloutFalcon:
+  - bugfix: fancy chat should now consistently load. Please ping @_fallcon if it doesn't.
+  FslashN:
+  - rscadd: Mech fabricator can now print in all cardinal directions, selectable from
+      the menu.
+  - bugfix: The fabricator will not print into tiles with dense objects/turfs/mobs,
+      fallback to its own tile.
+  - refactor: The fabricator menu should be snappier with switch().
+  Gristlebee:
+  - rscadd: Custom vendors notify owners when a purchase is made
+  - bugfix: Custom vendor inventory icons, stock and purchasing
+  Meemofcourse:
+  - rscadd: Added the ability to wear binoculars around one's neck
+  Zevotech:
+  - bugfix: improvised Shotgun sprites are now fixed and are actually in your hand
+      again.
+  zimon9:
+  - balance: increases industrial tape stack sizes from 10 to 15, allows industrial
+      tape to fit in toolbelts and engineering pouches
+2025-05-23:
+  FalloutFalcon:
+  - rscadd: New spawner that spawns a random fully loaded guns (This can include non-lethals
+      like foam guns atm)
+  - rscadd: Summon Guns now includes all functional and loaded guns
+2025-05-24:
+  rye-rice:
+  - bugfix: Fixes greebles spawning inside ships
+2025-05-25:
+  DIB-DOG:
+  - bugfix: sets cameras to the correct network on the Crying Sun
+  FalloutFalcon:
+  - rscadd: ngr outfits now get the ngr player faction
+  - bugfix: more permenant fix for ngr ships targeting crew
+  FalloutFalcon, LemonInTheDark:
+  - rscadd: Picking things up now looks better and its easier to see.
+  - rscadd: This animation should now play for alot more things.
+  generalthrax:
+  - bugfix: Talos gear room has vents for its airlock now
+  - balance: Boosts .22lr's damage very slightly. AP is still abysmal dogshit.
+2025-05-26:
+  thgvr:
+  - rscadd: A lot of food changes, notably steaks don't come with plates
+2025-05-27:
+  Erikafox:
+  - balance: disabler projectiles now say disabler when they hit you
+  Gristlebee:
+  - balance: Dogtags are faster to strip off corpses.
+  generalthrax:
+  - balance: Doubled the weapon wear thresholds on Shotguns, SMGs, Pistols, and Assault
+      Rifles.
+  - balance: Weapon Cleaning Kit now cleans twice as effectively
+  thgvr:
+  - rscdel: Panacea no longer spawnable
+2025-05-28:
+  Majkl-J:
+  - bugfix: The healing surgeries now correctly consider limb integrity when rechecking
+      if a surgery step can continue, stopping correctly once they can no longer heal.

@@ -29,7 +29,7 @@
 	description = "Records show this settlement as belonging to the SRM, but no one has heard from them as of late. I wonder what happened?"
 	suffix = "icemoon_ice_lodge.dmm"
 	ruin_tags = list(RUIN_TAG_HARD_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-	ruin_mission_types = list(/datum/mission/ruin/fallen_montagne)
+//	ruin_mission_types = list(/datum/mission/ruin/fallen_montagne)
 
 /datum/mission/ruin/fallen_montagne
 	name = "dark signal investigation"
@@ -46,10 +46,11 @@
 	description = "CLIP has recently lost contact with one of it's Anomaly Research Labs. Reports suggest the frontiersmen may have been behind it."
 	suffix = "icemoon_tesla_lab.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/blackbox,
 		/datum/mission/ruin/daughter
 	)
+*/
 
 /datum/mission/ruin/daughter
 	name = "find our daughter!"
