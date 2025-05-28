@@ -1,6 +1,3 @@
-/// From base of /mob/proc/reset_perspective() : ()
-#define COMSIG_MOB_RESET_PERSPECTIVE "mob_reset_perspective"
-
 /// from base of [/mob/living/changeNext_Move()] (next_move)
 #define COMSIG_LIVING_CHANGENEXT_MOVE "living_changenext_move"
 
