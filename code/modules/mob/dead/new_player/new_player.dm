@@ -388,7 +388,7 @@
 		to_chat(humanc, span_notice("Read up about Cataclysm Day <a href=\"https://shiptest.net/wiki/Cataclysm_Day\">Here!</a>"))
 
 		var/list/choices = list()
-		choices["SRM Hunting Ban Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
+		choices["SRM Fasting Rations"] = icon('icons/obj/clothing/faction/srm/head.dmi', "rouma_hat")
 		choices["Exchanging Cards"] = icon('icons/obj/bureaucracy.dmi', "paperslip")
 		choices["Planet Painting"] = icon('icons/obj/crayons.dmi', "crayonbox")
 		choices["Terrarium"] = icon('icons/obj/item/terrarium.dmi', "jar_plants")
@@ -399,7 +399,7 @@
 		)
 		var/obj/item/storage/backpack/backpack = locate() in humanc.contents
 		switch(choice)
-			if("SRM Hunting Ban Rations")
+			if("SRM Fasting Rations")
 				if(backpack)
 					new /obj/item/storage/box/papersack/srm_rations(backpack)
 			if("Exchanging Cards")
