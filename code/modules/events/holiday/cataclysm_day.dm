@@ -22,6 +22,7 @@
 	category = EVENT_CATEGORY_HOLIDAY
 
 /datum/round_event_control/cataclysm_broadcast/can_spawn_event(players_amt, gamemode)
+	. = ..()
 	if(!(length(SSovermap.outposts)))
 		return FALSE
 
