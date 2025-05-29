@@ -155,28 +155,20 @@
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_EMOTEMUTE))
 			return FALSE
-/**
+/*
 * Allows the intrepid coder to send a basic emote
 * Takes text as input, sends it out to those who need to know after some light parsing
 * If you need something more complex, make it into a datum emote
 * Arguments:
 * * text - The text to send out
+*
+* Returns TRUE if it was able to run the emote, FALSE otherwise.
 */
-/atom/proc/manual_emote(text) //Just override the song and dance
-	. = TRUE
-	if(findtext(text, "their"))
-		text = replacetext(text, "their", p_their())
-	if(findtext(text, "them"))
-		text = replacetext(text, "them", p_them())
-	if(findtext(text, "%s"))
-		text = replacetext(text, "%s", p_s())
-
+/atom/proc/manual_emote(text)
 	if(!text)
 		CRASH("Someone passed nothing to manual_emote(), fix it")
 
 	log_message(text, LOG_EMOTE)
-	text = "<b>[src]</b> " + text
-
 	visible_message(text, visible_message_flags = EMOTE_MESSAGE)
 	return TRUE
 
@@ -196,7 +188,6 @@
 		if(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT && !(ghost in viewers(origin_turf, null)))
 			ghost.show_message("[FOLLOW_LINK(ghost, src)] [ghost_text]")
 	return TRUE
-
 /**
  * Returns a boolean based on whether or not the string contains a comma or an apostrophe,
  * to be used for emotes to decide whether or not to have a space between the name of the user
