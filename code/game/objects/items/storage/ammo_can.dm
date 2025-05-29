@@ -139,7 +139,7 @@
 	name = "ammo can (6.5mm CLIP)"
 	icon_state = "ammobox_75"
 	for (var/i in 1 to 4)
-		new /obj/item/storage/box/ammo/a75clip(src)
+		new /obj/item/storage/box/ammo/a65clip(src)
 
 /obj/item/storage/toolbox/ammo/c300/PopulateContents()
 	name = "ammo can (.300)"

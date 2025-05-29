@@ -41,7 +41,7 @@
 
 //6.5mm CLIP (F90, Boomslang)
 
-/obj/projectile/bullet/a75clip
+/obj/projectile/bullet/a65clip
 	name = "6.5mm CLIP bullet"
 	stamina = 10
 	damage = 40
@@ -55,13 +55,13 @@
 	light_color = COLOR_SOFT_RED
 	light_range = 2
 
-/obj/projectile/bullet/a75clip/trac
+/obj/projectile/bullet/a65clip/trac
 	damage = 10
 	armour_penetration = 0
-	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a75clip
+	shrapnel_type = /obj/item/shrapnel/bullet/tracker/a65clip
 
 //this should only exist on the big ass turrets. don't fucking give players this.
-/obj/projectile/bullet/a75clip/rubber //"rubber"
+/obj/projectile/bullet/a65clip/rubber //"rubber"
 	name = "6.5mm CLIP rubber bullet"
 	damage = 10
 	stamina = 40
