@@ -66,15 +66,15 @@
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a300/trac = 2)
 	generate_items_inside(items_inside,src)
 
-//7.5x64mm CLIP
+//6.5mm CLIP
 
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/a75clip
 	ammo_type = /obj/item/ammo_casing/a75clip
 	max_ammo = 5
 
 /obj/item/storage/box/ammo/a75clip
-	name = "box of 7.5x64mm CLIP ammo"
-	desc = "A box of standard 7.5x64mm CLIP ammo."
+	name = "box of 6.5mm CLIP ammo"
+	desc = "A box of standard 6.5mm CLIP ammo."
 	icon_state = "65box"
 
 /obj/item/storage/box/ammo/a75clip/PopulateContents()
@@ -87,8 +87,8 @@
 	max_ammo = 5
 
 /obj/item/storage/box/ammo/a75clip/trac
-	name = "box of 7.5x64mm CLIP tracker ammo"
-	desc = "A box of standard 7.5x64mm CLIP tracker ammo."
+	name = "box of 6.5mm CLIP tracker ammo"
+	desc = "A box of standard 6.5mm CLIP tracker ammo."
 
 /obj/item/storage/box/ammo/a75clip/trac/PopulateContents()
 	var/static/items_inside = list(

@@ -39,10 +39,10 @@
 	knockdown = 0
 	breakthings = FALSE
 
-//7.5x64mm CLIP (F90, Boomslang)
+//6.5mm CLIP (F90, Boomslang)
 
 /obj/projectile/bullet/a75clip
-	name = "7.5x64mm CLIP bullet"
+	name = "6.5mm CLIP bullet"
 	stamina = 10
 	damage = 40
 	armour_penetration = 50
@@ -62,7 +62,7 @@
 
 //this should only exist on the big ass turrets. don't fucking give players this.
 /obj/projectile/bullet/a75clip/rubber //"rubber"
-	name = "7.5x64mm CLIP rubber bullet"
+	name = "6.5mm CLIP rubber bullet"
 	damage = 10
 	stamina = 40
 	speed_mod = BULLET_SPEED_RUBBER_MOD
