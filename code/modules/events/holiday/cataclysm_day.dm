@@ -15,7 +15,8 @@
 	name = "Cataclysm Planet Morning Broadcast"
 	holidayID = CATACLYSM_DAY
 	typepath = /datum/round_event/cataclysm_broadcast
-	weight = -1 //forces it to be called, regardless of weight
+	//weight = -1 //forces it to be called, regardless of weight
+	weight = 10000
 	max_occurrences = 1
 	earliest_start = 5 MINUTES
 	category = EVENT_CATEGORY_HOLIDAY
