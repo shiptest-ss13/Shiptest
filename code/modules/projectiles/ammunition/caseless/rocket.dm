@@ -13,7 +13,7 @@
 	icon_state = "84mm-hedp"
 	projectile_type = /obj/projectile/bullet/a84mm
 
-/obj/item/ammo_casing/caseless/a65
+/obj/item/ammo_casing/caseless/a75
 	desc = "A .75 bullet casing."
 	caliber = "75"
 	icon_state = "magnum-brass"
