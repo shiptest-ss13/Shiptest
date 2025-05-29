@@ -154,8 +154,11 @@
 /mob/living/basic/death(gibbed)
 	. = ..()
 	if(nest)
-		nest.spawned_mobs -= src
-		nest = null
+		if(QDELETED(nest))
+			nest = null
+		else
+			nest.spawned_mobs -= src
+			nest = null
 	if(basic_mob_flags & DEL_ON_DEATH)
 		qdel(src)
 	else

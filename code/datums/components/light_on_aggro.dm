@@ -37,7 +37,8 @@
 	var/atom/target = source.ai_controller?.blackboard[target_key]
 	if (QDELETED(target))
 		return
-	our_light = source.mob_light(light_power_aggro, light_range_aggro, light_color_aggro)
+	if(!isnull(our_light))
+		our_light = source.mob_light(light_power_aggro, light_range_aggro, light_color_aggro)
 
 /datum/component/light_on_aggro/Destroy()
 	revert_appearance(parent)
