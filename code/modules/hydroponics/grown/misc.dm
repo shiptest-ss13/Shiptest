@@ -10,7 +10,7 @@
 	maturation = 5
 	production = 1
 	yield = 2
-	potency = 10
+	potency = 25
 	growthstages = 3
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy)
@@ -121,7 +121,7 @@
 	maturation = 3
 	yield = 4
 	growthstages = 2
-	reagents_add = list(/datum/reagent/consumable/sugar = 0.25)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04, /datum/reagent/consumable/sugar)
 	mutatelist = list(/obj/item/seeds/bamboo)
 
 /obj/item/food/grown/sugarcane
