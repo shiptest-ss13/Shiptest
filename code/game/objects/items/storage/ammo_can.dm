@@ -44,7 +44,7 @@
 		"8x50mmR" = "ammobox_850",
 		"8x58mm" = "ammobox_858",
 		".308" = "ammobox_308",
-		"7.5x64mm CLIP" = "ammobox_75",
+		"6.5mm CLIP" = "ammobox_65",
 		".300" = "ammobox_300",
 		".357" = "ammobox_357",
 		".299 Eoehoma" = "ammobox_299",
@@ -136,10 +136,10 @@
 		new /obj/item/storage/box/ammo/c46x30mm(src)
 
 /obj/item/storage/toolbox/ammo/c75/PopulateContents()
-	name = "ammo can (7.5x64mm CLIP)"
+	name = "ammo can (6.5mm CLIP)"
 	icon_state = "ammobox_75"
 	for (var/i in 1 to 4)
-		new /obj/item/storage/box/ammo/a75clip(src)
+		new /obj/item/storage/box/ammo/a65clip(src)
 
 /obj/item/storage/toolbox/ammo/c300/PopulateContents()
 	name = "ammo can (.300)"

@@ -265,7 +265,7 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a75clip
+	casingtype = /obj/item/ammo_casing/a65clip
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /* Space Ranged */
@@ -319,7 +319,7 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate__space_shotgun"
-	casingtype = /obj/item/ammo_casing/a75clip
+	casingtype = /obj/item/ammo_casing/a65clip
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
@@ -381,7 +381,7 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a75clip
+	casingtype = /obj/item/ammo_casing/a65clip
 	r_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 ///////////////Misc////////////

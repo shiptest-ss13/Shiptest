@@ -184,14 +184,14 @@
 
 /datum/supply_pack/magazine/boomslang_mag
 	name = "Boomslang-90 Magazine Crate"
-	desc = "Contains a 7.5x64mm CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
+	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/short/empty)
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/boomslang_mag_extended
 	name = "MSR-90 'Boomslang' Magazine Crate"
-	desc = "Contains a 7.5x64mm CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
+	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
 	cost = 1500
 	faction = /datum/faction/syndicate/scarborough
@@ -260,7 +260,7 @@
 
 /datum/supply_pack/magazine/f90
 	name = "CM-F90 Magazine Crate"
-	desc = "Contains a 5-round 7.5x64mm magazine for use with the CM-F90 sniper rifle."
+	desc = "Contains a 5-round 6.5mm magazine for use with the CM-F90 sniper rifle."
 	contains = list(/obj/item/ammo_box/magazine/f90/empty)
 	cost = 750
 	faction = /datum/faction/clip
