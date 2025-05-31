@@ -505,20 +505,6 @@
 	special_attack_type = SPECIAL_ATTACK_HEAL
 	special_attack_cry = "SHIELD OF PROTECTION"
 
-/obj/item/toy/prize/honk
-	name = "toy H.O.N.K."
-	desc = "6/14"
-	icon_state = "honktoy"
-	max_combat_health = 4 //140 integrity
-	special_attack_type = SPECIAL_ATTACK_OTHER
-	special_attack_type_message = "puts the opposing mech's special move on cooldown and heals this mech."
-	special_attack_cry = "MEGA HORN"
-
-/obj/item/toy/prize/honk/super_special_attack(obj/item/toy/prize/victim)
-	playsound(src, 'sound/machines/honkbot_evil_laugh.ogg', 20, TRUE)
-	victim.special_attack_cooldown += 3 //Adds cooldown to the other mech and gives a minor self heal
-	combat_health++
-
 /obj/item/toy/prize/marauder
 	name = "toy Marauder"
 	desc = "7/14"

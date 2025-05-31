@@ -137,11 +137,6 @@
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	dog_fashion = /datum/dog_fashion/head/santa
 
-/obj/item/clothing/head/rice_hat
-	name = "rice hat"
-	desc = "Welcome to the rice fields, motherfucker."
-	icon_state = "rice_hat"
-
 /obj/item/clothing/head/papersack
 	name = "paper sack hat"
 	desc = "A paper sack with crude holes cut out for eyes. Useful for hiding one's identity or ugliness."
