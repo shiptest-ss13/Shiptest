@@ -330,7 +330,7 @@
 /obj/item/disk/holodisk/example
 	preset_image_type = /datum/preset_holoimage/researcher
 	preset_record_text = {"
-	NAME dipshit
+	NAME Guy Scienceman
 	DELAY 10
 	SAY Why did the chaplain cross the maint ?
 	DELAY 20
