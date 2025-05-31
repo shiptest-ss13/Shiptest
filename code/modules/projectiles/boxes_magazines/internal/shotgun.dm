@@ -58,7 +58,7 @@
 	name = "beacon internal magazine"
 	ammo_type = /obj/item/ammo_casing/a4570
 	caliber = ".45-70"
-	max_ammo = 1
+	max_ammo = 2
 	multiload = FALSE
 
 /obj/item/ammo_box/magazine/internal/shot/underbarrel
