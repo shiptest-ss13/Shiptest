@@ -260,9 +260,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
-	wear_minor_threshold = 120
-	wear_major_threshold = 360
-	wear_maximum = 600
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 

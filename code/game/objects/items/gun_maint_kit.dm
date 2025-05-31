@@ -6,7 +6,7 @@
 	w_class = WEIGHT_CLASS_BULKY //no carrying these around, sorry :(
 	custom_materials = list(/datum/material/iron = 500)
 	/// Amount of wear removed from a gun on use
-	var/wear_reduction = 60
+	var/wear_reduction = 120
 	/// Number of times this gun fixer can be used
 	var/uses = 5
 
