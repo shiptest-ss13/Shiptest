@@ -84,6 +84,7 @@
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"
 	desc = "A heavy-duty energy rifle built for pure destruction."
+	spawn_blacklisted = TRUE
 	default_ammo_type = /obj/item/stock_parts/cell/infinite
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/infinite,
