@@ -34,7 +34,7 @@
 	name = "Cow Crate"
 	desc = "A crate containing a cow."
 	cost = 500
-	contains = list(/mob/living/simple_animal/cow)
+	contains = list(/mob/living/basic/cow)
 	crate_name = "cow crate"
 
 /*
