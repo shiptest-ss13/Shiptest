@@ -53,9 +53,6 @@
 /datum/component/storage/concrete/pockets/shoes/Initialize()
 	. = ..()
 
-/datum/component/storage/concrete/pockets/shoes/clown/Initialize()
-	. = ..()
-
 /datum/component/storage/concrete/pockets/pocketprotector
 	max_items = 3
 	max_w_class = WEIGHT_CLASS_TINY

@@ -42,12 +42,6 @@
 		. += flashing_overlay
 		attached_overlays += flashing_overlay
 
-/obj/item/assembly/flash/proc/clown_check(mob/living/carbon/human/user)
-	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-		flash_carbon(user, user, 15, 0)
-		return FALSE
-	return TRUE
-
 /obj/item/assembly/flash/proc/burn_out() //Made so you can override it if you want to have an invincible flash from R&D or something.
 	if(!burnt_out)
 		burnt_out = TRUE
@@ -101,7 +95,7 @@
 	times_used++
 	flash_recharge()
 	update_icon(ALL, TRUE)
-	if(user && !clown_check(user))
+	if(user)
 		return FALSE
 	return TRUE
 

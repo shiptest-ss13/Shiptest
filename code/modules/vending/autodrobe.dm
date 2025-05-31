@@ -50,8 +50,6 @@
 		/obj/item/clothing/under/dress/sundress = 1,
 		/obj/item/staff/broom = 1,
 		/obj/item/staff = 3,
-		/obj/item/clothing/under/rank/civilian/mime/sexy = 1,
-		/obj/item/clothing/under/rank/civilian/mime/skirt = 1,
 		/obj/item/clothing/mask/rat/bat = 1,
 		/obj/item/clothing/mask/rat/bee = 1,
 		/obj/item/clothing/mask/rat/bear = 1,

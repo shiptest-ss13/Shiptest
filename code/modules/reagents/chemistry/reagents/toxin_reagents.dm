@@ -946,20 +946,6 @@
 		. = 1
 	..()
 
-/datum/reagent/toxin/mimesbane
-	name = "Mime's Bane"
-	description = "A nonlethal neurotoxin that interferes with the victim's ability to gesture."
-	silent_toxin = TRUE
-	color = "#F0F8FF" // rgb: 240, 248, 255
-	toxpwr = 0
-	taste_description = "stillness"
-
-/datum/reagent/toxin/mimesbane/on_mob_metabolize(mob/living/L)
-	ADD_TRAIT(L, TRAIT_EMOTEMUTE, type)
-
-/datum/reagent/toxin/mimesbane/on_mob_end_metabolize(mob/living/L)
-	REMOVE_TRAIT(L, TRAIT_EMOTEMUTE, type)
-
 /datum/reagent/toxin/bonehurtingjuice //oof ouch
 	name = "Bone Hurting Juice"
 	description = "A strange substance that looks a lot like water. Drinking it is oddly tempting. Oof ouch."

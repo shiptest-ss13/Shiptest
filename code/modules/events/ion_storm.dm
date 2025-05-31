@@ -339,19 +339,15 @@
 					switch(rand(1,2)) //Change whose job?
 						if(1) //Change the entire crew's job
 							switch(rand(1,3)) //Change to what?
-								if(1) //Change to a specific random job
+								if(1 to 2) //Change to a specific random job
 									message = "ALL CREWMEMBERS ARE NOW [ionadjectiveshalf][ioncrew1]"
-								if(2) //Change to clowns (HONK)
-									message = "ALL CREWMEMBERS ARE NOW [ionadjectiveshalf]CLOWNS"
 
 								if(3) //Change to heads
 									message = "ALL CREWMEMBERS ARE NOW [ionadjectiveshalf]HEADS OF STAFF"
 						if(2) //Change a specific crewmember's job
 							switch(rand(1,3)) //Change to what?
-								if(1) //Change to a specific random job
+								if(1 to 2) //Change to a specific random job
 									message = "THE [ioncrew1] ARE NOW [ionadjectiveshalf][ioncrew2]"
-								if(2) //Change to clowns (HONK)
-									message = "THE [ioncrew1] ARE NOW [ionadjectiveshalf]CLOWNS"
 								if(3) //Change to heads
 									message = "THE [ioncrew1] ARE NOW [ionadjectiveshalf]HEADS OF STAFF"
 
