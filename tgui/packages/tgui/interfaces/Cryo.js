@@ -1,13 +1,14 @@
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Button,
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
-import { BeakerContents } from './common/BeakerContents';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
+import { BeakerContents } from './common/BeakerContents';
 
 const damageTypes = [
   {
@@ -30,7 +31,7 @@ const damageTypes = [
 
 export const Cryo = () => {
   return (
-    <Window width={400} height={550} resizable>
+    <Window width={400} height={550}>
       <Window.Content scrollable>
         <CryoContent />
       </Window.Content>
@@ -38,8 +39,8 @@ export const Cryo = () => {
   );
 };
 
-const CryoContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const CryoContent = (props) => {
+  const { act, data } = useBackend();
   return (
     <>
       <Section title="Occupant">

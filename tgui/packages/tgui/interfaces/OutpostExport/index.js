@@ -1,25 +1,27 @@
-import { createSearch, decodeHtmlEntities } from 'common/string';
-import { useBackend, useLocalState } from '../../backend';
+import { useState } from 'react';
 import {
   Box,
   Button,
   Input,
+  NoticeBox,
   Section,
   Table,
-  NoticeBox,
-} from '../../components';
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
+import { createSearch, decodeHtmlEntities } from 'tgui-core/string';
+
+import { useBackend } from '../../backend';
 import { Window } from '../../layouts';
-import { formatMoney } from '../../format';
 
 const MAX_SEARCH_RESULTS = 25;
 
 // this UI is heavily based on (read: basically copy-pasted from) Uplink.js.
 
-export const OutpostExport = (props, context) => {
-  const { data } = useBackend(context);
+export const OutpostExport = (props) => {
+  const { data } = useBackend();
   const { telecrystals } = data;
   return (
-    <Window width={620} height={580} theme="ntos_terminal" resizable>
+    <Window width={620} height={580} theme="ntos_terminal">
       <Window.Content scrollable>
         <GenericExport />
       </Window.Content>
@@ -41,15 +43,11 @@ export const OutpostExport = (props, context) => {
 //
 //
 
-const GenericExport = (props, context) => {
-  const { act, data } = useBackend(context);
+const GenericExport = (props) => {
+  const { act, data } = useBackend();
   const { redeemExports = [], allExports = [] } = data;
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
-  const [compactMode, setCompactMode] = useLocalState(
-    context,
-    'compactMode',
-    false
-  );
+  const [searchText, setSearchText] = useState('');
+  const [compactMode, setCompactMode] = useState(false);
   const testSearch = createSearch(searchText, (item) => {
     return item.name + item.desc;
   });
@@ -107,14 +105,10 @@ const GenericExport = (props, context) => {
   );
 };
 
-const ExportList = (props, context) => {
+const ExportList = (props) => {
   const { compactMode, exportList = [], redeemable = false } = props;
-  const { act } = useBackend(context);
-  const [hoveredItem, setHoveredItem] = useLocalState(
-    context,
-    'hoveredItem',
-    {}
-  );
+  const { act } = useBackend();
+  const [hoveredItem, setHoveredItem] = useState({});
 
   // append some extra data depending on whether we're in redeemable mode
   const items = exportList.map((item) => {

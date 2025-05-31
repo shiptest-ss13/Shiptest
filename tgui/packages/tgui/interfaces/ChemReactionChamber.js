@@ -1,6 +1,4 @@
 import { map } from 'common/collections';
-import { classes } from 'common/react';
-import { useBackend, useLocalState } from '../backend';
 import {
   Box,
   Button,
@@ -8,25 +6,23 @@ import {
   LabeledList,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
-export const ChemReactionChamber = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [reagentName, setReagentName] = useLocalState(
-    context,
-    'reagentName',
-    ''
-  );
+export const ChemReactionChamber = (props) => {
+  const { act, data } = useBackend();
+  const [reagentName, setReagentName] = useLocalState('reagentName', '');
   const [reagentQuantity, setReagentQuantity] = useLocalState(
-    context,
     'reagentQuantity',
-    1
+    1,
   );
   const emptying = data.emptying;
   const reagents = data.reagents || [];
   return (
-    <Window width={250} height={225} resizable>
+    <Window width={250} height={225}>
       <Window.Content scrollable>
         <Section
           title="Reagents"
@@ -59,7 +55,7 @@ export const ChemReactionChamber = (props, context) => {
                   step={1}
                   stepPixelSize={3}
                   width="39px"
-                  onDrag={(e, value) => setReagentQuantity(value)}
+                  onDrag={(value) => setReagentQuantity(value)}
                 />
                 <Box inline mr={1} />
                 <Button
@@ -73,7 +69,7 @@ export const ChemReactionChamber = (props, context) => {
                 />
               </td>
             </tr>
-            {map((amount, reagent) => (
+            {map(reagents, (amount, reagent) => (
               <LabeledList.Item
                 key={reagent}
                 label={reagent}
@@ -91,7 +87,7 @@ export const ChemReactionChamber = (props, context) => {
               >
                 {amount}
               </LabeledList.Item>
-            ))(reagents)}
+            ))}
           </LabeledList>
         </Section>
       </Window.Content>

@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -6,11 +5,13 @@ import {
   LabeledList,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const ChemPress = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemPress = (props) => {
+  const { act, data } = useBackend();
   const {
     current_volume,
     product_name,
@@ -63,7 +64,7 @@ export const ChemPress = (props, context) => {
                 maxValue={max_volume}
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) =>
+                onChange={(value) =>
                   act('change_current_volume', {
                     volume: value,
                   })
