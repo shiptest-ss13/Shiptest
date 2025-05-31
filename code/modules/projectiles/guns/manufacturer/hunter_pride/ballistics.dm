@@ -113,7 +113,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	unique_reskin_changes_inhand = TRUE
 
 	recoil = 0
-	spread_unwielded = 10
+	spread_unwielded = 8
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
