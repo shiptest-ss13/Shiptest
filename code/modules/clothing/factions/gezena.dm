@@ -192,6 +192,7 @@
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
 	icon_state = "marinehelmet"
 	item_state = "marinehelm"
+	content_overlays = TRUE
 
 //Gloves
 
