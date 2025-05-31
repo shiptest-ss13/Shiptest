@@ -1,0 +1,228 @@
+2025-05-01:
+  Cloudbreak, Latency:
+  - balance: Talos now has a small basic medical space, and the wings have been shortened
+      to compensate. Armory completely re-arranged as well.
+  Erikafox:
+  - rscadd: Lihoma Navy Yard has begun another production run of Atira-class skiffs
+      (and Tearful Quasar-class Orbital Interceptors, your tax dollars are going *somewhere*)
+  - balance: increases efficiency of combustion engines by 2.66x
+  FslashN:
+  - refactor: Teleporter pieces can now be arranged to have the hub in the middle.
+  - bugfix: Light switches can now be properly dismantled into frames with crowbar
+      or screwdriver.
+  - bugfix: Light switches are mounted with the right directional set and with the
+      correct offset.
+  - rscadd: You can now rename buttons with a pen after opening the maintenance panel
+      with a screwdriver.
+  thearbiber:
+  - rscadd: Adds the Leyak-class to the game
+  - rscdel: the hardliner sergeant getting a free ringneck for some reason
+  zimon9:
+  - rscadd: Added a 10mm ammo box, three weapon refurbishment kits, an angle grinder,
+      a mineral vein scanner, and an assault belt to the Derecho
+  - rscadd: Added goliath pup scooping
+  - rscdel: Removed wrecker power tools from the Derecho
+2025-05-02:
+  generalthrax:
+  - rscadd: Added cargo orders for individual types of produce
+  - rscdel: Removed fruit and vegetables cargo order
+2025-05-03:
+  firebudgy:
+  - balance: All remaining R&D consoles have been removed from planets.
+  thearbiber:
+  - bugfix: removes the fake oxygen cans on cave base and replaces them with actual
+      oxygen.
+2025-05-04:
+  CluckinAwesome:
+  - rscadd: PR-05 Plasma Railgun to the general cargo catalogue, with small NT discounts
+  Erikafox:
+  - rscadd: Some quirks can no longer be detected by health scanners
+  FalloutFalcon:
+  - rscadd: Blind characters can now see visuals for important sounds like footsteps,
+      attacks, and gunshots.
+  - rscadd: Basic mob bears
+  - rscadd: Bears can climb trees
+  - rscadd: Bears love honey now, did you know we had honey?
+  - refactor: Basic mobs updated to Modern TG code
+  Rug-Dealer:
+  - rscadd: Following a review of shipbuilding standards, all toilets are now equipped
+      with the same set of buckles that chairs have.
+  SapphicOverload:
+  - rscadd: Replaced the Shetland's TEG and combustion engines with a turbine
+  firebudgy:
+  - balance: Recruits are now Auxiliaries.
+  generalthrax:
+  - rscadd: Added jorts, dolphin shorts, and khaki explorer shorts to the game
+  - rscadd: Added these new clothing items to loadout
+  - rscadd: Embedded objects can now be removed using a hemostat
+  - rscdel: Removed embed surgery
+  - bugfix: Fixed improper turfs on the ICW Base Waste Ruin that caused wind and fixed
+      one wire
+  - bugfix: ICW Base turrets are no longer ship turrets
+2025-05-05:
+  Erikafox:
+  - balance: humans no longer know solarian by default
+  generalthrax:
+  - bugfix: Removed floor tile from one area with catwalk over it on the Shetland
+  melbert, erika (porting fox):
+  - refactor: Refactored language holders, making species changes not delete all of
+      your known languages
+  - rscadd: 'Languages can now have partial understanding of other languages. More
+      common English words are more likely to be mutually understood.qol: If you speak
+      in ALL CAPS in a foreign language, the translated words will also be ALL CAPS.'
+  - refactor: Refactored language translations. Report if you see any super odd looking
+      translations.
+  - bugfix: Force-says forcing you to speak common (such as cult invocations) will
+      now correctly force you to speak common (even if you don't know common)
+2025-05-06:
+  Aquidu:
+  - rscdel: Sarathi, Elzuosa, Mothpeople, and Kepori no longer have free extra languages.
+  Erikafox:
+  - rscadd: The Solar Confederation has decided to issue Chronicle-classes to the
+      Pionierskompanien. Expect the usual Chronicle antics in a frontier sector near
+      you
+  FalloutFalcon:
+  - rscadd: Readded events, mostly replacing them with new ones
+  FslashN:
+  - rscadd: Industrial suit storage can now be built by using a multitool on the circuitboard.
+2025-05-08:
+  generalthrax:
+  - rscdel: Removed carbon steel and all Overmap 5 minerals like copper, silicon,
+      quartzite, lead
+  - rscadd: Re-added plasteel
+  - balance: Ore yield returned to pre-Overmap 5 levels, all lathe recipes (more or
+      less) returned to their old costs
+  - bugfix: Stops blackmarket uplink crafting from eating your headset
+  - rscdel: Reverts fixes to plasma and ion thrusters that ended up slowing down ships
+      to a crawl
+2025-05-09:
+  FslashN:
+  - bugfix: Chisel corners will now be preserved when the ship moves.
+  Overteh:
+  - bugfix: Nimbus got an actual mk2 hypospray vials.
+  - bugfix: organ freezer in Cirrus is no longer anchored.
+  SomeguyManperson:
+  - bugfix: detonating a grav anomaly core can now break bones as intended and also
+      deletes the core as intended
+  meemofcourse:
+  - code_imp: Uniforms may now roll down their sleeves or their top separately
+  - rscadd: Alt-Clicking an uniform will roll its top down, if possible
+2025-05-10:
+  Erikafox:
+  - rscadd: remaps the ivory. a little less gear, a bit more shape, a smidge more
+      size.
+2025-05-13:
+  moffball19:
+  - rscadd: Remapped the Colossus-class Armored Frigate
+  - rscadd: Added the Thunder-class Interceptor subshuttle
+  - rscadd: A few new empty outfits for Inteq roles
+  - rscadd: no_mag subtypes for 2 Inteq guns
+  - balance: Removed the ballistic goggles from the empty enforcer outfit.
+  - balance: Tweaked the IRMG Shuttle Pilot access, now with mining access instead
+      of warden.
+  - balance: Tweaks the Valor, adding ballistic goggles to the armoury and changing
+      the access restrictions for the Pilot's workplace.
+2025-05-14:
+  Ical92:
+  - bugfix: Dried blood splatters now retain proper name & description
+  Majkl-J:
+  - bugfix: The spam fax event now actually spams faxes
+  - bugfix: Disablers no longer make a loud searing sound when impacting walls
+  SomeguyManperson:
+  - bugfix: the spread reduction for gunslinger provided to revolvers is no randomized
+      when applied
+  - balance: Retrieve vanguard mission can no longer have duplicates at the same time
+  generalthrax:
+  - rscadd: Added rare ore veins to planets, containing exclusively that planet's
+      rare materials
+2025-05-17:
+  FalloutFalcon:
+  - bugfix: fixes both ramzi scraping station missions
+  - bugfix: fixes the beachbunker frontiersmen mission
+  - code_imp: ruin placement unit test is more robust and tests missions
+  - code_imp: fixes all ruin mission hard dels exposed by these tests
+2025-05-19:
+  Apogee-dev:
+  - rscadd: Added handrails to Riggs
+  - bugfix: Moved handrails out of the way on Raleigh, Scarab, Elated Bolide
+  Erikafox:
+  - bugfix: reduces the chance of random space wind on beach planets
+  FalloutFalcon:
+  - bugfix: ambience should no longer have any chance of overlapping eachother
+  Sadhorizon, No_Originality:
+  - rscadd: Added Sola-class Hunting Vessel - an independent hunting ship!
+  SomeguyManperson:
+  - balance: wood is now significantly better at being used as fuel for a grill
+2025-05-20:
+  Gristlebee:
+  - bugfix: Scrapping station wreck no longer has extra terminals, foreman's office
+      has correct revolver, armory shutters IDs
+  - balance: Removes a deadeye and replaces a revolt turret with a strike on Scrapping
+      Station
+  - bugfix: Gauss guns properly consume charge.
+  - bugfix: Claris no longer has ghost bullets haunting it.
+  - rscdel: Outpost maint access restrictions.
+  Sadhorizon:
+  - bugfix: You can use the Sunskipper grill again.
+  firebudgy:
+  - balance: Icemoon Training Center mech is no longer as easily cheesable.
+  generalthrax:
+  - rscdel: removed trollface and nigerian prince spam fax
+2025-05-22:
+  FalloutFalcon:
+  - bugfix: fancy chat should now consistently load. Please ping @_fallcon if it doesn't.
+  FslashN:
+  - rscadd: Mech fabricator can now print in all cardinal directions, selectable from
+      the menu.
+  - bugfix: The fabricator will not print into tiles with dense objects/turfs/mobs,
+      fallback to its own tile.
+  - refactor: The fabricator menu should be snappier with switch().
+  Gristlebee:
+  - rscadd: Custom vendors notify owners when a purchase is made
+  - bugfix: Custom vendor inventory icons, stock and purchasing
+  Meemofcourse:
+  - rscadd: Added the ability to wear binoculars around one's neck
+  Zevotech:
+  - bugfix: improvised Shotgun sprites are now fixed and are actually in your hand
+      again.
+  zimon9:
+  - balance: increases industrial tape stack sizes from 10 to 15, allows industrial
+      tape to fit in toolbelts and engineering pouches
+2025-05-23:
+  FalloutFalcon:
+  - rscadd: New spawner that spawns a random fully loaded guns (This can include non-lethals
+      like foam guns atm)
+  - rscadd: Summon Guns now includes all functional and loaded guns
+2025-05-24:
+  rye-rice:
+  - bugfix: Fixes greebles spawning inside ships
+2025-05-25:
+  DIB-DOG:
+  - bugfix: sets cameras to the correct network on the Crying Sun
+  FalloutFalcon:
+  - rscadd: ngr outfits now get the ngr player faction
+  - bugfix: more permenant fix for ngr ships targeting crew
+  FalloutFalcon, LemonInTheDark:
+  - rscadd: Picking things up now looks better and its easier to see.
+  - rscadd: This animation should now play for alot more things.
+  generalthrax:
+  - bugfix: Talos gear room has vents for its airlock now
+  - balance: Boosts .22lr's damage very slightly. AP is still abysmal dogshit.
+2025-05-26:
+  thgvr:
+  - rscadd: A lot of food changes, notably steaks don't come with plates
+2025-05-27:
+  Erikafox:
+  - balance: disabler projectiles now say disabler when they hit you
+  Gristlebee:
+  - balance: Dogtags are faster to strip off corpses.
+  generalthrax:
+  - balance: Doubled the weapon wear thresholds on Shotguns, SMGs, Pistols, and Assault
+      Rifles.
+  - balance: Weapon Cleaning Kit now cleans twice as effectively
+  thgvr:
+  - rscdel: Panacea no longer spawnable
+2025-05-28:
+  Majkl-J:
+  - bugfix: The healing surgeries now correctly consider limb integrity when rechecking
+      if a surgery step can continue, stopping correctly once they can no longer heal.

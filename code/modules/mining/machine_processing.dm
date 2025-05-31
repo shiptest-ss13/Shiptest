@@ -144,7 +144,7 @@
 /obj/machinery/mineral/processing_unit/Initialize()
 	. = ..()
 	proximity_monitor = new(src, 1)
-	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/copper, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/carbon, /datum/material/sulfur, /datum/material/lead, /datum/material/quartz, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
+	AddComponent(/datum/component/material_container, list(/datum/material/iron, /datum/material/glass, /datum/material/silver, /datum/material/gold, /datum/material/diamond, /datum/material/plasma, /datum/material/uranium, /datum/material/hellstone, /datum/material/titanium, /datum/material/bluespace), INFINITY, TRUE, /obj/item/stack)
 	stored_research = new /datum/techweb/specialized/autounlocking/smelter
 	selected_material = SSmaterials.GetMaterialRef(/datum/material/iron)
 
@@ -183,7 +183,7 @@
 		if (selected_material == M)
 			dat += " <i>Smelting</i>"
 		else
-			dat += " <A href='?src=[REF(CONSOLE)];material=[REF(M)]'><b>Not Smelting</b></A> "
+			dat += " <A href='byond://?src=[REF(CONSOLE)];material=[REF(M)]'><b>Not Smelting</b></A> "
 		dat += "<br>"
 
 	dat += "<br><br>"
@@ -195,16 +195,16 @@
 		if (selected_alloy == D.id)
 			dat += " <i>Smelting</i>"
 		else
-			dat += " <A href='?src=[REF(CONSOLE)];alloy=[D.id]'><b>Not Smelting</b></A> "
+			dat += " <A href='byond://?src=[REF(CONSOLE)];alloy=[D.id]'><b>Not Smelting</b></A> "
 		dat += "<br>"
 
 	dat += "<br><br>"
 	//On or off
 	dat += "Machine is currently "
 	if (on)
-		dat += "<A href='?src=[REF(CONSOLE)];set_on=off'>On</A> "
+		dat += "<A href='byond://?src=[REF(CONSOLE)];set_on=off'>On</A> "
 	else
-		dat += "<A href='?src=[REF(CONSOLE)];set_on=on'>Off</A> "
+		dat += "<A href='byond://?src=[REF(CONSOLE)];set_on=on'>Off</A> "
 
 	return dat
 

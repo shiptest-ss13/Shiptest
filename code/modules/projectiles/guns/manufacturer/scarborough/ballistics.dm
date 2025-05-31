@@ -260,9 +260,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
-	wear_minor_threshold = 120
-	wear_major_threshold = 360
-	wear_maximum = 600
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	default_firemode = FIREMODE_SEMIAUTO
 
@@ -937,6 +937,10 @@ NO_MAG_GUN_HELPER(shotgun/automatic/bulldog)
 	caliber = "12ga"
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/m12g_bulldog/slug
+	name = "shotgun box magazine (12g Slugs)"
+	ammo_type = /obj/item/ammo_casing/shotgun
 
 /obj/item/ammo_box/magazine/m12g_bulldog/empty
 	start_empty = TRUE
