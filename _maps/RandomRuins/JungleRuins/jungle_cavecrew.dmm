@@ -664,10 +664,11 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/landmark/mission_poi/main/kill{
-	already_spawned = 1
-	},
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured,
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer
+	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/bridge)
 "iN" = (
@@ -2160,7 +2161,8 @@
 	pixel_y = -3
 	},
 /obj/effect/landmark/mission_poi/main{
-	mission_index = 2
+	mission_index = 2;
+	type_to_spawn = /obj/item/documents/frontier
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/bridge)
@@ -2515,7 +2517,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/jungleplanet/lit{
-	icon_state = "platingdmg3"
+	icon_state = "platingdmg1"
 	},
 /area/ruin/powered)
 "EI" = (
@@ -3646,9 +3648,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/jungleplanet/lit{
-	icon_state = "platingdmg1"
-	},
+/turf/open/floor/plating/jungleplanet/lit,
 /area/ruin/powered)
 "ST" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4093,7 +4093,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/jungleplanet/lit,
+/turf/open/floor/plating/jungleplanet/lit{
+	icon_state = "platingdmg3"
+	},
 /area/ruin/powered)
 "XV" = (
 /turf/open/floor/plasteel/stairs{
@@ -5502,12 +5504,12 @@ Fw
 Nr
 fS
 mC
-XU
+SN
 PU
 to
 PU
 PU
-XU
+SN
 Mg
 LB
 CC
@@ -5622,13 +5624,13 @@ pt
 aQ
 aQ
 lG
-XU
+SN
 yZ
 to
-SN
+EG
 ng
 KK
-EG
+XU
 OZ
 EO
 yZ
