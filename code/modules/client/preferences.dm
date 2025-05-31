@@ -200,6 +200,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/exp = list()
 	var/list/menuoptions
 
+	///do we use tgui input when possible
+	var/tgui_input = TRUE
+
+	/// are the tgui buttons big and stupid
+	var/large_tgui_buttons = FALSE
+	/// are the tgui buttons swapped for some reason
+	var/swapped_tgui_buttons = FALSE
+
 	///Gear the character has equipped
 	var/list/equipped_gear = list()
 	///Gear tab currently being viewed
@@ -1134,6 +1142,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Play Lobby Music:</b> <a href='byond://?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play End of Round Sounds:</b> <a href='byond://?_src_=prefs;preference=endofround_sounds'>[(toggles & SOUND_ENDOFROUND) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='byond://?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>TGUI Large Buttons:</b> <a href='byond://?_src_=prefs;preference=large_tgui_buttons'>[(large_tgui_buttons) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Swap TGUI Buttons:</b> <a href='byond://?_src_=prefs;preference=swapped_tgui_buttons'>[(swapped_tgui_buttons) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>TGUI input toggles:</b> <a href='byond://?_src_=prefs;preference=tgui_input'>[(tgui_input) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 
 
@@ -2362,6 +2373,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("pull_requests")
 					chat_toggles ^= CHAT_PULLR
+
+				if("large_tgui_buttons")
+					large_tgui_buttons = !large_tgui_buttons
+
+				if("swapped_tgui_buttons")
+					swapped_tgui_buttons = !swapped_tgui_buttons
+
+				if("tgui_input")
+					tgui_input = !tgui_input
 
 				if("allow_midround_antag")
 					toggles ^= MIDROUND_ANTAG
