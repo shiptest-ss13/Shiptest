@@ -2080,7 +2080,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/structure/rack,
+/obj/machinery/recharge_station,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "CB" = (
@@ -2295,9 +2295,6 @@
 	dir = 8;
 	icon_state = "computer-middle"
 	},
-/obj/structure/camera_assembly{
-	dir = 10
-	},
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_x = 4;
@@ -2316,6 +2313,9 @@
 	pixel_y = -31;
 	pixel_x = 0;
 	id = "magpie_grid"
+	},
+/obj/machinery/camera/emp_proof{
+	dir = 10
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
