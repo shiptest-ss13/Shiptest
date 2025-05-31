@@ -387,7 +387,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/hivebot/ranged,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/item/trash/plate,
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
@@ -615,7 +614,6 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/item/paper_bin,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/mob/living/simple_animal/hostile/hivebot/strong,
 /obj/item/trash/plate,
 /obj/item/ammo_casing/spent,
 /turf/open/floor/pod,
@@ -858,7 +856,6 @@
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak2"
 	},
-/mob/living/simple_animal/hostile/hivebot/strong,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 4
 	},
@@ -1103,7 +1100,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/spawner/hivebot,
 /turf/open/floor/plating/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "lY" = (
@@ -2372,7 +2368,6 @@
 /obj/effect/decal/cleanable/oil/streak{
 	icon_state = "streak2"
 	},
-/mob/living/simple_animal/hostile/hivebot/ranged,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
 "zO" = (
@@ -2652,13 +2647,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/tradepost/barracks)
-"CG" = (
-/obj/machinery/power/floodlight{
-	anchored = 1;
-	setting = 3
-	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/overmap_encounter/planetoid/cave/explored)
 "CI" = (
 /obj/structure/catwalk,
 /turf/open/floor/plating/wasteplanet,
@@ -3620,8 +3608,8 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "LW" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hivebot/ranged,
 /obj/item/ammo_casing/spent,
+/mob/living/simple_animal/hostile/hivebot/ranged/rapid,
 /turf/open/floor/concrete/pavement/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "LY" = (
@@ -4398,8 +4386,11 @@
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/warehouse)
 "Tn" = (
-/obj/structure/spawner/hivebot,
 /obj/structure/cable,
+/obj/machinery/power/floodlight{
+	anchored = 1;
+	setting = 3
+	},
 /turf/open/floor/plating/wasteplanet/rust,
 /area/overmap_encounter/planetoid/cave/explored)
 "To" = (
@@ -4740,7 +4731,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/hivebot/ranged,
 /obj/structure/door_assembly/door_assembly_com,
 /turf/open/floor/pod,
 /area/ruin/wasteplanet/tradepost/center)
@@ -5642,7 +5632,7 @@ Se
 cW
 QB
 QB
-IM
+Yt
 OV
 AV
 oC
@@ -6527,7 +6517,7 @@ Ya
 ig
 Wy
 QB
-CG
+QB
 PZ
 Yt
 mN
@@ -7224,7 +7214,7 @@ LR
 sL
 QB
 QB
-ew
+QB
 WG
 Yt
 Yt
