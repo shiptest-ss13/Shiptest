@@ -23,7 +23,6 @@
 	alt_uniform = /obj/item/clothing/under/rank/civilian/mime/sexy //WS Edit - Alt Uniforms
 	mask = /obj/item/clothing/mask/gas/mime
 	gloves = /obj/item/clothing/gloves/color/white
-	head = /obj/item/clothing/head/frenchberet
 	suit = /obj/item/clothing/suit/toggle/suspenders
 	backpack_contents = list(
 		/obj/item/book/mimery = 1,
