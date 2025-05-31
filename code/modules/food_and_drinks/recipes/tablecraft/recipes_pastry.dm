@@ -56,7 +56,7 @@
 	name = "Chocolate chip pancake"
 	reqs = list(
 		/obj/item/food/pastrybase = 1,
-		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
+		/obj/item/food/chocolatebar = 1
 	)
 	result = /obj/item/food/pancakes/chocolatechip
 	subcategory = CAT_PASTRY
@@ -165,7 +165,7 @@
 	name = "Khachapuri"
 	reqs = list(
 		/datum/reagent/consumable/eggyolk = 5,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/food/cheese/wedge = 1,
 		/obj/item/food/bread/plain = 1
 	)
 	result = /obj/item/food/khachapuri
@@ -229,7 +229,7 @@
 	reqs = list(
 		/datum/reagent/consumable/sodiumchloride = 1,
 		/obj/item/food/pastrybase = 1,
-		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
+		/obj/item/food/chocolatebar = 1
 	)
 	result = /obj/item/food/chococornet
 	subcategory = CAT_PASTRY
@@ -246,7 +246,7 @@
 /datum/crafting_recipe/food/raisincookie
 	name = "Raisin cookie"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/no_raisin = 1,
+		/obj/item/food/no_raisin = 1,
 		/obj/item/food/pastrybase = 1,
 		/obj/item/food/grown/oat = 1
 	)
@@ -287,24 +287,4 @@
 		/datum/reagent/consumable/honey = 5
 	)
 	result = /obj/item/food/honeybun
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/honeybar
-	name = "Honey nut bar"
-	reqs = list(
-		/obj/item/food/grown/oat = 1,
-		/datum/reagent/consumable/honey = 5
-	)
-	result = /obj/item/food/honeybar
-	subcategory = CAT_PASTRY
-
-/datum/crafting_recipe/food/crepe
-	name = "jelly crepe"
-	time = 40
-	reqs = list(
-		/obj/item/food/flatdough = 1,
-		/datum/reagent/consumable/milk = 1,
-		/datum/reagent/consumable/cherryjelly = 5
-	)
-	result = /obj/item/food/crepe
 	subcategory = CAT_PASTRY

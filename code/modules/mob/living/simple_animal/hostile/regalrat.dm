@@ -103,7 +103,7 @@
 	switch(loot)
 		if(1 to 5)
 			to_chat(owner, span_notice("Score! You find some cheese!"))
-			new /obj/item/reagent_containers/food/snacks/cheesewedge(T)
+			new /obj/item/food/cheese/wedge(T)
 		if(6 to 10)
 			to_chat(owner, span_notice("You find some leftover coins. More for the royal treasury!"))
 			for(var/i = 1 to rand(1,3))
