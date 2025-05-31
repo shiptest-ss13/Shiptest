@@ -43,10 +43,5 @@
 			ADD_TRAIT(C, TRAIT_NODROP, CLOWN_NUKE_TRAIT)
 			H.equip_to_slot_or_del(C, ITEM_SLOT_ICLOTHING)
 
-		if(!H.wear_mask || H.dropItemToGround(H.wear_mask))
-			C = new /obj/item/clothing/mask/gas/clown_hat(H)
-			ADD_TRAIT(C, TRAIT_NODROP, CLOWN_NUKE_TRAIT)
-			H.equip_to_slot_or_del(C, ITEM_SLOT_MASK)
-
 		H.dna.add_mutation(CLOWNMUT)
 		H.gain_trauma(/datum/brain_trauma/mild/phobia/clowns, TRAUMA_RESILIENCE_LOBOTOMY) //MWA HA HA

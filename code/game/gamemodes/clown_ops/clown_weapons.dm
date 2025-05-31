@@ -117,31 +117,3 @@
 			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, throw_at), thrown_by, throw_range+2, throw_speed, null, TRUE), 1)
 	else
 		return ..()
-
-//TEARSTACHE GRENADE
-
-/obj/item/grenade/chem_grenade/teargas/moustache
-	name = "tear-stache grenade"
-	desc = "A handsomely-attired teargas grenade."
-	icon_state = "moustacheg"
-	clumsy_check = GRENADE_NONCLUMSY_FUMBLE
-
-/obj/item/grenade/chem_grenade/teargas/moustache/prime()
-	var/myloc = get_turf(src)
-	. = ..()
-	for(var/mob/living/carbon/M in view(6, myloc))
-		if(!istype(M.wear_mask, /obj/item/clothing/mask/gas/clown_hat) && !istype(M.wear_mask, /obj/item/clothing/mask/gas/mime))
-			if(!M.wear_mask || M.dropItemToGround(M.wear_mask))
-				var/obj/item/clothing/mask/fakemoustache/sticky/the_stash = new /obj/item/clothing/mask/fakemoustache/sticky()
-				M.equip_to_slot_or_del(the_stash, ITEM_SLOT_MASK, TRUE, TRUE, TRUE, TRUE)
-
-/obj/item/clothing/mask/fakemoustache/sticky
-	var/unstick_time = 600
-
-/obj/item/clothing/mask/fakemoustache/sticky/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
-	addtimer(CALLBACK(src, PROC_REF(unstick)), unstick_time)
-
-/obj/item/clothing/mask/fakemoustache/sticky/proc/unstick()
-	REMOVE_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)

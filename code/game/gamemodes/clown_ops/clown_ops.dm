@@ -29,7 +29,6 @@
 /datum/outfit/syndicate/clownop
 	name = "Clown Operative - Basic"
 	uniform = /obj/item/clothing/under/syndicate
-	mask = /obj/item/clothing/mask/gas/clown_hat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/syndicate/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
