@@ -509,9 +509,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	// class 1 has easy mobs, the ones you find on the surface
 	mob_types = list(
 		//hivebots, not too difficult
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 30,
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 40,
+		/mob/living/basic/hivebot/rapid = 30,
 		//bots, are hostile
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
@@ -531,9 +531,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	mob_types = list( //nor organics, more biased towards hivebots though
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 50,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 50,
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 50,
+		/mob/living/basic/hivebot/rapid = 50,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 1,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
@@ -565,11 +565,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 3
 
 	mob_types = list( //Whoops! All hivebots!
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 20,
-		/mob/living/simple_animal/hostile/hivebot = 20,
-		/mob/living/simple_animal/hostile/hivebot/defender = 1
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 40,
+		/mob/living/basic/hivebot/rapid = 20,
+		/mob/living/basic/hivebot = 20,
+		/mob/living/basic/hivebot/core = 1
 	)
 	ore_list = list(
 		/obj/item/stack/ore/iron = 15,
