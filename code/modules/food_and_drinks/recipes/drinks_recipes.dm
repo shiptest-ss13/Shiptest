@@ -323,7 +323,7 @@
 
 /datum/chemical_reaction/bananahonk
 	results = list(/datum/reagent/consumable/ethanol/bananahonk = 2)
-	required_reagents = list(/datum/reagent/consumable/banana = 1, /datum/reagent/consumable/cream = 1)
+	required_reagents = list(/datum/reagent/consumable/banana = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/consumable/ice = 1)
 
 /datum/chemical_reaction/silencer
 	results = list(/datum/reagent/consumable/ethanol/silencer = 3)

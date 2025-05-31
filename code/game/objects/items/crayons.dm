@@ -724,20 +724,6 @@
 	actually_paints = FALSE
 	paint_color = "#000000"
 
-/obj/item/toy/crayon/spraycan/lubecan
-	name = "slippery spraycan"
-	desc = "You can barely keep hold of this thing."
-	icon_state = "clowncan2_cap"
-	icon_capped = "clowncan2_cap"
-	icon_uncapped = "clowncan2"
-	use_overlays = FALSE
-
-	reagent_contents = list(/datum/reagent/lube = 1, /datum/reagent/consumable/banana = 1)
-	volume_multiplier = 5
-
-/obj/item/toy/crayon/spraycan/lubecan/isValidSurface(surface)
-	return istype(surface, /turf/open/floor)
-
 /obj/item/toy/crayon/spraycan/infinite
 	name = "infinite spraycan"
 	charges = -1
