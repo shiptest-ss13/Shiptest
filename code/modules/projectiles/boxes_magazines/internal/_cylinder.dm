@@ -64,7 +64,7 @@
 	if(istype(attacking_obj, /obj/item/ammo_box))
 		var/obj/item/ammo_box/attacking_box = attacking_obj
 		var/list/ammo_list_no_empty = ammo_list(FALSE)
-		listclearnulls(ammo_list_no_empty)
+		list_clear_nulls(ammo_list_no_empty)
 		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
 			if(!((instant_load && attacking_box.instant_load) || (ammo_list_no_empty.len >= max_ammo) || do_after(user, 1 SECONDS, attacking_box))) //stupid work around for revolvers
 				break
@@ -76,7 +76,7 @@
 				playsound(get_turf(attacking_box), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use attacking_box
 			num_loaded++
 			ammo_list_no_empty = ammo_list(FALSE)
-			listclearnulls(ammo_list_no_empty)
+			list_clear_nulls(ammo_list_no_empty)
 			attacking_obj.update_appearance()
 			update_appearance()
 

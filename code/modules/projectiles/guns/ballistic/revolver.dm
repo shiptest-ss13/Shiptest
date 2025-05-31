@@ -212,7 +212,7 @@
 			var/obj/item/ammo_box/attacking_box = attacking_obj
 			var/num_loaded = 0
 			var/list/ammo_list_no_empty = get_ammo_list(FALSE)
-			listclearnulls(ammo_list_no_empty)
+			list_clear_nulls(ammo_list_no_empty)
 			var/num_to_load = magazine.max_ammo - LAZYLEN(ammo_list_no_empty) //get the number of empty bits
 
 			if(!num_to_load)
