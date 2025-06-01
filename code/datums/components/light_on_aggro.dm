@@ -37,7 +37,7 @@
 	var/atom/target = source.ai_controller?.blackboard[target_key]
 	if (QDELETED(target))
 		return
-	if(!isnull(our_light))
+	if(!isnull(light_power_aggro) && !isnull(light_range_aggro) && !isnull(light_color_aggro))
 		our_light = source.mob_light(light_power_aggro, light_range_aggro, light_color_aggro)
 
 /datum/component/light_on_aggro/Destroy()
