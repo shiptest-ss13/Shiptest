@@ -223,21 +223,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(radio_return & NOPASS)
 		return 1
 
-	/*if()
-		to_chat(src, "passed language check")
-		if(tone_indicator)
-			remove_tone_indicator()
-		to_chat(src, "passed garbage collection")
-		if(findtext(message, "?"))
-			tone_indicator = mutable_appearance('icons/mob/talk.dmi', "[bubble_type]1", plane = RUNECHAT_PLANE)
-			to_chat(src, "detected question")
-		else if(findtext(message, "!"))
-			tone_indicator = mutable_appearance('icons/mob/talk.dmi', "[bubble_type]2", plane = RUNECHAT_PLANE)
-			to_chat(src, "detected exclamation")
-		if(!isnull(tone_indicator))
-			add_overlay(tone_indicator)
-			addtimer(CALLBACK(src, PROC_REF(remove_tone_indicator)), 2.5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
-			to_chat(src, "added overlay")*/
 	if(!(initial(language?.flags) & SIGNED_LANGUAGE))
 		//No screams in space, unless you're next to someone or signing.
 		var/turf/T = get_turf(src)
@@ -248,8 +233,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 		if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
 			spans |= SPAN_ITALICS
-
-		play_fov_effect(src, 6, "talk", ignore_self = TRUE)
 
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mods)
 

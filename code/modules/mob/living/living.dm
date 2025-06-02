@@ -1858,6 +1858,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 	bubble_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 	if(typing_indicator)
 		add_overlay(bubble_overlay)
+		play_fov_effect(src, 6, "talk", ignore_self = TRUE)
 	else
 		cut_overlay(bubble_overlay)
 
