@@ -87,7 +87,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 /atom/movable/proc/send_speech(message, range = 7, obj/source = src, bubble_type, list/spans, datum/language/message_language = null, list/message_mods = list())
 	var/rendered = compose_message(src, message_language, message, , spans, message_mods)
 	for(var/atom/movable/AM as anything in get_hearers_in_view(range, source))
-		AM.Hear(rendered, src, message_language, message, , spans, message_mods)
+		AM.Hear(rendered, src, message_language, message, , spans, message_mods.Copy())
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), face_name = FALSE)
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	var/speakerJob = speaker.GetJob()
 	return "[ speakerJob ? " (" +  speakerJob + ")" : ""]"
 
-/atom/movable/proc/say_mod(input, list/message_mods = list())
+/atom/movable/proc/say_mod(input, datum/language/message_language, list/message_mods = list())
 	var/ending = copytext_char(input, -1)
 	if(copytext_char(input, -2) == "!!")
 		return verb_yell
@@ -196,7 +196,9 @@ GLOBAL_LIST_INIT(freqcolor, list())
 /atom/movable/proc/lang_treat(atom/movable/speaker, datum/language/language, raw_message, list/spans, list/message_mods = list(), no_quote = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_TREAT_MESSAGE, args)
 	if(!language)
-		return "makes a strange sound."
+		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+		message_mods[MODE_CUSTOM_SAY_EMOTE] = "makes a strange sound."
+		return message_mods[MODE_CUSTOM_SAY_EMOTE]
 
 	if(!has_language(language))
 		var/list/mutual_languages
@@ -206,6 +208,10 @@ GLOBAL_LIST_INIT(freqcolor, list())
 			mutual_languages = partially_understood_languages.Copy()
 			for(var/bonus_language in message_mods[LANGUAGE_MUTUAL_BONUS])
 				mutual_languages[bonus_language] = max(message_mods[LANGUAGE_MUTUAL_BONUS][bonus_language], mutual_languages[bonus_language])
+		if((initial(language?.flags) & SIGNED_LANGUAGE) && !mutual_languages[language])
+			message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+			message_mods[MODE_CUSTOM_SAY_EMOTE] = "signs something."
+			return message_mods[MODE_CUSTOM_SAY_EMOTE]
 
 		var/datum/language/dialect = GLOB.language_datum_instances[language]
 		raw_message = dialect.scramble_paragraph(raw_message, mutual_languages)

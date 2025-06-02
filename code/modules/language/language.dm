@@ -92,6 +92,12 @@
 	*/
 	var/list/mutual_understanding
 
+	/// Whether to use speech bubble tone indicators
+	var/use_tone_indicators = FALSE
+
+	/// Special speech bubble to use
+	var/bubble_override
+
 	//our speech verbs
 	var/speech_verb = "says"          // 'says', 'hisses', 'farts'.
 	var/ask_verb = "asks"             // Used when sentence ends in a ?
@@ -345,5 +351,11 @@
 
 	// If they're shouting, we're shouting
 	return (is_uppercase(input) && length_char(input) >= 2) ? uppertext(word) : word
+
+/**
+ * Called from mob/living/say()
+ */
+/datum/language/proc/on_say(atom/movable/speaker, message, bubble_type, list/spans = list(), datum/language/language = null)
+	return
 
 #undef SCRAMBLE_CACHE_LEN
