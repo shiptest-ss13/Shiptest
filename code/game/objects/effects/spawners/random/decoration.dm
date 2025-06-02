@@ -67,9 +67,9 @@
 	name = "random grown flower spawner"
 	icon_state = "flower"
 	loot = list(
-		/obj/item/reagent_containers/food/snacks/grown/poppy,
-		/obj/item/reagent_containers/food/snacks/grown/harebell,
-		/obj/item/reagent_containers/food/snacks/grown/trumpet,
+		/obj/item/food/grown/poppy,
+		/obj/item/food/grown/harebell,
+		/obj/item/food/grown/trumpet,
 	)
 
 /obj/effect/spawner/random/flora
