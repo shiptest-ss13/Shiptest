@@ -33,10 +33,11 @@
 	description = "A former pre-ICW era Nanotrasen outpost converted into a moonshine distillery by Frontiersman bootleggers."
 	id = "rockplanet_distillery"
 	suffix = "rockplanet_distillery.dmm"
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/signaled/kill/frontiersmen,
 		/datum/mission/ruin/multiple/moonshine_crates/distillery
 	)
+*/
 
 /datum/mission/ruin/multiple/moonshine_crates/distillery
 	name = "Assess and Retrieve Booze Supply"
@@ -53,7 +54,7 @@
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
 	ruin_mission_types = list(
 		/datum/mission/ruin/signaled/drill/mining_base,
-		/datum/mission/ruin/ns_manager,
+//		/datum/mission/ruin/ns_manager,
 	)
 
 /datum/mission/ruin/signaled/drill/mining_base
@@ -81,11 +82,11 @@
 	description = "A crashed Ramzi Clique vessel that has since become an isolated pirate outpost."
 	id = "rockplanet_rustbase"
 	suffix = "rockplanet_rustbase.dmm"
-
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/signaled/kill/bright,
 		/datum/mission/ruin/signaled/kill/amuro,
 	)
+*/
 
 /datum/mission/ruin/signaled/kill/bright
 	name = "Kill Captain Dwight"

@@ -8,8 +8,8 @@
 
 	stock_min = 2
 	stock_max = 5
-	price_min = 325
-	price_max = 400
+	cost_min = 325
+	cost_max = 400
 	availability_prob = 80
 
 /datum/blackmarket_item/consumable/suspicious_pills
@@ -19,8 +19,8 @@
 
 	stock_min = 4
 	stock_max = 6
-	price_min = 50
-	price_max = 300
+	cost_min = 50
+	cost_max = 300
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
@@ -38,19 +38,19 @@
 
 	stock_min = 5
 	stock_max = 35
-	price_min = 10
-	price_max = 60
+	cost_min = 10
+	cost_max = 60
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/cannabis
 	name = "Cannabis Leaves"
 	desc = "Homegrown cannabis, fresh off the garden just for your pleasure!"
-	item = /obj/item/reagent_containers/food/snacks/grown/cannabis
+	item = /obj/item/food/grown/cannabis
 
 	stock_min = 4
 	stock_max = 6
-	price_min = 50
-	price_max = 300
+	cost_min = 50
+	cost_max = 300
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/syndie_cigs
@@ -60,8 +60,8 @@
 
 	stock_min = 4
 	stock_max = 6
-	price_min = 50
-	price_max = 300
+	cost_min = 50
+	cost_max = 300
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/trickwine
@@ -69,8 +69,8 @@
 	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
 	item = /datum/reagent/consumable/ethanol/trickwine/ash_wine
 
-	price_min = 300
-	price_max = 600
+	cost_min = 300
+	cost_max = 600
 	stock_min = 3
 	stock_max = 7
 	availability_prob = 30
@@ -93,8 +93,8 @@
 
 	stock_min = 4
 	stock_max = 6
-	price_min = 250
-	price_max = 500
+	cost_min = 250
+	cost_max = 500
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/dimorlin
@@ -102,8 +102,8 @@
 	desc = "Medicinal? Recreational? You can decide with this 30u bottle of dimorlin!"
 	item = /obj/item/reagent_containers/glass/bottle/dimorlin
 
-	price_min = 50
-	price_max = 150
+	cost_min = 50
+	cost_max = 150
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 50
@@ -113,8 +113,8 @@
 	desc = "Cyanide, a tried and true classic for all your poisoning needs."
 	item = /obj/item/reagent_containers/glass/bottle/cyanide
 
-	price_min = 200
-	price_max = 400
+	cost_min = 200
+	cost_max = 400
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -124,8 +124,8 @@
 	desc = "Sodium Thiopental, a potent and fast acting sedative for any occasion."
 	item = /obj/item/reagent_containers/glass/bottle/sodium_thiopental
 
-	price_min = 250
-	price_max = 600
+	cost_min = 250
+	cost_max = 600
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -135,8 +135,8 @@
 	desc = "A slow acting, but nearly undetectable poison. For the dignified assassin."
 	item = /obj/item/reagent_containers/glass/bottle/amanitin
 
-	price_min = 300
-	price_max =  600
+	cost_min = 300
+	cost_max =  600
 	stock_max = 2
 	stock_max = 4
 	availability_prob = 30
@@ -146,8 +146,8 @@
 	desc = "Looking for a sweet treat? These gumballs are sure to satisfy."
 	item = /obj/item/reagent_containers/food/snacks/gumball
 
-	price_min = 10
-	price_max = 20
+	cost_min = 10
+	cost_max = 20
 	stock_min = 10
 	stock_max = 20
 	availability_prob = 80
@@ -157,8 +157,8 @@
 	desc = "The Frontier's most dangerous game, delivered right to your plate! May constitute a violation of your local BARD laws and regulations."
 	item = /mob/living/simple_animal/hostile/alien
 
-	price_min = 6000
-	price_max = 10000
+	cost_min = 6000
+	cost_max = 10000
 	stock = 1
 	availability_prob = 10
 	spawn_weighting = FALSE
@@ -171,18 +171,20 @@
 /datum/blackmarket_item/consumable/berries
 	name = "Berries"
 	desc = "Some fresh berries we found growing in the corner of our hangar. We're not 100% sure what species these are."
-	item = /obj/item/reagent_containers/food/snacks/grown/berries
+	item = /obj/item/food/grown/berries
 
-	price_min = 25
-	price_max = 100
+	cost_min = 25
+	cost_max = 100
 	stock_min = 10
 	stock_max = 20
 	availability_prob = 40
 
 /datum/blackmarket_item/consumable/berries/spawn_item(loc)
-	var/berries = pick(list(/obj/item/reagent_containers/food/snacks/grown/berries,
-				/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth,
-				/obj/item/reagent_containers/food/snacks/grown/berries/death/stealth))
+	var/berries = pick(list(
+				/obj/item/food/grown/berries,
+				/obj/item/food/grown/berries/poison/stealth,
+				/obj/item/food/grown/berries/death/stealth,
+				))
 	return new berries(loc)
 
 /datum/blackmarket_item/consumable/ration
@@ -190,18 +192,18 @@
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
 	item = /obj/effect/spawner/random/food_or_drink/ration
 
-	price_min = 150
-	price_max = 300
+	cost_min = 150
+	cost_max = 300
 	availability_prob = 80
-	unlimited =  TRUE
+	stock = INFINITY
 
 /datum/blackmarket_item/consumable/vimukti
 	name = "Can of Vimukti"
 	desc = "This product was quietly discontinued after multiple health related incidents. But you aren't a coward, are you?"
 	item = /obj/item/reagent_containers/food/drinks/soda_cans/vimukti
 
-	price_min = 10
-	price_max = 50
+	cost_min = 10
+	cost_max = 50
 	stock_min = 10
 	stock_max = 20
 	availability_prob = 50
@@ -211,8 +213,8 @@
 	desc = "A bundle of sutures for stitching up your latest bullet wound."
 	item = /obj/item/stack/medical/suture
 
-	price_min = 25
-	price_max = 150
+	cost_min = 25
+	cost_max = 150
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 40
@@ -222,8 +224,8 @@
 	desc = "A smoothing pack of regenerative mesh for your burns."
 	item = /obj/item/stack/medical/mesh
 
-	price_min = 25
-	price_max = 150
+	cost_min = 25
+	cost_max = 150
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 40
@@ -233,8 +235,8 @@
 	desc = "A bundle of old bruise packs, for you guessed it, bruises. Any rumors of these containing hazardous chemicals are just that. Rumors."
 	item = /obj/item/stack/medical/bruise_pack
 
-	price_min = 50
-	price_max = 175
+	cost_min = 50
+	cost_max = 175
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 30
@@ -244,8 +246,8 @@
 	desc = "A tube of burn ointment. It's past the expiry date, but those are only suggestions."
 	item = /obj/item/stack/medical/ointment
 
-	price_min = 50
-	price_max = 175
+	cost_min = 50
+	cost_max = 175
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 30
@@ -255,8 +257,8 @@
 	desc = "We reappropiated an outpost freighter a week back, and the entire thing was packed with goliaths for whatever reason. Point is, we're sick and tired of eating them, so we're selling what's left so we can buy some actual take out."
 	item = /mob/living/simple_animal/hostile/asteroid/goliath/beast
 
-	price_min = 750
-	price_max = 2000
+	cost_min = 750
+	cost_max = 2000
 	stock_max = 4
 	availability_prob = 15
 	spawn_weighting = FALSE
@@ -266,8 +268,8 @@
 	desc = "A cosmetic salve used for changing the hue of Elzouse. Now with 20% less harmful chemical dyes!"
 	item = /obj/item/colorsalve
 
-	price_min = 100
-	price_max = 200
+	cost_min = 100
+	cost_max = 200
 	stock_min = 4
 	stock_max = 10
 	availability_prob = 80
@@ -277,8 +279,8 @@
 	desc = "This used to belong to a good friend of mine before the authorities did em in. Best goddamn sauce I've ever tasted, but I could never get it right myself. Maybe you can do it justice."
 	item = /obj/item/paper/secretrecipe
 
-	price_min = 1000
-	price_max = 2000
+	cost_min = 1000
+	cost_max = 2000
 	stock = 1
 	availability_prob = 5
 	spawn_weighting = FALSE
@@ -287,8 +289,8 @@
 	name = "Combat Cocktail"
 	desc = "Last freighter we hit was a whole medical freighter. Had a bunch of crates with a beak spraypainted on. We knacked it and found these cocktail injectors inside."
 	item = /obj/item/reagent_containers/hypospray/medipen/combat_drug
-	price_min = 400
-	price_max = 1200
+	cost_min = 400
+	cost_max = 1200
 	stock_max = 8
 	availability_prob = 25
 	spawn_weighting = FALSE
@@ -297,8 +299,8 @@
 	name = "Mammoth Injector"
 	desc = "Found a bunch of kickass injectors hiding under the corpse of a Cliquer. Don't ask bout how they became a corpse Iunno. Doesn't matter. These things boost your strength and keep you going way too damn long..."
 	item = /obj/item/reagent_containers/hypospray/medipen/mammoth
-	price_min = 500
-	price_max = 1000
+	cost_min = 500
+	cost_max = 1000
 	stock_max = 6
 	availability_prob = 40
 	spawn_weighting = FALSE
@@ -307,8 +309,8 @@
 	name = "Rabbit Injector"
 	desc = "We were bummin around towards CLIP space the other day, and saw this. Ahem. Business opportunity with a bun. Words came to words and after some serious business planning, I'm the distributer for this line for this line of designer injectors. Supposed to make you like a rabbit or somethin."
 	item = /obj/item/reagent_containers/hypospray/medipen/rabbit
-	price_min = 600
-	price_max = 800
+	cost_min = 600
+	cost_max = 800
 	stock_max = 6
 	availability_prob = 30
 	spawn_weighting = FALSE
@@ -317,8 +319,8 @@
 	name = "Finobranc Tablets"
 	desc = "So get this, I know a Solarian Tgirl over the intranet, and we're chatting, and she sends me these things to try. I figure, hell yeah, try them, and got 5 days work done in one day. Now I'm sellin them. Miracle product I tell ya"
 	item = /obj/item/storage/pill_bottle/finobranc
-	price_min = 600
-	price_max = 1000
+	cost_min = 600
+	cost_max = 1000
 	stock_max = 4
 	availability_prob = 40
 	spawn_weighting = FALSE
@@ -327,8 +329,8 @@
 	name = "Shoaljuice Vial"
 	desc = "Our guy in back has been working on whipping up some pretty mean syrums. Says that this one is a blend he learned from a Vox. Says that it'll get the heart going on anyone."
 	item = /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/combat_drug
-	price_min = 1000
-	price_max = 2000
+	cost_min = 1000
+	cost_max = 2000
 	stock_max = 3
 	availability_prob = 10
 	spawn_weighting = FALSE

@@ -115,7 +115,9 @@
 		/obj/item/scalpel = 1,
 		/obj/item/hemostat = 1,
 		/obj/item/cautery = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/healthanalyzer = 1,
+		/obj/item/storage/pill_bottle/tramal = 1
+		)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
@@ -236,6 +238,11 @@
 	item_state = "firstaid-rad"
 	custom_premium_price = 1100
 
+/obj/item/storage/firstaid/advanced/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 10
+
 /obj/item/storage/firstaid/advanced/PopulateContents()
 	if(empty)
 		return
@@ -244,7 +251,9 @@
 		/obj/item/reagent_containers/pill/patch/synthflesh = 3,
 		/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/storage/pill_bottle/penacid = 1)
+		/obj/item/storage/pill_bottle/penacid = 1,
+		/obj/item/reagent_containers/glass/bottle/dimorlin = 1,
+		/obj/item/reagent_containers/syringe = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/tactical
@@ -514,3 +523,11 @@
 /obj/item/storage/pill_bottle/placebatol/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/placebatol(src)
+
+/obj/item/storage/pill_bottle/tramal
+	name = "bottle of tramal pills"
+	desc = "Contains tramal pills, a mild painkiller."
+
+/obj/item/storage/pill_bottle/tramal/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/tramal(src)
