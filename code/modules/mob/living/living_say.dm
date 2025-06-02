@@ -505,9 +505,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 /mob/living/say_mod(input, datum/language/message_language, list/message_mods = list())
 	if(message_mods[WHISPER_MODE] == MODE_WHISPER)
-		. = verb_whisper
+		. = initial(message_language?.whisper_verb) || verb_whisper
 	else if(message_mods[WHISPER_MODE] == MODE_WHISPER_CRIT)
-		. = "[verb_whisper] in [p_their()] last breath"
+		. = "[initial(message_language?.whisper_verb) || verb_whisper] in [p_their()] last breath"
 	else if(message_mods[MODE_SING])
 		. = verb_sing
 	else if(stuttering)

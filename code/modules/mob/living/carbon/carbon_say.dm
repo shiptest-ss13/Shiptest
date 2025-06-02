@@ -10,7 +10,7 @@
 		speech_args[SPEECH_MESSAGE] = message
 
 /mob/living/carbon/can_speak_vocal(message, datum/language/language)
-	if(silent)
+	if(silent && !(initial(language?.flags) & SIGNED_LANGUAGE))
 		return 0
 	return ..()
 

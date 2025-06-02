@@ -98,12 +98,13 @@
 	/// Special speech bubble to use
 	var/bubble_override
 
-	//our speech verbs
-	var/speech_verb = "says"          // 'says', 'hisses', 'farts'.
-	var/ask_verb = "asks"             // Used when sentence ends in a ?
-	var/exclaim_verb = "exclaims"     // Used when sentence ends in a !
-	var/whisper_verb = "whispers"     // Optional. When not specified speech_verb + quietly/softly is used instead.
-	var/sing_verb = "sings"			  // Used for singing.
+	// These override whichever speech verbs the speaker normally uses. (Example: "signs" instead of "hisses")
+	var/speech_verb		// 'says', 'hisses', 'farts'.
+	var/ask_verb		// Used when sentence ends in a ?
+	var/exclaim_verb	// Used when sentence ends in a !
+	var/yell_verb		// Used when sentence ends in a !!
+	var/whisper_verb	// Optional. When not specified speech_verb + quietly/softly is used instead.
+	var/sing_verb		// Used for singing.
 
 // Primarily for debugging, allows for easy iteration and testing of languages.
 /datum/language/vv_edit_var(var_name, var_value)

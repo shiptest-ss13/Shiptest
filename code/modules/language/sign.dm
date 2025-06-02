@@ -4,6 +4,7 @@
 	speech_verb = "signs"
 	ask_verb = "signs"
 	exclaim_verb = "signs"
+	yell_verb = "emphatically signs"
 	whisper_verb = "subtly signs"
 	sing_verb = "rythmically signs"
 	key = "u"
