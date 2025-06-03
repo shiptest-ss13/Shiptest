@@ -9,14 +9,13 @@
 		TRAIT_PLANT_SAFE,
 	)
 	inherent_factions = list("plants", "vines")
-	//fixed_mut_color = "59CE00" //wtf tg
 	exotic_bloodtype = "E"
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slice.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	burnmod = 1.25
 	heatmod = 1.5
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/plant
+	meat = /obj/item/food/meat/slab/human/mutant/plant
 	disliked_food = MEAT | DAIRY
 	liked_food = VEGETABLES | FRUIT | GRAIN | CLOTH //cannibals apparentely
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN

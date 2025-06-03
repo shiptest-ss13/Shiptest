@@ -26,9 +26,9 @@
 	gunslinger_spread_bonus = 16
 
 	light_range = 2
-	wear_minor_threshold = 100
-	wear_major_threshold = 300
-	wear_maximum = 600
+	wear_minor_threshold = 200
+	wear_major_threshold = 600
+	wear_maximum = 1200
 
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
