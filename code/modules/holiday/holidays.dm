@@ -245,8 +245,6 @@
 	begin_day = 24
 	end_day = 28
 	begin_month = MAY
-	#warn remove before merge, only to ensure its good while test merged.
-	always_celebrate = TRUE
 
 /datum/holiday/cataclysm_day/greet()
 	return "It's near or is Memorial Day! In-universe our version is <a href=\"https://shiptest.net/wiki/Cataclysm_Day\">Cataclysm Day</a>."
