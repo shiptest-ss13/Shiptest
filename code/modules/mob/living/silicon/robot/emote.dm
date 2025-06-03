@@ -27,7 +27,7 @@
 
 /datum/emote/silicon/no
 	key = "no"
-	message = "emits an negative blip."
+	message = "emits a negative blip."
 	sound = 'sound/machines/synth_no.ogg'
 
 /datum/emote/silicon/ping
