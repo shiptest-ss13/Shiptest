@@ -434,7 +434,7 @@
 		if(istype(dna.species, /datum/species/moth))
 			M.mothdust += 10; // End WS edit
 
-	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
+	else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
 		nosound = TRUE
 		playsound(src, 'sound/effects/boop.ogg', 50, 0)
 		if (HAS_TRAIT(M, TRAIT_FRIENDLY))
@@ -471,9 +471,12 @@
 						null, span_hear("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
 			to_chat(M, span_notice("You wrap [src] into a tight bear hug!"))
 			to_chat(src, span_notice("[M] squeezes you super tightly in a firm bear hug!"))
-		else
+		else if((M.grab_state == GRAB_PASSIVE) && (M.pulling))
 			M.visible_message(span_notice("[M] hugs [src] to make [p_them()] feel better!"), \
 					span_notice("You hug [src] to make [p_them()] feel better!"))
+		else
+			M.visible_message(span_notice("[M] pokes [src]."), \
+					span_notice("You poke [src]."))
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 15;
 		if(istype(dna.species, /datum/species/moth))
@@ -497,32 +500,36 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/bad_touch_bear_hug)
 
 		// Let people know if they hugged someone really warm or really cold
-		if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
-			to_chat(src, span_warning("It feels like [M] is over heating as they hug you."))
-		else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
-			to_chat(src, span_warning("It feels like [M] is freezing as they hug you."))
+		if ((M.grab_state == GRAB_PASSIVE) && (M.pulling))
+			if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
+				to_chat(src, span_warning("It feels like [M] is over heating as they hug you."))
+			else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
+				to_chat(src, span_warning("It feels like [M] is freezing as they hug you."))
 
-		if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
-			to_chat(M, span_warning("It feels like [src] is over heating as you hug them."))
-		else if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
-			to_chat(M, span_warning("It feels like [src] is freezing as you hug them."))
+			if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
+				to_chat(M, span_warning("It feels like [src] is over heating as you hug them."))
+			else if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
+				to_chat(M, span_warning("It feels like [src] is freezing as you hug them."))
 
-		if(HAS_TRAIT(M, TRAIT_FRIENDLY))
-			if (hugger_mood.sanity >= SANITY_GREAT)
-				new /obj/effect/temp_visual/heart(loc)
-				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/besthug, M)
-			else if (hugger_mood.sanity >= SANITY_DISTURBED)
-				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/betterhug, M)
+			if(HAS_TRAIT(M, TRAIT_FRIENDLY))
+				if (hugger_mood.sanity >= SANITY_GREAT)
+					new /obj/effect/temp_visual/heart(loc)
+					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/besthug, M)
+				else if (hugger_mood.sanity >= SANITY_DISTURBED)
+					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/betterhug, M)
 
-		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
-			to_chat(M, span_warning("[src] looks visibly upset as you hug [p_them()]."))
+			if(HAS_TRAIT(src, TRAIT_BADTOUCH))
+				to_chat(M, span_warning("[src] looks visibly upset as you hug [p_them()]."))
 
 	else if((M.zone_selected == BODY_ZONE_L_ARM) || (M.zone_selected == BODY_ZONE_R_ARM))
 		if(!get_bodypart(check_zone(M.zone_selected)))
 			to_chat(M, span_warning("[src] does not have a [M.zone_selected == BODY_ZONE_L_ARM ? "left" : "right"] arm!"))
-		else
+		else if((M.grab_state == GRAB_PASSIVE) && (M.pulling))
 			M.visible_message(span_notice("[M] shakes [src]'s hand."), \
 						span_notice("You shake [src]'s hand."))
+		else
+			M.visible_message(span_notice("[M] pats [src] on the shoulder."), \
+						span_notice("You pat [src] on the shoulder."))
 	else if((M.zone_selected == BODY_ZONE_L_LEG) || (M.zone_selected == BODY_ZONE_R_LEG))
 		if(!get_bodypart(check_zone(M.zone_selected)))
 			to_chat(M, span_warning("[src] does not have a [M.zone_selected == BODY_ZONE_L_LEG ? "left" : "right"] leg!"))
