@@ -70,7 +70,7 @@
 			var/datum/overmap/outpost/supplier = pick(SSovermap.outposts)
 			if(!supplier)
 				return
-			pack_type = pick(supplier.supply_packs)
+			pack_type = pick(supplier.market.supply_packs)
 	var/datum/supply_pack/supply_pack
 	if(ispath(pack_type, /datum/supply_pack))
 		supply_pack = new pack_type
