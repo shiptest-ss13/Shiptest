@@ -10,6 +10,7 @@
 /obj/item/circuitboard/aicore,
 /obj/item/stack/sheet/rglass,
 /obj/item/stack/sheet/rglass,
+/obj/item/mmi/posibrain,
 /turf/open/floor/circuit,
 /area/ship/bridge)
 "ax" = (
@@ -366,11 +367,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/structure/closet/crate/trashcart,
-/obj/effect/mapping_helpers/crate_shelve,
-/obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/pushbroom,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "gh" = (
@@ -425,6 +421,8 @@
 /obj/item/melee/knife,
 /obj/item/food/meat/rawcutlet,
 /obj/item/food/meat/rawcutlet,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "gE" = (
@@ -987,9 +985,9 @@
 /obj/structure/closet/crate/secure/engineering{
 	name = "breaching equipment"
 	},
-/obj/effect/mapping_helpers/crate_shelve,
 /obj/item/gear_pack/anglegrinder,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "qH" = (
@@ -1117,9 +1115,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "sI" = (
-/obj/structure/bed/double{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
@@ -1135,7 +1130,10 @@
 	pixel_y = 7;
 	dir = 4
 	},
-/obj/item/bedsheet/double/captain{
+/obj/structure/bed/bunk{
+	dir = 4
+	},
+/obj/structure/bed/bunk/top{
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblue,
@@ -1240,6 +1238,11 @@
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/head/nanotrasen/beret,
 /obj/item/storage/backpack/duffelbag/captain,
+/obj/item/bedsheet/captain{
+	dir = 4;
+	pixel_x = -4;
+	pixel_y = 7
+	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/captain)
 "tf" = (
@@ -1525,6 +1528,11 @@
 /obj/item/storage/backpack,
 /obj/item/storage/backpack/duffelbag,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/bedsheet/head_of_personnel{
+	dir = 4;
+	pixel_x = -4;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/dorm/captain)
 "vF" = (
@@ -1847,6 +1855,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/structure/closet/crate/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/effect/mapping_helpers/crate_shelve{
+	range = 2
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -2184,11 +2202,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Dx" = (
-/obj/structure/crate_shelf,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/structure/closet/crate/rations,
+/obj/structure/closet/crate/trashcart,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/pushbroom,
+/obj/item/storage/bag/trash,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "DE" = (
@@ -2431,14 +2452,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/crate/eva,
-/obj/item/clothing/suit/space/eva,
-/obj/item/clothing/suit/space/eva,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/head/helmet/space/eva,
-/obj/item/clothing/head/helmet/space/eva,
-/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "GS" = (
@@ -3232,7 +3245,10 @@
 	dir = 4;
 	name = "Lioples";
 	gender = "male";
-	desc = "Exported from one of many Solarian Cantons, this small but domesticated alligator lives aboard this vessel. Be careful not to step on the tail!"
+	desc = "Exported from one of many Solarian Cantons, this small but domesticated alligator lives aboard this vessel. Be careful not to step on the tail!";
+	faction = list("neutral, nanotrasen");
+	melee_damage_lower = 10;
+	melee_damage_upper = 15
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
@@ -3528,13 +3544,13 @@
 /area/ship/engineering/engines/port)
 "Wx" = (
 /obj/machinery/light/directional/west,
-/obj/structure/bed/bunk,
 /obj/structure/bed/bunk/top,
 /obj/item/bedsheet/black{
 	pixel_x = 0;
 	pixel_y = 14
 	},
 /obj/item/bedsheet/blue,
+/obj/structure/bed/bunk,
 /turf/open/floor/carpet/cyan,
 /area/ship/crew/dorm)
 "WY" = (
