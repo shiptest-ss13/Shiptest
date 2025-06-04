@@ -84,9 +84,6 @@
 	///The cooldown for events hitting this ship. Generally used by events with a big consquence and fires slower than normal, like flares
 	COOLDOWN_DECLARE(event_cooldown)
 
-	/// checks if we spawned /obj/effect/spawner/random/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
-	var/matbundle_spawned = FALSE
-
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/old_name = name
 	var/full_name = "[source_template.prefix] [new_name]"
@@ -129,7 +126,6 @@
 		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
 		stationary_icon_state = creation_template.token_icon_state
-		matbundle_spawned = creation_template.matbundle_spawned
 		alter_token_appearance()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
@@ -271,7 +267,7 @@
 		thrust_used += real_engine.burn_engine(percentage, seconds_per_tick)
 
 	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
-	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
+	est_thrust = thrust_used * 100 / (percentage * seconds_per_tick) //cheeky way of rechecking the thrust, check it every time it's used
 
 	return thrust_used
 
@@ -284,7 +280,7 @@
 		real_engine.update_engine()
 		if(real_engine.enabled)
 			calculated_thrust += real_engine.thrust
-	est_thrust = calculated_thrust / (shuttle_port.turf_count * 100)
+	est_thrust = calculated_thrust / (shuttle_port.turf_count * 100) * 1 SECONDS / SSphysics.wait
 
 /**
  * Calculates the average fuel fullness of all engines.
