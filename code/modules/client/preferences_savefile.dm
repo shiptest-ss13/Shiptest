@@ -192,7 +192,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	READ_FILE(S["tgui_fancy"], tgui_fancy)
 	READ_FILE(S["tgui_lock"], tgui_lock)
-	READ_FILE(S["ui_scale"], ui_scale)
+	#warn ui_scale still has outstanding bugs with casuing everything to get shrunk but implmenting it will be required for people with non-standard windows scaling
+	//READ_FILE(S["ui_scale"], ui_scale)
+	ui_scale = FALSE
 	READ_FILE(S["buttons_locked"], buttons_locked)
 	READ_FILE(S["windowflash"], windowflashing)
 	READ_FILE(S["be_special"] , be_special)
