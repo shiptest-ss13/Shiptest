@@ -47,8 +47,12 @@
 	min_recoil = 0.1
 	wear_rate = 0
 
+	//in an ideal world this would be a component but I don't wanna untangle all the sleeps doors pull
+	///can this shotgun breach doors
+	var/door_breaching_weapon = TRUE
+
 /obj/item/gun/ballistic/shotgun/attack_obj(obj/O, mob/living/user)
-	if(istype(O, /obj/machinery/door/airlock))
+	if(door_breaching_weapon && istype(O, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/breaching = O
 		if(chambered && chambered.BB && !is_type_in_list(chambered, list(/obj/item/ammo_casing/shotgun/blank, /obj/item/ammo_casing/shotgun/beanbag, /obj/item/ammo_casing/shotgun/rubbershot)))
 			user.visible_message(
