@@ -22,7 +22,7 @@ export const ShipEditor = (props) => {
   const [tagText, setTagText] = useLocalState('tagText', '');
 
   return (
-    <Window title="Ship Editor" width={500} height={600} theme="admin">
+    <Window title="Ship Editor" width={500} height={600}>
       <Window.Content>
         <Section title="Details">
           <LabeledList>
