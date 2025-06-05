@@ -48,7 +48,7 @@
 	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg, /datum/blackmarket_item/tech/rupfc)
 
 	cost_min = 3000
-	cost_max_max = 6000
+	cost_max = 6000
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE
