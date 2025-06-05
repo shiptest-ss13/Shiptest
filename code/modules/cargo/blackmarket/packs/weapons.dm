@@ -126,12 +126,14 @@
 	cost_min = 100
 	cost_max = 600
 	stock_max = 6
-	availability_prob = 100
+	availability_prob = 50
 
 /datum/blackmarket_item/weapon/guncase/derringer
 	name = "Derringer"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
 	item = /obj/item/gun/ballistic/derringer
+	gun_unloaded = FALSE
+	mag_number = 0
 
 	cost_min = 100
 	cost_max = 300
@@ -143,6 +145,8 @@
 	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticable. Chambered in .357, so you actually have a chance at killing something."
 	item = /obj/item/gun/ballistic/derringer/traitor
 	pair_item = list(/datum/blackmarket_item/ammo/a357_box)
+	gun_unloaded = FALSE
+	mag_number = 0
 
 	cost_min = 300
 	cost_max = 800

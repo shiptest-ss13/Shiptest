@@ -104,10 +104,10 @@
 	. = ..()
 	. += span_notice("Tube [toggled ? "B" : "A"] is currently loaded.")
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize(mapload, spawn_empty)
 	. = ..()
 	if (!alternate_magazine)
-		alternate_magazine = new default_ammo_type(src)
+		alternate_magazine = new default_ammo_type(src, spawn_empty)
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/proc/toggle_tube(mob/living/user)
 	var/current_mag = magazine

@@ -227,7 +227,7 @@
 	availability_prob = 50
 
 /datum/blackmarket_item/clothing/syndie_spacesuit_set/spawn_item(loc)
-	var/obj/item/storage/backpack/duffelbag/syndieB = ..()
+	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
 	B.name = "Spacesuit Duffelbag"
 	B.desc = "It has a Coalition logo stamped on the front."
 	var/suit_color = pick(list("red","green","dark-green","orange","blue","black","black-green","black-blue","black-orange","black-red"))
