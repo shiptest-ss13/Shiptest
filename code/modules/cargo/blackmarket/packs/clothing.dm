@@ -324,3 +324,46 @@
 	cost_max = 2000
 	stock_max = 3
 	availability_prob = 40
+
+/datum/blackmarket_item/clothing/thermal_eyepatch
+	name = "Thermal Eyepatch"
+	desc = "A thermal eyepatch, capable of tracking the heat signatures of living beings through solid objects."
+	item = /obj/item/clothing/glasses/thermal/eyepatch
+
+	cost_min = 1000
+	cost_max = 3000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/clothing/jumpboots
+	name = "Jump Boots"
+	desc = "Jump ahead of the competition with these specialized mining boots!"
+	item = /obj/item/clothing/shoes/bhop
+
+	cost_min = 100
+	cost_max = 1000
+	stock = 3
+	availability_prob = 30
+
+/datum/blackmarket_item/clothing/rocket_gloves
+	name = "Rocket Gloves"
+	desc = "The pinacle of tackling technology, no one will be able to resist a tackle from these rocket propelled gloves. Make sure not to miss though, we don't sell wheelchairs."
+	item = /obj/item/clothing/gloves/tackler/rocket
+
+	cost_min = 500
+	cost_max = 2000
+	stock_max = 3
+	availability_prob = 30
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/clothing/krav_gloves
+	name = "Krav Maga Gloves"
+	desc = "Go for the throat! These special gloves will let you perform advanced Krav Maga techniques like a pro without any of the usual hurdles like \"talent\", \"training\", or \"hard work\"."
+	item = /obj/item/clothing/gloves/krav_maga/sec
+
+	cost_min = 1000
+	cost_max = 2000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE

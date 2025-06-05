@@ -130,4 +130,14 @@
 	stock_max = 10
 	availability_prob = 30
 
+datum/blackmarket_item/misc/capture_closet
+	name = "Lifeform Containment Unit"
+	desc = "A reinforced containment unit for holding fauna. Won't work on anything that actually has two brain cells to rub together though."
+	item = /obj/structure/closet/mob_capture
+
+	cost_min = 750
+	cost_max = 1500
+	stock_max = 3
+	availability_prob = 30
+
 

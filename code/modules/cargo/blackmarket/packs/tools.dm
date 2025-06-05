@@ -22,6 +22,28 @@
 	stock = 1
 	availability_prob = 25
 
+/datum/blackmarket_item/tool/jaws
+	name = "Jaws of Life"
+	desc = "These prying jaws are useful for rescuing trapped victims. Or you know. Breaking into secure areas."
+	item = /obj/item/crowbar/power
+
+	cost_min = 750
+	cost_max = 1000
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
+/datum/blackmarket_item/tool/power_drill
+	name = "Hand Drill"
+	desc = "Treat your tools right, and they'll outlive you. It was certainly the case for the last guy."
+	item = /obj/item/screwdriver/power
+
+	cost_min = 750
+	cost_max = 1000
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 40
+
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
 	desc = "Twice as effective as a monocular for seeing across long distances."
@@ -95,38 +117,6 @@
 	stock_max = 3
 	availability_prob = 50
 
-/datum/blackmarket_item/tool/thermal_eyepatch
-	name = "Thermal Eyepatch"
-	desc = "A thermal eyepatch, capable of tracking the heat signatures of living beings through solid objects."
-	item = /obj/item/clothing/glasses/thermal/eyepatch
-
-	cost_min = 1000
-	cost_max = 3000
-	stock = 1
-	availability_prob = 15
-	spawn_weighting = FALSE
-
-/datum/blackmarket_item/tool/jumpboots
-	name = "Jump Boots"
-	desc = "Jump ahead of the competition with these specialized mining boots!"
-	item = /obj/item/clothing/shoes/bhop
-
-	cost_min = 100
-	cost_max = 1000
-	stock = 3
-	availability_prob = 30
-
-/datum/blackmarket_item/tool/rocket_gloves
-	name = "Rocket Gloves"
-	desc = "The pinacle of tackling technology, no one will be able to resist a tackle from these rocket propelled gloves. Make sure not to miss though, we don't sell wheelchairs."
-	item = /obj/item/clothing/gloves/tackler/rocket
-
-	cost_min = 500
-	cost_max = 2000
-	stock_max = 3
-	availability_prob = 30
-	spawn_weighting = FALSE
-
 /datum/blackmarket_item/tool/rcd
 	name = "Rapid Construction Device"
 	desc = "Borrowed from a GEC construction site, this handy device will make building a cinch."
@@ -155,6 +145,16 @@
 
 	cost_min = 750
 	cost_max = 1750
+	stock_max = 3
+	availability_prob = 40
+
+/datum/blackmarket_item/tool/adv_cutter
+	name = "Advanced Plasmacutter"
+	desc = "These technically aren't meant to be released to the public yet, but let's just say we managed to get our hands on an advance sample."
+	item = /obj/item/gun/energy/plasmacutter/adv
+
+	cost_min = 2750
+	cost_max = 3750
 	stock_max = 3
 	availability_prob = 40
 
