@@ -321,7 +321,6 @@
 		/mob/living/simple_animal/slaughter/laughter,
 		/mob/living/simple_animal/chicken,
 		/mob/living/simple_animal/chicken/rabbit,
-		/mob/living/simple_animal/chicken/rabbit/space,
 		/mob/living/simple_animal/chicken/rabbit/normal,
 		/mob/living/simple_animal/hologram,
 		/mob/living/simple_animal/hologram/medical,
