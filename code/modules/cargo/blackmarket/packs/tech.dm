@@ -209,7 +209,7 @@
 
 	cost_min = 2000
 	cost_max = 3000
-	stock_max = 3
+	stock = 1
 	availability_prob = 15
 
 /datum/blackmarket_item/tech/arm_gun
