@@ -17,22 +17,22 @@ $shadow-color-core: hsl(0, 0%, 0%, 0.4) !default;
   position: fixed;
   display: flex;
   align-items: center;
-  width: vp(100vw);
+  // ! Really should be this it currently but prevents titlebar from filling on 515.
+  // ! Change after full transition to 516
+  //width: vp(100vw);
+  width: 100%;
   height: base.rem(32px);
   background-color: $background-color;
   border-bottom: 1px solid $shadow-color-core;
   box-shadow: 0px 0px base.em(6px) base.em(-1px) $shadow-color;
   z-index: 101; // More than Dimmer
   user-select: none;
-  // Deprecated. Delete after full transition to 516
+  // ! Deprecated. Delete after full transition to 516
   -ms-user-select: none;
 
   &__dragZone {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
   }
 
   &__statusIcon {
