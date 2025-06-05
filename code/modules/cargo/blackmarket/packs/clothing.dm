@@ -35,7 +35,7 @@
 
 /datum/blackmarket_item/clothing/gm_uniform
 	name = "Gorlex Marauder Uniform"
-	desc = "There here are genuine vacuum preserved ICW era Marauder uniforms."
+	desc = "These here are genuine vacuum preserved ICW era Marauder uniforms. The chill of space kept em in pretty good condition on their old owners."
 	item = /obj/item/clothing/under/syndicate/gorlex
 
 	cost_min = 25
