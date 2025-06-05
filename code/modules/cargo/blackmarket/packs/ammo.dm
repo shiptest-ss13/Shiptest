@@ -202,8 +202,8 @@
 	desc = "These upgraded weapon powercells come with twice the capacity of the standard cells, and quality checked to make sure they won't explode!"
 	item = /obj/item/stock_parts/cell/gun/upgraded
 
-	cost_min = 750
-	cost_max = 1250
+	cost_min = 1000
+	cost_max = 1750
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 25
