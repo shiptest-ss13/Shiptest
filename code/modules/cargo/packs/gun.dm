@@ -379,6 +379,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/cycler
+	name = "Cycler Shotgun Crate"
+	desc = "Contains an advanced shotgun with four round dual magazine tubes, allowing quick swapping between ammo types for increased versatility in the field. For NT employee use only."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/cycler)
+	crate_name = "shotgun crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		SMGs
 */

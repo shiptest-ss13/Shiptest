@@ -102,6 +102,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
+	. += span_notice("Tube [toggled ? "B" : "A"] is currently loaded.")
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()
@@ -129,7 +130,6 @@
 		shotty.toggle_tube(owner)
 		return
 	..()
-
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq
 	name = "\improper Mastiff Shotgun"

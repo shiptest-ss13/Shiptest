@@ -83,28 +83,38 @@
 	availability_prob = 10
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/weapon/chlorine_gas
+	name = "Chlorine Gas Canister"
+	desc = "Ever get poolwater in your eyes? It's like that, except a million times worse."
+	item = /obj/machinery/portable_atmospherics/canister/chlorine
+
+	cost_min = 1000
+	cost_max = 2000
+	stock_max = 3
+	availability_prob = 30
+
 /// for guns that should spawn in guncases
 /datum/blackmarket_item/weapon/guncase
 	name = "Guncase"
 	desc = "You shouldn't be seeing this. If you want to waste your money, go ahead and buy it. No refunds."
 	item = /obj/item/gun // should be a subtype of gun
+	var/gun_unloaded = TRUE
 	var/mag_type // should be automatically set by spawn_item(), set this if you want to override it or if the gun uses speedloaders.
 	var/mag_number = 2
-	var/ammoless = FALSE
+	var/magazine_unloaded = FALSE
 	cost = 10000
 	availability_prob = 0
-	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/guncase/spawn_item(loc)
 	var/obj/item/storage/guncase/case = new /obj/item/storage/guncase(loc)
-	new item(case,ammoless)
-	if(!mag_type)
-		var/obj/item/gun/case_gun = item
-		if(case_gun.default_ammo_type && !(case_gun.internal_cell || case_gun.internal_magazine))
-			mag_type = case_gun.default_ammo_type
-	if(mag_type)
+	new item(case,gun_unloaded)
+	if(mag_number > 0)
+		if(!mag_type)
+			var/obj/item/gun/case_gun = item
+			if(case_gun.default_ammo_type && !(case_gun.internal_cell || case_gun.internal_magazine))
+				mag_type = case_gun.default_ammo_type
 		for(var/i in 1 to mag_number)
-			new mag_type(case,ammoless)
+			new mag_type(case,magazine_unloaded)
 	return case
 
 /datum/blackmarket_item/weapon/guncase/himehabu
@@ -269,40 +279,6 @@
 	stock_max = 5
 	availability_prob = 60
 
-/// mecha equipment
-
-/datum/blackmarket_item/weapon/mecha_weapon_bay
-	name = "Concealed Weapons Bay"
-	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
-	item = /obj/item/mecha_parts/weapon_bay/concealed
-
-	cost_min = 1000
-	cost_max = 2000
-	stock_max = 3
-	availability_prob = 20
-
-/datum/blackmarket_item/weapon/mecha_syringe_gun
-	name = "Mounted Syringe Gun"
-	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
-	item = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
-
-	cost_min = 5000
-	cost_max = 7000
-	stock = 1
-	availability_prob = 10
-	spawn_weighting = FALSE
-
-/datum/blackmarket_item/weapon/mecha_hades
-	name = "Mounted FNX-99 Carbine"
-	desc = "This so called \"Phoenix\" carbine is sure to burn brightly above the competition! Exosuit not included."
-	item = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
-	pair_item = list(/datum/blackmarket_item/ammo/mecha_hades_ammo)
-
-	cost_min = 2000
-	cost_max = 3000
-	stock_max = 2
-	availability_prob = 25
-
 /datum/blackmarket_item/weapon/guncase/model_h
 	name = "Model H"
 	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."
@@ -324,6 +300,7 @@
 	name = "SSG-669C Rotary Sniper Rifle"
 	desc = "I could tell you it's full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm caseless."
 	item = /obj/item/gun/ballistic/rifle/solgov
+	mag_type = /obj/item/ammo_box/a858
 	pair_item = list(/datum/blackmarket_item/ammo/a858_box)
 
 	cost_min = 3000
@@ -350,6 +327,17 @@
 
 	cost_min = 1500
 	cost_max = 3500
+	stock = 2
+	availability_prob = 25
+
+/datum/blackmarket_item/weapon/guncase/cycler
+	name = "Cycler Shotgun"
+	desc = "Perpetuate the cycle of violence with this dual feed shotgun! Has two built in 4 shell magazine tubes that can be swapped at the press of a button!"
+	item = /obj/item/gun/ballistic/shotgun/automatic/dual_tube
+	gun_unloaded = FALSE
+
+	cost_min = 2500
+	cost_max = 4000
 	stock = 2
 	availability_prob = 25
 
@@ -401,6 +389,7 @@
 	name = "Polymer Survivor Rifle"
 	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
 	item = /obj/item/gun/ballistic/rifle/polymer
+	mag_type = /obj/item/ammo_box/a762_stripper
 	pair_item = list(/datum/blackmarket_item/ammo/a762_box)
 
 	cost_min = 600
@@ -424,6 +413,8 @@
 	name = "Hammer Launcher"
 	desc = "A one-shot solution to a myriad amount of problems, ranging from Exosuits to obnoxious neighbors. Contains one ready-to-fire 84mm HE rocket. "
 	item = /obj/item/gun/ballistic/rocketlauncher/oneshot
+	mag_number = 0
+	gun_unloaded = FALSE
 
 	cost_min = 3000
 	cost_max = 4500
@@ -452,3 +443,37 @@
 	stock_max = 2
 	availability_prob = 15
 	spawn_weighting = FALSE
+
+/// mecha equipment
+
+/datum/blackmarket_item/weapon/mecha_weapon_bay
+	name = "Concealed Weapons Bay"
+	desc = "Ripley with a laser cannon? 200 Series with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
+	item = /obj/item/mecha_parts/weapon_bay/concealed
+
+	cost_min = 1000
+	cost_max = 2000
+	stock_max = 3
+	availability_prob = 20
+
+/datum/blackmarket_item/weapon/mecha_syringe_gun
+	name = "Mounted Syringe Gun"
+	desc = "We ripped this off an old Cybersun exosuit. It's a real advanced piece of equipment. Exosuit not included."
+	item = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
+
+	cost_min = 5000
+	cost_max = 7000
+	stock = 1
+	availability_prob = 10
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/mecha_hades
+	name = "Mounted FNX-99 Carbine"
+	desc = "This so called \"Phoenix\" carbine is sure to burn brightly above the competition! Exosuit not included."
+	item = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
+	pair_item = list(/datum/blackmarket_item/ammo/mecha_hades_ammo)
+
+	cost_min = 2000
+	cost_max = 3000
+	stock_max = 2
+	availability_prob = 25

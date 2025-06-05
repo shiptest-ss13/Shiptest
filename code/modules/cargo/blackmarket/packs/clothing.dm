@@ -35,7 +35,7 @@
 
 /datum/blackmarket_item/clothing/gm_uniform
 	name = "Gorlex Marauder Uniform"
-	desc = "."
+	desc = "There here are genuine vacuum preserved ICW era Marauder uniforms."
 	item = /obj/item/clothing/under/syndicate/gorlex
 
 	cost_min = 25
@@ -47,10 +47,32 @@
 /datum/blackmarket_item/clothing/fm_uniform
 	name = "Frontiersmen Uniform"
 	desc = "The Frontiersmen make these things in bulk due to the number of recruits they tend to go through. They'd reuse the old ones, but apparently wearing something someone died in is apparently \"bad\" for morale."
-	item = /obj/item/clothing/under/syndicate/gorlex
+	item = /obj/item/clothing/under/frontiersmen
 
 	cost_min = 25
 	cost_max = 50
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/sack_mask
+	name = "Sack Gas Mask"
+	desc = "This thing is like breathing through a burlap sack. Mainly because it is one."
+	item = /obj/item/clothing/mask/gas/frontiersmen
+
+	cost_min = 10
+	cost_max = 30
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/coalition_mask
+	name = "Coalition Gas Mask"
+	desc = "This thing is like breathing through a burlap sack. Mainly because it is one."
+	item = /obj/item/clothing/mask/gas/syndicate
+
+	cost_min = 10
+	cost_max = 30
 	stock_min = 5
 	stock_max = 10
 	availability_prob = 50
