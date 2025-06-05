@@ -88,22 +88,23 @@
 	name = "Guncase"
 	desc = "You shouldn't be seeing this. If you want to waste your money, go ahead and buy it. No refunds."
 	item = /obj/item/gun // should be a subtype of gun
-	var/paired_mag // should be automatically set by spawn_item(), set this if you want to override it or if the gun uses speedloaders.
-	var/mag_number = 1
+	var/mag_type // should be automatically set by spawn_item(), set this if you want to override it or if the gun uses speedloaders.
+	var/mag_number = 2
 	var/ammoless = FALSE
 	cost = 10000
 	availability_prob = 0
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/weapon/guncase/spawn_item(loc)
 	var/obj/item/storage/guncase/case = new /obj/item/storage/guncase(loc)
 	new item(case,ammoless)
-	if(!paired_mag)
+	if(!mag_type)
 		var/obj/item/gun/case_gun = item
 		if(case_gun.default_ammo_type && !(case_gun.internal_cell || case_gun.internal_magazine))
-			paired_mag = case_gun.default_ammo_type
-	if(paired_mag)
+			mag_type = case_gun.default_ammo_type
+	if(mag_type)
 		for(var/i in 1 to mag_number)
-			new paired_mag(case,ammoless)
+			new mag_type(case,ammoless)
 	return case
 
 /datum/blackmarket_item/weapon/guncase/himehabu
