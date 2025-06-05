@@ -304,7 +304,7 @@ Mech Equipment
 	desc = "A \"close combat weaponry\" module designed to deflect melee attacks."
 	cost = 750
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
+		/obj/item/mecha_parts/mecha_equipment/armor/melee
 	)
 
 /datum/supply_pack/mech/equipment/projectile_armor_booster
@@ -312,7 +312,31 @@ Mech Equipment
 	desc = "A protective exosuit module designed to deflect ranged attacks."
 	cost = 1000
 	contains = list(
-		/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
+		/obj/item/mecha_parts/mecha_equipment/armor/ranged
+	)
+
+/datum/supply_pack/mech/equipment/projectile_armor_booster
+	name = "Exosuit heat sink"
+	desc = "An exosuit heat sink to help mitigate short bursts of overheating."
+	cost = 400
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/heat_sink
+	)
+
+/datum/supply_pack/mech/equipment/projectile_armor_booster
+	name = "Exosuit external radiator"
+	desc = "A small radiator module to help passively cool an exosuit. Not rated for use in the vacuum of space."
+	cost = 250
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/cooling/passive
+	)
+
+/datum/supply_pack/mech/equipment/projectile_armor_booster
+	name = "Exosuit liquid cooling system"
+	desc = "A powered liquid cooling system for exosuits to combat overheating. Keep away from strong electromagnetic interference."
+	cost = 600
+	contains = list(
+		/obj/item/mecha_parts/mecha_equipment/cooling/active
 	)
 
 /datum/supply_pack/mech/equipment/recharger

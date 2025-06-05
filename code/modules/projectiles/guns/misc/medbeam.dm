@@ -62,7 +62,7 @@
 	if(current_target)
 		LoseTarget()
 	if(!isliving(target))
-		return
+		return FALSE
 
 	current_target = target
 	active = TRUE
@@ -70,6 +70,7 @@
 	RegisterSignal(current_beam, COMSIG_PARENT_QDELETING, PROC_REF(beam_died))//this is a WAY better rangecheck than what was done before (process check)
 
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)
+	return TRUE
 
 /obj/item/gun/medbeam/process(seconds_per_tick)
 
@@ -91,7 +92,7 @@
 		return
 
 	if(current_target)
-		on_beam_tick(current_target)
+		on_beam_tick(current_target, seconds_per_tick)
 
 /obj/item/gun/medbeam/proc/los_check(atom/movable/user, mob/target)
 	var/turf/user_turf = user.loc
@@ -134,13 +135,13 @@
 /obj/item/gun/medbeam/proc/on_beam_hit(mob/living/target)
 	return
 
-/obj/item/gun/medbeam/proc/on_beam_tick(mob/living/target)
+/obj/item/gun/medbeam/proc/on_beam_tick(mob/living/target, seconds_per_tick)
 	if(target.health != target.maxHealth)
 		new /obj/effect/temp_visual/heal(get_turf(target), "#80F5FF")
-	target.adjustBruteLoss(-4)
-	target.adjustFireLoss(-4)
-	target.adjustToxLoss(-1)
-	target.adjustOxyLoss(-1)
+	target.adjustBruteLoss(-2 * seconds_per_tick)
+	target.adjustFireLoss(-2 * seconds_per_tick)
+	target.adjustToxLoss(-0.5 * seconds_per_tick)
+	target.adjustOxyLoss(-0.5 * seconds_per_tick)
 	return
 
 /obj/item/gun/medbeam/proc/on_beam_release(mob/living/target)

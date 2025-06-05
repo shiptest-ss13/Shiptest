@@ -1,32 +1,11 @@
 // Sleeper, Medical Beam, and Syringe gun
 
 /obj/item/mecha_parts/mecha_equipment/medical
+	active = TRUE
 
-/obj/item/mecha_parts/mecha_equipment/medical/Initialize()
-	. = ..()
-	START_PROCESSING(SSobj, src)
-
-/obj/item/mecha_parts/mecha_equipment/medical/can_attach(obj/mecha/medical/M)
-	if(..() && istype(M))
-		return 1
-
-
-/obj/item/mecha_parts/mecha_equipment/medical/attach(obj/mecha/M)
-	..()
-	START_PROCESSING(SSobj, src)
-
-/obj/item/mecha_parts/mecha_equipment/medical/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	return ..()
-
-/obj/item/mecha_parts/mecha_equipment/medical/process(seconds_per_tick)
-	if(!chassis)
-		STOP_PROCESSING(SSobj, src)
-		return 1
-
-/obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/detach()
-	STOP_PROCESSING(SSobj, src)
-	return ..()
+/obj/item/mecha_parts/mecha_equipment/medical/can_attach(obj/mecha/new_mecha)
+	if(..() && istype(new_mecha, /obj/mecha/medical))
+		return TRUE
 
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper
 	name = "mounted sleeper"
@@ -62,7 +41,7 @@
 			return
 		target.forceMove(src)
 		patient = target
-		START_PROCESSING(SSobj, src)
+		active = TRUE
 		update_equip_info()
 		occupant_message(span_notice("[target] successfully loaded into [src]. Life support functions engaged."))
 		chassis.visible_message(span_warning("[chassis] loads [target] into [src]."))
@@ -212,27 +191,25 @@
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper/container_resist_act(mob/living/user)
 	go_out()
 
-/obj/item/mecha_parts/mecha_equipment/medical/sleeper/process(seconds_per_tick)
-	if(..())
-		return
+/obj/item/mecha_parts/mecha_equipment/medical/sleeper/on_process(seconds_per_tick)
 	if(!chassis.has_charge(energy_drain))
 		set_ready_state(1)
 		log_message("Deactivated.", LOG_MECHA)
 		occupant_message(span_warning("[src] deactivated - no power."))
-		STOP_PROCESSING(SSobj, src)
-		return
+		return PROCESS_KILL
 	var/mob/living/carbon/M = patient
 	if(!M)
 		return
 	if(M.health > 0)
 		M.adjustOxyLoss(-1)
-	M.AdjustStun(-80)
-	M.AdjustKnockdown(-80)
-	M.AdjustParalyzed(-80)
-	M.AdjustImmobilized(-80)
-	M.AdjustUnconscious(-80)
-	if(M.reagents.get_reagent_amount(/datum/reagent/medicine/epinephrine) < 5)
-		M.reagents.add_reagent(/datum/reagent/medicine/epinephrine, 5)
+	M.AdjustStun(-40 * seconds_per_tick)
+	M.AdjustKnockdown(-40 * seconds_per_tick)
+	M.AdjustParalyzed(-40 * seconds_per_tick)
+	M.AdjustImmobilized(-40 * seconds_per_tick)
+	M.AdjustUnconscious(-40 * seconds_per_tick)
+	var/existing_epi = M.reagents.get_reagent_amount(/datum/reagent/medicine/epinephrine)
+	if(existing_epi < 5)
+		M.reagents.add_reagent(/datum/reagent/medicine/epinephrine, 5 - existing_epi)
 	chassis.use_power(energy_drain)
 	update_equip_info()
 
@@ -490,18 +467,15 @@
 	update_equip_info()
 
 
-/obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/process(seconds_per_tick)
-	if(..())
-		return
+/obj/item/mecha_parts/mecha_equipment/medical/syringe_gun/on_process(seconds_per_tick)
 	if(!processed_reagents.len || reagents.total_volume >= reagents.maximum_volume || !chassis.has_charge(energy_drain))
 		occupant_message(span_alert("Reagent processing stopped."))
 		log_message("Reagent processing stopped.", LOG_MECHA)
-		STOP_PROCESSING(SSobj, src)
-		return
-	var/amount = synth_speed / processed_reagents.len
+		return PROCESS_KILL
+	var/amount = synth_speed * seconds_per_tick / processed_reagents.len
 	for(var/reagent in processed_reagents)
-		reagents.add_reagent(reagent,amount)
-		chassis.use_power(energy_drain)
+		reagents.add_reagent(reagent, amount)
+		chassis.use_power(energy_drain * seconds_per_tick)
 
 ///////////////////////////////// Medical Beam ///////////////////////////////////////////////////////////////
 
@@ -510,6 +484,7 @@
 	desc = "Equipment for medical exosuits. Generates a focused beam of medical nanites."
 	icon_state = "mecha_medigun"
 	energy_drain = 10
+	heat_cost = 4
 	range = MECHA_MELEE|MECHA_RANGED
 	equip_cooldown = 0
 	var/obj/item/gun/medbeam/mech/medigun
@@ -520,21 +495,34 @@
 	. = ..()
 	medigun = new(src)
 
-
 /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/Destroy()
 	qdel(medigun)
 	return ..()
 
-/obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/process(seconds_per_tick)
-	if(..())
-		return
-	medigun.process(seconds_per_tick)
+/obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/action_checks(atom/target)
+	if(!chassis)
+		return FALSE
+	if(HAS_TRAIT(src, TRAIT_MECH_DISABLED))
+		return FALSE
+	return TRUE
+
+/obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/on_process(delta_time)
+	if(!action_checks())
+		medigun.LoseTarget()
+		return PROCESS_KILL
+	medigun.process(delta_time)
+	if(!medigun.current_target)
+		return PROCESS_KILL
+	chassis.adjust_overheat(heat_cost * delta_time)
 
 /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/action(atom/target)
-	medigun.process_fire(target, loc)
-
+	if(!action_checks())
+		return FALSE
+	if(!medigun.process_fire(target, loc))
+		return FALSE
+	active = TRUE
+	return TRUE
 
 /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam/detach()
-	STOP_PROCESSING(SSobj, src)
 	medigun.LoseTarget()
 	return ..()

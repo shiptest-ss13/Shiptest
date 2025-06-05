@@ -67,6 +67,8 @@
 	. =	{"[report_internal_damage()]
 		[integrity<30?"[span_userdanger("DAMAGE LEVEL CRITICAL")]<br>":null]
 		<b>Integrity: </b> [integrity]%<br>
+		[overheat >= OVERHEAT_THRESHOLD ? "[span_userdanger("TEMPERATURE CRITICAL")]<br>" : ""]
+		<b>Temperature: </b> [overheat]&deg;C<br>
 		<b>Powercell charge: </b>[isnull(cell_charge)?"No powercell installed":"[cell.percent()]%"]<br>
 		<b>Air source: </b>[internal_tank?"[use_internal_tank?"Internal Airtank":"Environment"]":"Environment"]<br>
 		<b>Airtank pressure: </b>[internal_tank?"[tank_pressure]kPa":"N/A"]<br>
@@ -410,14 +412,10 @@
 	if(href_list["repair_int_control_lost"])
 		occupant_message(span_notice("Recalibrating coordination system..."))
 		log_message("Recalibration of coordination system started.", LOG_MECHA)
-		addtimer(CALLBACK(src, PROC_REF(stationary_repair), loc), 100, TIMER_UNIQUE)
-
-///Repairs internal damage if the mech hasn't moved.
-/obj/mecha/proc/stationary_repair(location)
-	if(location == loc)
-		clearInternalDamage(MECHA_INT_CONTROL_LOST)
-		occupant_message(span_notice("Recalibration successful."))
-		log_message("Recalibration of coordination system finished with 0 errors.", LOG_MECHA)
-	else
-		occupant_message(span_warning("Recalibration failed!"))
-		log_message("Recalibration of coordination system failed with 1 error.", LOG_MECHA, color="red")
+		if(do_after(occupant, 10 SECONDS, src))
+			clearInternalDamage(MECHA_INT_CONTROL_LOST)
+			occupant_message(span_notice("Recalibration successful."))
+			log_message("Recalibration of coordination system finished with 0 errors.", LOG_MECHA)
+		else
+			occupant_message(span_warning("Recalibration failed!"))
+			log_message("Recalibration of coordination system failed with 1 error.", LOG_MECHA, color="red")

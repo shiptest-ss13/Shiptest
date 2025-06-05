@@ -17,6 +17,14 @@
 	max_equip = 3
 	base_step_energy_drain = 8
 
+/obj/mecha/combat/gygax/Initialize()
+	. = ..()
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_MECH_DISABLED), PROC_REF(on_mech_disabled))
+
+/obj/mecha/combat/gygax/proc/on_mech_disabled()
+	if(leg_overload_mode)
+		overload_action.Activate(forced_state = FALSE)
+
 /obj/mecha/combat/gygax/mechturn(direction)
 	. = ..()
 	if(!strafe && !occupant.client.keys_held["Alt"])
@@ -38,9 +46,7 @@
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor/ranged
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay
 	ME.attach(src)
@@ -57,9 +63,7 @@
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser(src)
 	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
+	ME = new /obj/item/mecha_parts/mecha_equipment/armor/ranged
 	ME.attach(src)
 	max_ammo()
 
@@ -84,6 +88,7 @@
 	name = "\improper Basenji"
 	desc = "A light security exosuit originally manufactured by Cybersun Biodynamics, extensively modified by IRMG artificers. The leg actuators have been maxed out, allowing for powerful short ranged charges capable of breaking walls and other obstacles."
 	icon_state = "inteqgygax"
+	leg_overload_coeff = 160
 
 /obj/mecha/combat/gygax/charger/overclock
 	name = "\improper Overclocked 501p"
@@ -105,6 +110,7 @@
 	charge_cooldown = 8
 	charge_power_consume = 100
 	charge_windup = 0
+	leg_overload_coeff = 50
 
 /obj/mecha/combat/gygax/charger/mp/loaded/Initialize()
 	. = ..()

@@ -22,36 +22,24 @@
 		if(. >= 5 || prob(33))
 			occupant_message(span_userdanger("Taking damage!"))
 		log_message("Took [damage_amount] points of damage. Damage type: [damage_type]", LOG_MECHA)
+		diag_hud_set_mechhealth()
 
 /obj/mecha/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	. = ..()
 	if(!damage_amount)
 		return 0
-	var/booster_deflection_modifier = 1
-	var/booster_damage_modifier = 1
-	if(damage_flag == "bullet" || damage_flag == "laser" || damage_flag == "energy")
-		for(var/obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster/B in equipment)
-			if(B.projectile_react())
-				booster_deflection_modifier = B.deflect_coeff
-				booster_damage_modifier = B.damage_coeff
-				break
-	else if(damage_flag == "melee")
-		for(var/obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster/B in equipment)
-			if(B.attack_react())
-				booster_deflection_modifier *= B.deflect_coeff
-				booster_damage_modifier *= B.damage_coeff
-				break
-
+	var/deflection_modifier = 1
+	var/damage_modifier = 1
 	if(attack_dir)
 		var/facing_modifier = get_armour_facing(attack_dir)
-		booster_damage_modifier /= facing_modifier
-		booster_deflection_modifier *= facing_modifier
-	if(prob(deflect_chance * booster_deflection_modifier))
+		damage_modifier /= facing_modifier
+		deflection_modifier *= facing_modifier
+	if(prob(deflect_chance * deflection_modifier))
 		visible_message(span_danger("[src]'s armour deflects the attack!"))
 		log_message("Armor saved.", LOG_MECHA)
 		return 0
 	if(.)
-		. *= booster_damage_modifier
+		. *= damage_modifier
 
 /obj/mecha/attack_hand(mob/living/user)
 	. = ..()
@@ -154,17 +142,19 @@
 	if (. & EMP_PROTECT_SELF)
 		return
 	if(get_charge())
-		use_power((cell.charge/3)/(severity*2))
-		take_damage(30 / severity, BURN, "energy", 1)
+		use_power(cell.charge / (severity * 6))
+		take_damage(30 / severity, BURN, ENERGY, TRUE)
+	if(overheat < OVERHEAT_EMP_MAX)
+		adjust_overheat(min(30 / severity, OVERHEAT_EMP_MAX - overheat))
 	log_message("EMP detected", LOG_MECHA, color="red")
 
 	if(istype(src, /obj/mecha/combat))
 		mouse_pointer = 'icons/effects/mouse_pointers/mecha_mouse-disable.dmi'
 		occupant?.update_mouse_pointer()
 	if(!equipment_disabled && occupant) //prevent spamming this message with back-to-back EMPs
-		to_chat(occupant, "<span=danger>Error -- Connection to equipment control unit has been lost.</span>")
+		to_chat(occupant, span_danger("Error -- Connection to equipment control unit has been lost."))
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/mecha, restore_equipment)), 3 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
-	equipment_disabled = 1
+	equipment_disabled = TRUE
 
 /obj/mecha/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature>max_temperature)
@@ -301,9 +291,7 @@
 		to_chat(user, span_notice("You repair the damaged gas tank."))
 		return
 	while(obj_integrity < max_integrity)
-		if(!do_after(user, 20, target= src))
-			return
-		if(!W.use_tool(src, user, 0, volume=50, amount=1))
+		if(!W.use_tool(src, user, 2 SECONDS, volume=50, amount=1))
 			return
 		user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("You repair some damage to [src]."))
 		obj_integrity += min(10 * repair_multiplier, max_integrity-obj_integrity)
@@ -331,6 +319,7 @@
 
 /obj/mecha/proc/full_repair(charge_cell)
 	obj_integrity = max_integrity
+	adjust_overheat(-overheat)
 	if(cell && charge_cell)
 		cell.charge = cell.maxcharge
 	if(internal_damage & MECHA_INT_FIRE)

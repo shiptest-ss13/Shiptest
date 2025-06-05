@@ -95,6 +95,7 @@
 	var/cell_charge = chassis.get_charge()
 	var/answer = {"<b>Name:</b> [chassis.name]<br>
 				<b>Integrity:</b> [round((chassis.obj_integrity/chassis.max_integrity * 100), 0.01)]%<br>
+				<b>Temperature: </b> [chassis.overheat]&deg;C<br>
 				<b>Cell Charge:</b> [isnull(cell_charge) ? "Not Found":"[chassis.cell.percent()]%"]<br>
 				<b>Airtank:</b> [chassis.internal_tank ? "[round(chassis.return_pressure(), 0.01)]" : "Not Equipped"] kPa<br>
 				<b>Pilot:</b> [chassis.occupant || "None"]<br>

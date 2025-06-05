@@ -324,7 +324,7 @@
 /obj/item/roastingstick/Initialize()
 	. = ..()
 	if(!ovens)
-		ovens = typecacheof(list(/obj/singularity, /obj/machinery/power/supermatter_crystal, /obj/structure/bonfire))
+		ovens = typecacheof(list(/obj/singularity, /obj/machinery/power/supermatter_crystal, /obj/structure/bonfire, /obj/mecha))
 
 /obj/item/roastingstick/attack_self(mob/user)
 	on = !on
@@ -392,6 +392,11 @@
 		if (held_sausage && held_sausage.roasted)
 			to_chat(src, span_warning("Your [held_sausage] has already been cooked!"))
 			return
+		if(ismecha(target))
+			var/obj/mecha/overheating_mech = target
+			if(overheating_mech.overheat < OVERHEAT_THRESHOLD)
+				to_chat(user, span_warning("[overheating_mech] isn't hot enough!"))
+				return
 		if (istype(target, /obj/singularity) && get_dist(user, target) < 10)
 			to_chat(user, span_notice("You send [held_sausage] towards [target]."))
 			playsound(src, 'sound/items/rped.ogg', 50, TRUE)

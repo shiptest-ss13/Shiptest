@@ -1,5 +1,6 @@
 /obj/mecha/combat
 	force = 30
+	punch_heat_cost = 5 // stronger mechs generate more heat from punching
 	internals_req_access = list(ACCESS_MECH_SCIENCE, ACCESS_MECH_SECURITY)
 	internal_damage_threshold = 50
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
@@ -10,7 +11,7 @@
 
 /obj/mecha/combat/restore_equipment()
 	mouse_pointer = 'icons/effects/mouse_pointers/mecha_mouse.dmi'
-	. = ..()
+	return ..()
 
 /obj/mecha/combat/proc/max_ammo() //Max the ammo stored for Nuke Ops mechs, or anyone else that calls this
 	for(var/obj/item/I in equipment)

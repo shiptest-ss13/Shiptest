@@ -84,12 +84,14 @@
 	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/get_shot_amount()
-	return min(round(chassis.cell.charge / energy_drain), projectiles_per_shot)
+	return min(round(chassis.cell.charge / energy_drain), round((OVERHEAT_MAXIMUM - chassis.overheat) / heat_cost), projectiles_per_shot)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/start_cooldown()
 	set_ready_state(0)
-	chassis.use_power(energy_drain*get_shot_amount())
-	addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
+	var/shot_amount = get_shot_amount()
+	chassis.use_power(energy_drain * shot_amount)
+	chassis.adjust_overheat(heat_cost * shot_amount)
+	addtimer(CALLBACK(src, PROC_REF(set_ready_state), TRUE), equip_cooldown)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/carbine
 	equip_cooldown = 2
@@ -97,6 +99,7 @@
 	desc = "A weapon for combat exosuits. A rapid fire energy carbine with both lethal and disabler modes."
 	icon_state = "mecha_laser"
 	energy_drain = 30
+	heat_cost = 8 // this builds up FAST
 	projectile = /obj/projectile/beam/laser
 	fire_sound = 'sound/weapons/laser.ogg'
 	harmful = TRUE
@@ -131,6 +134,7 @@
 	desc = "A scoped weapon for combat exosuits. Shoots long range heavy beam lasers."
 	icon_state = "mecha_laser"
 	energy_drain = 60
+	heat_cost = 30
 	projectile = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	full_auto = FALSE
@@ -144,6 +148,7 @@
 	desc = "A weapon for combat exosuits. Shoots technology-disabling ion beams. Don't catch yourself in the blast!"
 	icon_state = "mecha_ion"
 	energy_drain = 120
+	heat_cost = 30
 	projectile = /obj/projectile/ion
 	fire_sound = 'sound/weapons/laser.ogg'
 
@@ -153,6 +158,7 @@
 	desc = "A weapon for combat exosuits. Fires bolts of electricity similar to the experimental tesla engine."
 	icon_state = "mecha_ion"
 	energy_drain = 500
+	heat_cost = 10
 	projectile = /obj/projectile/energy/tesla/cannon
 	fire_sound = 'sound/magic/lightningbolt.ogg'
 	harmful = TRUE
@@ -163,6 +169,7 @@
 	desc = "A scoped weapon for combat exosuits. Shoots powerful destructive blasts capable of demolishing obstacles."
 	icon_state = "mecha_pulse"
 	energy_drain = 120
+	heat_cost = 20
 	projectile = /obj/projectile/beam/pulse/heavy
 	fire_sound = 'sound/weapons/marauder.ogg'
 	harmful = TRUE
@@ -178,6 +185,7 @@
 	lefthand_file = GUN_LEFTHAND_ICON
 	righthand_file = GUN_RIGHTHAND_ICON
 	energy_drain = 30
+	heat_cost = 5
 	projectile = /obj/projectile/plasma/adv/mech
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'
 	harmful = TRUE
@@ -196,6 +204,7 @@
 	desc = "An exosuit-mounted mining tool that does increased damage in low pressure. Drawing from an onboard power source allows it to project further than the handheld version."
 	icon_state = "mecha_kineticgun"
 	energy_drain = 30
+	heat_cost = 5
 	projectile = /obj/projectile/kinetic/mech
 	fire_sound = 'sound/weapons/kenetic_accel.ogg'
 	harmful = TRUE
@@ -214,6 +223,7 @@
 	icon_state = "mecha_taser"
 	energy_drain = 20
 	equip_cooldown = 8
+	heat_cost = 5
 	projectile = /obj/projectile/energy/electrode
 	fire_sound = 'sound/weapons/taser.ogg'
 
@@ -308,6 +318,7 @@
 	desc = "A weapon for combat exosuits. Shoots incendiary bullets."
 	icon_state = "mecha_carbine"
 	equip_cooldown = 10
+	heat_cost = 8
 	projectile = /obj/projectile/bullet/incendiary/fnx99
 	projectiles = 24
 	projectiles_cache = 24
@@ -325,6 +336,7 @@
 	desc = "A weapon for combat exosuits. Shoots a spread of pellets."
 	icon_state = "mecha_scatter"
 	equip_cooldown = 10
+	heat_cost = 10
 	projectile = /obj/projectile/bullet/pellet/scattershot
 	projectiles = 12
 	projectiles_cache = 24
@@ -347,6 +359,7 @@
 	desc = "A weapon for combat exosuits. A fully automatic mounted machine gun with an impressive rate of fire and capacity."
 	icon_state = "mecha_uac2"
 	equip_cooldown = 2
+	heat_cost = 6
 	projectile = /obj/projectile/bullet/lmg
 	projectiles = 100
 	projectiles_cache = 200
@@ -367,6 +380,7 @@
 	desc = "A plasma railgun manufactured by NT and taking a different direction from their handheld counterpart. Namely utilizing the plasma NT had such large quantities of to help with heating and accelerating the projectile. Shoots super-heated high-density iron-tungsten rods at ludicrous speeds."
 	icon_state = "mecha_railgun"
 	equip_cooldown = 34
+	heat_cost = 20
 	projectile = /obj/projectile/bullet/p50/penetrator/sabot
 	projectiles = 15
 	projectiles_cache = 30
@@ -396,6 +410,7 @@
 	projectiles_cache_max = 0
 	disabledreload = TRUE
 	equip_cooldown = 60
+	heat_cost = 10
 	harmful = TRUE
 	ammo_type = "missiles_he"
 
@@ -453,6 +468,7 @@
 	projectiles_cache_max = 24
 	missile_speed = 1.5
 	equip_cooldown = 60
+	heat_cost = 10
 	var/det_time = 20
 	ammo_type = "flashbang"
 

@@ -170,10 +170,15 @@
 /datum/action/innate/mecha/mech_overload_mode/Activate(forced_state = null)
 	if(!owner || !chassis || chassis.occupant != owner)
 		return
-	if(!isnull(forced_state))
+	var/old_state = chassis.leg_overload_mode
+	if(HAS_TRAIT(chassis, TRAIT_MECH_DISABLED))
+		chassis.leg_overload_mode = FALSE
+	else if(!isnull(forced_state))
 		chassis.leg_overload_mode = forced_state
 	else
 		chassis.leg_overload_mode = !chassis.leg_overload_mode
+	if(old_state == chassis.leg_overload_mode)
+		return
 	button_icon_state = "mech_overload_[chassis.leg_overload_mode ? "on" : "off"]"
 	chassis.log_message("Toggled leg actuators overload.", LOG_MECHA)
 	if(chassis.leg_overload_mode)

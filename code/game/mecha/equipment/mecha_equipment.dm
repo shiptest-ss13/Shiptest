@@ -8,8 +8,12 @@
 	force = 5
 	max_integrity = 300
 	var/equip_cooldown = 0 // cooldown after use
-	var/equip_ready = 1 //whether the equipment is ready for use. (or deactivated/activated for static stuff)
+	var/equip_ready = TRUE //whether the equipment is ready for use. (or deactivated/activated for static stuff)
 	var/energy_drain = 0
+	/// How much this heats the mech when used
+	var/heat_cost = 0
+	/// Whether this equipment should process along with its chassis
+	var/active = FALSE
 	var/obj/mecha/chassis = null
 	///Bitflag. Determines the range of the equipment.
 	var/range = MECHA_MELEE
@@ -79,38 +83,46 @@
 
 /obj/item/mecha_parts/mecha_equipment/proc/action_checks(atom/target)
 	if(!target)
-		return 0
+		return FALSE
 	if(!chassis)
-		return 0
+		return FALSE
 	if(!equip_ready)
-		return 0
+		return FALSE
 	if(energy_drain && !chassis.has_charge(energy_drain))
-		return 0
+		return FALSE
+	if(HAS_TRAIT(src, TRAIT_MECH_DISABLED))
+		return FALSE
 	if(chassis.is_currently_ejecting)
-		return 0
+		return FALSE
 	if(chassis.equipment_disabled)
-		to_chat(chassis.occupant, "<span=warn>Error -- Equipment control unit is unresponsive.</span>")
-		return 0
-	return 1
+		to_chat(chassis.occupant, span_warning("Error -- Equipment control unit is unresponsive."))
+		return FALSE
+	return TRUE
+
+/obj/item/mecha_parts/mecha_equipment/proc/on_process(seconds_per_tick)
+	return PROCESS_KILL
 
 /obj/item/mecha_parts/mecha_equipment/proc/action(atom/target)
-	return 0
+	return FALSE
 
 /obj/item/mecha_parts/mecha_equipment/proc/start_cooldown(cooldown_override)
+	if(equip_ready)
+		chassis.use_power(energy_drain)
+		chassis.adjust_overheat(heat_cost)
 	set_ready_state(FALSE)
-	chassis.use_power(energy_drain)
-	if(cooldown_override)
-		addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), cooldown_override)
-	else
-		addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
+	addtimer(CALLBACK(src, PROC_REF(set_ready_state), TRUE), cooldown_override || equip_cooldown, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /obj/item/mecha_parts/mecha_equipment/proc/do_after_cooldown(atom/target)
 	if(!chassis)
-		return
+		return FALSE
 	set_ready_state(FALSE)
-	chassis.use_power(energy_drain)
 	. = do_after(chassis.occupant, equip_cooldown, target=target, extra_checks = CALLBACK(src, PROC_REF(check_do_after), target))
 	set_ready_state(TRUE)
+	if(!.)
+		return FALSE
+	chassis.use_power(energy_drain)
+	chassis.adjust_overheat(heat_cost)
+	return TRUE
 
 /obj/item/mecha_parts/mecha_equipment/proc/do_after_mecha(atom/target, delay)
 	if(!chassis)

@@ -9,10 +9,13 @@
 	layer = BELOW_MOB_LAYER//icon draw layer
 	infra_luminosity = 15 //byond implementation is bugged.
 	force = 5
+	var/punch_heat_cost = 2
 	light_system = MOVABLE_LIGHT
 	light_power = 0.8
 	light_range = 6
 	light_on = FALSE
+	/// Whether the mecha can turn and step in the same movement
+	var/pivot_step = FALSE
 	var/repair_multiplier = 1 //multiply incoming repairs by this value. used to make some mechs less efficient and slower to repair.
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
@@ -40,7 +43,6 @@
 	var/datum/effect_system/spark_spread/spark_system = new
 	var/lights = FALSE
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
-	var/completely_disabled = FALSE //stops the mech from doing anything
 
 	///Vars for mech charges
 	var/charging = FALSE
@@ -63,6 +65,13 @@
 
 	var/obj/item/radio/mech/radio
 	var/list/trackers = list()
+
+	/// Overheating level. This causes damage, slowdown, and eventually complete shutdown.
+	var/overheat = 0
+	/// Multiplier for overheat gain and loss.
+	var/heat_modifier = 1
+	/// Multiplier for cooling specifically.
+	var/cooling_modifier = 1
 
 	var/max_temperature = 25000
 	var/internal_damage_threshold = 50 //health percentage below which internal damage is possible
@@ -136,7 +145,7 @@
 	var/occupant_sight_flags = 0 //sight flags to give to the occupant (e.g. mech mining scanner gives meson-like vision)
 	var/mouse_pointer
 
-	hud_possible = list (DIAG_STAT_HUD, DIAG_BATT_HUD, DIAG_MECH_HUD, DIAG_TRACK_HUD)
+	hud_possible = list (DIAG_STAT_HUD, DIAG_BATT_HUD, DIAG_MECH_HUD, DIAG_TRACK_HUD, DIAG_OVERHEAT_HUD)
 
 /obj/item/radio/mech //this has to go somewhere
 	canhear_range = 0
@@ -156,7 +165,7 @@
 	add_cell()
 	add_scanmod()
 	add_capacitor()
-	START_PROCESSING(SSobj, src)
+	START_PROCESSING(SSmecha, src)
 	SSpoints_of_interest.make_point_of_interest(src)
 	log_message("[src.name] created.", LOG_MECHA)
 	GLOB.mechas_list += src //global mech list
@@ -166,6 +175,7 @@
 	diag_hud_set_mechhealth()
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
+	diag_hud_set_mechoverheat()
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	update_part_values()
 	AddComponent(/datum/component/automatic_fire_mecha,0.5)
@@ -197,7 +207,7 @@
 	if(AI)
 		AI.gib() //No wreck, no AI to recover
 		AI = null
-	STOP_PROCESSING(SSobj, src)
+	STOP_PROCESSING(SSmecha, src)
 	SSpoints_of_interest.remove_point_of_interest(src)
 	equipment.Cut()
 
@@ -314,6 +324,25 @@
 			return 1
 	return 0
 
+/obj/mecha/proc/adjust_overheat(amount = 0)
+	if(amount > 0)
+		amount *= 1.2 - (scanmod.rating * 0.1) // 1.1x to 0.8x heat generation based on scanner module rating
+	else
+		amount *= cooling_modifier
+	overheat = round(clamp(overheat + (amount * heat_modifier), 0, OVERHEAT_MAXIMUM), 0.1)
+	if(overheat >= OVERHEAT_MAXIMUM && amount > 0)
+		if(overload_action)
+			overload_action.Activate(FALSE) // turn it off
+		occupant.throw_alert("mech_overheat", /atom/movable/screen/alert/overheating, 3)
+		ADD_TRAIT(src, TRAIT_MECH_DISABLED, OVERHEAT_TRAIT)
+		if(world.time > last_message + 2 SECONDS)
+			SEND_SOUND(occupant, sound('sound/machines/warning-buzzer.ogg',volume=50))
+			occupant_message("Warning: overheating critical. Shutdown imminent.")
+	else if(overheat < OVERHEAT_THRESHOLD)
+		REMOVE_TRAIT(src, TRAIT_MECH_DISABLED, OVERHEAT_TRAIT)
+	infra_luminosity = initial(infra_luminosity) * (1 + overheat / OVERHEAT_THRESHOLD) // hotter mechs are more visible on infrared
+	diag_hud_set_mechoverheat()
+
 ////////////////////////////////////////////////////////////////////////////////
 
 /obj/mecha/examine(mob/user)
@@ -350,9 +379,15 @@
 						break //in case user is holding two guns
 	if(mech_unique_action)
 		. += "This mech has a special action you can activate by pressing the <b>unique action</b> key. By default, this is <b>space</b>"
-//processing internal damage, temperature, air regulation, alert updates, lights power use.
+//processing equipment, internal damage, temperature, air regulation, alert updates, lights power use.
 /obj/mecha/process(seconds_per_tick)
-	var/internal_temp_regulation = 1
+	for(var/obj/item/mecha_parts/mecha_equipment/equip as anything in equipment)
+		if(!equip.active)
+			continue
+		if(equip.on_process(seconds_per_tick) == PROCESS_KILL)
+			equip.active = FALSE
+
+	var/internal_temp_regulation = TRUE
 
 	if(internal_damage)
 		if(internal_damage & MECHA_INT_FIRE)
@@ -363,7 +398,7 @@
 				if(int_tank_air.return_pressure() > internal_tank.maximum_pressure && !(internal_damage & MECHA_INT_TANK_BREACH))
 					setInternalDamage(MECHA_INT_TANK_BREACH)
 				if(int_tank_air && int_tank_air.return_volume() > 0) //heat the air_contents
-					int_tank_air.set_temperature(min(6000+T0C, int_tank_air.return_temperature()+rand(10,15)))
+					int_tank_air.set_temperature(min(6000+T0C, cabin_air.return_temperature() + rand(5, 7.5) * seconds_per_tick))
 			if(cabin_air && cabin_air.return_volume()>0)
 				cabin_air.set_temperature(min(6000+T0C, cabin_air.return_temperature()+rand(10,15)))
 				if(cabin_air.return_temperature() > max_temperature/2)
@@ -379,13 +414,24 @@
 		if(internal_damage & MECHA_INT_SHORT_CIRCUIT)
 			if(get_charge())
 				spark_system.start()
-				cell.charge -= min(20,cell.charge)
-				cell.maxcharge -= min(20,cell.maxcharge)
+				cell.charge -= min(10 * seconds_per_tick, cell.charge)
+				cell.maxcharge -= min(10 * seconds_per_tick, cell.maxcharge)
+
+	if(world.time > can_move)
+		adjust_overheat(max((world.time - can_move) * STATIONARY_COOLING * seconds_per_tick, STATIONARY_COOLING_MAXIMUM))
 
 	if(internal_temp_regulation)
+		if(!defense_mode)
+			adjust_overheat(PASSIVE_COOLING * seconds_per_tick)
+		var/datum/gas_mixture/environment = loc.return_air()
+		if(environment?.return_temperature() > max_temperature)
+			adjust_overheat(min((environment.return_temperature() - max_temperature) / max_temperature, -PASSIVE_COOLING))
 		if(cabin_air && cabin_air.return_volume() > 0)
 			var/delta = cabin_air.return_temperature() - T20C
-			cabin_air.set_temperature(cabin_air.return_temperature() - max(-10, min(10, round(delta/4,0.1))))
+			cabin_air.set_temperature(cabin_air.return_temperature() - max(-0.5 * seconds_per_tick SECONDS, min(10, round(delta/4,0.1))))
+
+	if(overheat >= OVERHEAT_THRESHOLD)
+		take_damage(seconds_per_tick * (1 + 2 * (overheat - OVERHEAT_THRESHOLD) / OVERHEAT_THRESHOLD), BURN, null, FALSE) // 1 to 3 damage per second
 
 	if(internal_tank)
 		var/datum/gas_mixture/tank_air = internal_tank.return_air()
@@ -432,6 +478,14 @@
 				occupant.throw_alert("exosuit damage", /atom/movable/screen/alert/low_mech_integrity, 3)
 			else
 				occupant.clear_alert("exosuit damage")
+
+		if(HAS_TRAIT_FROM(src, TRAIT_MECH_DISABLED, OVERHEAT_TRAIT))
+			occupant.throw_alert("mech_overheat", /atom/movable/screen/alert/overheating, 3)
+		else if(overheat >= OVERHEAT_WARNING)
+			occupant.throw_alert("mech_overheat", /atom/movable/screen/alert/overheating, round(3 * (overheat - OVERHEAT_WARNING) / (OVERHEAT_MAXIMUM - OVERHEAT_WARNING)))
+		else
+			occupant.clear_alert("mech_overheat")
+
 		var/atom/checking = occupant.loc
 		// recursive check to handle all cases regarding very nested occupants,
 		// such as brainmob inside brainitem inside MMI inside mecha
@@ -456,10 +510,11 @@
 		visible_message(span_warning("[occupant] tumbles out of the cockpit!"))
 		go_out() //Maybe we should install seat belts?
 
-//Diagnostic HUD updates
+	//Diagnostic HUD updates
 	diag_hud_set_mechhealth()
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
+	diag_hud_set_mechoverheat()
 
 /obj/mecha/fire_act() //Check if we should ignite the pilot of an open-canopy mech
 	. = ..()
@@ -467,6 +522,11 @@
 		if (occupant.fire_stacks < 5)
 			occupant.fire_stacks += 1
 		occupant.IgniteMob()
+
+/obj/mecha/extinguish()
+	. = ..()
+	if(occupant && !enclosed && !silicon_pilot)
+		occupant.ExtinguishMob()
 
 /obj/mecha/proc/drop_item()//Derpfix, but may be useful in future for engineering exosuits.
 	return
@@ -493,7 +553,7 @@
 		return
 	if(!locate(/turf) in list(target,target.loc)) // Prevents inventory from being drilled
 		return
-	if(completely_disabled)
+	if(HAS_TRAIT(src, TRAIT_MECH_DISABLED))
 		return
 	if(is_currently_ejecting)
 		return
@@ -541,6 +601,7 @@
 			return
 		target.mech_melee_attack(src)
 		melee_can_hit = FALSE
+		adjust_overheat(punch_heat_cost)
 		addtimer(VARSET_CALLBACK(src, melee_can_hit, TRUE), melee_cooldown)
 
 
@@ -593,7 +654,7 @@
 	return FALSE
 
 /obj/mecha/relaymove(mob/living/user, direction)
-	if(completely_disabled)
+	if(HAS_TRAIT(src, TRAIT_MECH_DISABLED))
 		return
 	if(!direction)
 		return
@@ -643,21 +704,28 @@
 
 	var/move_result = 0
 	var/oldloc = loc
+	var/step_time = step_in
+	if(overheat > OVERHEAT_THRESHOLD)
+		step_time += (min(overheat, OVERHEAT_MAXIMUM) - OVERHEAT_THRESHOLD) / OVERHEAT_THRESHOLD // up to 0.5 slower based on overheating
 	if(internal_damage & MECHA_INT_CONTROL_LOST)
-		set_glide_size(DELAY_TO_GLIDE_SIZE(step_in))
+		set_glide_size(DELAY_TO_GLIDE_SIZE(step_time))
 		move_result = mechsteprand()
-	else if(dir != direction && (!strafe || occupant.client.keys_held["Alt"]))
+	else if((dir != direction && !strafe && !pivot_step) || occupant.client.keys_held["Alt"])
 		move_result = mechturn(direction)
 	else
-		set_glide_size(DELAY_TO_GLIDE_SIZE(step_in))
+		set_glide_size(DELAY_TO_GLIDE_SIZE(step_time))
 		move_result = mechstep(direction)
 	if(move_result || loc != oldloc)// halfway done diagonal move still returns false
 		use_power(step_energy_drain)
-		can_move = world.time + step_in
+		if(leg_overload_mode)
+			adjust_overheat(leg_overload_coeff * OVERLOAD_HEAT_COST / OVERHEAT_THRESHOLD)
+		can_move = world.time + step_time
 		return 1
 	return 0
 
 /obj/mecha/proc/mechturn(direction)
+	if(dir == direction)
+		return 0
 	set_dir_mecha(direction)
 	if(turnsound)
 		playsound(src,turnsound,40,TRUE)
@@ -719,6 +787,7 @@
 			if(nextsmash < world.time)
 				obstacle.mech_melee_attack(src)
 				nextsmash = world.time + smashcooldown
+				adjust_overheat(punch_heat_cost)
 				if(!obstacle || obstacle.CanPass(src,get_step(src,dir)))
 					step(src,dir)
 		if(isobj(obstacle))
@@ -1115,6 +1184,7 @@
 	var/atom/movable/mob_container
 	occupant.clear_alert("charge")
 	occupant.clear_alert("exosuit damage")
+	occupant.clear_alert("mech_overheat")
 	if(ishuman(occupant))
 		mob_container = occupant
 		RemoveActions(occupant, human_occupant=1)
@@ -1213,14 +1283,16 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 
 /obj/mecha/proc/use_power(amount)
 	if(get_charge() && cell.use(amount))
-		return 1
-	return 0
+		diag_hud_set_mechcell(amount)
+		return TRUE
+	return FALSE
 
 /obj/mecha/proc/give_power(amount)
 	if(!isnull(get_charge()))
 		cell.give(amount)
-		return 1
-	return 0
+		diag_hud_set_mechcell(amount)
+		return TRUE
+	return FALSE
 
 /obj/mecha/update_remote_sight(mob/living/user)
 	if(occupant_sight_flags)
@@ -1320,6 +1392,8 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		charging = FALSE
 		return
 	cell.use(charge_power_consume)
+	adjust_overheat(charge_distance * OVERLOAD_HEAT_COST * leg_overload_coeff / OVERHEAT_THRESHOLD)
+	AddComponent(/datum/component/after_image, 0.4 SECONDS, 0.5, FALSE)
 	walk_towards(src, charge_target, 0.7)
 	sleep(get_dist(src, charge_target) * 0.7)
 	charge_end()
@@ -1327,6 +1401,9 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/charge_end()
 	walk(src,0)
 	charging = FALSE
+	var/datum/component/after_image/chassis_after_image = GetComponent(/datum/component/after_image)
+	if(chassis_after_image)
+		qdel(chassis_after_image)
 
 /// Sets the direction of the mecha and all of its occcupents, required for FOV. Alternatively one could make a recursive contents registration and register topmost direction changes in the fov component
 /obj/mecha/proc/set_dir_mecha(new_dir)

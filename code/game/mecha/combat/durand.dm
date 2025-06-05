@@ -8,14 +8,17 @@
 	max_integrity = 300
 	deflect_chance = 15
 	repair_multiplier = 0.5
+	heat_modifier = 0.67 // both heating and cooling are slowed by its immense mass
+	cooling_modifier = 0.8 // but cooling more so, due to the heavy armor acting as insulation
 	armor = list("melee" = 50, "bullet" = 75, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 	max_temperature = 30000
 	infra_luminosity = 8
 	force = 40
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield
+	var/image/shield
 	var/shield_type = /obj/durand_shield
-	var/shield_passive_drain = 300
+	var/shield_passive_drain = 50 // significantly reduced in favor of overheating
 
 /obj/mecha/combat/durand/clip
 	desc = "An aging combat exosuit specially modified for CLIP-BARD's anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
@@ -29,8 +32,10 @@
 
 /obj/mecha/combat/durand/Initialize()
 	. = ..()
+	shield =
 	shield = new shield_type(loc, src, layer, dir)
 	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_MECH_DISABLED), PROC_REF(on_mech_disabled))
 
 /obj/mecha/combat/durand/set_up_unique_action()
 	mech_unique_action = defense_action
@@ -40,6 +45,7 @@
 		QDEL_NULL(shield)
 	return ..()
 
+/obj/mecha/combat/durand
 
 /obj/mecha/combat/durand/GrantActions(mob/living/user, human_occupant = 0)
 	..()
@@ -49,6 +55,10 @@
 	..()
 	defense_action.Remove(user)
 
+/obj/mecha/combat/durand/proc/on_mech_disabled()
+	if(defense_mode)
+		defense_action.Activate(forced_state = TRUE)
+
 /obj/mecha/combat/durand/process(seconds_per_tick)
 	. = ..()
 	if(defense_mode && !use_power(max(0, shield_passive_drain - (scanmod.rating * 10))))
@@ -57,6 +67,7 @@
 /obj/mecha/combat/durand/domove(direction)
 	. = ..()
 	if(shield)
+		shield.set_glide_size(glide_size)
 		shield.forceMove(loc)
 		shield.setDir(dir)
 
@@ -82,9 +93,8 @@
 //Redirects projectiles to the shield if defense_check decides they should be blocked and returns true.
 /obj/mecha/combat/durand/bullet_act(obj/projectile/source)
 	if(defense_check(source.loc, shield.ranged_pass))
-		shield.bullet_act(source)
-	else
-		. = ..()
+		return shield.bullet_act(source)
+	return ..()
 
 /**Checks if defense mode is enabled, and if the attacker is standing in an area covered by the shield.
 Expects a turf. Returns true if the attack should be blocked, false if not. Skip defence will make the proc return false and the attack will go through*/
@@ -93,16 +103,16 @@ Expects a turf. Returns true if the attack should be blocked, false if not. Skip
 		return FALSE
 	. = FALSE
 	switch(dir)
-		if (1)
+		if (NORTH)
 			if(abs(x - aloc.x) <= (y - aloc.y) * -2)
 				. = TRUE
-		if (2)
+		if (SOUTH)
 			if(abs(x - aloc.x) <= (y - aloc.y) * 2)
 				. = TRUE
-		if (4)
+		if (EAST)
 			if(abs(y - aloc.y) <= (x - aloc.x) * -2)
 				. = TRUE
-		if (8)
+		if (WEST)
 			if(abs(y - aloc.y) <= (x - aloc.x) * 2)
 				. = TRUE
 	return
@@ -170,10 +180,12 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 	var/melee_pass = FALSE
 	///	if this shield lets projectiles pass and hit the mech directly
 	var/ranged_pass = FALSE
+	/// Coefficient that converts incoming damage to overheating
+	var/heat_damage_coefficient = 0.5
 
 /obj/durand_shield/clip
 	name = "electric repulsion grid"
-	ranged_pass = TRUE
+	heat_damage_coefficient = 0.2
 
 /obj/durand_shield/Initialize(mapload, _chassis, _layer, _dir)
 	. = ..()
@@ -204,7 +216,7 @@ the shield is disabled by means other than the action button (like running out o
 		chassis.occupant_message(span_warning("Insufficient power; cannot activate defense mode."))
 		return
 	switching = TRUE
-	chassis.defense_mode = !chassis.defense_mode
+	chassis.defense_mode = HAS_TRAIT(chassis, TRAIT_MECH_DISABLED) ? FALSE : !chassis.defense_mode
 	chassis.defense_action.button_icon_state = "mech_defense_mode_[chassis.defense_mode ? "on" : "off"]" //This is backwards because we haven't changed the var yet
 	if(!signal_args[1])
 		chassis.occupant_message(span_notice("Defense mode [chassis.defense_mode?"enabled":"disabled"]."))
@@ -241,36 +253,47 @@ the shield is disabled by means other than the action button (like running out o
 		return
 	. = ..()
 	flick("shield_impact", src)
-	if(!chassis.use_power(max(1, (max_integrity - obj_integrity + 15) * (10 - chassis.capacitor.rating))))
+	var/efficiency = (10 - chassis.capacitor.rating) / 10
+	if(!chassis.use_power(max(1, (max_integrity - obj_integrity + 15) * 5 * efficiency)))
 		chassis.cell?.charge = 0
 		chassis.defense_action.Activate(forced_state = TRUE)
+	chassis.adjust_overheat(efficiency * (max_integrity - obj_integrity) * heat_damage_coefficient)
 	obj_integrity = 10000
 
 /obj/durand_shield/play_attack_sound()
 	playsound(src, 'sound/mecha/mech_shield_deflect.ogg', 100, TRUE)
 
-/obj/durand_shield/bullet_act()
+/obj/durand_shield/bullet_act(obj/projectile/incoming)
 	play_attack_sound()
 	. = ..()
+	if(chassis.defense_mode) // successfully deflected
+		//playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
+		incoming.firer = chassis
+		incoming.setAngle(incoming.Angle + rand(30, 120) * pick(1, -1))
+		return BULLET_ACT_FORCE_PIERCE
+
 
 /// a mob has bumped into the shield
-/obj/durand_shield/proc/contact(mob/living/contactor)
+/obj/mecha/combat/durand/proc/contact(mob/living/contactor)
 	return
 
 /// Clippy shield
-/obj/durand_shield/clip/attack_generic(mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
+/obj/mecha/combat/durand/clip/attack_generic(mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
 	. = ..()
-	apply_shock(user)
+	if(defense_check(get_turf(user)))
+		apply_shock(user)
 
-/obj/durand_shield/clip/attackby(obj/item/I, mob/living/user, params)
+/obj/mecha/combat/durand/clip/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
-	apply_shock(user)
+	if(defense_check(get_turf(user)))
+		apply_shock(user)
 
-/obj/durand_shield/clip/contact(mob/living/contactor)
+/obj/mecha/combat/durand/clip/contact(mob/living/contactor)
 	. = ..()
-	apply_shock(contactor)
+	if(defense_check(get_turf(contactor)))
+		apply_shock(contactor)
 
-/obj/durand_shield/clip/proc/apply_shock(mob/attacker)
+/obj/mecha/combat/durand/clip/proc/apply_shock(mob/attacker)
 	var/did_shock = FALSE
 	if(iscarbon(attacker))
 		var/mob/living/carbon/victim = attacker
