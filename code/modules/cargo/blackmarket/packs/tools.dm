@@ -11,7 +11,6 @@
 	stock = 1
 	availability_prob = 20
 
-//need a better joke
 /datum/blackmarket_item/tool/surgery_duffel
 	name = "Cybersun Advanced Surgical Kit"
 	desc = "You might say it's morally wrong to steal. I say it's justified when it's Cybersun."
