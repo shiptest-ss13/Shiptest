@@ -50,7 +50,7 @@
 	cost_min = 5000
 	cost_max = 7000
 	stock = 1
-	availability_prob = 25
+	availability_prob = 10
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tech/boris
