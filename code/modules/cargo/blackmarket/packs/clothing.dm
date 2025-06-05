@@ -68,7 +68,7 @@
 
 /datum/blackmarket_item/clothing/coalition_mask
 	name = "Coalition Gas Mask"
-	desc = "This thing is like breathing through a burlap sack. Mainly because it is one."
+	desc = "Ever wanted to look like a paramilitary psychopath? Now's your chance!"
 	item = /obj/item/clothing/mask/gas/syndicate
 
 	cost_min = 10

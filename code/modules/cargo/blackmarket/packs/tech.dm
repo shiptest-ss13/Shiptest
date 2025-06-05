@@ -224,7 +224,7 @@
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tech/arm_sword
-	name = "Arm Mounted Laser Cannon Implant"
+	name = "Arm Mounted Energy Sword Implant"
 	desc = "This concealable arm implanted energy sword will make you a cut above the rest of the competition! Just be careful when you pick your nose, or you might be getting a close shave."
 	item = /obj/item/organ/cyberimp/arm/esword
 
