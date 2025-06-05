@@ -1149,18 +1149,21 @@
 		if(!ishuman(H))
 			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.", confidential = TRUE)
 			return
-		//let's keep it simple
-		//milk to plasmemes and skeletons, meat to lizards, electricity bars to ethereals, cookies to everyone else
-		var/obj/item/reagent_containers/food/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
+
+		var/obj/item/food/cookie/cookiealt = /obj/item/food/cookie
+
 		if(isskeleton(H))
 			cookiealt = /obj/item/reagent_containers/condiment/milk
+
 		else if(isplasmaman(H))
 			cookiealt = /obj/item/reagent_containers/condiment/milk
+
 		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
-		// WS - More fun with cookies - Start
+
 		else if(islizard(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/nugget
+			cookiealt = /obj/item/food/nugget
+
 		if(H.recieve_gift(cookiealt))
 			log_admin("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")
 			message_admins("[key_name(H)] got their [cookiealt], spawned by [key_name(src.owner)].")
@@ -1168,7 +1171,7 @@
 		else
 			log_admin("[key_name(H)] has their hands full, so they did not receive their [initial(cookiealt.name)], spawned by [key_name(src.owner)].")
 			message_admins("[key_name(H)] has their hands full, so they did not receive their [initial(cookiealt.name)], spawned by [key_name(src.owner)].")
-		// WS - End
+
 
 	else if (href_list["adminpopup"])
 		if (!check_rights(R_ADMIN))

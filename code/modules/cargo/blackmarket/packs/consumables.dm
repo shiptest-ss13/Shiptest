@@ -32,8 +32,8 @@
 
 /datum/blackmarket_item/consumable/cannabis
 	name = "Cannabis Leaves"
-	desc = "Homegrown cannabis, fresh from the garden just for your pleasure!"
-	item = /obj/item/reagent_containers/food/snacks/grown/cannabis
+	desc = "Homegrown cannabis, fresh off the garden just for your pleasure!"
+	item = /obj/item/food/grown/cannabis
 
 	cost_min = 50
 	cost_max = 300
@@ -161,7 +161,7 @@
 /datum/blackmarket_item/consumable/berries
 	name = "Berries"
 	desc = "Some fresh berries we found growing in the corner of our hangar. We're not 100% sure what species these are."
-	item = /obj/item/reagent_containers/food/snacks/grown/berries
+	item = /obj/item/food/grown/berries
 
 	cost_min = 25
 	cost_max = 100
@@ -170,9 +170,11 @@
 	availability_prob = 40
 
 /datum/blackmarket_item/consumable/berries/spawn_item(loc)
-	var/berries = pick(list(/obj/item/reagent_containers/food/snacks/grown/berries,
-				/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth,
-				/obj/item/reagent_containers/food/snacks/grown/berries/death/stealth))
+	var/berries = pick(list(
+				/obj/item/food/grown/berries,
+				/obj/item/food/grown/berries/poison/stealth,
+				/obj/item/food/grown/berries/death/stealth,
+				))
 	return new berries(loc)
 
 /datum/blackmarket_item/consumable/ration
