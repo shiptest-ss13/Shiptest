@@ -20,7 +20,8 @@ SUBSYSTEM_DEF(events)
 	var/frequency_upper = 60 MINUTES
 	///Will wizard events be included in the event pool?
 	var/wizardmode = FALSE
-	var/list/holidays
+	//Turned into a global
+	//var/list/holidays
 
 /datum/controller/subsystem/events/Initialize()
 	for(var/type in typesof(/datum/round_event_control))

@@ -234,10 +234,23 @@
 	name = "Bee Day"
 	begin_day = 20
 	begin_month = MAY
-	drone_hat = /obj/item/clothing/mask/rat/bee
+	drone_hat = /obj/item/clothing/mask/spooky/bee
 
 /datum/holiday/bee/getStationPrefix()
 	return pick("Bee","Honey","Hive","Africanized","Mead","Buzz")
+
+/datum/holiday/cataclysm_day
+	name = CATACLYSM_DAY
+	//Gives us a range of 2~ uptimes
+	begin_day = 24
+	end_day = 28
+	begin_month = MAY
+
+/datum/holiday/cataclysm_day/greet()
+	return "It's near or is Memorial Day! In-universe our version is <a href=\"https://shiptest.net/wiki/Cataclysm_Day\">Cataclysm Day</a>."
+
+/datum/holiday/cataclysm_day/getStationPrefix()
+	return pick("Reverent", "Precious", "Vibrant", "Ashen", "Vital", "Exuberant")
 
 /datum/holiday/summersolstice
 	name = "Summer Solstice"
@@ -387,7 +400,7 @@
 	end_month = NOVEMBER
 
 /datum/holiday/halloween/greet()
-	return "Have a spooky Halloween!"
+	return "Have a spooky Halloween! In-universe, enjoy your <a href=\"https://hackmd.io/D-9st3kxThm93WlUY7gKig\">Mexapix</a> and Dia de Los Muertos."
 
 /datum/holiday/halloween/getStationPrefix()
 	return pick("Bone-Rattling","Mr. Bones' Own","2SPOOKY","Spooky","Scary","Skeletons")
@@ -516,7 +529,7 @@
 	name = "Mayan Doomsday Anniversary"
 	begin_day = 21
 	begin_month = DECEMBER
-	drone_hat = /obj/item/clothing/mask/rat/tribal
+	drone_hat = /obj/item/clothing/mask/spooky/tribal
 
 /datum/holiday/xmas
 	name = CHRISTMAS

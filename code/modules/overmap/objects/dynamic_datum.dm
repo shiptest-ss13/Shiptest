@@ -244,7 +244,8 @@
 ///??? I dont think i ever finished this, and if i do, move to planet_types.dm
 /datum/overmap/dynamic/proc/choose_random_asteroid()
 
-/datum/overmap/dynamic/proc/gen_planet_name()
+//Moved this down so I can make up planets
+/proc/gen_planet_name()
 	. = ""
 	switch(rand(1,12))
 		if(1 to 4)
