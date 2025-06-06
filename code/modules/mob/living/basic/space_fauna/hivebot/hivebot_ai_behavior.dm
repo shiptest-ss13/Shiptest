@@ -75,7 +75,7 @@
 	hunter.salvage_machine(scrapping_target)
 
 /datum/ai_behavior/basic_ranged_attack/hivebot
-	required_distance = 7
+	required_distance = 6
 	action_cooldown = 3 SECONDS
 	avoid_friendly_fire = TRUE
 
@@ -87,8 +87,14 @@
 	avoid_friendly_fire = TRUE
 
 /datum/ai_behavior/basic_ranged_attack/hivebot_core
-	required_distance = 7
+	required_distance = 5
 	action_cooldown = 4 SECONDS
 	shots = 3
 	burst_interval = 0.3 SECONDS
 	avoid_friendly_fire = TRUE
+
+/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot
+	attack_behaviour = /datum/ai_behavior/attack_obstructions/hivebot
+
+/datum/ai_behavior/attack_obstructions/hivebot
+	action_cooldown = 1 SECONDS

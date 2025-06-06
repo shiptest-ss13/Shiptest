@@ -7,16 +7,16 @@
 	idle_behavior = /datum/idle_behavior/idle_random_walk
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
+		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
 		/datum/ai_planning_subtree/basic_melee_attack_subtree,
-		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
 	)
 
 /datum/ai_controller/basic_controller/hivebot/mechanic
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
+		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree,
-		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/find_and_hunt_target/repair_machines,
 		/datum/ai_planning_subtree/find_and_hunt_target/salvage_machines,
 		/datum/ai_planning_subtree/hive_communicate,
@@ -26,8 +26,8 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
 		//replace with ranged skirmish in follow-up PR
+		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot,
-		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
 	)
 
@@ -35,8 +35,8 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
 		//replace with ranged skirmish in follow-up PR
+		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_rapid,
-		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
 	)
 
@@ -44,8 +44,8 @@
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
 		//replace with ranged skirmish in follow-up PR
+		/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot,
 		/datum/ai_planning_subtree/basic_ranged_attack_subtree/hivebot_core,
-		/datum/ai_planning_subtree/attack_obstacle_in_path,
 		/datum/ai_planning_subtree/hive_communicate,
 	)
 
