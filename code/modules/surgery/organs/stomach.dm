@@ -47,12 +47,12 @@
 
 	if(prob(damage * 0.025 * nutri.volume * nutri.volume))
 		body.vomit(damage)
-		to_chat(body, "<span class='warning'>Your stomach reels in pain as you're incapable of holding down all that food!</span>")
+		to_chat(body, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 		return
 
 	if(damage > high_threshold && prob(damage * 0.1 * nutri.volume * nutri.volume))
 		body.vomit(damage)
-		to_chat(body, "<span class='warning'>Your stomach reels in pain as you're incapable of holding down all that food!</span>")
+		to_chat(body, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 
 /obj/item/organ/stomach/get_availability(datum/species/S)
 	return !(NOSTOMACH in S.species_traits)
