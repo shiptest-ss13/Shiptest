@@ -265,7 +265,7 @@
 		/obj/effect/spawner/minefield = 2
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
-		/mob/living/basic/hivebot = 40
+		/mob/living/basic/hivebot = 40,
 		/mob/living/basic/hivebot/strong = 10,
 		/mob/living/basic/hivebot/ranged = 20,
 		/mob/living/basic/hivebot/rapid = 20,
