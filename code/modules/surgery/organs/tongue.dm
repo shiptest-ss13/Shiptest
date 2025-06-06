@@ -24,7 +24,6 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
-		/datum/language/miners_cant,
 		/datum/language/clip_kalixcian,
 	))
 
@@ -170,7 +169,6 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
-		/datum/language/miners_cant,
 		/datum/language/clip_kalixcian,
 	))
 
@@ -194,7 +192,6 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
-		/datum/language/miners_cant,
 		/datum/language/clip_kalixcian,
 	))
 
@@ -215,7 +212,6 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
-		/datum/language/miners_cant,
 		/datum/language/clip_kalixcian,
 	))
 
@@ -239,7 +235,6 @@
 		/datum/language/codespeak,
 		/datum/language/aphasia,
 		/datum/language/vox_pidgin,
-		/datum/language/miners_cant,
 		/datum/language/clip_kalixcian,
 	))
 
@@ -261,7 +256,6 @@
 		/datum/language/moffic,
 		/datum/language/rachnidian,
 		/datum/language/buzzwords,
-		/datum/language/miners_cant,
 		/datum/language/clip_kalixcian,
 	))
 

@@ -87,20 +87,3 @@
 	if(quirk_holder)
 		var/mob/living/carbon/human/knower = quirk_holder
 		knower.remove_language(/datum/language/clip_kalixcian, source = LANGUAGE_MIND)
-
-//miners cant
-/datum/quirk/miners_cant
-	name = "(Langauge) Miner's Cant"
-	desc = "You know Miner's Cant well enough to understand and speak it."
-	value = 0
-	gain_text = "<span class='notice'>You know Miner's Cant.</span>"
-	lose_text = "<span class='notice'>You forget Miner's Cant.</span>"
-
-/datum/quirk/miners_cant/add()
-	var/mob/living/carbon/human/knower = quirk_holder
-	knower.grant_language(/datum/language/miners_cant, source = LANGUAGE_MIND)
-
-/datum/quirk/miners_cant/remove()
-	if(quirk_holder)
-		var/mob/living/carbon/human/knower = quirk_holder
-		knower.remove_language(/datum/language/miners_cant, source = LANGUAGE_MIND)
