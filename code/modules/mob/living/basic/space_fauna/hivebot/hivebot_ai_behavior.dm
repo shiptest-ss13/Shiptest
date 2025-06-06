@@ -93,8 +93,6 @@
 	burst_interval = 0.3 SECONDS
 	avoid_friendly_fire = TRUE
 
-/datum/ai_planning_subtree/attack_obstacle_in_path/hivebot
-	attack_behaviour = /datum/ai_behavior/attack_obstructions/hivebot
-
 /datum/ai_behavior/attack_obstructions/hivebot
+	can_attack_dense_objects = TRUE
 	action_cooldown = 1 SECONDS
