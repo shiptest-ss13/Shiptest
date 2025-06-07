@@ -567,7 +567,7 @@
 		var/obj/item/I = H.get_active_held_item()
 		if(I && H.dropItemToGround(I))
 			H.visible_message(span_notice("[H]'s hand convulses, and they drop their [I.name]!"),span_userdanger("Your hand convulses violently, and you drop what you were holding!"))
-			H.adjust_jitter(5)
+			H.set_timed_status_effect(5 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 
 /atom/movable/screen/alert/status_effect/convulsing
 	name = "Shaky Hands"

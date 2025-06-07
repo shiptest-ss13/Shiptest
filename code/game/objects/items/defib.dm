@@ -453,7 +453,7 @@
 			span_userdanger("[user] touches [M] with [src]!"))
 	M.adjustStaminaLoss(60)
 	M.Knockdown(75)
-	M.adjust_jitter(50)
+	M.set_timed_status_effect(100 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.apply_status_effect(STATUS_EFFECT_CONVULSING)
 	playsound(src,  'sound/machines/defib_zap.ogg', 50, TRUE, -1)
 	if(HAS_TRAIT(M,MOB_ORGANIC))
