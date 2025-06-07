@@ -211,14 +211,14 @@ GENE SCANNER
 		render_list += "<span class='info ml-1'>Brain Activity Level: [(200 - M.getOrganLoss(ORGAN_SLOT_BRAIN))/2]%.</span>\n"
 
 	if (M.radiation)
-		render_list += "<span class='alert ml-1'>Subject is .</span>"
+		render_list += "<span class='alert ml-1'>Subject is "
 		switch(M.radiation)
 			if(0 to RAD_MOB_SAFE)
-				render_list += "<span class='alert ml-1'>lightly irradiated.</span>\n"
+				render_list += "lightly irradiated.</span>\n"
 			if(RAD_MOB_SAFE to RAD_MOB_VOMIT)
-				render_list += "<span class='alert ml-1'>irradiated.</span>\n"
+				render_list += "irradiated.</span>\n"
 			if(RAD_MOB_VOMIT to INFINITY)
-				render_list += "<span class='alert ml-1'>severely irradiated.</span>\n"
+				render_list += "severely irradiated.</span>\n"
 
 		if(advanced)
 			render_list += "<span class='info ml-1'>Radiation Level: [M.radiation]%.</span>\n"
