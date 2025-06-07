@@ -876,7 +876,7 @@
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
 		to_chat(M, span_warning("You feel unstable..."))
-		M.adjust_jitter(2)
+		M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
 		current_cycle = 1
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
@@ -1004,7 +1004,7 @@
 	taste_description = "numbness"
 
 /datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(5)
+	M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	if(prob(80))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	if(prob(50))
@@ -2295,7 +2295,7 @@
 
 		H.adjustOrganLoss(ORGAN_SLOT_HEART,max(1,volume/10)) // your heart is barely keeping up!
 
-		H.adjust_jitter(rand(0,2))
+		H.set_timed_status_effect(rand(0 SECONDS, 4 SECONDS), /datum/status_effect/jitter, only_if_higher = TRUE)
 		H.Dizzy(rand(0,2))
 
 
@@ -2409,7 +2409,7 @@
 	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
 		M.reagents.remove_reagent(chem.type, chem.volume)
 
-	M.adjust_jitter(3)
+	M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.Dizzy(3)
 	if(prob(0.1) && ishuman(M))
 		var/mob/living/carbon/human/H = M

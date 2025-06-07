@@ -118,17 +118,6 @@
 	if (length(status_examines))
 		. += status_examines
 
-	//jitters
-	switch(jitteriness)
-		if(300 to INFINITY)
-			. += span_boldwarning("[t_He] [t_is] convulsing violently!")
-		if(200 to 300)
-			. += span_warning("[t_He] [t_is] extremely jittery.")
-		if(100 to 200)
-			. += span_warning("[t_He] [t_is] twitching ever so slightly.")
-		if(50 to 100)
-			. += span_warning("[t_He] [t_is] flinching lightly")
-
 	var/appears_dead = FALSE
 	var/just_sleeping = FALSE
 

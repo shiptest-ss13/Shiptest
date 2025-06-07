@@ -122,9 +122,7 @@
 			blur_eyes(effect * hit_percent)
 		if(EFFECT_DROWSY)
 			drowsyness = max(drowsyness,(effect * hit_percent))
-		if(EFFECT_JITTER)
-			if((status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE))
-				jitteriness = max(jitteriness,(effect * hit_percent))
+
 	return 1
 
 /// applies multiple effects at once via [/mob/living/proc/apply_effect]
@@ -153,8 +151,8 @@
 		apply_effect(drowsy, EFFECT_DROWSY, blocked)
 	if(stamina)
 		apply_damage(stamina, STAMINA, null, blocked)
-	if(jitter)
-		apply_effect(jitter, EFFECT_JITTER, blocked)
+	if(jitter && (status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE))
+		adjust_timed_status_effect(jitter, /datum/status_effect/jitter)
 	return TRUE
 
 

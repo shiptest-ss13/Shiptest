@@ -59,7 +59,7 @@
 					H.confused += 2
 					if(!H.stat)
 						to_chat(H, span_warning("You feel queasy..."))
-				H.adjust_jitter(-3)
+				H.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
 			if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
 				//throw alerts
 				H.throw_alert("disgust", /atom/movable/screen/alert/gross)
