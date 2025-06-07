@@ -40,9 +40,6 @@ to accommodate additional materials.
 			balloon_alert(user, "nothing to grind")
 			return
 
-			balloon_alert(user, "too tired")
-			return
-
 		var/list/choose_options = list(
 			"Grind" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_grind"),
 			"Juice" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_juice")
