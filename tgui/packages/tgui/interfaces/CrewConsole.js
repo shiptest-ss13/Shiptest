@@ -1,5 +1,6 @@
+import { Box, Button, ColorBox, Section, Table } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, ColorBox, Section, Table } from '../components';
 import { COLORS } from '../constants';
 import { Window } from '../layouts';
 
@@ -56,7 +57,7 @@ const HealthStat = (props) => {
 
 export const CrewConsole = () => {
   return (
-    <Window title="Crew Monitor" width={800} height={600} resizable>
+    <Window title="Crew Monitor" width={800} height={600}>
       <Window.Content scrollable>
         <Section minHeight="540px">
           <CrewTable />
@@ -66,8 +67,8 @@ export const CrewConsole = () => {
   );
 };
 
-const CrewTable = (props, context) => {
-  const { act, data } = useBackend(context);
+const CrewTable = (props) => {
+  const { act, data } = useBackend();
   const sensors = data.sensors || [];
   return (
     <Table>
@@ -98,7 +99,7 @@ const CrewTable = (props, context) => {
                 sensor.oxydam,
                 sensor.toxdam,
                 sensor.burndam,
-                sensor.brutedam
+                sensor.brutedam,
               )}
             />
           </Table.Cell>

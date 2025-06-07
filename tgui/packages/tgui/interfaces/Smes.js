@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -7,15 +6,17 @@ import {
   ProgressBar,
   Section,
   Slider,
-} from '../components';
-import { formatPower } from '../format';
+} from 'tgui-core/components';
+import { formatPower } from 'tgui-core/format';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 // Common power multiplier
 const POWER_MUL = 1e3;
 
-export const Smes = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Smes = (props) => {
+  const { act, data } = useBackend();
   const {
     capacityPercent,
     capacity,
@@ -48,20 +49,20 @@ export const Smes = (props, context) => {
             }}
           />
         </Section>
-        <Section title="Input">
-          <LabeledList>
-            <LabeledList.Item
-              label="Charge Mode"
-              buttons={
-                <Button
-                  icon={inputAttempt ? 'sync-alt' : 'times'}
-                  selected={inputAttempt}
-                  onClick={() => act('tryinput')}
-                >
-                  {inputAttempt ? 'Auto' : 'Off'}
-                </Button>
-              }
+        <Section
+          title="Input"
+          buttons={
+            <Button
+              icon={inputAttempt ? 'sync-alt' : 'times'}
+              selected={inputAttempt}
+              onClick={() => act('tryinput')}
             >
+              {inputAttempt ? 'Auto' : 'Off'}
+            </Button>
+          }
+        >
+          <LabeledList>
+            <LabeledList.Item label="Charge Mode">
               <Box color={inputState}>
                 {(capacityPercent >= 100 && 'Fully Charged') ||
                   (inputting && 'Charging') ||
@@ -69,7 +70,7 @@ export const Smes = (props, context) => {
               </Box>
             </LabeledList.Item>
             <LabeledList.Item label="Target Input">
-              <Flex inline width="100%">
+              <Flex width="100%">
                 <Flex.Item>
                   <Button
                     icon="fast-backward"
@@ -133,30 +134,30 @@ export const Smes = (props, context) => {
             </LabeledList.Item>
           </LabeledList>
         </Section>
-        <Section title="Output">
-          <LabeledList>
-            <LabeledList.Item
-              label="Output Mode"
-              buttons={
-                <Button
-                  icon={outputAttempt ? 'power-off' : 'times'}
-                  selected={outputAttempt}
-                  onClick={() => act('tryoutput')}
-                >
-                  {outputAttempt ? 'On' : 'Off'}
-                </Button>
-              }
+        <Section
+          title="Output"
+          buttons={
+            <Button
+              icon={outputAttempt ? 'power-off' : 'times'}
+              selected={outputAttempt}
+              onClick={() => act('tryoutput')}
             >
+              {outputAttempt ? 'On' : 'Off'}
+            </Button>
+          }
+        >
+          <LabeledList>
+            <LabeledList.Item label="Output Mode">
               <Box color={outputState}>
                 {outputting
                   ? 'Sending'
                   : charge > 0
-                  ? 'Not Sending'
-                  : 'No Charge'}
+                    ? 'Not Sending'
+                    : 'No Charge'}
               </Box>
             </LabeledList.Item>
             <LabeledList.Item label="Target Output">
-              <Flex inline width="100%">
+              <Flex width="100%">
                 <Flex.Item>
                   <Button
                     icon="fast-backward"

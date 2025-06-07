@@ -1,4 +1,3 @@
-import { useBackend, useSharedState } from '../backend';
 import {
   Button,
   Flex,
@@ -6,14 +5,16 @@ import {
   NoticeBox,
   Section,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 
-export const TachyonArray = (props, context) => {
-  const { act, data } = useBackend(context);
+export const TachyonArray = (props) => {
+  const { act, data } = useBackend();
   const { records = [] } = data;
   return (
-    <Window width={500} height={225} resizable>
+    <Window width={500} height={225}>
       <Window.Content scrollable>
         {!records.length ? (
           <NoticeBox>No Records</NoticeBox>
@@ -25,13 +26,12 @@ export const TachyonArray = (props, context) => {
   );
 };
 
-export const TachyonArrayContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const TachyonArrayContent = (props) => {
+  const { act, data } = useBackend();
   const { records = [] } = data;
   const [activeRecordName, setActiveRecordName] = useSharedState(
-    context,
     'record',
-    records[0]?.name
+    records[0]?.name,
   );
   const activeRecord = records.find((record) => {
     return record.name === activeRecordName;
@@ -66,7 +66,7 @@ export const TachyonArrayContent = (props, context) => {
                     color="bad"
                     onClick={() =>
                       act('delete_record', {
-                        'ref': activeRecord.ref,
+                        ref: activeRecord.ref,
                       })
                     }
                   />
@@ -75,7 +75,7 @@ export const TachyonArrayContent = (props, context) => {
                     content="Print"
                     onClick={() =>
                       act('print_record', {
-                        'ref': activeRecord.ref,
+                        ref: activeRecord.ref,
                       })
                     }
                   />
