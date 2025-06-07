@@ -17,7 +17,7 @@
 	stun_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
 	lethal_projectile = /obj/projectile/bullet/a556_42
 	lethal_projectile_sound = 'sound/weapons/gun/rifle/hydra.ogg'
-	faction = list(FACTION_RAMZI, "turret")
+	faction = list(FACTION_RAMZI, FACTION_TURRET)
 	max_integrity = 180
 	shot_delay = 16
 	burst_delay = 8
@@ -41,9 +41,9 @@
 /obj/machinery/porta_turret/ruin/ramzi/heavy
 	name = "Revolt Turret"
 	desc = "A durable turret manufactured by the Gorlex Marauders during the ICW. Some reported examples used anti-vehicle munitions. Most surviving examples are poorly maintained."
-	stun_projectile = /obj/projectile/bullet/a75clip/rubber
+	stun_projectile = /obj/projectile/bullet/a65clip/rubber
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
-	lethal_projectile = /obj/projectile/bullet/a75clip
+	lethal_projectile = /obj/projectile/bullet/a65clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	scan_range = 12
 	shot_delay = 20
@@ -68,7 +68,7 @@
 /obj/machinery/porta_turret/ruin/frontiersmen
 	name = "Spitter Turret"
 	desc = "A juryrigged mishmash of a 9mm SMG and targetting system. Stand clear!"
-	faction = list(FACTION_ANTAG_FRONTIERSMEN, "Turret")
+	faction = list(FACTION_ANTAG_FRONTIERSMEN, FACTION_TURRET)
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	integrity_failure = 0.6
 	max_integrity = 180

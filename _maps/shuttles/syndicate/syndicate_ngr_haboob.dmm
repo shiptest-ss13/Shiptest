@@ -22,10 +22,6 @@
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
-/obj/item/storage/box/ammo/c57x39,
-/obj/item/storage/box/ammo/c57x39,
-/obj/item/storage/box/ammo/c57x39,
-/obj/item/storage/box/ammo/c57x39,
 /obj/item/storage/toolbox/ammo/c9mm,
 /obj/item/ammo_box/magazine/m9mm_rattlesnake,
 /obj/item/ammo_box/magazine/m9mm_rattlesnake,
@@ -33,7 +29,15 @@
 /obj/item/ammo_box/magazine/m57_39_asp,
 /obj/item/ammo_box/magazine/m57_39_asp,
 /obj/item/ammo_box/magazine/m57_39_asp,
-/obj/item/storage/box/ammo/c57x39,
+/obj/item/storage/toolbox/ammo/c57,
+/obj/item/gun_maint_kit{
+	pixel_x = 13;
+	pixel_y = -11
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = -10;
+	pixel_y = -11
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "ap" = (
@@ -609,7 +613,7 @@
 	},
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
-	req_access = list(3);
+	req_access = list(1);
 	name = "Armory"
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1219,19 +1223,15 @@
 /obj/effect/turf_decal/corner/opaque/beige{
 	dir = 1
 	},
-/obj/machinery/computer/crew{
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 8;
 	icon_state = "computer-right"
 	},
-/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "ys" = (
-/obj/machinery/autolathe,
 /obj/machinery/airalarm/directional/south,
-/obj/item/stack/sheet/metal/ten,
-/obj/item/stack/sheet/glass/five,
-/obj/item/stack/sheet/glass/five,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1734,8 +1734,8 @@
 	},
 /obj/effect/turf_decal/corner/opaque/red/half,
 /obj/structure/table,
-/obj/machinery/recharger,
 /obj/machinery/light/directional/north,
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "JP" = (
@@ -2284,6 +2284,11 @@
 /obj/item/megaphone,
 /obj/item/computer_hardware/card_slot,
 /obj/item/modular_computer/tablet/preset/cheap,
+/obj/item/clothing/suit/armor/ngr/lieutenant,
+/obj/item/storage/box/ammo/c57x39{
+	pixel_x = -8;
+	pixel_y = -9
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "QJ" = (
@@ -2416,6 +2421,10 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/autolathe,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/metal/ten,
 /turf/open/floor/pod/dark,
 /area/ship/engineering)
 "TH" = (
@@ -3271,7 +3280,7 @@ Fq
 Fq
 Fq
 Fq
-EB
 VX
+EB
 Fq
 "}

@@ -17,9 +17,10 @@
 	description = "The former home of a poor sod on observation duty. Now a cunning trap."
 	suffix = "whitesands_cave_base.dmm"
 	ruin_tags = list(RUIN_TAG_MINOR_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER)
-	ruin_mission_types = list(
+/*	ruin_mission_types = list(
 		/datum/mission/ruin/radiological,
 	)
+*/
 
 /datum/mission/ruin/radiological
 	name = "Radiological Signature"
@@ -61,6 +62,7 @@
 	mission_limit = 1
 	setpiece_item = /obj/item/gun/energy/e_gun/e11
 	required_count = 6
+	requires_poi = FALSE
 
 /datum/mission/ruin/multiple/e11_stash/can_turn_in(atom/movable/item_to_check)
 	if(istype(item_to_check, /obj/item/gun))

@@ -14,6 +14,9 @@
 	throw_speed = 3
 	throw_range = 5
 	force = 5
+
+	bad_type = /obj/item/gun
+
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
@@ -865,7 +868,7 @@
 	final_spread += bonus_spread
 
 	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
-		randomized_bonus_spread += rand(0, gunslinger_spread_bonus)
+		randomized_bonus_spread += min(gunslinger_spread_bonus, rand(0, gunslinger_spread_bonus))
 
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 		randomized_bonus_spread += rand(0, 25)
