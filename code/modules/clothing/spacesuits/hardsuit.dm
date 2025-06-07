@@ -465,7 +465,7 @@
 	hardsuit_type = "ramzielite"
 	icon_state = "hardsuit1-ramzielite"
 	item_state = "hardsuit1-ramzielite"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	name = "elite rust-red hardsuit"
@@ -475,7 +475,7 @@
 	item_state = "hardsuit1-ramzielite"
 	hardsuit_type = "ramzielite"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80)
 	slowdown = 1.25
 
 //Elite Syndie suit
