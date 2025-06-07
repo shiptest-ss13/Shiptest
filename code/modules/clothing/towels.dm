@@ -92,6 +92,12 @@
 	else
 		return ..()
 
+/obj/item/towel/attack(mob/living/target_mob, mob/living/user)
+	. = ..()
+	while(target_mob.fire_stacks)
+		if(do_after(user, 10, target = target_mob, hidden = TRUE))
+			fire_stacks = min(0, fire_stacks + 1)
+
 /obj/item/towel/CtrlClick(mob/user)
 	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE))
