@@ -199,7 +199,7 @@ export const ShipSelect = (props, context) => {
                         }
                         disabled={
                           (!data.autoMeet && data.playMin < job.minTime) ||
-                          data.officerBanned
+                          (data.officerBanned && job.officer)
                         }
                         onClick={() => {
                           act('join', {

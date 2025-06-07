@@ -167,6 +167,7 @@
 				"name" = job,
 				"slots" = slots,
 				"minTime" = job.officer ? S.source_template.get_req_officer_minutes() : 0,
+				"officer" = job.officer,
 				"ref" = REF(job),
 			))
 
