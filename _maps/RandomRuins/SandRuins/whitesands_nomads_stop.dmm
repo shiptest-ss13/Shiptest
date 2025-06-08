@@ -219,6 +219,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"sJ" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/space)
 "sR" = (
 /obj/machinery/conveyor{
 	id = "doohickey";
@@ -280,6 +286,10 @@
 	},
 /obj/structure/grille,
 /turf/open/floor/plating,
+/area/space)
+"AW" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
+/turf/open/floor/plasteel,
 /area/space)
 "Bm" = (
 /turf/open/floor/plasteel/stairs/whitesand/lit{
@@ -467,6 +477,10 @@
 	dir = 8
 	},
 /turf/open/floor/plating/rust/plasma,
+/area/space)
+"Qs" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
 /area/space)
 "QF" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
@@ -1283,8 +1297,8 @@ PI
 DM
 DM
 DM
-Ev
-DM
+Qs
+sJ
 Ev
 Yw
 Yw
@@ -1890,8 +1904,8 @@ XS
 XS
 XS
 Ev
-DM
-Ev
+AW
+Qs
 DM
 DM
 DM
@@ -2460,8 +2474,8 @@ Yw
 XS
 XS
 Ev
-DM
-Ev
+AW
+Qs
 DM
 DM
 DM
