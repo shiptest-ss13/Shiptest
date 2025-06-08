@@ -851,12 +851,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ship/hallway/central)
-"lV" = (
-/obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/flea
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "mb" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1593,7 +1587,6 @@
 /area/ship/security)
 "wV" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -3721,6 +3714,12 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
+"Vd" = (
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/flea
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Vj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -4672,7 +4671,7 @@ yf
 yf
 yf
 yf
-lV
+Vd
 tM
 oK
 Xj
