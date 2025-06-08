@@ -28,7 +28,7 @@
 		pickable_missions.Add(inactive_mission)
 	if(pickable_missions.len)
 		priority_mission = pick(pickable_missions)
-		if(priority_mission != active)
+		if(priority_mission.active != TRUE)
 			priority_mission.start_mission()
 		message_admins("[priority_mission][ADMIN_VV(priority_mission)] has been selected for [src]")
 
