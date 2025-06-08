@@ -1,6 +1,7 @@
 /datum/status_effect/jitter
 	id = "jitter"
 	tick_interval = 2 SECONDS
+	remove_on_fullheal = TRUE
 	alert_type = null
 
 /datum/status_effect/jitter/on_creation(mob/living/new_owner, duration = 10 SECONDS)
@@ -8,12 +9,18 @@
 	return ..()
 
 /datum/status_effect/jitter/on_apply()
-	RegisterSignal(owner, list(COMSIG_LIVING_POST_FULLY_HEAL, COMSIG_LIVING_DEATH), .proc/remove_jitter)
+	// If we're being applied to a dead person, don't make the status effect.
+	// Just do a bit of jitter animation and be done.
+	if(owner.stat == DEAD)
+		owner.do_jitter_animation(duration / 10)
+		return FALSE
+
+	RegisterSignal(owner, COMSIG_MOB_DEATH, PROC_REF(remove_jitter))
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, id, /datum/mood_event/jittery)
 	return TRUE
 
 /datum/status_effect/jitter/on_remove()
-	UnregisterSignal(owner, list(COMSIG_LIVING_POST_FULLY_HEAL, COMSIG_LIVING_DEATH))
+	UnregisterSignal(owner, COMSIG_MOB_DEATH)
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, id)
 	// juuust in case, reset our x and y's from our jittering
 	owner.pixel_x = 0

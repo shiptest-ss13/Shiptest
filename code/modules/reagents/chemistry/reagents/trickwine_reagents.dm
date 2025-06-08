@@ -15,7 +15,6 @@
 
 /datum/status_effect/trickwine
 	id = "trick_wine"
-	examine_text = span_notice("They seem to be affected by a trickwine.")
 	alert_type = /atom/movable/screen/alert/status_effect/trickwine
 	// Try to match normal reagent tick rate based on on_mob_life
 	tick_interval = 20
@@ -62,6 +61,12 @@
 	if(particle_generator)
 		QDEL_NULL(particle_generator)
 
+/datum/status_effect/trickwine/get_examine_text()
+	if(trickwine_examine_text)
+		return span_notice(trickwine_examine_text)
+	else
+		return span_notice("SUBJECTPRONOUN seems to be affected by [src].")
+
 //////////
 // BUFF //
 //////////
@@ -69,28 +74,12 @@
 	id = "trick_wine_buff"
 	alert_desc = "Your empowered a trickwine!"
 
-/datum/status_effect/trickwine/buff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent)
-	. = ..()
-	if(trickwine_examine_text)
-		examine_text = span_notice(trickwine_examine_text)
-	else
-		examine_text = span_notice("SUBJECTPRONOUN seems to be affected by [trickwine_reagent.name].")
 
-////////////
 // DEBUFF //
 ////////////
 /datum/status_effect/trickwine/debuff
 	id = "trick_wine_debuff"
 	alert_desc = "Your weakened a trickwine!"
-
-/datum/status_effect/trickwine/debuff/on_creation(mob/living/new_owner, datum/reagent/consumable/ethanol/trickwine/trickwine_reagent, set_duration = null)
-	if(isnum(set_duration))
-		duration = set_duration
-	. = ..()
-	if(trickwine_examine_text)
-		examine_text = span_notice(trickwine_examine_text)
-	else
-		examine_text = span_notice("SUBJECTPRONOUN seems to be covered in [trickwine_reagent.name].")
 
 //////////////
 // REAGENTS //
@@ -186,7 +175,7 @@
 
 /datum/status_effect/trickwine/buff/ash
 	id = "ash_wine_buff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be filled with energy and devotion. There eyes are dialated and they seem to be twitching."
+	trickwine_examine_text = "SUBJECTPRONOUN is filled with energy and devotion! Their eyes are dialated and they are twitching."
 	//message_apply_others =  ""
 	//message_apply_self = ""
 	//message_remove_others = ""
@@ -195,7 +184,7 @@
 
 /datum/status_effect/trickwine/debuff/ash
 	id = "ash_wine_debuff"
-	trickwine_examine_text = "SUBJECTPRONOUN seems to be covered in a thin layer of ash. They seem to be twitching and jittery."
+	trickwine_examine_text = "SUBJECTPRONOUN is covered in a thin layer of ash. They are twitching and jittery."
 	//message_apply_others =  ""
 	//message_apply_self = ""
 	//message_remove_others = ""
@@ -207,7 +196,7 @@
 		if("jitter")
 			owner.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 		if("dizzy")
-			owner.Dizzy(2)
+			owner.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 		if("drug")
 			owner.adjust_drugginess(3)
 

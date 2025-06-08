@@ -703,7 +703,6 @@
 	bodytemperature = get_body_temp_normal(apply_change=FALSE)
 	set_blindness(0)
 	set_blurriness(0)
-	set_dizziness(0)
 	cure_nearsighted()
 	cure_blind()
 	cure_husk()
@@ -713,11 +712,11 @@
 	ExtinguishMob()
 	fire_stacks = 0
 	confused = 0
-	dizziness = 0
 	drowsyness = 0
 	stuttering = 0
 	slurring = 0
 	stop_sound_channel(CHANNEL_HEARTBEAT)
+	SEND_SIGNAL(src, COMSIG_LIVING_POST_FULLY_HEAL, admin_revive)
 
 //proc used to heal a mob, but only damage types specified.
 /mob/living/proc/specific_heal(blood_amt = 0, brute_amt = 0, fire_amt = 0, tox_amt = 0, oxy_amt = 0, clone_amt = 0, organ_amt = 0, stam_amt = 0, specific_revive = FALSE, specific_bones = FALSE)
@@ -1863,7 +1862,7 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		var/howfuck = rand(8,16)
 		AdjustParalyzed(howfuck)
 		AdjustKnockdown(howfuck)
-		set_timed_status_effect(300 seconds, /datum/status_effect/jitter)
+		set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter)
 
 /**
  * Sets the mob's speed variable and then calls update_living_varspeed().

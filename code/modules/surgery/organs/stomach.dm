@@ -69,7 +69,7 @@
 					H.vomit(10, 0, 0, 0, 1, 0)
 					H.confused += 2.5
 					H.stuttering += 1
-					H.Dizzy(5)
+					owner.set_timed_status_effect(10 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
 				//do the thing
 				H.throw_alert("disgust", /atom/movable/screen/alert/verygross)

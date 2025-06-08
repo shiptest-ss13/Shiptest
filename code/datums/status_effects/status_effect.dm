@@ -17,6 +17,8 @@
 	var/status_type = STATUS_EFFECT_UNIQUE
 	/// If TRUE, we call [proc/on_remove] when owner is deleted. Otherwise, we call [proc/be_replaced].
 	var/on_remove_on_mob_delete = FALSE
+	/// Do we self-terminate when a fullheal is called?
+	var/remove_on_fullheal = FALSE
 	/// The typepath to the alert thrown by the status effect when created.
 	/// Status effect "name"s and "description"s are shown to the owner here.
 	var/alert_type = /atom/movable/screen/alert/status_effect
@@ -150,6 +152,15 @@
 //////////////////
 // HELPER PROCS //
 //////////////////
+
+/// Signal proc for [COMSIG_LIVING_POST_FULLY_HEAL] to remove us on fullheal
+/datum/status_effect/proc/remove_effect_on_heal(datum/source, heal_flags)
+	SIGNAL_HANDLER
+
+	if(!remove_on_fullheal)
+		return
+
+	qdel(src)
 
 /mob/living/proc/apply_status_effect(effect, ...) //applies a given status effect to this mob, returning the effect if it was successful
 	. = FALSE

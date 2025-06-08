@@ -214,7 +214,7 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	if(world.time > severe_cooldown) //So we cant just spam emp to kill people.
-		owner.Dizzy(10)
+		owner.set_timed_status_effect(20 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 		owner.losebreath += 10
 		severe_cooldown = world.time + 20 SECONDS
 

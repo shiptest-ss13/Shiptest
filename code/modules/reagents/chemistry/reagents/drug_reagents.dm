@@ -163,7 +163,7 @@
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage2(mob/living/M)
 	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(10)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage3(mob/living/M)
@@ -171,7 +171,7 @@
 		for(var/i = 0, i < 4, i++)
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(15)
+	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/drug/methamphetamine/addiction_act_stage4(mob/living/carbon/human/M)
@@ -179,7 +179,7 @@
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(20)
+	M.set_timed_status_effect(40 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	M.adjustToxLoss(5, 0)
 	..()
 	. = 1
@@ -249,7 +249,7 @@
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(10)
+	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
 
@@ -259,7 +259,7 @@
 		for(var/i = 0, i < 12, i++)
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(15)
+	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
 
@@ -269,7 +269,7 @@
 		for(var/i = 0, i < 16, i++)
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(120 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(50)
+	M.set_timed_status_effect(100 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	M.adjustToxLoss(5, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
 	..()
@@ -327,7 +327,7 @@
 			if(1)
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_good_od)
 			if(2)
-				M.Dizzy(25)
+				M.set_timed_status_effect(50 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			if(3)
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug_bad_od)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.5)
@@ -448,7 +448,7 @@
 
 /datum/reagent/drug/finobranc/addiction_act_stage3(mob/living/M)
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(10)
+	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/drug/finobranc/addiction_act_stage4(mob/living/carbon/human/M)
@@ -456,7 +456,7 @@
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(10)
+	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/drug/combat_drug
@@ -525,7 +525,7 @@
 
 /datum/reagent/drug/combat_drug/addiction_act_stage3(mob/living/M)
 	M.set_timed_status_effect(30 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
-	M.Dizzy(10)
+	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_CRAZY))
 	..()
@@ -536,7 +536,7 @@
 			step(M, pick(GLOB.cardinals))
 	M.set_timed_status_effect(20 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	M.apply_status_effect(STATUS_EFFECT_CONVULSING)
-	M.Dizzy(20)
+	M.set_timed_status_effect(40 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	mood.setSanity(min(mood.sanity, SANITY_INSANE))
 	..()
