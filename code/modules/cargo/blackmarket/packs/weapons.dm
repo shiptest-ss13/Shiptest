@@ -113,6 +113,8 @@
 			var/obj/item/gun/case_gun = item
 			if(case_gun.default_ammo_type && !(case_gun.internal_cell || case_gun.internal_magazine))
 				mag_type = case_gun.default_ammo_type
+			else
+				mag_number = 0
 		for(var/i in 1 to mag_number)
 			new mag_type(case,magazine_unloaded)
 	return case
@@ -351,6 +353,7 @@
 	desc = "Perpetuate the cycle of violence with this dual feed shotgun! Has two built in 4 shell magazine tubes that can be swapped at the press of a button!"
 	item = /obj/item/gun/ballistic/shotgun/automatic/dual_tube
 	gun_unloaded = FALSE
+	mag_number = 0
 
 	cost_min = 2500
 	cost_max = 4000
