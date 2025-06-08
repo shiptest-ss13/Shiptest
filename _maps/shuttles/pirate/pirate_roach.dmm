@@ -132,9 +132,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -201,6 +198,11 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
+	},
+/obj/machinery/turretid/ship{
+	pixel_x = -27;
+	pixel_y = 2;
+	id = "roachboom"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -797,9 +799,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines/starboard)
-"lm" = (
-/turf/open/floor/plating/airless,
-/area/ship/external/dark)
 "lF" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -1063,9 +1062,8 @@
 	},
 /area/ship/hallway/central)
 "pF" = (
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/engineering/engines/starboard)
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "pO" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/autolathe,
@@ -1494,7 +1492,8 @@
 /area/ship/hallway/central)
 "vh" = (
 /obj/machinery/porta_turret/ship/ramzi/super_heavy{
-	dir = 4
+	dir = 4;
+	id = "roachboom"
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2061,7 +2060,8 @@
 "BP" = (
 /obj/effect/turf_decal/trimline/opaque/red/line,
 /obj/machinery/porta_turret/ship/ramzi/heavy{
-	dir = 9
+	dir = 9;
+	id = "roachboom"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -3185,7 +3185,8 @@
 	dir = 4;
 	piping_layer = 4;
 	name = "air harvester temperature gate";
-	on = 1
+	on = 1;
+	icon_state = "tgate_map-4"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
@@ -3655,7 +3656,8 @@
 	dir = 1
 	},
 /obj/machinery/porta_turret/ship/ramzi/heavy{
-	dir = 10
+	dir = 10;
+	id = "roachboom"
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -3837,7 +3839,8 @@
 /area/ship/cargo)
 "Wd" = (
 /obj/machinery/porta_turret/ship/ramzi/super_heavy{
-	dir = 4
+	dir = 4;
+	id = "roachboom"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -4204,7 +4207,7 @@ yf
 yf
 je
 YG
-pF
+je
 UD
 je
 yf
@@ -4680,10 +4683,10 @@ jB
 RS
 xh
 bX
-lm
-lm
-lm
-lm
+pF
+pF
+pF
+pF
 rw
 tM
 oK
@@ -4707,10 +4710,10 @@ ds
 mi
 xh
 yf
-lm
-lm
-lm
-lm
+pF
+pF
+pF
+pF
 yf
 tM
 rP
