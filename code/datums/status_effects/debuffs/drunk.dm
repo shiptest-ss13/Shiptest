@@ -17,13 +17,6 @@
 	. = ..()
 	set_drunk_value(drunk_value)
 
-/datum/status_effect/inebriated/on_apply()
-	RegisterSignal(owner, COMSIG_LIVING_POST_FULLY_HEAL, .proc/clear_drunkenness)
-	return TRUE
-
-/datum/status_effect/inebriated/on_remove()
-	UnregisterSignal(owner, COMSIG_LIVING_POST_FULLY_HEAL)
-
 /datum/status_effect/inebriated/get_examine_text()
 	// Dead people don't look drunk
 	if(owner.stat == DEAD || HAS_TRAIT(owner, TRAIT_FAKEDEATH))
@@ -53,12 +46,6 @@
 			return span_warning("[owner.p_they(TRUE)] [owner.p_are()] a shitfaced, slobbering wreck.")
 
 	return null
-
-/// Removes all of our drunkenness (self-deletes) on signal.
-/datum/status_effect/inebriated/proc/clear_drunkenness(mob/living/source)
-	SIGNAL_HANDLER
-
-	qdel(src)
 
 /// Sets the drunk value to set_to, deleting if the value drops to 0 or lower
 /datum/status_effect/inebriated/proc/set_drunk_value(set_to)

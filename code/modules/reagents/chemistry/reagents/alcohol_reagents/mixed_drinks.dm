@@ -50,7 +50,7 @@
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE) && !isvox(M))
-		M.et_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+		M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	return ..()
 
 /datum/reagent/consumable/ethanol/vimukti/overdose_start(mob/living/M)
@@ -952,7 +952,7 @@
 	glass_desc = "Like having your brain smashed out by a slice of lemon wrapped around a large gold brick."
 
 /datum/reagent/consumable/ethanol/gargle_blaster/on_mob_life(mob/living/carbon/M)
-	M.dizziness +=1.5
+	M.set_timed_status_effect(3 SECONDS, /datum/status_effect/dizziness, TRUE)
 	switch(current_cycle)
 		if(15 to 45)
 			if(!M.slurring)
@@ -985,7 +985,7 @@
 
 /datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M)
 	M.set_drugginess(50)
-	M.dizziness +=2
+	M.set_timed_status_effect(2 SECONDS, /datum/status_effect/jitter, TRUE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM, 150)
 	if(prob(20))
 		M.adjustStaminaLoss(10)
@@ -1485,7 +1485,7 @@
 /datum/reagent/consumable/ethanol/turbo/on_mob_life(mob/living/carbon/M)
 	if(prob(4))
 		to_chat(M, span_notice("[pick("You feel disregard for the rule of law.", "You feel pumped!", "Your head is pounding.", "Your thoughts are racing...")]"))
-	M.adjustStaminaLoss(-M.drunkenness * 0.25)
+	M.adjustStaminaLoss(-M.get_drunk_amount() * 0.25)
 	return ..()
 
 /datum/reagent/consumable/ethanol/old_timer
@@ -1544,7 +1544,7 @@
 	var/stored_teleports = 0
 
 /datum/reagent/consumable/ethanol/blazaam/on_mob_life(mob/living/carbon/M)
-	if(M.drunkenness > 40)
+	if(M.get_drunk_amount() > 40)
 		if(stored_teleports)
 			do_teleport(M, get_turf(M), rand(1,3), channel = TELEPORT_CHANNEL_WORMHOLE)
 			stored_teleports--

@@ -41,6 +41,7 @@
 		return
 	if(owner)
 		LAZYADD(owner.status_effects, src)
+		RegisterSignal(owner, COMSIG_LIVING_POST_FULLY_HEAL, PROC_REF(remove_effect_on_heal))
 
 	if(duration != -1)
 		duration = world.time + duration
@@ -154,7 +155,7 @@
 //////////////////
 
 /// Signal proc for [COMSIG_LIVING_POST_FULLY_HEAL] to remove us on fullheal
-/datum/status_effect/proc/remove_effect_on_heal(datum/source, heal_flags)
+/datum/status_effect/proc/remove_effect_on_heal(datum/source)
 	SIGNAL_HANDLER
 
 	if(!remove_on_fullheal)

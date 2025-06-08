@@ -657,4 +657,6 @@
 /// Helper to get the amount of drunkness the mob's currently experiencing.
 /mob/living/proc/get_drunk_amount()
 	var/datum/status_effect/inebriated/inebriation = has_status_effect(/datum/status_effect/inebriated)
-	return inebriation?.drunk_value || 0
+	if(inebriation)
+		return inebriation?.drunk_value
+	return 0

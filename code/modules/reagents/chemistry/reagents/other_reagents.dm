@@ -2101,7 +2101,7 @@
 /datum/reagent/peaceborg/confuse/on_mob_life(mob/living/carbon/M)
 	if(M.confused < 6)
 		M.confused = clamp(M.confused + 3, 0, 5)
-	m.adjust_timed_status_effect(-6 SECONDS, /datum/status_effect/dizziness)
+	M.adjust_timed_status_effect(-6 SECONDS, /datum/status_effect/dizziness)
 	if(prob(20))
 		to_chat(M, "You feel confused and disoriented.")
 	..()
