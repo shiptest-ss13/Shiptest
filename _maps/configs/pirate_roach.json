@@ -1,0 +1,51 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Roach-class Schooner Retrofit",
+	"faction": "/datum/faction/ramzi",
+	"prefix": "ISV",
+	"manufacturer": "Kasagi-Fischer Partnership",
+	"namelists": [		"GORLEX",
+		"NATURAL_AGGRESSIVE",
+		"BEASTS",
+		"WEAPONS",
+		"PIRATES"],
+	"map_short_name": "Roach-class",
+	"map_path": "_maps/shuttles/pirate/pirate_roach.dmm",
+	"description": "A drastic modification of a civilian recreational vessel, Roach-Classes are usually under slight derelict operations, with skeleton crew compliments. The most drastic change is the former bridge turned subshuttle, leading to these hull refits gaining the nickname Roach. The only slightly changed hull shape leaves these vessels awfully undercover at a glance, leading to quick in and out raids to be a prominent strategy.",
+	"tags": ["Combat", "Subshuttle"],
+	"limit": 1,
+	"job_slots": {
+		"Cell leader": {
+			"outfit": "/datum/outfit/job/ramzi/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Sweeper lead": {
+			"outfit": "/datum/outfit/job/ramzi/hos",
+			"officer": true,
+			"slots": 1
+		},
+			"Shuttle Chief": {
+			"outfit": "/datum/outfit/job/ramzi/pilot",
+			"officer": true,
+			"slots": 1
+		},
+		"Sawbones": {
+			"outfit": "/datum/outfit/job/ramzi/medic",
+			"slots": 1
+		},
+		"Motorman": {
+			"outfit": "/datum/outfit/job/ramzi/engineer",
+			"slots": 1
+		},
+		"Sweeper": {
+			"outfit": "/datum/outfit/job/ramzi/operative",
+			"slots": 2
+		},
+		"Runt": {
+			"outfit": "/datum/outfit/job/ramzi/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": false
+}
