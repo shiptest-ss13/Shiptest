@@ -306,9 +306,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/atmospherics/components/binary/valve/layer2{
-	dir = 4
-	},
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
 	id = "fleablast"
@@ -316,6 +313,9 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "fleashield";
 	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/valve/on/layer2{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -471,12 +471,12 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "fleashield"
 	},
-/obj/machinery/atmospherics/components/binary/valve/layer4{
-	dir = 4
-	},
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
 	id = "fleablast"
+	},
+/obj/machinery/atmospherics/components/binary/valve/on/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)

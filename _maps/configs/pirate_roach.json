@@ -1,16 +1,17 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
-	"map_name": "Roach-class Schooner Retrofit",
 	"faction": "/datum/faction/ramzi",
 	"prefix": "ISV",
 	"manufacturer": "Kasagi-Fischer Partnership",
-	"namelists": [		"GORLEX",
+	"namelists": ["GORLEX",
 		"NATURAL_AGGRESSIVE",
 		"BEASTS",
 		"MERCANTILE",
 		"PIRATES"],
+	"map_name": "Roach-class Schooner Retrofit",
 	"map_short_name": "Roach-class",
 	"map_path": "_maps/shuttles/pirate/pirate_roach.dmm",
+	"map_id": "pirate_roach",
 	"description": "A drastic modification of a civilian recreational vessel, Roach-Classes are usually under slight derelict operations, with skeleton crew compliments. The most drastic change is the former bridge turned subshuttle, leading to these hull refits gaining the nickname Roach. The only slightly changed hull shape leaves these vessels awfully undercover at a glance, leading to quick in and out raids to be a prominent strategy.",
 	"tags": ["Combat", "Subshuttle"],
 	"limit": 1,
@@ -25,7 +26,7 @@
 			"officer": true,
 			"slots": 1
 		},
-			"Shuttle Chief": {
+		"Shuttle Chief": {
 			"outfit": "/datum/outfit/job/ramzi/pilot",
 			"officer": true,
 			"slots": 1

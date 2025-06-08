@@ -19,7 +19,7 @@
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list(FACTION_PLAYER_RAMZI)
+	H.faction |= list(FACTION_RAMZI)
 
 //Deckhand
 
@@ -54,7 +54,10 @@
 	job_icon = "headofsecurity"
 	jobtype = /datum/job/officer
 
+	l_pocket = /obj/item/flashlight/seclite
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
+	backpack_contents = list(/obj/item/clothing/mask/gas/syndicate)
 
 //Security Officer
 
@@ -80,7 +83,6 @@
 
 	l_pocket = /obj/item/weldingtool/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-
 
 //Medical Doctor
 

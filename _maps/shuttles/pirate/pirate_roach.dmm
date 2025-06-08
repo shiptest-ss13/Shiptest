@@ -429,10 +429,10 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hallway/central)
 "fG" = (
-/obj/machinery/suit_storage_unit/industrial,
 /obj/item/clothing/suit/space/syndicate/black,
 /obj/item/clothing/head/helmet/space/syndicate/black,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "fQ" = (
@@ -1203,6 +1203,12 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
+"rw" = (
+/obj/effect/landmark/subship{
+	subship_template = /datum/map_template/shuttle/subshuttles/flea
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "rG" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
@@ -1261,6 +1267,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"st" = (
+/turf/open/floor/plating/airless,
+/area/ship/external/dark)
 "sA" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
@@ -1605,6 +1614,11 @@
 /obj/item/stack/sheet/mineral/uranium/ten,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -10
+	},
 /turf/open/floor/plating/rust,
 /area/ship/engineering/engines/starboard)
 "xt" = (
@@ -1998,6 +2012,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/prison)
+"AR" = (
+/turf/open/space/basic,
+/area/template_noop)
 "AV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3241,10 +3258,10 @@
 /obj/structure/railing/thin/corner{
 	dir = 4
 	},
-/obj/machinery/suit_storage_unit/industrial,
 /obj/item/clothing/suit/space/syndicate/black,
 /obj/item/clothing/head/helmet/space/syndicate/black,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/machinery/suit_storage_unit/inherit/industrial,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "QG" = (
@@ -3477,6 +3494,11 @@
 	},
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engines/port)
 "Sn" = (
@@ -3714,12 +3736,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/security)
-"Vd" = (
-/obj/effect/landmark/subship{
-	subship_template = /datum/map_template/shuttle/subshuttles/flea
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/external/dark)
 "Vj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
@@ -4667,11 +4683,11 @@ jB
 RS
 xh
 bX
-yf
-yf
-yf
-yf
-Vd
+st
+st
+st
+st
+rw
 tM
 oK
 Xj
@@ -4693,12 +4709,12 @@ Px
 ds
 mi
 xh
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 tM
 rP
 EK
@@ -4720,12 +4736,12 @@ FW
 xh
 xh
 Am
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 DS
 tM
 EE
@@ -4747,12 +4763,12 @@ tz
 eg
 xh
 yf
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 yf
 tM
 HV
@@ -4774,12 +4790,12 @@ PB
 gp
 xh
 yf
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 yf
 tM
 qa
@@ -4801,12 +4817,12 @@ xh
 xh
 xh
 yf
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 yf
 tM
 tM
@@ -4828,12 +4844,12 @@ yf
 yf
 xh
 yf
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 yf
 tM
 yf
@@ -4855,12 +4871,12 @@ yf
 yf
 yf
 yf
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 yf
 yf
 yf
@@ -4882,12 +4898,12 @@ yf
 yf
 yf
 yf
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 yf
 yf
 yf
@@ -4909,12 +4925,12 @@ yf
 yf
 yf
 yf
-yf
-yf
-yf
-yf
-yf
-yf
+AR
+AR
+AR
+AR
+AR
+AR
 yf
 yf
 yf
@@ -4936,12 +4952,12 @@ yf
 yf
 yf
 yf
+AR
+AR
 yf
 yf
-yf
-yf
-yf
-yf
+AR
+AR
 yf
 yf
 yf
@@ -4963,12 +4979,12 @@ yf
 yf
 yf
 yf
+AR
+AR
 yf
 yf
-yf
-yf
-yf
-yf
+AR
+AR
 yf
 yf
 yf
@@ -4991,10 +5007,10 @@ yf
 yf
 yf
 yf
+AR
 yf
 yf
-yf
-yf
+AR
 yf
 yf
 yf
