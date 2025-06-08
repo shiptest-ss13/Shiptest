@@ -2132,11 +2132,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(phobiaType)
 						phobia = phobiaType
 
-				if("preferred_smoke_brand")
-					var/smokeBrand = input(user, "What are your character's favorite smokes?", "Quirk Preference", preferred_smoke_brand) as null|anything in GLOB.valid_smoke_types
-					if(smokeBrand)
-						preferred_smoke_brand = smokeBrand
-
 				if("generic_adjective")
 					var/selectAdj
 					if(istype(pref_species, /datum/species/ipc))
