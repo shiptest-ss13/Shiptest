@@ -969,8 +969,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 	name = "HP Beacon"
-	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	desc = "A break-action rifle made by Hunter's Pride and sold to civilian hunters. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	base_icon_state = "beacon"
 	icon_state = "beacon"
 	item_state = "beacon"
@@ -1040,8 +1040,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow)
 EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
-	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	desc = "A break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	base_icon_state = "beacon_factory"
 	icon_state = "beacon_factory"
 	item_state = "beacon_factory"
@@ -1055,7 +1055,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 //pre sawn off beacon
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon/presawn
 	name = "HP Beacon"
-	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	sawn_desc= "A break-action pistol chambered in .45-70. A bit difficult to aim."
 	sawn_off = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT

@@ -18,7 +18,7 @@
 	var/can_move = 0 //time of next allowed movement
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
-	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
+	var/dir_in = SOUTH //What direction will the mech face when entered/powered on?
 	var/base_step_energy_drain = 15 //The base amount of energy the mech should consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
 	var/step_energy_drain  // How much energy the mech actually consumes when moving after modifiers (Eg, stock parts, leg actuators)
 	var/melee_energy_drain = 15

@@ -221,6 +221,9 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 	icon_state = "larker"
 	item_state = "larker"
 
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "triptych")
 	default_firemode = FIREMODE_BURST
