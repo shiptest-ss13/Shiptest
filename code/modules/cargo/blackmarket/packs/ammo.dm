@@ -176,6 +176,17 @@
 	stock = 2
 	availability_prob = 20
 
+/datum/blackmarket_item/ammo/gauss_cell
+	name = "SolCon Weapon Cell"
+	desc = "A Solarian weapon cell, for powering their gauss weaponry."
+	item = /obj/item/stock_parts/cell/gun/solgov
+
+	cost_min = 400
+	cost_max = 600
+	stock_min = 2
+	stock_max = 4
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/damaged_cell
 	name = "Discount Advanced Weapon Power Cells"
 	desc = "These cells got a little banged up during a raid by GOLD authorities, but they still should be safe to use. They probably won't explode. In theory."

@@ -100,10 +100,10 @@
 /datum/blackmarket_item/clothing/duster
 	name = "Reinforced Duster"
 	desc = "Vests not your style? Embrace your inner trailblazer with this armored duster!"
-	item = /obj/item/storage/backpack/duffelbag/sec
+	item = /obj/item/clothing/suit/armor/vest/duster
 
-	cost_min = 1000
-	cost_max = 1500
+	cost_min = 500
+	cost_max = 1000
 	stock_max = 3
 	availability_prob = 50
 

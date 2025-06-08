@@ -201,6 +201,7 @@
 	name = "Underbarrel Energy Cannon"
 	desc = "The normal E-50 too big to handle for you? This underbarrel conversion cuts it down to a managable size with only a <i>minor</i> chance of painfully burning your hands."
 	item = /obj/item/attachment/gun/energy/e50
+	mag_type = /obj/item/stock_parts/cell/gun
 
 	cost_min = 4000
 	cost_max = 5000
@@ -298,7 +299,7 @@
 	name = "Model H"
 	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."
 	item = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
-	pair_item = list(/datum/blackmarket_item/ammo/model_h_mag)
+	pair_item = list(/datum/blackmarket_item/ammo/model_h_mag, /datum/blackmarket_item/ammo/gauss_cell)
 
 	cost_min = 2000
 	cost_max = 3500
