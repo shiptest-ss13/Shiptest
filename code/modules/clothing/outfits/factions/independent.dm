@@ -971,9 +971,8 @@
 	jobtype = /datum/job/hydro
 
 	ears = /obj/item/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/color/green
+	uniform = /obj/item/clothing/under/overalls
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/hydro
-	suit = /obj/item/clothing/suit/apron/overalls
 	gloves  =/obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/plant_analyzer
 
@@ -986,5 +985,4 @@
 
 	ears = /obj/item/radio/headset/headset_med
 	belt = /obj/item/storage/bag/plants
-	suit = /obj/item/clothing/suit/apron/overalls
 	uniform = /obj/item/clothing/under/utility
