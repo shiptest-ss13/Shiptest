@@ -126,6 +126,9 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "o" = (
@@ -174,6 +177,9 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "fleawindow"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -353,6 +359,9 @@
 "H" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/window/plasma/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/bridge)
 "J" = (
@@ -424,6 +433,9 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "fleawindow"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
