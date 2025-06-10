@@ -974,7 +974,7 @@
 	uniform = /obj/item/clothing/under/overalls
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/hydro
 	gloves  =/obj/item/clothing/gloves/botanic_leather
-	suit_store = /obj/item/plant_analyzer
+	belt = /obj/item/plant_analyzer
 
 	backpack = /obj/item/storage/backpack/botany
 	satchel = /obj/item/storage/backpack/satchel/hyd
