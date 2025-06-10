@@ -278,7 +278,7 @@
 
 		for(var/i in bodyparts)
 			var/obj/item/bodypart/body_part = i
-			if(body_part.get_bleed_rate())
+			if(body_part.get_modified_bleed_rate())
 				bleeding_limbs += body_part
 			if(body_part.grasped_by)
 				grasped_limbs += body_part

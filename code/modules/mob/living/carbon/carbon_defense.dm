@@ -696,9 +696,9 @@
 
 /mob/living/carbon/get_organic_health()
 	. = health
-	for (var/_limb in bodyparts)
+	for(var/_limb in bodyparts)
 		var/obj/item/bodypart/limb = _limb
-		if (limb.bodytype != BODYPART_ORGANIC)
+		if(IS_ROBOTIC_LIMB(limb))
 			. += (limb.brute_dam * limb.body_damage_coeff) + (limb.burn_dam * limb.body_damage_coeff)
 
 /mob/living/carbon/grabbedby(mob/living/carbon/user, supress_message = FALSE)
@@ -709,7 +709,7 @@
 	self_grasp_bleeding_limb(grasped_part, supress_message)
 
 /mob/living/carbon/proc/self_grasp_bleeding_limb(obj/item/bodypart/grasped_part, supress_message = FALSE)
-	if(!grasped_part?.get_bleed_rate())
+	if(!grasped_part?.get_modified_bleed_rate())
 		return
 
 	var/starting_hand_index = active_hand_index
@@ -771,8 +771,8 @@
 
 	grasped_part = grasping_part
 	grasped_part.grasped_by = src
-	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/qdel_void)
-	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING), .proc/qdel_void)
+	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
+	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING), PROC_REF(qdel_void))
 
 	user.visible_message(
 		span_danger("[user] grasps at [user.p_their()] [grasped_part.name], trying to stop the bleeding."),
