@@ -10,7 +10,7 @@
 	wound_flags = null
 
 /// Our special proc for our special dismembering, the wounding type only matters for what text we have
-/datum/wound/loss/proc/apply_dismember(obj/item/bodypart/dismembered_part, wounding_type=WOUND_SLASH, outright = FALSE)
+/datum/wound/loss/proc/apply_dismember(obj/item/bodypart/dismembered_part, wounding_type = WOUND_SLASH, outright = FALSE)
 	if(!istype(dismembered_part) || !dismembered_part.owner || !(dismembered_part.body_zone in viable_zones) || isalien(dismembered_part.owner) || !dismembered_part.can_dismember())
 		qdel(src)
 		return
@@ -40,9 +40,9 @@
 			if(WOUND_BURN)
 				occur_text = "is completely incinerated, falling to dust!"
 
-	var/msg = "<span class='bolddanger'>[victim]'s [dismembered_part.name] [occur_text]!</span>"
+	var/msg = span_bolddanger("[victim]'s [dismembered_part.name] [occur_text]!")
 
-	victim.visible_message(msg, "<span class='userdanger'>Your [dismembered_part.name] [occur_text]!</span>")
+	victim.visible_message(msg, span_userdanger("Your [dismembered_part.name] [occur_text]!"))
 
 	set_limb(dismembered_part)
 	second_wind()

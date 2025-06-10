@@ -88,8 +88,10 @@
 							span_warning("They don't seem to have a neck to cut."))
 			return
 
-		H.visible_message(span_danger("[user] slits [H]'s throat!"), \
-					span_userdanger("[user] slits your throat..."))
+		H.visible_message(
+			span_danger("[user] slits [H]'s throat!"),
+			span_userdanger("[user] slits your throat..."),
+		)
 		log_combat(user, H, "finishes slicing the throat of")
 
 		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
