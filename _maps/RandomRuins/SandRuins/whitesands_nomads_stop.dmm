@@ -117,6 +117,13 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"jB" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning/full,
+/turf/open/floor/plasteel,
+/area/space)
 "jT" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 4
@@ -125,6 +132,10 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
+/area/space)
+"kc" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/engine/hull/interior,
 /area/space)
 "ku" = (
 /obj/structure/flora/tree/dead/barren,
@@ -219,12 +230,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
-"sJ" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/space)
 "sR" = (
 /obj/machinery/conveyor{
 	id = "doohickey";
@@ -264,6 +269,12 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/space)
+"vk" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/space)
 "vE" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -280,6 +291,10 @@
 "xn" = (
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
+"xO" = (
+/obj/effect/spawner/bunk_bed,
+/turf/open/floor/plasteel/patterned,
+/area/space)
 "zK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -287,9 +302,8 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/space)
-"AW" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
-/turf/open/floor/plasteel,
+"As" = (
+/turf/open/floor/engine/hull/interior,
 /area/space)
 "Bm" = (
 /turf/open/floor/plasteel/stairs/whitesand/lit{
@@ -402,6 +416,11 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/space)
+"IA" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
+/obj/effect/turf_decal/industrial/warning/full,
+/turf/open/floor/plasteel,
+/area/space)
 "IK" = (
 /turf/open/space/basic,
 /area/space)
@@ -424,6 +443,10 @@
 /area/space)
 "KO" = (
 /turf/open/floor/plating/asteroid/whitesands/lit,
+/area/space)
+"Li" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
 /area/space)
 "Ln" = (
 /turf/open/floor/engine/hull,
@@ -466,6 +489,10 @@
 	},
 /turf/open/floor/plating/whitesands/lit,
 /area/space)
+"PF" = (
+/obj/structure/dresser,
+/turf/open/floor/plasteel,
+/area/space)
 "PI" = (
 /turf/closed/wall/mineral/titanium/survival,
 /area/space)
@@ -477,10 +504,6 @@
 	dir = 8
 	},
 /turf/open/floor/plating/rust/plasma,
-/area/space)
-"Qs" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
 /area/space)
 "QF" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
@@ -504,6 +527,9 @@
 	},
 /obj/structure/railing/thin,
 /turf/open/floor/plating,
+/area/space)
+"SW" = (
+/turf/open/floor/plasteel/patterned,
 /area/space)
 "Te" = (
 /turf/open/floor/concrete/whitesands/lit,
@@ -560,6 +586,10 @@
 	dir = 10
 	},
 /turf/open/floor/plating/rust/plasma,
+/area/space)
+"Zw" = (
+/obj/structure/closet/cabinet,
+/turf/open/floor/plasteel,
 /area/space)
 
 (1,1,1) = {"
@@ -1297,8 +1327,8 @@ PI
 DM
 DM
 DM
-Qs
-sJ
+Li
+jB
 Ev
 Yw
 Yw
@@ -1854,8 +1884,8 @@ XS
 PI
 PI
 PI
-DM
-DM
+xO
+xO
 PI
 PI
 kJ
@@ -1903,12 +1933,12 @@ Yw
 XS
 XS
 XS
-Ev
-AW
-Qs
+As
+IA
+kc
 DM
 DM
-DM
+Zw
 PI
 kJ
 kJ
@@ -1958,8 +1988,8 @@ XS
 PI
 PI
 PI
-DM
-DM
+PF
+vk
 PI
 PI
 kJ
@@ -2424,8 +2454,8 @@ XS
 PI
 PI
 PI
-DM
-DM
+SW
+SW
 PI
 PI
 kJ
@@ -2473,12 +2503,12 @@ Mp
 Yw
 XS
 XS
-Ev
-AW
-Qs
+As
+IA
+kc
 DM
 DM
-DM
+Zw
 PI
 kJ
 kJ
@@ -2528,7 +2558,7 @@ Mp
 PI
 PI
 PI
-DM
+PF
 DM
 PI
 PI
@@ -2578,7 +2608,7 @@ hx
 hx
 Mp
 kJ
-IK
+kJ
 PI
 PI
 PI
