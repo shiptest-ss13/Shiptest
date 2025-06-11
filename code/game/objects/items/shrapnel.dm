@@ -145,40 +145,6 @@
 /obj/projectile/bullet/pellet/stingball/on_ricochet(atom/A)
 	hit_stunned_targets = TRUE // ducking will save you from the first wave, but not the rebounds
 
-// Tracking rounds
-/obj/item/shrapnel/bullet/tracker
-	name = "\improper bullet tracker"
-	var/lifespan = 3000
-	var/gps_tag = "*TRAC"
-	var/timer_id
-
-/obj/item/shrapnel/bullet/tracker/Initialize()
-	. = ..()
-	timer_id = QDEL_IN(src, lifespan)
-	AddComponent(/datum/component/gps/item, gps_tag)
-
-/obj/item/shrapnel/bullet/tracker/Destroy()
-	deltimer(timer_id)
-	return ..()
-
-/obj/item/shrapnel/bullet/c38/dumdum
-	name = ".38 Dumdum"
-
-/obj/item/shrapnel/bullet/tracker/c38
-	name = ".38 Tracker"
-
-/obj/item/shrapnel/bullet/tracker/a8_50r
-	name = "8x50mm Tracker"
-
-/obj/item/shrapnel/bullet/tracker/a858
-	name = "8x58mm Tracker"
-
-/obj/item/shrapnel/bullet/tracker/a75clip
-	name = "7.5x64mm Tracker"
-
-/obj/item/shrapnel/bullet/tracker/a308
-	name = ".308 Tracker"
-
 //claymore shrapnel stuff//
 //2 small bursts- one that harasses people passing by a bit aways, one that brutalizes point-blank targets.
 /obj/item/ammo_casing/caseless/shrapnel
