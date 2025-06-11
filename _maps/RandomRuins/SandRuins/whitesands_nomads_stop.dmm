@@ -1,9 +1,21 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/space)
 "aH" = (
 /obj/structure/platform/wood{
 	dir = 5
 	},
 /turf/open/water/acid/whitesands,
+/area/space)
+"bm" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/concrete/whitesands/lit,
 /area/space)
 "bw" = (
 /obj/structure/grille,
@@ -47,6 +59,12 @@
 	dir = 8
 	},
 /turf/open/floor/plating/whitesands/lit,
+/area/space)
+"ft" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 9
+	},
+/turf/open/floor/concrete/pavement/whitesands/lit,
 /area/space)
 "ge" = (
 /obj/structure/platform/wood/corner{
@@ -134,7 +152,9 @@
 /turf/open/floor/plating,
 /area/space)
 "kc" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/engine/hull/interior,
 /area/space)
 "ku" = (
@@ -182,6 +202,13 @@
 	dir = 1
 	},
 /turf/open/floor/plating/rust/plasma,
+/area/space)
+"mA" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
 /area/space)
 "mC" = (
 /obj/structure/disposalpipe/segment{
@@ -273,6 +300,9 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer1{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/space)
 "vE" = (
@@ -295,6 +325,11 @@
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/plasteel/patterned,
 /area/space)
+"za" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
+/turf/open/floor/engine/hull/interior,
+/area/space)
 "zK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -302,7 +337,15 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/space)
+"Aj" = (
+/obj/effect/turf_decal/industrial/warning/full,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
+/turf/open/floor/plasteel,
+/area/space)
 "As" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/engine/hull/interior,
 /area/space)
 "Bm" = (
@@ -362,6 +405,12 @@
 	},
 /turf/open/floor/plating/whitesands/lit,
 /area/space)
+"Gj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 10
+	},
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/space)
 "GH" = (
 /obj/structure/platform/industrial_alt/corner{
 	dir = 1
@@ -419,6 +468,7 @@
 "IA" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2,
 /obj/effect/turf_decal/industrial/warning/full,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/plasteel,
 /area/space)
 "IK" = (
@@ -436,6 +486,16 @@
 	dir = 4
 	},
 /turf/open/water/acid/whitesands,
+/area/space)
+"Kw" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/turf/open/floor/plasteel,
 /area/space)
 "KB" = (
 /obj/structure/platform/industrial_alt,
@@ -479,6 +539,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Oc" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/turf/open/floor/concrete/pavement/whitesands/lit,
+/area/space)
 "Oj" = (
 /turf/open/floor/plasteel/stairs/whitesand/lit,
 /area/space)
@@ -490,6 +554,9 @@
 /turf/open/floor/plating/whitesands/lit,
 /area/space)
 "PF" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
 /obj/structure/dresser,
 /turf/open/floor/plasteel,
 /area/space)
@@ -529,7 +596,8 @@
 /turf/open/floor/plating,
 /area/space)
 "SW" = (
-/turf/open/floor/plasteel/patterned,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/concrete/pavement/whitesands/lit,
 /area/space)
 "Te" = (
 /turf/open/floor/concrete/whitesands/lit,
@@ -537,6 +605,12 @@
 "Ty" = (
 /obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
+/area/space)
+"Tz" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	dir = 6
+	},
+/turf/open/floor/concrete/pavement/whitesands/lit,
 /area/space)
 "Vl" = (
 /obj/structure/platform/wood{
@@ -589,6 +663,9 @@
 /area/space)
 "Zw" = (
 /obj/structure/closet/cabinet,
+/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/space)
 
@@ -1097,7 +1174,7 @@ kJ
 kJ
 kJ
 kJ
-Te
+bm
 JU
 XS
 XS
@@ -1933,11 +2010,11 @@ Yw
 XS
 XS
 XS
-As
-IA
+za
+Aj
 kc
-DM
-DM
+Kw
+mA
 Zw
 PI
 kJ
@@ -1984,7 +2061,7 @@ Yw
 Yw
 XS
 XS
-XS
+aE
 PI
 PI
 PI
@@ -1994,7 +2071,7 @@ PI
 PI
 kJ
 kJ
-Hn
+kJ
 "}
 (28,1,1) = {"
 Hn
@@ -2036,8 +2113,8 @@ Yw
 Yw
 Yw
 Yw
+aE
 XS
-XS
 kJ
 PI
 PI
@@ -2045,8 +2122,8 @@ PI
 PI
 kJ
 kJ
-Hn
-Hn
+kJ
+kJ
 "}
 (29,1,1) = {"
 Hn
@@ -2089,16 +2166,16 @@ Yw
 Yw
 Yw
 XS
-XS
-KO
+SW
 kJ
 kJ
 kJ
 kJ
 kJ
-Hn
-Hn
-Hn
+kJ
+kJ
+kJ
+kJ
 "}
 (30,1,1) = {"
 Hn
@@ -2140,17 +2217,17 @@ Yw
 Yw
 Yw
 Yw
+aE
 XS
-XS
-XS
 kJ
 kJ
 kJ
-ib
+PI
+PI
+PI
+PI
 kJ
-Hn
-Hn
-Hn
+kJ
 "}
 (31,1,1) = {"
 Hn
@@ -2187,22 +2264,22 @@ FP
 Yw
 Yw
 Yw
+Op
+fc
+HO
+FP
 Yw
-Yw
-Yw
-Yw
-Yw
+aE
 XS
 XS
-XS
+PI
+PI
+PI
+xO
+xO
+PI
+PI
 kJ
-kJ
-ib
-ib
-kJ
-kJ
-Hn
-Hn
 "}
 (32,1,1) = {"
 Hn
@@ -2239,22 +2316,22 @@ kN
 Yw
 Yw
 Yw
+hD
+Xj
+kN
+kN
 Yw
-Op
-fc
-HO
-FP
 XS
-XS
-XS
+Oc
+Oc
+za
+Aj
+kc
+Kw
+mA
+Zw
+PI
 kJ
-kJ
-ib
-ib
-ib
-kJ
-Hn
-Hn
 "}
 (33,1,1) = {"
 Hn
@@ -2292,21 +2369,21 @@ Yw
 Yw
 Yw
 Yw
-hD
-Xj
-kN
-kN
+Yw
+Yw
+Yw
+Yw
+aE
 XS
-XS
 kJ
+PI
+PI
+PI
+PF
+vk
+PI
+PI
 kJ
-kJ
-ib
-kJ
-kJ
-kJ
-Hn
-Hn
 "}
 (34,1,1) = {"
 Hn
@@ -2346,19 +2423,19 @@ Yw
 Yw
 Yw
 Yw
+Tz
+Oc
+ft
 XS
-XS
-XS
-XS
 kJ
 kJ
 kJ
+PI
+PI
+PI
+PI
 kJ
 kJ
-kJ
-kJ
-Hn
-Hn
 "}
 (35,1,1) = {"
 Hn
@@ -2398,8 +2475,8 @@ Yw
 Yw
 Yw
 XS
+aE
 XS
-XS
 kJ
 PI
 PI
@@ -2407,10 +2484,10 @@ PI
 PI
 kJ
 kJ
-Hn
-Hn
-Hn
-Hn
+kJ
+kJ
+kJ
+kJ
 "}
 (36,1,1) = {"
 kJ
@@ -2450,18 +2527,18 @@ Mp
 Mp
 Yw
 XS
-XS
+aE
 PI
 PI
 PI
-SW
-SW
+xO
+xO
 PI
 PI
 kJ
 kJ
-Hn
-Hn
+kJ
+kJ
 Hn
 "}
 (37,1,1) = {"
@@ -2502,12 +2579,12 @@ ti
 Mp
 Yw
 XS
-XS
+Gj
 As
 IA
 kc
-DM
-DM
+Kw
+mA
 Zw
 PI
 kJ
@@ -2559,7 +2636,7 @@ PI
 PI
 PI
 PF
-DM
+vk
 PI
 PI
 kJ
