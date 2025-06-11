@@ -114,7 +114,7 @@
 			return
 
 		if(S.operated_bodypart)
-			S.operated_bodypart.adjustBleedStacks(-5)
+			S.operated_bodypart.generic_bleedstacks -= 5
 
 		M.surgeries -= S
 		user.visible_message(span_notice("[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery."), \

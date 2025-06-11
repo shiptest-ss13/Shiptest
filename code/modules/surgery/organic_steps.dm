@@ -32,7 +32,7 @@
 				"")
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
 		if(BP)
-			BP.adjustBleedStacks(10)
+			BP.generic_bleedstacks += 10
 	return ..()
 
 /datum/surgery_step/incise/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -79,7 +79,7 @@
 		var/mob/living/carbon/human/H = target
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
 		if(BP)
-			BP.adjustBleedStacks(-3)
+			BP.generic_bleedstacks -= 3
 	return ..()
 
 /datum/surgery_step/clamp_bleeders/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -145,7 +145,7 @@
 		var/mob/living/carbon/human/H = target
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
 		if(BP)
-			BP.adjustBleedStacks(-3)
+			BP.generic_bleedstacks -= 3
 	return ..()
 
 //saw bone

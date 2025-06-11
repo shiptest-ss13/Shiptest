@@ -1,13 +1,12 @@
 #define BLOOD_DRIP_RATE_MOD 90 //Greater number means creating blood drips more often while bleeding
 
 // Takes care blood loss and regeneration
-/mob/living/carbon/human/handle_blood(delta_time)
+/mob/living/carbon/human/handle_blood()
 
 	if(NOBLOOD in dna.species.species_traits || HAS_TRAIT(src, TRAIT_NOBLEED) || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		return
 
-	if(bodytemperature < TCRYO || (HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
-		return
+	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
 
 		//Blood regeneration if there is some space
 		if(blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(src, TRAIT_NOHUNGER))
@@ -23,8 +22,10 @@
 					nutrition_ratio = 0.8
 				else
 					nutrition_ratio = 1
+
 			if(satiety > 80)
 				nutrition_ratio *= 1.25
+
 			adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
 			blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
 
@@ -56,6 +57,7 @@
 				if(prob(15))
 					Unconscious(rand(2 SECONDS,6 SECONDS))
 					to_chat(src, span_warning("You feel very [word]."))
+
 			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
 				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
 				adjustToxLoss(2)
@@ -68,22 +70,32 @@
 
 		var/temp_bleed = 0
 		//Bleeding out
-		for(var/obj/item/bodypart/iter_part as anything in bodyparts)
-			var/iter_bleed_rate = iter_part.get_modified_bleed_rate()
-			temp_bleed += iter_bleed_rate * delta_time
-
-			if(iter_part.generic_bleedstacks) // If you don't have any bleedstacks, don't try and heal them
-				iter_part.adjustBleedStacks(-1, 0)
+		for(var/obj/item/bodypart/BP as anything in bodyparts)
+			temp_bleed += BP.get_bleed_rate()
+			BP.generic_bleedstacks = max(0, BP.generic_bleedstacks - 1)
 
 		if(temp_bleed)
 			bleed(temp_bleed)
 			bleed_warn(temp_bleed)
 
+		//wounds todo: add this effect to bleed wounds instead of this
+		// 	if(!blood_particle)
+		// 		blood_particle = new(src, /particles/droplets/blood, PARTICLE_ATTACH_MOB)
+		// 	blood_particle.particles.color = dna.blood_type.color //mouthful
+		// 	blood_particle.particles.spawning = (limb_bleed/2)
+		// 	blood_particle.particles.count = (round(clamp((limb_bleed * 2), 1, INFINITY)))
+
+		// 	if(COOLDOWN_FINISHED(src, bloodloss_message) && bleeeding_wording)
+		// 		to_chat(src, span_warning("[bleeeding_wording]"))
+		// 		COOLDOWN_START(src, bloodloss_message, message_cooldown)
+		// else
+		// 	if(blood_particle)
+		// 		QDEL_NULL(blood_particle)
+
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
 	if(!blood_volume)
 		return
-
 	blood_volume = max(blood_volume - amt, 0)
 
 	//Blood loss still happens in locker, floor stays clean
@@ -102,7 +114,7 @@
 	var/bleed_amt = 0
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/iter_bodypart = X
-		bleed_amt += iter_bodypart.get_modified_bleed_rate()
+		bleed_amt += iter_bodypart.get_bleed_rate()
 	return bleed_amt
 
 /mob/living/carbon/human/get_bleed_rate()
@@ -110,6 +122,7 @@
 		return
 	. = ..()
 	. *= physiology.bleed_mod
+
 
 /**
  * bleed_warn() is used to for carbons with an active client to occasionally receive messages warning them about their bleeding status (if applicable)
@@ -201,7 +214,7 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 	for(var/i in bodyparts)
 		var/obj/item/bodypart/BP = i
-		BP.setBleedStacks(0)
+		BP.generic_bleedstacks = 0
 
 /****************************************************
 				BLOOD TRANSFERS

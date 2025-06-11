@@ -126,8 +126,6 @@
 	var/scars_covered_by_clothes = TRUE
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed
-	/// Our current bleed rate. Cached, update with refresh_bleed_rate()
-	var/cached_bleed_rate = 0
 	/// How much generic bleedstacks we have on this bodypart
 	var/generic_bleedstacks
 	/// If we have a gauze wrapping currently applied
@@ -144,7 +142,6 @@
 	. = ..()
 	name = "[limb_id] [parse_zone(body_zone)]"
 	update_icon_dropped()
-	refresh_bleed_rate()
 
 	if(!IS_ORGANIC_LIMB(src))
 		grind_results = null
@@ -649,11 +646,12 @@
 /obj/item/bodypart/proc/set_owner(new_owner)
 	if(owner == new_owner)
 		return FALSE //`null` is a valid option, so we need to use a num var to make it clear no change was made.
-	var/mob/living/carbon/old_owner = owner
+	. = owner
 	owner = new_owner
 
 	var/needs_update_disabled = FALSE //Only really relevant if there's an owner
-	if(old_owner)
+	if(.)
+		var/mob/living/carbon/old_owner = .
 		if(initial(can_be_disabled))
 			if(HAS_TRAIT(old_owner, TRAIT_NOLIMBDISABLE))
 				if(!owner || !HAS_TRAIT(owner, TRAIT_NOLIMBDISABLE))
@@ -662,8 +660,6 @@
 			UnregisterSignal(old_owner, list(
 				SIGNAL_REMOVETRAIT(TRAIT_NOLIMBDISABLE),
 				SIGNAL_ADDTRAIT(TRAIT_NOLIMBDISABLE),
-				SIGNAL_REMOVETRAIT(TRAIT_NOBLEED),
-				SIGNAL_ADDTRAIT(TRAIT_NOBLEED),
 				))
 
 	if(owner)
@@ -673,9 +669,6 @@
 				needs_update_disabled = FALSE
 			RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_NOLIMBDISABLE), PROC_REF(on_owner_nolimbdisable_trait_loss))
 			RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_NOLIMBDISABLE), PROC_REF(on_owner_nolimbdisable_trait_gain))
-			// Bleeding stuff
-			RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_NOBLEED), PROC_REF(on_owner_nobleed_loss))
-			RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_NOBLEED), PROC_REF(on_owner_nobleed_gain))
 		if(needs_update_disabled)
 			update_disabled()
 
@@ -1007,75 +1000,36 @@
 		dam_mul *= iter_wound.damage_mulitplier_penalty
 
 	wound_damage_multiplier = dam_mul
-	refresh_bleed_rate()
 
-/// Sets our generic bleedstacks
-/obj/item/bodypart/proc/setBleedStacks(set_to)
-	SHOULD_CALL_PARENT(TRUE)
-	adjustBleedStacks(set_to - generic_bleedstacks)
 
-/// Modifies our generic bleedstacks. You must use this to change the variable
-/// Takes the amount to adjust by, and the lowest amount we're allowed to have post adjust
-/obj/item/bodypart/proc/adjustBleedStacks(adjust_by, minimum = -INFINITY)
-	if(!adjust_by)
+/obj/item/bodypart/proc/get_bleed_rate()
+	if(HAS_TRAIT(owner, TRAIT_NOBLEED))
 		return
-	var/old_bleedstacks = generic_bleedstacks
-	generic_bleedstacks = max(generic_bleedstacks + adjust_by, minimum)
-
-	// If we've started or stopped bleeding, we need to refresh our bleed rate
-	if((old_bleedstacks <= 0 && generic_bleedstacks > 0) \
-		|| old_bleedstacks > 0 && generic_bleedstacks <= 0)
-		refresh_bleed_rate()
-
-/obj/item/bodypart/proc/on_owner_nobleed_loss(datum/source)
-	SIGNAL_HANDLER
-	refresh_bleed_rate()
-
-/obj/item/bodypart/proc/on_owner_nobleed_gain(datum/source)
-	SIGNAL_HANDLER
-	refresh_bleed_rate()
-
-/// Refresh the cache of our rate of bleeding sans any modifiers
-/// ANYTHING ADDED TO THIS PROC NEEDS TO CALL IT WHEN IT'S EFFECT CHANGES
-/obj/item/bodypart/proc/refresh_bleed_rate()
-	SHOULD_NOT_OVERRIDE(TRUE)
-
-	// var/old_bleed_rate = cached_bleed_rate //for wound overlays
-	cached_bleed_rate = 0
-	if(!owner)
+	if(bodytype  != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
 		return
 
-	if(HAS_TRAIT(owner, TRAIT_NOBLEED) || !IS_ORGANIC_LIMB(src))
-		// if(cached_bleed_rate != old_bleed_rate)
-		// 	update_part_wound_overlay()
-		return
-
+	var/bleed_rate = 0
 	if(generic_bleedstacks > 0)
-		cached_bleed_rate += 0.5
+		bleed_rate++
 
-	for(var/obj/item/embeddies in embedded_objects)
+	//We want an accurate reading of .len
+	listclearnulls(embedded_objects)
+	for(var/obj/item/embeddies as anything in embedded_objects)
 		if(!embeddies.isEmbedHarmless())
-			cached_bleed_rate += 0.25
+			bleed_rate += 0.5
 
-	for(var/datum/wound/iter_wound as anything in wounds)
-		cached_bleed_rate += iter_wound.blood_flow
+	for(var/datum/wound/W as anything in wounds)
+		bleed_rate += W.blood_flow
 
-	if(!cached_bleed_rate)
-		QDEL_NULL(grasped_by)
-
-	// Our bleed overlay is based directly off bleed_rate, so go aheead and update that would you?
-	// if(cached_bleed_rate != old_bleed_rate)
-	// 	update_part_wound_overlay()
-
-	return cached_bleed_rate
-
-/// Returns our bleed rate, taking into account laying down and grabbing the limb
-/obj/item/bodypart/proc/get_modified_bleed_rate()
-	var/bleed_rate = cached_bleed_rate
 	if(owner.body_position == LYING_DOWN)
 		bleed_rate *= 0.75
+
 	if(grasped_by)
 		bleed_rate *= 0.7
+
+	if(!bleed_rate)
+		QDEL_NULL(grasped_by)
+
 	return bleed_rate
 
 /**

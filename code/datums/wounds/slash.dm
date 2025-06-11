@@ -38,9 +38,9 @@
 		victim.self_grasp_bleeding_limb(limb)
 
 /datum/wound/slash/wound_injury(datum/wound/slash/old_wound = null)
-	set_blood_flow(initial_flow)
+	blood_flow = initial_flow
 	if(old_wound)
-		set_blood_flow(max(old_wound.blood_flow, initial_flow))
+		blood_flow = max(old_wound.blood_flow, initial_flow)
 
 /datum/wound/slash/get_examine_description(mob/user)
 	if(!limb.current_gauze)
@@ -63,7 +63,7 @@
 
 /datum/wound/slash/receive_damage(wounding_type, wounding_dmg, wound_bonus)
 	if(victim.stat != DEAD && wound_bonus != CANT_WOUND && wounding_type == WOUND_SLASH) // can't stab dead bodies to make it bleed faster this way
-		adjust_blood_flow(blood_flow += 0.05 * wounding_dmg)
+		blood_flow += 0.05 * wounding_dmg
 
 /datum/wound/slash/drag_bleed_amount()
 	// say we have 3 severe cuts with 3 blood flow each, pretty reasonable
@@ -85,7 +85,7 @@
 
 /datum/wound/slash/handle_process()
 	if(victim.stat == DEAD)
-		adjust_blood_flow(-max(clot_rate, WOUND_SLASH_DEAD_CLOT_MIN))
+		blood_flow -= max(clot_rate, WOUND_SLASH_DEAD_CLOT_MIN)
 		if(blood_flow < minimum_flow)
 			if(demotes_to)
 				replace_wound(demotes_to)
@@ -93,18 +93,18 @@
 			qdel(src)
 			return
 
-	set_blood_flow(min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW))
+	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
-		adjust_blood_flow(0.25) // old heparin used to just add +2 bleed stacks per tick, this adds 0.5 bleed flow to all open cuts which is probably even stronger as long as you can cut them first
+		blood_flow += 0.5 // old heparin used to just add +2 bleed stacks per tick, this adds 0.5 bleed flow to all open cuts which is probably even stronger as long as you can cut them first
 
 	if(limb.current_gauze)
 		if(clot_rate > 0)
-			adjust_blood_flow(-clot_rate)
+			blood_flow -= clot_rate
 		if(limb.current_gauze && limb.current_gauze.seep_gauze(limb.current_gauze.absorption_rate, GAUZE_STAIN_BLOOD))
-			adjust_blood_flow(-limb.current_gauze.absorption_rate)
+			blood_flow -= limb.current_gauze.absorption_rate
 	else
-		adjust_blood_flow(-clot_rate)
+		blood_flow -= clot_rate
 
 	if(blood_flow > highest_flow)
 		highest_flow = blood_flow
@@ -143,11 +143,11 @@
 
 /datum/wound/slash/on_xadone(power) //this is for cryo, check and maybe remove later
 	. = ..()
-	adjust_blood_flow(-0.03 * power) // i think it's like a minimum of 3 power, so .09 blood_flow reduction per tick is pretty good for 0 effort
+	blood_flow -= 0.03 * power // i think it's like a minimum of 3 power, so .09 blood_flow reduction per tick is pretty good for 0 effort
 
 /datum/wound/slash/on_synthflesh(power)
 	. = ..()
-	adjust_blood_flow(-0.075 * power) // 20u * 0.075 = -1.5 blood flow, pretty good for how little effort it is
+	blood_flow -= 0.075 * power // 20u * 0.075 = -1.5 blood flow, pretty good for how little effort it is
 
 /// If someone's putting a laser gun up to our cut to cauterize it
 /datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
@@ -164,7 +164,7 @@
 	if(!lasgun.process_fire(victim, victim, TRUE, null, limb.body_zone))
 		return
 	victim.emote("scream")
-	adjust_blood_flow(-damage / (5 * self_penalty_mult)) // 20 / 5 = 4 bloodflow removed, p good
+	blood_flow -= damage / (5 * self_penalty_mult) // 20 / 5 = 4 bloodflow removed, p good
 	victim.visible_message(span_warning("The cuts on [victim]'s [limb.name] scar over!"))
 
 /// If someone is using either a cautery tool or something with heat to cauterize this cut
@@ -187,7 +187,7 @@
 	if(prob(30))
 		victim.emote("scream")
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
-	adjust_blood_flow(-blood_cauterized)
+	blood_flow -= blood_cauterized
 
 	if(blood_flow > minimum_flow)
 		try_treating(I, user)
@@ -209,7 +209,7 @@
 		span_green("You stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"]."),
 	)
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult
-	adjust_blood_flow(-blood_sutured)
+	blood_flow -= blood_sutured
 	limb.heal_damage(I.heal_brute, I.heal_burn)
 	I.use(1)
 

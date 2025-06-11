@@ -34,7 +34,7 @@
 		victim.self_grasp_bleeding_limb(limb)
 
 /datum/wound/pierce/wound_injury(datum/wound/old_wound)
-	set_blood_flow(initial_flow)
+	blood_flow = initial_flow
 
 /datum/wound/pierce/receive_damage(wounding_type, wounding_dmg, wound_bonus)
 	if(victim.stat == DEAD || wounding_dmg < 5)
@@ -79,18 +79,18 @@
 	return BLOOD_FLOW_STEADY
 
 /datum/wound/pierce/handle_process()
-	set_blood_flow(min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW))
+	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
 	if(victim.bodytemperature < (victim.get_body_temp_normal(FALSE) - 25))
-		adjust_blood_flow(-0.1)
-		if(prob(2.5))
+		blood_flow -= 0.2
+		if(prob(5))
 			to_chat(victim, span_notice("You feel the [lowertext(name)] in your [limb.name] firming up from the cold!"))
 
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
-		adjust_blood_flow(0.25)
+		blood_flow += 0.5
 
 	if(limb.current_gauze)
-		adjust_blood_flow(-limb.current_gauze.absorption_rate * gauzed_clot_rate)
+		blood_flow -= limb.current_gauze.absorption_rate * gauzed_clot_rate
 
 	if(blood_flow <= 0)
 		qdel(src)
@@ -112,11 +112,11 @@
 
 /datum/wound/pierce/on_xadone(power)
 	. = ..()
-	adjust_blood_flow(-0.03 * power) // i think it's like a minimum of 3 power, so .09 blood_flow reduction per tick is pretty good for 0 effort
+	blood_flow -= 0.03 * power // i think it's like a minimum of 3 power, so .09 blood_flow reduction per tick is pretty good for 0 effort
 
 /datum/wound/pierce/on_synthflesh(power)
 	. = ..()
-	adjust_blood_flow(-0.05 * power) // 20u * 0.05 = -1 blood flow, less than with slashes but still good considering smaller bleed rates
+	blood_flow -= 0.05 * power // 20u * 0.05 = -1 blood flow, less than with slashes but still good considering smaller bleed rates
 
 /// If someone is using a suture to close this puncture
 /datum/wound/pierce/proc/suture(obj/item/stack/medical/suture/I, mob/user)
@@ -132,7 +132,7 @@
 		span_green("You stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"]."),
 	)
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult
-	adjust_blood_flow(-blood_sutured)
+	blood_flow -= blood_sutured
 	limb.heal_damage(I.heal_brute, I.heal_burn)
 	I.use(1)
 
@@ -161,7 +161,7 @@
 	if(prob(15))
 		victim.emote("scream")
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
-	adjust_blood_flow(-blood_cauterized)
+	blood_flow -= blood_cauterized
 
 	if(blood_flow > 0)
 		try_treating(I, user)
