@@ -1005,8 +1005,8 @@
 /obj/item/bodypart/proc/get_bleed_rate()
 	if(HAS_TRAIT(owner, TRAIT_NOBLEED))
 		return
-	if(bodytype  != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
-		return
+	// if(IS_ROBOTIC_LIMB(src)) // maybe in the future we can bleed oil from aug parts, but not now
+	// 	return
 
 	var/bleed_rate = 0
 	if(generic_bleedstacks > 0)
@@ -1052,7 +1052,7 @@
 /**
  * apply_splint() much like above, except with a splint
  *
- *   * This proc applies a splint to a bodypart. Splints are used to stabilize muscle and bone wounds, aswell as to protect from hits causing internal bleeding
+ * * This proc applies a splint to a bodypart. Splints are used to stabilize muscle and bone wounds, aswell as to protect from hits causing internal bleeding
  *
  * Arguments:
  * * new_splint- Just the gauze stack we're taking a sheet from to apply here

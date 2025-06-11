@@ -22,13 +22,10 @@
 					nutrition_ratio = 0.8
 				else
 					nutrition_ratio = 1
-
 			if(satiety > 80)
 				nutrition_ratio *= 1.25
-
 			adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
 			blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
-
 		if(blood_volume < BLOOD_VOLUME_NORMAL && HAS_TRAIT(src, TRAIT_NOHUNGER)) //blood regen for non eaters
 			blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * 1.25) //assumes best nutrition conditions for non eaters because they don't eat
 
@@ -57,7 +54,6 @@
 				if(prob(15))
 					Unconscious(rand(2 SECONDS,6 SECONDS))
 					to_chat(src, span_warning("You feel very [word]."))
-
 			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
 				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
 				adjustToxLoss(2)
@@ -77,20 +73,6 @@
 		if(temp_bleed)
 			bleed(temp_bleed)
 			bleed_warn(temp_bleed)
-
-		//wounds todo: add this effect to bleed wounds instead of this
-		// 	if(!blood_particle)
-		// 		blood_particle = new(src, /particles/droplets/blood, PARTICLE_ATTACH_MOB)
-		// 	blood_particle.particles.color = dna.blood_type.color //mouthful
-		// 	blood_particle.particles.spawning = (limb_bleed/2)
-		// 	blood_particle.particles.count = (round(clamp((limb_bleed * 2), 1, INFINITY)))
-
-		// 	if(COOLDOWN_FINISHED(src, bloodloss_message) && bleeeding_wording)
-		// 		to_chat(src, span_warning("[bleeeding_wording]"))
-		// 		COOLDOWN_START(src, bloodloss_message, message_cooldown)
-		// else
-		// 	if(blood_particle)
-		// 		QDEL_NULL(blood_particle)
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
