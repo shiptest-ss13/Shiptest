@@ -271,6 +271,7 @@
 
 /obj/item/stack/tape/industrial
 	name = "duct tape"
+	singular_name = "duct tape"
 	desc = "This roll of silver sorcery can fix just about anything."
 	icon_state = "tape_d"
 	amount = 15
@@ -298,6 +299,7 @@
 
 /obj/item/stack/tape/industrial/electrical
 	name = "electrical tape"
+	singular_name = "electrical tape"
 	desc = "Specialty insulated strips of adhesive plastic. Made for securing cables."
 	icon_state = "tape_e"
 
@@ -321,6 +323,7 @@
 
 /obj/item/stack/tape/industrial/pro
 	name = "professional-grade duct tape"
+	singular_name = "professional-grade duct tape"
 	desc = "Now THIS is engineering."
 	icon_state = "tape_y"
 
