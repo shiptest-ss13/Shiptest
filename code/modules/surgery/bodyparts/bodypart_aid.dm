@@ -142,10 +142,10 @@
 	stack_to_drop = /obj/item/stack/medical/splint/improvised
 	overlay_prefix = "splint_improv"
 
-/datum/bodypart_aid/splint/tribal
-	name = "tribal splint"
+/datum/bodypart_aid/splint/hunter
+	name = "hunter splint"
 	splint_factor = 0.5
-	stack_to_drop = /obj/item/stack/medical/splint/tribal
+	stack_to_drop = /obj/item/stack/medical/splint/hunter
 	overlay_prefix = "splint_tribal"
 
 /datum/bodypart_aid/gauze

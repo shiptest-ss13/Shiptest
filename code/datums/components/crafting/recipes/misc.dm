@@ -141,9 +141,9 @@
 	result = /obj/item/reagent_containers/glass/filter
 	category = CAT_MISC
 
-/datum/crafting_recipe/tribalsplint
-	name = "Tribal Splint"
-	result = /obj/item/stack/medical/splint/tribal
+/datum/crafting_recipe/huntersplint
+	name = "Hunter Splint"
+	result = /obj/item/stack/medical/splint/hunter
 	time = 30
 	reqs = list(
 		/obj/item/stack/sheet/bone = 2,

@@ -462,14 +462,14 @@
 /obj/item/stack/medical/splint/twelve
 	amount = 12
 
-/obj/item/stack/medical/splint/tribal
-	name = "tribal splint"
+/obj/item/stack/medical/splint/hunter
+	name = "hunter splint"
 	desc = "Bone fastened with sinew, used to keep injured limbs rigid, surprisingly effective."
-	singular_name = "tribal splint"
+	singular_name = "hunter splint"
 	icon_state = "splint_tribal"
 	amount = 1
-	splint_type = /datum/bodypart_aid/splint/tribal
-	merge_type = /obj/item/stack/medical/splint/tribal
+	splint_type = /datum/bodypart_aid/splint/hunter
+	merge_type = /obj/item/stack/medical/splint/hunter
 
 /obj/item/stack/medical/splint/improvised
 	name = "improvised splint"
