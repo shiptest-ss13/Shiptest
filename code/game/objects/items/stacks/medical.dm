@@ -139,7 +139,7 @@
 	other_delay = 2 SECONDS
 	grind_results = list(/datum/reagent/medicine/c2/libital = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack
-	
+
 /obj/item/stack/medical/gauze
 	name = "medical gauze"
 	desc = "A roll of elastic cloth, perfect for stabilizing all kinds of slashes, punctures and burns. "
