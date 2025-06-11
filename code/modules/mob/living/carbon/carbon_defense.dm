@@ -778,8 +778,8 @@
 
 	grasped_part = grasping_part
 	grasped_part.grasped_by = src
-	RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/qdel_void)
-	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING), .proc/qdel_void)
+	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
+	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING), PROC_REF(qdel_void))
 
 	user.visible_message(
 		span_danger("[user] grasps at [user.p_their()] [grasped_part.name], trying to stop the bleeding."),

@@ -252,7 +252,7 @@
 		return
 	if(slot_flags & slot) //Was equipped to a valid slot for this item?
 		if(iscarbon(user) && LAZYLEN(zones_disabled))
-			RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/bristle)
+			RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(bristle))
 		if(LAZYLEN(user_vars_to_edit))
 			for(var/variable in user_vars_to_edit)
 				if(variable in user.vars)

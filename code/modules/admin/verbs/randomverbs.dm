@@ -1091,7 +1091,6 @@
 		ADMIN_PUNISHMENT_SUPPLYPOD_QUICK,
 		ADMIN_PUNISHMENT_SUPPLYPOD,
 		ADMIN_PUNISHMENT_MAZING,
-		ADMIN_PUNISHMENT_NUGGET,
 		ADMIN_PUNISHMENT_CRACK,
 		ADMIN_PUNISHMENT_BLEED,
 		ADMIN_PUNISHMENT_PERFORATE,
@@ -1162,20 +1161,6 @@
 				to_chat(usr,span_warning("Imprisonment failed!"), confidential = TRUE)
 				return
 
-		if(ADMIN_PUNISHMENT_NUGGET)
-			if(!iscarbon(target))
-				to_chat(usr, span_warning("This must be used on a carbon mob."), confidential = TRUE)
-				return
-			var/mob/living/carbon/C = target
-			var/timer = 2 SECONDS
-			for(var/obj/item/bodypart/thing in C.bodyparts)
-				if(thing.body_part == HEAD || thing.body_part == CHEST)
-					continue
-				addtimer(CALLBACK(thing, /obj/item/bodypart/.proc/dismember), timer)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, C, 'sound/effects/cartoon_pop.ogg', 70), timer)
-				addtimer(CALLBACK(C, /mob/living/.proc/spin, 4, 1), timer - 0.4 SECONDS)
-				timer += 2 SECONDS
-
 		if(ADMIN_PUNISHMENT_CRACK)
 			if(!iscarbon(target))
 				to_chat(usr, span_warning("This must be used on a carbon mob."), confidential = TRUE)
@@ -1239,7 +1224,7 @@
 					var/shots_this_limb = 0
 					for(var/t in shuffle(open_adj_turfs))
 						var/turf/iter_turf = t
-						addtimer(CALLBACK(GLOBAL_PROC, .proc/firing_squad, dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
+						addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(firing_squad), dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
 						delay_counter += delay_per_shot
 						shots_this_limb++
 						if(shots_this_limb > shots_per_limb_per_rep)

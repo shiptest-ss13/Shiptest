@@ -84,7 +84,6 @@
 #define ADMIN_PUNISHMENT_SUPPLYPOD "Supply Pod"
 #define ADMIN_PUNISHMENT_MAZING "Puzzle"
 #define ADMIN_PUNISHMENT_IMMERSE "Fully Immerse"
-#define ADMIN_PUNISHMENT_NUGGET "Nugget"
 #define ADMIN_PUNISHMENT_CRACK ":B:oneless"
 #define ADMIN_PUNISHMENT_BLEED ":B:loodless"
 #define ADMIN_PUNISHMENT_PERFORATE ":B:erforate"

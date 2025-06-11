@@ -87,7 +87,7 @@
 
 	limb.embedded_objects |= weapon // on the inside... on the inside...
 	weapon.forceMove(victim)
-	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), .proc/weaponDeleted)
+	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(weaponDeleted))
 	victim.visible_message(
 		span_danger("[weapon] [harmful ? "embeds" : "sticks"] itself [harmful ? "in" : "to"] [victim]'s [limb.name]!"),
 		span_userdanger("[weapon] [harmful ? "embeds" : "sticks"] itself [harmful ? "in" : "to"] your [limb.name]!"),
@@ -198,7 +198,7 @@
 
 	var/mob/living/carbon/victim = parent
 	var/time_taken = rip_time * weapon.w_class
-	INVOKE_ASYNC(src, .proc/complete_rip_out, victim, I, limb, time_taken)
+	INVOKE_ASYNC(src, PROC_REF(complete_rip_out), victim, I, limb, time_taken)
 
 /// everything async that ripOut used to do
 /datum/component/embedded/proc/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, time_taken)
@@ -237,7 +237,7 @@
 	if(!weapon.unembedded()) // if it hasn't deleted itself due to drop del
 		UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
 		if(to_hands)
-			INVOKE_ASYNC(victim, /mob.proc/put_in_hands, weapon)
+			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, put_in_hands), weapon)
 		else
 			weapon.forceMove(get_turf(victim))
 

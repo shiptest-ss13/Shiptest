@@ -156,7 +156,7 @@
 /datum/status_effect/wound/on_apply()
 	if(!iscarbon(owner))
 		return FALSE
-	RegisterSignal(owner, COMSIG_CARBON_LOSE_WOUND, .proc/check_remove)
+	RegisterSignal(owner, COMSIG_CARBON_LOSE_WOUND, PROC_REF(check_remove))
 	return TRUE
 
 /// check if the wound getting removed is the wound we're tied to
@@ -171,7 +171,7 @@
 
 /datum/status_effect/wound/blunt/on_apply()
 	. = ..()
-	RegisterSignal(owner, COMSIG_MOB_SWAP_HANDS, .proc/on_swap_hands)
+	RegisterSignal(owner, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
 	on_swap_hands()
 
 /datum/status_effect/wound/blunt/on_remove()

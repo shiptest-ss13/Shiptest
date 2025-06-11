@@ -81,7 +81,7 @@
 				span_userdanger("You fail to strike [target] as the fracture in your [limb.name] lights up in unbearable pain!"),
 				vision_distance = COMBAT_MESSAGE_RANGE
 			)
-			INVOKE_ASYNC(victim, /mob.proc/emote, "scream")
+			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
 			victim.Stun(0.25 SECONDS)
 			limb.receive_damage(brute=rand(3,7))
 			return COMPONENT_ITEM_NO_ATTACK

@@ -33,7 +33,7 @@
 	if(. == ELEMENT_INCOMPATIBLE)
 		return
 
-	RegisterSignal(target, COMSIG_ITEM_ATTACK , .proc/try_kneecap_target)
+	RegisterSignal(target, COMSIG_ITEM_ATTACK , PROC_REF(try_kneecap_target))
 
 /datum/element/kneecapping/Detach(datum/target)
 	UnregisterSignal(target, COMSIG_ITEM_ATTACK)
@@ -69,7 +69,7 @@
 
 	. = COMPONENT_ITEM_NO_ATTACK
 
-	INVOKE_ASYNC(src, .proc/do_kneecap_target, source, leg, target, attacker)
+	INVOKE_ASYNC(src, PROC_REF(do_kneecap_target), source, leg, target, attacker)
 
 /**
  * After a short do_after, attacker applies damage to the given leg with a significant wounding bonus, applying the weapon's force as damage.
