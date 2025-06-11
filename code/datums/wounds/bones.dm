@@ -310,7 +310,7 @@
 /datum/wound/blunt/moderate/proc/malpractice(mob/living/carbon/human/user)
 	var/time = base_treat_time
 
-	if(!do_after(user, time, target=victim, extra_checks = CALLBACK(src, PROC_REF(till_exists))))
+	if(!do_after(user, time, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	if(prob(65))
