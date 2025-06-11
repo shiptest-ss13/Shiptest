@@ -102,9 +102,14 @@
 	semi_auto = TRUE
 	casing_ejector = TRUE
 
+	refused_attachments = list(/obj/item/attachment/gun)
+
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/secondary_action(user)
+	toggle_tube(user)
+
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
-	. = ..()
 	. += span_notice("Tube [toggled ? "B" : "A"] is currently loaded.")
+	. += "You can change the [src]'s tube by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize(mapload, spawn_empty)
 	. = ..()
@@ -121,6 +126,7 @@
 		to_chat(user, span_notice("You switch to tube B."))
 	else
 		to_chat(user, span_notice("You switch to tube A."))
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 
 /datum/action/item_action/toggle_tube
