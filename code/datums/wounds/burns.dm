@@ -199,7 +199,7 @@
 	)
 	if (I.amount <= 0)
 		return
-	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	limb.heal_damage(I.heal_brute, I.heal_burn)
