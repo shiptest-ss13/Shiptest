@@ -18,7 +18,6 @@
 	pixel_y = -5
 	base_pixel_y = -5
 	layer = TABLE_LAYER//so that deliveries dont appear underneath it
-	loot = list(/obj/effect/decal/cleanable/blood/gibs, /obj/item/stack/sheet/animalhide/gondola = 2, /obj/item/reagent_containers/food/snacks/meat/slab/gondola = 2)
 	//Gondolas aren't affected by cold.
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
