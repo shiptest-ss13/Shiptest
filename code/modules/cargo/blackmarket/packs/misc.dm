@@ -135,8 +135,8 @@
 	desc = "A reinforced containment unit for holding fauna. Won't work on anything that actually has two brain cells to rub together though."
 	item = /obj/structure/closet/mob_capture
 
-	cost_min = 750
-	cost_max = 1500
+	cost_min = 250
+	cost_max = 750
 	stock_max = 3
 	availability_prob = 30
 

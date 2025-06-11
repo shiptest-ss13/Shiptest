@@ -22,6 +22,17 @@
 	stock_max = 10
 	availability_prob = 80
 
+/datum/blackmarket_item/clothing/camo_uniform
+	name = "Camo Fatigues"
+	desc = "General purpose camoflague fatigues with a polychromatic design for use in different conditions."
+	item = /obj/item/clothing/under/rank/security/officer/camo
+
+	cost_min = 25
+	cost_max = 50
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 80
+
 /datum/blackmarket_item/clothing/terragov
 	name = "Vintage TerraGov Tunics"
 	desc = "These were supposed to be shipped to a museum exhibition celebrating history in some distant Solarian canton. Honestly, we're doing them a favour. Clothes are meant to be worn rather than kept in some dusty box."
@@ -124,6 +135,26 @@
 	B.desc = "It smells distinctly of iron."
 	new /obj/item/clothing/head/helmet/old(B)
 	new /obj/item/clothing/suit/armor/vest/old(B)
+	return B
+
+/datum/blackmarket_item/clothing/camo_set
+	name = "Camo Set"
+	desc = "Want to be somewhere you shouldn't? This advanced polychromatic uniform set features patterns such as woodland, urban, snowy and your grandmother's ugly couch to help you blend into any environment. Includes fatigues, helment and webbing."
+	item = /obj/item/storage/backpack/duffelbag/sec
+
+	cost_min = 500
+	cost_max = 1000
+	stock_min = 2
+	stock_max = 8
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/frontiersmen_armor_set/spawn_item(loc)
+	var/obj/item/storage/backpack/duffelbag/sec/B = ..()
+	B.name = "Worn Duffelbag"
+	B.desc = "A beat up looking dufflebag."
+	new /obj/item/storage/belt/military(B)
+	new /obj/item/clothing/head/helmet/bulletproof/m10(B)
+	new /obj/item/clothing/under/rank/security/officer/camo(B)
 	return B
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_set
