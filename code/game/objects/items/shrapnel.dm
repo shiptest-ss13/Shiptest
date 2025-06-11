@@ -66,7 +66,6 @@
 	damage = 15
 	range = 15
 	armour_penetration = -5
-	dismemberment = 25
 	ricochets_max = 2
 	ricochet_chance = 60
 	shrapnel_type = /obj/item/shrapnel
