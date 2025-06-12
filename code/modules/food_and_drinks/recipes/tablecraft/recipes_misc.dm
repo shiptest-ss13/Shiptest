@@ -15,7 +15,7 @@
 	reqs = list(
 		/obj/item/food/meat/steak/miras = 1,
 		/obj/item/food/grown/potato = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
 	)
 	result = /obj/item/food/miras_potato
 	subcategory = CAT_MISCFOOD
@@ -132,10 +132,10 @@
 /datum/crafting_recipe/food/tiris_fondue
 	name = "Tiris fondue"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/dotu_fime = 1,
+		/obj/item/food/grown/dotu_fime = 1,
 		/obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/tiris_fondue
+	result = /obj/item/food/tiris_fondue
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/roe_tiris

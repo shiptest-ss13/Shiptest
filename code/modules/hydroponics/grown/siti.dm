@@ -5,7 +5,7 @@
 	icon_state = ""
 	species = "siti"
 	plantname = "siti plant"
-	product = /obj/item/reagent_containers/food/snacks/grown/siti
+	product = /obj/item/food/grown/siti
 	lifespan = 20
 	maturation = 5
 	production = 5
@@ -15,15 +15,15 @@
 	icon_dead = "cabbage-dead"
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
-/obj/item/reagent_containers/food/snacks/grown/siti
+/obj/item/food/grown/siti
 	seed = /obj/item/seeds/sososi
 	name = "siti leaf"
 	desc = "The leaves of a Siti plant have a strong structure, giving them an extremely pleasant (if somewhat lacking in flavor) crunch."
 	icon_state = "siti"
 	gender = PLURAL
 	filling_color = "#FF00FF"
-	bitesize_mod = 2
-	foodtype = FRUIT
+	bite_consumption_mod = 1
+	foodtypes = FRUIT
 	juice_results = null
 	tastes = list("vegetable crunch" = 1)
 	distill_reagent = null

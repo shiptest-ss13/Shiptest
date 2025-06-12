@@ -490,19 +490,18 @@
 	crate_type = /obj/structure/closet/crate/wooden
 
 
-/* move these to be in line with rest of cargo once thrax's food cargo atomization is done */
-/* Probably write better descriptions too */
+/* Probably write better descriptions*/
 
 /datum/supply_pack/food/ingredients_basic/dote
 	name = "Dote Berry Crate"
 	desc = "A crate full of easily dried, flavorful tecetian berries. Given its hardiness these are probably not from Teceti itself."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
-		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
-		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
-		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
-		/obj/item/reagent_containers/food/snacks/grown/dote_berries,
+		/obj/item/food/grown/dote_berries,
+		/obj/item/food/grown/dote_berries,
+		/obj/item/food/grown/dote_berries,
+		/obj/item/food/grown/dote_berries,
+		/obj/item/food/grown/dote_berries
 	)
 
 /datum/supply_pack/food/ingredients_basic/dotu
@@ -510,11 +509,11 @@
 	desc = "Small plump fruit from Teceti."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
-		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
-		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
-		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
-		/obj/item/reagent_containers/food/snacks/grown/dotu_fime,
+		/obj/item/food/grown/dotu_fime,
+		/obj/item/food/grown/dotu_fime,
+		/obj/item/food/grown/dotu_fime,
+		/obj/item/food/grown/dotu_fime,
+		/obj/item/food/grown/dotu_fime,
 	)
 
 /datum/supply_pack/food/ingredients_basic/fara
@@ -522,11 +521,11 @@
 	desc = "A small, mildly spicy fruit native to Teceti."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/grown/fara_li,
-		/obj/item/reagent_containers/food/snacks/grown/fara_li,
-		/obj/item/reagent_containers/food/snacks/grown/fara_li,
-		/obj/item/reagent_containers/food/snacks/grown/fara_li,
-		/obj/item/reagent_containers/food/snacks/grown/fara_li,
+		/obj/item/food/grown/fara_li,
+		/obj/item/food/grown/fara_li,
+		/obj/item/food/grown/fara_li,
+		/obj/item/food/grown/fara_li,
+		/obj/item/food/grown/fara_li
 	)
 
 /datum/supply_pack/food/ingredients_basic/refa
@@ -534,11 +533,11 @@
 	desc = "A small spicy cave fruit native to Teceti."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/grown/refa_li,
-		/obj/item/reagent_containers/food/snacks/grown/refa_li,
-		/obj/item/reagent_containers/food/snacks/grown/refa_li,
-		/obj/item/reagent_containers/food/snacks/grown/refa_li,
-		/obj/item/reagent_containers/food/snacks/grown/refa_li,
+		/obj/item/food/grown/refa_li,
+		/obj/item/food/grown/refa_li,
+		/obj/item/food/grown/refa_li,
+		/obj/item/food/grown/refa_li,
+		/obj/item/food/grown/refa_li
 	)
 
 /datum/supply_pack/food/ingredients_basic/sososi
@@ -546,11 +545,11 @@
 	desc = "A gel-filled leaf native to the Tecetian Arid."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/grown/sososi,
-		/obj/item/reagent_containers/food/snacks/grown/sososi,
-		/obj/item/reagent_containers/food/snacks/grown/sososi,
-		/obj/item/reagent_containers/food/snacks/grown/sososi,
-		/obj/item/reagent_containers/food/snacks/grown/sososi,
+		/obj/item/food/grown/sososi,
+		/obj/item/food/grown/sososi,
+		/obj/item/food/grown/sososi,
+		/obj/item/food/grown/sososi,
+		/obj/item/food/grown/sososi
 	)
 
 /datum/supply_pack/food/ingredients_basic/siti
@@ -558,11 +557,11 @@
 	desc = "A small crunchy leaf native to Teceti."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/grown/siti,
-		/obj/item/reagent_containers/food/snacks/grown/siti,
-		/obj/item/reagent_containers/food/snacks/grown/siti,
-		/obj/item/reagent_containers/food/snacks/grown/siti,
-		/obj/item/reagent_containers/food/snacks/grown/siti,
+		/obj/item/food/grown/siti,
+		/obj/item/food/grown/siti,
+		/obj/item/food/grown/siti,
+		/obj/item/food/grown/siti,
+		/obj/item/food/grown/siti
 	)
 
 /datum/supply_pack/food/ingredients_basic/miras
@@ -570,11 +569,11 @@
 	desc = "The meat of a small tecetian game animal."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
-		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
-		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
-		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
-		/obj/item/reagent_containers/food/snacks/meat/slab/miras,
+		/obj/item/food/meat/slab/miras,
+		/obj/item/food/meat/slab/miras,
+		/obj/item/food/meat/slab/miras,
+		/obj/item/food/meat/slab/miras,
+		/obj/item/food/meat/slab/miras
 	)
 
 /datum/supply_pack/food/ingredients_basic/tiris
@@ -582,11 +581,11 @@
 	desc = "The meat of a tecetian herd animal."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
-		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
-		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
-		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
-		/obj/item/reagent_containers/food/snacks/meat/slab/tiris,
+		/obj/item/food/meat/slab/tiris,
+		/obj/item/food/meat/slab/tiris,
+		/obj/item/food/meat/slab/tiris,
+		/obj/item/food/meat/slab/tiris,
+		/obj/item/food/meat/slab/tiris
 	)
 
 /datum/supply_pack/food/ingredients_basic/remes
@@ -594,11 +593,11 @@
 	desc = "Meat from a tecetian mollusk. Safe to eat raw!"
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
-		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
-		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
-		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
-		/obj/item/reagent_containers/food/snacks/meat/slab/remes,
+		/obj/item/food/meat/slab/remes,
+		/obj/item/food/meat/slab/remes,
+		/obj/item/food/meat/slab/remes,
+		/obj/item/food/meat/slab/remes,
+		/obj/item/food/meat/slab/remes
 	)
 
 /datum/supply_pack/food/ingredients_basic/dofi
@@ -606,11 +605,11 @@
 	desc = "The meat of a tecetian beast of burden."
 	cost = 100
 	contains = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
-		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
-		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
-		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
-		/obj/item/reagent_containers/food/snacks/meat/slab/dofitis,
+		/obj/item/food/meat/slab/dofitis,
+		/obj/item/food/meat/slab/dofitis,
+		/obj/item/food/meat/slab/dofitis,
+		/obj/item/food/meat/slab/dofitis,
+		/obj/item/food/meat/slab/dofitis
 	)
 
 /datum/supply_pack/food/ingredients_basic/tiris_milk

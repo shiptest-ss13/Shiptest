@@ -4,7 +4,7 @@
 	icon_state = ""
 	species = "fara"
 	plantname = "fara-li bush"
-	product = /obj/item/reagent_containers/food/snacks/grown/fara_li
+	product = /obj/item/food/grown/fara_li
 	lifespan = 30
 	maturation = 8
 	production = 6
@@ -17,13 +17,13 @@
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
 
-/obj/item/reagent_containers/food/snacks/grown/fara_li
+/obj/item/food/grown/fara_li
 	seed = /obj/item/seeds/fara_li
 	name = "fara-li"
 	desc = "A neutral-hot fruit grown in orchards on Teceti, and tecetiformed worlds. "
 	icon_state = "fara-li"
 	filling_color = "#FF0000"
-	bitesize_mod = 2
-	foodtype = FRUIT
+	bite_consumption_mod = 2
+	foodtypes = FRUIT
 	juice_results = null
 	distill_reagent = /datum/reagent/consumable/ethanol/faraseta

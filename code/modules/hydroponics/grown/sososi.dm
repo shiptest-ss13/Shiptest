@@ -6,7 +6,7 @@
 	icon_state = ""
 	species = "sososi"
 	plantname = "sososi plant"
-	product = /obj/item/reagent_containers/food/snacks/grown/sososi
+	product = /obj/item/food/grown/sososi
 	lifespan = 20
 	maturation = 5
 	production = 5
@@ -18,15 +18,15 @@
 	icon_dead = "aloe-dead"
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
-/obj/item/reagent_containers/food/snacks/grown/sososi
+/obj/item/food/grown/sososi
 	seed = /obj/item/seeds/sososi
 	name = "sososi leaf"
 	desc = "A thick leaf from a Tecetian succulent. It contains a gel-like concentration in its leaves, which while alive stored water and sugars."
 	icon_state = "sososi"
 	gender = PLURAL
 	filling_color = "#FF00FF"
-	bitesize_mod = 2
-	foodtype = FRUIT
+	bite_consumption_mod = 2
+	foodtypes = FRUIT
 	juice_results = null
 	tastes = list("crisp gel" = 1)
 	distill_reagent = /datum/reagent/consumable/ethanol/sososeta

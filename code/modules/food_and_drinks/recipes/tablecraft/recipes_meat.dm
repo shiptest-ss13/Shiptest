@@ -217,14 +217,14 @@
 		/obj/item/food/doughslice = 1,
 		/obj/item/food/meat/slab/dofitis = 1,
 	)
-	result =  /obj/item/reagent_containers/food/snacks/dofi_dore
+	result =  /obj/item/food/dofi_dore
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/timera
 	name = "Timera-fa"
 	reqs = list(
-		/obj/item/food/snacks/dotu_fime = 1,
-		/obj/item/food/snacks/grown/dote_berries = 1,
+		/obj/item/food/grown/dotu_fime = 1,
+		/obj/item/food/grown/dote_berries = 1,
 		/obj/item/food/meat/steak/tiris = 1,
 	)
 	result = /obj/item/food/timera
@@ -345,9 +345,9 @@
 	name = "Miras Kebab"
 	reqs = list(
 		/obj/item/stack/rods = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab/miras = 1
+		/obj/item/food/meat/slab/miras = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/kebab/miras
+	result = /obj/item/food/kebab/miras
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/fafe_skewer

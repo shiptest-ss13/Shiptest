@@ -7,7 +7,7 @@
 	icon_state = ""
 	species = "chilirefa"
 	plantname = "refa-li vine"
-	product = /obj/item/reagent_containers/food/snacks/grown/refa_li
+	product = /obj/item/food/grown/refa_li
 	lifespan = 12
 	maturation = 4
 	production = 6
@@ -18,12 +18,12 @@
 	icon_dead = "chili-dead"
 	reagents_add = list(/datum/reagent/consumable/refa_li = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
 
-/obj/item/reagent_containers/food/snacks/grown/refa_li
+/obj/item/food/grown/refa_li
 	seed = /obj/item/seeds/refa_li
 	name = "refa-li"
 	desc = "the fruit of a small flowering vine common within Tecetian caves. As a defense mechanism, the fruit evolved a pungent sort of heat."
 	icon_state = "refa-li"
 	filling_color = "#FF0000"
-	bitesize_mod = 2
-	foodtype = FRUIT
+	bite_consumption_mod = 2
+	foodtypes = FRUIT
 	juice_results = list(/datum/reagent/consumable/refa_li = 0)
