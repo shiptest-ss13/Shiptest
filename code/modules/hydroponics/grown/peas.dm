@@ -35,7 +35,7 @@
 	plantname = "Laughin' Peas"
 	product = /obj/item/food/grown/laugh
 	maturation = 7
-	potency = 10
+	potency = 15
 	yield = 7
 	production = 5
 	growthstages = 3
