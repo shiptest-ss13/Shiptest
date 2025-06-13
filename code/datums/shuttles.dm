@@ -467,7 +467,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 
-	/datum/map_template/shuttle/subshuttles/bonnie
+/datum/map_template/shuttle/subshuttles/bonnie
 	file_name = "independent_bonnie"
 	name = "Bonnie-class Cargo Hauler"
 	token_icon_state = "ship_tiny_generic"
