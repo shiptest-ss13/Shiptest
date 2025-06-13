@@ -38,7 +38,6 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/suture = 2,
 		/obj/item/stack/medical/mesh = 2,
@@ -113,7 +112,6 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer = 1,
 		/obj/item/stack/medical/gauze/twelve = 1,
 		/obj/item/stack/medical/bruise_pack = 1,
 		/obj/item/stack/medical/suture = 2,
@@ -122,7 +120,6 @@
 		/obj/item/scalpel = 1,
 		/obj/item/hemostat = 1,
 		/obj/item/cautery = 1,
-		/obj/item/healthanalyzer = 1,
 		/obj/item/storage/pill_bottle/tramal = 1,
 	)
 	generate_items_inside(items_inside,src)
@@ -142,6 +139,7 @@
 	)
 	generate_items_inside(items_inside,src)
 
+//Burn kit
 /obj/item/storage/firstaid/fire
 	name = "burn treatment kit"
 	desc = "A specialized medical kit for treating severe burns."
@@ -153,16 +151,16 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer = 1,
 		/obj/item/stack/medical/ointment = 2,
-		/obj/item/stack/medical/mesh = 2,
-		/obj/item/reagent_containers/pill/patch/silver_sulf = 4,
-		/obj/item/reagent_containers/spray/rhigoxane = 1,
+		/obj/item/stack/medical/mesh = 1,
+		/obj/item/stack/medical/gauze = 1,
+		/obj/item/reagent_containers/pill/patch/silver_sulf = 1,
 		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
 	)
 	generate_items_inside(items_inside,src)
 
+//Toxin kit
 /obj/item/storage/firstaid/toxin
 	name = "toxin treatment kit"
 	desc = "Used to treat toxic blood content and radiation poisoning."
@@ -174,7 +172,6 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer = 1,
 		/obj/item/storage/pill_bottle/charcoal/less = 1,
 		/obj/item/reagent_containers/syringe/thializid = 3,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
@@ -182,6 +179,7 @@
 	)
 	generate_items_inside(items_inside,src)
 
+//Rad kit
 /obj/item/storage/firstaid/radiation
 	name = "radiation treatment kit"
 	desc = "Used to treat severe radiation poisoning."
@@ -193,13 +191,13 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer = 1,
 		/obj/item/storage/pill_bottle/potassiodide = 2,
 		/obj/item/reagent_containers/hypospray/medipen/penacid = 2,
 		/obj/item/reagent_containers/hypospray/medipen/anti_rad = 4
 	)
 	generate_items_inside(items_inside,src)
 
+//Oxy kit
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation treatment kit"
 	desc = "A box full of oxygen goodies."
@@ -211,7 +209,6 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer = 1,
 		/obj/item/reagent_containers/syringe/perfluorodecalin = 3,
 		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
@@ -219,29 +216,29 @@
 	)
 	generate_items_inside(items_inside,src)
 
+//Brute kit
 /obj/item/storage/firstaid/brute
 	name = "brute trauma treatment kit"
 	desc = "A first aid kit for when you get toolboxed."
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
-	custom_price = 600
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer = 1,
-		/obj/item/bonesetter = 1,
-		/obj/item/reagent_containers/pill/patch/styptic = 2,
+		/obj/item/reagent_containers/pill/patch/styptic = 1,
 		/obj/item/storage/pill_bottle/trophazole = 1,
 		/obj/item/stack/medical/bone_gel = 1,
+		/obj/item/stack/sticky_tape/surgical = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/salacid = 1,
 	)
 	generate_items_inside(items_inside,src)
 
+//Advanced kit
 /obj/item/storage/firstaid/advanced
 	name = "advanced first aid kit"
 	desc = "An advanced kit to help deal with advanced wounds."
@@ -258,7 +255,6 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer = 1,
 		/obj/item/reagent_containers/pill/patch/synthflesh = 3,
 		/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
 		/obj/item/stack/medical/suture = 1,

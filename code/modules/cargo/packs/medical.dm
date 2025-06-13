@@ -6,6 +6,12 @@
 		First aid kits
 */
 
+/datum/supply_pack/medical/analyzer
+	name = "Health Analyzer"
+	desc = "An order for a single basic health analyzer."
+	cost = 125
+	contains = list(/obj/item/healthanalyzer)
+
 /datum/supply_pack/medical/firstaid_single
 	name = "First Aid Kit Single-Pack"
 	desc = "Contains one first aid kit for healing most types of wounds."
