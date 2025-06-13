@@ -2,7 +2,7 @@
 	unit_name = "raw meat"
 	desc = "People of the frontier need to eat too. Any slab does the trick."
 	cost = 10
-	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab, /obj/item/reagent_containers/food/snacks/meat/rawcrab, /obj/item/reagent_containers/food/snacks/fishmeat)
+	export_types = list(/obj/item/food/meat, /obj/item/food/fishmeat)
 
 /datum/export/hunting/stack/get_amount(obj/O)
 	if(!typesof(/obj/item/stack))
