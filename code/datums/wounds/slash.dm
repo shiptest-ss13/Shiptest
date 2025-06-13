@@ -243,8 +243,8 @@
 	occur_text = "is ripped open, veins spurting blood"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 1.5
-	minimum_flow = 2
+	initial_flow = 2
+	minimum_flow = 1.5
 	clot_rate = 0.06
 	threshold_minimum = 50
 	threshold_penalty = 25
@@ -259,8 +259,8 @@
 	occur_text = "is torn open, spraying blood wildly"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 2.5
-	minimum_flow = 2.5
+	initial_flow = 3
+	minimum_flow = 2.25
 	clot_rate = -0.05 // critical cuts actively get worse instead of better
 	threshold_minimum = 80
 	threshold_penalty = 40

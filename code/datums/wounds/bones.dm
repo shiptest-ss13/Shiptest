@@ -80,13 +80,13 @@
 
 	regen_ticks_current++
 	if(victim.body_position == LYING_DOWN)
-		if(prob(50))
+		if(prob(30))
 			regen_ticks_current += 1
-		if(victim.IsSleeping() && prob(50))
+		if(victim.IsSleeping() && prob(30))
 			regen_ticks_current += 1
 
 	if(!is_bone_creature && DT_PROB(severity * 1.5, delta_time)) //why
-		victim.take_bodypart_damage(rand(1, severity * 2), stamina=rand(2, severity * 2.5), wound_bonus=CANT_WOUND)
+		victim.take_bodypart_damage(rand(1, severity * 2), stamina = rand(2, severity * 2.5), wound_bonus = CANT_WOUND)
 		if(prob(33))
 			to_chat(victim, span_danger("You feel a sharp pain in your body as your bones are reforming!"))
 
@@ -408,7 +408,7 @@
 	treatable_by = list(/obj/item/stack/sticky_tape/surgical, /obj/item/stack/medical/bone_gel)
 	status_effect_type = /datum/status_effect/wound/blunt/critical
 	brain_trauma_group = BRAIN_TRAUMA_SEVERE
-	trauma_cycle_cooldown = 2.5 MINUTES
+	trauma_cycle_cooldown = 5 MINUTES
 	internal_bleeding_chance = 60
 	wound_flags = (BONE_WOUND | ACCEPTS_SPLINT | MANGLES_BONE)
 	regen_ticks_needed = 240 // ticks every 2 seconds, 480 seconds, so roughly 8 minutes default

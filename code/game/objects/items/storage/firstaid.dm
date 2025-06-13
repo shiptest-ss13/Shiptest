@@ -11,7 +11,7 @@
 
 /obj/item/storage/firstaid
 	name = "first-aid kit"
-	desc = "It's an emergency medical kit for those serious boo-boos."
+	desc = "An emergency medical aid kit."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
@@ -20,8 +20,10 @@
 	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	throw_speed = 3
 	throw_range = 7
+	/// If the medkit starts empty or not
 	var/empty = FALSE
-	var/damagetype_healed //defines damage type of the medkit. General ones stay null. Used for medibot healing bonuses
+	/// Defines damage type of the medkit. General ones stay null. Used for medibot healing bonuses
+	var/damagetype_healed
 
 /obj/item/storage/firstaid/ComponentInitialize()
 	. = ..()
@@ -40,14 +42,15 @@
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/suture = 2,
 		/obj/item/stack/medical/mesh = 2,
-		/obj/item/reagent_containers/hypospray/medipen = 1)
+		/obj/item/reagent_containers/hypospray/medipen = 1,
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/medical
 	name = "medical aid kit"
 	icon_state = "firstaid_surgery"
 	item_state = "firstaid"
-	desc = "A high capacity aid kit for doctors, full of medical supplies and basic surgical equipment"
+	desc = "A generic medical aid kit for treating a myriad of wounds."
 
 /obj/item/storage/firstaid/medical/ComponentInitialize()
 	. = ..()
@@ -102,8 +105,9 @@
 		/obj/item/implanter,
 		/obj/item/pinpointer/crew,
 		/obj/item/holosign_creator/medical,
-		/obj/item/stack/sticky_tape, //surgical tape
-		))
+		/obj/item/stack/sticky_tape,
+		/obj/item/stack/medical/bone_gel,
+	))
 
 /obj/item/storage/firstaid/medical/PopulateContents()
 	if(empty)
@@ -111,6 +115,7 @@
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
 		/obj/item/stack/medical/gauze/twelve = 1,
+		/obj/item/stack/medical/bruise_pack = 1
 		/obj/item/stack/medical/suture = 2,
 		/obj/item/stack/medical/mesh = 2,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
@@ -118,8 +123,8 @@
 		/obj/item/hemostat = 1,
 		/obj/item/cautery = 1,
 		/obj/item/healthanalyzer = 1,
-		/obj/item/storage/pill_bottle/tramal = 1
-		)
+		/obj/item/storage/pill_bottle/tramal = 1,
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
@@ -133,16 +138,13 @@
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/bruise_pack = 3,
-		/obj/item/stack/medical/ointment= 3)
+		/obj/item/stack/medical/ointment = 3,
+	)
 	generate_items_inside(items_inside,src)
-
-/obj/item/storage/firstaid/ancient/heirloom
-	desc = "A first aid kit with the ability to heal common types of injuries. You start thinking of the good old days just by looking at it."
-	empty = TRUE // long since been ransacked by hungry powergaming assistants breaking into med storage
 
 /obj/item/storage/firstaid/fire
 	name = "burn treatment kit"
-	desc = "A specialized medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
+	desc = "A specialized medical kit for treating severe burns.
 	icon_state = "ointment"
 	item_state = "firstaid-ointment"
 	damagetype_healed = BURN
@@ -152,10 +154,13 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
+		/obj/item/stack/medical/ointment = 2
+		/obj/item/stack/medical/mesh = 2
 		/obj/item/reagent_containers/pill/patch/silver_sulf = 4,
 		/obj/item/reagent_containers/spray/rhigoxane = 1,
 		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
-		/obj/item/reagent_containers/hypospray/medipen = 1)
+		/obj/item/reagent_containers/hypospray/medipen = 1,
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/toxin
@@ -210,7 +215,8 @@
 		/obj/item/reagent_containers/syringe/perfluorodecalin = 3,
 		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
-		/obj/item/storage/pill_bottle/iron = 1)
+		/obj/item/storage/pill_bottle/iron = 1,
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/brute
@@ -226,11 +232,14 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
+		/obj/item/bonesetter = 1,
 		/obj/item/reagent_containers/pill/patch/styptic = 2,
 		/obj/item/storage/pill_bottle/trophazole = 1,
+		/obj/item/stack/medical/bone_gel, = 1
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
-		/obj/item/reagent_containers/hypospray/medipen/salacid = 1)
+		/obj/item/reagent_containers/hypospray/medipen/salacid = 1,
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/advanced
@@ -252,15 +261,18 @@
 		/obj/item/healthanalyzer = 1,
 		/obj/item/reagent_containers/pill/patch/synthflesh = 3,
 		/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
+		/obj/item/stack/medical/suture = 1,
+		/obj/item/stack/medical/ointment = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/storage/pill_bottle/penacid = 1,
 		/obj/item/reagent_containers/glass/bottle/dimorlin = 1,
-		/obj/item/reagent_containers/syringe = 1)
+		/obj/item/reagent_containers/syringe = 1,
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/tactical
 	name = "combat medical kit"
-	desc = "I hope you've got insurance."
+	desc = "This one's red."
 	icon_state = "bezerk"
 
 /obj/item/storage/firstaid/tactical/ComponentInitialize()
@@ -302,6 +314,7 @@
 		A.set_skin("medibot_brute")
 	else if(istype(src, /obj/item/storage/firstaid/tactical))
 		A.set_skin("medibot_bezerk")
+
 	user.put_in_hands(A)
 	to_chat(user, span_notice("You add [S] to [src]."))
 	A.robot_arm = S.type

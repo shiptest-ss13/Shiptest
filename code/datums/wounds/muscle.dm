@@ -143,12 +143,12 @@
 	examine_desc = "appears unnaturally colored and swollen"
 	occur_text = "twists in pain, a muscle is torn!"
 	severity = WOUND_SEVERITY_MODERATE
-	interaction_efficiency_penalty = 1.5
-	limp_slowdown = 2
+	interaction_efficiency_penalty = 1.15
+	limp_slowdown = 1
 	threshold_minimum = 35
 	threshold_penalty = 15
 	status_effect_type = /datum/status_effect/wound/muscle/moderate
-	regen_ticks_needed = 90
+	regen_ticks_needed = 50
 
 //Severe (Ruptured Tendon)
 /datum/wound/muscle/severe
@@ -159,13 +159,13 @@
 	examine_desc = "is limp and awkwardly twitching, flesh swollen"
 	occur_text = "twists in pain and goes limp, a tendon is ruptured!"
 	severity = WOUND_SEVERITY_SEVERE
-	interaction_efficiency_penalty = 2
+	interaction_efficiency_penalty = 1.25
 	limp_slowdown = 5
-	threshold_minimum = 80
+	threshold_minimum = 90
 	threshold_penalty = 35
 	disabling = TRUE
 	status_effect_type = /datum/status_effect/wound/muscle/severe
-	regen_ticks_needed = 150
+	regen_ticks_needed = 200
 
 /datum/status_effect/wound/muscle
 

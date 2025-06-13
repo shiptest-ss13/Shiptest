@@ -1,4 +1,4 @@
-#define SELF_AID_REMOVE_DELAY 5 SECONDS
+#define SELF_AID_REMOVE_DELAY 3 SECONDS
 #define OTHER_AID_REMOVE_DELAY 2 SECONDS
 
 /datum/bodypart_aid
@@ -156,9 +156,9 @@
 	/// How much more can we absorb
 	var/absorption_capacity = 5
 	/// How fast do we absorb
-	var/absorption_rate = 0.12
+	var/absorption_rate = 0.15
 	/// How much does the gauze help with keeping infections clean
-	var/sanitisation_factor = 0.4
+	var/sanitisation_factor = 0.5
 	/// How much sanitisation we've got after we become fairly stained and worn
 	var/sanitisation_factor_stained = 0.8
 	/// Is it blood stained? For description
