@@ -331,6 +331,15 @@
 /obj/item/storage/backpack/satchel/flat/empty/PopulateContents()
 	return
 
+/obj/item/storage/backpack/satchel/flat/onehalftwo/PopulateContents()
+	new /obj/item/grenade/c4(src)
+	new /obj/item/grenade/c4(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
+	new /obj/item/clothing/mask/gas/syndicate(src)
+	new /obj/item/stack/telecrystal/five(src)
+	new /obj/item/storage/toolbox/syndicate(src)
+
+
 /*
 * Messenger Bag Types from Baystation
 */
