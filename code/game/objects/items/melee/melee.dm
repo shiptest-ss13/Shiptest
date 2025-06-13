@@ -102,7 +102,7 @@
 	var/homerun_ready = FALSE
 	var/homerun_able = FALSE
 
-obj/item/melee/baseball_bat/Initialize()
+/obj/item/melee/baseball_bat/Initialize()
 	. = ..()
 	AddElement(/datum/element/kneecapping)
 

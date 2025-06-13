@@ -616,18 +616,6 @@
 ///called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"
 
-// /mob/living/carbon physiology signals
-#define COMSIG_CARBON_GAIN_WOUND "carbon_gain_wound"				//from /datum/wound/proc/apply_wound() (/mob/living/carbon/C, /datum/wound/W, /obj/item/bodypart/L)
-#define COMSIG_CARBON_LOSE_WOUND "carbon_lose_wound"				//from /datum/wound/proc/remove_wound() (/mob/living/carbon/C, /datum/wound/W, /obj/item/bodypart/L)
-///from base of /obj/item/bodypart/proc/attach_limb(): (new_limb, special) allows you to fail limb attachment
-#define COMSIG_CARBON_ATTACH_LIMB "carbon_attach_limb"
-	#define COMPONENT_NO_ATTACH (1<<0)
-#define COMSIG_CARBON_REMOVE_LIMB "carbon_remove_limb" //from base of /obj/item/bodypart/proc/drop_limb(special, dismembered)
-#define COMSIG_BODYPART_GAUZED "bodypart_gauzed" // from /datum/bodypart_aid/gauze/New() //When a gauze is applied
-#define COMSIG_BODYPART_GAUZE_DESTROYED "bodypart_degauzed" // from /datum/bodypart_aid/gauze/Destroy() //When a gauze is removed
-#define COMSIG_BODYPART_SPLINTED "bodypart_splinted" // from /datum/bodypart_aid/splint/New() //When a splint is applied
-#define COMSIG_BODYPART_SPLINT_DESTROYED "bodypart_desplinted" // from /datum/bodypart_aid/gauze/Destroy() //When a splint is removed
-
 /// Admin helps
 /// From /datum/admin_help/RemoveActive().
 /// Fired when an adminhelp is made inactive either due to closing or resolving.

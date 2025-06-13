@@ -90,7 +90,7 @@
 		umsg += " as best as you can while [target.p_they()] [target.p_have()] clothing on"
 		tmsg += " as best as [user.p_they()] can while [target.p_they()] [target.p_have()] clothing on"
 	target.heal_bodypart_damage(brute_healed,burn_healed)
-	
+
 	umsg += get_progress(user, target, brute_healed, burn_healed)
 
 	display_results(user, target, "<span class='notice'>[umsg].</span>",

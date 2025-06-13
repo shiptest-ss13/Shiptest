@@ -43,7 +43,7 @@
 	wall_decon_damage = 50
 	wound_bonus = 10
 	bare_wound_bonus = 15
-	
+
 
 /obj/item/weldingtool/empty
 	start_full = FALSE

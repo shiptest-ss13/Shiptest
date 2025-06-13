@@ -299,7 +299,7 @@
 					var/obj/item/bodypart/body_part = bleeding_limbs[i]
 					bleed_text += " [body_part.name],"
 				bleed_text += " and [bleeding_limbs[num_bleeds].name]"
-		
+
 		if(appears_dead)
 			bleed_text += ", but it has pooled and is not flowing.</span></B>\n"
 		else

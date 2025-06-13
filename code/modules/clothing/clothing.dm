@@ -130,7 +130,7 @@
 
 	for(var/trait in clothing_traits)
 		REMOVE_CLOTHING_TRAIT(user, trait)
-	
+
 	if(wearer?.resolve())
 		wearer = null
 

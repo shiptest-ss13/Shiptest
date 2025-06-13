@@ -115,7 +115,7 @@
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
 		/obj/item/stack/medical/gauze/twelve = 1,
-		/obj/item/stack/medical/bruise_pack = 1
+		/obj/item/stack/medical/bruise_pack = 1,
 		/obj/item/stack/medical/suture = 2,
 		/obj/item/stack/medical/mesh = 2,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
@@ -144,7 +144,7 @@
 
 /obj/item/storage/firstaid/fire
 	name = "burn treatment kit"
-	desc = "A specialized medical kit for treating severe burns.
+	desc = "A specialized medical kit for treating severe burns."
 	icon_state = "ointment"
 	item_state = "firstaid-ointment"
 	damagetype_healed = BURN
@@ -154,8 +154,8 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/healthanalyzer = 1,
-		/obj/item/stack/medical/ointment = 2
-		/obj/item/stack/medical/mesh = 2
+		/obj/item/stack/medical/ointment = 2,
+		/obj/item/stack/medical/mesh = 2,
 		/obj/item/reagent_containers/pill/patch/silver_sulf = 4,
 		/obj/item/reagent_containers/spray/rhigoxane = 1,
 		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
@@ -235,7 +235,7 @@
 		/obj/item/bonesetter = 1,
 		/obj/item/reagent_containers/pill/patch/styptic = 2,
 		/obj/item/storage/pill_bottle/trophazole = 1,
-		/obj/item/stack/medical/bone_gel, = 1
+		/obj/item/stack/medical/bone_gel = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/salacid = 1,
