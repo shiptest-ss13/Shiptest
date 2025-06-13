@@ -26,10 +26,19 @@
 	ricochet_chance = 30
 	ricochet_decay_damage = 0.5 //shouldnt being reliable, but deadly enough to be careful if you accidentally hit an ally
 	shrapnel_type = /obj/item/shrapnel/bullet
-	embedding = list(embed_chance=15, fall_chance=2, jostle_chance=0, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.5, pain_mult=3, rip_time=10)
 	wound_falloff_tile = -2
 	embed_falloff_tile = -5
-	wound_bonus = -20
+	wound_bonus = -10
+
+	embedding = list(
+		embed_chance = 15,
+		fall_chance = 2,
+		jostle_chance = 0,
+		ignore_throwspeed_threshold = TRUE,
+		pain_stam_pct = 0.5,
+		pain_mult = 3, 
+		rip_time = 10,
+	)
 
 /obj/projectile/bullet/smite
 	name = "divine retribution"
