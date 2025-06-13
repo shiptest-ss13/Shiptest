@@ -20,7 +20,7 @@
 	lifespan = 60
 	endurance = 25
 	yield = 6
-	potency = 5
+	potency = 10
 	icon_dead = "ambrosia-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/ambrosia/deus)
