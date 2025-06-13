@@ -222,6 +222,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["pda_style"], pda_style)
 	READ_FILE(S["pda_color"], pda_color)
 	READ_FILE(S["whois_visible"], whois_visible)
+	READ_FILE(S["tgui_input"], tgui_input)
+	READ_FILE(S["large_tgui_buttons"], large_tgui_buttons)
+	READ_FILE(S["swapped_tgui_buttons"], swapped_tgui_buttons)
 
 	READ_FILE(S["show_credits"], show_credits)
 
@@ -372,6 +375,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
 	WRITE_FILE(S["whois_visible"], whois_visible)
 	WRITE_FILE(S["hearted_until"], (hearted_until > world.realtime ? hearted_until : null))
+	WRITE_FILE(S["large_tgui_buttons"], large_tgui_buttons)
+	WRITE_FILE(S["swapped_tgui_buttons"], swapped_tgui_buttons)
+	WRITE_FILE(S["tgui_input"], tgui_input)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)

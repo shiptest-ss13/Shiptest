@@ -38,12 +38,19 @@
 	max_integrity = 140
 	integrity_failure = 0.6
 
+/obj/machinery/porta_turret/ruin/ramzi/light/bonnie
+	lethal = TRUE
+
+/obj/machinery/porta_turret/ruin/ramzi/light/bonnie/Initialize()
+	. = ..()
+	take_damage(rand(120, 150),BRUTE)
+
 /obj/machinery/porta_turret/ruin/ramzi/heavy
 	name = "Revolt Turret"
 	desc = "A durable turret manufactured by the Gorlex Marauders during the ICW. Some reported examples used anti-vehicle munitions. Most surviving examples are poorly maintained."
-	stun_projectile = /obj/projectile/bullet/a75clip/rubber
+	stun_projectile = /obj/projectile/bullet/a65clip/rubber
 	stun_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
-	lethal_projectile = /obj/projectile/bullet/a75clip
+	lethal_projectile = /obj/projectile/bullet/a65clip
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
 	scan_range = 12
 	shot_delay = 20
@@ -110,3 +117,39 @@
 	scan_range = 8
 	burst_size = 6
 	burst_delay = 2
+
+/* Nanotrasen Derelict Turrets */
+
+/obj/machinery/porta_turret/ruin/nt
+	name = "Sharplite Defense Turret"
+	desc = "A cheap and effective turret designed by Sharplite and purchased and installed on most Nanotrasen Vessels."
+	faction = list(FACTION_PLAYER_NANOTRASEN, "turret")
+	max_integrity = 160
+	integrity_failure = 0.6
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+	stun_projectile = /obj/projectile/beam/disabler/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+	shot_delay = 10
+	scan_range = 10
+
+/obj/machinery/porta_turret/ruin/nt/light
+	name = "Sharplite LDS"
+	desc = "A cheap and effective 'defensive system' designed by Sharplite for installation on Nanotrasen vessels."
+	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+
+/obj/machinery/porta_turret/ruin/nt/light/sniper
+	name = "Sharplite Long-Range LDS"
+	desc = "A long-ranged 'defensive system' designed by Sharplite for installation on Nanotrasen stations."
+	stun_projectile = /obj/projectile/beam/disabler/weak/sharplite
+	lethal_projectile = /obj/projectile/beam/laser/light/sharplite
+	lethal_projectile_sound = 'sound/weapons/gun/laser/nt-fire.ogg'
+	stun_projectile_sound = 'sound/weapons/taser2.ogg'
+	shot_delay = 15
+	burst_size = 2
+	burst_delay = 3
