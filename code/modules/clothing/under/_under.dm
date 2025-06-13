@@ -11,7 +11,6 @@
 	equip_sound = 'sound/items/equip/jumpsuit_equip.ogg'
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
-	limb_integrity = 30
 	cuttable = TRUE
 	clothamnt = 3
 	greyscale_colors = list(list(15, 17), list(10, 19), list(15, 10))

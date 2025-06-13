@@ -12,7 +12,6 @@
 	blood_overlay_type = "suit"
 	var/togglename = null
 	var/suittoggled = FALSE
-	limb_integrity = 0 // disabled for most exo-suits
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo //WS Edit - Exowear Pockets
 	greyscale_colors = list(list(13, 16), list(10, 18), list(13, 21))
 	greyscale_icon_state = "coat"

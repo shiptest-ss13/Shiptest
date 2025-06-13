@@ -517,10 +517,6 @@
 		for(var/obj/item/clothing/C as anything in clothing)
 			// unlike normal armor checks, we tabluate these piece-by-piece manually so we can also pass on appropriate damage the clothing's limbs if necessary
 			armor_ablation += C.armor.getRating("wound")
-			if(wounding_type == WOUND_SLASH)
-				C.take_damage_zone(body_zone, damage, BRUTE)
-			else if(wounding_type == WOUND_BURN && damage >= 10) // lazy way to block freezing from shredding clothes without adding another var onto apply_damage()
-				C.take_damage_zone(body_zone, damage, BURN)
 
 		if(!armor_ablation)
 			injury_mod += bare_wound_bonus
