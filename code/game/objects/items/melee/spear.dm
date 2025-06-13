@@ -116,5 +116,5 @@
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
 		user.say("[war_cry]", forced="spear warcry")
 		explosive.forceMove(AM)
-		explosive.prime(lanced_by=user)
+		explosive.prime()
 		qdel(src)
