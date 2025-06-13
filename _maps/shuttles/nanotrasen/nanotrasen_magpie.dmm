@@ -112,19 +112,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "bm" = (
-/obj/structure/crate_shelf,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+/obj/structure/closet/crate/secure/engineering{
+	name = "breaching equipment"
+	},
+/obj/item/gear_pack/anglegrinder,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/crate/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/storage/firstaid/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/geiger_counter,
-/obj/item/geiger_counter,
-/obj/item/geiger_counter,
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "bx" = (
@@ -979,15 +977,6 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/borderfloor/corner,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/closet/crate/secure/engineering{
-	name = "breaching equipment"
-	},
-/obj/item/gear_pack/anglegrinder,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "qH" = (
@@ -1507,6 +1496,17 @@
 /obj/item/stamp/nanotrasen/officer,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"vw" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/machinery/recharge_station,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "vy" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1856,16 +1856,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/crate/eva,
-/obj/item/clothing/suit/space/eva,
-/obj/item/clothing/suit/space/eva,
-/obj/item/tank/internals/oxygen,
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/head/helmet/space/eva,
-/obj/item/clothing/head/helmet/space/eva,
-/obj/effect/mapping_helpers/crate_shelve{
-	range = 2
-	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "AL" = (
@@ -2096,10 +2086,13 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
 "CA" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/recharge_station,
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "CB" = (
@@ -2202,14 +2195,12 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Dx" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/crate/trashcart,
-/obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/pushbroom,
-/obj/item/storage/bag/trash,
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "DE" = (
@@ -2543,6 +2534,26 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"HE" = (
+/obj/structure/crate_shelf,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/structure/closet/crate/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/storage/firstaid/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/geiger_counter,
+/obj/item/geiger_counter,
+/obj/item/geiger_counter,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "HN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2677,6 +2688,20 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
+/area/ship/cargo)
+"Jq" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/structure/closet/crate/trashcart,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/pushbroom,
+/obj/item/storage/bag/trash,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 10
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Kk" = (
 /turf/closed/wall/mineral/titanium,
@@ -3116,11 +3141,22 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/engineering/engines/starboard)
 "Px" = (
-/obj/structure/crate_shelf,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+/obj/structure/closet/crate/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/effect/mapping_helpers/crate_shelve{
+	range = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/crate/freezer/blood,
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "Qk" = (
@@ -3553,6 +3589,18 @@
 /obj/structure/bed/bunk,
 /turf/open/floor/carpet/cyan,
 /area/ship/crew/dorm)
+"WR" = (
+/obj/structure/crate_shelf,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/closet/crate/freezer/blood,
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ship/cargo)
 "WY" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -3965,14 +4013,14 @@ Xx
 zv
 ZD
 wD
+tG
 Ag
 Ag
 Ag
 Ag
 Ag
 Ag
-Ag
-Ag
+Pm
 Fe
 eY
 XX
@@ -3987,15 +4035,15 @@ gp
 xf
 Ia
 ZD
-ZD
-tG
+Bv
+Bv
 Ug
 Ag
 Ag
 Ag
 Ag
 Ug
-Pm
+Bv
 Bv
 OD
 OD
@@ -4010,16 +4058,16 @@ iq
 hs
 lU
 ZD
-Bv
-Bv
+vw
+Jq
 Bv
 HP
 VS
 xg
 NP
 Bv
-Bv
-Bv
+HE
+WR
 oy
 Om
 Ve
