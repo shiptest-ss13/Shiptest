@@ -218,6 +218,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "roachsub";
+	dir = 1
+	},
+/obj/structure/cable,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/security)
 "cZ" = (
@@ -303,6 +308,17 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/directional/west,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "ew" = (
@@ -435,6 +451,7 @@
 /obj/item/clothing/head/helmet/space/syndicate/black,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/tank/internals/emergency_oxygen,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "fQ" = (
@@ -674,7 +691,7 @@
 	pixel_y = 7;
 	id = "fleadoor";
 	dir = 1;
-	name = "roach door control"
+	name = "departures door control"
 	},
 /obj/item/paper_bin{
 	pixel_x = -7;
@@ -684,13 +701,14 @@
 	pixel_x = -7;
 	pixel_y = 4
 	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = 10;
+	pixel_y = -2;
+	id = "roachsub"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "jU" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
@@ -700,6 +718,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -764,13 +786,13 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/hallway/central)
 "kN" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "4-10"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -941,6 +963,15 @@
 	pixel_y = 10
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = -1;
+	dir = 8;
+	id = "roachshower";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "Bathroom Lock"
+	},
 /turf/open/floor/plating/rust,
 /area/ship/crew/toilet)
 "nY" = (
@@ -1008,6 +1039,11 @@
 	},
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/light_switch{
+	pixel_x = -20;
+	pixel_y = -10;
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "pl" = (
@@ -1403,7 +1439,12 @@
 	pixel_x = 6;
 	pixel_y = 0;
 	id = "fleadoor";
-	name = "roach door control"
+	name = "departures door control"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -3;
+	pixel_y = -2;
+	id = "roachsub"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -1461,13 +1502,12 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/machinery/door/airlock/grunge{
-	name = "Bridge";
-	dir = 4;
-	req_access_txt = "19"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/grunge{
+	name = "Mess";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/canteen)
@@ -1658,7 +1698,7 @@
 	pixel_x = 0;
 	pixel_y = -21;
 	req_access_txt = "1";
-	id = "fireflysuit";
+	id = "roachsuit";
 	dir = 1;
 	name = "shutter control"
 	},
@@ -2266,56 +2306,40 @@
 /obj/structure/closet/wall/red/directional/north{
 	name = "Armor"
 	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = -4;
-	pixel_y = -6
-	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 8;
-	pixel_y = -6
-	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/clothing/suit/armor/vest/bulletproof{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_x = -10;
-	pixel_y = -13
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_x = 0;
-	pixel_y = -14
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_x = 6;
-	pixel_y = -14
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11{
-	pixel_x = 14;
-	pixel_y = -14
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = -14;
-	pixel_y = 7
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = -14;
-	pixel_y = -2
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 17;
-	pixel_y = -3
-	},
-/obj/item/clothing/suit/armor/vest/alt{
-	pixel_x = 17;
-	pixel_y = 5
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/item/clothing/suit/armor/vest/syndie{
+	pixel_x = -10;
+	pixel_y = -9
+	},
+/obj/item/clothing/suit/armor/vest/syndie{
+	pixel_x = -2;
+	pixel_y = -9
+	},
+/obj/item/clothing/suit/armor/vest/syndie{
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/obj/item/clothing/suit/armor/vest/syndie{
+	pixel_x = 12;
+	pixel_y = -9
+	},
+/obj/item/clothing/head/helmet/syndie{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/obj/item/clothing/head/helmet/syndie{
+	pixel_x = 0;
+	pixel_y = 3
+	},
+/obj/item/clothing/head/helmet/syndie{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/clothing/head/helmet/syndie{
+	pixel_x = 11;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -2351,13 +2375,13 @@
 /obj/structure/sink/kitchen{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "FE" = (
@@ -2541,6 +2565,7 @@
 	pixel_x = 8;
 	pixel_y = -16
 	},
+/obj/item/paper/crumpled/fluff/prisoners,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Ih" = (
@@ -2586,6 +2611,11 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light/floor,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
+/obj/item/tank/internals/emergency_oxygen,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "II" = (
@@ -2624,12 +2654,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/prison)
 "IS" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
+	},
 /turf/open/floor/wood/walnut{
 	color = "#543c30";
 	icon_state = "wood-broken3"
@@ -3260,6 +3290,7 @@
 /obj/item/clothing/head/helmet/space/syndicate/black,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/tank/internals/emergency_oxygen,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "QG" = (
@@ -3275,12 +3306,13 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/machinery/door/airlock/grunge{
-	name = "Mess";
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/grunge{
+	name = "Bridge";
+	dir = 4;
+	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -3387,7 +3419,8 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	name = "Wash"
+	name = "Wash";
+	id_tag = "roachshower"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3750,10 +3783,6 @@
 	},
 /area/ship/crew/canteen)
 "Vn" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3763,6 +3792,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#332521";
+	dir = 1
 	},
 /turf/open/floor/wood/walnut{
 	color = "#543c30";
@@ -3935,6 +3968,15 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "roachsub"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/security)
 "XY" = (
@@ -4032,10 +4074,21 @@
 	dir = 8;
 	color = "#912a2a"
 	},
-/obj/machinery/light_switch{
-	pixel_x = -20;
-	pixel_y = 9;
-	dir = 4
+/obj/structure/closet/wall/red/directional/west{
+	name = "jetpacks"
+	},
+/obj/item/tank/jetpack/oxygen/harness{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/tank/jetpack/oxygen/harness{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/tank/jetpack/oxygen/harness{
+	pixel_x = 0;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
