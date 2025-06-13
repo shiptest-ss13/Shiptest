@@ -199,8 +199,8 @@
 
 	if(bait)
 		var/bait_state = "worm_overlay" //default to worm overlay for anything without specific one
-		if(istype(bait, /obj/item/reagent_containers/food/snacks/bait))
-			var/obj/item/reagent_containers/food/snacks/bait/real_bait = bait
+		if(istype(bait, /obj/item/food/bait))
+			var/obj/item/food/bait/real_bait = bait
 			bait_state = real_bait.rod_overlay_icon_state
 		. += bait_state
 
@@ -359,7 +359,7 @@
 
 /obj/item/fishing_rod/tech/Initialize(mapload)
 	. = ..()
-	var/obj/item/reagent_containers/food/snacks/bait/doughball/synthetic/infinite_supply_of_bait = new(src)
+	var/obj/item/food/bait/doughball/synthetic/infinite_supply_of_bait = new(src)
 	bait = infinite_supply_of_bait
 	update_appearance()
 

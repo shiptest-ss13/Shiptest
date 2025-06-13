@@ -13,7 +13,7 @@
 /datum/crafting_recipe/food/cheesyburrito
 	name ="Cheesy burrito"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/obj/item/food/cheese/wedge = 2,
 		/obj/item/food/tortilla = 1,
 		/obj/item/food/grown/soybeans = 1
 	)
@@ -53,7 +53,7 @@
 	name ="Cheesy nachos"
 	reqs = list(
 		/datum/reagent/consumable/sodiumchloride = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/food/cheese/wedge = 1,
 		/obj/item/food/tortilla = 1
 	)
 	result = /obj/item/food/cheesynachos
@@ -73,7 +73,7 @@
 	name ="Classic Taco"
 	reqs = list(
 		/obj/item/food/tortilla = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/food/cheese/wedge = 1,
 		/obj/item/food/meat/cutlet = 1,
 		/obj/item/food/grown/cabbage = 1,
 	)
@@ -84,7 +84,7 @@
 	name ="Plain Taco"
 	reqs = list(
 		/obj/item/food/tortilla = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/food/cheese/wedge = 1,
 		/obj/item/food/meat/cutlet = 1,
 	)
 	result = /obj/item/food/taco/plain
