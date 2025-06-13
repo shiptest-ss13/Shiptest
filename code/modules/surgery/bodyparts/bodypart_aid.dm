@@ -218,6 +218,7 @@
 		absorption_capacity -= amount
 	else
 		return FALSE
+
 	//If our remaining absorption capacity is low, make so blood and pus stains show
 	if(absorption_capacity < 2)
 		sanitisation_factor = sanitisation_factor_stained

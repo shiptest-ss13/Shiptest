@@ -20,10 +20,8 @@
 	var/minimum_flow
 	/// How much our blood_flow will naturally decrease per tick, not only do larger cuts bleed more blood faster, they clot slower (higher number = clot quicker, negative = opening up)
 	var/clot_rate
-
 	/// Once the blood flow drops below minimum_flow, we demote it to this type of wound. If there's none, we're all better
 	var/demotes_to
-
 	/// The maximum flow we've had so far
 	var/highest_flow
 
@@ -70,7 +68,7 @@
 	// compare with being at 100 brute damage before, where you bled (brute/100 * 2), = 2 blood per tile
 	var/bleed_amt = min(blood_flow * 0.1, 1) // 3 * 3 * 0.1 = 0.9 blood total, less than before! the share here is .3 blood of course.
 
-	if(limb.current_gauze && limb.current_gauze.seep_gauze(bleed_amt * 0.33, GAUZE_STAIN_BLOOD)) // gauze stops all bleeding from dragging on this limb, but wears the gauze out quicker
+	if(limb.current_gauze && limb.current_gauze.seep_gauze(bleed_amt * 0.25, GAUZE_STAIN_BLOOD)) // gauze stops all bleeding from dragging on this limb, but wears the gauze out quicker
 		return
 
 	return bleed_amt
@@ -156,13 +154,16 @@
 		span_warning("[user] begins aiming [lasgun] directly at [victim]'s [limb.name]..."),
 		span_userdanger("You begin aiming [lasgun] directly at [user == victim ? "your" : "[victim]'s"] [limb.name]..."),
 	)
+
 	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
+
 	var/damage = lasgun.chambered.BB.damage
 	lasgun.chambered.BB.wound_bonus -= 30
 	lasgun.chambered.BB.damage *= self_penalty_mult
 	if(!lasgun.process_fire(victim, victim, TRUE, null, limb.body_zone))
 		return
+
 	victim.emote("scream")
 	blood_flow -= damage / (5 * self_penalty_mult) // 20 / 5 = 4 bloodflow removed, p good
 	victim.visible_message(span_warning("The cuts on [victim]'s [limb.name] scar over!"))
@@ -170,8 +171,7 @@
 /// If someone is using either a cautery tool or something with heat to cauterize this cut
 /datum/wound/slash/proc/tool_cauterize(obj/item/I, mob/user)
 	var/improv_penalty_mult = (I.tool_behaviour == TOOL_CAUTERY ? 1 : 1.25) // 25% longer and less effective if you don't use a real cautery
-	var/self_penalty_mult = (user == victim ? 1.5 : 1) // 50% longer and less effective if you do it to yourself
-
+	var/self_penalty_mult = (user == victim ? 1.2 : 1)
 	user.visible_message(
 		span_danger("[user] begins cauterizing [victim]'s [limb.name] with [I]..."),
 		span_warning("You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."),
@@ -184,8 +184,10 @@
 		span_green("You cauterize some of the bleeding on [victim]."),
 	)
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
-	if(prob(30))
+
+	if(prob(15))
 		victim.emote("scream")
+
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
 	blood_flow -= blood_cauterized
 
@@ -196,7 +198,7 @@
 
 /// If someone is using a suture to close this cut
 /datum/wound/slash/proc/suture(obj/item/stack/medical/suture/I, mob/user)
-	var/self_penalty_mult = (user == victim ? 1.4 : 1)
+	var/self_penalty_mult = (user == victim ? 1 : 1)
 	user.visible_message(
 		span_notice("[user] begins stitching [victim]'s [limb.name] with [I]..."),
 		span_notice("You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."),
@@ -218,7 +220,6 @@
 	else if(demotes_to)
 		to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
 
-
 /datum/wound/slash/moderate
 	name = "Rough Abrasion"
 	desc = "Patient's skin has been badly scraped, generating moderate blood loss."
@@ -227,7 +228,7 @@
 	occur_text = "is cut open, slowly leaking blood"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 2
+	initial_flow = 0.75
 	minimum_flow = 0.5
 	clot_rate = 0.12
 	threshold_minimum = 20
@@ -242,8 +243,8 @@
 	occur_text = "is ripped open, veins spurting blood"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 3.25
-	minimum_flow = 2.75
+	initial_flow = 1.5
+	minimum_flow = 2
 	clot_rate = 0.06
 	threshold_minimum = 50
 	threshold_penalty = 25
@@ -258,8 +259,8 @@
 	occur_text = "is torn open, spraying blood wildly"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 4.25
-	minimum_flow = 4
+	initial_flow = 2.5
+	minimum_flow = 2.5
 	clot_rate = -0.05 // critical cuts actively get worse instead of better
 	threshold_minimum = 80
 	threshold_penalty = 40

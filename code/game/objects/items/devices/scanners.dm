@@ -13,8 +13,7 @@ GENE SCANNER
 // Describes the two modes of scanning available for health analyzers
 #define SCANMODE_HEALTH 0
 #define SCANMODE_CHEMICAL 1
-#define SCANMODE_WOUND 2
-#define SCANNER_VERBOSE 3
+#define SCANNER_VERBOSE 2
 
 /obj/item/t_scanner
 	name = "\improper T-ray scanner"
@@ -112,10 +111,6 @@ GENE SCANNER
 			to_chat(user, span_notice("You switch the health analyzer to scan chemical contents."))
 			icon_state = reagentmode
 			item_state = reagentmodeinhand
-		if(SCANMODE_WOUND)
-			to_chat(user, span_notice("You switch the health analyzer to report extra info on wounds."))
-			icon_state = healthmode
-			item_state = healthmodeinhand
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	flick("[icon_state]-anim", src) //makes it so that it plays the scan animation upon scanning, including clumsy scanning
@@ -868,6 +863,4 @@ GENE SCANNER
 
 #undef SCANMODE_HEALTH
 #undef SCANMODE_CHEMICAL
-#undef SCANMODE_WOUND
-#undef SCANNER_CONDENSED
 #undef SCANNER_VERBOSE

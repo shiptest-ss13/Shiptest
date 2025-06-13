@@ -81,6 +81,7 @@
 
 /obj/item/stack/tape
 	name = "packaging tape"
+	singular_name = "packaging tape"
 	desc = "Sticks things together with minimal effort."
 	icon = 'icons/obj/tapes.dmi'
 	icon_state = "tape"

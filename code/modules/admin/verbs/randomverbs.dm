@@ -844,12 +844,6 @@
 	for(var/mob/living/carbon/M in GLOB.mob_list)
 		immerse_player(M, toggle=FALSE, remove=remove)
 
-/proc/pie_smite(mob/living/target)
-	if(QDELETED(target))
-		return
-	var/obj/item/food/pie/cream/creamy = new(get_turf(target))
-	creamy.splat(target)
-
 /client/proc/toggle_hub()
 	set category = "Server"
 	set name = "Toggle Hub"
@@ -1082,20 +1076,19 @@
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
 		return
 
-	var/list/punishment_list = list(
-		ADMIN_PUNISHMENT_LIGHTNING,
-		ADMIN_PUNISHMENT_BRAINDAMAGE,
-		ADMIN_PUNISHMENT_GIB,
-		ADMIN_PUNISHMENT_BSA,
-		ADMIN_PUNISHMENT_FIREBALL,
-		ADMIN_PUNISHMENT_SUPPLYPOD_QUICK,
-		ADMIN_PUNISHMENT_SUPPLYPOD,
-		ADMIN_PUNISHMENT_MAZING,
-		ADMIN_PUNISHMENT_CRACK,
-		ADMIN_PUNISHMENT_BLEED,
-		ADMIN_PUNISHMENT_PERFORATE,
-		ADMIN_PUNISHMENT_SHOES,
-	)
+var/list/punishment_list = list(
+	ADMIN_PUNISHMENT_LIGHTNING,
+	ADMIN_PUNISHMENT_BRAINDAMAGE,
+	ADMIN_PUNISHMENT_GIB,
+	ADMIN_PUNISHMENT_BSA,
+	ADMIN_PUNISHMENT_FIREBALL,
+	ADMIN_PUNISHMENT_SUPPLYPOD_QUICK,
+	ADMIN_PUNISHMENT_SUPPLYPOD,
+	ADMIN_PUNISHMENT_MAZING,
+	ADMIN_PUNISHMENT_CRACK,
+	ADMIN_PUNISHMENT_BLEED,
+	ADMIN_PUNISHMENT_PERFORATE,
+)
 
 	var/punishment = input("Choose a punishment", "mods kill this guy") as null|anything in sortList(punishment_list)
 
@@ -1185,7 +1178,6 @@
 				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
 
-		
 		if(ADMIN_PUNISHMENT_PERFORATE)
 			if(!iscarbon(target))
 				to_chat(usr, span_warning("This must be used on a carbon mob."), confidential = TRUE)
@@ -1264,7 +1256,7 @@
 	admin_ticket_log(whom, msg)
 	log_admin("[key_name(usr)] punished [key_name(whom)] with [punishment].")
 
-/client/proc/cmd_admin_check_player_exp()	//Allows admins to determine who the newer players are.
+/client/proc/cmd_admin_check_player_exp() //Allows admins to determine who the newer players are.
 	set category = "Admin"
 	set name = "Player Playtime"
 	if(!check_rights(R_ADMIN))

@@ -85,7 +85,7 @@
 		if(victim.IsSleeping() && prob(50))
 			regen_ticks_current += 1
 
-	if(!is_bone_creature && DT_PROB(severity * 1.5, delta_time))
+	if(!is_bone_creature && DT_PROB(severity * 1.5, delta_time)) //why
 		victim.take_bodypart_damage(rand(1, severity * 2), stamina=rand(2, severity * 2.5), wound_bonus=CANT_WOUND)
 		if(prob(33))
 			to_chat(victim, span_danger("You feel a sharp pain in your body as your bones are reforming!"))
@@ -109,7 +109,7 @@
 		// And you have a 70% or 50% chance to actually land the blow, respectively
 		if(prob(70 - 20 * (severity - 1)))
 			to_chat(victim, span_userdanger("The fracture in your [limb.name] shoots with pain as you strike [target]!"))
-			limb.receive_damage(brute = rand(1,5))
+			limb.receive_damage(brute = rand(1,2))
 		else
 			victim.visible_message(
 				span_danger("[victim] weakly strikes [target] with [victim.p_their()] broken [limb.name], recoiling from pain!"),
@@ -118,7 +118,7 @@
 			)
 			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
 			victim.Stun(0.5 SECONDS)
-			limb.receive_damage(brute = rand(3,7))
+			limb.receive_damage(brute = rand(1,2))
 			return COMPONENT_NO_ATTACK_HAND
 
 
@@ -231,8 +231,8 @@
 	occur_text = "janks violently and becomes unseated"
 	severity = WOUND_SEVERITY_MODERATE
 	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	interaction_efficiency_penalty = 1.3
-	limp_slowdown = 3
+	interaction_efficiency_penalty = 1.2
+	limp_slowdown = 2.25
 	limp_chance = 50
 	threshold_minimum = 35
 	threshold_penalty = 15
@@ -294,7 +294,7 @@
 		)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] back into place!"))
 		victim.emote("scream")
-		limb.receive_damage(brute = 20, wound_bonus = CANT_WOUND)
+		limb.receive_damage(brute = 5, wound_bonus = CANT_WOUND)
 		qdel(src)
 	else
 		user.visible_message(
@@ -321,7 +321,7 @@
 		)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] with a sickening crack!"))
 		victim.emote("scream")
-		limb.receive_damage(brute = 25, wound_bonus = 30)
+		limb.receive_damage(brute = 20, wound_bonus = 40)
 	else
 		user.visible_message(
 			span_danger("[user] wrenches [victim]'s dislocated [limb.name] around painfully!"),
@@ -329,7 +329,7 @@
 			ignored_mobs = victim,
 		)
 		to_chat(victim, span_userdanger("[user] wrenches your dislocated [limb.name] around painfully!"))
-		limb.receive_damage(brute = 10, wound_bonus = CANT_WOUND)
+		limb.receive_damage(brute = 10, wound_bonus = 10)
 		malpractice(user)
 
 /datum/wound/blunt/moderate/treat(obj/item/I, mob/user)
@@ -348,13 +348,13 @@
 		return
 
 	if(victim == user)
-		limb.receive_damage(brute = 15, wound_bonus = CANT_WOUND)
+		limb.receive_damage(brute = 5, wound_bonus = CANT_WOUND)
 		victim.visible_message(
 			span_danger("[user] finishes resetting [victim.p_their()] [limb.name]!"),
 			span_userdanger("You reset your [limb.name]!"),
 		)
 	else
-		limb.receive_damage(brute = 10, wound_bonus = CANT_WOUND)
+		limb.receive_damage(brute = 5, wound_bonus = CANT_WOUND)
 		user.visible_message(
 			span_danger("[user] finishes resetting [victim]'s [limb.name]!"),
 			span_nicegreen("You finish resetting [victim]'s [limb.name]!"),
@@ -423,6 +423,7 @@
 /// if someone is using bone gel on our wound
 /datum/wound/blunt/proc/gel(obj/item/stack/medical/bone_gel/I, mob/user)
 	// skellies get treated nicer with bone gel since their "reattach dismembered limbs by hand" ability sucks when it's still critically wounded
+	// i hate you
 	if(gelled)
 		to_chat(user, span_warning("[user == victim ? "Your" : "[victim]'s"] [limb.name] is already coated with bone gel!"))
 		return
@@ -458,7 +459,7 @@
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
 			painkiller_bonus += 20
 
-		if(prob(25 + (20 * (severity - 2)) - painkiller_bonus)) // 25%/45% chance to fail self-applying with severe and critical wounds, modded by painkillers
+		if(prob(15 + (10 * (severity - 2)) - painkiller_bonus))
 			victim.visible_message(
 				span_danger("[victim] fails to finish applying [I] to [victim.p_their()] [limb.name], passing out from the pain!"),
 				span_notice("You pass out from the pain of applying [I] to your [limb.name] before you can finish!"),

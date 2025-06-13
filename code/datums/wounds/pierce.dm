@@ -39,9 +39,11 @@
 /datum/wound/pierce/receive_damage(wounding_type, wounding_dmg, wound_bonus)
 	if(victim.stat == DEAD || wounding_dmg < 5)
 		return
+
 	if(victim.blood_volume && prob(internal_bleeding_chance + wounding_dmg))
 		if(limb.current_splint?.splint_factor)
 			wounding_dmg *= (1 - limb.current_splint.splint_factor)
+
 		var/blood_bled = rand(1, wounding_dmg * internal_bleeding_coefficient)
 		switch(blood_bled)
 			if(1 to 6)
@@ -87,7 +89,7 @@
 			to_chat(victim, span_notice("You feel the [lowertext(name)] in your [limb.name] firming up from the cold!"))
 
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
-		blood_flow += 0.5
+		blood_flow += 0.3
 
 	if(limb.current_gauze)
 		blood_flow -= limb.current_gauze.absorption_rate * gauzed_clot_rate
@@ -120,7 +122,7 @@
 
 /// If someone is using a suture to close this puncture
 /datum/wound/pierce/proc/suture(obj/item/stack/medical/suture/I, mob/user)
-	var/self_penalty_mult = (user == victim ? 1.4 : 1)
+	var/self_penalty_mult = (user == victim ? 1 : 1)
 	user.visible_message(
 		span_notice("[user] begins stitching [victim]'s [limb.name] with [I]..."),
 		span_notice("You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."),
@@ -144,7 +146,7 @@
 /// If someone is using either a cautery tool or something with heat to cauterize this pierce
 /datum/wound/pierce/proc/tool_cauterize(obj/item/I, mob/user)
 	var/improv_penalty_mult = (I.tool_behaviour == TOOL_CAUTERY ? 1 : 1.25) // 25% longer and less effective if you don't use a real cautery
-	var/self_penalty_mult = (user == victim ? 1.5 : 1) // 50% longer and less effective if you do it to yourself
+	var/self_penalty_mult = (user == victim ? 1.1 : 1)
 
 	user.visible_message(
 		span_danger("[user] begins cauterizing [victim]'s [limb.name] with [I]..."),
@@ -174,7 +176,7 @@
 	occur_text = "spurts out a thin stream of blood"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 1.5
+	initial_flow = 1
 	gauzed_clot_rate = 0.8
 	internal_bleeding_chance = 30
 	internal_bleeding_coefficient = 1.25
@@ -190,7 +192,7 @@
 	occur_text = "looses a violent spray of blood, revealing a pierced wound"
 	sound_effect = 'sound/effects/wounds/pierce2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 2.25
+	initial_flow = 1.5
 	gauzed_clot_rate = 0.6
 	internal_bleeding_chance = 60
 	internal_bleeding_coefficient = 1.5
@@ -206,7 +208,7 @@
 	occur_text = "blasts apart, sending chunks of viscera flying in all directions"
 	sound_effect = 'sound/effects/wounds/pierce3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 3
+	initial_flow = 2.25
 	gauzed_clot_rate = 0.4
 	internal_bleeding_chance = 80
 	internal_bleeding_coefficient = 1.75

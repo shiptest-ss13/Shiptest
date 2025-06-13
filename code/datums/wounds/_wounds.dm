@@ -131,9 +131,11 @@
 	LAZYADD(victim.all_wounds, src)
 	LAZYADD(limb.wounds, src)
 	limb.update_wounds()
+
 	if(status_effect_type)
 		linked_status_effect = victim.apply_status_effect(status_effect_type, src)
 	SEND_SIGNAL(victim, COMSIG_CARBON_GAIN_WOUND, src, limb)
+
 	if(!victim.alerts["wound"]) // only one alert is shared between all of the wounds
 		victim.throw_alert("wound", /atom/movable/screen/alert/status_effect/wound)
 
@@ -145,14 +147,18 @@
 		return
 
 	if(!(silent || demoted))
-		var/msg = "<span class='danger'>[victim]'s [limb.name] [occur_text]!</span>"
+		var/msg = span_danger("[victim]'s [limb.name] [occur_text]!")
 		var/vis_dist = COMBAT_MESSAGE_RANGE
 
 		if(severity != WOUND_SEVERITY_MODERATE)
 			msg = "<b>[msg]</b>"
 			vis_dist = DEFAULT_MESSAGE_RANGE
 
-		victim.visible_message(msg, "<span class='userdanger'>Your [limb.name] [occur_text]!</span>", vision_distance = vis_dist)
+		victim.visible_message(
+			msg,
+			span_userdanger("Your [limb.name] [occur_text]!"),
+			vision_distance = vis_dist,
+		)
 		if(sound_effect)
 			playsound(L.owner, sound_effect, 70 + 20 * severity, TRUE)
 
@@ -193,7 +199,6 @@
 /datum/wound/proc/wound_injury(datum/wound/old_wound = null)
 	return
 
-
 /// Proc called to change the variable `limb` and react to the event.
 /datum/wound/proc/set_limb(new_value)
 	if(limb == new_value)
@@ -208,7 +213,6 @@
 		if(disabling)
 			ADD_TRAIT(limb, TRAIT_PARALYSIS, REF(src))
 			ADD_TRAIT(limb, TRAIT_DISABLED_BY_WOUND, REF(src))
-
 
 /// Proc called to change the variable `disabling` and react to the event.
 /datum/wound/proc/set_disabling(new_value)
@@ -225,7 +229,6 @@
 		REMOVE_TRAIT(limb, TRAIT_DISABLED_BY_WOUND, REF(src))
 	if(limb?.can_be_disabled)
 		limb.update_disabled()
-
 
 /// Additional beneficial effects when the wound is gained, in case you want to give a temporary boost to allow the victim to try an escape or last stand
 /datum/wound/proc/second_wind()

@@ -21,7 +21,7 @@
 	RegisterSignal(limb, list(COMSIG_BODYPART_SPLINTED, COMSIG_BODYPART_SPLINT_DESTROYED), PROC_REF(update_inefficiencies))
 	RegisterSignal(victim, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, PROC_REF(attack_with_hurt_hand))
 
-	if(limb.held_index && victim.get_item_for_held_index(limb.held_index) && (disabling || prob(30 * severity)))
+	if(limb.held_index && victim.get_item_for_held_index(limb.held_index) && (disabling || prob(10 * severity)))
 		var/obj/item/I = victim.get_item_for_held_index(limb.held_index)
 		if(istype(I, /obj/item/offhand))
 			I = victim.get_inactive_held_item()
@@ -74,7 +74,7 @@
 		//And you have a 70% or 50% chance to actually land the blow, respectively
 		if(prob(70 - 20 * severity))
 			to_chat(victim, span_userdanger("The damaged muscle in your [limb.name] shoots with pain as you strike [target]!"))
-			limb.receive_damage(brute=rand(1,5))
+			limb.receive_damage(brute=rand(1,3))
 		else
 			victim.visible_message(
 				span_danger("[victim] weakly strikes [target] with [victim.p_their()] swollen [limb.name], recoiling from pain!"),
@@ -83,7 +83,7 @@
 			)
 			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
 			victim.Stun(0.25 SECONDS)
-			limb.receive_damage(brute=rand(3,7))
+			limb.receive_damage(brute=rand(2,5))
 			return COMPONENT_ITEM_NO_ATTACK
 
 /datum/wound/muscle/get_examine_description(mob/user)
