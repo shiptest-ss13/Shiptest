@@ -20,12 +20,16 @@
 /datum/round_event/high_priority_mission/setup()
 	target_outpost = pick(SSovermap.outposts)
 	var/list/pickable_missions = list()
-	for(var/datum/mission/ruin/active_mission)
+	for(var/datum/mission/ruin/active_mission in SSmissions.active_ruin_missions)
 		if(active_mission.dibs_string)
 			continue
 		pickable_missions.Add(active_mission)
+	for(var/datum/mission/ruin/inactive_mission in SSmissions.inactive_ruin_missions)
+		pickable_missions.Add(inactive_mission)
 	if(pickable_missions.len)
 		priority_mission = pick(pickable_missions)
+		if(priority_mission.active != TRUE)
+			priority_mission.start_mission()
 		message_admins("[priority_mission][ADMIN_VV(priority_mission)] has been selected for [src]")
 
 /datum/round_event/high_priority_mission/start()
