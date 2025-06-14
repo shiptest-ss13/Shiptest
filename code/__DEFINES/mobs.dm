@@ -321,7 +321,7 @@
 #define SLIDE (1<<1)
 #define GALOSHES_DONT_HELP (1<<2)
 #define SLIDE_ICE (1<<3)
-#define SLIP_WHEN_CRAWLING (1<<4) //clown planet ruin
+#define SLIP_WHEN_CRAWLING (1<<4)
 
 #define MAX_CHICKENS 50
 

@@ -499,13 +499,6 @@ update_label()
 	access = get_all_accesses()
 	. = ..()
 
-/obj/item/card/id/ert/clown
-	icon_state = "ert_clown"
-
-/obj/item/card/id/ert/clown/Initialize()
-	access = get_all_accesses()
-	. = ..()
-
 /obj/item/card/id/ert/deathsquad
 	desc = "An access card colored in black and red."
 	icon_state = "deathsquad" //NO NO SIR DEATH SQUADS ARENT A PART OF NANOTRASEN AT ALL

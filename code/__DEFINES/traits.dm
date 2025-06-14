@@ -435,7 +435,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define NUKEOP_TRAIT "nuke-op"
 #define DEATHSQUAD_TRAIT "deathsquad"
 #define MEGAFAUNA_TRAIT "megafauna"
-#define CLOWN_NUKE_TRAIT "clown-nuke"
 #define STICKY_MOUSTACHE_TRAIT "sticky-moustache"
 #define CHAINSAW_FRENZY_TRAIT "chainsaw-frenzy"
 #define CHRONO_GUN_TRAIT "chrono-gun"
