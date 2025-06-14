@@ -155,7 +155,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/fbp = FALSE
 	var/phobia = "spiders"
-	var/preferred_smoke_brand = PREF_CIG_SPACE
 	var/list/alt_titles_preferences = list()
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
