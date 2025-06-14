@@ -835,6 +835,8 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 		)
 	)
 
+	door_breaching_weapon = FALSE
+
 EMPTY_GUN_HELPER(shotgun/flamingarrow)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
