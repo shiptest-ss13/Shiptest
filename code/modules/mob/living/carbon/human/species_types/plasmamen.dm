@@ -158,12 +158,6 @@
 		if("Head of Personnel")
 			O = new /datum/outfit/plasmaman/hop
 
-		if("Mime")
-			O = new /datum/outfit/plasmaman/mime
-
-		if("Clown")
-			O = new /datum/outfit/plasmaman/clown
-
 		if("SolGov Representative") //WS edit sgr
 			O = new /datum/outfit/plasmaman/solgov
 

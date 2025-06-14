@@ -559,7 +559,7 @@
 ////////  Movement procs  ////////
 //////////////////////////////////
 
-///Plays the mech step sound effect. Split from movement procs so that other mechs (HONK) can override this one specific part.
+///Plays the mech step sound effect. Split from movement procs so that other mechs can override this one specific part.
 /obj/mecha/proc/play_stepsound()
 	if(stepsound)
 		playsound(src,stepsound,40,1)

@@ -106,20 +106,6 @@ LINEN BINS
 	item_state = "sheetyellow"
 	dream_messages = list("yellow")
 
-/obj/item/bedsheet/mime
-	name = "mime's blanket"
-	desc = "A very soothing striped blanket.  All the noise just seems to fade out when you're under the covers in this."
-	icon_state = "sheetmime"
-	item_state = "sheetmime"
-	dream_messages = list("silence", "gestures", "a pale face", "a gaping mouth", "the mime")
-
-/obj/item/bedsheet/clown
-	name = "clown's blanket"
-	desc = "A rainbow blanket with a clown mask woven in. It smells faintly of bananas."
-	icon_state = "sheetclown"
-	item_state = "sheetrainbow"
-	dream_messages = list("honk", "laughter", "a prank", "a joke", "a smiling face", "the clown")
-
 /obj/item/bedsheet/captain
 	name = "captain's bedsheet"
 	desc = "It has a Nanotrasen symbol on it, and was woven with a revolutionary new kind of thread guaranteed to have 0.01% permeability for most non-chemical substances, popular among most modern captains."
@@ -327,20 +313,6 @@ LINEN BINS
 	item_state = "sheetrainbow"
 	dream_messages = list("red", "orange", "yellow", "green", "blue", "purple", "a rainbow")
 	desc = "A multicolored blanket. It's actually several different sheets cut up and sewn together."
-
-/obj/item/bedsheet/double/mime
-	name = "double mime's blanket"
-	icon_state = "double_sheetmime"
-	item_state = "sheetmime"
-	dream_messages = list("silence", "gestures", "a pale face", "a gaping mouth", "the mime")
-	desc = "A very soothing striped blanket.  All the noise just seems to fade out when you're under the covers in this."
-
-/obj/item/bedsheet/double/clown
-	name = "double clown's blanket"
-	icon_state = "double_sheetclown"
-	item_state = "sheetrainbow"
-	dream_messages = list("honk", "laughter", "a prank", "a joke", "a smiling face", "the clown")
-	desc = "A rainbow blanket with a clown mask woven in. It smells faintly of bananas."
 
 /obj/item/bedsheet/double/captain
 	name = "double captain's bedsheet"

@@ -3,11 +3,6 @@
 	category = "Fun"
 	abstract_type = /datum/instrument/fun
 
-/datum/instrument/fun/honk
-	name = "!!HONK!!"
-	id = "honk"
-	real_samples = list("74"='sound/items/bikehorn.ogg') // Cluwne Heaven
-
 /datum/instrument/fun/signal
 	name = "Ping"
 	id = "ping"

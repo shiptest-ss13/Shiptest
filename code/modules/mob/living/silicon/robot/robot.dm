@@ -654,10 +654,6 @@
 	set_module = /obj/item/robot_module/security
 	icon_state = "sec"
 
-/mob/living/silicon/robot/modules/clown
-	set_module = /obj/item/robot_module/clown
-	icon_state = "clown"
-
 /mob/living/silicon/robot/modules/peacekeeper
 	set_module = /obj/item/robot_module/peacekeeper
 	icon_state = "peace"

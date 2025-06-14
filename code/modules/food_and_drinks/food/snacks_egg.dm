@@ -51,7 +51,7 @@
 		var/obj/item/toy/crayon/C = W
 		var/clr = C.crayon_color
 
-		if(!(clr in list("blue", "green", "mime", "orange", "purple", "rainbow", "red", "yellow")))
+		if(!(clr in list("blue", "green", "orange", "purple", "rainbow", "red", "yellow")))
 			to_chat(usr, span_notice("[src] refuses to take on this colour!"))
 			return
 
@@ -65,9 +65,6 @@
 
 /obj/item/reagent_containers/food/snacks/egg/green
 	icon_state = "egg-green"
-
-/obj/item/reagent_containers/food/snacks/egg/mime
-	icon_state = "egg-mime"
 
 /obj/item/reagent_containers/food/snacks/egg/orange
 	icon_state = "egg-orange"
