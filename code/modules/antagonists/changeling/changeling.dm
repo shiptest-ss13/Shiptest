@@ -1,3 +1,76 @@
+GLOBAL_LIST_INIT(possible_changeling_IDs, list(
+	"Alpha",
+	"Beta",
+	"Gamma",
+	"Delta",
+	"Epsilon",
+	"Zeta",
+	"Eta",
+	"Theta",
+	"Iota",
+	"Kappa",
+	"Lambda",
+	"Mu",
+	"Nu",
+	"Xi",
+	"Omicron",
+	"Pi",
+	"Rho",
+	"Sigma",
+	"Tau",
+	"Upsilon",
+	"Phi",
+	"Chi",
+	"Psi",
+	"Omega"
+	))
+GLOBAL_LIST_INIT(slots, list(
+	"head",
+	"wear_mask",
+	"wear_neck",
+	"back",
+	"wear_suit",
+	"w_uniform",
+	"shoes",
+	"belt",
+	"gloves",
+	"glasses",
+	"ears",
+	"wear_id",
+	"s_store"))
+GLOBAL_LIST_INIT(slot2slot, list(
+	"head" = ITEM_SLOT_HEAD,
+	"wear_mask" = ITEM_SLOT_MASK,
+	"wear_neck" = ITEM_SLOT_NECK,
+	"neck" = ITEM_SLOT_NECK,
+	"back" = ITEM_SLOT_BACK,
+	"wear_suit" = ITEM_SLOT_OCLOTHING,
+	"w_uniform" = ITEM_SLOT_ICLOTHING,
+	"shoes" = ITEM_SLOT_FEET,
+	"belt" = ITEM_SLOT_BELT,
+	"gloves" = ITEM_SLOT_GLOVES,
+	"glasses" = ITEM_SLOT_EYES,
+	"ears" = ITEM_SLOT_EARS,
+	"wear_id" = ITEM_SLOT_ID,
+	"s_store" = ITEM_SLOT_SUITSTORE
+	))
+
+GLOBAL_LIST_INIT(slot2type, list(
+	"head" = /obj/item/clothing/head/changeling,
+	"wear_mask" = /obj/item/clothing/mask/changeling,
+	"wear_neck" = /obj/item/changeling,
+	"back" = /obj/item/changeling,
+	"wear_suit" = /obj/item/clothing/suit/changeling,
+	"w_uniform" = /obj/item/clothing/under/changeling,
+	"shoes" = /obj/item/clothing/shoes/changeling,
+	"belt" = /obj/item/changeling,
+	"gloves" = /obj/item/clothing/gloves/changeling,
+	"glasses" = /obj/item/clothing/glasses/changeling,
+	"ears" = /obj/item/changeling,
+	"wear_id" = /obj/item/changeling/id,
+	"s_store" = /obj/item/changeling
+	))
+
 #define LING_FAKEDEATH_TIME 400 //40 seconds
 #define LING_DEAD_GENETICDAMAGE_HEAL_CAP 50	//The lowest value of geneticdamage handle_changeling() can take it to while dead.
 #define LING_ABSORB_RECENT_SPEECH 8	//The amount of recent spoken lines to gain on absorbing a mob
@@ -36,6 +109,9 @@
 	var/geneticpoints = 10
 	var/purchasedpowers = list()
 
+	///	Keeps track of the currently selected profile.
+	var/datum/changelingprofile/current_profile
+
 	var/mimicing = ""
 	var/canrespec = FALSE//set to TRUE in absorb.dm
 	var/changeling_speak = 0
@@ -59,6 +135,7 @@
 /datum/antagonist/changeling/Destroy()
 	QDEL_NULL(cellular_emporium)
 	QDEL_NULL(emporium_action)
+	current_profile = null
 	. = ..()
 
 /datum/antagonist/changeling/proc/generate_name()
@@ -285,11 +362,24 @@
 	H.dna.copy_dna(new_dna)
 	prof.dna = new_dna
 	prof.name = H.real_name
+	prof.generic_adjective = H.generic_adjective
 	prof.protected = protect
+	prof.age = H.age
+
 
 	prof.underwear = H.underwear
+	prof.underwear_color = H.underwear_color
 	prof.undershirt = H.undershirt
+	prof.undershirt_color = H.undershirt_color
 	prof.socks = H.socks
+	prof.socks = H.socks_color
+
+	var/datum/icon_snapshot/entry = new
+	entry.name = H.name
+	entry.icon = H.icon
+	entry.icon_state = H.icon_state
+	entry.overlays = H.get_overlays_copy(list(HANDS_LAYER, HANDCUFF_LAYER, LEGCUFF_LAYER))
+	prof.profile_snapshot = entry
 
 	var/list/slots = list("head", "wear_mask", "back", "wear_suit", "w_uniform", "shoes", "belt", "gloves", "glasses", "ears", "wear_id", "s_store")
 	for(var/slot in slots)
@@ -315,6 +405,7 @@
 
 	if(!first_prof)
 		first_prof = prof
+		current_profile = first_prof
 
 	stored_profiles += prof
 	absorbedcount++
@@ -515,9 +606,20 @@
 	var/list/mob_overlay_icon_list = list()
 	var/list/mob_overlay_state_list = list() //WS EDIT - Mob Overlay State
 
+	var/age
 	var/underwear
+	var/underwear_color
 	var/undershirt
+	var/undershirt_color
 	var/socks
+	var/socks_color
+	var/generic_adjective
+
+	/// Icon snapshot of the profile
+	var/datum/icon_snapshot/profile_snapshot
+
+	/// ID HUD icon associated with the profile
+	var/id_icon
 
 /datum/changelingprofile/Destroy()
 	qdel(dna)
@@ -534,10 +636,17 @@
 	newprofile.exists_list = exists_list.Copy()
 	newprofile.item_state_list = item_state_list.Copy()
 	newprofile.underwear = underwear
+	newprofile.underwear_color = underwear_color
 	newprofile.undershirt = undershirt
+	newprofile.undershirt_color = undershirt_color
 	newprofile.socks = socks
+	newprofile.socks_color = socks_color
+	newprofile.age = age
+	newprofile.generic_adjective = generic_adjective
 	newprofile.mob_overlay_icon_list = mob_overlay_icon_list.Copy()
 	newprofile.mob_overlay_state_list = mob_overlay_state_list.Copy() //WS EDIT - Mob Overlay State
+	newprofile.profile_snapshot = profile_snapshot
+	newprofile.id_icon = id_icon
 
 /datum/antagonist/changeling/roundend_report()
 	var/list/parts = list()
