@@ -3,7 +3,7 @@
 /turf/closed/indestructible/rock/schist,
 /area/hangar)
 "ad" = (
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
 	light_range = 2;
@@ -20,7 +20,7 @@
 	},
 /area/hangar)
 "am" = (
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "ao" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -61,7 +61,8 @@
 	},
 /area/hangar)
 "az" = (
-/obj/effect/spawner/structure/window/reinforced/indestructible,
+/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
+/obj/structure/grille,
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -209,10 +210,12 @@
 /area/hangar)
 "bI" = (
 /obj/effect/turf_decal/siding/white{
-	dir = 10
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/outpost/hangar_numbers,
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
@@ -314,7 +317,7 @@
 /area/hangar)
 "hv" = (
 /obj/effect/turf_decal/borderfloor/full,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/patterned/cargo_one{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -328,12 +331,11 @@
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "hG" = (
-/obj/effect/decal/fakelattice,
-/obj/machinery/light/small/directional/east,
-/obj/effect/decal/cleanable/dirt{
-	color = "#808080"
+/obj/effect/turf_decal/siding/white{
+	dir = 10
 	},
-/turf/open/floor/plasteel/elevatorshaft{
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -443,7 +445,7 @@
 /area/hangar)
 "oi" = (
 /obj/effect/turf_decal/borderfloor/full,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -481,18 +483,18 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "1"
-	},
 /obj/machinery/light/small/directional/east{
 	pixel_y = -8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/elevator_call_button{
 	dir = 8;
 	pixel_x = 25;
 	pixel_y = 6
 	},
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
+	},
 /turf/open/floor/plasteel/patterned/brushed{
 	planetary_atmos = 1
 	},
@@ -538,10 +540,7 @@
 /area/hangar)
 "rY" = (
 /obj/effect/decal/fakelattice,
-/obj/effect/decal/cleanable/glass{
-	dir = 8;
-	color = "#808080"
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
@@ -612,7 +611,7 @@
 /area/hangar)
 "vw" = (
 /obj/structure/sign/departments/cargo,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "wQ" = (
 /obj/structure/railing{
@@ -723,7 +722,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "ES" = (
 /obj/effect/turf_decal/borderfloor{
@@ -773,7 +772,7 @@
 /area/hangar)
 "FS" = (
 /obj/effect/turf_decal/borderfloor/full,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one{
 	light_color = "#1B1D2E";
@@ -3067,7 +3066,7 @@ TR
 am
 am
 am
-TA
+am
 rj
 MI
 rj
@@ -3107,9 +3106,9 @@ hw
 Ku
 JU
 bI
+hG
 aL
 am
-ac
 rj
 rj
 rj
@@ -3148,10 +3147,10 @@ am
 sV
 ay
 me
+me
 fb
 pr
 am
-ac
 ac
 rj
 MI
@@ -3191,7 +3190,7 @@ am
 Zi
 Zi
 Zi
-am
+Zi
 am
 am
 am
@@ -3232,9 +3231,9 @@ al
 ao
 xI
 xI
+xI
 UV
 ao
-dM
 Dh
 Dh
 al
@@ -3275,8 +3274,8 @@ ao
 xI
 xI
 xI
+xI
 ao
-aY
 Dh
 Dh
 al
@@ -3303,13 +3302,13 @@ ao
 aY
 dM
 aY
-hG
+al
 aY
 aY
 al
 Dh
 Dh
-IA
+al
 aY
 aY
 aY
@@ -3317,8 +3316,8 @@ ao
 xI
 xI
 xI
+xI
 ao
-rY
 al
 Dh
 aY
@@ -3326,7 +3325,7 @@ aY
 al
 Dh
 Dh
-IA
+al
 Dh
 Dh
 aY
@@ -3338,89 +3337,113 @@ am
 "}
 (49,1,1) = {"
 am
-am
-am
-am
-am
-ac
-ac
-ac
-am
-ac
-ac
-ac
-ac
-ac
-am
-ac
-ac
-ac
-am
-am
-am
-am
-am
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-am
-ac
-ac
-ac
-am
-am
-am
-am
+aY
+aY
+aY
+ao
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+ao
+xI
+xI
+xI
+xI
+ao
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ao
+al
+al
+al
 am
 "}
 (50,1,1) = {"
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+am
+aY
+aY
+aY
+ao
+aY
+aY
+aY
+rY
+aY
+aY
+aY
+aY
+aY
+rY
+aY
+aY
+aY
+ao
+xI
+xI
+xI
+xI
+ao
+al
+al
+al
+al
+al
+al
+al
+IA
+al
+al
+al
+ao
+al
+al
+al
+am
 "}
 (51,1,1) = {"
+am
+am
+am
+am
+am
+ac
+ac
+ac
+am
+ac
+ac
+ac
+ac
+ac
+am
+ac
+ac
+ac
+am
+am
+am
+am
+am
+am
 ac
 ac
 ac
@@ -3428,39 +3451,15 @@ ac
 ac
 ac
 ac
+am
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+am
+am
+am
+am
+am
 "}
 (52,1,1) = {"
 ac

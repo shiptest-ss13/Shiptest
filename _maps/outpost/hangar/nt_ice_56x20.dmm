@@ -26,7 +26,7 @@
 	},
 /area/hangar)
 "ag" = (
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "ai" = (
 /obj/effect/decal/fakelattice,
@@ -38,28 +38,22 @@
 	},
 /area/hangar)
 "aj" = (
-/obj/effect/spawner/structure/window/reinforced/indestructible,
+/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
+/obj/structure/grille,
 /turf/open/floor/plating{
-	planetary_atmos = 1
+	light_color = "#1B1D2E";
+	light_range = 2
 	},
 /area/hangar)
 "al" = (
 /turf/closed/indestructible/rock/schist,
 /area/hangar)
 "an" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
-	dir = 1
+	dir = 10
 	},
-/turf/open/floor/plasteel/patterned/brushed{
-	light_color = "#1B1D2E";
-	light_range = 2;
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -78,7 +72,7 @@
 	},
 /area/hangar)
 "ax" = (
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -112,7 +106,7 @@
 /area/hangar)
 "aE" = (
 /obj/effect/turf_decal/borderfloor/full,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /turf/open/floor/plasteel/patterned/cargo_one{
 	light_color = "#1B1D2E";
 	light_range = 2
@@ -475,7 +469,7 @@
 /area/hangar)
 "pM" = (
 /obj/effect/turf_decal/borderfloor/full,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one{
 	light_color = "#1B1D2E";
@@ -639,7 +633,7 @@
 /area/hangar)
 "wL" = (
 /obj/structure/sign/departments/cargo,
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "xj" = (
 /obj/structure/plasticflaps/outpost,
@@ -720,7 +714,7 @@
 /area/hangar)
 "Ag" = (
 /obj/effect/turf_decal/borderfloor/full,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/hangar,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -802,14 +796,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "Eg" = (
 /obj/effect/decal/fakelattice,
-/obj/effect/decal/cleanable/glass{
-	dir = 8;
-	color = "#808080"
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
@@ -1113,27 +1104,13 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/borderfloor{
-	dir = 4
+	dir = 8
 	},
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "1"
-	},
-/obj/machinery/light/small/directional/east{
-	pixel_y = -8
-	},
-/obj/machinery/elevator_call_button{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/brushed{
-	light_color = "#1B1D2E";
-	light_range = 2;
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -1223,10 +1200,12 @@
 /area/hangar)
 "WP" = (
 /obj/effect/turf_decal/siding/white{
-	dir = 10
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/outpost/hangar_numbers,
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
@@ -1281,12 +1260,29 @@
 	},
 /area/hangar)
 "XU" = (
-/obj/effect/decal/fakelattice,
-/obj/machinery/light/small/directional/east,
-/obj/effect/decal/cleanable/dirt{
-	color = "#808080"
+/obj/structure/chair{
+	dir = 1
 	},
-/turf/open/floor/plasteel/elevatorshaft{
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/east{
+	pixel_y = -8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/elevator_call_button{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
+	},
+/turf/open/floor/plasteel/patterned/brushed{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -4585,7 +4581,7 @@ aG
 aG
 aG
 aG
-aG
+NE
 aG
 aG
 aG
@@ -4643,7 +4639,7 @@ dM
 ag
 ag
 ag
-Fs
+ag
 aG
 KH
 aG
@@ -4666,11 +4662,11 @@ al
 al
 al
 al
+al
 aG
 aG
-Fs
 aG
-aG
+KH
 aG
 aG
 KH
@@ -4684,8 +4680,8 @@ Sk
 YB
 WP
 an
+Uo
 ag
-al
 aG
 aG
 aG
@@ -4709,9 +4705,9 @@ al
 al
 al
 al
+al
+Fs
 aG
-aG
-ap
 aG
 KH
 aG
@@ -4724,10 +4720,10 @@ ag
 Cv
 aW
 jk
+jk
 Fu
-Uo
+XU
 ag
-al
 al
 aG
 KH
@@ -4767,7 +4763,7 @@ ag
 pD
 pD
 pD
-ag
+pD
 ag
 ag
 ag
@@ -4808,9 +4804,9 @@ ai
 ez
 xy
 xy
+xy
 WQ
 ez
-ll
 aB
 aB
 ai
@@ -4851,8 +4847,8 @@ ez
 xy
 xy
 xy
+xy
 ez
-jJ
 aB
 aB
 ai
@@ -4879,13 +4875,13 @@ ez
 jJ
 ll
 jJ
-XU
+ai
 jJ
 jJ
 ai
 aB
 aB
-Jh
+ai
 jJ
 jJ
 jJ
@@ -4893,8 +4889,8 @@ ez
 xy
 xy
 xy
+xy
 ez
-Eg
 ai
 aB
 jJ
@@ -4902,7 +4898,7 @@ jJ
 ai
 aB
 aB
-Jh
+ai
 aB
 aB
 jJ
@@ -4914,89 +4910,113 @@ ag
 "}
 (85,1,1) = {"
 ag
-ag
-ag
-ag
-ag
-al
-al
-al
-ag
-al
-al
-al
-al
-al
-ag
-al
-al
-al
-ag
-ag
-ag
-ag
-ag
-al
-al
-al
-al
-al
-al
-al
-al
-ag
-al
-al
-al
-ag
-ag
-ag
-ag
+jJ
+jJ
+jJ
+ez
+jJ
+jJ
+jJ
+jJ
+jJ
+jJ
+jJ
+jJ
+jJ
+jJ
+jJ
+jJ
+jJ
+ez
+xy
+xy
+xy
+xy
+ez
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+ez
+ai
+ai
+ai
 ag
 "}
 (86,1,1) = {"
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
+ag
+jJ
+jJ
+jJ
+ez
+jJ
+jJ
+jJ
+Eg
+jJ
+jJ
+jJ
+jJ
+jJ
+Eg
+jJ
+jJ
+jJ
+ez
+xy
+xy
+xy
+xy
+ez
+ai
+ai
+ai
+ai
+ai
+ai
+ai
+Jh
+ai
+ai
+ai
+ez
+ai
+ai
+ai
+ag
 "}
 (87,1,1) = {"
+ag
+ag
+ag
+ag
+ag
+al
+al
+al
+ag
+al
+al
+al
+al
+al
+ag
+al
+al
+al
+ag
+ag
+ag
+ag
+ag
+ag
 al
 al
 al
@@ -5004,39 +5024,15 @@ al
 al
 al
 al
+ag
 al
 al
 al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
+ag
+ag
+ag
+ag
+ag
 "}
 (88,1,1) = {"
 al
