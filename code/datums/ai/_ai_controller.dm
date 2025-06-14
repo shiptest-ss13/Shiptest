@@ -147,6 +147,31 @@ multiple modular subtrees with behaviors
 		return FALSE
 	return TRUE
 
+///Can this pawn interact with objects?
+/datum/ai_controller/proc/ai_can_interact()
+	SHOULD_CALL_PARENT(TRUE)
+	return !QDELETED(pawn)
+
+///Interact with objects
+/datum/ai_controller/proc/ai_interact(target, desired_intent, list/modifiers)
+	if(!ai_can_interact())
+		return FALSE
+
+	var/atom/final_target = isdatum(target) ? target : blackboard[target] //incase we got a blackboard key instead
+
+	if(QDELETED(final_target))
+		return FALSE
+	var/params = list2params(modifiers)
+	var/mob/living/living_pawn = pawn
+	if(isnull(desired_intent))
+		living_pawn.ClickOn(final_target, params)
+		return TRUE
+
+	var/old_intent = living_pawn.a_intent
+	living_pawn.a_intent = desired_intent
+	living_pawn.ClickOn(final_target, params)
+	living_pawn.a_intent = old_intent
+	return TRUE
 
 ///Runs any actions that are currently running
 /datum/ai_controller/process(seconds_per_tick)
@@ -288,6 +313,15 @@ multiple modular subtrees with behaviors
 		if(iter_behavior.required_distance < minimum_distance)
 			minimum_distance = iter_behavior.required_distance
 	return minimum_distance
+
+/// Returns true if we have a blackboard key with the provided key and it is not qdeleting
+/datum/ai_controller/proc/blackboard_key_exists(key)
+	var/datum/key_value = blackboard[key]
+	if (isdatum(key_value))
+		return !QDELETED(key_value)
+	if (islist(key_value))
+		return length(key_value) > 0
+	return !!key_value
 
 /**
  * Used to manage references to datum by AI controllers
