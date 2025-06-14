@@ -590,6 +590,17 @@
 	required_reagents = list(/datum/reagent/water/hollowwater = 1)
 	required_catalysts = list(/datum/reagent/water/holywater = 1)
 
+/datum/chemical_reaction/bone_gel
+	required_reagents = list(/datum/reagent/calcium = 10, /datum/reagent/carbon = 10)
+	required_temp = 630
+	mob_react = FALSE
+	mix_message = "The solution clarifies, leaving an ashy gel."
+
+/datum/chemical_reaction/bone_gel/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i in 1 to created_volume)
+		new /obj/item/stack/medical/bone_gel(location)
+
 /datum/chemical_reaction/gravy
 	results = list(/datum/reagent/consumable/gravy = 3)
 	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/flour = 1)

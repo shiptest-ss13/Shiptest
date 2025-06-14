@@ -68,5 +68,6 @@
 	icon_state = "deathnettle"
 	force = 30
 	throwforce = 15
+	wound_bonus = CANT_WOUND
 	wine_power = 50
 	wine_flavor = "burning rage" //WS edit: new wine flavors

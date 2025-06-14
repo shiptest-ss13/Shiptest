@@ -483,14 +483,19 @@
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return
-/* TODO: gunpointing is very broken, port the old skyrat gunpointing? its much better, usablity wise and rp wise?
 		if(ismob(target) && user.a_intent == INTENT_GRAB)
 			if(user.GetComponent(/datum/component/gunpoint))
 				to_chat(user, span_warning("You are already holding someone up!"))
 				return
 			user.AddComponent(/datum/component/gunpoint, target, src)
 			return
-*/
+		if(iscarbon(target))
+			var/mob/living/carbon/C = target
+			for(var/i in C.all_wounds)
+				var/datum/wound/W = i
+				if(W.try_treating(src, user))
+					return // another coward cured!
+
 	// Good job, but we have exta checks to do...
 	return pre_fire(target, user, TRUE, flag, params, null)
 
