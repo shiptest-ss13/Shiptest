@@ -15,6 +15,23 @@
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
 
+// 	var/list/selectable_alt_titles = list()
+
+/datum/outfit/job/clip/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.grant_language(/datum/language/clip_kalixcian, source=LANGUAGE_FACTION)
+/* 	if(selectable_alt_titles)
+		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)
+	if(!selection)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	if(W)
+		W.assignment = alt_title
+*/
+
 // Base CLIP
 
 /datum/outfit/job/clip/assistant

@@ -24,6 +24,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/clip_kalixcian,
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -168,6 +169,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/clip_kalixcian,
 	))
 
 /obj/item/organ/tongue/ethereal/Initialize(mapload)
@@ -190,6 +192,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/clip_kalixcian,
 	))
 
 /obj/item/organ/tongue/moth/Initialize(mapload)
@@ -209,6 +212,7 @@
 		/datum/language/ratvar,
 		/datum/language/codespeak,
 		/datum/language/aphasia,
+		/datum/language/clip_kalixcian,
 	))
 
 /obj/item/organ/tongue/kepori/Initialize(mapload)
@@ -231,6 +235,7 @@
 		/datum/language/codespeak,
 		/datum/language/aphasia,
 		/datum/language/vox_pidgin,
+		/datum/language/clip_kalixcian,
 	))
 
 /obj/item/organ/tongue/vox/Initialize(mapload)
@@ -250,7 +255,8 @@
 		/datum/language/aphasia,
 		/datum/language/moffic,
 		/datum/language/rachnidian,
-		/datum/language/buzzwords
+		/datum/language/buzzwords,
+		/datum/language/clip_kalixcian,
 	))
 
 /obj/item/organ/tongue/spider/Initialize(mapload)
