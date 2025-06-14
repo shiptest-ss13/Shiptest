@@ -142,10 +142,10 @@
 	)
 
 	mob_spawn_list = list(
-		//hivebots, not too difficult
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 30,
+		//hivebots, they're finally difficult.
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 40,
+		/mob/living/basic/hivebot/rapid = 30,
 		//bots, are hostile
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
@@ -155,7 +155,7 @@
 
 	flora_spawn_chance = 25
 	feature_spawn_chance = 0.75
-	mob_spawn_chance = 2
+	mob_spawn_chance = 1.5
 
 /datum/biome/waste/crater
 	open_turf_types = list(
@@ -265,15 +265,17 @@
 		/obj/effect/spawner/minefield = 2
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 50,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 50,
+		/mob/living/basic/hivebot = 40,
+		/mob/living/basic/hivebot/strong = 10,
+		/mob/living/basic/hivebot/ranged = 20,
+		/mob/living/basic/hivebot/rapid = 20,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
-		/obj/structure/spawner/hivebot = 35
+		/obj/structure/spawner/hivebot = 10
 	)
+	mob_spawn_chance = 2
 
 /datum/biome/waste/metal/rust
 	open_turf_types = list(
@@ -335,9 +337,10 @@
 		/obj/structure/vein/waste/classthree = 1,
 	)
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 30,
+		/mob/living/basic/hivebot = 50,
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 40,
+		/mob/living/basic/hivebot/rapid = 30,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
@@ -423,10 +426,10 @@
 		/obj/effect/spawner/random/waste/salvageable = 80,
 		/obj/effect/spawner/random/mine = 8,
 	)
-	mob_spawn_list = list( //nor organics, more biased towards hivebots though
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 50,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 50,
+	mob_spawn_list = list(
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 50,
+		/mob/living/basic/hivebot/rapid = 50,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
@@ -451,13 +454,13 @@
 		/obj/structure/foamedmetal = 100,
 	)
 	mob_spawn_list = list( //Whoops! All hivebots!
-		/mob/living/simple_animal/hostile/hivebot/strong = 20,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 20,
-		/mob/living/simple_animal/hostile/hivebot = 20,
-		/mob/living/simple_animal/hostile/hivebot/defender = 10
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 40,
+		/mob/living/basic/hivebot/rapid = 20,
+		/mob/living/basic/hivebot = 40,
+		/mob/living/basic/hivebot/core = 10
 	)
-	mob_spawn_chance = 30
+	mob_spawn_chance = 15
 	feature_spawn_list = list(
 		/obj/structure/spawner/hivebot = 10,
 		)
@@ -491,14 +494,15 @@
 		/obj/effect/spawner/random/waste/salvageable = 40,
 	)
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/hivebot/strong = 80,
-		/mob/living/simple_animal/hostile/hivebot/ranged = 50,
-		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 50,
+		/mob/living/basic/hivebot = 80,
+		/mob/living/basic/hivebot/strong = 80,
+		/mob/living/basic/hivebot/ranged = 50,
+		/mob/living/basic/hivebot/rapid = 50,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
-		/obj/structure/spawner/hivebot = 35
+		/obj/structure/spawner/hivebot = 25
 	)
 
 	flora_spawn_chance = 30

@@ -5,6 +5,7 @@
 #define FACTION_RAT "rat"
 #define FACTION_TURRET "turret"
 #define FACTION_MINING "mining"
+#define FACTION_HIVEBOT "hivebot"
 
 //"Antag" factions
 // anything with these factions should be hostile to the average player.
