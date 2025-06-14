@@ -405,10 +405,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return TRUE
 
 /mob/living/proc/can_sign(message)
-	if(mind?.miming)
-		to_chat(src, span_green("You stop yourself from signing in favor of the artform of mimery!"))
-		return FALSE
-
 	if(HAS_TRAIT(src, TRAIT_RESTRAINED))
 		visible_message("tries to sign, but can't with [p_their()] hands bound!", visible_message_flags = EMOTE_MESSAGE)
 		return FALSE

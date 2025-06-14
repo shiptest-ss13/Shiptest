@@ -155,30 +155,6 @@
 	)
 	foodtypes = GRAIN | MEAT
 
-/obj/item/food/burger/clown
-	name = "clown burger"
-	desc = "This tastes funny..."
-	icon_state = "clownburger"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/nutriment/protein = 12,
-		/datum/reagent/medicine/mannitol = 11,
-		/datum/reagent/consumable/nutriment/vitamin = 6,
-	)
-	foodtypes = GRAIN | FRUIT
-
-/obj/item/food/burger/mime
-	name = "mime burger"
-	desc = "Its taste defies language."
-	icon_state = "mimeburger"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 6,
-		/datum/reagent/consumable/nutriment/protein = 11,
-		/datum/reagent/consumable/nutriment/vitamin = 7,
-		/datum/reagent/consumable/nothing = 6,
-	)
-	foodtypes = GRAIN
-
 /obj/item/food/burger/brain
 	name = "brainburger"
 	desc = "A strange looking burger. It looks almost sentient."

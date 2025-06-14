@@ -76,11 +76,10 @@ GLOBAL_LIST_INIT(freqcolor, list())
 * Checked AFTER handling of xeno channels.
 * (I'm not sure what this comment means, but it was here in the past, so I'll maintain it here.)
 *
-* allow_mimes - Determines if this check should skip over mimes. (Only matters for living mobs and up.)
 * If FALSE, this check will always fail if the movable has a mind and is miming.
-* if TRUE, we will check if the movable can speak REGARDLESS of if they have an active mime vow.
+* if TRUE, we will check if the movable can speak irregardless
 */
-/atom/movable/proc/can_speak(allow_mimes = FALSE)
+/atom/movable/proc/can_speak()
 	//SHOULD_BE_PURE(TRUE)
 	return !HAS_TRAIT(src, TRAIT_MUTE)
 
