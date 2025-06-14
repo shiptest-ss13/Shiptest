@@ -275,6 +275,7 @@
 	desc = "A combat uniform most often worn by mercenaries and TPLRC soldiers. Features polychromatic design to adjust to different environments."
 	icon_state = "camo"
 	item_state = "fatigues"
+	obj_flags = list(INFINITE_RESKIN)
 
 	unique_reskin = list("Urban" = "camo",
 		"Desert" = "camo_desert",

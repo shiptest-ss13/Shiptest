@@ -2,22 +2,22 @@
 	category = "Emergency"
 
 /datum/blackmarket_item/emergency/plasma
-	name = "Ten Plasma Sheets"
+	name = "Plasma Sheet"
 	desc = "Low on fuel? We can part with some plasma... for a reasonable cost."
-	item = /obj/item/stack/sheet/mineral/plasma/ten
+	item = /obj/item/stack/sheet/mineral/plasma/
 
-	cost_min = 1750
-	cost_max = 2250
+	cost_min = 175
+	cost_max = 225
 	availability_prob = 100
 	stock = INFINITY
 
 /datum/blackmarket_item/emergency/uranium
-	name = "Ten Uranium Sheets"
+	name = "Uranium Sheet"
 	desc = "Fuel? Dirty Bomb? Fancy nightlight? Doesn't matter, we'll supply."
-	item = /obj/item/stack/sheet/mineral/uranium/ten
+	item = /obj/item/stack/sheet/mineral/uranium
 
-	cost_min = 1750
-	cost_max = 2250
+	cost_min = 200
+	cost_max = 250
 	availability_prob = 100
 	stock = INFINITY
 

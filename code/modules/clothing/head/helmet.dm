@@ -494,6 +494,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	supports_variations = null
+	obj_flags = list(INFINITE_RESKIN)
 	unique_reskin = list(
 		"None" = "m10helm",
 		"Desert" = "m10helm_desert",

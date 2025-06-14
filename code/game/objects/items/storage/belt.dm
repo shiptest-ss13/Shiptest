@@ -456,6 +456,7 @@
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
 	supports_variations = KEPORI_VARIATION | VOX_VARIATION
+	obj_flags = list(INFINITE_RESKIN)
 
 	unique_reskin = list(
 		"None" = "militarywebbing",

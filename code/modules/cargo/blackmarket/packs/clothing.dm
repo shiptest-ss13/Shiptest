@@ -11,46 +11,82 @@
 	stock_max = 5
 	availability_prob = 80
 
-/datum/blackmarket_item/clothing/straitjacket
-	name = "Straitjacket"
-	desc = "These straitjackets might be a tight fit, but you can certain the poor sod wont be getting away anytime soon."
-	item = /obj/item/clothing/suit/straight_jacket
-
-	cost_min = 500
-	cost_max = 1000
-	stock_max = 3
-	availability_prob = 40
-
 /datum/blackmarket_item/clothing/surplus_uniform
 	name = "Surplus Combat Uniforms"
 	desc = "A mass produced and non-descript surplus combat uniform. For when you need to look like another faceless thug in the crowd."
 	item = /obj/item/clothing/under/rank/security/officer/military
 
-	cost_min = 50
-	cost_max = 200
+	cost_min = 25
+	cost_max = 50
 	stock_min = 5
 	stock_max = 10
 	availability_prob = 80
 
-/datum/blackmarket_item/clothing/galaxy_blue
-	name = "Blue Galaxy Suit"
-	desc = "A handsome silk suit, treated with a finish of bluespace dust for an out of this world sheen."
-	item = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
+/datum/blackmarket_item/clothing/camo_uniform
+	name = "Camo Fatigues"
+	desc = "General purpose camoflague fatigues with a polychromatic design for use in different conditions."
+	item = /obj/item/clothing/under/rank/security/officer/camo
 
-	cost_min = 500
-	cost_max = 2000
-	stock = 1
-	availability_prob = 20
+	cost_min = 25
+	cost_max = 50
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 80
 
-/datum/blackmarket_item/clothing/galaxy_red
-	name = "Red Galaxy Suit"
-	desc = "A handsome silk suit, treated with a finish of telecrystal dust. It cuts a menacing figure."
-	item = /obj/item/clothing/under/rank/civilian/lawyer/galaxy/red
+/datum/blackmarket_item/clothing/terragov
+	name = "Vintage TerraGov Tunics"
+	desc = "These were supposed to be shipped to a museum exhibition celebrating history in some distant Solarian canton. Honestly, we're doing them a favour. Clothes are meant to be worn rather than kept in some dusty box."
+	item = /obj/item/clothing/under/solgov/terragov
 
-	cost_min = 500
-	cost_max = 2000
-	stock = 1
-	availability_prob = 20
+	cost_min = 25
+	cost_max = 50
+	stock_min = 2
+	stock_max = 5
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/gm_uniform
+	name = "Gorlex Marauder Uniform"
+	desc = "These here are genuine vacuum preserved ICW era Marauder uniforms. The chill of space kept em in pretty good condition on their old owners."
+	item = /obj/item/clothing/under/syndicate/gorlex
+
+	cost_min = 25
+	cost_max = 50
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/fm_uniform
+	name = "Frontiersmen Uniform"
+	desc = "The Frontiersmen make these things in bulk due to the number of recruits they tend to go through. They'd reuse the old ones, but apparently wearing something someone died in is apparently \"bad\" for morale."
+	item = /obj/item/clothing/under/frontiersmen
+
+	cost_min = 25
+	cost_max = 50
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/sack_mask
+	name = "Sack Gas Mask"
+	desc = "This thing is like breathing through a burlap sack. Mainly because it is one."
+	item = /obj/item/clothing/mask/gas/frontiersmen
+
+	cost_min = 10
+	cost_max = 30
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/coalition_mask
+	name = "Coalition Gas Mask"
+	desc = "Ever wanted to look like a paramilitary psychopath? Now's your chance!"
+	item = /obj/item/clothing/mask/gas/syndicate
+
+	cost_min = 10
+	cost_max = 30
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 50
 
 /datum/blackmarket_item/clothing/durathread_vest
 	name = "Durathread Vest"
@@ -72,10 +108,20 @@
 	stock_max = 4
 	availability_prob = 50
 
+/datum/blackmarket_item/clothing/duster
+	name = "Reinforced Duster"
+	desc = "Vests not your style? Embrace your inner trailblazer with this armored duster!"
+	item = /obj/item/clothing/suit/armor/vest/duster
+
+	cost_min = 500
+	cost_max = 1000
+	stock_max = 3
+	availability_prob = 50
+
 /datum/blackmarket_item/clothing/degraded_armor_set
 	name = "Clearance Bin Armor Set"
 	desc = "Looking to protect yourself, but on a tight budget? These previously used vest and helmets served their former owners well! (May they rest in peace.)"
-	item = /obj/item/storage/box
+	item = /obj/item/storage/backpack/duffelbag/sec
 
 	cost_min = 100
 	cost_max = 400
@@ -84,17 +130,37 @@
 	availability_prob = 80
 
 /datum/blackmarket_item/clothing/degraded_armor_set/spawn_item(loc)
-	var/obj/item/storage/box/B = ..()
-	B.name = "Used Armor Set Box"
+	var/obj/item/storage/backpack/duffelbag/sec/B = ..()
+	B.name = "Worn Duffelbag"
 	B.desc = "It smells distinctly of iron."
 	new /obj/item/clothing/head/helmet/old(B)
 	new /obj/item/clothing/suit/armor/vest/old(B)
 	return B
 
+/datum/blackmarket_item/clothing/camo_set
+	name = "Camo Set"
+	desc = "Want to be somewhere you shouldn't? This advanced polychromatic uniform set features patterns such as woodland, urban, snowy and your grandmother's ugly couch to help you blend into any environment. Includes fatigues, helment and webbing."
+	item = /obj/item/storage/backpack/duffelbag/sec
+
+	cost_min = 500
+	cost_max = 1000
+	stock_min = 2
+	stock_max = 8
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/frontiersmen_armor_set/spawn_item(loc)
+	var/obj/item/storage/backpack/duffelbag/sec/B = ..()
+	B.name = "Worn Duffelbag"
+	B.desc = "A beat up looking dufflebag."
+	new /obj/item/storage/belt/military(B)
+	new /obj/item/clothing/head/helmet/bulletproof/m10(B)
+	new /obj/item/clothing/under/rank/security/officer/camo(B)
+	return B
+
 /datum/blackmarket_item/clothing/frontiersmen_armor_set
 	name = "Bulletproof X-11 Armor Set"
 	desc = "We got a good deal on some extra armor from a Frontiersmen Quartermaster, and we're passing those savings onto you!"
-	item = /obj/item/storage/box
+	item = /obj/item/storage/backpack/duffelbag/sec
 
 	cost_min = 500
 	cost_max = 1250
@@ -102,9 +168,9 @@
 	availability_prob = 50
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_set/spawn_item(loc)
-	var/obj/item/storage/box/B = ..()
-	B.name = "Armor Set Box"
-	B.desc = "A beat up looking box with some armor inside."
+	var/obj/item/storage/backpack/duffelbag/sec/B = ..()
+	B.name = "Worn Duffelbag"
+	B.desc = "A beat up looking dufflebag with some armor inside."
 	new /obj/item/clothing/suit/armor/vest/bulletproof/frontier(B)
 	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier(B)
 	return B
@@ -112,7 +178,7 @@
 /datum/blackmarket_item/clothing/frontiersmen_armor_fireproof
 	name = "Fireproof Armor Set"
 	desc = "Get it while it's hot! This fireproofed armor and uniform set is made with a pre-Night Of Fire miracle material that renders it almost impervious to flames. The Frontiersmen swear by the stuff. It's kept each of it's previous owners safe until they passed away from illness."
-	item = /obj/item/storage/box
+	item = /obj/item/storage/backpack/duffelbag/sec
 
 	cost_min = 1000
 	cost_max = 1750
@@ -120,40 +186,53 @@
 	availability_prob = 50
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_fireproof/spawn_item(loc)
-	var/obj/item/storage/box/B = ..()
-	B.name = "Fireproof Armor Set Box"
-	B.desc = "A singed box with some folded clothes and a helmet inside."
+	var/obj/item/storage/backpack/duffelbag/sec/B = ..()
+	B.name = "Singed Duffelbag"
+	B.desc = "It smells like kerosene."
 	new /obj/item/clothing/suit/armor/frontier/fireproof(B)
 	new /obj/item/clothing/head/helmet/bulletproof/x11/frontier/fireproof(B)
 	new /obj/item/clothing/under/frontiersmen/fireproof(B)
 	new /obj/item/clothing/mask/gas/frontiersmen(B)
 	return B
 
+/datum/blackmarket_item/clothing/coalition_armor
+	name = "Coalition Surplus Pack"
+	desc = "A set of Coalition surplus armor from the ICW. Slightly used, but you can barely even see the bloodstains on the red."
+	item = /obj/item/storage/backpack/duffelbag/syndie
+
+	cost_min = 500
+	cost_max = 800
+	stock_max = 5
+	availability_prob = 50
+
+/datum/blackmarket_item/clothing/coalition_armor/spawn_item(loc)
+	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
+	new /obj/item/clothing/suit/armor/vest/syndie(B)
+	new /obj/item/clothing/head/helmet/syndie(B)
+	return B
+
 /datum/blackmarket_item/clothing/gezena_armor
 	name = "Raksha-Plating vest"
 	desc = "Genuine armor vests used by the PGF Marine Corp. If a military guy in a cape comes by, play dumb."
-	item = /obj/item/clothing/suit/armor/gezena/marine
-	pair_item = list(/datum/blackmarket_item/clothing/gezena_helmet)
+	item =  /obj/item/storage/backpack/duffelbag/sec
 
 	cost_min = 750
-	cost_max = 1250
+	cost_max = 1750
 	stock_max = 3
 	availability_prob = 20
 
-/datum/blackmarket_item/clothing/gezena_helmet
-	name = "Raksha-Helm"
-	desc = "A helmet used by the PGF Marine Corp. They won't miss it. Not like there's much to protect up there anyways."
-	item = /obj/item/clothing/head/helmet/gezena
-
-	cost_min = 500
-	cost_max = 600
-	stock_max = 3
-	availability_prob = 0
+/datum/blackmarket_item/clothing/gezena_armor/spawn_item(loc)
+	var/obj/item/storage/backpack/duffelbag/sec/B = ..()
+	B.name = "Armor Set Box"
+	B.desc = "A beat up looking duffel with a frayed embroided nametag."
+	new /obj/item/clothing/suit/armor/gezena/marine(B)
+	new /obj/item/clothing/head/helmet/gezena(B)
+	return B
 
 /datum/blackmarket_item/clothing/full_spacesuit_set
-	name = "\improper Nanotrasen Branded Spacesuit Box"
+	name = "\improper Nanotrasen Branded Spacesuit Set"
 	desc = "A few boxes of \"Old Style\" space suits fell off the back of a space truck."
-	item = /obj/item/storage/box
+	item = /obj/item/storage/backpack/duffelbag
 
 	cost_min = 250
 	cost_max = 750
@@ -161,17 +240,17 @@
 	availability_prob = 70
 
 /datum/blackmarket_item/clothing/full_spacesuit_set/spawn_item(loc)
-	var/obj/item/storage/box/B = ..()
-	B.name = "Spacesuit Box"
+	var/obj/item/storage/backpack/duffelbag/B = ..()
+	B.name = "Spacesuit Duffelbag"
 	B.desc = "It has a NT logo on it."
 	new /obj/item/clothing/suit/space(B)
 	new /obj/item/clothing/head/helmet/space(B)
 	return B
 
 /datum/blackmarket_item/clothing/syndie_spacesuit_set
-	name = "\improper Syndicate Branded Spacesuit Box"
+	name = "\improper Coalition Branded Spacesuit Box"
 	desc = "An armored syndicate softsuit, popular among the ACLF operatives who were too broke to get an actual hardsuit."
-	item = /obj/item/storage/box/syndie_kit
+	item = /obj/item/storage/backpack/duffelbag/syndie
 
 	cost_min = 750
 	cost_max = 2500
@@ -179,10 +258,10 @@
 	availability_prob = 50
 
 /datum/blackmarket_item/clothing/syndie_spacesuit_set/spawn_item(loc)
-	var/obj/item/storage/box/syndie_kit/B = ..()
-	B.name = "Spacesuit Box"
-	B.desc = "It has a Syndicate logo on it."
-	var/suit_color = pick(list("red","green","dark green","blue","orange","black","black-green","black-blue","black-orange","black-red"))
+	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
+	B.name = "Spacesuit Duffelbag"
+	B.desc = "It has a Coalition logo stamped on the front."
+	var/suit_color = pick(list("red","green","dark-green","orange","blue","black","black-green","black-blue","black-orange","black-red"))
 	switch(suit_color)
 		if("red")
 			new /obj/item/clothing/head/helmet/space/syndicate(B)
@@ -218,8 +297,8 @@
 
 /datum/blackmarket_item/clothing/chameleon_hat
 	name = "Chameleon Hat"
-	desc = "Pick any hat you want with this Handy device. Not Quality Tested."
-	item = /obj/item/clothing/head/chameleon/broken
+	desc = "This all in one hat is always in style with it's adaptive color changing weave!."
+	item = /obj/item/clothing/head/chameleon
 
 	cost_min = 100
 	cost_max = 200
@@ -236,6 +315,16 @@
 	stock_max = 2
 	availability_prob = 10
 	spawn_weighting = FALSE
+
+/datum/blackmarket_item/clothing/ablative_coat
+	name = "Ablative Trenchocat"
+	desc = "An fullbody ablative trenchcoat and hood designed to massively disperse the impact of laser weaponry. Will not protect against bullets, knives, or mean words about your choice of outfit."
+	item = /obj/item/clothing/suit/hooded/ablative
+
+	cost_min = 1000
+	cost_max = 2500
+	stock_max = 3
+	availability_prob = 40
 
 /datum/blackmarket_item/clothing/combatmedic_suit
 	name = "Combat Medic Hardsuit"
@@ -266,3 +355,46 @@
 	cost_max = 2000
 	stock_max = 3
 	availability_prob = 40
+
+/datum/blackmarket_item/clothing/thermal_eyepatch
+	name = "Thermal Eyepatch"
+	desc = "A thermal eyepatch, capable of tracking the heat signatures of living beings through solid objects."
+	item = /obj/item/clothing/glasses/thermal/eyepatch
+
+	cost_min = 1000
+	cost_max = 3000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/clothing/jumpboots
+	name = "Jump Boots"
+	desc = "Jump ahead of the competition with these specialized mining boots!"
+	item = /obj/item/clothing/shoes/bhop
+
+	cost_min = 100
+	cost_max = 1000
+	stock = 3
+	availability_prob = 30
+
+/datum/blackmarket_item/clothing/rocket_gloves
+	name = "Rocket Gloves"
+	desc = "The pinacle of tackling technology, no one will be able to resist a tackle from these rocket propelled gloves. Make sure not to miss though, we don't sell wheelchairs."
+	item = /obj/item/clothing/gloves/tackler/rocket
+
+	cost_min = 500
+	cost_max = 2000
+	stock_max = 3
+	availability_prob = 30
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/clothing/krav_gloves
+	name = "Krav Maga Gloves"
+	desc = "Go for the throat! These special gloves will let you perform advanced Krav Maga techniques like a pro without any of the usual hurdles like \"talent\", \"training\", or \"hard work\"."
+	item = /obj/item/clothing/gloves/krav_maga/sec
+
+	cost_min = 1000
+	cost_max = 2000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
