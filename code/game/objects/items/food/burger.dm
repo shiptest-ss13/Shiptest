@@ -553,7 +553,7 @@
 /obj/item/food/burger/tiris
 	name = "tiris burger"
 	desc = "A traditional human burger made with Tecetian Tiris, topped with Tiris Cheese, and with a leaf of siti between the bread for an added crunch. Some prefer to forgo the bread for more Siti."
-	icon_state = "tiris_burger"
+	icon_state = "tiris-burger"
 	tastes = list("bun" = 2, "fatty meat" = 4, "rich cheese" = 3, "crisp vegetable leaf" = 1)
 	foodtypes = GRAIN | MEAT | DAIRY | VEGETABLES
 
