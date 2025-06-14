@@ -39,7 +39,7 @@
 	SIGNAL_HANDLER
 
 	var/obj/O = parent
-	apply_moodlet(M, impressiveness *(O.obj_integrity/O.max_integrity))
+	apply_moodlet(M, impressiveness *(O.atom_integrity/O.max_integrity))
 
 /datum/component/art/proc/on_attack_hand(datum/source, mob/M)
 	SIGNAL_HANDLER

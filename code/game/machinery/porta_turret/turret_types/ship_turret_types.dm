@@ -13,7 +13,7 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		if(!(machine_stat & BROKEN))
-			. += span_notice("[src] reports its integrity is currently [round((obj_integrity / max_integrity) * 100)] percent.")
+			. += span_notice("[src] reports its integrity is currently [round((atom_integrity / max_integrity) * 100)] percent.")
 
 /obj/machinery/porta_turret/ship/weak
 	max_integrity = 120
