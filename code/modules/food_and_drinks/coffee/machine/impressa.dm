@@ -177,12 +177,12 @@
 		update_icon()
 		return TRUE
 
-	if(istype(attack_item, /obj/item/reagent_containers/food/snacks/grown/coffee) && !(attack_item.item_flags & ABSTRACT))
+	if(istype(attack_item, /obj/item/food/grown/coffee) && !(attack_item.item_flags & ABSTRACT))
 		if(coffee_amount >= BEAN_CAPACITY)
 			balloon_alert(user, "the coffee container is full!")
 			return TRUE
-		var/obj/item/reagent_containers/food/snacks/grown/coffee/new_coffee = attack_item
-		if(!(new_coffee.dry))
+		var/obj/item/food/grown/coffee/new_coffee = attack_item
+		if(!HAS_TRAIT(new_coffee, TRAIT_DRIED))
 			balloon_alert(user, "coffee beans must be dry!")
 			return TRUE
 		if(!user.transferItemToLoc(new_coffee, src))
@@ -196,8 +196,8 @@
 			balloon_alert(user, "the coffee container is full!")
 			return TRUE
 		var/obj/item/storage/box/coffeepack/new_coffee_pack = attack_item
-		for(var/obj/item/reagent_containers/food/snacks/grown/coffee/new_coffee in new_coffee_pack.contents)
-			if(!(new_coffee.dry))
+		for(var/obj/item/food/grown/coffee/new_coffee in new_coffee_pack.contents)
+			if(!HAS_TRAIT(new_coffee, TRAIT_DRIED))
 				if(coffee_amount < BEAN_CAPACITY)
 					if(user.transferItemToLoc(new_coffee, src))
 						coffee += new_coffee

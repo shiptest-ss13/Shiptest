@@ -71,7 +71,7 @@ GENE SCANNER
 			I.appearance = MA
 			t_ray_images += I
 	if(t_ray_images.len)
-		flick_overlay(t_ray_images, list(viewer.client), flick_time)
+		flick_overlay_global(t_ray_images, list(viewer.client), flick_time)
 
 /obj/item/healthanalyzer
 	name = "health analyzer"
@@ -211,7 +211,15 @@ GENE SCANNER
 		render_list += "<span class='info ml-1'>Brain Activity Level: [(200 - M.getOrganLoss(ORGAN_SLOT_BRAIN))/2]%.</span>\n"
 
 	if (M.radiation)
-		render_list += "<span class='alert ml-1'>Subject is irradiated.</span>\n"
+		render_list += "<span class='alert ml-1'>Subject is "
+		switch(M.radiation)
+			if(0 to RAD_MOB_SAFE)
+				render_list += "lightly irradiated.</span>\n"
+			if(RAD_MOB_SAFE to RAD_MOB_VOMIT)
+				render_list += "irradiated.</span>\n"
+			if(RAD_MOB_VOMIT to INFINITY)
+				render_list += "severely irradiated.</span>\n"
+
 		if(advanced)
 			render_list += "<span class='info ml-1'>Radiation Level: [M.radiation]%.</span>\n"
 
