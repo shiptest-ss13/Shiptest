@@ -84,6 +84,8 @@
 	///The cooldown for events hitting this ship. Generally used by events with a big consquence and fires slower than normal, like flares
 	COOLDOWN_DECLARE(event_cooldown)
 
+	var/access_namespace = 0
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/old_name = name
 	var/full_name = "[source_template.prefix] [new_name]"
@@ -124,6 +126,7 @@
 	if(creation_template)
 		source_template = creation_template
 		unique_ship_access = source_template.unique_ship_access
+		access_namespace = SSaccess.new_namespace(name, creation_template.faction)
 		job_slots = source_template.job_slots?.Copy()
 		stationary_icon_state = creation_template.token_icon_state
 		alter_token_appearance()

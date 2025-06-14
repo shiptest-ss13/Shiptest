@@ -6,6 +6,7 @@
 
 	access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY)
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY)
+	access_flags = ACCESS_SHIP_MEDICAL
 
 	display_order = JOB_DISPLAY_ORDER_PSYCHOLOGIST
 
