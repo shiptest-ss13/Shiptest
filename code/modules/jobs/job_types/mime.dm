@@ -6,6 +6,7 @@
 
 	access = list(ACCESS_THEATRE)
 	minimal_access = list(ACCESS_THEATRE)
+	access_flags = ACCESS_SHIP_SERVICE //shrugs
 
 	display_order = JOB_DISPLAY_ORDER_MIME
 

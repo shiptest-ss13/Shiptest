@@ -7,6 +7,7 @@
 
 	access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
+	access_flags = (ACCESS_SHIP_OFFICE)
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_LAWYER

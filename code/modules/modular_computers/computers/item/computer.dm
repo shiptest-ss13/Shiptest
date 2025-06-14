@@ -85,6 +85,12 @@
 		if(card_slot)
 			card_slot.try_eject(null, user)
 
+/obj/item/modular_computer/get_deep_access()
+	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
+	if(card_slot)
+		return card_slot.get_deep_access()
+	return ..()
+
 // Gets IDs/access levels from card slot. Would be useful when/if PDAs would become modular PCs.
 /obj/item/modular_computer/GetAccess()
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
