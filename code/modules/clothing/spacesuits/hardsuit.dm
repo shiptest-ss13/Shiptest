@@ -457,6 +457,27 @@
 	jetpack = null
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
 
+//Ramzi Elite Suit
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
+	name = "elite rust-red hardsuit helmet"
+	desc = "An elite version of the rusted-red hardsuit helmet, with improved armour and fireproofing. The armour is worn and heavy. It is in EVA mode."
+	alt_desc = "An elite version of the rusted-red hardsuit, with improved armour and fireproofing. The armour is worn and heavy. It is in travel mode."
+	hardsuit_type = "ramzielite"
+	icon_state = "hardsuit1-ramzielite"
+	item_state = "hardsuit1-ramzielite"
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	name = "elite rust-red hardsuit"
+	desc = "An elite version of the rusted-red hardsuit, with improved armour and fireproofing. The armour is worn and heavy. It is in EVA mode."
+	alt_desc = "An elite version of the rusted-red hardsuit, with improved armour and fireproofing. The armour is worn and heavy. It is in EVA mode."
+	icon_state = "hardsuit1-ramzielite"
+	item_state = "hardsuit1-ramzielite"
+	hardsuit_type = "ramzielite"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80)
+	slowdown = 1.25
+
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
 	name = "elite syndicate hardsuit helmet"
