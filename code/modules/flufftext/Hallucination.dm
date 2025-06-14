@@ -1265,8 +1265,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	target.playsound_local(get_turf(src), "sparks", 100, 1)
 	target.staminaloss += 50
 	target.Stun(40)
-	target.adjust_jitter(1000, max = 1500)
-	target.do_jitter_animation(target.jitteriness)
+	target.set_timed_status_effect(300 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
 	addtimer(CALLBACK(src, PROC_REF(shock_drop)), 20)
 
 /datum/hallucination/shock/proc/reset_shock_animation()
@@ -1275,7 +1274,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		target.client.images.Remove(electrocution_skeleton_anim)
 
 /datum/hallucination/shock/proc/shock_drop()
-	target.jitteriness = max(target.jitteriness - 990, 10) //Still jittery, but vastly less
+	target.set_timed_status_effect(20 SECONDS, /datum/status_effect/jitter)
 	target.Paralyze(60)
 
 /datum/hallucination/husks

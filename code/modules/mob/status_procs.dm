@@ -3,34 +3,6 @@
 //The effects include: stun, knockdown, unconscious, sleeping, resting, jitteriness, dizziness, ear damage,
 // eye damage, eye_blind, eye_blurry, druggy, TRAIT_BLIND trait, and TRAIT_NEARSIGHT trait.
 
-///Set the jitter of a mob
-/mob/proc/set_jitter(amount)
-	jitteriness = max(jitteriness,amount,0)
-	return TRUE
-
-/mob/proc/adjust_jitter(amount, min = 0, max = 1000)
-	if((jitteriness+amount > max) && jitteriness+amount <= max*1.6)
-		jitteriness = max
-		return TRUE
-	if(jitteriness+amount < min && jitteriness+amount < min * 1.6)
-		jitteriness = min
-		return TRUE
-	jitteriness = clamp(jitteriness+amount, 0, max)
-	return TRUE
-
-
-/**
- * Set the dizzyness of a mob to a passed in amount
- *
- * Except if dizziness is already higher in which case it does nothing
- */
-/mob/proc/Dizzy(amount)
-	dizziness = max(dizziness,amount,0)
-
-///FOrce set the dizzyness of a mob
-/mob/proc/set_dizziness(amount)
-	dizziness = max(amount, 0)
-
 ///Blind a mobs eyes by amount
 /mob/proc/blind_eyes(amount)
 	adjust_blindness(amount)

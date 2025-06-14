@@ -249,11 +249,11 @@
 	glass_desc = "Black coffee, served straight. It'll be pretty bitter without anything else in it!"
 
 /datum/reagent/consumable/coffee/overdose_process(mob/living/M)
-	M.adjust_jitter(5, max = 200)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/coffee/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	//310.15 is the normal bodytemp.
@@ -281,9 +281,9 @@
 	glass_desc = "There's a latent desire to drink this out of a teacup, but there's no time for teatime out here."
 
 /datum/reagent/consumable/tea/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-2)
+	M.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-1)
-	M.adjust_jitter(max(0,M.jitteriness-3))
+	M.adjust_timed_status_effect(-6 SECONDS * REM, /datum/status_effect/jitter)
 	M.AdjustSleeping(-20)
 	if(M.getToxLoss() && prob(20))
 		M.adjustToxLoss(-1, 0)
@@ -330,11 +330,11 @@
 	glass_desc = "Iced black coffee. It's still going to be pretty bitter on it's own, though!"
 
 /datum/reagent/consumable/icecoffee/overdose_process(mob/living/M)
-	M.adjust_jitter(5)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/icecoffee/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -354,11 +354,11 @@
 	glass_desc = "The wonders of fusion mixed into a cup of coffee, resulting in an extremely hot-cold drink."
 
 /datum/reagent/consumable/hot_ice_coffee/overdose_process(mob/living/M)
-	M.adjust_jitter(5, max = 200)
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/hot_ice_coffee/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-60)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -377,7 +377,7 @@
 	glass_desc = "A much more appealing way to have tea while dealing with the heat."
 
 /datum/reagent/consumable/icetea/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-2)
+	M.adjust_timed_status_effect(-4 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-1)
 	M.AdjustSleeping(-40)
 	if(M.getToxLoss() && prob(20))
@@ -419,8 +419,8 @@
 	..()
 
 /datum/reagent/consumable/crosstalk/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(10, max = 200)
-	M.dizziness +=1
+	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.adjust_timed_status_effect(1 SECONDS, /datum/status_effect/dizziness, 2 SECONDS)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
@@ -439,7 +439,7 @@
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-20)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	M.adjust_jitter(5, max = 100)
+	M.set_timed_status_effect(1 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 	. = 1
 
@@ -564,7 +564,7 @@
 	glass_desc = "Soda water. You feel like you should add something to this..."
 
 /datum/reagent/consumable/sodawater/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	..()
@@ -579,7 +579,7 @@
 	glass_desc = "Quinine and carbonated water. You really should add something to this..."
 
 /datum/reagent/consumable/tonic/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -597,8 +597,8 @@
 	glass_desc = "A glass of Xeno Energy. It seems to swirl and roil outside of the can..."
 
 /datum/reagent/consumable/xeno_energy/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(10, max = 200)
-	M.dizziness +=1
+	M.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.adjust_timed_status_effect(2 SECONDS, /datum/status_effect/dizziness, 20 SECONDS)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-1 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -639,11 +639,11 @@
 	glass_desc = "A nice and refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/soy_latte/overdose_process(mob/living/M)
-	M.adjust_jitter(2, max = 100)
+	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/soy_latte/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.set_sleeping(0)
 	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
@@ -664,11 +664,11 @@
 	glass_desc = "A nice, strong and refreshing beverage. It goes well with a book, if you have the time to read."
 
 /datum/reagent/consumable/cafe_latte/overdose_process(mob/living/M)
-	M.adjust_jitter(5, max = 200)
+	M.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	..()
 
 /datum/reagent/consumable/cafe_latte/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
+	M.adjust_timed_status_effect(-10 SECONDS, /datum/status_effect/dizziness)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.set_sleeping(0)
 	M.adjust_bodytemperature(1 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(), FALSE)
