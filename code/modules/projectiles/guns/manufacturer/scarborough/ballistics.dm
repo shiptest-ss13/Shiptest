@@ -183,6 +183,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	fire_delay = 0.35 SECONDS
 
 	spread = 3
+	spread_unwielded = 8
 	recoil = 1
 	recoil_unwielded = 2
 
