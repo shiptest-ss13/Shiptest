@@ -295,7 +295,7 @@
 		/obj/item/storage/backpack/satchel/hyd = 2,
 		/obj/item/clothing/suit/hooded/wintercoat/hydro = 1,
 		/obj/item/clothing/suit/apron = 2,
-		/obj/item/clothing/suit/apron/overalls = 2,
+		/obj/item/clothing/under/overalls = 2,
 		/obj/item/clothing/under/rank/civilian/hydroponics = 3,
 		/obj/item/clothing/mask/bandana = 3)
 	generate_items_inside(items_inside,src)

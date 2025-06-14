@@ -202,7 +202,7 @@
 					/obj/item/clothing/head/beret/service = 2, //WS edit - Berets
 					/obj/item/clothing/suit/hooded/wintercoat/hydro = 2,
 					/obj/item/clothing/suit/apron = 2,
-					/obj/item/clothing/suit/apron/overalls = 3,
+					/obj/item/clothing/under/overalls = 3,
 					/obj/item/clothing/suit/apron/waders = 3,
 					/obj/item/clothing/under/rank/civilian/hydroponics = 3,
 					/obj/item/clothing/under/rank/civilian/hydroponics/skirt = 3,
