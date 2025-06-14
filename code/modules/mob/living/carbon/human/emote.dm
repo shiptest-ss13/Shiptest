@@ -278,7 +278,7 @@
 /datum/emote/living/carbon/human/robot_tongue/no
 	key = "no"
 	key_third_person = "no"
-	message = "emits an negative blip."
+	message = "emits a negative blip."
 
 /datum/emote/living/carbon/human/robot_tongue/no/run_emote(mob/user, params)
 	. = ..()

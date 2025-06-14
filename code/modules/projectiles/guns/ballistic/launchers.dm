@@ -27,6 +27,7 @@
 	name = "multi grenade launcher"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_grenadelnchr"
+	bad_type = /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/cylinder/grenademulti,
@@ -34,20 +35,6 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg/attack_self()
 	return
-
-/obj/item/gun/ballistic/automatic/gyropistol
-	name = "gyrojet pistol"
-	desc = "A prototype pistol designed to fire self-propelled rockets."
-	icon_state = "gyropistol"
-	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
-	default_ammo_type = /obj/item/ammo_box/magazine/m75
-	allowed_ammo_types = list(
-		/obj/item/ammo_box/magazine/m75,
-	)
-	burst_size = 1
-	fire_delay = 0.4 SECONDS
-	actions_types = list()
-	casing_ejector = FALSE
 
 GLOBAL_LIST_INIT(rpg_scrawlings, list(
 	"\"FRONT TOWARDS ENEMY\"",
