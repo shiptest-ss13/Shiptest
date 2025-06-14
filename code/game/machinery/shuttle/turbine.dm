@@ -378,7 +378,8 @@
 	icon_screen = "turbinecomp"
 	icon_keyboard = "tech_key"
 	circuit = /obj/item/circuitboard/computer/turbine_computer
-	var/obj/machinery/power/compressor/compressor
+	var/list/obj/machinery/power/compressor/compressors = list()
+	var/obj/docking_port/mobile/linked_ship
 	var/id = 0
 
 /obj/machinery/computer/turbine_computer/retro
@@ -391,16 +392,25 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/computer/turbine_computer/LateInitialize()
+	if(!istype(get_area(src), /area/ship))
+		locate_machinery()
+
+/obj/machinery/computer/turbine_computer/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	linked_ship = port
 	locate_machinery()
 
 /obj/machinery/computer/turbine_computer/locate_machinery()
-	if(id)
-		for(var/obj/machinery/power/compressor/C in SSair.atmos_air_machinery)
-			if(C.comp_id == id)
-				compressor = C
-				return
+	compressors = list()
+	if(linked_ship)
+		for(var/obj/machinery/power/shuttle/engine/turbine/turbine_engine in linked_ship.get_engines())
+			compressors.Add(turbine_engine)
+	else if(id)
+		for(var/obj/machinery/power/compressor/compressor in SSair.atmos_air_machinery)
+			if(compressor.comp_id == id)
+				compressors.Add(compressor)
 	else
-		compressor = locate(/obj/machinery/power/compressor) in range(7, src)
+		compressors = list(locate(/obj/machinery/power/compressor) in range(7, src))
 
 /obj/machinery/computer/turbine_computer/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -410,15 +420,23 @@
 
 /obj/machinery/computer/turbine_computer/ui_data(mob/user)
 	var/list/data = list()
-	data["compressor"] = compressor ? TRUE : FALSE
-	data["compressor_broke"] = (!compressor || (compressor.machine_stat & (BROKEN|MAINT))) ? TRUE : FALSE
-	data["turbine"] = compressor?.turbine ? TRUE : FALSE
-	data["turbine_broke"] = (!compressor || !compressor.turbine || (compressor.turbine.machine_stat & (BROKEN|MAINT))) ? TRUE : FALSE
-	data["online"] = compressor?.starter
-	data["power"] = DisplayPower(compressor?.turbine?.lastgen)
-	data["rpm"] = compressor?.rpm
-	data["temp"] = compressor?.gas_contained.return_temperature()
-	data["pressure"] = compressor?.gas_contained.return_pressure()
+	var/list/turbine_list = list()
+	for(var/obj/machinery/power/compressor/compressor)
+		turbine_list.Add(list(list(
+			"comp_ref" = REF(compressor),
+			"engine_id" = compressor.comp_id,
+			"compressor" = !QDELETED(compressor),
+			"compressor_broke" = QDELETED(compressor) || (compressor.machine_stat & (BROKEN|MAINT)),
+			"turbine" = !!compressor.turbine,
+			"turbine_broke" = !compressor.turbine || (compressor.turbine.machine_stat & (BROKEN|MAINT)),
+			"online" = compressor.starter,
+			"power" = DisplayPower(compressor.turbine?.lastgen),
+			"rpm" = compressor.rpm,
+			"temp" = compressor.gas_contained.return_temperature(),
+			"pressure" = compressor.gas_contained.return_pressure(),
+		)))
+	data["engines"] = turbine_list
+	data["computer_id"] = id
 	return data
 
 /obj/machinery/computer/turbine_computer/ui_act(action, params)
@@ -428,6 +446,12 @@
 
 	switch(action)
 		if("toggle_power")
+			var/obj/machinery/power/compressor/compressor = locate(params["comp_ref"])
+			if(compressor && compressor.turbine)
+				compressor.starter = !compressor.starter
+				. = TRUE
+		if("rename_compressor")
+			var/obj/machinery/power/compressor/compressor = locate(params["comp_ref"])
 			if(compressor && compressor.turbine)
 				compressor.starter = !compressor.starter
 				. = TRUE
