@@ -1,4 +1,3 @@
-/*
 #define COMSIG_ATOM_BREAK "atom_break"
 /// from base of [/atom/proc/atom_fix]: ()
 #define COMSIG_ATOM_FIX "atom_fix"
@@ -10,7 +9,7 @@
 #define COMSIG_ATOM_TAKE_DAMAGE "atom_take_damage"
 	/// Return bitflags for the above signal which prevents the atom taking any damage.
 	#define COMPONENT_NO_TAKE_DAMAGE (1<<0)
-*/
+
 /* Attack signals. They should share the returned flags, to standardize the attack chain. */
 /// tool_act -> pre_attack -> target.attackby (item.attack) -> afterattack
 	///Ends the attack chain. If sent early might cause posterior attacks not to happen.

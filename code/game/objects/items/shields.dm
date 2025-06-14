@@ -35,7 +35,7 @@
 	. = ..()
 	if(recoil_bonus)
 		. += span_info("Firing a gun while holding this will brace against it, reducing the impact of recoil.")
-	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
+	var/healthpercent = round((atom_integrity/max_integrity) * 100, 1)
 	switch(healthpercent)
 		if(50 to 99)
 			. += span_info("It looks slightly damaged.")
@@ -60,7 +60,7 @@
 		return TRUE
 	take_damage(damage)
 
-/obj/item/shield/obj_destruction(damage_flag)
+/obj/item/shield/atom_destruction(damage_flag)
 	playsound(src, shield_break_sound, 50)
 	new shield_break_leftover(get_turf(src))
 	if(isliving(loc))
@@ -87,12 +87,12 @@
 			playsound(src, shield_bash_sound, 50, TRUE)
 			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
 	else if(istype(W, /obj/item/stack/sheet/mineral/titanium))
-		if (obj_integrity >= max_integrity)
+		if (atom_integrity >= max_integrity)
 			to_chat(user, span_warning("[src] is already in perfect condition."))
 		else
 			var/obj/item/stack/sheet/mineral/titanium/T = W
 			T.use(1)
-			obj_integrity = max_integrity
+			atom_integrity = max_integrity
 			to_chat(user, span_notice("You repair [src] with [T]."))
 	else
 		return ..()

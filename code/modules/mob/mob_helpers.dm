@@ -458,7 +458,7 @@
 		else
 			dam = 0
 		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
-			if(affecting.uses_integrity)
+			if(affecting.limb_integrity)
 				var/integrity_damage_incurred = (affecting.get_curable_damage() >= affecting.integrity_threshold) || (affecting.max_damage - affecting.integrity_loss >= affecting.integrity_threshold)
 				if(affecting.get_curable_damage(integrity_damage_incurred ? integrity_loss : 0) <= 0)
 					var/limb_hp_loss = affecting.integrity_loss-affecting.integrity_ignored

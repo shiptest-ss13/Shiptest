@@ -47,7 +47,7 @@
 /// mines have a small chance to be triggered by damage, but they take longer to explode
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
-	if(prob(35) & obj_integrity > 0)
+	if(prob(35) & atom_integrity > 0)
 		blast_delay = blast_delay * 2
 		trigger_mine()
 
@@ -110,7 +110,7 @@
 
 /// When something sets off a mine
 /obj/item/mine/proc/trigger_mine(atom/movable/triggerer)
-	if(obj_integrity <= 0 || triggered)//too busy detonating to detonate again
+	if(atom_integrity <= 0 || triggered)//too busy detonating to detonate again
 		return
 	if(triggerer)
 		triggerer.visible_message(span_danger("[icon2html(src, viewers(src))] [triggerer] sets off \the [src]. It's gonna blow!"), span_danger("[icon2html(src, viewers(src))] \The [src] activates."))
