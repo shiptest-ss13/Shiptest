@@ -142,7 +142,7 @@
 	desc = "A shaker full of salt. Make sure the cap is on tight!"
 	icon_state = "saltshakersmall"
 	icon_empty = "emptyshaker"
-	possible_transfer_amounts = list(1,20) //for clown turning the lid off
+	possible_transfer_amounts = list(1,20) //for turning the lid off
 	amount_per_transfer_from_this = 1
 	volume = 20
 	list_reagents = list(/datum/reagent/consumable/sodiumchloride = 20)
@@ -165,7 +165,7 @@
 	desc = "A handheld mill to grind down peppercorn. Often used to flavor food... or make people sneeze."
 	icon_state = "peppermillsmall"
 	icon_empty = "emptyshaker"
-	possible_transfer_amounts = list(1,20) //for clown turning the lid off
+	possible_transfer_amounts = list(1,20) //for turning the lid off
 	amount_per_transfer_from_this = 1
 	volume = 20
 	list_reagents = list(/datum/reagent/consumable/blackpepper = 20)
