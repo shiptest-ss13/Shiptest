@@ -96,9 +96,6 @@
 	path = /obj/item/clothing/suit/toggle/suspenders/gray
 
 //Misc
-/datum/gear/suit/overalls
-	display_name = "overalls"
-	path = /obj/item/clothing/suit/apron/overalls
 
 /datum/gear/suit/labcoat
 	display_name = "labcoat"

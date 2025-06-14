@@ -18,6 +18,7 @@
 		/obj/item/clothing/head/beanie/orange = 3,
 		/obj/item/clothing/head/flatcap = 3,
 		/obj/item/clothing/head/flap = 3,
+		/obj/item/clothing/head/sunhat = 3,
 		/obj/item/clothing/head/beanie/teal = 3,
 		/obj/item/clothing/gloves/fingerless = 2,
 		/obj/item/clothing/neck/scarf/pink = 3,
