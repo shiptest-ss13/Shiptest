@@ -76,6 +76,8 @@ All ShuttleMove procs go here
 		for(var/i in 0 to new_loc.get_missing_shuttles(newT)) //Start at 0 because get_missing_shuttles() will report 1 less missing shuttle because of the CopyOnTop()
 			newT.baseturfs.Insert(inject_index, /turf/baseturf_skipover/shuttle)
 
+	SEND_SIGNAL(newT, COMSIG_TURF_INITIALIZE_TRANSPARENCY) //After baseturfs ares established, we send this signal. Deferred to here on travel, otherwise usually performed in ChangeTurf().
+
 	return TRUE
 
 // Called on the new turf after everything has been moved
