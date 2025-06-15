@@ -1124,13 +1124,6 @@
 	pixel_y = 4
 	},
 /obj/item/trash/energybar,
-/obj/item/trash/sosjerky{
-	pixel_y = 5
-	},
-/obj/item/trash/popcorn{
-	pixel_x = 3;
-	pixel_y = 5
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "iI" = (
@@ -2412,17 +2405,17 @@
 /area/ship/construction)
 "uA" = (
 /obj/structure/table,
-/obj/item/storage/bag/tray{
-	pixel_y = 4
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 3
 	},
-/obj/item/storage/bag/tray{
-	pixel_y = 6
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 5
 	},
-/obj/item/storage/bag/tray{
-	pixel_y = 8
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 7
 	},
-/obj/item/storage/bag/tray{
-	pixel_y = 10
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -3145,6 +3138,9 @@
 /obj/item/radio/headset/pgf{
 	pixel_x = -8;
 	pixel_y = -9
+	},
+/obj/item/hand_labeler{
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
@@ -4754,10 +4750,6 @@
 	name = "Doctor's Locker";
 	req_access_txt = "5"
 	},
-/obj/item/clothing/gloves/gezena{
-	pixel_x = 3;
-	pixel_y = 11
-	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_x = 7;
 	pixel_y = -7
@@ -4809,6 +4801,18 @@
 /obj/item/clothing/head/gezena/flap/medic{
 	pixel_y = 1;
 	pixel_x = 12
+	},
+/obj/item/clothing/gloves/color/latex/nitrile{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/clothing/mask/surgical{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/clothing/suit/apron/surgical{
+	pixel_x = 3;
+	pixel_y = -4
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
