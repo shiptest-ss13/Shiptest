@@ -62,6 +62,12 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c46x30mm/rubber
 
+/obj/item/ammo_casing/c46x30mm/tesla
+	name = "4.6x30mm teslak casing"
+	desc = "A 4.6x30mm rubber bullet casing."
+	bullet_skin = "rubber"
+	projectile_type = /obj/projectile/energy/tesla/explosive
+
 // 4.73x33mm caseless (Solar)
 
 /obj/item/ammo_casing/caseless/c47x33mm

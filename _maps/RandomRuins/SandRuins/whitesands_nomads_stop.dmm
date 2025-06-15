@@ -94,7 +94,14 @@
 /turf/open/water/acid/whitesands,
 /area/space)
 "hx" = (
-/turf/open/floor/plasteel/mono/dark,
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "hD" = (
 /obj/structure/chair/handrail{
@@ -142,6 +149,12 @@
 /obj/effect/turf_decal/industrial/warning/full,
 /turf/open/floor/plasteel,
 /area/space)
+"jK" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 9
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/space)
 "jT" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 4
@@ -178,6 +191,12 @@
 	dir = 5
 	},
 /turf/open/floor/plating/rust/plasma,
+/area/space)
+"li" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "lj" = (
 /obj/structure/platform/industrial_alt{
@@ -216,11 +235,24 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"mM" = (
+/obj/effect/turf_decal/industrial/stand_clear,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands/lit,
+/area/space)
 "mQ" = (
 /obj/structure/platform/wood{
 	dir = 6
 	},
 /turf/open/water/acid/whitesands,
+/area/space)
+"nd" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "nj" = (
 /turf/open/floor/concrete/slab_4{
@@ -239,6 +271,22 @@
 	icon_state = "computer-right"
 	},
 /turf/open/floor/plasteel,
+/area/space)
+"oJ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_1/whitesands/lit,
+/area/space)
+"pd" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
 /area/space)
 "qn" = (
 /obj/machinery/conveyor{
@@ -318,12 +366,28 @@
 	},
 /turf/open/floor/plating/rust/plasma,
 /area/space)
+"wx" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "xn" = (
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "xO" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/plasteel/patterned,
+/area/space)
+"yO" = (
+/turf/open/floor/plasteel/patterned/ridged,
+/area/space)
+"yT" = (
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "za" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
@@ -343,6 +407,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
 /turf/open/floor/plasteel,
+/area/space)
+"Ar" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "As" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
@@ -372,14 +440,20 @@
 /turf/open/floor/plasteel,
 /area/space)
 "DU" = (
-/obj/structure/grille,
-/turf/open/space/basic,
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono,
 /area/space)
 "Eh" = (
 /turf/open/water/acid/whitesands,
 /area/space)
 "Ev" = (
 /turf/open/floor/plating,
+/area/space)
+"EG" = (
+/obj/structure/marker_beacon,
+/turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "EK" = (
 /obj/effect/turf_decal/atmos/oxygen,
@@ -411,6 +485,14 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/space)
+"Gl" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/space)
 "GH" = (
 /obj/structure/platform/industrial_alt/corner{
 	dir = 1
@@ -438,6 +520,15 @@
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/space)
+"HM" = (
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "HO" = (
 /obj/machinery/power/smes/shuttle{
@@ -504,12 +595,23 @@
 "KO" = (
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/space)
+"KS" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Li" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
 /area/space)
 "Ln" = (
 /turf/open/floor/engine/hull,
+/area/space)
+"LH" = (
+/obj/effect/turf_decal/industrial/stand_clear{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "Mc" = (
 /obj/machinery/conveyor{
@@ -539,6 +641,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Nv" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/space)
 "Oc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/concrete/pavement/whitesands/lit,
@@ -552,6 +660,12 @@
 	dir = 4
 	},
 /turf/open/floor/plating/whitesands/lit,
+/area/space)
+"Ph" = (
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/ridged,
 /area/space)
 "PF" = (
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -587,6 +701,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Ry" = (
+/obj/structure/filingcabinet/double/grey{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
 "Sn" = (
 /obj/machinery/conveyor{
 	id = "doohickey";
@@ -594,6 +714,9 @@
 	},
 /obj/structure/railing/thin,
 /turf/open/floor/plating,
+/area/space)
+"Su" = (
+/turf/open/floor/plasteel/mono,
 /area/space)
 "SW" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -624,6 +747,14 @@
 "Vt" = (
 /turf/open/floor/engine/o2,
 /area/space)
+"VM" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/space)
 "WH" = (
 /turf/open/floor/plating/whitesands/lit,
 /area/space)
@@ -651,6 +782,12 @@
 "Yk" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/slab_1/whitesands/lit,
+/area/space)
+"Yn" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/ridged,
 /area/space)
 "Yw" = (
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
@@ -2464,11 +2601,11 @@ XS
 XS
 Yw
 Yw
-xn
-xn
-xn
-xn
-xn
+EG
+nd
+yT
+nd
+EG
 Yw
 Yw
 Yw
@@ -2517,9 +2654,9 @@ XS
 Yw
 Mp
 Mp
-Ev
-Ev
-Ev
+yO
+yO
+yO
 Mp
 Mp
 Mp
@@ -2568,14 +2705,14 @@ XS
 XS
 Yw
 Mp
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+xn
+li
+HM
+li
+xn
+Mp
+hx
+Gl
 Mp
 Yw
 XS
@@ -2618,16 +2755,16 @@ WH
 XS
 XS
 XS
+EG
+Mp
+xn
+xn
+xn
+xn
 xn
 Mp
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+Su
+Su
 Mp
 Mp
 Mp
@@ -2670,19 +2807,19 @@ WH
 XS
 XS
 xn
+Ar
+yO
+oJ
 xn
-Ev
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+jK
+Yn
+Yn
+Ph
+Su
+Su
 Mp
 hx
-hx
+Gl
 Mp
 kJ
 kJ
@@ -2722,19 +2859,19 @@ WH
 XS
 XS
 xn
+LH
+yO
+mM
 xn
+Nv
+Su
+Su
+Su
+Su
+Su
 Ev
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-Ev
-hx
-hx
+Su
+Su
 Mp
 kJ
 kJ
@@ -2774,19 +2911,19 @@ WH
 XS
 XS
 xn
+Ar
+yO
+oJ
 xn
-Ev
-ti
-ti
-ti
-ti
-ti
-ti
-ti
-ti
+Nv
+Su
+Su
+Su
+Su
+Su
 Mp
 hx
-hx
+Gl
 Mp
 kJ
 kJ
@@ -2826,13 +2963,13 @@ WH
 XS
 XS
 XS
-xn
+EG
 PI
-ti
-ti
-ti
-ti
-ti
+xn
+xn
+Nv
+Su
+DU
 PI
 Mp
 Ev
@@ -2882,13 +3019,13 @@ Yw
 PI
 PI
 PI
-ti
-ti
-ti
+Ph
+Su
+Su
 PI
-hx
-hx
-hx
+pd
+Su
+pd
 Mp
 kJ
 kJ
@@ -2922,25 +3059,25 @@ mx
 ld
 PI
 Mp
-DU
+bw
 Mp
-DU
+bw
 Mp
 Mp
 XS
 XS
 XS
 XS
-Ev
+yO
 DM
-Ev
-ti
-ti
-ti
+yO
+Su
+Su
+Su
 PI
-hx
-hx
-hx
+VM
+Su
+VM
 Mp
 ib
 ib
@@ -2983,12 +3120,12 @@ XS
 XS
 XS
 XS
-Ev
+yO
 DM
-Ev
-ti
-ti
-ti
+yO
+Su
+Su
+Su
 PI
 Mp
 Mp
@@ -3140,8 +3277,8 @@ XS
 KO
 KO
 KO
-Ev
-ti
+bw
+wx
 ti
 ti
 ti
@@ -3192,11 +3329,11 @@ KO
 KO
 KO
 KO
-Ev
+bw
+wx
 ti
 ti
-ti
-ti
+IK
 PI
 kJ
 kJ
@@ -3244,11 +3381,11 @@ XS
 KO
 KO
 KO
-Ev
+bw
 ti
 ti
 ti
-ti
+Ry
 PI
 kJ
 kJ
@@ -3297,10 +3434,10 @@ KO
 KO
 KO
 PI
-ti
-ti
-ti
-ti
+KS
+wx
+wx
+Ry
 Mp
 kJ
 kJ
