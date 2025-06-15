@@ -7,7 +7,7 @@
 	. = ..()
 	if(visualsOnly)
 		return
-	H.grant_language(/datum/language/solarian_international)
+	H.grant_language(/datum/language/solarian_international, source=LANGUAGE_FACTION)
 
 /datum/outfit/job/solgov/assistant
 	name = "SolGov - Scribe"

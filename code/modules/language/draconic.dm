@@ -24,3 +24,7 @@
 	)
 	icon_state = "lizard"
 	default_priority = 90
+	mutual_understanding = list(
+		/datum/language/galactic_common = 40,
+		/datum/language/clip_kalixcian = 60
+	)
