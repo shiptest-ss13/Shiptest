@@ -1,8 +1,8 @@
 //Regular syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate
 	name = "red space helmet"
-	icon_state = "syndicate"
-	item_state = "syndicate"
+	icon_state = "syndicate-helm"
+	item_state = "syndicate-helm"
 	desc = "An advanced, lightweight space helmet made of durable composites. Almost matches integrated hardsuit helmets for protection. Almost."
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 30, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 30, "fire" = 75, "acid" = 75)
 	supports_variations = VOX_VARIATION
