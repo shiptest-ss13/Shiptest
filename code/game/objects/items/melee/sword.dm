@@ -10,7 +10,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	block_chance = 10
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	demolition_mod = 0.75
@@ -133,7 +133,7 @@
 	throwforce = 10
 	armour_penetration = 25
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+	attack_verb = list("sawed", "tore", "lacerated", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1.5 //slower than a real saw
@@ -147,6 +147,8 @@
 	throwforce = 10
 	block_chance = 60
 	armour_penetration = 75
+	wound_bonus = 10
+	bare_wound_bonus = 25
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
@@ -363,7 +365,7 @@
 	force = 20
 	throwforce = 20
 	throw_speed = 4
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	attack_verb = list("cut", "sliced", "diced")
 	slot_flags = ITEM_SLOT_BACK
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -397,7 +399,7 @@
 	icon_state = "weeb_blade"
 	item_state = "weeb_blade"
 	slot_flags = ITEM_SLOT_BACK
-	sharpness = IS_SHARP_ACCURATE
+	sharpness = SHARP_POINTY
 	force = 25
 	throw_speed = 4
 	throw_range = 5

@@ -34,6 +34,7 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
+	sharpness = SHARP_POINTY
 	speak_emote = list("gnashes")
 
 	//Space carp aren't affected by cold.
