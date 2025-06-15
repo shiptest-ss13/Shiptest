@@ -9,6 +9,8 @@
 		////////////////
 	/// hides the byond verb panel as we use our own custom version
 	show_verb_panel = FALSE
+	//byond is down, allow signed in clients to auth via certificate
+	authenticate = FALSE
 	///Contains admin info. Null if client is not an admin.
 	var/datum/admins/holder = null
 	///Needs to implement InterceptClickOn(user,params,atom) proc
