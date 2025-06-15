@@ -186,7 +186,7 @@
 	switch(suit_color)
 		if("white_red")
 			new /obj/item/clothing/head/helmet/space/syndicate/white_red(B)
-			new /obj/item/clothing/suit/space/white_red(B)
+			new /obj/item/clothing/suit/space/syndicate/white_red(B)
 		if("blue")
 			new /obj/item/clothing/head/helmet/space/syndicate/blue(B)
 			new /obj/item/clothing/suit/space/syndicate/blue(B)

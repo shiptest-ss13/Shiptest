@@ -80,6 +80,7 @@
 	item_state = "syndicate-ramzi-surplus"
 
 //GEC-graded
+/obj/item/clothing/head/helmet/space/syndicate/engie
 	name = "GEC-grade space helmet"
 	icon_state = "syndicate-helm-engie"
 	item_state = "syndicate-helm-engie"
