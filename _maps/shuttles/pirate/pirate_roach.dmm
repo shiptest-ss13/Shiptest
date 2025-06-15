@@ -189,9 +189,6 @@
 /area/ship/external/dark)
 "co" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/syndi,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/tank/internals/emergency_oxygen/engi,
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 4
 	},
@@ -204,6 +201,9 @@
 	pixel_y = 2;
 	id = "roachboom"
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "cU" = (
@@ -2753,7 +2753,6 @@
 /obj/machinery/button/door{
 	pixel_x = 0;
 	pixel_y = 21;
-	req_access_txt = "1";
 	id = "roachprison";
 	name = "confinement button"
 	},
@@ -3820,10 +3819,10 @@
 /area/ship/bridge)
 "Vz" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/syndi,
+/obj/machinery/firealarm/directional/east,
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/internals/emergency_oxygen/engi,
-/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "VD" = (
