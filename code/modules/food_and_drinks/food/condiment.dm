@@ -31,6 +31,9 @@
 		/datum/reagent/consumable/frostoil = list("icon_state" = "coldsauce", "item_state" = "", "icon_empty" = "", "name" = "coldsauce bottle", "desc" = "Leaves the tongue numb from its passage."),
 		/datum/reagent/consumable/cornoil = list("icon_state" = "oliveoil", "item_state" = "", "icon_empty" = "", "name" = "corn oil bottle", "desc" = "A delicious oil used in cooking. Made from corn."),
 		/datum/reagent/consumable/bbqsauce = list("icon_state" = "bbqsauce", "item_state" = "", "icon_empty" = "", "name" = "bbq sauce bottle", "desc" = "Hand wipes not included."),
+		/datum/reagent/consumable/tiris_sale = list("icon_state" = "tiris-sauce", "item_state" = "", "icon_empty" = "", "name" = "tiris sale", "desc" = "An intense reduction made from tiris blood."),
+		/datum/reagent/consumable/tiris_sele = list("icon_state" = "tiris-sauce", "item_state" = "", "icon_empty" = "", "name" = "tiris sele", "desc" = "An gravy made from tiris blood."),
+		/datum/reagent/consumable/tiris_milk = list("icon_state" = "tiris-milk", "item_state" = "", "icon_empty" = "", "name" = "tiris milk", "desc" = "A rich and heavy milk taken from a Tiris!"),
 	)
 	var/originalname = "condiment" //Can't use initial(name) for this. This stores the name set by condimasters.
 	var/icon_empty = ""
@@ -174,6 +177,15 @@
 	name = "space milk"
 	desc = "A carton full of milk. Freshly supplied from a mammal, a biogenerator, or chemically reproduced in a lab."
 	icon_state = "milk"
+	item_state = "carton"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	list_reagents = list(/datum/reagent/consumable/milk = 50)
+
+/obj/item/reagent_containers/condiment/tiris_milk
+	name = "Dimidiso's Tiris"
+	desc = "Prepackaged Tiris milk made from pastures within CLIP space. The flavor is usually too strong for humans to drink straight."
+	icon_state = "tiris-milk"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
@@ -336,3 +348,15 @@
 	desc = "Oil made from pressed olives. Great for cooking."
 	icon_state = "oliveoil"
 	list_reagents = list(/datum/reagent/consumable/cornoil = 50)
+
+/obj/item/reagent_containers/condiment/tiris_sele
+	name = "tiris sele"
+	desc = "A thick gravy made with the blood of a Tiris. Flour is used to soak up the earthiness, leaving an intensely umami covering behind."
+	icon_state = "tiris-sauce"
+	list_reagents = list(/datum/reagent/consumable/tiris_sele = 50)
+
+/obj/item/reagent_containers/condiment/tiris_sale
+	name = "tiris sele"
+	desc = "A reduction made from the blood of a Tiris and a mixture of savory herbs. The flavor is very intense, and best used to augment a dish."
+	icon_state = "tiris-sauce"
+	list_reagents = list(/datum/reagent/consumable/tiris_sale = 50)
