@@ -71,6 +71,13 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
 	baseturfs = /turf/open/floor/plating/asteroid/icerock/temperate
 
+/turf/open/floor/plating/asteroid/snow/temperatre/lit
+	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/temperate
+	light_range = 2
+	light_power = 1
+	light_color = "#1B1D2E"
+
 /turf/open/floor/plating/asteroid/snow/atmosphere
 	initial_gas_mix = FROZEN_ATMOS
 	planetary_atmos = FALSE
@@ -156,6 +163,12 @@
 
 /turf/open/floor/plating/asteroid/icerock/temperate
 	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
+
+/turf/open/floor/plating/asteroid/icerock/temperate/lit
+	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
+	light_range = 2
+	light_power = 1
+	light_color = "#1B1D2E"
 
 /turf/open/floor/plating/asteroid/iceberg
 	gender = PLURAL
