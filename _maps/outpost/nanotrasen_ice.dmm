@@ -586,9 +586,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
 /obj/effect/turf_decal/siding/white{
 	dir = 5
 	},
@@ -723,10 +720,10 @@
 /area/outpost/exterior)
 "dW" = (
 /obj/machinery/light/dim/directional/south,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/arrow_ccw,
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
-/obj/effect/turf_decal/trimline/opaque/ntblue/filled/arrow_ccw,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
 "dX" = (
@@ -1280,7 +1277,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/conveyor_switch{
+/obj/machinery/conveyor_switch/oneway{
 	pixel_x = 0;
 	pixel_y = 7;
 	id = "NTrock"
@@ -1702,7 +1699,7 @@
 /obj/structure/railing,
 /obj/effect/turf_decal/corner/opaque/nsorange/border,
 /obj/structure/table/reinforced,
-/obj/machinery/conveyor_switch{
+/obj/machinery/conveyor_switch/oneway{
 	pixel_x = 0;
 	pixel_y = 8;
 	id = "NTice"
@@ -2384,6 +2381,7 @@
 /obj/machinery/camera/autoname{
 	dir = 5
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
 "mZ" = (
@@ -4311,6 +4309,7 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
 "ze" = (
@@ -5372,7 +5371,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/outpost/crew/lounge)
 "Ep" = (
-/obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
@@ -5383,6 +5381,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/arrow_ccw,
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
 "Eq" = (
@@ -5850,7 +5849,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/fore)
 "Hi" = (
-/obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 1
 	},
@@ -5864,6 +5862,8 @@
 	icon_state = "2-4"
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/arrow_ccw,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
 "Hk" = (
@@ -7007,7 +7007,6 @@
 	},
 /obj/structure/ore_box,
 /obj/effect/turf_decal/box/red,
-/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/outpost/cargo/smeltery)
 "MR" = (
@@ -8174,12 +8173,16 @@
 	},
 /obj/effect/turf_decal/siding/white,
 /obj/item/storage/fancy/cigarettes/cigars{
-	pixel_x = 3;
-	pixel_y = 5
+	pixel_x = 9;
+	pixel_y = 2
 	},
 /obj/item/lighter{
+	pixel_x = 10;
+	pixel_y = 6
+	},
+/obj/item/stack/sheet/mineral/wood/twentyfive{
 	pixel_x = -9;
-	pixel_y = 5
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/vacant_rooms)
@@ -8786,7 +8789,8 @@
 /area/outpost/vacant_rooms/shop)
 "XD" = (
 /obj/structure/sign/warning/coldtemp{
-	pixel_x = -32
+	pixel_x = -30;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -8813,6 +8817,10 @@
 	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/light/small/directional/west{
+	pixel_x = -28;
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/fore)
 "XF" = (
@@ -9019,6 +9027,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/bar)
+"YH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark,
+/area/outpost/vacant_rooms/shop)
 "YK" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -13458,7 +13477,7 @@ af
 RY
 oA
 Hi
-hP
+YH
 MB
 Lq
 Lq
