@@ -62,6 +62,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"bB" = (
+/obj/structure/sign/number/random,
+/turf/closed/wall/r_wall/rust,
+/area/ship/external/dark)
 "bL" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -168,9 +172,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"dz" = (
-/turf/closed/wall/r_wall,
-/area/ship/crew/dorm)
 "dB" = (
 /obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable{
@@ -179,8 +180,8 @@
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/starboard)
 "et" = (
-/turf/closed/wall/r_wall,
-/area/ship/crew/dorm/captain)
+/turf/closed/wall/r_wall/rust/yesdiag,
+/area/ship/cargo)
 "ew" = (
 /obj/machinery/firealarm/directional/east{
 	pixel_y = 5
@@ -248,9 +249,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo)
-"fO" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/bridge)
 "fZ" = (
 /obj/structure/chair/sofa/brown/old/right,
 /obj/machinery/light/small/directional/west,
@@ -258,8 +256,8 @@
 /turf/open/floor/carpet,
 /area/ship/crew)
 "gq" = (
-/turf/closed/wall/r_wall/rust/yesdiag,
-/area/ship/crew/dorm/captain)
+/turf/closed/wall/r_wall,
+/area/ship/cargo)
 "gS" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/table,
@@ -415,6 +413,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew)
+"lx" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/engineering/engines/starboard)
 "ma" = (
 /obj/structure/chair/stool{
 	dir = 8
@@ -726,7 +727,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/fore)
 "up" = (
-/turf/closed/wall/r_wall/rust,
+/turf/closed/wall/r_wall,
 /area/ship/engineering/engines/starboard)
 "us" = (
 /turf/closed/wall,
@@ -871,6 +872,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
+"xn" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/hallway/fore)
 "xt" = (
 /turf/closed/wall/r_wall/rust/yesdiag,
 /area/ship/engineering/engines/port)
@@ -892,9 +896,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/dorm)
-"yk" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/hallway/fore)
 "yl" = (
 /turf/closed/wall,
 /area/ship/crew)
@@ -921,9 +922,6 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/crew)
-"yF" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/crew/dorm)
 "yM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -938,7 +936,7 @@
 /area/ship/crew)
 "yV" = (
 /turf/closed/wall/r_wall/rust,
-/area/ship/crew)
+/area/ship/cargo)
 "yZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1495,8 +1493,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "FJ" = (
-/turf/closed/wall/r_wall/rust/yesdiag,
-/area/ship/cargo)
+/turf/closed/wall/r_wall/rust,
+/area/ship/crew)
 "FM" = (
 /obj/effect/spawner/bunk_bed,
 /obj/structure/curtain/bounty,
@@ -1793,6 +1791,9 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
+"Ko" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/engineering/engines/port)
 "Kr" = (
 /obj/structure/closet/crate/radiation{
 	name = "fuel crate"
@@ -1821,8 +1822,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "KQ" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/cargo)
+/turf/closed/wall/r_wall/rust/yesdiag,
+/area/ship/crew/dorm/captain)
 "Li" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet/directional/east,
@@ -1935,9 +1936,6 @@
 /obj/item/clothing/gloves/color/fyellow,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
-"NI" = (
-/turf/closed/wall/r_wall,
-/area/ship/cargo)
 "NJ" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/brown/diagonal,
@@ -1998,10 +1996,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
-"Ok" = (
-/obj/structure/sign/number/random,
-/turf/closed/wall/r_wall/rust,
-/area/ship/external/dark)
 "Op" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -2056,9 +2050,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/crew)
-"OQ" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/crew/dorm/captain)
 "Pb" = (
 /obj/structure/cable{
 	icon_state = "8-10"
@@ -2115,8 +2106,8 @@
 	},
 /area/ship/cargo)
 "Qb" = (
-/turf/closed/wall/r_wall,
-/area/ship/engineering/engines/starboard)
+/turf/closed/wall/r_wall/rust,
+/area/ship/crew/dorm/captain)
 "Qd" = (
 /obj/machinery/portable_atmospherics/canister/fuel,
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -2263,10 +2254,11 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/item/blackmarket_uplink,
-/obj/item/computer_hardware/card_slot,
-/obj/item/modular_computer/tablet/preset/cheap,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm/captain)
+"Sj" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/crew/dorm)
 "So" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2404,6 +2396,9 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"VM" = (
+/turf/closed/wall/r_wall,
+/area/ship/crew/dorm/captain)
 "VQ" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2480,6 +2475,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"XF" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/bridge)
 "XL" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2525,8 +2523,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
 "Zk" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/engineering/engines/port)
+/turf/closed/wall/r_wall,
+/area/ship/crew/dorm)
 "Zs" = (
 /turf/closed/wall/r_wall/rust/yesdiag,
 /area/ship/bridge)
@@ -2604,14 +2602,14 @@ ZY
 ZY
 ZY
 ZY
-FJ
-NI
+et
+gq
 AR
 UE
 bL
 BT
-NI
-FJ
+gq
+et
 ZY
 ZY
 ZY
@@ -2621,24 +2619,24 @@ ZY
 "}
 (3,1,1) = {"
 ZY
-Zk
+Ko
 Tf
 nd
 SG
 ZY
-NI
+gq
 HX
 Dt
 iN
 PX
 Fn
 Et
-KQ
+yV
 ZY
-up
+lx
 VS
 dB
-Qb
+up
 ZY
 "}
 (4,1,1) = {"
@@ -2648,19 +2646,19 @@ AW
 FN
 SG
 ZY
-NI
+gq
 Fd
 do
 Dz
 cj
 So
 bw
-KQ
+yV
 ZY
-Qb
+up
 hr
 FH
-up
+lx
 ZY
 "}
 (5,1,1) = {"
@@ -2668,21 +2666,21 @@ ZY
 SG
 KK
 Wc
-Zk
+Ko
 ZY
-KQ
+yV
 Bi
 fH
 Qx
 vv
 sp
 sj
-NI
+gq
 ZY
-Qb
+up
 Rx
 ZR
-up
+lx
 ZY
 "}
 (6,1,1) = {"
@@ -2690,21 +2688,21 @@ xt
 SG
 Oe
 vC
-Zk
+Ko
 ZY
-KQ
+yV
 aY
 IU
 Cf
 yC
 sd
 Ih
-NI
+gq
 ZY
-Qb
+up
 Qd
 EC
-Qb
+up
 sB
 "}
 (7,1,1) = {"
@@ -2714,20 +2712,20 @@ JQ
 BZ
 SG
 pM
-KQ
+yV
 tn
 Nd
 bs
 dh
 Va
 ie
-NI
+gq
 Tn
-up
+lx
 Ne
 tf
 op
-Qb
+up
 "}
 (8,1,1) = {"
 SG
@@ -2743,16 +2741,16 @@ Cl
 gS
 iM
 qN
-Qb
-XE
 up
+XE
+lx
 Kr
 Kg
 fu
-Qb
+up
 "}
 (9,1,1) = {"
-Zk
+Ko
 Li
 UC
 Du
@@ -2771,14 +2769,14 @@ Jg
 zm
 oy
 wi
-up
+lx
 "}
 (10,1,1) = {"
 xt
 SG
 qu
 na
-Zk
+Ko
 SG
 SG
 SV
@@ -2787,12 +2785,12 @@ qj
 Bm
 vl
 mg
-Qb
-Qb
-Qb
+up
+up
+up
 eX
 Xz
-Qb
+up
 sB
 "}
 (11,1,1) = {"
@@ -2800,21 +2798,21 @@ ZY
 SG
 vF
 cH
-Zk
+Ko
 ZY
-NI
+gq
 wA
 Yi
 ew
 aM
 ZT
 hB
-NI
+gq
 ZY
-Qb
+up
 FX
 nJ
-Qb
+up
 ZY
 "}
 (12,1,1) = {"
@@ -2824,18 +2822,18 @@ SG
 SG
 SG
 ZY
-FJ
-NI
+et
+gq
 Ly
 Fp
 LE
 Ly
-KQ
-FJ
+yV
+et
 ZY
+lx
+lx
 up
-up
-Qb
 sB
 ZY
 "}
@@ -2852,7 +2850,7 @@ Ao
 hc
 yD
 bO
-yV
+FJ
 ZY
 ZY
 ZY
@@ -2890,7 +2888,7 @@ ZY
 ZY
 ZY
 iv
-yV
+FJ
 dl
 yl
 yl
@@ -2935,13 +2933,13 @@ ZY
 ZY
 YF
 dl
-yV
+FJ
 yl
 hm
 uZ
 BA
 NJ
-yV
+FJ
 ZY
 ZY
 ZY
@@ -3029,7 +3027,7 @@ Zy
 RS
 UX
 UX
-yF
+Sj
 ZY
 ZY
 ZY
@@ -3043,7 +3041,7 @@ ZY
 QH
 ZY
 ZY
-gq
+KQ
 Qy
 ul
 oa
@@ -3051,7 +3049,7 @@ zb
 ic
 kE
 md
-dz
+Zk
 PW
 ZY
 ZY
@@ -3062,11 +3060,11 @@ ZY
 (23,1,1) = {"
 ZY
 ZY
-Ok
+bB
 BP
-OQ
-OQ
-Qy
+Qb
+Qb
+Zy
 Zy
 Zy
 RU
@@ -3074,8 +3072,8 @@ GS
 UX
 AN
 UX
-dz
-yF
+Zk
+Sj
 zg
 QH
 ZY
@@ -3084,7 +3082,7 @@ ZY
 (24,1,1) = {"
 ZY
 ZY
-Ok
+bB
 SA
 BV
 Sf
@@ -3108,7 +3106,7 @@ ZY
 ZY
 iK
 Pl
-et
+VM
 qS
 HA
 Qk
@@ -3119,7 +3117,7 @@ UX
 Ge
 cQ
 FM
-dz
+Zk
 Pl
 Pl
 ZY
@@ -3130,16 +3128,16 @@ ZY
 ZY
 iK
 ZY
-gq
+KQ
 US
-OQ
-OQ
+Qb
+Qb
 Wl
 YV
 Op
 UX
-dz
-dz
+Zk
+Zk
 xX
 PW
 ZY
@@ -3182,7 +3180,7 @@ dn
 ma
 FA
 Al
-yk
+xn
 ZY
 ZY
 ZY
@@ -3225,7 +3223,7 @@ ZY
 sO
 Rg
 SB
-fO
+XF
 ZY
 ZY
 ZY
@@ -3247,7 +3245,7 @@ ZY
 sO
 Oj
 yZ
-fO
+XF
 ZY
 ZY
 ZY
