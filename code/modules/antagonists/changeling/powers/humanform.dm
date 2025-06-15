@@ -11,15 +11,7 @@
 		to_chat(user, span_notice("We must exit the pipes before we can transform back!"))
 		return FALSE
 	var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
-	var/list/names = list()
-	for(var/datum/changelingprofile/prof in changeling.stored_profiles)
-		names += "[prof.name]"
-
-	var/chosen_name = input("Select the target DNA: ", "Target DNA", null) as null|anything in sortList(names)
-	if(!chosen_name)
-		return
-
-	var/datum/changelingprofile/chosen_prof = changeling.get_dna(chosen_name)
+	var/datum/changelingprofile/chosen_prof = changeling.select_dna()
 	if(!chosen_prof)
 		return
 	if(!user || user.notransform)
@@ -28,7 +20,10 @@
 	..()
 	changeling.purchasedpowers -= src
 
-	var/newmob = user.humanize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_KEEPSE)
+	var/datum/dna/chosen_dna = chosen_prof.dna
+	var/datum/species/chosen_species = chosen_dna.species
+	user.humanize(chosen_species)
 
-	changeling_transform(newmob, chosen_prof)
+	changeling.transform(user, chosen_prof)
+	user.regenerate_icons()
 	return TRUE
