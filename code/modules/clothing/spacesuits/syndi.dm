@@ -1,6 +1,6 @@
 //Regular syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate
-	name = "red space helmet"
+	name = "coalition space helmet"
 	icon_state = "syndicate-helm"
 	item_state = "syndicate-helm"
 	desc = "An advanced, lightweight space helmet made of durable composites. Almost matches integrated hardsuit helmets for protection. Almost."
@@ -8,7 +8,7 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/space/syndicate
-	name = "red space suit"
+	name = "coalition space suit"
 	icon_state = "syndicate"
 	item_state = "syndicate"
 	desc = "A space suit made of high-grade ballistic fabric with integrated armor plates. More compact than a normal space suit while almost matching powered hardsuits for protection. Almost."
