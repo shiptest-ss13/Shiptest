@@ -50,8 +50,6 @@
 			new /obj/item/sbeacondrop/bomb(src)
 			new /obj/item/grenade/syndieminibomb(src)
 			new /obj/item/sbeacondrop/powersink(src)
-			new /obj/item/clothing/suit/space/syndicate/black/red(src)
-			new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
 			new /obj/item/encryptionkey/syndicate(src)
 
 		if("murder")
@@ -83,8 +81,6 @@
 
 		if("lordsingulo")
 			new /obj/item/sbeacondrop(src)
-			new /obj/item/clothing/suit/space/syndicate/black/red(src)
-			new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
 			new /obj/item/card/emag(src)
 			new /obj/item/storage/toolbox/syndicate(src)
 
@@ -388,8 +384,8 @@
 
 /obj/item/storage/box/syndie_kit/space/PopulateContents()
 	if(prob(50))
-		new /obj/item/clothing/suit/space/syndicate/black/red(src) // Black and red is so in right now
-		new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
+		new /obj/item/clothing/suit/space/syndicate/white_red(src) // Black and red is so in right now
+		new /obj/item/clothing/head/helmet/space/syndicate/white_red(src)
 
 	else
 		new /obj/item/clothing/head/helmet/space/syndicate(src)
