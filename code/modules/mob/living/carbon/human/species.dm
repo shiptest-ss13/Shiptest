@@ -1369,7 +1369,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else if(H.satiety < 0)
 			H.satiety++
 			if(prob(round(-H.satiety/40)))
-				H.adjust_jitter(5, max = 100)
+				H.adjust_timed_status_effect(5 SECONDS, /datum/status_effect/jitter)
 			hunger_rate = 3 * HUNGER_FACTOR
 		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)
