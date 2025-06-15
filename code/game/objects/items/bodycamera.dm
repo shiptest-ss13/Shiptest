@@ -147,7 +147,6 @@
 /obj/item/radio/broadcast
 	name = "Broadcast Radio"
 	desc = "You're fairly sure this shouldn't be outside of the camera, and that you should tell someone you found this. Maybe an adminhelp is in order."
-	frequency = 1499
 	log = TRUE
 
 /obj/item/radio/broadcast/set_frequency(new_frequency)
@@ -176,6 +175,7 @@
 /obj/item/bodycamera/broadcast_camera/Initialize()
 	. = ..()
 	radio = new /obj/item/radio/broadcast(src)
+	radio.set_frequency(1499)
 	radio.sectorwide = TRUE
 	radio.canhear_range = 3
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
@@ -206,7 +206,7 @@
 
 /obj/item/bodycamera/broadcast_camera/unique_action(mob/living/user)
 	. = ..()
-	radio.broadcasting = !radio.broadcasting
+	radio.set_broadcasting(!radio.get_broadcasting())
 	user.visible_message(span_notice("[user] toggles the [src] microphone."), span_notice("<span class='notice'>You toggle the [src] microphone."))
 
 /obj/item/bodycamera/broadcast_camera/examine(mob/user)
@@ -217,12 +217,12 @@
 
 /obj/item/bodycamera/broadcast_camera/set_name(camera_name)
 	if(camera_name != "")
-		camera_name = "[camera_name]@[radio.frequency/10]"
+		camera_name = "[camera_name]@[radio.get_frequency()/10]"
 	. = ..()
 
 /obj/item/bodycamera/broadcast_camera/proc/adjust_name()
 	var/camera_name = splittext(c_tag, "@")
-	c_tag = "[camera_name[1]]@[radio.frequency/10]"
+	c_tag = "[camera_name[1]]@[radio.get_frequency()/10]"
 
 /obj/item/bodycamera/broadcast_camera/ComponentInitialize()
 	. = ..()
