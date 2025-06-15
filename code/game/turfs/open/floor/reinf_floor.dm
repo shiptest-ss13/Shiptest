@@ -141,6 +141,14 @@
 	name = "hydrogen mix floor"
 	initial_gas_mix = ATMOS_TANK_HYDROGEN_FUEL
 
+/turf/open/floor/engine/methane
+	name = "\improper methane floor"
+	initial_gas_mix = ATMOS_TANK_METHANE
+
+/turf/open/floor/engine/methane_fuel
+	name = "methane mix floor"
+	initial_gas_mix = ATMOS_TANK_METHANE_FUEL
+
 /turf/open/floor/engine/vacuum
 	name = "vacuum floor"
 	initial_gas_mix = AIRLESS_ATMOS
