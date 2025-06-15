@@ -58,8 +58,8 @@
 /obj/item/clothing/head/helmet/space/syndicate/ramzi
 
 	name = "worn-out space helmet"
-	icon_state = "syndicate-ramzi"
-	item_state = "syndicate-ramzi"
+	icon_state = "syndicate-helm-ramzi"
+	item_state = "syndicate-helm-ramzi"
 
 /obj/item/clothing/suit/space/syndicate/ramzi
 
@@ -71,6 +71,11 @@
 /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus
 
 	name = "worn-out surplus space helmet"
+	icon_state = "syndicate-helm-ramzi-surplus"
+	item_state = "syndicate-helm-ramzi-surplus"
+
+/obj/item/clothing/suit/space/syndicate/ramzi/surplus
+	name = "worn-out surplus space suit"
 	icon_state = "syndicate-ramzi-surplus"
 	item_state = "syndicate-ramzi-surplus"
 
