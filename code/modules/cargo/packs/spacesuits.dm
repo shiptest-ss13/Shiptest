@@ -64,7 +64,7 @@
 /datum/supply_pack/spacesuits/armored_ngr
 	name = "Beige-Red Space Suit Crate"
 	desc = "WIP"
-	cost = 1500"
+	cost = 1500
 	contains = list(/obj/item/clothing/suit/space/syndicate/ngr,
 					/obj/item/clothing/head/helmet/space/syndicate/ngr)
 	faction = /datum/faction/syndicate/ngr
