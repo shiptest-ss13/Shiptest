@@ -9,7 +9,7 @@
 	density = TRUE
 
 	var/max_mobs = 5
-	var/spawn_time = 300 //30 seconds default
+	var/spawn_time = 30 SECONDS
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	var/spawn_text = "emerges from"
 	var/faction = list("hostile")

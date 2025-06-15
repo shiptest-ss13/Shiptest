@@ -153,12 +153,6 @@
 	glass_name = "glass of banana juice"
 	glass_desc = "While staring down at this glass, some part of you wonders what went through the minds of those who decided to add this to milk."
 
-/datum/reagent/consumable/banana/on_mob_life(mob/living/carbon/M)
-	if((ishuman(M) && M.job == "Clown") || ismonkey(M))
-		M.heal_bodypart_damage(1,1, 0)
-		. = 1
-	..()
-
 /datum/reagent/consumable/nothing
 	name = "Nothing"
 	description = "Absolutely nothing."
@@ -167,39 +161,6 @@
 	glass_name = "nothing"
 	glass_desc = "Absolutely nothing."
 	shot_glass_icon_state = "shotglass"
-
-/datum/reagent/consumable/nothing/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M) && M.mind?.miming)
-		M.silent = max(M.silent, MIMEDRINK_SILENCE_DURATION)
-		M.heal_bodypart_damage(1,1)
-		. = 1
-	..()
-
-/datum/reagent/consumable/laughter
-	name = "Laughter"
-	description = "Some say that this is the best medicine, but recent studies have proven that to be untrue."
-	metabolization_rate = INFINITY
-	color = "#FF4DD2"
-	taste_description = "laughter"
-
-/datum/reagent/consumable/laughter/on_mob_life(mob/living/carbon/M)
-	M.emote("laugh")
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_laughter)
-	..()
-
-/datum/reagent/consumable/superlaughter
-	name = "Super Laughter"
-	description = "Funny until you're the one laughing."
-	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-	color = "#FF4DD2"
-	taste_description = "laughter"
-
-/datum/reagent/consumable/superlaughter/on_mob_life(mob/living/carbon/M)
-	if(prob(30))
-		M.visible_message(span_danger("[M] bursts out into a fit of uncontrollable laughter!"), span_userdanger("You burst out in a fit of uncontrollable laughter!"))
-		M.Stun(5)
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_superlaughter)
-	..()
 
 /datum/reagent/consumable/potato_juice
 	name = "Potato Juice"

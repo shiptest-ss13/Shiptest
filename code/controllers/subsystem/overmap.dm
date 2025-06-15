@@ -1088,39 +1088,6 @@ SUBSYSTEM_DEF(overmap)
 	can_be_selected_randomly = FALSE
 	encounters_refresh = TRUE
 
-/datum/overmap_star_system/shiptest/New(generate_now=TRUE)
-	//1/10 rounds
-	if(!prob(10))
-		return ..()
-
-	//Small easter egg so all these palletes doesn't go to waste in the event mines
-	var/list/possible_overmaps = subtypesof(/datum/overmap_star_system)
-
-	//check if can_be_selected_randomly is false, if so remove them
-	for(var/datum/overmap_star_system/interating_overmap as anything in possible_overmaps)
-		if(!interating_overmap.can_be_selected_randomly)
-			possible_overmaps -= interating_overmap
-
-	var/datum/overmap_star_system/picked_overmap = pick(possible_overmaps)
-	if(!picked_overmap)
-		return ..() //something went wrong but we ball
-
-	//main colors, used for dockable terrestrials, and background
-	primary_color = picked_overmap.primary_color
-	secondary_color = picked_overmap.secondary_color
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = picked_overmap.hazard_primary_color
-	hazard_secondary_color = picked_overmap.hazard_secondary_color
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = picked_overmap.primary_structure_color
-	secondary_structure_color = picked_overmap.secondary_structure_color
-
-	override_object_colors = TRUE
-	overmap_icon_state = picked_overmap.overmap_icon_state
-	return ..()
-
 /datum/overmap_star_system/shiptest/create_map()
 	. = ..()
 	set_station_name(starname)
