@@ -249,7 +249,7 @@ GLOBAL_PROTECT(href_token)
 		)
 
 		return
-
+please run checks
 	if (isnull(id))
 		var/datum/DBQuery/insert_query = SSdbcore.NewQuery({"
 			INSERT INTO [format_table_name("admin_connections")] (ckey, ip, cid)
