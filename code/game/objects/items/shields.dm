@@ -74,7 +74,9 @@
 	custom_materials = list(/datum/material/iron=8500)
 
 	transparent = TRUE
-	max_integrity = 75
+	max_integrity = 300
+	block_chance = 100
+	slowdown = 0.3
 	material_flags = MATERIAL_NO_EFFECTS
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
