@@ -55,6 +55,8 @@
 		if(isliving(loc))
 			loc.balloon_alert(loc, "[src] cracks!")
 		name = "broken [src::name]"
+		blockchance = 0
+		slowdown = 0
 		broken = TRUE
 
 /obj/item/shield/examine(mob/user)
@@ -77,7 +79,7 @@
 	transparent = TRUE
 	max_integrity = 300
 	block_chance = 100
-	slowdown = 0.3
+	slowdown = 1.25
 	integrity_failure = 0.2
 	material_flags = MATERIAL_NO_EFFECTS
 
