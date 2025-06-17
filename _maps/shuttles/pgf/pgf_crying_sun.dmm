@@ -385,7 +385,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "cY" = (
-/obj/structure/ore_box,
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
 "cZ" = (
@@ -660,6 +659,16 @@
 /area/ship/engineering/engines/starboard)
 "fV" = (
 /obj/machinery/light/directional/west,
+/obj/structure/closet/crate/radiation,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/head/radiation{
+	pixel_x = -7
+	},
+/obj/item/clothing/head/radiation{
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/construction)
 "fZ" = (
@@ -1153,7 +1162,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "iT" = (
-/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/tech,
 /area/ship/construction)
 "iY" = (
@@ -1400,7 +1408,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/pump,
+/obj/structure/closet/crate/solarpanel_small,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/construction)
 "lc" = (
@@ -1534,6 +1543,7 @@
 	name = "mining gear";
 	desc = "A rectangular steel crate with the words 'MINING GEAR' written in crayon on the lid."
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/construction)
 "mN" = (
@@ -2400,6 +2410,18 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "uv" = (
+/obj/structure/closet/crate{
+	name = "Mission Accomplished"
+	},
+/obj/item/poster/mission_accomplished_1,
+/obj/item/poster/mission_accomplished_2,
+/obj/item/poster/mission_accomplished_3,
+/obj/item/poster/mission_accomplished_3,
+/obj/item/poster/mission_accomplished_4,
+/obj/item/poster/mission_accomplished_5,
+/obj/item/poster/mission_accomplished_6,
+/obj/item/poster/mission_accomplished_7,
+/obj/effect/mapping_helpers/crate_shelve,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/construction)
@@ -2832,10 +2854,10 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
 "xO" = (
-/obj/structure/crate_shelf,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/construction)
 "xS" = (
@@ -4073,6 +4095,7 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
 "Gz" = (
@@ -4956,16 +4979,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/closet/crate{
-	name = "Mission Accomplished"
-	},
-/obj/item/poster/mission_accomplished_7,
-/obj/item/poster/mission_accomplished_6,
-/obj/item/poster/mission_accomplished_5,
-/obj/item/poster/mission_accomplished_4,
-/obj/item/poster/mission_accomplished_3,
-/obj/item/poster/mission_accomplished_2,
-/obj/item/poster/mission_accomplished_1,
+/obj/structure/closet/crate/solarpanel_small,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech,
 /area/ship/construction)
 "Nw" = (
@@ -4997,16 +5012,11 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "NF" = (
-/obj/structure/closet/crate/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation{
-	pixel_x = -7
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
 	},
-/obj/item/clothing/head/radiation{
-	pixel_x = -7
-	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/construction)
 "NM" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -5866,10 +5876,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/starboard)
 "TW" = (
-/obj/structure/closet/crate/solarpanel_small,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/construction)
 "TY" = (
@@ -6508,6 +6518,7 @@
 	icon_state = "0-4"
 	},
 /obj/effect/turf_decal/borderfloorblack,
+/obj/structure/ore_box,
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
 "Yx" = (
@@ -7699,7 +7710,7 @@ TO
 aF
 bF
 Gy
-NF
+cY
 TW
 TO
 xz
@@ -7728,7 +7739,7 @@ It
 Nj
 lb
 iT
-TW
+NF
 TO
 xz
 xz
