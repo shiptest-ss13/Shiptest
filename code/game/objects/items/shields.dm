@@ -31,10 +31,33 @@
 	var/shield_bash_sound = 'sound/effects/shieldbash.ogg'
 	var/recoil_bonus = -2
 
+/obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	. = ..()
+	if(.)
+		on_block(owner, hitby, attack_text, damage, attack_type)
+
+/obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
+	take_damage(damage)
+
+/obj/item/shield/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken)
+		if(I.use_tool(src, user, 0, volume = 40))
+			name = src::name
+			broken = FALSE
+			obj_integrity = max_integrity
+		return TRUE
+
+/obj/item/shield/obj_break(damage_flag)
+	. = ..()
+	if(!broken)
+		if(isliving(loc))
+			loc.balloon_alert(loc, "[src] cracks!")
+		name = "broken [src::name]"
+		broken = TRUE
+
 /obj/item/shield/examine(mob/user)
 	. = ..()
-	if(recoil_bonus)
-		. += span_info("Firing a gun while holding this will brace against it, reducing the impact of recoil.")
 	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
 	switch(healthpercent)
 		if(50 to 99)
@@ -43,17 +66,6 @@
 			. += span_info("It appears heavily damaged.")
 		if(0 to 25)
 			. += span_warning("It's falling apart!")
-
-/obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
-	if(transparent && (hitby.pass_flags & PASSGLASS))
-		return FALSE
-	if(attack_type == THROWN_PROJECTILE_ATTACK)
-		final_block_chance += 30
-	if(attack_type == LEAP_ATTACK)
-		final_block_chance = 100
-	. = ..()
-	if(.)
-		on_shield_block(owner, hitby, attack_text, damage, attack_type, damage_type)
 
 /obj/item/shield/riot
 	name = "ballistic shield"
