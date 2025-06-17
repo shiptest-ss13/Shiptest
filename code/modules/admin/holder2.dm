@@ -205,7 +205,7 @@ GLOBAL_PROTECT(href_token)
 		else
 			return list(FALSE, null)
 
-	var/datum/db_query/query = SSdbcore.NewQuery({"
+	var/datum/DBQuery/query = SSdbcore.NewQuery({"
 		SELECT id, verification_time FROM [format_table_name("admin_connections")]
 		WHERE ckey = :ckey
 		AND ip = INET_ATON(:ip)
@@ -251,7 +251,7 @@ GLOBAL_PROTECT(href_token)
 		return
 
 	if (isnull(id))
-		var/datum/db_query/insert_query = SSdbcore.NewQuery({"
+		var/datum/DBQuery/insert_query = SSdbcore.NewQuery({"
 			INSERT INTO [format_table_name("admin_connections")] (ckey, ip, cid)
 			VALUES(:ckey, INET_ATON(:ip), :cid)
 		"}, list(
