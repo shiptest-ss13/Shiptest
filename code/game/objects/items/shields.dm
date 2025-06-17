@@ -8,6 +8,8 @@
 	block_cooldown_time = 0 SECONDS
 	slot_flags = ITEM_SLOT_BACK
 	force = 10
+	slowdown = 1.25
+	drag_slowdown = 1.25
 	block_chance = 50
 	throwforce = 5
 	throw_speed = 2
@@ -47,9 +49,9 @@
 			name = src::name
 			broken = FALSE
 			obj_integrity = max_integrity
-			block_chance = block_chance
-			slowdown = slowdown
-			drag_slowdown = drag_slowdown
+			block_chance = 100
+			slowdown = 1.25
+			drag_slowdown = 1.25
 		return TRUE
 
 /obj/item/shield/obj_break(damage_flag)
@@ -83,8 +85,6 @@
 	transparent = TRUE
 	max_integrity = 300
 	block_chance = 100
-	slowdown = 1.25
-	drag_slowdown = 1.25
 	integrity_failure = 0.2
 	material_flags = MATERIAL_NO_EFFECTS
 
