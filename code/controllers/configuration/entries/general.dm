@@ -515,6 +515,9 @@
 
 /datum/config_entry/string/centcom_source_whitelist
 
+/// URL for admins to be redirected to for 2FA
+/datum/config_entry/string/admin_2fa_url
+
 // Elasticsearch stuffs
 /datum/config_entry/flag/elasticsearch_metrics_enabled
 
