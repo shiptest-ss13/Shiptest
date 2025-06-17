@@ -47,6 +47,9 @@
 			name = src::name
 			broken = FALSE
 			obj_integrity = max_integrity
+			block_chance = block_chance
+			slowdown = slowdown
+			drag_slowdown = drag_slowdown
 		return TRUE
 
 /obj/item/shield/obj_break(damage_flag)
@@ -57,6 +60,7 @@
 		name = "broken [src::name]"
 		block_chance = 0
 		slowdown = 0
+		drag_slowdown = 0
 		broken = TRUE
 
 /obj/item/shield/examine(mob/user)
@@ -80,6 +84,7 @@
 	max_integrity = 300
 	block_chance = 100
 	slowdown = 1.25
+	drag_slowdown = 1.25
 	integrity_failure = 0.2
 	material_flags = MATERIAL_NO_EFFECTS
 
