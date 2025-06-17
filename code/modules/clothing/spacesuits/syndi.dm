@@ -58,12 +58,14 @@
 /obj/item/clothing/head/helmet/space/syndicate/ramzi
 
 	name = "worn-out space helmet"
+	desc = "A worn, beaten up composite space helmet that still remains durable. The front has a fearsome skull painted on."
 	icon_state = "syndicate-helm-ramzi"
 	item_state = "syndicate-helm-ramzi"
 
 /obj/item/clothing/suit/space/syndicate/ramzi
 
 	name = "worn-out space suit"
+	desc = "A worn, beaten up space suit with integrated armour plates. There are patches of ducttape covering damage."
 	icon_state = "syndicate-ramzi"
 	item_state = "syndicate-ramzi"
 
@@ -71,13 +73,17 @@
 /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus
 
 	name = "worn-out surplus space helmet"
+	desc = "A worn, beaten up surplus space helmet that has suffered intense damage. It has been haphazardously sealed with ducttape."
 	icon_state = "syndicate-helm-ramzi-surplus"
 	item_state = "syndicate-helm-ramzi-surplus"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
 
 /obj/item/clothing/suit/space/syndicate/ramzi/surplus
 	name = "worn-out surplus space suit"
+	desc = "A worn, beaten up space suit composed of a flimsy, low-grade ballistic material. There are patches of ducttape covering extensive damage."
 	icon_state = "syndicate-ramzi-surplus"
 	item_state = "syndicate-ramzi-surplus"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 50, "fire" = 80, "acid" = 70)
 
 //GEC-graded
 /obj/item/clothing/head/helmet/space/syndicate/engie
