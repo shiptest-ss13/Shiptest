@@ -2222,6 +2222,11 @@
 /obj/item/clothing/head/helmet/bulletproof/x11{
 	pixel_y = 5
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = -11;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Ff" = (
@@ -2557,6 +2562,11 @@
 /obj/item/bodycamera{
 	pixel_x = 3;
 	pixel_y = -2
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = -11;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/hallway/fore)
