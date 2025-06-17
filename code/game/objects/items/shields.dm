@@ -55,30 +55,15 @@
 	if(.)
 		on_shield_block(owner, hitby, attack_text, damage, attack_type, damage_type)
 
-/obj/item/shield/proc/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
-	if(!breakable_by_damage || (damage_type != BRUTE && damage_type != BURN))
-		return TRUE
-	take_damage(damage)
-
-/obj/item/shield/obj_destruction(damage_flag)
-	playsound(src, shield_break_sound, 50)
-	new shield_break_leftover(get_turf(src))
-	if(isliving(loc))
-		loc.balloon_alert(loc, "shield broken!")
-	return ..()
-
 /obj/item/shield/riot
-	name = "riot shield"
-	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
-	icon_state = "riot"
-	custom_materials = list(/datum/material/glass=7500, /datum/material/iron=1000)
+	name = "ballistic shield"
+	desc = "A shield adept at blocking blunt objects and bullets from connecting with the torso of the shield wielder."
+	icon_state = "ballistic"
+	custom_materials = list(/datum/material/iron=8500)
 
 	transparent = TRUE
 	max_integrity = 75
 	material_flags = MATERIAL_NO_EFFECTS
-
-	shield_break_sound = 'sound/effects/glassbr3.ogg'
-	shield_break_leftover = /obj/item/shard
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/melee/baton))
@@ -86,16 +71,16 @@
 			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
 			playsound(src, shield_bash_sound, 50, TRUE)
 			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
-	else if(istype(W, /obj/item/stack/sheet/mineral/titanium))
-		if (obj_integrity >= max_integrity)
-			to_chat(user, span_warning("[src] is already in perfect condition."))
-		else
-			var/obj/item/stack/sheet/mineral/titanium/T = W
-			T.use(1)
-			obj_integrity = max_integrity
-			to_chat(user, span_notice("You repair [src] with [T]."))
 	else
 		return ..()
+
+/obj/item/shield/riot/spike
+	name = "spike shield"
+	desc = "A ballistic shield adept at blocking blunt objects and bullets, adorned with a vicious spike."
+	icon_state = "spike"
+	force = 20
+	attack_verb = list("stabbed", "gashed")
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/shield/riot/roman
 	name = "\improper Roman shield"
