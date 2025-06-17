@@ -55,7 +55,7 @@
 		if(isliving(loc))
 			loc.balloon_alert(loc, "[src] cracks!")
 		name = "broken [src::name]"
-		blockchance = 0
+		block_chance = 0
 		slowdown = 0
 		broken = TRUE
 
