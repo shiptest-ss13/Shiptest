@@ -309,9 +309,4 @@
 	shield_break_leftover = /obj/item/stack/sheet/animalhide/goliath_hide
 	shield_break_sound = 'sound/effects/bang.ogg'
 
-/obj/item/shield/riot/goliath/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
-	if(isliving(hitby)) // If attacker is a simple mob.
-		damage *= 0.5
-	. = ..()
-
 #undef BATON_BASH_COOLDOWN
