@@ -8,8 +8,9 @@
 	block_cooldown_time = 0 SECONDS
 	slot_flags = ITEM_SLOT_BACK
 	force = 10
-	slowdown = 1.25
-	drag_slowdown = 1.25
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.5
+	drag_slowdown = 0.5
 	block_chance = 50
 	throwforce = 5
 	throw_speed = 2
@@ -54,8 +55,8 @@
 			broken = FALSE
 			obj_integrity = max_integrity
 			block_chance = 100
-			slowdown = 1.25
-			drag_slowdown = 1.25
+			slowdown = 1
+			drag_slowdown = 1
 		return TRUE
 
 /obj/item/shield/obj_break(damage_flag)
@@ -86,11 +87,29 @@
 	icon_state = "ballistic"
 	custom_materials = list(/datum/material/iron=8500)
 
+	force = 15
 	transparent = TRUE
 	max_integrity = 300
-	block_chance = 100
+	block_chance = 60
 	integrity_failure = 0.2
 	material_flags = MATERIAL_NO_EFFECTS
+	var/force_wielded = 18
+
+/obj/item/shield/riot/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = force_wielded, block_chance = 80, slowdown = 1)
+
+/obj/item/shield/riot/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken)
+		if(I.use_tool(src, user, 0, volume = 40))
+			name = src::name
+			broken = FALSE
+			obj_integrity = max_integrity
+			block_chance = 60
+			slowdown = 0.5
+			drag_slowdown = 0.5
+		return TRUE
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/melee/baton))
@@ -134,6 +153,8 @@
 	desc = "A medieval wooden buckler."
 	icon_state = "buckler"
 	item_state = "buckler"
+	slowdown = 0
+	drag_slowdown = 0
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 10)
@@ -200,8 +221,8 @@
 
 /obj/item/shield/riot/flash/update_icon_state()
 	if(!embedded_flash || embedded_flash.burnt_out)
-		icon_state = "riot"
-		item_state = "riot"
+		icon_state = "ballistic"
+		item_state = "ballistic"
 	else
 		icon_state = "flashshield"
 		item_state = "flashshield"
