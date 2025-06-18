@@ -309,12 +309,13 @@
 "bA" = (
 /obj/structure/table/reinforced,
 /obj/item/phone{
-	pixel_x = 8;
+	pixel_x = 13;
 	pixel_y = 7
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/recharger,
 /turf/open/floor/carpet/red,
 /area/outpost/security/checkpoint)
 "bC" = (
@@ -551,7 +552,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
 "cJ" = (
@@ -592,8 +592,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
 "di" = (
-/obj/structure/bookcase/random,
 /obj/machinery/light/directional/south,
+/obj/structure/bookcase/random/religion,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/vacant_rooms/office)
 "do" = (
@@ -606,7 +606,7 @@
 "dp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/outpost/maintenance/port)
 "dq" = (
 /obj/machinery/door/airlock/public{
@@ -911,11 +911,18 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
 "eY" = (
-/obj/effect/decal/fakelattice{
-	layer = 2.010
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/airlock/maintenance{
+	dir = 4;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/port)
 "fb" = (
 /obj/structure/railing/corner,
@@ -1001,6 +1008,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/port)
+"fA" = (
+/turf/closed/indestructible/titanium/nodiagnonal,
+/area/outpost/cargo/smeltery)
 "fF" = (
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/turf_decal/industrial/warning{
@@ -1272,6 +1282,13 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
+"hl" = (
+/obj/effect/decal/fakelattice{
+	layer = 2.010
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/indestructible/titanium/nodiagnonal,
+/area/outpost/maintenance/port)
 "ho" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/asteroid/icerock/temperate/lit,
@@ -1671,7 +1688,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "ju" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/outpost/engineering/atmospherics)
 "jw" = (
 /obj/machinery/light/dim/directional/west{
@@ -1704,6 +1721,10 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
+"jB" = (
+/obj/structure/bookcase/random/nonfiction,
+/turf/open/floor/plasteel/mono/dark,
+/area/outpost/vacant_rooms/office)
 "jK" = (
 /obj/machinery/camera/autoname{
 	dir = 1
@@ -3052,10 +3073,11 @@
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/lounge)
 "sk" = (
-/obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
+/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
 "st" = (
@@ -3632,10 +3654,7 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "vs" = (
-/obj/effect/decal/fakelattice{
-	layer = 2.010
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/outpost/maintenance/port)
 "vt" = (
 /obj/structure/flora/rock/pile/icy,
@@ -3709,8 +3728,9 @@
 /area/outpost/crew/lounge)
 "vM" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/item/bodypart/head/rachnid{
-	pixel_x = 7;
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "body";
+	pixel_x = -1;
 	pixel_y = -3
 	},
 /turf/open/floor/plating/asteroid/icerock/temperate/lit,
@@ -4836,6 +4856,14 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
+/obj/item/gun/energy/e_gun/hades,
+/obj/item/gun/energy/e_gun/hades,
+/obj/item/gun/energy/e_gun,
+/obj/item/gun/energy/e_gun,
+/obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube,
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "BT" = (
@@ -6021,7 +6049,7 @@
 /area/outpost/crew/bar)
 "Iv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer2,
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/indestructible/titanium/nodiagnonal,
 /area/outpost/engineering/atmospherics)
 "IC" = (
 /obj/machinery/light/small/directional/south,
@@ -6621,6 +6649,22 @@
 "Ls" = (
 /obj/structure/closet/secure_closet/armorycage,
 /obj/machinery/light/directional/south,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/storage/box/ammo/a12g_rubbershot,
+/obj/item/storage/box/ammo/a12g_rubbershot,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/checkpoint)
 "Ly" = (
@@ -7437,6 +7481,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
 "QA" = (
@@ -7866,8 +7911,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/starboard)
 "SU" = (
-/obj/structure/bookcase/random,
 /obj/machinery/light/directional/north,
+/obj/structure/bookcase/random/fiction,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/vacant_rooms/office)
 "Ta" = (
@@ -13573,7 +13618,7 @@ eT
 hX
 Ay
 gk
-mK
+vs
 Rj
 Rj
 Rj
@@ -13648,16 +13693,16 @@ kD
 kD
 eo
 eo
-mK
+vs
 vs
 vs
 eY
 vs
-mK
+vs
 ZW
 fb
 ZW
-mK
+vs
 Rj
 Rj
 Rj
@@ -13731,8 +13776,8 @@ nH
 Ak
 dD
 PI
-mK
-eY
+vs
+hl
 Tj
 Tj
 Tj
@@ -14067,8 +14112,8 @@ kq
 dR
 eo
 tB
-mK
-eY
+vs
+hl
 nA
 nA
 Tj
@@ -14152,16 +14197,16 @@ eo
 eo
 kq
 eo
-mK
-mK
-mK
-mK
-mK
+vs
+vs
+vs
+vs
+vs
 dp
 Aj
 YX
 Aj
-mK
+vs
 Rj
 Rj
 Rj
@@ -14245,7 +14290,7 @@ aB
 ar
 Wy
 hj
-mK
+vs
 Rj
 Rj
 Rj
@@ -14329,7 +14374,7 @@ RD
 WL
 WL
 WL
-WL
+iZ
 Rj
 Rj
 Rj
@@ -14413,7 +14458,7 @@ Mq
 WL
 pK
 SS
-WL
+iZ
 Rj
 Rj
 Rj
@@ -14497,7 +14542,7 @@ vu
 hx
 vR
 Bm
-WL
+iZ
 Rj
 Rj
 Rj
@@ -14581,8 +14626,8 @@ rj
 WL
 WL
 Jo
-WL
-WL
+iZ
+iZ
 Rj
 Rj
 Rj
@@ -14650,7 +14695,7 @@ PS
 tC
 rM
 pH
-zJ
+jB
 CC
 Yc
 xD
@@ -14666,7 +14711,7 @@ WL
 mo
 OC
 Un
-WL
+iZ
 Rj
 Rj
 Rj
@@ -14750,7 +14795,7 @@ WL
 VX
 HO
 TJ
-WL
+iZ
 Rj
 Rj
 Rj
@@ -14831,10 +14876,10 @@ WL
 DF
 WL
 WL
-WL
-WL
-WL
-WL
+iZ
+iZ
+iZ
+iZ
 Rj
 Rj
 Rj
@@ -14915,7 +14960,7 @@ WL
 mq
 rS
 LP
-WL
+iZ
 Rj
 Rj
 Rj
@@ -14999,7 +15044,7 @@ WL
 RK
 KW
 Zy
-WL
+iZ
 Rj
 Rj
 Rj
@@ -15083,7 +15128,7 @@ WL
 bc
 iZ
 iZ
-WL
+iZ
 Rj
 Rj
 Rj
@@ -15399,13 +15444,13 @@ Kh
 dN
 Hd
 Zp
-mk
-am
+fA
+zG
 Yq
 cw
 cw
-am
-am
+zG
+zG
 Rj
 Rj
 Rj
@@ -15483,7 +15528,7 @@ bZ
 dK
 tU
 sZ
-mk
+fA
 Dd
 uG
 Ce
@@ -15561,13 +15606,13 @@ Rj
 Rj
 Rj
 mk
-mk
+fA
 KZ
 bZ
 dK
 sV
-mk
-mk
+fA
+fA
 BI
 kW
 Ce
@@ -15645,12 +15690,12 @@ Rj
 lJ
 Rj
 Rj
-mk
+fA
 zL
 iy
 CU
 rb
-mk
+fA
 Rj
 QL
 lF
@@ -15729,12 +15774,12 @@ QL
 QL
 Lh
 Rj
-mk
-mk
-mk
-mk
-mk
-mk
+fA
+fA
+fA
+fA
+fA
+fA
 QL
 QL
 QL
