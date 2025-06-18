@@ -46,8 +46,8 @@
 /datum/outfit/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper Corpse"
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/space/hardsuit/syndi
-	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
 	mask = /obj/item/clothing/mask/gas/syndicate
 	back = /obj/item/tank/jetpack/oxygen/harness
 

@@ -901,7 +901,13 @@
 	var/p_x = LAZYACCESS(modifiers, ICON_X) ? text2num(LAZYACCESS(modifiers, ICON_X)) : world.icon_size / 2 // ICON_(X|Y) are measured from the bottom left corner of the icon.
 	var/p_y = LAZYACCESS(modifiers, ICON_Y) ? text2num(LAZYACCESS(modifiers, ICON_Y)) : world.icon_size / 2 // This centers the target if modifiers aren't passed.
 
+
+	var/static/list/snowflake_matrix_list = list(/turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid, /turf/open/floor/plating/asteroid/dry_seafloor, /turf/open/floor/plating/asteroid/snow, /turf/open/floor/plating/asteroid/icerock, /turf/open/floor/plating/grass, /turf/open/floor/plating/asteroid/sand) //List of turfs that get translated by -19/-19 for smoothing (this breaks projectiles)
 	if(target)
+		if(is_type_in_list(target, snowflake_matrix_list)) //yes, this is stupid
+			if(target.smoothing_flags)
+				p_x -= 19 //In short, smoothing flags being active on certain turfs means they are the Big Ones and get translated by -19 x/y to mesh together
+				p_y -= 19 //Issue: this also moves ICON_X/Y up by 19 since it accounts for the 0,0 of the icon (moved down by 19 x/y), Giving us a wonderful projectile offset of +19 pixels. Which we remove here
 		var/turf/source_loc = get_turf(source)
 		var/turf/target_loc = get_turf(target)
 		var/dx = ((target_loc.x - source_loc.x) * world.icon_size) + (target.pixel_x - source.pixel_x) + (p_x - (world.icon_size / 2))
