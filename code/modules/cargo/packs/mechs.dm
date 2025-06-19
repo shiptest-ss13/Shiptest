@@ -341,7 +341,7 @@ weapons
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
 	)
 
-/datum/supply_pack/mech/weapon/carbine
+/*/datum/supply_pack/mech/weapon/carbine
 	name = "Downpour kit"
 	desc = "A rapid fire energy carbine designed for combat usage."
 	cost = 1000
@@ -355,7 +355,7 @@ weapons
 	cost = 2000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
-	)
+	)*/
 
 /datum/supply_pack/mech/weapon/ion_cannon
 	name = "MK4 ion cannon kit"
@@ -411,7 +411,7 @@ ammo
 /datum/supply_pack/mech/ammo/scattershot_ammo
 	name = "LBX-10 ammo box"
 	desc = "Contains a twenty four round box of upscaled buckshot, to be loaded directly in a mounted LBX-10."
-	cost = 500
+	cost = 750 //24*8*24 = 1536 total damage assuming all rounds connect
 	contains = list(
 		/obj/item/mecha_ammo/scattershot
 	)
@@ -419,7 +419,7 @@ ammo
 /datum/supply_pack/mech/ammo/lmg_ammo
 	name = "UMG-2 ammo box"
 	desc = "Contains a two hundred-round box of heavy ammunition for the UMG-2."
-	cost = 500
+	cost = 2500 //200*25 = 5000 damage if all rounds connect
 	contains = list(
 		/obj/item/mecha_ammo/lmg
 	)
@@ -427,7 +427,7 @@ ammo
 /datum/supply_pack/mech/ammo/railgun_ammo
 	name = "Railgun ammo box"
 	desc = "A box containing thirty iron-tungsten rods for the PR-05 Plasma Railgun."
-	cost = 500
+	cost = 900 //60 * 30 = 1800 damage if all rounds connect
 	contains = list(
 		/obj/item/mecha_ammo/railgun_ammo
 	)
@@ -437,7 +437,7 @@ ammo
 /datum/supply_pack/mech/ammo/missile_rack_ammo
 	name = "BRM-6 missile box"
 	desc = "Contains a box of six breaching missiles designed to explode upon striking hard surfaces."
-	cost = 1000
+	cost = 600 //these are remarkably inefficient against anything except exosuits
 	contains = list(
 		/obj/item/mecha_ammo/missiles_br
 	)
