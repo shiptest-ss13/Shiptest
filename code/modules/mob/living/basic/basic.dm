@@ -91,6 +91,9 @@
 	///This damage is taken when the body temp is too hot. Set both this and unsuitable_cold_damage to 0 to avoid adding the body_temp_sensitive element.
 	var/unsuitable_heat_damage = 1
 
+	///conneceted nest datum, used to talk to the monster's 'nest'/spawner
+	var/datum/component/spawner/nest
+
 /mob/living/basic/Initialize(mapload)
 	. = ..()
 	if (islist(armor))
@@ -149,6 +152,12 @@
 
 /mob/living/basic/death(gibbed)
 	. = ..()
+	if(nest)
+		if(QDELETED(nest))
+			nest = null
+		else
+			nest.spawned_mobs -= src
+			nest = null
 	if(basic_mob_flags & DEL_ON_DEATH)
 		qdel(src)
 	else
