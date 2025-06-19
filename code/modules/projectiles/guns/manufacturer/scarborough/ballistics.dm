@@ -183,6 +183,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	fire_delay = 0.35 SECONDS
 
 	spread = 3
+	spread_unwielded = 8
 	recoil = 1
 	recoil_unwielded = 2
 
@@ -415,6 +416,13 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
 	icon_state = "cobra20"
 	item_state = "cobra20"
+	burst_size = 3
+	burst_delay = 1.75
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
+	default_firemode = FIREMODE_BURST
+
 
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
 
