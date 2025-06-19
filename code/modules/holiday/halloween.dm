@@ -10,14 +10,14 @@
 	items = list(
 		/obj/item/reagent_containers/food/snacks/egg,
 	)
-	result = /obj/item/reagent_containers/food/snacks/sugarcookie/spookyskull
+	result = /obj/item/food/cookie/sugar/spookyskull
 
 /datum/recipe/sugarcookie/spookycoffin
 	reagents_list = list(/datum/reagent/consumable/flour = 5, /datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/coffee = 5)
 	items = list(
 		/obj/item/reagent_containers/food/snacks/egg,
 	)
-	result = /obj/item/reagent_containers/food/snacks/sugarcookie/spookycoffin
+	result = /obj/item/food/cookie/sugar/spookycoffin
 
 //////////////////////////////
 //Spookoween trapped closets//
@@ -26,8 +26,7 @@
 #define SPOOKY_SKELETON 1
 #define ANGRY_FAITHLESS 2
 #define SCARY_BATS 3
-#define INSANE_CLOWN 4
-#define HOWLING_GHOST 5
+#define HOWLING_GHOST 4
 
 //Spookoween variables
 /obj/structure/closet
@@ -44,9 +43,6 @@
 	trigger_spooky_trap()
 
 /obj/structure/closet/proc/set_spooky_trap()
-	if(prob(0.1))
-		trapped = INSANE_CLOWN
-		return
 	if(prob(1))
 		trapped = ANGRY_FAITHLESS
 		return

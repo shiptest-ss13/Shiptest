@@ -47,7 +47,7 @@
 	desc = "A silhouette of obsidian glass stalks into view, empty hands clutching into armored fists. They are unarmed, and this is nearly a fair fight."
 	icon_state = "syndicate_stormtrooper"
 	icon_living = "syndicate_stormtrooper"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 
 ///////////////Melee////////////
@@ -186,7 +186,7 @@
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 0
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 
 
@@ -195,8 +195,8 @@
 	desc = "Rapid, practiced motions permeate the body underneath the crimson suit of this radiantly hateful being. Each one ripples to the surface, the eyes of a suit tracking you as it brings a sledgehammer to bear."
 	icon_state = "syndicate_stormtrooper_sword"
 	icon_living = "syndicate_stormtrooper_sword"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	l_hand =/obj/item/melee/sledgehammer/gorlex
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	l_hand = /obj/item/melee/sledgehammer/gorlex
 	armour_penetration = 40
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -265,7 +265,7 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a75clip
+	casingtype = /obj/item/ammo_casing/a65clip
 	l_hand =/obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /* Space Ranged */
@@ -319,8 +319,8 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_space_shotgun"
 	icon_living = "syndicate__space_shotgun"
-	casingtype = /obj/item/ammo_casing/a75clip
-	l_hand =/obj/item/gun/ballistic/automatic/marksman/boomslang
+	casingtype = /obj/item/ammo_casing/a65clip
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun/incendiary
 	name = "Ramzi Clique Boiler"
@@ -336,8 +336,8 @@
 	icon_state = "syndicate_stormtrooper_pistol"
 	icon_living = "syndicate_stormtrooper_pistol"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	l_hand =/obj/item/gun/ballistic/automatic/pistol/rattlesnake
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	rapid = 3
 	rapid_fire_delay = 2
 
@@ -346,8 +346,8 @@
 	desc = "Night-black armor traces the silhouette of a soldier equaled by precious few. Their Sidewinder tracks you perfectly, a staccato bark of 5.7 already in its throat."
 	icon_state = "syndicate_stormtrooper_smg"
 	icon_living = "syndicate_stormtrooper_smg"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	l_hand =/obj/item/gun/ballistic/automatic/smg/sidewinder
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	l_hand = /obj/item/gun/ballistic/automatic/smg/sidewinder
 	rapid = 4
 	rapid_fire_delay = 1.5
 	casingtype = /obj/item/ammo_casing/c57x39mm
@@ -357,8 +357,8 @@
 	desc = "Ink and black glass poured into the shape of an armored commando, dripping menace with every step. Their combat shotgun follows you with lethal intent, promising a blizzard of buckshot in less than a blink."
 	icon_state = "syndicate_stormtrooper_shotgun"
 	icon_living = "syndicate_stormtrooper_shotgun"
-	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi
-	l_hand =/obj/item/gun/ballistic/shotgun/automatic/bulldog
+	armor_base = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	l_hand = /obj/item/gun/ballistic/shotgun/automatic/bulldog
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	rapid = 3
 	rapid_fire_delay = 5
@@ -381,8 +381,8 @@
 	aggro_vision_range = 14
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
-	casingtype = /obj/item/ammo_casing/a75clip
-	l_hand =/obj/item/gun/ballistic/automatic/marksman/boomslang
+	casingtype = /obj/item/ammo_casing/a65clip
+	l_hand = /obj/item/gun/ballistic/automatic/marksman/boomslang
 
 ///////////////Misc////////////
 

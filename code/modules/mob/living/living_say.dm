@@ -240,12 +240,12 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/is_custom_emote = message_mods[MODE_CUSTOM_SAY_ERASE_INPUT]
 
-	var/understood = TRUE
+	//var/understood = TRUE
 	if(!is_custom_emote) // we do not translate emotes
 		var/untranslated_raw_message = raw_message
 		raw_message = lang_treat(speaker, message_language, raw_message, spans, message_mods) // translate
-		if(raw_message != untranslated_raw_message)
-			understood = FALSE
+		//if(raw_message != untranslated_raw_message)
+			//understood = FALSE
 
 	if(HAS_TRAIT(speaker, TRAIT_SIGN_LANG)) //Checks if speaker is using sign language
 		if(is_blind(src))
@@ -347,7 +347,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			speech_bubble_recipients.Add(M.client)
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), I, speech_bubble_recipients, 3 SECONDS)
 
 /mob/proc/binarycheck()
 	return FALSE

@@ -45,6 +45,8 @@
 	initial_gas_mix = AIRLESS_ATMOS
 /turf/open/floor/plasteel/white/telecomms
 	initial_gas_mix = TCOMMS_ATMOS
+/turf/open/floor/plasteel/white/plasma
+	initial_gas_mix = ATMOS_TANK_PLASMA
 
 /turf/open/floor/plasteel/mono
 	icon_state = "monotile_gray"
@@ -55,6 +57,15 @@
 /turf/open/floor/plasteel/mono/white
 	icon_state = "monotile_light"
 	base_icon_state = "monotile_light"
+
+/turf/open/floor/plasteel/mono/white/plasma
+	initial_gas_mix = ATMOS_TANK_PLASMA
+/turf/open/floor/plasteel/mono/dark/plasma
+	initial_gas_mix = ATMOS_TANK_PLASMA
+/turf/open/floor/plasteel/mono/white/airless
+	initial_gas_mix = AIRLESS_ATMOS
+/turf/open/floor/plasteel/mono/dark/airless
+	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plasteel/tech
 	icon = 'icons/turf/floors/techfloor.dmi'
@@ -97,6 +108,8 @@
 /turf/open/floor/plasteel/patterned/brushed
 	icon_state = "kafel_full"
 	base_icon_state = "kafel_full"
+/turf/open/floor/plasteel/patterned/brushed/cold
+	initial_gas_mix = "o2=22;n2=82;TEMP=275.65" // normal air but 2.5 degrees
 
 /turf/open/floor/plasteel/patterned/grid
 	icon_state = "grid"

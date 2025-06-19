@@ -3,7 +3,16 @@
 	var/modifier = 0
 
 /datum/chemical_reaction/reagent_explosion/on_reaction(datum/reagents/holder, created_volume)
-	explode(holder, created_volume)
+	// We do all this because created_volume is actually the number of time the reaction occurs not the created volume
+	var/volume_per_reaction = 0
+	if (results.len)
+		for(var/reagent in results)
+			volume_per_reaction += results[reagent]
+	else
+		for(var/reagent in required_reagents)
+			volume_per_reaction += required_reagents[reagent]
+
+	explode(holder, created_volume*volume_per_reaction)
 
 /datum/chemical_reaction/reagent_explosion/proc/explode(datum/reagents/holder, created_volume)
 	if(QDELETED(holder.my_atom))

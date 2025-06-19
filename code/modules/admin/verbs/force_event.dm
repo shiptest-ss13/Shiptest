@@ -17,7 +17,7 @@
 	var/magic 	= ""
 	var/holiday = ""
 	for(var/datum/round_event_control/E in SSevents.control)
-		dat = "<BR><A href='?src=[REF(src)];[HrefToken()];forceevent=[REF(E)]'>[E]</A> Weight:[E.weight] Max Occurances:[E.max_occurrences]"
+		dat = "<BR><A href='byond://?src=[REF(src)];[HrefToken()];forceevent=[REF(E)]'>[E]</A> Weight:[E.weight] Max Occurances:[E.max_occurrences]"
 		if(E.category == EVENT_CATEGORY_HOLIDAY)
 			holiday	+= dat
 		else if(E.category == EVENT_CATEGORY_ADMINBUS)

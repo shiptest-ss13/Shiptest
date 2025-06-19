@@ -1,5 +1,5 @@
 /datum/supply_pack/gun
-	group = "Guns"
+	category = "Guns"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 	faction_discount = 10
 
@@ -379,6 +379,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/cycler
+	name = "Cycler Shotgun Crate"
+	desc = "Contains an advanced shotgun with four round dual magazine tubes, allowing quick swapping between ammo types for increased versatility in the field. For NT employee use only."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/cycler)
+	crate_name = "shotgun crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
 /*
 		SMGs
 */
@@ -722,7 +732,7 @@
 
 /datum/supply_pack/gun/boomslang90
 	name = "Boomslang-90 Designated Marksman Rifle Crate"
-	desc = "Contains a civilian variant of the Boomslang Sniper rifle- modified with a 2x scope, rather than a sniper scope. Chambered in the powerful 7.5x64mm CLIP cartridge."
+	desc = "Contains a civilian variant of the Boomslang Sniper rifle- modified with a 2x scope, rather than a sniper scope. Chambered in the powerful 6.5mm CLIP cartridge."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/boomslang)
 	crate_name = "dmr crate"
@@ -730,7 +740,7 @@
 
 /datum/supply_pack/gun/boomslang10
 	name = "MSR-90 'Boomslang' Sniper Rifle Crate"
-	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 7.5x64mm CLIP cartridge."
+	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 6.5mm CLIP cartridge."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
 	crate_name = "marksman rifle crate"
@@ -740,7 +750,7 @@
 
 /datum/supply_pack/gun/f90
 	name = "CM-F90 Sniper Rifle Crate"
-	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, for Minuteman use only. Chambered in the powerful 7.5x64mm CLIP cartridge."
+	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, for Minuteman use only. Chambered in the powerful 6.5mm CLIP cartridge."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/cmf90)
 	crate_name = "marksman rifle crate"

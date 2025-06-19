@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/smg
+	bad_type = /obj/item/gun/ballistic/automatic/smg
 	show_magazine_on_sprite = TRUE
 
 	burst_size = 2
@@ -27,9 +28,9 @@
 
 	gunslinger_recoil_bonus = 2
 	gunslinger_spread_bonus = 16
-	wear_minor_threshold = 120
-	wear_major_threshold = 360
-	wear_maximum = 600
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -168,6 +169,8 @@
 		/obj/item/attachment/foldable_stock/inteq
 	)
 	default_attachments = list(/obj/item/attachment/foldable_stock/inteq)
+
+NO_MAG_GUN_HELPER(automatic/smg/skm_carbine/inteq)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	name = "\improper Nanotrasen Saber SMG"
