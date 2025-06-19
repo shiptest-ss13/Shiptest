@@ -117,6 +117,10 @@
 	display_name = "balaclava"
 	path = /obj/item/clothing/mask/balaclava
 
+/datum/gear/accessory/mask/facemask
+	display_name = "face mask"
+	path = /obj/item/clothing/mask/breath/facemask
+
 //Misc
 
 /datum/gear/accessory/waistcoat

@@ -459,9 +459,16 @@
 	name = "Gauze-class Ambulance Pod"
 	faction = /datum/faction/syndicate/cybersun
 	prefix = "CSSV"
+
 /datum/map_template/shuttle/subshuttles/thunder
 	file_name = "inteq_thunder"
 	name = "Thunder-class Interceptor"
 	faction = /datum/faction/inteq
 	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
+
+/datum/map_template/shuttle/subshuttles/bonnie
+	file_name = "independent_bonnie"
+	name = "Bonnie-class Cargo Hauler"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "SV"
