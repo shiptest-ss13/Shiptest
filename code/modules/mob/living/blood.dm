@@ -144,7 +144,7 @@
 			bleeding_severity = "Your heartbeat thrashes wildly trying to keep up with your bloodloss"
 
 	var/rate_of_change = ", but it's getting better." // if there's no wounds actively getting bloodier or maintaining the same flow, we must be getting better!
-	if(HAS_TRAIT(src, TRAIT_COAGULATING)) // if we have coagulant, we're getting better quick
+	if(HAS_TRAIT(src, TRAIT_COAGULATING)) // if we have an active coagulant, we're getting better quick
 		rate_of_change = ", but it's clotting up quickly!"
 	else
 		// flick through our wounds to see if there are any bleeding ones getting worse or holding flow (maybe move this to handle_blood and cache it so we don't need to cycle through the wounds so much)

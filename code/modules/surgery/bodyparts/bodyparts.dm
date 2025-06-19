@@ -439,6 +439,9 @@
 	if(HAS_TRAIT(owner,TRAIT_HARDLY_WOUNDED))
 		damage *= 0.85
 
+	if(HAS_TRAIT(owner, TRAIT_VERY_HARDLY_WOUNDED))
+		damage *= 0.6
+
 	if(HAS_TRAIT(owner, TRAIT_EASYDISMEMBER))
 		damage *= 1.1
 
