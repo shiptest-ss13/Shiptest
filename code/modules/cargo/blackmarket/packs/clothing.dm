@@ -148,7 +148,7 @@
 	stock_max = 8
 	availability_prob = 50
 
-/datum/blackmarket_item/clothing/frontiersmen_armor_set/spawn_item(loc)
+/datum/blackmarket_item/clothing/camo_set/spawn_item(loc)
 	var/obj/item/storage/backpack/duffelbag/sec/B = ..()
 	B.name = "Worn Duffelbag"
 	B.desc = "A beat up looking dufflebag."
