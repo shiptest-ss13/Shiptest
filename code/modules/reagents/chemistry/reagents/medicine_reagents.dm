@@ -433,18 +433,24 @@
 
 /datum/reagent/medicine/synthflesh/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
 	if(iscarbon(M))
-		if (M.stat == DEAD)
+		var/mob/living/carbon/carbies = M
+		if (carbies.stat == DEAD)
 			show_message = 0
 		if(method in list(PATCH, TOUCH, SMOKE))
-			M.adjustBruteLoss(-1.25 * reac_volume)
-			M.adjustFireLoss(-1.25 * reac_volume)
+			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
+			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
+			for(var/i in carbies.all_wounds)
+				var/datum/wound/iter_wound = i
+				iter_wound.on_synthflesh(reac_volume)
+			carbies.adjustToxLoss((harmies+burnies)*0.66)
 			if(show_message)
-				to_chat(M, span_danger("You feel your burns and bruises healing! It stings like hell!"))
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
-			if(HAS_TRAIT_FROM(M, TRAIT_HUSK, "burn") && M.getFireLoss() < THRESHOLD_UNHUSK && (M.reagents.get_reagent_amount(/datum/reagent/medicine/synthflesh) + reac_volume >= 100))
-				M.cure_husk("burn")
-				M.visible_message("<span class='nicegreen'>A rubbery liquid coats [M]'s burns. [M] looks a lot healthier!")
+				to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
+			SEND_SIGNAL(carbies, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+			if(HAS_TRAIT_FROM(M, TRAIT_HUSK, "burn") && carbies.getFireLoss() < THRESHOLD_UNHUSK && (carbies.reagents.get_reagent_amount(/datum/reagent/medicine/synthflesh) + reac_volume >= 100))
+				carbies.cure_husk("burn")
+				carbies.visible_message("<span class='nicegreen'>A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!") //we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or something
 	..()
+	return TRUE
 
 /datum/reagent/medicine/charcoal
 	name = "Charcoal"
@@ -1806,6 +1812,33 @@
 	metabolization_rate = 0.15 * REAGENTS_METABOLISM
 	overdose_threshold = 50
 	taste_description = "numbing bitterness"
+	/// While this reagent is in our bloodstream, we reduce all bleeding by this factor
+	var/passive_bleed_modifier = 0.55
+	/// For tracking when we tell the person we're no longer bleeding
+	var/was_working
+
+/datum/reagent/medicine/polypyr/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/medicine/polypyr)
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+	return ..()
+
+/datum/reagent/medicine/polypyr/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/medicine/polypyr)
+	//should probably generic proc this at a later point. I'm probably gonna use it a bit
+	if(was_working)
+		to_chat(M, span_warning("The medicine thickening your blood loses its effect!"))
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+
+	return ..()
+
 
 /datum/reagent/medicine/polypyr/on_mob_life(mob/living/carbon/M) //I wanted a collection of small positive effects, this is as hard to obtain as coniine after all.
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.25)
@@ -1863,8 +1896,9 @@
 			C.adjustStaminaLoss(5)
 		if(31 to INFINITY)
 			C.AdjustSleeping(40)
-			for(var/datum/wound/current_wound in C.all_wounds)
-				current_wound.remove_wound()
+			//formerly everything-fixing juice
+			for(var/datum/wound/blunt/broken_bone in C.all_wounds)
+				broken_bone.remove_wound()
 			for(var/obj/item/organ/O in C.internal_organs)
 				O.damage = 0
 			holder.remove_reagent(/datum/reagent/medicine/bonefixingjuice, 10)
@@ -2332,29 +2366,6 @@
 		else if(M.getFireLoss())
 			M.adjustFireLoss(-0.2)
 
-/datum/reagent/medicine/chitosan
-	name = "Chitosan"
-	description = "Vastly improves the blood's natural ability to coagulate and stop bleeding by hightening platelet production and effectiveness. Overdosing will cause extreme blood clotting, resulting in potential brain damage."
-	reagent_state = LIQUID
-	color = "#CC00FF"
-	overdose_threshold = 11
-
-/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M)
-	// if(ishuman(M))
-	// 	var/mob/living/carbon/human/H = M //todo: wounds integration
-	// 	H.heal_bleeding(1)
-	..()
-	. = 1
-
-/datum/reagent/medicine/chitosan/overdose_process(mob/living/M)
-	if(prob(50))
-		M.adjustOxyLoss(4)
-	if(prob(10))
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
-	if(prob(5))
-		M.adjustToxLoss(1)
-	..()
-
 /datum/reagent/medicine/stasis
 	name = "Stasis"
 	description = "A liquid blue chemical that causes the body to enter a chemically induced stasis, irregardless of current state."
@@ -2378,7 +2389,7 @@
 
 /datum/reagent/medicine/carfencadrizine
 	name = "Carfencadrizine"
-	description = "A highly potent synthetic painkiller held in a suspension of stimulating agents. Allows people to keep moving long beyond when they should."
+	description = "A highly potent synthetic painkiller held in a suspension of stimulating agents. Allows people to keep moving long beyond when they should stop."
 	color = "#859480"
 	overdose_threshold = 8
 	addiction_threshold = 7
@@ -2386,12 +2397,14 @@
 
 /datum/reagent/medicine/carfencadrizine/on_mob_metabolize(mob/living/L)
 	. = ..()
+	ADD_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/medicine/carfencadrizine)
 	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	ADD_TRAIT(L, TRAIT_NOHARDCRIT, type)
 
 /datum/reagent/medicine/carfencadrizine/on_mob_end_metabolize(mob/living/L)
 	. = ..()
+	REMOVE_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/medicine/carfencadrizine)
 	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
 	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	REMOVE_TRAIT(L, TRAIT_NOHARDCRIT, type)
@@ -2462,9 +2475,9 @@
 	..()
 
 // helps bleeding wounds clot faster
-/datum/reagent/medicine/coagulant
-	name = "coagulant"
-	description = "A proprietary coagulant used to help bleeding wounds clot faster."
+/datum/reagent/medicine/chitosan
+	name = "chitosan"
+	description = "Vastly improves the blood's natural ability to coagulate and stop bleeding by hightening platelet production and effectiveness. Overdosing will cause extreme blood clotting, resulting in potential brain damage."
 	reagent_state = LIQUID
 	color = "#bb2424"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
@@ -2476,15 +2489,30 @@
 	/// For tracking when we tell the person we're no longer bleeding
 	var/was_working
 
-/datum/reagent/medicine/coagulant/on_mob_metabolize(mob/living/M)
-	ADD_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/medicine/coagulant)
+/datum/reagent/medicine/chitosan/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/medicine/chitosan)
+
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod *= passive_bleed_modifier
 	return ..()
 
-/datum/reagent/medicine/coagulant/on_mob_end_metabolize(mob/living/M)
-	REMOVE_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/medicine/coagulant)
+/datum/reagent/medicine/chitosan/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/medicine/chitosan)
+
+	if(was_working)
+		to_chat(M, span_warning("The medicine thickening your blood loses its effect!"))
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+
 	return ..()
 
-/datum/reagent/medicine/coagulant/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/chitosan/on_mob_life(mob/living/carbon/M)
 	. = ..()
 	if(!M.blood_volume || !M.all_wounds)
 		return
@@ -2505,7 +2533,7 @@
 	else if(was_working)
 		was_working = FALSE
 
-/datum/reagent/medicine/coagulant/overdose_process(mob/living/carbon/M)
+/datum/reagent/medicine/chitosan/overdose_process(mob/living/carbon/M)
 	. = ..()
 	if(!M.blood_volume)
 		return
@@ -2522,22 +2550,9 @@
 		if(prob(50))
 			var/obj/item/organ/lungs/our_lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
 			our_lungs.applyOrganDamage(1)
+		else if(prob(25))
+			var/obj/item/organ/lungs/our_brain = M.getorganslot(ORGAN_SLOT_BRAIN)
+			our_brain.applyOrganDamage(1)
 		else
 			var/obj/item/organ/heart/our_heart = M.getorganslot(ORGAN_SLOT_HEART)
 			our_heart.applyOrganDamage(1)
-
-/datum/reagent/medicine/coagulant/on_mob_metabolize(mob/living/M)
-	if(!ishuman(M))
-		return
-
-	var/mob/living/carbon/human/blood_boy = M
-	blood_boy.physiology?.bleed_mod *= passive_bleed_modifier
-
-/datum/reagent/medicine/coagulant/on_mob_end_metabolize(mob/living/M)
-	if(was_working)
-		to_chat(M, span_warning("The medicine thickening your blood loses its effect!"))
-	if(!ishuman(M))
-		return
-
-	var/mob/living/carbon/human/blood_boy = M
-	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
