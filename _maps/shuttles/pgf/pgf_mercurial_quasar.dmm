@@ -872,6 +872,10 @@
 	name = "engineer's locker"
 	},
 /obj/item/clothing/glasses/welding,
+/obj/item/clothing/suit/armor/gezena{
+	pixel_y = -4;
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "jQ" = (
@@ -2498,10 +2502,6 @@
 /obj/item/clothing/neck/stethoscope{
 	pixel_y = -7
 	},
-/obj/item/storage/belt/medical/gezena{
-	pixel_x = -11;
-	pixel_y = -4
-	},
 /obj/item/clothing/gloves/color/latex/nitrile{
 	pixel_x = 4;
 	pixel_y = 5
@@ -2521,6 +2521,14 @@
 	dir = 1
 	},
 /obj/item/radio/headset/pgf,
+/obj/item/clothing/suit/armor/gezena{
+	pixel_y = -4;
+	pixel_x = -11
+	},
+/obj/item/storage/belt/medical/gezena{
+	pixel_x = -11;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "Jl" = (
@@ -3034,6 +3042,10 @@
 	pixel_x = 8;
 	pixel_y = 0
 	},
+/obj/item/healthanalyzer{
+	pixel_x = 6;
+	pixel_y = 10
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "Oe" = (
@@ -3242,7 +3254,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/engineering{
-	req_one_access = list(1, 10);
 	dir = 4;
 	name = "Engine Bay"
 	},
