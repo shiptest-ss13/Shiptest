@@ -17,12 +17,19 @@
 	protect_indoors = TRUE
 	barometer_predictable = TRUE
 	affects_underground = FALSE
-	aesthetic = TRUE
 
 	sound_active_outside = /datum/looping_sound/weather/rain/indoors
 	sound_active_inside = /datum/looping_sound/weather/rain
 
 	fire_suppression = 6
+
+/datum/weather/rain/weather_act(mob/living/living_mob)
+	if(!iscarbon(living_mob))
+		return
+	var/mob/living/carbon/carbon = living_mob
+	carbon.adjust_fire_stacks(-fire_suppression/2)
+	if(prob(25))
+		carbon.wash(clean_types = CLEAN_TYPE_BLOOD)
 
 /datum/weather/rain/heavy
 	name = "heavy rain"
@@ -90,7 +97,6 @@
 	protect_indoors = TRUE
 	barometer_predictable = TRUE
 	affects_underground = FALSE
-	aesthetic = FALSE
 
 	sound_active_outside = /datum/looping_sound/weather/rain/indoors
 	sound_active_inside = /datum/looping_sound/weather/rain
@@ -118,6 +124,7 @@
 			if(istype (human.wear_neck,/obj/item/clothing/neck/cloak)) //cloaks protect in steed of suits
 				return
 		human.reagents.add_reagent(/datum/reagent/toxin, toxic_power/4)
+	. = ..()
 
 
 /datum/weather/rain/toxic/proc/handle_face(mob/living/carbon/living_mob)

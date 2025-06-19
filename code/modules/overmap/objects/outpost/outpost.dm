@@ -387,6 +387,10 @@
 		if(!vlevel.is_in_bounds(num_mark))
 			continue
 		num_mark.write_number(hangar_num) // deletes the mark
+	for(var/obj/effect/landmark/outpost/shaft_number/shaft_mark in GLOB.outpost_landmarks)
+		if(!vlevel.is_in_bounds(shaft_mark))
+			continue
+		shaft_mark.write_number(shaft.name) // deletes the mark
 	for(var/obj/effect/landmark/outpost/hangar_crate_spawner/crate_spawner_mark in GLOB.outpost_landmarks)
 		if(!vlevel.is_in_bounds(crate_spawner_mark))
 			continue
