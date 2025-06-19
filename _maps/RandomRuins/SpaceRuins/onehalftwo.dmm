@@ -361,7 +361,7 @@
 /area/ruin/space/has_grav/refuelingpost/cargo)
 "en" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/mob/living/simple_animal/hostile/hivebot/ranged,
+/mob/living/basic/hivebot/ranged,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "eq" = (
@@ -860,7 +860,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/hivebot/strong,
+/mob/living/basic/hivebot/strong,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor6"
 	},
@@ -1388,7 +1388,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "pC" = (
-/mob/living/simple_animal/hostile/hivebot/ranged,
+/mob/living/basic/hivebot/ranged,
 /turf/open/floor/plasteel/telecomms_floor/airless,
 /area/ruin/space/hivebotshuttle)
 "pE" = (
@@ -1559,7 +1559,7 @@
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "rd" = (
 /obj/item/ammo_casing/spent/slug/buck,
-/mob/living/simple_animal/hostile/hivebot/ranged,
+/mob/living/basic/hivebot/ranged,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "rl" = (
@@ -1889,7 +1889,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/refuelingpost/solarstorage)
 "vH" = (
-/mob/living/simple_animal/hostile/hivebot/mechanic,
+/mob/living/basic/hivebot/mechanic,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/terminal{
 	dir = 1
@@ -2479,7 +2479,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/border{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/basic/hivebot,
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/refuelingpost/cargobay)
 "Dg" = (
@@ -2606,7 +2606,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/mob/living/simple_animal/hostile/hivebot/defender,
+/mob/living/basic/hivebot/core,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/refuelingpost/armory)
 "Fe" = (
@@ -2987,7 +2987,7 @@
 /area/ruin/space/has_grav/refuelingpost/engineering)
 "Jm" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/border,
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/basic/hivebot,
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
@@ -4262,7 +4262,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/refuelingpost/bridge)
 "Wc" = (
-/mob/living/simple_animal/hostile/hivebot,
+/mob/living/basic/hivebot,
 /obj/item/pipe/binary/bendable{
 	pixel_x = 7;
 	pixel_y = 5;

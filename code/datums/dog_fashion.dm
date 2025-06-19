@@ -166,16 +166,6 @@
 	name = "Lieutenant REAL_NAME"
 	desc = "Can actually be trusted to not run off on his own."
 
-/datum/dog_fashion/head/deathsquad
-	name = "Trooper REAL_NAME"
-	desc = "That's not red paint. That's real corgi blood."
-
-/datum/dog_fashion/head/clown
-	name = "REAL_NAME the Clown"
-	desc = "Honkman's best friend."
-	speak = list("HONK!", "Honk!")
-	emote_see = list("plays tricks.", "slips.")
-
 /datum/dog_fashion/back/deathsquad
 	name = "Trooper REAL_NAME"
 	desc = "That's not red paint. That's real corgi blood."
