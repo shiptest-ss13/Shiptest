@@ -68,6 +68,9 @@
 	if(carrier && !cure)
 		return
 
+	if(IS_IN_STASIS(affected_mob))
+		return
+
 	stage = min(stage, max_stages)
 
 	if(!cure)
