@@ -13,7 +13,7 @@
 	icon_state = "montagne"
 	item_state = "hp_generic"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	spread_unwielded = 15
+	spread_unwielded = 8
 	recoil = 0
 
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44/montagne
@@ -113,7 +113,7 @@ EMPTY_GUN_HELPER(revolver/firebrand)
 	unique_reskin_changes_inhand = TRUE
 
 	recoil = 0
-	spread_unwielded = 10
+	spread_unwielded = 8
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()

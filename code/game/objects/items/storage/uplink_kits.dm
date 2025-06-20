@@ -44,15 +44,12 @@
 			new /obj/item/card/emag(src)
 			new /obj/item/grenade/c4(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
-			new /obj/item/clothing/mask/gas/clown_hat(src)
 			new /obj/item/clothing/under/suit/black_really(src)
 
 		if("screwed")
 			new /obj/item/sbeacondrop/bomb(src)
 			new /obj/item/grenade/syndieminibomb(src)
 			new /obj/item/sbeacondrop/powersink(src)
-			new /obj/item/clothing/suit/space/syndicate/black/red(src)
-			new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
 			new /obj/item/encryptionkey/syndicate(src)
 
 		if("murder")
@@ -84,8 +81,6 @@
 
 		if("lordsingulo")
 			new /obj/item/sbeacondrop(src)
-			new /obj/item/clothing/suit/space/syndicate/black/red(src)
-			new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
 			new /obj/item/card/emag(src)
 			new /obj/item/storage/toolbox/syndicate(src)
 
@@ -103,7 +98,6 @@
 			new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
-			new /obj/item/clothing/mask/gas/clown_hat(src)
 			new /obj/item/clothing/under/suit/black_really(src)
 
 		if("metaops")
@@ -256,8 +250,6 @@
 	return ..()
 
 /obj/item/storage/box/syndicate/contractor_loadout/PopulateContents()
-	new /obj/item/clothing/head/helmet/space/syndicate/contract(src)
-	new /obj/item/clothing/suit/space/syndicate/contract(src)
 	new /obj/item/clothing/under/chameleon(src)
 	new /obj/item/clothing/mask/chameleon(src)
 	new /obj/item/card/id/syndicate(src)
@@ -351,8 +343,8 @@
 
 /obj/item/storage/box/syndie_kit/space/PopulateContents()
 	if(prob(50))
-		new /obj/item/clothing/suit/space/syndicate/black/red(src) // Black and red is so in right now
-		new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
+		new /obj/item/clothing/suit/space/syndicate/white_red(src) // Black and red is so in right now
+		new /obj/item/clothing/head/helmet/space/syndicate/white_red(src)
 
 	else
 		new /obj/item/clothing/head/helmet/space/syndicate(src)
@@ -458,9 +450,6 @@
 /obj/item/storage/box/syndie_kit/ez_clean/PopulateContents()
 	for(var/i in 1 to 3)
 		new/obj/item/grenade/chem_grenade/ez_clean(src)
-
-/obj/item/storage/box/syndie_kit/mimery/PopulateContents()
-	new /obj/item/book/granter/spell/mimery_blockade(src)
 
 /obj/item/storage/box/syndie_kit/centcom_costume/PopulateContents()
 	new /obj/item/clothing/under/rank/centcom/official(src)

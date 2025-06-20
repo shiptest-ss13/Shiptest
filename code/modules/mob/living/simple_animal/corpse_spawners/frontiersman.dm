@@ -104,3 +104,5 @@
 	back = null
 	belt = /obj/item/storage/belt/security/military/frontiersmen
 	l_hand = null
+	backpack_contents = null
+	box = null
