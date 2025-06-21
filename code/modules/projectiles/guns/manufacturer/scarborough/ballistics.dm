@@ -426,6 +426,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 	default_firemode = FIREMODE_BURST
 	default_attachments = null
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = null
 
 
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
