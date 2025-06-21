@@ -11,11 +11,12 @@
 	between_word_space_chance = 10
 	additional_syllable_low = 1
 	additional_syllable_high = 5
+	icon_state = "pidgin"
 
 	syllables = list(
 		"ti", "ti", "ti", "hi", "hi", "ki", "ki", "ki", "ki", "ya", "ta", "ha", "ka", "ya", "chi", "cha", "kah",
 		"SKRE", "AHK", "EHK", "RAWK", "KRA", "AAA", "EEE", "KI", "II", "KRI", "KA"
 	)
 
-	icon_state = "bird"
+	icon_state = "pidgin"
 	default_priority = 90
