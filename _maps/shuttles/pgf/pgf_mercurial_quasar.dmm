@@ -872,6 +872,10 @@
 	name = "engineer's locker"
 	},
 /obj/item/clothing/glasses/welding,
+/obj/item/clothing/suit/armor/gezena{
+	pixel_y = -4;
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "jQ" = (
@@ -1909,6 +1913,9 @@
 "ze" = (
 /obj/machinery/iv_drip,
 /obj/machinery/light/directional/east,
+/obj/structure/chair/handrail{
+	dir = 8
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "zj" = (
@@ -2222,6 +2229,11 @@
 /obj/item/clothing/head/helmet/bulletproof/x11{
 	pixel_y = 5
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = -11;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Ff" = (
@@ -2493,10 +2505,6 @@
 /obj/item/clothing/neck/stethoscope{
 	pixel_y = -7
 	},
-/obj/item/storage/belt/medical/gezena{
-	pixel_x = -11;
-	pixel_y = -4
-	},
 /obj/item/clothing/gloves/color/latex/nitrile{
 	pixel_x = 4;
 	pixel_y = 5
@@ -2516,6 +2524,14 @@
 	dir = 1
 	},
 /obj/item/radio/headset/pgf,
+/obj/item/clothing/suit/armor/gezena{
+	pixel_y = -4;
+	pixel_x = -11
+	},
+/obj/item/storage/belt/medical/gezena{
+	pixel_x = -11;
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "Jl" = (
@@ -2557,6 +2573,11 @@
 /obj/item/bodycamera{
 	pixel_x = 3;
 	pixel_y = -2
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = -11;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/hallway/fore)
@@ -3024,6 +3045,10 @@
 	pixel_x = 8;
 	pixel_y = 0
 	},
+/obj/item/healthanalyzer{
+	pixel_x = 6;
+	pixel_y = 10
+	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "Oe" = (
@@ -3232,7 +3257,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/engineering{
-	req_one_access = list(1, 10);
 	dir = 4;
 	name = "Engine Bay"
 	},
