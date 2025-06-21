@@ -68,7 +68,3 @@
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
 			W.obj_destruction("axe")
-
-// its for dynamic gen mobs okay
-/obj/item/melee/sledgehammer/gorlex/pre_wielded
-	icon_state = "gorlex_sledgehammer_w"
