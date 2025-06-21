@@ -333,13 +333,51 @@
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
 	dip_ammo_type = /obj/item/ammo_casing/c38/hotshot
+	/// While this reagent is in our bloodstream, we reduce all bleeding by this factor
+	var/passive_bleed_modifier = 0.4
+	/// For tracking when we tell the person we're no longer bleeding
+	var/was_working
 
-//This needs a buff
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/consumable/ethanol/trickwine/hearth_wine)
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+	return ..()
+
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_COAGULATING, /datum/reagent/consumable/ethanol/trickwine/hearth_wine)
+	//should probably generic proc this at a later point. I'm probably gonna use it a bit
+	if(was_working)
+		to_chat(M, span_warning("The alcohol thickening your blood loses its effect!"))
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/blood_boy = M
+	blood_boy.physiology?.bleed_mod /= passive_bleed_modifier
+
+	return ..()
+
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		H.heal_bleeding(0.25)
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/guy_who_probably_got_shot = M
+	if(prob(20) && length(guy_who_probably_got_shot.all_wounds))
+		to_chat(M, span_warning("Your cuts and punctures sear for a second, before ceasing their bloody flow!"))
+		for(var/datum/wound/slash/cut in guy_who_probably_got_shot.all_wounds)
+			cut.remove_wound()
+		for(var/datum/wound/pierce/hole in guy_who_probably_got_shot.all_wounds)
+			hole.remove_wound()
+
+	if(prob(10) && length(guy_who_probably_got_shot.all_wounds))
+		to_chat(M, span_warning("Warmth blossoms across your body!"))
+		for(var/datum/wound/muscle/muscle_ouchie in guy_who_probably_got_shot.all_wounds)
+			muscle_ouchie.remove_wound()
+		for(var/obj/item/organ/O in guy_who_probably_got_shot.internal_organs)
+			O.damage = 0
 	return ..()
 
 /datum/status_effect/trickwine/buff/hearth

@@ -449,7 +449,7 @@
 /**
  * Heal a robotic body part on a mob
  */
-/proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal, integrity_loss=0)
+/proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal)
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 	if(affecting && (!IS_ORGANIC_LIMB(affecting)))
 		var/dam //changes repair text based on how much brute/burn was supplied
@@ -458,18 +458,6 @@
 		else
 			dam = 0
 		if((brute_heal > 0 && affecting.brute_dam > 0) || (burn_heal > 0 && affecting.burn_dam > 0))
-			if(affecting.uses_integrity)
-				var/integrity_damage_incurred = (affecting.get_curable_damage() >= affecting.integrity_threshold) || (affecting.max_damage - affecting.integrity_loss >= affecting.integrity_threshold)
-				if(affecting.get_curable_damage(integrity_damage_incurred ? integrity_loss : 0) <= 0)
-					var/limb_hp_loss = affecting.integrity_loss-affecting.integrity_ignored
-					if(limb_hp_loss+integrity_loss >= affecting.max_damage)
-						to_chat(user, span_warning("[affecting] is destroyed! It needs structural repairs to be repaired any further."))
-					else
-						to_chat(user, span_warning("[affecting] has taken too much structural damage, and needs surgery to improve any further."))
-					return
-				if (integrity_damage_incurred)
-					affecting.take_integrity_damage(integrity_loss)
-
 			if(affecting.heal_damage(brute_heal, burn_heal, 0, BODYTYPE_ROBOTIC))
 				H.update_damage_overlays()
 			user.visible_message("[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [parse_zone(affecting.body_zone)].", \
