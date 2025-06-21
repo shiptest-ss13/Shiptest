@@ -116,6 +116,7 @@
 	desc = "A 5-round stripper clip for the Scout Rifle. These rounds do great damage with significant armor penetration."
 	icon_state = "300m"
 	ammo_type = /obj/item/ammo_casing/a300
+	caliber = "a300"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
