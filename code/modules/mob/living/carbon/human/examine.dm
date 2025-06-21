@@ -172,7 +172,7 @@
 		if(BP.bodypart_disabled)
 			disabled += BP
 		missing -= BP.body_zone
-		if(BP.uses_integrity && (BP.integrity_loss-BP.integrity_ignored) > 0)
+		if(BP.limb_integrity && (BP.integrity_loss-BP.integrity_ignored) > 0)
 			if ((BP.integrity_loss-BP.integrity_ignored) > BP.max_damage*0.66)
 				msg += "<B>[t_His] [BP.name] is [BP.heavy_integrity_msg]!</B>\n"
 			else if (BP.integrity_loss-BP.integrity_ignored > BP.max_damage*0.33)
