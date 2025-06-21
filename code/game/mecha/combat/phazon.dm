@@ -3,7 +3,8 @@
 	name = "\improper Phazon"
 	icon_state = "phazon"
 	step_in = 2
-	dir_in = 2 //Facing South.
+	dir = SOUTH
+	dir_in = SOUTH
 	base_step_energy_drain = 8
 	max_integrity = 200
 	deflect_chance = 30

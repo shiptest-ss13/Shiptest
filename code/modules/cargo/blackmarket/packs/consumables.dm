@@ -1,26 +1,15 @@
 /datum/blackmarket_item/consumable
 	category = "Consumables"
 
-/datum/blackmarket_item/consumable/donk_pocket_box
-	name = "Box of Donk Pockets"
-	desc = "A well packaged box containing the favourite snack of every spacefarer."
-	item = /obj/effect/spawner/random/food_or_drink/donkpockets
-
-	stock_min = 2
-	stock_max = 5
-	cost_min = 325
-	cost_max = 400
-	availability_prob = 80
-
 /datum/blackmarket_item/consumable/suspicious_pills
 	name = "Bottle of Suspicious Pills"
 	desc = "A random cocktail of luxury drugs that are sure to put a smile on your face!"
 	item = /obj/item/storage/pill_bottle
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
@@ -36,21 +25,20 @@
 	desc = "The Russian Roulette of the Maintenance Tunnels."
 	item = /obj/item/reagent_containers/pill/floorpill
 
-	stock_min = 5
-	stock_max = 35
-	cost_min = 10
-	cost_max = 60
+	cost_min = 5
+	cost_max = 15
+	stock = INFINITY
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/cannabis
 	name = "Cannabis Leaves"
 	desc = "Homegrown cannabis, fresh off the garden just for your pleasure!"
-	item = /obj/item/reagent_containers/food/snacks/grown/cannabis
+	item = /obj/item/food/grown/cannabis
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/syndie_cigs
@@ -58,15 +46,15 @@
 	desc = "Who said smoking was bad for you? These omnizine laced cigarettes will have you feeling like a million bucks!"
 	item = /obj/item/storage/fancy/cigarettes/cigpack_syndicate
 
-	stock_min = 4
-	stock_max = 6
 	cost_min = 50
 	cost_max = 300
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/trickwine
 	name = "Trickwine"
-	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
+	desc = "The SRM keeps the recipes for their trickwines closely guarded. The Hunters carrying those bottles? Less so."
 	item = /datum/reagent/consumable/ethanol/trickwine/ash_wine
 
 	cost_min = 300
@@ -113,8 +101,8 @@
 	desc = "Cyanide, a tried and true classic for all your poisoning needs."
 	item = /obj/item/reagent_containers/glass/bottle/cyanide
 
-	cost_min = 200
-	cost_max = 400
+	cost_min = 100
+	cost_max = 200
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -124,8 +112,8 @@
 	desc = "Sodium Thiopental, a potent and fast acting sedative for any occasion."
 	item = /obj/item/reagent_containers/glass/bottle/sodium_thiopental
 
-	cost_min = 250
-	cost_max = 600
+	cost_min = 100
+	cost_max = 250
 	stock_min = 2
 	stock_max = 4
 	availability_prob = 30
@@ -135,8 +123,8 @@
 	desc = "A slow acting, but nearly undetectable poison. For the dignified assassin."
 	item = /obj/item/reagent_containers/glass/bottle/amanitin
 
-	cost_min = 300
-	cost_max =  600
+	cost_min = 150
+	cost_max = 250
 	stock_max = 2
 	stock_max = 4
 	availability_prob = 30
@@ -164,14 +152,16 @@
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/consumable/xeno_corpse/spawn_item(loc)
-	var/mob/living/simple_animal/hostile/alien = ..()
-	alien.stat = DEAD
-	return new alien(loc)
+	var/mob/living/simple_animal/hostile/alien/corpse = ..()
+	if(prob(95))
+		corpse.stat = DEAD
+		corpse.density = FALSE
+	return new corpse(loc)
 
 /datum/blackmarket_item/consumable/berries
 	name = "Berries"
 	desc = "Some fresh berries we found growing in the corner of our hangar. We're not 100% sure what species these are."
-	item = /obj/item/reagent_containers/food/snacks/grown/berries
+	item = /obj/item/food/grown/berries
 
 	cost_min = 25
 	cost_max = 100
@@ -180,9 +170,11 @@
 	availability_prob = 40
 
 /datum/blackmarket_item/consumable/berries/spawn_item(loc)
-	var/berries = pick(list(/obj/item/reagent_containers/food/snacks/grown/berries,
-				/obj/item/reagent_containers/food/snacks/grown/berries/poison/stealth,
-				/obj/item/reagent_containers/food/snacks/grown/berries/death/stealth))
+	var/berries = pick(list(
+				/obj/item/food/grown/berries,
+				/obj/item/food/grown/berries/poison/stealth,
+				/obj/item/food/grown/berries/death/stealth,
+				))
 	return new berries(loc)
 
 /datum/blackmarket_item/consumable/ration
@@ -190,8 +182,8 @@
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
 	item = /obj/effect/spawner/random/food_or_drink/ration
 
-	cost_min = 150
-	cost_max = 300
+	cost_min = 40
+	cost_max = 100
 	availability_prob = 80
 	stock = INFINITY
 
