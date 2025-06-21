@@ -387,7 +387,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bite_consumption = 3
 	//filling_color = "#F0F0F0"
-	tastes = list("seed flour" = 1, "hearty meat" = 1, "rich fat" = 1)
+	tastes = list("seed flour" = 3, "hearty meat" = 6, "rich fat" = 1)
 	food_flags = FOOD_FINGER_FOOD
 	foodtypes = MEAT | GRAIN
 
@@ -398,7 +398,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 4)
 	bite_consumption = 2
 	//filling_color = "#F0F0F0"
-	tastes = list("crunchy berry bits" = 1, "dried meat" = 1,)
+	tastes = list("crunchy berry bits" = 4, "dried meat" = 2,)
 	foodtypes = MEAT | FRUIT
 
 /obj/item/food/tiris_apple
@@ -408,7 +408,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/applejuice = 2)
 	bite_consumption = 3
 	//filling_color = "#F0F0F0"
-	tastes = list("crisp apple" = 1, "fatty meat" = 1)
+	tastes = list("crisp apple" = 4, "fatty meat" = 2)
 	foodtypes = MEAT | FRUIT
 
 /obj/item/food/dofi_tami
@@ -419,7 +419,7 @@
 	food_flags = FOOD_FINGER_FOOD
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	bite_consumption = 3
-	tastes = list("hearty meat" = 2, "desert air" = 1, "rich fats")
+	tastes = list("hearty meat" = 4, "desert air" = 1, "rich fats" = 2)
 	foodtypes = MEAT
 
 /obj/item/food/stewedsoymeat
@@ -558,7 +558,7 @@
 	icon_state = "miras-sososi"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/tiris_sele = 1)
 	bite_consumption = 3
-	tastes = list("sweet meat" = 3, "gentle umami" = 1, "gel" = 1, "satisfying crunch" = 1)
+	tastes = list("sweet meat" = 6, "gentle umami" = 1, "gel" = 4, "satisfying crunch" = 2)
 	foodtypes = MEAT | SUGAR | VEGETABLES
 
 /obj/item/food/siti_miras
@@ -567,7 +567,7 @@
 	icon_state = "siti-miras"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 4, /datum/reagent/consumable/sugar = 1)
 	bite_consumption = 3
-	tastes = list("sweet meat" = 3, "dried berries" = 1, "satisfying crunch" = 1)
+	tastes = list("sweet meat" = 6, "dried berries" = 2, "satisfying crunch" = 4)
 	foodtypes = MEAT | SUGAR | FRUIT
 
 /obj/item/food/miras_li
@@ -575,7 +575,7 @@
 	desc = "Miras cooked with slivers of seeded Refa-Li. It looks sweet and tastes spicy."
 	icon_state = "miras-li"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/vitfro = 2)
-	tastes = list("sweet meat" = 3, "pungent heat" = 2, "subtle fruitness" = 1)
+	tastes = list("sweet meat" = 8, "pungent heat" = 4, "fruitness" = 1)
 	foodtypes = MEAT | SUGAR | FRUIT
 
 /obj/item/food/wine_remes
@@ -584,7 +584,7 @@
 	icon_state = "wine-remes"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/ethanol/wine = 10)
 	bite_consumption = 3
-	tastes = list("earthiness" = 2, "wine-soaked flesh" = 4)
+	tastes = list("earthiness" = 1, "wine-soaked flesh" = 4)
 	foodtypes = MEAT | ALCOHOL
 
 /obj/item/food/remes_li
@@ -600,7 +600,7 @@
 	desc = "A rich cut of Dofitis meat with a drizzle of a Tiris blood sauce"
 	icon_state = "dofi-tese"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/tiris_sele = 4)
-	tastes = list("blossoming umami" = 1, "hearty grilled meat" = 3, "creamy fats" = 1)
+	tastes = list("blossoming umami" = 1, "hearty grilled meat" = 6, "creamy fats" = 2)
 	foodtypes = MEAT
 
 /obj/item/food/sososi_dofi
@@ -608,7 +608,7 @@
 	desc = "A prime cut of Dofitis served atop a seared Sososi leaf. The gel of the leaf tends to soak up the blood of the meat."
 	icon_state = "sososi-dofi"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 3)
-	tastes = list("bloody gel" = 1, "hearty grilled meat" = 3, "creamy fats" = 1, "crisp leafy crunch" = 1)
+	tastes = list("bloody gel" = 2, "hearty grilled meat" = 6, "creamy fats" = 1, "crisp leafy crunch" = 4)
 	foodtypes = MEAT | VEGETABLES
 
 /obj/item/food/dofi_nari
@@ -616,7 +616,7 @@
 	desc = "Ground down dofitis mixed together with herbs and spices, and then seared in a pan. Sometimes shaped into shapes to entertain guests. "
 	icon_state = "dofi-nari"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
-	tastes = list("spiced meat" = 3, "hearty fats" = 1, "subtle spice" = 1)
+	tastes = list("spiced meat" = 5, "hearty fats" = 2, "spice" = 1)
 	foodtypes = MEAT | VEGETABLES
 
 //Kebabs and Skewers
@@ -698,7 +698,7 @@
 	icon_state = "roast-miras"
 	w_class = WEIGHT_CLASS_NORMAL
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
-	tastes = list("seared meat" = 1, "faint sweetness" = 1)
+	tastes = list("seared meat" = 6, "sweetness" = 1)
 	foodtypes = MEAT | SUGAR | GORE
 
 /obj/item/food/kebab/fafe_skewer
@@ -707,5 +707,5 @@
 	icon_state = "dumb-fucking-kebab"
 	w_class = WEIGHT_CLASS_NORMAL
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/refa_li = 2)
-	tastes = list("spicy fruit" = 1, "faint sweetness" = 1, "satisfying crunch" = 1, "earthiness" = 2, "savory goo" = 4)
+	tastes = list("spicy fruit" = 3, "sweetness" = 1, "satisfying crunch" = 2, "earthiness" = 2, "savory goo" = 4)
 	foodtypes = MEAT | FRUIT | VEGETABLES

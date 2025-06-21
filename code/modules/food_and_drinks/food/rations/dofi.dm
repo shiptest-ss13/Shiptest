@@ -19,7 +19,7 @@
 	name = "Dofi-Tami slices"
 	desc = "Thin slices of a dehydrated fatty meat. The best way to eat it is to tear chunks off and let them melt in your mouth."
 	filling_color = "#510d0d"
-	tastes = list("rich meat" = 1, "savory animal fat" = 1)
+	tastes = list("rich meat" = 6, "savory animal fat" = 2)
 	foodtype = MEAT | SUGAR
 	cookable = FALSE
 
@@ -27,7 +27,7 @@
 	name = "dehydrated dote berries"
 	desc = "Small crunchy berries that've been victim to a dusting of seasoning. The seeds tend to cluster at the bottom of the pack."
 	filling_color = "#2359a0"
-	tastes = list("concentrated fruit" = 1, "a hint of spice" = 1)
+	tastes = list("concentrated fruit" = 4, "spice" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	foodtype = FRUIT
 
@@ -35,21 +35,21 @@
 	name = "ready-to-go Dore"
 	desc = "A Tecetian pastry typically stuffed with meat and fruit. These ones have been left plain for the consumer to alter."
 	filling_color = "#e2904d"
-	tastes = list("seedy bread" = 1)
+	tastes = list("seedy bread")
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/ration/snack/miras_parfait
 	name = "Miras-Dotu parfait"
 	desc = "A small vacuum-sealed pouch of Miras parfait. The lower sugar-density of the Dotu fruit has kept it from becoming sickly-sweet, and left it average."
 	filling_color = "#00cc66"
-	tastes = list("thick and creamy" = 1, "subtle fruitiness" = 1)
+	tastes = list("thick and creamy" = 6, "fruitiness" = 1)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/bar/tirila
 	name = "Tirila-La log"
 	desc = "Cured Tiris meat from Teceti, packed to the brim with a savory spice."
 	filling_color = "#453e3b"
-	tastes = list("spicy-savory meat" = 1, "bitter fruit" = 1)
+	tastes = list("spicy-savory meat" = 6, "bitter fruit" = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/capsaicin = 1)
 	foodtype = MEAT | FRUIT
 

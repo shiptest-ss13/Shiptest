@@ -27,7 +27,7 @@
 	name = "Miras Reti"
 	desc = "Whole unfertiilzed Miras eggs. The shell has already been removed, so some of them are smushed up."
 	filling_color = "#f4f4f4"
-	tastes = list("egg" = 1, "savory yolk" = 1)
+	tastes = list("egg" = 4, "savory yolk" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	foodtype = BREAKFAST | MEAT
 
@@ -35,7 +35,7 @@
 	name = "Tirila-Li"
 	desc = "An entire stick of Tirili-La, a cured meat sausage made with Refa Fruit and Tiris."
 	filling_color = "#453e3b"
-	tastes = list("spicy-savory meat" = 1, "bitter fruit" = 1)
+	tastes = list("spicy-savory meat" = 3, "bitter fruit" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/capsaicin = 2)
 	foodtype = MEAT | FRUIT
 
@@ -50,7 +50,7 @@
 	name = "wanderer bar"
 	desc = "A bar of shredded miras meat, refa-li, and seeds, not too much unlike Tirili-La. Great for a power-up before a trip."
 	filling_color = "#70829a"
-	tastes = list("sweet meat" = 1, "dried out fruit flesh" = 1, "crunchy seeds" = 1)
+	tastes = list("sweet meat" = 4, "dried out fruit flesh" = 2, "crunchy seeds" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	foodtype = MEAT | GRAIN | FRUIT
 

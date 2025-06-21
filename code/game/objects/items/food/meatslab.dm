@@ -314,7 +314,7 @@
 	icon_state = "miras"
 	desc = "A cut of meat from the Miras Lizard. When alone, it tends to be a sickly-sweet experience, requiring proper preparation to truly shine."
 	microwaved_type = /obj/item/food/meat/steak/miras
-	tastes = list("sweet meat" = 1, "sickening sweetness" = 1, "gamey meat" = 1)
+	tastes = list("sweet meat" = 4, "sickening sweetness" = 1, "gamey meat" = 2)
 	foodtypes = MEAT | SUGAR | RAW
 
 /obj/item/food/meat/slab/miras/make_processable()
@@ -325,7 +325,7 @@
 	icon_state = "tiris"
 	desc = "A rough meat with rich deposits of fat. It is typically processed, spiced, and preserved."
 	microwaved_type = /obj/item/food/meat/steak/tiris
-	tastes = list("fatty meat" = 1, "raw fat" = 1)
+	tastes = list("fatty meat" = 2, "raw fat" = 4)
 	foodtypes = MEAT | RAW
 
 /obj/item/food/meat/slab/tiris/make_processable()
@@ -336,7 +336,7 @@
 	icon_state = "remes"
 	desc = "The meat of a properly prepared Remes tends to melt away as it's consumed, leaving behind the flavors that it has soaked in."
 	microwaved_type = null
-	tastes = list("mellow flesh" = 1, "earthiness" =1)
+	tastes = list("mellow flesh" = 6, "earthiness" = 2)
 	foodtypes = MEAT
 
 /obj/item/food/meat/slab/dofitis
@@ -344,7 +344,7 @@
 	icon_state = "dofi"
 	desc = "A rich cut of meat with a sublime marble."
 	microwaved_type = /obj/item/food/meat/steak/dofitis
-	tastes = list("hearty meat" = 1, "buttery fat" =1)
+	tastes = list("hearty meat" = 4, "buttery fat" = 2)
 	foodtypes = MEAT | RAW
 
 /* bacon */
@@ -749,13 +749,13 @@
 /obj/item/food/meat/rawcutlet/miras
 	name = "raw miras cutlet"
 	microwaved_type = /obj/item/food/meat/cutlet/miras
-	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
+	tastes = list("gamey lizard" = 4, "sweet meat" = 1)
 	foodtypes = MEAT | SUGAR | RAW
 
 /obj/item/food/meat/rawcutlet/tiris
 	name = "raw tiris cutlet"
 	microwaved_type = /obj/item/food/meat/cutlet/tiris
-	tastes = list("fatty meat" = 1, "raw fat" = 1)
+	tastes = list("fatty meat" = 2, "raw fat" = 1)
 	foodtypes = MEAT | RAW
 
 //Cooked cutlets
@@ -847,7 +847,7 @@
 
 /obj/item/food/meat/cutlet/miras
 	name = "miras cutlet"
-	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
+	tastes = list("gamey lizard" = 4, "sweet meat" = 1)
 	foodtypes = MEAT | SUGAR
 
 /obj/item/food/meat/cutlet/tiris
