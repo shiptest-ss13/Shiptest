@@ -167,6 +167,7 @@
 			/obj/item/food/grown/carrot = 4,
 			/obj/item/food/grown/dotu_fime = 4,
 			/obj/item/food/grown/siti = 4,
+			/obj/item/food/grown/sososi = 4,
 			)
 
 /obj/effect/spawner/random/food_or_drink/garden/arid
@@ -182,6 +183,8 @@
 		/obj/item/food/grown/mushroom/angel = 2,
 		/obj/item/food/grown/chili = 2,
 		/obj/item/food/grown/whitebeet = 5,
+		/obj/item/food/grown/dotu_fime = 4,
+		/obj/item/food/grown/siti = 4,
 		/obj/item/food/grown/refa_li = 2,
 		/obj/item/food/grown/dote_berries = 8,
 		/obj/item/food/grown/sososi = 4,
