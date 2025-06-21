@@ -316,7 +316,7 @@
 	desc = "A sweet sausage made with the fats of a Tiris and sweet dote berries."
 	icon_state = "tiris-sausage"
 	//filling_color = "#CD5C5C"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/dote_juice = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/protein = 1, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/dote_juice = 1)
 	tastes = list("sweet berries" = 1, "fatty meat" = 1)
 	foodtypes = MEAT
 
@@ -697,7 +697,7 @@
 	desc = "An entire Miras, slightly cleaned up and roasted on a stick."
 	icon_state = "roast-miras"
 	w_class = WEIGHT_CLASS_NORMAL
-	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	food_reagents = list(/datum/reagent/consumable/protein = 6, /datum/reagent/consumable/sugar = 2)
 	tastes = list("seared meat" = 6, "sweetness" = 1)
 	foodtypes = MEAT | SUGAR | GORE
 
