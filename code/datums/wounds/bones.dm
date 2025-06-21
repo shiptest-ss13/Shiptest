@@ -33,7 +33,7 @@
 */
 /datum/wound/blunt/wound_injury(datum/wound/old_wound = null)
 	// hook into gaining/losing gauze so crit bone wounds can re-enable/disable depending if they're slung or not
-	RegisterSignal(limb, list(COMSIG_BODYPART_SPLINTED, COMSIG_BODYPART_SPLINT_DESTROYED), PROC_REF(update_inefficiencies))
+	RegisterSignals(limb, list(COMSIG_BODYPART_SPLINTED, COMSIG_BODYPART_SPLINT_DESTROYED), PROC_REF(update_inefficiencies))
 
 	if(limb.body_zone == BODY_ZONE_HEAD && brain_trauma_group)
 		processes = TRUE
@@ -293,7 +293,7 @@
 			ignored_mobs = victim,
 		)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] back into place!"))
-		victim.emote("scream")
+		victim.force_scream()
 		limb.receive_damage(brute = 5, wound_bonus = CANT_WOUND)
 		qdel(src)
 	else
@@ -320,7 +320,7 @@
 			ignored_mobs = victim,
 		)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] with a sickening crack!"))
-		victim.emote("scream")
+		victim.force_scream()
 		limb.receive_damage(brute = 20, wound_bonus = 40)
 	else
 		user.visible_message(
@@ -437,7 +437,7 @@
 		return
 
 	I.use(1)
-	victim.emote("scream")
+	victim.force_scream()
 	if(user != victim)
 		user.visible_message(
 			span_notice("[user] finishes applying [I] to [victim]'s [limb.name], giving off a wet fizzle."),
