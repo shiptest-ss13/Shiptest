@@ -164,7 +164,7 @@
 	if(!lasgun.process_fire(victim, victim, TRUE, null, limb.body_zone))
 		return
 
-	victim.emote("scream")
+	victim.force_scream()
 	blood_flow -= damage / (5 * self_penalty_mult) // 20 / 5 = 4 bloodflow removed, p good
 	victim.visible_message(span_warning("The cuts on [victim]'s [limb.name] scar over!"))
 
@@ -179,6 +179,7 @@
 	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
+	playsound(user, 'sound/surgery/cautery2.ogg', 20)
 	user.visible_message(
 		span_green("[user] cauterizes some of the bleeding on [victim]."),
 		span_green("You cauterize some of the bleeding on [victim]."),
@@ -186,7 +187,7 @@
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 
 	if(prob(15))
-		victim.emote("scream")
+		victim.force_scream()
 
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
 	blood_flow -= blood_cauterized
