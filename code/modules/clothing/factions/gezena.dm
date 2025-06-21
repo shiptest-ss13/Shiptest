@@ -193,6 +193,7 @@
 	icon_state = "marinehelmet"
 	item_state = "marinehelm"
 	can_flashlight = TRUE
+	content_overlays = TRUE
 
 //Gloves
 

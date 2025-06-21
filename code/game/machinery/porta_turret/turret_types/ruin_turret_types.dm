@@ -43,7 +43,7 @@
 
 /obj/machinery/porta_turret/ruin/ramzi/light/bonnie/Initialize()
 	. = ..()
-	take_damage(rand(120, 150),BRUTE)
+	take_damage(rand(120, 130),BRUTE)
 
 /obj/machinery/porta_turret/ruin/ramzi/heavy
 	name = "Revolt Turret"
