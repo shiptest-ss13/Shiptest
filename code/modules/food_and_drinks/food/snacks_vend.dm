@@ -154,7 +154,7 @@
 	desc = "Small pearls of Tiris Cheese, sealed in a salty crust, and distributed in a sealed tin. The interior of the tin is somewhat oily."
 	trash = /obj/item/trash/lifosa
 	filling_color = "#cac84e"
-	tastes = list("rock salts" = 1, "cheese" = 1, "savory herbs" = 1)
+	tastes = list("rock salts" = 2, "cheese" = 4, "savory herbs" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	foodtype = DAIRY
 	/*food_flags = FOOD_FINGER_FOOD*/
