@@ -179,6 +179,7 @@
 	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
+	playsound(user, 'sound/surgery/cautery2.ogg', 20)
 	user.visible_message(
 		span_green("[user] cauterizes some of the bleeding on [victim]."),
 		span_green("You cauterize some of the bleeding on [victim]."),
