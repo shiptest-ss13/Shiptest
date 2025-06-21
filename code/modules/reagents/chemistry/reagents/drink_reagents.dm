@@ -99,6 +99,33 @@
 	. = 1
 	..()
 
+/datum/reagent/consumable/dote_juice
+	name = "Dote Juice"
+	description = "A delicious juice made from Dote berries"
+	color = "#2359a0"
+	taste_description = "sweet berries"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of dote juice"
+	glass_desc = "Dote juice is good hot, cold, and anywhere between the poles."
+
+/datum/reagent/consumable/dotu_juice
+	name = "Dotu Juice"
+	description = "A neutral juice made from ripe Dote fruit."
+	color = "#2359a0"
+	taste_description = "bitter fruit"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of dotu juice"
+	glass_desc = "Dotu juice is said to be bitter, if not plain, but when it's used as a mixer? Anything can happen."
+
+/datum/reagent/consumable/refa_li
+	name = "Refa-Li Juice"
+	description = "Refa-Li is spicy, unless the seeds have been removed, in which case it takes on a more mellow, earthly tone"
+	color = "#d8702b"
+	taste_description = "pungent spice"
+	glass_icon_state = "berryjuice"
+	glass_name = "glass of refa-li juice"
+	glass_desc = "Refa-Li is spicy, unless the seeds have been removed, in which case it takes on a more mellow, earthly tone"
+
 /datum/reagent/consumable/watermelonjuice
 	name = "Watermelon Juice"
 	description = "Delicious juice made from watermelon."
@@ -166,6 +193,25 @@
 		. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	..()
+
+/datum/reagent/consumable/tiris_milk
+	name = "Tiris Milk"
+	description = "A strong, tangy milk made by a Tiris. Makes a very good cheese."
+	color = "#e2c5c5"
+	taste_description = "milk"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of milk"
+	glass_desc = "A glass of heavy milk. You wonder what animal this could have come from."
+
+/datum/reagent/consumable/tiris_milk/on_mob_life(mob/living/carbon/M)
+	if(M.getBruteLoss() && prob(20))
+		M.heal_bodypart_damage(1,0, 0)
+		. = 1
+	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
+		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	if(holder.has_reagent(/datum/reagent/consumable/refa_li))
+		holder.remove_reagent(/datum/reagent/consumable/refa_li, 2)
 	..()
 
 /datum/reagent/consumable/soymilk
