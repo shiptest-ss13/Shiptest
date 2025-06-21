@@ -206,7 +206,7 @@
 		damaged_cell.rigged = TRUE
 		damaged_cell.show_rigged = FALSE
 
-	return new damaged_cell(loc)
+	return damaged_cell
 
 /datum/blackmarket_item/ammo/advanced_weapon_cell
 	name = "Upgraded Weapon Power Cells"
