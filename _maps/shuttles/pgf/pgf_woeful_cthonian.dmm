@@ -1601,7 +1601,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	dir = 8
 	},
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "pX" = (
 /obj/effect/turf_decal/techfloor/orange{
@@ -1624,7 +1624,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "qh" = (
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "qm" = (
 /obj/effect/turf_decal/techfloor{
@@ -2023,7 +2023,9 @@
 /area/ship/crew/dorm)
 "vD" = (
 /obj/machinery/telecomms/bus/preset_five{
-	id = "PGF Communications Bus"
+	id = "PGF Communications Bus";
+	network = "pgf_commnet";
+	freq_listening = list(1353,1349)
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -2243,7 +2245,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "xK" = (
 /obj/structure/sign/warning/coldtemp,
@@ -2302,17 +2304,11 @@
 "yw" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/small/directional/south,
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/item/stack/sheet/mineral/plasma/twenty{
-	pixel_y = 1;
-	pixel_x = -6
-	},
 /obj/item/wrench,
+/obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "yx" = (
@@ -2397,7 +2393,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "zI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3345,7 +3341,8 @@
 /area/ship/bridge)
 "Ki" = (
 /obj/machinery/telecomms/processor/preset_five{
-	id = "PGF Communications Processor"
+	id = "PGF Communications Processor";
+	network = "pgf_commnet"
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -3459,7 +3456,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/telecomms_floor/tatmos,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "Lc" = (
 /obj/machinery/telecomms/hub{
@@ -3833,10 +3830,11 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/ccommons)
 "QN" = (
-/obj/machinery/telecomms/server/presets/minutemen{
+/obj/machinery/telecomms/server{
 	name = "pgf";
 	network = "pgf_commnet";
-	id = "PGF Server"
+	id = "PGF Server";
+	freq_listening = list(1353,1349)
 	},
 /obj/effect/turf_decal/techfloor{
 	dir = 2
@@ -3995,7 +3993,7 @@
 /obj/machinery/telecomms/receiver/preset_right{
 	autolinkers = list("receiverB","hub");
 	network = "pgf_commnet";
-	freq_listening = list(1353,1355,1459)
+	freq_listening = list(1353,1349)
 	},
 /turf/open/floor/circuit/telecomms,
 /area/ship/engineering/communications)
@@ -4214,6 +4212,9 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/structure/closet/crate/radiation,
+/obj/effect/mapping_helpers/crate_shelve,
+/obj/item/stack/sheet/mineral/uranium/ten,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Wh" = (
@@ -4428,21 +4429,17 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Yz" = (
+/obj/machinery/light/directional/west,
+/obj/machinery/photocopier{
+	pixel_y = 0
+	},
 /obj/effect/turf_decal/techfloor{
 	dir = 8
-	},
-/obj/machinery/telecomms/relay/preset/pgf{
-	pixel_y = 4
-	},
-/obj/structure/window/reinforced/survival_pod/spawner,
-/obj/machinery/door/window/survival_pod{
-	dir = 4
 	},
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "YK" = (
 /obj/structure/cable{
