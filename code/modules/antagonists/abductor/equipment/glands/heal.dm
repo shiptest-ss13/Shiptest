@@ -152,7 +152,7 @@
 		keep_going = TRUE
 	for(var/datum/reagent/toxin/R in owner.reagents.reagent_list)
 		owner.reagents.remove_reagent(R.type, 4)
-		if(owner.reagents.has_reagent(R.type))
+		if(owner.has_reagent(R.type))
 			keep_going = TRUE
 	if(keep_going)
 		addtimer(CALLBACK(src, PROC_REF(keep_replacing_blood)), 30)
