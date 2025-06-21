@@ -384,7 +384,7 @@
 	name = "dofi-dore"
 	desc = "Minced Dofitis meat is packed into a small, seedy pastry and baked. The pastries tend to stay shelf stable for several days, but are best eaten warm."
 	icon_state = "dofi-dore"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bite_consumption = 3
 	//filling_color = "#F0F0F0"
 	tastes = list("seed flour" = 3, "hearty meat" = 6, "rich fat" = 1)
@@ -395,7 +395,7 @@
 	name = "Timera-Fa"
 	desc = "Tiris meat ground down, dried, and mixed with berries and fruits. The result is a long-lasting survival food."
 	icon_state = "timera-fa"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 4)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/protein = 4)
 	bite_consumption = 2
 	//filling_color = "#F0F0F0"
 	tastes = list("crunchy berry bits" = 4, "dried meat" = 2,)
@@ -417,7 +417,7 @@
 	icon_state = "dofi-tami"
 	//filling_color = "#CD4122"
 	food_flags = FOOD_FINGER_FOOD
-	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/protein = 1)
 	bite_consumption = 3
 	tastes = list("hearty meat" = 4, "desert air" = 1, "rich fats" = 2)
 	foodtypes = MEAT
@@ -556,7 +556,7 @@
 	name = "Miras Sososi"
 	desc = "A cut of Miras, stretched out over a Sososi leaf and drizzled in Tiris-Sele."
 	icon_state = "miras-sososi"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/tiris_sele = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/protein = 3, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/tiris_sele = 1)
 	bite_consumption = 3
 	tastes = list("sweet meat" = 6, "gentle umami" = 1, "gel" = 4, "satisfying crunch" = 2)
 	foodtypes = MEAT | SUGAR | VEGETABLES
@@ -565,7 +565,7 @@
 	name = "Siti-Miras"
 	desc = "A cut of Miras cooked with a small bed of Siti and a dusting of dried Dote."
 	icon_state = "siti-miras"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 4, /datum/reagent/consumable/sugar = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/protein = 4, /datum/reagent/consumable/sugar = 1)
 	bite_consumption = 3
 	tastes = list("sweet meat" = 6, "dried berries" = 2, "satisfying crunch" = 4)
 	foodtypes = MEAT | SUGAR | FRUIT
@@ -599,7 +599,7 @@
 	name = "Dofi-tese"
 	desc = "A rich cut of Dofitis meat with a drizzle of a Tiris blood sauce"
 	icon_state = "dofi-tese"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/tiris_sele = 4)
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/tiris_sele = 4)
 	tastes = list("blossoming umami" = 1, "hearty grilled meat" = 6, "creamy fats" = 2)
 	foodtypes = MEAT
 
@@ -607,7 +607,7 @@
 	name = "sososi dofi"
 	desc = "A prime cut of Dofitis served atop a seared Sososi leaf. The gel of the leaf tends to soak up the blood of the meat."
 	icon_state = "sososi-dofi"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 3)
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("bloody gel" = 2, "hearty grilled meat" = 6, "creamy fats" = 1, "crisp leafy crunch" = 4)
 	foodtypes = MEAT | VEGETABLES
 
