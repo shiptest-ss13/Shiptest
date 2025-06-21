@@ -697,7 +697,7 @@
 	desc = "An entire Miras, slightly cleaned up and roasted on a stick."
 	icon_state = "roast-miras"
 	w_class = WEIGHT_CLASS_NORMAL
-	food_reagents = list(/datum/reagent/consumable/protein = 6, /datum/reagent/consumable/sugar = 2)
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 6, /datum/reagent/consumable/sugar = 2)
 	tastes = list("seared meat" = 6, "sweetness" = 1)
 	foodtypes = MEAT | SUGAR | GORE
 
