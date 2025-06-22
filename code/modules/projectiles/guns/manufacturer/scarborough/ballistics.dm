@@ -368,7 +368,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 /obj/item/gun/ballistic/automatic/smg/cobra
 	name = "C-20r \"Cobra\""
-	desc = "A bullpup submachine gun, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
+	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -393,7 +393,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	valid_attachments = list(SCARBOROUGH_ATTACHMENTS, /obj/item/attachment/silencer/cobra)
+	default_attachments = list(/obj/item/attachment/silencer/cobra)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1
@@ -422,6 +423,8 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
 	default_firemode = FIREMODE_BURST
+	default_attachments = null
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
 
 
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)

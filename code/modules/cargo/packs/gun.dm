@@ -134,7 +134,7 @@
 /datum/supply_pack/gun/pepperbox
 	name = "HP Firebrand Pepperbox Revolver Crate"
 	desc = "Contains a concealable pepperbox revolver manufactured by the Saint Roumain Militia, chambered in .357."
-	cost = 1250
+	cost = 700
 	contains = list(/obj/item/storage/guncase/pistol/firebrand)
 	faction = /datum/faction/srm
 
@@ -404,7 +404,7 @@
 
 /datum/supply_pack/gun/c20r
 	name = "C-20r 'Cobra' SMG Crate"
-	desc = "Contains a military variant of the Cobra SMG, chambered in .45"
+	desc = "Contains a military variant of the Cobra SMG, chambered in .45 with an integrated suppressor."
 	cost = 2800 // 100 more than the civ variant (counting it's discount), because they are literally the same right now.
 	contains = list(/obj/item/storage/guncase/c20r)
 	crate_name = "SMG crate"
