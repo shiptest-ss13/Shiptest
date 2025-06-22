@@ -506,7 +506,7 @@
 
 /obj/item/storage/pill_bottle/stardrop/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/patch/stardrop(src)
+		new /obj/item/reagent_containers/pill/patch/stardrop(src)
 
 /obj/item/storage/pill_bottle/starlight
 	name = "bottle of starlight capsules"
@@ -514,7 +514,7 @@
 
 /obj/item/storage/pill_bottle/starlight/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/patch/starlight(src)
+		new /obj/item/reagent_containers/pill/patch/starlight(src)
 
 /obj/item/storage/pill_bottle/placebatol
 	name = "bottle of prescription pills"
