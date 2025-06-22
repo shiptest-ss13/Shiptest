@@ -272,7 +272,6 @@ GLOBAL_PROTECT(href_token)
 			return
 
 		id = insert_query.last_insert_id
-		
 		qdel(insert_query)
 
 	var/url_for_2fa = replacetextEx(admin_2fa_url, "%ID%", id)
