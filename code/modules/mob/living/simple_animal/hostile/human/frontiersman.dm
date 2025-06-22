@@ -32,6 +32,19 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	r_hand = /obj/item/gun/ballistic/revolver/shadow
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/space
+	icon_state = "frontiersmanranged_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	maxbodytemp = 1000
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/space/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	set_light(4)
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/internals
 	icon_state = "frontiersmanranged_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
@@ -61,6 +74,19 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/space
+	icon_state = "frontiersmanranged_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	maxbodytemp = 1000
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/space/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	set_light(4)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/surgeon
 	name = "Frontiersman Sawbones"
@@ -98,6 +124,19 @@
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 	r_hand = /obj/item/gun/ballistic/rifle/illestren
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space
+	icon_state = "frontiersmanranged_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	maxbodytemp = 1000
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	set_light(4)
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals
 	icon_state = "frontiersmanrangedrifle_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
@@ -120,6 +159,19 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
 	r_hand = /obj/item/gun/ballistic/shotgun/brimstone
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space
+	icon_state = "frontiersmanranged_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	maxbodytemp = 1000
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	set_light(4)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals
 	icon_state = "frontiersmanrangedelite_mask"
@@ -174,6 +226,19 @@
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/space
+	icon_state = "frontiersmanranged_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	maxbodytemp = 1000
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
+	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/space/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	set_light(4)
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals
 	icon_state = "frontiersmanrangedak47_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
@@ -219,6 +284,18 @@
 	r_hand = /obj/item/gun/ballistic/automatic/hmg/shredder
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/space
+	icon_state = "frontiersmanranged_mask"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	maxbodytemp = 1000
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/space/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	set_light(4)
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals
 	icon_state = "frontiersmanrangedminigun_mask"

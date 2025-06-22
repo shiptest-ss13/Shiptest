@@ -22,6 +22,9 @@
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
 	outfit = /datum/outfit/frontier
 
+/obj/effect/mob_spawn/human/corpse/frontier/space
+	outfit = /datum/outfit/frontier/trooper/space
+
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/internals
 	outfit = /datum/outfit/frontier/internals
 
@@ -54,6 +57,16 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
+
+/datum/outfit/frontier/trooper/space
+	name = "Frontiersman Armored Corpse"
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat
+	ears = /obj/item/radio/headset
+	head = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
+	mask = /obj/item/clothing/mask/gas/frontiersmen
+	back = /obj/item/tank/jetpack/carbondioxide
 
 /datum/outfit/frontier/trooper/internals
 	name = "Frontiersman Armored Corpse Internals"
