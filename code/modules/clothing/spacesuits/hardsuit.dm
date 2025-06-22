@@ -330,8 +330,8 @@
 /obj/item/clothing/head/helmet/space/hardsuit/mining/heavy/ns
 	name = "N+S mining hardsuit helmet"
 	desc = "An N+S brand heavy hardsuit. The helmet itself is spacious and thick, rated for major impacts, atmospheric hazards, and various acids."
-	icon_state = "hardsuit0-nsmining-helm"
-	item_state = "hardsuit0-nsmining-helm"
+	icon_state = "hardsuit0-nsmining"
+	item_state = "hardsuit0-nsmining"
 	hardsuit_type = "nsmining"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 65, "bullet" = 30, "laser" = 25, "energy" = 30, "bomb" = 70, "bio" = 100, "rad" = 85, "fire" = 100, "acid" = 100)
