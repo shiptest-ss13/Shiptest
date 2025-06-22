@@ -56,7 +56,7 @@
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 2
 	rapid_fire_delay = 7
-	projectiletype = /obj/projectile/beam/laser/sharplite
+	casingtype = /obj/item/ammo_casing/energy/laser/sharplite
 	r_hand = /obj/item/gun/energy/laser
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 
@@ -90,7 +90,7 @@
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 4
 	rapid_fire_delay = 4
-	projectiletype = /obj/projectile/beam/weak/sharplite
+	casingtype = /obj/item/ammo_casing/energy/laser/sharplite/smg
 	r_hand = /obj/item/gun/energy/e_gun/smg
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
@@ -125,7 +125,7 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
 	minbodytemp = 0
 	maxbodytemp = 1000
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_hos
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_space
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/smg/space/Initialize()
 	. = ..()
@@ -137,7 +137,7 @@
 	desc = "A well-armed member of Vigilitas Interstellar. They stand at the ready with a Hades energy rifle, smirking underneath their gas mask."
 	rapid = 4
 	rapid_fire_delay = 4
-	projectiletype = /obj/projectile/beam/laser/assault/sharplite
+	casingtype = /obj/item/ammo_casing/energy/laser/assault/sharplite
 	r_hand = /obj/item/gun/energy/e_gun/hades
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 
@@ -169,7 +169,7 @@
 	minimum_distance = 1
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
-	projectiletype = /obj/projectile/beam/laser/assault/sharplite
+	casingtype = /obj/item/ammo_casing/energy/laser/assault/sharplite
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 	faction = list(ROLE_DEATHSQUAD)
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_elite
