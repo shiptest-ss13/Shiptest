@@ -61,19 +61,10 @@
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/laser/space
-	name = "\improper Vigilitas Defender"
-	desc = "A member of Vigilitas Interstellar, their hands are locked around a laser rifle, actively aiming it at potential threats."
-	icon_state = "nanotrasenrangedsmg"
-	icon_living = "nanotrasenrangedsmg"
-	rapid = 2
-	rapid_fire_delay = 7
-	projectiletype = /obj/projectile/beam/laser/sharplite
-	r_hand = /obj/item/gun/energy/laser
-	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	minbodytemp = 0
 	maxbodytemp = 1000
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
-
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_space
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/laser/space/Initialize()
 	. = ..()
@@ -103,20 +94,26 @@
 	r_hand = /obj/item/gun/energy/e_gun/smg
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
-/mob/living/simple_animal/hostile/human/nanotrasen/trooper/shotgun/space
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun
 	name = "\improper Vigilitas Pointman"
-	desc = "A member of Vigilitas Interstellar, clad in white-striped hardsuit. They confidently aim around their shotgun, ready to burn away any trespassers."
+	desc = "A member of Vigilitas Interstellar, with their chin high up. They confidently aim around their shotgun, ready to burn away any trespassers."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	casingtype = /obj/item/ammo_casing/energy/laser/ultima
 	r_hand = /obj/item/gun/energy/laser/iot/lethal
 	rapid = 2
+	rapid_fire_delay = 5
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
+
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun/space
+	name = "\improper Vigilitas Pointman"
+	desc = "A member of Vigilitas Interstellar, clad in white-striped hardsuit. They confidently aim around their shotgun, ready to burn away any trespassers."
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/hos
 	minbodytemp = 0
 	maxbodytemp = 1000
 	retreat_distance = 0
 	minimum_distance = 1
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_hos
 
 /mob/living/simple_animal/hostile/human/nanotrasen/trooper/shotgun/space/Initialize()
 	. = ..()
@@ -124,21 +121,12 @@
 	set_light(4)
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/smg/space
-	name = "Vigilitas SMG Trooper"
-	desc = "A member of Vigilitas Interstellar. Eyes track motion as they saunter confidently, energy SMG at alert."
-	icon_state = "nanotrasenrangedsmg"
-	icon_living = "nanotrasenrangedsmg"
-	rapid = 4
-	rapid_fire_delay = 4
-	projectiletype = /obj/projectile/beam/weak/sharplite
-	r_hand = /obj/item/gun/energy/e_gun/smg
-	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
 	minbodytemp = 0
 	maxbodytemp = 1000
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_hos
 
-/mob/living/simple_animal/hostile/human/nanotrasen/trooper/smg/space/Initialize()
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/smg/space/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
@@ -162,7 +150,7 @@
 	maxbodytemp = 1000
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_hos
 
-/mob/living/simple_animal/hostile/human/nanotrasen/trooper/smg/space/Initialize()
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/rifle/space/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
@@ -189,9 +177,9 @@
 
 /mob/living/simple_animal/hostile/human/nanotrasen/elite/shotgun
 	name = "Vigilitas Response Team"
-	desc = "A hardened member of Vigilitas Interstellar, clad in well made alloys slathered in red. Their helmet turns, their rifle raises, and they start to move with practiced precision."
+	desc = "A hardened member of Vigilitas Interstellar, clad in well made alloys slathered in red. Their helmet turns, Their shotgun blinks, and they glare coldly into your eyes."
 	ranged = TRUE
-	rapid = 3
+	rapid = 2
 	rapid_fire_delay = 5
 	rapid_melee = 3
 	retreat_distance = 0
