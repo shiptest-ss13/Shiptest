@@ -190,6 +190,12 @@
 	head = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	back = /obj/item/tank/jetpack/carbondioxide
 
+/datum/outfit/vigilitas/director
+	name = "VI director"
+	uniform = /obj/item/clothing/under/nanotrasen/sec_director
+	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+
 /datum/outfit/vigilitas/private
 	name = "VI Private"
 
@@ -197,6 +203,11 @@
 	name = "VI Private"
 	id_job = "Vigilitas Interstellar"
 	outfit = /datum/outfit/vigilitas/private
+
+/obj/effect/mob_spawn/human/corpse/vigilitas_director
+	name = "VI Director"
+	id_job = "Vigilitas Interstellar"
+	outfit = /datum/outfit/vigilitas/director
 
 /datum/outfit/vigilitas/trooper
 	name = "VI Trooper"
