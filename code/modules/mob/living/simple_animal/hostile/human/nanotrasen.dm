@@ -115,7 +115,8 @@
 	minimum_distance = 1
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_hos
 
-/mob/living/simple_animal/hostile/human/nanotrasen/trooper/shotgun/space/Initialize()
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun/space/Initialize()
+
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
@@ -141,8 +142,8 @@
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/rifle/space
-	name = "Vigilitas SMG Trooper"
-	desc = "A member of Vigilitas Interstellar. Eyes track motion as they saunter confidently, energy SMG at alert."
+	name = "Vigilitas Trooper"
+	desc = "A member of Vigilitas Interstellar. White stripes painted red with every shot of their rifle, they aim around cautiously."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/hos
