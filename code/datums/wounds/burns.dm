@@ -256,7 +256,7 @@
 	threshold_penalty = 40
 	status_effect_type = /datum/status_effect/wound/burn/severe
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
-	infestation_rate = 0.07 // appx 9 minutes to reach sepsis without any treatment
+	infestation_rate = 0.03
 	flesh_damage = 12.5
 
 /datum/wound/burn/critical
@@ -272,5 +272,5 @@
 	threshold_penalty = 80
 	status_effect_type = /datum/status_effect/wound/burn/critical
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
-	infestation_rate = 0.15 // appx 4.33 minutes to reach sepsis without any treatment
+	infestation_rate = 0.5
 	flesh_damage = 20

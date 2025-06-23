@@ -33,21 +33,21 @@
 			return
 		victim.self_grasp_bleeding_limb(limb)
 
-/datum/wound/pierce/wound_injury(datum/wound/old_wound)
+/datum/wound/pierce/wound_injury(datum/wound/old_wound = null, attack_direction = null)
 	blood_flow = initial_flow
+	if(attack_direction && victim.blood_volume > BLOOD_VOLUME_BAD)
+		victim.spray_blood(attack_direction, severity)
 
 /datum/wound/pierce/receive_damage(wounding_type, wounding_dmg, wound_bonus)
-	if(victim.stat == DEAD || wounding_dmg < 5)
+	if(isnull(victim) || victim.stat == DEAD || wounding_dmg < WOUND_MINIMUM_DAMAGE)
 		return
 
 	if(victim.blood_volume && prob(internal_bleeding_chance + wounding_dmg))
 		if(limb.current_splint?.splint_factor)
 			wounding_dmg *= (1 - limb.current_splint.splint_factor)
 
-		var/blood_bled = rand(1, wounding_dmg * internal_bleeding_coefficient)
+		var/blood_bled = sqrt(wounding_dmg) * internal_bleeding_coefficient * pick(0.75, 1, 1.25, 1.5) //thank you melbert math
 		switch(blood_bled)
-			if(1 to 6)
-				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
 				victim.visible_message(
 					span_danger("Blood droplets fly from the hole in [victim]'s [limb.name]."),
@@ -181,7 +181,7 @@
 	gauzed_clot_rate = 0.8
 	internal_bleeding_chance = 30
 	internal_bleeding_coefficient = 1.25
-	threshold_minimum = 30
+	threshold_minimum = 40
 	threshold_penalty = 20
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
 
@@ -197,7 +197,7 @@
 	gauzed_clot_rate = 0.6
 	internal_bleeding_chance = 60
 	internal_bleeding_coefficient = 1.5
-	threshold_minimum = 50
+	threshold_minimum = 60
 	threshold_penalty = 35
 	status_effect_type = /datum/status_effect/wound/pierce/severe
 
@@ -213,7 +213,7 @@
 	gauzed_clot_rate = 0.5
 	internal_bleeding_chance = 80
 	internal_bleeding_coefficient = 1.75
-	threshold_minimum = 100
+	threshold_minimum = 115
 	threshold_penalty = 50
 	status_effect_type = /datum/status_effect/wound/pierce/critical
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)

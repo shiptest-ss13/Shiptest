@@ -2,8 +2,8 @@
 // ~wound damage/rolling defines
 /// the cornerstone of the wound threshold system, your base wound roll for any attack is rand(1, damage^this), after armor reduces said damage. See [/obj/item/bodypart/proc/check_wounding]
 #define WOUND_DAMAGE_EXPONENT 1.4
-/// any damage dealt over this is ignored for damage rolls unless the target has the frail quirk (35^1.4=145, for reference)
-#define WOUND_MAX_CONSIDERED_DAMAGE 35
+/// any damage dealt over this is ignored for damage rolls
+#define WOUND_MAX_CONSIDERED_DAMAGE 45
 /// an attack must do this much damage after armor in order to roll for being a wound (so pressure damage/being on fire doesn't proc it)
 #define WOUND_MINIMUM_DAMAGE 5
 /// an attack must do this much damage after armor in order to be eliigible to dismember a suitably mushed bodypart
@@ -80,16 +80,15 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 
 // ~random wound balance defines
 /// how quickly sanitization removes infestation and decays per tick
-#define WOUND_BURN_SANITIZATION_RATE 0.15
-/// how much blood you can lose per tick per slash max. 8 is a LOT of blood for one cut so don't worry about hitting it easily
-#define WOUND_SLASH_MAX_BLOODFLOW 8
+#define WOUND_BURN_SANITIZATION_RATE 0.30
+/// how much blood you can lose per tick per slash max.
+#define WOUND_SLASH_MAX_BLOODFLOW 6
 /// dead people don't bleed, but they can clot! this is the minimum amount of clotting per tick on dead people, so even critical cuts will slowly clot in dead people
 #define WOUND_SLASH_DEAD_CLOT_MIN 0.05
 /// if we suffer a bone wound to the head that creates brain traumas, the timer for the trauma cycle is +/- by this percent (0-100)
 #define WOUND_BONE_HEAD_TIME_VARIANCE 20
 /// Chance to roll a muscle wound from brute damage
-#define MUSCLE_WOUND_CHANCE 35
-
+#define MUSCLE_WOUND_CHANCE 20
 
 
 // ~mangling defines

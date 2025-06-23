@@ -77,7 +77,6 @@
 						return 1
 	..()
 
-
 /mob/living/carbon/attacked_by(obj/item/I, mob/living/user)
 	var/obj/item/bodypart/affecting
 	if(user == src)
@@ -94,14 +93,17 @@
 	send_item_attack_message(I, user, affecting.name, parse_zone(affecting.body_zone))
 
 	if(I.force)
-		apply_damage(I.force, I.damtype, affecting, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness())
+		var/attack_direction = get_dir(user, src)
+		apply_damage(I.force, I.damtype, affecting, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), attack_direction = attack_direction)
 		if(I.damtype == BRUTE && (IS_ORGANIC_LIMB(affecting)))
 			if(prob(33))
 				I.add_mob_blood(src)
 				var/turf/location = get_turf(src)
 				add_splatter_floor(location)
-				if(get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
+
+				if(get_dist(user, src) <= 1) //people with TK won't get smeared with blood
 					user.add_mob_blood(src)
+
 				if(affecting.body_zone == BODY_ZONE_HEAD)
 					if(wear_mask)
 						wear_mask.add_mob_blood(src)
@@ -815,11 +817,8 @@
 	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
 	var/on_hit_state = P.on_hit(src, armor, piercing_hit)
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
-		apply_damage(P.damage, P.damage_type, def_zone, armor, sharpness = P.sharpness)
-		if(P.damage-armor >= 15 && P.damage_type == BRUTE && (!armor || prob(40) || P.damage-armor >= 25))
-			spray_blood(get_dir(P.starting,src), (P.damage-armor)/5)
-			bleed((P.damage-armor)/2)
-
+		var/attack_direction = get_dir(P.starting, src)
+		apply_damage(P.damage, P.damage_type, def_zone, armor, sharpness = P.sharpness, attack_direction = attack_direction)
 		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), P.damage/8, P.Angle)
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
 

@@ -31,7 +31,7 @@
 /*
 	Overwriting of base procs
 */
-/datum/wound/blunt/wound_injury(datum/wound/old_wound = null)
+/datum/wound/blunt/wound_injury(datum/wound/old_wound = null, attack_direction = null)
 	// hook into gaining/losing gauze so crit bone wounds can re-enable/disable depending if they're slung or not
 	RegisterSignals(limb, list(COMSIG_BODYPART_SPLINTED, COMSIG_BODYPART_SPLINT_DESTROYED), PROC_REF(update_inefficiencies))
 
@@ -245,7 +245,7 @@
 		UnregisterSignal(victim, COMSIG_LIVING_DOORCRUSHED)
 	return ..()
 
-/datum/wound/blunt/moderate/wound_injury(datum/wound/old_wound)
+/datum/wound/blunt/moderate/wound_injury(datum/wound/old_wound, attack_direction = null)
 	. = ..()
 	RegisterSignal(victim, COMSIG_LIVING_DOORCRUSHED, PROC_REF(door_crush))
 
@@ -378,12 +378,12 @@
 	interaction_efficiency_penalty = 2
 	limp_slowdown = 6
 	limp_chance = 60
-	threshold_minimum = 60
+	threshold_minimum = 70
 	threshold_penalty = 30
 	treatable_by = list(/obj/item/stack/sticky_tape/surgical, /obj/item/stack/medical/bone_gel)
 	status_effect_type = /datum/status_effect/wound/blunt/severe
 	brain_trauma_group = BRAIN_TRAUMA_MILD
-	trauma_cycle_cooldown = 1.5 MINUTES
+	trauma_cycle_cooldown = 5 MINUTES
 	internal_bleeding_chance = 40
 	wound_flags = (BONE_WOUND | ACCEPTS_SPLINT | MANGLES_BONE)
 	regen_ticks_needed = 120 // ticks every 2 seconds, 240 seconds, so roughly 4 minutes default
@@ -414,7 +414,7 @@
 	regen_ticks_needed = 240 // ticks every 2 seconds, 480 seconds, so roughly 8 minutes default
 
 // doesn't make much sense for "a" bone to stick out of your head
-/datum/wound/blunt/critical/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
+/datum/wound/blunt/critical/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, attack_direction = null)
 	if(L.body_zone == BODY_ZONE_HEAD)
 		occur_text = "splits open, exposing a bare, cracked skull through the flesh and blood"
 		examine_desc = "has an unsettling indent, with bits of skull poking out"

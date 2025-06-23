@@ -135,7 +135,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	self_delay = 4 SECONDS
+	self_delay = 2.5 SECONDS
 	other_delay = 2 SECONDS
 	grind_results = list(/datum/reagent/medicine/c2/libital = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack
@@ -147,7 +147,7 @@
 	singular_name = "medical gauze"
 	icon_state = "gauze"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	self_delay = 5 SECONDS
+	self_delay = 2.5 SECONDS
 	other_delay = 2 SECONDS
 	max_amount = 12
 	amount = 6
@@ -166,7 +166,7 @@
 		return
 
 	if(!LAZYLEN(limb.wounds))
-		to_chat(user, span_notice("There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb.name]!"))
+		to_chat(user, span_notice("There's no wounds that require bandaging on [user == M ? "your" : "[M]'s"] [limb.name]!"))
 		return
 
 	var/gauzeable_wound = FALSE
@@ -177,11 +177,11 @@
 			break
 
 	if(!gauzeable_wound)
-		to_chat(user, span_notice("There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb.name]!"))
+		to_chat(user, span_notice("There's no wounds that require bandaging on [user == M ? "your" : "[M]'s"] [limb.name]!"))
 		return
 
 	if(limb.current_gauze)
-		to_chat(user, span_warning("[user==M ? "Your" : "[M]'s"] [limb.name] is already bandaged!"))
+		to_chat(user, span_warning("[user == M ? "Your" : "[M]'s"] [limb.name] is already bandaged!"))
 
 	user.visible_message(
 		span_warning("[user] begins wrapping the wounds on [M]'s [limb.name] with [src]..."),
@@ -216,8 +216,8 @@
 	name = "improvised gauze"
 	singular_name = "improvised gauze"
 	desc = "A roll of cloth roughly cut from something that does a decent job of stabilizing wounds, but less efficiently so than real medical gauze."
-	self_delay = 6 SECONDS
-	other_delay = 3 SECONDS
+	self_delay = 2.5 SECONDS
+	other_delay = 2 SECONDS
 	burn_cleanliness_bonus = 0.7
 	merge_type = /obj/item/stack/medical/gauze/improvised
 	gauze_type = /datum/bodypart_aid/gauze/improvised
@@ -239,13 +239,13 @@
 	gender = PLURAL
 	singular_name = "suture"
 	icon_state = "suture"
-	self_delay = 3 SECONDS
-	other_delay = 1 SECONDS
+	self_delay = 2.5 SECONDS
+	other_delay = 2 SECONDS
 	amount = 15
 	max_amount = 15
 	repeating = TRUE
 	heal_brute = 10
-	stop_bleeding = 0.6
+	stop_bleeding = 0.2
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
 
@@ -262,7 +262,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	amount = 8
 	max_amount = 8
-	self_delay = 4 SECONDS
+	self_delay = 2.5 SECONDS
 	other_delay = 2 SECONDS
 
 	heal_burn = 5
@@ -277,8 +277,8 @@
 	gender = PLURAL
 	singular_name = "mesh piece"
 	icon_state = "regen_mesh"
-	self_delay = 3 SECONDS
-	other_delay = 1 SECONDS
+	self_delay = 2.5 SECONDS
+	other_delay = 2 SECONDS
 	amount = 15
 	heal_burn = 10
 	max_amount = 15
@@ -292,7 +292,7 @@
 
 /obj/item/stack/medical/mesh/Initialize(mapload, new_amount, merge = TRUE, list/mat_override=null, mat_amt=1)
 	. = ..()
-	if(amount == max_amount)	 //only seal full mesh packs
+	if(amount == max_amount) //only seal full mesh packs
 		is_open = FALSE
 		update_icon()
 
@@ -412,7 +412,7 @@
 	icon = 'icons/obj/items.dmi'
 	icon_state = "splint"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	self_delay = 5 SECONDS
+	self_delay = 2.5 SECONDS
 	other_delay = 2 SECONDS
 	max_amount = 12
 	amount = 6
@@ -426,7 +426,7 @@
 		to_chat(user, span_notice("There's nothing there to bandage!"))
 		return
 
-	if(!LAZYLEN(limb.wounds))
+	if(!LAZYLEN(limb.wounds)) // maybe allow bandaging even without a wound? dunno
 		to_chat(user, span_notice("There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb.name]!"))
 		return
 
@@ -450,7 +450,7 @@
 		span_warning("You begin to fasten [user == M ? "your" : "[M]'s"] [limb.name] with [src]..."),
 	)
 
-	if(!do_after(user, (user == M ? self_delay : other_delay), target=M))
+	if(!do_after(user, (user == M ? self_delay : other_delay), target = M))
 		return
 
 	user.visible_message(

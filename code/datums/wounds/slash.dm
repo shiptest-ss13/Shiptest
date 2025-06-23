@@ -4,7 +4,7 @@
 */
 
 /datum/wound/slash
-	name = "Slashing (Cut) Wound"
+	name = "Slashing Wound"
 	sound_effect = 'sound/weapons/slice.ogg'
 	processes = TRUE
 	wound_type = WOUND_SLASH
@@ -35,10 +35,12 @@
 			return
 		victim.self_grasp_bleeding_limb(limb)
 
-/datum/wound/slash/wound_injury(datum/wound/slash/old_wound = null)
+/datum/wound/slash/wound_injury(datum/wound/slash/old_wound = null, attack_direction = null)
 	blood_flow = initial_flow
 	if(old_wound)
 		blood_flow = max(old_wound.blood_flow, initial_flow)
+	else if(attack_direction && victim.blood_volume > BLOOD_VOLUME_BAD)
+		victim.spray_blood(attack_direction, severity)
 
 /datum/wound/slash/get_examine_description(mob/user)
 	if(!limb.current_gauze)
@@ -47,14 +49,14 @@
 	var/list/msg = list("The cuts on [victim.p_their()] [limb.name] are wrapped with ")
 	// how much life we have left in these bandages
 	switch(limb.current_gauze.absorption_capacity)
-		if(0 to 1.25)
-			msg += "nearly ruined"
-		if(1.25 to 2.75)
-			msg += "badly worn"
-		if(2.75 to 4)
-			msg += "slightly bloodied"
-		if(4 to INFINITY)
-			msg += "clean"
+		if(0 to 2)
+			desc = "nearly ruined"
+		if(2 to 4)
+			desc = "badly worn"
+		if(4 to 6)
+			desc = "slightly used"
+		if(6 to INFINITY)
+			desc = "clean"
 	msg += " [limb.current_gauze.name]!"
 
 	return "<B>[msg.Join()]</B>"
@@ -67,8 +69,9 @@
 	// say we have 3 severe cuts with 3 blood flow each, pretty reasonable
 	// compare with being at 100 brute damage before, where you bled (brute/100 * 2), = 2 blood per tile
 	var/bleed_amt = min(blood_flow * 0.1, 1) // 3 * 3 * 0.1 = 0.9 blood total, less than before! the share here is .3 blood of course.
+	// don't think this works, look into it later
 
-	if(limb.current_gauze && limb.current_gauze.seep_gauze(bleed_amt * 0.25, GAUZE_STAIN_BLOOD)) // gauze stops all bleeding from dragging on this limb, but wears the gauze out quicker
+	if(limb.current_gauze && limb.current_gauze.seep_gauze(bleed_amt * 0.15, GAUZE_STAIN_BLOOD)) // gauze stops all bleeding from dragging on this limb, but wears the gauze out quicker
 		return
 
 	return bleed_amt
@@ -205,7 +208,7 @@
 		span_notice("You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."),
 	)
 
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	user.visible_message(
 		span_green("[user] stitches up some of the bleeding on [victim]."),
@@ -223,47 +226,47 @@
 
 /datum/wound/slash/moderate
 	name = "Rough Abrasion"
-	desc = "Patient's skin has been badly scraped, generating moderate blood loss."
-	treat_text = "Application of clean bandages or first-aid grade sutures, followed by food and rest."
+	desc = "Patient's flesh has been badly scraped, generating moderate blood loss."
+	treat_text = "Application of clean bandages and sutures."
 	examine_desc = "has an open cut"
 	occur_text = "is cut open, slowly leaking blood"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 0.75
-	minimum_flow = 0.5
-	clot_rate = 0.12
-	threshold_minimum = 20
+	initial_flow = 2
+	minimum_flow = 0.35
+	clot_rate = 0.015
+	threshold_minimum = 30
 	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/slash/moderate
 
 /datum/wound/slash/severe
 	name = "Open Laceration"
-	desc = "Patient's skin is ripped clean open, allowing significant blood loss."
-	treat_text = "Speedy application of first-aid grade sutures and clean bandages, followed by vitals monitoring to ensure recovery."
+	desc = "Patient's flesh is ripped clean open, allowing significant blood loss."
+	treat_text = "Application of clean bandages and sutures."
 	examine_desc = "has a severe cut"
 	occur_text = "is ripped open, veins spurting blood"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
 	initial_flow = 2
 	minimum_flow = 1.5
-	clot_rate = 0.06
+	clot_rate = 0.025
 	threshold_minimum = 50
-	threshold_penalty = 25
+	threshold_penalty = 40
 	demotes_to = /datum/wound/slash/moderate
 	status_effect_type = /datum/status_effect/wound/slash/severe
 
 /datum/wound/slash/critical
 	name = "Weeping Avulsion"
-	desc = "Patient's skin is completely torn open, along with significant loss of tissue. Extreme blood loss will lead to quick death without intervention."
+	desc = "Patient's flesh is completely torn open, along with significant loss of tissue. Extreme blood loss will lead to quick death without intervention."
 	treat_text = "Immediate bandaging and either suturing or cauterization, followed by supervised resanguination."
 	examine_desc = "is carved down to the bone, spraying blood wildly"
 	occur_text = "is torn open, spraying blood wildly"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 3
-	minimum_flow = 2.25
-	clot_rate = -0.05 // critical cuts actively get worse instead of better
-	threshold_minimum = 80
+	initial_flow = 2
+	minimum_flow = 1.75
+	clot_rate = -0.010 // critical cuts actively get worse instead of better
+	threshold_minimum = 90
 	threshold_penalty = 40
 	demotes_to = /datum/wound/slash/severe
 	status_effect_type = /datum/status_effect/wound/slash/critical

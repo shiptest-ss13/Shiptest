@@ -16,7 +16,7 @@
 /*
 	Overwriting of base procs
 */
-/datum/wound/muscle/wound_injury(datum/wound/old_wound = null)
+/datum/wound/muscle/wound_injury(datum/wound/old_wound = null, attack_direction = null)
 	//hook into gaining/losing gauze so crit muscle wounds can re-enable/disable depending if they're slung or not
 	RegisterSignals(limb, list(COMSIG_BODYPART_SPLINTED, COMSIG_BODYPART_SPLINT_DESTROYED), PROC_REF(update_inefficiencies))
 	RegisterSignal(victim, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, PROC_REF(attack_with_hurt_hand))
@@ -83,7 +83,7 @@
 			)
 			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
 			victim.Stun(0.25 SECONDS)
-			limb.receive_damage(brute=rand(2,5))
+			limb.receive_damage(brute = rand(2,5))
 			return COMPONENT_ITEM_NO_ATTACK
 
 /datum/wound/muscle/get_examine_description(mob/user)
@@ -139,16 +139,16 @@
 /datum/wound/muscle/moderate
 	name = "Muscle Tear"
 	desc = "Patient's muscle has torn, causing serious pain and reduced limb functionality."
-	treat_text = "Recommended rest and sleep, or splinting the limb."
+	treat_text = "Recommended rest and sleep as well as splinting the limb."
 	examine_desc = "appears unnaturally colored and swollen"
 	occur_text = "twists in pain, a muscle is torn!"
 	severity = WOUND_SEVERITY_MODERATE
 	interaction_efficiency_penalty = 1.15
 	limp_slowdown = 1
-	threshold_minimum = 35
+	threshold_minimum = 30
 	threshold_penalty = 15
 	status_effect_type = /datum/status_effect/wound/muscle/moderate
-	regen_ticks_needed = 50
+	regen_ticks_needed = 500
 
 //Severe (Ruptured Tendon)
 /datum/wound/muscle/severe
@@ -165,7 +165,7 @@
 	threshold_penalty = 35
 	disabling = TRUE
 	status_effect_type = /datum/status_effect/wound/muscle/severe
-	regen_ticks_needed = 200
+	regen_ticks_needed = 2500
 
 /datum/status_effect/wound/muscle
 

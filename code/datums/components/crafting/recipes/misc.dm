@@ -141,15 +141,15 @@
 	result = /obj/item/reagent_containers/glass/filter
 	category = CAT_MISC
 
-/datum/crafting_recipe/huntersplint
-	name = "Hunter Splint"
-	result = /obj/item/stack/medical/splint/hunter
-	time = 30
-	reqs = list(
-		/obj/item/stack/sheet/bone = 2,
-		/obj/item/stack/sheet/sinew = 1
-	)
-	category = CAT_PRIMAL
+// /datum/crafting_recipe/huntersplint
+// 	name = "Hunter Splint"
+// 	result = /obj/item/stack/medical/splint/hunter
+// 	time = 30
+// 	reqs = list(
+// 		/obj/item/stack/sheet/bone = 2,
+// 		/obj/item/stack/sheet/sinew = 1
+// 	)
+// 	category = CAT_MISC
 
 /datum/crafting_recipe/improvsplint
 	name = "Improvised Splint"
@@ -159,6 +159,7 @@
 		/obj/item/stack/sheet/mineral/wood = 2,
 		/obj/item/stack/sheet/cotton/cloth = 2,
 	)
+	category = CAT_MISC
 
 /datum/crafting_recipe/portableseedextractor
 	name = "Portable seed extractor"

@@ -28,13 +28,13 @@
 	var/breaksound = "shatter"
 	var/hitsound = 'sound/effects/Glasshit.ogg'
 	var/decon_time = 3 SECONDS
+	/// If something has had their blood spilled on this window, thus making it cleanable
+	var/bloodied = FALSE
+	
 	flags_ricochet = RICOCHET_HARD
 	receive_ricochet_chance_mod = 0.4
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
-
-	/// If some inconsiderate jerk has had their blood spilled on this window, thus making it cleanable
-	var/bloodied = FALSE
 
 /obj/structure/window/examine(mob/user)
 	. = ..()
