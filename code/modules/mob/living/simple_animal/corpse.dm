@@ -192,7 +192,7 @@
 
 /datum/outfit/vigilitas/director
 	name = "VI director"
-	uniform = /obj/item/clothing/under/nanotrasen/sec_director
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
 	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	head = /obj/item/clothing/head/nanotrasen/beret/security/command
 
