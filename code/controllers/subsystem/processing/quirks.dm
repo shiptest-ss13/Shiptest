@@ -29,7 +29,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Alcohol Tolerance","Light Drinker"), \
 		list("Bad Touch", "Friendly"), \
 		list("Self-Aware", "Congenital Analgesia"), \
-		list("(Language) Moth Pidgin", "(Language) Solarian International", "(Language) Teceti Unified Standard", "(Language) Kalixcian Common"), \
+		list("(Language) Moth Pidgin", "(Language) Solarian International", "(Language) Teceti Unified Standard", "(Language) Gezenan", "(Language) Zohilan"), \
 		)
 
 	species_blacklist = list("Blood Deficiency" = list(SPECIES_IPC, SPECIES_JELLYPERSON, SPECIES_PLASMAMAN, SPECIES_VAMPIRE))

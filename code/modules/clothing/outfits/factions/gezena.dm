@@ -7,7 +7,7 @@
 	. = ..()
 	if(visualsOnly)
 		return
-	H.grant_language(/datum/language/kalixcian_common)
+	H.grant_language(/datum/language/gezena_kalixcian)
 
 //Playable Roles (put in ships):
 /datum/outfit/job/gezena/assistant

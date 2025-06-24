@@ -13,7 +13,8 @@
 
 	mutual_understanding = list(
 		/datum/language/solarian_international = 20,
-		/datum/language/kalixcian_common = 20,
+		/datum/language/gezena_kalixcian = 20,
+		/datum/language/zohil_kalixcian = 15, // similar to gezenan
 	)
 
 

@@ -1,6 +1,6 @@
-/datum/language/kalixcian_common
-	name = "Kalixcian Common"
-	desc = "The most prevalent language to come out of Kalixcis, and generally understood by all those native to it."
+/datum/language/gezena_kalixcian
+	name = "Gezenan"
+	desc = "The most widely spoken Kalixcian language, and the official language of the Pan-Gezena Federation."
 	speech_verb = "hisses"
 	ask_verb = "hisses"
 	exclaim_verb = "roars"
@@ -24,3 +24,6 @@
 	)
 	icon_state = "lizard"
 	default_priority = 90
+	mutual_understanding = list(
+		/datum/language/zohil_kalixcian = 90, // enough to sort of understand each other, but not very well
+	)

@@ -1,22 +1,40 @@
 //Languages - not worth their own file
 
 // Kalixcian Common
-/datum/quirk/lang_kalixcian
-	name = "(Language) Kalixcian Common"
-	desc = "You're fluent in Kalixcian Common."
+/datum/quirk/lang_gezena
+	name = "(Language) Gezenan"
+	desc = "You're fluent in Gezenan."
 	value = 0
-	gain_text = span_notice("You know Kalixcian Common.")
-	lose_text = span_danger("You forget Kalixcian Common.")
+	gain_text = span_notice("You know Gezenan.")
+	lose_text = span_danger("You forget Gezenan.")
 	detectable = FALSE
 
-/datum/quirk/lang_kalixcian/add()
+/datum/quirk/lang_gezena/add()
 	var/mob/living/carbon/human/knower = quirk_holder
-	knower.grant_language(/datum/language/kalixcian_common, source = LANGUAGE_MIND)
+	knower.grant_language(/datum/language/gezena_kalixcian, source = LANGUAGE_MIND)
 
-/datum/quirk/lang_kalixcian/remove()
+/datum/quirk/lang_gezena/remove()
 	if(quirk_holder)
 		var/mob/living/carbon/human/knower = quirk_holder
-		knower.remove_language(/datum/language/kalixcian_common, source = LANGUAGE_MIND)
+		knower.remove_language(/datum/language/gezena_kalixcian, source = LANGUAGE_MIND)
+
+// Kalixcian Common
+/datum/quirk/lang_zohil
+	name = "(Language) Zohilan"
+	desc = "You're fluent in Zohilan."
+	value = 0
+	gain_text = span_notice("You know Zohilan.")
+	lose_text = span_danger("You forget Zohilan.")
+	detectable = FALSE
+
+/datum/quirk/lang_zohil/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/zohil_kalixcian, source = LANGUAGE_MIND)
+
+/datum/quirk/lang_zohil/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/zohil_kalixcian, source = LANGUAGE_MIND)
 
 // Teceti Unified Standard
 /datum/quirk/lang_tuc
