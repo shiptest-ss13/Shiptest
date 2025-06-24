@@ -36,7 +36,7 @@
 		jostle_chance = 0,
 		ignore_throwspeed_threshold = TRUE,
 		pain_stam_pct = 0.5,
-		pain_mult = 3, 
+		pain_mult = 3,
 		rip_time = 10,
 	)
 

@@ -176,7 +176,7 @@
 
 	if(blood_stained)
 		desc += ", bloodied"
-	
+
 	if(pus_stained)
 		desc += ", pus stained"
 	desc += " [name]"
