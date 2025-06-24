@@ -56,6 +56,7 @@
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 2
 	rapid_fire_delay = 7
+	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/sharplite
 	r_hand = /obj/item/gun/energy/laser
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
@@ -88,8 +89,9 @@
 	desc = "A member of Vigilitas Interstellar. Eyes track motion as they saunter confidently, energy SMG at alert."
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
-	rapid = 4
-	rapid_fire_delay = 4
+	rapid = 5
+	rapid_fire_delay = 3
+	casingtype = null
 	projectiletype = /obj/projectile/beam/weak/sharplite
 	r_hand = /obj/item/gun/energy/e_gun/smg
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
@@ -188,5 +190,6 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	casingtype = /obj/item/ammo_casing/energy/laser/ultima
+	projectiletype = null
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 	r_hand = /obj/item/gun/energy/laser/iot/lethal
