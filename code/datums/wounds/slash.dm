@@ -18,7 +18,7 @@
 	var/initial_flow
 	/// When we have less than this amount of flow, either from treatment or clotting, we demote to a lower cut or are healed of the wound
 	var/minimum_flow
-	/// How much our blood_flow will naturally decrease per tick, not only do larger cuts bleed more blood faster, they clot slower (higher number = clot quicker, negative = opening up)
+	/// How much our blood_flow will naturally decrease per second, not only do larger cuts bleed more blood faster, they clot slower (higher number = clot quicker, negative = opening up)
 	var/clot_rate
 	/// Once the blood flow drops below minimum_flow, we demote it to this type of wound. If there's none, we're all better
 	var/demotes_to
@@ -36,11 +36,12 @@
 		victim.self_grasp_bleeding_limb(limb)
 
 /datum/wound/slash/wound_injury(datum/wound/slash/old_wound = null, attack_direction = null)
-	blood_flow = initial_flow
 	if(old_wound)
 		blood_flow = max(old_wound.blood_flow, initial_flow)
-	else if(attack_direction && victim.blood_volume > BLOOD_VOLUME_BAD)
-		victim.spray_blood(attack_direction, severity)
+	else
+		blood_flow = initial_flow
+		if(attack_direction && victim.blood_volume > BLOOD_VOLUME_OKAY)
+			victim.spray_blood(attack_direction, severity)
 
 /datum/wound/slash/get_examine_description(mob/user)
 	if(!limb.current_gauze)

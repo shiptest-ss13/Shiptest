@@ -707,7 +707,7 @@
 	. = health
 	for (var/_limb in bodyparts)
 		var/obj/item/bodypart/limb = _limb
-		if (limb.bodytype != BODYPART_ORGANIC)
+		if(limb.bodytype != BODYPART_ORGANIC)
 			. += (limb.brute_dam * limb.body_damage_coeff) + (limb.burn_dam * limb.body_damage_coeff)
 
 /mob/living/carbon/grabbedby(mob/living/carbon/user, supress_message = FALSE)
@@ -718,7 +718,7 @@
 	self_grasp_bleeding_limb(grasped_part, supress_message)
 
 /mob/living/carbon/proc/self_grasp_bleeding_limb(obj/item/bodypart/grasped_part, supress_message = FALSE)
-	if(!grasped_part?.get_bleed_rate())
+	if(!grasped_part?.get_part_bleed_rate())
 		return
 
 	var/starting_hand_index = active_hand_index
@@ -727,7 +727,7 @@
 		return
 
 	to_chat(src, span_warning("You try grasping at your [grasped_part.name], trying to stop the bleeding..."))
-	if(!do_after(src, 1.5 SECONDS))
+	if(!do_after(src, 0.5 SECONDS))
 		to_chat(src, span_danger("You fail to grasp your [grasped_part.name]."))
 		return
 
@@ -746,7 +746,7 @@
 	item_state = "nothing"
 	force = 0
 	throwforce = 0
-	slowdown = 1
+	slowdown = 0.5
 	item_flags = DROPDEL | ABSTRACT | NOBLUDGEON | SLOWS_WHILE_IN_HAND | HAND_ITEM
 	/// The bodypart we're staunching bleeding on, which also has a reference to us in [/obj/item/bodypart/var/grasped_by]
 	var/obj/item/bodypart/grasped_part

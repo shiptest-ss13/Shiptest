@@ -205,9 +205,9 @@
 		return
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_HANDS_BLOCKED, TRAIT_STATUS_EFFECT(id))
-	// if(iscarbon(owner))
-	// 	var/mob/living/carbon/carbon_owner = owner
-	// 	carbon_owner.update_bodypart_bleed_overlays()
+	if(iscarbon(owner))
+		var/mob/living/carbon/carbon_owner = owner
+		carbon_owner.update_bodypart_bleed_overlays()
 
 /datum/status_effect/grouped/stasis/tick()
 	update_time_of_death()
@@ -216,9 +216,9 @@
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	REMOVE_TRAIT(owner, TRAIT_HANDS_BLOCKED, TRAIT_STATUS_EFFECT(id))
 	update_time_of_death()
-	// if(iscarbon(owner))
-	// 	var/mob/living/carbon/carbon_owner = owner
-	// 	carbon_owner.update_bodypart_bleed_overlays()
+	if(iscarbon(owner))
+		var/mob/living/carbon/carbon_owner = owner
+		carbon_owner.update_bodypart_bleed_overlays()
 	return ..()
 
 /atom/movable/screen/alert/status_effect/stasis

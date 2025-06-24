@@ -99,6 +99,8 @@
 	var/dmg_overlay_type
 	///the path for dmg overlay icons.
 	var/dmg_overlay_icon = 'icons/mob/dam_mob.dmi'
+	/// If we're bleeding, which icon are we displaying on this part
+	var/bleed_overlay_icon
 
 	//Damage messages used by help_shake_act()
 	var/light_brute_msg = "bruised"
@@ -720,7 +722,7 @@
 	SIGNAL_HANDLER
 	set_can_be_disabled(initial(can_be_disabled))
 
-//Updates an organ's brute/burn states for use by update_damage_overlays()
+//Updates an organ's brute/burn states for use by update_ss()
 //Returns 1 if we need to update overlays. 0 otherwise.
 /obj/item/bodypart/proc/update_bodypart_damage_state()
 	var/tbrute = min(round((brute_dam/max_damage)*6, 1), 3)
@@ -1000,12 +1002,15 @@
 
 	wound_damage_multiplier = dam_mul
 
-
-/obj/item/bodypart/proc/get_bleed_rate()
+/**
+ * Calculates how much blood this limb is losing per life tick
+ *
+ * Arguments:
+ * * ignore_modifiers - If TRUE, ignore the bleed reduction for laying down and grabbing your limb
+ */
+/obj/item/bodypart/proc/get_part_bleed_rate(ignore_modifiers = FALSE)
 	if(HAS_TRAIT(owner, TRAIT_NOBLEED))
 		return
-	// if(IS_ROBOTIC_LIMB(src)) // maybe in the future we can bleed oil from aug parts, but not now
-	// 	return
 
 	var/bleed_rate = 0
 	if(generic_bleedstacks > 0)
@@ -1015,21 +1020,62 @@
 	listclearnulls(embedded_objects)
 	for(var/obj/item/embeddies as anything in embedded_objects)
 		if(!embeddies.isEmbedHarmless())
-			bleed_rate += 0.5
+			bleed_rate += 0.25
 
-	for(var/datum/wound/W as anything in wounds)
-		bleed_rate += W.blood_flow
+	for(var/datum/wound/iter_wound as anything in wounds)
+		bleed_rate += iter_wound.blood_flow
 
-	if(owner.body_position == LYING_DOWN)
-		bleed_rate *= 0.75
-
-	if(grasped_by)
-		bleed_rate *= 0.7
+	if(!ignore_modifiers)
+		if(owner.body_position == LYING_DOWN)
+			bleed_rate *= 0.75
+		if(grasped_by)
+			bleed_rate *= 0.7
 
 	if(!bleed_rate)
 		QDEL_NULL(grasped_by)
 
 	return bleed_rate
+
+// how much blood the limb needs to be losing per tick (not counting laying down/self grasping modifiers) to get the different bleed icons
+#define BLEED_OVERLAY_LOW 0.5
+#define BLEED_OVERLAY_MED 1.5
+#define BLEED_OVERLAY_GUSH 3.25
+
+/obj/item/bodypart/proc/update_part_wound_overlay() //todo SPECIES SUPPORT
+	if(!owner)
+		return FALSE
+	if(HAS_TRAIT(owner, TRAIT_NOBLEED))
+		if(bleed_overlay_icon)
+			bleed_overlay_icon = null
+			owner.update_wound_overlays()
+		return FALSE
+
+	var/bleed_rate = get_part_bleed_rate(ignore_modifiers = TRUE)
+	var/new_bleed_icon = null
+
+	switch(bleed_rate)
+		if(-INFINITY to BLEED_OVERLAY_LOW)
+			new_bleed_icon = null
+		if(BLEED_OVERLAY_LOW to BLEED_OVERLAY_MED)
+			new_bleed_icon = "[body_zone]_1"
+		if(BLEED_OVERLAY_MED to BLEED_OVERLAY_GUSH)
+			if(owner.body_position == LYING_DOWN || IS_IN_STASIS(owner) || owner.stat == DEAD)
+				new_bleed_icon = "[body_zone]_2s"
+			else
+				new_bleed_icon = "[body_zone]_2"
+		if(BLEED_OVERLAY_GUSH to INFINITY)
+			if(IS_IN_STASIS(owner) || owner.stat == DEAD)
+				new_bleed_icon = "[body_zone]_2s"
+			else
+				new_bleed_icon = "[body_zone]_3"
+
+	if(new_bleed_icon != bleed_overlay_icon)
+		bleed_overlay_icon = new_bleed_icon
+		return TRUE
+
+#undef BLEED_OVERLAY_LOW
+#undef BLEED_OVERLAY_MED
+#undef BLEED_OVERLAY_GUSH
 
 /**
  * apply_gauze() is used to- well, apply gauze to a bodypart
