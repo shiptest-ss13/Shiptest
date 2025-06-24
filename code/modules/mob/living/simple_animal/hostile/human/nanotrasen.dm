@@ -56,9 +56,9 @@
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 2
 	rapid_fire_delay = 7
-	casingtype = /obj/item/ammo_casing/energy/laser/sharplite
+	projectiletype = /obj/projectile/beam/laser/sharplite
 	r_hand = /obj/item/gun/energy/laser
-	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
+	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/laser/space
 	minbodytemp = 0
@@ -90,7 +90,7 @@
 	icon_living = "nanotrasenrangedsmg"
 	rapid = 4
 	rapid_fire_delay = 4
-	casingtype = /obj/item/ammo_casing/energy/laser/sharplite/smg
+	projectiletype = /obj/projectile/beam/weak/sharplite
 	r_hand = /obj/item/gun/energy/e_gun/smg
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
@@ -103,6 +103,8 @@
 	r_hand = /obj/item/gun/energy/laser/iot/lethal
 	rapid = 2
 	rapid_fire_delay = 5
+	retreat_distance = 0
+	minimum_distance = 1
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun/space
@@ -111,8 +113,6 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/hos
 	minbodytemp = 0
 	maxbodytemp = 1000
-	retreat_distance = 0
-	minimum_distance = 1
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_hos
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun/space/Initialize()
@@ -137,7 +137,7 @@
 	desc = "A well-armed member of Vigilitas Interstellar. They stand at the ready with a Hades energy rifle, smirking underneath their gas mask."
 	rapid = 4
 	rapid_fire_delay = 4
-	casingtype = /obj/item/ammo_casing/energy/laser/assault/sharplite
+	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	r_hand = /obj/item/gun/energy/e_gun/hades
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 
@@ -162,14 +162,14 @@
 	name = "Vigilitas Response Team"
 	desc = "A hardened member of Vigilitas Interstellar, clad in well made alloys slathered in red. Their helmet turns, their rifle raises, and they start to move with practiced precision."
 	ranged = TRUE
-	rapid = 3
-	rapid_fire_delay = 5
+	rapid = 4
+	rapid_fire_delay = 4
 	rapid_melee = 3
 	retreat_distance = 0
 	minimum_distance = 1
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
-	casingtype = /obj/item/ammo_casing/energy/laser/assault/sharplite
+	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'
 	faction = list(ROLE_DEATHSQUAD)
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_elite
@@ -181,7 +181,7 @@
 	desc = "A hardened member of Vigilitas Interstellar, clad in well made alloys slathered in red. Their helmet turns, Their shotgun blinks, and they glare coldly into your eyes."
 	ranged = TRUE
 	rapid = 2
-	rapid_fire_delay = 5
+	rapid_fire_delay = 4
 	rapid_melee = 3
 	retreat_distance = 0
 	minimum_distance = 1
