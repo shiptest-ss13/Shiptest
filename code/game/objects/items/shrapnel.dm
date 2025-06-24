@@ -1,12 +1,21 @@
 /obj/item/shrapnel // frag grenades
 	name = "shrapnel shard"
-	custom_materials = list(/datum/material/iron=50)
+	custom_materials = list(/datum/material/iron = 50)
 	armour_penetration = -20
 	icon = 'icons/obj/shards.dmi'
 	icon_state = "large"
 	w_class = WEIGHT_CLASS_TINY
 	item_flags = DROPDEL
 	sharpness = SHARP_EDGED
+	embedding = list(
+		embed_chance = 70,
+		fall_chance = 2,
+		ignore_throwspeed_threshold = TRUE,
+		pain_stam_pct = 0.5,
+		pain_mult = 3,
+		embed_chance_turf_mod = -100,
+		rip_time = 4,
+	)
 
 /obj/item/shrapnel/hot
 	name = "molten slag"
@@ -16,19 +25,38 @@
 /obj/item/shrapnel/stingball
 	name = "clump of ballistic gel"
 	icon_state = "tiny"
+	embedding = list(
+		embed_chance = 15,
+		fall_chance = 2,
+		jostle_chance = 7,
+		ignore_throwspeed_threshold = TRUE,
+		pain_stam_pct = 0.8,
+		pain_mult = 3,
+		jostle_pain_mult = 5,
+		rip_time = 15,
+		embed_chance_turf_mod = -100,
+	)
 
 /obj/item/shrapnel/bullet // bullets
 	name = "bullet"
 	icon = 'icons/obj/ammunition/ammo_bullets.dmi'
 	icon_state = "pistol-brass"
-	item_flags = NONE
+	item_flags = DROPDEL
+	embedding = list(
+		embed_chance = 40,
+		jostle_chance = 0,
+		ignore_throwspeed_threshold = TRUE,
+		pain_stam_pct = 0.5,
+		pain_mult = 3,
+		rip_time = 4,
+	)
 
 /obj/item/shrapnel/bullet/c38 // .38 round
 	name = "\improper .38 bullet"
 
 /obj/item/shrapnel/bullet/c38/dumdum // .38 DumDum round
 	name = "\improper .38 prism bullet"
-	embedding = list(embed_chance=70, fall_chance=7, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=-100)
+	embedding = list(embed_chance=70,fall_chance=7, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=-100)
 
 /obj/item/shrapnel/bullet/tracker
 	name = "\improper bullet tracker"
@@ -73,7 +101,6 @@
 	hit_stunned_targets = TRUE
 	sharpness = SHARP_EDGED
 	wound_bonus = 30
-	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=1)
 
 /obj/projectile/bullet/shrapnel/Initialize()
 	. = ..()

@@ -38,8 +38,9 @@
 /// Involves a melee attack or a thrown object.
 #define MELEE "melee"
 //someone should really port wounds...
+//so be it
 /// Involved in checking the likelihood of applying a wound to a mob.
-//#define WOUND "wound"
+#define WOUND "wound"
 
 #define ARMOR_ALL "all_damage_types"
 
@@ -175,6 +176,10 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define EMBEDDED_JOSTLE_PAIN_MULTIPLIER 1
 ///This percentage of all pain will be dealt as stam damage rather than brute (0-1)
 #define EMBEDDED_PAIN_STAM_PCT 0.0
+///This percentage of all pain will be dealt as stam damage rather than brute (0-1)
+#define EMBEDDED_PAIN_STAM_PCT 0.0
+///For thrown weapons, every extra speed it's thrown at above its normal throwspeed will add this to the embed chance
+#define EMBED_CHANCE_SPEED_BONUS 10
 
 #define EMBED_HARMLESS list("pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE)
 #define EMBED_HARMLESS_SUPERIOR list("pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE, "embed_chance" = 100, "fall_chance" = 0.1)
