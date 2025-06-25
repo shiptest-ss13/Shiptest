@@ -42,6 +42,12 @@
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
 
+/mob/living/simple_animal/hostile/human/ramzi/space/soft
+	name = "Ramzi Clique Initiate"
+	desc = "A deserter from the Gorlex Marauders turned pirate wearing an armored softsuit. This one is unarmed."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft
+	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
+
 /mob/living/simple_animal/hostile/human/ramzi/space/stormtrooper
 	name = "Ramzi Clique Battlemaster"
 	desc = "A silhouette of obsidian glass stalks into view, empty hands clutching into armored fists. They are unarmed, and this is nearly a fair fight."
@@ -148,6 +154,22 @@
 	attack_verb_continuous = "cuts"
 	attack_verb_simple = "cut"
 	l_hand =/obj/item/melee/sword/mass
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/soft
+	name = "Ramzi Clique Infiltrator"
+	desc = "A deserter from the Gorlex Marauders turned pirate. A softsuit's gauntlets hold a shard of polished steel in an veteran's guard."
+	r_hand = /obj/item/melee/knife/combat
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft
+	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
+
+/mob/living/simple_animal/hostile/human/ramzi/melee/space/soft/machete
+	name = "Ramzi Clique Bladesman"
+	desc = "A deserter from the Gorlex Marauders turned pirate. Rust silhouttes a well-maintained machete, swinging around their hip."
+	attack_verb_continuous = "cuts"
+	attack_verb_simple = "cut"
+	r_hand = /obj/item/melee/sword/mass
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 
@@ -287,6 +309,27 @@
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	set_light(4)
 
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft
+	name = "Ramzi Clique Operative"
+	desc = "A deserter from the Gorlex Marauders turned pirate, wearing an armored softsuit. They clutch a pocket pistol, the added bulk of their wrappings giving it a rather undersized appearance."
+	icon_state = "syndicate_space_pistol"
+	icon_living = "syndicate_space_pistol"
+	atmos_requirements = IMMUNE_ATMOS_REQS
+	minbodytemp = 0
+	maxbodytemp = 1000
+	speed = 1
+	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft
+
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/soft/smg
+	name = "Ramzi Clique Commando"
+	desc = "A deserter from the Gorlex Marauders turned pirate. A painted skull grimaces on their helmet as they sweep their submachinegun across the room, scanning for threats."
+	icon_state = "syndicate_space_smg"
+	icon_living = "syndicate_space_smg"
+	r_hand = /obj/item/gun/ballistic/automatic/smg/cobra
+	rapid = 3
+	casingtype = /obj/item/ammo_casing/c45
+
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/smg
 	name = "Ramzi Clique Commando"
 	desc = "A deserter from the Gorlex Marauders turned pirate. Green hardsuit optics glint as they sweep their submachinegun across the room, scanning for threats."
@@ -295,7 +338,6 @@
 	l_hand =/obj/item/gun/ballistic/automatic/smg/cobra
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c45
-
 
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/shotgun
 	name = "Ramzi Clique Breacher"
@@ -399,6 +441,15 @@
 	summon_backup(15)
 	say("GUARDS!!")
 
+/mob/living/simple_animal/hostile/human/ramzi/civilian/space
+	name = "Ramzi Clique Technician"
+	desc = "A deserter from the Gorlex Marauders turned pirate, wearing a flimsy softsuit. This one is not only unarmed, but a coward as well."
+	minimum_distance = 10
+	retreat_distance = 10
+	obj_damage = 0
+	armor_base = /obj/item/clothing/suit/space/syndicate/ramzi
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
+	environment_smash = ENVIRONMENT_SMASH_NONE
 
 /mob/living/simple_animal/hostile/viscerator
 	name = "viscerator"

@@ -95,7 +95,7 @@
 		var/atom/AT = A
 		if(!QDELETED(AT) && AT != src) // It's possible that the item is deleted in temperature_expose
 			AT.fire_act(temperature, volume)
-	return
+	return TRUE
 
 /obj/effect/hotspot/proc/gauss_lerp(x, x1, x2)
 	var/b = (x1 + x2) * 0.5

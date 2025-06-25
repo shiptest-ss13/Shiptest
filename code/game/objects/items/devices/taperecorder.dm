@@ -127,7 +127,7 @@
 	. = ..()
 	if(mytape && recording)
 		mytape.timestamp += mytape.used_capacity
-		mytape.storedinfo += "\[[time2text(mytape.used_capacity * 10,"mm:ss")]\] [message]"
+		mytape.storedinfo += "\[[time2text(mytape.used_capacity * 10,"mm:ss")]\] [speaker.GetVoice()] [speaker.say_mod(raw_message, message_mods)], \"[raw_message]\""
 
 /obj/item/taperecorder/verb/record()
 	set name = "Start Recording"
