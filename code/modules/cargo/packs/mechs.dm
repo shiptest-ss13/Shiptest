@@ -56,7 +56,7 @@ Build Your Own Suit
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 40
 
-/datum/supply_pack/mech/gygax_parts
+/*/datum/supply_pack/mech/gygax_parts
 	name = "501p construction kit"
 	desc = "An agile combat exosuit sold across the galaxy by Cybersun. Or at least the parts to it."
 	cost = 12000
@@ -117,7 +117,7 @@ Build Your Own Suit
 	)
 	crate_name = "Durand Construction Kit"
 	faction = /datum/faction/clip
-	faction_discount = 20
+	faction_discount = 20*/
 
 /*
 Mech Equipment
