@@ -43,3 +43,12 @@
 	item_state = "m_mask"
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
+
+/obj/item/clothing/mask/breath/facemask
+	name = "face mask"
+	desc = "A face mask that covers the nose, mouth and neck of those who wear it. It can be connected to an air supply."
+	icon_state = "facemask"
+	item_state = "facemask"
+	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
+	alternate_worn_layer = BELT_LAYER
