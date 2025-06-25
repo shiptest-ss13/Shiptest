@@ -373,15 +373,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='byond://?_src_=prefs;preference=ai_core_icon;task=input'><b>Preferred AI Core Display:</b> [preferred_ai_core_display]</a><br>"
 			dat += "<a href='byond://?_src_=prefs;preference=sec_dept;task=input'><b>Preferred Security Department:</b> [prefered_security_department]</a><BR></td>"
 
-			/*
-			<td>
-				<h2>Languages</h2>
-				<table>
-					<tr>
-						<td><b>Native Language</b></td>
-						<td>
-			*/
-
 			dat += "<td><h2>Languages</h2><table>"
 			dat += "<tr><td><a href='byond://?_src_=prefs;preference=native_language;task=input'><b>Native Language: </b>[initial(native_language.name)]</a></td></tr>"
 			var/points_left = MAX_LANGUAGE_POINTS
