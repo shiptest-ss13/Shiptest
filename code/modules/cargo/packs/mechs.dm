@@ -391,13 +391,13 @@ weapons
 	faction = /datum/faction/nt
 	faction_discount = 20
 
-/datum/supply_pack/mech/weapon/missile_rack
+/*/datum/supply_pack/mech/weapon/missile_rack
 	name = "BRM-6 kit"
 	desc = "Contains a low-explosive missile launcher, excellent for breaching through obstacles."
 	cost = 3000
 	contains = list(
 		/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
-	)
+	)*/
 
 /*
 ammo
@@ -434,10 +434,10 @@ ammo
 	faction = /datum/faction/nt
 	faction_discount = 20
 
-/datum/supply_pack/mech/ammo/missile_rack_ammo
+/*/datum/supply_pack/mech/ammo/missile_rack_ammo
 	name = "BRM-6 missile box"
 	desc = "Contains a box of six breaching missiles designed to explode upon striking hard surfaces."
 	cost = 600 //these are remarkably inefficient against anything except exosuits
 	contains = list(
 		/obj/item/mecha_ammo/missiles_br
-	)
+	)*/
