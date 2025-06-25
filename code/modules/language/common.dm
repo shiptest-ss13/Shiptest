@@ -6,7 +6,7 @@
 	whisper_verb = "whispers"
 	sing_verb = "sings"
 	key = "0"
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_UNDERSTOOD
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | ROUNDSTART_LANGUAGE
 	default_priority = 100
 
 	icon_state = "galcom"

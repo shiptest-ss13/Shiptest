@@ -6,7 +6,7 @@
 	exclaim_verb = "roars"
 	sing_verb = "sings"
 	key = "o"
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE | NO_HISS
 	space_chance = 12
 	sentence_chance = 0
 	between_word_sentence_chance = 10
@@ -20,10 +20,11 @@
 		"ka", "ak", "ke", "ek", "ki", "ik", "ko", "ok", "ku", "uk", "ks", "sk",
 		"sa", "as", "se", "es", "si", "is", "so", "os", "su", "us", "ss", "ss",
 		"ra", "ar", "re", "er", "ri", "ir", "ro", "or", "ru", "ur", "rs", "sr",
+		"na", "an", "ne", "en", "ni", "in", "no", "on", "nu", "un", "ng", "ts",
 		"a",  "a",  "e",  "e",  "i",  "i",  "o",  "o",  "u",  "u",  "s",  "s"
 	)
 	icon_state = "lizard"
 	default_priority = 90
 	mutual_understanding = list(
-		/datum/language/zohil_kalixcian = 90, // enough to sort of understand each other, but not very well
+		/datum/language/zohil_kalixcian = 90, // enough to sort of understand each other, but not perfectly
 	)

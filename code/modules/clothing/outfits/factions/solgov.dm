@@ -3,12 +3,6 @@
 	faction = FACTION_PLAYER_SOLCON
 	faction_icon = "bg_solgov"
 
-/datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.grant_language(/datum/language/solarian_international)
-
 /datum/outfit/job/solgov/assistant
 	name = "SolGov - Scribe"
 	id_assignment = "Scribe"

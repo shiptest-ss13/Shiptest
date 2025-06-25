@@ -4,7 +4,7 @@
 	speech_verb = "flutters"
 	ask_verb = "fluffs"
 	exclaim_verb = "floofs"
-	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE
 	key = "m"
 	space_chance = 55
 	syllables = list( //hollow knight

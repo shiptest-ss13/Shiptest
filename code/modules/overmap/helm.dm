@@ -146,6 +146,11 @@
 		current_ship.helms -= src
 	current_ship = port.current_ship
 	current_ship.helms |= src
+	if(port.registered_faction)
+		var/datum/language/official_language = port.registered_faction.official_language
+		var/datum/language_holder/lang_holder = get_language_holder()
+		grant_language(official_language)
+		lang_holder.selected_language = official_language
 
 /**
  * This proc manually rechecks that the helm computer is connected to a proper ship

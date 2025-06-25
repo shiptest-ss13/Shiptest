@@ -1,12 +1,12 @@
 /datum/language/zohil_kalixcian
 	name = "Zohilan"
-	desc = "A Kalixcian language commonly spoken in the Zohil Explorat and its former colonies. Speakers of other Kalixcian languages often find it difficult to pronounce."
+	desc = "A Kalixcian language commonly spoken in the Zohil Explorat and its former colonies in the Maxin system. Speakers of other Kalixcian languages often find it difficult to pronounce."
 	speech_verb = "hisses"
 	ask_verb = "hisses"
 	exclaim_verb = "roars"
 	sing_verb = "sings"
 	key = "z"
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
+	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | ROUNDSTART_LANGUAGE | NO_HISS
 	space_chance = 12
 	sentence_chance = 0
 	between_word_sentence_chance = 10
@@ -29,5 +29,5 @@
 	icon_state = "lizard"
 	default_priority = 90
 	mutual_understanding = list(
-		/datum/language/gezena_kalixcian = 90, // enough to sort of understand each other, but not very well
+		/datum/language/gezena_kalixcian = 90, // enough to sort of understand each other, but not perfectly
 	)

@@ -8,6 +8,8 @@
 	var/list/prefixes
 	/// List/Typecache of factions that this faction is allowed to interact with. Non-recursive.
 	var/list/allowed_factions = list()
+	/// The official language of this faction. Galactic Common by default.
+	var/official_language = /datum/language/galactic_common
 	/// Theme color for this faction, currently only used for the wiki
 	var/color = "#ffffff"
 	/// Contrast color for this faction, used for links on the wiki
@@ -68,6 +70,7 @@
 /datum/faction/syndicate/suns
 	name = FACTION_SUNS
 	short_name = "SUNS"
+	official_language = /datum/language/solarian_international
 	prefixes = PREFIX_SUNS
 	color = "#CD94D3"
 
@@ -79,6 +82,7 @@
 /datum/faction/solgov
 	name = FACTION_SOLCON
 	parent_faction = /datum/faction/solgov
+	official_language = /datum/language/solarian_international
 	prefixes = PREFIX_SOLCON
 	color = "#444e5f"
 
@@ -129,6 +133,7 @@
 	name = FACTION_PGF
 	short_name = "PGF"
 	parent_faction = /datum/faction/pgf
+	official_language = /datum/language/gezena_kalixcian
 	prefixes = PREFIX_PGF
 	color = "#359829"
 
