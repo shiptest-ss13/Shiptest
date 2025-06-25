@@ -198,6 +198,7 @@
 	icon_state = "ngr_x11"
 	item_state = "ngr_x11"
 	can_flashlight = TRUE
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/ngr/swat
 	name = "\improper NGR pilot helmet"

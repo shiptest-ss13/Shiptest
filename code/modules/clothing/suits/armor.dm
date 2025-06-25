@@ -53,7 +53,6 @@
 	desc = "A heavy set of the finest mass-produced stamped plasteel armor plates money can buy."
 	icon_state = "marine_light"
 	item_state = "armor"
-	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 20, "bullet" = 45, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 65, "fire" = 40, "acid" = 50, "wound" = 20)
 	cold_protection = CHEST|GROIN

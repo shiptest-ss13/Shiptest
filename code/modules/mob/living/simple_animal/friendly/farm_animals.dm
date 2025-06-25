@@ -461,3 +461,24 @@
 	food_type = list(/obj/item/food/grown/apple)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
+//Now that they cant lay eggs I will want to repath these at some point
+/mob/living/simple_animal/chicken/rabbit
+	name = "\improper rabbit"
+	desc = "The hippiest hop around."
+	icon = 'icons/mob/easter.dmi'
+	icon_state = "b_rabbit"
+	icon_living = "b_rabbit"
+	icon_dead = "b_rabbit_dead"
+	icon_prefix = "b_rabbit"
+	speak = list()
+	speak_emote = list("sniffles","twitches")
+	emote_hear = list("hops.")
+	emote_see = list("hops around","bounces up and down")
+	butcher_results = list(/obj/item/food/meat/slab = 1)
+	food_type = /obj/item/food/grown/carrot
+	minbodytemp = 0
+	eggsFertile = FALSE
+	eggsleft = 0
+	egg_type = null
+	feedMessages = list("It nibbles happily.","It noms happily.")
+	layMessage = list("hides an egg.","scampers around suspiciously.","begins making a huge racket.","begins shuffling.")

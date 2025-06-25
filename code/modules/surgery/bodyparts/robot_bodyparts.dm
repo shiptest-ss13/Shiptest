@@ -357,7 +357,7 @@
 	icon = 'icons/mob/augmentation/augments_lizard.dmi'
 	should_draw_greyscale = TRUE
 	overlay_icon_state = TRUE
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_SNOUT
 
 /obj/item/bodypart/l_arm/robot/lizard
 	name = "prosthetic lizard left arm"

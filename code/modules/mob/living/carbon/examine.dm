@@ -100,8 +100,10 @@
 
 	if(fire_stacks > 0)
 		msg += "[t_He] [t_is] covered in something flammable.\n"
-	if(fire_stacks < 0)
+	if(fire_stacks < 0 && fire_stacks > -15)
 		msg += "[t_He] look[p_s()] a little soaked.\n"
+	else if (fire_stacks <= -15)
+		msg += "[t_He] look[p_s()] completely sopping.\n"
 
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
