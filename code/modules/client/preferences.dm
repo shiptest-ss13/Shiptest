@@ -382,7 +382,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(lang_type == native_language)
 					continue
 				dat += "<tr><td><b>[initial(lang_type.name)]: </b></td>"
-				dat += "<td><a href='byond://?_src_=prefs;preference=learned_language;task=input;language=[lang_type]'>[learned_languages[lang_type]]</a></td></tr>"
+				dat += "<td><a href='byond://?_src_=prefs;preference=learned_language;task=input;language=[REF(GLOB.language_datum_instances[lang_type])]'>[learned_languages[lang_type]]</a></td></tr>"
 				points_left -= language_level_costs[learned_languages[lang_type]]
 			dat += "<tr><td><a href='byond://?_src_=prefs;preference=reset_languages;task=input'>Reset Languages</a></td></tr>"
 			dat += "<tr><b>[points_left]</b> points left.</tr></table></td>"
@@ -2157,27 +2157,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						learned_languages[new_lang] = LANGUAGE_UNKNOWN
 
 				if("learned_language")
-					var/datum/language/selected_lang = text2path(href_list["language"])
-					if(selected_lang == native_language) // wuh oh
+					var/datum/language/selected_lang = locate(href_list["language"])
+					if(selected_lang.type == native_language) // wuh oh
 						CRASH("[usr] attempted to change level of understanding for [selected_lang] despite it being their native language!")
-					if(selected_lang && (initial(selected_lang.flags) & ROUNDSTART_LANGUAGE)) // no using html exploits to learn codespeak
+					if(selected_lang && (selected_lang.flags & ROUNDSTART_LANGUAGE)) // no using html exploits to learn codespeak
 						var/understanding = tgui_input_list(user, "Select level of understanding:", "Learn Language", language_level_costs)
 						if(!understanding)
 							return
 						if(!(understanding in language_level_costs))
-							CRASH("[usr] attempted to set level of understanding for [selected_lang] to \"[understanding]\"")
+							CRASH("[usr] attempted to set level of understanding for [selected_lang.type] to \"[understanding]\"")
 						var/total_cost = 0
 						for(var/datum/language/lang_type as anything in learned_languages)
 							if(lang_type == native_language)
 								continue // this shouldn't happen but just in case
-							if(lang_type == selected_lang)
+							if(lang_type == selected_lang.type)
 								total_cost += language_level_costs[understanding]
 							else
 								total_cost += language_level_costs[learned_languages[lang_type]]
 						if(total_cost > MAX_LANGUAGE_POINTS)
 							to_chat(usr, span_warning("You don't have enough language points!"))
 							return
-						learned_languages[selected_lang] = understanding
+						learned_languages[selected_lang.type] = understanding
 
 				if("reset_languages")
 					init_learned_languages()
