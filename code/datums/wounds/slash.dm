@@ -36,12 +36,11 @@
 		victim.self_grasp_bleeding_limb(limb)
 
 /datum/wound/slash/wound_injury(datum/wound/slash/old_wound = null, attack_direction = null)
+	blood_flow = initial_flow
 	if(old_wound)
 		blood_flow = max(old_wound.blood_flow, initial_flow)
-	else
-		blood_flow = initial_flow
-		if(attack_direction && victim.blood_volume > BLOOD_VOLUME_OKAY)
-			victim.spray_blood(attack_direction, severity)
+	else if(attack_direction && victim.blood_volume > BLOOD_VOLUME_OKAY)
+		victim.spray_blood(attack_direction, severity)
 
 /datum/wound/slash/get_examine_description(mob/user)
 	if(!limb.current_gauze)

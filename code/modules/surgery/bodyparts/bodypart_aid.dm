@@ -99,13 +99,13 @@
 	overlay_prefix = "splint"
 	desc_prefix = "fastened"
 	stack_to_drop = /obj/item/stack/medical/splint
-	/// How effective are we in keeping the bodypart rigid
+	/// How effective are we in keeping the bodypart rigid, lower is better
 	var/splint_factor = 0.3
 	/// Whether the splint prevents the limb from being disabled, with a ruptured tendon or a shattered bone
 	var/helps_disabled = TRUE
 	/// Total condition of our splint, the more we use it the more it gets looser
 	var/sling_condition = 5
-
+	
 /datum/bodypart_aid/splint/get_description()
 	var/desc
 	switch(sling_condition)

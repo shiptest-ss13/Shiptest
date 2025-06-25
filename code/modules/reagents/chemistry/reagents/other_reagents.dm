@@ -2282,7 +2282,7 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
 	self_consuming = TRUE
 	taste_description = "pure determination"
-	overdose_threshold = 30
+	overdose_threshold = 45
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 
@@ -2335,7 +2335,7 @@
 	..()
 	. = 1
 
-/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H) //TODO port bee's regen cores legioning miners, and make it only do that if overdosed on crystal
+/datum/reagent/crystal_reagent/overdose_process(mob/living/carbon/human/H)
 	to_chat(H,span_danger("You feel your heart rupturing in two!"))
 	H.adjustStaminaLoss(10)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART,100)

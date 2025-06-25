@@ -46,8 +46,10 @@
 		if(limb.current_splint?.splint_factor)
 			wounding_dmg *= (1 - limb.current_splint.splint_factor)
 
-		var/blood_bled = sqrt(wounding_dmg) * internal_bleeding_coefficient * pick(0.75, 1, 1.25, 1.5) //thank you melbert math
+		var/blood_bled = rand(1, wounding_dmg * internal_bleeding_coefficient)
 		switch(blood_bled)
+			if(1 to 6)
+				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
 				victim.visible_message(
 					span_danger("Blood droplets fly from the hole in [victim]'s [limb.name]."),

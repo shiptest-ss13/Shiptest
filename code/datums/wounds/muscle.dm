@@ -82,8 +82,8 @@
 				vision_distance = COMBAT_MESSAGE_RANGE
 			)
 			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
-			victim.Stun(0.25 SECONDS)
-			limb.receive_damage(brute = rand(2,5))
+			victim.Stun(0.1 SECONDS)
+			limb.receive_damage(brute = rand(2,4))
 			return COMPONENT_ITEM_NO_ATTACK
 
 /datum/wound/muscle/get_examine_description(mob/user)
@@ -165,7 +165,7 @@
 	threshold_penalty = 35
 	disabling = TRUE
 	status_effect_type = /datum/status_effect/wound/muscle/severe
-	regen_ticks_needed = 2500
+	regen_ticks_needed = 1500 //takes a while
 
 /datum/status_effect/wound/muscle
 

@@ -1,7 +1,7 @@
 #define BLOOD_DRIP_RATE_MOD 90 //Greater number means creating blood drips more often while bleeding
 
 // Takes care blood loss and regeneration
-/mob/living/carbon/human/handle_blood(delta_time, times_fired)
+/mob/living/carbon/human/handle_blood()
 
 	if(NOBLOOD in dna.species.species_traits || HAS_TRAIT(src, TRAIT_NOBLEED) || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		return
@@ -25,7 +25,7 @@
 				nutrition_ratio = 1
 		if(satiety > 80)
 			nutrition_ratio *= 1.25
-		adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR * delta_time)
+		adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
 		blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
 
 	if(blood_volume < BLOOD_VOLUME_NORMAL && HAS_TRAIT(src, TRAIT_NOHUNGER)) //blood regen for non eaters
@@ -35,26 +35,38 @@
 	var/word = pick("dizzy","woozy","faint")
 	switch(blood_volume)
 		if(BLOOD_VOLUME_EXCESS to BLOOD_VOLUME_MAX_LETHAL)
-			if(DT_PROB(7.5, delta_time))
+			if(prob(15))
 				to_chat(src, span_userdanger("Blood starts to tear your skin apart. You're going to burst!"))
 				inflate_gib()
+
 		if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
-			if(DT_PROB(5, delta_time))
+			if(prob(10))
 				to_chat(src, span_warning("You feel terribly bloated."))
+
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			if(DT_PROB(2.5, delta_time))
+			if(prob(1))
 				to_chat(src, span_warning("You feel [word]."))
-			adjustOxyLoss(round(0.005 * (BLOOD_VOLUME_NORMAL - blood_volume) * delta_time, 1))
+			if(oxyloss < 20)
+				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			adjustOxyLoss(round(0.01 * (BLOOD_VOLUME_NORMAL - blood_volume) * delta_time, 1))
-			if(DT_PROB(2.5, delta_time))
-				blur_eyes(6)
+			if(eye_blurry < 50)
+				adjust_blurriness(5)
+			if(oxyloss < 40)
+				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+			else
+				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
+			if(prob(10))
+				Unconscious(rand(2 SECONDS,6 SECONDS))
 				to_chat(src, span_warning("You feel very [word]."))
+
 		if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-			adjustOxyLoss(2.5 * delta_time)
-			if(DT_PROB(7.5, delta_time))
-				Unconscious(rand(20,60))
+			adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+			adjustToxLoss(2)
+			if(prob(15))
+				Unconscious(rand(2 SECONDS,6 SECONDS))
 				to_chat(src, span_warning("You feel extremely [word]."))
+
 		if(-INFINITY to BLOOD_VOLUME_SURVIVE)
 			if(!HAS_TRAIT(src, TRAIT_NODEATH))
 				death()
@@ -64,7 +76,7 @@
 	//Bleeding out
 	for(var/obj/item/bodypart/iter_part as anything in bodyparts)
 		var/iter_bleed_rate = iter_part.get_part_bleed_rate()
-		temp_bleed += iter_bleed_rate * delta_time
+		temp_bleed += iter_bleed_rate
 		iter_part.generic_bleedstacks = max(0, iter_part.generic_bleedstacks - 1)
 		if(iter_part.update_part_wound_overlay())
 			update_bleed_icons = TRUE
@@ -75,7 +87,6 @@
 	if(temp_bleed)
 		bleed(temp_bleed)
 		bleed_warn(temp_bleed)
-
 
 /// Has each bodypart update its bleed/wound overlay icon states. If any have changed, it has the owner update wound overlays and returns TRUE
 /mob/living/carbon/proc/update_bodypart_bleed_overlays()
