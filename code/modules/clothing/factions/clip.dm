@@ -184,7 +184,7 @@
 
 	supports_variations = DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
-	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = , "wound" = 20)
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /obj/item/clothing/head/helmet/space/hardsuit/clip_patroller
 	name = "\improper CM-410 'Patroller' EVA Hardsuit helmet"
