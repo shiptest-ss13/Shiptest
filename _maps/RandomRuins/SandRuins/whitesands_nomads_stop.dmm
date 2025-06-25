@@ -104,6 +104,12 @@
 	},
 /turf/open/floor/plating,
 /area/space)
+"bU" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter{
+	wander = 0
+	},
+/turf/open/floor/concrete/whitesands/lit,
+/area/space)
 "cb" = (
 /obj/machinery/conveyor_switch{
 	pixel_y = 17;
@@ -1520,6 +1526,12 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/space)
+"BH" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle{
+	wander = 0
+	},
+/turf/open/floor/concrete/slab_1/whitesands/lit,
+/area/space)
 "BK" = (
 /obj/effect/turf_decal/road{
 	dir = 6
@@ -2037,6 +2049,12 @@
 /area/space)
 "KO" = (
 /turf/open/floor/plating/asteroid/whitesands/lit,
+/area/space)
+"KS" = (
+/mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle{
+	wander = 0
+	},
+/turf/open/floor/concrete/whitesands/lit,
 /area/space)
 "Li" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -3188,7 +3206,7 @@ XS
 ib
 XS
 JU
-Te
+KS
 kJ
 kJ
 kJ
@@ -3400,7 +3418,7 @@ Yw
 Cp
 Cp
 Te
-Te
+bU
 JU
 Hn
 Hn
@@ -3711,7 +3729,7 @@ Ha
 Ha
 Ha
 Yw
-Te
+bU
 JU
 Hn
 Hn
@@ -3727,7 +3745,7 @@ Yw
 Yw
 Bv
 Yk
-xn
+BH
 xn
 dh
 nj
@@ -5400,13 +5418,13 @@ Te
 kJ
 kJ
 Te
-Te
+KS
 JU
 XS
 ib
 XS
 JU
-Te
+bU
 Te
 kJ
 kJ

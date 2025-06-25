@@ -63,7 +63,7 @@
 	projectile_type = /obj/projectile/bullet/c46x30mm/rubber
 
 /obj/item/ammo_casing/c46x30mm/tesla
-	name = "4.6x30mm teslak casing"
+	name = "4.6x30mm tesla flux casing"
 	desc = "A 4.6x30mm rubber bullet casing."
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/energy/tesla/explosive
