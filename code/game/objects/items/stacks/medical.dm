@@ -68,7 +68,6 @@
 
 	if(heal(patient, user))
 		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
-		user?.mind.adjust_experience(/datum/skill/healing, experience_given)
 		log_combat(user, patient, "healed", src.name)
 		use(1)
 		if(repeating && amount > 0)
@@ -120,6 +119,7 @@
 			C.update_damage_overlays()
 		post_heal_effects(max(previous_damage - affecting.get_damage(), 0), C, user)
 		return TRUE
+
 	to_chat(user, span_warning("[C]'s [affecting.name] can not be healed with [src]!"))
 	return FALSE
 
@@ -137,6 +137,7 @@
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
 	self_delay = 2.5 SECONDS
 	other_delay = 2 SECONDS
+	heal_brute = 10
 	grind_results = list(/datum/reagent/medicine/c2/libital = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack
 
