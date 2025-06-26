@@ -431,6 +431,10 @@
 /obj/effect/turf_decal/number/left_zero
 	icon_state = "0-"
 
+/obj/effect/turf_decal/dash
+	icon_state = "dash"
+
+
 
 /obj/effect/turf_decal/dept/hop
 	icon_state = "hop"

@@ -57,7 +57,7 @@ standards:
 
     - no_more:
           [
-              32,
+              30,
               "indentions inside defines",
               '^(\s*)#define (\w*)( {2,}| ?\t+)(?!(\/\/|\/\*))',
           ]

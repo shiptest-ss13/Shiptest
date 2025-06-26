@@ -48,9 +48,9 @@
 	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi, /datum/blackmarket_item/tech/borg)
 
 	cost_min = 5000
-	cost_max = 8000
+	cost_max = 7000
 	stock = 1
-	availability_prob = 5
+	availability_prob = 10
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tech/boris
@@ -58,31 +58,31 @@
 	desc = "A Bluespace Optimi-blah blah blah, I'm bored already. This module will convert a cyborg frame into an AI compatible shell."
 	item = /obj/item/borg/upgrade/ai
 
-	cost_min = 500
-	cost_max = 1000
-	stock = 1
+	cost_min = 100
+	cost_max = 250
+	stock = 3
 	availability_prob = 0
 
 /datum/blackmarket_item/tech/mmi
 	name = "Man Machine Interface"
 	desc = "Transcend the weakness of your flesh with this man machine interface, compatible with AIs, Cyborgs and Mechs!"
 	item = /obj/item/mmi
-	pair_item = list(/datum/blackmarket_item/tech/borg)
 
 	cost_min = 250
 	cost_max = 750
-	stock_max = 3
-	availability_prob = 40
+	stock = 3
+	availability_prob = 0
 
 /datum/blackmarket_item/tech/borg
 	name = "Cyborg Construction Kit"
 	desc = "This durable and verastile cyborg frame is capable of fufilling a number of roles and survive situations that would kill the average person. Brain sold seperately."
 	item = /obj/structure/closet/crate/cyborg
+	pair_item = list(/datum/blackmarket_item/tech/boris, /datum/blackmarket_item/tech/mmi)
 
 	cost_min = 1000
 	cost_max = 2000
-	stock_max = 2
-	availability_prob = 0
+	stock = 3
+	availability_prob = 40
 
 /datum/blackmarket_item/tech/t4_capacitor
 	name = "Quadratic Capacitor"
@@ -202,6 +202,16 @@
 	stock_max = 3
 	availability_prob = 30
 
+/datum/blackmarket_item/tech/revieer
+	name = "Reviver Implant"
+	desc = "Living on the edge? This reviver implant will stitch you back together if you pass out! Every customer who survived reported a 100% success rate!"
+	item = /obj/item/organ/cyberimp/chest/reviver
+
+	cost_min = 2000
+	cost_max = 3000
+	stock = 1
+	availability_prob = 15
+
 /datum/blackmarket_item/tech/arm_gun
 	name = "Arm Mounted Laser Cannon Implant"
 	desc = "A retractable laser cannon that fits inside your arm for concealment. You won't be passing any metal detector scans though."
@@ -209,6 +219,17 @@
 
 	cost_min = 2000
 	cost_max = 4000
+	stock = 1
+	availability_prob = 15
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/tech/arm_sword
+	name = "Arm Mounted Energy Sword Implant"
+	desc = "This concealable arm implanted energy sword will make you a cut above the rest of the competition! Just be careful when you pick your nose, or you might be getting a close shave."
+	item = /obj/item/organ/cyberimp/arm/esword
+
+	cost_min = 2000
+	cost_max = 3500
 	stock = 1
 	availability_prob = 15
 	spawn_weighting = FALSE

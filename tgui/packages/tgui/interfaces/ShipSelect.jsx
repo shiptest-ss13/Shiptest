@@ -189,11 +189,16 @@ export const ShipSelect = (props) => {
                       <Button
                         content="Select"
                         tooltip={
-                          !data.autoMeet &&
-                          data.playMin < job.minTime &&
-                          'You do not have enough playtime to play this job.'
+                          (!data.autoMeet &&
+                            data.playMin < job.minTime &&
+                            'You do not have enough playtime to play this job.') ||
+                          (data.officerBanned &&
+                            'You are banned from playing officer roles')
                         }
-                        disabled={!data.autoMeet && data.playMin < job.minTime}
+                        disabled={
+                          (!data.autoMeet && data.playMin < job.minTime) ||
+                          (data.officerBanned && job.officer)
+                        }
                         onClick={() => {
                           act('join', {
                             ship: selectedShip.ref,
