@@ -16,7 +16,6 @@
 	force = 40
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield
-	var/image/shield
 	var/shield_type = /obj/durand_shield
 	var/shield_passive_drain = 50 // significantly reduced in favor of overheating
 
@@ -32,7 +31,6 @@
 
 /obj/mecha/combat/durand/Initialize()
 	. = ..()
-	shield =
 	shield = new shield_type(loc, src, layer, dir)
 	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
 	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_MECH_DISABLED), PROC_REF(on_mech_disabled))
@@ -274,26 +272,23 @@ the shield is disabled by means other than the action button (like running out o
 
 
 /// a mob has bumped into the shield
-/obj/mecha/combat/durand/proc/contact(mob/living/contactor)
+/obj/durand_shield/proc/contact(mob/living/contactor)
 	return
 
 /// Clippy shield
-/obj/mecha/combat/durand/clip/attack_generic(mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
+/obj/durand_shield/clip/attack_generic(mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
 	. = ..()
-	if(defense_check(get_turf(user)))
-		apply_shock(user)
+	apply_shock(user)
 
-/obj/mecha/combat/durand/clip/attackby(obj/item/I, mob/living/user, params)
+/obj/durand_shield/clip/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
-	if(defense_check(get_turf(user)))
-		apply_shock(user)
+	apply_shock(user)
 
-/obj/mecha/combat/durand/clip/contact(mob/living/contactor)
+/obj/durand_shield/clip/contact(mob/living/contactor)
 	. = ..()
-	if(defense_check(get_turf(contactor)))
-		apply_shock(contactor)
+	apply_shock(contactor)
 
-/obj/mecha/combat/durand/clip/proc/apply_shock(mob/attacker)
+/obj/durand_shield/clip/proc/apply_shock(mob/attacker)
 	var/did_shock = FALSE
 	if(iscarbon(attacker))
 		var/mob/living/carbon/victim = attacker
