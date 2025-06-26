@@ -374,8 +374,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='byond://?_src_=prefs;preference=sec_dept;task=input'><b>Preferred Security Department:</b> [prefered_security_department]</a><BR></td>"
 
 			dat += "<td><h2>Languages</h2><table>"
+			dat += "<tr><td><b>[get_language_point_balance()]</b> points left.</td></tr>"
 			dat += "<tr><td><a href='byond://?_src_=prefs;preference=native_language;task=input'><b>Native Language: </b>[initial(native_language.name)]</a></td></tr>"
-			var/points_left = MAX_LANGUAGE_POINTS
 			if(!learned_languages?.len)
 				init_learned_languages()
 			for(var/datum/language/lang_type as anything in learned_languages)
@@ -383,9 +383,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					continue
 				dat += "<tr><td><b>[initial(lang_type.name)]: </b></td>"
 				dat += "<td><a href='byond://?_src_=prefs;preference=learned_language;task=input;language=[REF(GLOB.language_datum_instances[lang_type])]'>[learned_languages[lang_type]]</a></td></tr>"
-				points_left -= language_level_costs[learned_languages[lang_type]]
-			dat += "<tr><td><a href='byond://?_src_=prefs;preference=reset_languages;task=input'>Reset Languages</a></td></tr>"
-			dat += "<tr><b>[points_left]</b> points left.</tr></table></td>"
+			dat += "<tr><td><a href='byond://?_src_=prefs;preference=reset_languages;task=input'>Reset Languages</a></td></tr></table></td>"
 
 			dat += "</tr></table>"
 
@@ -1538,7 +1536,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	for(var/datum/language/lang_type as anything in learned_languages)
 		if(lang_type == native_language)
 			continue // this should happen but just in case
-		points_balance += language_level_costs[learned_languages[lang_type]]
+		points_balance -= language_level_costs[learned_languages[lang_type]]
+	if("Trilingual" in all_quirks)
+		points_balance += 2
+	if("Monolingual" in all_quirks)
+		points_balance -= 2
 	return points_balance
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
@@ -2166,18 +2168,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							return
 						if(!(understanding in language_level_costs))
 							CRASH("[usr] attempted to set level of understanding for [selected_lang.type] to \"[understanding]\"")
-						var/total_cost = 0
-						for(var/datum/language/lang_type as anything in learned_languages)
-							if(lang_type == native_language)
-								continue // this shouldn't happen but just in case
-							if(lang_type == selected_lang.type)
-								total_cost += language_level_costs[understanding]
-							else
-								total_cost += language_level_costs[learned_languages[lang_type]]
-						if(total_cost > MAX_LANGUAGE_POINTS)
-							to_chat(usr, span_warning("You don't have enough language points!"))
-							return
+						var/old_value = learned_languages[selected_lang.type]
 						learned_languages[selected_lang.type] = understanding
+						if(get_language_point_balance() < 0 && understanding != LANGUAGE_UNKNOWN) // in case something breaks REAL bad, you can still disable languages to fix it
+							learned_languages[selected_lang.type] = old_value
+							to_chat(usr, span_warning("You don't have enough language points!"))
 
 				if("reset_languages")
 					init_learned_languages()
@@ -2647,9 +2642,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.update_body_parts(TRUE)
 	character.dna.update_body_size()
 
-	if(get_language_point_balance() < 0)
+	if(!character_setup && get_language_point_balance() < 0)
 		init_learned_languages() // no exploits allowed
 	character.grant_language(native_language)
+	character.get_language_holder().selected_language = native_language
 	for(var/datum/language/lang_type as anything in learned_languages)
 		if(lang_type == native_language)
 			continue
