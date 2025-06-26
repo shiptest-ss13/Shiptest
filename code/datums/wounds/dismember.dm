@@ -1,4 +1,3 @@
-
 /datum/wound/loss
 	name = "Dismemberment Wound"
 	desc = "Tis but a flesh wound."

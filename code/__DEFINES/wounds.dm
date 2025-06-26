@@ -14,7 +14,6 @@
 #define CANT_WOUND -100
 
 // ~wound severities
-/// for jokey/meme wounds like stubbed toe, no standard messages/sounds or second winds
 #define WOUND_SEVERITY_TRIVIAL 0
 #define WOUND_SEVERITY_MODERATE 1
 #define WOUND_SEVERITY_SEVERE 2

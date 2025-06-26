@@ -3,7 +3,6 @@
 */
 /datum/wound/muscle
 	name = "Muscle Wound"
-	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	wound_type = WOUND_MUSCLE
 	wound_flags = (FLESH_WOUND | ACCEPTS_SPLINT)
 	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -23,8 +22,10 @@
 
 	if(limb.held_index && victim.get_item_for_held_index(limb.held_index) && (disabling || prob(10 * severity)))
 		var/obj/item/I = victim.get_item_for_held_index(limb.held_index)
+
 		if(istype(I, /obj/item/offhand))
 			I = victim.get_inactive_held_item()
+
 		if(I && victim.dropItemToGround(I))
 			victim.visible_message(
 				span_danger("[victim] drops [I] in shock!"),
@@ -44,8 +45,8 @@
 
 /datum/wound/muscle/handle_process()
 	. = ..()
-
 	regen_ticks_current++
+
 	if(victim.body_position == LYING_DOWN)
 		if(prob(50))
 			regen_ticks_current += 0.5
@@ -62,7 +63,6 @@
 		to_chat(victim, span_green("Your [limb.name] has regenerated its muscle!"))
 		remove_wound()
 
-//If we're a human who's punching something with a broken arm, we might hurt ourselves doing so
 /datum/wound/muscle/proc/attack_with_hurt_hand(mob/M, atom/target, proximity)
 	SIGNAL_HANDLER
 
@@ -77,8 +77,8 @@
 			limb.receive_damage(brute=rand(1,3))
 		else
 			victim.visible_message(
-				span_danger("[victim] weakly strikes [target] with [victim.p_their()] swollen [limb.name], recoiling from pain!"),
-				span_userdanger("You fail to strike [target] as the fracture in your [limb.name] lights up in unbearable pain!"),
+				span_danger("[victim] weakly strikes [target] with [victim.p_their()] bruised [limb.name], recoiling from pain!"),
+				span_userdanger("You fail to strike [target] as the bruises on your [limb.name] lights up in unbearable pain!"),
 				vision_distance = COMBAT_MESSAGE_RANGE
 			)
 			INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
@@ -145,8 +145,8 @@
 	severity = WOUND_SEVERITY_MODERATE
 	interaction_efficiency_penalty = 1.15
 	limp_slowdown = 1
-	threshold_minimum = 30
-	threshold_penalty = 15
+	threshold_minimum = 40
+	threshold_penalty = 10
 	status_effect_type = /datum/status_effect/wound/muscle/moderate
 	regen_ticks_needed = 500
 
@@ -156,7 +156,7 @@
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	desc = "Patient's tendon has been severed, causing significant pain and near uselessness of limb."
 	treat_text = "Recommended rest and sleep as well as splinting the limb."
-	examine_desc = "is limp and awkwardly twitching, flesh swollen"
+	examine_desc = "is limp with flesh swollen"
 	occur_text = "twists in pain and goes limp, a tendon is ruptured!"
 	severity = WOUND_SEVERITY_SEVERE
 	interaction_efficiency_penalty = 1.25

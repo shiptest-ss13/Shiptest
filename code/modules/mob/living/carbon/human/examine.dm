@@ -239,12 +239,10 @@
 			else
 				msg += "<b>[t_He] [t_has] severe cellular damage!</b>\n"
 
-
 	if(fire_stacks > 0)
 		msg += "[t_He] [t_is] covered in something flammable.\n"
 	if(fire_stacks < 0)
 		msg += "[t_He] look[p_s()] a little soaked.\n"
-
 
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
@@ -262,13 +260,14 @@
 	var/apparent_blood_volume = blood_volume
 	if(skin_tone == "albino")
 		apparent_blood_volume -= 150 // enough to knock you down one tier
+
 	switch(apparent_blood_volume)
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			msg += "[t_He] [t_has] pale skin.\n"
+			msg += "<b>[t_He] [t_has] looks pale.</b>\n"
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			msg += "<b>[t_He] look[p_s()] like pale death.</b>\n"
+			msg += "<b>[t_He] look[p_s()] like [t_He] is going to faint.</b>\n"
 		if(-INFINITY to BLOOD_VOLUME_BAD)
-			msg += "<span class='deadsay'><b>[t_He] looks drained of blood...</b></span>\n"
+			msg += span_deadsay("<b>[t_He] looks drained of blood...</b>\n")
 
 	if(bleedsuppress)
 		msg += "[t_He] [t_is] imbued with a power that defies bleeding.\n"
@@ -287,7 +286,7 @@
 
 		var/list/bleed_text
 		if(appears_dead)
-			bleed_text = list("<span class='deadsay'><B>Blood is visible in [t_his] open")
+			bleed_text = list(span_deadsay("<B>Blood is visible in [t_his] open"))
 		else
 			bleed_text = list("<B>[t_He] [t_is] bleeding from [t_his]")
 
@@ -306,16 +305,11 @@
 			if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
 				bleed_text += " incredibly quickly"
 
-		bleed_text += "!</B>\n"
-
 		for(var/i in grasped_limbs)
 			var/obj/item/bodypart/grasped_part = i
 			bleed_text += "[t_He] [t_is] holding [t_his] [grasped_part.name] to slow the bleeding!\n"
 
 		msg += bleed_text.Join()
-
-	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
-		msg += "[t_He] [t_is] emitting a gentle blue glow!\n"
 
 	if(islist(stun_absorption))
 		for(var/i in stun_absorption)
@@ -378,13 +372,15 @@
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")
 
-	switch(mothdust) //WS edit - moth dust from hugging
+// evil ass cursed code alert
+	switch(mothdust)
 		if(1 to 50)
 			. += "[t_He] [t_is] a little dusty."
 		if(51 to 150)
 			. += "[t_He] [t_has] a layer of shimmering dust on [t_him]."
 		if(151 to INFINITY)
-			. += "<b>[t_He] [t_is] covered in glistening dust!</b>" //End WS edit
+			. += "<b>[t_He] [t_is] covered in glistening dust!</b>"
+// end evil ass cursed code
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
@@ -442,7 +438,7 @@
 		var/flavor = print_flavor_text()
 		if(flavor)
 			. += flavor
-	. += "*---------*</span>"
+	. += "</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 

@@ -1,4 +1,3 @@
-
 /*
 	Slashing wounds
 */
@@ -37,8 +36,10 @@
 
 /datum/wound/slash/wound_injury(datum/wound/slash/old_wound = null, attack_direction = null)
 	blood_flow = initial_flow
+
 	if(old_wound)
 		blood_flow = max(old_wound.blood_flow, initial_flow)
+
 	else if(attack_direction && victim.blood_volume > BLOOD_VOLUME_OKAY)
 		victim.spray_blood(attack_direction, severity)
 
@@ -68,9 +69,11 @@
 /datum/wound/slash/drag_bleed_amount()
 	// say we have 3 severe cuts with 3 blood flow each, pretty reasonable
 	// compare with being at 100 brute damage before, where you bled (brute/100 * 2), = 2 blood per tile
-	var/bleed_amt = min(blood_flow * 0.1, 1) // 3 * 3 * 0.1 = 0.9 blood total, less than before! the share here is .3 blood of course.
+	// 3 * 3 * 0.1 = 0.9 blood total, less than before! the share here is .3 blood of course.
+	var/bleed_amt = min(blood_flow * 0.1, 1)
 
-	if(limb.current_gauze && limb.current_gauze.seep_gauze(bleed_amt * 0.15, GAUZE_STAIN_BLOOD)) // gauze stops all bleeding from dragging on this limb, but wears the gauze out quicker
+	// gauze stops all bleeding from dragging on this limb, but wears the gauze out quicker
+	if(limb.current_gauze && limb.current_gauze.seep_gauze(bleed_amt * 0.15, GAUZE_STAIN_BLOOD))
 		return
 
 	return bleed_amt
@@ -96,7 +99,7 @@
 	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
-		blood_flow += 0.5 // old heparin used to just add +2 bleed stacks per tick, this adds 0.5 bleed flow to all open cuts which is probably even stronger as long as you can cut them first
+		blood_flow += 0.5 // adds 0.5 bleed flow to ALL open cuts
 
 	if(limb.current_gauze)
 		if(clot_rate > 0)
@@ -115,7 +118,6 @@
 		else
 			to_chat(victim, span_green("The cut on your [limb.name] has stopped bleeding!"))
 			qdel(src)
-
 
 /datum/wound/slash/on_stasis()
 	if(blood_flow >= minimum_flow)
@@ -231,17 +233,18 @@
 	occur_text = "is cut open, slowly leaking blood"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 2
-	minimum_flow = 0.35
+	initial_flow = 1.5
+	minimum_flow = 0.1
 	clot_rate = 0.015
 	threshold_minimum = 30
 	threshold_penalty = 10
+	demotes_to = /datum/wound/muscle/moderate
 	status_effect_type = /datum/status_effect/wound/slash/moderate
 
 /datum/wound/slash/severe
 	name = "Open Laceration"
 	desc = "Patient's flesh is ripped clean open, allowing significant blood loss."
-	treat_text = "Application of clean bandages and sutures."
+	treat_text = "Application of clean bandages and sutures or cauterization."
 	examine_desc = "has a severe cut"
 	occur_text = "is ripped open, veins spurting blood"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
@@ -250,23 +253,23 @@
 	minimum_flow = 1.5
 	clot_rate = 0.025
 	threshold_minimum = 50
-	threshold_penalty = 40
+	threshold_penalty = 20
 	demotes_to = /datum/wound/slash/moderate
 	status_effect_type = /datum/status_effect/wound/slash/severe
 
 /datum/wound/slash/critical
 	name = "Weeping Avulsion"
 	desc = "Patient's flesh is completely torn open, along with significant loss of tissue. Extreme blood loss will lead to quick death without intervention."
-	treat_text = "Immediate bandaging and either suturing or cauterization, followed by supervised resanguination."
-	examine_desc = "is carved down to the bone, spraying blood wildly"
+	treat_text = "Bandage immediately and apply pressure, then apply sutures or cauterization."
+	examine_desc = "is slashed open, spraying blood wildly"
 	occur_text = "is torn open, spraying blood wildly"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 2
-	minimum_flow = 1.75
-	clot_rate = -0.010 // critical cuts actively get worse instead of better
-	threshold_minimum = 90
-	threshold_penalty = 40
+	initial_flow = 3
+	minimum_flow = 2
+	clot_rate = -0.005 // critical cuts actively get worse instead of better
+	threshold_minimum = 100
+	threshold_penalty = 50
 	demotes_to = /datum/wound/slash/severe
 	status_effect_type = /datum/status_effect/wound/slash/critical
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)

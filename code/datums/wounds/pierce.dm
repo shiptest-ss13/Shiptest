@@ -1,4 +1,3 @@
-
 /*
 	Piercing wounds
 */
@@ -85,11 +84,6 @@
 /datum/wound/pierce/handle_process()
 	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
-	if(victim.bodytemperature < (victim.get_body_temp_normal(FALSE) - 25))
-		blood_flow -= 0.2
-		if(prob(5))
-			to_chat(victim, span_notice("You feel the [lowertext(name)] in your [limb.name] firming up from the cold!"))
-
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
 		blood_flow += 0.3
 
@@ -154,7 +148,7 @@
 		span_danger("[user] begins cauterizing [victim]'s [limb.name] with [I]..."),
 		span_warning("You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."),
 	)
-	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
+	if(!do_after(user, base_treat_time * self_penalty_mult * improv_penalty_mult, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	playsound(user, 'sound/surgery/cautery2.ogg', 20)
@@ -174,8 +168,8 @@
 /datum/wound/pierce/moderate
 	name = "Minor Breakage"
 	desc = "Patient's skin has been broken open, causing severe bruising and minor internal bleeding in affected area."
-	treat_text = "Treat affected site with bandaging or exposure to extreme cold. In dire cases, brief exposure to vacuum may suffice." // space is cold in ss13, so it's like an ice pack!
-	examine_desc = "has a small, circular hole, gently bleeding"
+	treat_text = "Application of clean bandages and sutures or cauterization."
+	examine_desc = "has a small gently bleeding hole"
 	occur_text = "spurts out a thin stream of blood"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
@@ -190,9 +184,9 @@
 /datum/wound/pierce/severe
 	name = "Open Puncture"
 	desc = "Patient's internal tissue is penetrated, causing sizeable internal bleeding and reduced limb stability."
-	treat_text = "Repair punctures in skin by suture or cautery, extreme cold may also work."
+	treat_text = "Application of clean bandages and sutures or cauterization."
 	examine_desc = "is pierced clear through, with bits of tissue obscuring the open hole"
-	occur_text = "looses a violent spray of blood, revealing a pierced wound"
+	occur_text = "looses a violent spray of blood"
 	sound_effect = 'sound/effects/wounds/pierce2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
 	initial_flow = 2
@@ -206,9 +200,9 @@
 /datum/wound/pierce/critical
 	name = "Ruptured Cavity"
 	desc = "Patient's internal tissue and circulatory system is shredded, causing significant internal bleeding and damage to internal organs."
-	treat_text = "Surgical repair of puncture wound, followed by supervised resanguination."
-	examine_desc = "is ripped clear through, barely held together by exposed bone"
-	occur_text = "blasts apart, sending chunks of viscera flying in all directions"
+	treat_text = "Bandaging, cauterization, or surgical repair followed by potential transfusion."
+	examine_desc = "has a deep bleeding puncture"
+	occur_text = "blasts apart, sending blood flying"
 	sound_effect = 'sound/effects/wounds/pierce3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
 	initial_flow = 3
@@ -218,4 +212,4 @@
 	threshold_minimum = 115
 	threshold_penalty = 50
 	status_effect_type = /datum/status_effect/wound/pierce/critical
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)
+	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | ACCEPTS_SPLINT | MANGLES_FLESH)

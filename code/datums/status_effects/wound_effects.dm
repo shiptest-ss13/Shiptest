@@ -204,6 +204,7 @@
 	id = "hairline"
 /datum/status_effect/wound/blunt/critical
 	id = "compound"
+
 // slash
 /datum/status_effect/wound/slash/moderate
 	id = "abrasion"
@@ -211,6 +212,7 @@
 	id = "laceration"
 /datum/status_effect/wound/slash/critical
 	id = "avulsion"
+
 // pierce
 /datum/status_effect/wound/pierce/moderate
 	id = "breakage"
@@ -218,6 +220,7 @@
 	id = "puncture"
 /datum/status_effect/wound/pierce/critical
 	id = "rupture"
+
 // burns
 /datum/status_effect/wound/burn/moderate
 	id = "seconddeg"
@@ -225,6 +228,7 @@
 	id = "thirddeg"
 /datum/status_effect/wound/burn/critical
 	id = "fourthdeg"
+
 // muscle
 /datum/status_effect/wound/muscle/moderate
 	id = "torn muscle"

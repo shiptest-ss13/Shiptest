@@ -1,11 +1,10 @@
 /*
-	Wounds are specific medical complications that can arise and be applied to (currently) carbons, with a focus on humans. All of the code for and related to this is heavily WIP,
-	and the documentation will be slanted towards explaining what each part/piece is leading up to, until such a time as I finish the core implementations. The original design doc
-	can be found at https://hackmd.io/@Ryll/r1lb4SOwU
-
-	Wounds are datums that operate like a mix of diseases, brain traumas, and components, and are applied to a /obj/item/bodypart (preferably attached to a carbon) when they take large spikes of damage
-	or under other certain conditions (thrown hard against a wall, sustained exposure to plasma fire, etc). Wounds are categorized by the three following criteria:
-		1. Severity: Either MODERATE, SEVERE, or CRITICAL. See the hackmd for more details
+	Wounds are datums that operate like a mix of diseases, brain traumas, and components, and are
+	applied to a /obj/item/bodypart (preferably attached to a carbon) when they take large spikes of damage
+	or under other certain conditions (thrown hard against a wall, sustained exposure to plasma fire, etc).
+	
+	Wounds are categorized by the three following criteria:
+		1. Severity: Either MODERATE, SEVERE, or CRITICAL.
 		2. Viable zones: What body parts the wound is applicable to. Generic wounds like broken bones and severe burns can apply to every zone, but you may want to add special wounds for certain limbs
 			like a twisted ankle for legs only, or open air exposure of the organs for particularly gruesome chest wounds. Wounds should be able to function for every zone they are marked viable for.
 		3. Damage type: Currently either BRUTE or BURN. Again, see the hackmd for a breakdown of my plans for each type.
@@ -31,9 +30,9 @@
 	/// This sound will be played upon the wound being applied
 	var/sound_effect
 
-	/// Either WOUND_SEVERITY_TRIVIAL (meme wounds like stubbed toe), WOUND_SEVERITY_MODERATE, WOUND_SEVERITY_SEVERE, or WOUND_SEVERITY_CRITICAL (or maybe WOUND_SEVERITY_LOSS)
+	/// Either WOUND_SEVERITY_TRIVIAL, WOUND_SEVERITY_MODERATE, WOUND_SEVERITY_SEVERE, WOUND_SEVERITY_CRITICAL, WOUND_SEVERITY_LOSS
 	var/severity = WOUND_SEVERITY_MODERATE
-	/// The list of wounds it belongs in, WOUND_LIST_BLUNT, WOUND_LIST_SLASH, or WOUND_LIST_BURN
+	/// The list of wounds it belongs in, WOUND_BLUNT, WOUND_SLASH, WOUND_BURN, WOUND_MUSCLE
 	var/wound_type
 
 	/// What body zones can we affect
@@ -50,7 +49,7 @@
 	/// Tools with the specified tool flag will also be able to try directly treating this wound
 	var/treatable_tool
 	/// How long it will take to treat this wound with a standard effective tool, assuming it doesn't need surgery
-	var/base_treat_time = 5 SECONDS
+	var/base_treat_time = 3 SECONDS
 
 	/// Using this limb in a do_after interaction will multiply the length by this duration (arms)
 	var/interaction_efficiency_penalty = 1
@@ -91,7 +90,8 @@
 /datum/wound/Destroy()
 	if(attached_surgery)
 		QDEL_NULL(attached_surgery)
-	if(limb?.wounds && (src in limb.wounds)) // destroy can call remove_wound() and remove_wound() calls qdel, so we check to make sure there's anything to remove first
+	// destroy can call remove_wound() and remove_wound() calls qdel, so we check to make sure there's anything to remove first
+	if(limb?.wounds && (src in limb.wounds))
 		remove_wound()
 	set_limb(null)
 	victim = null
@@ -172,11 +172,13 @@
 /datum/wound/proc/remove_wound(ignore_limb, replaced = FALSE)
 	//TODO: have better way to tell if we're getting removed without replacement (full heal)
 	set_disabling(FALSE)
+
 	if(victim)
 		LAZYREMOVE(victim.all_wounds, src)
 		if(!victim.all_wounds)
 			victim.clear_alert("wound")
 		SEND_SIGNAL(victim, COMSIG_CARBON_LOSE_WOUND, src, limb)
+
 	if(limb && !ignore_limb)
 		LAZYREMOVE(limb.wounds, src)
 		limb.update_wounds(replaced)

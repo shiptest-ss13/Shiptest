@@ -1,4 +1,3 @@
-
 /*
 	Burn wounds
 */
@@ -211,6 +210,8 @@
 	sanitization += I.sanitization
 	flesh_healing += I.flesh_regeneration
 
+	// i kinda wish that other wounds worked like this, it's way more interesting to treat something and have it slowly get better
+	// in this fashion rather than have the cut immediately clear up. maybe bleed wounds could downgrade into muscle wounds...?
 	if((infestation <= 0 || sanitization >= infestation) && (flesh_damage <= 0 || flesh_healing > flesh_damage))
 		to_chat(user, span_notice("You've done all you can with [I], [victim]'s [limb.name] can't be treated further."))
 	else
@@ -223,10 +224,10 @@
 	else if(istype(I, /obj/item/stack/medical/mesh))
 		var/obj/item/stack/medical/mesh/mesh_check = I
 		if(!mesh_check.is_open)
-			to_chat(user, span_warning("ou need to open [mesh_check] first."))
+			to_chat(user, span_warning("You need to open [mesh_check] first."))
 			return
 		ointmentmesh(mesh_check, user)
-
+e
 /datum/wound/burn/on_synthflesh(amount)
 	flesh_healing += amount * 0.5 // 20u patch will heal 10 flesh standard
 
@@ -235,12 +236,12 @@
 	name = "Second Degree Burns"
 	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
 	treat_text = "Recommended application of topical ointment or regenerative mesh to affected region."
-	examine_desc = "is badly burned and breaking out in blisters"
+	examine_desc = "is badly burned"
 	occur_text = "breaks out with violent red burns"
 	severity = WOUND_SEVERITY_MODERATE
-	damage_mulitplier_penalty = 1.1
+	damage_mulitplier_penalty = 1.05
 	threshold_minimum = 40
-	threshold_penalty = 30 // burns cause significant decrease in limb integrity compared to other wounds
+	threshold_penalty = 20
 	status_effect_type = /datum/status_effect/wound/burn/moderate
 	flesh_damage = 5
 
@@ -249,11 +250,11 @@
 	desc = "Patient is suffering extreme burns with full skin penetration, creating serious risk of infection and greatly reduced limb integrity."
 	treat_text = "Recommended immediate disinfection and excision of any infected skin, followed by bandaging and ointment."
 	examine_desc = "appears seriously charred, with aggressive red splotches"
-	occur_text = "chars rapidly, exposing ruined tissue and spreading angry red burns"
+	occur_text = "chars rapidly, spreading angry red burns"
 	severity = WOUND_SEVERITY_SEVERE
-	damage_mulitplier_penalty = 1.2
+	damage_mulitplier_penalty = 1.1
 	threshold_minimum = 80
-	threshold_penalty = 40
+	threshold_penalty = 30
 	status_effect_type = /datum/status_effect/wound/burn/severe
 	treatable_by = list(/obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
 	infestation_rate = 0.03
@@ -263,10 +264,10 @@
 	name = "Catastrophic Burns"
 	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, creating life-threatening risk of infection and negligible limb integrity."
 	treat_text = "Immediate surgical debriding of any infected skin, followed by potent tissue regeneration formula and bandaging."
-	examine_desc = "is a ruined mess of blanched bone, melted fat, and charred tissue"
-	occur_text = "vaporizes as flesh, bone, and fat melt together in a horrifying mess"
+	examine_desc = "is a mess of bone and charred flesh"
+	occur_text = "vaporizes as the flesh melts"
 	severity = WOUND_SEVERITY_CRITICAL
-	damage_mulitplier_penalty = 1.3
+	damage_mulitplier_penalty = 1.15
 	sound_effect = 'sound/effects/wounds/sizzle2.ogg'
 	threshold_minimum = 140
 	threshold_penalty = 80
