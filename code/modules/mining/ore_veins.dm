@@ -290,7 +290,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/iron = 50,
 		/obj/item/stack/ore/gold = 30,
 		/obj/item/stack/ore/silver = 20,
-		/obj/item/stack/ore/plasma = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/diamond = 10,
 		/obj/item/stack/ore/titanium = 1,
 		)
@@ -312,7 +312,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/iron = 40,
 		/obj/item/stack/ore/gold = 20,
 		/obj/item/stack/ore/silver = 10,
-		/obj/item/stack/ore/plasma = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/diamond = 10,
 		/obj/item/stack/ore/titanium = 4,
 		)
@@ -339,7 +339,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	)
 	ore_list = list(
 		/obj/item/stack/ore/iron = 10,
-		/obj/item/stack/ore/plasma = 10,
+		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/silver = 10,
 		/obj/item/stack/ore/diamond = 10,
