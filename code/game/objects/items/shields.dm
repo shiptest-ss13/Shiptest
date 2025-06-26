@@ -88,7 +88,6 @@
 	custom_materials = list(/datum/material/iron=8500)
 
 	force = 15
-	transparent = TRUE
 	max_integrity = 300
 	block_chance = 60
 	integrity_failure = 0.2
