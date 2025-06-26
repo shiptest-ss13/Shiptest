@@ -696,6 +696,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	base_icon_state = "rottweiler_mag"
 	icon_state = "rottweiler_mag-1"
 	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
