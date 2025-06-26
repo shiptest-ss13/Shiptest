@@ -169,17 +169,18 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "r" = (
-/obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced{
-	dir = 10
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "fleawindow"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced,
+/obj/structure/window/plasma/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -429,17 +430,20 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "P" = (
-/obj/machinery/power/smes/shuttle/micro/precharged{
-	dir = 2
-	},
-/obj/structure/window/plasma/reinforced{
-	dir = 9
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "fleawindow"
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
