@@ -1503,7 +1503,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	environ = APC_CHANNEL_OFF
 	update_appearance()
 	update()
-	addtimer(CALLBACK(src, PROC_REF(reset), APC_RESET_EMP), 600)
+	addtimer(CALLBACK(src, PROC_REF(reset), APC_RESET_EMP), (5 / severity) SECONDS)
 
 /obj/machinery/power/apc/disconnect_terminal()
 	if(terminal)
