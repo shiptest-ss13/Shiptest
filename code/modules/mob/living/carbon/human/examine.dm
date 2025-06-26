@@ -305,6 +305,8 @@
 			if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
 				bleed_text += " incredibly quickly"
 
+		bleed_text += "</B>\n"
+
 		for(var/i in grasped_limbs)
 			var/obj/item/bodypart/grasped_part = i
 			bleed_text += "[t_He] [t_is] holding [t_his] [grasped_part.name] to slow the bleeding!\n"
