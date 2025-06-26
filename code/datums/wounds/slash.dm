@@ -238,7 +238,6 @@
 	clot_rate = 0.015
 	threshold_minimum = 30
 	threshold_penalty = 10
-	demotes_to = /datum/wound/muscle/moderate
 	status_effect_type = /datum/status_effect/wound/slash/moderate
 
 /datum/wound/slash/severe
