@@ -150,7 +150,7 @@
 	overlay_prefix = "gauze"
 	desc_prefix = "bandaged"
 	/// How much more can we absorb
-	var/absorption_capacity = 8
+	var/absorption_capacity = 7
 	/// How fast do we absorb
 	var/absorption_rate = 0.25
 	/// How much does the gauze help with keeping infections clean, lower = better
@@ -179,6 +179,7 @@
 
 	if(pus_stained)
 		desc += ", pus stained"
+
 	desc += " [name]"
 	return desc
 
