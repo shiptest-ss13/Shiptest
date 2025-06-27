@@ -561,10 +561,10 @@
 				informed = TRUE
 			switch(severity)
 				if(1)
-					L.receive_damage(0,5)
+					L.receive_damage(0,5,5)
 					Paralyze(2 SECONDS)
 				if(2)
-					L.receive_damage(0,1)
+					L.receive_damage(0,1,5)
 					Knockdown(2 SECONDS)
 			if(HAS_TRAIT(L, TRAIT_EASYDISMEMBER) && L.body_zone != "chest")
 				if(prob(20))
