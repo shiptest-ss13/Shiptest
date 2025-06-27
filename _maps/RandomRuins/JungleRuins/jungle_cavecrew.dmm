@@ -1290,10 +1290,12 @@
 "oU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/computer,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "oW" = (
-/turf/open/floor/plasteel/stairs,
+/turf/open/floor/plasteel/stairs{
+	planetary_atmos = 1
+	},
 /area/ruin/jungle/cavecrew/cargo)
 "pb" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -1338,7 +1340,7 @@
 "pL" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "qx" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1388,8 +1390,12 @@
 	},
 /turf/open/floor/plating/dirt/old,
 /area/ruin/jungle/cavecrew/cargo)
+"rs" = (
+/obj/item/toy/plush/hornet/gay,
+/turf/open/floor/plating/dirt,
+/area/overmap_encounter/planetoid/jungle/explored)
 "rt" = (
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "rx" = (
 /obj/structure/flora/rock/jungle{
@@ -1602,7 +1608,8 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/cavecrew/dormitories)
 "ue" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/storage)
 "uf" = (
@@ -1664,7 +1671,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "uK" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "uX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1737,7 +1744,7 @@
 /area/ruin/jungle/cavecrew/security)
 "vr" = (
 /obj/machinery/computer/cargo,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "vH" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -1909,7 +1916,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
 	},
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "xG" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2353,7 +2360,7 @@
 /area/ship/storage)
 "CU" = (
 /obj/effect/turf_decal/industrial/warning/corner,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "CZ" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3167,7 +3174,7 @@
 "Mv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "MC" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3488,7 +3495,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "QG" = (
 /obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "QH" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4204,7 +4211,7 @@
 "Zr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/patterned,
+/turf/open/floor/plasteel/patterned/jungleplanet,
 /area/ruin/jungle/cavecrew/cargo)
 "Zx" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -4807,7 +4814,7 @@ es
 es
 wt
 wt
-iW
+rs
 RP
 NR
 NR
