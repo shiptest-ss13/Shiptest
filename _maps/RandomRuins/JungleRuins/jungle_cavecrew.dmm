@@ -6,7 +6,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/cavecrew/cargo)
 "ad" = (
 /obj/effect/decal/cleanable/dirt,
@@ -352,7 +354,9 @@
 /area/ruin/jungle/cavecrew/cargo)
 "ed" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/cavecrew/cargo)
 "ef" = (
 /obj/structure/railing{
@@ -814,13 +818,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/jungleplanet/lit,
 /area/ruin/powered)
-"ke" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/structure/fluff/drake_statue{
-	pixel_x = -25
-	},
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "kj" = (
 /obj/structure/flora/rock/jungle{
 	pixel_x = 5;
@@ -1360,6 +1357,7 @@
 /obj/item/gun/ballistic/revolver/ashhand{
 	pixel_y = -1
 	},
+/obj/item/gun/ballistic/rifle/illestren/sawn,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
 "qO" = (
@@ -1727,20 +1725,14 @@
 	name = "Ammo Locker";
 	req_access_txt = "1"
 	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/ammo_casing/a4570,
 /obj/item/ammo_box/magazine/skm_46_30,
 /obj/item/ammo_box/magazine/skm_46_30,
 /obj/item/ammo_box/magazine/skm_46_30,
 /obj/item/ammo_box/magazine/illestren_a850r,
 /obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/storage/box/ammo/a4570,
+/obj/item/storage/box/ammo/a12g_buckshot,
+/obj/item/storage/box/ammo/a12g_buckshot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/security)
 "vr" = (
@@ -3194,10 +3186,6 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/neutered,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/cavecrew/hallway)
-"MW" = (
-/mob/living/simple_animal/crab/evil,
-/turf/open/floor/plating/dirt,
-/area/overmap_encounter/planetoid/jungle/explored)
 "MY" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -3766,7 +3754,9 @@
 "Ul" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/rust,
+/turf/open/floor/plating/jungleplanet{
+	icon_state = "plating_rust"
+	},
 /area/ruin/jungle/cavecrew/cargo)
 "Ur" = (
 /obj/effect/turf_decal/industrial/stand_clear{
@@ -4236,7 +4226,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/cavecrew/engineering)
 "Zy" = (
-/obj/effect/mob_spawn/human/corpse/pirate,
+/obj/effect/mob_spawn/human/corpse/frontier,
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Zz" = (
@@ -4817,7 +4807,7 @@ es
 es
 wt
 wt
-MW
+iW
 RP
 NR
 NR
@@ -5409,7 +5399,7 @@ RM
 Dd
 Ma
 Ma
-ke
+Qx
 Es
 wt
 wt
