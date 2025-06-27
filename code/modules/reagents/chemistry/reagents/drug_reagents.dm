@@ -578,7 +578,7 @@
 	reagent_state = LIQUID
 	color = "#df71c7" //yeah its kinda pinkruple
 	overdose_threshold = 30
-	addiction_threshold = 20
+	addiction_threshold = 21
 	metabolization_rate = 0.1
 	taste_description = "a distant earthiness"
 	var/vision_trait = TRAIT_CHEMICAL_NIGHTVISION
@@ -646,7 +646,7 @@
 	color = "#bc329e"
 	overdose_threshold = 17
 	addiction_threshold = 11
-	metabolization_rate = 0.2
+	metabolization_rate = 0.15
 	vision_trait = TRAIT_GOOD_CHEMICAL_NIGHTVISION
 	taste_description = "sulpheric sweetness"
 
