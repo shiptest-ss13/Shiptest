@@ -94,12 +94,18 @@
 	log_message("Hit by [AM].", LOG_MECHA, color="red")
 	. = ..()
 
-/obj/mecha/bullet_act(obj/projectile/Proj) //wrapper
-	if (!enclosed && occupant && !silicon_pilot && !Proj.force_hit && (Proj.def_zone == BODY_ZONE_HEAD || Proj.def_zone == BODY_ZONE_CHEST)) //allows bullets to hit the pilot of open-canopy mechs
-		occupant.bullet_act(Proj) //If the sides are open, the occupant can be hit
+/obj/mecha/bullet_act(obj/projectile/incoming) //wrapper
+	if (!enclosed && occupant && !silicon_pilot && !incoming.force_hit && (incoming.def_zone == BODY_ZONE_HEAD || incoming.def_zone == BODY_ZONE_CHEST)) //allows bullets to hit the pilot of open-canopy mechs
+		occupant.bullet_act(incoming) //If the sides are open, the occupant can be hit
 		return BULLET_ACT_HIT
-	log_message("Hit by projectile. Type: [Proj.name]([Proj.flag]).", LOG_MECHA, color="red")
+	log_message("Hit by projectile. Type: [incoming.name]([incoming.flag]).", LOG_MECHA, color="red")
+	var/prev_integrity = obj_integrity
 	. = ..()
+	if(obj_integrity == prev_integrity) // DEFLECTED
+		playsound(src, incoming.ricochet_sound, 75, TRUE)
+		incoming.firer = src
+		incoming.setAngle(incoming.Angle + rand(30, 120) * pick(1, -1))
+		return BULLET_ACT_FORCE_PIERCE
 
 /obj/mecha/ex_act(severity, target)
 	log_message("Affected by explosion of severity: [severity].", LOG_MECHA, color="red")
@@ -144,8 +150,7 @@
 	if(get_charge())
 		use_power(cell.charge / (severity * 6))
 		take_damage(30 / severity, BURN, ENERGY, TRUE)
-	if(overheat < OVERHEAT_EMP_MAX)
-		adjust_overheat(min(30 / severity, OVERHEAT_EMP_MAX - overheat))
+	adjust_overheat(30 / severity)
 	log_message("EMP detected", LOG_MECHA, color="red")
 
 	if(istype(src, /obj/mecha/combat))
@@ -153,6 +158,8 @@
 		occupant?.update_mouse_pointer()
 	if(!equipment_disabled && occupant) //prevent spamming this message with back-to-back EMPs
 		to_chat(occupant, span_danger("Error -- Connection to equipment control unit has been lost."))
+	if(leg_overload_mode)
+		overload_action.Activate(FALSE)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/mecha, restore_equipment)), 3 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 	equipment_disabled = TRUE
 

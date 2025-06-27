@@ -172,6 +172,7 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 	light_power = 5
 	light_color = LIGHT_COLOR_ELECTRIC_CYAN
 	light_on = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/obj/mecha/combat/durand/chassis ///Our link back to the durand
 	var/switching = FALSE ///To keep track of things during the animation
 	/// if this shield lets melee attacks pass and hit the mech directly
@@ -249,14 +250,12 @@ the shield is disabled by means other than the action button (like running out o
 		return
 	if(!chassis.defense_mode) //if defense mode is disabled, we're taking damage that we shouldn't be taking
 		return
-	. = ..()
 	flick("shield_impact", src)
-	var/efficiency = (10 - chassis.capacitor.rating) / 10
-	if(!chassis.use_power(max(1, (max_integrity - obj_integrity + 15) * 5 * efficiency)))
+	var/damage = run_obj_armor(damage_amount * (11 - chassis.capacitor.rating) / 10, damage_type, damage_flag, attack_dir, armour_penetration)
+	if(!chassis.use_power(max(1, (damage + 15) * 5)))
 		chassis.cell?.charge = 0
 		chassis.defense_action.Activate(forced_state = TRUE)
-	chassis.adjust_overheat(efficiency * (max_integrity - obj_integrity) * heat_damage_coefficient)
-	obj_integrity = 10000
+	chassis.adjust_overheat(damage * heat_damage_coefficient)
 
 /obj/durand_shield/play_attack_sound()
 	playsound(src, 'sound/mecha/mech_shield_deflect.ogg', 100, TRUE)

@@ -325,11 +325,9 @@
 	return 0
 
 /obj/mecha/proc/adjust_overheat(amount = 0)
-	if(amount > 0)
-		amount *= 1.2 - (scanmod.rating * 0.1) // 1.1x to 0.8x heat generation based on scanner module rating
-	else
+	if(amount < 0)
 		amount *= cooling_modifier
-	overheat = round(clamp(overheat + (amount * heat_modifier), 0, OVERHEAT_MAXIMUM), 0.1)
+	overheat = round(clamp(overheat + (amount * heat_modifier), 0, OVERHEAT_MAXIMUM), DAMAGE_PRECISION)
 	if(overheat >= OVERHEAT_MAXIMUM && amount > 0)
 		if(overload_action)
 			overload_action.Activate(FALSE) // turn it off
@@ -704,7 +702,7 @@
 
 	var/move_result = 0
 	var/oldloc = loc
-	var/step_time = step_in
+	var/step_time = step_in + defense_mode
 	if(overheat > OVERHEAT_THRESHOLD)
 		step_time += (min(overheat, OVERHEAT_MAXIMUM) - OVERHEAT_THRESHOLD) / OVERHEAT_THRESHOLD // up to 0.5 slower based on overheating
 	if(internal_damage & MECHA_INT_CONTROL_LOST)
