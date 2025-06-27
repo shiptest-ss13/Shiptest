@@ -73,6 +73,11 @@
 	/// Multiplier for cooling specifically.
 	var/cooling_modifier = 1
 
+	/// Structural damage to the exosuit. Requires materials to repair.
+	var/structural_damage = 0
+	/// The type of material needed to repair the structural damage.
+	var/obj/item/stack/structural_repair_type = /obj/item/stack/sheet/metal
+
 	var/max_temperature = 25000
 	var/internal_damage_threshold = 50 //health percentage below which internal damage is possible
 	var/internal_damage = 0 //contains bitflags
@@ -357,6 +362,14 @@
 			. += "It's heavily damaged."
 		else
 			. += "It's falling apart."
+	if(structural_damage)
+		switch(structural_damage / max_integrity)
+			if(0 to 0.3)
+				. += "Its external plating is warped."
+			if(0.3 to 0.6)
+				. += span_warning("Parts of the chassis look bent out of shape.")
+			else
+				. += span_danger("It looks like it's barely holding itself together!")
 	var/hide_weapon = locate(/obj/item/mecha_parts/weapon_bay/concealed) in contents
 	var/hidden_weapon = hide_weapon ? (locate(/obj/item/mecha_parts/mecha_equipment/weapon) in equipment) : null
 	var/list/visible_equipment = equipment - hidden_weapon

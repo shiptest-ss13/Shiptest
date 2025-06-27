@@ -16,6 +16,13 @@
 #define MECHA_LOOSE_BOLTS 2
 #define MECHA_OPEN_HATCH 3
 
+/// Threshold where damage can become structural damage
+#define STRUCTURAL_DAMAGE_THRESHOLD 0.75
+/// Proportion of damage applied that becomes structural damage
+#define STRUCTURAL_DAMAGE_RATIO 0.5
+/// Structural damage repaired per sheet of material used
+#define INTEGRITY_REPAIR_PER_SHEET 50
+
 /// Minimum overheat to show an alert to the pilot
 #define OVERHEAT_WARNING 50
 /// Minimum overheat required to cause slowdown

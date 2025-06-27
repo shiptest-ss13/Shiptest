@@ -9,8 +9,10 @@
 	return 1 //always return non-0
 
 /obj/mecha/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
-	. = ..()
-	if(. && obj_integrity > 0)
+	var/damage_taken = ..()
+	if(damage_taken && obj_integrity > 0)
+		if(obj_integrity / max_integrity < STRUCTURAL_DAMAGE_THRESHOLD)
+			structural_damage += min(damage_taken, max_integrity * STRUCTURAL_DAMAGE_THRESHOLD - obj_integrity) * STRUCTURAL_DAMAGE_RATIO
 		spark_system.start()
 		switch(damage_flag)
 			if("fire")
@@ -19,10 +21,11 @@
 				check_for_internal_damage(list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST))
 			else
 				check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT))
-		if(. >= 5 || prob(33))
+		if(damage_taken >= 5 || prob(33))
 			occupant_message(span_userdanger("Taking damage!"))
 		log_message("Took [damage_amount] points of damage. Damage type: [damage_type]", LOG_MECHA)
 		diag_hud_set_mechhealth()
+	return damage_taken
 
 /obj/mecha/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	. = ..()
@@ -249,6 +252,32 @@
 				to_chat(user, span_warning("You need two lengths of cable to fix this exosuit!"))
 		return
 
+	if(istype(W, structural_repair_type))
+		if(!structural_damage)
+			to_chat(user, span_warning("[src] has no structural damage!"))
+			return TRUE
+		while(structural_damage && W.use_tool(src, user, 4 SECONDS, 1))
+			var/damage_repaired = min(INTEGRITY_REPAIR_PER_SHEET, structural_damage, max_integrity - obj_integrity)
+			structural_damage -= damage_repaired
+			obj_integrity += damage_repaired
+			to_chat(user, span_notice("You repair some of the structural damage."))
+			if(obj_integrity == max_integrity)
+				structural_damage = 0
+				stack_trace("[type] had structural damage while being at full integrity!")
+				break
+		return TRUE
+
+	if(istype(W, /obj/item/stack/tape/industrial))
+		if(obj_integrity >= max_integrity - structural_damage)
+			to_chat(user, span_warning("There are some things even [W.name] can't fix. [src] is one of them."))
+			return TRUE
+		while(obj_integrity < max_integrity - structural_damage && W.use_tool(src, user, 4 SECONDS, 1))
+			var/damage_repaired = min(INTEGRITY_REPAIR_PER_SHEET, (max_integrity - structural_damage) - obj_integrity)
+			structural_damage += damage_repaired
+			obj_integrity += damage_repaired
+			to_chat(user, span_notice("You hastily patch some of the plating back together."))
+		return TRUE
+
 	if(istype(W, /obj/item/mecha_parts))
 		var/obj/item/mecha_parts/P = W
 		P.try_attach_part(user, src)
@@ -297,15 +326,19 @@
 		clearInternalDamage(MECHA_INT_TANK_BREACH)
 		to_chat(user, span_notice("You repair the damaged gas tank."))
 		return
-	while(obj_integrity < max_integrity)
+	while(obj_integrity < max_integrity - structural_damage)
 		if(!W.use_tool(src, user, 2 SECONDS, volume=50, amount=1))
 			return
 		user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("You repair some damage to [src]."))
-		obj_integrity += min(10 * repair_multiplier, max_integrity-obj_integrity)
+		obj_integrity += min(10 * repair_multiplier, (max_integrity - structural_damage) - obj_integrity)
 		if(obj_integrity == max_integrity)
 			to_chat(user, span_notice("It looks to be fully repaired now."))
-			return
-	to_chat(user, span_warning("The [name] is at full integrity!"))
+			return TRUE
+	if(obj_integrity >= max_integrity - structural_damage)
+		to_chat(user, span_warning("Its structure is too damaged to be repaired this way, use [initial(structural_repair_type.name)]!"))
+	else
+		to_chat(user, span_warning("The [name] is at full integrity!"))
+	return TRUE
 
 /obj/mecha/proc/mech_toxin_damage(mob/living/target)
 	playsound(src, 'sound/effects/spray2.ogg', 50, TRUE)

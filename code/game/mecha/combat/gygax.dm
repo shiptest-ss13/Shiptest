@@ -5,7 +5,7 @@
 	step_in = 3
 	dir = NORTH
 	dir_in = NORTH
-	max_integrity = 200
+	max_integrity = 240
 	deflect_chance = 5
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 40, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	max_temperature = 25000
