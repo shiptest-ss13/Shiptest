@@ -148,9 +148,8 @@
 		return
 
 	var/total_force
-	if(is_type_in_list(src, list(/obj/structure, /obj/machinery)))
+	if(isobj(src))
 		total_force = (attacking_item.force * attacking_item.demolition_mod)
-
 	else
 		total_force = (attacking_item.force)
 
