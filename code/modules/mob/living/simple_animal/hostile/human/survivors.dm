@@ -12,6 +12,14 @@
 	speak_emote = list("breathes heavily.", "growls.", "sharply inhales.")
 	emote_hear = list("murmers.","grumbles.","whimpers.")
 
+	var/projectile_deflect_chance = 0
+
+/mob/living/simple_animal/hostile/human/hermit/bullet_act(obj/projectile/Proj)
+	if(prob(projectile_deflect_chance))
+		visible_message(span_danger("[src] blocks [Proj] with its shield!"))
+		return BULLET_ACT_BLOCK
+	return ..()
+
 /mob/living/simple_animal/hostile/human/hermit/survivor/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT
