@@ -76,6 +76,7 @@ Build Your Own Suit
 	crate_name = "501p Construction Kit"
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 40
+	faction_locked = TRUE
 
 /datum/supply_pack/mech/mpgygax_parts
 	name = "NT-501p-MP construction kit"
@@ -118,6 +119,7 @@ Build Your Own Suit
 	crate_name = "Durand Construction Kit"
 	faction = /datum/faction/clip
 	faction_discount = 20
+	faction_locked = TRUE
 
 /*
 Mech Equipment
