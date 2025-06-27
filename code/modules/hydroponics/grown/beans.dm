@@ -8,7 +8,7 @@
 	product = /obj/item/food/grown/soybeans
 	maturation = 4
 	production = 4
-	potency = 15
+	potency = 30
 	growthstages = 4
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "soybean-grow"
@@ -36,7 +36,7 @@
 	species = "koibean"
 	plantname = "Koibean Plants"
 	product = /obj/item/food/grown/koibeans
-	potency = 10
+	potency = 30
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/toxin/carpotoxin = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.05)
 	rarity = 20

@@ -452,8 +452,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
 	base_icon_state = "f90_mag"
 	icon_state = "f90_mag-1"
-	ammo_type = /obj/item/ammo_casing/a75clip
-	caliber = "7.5x64mm CLIP"
+	ammo_type = /obj/item/ammo_casing/a65clip
+	caliber = "6.5mm CLIP"
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/f90/update_icon_state()
@@ -696,6 +696,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 	base_icon_state = "rottweiler_mag"
 	icon_state = "rottweiler_mag-1"
 	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
