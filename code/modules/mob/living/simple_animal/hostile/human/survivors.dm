@@ -68,8 +68,16 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands/hunter
 	r_hand = /obj/item/gun/ballistic/rifle/polymer
 
-/mob/living/simple_animal/hostile/human/hermit/ranged
-
+/mob/living/simple_animal/hostile/human/hermit/ranged/shotgun
+	name = "Hermit Pursuer"
+	desc = "WIP"
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands/shotgun
+	r_hand = /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
+	casingtype = /obj/item/ammo_casing/shotgun/improvised
+	speed = 10
+	retreat_distance = 3
+	minimum_distance = 1
+	shoot_point_blank = TRUE
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger
 	name = "Hermit Soldier"
