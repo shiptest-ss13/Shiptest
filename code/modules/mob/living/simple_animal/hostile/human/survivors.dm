@@ -347,7 +347,7 @@
 				/obj/item/storage/belt/mining/vendor = 3,
 				)
 			)
-			else if(prob(60))
+			if(prob(60))
 				l_pocket = /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/improvised
 			if(prob(20))
 				new /obj/item/gun/ballistic/shotgun/doublebarrel/improvised(loc)
