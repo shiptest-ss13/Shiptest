@@ -56,6 +56,69 @@ Build Your Own Suit
 	faction = /datum/faction/syndicate/cybersun
 	faction_discount = 40
 
+/datum/supply_pack/mech/gygax_parts
+	name = "501p construction kit"
+	desc = "An agile combat exosuit sold across the galaxy by Cybersun. Or at least the parts to it."
+	cost = 12000
+	contains = list(
+		/obj/item/mecha_parts/chassis/gygax,
+		/obj/item/mecha_parts/part/gygax_head,
+		/obj/item/mecha_parts/part/gygax_torso,
+		/obj/item/mecha_parts/part/gygax_left_arm,
+		/obj/item/mecha_parts/part/gygax_right_arm,
+		/obj/item/mecha_parts/part/gygax_left_leg,
+		/obj/item/mecha_parts/part/gygax_right_leg,
+		/obj/item/mecha_parts/part/gygax_armor,
+		/obj/item/circuitboard/mecha/gygax/peripherals,
+		/obj/item/circuitboard/mecha/gygax/main,
+		/obj/item/circuitboard/mecha/gygax/targeting
+	)
+	crate_name = "501p Construction Kit"
+	faction = /datum/faction/syndicate/cybersun
+	faction_discount = 40
+
+/datum/supply_pack/mech/mpgygax_parts
+	name = "NT-501p-MP construction kit"
+	desc = "A set of parts for the NT-501p-MP exosuit model, dervived from the original Cybersun designs and modified for mass production. The armor plating was reduced to cut costs for mass production, but the lighter weight allows the NT-501p-MP's modified servos to perform swift moderate distance charges without heavily taxing the power supply. "
+	cost = 8000
+	contains = list(
+		/obj/item/mecha_parts/chassis/mp_gygax,
+		/obj/item/mecha_parts/part/gygax_head,
+		/obj/item/mecha_parts/part/gygax_torso,
+		/obj/item/mecha_parts/part/gygax_left_arm,
+		/obj/item/mecha_parts/part/gygax_right_arm,
+		/obj/item/mecha_parts/part/gygax_left_leg,
+		/obj/item/mecha_parts/part/gygax_right_leg,
+		/obj/item/mecha_parts/part/mpgygax_armor,
+		/obj/item/circuitboard/mecha/gygax/peripherals,
+		/obj/item/circuitboard/mecha/gygax/main,
+		/obj/item/circuitboard/mecha/gygax/targeting
+	)
+	crate_name = "NT-501p-MP Construction Kit"
+	faction = /datum/faction/nt
+	faction_locked = TRUE
+
+/datum/supply_pack/mech/durand_parts
+	name = "Durand construction kit"
+	desc = "The kit to a bulky suit most frequently used by the CLIP Minutemen, older models tend to find themselves disassembled and sold off."
+	cost = 15000
+	contains = list(
+		/obj/item/mecha_parts/chassis/durand,
+		/obj/item/mecha_parts/part/durand_head,
+		/obj/item/mecha_parts/part/durand_torso,
+		/obj/item/mecha_parts/part/durand_left_arm,
+		/obj/item/mecha_parts/part/durand_right_arm,
+		/obj/item/mecha_parts/part/durand_left_leg,
+		/obj/item/mecha_parts/part/durand_right_leg,
+		/obj/item/mecha_parts/part/durand_armor,
+		/obj/item/circuitboard/mecha/durand/peripherals,
+		/obj/item/circuitboard/mecha/durand/main,
+		/obj/item/circuitboard/mecha/durand/targeting
+	)
+	crate_name = "Durand Construction Kit"
+	faction = /datum/faction/clip
+	faction_discount = 20
+
 /*
 Mech Equipment
 */

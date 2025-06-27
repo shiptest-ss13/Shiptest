@@ -25,7 +25,7 @@
 /// Amount of overheat reduced every process
 #define PASSIVE_COOLING -5
 /// Amount of cooling per decisecond-tick while stationary
-#define STATIONARY_COOLING -0.05
+#define STATIONARY_COOLING -0.1
 /// Maximum cooling per second-tick from being stationary
 #define STATIONARY_COOLING_MAXIMUM -5
 /// Maximum heating from being in a hot environment
