@@ -33,21 +33,32 @@
 		if ("small")
 			new /obj/item/tank/internals/emergency_oxygen(src)
 			new /obj/item/tank/internals/emergency_oxygen(src)
+			new /obj/item/tank/internals/plasmaman/belt(src)
+			new /obj/item/tank/internals/plasmaman/belt(src)
 			new /obj/item/clothing/mask/breath(src)
 			new /obj/item/clothing/mask/breath(src)
+			new /obj/item/extinguisher_refill(src)
+			new /obj/item/extinguisher_refill(src)
 
 		if ("aid")
 			new /obj/item/tank/internals/emergency_oxygen(src)
+			new /obj/item/tank/internals/plasmaman/belt(src)
 			new /obj/item/storage/firstaid/o2(src)
 			new /obj/item/clothing/mask/breath(src)
+			new /obj/item/extinguisher_refill(src)
 
 		if ("tank")
 			new /obj/item/tank/internals/oxygen(src)
+			new /obj/item/tank/internals/plasmaman(src)
 			new /obj/item/clothing/mask/breath(src)
+			new /obj/item/extinguisher_refill(src)
 
 		if ("both")
 			new /obj/item/tank/internals/emergency_oxygen(src)
+			new /obj/item/tank/internals/plasmaman/belt(src)
 			new /obj/item/clothing/mask/breath(src)
+			new /obj/item/storage/firstaid/o2(src)
+			new /obj/item/extinguisher_refill(src)
 
 /*
  * Fire Closet
