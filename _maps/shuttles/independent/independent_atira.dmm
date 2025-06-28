@@ -20,8 +20,19 @@
 	pixel_y = 5;
 	pixel_x = 6
 	},
-/obj/machinery/firealarm/directional/south,
+/obj/machinery/firealarm/directional/south{
+	pixel_x = 5
+	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -20;
+	pixel_x = -8;
+	name = "door lock";
+	id = "apiss";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
+	},
 /turf/open/floor/plastic,
 /area/ship/hallway/central)
 "ap" = (
@@ -139,14 +150,6 @@
 	pixel_y = 10;
 	pixel_x = 3
 	},
-/obj/item/reagent_containers/food/snacks/scotchegg{
-	pixel_x = -7;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/food/snacks/scotchegg{
-	pixel_x = -8;
-	pixel_y = -4
-	},
 /obj/item/food/nachos{
 	pixel_y = -8;
 	pixel_x = 6
@@ -156,6 +159,22 @@
 	},
 /obj/item/food/meat/steak/bear{
 	pixel_x = 6
+	},
+/obj/item/food/kebab/miras{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/food/kebab/miras{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/food/kebab/miras{
+	pixel_x = -6;
+	pixel_y = -9
+	},
+/obj/item/food/kebab/miras{
+	pixel_x = -6;
+	pixel_y = -9
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/ccommons)
@@ -2191,7 +2210,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock{
 	name = "Head";
-	id_tag = "cth_b2";
+	id_tag = "apiss";
 	desc = "Welcome to the bathroom"
 	},
 /obj/effect/turf_decal/techfloor/orange{
