@@ -461,7 +461,6 @@
 	if(!can_use(usr))
 		return FALSE
 	if(!roll_sleeves)
-		to_chat(usr, span_warning("You cannot adjust this uniform's sleeves!"))
 		return FALSE
 	if(adjusted == ALT_STYLE)
 		to_chat(usr, span_warning("You cannot adjust your uniform's sleeves while your top is rolled down!"))
@@ -481,7 +480,6 @@
 	if(!can_use(usr))
 		return FALSE
 	if(!roll_down)
-		to_chat(usr, span_warning("You cannot roll down this uniform's top!"))
 		return FALSE
 	if(toggle_jumpsuit_adjust(ALT_STYLE))
 		to_chat(usr, span_notice("You roll down your uniform's top."))
