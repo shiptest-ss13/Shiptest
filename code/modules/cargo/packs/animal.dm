@@ -1,5 +1,5 @@
 /datum/supply_pack/animal
-	group = "Animals"
+	category = "Animals"
 	crate_type = /obj/structure/closet/crate/critter
 	no_bundle = TRUE
 
@@ -137,7 +137,6 @@
 	cost = 10000
 	contains = list(/mob/living/simple_animal/crab)
 	crate_name = "look sir free crabs"
-	// DropPodOnly = TRUE
 
 /datum/supply_pack/animal/crab/generate()
 	. = ..()

@@ -66,15 +66,6 @@
 	tastes = list("soy sauce and rubber" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/soup/clownstears
-	name = "clown's tears"
-	desc = "A bowl of a mix of ingredients that invokes the immediate laughter of the viewer. It's too difficult to visually describe it without being overcome with fits of laughing."
-	icon_state = "clownstears"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/banana = 5, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/consumable/clownstears = 10)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/banana = 5, /datum/reagent/water = 5, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/consumable/clownstears = 10)
-	tastes = list("laughter" = 1)
-	foodtype = FRUIT | SUGAR
-
 /obj/item/reagent_containers/food/snacks/soup/vegetable
 	name = "vegetable soup"
 	desc = "A bowl of soup, consisting of vegetable broth and cooked vegetables."
@@ -214,7 +205,7 @@
 	tastes = list("tomato" = 1, "carrot" = 1)
 	foodtype = VEGETABLES
 
-/obj/item/reagent_containers/food/snacks/soup/sweetpotato
+/obj/item/reagent_containers/food/snacks/soup/sweet_potato
 	name = "sweet potato soup"
 	desc = "A soup consisting of sweet potatoes boiled for extended periods of time with ginger and crystal sugar."
 	icon_state = "sweetpotatosoup"
@@ -274,3 +265,20 @@
 	tastes = list("creamy peas"= 2, "parsnip" = 1)
 	filling_color = "#9dc530"
 	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/soup/miras_dola
+	name = "Miras-dola"
+	desc = "Miras stewed with the juices of a cactus until it has absorbed the flavors. The aroma is very prominent."
+	icon_state = "miras-dola"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/sugar = 1)
+	bonus_reagents = list(/datum/reagent/consumable/vitfro = 2)
+	tastes = list("sweet meat" = 3, "fruity mushroom" = 2)
+	foodtype = MEAT | SUGAR | FRUIT
+
+/obj/item/reagent_containers/food/snacks/soup/dotiri_la
+	name = "dotiri-la"
+	desc = "A soup made by boiling dote berries and dotu-fime together, before adding Tiris and allowing it to soak the flavors up."
+	icon_state = "miras-dola"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/sugar = 1)
+	tastes = list("sweet berries" = 3, "fruity meat" = 2)
+	foodtype = MEAT | FRUIT

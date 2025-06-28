@@ -17,40 +17,6 @@
 	var/obj/item/pda/P = locate(params["target"]) in GLOB.PDAs  //Leaving it alone in case it may do something useful, I guess.
 	send_virus(P,user)
 
-/obj/item/cartridge/virus/clown
-	name = "\improper Honkworks 5.0 cartridge"
-	icon_state = "cart-clown"
-	desc = "A data cartridge for portable microcomputers. It smells vaguely of bananas."
-	access = CART_CLOWN
-
-/obj/item/cartridge/virus/clown/send_virus(obj/item/pda/target, mob/living/U)
-	if(charges <= 0)
-		to_chat(U, span_notice("Out of charges."))
-		return
-	if(!isnull(target) && !target.toff)
-		charges--
-		to_chat(U, span_notice("Virus Sent!"))
-		target.honkamt = (rand(15,20))
-	else
-		to_chat(U, span_alert("PDA not found."))
-
-/obj/item/cartridge/virus/mime
-	name = "\improper Gestur-O 1000 cartridge"
-	icon_state = "cart-mi"
-	access = CART_MIME
-
-/obj/item/cartridge/virus/mime/send_virus(obj/item/pda/target, mob/living/U)
-	if(charges <= 0)
-		to_chat(U, span_alert("Out of charges."))
-		return
-	if(!isnull(target) && !target.toff)
-		charges--
-		to_chat(U, span_notice("Virus Sent!"))
-		target.silent = TRUE
-		target.ttone = "silence"
-	else
-		to_chat(U, span_alert("PDA not found."))
-
 /obj/item/cartridge/virus/syndicate
 	name = "\improper Detomatix cartridge"
 	icon_state = "cart"
@@ -66,7 +32,7 @@
 		charges--
 		var/difficulty = 0
 		if(target.cartridge)
-			difficulty += BitCount(target.cartridge.access&(CART_MEDICAL | CART_SECURITY | CART_ENGINE | CART_CLOWN | CART_JANITOR))
+			difficulty += BitCount(target.cartridge.access&(CART_MEDICAL | CART_SECURITY | CART_ENGINE | CART_JANITOR))
 		else
 			log_bomber(U, "triggered a PDA explosion on", target, "[!is_special_character(U) ? "(TRIGGED BY NON-ANTAG)" : ""]")
 			U.show_message(span_notice("Success!"), MSG_VISUAL)

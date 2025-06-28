@@ -1,5 +1,5 @@
 /datum/supply_pack/spacesuits
-	group = "Spacesuits"
+	category = "Spacesuits"
 	crate_type = /obj/structure/closet/crate/secure
 
 /*
@@ -33,11 +33,11 @@
 //syndicate
 
 /datum/supply_pack/spacesuits/armored_spacesuit
-	name = "Armored Space Suit Crate"
-	desc = "Contains one armored spacesuit. Generic enough to be manufactured and distributed by most ex-Coalition groups."
-	cost = 1500
-	contains = list(/obj/item/clothing/suit/space/syndicate/black,
-					/obj/item/clothing/head/helmet/space/syndicate/black)
+	name = "Surplus Coalition Space Suit Crate"
+	desc = "Contains one spacesuit. Generic enough to be manufactured and distributed by most ex-Coalition groups."
+	cost = 500
+	contains = list(/obj/item/clothing/suit/space/syndicate/surplus,
+					/obj/item/clothing/head/helmet/space/syndicate/surplus)
 	faction = /datum/faction/syndicate
 	faction_discount = 30
 
@@ -45,9 +45,29 @@
 	name = "Coalition Engineering Space Suit Crate"
 	desc = "Contains one lightly armored engineering spacesuit. Generic enough to be manufactured by most ex-Coalition groups."
 	cost = 1000
-	contains = list(/obj/item/clothing/suit/space/syndicate/black/engie,
-					/obj/item/clothing/head/helmet/space/syndicate/black/engie)
+	contains = list(/obj/item/clothing/suit/space/syndicate/engie,
+					/obj/item/clothing/head/helmet/space/syndicate/engie)
 	faction = /datum/faction/syndicate
+	faction_locked = TRUE
+	faction_discount = 0
+
+/datum/supply_pack/spacesuits/armored_hardliner
+	name = "White-Red Space Suit Crate"
+	desc = "WIP"
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/space/syndicate/white_red,
+					/obj/item/clothing/head/helmet/space/syndicate/white_red)
+	faction = /datum/faction/syndicate/hardliners
+	faction_locked = TRUE
+	faction_discount = 0
+
+/datum/supply_pack/spacesuits/armored_ngr
+	name = "Beige-Red Space Suit Crate"
+	desc = "WIP"
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/space/syndicate/ngr,
+					/obj/item/clothing/head/helmet/space/syndicate/ngr)
+	faction = /datum/faction/syndicate/ngr
 	faction_locked = TRUE
 	faction_discount = 0
 
