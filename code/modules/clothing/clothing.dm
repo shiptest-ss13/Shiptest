@@ -424,7 +424,7 @@
 
 /obj/item/clothing/under/AltClick(mob/user)
 	if(..())
-		return 1
+		return TRUE
 
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
@@ -432,8 +432,11 @@
 		if(attached_accessory && ispath(attached_accessory.pocket_storage_component_path) && loc == user)
 			attached_accessory.attack_hand(user)
 			return
-		else
-			toggle_rolldown()
+		if(toggle_sleeves())
+			return TRUE
+		if(toggle_rolldown())
+			return TRUE
+
 
 /obj/item/clothing/under/CtrlClick(mob/user)
 	if(..())
@@ -456,13 +459,13 @@
 
 /obj/item/clothing/under/proc/toggle_sleeves()
 	if(!can_use(usr))
-		return
+		return FALSE
 	if(!roll_sleeves)
 		to_chat(usr, span_warning("You cannot adjust this uniform's sleeves!"))
-		return
+		return FALSE
 	if(adjusted == ALT_STYLE)
 		to_chat(usr, span_warning("You cannot adjust your uniform's sleeves while your top is rolled down!"))
-		return
+		return FALSE
 	else if(toggle_jumpsuit_adjust(ROLLED_STYLE))
 		to_chat(usr, span_notice("You roll up your uniform's sleeves."))
 	else
@@ -471,13 +474,15 @@
 		var/mob/living/carbon/human/H = usr
 		H.update_inv_w_uniform()
 		H.update_body()
+		return TRUE
+	return FALSE
 
 /obj/item/clothing/under/proc/toggle_rolldown()
 	if(!can_use(usr))
-		return
+		return FALSE
 	if(!roll_down)
 		to_chat(usr, span_warning("You cannot roll down this uniform's top!"))
-		return
+		return FALSE
 	if(toggle_jumpsuit_adjust(ALT_STYLE))
 		to_chat(usr, span_notice("You roll down your uniform's top."))
 	else
@@ -486,6 +491,8 @@
 		var/mob/living/carbon/human/H = usr
 		H.update_inv_w_uniform()
 		H.update_body()
+		return TRUE
+	return FALSE
 
 // handles logic of toggling uniform rolling and sleeve rolling
 // if i had more time i would've written a shorter letter
