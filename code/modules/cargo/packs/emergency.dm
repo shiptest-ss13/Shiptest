@@ -31,7 +31,7 @@
 	name = "Phorid Internals Crate"
 	desc = "Contains a Phorid belt tank, for when you just can't bear to refill a normal tank with plasma. Plasma canisters sold separately."
 	cost = 50
-	contains = list(/obj/item/tank/internals/plasmaman/belt/full)
+	contains = list(/obj/item/tank/internals/plasmaman/belt)
 	crate_name = "phorid internals crate"
 
 /datum/supply_pack/emergency/plasmaman_suit

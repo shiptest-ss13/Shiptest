@@ -5,7 +5,7 @@
 	uniform = /obj/item/clothing/under/plasmaman
 	mask = /obj/item/clothing/mask/breath
 	gloves = /obj/item/clothing/gloves/color/plasmaman
-	r_pocket = /obj/item/tank/internals/plasmaman/belt/full
+	r_pocket = /obj/item/tank/internals/plasmaman/belt
 
 	internals_slot = ITEM_SLOT_RPOCKET // overriding the right pocket is probably a better idea than the belt or hands (you drop it when you spawn in cryo)
 
