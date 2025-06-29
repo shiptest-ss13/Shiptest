@@ -676,6 +676,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "jf" = (
@@ -714,6 +717,12 @@
 /area/ship/hallway/central)
 "jv" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "jD" = (
@@ -2221,6 +2230,9 @@
 /area/ship/hallway/central)
 "Cy" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "CM" = (
@@ -2405,6 +2417,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "Eq" = (
@@ -2880,6 +2895,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/opaque/blue/filled/corner,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Lw" = (
@@ -3037,6 +3055,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
@@ -3818,6 +3839,9 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/corner{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "YM" = (
@@ -3830,6 +3854,11 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = -16;
+	dir = 1
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/cargo)
