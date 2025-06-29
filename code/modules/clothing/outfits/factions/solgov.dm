@@ -1,6 +1,6 @@
 /datum/outfit/job/solgov
 	name = "SolGov Base Outfit"
-
+	faction = FACTION_PLAYER_SOLCON
 	faction_icon = "bg_solgov"
 	uniform = /obj/item/clothing/under/solgov/formal
 	skirt_uniform = /obj/item/clothing/under/solgov/formal/skirt
@@ -11,7 +11,6 @@
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list(FACTION_PLAYER_SOLCON)
 	H.grant_language(/datum/language/solarian_international)
 
 /datum/outfit/job/solgov/assistant
