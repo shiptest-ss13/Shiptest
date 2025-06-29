@@ -269,7 +269,7 @@
 	name = "CM-15 Magazine Crate"
 	desc = "Contains an 8-round 12ga magazine for the CM-15 Automatic Shotgun."
 	contains = list(/obj/item/ammo_box/magazine/cm15_12g/empty)
-	cost = 750
+	cost = 400
 	faction = /datum/faction/clip
 
 /datum/supply_pack/magazine/cm40
@@ -341,14 +341,14 @@
 	name = "Bulldog Box Magazine Crate"
 	desc = "Contains an 8-round 12ga box magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/empty)
-	cost = 750
+	cost = 400
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/bulldog_12
 	name = "Bulldog Drum Magazine Crate"
 	desc = "Contains a 12-round 12ga drum magazine for the Bulldog weapons platform."
 	contains = list(/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty)
-	cost = 1500
+	cost = 1200
 	faction = /datum/faction/syndicate/scarborough
 
 /* energy weapons */
