@@ -279,6 +279,18 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		to_chat(target, span_notice("[xeno_name] scrambles into the ventilation ducts!"))
 	qdel(src)
 
+/obj/effect/hallucination/simple/clown
+	image_icon = 'icons/mob/animal.dmi'
+	image_state = "clown"
+
+/obj/effect/hallucination/simple/clown/Initialize(mapload, mob/living/carbon/T, duration)
+	..(loc, T)
+	name = pick(GLOB.clown_names)
+	QDEL_IN(src,duration)
+
+/obj/effect/hallucination/simple/clown/scary
+	image_state = "scary_clown"
+
 /obj/effect/hallucination/simple/bubblegum
 	name = "Bubblegum"
 	image_icon = 'icons/mob/lavaland/96x96megafauna.dmi'

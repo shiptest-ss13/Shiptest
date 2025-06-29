@@ -147,6 +147,26 @@
 		M.mind.add_antag_datum(new_op,creator_op.nuke_team)
 		M.mind.special_role = "Nuclear Operative"
 
+//////CLOWN OP
+/obj/item/antag_spawner/nuke_ops/clown
+	name = "clown operative teleporter"
+	desc = "A single-use teleporter designed to quickly reinforce clown operatives in the field."
+
+/obj/item/antag_spawner/nuke_ops/clown/spawn_antag(client/C, turf/T, kind, datum/mind/user)
+	var/mob/living/carbon/human/M = new/mob/living/carbon/human(T)
+	C.prefs.copy_to(M)
+	M.key = C.key
+
+	var/datum/antagonist/nukeop/clownop/new_op = new /datum/antagonist/nukeop/clownop()
+	new_op.send_to_spawnpoint = FALSE
+	new_op.nukeop_outfit = /datum/outfit/syndicate/clownop/no_crystals
+
+	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop/clownop,TRUE)
+	if(creator_op)
+		M.mind.add_antag_datum(new_op, creator_op.nuke_team)
+		M.mind.special_role = "Clown Operative"
+
+
 //////SYNDICATE BORG
 /obj/item/antag_spawner/nuke_ops/borg_tele
 	name = "syndicate cyborg teleporter"
@@ -257,6 +277,17 @@
 	to_chat(S, S.playstyle_string)
 	to_chat(S, "<B>You are currently not currently in the same plane of existence as the station. \
 	Ctrl+Click a blood pool to manifest.</B>")
+
+/obj/item/antag_spawner/slaughter_demon/laughter
+	name = "vial of tickles"
+	desc = "A magically infused bottle of clown love, distilled from countless hugging attacks. Used in funny rituals to attract adorable creatures."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "vial"
+	color = "#FF69B4" // HOT PINK
+
+	veil_msg = span_warning("You sense an adorable presence lurking just beyond the veil...")
+	demon_type = /mob/living/simple_animal/slaughter/laughter
+	antag_type = /datum/antagonist/slaughter/laughter
 
 /obj/item/antag_spawner/syndi_borer
 	name = "syndicate brain-slug container"

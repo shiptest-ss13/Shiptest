@@ -3,6 +3,13 @@
 	icon = null
 	ttone = "data"
 
+
+/obj/item/pda/ai/attack_self(mob/user)
+	if ((honkamt > 0) && (prob(60)))//For clown virus.
+		honkamt--
+		playsound(loc, 'sound/items/bikehorn.ogg', 30, TRUE)
+	return
+
 /obj/item/pda/ai/pai
 	ttone = "assist"
 
@@ -51,6 +58,7 @@
 	default_cartridge = /obj/item/cartridge/signal/toxins
 	icon_state = "pda-science"
 	ttone = "boom"
+
 
 /obj/item/pda/heads
 	default_cartridge = /obj/item/cartridge/head

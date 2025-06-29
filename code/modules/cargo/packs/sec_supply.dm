@@ -12,13 +12,6 @@
 	contains = list(/obj/item/clothing/accessory/holster)
 	crate_name = "holster crate"
 
-/datum/supply_pack/sec_supply/seclite
-	name = "Seclite Crate"
-	desc = "Contains a single high power flashlight, complete with the hardware for attachment to standard helmet mounting brackets"
-	contains = list(/obj/item/flashlight/seclite)
-	cost = 100
-	crate_name = "seclite crate"
-
 /datum/supply_pack/sec_supply/securitybarriers
 	name = "Security Barrier Grenade"
 	desc = "Halt the opposition with one Security Barrier grenade."

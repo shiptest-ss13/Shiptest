@@ -287,10 +287,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 	//same surface ore drop rate too...
 	ore_list = list(
-		/obj/item/stack/ore/iron = 50,
 		/obj/item/stack/ore/gold = 30,
 		/obj/item/stack/ore/silver = 20,
-		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/diamond = 10,
 		/obj/item/stack/ore/titanium = 1,
 		)
@@ -307,12 +305,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/jungle/seedling = 1,
 		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 1,
 		/mob/living/simple_animal/hostile/jungle/mook = 1,
+		/mob/living/simple_animal/hostile/jungle/leaper = 1,
 	)
 	ore_list = list(
-		/obj/item/stack/ore/iron = 40,
 		/obj/item/stack/ore/gold = 20,
 		/obj/item/stack/ore/silver = 10,
-		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/diamond = 10,
 		/obj/item/stack/ore/titanium = 4,
 		)
@@ -336,10 +333,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/jungle/seedling = 5,
 		/mob/living/simple_animal/hostile/jungle/mega_arachnid = 20,
 		/mob/living/simple_animal/hostile/jungle/mook = 30,
+		/mob/living/simple_animal/hostile/jungle/leaper = 10,
 	)
 	ore_list = list(
-		/obj/item/stack/ore/iron = 10,
-		/obj/item/stack/ore/uranium = 10,
 		/obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/silver = 10,
 		/obj/item/stack/ore/diamond = 10,
@@ -508,6 +504,96 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 5,
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		)
+//wasteplanet
+/obj/structure/vein/waste
+	// class 1 has easy mobs, the ones you find on the surface
+	mob_types = list(
+		//hivebots, not too difficult
+		/mob/living/simple_animal/hostile/hivebot/strong = 20,
+		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
+		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 30,
+		//bots, are hostile
+		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
+		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
+		)
+
+	//same surface ore drop rate too...
+	ore_list = list(
+		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/plasma = 35,
+		/obj/item/stack/ore/uranium = 30,
+
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/gold = 4,
+		)
+
+/obj/structure/vein/waste/classtwo
+	mining_charges = 8
+	vein_class = 2
+	mob_types = list( //nor organics, more biased towards hivebots though
+		/mob/living/simple_animal/hostile/hivebot/strong = 20,
+		/mob/living/simple_animal/hostile/hivebot/ranged = 50,
+		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 50,
+		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 1,
+		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
+		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/obj/structure/spawner/hivebot = 20
+	)
+	ore_list = list(
+		/obj/item/stack/ore/iron = 30,
+		/obj/item/stack/ore/plasma = 25,
+		/obj/item/stack/ore/uranium = 20,
+
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/gold = 8,
+		/obj/item/stack/ore/diamond = 1,
+		)
+	//seeing as hivebots die in 1-2 hits from pistols we spawn more
+	max_mobs = 7
+	spawn_time = 10 SECONDS
+
+/obj/structure/vein/waste/classtwo/rare
+	mining_charges = 12
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/uranium = 10,
+		)
+
+/obj/structure/vein/waste/classthree
+	mining_charges = 10
+	vein_class = 3
+
+	mob_types = list( //Whoops! All hivebots!
+		/mob/living/simple_animal/hostile/hivebot/strong = 20,
+		/mob/living/simple_animal/hostile/hivebot/ranged = 40,
+		/mob/living/simple_animal/hostile/hivebot/ranged/rapid = 20,
+		/mob/living/simple_animal/hostile/hivebot = 20,
+		/mob/living/simple_animal/hostile/hivebot/defender = 1
+	)
+	ore_list = list(
+		/obj/item/stack/ore/iron = 15,
+		/obj/item/stack/ore/plasma = 15,
+		/obj/item/stack/ore/uranium = 10,
+
+		/obj/item/stack/ore/silver = 10,
+		/obj/item/stack/ore/gold = 10,
+		/obj/item/stack/ore/diamond = 5,
+		)
+	//ditto
+	max_mobs = 7
+	spawn_time = 8 SECONDS
+
+/obj/structure/vein/waste/classthree/rare
+	mining_charges = 14
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/uranium = 10,
+		)
+
+/obj/structure/vein/waste/classfour
+	mining_charges = 30
+	vein_class = 4
 
 //moons, have a dupe of asteroid but less of an emphasis on  goliaths
 

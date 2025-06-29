@@ -845,30 +845,6 @@
 "gg" = (
 /obj/machinery/light/directional/south,
 /obj/structure/table/reinforced,
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 3
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 3
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 5
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 5
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 7
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 7
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 9
-	},
-/obj/item/storage/bag/tray/cafeteria{
-	pixel_y = 9
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "gj" = (
@@ -974,15 +950,14 @@
 /area/ship/crew/dorm/captain)
 "gV" = (
 /obj/machinery/newscaster/directional/east,
-/obj/item/storage/box/cups{
-	pixel_y = 7;
-	pixel_x = 5
+/obj/structure/crate_shelf{
+	capacity = 2
 	},
-/obj/structure/table/reinforced,
-/obj/item/storage/box/cups{
-	pixel_y = 4;
-	pixel_x = 5
-	},
+/obj/structure/closet/crate/rations,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "ha" = (
@@ -1111,9 +1086,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/hand_labeler{
-	pixel_y = -10
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "hP" = (
@@ -1199,9 +1171,12 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/office)
 "in" = (
-/obj/structure/sign/number/random,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/storage/port)
+/obj/effect/decal/cleanable/food/flour,
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ship/crew/ccommons)
 "iq" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -2309,9 +2284,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/structure/closet/crate/bin{
-	pixel_y = 3;
-	pixel_x = 9
+/obj/structure/chair{
+	dir = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
@@ -4393,18 +4367,6 @@
 /obj/item/storage/backpack/explorer,
 /obj/item/storage/backpack/explorer,
 /obj/item/storage/backpack/explorer,
-/obj/item/clothing/gloves/gezena{
-	pixel_y = -15
-	},
-/obj/item/clothing/gloves/gezena{
-	pixel_y = -15
-	},
-/obj/item/clothing/gloves/gezena{
-	pixel_y = -15
-	},
-/obj/item/clothing/gloves/gezena{
-	pixel_y = -15
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/dorm)
 "Ba" = (
@@ -6469,10 +6431,6 @@
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_y = 30
 	},
-/obj/item/healthanalyzer{
-	pixel_x = -2;
-	pixel_y = 10
-	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "OT" = (
@@ -7557,74 +7515,8 @@
 /area/ship/crew/office)
 "Vd" = (
 /obj/structure/closet/wall/white/directional/south,
-/obj/item/storage/ration/crayons{
-	pixel_y = 0;
-	pixel_x = -6
-	},
+/obj/item/storage/ration/crayons,
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_y = 2;
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_y = 2;
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_y = 2;
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_y = 2;
-	pixel_x = 6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/effect/spawner/random/food_or_drink/ration{
-	pixel_x = -6
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_y = 2;
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/food/drinks/waterbottle/large{
-	pixel_y = 2;
-	pixel_x = 6
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/ccommons)
 "Ve" = (
@@ -8172,9 +8064,6 @@
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 1
 	},
-/obj/structure/chair/handrail{
-	dir = 4
-	},
 /turf/open/floor/mineral/titanium/tiled,
 /area/ship/medical)
 "YS" = (
@@ -8665,7 +8554,7 @@ oY
 oY
 oY
 fY
-in
+le
 le
 sw
 vf
@@ -8694,7 +8583,7 @@ oY
 oY
 oY
 hd
-in
+le
 le
 aw
 aw
@@ -8723,7 +8612,7 @@ oY
 oY
 oY
 TG
-in
+le
 Ag
 Px
 Cg
@@ -8752,7 +8641,7 @@ oY
 oY
 oY
 hd
-in
+le
 dn
 Rt
 PB
@@ -9228,7 +9117,7 @@ mZ
 sy
 ha
 GG
-SY
+in
 Vd
 gC
 Zf

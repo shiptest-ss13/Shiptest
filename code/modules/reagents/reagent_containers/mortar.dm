@@ -3,6 +3,9 @@ Originally in glass.dm, moved here
 to accommodate additional materials.
 \*/
 
+#define MORTAR_STAMINA_MINIMUM 50 //What is the amount of stam damage that we prevent mortar use at
+#define MORTAR_STAMINA_USE 40 //How much stam damage is given to people when the mortar is used
+
 /obj/item/pestle
 	name = "pestle"
 	desc = "An ancient, simple tool used in conjunction with a mortar to grind or juice items."
@@ -40,6 +43,10 @@ to accommodate additional materials.
 			balloon_alert(user, "nothing to grind")
 			return
 
+		if(user.getStaminaLoss() > MORTAR_STAMINA_MINIMUM)
+			balloon_alert(user, "too tired")
+			return
+
 		var/list/choose_options = list(
 			"Grind" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_grind"),
 			"Juice" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_juice")
@@ -54,6 +61,7 @@ to accommodate additional materials.
 			balloon_alert(user, "stopped grinding")
 			return
 
+		user.adjustStaminaLoss(MORTAR_STAMINA_USE)
 		switch(picked_option)
 			if("Juice")
 				if(grinded.juice_results)
@@ -102,6 +110,9 @@ to accommodate additional materials.
 
 	to_chat(user, span_notice("You break [to_be_ground] into powder."))
 	QDEL_NULL(to_be_ground)
+
+#undef MORTAR_STAMINA_MINIMUM
+#undef MORTAR_STAMINA_USE
 
 /obj/item/reagent_containers/glass/mortar/glass //mmm yes... this glass is made of glass
 	icon_state = "mortar_glass"

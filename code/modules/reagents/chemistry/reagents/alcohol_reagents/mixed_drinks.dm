@@ -831,6 +831,12 @@
 	glass_name = "Creamtruck"
 	glass_desc = "A distinctly non-kid friendly equivalent to the ice cream truck."
 
+/datum/reagent/consumable/ethanol/bananahonk/on_mob_life(mob/living/carbon/M)
+	if((ishuman(M) && M.job == "Clown") || ismonkey(M))
+		M.heal_bodypart_damage(1,1)
+		. = 1
+	return ..() || .
+
 /datum/reagent/consumable/ethanol/silencer
 	name = "Choker"
 	description = "It takes a moment of quiet to really appreciate some drinks - this one doesn't give you the illusion of choice."
@@ -842,6 +848,13 @@
 	glass_icon_state = "silencerglass"
 	glass_name = "Choker"
 	glass_desc = "It takes a moment of quiet to really appreciate some drinks - this one doesn't give you the illusion of choice."
+
+/datum/reagent/consumable/ethanol/silencer/on_mob_life(mob/living/carbon/M)
+	if(ishuman(M) && M.mind?.miming)
+		M.silent = max(M.silent, MIMEDRINK_SILENCE_DURATION)
+		M.heal_bodypart_damage(1,1)
+		. = 1
+	return ..() || .
 
 /datum/reagent/consumable/ethanol/drunkenblumpkin
 	name = "Drunken Blumpkin"
@@ -1062,6 +1075,14 @@
 	glass_icon_state = "quadruple_sec"
 	glass_name = "Quadruple Sec"
 	glass_desc = "A glass of Quadruple Sec. Popularized for being a mixed drink of choice across multiple independent security agencies, and notably among Nanotrasen's internal security culture. It's not recommended to drink while manning a vessel, though!"
+
+/datum/reagent/consumable/ethanol/quadruple_sec/on_mob_life(mob/living/carbon/M)
+	//Securidrink in line with the Screwdriver for engineers or Nothing for mimes
+	if(HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
+		M.heal_bodypart_damage(1, 1)
+		M.adjustBruteLoss(-2,0)
+		. = 1
+	return ..()
 
 /datum/reagent/consumable/ethanol/quintuple_sec
 	name = "Quintuple Sec"
@@ -1401,6 +1422,13 @@
 	glass_icon_state = "blank_paper"
 	glass_name = "glass of blank paper"
 	glass_desc = "A fizzy cocktail for those looking to start fresh."
+
+/datum/reagent/consumable/ethanol/blank_paper/on_mob_life(mob/living/carbon/M)
+	if(ishuman(M) && M.mind?.miming)
+		M.silent = max(M.silent, MIMEDRINK_SILENCE_DURATION)
+		M.heal_bodypart_damage(1,1)
+		. = 1
+	return ..()
 
 /datum/reagent/consumable/ethanol/wizz_fizz
 	name = "Wizz Fizz"

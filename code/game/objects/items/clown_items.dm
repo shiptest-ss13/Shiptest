@@ -173,9 +173,49 @@
 	//LoadComponent so child types dont stack squeak components
 	LoadComponent(/datum/component/squeak, sound_list, 50)
 
+/obj/item/bikehorn/attack(mob/living/carbon/M, mob/living/carbon/user)
+	if(user != M && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if (HAS_TRAIT(H, TRAIT_CLUMSY)) //only clowns can unlock its true powers
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "honk", /datum/mood_event/honk)
+	return ..()
+
 //air horn
 /obj/item/bikehorn/airhorn
 	name = "air horn"
 	desc = "Damn son, where'd you find this?"
 	icon_state = "air_horn"
 	sound_file = 'sound/items/airhorn2.ogg'
+//golden bikehorn
+/obj/item/bikehorn/golden
+	name = "golden bike horn"
+	desc = "Golden? Clearly, it's made with bananium! Honk!"
+	icon_state = "gold_horn"
+	item_state = "gold_horn"
+	var/flip_cooldown = 0
+
+/obj/item/bikehorn/golden/attack()
+	if(flip_cooldown < world.time)
+		flip_mobs()
+	return ..()
+
+/obj/item/bikehorn/golden/attack_self(mob/user)
+	if(flip_cooldown < world.time)
+		flip_mobs()
+	..()
+
+/obj/item/bikehorn/golden/proc/flip_mobs(mob/living/carbon/M, mob/user)
+	var/turf/T = get_turf(src)
+	for(M in ohearers(7, T))
+		if(ishuman(M) && M.can_hear())
+			var/mob/living/carbon/human/H = M
+			if(istype(H.ears, /obj/item/clothing/ears/earmuffs))
+				continue
+		M.emote("flip")
+	flip_cooldown = world.time + 7
+//canned laughter
+/obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter
+	name = "Canned Laughter"
+	desc = "Just looking at this makes you want to giggle."
+	icon_state = "laughter"
+	list_reagents = list(/datum/reagent/consumable/laughter = 50)

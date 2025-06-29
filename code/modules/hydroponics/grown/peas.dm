@@ -35,7 +35,7 @@
 	plantname = "Laughin' Peas"
 	product = /obj/item/food/grown/laugh
 	maturation = 7
-	potency = 15
+	potency = 10
 	yield = 7
 	production = 5
 	growthstages = 3
@@ -44,7 +44,7 @@
 	icon_dead = "laughpeas-dead"
 	genes = list (/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow/purple)
 	mutatelist = list (/obj/item/seeds/peas/laugh/peace)
-	reagents_add = list (/datum/reagent/consumable/sugar = 0.05, /datum/reagent/consumable/nutriment = 0.07)
+	reagents_add = list (/datum/reagent/consumable/laughter = 0.05, /datum/reagent/consumable/sugar = 0.05, /datum/reagent/consumable/nutriment = 0.07)
 	rarity = 25 //It actually might make Central Command Officials loosen up a smidge, eh?
 	research = PLANT_RESEARCH_TIER_2
 

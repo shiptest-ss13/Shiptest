@@ -332,7 +332,8 @@
 
 /obj/item/book/granter/spell/random/Initialize()
 	. = ..()
-	var/real_type = pick(subtypesof(/obj/item/book/granter/spell))
+	var/static/banned_spells = list(/obj/item/book/granter/spell/mimery_blockade)
+	var/real_type = pick(subtypesof(/obj/item/book/granter/spell) - banned_spells)
 	new real_type(loc)
 	return INITIALIZE_HINT_QDEL
 

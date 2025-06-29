@@ -17,6 +17,7 @@
 		/datum/planet_type/jungle = /obj/structure/vein/jungle,
 		/datum/planet_type/sand = /obj/structure/vein/sand,
 		/datum/planet_type/rock = /obj/structure/vein/rockplanet,
+		/datum/planet_type/waste = /obj/structure/vein/waste,
 		/datum/planet_type/moon = /obj/structure/vein/moon,
 		/datum/planet_type/asteroid = /obj/structure/vein/asteroid,
 	)

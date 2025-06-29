@@ -268,6 +268,22 @@
 	icon_state = "janitor_envirohelm"
 	item_state = "janitor_envirohelm"
 
+/obj/item/clothing/head/helmet/space/plasmaman/mime
+	name = "mime envirosuit helmet"
+	desc = "The make-up is painted on, it's a miracle it doesn't chip. It's not very colourful."
+	icon_state = "mime_envirohelm"
+	item_state = "mime_envirohelm"
+	visor_icon = "mime_envisor"
+
+/obj/item/clothing/head/helmet/space/plasmaman/clown
+	name = "clown envirosuit helmet"
+	desc = "The make-up is painted on, it's a miracle it doesn't chip. <i>'HONK!'</i>"
+	icon_state = "clown_envirohelm"
+	item_state = "clown_envirohelm"
+	visor_icon = "clown_envisor"
+	smile_state = "clown_smile"
+
+// WS BEGIN - plasmeme command helmets buff start
 /obj/item/clothing/head/helmet/space/plasmaman/command
 	name = "captains envirosuit helmet"
 	desc = "An envirosuit helmet made for the most important plasmaman of them all."

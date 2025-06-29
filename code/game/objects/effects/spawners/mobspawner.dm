@@ -36,8 +36,8 @@
 /obj/effect/spawner/random/hivebotspawner
 	name = "Hivebot spawner"
 	loot = list(
-		/mob/living/basic/hivebot/strong,
-		/mob/living/basic/hivebot,
+		/mob/living/simple_animal/hostile/hivebot/strong,
+		/mob/living/simple_animal/hostile/hivebot,
 	)
 
 /obj/effect/spawner/random/spiderspawner

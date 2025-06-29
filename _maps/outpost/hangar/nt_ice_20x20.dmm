@@ -4,7 +4,11 @@
 /area/hangar)
 "ad" = (
 /obj/machinery/light/floor,
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "al" = (
 /obj/effect/decal/fakelattice,
@@ -16,7 +20,7 @@
 	},
 /area/hangar)
 "am" = (
-/turf/closed/indestructible/titanium/nodiagnonal,
+/turf/closed/indestructible/reinforced,
 /area/hangar)
 "ao" = (
 /obj/effect/turf_decal/industrial/traffic{
@@ -30,7 +34,11 @@
 /area/hangar)
 "ap" = (
 /obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "av" = (
 /obj/effect/turf_decal/borderfloor{
@@ -53,13 +61,19 @@
 	},
 /area/hangar)
 "az" = (
-/obj/structure/window/reinforced/fulltile/shuttle/indestructible,
-/obj/structure/grille,
-/turf/open/floor/hangar/temperate,
+/obj/effect/spawner/structure/window/reinforced/indestructible,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "aB" = (
 /obj/effect/landmark/outpost/hangar_dock,
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "aC" = (
 /obj/effect/turf_decal/borderfloor,
@@ -76,7 +90,11 @@
 	},
 /area/hangar)
 "aJ" = (
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "aL" = (
 /obj/structure/chair{
@@ -191,12 +209,10 @@
 /area/hangar)
 "bI" = (
 /obj/effect/turf_decal/siding/white{
-	dir = 8
+	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/outpost/hangar_numbers,
-/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
@@ -221,7 +237,11 @@
 	dir = 1
 	},
 /obj/structure/catwalk/over/plated_catwalk,
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "cD" = (
 /obj/effect/turf_decal/borderfloor{
@@ -244,7 +264,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "dM" = (
 /obj/effect/decal/fakelattice,
@@ -304,11 +328,12 @@
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "hG" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 10
+/obj/effect/decal/fakelattice,
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt{
+	color = "#808080"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned{
+/turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -328,7 +353,10 @@
 "im" = (
 /obj/structure/flora/grass/both,
 /obj/structure/flora/grass/both,
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "kq" = (
 /obj/effect/turf_decal/industrial/caution,
@@ -453,18 +481,18 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
+/obj/effect/landmark/outpost/elevator_machine{
+	shaft = "1"
+	},
 /obj/machinery/light/small/directional/east{
 	pixel_y = -8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/elevator_call_button{
 	dir = 8;
 	pixel_x = 25;
 	pixel_y = 6
 	},
-/obj/effect/landmark/outpost/elevator_machine{
-	shaft = "1"
-	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/brushed{
 	planetary_atmos = 1
 	},
@@ -477,14 +505,20 @@
 	desc = "A direction sign, pointing out which way the Cargo Delivery Chute is."
 	},
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "pM" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "rj" = (
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "rs" = (
 /obj/structure/plasticflaps/outpost,
@@ -496,11 +530,18 @@
 "rQ" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "rY" = (
 /obj/effect/decal/fakelattice,
-/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/glass{
+	dir = 8;
+	color = "#808080"
+	},
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
@@ -571,14 +612,17 @@
 /area/hangar)
 "vw" = (
 /obj/structure/sign/departments/cargo,
-/turf/closed/indestructible/titanium/nodiagnonal,
+/turf/closed/indestructible/reinforced,
 /area/hangar)
 "wQ" = (
 /obj/structure/railing{
 	dir = 9;
 	layer = 2.8
 	},
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "xe" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -647,7 +691,10 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "Dh" = (
 /obj/effect/decal/fakelattice,
@@ -676,7 +723,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/closed/indestructible/titanium/nodiagnonal,
+/turf/closed/indestructible/reinforced,
 /area/hangar)
 "ES" = (
 /obj/effect/turf_decal/borderfloor{
@@ -770,7 +817,10 @@
 /area/hangar)
 "GX" = (
 /obj/structure/flora/tree/pine,
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "Hu" = (
 /obj/machinery/conveyor/auto/outpost{
@@ -808,7 +858,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "JU" = (
 /obj/effect/turf_decal/siding/white{
@@ -859,7 +913,10 @@
 /area/hangar)
 "MI" = (
 /obj/structure/flora/grass/both,
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "MK" = (
 /obj/effect/turf_decal/borderfloor/full,
@@ -874,7 +931,10 @@
 /area/hangar)
 "MN" = (
 /obj/structure/flora/grass/green,
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "MR" = (
 /obj/effect/turf_decal/borderfloor,
@@ -917,7 +977,11 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/hangar/temperate,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
+	planetary_atmos = 1
+	},
 /area/hangar)
 "NY" = (
 /obj/structure/railing/corner{
@@ -934,7 +998,10 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "PB" = (
 /obj/effect/decal/fakelattice,
@@ -964,7 +1031,10 @@
 /area/hangar)
 "Qu" = (
 /obj/structure/flora/tree/dead,
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "Rj" = (
 /obj/machinery/disposal/deliveryChute{
@@ -1021,7 +1091,10 @@
 /area/hangar)
 "TA" = (
 /obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/turf/open/floor/plating/asteroid/snow/temperatre{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/hangar)
 "TF" = (
 /obj/effect/turf_decal/borderfloor{
@@ -2994,7 +3067,7 @@ TR
 am
 am
 am
-am
+TA
 rj
 MI
 rj
@@ -3034,9 +3107,9 @@ hw
 Ku
 JU
 bI
-hG
 aL
 am
+ac
 rj
 rj
 rj
@@ -3075,10 +3148,10 @@ am
 sV
 ay
 me
-me
 fb
 pr
 am
+ac
 ac
 rj
 MI
@@ -3118,7 +3191,7 @@ am
 Zi
 Zi
 Zi
-Zi
+am
 am
 am
 am
@@ -3159,9 +3232,9 @@ al
 ao
 xI
 xI
-xI
 UV
 ao
+dM
 Dh
 Dh
 al
@@ -3202,8 +3275,8 @@ ao
 xI
 xI
 xI
-xI
 ao
+aY
 Dh
 Dh
 al
@@ -3230,13 +3303,13 @@ ao
 aY
 dM
 aY
-al
+hG
 aY
 aY
 al
 Dh
 Dh
-al
+IA
 aY
 aY
 aY
@@ -3244,8 +3317,8 @@ ao
 xI
 xI
 xI
-xI
 ao
+rY
 al
 Dh
 aY
@@ -3253,7 +3326,7 @@ aY
 al
 Dh
 Dh
-al
+IA
 Dh
 Dh
 aY
@@ -3265,113 +3338,89 @@ am
 "}
 (49,1,1) = {"
 am
-aY
-aY
-aY
-ao
-aY
-aY
-aY
-aY
-aY
-aY
-aY
-aY
-aY
-aY
-aY
-aY
-aY
-ao
-xI
-xI
-xI
-xI
-ao
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-ao
-al
-al
-al
+am
+am
+am
+am
+ac
+ac
+ac
+am
+ac
+ac
+ac
+ac
+ac
+am
+ac
+ac
+ac
+am
+am
+am
+am
+am
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+am
+ac
+ac
+ac
+am
+am
+am
+am
 am
 "}
 (50,1,1) = {"
-am
-aY
-aY
-aY
-ao
-aY
-aY
-aY
-rY
-aY
-aY
-aY
-aY
-aY
-rY
-aY
-aY
-aY
-ao
-xI
-xI
-xI
-xI
-ao
-al
-al
-al
-al
-al
-al
-al
-IA
-al
-al
-al
-ao
-al
-al
-al
-am
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 "}
 (51,1,1) = {"
-am
-am
-am
-am
-am
-ac
-ac
-ac
-am
-ac
-ac
-ac
-ac
-ac
-am
-ac
-ac
-ac
-am
-am
-am
-am
-am
-am
 ac
 ac
 ac
@@ -3379,15 +3428,39 @@ ac
 ac
 ac
 ac
-am
 ac
 ac
 ac
-am
-am
-am
-am
-am
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 "}
 (52,1,1) = {"
 ac

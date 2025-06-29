@@ -148,6 +148,18 @@ Borg Hypospray
 	reagent_ids = list (/datum/reagent/toxin/acid/fluacid, /datum/reagent/toxin/mutetoxin, /datum/reagent/toxin/cyanide, /datum/reagent/toxin/sodium_thiopental, /datum/reagent/toxin/heparin, /datum/reagent/toxin/lexorin)
 	accepts_reagent_upgrades = FALSE
 
+/obj/item/reagent_containers/borghypo/clown
+	name = "laughter injector"
+	desc = "Keeps the crew happy and productive!"
+	reagent_ids = list(/datum/reagent/consumable/laughter)
+	accepts_reagent_upgrades = FALSE
+
+/obj/item/reagent_containers/borghypo/clown/hacked
+	name = "laughter injector"
+	desc = "Keeps the crew so happy they don't work!"
+	reagent_ids = list(/datum/reagent/consumable/superlaughter)
+	accepts_reagent_upgrades = FALSE
+
 /obj/item/reagent_containers/borghypo/syndicate
 	name = "syndicate cyborg hypospray"
 	desc = "An experimental piece of Syndicate technology used to produce powerful restorative nanites used to very quickly restore injuries of all types. Also metabolizes potassium iodide, for radiation poisoning, and morphine, for offense."

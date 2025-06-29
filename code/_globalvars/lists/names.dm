@@ -13,6 +13,8 @@ GLOBAL_LIST_INIT(lizard_names_male, world.file2list("strings/names/lizard_male.t
 GLOBAL_LIST_INIT(lizard_names_female, world.file2list("strings/names/lizard_female.txt"))
 GLOBAL_LIST_INIT(spider_names, world.file2list("strings/names/spider_names.txt"))
 GLOBAL_LIST_INIT(kepori_names, world.file2list("strings/names/kepori_names.txt"))
+GLOBAL_LIST_INIT(clown_names, world.file2list("strings/names/clown.txt"))
+GLOBAL_LIST_INIT(mime_names, world.file2list("strings/names/mime.txt"))
 GLOBAL_LIST_INIT(carp_names, world.file2list("strings/names/carp.txt"))
 GLOBAL_LIST_INIT(plasmaman_names, world.file2list("strings/names/plasmaman.txt"))
 GLOBAL_LIST_INIT(squid_names, world.file2list("strings/names/squid.txt"))

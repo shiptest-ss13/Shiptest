@@ -13,56 +13,6 @@
 	desc = "Only for those who can pull it off."
 	icon_state = "jeansblack"
 
-/obj/item/clothing/under/pants/cargo
-	name = "cargo pants"
-	desc = "A pocket for every need."
-	icon_state = "cargogrey"
-	unique_reskin = list("grey cargo pants" = "cargogrey",
-						"black cargo pants" = "cargoblack",
-						"khaki cargo pants" = "cargokhaki",
-						"jean cargo pants" = "cargojeans",
-						"olive cargo pants" = "cargoolive",
-						"brown cargo pants" = "cargobrown",
-						)
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
-
-/obj/item/clothing/under/pants/cargo/grey
-	name = "grey cargo pants"
-	desc = "A pocket for every need."
-	icon_state = "cargogrey"
-	current_skin = "grey cargo pants"
-
-/obj/item/clothing/under/pants/cargo/black
-	name = "black cargo pants"
-	desc = "A pocket for every need."
-	icon_state = "cargoblack"
-	current_skin = "black cargo pants"
-
-/obj/item/clothing/under/pants/cargo/khaki
-	name = "khaki cargo pants"
-	desc = "A pocket for every need."
-	icon_state = "cargokhaki"
-	current_skin = "khaki cargo pants"
-
-/obj/item/clothing/under/pants/cargo/jeans
-	name = "jean cargo pants"
-	desc = "A pocket for every need."
-	icon_state = "cargojeans"
-	current_skin = "jean cargo pants"
-
-/obj/item/clothing/under/pants/cargo/brown
-	name = "brown cargo pants"
-	desc = "A pocket for every need."
-	icon_state = "cargobrown"
-	current_skin = "brown cargo pants"
-
-/obj/item/clothing/under/pants/cargo/olive
-	name = "olive cargo pants"
-	desc = "A pocket for every need."
-	icon_state = "cargoolive"
-	current_skin = "olive cargo pants"
-
 /obj/item/clothing/under/pants/white
 	name = "white pants"
 	desc = "Plain white pants. Boring."

@@ -11,6 +11,7 @@
 	/obj/item/food/donkpocket/warm/spicy,
 	/obj/item/food/donkpocket/warm/teriyaki,
 	/obj/item/food/donkpocket/warm/pizza,
+	/obj/item/food/donkpocket/warm/honk,
 	/obj/item/food/donkpocket/warm/berry
 	)
 
@@ -155,6 +156,33 @@
 		/datum/reagent/consumable/tomatojuice = 2
 	)
 	tastes = list("meat" = 2, "dough" = 2, "melty cheese"= 2)
+	foodtypes = GRAIN
+
+/obj/item/food/donkpocket/honk
+	name = "\improper Honk-pocket"
+	desc = "The award-winning donk-pocket that won the hearts of clowns and humans alike."
+	icon_state = "donkpocketbanana"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/banana = 4
+	)
+	tastes = list("banana" = 2, "dough" = 2, "children's antibiotics" = 1)
+	foodtypes = GRAIN
+
+	//warm_type = /obj/item/food/donkpocket/warm/honk
+	microwaved_type = /obj/item/food/donkpocket/warm/honk
+
+/obj/item/food/donkpocket/warm/honk
+	name = "warm Honk-pocket"
+	desc = "The award-winning donk-pocket, now warm and toasty."
+	icon_state = "donkpocketbanana"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/medicine/omnizine = 2,
+		/datum/reagent/consumable/banana = 4,
+		/datum/reagent/consumable/laughter = 6
+	)
+	tastes = list("banana" = 2, "dough" = 2, "children's antibiotics" = 1)
 	foodtypes = GRAIN
 
 /obj/item/food/donkpocket/berry

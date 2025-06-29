@@ -83,6 +83,11 @@
 			papers.Remove(paper)
 		else
 			paper = new papertype(src)
+			if(check_holidays(APRIL_FOOLS))
+				if(prob(30))
+					paper.add_raw_text("<font face=\"[CRAYON_FONT]\" color=\"red\"><b>HONK HONK HONK HONK HONK HONK HONK<br>HOOOOOOOOOOOOOOOOOOOOOONK<br>APRIL FOOLS</b></font>")
+					paper.AddComponent(/datum/component/honkspam)
+					paper.update_appearance()
 
 		paper.add_fingerprint(user)
 		paper.forceMove(user.loc)

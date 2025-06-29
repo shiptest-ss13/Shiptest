@@ -673,6 +673,12 @@
 	if(.)
 		R.module.transform_to(new_module)
 
+/obj/item/borg/upgrade/transform/clown
+	name = "borg module picker (Clown)"
+	desc = "Allows you to to turn a cyborg into a clown, honk."
+	icon_state = "cyborg_upgrade3"
+	new_module = /obj/item/robot_module/clown
+
 /obj/item/borg/upgrade/circuit_app
 	name = "circuit manipulation apparatus"
 	desc = "An engineering cyborg upgrade allowing for manipulation of circuit boards."

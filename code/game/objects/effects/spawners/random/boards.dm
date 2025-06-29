@@ -188,6 +188,8 @@
 	loot = list(
 			/obj/item/circuitboard/aicore = 5,
 			/obj/item/circuitboard/machine/chem_dispenser = 5,
+			/obj/item/circuitboard/machine/circuit_imprinter = 5,
+			/obj/item/circuitboard/machine/protolathe = 5,
 			/obj/item/circuitboard/machine/rad_collector = 5,
 			/obj/item/circuitboard/machine/launchpad = 5,
 			/obj/item/circuitboard/machine/shuttle/engine/electric = 5,

@@ -17,7 +17,3 @@
 	. = ..()
 	gun.suppressed = FALSE
 	return TRUE
-
-/obj/item/attachment/silencer/cobra
-	size_mod = 0
-	attach_features_flags = ATTACH_NO_SPRITE

@@ -155,6 +155,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/fbp = FALSE
 	var/phobia = "spiders"
+	var/preferred_smoke_brand = PREF_CIG_SPACE
 	var/list/alt_titles_preferences = list()
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -198,14 +199,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/list/exp = list()
 	var/list/menuoptions
-
-	///do we use tgui input when possible
-	var/tgui_input = TRUE
-
-	/// are the tgui buttons big and stupid
-	var/large_tgui_buttons = FALSE
-	/// are the tgui buttons swapped for some reason
-	var/swapped_tgui_buttons = FALSE
 
 	///Gear the character has equipped
 	var/list/equipped_gear = list()
@@ -875,6 +868,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			if("Smoker" in all_quirks)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+				dat += "<h3>Favorite Smokes</h3>"
+
+				dat += "<a href='byond://?_src_=prefs;preference=preferred_smoke_brand;task=input'>[preferred_smoke_brand]</a><BR>"
+
 			if("body_size" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -1134,9 +1134,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Play Lobby Music:</b> <a href='byond://?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play End of Round Sounds:</b> <a href='byond://?_src_=prefs;preference=endofround_sounds'>[(toggles & SOUND_ENDOFROUND) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='byond://?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>TGUI Large Buttons:</b> <a href='byond://?_src_=prefs;preference=large_tgui_buttons'>[(large_tgui_buttons) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Swap TGUI Buttons:</b> <a href='byond://?_src_=prefs;preference=swapped_tgui_buttons'>[(swapped_tgui_buttons) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>TGUI input toggles:</b> <a href='byond://?_src_=prefs;preference=tgui_input'>[(tgui_input) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 
 
@@ -2135,6 +2132,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(phobiaType)
 						phobia = phobiaType
 
+				if("preferred_smoke_brand")
+					var/smokeBrand = input(user, "What are your character's favorite smokes?", "Quirk Preference", preferred_smoke_brand) as null|anything in GLOB.valid_smoke_types
+					if(smokeBrand)
+						preferred_smoke_brand = smokeBrand
+
 				if("generic_adjective")
 					var/selectAdj
 					if(istype(pref_species, /datum/species/ipc))
@@ -2360,15 +2362,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("pull_requests")
 					chat_toggles ^= CHAT_PULLR
-
-				if("large_tgui_buttons")
-					large_tgui_buttons = !large_tgui_buttons
-
-				if("swapped_tgui_buttons")
-					swapped_tgui_buttons = !swapped_tgui_buttons
-
-				if("tgui_input")
-					tgui_input = !tgui_input
 
 				if("allow_midround_antag")
 					toggles ^= MIDROUND_ANTAG

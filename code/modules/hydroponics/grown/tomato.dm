@@ -72,6 +72,7 @@
 	icon_state = "bluetomato"
 	bite_consumption_mod = 2
 	splat_type = /obj/effect/decal/cleanable/oil
+	distill_reagent = /datum/reagent/consumable/laughter
 
 // Bluespace Tomato
 /obj/item/seeds/tomato/blue/bluespace

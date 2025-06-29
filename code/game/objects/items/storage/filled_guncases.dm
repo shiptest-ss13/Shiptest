@@ -222,9 +222,6 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/vector
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 
-/obj/item/storage/guncase/cycler
-	gun_type = /obj/item/gun/ballistic/shotgun/automatic/dual_tube
-
 /* Sharplite */
 
 /obj/item/storage/guncase/pistol/miniegun

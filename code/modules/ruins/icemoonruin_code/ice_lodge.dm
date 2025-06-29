@@ -25,6 +25,4 @@
 	name = "Frontiersman Officer Corpse Internals (Ice Lodge)"
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/vest/marine/frontier
-	back = /obj/item/storage/backpack
-	backpack_contents = list(/obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/pulseslug = 2)
 

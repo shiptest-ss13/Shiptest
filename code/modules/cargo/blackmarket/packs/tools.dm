@@ -6,8 +6,8 @@
 	desc = "Under fire while doing repairs? With this dual purpose wrench, never be caught unprepared again!"
 	item = /obj/item/wrench/combat
 
-	cost_min = 250
-	cost_max = 500
+	cost_min = 500
+	cost_max = 2500
 	stock = 1
 	availability_prob = 20
 
@@ -20,28 +20,6 @@
 	cost_max = 5000
 	stock = 1
 	availability_prob = 25
-
-/datum/blackmarket_item/tool/jaws
-	name = "Jaws of Life"
-	desc = "These prying jaws are useful for rescuing trapped victims. Or you know. Breaking into secure areas."
-	item = /obj/item/crowbar/power
-
-	cost_min = 750
-	cost_max = 1000
-	stock_min = 2
-	stock_max = 4
-	availability_prob = 40
-
-/datum/blackmarket_item/tool/power_drill
-	name = "Hand Drill"
-	desc = "Treat your tools right, and they'll outlive you. It was certainly the case for the last guy."
-	item = /obj/item/screwdriver/power
-
-	cost_min = 750
-	cost_max = 1000
-	stock_min = 2
-	stock_max = 4
-	availability_prob = 40
 
 /datum/blackmarket_item/tool/binoculars
 	name = "Binoculars"
@@ -91,8 +69,8 @@
 	desc = "30u of Thermite to assist in creating a quick access point or get away!"
 	item = /obj/item/reagent_containers/glass/bottle/thermite
 
-	cost_min = 50
-	cost_max = 100
+	cost_min = 75
+	cost_max = 300
 	stock_max = 10
 	availability_prob = 50
 
@@ -101,8 +79,8 @@
 	desc = "An extra large 150u jug of thermite. For those hard to reach places."
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
 
-	cost_min = 200
-	cost_max = 500
+	cost_min = 400
+	cost_max = 1200
 	stock_max = 3
 	availability_prob = 20
 
@@ -115,6 +93,38 @@
 	cost_max = 200
 	stock_max = 3
 	availability_prob = 50
+
+/datum/blackmarket_item/tool/thermal_eyepatch
+	name = "Thermal Eyepatch"
+	desc = "A thermal eyepatch, capable of tracking the heat signatures of living beings through solid objects."
+	item = /obj/item/clothing/glasses/thermal/eyepatch
+
+	cost_min = 1000
+	cost_max = 3000
+	stock = 1
+	availability_prob = 10
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/tool/jumpboots
+	name = "Jump Boots"
+	desc = "Jump ahead of the competition with these specialized mining boots!"
+	item = /obj/item/clothing/shoes/bhop
+
+	cost_min = 100
+	cost_max = 1000
+	stock = 3
+	availability_prob = 30
+
+/datum/blackmarket_item/tool/rocket_gloves
+	name = "Rocket Gloves"
+	desc = "The pinacle of tackling technology, no one will be able to resist a tackle from these rocket propelled gloves. Make sure not to miss though, we don't sell wheelchairs."
+	item = /obj/item/clothing/gloves/tackler/rocket
+
+	cost_min = 500
+	cost_max = 2000
+	stock_max = 3
+	availability_prob = 30
+	spawn_weighting = FALSE
 
 /datum/blackmarket_item/tool/rcd
 	name = "Rapid Construction Device"
@@ -144,16 +154,6 @@
 
 	cost_min = 750
 	cost_max = 1750
-	stock_max = 3
-	availability_prob = 40
-
-/datum/blackmarket_item/tool/adv_cutter
-	name = "Advanced Plasmacutter"
-	desc = "These technically aren't meant to be released to the public yet, but let's just say we managed to get our hands on an advance sample."
-	item = /obj/item/gun/energy/plasmacutter/adv
-
-	cost_min = 2750
-	cost_max = 3750
 	stock_max = 3
 	availability_prob = 40
 

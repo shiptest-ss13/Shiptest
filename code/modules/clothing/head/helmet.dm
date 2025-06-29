@@ -312,7 +312,6 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	dog_fashion = null
 	can_flashlight = TRUE
-	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/police
 	name = "police officer's hat"

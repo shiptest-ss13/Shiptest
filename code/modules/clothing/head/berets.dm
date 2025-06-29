@@ -1,3 +1,4 @@
+//Mime
 /obj/item/clothing/head/beret
 	name = "beret"
 	desc = "A red beret."

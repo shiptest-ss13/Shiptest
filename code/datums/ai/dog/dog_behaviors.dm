@@ -138,7 +138,7 @@
 		return
 
 	if(!controller.blackboard[BB_DOG_PLAYING_DEAD])
-		controller.set_blackboard_key(BB_DOG_PLAYING_DEAD, TRUE)
+		controller.blackboard[BB_DOG_PLAYING_DEAD] = TRUE
 		simple_pawn.emote("deathgasp", intentional=FALSE)
 		simple_pawn.icon_state = simple_pawn.icon_dead
 		if(simple_pawn.flip_on_death)

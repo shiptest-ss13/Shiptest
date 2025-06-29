@@ -119,9 +119,7 @@
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/stack/marker_beacon,
 		/obj/item/clothing/gloves,
-		/obj/item/stack/tape/industrial,
-		/obj/item/clothing/glasses/welding,
-		/obj/item/bodycamera
+		/obj/item/stack/tape/industrial
 		))
 
 /obj/item/storage/pouch/engi/PopulateContents()
@@ -178,6 +176,5 @@
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/stack/marker_beacon,
 		/obj/item/reagent_containers/glass/rag,
-		/obj/item/taperecorder,
-		/obj/item/bodycamera
+		/obj/item/taperecorder
 		))

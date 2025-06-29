@@ -26,7 +26,8 @@
 #define SPOOKY_SKELETON 1
 #define ANGRY_FAITHLESS 2
 #define SCARY_BATS 3
-#define HOWLING_GHOST 4
+#define INSANE_CLOWN 4
+#define HOWLING_GHOST 5
 
 //Spookoween variables
 /obj/structure/closet
@@ -43,6 +44,9 @@
 	trigger_spooky_trap()
 
 /obj/structure/closet/proc/set_spooky_trap()
+	if(prob(0.1))
+		trapped = INSANE_CLOWN
+		return
 	if(prob(1))
 		trapped = ANGRY_FAITHLESS
 		return

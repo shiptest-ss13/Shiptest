@@ -501,20 +501,20 @@
 
 /obj/item/storage/pill_bottle/stardrop
 	name = "bottle of stardrop capsules"
-	desc = "Contains vision-enhancing patches."
+	desc = "Contains vision-enhancing pills."
 	custom_price = 300
 
 /obj/item/storage/pill_bottle/stardrop/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/pill/patch/stardrop(src)
+		new /obj/item/reagent_containers/pill/stardrop(src)
 
 /obj/item/storage/pill_bottle/starlight
 	name = "bottle of starlight capsules"
-	desc = "Contains vision-enhancing patches."
+	desc = "Contains vision-enhancing pills."
 
 /obj/item/storage/pill_bottle/starlight/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/pill/patch/starlight(src)
+		new /obj/item/reagent_containers/pill/starlight(src)
 
 /obj/item/storage/pill_bottle/placebatol
 	name = "bottle of prescription pills"

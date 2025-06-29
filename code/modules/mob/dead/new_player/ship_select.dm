@@ -58,13 +58,6 @@
 
 			ui.close()
 			var/datum/job/selected_job = locate(params["job"]) in target.job_slots
-			//boots you out if you're banned from officer roles
-			if(selected_job.officer && is_banned_from(spawnee.ckey, "Ship Command"))
-				to_chat(spawnee, span_danger("You are banned from Officer roles!"))
-				spawnee.new_player_panel()
-				ui.close()
-				return
-
 			// Attempts the spawn itself. This checks for playtime requirements.
 			if(!spawnee.AttemptLateSpawn(selected_job, target))
 				to_chat(spawnee, span_danger("Unable to spawn on ship!"))
@@ -144,7 +137,6 @@
 	.["ships"] = list()
 	.["shipSpawnAllowed"] = SSovermap.player_ship_spawn_allowed()
 	.["purchaseBanned"] = is_banned_from(user.ckey, "Ship Purchasing")
-	.["officerBanned"] = is_banned_from(user.ckey, "Ship Command")
 	// if the player has a client which is not eligible for playtime restriction (for admin + player DB flag playtime exemption), they "auto meet" playtime requirements
 	.["autoMeet"] = user.client && !user.client.is_playtime_restriction_eligible()
 	.["playMin"] = user.client ? user.client.get_exp_living(TRUE) : 0
@@ -167,7 +159,6 @@
 				"name" = job,
 				"slots" = slots,
 				"minTime" = job.officer ? S.source_template.get_req_officer_minutes() : 0,
-				"officer" = job.officer,
 				"ref" = REF(job),
 			))
 

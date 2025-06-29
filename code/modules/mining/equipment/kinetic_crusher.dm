@@ -43,12 +43,9 @@
 
 /obj/item/kinetic_crusher/attack(mob/living/target, mob/living/carbon/user)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
+		to_chat(user, span_warning("[src] is too heavy to use with one hand! You fumble and drop everything."))
+		user.drop_all_held_items()
 		return
-
-	var/atom/throw_target = get_edge_target_turf(target, user.dir)
-	if(!target.anchored)
-		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
-
 	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
 	var/target_health = target.health
 	..()

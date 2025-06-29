@@ -37,10 +37,7 @@
 		/obj/item/storage/ration/blackened_calamari = 5,
 		/obj/item/storage/ration/elbow_macaroni = 5,
 		/obj/item/storage/ration/cheese_pizza_slice = 5,
-		/obj/item/storage/ration/sososi = 5,
-		/obj/item/storage/ration/dofidote = 5,
-		/obj/item/storage/ration/miras = 5,
-		/obj/item/storage/ration/crayons = 1 // :)
+		/obj/item/storage/ration/crayons = 1,
 		)
 
 /obj/effect/spawner/random/food_or_drink/donut

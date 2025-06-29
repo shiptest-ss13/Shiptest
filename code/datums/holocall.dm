@@ -328,14 +328,14 @@
 		unset_busy_human_dummy("HOLODISK_PRESET")
 
 /obj/item/disk/holodisk/example
-	preset_image_type = /datum/preset_holoimage/researcher
+	preset_image_type = /datum/preset_holoimage/clown
 	preset_record_text = {"
-	NAME Guy Scienceman
+	NAME Clown
 	DELAY 10
 	SAY Why did the chaplain cross the maint ?
 	DELAY 20
 	SAY He wanted to get to the other side!
-	SOUND scream
+	SOUND clownstep
 	DELAY 30
 	SAY Helped him get there!
 	DELAY 10
@@ -370,6 +370,9 @@
 
 /datum/preset_holoimage/corgi
 	nonhuman_mobtype = /mob/living/simple_animal/pet/dog/corgi
+
+/datum/preset_holoimage/clown
+	outfit_type = /datum/outfit/job/clown
 
 /datum/preset_holoimage/miner
 	outfit_type = /datum/outfit/job/miner

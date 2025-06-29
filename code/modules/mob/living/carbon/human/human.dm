@@ -1153,11 +1153,7 @@
 	return ishuman(target) && target.body_position == LYING_DOWN
 
 /mob/living/carbon/human/proc/fireman_carry(mob/living/carbon/target)
-	if(!can_be_firemanned(target) || incapacitated(IGNORE_GRAB))
-		to_chat(src, span_warning("You can't fireman carry [target] while [target.p_they()] [target.p_are()] standing!"))
-		return
-
-	var/carrydelay = 5 SECONDS //if you have latex you are faster at grabbing
+	var/carrydelay = 50 //if you have latex you are faster at grabbing
 	var/skills_space = "" //cobby told me to do this
 	if(HAS_TRAIT(src, TRAIT_QUICKER_CARRY))
 		carrydelay = 30
@@ -1165,28 +1161,19 @@
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
 		carrydelay = 40
 		skills_space = "quickly"
-
-	visible_message(span_notice("[src] starts [skills_space] lifting [target] onto their back.."),
-	//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
-	span_notice("[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
-	//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
-	if(!do_after(src, carrydelay, target))
+	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
+		visible_message(span_notice("[src] starts [skills_space] lifting [target] onto their back.."),
+		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
+		span_notice("[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
+		//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
+		if(do_after(src, carrydelay, target))
+			//Second check to make sure they're still valid to be carried
+			if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE) && !target.buckled)
+				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
+				return
+		visible_message(span_warning("[src] fails to fireman carry [target]!"))
+	else
 		to_chat(src, span_warning("You can't fireman carry [target] while they're standing!"))
-		return
-
-	//Second check to make sure they're still valid to be carried
-	if(!can_be_firemanned(target) || incapacitated(IGNORE_GRAB) || target.buckled)
-		to_chat(src, span_warning("You can't fireman carry [target] while they're standing!"))
-		return
-
-	if(target.loc != loc)
-		var/old_density = density
-		density = FALSE // Hacky and doesn't use set_density()
-		step_towards(target, loc)
-		density = old_density // Avoid changing density directly in normal circumstances, without the setter.
-
-	if(target.loc == loc)
-		return buckle_mob(target, TRUE, TRUE, 90, 1, 0)
 
 /mob/living/carbon/human/proc/scoop(mob/living/carbon/target)
 	var/carrydelay = 20 //if you have latex you are faster at grabbing

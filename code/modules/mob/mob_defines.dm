@@ -157,7 +157,7 @@
 	var/datum/weakref/LAssailant = null
 
 	/**
-	* construct spells
+	* construct spells and mime spells.
 	*
 	* Spells that do not transfer from one mob to another and can not be lost in mindswap.
 	* obviously do not live in the mind

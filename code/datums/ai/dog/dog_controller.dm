@@ -95,7 +95,7 @@
 			pawn.visible_message("<span='danger'>[pawn] drops [carried_item] at [user]'s feet!</span>")
 			// maybe have a dedicated proc for dropping things
 			carried_item.forceMove(get_turf(user))
-			clear_blackboard_key(BB_SIMPLE_CARRY_ITEM)
+			blackboard[BB_SIMPLE_CARRY_ITEM] = null
 
 /// Someone is being nice to us, let's make them a friend!
 /datum/ai_controller/dog/proc/befriend(mob/living/new_friend)
@@ -134,7 +134,7 @@
 
 	ol_yeller.visible_message("<span='danger'>[ol_yeller] drops [carried_item] as [ol_yeller.p_they()] die[ol_yeller.p_s()].</span>")
 	carried_item.forceMove(get_turf(ol_yeller))
-	clear_blackboard_key(BB_SIMPLE_CARRY_ITEM)
+	blackboard[BB_SIMPLE_CARRY_ITEM] = null
 
 // next section is regarding commands
 

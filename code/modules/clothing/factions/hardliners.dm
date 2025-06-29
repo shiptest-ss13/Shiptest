@@ -206,7 +206,6 @@
 	icon_state = "hl_x11"
 	item_state = "hl_x11"
 	can_flashlight = TRUE
-	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/hardliners/swat
 	name = "hardliners pilot helmet"

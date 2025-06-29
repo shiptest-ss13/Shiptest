@@ -75,9 +75,7 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/icemoon/training_facility)
 "av" = (
-/obj/machinery/door/airlock/security{
-	name = "Armory"
-	},
+/obj/machinery/door/airlock/security,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -381,9 +379,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/office_2)
 "bR" = (
-/obj/machinery/door/airlock{
-	name = "Classroom"
-	},
+/obj/machinery/door/airlock,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -643,8 +639,7 @@
 /area/ruin/icemoon/training_facility/garage)
 "cS" = (
 /obj/machinery/door/airlock{
-	dir = 4;
-	name = "Showers"
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/dorms)
@@ -787,8 +782,7 @@
 /area/ruin/icemoon/training_facility/garage)
 "dT" = (
 /obj/machinery/door/airlock{
-	dir = 4;
-	name = "Exowarrior Course"
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1268,9 +1262,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/armory)
 "ge" = (
-/obj/machinery/door/airlock/security{
-	name = "Range Access"
-	},
+/obj/machinery/door/airlock/security/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
@@ -1385,9 +1377,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/lobby)
 "gz" = (
-/obj/machinery/door/airlock/glass{
-	dir = 4;
-	name = "Cafeteria"
+/obj/machinery/door/airlock{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/cafeteria)
@@ -1465,10 +1456,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/classroom)
 "gW" = (
-/obj/machinery/door/airlock/glass{
-	dir = 1;
-	name = "Power Systems"
-	},
+/obj/machinery/door/airlock,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1571,9 +1559,7 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/killship)
 "hG" = (
-/obj/machinery/door/airlock/medical/glass{
-	name = "Medical Bay"
-	},
+/obj/machinery/door/airlock/medical/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1643,10 +1629,7 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility/course)
 "hT" = (
-/obj/machinery/door/airlock/glass{
-	dir = 1;
-	name = "Power Systems"
-	},
+/obj/machinery/door/airlock,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -1936,8 +1919,7 @@
 /obj/machinery/button/door{
 	pixel_x = 24;
 	pixel_y = 0;
-	id = "office";
-	dir = 8
+	id = "office"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/classroom)
@@ -2100,8 +2082,7 @@
 /area/ruin/icemoon/training_facility/lobby)
 "jY" = (
 /obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Service Access"
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/office_2)
@@ -2249,8 +2230,7 @@
 /area/ruin/icemoon/training_facility/course)
 "kM" = (
 /obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Maintenance"
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/engineering)
@@ -2452,8 +2432,7 @@
 /area/ruin/icemoon/training_facility/central_hall)
 "lZ" = (
 /obj/machinery/door/airlock/medical{
-	dir = 4;
-	name = "Surgery"
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2505,7 +2484,7 @@
 	id = "mecharena"
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = 4;
+	pixel_x = 3;
 	pixel_y = 17;
 	id = "mecharena"
 	},
@@ -2756,8 +2735,7 @@
 /area/ruin/icemoon/training_facility/dorms)
 "nG" = (
 /obj/machinery/door/airlock/security{
-	dir = 4;
-	name = "Downrange"
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/range)
@@ -2985,9 +2963,7 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/cafeteria)
 "oQ" = (
-/obj/machinery/door/airlock{
-	name = "Kitchen"
-	},
+/obj/machinery/door/airlock,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/cafeteria)
 "oR" = (
@@ -3073,8 +3049,7 @@
 /area/ruin/icemoon/training_facility/course)
 "pk" = (
 /obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Maintenance"
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3269,9 +3244,7 @@
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/ruin/icemoon/training_facility/course)
 "qg" = (
-/obj/machinery/door/airlock{
-	name = "Custodial"
-	},
+/obj/machinery/door/airlock,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
 "qi" = (
@@ -3831,9 +3804,7 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/engineering)
 "ss" = (
-/obj/machinery/door/airlock/security{
-	name = "Boarding Sim"
-	},
+/obj/machinery/door/airlock/security,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5163,9 +5134,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/dorms)
 "zp" = (
-/obj/machinery/door/airlock/security{
-	name = "Range Access"
-	},
+/obj/machinery/door/airlock/security,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -5408,9 +5377,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/dorms)
 "AD" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Service Access"
-	},
+/obj/machinery/door/airlock/engineering,
 /obj/structure/barricade/wooden/crude,
 /obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/plating,
@@ -5601,9 +5568,9 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/xenofauna_parasite{
-	pixel_x = 32;
-	pixel_y = 0
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_x = 31;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/classroom)
@@ -5620,9 +5587,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/icemoon/training_facility/central_hall)
 "Bu" = (
-/obj/machinery/door/airlock{
-	name = "Classroom"
-	},
+/obj/machinery/door/airlock,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/classroom)
 "Bv" = (
@@ -6911,9 +6876,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/training_facility/office_2)
 "Il" = (
-/obj/machinery/door/airlock/security{
-	name = "Demolitions Training"
-	},
+/obj/machinery/door/airlock/security,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/demo_course)
 "Ip" = (
@@ -7060,9 +7023,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/classroom)
 "Jb" = (
-/obj/machinery/door/airlock/security{
-	name = "Range Access"
-	},
+/obj/machinery/door/airlock/security/glass,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/range)
 "Jf" = (
@@ -7098,9 +7059,7 @@
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/ruin/icemoon/training_facility/course)
 "Jm" = (
-/obj/machinery/door/airlock{
-	name = "Instructor's Office"
-	},
+/obj/machinery/door/airlock,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -7368,13 +7327,6 @@
 	},
 /turf/open/lava/plasma/ice_moon/safe,
 /area/ruin/icemoon/training_facility)
-"Km" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	name = "Bathroom"
-	},
-/turf/open/floor/plating,
-/area/ruin/icemoon/training_facility/dorms)
 "Kn" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/wood,
@@ -7417,9 +7369,8 @@
 /turf/open/floor/wood,
 /area/ruin/icemoon/training_facility/office_2)
 "Kx" = (
-/obj/machinery/door/airlock/glass{
-	dir = 4;
-	name = "Cafeteria"
+/obj/machinery/door/airlock{
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-9"
@@ -7717,10 +7668,7 @@
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/mech_garage)
 "LK" = (
-/obj/machinery/door/airlock/glass{
-	dir = 1;
-	name = "Security"
-	},
+/obj/machinery/door/airlock,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -7983,8 +7931,7 @@
 /area/ruin/icemoon/training_facility/killship/crew)
 "Nz" = (
 /obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Service Access"
+	dir = 4
 	},
 /obj/structure/barricade/wooden/crude,
 /obj/effect/mapping_helpers/airlock/welded,
@@ -8182,9 +8129,7 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
-/obj/machinery/door/airlock/security{
-	name = "Career Sergeant's Office"
-	},
+/obj/machinery/door/airlock/security,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/range)
 "Ow" = (
@@ -8493,10 +8438,12 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/armory)
+"PH" = (
+/obj/structure/sign/poster/contraband/lusty_xenomorph,
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/icemoon/training_facility/dorms)
 "PI" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Service Access"
-	},
+/obj/machinery/door/airlock/engineering,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/killship/crew)
 "PK" = (
@@ -9203,8 +9150,7 @@
 /area/ruin/icemoon/training_facility/engineering)
 "SL" = (
 /obj/machinery/door/airlock{
-	dir = 4;
-	name = "Exowarrior Course"
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/icemoon/training_facility/classroom)
@@ -9302,9 +9248,7 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility)
 "Tg" = (
-/obj/machinery/door/airlock/security{
-	name = "Boarding Sim"
-	},
+/obj/machinery/door/airlock/security,
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/killship)
 "Tk" = (
@@ -9382,10 +9326,7 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/icemoon/training_facility/cafeteria)
 "TG" = (
-/obj/machinery/door/airlock/glass{
-	dir = 1;
-	name = "Power Systems"
-	},
+/obj/machinery/door/airlock,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/training_facility/lobby)
 "TJ" = (
@@ -9954,9 +9895,7 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility)
 "Wn" = (
-/obj/machinery/door/airlock{
-	name = "Ready Room"
-	},
+/obj/machinery/door/airlock,
 /obj/structure/cable{
 	icon_state = "6-9"
 	},
@@ -10136,9 +10075,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/icemoon/training_facility/range)
 "WW" = (
-/obj/machinery/door/airlock/security{
-	name = "Demolitions Training"
-	},
+/obj/machinery/door/airlock/security,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -10242,8 +10179,7 @@
 /area/ruin/icemoon/training_facility/lobby)
 "Xs" = (
 /obj/machinery/door/airlock/engineering{
-	dir = 4;
-	name = "Service Access"
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/icemoon/training_facility/killship)
@@ -10493,9 +10429,7 @@
 /turf/open/floor/plating/asteroid/icerock/cracked,
 /area/ruin/icemoon/training_facility)
 "YG" = (
-/obj/machinery/door/airlock/security{
-	name = "Range Access"
-	},
+/obj/machinery/door/airlock/security,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -11893,7 +11827,7 @@ Lg
 Lg
 cW
 mq
-Km
+cS
 mq
 mq
 cS
@@ -11904,7 +11838,7 @@ GN
 mq
 mq
 mq
-mq
+PH
 mq
 mq
 xj

@@ -399,7 +399,9 @@
 /area/ruin/space/has_grav/spacemall/maint)
 "bC" = (
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
-/obj/machinery/light/broken/directional/west,
+/obj/machinery/light/broken/directional/west{
+	icon_state = "tube-broken"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "bH" = (
@@ -6817,12 +6819,15 @@
 /obj/item/clothing/mask/frog,
 /obj/item/clothing/mask/fakemoustache,
 /obj/item/clothing/mask/fakemoustache/italian,
+/obj/item/clothing/mask/fakemoustache/sticky,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas/owl_mask,
 /obj/item/clothing/mask/gas/plaguedoctor,
 /obj/item/clothing/mask/gas/tiki_mask,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/mask/horsehead,
+/obj/item/clothing/mask/gondola,
+/obj/item/clothing/mask/spamton,
 /obj/item/clothing/mask/pig,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
@@ -7174,7 +7179,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/green/diagonal,
-/obj/machinery/light/broken/directional/west,
+/obj/machinery/light/broken/directional/west{
+	icon_state = "tube-broken"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/spacemall)
 "Bg" = (
@@ -11869,7 +11876,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 2
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -12605,7 +12614,9 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/spacemall/maint)
 "Vw" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -12793,7 +12804,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/dorms)
 "Wi" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/shuttle)
 "Wj" = (

@@ -6,12 +6,12 @@
 
 /datum/supply_pack/exploration/lava
 	name = "Lava Exploration Kit"
-	desc = "Contains 50 rods, a pocket extinguisher, and goggles to protect yourself from the heat."
-	cost = 50
+	desc = "Contains 30 lavaproof rods, a pocket extinguisher, and goggles to protect yourself from the heat."
+	cost = 250
 	contains = list(
 		/obj/item/extinguisher/mini,
 		/obj/item/clothing/glasses/heat,
-		/obj/item/stack/rods/fifty,
+		/obj/item/stack/rods/lava/thirty,
 	)
 	crate_name = "Lava Exploration Kit"
 
@@ -30,6 +30,15 @@
 /*
 		General Exploration Gear
 */
+
+/datum/supply_pack/exploration/lavaproof_rods
+	name ="Lavaproof Rods Crate"
+	desc = "Contains 30 lavaproof rods for safely traversing molten pits."
+	cost = 100
+	contains = list(
+		/obj/item/stack/rods/lava/thirty,
+		)
+	crate_name = "Lavaproof Rod Crate"
 
 /datum/supply_pack/exploration/capsules
 	name = "Bluespace Shelter Capsule"

@@ -74,4 +74,45 @@
 	medical_record_text = "Patient is a current smoker."
 	reagent_type = /datum/reagent/drug/nicotine
 	accessory_type = /obj/item/lighter/greyscale
-	drug_container_type = /obj/item/storage/fancy/cigarettes
+
+//I fucking hate prefscode
+
+/datum/quirk/junkie/smoker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	switch(H.client?.prefs.preferred_smoke_brand)
+		if(PREF_CIG_SPACE)
+			drug_container_type = /obj/item/storage/fancy/cigarettes
+		if(PREF_CIG_DROMEDARY)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/dromedaryco
+		if(PREF_CIG_UPLIFT)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_uplift
+		if(PREF_CIG_ROBUST)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robust
+		if(PREF_CIG_ROBUSTGOLD)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robustgold
+		if(PREF_CIG_CARP)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_carp
+		if(PREF_CIG_MIDORI)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_midori
+		else
+			CRASH("Someone had an improper cigarette pref on loading")
+	. = ..()
+
+/datum/quirk/junkie/smoker/announce_drugs()
+	if(accessory_type == null)
+		to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] [where_drug], Make sure you get a refill soon."))
+		return
+	to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] [where_drug], and a [initial(accessory_type.name)] [where_accessory]. Make sure you get your favorite brand when you run out."))
+
+/datum/quirk/junkie/smoker/on_process(seconds_per_tick)
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/I = H.get_item_by_slot(ITEM_SLOT_MASK)
+	if (istype(I, /obj/item/clothing/mask/cigarette))
+		if(I == drug_container_type)
+			return
+		var/obj/item/storage/fancy/cigarettes/C = drug_container_type
+		if(istype(I, initial(C.spawn_type)))
+			SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "wrong_cigs")
+			return
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "wrong_cigs", /datum/mood_event/wrong_brand)

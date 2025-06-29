@@ -427,9 +427,4 @@
 	cost = 500
 	contains = list(/obj/item/circuitboard/machine/smartfridge)
 	crate_name = "smart fridge crate"
-
-/datum/supply_pack/machine/grinder_board
-	name = "All-In-One Grinder Board"
-	desc = "Now YOU can find out: Will! It! Blend?!"
-	cost = 500
-	contains = list(/obj/item/circuitboard/machine/reagentgrinder)
+	crate_type = /obj/structure/closet/crate/engineering

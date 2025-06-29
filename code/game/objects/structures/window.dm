@@ -739,11 +739,6 @@
 	glass_amount = 2
 	ricochet_chance_mod = 0.9
 
-/obj/structure/window/reinforced/fulltile/shuttle/indestructible
-	name = "robust window"
-	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-
 /obj/structure/window/reinforced/fulltile/shuttle/narsie_act()
 	add_atom_colour("#3C3434", FIXED_COLOUR_PRIORITY)
 

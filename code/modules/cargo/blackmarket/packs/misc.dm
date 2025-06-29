@@ -1,6 +1,16 @@
 /datum/blackmarket_item/misc
 	category = "Miscellaneous"
 
+/datum/blackmarket_item/misc/cap_gun
+	name = "Cap Gun"
+	desc = "Prank your friends with this harmless gun! Harmlessness guranteed."
+	item = /obj/item/toy/gun
+
+	cost_min = 50
+	cost_max = 200
+	stock_max = 6
+	availability_prob = 80
+
 /datum/blackmarket_item/misc/cham_holster
 	name = "Chameleon Shoulder holster"
 	desc = "Looking to pack some heat without attracting attention? This adapative chameleon shoulder holster can disguise itself and your piece!"
@@ -36,8 +46,8 @@
 	desc = "Need some fresh organs in a jiffy? We got you covered. Make good use of them, someone died to get these to you."
 	item = /obj/structure/closet/crate/freezer/surplus_limbs/organs
 
-	cost_min = 750
-	cost_max = 2000
+	cost_min = 1000
+	cost_max = 2500
 	stock_max = 3
 	availability_prob = 30
 
@@ -97,7 +107,7 @@
 
 /datum/blackmarket_item/misc/pens
 	name = "Pen"
-	desc = "We found an old Cybersun blacksite and came across an unmarked crate full of pens. Want one?"
+	desc = "We found an old Cybersun blacksite, and came across an unmarked crate full of pens. Want one?"
 	item = /obj/item/pen
 
 	cost_min = 50
@@ -124,20 +134,10 @@
 	desc = "Need to make a blacksite in a jiffy? Skip the fuss with this 150u jug of hexacrete!"
 	item = /obj/item/reagent_containers/glass/chem_jug/hexacrete
 
-	cost_min = 250
-	cost_max = 500
+	cost_min = 750
+	cost_max = 1500
 	stock_min = 3
 	stock_max = 10
-	availability_prob = 30
-
-/datum/blackmarket_item/misc/capture_closet
-	name = "Lifeform Containment Unit"
-	desc = "A reinforced containment unit for holding fauna. Won't work on anything that actually has two brain cells to rub together though."
-	item = /obj/structure/closet/mob_capture
-
-	cost_min = 250
-	cost_max = 750
-	stock_max = 3
 	availability_prob = 30
 
 

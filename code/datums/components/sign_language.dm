@@ -139,6 +139,10 @@
 	SIGNAL_HANDLER
 
 	var/mob/living/carbon/carbon_parent = parent
+	if(carbon_parent.mind?.miming)
+		to_chat(carbon_parent, span_green("You stop yourself from signing in favor of the artform of mimery!"))
+		return COMPONENT_CANNOT_SPEAK
+
 	switch(check_signables_state())
 		if(SIGN_HANDS_FULL) // Full hands
 			carbon_parent.visible_message("tries to sign, but can't with [carbon_parent.p_their()] hands full!", visible_message_flags = EMOTE_MESSAGE)

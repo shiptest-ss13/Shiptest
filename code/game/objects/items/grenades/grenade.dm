@@ -42,7 +42,17 @@
 		qdel(src)
 
 /obj/item/grenade/proc/botch_check(mob/living/carbon/human/user)
-	if(sticky && prob(50)) // to add risk to sticky tape grenade cheese, no return cause we still prime as normal after
+	var/clumsy = HAS_TRAIT(user, TRAIT_CLUMSY)
+	if(clumsy && (clumsy_check == GRENADE_CLUMSY_FUMBLE))
+		if(prob(50))
+			to_chat(user, span_warning("Huh? How does this thing work?"))
+			preprime(user, 5, FALSE)
+			return TRUE
+	else if(!clumsy && (clumsy_check == GRENADE_NONCLUMSY_FUMBLE))
+		to_chat(user, span_warning("You pull the pin on [src]. Attached to it is a pink ribbon that says, \"[span_clown("HONK")]\""))
+		preprime(user, 5, FALSE)
+		return TRUE
+	else if(sticky && prob(50)) // to add risk to sticky tape grenade cheese, no return cause we still prime as normal after
 		to_chat(user, span_warning("What the... [src] is stuck to your hand!"))
 		ADD_TRAIT(src, TRAIT_NODROP, STICKY_NODROP)
 

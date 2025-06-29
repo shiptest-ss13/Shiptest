@@ -1,7 +1,7 @@
 // Banana
 /obj/item/seeds/banana
 	name = "pack of banana seeds"
-	desc = "A fruit tree native to Sol. The fruits are rich in potassium and flavor!"
+	desc = "They're seeds that grow into banana trees. When grown, keep away from clown."
 	icon_state = "seed-banana"
 	species = "banana"
 	plantname = "Banana Tree"
@@ -11,13 +11,13 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_dead = "banana-dead"
 	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/banana/bluespace)
+	mutatelist = list(/obj/item/seeds/banana/mime, /obj/item/seeds/banana/bluespace)
 	reagents_add = list(/datum/reagent/consumable/banana = 0.1, /datum/reagent/potassium = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.02)
 
 /obj/item/food/grown/banana
 	seed = /obj/item/seeds/banana
 	name = "banana"
-	desc = "A small, tasty fruit rich in potassium."
+	desc = "It's an excellent prop for a clown."
 	icon_state = "banana"
 	item_state = "banana"
 	trash_type = /obj/item/grown/bananapeel
@@ -48,10 +48,40 @@
 		else
 			icon_state = "[icon_state]_3"
 
+// Mimana - invisible sprites are totally a feature!
+/obj/item/seeds/banana/mime
+	name = "pack of mimana seeds"
+	desc = "They're seeds that grow into mimana trees. When grown, keep away from mime."
+	icon_state = "seed-mimana"
+	species = "mimana"
+	plantname = "Mimana Tree"
+	product = /obj/item/food/grown/banana/mime
+	growthstages = 4
+	mutatelist = list()
+	reagents_add = list(/datum/reagent/consumable/nothing = 0.1, /datum/reagent/toxin/mutetoxin = 0.1, /datum/reagent/consumable/nutriment = 0.02)
+	rarity = 15
+	research = PLANT_RESEARCH_TIER_2
+
+/obj/item/food/grown/banana/mime
+	seed = /obj/item/seeds/banana/mime
+	name = "mimana"
+	desc = "It's an excellent prop for a mime."
+	icon_state = "mimana"
+	trash_type = /obj/item/grown/bananapeel/mimanapeel
+	filling_color = "#FFFFEE"
+	distill_reagent = /datum/reagent/consumable/ethanol/silencer
+
+/obj/item/grown/bananapeel/mimanapeel
+	seed = /obj/item/seeds/banana/mime
+	name = "mimana peel"
+	desc = "A mimana peel."
+	icon_state = "mimana_peel"
+	item_state = "mimana_peel"
+
 // Bluespace Banana
 /obj/item/seeds/banana/bluespace
 	name = "pack of bluespace banana seeds"
-	desc = "They're seeds that grow into bluespace banana trees."
+	desc = "They're seeds that grow into bluespace banana trees. When grown, keep away from bluespace clown."
 	icon_state = "seed-banana-blue"
 	species = "bluespacebanana"
 	icon_grow = "banana-grow"

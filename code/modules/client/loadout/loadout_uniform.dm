@@ -16,12 +16,6 @@
 	path = /obj/item/clothing/under/utility/skirt
 	description = "Does it being a skirt defeat the purpose of use in a hazardous work environment?"
 
-// Cargo pants
-
-/datum/gear/uniform/cargo
-	display_name = "cargo pants, recolorable"
-	path = /obj/item/clothing/under/pants/cargo
-
 //Colored jumpsuits
 
 /datum/gear/uniform/color

@@ -179,8 +179,7 @@
 		speed_round = TRUE
 
 	for(var/client/C in GLOB.clients)
-		if(COOLDOWN_FINISHED(GLOB, web_sound_cooldown))
-			C?.playtitlemusic(vol = 0.5)
+		C.playtitlemusic(40)
 
 		if(speed_round)
 			C.give_award(/datum/award/achievement/misc/speed_round, C.mob)

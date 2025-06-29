@@ -29,7 +29,7 @@ have ways of interacting with a specific mob and control it.
 	. = ..()
 	if(. & AI_CONTROLLER_INCOMPATIBLE)
 		return
-	set_blackboard_key(BB_MONKEY_AGRESSIVE, TRUE) //Angry cunt
+	blackboard[BB_MONKEY_AGRESSIVE] = TRUE //Angry cunt
 
 /datum/ai_controller/monkey/TryPossessPawn(atom/new_pawn)
 	if(!isliving(new_pawn))
@@ -94,7 +94,7 @@ have ways of interacting with a specific mob and control it.
 	if(!weapon || (weapon in living_pawn.held_items))
 		return FALSE
 
-	set_blackboard_key(BB_MONKEY_PICKUPTARGET, weapon)
+	blackboard[BB_MONKEY_PICKUPTARGET] = weapon
 	current_movement_target = weapon
 	if(pickpocket)
 		LAZYADD(current_behaviors, GET_AI_BEHAVIOR(/datum/ai_behavior/monkey_equip/pickpocket))

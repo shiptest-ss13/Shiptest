@@ -34,7 +34,6 @@
 /datum/outfit/job/frontiersmen/doctor/corpse
 	name = "Frontiersmen Surgeon Corpse"
 	r_pocket = null
-	ears = null
 
 /datum/outfit/job/frontiersmen/doctor/corpse/internals
 	name = "Frontiersmen Surgeon Corpse Internals"
@@ -102,9 +101,6 @@
 
 /datum/outfit/job/frontiersmen/ert/flamer/corpse
 	name = "Frontiersman Flametrooper Corpse"
-	ears = null
 	back = null
 	belt = /obj/item/storage/belt/security/military/frontiersmen
 	l_hand = null
-	backpack_contents = null
-	box = null
