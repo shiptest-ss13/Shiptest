@@ -393,7 +393,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-	valid_attachments = list(SCARBOROUGH_ATTACHMENTS)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	default_attachments = list(/obj/item/attachment/silencer/cobra)
 	unique_attachments = list(/obj/item/attachment/silencer/cobra)
 	slot_available = list(
