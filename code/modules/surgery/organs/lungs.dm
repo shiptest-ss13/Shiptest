@@ -603,7 +603,7 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	if(world.time > severe_cooldown) //So we cant just spam emp to kill people.
-		owner.losebreath += 20
+		owner.losebreath += 10
 		severe_cooldown = world.time + 30 SECONDS
 
 #undef PP

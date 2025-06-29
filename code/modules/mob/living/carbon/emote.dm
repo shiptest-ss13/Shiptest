@@ -61,7 +61,6 @@
 	key = "moan"
 	key_third_person = "moans"
 	message = "moans!"
-	message_mime = "appears to moan!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/roll
