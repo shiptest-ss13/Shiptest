@@ -326,6 +326,10 @@
 	desc = "A rough meat with rich deposits of fat. It is typically processed, spiced, and preserved."
 	microwaved_type = /obj/item/food/meat/steak/tiris
 	tastes = list("fatty meat" = 2, "raw fat" = 4)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 2,
+		/datum/reagent/consumable/cooking_oil = 4
+	)
 	foodtypes = MEAT | RAW
 
 /obj/item/food/meat/slab/tiris/make_processable()
@@ -345,6 +349,10 @@
 	desc = "A rich cut of meat with a sublime marble."
 	microwaved_type = /obj/item/food/meat/steak/dofitis
 	tastes = list("hearty meat" = 4, "buttery fat" = 2)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 2
+	)
 	foodtypes = MEAT | RAW
 
 /* bacon */
@@ -431,7 +439,7 @@
 
 /obj/item/food/meat/slab/chicken
 	name = "chicken meat"
-	//icon_state = "birdmeat"
+	icon_state = "birdmeat"
 	microwaved_type = /obj/item/food/meat/steak/chicken
 	desc = "A slab of raw chicken. Remember to wash your hands!"
 	food_reagents = list(
@@ -546,8 +554,8 @@
 	tastes = list("beef" = 1, "cod fish" = 1)
 
 /obj/item/food/meat/steak/chicken
-	name = "chicken steak" //Can you have chicken steaks? Maybe this should be renamed once it gets new sprites. //I concur //this is like seeing cave paintings
-	//icon_state = "birdsteak"
+	name = "chicken breast" //Can you have chicken steaks? Maybe this should be renamed once it gets new sprites. //I concur //this is like seeing cave paintings
+	icon_state = "birdsteak"
 	tastes = list("chicken" = 1)
 
 /obj/item/food/meat/steak/plain/human/lizard
@@ -596,6 +604,11 @@
 	desc = "A cooked slice of Miras. A sweet meat with gamey overtones."
 	icon_state = "miras-steak"
 	tastes = list("gamey lizard" = 2, "sweet meat" = 1)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 3,
+		/datum/reagent/consumable/nutriment = 1,
+		/datum/reagent/consumable/sugar = 2
+	)
 	foodtypes = MEAT | SUGAR
 
 /obj/item/food/meat/steak/tiris
@@ -603,6 +616,11 @@
 	desc = "A cooked slice of tiris meat. Rough and fatty."
 	icon_state = "tiris-celima"
 	tastes = list("fatty meat")
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 2,
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/cooking_oil = 2
+	)
 	foodtypes = MEAT
 
 /obj/item/food/meat/steak/dofitis
@@ -611,6 +629,10 @@
 	icon_state = "dofi-steak"
 	tastes = list("hearty meat" = 1, "buttery fat" = 1)
 	foodtypes = MEAT
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+	)
 
 //Raw cutlets
 
@@ -849,8 +871,16 @@
 	name = "miras cutlet"
 	tastes = list("gamey lizard" = 4, "sweet meat" = 1)
 	foodtypes = MEAT | SUGAR
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 1,
+		/datum/reagent/consumable/sugar = 1
+	)
 
 /obj/item/food/meat/cutlet/tiris
 	name = "tiris cutlet"
 	tastes = list("fatty meat")
 	foodtypes = MEAT
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment/protein = 1,
+		/datum/reagent/consumable/cooking_oil = 1
+	)
