@@ -16,6 +16,7 @@
 #define TOOL_SAW "saw"
 #define TOOL_KNIFE "knife"
 #define TOOL_DECONSTRUCT "deconstruct"
+#define TOOL_BLOODFILTER "blood filter"
 #define TOOL_ROLLINGPIN "rollingpin"
 
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,
