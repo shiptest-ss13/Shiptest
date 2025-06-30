@@ -1,9 +1,16 @@
+import {
+  Box,
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, ProgressBar, Section } from '../components';
 import { NtosWindow } from '../layouts';
 
-export const NtosConfiguration = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosConfiguration = (props) => {
+  const { act, data } = useBackend();
   const {
     PC_device_theme,
     power_usage,
@@ -14,7 +21,7 @@ export const NtosConfiguration = (props, context) => {
     hardware = [],
   } = data;
   return (
-    <NtosWindow theme={PC_device_theme} width={420} height={630} resizable>
+    <NtosWindow theme={PC_device_theme} width={420} height={630}>
       <NtosWindow.Content scrollable>
         <Section
           title="Power Supply"

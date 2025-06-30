@@ -1,5 +1,3 @@
-import { toFixed } from 'common/math';
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -7,14 +5,17 @@ import {
   LabeledList,
   NoticeBox,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const ExosuitControlConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ExosuitControlConsole = (props) => {
+  const { act, data } = useBackend();
   const { mechs = [] } = data;
   return (
-    <Window width={500} height={500} resizable>
+    <Window width={500} height={500}>
       <Window.Content scrollable>
         {mechs.length === 0 && <NoticeBox>No exosuits detected</NoticeBox>}
         {mechs.map((mech) => (

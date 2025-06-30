@@ -1,18 +1,19 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
   Collapsible,
-  Grid,
+  Flex,
   LabeledList,
   NoticeBox,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const NaniteDiskBox = (props, context) => {
-  const { data } = useBackend(context);
+export const NaniteDiskBox = (props) => {
+  const { data } = useBackend();
   const { has_disk, has_program, disk } = data;
   if (!has_disk) {
     return <NoticeBox>No disk inserted</NoticeBox>;
@@ -23,7 +24,7 @@ export const NaniteDiskBox = (props, context) => {
   return <NaniteInfoBox program={disk} />;
 };
 
-export const NaniteInfoBox = (props, context) => {
+export const NaniteInfoBox = (props) => {
   const { program } = props;
   const {
     name,
@@ -53,9 +54,9 @@ export const NaniteInfoBox = (props, context) => {
         </Box>
       }
     >
-      <Grid>
-        <Grid.Column mr={1}>{desc}</Grid.Column>
-        <Grid.Column size={0.5}>
+      <Flex>
+        <Flex.Column mr={1}>{desc}</Flex.Column>
+        <Flex.Column size={0.5}>
           <LabeledList>
             <LabeledList.Item label="Use Rate">{use_rate}</LabeledList.Item>
             {!!can_trigger && (
@@ -69,10 +70,10 @@ export const NaniteInfoBox = (props, context) => {
               </>
             )}
           </LabeledList>
-        </Grid.Column>
-      </Grid>
-      <Grid>
-        <Grid.Column>
+        </Flex.Column>
+      </Flex>
+      <Flex>
+        <Flex.Column>
           <Section title="Codes" level={3} mr={1}>
             <LabeledList>
               <LabeledList.Item label="Activation">
@@ -89,8 +90,8 @@ export const NaniteInfoBox = (props, context) => {
               )}
             </LabeledList>
           </Section>
-        </Grid.Column>
-        <Grid.Column>
+        </Flex.Column>
+        <Flex.Column>
           <Section title="Delays" level={3} mr={1}>
             <LabeledList>
               <LabeledList.Item label="Restart">
@@ -111,8 +112,8 @@ export const NaniteInfoBox = (props, context) => {
               )}
             </LabeledList>
           </Section>
-        </Grid.Column>
-      </Grid>
+        </Flex.Column>
+      </Flex>
       <Section title="Extra Settings" level={3}>
         <LabeledList>
           {extra_settings.map((setting) => {
@@ -139,8 +140,8 @@ export const NaniteInfoBox = (props, context) => {
   );
 };
 
-export const NaniteCloudBackupList = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteCloudBackupList = (props) => {
+  const { act, data } = useBackend();
   const cloud_backups = data.cloud_backups || [];
   return cloud_backups.map((backup) => (
     <Button
@@ -157,8 +158,8 @@ export const NaniteCloudBackupList = (props, context) => {
   ));
 };
 
-export const NaniteCloudBackupDetails = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteCloudBackupDetails = (props) => {
+  const { act, data } = useBackend();
   const { current_view, disk, has_program, cloud_backup } = data;
   const can_rule = (disk && disk.can_rule) || false;
   if (!cloud_backup) {
@@ -264,11 +265,11 @@ export const NaniteCloudBackupDetails = (props, context) => {
   );
 };
 
-export const NaniteCloudControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteCloudControl = (props) => {
+  const { act, data } = useBackend();
   const { has_disk, current_view, new_backup_id } = data;
   return (
-    <Window width={375} height={700} resizable>
+    <Window width={375} height={700}>
       <Window.Content scrollable>
         <Section
           title="Program Disk"
@@ -305,7 +306,7 @@ export const NaniteCloudControl = (props, context) => {
                   maxValue={100}
                   stepPixelSize={4}
                   width="39px"
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('update_new_backup_value', {
                       value: value,
                     })

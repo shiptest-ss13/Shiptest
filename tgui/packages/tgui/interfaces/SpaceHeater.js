@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -6,11 +5,13 @@ import {
   NumberInput,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const SpaceHeater = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SpaceHeater = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window width={400} height={305}>
       <Window.Content>
@@ -61,8 +62,8 @@ export const SpaceHeater = (props, context) => {
                   Math.abs(data.targetTemp - data.currentTemp) > 50
                     ? 'bad'
                     : Math.abs(data.targetTemp - data.currentTemp) > 20
-                    ? 'average'
-                    : 'good'
+                      ? 'average'
+                      : 'good'
                 }
               >
                 {data.currentTemp}°C
@@ -77,7 +78,7 @@ export const SpaceHeater = (props, context) => {
                   unit="°C"
                   minValue={data.minTemp}
                   maxValue={data.maxTemp}
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('target', {
                       target: value,
                     })

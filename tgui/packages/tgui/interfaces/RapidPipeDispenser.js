@@ -1,5 +1,3 @@
-import { classes } from 'common/react';
-import { useBackend, useLocalState } from '../backend';
 import {
   Box,
   Button,
@@ -8,18 +6,21 @@ import {
   LabeledList,
   Section,
   Tabs,
-} from '../components';
+} from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const ROOT_CATEGORIES = ['Atmospherics', 'Disposals', 'Transit Tubes'];
 
 const ICON_BY_CATEGORY_NAME = {
-  'Atmospherics': 'wrench',
-  'Disposals': 'trash-alt',
+  Atmospherics: 'wrench',
+  Disposals: 'trash-alt',
   'Transit Tubes': 'bus',
-  'Pipes': 'grip-lines',
+  Pipes: 'grip-lines',
   'Disposal Pipes': 'grip-lines',
-  'Devices': 'microchip',
+  Devices: 'microchip',
   'Heat Exchange': 'thermometer-half',
   'Station Equipment': 'microchip',
 };
@@ -58,8 +59,8 @@ const TOOLS = [
   },
 ];
 
-export const RapidPipeDispenser = (props, context) => {
-  const { act, data } = useBackend(context);
+export const RapidPipeDispenser = (props) => {
+  const { act, data } = useBackend();
   const {
     category: rootCategoryIndex,
     categories = [],
@@ -68,15 +69,12 @@ export const RapidPipeDispenser = (props, context) => {
     mode,
   } = data;
   const previews = data.preview_rows.flatMap((row) => row.previews);
-  const [categoryName, setCategoryName] = useLocalState(
-    context,
-    'categoryName'
-  );
+  const [categoryName, setCategoryName] = useLocalState('categoryName');
   const shownCategory =
     categories.find((category) => category.cat_name === categoryName) ||
     categories[0];
   return (
-    <Window width={425} height={515} resizable>
+    <Window width={425} height={515}>
       <Window.Content scrollable>
         <Section>
           <LabeledList>

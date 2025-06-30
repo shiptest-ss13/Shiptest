@@ -1,10 +1,5 @@
-import { toFixed } from 'common/math';
-import { classes } from 'common/react';
 import { storage } from 'common/storage';
-import { multiline } from 'common/string';
-import { createUuid } from 'common/uuid';
-import { Component, Fragment } from 'inferno';
-import { useBackend, useLocalState } from '../backend';
+import { Component, Fragment } from 'react';
 import {
   Box,
   Button,
@@ -16,21 +11,26 @@ import {
   NumberInput,
   Section,
   Stack,
-} from '../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+import { classes } from 'tgui-core/react';
+import { createUuid } from 'tgui-core/uuid';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
 const pod_grey = {
   color: 'grey',
 };
 
-const useCompact = (context) => {
-  const [compact, setCompact] = useLocalState(context, 'compact', false);
+const useCompact = () => {
+  const [compact, setCompact] = useLocalState('compact', false);
   const toggleCompact = () => setCompact(!compact);
   return [compact, toggleCompact];
 };
 
-export const CentcomPodLauncher = (props, context) => {
-  const [compact] = useCompact(context);
+export const CentcomPodLauncher = (props) => {
+  const [compact] = useCompact();
   return (
     <Window
       title="Supply Pod Menu (Use against Helen Weinstein)"
@@ -42,8 +42,8 @@ export const CentcomPodLauncher = (props, context) => {
   );
 };
 
-const CentcomPodLauncherContent = (props, context) => {
-  const [compact] = useCompact(context);
+const CentcomPodLauncherContent = (props) => {
+  const [compact] = useCompact();
   return (
     <Window.Content>
       <Stack fill vertical>
@@ -422,13 +422,9 @@ const EFFECTS_ALL = [
   },
 ];
 
-const ViewTabHolder = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [tabPageIndex, setTabPageIndex] = useLocalState(
-    context,
-    'tabPageIndex',
-    1
-  );
+const ViewTabHolder = (props) => {
+  const { act, data } = useBackend();
+  const [tabPageIndex, setTabPageIndex] = useLocalState('tabPageIndex', 1);
   const { mapRef } = data;
   const TabPageComponent = TABPAGES[tabPageIndex].component();
   return (
@@ -518,7 +514,7 @@ const ViewTabHolder = (props, context) => {
   );
 };
 
-const TabPod = (props, context) => {
+const TabPod = (props) => {
   return (
     <Box color="label">
       Note: You can right click on this
@@ -528,8 +524,8 @@ const TabPod = (props, context) => {
   );
 };
 
-const TabBay = (props, context) => {
-  const { act, data } = useBackend(context);
+const TabBay = (props) => {
+  const { act, data } = useBackend();
   return (
     <>
       <Button
@@ -547,8 +543,8 @@ const TabBay = (props, context) => {
   );
 };
 
-const TabDrop = (props, context) => {
-  const { act, data } = useBackend(context);
+const TabDrop = (props) => {
+  const { act, data } = useBackend();
   return (
     <>
       <Button
@@ -566,9 +562,9 @@ const TabDrop = (props, context) => {
   );
 };
 
-const PodStatusPage = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [compact, toggleCompact] = useCompact(context);
+const PodStatusPage = (props) => {
+  const { act, data } = useBackend();
+  const [compact, toggleCompact] = useCompact();
   return (
     <Section fill width="100%">
       <Stack>
@@ -684,13 +680,9 @@ const PodStatusPage = (props, context) => {
   );
 };
 
-const ReverseMenu = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [tabPageIndex, setTabPageIndex] = useLocalState(
-    context,
-    'tabPageIndex',
-    1
-  );
+const ReverseMenu = (props) => {
+  const { act, data } = useBackend();
+  const [tabPageIndex, setTabPageIndex] = useLocalState('tabPageIndex', 1);
   return (
     <Section
       fill
@@ -700,7 +692,7 @@ const ReverseMenu = (props, context) => {
         <Button
           icon={data.effectReverse === 1 ? 'toggle-on' : 'toggle-off'}
           selected={data.effectReverse}
-          tooltip={multiline`
+          tooltip={`
             Doesn't send items.
             Afer landing, returns to
             dropoff turf (or bay
@@ -723,7 +715,7 @@ const ReverseMenu = (props, context) => {
               content="Dropoff Turf"
               selected={data.picking_dropoff_turf}
               disabled={!data.effectReverse}
-              tooltip={multiline`
+              tooltip={`
                 Where reverse pods
                 go after landing`}
               tooltipPosition="bottom-end"
@@ -733,7 +725,7 @@ const ReverseMenu = (props, context) => {
               inline
               icon="trash"
               disabled={!data.customDropoff}
-              tooltip={multiline`
+              tooltip={`
                 Clears the custom dropoff
                 location. Reverse pods will
                 instead dropoff at the
@@ -796,8 +788,8 @@ class PresetsPage extends Component {
     storage.set('podlauncher_preset_' + id, data);
   }
 
-  async loadDataFromPreset(id, context) {
-    const { act } = useBackend(this.context);
+  async loadDataFromPreset(id) {
+    const { act } = useBackend();
     act('loadDataFromPreset', {
       payload: await storage.get('podlauncher_preset_' + id),
     });
@@ -836,23 +828,11 @@ class PresetsPage extends Component {
   }
   render() {
     const { presets } = this.state;
-    const { act, data } = useBackend(this.context);
-    const [presetIndex, setSelectedPreset] = useLocalState(
-      this.context,
-      'presetIndex',
-      0
-    );
-    const [settingName, setEditingNameStatus] = useLocalState(
-      this.context,
-      'settingName',
-      0
-    );
-    const [newNameText, setText] = useLocalState(
-      this.context,
-      'newNameText',
-      ''
-    );
-    const [hue, setHue] = useLocalState(this.context, 'hue', 0);
+    const { act, data } = useBackend();
+    const [presetIndex, setSelectedPreset] = useLocalState('presetIndex', 0);
+    const [settingName, setEditingNameStatus] = useLocalState('settingName', 0);
+    const [newNameText, setText] = useLocalState('newNameText', '');
+    const [hue, setHue] = useLocalState('hue', 0);
     return (
       <Section
         scrollable
@@ -929,13 +909,13 @@ class PresetsPage extends Component {
               value={hue}
               minValue={0}
               maxValue={360}
-              onChange={(e, value) => setHue(value)}
+              onChange={(value) => setHue(value)}
             />
             <Input
               inline
               autofocus
               placeholder="Preset Name"
-              onChange={(e, value) => setText(value)}
+              onChange={(value) => setText(value)}
             />
             <Divider horizontal />
           </>
@@ -977,14 +957,14 @@ class PresetsPage extends Component {
   }
 }
 
-const LaunchPage = (props, context) => {
-  const [compact] = useCompact(context);
-  const { act, data } = useBackend(context);
+const LaunchPage = (props) => {
+  const [compact] = useCompact();
+  const { act, data } = useBackend();
   return (
     <Button
       fluid
       textAlign="center"
-      tooltip={multiline`
+      tooltip={`
         You should know what the
         Codex Astartes says about this`}
       selected={data.giveLauncher}
@@ -999,8 +979,8 @@ const LaunchPage = (props, context) => {
   );
 };
 
-const StylePage = (props, context) => {
-  const { act, data } = useBackend(context);
+const StylePage = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section
       fill
@@ -1012,7 +992,7 @@ const StylePage = (props, context) => {
           color="transparent"
           icon="edit"
           selected={data.effectName}
-          tooltip={multiline`
+          tooltip={`
             Edit pod's
             name/desc.`}
           tooltipPosition="bottom-start"
@@ -1031,8 +1011,8 @@ const StylePage = (props, context) => {
                 ? 'top-start'
                 : 'top-end'
               : i % 2 === 1
-              ? 'bottom-start'
-              : 'bottom-end'
+                ? 'bottom-start'
+                : 'bottom-end'
           }
           tooltip={page.title}
           style={{
@@ -1046,7 +1026,7 @@ const StylePage = (props, context) => {
           <Box
             className={classes(['supplypods64x64', 'pod_asset' + (i + 1)])}
             style={{
-              'transform': 'rotate(45deg) translate(-25%,-10%)',
+              transform: 'rotate(45deg) translate(-25%,-10%)',
               'pointer-events': 'none',
             }}
           />
@@ -1056,9 +1036,9 @@ const StylePage = (props, context) => {
   );
 };
 
-const Bays = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [compact] = useCompact(context);
+const Bays = (props) => {
+  const { act, data } = useBackend();
+  const [compact] = useCompact();
   return (
     <Section
       fill
@@ -1068,7 +1048,7 @@ const Bays = (props, context) => {
           <Button
             icon="trash"
             color="transparent"
-            tooltip={multiline`
+            tooltip={`
               Clears everything
               from the selected bay`}
             tooltipPosition="bottom-end"
@@ -1077,7 +1057,7 @@ const Bays = (props, context) => {
           <Button
             icon="question"
             color="transparent"
-            tooltip={multiline`
+            tooltip={`
               Each option corresponds
               to an area on centcom.
               Launched pods will
@@ -1103,8 +1083,8 @@ const Bays = (props, context) => {
   );
 };
 
-const Timing = (props, context) => {
-  const { act, data } = useBackend(context);
+const Timing = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section
       fill
@@ -1114,7 +1094,7 @@ const Timing = (props, context) => {
           <Button
             icon="undo"
             color="transparent"
-            tooltip={multiline`
+            tooltip={`
             Reset all pod
             timings/delays`}
             tooltipPosition="bottom-end"
@@ -1125,7 +1105,7 @@ const Timing = (props, context) => {
             selected={data.custom_rev_delay}
             disabled={!data.effectReverse}
             color="transparent"
-            tooltip={multiline`
+            tooltip={`
             Toggle Reverse Delays
             Note: Top set is
             normal delays, bottom set
@@ -1148,8 +1128,8 @@ const Timing = (props, context) => {
   );
 };
 
-const DelayHelper = (props, context) => {
-  const { act, data } = useBackend(context);
+const DelayHelper = (props) => {
+  const { act, data } = useBackend();
   const { delay_list, reverse = false } = props;
   return (
     <LabeledControls wrap>
@@ -1187,8 +1167,8 @@ const DelayHelper = (props, context) => {
   );
 };
 
-const Sounds = (props, context) => {
-  const { act, data } = useBackend(context);
+const Sounds = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section
       fill
@@ -1199,7 +1179,7 @@ const Sounds = (props, context) => {
           color="transparent"
           selected={data.soundVolume !== data.defaultSoundVolume}
           tooltip={
-            multiline`
+            `
             Sound Volume:` + data.soundVolume
           }
           onClick={() => act('soundVolume')}

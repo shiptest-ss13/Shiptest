@@ -1,9 +1,10 @@
+import { Button, Section, Stack } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
-export const OutfitManager = (props, context) => {
-  const { act, data } = useBackend(context);
+export const OutfitManager = (props) => {
+  const { act, data } = useBackend();
   const { outfits } = data;
   return (
     <Window title="Outfit Manager" width={300} height={300}>
@@ -43,7 +44,7 @@ export const OutfitManager = (props, context) => {
                     grow={1}
                     shrink={1}
                     style={{
-                      'overflow': 'hidden',
+                      overflow: 'hidden',
                       'white-space': 'nowrap',
                       'text-overflow': 'ellipsis',
                     }}
@@ -51,7 +52,7 @@ export const OutfitManager = (props, context) => {
                     <Button
                       fluid
                       style={{
-                        'overflow': 'hidden',
+                        overflow: 'hidden',
                         'white-space': 'nowrap',
                         'text-overflow': 'ellipsis',
                       }}
