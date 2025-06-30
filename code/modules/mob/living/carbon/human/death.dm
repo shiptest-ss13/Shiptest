@@ -47,8 +47,8 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 
 	. = ..()
 
-	dizziness = 0
-	jitteriness = 0
+	remove_status_effect(/datum/status_effect/dizziness)
+	remove_status_effect(/datum/status_effect/jitter)
 	if(client && !(client in GLOB.dead_players_during_shift))
 		GLOB.dead_players_during_shift += client
 	if(ismecha(loc))
