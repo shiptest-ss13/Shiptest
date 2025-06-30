@@ -374,6 +374,10 @@
 	name = "Long Over Eye"
 	icon_state = "hair_longovereye"
 
+/datum/sprite_accessory/hair/longbun
+	name = "Long Bun"
+	icon_state = "hair_longbun"
+
 /datum/sprite_accessory/hair/longbangs
 	name = "Long Bangs"
 	icon_state = "hair_lbangs"

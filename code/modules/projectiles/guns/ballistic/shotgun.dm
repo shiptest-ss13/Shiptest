@@ -108,6 +108,7 @@
 	toggle_tube(user)
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
+	. = ..()
 	. += span_notice("Tube [toggled ? "B" : "A"] is currently loaded.")
 	. += "You can change the [src]'s tube by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
