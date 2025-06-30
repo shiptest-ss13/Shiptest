@@ -10,7 +10,7 @@
 	throwforce = 15
 	armour_penetration = 40
 	demolition_mod = 2
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = 12

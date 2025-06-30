@@ -1,14 +1,15 @@
-//Human Overlays Indexes/////////
-#define MUTATIONS_LAYER 31 //mutations. Tk headglows, cold resistance glow, etc
-#define HANDS_UNDER_BODY_LAYER 30 //Held items that render underneath the user due to perspective
-#define BODY_BEHIND_LAYER 29 //certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LOW_LAYER 28 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
-#define BODYPARTS_LAYER 27 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODY_ADJ_LAYER 26 //certain mutantrace features (face markings, body markings) that must appear above the body parts
-#define BODY_LAYER 25 //underwear, undershirts, socks, eyes, lips(makeup)
-#define FRONT_MUTATIONS_LAYER 24 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER 23 //damage indicators (cuts and burns)
-#define UNIFORM_LAYER 22
+//Human Overlays Indexes//
+#define MUTATIONS_LAYER 32 //mutations. Tk headglows, cold resistance glow, etc
+#define HANDS_UNDER_BODY_LAYER 31 //Held items that render underneath the user due to perspective
+#define BODY_BEHIND_LAYER 30 //certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LOW_LAYER 29 //Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
+#define BODYPARTS_LAYER 28 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
+#define BODY_ADJ_LAYER 27 //certain mutantrace features (face markings, body markings) that must appear above the body parts
+#define BODY_LAYER 26 //underwear, undershirts, socks, eyes, lips(makeup)
+#define FRONT_MUTATIONS_LAYER 25 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define DAMAGE_LAYER 24 //damage indicators (cuts and burns)
+#define UNIFORM_LAYER 23
+#define BANDAGE_LAYER 22 //For bandages and splints
 #define ID_LAYER 21 //lmao at the idiot who put both ids and hands on the same layer
 #define BODYPARTS_HIGH_LAYER 20
 #define GLOVES_LAYER 19
@@ -28,8 +29,10 @@
 #define LEGCUFF_LAYER 5
 #define HANDS_LAYER 4
 #define BODY_FRONT_LAYER 3
+/// Bleeding wound icons
+#define WOUND_LAYER 2
 #define FIRE_LAYER 1 //If you're on fire
-#define TOTAL_LAYERS 31 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
+#define TOTAL_LAYERS 32 //KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 //Human Overlay Index Shortcuts for alternate_worn_layer, layers
 //Because I *KNOW* somebody will think layer+1 means "above"

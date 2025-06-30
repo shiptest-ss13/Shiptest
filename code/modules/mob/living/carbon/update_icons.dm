@@ -113,6 +113,18 @@
 
 	apply_overlay(DAMAGE_LAYER)
 
+/mob/living/carbon/update_wound_overlays()
+	remove_overlay(WOUND_LAYER)
+
+	var/mutable_appearance/wound_overlay = mutable_appearance('icons/mob/bleed_overlays.dmi', "blank", -WOUND_LAYER)//todo: species bleeding overlays. gr
+	overlays_standing[WOUND_LAYER] = wound_overlay
+
+	for(var/obj/item/bodypart/iter_part as anything in bodyparts)
+		if(iter_part.bleed_overlay_icon)
+			wound_overlay.color = iter_part.damage_color
+			wound_overlay.add_overlay(iter_part.bleed_overlay_icon)
+
+	apply_overlay(WOUND_LAYER)
 
 /mob/living/carbon/update_inv_wear_mask()
 	remove_overlay(FACEMASK_LAYER)
@@ -260,6 +272,8 @@
 		overlays_standing[BODYPARTS_LAYER] = new_limbs
 
 	apply_overlay(BODYPARTS_LAYER)
+	update_damage_overlays()
+	update_wound_overlays()
 
 
 /////////////////////////
@@ -403,3 +417,24 @@ GLOBAL_LIST_EMPTY(masked_leg_icons_cache)
 	overlays_standing[HANDS_UNDER_BODY_LAYER] = hands_alt
 	apply_overlay(HANDS_LAYER)
 	apply_overlay(HANDS_UNDER_BODY_LAYER)
+
+//Updating overlays related to on bodypart bandages
+/mob/living/carbon/proc/update_bandage_overlays()
+	remove_overlay(BANDAGE_LAYER)
+
+	var/mutable_appearance/overlays = mutable_appearance('icons/mob/bandage_overlays.dmi', "", -BANDAGE_LAYER)
+	overlays_standing[BANDAGE_LAYER] = overlays
+
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(BP.current_gauze && BP.current_gauze.overlay_prefix)
+			var/bp_suffix = BP.body_zone
+			if(BP.bodytype & BODYTYPE_DIGITIGRADE)
+				bp_suffix += "_digitigrade"
+			overlays.add_overlay("[BP.current_gauze.overlay_prefix]_[bp_suffix]")
+		if(BP.current_splint && BP.current_splint.overlay_prefix)
+			var/bp_suffix = BP.body_zone
+			if(BP.bodytype & BODYTYPE_DIGITIGRADE)
+				bp_suffix += "_digitigrade"
+			overlays.add_overlay("[BP.current_splint.overlay_prefix]_[bp_suffix]")
+
+	apply_overlay(BANDAGE_LAYER)

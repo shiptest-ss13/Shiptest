@@ -78,7 +78,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	blood_overlay_type = "armor"
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //ngr armor reskin - same statline
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10) //ngr armor reskin - same statline
 
 /obj/item/clothing/suit/armor/hardliners/jacket
 	name = "hardliners armored kutte"
@@ -88,7 +88,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	blood_overlay_type = "armor"
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //its not like they cover your arms.
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10) //its not like they cover your arms.
 
 /obj/item/clothing/suit/armor/hardliners/sergeant
 	name = "hardliners sergeant jacket"
@@ -108,7 +108,7 @@
 	icon = 'icons/obj/clothing/faction/hardliners/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/hardliners/suits.dmi'
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/armor/vest/hardliners/Initialize()

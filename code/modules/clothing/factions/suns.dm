@@ -180,21 +180,21 @@
 	desc = "A set of plate assigned to peacekeepers, both durable and stylish. This one has a gold lining to indicate rank."
 	icon_state = "suns_lpkarmor"
 	item_state = "suns_pkarmor"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/armor/vest/suns/ehos //remind me to make this something to buy
 	name = "peacekeeper greatcoat"
 	desc = "A funky armored coat worn by eccentric peacekeepers. Closing the coat is socially improper."
 	icon_state = "suns_greatcoat"
 	item_state = "suns_greatcoat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/toggle/suns/pkcoat
 	name = "peacekeeper coat"
 	desc = "An armored coat used during special occasions. This one is used in academic security."
 	icon_state = "suns_pkjacket"
 	item_state = "suns_overblack"
-	armor = list("melee" = 15, "bullet" = 30, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 25)
+	armor = list("melee" = 15, "bullet" = 30, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 25, "wound" = 5)
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 	body_parts_covered = CHEST|GROIN
@@ -206,7 +206,7 @@
 	desc = "An armored coat intended for SUNS captains on the frontier. Go forth, and spread the message of the academy."
 	icon_state = "suns_captaincoat"
 	item_state = "suns_overblack"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/armor/vest/suns/xo
 	name = "academic staff coat"

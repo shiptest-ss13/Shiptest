@@ -28,13 +28,6 @@
 #define BLOOD_VOLUME_BAD 224
 #define BLOOD_VOLUME_SURVIVE 122
 
-// Bloodloss
-#define BLOOD_LOSS_MAXIMUM 30
-#define BLOOD_LOSS_DAMAGE_MAXIMUM 2
-#define BLOOD_LOSS_DAMAGE_BASE 0.013
-#define BLOOD_CAUTERIZATION_RATIO 10
-#define BLOOD_CAUTERIZATION_DAMAGE_RATIO 300
-
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0
 #define MOB_SIZE_SMALL 1
@@ -194,14 +187,16 @@
 #define TRAUMA_RESILIENCE_BASIC 1 //Curable with chems
 #define TRAUMA_RESILIENCE_SURGERY 2 //Curable with brain surgery
 #define TRAUMA_RESILIENCE_LOBOTOMY 3 //Curable with lobotomy
-#define TRAUMA_RESILIENCE_MAGIC 4 //Curable only with magic
-#define TRAUMA_RESILIENCE_ABSOLUTE 5 //This is here to stay
+#define TRAUMA_RESILIENCE_WOUND 4 //Curable by healing the head wound
+#define TRAUMA_RESILIENCE_MAGIC 5 //Curable only with magic
+#define TRAUMA_RESILIENCE_ABSOLUTE 6 //This is here to stay
 
 //Limit of traumas for each resilience tier
 #define TRAUMA_LIMIT_BASIC 3
 #define TRAUMA_LIMIT_SURGERY 2
 #define TRAUMA_LIMIT_LOBOTOMY 3
 #define TRAUMA_LIMIT_MAGIC 3
+#define TRAUMA_LIMIT_WOUND 2
 #define TRAUMA_LIMIT_ABSOLUTE INFINITY
 
 #define BRAIN_DAMAGE_INTEGRITY_MULTIPLIER 0.5

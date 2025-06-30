@@ -1,4 +1,3 @@
-
 /obj/item/bodypart/chest
 	name = BODY_ZONE_CHEST
 	desc = "It's impolite to stare at a person's chest."
@@ -11,6 +10,7 @@
 	px_y = 0
 	stam_damage_coeff = 1
 	max_stamina_damage = 120
+	wound_resistance = 10
 	is_dimorphic = TRUE
 	var/obj/item/cavity_item
 	var/acceptable_bodytype = BODYTYPE_HUMANOID
@@ -57,7 +57,7 @@
 		be possessed by the devil? This arm appears to be possessed by no \
 		one though."
 	icon_state = "human_l_arm"
-	attack_verb = list("slaps", "punches")
+	attack_verb = list("slapped", "punched")
 	max_damage = 50
 	max_stamina_damage = 50
 	body_zone = BODY_ZONE_L_ARM
@@ -70,8 +70,6 @@
 	px_x = -6
 	px_y = 0
 	can_be_disabled = TRUE
-	bone_break_threshold = 25
-
 
 /obj/item/bodypart/l_arm/set_owner(new_owner)
 	. = ..()
@@ -94,7 +92,6 @@
 		else
 			UnregisterSignal(old_owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_L_ARM))
 
-
 ///Proc to react to the owner gaining the TRAIT_PARALYSIS_L_ARM trait.
 /obj/item/bodypart/l_arm/proc/on_owner_paralysis_gain(mob/living/carbon/source)
 	SIGNAL_HANDLER
@@ -102,14 +99,12 @@
 	UnregisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_L_ARM))
 	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_L_ARM), PROC_REF(on_owner_paralysis_loss))
 
-
 ///Proc to react to the owner losing the TRAIT_PARALYSIS_L_ARM trait.
 /obj/item/bodypart/l_arm/proc/on_owner_paralysis_loss(mob/living/carbon/source)
 	SIGNAL_HANDLER
 	REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_L_ARM)
 	UnregisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_L_ARM))
 	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_L_ARM), PROC_REF(on_owner_paralysis_gain))
-
 
 /obj/item/bodypart/l_arm/set_disabled(new_disabled)
 	. = ..()
@@ -129,7 +124,6 @@
 	if(owner.hud_used)
 		var/atom/movable/screen/inventory/hand/hand_screen_object = owner.hud_used.hand_slots["[held_index]"]
 		hand_screen_object?.update_appearance()
-
 
 /obj/item/bodypart/l_arm/monkey
 	icon = 'icons/mob/animal_parts.dmi'
@@ -154,7 +148,7 @@
 	desc = "Over 87% of humans are right handed. That figure is much lower \
 		among humans missing their right arm."
 	icon_state = "human_r_arm"
-	attack_verb = list("slaps", "punches")
+	attack_verb = list("slapped", "punched")
 	max_damage = 50
 	body_zone = BODY_ZONE_R_ARM
 	body_part = ARM_RIGHT
@@ -167,8 +161,6 @@
 	px_y = 0
 	max_stamina_damage = 50
 	can_be_disabled = TRUE
-	bone_break_threshold = 25
-
 
 /obj/item/bodypart/r_arm/set_owner(new_owner)
 	. = ..()
@@ -191,7 +183,6 @@
 		else
 			UnregisterSignal(old_owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_R_ARM))
 
-
 ///Proc to react to the owner gaining the TRAIT_PARALYSIS_R_ARM trait.
 /obj/item/bodypart/r_arm/proc/on_owner_paralysis_gain(mob/living/carbon/source)
 	SIGNAL_HANDLER
@@ -199,14 +190,12 @@
 	UnregisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_R_ARM))
 	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_R_ARM), PROC_REF(on_owner_paralysis_loss))
 
-
 ///Proc to react to the owner losing the TRAIT_PARALYSIS_R_ARM trait.
 /obj/item/bodypart/r_arm/proc/on_owner_paralysis_loss(mob/living/carbon/source)
 	SIGNAL_HANDLER
 	REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_R_ARM)
 	UnregisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_R_ARM))
 	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_R_ARM), PROC_REF(on_owner_paralysis_gain))
-
 
 /obj/item/bodypart/r_arm/set_disabled(new_disabled)
 	. = ..()
@@ -226,7 +215,6 @@
 	if(owner.hud_used)
 		var/atom/movable/screen/inventory/hand/hand_screen_object = owner.hud_used.hand_slots["[held_index]"]
 		hand_screen_object?.update_appearance()
-
 
 /obj/item/bodypart/r_arm/monkey
 	icon = 'icons/mob/animal_parts.dmi'
@@ -261,8 +249,6 @@
 	px_y = 12
 	max_stamina_damage = 50
 	can_be_disabled = TRUE
-	bone_break_threshold = 25
-
 
 /obj/item/bodypart/leg/left/set_owner(new_owner)
 	. = ..()
@@ -284,7 +270,6 @@
 		else
 			UnregisterSignal(old_owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_L_LEG))
 
-
 ///Proc to react to the owner gaining the TRAIT_PARALYSIS_L_LEG trait.
 /obj/item/bodypart/leg/left/proc/on_owner_paralysis_gain(mob/living/carbon/source)
 	SIGNAL_HANDLER
@@ -292,14 +277,12 @@
 	UnregisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_L_LEG))
 	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_L_LEG), PROC_REF(on_owner_paralysis_loss))
 
-
 ///Proc to react to the owner losing the TRAIT_PARALYSIS_L_LEG trait.
 /obj/item/bodypart/leg/left/proc/on_owner_paralysis_loss(mob/living/carbon/source)
 	SIGNAL_HANDLER
 	REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_L_LEG)
 	UnregisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_L_LEG))
 	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_L_LEG), PROC_REF(on_owner_paralysis_gain))
-
 
 /obj/item/bodypart/leg/left/set_disabled(new_disabled)
 	. = ..()
@@ -313,7 +296,6 @@
 				to_chat(owner, span_userdanger("Your lose control of your [name]!"))
 	else if(!bodypart_disabled)
 		owner.set_usable_legs(owner.usable_legs + 1)
-
 
 /obj/item/bodypart/leg/left/monkey
 	icon = 'icons/mob/animal_parts.dmi'
@@ -349,8 +331,6 @@
 	px_y = 12
 	max_stamina_damage = 50
 	can_be_disabled = TRUE
-	bone_break_threshold = 25
-
 
 /obj/item/bodypart/leg/right/set_owner(new_owner)
 	. = ..()

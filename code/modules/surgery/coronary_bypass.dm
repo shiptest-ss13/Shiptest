@@ -43,7 +43,7 @@
 				span_notice("Blood pools around the incision in [H]'s heart."),
 				"")
 			var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
-			BP.adjust_bleeding(10)
+			BP.generic_bleedstacks += 10
 			target.apply_damage(15, BRUTE, "[target_zone]")
 	return ..()
 
@@ -54,7 +54,7 @@
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s chest!"),
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s chest!"))
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
-		BP.adjust_bleeding(20)
+		BP.generic_bleedstacks += 20
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 10)
 		target.apply_damage(15, BRUTE, "[target_zone]")
 
@@ -95,5 +95,5 @@
 			span_warning("[user] screws up, causing blood to spurt out of [H]'s chest profusely!"))
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 30)
 		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(surgery.location))
-		BP.adjust_bleeding(30)
+		BP.generic_bleedstacks += 30
 	return FALSE
