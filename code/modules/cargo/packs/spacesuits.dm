@@ -162,6 +162,16 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 	faction = /datum/faction/nt
 
+/datum/supply_pack/spacesuits/NS_hardsuit
+	name = "N+S Hardsuit Crate"
+	desc = "A N+S brand heavy operations mining hardsuit. Rated for extreme blunt force trauma, not bullets."
+	cost = 2000
+	contains = list(/obj/item/clothing/suit/space/hardsuit/mining/heavy/ns)
+	crate_name = "N+S hardsuit crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+	faction = /datum/faction/nt
+	faction_locked = TRUE
+
 /datum/supply_pack/spacesuits/sci_hardsuit
 	name = "Scientific Hardsuit Crate"
 	desc = "Contains one science hardsuit, designed to provide safety under advanced experimental conditions, or while handling explosives."
