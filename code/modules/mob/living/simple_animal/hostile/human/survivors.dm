@@ -116,27 +116,7 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/random
-	outfit = null
-
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/random/Initialize()
-	. = ..()
-	if(prob(75))
-		outfit = pick_weight(list(
-			/datum/outfit/hermit = 24,
-			/datum/outfit/hermit/brown = 24,
-			/datum/outfit/hermit/yellow = 24,
-			/datum/outfit/hermit/green = 24,
-			/datum/outfit/hermit/jermit = 4,
-			)
-		)
-	if(prob(25))
-		suit = pick_weight(list(
-			/obj/item/clothing/suit/hooded/explorer = 18,
-			/obj/item/clothing/suit/hooded/cloak/goliath = 1
-			)
-		)
-	if(prob(75))
-		back = /obj/item/storage/backpack/explorer
+	outfit = /datum/outfit/hermit
 
 /datum/outfit/hermit
 	name = "Whitesands Survivor"
@@ -145,7 +125,7 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	suit = /obj/item/clothing/suit/hooded/survivor
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	gloves = /obj/item/clothing/gloves/color/black //randomize a bit
+	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/hooded/survivor_hood
 
 /datum/outfit/hermit/brown
