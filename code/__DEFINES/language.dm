@@ -1,7 +1,11 @@
-#define NO_STUTTER 1
-#define TONGUELESS_SPEECH 2
-#define LANGUAGE_HIDE_ICON_IF_UNDERSTOOD 4
-#define LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD 8
+#define NO_STUTTER (1<<0)
+#define TONGUELESS_SPEECH (1<<1)
+#define LANGUAGE_HIDE_ICON_IF_UNDERSTOOD (1<<2)
+#define LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD (1<<3)
+/// This language can be selected in preferences.
+#define ROUNDSTART_LANGUAGE (1<<4)
+/// Sarathi do not "sss" when speaking this language
+#define NO_HISS (1<<5)
 
 // LANGUAGE SOURCE DEFINES
 /// For use in full removal only.
