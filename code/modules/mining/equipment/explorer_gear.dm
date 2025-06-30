@@ -114,26 +114,6 @@
 		. += M
 
 //the legacy NT exploration gear, flavoured to be old but reliable.
-/obj/item/clothing/suit/hooded/explorer/old
-	name = "prototype exploration suit"
-	desc = "A limited-production heavy-armor softsuit, designed by NT to outfit their fleets of hostile-territory miners. Known as uncomfortable to some and clunky to many, it nonetheless gets the job done. </br> Replicas and redesigns of this suit abound anywhere a little protection goes a long way."
-	icon_state = "miningold"
-	slowdown = 0.1
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
-	hoodtype = /obj/item/clothing/head/hooded/explorer/old
-
-/obj/item/clothing/head/hooded/explorer/old
-	name = "prototype exploration hood"
-	desc = "An armoured hood, generously-padded and optimized for the rigours of hostile enviroment mining. Will definitely chafe."
-	icon_state = "explorerold"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
-
-/obj/item/clothing/mask/gas/explorer/old
-	name = "prototype exploration mask"
-	desc = "An outdated Nanotrasen enviromask, designed for extended deployment in regions without a safe air supply. Armor-plated to a discomfort-inducing fault."
-	icon_state = "old_mining"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 15, "energy" = 15, "bomb" = 65, "bio" = 100, "rad" = 75, "fire" = 75, "acid" = 75)
-
 /obj/item/clothing/gloves/explorer
 	name = "explorer gloves"
 	desc = "Thick, fire-resistant gloves with a small bracer, sold by EXOCOM to protect your precious fingers from the rigours of planetary exploration."
@@ -190,6 +170,22 @@
 /obj/item/clothing/head/hooded/survivor_hood/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/suit/hooded/survivor/brown
+
+/obj/item/clothing/head/hooded/survivor_hood/brown
+
+/obj/item/clothing/suit/hooded/survivor/yellow
+
+/obj/item/clothing/head/hooded/survivor_hood/yellow
+
+/obj/item/clothing/suit/hooded/survivor/green
+
+/obj/item/clothing/head/hooded/survivor_hood/green
+
+/obj/item/clothing/suit/hooded/survivor/jermit
+
+/obj/item/clothing/head/hooded/survivor_hood/jermit
 
 /obj/item/clothing/suit/hooded/scrap
 	name = "scrap suit"

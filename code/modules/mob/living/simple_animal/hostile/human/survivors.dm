@@ -116,19 +116,98 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 	var/survivor_type //room for alternatives inside the fuckoff grade init.
 
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/Initialize() //everything here should equal out to 100 for the sake of my sanity.
-	mob_species = pick_weight(list(
-			/datum/species/human = 50,
-			/datum/species/lizard = 20,
-			/datum/species/ipc = 10,
-			/datum/species/elzuose = 10,
-			/datum/species/moth = 5,
-			/datum/species/spider = 5
-		)
-	)
-	//to-do: learn how to make mobsprites for other survivors
+/datum/outfit/job/hermit/random
+	name = "Hermit Random"
 
-	//gloves are a tossup
+	head = null
+	mask = null
+	suit = null
+	suit_store = null
+	back = null
+	belt = null
+	gloves = null
+
+	l_pocket = null
+	r_pocket = /obj/item/radio
+
+	backpack_contents = list()
+
+	box = null
+	backpack = null
+	courierbag = null
+	satchel = null
+	duffelbag = null
+
+/datum/outfit/job/hermit/random/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	if(visualsOnly)
+		return
+
+	if(prob(90))
+		head = pick_weight(list(
+		/obj/item/clothing/head/beret/sec/frontier = 10,
+		/obj/item/clothing/head/helmet/bulletproof/x11/frontier = 5,
+		/obj/item/reagent_containers/glass/bucket = 1))
+
+	if(prob(60))
+		suit = pick_weight(list(
+		/obj/item/clothing/suit/armor/vest = 5,
+		/obj/item/clothing/suit/armor/vest/bulletproof/frontier = 5,
+		/obj/item/clothing/suit/armor/vest/scrap = 1))
+
+	if(prob(50))
+		mask = pick_weight(list(
+		/obj/item/clothing/mask/gas/frontiersmen = 12,
+		/obj/item/clothing/mask/balaclava = 10,
+		/obj/item/clothing/mask/breath = 7,
+		/obj/item/clothing/mask/whistle = 3))
+
+	if(prob(90))
+		back = pick_weight(list(
+		/obj/item/storage/backpack = 20,
+		/obj/item/storage/backpack/satchel = 20,
+		/obj/item/storage/backpack/messenger = 20,
+		/obj/item/melee/baton/cattleprod/loaded = 5,
+		/obj/item/deployable_turret_folded = 4,
+		/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended = 3,
+		))
+
+	if(prob(90))
+		shoes = pick_weight(list(
+		/obj/item/clothing/shoes/jackboots = 10,
+		/obj/item/clothing/shoes/sneakers = 5,
+		))
+
+	var/extra_class = pick(list("Doctor", "Breacher", "Ammo Carrier"))
+	switch(extra_class)
+		if("Doctor")
+			backpack_contents += list(/obj/item/storage/firstaid/medical = 1)
+			gloves = /obj/item/clothing/gloves/color/latex
+			suit = /obj/item/clothing/suit/frontiersmen
+			head = /obj/item/clothing/head/frontier
+			if(prob(50))
+				belt = /obj/item/storage/belt/medical/webbing/frontiersmen/combat
+			if(prob(30))
+				glasses = /obj/item/clothing/glasses/hud/health
+		if("Breacher")
+			backpack_contents += list(/obj/item/grenade/c4 = 2, /obj/item/grenade/smokebomb = 3)
+			if(prob(60))
+				belt = /obj/item/storage/belt/grenade/full
+		if("Ammo Carrier")
+			var/loops = rand(1,3)
+			for(var/i in 1 to loops)
+				var/ammotype = pick(list(
+					/obj/item/storage/box/ammo/a8_50r,
+					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a357,
+					/obj/item/storage/box/ammo/c45,
+					/obj/item/storage/box/ammo/a4570,
+					/obj/item/stock_parts/cell/gun/mini))
+				if(istype(back, /obj/item/storage/backpack))
+					backpack_contents += ammotype
+				else
+					H.put_in_hands(ammotype, FALSE)
+
 	gloves = pick_weight(list(
 			/obj/item/clothing/gloves/color/black = 60,
 			/obj/item/clothing/gloves/explorer = 30,
