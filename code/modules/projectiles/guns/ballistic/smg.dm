@@ -77,7 +77,6 @@
 	name = "\improper SKM-24v"
 	desc = "The SKM-24v was a carbine modification of the SKM-24 during the Frontiersmen War. This, however, is just a shoddy imitation of that carbine, effectively an SKM-24 with a sawed down barrel and a folding wire stock. Can be fired with the stock folded, though accuracy suffers. Chambered in 4.6x30mm."
 
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "skm_carbine"
 	item_state = "skm_carbine"
 	icon = 'icons/obj/guns/manufacturer/hermits/48x32.dmi'
