@@ -393,8 +393,9 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	show_ammo_capacity_on_magazine_sprite = TRUE
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-	valid_attachments = list(SCARBOROUGH_ATTACHMENTS, /obj/item/attachment/silencer/cobra)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	default_attachments = list(/obj/item/attachment/silencer/cobra)
+	unique_attachments = list(/obj/item/attachment/silencer/cobra)
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1
@@ -425,6 +426,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 	default_firemode = FIREMODE_BURST
 	default_attachments = null
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = null
 
 
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
