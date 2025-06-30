@@ -263,4 +263,3 @@
 		/mob/living/simple_animal/hostile/lightgeist = 1
 	)
 	feature_spawn_chance = 0.1
-	feature_spawn_list = list(/obj/item/rod_of_asclepius = 1)
