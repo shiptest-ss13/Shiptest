@@ -37,6 +37,7 @@
 	spread_unwielded = 35
 	dual_wield_spread = 35
 	has_safety = FALSE
+	safety = FALSE
 	safety_multiplier = 2
 	fire_delay = 0.15 SECONDS
 	gun_firemodes = list(FIREMODE_FULLAUTO)

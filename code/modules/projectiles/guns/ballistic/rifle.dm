@@ -88,6 +88,7 @@
 	righthand_file = 'icons/obj/guns/manufacturer/hermits/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hermits/onmob.dmi'
 	has_safety = FALSE
+	safety = FALSE
 	safety_multiplier = 2
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
