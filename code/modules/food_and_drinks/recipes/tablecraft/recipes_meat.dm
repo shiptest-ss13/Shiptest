@@ -301,7 +301,7 @@
 		/obj/item/food/meat/slab/remes = 1,
 		/obj/item/food/grown/refa_li = 1
 	)
-	result = /obj/item/food/wine_remes
+	result = /obj/item/food/remes_li
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/dofi_tese
