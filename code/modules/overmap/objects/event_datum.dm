@@ -90,10 +90,10 @@
 
 	var/safe_speed = 3
 	var/list/meteor_types = list(
-		/obj/effect/meteor/dust=3,
-		/obj/effect/meteor/medium=8,
-		/obj/effect/meteor/big=1,
-		/obj/effect/meteor/irradiated=3
+		/obj/effect/meteor/dust = 3,
+		/obj/effect/meteor/medium = 8,
+		/obj/effect/meteor/big = 1,
+		/obj/effect/meteor/irradiated = 3
 	)
 	var/primary_ores = list(\
 		/obj/item/stack/ore/plasma,
@@ -124,7 +124,7 @@
 /datum/overmap/event/meteor/apply_effect()
 	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
 		if(Ship.get_speed() > safe_speed)
-			var/how_fast =  (Ship.get_speed() - safe_speed)
+			var/how_fast = (Ship.get_speed() - safe_speed)
 			if(prob(chance_to_affect + how_fast))
 				affect_ship(Ship)
 
@@ -140,8 +140,8 @@
 	mountain_height_override = 0.85
 
 	meteor_types = list(
-		/obj/effect/meteor/dust=12,
-		/obj/effect/meteor/medium=4,
+		/obj/effect/meteor/dust = 12,
+		/obj/effect/meteor/medium = 4,
 	)
 
 	safe_speed = 5
@@ -156,11 +156,14 @@
 	mountain_height_override = 0.5
 
 	meteor_types = list(
-		/obj/effect/meteor/medium=50,
-		/obj/effect/meteor/big=25,
-		/obj/effect/meteor/flaming=10,
+		/obj/effect/meteor/medium=  50,
+		/obj/effect/meteor/big = 25,
+		/obj/effect/meteor/flaming = 10,
 	)
 
+/*
+these are commented out for being way too miserable in actual gameplay. draining ships power and rendering every airlock useless,
+as well as having no practical way to fix them and even being annoying for admins to fix. Find something better for these to do
 ///Electromagnetic - explodes your IPCs
 /datum/overmap/event/emp
 	name = "electromagnetic storm (moderate)"
@@ -226,7 +229,7 @@
 	chain_rate = 4
 	strength = 8
 	interference_power = 200
-
+ */
 ///SOLAR FLARE - Explodes your organics and IPCs
 /datum/overmap/event/flare
 	name = "solar flare (moderate)"
@@ -259,7 +262,6 @@
 		return
 
 	var/area/source_area = pick(ship.shuttle_port.shuttle_areas)
-
 	var/source_object = pick(source_area.contents)
 
 	flame_radius(get_turf(source_object), round(rand(strength / 2, strength)), rand(strength, strength * 2))
@@ -271,7 +273,7 @@
 
 	for(var/mob/affected_mob as anything in GLOB.player_list)
 		if(ship.shuttle_port.is_in_shuttle_bounds(affected_mob))
-			affected_mob.playsound_local(affected_mob, 'sound/effects/overmap/solar_flare.ogg', 100)
+			affected_mob.playsound_local(affected_mob, 'sound/effects/overmap/solar_flare.ogg', 50)
 
 /datum/overmap/event/flare/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
 	our_planet.weather_controller_type = /datum/weather_controller/lavaland
@@ -321,7 +323,7 @@
 
 	for(var/mob/poor_crew as anything in GLOB.player_list)
 		if(S.shuttle_port.is_in_shuttle_bounds(poor_crew))
-			poor_crew.playsound_local(poor_crew, THUNDER_SOUND, rand(min_damage, max_damage))
+			poor_crew.playsound_local(poor_crew, THUNDER_SOUND, 50)
 
 
 /datum/overmap/event/electric/modify_emptyspace_mapgen(datum/overmap/dynamic/our_planet)
@@ -457,8 +459,8 @@
 	safe_speed = 5
 	interference_power = 0
 	meteor_types = list(
-		/obj/effect/meteor/carp=16,
-		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
+		/obj/effect/meteor/carp = 16,
+		/obj/effect/meteor/carp/big = 1, //numbers I pulled out of my ass
 	)
 	primary_ores = null
 
@@ -476,7 +478,7 @@
 	spread_chance = 25
 	chain_rate = 4
 	meteor_types = list(
-		/obj/effect/meteor/carp=8
+		/obj/effect/meteor/carp = 8
 	)
 
 
@@ -487,8 +489,8 @@
 	spread_chance = 25
 	chain_rate = 4
 	meteor_types = list(
-		/obj/effect/meteor/carp=7,
-		/obj/effect/meteor/carp/big=1,
+		/obj/effect/meteor/carp = 7,
+		/obj/effect/meteor/carp/big = 1,
 	)
 
 // dust clouds throw dust if you go Way Fast
@@ -504,7 +506,7 @@
 	safe_speed = 7
 	interference_power = 5
 	meteor_types = list(
-		/obj/effect/meteor/dust=3,
+		/obj/effect/meteor/dust = 3,
 	)
 	primary_ores = null
 
@@ -608,8 +610,6 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	chain_rate = 4
 	strength = 60
 
-
-
 ///METEOR STORMS - explodes your ship if you go too fast
 /datum/overmap/event/meteor/debris
 	name = "debris field (moderate)"
@@ -630,7 +630,6 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 		token.opacity = TRUE
 	current_overmap.post_edit_token_state(src)
 
-
 /datum/overmap/event/meteor/debris/minor
 	name = "debris field (minor)"
 	base_icon_state = "debris_light_"
@@ -642,8 +641,8 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	blocks_sight = FALSE
 
 	meteor_types = list(
-		/obj/effect/meteor/dust=12,
-		/obj/effect/meteor/medium=4,
+		/obj/effect/meteor/dust = 12,
+		/obj/effect/meteor/medium = 4,
 	)
 
 	safe_speed = 5
@@ -658,7 +657,7 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	mountain_height_override = 0.5
 
 	meteor_types = list(
-		/obj/effect/meteor/medium=50,
-		/obj/effect/meteor/big=25,
-		/obj/effect/meteor/flaming=10,
+		/obj/effect/meteor/medium = 50,
+		/obj/effect/meteor/big = 25,
+		/obj/effect/meteor/flaming = 10,
 	)
