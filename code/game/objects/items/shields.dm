@@ -22,10 +22,6 @@
 	var/transparent = FALSE
 	/// if the shield will break by sustaining damage
 	var/breakable_by_damage = TRUE
-	/// what the shield leaves behind when it breaks
-	var/shield_break_leftover = /obj/item/stack/sheet/mineral/wood
-	/// sound the shield makes when it breaks
-	var/shield_break_sound = 'sound/effects/bang.ogg'
 	/// baton bash cooldown
 	COOLDOWN_DECLARE(baton_bash)
 	/// is shield bashable?
@@ -132,8 +128,6 @@
 	transparent = FALSE
 	custom_materials = list(/datum/material/iron=8500)
 	max_integrity = 65
-	shield_break_leftover = /obj/item/stack/sheet/metal
-	shield_break_sound = 'sound/effects/grillehit.ogg'
 
 /obj/item/shield/riot/roman/fake
 	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>. It appears to be a bit flimsy."
@@ -156,9 +150,8 @@
 	block_chance = 25
 	transparent = FALSE
 	max_integrity = 55
+	integrity_failure = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	shield_break_leftover = /obj/item/stack/sheet/mineral/wood
-	shield_break_sound = 'sound/effects/bang.ogg'
 
 /obj/item/shield/riot/buckler/welder_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -345,7 +338,5 @@
 	block_chance = 25
 	max_integrity = 70
 	w_class = WEIGHT_CLASS_BULKY
-	shield_break_leftover = /obj/item/stack/sheet/animalhide/goliath_hide
-	shield_break_sound = 'sound/effects/bang.ogg'
 
 #undef BATON_BASH_COOLDOWN
