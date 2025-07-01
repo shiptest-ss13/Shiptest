@@ -13,7 +13,7 @@ import { createSearch, decodeHtmlEntities } from 'common/string';
 import { logger } from '../logging';
 
 const findShipByRef = (ship_list, ship_ref) => {
-  for (var i = 0; i < ship_list.length; i++) {
+  for (let i = 0; i < ship_list.length; i++) {
     if (ship_list[i].ref === ship_ref) return ship_list[i];
   }
   return null;
