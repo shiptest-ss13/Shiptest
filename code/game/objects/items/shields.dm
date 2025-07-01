@@ -161,8 +161,6 @@
 			broken = FALSE
 			obj_integrity = max_integrity
 			block_chance = 25
-			slowdown = 0.5
-			drag_slowdown = 0.5
 		return TRUE
 
 /obj/item/shield/riot/flash
