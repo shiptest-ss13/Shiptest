@@ -43,18 +43,6 @@
 /obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	take_damage(damage)
 
-/obj/item/shield/welder_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(broken)
-		if(I.use_tool(src, user, 0, volume = 40))
-			name = src::name
-			broken = FALSE
-			obj_integrity = max_integrity
-			block_chance = 50
-			slowdown = 1
-			drag_slowdown = 1
-		return TRUE
-
 /obj/item/shield/obj_break(damage_flag)
 	. = ..()
 	if(!broken)
