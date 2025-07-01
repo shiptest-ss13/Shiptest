@@ -54,7 +54,7 @@
 			name = src::name
 			broken = FALSE
 			obj_integrity = max_integrity
-			block_chance = 100
+			block_chance = 50
 			slowdown = 1
 			drag_slowdown = 1
 		return TRUE
@@ -89,14 +89,9 @@
 
 	force = 15
 	max_integrity = 300
-	block_chance = 60
+	block_chance = 70
 	integrity_failure = 0.2
 	material_flags = MATERIAL_NO_EFFECTS
-	var/force_wielded = 18
-
-/obj/item/shield/riot/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = force_wielded, block_chance = 80, slowdown = 1)
 
 /obj/item/shield/riot/welder_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -105,7 +100,7 @@
 			name = src::name
 			broken = FALSE
 			obj_integrity = max_integrity
-			block_chance = 60
+			block_chance = 70
 			slowdown = 0.5
 			drag_slowdown = 0.5
 		return TRUE
@@ -123,7 +118,7 @@
 	name = "spike shield"
 	desc = "A ballistic shield adept at blocking blunt objects and bullets, adorned with a vicious spike."
 	icon_state = "spike"
-	force = 20
+	force = 24
 	attack_verb = list("stabbed", "gashed")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
@@ -164,6 +159,18 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	shield_break_leftover = /obj/item/stack/sheet/mineral/wood
 	shield_break_sound = 'sound/effects/bang.ogg'
+
+/obj/item/shield/riot/buckler/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(broken)
+		if(I.use_tool(src, user, 0, volume = 40))
+			name = src::name
+			broken = FALSE
+			obj_integrity = max_integrity
+			block_chance = 25
+			slowdown = 0.5
+			drag_slowdown = 0.5
+		return TRUE
 
 /obj/item/shield/riot/flash
 	name = "strobe shield"
