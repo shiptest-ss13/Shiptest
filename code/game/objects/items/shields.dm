@@ -31,10 +31,6 @@
 	var/recoil_bonus = -2
 	var/broken = FALSE
 
-/obj/item/shield/Initialize()
-	. = ..()
-	drag_slowdown = slowdown
-
 /obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	. = ..()
 	if(.)
@@ -140,16 +136,6 @@
 	max_integrity = 55
 	integrity_failure = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/shield/riot/buckler/welder_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(broken)
-		if(I.use_tool(src, user, 0, volume = 40))
-			name = src::name
-			broken = FALSE
-			obj_integrity = max_integrity
-			block_chance = 25
-		return TRUE
 
 /obj/item/shield/riot/flash
 	name = "strobe shield"
