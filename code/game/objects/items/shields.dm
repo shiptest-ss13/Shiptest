@@ -70,7 +70,7 @@
 		final_block_chance = 100
 	. = ..()
 	if(.)
-		on_shield_block(owner, hitby, attack_text, damage, attack_type, damage_type)
+		on_block(owner, hitby, attack_text, damage, attack_type, damage_type)
 
 /obj/item/shield/riot
 	name = "ballistic shield"
@@ -87,10 +87,16 @@
 /obj/item/shield/riot/welder_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(broken)
-		if(I.use_tool(src, user, 0, volume = 40))
+		if(istype(W, /obj/item/stack/sheet/metal))
+			if (obj_integrity >= max_integrity)
+			to_chat(user, span_warning("[src] is already in perfect condition."))
+		else
+			var/obj/item/stack/sheet/metal/T = W
+			T.use(1)
+			obj_integrity = max_integrity
+			to_chat(user, span_notice("You repair [src] with [T]."))
 			name = src::name
 			broken = FALSE
-			obj_integrity = max_integrity
 			block_chance = 70
 			slowdown = 0.5
 			drag_slowdown = 0.5
