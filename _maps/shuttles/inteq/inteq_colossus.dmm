@@ -417,12 +417,10 @@
 	},
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_x = -8
 	},
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_x = -8;
 	pixel_y = -4
 	},
@@ -734,9 +732,7 @@
 	pixel_x = 10;
 	pixel_y = 22
 	},
-/obj/machinery/camera/autoname{
-	dir = 2
-	},
+/obj/machinery/camera/autoname,
 /obj/effect/turf_decal/trimline/opaque/yellow/line{
 	dir = 1
 	},
@@ -1257,7 +1253,7 @@
 	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hangar)
+/area/ship/engineering/engines/starboard)
 "jA" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1313,7 +1309,7 @@
 	id = "colossus_grid"
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hangar)
+/area/ship/engineering/engines/port)
 "jR" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/cable{
@@ -1751,7 +1747,6 @@
 /obj/structure/table/reinforced,
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_y = 11;
 	pixel_x = 5
 	},
@@ -2343,9 +2338,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
 	id = "sus_port";
@@ -3440,7 +3433,6 @@
 /obj/structure/table/reinforced,
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_y = 11;
 	pixel_x = 5
 	},
@@ -4073,9 +4065,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor{
 	id = "sus_starboard";
@@ -7236,12 +7226,10 @@
 	},
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_x = 8
 	},
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_x = 8;
 	pixel_y = -4
 	},
@@ -7740,18 +7728,15 @@
 /obj/structure/filingcabinet/double{
 	dir = 8;
 	pixel_x = 10;
-	pixel_y = 0;
 	density = 0
 	},
 /obj/machinery/light/directional/east,
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_x = -8
 	},
 /obj/item/folder/syndicate{
 	desc = "A slick black folder stamped 'Property of Inteq Risk Management Group.'";
-	name = "folder";
 	pixel_x = -8;
 	pixel_y = -4
 	},
@@ -8578,7 +8563,7 @@ vm
 hU
 hU
 Hr
-vm
+jP
 re
 re
 re
@@ -8594,7 +8579,7 @@ re
 re
 re
 re
-sy
+jz
 Fe
 NR
 NR
@@ -8613,7 +8598,6 @@ vm
 re
 re
 re
-jz
 Rg
 Rg
 Rg
@@ -8621,7 +8605,8 @@ Rg
 Rg
 Rg
 Rg
-jP
+Rg
+Rg
 re
 re
 re
