@@ -30,7 +30,7 @@ export const AccessList = (props) => {
   } = props;
   const [selectedAccessName, setSelectedAccessName] = useLocalState(
     'accessName',
-    accesses[0]?. name,
+    accesses[0]?.name,
   );
   const selectedAccess = accesses.find(
     (access) => access.name === selectedAccessName,

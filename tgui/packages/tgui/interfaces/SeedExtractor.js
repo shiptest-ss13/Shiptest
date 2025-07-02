@@ -1,6 +1,5 @@
 import { sortBy } from 'common/collections';
 import { Button, Section, Table } from 'tgui-core/components';
-import { flow } from 'tgui-core/fp';
 import { toTitleCase } from 'tgui-core/string';
 
 import { useBackend } from '../backend';

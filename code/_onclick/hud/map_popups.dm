@@ -52,6 +52,8 @@
 /atom/movable/screen/proc/set_position(x, y, px = 0, py = 0)
 	if(assigned_map)
 		screen_loc = "[assigned_map]:[x]:[px],[y]:[py]"
+		// 516 clients get to suffer jank while we priortize 515
+		#if DM_VERSION >= 516
 		ASYNC
 			// HACK: This fixes the character creator in 516 being small and relying on other byondui things (like cameras) to open in order to update and refresh.
 			// This also will fix the camera console screen being offset, Gateway, and admin pod panel.
@@ -63,6 +65,7 @@
 			screen_loc = "[assigned_map]:[x+100]:[px],[y+100]:[py]"
 			sleep(0.2 SECONDS)
 			screen_loc = "[assigned_map]:[x]:[px],[y]:[py]"
+		#endif
 	else
 		screen_loc = "[x]:[px],[y]:[py]"
 
