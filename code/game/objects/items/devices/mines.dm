@@ -873,7 +873,6 @@ LIVE_MINE_HELPER(pressure/sound)
 	. = ..()
 	if(spawn_mines())
 		spawn_signs()
-	//Please dont leave this in..
 	//message_admins(span_big("Click here to jump to minefield: " + ADMIN_JMP(src.loc)))
 
 /obj/effect/spawner/minefield/proc/spawn_mines()
@@ -916,7 +915,6 @@ LIVE_MINE_HELPER(pressure/sound)
 	var/rand_num = rand(0, MINE_DECIMAL_PERCISION) / MINE_DECIMAL_PERCISION
 	return rand_num
 
-//Should make adding signs less copy paste
 /obj/effect/spawner/minefield/proc/get_turf_from_distance(distance)
 	var/angle = mine_random_decimal() * 360
 	distance = sqrt(distance)
@@ -925,16 +923,6 @@ LIVE_MINE_HELPER(pressure/sound)
 	var/turf/center_turf = get_turf(src)
 	var/mine_turf = locate(center_turf.x + x_cord, center_turf.y + y_cord, center_turf.z)
 	return(mine_turf)
-/*
-/obj/effect/spawner/minefield/proc/get_sign_turf
-	var/angle = rand(0, 1) * 2 * PI
-	var/distance = mine_range + sign_offset + (sign_offset * mine_random_decimal())
-	var/x_cord = round(distance) * cos(angle)
-	var/y_cord = round(distance) * sin(angle)
-	var/turf/center_turf = get_turf(src)
-	var/mine_turf = locate(center_turf.x + x_cord, center_turf.y + y_cord, center_turf.z)
-	return(mine_turf)
-*/
 
 /obj/effect/spawner/minefield/tiny
 	name = "tiny minefield spawner"
