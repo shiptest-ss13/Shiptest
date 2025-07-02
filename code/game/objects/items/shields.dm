@@ -79,28 +79,10 @@
 	custom_materials = list(/datum/material/iron=8500)
 
 	force = 15
-	max_integrity = 300
+	max_integrity = 900
 	block_chance = 70
-	integrity_failure = 0.2
+	integrity_failure = 0.1
 	material_flags = MATERIAL_NO_EFFECTS
-
-/obj/item/shield/riot/welder_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(broken)
-		if(istype(W, /obj/item/stack/sheet/metal))
-			if (obj_integrity >= max_integrity)
-			to_chat(user, span_warning("[src] is already in perfect condition."))
-		else
-			var/obj/item/stack/sheet/metal/T = W
-			T.use(1)
-			obj_integrity = max_integrity
-			to_chat(user, span_notice("You repair [src] with [T]."))
-			name = src::name
-			broken = FALSE
-			block_chance = 70
-			slowdown = 0.5
-			drag_slowdown = 0.5
-		return TRUE
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/melee/baton))
@@ -116,6 +98,11 @@
 			T.use(1)
 			obj_integrity = max_integrity
 			to_chat(user, span_notice("You repair [src] with [T]."))
+			name = src::name
+			broken = FALSE
+			block_chance = 70
+			slowdown = 0.5
+			drag_slowdown = 0.5
 
 /obj/item/shield/riot/spike
 	name = "spike shield"
