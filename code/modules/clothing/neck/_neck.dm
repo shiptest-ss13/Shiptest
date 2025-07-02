@@ -310,6 +310,36 @@
 	icon_state = "scarflightbrown"
 	current_skin = "light brown scarf"
 
+//Ponchos. Duh
+
+/obj/item/clothing/neck/poncho
+	name = "poncho"
+	desc = "Perfect for a rainy night with jazz."
+	icon = 'icons/obj/clothing/neck/poncho.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck/Ponchos.dmi'
+	icon_state = "ponchowhite"
+	item_state = "ponchowhite"
+	custom_price = 60
+	unique_reskin = list("white poncho" = "ponchowhite",
+						"grey poncho" = "ponchogrey",
+						"black poncho" = "ponchoblack",
+						"red poncho" = "ponchored",
+						"maroon poncho" = "ponchomaroon",
+						"orange poncho" = "ponchoorange",
+						"yellow poncho" = "ponchoyellow",
+						"green poncho" = "ponchogreen",
+						"dark green poncho" = "ponchodarkgreen",
+						"teal poncho" = "ponchoteal",
+						"blue poncho" = "ponchoblue",
+						"dark blue poncho" = "ponchodarkblue",
+						"purple poncho" = "ponchopurple",
+						"pink poncho" = "ponchopink",
+						"brown poncho" = "ponchobrown",
+						"light brown poncho" = "poncholightbrown"
+						)
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+
 //Shemaghs to operate tactically in a operational tactical situation
 
 /obj/item/clothing/neck/shemagh
