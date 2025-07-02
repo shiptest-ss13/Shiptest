@@ -91,8 +91,14 @@
 			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
 			playsound(src, shield_bash_sound, 50, TRUE)
 			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
-	else
-		return ..()
+	else if(istype(W, /obj/item/stack/sheet/metal))
+		if (obj_integrity >= max_integrity)
+			to_chat(user, span_warning("[src] is already in perfect condition."))
+		else
+			var/obj/item/stack/sheet/mineral/metal/T = W
+			T.use(1)
+			obj_integrity = max_integrity
+			to_chat(user, span_notice("You repair [src] with [T]."))
 
 /obj/item/shield/riot/spike
 	name = "spike shield"
@@ -136,6 +142,15 @@
 	max_integrity = 55
 	integrity_failure = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
+	var/shield_break_leftover = /obj/item/stack/sheet/mineral/wood
+	var/shield_break_sound = 'sound/effects/bang.ogg'
+
+/obj/item/shield/riot/buckler/obj_destruction(damage_flag)
+	playsound(src, shield_break_sound, 50)
+	new shield_break_leftover(get_turf(src))
+	if(isliving(loc))
+		loc.balloon_alert(loc, "shield broken!")
+	return ..()
 
 /obj/item/shield/riot/flash
 	name = "strobe shield"
