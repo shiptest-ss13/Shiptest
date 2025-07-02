@@ -120,7 +120,7 @@
 	light_color = LIGHT_COLOR_DARK_BLUE
 
 /turf/open/water/beach/deep/outpost
-	color = "#2a4171"
+	color = "#22423b"
 	light_color = "#7e3d24"
 	initial_gas_mix = "o2=22;n2=82;TEMP=300"
 

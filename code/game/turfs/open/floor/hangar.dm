@@ -36,3 +36,14 @@ Each floor in a hangar map must be subtyped here.
 	light_range = 2
 	light_power = 1
 	light_color = "#1B1D2E"
+
+/turf/open/floor/hangar/clipoutpost
+	name = "hangar"
+	icon_state = "plating"
+	base_icon_state = "plating"
+	baseturfs = /turf/open/floor/hangar
+	planetary_atmos = 1
+	light_range = 2
+	light_power = 0.80
+	light_color = "#7e3d24"
+	initial_gas_mix = "o2=22;n2=82;TEMP=300"
