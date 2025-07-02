@@ -125,7 +125,7 @@ export const CargoCatalog = (props) => {
                         }
                         setSearchText(value);
                       }}
-                      onChange={(value) => {
+                      onChange={(e, value) => {
                         // Allow edge cases like the X button to work
                         const onInput = e.target?.props?.onInput;
                         if (onInput) {
