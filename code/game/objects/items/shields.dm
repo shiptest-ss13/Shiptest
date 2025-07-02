@@ -74,7 +74,7 @@
 
 /obj/item/shield/riot
 	name = "ballistic shield"
-	desc = "A shield adept at blocking blunt objects and bullets from connecting with the torso of the shield wielder."
+	desc = "A shield adept at blocking blunt objects and bullets from connecting with the torso of the shield wielder. Use metal to repair."
 	icon_state = "ballistic"
 	custom_materials = list(/datum/material/iron=8500)
 
@@ -106,7 +106,7 @@
 
 /obj/item/shield/riot/spike
 	name = "spike shield"
-	desc = "A ballistic shield adept at blocking blunt objects and bullets, adorned with a vicious spike."
+	desc = "A ballistic shield adept at blocking blunt objects and bullets, adorned with a vicious spike. Use metal to repair"
 	icon_state = "spike"
 	force = 24
 	attack_verb = list("stabbed", "gashed")
@@ -158,7 +158,7 @@
 
 /obj/item/shield/riot/flash
 	name = "strobe shield"
-	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs."
+	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs. Use metal to repair."
 	icon_state = "flashshield"
 	item_state = "flashshield"
 	var/obj/item/assembly/flash/handheld/embedded_flash
