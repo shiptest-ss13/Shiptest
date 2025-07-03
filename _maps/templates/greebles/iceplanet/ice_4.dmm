@@ -6,27 +6,31 @@
 "g" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/ice/explored)
 "h" = (
 /obj/structure/flora/bush,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/ice/explored)
+"n" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/ice/explored)
 "q" = (
 /obj/structure/closet/crate/grave/stone,
 /obj/effect/mob_spawn/human/corpse/frontier,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/ice/explored)
 "r" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/ice/explored)
 "G" = (
 /obj/structure/flora/grass/brown,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/ice/explored)
 "L" = (
 /obj/item/shovel,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/ice/explored)
 "V" = (
 /turf/template_noop,
 /area/template_noop)
@@ -35,14 +39,14 @@
 	loot = list(/mob/living/simple_animal/hostile/human/frontier/ranged/internals)
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
+/area/overmap_encounter/planetoid/ice/explored)
 
 (1,1,1) = {"
 V
-a
+n
 h
 r
-a
+n
 "}
 (2,1,1) = {"
 a
@@ -61,12 +65,12 @@ r
 (4,1,1) = {"
 g
 q
-a
+n
 r
 g
 "}
 (5,1,1) = {"
-a
+n
 r
 r
 G
