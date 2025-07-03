@@ -341,7 +341,7 @@
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
 	actions_types = list(/datum/action/item_action/toggle_hood)
-	var/suittoggled = FALSE
+	var/ponchotoggled = FALSE
 	var/obj/item/clothing/head/hooded/hood
 	var/hoodtype = /obj/item/clothing/head/hooded/poncho
 
@@ -385,12 +385,12 @@
 	..()
 
 /obj/item/clothing/neck/poncho/proc/remove_hood()
-	suittoggled = FALSE
+	ponchotoggled = FALSE
 	if(hood)
 		if(ishuman(hood.loc))
 			var/mob/living/carbon/H = hood.loc
 			H.transferItemToLoc(hood, src, TRUE)
-			H.update_inv_wear_suit()
+			H.update_inv_neck()
 		else
 			hood.forceMove(src)
 		for(var/X in actions)
@@ -399,7 +399,7 @@
 	//Might need an update aperance here
 
 /obj/item/clothing/neck/poncho/update_appearance(updates)
-	if(suittoggled = TRUE)
+	if(ponchotoggled)
 		icon_state = "[base_icon_state]_t"
 	else
 		icon_state = base_icon_state
@@ -412,7 +412,7 @@
 	remove_hood()
 
 /obj/item/clothing/neck/poncho/proc/toggle_hood()
-	if(!suittoggled)
+	if(!ponchotoggled)
 		if(ishuman(src.loc))
 			var/mob/living/carbon/human/H = src.loc
 			if(H.wear_neck != src)
@@ -422,8 +422,8 @@
 				to_chat(H, span_warning("You're already wearing something on your head!"))
 				return
 			else if(H.equip_to_slot_if_possible(hood,ITEM_SLOT_HEAD,0,0,1))
-				suittoggled = TRUE
-				H.update_inv_wear_suit()
+				ponchotoggled = TRUE
+				H.update_inv_neck()
 				for(var/X in actions)
 					var/datum/action/A = X
 					A.UpdateButtonIcon()
