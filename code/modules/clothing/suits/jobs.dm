@@ -190,7 +190,6 @@
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_light_blue"
 
-//Mime
 /obj/item/clothing/suit/toggle/suspenders
 	name = "suspenders"
 	desc = "The symbol of hard labor and dirty jobs."
