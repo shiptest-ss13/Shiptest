@@ -163,6 +163,17 @@
 	},
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
+"cV" = (
+/obj/machinery/conveyor_switch{
+	id = "doohickey";
+	pixel_y = -7;
+	pixel_x = -11
+	},
+/turf/open/floor/concrete/slab_4{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/space)
 "dh" = (
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2{
 	dir = 8
@@ -429,6 +440,9 @@
 	pixel_x = 9;
 	pixel_y = 6
 	},
+/obj/item/crowbar/red{
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/mono,
 /area/space)
 "gY" = (
@@ -453,8 +467,7 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
-	id = "w3";
-	dir = 2
+	id = "w3"
 	},
 /turf/open/floor/plating,
 /area/space)
@@ -502,12 +515,14 @@
 	pixel_y = 14;
 	pixel_x = 12
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/space)
 "hX" = (
 /obj/structure/chair/office{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/human/hermit/survivor,
 /turf/open/floor/carpet,
 /area/space)
 "ib" = (
@@ -573,6 +588,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1,
 /turf/open/floor/plasteel/mono,
+/area/space)
+"iG" = (
+/obj/structure/closet/crate/trashcart/laundry,
+/obj/effect/turf_decal/box,
+/turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "iN" = (
 /obj/structure/cable{
@@ -672,6 +692,12 @@
 	pixel_x = -6;
 	pixel_y = 13
 	},
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = 8;
+	id = "w1";
+	name = "window shutter control"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/space)
 "kg" = (
@@ -702,6 +728,7 @@
 	dir = 8
 	},
 /obj/structure/rack,
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/mono,
 /area/space)
 "ku" = (
@@ -879,6 +906,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"mB" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "w4"
+	},
+/turf/open/floor/plating,
+/area/space)
 "mC" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -917,6 +952,15 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
+"ns" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "w5";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "nt" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 8
@@ -928,6 +972,13 @@
 /area/space)
 "nD" = (
 /obj/structure/chair/sofa/olive/old/corner/directional/north,
+/obj/machinery/button/door{
+	pixel_y = -22;
+	pixel_x = -10;
+	dir = 1;
+	id = "w5";
+	name = "window shutter control"
+	},
 /turf/open/floor/carpet,
 /area/space)
 "nL" = (
@@ -1004,6 +1055,16 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supplymain/hidden/layer2,
 /turf/open/floor/concrete/pavement/whitesands/lit,
+/area/space)
+"oR" = (
+/obj/structure/chair/handrail{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/mob/living/simple_animal/hostile/human/hermit/ranged/hunter,
+/turf/open/floor/plating/whitesands/lit,
 /area/space)
 "oU" = (
 /obj/structure/crate_shelf,
@@ -1157,6 +1218,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/item/crowbar/red{
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/mono,
 /area/space)
 "qa" = (
@@ -1413,6 +1477,19 @@
 	light_range = 2
 	},
 /area/space)
+"up" = (
+/obj/structure/table,
+/obj/machinery/newscaster/directional/north,
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_y = 6;
+	pixel_x = 11
+	},
+/obj/item/food/kebab/miras{
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/turf/open/floor/carpet,
+/area/space)
 "ut" = (
 /obj/structure/grille,
 /obj/machinery/atmospherics/pipe/layer_manifold{
@@ -1470,7 +1547,6 @@
 "uY" = (
 /obj/structure/filingcabinet/double{
 	dir = 4;
-	pixel_y = 0;
 	pixel_x = -4
 	},
 /turf/open/floor/carpet,
@@ -1659,6 +1735,11 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/space)
+"xw" = (
+/obj/structure/railing/thin,
+/obj/structure/closet/crate/trashcart,
+/turf/open/floor/plating,
+/area/space)
 "xx" = (
 /obj/structure/railing/corner,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2{
@@ -1688,6 +1769,7 @@
 /area/space)
 "yo" = (
 /obj/machinery/washing_machine,
+/obj/effect/turf_decal/box,
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/space)
 "yt" = (
@@ -1725,6 +1807,7 @@
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
 /obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/storage/cans/sixbeer,
 /turf/open/floor/plasteel/grimy,
 /area/space)
 "zt" = (
@@ -1747,6 +1830,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/ridged,
+/area/space)
+"zE" = (
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel,
 /area/space)
 "zI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
@@ -1962,6 +2049,14 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/space)
+"CA" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/jellysandwich/cherry{
+	pixel_x = 1;
+	pixel_y = 1
+	},
+/turf/open/floor/carpet,
+/area/space)
 "Db" = (
 /obj/machinery/atmospherics/pipe/manifold/supplymain/hidden/layer2,
 /obj/effect/turf_decal/siding/wood{
@@ -2096,6 +2191,11 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/space)
+"FU" = (
+/obj/effect/spawner/bunk_bed,
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plasteel/patterned,
+/area/space)
 "FV" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/box/corners{
@@ -2109,6 +2209,16 @@
 	},
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/patterned/cargo_one,
+/area/space)
+"FX" = (
+/obj/machinery/button/door{
+	pixel_y = 9;
+	pixel_x = 22;
+	dir = 8;
+	id = "w4";
+	name = "window shutter control"
+	},
+/turf/open/floor/carpet,
 /area/space)
 "Gg" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
@@ -2148,6 +2258,10 @@
 	name = "window shutter control"
 	},
 /obj/machinery/light/small/directional/west,
+/obj/item/desk_flag/trans{
+	pixel_x = -5;
+	pixel_y = 15
+	},
 /turf/open/floor/carpet,
 /area/space)
 "Gs" = (
@@ -2532,6 +2646,7 @@
 "Mt" = (
 /obj/structure/closet/crate/bin,
 /obj/machinery/light/small/directional/south,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/carpet,
 /area/space)
 "Mx" = (
@@ -2648,6 +2763,9 @@
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/space)
+"Oh" = (
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/space)
 "Oj" = (
 /turf/open/floor/plasteel/stairs/whitesand/lit,
 /area/space)
@@ -2714,6 +2832,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/space)
+"Ph" = (
+/obj/machinery/button/door{
+	pixel_y = -9;
+	pixel_x = 22;
+	dir = 8;
+	id = "w3";
+	name = "window shutter control"
+	},
+/turf/open/floor/carpet,
+/area/space)
 "Pi" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
 /turf/open/floor/plasteel/mono,
@@ -2729,6 +2857,7 @@
 	dir = 4
 	},
 /obj/structure/dresser,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/space)
 "PH" = (
@@ -2745,6 +2874,15 @@
 /area/space)
 "PI" = (
 /turf/closed/wall/mineral/titanium/survival,
+/area/space)
+"PP" = (
+/obj/structure/grille,
+/obj/structure/window/plasma/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	id = "w4";
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/space)
 "PY" = (
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2{
@@ -2981,6 +3119,14 @@
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
 /area/space)
+"TA" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/reti{
+	pixel_y = 6;
+	pixel_x = -7
+	},
+/turf/open/floor/carpet,
+/area/space)
 "TX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3039,6 +3185,13 @@
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/stairs/whitesand/lit,
+/area/space)
+"Va" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/turf/open/floor/concrete/slab_4{
+	light_power = 0.6;
+	light_range = 2
+	},
 /area/space)
 "Vb" = (
 /obj/effect/turf_decal/road{
@@ -3203,6 +3356,16 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/whitesands/lit,
+/area/space)
+"YJ" = (
+/obj/machinery/conveyor{
+	id = "doohickey";
+	dir = 4
+	},
+/obj/structure/railing/thin{
+	dir = 10
+	},
+/turf/open/floor/plating,
 /area/space)
 "YS" = (
 /obj/structure/disposalpipe/segment{
@@ -3725,7 +3888,7 @@ Mp
 Mp
 Tt
 Tt
-Tt
+ns
 PI
 KO
 PI
@@ -3778,9 +3941,9 @@ zs
 fr
 Vj
 nD
+Oh
 PI
-PI
-PI
+Oh
 kM
 uY
 Gq
@@ -3819,8 +3982,8 @@ kJ
 PI
 yo
 nj
-nj
-Nh
+cV
+xw
 Nh
 mC
 Mp
@@ -3828,7 +3991,7 @@ Wy
 Ng
 Zt
 yt
-lM
+TA
 QT
 Mt
 PI
@@ -3869,10 +4032,10 @@ kJ
 kJ
 kJ
 PI
-xn
+iG
 nj
 nj
-Sn
+YJ
 Nh
 jT
 Mp
@@ -3922,7 +4085,7 @@ PI
 PI
 PI
 yo
-nj
+Va
 nj
 Sn
 Nh
@@ -3970,7 +4133,7 @@ Hn
 kJ
 PI
 PI
-DM
+zE
 DM
 PI
 PI
@@ -3986,13 +4149,13 @@ Mr
 Mr
 jE
 jE
-PI
+Oh
 Mp
 Mp
 gW
 HX
 RK
-PI
+Oh
 Mp
 Yw
 Yw
@@ -4032,11 +4195,11 @@ vz
 os
 gL
 PI
+up
 lM
-lM
-Mr
-Mr
-lM
+FX
+Ph
+CA
 lM
 PI
 KO
@@ -4083,9 +4246,9 @@ XS
 mG
 Bb
 Yw
-hm
-Tt
-Tt
+mB
+PP
+PP
 PI
 PI
 Tt
@@ -4414,8 +4577,8 @@ XS
 XS
 XS
 XS
-Yw
-Yw
+XS
+XS
 XS
 XS
 XS
@@ -4581,7 +4744,7 @@ eI
 PI
 PI
 PI
-xO
+FU
 xO
 PI
 PI
@@ -4668,7 +4831,7 @@ XS
 Yw
 Yw
 hD
-Xj
+oR
 LI
 kN
 Yw
@@ -4895,7 +5058,7 @@ RX
 PI
 PI
 PI
-xO
+FU
 xO
 PI
 PI
@@ -4930,7 +5093,7 @@ Yw
 Yw
 Yw
 hD
-Xj
+oR
 ki
 tX
 Yw
@@ -5151,7 +5314,7 @@ qy
 PI
 PI
 PI
-xO
+FU
 xO
 PI
 PI
@@ -5453,7 +5616,7 @@ aU
 gY
 xr
 xc
-PI
+Oh
 Mp
 Cq
 Mp
@@ -5501,7 +5664,7 @@ XS
 Yw
 PI
 PI
-PI
+Oh
 tz
 Ow
 Rn
@@ -5657,7 +5820,7 @@ XS
 KO
 PI
 PI
-PI
+Oh
 PI
 ej
 PI
