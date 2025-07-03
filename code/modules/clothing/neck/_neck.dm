@@ -316,7 +316,7 @@
 	name = "poncho"
 	desc = "Perfect for a rainy night with jazz."
 	icon = 'icons/obj/clothing/neck/poncho.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/neck/Ponchos.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck/poncho.dmi'
 	icon_state = "ponchowhite"
 	item_state = "ponchowhite"
 	body_parts_covered = CHEST
