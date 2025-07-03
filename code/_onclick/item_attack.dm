@@ -154,7 +154,7 @@
 	else
 		total_force = (attacking_item.force)
 
-	var/damage = take_damage(total_force, attacking_item.damtype, "melee", TRUE, get_dir(user, src), attacking_item.armour_penetration)
+	var/damage = take_damage(total_force, attacking_item.damtype, "melee", TRUE, get_dir(src, user), attacking_item.armour_penetration)
 
 	var/damage_verb = "hit"
 

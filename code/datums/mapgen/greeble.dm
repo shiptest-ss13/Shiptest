@@ -19,7 +19,6 @@
 		template = pick(subtypesof(template_subtype_path))
 	if(isnull(loc))
 		return INITIALIZE_HINT_QDEL
-	INVOKE_ASYNC(src, PROC_REF(start_load))
 
 /obj/effect/greeble_spawner/proc/start_load()
 	template = new template()

@@ -18,7 +18,7 @@
 	reqs = list(
 		/datum/reagent/consumable/cream = 5,
 		/datum/reagent/consumable/ice = 5,
-		/obj/item/reagent_containers/food/snacks/grown/berries = 2,
+		/obj/item/food/grown/berries = 2,
 	)
 	result = /obj/item/reagent_containers/food/snacks/strawberryicecreamsandwich
 	subcategory = CAT_ICE
@@ -37,8 +37,8 @@
 	name ="Sundae"
 	reqs = list(
 		/datum/reagent/consumable/cream = 5,
-		/obj/item/reagent_containers/food/snacks/grown/cherries = 1,
-		/obj/item/reagent_containers/food/snacks/grown/banana = 1,
+		/obj/item/food/grown/cherries = 1,
+		/obj/item/food/grown/banana = 1,
 		/obj/item/reagent_containers/food/snacks/icecream = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/sundae
@@ -47,7 +47,7 @@
 /datum/crafting_recipe/food/cornuto
 	name = "Cornuto"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
+		/obj/item/food/pastrybase = 1,
 		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
 		/datum/reagent/consumable/cream = 4,
 		/datum/reagent/consumable/ice = 2,
@@ -55,6 +55,18 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/cornuto
 	subcategory = CAT_ICE
+
+/datum/crafting_recipe/food/miras_parfait
+	name = "Miras Parfait"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/mirasegg = 1,
+		/obj/item/food/grown/ash_flora/cactus_fruit = 1,
+		/datum/reagent/consumable/cream = 4,
+		/datum/reagent/consumable/sugar = 4
+	)
+	result = /obj/item/reagent_containers/food/snacks/miras_parfait
+	subcategory = CAT_ICE
+
 
 //////////////////////////SNOW CONES///////////////////////
 

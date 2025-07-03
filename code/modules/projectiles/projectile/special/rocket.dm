@@ -1,13 +1,3 @@
-/obj/projectile/bullet/gyro
-	name ="explosive bolt"
-	icon_state= "bolter"
-	damage = 50
-
-/obj/projectile/bullet/gyro/on_hit(atom/target, blocked = FALSE)
-	..()
-	explosion(target, -1, 0, 2)
-	return BULLET_ACT_HIT
-
 /obj/projectile/bullet/a84mm
 	name ="\improper HEDP rocket"
 	desc = "USE A WEEL GUN"

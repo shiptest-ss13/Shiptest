@@ -1,5 +1,5 @@
 /datum/supply_pack/armor
-	group = "Armor"
+	category = "Armor"
 	crate_type = /obj/structure/closet/crate/secure
 
 
@@ -90,7 +90,7 @@
 	faction_locked = TRUE
 
 //gezena
-/datum/supply_pack/armor/pgf_armor
+/datum/supply_pack/armor/pgf_marine_armor
 	name = "Raksha-plate Crate"
 	desc = "One set of standard issue Raksha-plate armor, highly protective and very mobile. The helmet is adjustable for horns."
 	cost = 1500

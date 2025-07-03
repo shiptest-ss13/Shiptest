@@ -453,3 +453,13 @@
 	equip_delay_self = EQUIP_DELAY_COAT
 	equip_delay_other = EQUIP_DELAY_COAT * 1.5
 	strip_delay = EQUIP_DELAY_COAT * 1.5
+
+/obj/item/clothing/suit/hawaiian/pink
+	name = "floral shirt"
+	desc = "From grills to guns, this shirt's seen it all."
+	icon_state = "hawaiian_pink"
+
+/obj/item/clothing/suit/hawaiian/red
+	name = "floral shirt"
+	desc = "From grills to guns, this shirt's seen it all."
+	icon_state = "hawaiian_red"

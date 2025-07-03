@@ -1,0 +1,6724 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/machinery/mech_bay_recharge_port{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"ak" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"aI" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"aJ" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"aK" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"aU" = (
+/obj/machinery/light/dim/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4;
+	welded = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"aV" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 19;
+	pixel_y = 10;
+	id = "fuelinghangar"
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 8;
+	pixel_x = 18;
+	pixel_y = 0;
+	id = "fuelingholo"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"aW" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "refuelingbridge"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"aY" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelinghangar"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"aZ" = (
+/obj/item/storage/firstaid/brute{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/storage/firstaid/medical{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_x = 8;
+	pixel_y = 1
+	},
+/obj/item/storage/firstaid/o2{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/structure/closet/crate/medical,
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorwhite{
+	dir = 8
+	},
+/obj/item/clothing/neck/stethoscope,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"bh" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"bi" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"bj" = (
+/obj/structure/chair/bench/blue/directional/south,
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"bl" = (
+/obj/mecha/working/ripley/mkii,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/rechargefloor,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"bp" = (
+/obj/effect/turf_decal/trimline/opaque/vired/line,
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"bD" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"bX" = (
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/line,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"cb" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/airlock/mining{
+	dir = 4;
+	name = "Cargo"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "fuelingcargo"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4;
+	color = "#FF0000"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"cg" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"ci" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4;
+	color = "#FF0000"
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line,
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"cj" = (
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"cl" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"cv" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fuelingengineering"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"cz" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"cD" = (
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"cG" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/item/paper_bin{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"cL" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/caution,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/stack/tile/plasteel,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"du" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelhallwayturret"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"dz" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/cell/crap,
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"dA" = (
+/obj/structure/chair/comfy/blue/corpo/directional/west,
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"dC" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/cell/crap,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"dI" = (
+/obj/structure/closet/secure_closet/engineering_personal,
+/obj/effect/turf_decal/borderfloor{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"dP" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"dX" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "ripleyfueling"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"en" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/mob/living/basic/hivebot/ranged,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"eq" = (
+/obj/structure/chair/comfy/blue/corpo/directional/west,
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"et" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"ev" = (
+/obj/item/stack/tile/plasteel,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"eA" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"eH" = (
+/obj/machinery/airalarm/directional/east,
+/obj/item/stack/tile/plasteel,
+/obj/structure/reagent_dispensers/foamtank,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"fa" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"ff" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/engine/plasma,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"fh" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "fuelingengineering"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"fj" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"fk" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"fr" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 10
+	},
+/obj/structure/closet/firecloset/wall/directional/west,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"fA" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"fP" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"fT" = (
+/obj/machinery/atmospherics/pipe/manifold/general/visible/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/trinary/filter/atmos/plasma{
+	dir = 8;
+	piping_layer = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"fU" = (
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"fV" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/analyzer{
+	pixel_x = -6;
+	pixel_y = 10
+	},
+/obj/item/clothing/glasses/meson/engine,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"fW" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"fZ" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/micro_laser/high,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"gm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"gp" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/manipulator,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"gr" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"gt" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "conveyors"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"gx" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"gB" = (
+/obj/structure/chair/comfy/blue/corpo/directional/east,
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"gE" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"gU" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelhallwayturret"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/grille,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"ha" = (
+/obj/structure/girder,
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"hb" = (
+/obj/effect/turf_decal/corner/opaque/white/three_quarters,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/item/radio/intercom/directional/east,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"hd" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"hg" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/components/binary/pump,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"hh" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"hq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"hw" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"hy" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/plasteel/mono/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"hA" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/wideband/table{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"hG" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"hI" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/hivebotshuttle)
+"hT" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"hU" = (
+/obj/structure/filingcabinet/double{
+	dir = 1
+	},
+/obj/item/folder/documents,
+/obj/effect/turf_decal/borderfloorblack/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"ig" = (
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"ik" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"im" = (
+/obj/machinery/telecomms/relay/preset/nanotrasen,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"io" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"is" = (
+/obj/structure/girder/reinforced,
+/obj/structure/grille,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"it" = (
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"iv" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4;
+	welded = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"ix" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"iF" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable/yellow,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"iG" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax/ruin,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"iJ" = (
+/obj/structure/chair/bench/blue/directional/east,
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 8
+	},
+/obj/item/newspaper{
+	pixel_x = 11;
+	pixel_y = 14
+	},
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"iL" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"iM" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/half,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4;
+	welded = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"iO" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/obj/structure/cable{
+	icon_state = "5-6"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/mob/living/basic/hivebot/strong,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor6"
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"iQ" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/crayon{
+	pixel_x = -8;
+	pixel_y = -34;
+	color = "#FF0000"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"iT" = (
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer2{
+	dir = 9
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"iZ" = (
+/obj/machinery/pipedispenser,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"jc" = (
+/obj/structure/frame,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/stock_parts/capacitor/quadratic,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/hivebotshuttle)
+"ji" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"jj" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"jv" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/advanced_airlock_controller/directional/east,
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"jz" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/engineering,
+/obj/item/extinguisher/advanced{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/extinguisher/advanced{
+	pixel_x = -9;
+	pixel_y = 4
+	},
+/obj/item/watertank/atmos{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"jI" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/firealarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"jO" = (
+/obj/effect/turf_decal/trimline/opaque/vired/line,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"jR" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "fuelingsecurity"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"jS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"ka" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/space/hivebotshuttle)
+"ke" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"km" = (
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloorwhite{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"kq" = (
+/obj/structure/closet/wall/red/directional/west,
+/obj/item/gun/energy/e_gun/iot,
+/obj/item/stock_parts/cell/gun/upgraded,
+/turf/open/floor/plasteel/mono/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"kr" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"ku" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/opaque/nsorange/filled/warning,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"kC" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"kD" = (
+/obj/structure/catwalk,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"kK" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"kN" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"kQ" = (
+/obj/structure/salvageable/server,
+/obj/item/stack/rods,
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"kR" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"kU" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"kV" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"lc" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	pixel_x = 6
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"lj" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/turretid{
+	pixel_x = -1;
+	pixel_y = 3;
+	id = "fuelingpost"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"lp" = (
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
+	dir = 1;
+	piping_layer = 4
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"lB" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/closet/emcloset/wall/directional/north,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"lK" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"lQ" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"mh" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/obj/item/solar_assembly,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"mk" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"mq" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/crate_shelf,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"mr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"ms" = (
+/obj/item/stack/tile/plasteel/white,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"mC" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"mI" = (
+/obj/effect/decal/cleanable/crayon{
+	pixel_x = 4;
+	pixel_y = 5;
+	color = "#FF0000"
+	},
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"mX" = (
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	welded = 1
+	},
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"nh" = (
+/obj/item/stack/rods,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"nk" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"nn" = (
+/obj/structure/table/glass,
+/obj/effect/turf_decal/corner/transparent/ntblue/three_quarters{
+	dir = 1
+	},
+/obj/item/kirbyplants/dead{
+	name = "dead potted plant";
+	pixel_x = -1;
+	pixel_y = 9;
+	desc = "A dead potted plant."
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"ns" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"nK" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"nR" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/plasteel/mono/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"nT" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"oi" = (
+/obj/structure/girder,
+/obj/item/stack/sheet/metal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"oq" = (
+/obj/structure/chair/bench/blue/directional/south,
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"ot" = (
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/obj/effect/mob_spawn/human/corpse/ramzi,
+/obj/item/melee/knife/combat,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor4"
+	},
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"oD" = (
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"oK" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/end{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"oN" = (
+/obj/machinery/porta_turret/ruin/ramzi/light/bonnie{
+	dir = 10;
+	id = "bonnieguns"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"oP" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/visible/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"oT" = (
+/turf/closed/wall/rust,
+/area/ruin/space/hivebotshuttle)
+"oW" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"oZ" = (
+/obj/structure/lattice,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"pf" = (
+/obj/structure/closet/crate/secure/exo,
+/obj/item/pickaxe/drill,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"pr" = (
+/obj/structure/chair/bench/blue/directional/east,
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"pu" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"px" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"pA" = (
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"pC" = (
+/mob/living/basic/hivebot/ranged,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"pE" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"pH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"pJ" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "conveyors"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"pP" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"qh" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/door/firedoor/border_only/closed,
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 1
+	},
+/obj/machinery/door/airlock/security/glass{
+	name = "Armory";
+	welded = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"ql" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/three_quarters,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"qv" = (
+/obj/structure/salvageable/destructive_analyzer,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"qz" = (
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"qD" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"qH" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/caution,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"qI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"qJ" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"qV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"ra" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/item/stack/tile/plasteel,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"rd" = (
+/obj/item/ammo_casing/spent/slug/buck,
+/mob/living/basic/hivebot/ranged,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"rl" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fuelingengineering"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"rm" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"ro" = (
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"rF" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"rK" = (
+/obj/structure/spawner/hivebot,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/hivebotshuttle)
+"rX" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"sd" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/hivebotshuttle)
+"sf" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"sm" = (
+/obj/structure/girder,
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"sr" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"su" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
+	dir = 4;
+	piping_layer = 4
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"sw" = (
+/obj/item/stack/tile/plasteel/dark,
+/obj/item/pipe/binary/bendable{
+	dir = 4;
+	color = "#FF0000";
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"sO" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"sQ" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"sS" = (
+/obj/machinery/suit_storage_unit/inherit{
+	state_open = 1
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 10;
+	id = "fuelingsolarwindow";
+	name = "window shutters"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"sW" = (
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"tj" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"tm" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	welded = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"tn" = (
+/obj/structure/table/chem,
+/obj/item/hypospray/mkii{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/item/storage/box/masks{
+	pixel_x = 6;
+	pixel_y = 3
+	},
+/obj/effect/turf_decal/corner/transparent/ntblue/three_quarters{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloorwhite/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"tp" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"tq" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelinghangar"
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/power/shieldwallgen/atmos/strong{
+	dir = 4;
+	id = "fuelingholo"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"tw" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"tz" = (
+/obj/effect/decal/cleanable/robot_debris,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"tB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"tD" = (
+/obj/machinery/door/airlock/public,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/item/stack/tile/plasteel/white,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"tO" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"uk" = (
+/obj/item/trash/energybar{
+	pixel_x = -14;
+	pixel_y = -20
+	},
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 1
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"uv" = (
+/obj/structure/railing/thin{
+	dir = 5
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"uJ" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"uQ" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
+	piping_layer = 4
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"uR" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/micro_laser,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"uV" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"vg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"vp" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp/green{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/obj/machinery/button/door{
+	pixel_x = -8;
+	pixel_y = 8;
+	name = "cargo lockdown button";
+	id = "fuelingcargo"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"vq" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/capacitor,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"vr" = (
+/obj/item/stack/tile/plasteel,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"vs" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"vB" = (
+/obj/structure/tank_dispenser/oxygen,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"vH" = (
+/mob/living/basic/hivebot/mechanic,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"vK" = (
+/obj/item/stack/tile/plasteel,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"vP" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"vQ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"vV" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"we" = (
+/obj/machinery/door/airlock/external{
+	welded = 1
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"wl" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"wm" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/tracker,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"wn" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/crate_shelf,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"wr" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/half,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"wu" = (
+/obj/item/stack/tile/plasteel/dark,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"wz" = (
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 5
+	},
+/obj/item/stack/tile/plasteel,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"wB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/transparent/yellow/filled/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/micro_laser,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"wO" = (
+/obj/structure/table/chem,
+/obj/item/reagent_containers/syringe/stasis,
+/obj/item/reagent_containers/syringe/stasis{
+	pixel_x = 3;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/glass/bottle/chitosan{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloorwhite,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"wP" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/hivebotshuttle)
+"wU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"wZ" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"xl" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/command/glass{
+	dir = 4;
+	name = "Command"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"xn" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"xq" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"xC" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"xD" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"xG" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"xI" = (
+/obj/effect/turf_decal/siding/white,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/radio/intercom/directional/north,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4;
+	color = "#FF0000"
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line,
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"xK" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ruin/space/hivebotshuttle)
+"xP" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"xT" = (
+/turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"xV" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4;
+	color = "#FF0000"
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"yc" = (
+/obj/structure/lattice,
+/obj/item/stack/sheet/metal,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"yh" = (
+/obj/machinery/computer/solar_control,
+/obj/effect/turf_decal/borderfloor,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"yi" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"yl" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "fuelingsecurity"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"yn" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"yo" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"yt" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"yQ" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"yS" = (
+/obj/structure/grille,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"yW" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"yY" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/manipulator,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"ze" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/porta_turret/ruin/nt/light/sniper{
+	dir = 6;
+	id = "fuelingpost"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"zi" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8;
+	welded = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"zq" = (
+/obj/machinery/computer/mech_bay_power_console,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"zt" = (
+/obj/machinery/door/airlock/security{
+	dir = 8;
+	name = "Security";
+	welded = 1
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"zL" = (
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"Aj" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"At" = (
+/turf/template_noop,
+/area/template_noop)
+"Ay" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/machinery/holopad,
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/capacitor,
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = -1;
+	name = "engine shutters";
+	id = "bonnieengine"
+	},
+/obj/machinery/light_switch{
+	pixel_x = -19;
+	pixel_y = 9;
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"AC" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"AD" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/obj/item/solar_assembly,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"AN" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/obj/effect/turf_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 10
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"AS" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/manipulator,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Ba" = (
+/obj/structure/salvageable/autolathe,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"Bf" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"Bu" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"BA" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"BR" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/door_assembly{
+	dir = 4
+	},
+/obj/structure/firelock_frame/border{
+	dir = 4
+	},
+/obj/structure/firelock_frame/border{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Cs" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/siding/yellow,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Ct" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/ruin/space/hivebotshuttle)
+"Cv" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Cw" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 9;
+	pixel_y = 8;
+	id = "refuelingbridge";
+	name = "bridge shutters"
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	pixel_x = 9;
+	pixel_y = -4;
+	name = "hallway turret shutters";
+	id = "fuelhallwayturret"
+	},
+/obj/item/paper/crumpled/fluff/fueling/command{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"CE" = (
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"CI" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"CN" = (
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "fuelingcargo"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"CR" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4;
+	color = "#FF0000"
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Dd" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/border{
+	dir = 1
+	},
+/mob/living/basic/hivebot,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Dg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "credit";
+	pixel_x = 1;
+	pixel_y = -4
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "credit";
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "credit";
+	pixel_x = -9;
+	pixel_y = 7
+	},
+/obj/item/storage/backpack/satchel/flat/onehalftwo,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"Dk" = (
+/obj/effect/spawner/bunk_bed,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/blue/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Dl" = (
+/obj/machinery/vending/cola,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"Du" = (
+/obj/item/stack/sheet/metal,
+/turf/open/space/basic,
+/area/ruin/space/refuelingsolars)
+"Dw" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable/yellow,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Dy" = (
+/obj/structure/girder/reinforced,
+/obj/structure/grille/broken,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"DA" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Ec" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Ed" = (
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Em" = (
+/obj/structure/closet/wall/red/directional/west,
+/obj/item/gun/ballistic/automatic/pistol/commander,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"En" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/airlock{
+	dir = 4;
+	name = "Dorms"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Ew" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"ES" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/door_assembly,
+/obj/structure/firelock_frame/border,
+/obj/structure/firelock_frame/border{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"ET" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/mob/living/basic/hivebot/core,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"Fe" = (
+/obj/machinery/suit_storage_unit/inherit{
+	state_open = 1
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Fg" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Fv" = (
+/obj/structure/girder,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"Fw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable/yellow,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"FA" = (
+/obj/structure/safe/floor,
+/obj/structure/table_frame,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/turf_decal/corner/opaque/black,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/hand_tele,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"FG" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"FO" = (
+/turf/open/floor/plasteel/mono/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"FW" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 10
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"FY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"Gb" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Gf" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/light/broken/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	welded = 1
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"Gn" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"Gq" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Gu" = (
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"GE" = (
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"GL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/engineering_welding,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"GN" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/corner/opaque/black/three_quarters{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/vired/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"GP" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"GQ" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"GR" = (
+/obj/machinery/portable_atmospherics/canister{
+	icon_state = "orange";
+	name = "plasma canister"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"GU" = (
+/obj/structure/chair/comfy/blue/corpo/directional/east,
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Hb" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Hc" = (
+/obj/effect/turf_decal/borderfloor/full,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"Hd" = (
+/obj/structure/table/glass,
+/obj/item/documents/nanotrasen,
+/obj/item/shard{
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/obj/effect/landmark/mission_poi/main{
+	already_spawned = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Hf" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/hivebotshuttle)
+"Hi" = (
+/obj/item/stack/tile/plasteel,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8;
+	welded = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Hl" = (
+/obj/structure/table/reinforced,
+/obj/item/trash/energybar{
+	pixel_x = 20;
+	pixel_y = -41
+	},
+/obj/item/trash/energybar{
+	pixel_x = 29;
+	pixel_y = -22
+	},
+/obj/item/stamp/qm{
+	pixel_x = 26;
+	pixel_y = -1
+	},
+/obj/item/clipboard{
+	pixel_x = 13;
+	pixel_y = 2
+	},
+/obj/item/paper_bin{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/obj/item/trash/energybar{
+	pixel_x = -3;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"HB" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 1
+	},
+/obj/effect/turf_decal/atmos/plasma,
+/obj/machinery/air_sensor/atmos/toxin_tank{
+	pixel_x = 12;
+	pixel_y = 11
+	},
+/turf/open/floor/engine/plasma,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"HF" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/hivebotshuttle)
+"HJ" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"HK" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/tracker,
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"HS" = (
+/obj/structure/lattice,
+/obj/machinery/light/small/broken/directional/north,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"HV" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Ie" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
+/obj/machinery/computer/atmos_alert{
+	dir = 1;
+	icon_state = "computer-middle"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Ig" = (
+/obj/item/stack/tile/plasteel/dark,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Iu" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ruin/space/hivebotshuttle)
+"ID" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/trash/energybar{
+	pixel_x = -5;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"IF" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/scanning_module/adv,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"IG" = (
+/obj/structure/chair/comfy/blue/corpo/directional/south,
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"IJ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/poddoor_assembly,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"IV" = (
+/obj/effect/turf_decal/borderfloorblack/corner,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"IY" = (
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Jm" = (
+/obj/effect/turf_decal/corner/opaque/syndiered/border,
+/mob/living/basic/hivebot,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Jn" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "bonnieengine"
+	},
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Jt" = (
+/obj/structure/lattice,
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"JD" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/ruin/space/refuelingsolars)
+"JF" = (
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/internals{
+	populate = 0;
+	name = "EVA crate"
+	},
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"JG" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"JK" = (
+/obj/machinery/light/dim/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	welded = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"JM" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/caution,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"JN" = (
+/obj/structure/door_assembly/door_assembly_med{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/structure/firelock_frame/border{
+	dir = 4
+	},
+/obj/structure/firelock_frame/border{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/dark/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"JU" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"JV" = (
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Ka" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/three_quarters{
+	dir = 8
+	},
+/obj/structure/table_frame,
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"Ki" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
+	dir = 9
+	},
+/obj/item/wrench/crescent{
+	pixel_x = 17;
+	pixel_y = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 9
+	},
+/obj/item/pipe/binary/bendable{
+	dir = 4;
+	pixel_x = 2;
+	pixel_y = -10;
+	color = "#8000b6"
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Km" = (
+/obj/effect/turf_decal/trimline/opaque/vired/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/black,
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/stock_parts/manipulator,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"Ko" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fuelingengineering"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Kq" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/poddoor_assembly,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/hivebotshuttle)
+"Kw" = (
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Kz" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"KE" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"KF" = (
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow/end{
+	dir = 1
+	},
+/obj/machinery/suit_storage_unit/inherit/industrial,
+/obj/item/clothing/suit/space/hardsuit/engine/atmos,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"KI" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/closet/firecloset/wall/directional/north,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"KL" = (
+/obj/structure/lattice,
+/obj/item/stack/rods,
+/turf/open/space/basic,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"KT" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"KX" = (
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"La" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Ld" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/curtain/cloth,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Lg" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"Lt" = (
+/obj/machinery/door/airlock/glass_large,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"Lz" = (
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"LI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8;
+	welded = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4;
+	color = "#FF0000"
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"LV" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"LY" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Ma" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden{
+	dir = 6
+	},
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Mg" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "fuelingengineering"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Mt" = (
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"MB" = (
+/obj/structure/table_frame,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"MG" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"MI" = (
+/obj/machinery/door/airlock/engineering{
+	dir = 8;
+	name = "Engineering"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"ML" = (
+/obj/structure/sign/warning/securearea{
+	pixel_x = 0;
+	pixel_y = 30
+	},
+/obj/effect/turf_decal/industrial/caution,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"MO" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "fuelingmedbay"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"MX" = (
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/machinery/firealarm/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4;
+	color = "#FF0000"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Na" = (
+/obj/machinery/door/airlock/medical/glass{
+	name = "Infirmary"
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only/closed,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"Ni" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"NE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/engine/air,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"NF" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 1;
+	id = "bonniefield"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "bonnieblast"
+	},
+/obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"NH" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"NI" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"NJ" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"NM" = (
+/obj/structure/chair/office,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"NV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/mono/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"Oa" = (
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/obj/machinery/portable_atmospherics/scrubber,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Ou" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"Ow" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"OE" = (
+/obj/effect/turf_decal/corner/opaque/black/three_quarters{
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Pg" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Pi" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Pt" = (
+/obj/structure/spawner/hivebot,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"Px" = (
+/obj/structure/railing/thin{
+	dir = 4
+	},
+/obj/machinery/computer/monitor{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"PC" = (
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"PD" = (
+/obj/machinery/vending/snack/orange,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"PH" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/dim/directional/east,
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"PJ" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"PO" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Qb" = (
+/obj/effect/turf_decal/trimline/opaque/vired/line,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"Qz" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"QD" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/corner,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"QH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"QP" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"QQ" = (
+/obj/machinery/door/airlock/public,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"QS" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "conveyors"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"QT" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/borderfloorwhite,
+/obj/structure/closet{
+	icon_state = "med"
+	},
+/obj/item/reagent_containers/hypospray/medipen/tramal{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/hypospray/medipen/tramal{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/hypospray/medipen/morphine{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/hypospray/medipen/morphine{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"QU" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/effect/decal/cleanable/glass,
+/obj/item/stack/rods,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"QX" = (
+/obj/machinery/power/shuttle/engine/electric,
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Ra" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"Rb" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Rr" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "conveyors"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "cargoconveyors"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Rt" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/plasteel/mono/dark/plasma,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"Rv" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"Rx" = (
+/obj/structure/chair/comfy/blue/corpo/directional/north,
+/obj/effect/turf_decal/trimline/opaque/ntblue/line,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"RE" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 9
+	},
+/obj/structure/closet/emcloset/wall/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"RI" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/layer2,
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"RO" = (
+/obj/structure/girder,
+/obj/item/stack/sheet/metal,
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"RY" = (
+/obj/structure/sign/warning/securearea{
+	pixel_x = 0;
+	pixel_y = 29
+	},
+/obj/effect/turf_decal/industrial/caution,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"Sa" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Sn" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/turretid{
+	pixel_x = -26;
+	pixel_y = 1;
+	id = "bonnieguns"
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor4"
+	},
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"So" = (
+/obj/machinery/power/smes/engineering,
+/obj/effect/turf_decal/borderfloor,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"Su" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Sw" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/volume_pump/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow/end{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"SB" = (
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"SF" = (
+/obj/effect/turf_decal/corner/opaque/black/three_quarters{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"SO" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/transparent/yellow/filled/warning{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"SP" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"SQ" = (
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Td" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 6
+	},
+/obj/effect/turf_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/item/clipboard{
+	pixel_x = -13;
+	pixel_y = 0
+	},
+/obj/item/stamp/nanotrasen/captain{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Tk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/space/has_grav/refuelingpost/lower)
+"Tr" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/structure/railing/thin,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Tu" = (
+/obj/structure/table/glass,
+/obj/effect/turf_decal/corner/transparent/ntblue/three_quarters{
+	dir = 4
+	},
+/obj/item/newspaper{
+	pixel_x = 5;
+	pixel_y = 0
+	},
+/obj/item/paper/crumpled/fluff,
+/obj/item/paper/crumpled/fluff{
+	pixel_x = -4;
+	pixel_y = -8
+	},
+/obj/item/paper/crumpled/fluff{
+	pixel_x = 21;
+	pixel_y = -22
+	},
+/obj/machinery/button/door{
+	pixel_x = 8;
+	pixel_y = 21;
+	id = "fuelingmedbay";
+	name = "window shutters"
+	},
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"Ty" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/obj/structure/closet/crate/engineering{
+	name = "internals crate"
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = -1;
+	pixel_y = 4
+	},
+/obj/item/tank/internals/emergency_oxygen/engi{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"TE" = (
+/obj/machinery/door/airlock{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"TG" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"TH" = (
+/obj/machinery/computer/helm{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/railing/thin,
+/obj/machinery/button/door{
+	pixel_x = 4;
+	pixel_y = 23;
+	name = "blast door control";
+	id = "bonnieblast"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -6;
+	pixel_y = 21;
+	id = "bonniefield"
+	},
+/obj/item/radio/intercom/wideband/directional/east,
+/turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"TL" = (
+/obj/item/stack/sheet/metal,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"TP" = (
+/obj/effect/turf_decal/borderfloor,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"TR" = (
+/obj/effect/turf_decal/corner/opaque/grey/three_quarters,
+/obj/machinery/light/broken/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"TU" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"TY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/trimline/opaque/ntblue/filled/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/starboard)
+"Ud" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/structure/closet/crate,
+/obj/item/reagent_containers/food/snacks/energybar,
+/obj/item/reagent_containers/food/snacks/energybar,
+/obj/item/reagent_containers/food/snacks/energybar,
+/obj/item/reagent_containers/food/snacks/energybar,
+/obj/item/reagent_containers/food/snacks/energybar,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Ui" = (
+/turf/open/floor/carpet/blue/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Uq" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/hidden,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Ur" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Ut" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = -10;
+	pixel_y = -18;
+	id = "fuelingengineering";
+	name = "window shutters"
+	},
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/machinery/computer/atmos_control/tank/air_tank{
+	dir = 1;
+	icon_state = "computer-right"
+	},
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"UB" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"UJ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/window{
+	dir = 8
+	},
+/obj/machinery/door/window{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "fuelingcargo"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Vz" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"VB" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/hivebotshuttle)
+"VF" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"VL" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "bonniefield"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = "bonnieblast"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"VO" = (
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"VU" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"VW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"VY" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Wb" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "refuelingbridge"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Wc" = (
+/mob/living/basic/hivebot,
+/obj/item/pipe/binary/bendable{
+	pixel_x = 7;
+	pixel_y = 5;
+	color = "#0000ff"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Wg" = (
+/obj/item/stack/tile/plasteel,
+/turf/open/floor/plating/rust,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Wm" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/dim/directional/east,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/mineral/plasma/ten,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Wt" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/visible/layer4,
+/obj/structure/chair/office,
+/turf/open/floor/plasteel/mono,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Wu" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
+	dir = 1;
+	welded = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/east,
+/obj/machinery/advanced_airlock_controller/directional/west,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"Ww" = (
+/obj/effect/turf_decal/trimline/opaque/nsorange/filled/warning,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Wz" = (
+/obj/machinery/porta_turret/ruin/ramzi/light/bonnie{
+	dir = 9;
+	id = "bonnieguns"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"WC" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	welded = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"WH" = (
+/obj/effect/turf_decal/trimline/opaque/ntblue/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"WJ" = (
+/obj/structure/girder/reinforced,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"WW" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light/small/broken/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/porta_turret/ruin/nt/light/sniper{
+	id = "fuelingpost"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"Xh" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/half{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plasteel/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"Xm" = (
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Xn" = (
+/obj/structure/bed/bunk,
+/obj/item/stack/rods,
+/turf/open/floor/carpet/blue/airless,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"Xw" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	welded = 1
+	},
+/turf/open/floor/plasteel/mono/white/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"XA" = (
+/obj/item/stack/tile/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"XD" = (
+/turf/open/floor/carpet/blue/plasma,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"XI" = (
+/obj/machinery/modular_computer/console/preset/civilian{
+	dir = 1
+	},
+/obj/structure/railing/thin,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"XR" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"XU" = (
+/obj/structure/girder/reinforced,
+/obj/structure/grille,
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"Ya" = (
+/obj/effect/turf_decal/borderfloorblack,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"Ym" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/infirmary)
+"Yo" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "fuelingsolarwindow"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/solarstorage)
+"Yp" = (
+/obj/effect/turf_decal/siding/white/end,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1;
+	welded = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/end,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"Yt" = (
+/obj/structure/frame,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"Yv" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/crayon{
+	color = "#FF0000";
+	icon_state = "skull";
+	pixel_x = -2;
+	pixel_y = -21
+	},
+/obj/effect/decal/cleanable/crayon{
+	color = "#FF0000";
+	icon_state = "skull";
+	pixel_x = 10;
+	pixel_y = -36
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/refuelingsolars)
+"YD" = (
+/obj/machinery/power/smes,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ruin/space/hivebotshuttle)
+"YG" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/turf_decal/atmos/air,
+/obj/machinery/air_sensor/atmos/air_tank{
+	pixel_x = 12;
+	pixel_y = 12
+	},
+/turf/open/floor/engine/air,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"YH" = (
+/obj/effect/turf_decal/trimline/opaque/vired/line,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "fuelingsecurity";
+	pixel_x = 9;
+	pixel_y = -18
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"YI" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelhallwayturret"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/upper)
+"YJ" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "refuelingbridge"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/bridge)
+"YP" = (
+/obj/structure/filingcabinet{
+	dir = 1
+	},
+/obj/structure/railing/thin,
+/obj/effect/turf_decal/corner/opaque/black/three_quarters{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"YT" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/space/has_grav/refuelingpost/armory)
+"YY" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "fuelinghangar"
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/power/shieldwallgen/atmos/strong{
+	dir = 8;
+	id = "fuelingholo"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Zi" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
+/obj/machinery/door/poddoor/shutters{
+	id = "fuelingsecurity"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Zp" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/light/broken/directional/south,
+/obj/machinery/computer/atmos_control/tank/toxin_tank{
+	dir = 1;
+	icon_state = "computer-left"
+	},
+/obj/effect/turf_decal/borderfloor/cee,
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/engineering)
+"Zr" = (
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"Zz" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"ZC" = (
+/obj/structure/salvageable/protolathe,
+/obj/effect/decal/cleanable/robot_debris,
+/turf/open/floor/plasteel/telecomms_floor/airless,
+/area/ruin/space/hivebotshuttle)
+"ZI" = (
+/obj/structure/girder,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/refuelingpost/dorms)
+"ZK" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+"ZM" = (
+/obj/structure/table/reinforced,
+/obj/item/trash/energybar,
+/obj/item/trash/energybar{
+	pixel_x = 2;
+	pixel_y = 15
+	},
+/obj/machinery/button/door{
+	pixel_x = 6;
+	pixel_y = 9;
+	name = "cargo shutters";
+	id = "fuelingcargo"
+	},
+/obj/machinery/button/door{
+	pixel_x = 6;
+	pixel_y = 0;
+	name = "mechbay shutters";
+	id = "ripleyfueling"
+	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = 9;
+	name = "conveyor shutters";
+	id = "cargoconveyors"
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/space/has_grav/refuelingpost/cargo)
+"ZN" = (
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/refuelingpost/cargobay)
+
+(1,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(2,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+xq
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(3,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+xq
+At
+At
+At
+At
+At
+At
+VF
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+xq
+At
+At
+At
+At
+At
+"}
+(4,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+JD
+JD
+mh
+JD
+JD
+At
+At
+At
+At
+Gn
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+JD
+JD
+JD
+VF
+JD
+JD
+JD
+At
+At
+"}
+(5,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+VF
+At
+At
+At
+At
+At
+JD
+VF
+JD
+JD
+JD
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+VF
+At
+At
+At
+At
+At
+"}
+(6,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+JD
+VF
+JD
+At
+At
+At
+At
+At
+VF
+At
+At
+At
+At
+XU
+is
+XU
+XU
+XU
+At
+At
+At
+At
+At
+At
+At
+VF
+At
+At
+At
+At
+At
+"}
+(7,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+VF
+At
+At
+At
+At
+At
+At
+Bf
+At
+At
+At
+At
+At
+At
+sO
+At
+At
+At
+At
+At
+At
+At
+JD
+JD
+mh
+JD
+JD
+At
+At
+At
+"}
+(8,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+Bf
+At
+At
+bh
+hw
+hw
+GP
+jj
+hw
+hw
+hw
+uV
+At
+At
+sO
+At
+At
+At
+xq
+At
+At
+At
+At
+At
+mh
+At
+At
+At
+At
+At
+"}
+(9,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+bh
+hw
+jj
+hw
+hw
+XR
+PJ
+PJ
+fh
+Mg
+fh
+PJ
+PJ
+dP
+PJ
+PJ
+PJ
+PJ
+At
+At
+mh
+At
+At
+At
+At
+At
+VF
+At
+At
+At
+At
+At
+"}
+(10,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+xP
+vV
+vV
+Yo
+Yo
+vV
+PJ
+KF
+GL
+pA
+PC
+fV
+cv
+cg
+Ni
+YG
+NE
+PJ
+kD
+At
+VF
+At
+At
+At
+At
+JD
+VF
+JD
+At
+At
+At
+At
+"}
+(11,1,1) = {"
+At
+At
+At
+At
+At
+wm
+At
+At
+xP
+vV
+So
+Dg
+lK
+sS
+PJ
+lB
+Ec
+gm
+IY
+Ut
+PJ
+dP
+PJ
+PJ
+PJ
+PJ
+kD
+At
+VF
+At
+At
+At
+At
+At
+mh
+At
+At
+At
+At
+At
+"}
+(12,1,1) = {"
+At
+At
+At
+At
+At
+VF
+At
+bh
+XR
+vV
+yh
+tp
+ik
+vB
+PJ
+KI
+su
+lp
+Wt
+Ie
+PJ
+dP
+sr
+sr
+At
+At
+kD
+At
+VF
+At
+At
+At
+At
+At
+VF
+At
+At
+At
+At
+At
+"}
+(13,1,1) = {"
+At
+At
+At
+JD
+At
+VF
+At
+xP
+vV
+vV
+vV
+aU
+TG
+dI
+PJ
+pE
+FW
+uQ
+mk
+Zp
+PJ
+dP
+PJ
+PJ
+PJ
+PJ
+kD
+At
+Bf
+At
+At
+At
+At
+At
+Bf
+At
+At
+At
+At
+At
+"}
+(14,1,1) = {"
+At
+At
+At
+JD
+sO
+yW
+MG
+fA
+hd
+Wu
+tO
+yo
+Hc
+jI
+VO
+GQ
+uv
+Px
+SQ
+Ma
+rl
+Bu
+xG
+HB
+ff
+PJ
+bh
+hw
+jj
+hw
+hw
+hw
+hw
+hw
+XR
+kD
+kD
+kD
+kD
+At
+"}
+(15,1,1) = {"
+At
+At
+At
+JD
+At
+aK
+At
+kD
+vV
+vV
+vV
+vV
+PJ
+PJ
+PJ
+fj
+kU
+ix
+La
+Sw
+PJ
+Su
+PJ
+PJ
+PJ
+PJ
+xP
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+CI
+At
+"}
+(16,1,1) = {"
+At
+At
+At
+At
+At
+AD
+At
+kD
+kD
+kD
+kD
+At
+PJ
+Oa
+Ty
+AN
+Uq
+fa
+fT
+Ki
+PJ
+bD
+TU
+TU
+TU
+TU
+nK
+kK
+hg
+PO
+Pi
+Pi
+Pi
+Hb
+Pi
+ak
+wl
+tq
+yi
+At
+"}
+(17,1,1) = {"
+At
+At
+At
+At
+At
+aK
+At
+At
+At
+At
+kD
+sO
+Ko
+RI
+uJ
+Cs
+jz
+sQ
+oP
+iT
+PJ
+YT
+YT
+YT
+YT
+YT
+YT
+CI
+IF
+zi
+Wz
+Zr
+Zr
+Zr
+oN
+zi
+Vz
+aY
+yi
+At
+"}
+(18,1,1) = {"
+At
+At
+At
+At
+At
+AD
+At
+At
+XU
+At
+kD
+At
+PJ
+GR
+GR
+eH
+TR
+tm
+mr
+iZ
+PJ
+Em
+kq
+nR
+YT
+Km
+GN
+CI
+Ow
+nT
+nT
+nT
+QX
+nT
+nT
+nT
+Vz
+aY
+yi
+At
+"}
+(19,1,1) = {"
+At
+At
+At
+At
+At
+NJ
+At
+At
+XU
+At
+kD
+cz
+cz
+cz
+cz
+cz
+cz
+kN
+MI
+kN
+kN
+mX
+Rt
+NV
+qh
+xD
+YH
+CI
+Ow
+nT
+NI
+nT
+Jn
+nT
+Fe
+nT
+hG
+aY
+yi
+At
+"}
+(20,1,1) = {"
+At
+At
+At
+At
+At
+im
+At
+At
+XU
+sO
+kD
+cz
+Tu
+iJ
+pr
+nn
+cz
+RE
+rm
+fr
+kN
+kN
+YT
+YT
+YT
+ET
+jO
+Zi
+Ow
+nT
+kC
+Ay
+iO
+Sn
+lc
+nT
+hG
+aY
+yi
+At
+"}
+(21,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+At
+kD
+MO
+bj
+XD
+XD
+wr
+Ym
+gr
+VW
+ns
+Dl
+kN
+uR
+yt
+cl
+SF
+bX
+yl
+Ow
+nT
+JV
+Tr
+AS
+ot
+JF
+nT
+hG
+aY
+yi
+At
+"}
+(22,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+sO
+kD
+MO
+oq
+XD
+XD
+iM
+cz
+Gf
+fW
+TP
+PD
+kN
+Pt
+xT
+cl
+WC
+bp
+CI
+Sa
+ke
+nT
+TH
+Dd
+dC
+nT
+ke
+hG
+aY
+yi
+At
+"}
+(23,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+At
+kD
+cz
+Ka
+Xh
+Ra
+ql
+Na
+kV
+iL
+hT
+kN
+kN
+vp
+MB
+mC
+dz
+Qb
+CI
+yY
+yi
+ke
+nT
+xC
+Jm
+nT
+ig
+hG
+aY
+yi
+At
+"}
+(24,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+At
+kD
+cz
+cz
+cz
+JN
+cz
+kN
+kN
+wZ
+yQ
+kN
+kN
+YT
+YT
+jR
+QH
+zt
+CI
+oW
+sf
+yi
+nT
+wB
+SO
+nT
+yi
+hG
+aY
+yi
+At
+"}
+(25,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+sO
+kD
+MO
+QT
+FO
+FY
+cz
+ML
+YI
+JM
+SB
+Lt
+wU
+it
+ms
+zL
+iv
+Tk
+QQ
+hq
+fZ
+en
+nT
+VL
+NF
+nT
+gp
+tw
+aY
+yi
+At
+"}
+(26,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+At
+kD
+MO
+wO
+Xw
+hy
+cz
+WW
+gU
+qH
+KT
+vQ
+Ou
+pH
+KE
+px
+PH
+hb
+tD
+VU
+DA
+ZN
+ZK
+ZK
+VY
+VY
+ZK
+aV
+YY
+yi
+At
+"}
+(27,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+sO
+kD
+cz
+tn
+km
+aZ
+cz
+RY
+du
+cL
+JG
+Gb
+aW
+aW
+Gb
+xl
+Gb
+Gb
+CI
+MX
+iF
+Zz
+rd
+oD
+vq
+gt
+CI
+CI
+CI
+CI
+At
+"}
+(28,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+At
+Yv
+cz
+cz
+cz
+cz
+cz
+kN
+kN
+qz
+TE
+Gb
+IV
+et
+Fg
+rX
+et
+vK
+Gq
+cb
+Gq
+CN
+UJ
+CN
+Gq
+Rr
+Gq
+kD
+kD
+kD
+At
+"}
+(29,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+XU
+At
+kD
+kD
+we
+Lg
+FG
+Rv
+qI
+TY
+SP
+fU
+Gb
+Ya
+CE
+GU
+gB
+WH
+ra
+Gq
+ci
+fP
+Hl
+ID
+XI
+pJ
+QS
+Gq
+kD
+At
+At
+At
+"}
+(30,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+kD
+kD
+we
+NH
+jv
+hh
+mI
+JK
+tj
+qV
+Gb
+xn
+IG
+Hd
+FA
+Rx
+Qz
+Gq
+xI
+uk
+ZM
+qJ
+YP
+KX
+QS
+Gq
+kD
+At
+At
+At
+"}
+(31,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+iQ
+nk
+nk
+nk
+nk
+nk
+nk
+nk
+En
+BR
+Gb
+vr
+wz
+dA
+eq
+Ed
+lQ
+Gq
+Ur
+pP
+LV
+QD
+qD
+Yp
+BA
+Gq
+kD
+At
+At
+At
+"}
+(32,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+kD
+kD
+nk
+Dk
+Ui
+tB
+nk
+Ig
+jS
+Kw
+Gb
+kQ
+Hi
+aI
+JU
+HV
+hU
+Gq
+Gq
+Gq
+Mt
+xV
+Ud
+gx
+QP
+Gq
+kD
+At
+At
+At
+"}
+(33,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+kD
+nk
+Xn
+Ui
+ev
+ES
+Wc
+XA
+vg
+Gb
+lj
+fk
+bi
+sW
+NM
+cG
+Gq
+zq
+ku
+IJ
+CR
+pf
+Xm
+Aj
+Gq
+kD
+At
+At
+At
+"}
+(34,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+kD
+nk
+HS
+Wg
+Gu
+Ld
+UB
+jS
+Rb
+Gb
+iG
+LY
+Cw
+hA
+Kz
+Td
+Gq
+bl
+Ww
+dX
+xV
+Xm
+Lz
+wn
+Gq
+kD
+At
+At
+At
+"}
+(35,1,1) = {"
+At
+At
+At
+At
+At
+nk
+At
+At
+At
+At
+Cv
+oZ
+At
+TL
+Cv
+Cv
+nk
+yc
+Pg
+Dw
+Gb
+Gb
+Wb
+YJ
+aW
+aW
+Gb
+Gq
+ad
+Ww
+dX
+oK
+Wm
+GE
+mq
+Gq
+kD
+At
+At
+At
+"}
+(36,1,1) = {"
+At
+At
+At
+At
+At
+nk
+Cv
+At
+At
+At
+At
+At
+HK
+aJ
+aJ
+QU
+HJ
+nh
+LI
+wu
+nk
+kD
+kD
+cj
+kD
+kD
+kD
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+Gq
+kD
+At
+At
+At
+"}
+(37,1,1) = {"
+At
+At
+At
+At
+At
+sm
+cD
+At
+At
+At
+At
+ka
+oT
+ka
+ka
+RO
+Ct
+io
+sw
+OE
+nk
+kD
+sO
+ji
+sO
+yS
+kD
+kD
+kD
+kD
+kD
+kD
+kD
+kD
+kD
+kD
+kD
+At
+At
+At
+"}
+(38,1,1) = {"
+At
+At
+At
+At
+At
+At
+cD
+At
+At
+At
+xK
+Iu
+hI
+Ba
+Yt
+oT
+ha
+oi
+At
+ro
+nk
+kD
+sO
+ze
+sO
+yS
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(39,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+Hf
+oT
+YD
+vH
+tz
+ZC
+ka
+HF
+oZ
+TL
+nk
+kD
+sO
+sO
+sO
+yS
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(40,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+Hf
+oT
+gE
+vs
+kr
+wP
+Kq
+sd
+KL
+Kw
+nk
+kD
+yS
+yS
+yS
+yS
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(41,1,1) = {"
+At
+At
+cD
+AC
+At
+At
+At
+At
+Jt
+At
+Hf
+oT
+jc
+yn
+Ew
+pC
+RO
+HF
+At
+nk
+nk
+kD
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(42,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+xK
+Iu
+rK
+Fw
+qv
+ka
+ka
+Fv
+Du
+kD
+kD
+kD
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(43,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+oT
+ka
+ka
+oT
+oT
+rF
+kR
+At
+At
+sO
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(44,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+pu
+eA
+eA
+eA
+VB
+At
+WJ
+Dy
+XU
+XU
+XU
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(45,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+Cv
+At
+At
+At
+At
+At
+At
+At
+At
+At
+oZ
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(46,1,1) = {"
+At
+At
+At
+At
+At
+cD
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(47,1,1) = {"
+At
+At
+At
+At
+At
+Cv
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(48,1,1) = {"
+At
+At
+At
+At
+nk
+sm
+At
+At
+At
+Jt
+At
+At
+At
+At
+At
+At
+At
+At
+vP
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(49,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+vP
+At
+At
+At
+Cv
+Cv
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
+(50,1,1) = {"
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+ZI
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+At
+"}
