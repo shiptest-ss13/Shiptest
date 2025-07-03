@@ -340,6 +340,86 @@
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
 
+/obj/item/clothing/neck/poncho/white
+	name = "white poncho"
+	icon_state = "ponchowhite"
+	current_skin = "white poncho"
+
+/obj/item/clothing/neck/poncho/grey
+	name = "grey poncho"
+	icon_state = "ponchogrey"
+	current_skin = "grey poncho"
+
+/obj/item/clothing/neck/poncho/black
+	name = "black poncho"
+	icon_state = "ponchoblack"
+	current_skin = "black poncho"
+
+/obj/item/clothing/neck/poncho/red
+	name = "red poncho"
+	icon_state = "ponchored"
+	current_skin = "red poncho"
+
+/obj/item/clothing/neck/poncho/maroon
+	name = "maroon poncho"
+	icon_state = "ponchomaroon"
+	current_skin = "maroon poncho"
+
+/obj/item/clothing/neck/poncho/orange
+	name = "orange poncho"
+	icon_state = "ponchoorange"
+	current_skin = "orange poncho"
+
+/obj/item/clothing/neck/poncho/yellow
+	name = "yellow poncho"
+	icon_state = "ponchoyellow"
+	current_skin = "yellow poncho"
+
+/obj/item/clothing/neck/poncho/green
+	name = "green poncho"
+	icon_state = "ponchogreen"
+	current_skin = "green poncho"
+
+/obj/item/clothing/neck/poncho/darkgreen
+	name = "dark green poncho"
+	icon_state = "ponchowhite"
+	current_skin = "dark green poncho"
+
+/obj/item/clothing/neck/poncho/teal
+	name = "teal poncho"
+	icon_state = "ponchoteal"
+	current_skin = "teal poncho"
+
+/obj/item/clothing/neck/poncho/blue
+	name = "blue poncho"
+	icon_state = "ponchoblue"
+	current_skin = "blue poncho"
+
+/obj/item/clothing/neck/poncho/darkblue
+	name = "dark blue poncho"
+	icon_state = "ponchodarkblue"
+	current_skin = "dark blue poncho"
+
+/obj/item/clothing/neck/poncho/purple
+	name = "purple poncho"
+	icon_state = "ponchopurple"
+	current_skin = "purple poncho"
+
+/obj/item/clothing/neck/poncho/pink
+	name = "pink poncho"
+	icon_state = "ponchopink"
+	current_skin = "pink poncho"
+
+/obj/item/clothing/neck/poncho/brown
+	name = "brown poncho"
+	icon_state = "ponchobrown"
+	current_skin = "brown poncho"
+
+/obj/item/clothing/neck/poncho/lightbrown
+	name = "light brown poncho"
+	icon_state = "poncholightbrown"
+	current_skin = "light brown poncho"
+
 //Shemaghs to operate tactically in a operational tactical situation
 
 /obj/item/clothing/neck/shemagh
