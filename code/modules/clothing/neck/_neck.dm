@@ -319,6 +319,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/neck/Ponchos.dmi'
 	icon_state = "ponchowhite"
 	item_state = "ponchowhite"
+	body_parts_covered = CHEST
 	custom_price = 60
 	unique_reskin = list("white poncho" = "ponchowhite",
 						"grey poncho" = "ponchogrey",
@@ -377,11 +378,11 @@
 	toggle_hood()
 
 /obj/item/clothing/neck/poncho/item_action_slot_check(slot, mob/user)
-	if(slot == ITEM_SLOT_OCLOTHING)
+	if(slot == ITEM_SLOT_NECK)
 		return 1
 
 /obj/item/clothing/neck/poncho/equipped(mob/user, slot)
-	if(slot != ITEM_SLOT_OCLOTHING)
+	if(slot != ITEM_SLOT_NECK)
 		remove_hood()
 	..()
 
@@ -416,7 +417,7 @@
 	if(!suittoggled)
 		if(ishuman(src.loc))
 			var/mob/living/carbon/human/H = src.loc
-			if(H.wear_suit != src)
+			if(H.wear_neck != src)
 				to_chat(H, span_warning("You must be wearing [src] to put up the hood!"))
 				return
 			if(H.head)
@@ -437,6 +438,10 @@
 	desc = "Perfect for a rainy night with jazz."
 	icon = 'icons/obj/clothing/head/color.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
+	icon_state = "ponchowhite"
+	item_state = "ponchowhite"
+	body_parts_covered = HEAD
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 
 //Shemaghs to operate tactically in a operational tactical situation
 
