@@ -339,6 +339,103 @@
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
+	var/obj/item/clothing/head/hooded/hood
+	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
+	unique_reskin_changes_base_icon_state = TRUE
+	unique_reskin_changes_name = TRUE
+	hoodtype = /obj/item/clothing/head/hooded/poncho
+
+	equip_sound = 'sound/items/equip/cloth_equip.ogg'
+	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
+	unequipping_sound = UNEQUIP_SOUND_SHORT_GENERIC
+
+/obj/item/clothing/neck/poncho/Initialize()
+	. = ..()
+	if(!base_icon_state)
+		base_icon_state = icon_state
+	make_hood()
+
+/obj/item/clothing/neck/poncho/Destroy()
+	. = ..()
+	qdel(hood)
+	hood = null
+
+/obj/item/clothing/neck/poncho/reskin_obj(mob/M, change_name)
+	. = ..()
+	if(hood)
+		hood.icon_state = base_icon_state
+	return
+
+/obj/item/clothing/neck/poncho/proc/make_hood()
+	if(!hood)
+		var/obj/item/clothing/head/hooded/W = new hoodtype(src)
+		W.suit = src
+		hood = W
+
+/obj/item/clothing/neck/poncho/ui_action_click()
+	toggle_hood()
+
+/obj/item/clothing/neck/poncho/item_action_slot_check(slot, mob/user)
+	if(slot == ITEM_SLOT_OCLOTHING)
+		return 1
+
+/obj/item/clothing/neck/poncho/equipped(mob/user, slot)
+	if(slot != ITEM_SLOT_OCLOTHING)
+		remove_hood()
+	..()
+
+/obj/item/clothing/neck/poncho/proc/remove_hood()
+	suittoggled = FALSE
+	if(hood)
+		if(ishuman(hood.loc))
+			var/mob/living/carbon/H = hood.loc
+			H.transferItemToLoc(hood, src, TRUE)
+			H.update_inv_wear_suit()
+		else
+			hood.forceMove(src)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.UpdateButtonIcon()
+	//Might need an update aperance here
+
+/obj/item/clothing/neck/poncho/update_appearance(updates)
+	if(suittoggled)
+		icon_state = "[base_icon_state]_t"
+	else
+		icon_state = base_icon_state
+	if(isobj(hood))
+		hood.icon_state = base_icon_state
+	. = ..()
+
+/obj/item/clothing/neck/poncho/dropped()
+	..()
+	remove_hood()
+
+/obj/item/clothing/neck/poncho/proc/toggle_hood()
+	if(!suittoggled)
+		if(ishuman(src.loc))
+			var/mob/living/carbon/human/H = src.loc
+			if(H.wear_suit != src)
+				to_chat(H, span_warning("You must be wearing [src] to put up the hood!"))
+				return
+			if(H.head)
+				to_chat(H, span_warning("You're already wearing something on your head!"))
+				return
+			else if(H.equip_to_slot_if_possible(hood,ITEM_SLOT_HEAD,0,0,1))
+				suittoggled = TRUE
+				H.update_inv_wear_suit()
+				for(var/X in actions)
+					var/datum/action/A = X
+					A.UpdateButtonIcon()
+				//Might need an update aperance here
+	else
+		remove_hood()
+
+/obj/item/clothing/head/hooded/poncho
+	name = "poncho"
+	desc = "Perfect for a rainy night with jazz."
+	icon = 'icons/obj/clothing/head/color.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/color.dmi'
 
 //Shemaghs to operate tactically in a operational tactical situation
 
