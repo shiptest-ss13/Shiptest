@@ -242,7 +242,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	//var/understood = TRUE
 	if(!is_custom_emote) // we do not translate emotes
-		var/untranslated_raw_message = raw_message
+		//var/untranslated_raw_message = raw_message
 		raw_message = lang_treat(speaker, message_language, raw_message, spans, message_mods) // translate
 		//if(raw_message != untranslated_raw_message)
 			//understood = FALSE
