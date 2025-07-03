@@ -340,8 +340,6 @@
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
-	unique_reskin_changes_base_icon_state = TRUE
-	unique_reskin_changes_name = TRUE
 	actions_types = list(/datum/action/item_action/toggle_hood)
 	var/suittoggled = FALSE
 	var/obj/item/clothing/head/hooded/hood
@@ -401,7 +399,7 @@
 	//Might need an update aperance here
 
 /obj/item/clothing/neck/poncho/update_appearance(updates)
-	if(suittoggled)
+	if(suittoggled = TRUE)
 		icon_state = "[base_icon_state]_t"
 	else
 		icon_state = base_icon_state
