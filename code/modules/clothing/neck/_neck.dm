@@ -391,12 +391,13 @@
 			var/mob/living/carbon/H = hood.loc
 			H.transferItemToLoc(hood, src, TRUE)
 			H.update_inv_neck()
+			update_appearance()
+			H.regenerate_icons()
 		else
 			hood.forceMove(src)
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
-	//Might need an update aperance here
 
 /obj/item/clothing/neck/poncho/update_appearance(updates)
 	if(ponchotoggled)
@@ -424,10 +425,11 @@
 			else if(H.equip_to_slot_if_possible(hood,ITEM_SLOT_HEAD,0,0,1))
 				ponchotoggled = TRUE
 				H.update_inv_neck()
+				update_appearance()
+				H.regenerate_icons()
 				for(var/X in actions)
 					var/datum/action/A = X
 					A.UpdateButtonIcon()
-				//Might need an update aperance here
 	else
 		remove_hood()
 
