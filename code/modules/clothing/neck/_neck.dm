@@ -339,11 +339,12 @@
 						)
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
-	var/obj/item/clothing/head/hooded/hood
-	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
 	unique_reskin_changes_base_icon_state = TRUE
 	unique_reskin_changes_name = TRUE
-	hoodtype = /obj/item/clothing/head/hooded/poncho
+	actions_types = list(/datum/action/item_action/toggle_hood)
+	var/suittoggled = FALSE
+	var/obj/item/clothing/head/hooded/hood
+	var/hoodtype = /obj/item/clothing/head/hooded/poncho
 
 	equip_sound = 'sound/items/equip/cloth_equip.ogg'
 	equipping_sound = EQUIP_SOUND_SHORT_GENERIC
