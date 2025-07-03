@@ -2189,12 +2189,17 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hallway/central)
 "Dc" = (
-/obj/structure/guncloset,
 /obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl,
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/no_mag,
 /obj/item/gun/ballistic/automatic/smg/sidewinder,
 /obj/item/gun/ballistic/automatic/smg/cobra,
 /obj/machinery/light/directional/south,
+/obj/structure/guncloset{
+	anchored = 1;
+	can_be_unanchored = 1;
+	open = 0;
+	req_access_txt = "3"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "De" = (
@@ -2719,9 +2724,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Jz" = (
-/obj/structure/closet/secure_closet/armorycage{
-	req_access = null
-	},
+/obj/structure/closet/secure_closet/armorycage,
 /obj/item/ammo_box/magazine/m556_42_hydra,
 /obj/item/ammo_box/magazine/m556_42_hydra,
 /obj/item/ammo_box/magazine/m12g_bulldog/drum/dragon,

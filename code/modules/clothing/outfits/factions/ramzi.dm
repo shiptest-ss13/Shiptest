@@ -52,7 +52,7 @@
 
 	id_assignment = "Sweeper Lead"
 	job_icon = "headofsecurity"
-	jobtype = /datum/job/officer
+	jobtype = /datum/job/hos
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
