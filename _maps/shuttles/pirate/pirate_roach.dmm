@@ -204,6 +204,7 @@
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/internals/emergency_oxygen/engi,
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "cU" = (
@@ -231,7 +232,6 @@
 	},
 /obj/machinery/door/airlock/maintenance/external/glass{
 	dir = 4;
-	req_access_txt = "1";
 	name = "Raiding Quarters"
 	},
 /obj/machinery/door/firedoor/border_only{
@@ -606,7 +606,7 @@
 /obj/structure/table,
 /obj/item/toy/cards/deck/syndicate{
 	pixel_x = 4;
-	pixel_y = -13
+	pixel_y = -9
 	},
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = -5;
@@ -686,13 +686,6 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/button/door{
-	pixel_x = 7;
-	pixel_y = 7;
-	id = "fleadoor";
-	dir = 1;
-	name = "departures door control"
-	},
 /obj/item/paper_bin{
 	pixel_x = -7;
 	pixel_y = 4
@@ -700,11 +693,6 @@
 /obj/item/pen/edagger{
 	pixel_x = -7;
 	pixel_y = 4
-	},
-/obj/machinery/button/shieldwallgen{
-	pixel_x = 10;
-	pixel_y = -2;
-	id = "roachsub"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -1296,10 +1284,17 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/machinery/firealarm/directional/west,
-/obj/machinery/light_switch{
-	pixel_x = -20;
-	pixel_y = 10;
+/obj/machinery/button/door{
+	pixel_x = -21;
+	pixel_y = 1;
+	id = "fleadoor";
+	dir = 4;
+	name = "departures door control"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_x = -21;
+	pixel_y = -9;
+	id = "roachsub";
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
@@ -1365,6 +1360,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
+/obj/machinery/light_switch{
+	pixel_x = 18;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "tL" = (
@@ -1417,6 +1416,22 @@
 	pixel_x = 8;
 	pixel_y = 0
 	},
+/obj/item/reagent_containers/hypospray/medipen/rabbit{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/hypospray/medipen/rabbit{
+	pixel_x = -7;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/hypospray/medipen/rabbit{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/hypospray/medipen/rabbit{
+	pixel_x = 3;
+	pixel_y = 0
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "ui" = (
@@ -1436,15 +1451,17 @@
 	pixel_y = 6
 	},
 /obj/machinery/button/door{
-	pixel_x = 6;
-	pixel_y = 0;
+	pixel_x = -21;
+	pixel_y = 4;
 	id = "fleadoor";
-	name = "departures door control"
+	name = "departures door control";
+	dir = 4
 	},
 /obj/machinery/button/shieldwallgen{
-	pixel_x = -3;
-	pixel_y = -2;
-	id = "roachsub"
+	pixel_x = -20;
+	pixel_y = -7;
+	id = "roachsub";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
@@ -1663,7 +1680,6 @@
 "xt" = (
 /obj/machinery/door/airlock/maintenance/external/glass{
 	dir = 4;
-	req_access_txt = "1";
 	name = "Departures"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1697,7 +1713,6 @@
 /obj/machinery/button/door{
 	pixel_x = 0;
 	pixel_y = -21;
-	req_access_txt = "1";
 	id = "roachsuit";
 	dir = 1;
 	name = "shutter control"
@@ -2125,7 +2140,6 @@
 /obj/machinery/button/door{
 	pixel_x = 4;
 	pixel_y = 21;
-	req_access_txt = "1";
 	id = "roachsuit";
 	name = "shutter control"
 	},
@@ -2643,8 +2657,7 @@
 /area/ship/hallway/central)
 "IP" = (
 /obj/machinery/door/airlock/maintenance{
-	name = "Priority Cargo";
-	req_access_txt = "1"
+	name = "Priority Cargo"
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -2706,7 +2719,9 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "Jz" = (
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/ammo_box/magazine/m556_42_hydra,
 /obj/item/ammo_box/magazine/m556_42_hydra,
 /obj/item/ammo_box/magazine/m12g_bulldog/drum/dragon,
@@ -2821,11 +2836,15 @@
 "KB" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beer{
-	pixel_x = 10;
-	pixel_y = 4
+	pixel_x = 11;
+	pixel_y = 9
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/cell_charger{
+	pixel_x = -4;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "KT" = (
@@ -4550,7 +4569,7 @@ Uv
 Uv
 Xs
 xt
-ML
+Xs
 Xs
 Xs
 Xs
