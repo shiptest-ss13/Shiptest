@@ -44,8 +44,7 @@
 	},
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord,
 /obj/item/reagent_containers/glass/bottle/vial/small/preloaded/tricord{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/cargo)
@@ -813,16 +812,17 @@
 /area/ship/engineering/engine)
 "qo" = (
 /obj/structure/table/glass,
-/obj/item/food/vegetariansushiroll{
-	pixel_y = 4
-	},
 /obj/item/cutting_board{
 	pixel_y = 2
 	},
-/obj/item/kitchen/fork{
-	pixel_y = 9;
-	pixel_x = -14;
-	name = "sushi fork"
+/obj/item/food/vegetariansushiroll{
+	pixel_y = 4
+	},
+/obj/item/melee/knife{
+	pixel_x = -13
+	},
+/obj/item/reagent_containers/food/snacks/lifosa/homemade{
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -1531,8 +1531,8 @@
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_y = -28
 	},
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Df" = (
@@ -1665,12 +1665,6 @@
 "Fw" = (
 /obj/structure/table/chem,
 /obj/structure/closet/wall/white/directional/west,
-/obj/item/food/grown/seaweed/sheet,
-/obj/item/food/grown/seaweed/sheet,
-/obj/item/food/grown/seaweed/sheet,
-/obj/item/food/grown/seaweed/sheet,
-/obj/item/food/grown/seaweed/sheet,
-/obj/item/food/grown/seaweed/sheet,
 /obj/item/reagent_containers/condiment/rice{
 	pixel_y = 9;
 	pixel_x = -7
@@ -1680,37 +1674,66 @@
 	pixel_x = 2
 	},
 /obj/item/melee/knife/kitchen,
-/obj/item/food/fishmeat/carp{
-	pixel_x = -6
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
 	},
-/obj/item/food/fishmeat/carp{
-	pixel_x = -6
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
 	},
-/obj/item/food/fishmeat/carp{
-	pixel_x = -6
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
 	},
-/obj/item/food/fishmeat/carp{
-	pixel_x = -6
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
 	},
-/obj/item/food/meat/slab/chicken{
-	pixel_x = 6;
-	pixel_y = -6
+/obj/item/food/meat/slab/miras{
+	pixel_x = -9;
+	pixel_y = -5
 	},
-/obj/item/food/meat/slab/chicken{
-	pixel_x = 6;
-	pixel_y = -6
+/obj/item/food/meat/slab/tiris{
+	pixel_y = -5
 	},
-/obj/item/food/meat/slab/chicken{
-	pixel_x = 6;
-	pixel_y = -6
+/obj/item/food/meat/slab/tiris{
+	pixel_y = -5
 	},
-/obj/item/food/meat/slab/chicken{
-	pixel_x = 6;
-	pixel_y = -6
+/obj/item/food/meat/slab/tiris{
+	pixel_y = -5
 	},
-/obj/item/food/meat/slab/chicken{
-	pixel_x = 6;
-	pixel_y = -6
+/obj/item/food/grown/sososi{
+	pixel_y = 5;
+	pixel_x = -7
+	},
+/obj/item/food/grown/sososi{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/food/grown/sososi{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/food/grown/sososi{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/food/grown/sososi{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
+	},
+/obj/item/food/grown/dote_berries{
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -1978,8 +2001,8 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/machinery/airalarm/directional/north,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Jo" = (
@@ -2097,9 +2120,9 @@
 	pixel_y = 12;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/tequila{
-	pixel_x = 16;
-	pixel_y = 1
+/obj/item/reagent_containers/food/drinks/bottle/sososeta{
+	pixel_x = 17;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)

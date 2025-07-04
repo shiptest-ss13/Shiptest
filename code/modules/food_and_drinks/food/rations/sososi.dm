@@ -20,7 +20,7 @@
 	name = "whole Sososi Leaf"
 	desc = "Thick leaves with an interior made of sweet gel. It's been vacuum-sealed to preserve the flavor, and integrity of the plant"
 	filling_color = "#2a7416"
-	tastes = list("fruity gel" = 1, "watery sugars" = 1, "satisfying crunch" = 1)
+	tastes = list("fruity gel" = 4, "watery sugars" = 1, "satisfying crunch" = 2)
 	foodtype = VEGETABLES | SUGAR
 	cookable = FALSE
 
@@ -28,7 +28,7 @@
 	name = "Lifosa Tiris"
 	desc = "Pearls of Tiris cheese within a salty, air cured crust. The interior of the package is somewhat oily."
 	filling_color = "#cac84e"
-	tastes = list("rock salts" = 1, "cheese" = 1)
+	tastes = list("rock salts" = 1, "cheese" = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	foodtype = DAIRY
 
@@ -44,14 +44,14 @@
 	name = "candied fara-li"
 	desc = "Whole fara-li fruit, preserved in a thin, sweet syrup."
 	filling_color = "#ce8c22"
-	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1)
+	tastes = list("spice" = 1, "subtle fruitiness" = 5)
 	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/ration/bar/dote_on
 	name = "Doting..."
 	desc = "A specialty fruit bar made to mimic \"Dote On It!\". The berries have been compressed down and joined with some seeds "
 	filling_color = "#70829a"
-	tastes = list("crunchy seeds" = 1, "sweet berries" = 1)
+	tastes = list("crunchy seeds" = 2, "sweet berries" = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	foodtype = FRUIT | GRAIN
 
