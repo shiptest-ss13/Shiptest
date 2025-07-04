@@ -396,7 +396,7 @@
 	default_firemode = FIREMODE_FULLAUTO
 
 	show_magazine_on_sprite = TRUE
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	manufacturer = MANUFACTURER_IMPORT
