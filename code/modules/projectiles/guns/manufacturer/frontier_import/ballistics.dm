@@ -17,10 +17,10 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	spread = 25
-	spread_unwielded = 50
-	recoil = 1
-	recoil_unwielded = 4
+	spread = 15
+	spread_unwielded = 30
+	recoil = 1.5
+	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
 
 	fire_sound = 'sound/weapons/gun/pistol/mauler.ogg'
