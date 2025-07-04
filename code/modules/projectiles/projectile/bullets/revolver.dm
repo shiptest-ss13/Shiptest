@@ -77,9 +77,9 @@
 	. = ..()
 	if(isliving(target))
 		var/mob/living/M = target
-		M.adjust_jitter(5)
-		M.Dizzy(5)
-		M.adjust_drugginess(10)
+		M.adjust_jitter(10)
+		M.Dizzy(10)
+		M.adjust_drugginess(15)
 
 /obj/projectile/bullet/c38/shock
 	name = ".38 shock bullet"
@@ -112,7 +112,6 @@
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
 	damage = 35
-
 	speed = BULLET_SPEED_REVOLVER
 	bullet_identifier = "medium bullet"
 
@@ -190,3 +189,59 @@
 	armour_penetration = -10
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD
+
+/obj/projectile/bullet/a44roum/match
+	name = ".44 roumain match bullet"
+	damage =  25
+	armour_penetration = -10
+	speed = BULLET_SPEED_AP_MOD
+	ricochets_max = 5
+	ricochet_chance = 140
+	ricochet_auto_aim_angle = 50
+	ricochet_auto_aim_range = 6
+	ricochet_incidence_leeway = 80
+	ricochet_decay_chance = 1
+	bullet_identifier = "small bullet"
+
+/obj/projectile/bullet/a44roum/ashwine
+	name = ".44 roumain hallucinogenic bullet"
+	damage =  20
+	armour_penetration = -10
+	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "small bullet"
+
+/obj/projectile/bullet/a44roum/ashwine/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		M.adjust_jitter(10)
+		M.Dizzy(10)
+		M.adjust_drugginess(15)
+
+/obj/projectile/bullet/a44roum/hearthwine
+	name = ".44 roumain hearth bullet"
+	damage =  15
+	armour_penetration = -10
+	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "small bullet"
+
+/obj/projectile/bullet/a44roum/hearthwine/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(1)
+		M.IgniteMob()
+
+/obj/projectile/bullet/a44roum/icewine
+	name = ".44 roumain chilled bullet"
+	damage =  15
+	armour_penetration = -10
+	var/temperature = 100
+	speed = BULLET_SPEED_REVOLVER
+	bullet_identifier = "small bullet"
+
+/obj/projectile/bullet/a44roum/icewine/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))

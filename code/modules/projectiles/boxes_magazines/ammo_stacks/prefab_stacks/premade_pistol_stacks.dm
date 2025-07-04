@@ -473,3 +473,16 @@
 	var/static/items_inside = list(
 		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/hp = 4)
 	generate_items_inside(items_inside,src)
+
+/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/match
+	ammo_type = /obj/item/ammo_casing/a44roum/match
+
+/obj/item/storage/box/ammo/a44roum_match
+	name = "box of Match .44 roumain ammo"
+	desc = "A box of .44 roumain match ammo, designed to ricochet across walls in combat."
+	icon_state = "a44roum-rubber"
+
+/obj/item/storage/box/ammo/a44roum_match/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/prefilled/a44roum/match = 4)
+	generate_items_inside(items_inside,src)

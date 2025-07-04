@@ -135,3 +135,27 @@
 	desc = "A .44 roumain holow point bullet casing."
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a44roum/hp
+
+/obj/item/ammo_casing/a44roum/match
+	name = ".44 roumain match bullet casing"
+	desc = "A .44 roumain match bullet casing."
+	icon_state = "rubber"
+	projectile_type = /obj/projectile/bullet/a44roum/match
+
+/obj/item/ammo_casing/a44roum/hearthwine
+	name = ".44 roumain hearth bullet casing"
+	desc = "A .44 roumain hearth bullet casing."
+	icon_state = "incen"
+	projectile_type = /obj/projectile/bullet/a44roum/hearthwine
+
+/obj/item/ammo_casing/a44roum/icewine
+	name = ".44 roumain chilled bullet casing"
+	desc = "A .44 roumain chilled bullet casing."
+	icon_state = "surplus"
+	projectile_type = /obj/projectile/bullet/a44roum/icewine
+
+/obj/item/ammo_casing/a44roum/ashwine
+	name = ".44 roumain hallucinogenic bullet casing"
+	desc = "A .44 roumain hallucinogenic bullet casing."
+	icon_state = "ash"
+	projectile_type = /obj/projectile/bullet/a44roum/ashwine
