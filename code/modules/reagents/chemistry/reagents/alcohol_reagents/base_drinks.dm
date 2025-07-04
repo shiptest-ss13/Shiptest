@@ -287,3 +287,50 @@
 	glass_icon_state = "champagne_glass"
 	glass_name = "Champagne"
 	glass_desc = "A sparkling wine, traditionally served in a flute that clearly displays the slowly rising bubbles."
+
+/datum/reagent/consumable/ethanol/dotusira
+	name = "Dotusira"
+	description = "A bitter liquor made from fermented dotu-fime."
+	color = "#9b9b78"
+	boozepwr = 25
+	taste_description = "bitter fruit with a smooth aftertaste"
+	glass_icon_state = ""
+	glass_name = "Dotusira"
+	glass_desc = "A bitter tecetian liquor that leaves behind a smooth aftertaste."
+
+/datum/reagent/consumable/ethanol/faraseta
+	name = "Fara-Seta"
+	description = "A spicy cider known to floor those with sensitive tastes."
+	color = "#c5533a"
+	boozepwr = 55
+	taste_description = "spicy alcoholic heat"
+	glass_icon_state = ""
+	glass_name = "Fara-Seta"
+	glass_desc = "A spicy cider fermented from a small pepper-esque fruit."
+
+/datum/reagent/consumable/ethanol/sosomira
+	name = "Sososi-Mira"
+	description = "Sososi Leaves and Miras are used to make this variety of alcohol, a warm and sweet alcohol with a tendency to leave nasty hangovers. It’s typically served before a meal, to get conversation flowing."
+	color = "#b9d6d8"
+	boozepwr = 45
+	taste_description = "a tingling, sweet warmth"
+	glass_icon_state = ""
+	glass_name = "Sososi-Mira"
+	glass_desc = "A conversation starter, a drink, and a setpiece all in one. There's no Miras in this one."
+
+/datum/reagent/consumable/ethanol/sososeta
+	name = "Sososi-Seta"
+	description = "A bitter drink made from the leaves of the Sososi plant. The sugars of the leaf are seeped out as it ferments, leaving behind a bitter spirit, that is then seasoned with cactus fruit and berries to be served as a digestif."
+	color = "#c2d4d5"
+	boozepwr = 45
+	taste_description = "bitter-savory fruitiness"
+	glass_icon_state = ""
+	glass_name = "Sososi-Seta"
+	glass_desc = "A white liquid with small pieces of fruit floating inside it. Typically served as a digestive after a hearty meal."
+
+/datum/reagent/consumable/ethanol/sososeta/on_mob_life(mob/living/carbon/M)
+	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
+		M.adjustToxLoss(0.5*REM, 0)
+	M.adjust_nutrition(-2)
+	M.overeatduration = 0
+	return ..()

@@ -6,7 +6,7 @@
 	inherent_traits = list(TRAIT_SCOOPABLE)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_head_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "None", "kepori_head_feathers" = "None",  "kepori_body_feathers" = "None", "kepori_tail_feathers" = "None")
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
+	meat = /obj/item/food/meat/slab/chicken
 	disliked_food = FRIED | GROSS | CLOTH
 	liked_food = MEAT | GORE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP
@@ -183,8 +183,8 @@
 	var/datum/species/kepori/kep = H.dna.species
 	if(H.GetComponent(/datum/component/tackler))
 		qdel(H.GetComponent(/datum/component/tackler))
-		to_chat(H, "<span class='notice'>You relax, no longer ready to pounce.</span>")
+		to_chat(H, span_notice("You relax, no longer ready to pounce."))
 		return
 	H.AddComponent(/datum/component/tackler, stamina_cost= kep.tackle_stam_cost, base_knockdown= kep.base_knockdown, range= kep.tackle_range, speed= kep.tackle_speed, skill_mod= kep.skill_mod, min_distance= kep.min_distance)
-	H.visible_message("<span class='notice'>[H] gets ready to pounce!</span>", \
-		"<span class='notice'>You ready yourself to pounce!</span>", null, COMBAT_MESSAGE_RANGE)
+	H.visible_message(span_notice("[H] gets ready to pounce!"), \
+		span_notice("You ready yourself to pounce!"), null, COMBAT_MESSAGE_RANGE)

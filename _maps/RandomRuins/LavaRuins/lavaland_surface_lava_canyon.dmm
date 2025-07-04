@@ -37,16 +37,6 @@
 "bx" = (
 /turf/open/floor/plating/ashplanet/ash,
 /area/overmap_encounter/planetoid/lava/explored)
-"bz" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 1
-	},
-/obj/item/stack/ore/iron{
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/turf/open/floor/plating/ashplanet/ash,
-/area/ruin/unpowered/scorched_hut)
 "cr" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -182,13 +172,6 @@
 	},
 /turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
-"fv" = (
-/obj/item/stack/ore/titanium{
-	pixel_x = 10;
-	pixel_y = -3
-	},
-/turf/open/floor/plating/ashplanet/rocky,
-/area/ruin/unpowered/scorched_hut)
 "fx" = (
 /obj/effect/decal/cleanable/ash{
 	pixel_x = -2;
@@ -347,6 +330,12 @@
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
+"jQ" = (
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
+	loot = list(/obj/item/melee/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon)
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "jR" = (
 /obj/effect/decal/cleanable/ash/large{
 	pixel_x = -5;
@@ -559,16 +548,16 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"og" = (
+/obj/item/stack/ore/iron{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/turf/open/floor/plating/ashplanet/ash,
+/area/ruin/unpowered/scorched_hut)
 "ot" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
-	},
-/turf/open/floor/plating/ashplanet/rocky,
-/area/ruin/unpowered/scorched_hut)
-"oJ" = (
-/obj/item/stack/ore/iron{
-	pixel_x = -11;
-	pixel_y = 5
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -699,10 +688,10 @@
 	},
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
-"tj" = (
+"tt" = (
 /obj/item/stack/ore/iron{
-	pixel_x = -9;
-	pixel_y = -8
+	pixel_x = -7;
+	pixel_y = 4
 	},
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
@@ -803,13 +792,6 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
-"xV" = (
-/obj/item/stack/ore/iron{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
 "xX" = (
 /obj/structure/stone_tile/surrounding_tile/burnt,
 /obj/structure/stone_tile/surrounding/cracked{
@@ -851,6 +833,13 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"yy" = (
+/obj/item/stack/ore/iron{
+	pixel_x = -11;
+	pixel_y = 5
+	},
+/turf/open/floor/plating/ashplanet/rocky,
+/area/ruin/unpowered/scorched_hut)
 "yz" = (
 /obj/structure/flora/ausbushes/fernybush/hell,
 /turf/open/floor/plating/grass/lava/purple,
@@ -863,6 +852,16 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
+"yK" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 1
+	},
+/obj/item/stack/ore/iron{
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/open/floor/plating/ashplanet/ash,
+/area/ruin/unpowered/scorched_hut)
 "yL" = (
 /obj/structure/flora/ausbushes/ywflowers/hell,
 /turf/open/floor/plating/grass/lava/purple,
@@ -881,12 +880,6 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
-"zb" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
-	loot = list(/obj/item/melee/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon)
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/cave/explored)
 "zc" = (
 /obj/effect/decal/cleanable/ash{
 	pixel_x = -4;
@@ -894,6 +887,13 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"zl" = (
+/obj/item/stack/ore/titanium{
+	pixel_x = 10;
+	pixel_y = -3
+	},
+/turf/open/floor/plating/ashplanet/rocky,
+/area/ruin/unpowered/scorched_hut)
 "zx" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
@@ -1219,6 +1219,13 @@
 "Ja" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/purple,
+/area/overmap_encounter/planetoid/lava/explored)
+"Jg" = (
+/obj/item/stack/ore/iron{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Jt" = (
 /obj/structure/stone_tile/surrounding/burnt,
@@ -1726,24 +1733,17 @@
 /obj/structure/flora/rock/hell,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
-"Xd" = (
-/obj/item/stack/ore/iron{
-	pixel_x = -7;
-	pixel_y = 4
-	},
-/turf/open/floor/plating/ashplanet/ash,
-/area/ruin/unpowered/scorched_hut)
 "Xp" = (
 /obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
 "XH" = (
 /obj/effect/gibspawner/human,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath{
+/obj/item/food/meat/slab/goliath{
 	pixel_x = 7;
 	pixel_y = -5
 	},
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath{
+/obj/item/food/meat/slab/goliath{
 	pixel_x = -4;
 	pixel_y = 8
 	},
@@ -2353,7 +2353,7 @@ Mc
 fx
 Kp
 Kp
-bz
+yK
 ez
 Mc
 Mc
@@ -4307,7 +4307,7 @@ TE
 Kp
 Ru
 Eq
-oJ
+yy
 ez
 Za
 Mc
@@ -5317,7 +5317,7 @@ sj
 sj
 CY
 rq
-zb
+jQ
 rq
 vh
 sj
@@ -5780,7 +5780,7 @@ Aj
 Aj
 Aj
 UM
-tj
+og
 jT
 LB
 Za
@@ -6626,7 +6626,7 @@ mS
 Kp
 Eq
 LZ
-Xd
+tt
 Eq
 Kp
 uo
@@ -6754,7 +6754,7 @@ Mc
 Rf
 Eq
 ez
-fv
+zl
 AZ
 Eq
 qL
@@ -7027,7 +7027,7 @@ Mc
 Mc
 Ga
 bx
-xV
+Jg
 Mc
 Zg
 Mc

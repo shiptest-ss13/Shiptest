@@ -10,15 +10,15 @@
 /obj/item/organ/heart/gland/slime/Insert(mob/living/carbon/M, special = 0)
 	..()
 	owner.faction |= "slime"
-	owner.grant_language(/datum/language/slime, TRUE, TRUE, LANGUAGE_GLAND)
+	owner.grant_language(/datum/language/slime, source=LANGUAGE_GLAND)
 
 /obj/item/organ/heart/gland/slime/Remove(mob/living/carbon/M, special = 0)
 	owner.faction -= "slime"
-	owner.remove_language(/datum/language/slime, TRUE, TRUE, LANGUAGE_GLAND)
+	owner.remove_language(/datum/language/slime, source=LANGUAGE_GLAND)
 	..()
 
 /obj/item/organ/heart/gland/slime/activate()
-	to_chat(owner, "<span class='warning'>You feel nauseated!</span>")
+	to_chat(owner, span_warning("You feel nauseated!"))
 	owner.vomit(20)
 
 	var/mob/living/simple_animal/slime/Slime = new(get_turf(owner), "grey")

@@ -51,11 +51,11 @@
 		var/obj/item/toy/crayon/C = W
 		var/clr = C.crayon_color
 
-		if(!(clr in list("blue", "green", "mime", "orange", "purple", "rainbow", "red", "yellow")))
-			to_chat(usr, "<span class='notice'>[src] refuses to take on this colour!</span>")
+		if(!(clr in list("blue", "green", "orange", "purple", "rainbow", "red", "yellow")))
+			to_chat(usr, span_notice("[src] refuses to take on this colour!"))
 			return
 
-		to_chat(usr, "<span class='notice'>You colour [src] with [W].</span>")
+		to_chat(usr, span_notice("You colour [src] with [W]."))
 		icon_state = "egg-[clr]"
 	else
 		..()
@@ -65,9 +65,6 @@
 
 /obj/item/reagent_containers/food/snacks/egg/green
 	icon_state = "egg-green"
-
-/obj/item/reagent_containers/food/snacks/egg/mime
-	icon_state = "egg-mime"
 
 /obj/item/reagent_containers/food/snacks/egg/orange
 	icon_state = "egg-orange"
@@ -123,11 +120,11 @@
 	if(istype(W, /obj/item/kitchen/fork))
 		var/obj/item/kitchen/fork/F = W
 		if(F.forkload)
-			to_chat(user, "<span class='warning'>You already have omelette on your fork!</span>")
+			to_chat(user, span_warning("You already have omelette on your fork!"))
 		else
 			F.icon_state = "forkloaded"
-			user.visible_message("<span class='notice'>[user] takes a piece of omelette with [user.p_their()] fork!</span>", \
-				"<span class='notice'>You take a piece of omelette with your fork.</span>")
+			user.visible_message(span_notice("[user] takes a piece of omelette with [user.p_their()] fork!"), \
+				span_notice("You take a piece of omelette with your fork."))
 
 			var/datum/reagent/R = pick(reagents.reagent_list)
 			reagents.remove_reagent(R.type, 1)

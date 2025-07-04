@@ -38,6 +38,30 @@
 	back = /obj/item/tank/jetpack/oxygen
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft
+	name = "Ramzi Softsuit"
+	outfit = /datum/outfit/ramzi/soft
+
+/datum/outfit/ramzi/soft
+	name = "Ramzi Clique Softsuit"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	head = /obj/item/clothing/head/helmet/space/syndicate/ramzi
+	suit = /obj/item/clothing/suit/space/syndicate/ramzi
+	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
+	name = "Ramzi Softsuit Surplus"
+	outfit = /datum/outfit/ramzi/soft/surplus
+
+/datum/outfit/ramzi/soft/surplus
+	name = "Ramzi Clique Softsuit Surplus"
+	uniform = /obj/item/clothing/under/syndicate/combat
+	head = /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus
+	suit = /obj/item/clothing/suit/space/syndicate/ramzi/surplus
+	back = /obj/item/storage/backpack
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
 /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper"
 	id_job = "Operative"
@@ -46,8 +70,8 @@
 /datum/outfit/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper Corpse"
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/space/hardsuit/syndi
-	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
+	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
 	mask = /obj/item/clothing/mask/gas/syndicate
 	back = /obj/item/tank/jetpack/oxygen/harness
 
@@ -217,8 +241,8 @@
 	name = "Avery Inteq"
 
 /obj/effect/mob_spawn/human/corpse/inteq/recruit
-	name = "IRMG Recruit"
-	id_job = "Recruit"
+	name = "IRMG Auxiliary"
+	id_job = "Auxiliary"
 	outfit = /datum/outfit/job/inteq/assistant
 
 /obj/effect/mob_spawn/human/corpse/inteq/medic

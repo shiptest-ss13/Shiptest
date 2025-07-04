@@ -10,7 +10,7 @@
 	head_icon = 'icons/mob/pets_held.dmi'
 	worn_slot_flags = ITEM_SLOT_HEAD
 	emote_hear = list("chitters", "flutters")
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mothroach = 3, /obj/item/stack/sheet/animalhide/mothroach = 1)
+	butcher_results = list(/obj/item/food/meat/slab/mothroach = 3, /obj/item/stack/sheet/animalhide/mothroach = 1)
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
 	mob_size = MOB_SIZE_SMALL
 	ventcrawler = VENTCRAWLER_ALWAYS
@@ -58,7 +58,7 @@
 
 /mob/living/simple_animal/pet/mothroach/attackby(obj/item/I, mob/user, params)
 	if(isclothing(I))
-		to_chat(user, "<span class='notice'>You feed [I] to [src].</span>")
+		to_chat(user, span_notice("You feed [I] to [src]."))
 		visible_message("[src] chitters happily!")
 		qdel(I) // this sucks
 	else

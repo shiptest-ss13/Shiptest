@@ -1,5 +1,6 @@
 
 /obj/item/gun/ballistic/automatic
+	bad_type = /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_BULKY
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
@@ -33,3 +34,4 @@
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_LIGHT
+	wear_rate = 5 //it's a. piece of shit.

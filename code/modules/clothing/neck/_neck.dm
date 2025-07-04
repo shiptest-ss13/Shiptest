@@ -177,24 +177,24 @@
 		if(user.a_intent == INTENT_HELP)
 			var/body_part = parse_zone(user.zone_selected)
 
-			var/heart_strength = "<span class='danger'>no</span>"
-			var/lung_strength = "<span class='danger'>no</span>"
+			var/heart_strength = span_danger("no")
+			var/lung_strength = span_danger("no")
 
 			var/obj/item/organ/heart/heart = M.getorganslot(ORGAN_SLOT_HEART)
 			var/obj/item/organ/lungs/lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
 
 			if(!(M.stat == DEAD || (HAS_TRAIT(M, TRAIT_FAKEDEATH))))
 				if(heart && istype(heart))
-					heart_strength = "<span class='danger'>an unstable</span>"
+					heart_strength = span_danger("an unstable")
 					if(heart.beating)
 						heart_strength = "a healthy"
 				if(lungs && istype(lungs))
-					lung_strength = "<span class='danger'>strained</span>"
+					lung_strength = span_danger("strained")
 					if(!(M.failed_last_breath || M.losebreath))
 						lung_strength = "healthy"
 
 			var/diagnosis = (body_part == BODY_ZONE_CHEST ? "You hear [heart_strength] pulse and [lung_strength] respiration." : "You faintly hear [heart_strength] pulse.")
-			user.visible_message("<span class='notice'>[user] places [src] against [M]'s [body_part] and listens attentively.</span>", "<span class='notice'>You place [src] against [M]'s [body_part]. [diagnosis]</span>")
+			user.visible_message(span_notice("[user] places [src] against [M]'s [body_part] and listens attentively."), span_notice("You place [src] against [M]'s [body_part]. [diagnosis]"))
 			return
 	return ..(M,user)
 
@@ -339,12 +339,6 @@
 	custom_price = 10
 	supports_variations = VOX_VARIATION
 
-/obj/item/clothing/neck/stripedsolgovscarf
-	name = "striped solgov scarf"
-	icon_state = "stripedsolgovscarf"
-	custom_price = 10
-	supports_variations = VOX_VARIATION
-
 /obj/item/clothing/neck/petcollar
 	name = "pet collar"
 	desc = "It's for pets. But some people wear it anyways for reasons unknown."
@@ -366,6 +360,7 @@
 	resistance_flags = FIRE_PROOF
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_POCKETS
+	strip_delay = 10
 
 /obj/item/clothing/neck/dogtag/gold
 	icon_state = "dogtag_gold"
@@ -406,7 +401,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.get_item_by_slot(ITEM_SLOT_NECK) == src)
-			to_chat(user, "<span class='warning'>You can't untie [src] while wearing it!</span>")
+			to_chat(user, span_warning("You can't untie [src] while wearing it!"))
 			return
 		if(user.is_holding(src))
 			var/obj/item/clothing/mask/bandana/newBand = new sourceBandanaType(user)
@@ -414,9 +409,9 @@
 			var/oldName = src.name
 			qdel(src)
 			user.put_in_hand(newBand, currentHandIndex)
-			user.visible_message("<span class='notice'>You untie [oldName] back into a [newBand.name].</span>", "<span class='notice'>[user] unties [oldName] back into a [newBand.name].</span>")
+			user.visible_message(span_notice("You untie [oldName] back into a [newBand.name]."), span_notice("[user] unties [oldName] back into a [newBand.name]."))
 		else
-			to_chat(user, "<span class='warning'>You must be holding [src] in order to untie it!</span>")
+			to_chat(user, span_warning("You must be holding [src] in order to untie it!"))
 
 /obj/item/clothing/neck/beads
 	name = "plastic bead necklace"
@@ -447,7 +442,7 @@
 	var/datum/effect_system/spark_spread/quantum/spark_creator = new
 	spark_creator.set_up(2, 1, src)
 	spark_creator.start()
-	owner.visible_message("<span class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")
+	owner.visible_message(span_danger("[owner]'s shields deflect [attack_text] in a shower of sparks!"))
 	take_damage(damage_to_take_on_hit)
 	playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 	return TRUE
@@ -461,7 +456,7 @@
 		if(25 to 50)
 			. += "It appears heavily damaged."
 		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
+			. += span_warning("It's falling apart!")
 
 /obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
 	. = ..()
@@ -469,7 +464,7 @@
 		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
 
 /obj/item/clothing/neck/crystal_amulet/obj_destruction(damage_flag)
-	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+	visible_message(span_danger("[src] shatters into a million pieces!"))
 	playsound(src,"shatter", 70)
 	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
 	return ..()

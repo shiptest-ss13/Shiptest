@@ -2,8 +2,8 @@
 	name = "Junkie"
 	desc = "You can't get enough of hard drugs."
 	value = -2
-	gain_text = "<span class='danger'>You suddenly feel the craving for drugs.</span>"
-	lose_text = "<span class='notice'>You feel like you should kick your drug habit.</span>"
+	gain_text = span_danger("You suddenly feel the craving for drugs.")
+	lose_text = span_notice("You feel like you should kick your drug habit.")
 	medical_record_text = "Patient has a history of hard drugs."
 	var/drug_list = list(/datum/reagent/drug/crank, /datum/reagent/medicine/morphine, /datum/reagent/drug/happiness, /datum/reagent/drug/methamphetamine) //List of possible IDs
 	var/datum/reagent/reagent_type //!If this is defined, reagent_id will be unused and the defined reagent type will be instead.
@@ -51,7 +51,7 @@
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 
 /datum/quirk/junkie/proc/announce_drugs()
-	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] of [initial(reagent_type.name)] [where_drug]. Better hope you don't run out...</span>")
+	to_chat(quirk_holder, span_boldnotice("There is a [initial(drug_container_type.name)] of [initial(reagent_type.name)] [where_drug]. Better hope you don't run out..."))
 
 /datum/quirk/junkie/on_process(seconds_per_tick)
 	var/mob/living/carbon/human/H = quirk_holder
@@ -63,56 +63,15 @@
 			else
 				reagent_instance.addiction_stage = 0
 			H.reagents.addiction_list += reagent_instance
-			to_chat(quirk_holder, "<span class='danger'>You thought you kicked it, but you suddenly feel like you need [reagent_instance.name] again...</span>")
+			to_chat(quirk_holder, span_danger("You thought you kicked it, but you suddenly feel like you need [reagent_instance.name] again..."))
 
 /datum/quirk/junkie/smoker
 	name = "Smoker"
 	desc = "Sometimes you just really want a smoke. Probably not great for your lungs."
 	value = -1
-	gain_text = "<span class='danger'>You could really go for a smoke right about now.</span>"
-	lose_text = "<span class='notice'>You feel like you should quit smoking.</span>"
+	gain_text = span_danger("You could really go for a smoke right about now.")
+	lose_text = span_notice("You feel like you should quit smoking.")
 	medical_record_text = "Patient is a current smoker."
 	reagent_type = /datum/reagent/drug/nicotine
 	accessory_type = /obj/item/lighter/greyscale
-
-//I fucking hate prefscode
-
-/datum/quirk/junkie/smoker/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	switch(H.client?.prefs.preferred_smoke_brand)
-		if(PREF_CIG_SPACE)
-			drug_container_type = /obj/item/storage/fancy/cigarettes
-		if(PREF_CIG_DROMEDARY)
-			drug_container_type = /obj/item/storage/fancy/cigarettes/dromedaryco
-		if(PREF_CIG_UPLIFT)
-			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_uplift
-		if(PREF_CIG_ROBUST)
-			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robust
-		if(PREF_CIG_ROBUSTGOLD)
-			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robustgold
-		if(PREF_CIG_CARP)
-			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_carp
-		if(PREF_CIG_MIDORI)
-			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_midori
-		else
-			CRASH("Someone had an improper cigarette pref on loading")
-	. = ..()
-
-/datum/quirk/junkie/smoker/announce_drugs()
-	if(accessory_type == null)
-		to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], Make sure you get a refill soon.</span>")
-		return
-	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a [initial(accessory_type.name)] [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
-
-/datum/quirk/junkie/smoker/on_process(seconds_per_tick)
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/I = H.get_item_by_slot(ITEM_SLOT_MASK)
-	if (istype(I, /obj/item/clothing/mask/cigarette))
-		if(I == drug_container_type)
-			return
-		var/obj/item/storage/fancy/cigarettes/C = drug_container_type
-		if(istype(I, initial(C.spawn_type)))
-			SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "wrong_cigs")
-			return
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "wrong_cigs", /datum/mood_event/wrong_brand)
+	drug_container_type = /obj/item/storage/fancy/cigarettes

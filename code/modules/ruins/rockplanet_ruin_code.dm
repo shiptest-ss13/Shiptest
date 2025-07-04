@@ -81,12 +81,12 @@
 		else if(istype(target, /obj/item/gun/energy/laser/captain)) //a actual antique gun, only on the skipper as of writing and a lavaland ruin
 			created_gun = /obj/item/gun/energy/e_gun/hos/brazil/true // hos gun with a fancy skin, but also recharging!!
 		else
-			to_chat(user, "<span class='warning'>You can't upgrade this gun!.</span>") //wrong gun
+			to_chat(user, span_warning("You can't upgrade this gun!.")) //wrong gun
 			return
 		playsound(src, 'sound/items/drill_use.ogg', 50, FALSE)
 		if(do_after(user, 60, target = target))
 			new created_gun(get_turf(src))
-			to_chat(user, "<span class='notice'>With the [src], you upgrade the [target]!</span>")
+			to_chat(user, span_notice("With the [src], you upgrade the [target]!"))
 			qdel(target)
 			qdel(src)
 			return
@@ -103,7 +103,7 @@
 	if(!istype(item, /obj/item/melee/knife))
 		return
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, TRUE, -1)
-	to_chat(user, "<span class='notice'>You start breaking [src] up into shards...</span>")
+	to_chat(user, span_notice("You start breaking [src] up into shards..."))
 	if(!do_after(user, 1 SECONDS, src))
 		return
 	var/obj/item/result = new /obj/item/garnish/crystal(drop_location())
@@ -111,7 +111,7 @@
 	qdel(src)
 	if(give_to_user)
 		user.put_in_hands(result)
-	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
+	to_chat(user, span_notice("You finish breaking [src]"))
 
 /obj/item/paper/crumpled/muddy/fluff/distillery
 	name = "distillery instructions"

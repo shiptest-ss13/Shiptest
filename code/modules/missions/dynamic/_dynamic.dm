@@ -1,5 +1,5 @@
 /datum/mission/ruin
-	value = 2000
+	value = 1500
 	duration = null
 	desc = "Find my pages. (Please report if you cannot locate pages)"
 	location_specific = TRUE
@@ -28,8 +28,11 @@
 /datum/mission/ruin/spawn_mission_details(datum/overmap/dynamic/planet)
 	if(isnull(mission_index))
 		stack_trace("[src] does not have a mission index!")
-	for(var/obj/effect/landmark/mission_poi/mission_poi in planet.spawned_mission_pois)
+	for(var/datum/weakref/poi_ref in planet.spawned_mission_pois)
+		var/obj/effect/landmark/mission_poi/mission_poi = poi_ref.resolve()
 		use_poi(mission_poi, planet)
+		if(QDELETED(mission_poi))
+			planet.spawned_mission_pois -= poi_ref
 
 	spawn_custom_details(planet)
 
@@ -55,6 +58,12 @@
 		if(isatom(poi_result))
 			poi_result.AddComponent(/datum/component/mission_important, MISSION_IMPORTANCE_RELEVENT, src)
 
+/datum/mission/ruin/on_planet_load(datum/overmap/dynamic/planet)
+	. = ..()
+	if(!length(bound_atoms))
+		if(specific_item)
+			stack_trace("Somehow [src] ran on_planet_load and has no bound atoms still, this likely means its failed to find any valid pois to spawn? Contact Fallcon.")
+
 /datum/mission/ruin/proc/spawn_main_piece(obj/effect/landmark/mission_poi/mission_poi, datum/overmap/dynamic/planet)
 	required_item =	mission_poi.use_poi(setpiece_item, src)
 	if(isatom(required_item))
@@ -67,14 +76,22 @@
 /datum/mission/ruin/proc/spawn_custom_details(datum/overmap/dynamic/planet)
 	return
 
+/datum/mission/ruin/remove_bound(atom/movable/bound)
+	if(bound == required_item)
+		required_item = null
+	return ..()
+
 /datum/mission/ruin/can_turn_in(atom/movable/item_to_check)
-	if(istype(required_item))
-		if(specific_item)
-			if(istype(item_to_check, required_item))
-				return TRUE
-		else
-			if(istype(item_to_check, required_item.type))
-				return TRUE
+	if(specific_item)
+		if(!isatom(required_item))
+			return FALSE
+		if(item_to_check == required_item)
+			return TRUE
+	else
+		if(istype(item_to_check, setpiece_item))
+			return TRUE
+		else if(istype(required_item) && istype(item_to_check, required_item.type))
+			return TRUE
 
 /datum/mission/ruin/get_tgui_info(list/items_on_pad = list())
 	. = ..()

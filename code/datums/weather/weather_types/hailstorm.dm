@@ -2,17 +2,17 @@
 	name = "hailstorm"
 	desc = "Harsh hailstorm, battering the unfortunate who wound up in it."
 
-	telegraph_message = "<span class='danger'>Dark clouds converge as drifting particles of snow begin to dust the surrounding area..</span>"
+	telegraph_message = span_danger("Dark clouds converge as drifting particles of snow begin to dust the surrounding area..")
 	telegraph_duration = 300
 	telegraph_overlay = "snowfall_light"
 
-	weather_message = "<span class='userdanger'><i>Hail starts to rain down from the sky! Seek shelter!</i></span>"
+	weather_message = span_userdanger("<i>Hail starts to rain down from the sky! Seek shelter!</i>")
 	weather_overlay = "hail"
 	weather_duration_lower = 600
 	weather_duration_upper = 1500
 
 	end_duration = 100
-	end_message = "<span class='notice'>The hailstorm dies down, it should be safe to go outside again.</span>"
+	end_message = span_notice("The hailstorm dies down, it should be safe to go outside again.")
 
 	area_type = /area
 	protect_indoors = TRUE

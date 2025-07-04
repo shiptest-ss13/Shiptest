@@ -459,7 +459,7 @@
 /area/ruin/jungle/airbase/hangar)
 "cm" = (
 /obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/food/snacks/meat/slab/human{
+/obj/item/food/meat/slab/human{
 	pixel_x = 7;
 	pixel_y = -5
 	},
@@ -2209,7 +2209,7 @@
 /area/ruin/jungle/airbase/hangar)
 "jF" = (
 /obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/food/snacks/meat/slab/human{
+/obj/item/food/meat/slab/human{
 	pixel_y = 8
 	},
 /turf/open/floor/carpet/red,
@@ -2885,7 +2885,7 @@
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/jungle/airbase/med)
 "mK" = (
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -3371,7 +3371,7 @@
 "oD" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/food/snacks/meat/slab/human{
+/obj/item/food/meat/slab/human{
 	pixel_y = -3;
 	pixel_x = -6
 	},
@@ -4512,8 +4512,8 @@
 	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/airbase/shed)
 "tb" = (
@@ -4565,7 +4565,7 @@
 "to" = (
 /obj/structure/table,
 /obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/food/snacks/meat/slab/human{
+/obj/item/food/meat/slab/human{
 	pixel_x = 4;
 	pixel_y = 10
 	},
@@ -6693,7 +6693,7 @@
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "CX" = (
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "CY" = (
@@ -6920,7 +6920,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "DR" = (
 /obj/effect/gibspawner/generic/animal,
-/obj/item/reagent_containers/food/snacks/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "DT" = (
@@ -9096,6 +9096,7 @@
 "MF" = (
 /obj/machinery/computer/operating,
 /obj/machinery/light/broken/directional/east,
+/obj/item/disk/surgery/t2,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/med)
 "MG" = (
@@ -9528,8 +9529,8 @@
 	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/airbase/shed)
 "OL" = (
@@ -12161,8 +12162,8 @@
 	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/suit/space/syndicate/black/red,
-/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/airbase/shed)
 "ZU" = (

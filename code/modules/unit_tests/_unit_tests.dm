@@ -134,7 +134,7 @@
 #endif //RUIN_PLACEMENT_TEST
 
 #ifdef SHIP_PLACEMENT_TEST
-#include "ship_outpost_placement.dm"
+#include "ship_placement.dm"
 #endif //SHIP_PLACEMENT_TEST
 
 #include "unit_test.dm"
@@ -142,5 +142,5 @@
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #undef TEST_ASSERT_NOTEQUAL
-#undef TEST_FOCUS
+//#undef TEST_FOCUS - This define is used by vscode unit test extension to pick specific unit tests to run and appended later so needs to be used out of scope here
 #endif

@@ -2,6 +2,11 @@
 	var/obj/item/organ/tongue/T = src.getorganslot(ORGAN_SLOT_TONGUE)
 	if(T)
 		verb_say = T.say_mod
+		verb_ask = T.ask_mod
+		verb_exclaim = T.exclaim_mod
+		verb_whisper = T.whisper_mod
+		verb_sing = T.sing_mod
+		verb_yell = T.yell_mod
 	if(slurring)
 		return "slurs"
 	else
@@ -41,8 +46,6 @@
 	// how do species that don't breathe talk? magic, that's what.
 	if(!HAS_TRAIT_FROM(src, TRAIT_NOBREATH, SPECIES_TRAIT) && !getorganslot(ORGAN_SLOT_LUNGS))
 		return FALSE
-	if(mind)
-		return !mind.miming
 	return TRUE
 
 /mob/living/carbon/human/proc/SetSpecialVoice(new_voice)

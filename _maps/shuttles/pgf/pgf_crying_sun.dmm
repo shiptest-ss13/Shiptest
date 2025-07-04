@@ -61,6 +61,9 @@
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/turf_decal/borderfloorblack,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
 "aR" = (
@@ -209,6 +212,9 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
 "bM" = (
@@ -239,6 +245,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 1
+	},
+/obj/item/binoculars{
+	pixel_x = 6;
+	pixel_y = -8
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -381,11 +391,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "cY" = (
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("GEC")
-	},
-/obj/structure/ore_box,
+/obj/structure/closet/crate/solarpanel_small,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
 "cZ" = (
@@ -555,8 +562,7 @@
 	name = "engine fuel pump"
 	},
 /obj/machinery/camera/autoname{
-	dir = 2;
-	network = list("GEC")
+	dir = 2
 	},
 /obj/machinery/light_switch{
 	dir = 2;
@@ -660,7 +666,19 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "fV" = (
+/obj/structure/closet/crate{
+	name = "Mission Accomplished"
+	},
+/obj/item/poster/mission_accomplished_1,
+/obj/item/poster/mission_accomplished_2,
+/obj/item/poster/mission_accomplished_3,
+/obj/item/poster/mission_accomplished_3,
+/obj/item/poster/mission_accomplished_4,
+/obj/item/poster/mission_accomplished_5,
+/obj/item/poster/mission_accomplished_6,
+/obj/item/poster/mission_accomplished_7,
 /obj/machinery/light/directional/west,
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/construction)
 "fZ" = (
@@ -741,11 +759,15 @@
 "gx" = (
 /obj/structure/rack,
 /obj/machinery/light/directional/west,
-/obj/item/gun/energy/kalix/pgf/heavy/sniper{
-	pixel_x = -3;
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/corner/opaque/neutral/full,
+/obj/item/gun/energy/kalix/pgf/medium{
+	pixel_y = -4;
+	pixel_x = -2
+	},
+/obj/item/gun/energy/kalix/pgf/heavy{
+	pixel_x = 0;
+	pixel_y = 5
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "gz" = (
@@ -1121,13 +1143,6 @@
 	pixel_y = 4
 	},
 /obj/item/trash/energybar,
-/obj/item/trash/sosjerky{
-	pixel_y = 5
-	},
-/obj/item/trash/popcorn{
-	pixel_x = 3;
-	pixel_y = 5
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "iI" = (
@@ -1152,13 +1167,11 @@
 	},
 /obj/machinery/light/floor/hangar,
 /obj/machinery/camera/autoname{
-	dir = 2;
-	network = list("GEC")
+	dir = 2
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "iT" = (
-/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plasteel/tech,
 /area/ship/construction)
 "iY" = (
@@ -1405,7 +1418,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plasteel/tech,
 /area/ship/construction)
 "lc" = (
@@ -1515,29 +1527,57 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "mL" = (
+/obj/structure/closet/crate{
+	icon_state = "engi_e_crate";
+	name = "storm crate"
+	},
+/obj/item/storage/box/stockparts/basic{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/obj/item/storage/box/stockparts/basic{
+	pixel_x = -6;
+	pixel_y = -1
+	},
+/obj/item/circuitboard/machine/smes{
+	pixel_x = 4;
+	pixel_y = -8
+	},
+/obj/item/circuitboard/machine/grounding_rod{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/circuitboard/machine/grounding_rod{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/circuitboard/machine/grounding_rod{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/circuitboard/machine/grounding_rod{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/item/circuitboard/machine/tesla_ground{
+	pixel_x = -4;
+	pixel_y = -13
+	},
+/obj/item/circuitboard/machine/tesla_ground{
+	pixel_x = -4;
+	pixel_y = -11
+	},
+/obj/item/circuitboard/machine/tesla_ground{
+	pixel_x = -4;
+	pixel_y = -9
+	},
+/obj/item/circuitboard/machine/tesla_ground{
+	pixel_x = -4;
+	pixel_y = -7
+	},
+/obj/effect/mapping_helpers/crate_shelve,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
-	},
-/obj/structure/closet/crate{
-	icon_state = "wooden";
-	name = "mining gear";
-	desc = "A rectangular steel crate with 'myning geer' spelled out in crayon on top."
-	},
-/obj/item/storage/bag/ore{
-	pixel_x = -7
-	},
-/obj/item/storage/bag/ore{
-	pixel_x = -7
-	},
-/obj/item/pickaxe,
-/obj/item/pickaxe,
-/obj/item/mining_scanner{
-	pixel_x = 4;
-	pixel_y = -3
-	},
-/obj/item/mining_scanner{
-	pixel_x = 4;
-	pixel_y = -3
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/construction)
@@ -1677,7 +1717,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/camera/autoname{
 	dir = 9;
-	network = list("GEC");
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/mono,
@@ -2406,22 +2445,21 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "uv" = (
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/construction)
 "uA" = (
 /obj/structure/table,
-/obj/item/storage/bag/tray{
-	pixel_y = 4
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 3
 	},
-/obj/item/storage/bag/tray{
-	pixel_y = 6
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 5
 	},
-/obj/item/storage/bag/tray{
-	pixel_y = 8
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 7
 	},
-/obj/item/storage/bag/tray{
-	pixel_y = 10
+/obj/item/storage/bag/tray/cafeteria{
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -2598,8 +2636,7 @@
 "wa" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("GEC")
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
@@ -2608,8 +2645,7 @@
 	dir = 4
 	},
 /obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("GEC")
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2707,8 +2743,7 @@
 "wT" = (
 /obj/machinery/computer/cryopod/directional/east,
 /obj/machinery/camera/autoname{
-	dir = 2;
-	network = list("GEC")
+	dir = 2
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
@@ -2841,10 +2876,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
 "xO" = (
-/obj/structure/crate_shelf,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/solarpanel_small,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/construction)
 "xS" = (
@@ -2899,6 +2935,12 @@
 /obj/effect/turf_decal/floordetail/tiled,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
+"yD" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/construction)
 "yF" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -2954,6 +2996,10 @@
 /obj/item/storage/firstaid/regular{
 	pixel_x = 9;
 	pixel_y = 2
+	},
+/obj/item/healthanalyzer{
+	pixel_x = 10;
+	pixel_y = -8
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -3040,10 +3086,8 @@
 /area/ship/engineering)
 "zO" = (
 /obj/machinery/iv_drip,
-/obj/machinery/camera/autoname{
-	dir = 8;
-	network = list("GEC");
-	pixel_y = -5
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -3148,6 +3192,9 @@
 /obj/item/radio/headset/pgf{
 	pixel_x = -8;
 	pixel_y = -9
+	},
+/obj/item/hand_labeler{
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
@@ -3312,8 +3359,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/camera/autoname{
-	dir = 2;
-	network = list("GEC")
+	dir = 2
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border{
 	dir = 8
@@ -3534,8 +3580,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("GEC")
+	dir = 1
 	},
 /obj/machinery/button/door{
 	id = "lib_dorm_shut";
@@ -3868,7 +3913,6 @@
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
 /obj/machinery/camera/autoname{
 	dir = 8;
-	network = list("GEC");
 	pixel_y = -5
 	},
 /turf/open/floor/plasteel/white,
@@ -4032,56 +4076,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "Gy" = (
-/obj/structure/closet/crate{
-	icon_state = "engi_e_crate";
-	name = "storm crate"
-	},
-/obj/item/storage/box/stockparts/basic{
-	pixel_x = -6;
-	pixel_y = -1
-	},
-/obj/item/storage/box/stockparts/basic{
-	pixel_x = -6;
-	pixel_y = -1
-	},
-/obj/item/circuitboard/machine/smes{
-	pixel_x = 4;
-	pixel_y = -8
-	},
-/obj/item/circuitboard/machine/grounding_rod{
-	pixel_x = 4;
-	pixel_y = -6
-	},
-/obj/item/circuitboard/machine/grounding_rod{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/item/circuitboard/machine/grounding_rod{
-	pixel_x = 4;
-	pixel_y = -2
-	},
-/obj/item/circuitboard/machine/grounding_rod{
-	pixel_x = 4;
-	pixel_y = 0
-	},
-/obj/item/circuitboard/machine/tesla_ground{
-	pixel_x = -4;
-	pixel_y = -13
-	},
-/obj/item/circuitboard/machine/tesla_ground{
-	pixel_x = -4;
-	pixel_y = -11
-	},
-/obj/item/circuitboard/machine/tesla_ground{
-	pixel_x = -4;
-	pixel_y = -9
-	},
-/obj/item/circuitboard/machine/tesla_ground{
-	pixel_x = -4;
-	pixel_y = -7
-	},
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
@@ -4127,6 +4126,11 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
 "GP" = (
+/obj/machinery/camera/autoname{
+	dir = 5
+	},
+/obj/structure/closet/crate/solarpanel_small,
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/construction)
 "GQ" = (
@@ -4190,9 +4194,6 @@
 /area/ship/security/armory)
 "Ha" = (
 /obj/structure/rack,
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = 10
-	},
 /obj/item/gun/energy/kalix/pgf{
 	pixel_y = 5
 	},
@@ -4588,8 +4589,7 @@
 	name = "engine fuel pump"
 	},
 /obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("GEC")
+	dir = 1
 	},
 /obj/machinery/light_switch{
 	dir = 1;
@@ -4761,10 +4761,6 @@
 	name = "Doctor's Locker";
 	req_access_txt = "5"
 	},
-/obj/item/clothing/gloves/gezena{
-	pixel_x = 3;
-	pixel_y = 11
-	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_x = 7;
 	pixel_y = -7
@@ -4816,6 +4812,18 @@
 /obj/item/clothing/head/gezena/flap/medic{
 	pixel_y = 1;
 	pixel_x = 12
+	},
+/obj/item/clothing/gloves/color/latex/nitrile{
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/item/clothing/mask/surgical{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/clothing/suit/apron/surgical{
+	pixel_x = 3;
+	pixel_y = -4
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -4959,16 +4967,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/closet/crate{
-	name = "Mission Accomplished"
-	},
-/obj/item/poster/mission_accomplished_7,
-/obj/item/poster/mission_accomplished_6,
-/obj/item/poster/mission_accomplished_5,
-/obj/item/poster/mission_accomplished_4,
-/obj/item/poster/mission_accomplished_3,
-/obj/item/poster/mission_accomplished_2,
-/obj/item/poster/mission_accomplished_1,
 /turf/open/floor/plasteel/tech,
 /area/ship/construction)
 "Nw" = (
@@ -5000,16 +4998,12 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "NF" = (
-/obj/structure/closet/crate/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation{
-	pixel_x = -7
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
 	},
-/obj/item/clothing/head/radiation{
-	pixel_x = -7
-	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/portable_atmospherics/pump,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plasteel/mono/dark,
 /area/ship/construction)
 "NM" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -5687,13 +5681,31 @@
 /area/ship/bridge)
 "Sh" = (
 /obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/borderfloorblack,
+/obj/structure/closet/crate/wooden{
+	desc = "A sturdy wooden crate with the label 'MINING EQUIPMENT' stamped into the lid.";
+	name = "mining equipment"
+	},
+/obj/item/storage/bag/ore{
+	pixel_x = -7
+	},
+/obj/item/storage/bag/ore{
+	pixel_x = -7
+	},
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/mining_scanner{
+	pixel_x = 4;
+	pixel_y = -3
+	},
+/obj/item/mining_scanner{
+	pixel_x = 4;
+	pixel_y = -3
+	},
+/obj/effect/mapping_helpers/crate_shelve,
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
 "Si" = (
@@ -5869,9 +5881,13 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/starboard)
 "TW" = (
-/obj/structure/closet/crate/solarpanel_small,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
+	},
+/obj/machinery/portable_atmospherics/scrubber,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/construction)
@@ -5896,8 +5912,7 @@
 	},
 /obj/machinery/light/floor/hangar,
 /obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("GEC")
+	dir = 1
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -6131,7 +6146,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/camera/autoname{
 	dir = 5;
-	network = list("GEC");
 	pixel_y = 8
 	},
 /turf/open/floor/plasteel/mono,
@@ -6508,11 +6522,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "Yu" = (
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/effect/turf_decal/borderfloorblack,
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/head/radiation{
+	pixel_x = -7
+	},
+/obj/item/clothing/head/radiation{
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/construction)
 "Yx" = (
@@ -6801,9 +6821,7 @@
 /obj/machinery/light/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/camera/autoname{
-	dir = 9;
-	network = list("GEC");
-	pixel_y = 5
+	dir = 9
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
@@ -7706,7 +7724,7 @@ TO
 aF
 bF
 Gy
-NF
+yD
 TW
 TO
 xz
@@ -7735,7 +7753,7 @@ It
 Nj
 lb
 iT
-TW
+NF
 TO
 xz
 xz

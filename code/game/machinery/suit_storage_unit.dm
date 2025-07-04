@@ -3,7 +3,7 @@
 // SUIT STORAGE UNIT /////////////////
 /obj/machinery/suit_storage_unit
 	name = "suit storage unit"
-	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
+	desc = "A commercial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon = 'icons/obj/machines/suit_storage.dmi'
 	icon_state = "ssu_classic"
 	base_icon_state = "ssu_classic"
@@ -58,8 +58,10 @@
 
 /obj/machinery/suit_storage_unit/industrial
 	name = "industrial suit storage unit"
+	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon_state = "industrial"
 	base_icon_state = "industrial"
+	circuit = /obj/item/circuitboard/machine/suit_storage_unit/industrial
 
 /obj/machinery/suit_storage_unit/industrial/atmos_firesuit
 	suit_type = /obj/item/clothing/suit/fire/atmos
@@ -69,8 +71,10 @@
 
 /obj/machinery/suit_storage_unit/inherit/industrial //i know its dirty but, eh you fix it, i am mapping rn
 	name = "industrial suit storage unit"
+	desc = "An industrial unit made to hold and decontaminate irradiated equipment. It comes with a built-in UV cauterization mechanism. A small warning label advises that organic matter should not be placed into the unit."
 	icon_state = "industrial"
 	base_icon_state = "industrial"
+	circuit = /obj/item/circuitboard/machine/suit_storage_unit/industrial
 
 /obj/machinery/suit_storage_unit/standard_unit
 	suit_type = /obj/item/clothing/suit/space/eva
@@ -188,6 +192,11 @@
 
 /obj/machinery/suit_storage_unit/minutemen/spotter
 	suit_type = /obj/item/clothing/suit/space/hardsuit/clip_spotter
+
+/obj/machinery/suit_storage_unit/minutemen/pilot
+	suit_type = /obj/item/clothing/suit/space/pilot
+	helmet_type = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+	mask_type = /obj/item/clothing/mask/breath
 
 //End shiptest suits
 

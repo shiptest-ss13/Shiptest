@@ -56,17 +56,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/cherryjelly = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
 	foodtype = GRAIN | FRUIT | SUGAR
 
-/obj/item/reagent_containers/food/snacks/notasandwich
-	name = "not-a-sandwich"
-	desc = "An unassuming sandwich, of which you have never met personally."
-	icon = 'icons/obj/food/burgerbread.dmi'
-	icon_state = "notasandwich"
-	trash = /obj/item/trash/plate
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 6)
-	tastes = list("nothing suspicious" = 1)
-	foodtype = GRAIN | GROSS
-
 /obj/item/reagent_containers/food/snacks/jelliedtoast
 	name = "jellied toast"
 	desc = "A slice of toast coated with fruit jelly."

@@ -16,6 +16,8 @@
 #define CHAT_MESSAGE_MAX_LENGTH 110
 /// Maximum precision of float before rounding errors occur (in this context)
 #define CHAT_LAYER_Z_STEP 0.0001
+/// The dimensions to scale language icons in the message
+#define CHAT_LANGUAGE_ICON_SIZE 9
 /// The number of z-layer 'slices' usable by the chat message layering
 #define CHAT_LAYER_MAX_Z (CHAT_LAYER_MAX - CHAT_LAYER) / CHAT_LAYER_Z_STEP
 /// Macro from Lummox used to get height from a MeasureText proc
@@ -56,8 +58,9 @@
  * * owner - The mob that owns this overlay, only this mob will be able to view it
  * * extra_classes - Extra classes to apply to the span that holds the text
  * * lifespan - The lifespan of the message in deciseconds
+ * * message_language - The language of the message, passed to generate_image to display its icon
  */
-/datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = list(), lifespan = CHAT_MESSAGE_LIFESPAN)
+/datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = list(), lifespan = CHAT_MESSAGE_LIFESPAN, datum/language/message_language)
 	. = ..()
 	if (!istype(target))
 		CRASH("Invalid target given for chatmessage")
@@ -65,7 +68,7 @@
 		stack_trace("/datum/chatmessage created with [isnull(owner) ? "null" : "invalid"] mob owner")
 		qdel(src)
 		return
-	INVOKE_ASYNC(src, PROC_REF(generate_image), text, target, owner, extra_classes, lifespan)
+	INVOKE_ASYNC(src, PROC_REF(generate_image), text, target, owner, extra_classes, lifespan, message_language)
 
 /datum/chatmessage/Destroy()
 	if (owned_by)
@@ -95,8 +98,9 @@
  * * owner - The mob that owns this overlay, only this mob will be able to view it
  * * extra_classes - Extra classes to apply to the span that holds the text
  * * lifespan - The lifespan of the message in deciseconds
+ * * message_language - The language (if any) that the message is in
  */
-/datum/chatmessage/proc/generate_image(text, atom/target, mob/owner, list/extra_classes, lifespan)
+/datum/chatmessage/proc/generate_image(text, atom/target, mob/owner, list/extra_classes, lifespan, datum/language/message_language)
 	// Register client who owns this message
 	owned_by = owner.client
 	RegisterSignal(owned_by, COMSIG_PARENT_QDELETING, PROC_REF(on_parent_qdel))
@@ -136,6 +140,12 @@
 	else if("looc" in extra_classes)
 		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "looc")
 		text =  "\icon[r_icon]&nbsp;[text]"
+
+	var/datum/language/language = GLOB.language_datum_instances[message_language]
+	if(language?.display_icon(owner))
+		var/icon/l_icon = icon(language.icon, icon_state = language.icon_state)
+		l_icon.Scale(CHAT_LANGUAGE_ICON_SIZE, CHAT_LANGUAGE_ICON_SIZE)
+		text = "\icon[l_icon]&nbsp;[text]"
 
 	var/tgt_color = target.chat_color
 	if("looc" in extra_classes)
@@ -234,7 +244,7 @@
 	else if(runechat_flags & LOOC_MESSAGE)
 		new /datum/chatmessage(raw_message, speaker, src, list("looc", "italics"))
 	else
-		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans)
+		new /datum/chatmessage(raw_message, speaker, src, spans, message_language = message_language)
 
 
 // Tweak these defines to change the available color ranges

@@ -16,13 +16,13 @@
 		return
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 		return
 
 	if(user.a_intent == INTENT_HARM)
 		var/R
-		M.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [M]!</span>", \
-						"<span class='userdanger'>[user] splashes the contents of [src] onto you!</span>")
+		M.visible_message(span_danger("[user] splashes the contents of [src] onto [M]!"), \
+						span_userdanger("[user] splashes the contents of [src] onto you!"))
 		if(reagents)
 			for(var/datum/reagent/A in reagents.reagent_list)
 				R += "[A] ([num2text(A.volume)]),"
@@ -38,17 +38,17 @@
 		if(!canconsume(M, user))
 			return
 		if(M != user)
-			M.visible_message("<span class='danger'>[user] attempts to feed [M] something from [src].</span>", \
-						"<span class='userdanger'>[user] attempts to feed you something from [src].</span>")
+			M.visible_message(span_danger("[user] attempts to feed [M] something from [src]."), \
+						span_userdanger("[user] attempts to feed you something from [src]."))
 			if(!do_after(user, target = M))
 				return
 			if(!reagents || !reagents.total_volume)
 				return // The drink might be empty after the delay, such as by spam-feeding
-			M.visible_message("<span class='danger'>[user] feeds [M] something from [src].</span>", \
-						"<span class='userdanger'>[user] feeds you something from [src].</span>")
+			M.visible_message(span_danger("[user] feeds [M] something from [src]."), \
+						span_userdanger("[user] feeds you something from [src]."))
 			log_combat(user, M, "fed", reagents.log_list())
 		else
-			to_chat(user, "<span class='notice'>You swallow a gulp of [src].</span>")
+			to_chat(user, span_notice("You swallow a gulp of [src]."))
 		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 
@@ -62,36 +62,36 @@
 
 	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, span_warning("[src] is empty!"))
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			to_chat(user, span_warning("[target] is full."))
 			return
 
 		var/trans = reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution to [target].</span>")
+		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty and can't be refilled!</span>")
+			to_chat(user, span_warning("[target] is empty and can't be refilled!"))
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, span_warning("[src] is full."))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
+		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
 
 	else if(reagents.total_volume && is_drainable())
 		switch(user.a_intent)
 			if(INTENT_DISARM)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
+									span_notice("You splash the contents of [src] onto [target]."))
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
 				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
@@ -100,15 +100,15 @@
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, "<span class='notice'>You heat [name] with [I]!</span>")
+		to_chat(user, span_notice("You heat [name] with [I]!"))
 
 	if(istype(I, /obj/item/reagent_containers/food/snacks/egg)) //breaking eggs
 		var/obj/item/reagent_containers/food/snacks/egg/E = I
 		if(reagents)
 			if(reagents.total_volume >= reagents.maximum_volume)
-				to_chat(user, "<span class='notice'>[src] is full.</span>")
+				to_chat(user, span_notice("[src] is full."))
 			else
-				to_chat(user, "<span class='notice'>You break [E] in [src].</span>")
+				to_chat(user, span_notice("You break [E] in [src]."))
 				E.reagents.trans_to(src, E.reagents.total_volume, transfered_by = user)
 				qdel(E)
 			return
@@ -262,13 +262,13 @@
 /obj/item/reagent_containers/glass/bucket/attackby(obj/O, mob/user, params)
 	if(istype(O, /obj/item/mop))
 		if(reagents.total_volume < 1)
-			to_chat(user, "<span class='warning'>[src] is out of water!</span>")
+			to_chat(user, span_warning("[src] is out of water!"))
 		else
 			reagents.trans_to(O, 5, transfered_by = user)
-			to_chat(user, "<span class='notice'>You wet [O] in [src].</span>")
+			to_chat(user, span_notice("You wet [O] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 	else if(isprox(O)) //This works with wooden buckets for now. Somewhat unintended, but maybe someone will add sprites for it soon(TM)
-		to_chat(user, "<span class='notice'>You add [O] to [src].</span>")
+		to_chat(user, span_notice("You add [O] to [src]."))
 		qdel(O)
 		qdel(src)
 		user.put_in_hands(new /obj/item/bot_assembly/cleanbot)
@@ -279,7 +279,7 @@
 	..()
 	if (slot == ITEM_SLOT_HEAD)
 		if(reagents.total_volume)
-			to_chat(user, "<span class='userdanger'>[src]'s contents spill all over you!</span>")
+			to_chat(user, span_userdanger("[src]'s contents spill all over you!"))
 			reagents.expose(user, TOUCH)
 			reagents.clear_reagents()
 		reagents.flags = NONE
@@ -319,36 +319,60 @@
 
 	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, span_warning("[src] is empty!"))
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			to_chat(user, span_warning("[target] is full."))
 			return
 		to_chat(user, "<span class='notice'>You begin to drain something from [src].")
-		if(do_after(user, 25, target = src))
+		if(do_after(user, 2.5 SECONDS, target = src))
 			var/trans = reagents.trans_id_to(target, reagents.get_master_reagent_id(), amount_per_transfer_from_this,)
-			to_chat(user, "<span class='notice'>You filter off [trans] unit\s of the solution into [target].</span>")
+			to_chat(user, span_notice("You filter off [trans] unit\s of the solution into [target]."))
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty and can't be refilled!</span>")
+			to_chat(user, span_warning("[target] is empty and can't be refilled!"))
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, span_warning("[src] is full."))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
+		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
 
 	else if(reagents.total_volume)
 		switch(user.a_intent)
 			if(INTENT_HELP)
 				attempt_pour(target, user)
 			if(INTENT_HARM)
-				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
+									span_notice("You splash the contents of [src] onto [target]."))
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
 				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+
+/obj/item/reagent_containers/glass/filter/attempt_pour(atom/target, mob/user)
+	if(ismob(target) || !reagents.total_volume || !check_allowed_items(target, target_self = FALSE))
+		return
+
+	target.visible_message(span_notice("[user] attempts to pour [src] onto [target]."))
+	if(!do_after(user, 2.5 SECONDS, target=target))
+		return
+	// reagents may have been emptied
+	if(!is_drainable() || !reagents.total_volume)
+		return
+
+	var/datum/reagent/poured_reagent = reagents.get_master_reagent()
+	var/amount = min(poured_reagent.volume, amount_per_transfer_from_this)
+
+	playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+	target.visible_message(span_notice("[user] pours [src] onto [target]."))
+
+	log_combat(user, target, "poured [amount]u of [poured_reagent.name]", "in [AREACOORD(target)]")
+	log_game("[key_name(user)] poured [amount]u of [poured_reagent.name] on [target] in [AREACOORD(target)].")
+
+	// don't use trans_to, because we're not ADDING it to the object, we're just... pouring it.
+	reagents.expose_single(poured_reagent, target, TOUCH, amount/poured_reagent.volume)
+	reagents.remove_reagent(poured_reagent.type, amount)

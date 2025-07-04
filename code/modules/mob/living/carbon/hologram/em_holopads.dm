@@ -38,7 +38,7 @@
 	if(!SSticker.HasRoundStarted() || !loc || !em_starting || em)
 		return ..()
 	if(is_banned_from(user.key, ROLE_POSIBRAIN))
-		to_chat(user, "<span class='warning'>You are banned from becoming a hologram!</span>")
+		to_chat(user, span_warning("You are banned from becoming a hologram!"))
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
@@ -172,11 +172,6 @@
 	name = "advanced logistics holopad"
 	em_name = "logistics"
 	em_spawn_type = /mob/living/simple_animal/hologram/cargo
-
-/obj/machinery/holopad/emergency/clown
-	name = "advanced comedy holopad"
-	em_name = "comedy"
-	em_spawn_type = /mob/living/simple_animal/hologram/clown
 
 /obj/machinery/holopad/emergency/detective
 	name = "advanced forensics holopad"

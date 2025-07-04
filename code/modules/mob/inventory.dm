@@ -150,7 +150,7 @@
 
 /mob/proc/put_in_hand(obj/item/I, hand_index, forced = FALSE, ignore_anim = TRUE)
 	if(forced || can_put_in_hand(I, hand_index))
-		if(isturf(I.loc) && !ignore_anim)
+		if(!ignore_anim)
 			I.do_pickup_animation(src)
 		if(hand_index == null)
 			return FALSE
@@ -213,13 +213,13 @@
 		if (merge_stacks)
 			if (istype(active_stack) && active_stack.can_merge(item_stack))
 				if (item_stack.merge(active_stack))
-					to_chat(usr, "<span class='notice'>Your [active_stack.name] stack now contains [active_stack.get_amount()] [active_stack.singular_name]\s.</span>")
+					to_chat(usr, span_notice("Your [active_stack.name] stack now contains [active_stack.get_amount()] [active_stack.singular_name]\s."))
 					return TRUE
 			else
 				var/obj/item/stack/inactive_stack = get_inactive_held_item()
 				if (istype(inactive_stack) && inactive_stack.can_merge(item_stack))
 					if (item_stack.merge(inactive_stack))
-						to_chat(usr, "<span class='notice'>Your [inactive_stack.name] stack now contains [inactive_stack.get_amount()] [inactive_stack.singular_name]\s.</span>")
+						to_chat(usr, span_notice("Your [inactive_stack.name] stack now contains [inactive_stack.get_amount()] [inactive_stack.singular_name]\s."))
 						return TRUE
 
 	if(put_in_active_hand(I, forced))
@@ -410,7 +410,7 @@
 
 /obj/item/proc/equip_to_best_slot(mob/M, swap=FALSE)
 	if(src != M.get_active_held_item())
-		to_chat(M, "<span class='warning'>You are not holding anything to equip!</span>")
+		to_chat(M, span_warning("You are not holding anything to equip!"))
 		return FALSE
 
 	if(M.equip_to_appropriate_slot(src, swap))
@@ -431,7 +431,7 @@
 		if(SEND_SIGNAL(I, COMSIG_TRY_STORAGE_INSERT, src, M))
 			return TRUE
 
-	to_chat(M, "<span class='warning'>You are unable to equip that!</span>")
+	to_chat(M, span_warning("You are unable to equip that!"))
 	return FALSE
 
 
@@ -457,7 +457,7 @@
 	var/obj/item/I = get_active_held_item()
 	if (I)
 		if(!do_after(src, 1 SECONDS, target = I))
-			to_chat(src, "<span class='warning'>You fumble with your equipment, accidentally dropping it on the floor!</span>")
+			to_chat(src, span_warning("You fumble with your equipment, accidentally dropping it on the floor!"))
 			dropItemToGround(I)
 			return
 		I.equip_to_best_slot(src, TRUE)

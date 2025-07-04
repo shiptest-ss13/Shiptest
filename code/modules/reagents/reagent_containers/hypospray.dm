@@ -42,7 +42,7 @@
 ///Handles all injection checks, injection and logging.
 /obj/item/reagent_containers/hypospray/proc/inject(mob/living/M, mob/user)
 	if(!reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 		return FALSE
 	if(!iscarbon(M))
 		return FALSE
@@ -55,8 +55,8 @@
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
 	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
-		to_chat(M, "<span class='warning'>You feel a tiny prick!</span>")
-		to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")
+		to_chat(M, span_warning("You feel a tiny prick!"))
+		to_chat(user, span_notice("You inject [M] with [src]."))
 		playsound(loc, pick('sound/items/hypospray.ogg','sound/items/hypospray2.ogg'), 50, TRUE)
 		var/fraction = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 
@@ -68,7 +68,7 @@
 			else
 				reagents.expose(M, INJECT, fraction)
 				trans = reagents.copy_to(M, amount_per_transfer_from_this)
-			to_chat(user, "<span class='notice'>[trans] unit\s injected. [reagents.total_volume] unit\s remaining in [src].</span>")
+			to_chat(user, span_notice("[trans] unit\s injected. [reagents.total_volume] unit\s remaining in [src]."))
 			log_combat(user, M, "injected", src, "([contained])")
 		return TRUE
 	return FALSE
@@ -140,9 +140,9 @@
 /obj/item/reagent_containers/hypospray/medipen/examine()
 	. = ..()
 	if(reagents && reagents.reagent_list.len)
-		. += "<span class='notice'>It is currently loaded.</span>"
+		. += span_notice("It is currently loaded.")
 	else
-		. += "<span class='notice'>It is spent.</span>"
+		. += span_notice("It is spent.")
 
 /obj/item/reagent_containers/hypospray/medipen/stimpack //goliath kiting
 	name = "stimpack medipen"
@@ -371,6 +371,13 @@
 	base_icon_state = "syndipen"
 	item_state = "syndipen"
 
+/obj/item/reagent_containers/hypospray/medipen/placebatol
+	name = "prescription medipen"
+	desc = "An injector filled with some prescribed substance."
+	list_reagents = list(/datum/reagent/drug/placebatol = 15)
+	volume = 15
+	amount_per_transfer_from_this = 15
+
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
 	name = "hypospray mk.II"
@@ -458,34 +465,34 @@
 		var/obj/item/reagent_containers/glass/bottle/vial/V = I
 		V.forceMove(user.loc)
 		user.put_in_hands(V)
-		to_chat(user, "<span class='notice'>You remove [vial] from [src].</span>")
+		to_chat(user, span_notice("You remove [vial] from [src]."))
 		vial = null
 		update_appearance()
 		playsound(loc, SOUND_EMPTY_MAG, 50, 1)
 	else
-		to_chat(user, "<span class='notice'>This hypo isn't loaded!</span>")
+		to_chat(user, span_notice("This hypo isn't loaded!"))
 		return
 
 /obj/item/hypospray/mkii/attackby(obj/item/I, mob/living/user)
 	if((istype(I, /obj/item/reagent_containers/glass/bottle/vial) && vial != null))
 		if(!quickload)
-			to_chat(user, "<span class='warning'>[src] can not hold more than one vial!</span>")
+			to_chat(user, span_warning("[src] can not hold more than one vial!"))
 			return FALSE
 		unload_hypo(vial, user)
 	if((istype(I, /obj/item/reagent_containers/glass/bottle/vial)))
 		var/obj/item/reagent_containers/glass/bottle/vial/V = I
 		if(!is_type_in_list(V, allowed_containers))
-			to_chat(user, "<span class='notice'>[src] doesn't accept this type of vial.</span>")
+			to_chat(user, span_notice("[src] doesn't accept this type of vial."))
 			return FALSE
 		if(!user.transferItemToLoc(V,src))
 			return FALSE
 		vial = V
-		user.visible_message("<span class='notice'>[user] has loaded a vial into [src].</span>","<span class='notice'>You have loaded [vial] into [src].</span>")
+		user.visible_message(span_notice("[user] has loaded a vial into [src]."),span_notice("You have loaded [vial] into [src]."))
 		update_appearance()
 		playsound(loc, 'sound/weapons/autoguninsert.ogg', 35, 1)
 		return TRUE
 	else
-		to_chat(user, "<span class='notice'>This doesn't fit in [src].</span>")
+		to_chat(user, span_notice("This doesn't fit in [src]."))
 		return FALSE
 
 /obj/item/hypospray/mkii/AltClick(mob/user)
@@ -530,20 +537,20 @@
 			return
 
 	if(!L && !target.is_injectable()) //only checks on non-living mobs, due to how can_inject() handles
-		to_chat(user, "<span class='warning'>You cannot directly fill [target]!</span>")
+		to_chat(user, span_warning("You cannot directly fill [target]!"))
 		return
 
 	if(target.reagents.total_volume >= target.reagents.maximum_volume)
-		to_chat(user, "<span class='notice'>[target] is full.</span>")
+		to_chat(user, span_notice("[target] is full."))
 		return
 
 	if(ishuman(L))
 		var/obj/item/bodypart/affecting = L.get_bodypart(check_zone(user.zone_selected))
 		if(!affecting)
-			to_chat(user, "<span class='warning'>The limb is missing!</span>")
+			to_chat(user, span_warning("The limb is missing!"))
 			return
 		if(!IS_ORGANIC_LIMB(affecting))
-			to_chat(user, "<span class='notice'>Medicine won't work on a robotic limb!</span>")
+			to_chat(user, span_notice("Medicine won't work on a robotic limb!"))
 			return
 
 	var/contained = vial.reagents.log_list()
@@ -554,8 +561,8 @@
 			if(HYPO_INJECT)
 				if(L) //living mob
 					if(L != user)
-						L.visible_message("<span class='danger'>[user] is trying to inject [L] with [src]!</span>", \
-										"<span class='userdanger'>[user] is trying to inject [L] with [src]!</span>")
+						L.visible_message(span_danger("[user] is trying to inject [L] with [src]!"), \
+										span_userdanger("[user] is trying to inject [L] with [src]!"))
 						if(!do_after(user, inject_wait, L))
 							return
 						if(!penetrates && !L.can_inject(user, 1))
@@ -564,8 +571,8 @@
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
 							return
-						L.visible_message("<span class='danger'>[user] uses the [src] on [L]!</span>", \
-										"<span class='userdanger'>[user] uses the [src] on [L]!</span>")
+						L.visible_message(span_danger("[user] uses the [src] on [L]!"), \
+										span_userdanger("[user] uses the [src] on [L]!"))
 					else
 						if(!do_after(user, inject_self, L))
 							return
@@ -585,13 +592,13 @@
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)
 					playsound(loc,  pick('sound/items/hypospray.ogg','sound/items/hypospray2.ogg'), 50, 1, -1)
-				to_chat(user, "<span class='notice'>You inject [vial.amount_per_transfer_from_this] units of the solution. The hypospray's cartridge now contains [vial.reagents.total_volume] units.</span>")
+				to_chat(user, span_notice("You inject [vial.amount_per_transfer_from_this] units of the solution. The hypospray's cartridge now contains [vial.reagents.total_volume] units."))
 
 			if(HYPO_SPRAY)
 				if(L) //living mob
 					if(L != user)
-						L.visible_message("<span class='danger'>[user] is trying to spray [L] with [src]!</span>", \
-										"<span class='userdanger'>[user] is trying to spray [L] with [src]!</span>")
+						L.visible_message(span_danger("[user] is trying to spray [L] with [src]!"), \
+										span_userdanger("[user] is trying to spray [L] with [src]!"))
 						if(!do_after(user, spray_wait, L))
 							return
 						if(!penetrates && !L.can_inject(user, 1))
@@ -600,8 +607,8 @@
 							return
 						if(L.reagents.total_volume >= L.reagents.maximum_volume)
 							return
-						L.visible_message("<span class='danger'>[user] uses the [src] on [L]!</span>", \
-										"<span class='userdanger'>[user] uses the [src] on [L]!</span>")
+						L.visible_message(span_danger("[user] uses the [src] on [L]!"), \
+										span_userdanger("[user] uses the [src] on [L]!"))
 					else
 						if(!do_after(user, spray_self, L))
 							return
@@ -620,9 +627,9 @@
 					playsound(loc,'sound/items/hypospray_long.ogg',50, 1, -1)
 				if(vial.amount_per_transfer_from_this < 15)
 					playsound(loc,  pick('sound/items/hypospray.ogg','sound/items/hypospray2.ogg'), 50, 1, -1)
-				to_chat(user, "<span class='notice'>You spray [vial.amount_per_transfer_from_this] units of the solution. The hypospray's cartridge now contains [vial.reagents.total_volume] units.</span>")
+				to_chat(user, span_notice("You spray [vial.amount_per_transfer_from_this] units of the solution. The hypospray's cartridge now contains [vial.reagents.total_volume] units."))
 	else
-		to_chat(user, "<span class='notice'>[src] doesn't work here!</span>")
+		to_chat(user, span_notice("[src] doesn't work here!"))
 		return
 
 /obj/item/hypospray/mkii/attack_self(mob/living/user)
@@ -649,7 +656,10 @@
 			to_chat(M, "[src] is now set to spray contents on application.")
 
 /obj/item/hypospray/mkii/CtrlClick()
+	. = ..()
 	var/mob/M = usr
+	if(!M.canUseTopic(src, BE_CLOSE))
+		return
 	switch(mode)
 		if(HYPO_SPRAY)
 			mode = HYPO_INJECT

@@ -237,6 +237,8 @@
 /proc/Gibberish(text, replace_characters = FALSE, chance = 50)
 	text = html_decode(text)
 	. = ""
+	if(!chance)
+		return sanitize(.)
 	var/rawchar = ""
 	var/letter = ""
 	var/lentext = length(text)
@@ -422,8 +424,8 @@
 			continue
 		var/orbit_link
 		if (source && action == NOTIFY_ORBIT)
-			orbit_link = " <a href='?src=[REF(O)];follow=[REF(source)]'>(Orbit)</a>"
-		to_chat(O, "<span class='ghostalert'>[message][(enter_link) ? " [enter_link]" : ""][orbit_link]</span>")
+			orbit_link = " <a href='byond://?src=[REF(O)];follow=[REF(source)]'>(Orbit)</a>"
+		to_chat(O, span_ghostalert("[message][(enter_link) ? " [enter_link]" : ""][orbit_link]"))
 		if(ghost_sound)
 			SEND_SOUND(O, sound(ghost_sound, volume = notify_volume))
 		if(flashwindow)
@@ -461,9 +463,9 @@
 				if(affecting.get_curable_damage(integrity_damage_incurred ? integrity_loss : 0) <= 0)
 					var/limb_hp_loss = affecting.integrity_loss-affecting.integrity_ignored
 					if(limb_hp_loss+integrity_loss >= affecting.max_damage)
-						to_chat(user, "<span class='warning'>[affecting] is destroyed! It needs structural repairs to be repaired any further.</span>")
+						to_chat(user, span_warning("[affecting] is destroyed! It needs structural repairs to be repaired any further."))
 					else
-						to_chat(user, "<span class='warning'>[affecting] has taken too much structural damage, and needs surgery to improve any further.</span>")
+						to_chat(user, span_warning("[affecting] has taken too much structural damage, and needs surgery to improve any further."))
 					return
 				if (integrity_damage_incurred)
 					affecting.take_integrity_damage(integrity_loss)
@@ -471,10 +473,10 @@
 			if(affecting.heal_damage(brute_heal, burn_heal, 0, BODYTYPE_ROBOTIC))
 				H.update_damage_overlays()
 			user.visible_message("[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [parse_zone(affecting.body_zone)].", \
-			"<span class='notice'>You fix some of the [dam ? "dents on" : "burnt wires in"] [H == user ? "your" : "[H]'s"] [parse_zone(affecting.body_zone)].</span>")
+			span_notice("You fix some of the [dam ? "dents on" : "burnt wires in"] [H == user ? "your" : "[H]'s"] [parse_zone(affecting.body_zone)]."))
 			return 1 //successful heal
 		else
-			to_chat(user, "<span class='warning'>[affecting] is already in good condition!</span>")
+			to_chat(user, span_warning("[affecting] is already in good condition!"))
 
 ///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
 /proc/isAdminObserver(mob/user)
@@ -612,7 +614,7 @@
 			dissectionmsg = " via Experimental Dissection"
 		else if(HAS_TRAIT_FROM(src, TRAIT_DISSECTED,"Thorough Dissection"))
 			dissectionmsg = " via Thorough Dissection"
-		. += "<span class='notice'>This body has been dissected and analyzed[dissectionmsg].</span><br>"
+		. += "[span_notice("This body has been dissected and analyzed[dissectionmsg].")]<br>"
 
 /**
  * Get the list of keywords for policy config
