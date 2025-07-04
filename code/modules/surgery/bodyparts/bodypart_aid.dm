@@ -105,7 +105,7 @@
 	var/helps_disabled = TRUE
 	/// Total condition of our splint, the more we use it the more it gets looser
 	var/sling_condition = 5
-	
+
 /datum/bodypart_aid/splint/get_description()
 	var/desc
 	switch(sling_condition)
@@ -133,14 +133,13 @@
 
 /datum/bodypart_aid/splint/improvised
 	name = "improvised splint"
-	splint_factor = 0.6
-	helps_disabled = FALSE
+	splint_factor = 0.7
 	stack_to_drop = /obj/item/stack/medical/splint/improvised
 	overlay_prefix = "splint_improv"
 
 /datum/bodypart_aid/splint/hunter
 	name = "hunter splint"
-	splint_factor = 0.5
+	splint_factor = 0.4
 	stack_to_drop = /obj/item/stack/medical/splint/hunter
 	overlay_prefix = "splint_tribal"
 

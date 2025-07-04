@@ -176,8 +176,6 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define EMBEDDED_JOSTLE_PAIN_MULTIPLIER 1
 ///This percentage of all pain will be dealt as stam damage rather than brute (0-1)
 #define EMBEDDED_PAIN_STAM_PCT 0.0
-///This percentage of all pain will be dealt as stam damage rather than brute (0-1)
-#define EMBEDDED_PAIN_STAM_PCT 0.0
 ///For thrown weapons, every extra speed it's thrown at above its normal throwspeed will add this to the embed chance
 #define EMBED_CHANCE_SPEED_BONUS 10
 

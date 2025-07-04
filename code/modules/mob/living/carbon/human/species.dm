@@ -1592,6 +1592,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		)
 		to_chat(user, span_warning("Your shove at [target] was blocked!"))
 		return FALSE
+
 	if(attacker_style && attacker_style.disarm_act(user,target))
 		return TRUE
 	if(user.resting || user.IsKnockdown())
@@ -1622,17 +1623,16 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						span_danger("[M] attempts to touch you!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, M)
 		to_chat(M, span_warning("You attempt to touch [H]!"))
 		return 0
+
 	SEND_SIGNAL(M, COMSIG_MOB_ATTACK_HAND, M, H, attacker_style)
+
 	switch(M.a_intent)
 		if("help")
 			help(M, H, attacker_style)
-
 		if("grab")
 			grab(M, H, attacker_style)
-
 		if("harm")
 			harm(M, H, attacker_style)
-
 		if("disarm")
 			disarm(M, H, attacker_style)
 
@@ -1661,11 +1661,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if((I.item_flags & SURGICAL_TOOL) && user.a_intent == INTENT_HELP && (H.mobility_flags & ~MOBILITY_STAND) && (LAZYLEN(H.surgeries) > 0))
 		Iwound_bonus = CANT_WOUND
 
-
 	H.send_item_attack_message(I, user, hit_area, affecting)
 	var/attack_direction = get_dir(user, H)
 	apply_damage(I.force , I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), attack_direction = attack_direction)
-
 
 	if(!I.force)
 		return 0 //item force is zero
