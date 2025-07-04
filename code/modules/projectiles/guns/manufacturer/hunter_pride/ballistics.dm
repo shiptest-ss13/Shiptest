@@ -1170,7 +1170,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	)
 
 /obj/item/gun/ballistic/automatic/assault/invictus
-	name "HP Invictus"
+	name = "HP Invictus"
 	desc = "WIP"
 	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
@@ -1182,11 +1182,11 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
-	default_ammo_type = /obj/item/ammo_box_magazine/invictus_308_mag
-	allowed_ammo_types = /obj/item/ammo_box_magazine/invictus_308_mag
+	default_ammo_type = /obj/item/ammo_box/magazine/invictus_308_mag
+	allowed_ammo_types = /obj/item/ammo_box/magazine/invictus_308_mag
 
-	gun_firemodes = list(FIREMODE_AUTO)
-	default_firemode = FIREMODE_AUTO
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -1221,3 +1221,16 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 
 EMPTY_GUN_HELPER(automatic/assault/invictus)
 NO_MAG_GUN_HELPER(automatic/assault/invictus)
+
+/obj/item/ammo_box/magazine/invictus_308_mag
+	name = "Invictus magazine (.308)"
+	desc = "A 20 round box magazine for Rottweiler machine gun. These rounds do good damage with significant armor penetration."
+	base_icon_state = "invictus_mag-0"
+	icon_state = "invictus_mag-1"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/invictus_308_mag/empty
+	start_empty = TRUE

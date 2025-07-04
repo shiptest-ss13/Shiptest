@@ -107,17 +107,3 @@
 
 /obj/item/ammo_box/magazine/illestren_a850r/empty
 	start_empty = TRUE
-
-/obj/item/ammo_box_magazine/invictus_308_mag
-	name = "Invictus magazine (.308)"
-	desc = "A 20 round box magazine for Rottweiler machine gun. These rounds do good damage with significant armor penetration."
-	base_icon_state = "invictus_mag-0"
-	icon_state = "invictus_mag-1"
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = ".308"
-	max_ammo = 20
-	w_class = WEIGHT_CLASS_SMALL
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-
-/obj/item/ammo_box_magazine/invictus_308_mag/empty
-	start_empty = TRUE
