@@ -93,8 +93,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/m17)
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 
-	recoil_unwielded = 4
-	recoil = 1
+	recoil_unwielded = 3
+	recoil = 0.5
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
