@@ -16,7 +16,7 @@
 	var/mining_rate = 0 //Amount of material gained on a mining tick
 	var/mining_chance = 0 //Chance a mining tick results in materials gained
 	//Ores that can be mined (and their weight)
-	var/list/minable_ores = list(/datum/material/iron = 4, /datum/material/glass = 4, /*/datum/material/copper = 0.6*/)
+	var/list/minable_ores = list(/datum/material/iron = 4, /datum/material/glass = 4)
 	var/list/tier2_ores = list(/datum/material/plasma = 2, /datum/material/silver = 3, /datum/material/titanium = 3)
 	var/list/tier3_ores = list(/datum/material/gold = 2, /datum/material/uranium = 1)
 	var/list/tier4_ores = list(/datum/material/diamond = 1)

@@ -6,16 +6,11 @@
 
 /datum/outfit/job/nanotrasen
 	name = "Nanotrasen - Base Outfit"
+	faction = FACTION_PLAYER_NANOTRASEN
 	faction_icon = "bg_nanotrasen"
 
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
-
-/datum/outfit/job/nanotrasen/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.faction |= list(FACTION_PLAYER_NANOTRASEN)
 
 // Command //
 
@@ -162,6 +157,14 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
+
+/datum/outfit/job/nanotrasen/security/disarmed
+	name = "Nanotrasen - Security Officer (Disarmed)"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
+
+	suit = null
+	chameleon_extras = null
 
 // Warden
 /datum/outfit/job/nanotrasen/warden

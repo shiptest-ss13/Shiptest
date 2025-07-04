@@ -43,34 +43,13 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "gold"
 	id = "gold"
 	desc = "Gold"
-	color = "#fff032" //gold is shiny, but not as bright as bananium
+	color = "#fff032" //gold is shiny
 	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold
 	value_per_unit = 0.0625
 	beauty_modifier = 0.15
 	armor_modifiers = list("melee" = 1.1, "bullet" = 1.1, "laser" = 1.15, "energy" = 1.15, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 0.7, "acid" = 1.1)
-
-/datum/material/carbon
-	name = "carbon"
-	id = "carbon"
-	desc = "Carbon is an essential component of life, but also used as a primitive source of energy by virutally every sapient species in history."
-	color = "#665b5b"
-	categories = list(MAT_CATEGORY_ORE = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/coal
-	value_per_unit = 1
-
-/datum/material/carbon/on_applied_obj(obj/source, amount, material_flags)
-	. = ..()
-	if(material_flags & MATERIAL_AFFECT_STATISTICS)
-		var/obj/carbon = source
-		carbon.resistance_flags |= FLAMMABLE
-
-/datum/material/carbon/on_removed_obj(obj/source, material_flags)
-	. = ..()
-	if(material_flags & MATERIAL_AFFECT_STATISTICS)
-		var/obj/carbon = source
-		carbon.resistance_flags &= ~FLAMMABLE
 
 ///Has no special properties
 /datum/material/diamond
@@ -166,60 +145,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	value_per_unit = 0.0125
 	beauty_modifier = -0.01
 	armor_modifiers = list("melee" = 1.5, "bullet" = 1.1, "laser" = 0.3, "energy" = 0.5, "bomb" = 1, "bio" = 1, "rad" = 1, "fire" = 1.1, "acid" = 1)
-
-/datum/material/copper
-	name = "copper"
-	id = "copper"
-	desc = "Copper is a soft, malleable, and ductile metal with very high thermal and electrical conductivity."
-	color = "#c47a3d"
-	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/copper
-	value_per_unit = 0.0025
-
-/datum/material/lead
-	name = "lead"
-	id = "lead"
-	desc = "Lead is a soft, malleable, and heavy metal found in sedimentary and igneous layers of the crust."
-	color = "#60706b"
-	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/lead
-	value_per_unit = 0.0025
-
-/datum/material/sulfur
-	name = "sulfur"
-	id = "sulfur"
-	desc = "Also known as brimstone, Sulfur is a flammable substance, but is also a core component of life."
-	color = "#ede218"
-	categories = list(MAT_CATEGORY_ORE = TRUE)
-	sheet_type = /obj/item/stack/ore/sulfur
-	value_per_unit = 1
-
-/datum/material/sulfur/on_applied(atom/source, amount, material_flags)
-	. = ..()
-	if(ismovable(source))
-		source.AddComponent(/datum/component/explodable, 0, 0, amount / 3000, amount / 1000)
-
-/datum/material/sulfur/on_removed(atom/source, material_flags)
-	. = ..()
-	qdel(source.GetComponent(/datum/component/explodable))
-
-/datum/material/quartz
-	name = "quartz"
-	id = "quartz"
-	desc = "Quartz is a common crytsal created from compacted sandstone, commonly used in glass production."
-	color = "#fcedff"
-	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/quartz
-	value_per_unit = 0.0025
-
-/datum/material/silicon
-	name = "silicon"
-	id = "silicon"
-	desc = "Silicon is a material best known for it's use in electronics."
-	color = "#4d4754"
-	categories = list(MAT_CATEGORY_ORE = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/silicon
-	value_per_unit = 1
 
 ///Force decrease and mushy sound effect. (Not yet implemented)
 /datum/material/biomass
