@@ -399,7 +399,6 @@
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	wield_slowdown = SAW_SLOWDOWN
 	manufacturer = MANUFACTURER_IMPORT
 	default_ammo_type = /obj/item/ammo_box/magazine/mower_lmg_308
 	allowed_ammo_types = list(
