@@ -180,6 +180,14 @@
 	light_range = 2
 	light_power = 0.6
 
+/turf/open/floor/concrete/slab_4/whitesands
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
+	light_color = COLOR_SANDPLANET_LIGHT
+
+/turf/open/floor/concrete/slab_4/whitesands/lit
+	light_range = 2
+	light_power = 0.6
+
 /turf/open/floor/plating/whitesands
 	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	light_color = COLOR_SANDPLANET_LIGHT

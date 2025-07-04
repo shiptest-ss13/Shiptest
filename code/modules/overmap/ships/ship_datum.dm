@@ -71,6 +71,7 @@
 		adjust_speed(old_dock.speed_x, old_dock.speed_y)
 
 /datum/overmap/ship/proc/on_docked_to_moved()
+	token.abstract_move((docked_to.x, docked_to.y, docked_to.current_overmap))
 	token.update_screen()
 
 /**
