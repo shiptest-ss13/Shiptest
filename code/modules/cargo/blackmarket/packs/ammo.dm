@@ -278,8 +278,8 @@
 	desc = "10 round .308 magazine for use in the F4 rifle and it's predecessor, the F3."
 	item = /obj/item/ammo_box/magazine/f4_308
 
-	price_min = 300
-	price_max = 500
+	cost_min = 300
+	cost_max = 500
 	stock_min = 2
 	stock_max = 6
 	availability_prob = 0

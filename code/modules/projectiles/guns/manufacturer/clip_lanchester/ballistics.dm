@@ -406,7 +406,7 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 /obj/item/gun/ballistic/automatic/marksman/f4/indie
 	name = "\improper F3"
-	desc = "An old model of CLIP's F4 rifle, designed very early into the history of the League. Most have been sold off as surplus by this point. Chambered in .308."
+	desc = "An old model of CLIP's F4 rifle, designed very early into the history of the League. Most have been sold off as surplus by this point and tend to suffer from internal wear due to their age. Chambered in .308."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -414,6 +414,8 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 	icon_state = "f4_indie"
 	item_state = "f4_indie"
+
+	wear_rate = 1.5
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"

@@ -57,6 +57,12 @@
 	e_cost = 1428
 	delay = 0.3 SECONDS
 
+/obj/item/ammo_casing/energy/lasergun/eoehoma/wasp
+	projectile_type = /obj/projectile/beam/laser/eoehoma/wasp
+	fire_sound = 'sound/weapons/laser4.ogg'
+	e_cost = 799
+	delay = 0.1 SECONDS
+
 /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy
 	projectile_type = /obj/projectile/beam/laser/eoehoma/heavy
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
@@ -69,10 +75,6 @@
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
-
-/obj/item/ammo_casing/energy/laser/sharplite/smg/wasp
-	delay = 0.1 SECONDS
-	fire_sound = 'sound/weapons/laser4.ogg'
 
 /obj/item/ammo_casing/energy/laser/sharplite/smg
 	projectile_type = /obj/projectile/beam/weak/sharplite

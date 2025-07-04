@@ -11,7 +11,7 @@
 
 	fire_sound = 'sound/weapons/laser4.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/sharplite/smg/wasp)
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma/wasp)
 	fire_delay = 0.1 SECONDS
 
 	spread = 12

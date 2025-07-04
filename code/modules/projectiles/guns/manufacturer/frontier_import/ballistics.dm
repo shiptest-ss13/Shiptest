@@ -369,7 +369,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/mower
 	name = "\improper Mower"
-	desc = "Unnamed Frontiersmen LMG. Chambered in .308."
+	desc = "A hefty and relatively accurate HMG, the Mower is built for heavy fire support on the move. Chambered in .308."
 
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
@@ -399,19 +399,24 @@
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
+	wield_slowdown = SAW_SLOWDOWN
 	manufacturer = MANUFACTURER_IMPORT
 	default_ammo_type = /obj/item/ammo_box/magazine/mower_lmg_308
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/mower_lmg_308,
 	)
 
-	fire_delay = 0.27 SECONDS
+	fire_delay = 0.4 SECONDS //quite slow
 
-	spread = 12
+	spread = 8
 	spread_unwielded = 50
 
-	recoil = 1
+	recoil = 0.5
 	recoil_unwielded = 4
+
+	//low deploy bonuses due already being somewhat better than average undeployed
+	deploy_spread_bonus = -2
+	deploy_recoil_bonus = -0.5
 
 	has_bipod = TRUE
 

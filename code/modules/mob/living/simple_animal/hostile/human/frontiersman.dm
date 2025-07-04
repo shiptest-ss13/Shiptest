@@ -52,10 +52,10 @@
 	retreat_distance = 2
 	minimum_distance = 1
 	projectilesound = 'sound/weapons/laser4.ogg'
-	rapid = 4
+	rapid = 2
 	casingtype = null
-	projectiletype = /obj/projectile/beam/weak/sharplite
-	rapid_fire_delay = 0.1 SECONDS
+	projectiletype = /obj/projectile/beam/laser/eoehoma/wasp
+	rapid_fire_delay = 0.18 SECONDS
 	r_hand = /obj/item/gun/energy/laser/wasp
 	spread = 12
 
@@ -167,10 +167,10 @@
 	retreat_distance = 2
 	minimum_distance = 1
 	projectilesound = 'sound/weapons/laser4.ogg'
-	rapid = 5
+	rapid = 3
 	spread = 12
 	casingtype = null
-	projectiletype = /obj/projectile/beam/weak/sharplite
+	projectiletype = /obj/projectile/beam/laser/eoehoma/wasp
 	rapid_fire_delay = 0.1 SECONDS
 	r_hand = /obj/item/gun/energy/laser/wasp
 

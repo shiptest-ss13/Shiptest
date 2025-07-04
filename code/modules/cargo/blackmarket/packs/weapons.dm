@@ -410,8 +410,8 @@
 	item = /obj/item/gun/ballistic/automatic/marksman/f4/indie
 	pair_item = list(/datum/blackmarket_item/ammo/f4_magazine)
 
-	price_min = 3100
-	price_max = 3900
+	cost_min = 3100
+	cost_max = 3900
 	stock_max = 2
 	availability_prob = 20
 	spawn_weighting = FALSE
@@ -421,8 +421,8 @@
 	desc = "Float like a butterfly, sting like a... well, a Wasp. A couple of our old E-40s finally gave the ghost, but we made lemonade and converted the laser modules into compact SMGs."
 	item = /obj/item/gun/energy/laser/wasp
 
-	price_min = 1500
-	price_max = 2500
+	cost_min = 1500
+	cost_max = 2500
 	stock_max = 2
 	availability_prob = 25
 
