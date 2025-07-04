@@ -1192,9 +1192,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
-	fire_delay = 0.25
-	burst_size = 1
-	burst_delay = 0.1 SECONDS
+	fire_delay = 0.25 SECONDS
 
 	spread = 3
 	spread_unwielded = 20
@@ -1233,6 +1231,10 @@ NO_MAG_GUN_HELPER(automatic/assault/invictus)
 	caliber = ".308"
 	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/invictus_308_mag/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/invictus_308_mag/empty
 	start_empty = TRUE
