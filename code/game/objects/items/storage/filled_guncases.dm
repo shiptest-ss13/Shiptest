@@ -63,6 +63,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
 	mag_type = /obj/item/ammo_box/vickland_a8_50r
 
+/obj/item/storage/guncase/invictus
+	gun_type = /obj/item/gun/ballistic/automatic/assault/invictus
+	mag_type = /obj/item/ammo_box/invictus_308_mag
+
 /* Scarbourough */
 
 /obj/item/storage/guncase/pistol/a357
