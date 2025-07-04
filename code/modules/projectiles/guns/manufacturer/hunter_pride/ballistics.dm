@@ -1197,8 +1197,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	spread = 3
 	spread_unwielded = 20
 
-	recoil = 2
-	recoil_unwielded = 6
+	recoil = 1
+	recoil_unwielded = 4
 
 	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
 
