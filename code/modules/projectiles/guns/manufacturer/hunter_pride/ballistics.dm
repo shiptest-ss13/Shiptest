@@ -1210,12 +1210,12 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 48,
-			"y" = 17,
+			"x" = 40,
+			"y" = 20,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 32,
-			"y" = 14,
+			"x" = 20,
+			"y" = 20,
 		)
 	)
 
