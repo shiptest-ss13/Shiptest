@@ -1,3 +1,5 @@
+//Gives these guys a shared type path at some point
+
 /obj/effect/spawner/random/randomthreat
 	var/static/mob_category = rand(1, 3)
 
@@ -89,3 +91,10 @@
 		/mob/living/basic/bear/polar = 85,
 		/mob/living/basic/bear/polar/warrior = 15
 	)
+
+/obj/effect/spawner/random/rare_frontiersmen
+	name = "very rare frontiersmen"
+	icon_state = "frontiersmanmelee"
+	icon = 'icons/mob/simple_frontiersman.dmi'
+	loot = list(/mob/living/simple_animal/hostile/human/frontier/internals)
+	spawn_loot_chance = 1
