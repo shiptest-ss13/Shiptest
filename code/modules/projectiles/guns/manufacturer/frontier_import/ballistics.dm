@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol/mauler
 	name = "Mauler machine pistol"
-	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with abysmal accuracy, lackluster armor penetration, and limited magazine size render it mostly useless outside of very close quarters. Chambered in 9x18mm."
+	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with high recoil, lackluster armor penetration, and limited magazine size render it difficult to use outside of close quarters. Chambered in 9x18mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
