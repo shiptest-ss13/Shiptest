@@ -274,7 +274,18 @@
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
-	damage += 40/severity
+	switch(severity)
+		if(1)
+			owner.adjust_jitter(30)
+			owner.Dizzy(30)
+			owner.Knockdown(200)
+			deaf = 30
+			to_chat(owner, span_warning("Your robotic ears are ringing, uselessly."))
+		if(2)
+			owner.adjust_jitter(15)
+			owner.Dizzy(15)
+			owner.Knockdown(100)
+			to_chat(owner, span_warning("Your robotic ears buzz."))
 
 /obj/item/organ/ears/robot
 	name = "auditory sensors"
@@ -288,6 +299,9 @@
 	organ_flags = ORGAN_SYNTHETIC
 
 /obj/item/organ/ears/robot/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
 	switch(severity)
 		if(1)
 			owner.set_timed_status_effect(60 SECONDS, /datum/status_effect/jitter, only_if_higher = TRUE)
