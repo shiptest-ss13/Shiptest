@@ -1,4 +1,4 @@
-/// VERY IMPORTANT FOR RUNNING FAST IN PRODUCTION!
+/// THE VERY IMPORTANT, FAST DEVELOPER ENVIRONMENT LOADING DEFINE!
 /// If you define this flag, centcom will load. It's also supposed to preload planetoids, but that is disabled.
 //#define FULL_INIT
 
