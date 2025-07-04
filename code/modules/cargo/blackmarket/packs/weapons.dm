@@ -404,6 +404,28 @@
 	stock = 1
 	availability_prob = 35
 
+/datum/blackmarket_item/weapon/guncase/f3
+	name = "F3 Marksman Rifle"
+	desc = "Let's bring it back old school. These vintage marksman rifles were the predecessor to the F4, but that doesn't make them any less deadly. After all, 3 is closer to number 1! Chambered in .308."
+	item = /obj/item/gun/ballistic/automatic/marksman/f4/indie
+	pair_item = list(/datum/blackmarket_item/ammo/f4_magazine)
+
+	price_min = 3100
+	price_max = 3900
+	stock_max = 2
+	availability_prob = 20
+	spawn_weighting = FALSE
+
+/datum/blackmarket_item/weapon/guncase/wasp
+	name = "Wasp Laser SMG"
+	desc = "Float like a butterfly, sting like a... well, a Wasp. A couple of our E-40s finally gave the ghost, but we made lemonade and converted the laser modules into compact SMGs."
+	item = /obj/item/gun/energy/laser/wasp
+
+	price_min = 1500
+	price_max = 2500
+	stock_max = 2
+	availability_prob = 25
+
 /datum/blackmarket_item/weapon/guncase/polymer
 	name = "Polymer Survivor Rifle"
 	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
