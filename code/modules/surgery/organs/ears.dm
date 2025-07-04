@@ -276,14 +276,14 @@
 		return
 	switch(severity)
 		if(1)
-			owner.adjust_jitter(30)
-			owner.Dizzy(30)
+			owner.set_timed_status_effect(4 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			owner.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			owner.Knockdown(200)
 			deaf = 30
 			to_chat(owner, span_warning("Your robotic ears are ringing, uselessly."))
 		if(2)
-			owner.adjust_jitter(15)
-			owner.Dizzy(15)
+			owner.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+			owner.set_timed_status_effect(3 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 			owner.Knockdown(100)
 			to_chat(owner, span_warning("Your robotic ears buzz."))
 
