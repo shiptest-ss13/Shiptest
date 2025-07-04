@@ -418,7 +418,7 @@
 
 /datum/blackmarket_item/weapon/guncase/wasp
 	name = "Wasp Laser SMG"
-	desc = "Float like a butterfly, sting like a... well, a Wasp. A couple of our E-40s finally gave the ghost, but we made lemonade and converted the laser modules into compact SMGs."
+	desc = "Float like a butterfly, sting like a... well, a Wasp. A couple of our old E-40s finally gave the ghost, but we made lemonade and converted the laser modules into compact SMGs."
 	item = /obj/item/gun/energy/laser/wasp
 
 	price_min = 1500
