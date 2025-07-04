@@ -65,7 +65,7 @@
 
 /obj/item/storage/guncase/invictus
 	gun_type = /obj/item/gun/ballistic/automatic/assault/invictus
-	mag_type = /obj/item/ammo_box/invictus_308_mag
+	mag_type = /obj/item/ammo_box/magazine/invictus_308_mag
 
 /* Scarbourough */
 
