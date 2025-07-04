@@ -3,7 +3,7 @@
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
 
-	if(NOBLOOD in dna.species.species_traits || HAS_TRAIT(src, TRAIT_NOBLEED) || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
+	if((NOBLOOD in dna.species.species_traits) || HAS_TRAIT(src, TRAIT_NOBLEED) || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		return
 
 	if(bodytemperature < TCRYO || (HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
@@ -23,6 +23,7 @@
 				nutrition_ratio = 0.8
 			else
 				nutrition_ratio = 1
+
 		if(satiety > 80)
 			nutrition_ratio *= 1.25
 		adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
