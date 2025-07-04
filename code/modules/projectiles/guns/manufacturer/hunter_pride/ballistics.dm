@@ -1224,7 +1224,7 @@ NO_MAG_GUN_HELPER(automatic/assault/invictus)
 
 /obj/item/ammo_box/magazine/invictus_308_mag
 	name = "Invictus magazine (.308)"
-	desc = "A 20 round box magazine for Rottweiler machine gun. These rounds do good damage with significant armor penetration."
+	desc = "A 20 round box magazine for the Invictus automatic rifle. These rounds do good damage with significant armor penetration."
 	base_icon_state = "invictus_mag"
 	icon_state = "invictus_mag-1"
 	ammo_type = /obj/item/ammo_casing/a308
