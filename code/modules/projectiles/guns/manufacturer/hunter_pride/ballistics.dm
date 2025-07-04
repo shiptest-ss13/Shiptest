@@ -1193,6 +1193,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 	slot_flags = ITEM_SLOT_BACK
 
 	fire_delay = 0.25
+	burst_size = 1
+	burst_delay = 0.1 SECONDS
 
 	spread = 3
 	spread_unwielded = 20
@@ -1225,7 +1227,7 @@ NO_MAG_GUN_HELPER(automatic/assault/invictus)
 /obj/item/ammo_box/magazine/invictus_308_mag
 	name = "Invictus magazine (.308)"
 	desc = "A 20 round box magazine for Rottweiler machine gun. These rounds do good damage with significant armor penetration."
-	base_icon_state = "invictus_mag-0"
+	base_icon_state = "invictus_mag"
 	icon_state = "invictus_mag-1"
 	ammo_type = /obj/item/ammo_casing/a308
 	caliber = ".308"
