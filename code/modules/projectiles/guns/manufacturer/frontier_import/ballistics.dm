@@ -6,19 +6,22 @@
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
 
-	icon_state = "mauler"
+	icon_state = "mauler_mp"
 	item_state = "hp_generic"
-	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler/extended
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/m9mm_mauler,
+		/obj/item/ammo_box/magazine/m9mm_mauler/extended,
 	)
 	fire_delay = 0.06 SECONDS
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	spread = 25
-	spread_unwielded = 50
+	show_magazine_on_sprite = FALSE //hard coded
+
+	spread = 24
+	spread_unwielded = 44
 	recoil = 1
 	recoil_unwielded = 4
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
@@ -53,15 +56,43 @@
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
+/obj/item/gun/ballistic/automatic/pistol/mauler/update_overlays()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.06 SECONDS)
+	if (magazine)
+		. += "mauler_mag_[magazine.base_icon_state]"
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/regular
+	name = "Mauler pistol"
+	desc = "A toned down semi-auto version of the Mauler. Still fast to fire still with better accuracy than it's auto counterpart, but it's still innaccurate compared to most modern pistols. Chambered in 9mm."
+
+	icon_state = "mauler"
+
+	spread = 8
+	spread_unwielded = 15
+	recoil = 0
+	recoil_unwielded = 4
+	default_ammo_type = /obj/item/ammo_box/magazine/m9mm_mauler
+
+	fire_delay = 0.12 SECONDS
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 
 /obj/item/ammo_box/magazine/m9mm_mauler
-	name = "mauler machine pistol magazine (9x18mm)"
-	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	name = "mauler pistol magazine (9x18mm)"
+	desc = "A 8-round magazine designed for the Mauler pistol."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9x18mm"
+	max_ammo = 8
+
+/obj/item/ammo_box/magazine/m9mm_mauler/extended
+	name = "mauler machine pistol extended magazine (9x18mm)"
+	desc = "A 12-round magazine designed for the Mauler machine pistol."
+	icon_state = "mauler_extended_mag-1"
+	base_icon_state = "mauler_extended_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9x18mm"
 	max_ammo = 12
@@ -290,6 +321,61 @@
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg
+	name = "\improper SKM-24u"
+	desc = "What appears to be a standard SKM-24 at first glance is actually a light machine gun conversion, with an extended, heavy barrel and overhauled internals. Its weight, bulk, and robust fire rate make it difficult to handle without using the bipod in a prone position or against appropriate cover such as a table. Chambered in 7.62x40mm CLIP."
+
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "skm_lmg"
+	item_state = "skm_lmg"
+
+	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	show_magazine_on_sprite = TRUE
+	unique_mag_sprites_for_variants = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	manufacturer = MANUFACTURER_IMPORT
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/skm_762_40,
+	)
+
+	fire_delay = 0.13 SECONDS
+
+	spread = 7 //you can hipfire, but why?
+	spread_unwielded = 25
+
+	recoil = 1 //identical to other LMGS
+	recoil_unwielded = 4 //same as skm
+
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
+	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
+
+	has_bipod = TRUE
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/extended
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
+	default_ammo_type = /obj/item/ammo_box/magazine/skm_762_40/drum
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
 	name = "\improper Hammer"

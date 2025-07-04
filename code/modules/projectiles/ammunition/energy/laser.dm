@@ -70,6 +70,10 @@
 	select_name = "kill"
 	delay = 0.13 SECONDS
 
+/obj/item/ammo_casing/energy/laser/sharplite/smg/wasp
+	delay = 0.1 SECONDS
+	fire_sound = 'sound/weapons/laser4.ogg'
+
 /obj/item/ammo_casing/energy/laser/sharplite/smg
 	projectile_type = /obj/projectile/beam/weak/sharplite
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
