@@ -406,7 +406,7 @@
 		/obj/item/ammo_box/magazine/mower_lmg_308,
 	)
 
-	fire_delay = 0.4 SECONDS //quite slow
+	fire_delay = 0.27 SECONDS //quite slow
 
 	spread = 8
 	spread_unwielded = 50
