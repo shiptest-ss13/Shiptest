@@ -19,7 +19,7 @@
 
 	spread = 15
 	spread_unwielded = 30
-	recoil = 1.5
+	recoil = 1
 	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
 
