@@ -1168,3 +1168,13 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 			"y" = 14,
 		)
 	)
+
+/obj/item/gun/ballistic/automatic/assault/invictus
+	name "HP Invictus"
+	desc = "WIP"
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
+
