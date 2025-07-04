@@ -209,8 +209,6 @@
 	courierbag = /obj/item/minigunpack
 	duffelbag = /obj/item/minigunpack
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/frontiersmen, /obj/item/storage/firstaid/regular, /obj/item/ammo_box/magazine/m9mm_mauler/extended = 2, /obj/item/gun/ballistic/automatic/pistol/mauler)
-
 /datum/outfit/job/frontiersmen/ert/leader/unarmed
 	name = "ERT - Frontiersman Officer (Unarmed)"
 
