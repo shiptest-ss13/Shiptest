@@ -4657,7 +4657,8 @@
 /obj/machinery/door/airlock/command{
 	dir = 8;
 	name = "Bridge";
-	close_speed = 100
+	close_speed = 100;
+	req_access_txt = "7"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
