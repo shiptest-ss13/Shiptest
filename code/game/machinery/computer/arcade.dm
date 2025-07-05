@@ -456,7 +456,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 /obj/machinery/computer/arcade/orion_trail/Initialize()
 	. = ..()
 	Radio = new /obj/item/radio(src)
-	Radio.listening = 0
+	Radio.set_listening(FALSE)
 
 /obj/machinery/computer/arcade/orion_trail/Destroy()
 	QDEL_NULL(Radio)

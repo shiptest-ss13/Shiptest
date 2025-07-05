@@ -45,8 +45,8 @@
 		If 0, the signal is audible
 		If nonzero, the signal may be partially inaudible or just complete gibberish.
 
-	@param map_zones:
-		The list of map zones that the sending radio is broadcasting to.
+	@param virt_zs:
+		The list of virtual z levesl that the sending radio is broadcasting to.
 
 	@param freq
 		The frequency of the signal
@@ -59,7 +59,7 @@
 	var/server_type = /obj/machinery/telecomms/server
 	var/datum/signal/subspace/original
 	/// Map zones that this signal is reaching
-	var/list/map_zones
+	var/list/virt_zs
 	/// Whether it reaches all virtual levels
 	var/wideband = FALSE
 
@@ -70,7 +70,7 @@
 	var/datum/signal/subspace/copy = new
 	copy.original = src
 	copy.source = source
-	copy.map_zones = map_zones
+	copy.virt_zs = virt_zs
 	copy.frequency = frequency
 	copy.server_type = server_type
 	copy.transmission_method = transmission_method
@@ -123,14 +123,14 @@
 		"mods" = message_mods
 	)
 	var/turf/T = get_turf(source)
-	var/datum/map_zone/mapzone = T.get_map_zone()
-	map_zones = list(mapzone)
+	var/datum/virtual_level/virtual_z = T.get_virtual_level()
+	virt_zs = list(virtual_z)
 
 /datum/signal/subspace/vocal/copy()
 	var/datum/signal/subspace/vocal/copy = new(source, frequency, virt, language)
 	copy.original = src
 	copy.data = data.Copy()
-	copy.map_zones = map_zones
+	copy.virt_zs = virt_zs
 	copy.wideband = wideband
 	return copy
 
@@ -146,31 +146,37 @@
 	if(compression > 0)
 		message = Gibberish(message, compression >= 30)
 
+	var/list/signal_reaches_every_z_level = virt_zs
+
+	if(0 in virt_zs)
+		signal_reaches_every_z_level = RADIO_NO_Z_LEVEL_RESTRICTION
+
 	// Assemble the list of radios
 	var/list/radios = list()
-	switch (transmission_method)
+	switch(transmission_method)
 		if (TRANSMISSION_SUBSPACE)
-			// Reaches any radios on the virtual levels
-			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(R.can_receive(frequency, map_zones))
-					radios += R
+			var/list/all_radios_of_our_frequency = GLOB.all_radios["[frequency]"]
+			radios = all_radios_of_our_frequency.Copy()
+
+			for(var/obj/item/radio/subspace_radio in radios)
+				if(!subspace_radio.can_receive(frequency, signal_reaches_every_z_level))
+					radios -= subspace_radio
 
 		if (TRANSMISSION_RADIO)
-			// Only radios not currently in subspace mode
-			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(!R.subspace_transmission && R.can_receive(frequency, map_zones))
-					radios += R
+			for(var/obj/item/radio/non_subspace_radio in GLOB.all_radios["[frequency]"])
+				if(!non_subspace_radio.subspace_transmission && non_subspace_radio.can_receive(frequency, signal_reaches_every_z_level))
+					radios += non_subspace_radio
 
 		if (TRANSMISSION_SUPERSPACE)
 			// Only radios which are independent
-			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(R.independent && R.can_receive(frequency, map_zones))
-					radios += R
+			for(var/obj/item/radio/independent_radio in GLOB.all_radios["[frequency]"])
+				if(independent_radio.independent && independent_radio.can_receive(frequency, signal_reaches_every_z_level))
+					radios += independent_radio
 
 		if (TRANSMISSION_SECTOR)
 			// Newscasting
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
-				if(R.can_receive(frequency, map_zones))
+				if(R.can_receive(frequency, signal_reaches_every_z_level))
 					radios += R
 
 	// Sound thats played on radios
@@ -209,7 +215,7 @@
 			radio.log_trim()
 
 	// From the list of radios, find all mobs who can hear those.
-	var/list/receive = get_mobs_in_radio_ranges(radios)
+	var/list/receive = get_hearers_in_radio_ranges(radios)
 
 	// Cut out mobs with clients who are admins and have radio chatter disabled.
 	for(var/mob/R in receive)
@@ -217,16 +223,19 @@
 			receive -= R
 
 	// Add observers who have ghost radio enabled.
-	for(var/mob/dead/observer/M in GLOB.player_list)
-		if(M.client.prefs.chat_toggles & CHAT_GHOSTRADIO)
-			receive |= M
+	for(var/mob/dead/observer/ghost in GLOB.player_list)
+		if(ghost.client.prefs?.chat_toggles & CHAT_GHOSTRADIO)
+			receive |= ghost
 
 	// Render the message and have everybody hear it.
 	// Always call this on the virtualspeaker to avoid issues.
 	var/spans = data["spans"]
 	var/list/message_mods = data["mods"]
 	var/rendered = virt.compose_message(virt, language, message, frequency, spans)
-	for(var/atom/movable/hearer in receive)
+	for(var/atom/movable/hearer as anything in receive)
+		if(!hearer)
+			stack_trace("null found in the hearers list returned by the spatial grid. this is bad")
+			continue
 		//very sorry, i can't think of a better way to do this without altering this code too much, please let me know if you do know a way
 		var/interference_level
 		if(transmission_method == TRANSMISSION_SUPERSPACE)
@@ -273,7 +282,8 @@
 		log_text += " ([data["interference"]]% interference)"
 
 	var/mob/source_mob = virt.source
-	if(istype(source_mob))
+
+	if(ismob(source_mob))
 		source_mob.log_message(log_text, LOG_TELECOMMS)
 	else
 		log_telecomms("[virt.source] [log_text] [loc_name(get_turf(virt.source))]")
