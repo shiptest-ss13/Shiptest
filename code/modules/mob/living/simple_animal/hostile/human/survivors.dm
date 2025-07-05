@@ -81,9 +81,7 @@
 	rapid = 2
 	rapid_fire_delay = 2
 	casingtype = /obj/item/ammo_casing/c46x30mm/tesla
-	loot = list(
-		/obj/effect/mob_spawn/human/corpse/damaged/whitesands/e11,
-	)
+	loot = list()
 
 //survivor corpses
 

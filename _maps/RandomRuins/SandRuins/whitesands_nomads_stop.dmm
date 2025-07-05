@@ -553,6 +553,19 @@
 	},
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"fU" = (
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
+"fX" = (
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "fY" = (
 /obj/structure/rack,
 /obj/item/clothing/mask/gas{
@@ -2197,6 +2210,11 @@
 "uZ" = (
 /obj/machinery/autolathe,
 /obj/machinery/light/small/directional/west,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/metal/five{
+	pixel_x = 5;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/nomad_stop/engineering)
 "vk" = (
@@ -2584,6 +2602,11 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/nomad_stop/food)
+"zx" = (
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/item/ammo_casing/spent/pistol_brass,
+/turf/open/floor/plating/asteroid/whitesands/dried/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "zI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 6
@@ -3459,6 +3482,9 @@
 /area/ruin/whitesands/nomad_stop/food)
 "Ia" = (
 /obj/machinery/vending/boozeomat,
+/obj/structure/sign/warning/firingrange{
+	pixel_y = 30
+	},
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "Ij" = (
@@ -3697,6 +3723,9 @@
 /obj/structure/platform/industrial_alt,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"KG" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/whitesands/nomad_stop/engineering)
 "KO" = (
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -4933,6 +4962,10 @@
 /obj/structure/table,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/item/reagent_containers/food/drinks/beer/light{
+	pixel_x = 10;
+	pixel_y = -3
 	},
 /turf/open/floor/concrete/slab_1/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
@@ -7248,9 +7281,9 @@ wl
 eB
 Nr
 fQ
-dQ
-dQ
-dQ
+KG
+KG
+KG
 Gl
 Yz
 aJ
@@ -7302,7 +7335,7 @@ zP
 IO
 ZQ
 be
-dQ
+KG
 aJ
 Yz
 aJ
@@ -7351,11 +7384,11 @@ mx
 ld
 eB
 cw
-dQ
-dQ
+KG
+KG
 cw
-dQ
-dQ
+KG
+KG
 zR
 EK
 EK
@@ -7404,10 +7437,10 @@ Mm
 eB
 Cj
 Vt
-dQ
+KG
 Ty
 Xk
-dQ
+KG
 ib
 aJ
 aJ
@@ -7454,12 +7487,12 @@ uH
 uH
 uH
 eB
-dQ
-dQ
-dQ
-dQ
-dQ
-dQ
+KG
+KG
+KG
+KG
+KG
+KG
 ib
 aJ
 aJ
@@ -7506,7 +7539,7 @@ Yw
 Yw
 QB
 Yw
-dQ
+KG
 Yw
 Yw
 Yw
@@ -7550,7 +7583,7 @@ kJ
 kJ
 kJ
 kJ
-Yw
+fX
 Yw
 Yw
 Yw
@@ -7602,8 +7635,8 @@ kJ
 kJ
 kJ
 kJ
-kJ
-Yw
+fU
+fU
 Cp
 Cp
 Cp
@@ -7654,7 +7687,7 @@ kJ
 kJ
 kJ
 kJ
-kJ
+zx
 kJ
 Cp
 ku
