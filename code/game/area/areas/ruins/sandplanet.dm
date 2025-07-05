@@ -51,3 +51,27 @@
 	icon_state = "bluenew"
 
 /area/ruin/whitesands/cave_base/engi
+
+//Nomad's Stop
+
+/area/ruin/whitesands/nomad_stop
+	name = "Hermit Installation"
+	icon_state = "mining_production"
+
+/area/ruin/whitesands/nomad_stop/warehouse
+	name = "Warehous Compound"
+	icon_state = "storage"
+
+/area/ruin/whitesands/nomad_stop/engineering
+	name = "Engineering Compound"
+	icon_state = "auxstorage"
+
+/area/ruin/whitesands/nomad_stop/quarters
+	name = "Survival Pods"
+	icon_state = "security"
+
+/area/ruin/whitesands/nomad_stop/laundry
+	name = "Cleaning Compound"
+
+/area/ruin/whitesands/nomad_stop/food
+	name = "Living Compound"
