@@ -32,7 +32,7 @@
 				affected_mob.visible_message(span_danger("[affected_mob] stumbles around in a panic."), \
 												span_userdanger("You have a panic attack!"))
 				affected_mob.confused += (rand(6,8))
-				affected_mob.adjust_jitter(rand(6,8))
+				affected_mob.set_timed_status_effect(rand(12 SECONDS, 16 SECONDS), /datum/status_effect/jitter, only_if_higher = TRUE)
 			if(prob(2))
 				affected_mob.visible_message(span_danger("[affected_mob] coughs up butterflies!"), \
 													span_userdanger("You cough up butterflies!"))
