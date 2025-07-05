@@ -67,7 +67,7 @@
 	if(HAS_TRAIT(src, TRAIT_WIELDED)) //destroys windows and grilles in one hit
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
-			W.obj_destruction("axe")
+			W.atom_destruction("axe")
 
 // its for dynamic gen mobs okay
 /obj/item/melee/sledgehammer/gorlex/pre_wielded
