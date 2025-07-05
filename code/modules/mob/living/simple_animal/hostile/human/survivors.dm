@@ -78,7 +78,6 @@
 	icon_state = "survivor_gunslinger"
 	icon_living = "survivor_gunslinger"
 	projectilesound = 'sound/weapons/zapbang.ogg'
-	speed = 10
 	rapid = 2
 	rapid_fire_delay = 2
 	casingtype = /obj/item/ammo_casing/c46x30mm/tesla

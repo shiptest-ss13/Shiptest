@@ -76,3 +76,11 @@
 	description = "A conspicuous compound in the middle of the sandy wasteland. What goodies are inside?"
 	suffix = "whitesands_brazillianlab.dmm"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_INHOSPITABLE)
+
+/datum/map_template/ruin/whitesands/nomads_stop
+	name = "Nomad's Stop"
+	id = "nomad-stop"
+	description = "A set of structures born of ancient prefabs and quick-pour cement, turned into a place for trade on the planet's surface."
+	suffix = "whitesands_nomads_stop.dmm"
+	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_SHELTER)
+	ruin_mission_types = list(/datum/mission/ruin/multiple/e11_stash)

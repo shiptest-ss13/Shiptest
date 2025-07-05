@@ -73,3 +73,5 @@
 /area/ruin/whitesands/nomad_stop/laundry
 	name = "Cleaning Compound"
 
+/area/ruin/whitesands/nomad_stop/food
+	name = "Living Compound"
