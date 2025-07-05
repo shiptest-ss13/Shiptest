@@ -287,6 +287,7 @@
 	pixel_x = -6;
 	pixel_y = 5
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "C" = (
@@ -319,6 +320,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -452,6 +456,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "P" = (
@@ -460,6 +465,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "5-9"
+	},
+/obj/structure/chair/handrail{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)

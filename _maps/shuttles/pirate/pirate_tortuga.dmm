@@ -52,6 +52,7 @@
 	pixel_y = 5;
 	pixel_x = -5
 	},
+/obj/item/multitool,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "bu" = (
@@ -88,7 +89,7 @@
 	pixel_x = 12;
 	pixel_y = -6
 	},
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -140,7 +141,7 @@
 "bH" = (
 /obj/structure/salvageable/autolathe,
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "bJ" = (
 /obj/structure/cable/yellow{
@@ -178,7 +179,7 @@
 /area/ship/maintenance/starboard)
 "bR" = (
 /obj/effect/spawner/random/trash/decal,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "cb" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
@@ -255,7 +256,7 @@
 /obj/structure/fluff/paper/stack{
 	pixel_x = 9
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "dl" = (
 /obj/effect/turf_decal/siding/wideplating/corner{
@@ -300,7 +301,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "dN" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -379,11 +380,11 @@
 	icon_state = "1-9"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "eA" = (
 /obj/item/flashlight/flare,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "eD" = (
 /obj/structure/railing/corner,
@@ -417,7 +418,6 @@
 	pixel_x = -22;
 	pixel_y = -10
 	},
-/obj/structure/table,
 /obj/item/folder{
 	pixel_x = -6;
 	pixel_y = 5
@@ -426,6 +426,7 @@
 	pixel_x = -2;
 	pixel_y = 2
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ff" = (
@@ -454,7 +455,7 @@
 "fn" = (
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -504,7 +505,7 @@
 	pixel_x = 16;
 	pixel_y = 9
 	},
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -582,7 +583,7 @@
 "gG" = (
 /obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "gI" = (
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -610,7 +611,7 @@
 /area/ship/crew/canteen)
 "hh" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -679,11 +680,6 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/automatic/hmg/skm_lmg{
-	spawn_no_ammo = 1
-	},
-/obj/item/gun/ballistic/rifle/illestren,
-/obj/item/gun/ballistic/rifle/illestren,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "hT" = (
@@ -722,7 +718,7 @@
 	icon_state = "6-10"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -755,7 +751,7 @@
 	},
 /obj/item/melee/spear/explosive,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "iP" = (
 /obj/machinery/power/port_gen/pacman{
@@ -830,14 +826,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-8"
 	},
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
 "jt" = (
-/obj/machinery/telecomms/relay/preset/frontiersmen,
 /obj/machinery/door/window/southleft,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/telecomms/allinone,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "jA" = (
@@ -897,12 +893,10 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/canteen)
 "jK" = (
-/obj/machinery/power/shuttle/engine/electric/bad{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/shuttle/engine/electric,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance/port)
 "jV" = (
@@ -926,27 +920,27 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
 "kv" = (
 /obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "kK" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "kO" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/effect/spawner/random/trash/grille_or_waste,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "la" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -982,7 +976,7 @@
 "li" = (
 /obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "lo" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -1022,6 +1016,10 @@
 	pixel_x = 8
 	},
 /obj/machinery/light/directional/north,
+/obj/item/bodycamera/broadcast_camera{
+	pixel_x = 12;
+	pixel_y = 12
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mf" = (
@@ -1029,7 +1027,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-9"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "mg" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1047,7 +1045,7 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "mp" = (
 /obj/structure/chair/stool{
@@ -1148,7 +1146,6 @@
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
-/obj/item/attachment/long_scope,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mZ" = (
@@ -1207,7 +1204,7 @@
 	pixel_x = 10;
 	pixel_y = -10
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "nE" = (
 /obj/machinery/light_switch{
@@ -1279,7 +1276,7 @@
 /obj/machinery/door/airlock/hatch,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/firedoor/heavy,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/crew)
 "oG" = (
 /obj/structure/cable/yellow{
@@ -1314,7 +1311,7 @@
 /obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "oS" = (
 /obj/effect/turf_decal/borderfloor,
@@ -1400,7 +1397,14 @@
 /obj/effect/decal/cleanable/chem_pile{
 	pixel_x = 9
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
+/area/ship/maintenance)
+"pW" = (
+/obj/effect/spawner/random/trash/grille_or_waste,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
 /area/ship/maintenance)
 "qd" = (
 /turf/closed/wall,
@@ -1411,7 +1415,7 @@
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "med"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "qp" = (
 /obj/machinery/door/airlock/medical{
@@ -1448,7 +1452,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "qI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1459,7 +1463,7 @@
 	pixel_y = 7;
 	pixel_x = 6
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "qT" = (
 /obj/structure/cable/yellow{
@@ -1467,7 +1471,7 @@
 	},
 /obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -1504,7 +1508,7 @@
 	icon_state = "5-10"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -1514,7 +1518,7 @@
 	pixel_y = 6;
 	pixel_x = -7
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "so" = (
 /turf/closed/wall/rust,
@@ -1543,7 +1547,7 @@
 /area/ship/maintenance/starboard)
 "tb" = (
 /obj/structure/flippedtable,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "tc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1558,7 +1562,7 @@
 /area/ship/maintenance/starboard)
 "td" = (
 /obj/structure/bonfire,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "te" = (
 /obj/effect/turf_decal/siding/wideplating/corner{
@@ -1569,7 +1573,7 @@
 /area/ship/crew/canteen)
 "ti" = (
 /obj/effect/spawner/random/food_or_drink/donut,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -1590,7 +1594,7 @@
 	pixel_x = 7
 	},
 /obj/structure/table/rolling,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
 /area/ship/maintenance)
@@ -1607,7 +1611,7 @@
 /obj/machinery/door/airlock/hatch,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/firedoor/heavy,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/security/armory)
 "tL" = (
 /obj/structure/cable/yellow{
@@ -1633,7 +1637,7 @@
 "tV" = (
 /obj/machinery/space_heater,
 /obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "ub" = (
 /obj/effect/turf_decal/techfloor,
@@ -1665,6 +1669,7 @@
 /obj/item/stack/tape{
 	pixel_x = 6
 	},
+/obj/item/melee/baton/cattleprod/loaded,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "ux" = (
@@ -1787,7 +1792,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-10"
 	},
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -1817,7 +1822,7 @@
 	dir = 1
 	},
 /obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "wa" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1834,7 +1839,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "wg" = (
 /obj/machinery/blackbox_recorder,
@@ -1911,7 +1916,7 @@
 /obj/structure/flippedtable{
 	dir = 8
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "xb" = (
 /turf/closed/wall/r_wall/rust,
@@ -1961,7 +1966,7 @@
 "yc" = (
 /obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "yd" = (
 /obj/structure/table/wood,
@@ -1988,7 +1993,7 @@
 	pixel_x = -6;
 	pixel_y = -2
 	},
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2039,7 +2044,7 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2061,7 +2066,7 @@
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "radiation"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "zZ" = (
 /obj/structure/bed{
@@ -2096,8 +2101,10 @@
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "AG" = (
-/obj/effect/spawner/random/trash/grille_or_waste,
-/turf/open/floor/plating/airless,
+/obj/effect/spawner/random/trash/decal,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "AQ" = (
 /obj/structure/closet/crate/bin,
@@ -2113,7 +2120,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
 "Bk" = (
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Bp" = (
 /turf/closed/wall/rust,
@@ -2155,7 +2162,7 @@
 /area/ship/crew/crewtwo)
 "BV" = (
 /obj/structure/salvageable/server,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2175,7 +2182,7 @@
 "Cx" = (
 /obj/machinery/portable_atmospherics/pump,
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Cy" = (
 /obj/structure/chair/stool{
@@ -2231,7 +2238,7 @@
 	},
 /obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2273,7 +2280,7 @@
 	},
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2282,12 +2289,12 @@
 	icon_state = "5-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Eb" = (
 /obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2373,7 +2380,7 @@
 	pixel_x = -7;
 	pixel_y = 11
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Fk" = (
 /obj/structure/table,
@@ -2406,23 +2413,6 @@
 	icon_state = "sec_wall";
 	name = "ammo closet"
 	},
-/obj/item/ammo_box/magazine/skm_762_40/drum,
-/obj/item/ammo_box/magazine/skm_762_40/drum,
-/obj/item/ammo_box/magazine/c22lr_pounder_pan,
-/obj/item/ammo_box/magazine/c22lr_pounder_pan,
-/obj/item/ammo_box/magazine/c22lr_pounder_pan,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/illestren_a850r/empty,
-/obj/item/ammo_box/magazine/illestren_a850r/empty,
-/obj/item/ammo_box/magazine/illestren_a850r/empty,
-/obj/item/ammo_box/magazine/illestren_a850r/empty,
-/obj/item/ammo_box/magazine/illestren_a850r/empty,
-/obj/item/ammo_box/magazine/illestren_a850r/empty,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "FL" = (
@@ -2445,7 +2435,7 @@
 	pixel_x = -7;
 	pixel_y = 8
 	},
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2556,7 +2546,7 @@
 /area/ship/maintenance/port)
 "Hk" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Hx" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -2666,13 +2656,15 @@
 	},
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/gun/ballistic/automatic/pistol/mauler,
-/obj/item/ammo_casing/c9mm{
+/obj/item/gun/ballistic/revolver/mateba{
+	pixel_y = 5
+	},
+/obj/item/ammo_casing/a357{
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/item/ammo_casing/c9mm{
-	pixel_x = 9
+/obj/item/ammo_casing/a357{
+	pixel_x = 10
 	},
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
@@ -2707,10 +2699,10 @@
 	icon_state = "4-10"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "JA" = (
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2774,7 +2766,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2788,7 +2780,7 @@
 "Kn" = (
 /obj/structure/frame/machine,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Ko" = (
 /turf/closed/wall/rust,
@@ -2864,14 +2856,14 @@
 "Lg" = (
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Lm" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -2882,7 +2874,9 @@
 /obj/structure/door_assembly/door_assembly_hatch{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
 /area/ship/maintenance)
 "Lt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -3020,7 +3014,7 @@
 /area/ship/crew)
 "MF" = (
 /obj/structure/floodlight_frame,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "MH" = (
 /obj/structure/cable/yellow{
@@ -3028,9 +3022,8 @@
 	},
 /obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
-	icon_state = "plating_rust"
-	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "MI" = (
 /obj/machinery/door/airlock/hatch{
@@ -3040,7 +3033,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/airless,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "MK" = (
 /obj/structure/cable/yellow{
@@ -3167,8 +3162,9 @@
 	pixel_y = -13
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_box/magazine/m9mm_mauler,
-/obj/item/ammo_box/magazine/m9mm_mauler,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/item/storage/box/ammo/a357,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
 "OF" = (
@@ -3186,7 +3182,7 @@
 	pixel_x = 8;
 	pixel_y = 14
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "OH" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -3247,9 +3243,7 @@
 /area/ship/crew/canteen)
 "Pb" = (
 /obj/effect/spawner/random/trash/grille_or_waste,
-/turf/open/floor/plating/airless{
-	icon_state = "platingdmg1"
-	},
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Pl" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -3299,9 +3293,6 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
-/obj/item/gun/ballistic/automatic/pistol/spitter,
-/obj/item/gun/ballistic/automatic/smg/pounder,
-/obj/item/gun/ballistic/automatic/pistol/spitter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "PC" = (
@@ -3341,7 +3332,7 @@
 "QM" = (
 /obj/effect/spawner/random/maintenance/three,
 /obj/structure/closet/cardboard,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "QP" = (
 /obj/structure/cable/yellow{
@@ -3361,9 +3352,14 @@
 /obj/item/lighter{
 	pixel_x = 5
 	},
-/turf/open/floor/plating/airless{
-	icon_state = "panelscorched"
+/turf/open/floor/plating,
+/area/ship/maintenance)
+"Rc" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Rg" = (
 /obj/machinery/button/door{
@@ -3389,7 +3385,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/spawner/random/trash/grille_or_waste,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -3606,6 +3602,16 @@
 	icon_state = "wood-broken6"
 	},
 /area/ship/crew/crewtwo)
+"TZ" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/abandoned,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "Uk" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -3658,7 +3664,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/heavy,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Vb" = (
 /obj/machinery/suit_storage_unit/industrial{
@@ -3751,8 +3757,8 @@
 /obj/effect/decal/cleanable/blood/splatter{
 	pixel_y = -4
 	},
-/turf/open/floor/plating/airless{
-	icon_state = "platingdmg1"
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
 	},
 /area/ship/cargo)
 "VE" = (
@@ -3796,7 +3802,9 @@
 	},
 /obj/structure/salvageable/computer,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
 /area/ship/maintenance)
 "Wa" = (
 /obj/structure/cable/yellow{
@@ -3808,7 +3816,7 @@
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "engie"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "We" = (
 /obj/effect/turf_decal/box/corners{
@@ -3850,7 +3858,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Wx" = (
 /turf/closed/wall/r_wall/rust,
@@ -3942,7 +3950,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -3956,7 +3964,7 @@
 	layer = 2.79
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -3972,7 +3980,8 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Yk" = (
 /obj/structure/railing,
@@ -3989,7 +3998,7 @@
 /obj/machinery/icecream_vat{
 	desc = "Ding-aling ding dong. Get your Frontiersmen-approved ice cream!"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Yr" = (
 /obj/structure/cable/yellow{
@@ -4022,7 +4031,7 @@
 /area/ship/maintenance/starboard)
 "YE" = (
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "YG" = (
 /obj/effect/turf_decal/techfloor,
@@ -4052,7 +4061,7 @@
 "YJ" = (
 /obj/structure/salvageable/machine,
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "YL" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -4072,7 +4081,7 @@
 "YU" = (
 /obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/airless{
+/turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
@@ -4157,7 +4166,7 @@
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "electricdanger"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "ZY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4730,7 +4739,7 @@ Ek
 (17,1,1) = {"
 lJ
 lJ
-AG
+Pb
 Bk
 qE
 kO
@@ -4858,7 +4867,7 @@ Vt
 RV
 qu
 qD
-AG
+Pb
 Jv
 Eb
 Hk
@@ -4894,7 +4903,7 @@ dm
 FQ
 qD
 Yo
-XX
+Rc
 Hk
 lJ
 lJ
@@ -4965,7 +4974,7 @@ TG
 hT
 qD
 XX
-kv
+AG
 lJ
 lJ
 lJ
@@ -5045,7 +5054,7 @@ Ek
 (26,1,1) = {"
 lJ
 lJ
-AG
+Pb
 gG
 js
 Ab
@@ -5104,7 +5113,7 @@ qD
 qD
 qD
 Vt
-MI
+TZ
 QJ
 QJ
 QJ
@@ -5413,7 +5422,7 @@ mB
 mB
 mw
 mw
-yc
+pW
 hh
 qT
 ml
