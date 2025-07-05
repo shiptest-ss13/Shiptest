@@ -83,4 +83,3 @@
 	description = "A set of structures born of ancient prefabs and quick-pour cement, turned into a place for trade on the planet's surface."
 	suffix = "whitesands_nomads_stop.dmm"
 	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_HAZARDOUS, RUIN_TAG_SHELTER)
-	ruin_mission_types = list(/datum/mission/ruin/multiple/e11_stash)
