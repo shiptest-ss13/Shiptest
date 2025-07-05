@@ -1,8 +1,15 @@
+import {
+  Box,
+  Button,
+  LabeledList,
+  NoticeBox,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NoticeBox, Section } from '../components';
 import { NtosWindow } from '../layouts';
 
-export const NtosNetDos = (props, context) => {
+export const NtosNetDos = (props) => {
   return (
     <NtosWindow width={400} height={250} theme="syndicate">
       <NtosWindow.Content>
@@ -12,8 +19,8 @@ export const NtosNetDos = (props, context) => {
   );
 };
 
-export const NtosNetDosContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosNetDosContent = (props) => {
+  const { act, data } = useBackend();
 
   const { relays = [], focus, target, speed, overload, capacity, error } = data;
 

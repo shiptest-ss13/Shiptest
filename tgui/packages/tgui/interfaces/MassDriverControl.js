@@ -1,9 +1,16 @@
+import {
+  Box,
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, Section, LabeledList, NumberInput } from '../components';
 import { Window } from '../layouts';
 
-export const MassDriverControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MassDriverControl = (props) => {
+  const { act, data } = useBackend();
   const { connected, minutes, seconds, timing, power, poddoor } = data;
   return (
     <Window width={300} height={connected ? 215 : 107}>
@@ -74,7 +81,7 @@ export const MassDriverControl = (props, context) => {
                     width="40px"
                     minValue={0.25}
                     maxValue={16}
-                    onChange={(e, value) => {
+                    onChange={(value) => {
                       return act('set_power', {
                         power: value,
                       });

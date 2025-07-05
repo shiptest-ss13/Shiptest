@@ -57,10 +57,12 @@
 		dat += "<A href='byond://?src=[REF(src)];wipe=1'>\[Wipe current pAI personality\]</a><br>"
 	else
 		dat += "No personality installed.<br>"
-		dat += "Searching for a personality... Press view available personalities to notify potential candidates."
+		dat += "Searching for a personality... Press view available personalities to notify potential candidates.<br>"
 		dat += "<A href='byond://?src=[REF(src)];request=1'>\[View available personalities\]</a><br>"
-	user << browse(dat, "window=paicard")
-	onclose(user, "paicard")
+
+	var/datum/browser/popup = new(user, "Personal AI Device", name, 500, 430)
+	popup.set_content(dat)
+	popup.open()
 	return
 
 /obj/item/paicard/Topic(href, href_list)

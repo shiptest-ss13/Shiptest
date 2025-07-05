@@ -1,10 +1,18 @@
+import {
+  Box,
+  Button,
+  Dimmer,
+  NoticeBox,
+  Section,
+  Table,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Section, Table, NoticeBox, Dimmer, Box } from '../components';
 import { NtosWindow } from '../layouts';
 
-export const NtosJobManager = (props, context) => {
+export const NtosJobManager = (props) => {
   return (
-    <NtosWindow width={400} height={620} resizable>
+    <NtosWindow width={400} height={620}>
       <NtosWindow.Content scrollable>
         <NtosJobManagerContent />
       </NtosWindow.Content>
@@ -12,8 +20,8 @@ export const NtosJobManager = (props, context) => {
   );
 };
 
-export const NtosJobManagerContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosJobManagerContent = (props) => {
+  const { act, data } = useBackend();
   const { authed, cooldown, slots = [], prioritized = [] } = data;
   if (!authed) {
     return (

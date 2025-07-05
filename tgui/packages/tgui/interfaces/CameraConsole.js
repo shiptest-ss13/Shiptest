@@ -1,9 +1,10 @@
-import { filter, sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { classes } from 'common/react';
-import { createSearch } from 'common/string';
-import { useBackend, useLocalState } from '../backend';
-import { Button, ByondUi, Input, Section, Flex } from '../components';
+import { filter, sort } from 'common/collections';
+import { useState } from 'react';
+import { Button, ByondUi, Flex, Input, Section } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 /**
@@ -15,7 +16,7 @@ export const prevNextCamera = (cameras, activeCamera) => {
     return [];
   }
   const index = cameras.findIndex(
-    (camera) => camera.name === activeCamera.name
+    (camera) => camera.name === activeCamera.name,
   );
   return [cameras[index - 1]?.name, cameras[index + 1]?.name];
 };
@@ -26,27 +27,26 @@ export const prevNextCamera = (cameras, activeCamera) => {
  * Filters cameras, applies search terms and sorts the alphabetically.
  */
 export const selectCameras = (cameras, searchText = '') => {
-  const testSearch = createSearch(searchText, (camera) => camera.name);
-  return flow([
-    // Null camera filter
-    filter((camera) => camera?.name),
-    // Optional search term
-    searchText && filter(testSearch),
-    // Slightly expensive, but way better than sorting in BYOND
-    sortBy((camera) => camera.name),
-  ])(cameras);
+  let queriedCameras = filter(cameras, (camera) => !!camera.name);
+  if (searchText) {
+    const testSearch = createSearch(searchText, (camera) => camera.name);
+    queriedCameras = filter(queriedCameras, testSearch);
+  }
+  queriedCameras = sort(queriedCameras);
+
+  return queriedCameras;
 };
 
-export const CameraConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const CameraConsole = (props) => {
+  const { act, data } = useBackend();
   const { mapRef, activeCamera } = data;
   const cameras = selectCameras(data.cameras);
   const [prevCameraName, nextCameraName] = prevNextCamera(
     cameras,
-    activeCamera
+    activeCamera,
   );
   return (
-    <Window width={870} height={708} resizable>
+    <Window width={870} height={708}>
       <div className="CameraConsole__left">
         <Window.Content scrollable>
           <CameraConsoleContent />
@@ -92,9 +92,9 @@ export const CameraConsole = (props, context) => {
   );
 };
 
-export const CameraConsoleContent = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
+export const CameraConsoleContent = (props) => {
+  const { act, data } = useBackend();
+  const [searchText, setSearchText] = useState('');
   const { activeCamera } = data;
   const cameras = selectCameras(data.cameras, searchText);
   return (

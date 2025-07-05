@@ -1,13 +1,20 @@
+import {
+  AnimatedNumber,
+  Box,
+  Button,
+  Section,
+  Table,
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
+
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, Section, Table } from '../components';
-import { formatMoney } from '../format';
 import { NtosWindow } from '../layouts';
 
-export const NtosBountyConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosBountyConsole = (props) => {
+  const { act, data } = useBackend();
   const { bountydata = [] } = data;
   return (
-    <NtosWindow width={750} height={600} resizable>
+    <NtosWindow width={750} height={600}>
       <NtosWindow.Content scrollable>
         <Section
           title={<BountyHeader />}
@@ -81,8 +88,8 @@ export const NtosBountyConsole = (props, context) => {
   );
 };
 
-const BountyHeader = (props, context) => {
-  const { act, data } = useBackend(context);
+const BountyHeader = (props) => {
+  const { act, data } = useBackend();
   const { stored_cash } = data;
   return (
     <Box inline bold>

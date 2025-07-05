@@ -1,12 +1,13 @@
+import { Button, Collapsible, NoticeBox, Section } from 'tgui-core/components';
+
 import { useBackend, useLocalState } from '../backend';
-import { Button, Collapsible, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
 
 type OvermapDatumType = string;
 
 type OvermapPosition = [
   number, // x
-  number // y
+  number, // y
 ];
 
 type NameAndRef = {
@@ -55,9 +56,9 @@ const tokenTypeToName = (type: DatumType) => {
   }
 };
 
-const VvButton = (props: { target_ref: string }, context: any) => {
+const VvButton = (props: { target_ref: string }) => {
   const { target_ref } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   return (
     <Button
       icon="edit"
@@ -67,12 +68,12 @@ const VvButton = (props: { target_ref: string }, context: any) => {
   );
 };
 
-const JumpButton = (
-  props: { target_ref: string; tooltip_override?: string },
-  context: any
-) => {
+const JumpButton = (props: {
+  target_ref: string;
+  tooltip_override?: string;
+}) => {
   const { target_ref } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   return (
     <Button
       icon="arrow-right"
@@ -82,8 +83,8 @@ const JumpButton = (
   );
 };
 
-const TokenInfo = (props: { datum: OvermapDatumData }, context: any) => {
-  const { act } = useBackend(context);
+const TokenInfo = (props: { datum: OvermapDatumData }) => {
+  const { act } = useBackend();
   const { datum } = props;
   return (
     <Collapsible title={datum.name}>
@@ -110,12 +111,11 @@ const TokenInfo = (props: { datum: OvermapDatumData }, context: any) => {
   );
 };
 
-export const OvermapTokenManager = (_props: any, context: any) => {
-  const { act, data } = useBackend<OvermapTokenManagerData>(context);
+export const OvermapTokenManager = (_props: any) => {
+  const { act, data } = useBackend<OvermapTokenManagerData>();
   const [activePane, setActivePane] = useLocalState<DatumType | undefined>(
-    context,
     'activePane',
-    undefined
+    undefined,
   );
 
   const filteredData: OvermapDatumData[] = [];

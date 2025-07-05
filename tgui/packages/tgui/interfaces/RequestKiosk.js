@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -9,13 +8,15 @@ import {
   Section,
   Stack,
   TextArea,
-} from '../components';
-import { formatMoney } from '../format';
+} from 'tgui-core/components';
+import { formatMoney } from 'tgui-core/format';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const RequestKiosk = (props, context) => {
+export const RequestKiosk = (props) => {
   return (
-    <Window width={550} height={600} resizable>
+    <Window width={550} height={600}>
       <Window.Content scrollable>
         <RequestKioskContent />
       </Window.Content>
@@ -23,8 +24,8 @@ export const RequestKiosk = (props, context) => {
   );
 };
 
-export const RequestKioskContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const RequestKioskContent = (props) => {
+  const { act, data } = useBackend();
   const {
     accountName,
     requests = [],
@@ -120,7 +121,7 @@ export const RequestKioskContent = (props, context) => {
                             />
                           </Flex.Item>
                         </Flex>
-                      )
+                      ),
                   )}
                 </Section>
               </Section>
@@ -151,7 +152,7 @@ export const RequestKioskContent = (props, context) => {
                   maxValue={1000}
                   value={bountyValue}
                   width="80px"
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('bountyVal', {
                       bountyval: value,
                     })

@@ -1,9 +1,10 @@
+import { Button, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
-export const ProximitySensor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ProximitySensor = (props) => {
+  const { act, data } = useBackend();
   const { minutes, seconds, timing, scanning, sensitivity } = data;
   return (
     <Window width={250} height={185}>

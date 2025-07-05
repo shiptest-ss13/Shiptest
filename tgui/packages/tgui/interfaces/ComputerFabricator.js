@@ -1,12 +1,19 @@
-import { multiline } from 'common/string';
+import {
+  Box,
+  Button,
+  Flex,
+  Section,
+  Table,
+  Tooltip,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, Grid, Section, Table, Tooltip } from '../components';
 import { Window } from '../layouts';
 
-export const ComputerFabricator = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ComputerFabricator = (props) => {
+  const { act, data } = useBackend();
   return (
-    <Window title="Personal Computer Vendor" width={500} height={400} resizable>
+    <Window title="Personal Computer Vendor" width={500} height={400}>
       <Window.Content>
         <Section italic fontSize="20px">
           Your perfect device, only three steps away...
@@ -31,16 +38,16 @@ export const ComputerFabricator = (props, context) => {
 
 // This had a pretty gross backend so this was unfortunately one of the
 // best ways of doing it.
-const CfStep1 = (props, context) => {
-  const { act, data } = useBackend(context);
+const CfStep1 = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section title="Step 1" minHeight="306px">
       <Box mt={5} bold textAlign="center" fontSize="40px">
         Choose your Device
       </Box>
       <Box mt={3}>
-        <Grid width="100%">
-          <Grid.Column>
+        <Flex width="100%">
+          <Flex.Column>
             <Button
               fluid
               icon="laptop"
@@ -54,8 +61,8 @@ const CfStep1 = (props, context) => {
                 })
               }
             />
-          </Grid.Column>
-          <Grid.Column>
+          </Flex.Column>
+          <Flex.Column>
             <Button
               fluid
               icon="tablet-alt"
@@ -69,15 +76,15 @@ const CfStep1 = (props, context) => {
                 })
               }
             />
-          </Grid.Column>
-        </Grid>
+          </Flex.Column>
+        </Flex>
       </Box>
     </Section>
   );
 };
 
-const CfStep2 = (props, context) => {
-  const { act, data } = useBackend(context);
+const CfStep2 = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section
       title="Step 2: Customize your device"
@@ -93,7 +100,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Battery:
             <Tooltip
-              content={multiline`
+              content={`
                 Allows your device to operate without external utility power
                 source. Advanced batteries increase battery life.
               `}
@@ -138,7 +145,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Hard Drive:
             <Tooltip
-              content={multiline`
+              content={`
                 Stores file on your device. Advanced drives can store more
                 files, but use more power, shortening battery life.
               `}
@@ -183,7 +190,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Network Card:
             <Tooltip
-              content={multiline`
+              content={`
                 Allows your device to wirelessly connect to stationwide NTNet
                 network. Basic cards are limited to on-station use, while
                 advanced cards can operate anywhere near the station, which
@@ -230,7 +237,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Nano Printer:
             <Tooltip
-              content={multiline`
+              content={`
                 A device that allows for various paperwork manipulations,
                 such as, scanning of documents or printing new ones.
                 This device was certified EcoFriendlyPlus and is capable of
@@ -266,7 +273,7 @@ const CfStep2 = (props, context) => {
           <Table.Cell bold position="relative">
             Card Reader:
             <Tooltip
-              content={multiline`
+              content={`
                 Adds a slot that allows you to manipulate RFID cards.
                 Please note that this is not necessary to allow the device
                 to read your identification, it is just necessary to
@@ -304,7 +311,7 @@ const CfStep2 = (props, context) => {
               <Table.Cell bold position="relative">
                 Processor Unit:
                 <Tooltip
-                  content={multiline`
+                  content={`
                     A component critical for your device's functionality.
                     It allows you to run programs from your hard drive.
                     Advanced CPUs use more power, but allow you to run
@@ -340,7 +347,7 @@ const CfStep2 = (props, context) => {
               <Table.Cell bold position="relative">
                 Tesla Relay:
                 <Tooltip
-                  content={multiline`
+                  content={`
                     An advanced wireless power relay that allows your device
                     to connect to nearby area power controller to provide
                     alternative power source. This component is currently
@@ -389,8 +396,8 @@ const CfStep2 = (props, context) => {
   );
 };
 
-const CfStep3 = (props, context) => {
-  const { act, data } = useBackend(context);
+const CfStep3 = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section title="Step 3: Payment" minHeight="282px">
       <Box italic textAlign="center" fontSize="20px">
@@ -429,7 +436,7 @@ const CfStep3 = (props, context) => {
   );
 };
 
-const CfStep4 = (props, context) => {
+const CfStep4 = (props) => {
   return (
     <Section minHeight="282px">
       <Box bold textAlign="center" fontSize="28px" mt={10}>

@@ -1,6 +1,7 @@
-import { decodeHtmlEntities } from 'common/string';
+import { Icon, StyleableSection, Table } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
+
 import { useBackend } from '../backend';
-import { Icon, StyleableSection, Table } from '../components';
 import { Window } from '../layouts';
 
 type CrewEntry = {
@@ -19,8 +20,8 @@ type CrewManifestData = {
   };
 };
 
-export const CrewManifest = (props, context) => {
-  const { data } = useBackend<CrewManifestData>(context);
+export const CrewManifest = (props) => {
+  const { data } = useBackend<CrewManifestData>();
   const { manifest } = data;
 
   return (

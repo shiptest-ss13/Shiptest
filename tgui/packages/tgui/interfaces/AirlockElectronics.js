@@ -1,10 +1,16 @@
+import {
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section, NumberInput } from '../components';
 import { Window } from '../layouts';
 import { AccessList } from './common/AccessList';
 
-export const AirlockElectronics = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AirlockElectronics = (props) => {
+  const { act, data } = useBackend();
   const { oneAccess, unres_direction } = data;
   const regions = data.regions || [];
   const accesses = data.accesses || [];
@@ -96,7 +102,7 @@ export const AirlockElectronics = (props, context) => {
               minValue={2}
               maxValue={30}
               value={close_speed / 10}
-              onDrag={(e, value) =>
+              onDrag={(value) =>
                 act('close_speed', {
                   adjust: value - close_speed / 10,
                 })

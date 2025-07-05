@@ -1,10 +1,17 @@
+import {
+  Box,
+  Button,
+  LabeledList,
+  NoticeBox,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NoticeBox, Section } from '../components';
 import { NtosWindow } from '../layouts';
 
-export const NtosCyborgRemoteMonitor = (props, context) => {
+export const NtosCyborgRemoteMonitor = (props) => {
   return (
-    <NtosWindow width={600} height={800} resizable>
+    <NtosWindow width={600} height={800}>
       <NtosWindow.Content scrollable>
         <NtosCyborgRemoteMonitorContent />
       </NtosWindow.Content>
@@ -12,8 +19,8 @@ export const NtosCyborgRemoteMonitor = (props, context) => {
   );
 };
 
-export const NtosCyborgRemoteMonitorContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosCyborgRemoteMonitorContent = (props) => {
+  const { act, data } = useBackend();
   const { card, cyborgs = [] } = data;
 
   if (!cyborgs.length) {
@@ -51,17 +58,17 @@ export const NtosCyborgRemoteMonitorContent = (props, context) => {
                     cyborg.status
                       ? 'bad'
                       : cyborg.locked_down
-                      ? 'average'
-                      : 'good'
+                        ? 'average'
+                        : 'good'
                   }
                 >
                   {cyborg.status
                     ? 'Not Responding'
                     : cyborg.locked_down
-                    ? 'Locked Down'
-                    : cyborg.shell_discon
-                    ? 'Nominal/Disconnected'
-                    : 'Nominal'}
+                      ? 'Locked Down'
+                      : cyborg.shell_discon
+                        ? 'Nominal/Disconnected'
+                        : 'Nominal'}
                 </Box>
               </LabeledList.Item>
               <LabeledList.Item label="Charge">
@@ -70,8 +77,8 @@ export const NtosCyborgRemoteMonitorContent = (props, context) => {
                     cyborg.charge <= 30
                       ? 'bad'
                       : cyborg.charge <= 70
-                      ? 'average'
-                      : 'good'
+                        ? 'average'
+                        : 'good'
                   }
                 >
                   {typeof cyborg.charge === 'number'

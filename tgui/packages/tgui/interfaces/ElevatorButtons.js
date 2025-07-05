@@ -1,10 +1,11 @@
+import { Button, Table } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Table } from '../components';
 import { Window } from '../layouts';
 
-export const ElevatorButtons = (props, context) => {
+export const ElevatorButtons = (props) => {
   return (
-    <Window width={200} height={400} resizable>
+    <Window width={200} height={400}>
       <Window.Content scrollable>
         <ElevatorButtonsContent />
       </Window.Content>
@@ -12,8 +13,8 @@ export const ElevatorButtons = (props, context) => {
   );
 };
 
-const ElevatorButtonsContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const ElevatorButtonsContent = (props) => {
+  const { act, data } = useBackend();
   const { floors = [] } = data;
   // you know this TGUI code sucks because it looks like actual fucking code
   // burn all functional languages
@@ -68,11 +69,19 @@ const ElevatorButtonsContent = (props, context) => {
         )}
         <Table.Cell>
           {/* these don't do anything; it's unfinished. oh well */}
-          <Button disabled content={'◀|▶'} onClick={() => act('open_doors')} />
+          <Button
+            disabled
+            content={'◀|▶'}
+            onClick={() => act('open_doors')}
+          />
         </Table.Cell>
         <Table.Cell>
           {/* interestingly, this button doesn't work even on real elevators */}
-          <Button disabled content={'▶|◀'} onClick={() => act('close_doors')} />
+          <Button
+            disabled
+            content={'▶|◀'}
+            onClick={() => act('close_doors')}
+          />
         </Table.Cell>
       </Table.Row>
     </Table>
