@@ -10573,7 +10573,9 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "kuy" = (
-/turf/open/water/stormy_planet_lit,
+/turf/open/water/stormy_planet_lit{
+	planetary_atmos = 0
+	},
 /area/errorroom)
 "kuY" = (
 /obj/effect/turf_decal/corner/opaque/red{
