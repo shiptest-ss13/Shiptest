@@ -91,8 +91,9 @@
 	name = "jungle grass"
 	planetary_atmos = TRUE
 	desc = "Greener on the other side."
-	icon_state = "grass"
+	icon_state = "grass-0"
 	base_icon_state = "grass"
+	icon = 'icons/turf/floors/forestgrass.dmi'
 	smooth_icon = 'icons/turf/floors/forestgrass.dmi'
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	light_color = COLOR_JUNGLEPLANET_LIGHT

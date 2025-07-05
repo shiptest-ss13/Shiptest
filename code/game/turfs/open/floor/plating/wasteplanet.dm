@@ -160,26 +160,6 @@
 	light_range = 2
 	light_power = 0.2
 
-///biological-ish turfs
-
-/turf/open/floor/plating/grass/wasteplanet
-	icon_state = "junglegrass"
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/dirt/old/waste
-	initial_gas_mix = WASTEPLANET_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	light_color = COLOR_WASTEPLANET_LIGHT
-
-/turf/open/floor/plating/grass/wasteplanet/lit
-	light_range = 2
-	light_power = 0.2
-
-/turf/open/floor/plating/dirt/old/waste/lit
-	light_range = 2
-	light_power = 0.2
 
 ///cement turfs
 
