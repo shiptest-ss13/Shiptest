@@ -54,6 +54,10 @@
 	armour_penetration = 0
 	speed = 0.8
 
+/obj/projectile/beam/laser/eoehoma/wasp
+	icon_state = "heavylaser"
+	damage = 30
+
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
 	damage = 60

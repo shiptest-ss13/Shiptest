@@ -290,6 +290,10 @@
 		new /obj/item/reagent_containers/glass/beaker/large/napalm(src)
 	new /obj/item/grenade/frag(src)
 
+/obj/item/storage/belt/security/military/frontiersmen/wasp_ammo/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/stock_parts/cell/gun(src)
+	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/medical/webbing/frontiersmen
 	name = "leather medical bandolier"
