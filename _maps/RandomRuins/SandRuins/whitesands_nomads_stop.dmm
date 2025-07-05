@@ -77,9 +77,6 @@
 /turf/open/floor/concrete/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "bc" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2{
 	dir = 8
 	},
@@ -91,6 +88,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/food)
@@ -149,15 +150,15 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/nomad_stop/engineering)
 "cb" = (
-/obj/machinery/conveyor_switch{
-	pixel_y = 17;
-	pixel_x = 12;
-	id = "twohickey"
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/conveyor_switch/oneway{
+	pixel_y = 17;
+	pixel_x = 9;
+	id = "twohickey"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/engineering)
 "cf" = (
@@ -239,6 +240,15 @@
 	},
 /turf/open/floor/concrete/slab_4/whitesands,
 /area/ruin/whitesands/nomad_stop)
+"dj" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/sign/warning/biohazard{
+	pixel_y = 31
+	},
+/turf/open/floor/plating/rust/plasma,
+/area/ruin/whitesands/nomad_stop/engineering)
 "dy" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/fulltile,
@@ -249,8 +259,10 @@
 /turf/open/floor/plating,
 /area/ruin/whitesands/nomad_stop/food)
 "dz" = (
-/obj/machinery/power/smes/engineering,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/smes/engineering{
+	input_level = 10000
+	},
 /turf/open/floor/plating/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "dA" = (
@@ -375,9 +387,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2{
 	dir = 4
 	},
@@ -388,11 +397,17 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/south,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/engineering)
 "eA" = (
 /obj/machinery/power/shuttle/engine/turbine{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
 /turf/open/floor/engine/hull,
 /area/ruin/whitesands/nomad_stop/engineering)
@@ -709,6 +724,19 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
+"hG" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
+/obj/structure/sign/poster/contraband/donut_corp{
+	pixel_y = -29
+	},
+/turf/open/floor/plasteel,
+/area/ruin/whitesands/nomad_stop/quarters)
 "hJ" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -933,13 +961,13 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/nomad_stop/warehouse)
 "jB" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer2{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/warning/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/advanced_airlock_controller/directional/east,
 /obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/laundry)
 "jE" = (
@@ -1109,11 +1137,11 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "kP" = (
 /obj/effect/turf_decal/industrial/warning/full,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
 /obj/machinery/light/small/directional/east,
 /obj/machinery/advanced_airlock_controller/directional/west,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/quarters)
 "lb" = (
@@ -1242,6 +1270,9 @@
 /obj/machinery/light_switch{
 	pixel_y = 19;
 	pixel_x = 11
+	},
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_x = -29
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/whitesands/nomad_stop/quarters)
@@ -1473,6 +1504,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/structure/sign/poster/contraband/smoke{
+	pixel_y = 30
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/nomad_stop/engineering)
@@ -2440,6 +2474,9 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "xO" = (
 /obj/effect/spawner/bunk_bed,
+/obj/structure/sign/poster/contraband/red_rum{
+	pixel_x = -30
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/whitesands/nomad_stop/quarters)
 "yc" = (
@@ -2625,10 +2662,10 @@
 /area/ruin/whitesands/nomad_stop/warehouse)
 "Aj" = (
 /obj/effect/turf_decal/industrial/warning/full,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
 /obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/quarters)
 "Am" = (
@@ -2901,7 +2938,6 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/whitesands/nomad_stop/warehouse)
 "DG" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2910,6 +2946,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/warehouse)
 "DL" = (
@@ -3011,6 +3048,9 @@
 	dir = 4
 	},
 /obj/machinery/advanced_airlock_controller/directional/north,
+/obj/structure/sign/warning/nosmoking{
+	pixel_x = 26
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/engineering)
 "Fk" = (
@@ -3158,9 +3198,6 @@
 /turf/open/floor/carpet,
 /area/ruin/whitesands/nomad_stop/food)
 "Gs" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 4
 	},
@@ -3170,6 +3207,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/food)
@@ -3189,6 +3229,9 @@
 "Gw" = (
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/sign/poster/contraband/d_day_promo{
+	pixel_x = -28
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/whitesands/nomad_stop/quarters)
 "GH" = (
@@ -3308,7 +3351,7 @@
 	comp_id = "kill_me"
 	},
 /obj/structure/cable/yellow{
-	icon_state = "0-2"
+	icon_state = "1-2"
 	},
 /turf/open/floor/engine/hull,
 /area/ruin/whitesands/nomad_stop/engineering)
@@ -3581,7 +3624,6 @@
 /area/overmap_encounter/planetoid/sand/explored)
 "JT" = (
 /obj/effect/turf_decal/industrial/warning/full,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/supplymain/hidden/layer2,
 /obj/machinery/light/small/directional/east,
@@ -3589,6 +3631,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/quarters)
 "JU" = (
@@ -3600,7 +3643,7 @@
 	comp_id = "please"
 	},
 /obj/structure/cable/yellow{
-	icon_state = "0-2"
+	icon_state = "1-2"
 	},
 /turf/open/floor/engine/hull,
 /area/ruin/whitesands/nomad_stop/engineering)
@@ -3719,6 +3762,19 @@
 /obj/effect/turf_decal/spline/fancy/opaque/beige{
 	dir = 1
 	},
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis,
+/obj/item/lighter{
+	pixel_y = -5;
+	pixel_x = 5
+	},
+/obj/item/clothing/under/shorts/jorts,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/whitesands/nomad_stop/warehouse)
 "LU" = (
@@ -3727,6 +3783,10 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/warning/electricshock{
+	pixel_x = 8;
+	pixel_y = 24
+	},
 /turf/open/floor/plating/whitesands/lit,
 /area/overmap_encounter/planetoid/sand/explored)
 "LZ" = (
@@ -4231,6 +4291,9 @@
 /obj/machinery/igniter{
 	id = "i1"
 	},
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_x = -24
+	},
 /turf/open/floor/engine/hull,
 /area/ruin/whitesands/nomad_stop/engineering)
 "Rr" = (
@@ -4377,6 +4440,13 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/whitesands/nomad_stop/laundry)
+"SI" = (
+/obj/machinery/power/smes/engineering{
+	input_level = 10000
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/whitesands/lit,
+/area/overmap_encounter/planetoid/sand/explored)
 "SN" = (
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/whitesands/dried/lit,
@@ -4691,13 +4761,13 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/whitesands/nomad_stop/food)
 "WA" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/machinery/advanced_airlock_controller/directional/east,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/on/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/warehouse)
 "WE" = (
@@ -4796,6 +4866,14 @@
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 6;
 	pixel_y = 7
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_midori{
+	pixel_x = 12;
+	pixel_y = -3
+	},
+/obj/item/lighter{
+	pixel_y = -5;
+	pixel_x = 5
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/whitesands/nomad_stop/engineering)
@@ -4900,6 +4978,9 @@
 	dir = 8
 	},
 /obj/machinery/door/window/southright,
+/obj/structure/sign/warning/incident{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/whitesands/nomad_stop/engineering)
 "Zk" = (
@@ -4948,6 +5029,9 @@
 /obj/item/clothing/under/pants/blackjeans,
 /obj/item/clothing/under/rank/cargo/miner/lavaland,
 /obj/item/clothing/under/rank/cargo/miner/lavaland,
+/obj/structure/sign/poster/contraband/space_cops{
+	pixel_x = -27
+	},
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/nomad_stop/quarters)
 "ZF" = (
@@ -5080,7 +5164,7 @@ Eh
 Eh
 Eh
 Eh
-KO
+Eh
 KO
 Eh
 Eh
@@ -5234,8 +5318,8 @@ Eh
 Eh
 Eh
 Eh
-Fk
 Eh
+Fk
 Eh
 Eh
 Eh
@@ -6411,7 +6495,7 @@ Ld
 Ld
 XS
 hL
-vk
+hG
 XS
 XS
 kJ
@@ -6958,7 +7042,7 @@ Aq
 PH
 uH
 LU
-dz
+SI
 WH
 Yz
 aJ
@@ -7210,7 +7294,7 @@ uH
 Qe
 qk
 uH
-Qj
+dj
 sS
 wl
 eB
