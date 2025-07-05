@@ -118,7 +118,7 @@
 	ignore_flags = 1 //so you can medipen through hardsuits
 	reagent_flags = DRAWABLE
 	flags_1 = null
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/toxin/formaldehyde = 3)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/toxin/formaldehyde = 3, /datum/reagent/medicine/chitosan = 2)
 	custom_price = 150
 	custom_premium_price = 300
 
@@ -378,6 +378,20 @@
 	volume = 15
 	amount_per_transfer_from_this = 15
 
+/obj/item/reagent_containers/hypospray/medipen/ekit
+	name = "emergency first-aid autoinjector"
+	desc = "An epinephrine medipen with extra coagulant and antibiotics to help stabilize bad cuts and burns."
+	volume = 15
+	amount_per_transfer_from_this = 15
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 12, /datum/reagent/medicine/chitosan = 2.5, /datum/reagent/medicine/spaceacillin = 0.5)
+
+/obj/item/reagent_containers/hypospray/medipen/blood_loss
+	name = "hypovolemic-response autoinjector"
+	desc = "A medipen designed to stabilize and rapidly reverse severe bloodloss."
+	volume = 15
+	amount_per_transfer_from_this = 15
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 5, /datum/reagent/medicine/chitosan = 2.5, /datum/reagent/iron = 3.5, /datum/reagent/medicine/salglu_solution = 4)
+
 //A vial-loaded hypospray. Cartridge-based!
 /obj/item/hypospray/mkii
 	name = "hypospray mk.II"
@@ -533,7 +547,7 @@
 	var/mob/living/L
 	if(isliving(target))
 		L = target
-		if(!penetrates && !L.can_inject(user, 1)) //This check appears another four times, since otherwise the penetrating sprays will break in do_mob.
+		if(!penetrates && !L.can_inject(user, 1)) //This check appears another four times, since otherwise the penetrating sprays will break in do_after.
 			return
 
 	if(!L && !target.is_injectable()) //only checks on non-living mobs, due to how can_inject() handles
