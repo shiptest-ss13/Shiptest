@@ -17,6 +17,7 @@
 	spread = 12
 	spread_unwielded = 25
 	wield_slowdown = SMG_SLOWDOWN
+	manufacturer = MANUFACTURER_IMPORT
 
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
