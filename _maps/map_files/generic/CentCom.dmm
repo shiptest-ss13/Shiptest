@@ -7145,7 +7145,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "dvE" = (
-/turf/closed/mineral/ash_rock,
+/turf/closed/mineral/random/waterplanet,
 /area/errorroom)
 "dAW" = (
 /obj/item/storage/box/handcuffs,
@@ -10572,6 +10572,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"kuy" = (
+/turf/open/water/stormy_planet_lit,
+/area/errorroom)
 "kuY" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
@@ -11160,7 +11163,7 @@
 /area/tdome/tdomeadmin)
 "lEw" = (
 /obj/structure/speaking_tile,
-/turf/closed/mineral/ash_rock,
+/turf/closed/mineral/random/waterplanet,
 /area/errorroom)
 "lEZ" = (
 /obj/effect/turf_decal/corner/opaque/brown,
@@ -13868,7 +13871,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "qTh" = (
-/obj/item/rupee,
+/obj/structure/flora/rock/asteroid,
 /turf/open/floor/plating/asteroid/waterplanet{
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
 	planetary_atmos = 0
@@ -14721,6 +14724,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ctf)
+"sFn" = (
+/obj/structure/flora/tree/dead_pine,
+/turf/open/floor/plating/asteroid/waterplanet{
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15";
+	planetary_atmos = 0
+	},
+/area/errorroom)
 "sFo" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
@@ -18005,11 +18015,11 @@ aaa
 ngI
 dvE
 qTh
-qTh
-qTh
 qNi
-qTh
-qTh
+qNi
+qNi
+kuy
+kuy
 qTh
 dvE
 ngI
@@ -18261,13 +18271,13 @@ aaa
 aaa
 ngI
 dvE
-qTh
-qTh
-qTh
 qNi
-qTh
-qTh
-qTh
+sFn
+qNi
+qNi
+qNi
+kuy
+kuy
 dvE
 ngI
 aaa
@@ -18518,13 +18528,13 @@ aaa
 aaa
 ngI
 dvE
-qTh
-qTh
-qTh
 qNi
-qTh
-qTh
-qTh
+qNi
+qNi
+qNi
+sFn
+kuy
+kuy
 dvE
 ngI
 aaa
@@ -18775,13 +18785,13 @@ aaa
 aaa
 ngI
 dvE
+sFn
 qNi
 qNi
 qNi
+qTh
 qNi
-qNi
-qNi
-qNi
+kuy
 dvE
 ngI
 aaa
@@ -19032,9 +19042,9 @@ aaa
 aaa
 ngI
 dvE
-qTh
-qTh
-qTh
+qNi
+qNi
+qNi
 qNi
 qNi
 qNi
@@ -19289,9 +19299,9 @@ aaa
 aaa
 ngI
 lEw
-qTh
-qTh
-qTh
+qNi
+qNi
+qNi
 qNi
 qNi
 wrq
@@ -19546,9 +19556,9 @@ aaa
 aaa
 ngI
 dvE
-qTh
-qTh
-qTh
+qNi
+qNi
+qNi
 qNi
 qNi
 qNi
@@ -19803,7 +19813,7 @@ aaa
 aaa
 ngI
 dvE
-qNi
+sFn
 qNi
 qNi
 qNi
@@ -20061,12 +20071,12 @@ aaa
 ngI
 dvE
 qTh
-qTh
-qTh
 qNi
-qTh
-qTh
-qTh
+sFn
+qNi
+qNi
+sFn
+qNi
 dvE
 ngI
 aaa
@@ -20317,13 +20327,13 @@ aaa
 aaa
 ngI
 dvE
-qTh
-qTh
-qTh
 qNi
-qTh
-qTh
-qTh
+qNi
+qNi
+qNi
+qNi
+qNi
+qNi
 dvE
 ngI
 aaa
@@ -20574,13 +20584,13 @@ aaa
 aaa
 ngI
 dvE
-qTh
-qTh
-qTh
+qNi
+sFn
+qNi
 qNi
 qTh
-qTh
-qTh
+qNi
+sFn
 dvE
 ngI
 aaa
