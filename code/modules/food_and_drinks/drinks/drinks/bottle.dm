@@ -130,7 +130,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/gin = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/whiskey
-	name = "Kadi-Witka Reserve"
+	name = "Kadi-Witka Reserve Whiskey"
 	desc = "An equivalent to single-malt whiskey, commonly enjoyed and brewed in a brewery originally founded Zohil. While different from traditionally used wheat, it can be safely enjoyed by every species."
 	icon_state = "whiskeybottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 100)
@@ -141,7 +141,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey/candycorn = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka
-	name = "Triple Horned"
+	name = "Triple Horned Vodka"
 	desc = "Potato-based liquor commonly known as Vodka, distilled thrice to the standards of the PGF's requirements for their rations."
 	icon_state = "vodkabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
@@ -153,7 +153,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/tequila
-	name = "Rimeki Letisa"
+	name = "Rimeki Letisa Tequila"
 	desc = "Originally made from fermented succulents growing near Teceti's equator-deserts, this brand considers itself equivalent to the original tequila."
 	icon_state = "tequilabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/tequila = 100)
@@ -173,7 +173,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/patron = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/rum
-	name = "Ahkskra Spiced"
+	name = "Ahkskra Spiced Rum"
 	desc = "Ahkskra Spiced - a spiced rum for the vox folkhero in everyone. Features a gallant-looking vox on the front of the bottle."
 	icon_state = "rumbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/rum = 100)
@@ -190,13 +190,13 @@
 	list_reagents = list(/datum/reagent/hellwater = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
-	name = "Whitespear Dry"
+	name = "Whitespear Dry Vermouth"
 	desc = "Dry and sweet vermouth, commonly used for mixed drinks. Some Solarians drink it as a digestive before meals."
 	icon_state = "vermouthbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vermouth = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
-	name = "Keh'Lu'Tex Liqueur"
+	name = "Keh'Lu'Tex 'Kahlua' Liqueur"
 	desc = "An adapted recipe of a caffeine-mixed liqueur originating from Reh'himl, which replaces its original ingredient with coffee from Terra."
 	icon_state = "kahluabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 100)
@@ -222,13 +222,13 @@
 	foodtype = FRUIT | ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe
-	name = "Severtail Green"
+	name = "Severtail Green Absinthe"
 	desc = "Strong absinthe brewed in the Pan-Gezenan Federation, with their own transplants of Wormwood gifted to them during the first contact with humankind. If the legend (and label) means anything, the first attempt at brewing this caused some poor sarathi's tail to fall off."
 	icon_state = "absinthebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium
-	name = "Chacheyi Gold"
+	name = "Chacheyi Gold Absinthe"
 	desc = "A higher shelf absinthe, distributed primarily from The Shoal. Features the folkhero Chacheyi on the label, alongside their goldgrub companions."
 	icon_state = "absinthepremium"
 
@@ -240,7 +240,7 @@
 	foodtype = FRUIT | ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/bottle/hcider
-	name = "Neue Hamburg Spiced"
+	name = "Neue Hamburg Spiced Cider"
 	desc = "One of the main exports of Neue Hamburg - hard, spiced cider. Enjoyed all across the cantons and beyond."
 	icon_state = "hcider"
 	volume = 50
@@ -270,16 +270,16 @@
 	if(!random)
 		return FALSE
 	if(prob(10))
-		name = "Fluffy Tail"
+		name = "Fluffy Tail Sake"
 		desc += "This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
 		icon_state = "sakebottle_k"
 	else if(prob(10))
-		name = "Inubashiri's Home Brew"
+		name = "Inubashiri's Home Brew Sake"
 		desc += "This particular brand's mascot is a human with vaguely canine ears and a tail."
 		icon_state = "sakebottle_i"
 
 /obj/item/reagent_containers/food/drinks/bottle/sake/foxgirl
-	name = "Fluffy Tail"
+	name = "Fluffy Tail Sake"
 	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it. This particular brand's mascot is a human with vaguely canine ears and a tail."
 	icon_state = "sakebottle_k"
 	random = FALSE
@@ -399,7 +399,7 @@
 
 
 /obj/item/reagent_containers/food/drinks/bottle/applejack
-	name = "Mars Lightning"
+	name = "Mars Lightning Applejack"
 	desc = "A strong brandy originating from apples, considered the older sibling to hard cider. Mars Lightning is often partnered with anti-gravity racing companies, leading to it often being served straight or for impromptu mixes."
 	custom_price = 15
 	icon_state = "applejack_bottle"
@@ -460,6 +460,36 @@
 	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
 	icon_state = "mintbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 100)
+	isGlass = TRUE
+
+///Teceti Drinks
+
+/obj/item/reagent_containers/food/drinks/bottle/dotusira
+	name = "Rakire's Dotusira"
+	desc = "A bottle of Dotusira liquor, decorated in tiny fruits and berries. A small label on the bottle declares it a product of the Southern Teceti Combine."
+	icon_state = "dotusira"
+	list_reagents = list(/datum/reagent/consumable/ethanol/dotusira = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/faraseta
+	name = "Faraseta Lirili!"
+	desc = "A tall, slim bottle of Faraseta cider. Decorative flames run the base of the bottle. A small label declares it the product of the Northern Teceti Coalition."
+	icon_state = "faraseta"
+	list_reagents = list(/datum/reagent/consumable/ethanol/faraseta = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/sosomira
+	name = "Yikiki Sososi-Mira"
+	desc = "A bottle of Sososi-Mira made by Yikiki's Brewery. A particularly small Vox is drawn to make sure you know that there is absolutely no Miras in the bottle (potentially because they ate it)."
+	icon_state = "sososi-mira"
+	list_reagents = list(/datum/reagent/consumable/ethanol/sosomira = 100)
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/sososeta
+	name = "Meskili Clear Sososi-Seta"
+	desc = "A bottle of Sososi-Seta sourced from responsibly farmed sosoli plants, heritage dote berries, and enough time to for Solarians to consider it vintage."
+	icon_state = "sososi-seta"
+	list_reagents = list(/datum/reagent/consumable/ethanol/sososeta = 100)
 	isGlass = TRUE
 
 ////////////////////////// MOLOTOV ///////////////////////

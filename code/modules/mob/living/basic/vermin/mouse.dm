@@ -16,7 +16,7 @@
 	//held_w_class = WEIGHT_CLASS_TINY
 	//mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	faction = list(FACTION_RAT)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mouse = 1)
+	butcher_results = list(/obj/item/food/meat/slab/mouse = 1)
 
 	speak_emote = list("squeaks")
 	response_help_continuous = "pets"
@@ -252,7 +252,7 @@
 			return
 
 		loc.balloon_alert(user, "butchered")
-		new /obj/item/reagent_containers/food/snacks/meat/slab/mouse(loc)
+		new /obj/item/food/meat/slab/mouse(loc)
 		qdel(src)
 		return
 

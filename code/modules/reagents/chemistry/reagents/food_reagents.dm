@@ -101,6 +101,12 @@
 		M.satiety += 30
 	. = ..()
 
+/datum/reagent/consumable/nutriment/protein //this is from a beestation pr from a tg pr that actually makes use of this reagent. At the moment that I am porting newfood, we are just using it as filler to have something other than vitamins and nutriments.
+	name = "Protein"
+	description = "A natural polyamide made up of amino acids. An essential constituent of mosts known forms of life."
+	brute_heal = 0.8 //Rewards the player for eating a balanced diet.
+	nutriment_factor = 9 * REAGENTS_METABOLISM //45% as calorie dense as corn oil.
+
 /datum/reagent/consumable/cooking_oil
 	name = "Cooking Oil"
 	description = "A variety of cooking oil derived from fat or plants. Used in food preparation and frying."
@@ -200,7 +206,6 @@
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#731008" // rgb: 115, 16, 8
 	taste_description = "ketchup"
-
 
 /datum/reagent/consumable/capsaicin
 	name = "Capsaicin Oil"
@@ -657,13 +662,6 @@
 		. = TRUE
 	..()
 
-/datum/reagent/consumable/clownstears
-	name = "Clown's Tears"
-	description = "The sorrow and melancholy of a thousand bereaved clowns, forever denied their Honkmechs."
-	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#eef442" // rgb: 238, 244, 66
-	taste_description = "mournful honking"
-
 /datum/reagent/consumable/liquidelectricity
 	name = "Liquid Electricity"
 	description = "A glowing, viscous substance that radiates pure energy." //this is no longer Elzousa blood
@@ -807,3 +805,18 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "peanut"
 	reagent_state = SOLID
+
+/datum/reagent/consumable/tiris_blood
+	name = "Tiris blood"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "bloody and earthy"
+
+/datum/reagent/consumable/tiris_sele
+	name = "Tiris-Sele"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "gently blossoming umami"
+
+/datum/reagent/consumable/tiris_sale
+	name = "Tiris-Sale"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "bloody piercing umami"

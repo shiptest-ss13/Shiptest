@@ -93,8 +93,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/m17)
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
 
-	recoil_unwielded = 4
-	recoil = 1
+	recoil_unwielded = 3
+	recoil = 0.5
 
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -127,11 +127,11 @@ NO_MAG_GUN_HELPER(automatic/pistol/m20_auto_elite)
 	desc = "A large handgun chambered .44 Roumain and manufactured by Serene Outdoors. Modified to Inteq Risk Management Group's standards and issued as a heavy sidearm for officers."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
-	lefthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/lefthand.dmi'
-	righthand_file = 'icons/obj/guns/manufacturer/serene_outdoors/righthand.dmi'
-	mob_overlay_icon = 'icons/obj/guns/manufacturer/serene_outdoors/onmob.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/inteq/onmob.dmi'
 	icon_state = "m20_inteq"
-	item_state = "inteq_generic"
+	item_state = "m20_inteq"
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m20_auto_elite
 	allowed_ammo_types = list(
@@ -221,6 +221,9 @@ EMPTY_GUN_HELPER(automatic/m12_sporter)
 	icon_state = "larker"
 	item_state = "larker"
 
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "triptych")
 	default_firemode = FIREMODE_BURST
