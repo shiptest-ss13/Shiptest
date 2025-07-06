@@ -122,7 +122,8 @@
 /turf/open/water/beach/deep/outpost
 	color = "#22423b"
 	light_color = "#7e3d24"
-	initial_gas_mix = "o2=22;n2=82;TEMP=300"
+	initial_gas_mix = "o2=22;n2=82;TEMP=305"
+	light_range = 2
 
 /turf/open/water/tar
 	name = "tar pit"

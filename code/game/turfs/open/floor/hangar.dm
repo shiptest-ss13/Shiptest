@@ -46,4 +46,4 @@ Each floor in a hangar map must be subtyped here.
 	light_range = 2
 	light_power = 0.80
 	light_color = "#7e3d24"
-	initial_gas_mix = "o2=22;n2=82;TEMP=300"
+	initial_gas_mix = "o2=22;n2=82;TEMP=305"
