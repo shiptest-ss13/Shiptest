@@ -321,6 +321,12 @@
 	cost = 100
 	contains = list(/obj/item/storage/box/ids)
 
+/datum/supply_pack/civilian/bank_card_crate
+	name = "Box of Spare Bank Cards"
+	desc = "A box of spare IDs for replacing a lost bankcard."
+	cost = 100
+	contains = list(/obj/item/storage/box/bankcard)
+
 /datum/supply_pack/civilian/spare_clothes
 	name = "Spare Jumpsuits Crate"
 	desc = "Contains a spare set of utility jumpsuits and shoes for those unfortunate accidents." //how did we not have this before
