@@ -51,10 +51,6 @@
 	},
 /turf/open/floor/pod/light,
 /area/ship/external/dark)
-"as" = (
-/obj/effect/landmark/start/shaft_miner,
-/turf/template_noop,
-/area/template_noop)
 "av" = (
 /obj/effect/spawner/bunk_bed{
 	dir = 4
@@ -291,15 +287,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
-"fe" = (
-/obj/structure/reagent_dispensers/fueltank,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
-"fl" = (
-/obj/effect/landmark/start/medical_doctor,
-/turf/template_noop,
-/area/template_noop)
 "fn" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -307,6 +294,9 @@
 	},
 /obj/structure/sign/poster/clip/random{
 	pixel_y = -30
+	},
+/obj/structure/railing/thin{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
@@ -459,7 +449,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	color = "#474747"
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
 "iJ" = (
 /obj/structure/catwalk/over,
@@ -685,6 +675,26 @@
 	dir = 10
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/button/door{
+	name = "shutters control";
+	id = "sifnos_controlroom";
+	dir = 8;
+	pixel_x = 20;
+	pixel_y = -8
+	},
+/obj/machinery/button/door{
+	id = "sifnos_cargo";
+	name = "Cargo blast door control";
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 10
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 1;
+	id = "sifnos_holo";
+	pixel_x = 19;
+	dir = 8
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/cargo/office)
 "mt" = (
@@ -821,7 +831,7 @@
 	dir = 5;
 	color = "#474747"
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
 "pL" = (
 /obj/machinery/mineral/processing_unit_console{
@@ -863,6 +873,9 @@
 	id = "sifnos_belt"
 	},
 /obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/railing/thin{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1168,6 +1181,14 @@
 /obj/machinery/mineral/processing_unit{
 	input_dir = 4
 	},
+/obj/structure/railing/thin/corner,
+/obj/structure/railing/thin{
+	dir = 1;
+	layer = 2.89
+	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "tC" = (
@@ -1246,7 +1267,7 @@
 	pixel_y = 8;
 	pixel_x = 7
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
 "uq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1573,12 +1594,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/button/door{
-	name = "shutters control";
-	id = "sifnos_controlroom";
-	dir = 1;
-	pixel_y = -20
-	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/cargo/office)
@@ -1621,10 +1636,6 @@
 /obj/item/weldingtool/electric,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
-"zs" = (
-/obj/effect/landmark/start/captain,
-/turf/template_noop,
-/area/template_noop)
 "zt" = (
 /obj/structure/closet/crate/bin{
 	pixel_x = 8;
@@ -1654,7 +1665,10 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = -5
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 10
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/engines/starboard)
 "zD" = (
 /obj/structure/dresser,
@@ -1678,7 +1692,7 @@
 	dir = 9;
 	color = "#474747"
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
 "zF" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
@@ -1758,7 +1772,7 @@
 /obj/effect/turf_decal/siding/white/end{
 	color = "#474747"
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
 "Co" = (
 /obj/machinery/power/smes/shuttle/precharged,
@@ -1830,6 +1844,9 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light/small/directional/north,
+/obj/structure/railing/thin{
+	dir = 10
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "Dy" = (
@@ -1841,6 +1858,10 @@
 	smoothing_groups = list(31,39,52)
 	},
 /obj/machinery/door/firedoor,
+/obj/structure/railing/thin/corner{
+	dir = 1;
+	layer = 2.89
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "DA" = (
@@ -1851,7 +1872,10 @@
 	icon_state = "6-8"
 	},
 /obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 10
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/engines/starboard)
 "DK" = (
 /obj/machinery/computer/crew{
@@ -2321,17 +2345,16 @@
 /turf/open/floor/plating,
 /area/ship/crew/dorm/captain)
 "KZ" = (
-/obj/item/multitool{
-	pixel_x = 5;
-	pixel_y = 3
+/obj/structure/noticeboard{
+	pixel_y = 25
 	},
-/obj/structure/table,
 /obj/item/paper/fluff{
-	pixel_x = -6;
-	pixel_y = 2;
 	default_raw_text = "The most common malfunction of the processing units is un-linking from the control console caused by Bluespace jumps. The simplest solution is a manual re-calibration with use of a multitool. Simply, download console's linkage information onto a multitool, and then upload it to the processing unit.";
 	name = "torn page";
 	desc = "A torn page, supposedly from a furnace maintenance manual."
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/port)
@@ -2343,12 +2366,17 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/secure/gear,
-/obj/item/bodycamera,
-/obj/item/bodycamera,
-/obj/item/bodycamera,
+/obj/item/bodycamera{
+	network = list("Sifnos")
+	},
+/obj/item/bodycamera{
+	network = list("Sifnos")
+	},
+/obj/item/bodycamera{
+	network = list("Sifnos")
+	},
 /obj/item/multitool{
-	pixel_x = 5;
-	pixel_y = 3
+	pixel_x = 6
 	},
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
@@ -2361,6 +2389,10 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/east,
+/obj/structure/railing/thin/corner{
+	dir = 1
+	},
+/obj/structure/railing/thin,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "Lh" = (
@@ -2512,7 +2544,10 @@
 /obj/structure/cable/orange{
 	icon_state = "0-4"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/corner/opaque/black{
+	dir = 10
+	},
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/engines/starboard)
 "MU" = (
 /obj/machinery/door/poddoor{
@@ -2666,7 +2701,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "PD" = (
-/obj/machinery/door/airlock/mining{
+/obj/machinery/door/airlock/mining/glass{
 	name = "Cargo Bay"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2688,10 +2723,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"PH" = (
-/obj/effect/landmark/start/station_engineer,
-/turf/template_noop,
-/area/template_noop)
 "PR" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -2702,9 +2733,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/port)
 "QM" = (
-/obj/effect/landmark/start/assistant,
-/turf/template_noop,
-/area/template_noop)
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/pod/dark,
+/area/ship/cargo)
 "Rr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/cargo{
@@ -2829,6 +2861,12 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/obj/structure/railing/thin/corner{
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
@@ -3177,7 +3215,8 @@
 "XK" = (
 /obj/machinery/computer/security{
 	dir = 8;
-	icon_state = "computer-right"
+	icon_state = "computer-right";
+	network = list("Sifnos")
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plasteel/elevatorshaft,
@@ -3281,7 +3320,7 @@
 	color = "#474747";
 	dir = 8
 	},
-/turf/open/floor/wood/walnut,
+/turf/open/floor/wood,
 /area/ship/crew/dorm/captain)
 "ZH" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -3398,7 +3437,7 @@ ML
 TB
 rt
 vb
-zs
+al
 "}
 (5,1,1) = {"
 al
@@ -3417,7 +3456,7 @@ DA
 sZ
 xz
 vb
-as
+al
 "}
 (6,1,1) = {"
 al
@@ -3436,7 +3475,7 @@ zy
 qX
 fT
 vb
-as
+al
 "}
 (7,1,1) = {"
 al
@@ -3455,7 +3494,7 @@ ge
 sw
 Kf
 vb
-fl
+al
 "}
 (8,1,1) = {"
 al
@@ -3474,7 +3513,7 @@ xg
 xg
 xg
 xg
-PH
+al
 "}
 (9,1,1) = {"
 al
@@ -3493,7 +3532,7 @@ WA
 HZ
 Ps
 xg
-QM
+al
 "}
 (10,1,1) = {"
 al
@@ -3597,7 +3636,7 @@ im
 Wa
 lk
 oh
-bL
+QM
 pR
 GZ
 ov
@@ -3614,7 +3653,7 @@ al
 NS
 im
 Wa
-fe
+bL
 lk
 CQ
 pR
@@ -3764,7 +3803,7 @@ al
 (24,1,1) = {"
 al
 al
-EM
+Ls
 tm
 Ls
 MH
@@ -3840,8 +3879,8 @@ al
 (28,1,1) = {"
 al
 al
-EM
-EM
+Ls
+Ls
 DK
 XK
 EM
@@ -3860,7 +3899,7 @@ al
 al
 al
 al
-kB
+Ls
 kB
 kB
 kB

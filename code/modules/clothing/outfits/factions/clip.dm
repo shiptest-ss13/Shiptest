@@ -194,23 +194,21 @@
 		/obj/item/clothing/mask/gas/clip=1
 		)
 
-/datum/outfit/job/clip/fieldengi
+/datum/outfit/job/clip/miner/engi
 	name = "CLIP - Field Engineer"
-	job_icon = "shaftminer"
-	jobtype = /datum/job/mining
-
-	gloves = /obj/item/clothing/gloves/color/black
-	shoes = /obj/item/clothing/shoes/workboots
-
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	uniform = /obj/item/clothing/under/clip
 	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat/orange
 	suit =  /obj/item/clothing/suit/hazardvest
+	shoes = /obj/item/clothing/shoes/workboots
+	l_pocket = null
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
+	backpack_contents = null
 
 /datum/outfit/job/clip/mechanic
 	name = "CLIP - Mechanic"
