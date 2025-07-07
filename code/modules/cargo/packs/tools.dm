@@ -58,6 +58,7 @@
 	desc = "Contains a chest rig, with seven places to store small items."
 	cost = 500
 	contains = list(/obj/item/storage/belt/military)
+	crate_name = "chest rig crate"
 
 /datum/supply_pack/tools/cellcharger
 	name = "Cell Charger Crate"
