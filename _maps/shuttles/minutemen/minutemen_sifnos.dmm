@@ -287,6 +287,11 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
+"fl" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/pod/dark,
+/area/ship/cargo)
 "fn" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -569,8 +574,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kn" = (
-/obj/machinery/computer/helm{
+/obj/machinery/modular_computer/console/preset/command{
 	dir = 8;
+	layer = 3.01;
 	icon_state = "computer-left"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -1300,9 +1306,8 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "uV" = (
-/obj/machinery/modular_computer/console/preset/command{
+/obj/machinery/computer/helm{
 	dir = 8;
-	layer = 3.01;
 	icon_state = "computer-middle"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -2732,11 +2737,6 @@
 "QI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/port)
-"QM" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "Rr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/cargo{
@@ -3636,7 +3636,7 @@ im
 Wa
 lk
 oh
-QM
+fl
 pR
 GZ
 ov
