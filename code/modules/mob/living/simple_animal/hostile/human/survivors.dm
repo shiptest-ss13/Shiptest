@@ -83,6 +83,8 @@
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	outfit = /datum/outfit/hermit
 
+// this shit sucks man
+
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/Initialize() //everything here should equal out to 100 for the sake of my sanity.
 	mob_species = pick_weight(list(
 			/datum/species/human = 50,
@@ -93,7 +95,6 @@
 			/datum/species/spider = 5
 		)
 	)
-	//to-do: learn how to make mobsprites for other survivors
 
 	outfit = pick_weight(list(
 			/datum/outfit/hermit = 24,
