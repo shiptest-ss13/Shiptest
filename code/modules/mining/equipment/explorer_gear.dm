@@ -154,8 +154,8 @@
 /obj/item/clothing/head/hooded/survivor_hood
 	name = "survivor hood"
 	desc = "A loose-fitting hood, patched up with sealant and adhesive. Somewhat protects the head from the environment, but gets the job done."
-	icon_state = "survivor_hood"
-	item_state = "explorer_hermit"
+	icon_state = "survivor"
+	item_state = "survivor"
 	suit = /obj/item/clothing/suit/hooded/survivor
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
@@ -179,8 +179,8 @@
 
 
 /obj/item/clothing/head/hooded/survivor_hood/brown
-	icon_state = "survivor_hoodbrown"
-	item_state = "explorerbrown_hermit"
+	icon_state = "survivor_brown"
+	item_state = "survivor_brown"
 	suit = /obj/item/clothing/suit/hooded/survivor/brown
 
 
@@ -190,8 +190,8 @@
 	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/yellow
 
 /obj/item/clothing/head/hooded/survivor_hood/yellow
-	icon_state = "survivor_hoodyellow"
-	item_state = "exploreryellow_hermit"
+	icon_state = "survivor_yellow"
+	item_state = "survivor_yellow"
 	suit = /obj/item/clothing/suit/hooded/survivor/yellow
 
 /obj/item/clothing/suit/hooded/survivor/green
@@ -200,8 +200,8 @@
 	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/green
 
 /obj/item/clothing/head/hooded/survivor_hood/green
-	icon_state = "survivor_hoodgreen"
-	item_state = "explorergreen_hermit"
+	icon_state = "survivor_green"
+	item_state = "survivor_green"
 	suit = /obj/item/clothing/suit/hooded/survivor/green
 
 /obj/item/clothing/suit/hooded/survivor/jermit
@@ -210,8 +210,8 @@
 	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/jermit
 
 /obj/item/clothing/head/hooded/survivor_hood/jermit
-	icon_state = "survivor_hoodjermit"
-	item_state = "explorerjermit_hermit"
+	icon_state = "survivor_jermit"
+	item_state = "survivor_jermit"
 	suit = /obj/item/clothing/suit/hooded/survivor/jermit
 
 /obj/item/clothing/suit/hooded/scrap
