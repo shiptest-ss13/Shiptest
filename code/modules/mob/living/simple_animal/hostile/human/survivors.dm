@@ -30,26 +30,10 @@
 /mob/living/simple_animal/hostile/human/hermit/survivor
 	name = "Hermit Wanderer"
 	desc =" A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds."
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands/random
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/melee/knife/survival
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-
-/mob/living/simple_animal/hostile/human/hermit/survivor/chair
-	name = "Hermit Lunatic"
-	desc = "WIP"
-	r_hand = /obj/item/chair/plastic
-	melee_damage_lower = 7
-	melee_damage_upper = 7
-
-/mob/living/simple_animal/hostile/human/hermit/survivor/swordboard
-	name = "Hermit Brawler"
-	desc = "WIP"
-	r_hand = /obj/item/melee/sword/mass
-	l_hand = /obj/item/shield/riot/buckler
-	projectile_deflect_chance = 15
-	melee_damage_lower = 25
-	melee_damage_upper = 25
 
 /mob/living/simple_animal/hostile/human/hermit/ranged
 	icon_state = "survivor_hunter"
@@ -65,19 +49,8 @@
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter
 	name = "Hermit Hunter"
 	desc ="A wild-eyed figure. Watch out- he has a gun, and he remembers just enough of his old life to use it!"
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands/random
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/rifle/polymer
-
-/mob/living/simple_animal/hostile/human/hermit/ranged/shotgun
-	name = "Hermit Pursuer"
-	desc = "WIP"
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands/random
-	r_hand = /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
-	casingtype = /obj/item/ammo_casing/shotgun/improvised
-	speed = 10
-	retreat_distance = 3
-	minimum_distance = 1
-	shoot_point_blank = TRUE
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger
 	name = "Hermit Soldier"
@@ -89,7 +62,7 @@
 	rapid = 3
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm/recycled
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands/random
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/e11
@@ -102,21 +75,149 @@
 	rapid_fire_delay = 1
 	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/eoehoma/hermit
-	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands/random
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/e_gun/e11
 
 //survivor corpses
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands
-	uniform = /obj/item/clothing/under/color/random
-	belt = /obj/item/storage/belt/fannypack
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/hooded/survivor
-	l_pocket = /obj/item/radio
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-
-/obj/effect/mob_spawn/human/corpse/damaged/whitesands/random
 	outfit = /datum/outfit/hermit
+
+/obj/effect/mob_spawn/human/corpse/damaged/whitesands/Initialize() //everything here should equal out to 100 for the sake of my sanity.
+	mob_species = pick_weight(list(
+			/datum/species/human = 50,
+			/datum/species/lizard = 20,
+			/datum/species/ipc = 10,
+			/datum/species/elzuose = 10,
+			/datum/species/moth = 5,
+			/datum/species/spider = 5
+		)
+	)
+	//to-do: learn how to make mobsprites for other survivors
+
+	outfit = pick_weight(list(
+			/datum/outfit/hermit = 24,
+			/datum/outfit/hermit/brown = 24,
+			/datum/outfit/hermit/green = 24,
+			/datum/outfit/hermit/yellow = 24,
+			/datum/outfit/hermit/jermit = 4,
+			)
+	)
+	//gloves are a tossup
+	gloves = pick_weight(list(
+			/obj/item/clothing/gloves/color/black = 60,
+			/obj/item/clothing/gloves/explorer = 30,
+			/obj/item/clothing/gloves/explorer/old = 10
+			)
+		)
+
+	belt = pick_weight(list(
+			/obj/item/storage/belt/mining = 30,
+			/obj/item/storage/belt/bandolier = 30,
+			/obj/item/storage/belt/military = 20,
+			/obj/item/storage/belt/fannypack = 15,
+			/obj/item/storage/belt/mining/alt = 5,
+			/obj/item/storage/belt/mining/primitive = 5
+			)
+		)
+
+	//bags are semi-random.
+	back = pick_weight(list(
+			/obj/item/storage/backpack = 20,
+			/obj/item/storage/backpack/explorer = 20,
+			/obj/item/storage/backpack/satchel = 20,
+			/obj/item/storage/backpack/satchel/explorer = 20,
+			/obj/item/storage/backpack/messenger = 20
+			)
+		)
+
+	//as are bag contents
+	backpack_contents = list()
+	if(prob(70))
+		backpack_contents += pick_weight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
+			/obj/item/soap = 10,
+			/obj/item/stack/marker_beacon/ten = 15,
+			/obj/item/mining_scanner = 5,
+			/obj/item/extinguisher/mini = 10,
+			/obj/item/melee/knife/combat = 5,
+			/obj/item/flashlight/seclite = 10,
+			/obj/item/stack/sheet/sinew = 10,
+			/obj/item/stack/sheet/bone = 5,
+			/obj/item/stack/sheet/animalhide/goliath_hide = 10,
+			/obj/item/stack/sheet/bone = 8,
+			/obj/item/reagent_containers/food/drinks/waterbottle = 10,
+			/obj/item/reagent_containers/food/drinks/waterbottle/empty = 2,
+			)
+		)
+	if(prob(70))
+		backpack_contents += pick_weight(list(
+			/obj/item/stack/sheet/animalhide/goliath_hide = 20,
+			/obj/item/stack/marker_beacon/ten = 10,
+			/obj/item/mining_scanner = 20,
+			/obj/item/extinguisher/mini = 10,
+			/obj/item/melee/knife/survival = 10,
+			/obj/item/flashlight/seclite = 10,
+			/obj/item/stack/sheet/sinew = 10,
+			/obj/item/stack/sheet/bone = 10
+			)
+		)
+	if(prob(70))
+		backpack_contents += pick_weight(list(
+			/obj/item/stack/sheet/animalhide/goliath_hide = 5,
+			/obj/item/stack/marker_beacon/ten = 5,
+			/obj/item/mining_scanner = 5,
+			/obj/item/extinguisher/mini = 10,
+			/obj/item/melee/knife/survival = 12,
+			/obj/item/flashlight/seclite = 10,
+			/obj/item/stack/sheet/sinew = 5,
+			/obj/item/stack/sheet/bone = 5,
+			/obj/item/melee/knife/combat = 3,
+			/obj/item/storage/ration/shredded_beef = 30
+			)
+		)
+	if (prob(15)) //mayhaps a medkit
+		backpack_contents += pick_weight(list(
+			/obj/item/storage/firstaid/regular = 50,
+			/obj/item/storage/firstaid/brute = 15,
+			/obj/item/storage/firstaid/medical = 15,
+			/obj/item/storage/firstaid/fire = 10,
+			/obj/item/storage/firstaid/advanced = 5,
+			/obj/item/storage/firstaid/ancient = 5
+			)
+		)
+	if(prob(30)) //some pens maybe?
+		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
+	if(prob(5))
+		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/combat_drug
+
+	//masks
+	mask = pick_weight(list(
+		/obj/item/clothing/mask/gas = 40,
+		/obj/item/clothing/mask/gas/explorer = 20,
+		/obj/item/clothing/mask/gas/syndicate = 20,
+		)
+	)
+
+	//the eyes are the window into the soul.
+	if(prob(70))
+		glasses = pick_weight(list(
+			/obj/item/clothing/glasses/heat = 20,
+			/obj/item/clothing/glasses/cold = 20,
+			/obj/item/clothing/glasses/meson = 40,
+			/obj/item/clothing/glasses = 20
+			)
+		)
+
+	//and of course, ears.
+	if(prob(1)) //oh my god they can't hear the sandstorm coming they've got airpods in
+		ears = /obj/item/instrument/piano_synth/headphones/spacepods
+	else
+		ears = pick_weight(list(
+			/obj/item/radio/headset = 50,
+			/obj/item/radio/headset/alt = 50
+			)
+		)
+	. = ..()
 
 /datum/outfit/hermit
 	name = "Whitesands Survivor"
