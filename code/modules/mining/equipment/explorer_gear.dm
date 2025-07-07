@@ -154,7 +154,7 @@
 /obj/item/clothing/head/hooded/survivor_hood
 	name = "survivor hood"
 	desc = "A loose-fitting hood, patched up with sealant and adhesive. Somewhat protects the head from the environment, but gets the job done."
-	icon_state = "survivor_hermit"
+	icon_state = "survivor_hood"
 	item_state = "explorer_hermit"
 	suit = /obj/item/clothing/suit/hooded/survivor
 	body_parts_covered = HEAD
