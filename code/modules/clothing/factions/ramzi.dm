@@ -103,8 +103,8 @@
 	name = "rust-red hardsuit"
 	desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Ramzi Clique."
 	alt_desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in travel mode. Manufactured by Ramzi Clique."
-	icon = 'icons/obj/clothing/faction/ramzi/suit.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suit.dmi'
+	icon = 'icons/obj/clothing/faction/ramzi/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suits.dmi'
 	icon_state = "hardsuit1-ramzi"
 	item_state = "hardsuit1-ramzi"
 	hardsuit_type = "ramzi"
@@ -131,8 +131,8 @@
 	name = "elite rust-red hardsuit"
 	desc = "An elite version of the rusted-red hardsuit, with improved armour and fireproofing. The armour is worn and heavy. It is in EVA mode."
 	alt_desc = "An elite version of the rusted-red hardsuit, with improved armour and fireproofing. The armour is worn and heavy. It is in EVA mode."
-	icon = 'icons/obj/clothing/faction/ramzi/suit.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suit.dmi'
+	icon = 'icons/obj/clothing/faction/ramzi/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suits.dmi'
 	icon_state = "hardsuit1-ramzielite"
 	item_state = "hardsuit1-ramzielite"
 	hardsuit_type = "ramzielite"
@@ -208,7 +208,7 @@
 
 /obj/item/clothing/mask/gas/ramzi
 	name = "Ramzi Clique gas mask"
-	desc = "A protective gas mask salvaged back together by the Ramzi Clique.
+	desc = "A protective gas mask salvaged back together by the Ramzi Clique."
 	icon = 'icons/obj/clothing/faction/ramzi/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/mask.dmi'
 	icon_state = "ramzi_gas"
