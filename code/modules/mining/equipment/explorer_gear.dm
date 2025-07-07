@@ -139,7 +139,7 @@
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	icon_state = "survivor"
-	item_state = "survivor_suit"
+	item_state = "survivor"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = (FIRE_SUIT_MIN_TEMP_PROTECT * 2)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
@@ -154,7 +154,8 @@
 /obj/item/clothing/head/hooded/survivor_hood
 	name = "survivor hood"
 	desc = "A loose-fitting hood, patched up with sealant and adhesive. Somewhat protects the head from the environment, but gets the job done."
-	icon_state = "explorerold"
+	icon_state = "survivor_hermit"
+	item_state = "explorer_hermit"
 	suit = /obj/item/clothing/suit/hooded/survivor
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
@@ -172,20 +173,46 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/hooded/survivor/brown
+	icon_state = "survivorbrown"
+	item_state = "survivorbrown"
+	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/brown
+
 
 /obj/item/clothing/head/hooded/survivor_hood/brown
+	icon_state = "survivor_hoodbrown"
+	item_state = "explorerbrown_hermit"
+	suit = /obj/item/clothing/suit/hooded/survivor/brown
+
 
 /obj/item/clothing/suit/hooded/survivor/yellow
+	icon_state = "survivoryellow"
+	item_state = "survivoryellow"
+	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/yellow
 
 /obj/item/clothing/head/hooded/survivor_hood/yellow
+	icon_state = "survivor_hoodyellow"
+	item_state = "exploreryellow_hermit"
+	suit = /obj/item/clothing/suit/hooded/survivor/yellow
 
 /obj/item/clothing/suit/hooded/survivor/green
+	icon_state = "survivorgreen"
+	item_state = "survivorgreen"
+	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/green
 
 /obj/item/clothing/head/hooded/survivor_hood/green
+	icon_state = "survivor_hoodgreen"
+	item_state = "explorergreen_hermit"
+	suit = /obj/item/clothing/suit/hooded/survivor/green
 
 /obj/item/clothing/suit/hooded/survivor/jermit
+	icon_state = "survivorjermit"
+	item_state = "survivorjermit"
+	hoodtype = /obj/item/clothing/head/hooded/survivor_hood/jermit
 
 /obj/item/clothing/head/hooded/survivor_hood/jermit
+	icon_state = "survivor_hoodjermit"
+	item_state = "explorerjermit_hermit"
+	suit = /obj/item/clothing/suit/hooded/survivor/jermit
 
 /obj/item/clothing/suit/hooded/scrap
 	name = "scrap suit"
