@@ -16,6 +16,12 @@
 	path = /obj/item/clothing/under/utility/skirt
 	description = "Does it being a skirt defeat the purpose of use in a hazardous work environment?"
 
+// Cargo pants
+
+/datum/gear/uniform/cargo
+	display_name = "cargo pants, recolorable"
+	path = /obj/item/clothing/under/pants/cargo
+
 //Colored jumpsuits
 
 /datum/gear/uniform/color
@@ -51,6 +57,18 @@
 /datum/gear/uniform/athshortspurple
 	display_name = "athletic shorts, purple"
 	path = /obj/item/clothing/under/shorts/purple
+
+/datum/gear/uniform/dolphinshorts
+	display_name = "dolphin shorts"
+	path = /obj/item/clothing/under/shorts/dolphin
+
+/datum/gear/uniform/jorts
+	display_name = "jorts"
+	path = /obj/item/clothing/under/shorts/jorts
+
+/datum/gear/uniform/explorershorts
+	display_name = "explorer shorts"
+	path = /obj/item/clothing/under/shorts/explorer
 
 //Pants
 /datum/gear/uniform/pants

@@ -71,7 +71,7 @@ GENE SCANNER
 			I.appearance = MA
 			t_ray_images += I
 	if(t_ray_images.len)
-		flick_overlay(t_ray_images, list(viewer.client), flick_time)
+		flick_overlay_global(t_ray_images, list(viewer.client), flick_time)
 
 /obj/item/healthanalyzer
 	name = "health analyzer"
@@ -138,7 +138,7 @@ GENE SCANNER
 
 
 // Used by the PDA medical scanner too
-/proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE)
+/proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE, see_all_quirks = FALSE)
 	if(isliving(user) && (user.incapacitated()))
 		return
 
@@ -206,12 +206,20 @@ GENE SCANNER
 				trauma_text += trauma_desc
 			render_list += "<span class='alert ml-1'>Cerebral traumas detected: subject appears to be suffering from [english_list(trauma_text)].</span>\n"
 		if(C.roundstart_quirks.len)
-			render_list += "<span class='info ml-1'>Subject has the following physiological traits: [C.get_trait_string()].</span>\n"
+			render_list += "<span class='info ml-1'>Subject has the following physiological traits: [C.get_trait_string(see_all=see_all_quirks)].</span>\n"
 	if(advanced)
 		render_list += "<span class='info ml-1'>Brain Activity Level: [(200 - M.getOrganLoss(ORGAN_SLOT_BRAIN))/2]%.</span>\n"
 
 	if (M.radiation)
-		render_list += "<span class='alert ml-1'>Subject is irradiated.</span>\n"
+		render_list += "<span class='alert ml-1'>Subject is "
+		switch(M.radiation)
+			if(0 to RAD_MOB_SAFE)
+				render_list += "lightly irradiated.</span>\n"
+			if(RAD_MOB_SAFE to RAD_MOB_VOMIT)
+				render_list += "irradiated.</span>\n"
+			if(RAD_MOB_VOMIT to INFINITY)
+				render_list += "severely irradiated.</span>\n"
+
 		if(advanced)
 			render_list += "<span class='info ml-1'>Radiation Level: [M.radiation]%.</span>\n"
 
@@ -529,8 +537,8 @@ GENE SCANNER
 		var/area/user_area = T.loc
 		var/datum/weather/ongoing_weather = null
 
-		if(!user_area.outdoors)
-			to_chat(user, span_warning("[src]'s barometer function won't work indoors!"))
+		if(!user_area.outdoors && !user_area.allow_weather)
+			to_chat(user, "<span class='warning'>[src]'s barometer function won't work indoors!</span>")
 			return
 
 		if(weather_controller.current_weathers)

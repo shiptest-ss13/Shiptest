@@ -53,7 +53,6 @@
 	desc = "A heavy set of the finest mass-produced stamped plasteel armor plates money can buy."
 	icon_state = "marine_light"
 	item_state = "armor"
-	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN
 	armor = list("melee" = 20, "bullet" = 45, "laser" = 45, "energy" = 25, "bomb" = 30, "bio" = 65, "fire" = 40, "acid" = 50)
 	cold_protection = CHEST|GROIN
@@ -128,11 +127,6 @@
 	strip_delay = 70
 	resistance_flags = FLAMMABLE
 	dog_fashion = null
-
-/obj/item/clothing/suit/armor/vest/security/warden/inteq
-	name = "master at arms' armored coat"
-	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the Master At Arms of the IRMG."
-	icon_state = "maacoat"
 
 /obj/item/clothing/suit/armor/vest/security/warden/alt
 	name = "warden's armored jacket"
@@ -328,83 +322,6 @@
 	resistance_flags = FLAMMABLE
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 40, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 50)
 
-/obj/item/clothing/suit/armor/hos/inteq
-	name = "inteq battle coat"
-	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
-	icon_state = "armor_inteq_battlecoat"
-	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
-/obj/item/clothing/suit/armor/hos/inteq/honorable //Basically CC higherup clothing for inteq
-	name = "honorable vanguard battlecoat"
-	desc = "A sleek black coat with snow white fur trims made to order for honorable vanguards of the IRMG. It feels even tougher than the typical battlecoat."
-	icon_state = "armor_inteq_honorable_battlecoat"
-	item_state = "inteq_honorable_battlecoat"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
-/obj/item/clothing/suit/armor/inteq/corpsman
-	name = "inteq corpsman vest"
-	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division Corpsmen."
-	icon_state = "armor_inteq_labcoat"
-	item_state = "inteq_labcoat"
-	supports_variations = VOX_VARIATION
-	allowed = list(
-		/obj/item/analyzer,
-		/obj/item/stack/medical,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/hypospray,
-		/obj/item/healthanalyzer,
-		/obj/item/flashlight/pen,
-		/obj/item/reagent_containers/glass/bottle,
-		/obj/item/reagent_containers/glass/beaker,
-		/obj/item/reagent_containers/pill,
-		/obj/item/storage/pill_bottle,
-		/obj/item/melee/classic_baton/telescopic,
-		/obj/item/soap,
-		/obj/item/sensor_device,
-		/obj/item/tank/internals/emergency_oxygen,
-		/obj/item/tank/internals/plasmaman,
-		/obj/item/ammo_box,
-		/obj/item/gun/ballistic,
-		/obj/item/gun/energy,
-		/obj/item/melee/baton,
-	)
-
-/obj/item/clothing/suit/armor/vest/solgov
-	name = "\improper Sonnensoldner gambison"
-	desc = "A standard armor vest fielded for SolGov's Sonnensoldners."
-	icon_state = "solgov_gambison"
-	item_state = "solgov_gambison"
-	supports_variations = DIGITIGRADE_VARIATION
-	body_parts_covered = CHEST|GROIN
-	cold_protection = CHEST|GROIN|ARMS
-	heat_protection = CHEST|GROIN|ARMS
-
-/obj/item/clothing/suit/armor/vest/solgov/overseer
-	name = "\improper SolGov Overseer robe"
-	desc = "An elaborately designed robe utilized by SolGov overseers."
-	icon_state = "solgov_overseer_robe"
-	item_state = "solgov_overseer_robe"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	cold_protection = CHEST|GROIN|LEGS|ARMS
-	heat_protection = CHEST|GROIN|LEGS|ARMS
-
-/obj/item/clothing/suit/armor/vest/solgov/captain
-	name = "\improper SolGov Captain coat"
-	desc = "An armored coat typically used by SolGov captains."
-	icon_state = "solgov_coat"
-	item_state = "solgov_coat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	cold_protection = CHEST|GROIN|LEGS|ARMS
-	heat_protection = CHEST|GROIN|LEGS|ARMS
-
-/obj/item/clothing/suit/armor/vest/solgov/Initialize()
-	. = ..()
-	allowed |= list(/obj/item/gun/ballistic/automatic/assault/swiss_cheese, /obj/item/tank)
-
 /obj/item/clothing/suit/armor/vest/hop
 	name = "head of personnel's parade jacket"
 	desc = "For when an armoured vest isn't fashionable enough."
@@ -428,16 +345,6 @@
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
-
-/obj/item/clothing/suit/armor/solgov_trenchcoat
-	name = "\improper SolGov trenchcoat"
-	desc = "A solgov official's trenchcoat. Has a lot of pockets."
-	icon_state = "armor_solgov_trenchcoat"
-	item_state = "trenchcoat_solgov"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	cold_protection = CHEST|LEGS|ARMS
-	heat_protection = CHEST|LEGS|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 //JACKETS
 /obj/item/clothing/suit/armor/vest/security

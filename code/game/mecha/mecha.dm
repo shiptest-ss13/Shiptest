@@ -16,10 +16,9 @@
 	var/repair_multiplier = 1 //multiply incoming repairs by this value. used to make some mechs less efficient and slower to repair.
 	var/ruin_mecha = FALSE //if the mecha starts on a ruin, don't automatically give it a tracking beacon to prevent metagaming.
 	var/can_move = 0 //time of next allowed movement
-	var/stopped = FALSE
 	var/mob/living/carbon/occupant = null
 	var/step_in = 10 //make a step in step_in/10 sec.
-	var/dir_in = 2//What direction will the mech face when entered/powered on? Defaults to South.
+	var/dir_in = SOUTH //What direction will the mech face when entered/powered on?
 	var/base_step_energy_drain = 15 //The base amount of energy the mech should consume each time it moves. This variable is a backup for when leg actuators affect the energy drain.
 	var/step_energy_drain  // How much energy the mech actually consumes when moving after modifiers (Eg, stock parts, leg actuators)
 	var/melee_energy_drain = 15
@@ -140,6 +139,7 @@
 	hud_possible = list (DIAG_STAT_HUD, DIAG_BATT_HUD, DIAG_MECH_HUD, DIAG_TRACK_HUD)
 
 /obj/item/radio/mech //this has to go somewhere
+	canhear_range = 0
 
 /obj/mecha/Initialize()
 	. = ..()
@@ -305,7 +305,6 @@
 	radio.name = "[src] radio"
 	radio.icon = icon
 	radio.icon_state = icon_state
-	radio.subspace_transmission = TRUE
 
 /obj/mecha/proc/can_use(mob/user)
 	if(user != occupant)
@@ -474,13 +473,15 @@
 
 /obj/mecha/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
-	if(speaker == occupant)
-		//flick speech bubble
-		var/list/speech_bubble_recipients = list()
-		for(var/mob/M in get_hearers_in_view(7,src))
-			if(M.client)
-				speech_bubble_recipients.Add(M.client)
-		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), image('icons/mob/talk.dmi', src, "machine[say_test(raw_message)]",MOB_LAYER+1), speech_bubble_recipients, 30)
+	if(speaker != occupant)
+		return
+	//flick speech bubble
+	var/list/speech_bubble_recipients = list()
+	for(var/mob/M in get_hearers_in_view(7,src))
+		if(M.client)
+			speech_bubble_recipients.Add(M.client)
+	var/image/mech_speech = image('icons/mob/talk.dmi', src, "machine[say_test(say_test(raw_message))]",MOB_LAYER+1)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), mech_speech, speech_bubble_recipients, 3 SECONDS)
 
 ////////////////////////////
 ///// Action processing ////
@@ -558,7 +559,7 @@
 ////////  Movement procs  ////////
 //////////////////////////////////
 
-///Plays the mech step sound effect. Split from movement procs so that other mechs (HONK) can override this one specific part.
+///Plays the mech step sound effect. Split from movement procs so that other mechs can override this one specific part.
 /obj/mecha/proc/play_stepsound()
 	if(stepsound)
 		playsound(src,stepsound,40,1)
@@ -615,8 +616,6 @@
 /obj/mecha/proc/domove(direction)
 	if(can_move >= world.time)
 		return 0
-	if(stopped)
-		return 0
 	if(!Process_Spacemove(direction))
 		return 0
 	if(!has_charge(step_energy_drain))
@@ -659,7 +658,7 @@
 	return 0
 
 /obj/mecha/proc/mechturn(direction)
-	setDir(direction)
+	set_dir_mecha(direction)
 	if(turnsound)
 		playsound(src,turnsound,40,TRUE)
 	return 1
@@ -668,7 +667,7 @@
 	var/current_dir = dir
 	. = step(src,direction)
 	if(strafe)
-		setDir(current_dir)
+		set_dir_mecha(current_dir)
 	if(. && !step_silent)
 		play_stepsound()
 	step_silent = FALSE
@@ -790,7 +789,7 @@
 			to_chat(user, "[B.get_mecha_info()]")
 			break
 		//Nothing like a big, red link to make the player feel powerful!
-		to_chat(user, "<a href='?src=[REF(user)];ai_take_control=[REF(src)]'>[span_userdanger("ASSUME DIRECT CONTROL?")]</a><br>")
+		to_chat(user, "<a href='byond://?src=[REF(user)];ai_take_control=[REF(src)]'>[span_userdanger("ASSUME DIRECT CONTROL?")]</a><br>")
 	else
 		examine(user)
 		if(occupant)
@@ -804,7 +803,7 @@
 		if(!can_control_mech)
 			to_chat(user, span_warning("You cannot control exosuits without AI control beacons installed."))
 			return
-		to_chat(user, "<a href='?src=[REF(user)];ai_take_control=[REF(src)]'>[span_boldnotice("Take control of exosuit?")]</a><br>")
+		to_chat(user, "<a href='byond://?src=[REF(user)];ai_take_control=[REF(src)]'>[span_boldnotice("Take control of exosuit?")]</a><br>")
 
 /obj/mecha/transfer_ai(interaction, mob/user, mob/living/silicon/ai/AI, obj/item/aicard/card)
 	if(!..())
@@ -1014,7 +1013,7 @@
 		forceMove(loc)
 		log_message("[H] moved in as pilot.", LOG_MECHA)
 		icon_state = initial(icon_state)
-		setDir(dir_in)
+		set_dir_mecha(dir_in)
 		playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
@@ -1067,7 +1066,7 @@
 	SEND_SIGNAL(src,COMSIG_MECH_ENTERED, occupant)
 	equipment_check()
 	update_appearance()
-	setDir(dir_in)
+	set_dir_mecha(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
 	if(!internal_damage)
 		SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
@@ -1162,7 +1161,7 @@
 			mmi.set_mecha(null)
 			mmi.update_appearance()
 		icon_state = initial(icon_state)+"-open"
-		setDir(dir_in)
+		set_dir_mecha(dir_in)
 
 	if(L && L.client)
 		L.update_mouse_pointer()
@@ -1328,3 +1327,8 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /obj/mecha/proc/charge_end()
 	walk(src,0)
 	charging = FALSE
+
+/// Sets the direction of the mecha and all of its occcupents, required for FOV. Alternatively one could make a recursive contents registration and register topmost direction changes in the fov component
+/obj/mecha/proc/set_dir_mecha(new_dir)
+	setDir(new_dir)
+	occupant.setDir(new_dir)

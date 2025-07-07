@@ -92,9 +92,17 @@
 	else
 		return ..()
 
+/obj/item/towel/attack(mob/living/target_mob, mob/living/user)
+	. = ..()
+	while(target_mob.fire_stacks < 0)
+		if(do_after(user, 15, target = target_mob, hidden = TRUE))
+			target_mob.fire_stacks = min(0, target_mob.fire_stacks + 1)
+	to_chat(user, "You dry [target_mob] off with your towel.")
+
 /obj/item/towel/CtrlClick(mob/user)
 	. = ..()
-
+	if(!user.canUseTopic(src, BE_CLOSE))
+		return
 	if(. == FALSE)
 		return
 	if(shape == TOWEL_FOLDED)

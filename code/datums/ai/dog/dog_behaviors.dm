@@ -27,8 +27,8 @@
 		var/obj/item/target = controller.blackboard[BB_FETCH_TARGET]
 		if(target)
 			controller.blackboard[BB_FETCH_IGNORE_LIST][target] = TRUE
-		controller.blackboard[BB_FETCH_TARGET] = null
-		controller.blackboard[BB_FETCH_DELIVER_TO] = null
+		controller.clear_blackboard_key(BB_FETCH_TARGET)
+		controller.clear_blackboard_key(BB_FETCH_DELIVER_TO)
 
 
 /// This is simply a behaviour to pick up a fetch target
@@ -47,7 +47,7 @@
 
 /datum/ai_behavior/simple_equip/finish_action(datum/ai_controller/controller, success)
 	. = ..()
-	controller.blackboard[BB_FETCH_TARGET] = null
+	controller.clear_blackboard_key(BB_FETCH_TARGET)
 
 /datum/ai_behavior/simple_equip/proc/pickup_item(datum/ai_controller/controller, obj/item/target)
 	var/atom/pawn = controller.pawn
@@ -65,7 +65,7 @@
 	var/atom/pawn = controller.pawn
 	pawn.visible_message(span_notice("[pawn] drops [carried_item]."))
 	carried_item.forceMove(get_turf(pawn))
-	controller.blackboard[BB_SIMPLE_CARRY_ITEM] = null
+	controller.clear_blackboard_key(BB_SIMPLE_CARRY_ITEM)
 	return TRUE
 
 
@@ -85,7 +85,7 @@
 
 /datum/ai_behavior/deliver_item/finish_action(datum/ai_controller/controller, success)
 	. = ..()
-	controller.blackboard[BB_FETCH_DELIVER_TO] = null
+	controller.clear_blackboard_key(BB_FETCH_DELIVER_TO)
 
 /// Actually drop the fetched item to the target
 /datum/ai_behavior/deliver_item/proc/deliver_item(datum/ai_controller/controller)
@@ -138,7 +138,7 @@
 		return
 
 	if(!controller.blackboard[BB_DOG_PLAYING_DEAD])
-		controller.blackboard[BB_DOG_PLAYING_DEAD] = TRUE
+		controller.set_blackboard_key(BB_DOG_PLAYING_DEAD, TRUE)
 		simple_pawn.emote("deathgasp", intentional=FALSE)
 		simple_pawn.icon_state = simple_pawn.icon_dead
 		if(simple_pawn.flip_on_death)
@@ -194,7 +194,7 @@
 
 /datum/ai_behavior/harass/finish_action(datum/ai_controller/controller, succeeded)
 	. = ..()
-	controller.blackboard[BB_DOG_HARASS_TARGET] = null
+	controller.clear_blackboard_key(BB_DOG_HARASS_TARGET)
 
 /// A proc representing when the mob is pushed to actually attack the target. Again, subtypes can be used to represent different attacks from different animals, or it can be some other generic behavior
 /datum/ai_behavior/harass/proc/attack(datum/ai_controller/controller, mob/living/living_target)

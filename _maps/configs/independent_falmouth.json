@@ -17,8 +17,9 @@
 		"PIRATES"
 	],
 	"map_path": "_maps/shuttles/independent/independent_falmouth.dmm",
+	"token_icon_state": "ship_small_generic",
 	"limit": 1,
-	"starting_funds": 1250,
+	"starting_funds": 2000,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/independent/captain/cheap",
@@ -34,9 +35,13 @@
 			"outfit": "/datum/outfit/job/independent/security/merc",
 			"slots": 1
 		},
+		"Mechanic": {
+			"outfit": "/datum/outfit/job/independent/engineer",
+			"slots": 1
+		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/independent/assistant",
-			"slots": 2
+			"outfit": "/datum/outfit/job/independent/assistant/cheap",
+			"slots": 1
 		}
 	},
 	"enabled": true

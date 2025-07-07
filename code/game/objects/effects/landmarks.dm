@@ -81,14 +81,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Bartender"
 	icon_state = "Bartender"
 
-/obj/effect/landmark/start/clown
-	name = "Clown"
-	icon_state = "Clown"
-
-/obj/effect/landmark/start/mime
-	name = "Mime"
-	icon_state = "Mime"
-
 /obj/effect/landmark/start/quartermaster
 	name = "Quartermaster"
 	icon_state = "Quartermaster"
@@ -354,6 +346,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/ert_shuttle_brief_spawn
 	name = "Emergency response team briefing officer spawn"
 	icon_state = "ert_brief_spawn"
+
+/obj/effect/landmark/salesman
+	name = "Salesman spawn"
+	icon_state = "ert_spawn"
 
 //ninja energy nets teleport victims here
 /obj/effect/landmark/holding_facility

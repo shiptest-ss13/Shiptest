@@ -25,6 +25,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		/datum/material/titanium,
 		/datum/material/bluespace,
 		/datum/material/plastic,
+		/datum/material/hellstone,
 		)
 	AddComponent(/datum/component/material_container, materials_list, INFINITY, allowed_types=/obj/item/stack, _disable_attackby=TRUE)
 
@@ -85,11 +86,11 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		var/ref = REF(M)
 		if (sheets)
 			if (sheets >= 1)
-				ui += "<a href='?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</a>"
+				ui += "<a href='byond://?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</a>"
 			else
 				ui += span_linkoff("Eject")
 			if (sheets >= 20)
-				ui += "<a href='?src=[REF(src)];ejectsheet=[ref];eject_amt=20'>20x</a>"
+				ui += "<a href='byond://?src=[REF(src)];ejectsheet=[ref];eject_amt=20'>20x</a>"
 			else
 				ui += span_linkoff("20x")
 			ui += "<b>[mat.name]</b>: [sheets] sheets<br>"
@@ -102,8 +103,8 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		var/datum/component/remote_materials/mats = C
 		var/atom/parent = mats.parent
 		var/hold_key = "[get_area(parent)]/[mats.category]"
-		ui += "<a href='?src=[REF(src)];remove=[REF(mats)]'>Remove</a>"
-		ui += "<a href='?src=[REF(src)];hold[!holds[hold_key]]=[url_encode(hold_key)]'>[holds[hold_key] ? "Allow" : "Hold"]</a>"
+		ui += "<a href='byond://?src=[REF(src)];remove=[REF(mats)]'>Remove</a>"
+		ui += "<a href='byond://?src=[REF(src)];hold[!holds[hold_key]]=[url_encode(hold_key)]'>[holds[hold_key] ? "Allow" : "Hold"]</a>"
 		ui += " <b>[parent.name]</b> in [get_area_name(parent, TRUE)]<br>"
 	if(!connected.len)
 		ui += "Nothing!"
@@ -118,7 +119,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 			if(i == page)
 				ui += span_linkoff("[i]")
 			else
-				ui += "<a href='?src=[REF(src)];page=[i]'>[i]</a>"
+				ui += "<a href='byond://?src=[REF(src)];page=[i]'>[i]</a>"
 
 	ui += "<ol>"
 	any = FALSE

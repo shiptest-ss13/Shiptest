@@ -53,7 +53,16 @@
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
-	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	e_cost = 1428
+	delay = 0.3 SECONDS
+
+/obj/item/ammo_casing/energy/lasergun/eoehoma/heavy
+	projectile_type = /obj/projectile/beam/laser/eoehoma/heavy
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 10000
+	select_name = "overcharge"
+	delay = 1 SECONDS
 
 /obj/item/ammo_casing/energy/laser/smg
 	projectile_type = /obj/projectile/beam/laser/weak
@@ -190,6 +199,7 @@
 	armour_penetration = -20
 	damage_type = STAMINA
 	flag = "energy"
+	bullet_identifier = "disabler"
 	hitsound = 'sound/weapons/tap.ogg'
 	eyeblur = 0
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser

@@ -4,6 +4,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Location
 	MODE_KEY_R_HAND = MODE_R_HAND,
 	MODE_KEY_L_HAND = MODE_L_HAND,
+	MODE_KEY_EXOSUIT = MODE_EXOSUIT,
 	MODE_KEY_INTERCOM = MODE_INTERCOM,
 
 	// Department
@@ -149,7 +150,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!can_speak_basic(original_message, ignore_spam, forced))
 		return
 
-	language = message_mods[LANGUAGE_EXTENSION]
+	language ||= message_mods[LANGUAGE_EXTENSION] || get_selected_language()
 
 	if(!language)
 		language = get_selected_language()
@@ -215,7 +216,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/turf/T = get_turf(src)
 	var/datum/gas_mixture/environment = T.return_air()
 	var/pressure = (environment)? environment.return_pressure() : 0
-	if(pressure < SOUND_MINIMUM_PRESSURE)
+	if(pressure < SOUND_MINIMUM_PRESSURE && !HAS_TRAIT(src, TRAIT_SIGN_LANG))
 		message_range = 1
 
 	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
@@ -229,13 +230,47 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	return 1
 
-/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
+/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), radio_sound)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
 	if(!client)
 		return
 
 	var/deaf_message
 	var/deaf_type
+
+	var/is_custom_emote = message_mods[MODE_CUSTOM_SAY_ERASE_INPUT]
+
+	//var/understood = TRUE
+	if(!is_custom_emote) // we do not translate emotes
+		//var/untranslated_raw_message = raw_message
+		raw_message = lang_treat(speaker, message_language, raw_message, spans, message_mods) // translate
+		//if(raw_message != untranslated_raw_message)
+			//understood = FALSE
+
+	if(HAS_TRAIT(speaker, TRAIT_SIGN_LANG)) //Checks if speaker is using sign language
+		if(is_blind(src))
+			return FALSE
+		deaf_message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mods)
+		if(speaker != src)
+			if(!radio_freq) //I'm about 90% sure there's a way to make this less cluttered
+				deaf_type = 1
+		else
+			deaf_type = 2
+
+	// Create map text prior to modifying message for goonchat, sign lang edition
+		if (message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
+			create_chat_message(speaker, null, message_mods[MODE_CUSTOM_SAY_EMOTE], spans, EMOTE_MESSAGE)
+		else
+			create_chat_message(speaker, message_language, raw_message, spans)
+
+
+
+
+		message = deaf_message
+
+		show_message(message, MSG_VISUAL, deaf_message, deaf_type)
+		return message
+
 	if(speaker != src)
 		if(!radio_freq) //These checks have to be seperate, else people talking on the radio will make "You can't hear yourself!" appear when hearing people over the radio while deaf.
 			deaf_message = "[span_name("[speaker]")] [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
@@ -253,14 +288,14 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		else
 			create_chat_message(speaker, message_language, raw_message, spans)
 
-	if(radio_freq && (client?.prefs.toggles & SOUND_RADIO))
+	if(radio_freq && (client?.prefs.toggles & SOUND_RADIO) && radio_sound)
 		//All calls to hear that include radio_freq will be from radios, so we can assume that the speaker is a virtualspeaker
 		var/atom/movable/virtualspeaker/virt = speaker
 		//Play the walkie sound if this mob is speaking, and don't apply cooldown
 		if(virt.source == src)
 			playsound_local(get_turf(speaker), "sound/effects/walkietalkie.ogg", 20, FALSE)
 		else if(COOLDOWN_FINISHED(src, radio_crackle_cooldown))
-			playsound_local(get_turf(speaker), "sound/effects/radio_chatter.ogg", 20, FALSE)
+			playsound_local(get_turf(speaker), radio_sound, 20, FALSE)
 		//Always start it so that it only crackles when there hasn't been a message in a while
 		COOLDOWN_START(src, radio_crackle_cooldown, 5 SECONDS)
 
@@ -312,7 +347,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			speech_bubble_recipients.Add(M.client)
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay_global), I, speech_bubble_recipients, 3 SECONDS)
 
 /mob/proc/binarycheck()
 	return FALSE
@@ -332,6 +367,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return TRUE
 
 /mob/living/proc/can_speak_vocal(message) //Check AFTER handling of xeno and ling channels
+	var/sigreturn = SEND_SIGNAL(src, COMSIG_LIVING_TRY_SPEECH, message)
+	if(sigreturn & COMPONENT_CAN_ALWAYS_SPEAK)
+		return TRUE
 	if(HAS_TRAIT(src, TRAIT_MUTE))
 		return FALSE
 
@@ -349,6 +387,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(HAS_TRAIT(src, TRAIT_UNINTELLIGIBLE_SPEECH))
 		message = unintelligize(message)
+
+	SEND_SIGNAL(src, COMSIG_LIVING_TREAT_MESSAGE, args)
 
 	if(derpspeech)
 		message = derpspeech(message, stuttering)
@@ -396,6 +436,12 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 					return l_hand.talk_into(src, message, , spans, language, message_mods)
 				return ITALICS | REDUCE_RANGE
 
+		if(MODE_EXOSUIT)
+			var/obj/mecha/exo = get_atom_on_turf(src, /obj/mecha)
+			if(ismecha(exo) && exo.radio)
+				exo.radio.talk_into(src, message, , spans, language, message_mods)
+				return ITALICS | REDUCE_RANGE
+
 		if(MODE_INTERCOM)
 			for (var/obj/item/radio/intercom/I in view(MODE_RANGE_INTERCOM, null))
 				I.talk_into(src, message, , spans, language, message_mods)
@@ -414,9 +460,15 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	else if(message_mods[MODE_SING])
 		. = verb_sing
 	else if(stuttering)
-		. = "stammers"
+		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
+			. = "shakily signs"
+		else
+			. = "stammers"
 	else if(derpspeech)
-		. = "gibbers"
+		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
+			. = "incoherently signs"
+		else
+			. = "gibbers"
 	else
 		. = ..()
 
@@ -425,12 +477,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		return
 	say("#[message]", bubble_type, spans, sanitize, language, ignore_spam, forced)
 
-/mob/living/get_language_holder(get_minds = TRUE)
-	if(get_minds && mind)
-		return mind.get_language_holder()
-	. = ..()
-
-/mob/living/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
+/mob/living/grant_language(language, language_flags = ALL, source = LANGUAGE_ATOM)
 	. = ..()
 	if(. && mind)
 		var/datum/language_holder/langauge_holder = get_language_holder()

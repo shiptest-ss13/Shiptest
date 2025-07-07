@@ -194,7 +194,7 @@
 	gender = PLURAL
 	name = "dirt"
 	desc = "Upon closer examination, it's still dirt."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "dirt"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -224,7 +224,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
 	layer = HIGH_TURF_LAYER
-	icon_state = "grass0"
+	icon_state = "grass-255"
 	base_icon_state = "grass"
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 	baseturfs = /turf/open/floor/ship/dirt
@@ -233,15 +233,15 @@
 	. = ..()
 	if(smoothing_flags)
 		var/matrix/translation = new
-		translation.Translate(-9, -9)
+		translation.Translate(-19, -19)
 		transform = translation
 		icon = smooth_icon
 
 /turf/open/floor/grass/ship/jungle
 	name = "jungle grass"
 	desc = "Greener on the other side."
-	icon_state = "junglegrass"
-	base_icon_state = "junglegrass"
+	icon_state = "grass-255"
+	base_icon_state = "grass"
 	baseturfs = /turf/open/floor/ship/dirt/dark
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 

@@ -3,7 +3,8 @@
 	name = "\improper Durand"
 	icon_state = "durand"
 	step_in = 4
-	dir_in = 1 //Facing North.
+	dir = NORTH
+	dir_in = NORTH
 	max_integrity = 300
 	deflect_chance = 15
 	repair_multiplier = 0.5
@@ -17,7 +18,7 @@
 	var/shield_passive_drain = 300
 
 /obj/mecha/combat/durand/clip
-	desc = "An aging combat exosuit specially modified for the CMM-BARD anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
+	desc = "An aging combat exosuit specially modified for CLIP-BARD's anti-xenofauna division. Features improved close-combat armor and a modified defence grid able to electrocute melee attackers, at the cost of its ability to block projectiles."
 	name = "\improper Paladin"
 	icon_state = "clipdurand"
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 50, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
@@ -232,7 +233,7 @@ the shield is disabled by means other than the action button (like running out o
 	icon_state = "shield_null"
 	invisibility = INVISIBILITY_MAXIMUM //no showing on right-click
 
-/obj/durand_shield/take_damage()
+/obj/durand_shield/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
 	if(!chassis)
 		qdel(src)
 		return

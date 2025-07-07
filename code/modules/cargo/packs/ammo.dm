@@ -1,5 +1,5 @@
 /datum/supply_pack/ammo
-	group = "Bulk Ammunition"
+	category = "Bulk Ammunition"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	crate_name = "ammo crate"
 
@@ -62,10 +62,9 @@
 
 /datum/supply_pack/ammo/c38
 	name = ".38 Ammo Boxes Crate"
-	desc = "Contains two 50 round ammo boxes for refilling .38 weapons."
-	cost = 250 //8 ammo efficiency at 20 damage
-	contains = list(/obj/item/storage/box/ammo/c38,
-					/obj/item/storage/box/ammo/c38)
+	desc = "Contains a 50 round ammo box for refilling .38 weapons."
+	cost = 125 //8 ammo efficiency at 20 damage
+	contains = list(/obj/item/storage/box/ammo/c38)
 	crate_name = "ammo crate"
 
 /* 10x22mm */
@@ -206,7 +205,7 @@
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
 	desc = "Contains a box of 32 buckshot shells for use in lethal persuasion."
-	cost = 520 //6.4 ammo efficiency at 104 damage. Yes we are counting point blank.
+	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_buckshot)
 
 /datum/supply_pack/ammo/slugs
@@ -218,13 +217,13 @@
 /datum/supply_pack/ammo/blank_shells
 	name = "Blank Shell Crate"
 	desc = "Contains a box of blank shells."
-	cost = 220
+	cost = 110
 	contains = list(/obj/item/storage/box/ammo/a12g_blank)
 
 /datum/supply_pack/ammo/rubbershot
 	name = "Rubbershot Crate"
 	desc = "Contains a box of 32 12 gauge rubbershot shells. Perfect for crowd control and training."
-	cost = 520
+	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
 
 /datum/supply_pack/ammo/techshells
@@ -379,16 +378,16 @@
 
 /* 7.5x64 */
 
-/datum/supply_pack/ammo/a75clip_box
-	name = "7.5x64mm CLIP Ammo Box Crate"
-	desc = "Contains a twenty-round 7.5x64mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
-	contains = list(/obj/item/storage/box/ammo/a75clip)
+/datum/supply_pack/ammo/a65clip_box
+	name = "6.5mm CLIP Ammo Box Crate"
+	desc = "Contains a twenty-round 6.5mm CLIP ammo box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a65clip)
 	cost = 200 //4 ammo efficiency at 40 damage
 
-/datum/supply_pack/ammo/a75clip_trackers
-	name = "7.5x64mm CLIP Tracker Shell Crate"
-	desc = "Contains a 10-round 7.5x64mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
-	contains = list(/obj/item/storage/box/ammo/a75clip/trac)
+/datum/supply_pack/ammo/a65clip_trackers
+	name = "6.5mm CLIP Tracker Shell Crate"
+	desc = "Contains a 10-round 6.5mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
+	contains = list(/obj/item/storage/box/ammo/a65clip/trac)
 	cost = 250
 
 /* 8x58 */

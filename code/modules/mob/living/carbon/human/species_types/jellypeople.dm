@@ -9,7 +9,7 @@
 	hair_alpha = 150
 	mutantlungs = /obj/item/organ/lungs/slime
 	mutanttongue = /obj/item/organ/tongue/slime
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime
+	meat = /obj/item/food/meat/slab/human/mutant/slime
 	exotic_blood = /datum/reagent/toxin/slimejelly
 	damage_overlay_type = ""
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
@@ -313,7 +313,7 @@
 
 	H.notransform = TRUE
 
-	if(do_after(owner, delay = 60, target = owner, progress = TRUE, timed_action_flags = IGNORE_HELD_ITEM))
+	if(do_after(owner, delay = 60, target = owner, show_progress = TRUE, timed_action_flags = IGNORE_HELD_ITEM))
 		if(H.blood_volume >= BLOOD_VOLUME_SLIME_SPLIT)
 			make_dupe()
 		else

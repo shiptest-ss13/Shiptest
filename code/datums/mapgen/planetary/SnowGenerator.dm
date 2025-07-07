@@ -1,5 +1,5 @@
 /datum/map_generator/planet_generator/snow
-	mountain_height = 0.40
+	mountain_height = 0.45
 	perlin_zoom = 55
 
 	initial_closed_chance = 45
@@ -102,11 +102,11 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 4,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/obj/effect/spawner/random/polar_bear = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 10,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
 	feature_spawn_chance = 0.1
@@ -116,7 +116,9 @@
 		/obj/structure/spawner/burrow/ice_planet = 80,
 		/obj/structure/vein/ice = 25,
 		/obj/structure/vein/ice/classtwo = 50,
+		/obj/structure/vein/ice/classtwo/rare = 10,
 		/obj/structure/vein/ice/classthree = 10,
+		/obj/structure/vein/ice/classthree/rare = 5,
 	)
 
 /datum/biome/snow/lush
@@ -174,11 +176,11 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 2,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/obj/effect/spawner/random/polar_bear = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
 	)
 	mob_spawn_chance = 1
@@ -192,18 +194,17 @@
 
 /datum/biome/iceberg
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/iceberg/lit = 6,
-		/turf/open/floor/plating/ice/iceberg/lit = 1,
+		/turf/open/floor/plating/asteroid/iceberg/lit = 7,
 		/turf/closed/mineral/ice = 10
 	)
 	mob_spawn_chance = 2
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/obj/effect/spawner/random/polar_bear = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 5,
 	)
 	feature_spawn_chance = 0.3
@@ -251,11 +252,11 @@
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
 		/obj/structure/spawner/burrow/ice_planet = 4,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/obj/effect/spawner/random/polar_bear = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 5,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
 	feature_spawn_chance = 0.2
@@ -295,11 +296,11 @@
 	mob_spawn_chance = 2
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/polarbear/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 50,
+		/obj/effect/spawner/random/polar_bear = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 25,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 10,
-		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 10,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon/random = 1,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 1,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 10,
 	)
 	flora_spawn_chance = 3

@@ -84,7 +84,7 @@
 /area/outpost/engineering
 	name = "Engineering"
 	icon_state = "engine"
-	ambientsounds = ENGINEERING
+	ambience_index = AMBIENCE_ENGI
 	lighting_colour_tube = "#ffce93"
 	lighting_colour_bulb = "#ffbc6f"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
@@ -123,7 +123,7 @@
 
 /area/outpost/maintenance
 	name = "Maintenance"
-	ambientsounds = MAINTENANCE
+	ambience_index = AMBIENCE_MAINT
 	lighting_colour_tube = "#ffe5cb"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
@@ -152,7 +152,7 @@
 /area/outpost/medical
 	name = "Infirmary"
 	icon_state = "medbay3"
-	ambientsounds = MEDICAL
+	ambience_index = AMBIENCE_MEDICAL
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"
 	lighting_colour_night = "#d5f2ff"
@@ -174,7 +174,7 @@
 /area/outpost/security
 	name = "Security"
 	icon_state = "security"
-	ambientsounds = HIGHSEC
+	ambience_index = AMBIENCE_DANGER
 	lighting_colour_tube = "#ffeee2"
 	lighting_colour_bulb = "#ffdfca"
 
@@ -210,7 +210,8 @@
 	name = "Exterior"
 	icon_state = "green"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
-	ambientsounds = SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
+	allow_weather = TRUE
 
 // this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external
@@ -218,8 +219,9 @@
 	icon_state = "space_near"
 	always_unpowered = TRUE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	ambientsounds = SPACE
+	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
+	allow_weather = TRUE
 
 
 /area/hangar

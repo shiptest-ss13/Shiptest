@@ -338,7 +338,7 @@
 	update_weight()
 	return TRUE
 
-/obj/item/stack/tool_use_check(mob/living/user, amount)
+/obj/item/stack/tool_use_check(mob/living/user, atom/target, amount)
 	if(get_amount() < amount)
 		if(singular_name)
 			if(amount > 1)

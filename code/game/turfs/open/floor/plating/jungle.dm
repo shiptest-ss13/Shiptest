@@ -1,8 +1,54 @@
+//NEW and improved jungle turfs
+/turf/open/floor/plating/asteroid/dirt/jungle
+	name = "mud"
+	desc = "Upon closer examination, it's still dirt, just more wet than usual."
+	slowdown = 0
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+	footstep = FOOTSTEP_MUD
+	barefootstep = FOOTSTEP_MUD
+	clawfootstep = FOOTSTEP_MUD
+
+/turf/open/floor/plating/asteroid/dirt/jungle/dark
+	icon_state = "greenerdirt"
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/jungle/dark
+
+/turf/open/floor/plating/asteroid/dirt/wasteland
+	name = "cracked earth"
+	desc = "Looks a bit dry."
+	icon = 'icons/turf/planetary/jungle.dmi'
+	icon_state = "wasteland"
+	base_icon_state = "wasteland"
+	slowdown = 0
+	baseturfs = /turf/open/floor/plating/asteroid/dirt/wasteland
+	floor_variance = 15
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/asteroid/dirt/grass/jungle
+	icon = 'icons/turf/floors/junglegrass.dmi'
+	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark
+	icon = 'icons/turf/floors/darkjunglegrass.dmi'
+	smooth_icon = 'icons/turf/floors/darkjunglegrass.dmi'
+
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow
+	icon = 'icons/turf/floors/yellowgrass.dmi'
+	smooth_icon = 'icons/turf/floors/yellowgrass.dmi'
+
+
+///legacy grass/dirt turfs, do not use
 /turf/open/floor/plating/dirt/jungle
-	slowdown = 0.5
+	name = "mud"
+	desc = "Upon closer examination, it's still dirt, just more wet than usual."
+	slowdown = 0
 	baseturfs = /turf/open/floor/plating/dirt/jungle
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 	light_color = COLOR_JUNGLEPLANET_LIGHT
+	footstep = FOOTSTEP_MUD
+	barefootstep = FOOTSTEP_MUD
+	clawfootstep = FOOTSTEP_MUD
 
 /turf/open/floor/plating/dirt/jungle/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
@@ -11,6 +57,7 @@
 	baseturfs = /turf/open/floor/plating/dirt/jungle/lit
 	light_range = 2
 	light_power = 1
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /turf/open/floor/plating/dirt/jungle/dark
 	icon_state = "greenerdirt"
@@ -23,9 +70,9 @@
 /turf/open/floor/plating/dirt/jungle/wasteland //Like a more fun version of living in Arizona.
 	name = "cracked earth"
 	desc = "Looks a bit dry."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "wasteland"
-	slowdown = 1
+	slowdown = 0
 	baseturfs = /turf/open/floor/plating/dirt/jungle/wasteland
 	var/floor_variance = 15
 
@@ -33,6 +80,7 @@
 	baseturfs = /turf/open/floor/plating/dirt/jungle/wasteland/lit
 	light_range = 2
 	light_power = 1
+
 
 /turf/open/floor/plating/dirt/jungle/wasteland/Initialize(mapload, inherited_virtual_z)
 	.=..()
@@ -43,10 +91,10 @@
 	name = "jungle grass"
 	planetary_atmos = TRUE
 	desc = "Greener on the other side."
-	icon_state = "junglegrass"
-	base_icon_state = "junglegrass"
-	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
-	baseturfs = /turf/open/floor/plating/grass/jungle
+	icon_state = "grass"
+	base_icon_state = "grass"
+	smooth_icon = 'icons/turf/floors/forestgrass.dmi'
+	baseturfs = /turf/open/floor/plating/dirt/jungle
 	light_color = COLOR_JUNGLEPLANET_LIGHT
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 

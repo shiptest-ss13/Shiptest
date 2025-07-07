@@ -176,7 +176,7 @@
 				return
 
 			to_chat(user, span_notice("You connect to [M]'s power line..."))
-			while(do_after(user, 15, target = M, progress = TRUE))
+			while(do_after(user, 15, target = M, show_progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -210,7 +210,7 @@
 
 			to_chat(user, span_notice("You connect to [target]'s power port..."))
 
-			while(do_after(user, 15, target = target, progress = TRUE))
+			while(do_after(user, 15, target = target, show_progress = TRUE))
 				if(!user || !user.cell || mode != "draw")
 					return
 
@@ -248,7 +248,7 @@
 
 		to_chat(user, span_notice("You connect to [target]'s power port..."))
 
-		while(do_after(user, 15, target = target, progress = TRUE))
+		while(do_after(user, 15, target = target, show_progress = TRUE))
 			if(!user || !user.cell || mode != "charge")
 				return
 
@@ -350,9 +350,6 @@
 	var/hitspeed = 2
 	var/hitdamage = 0
 	var/emaggedhitdamage = 3
-
-/obj/item/borg/lollipop/clown
-	emaggedhitdamage = 0
 
 /obj/item/borg/lollipop/equipped()
 	. = ..()

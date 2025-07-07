@@ -59,7 +59,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///If your race uses a non standard bloodtype (A+, O-, AB-, etc). For example, lizards have L type blood.
 	var/exotic_bloodtype = ""
 	///What the species drops when gibbed by a gibber machine.
-	var/meat = /obj/item/reagent_containers/food/snacks/meat/slab/human
+	var/meat = /obj/item/food/meat/slab/human
 	///What skin the species drops when gibbed by a gibber machine.
 	var/skinned_type
 	///Bitfield for food types that the species likes, giving them a mood boost. Lizards like meat, for example.
@@ -1713,7 +1713,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	return TRUE
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, break_modifier = 1, sharpness = FALSE)
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, sharpness = FALSE)
 	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
@@ -1736,7 +1736,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
 			if(BP)
-				if(BP.receive_damage(damage_amount, 0, break_modifier = break_modifier, sharpness = sharpness))
+				if(BP.receive_damage(damage_amount, 0, sharpness = sharpness))
 					H.update_damage_overlays()
 			else//no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage_amount)
@@ -1746,7 +1746,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
 			if(BP)
-				if(BP.receive_damage(0, damage_amount, break_modifier = break_modifier, sharpness = sharpness))
+				if(BP.receive_damage(0, damage_amount, sharpness = sharpness))
 					H.update_damage_overlays()
 			else
 				H.adjustFireLoss(damage_amount)
@@ -1832,65 +1832,64 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/eyedamage = FALSE
 	var/irritant = FALSE
 	var/burndamage = 0
-	var/lowerthreshold = FALSE
+	var/mechanical = FALSE
 
 	var/feels_pain = TRUE
-	if(HAS_TRAIT(H, TRAIT_METALLIC)) //makes certain species take more damage and start taking damage at lower air amounts
-		lowerthreshold = TRUE
+	if(inherent_biotypes & MOB_ROBOTIC) //robots are not flesh
+		mechanical = TRUE
 
 	if(HAS_TRAIT(H, TRAIT_ANALGESIA)) //if we can't feel pain, dont give the pain messages
 		feels_pain = FALSE
 
 	if(plasma > MINIMUM_MOLS_TO_HARM)
-		burndamage += max(sqrt(ammonia) - 1 + lowerthreshold, 0)
+		burndamage += max(sqrt(ammonia) - 1, 0)
 		eyedamage = TRUE
 		irritant = TRUE
 	if(tritium)
-		burndamage += max(sqrt(tritium) - 2 + lowerthreshold, 0)
+		burndamage += max(sqrt(tritium) - 2, 0)
 		if(tritium > MINIMUM_MOLS_TO_HARM)
 			eyedamage = TRUE
 			irritant = TRUE
 	if(chlorine)
-		burndamage += max(sqrt(chlorine) - 4 + lowerthreshold, 0)
+		burndamage += max(sqrt(chlorine) - 4, 0)
 		irritant = TRUE
 		if(chlorine > (MINIMUM_MOLS_TO_HARM * 10))
 			eyedamage = TRUE
 	if(ammonia)
-		burndamage += max(sqrt(ammonia) - 2 + lowerthreshold, 0)
+		burndamage += max(sqrt(ammonia) - 2, 0)
 		irritant = TRUE
 		if(ammonia > (MINIMUM_MOLS_TO_HARM * 5))
 			eyedamage = TRUE
 	if(hydrogen_chloride)
-		burndamage += max(sqrt(hydrogen_chloride) - 1 + lowerthreshold, 0)
+		burndamage += max(sqrt(hydrogen_chloride) - 1, 0)
 		eyedamage = TRUE
 		irritant = TRUE
 	if(sulfur_dioxide)
-		burndamage += max(sqrt(chlorine) - 4 + lowerthreshold, 0)
+		burndamage += max(sqrt(sulfur_dioxide) - 4, 0)
 		irritant = TRUE
 		if(sulfur_dioxide > (MINIMUM_MOLS_TO_HARM * 5))
 			eyedamage = TRUE
 
 	if(!eyedamage && !burndamage && !irritant)
-		return
+		return FALSE
+	if(mechanical)
+		burndamage /= 5
+		if(round(burndamage) == 0)
+			return FALSE
 	H.apply_damage(burndamage, BURN, spread_damage = TRUE)
-	if(prob(50) && burndamage)
-		if(lowerthreshold && feels_pain)
-			to_chat(H, span_userdanger("You're corroding!"))
-		else if(feels_pain)
-			to_chat(H, span_userdanger("You're melting!"))
+	if(prob(5) && burndamage)
+		if(feels_pain)
+			to_chat(H, span_userdanger("You're [mechanical ? "corroding" : "melting"]!"))
 		playsound(H, 'sound/items/welder.ogg', 30, TRUE)
-	if(!H.check_for_goggles() && eyedamage)
-		H.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
-		if(prob(50) && feels_pain)
+	if(!H.check_for_goggles() && eyedamage && !mechanical)
+		if(prob(30))
+			H.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
+		if(prob(15) && feels_pain)
 			to_chat(H, span_danger("Your eyes burn!"))
 			H.emote("cry")
-		H.set_blurriness(10)
-	if(irritant && prob(50) && feels_pain)
-		if(lowerthreshold)
-			to_chat(H, span_danger("Your outer shell smolders!"))
-		else
-			to_chat(H, span_danger("Your skin itches."))
-
+		H.set_blurriness(rand(5,15))
+	if(irritant && prob(5) && feels_pain)
+		to_chat(H, span_danger("Your [mechanical ? "outer shell smolders" : "skin itches"]."))
 
 /// Handle the body temperature status effects for the species
 /// Traits for resitance to heat or cold are handled here.

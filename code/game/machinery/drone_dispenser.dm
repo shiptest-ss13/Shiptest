@@ -102,7 +102,7 @@
 	glass_cost = 0
 	power_used = 0
 	cooldownTime = 10 //Only 1 second - hivebots are extremely weak
-	dispense_type = /mob/living/simple_animal/hostile/hivebot
+	dispense_type = /mob/living/basic/hivebot
 	begin_create_message = "closes and begins fabricating something within."
 	end_create_message = "slams open, revealing a hivebot!"
 	recharge_sound = null
@@ -196,7 +196,7 @@
 			to_chat(user, span_warning("[src] doesn't need repairs."))
 			return
 
-		if(!I.tool_start_check(user, amount=1))
+		if(!I.tool_start_check(user, src, amount=1))
 			return
 
 		user.visible_message(

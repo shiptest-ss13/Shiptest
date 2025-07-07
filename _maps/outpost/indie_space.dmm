@@ -179,12 +179,12 @@
 /area/outpost/crew/library)
 "aJ" = (
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/grille/indestructable,
+/obj/structure/grille/indestructible,
 /turf/open/floor/plating,
 /area/outpost/crew/cryo)
 "aM" = (
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/grille/indestructable,
+/obj/structure/grille/indestructible,
 /obj/machinery/door/poddoor/shutters{
 	id = "is_cloth"
 	},
@@ -545,8 +545,8 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/hallway/central)
 "cF" = (
-/obj/structure/grille/indestructable,
-/obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructible,
+/obj/structure/window/reinforced/fulltile/indestructible,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "cH" = (
@@ -848,6 +848,7 @@
 "dP" = (
 /obj/structure/chair,
 /obj/item/radio/intercom/directional/north,
+/obj/effect/landmark/salesman,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/vacant_rooms)
 "dQ" = (
@@ -1094,8 +1095,8 @@
 /area/outpost/maintenance/fore)
 "eV" = (
 /obj/machinery/door/firedoor/heavy,
-/obj/structure/grille/indestructable,
-/obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructible,
+/obj/structure/window/reinforced/fulltile/indestructible,
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/office)
 "eX" = (
@@ -1325,8 +1326,8 @@
 /area/outpost/maintenance/starboard)
 "fM" = (
 /obj/structure/barricade/wooden/crude,
-/obj/structure/grille/indestructable,
-/obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructible,
+/obj/structure/window/reinforced/fulltile/indestructible,
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "fP" = (
@@ -1466,7 +1467,7 @@
 /area/outpost/cargo)
 "gJ" = (
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/grille/indestructable,
+/obj/structure/grille/indestructible,
 /obj/machinery/door/poddoor/shutters{
 	id = "is_cloth"
 	},
@@ -1916,6 +1917,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/port)
+"iJ" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/food/grown/citrus/orange,
+/obj/effect/spawner/random/salvage/part/capacitor,
+/turf/open/floor/plating,
+/area/outpost/maintenance/fore)
 "iK" = (
 /obj/structure/falsewall/reinforced,
 /obj/structure/disposalpipe/segment{
@@ -2674,9 +2682,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "lq" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access = list("101")
-	},
+/obj/machinery/door/airlock/maintenance,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -2689,7 +2695,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/oil/slippery,
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/fore)
@@ -3335,8 +3340,8 @@
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "nP" = (
-/obj/structure/window/reinforced/fulltile/indestructable,
-/obj/structure/grille/indestructable,
+/obj/structure/window/reinforced/fulltile/indestructible,
+/obj/structure/grille/indestructible,
 /turf/open/floor/plating,
 /area/outpost/security)
 "nR" = (
@@ -4123,6 +4128,27 @@
 /obj/structure/railing/thin,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
+"rc" = (
+/obj/item/radio/intercom/directional/north,
+/obj/item/trash/can/food/beans{
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/can/food/beans{
+	pixel_x = 9;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -14;
+	pixel_y = -7
+	},
+/obj/item/food/grown/soybeans{
+	pixel_x = -12;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/asteroid,
+/area/outpost/maintenance/central)
 "rf" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
@@ -4558,10 +4584,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/library)
-"sP" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/indestructible/reinforced,
-/area/outpost/maintenance/central)
 "sR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -5113,8 +5135,8 @@
 /area/outpost/maintenance/fore)
 "vF" = (
 /obj/machinery/door/firedoor/heavy,
-/obj/structure/grille/indestructable,
-/obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructible,
+/obj/structure/window/reinforced/fulltile/indestructible,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
@@ -5907,8 +5929,8 @@
 /turf/open/floor/plasteel/grimy,
 /area/outpost/crew/bar)
 "zm" = (
-/obj/structure/grille/indestructable,
-/obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructible,
+/obj/structure/window/reinforced/fulltile/indestructible,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
@@ -6205,27 +6227,6 @@
 /obj/structure/grille,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/starboard)
-"Ao" = (
-/obj/item/radio/intercom/directional/north,
-/obj/item/trash/can/food/beans{
-	pixel_y = -1
-	},
-/obj/effect/decal/cleanable/generic,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/trash/can/food/beans{
-	pixel_x = 9;
-	pixel_y = 10
-	},
-/obj/item/reagent_containers/food/snacks/canned/beans{
-	pixel_x = -14;
-	pixel_y = -7
-	},
-/obj/item/reagent_containers/food/snacks/grown/soybeans{
-	pixel_x = -12;
-	pixel_y = 8
-	},
-/turf/open/floor/plating/asteroid,
-/area/outpost/maintenance/central)
 "Ap" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -6343,8 +6344,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance{
-	dir = 4;
-	req_access = list("101")
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/central)
@@ -6935,8 +6935,8 @@
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
 "Dn" = (
-/obj/structure/grille/indestructable,
-/obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructible,
+/obj/structure/window/reinforced/fulltile/indestructible,
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
 "Dq" = (
@@ -7153,16 +7153,14 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/fore)
 "Ec" = (
-/obj/structure/window/reinforced/fulltile/indestructable,
-/obj/structure/grille/indestructable,
+/obj/structure/window/reinforced/fulltile/indestructible,
+/obj/structure/grille/indestructible,
 /turf/open/floor/plating,
 /area/outpost/crew/library)
 "Ed" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/maintenance{
-	req_access = list("101")
-	},
+/obj/machinery/door/airlock/maintenance,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -7171,7 +7169,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -7561,7 +7558,6 @@
 	},
 /obj/machinery/door/airlock/maintenance{
 	dir = 4;
-	req_access = list("101");
 	id_tag = "meeting"
 	},
 /obj/structure/cable/yellow{
@@ -7892,7 +7888,6 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -7900,8 +7895,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance{
-	dir = 4;
-	req_access = list("101")
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/lounge)
@@ -8377,7 +8371,7 @@
 /area/outpost/maintenance/central)
 "Jb" = (
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/grille/indestructable,
+/obj/structure/grille/indestructible,
 /obj/machinery/door/poddoor/shutters{
 	id = "is_cloth";
 	dir = 4
@@ -8630,7 +8624,6 @@
 /obj/machinery/door/airlock/maintenance{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/effect/mapping_helpers/airlock/welded,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -8755,8 +8748,8 @@
 /turf/open/floor/plasteel,
 /area/outpost/crew/lounge)
 "KH" = (
-/obj/structure/window/reinforced/fulltile/indestructable,
-/obj/structure/grille/indestructable,
+/obj/structure/window/reinforced/fulltile/indestructible,
+/obj/structure/grille/indestructible,
 /turf/open/floor/plating,
 /area/outpost/medical)
 "KI" = (
@@ -8833,14 +8826,13 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/office)
 "KX" = (
-/obj/structure/window/reinforced/fulltile/indestructable,
-/obj/structure/grille/indestructable,
+/obj/structure/window/reinforced/fulltile/indestructible,
+/obj/structure/grille/indestructible,
 /turf/open/floor/plating,
 /area/outpost/crew/bar)
 "KZ" = (
 /obj/machinery/door/airlock/maintenance{
-	dir = 4;
-	req_access = list("101")
+	dir = 4
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -8860,7 +8852,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
 "Lb" = (
@@ -9389,7 +9380,7 @@
 /area/outpost/maintenance/starboard)
 "Nn" = (
 /obj/structure/window/reinforced/fulltile,
-/obj/structure/grille/indestructable,
+/obj/structure/grille/indestructible,
 /turf/open/floor/plating,
 /area/outpost/cargo/office)
 "No" = (
@@ -9520,11 +9511,11 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "NP" = (
-/obj/structure/grille/indestructable,
+/obj/structure/grille/indestructible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/window/reinforced/fulltile/indestructible,
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
 "NQ" = (
@@ -9542,13 +9533,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
-"NU" = (
-/obj/structure/table/wood,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
-/obj/effect/spawner/random/salvage/part/capacitor,
-/turf/open/floor/plating,
-/area/outpost/maintenance/fore)
 "NV" = (
 /obj/structure/table,
 /obj/item/stack/wrapping_paper,
@@ -9645,8 +9629,8 @@
 /turf/open/floor/carpet/royalblack,
 /area/outpost/crew/bar)
 "Os" = (
-/obj/structure/window/reinforced/fulltile/indestructable,
-/obj/structure/grille/indestructable,
+/obj/structure/window/reinforced/fulltile/indestructible,
+/obj/structure/grille/indestructible,
 /turf/open/floor/plating,
 /area/outpost/operations)
 "Ou" = (
@@ -17023,7 +17007,7 @@ bV
 NK
 CR
 NK
-NU
+iJ
 ue
 AP
 Cc
@@ -19623,7 +19607,7 @@ bk
 bk
 cq
 cq
-sP
+cq
 Mu
 DV
 Gg
@@ -20120,7 +20104,7 @@ ER
 XP
 cq
 cq
-Ao
+rc
 Vq
 cq
 cq

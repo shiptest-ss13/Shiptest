@@ -1,12 +1,12 @@
 /datum/outfit/job/gezena
 	name = "PGF - Base Outfit"
+	faction = FACTION_PLAYER_GEZENA
 	// faction_icon = "bg_pgf"
 
 /datum/outfit/job/gezena/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list(FACTION_PLAYER_GEZENA)
 	H.grant_language(/datum/language/kalixcian_common)
 
 //Playable Roles (put in ships):
@@ -79,6 +79,21 @@
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
+
+/datum/outfit/job/gezena/cmo
+	name = "PGF - Medical Officer"
+	jobtype = /datum/job/cmo
+	job_icon = "chiefmedicalofficer"
+
+	uniform = /obj/item/clothing/under/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena
+	neck = /obj/item/clothing/neck/cloak/gezena/med
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/med
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/gezena/hos
 	name = "PGF - Marine Sergeant"

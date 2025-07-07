@@ -162,7 +162,7 @@
 				var/obj/item/stock_parts/new_part = tool
 				if(new_part.part_behaviour == part.part_behaviour)
 					user.transferItemToLoc(tool,src)
-					part.forceMove(user.loc)
+					try_put_in_hand(part, user)
 					component_parts += new_part
 					component_parts -= part
 					to_chat(user, span_notice("You replace [part] with [new_part]."))
@@ -184,7 +184,7 @@
 				obj_integrity = max_integrity
 				return
 		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
-			if(!tool.tool_start_check(user, amount=0))
+			if(!tool.tool_start_check(user, src, amount=0))
 				return
 			user.visible_message(span_notice("[user] begins repairing [src]."), \
 				span_notice("You begin repairing [src]..."), \
@@ -209,7 +209,7 @@
 			return
 		if(tool.tool_behaviour == TOOL_CROWBAR)
 			cell.update_appearance()
-			cell.forceMove(get_turf(src))
+			try_put_in_hand(cell, user)
 			cell = null
 			to_chat(user, span_notice("You remove the cell from [src]."))
 			active = FALSE
@@ -222,15 +222,8 @@
 		to_chat(user, span_notice("You begin the manual shutoff process."))
 		if(do_after(user, 10, src))
 			if(active)
-				active = FALSE
-				soundloop.stop()
-				deltimer(current_timerid)
-				if(our_vein?.currently_spawning)
-					our_vein.toggle_spawning()
-				playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
 				say("Manual shutoff engaged, ceasing mining operations.")
-				update_icon_state()
-				update_overlays()
+				stop_mining()
 			else
 				to_chat(user, span_warning("The drill has already been turned off!"))
 		else
@@ -284,6 +277,20 @@
 	else
 		set_light(0)
 
+//shut the drill DOWN NOW!!
+/obj/machinery/drill/proc/stop_mining(destructive=FALSE)
+	active = FALSE
+	soundloop.stop()
+	deltimer(current_timerid)
+	if(our_vein?.currently_spawning)
+		our_vein.toggle_spawning()
+	if(destructive)
+		our_vein.Destroy()
+		our_vein = null
+	playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
+	update_icon_state()
+	update_overlays()
+
 //Handles all checks before starting the 30 second (on average) mining tick
 /obj/machinery/drill/proc/start_mining()
 	var/eta
@@ -325,14 +332,11 @@
 	if(our_vein.mining_charges)
 		our_vein.mining_charges--
 		mine_success()
+		if(!active)
+			return FALSE
 		if(our_vein.mining_charges < 1)
-			say("Vein depleted.")
-			active = FALSE
-			soundloop.stop()
-			our_vein.Destroy()
-			our_vein = null
-			update_icon_state()
-			update_overlays()
+			say("Vein depleted, shutting down.")
+			stop_mining(TRUE)
 		else
 			start_mining()
 	else if(!our_vein.mining_charges) //Extra check to prevent vein related errors locking us in place
@@ -350,7 +354,7 @@
 
 //Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)
-	if(active)
+	if(active && our_vein?.currently_spawning)
 		our_vein.toggle_spawning() //turns mob spawning off after a malfunction
 	switch(malfunction_type)
 		if(MALF_LASER)

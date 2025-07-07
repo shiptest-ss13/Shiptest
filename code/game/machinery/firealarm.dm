@@ -166,7 +166,7 @@
 
 		if(W.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP)
 			if(obj_integrity < max_integrity)
-				if(!W.tool_start_check(user, amount=0))
+				if(!W.tool_start_check(user, src, amount=0))
 					return
 
 				to_chat(user, span_notice("You begin repairing [src]..."))

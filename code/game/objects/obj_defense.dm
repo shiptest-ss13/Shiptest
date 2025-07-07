@@ -55,15 +55,15 @@
 	if(QDELETED(src))
 		return
 	if(target == src)
-		take_damage(INFINITY, BRUTE, "bomb", 0)
+		take_damage(INFINITY, BRUTE, BOMB, 0)
 		return
 	switch(severity)
-		if(1)
-			take_damage(INFINITY, BRUTE, "bomb", 0)
-		if(2)
-			take_damage(rand(100, 250), BRUTE, "bomb", 0)
-		if(3)
-			take_damage(rand(10, 90), BRUTE, "bomb", 0)
+		if(EXPLODE_DEVASTATE)
+			take_damage(rand(1000, 2000), BRUTE, BOMB, 0)
+		if(EXPLODE_HEAVY)
+			take_damage(rand(100, 250), BRUTE, BOMB, 0)
+		if(EXPLODE_LIGHT)
+			take_damage(rand(10, 90), BRUTE, BOMB, 0)
 
 /obj/bullet_act(obj/projectile/hitting_projectile)
 	. = ..()

@@ -1,5 +1,5 @@
 /datum/supply_pack/gun
-	group = "Guns"
+	category = "Guns"
 	crate_type = /obj/structure/closet/crate/secure/weapon
 	faction_discount = 10
 
@@ -134,7 +134,7 @@
 /datum/supply_pack/gun/pepperbox
 	name = "HP Firebrand Pepperbox Revolver Crate"
 	desc = "Contains a concealable pepperbox revolver manufactured by the Saint Roumain Militia, chambered in .357."
-	cost = 1250
+	cost = 700
 	contains = list(/obj/item/storage/guncase/pistol/firebrand)
 	faction = /datum/faction/srm
 
@@ -180,7 +180,7 @@
 
 /datum/supply_pack/gun/cm357
 	name = "CM-357 Automag Pistol Crate"
-	desc = "Contains a magazine-fed .357 handgun, produced for the CMM-BARD division and available for requisition in small numbers to the Minutemen."
+	desc = "Contains a magazine-fed .357 handgun, produced for the CLIP-BARD division and available for requisition in small numbers to the Minutemen."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/pistol/cm357)
 	faction = /datum/faction/clip
@@ -269,6 +269,15 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/ecm6
+	name = "ECM-6 Beam Gun Crate"
+	desc = "Contains an ECM-6 Beam Gun, a modernization of the ECM-1 manufactured by Clover Photonics for Minutemen use."
+	cost = 1500
+	contains = list(/obj/item/storage/guncase/ecm6)
+	faction = /datum/faction/clip
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/energy/disabler
 	name = "Disabler Crate"
 	desc = "One stamina-draining disabler weapon, for use in non-lethal pacification."
@@ -352,7 +361,7 @@
 
 /datum/supply_pack/gun/cm15
 	name = "CM-15 Shotgun Crate"
-	desc = "A combat shotgun produced by Lanchester Arms Co. for the Colonial Minuteman and CMM-BARD for use in CQC operations. Chambered in 12ga and equipped with 8-round box magazines."
+	desc = "A combat shotgun produced by Lanchester Arms Co. for the Colonial Minuteman and CLIP-BARD for use in CQC operations. Chambered in 12ga and equipped with 8-round box magazines."
 	contains = list(/obj/item/storage/guncase/cm15)
 	cost = 4000
 	crate_name = "shotgun crate"
@@ -365,6 +374,16 @@
 	desc = "Contains an energy-based shotgun equipped with dual kill/disable modes, ideal for short range. The on-board computer is notoriously unreliable. For NT employee use only."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/energy/ultima)
+	crate_name = "shotgun crate"
+	faction = /datum/faction/nt
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/cycler
+	name = "Cycler Shotgun Crate"
+	desc = "Contains an advanced shotgun with four round dual magazine tubes, allowing quick swapping between ammo types for increased versatility in the field. For NT employee use only."
+	cost = 3500
+	contains = list(/obj/item/storage/guncase/cycler)
 	crate_name = "shotgun crate"
 	faction = /datum/faction/nt
 	faction_discount = 0
@@ -385,7 +404,7 @@
 
 /datum/supply_pack/gun/c20r
 	name = "C-20r 'Cobra' SMG Crate"
-	desc = "Contains a military variant of the Cobra SMG, chambered in .45"
+	desc = "Contains a military variant of the Cobra SMG, chambered in .45 with an integrated suppressor."
 	cost = 2800 // 100 more than the civ variant (counting it's discount), because they are literally the same right now.
 	contains = list(/obj/item/storage/guncase/c20r)
 	crate_name = "SMG crate"
@@ -667,7 +686,7 @@
 /datum/supply_pack/gun/sbr80
 	name = "SBR-80 'Hydra' Designated Marksman Rifle Crate"
 	desc = "Contains a high-powered marksman rifle chambered in 5.56 CLIP and produced by Scarborough Arms. A modification of the ever-popular SMR-80 platform."
-	cost = 3500
+	cost = 4500
 	contains = list(/obj/item/storage/guncase/sbr80)
 	crate_name = "dmr crate"
 	faction = /datum/faction/syndicate/scarborough
@@ -683,7 +702,7 @@
 
 /datum/supply_pack/gun/vickland
 	name = "Vickland Battle Rifle"
-	desc = "Contains a high-powered semi-automatic battle rifle chambered in 8x50mmR and produced by Hunter's Pride. Fed via stripper clips with an 8 round capacity."
+	desc = "Contains a high-powered semi-automatic battle rifle chambered in 8x50mmR and produced by Hunter's Pride. Fed via stripper clips with a 10 round capacity."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/vickland)
 	crate_name = "dmr crate"
@@ -713,7 +732,7 @@
 
 /datum/supply_pack/gun/boomslang90
 	name = "Boomslang-90 Designated Marksman Rifle Crate"
-	desc = "Contains a civilian variant of the Boomslang Sniper rifle- modified with a 2x scope, rather than a sniper scope. Chambered in the powerful 7.5x64mm CLIP cartridge."
+	desc = "Contains a civilian variant of the Boomslang Sniper rifle- modified with a 2x scope, rather than a sniper scope. Chambered in the powerful 6.5mm CLIP cartridge."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/boomslang)
 	crate_name = "dmr crate"
@@ -721,7 +740,7 @@
 
 /datum/supply_pack/gun/boomslang10
 	name = "MSR-90 'Boomslang' Sniper Rifle Crate"
-	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 7.5x64mm CLIP cartridge."
+	desc = "Contains a military variant of the Boomslang Sniper rifle equipped with an 8x sniper scope, for licenesed buyers only. Chambered in the powerful 6.5mm CLIP cartridge."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/boomslangmilitary)
 	crate_name = "marksman rifle crate"
@@ -731,7 +750,7 @@
 
 /datum/supply_pack/gun/f90
 	name = "CM-F90 Sniper Rifle Crate"
-	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, for Minuteman use only. Chambered in the powerful 7.5x64mm CLIP cartridge."
+	desc = "Contains a military sniper rifle equipped with an 8x sniper scope, for Minuteman use only. Chambered in the powerful 6.5mm CLIP cartridge."
 	cost = 4500
 	contains = list(/obj/item/storage/guncase/cmf90)
 	crate_name = "marksman rifle crate"

@@ -18,6 +18,8 @@
 	var/location_specific = FALSE
 	/// The location the mission is relient on, often pulling varibles from it or will delete itself if the mission_location is deleted. Passed in New().
 	var/datum/overmap/mission_location
+	/// If location specific, if it run times when the planet has no pois
+	var/requires_poi = TRUE
 
 	/// The amount of time in which to complete the mission. Setting it to 0 will result in no time limit
 	var/duration = 1.5 HOURS
@@ -141,7 +143,7 @@
 	if(!active)
 		qdel(src)
 		return
-	if(!planet.spawned_mission_pois.len)
+	if(!planet.spawned_mission_pois.len && requires_poi)
 		stack_trace("[src] failed to start because it had no points of interest to use for its mission")
 		qdel(src)
 		return
