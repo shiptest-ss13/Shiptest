@@ -287,11 +287,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
-"fl" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/pod/dark,
-/area/ship/cargo)
 "fn" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -1670,10 +1665,7 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = -5
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 10
-	},
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "zD" = (
 /obj/structure/dresser,
@@ -1722,6 +1714,7 @@
 /obj/structure/sign/poster/clip/random{
 	pixel_y = 30
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "zS" = (
@@ -1877,10 +1870,7 @@
 	icon_state = "6-8"
 	},
 /obj/machinery/light/small/directional/north,
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 10
-	},
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "DK" = (
 /obj/machinery/computer/crew{
@@ -2107,9 +2097,12 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
+	},
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 25
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -2549,10 +2542,7 @@
 /obj/structure/cable/orange{
 	icon_state = "0-4"
 	},
-/obj/effect/turf_decal/corner/opaque/black{
-	dir = 10
-	},
-/turf/open/floor/plasteel/telecomms_floor,
+/turf/open/floor/plasteel/dark,
 /area/ship/engineering/engines/starboard)
 "MU" = (
 /obj/machinery/door/poddoor{
@@ -2737,6 +2727,11 @@
 "QI" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engines/port)
+"QM" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/pod/dark,
+/area/ship/cargo)
 "Rr" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/computer/cargo{
@@ -3636,7 +3631,7 @@ im
 Wa
 lk
 oh
-fl
+QM
 pR
 GZ
 ov
