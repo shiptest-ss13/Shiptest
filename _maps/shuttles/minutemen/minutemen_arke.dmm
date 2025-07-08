@@ -161,10 +161,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "arke_engi_lockdown"
-	},
 /turf/open/floor/plating,
 /area/ship/external/dark)
 "fg" = (
@@ -1155,6 +1151,10 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "arke_engi_lockdown"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)

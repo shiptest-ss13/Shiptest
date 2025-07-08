@@ -23,12 +23,12 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "af" = (
-/obj/machinery/power/smes/shuttle/precharged,
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
-	icon_state = "0-8"
+	icon_state = "0-4"
 	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
+/turf/open/floor/plating,
+/area/ship/external/dark)
 "am" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1974,6 +1974,20 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
+"tV" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "atlas_engi_lockdown"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "tW" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
@@ -2507,12 +2521,8 @@
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "yL" = (
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -3047,6 +3057,23 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating,
 /area/ship/external/dark)
+"Ez" = (
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "atlas_engi_lockdown"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "EB" = (
 /obj/machinery/light/directional/north,
 /turf/open/floor/carpet/nanoweave/blue,
@@ -3420,11 +3447,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "JR" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/structure/cable{
-	icon_state = "0-5"
+	icon_state = "5-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -5198,6 +5222,8 @@ ps
 ps
 ms
 ps
+af
+af
 ps
 ps
 ps
@@ -5207,10 +5233,8 @@ ps
 ps
 ps
 ps
-ps
-ps
-ps
-ps
+Bm
+Bm
 ps
 vS
 ps
@@ -5223,8 +5247,8 @@ ps
 ps
 PU
 PU
-Bm
-Bm
+Ez
+tV
 PU
 ps
 ps
@@ -5234,8 +5258,8 @@ PU
 ps
 ps
 PU
-Bm
-Bm
+cN
+cN
 PU
 PU
 ps
@@ -5248,8 +5272,8 @@ ps
 ps
 PU
 Ti
-yL
-af
+My
+Pj
 PU
 Bm
 Bm
@@ -5259,8 +5283,8 @@ PU
 Bm
 Bm
 PU
-cN
-cN
+bK
+bK
 Hl
 PU
 ps
@@ -5273,8 +5297,8 @@ ps
 ps
 pp
 eW
-My
-Pj
+yL
+yL
 PU
 jY
 jY
@@ -5284,7 +5308,7 @@ PU
 jY
 jY
 PU
-bK
+yL
 JR
 TA
 pp

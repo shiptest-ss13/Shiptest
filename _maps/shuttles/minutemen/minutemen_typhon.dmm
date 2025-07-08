@@ -171,7 +171,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding{
-	dir = 2;
 	color = "#474747"
 	},
 /obj/effect/turf_decal/siding/wood,
@@ -312,7 +311,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 2;
 	name = "Captain's Quarters";
 	req_one_access = list(20)
 	},
@@ -585,16 +583,16 @@
 /turf/open/floor/pod/light/external,
 /area/ship/cargo)
 "iG" = (
-/obj/machinery/power/shuttle/engine/electric,
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	id = "typhon_starboard_engines"
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/structure/window/reinforced{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -751,22 +749,21 @@
 /turf/open/floor/carpet/blue,
 /area/ship/crew)
 "kl" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	id = "typhon_port_engines";
-	name = "shutter control";
-	pixel_y = 20
-	},
 /obj/structure/cable/cyan{
-	icon_state = "0-2"
+	icon_state = "2-8"
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "kr" = (
-/obj/effect/landmark/start/warden,
-/turf/template_noop,
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/template_noop)
 "kz" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -814,9 +811,15 @@
 	},
 /area/ship/security)
 "lR" = (
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/box/corners,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
@@ -916,9 +919,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "nt" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /obj/machinery/button/door{
 	id = "typhon_starboard_engines";
 	name = "shutter control";
@@ -926,8 +926,9 @@
 	dir = 1
 	},
 /obj/structure/cable/cyan{
-	icon_state = "0-1"
+	icon_state = "1-8"
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "nB" = (
@@ -974,19 +975,20 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
 "nJ" = (
-/obj/machinery/power/shuttle/engine/electric,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 8;
-	id = "typhon_port_engines"
+/obj/machinery/power/terminal{
+	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/cyan{
 	icon_state = "0-4"
 	},
-/obj/structure/window/reinforced{
+/obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
 /turf/open/floor/plating,
-/area/ship/engineering/engines/port)
+/area/ship/engineering/engines/starboard)
 "nO" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1035,16 +1037,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "or" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/railing/corner{
-	dir = 1;
-	pixel_y = -22
-	},
-/obj/structure/catwalk/over,
 /obj/structure/cable/cyan{
-	icon_state = "0-2"
+	icon_state = "2-8"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -1052,6 +1046,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "ou" = (
@@ -1078,9 +1073,7 @@
 /obj/item/folder/red,
 /obj/item/folder/white,
 /obj/item/folder/yellow,
-/obj/effect/turf_decal/corner/opaque/black/half{
-	dir = 2
-	},
+/obj/effect/turf_decal/corner/opaque/black/half,
 /obj/effect/turf_decal/minutemen/edge,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -1141,17 +1134,16 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "typhon_canteen";
-	dir = 2
+	id = "typhon_canteen"
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "pr" = (
-/obj/effect/landmark/start/roboticist,
-/obj/effect/landmark/start/security_officer{
-	pixel_x = -5
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
-/turf/template_noop,
+/turf/open/floor/plating,
 /area/template_noop)
 "pv" = (
 /obj/structure/railing{
@@ -1427,7 +1419,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding{
-	dir = 2;
 	color = "#474747"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1522,7 +1513,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding{
-	dir = 2;
 	color = "#474747"
 	},
 /obj/effect/turf_decal/siding/blue/corner{
@@ -1638,7 +1628,6 @@
 	icon_state = "0-6"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 2;
 	id = "typhon_starboard_holo"
 	},
 /turf/open/floor/pod/light/external,
@@ -1747,8 +1736,15 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "vg" = (
-/obj/effect/landmark/start/station_engineer,
-/turf/template_noop,
+/obj/machinery/power/shuttle/engine/electric,
+/obj/structure/railing/corner,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/template_noop)
 "vi" = (
 /obj/machinery/computer/cryopod/directional/east,
@@ -1795,7 +1791,6 @@
 	pixel_y = 14
 	},
 /obj/structure/toilet{
-	dir = 2;
 	pixel_x = -4;
 	pixel_y = 11
 	},
@@ -2068,7 +2063,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding{
-	dir = 2;
 	color = "#474747"
 	},
 /obj/effect/turf_decal/siding/wood,
@@ -2123,13 +2117,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar)
-"zr" = (
-/obj/effect/landmark/start/assistant,
-/obj/effect/landmark/start/security_officer{
-	pixel_x = -5
-	},
-/turf/template_noop,
-/area/template_noop)
 "zG" = (
 /obj/effect/turf_decal/trimline/transparent/blue/filled/warning{
 	dir = 4
@@ -2194,8 +2181,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "typhon_bridge";
-	dir = 2
+	id = "typhon_bridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2368,9 +2354,22 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/cargo)
 "Es" = (
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "typhon_port_engines";
+	name = "shutter control";
+	pixel_y = 20
+	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -2577,9 +2576,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/door/airlock/grunge{
-	dir = 2
-	},
+/obj/machinery/door/airlock/grunge,
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
@@ -2638,7 +2635,6 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	dir = 2;
 	pixel_y = 19;
 	pixel_x = 12
 	},
@@ -2929,10 +2925,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hangar)
-"Lv" = (
-/obj/effect/landmark/start/security_officer,
-/turf/template_noop,
-/area/template_noop)
 "Lw" = (
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -3029,7 +3021,6 @@
 	icon_state = "0-6"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
-	dir = 2;
 	id = "typhon_port_holo"
 	},
 /turf/open/floor/pod/light/external,
@@ -3298,17 +3289,13 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hangar)
 "PA" = (
-/obj/machinery/power/shuttle/engine/electric,
-/obj/structure/railing/corner,
+/obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	id = "typhon_port_engines"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
@@ -3722,19 +3709,16 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "Ul" = (
-/obj/machinery/power/terminal{
-	dir = 8
-	},
-/obj/structure/catwalk/over,
-/obj/structure/cable/cyan{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	icon_state = "0-1"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/structure/cable/cyan{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/cyan{
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
 "Um" = (
@@ -3953,16 +3937,13 @@
 	pixel_y = -13
 	},
 /obj/item/clothing/under/clip/minutemen{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/under/clip/minutemen{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/under/clip/minutemen{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/clothing/under/clip/formal/alt{
 	pixel_x = 5
@@ -4066,11 +4047,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Xh" = (
-/obj/machinery/power/smes/shuttle/precharged,
-/obj/structure/railing,
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/power/terminal{
+	dir = 8
 	},
+/obj/structure/cable/cyan{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/effect/turf_decal/box/corners,
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "Xs" = (
@@ -4200,10 +4186,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hangar)
-"Zm" = (
-/obj/effect/landmark/start/captain,
-/turf/template_noop,
-/area/template_noop)
 "Zr" = (
 /obj/structure/sign/clip,
 /turf/closed/wall/mineral/plastitanium,
@@ -4262,7 +4244,7 @@ Bb
 Bb
 Bb
 Bb
-Zm
+Bb
 "}
 (2,1,1) = {"
 Bb
@@ -4294,7 +4276,7 @@ Bb
 Bb
 Bb
 Bb
-kr
+Bb
 "}
 (3,1,1) = {"
 Bb
@@ -4326,7 +4308,7 @@ Bb
 Bb
 Bb
 Bb
-pr
+Bb
 "}
 (4,1,1) = {"
 Bb
@@ -4358,7 +4340,7 @@ Bb
 Bb
 Bb
 Bb
-vg
+Bb
 "}
 (5,1,1) = {"
 Bb
@@ -4390,7 +4372,7 @@ Bb
 Bb
 Bb
 Bb
-Lv
+Bb
 "}
 (6,1,1) = {"
 Bb
@@ -4422,7 +4404,7 @@ Bb
 Bb
 Bb
 Bb
-Lv
+Bb
 "}
 (7,1,1) = {"
 Bb
@@ -4454,12 +4436,12 @@ qu
 Bb
 Bb
 Bb
-zr
+Bb
 "}
 (8,1,1) = {"
 Bb
-Bb
-Bb
+kr
+vg
 nB
 OV
 fg
@@ -4484,13 +4466,13 @@ nO
 pM
 nH
 AU
-Bb
-Bb
+pr
+pr
 Bb
 "}
 (9,1,1) = {"
 aT
-nJ
+PA
 PA
 SE
 OV
@@ -4548,7 +4530,7 @@ Oc
 zb
 mN
 BF
-lR
+nJ
 lR
 oB
 "}
