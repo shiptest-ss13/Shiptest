@@ -618,7 +618,7 @@ EMPTY_GUN_HELPER(shotgun/hellfire)
 	allowed_ammo_types = list(
 		/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration,
 	)
-
+	door_breaching_weapon = TRUE
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 47,
