@@ -20,7 +20,7 @@
 		".38" = "ammobox_38",
 		".22lr" = "ammobox_22",
 		"5.7x39mm" = "ammobox_57",
-		"4.6mm" = "ammobox_4.6"
+		"4.6mm" = "ammobox_4.6",
 		"5.56x42mm CLIP" = "ammobox_556",
 		"7.62x40mm CLIP" = "ammobox_762",
 		".44 Roumain" = "ammobox_44",
