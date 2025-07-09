@@ -128,6 +128,8 @@
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/overalls
+	icon = 'icons/obj/clothing/under/misc.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/misc.dmi'
 	name = "denim overalls"
 	desc = "A durable pair of overalls with a removable white work shirt. Perfect for outdoor labor."
 	icon_state = "overalls"
