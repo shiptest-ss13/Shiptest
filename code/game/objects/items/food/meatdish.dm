@@ -311,6 +311,44 @@
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/food/sausage/tiris_dote
+	name = "tiris dotesu"
+	desc = "A sweet sausage made with the fats of a Tiris and sweet dote berries."
+	icon_state = "tiris-sausage"
+	//filling_color = "#CD5C5C"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/protein = 1, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/dote_juice = 1)
+	tastes = list("sweet berries" = 1, "fatty meat" = 1)
+	foodtypes = MEAT
+
+/obj/item/food/sausage/tiris_refa //we having jalapeno brats tonight
+	name = "tiris refasu"
+	desc = "A spicy sausage made with the fats of a Tiris and ground up refa-li fruit."
+	icon_state = "tiris-sausage"
+	//filling_color = "#CD5C5C"
+	tastes = list("pungent spice" = 1, "fatty meat" = 1)
+	foodtypes = MEAT
+
+/obj/item/food/sausage/tirila_li
+	name = "Tirila-Li"
+	desc = "Cured logs of Tiris spiced with refa-li, rock salts, and dotu. A favorite at casual gatherings, where it typically serves as an appetizer."
+	icon_state = "tirila-li"
+	//filling_color = "#CD5C5C"
+	tastes = list("sweet berries" = 2, "fatty meat" = 3, "rock salts" = 1)
+	foodtypes = MEAT
+
+/obj/item/food/sausage/tirila_li/make_processable()
+	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/rila_li, 6, 3 SECONDS, table_required = TRUE,/*  screentip_verb = "Slice"*/)
+
+/obj/item/food/rila_li
+	name = "rila li slice"
+	desc = "A slice of cured tiris."
+	icon_state = "salami"
+	//filling_color = "#CD4122"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("sweet berries" = 1, "fatty meat" = 1, "rock salts" = 1)
+	food_flags = FOOD_FINGER_FOOD
+	foodtypes = MEAT
+
 /obj/item/food/rawkhinkali
 	name = "raw khinkali"
 	desc = "One of the many Solarian dumplings. This one is in the shape of a twisted knob, filled with meat, vegetables, and garlic. This one needs to be boiled."
@@ -341,6 +379,48 @@
 	tastes = list("meat" = 1, "onions" = 1, "garlic" = 1)
 	foodtypes = MEAT
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/food/dofi_dore
+	name = "dofi-dore"
+	desc = "Minced Dofitis meat is packed into a small, seedy pastry and baked. The pastries tend to stay shelf stable for several days, but are best eaten warm."
+	icon_state = "dofi-dore"
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bite_consumption = 3
+	//filling_color = "#F0F0F0"
+	tastes = list("seed flour" = 3, "hearty meat" = 6, "rich fat" = 1)
+	food_flags = FOOD_FINGER_FOOD
+	foodtypes = MEAT | GRAIN
+
+/obj/item/food/timera
+	name = "Timera-Fa"
+	desc = "Tiris meat ground down, dried, and mixed with berries and fruits. The result is a long-lasting survival food."
+	icon_state = "timera-fa"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/protein = 4)
+	bite_consumption = 2
+	//filling_color = "#F0F0F0"
+	tastes = list("crunchy berry bits" = 4, "dried meat" = 2,)
+	foodtypes = MEAT | FRUIT
+
+/obj/item/food/tiris_apple
+	name = "tiris and apples"
+	desc = "Tiris served with small slices of apple. An excellent appetizer for humans searching for an introduction to Tecetian food culture."
+	icon_state = "tiris-apple"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/applejuice = 2)
+	bite_consumption = 3
+	//filling_color = "#F0F0F0"
+	tastes = list("crisp apple" = 4, "fatty meat" = 2)
+	foodtypes = MEAT | FRUIT
+
+/obj/item/food/dofi_tami
+	name = "dofi-tami"
+	desc = "Dofitis, when thinly sliced and dehydrated, becomes a charmingly savoury experience. Lower quality cuts of the meat are often turned into dofi-tami and sold off as a snack."
+	icon_state = "dofi-tami"
+	//filling_color = "#CD4122"
+	food_flags = FOOD_FINGER_FOOD
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/protein = 1)
+	bite_consumption = 3
+	tastes = list("hearty meat" = 4, "desert air" = 1, "rich fats" = 2)
+	foodtypes = MEAT
 
 /obj/item/food/stewedsoymeat
 	name = "stewed soy meat"
@@ -472,6 +552,73 @@
 	tastes = list("meat" = 5, "poor decisions" = 3, "discomfort" = 1)
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/food/miras_sososi
+	name = "Miras Sososi"
+	desc = "A cut of Miras, stretched out over a Sososi leaf and drizzled in Tiris-Sele."
+	icon_state = "miras-sososi"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/protein = 3, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/tiris_sele = 1)
+	bite_consumption = 3
+	tastes = list("sweet meat" = 6, "gentle umami" = 1, "gel" = 4, "satisfying crunch" = 2)
+	foodtypes = MEAT | SUGAR | VEGETABLES
+
+/obj/item/food/siti_miras
+	name = "Siti-Miras"
+	desc = "A cut of Miras cooked with a small bed of Siti and a dusting of dried Dote."
+	icon_state = "siti-miras"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/protein = 4, /datum/reagent/consumable/sugar = 1)
+	bite_consumption = 3
+	tastes = list("sweet meat" = 6, "dried berries" = 2, "satisfying crunch" = 4)
+	foodtypes = MEAT | SUGAR | FRUIT
+
+/obj/item/food/miras_li
+	name = "Miras-Li"
+	desc = "Miras cooked with slivers of seeded Refa-Li. It looks sweet and tastes spicy."
+	icon_state = "miras-li"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/vitfro = 2)
+	tastes = list("sweet meat" = 8, "pungent heat" = 4, "fruitness" = 1)
+	foodtypes = MEAT | SUGAR | FRUIT
+
+/obj/item/food/wine_remes
+	name = "wine remes"
+	desc = "The absorbent nature of a Remes snail was eagerly exploited by interstellar chefs, leading to the creation of this wine-soaked meat. Eating enough is said to leave a mild buzz."
+	icon_state = "wine-remes"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/ethanol/wine = 10)
+	bite_consumption = 3
+	tastes = list("earthiness" = 1, "wine-soaked flesh" = 4)
+	foodtypes = MEAT | ALCOHOL
+
+/obj/item/food/remes_li
+	name = "remes-li"
+	desc = "Remes soaked in Refa-Li juice. An extremely spicy experience for the daring."
+	icon_state = "remes-li"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/refa_li = 10)
+	tastes = list("earthiness" = 2, "spice-soaked flesh" = 4, "burning sensation" = 1)
+	foodtypes = MEAT | FRUIT
+
+/obj/item/food/dofi_tese
+	name = "Dofi-tese"
+	desc = "A rich cut of Dofitis meat with a drizzle of a Tiris blood sauce"
+	icon_state = "dofi-tese"
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/tiris_sele = 4)
+	tastes = list("blossoming umami" = 1, "hearty grilled meat" = 6, "creamy fats" = 2)
+	foodtypes = MEAT
+
+/obj/item/food/sososi_dofi
+	name = "sososi dofi"
+	desc = "A prime cut of Dofitis served atop a seared Sososi leaf. The gel of the leaf tends to soak up the blood of the meat."
+	icon_state = "sososi-dofi"
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("bloody gel" = 2, "hearty grilled meat" = 6, "creamy fats" = 1, "crisp leafy crunch" = 4)
+	foodtypes = MEAT | VEGETABLES
+
+/obj/item/food/dofi_nari
+	name = "dofi-nari"
+	desc = "Ground down dofitis mixed together with herbs and spices, and then seared in a pan. Sometimes shaped into shapes to entertain guests. "
+	icon_state = "dofi-nari"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("spiced meat" = 5, "hearty fats" = 2, "spice" = 1)
+	foodtypes = MEAT | VEGETABLES
+
 //Kebabs and Skewers
 
 /obj/item/food/kebab
@@ -544,3 +691,21 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 		/datum/reagent/consumable/capsaicin = 3
 	)
+
+/obj/item/food/kebab/miras
+	name = "miras-kebab"
+	desc = "An entire Miras, slightly cleaned up and roasted on a stick."
+	icon_state = "roast-miras"
+	w_class = WEIGHT_CLASS_NORMAL
+	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 6, /datum/reagent/consumable/sugar = 2)
+	tastes = list("seared meat" = 6, "sweetness" = 1)
+	foodtypes = MEAT | SUGAR | GORE
+
+/obj/item/food/kebab/fafe_skewer
+	name = "faferiri skewer"
+	desc = "Remes meat separates out Tiris, Sososi, and Refa-li on a skewer. The flavors mix together as the juices flow, creating a gooey mess with a hint of spice."
+	icon_state = "dumb-fucking-kebab"
+	w_class = WEIGHT_CLASS_NORMAL
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/refa_li = 2)
+	tastes = list("spicy fruit" = 3, "sweetness" = 1, "satisfying crunch" = 2, "earthiness" = 2, "savory goo" = 4)
+	foodtypes = MEAT | FRUIT | VEGETABLES

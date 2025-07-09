@@ -68,6 +68,15 @@
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/food/snacks/store/cheesewheel(location)
 
+/datum/chemical_reaction/tiris_cheese
+	required_reagents = list(/datum/reagent/consumable/tiris_milk = 40)
+	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
+
+/datum/chemical_reaction/tiris_cheese/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel(location)
+
 /datum/chemical_reaction/synthmeat
 	required_reagents = list(/datum/reagent/blood = 5, /datum/reagent/medicine/cryoxadone = 1)
 	mob_react = FALSE
