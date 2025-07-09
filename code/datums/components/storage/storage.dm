@@ -597,7 +597,7 @@
 			if(amount >= can_hold_max_of_items[I.type])
 				if(!stop_messages)
 					to_chat(M, span_warning("[host] cannot hold another [I]!"))
-					return FALSE
+				return FALSE
 	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT) || (can_hold_trait && !HAS_TRAIT(I, can_hold_trait))) //Items which this container can't hold.
 		if(!stop_messages)
 			to_chat(M, span_warning("[host] cannot hold [I]!"))
