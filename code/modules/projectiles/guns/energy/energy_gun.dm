@@ -18,28 +18,6 @@
 /obj/item/gun/energy/e_gun/empty_cell
 	spawn_no_ammo = TRUE
 
-/obj/item/gun/energy/e_gun/mini
-	name = "miniature energy gun"
-	desc = "A small, pistol-sized energy gun with a built-in flashlight. It has two settings: disable and kill."
-	icon_state = "mini"
-	item_state = "gun"
-	w_class = WEIGHT_CLASS_SMALL
-	default_ammo_type = /obj/item/stock_parts/cell/gun/mini
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/cell/gun/mini,
-	)
-	throwforce = 11 //This is funny, trust me.
-	ammo_x_offset = 2
-	charge_sections = 3
-	wield_delay = 0.2 SECONDS
-	wield_slowdown = LASER_PISTOL_SLOWDOWN
-
-	spread = 2
-	spread_unwielded = 5
-
-/obj/item/gun/energy/e_gun/mini/empty_cell
-	spawn_no_ammo = TRUE
-
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
 	desc = "The standard issue rifle of Nanotrasen's Security Forces. Most have been put in long term storage following the ICW, and usually aren't issued to low ranking security divisions."

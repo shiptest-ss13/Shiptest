@@ -37,8 +37,8 @@
 	crate_name = "pistol crate"
 
 /datum/supply_pack/gun/commanders
-	name = "Commander Pistol Crate"
-	desc = "Contains a double stacked Commander pistol, produced by Nanotrasen along with Vigilitas Interstellar and is chambered in 9x18mm."
+	name = "PS9 Challenger Pistol Crate"
+	desc = "Contains a double stacked Challenger pistol, produced by Nanotrasen Advantage. Chambered in 9x18mm."
 	cost = 750
 	contains = list(/obj/item/storage/guncase/pistol/commander)
 	faction = /datum/faction/nt
@@ -200,8 +200,8 @@
 	faction = /datum/faction/nt
 
 /datum/supply_pack/gun/mini_energy
-	name = "Mini Energy Gun Crate"
-	desc = "Contains a small, versatile energy gun, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
+	name = "X-26 Gun Crate"
+	desc = "Contains a small, versatile energy gun, capable of firing both nonlethal and lethal blasts. NEEDS DESCRIPTION."
 	cost = 500
 	contains = list(/obj/item/storage/guncase/pistol/miniegun)
 	crate_name = "laser crate"
@@ -413,8 +413,8 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/vector
-	name = "Vector SMG Crate"
-	desc = "Contains a Vector PDW produced by Sharplite Defense and chambered in 9x18mm."
+	name = "SGL9 Expedition SMG Crate"
+	desc = "Contains a Vector PDW produced by Nanotrasen Advantage. Chambered in 9x18mm. NEEDS DESCRIPTION"
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/vector)
 	crate_name = "SMG crate"
@@ -433,17 +433,18 @@
 	faction_locked = TRUE
 
 /datum/supply_pack/gun/wt550
-	name = "WT-550 PDW Crate"
-	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
+	name = "PD46 Resolution PDW Crate"
+	desc = "Contains a compact automatic personal defense weapon chambered in 4.6x30mm. NEEDS DESCRIPTION."
 	cost = 3000
 	contains = list(/obj/item/storage/guncase/wt550)
 	crate_name = "PDW crate"
 	faction_discount = 10
 	faction = /datum/faction/nt
 
+//TODO: REMOVE
 /datum/supply_pack/gun/saber
-	name = "SABR Prototype SMG Crate"
-	desc = "Contains a compact 9x18mm automatic SMG produced by NT Ballistics. For NT employee use only."
+	name = "SABR Prototype SMG Crate TODO: REMOVE"
+	desc = "Contains a compact 9x18mm automatic SMG produced by NT Ballistics. For NT employee use onlyTODO: REMOVE."
 	cost = 2500
 	contains = list(/obj/item/storage/guncase/saber)
 	crate_name = "SMG crate"

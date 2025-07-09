@@ -40,6 +40,8 @@
 	impact_type = /obj/effect/projectile/impact/laser
 
 /obj/projectile/beam/laser/sharplite
+	icon_state = "nt_laser"
+	light_color = COLOR_BLUE_LIGHT
 	speed = 0.25
 
 /obj/projectile/beam/laser/light
@@ -184,6 +186,8 @@
 	impact_type = /obj/effect/projectile/impact/disabler
 
 /obj/projectile/beam/disabler/sharplite
+	icon_state = "nt_disabler"
+	light_color = COLOR_PALE_ORANGE
 	speed = 0.25
 
 /obj/projectile/beam/disabler/weak
