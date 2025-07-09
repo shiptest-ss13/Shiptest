@@ -609,7 +609,7 @@
 				to_chat(M, span_warning("[host] has too much junk in it, make some space!"))
 			return FALSE //Storage item is full
 	if(storage_flags & STORAGE_LIMIT_MAX_W_CLASS)
-		if(I.w_class > max_w_class)
+		if(I.w_class > max_w_class && !is_type_in_typecache(I, exception_hold))
 			if(!stop_messages)
 				to_chat(M, span_warning("[I] is much too long for [host]!"))
 			return FALSE

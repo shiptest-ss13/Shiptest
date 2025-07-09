@@ -468,7 +468,19 @@
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/static/list/exception_cache = typecacheof(list(
+		/obj/item/gun/ballistic/automatic/pistol,
+		/obj/item/gun/ballistic/revolver,
+		/obj/item/gun/energy/laser,
+		/obj/item/gun/energy/disabler,
+		/obj/item/gun/energy/e_gun,
+		/obj/item/gun/energy/kalix/pistol,
+		))
+	STR.exception_hold = exception_cache
 	STR.max_w_class = WEIGHT_CLASS_SMALL
+	STR.can_hold_max_of_items = typecacheof(list(
+		/obj/item/gun = 1,
+	))
 
 /obj/item/storage/belt/military/cobra/PopulateContents()
 	. = ..()
