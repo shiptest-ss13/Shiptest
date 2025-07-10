@@ -292,13 +292,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
-"bB" = (
-/obj/structure/sign/number/random{
-	color = "Black";
-	pixel_y = -8
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/storage/equip)
 "bD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
@@ -995,7 +988,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "hf" = (
-/obj/machinery/atmospherics/pipe/simple/general/hidden{
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
@@ -2208,7 +2201,6 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer4,
 /obj/structure/cable{
@@ -3420,6 +3412,8 @@
 	pixel_y = -6
 	},
 /obj/machinery/light/directional/north,
+/obj/item/trash/can,
+/obj/item/trash/boritos,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "xZ" = (
@@ -5684,6 +5678,8 @@
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/food/flour,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/trash/popcorn,
+/obj/item/trash/energybar,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Nj" = (
@@ -5878,6 +5874,13 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"Pp" = (
+/obj/structure/sign/number/random{
+	color = "Black";
+	pixel_y = -8
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/storage/equip)
 "Pz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -8829,7 +8832,7 @@ HE
 bW
 Km
 aw
-bB
+Pp
 Jb
 Jb
 Jb
@@ -8864,7 +8867,7 @@ aR
 MX
 lD
 aw
-bB
+Pp
 Jb
 Jb
 Jb
@@ -8899,7 +8902,7 @@ Im
 MX
 lD
 HF
-bB
+Pp
 Jb
 Jb
 Jb
@@ -8934,7 +8937,7 @@ aR
 CQ
 tM
 Sh
-bB
+Pp
 Jb
 Jb
 Jb
