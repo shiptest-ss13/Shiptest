@@ -2429,6 +2429,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fluff/steam_vent/low,
 /obj/structure/disposalpipe/trunk/multiz/down,
+/obj/structure/sign/poster/contraband/aclf{
+	pixel_y = 32
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/starboard)
 "ql" = (
@@ -2445,6 +2448,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/sign/poster/contraband/xenofauna_parasite{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "qp" = (
@@ -3873,9 +3879,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 4;
-	color = null
+	dir = 8
 	},
 /area/ship/hallway/aft)
 "BD" = (
@@ -4524,6 +4528,13 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/cargo/port)
+"Gp" = (
+/obj/structure/sign/number/random{
+	color = "Black";
+	pixel_y = -8
+	},
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/storage/equip)
 "Gy" = (
 /obj/machinery/porta_turret/ship/nt{
 	id = "ns_miner_grid";
@@ -4809,7 +4820,7 @@
 /obj/item/clothing/suit/space/hardsuit/mining/independent,
 /obj/item/clothing/mask/gas/explorer,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/official/get_your_legs{
+/obj/structure/sign/poster/official/moth/hardhats{
 	pixel_y = 32
 	},
 /obj/machinery/camera/autoname{
@@ -5862,9 +5873,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 4;
-	color = null
+	dir = 8
 	},
 /area/ship/hallway/central)
 "Pl" = (
@@ -5874,13 +5883,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
-"Pp" = (
-/obj/structure/sign/number/random{
-	color = "Black";
-	pixel_y = -8
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/storage/equip)
 "Pz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -6552,6 +6554,9 @@
 /area/ship/science/workshop)
 "Tq" = (
 /obj/structure/chair/sofa/brown/corpo/right/directional/south,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/aft)
 "Tr" = (
@@ -6884,9 +6889,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/stairs{
-	icon = 'icons/obj/stairs.dmi';
-	dir = 4;
-	color = null
+	dir = 8
 	},
 /area/ship/engineering/engines/port)
 "UH" = (
@@ -8832,7 +8835,7 @@ HE
 bW
 Km
 aw
-Pp
+Gp
 Jb
 Jb
 Jb
@@ -8867,7 +8870,7 @@ aR
 MX
 lD
 aw
-Pp
+Gp
 Jb
 Jb
 Jb
@@ -8902,7 +8905,7 @@ Im
 MX
 lD
 HF
-Pp
+Gp
 Jb
 Jb
 Jb
@@ -8937,7 +8940,7 @@ aR
 CQ
 tM
 Sh
-Pp
+Gp
 Jb
 Jb
 Jb
