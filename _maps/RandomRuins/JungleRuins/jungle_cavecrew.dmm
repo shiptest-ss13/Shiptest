@@ -1294,7 +1294,8 @@
 /area/ruin/jungle/cavecrew/cargo)
 "oW" = (
 /turf/open/floor/plasteel/stairs{
-	planetary_atmos = 1
+	planetary_atmos = 1;
+	initial_gas_mix = "JUNGLEPLANET_ATMOS"
 	},
 /area/ruin/jungle/cavecrew/cargo)
 "pb" = (
@@ -2161,8 +2162,10 @@
 	},
 /obj/effect/landmark/mission_poi/main{
 	mission_index = 2;
-	type_to_spawn = /obj/item/documents/frontier
+	type_to_spawn = /obj/item/documents/frontier;
+	already_spawned = 1
 	},
+/obj/item/documents/frontier,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/cavecrew/bridge)
 "Al" = (
