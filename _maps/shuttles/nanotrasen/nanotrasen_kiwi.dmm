@@ -1474,11 +1474,6 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
-/obj/structure/noticeboard{
-	dir = 1;
-	pixel_y = -25;
-	pixel_x = 15
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /obj/machinery/light/small/directional/south{
@@ -5535,6 +5530,9 @@
 "Mz" = (
 /obj/structure/chair/sofa/brown/corpo/left/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/noticeboard{
+	pixel_y = 28
+	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/aft)
 "MA" = (
@@ -6593,6 +6591,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/autoname{
 	dir = 10
+	},
+/obj/machinery/computer/cryopod/directional/south{
+	pixel_x = -15
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/cryo)
