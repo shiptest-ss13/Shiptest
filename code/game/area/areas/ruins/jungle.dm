@@ -164,3 +164,7 @@
 /area/ruin/jungle/cavecrew/dormitories
 	name = "Cave Base dormitories"
 	icon_state = "crew_quarters"
+
+/area/ruin/jungle/cavecrew/ship
+	name = "Cave Base Ship"
+	icon_state = "hangar"
