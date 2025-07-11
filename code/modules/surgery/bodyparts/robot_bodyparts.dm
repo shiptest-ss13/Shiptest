@@ -23,7 +23,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -49,7 +49,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -75,7 +75,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -101,7 +101,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -126,7 +126,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -229,7 +229,7 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
-	uses_integrity = TRUE
+	limb_integrity = TRUE
 
 	brute_reduction = 5
 	burn_reduction = 4
