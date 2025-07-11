@@ -135,6 +135,7 @@
 	icon_state = "overalls"
 	item_state = "overalls"
 	roll_down = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/overalls/black
 	name = "black overalls"
