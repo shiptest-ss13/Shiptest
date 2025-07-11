@@ -303,10 +303,22 @@
 	minbodytemp = 0
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/internals
 
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/buckshot
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/buckshot/neutered
+	weapon_drop_chance = 0
+
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals/neutered
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/buckshot
+	casingtype = /obj/item/ammo_casing/shotgun/buckshot
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/buckshot/neutered
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/officer
