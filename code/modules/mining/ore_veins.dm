@@ -109,7 +109,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	return ..()
 
 /obj/structure/vein/proc/begin_spawning()
-	our_drill.say("Seismic disturbances detected!")
 	currently_spawning = TRUE
 	START_PROCESSING(SSprocessing, src)
 
@@ -207,7 +206,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
-	max_mobs = 6
+	max_mobs = 2
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 30,
@@ -236,7 +235,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/gold = 2,
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
-	max_mobs = 6 //Best not to go past 6 due to balance and lag reasons
+	max_mobs = 3 //Best not to go past 6 due to balance and lag reasons
 	spawn_time = 8 SECONDS
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
@@ -388,7 +387,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 10,
 		/obj/item/stack/ore/titanium = 4,
 		)
-	max_mobs = 6
+	max_mobs = 2
 	spawn_time = 15 SECONDS
 
 /obj/structure/vein/jungle/classtwo/rare
@@ -418,7 +417,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 4,
 		)
 	//jungle mobs are kind of fucking hard, less max
-	max_mobs = 4
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/jungle/classthree/rare
@@ -535,7 +534,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/rockplanet/classthree
@@ -558,7 +557,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 4,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/rockplanet/classfour
@@ -623,7 +622,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/uranium = 5,
 		/obj/item/stack/ore/diamond = 2,
 		)
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/moon/classthree
@@ -647,7 +646,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 5,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
 
@@ -685,7 +684,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 7,
 		/obj/item/stack/ore/titanium = 5,
 		)
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/desert/classthree
@@ -706,7 +705,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/titanium = 7,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
 
@@ -732,7 +731,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	max_mobs = 4
+	max_mobs = 3
 	spawn_time = 5 SECONDS
 	///His greed was his downfall
 	var/greed_chance = 20
@@ -762,7 +761,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/diamond = 1,
 		)
 
-	spawn_time = 4 SECONDS
+	spawn_time = 8 SECONDS
 
 	greed_chance = 30
 
@@ -788,7 +787,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 	greed_chance = 40
-	spawn_time = 3 SECONDS
+	spawn_time = 6 SECONDS
 
 // Asteroid veins.
 
@@ -833,7 +832,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/asteroid/classtwo/rare
@@ -865,7 +864,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
 /obj/structure/vein/asteroid/classthree/rare
@@ -918,7 +917,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 10 SECONDS
 
 /obj/structure/vein/waterplanet/classthree
@@ -943,6 +942,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/obj/item/stack/ore/bluespace_crystal = 5,
 		)
 
-	max_mobs = 6
+	max_mobs = 3
 	spawn_time = 8 SECONDS
 
