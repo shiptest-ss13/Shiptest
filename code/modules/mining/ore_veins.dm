@@ -142,7 +142,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound)
 		bug_breach.start_death_timer(wave_length - 5 SECONDS)
 
-/obj/structure/vein/proc/pick_tile(var/list/peel)
+/obj/structure/vein/proc/pick_tile(list/peel)
 	if(!length(peel))
 		peel = turf_peel(spawn_distance_max, spawn_distance_min, src, TRUE)
 	var/turf/open/spawning_tile
