@@ -164,7 +164,7 @@
 	name = "Vigilitas Response Team"
 	desc = "A hardened member of Vigilitas Interstellar, clad in well made alloys slathered in red. Their helmet turns, their rifle raises, and they start to move with practiced precision."
 	ranged = TRUE
-	rapid = 4
+	rapid = 3
 	rapid_fire_delay = 4
 	rapid_melee = 3
 	retreat_distance = 0
