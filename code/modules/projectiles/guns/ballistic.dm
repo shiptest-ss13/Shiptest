@@ -46,8 +46,6 @@
 	///If you can examine a gun to see its current ammo count
 	var/ammo_counter = FALSE
 
-	min_recoil = 0.1
-
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/laser_sight,

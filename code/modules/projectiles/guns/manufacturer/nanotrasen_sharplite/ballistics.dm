@@ -1,6 +1,6 @@
 //repath to /obj/item/gun/ballistic/automatic/pistol/challenger
 /obj/item/gun/ballistic/automatic/pistol/commander
-	name = "Advantage PS9 Challenger"
+	name = "NA PS9 Challenger"
 	desc = "One of a custom production run of PS9s ordered by Vigilitas Interstellar, first adopted in FS 408 as VI's new standard sidearm in specific regions. Features the same forgiving performance as the mass-market version, barring some aesthetic and ergonomic modifications. Chambered in 9x18mm."
 	icon_state = "challenger"
 	item_state = "nt_generic"
@@ -40,7 +40,131 @@
 		)
 	)
 
+/obj/item/gun/ballistic/automatic/pistol/commander/indie
+	name = "NA PS9"
+	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers. Popular among new shooters for its low price point, forgiving recoil, and generous magazine capacity for its class."
+	icon_state = "challenger_indie"
+	item_state = "nt_generic"
+
+/obj/item/gun/ballistic/automatic/pistol/champion
+	name = "NA PHB Champion"
+	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Produced only for major Advantage clients. Judging by the markings, this PHB was produced specifically for Vigilitas Interstellar. Chambered in 9x18mm."
+	icon_state = "champion"
+	item_state = "nt_generic"
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+
+	w_class = WEIGHT_CLASS_NORMAL
+	default_ammo_type = /obj/item/ammo_box/magazine/co9mm
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/co9mm,
+	)
+	manufacturer = MANUFACTURER_VIGILITAS
+	fire_sound = 'sound/weapons/gun/pistol/cm23.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+
+	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	burst_size = 3
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.4 SECONDS
+
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+
+	wear_maximum = 1200
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
+
 NO_MAG_GUN_HELPER(automatic/pistol/commander)
+
+/obj/item/gun/ballistic/automatic/pistol/podium
+	name = "Advantage PH46 Podium"
+	desc ="A heavy pistol chambered in the high-velocity 4.6mm cartridge, designed to defeat common body armor. Despite the powerful cartridge, it is known to be surprisingly controllable, though not necessarily lightweight. Sold only to major corporate clients. This example was manufactured for Vigilitas Interstellar."
+
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon_state = "podium"
+	item_state = "podium"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/m46_30_podium
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/m46_30_podium,
+	)
+
+	fire_sound = 'sound/weapons/gun/pistol/podium.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+
+	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
+
+	manufacturer = MANUFACTURER_VIGILITAS
+	show_magazine_on_sprite = TRUE
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 32,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 15,
+			"y" = 26,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 23,
+			"y" = 19,
+		)
+	)
+
+NO_MAG_GUN_HELPER(automatic/pistol/podium)
+
+/obj/item/ammo_box/magazine/m46_30_podium
+	name = "Podium magazine (4.6x30mm)"
+	desc = "A 12-round, double-stack magazine for the Podium pistol. These rounds do okay damage with average performance against armor."
+	icon_state = "podium_mag-12"
+	base_icon_state = "podium_mag"
+	ammo_type = /obj/item/ammo_casing/c46x30mm
+	caliber = "4.6x30mm"
+	max_ammo = 12
+
+/obj/item/ammo_box/magazine/m46_30_podium/update_icon_state()
+	. = ..()
+	if(ammo_count() == 12)
+		icon_state = "[base_icon_state]-12"
+	else if(ammo_count() >= 10)
+		icon_state = "[base_icon_state]-10"
+	else if(ammo_count() >= 5)
+		icon_state = "[base_icon_state]-5"
+	else if(ammo_count() >= 1)
+		icon_state = "[base_icon_state]-1"
+	else
+		icon_state = "[base_icon_state]-0"
+
 
 /obj/item/ammo_box/magazine/co9mm
 	name = "challenger pistol magazine (9x18mm)"
@@ -154,7 +278,43 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 	show_magazine_on_sprite_ammo = TRUE
 	empty_indicator = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
+	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
+
+	spread = 7
+	spread_unwielded = 10
+
+	recoil = 0
+	recoil_unwielded = 4
+
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/foldable_stock/resolution
+	)
+
+	default_attachments = list(/obj/item/attachment/foldable_stock/resolution)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 32,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 17,
+			"y" = 18,
+		)
+	)
+
+
+/obj/item/gun/ballistic/automatic/smg/wt550/update_icon_state()
+	. = ..()
+	if(current_skin)
+		icon_state = "[unique_reskin[current_skin]][magazine ? "" : "_nomag"]"
+	else
+		icon_state = "[base_icon_state || initial(icon_state)][magazine ? "" : "_nomag"]"
 
 /obj/item/gun/ballistic/automatic/smg/wt550/no_mag
 	default_ammo_type = FALSE

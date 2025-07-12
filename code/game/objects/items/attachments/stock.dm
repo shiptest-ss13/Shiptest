@@ -46,3 +46,11 @@
 /obj/item/attachment/foldable_stock/sidewinder
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	icon_state = "sidewinder_stock"
+
+/obj/item/attachment/foldable_stock/resolution
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	icon_state = "resolution_stock"
+
+/obj/item/attachment/foldable_stock/resolution_inteq
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	icon_state = "resolution_inteq_stock"
