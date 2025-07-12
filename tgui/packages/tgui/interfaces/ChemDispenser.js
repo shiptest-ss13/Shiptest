@@ -1,6 +1,3 @@
-import { toFixed } from 'common/math';
-import { toTitleCase } from 'common/string';
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -9,11 +6,15 @@ import {
   LabeledList,
   ProgressBar,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+import { toTitleCase } from 'tgui-core/string';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const ChemDispenser = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemDispenser = (props) => {
+  const { act, data } = useBackend();
   const recording = !!data.recordingRecipe;
   // TODO: Change how this piece of shit is built on server side
   // It has to be a list, not a fucking OBJECT!
@@ -32,7 +33,7 @@ export const ChemDispenser = (props, context) => {
     data.beakerContents ||
     [];
   return (
-    <Window width={565} height={620} resizable>
+    <Window width={565} height={620}>
       <Window.Content scrollable>
         <Section
           title="Status"

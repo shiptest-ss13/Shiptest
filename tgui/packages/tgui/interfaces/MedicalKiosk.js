@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-import { useBackend, useSharedState } from '../backend';
 import {
   AnimatedNumber,
   Box,
@@ -10,12 +8,14 @@ import {
   ProgressBar,
   Section,
   Stack,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 
-export const MedicalKiosk = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [scanIndex] = useSharedState(context, 'scanIndex');
+export const MedicalKiosk = (props) => {
+  const { act, data } = useBackend();
+  const [scanIndex] = useSharedState('scanIndex');
   const { active_status_1, active_status_2, active_status_3, active_status_4 } =
     data;
   return (
@@ -28,7 +28,7 @@ export const MedicalKiosk = (props, context) => {
                 index={1}
                 icon="procedures"
                 name="General Health Scan"
-                description={multiline`
+                description={`
                   Reads back exact values of your general health scan.
                 `}
               />
@@ -36,7 +36,7 @@ export const MedicalKiosk = (props, context) => {
                 index={2}
                 icon="heartbeat"
                 name="Symptom Based Checkup"
-                description={multiline`
+                description={`
                   Provides information based on various non-obvious symptoms,
                   like blood levels or disease status.
                 `}
@@ -45,7 +45,7 @@ export const MedicalKiosk = (props, context) => {
                 index={3}
                 icon="radiation-alt"
                 name="Neurological/Radiological Scan"
-                description={multiline`
+                description={`
                   Provides information about brain trauma and radiation.
                 `}
               />
@@ -53,7 +53,7 @@ export const MedicalKiosk = (props, context) => {
                 index={4}
                 icon="mortar-pestle"
                 name="Chemical and Psychoactive Scan"
-                description={multiline`
+                description={`
                   Provides a list of consumed chemicals, as well as potential
                   side effects.
                 `}
@@ -73,10 +73,10 @@ export const MedicalKiosk = (props, context) => {
   );
 };
 
-const MedicalKioskScanButton = (props, context) => {
+const MedicalKioskScanButton = (props) => {
   const { index, name, description, icon } = props;
-  const { act, data } = useBackend(context);
-  const [scanIndex, setScanIndex] = useSharedState(context, 'scanIndex');
+  const { act, data } = useBackend();
+  const [scanIndex, setScanIndex] = useSharedState('scanIndex');
   const paid = data[`active_status_${index}`];
   return (
     <Stack align="baseline">
@@ -106,8 +106,8 @@ const MedicalKioskScanButton = (props, context) => {
   );
 };
 
-const MedicalKioskInstructions = (props, context) => {
-  const { act, data } = useBackend(context);
+const MedicalKioskInstructions = (props) => {
+  const { act, data } = useBackend();
   const { patient_name } = data;
   return (
     <Section minHeight="100%">
@@ -123,7 +123,7 @@ const MedicalKioskInstructions = (props, context) => {
       </Box>
       <Button
         mt={1}
-        tooltip={multiline`
+        tooltip={`
           Resets the current scanning target, cancelling current scans.
         `}
         icon="sync"
@@ -135,8 +135,8 @@ const MedicalKioskInstructions = (props, context) => {
   );
 };
 
-const MedicalKioskScanResults1 = (props, context) => {
-  const { data } = useBackend(context);
+const MedicalKioskScanResults1 = (props) => {
+  const { data } = useBackend();
   const {
     patient_health,
     brute_health,
@@ -178,8 +178,8 @@ const MedicalKioskScanResults1 = (props, context) => {
   );
 };
 
-const MedicalKioskScanResults2 = (props, context) => {
-  const { data } = useBackend(context);
+const MedicalKioskScanResults2 = (props) => {
+  const { data } = useBackend();
   const {
     patient_status,
     patient_illness,
@@ -218,8 +218,8 @@ const MedicalKioskScanResults2 = (props, context) => {
   );
 };
 
-const MedicalKioskScanResults3 = (props, context) => {
-  const { data } = useBackend(context);
+const MedicalKioskScanResults3 = (props) => {
+  const { data } = useBackend();
   const {
     clone_health,
     brain_damage,
@@ -268,8 +268,8 @@ const MedicalKioskScanResults3 = (props, context) => {
   );
 };
 
-const MedicalKioskScanResults4 = (props, context) => {
-  const { data } = useBackend(context);
+const MedicalKioskScanResults4 = (props) => {
+  const { data } = useBackend();
   const {
     chemical_list = [],
     overdose_list = [],

@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -6,11 +5,13 @@ import {
   NoticeBox,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { NtosWindow } from '../layouts';
 
-export const NtosNetMonitor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosNetMonitor = (props) => {
+  const { act, data } = useBackend();
   const {
     ntnetrelays,
     ntnetstatus,
@@ -26,7 +27,7 @@ export const NtosNetMonitor = (props, context) => {
     ntnetlogs = [],
   } = data;
   return (
-    <NtosWindow resizable>
+    <NtosWindow>
       <NtosWindow.Content scrollable>
         <NoticeBox>
           WARNING: Disabling wireless transmitters when using a wireless device
@@ -139,7 +140,7 @@ export const NtosNetMonitor = (props, context) => {
                   minValue={minlogs}
                   maxValue={maxlogs}
                   width="39px"
-                  onChange={(e, value) =>
+                  onChange={(value) =>
                     act('updatemaxlogs', {
                       new_number: value,
                     })

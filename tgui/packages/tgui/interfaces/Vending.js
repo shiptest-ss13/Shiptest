@@ -1,10 +1,11 @@
-import { classes } from 'common/react';
+import { Box, Button, Section, Table } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+
 import { useBackend } from '../backend';
-import { Box, Button, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-const VendingRow = (props, context) => {
-  const { act, data } = useBackend(context);
+const VendingRow = (props) => {
+  const { act, data } = useBackend();
   const { product, productStock, custom } = props;
   const { miningvendor, all_items_free, user } = data;
   const free = all_items_free || product.price === 0;
@@ -55,7 +56,7 @@ const VendingRow = (props, context) => {
             content={data.access ? 'FREE' : product.price + affix}
             onClick={() =>
               act('dispense', {
-                'item': product.name,
+                item: product.name,
               })
             }
           />
@@ -72,7 +73,7 @@ const VendingRow = (props, context) => {
             content={free ? 'FREE' : product.price + affix}
             onClick={() =>
               act('vend', {
-                'ref': product.ref,
+                ref: product.ref,
               })
             }
           />
@@ -82,8 +83,8 @@ const VendingRow = (props, context) => {
   );
 };
 
-export const Vending = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Vending = (props) => {
+  const { act, data } = useBackend();
   const {
     user,
     all_items_free,
@@ -107,7 +108,7 @@ export const Vending = (props, context) => {
   // Just in case we still have undefined values in the list
   inventory = inventory.filter((item) => !!item);
   return (
-    <Window title="Vending Machine" width={450} height={600} resizable>
+    <Window title="Vending Machine" width={450} height={600}>
       <Window.Content scrollable>
         {!all_items_free && (
           <Section title="User">

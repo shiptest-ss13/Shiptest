@@ -1,9 +1,16 @@
+import {
+  Box,
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+} from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
-export const BorgPanel = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BorgPanel = (props) => {
+  const { act, data } = useBackend();
   const borg = data.borg || {};
   const cell = data.cell || {};
   const cellPercent = cell.charge / cell.maxcharge;
@@ -13,7 +20,7 @@ export const BorgPanel = (props, context) => {
   const ais = data.ais || [];
   const laws = data.laws || [];
   return (
-    <Window title="Borg Panel" width={700} height={700} resizable>
+    <Window title="Borg Panel" width={700} height={700}>
       <Window.Content scrollable>
         <Section
           title={borg.name}

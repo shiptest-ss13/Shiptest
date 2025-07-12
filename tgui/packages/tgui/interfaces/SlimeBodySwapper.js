@@ -1,5 +1,6 @@
+import { Box, Button, LabeledList, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Section, LabeledList, Button, Box } from '../components';
 import { Window } from '../layouts';
 
 const statusMap = {
@@ -14,7 +15,7 @@ const occupiedMap = {
   available: 'Swap',
 };
 
-export const BodyEntry = (props, context) => {
+export const BodyEntry = (props) => {
   const { body, swapFunc } = props;
   return (
     <Section
@@ -44,8 +45,8 @@ export const BodyEntry = (props, context) => {
   );
 };
 
-export const SlimeBodySwapper = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SlimeBodySwapper = (props) => {
+  const { act, data } = useBackend();
   const { bodies = [] } = data;
   return (
     <Window width={400} height={400}>

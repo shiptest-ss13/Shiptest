@@ -1,20 +1,20 @@
+import { Box, Flex, Icon, Table, Tabs } from 'tgui-core/components';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Flex, Icon, Table, Tabs } from '../components';
 import { Window } from '../layouts';
 
-export const Achievements = (props, context) => {
-  const { data } = useBackend(context);
+export const Achievements = (props) => {
+  const { data } = useBackend();
   const { categories } = data;
   const [selectedCategory, setSelectedCategory] = useLocalState(
-    context,
     'category',
-    categories[0]
+    categories[0],
   );
   const achievements = data.achievements.filter(
-    (x) => x.category === selectedCategory
+    (x) => x.category === selectedCategory,
   );
   return (
-    <Window title="Achievements" width={540} height={680} resizable>
+    <Window title="Achievements" width={540} height={680}>
       <Window.Content scrollable>
         <Tabs>
           {categories.map((category) => (
@@ -41,7 +41,7 @@ export const Achievements = (props, context) => {
   );
 };
 
-const AchievementTable = (props, context) => {
+const AchievementTable = (props) => {
   const { achievements } = props;
   return (
     <Table>
@@ -77,14 +77,10 @@ const Achievement = (props) => {
   );
 };
 
-const HighScoreTable = (props, context) => {
-  const { data } = useBackend(context);
+const HighScoreTable = (props) => {
+  const { data } = useBackend();
   const { highscore: highscores, user_ckey } = data;
-  const [highScoreIndex, setHighScoreIndex] = useLocalState(
-    context,
-    'highscore',
-    0
-  );
+  const [highScoreIndex, setHighScoreIndex] = useLocalState('highscore', 0);
   const highscore = highscores[highScoreIndex];
   if (!highscore) {
     return null;

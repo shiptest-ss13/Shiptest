@@ -48,6 +48,7 @@ const defTag = [
 // Advanced HTML tags that we can trust admins (but not players) with
 const advTag = ['img'];
 
+// Background is here because it accepts image urls
 const defAttr = ['class', 'style', 'background'];
 
 /**
@@ -64,7 +65,7 @@ export const sanitizeText = (
   advHtml = false,
   tags = defTag,
   forbidAttr = defAttr,
-  advTags = advTag
+  advTags = advTag,
 ) => {
   // This is VERY important to think first if you NEED
   // the tag you put in here.  We are pushing all this
