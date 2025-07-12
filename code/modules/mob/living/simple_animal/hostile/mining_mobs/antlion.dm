@@ -17,6 +17,7 @@
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
+	sharpness = SHARP_POINTY
 
 	//Their "ranged" ability is burrowing
 	ranged = TRUE
