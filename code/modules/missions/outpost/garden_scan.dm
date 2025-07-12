@@ -108,6 +108,7 @@
 	name = ""
 	desc = ""
 	value = 2500
+	objective_type = /obj/structure/geyser
 	scanner_type = /obj/item/survey_handheld/elite
 	duration = 60 MINUTES
 	weight = 4
