@@ -112,7 +112,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	currently_spawning = TRUE
 	START_PROCESSING(SSprocessing, src)
 
-/obj/structure/vein/proc/stop_spawning(currently_spawning)
+/obj/structure/vein/proc/stop_spawning()
 	if(currently_spawning)
 		currently_spawning = FALSE
 		STOP_PROCESSING(SSprocessing, src)
@@ -121,6 +121,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	return TRUE
 
 /obj/structure/vein/process(seconds_per_tick)
+	if(!currently_spawning)
+		return
 	try_spawning_spawner()
 
 /obj/structure/vein/proc/try_spawning_spawner()
