@@ -560,9 +560,7 @@
 	name = "overhead handrail"
 	},
 /obj/effect/turf_decal/borderfloor,
-/obj/item/tank/jetpack/oxygen{
-	pixel_x = 8
-	},
+/obj/item/tank/jetpack/oxygen,
 /obj/item/clothing/suit/space/hardsuit/medical,
 /obj/item/clothing/mask/gas/explorer,
 /obj/effect/decal/cleanable/dirt,
@@ -760,6 +758,7 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/starboard)
 "fy" = (
@@ -3456,6 +3455,18 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/hand_labeler{
+	pixel_y = -15;
+	pixel_x = 5
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_y = 9;
+	pixel_x = 9
+	},
+/obj/item/stack/marker_beacon/thirty{
+	pixel_y = 8;
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "yb" = (
@@ -4261,7 +4272,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/handrail,
+/obj/machinery/pipedispenser,
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/engineering/engines/starboard)
 "Dz" = (
@@ -5892,7 +5903,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/jetpack/carbondioxide,
 /obj/item/clothing/suit/space/hardsuit/engine,
 /obj/item/clothing/mask/gas/atmos,
 /obj/structure/extinguisher_cabinet/directional/west{
@@ -5940,6 +5951,10 @@
 	},
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 14;
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Pb" = (
