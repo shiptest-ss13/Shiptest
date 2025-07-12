@@ -1184,6 +1184,8 @@
 	var/mob/living/silicon/ai/mainframe
 	/// action for undeployment
 	var/datum/action/innate/brain_undeployment/undeployment_action = new
+	/// "assigned" AI, set when connected to and locked until you multitool the RUPFC
+	var/mob/living/silicon/ai/linked_mainframe = null
 
 /obj/item/organ/brain/cybernetic/ai/Destroy()
 	. = ..()
@@ -1267,6 +1269,9 @@
 	if(mainframe) //set to null during undeploy()
 		to_chat(AI, span_warning("Frame already has an active link."))
 		return
+	if(!(linked_mainframe == null || linked_mainframe == AI))
+		to_chat(AI, span_warning("Frame is not assigned to you."))
+		return
 	AI.deployed_shell = owner
 	deploy_init(AI)
 	AI.mind.transfer_to(owner)
@@ -1274,10 +1279,10 @@
 /obj/item/organ/brain/cybernetic/ai/proc/deploy_init(mob/living/silicon/ai/AI)
 	//todo camera maybe
 	mainframe = AI
+	linked_mainframe = AI
 	RegisterSignal(AI, PROC_REF(ai_deleted))
 	undeployment_action.Grant(owner)
 	update_med_hud_status(owner)
-	owner.language_holder = mainframe.get_language_holder() //usually /datum/language_holder/synthetic
 	to_chat(owner, span_bold("You are operating through a remote uplink system to this frame, and remain the same mind."))
 
 /obj/item/organ/brain/cybernetic/ai/proc/undeploy(datum/source)
@@ -1319,3 +1324,12 @@
 	SIGNAL_HANDLER
 	to_chat(owner, span_danger("WARN: Remote frame has missed [rand(1,4)] health check(s). Restoring to core functions."))
 	undeploy()
+
+/obj/item/organ/brain/cybernetic/ai/multitool_act(mob/living/user, obj/item/multitool/tool)
+	..()
+	if(!Adjacent(user))
+		return
+
+	to_chat(user, span_info("You reset the assigned AI."))
+	linked_mainframe = null
+	return TRUE
