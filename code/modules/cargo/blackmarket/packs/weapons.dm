@@ -383,7 +383,7 @@
 
 /datum/blackmarket_item/weapon/guncase/mauler/semi
 	name = "Mauler Semi-Automatic"
-	desc = "Enjoy the Mauler, but want to actually hit the broadside of Vela? This semi-automatic conversion of the Mauler still features a better than average rate of fire and improved handling.."
+	desc = "Enjoy the Mauler, but want to actually hit the broadside of a Vela? This semi-automatic conversion of the Mauler still features a better than average rate of fire and improved handling.."
 	item = /obj/item/gun/ballistic/automatic/pistol/mauler/regular
 
 	cost_min = 500
