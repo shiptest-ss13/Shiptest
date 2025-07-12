@@ -78,6 +78,17 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 28,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 19,
+		)
+	)
+
 
 /obj/item/ammo_box/magazine/m9mm_mauler
 	name = "mauler pistol magazine (9x18mm)"

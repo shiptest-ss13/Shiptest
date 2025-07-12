@@ -381,6 +381,16 @@
 	stock_max = 3
 	availability_prob = 50
 
+/datum/blackmarket_item/weapon/guncase/mauler/semi
+	name = "Mauler Semi-Automatic"
+	desc = "Enjoy the Mauler, but want to actually hit the broadside of Vela? This semi-automatic conversion of the Mauler still features a better than average rate of fire and improved handling.."
+	item = /obj/item/gun/ballistic/automatic/pistol/mauler/regular
+
+	cost_min = 500
+	cost_max = 1000
+	stock_max = 3
+	availability_prob = 50
+
 /datum/blackmarket_item/weapon/guncase/spitter
 	name = "Spitter Submachine Gun"
 	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9x18mm."
