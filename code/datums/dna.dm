@@ -53,6 +53,7 @@
 	destination.dna.real_name = real_name
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
 	destination.flavor_text = destination.dna.features["flavor_text"] //Update the flavor_text to use new dna text
+	destination.dna.current_body_size = current_body_size
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
 		destination.dna.default_mutation_genes = default_mutation_genes
@@ -65,6 +66,7 @@
 	new_dna.blood_type = blood_type
 	new_dna.features = features.Copy()
 	new_dna.species = new species.type
+	new_dna.species.species_traits = species.species_traits
 	new_dna.real_name = real_name
 	new_dna.update_body_size() //Must come after features.Copy()
 	new_dna.mutations = mutations.Copy()
