@@ -602,7 +602,7 @@
 
 /datum/chemical_reaction/hexement
 	results = list(/datum/reagent/cement/hexement = 1)
-	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/phenol = 1)
+	required_reagents = list(/datum/reagent/cement = 6, /datum/reagent/stable_plasma = 1)
 	required_temp = 400
 	mix_message = "The mixture rapidly condenses and darkens in color..."
 
