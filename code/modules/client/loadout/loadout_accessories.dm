@@ -16,6 +16,12 @@
 	display_name = "shemagh"
 	path = /obj/item/clothing/neck/shemagh
 
+//poncho
+
+/datum/gear/accessory/poncho
+	display_name = "poncho, recolorable"
+	path = /obj/item/clothing/neck/poncho
+
 //(The actually good scarves)
 
 /datum/gear/accessory/scarf/striped
