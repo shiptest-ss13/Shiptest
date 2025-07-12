@@ -35,7 +35,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/drop_rate_amount_max = 20
 	///variables for the mob spawners we generate
 	var/max_mobs = 3
-	var/spawn_time = 15 SECONDS
+	var/spawn_time = 10 SECONDS
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 20,
