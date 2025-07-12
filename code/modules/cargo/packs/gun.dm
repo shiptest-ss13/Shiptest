@@ -227,7 +227,7 @@
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"
 	desc = "Contains a single Mk.I Ion Projector, a special anti-tank rifle designed to disable electronic threats at range."
-	cost = 10000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/energy/iongun)
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
