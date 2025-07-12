@@ -47,8 +47,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/spawner_type = /datum/component/spawner
 
 	///how away from the source can mob spawners create something
-	var/spawn_distance_min = 0
-	var/spawn_distance_max = 1
+	var/spawner_distance_min = 0
+	var/spawner_distance_max = 1
 
 
 	var/currently_spawning = FALSE
@@ -146,7 +146,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		var/obj/effect/drill_spawner/bug_breach = new /obj/effect/drill_spawner(spawning_tile)
 		active_spawners += bug_breach
 		bug_breach.our_vein = src
-		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max)
+		bug_breach.AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawner_distance_min, spawner_distance_max)
 		bug_breach.start_death_timer(wave_length - 5 SECONDS)
 
 /obj/structure/vein/proc/pick_tile(list/peel)
