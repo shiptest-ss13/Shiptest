@@ -5,22 +5,22 @@
 	icon = 'icons/obj/items.dmi'
 	icon_state = "lipstick"
 	w_class = WEIGHT_CLASS_TINY
-	var/colour = "#520401"
+	var/colour = "#a36262CC"
 	var/open = FALSE
 	var/lipstick_trait
 
 /obj/item/lipstick/purple
 	name = "purple lipstick"
-	colour = "#420b63"
+	colour = "#9c6db5CC"
 
 /obj/item/lipstick/jade
 	//It's still called Jade, but theres no HTML color for jade, so we use lime.
 	name = "jade lipstick"
-	colour = "#00a86b"
+	colour = "#44755dE6"
 
 /obj/item/lipstick/black
 	name = "black lipstick"
-	colour = "#242424"
+	colour = "#3F3B519C"
 
 /obj/item/lipstick/random
 	name = "lipstick"
