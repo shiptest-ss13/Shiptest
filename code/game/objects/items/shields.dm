@@ -9,8 +9,8 @@
 	slot_flags = ITEM_SLOT_BACK
 	force = 10
 	item_flags = SLOWS_WHILE_IN_HAND
-	slowdown = 0.5
-	drag_slowdown = 0.5
+	slowdown = 1
+	drag_slowdown = 1
 	block_chance = 50
 	throwforce = 5
 	throw_speed = 2
@@ -79,8 +79,8 @@
 	custom_materials = list(/datum/material/iron=8500)
 
 	force = 15
-	max_integrity = 900
-	block_chance = 70
+	max_integrity = 600
+	block_chance = 60
 	integrity_failure = 0.1
 	material_flags = MATERIAL_NO_EFFECTS
 
@@ -90,19 +90,21 @@
 			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
 			playsound(src, shield_bash_sound, 50, TRUE)
 			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
-	else if(istype(W, /obj/item/stack/sheet/metal))
+	else if(istype(W, /obj/item/stack/sheet/plasteel))
 		if (obj_integrity >= max_integrity)
 			to_chat(user, span_warning("[src] is already in perfect condition."))
-		else
-			var/obj/item/stack/sheet/metal/T = W
-			T.use(1)
+		while(obj_integrity < max_integrity)
+			if(!do_after(user, 30	, target= src))
+				return
+			var/obj/item/stack/sheet/plasteel/T = W
+			T.use(10)
 			obj_integrity = max_integrity
 			to_chat(user, span_notice("You repair [src] with [T]."))
 			name = src::name
 			broken = FALSE
-			block_chance = 70
-			slowdown = 0.5
-			drag_slowdown = 0.5
+			block_chance = 60
+			slowdown = 1
+			drag_slowdown = 1
 
 /obj/item/shield/riot/spike
 	name = "spike shield"
