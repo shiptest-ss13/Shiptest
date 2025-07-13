@@ -646,6 +646,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "ev" = (
@@ -6325,6 +6328,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/starboard)
+"RM" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engines/port)
 "RO" = (
 /obj/structure/sign/nanotrasen/ns,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -8278,7 +8294,7 @@ Jb
 Jb
 uY
 DK
-eu
+RM
 TI
 CS
 PD
