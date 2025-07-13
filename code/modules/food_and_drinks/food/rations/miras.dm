@@ -3,7 +3,7 @@
 	desc = "Enjoy a combination of Miras and Tiris. This ration pack is centered along the Tiris Celima, and supported by "
 	emblem_icon_state = "emblem_mt"
 
-/obj/item/storage/ration/sososi/PopulateContents()
+/obj/item/storage/ration/miras/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/reagent_containers/food/snacks/ration/entree/tiris_celima = 1,
 		/obj/item/reagent_containers/food/snacks/ration/side/miras_reti = 1,
