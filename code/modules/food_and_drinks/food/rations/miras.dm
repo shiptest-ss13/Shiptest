@@ -1,6 +1,6 @@
 /obj/item/storage/ration/miras
 	name = "miras and tiris ration"
-	desc = "Enjoy a combination of Miras and Tiris. This ration pack is centered along the Tiris Celima, and supported by "
+	desc = "Enjoy a combination of Miras and Tiris. This ration pack is centered along the Tiris Celima, and supported by crackers and a Wanderer Bar"
 	emblem_icon_state = "emblem_mt"
 
 /obj/item/storage/ration/miras/PopulateContents()
