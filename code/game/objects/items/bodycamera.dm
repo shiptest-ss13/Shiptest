@@ -140,7 +140,7 @@
 	user.see_in_dark = 2
 	return 1
 
-#define BODYCAM_UPDATE_BUFFER 5
+#define BODYCAM_UPDATE_BUFFER 3
 /obj/item/bodycamera/equipped(mob/user)
 	. = ..()
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(update_camera_location))
