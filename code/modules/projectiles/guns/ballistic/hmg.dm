@@ -1,6 +1,7 @@
 //TODO: rename this file to lmg.dm and: /obj/item/gun/ballistic/automatic/hmg --> /obj/item/gun/ballistic/automatic/lmg
 
 /obj/item/gun/ballistic/automatic/hmg
+	bad_type = /obj/item/gun/ballistic/automatic/hmg
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = 0
 	weapon_weight = WEAPON_HEAVY
@@ -54,7 +55,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, list(COMSIG_ITEM_EQUIPPED,COMSIG_MOVABLE_MOVED), PROC_REF(retract_bipod))
+	RegisterSignals(src, list(COMSIG_ITEM_EQUIPPED,COMSIG_MOVABLE_MOVED), PROC_REF(retract_bipod))
 
 /datum/action/item_action/deploy_bipod //TODO: Make this an accessory when that's added
 	name = "Deploy Bipod"

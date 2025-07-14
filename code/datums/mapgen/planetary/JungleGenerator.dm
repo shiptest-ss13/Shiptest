@@ -107,7 +107,9 @@
 	feature_spawn_list = list(
 		/obj/structure/vein/jungle = 2,
 		/obj/structure/vein/jungle/classtwo = 4,
-		/obj/structure/vein/jungle/classthree = 1,
+		/obj/structure/vein/jungle/classtwo/rare = 2,
+		/obj/structure/vein/jungle/classthree = 2,
+		/obj/structure/vein/jungle/classthree/rare = 1,
 		/obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle = 20,
 		/obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle = 50,
 	)
@@ -261,4 +263,3 @@
 		/mob/living/simple_animal/hostile/lightgeist = 1
 	)
 	feature_spawn_chance = 0.1
-	feature_spawn_list = list(/obj/item/rod_of_asclepius = 1)

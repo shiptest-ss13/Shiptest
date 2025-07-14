@@ -81,7 +81,7 @@
 	)
 
 /datum/biome/grass
-	open_turf_types = list(/turf/open/floor/plating/asteroid/dirt/grass = 1)
+	open_turf_types = list(/turf/open/floor/plating/grass/beach/lit  = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/jungle = 1,
 		/obj/structure/flora/ausbushes/brflowers = 1,
@@ -106,7 +106,7 @@
 	flora_spawn_chance = 25
 	mob_spawn_list = list(
 		/mob/living/simple_animal/butterfly = 1,
-		/mob/living/simple_animal/chicken/rabbit/normal = 1,
+		/mob/living/simple_animal/chicken/rabbit = 1,
 		/mob/living/basic/mouse = 1,
 		/mob/living/simple_animal/cow = 1,
 		/mob/living/simple_animal/deer = 1

@@ -15,7 +15,7 @@
 	digResult = /obj/item/stack/ore/glass/whitesands
 	floor_variance = 83
 	max_icon_states = 5
-	slowdown = 1.05
+	slowdown = 0
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ASH)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_ASH)

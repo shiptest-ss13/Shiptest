@@ -65,8 +65,6 @@
 		"Curator" = /obj/item/clothing/head/beret/service,
 		"Janitor" = /obj/item/clothing/head/beret/service,
 		"Lawyer" = /obj/item/clothing/head/beret/service,
-		"Mime" = /obj/item/clothing/head/beret,
-		"Clown" = /obj/item/clothing/head/beret/puce
 	)
 
 /datum/gear/hat/beret/engineering/hazard
@@ -144,3 +142,7 @@
 /datum/gear/hat/flap
 	display_name = "flap cap, recolorable"
 	path = /obj/item/clothing/head/flap
+
+/datum/gear/hat/sunhat
+	display_name = "sun hat"
+	path = /obj/item/clothing/head/sunhat

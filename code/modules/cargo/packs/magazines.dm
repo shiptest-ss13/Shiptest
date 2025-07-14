@@ -1,5 +1,5 @@
 /datum/supply_pack/magazine
-	group = "Magazines"
+	category = "Magazines"
 	crate_type = /obj/structure/closet/crate/secure/gear
 	crate_name = "magazine crate"
 	faction_discount = 0
@@ -87,12 +87,6 @@
 	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of five rounds."
 	contains = list(/obj/item/ammo_box/magazine/m23/empty)
 	cost = 200
-
-/datum/supply_pack/magazine/woodsman_mag_extended
-	name = "Woodsman Magazine Crate"
-	desc = "Contains an 8x50mmR magazine for the Woodsman Rifle, with a capacity of ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/m23/extended/empty)
-	cost = 500
 
 /datum/supply_pack/magazine/m20_auto_elite
 	name = "Auto Elite Magazine Crate"
@@ -184,14 +178,14 @@
 
 /datum/supply_pack/magazine/boomslang_mag
 	name = "Boomslang-90 Magazine Crate"
-	desc = "Contains a 7.5x64mm CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
+	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of five rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/short/empty)
 	cost = 750
 	faction = /datum/faction/syndicate/scarborough
 
 /datum/supply_pack/magazine/boomslang_mag_extended
 	name = "MSR-90 'Boomslang' Magazine Crate"
-	desc = "Contains a 7.5x64mm CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
+	desc = "Contains a 6.5mm CLIP magazine for the Boomslang rifle platform, with a capacity of ten rounds."
 	contains = list(/obj/item/ammo_box/magazine/boomslang/empty)
 	cost = 1500
 	faction = /datum/faction/syndicate/scarborough
@@ -260,7 +254,7 @@
 
 /datum/supply_pack/magazine/f90
 	name = "CM-F90 Magazine Crate"
-	desc = "Contains a 5-round 7.5x64mm magazine for use with the CM-F90 sniper rifle."
+	desc = "Contains a 5-round 6.5mm magazine for use with the CM-F90 sniper rifle."
 	contains = list(/obj/item/ammo_box/magazine/f90/empty)
 	cost = 750
 	faction = /datum/faction/clip

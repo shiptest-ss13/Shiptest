@@ -21,6 +21,11 @@
 	UnregisterSignal(registered_item, mission_main_signal)
 	remove_bound(registered_item)
 
+/datum/mission/ruin/signaled/remove_bound(atom/movable/bound)
+	if(bound == setpiece_item)
+		setpiece_item = null
+	return ..()
+
 /obj/effect/landmark/mission_poi/main/drill
 
 /datum/mission/ruin/signaled/drill
@@ -72,6 +77,9 @@
 
 	if(num_current == num_wanted)
 		SEND_SIGNAL(src, COMSIG_DRILL_SAMPLES_DONE)
+		say("Required samples gathered, shutting down!")
+		if(active)
+			stop_mining()
 
 /obj/machinery/drill/mission/ruin
 	name = "industrial grade mining drill"
