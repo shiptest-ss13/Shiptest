@@ -15,6 +15,7 @@
 	var/view_range = 5
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
+	var/updating = FALSE //portable camera camerachunk update
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
@@ -101,6 +102,7 @@
 	status = !status
 	if(can_use())
 		GLOB.cameranet.addCamera(src)
+		do_camera_update()
 		myarea = null
 	else
 		GLOB.cameranet.removeCamera(src)
@@ -137,6 +139,33 @@
 	user.sight = SEE_BLACKNESS
 	user.see_in_dark = 2
 	return 1
+
+#define BODYCAM_UPDATE_BUFFER 5
+/obj/item/bodycamera/equipped(mob/user)
+	. = ..()
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(update_camera_location))
+
+/obj/item/bodycamera/Moved(oldLoc, dir) //shamelessly stolen from silicon_movement.dm
+	. = ..()
+	update_camera_location(oldLoc)
+
+/obj/item/bodycamera/forceMove(atom/destination)
+	. = ..()
+	//Only bother updating the camera if we actually managed to move
+	if(.)
+		update_camera_location(destination)
+
+/obj/item/bodycamera/proc/do_camera_update(oldLoc)
+	GLOB.cameranet.updatePortableCamera(src)
+	updating = FALSE
+
+
+/obj/item/bodycamera/proc/update_camera_location(oldLoc)
+	oldLoc = get_turf(oldLoc)
+	if((!updating && oldLoc != get_turf(src)) || (item_flags & IN_INVENTORY))
+		updating = TRUE
+		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
+#undef BODYCAM_UPDATE_BUFFER
 
 /obj/item/paper/guides/bodycam
 	name = "Portable Camera Unit Users Guide"
