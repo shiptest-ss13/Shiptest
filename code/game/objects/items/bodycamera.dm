@@ -162,7 +162,7 @@
 
 /obj/item/bodycamera/proc/update_camera_location(oldLoc)
 	oldLoc = get_turf(oldLoc)
-	if((!updating && oldLoc != get_turf(src)) || (item_flags & IN_INVENTORY))
+	if((!updating && oldLoc != get_turf(src)) || (item_flags & IN_INVENTORY || item_flags & IN_STORAGE))
 		updating = TRUE
 		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
 #undef BODYCAM_UPDATE_BUFFER
