@@ -16,6 +16,7 @@
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
 	var/updating = FALSE //portable camera camerachunk update
+	var/mob/tracked_mob
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
@@ -141,9 +142,15 @@
 	return 1
 
 #define BODYCAM_UPDATE_BUFFER 3
-/obj/item/bodycamera/equipped(mob/user)
+/obj/item/bodycamera/pickup(mob/user)
 	. = ..()
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(update_camera_location))
+	if(tracked_mob == user)
+		return
+	if(tracked_mob)
+		UnregisterSignal(tracked_mob, COMSIG_MOVABLE_MOVED)
+		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //just in case
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(update_camera_location)) //this signal does stick around after you drop the item...
+	tracked_mob = user
 
 /obj/item/bodycamera/Moved(oldLoc, dir) //shamelessly stolen from silicon_movement.dm
 	. = ..()
@@ -159,12 +166,12 @@
 	GLOB.cameranet.updatePortableCamera(src)
 	updating = FALSE
 
-
 /obj/item/bodycamera/proc/update_camera_location(oldLoc)
 	oldLoc = get_turf(oldLoc)
-	if((!updating && oldLoc != get_turf(src)) || (item_flags & IN_INVENTORY || item_flags & IN_STORAGE))
+	if((!updating && oldLoc != get_turf(src)) || (item_flags & IN_INVENTORY || item_flags & IN_STORAGE)) //...but we check to make sure it's equipped (or moved) before doing the expensive camera updates
 		updating = TRUE
 		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
+
 #undef BODYCAM_UPDATE_BUFFER
 
 /obj/item/paper/guides/bodycam
