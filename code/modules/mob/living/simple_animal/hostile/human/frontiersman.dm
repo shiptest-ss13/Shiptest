@@ -125,7 +125,7 @@
 	r_hand = /obj/item/gun/ballistic/rifle/illestren
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space
-	icon_state = "frontiersmanranged_mask"
+	icon_state = "frontiersmanrangedrifle_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
@@ -161,7 +161,7 @@
 	armor_base = /obj/item/clothing/suit/armor/vest/frontier
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space
-	icon_state = "frontiersmanranged_mask"
+	icon_state = "frontiersmanrangedelite_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
@@ -227,7 +227,6 @@
 	r_hand = /obj/item/gun/ballistic/automatic/assault/skm
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/space
-	icon_state = "frontiersmanranged_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
@@ -313,6 +312,9 @@
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/neutered
+	weapon_drop_chance = 0
+
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/space/neutered
 	weapon_drop_chance = 0
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/buckshot
