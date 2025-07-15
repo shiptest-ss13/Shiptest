@@ -1911,7 +1911,8 @@
 /obj/machinery/door/airlock/command{
 	name = "Captain's Quarters";
 	close_speed = 100;
-	req_access_txt = "20"
+	req_access_txt = "20";
+	id_tag = "ccap"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
@@ -6277,7 +6278,7 @@
 /obj/machinery/button/door{
 	pixel_y = 22;
 	pixel_x = -9;
-	id = "homf";
+	id = "ccap";
 	name = "door lock";
 	specialfunctions = 4;
 	normaldoorcontrol = 1
