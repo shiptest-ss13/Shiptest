@@ -29,11 +29,33 @@
 
 /mob/living/simple_animal/hostile/human/hermit/survivor
 	name = "Hermit Wanderer"
-	desc =" A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds."
+	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/melee/knife/survival
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+
+/mob/living/simple_animal/hostile/human/hermit/survivor/lunatic
+	name = "Hermit Lunatic"
+	desc= "A wild-eyed figure clad in tattered mining equipment wielding a plastic chair. They move erratically, eyes darting about frantically."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/chair/plastic
+	melee_damaage_lower = 5
+	melee_damage_upper = 5
+	speed = 15
+
+/mob/living/simple_animal/hostile/human/hermit/survivor/lunatic/Aggro()
+	..()
+	summon_backup(30)
+	say("HAAAAHAAAHAAAAA!!")
+
+/mob/living/simple_animal/hostile/human/hermit/survivor/brawler
+	name = "Hermit Brawler""
+	desc = "A stanced figure sheltered behind a shoddy, makeshift wooden buckler. A jagged machete is held within their clutch."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/melee/sword/mass
+	l_hand = /obj/item/shield/riot/buckler
+	projectile_deflect_chance = 25
 
 /mob/living/simple_animal/hostile/human/hermit/ranged
 	icon_state = "survivor_hunter"
@@ -48,9 +70,19 @@
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/hunter
 	name = "Hermit Hunter"
-	desc ="A wild-eyed figure. Watch out- he has a gun, and he remembers just enough of his old life to use it!"
+	desc ="A wild-eyed figure. Watch out- he has a shotgun, and he remembers just enough of his old life to use it!"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/rifle/polymer
+
+/mob/living/simple_animal/hostile/human/hermit/ranged/shotgun
+	name = "Hermit Pursuer"
+	desc ="A wild-eyed figure wielding a makeshift shotgun. The expression through their cloudy visor is fierce, and they're poised to sprint."
+	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
+	r_hand = /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
+	casingtype = /obj/item/ammo_casing/shotgun/improvised
+	retreat_distance = 2
+	minimum_distance = 2
+	speed = 10
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger
 	name = "Hermit Soldier"
