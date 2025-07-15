@@ -104,6 +104,7 @@
 
 /obj/projectile/beam/weak/shotgun
 	damage = 20
+	armour_penetration = -10
 	var/tile_dropoff = 1
 	var/ap_dropoff = 5
 	var/ap_dropoff_cutoff = -35
