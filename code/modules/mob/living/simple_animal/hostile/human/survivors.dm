@@ -45,7 +45,7 @@
 	r_hand = /obj/item/chair/plastic
 	attack_verb_continuous = "bashes"
 	attack_verb_simple = "bashed"
-	hitsound = 'sound/items/trayhit1.ogg'
+	attack_sound = 'sound/items/trayhit1.ogg'
 	melee_damage_lower = 5
 	melee_damage_upper = 5
 	speed = 15
@@ -86,7 +86,7 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	casingtype = /obj/item/ammo_casing/shotgun/improvised
-	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
+	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 	retreat_distance = 3
 	minimum_distance = 3
 	speed = 10
