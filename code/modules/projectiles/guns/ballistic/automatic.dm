@@ -33,7 +33,7 @@
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/hermits/onmob.dmi'
 	recoil_unwielded = 4
 	recoil = 1.2
-	spread = 10
+	spread = 15
 	spread_unwielded = 35
 	dual_wield_spread = 35
 	has_safety = FALSE
