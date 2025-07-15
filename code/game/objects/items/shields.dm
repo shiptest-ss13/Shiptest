@@ -9,8 +9,8 @@
 	slot_flags = ITEM_SLOT_BACK
 	force = 10
 	item_flags = SLOWS_WHILE_IN_HAND
-	slowdown = 1
-	drag_slowdown = 1
+	slowdown = 1.25
+	drag_slowdown = 1.25
 	block_chance = 50
 	throwforce = 5
 	throw_speed = 2
@@ -98,8 +98,8 @@
 			name = src::name
 			broken = FALSE
 			block_chance = 60
-			slowdown = 1
-			drag_slowdown = 1
+			slowdown = 1.25
+			drag_slowdown = 1.25
 
 /obj/item/shield/riot/spike
 	name = "spike shield"
