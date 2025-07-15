@@ -143,7 +143,7 @@
 	icon_state = "miras-reti"
 	desc = "Dried miras eggs sealed inside a tin. A great snack for on the trail."
 	trash = /obj/item/trash/mirastin
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2, /datum/reagent/consumable/nutriment/protein = 2)
 	filling_color = "#639fee"
 	tastes = list("egg" = 5)
 	foodtype = MEAT
@@ -166,7 +166,7 @@
 	desc = "Small pearls of Tiris Cheese, sealed in a salty crust. They're fairly oily, and have a savory aroma."
 	trash = /obj/item/trash/lifosa
 	filling_color = "#cac84e"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/protein = 2)
 
 /obj/item/reagent_containers/food/snacks/dote
 	name = "Dote on it!"

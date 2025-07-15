@@ -1168,3 +1168,73 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/beacon)
 			"y" = 14,
 		)
 	)
+
+/obj/item/gun/ballistic/automatic/assault/invictus
+	name = "HP Invictus"
+	desc = "An unwieldy automatic rifle fielded by the Saint-Roumain Militia, commonly sold to police forces and private buyers. Chambered in .308."
+	icon = 'icons/obj/guns/manufacturer/hunterspride/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/hunterspride/onmob.dmi'
+
+	icon_state = "invictus"
+	item_state = "invictus"
+
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	default_ammo_type = /obj/item/ammo_box/magazine/invictus_308_mag
+	allowed_ammo_types = /obj/item/ammo_box/magazine/invictus_308_mag
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+
+	fire_delay = 0.25 SECONDS
+
+	spread = 3
+	spread_unwielded = 20
+
+	recoil = 1
+	recoil_unwielded = 4
+
+	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
+
+	unique_attachments = list(/obj/item/attachment/bayonet)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 20,
+		)
+	)
+
+EMPTY_GUN_HELPER(automatic/assault/invictus)
+NO_MAG_GUN_HELPER(automatic/assault/invictus)
+
+/obj/item/ammo_box/magazine/invictus_308_mag
+	name = "Invictus magazine (.308)"
+	desc = "A 20 round box magazine for the Invictus automatic rifle. These rounds do good damage with significant armor penetration."
+	base_icon_state = "invictus_mag"
+	icon_state = "invictus_mag-1"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/invictus_308_mag/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/invictus_308_mag/empty
+	start_empty = TRUE
