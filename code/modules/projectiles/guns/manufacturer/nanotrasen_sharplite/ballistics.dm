@@ -50,7 +50,7 @@
 	name = "NA PHB Champion"
 	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Produced only for major Advantage clients. Judging by the markings, this PHB was produced specifically for Vigilitas Interstellar. Chambered in 9x18mm."
 	icon_state = "champion"
-	item_state = "nt_generic"
+	item_state = "champion"
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -168,7 +168,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 
 /obj/item/ammo_box/magazine/co9mm
 	name = "challenger pistol magazine (9x18mm)"
-	desc = "A 12-round double-stack magazine for challenger pistols. These rounds do okay damage, but struggle against armor."
+	desc = "A 12-round double-stack magazine for challenger pistols. This is also compatable with the Champion machine pistol. These rounds do okay damage, but struggle against armor."
 	icon_state = "commander_mag-12"
 	base_icon_state = "commander_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
@@ -236,15 +236,12 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "expedition submachinegun magazine (9x18mm)"
 	desc = "A 30-round magazine for the Expedition submachine gun. These rounds do okay damage, but struggle against armor."
-	icon_state = "smg9mm-42"
-	base_icon_state = "smg9mm"
+	icon_state = "expedition_mag-1"
+	base_icon_state = "expedition_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9x18mm"
 	max_ammo = 30
-
-/obj/item/ammo_box/magazine/smgm9mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[ammo_count() ? 42 : 0]"
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/smgm9mm/empty
 	start_empty = TRUE
@@ -320,17 +317,14 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 	default_ammo_type = FALSE
 
 /obj/item/ammo_box/magazine/wt550m9
-	name = "wt550 magazine (4.6x30mm)"
-	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These rounds do okay damage with average performance against armor."
-	icon_state = "46x30mmt-30"
-	base_icon_state = "46x30mmt"
+	name = "Resolution magazine (4.6x30mm)"
+	desc = "A 30-round magazine for the Resolution personal defense weapon. These rounds do okay damage with average performance against armor."
+	icon_state = "resolution_mag-1"
+	base_icon_state = "resolution_mag"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
 	max_ammo = 30
-
-/obj/item/ammo_box/magazine/wt550m9/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(), 6)]"
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/wt550m9/empty
 	start_empty = TRUE
@@ -338,6 +332,68 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 /obj/item/ammo_box/magazine/wt550m9/ap
 	name = "wt550 magazine (4.6x30mm AP)"
 	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These armor-piercing rounds are great at piercing protective equipment, but lose some stopping power."
-	icon_state = "46x30mmtA-30"
-	base_icon_state = "46x30mmtA"
+
 	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
+
+//Dual Feed Shotgun
+// /obj/item/gun/ballistic/shotgun/automatic/negotiator
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube
+	name = "Advantage AST12 Negotiator"
+	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition. Introduced alongside the PS9 as Advantage's flagship product, the AST12 has run into pervasive production issues that limit its availability. This example appears to have been made specifically for Vigilitas Interstellar."
+
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+
+	icon_state = "negotiator"
+	item_state = "negotiator"
+
+	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/tube
+	allowed_ammo_types = list(
+		/obj/item/ammo_box/magazine/internal/shot/tube,
+	)
+	w_class = WEIGHT_CLASS_BULKY
+	var/toggled = FALSE
+	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
+	actions_types = list(/datum/action/item_action/toggle_tube)
+
+	semi_auto = TRUE
+	casing_ejector = TRUE
+
+	refused_attachments = list(/obj/item/attachment/gun)
+
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/secondary_action(user)
+	toggle_tube(user)
+
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
+	. = ..()
+	. += span_notice("Tube [toggled ? "B" : "A"] is currently loaded.")
+	. += "You can change the [src]'s tube by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
+
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize(mapload, spawn_empty)
+	. = ..()
+	if (!alternate_magazine)
+		alternate_magazine = new default_ammo_type(src, spawn_empty)
+
+/obj/item/gun/ballistic/shotgun/automatic/dual_tube/proc/toggle_tube(mob/living/user)
+	var/current_mag = magazine
+	var/alt_mag = alternate_magazine
+	magazine = alt_mag
+	alternate_magazine = current_mag
+	toggled = !toggled
+	if(toggled)
+		to_chat(user, span_notice("You switch to tube B."))
+	else
+		to_chat(user, span_notice("You switch to tube A."))
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
+	playsound(src, load_sound, load_sound_volume, load_sound_vary)
+
+/datum/action/item_action/toggle_tube
+	name = "Toggle Tube"
+
+/datum/action/item_action/toggle_tube/Trigger()
+	if(istype(target, /obj/item/gun/ballistic/shotgun/automatic/dual_tube))
+		var/obj/item/gun/ballistic/shotgun/automatic/dual_tube/shotty = target
+		shotty.toggle_tube(owner)
+		return
+	..()
