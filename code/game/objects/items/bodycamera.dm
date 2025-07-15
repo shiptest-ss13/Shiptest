@@ -141,7 +141,7 @@
 	user.see_in_dark = 2
 	return 1
 
-#define BODYCAM_UPDATE_BUFFER 3
+#define BODYCAM_UPDATE_BUFFER 10 //1 second
 /obj/item/bodycamera/pickup(mob/user)
 	. = ..()
 	if(tracked_mob == user)
