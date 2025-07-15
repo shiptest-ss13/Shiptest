@@ -32,6 +32,9 @@
 	desc = "A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body, twisted by the heavy metals and high background radiation of the sandworlds."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/melee/knife/survival
+	attack_verb_continuous = "cuts"
+	attack_verb_simple = "cut"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
@@ -40,13 +43,16 @@
 	desc= "A wild-eyed figure clad in tattered mining equipment wielding a plastic chair. They move erratically, eyes darting about frantically."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/chair/plastic
+	attack_verb_continuous = "bashes"
+	attack_verb_simple = "bashed"
+	hitsound = 'sound/items/trayhit1.ogg'
 	melee_damage_lower = 5
 	melee_damage_upper = 5
 	speed = 15
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/lunatic/Aggro()
 	..()
-	summon_backup(30)
+	summon_backup(15)
 	say("HAAAAHAAAHAAAAA!!")
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler
@@ -80,8 +86,9 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	casingtype = /obj/item/ammo_casing/shotgun/improvised
-	retreat_distance = 2
-	minimum_distance = 2
+	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
+	retreat_distance = 3
+	minimum_distance = 3
 	speed = 10
 
 /mob/living/simple_animal/hostile/human/hermit/ranged/gunslinger
