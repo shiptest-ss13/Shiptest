@@ -11,7 +11,7 @@ type Props = {
   color: string | undefined;
 };
 
-export const OrbitItem = (props: props) => {
+export const OrbitItem = (props: Props) => {
   const { item, autoObserve, color } = props;
   const { full_name, icon, job, name, orbiters, ref } = item;
 
