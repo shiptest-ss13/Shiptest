@@ -367,6 +367,10 @@
 	name = "shutter control";
 	id = "cnwin2"
 	},
+/obj/item/desk_flag{
+	pixel_y = 14;
+	pixel_x = 6
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
 "cy" = (
@@ -6277,6 +6281,11 @@
 	name = "door lock";
 	specialfunctions = 4;
 	normaldoorcontrol = 1
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_y = 19;
+	pixel_x = 9
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/commad)
