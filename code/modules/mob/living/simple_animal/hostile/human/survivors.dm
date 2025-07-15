@@ -40,7 +40,7 @@
 	desc= "A wild-eyed figure clad in tattered mining equipment wielding a plastic chair. They move erratically, eyes darting about frantically."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/chair/plastic
-	melee_damaage_lower = 5
+	melee_damage_lower = 5
 	melee_damage_upper = 5
 	speed = 15
 
