@@ -89,7 +89,7 @@
 		if (obj_integrity >= max_integrity)
 			to_chat(user, span_warning("[src] is already in perfect condition."))
 		while(obj_integrity < max_integrity)
-			if(!do_after(user, 30	, target= src))
+			if(!do_after(user, 30, target= src))
 				return
 			var/obj/item/stack/sheet/plasteel/T = W
 			T.use(10)
