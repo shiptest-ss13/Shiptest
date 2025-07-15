@@ -32,7 +32,7 @@
 	name = "high-gain laser cannon"
 	desc = "A completely novel design, one you're fairly certain you have never seen before. Seems to fire laser bolts in triplicate."
 	max_integrity = 100
-	faction = list("turret", "Forward_Ops_Post")
+	faction = list(FACTION_TURRET, "Forward_Ops_Post")
 	stun_projectile = /obj/projectile/beam/laser/heavylaser
 	stun_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser

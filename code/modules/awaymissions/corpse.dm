@@ -363,10 +363,6 @@
 	name = "Engineer"
 	outfit = /datum/outfit/job/engineer
 
-/obj/effect/mob_spawn/human/clown
-	name = "Clown"
-	outfit = /datum/outfit/job/clown
-
 /obj/effect/mob_spawn/human/scientist
 	name = "Scientist"
 	outfit = /datum/outfit/job/scientist
@@ -463,7 +459,6 @@
 	name = "Beach Bum"
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_pocket = /obj/item/storage/wallet/random
-	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank
 	uniform = /obj/item/clothing/under/pants/jeans
 	id = /obj/item/card/id
 

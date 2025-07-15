@@ -35,13 +35,16 @@
 	///Fetched before anything is loaded from the ruin datum
 	var/dynamic_missions = list()
 	///The list of mission pois once the planet has acctually loaded the ruin
-	var/list/obj/effect/landmark/mission_poi/spawned_mission_pois
+	var/list/list/datum/weakref/spawned_mission_pois
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
 	/// list of ruin templates currently spawned on the planet.
 	var/list/spawned_ruins
 	/// Whether or not the level is currently loading.
 	var/loading = FALSE
+
+	/// Whether or not we populate turfs, primarly to save some time in the ruin unit test
+	var/populate_turfs = TRUE
 
 	/// The mapgenerator itself. SHOULD NOT BE NULL if the datum ever creates an encounter
 	var/datum/map_generator/mapgen = /datum/map_generator/single_turf/space
@@ -181,10 +184,21 @@
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
+	set_planet_type(planet)
+
+	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
+	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
+	if(istype(used_ruin))
+		for(var/mission_type in used_ruin.ruin_mission_types)
+			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
+
+
+
+/datum/overmap/dynamic/proc/set_planet_type(datum/planet_type/planet)
 	if(!is_type_in_list(planet, list(/datum/planet_type/asteroid, /datum/planet_type/spaceruin)))
 		planet_name = "[gen_planet_name()]"
 		name = "[planet_name] ([planet.name])"
-
 
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
@@ -196,13 +210,6 @@
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 	selfloop = planet.selfloop
 	interference_power = planet.interference_power
-
-	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/datum/map_template/ruin/used_ruin = ispath(selected_ruin) ? (new selected_ruin()) : selected_ruin
-	if(istype(used_ruin))
-		for(var/mission_type in used_ruin.ruin_mission_types)
-			dynamic_missions += new mission_type(src, 1 + length(dynamic_missions))
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
@@ -382,7 +389,7 @@
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
-	ambientsounds = RUINS
+	ambience_index = AMBIENCE_RUINS
 	outdoors = TRUE
 	allow_weather = TRUE
 
@@ -411,7 +418,7 @@
 /area/overmap_encounter/planetoid/cave
 	name = "\improper Planetoid Cavern"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
-	ambientsounds = SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
 	allow_weather = FALSE
 	light_range = 0
 	light_power = 0
@@ -423,7 +430,7 @@
 
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
-	ambientsounds = MINING
+	ambience_index = AMBIENCE_MINING
 	light_color = COLOR_LAVAPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -434,7 +441,7 @@
 /area/overmap_encounter/planetoid/ice
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
-	ambientsounds = SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
 	light_color = COLOR_ICEPLANET_LIGHT
 	light_range = 2
 	light_power = 1
@@ -445,7 +452,7 @@
 /area/overmap_encounter/planetoid/sand
 	name = "\improper Sandy Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambientsounds = MINING
+	ambience_index = AMBIENCE_MINING
 	light_color = COLOR_SANDPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -456,7 +463,7 @@
 /area/overmap_encounter/planetoid/jungle
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambientsounds = AWAY_MISSION
+	ambience_index = AMBIENCE_AWAY
 	light_range = 2
 	light_power = 1
 	light_color = COLOR_VERY_LIGHT_GRAY
@@ -467,7 +474,7 @@
 /area/overmap_encounter/planetoid/battlefield
 	name = "\improper Battlefield Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CITY
-	ambientsounds = SPOOKY
+	ambience_index = AMBIENCE_SPOOKY
 	light_color = COLOR_FOGGY_LIGHT
 	light_range = 2
 	light_power = 1
@@ -479,7 +486,7 @@
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambientsounds = AWAY_MISSION
+	ambience_index = AMBIENCE_AWAY
 	light_color = COLOR_ROCKPLANET_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -490,7 +497,7 @@
 /area/overmap_encounter/planetoid/beachplanet
 	name = "\improper Beach Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambientsounds = BEACH
+	ambience_index = AMBIENCE_BEACH
 	light_color = COLOR_BEACHPLANET_LIGHT
 	light_range = 2
 	light_power = 0.80
@@ -498,7 +505,7 @@
 /area/overmap_encounter/planetoid/waterplanet
 	name = "\improper Water Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
-	ambientsounds = MINING
+	ambience_index = AMBIENCE_MINING
 	light_color = "#09121a"
 	light_range = 2
 	light_power = 1
@@ -509,7 +516,7 @@
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
-	ambientsounds = MAINTENANCE
+	ambience_index = AMBIENCE_MAINT
 	light_color = COLOR_WASTEPLANET_LIGHT
 	light_range = 2
 	light_power = 0.2
@@ -521,7 +528,7 @@
 	name = "\improper Yellow Space"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
-	ambientsounds = REEBE
+	ambience_index = AMBIENCE_REEBE
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
@@ -529,7 +536,7 @@
 /area/overmap_encounter/planetoid/desert
 	name = "\improper Desert Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	ambientsounds = DESERT
+	ambience_index = AMBIENCE_DESERT
 	light_range = 2
 	light_power = 0.6
 	light_color = "#ffd2bd"
@@ -537,14 +544,14 @@
 /area/overmap_encounter/planetoid/shrouded
 	name = "\improper Shrouded Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	ambientsounds = DESERT
+	ambience_index = AMBIENCE_DESERT
 	light_range = 0
 	light_power = 0
 
 /area/overmap_encounter/planetoid/snowball
 	name = "\improper Snowball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
-	ambientsounds = TUNDRA
+	ambience_index = AMBIENCE_TUNDRA
 	light_color = "#67769e"
 	light_range = 2
 	light_power = 1
@@ -552,7 +559,7 @@
 /area/overmap_encounter/planetoid/dustball
 	name = "\improper Dustball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_PLAIN
-	ambientsounds = DESERT
+	ambience_index = AMBIENCE_DESERT
 	light_color = "#bf9b9b"
 	light_range = 2
 	light_power = 1
@@ -560,7 +567,7 @@
 /area/overmap_encounter/planetoid/duneball
 	name = "\improper Duneball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_PLAIN
-	ambientsounds = DESERT
+	ambience_index = AMBIENCE_DESERT
 	light_color = "#be956b"
 	light_range = 2
 	light_power = 1
@@ -568,7 +575,7 @@
 /area/overmap_encounter/planetoid/waterball
 	name = "\improper Waterball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambientsounds = MINING
+	ambience_index = AMBIENCE_MINING
 	lighting_colour_tube = "#8affe2"
 	lighting_colour_bulb = "#8affe2"
 	light_color = "#09121a"
@@ -577,7 +584,7 @@
 
 /area/overmap_encounter/planetoid/moon
 	name = "\improper Planetoid Moon"
-	ambientsounds = SPACE
+	ambience_index = AMBIENCE_SPACE
 	sound_environment = SOUND_AREA_SPACE
 	light_range = 2
 	light_power = 1
@@ -586,14 +593,14 @@
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
-	ambientsounds = SPACE
+	ambience_index = AMBIENCE_SPACE
 	light_range = 0
 	light_power = 0
 
 /area/overmap_encounter/planetoid/gas_giant
 	name = "\improper Gas Giant"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
-	ambientsounds = REEBE
+	ambience_index = AMBIENCE_REEBE
 	has_gravity = GAS_GIANT_GRAVITY
 	light_range = 2
 	light_power = 0.6

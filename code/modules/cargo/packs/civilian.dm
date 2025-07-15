@@ -1,5 +1,5 @@
 /datum/supply_pack/civilian
-	group = "Civilian & Decoration"
+	category = "Civilian & Decoration"
 
 /*
 		Janitorial
@@ -156,7 +156,7 @@
 					/obj/item/coffee_cartridge)
 	crate_name = "Basic Coffee Supply Crate"
 
-/datum/supply_pack/service/coffee_cartridge
+/datum/supply_pack/civilian/coffee_cartridge
 	name = "Solar's Best Coffee Cartridge Resupply"
 	desc = "Contains five coffee cartridges for your coffee machine, imported from Sol."
 	cost = 750
@@ -167,7 +167,7 @@
 					/obj/item/coffee_cartridge)
 	crate_name = "Coffee Cartridge Supply Crate"
 
-/datum/supply_pack/service/coffee_cartridge_fancy
+/datum/supply_pack/civilian/coffee_cartridge_fancy
 	name = "Premium Coffee Cartridge Resupply"
 	desc = "Contains an assortment of five high-quality coffee cartridges."
 	cost = 1250
@@ -178,7 +178,7 @@
 					/obj/item/coffee_cartridge/fancy)
 	crate_name = "Premium Coffee Supply Crate"
 
-/datum/supply_pack/service/coffeekit
+/datum/supply_pack/civilian/coffeekit
 	name = "Coffee Shop Starter Crate"
 	desc = "All the basic equipment needed for enterprising coffee-selling spacefarers. Coffeemaker not included."
 	cost = 1250
@@ -193,7 +193,7 @@
 					/obj/item/reagent_containers/glass/bottle/syrup_bottle/caramel)
 	crate_name = "coffee equpment crate"
 
-/datum/supply_pack/service/coffeemaker
+/datum/supply_pack/civilian/coffeemaker
 	name = "Coffeemaker Crate"
 	desc = "Contains one pre-assembled Attention model coffeemaker."
 	cost = 1000
@@ -201,7 +201,7 @@
 	crate_name = "coffeemaker crate"
 	crate_type = /obj/structure/closet/crate/large
 
-/datum/supply_pack/service/coffeemaker_premium
+/datum/supply_pack/civilian/coffeemaker_premium
 	name = "Premium Coffeemaker Crate"
 	desc = "Contains one pre-assembled professional-grade Sirere model coffeemaker."
 	cost = 1500
