@@ -4,7 +4,7 @@
 	set name = "Secrets"
 	set desc = "Abuse harder than you ever have before with this handy dandy semi-misc stuff menu"
 	set category = "Admin.Game"
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Secrets Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	BLACKBOX_LOG_ADMIN_VERB("Secrets Panel")
 	var/datum/secrets_menu/tgui  = new(usr)//create the datum
 	tgui.ui_interact(usr)//datum has a tgui component, here we open the window
 
@@ -165,7 +165,7 @@
 				return
 
 			log_admin("[key_name(holder)] reset the thunderdome to default with delete_mobs==[delete_mobs].", 1)
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the thunderdome to default with delete_mobs==[delete_mobs].</span>")
+			message_admins(span_adminnotice("[key_name_admin(holder)] reset the thunderdome to default with delete_mobs==[delete_mobs]."))
 
 			var/area/thunderdome = GLOB.areas_by_type[/area/tdome/arena]
 			if(delete_mobs == "Yes")
@@ -183,31 +183,15 @@
 				return
 			set_station_name(new_name)
 			log_admin("[key_name(holder)] renamed the sector to \"[new_name]\".")
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] renamed the station to: [new_name].</span>")
+			message_admins(span_adminnotice("[key_name_admin(holder)] renamed the station to: [new_name]."))
 			priority_announce("[command_name()] has renamed the sector to \"[new_name]\".")
 		if("reset_name")
 			var/new_name = new_station_name()
 			set_station_name(new_name)
 			log_admin("[key_name(holder)] reset the sector's name.")
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the sector's name.</span>")
+			message_admins(span_adminnotice("[key_name_admin(holder)] reset the sector's name."))
 			priority_announce("[command_name()] has renamed the sector to \"[new_name]\".")
 		//!fun! buttons.
-		if("virus")
-			if(!is_funmin)
-				return
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Virus Outbreak"))
-			switch(alert("Do you want this to be a random disease or do you have something in mind?",,"Make Your Own","Random","Choose"))
-				if("Make Your Own")
-					AdminCreateVirus(holder)
-				if("Random")
-					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
-					E = DC.runEvent()
-				if("Choose")
-					var/virus = input("Choose the virus to spread", "BIOHAZARD") as null|anything in sortList(typesof(/datum/disease), /proc/cmp_typepaths_asc)
-					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
-					var/datum/round_event/disease_outbreak/DO = DC.runEvent()
-					DO.virus_type = virus
-					E = DO
 		if("allspecies")
 			if(!is_funmin)
 				return
@@ -226,7 +210,7 @@
 			var/result = input(holder, "Please choose what Z level to power. Specify none to power all Zs.","Power") as null|num
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Power All APCs"))
 			log_admin("[key_name(holder)] made all areas powered", 1)
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] made all areas powered</span>")
+			message_admins(span_adminnotice("[key_name_admin(holder)] made all areas powered"))
 			power_restore(result)
 		if("unpower")
 			if(!is_funmin)
@@ -234,14 +218,14 @@
 			var/result = input(holder, "Please choose what Z level to depower. Specify none to power all Zs.","Unpower") as null|num
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Depower All APCs"))
 			log_admin("[key_name(holder)] made all areas unpowered", 1)
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] made all areas unpowered</span>")
+			message_admins(span_adminnotice("[key_name_admin(holder)] made all areas unpowered"))
 			power_failure(result)
 		if("quickpower")
 			if(!is_funmin)
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Power All SMESs"))
 			log_admin("[key_name(holder)] made all SMESs powered", 1)
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] made all SMESs powered</span>")
+			message_admins(span_adminnotice("[key_name_admin(holder)] made all SMESs powered"))
 			power_restore_quick()
 		if("anon_name")
 			if(!is_funmin)
@@ -312,7 +296,7 @@
 			if (!CONFIG_SET(number/bombcap, newBombCap))
 				return
 
-			message_admins("<span class='boldannounce'>[key_name_admin(holder)] changed the bomb cap to [GLOB.MAX_EX_DEVESTATION_RANGE], [GLOB.MAX_EX_HEAVY_RANGE], [GLOB.MAX_EX_LIGHT_RANGE]</span>")
+			message_admins(span_boldannounce("[key_name_admin(holder)] changed the bomb cap to [GLOB.MAX_EX_DEVESTATION_RANGE], [GLOB.MAX_EX_HEAVY_RANGE], [GLOB.MAX_EX_LIGHT_RANGE]"))
 			log_admin("[key_name(holder)] changed the bomb cap to [GLOB.MAX_EX_DEVESTATION_RANGE], [GLOB.MAX_EX_HEAVY_RANGE], [GLOB.MAX_EX_LIGHT_RANGE]")
 		//buttons that are fun for exactly you and nobody else.
 		if("monkey")
@@ -347,14 +331,14 @@
 				new_objective.explanation_text = objective
 				T.add_objective(new_objective)
 				H.mind.add_antag_datum(T)
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] used everyone is a traitor secret. Objective is [objective]</span>")
+			message_admins(span_adminnotice("[key_name_admin(holder)] used everyone is a traitor secret. Objective is [objective]"))
 			log_admin("[key_name(holder)] used everyone is a traitor secret. Objective is [objective]")
 		if("massbraindamage")
 			if(!is_funmin)
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Mass Braindamage"))
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
-				to_chat(H, "<span class='boldannounce'>You suddenly feel stupid.</span>", confidential = TRUE)
+				to_chat(H, span_boldannounce("You suddenly feel stupid."), confidential = TRUE)
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60, 80)
 			message_admins("[key_name_admin(holder)] made everybody brain damaged")
 		if("floorlava")
@@ -400,7 +384,7 @@
 						if(droptype == "Yes")
 							ADD_TRAIT(I, TRAIT_NODROP, ADMIN_TRAIT)
 				else
-					to_chat(H, "<span class='warning'>You're not kawaii enough for this!</span>", confidential = TRUE)
+					to_chat(H, span_warning("You're not kawaii enough for this!"), confidential = TRUE)
 		if("masspurrbation")
 			if(!is_funmin)
 				return
@@ -431,15 +415,15 @@
 			log_admin("[key_name(holder)] has Un-Fully Immersed everyone.")
 	if(E)
 		E.processing = FALSE
-		if(E.announceWhen>0)
+		if(E.announce_when>0)
 			switch(alert(holder, "Would you like to alert the crew?", "Alert", "Yes", "No", "Cancel"))
 				if("Yes")
-					E.announceChance = 100
+					E.announce_chance = 100
 				if("Cancel")
 					E.kill()
 					return
 				if("No")
-					E.announceChance = 0
+					E.announce_chance = 0
 		E.processing = TRUE
 	if(holder)
 		log_admin("[key_name(holder)] used secret [action]")

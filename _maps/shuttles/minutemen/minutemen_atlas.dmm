@@ -840,7 +840,7 @@
 /obj/item/clothing/under/clip/officer{
 	pixel_x = 13
 	},
-/obj/item/clothing/suit/toggle/lawyer/clip/fo{
+/obj/item/clothing/suit/toggle/lawyer/clip/command{
 	pixel_x = -13
 	},
 /obj/item/storage/backpack/satchel/sec/clip{
@@ -1972,6 +1972,10 @@
 	pixel_x = -4
 	},
 /obj/machinery/light/directional/north,
+/obj/item/stamp/clip/cmm{
+	pixel_y = -3;
+	pixel_x = 9
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "tW" = (
@@ -3586,18 +3590,10 @@
 /obj/item/folder/red,
 /obj/item/folder/white,
 /obj/item/folder/yellow,
-/obj/item/reagent_containers/food/snacks/grown/tobacco{
-	dry = 1
-	},
-/obj/item/reagent_containers/food/snacks/grown/tobacco{
-	dry = 1
-	},
-/obj/item/reagent_containers/food/snacks/grown/tobacco{
-	dry = 1
-	},
-/obj/item/reagent_containers/food/snacks/grown/tobacco{
-	dry = 1
-	},
+/obj/item/food/grown/tobacco,
+/obj/item/food/grown/tobacco,
+/obj/item/food/grown/tobacco,
+/obj/item/food/grown/tobacco,
 /turf/open/floor/wood,
 /area/ship/crew/crewthree)
 "LM" = (

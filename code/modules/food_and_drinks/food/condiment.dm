@@ -31,6 +31,9 @@
 		/datum/reagent/consumable/frostoil = list("icon_state" = "coldsauce", "item_state" = "", "icon_empty" = "", "name" = "coldsauce bottle", "desc" = "Leaves the tongue numb from its passage."),
 		/datum/reagent/consumable/cornoil = list("icon_state" = "oliveoil", "item_state" = "", "icon_empty" = "", "name" = "corn oil bottle", "desc" = "A delicious oil used in cooking. Made from corn."),
 		/datum/reagent/consumable/bbqsauce = list("icon_state" = "bbqsauce", "item_state" = "", "icon_empty" = "", "name" = "bbq sauce bottle", "desc" = "Hand wipes not included."),
+		/datum/reagent/consumable/tiris_sale = list("icon_state" = "tiris-sauce", "item_state" = "", "icon_empty" = "", "name" = "tiris sale", "desc" = "An intense reduction made from tiris blood."),
+		/datum/reagent/consumable/tiris_sele = list("icon_state" = "tiris-sauce", "item_state" = "", "icon_empty" = "", "name" = "tiris sele", "desc" = "An gravy made from tiris blood."),
+		/datum/reagent/consumable/tiris_milk = list("icon_state" = "tiris-milk", "item_state" = "", "icon_empty" = "", "name" = "tiris milk", "desc" = "A rich and heavy milk taken from a Tiris!"),
 	)
 	var/originalname = "condiment" //Can't use initial(name) for this. This stores the name set by condimasters.
 	var/icon_empty = ""
@@ -69,24 +72,24 @@
 /obj/item/reagent_containers/condiment/attack(mob/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>None of [src] left, oh no!</span>")
+		to_chat(user, span_warning("None of [src] left, oh no!"))
 		return 0
 
 	if(!canconsume(M, user))
 		return 0
 
 	if(M == user)
-		user.visible_message("<span class='notice'>[user] swallows some of the contents of \the [src].</span>", \
-			"<span class='notice'>You swallow some of the contents of \the [src].</span>")
+		user.visible_message(span_notice("[user] swallows some of the contents of \the [src]."), \
+			span_notice("You swallow some of the contents of \the [src]."))
 	else
-		M.visible_message("<span class='warning'>[user] attempts to feed [M] from [src].</span>", \
-			"<span class='warning'>[user] attempts to feed you from [src].</span>")
+		M.visible_message(span_warning("[user] attempts to feed [M] from [src]."), \
+			span_warning("[user] attempts to feed you from [src]."))
 		if(!do_after(user, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The condiment might be empty after the delay.
-		M.visible_message("<span class='warning'>[user] fed [M] from [src].</span>", \
-			"<span class='warning'>[user] fed you from [src].</span>")
+		M.visible_message(span_warning("[user] fed [M] from [src]."), \
+			span_warning("[user] fed you from [src]."))
 		log_combat(user, M, "fed", reagents.log_list())
 	reagents.trans_to(M, 10, transfered_by = user, method = INGEST)
 	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
@@ -99,26 +102,26 @@
 	if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
 
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty!</span>")
+			to_chat(user, span_warning("[target] is empty!"))
 			return
 
 		if(reagents.total_volume >= reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			to_chat(user, span_warning("[src] is full!"))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || istype(target, /obj/item/reagent_containers/food/snacks))
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, span_warning("[src] is empty!"))
 			return
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>you can't add anymore to [target]!</span>")
+			to_chat(user, span_warning("you can't add anymore to [target]!"))
 			return
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span class='notice'>You transfer [trans] units of the condiment to [target].</span>")
+		to_chat(user, span_notice("You transfer [trans] units of the condiment to [target]."))
 		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 /obj/item/reagent_containers/condiment/on_reagent_change(changetype)
@@ -142,7 +145,7 @@
 	desc = "A shaker full of salt. Make sure the cap is on tight!"
 	icon_state = "saltshakersmall"
 	icon_empty = "emptyshaker"
-	possible_transfer_amounts = list(1,20) //for clown turning the lid off
+	possible_transfer_amounts = list(1,20) //for turning the lid off
 	amount_per_transfer_from_this = 1
 	volume = 20
 	list_reagents = list(/datum/reagent/consumable/sodiumchloride = 20)
@@ -153,9 +156,9 @@
 		return
 	if(isturf(target))
 		if(!reagents.has_reagent(/datum/reagent/consumable/sodiumchloride, 2))
-			to_chat(user, "<span class='warning'>You don't have enough salt to make a pile!</span>")
+			to_chat(user, span_warning("You don't have enough salt to make a pile!"))
 			return
-		user.visible_message("<span class='notice'>[user] shakes some salt onto [target].</span>", "<span class='notice'>You shake some salt onto [target].</span>")
+		user.visible_message(span_notice("[user] shakes some salt onto [target]."), span_notice("You shake some salt onto [target]."))
 		reagents.remove_reagent(/datum/reagent/consumable/sodiumchloride, 2)
 		new/obj/effect/decal/cleanable/food/salt(target)
 		return
@@ -165,7 +168,7 @@
 	desc = "A handheld mill to grind down peppercorn. Often used to flavor food... or make people sneeze."
 	icon_state = "peppermillsmall"
 	icon_empty = "emptyshaker"
-	possible_transfer_amounts = list(1,20) //for clown turning the lid off
+	possible_transfer_amounts = list(1,20) //for turning the lid off
 	amount_per_transfer_from_this = 1
 	volume = 20
 	list_reagents = list(/datum/reagent/consumable/blackpepper = 20)
@@ -174,6 +177,15 @@
 	name = "space milk"
 	desc = "A carton full of milk. Freshly supplied from a mammal, a biogenerator, or chemically reproduced in a lab."
 	icon_state = "milk"
+	item_state = "carton"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	list_reagents = list(/datum/reagent/consumable/milk = 50)
+
+/obj/item/reagent_containers/condiment/tiris_milk
+	name = "Dimidiso's Tiris"
+	desc = "Prepackaged Tiris milk made from pastures within CLIP space. The flavor is usually too strong for humans to drink straight."
+	icon_state = "tiris-milk"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
@@ -256,11 +268,11 @@
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
+			to_chat(user, span_warning("You tear open [src], but [target] is stacked so high that it just drips off!") )
 			qdel(src)
 			return
 		else
-			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
+			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
 
@@ -336,3 +348,15 @@
 	desc = "Oil made from pressed olives. Great for cooking."
 	icon_state = "oliveoil"
 	list_reagents = list(/datum/reagent/consumable/cornoil = 50)
+
+/obj/item/reagent_containers/condiment/tiris_sele
+	name = "tiris sele"
+	desc = "A thick gravy made with the blood of a Tiris. Flour is used to soak up the earthiness, leaving an intensely umami covering behind."
+	icon_state = "tiris-sauce"
+	list_reagents = list(/datum/reagent/consumable/tiris_sele = 50)
+
+/obj/item/reagent_containers/condiment/tiris_sale
+	name = "tiris sele"
+	desc = "A reduction made from the blood of a Tiris and a mixture of savory herbs. The flavor is very intense, and best used to augment a dish."
+	icon_state = "tiris-sauce"
+	list_reagents = list(/datum/reagent/consumable/tiris_sale = 50)

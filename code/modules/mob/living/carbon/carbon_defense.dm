@@ -84,8 +84,8 @@
 				if(isturf(I.loc))
 					I.attack_hand(src)
 					if(get_active_held_item() == I) //if our attack_hand() picks up the item...
-						visible_message("<span class='warning'>[src] catches [I]!</span>", \
-										"<span class='userdanger'>You catch [I] in mid-air!</span>")
+						visible_message(span_warning("[src] catches [I]!"), \
+										span_userdanger("You catch [I] in mid-air!"))
 						throw_mode_off(THROW_MODE_TOGGLE)
 						return 1
 	..()
@@ -195,8 +195,8 @@
 				if(M.powerlevel < 0)
 					M.powerlevel = 0
 
-				visible_message("<span class='danger'>The [M.name] shocks [src]!</span>", \
-				"<span class='userdanger'>The [M.name] shocks you!</span>")
+				visible_message(span_danger("The [M.name] shocks [src]!"), \
+				span_userdanger("The [M.name] shocks you!"))
 
 				do_sparks(5, TRUE, src)
 				var/power = M.powerlevel + rand(0,3)
@@ -272,9 +272,9 @@
 
 	if(target.IsKnockdown() && !target.IsParalyzed())
 		target.Paralyze(SHOVE_CHAIN_PARALYZE)
-		target.visible_message("<span class='danger'>[name] kicks [target.name] onto [target.p_their()] side!</span>",
-						"<span class='userdanger'>You're kicked onto your side by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
-		to_chat(src, "<span class='danger'>You kick [target.name] onto [target.p_their()] side!</span>")
+		target.visible_message(span_danger("[name] kicks [target.name] onto [target.p_their()] side!"),
+						span_userdanger("You're kicked onto your side by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
+		to_chat(src, span_danger("You kick [target.name] onto [target.p_their()] side!"))
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, SetKnockdown), 0), SHOVE_CHAIN_PARALYZE)
 		log_combat(src, target, "kicks", "onto their side (paralyzing)")
 
@@ -293,35 +293,35 @@
 						break
 		if((!target_table && !target_collateral_carbon && !target_disposal_bin) || directional_blocked)
 			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
-			target.visible_message("<span class='danger'>[name] shoves [target.name], knocking [target.p_them()] down!</span>",
-							"<span class='userdanger'>You're knocked down from a shove by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
-			to_chat(src, "<span class='danger'>You shove [target.name], knocking [target.p_them()] down!</span>")
+			target.visible_message(span_danger("[name] shoves [target.name], knocking [target.p_them()] down!"),
+							span_userdanger("You're knocked down from a shove by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
+			to_chat(src, span_danger("You shove [target.name], knocking [target.p_them()] down!"))
 			log_combat(src, target, "shoved", "knocking them down")
 		else if(target_table)
 			target.Knockdown(SHOVE_KNOCKDOWN_TABLE)
-			target.visible_message("<span class='danger'>[name] shoves [target.name] onto \the [target_table]!</span>",
-							"<span class='userdanger'>You're shoved onto \the [target_table] by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
-			to_chat(src, "<span class='danger'>You shove [target.name] onto \the [target_table]!</span>")
+			target.visible_message(span_danger("[name] shoves [target.name] onto \the [target_table]!"),
+							span_userdanger("You're shoved onto \the [target_table] by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
+			to_chat(src, span_danger("You shove [target.name] onto \the [target_table]!"))
 			target.throw_at(target_table, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
 			log_combat(src, target, "shoved", "onto [target_table] (table)")
 		else if(target_collateral_carbon)
 			target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
 			target_collateral_carbon.Knockdown(SHOVE_KNOCKDOWN_COLLATERAL)
-			target.visible_message("<span class='danger'>[name] shoves [target.name] into [target_collateral_carbon.name]!</span>",
-				"<span class='userdanger'>You're shoved into [target_collateral_carbon.name] by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
-			to_chat(src, "<span class='danger'>You shove [target.name] into [target_collateral_carbon.name]!</span>")
+			target.visible_message(span_danger("[name] shoves [target.name] into [target_collateral_carbon.name]!"),
+				span_userdanger("You're shoved into [target_collateral_carbon.name] by [name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
+			to_chat(src, span_danger("You shove [target.name] into [target_collateral_carbon.name]!"))
 			log_combat(src, target, "shoved", "into [target_collateral_carbon.name]")
 		else if(target_disposal_bin)
 			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
 			target.forceMove(target_disposal_bin)
-			target.visible_message("<span class='danger'>[name] shoves [target.name] into \the [target_disposal_bin]!</span>",
-							"<span class='userdanger'>You're shoved into \the [target_disposal_bin] by [target.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
-			to_chat(src, "<span class='danger'>You shove [target.name] into \the [target_disposal_bin]!</span>")
+			target.visible_message(span_danger("[name] shoves [target.name] into \the [target_disposal_bin]!"),
+							span_userdanger("You're shoved into \the [target_disposal_bin] by [target.name]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
+			to_chat(src, span_danger("You shove [target.name] into \the [target_disposal_bin]!"))
 			log_combat(src, target, "shoved", "into [target_disposal_bin] (disposal bin)")
 	else
-		target.visible_message("<span class='danger'>[name] shoves [target.name]!</span>",
-						"<span class='userdanger'>You're shoved by [name]!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, src)
-		to_chat(src, "<span class='danger'>You shove [target.name]!</span>")
+		target.visible_message(span_danger("[name] shoves [target.name]!"),
+						span_userdanger("You're shoved by [name]!"), span_hear("You hear aggressive shuffling!"), COMBAT_MESSAGE_RANGE, src)
+		to_chat(src, span_danger("You shove [target.name]!"))
 		var/target_held_item = target.get_active_held_item()
 		var/knocked_item = FALSE
 		if(!is_type_in_typecache(target_held_item, GLOB.shove_disarming_types))
@@ -329,14 +329,14 @@
 		if(!target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
 			target.add_movespeed_modifier(/datum/movespeed_modifier/shove)
 			if(target_held_item)
-				target.visible_message("<span class='danger'>[target.name]'s grip on \the [target_held_item] loosens!</span>",
-					"<span class='warning'>Your grip on \the [target_held_item] loosens!</span>", null, COMBAT_MESSAGE_RANGE)
+				target.visible_message(span_danger("[target.name]'s grip on \the [target_held_item] loosens!"),
+					span_warning("Your grip on \the [target_held_item] loosens!"), null, COMBAT_MESSAGE_RANGE)
 			addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
 		else if(target_held_item)
 			target.dropItemToGround(target_held_item)
 			knocked_item = TRUE
-			target.visible_message("<span class='danger'>[target.name] drops \the [target_held_item]!</span>",
-				"<span class='warning'>You drop \the [target_held_item]!</span>", null, COMBAT_MESSAGE_RANGE)
+			target.visible_message(span_danger("[target.name] drops \the [target_held_item]!"),
+				span_warning("You drop \the [target_held_item]!"), null, COMBAT_MESSAGE_RANGE)
 		var/append_message = ""
 		if(target_held_item)
 			if(knocked_item)
@@ -355,7 +355,7 @@
 	remove_movespeed_modifier(/datum/movespeed_modifier/shove)
 	var/active_item = get_active_held_item()
 	if(is_type_in_typecache(active_item, GLOB.shove_disarming_types))
-		visible_message("<span class='warning'>[name] regains their grip on \the [active_item]!</span>", "<span class='warning'>You regain your grip on \the [active_item]</span>", null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_warning("[name] regains their grip on \the [active_item]!"), span_warning("You regain your grip on \the [active_item]"), null, COMBAT_MESSAGE_RANGE)
 
 /mob/living/carbon/emp_act(severity)
 	. = ..()
@@ -407,7 +407,7 @@
 	var/datum/component/mood/hugger_mood = M.GetComponent(/datum/component/mood)
 	var/nosound = FALSE
 	if(on_fire)
-		to_chat(M, "<span class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
+		to_chat(M, span_warning("You can't put [p_them()] out with just your bare hands!"))
 		return
 
 	if(M == src && check_self_for_injuries())
@@ -423,18 +423,18 @@
 
 	if(body_position == LYING_DOWN)
 		if(buckled)
-			to_chat(M, "<span class='warning'>You need to unbuckle [src] first to do that!</span>")
+			to_chat(M, span_warning("You need to unbuckle [src] first to do that!"))
 			return
-		M.visible_message("<span class='notice'>[M] shakes [src] trying to get [p_them()] up!</span>", \
-						null, "<span class='hear'>You hear the rustling of clothes.</span>", DEFAULT_MESSAGE_RANGE, list(M, src))
-		to_chat(M, "<span class='notice'>You shake [src] trying to pick [p_them()] up!</span>")
-		to_chat(src, "<span class='notice'>[M] shakes you to get you up!</span>")
+		M.visible_message(span_notice("[M] shakes [src] trying to get [p_them()] up!"), \
+						null, span_hear("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
+		to_chat(M, span_notice("You shake [src] trying to pick [p_them()] up!"))
+		to_chat(src, span_notice("[M] shakes you to get you up!"))
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 10;
 		if(istype(dna.species, /datum/species/moth))
 			M.mothdust += 10; // End WS edit
 
-	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
+	else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // Nose boops!
 		nosound = TRUE
 		playsound(src, 'sound/effects/boop.ogg', 50, 0)
 		if (HAS_TRAIT(M, TRAIT_FRIENDLY))
@@ -451,36 +451,17 @@
 
 	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD) //Headpats!
 		SEND_SIGNAL(src, COMSIG_CARBON_HEADPAT, M)
-		M.visible_message("<span class='notice'>[M] gives [src] a pat on the head to make [p_them()] feel better!</span>", \
-					null, "<span class='hear'>You hear a soft patter.</span>", DEFAULT_MESSAGE_RANGE, list(M, src))
-		to_chat(M, "<span class='notice'>You give [src] a pat on the head to make [p_them()] feel better!</span>")
-		to_chat(src, "<span class='notice'>[M] gives you a pat on the head to make you feel better! </span>")
+		M.visible_message(span_notice("[M] gives [src] a pat on the head to make [p_them()] feel better!"), \
+					null, span_hear("You hear a soft patter."), DEFAULT_MESSAGE_RANGE, list(M, src))
+		to_chat(M, span_notice("You give [src] a pat on the head to make [p_them()] feel better!"))
+		to_chat(src, span_notice("[M] gives you a pat on the head to make you feel better! "))
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 5;
 		if(istype(dna.species, /datum/species/moth))
 			M.mothdust += 5; // End WS edit
 
 		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
-			to_chat(M, "<span class='warning'>[src] looks visibly upset as you pat [p_them()] on the head.</span>")
-
-// Tail pulls!
-	else if((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && !isnull(src.getorgan(/obj/item/organ/tail)))
-		M.visible_message(span_notice("[M] pulls on [src]'s tail!"), \
-					null, span_hear("You hear a soft patter."), DEFAULT_MESSAGE_RANGE, list(M, src))
-		to_chat(M, span_notice("You pull on [src]'s tail!"))
-		to_chat(src, span_notice("[M] pulls on your tail!"))
-
-// Rips off fake tails
-	else if((M.zone_selected == BODY_ZONE_PRECISE_GROIN) && (istype(head, /obj/item/clothing/head/kitty) || istype(head, /obj/item/clothing/head/collectable/kitty)))
-		var/obj/item/clothing/head/faketail = head
-		M.visible_message(span_danger("[M] pulls on [src]'s tail... and it rips off!"), \
-					null, span_hear("You hear a ripping sound."), DEFAULT_MESSAGE_RANGE, list(M, src))
-		to_chat(M, span_danger("You pull on [src]'s tail... and it rips off!"))
-		to_chat(src, span_userdanger("[M] pulls on your tail... and it rips off!"))
-		playsound(loc, 'sound/effects/rip1.ogg', 75, TRUE)
-		dropItemToGround(faketail)
-		M.put_in_hands(faketail)
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "rippedtail", /datum/mood_event/rippedtail)
+			to_chat(M, span_warning("[src] looks visibly upset as you pat [p_them()] on the head."))
 
 	else if(M.zone_selected == BODY_ZONE_CHEST || M.zone_selected == BODY_ZONE_PRECISE_GROIN)			//WS Edit - Adds more help emotes
 		SEND_SIGNAL(src, COMSIG_CARBON_HUGGED, M)
@@ -490,9 +471,12 @@
 						null, span_hear("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
 			to_chat(M, span_notice("You wrap [src] into a tight bear hug!"))
 			to_chat(src, span_notice("[M] squeezes you super tightly in a firm bear hug!"))
+		else if((M.grab_state == GRAB_PASSIVE) && (M.pulling))
+			M.visible_message(span_notice("[M] hugs [src] to make [p_them()] feel better!"), \
+					span_notice("You hug [src] to make [p_them()] feel better!"))
 		else
-			M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
-					"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>")
+			M.visible_message(span_notice("[M] pokes [src]."), \
+					span_notice("You poke [src]."))
 		if(istype(M.dna.species, /datum/species/moth)) //WS edit - moth dust from hugging
 			mothdust += 15;
 		if(istype(dna.species, /datum/species/moth))
@@ -516,38 +500,42 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/bad_touch_bear_hug)
 
 		// Let people know if they hugged someone really warm or really cold
-		if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
-			to_chat(src, "<span class='warning'>It feels like [M] is over heating as they hug you.</span>")
-		else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
-			to_chat(src, "<span class='warning'>It feels like [M] is freezing as they hug you.</span>")
+		if ((M.grab_state == GRAB_PASSIVE) && (M.pulling))
+			if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
+				to_chat(src, span_warning("It feels like [M] is over heating as they hug you."))
+			else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
+				to_chat(src, span_warning("It feels like [M] is freezing as they hug you."))
 
-		if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
-			to_chat(M, "<span class='warning'>It feels like [src] is over heating as you hug them.</span>")
-		else if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
-			to_chat(M, "<span class='warning'>It feels like [src] is freezing as you hug them.</span>")
+			if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
+				to_chat(M, span_warning("It feels like [src] is over heating as you hug them."))
+			else if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
+				to_chat(M, span_warning("It feels like [src] is freezing as you hug them."))
 
-		if(HAS_TRAIT(M, TRAIT_FRIENDLY))
-			if (hugger_mood.sanity >= SANITY_GREAT)
-				new /obj/effect/temp_visual/heart(loc)
-				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/besthug, M)
-			else if (hugger_mood.sanity >= SANITY_DISTURBED)
-				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/betterhug, M)
+			if(HAS_TRAIT(M, TRAIT_FRIENDLY))
+				if (hugger_mood.sanity >= SANITY_GREAT)
+					new /obj/effect/temp_visual/heart(loc)
+					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/besthug, M)
+				else if (hugger_mood.sanity >= SANITY_DISTURBED)
+					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/betterhug, M)
 
-		if(HAS_TRAIT(src, TRAIT_BADTOUCH))
-			to_chat(M, "<span class='warning'>[src] looks visibly upset as you hug [p_them()].</span>")
+			if(HAS_TRAIT(src, TRAIT_BADTOUCH))
+				to_chat(M, span_warning("[src] looks visibly upset as you hug [p_them()]."))
 
 	else if((M.zone_selected == BODY_ZONE_L_ARM) || (M.zone_selected == BODY_ZONE_R_ARM))
 		if(!get_bodypart(check_zone(M.zone_selected)))
-			to_chat(M, "<span class='warning'>[src] does not have a [M.zone_selected == BODY_ZONE_L_ARM ? "left" : "right"] arm!</span>")
+			to_chat(M, span_warning("[src] does not have a [M.zone_selected == BODY_ZONE_L_ARM ? "left" : "right"] arm!"))
+		else if((M.grab_state == GRAB_PASSIVE) && (M.pulling))
+			M.visible_message(span_notice("[M] shakes [src]'s hand."), \
+						span_notice("You shake [src]'s hand."))
 		else
-			M.visible_message("<span class='notice'>[M] shakes [src]'s hand.</span>", \
-						"<span class='notice'>You shake [src]'s hand.</span>")
+			M.visible_message(span_notice("[M] pats [src] on the shoulder."), \
+						span_notice("You pat [src] on the shoulder."))
 	else if((M.zone_selected == BODY_ZONE_L_LEG) || (M.zone_selected == BODY_ZONE_R_LEG))
 		if(!get_bodypart(check_zone(M.zone_selected)))
-			to_chat(M, "<span class='warning'>[src] does not have a [M.zone_selected == BODY_ZONE_L_LEG ? "left" : "right"] leg!</span>")
+			to_chat(M, span_warning("[src] does not have a [M.zone_selected == BODY_ZONE_L_LEG ? "left" : "right"] leg!"))
 		else
-			M.visible_message("<span class='notice'>[M] pokes [src]'s leg.</span>", \
-						"<span class='notice'>You poke [src]'s leg.</span>")		//WS Edit End
+			M.visible_message(span_notice("[M] pokes [src]'s leg."), \
+						span_notice("You poke [src]'s leg."))		//WS Edit End
 	AdjustStun(-60)
 	AdjustKnockdown(-60)
 	AdjustUnconscious(-60)
@@ -578,12 +566,12 @@
 			if(!embeds)
 				embeds = TRUE
 				// this way, we only visibly try to examine ourselves if we have something embedded, otherwise we'll still hug ourselves :)
-				visible_message("<span class='notice'>[src] examines [p_them()]self.</span>", \
-					"<span class='notice'>You check yourself for shrapnel.</span>")
+				visible_message(span_notice("[src] examines [p_them()]self."), \
+					span_notice("You check yourself for shrapnel."))
 			if(I.isEmbedHarmless())
-				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>")
+				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] stuck to your [LB.name]!</a>")
 			else
-				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>")
+				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] embedded in your [LB.name]!</a>")
 
 	return embeds
 
@@ -601,16 +589,16 @@
 			return
 
 		if (damage == 1)
-			to_chat(src, "<span class='warning'>Your eyes sting a little.</span>")
+			to_chat(src, span_warning("Your eyes sting a little."))
 			if(prob(40))
 				eyes.applyOrganDamage(1)
 
 		else if (damage == 2)
-			to_chat(src, "<span class='warning'>Your eyes burn.</span>")
+			to_chat(src, span_warning("Your eyes burn."))
 			eyes.applyOrganDamage(rand(2, 4))
 
 		else if(damage >= 3)
-			to_chat(src, "<span class='warning'>Your eyes itch and burn severely!</span>")
+			to_chat(src, span_warning("Your eyes itch and burn severely!"))
 			eyes.applyOrganDamage(rand(12, 16))
 
 		if(eyes.damage > 10)
@@ -620,20 +608,20 @@
 			if(eyes.damage > 20)
 				if(prob(eyes.damage - 20))
 					if(!HAS_TRAIT(src, TRAIT_NEARSIGHT))
-						to_chat(src, "<span class='warning'>Your eyes start to burn badly!</span>")
+						to_chat(src, span_warning("Your eyes start to burn badly!"))
 					become_nearsighted(EYE_DAMAGE)
 
 				else if(prob(eyes.damage - 25))
 					if(!is_blind())
-						to_chat(src, "<span class='warning'>You can't see anything!</span>")
+						to_chat(src, span_warning("You can't see anything!"))
 					eyes.applyOrganDamage(eyes.maxHealth)
 
 			else
-				to_chat(src, "<span class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
+				to_chat(src, span_warning("Your eyes are really starting to hurt. This can't be good for you!"))
 		return 1
 	else if(damage == 0) // just enough protection
 		if(prob(20))
-			to_chat(src, "<span class='notice'>Something bright flashes in the corner of your vision!</span>")
+			to_chat(src, span_notice("Something bright flashes in the corner of your vision!"))
 
 
 /mob/living/carbon/soundbang_act(intensity = 1, stun_pwr = 20, damage_pwr = 5, deafen_pwr = 15)
@@ -654,13 +642,13 @@
 			adjustEarDamage(ear_damage,deaf)
 
 			if(ears.damage >= 15)
-				to_chat(src, "<span class='warning'>Your ears start to ring badly!</span>")
+				to_chat(src, span_warning("Your ears start to ring badly!"))
 				if(prob(ears.damage - 5))
-					to_chat(src, "<span class='userdanger'>You can't hear anything!</span>")
+					to_chat(src, span_userdanger("You can't hear anything!"))
 					ears.damage = min(ears.damage, ears.maxHealth)
 					// you need earmuffs, inacusiate, or replacement
 			else if(ears.damage >= 5)
-				to_chat(src, "<span class='warning'>Your ears start to ring!</span>")
+				to_chat(src, span_warning("Your ears start to ring!"))
 			SEND_SOUND(src, sound('sound/weapons/flash_ring.ogg',0,1,0,250))
 		return effect_amount //how soundbanged we are
 

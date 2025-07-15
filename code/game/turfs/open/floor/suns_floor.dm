@@ -18,11 +18,34 @@
 	name = "hatched wooden floor"
 	icon_state = "lighthatched"
 	floor_tile = /obj/item/stack/tile/suns/hatch
+	flammability = 3
+
+/turf/open/floor/suns/hatch/mahogany
+	color = WOOD_COLOR_RICH
+
+/turf/open/floor/suns/hatch/maple
+	color = WOOD_COLOR_PALE
+
+/turf/open/floor/suns/hatch/ebony
+	color = WOOD_COLOR_BLACK
+
+/turf/open/floor/suns/hatch/walnut
+	color = WOOD_COLOR_CHOCOLATE
+
+/turf/open/floor/suns/hatch/bamboo
+	color = WOOD_COLOR_PALE2
+
+/turf/open/floor/suns/hatch/birch
+	color = WOOD_COLOR_PALE3
+
+/turf/open/floor/suns/hatch/yew
+	color = WOOD_COLOR_YELLOW
 
 /turf/open/floor/suns/diagonal
 	name = "diagonal wooden floor"
 	icon_state = "lightdiag"
 	floor_tile = /obj/item/stack/tile/suns/diagonal
+	flammability = 3
 
 /turf/open/floor/suns/grid
 	name = "dark grid floor"

@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/pistol/mauler
 	name = "Mauler machine pistol"
-	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with abysmal accuracy, lackluster armor penetration, and limited magazine size render it mostly useless outside of very close quarters. Chambered in 9mm."
+	desc = "An automatic machine pistol originating from the Shoal. Impressive volume of fire with high recoil, lackluster armor penetration, and limited magazine size render it difficult to use outside of close quarters. Chambered in 9x18mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/hunterspride/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/hunterspride/righthand.dmi'
@@ -17,10 +17,10 @@
 	gun_firemodes = list(FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_FULLAUTO
 
-	spread = 25
-	spread_unwielded = 50
+	spread = 15
+	spread_unwielded = 30
 	recoil = 1
-	recoil_unwielded = 4
+	recoil_unwielded = 3
 	safety_multiplier = 2 //this means its twice as safe right? //oh, god no.
 
 	fire_sound = 'sound/weapons/gun/pistol/mauler.ogg'
@@ -58,12 +58,12 @@
 	AddComponent(/datum/component/automatic_fire, 0.06 SECONDS)
 
 /obj/item/ammo_box/magazine/m9mm_mauler
-	name = "mauler machine pistol magazine (9mm)"
+	name = "mauler machine pistol magazine (9x18mm)"
 	desc = "A 12-round magazine designed for the Mauler machine pistol."
 	icon_state = "mauler_mag-1"
 	base_icon_state = "mauler_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 12
 
 /obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
@@ -72,7 +72,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/spitter
 	name = "\improper Spitter"
-	desc = "An open-bolt submachine gun favored by the Frontiersmen. This design's origins are unclear, but its simple, robust design has been widely copied throughout the Frontier, and it is stereotypically used by pirates and various criminal groups that value low price and ease of concealment. Chambered in 9mm."
+	desc = "An open-bolt submachine gun favored by the Frontiersmen. This design's origins are unclear, but its simple, robust design has been widely copied throughout the Frontier, and it is stereotypically used by pirates and various criminal groups that value low price and ease of concealment. Chambered in 9x18mm."
 	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
@@ -108,7 +108,7 @@
 	eject_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 
-	wear_rate = 2 // 30 to malfunction, 90 to critical
+	wear_rate = 0.8
 
 	valid_attachments = list(
 		/obj/item/attachment/silencer,
@@ -138,12 +138,12 @@
 
 
 /obj/item/ammo_box/magazine/spitter_9mm
-	name = "spitter pistol magazine (9mm)"
+	name = "spitter pistol magazine (9x18mm)"
 	desc = "A thin 30-round magazine for the Spitter submachine gun."
 	icon_state = "spitter_mag-1"
 	base_icon_state = "spitter_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = "9x18mm"
 	max_ammo = 30
 
 /obj/item/ammo_box/magazine/spitter_9mm/update_icon_state()

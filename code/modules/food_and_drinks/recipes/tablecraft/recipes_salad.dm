@@ -1,14 +1,10 @@
-
-// see code/module/crafting/table.dm
-
-////////////////////////////////////////////////SALADS////////////////////////////////////////////////
-
+//Salad
 /datum/crafting_recipe/food/herbsalad
 	name = "Herb salad"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 3,
-		/obj/item/reagent_containers/food/snacks/grown/apple = 1
+		/obj/item/food/grown/ambrosia/vulgaris = 3,
+		/obj/item/food/grown/apple = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/herbsalad
 	subcategory = CAT_SALAD
@@ -17,8 +13,8 @@
 	name = "Aesir salad"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 3,
-		/obj/item/reagent_containers/food/snacks/grown/apple/gold = 1
+		/obj/item/food/grown/ambrosia/deus = 3,
+		/obj/item/food/grown/apple/gold = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/aesirsalad
 	subcategory = CAT_SALAD
@@ -27,9 +23,9 @@
 	name = "Valid salad"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 3,
-		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
-		/obj/item/reagent_containers/food/snacks/meatball = 1
+		/obj/item/food/grown/ambrosia/vulgaris = 3,
+		/obj/item/food/grown/potato = 1,
+		/obj/item/food/meatball = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/validsalad
 	subcategory = CAT_SALAD
@@ -39,7 +35,7 @@
 	reqs = list(
 		/datum/reagent/consumable/milk = 10,
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/oat = 1
+		/obj/item/food/grown/oat = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/oatmeal
 	subcategory = CAT_SALAD
@@ -48,10 +44,10 @@
 	name = "Fruit salad"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 1,
-		/obj/item/reagent_containers/food/snacks/grown/apple = 1,
-		/obj/item/reagent_containers/food/snacks/grown/grapes = 1,
-		/obj/item/reagent_containers/food/snacks/watermelonslice = 2
+		/obj/item/food/grown/citrus/orange = 1,
+		/obj/item/food/grown/apple = 1,
+		/obj/item/food/grown/grapes = 1,
+		/obj/item/food/watermelonslice = 2
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/fruit
@@ -61,10 +57,10 @@
 	name = "Jungle salad"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/apple = 1,
-		/obj/item/reagent_containers/food/snacks/grown/grapes = 1,
-		/obj/item/reagent_containers/food/snacks/grown/banana = 2,
-		/obj/item/reagent_containers/food/snacks/watermelonslice = 2
+		/obj/item/food/grown/apple = 1,
+		/obj/item/food/grown/grapes = 1,
+		/obj/item/food/grown/banana = 2,
+		/obj/item/food/watermelonslice = 2
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/jungle
@@ -74,9 +70,9 @@
 	name = "Citrus delight"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/citrus/lime = 1,
-		/obj/item/reagent_containers/food/snacks/grown/citrus/lemon = 1,
-		/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 1
+		/obj/item/food/grown/citrus/lime = 1,
+		/obj/item/food/grown/citrus/lemon = 1,
+		/obj/item/food/grown/citrus/orange = 1
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/citrusdelight
@@ -86,10 +82,10 @@
 	name = "Salad of Eden"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl =1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
-		/obj/item/reagent_containers/food/snacks/grown/peace = 1
+		/obj/item/food/grown/ambrosia/vulgaris = 1,
+		/obj/item/food/grown/ambrosia/deus = 1,
+		/obj/item/food/grown/ambrosia/gaia = 1,
+		/obj/item/food/grown/peace = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/edensalad
 	subcategory = CAT_SALAD

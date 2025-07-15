@@ -42,23 +42,23 @@
 		. += "<spawn class='notice'>The low power light is blinking.</span>"
 	switch(malfunction)
 		if(MALF_LASER)
-			. += "<span class='notice'>The [src]'s <b>laser array</b> appears to be broken and needs to be replaced.</span>"
+			. += span_notice("The [src]'s <b>laser array</b> appears to be broken and needs to be replaced.")
 		if(MALF_SENSOR)
-			. += "<span class='notice'>The [src]'s <b>sensors</b> appear to be broken and need to be replaced.</span>"
+			. += span_notice("The [src]'s <b>sensors</b> appear to be broken and need to be replaced.")
 		if(MALF_CAPACITOR)
-			. += "<span class='notice'>The [src]'s <b>capacitor</b> appears to be broken and needs to be replaced.</span>"
+			. += span_notice("The [src]'s <b>capacitor</b> appears to be broken and needs to be replaced.")
 		if(MALF_STRUCTURAL)
-			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded</b> back together.</span>"
+			. += span_notice("The [src]'s structure looks like it needs to be <b>welded</b> back together.")
 		if(MALF_CALIBRATE)
-			. += "<span class='notice'>The [src]'s gimbal is out of alignment, it needs to be recalibrated with a <b>multitool</b>.</span>"
+			. += span_notice("The [src]'s gimbal is out of alignment, it needs to be recalibrated with a <b>multitool</b>.")
 	switch(metal_attached)
 		if(METAL_PLACED)
-			. += "<span class='notice'>Replacement plating has been attached to [src], but has not been <b>bolted</b> in place yet.</span>"
+			. += span_notice("Replacement plating has been attached to [src], but has not been <b>bolted</b> in place yet.")
 		if(METAL_SECURED)
-			. += "<span class='notice'>Replacement plating has been secured to [src], but still needs to be <b>welded</b> into place.</span>"
+			. += span_notice("Replacement plating has been secured to [src], but still needs to be <b>welded</b> into place.")
 	if(machine_stat & BROKEN && !metal_attached)
 		. += "<span class='notice'>[src]'s structure has been totaled, the <b>plasteel</b> plating needs to be replaced."
-	. += "<span class='notice'>The manual shutoff switch can be pulled with <b>Alt Click</b>.</span>"
+	. += span_notice("The manual shutoff switch can be pulled with <b>Alt Click</b>.")
 
 /obj/machinery/drill/Initialize()
 	. = ..()
@@ -111,10 +111,10 @@
 			var/obj/item/stack/sheet/plasteel/plating = tool
 			if(plating.use(10,FALSE,TRUE))
 				metal_attached = METAL_PLACED
-				to_chat(user, "<span class='notice'>You prepare to attach the plating to [src].</span>")
+				to_chat(user, span_notice("You prepare to attach the plating to [src]."))
 				return
 			else
-				to_chat(user, "<span class='notice'>You don't have enough plasteel to fix the plating.</span>")
+				to_chat(user, span_notice("You don't have enough plasteel to fix the plating."))
 				return
 		if(metal_attached == METAL_SECURED && tool.tool_behaviour == TOOL_WELDER)
 			if(tool.use_tool(src, user, 30, volume=50))
@@ -127,24 +127,24 @@
 	if(tool.tool_behaviour == TOOL_WRENCH)
 		if(metal_attached && machine_stat & BROKEN)
 			if(tool.use_tool(src, user, 30, volume=50))
-				to_chat(user, "<span class='notice'>You bolt the plating the plating in place on [src].</span>")
+				to_chat(user, span_notice("You bolt the plating the plating in place on [src]."))
 				metal_attached = METAL_SECURED
 				return
 		if(!vein && !anchored)
-			to_chat(user, "<span class='notice'>[src] must be on top of an ore vein.</span>")
+			to_chat(user, span_notice("[src] must be on top of an ore vein."))
 			return
 		if(active)
-			to_chat(user, "<span class='notice'>[src] can't be unsecured while it's running!</span>")
+			to_chat(user, span_notice("[src] can't be unsecured while it's running!"))
 			return
 		if(!anchored && tool.use_tool(src, user, 30, volume=50))
-			to_chat(user, "<span class='notice'>You secure the [src] to the ore vein.</span>")
+			to_chat(user, span_notice("You secure the [src] to the ore vein."))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			our_vein = vein
 			anchored = TRUE
 			update_icon_state()
 			return
 		if(tool.use_tool(src, user, 30, volume=50))
-			to_chat(user, "<span class='notice'>You unsecure the [src] from the ore vein.</span>")
+			to_chat(user, span_notice("You unsecure the [src] from the ore vein."))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
 
@@ -162,10 +162,10 @@
 				var/obj/item/stock_parts/new_part = tool
 				if(new_part.part_behaviour == part.part_behaviour)
 					user.transferItemToLoc(tool,src)
-					part.forceMove(user.loc)
+					try_put_in_hand(part, user)
 					component_parts += new_part
 					component_parts -= part
-					to_chat(user, "<span class='notice'>You replace [part] with [new_part].</span>")
+					to_chat(user, span_notice("You replace [part] with [new_part]."))
 					break
 				else if(istype(new_part,missing_part))
 					user.transferItemToLoc(tool,src)
@@ -173,22 +173,22 @@
 					malfunction = null
 					missing_part = null
 					obj_integrity = max_integrity
-					to_chat(user, "<span class='notice'>You replace the broken part with [new_part].</span>")
+					to_chat(user, span_notice("You replace the broken part with [new_part]."))
 					break
 			return
 		if(tool.tool_behaviour == TOOL_MULTITOOL && malfunction == MALF_CALIBRATE)
-			user.visible_message("<span class='notice'>[user] begins recalibrating [src].</span>", \
-				"<span class='notice'>You begin recalibrating [src]...</span>")
+			user.visible_message(span_notice("[user] begins recalibrating [src]."), \
+				span_notice("You begin recalibrating [src]..."))
 			if(tool.use_tool(src, user, 100, volume=50))
 				malfunction = null
 				obj_integrity = max_integrity
 				return
 		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
-			if(!tool.tool_start_check(user, amount=0))
+			if(!tool.tool_start_check(user, src, amount=0))
 				return
-			user.visible_message("<span class='notice'>[user] begins repairing [src].</span>", \
-				"<span class='notice'>You begin repairing [src]...</span>", \
-				"<span class='hear'>You hear welding.</span>")
+			user.visible_message(span_notice("[user] begins repairing [src]."), \
+				span_notice("You begin repairing [src]..."), \
+				span_hear("You hear welding."))
 			if(tool.use_tool(src, user, 100, volume=50))
 				malfunction = null
 				obj_integrity = max_integrity
@@ -196,22 +196,22 @@
 		if(istype(tool, /obj/item/stock_parts/cell))
 			var/obj/item/stock_parts/cell/battery = tool
 			if(cell)
-				to_chat(user, "<span class='warning'>[src] already has a cell!</span>")
+				to_chat(user, span_warning("[src] already has a cell!"))
 				return
 			else //This should literally never be tripped unless someone tries to put a watch battery in it or something, but just in case
 				if(battery.maxcharge < power_cost)
-					to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")
+					to_chat(user, span_notice("[src] requires a higher capacity cell."))
 					return
 			if(!user.transferItemToLoc(tool, src))
 				return
 			cell = tool
-			to_chat(user, "<span class='notice'>You install a cell in [src].</span>")
+			to_chat(user, span_notice("You install a cell in [src]."))
 			return
 		if(tool.tool_behaviour == TOOL_CROWBAR)
 			cell.update_appearance()
-			cell.forceMove(get_turf(src))
+			try_put_in_hand(cell, user)
 			cell = null
-			to_chat(user, "<span class='notice'>You remove the cell from [src].</span>")
+			to_chat(user, span_notice("You remove the cell from [src]."))
 			active = FALSE
 			update_appearance()
 			return
@@ -222,19 +222,12 @@
 		to_chat(user, span_notice("You begin the manual shutoff process."))
 		if(do_after(user, 10, src))
 			if(active)
-				active = FALSE
-				soundloop.stop()
-				deltimer(current_timerid)
-				if(our_vein?.currently_spawning)
-					our_vein.toggle_spawning()
-				playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
 				say("Manual shutoff engaged, ceasing mining operations.")
-				update_icon_state()
-				update_overlays()
+				stop_mining()
 			else
 				to_chat(user, span_warning("The drill has already been turned off!"))
 		else
-			to_chat(user, "<span class='notice'>You cancel the manual shutoff process.</span>")
+			to_chat(user, span_notice("You cancel the manual shutoff process."))
 
 //Can we even turn the damn thing on?
 /obj/machinery/drill/interact(mob/user, special_state)
@@ -243,17 +236,17 @@
 		say("Please resolve existing malfunction before continuing mining operations.")
 		return
 	if(!our_vein)
-		to_chat(user, "<span class='notice'>[src] isn't secured over an ore vein!</span>")
+		to_chat(user, span_notice("[src] isn't secured over an ore vein!"))
 		return
 	if(!active)
 		playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 		user.visible_message( \
 					"[user] activates [src].", \
-					"<span class='notice'>You hit the ignition button to activate [src].</span>", \
-					"<span class='hear'>You hear a drill churn to life.</span>")
+					span_notice("You hit the ignition button to activate [src]."), \
+					span_hear("You hear a drill churn to life."))
 		start_mining()
 	else
-		to_chat(user, "<span class='notice'>[src] is currently busy, wait until it's done!</span>")
+		to_chat(user, span_notice("[src] is currently busy, wait until it's done!"))
 
 /obj/machinery/drill/update_icon_state()
 	if(anchored)
@@ -283,6 +276,20 @@
 		SSvis_overlays.add_vis_overlay(src, icon, "mining_beam-particles", layer, EMISSIVE_PLANE, dir)
 	else
 		set_light(0)
+
+//shut the drill DOWN NOW!!
+/obj/machinery/drill/proc/stop_mining(destructive=FALSE)
+	active = FALSE
+	soundloop.stop()
+	deltimer(current_timerid)
+	if(our_vein?.currently_spawning)
+		our_vein.toggle_spawning()
+	if(destructive)
+		our_vein.Destroy()
+		our_vein = null
+	playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
+	update_icon_state()
+	update_overlays()
 
 //Handles all checks before starting the 30 second (on average) mining tick
 /obj/machinery/drill/proc/start_mining()
@@ -325,14 +332,11 @@
 	if(our_vein.mining_charges)
 		our_vein.mining_charges--
 		mine_success()
+		if(!active)
+			return FALSE
 		if(our_vein.mining_charges < 1)
-			say("Vein depleted.")
-			active = FALSE
-			soundloop.stop()
-			our_vein.Destroy()
-			our_vein = null
-			update_icon_state()
-			update_overlays()
+			say("Vein depleted, shutting down.")
+			stop_mining(TRUE)
 		else
 			start_mining()
 	else if(!our_vein.mining_charges) //Extra check to prevent vein related errors locking us in place
@@ -350,7 +354,7 @@
 
 //Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)
-	if(active)
+	if(active && our_vein?.currently_spawning)
 		our_vein.toggle_spawning() //turns mob spawning off after a malfunction
 	switch(malfunction_type)
 		if(MALF_LASER)

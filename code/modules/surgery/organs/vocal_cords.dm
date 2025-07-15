@@ -60,7 +60,7 @@
 	if(!IsAvailable())
 		var/obj/item/organ/vocal_cords/colossus/cords = target
 		if(world.time < cords.next_command)
-			to_chat(owner, "<span class='notice'>You must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again.</span>")
+			to_chat(owner, span_notice("You must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again."))
 		return
 	var/command = input(owner, "Speak with the Voice of God", "Command")
 	if(QDELETED(src) || QDELETED(owner))
@@ -71,12 +71,12 @@
 
 /obj/item/organ/vocal_cords/colossus/can_speak_with()
 	if(world.time < next_command)
-		to_chat(owner, "<span class='notice'>You must wait [DisplayTimeText(next_command - world.time)] before Speaking again.</span>")
+		to_chat(owner, span_notice("You must wait [DisplayTimeText(next_command - world.time)] before Speaking again."))
 		return FALSE
 	if(!owner)
 		return FALSE
 	if(!owner.can_speak_vocal())
-		to_chat(owner, "<span class='warning'>You are unable to speak!</span>")
+		to_chat(owner, span_warning("You are unable to speak!"))
 		return FALSE
 	return TRUE
 
@@ -129,9 +129,6 @@
 		//Command staff has authority
 		if(user.mind.assigned_role in GLOB.command_positions)
 			power_multiplier *= 1.4
-		//Why are you speaking
-		if(user.mind.assigned_role == "Mime")
-			power_multiplier *= 0.5
 
 	//Try to check if the speaker specified a name or a job to focus on
 	var/list/specific_listeners = list()
@@ -204,7 +201,6 @@
 	var/static/regex/salute_words = regex("salute")
 	var/static/regex/deathgasp_words = regex("play dead")
 	var/static/regex/clap_words = regex("clap|applaud")
-	var/static/regex/honk_words = regex("ho+nk") //hooooooonk
 	var/static/regex/multispin_words = regex("like a record baby|right round")
 
 	var/i = 0
@@ -238,7 +234,7 @@
 	else if((findtext(message, silence_words)))
 		cooldown = COOLDOWN_STUN
 		for(var/mob/living/carbon/C in listeners)
-			if(user.mind && (user.mind.assigned_role == "Curator" || user.mind.assigned_role == "Mime"))
+			if(user.mind.assigned_role == "Curator")
 				power_multiplier *= 3
 			C.silent += (10 * power_multiplier)
 
@@ -488,15 +484,6 @@
 			var/mob/living/L = V
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, emote), "clap"), 5 * i)
 			i++
-
-	//HONK
-	else if((findtext(message, honk_words)))
-		cooldown = COOLDOWN_MEME
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), get_turf(user), 'sound/items/bikehorn.ogg', 300, 1), 25)
-		if(user.mind && user.mind.assigned_role == "Clown")
-			for(var/mob/living/carbon/C in listeners)
-				C.slip(140 * power_multiplier)
-			cooldown = COOLDOWN_MEME
 
 	//RIGHT ROUND
 	else if((findtext(message, multispin_words)))

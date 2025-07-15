@@ -371,3 +371,13 @@
 	name = "Inteq Mothership 'Sprinter'"
 	limbs_id = "inteqsprinter"
 	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/seekeripc
+	name = "Maxim Dynamics 'Seeker'"
+	limbs_id = "seekeripc"
+	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/ablux
+	name = "Absolution-Lux 'Solferino'"
+	limbs_id = "ablux"
+	has_screen = FALSE

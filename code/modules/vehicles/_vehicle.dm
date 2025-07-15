@@ -5,6 +5,7 @@
 	icon_state = "atv" //Used to be "fuckyou" which hurt my feewings
 	max_integrity = 300
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	plane = GAME_PLANE_FOV_HIDDEN
 	density = TRUE
 	anchored = FALSE
 	var/list/mob/occupants				//mob = bitflags of their control level.
@@ -35,7 +36,7 @@
 /obj/vehicle/examine(mob/user)
 	. = ..()
 	if(resistance_flags & ON_FIRE)
-		. += "<span class='warning'>It's on fire!</span>"
+		. += span_warning("It's on fire!")
 	var/healthpercent = obj_integrity/max_integrity * 100
 	switch(healthpercent)
 		if(50 to 99)
@@ -43,7 +44,7 @@
 		if(25 to 50)
 			. += "It appears heavily damaged."
 		if(0 to 25)
-			. += "<span class='warning'>It's falling apart!</span>"
+			. += span_warning("It's falling apart!")
 
 /obj/vehicle/proc/is_key(obj/item/I)
 	return I? (key_type_exact? (I.type == key_type) : istype(I, key_type)) : FALSE
@@ -114,7 +115,7 @@
 
 /obj/vehicle/proc/driver_move(mob/living/user, direction)
 	if(key_type && !is_key(inserted_key))
-		to_chat(user, "<span class='warning'>[src] has no key inserted!</span>")
+		to_chat(user, span_warning("[src] has no key inserted!"))
 		return FALSE
 	if(!default_driver_move)
 		return

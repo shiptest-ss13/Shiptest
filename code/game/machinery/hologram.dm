@@ -237,7 +237,7 @@ Possible to do for anyone motivated enough:
 	for(var/I in holo_calls)
 		var/datum/holocall/HC = I
 		var/list/call_data = list(
-			caller = HC.caller_location,
+			requester = HC.caller_location,
 			connected = HC.connected_holopad == src ? TRUE : FALSE,
 			ref = REF(HC)
 		)
@@ -258,7 +258,7 @@ Possible to do for anyone motivated enough:
 				for(var/mob/living/silicon/ai/AI in GLOB.silicon_mobs)
 					if(!AI.client)
 						continue
-					to_chat(AI, span_info("Your presence is requested at <a href='?src=[REF(AI)];jumptoholopad=[REF(src)]'>\the [area]</a>."))
+					to_chat(AI, span_info("Your presence is requested at <a href='byond://?src=[REF(AI)];jumptoholopad=[REF(src)]'>\the [area]</a>."))
 				return TRUE
 			else
 				to_chat(usr, span_info("A request for AI presence was already sent recently."))
@@ -276,6 +276,10 @@ Possible to do for anyone motivated enough:
 				callnames -= get_area(src)
 				var/result = tgui_input_list(usr, "Choose an area to call", "Holocall", sortNames(callnames))
 				if(QDELETED(usr) || !result || outgoing_call)
+					return
+				var/interference = SSovermap.get_overmap_interference(src)
+				if(interference > INTERFERENCE_LEVEL_BREAKUP_HOLOPADS)
+					to_chat(usr, span_warning("There is too much interference here to make a call! Move the ship elsewhere!"))
 					return
 				if(usr.loc == loc)
 					var/input = text2num(params["headcall"])
@@ -371,6 +375,10 @@ Possible to do for anyone motivated enough:
 				clear_holo(master)
 
 	if(outgoing_call)
+		var/interference = SSovermap.get_overmap_interference(src)
+		if(interference > INTERFERENCE_LEVEL_BREAKUP_HOLOPADS)
+			say("Call broke up due to electromagnetic interference.")
+			outgoing_call.ConnectionFailure(src)
 		outgoing_call.Check()
 
 	ringing = FALSE

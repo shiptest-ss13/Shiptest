@@ -34,10 +34,10 @@
 
 	if(forkload)
 		if(M == user)
-			M.visible_message("<span class='notice'>[user] eats a delicious forkful of omelette!</span>")
+			M.visible_message(span_notice("[user] eats a delicious forkful of omelette!"))
 			M.reagents.add_reagent(forkload.type, 1)
 		else
-			M.visible_message("<span class='notice'>[user] feeds [M] a delicious forkful of omelette!</span>")
+			M.visible_message(span_notice("[user] feeds [M] a delicious forkful of omelette!"))
 			M.reagents.add_reagent(forkload.type, 1)
 		icon_state = "fork"
 		forkload = null
@@ -58,7 +58,7 @@
 /obj/item/kitchen/fork/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user]'s fork snaps into tiny pieces in their hand.</span>")
+		user.visible_message(span_danger("[user]'s fork snaps into tiny pieces in their hand."))
 		qdel(src)
 
 /obj/item/kitchen/rollingpin
@@ -73,6 +73,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
 	custom_price = 200
+	tool_behaviour = TOOL_ROLLINGPIN
 
 /obj/item/kitchen/spoon/plastic
 	name = "plastic spoon"

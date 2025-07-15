@@ -230,9 +230,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "ff" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
@@ -315,9 +313,7 @@
 "gp" = (
 /obj/effect/turf_decal/spline/fancy/opaque/white,
 /obj/structure/closet/crate/bin,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "gr" = (
@@ -574,9 +570,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "lH" = (
 /obj/effect/turf_decal/corner_steel_grid{
@@ -679,7 +673,7 @@
 /obj/item/radio/intercom/directional/east{
 	pixel_y = -4
 	},
-/obj/item/reagent_containers/food/snacks/grown/grapes{
+/obj/item/food/grown/grapes{
 	pixel_y = 8;
 	pixel_x = -8
 	},
@@ -692,9 +686,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "nM" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
@@ -741,9 +733,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "op" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
@@ -796,9 +786,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "pq" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -851,9 +839,7 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "rF" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -864,7 +850,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering)
 "rP" = (
-/obj/machinery/power/solar_control{
+/obj/machinery/computer/solar_control{
 	dir = 8
 	},
 /obj/structure/cable/yellow{
@@ -988,9 +974,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "va" = (
 /obj/structure/table/chem,
@@ -1255,9 +1239,7 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew/canteen/kitchen)
 "zH" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -1521,9 +1503,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "El" = (
 /obj/effect/turf_decal/corner/opaque/black/mono,
@@ -1611,7 +1591,8 @@
 "Gc" = (
 /obj/machinery/washing_machine{
 	pixel_y = 17;
-	density = 0
+	density = 0;
+	should_we_be_dense = 0
 	},
 /obj/structure/closet/wall/directional/south{
 	name = "cleaning utensil closet";
@@ -1641,9 +1622,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "Gh" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/mono,
@@ -1690,9 +1669,7 @@
 	pixel_y = 5;
 	pixel_x = 7
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "GJ" = (
 /obj/structure/chair/office{
@@ -1816,9 +1793,7 @@
 /area/ship/crew/canteen/kitchen)
 "Ir" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "Is" = (
 /obj/structure/closet/secure_closet/freezer{
@@ -1846,20 +1821,20 @@
 	},
 /obj/item/reagent_containers/condiment/enzyme,
 /obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/grown/cabbage,
-/obj/item/reagent_containers/food/snacks/grown/cabbage,
-/obj/item/reagent_containers/food/snacks/grown/tomato,
-/obj/item/reagent_containers/food/snacks/grown/tomato,
-/obj/item/reagent_containers/food/snacks/grown/grapes,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/tomato,
+/obj/item/food/grown/tomato,
+/obj/item/food/grown/grapes,
 /obj/item/food/cake/chocolate,
 /obj/item/reagent_containers/food/snacks/sundae,
-/obj/item/reagent_containers/food/snacks/vegetariansushiroll,
-/obj/item/reagent_containers/food/snacks/spicyfiletsushiroll,
-/obj/item/reagent_containers/food/snacks/nigiri_sushi,
+/obj/item/food/vegetariansushiroll,
+/obj/item/food/spicyfiletsushiroll,
+/obj/item/food/nigiri_sushi,
 /obj/item/shovel/spoon,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
@@ -1991,9 +1966,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/external/dark)
 "KO" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -2070,9 +2043,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "LA" = (
 /turf/closed/wall/mineral/titanium,
@@ -2170,9 +2141,7 @@
 /area/ship/crew/ccommons)
 "NU" = (
 /obj/machinery/light/directional/west,
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "NW" = (
 /obj/effect/turf_decal/corner/opaque/black/mono,
@@ -2211,9 +2180,7 @@
 	pixel_y = 20;
 	icon_state = "plant-28"
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "Ow" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
@@ -2262,8 +2229,7 @@
 	pixel_x = -12
 	},
 /obj/structure/mirror{
-	pixel_x = -24;
-	pixel_y = 0
+	pixel_x = -24
 	},
 /obj/machinery/button/door{
 	pixel_y = 21;
@@ -2383,7 +2349,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning{
-	dir = 2;
 	color = "#FFFFFF"
 	},
 /obj/item/storage/toolbox/mechanical{
@@ -2486,9 +2451,7 @@
 	pixel_y = 4;
 	pixel_x = -5
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "SQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2524,9 +2487,7 @@
 	pixel_x = -12;
 	pixel_y = -20
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "Tl" = (
 /obj/effect/turf_decal/corner/opaque/black/mono,
@@ -2575,9 +2536,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -2740,9 +2699,7 @@
 /area/ship/bridge)
 "VQ" = (
 /obj/structure/chair/comfy/grey/corpo/directional/east,
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "Wh" = (
 /obj/structure/railing{
@@ -2802,9 +2759,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/ccommons)
 "WY" = (
 /obj/structure/cable{
@@ -2816,9 +2771,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "Xc" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -2851,9 +2804,7 @@
 /obj/machinery/newscaster/directional/east{
 	pixel_y = -10
 	},
-/turf/open/floor/suns/hatch{
-	color = "#D2BC9D"
-	},
+/turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "XO" = (
 /turf/template_noop,

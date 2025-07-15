@@ -2,7 +2,6 @@
 #define DRILL_DEFAULT "default"
 #define DRILL_SHOUTING "shouting"
 #define DRILL_YELLING "yelling"
-#define DRILL_CANADIAN "canadian"
 
 //Chef
 /obj/item/clothing/head/chefhat
@@ -59,9 +58,9 @@
 /obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
 	. = ..()
 	if(!in_range(src, user) || !isobserver(user)) //hide the easter egg a little more
-		. += "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
+		. += span_warning("You try to examine [src] closer, but you're too far away.")
 		return
-	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
+	. += span_notice("Alt-click to take a candy corn.")
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -70,10 +69,10 @@
 			if(candy_cooldown < world.time)
 				var/obj/item/reagent_containers/food/snacks/candy_corn/CC = new /obj/item/reagent_containers/food/snacks/candy_corn(src)
 				user.put_in_hands(CC)
-				to_chat(user, "<span class='notice'>You slip a candy corn from your hat.</span>")
+				to_chat(user, span_notice("You slip a candy corn from your hat."))
 				candy_cooldown = world.time+1200
 			else
-				to_chat(user, "<span class='warning'>You just took a candy corn! You should wait a couple minutes, lest you burn through your stash.</span>")
+				to_chat(user, span_warning("You just took a candy corn! You should wait a couple minutes, lest you burn through your stash."))
 
 //Curator
 /obj/item/clothing/head/fedora/curator
@@ -137,11 +136,6 @@
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
 
-/obj/item/clothing/head/warden/inteq
-	name = "master at arms' campaign hat"
-	desc = "A special brown campaign hat with the IRMG insignia emblazoned on it. For yelling at clueless recruits in style."
-	icon_state = "maahat"
-
 /obj/item/clothing/head/warden/drill
 	name = "warden's campaign hat"
 	desc = "A special campaign hat with the security insignia emblazoned on it."
@@ -155,62 +149,16 @@
 		return TRUE
 	switch(mode)
 		if(DRILL_DEFAULT)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the middle position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the middle position."))
 			mode = DRILL_SHOUTING
 		if(DRILL_SHOUTING)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the last position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the last position."))
 			mode = DRILL_YELLING
 		if(DRILL_YELLING)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the first position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the first position."))
 			mode = DRILL_DEFAULT
-		if(DRILL_CANADIAN)
-			to_chat(user, "<span class='danger'>You adjust voice circuit but nothing happens, probably because it's broken.</span>")
 	return TRUE
-
-/obj/item/clothing/head/warden/drill/wirecutter_act(mob/living/user, obj/item/I)
-	..()
-	if(mode != DRILL_CANADIAN)
-		to_chat(user, "<span class='danger'>You broke the voice circuit!</span>")
-		mode = DRILL_CANADIAN
-	return TRUE
-
-/obj/item/clothing/head/warden/drill/equipped(mob/M, slot)
-	. = ..()
-	if (slot == ITEM_SLOT_HEAD)
-		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
-	else
-		UnregisterSignal(M, COMSIG_MOB_SAY)
-
-/obj/item/clothing/head/warden/drill/dropped(mob/M)
-	. = ..()
-	UnregisterSignal(M, COMSIG_MOB_SAY)
-
-/obj/item/clothing/head/warden/drill/proc/handle_speech(datum/source, list/speech_args)
-	var/message = speech_args[SPEECH_MESSAGE]
-	if(message[1] != "*")
-		switch (mode)
-			if(DRILL_SHOUTING)
-				message += "!"
-			if(DRILL_YELLING)
-				message += "!!"
-			if(DRILL_CANADIAN)
-				message = " [message]"
-				var/list/canadian_words = strings("canadian_replacement.json", "canadian")
-
-				for(var/key in canadian_words)
-					var/value = canadian_words[key]
-					if(islist(value))
-						value = pick(value)
-
-					message = replacetextEx(message, " [uppertext(key)]", " [uppertext(value)]")
-					message = replacetextEx(message, " [capitalize(key)]", " [capitalize(value)]")
-					message = replacetextEx(message, " [key]", " [value]")
-
-				if(prob(30))
-					message += pick(", eh?", ", EH?")
-		speech_args[SPEECH_MESSAGE] = message
 
 #undef DRILL_DEFAULT
 #undef DRILL_SHOUTING
 #undef DRILL_YELLING
-#undef DRILL_CANADIAN

@@ -1,33 +1,3 @@
-/datum/round_event_control/spacevine
-	name = "Spacevine"
-	typepath = /datum/round_event/spacevine
-	weight = 15
-	max_occurrences = 3
-	min_players = 10
-
-/datum/round_event/spacevine
-	fakeable = TRUE
-	announceWhen = 1
-
-/datum/round_event/spacevine/announce(fake)
-	priority_announce("Unidentified plant based lifeform detected aboard the station, contact your local botanist.")
-
-/datum/round_event/spacevine/start()
-	var/list/turfs = list() //list of all the empty floor turfs in the hallway areas
-
-	var/obj/structure/spacevine/SV = new()
-
-	for(var/area/ship/hallway/A in world)
-		for(var/turf/F in A)
-			if(F.Enter(SV))
-				turfs += F
-
-	qdel(SV)
-
-	if(turfs.len) //Pick a turf to spawn at if we can
-		var/turf/T = pick(turfs)
-		new /datum/spacevine_controller(T, list(pick(subtypesof(/datum/spacevine_mutation))), rand(10,100), rand(5,10), src) //spawn a controller at turf with randomized stats and a single random mutation
-
 
 /datum/spacevine_mutation
 	var/name = ""
@@ -96,7 +66,7 @@
 	if(issilicon(crosser))
 		return
 	if(prob(severity) && istype(crosser) && !isvineimmune(crosser))
-		to_chat(crosser, "<span class='alert'>You accidentally touch the vine and feel a strange sensation.</span>")
+		to_chat(crosser, span_alert("You accidentally touch the vine and feel a strange sensation."))
 		crosser.adjustToxLoss(5)
 
 /datum/spacevine_mutation/toxicity/on_eat(obj/structure/spacevine/holder, mob/living/eater)
@@ -228,13 +198,13 @@
 	if(prob(severity) && istype(crosser) && !isvineimmune(crosser))
 		var/mob/living/M = crosser
 		M.adjustBruteLoss(5)
-		to_chat(M, "<span class='alert'>You cut yourself on the thorny vines.</span>")
+		to_chat(M, span_alert("You cut yourself on the thorny vines."))
 
 /datum/spacevine_mutation/thorns/on_hit(obj/structure/spacevine/holder, mob/living/hitter, obj/item/I, expected_damage)
 	if(prob(severity) && istype(hitter) && !isvineimmune(hitter))
 		var/mob/living/M = hitter
 		M.adjustBruteLoss(5)
-		to_chat(M, "<span class='alert'>You cut yourself on the thorny vines.</span>")
+		to_chat(M, span_alert("You cut yourself on the thorny vines."))
 	. =	expected_damage
 
 /datum/spacevine_mutation/woodening
@@ -512,7 +482,7 @@
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_buckle(src, V)
 	if((V.stat != DEAD) && (V.buckled != src)) //not dead or captured
-		to_chat(V, "<span class='danger'>The vines [pick("wind", "tangle", "tighten")] around you!</span>")
+		to_chat(V, span_danger("The vines [pick("wind", "tangle", "tighten")] around you!"))
 		buckle_mob(V, 1)
 
 /obj/structure/spacevine/proc/spread()

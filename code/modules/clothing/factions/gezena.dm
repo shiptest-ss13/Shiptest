@@ -192,6 +192,8 @@
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
 	icon_state = "marinehelmet"
 	item_state = "marinehelm"
+	can_flashlight = TRUE
+	content_overlays = TRUE
 
 //Gloves
 
@@ -292,6 +294,8 @@
 	icon_state = "cape"
 	item_state = "blackcloth"
 	supports_variations = VOX_VARIATION | KEPORI_VARIATION
+	vox_override_icon = 'icons/mob/clothing/faction/gezena/vox.dmi'
+	kepori_override_icon = 'icons/mob/clothing/faction/gezena/kepori.dmi'
 
 /obj/item/clothing/neck/cloak/gezena/lead
 	name = "marine officer's Azuilhauz"

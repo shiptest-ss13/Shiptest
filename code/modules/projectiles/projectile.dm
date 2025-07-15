@@ -7,6 +7,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	movement_type = FLYING
 	generic_canpass = FALSE
+	plane = GAME_PLANE_FOV_HIDDEN
 	//The sound this plays on impact.
 	var/hitsound = 'sound/weapons/pierce.ogg'
 	var/hitsound_non_living = ""
@@ -283,12 +284,12 @@
 			playsound(loc, hitsound, 5, TRUE, -1)
 		else if(suppressed)
 			playsound(loc, hitsound, 5, TRUE, -1)
-			to_chat(L, "<span class='userdanger'>You're shot by \a [src][organ_hit_text]!</span>")
+			to_chat(L, span_userdanger("You're shot by \a [src][organ_hit_text]!"))
 		else
 			if(hitsound)
 				playsound(get_turf(L), hitsound, 100, TRUE, -1)
-			L.visible_message("<span class='danger'>[L] is hit by \a [src][organ_hit_text]!</span>", \
-					"<span class='userdanger'>You're hit by \a [src][organ_hit_text]!</span>", null, COMBAT_MESSAGE_RANGE)
+			L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), \
+					span_userdanger("You're hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
 		L.on_hit(src)
 
 	var/reagent_note
@@ -701,6 +702,7 @@
 	last_projectile_move = world.time
 	name = bullet_identifier
 	fired = TRUE
+	play_fov_effect(starting, 6, "gunfire", dir = NORTH, angle = Angle)
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_FIRE)
 	if(hitscan)
 		process_hitscan()
@@ -899,7 +901,13 @@
 	var/p_x = LAZYACCESS(modifiers, ICON_X) ? text2num(LAZYACCESS(modifiers, ICON_X)) : world.icon_size / 2 // ICON_(X|Y) are measured from the bottom left corner of the icon.
 	var/p_y = LAZYACCESS(modifiers, ICON_Y) ? text2num(LAZYACCESS(modifiers, ICON_Y)) : world.icon_size / 2 // This centers the target if modifiers aren't passed.
 
+
+	var/static/list/snowflake_matrix_list = list(/turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid, /turf/open/floor/plating/asteroid/dry_seafloor, /turf/open/floor/plating/asteroid/snow, /turf/open/floor/plating/asteroid/icerock, /turf/open/floor/plating/grass, /turf/open/floor/plating/asteroid/sand) //List of turfs that get translated by -19/-19 for smoothing (this breaks projectiles)
 	if(target)
+		if(is_type_in_list(target, snowflake_matrix_list)) //yes, this is stupid
+			if(target.smoothing_flags)
+				p_x -= 19 //In short, smoothing flags being active on certain turfs means they are the Big Ones and get translated by -19 x/y to mesh together
+				p_y -= 19 //Issue: this also moves ICON_X/Y up by 19 since it accounts for the 0,0 of the icon (moved down by 19 x/y), Giving us a wonderful projectile offset of +19 pixels. Which we remove here
 		var/turf/source_loc = get_turf(source)
 		var/turf/target_loc = get_turf(target)
 		var/dx = ((target_loc.x - source_loc.x) * world.icon_size) + (target.pixel_x - source.pixel_x) + (p_x - (world.icon_size / 2))
@@ -942,6 +950,8 @@
 	cleanup_beam_segments()
 	if(trajectory)
 		QDEL_NULL(trajectory)
+	//Empties out the list, MIGHT help with landmines hardeling but not all that confident.
+	LAZYCLEARLIST(impacted)
 	return ..()
 
 /obj/projectile/proc/cleanup_beam_segments()

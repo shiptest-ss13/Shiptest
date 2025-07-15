@@ -10,7 +10,7 @@
 	var/list/obscured = check_obscured_slots()
 
 	if (handcuffed)
-		. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>"
+		. += span_warning("[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!")
 	if (head)
 		. += "[t_He] [t_is] wearing [head.get_examine_string(user)] on [t_his] head. "
 	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
@@ -28,9 +28,9 @@
 	if (stat == DEAD)
 		appears_dead = 1
 		if(getorgan(/obj/item/organ/brain))
-			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive, with no signs of life.</span>"
+			. += span_deadsay("[t_He] [t_is] limp and unresponsive, with no signs of life.")
 		else if(get_bodypart(BODY_ZONE_HEAD))
-			. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"
+			. += span_deadsay("It appears that [t_his] brain is missing...")
 
 	var/list/msg = list("<span class='warning'>")
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
@@ -56,9 +56,9 @@
 
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<span class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+			msg += "[span_deadsay("<B>[t_His] [parse_zone(t)] is missing!</B>")]\n"
 			continue
-		msg += "<span class='warning'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+		msg += "[span_warning("<B>[t_His] [parse_zone(t)] is missing!</B>")]\n"
 
 
 	var/temp = getBruteLoss()
@@ -92,10 +92,13 @@
 	if(HAS_TRAIT(src, TRAIT_DUMB))
 		msg += "[t_He] seem[p_s()] to be clumsy and unable to think.\n"
 
-	if(fire_stacks > 0)
-		msg += "[t_He] [t_is] covered in something flammable.\n"
-	if(fire_stacks < 0)
-		msg += "[t_He] look[p_s()] a little soaked.\n"
+	switch(fire_stacks)
+		if(0 to INFINITY)
+			msg += "[t_He] [t_is] covered in something flammable.\n"
+		if(-15 to 0)
+			msg += "[t_He] look[p_s()] a little soaked.\n"
+		if(-20 to -15)
+			msg += "[t_He] look[p_s()] completely sopping.\n"
 
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"

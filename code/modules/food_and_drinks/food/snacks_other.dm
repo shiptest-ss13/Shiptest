@@ -12,13 +12,15 @@
 	tastes = list("cheese" = 1)
 	foodtype = DAIRY
 
-/obj/item/reagent_containers/food/snacks/royalcheese
-	name = "royal cheese"
-	desc = "A specially treated wheel of cheese, with a crown to grant the eater a petty monarchist position after they've developed a desire for despotic rule."
-	icon_state = "royalcheese"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 15, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/gold = 20, /datum/reagent/toxin/mutagen = 5)
-	w_class = WEIGHT_CLASS_BULKY
-	tastes = list("cheese" = 4, "royalty" = 1)
+/obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel
+	name = "tiris cheese"
+	desc = "A bold cheese with a salty header. Tradition says to let the cheese age and form a crust before consuming it, but even without being aged, it has a strong, distinctive flavor."
+	icon_state = "tiris-wheel"
+	slice_path = /obj/item/food/tiris_cheese_slice
+	slices_num = 5
+	list_reagents = list(/datum/reagent/consumable/nutriment = 15, /datum/reagent/consumable/nutriment/vitamin = 5)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("rock salt" = 1, "rich cheese" = 4, "faint mushroom" = 1)
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/snacks/cheesewedge
@@ -30,14 +32,28 @@
 	tastes = list("cheese" = 1)
 	foodtype = DAIRY
 
-/obj/item/reagent_containers/food/snacks/watermelonslice
+/obj/item/food/tiris_cheese_slice
+	name = "tiris cheese wedge"
+	desc = "A wedge of bold tiris cheese. You wonder where the original wheel is."
+	icon_state = "tiris-wedge"
+	//filling_color = "#FFD700"
+	//dried_type = /obj/item/reagent_containers/food/snacks/lifosa/homemade
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("rock salt" = 1, "rich cheese" = 4, "faint mushroom" = 1)
+	foodtypes = DAIRY
+
+/obj/item/food/watermelonslice
 	name = "watermelon slice"
 	desc = "A water-rich slice of watermelon. Little black seeds decorate the wedge."
 	icon_state = "watermelonslice"
-	filling_color = "#FF1493"
+	food_reagents = list(
+		/datum/reagent/water = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 0.2,
+		/datum/reagent/consumable/nutriment = 1,
+	)
 	tastes = list("watermelon" = 1)
-	foodtype = FRUIT
-	/*food_flags = FOOD_FINGER_FOOD*/
+	foodtypes = FRUIT
+	food_flags = FOOD_FINGER_FOOD
 	juice_results = list(/datum/reagent/consumable/watermelonjuice = 5)
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -49,7 +65,7 @@
 	filling_color = "#FF8C00"
 	tastes = list("candy corn" = 1)
 	foodtype = JUNKFOOD | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
+	//food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/reagent_containers/food/snacks/candy_corn/prison
@@ -103,6 +119,14 @@
 	filling_color = "#D2B48C"
 	tastes = list("potato" = 1)
 	foodtype = VEGETABLES | DAIRY
+
+/obj/item/food/miras_potato
+	name = "Miras Loaded Potato"
+	desc = "A Lanchester classic, Miras is baked over a potato, and then topped with Luna-Town cheese and sour cream."
+	icon_state = "miras-potato"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
+	foodtypes = MEAT | SUGAR | VEGETABLES | DAIRY
 
 /obj/item/reagent_containers/food/snacks/fries
 	name = "space fries"
@@ -196,7 +220,17 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#F0E68C"
 	tastes = list("egg" = 1)
-	foodtype = MEAT | GRAIN
+	foodtype = MEAT | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/chawanmushi
+	name = "chawanmushi"
+	desc = "A savory egg custard originating from Earth, named after being prepared by being steamed in a tea bowl or teacup."
+	icon_state = "chawanmushi"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#FFE4E1"
+	tastes = list("custard" = 1)
+	foodtype = GRAIN | MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/spidereggs
 	name = "spider eggs"
@@ -206,6 +240,16 @@
 	filling_color = "#008000"
 	tastes = list("warm not-grapes" = 1)
 	foodtype = MEAT | TOXIC
+
+/obj/item/reagent_containers/food/snacks/mirasegg
+	name = "miras eggs"
+	desc = "The eggs of a Miras Lizard are typically extracted from their nest. The individual eggs are small and unfertilized, unless the Miras has mated recently."
+	icon_state = "miras-egg"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/eggyolk = 2)
+	dried_type = /obj/item/reagent_containers/food/snacks/reti/homemade
+	filling_color = "#bae1ba"
+	tastes = list("egg" = 1, "hints of spice" = 1)
+	foodtype = MEAT | RAW
 
 /obj/item/reagent_containers/food/snacks/spiderling
 	name = "spiderling"
@@ -285,46 +329,6 @@
 	tastes = list("tortilla" = 1)
 	foodtype = GRAIN
 
-/obj/item/reagent_containers/food/snacks/burrito
-	name = "burrito"
-	desc = "A tortilla filled with ground meat and cooked."
-	icon_state = "burrito"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1)
-	filling_color = "#FFEFD5"
-	tastes = list("torilla" = 2, "meat" = 3)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/cheesyburrito
-	name = "cheesy burrito"
-	desc = "A tortilla filled with meat and cheese."
-	icon_state = "cheesyburrito"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
-	filling_color = "#FFD800"
-	tastes = list("torilla" = 2, "meat" = 3, "cheese" = 1)
-	foodtype = GRAIN | MEAT | DAIRY
-
-/obj/item/reagent_containers/food/snacks/carneburrito
-	name = "carne asada burrito"
-	desc = "A tortilla filled with thin strips of grilled steak."
-	icon_state = "carneburrito"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
-	filling_color = "#A0522D"
-	tastes = list("torilla" = 2, "meat" = 4)
-	foodtype = GRAIN | MEAT
-
-/obj/item/reagent_containers/food/snacks/fuegoburrito
-	name = "fuego plasma burrito"
-	desc = "A tortilla filled with meat and chili peppers."
-	icon_state = "fuegoburrito"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/capsaicin = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
-	filling_color = "#FF2000"
-	tastes = list("torilla" = 2, "meat" = 3, "hot peppers" = 1)
-	foodtype = GRAIN | MEAT
-
 /obj/item/reagent_containers/food/snacks/yakiimo
 	name = "yaki imo"
 	desc = "A popular winter street food, this is a whole roasted sweet potato."
@@ -356,36 +360,6 @@
 	tastes = list("melon" = 1)
 	foodtype = FRUIT
 
-/obj/item/reagent_containers/food/snacks/nachos
-	name = "nachos"
-	desc = "A tortilla shredded into pieces and fried."
-	icon_state = "nachos"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
-	filling_color = "#F4A460"
-	tastes = list("nachos" = 1)
-	foodtype = VEGETABLES | FRIED
-
-/obj/item/reagent_containers/food/snacks/cheesynachos
-	name = "cheesy nachos"
-	desc = "A tortilla shredded into pieces and fried, and served with a coating of queso cheese."
-	icon_state = "cheesynachos"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
-	filling_color = "#FFD700"
-	tastes = list("nachos" = 2, "cheese" = 1)
-	foodtype = VEGETABLES | FRIED | DAIRY
-
-/obj/item/reagent_containers/food/snacks/cubannachos
-	name = "spicy nachos"
-	desc = "A tortilla shredded into pieces, fried, and served with hot peppers and cheese."
-	icon_state = "cubannachos"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 7, /datum/reagent/consumable/capsaicin = 8, /datum/reagent/consumable/nutriment/vitamin = 4)
-	filling_color = "#DC143C"
-	tastes = list("nachos" = 2, "hot pepper" = 1)
-	foodtype = VEGETABLES | FRIED | DAIRY
-
 /obj/item/reagent_containers/food/snacks/melonkeg
 	name = "melon keg"
 	desc = "A form of heavily genetically modified watermelon, which functions as a vessel for grain alcohol to ferment inside."
@@ -398,41 +372,24 @@
 	tastes = list("grain alcohol" = 1, "fruit" = 1)
 	foodtype = FRUIT | ALCOHOL
 
-/obj/item/reagent_containers/food/snacks/honeybar
+/obj/item/food/honeybar
 	name = "honey nut bar"
 	desc = "Oats and nuts compressed together into a bar, held together with a honey glaze."
 	icon_state = "honeybar"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/honey = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/honey = 5)
-	filling_color = "#F2CE91"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/honey = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("oats" = 3, "nuts" = 2, "honey" = 1)
-	foodtype = GRAIN | SUGAR
-	/*food_flags = FOOD_FINGER_FOOD*/
+	foodtypes = GRAIN | SUGAR
+	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/reagent_containers/food/snacks/stuffedlegion
-	name = "stuffed legion"
-	desc = "Composed of a whole skull sourced from a parasitic Legion stuffed with prepared goliath meat, served alongside ketchup and hotsauce."
-	icon_state = "stuffed_legion"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/medicine/tricordrazine = 5)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/capsaicin = 2, /datum/reagent/medicine/tricordrazine = 10)
-	tastes = list("tough meat" = 2, "calcium" = 1, "bitter chemical aftertaste" = 1, "hot peppers" = 1)
-	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/powercrepe
+/obj/item/food/crepe
 	name = "jelly crepe"
 	desc = "A crepe filled with jelly. It's very sticky."
 	icon_state = "powercrepe"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/iron = 10)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/cherryjelly = 5)
-	force = 30
-	throwforce = 15
-	block_chance = 55
-	armour_penetration = 80
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/cherryjelly = 5)
 	attack_verb = list("slapped", "slathered")
-	w_class = WEIGHT_CLASS_BULKY
 	tastes = list("cherry" = 1, "crepe" = 1)
-	foodtype = GRAIN | FRUIT | SUGAR
+	foodtypes = GRAIN | FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/chewable
 	slot_flags = ITEM_SLOT_MASK
@@ -570,9 +527,9 @@
 		return
 	if(prob(15))
 		new /datum/hallucination/oh_yeah(victim)
-		to_chat(victim, "<span class='colossus'><b>[pick("I AM IMMORTAL.","I SHALL TAKE YOUR WORLD.","I SEE YOU.","YOU CANNOT ESCAPE ME FOREVER.","NOTHING CAN HOLD ME.")]</b></span>")
+		to_chat(victim, span_colossus("<b>[pick("I AM IMMORTAL.","I SHALL TAKE YOUR WORLD.","I SEE YOU.","YOU CANNOT ESCAPE ME FOREVER.","NOTHING CAN HOLD ME.")]</b>"))
 	else
-		to_chat(victim, "<span class='warning'>[pick("You hear faint whispers.","You smell ash.","You feel hot.","You hear a roar in the distance.")]</span>")
+		to_chat(victim, span_warning("[pick("You hear faint whispers.","You smell ash.","You feel hot.","You hear a roar in the distance.")]"))
 
 /obj/item/reagent_containers/food/snacks/gumball
 	name = "gumball"
@@ -604,31 +561,12 @@
 	if(spamchecking)
 		qdel(src)
 
-/obj/item/reagent_containers/food/snacks/taco
-	name = "taco"
-	desc = "A taco shell filled with meat, cheese, and lettuce."
-	icon_state = "taco"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
-	filling_color = "F0D830"
-	tastes = list("taco" = 4, "meat" = 2, "cheese" = 2, "lettuce" = 1)
-	foodtype = MEAT | DAIRY | GRAIN | VEGETABLES
-
-/obj/item/reagent_containers/food/snacks/taco/plain
-	desc = "A taco filled with meat and cheese."
-	icon_state = "taco_plain"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
-	tastes = list("taco" = 4, "meat" = 2, "cheese" = 2)
-	foodtype = MEAT | DAIRY | GRAIN
-
 /obj/item/reagent_containers/food/snacks/branrequests
-	name = "Bran Appeal Cereal"
+	name = "Bran Cereal"
 	desc = "A box of cereal, consisting mainly of bran and raisins for the fiber content. Salt has been added for... some reason?"
 	icon_state = "bran_requests"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/sodiumchloride = 5)
-	bonus_reagents = list(/datum/reagent/consumable/sodiumchloride = 10)
-	tastes = list("bran" = 4, "raisins" = 3, "salt" = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("bran" = 4, "raisins" = 3)
 	foodtype = GRAIN | FRUIT | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/butter
@@ -642,15 +580,15 @@
 
 /obj/item/reagent_containers/food/snacks/butter/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>If you had a rod you could make <b>butter on a stick</b>. But... why would you?</span>"
+	. += span_notice("If you had a rod you could make <b>butter on a stick</b>. But... why would you?")
 
 /obj/item/reagent_containers/food/snacks/butter/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/rods))
 		var/obj/item/stack/rods/R = W
 		if(!R.use(1))//borgs can still fail this if they have no metal
-			to_chat(user, "<span class='warning'>You do not have enough metal to put [src] on a stick!</span>")
+			to_chat(user, span_warning("You do not have enough metal to put [src] on a stick!"))
 			return ..()
-		to_chat(user, "<span class='notice'>You stick the rod into the stick of butter.</span>")
+		to_chat(user, span_notice("You stick the rod into the stick of butter."))
 		var/obj/item/reagent_containers/food/snacks/butter/on_a_stick/new_item = new(usr.loc)
 		var/replace = (user.get_inactive_held_item() == R)
 		if(!R && replace)
@@ -666,25 +604,23 @@
 	trash = /obj/item/stack/rods
 	/*food_flags = FOOD_FINGER_FOOD*/
 
-/obj/item/reagent_containers/food/snacks/onionrings
+/obj/item/food/onionrings
 	name = "onion rings"
 	desc = "Onion slices coated in batter and fried."
 	icon_state = "onionrings"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	filling_color = "#C0C9A0"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	gender = PLURAL
 	tastes = list("batter" = 3, "onion" = 1)
-	foodtype = VEGETABLES
+	foodtypes = VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/reagent_containers/food/snacks/pineappleslice
+/obj/item/food/pineappleslice
 	name = "pineapple slice"
 	desc = "A slice of pineapple."
 	icon_state = "pineapple_slice"
-	filling_color = "#F6CB0B"
 	juice_results = list(/datum/reagent/consumable/pineapplejuice = 3)
 	tastes = list("pineapple" = 1)
-	foodtype = FRUIT | PINEAPPLE
+	foodtypes = FRUIT | PINEAPPLE
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/reagent_containers/food/snacks/tinychocolate
@@ -708,7 +644,7 @@
 	volume = 30
 
 /obj/item/reagent_containers/food/snacks/canned/proc/open_can(mob/user)
-	to_chat(user, "<span class='notice'>You pull back the tab of \the [src].</span>")
+	to_chat(user, span_notice("You pull back the tab of \the [src]."))
 	playsound(user.loc, 'sound/items/foodcanopen.ogg', 50)
 	reagents.flags |= OPENCONTAINER
 	spillable = TRUE
@@ -721,7 +657,7 @@
 
 /obj/item/reagent_containers/food/snacks/canned/attack(mob/living/M, mob/user, def_zone)
 	if (!is_drainable())
-		to_chat(user, "<span class='warning'>[src]'s lid hasn't been opened!</span>")
+		to_chat(user, span_warning("[src]'s lid hasn't been opened!"))
 		return 0
 	return ..()
 
@@ -775,4 +711,50 @@
 	tastes = list("tortilla chips" = 1, "salt" = 1)
 	foodtype = JUNKFOOD | FRIED
 
+/obj/item/food/stuffed_refa
+	name = "Stuffed Refa"
+	desc = "Tiris cheese is removed from its crust and added to the fruits of a Refa-Li plant before being baked"
+	icon_state = "stuff-refa"
+	bite_consumption = 2
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	//filling_color = "#ECA735"
+	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
+	foodtypes = FRUIT | DAIRY
 
+/obj/item/food/tiris_fondue
+	name = "Fondue Tiris-Dotu"
+	desc = "Fusion cuisine originating from travelling Solarians. This fondue is made of Tiris Cheese, and filled with small cubes of Dotu-Fime fruit. The flavor profile is reputed to be incredibly rich, especially with crackers."
+	icon_state = "tiris-fondue"
+	bite_consumption = 1
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/dotu_juice = 2)
+	//filling_color = "#ECA735"
+	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
+	foodtypes = FRUIT | DAIRY
+
+/obj/item/food/remes_roe
+	name = "remes roe"
+	desc = "The roe of a Remes is a topping that rose to prominence due to its serving during talks with Zohilese diplomats. The slight <i>pop</i> of the eggs was hailed as incredibly satisfying."
+	icon_state = "remes-roe"
+	bite_consumption = 1
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	//filling_color = "#ECA735"
+	tastes = list("condensed salt" = 1, "satisfying pop" = 2)
+	foodtypes = MEAT
+
+/obj/item/food/fara_reti
+	name = "fara-reti"
+	desc = "The flesh of a fara-li fruit, once all the seeds have been removed, is quite mellow. Adding Remes roe into the flesh creates an experience filled with salty pops."
+	icon_state = "stuff-refa"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
+	//filling_color = "#ECA735"
+	tastes = list("condensed salt" = 1, "satisfying pop" = 1, "mellow fruitflesh" = 3)
+	foodtypes = MEAT | FRUIT
+
+/obj/item/food/roe_tiris
+	name = "reti-tiris"
+	desc = "Remes roe and Tiris plasma mixed together into a thick drink. Acquired taste is the nicest that can be said of it."
+	icon_state = "sludge"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
+	//filling_color = "#ECA735"
+	tastes = list("blood and salt" = 3, "umami" = 1, "subdued pops" = 1)
+	foodtypes = MEAT | GROSS | GORE

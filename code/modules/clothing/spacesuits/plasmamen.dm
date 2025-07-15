@@ -16,7 +16,7 @@
 
 /obj/item/clothing/suit/space/eva/plasmaman/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There [extinguishes_left == 1 ? "is" : "are"] [extinguishes_left] extinguisher charge\s left in this suit.</span>"
+	. += span_notice("There [extinguishes_left == 1 ? "is" : "are"] [extinguishes_left] extinguisher charge\s left in this suit.")
 
 
 /obj/item/clothing/suit/space/eva/plasmaman/proc/Extinguish(mob/living/carbon/human/H)
@@ -29,7 +29,7 @@
 				return
 			next_extinguish = world.time + extinguish_cooldown
 			extinguishes_left--
-			H.visible_message("<span class='warning'>[H]'s suit automatically extinguishes [H.p_them()]!</span>","<span class='warning'>Your suit automatically extinguishes you.</span>")
+			H.visible_message(span_warning("[H]'s suit automatically extinguishes [H.p_them()]!"),span_warning("Your suit automatically extinguishes you."))
 			H.ExtinguishMob()
 			new /obj/effect/particle_effect/water(get_turf(H))
 
@@ -68,7 +68,7 @@
 /obj/item/clothing/head/helmet/space/plasmaman/proc/display_visor_message(msg)
 	var/mob/wearer = loc
 	if(msg && ishuman(wearer))
-		wearer.show_message("[icon2html(src, wearer)]<b><span class='robot'>[msg]</span></b>", MSG_VISUAL)
+		wearer.show_message("[icon2html(src, wearer)]<b>[span_robot("[msg]")]</b>", MSG_VISUAL)
 //WS END
 
 /obj/item/clothing/head/helmet/space/plasmaman/Initialize()
@@ -83,7 +83,7 @@
 /obj/item/clothing/head/helmet/space/plasmaman/proc/toggle_welding_screen(mob/living/user)
 	if(weldingvisortoggle(user))
 		if(helmet_on)
-			to_chat(user, "<span class='notice'>Your helmet's torch can't pass through your welding visor!</span>")
+			to_chat(user, span_notice("Your helmet's torch can't pass through your welding visor!"))
 			helmet_on = FALSE
 			playsound(src, 'sound/mecha/mechmove03.ogg', 50, TRUE) //Visors don't just come from nothing
 			update_appearance()
@@ -100,14 +100,14 @@
 	if(istype(C, /obj/item/toy/crayon))
 		if(smile == FALSE)
 			var/obj/item/toy/crayon/CR = C
-			to_chat(user, "<span class='notice'>You start drawing a smiley face on the helmet's visor..</span>")
+			to_chat(user, span_notice("You start drawing a smiley face on the helmet's visor.."))
 			if(do_after(user, 25, target = src))
 				smile = TRUE
 				smile_color = CR.paint_color
 				to_chat(user, "You draw a smiley on the helmet visor.")
 				update_appearance()
 		else
-			to_chat(user, "<span class='warning'>Seems like someone already drew something on this helmet's visor!</span>")
+			to_chat(user, span_warning("Seems like someone already drew something on this helmet's visor!"))
 
 /obj/item/clothing/head/helmet/space/plasmaman/worn_overlays(isinhands)
 	. = ..()
@@ -135,7 +135,7 @@
 
 	if(helmet_on)
 		if(!up)
-			to_chat(user, "<span class='notice'>Your helmet's torch can't pass through your welding visor!</span>")
+			to_chat(user, span_notice("Your helmet's torch can't pass through your welding visor!"))
 			set_light_on(FALSE)
 		else
 			set_light_on(TRUE)
@@ -268,22 +268,6 @@
 	icon_state = "janitor_envirohelm"
 	item_state = "janitor_envirohelm"
 
-/obj/item/clothing/head/helmet/space/plasmaman/mime
-	name = "mime envirosuit helmet"
-	desc = "The make-up is painted on, it's a miracle it doesn't chip. It's not very colourful."
-	icon_state = "mime_envirohelm"
-	item_state = "mime_envirohelm"
-	visor_icon = "mime_envisor"
-
-/obj/item/clothing/head/helmet/space/plasmaman/clown
-	name = "clown envirosuit helmet"
-	desc = "The make-up is painted on, it's a miracle it doesn't chip. <i>'HONK!'</i>"
-	icon_state = "clown_envirohelm"
-	item_state = "clown_envirohelm"
-	visor_icon = "clown_envisor"
-	smile_state = "clown_smile"
-
-// WS BEGIN - plasmeme command helmets buff start
 /obj/item/clothing/head/helmet/space/plasmaman/command
 	name = "captains envirosuit helmet"
 	desc = "An envirosuit helmet made for the most important plasmaman of them all."

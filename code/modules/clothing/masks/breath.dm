@@ -34,7 +34,7 @@
 
 /obj/item/clothing/mask/breath/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click [src] to adjust it.</span>"
+	. += span_notice("Alt-click [src] to adjust it.")
 
 /obj/item/clothing/mask/breath/medical
 	desc = "A close-fitting sterile mask that can be connected to an air supply."
@@ -44,8 +44,11 @@
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
 
-/obj/item/clothing/mask/balaclava/inteq //inteq needs a faction clothing file badly but it's out of scope for this PR -apogee
-	name = "IRMG combat balaclava"
-	desc = "A surprisingly advanced balaclava. While it doesn't muffle your voice, it has a mouthpiece for internals. Comfy to boot! This one is a variataion commonly used by the IRMG to protect it's members idenites."
-	icon_state = "inteq_balaclava"
-	item_state = "inteq_balaclava"
+/obj/item/clothing/mask/breath/facemask
+	name = "face mask"
+	desc = "A face mask that covers the nose, mouth and neck of those who wear it. It can be connected to an air supply."
+	icon_state = "facemask"
+	item_state = "facemask"
+	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
+	supports_variations = SNOUTED_VARIATION | SNOUTED_SMALL_VARIATION | KEPORI_VARIATION
+	alternate_worn_layer = BELT_LAYER

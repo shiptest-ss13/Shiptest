@@ -3,7 +3,8 @@
 	name = "\improper 501p Security Exosuit"
 	icon_state = "gygax"
 	step_in = 3
-	dir_in = 1 //Facing North.
+	dir = NORTH
+	dir_in = NORTH
 	max_integrity = 300
 	deflect_chance = 5
 	armor = list("melee" = 40, "bullet" = 60, "laser" = 40, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
@@ -51,6 +52,23 @@
 		cell = C
 		return
 	cell = new /obj/item/stock_parts/cell/bluespace(src)
+
+/obj/mecha/combat/gygax/dark/ramzi/Initialize()
+	. = ..()
+	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser(src)
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
+	ME.attach(src)
+	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
+	ME.attach(src)
+	max_ammo()
+
+/obj/mecha/combat/gygax/dark/ramzi/add_cell(obj/item/stock_parts/cell/C=null)
+	if(C)
+		C.forceMove(src)
+		cell = C
+		return
+	cell = new /obj/item/stock_parts/cell/hyper(src)
 
 /obj/mecha/combat/gygax/charger
 	name = "\improper Modified 501p"

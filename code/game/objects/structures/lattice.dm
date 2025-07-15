@@ -22,7 +22,7 @@
 	. += deconstruction_hints(user)
 
 /obj/structure/lattice/proc/deconstruction_hints(mob/user)
-	return "<span class='notice'>The rods look like they could be <b>cut</b>. There's space for more <i>rods</i> or a <i>tile</i>.</span>"
+	return span_notice("The rods look like they could be <b>cut</b>. There's space for more <i>rods</i> or a <i>tile</i>.")
 
 /obj/structure/lattice/Initialize(mapload)
 	. = ..()
@@ -34,7 +34,7 @@
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
 	if(C.tool_behaviour == TOOL_WIRECUTTER)
-		to_chat(user, "<span class='notice'>Slicing [name] joints ...</span>")
+		to_chat(user, span_notice("Slicing [name] joints ..."))
 		deconstruct()
 	else
 		var/turf/T = get_turf(src)
@@ -44,10 +44,10 @@
 	. = ..()
 	if(.)
 		return FALSE
-	if(!I.tool_start_check(user, amount=0))
+	if(!I.tool_start_check(user, src, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 1 SECONDS, volume=0))
-		to_chat(user, "<span class='warning'>You cut apart \the [src].</span>", "<span class='notice'>You cut apart \the [src].</span>")
+		to_chat(user, span_warning("You cut apart \the [src]."), span_notice("You cut apart \the [src]."))
 		deconstruct()
 		return TRUE
 
@@ -62,7 +62,7 @@
 
 /obj/structure/lattice/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	if(passed_mode == RCD_FLOORWALL)
-		to_chat(user, "<span class='notice'>You build a floor.</span>")
+		to_chat(user, span_notice("You build a floor."))
 		var/turf/T = src.loc
 		if(isspaceturf(T))
 			T.PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
@@ -87,7 +87,7 @@
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 
 /obj/structure/lattice/catwalk/deconstruction_hints(mob/user)
-	return "<span class='notice'>The supporting rods look like they could be <b>cut</b>.</span>"
+	return span_notice("The supporting rods look like they could be <b>cut</b>.")
 
 /obj/structure/lattice/catwalk/Move()
 	var/turf/T = loc
@@ -113,17 +113,14 @@
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
-/obj/structure/lattice/lava/deconstruction_hints(mob/user)
-	return "<span class='notice'>The rods look like they could be <b>cut</b>, but the <i>heat treatment will shatter off</i>. There's space for a <i>tile</i>.</span>"
-
 /obj/structure/lattice/lava/attackby(obj/item/C, mob/user, params)
 	. = ..()
 	if(istype(C, /obj/item/stack/tile/plasteel))
 		var/obj/item/stack/tile/plasteel/P = C
 		if(P.use(1))
-			to_chat(user, "<span class='notice'>You construct a floor plating, as lava settles around the rods.</span>")
+			to_chat(user, span_notice("You construct a floor plating, as lava settles around the rods."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			new /turf/open/floor/plating(locate(x, y, z))
 		else
-			to_chat(user, "<span class='warning'>You need one floor tile to build atop [src].</span>")
+			to_chat(user, span_warning("You need one floor tile to build atop [src]."))
 		return

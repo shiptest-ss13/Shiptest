@@ -6,6 +6,7 @@
 	density = TRUE
 	anchored = TRUE
 
+	obj_flags = parent_type::obj_flags | ELEVATED_SURFACE
 	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/dresser/attackby(obj/item/I, mob/user, params)
@@ -23,9 +24,9 @@
 
 /obj/structure/dresser/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
-	to_chat(user, "<span class='notice'>You begin to [anchored ? "unwrench" : "wrench"] [src].</span>")
+	to_chat(user, span_notice("You begin to [anchored ? "unwrench" : "wrench"] [src]."))
 	if(I.use_tool(src, user, 20, volume=50))
-		to_chat(user, "<span class='notice'>You successfully [anchored ? "unwrench" : "wrench"] [src].</span>")
+		to_chat(user, span_notice("You successfully [anchored ? "unwrench" : "wrench"] [src]."))
 		set_anchored(!anchored)
 
 /obj/structure/dresser/crowbar_act(mob/living/user, obj/item/I)
@@ -59,7 +60,7 @@
 		var/mob/living/carbon/human/H = user
 
 		if(H.dna && H.dna.species && (NO_UNDERWEAR in H.dna.species.species_traits))
-			to_chat(user, "<span class='warning'>You are not capable of wearing underwear.</span>")
+			to_chat(user, span_warning("You are not capable of wearing underwear."))
 			return
 
 		var/choice = input(user, "Underwear, Undershirt, or Socks?", "Changing") as null|anything in list("Underwear", "Underwear Color", "Undershirt", "Undershirt Color", "Socks", "Socks Color")

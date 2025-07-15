@@ -140,7 +140,7 @@
 /obj/item/gun/energy/plasmacutter/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
+		. += span_notice("[src] is [round(cell.percent())]% charged.")
 
 /obj/item/gun/energy/plasmacutter/attackby(obj/item/I, mob/user)
 	var/charge_multiplier = 0 //2 = Refined stack, 1 = Ore
@@ -150,25 +150,25 @@
 		charge_multiplier = 1
 	if(charge_multiplier)
 		if(cell.charge == cell.maxcharge)
-			to_chat(user, "<span class='notice'>You try to insert [I] into [src], but it's fully charged.</span>") //my cell is round and full
+			to_chat(user, span_notice("You try to insert [I] into [src], but it's fully charged.")) //my cell is round and full
 			return
 		I.use(1)
 		cell.give(500*charge_multiplier)
-		to_chat(user, "<span class='notice'>You insert [I] in [src], recharging it.</span>")
+		to_chat(user, span_notice("You insert [I] in [src], recharging it."))
 	else
 		..()
 
 // Can we cut? Plasma cutter does not use charge continuously.
 // Amount cannot be defaulted to 1: most of the code specifies 0 in the call.
-/obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, amount)
+/obj/item/gun/energy/plasmacutter/tool_use_check(mob/living/user, atom/target, amount)
 	if(QDELETED(cell))
-		to_chat(user, "<span class='warning'>[src] does not have a cell, and cannot be used!</span>")
+		to_chat(user, span_warning("[src] does not have a cell, and cannot be used!"))
 		return FALSE
 	// Amount cannot be used if drain is made continuous, e.g. amount = 5, charge_cut = 25
 	// Then it'll drain 125 at first and 25 periodically, but fail if charge dips below 125 even though it still can finish action
 	// Alternately it'll need to drain amount*charge_cut every period, which is either obscene or makes it free for other uses
 	if(amount ? cell.charge < charge_cut * amount : cell.charge < charge_cut)
-		to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+		to_chat(user, span_warning("You need more charge to complete this task!"))
 		return FALSE
 
 	return TRUE
@@ -181,8 +181,8 @@
 		return ..()
 	if(!tool_start_check(user, amount = 1))
 		return TRUE
-	user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)].</span>",
-			"<span class='notice'>You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
+	user.visible_message(span_notice("[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)]."),
+			span_notice("You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)]."))
 	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
 		return TRUE
 	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0, integrity_loss = 5)
@@ -318,7 +318,7 @@
 
 /obj/item/gun/energy/printer/commando/examine()
 	. = ..()
-	. += "<span class='notice'> Can be reconfigured inhand to print different projectile designs.</span>"
+	. += span_notice(" Can be reconfigured inhand to print different projectile designs.")
 
 /obj/item/gun/energy/printer/commando/attack_self(mob/living/user as mob)
 	if(ammo_type.len > 1)
@@ -335,11 +335,11 @@
 	if (shot.select_name)
 		playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
 		if(shot.select_name == "tactical")
-			to_chat(user, "<span class='notice'>You configure the [src] to fire CY-TACTICAL high-velocity impact rounds.</span>")
+			to_chat(user, span_notice("You configure the [src] to fire CY-TACTICAL high-velocity impact rounds."))
 		if(shot.select_name == "sweet")
-			to_chat(user, "<span class='notice'>You set your [src] to fire CY-SWEET distruptor rounds, which travel slowly and do little damage, but irradiate and ignite targets.</span>")
+			to_chat(user, span_notice("You set your [src] to fire CY-SWEET distruptor rounds, which travel slowly and do little damage, but irradiate and ignite targets."))
 		if(shot.select_name == "sour")
-			to_chat(user, "<span class='notice'>You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies.</span>")
+			to_chat(user, span_notice("You rearm your [src] with CY-SOUR nonlethal rounds, which cause stamina damage and distrupt the focus of enemies."))
 	chambered = null
 	recharge_newshot(TRUE)
 	update_appearance()
@@ -394,7 +394,7 @@
 
 /obj/item/gun/energy/gravity_gun/attackby(obj/item/C, mob/user)
 	if(istype(C, /obj/item/assembly/signaler/anomaly)) //WS Edit - Any anomaly core for phazons
-		to_chat(user, "<span class='notice'>You insert [C] into the gravitational manipulator and the weapon gently hums to life.</span>")
+		to_chat(user, span_notice("You insert [C] into the gravitational manipulator and the weapon gently hums to life."))
 		firing_core = TRUE
 		playsound(src.loc, 'sound/machines/click.ogg', 50, TRUE)
 		qdel(C)

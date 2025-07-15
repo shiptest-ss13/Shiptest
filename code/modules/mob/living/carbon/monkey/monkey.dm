@@ -9,8 +9,8 @@
 	pass_flags = PASSTABLE
 	ventcrawler = VENTCRAWLER_NUDE
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/monkey = 5, /obj/item/stack/sheet/animalhide/monkey = 1)
-	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/monkey
+	butcher_results = list(/obj/item/food/meat/slab/monkey = 5, /obj/item/stack/sheet/animalhide/monkey = 1)
+	type_of_meat = /obj/item/food/meat/slab/monkey
 	gib_type = /obj/effect/decal/cleanable/blood/gibs
 	unique_name = TRUE
 	can_be_shoved_into = TRUE
@@ -47,7 +47,7 @@
 		var/cap = CONFIG_GET(number/monkeycap)
 		if (LAZYLEN(SSmobs.cubemonkeys) > cap)
 			if (spawner)
-				to_chat(spawner, "<span class='warning'>Bluespace harmonics prevent the spawning of more than [cap] monkeys in this sector at one time!</span>")
+				to_chat(spawner, span_warning("Bluespace harmonics prevent the spawning of more than [cap] monkeys in this sector at one time!"))
 			return INITIALIZE_HINT_QDEL
 		SSmobs.cubemonkeys += src
 
@@ -117,7 +117,7 @@
 
 /mob/living/carbon/monkey/can_use_guns(obj/item/G)
 	if(G.trigger_guard == TRIGGER_GUARD_NONE)
-		to_chat(src, "<span class='warning'>You are unable to fire this!</span>")
+		to_chat(src, span_warning("You are unable to fire this!"))
 		return FALSE
 	return TRUE
 
@@ -174,7 +174,7 @@
 
 /mob/living/carbon/monkey/angry/Initialize()
 	. = ..()
-	ai_controller.blackboard[BB_MONKEY_AGRESSIVE] = TRUE
+	ai_controller.set_blackboard_key(BB_MONKEY_AGRESSIVE, TRUE)
 	if(prob(10))
 		var/obj/item/clothing/head/helmet/justice/escape/helmet = new(src)
 		equip_to_slot_or_del(helmet,ITEM_SLOT_HEAD)

@@ -115,7 +115,9 @@
 		/obj/item/scalpel = 1,
 		/obj/item/hemostat = 1,
 		/obj/item/cautery = 1,
-		/obj/item/healthanalyzer = 1)
+		/obj/item/healthanalyzer = 1,
+		/obj/item/storage/pill_bottle/tramal = 1
+		)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
@@ -236,6 +238,11 @@
 	item_state = "firstaid-rad"
 	custom_premium_price = 1100
 
+/obj/item/storage/firstaid/advanced/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 10
+
 /obj/item/storage/firstaid/advanced/PopulateContents()
 	if(empty)
 		return
@@ -244,7 +251,9 @@
 		/obj/item/reagent_containers/pill/patch/synthflesh = 3,
 		/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/storage/pill_bottle/penacid = 1)
+		/obj/item/storage/pill_bottle/penacid = 1,
+		/obj/item/reagent_containers/glass/bottle/dimorlin = 1,
+		/obj/item/reagent_containers/syringe = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/tactical
@@ -277,7 +286,7 @@
 
 	//Making a medibot!
 	if(contents.len >= 1)
-		to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
+		to_chat(user, span_warning("You need to empty [src] out first!"))
 		return
 
 	var/obj/item/bot_assembly/medbot/A = new
@@ -292,7 +301,7 @@
 	else if(istype(src, /obj/item/storage/firstaid/tactical))
 		A.set_skin("medibot_bezerk")
 	user.put_in_hands(A)
-	to_chat(user, "<span class='notice'>You add [S] to [src].</span>")
+	to_chat(user, span_notice("You add [S] to [src]."))
 	A.robot_arm = S.type
 	A.firstaid = type
 	qdel(S)
@@ -492,17 +501,33 @@
 
 /obj/item/storage/pill_bottle/stardrop
 	name = "bottle of stardrop capsules"
-	desc = "Contains vision-enhancing pills."
+	desc = "Contains vision-enhancing patches."
 	custom_price = 300
 
 /obj/item/storage/pill_bottle/stardrop/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/pill/stardrop(src)
+		new /obj/item/reagent_containers/pill/patch/stardrop(src)
 
 /obj/item/storage/pill_bottle/starlight
 	name = "bottle of starlight capsules"
-	desc = "Contains vision-enhancing pills."
+	desc = "Contains vision-enhancing patches."
 
 /obj/item/storage/pill_bottle/starlight/PopulateContents()
 	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/pill/starlight(src)
+		new /obj/item/reagent_containers/pill/patch/starlight(src)
+
+/obj/item/storage/pill_bottle/placebatol
+	name = "bottle of prescription pills"
+	desc = "Contains pills as prescribed. A tag reads: \"NO MEDICINAL EFFECT\"."
+
+/obj/item/storage/pill_bottle/placebatol/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/placebatol(src)
+
+/obj/item/storage/pill_bottle/tramal
+	name = "bottle of tramal pills"
+	desc = "Contains tramal pills, a mild painkiller."
+
+/obj/item/storage/pill_bottle/tramal/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/tramal(src)

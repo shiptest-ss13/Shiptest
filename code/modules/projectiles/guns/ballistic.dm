@@ -16,8 +16,11 @@
 ///Subtype for any kind of ballistic gun
 ///This has a shitload of vars on it, and I'm sorry for that, but it does make making new subtypes really easy
 /obj/item/gun/ballistic
-	desc = "Now comes in flavors like GUN. Uses 10mm ammo, for some reason."
+	desc = "Now comes in flavors like GUN. Uses 10x22mm ammo, for some reason."
 	name = "projectile gun"
+
+	bad_type = /obj/item/gun/ballistic
+
 	w_class = WEIGHT_CLASS_NORMAL
 	has_safety = TRUE
 	safety = TRUE
@@ -37,6 +40,8 @@
 	var/wear_major_threshold = 180
 	/// Highest wear value so the gun doesn't end up completely irreperable
 	var/wear_maximum = 300
+	/// Doesn't ever keep ammo when loading a new round into the chamber. Mainly for BOLT_TYPE_NO_BOLT guns.
+	var/doesnt_keep_bullet = FALSE
 
 	///If you can examine a gun to see its current ammo count
 	var/ammo_counter = FALSE
@@ -165,7 +170,10 @@
 	if (chambered || !magazine)
 		return
 	if (magazine.ammo_count())
-		chambered = magazine.get_round(keep_bullet || bolt_type == BOLT_TYPE_NO_BOLT)
+		if(doesnt_keep_bullet)
+			chambered = magazine.get_round(FALSE)
+		else
+			chambered = magazine.get_round(keep_bullet || bolt_type == BOLT_TYPE_NO_BOLT)
 		if (bolt_type != BOLT_TYPE_OPEN)
 			chambered.forceMove(src)
 
@@ -176,11 +184,11 @@
 	if (bolt_type == BOLT_TYPE_OPEN)
 		if(!bolt_locked)	//If it's an open bolt, racking again would do nothing
 			if (user)
-				to_chat(user, "<span class='notice'>\The [src]'s [bolt_wording] is already cocked!</span>")
+				to_chat(user, span_notice("\The [src]'s [bolt_wording] is already cocked!"))
 			return
 		bolt_locked = FALSE
 	if (user)
-		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
+		to_chat(user, span_notice("You rack the [bolt_wording] of \the [src]."))
 	process_chamber(!chambered, FALSE, chamber_new_round, user)
 	if ((bolt_type == BOLT_TYPE_LOCKING && !chambered) || bolt_type == BOLT_TYPE_CLIP)
 		bolt_locked = TRUE
@@ -194,7 +202,7 @@
 /obj/item/gun/ballistic/proc/drop_bolt(mob/user = null, chamber_new_round = TRUE)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
 	if (user)
-		to_chat(user, "<span class='notice'>You drop the [bolt_wording] of \the [src].</span>")
+		to_chat(user, span_notice("You drop the [bolt_wording] of \the [src]."))
 	if(chamber_new_round)
 		chamber_round()
 	bolt_locked = FALSE
@@ -203,12 +211,12 @@
 ///Handles all the logic needed for magazine insertion
 /obj/item/gun/ballistic/proc/insert_magazine(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
 	if(!(inserted_mag.type in allowed_ammo_types))
-		to_chat(user, "<span class='warning'>\The [inserted_mag] doesn't seem to fit into \the [src]...</span>")
+		to_chat(user, span_warning("\The [inserted_mag] doesn't seem to fit into \the [src]..."))
 		return FALSE
 	if(user.transferItemToLoc(inserted_mag, src))
 		magazine = inserted_mag
 		if (display_message)
-			to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
+			to_chat(user, span_notice("You load a new [magazine_wording] into \the [src]."))
 		if (magazine.ammo_count())
 			playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		else
@@ -219,7 +227,7 @@
 		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 		return FALSE
 
 ///Handles all the logic of magazine ejection, if tac_load is set that magazine will be tacloaded in the place of the old eject
@@ -235,17 +243,17 @@
 	old_mag.update_appearance()
 	magazine = null
 	if (display_message)
-		to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of \the [src].</span>")
+		to_chat(user, span_notice("You pull the [magazine_wording] out of \the [src]."))
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	if (tac_load)
 		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
 			if (insert_magazine(user, tac_load, FALSE))
-				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
+				to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
 			else
-				to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
+				to_chat(user, span_warning("You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing."))
 		else
-			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
+			to_chat(user, span_warning("Your reload was interupted!"))
 			return
 	if(user)
 		user.put_in_hands(old_mag)
@@ -272,7 +280,7 @@
 			if (tac_reloads)
 				eject_magazine(user, FALSE, AM)
 			else
-				to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
+				to_chat(user, span_notice("There's already a [magazine_wording] in \the [src]."))
 		return
 
 	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
@@ -282,7 +290,7 @@
 				chambered = null
 			var/num_loaded = magazine.attackby(A, user, params)
 			if (num_loaded)
-				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into \the [src].</span>")
+				to_chat(user, span_notice("You load [num_loaded] [cartridge_wording]\s into \the [src]."))
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
 				if ((chambered == null && bolt_type == BOLT_TYPE_NO_BOLT) || always_chambers)
 					chamber_round()

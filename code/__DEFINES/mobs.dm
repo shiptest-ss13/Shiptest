@@ -52,16 +52,32 @@
 #define BLOODCRAWL_EAT 2 /// crawling+mob devour
 
 //Mob bio-types flags
-#define MOB_ORGANIC 1 << 0
-#define MOB_MINERAL 1 << 1
-#define MOB_ROBOTIC 1 << 2
-#define MOB_UNDEAD 1 << 3
-#define MOB_HUMANOID 1 << 4
-#define MOB_BUG 1 << 5
-#define MOB_BEAST 1 << 6
-#define MOB_EPIC 1 << 7 //megafauna
-#define MOB_REPTILE 1 << 8
-#define MOB_SPIRIT 1 << 9
+///The mob is organic, can heal from medical sutures.
+#define MOB_ORGANIC (1 << 0)
+///The mob is of a rocky make, most likely a golem. Iron within, iron without!
+#define MOB_MINERAL (1 << 1)
+///The mob is a synthetic lifeform, like station borgs.
+#define MOB_ROBOTIC (1 << 2)
+///The mob is an shambling undead corpse. Or a halloween species. Pick your poison.
+#define MOB_UNDEAD (1 << 3)
+///The mob is a human-sized human-like human-creature.
+#define MOB_HUMANOID (1 << 4)
+///The mob is a bug/insect/arachnid/some other kind of scuttly thing.
+#define MOB_BUG (1 << 5)
+///The mob is a wild animal. Domestication may apply.
+#define MOB_BEAST (1 << 6)
+///The mob is some kind of a creature that should be exempt from certain **fun** interactions for balance reasons, i.e. megafauna or a headslug.
+#define MOB_SPECIAL (1 << 7)
+///The mob is some kind of a scaly reptile creature
+#define MOB_REPTILE (1 << 8)
+///The mob is a spooky phantasm or an evil ghast of such nature.
+#define MOB_SPIRIT (1 << 9)
+///The mob is a plant-based species, benefitting from light but suffering from darkness and plantkillers.
+#define MOB_PLANT (1 << 10)
+///The mob is fish or water-related.
+#define MOB_AQUATIC (1 << 11)
+///The mob is a crustacean. Like crabs. Or lobsters.
+#define MOB_CRUSTACEAN (1 << 12)
 
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC 1
@@ -310,7 +326,7 @@
 #define SLIDE (1<<1)
 #define GALOSHES_DONT_HELP (1<<2)
 #define SLIDE_ICE (1<<3)
-#define SLIP_WHEN_CRAWLING (1<<4) //clown planet ruin
+#define SLIP_WHEN_CRAWLING (1<<4)
 
 #define MAX_CHICKENS 50
 

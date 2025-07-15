@@ -11,11 +11,11 @@
 		return
 	var/datum/asset/asset_cache_datum = get_asset_datum(/datum/asset/group/permissions)
 	asset_cache_datum.send(usr)
-	var/list/output = list("<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("panels.css")]'><a href='?_src_=holder;[HrefToken()];editrightsbrowser=1'>\[Permissions\]</a>")
+	var/list/output = list("<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("panels.css")]'><a href='byond://?_src_=holder;[HrefToken()];editrightsbrowser=1'>\[Permissions\]</a>")
 	if(action)
-		output += " | <a href='?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a> | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a><hr style='background:#000000; border:0; height:3px'>"
+		output += " | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a> | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a><hr style='background:#000000; border:0; height:3px'>"
 	else
-		output += "<br><a href='?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a><br><a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a>"
+		output += "<br><a href='byond://?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a><br><a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a>"
 	if(action == 1)
 		var/logcount = 0
 		var/logssperpage = 20
@@ -34,7 +34,7 @@
 		if(logcount > logssperpage)
 			output += "<br><b>Page: </b>"
 			while(logcount > 0)
-				output += "|<a href='?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightstarget=[target];editrightsoperation=[operation];editrightspage=[pagecount]'>[pagecount == page ? "<b>\[[pagecount]\]</b>" : "\[[pagecount]\]"]</a>"
+				output += "|<a href='byond://?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightstarget=[target];editrightsoperation=[operation];editrightspage=[pagecount]'>[pagecount == page ? "<b>\[[pagecount]\]</b>" : "\[[pagecount]\]"]</a>"
 				logcount -= logssperpage
 				pagecount++
 			output += "|"
@@ -73,7 +73,7 @@
 		while(query_check_admin_errors.NextRow())
 			var/admin_key = query_check_admin_errors.item[1]
 			var/admin_rank = query_check_admin_errors.item[2]
-			output += "[admin_key] has non-existent rank [admin_rank] | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightschange=[admin_key]'>\[Change Rank\]</a> | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightsremove=[admin_key]'>\[Remove\]</a>"
+			output += "[admin_key] has non-existent rank [admin_rank] | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightschange=[admin_key]'>\[Change Rank\]</a> | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightsremove=[admin_key]'>\[Remove\]</a>"
 			output += "<hr style='background:#000000; border:0; height:1px'>"
 		qdel(query_check_admin_errors)
 		output += "<h3>Unused ranks</h3>"
@@ -83,7 +83,7 @@
 			return
 		while(query_check_unused_rank.NextRow())
 			var/admin_rank = query_check_unused_rank.item[1]
-			output += {"Rank [admin_rank] is not held by any admin | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightsremoverank=[admin_rank]'>\[Remove\]</a>
+			output += {"Rank [admin_rank] is not held by any admin | <a href='byond://?_src_=holder;[HrefToken()];editrightsbrowsermanage=1;editrightsremoverank=[admin_rank]'>\[Remove\]</a>
 			<br>Permissions: [rights2text(text2num(query_check_unused_rank.item[2])," ")]
 			<br>Denied: [rights2text(text2num(query_check_unused_rank.item[3])," ", "-")]
 			<br>Allowed to edit: [rights2text(text2num(query_check_unused_rank.item[4])," ", "*")]
@@ -99,7 +99,7 @@
 		<body onload='selectTextField();updateSearch();'>
 		<div id='main'><table id='searchable' cellspacing='0'>
 		<tr class='title'>
-		<th style='width:150px;'>CKEY <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=add'>\[+\]</a></th>
+		<th style='width:150px;'>CKEY <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=add'>\[+\]</a></th>
 		<th style='width:125px;'>RANK</th>
 		<th style='width:40%;'>PERMISSIONS</th>
 		<th style='width:20%;'>DENIED</th>
@@ -116,15 +116,15 @@
 			if(D.owner)
 				adm_ckey = D.owner.key
 			if (D.deadmined)
-				deadminlink = " <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=activate;key=[adm_ckey]'>\[RA\]</a>"
+				deadminlink = " <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=activate;key=[adm_ckey]'>\[RA\]</a>"
 			else
-				deadminlink = " <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=deactivate;key=[adm_ckey]'>\[DA\]</a>"
+				deadminlink = " <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=deactivate;key=[adm_ckey]'>\[DA\]</a>"
 			output += "<tr>"
-			output += "<td style='text-align:center;'>[adm_ckey]<br>[deadminlink]<a class='small' href='?src=[REF(src)];[HrefToken()];editrights=remove;key=[adm_ckey]'>\[-\]</a><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=sync;key=[adm_ckey]'>\[SYNC TGDB\]</a></td>"
-			output += "<td><a href='?src=[REF(src)];[HrefToken()];editrights=rank;key=[adm_ckey]'>[D.rank.name]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.include_rights," ")]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.exclude_rights," ", "-")]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.can_edit_rights," ", "*")]</a></td>"
+			output += "<td style='text-align:center;'>[adm_ckey]<br>[deadminlink]<a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=remove;key=[adm_ckey]'>\[-\]</a><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=sync;key=[adm_ckey]'>\[SYNC TGDB\]</a></td>"
+			output += "<td><a href='byond://?src=[REF(src)];[HrefToken()];editrights=rank;key=[adm_ckey]'>[D.rank.name]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.include_rights," ")]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.exclude_rights," ", "-")]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.can_edit_rights," ", "*")]</a></td>"
 			output += "</tr>"
 		output += "</table></div><div id='top'><b>Search:</b> <input type='text' id='filter' value='' style='width:70%;' onkeyup='updateSearch();'></div></body>"
 	if(QDELETED(usr))
@@ -164,7 +164,7 @@
 	if(check_rights(R_DBRANKS, FALSE))
 		if(!skip)
 			if(!SSdbcore.Connect())
-				to_chat(usr, "<span class='danger'>Unable to connect to database, changes are temporary only.</span>", confidential = TRUE)
+				to_chat(usr, span_danger("Unable to connect to database, changes are temporary only."), confidential = TRUE)
 				use_db = FALSE
 			else
 				use_db = alert("Permanent changes are saved to the database for future rounds, temporary changes will affect only the current round", "Permanent or Temporary?", "Permanent", "Temporary", "Cancel")
@@ -215,7 +215,7 @@
 	if(!.)
 		return FALSE
 	if(!admin_ckey && (. in (GLOB.admin_datums+GLOB.deadmins)))
-		to_chat(usr, "<span class='danger'>[admin_key] is already an admin.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("[admin_key] is already an admin."), confidential = TRUE)
 		return FALSE
 	if(use_db)
 		//if an admin exists without a datum they won't be caught by the above
@@ -228,7 +228,7 @@
 			return FALSE
 		if(query_admin_in_db.NextRow())
 			qdel(query_admin_in_db)
-			to_chat(usr, "<span class='danger'>[admin_key] already listed in admin database. Check the Management tab if they don't appear in the list of admins.</span>", confidential = TRUE)
+			to_chat(usr, span_danger("[admin_key] already listed in admin database. Check the Management tab if they don't appear in the list of admins."), confidential = TRUE)
 			return FALSE
 		qdel(query_admin_in_db)
 		var/datum/DBQuery/query_add_admin = SSdbcore.NewQuery(
@@ -293,7 +293,7 @@
 	D.deactivate() //after logs so the deadmined admin can see the message.
 
 /datum/admins/proc/auto_deadmin()
-	to_chat(owner, "<span class='interface'>You are now a normal player.</span>", confidential = TRUE)
+	to_chat(owner, span_interface("You are now a normal player."), confidential = TRUE)
 	var/old_owner = owner
 	deactivate()
 	message_admins("[old_owner] deadmined via auto-deadmin config.")
@@ -494,7 +494,7 @@
 		return
 	if(query_admins_with_rank.NextRow())
 		qdel(query_admins_with_rank)
-		to_chat(usr, "<span class='danger'>Error: Rank deletion attempted while rank still used; Tell a coder, this shouldn't happen.</span>", confidential = TRUE)
+		to_chat(usr, span_danger("Error: Rank deletion attempted while rank still used; Tell a coder, this shouldn't happen."), confidential = TRUE)
 		return
 	qdel(query_admins_with_rank)
 	if(alert("Are you sure you want to remove [admin_rank]?","Confirm Removal","Do it","Cancel") == "Do it")
@@ -531,4 +531,4 @@
 		qdel(query_sync_lastadminrank)
 		return
 	qdel(query_sync_lastadminrank)
-	to_chat(usr, "<span class='admin'>Sync of [admin_key] successful.</span>", confidential = TRUE)
+	to_chat(usr, span_admin("Sync of [admin_key] successful."), confidential = TRUE)

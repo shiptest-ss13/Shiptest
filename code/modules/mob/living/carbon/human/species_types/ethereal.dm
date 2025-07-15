@@ -1,5 +1,5 @@
 #define ELZUOSE_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
-#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach)
+#define GOOD_SOIL list(/turf/open/floor/plating/grass, /turf/open/floor/plating/dirt, /turf/open/floor/ship/dirt, /turf/open/floor/grass/ship, /turf/open/floor/plating/asteroid/whitesands/grass, /turf/open/floor/grass/fairy/beach, /turf/open/floor/plating/asteroid/dirt)
 #define DIG_TIME (7.5 SECONDS)
 #define ROOT_TIME (3 SECONDS)
 #define ROOT_CHARGE_GAIN (5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
@@ -10,7 +10,7 @@
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal
+	meat = /obj/item/food/meat/slab/human/mutant/ethereal
 	mutantstomach = /obj/item/organ/stomach/ethereal
 	mutanttongue = /obj/item/organ/tongue/ethereal
 	siemens_coeff = 0.5 //They thrive on energy

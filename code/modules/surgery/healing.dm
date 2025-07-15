@@ -48,14 +48,14 @@
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)
-			display_results(user, target, "<span class='notice'>You attempt to patch some of [target]'s [woundtype].</span>",
-		"<span class='notice'>[user] attempts to patch some of [target]'s [woundtype].</span>",
-		"<span class='notice'>[user] attempts to patch some of [target]'s [woundtype].</span>")
+			display_results(user, target, span_notice("You attempt to patch some of [target]'s [woundtype]."),
+		span_notice("[user] attempts to patch some of [target]'s [woundtype]."),
+		span_notice("[user] attempts to patch some of [target]'s [woundtype]."))
 
 /datum/surgery_step/heal/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(!..())
 		return
-	while((brutehealing && target.getBruteLoss()) || (burnhealing && target.getFireLoss()))
+	while((brutehealing && target.getBruteLoss(FALSE)) || (burnhealing && target.getFireLoss(FALSE)))
 		if(!..())
 			break
 
@@ -77,7 +77,7 @@
 		umsg += " as best as you can while they have clothing on"
 		tmsg += " as best as they can while [target] has clothing on"
 	experience_given = CEILING((target.heal_bodypart_damage(urhealedamt_brute,urhealedamt_burn)/5),1)
-	display_results(user, target, "<span class='notice'>[umsg].</span>",
+	display_results(user, target, span_notice("[umsg]."),
 		"[tmsg].",
 		"[tmsg].")
 	if(istype(surgery, /datum/surgery/healing))
@@ -86,9 +86,9 @@
 	return ..()
 
 /datum/surgery_step/heal/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='warning'>You screwed up!</span>",
-		"<span class='warning'>[user] screws up!</span>",
-		"<span class='notice'>[user] fixes some of [target]'s wounds.</span>", TRUE)
+	display_results(user, target, span_warning("You screwed up!"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] fixes some of [target]'s wounds."), TRUE)
 	var/urdamageamt_burn = brutehealing * 0.8
 	var/urdamageamt_brute = burnhealing * 0.8
 	if(missinghpbonus)
@@ -213,9 +213,9 @@
 	missinghpbonus = 2.5
 
 /datum/surgery_step/heal/combo/upgraded/femto/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='warning'>You screwed up!</span>",
-		"<span class='warning'>[user] screws up!</span>",
-		"<span class='notice'>[user] fixes some of [target]'s wounds.</span>", TRUE)
+	display_results(user, target, span_warning("You screwed up!"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] fixes some of [target]'s wounds."), TRUE)
 	target.take_bodypart_damage(5,5)
 
 #undef PER_ITERATION_XP_CAP

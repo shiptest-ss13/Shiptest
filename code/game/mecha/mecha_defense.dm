@@ -1,10 +1,10 @@
-/obj/mecha/proc/get_armour_facing(relative_dir)
-	switch(relative_dir)
-		if(0) // BACKSTAB!
+/obj/mecha/proc/get_armour_facing(attack_dir)
+	switch(abs(dir2angle(attack_dir) - dir2angle(dir)))
+		if(180) // BACKSTAB!
 			return facing_modifiers[MECHA_BACK_ARMOUR]
-		if(45, 90, 270, 315)
+		if(90, 135, 225, 270)
 			return facing_modifiers[MECHA_SIDE_ARMOUR]
-		if(225, 180, 135)
+		if(0, 45, 315)
 			return facing_modifiers[MECHA_FRONT_ARMOUR]
 	return 1 //always return non-0
 
@@ -20,7 +20,7 @@
 			else
 				check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT))
 		if(. >= 5 || prob(33))
-			occupant_message("<span class='userdanger'>Taking damage!</span>")
+			occupant_message(span_userdanger("Taking damage!"))
 		log_message("Took [damage_amount] points of damage. Damage type: [damage_type]", LOG_MECHA)
 
 /obj/mecha/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
@@ -43,11 +43,11 @@
 				break
 
 	if(attack_dir)
-		var/facing_modifier = get_armour_facing(dir2angle(attack_dir) - dir2angle(src))
+		var/facing_modifier = get_armour_facing(attack_dir)
 		booster_damage_modifier /= facing_modifier
 		booster_deflection_modifier *= facing_modifier
 	if(prob(deflect_chance * booster_deflection_modifier))
-		visible_message("<span class='danger'>[src]'s armour deflects the attack!</span>")
+		visible_message(span_danger("[src]'s armour deflects the attack!"))
 		log_message("Armor saved.", LOG_MECHA)
 		return 0
 	if(.)
@@ -60,7 +60,7 @@
 	user.changeNext_move(CLICK_CD_MELEE) // Ugh. Ideally we shouldn't be setting cooldowns outside of click code.
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 	playsound(loc, 'sound/weapons/tap.ogg', 40, TRUE, -1)
-	user.visible_message("<span class='danger'>[user] hits [name]. Nothing happens.</span>", null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[user] hits [name]. Nothing happens."), null, null, COMBAT_MESSAGE_RANGE)
 	log_message("Attack by hand/paw. Attacker - [user].", LOG_MECHA, color="red")
 
 /obj/mecha/attack_paw(mob/user as mob)
@@ -175,9 +175,9 @@
 
 	if(istype(W, /obj/item/mmi))
 		if(mmi_move_inside(W,user))
-			to_chat(user, "<span class='notice'>[src]-[W] interface initialized successfully.</span>")
+			to_chat(user, span_notice("[src]-[W] interface initialized successfully."))
 		else
-			to_chat(user, "<span class='warning'>[src]-[W] interface initialization failed.</span>")
+			to_chat(user, span_warning("[src]-[W] interface initialization failed."))
 		return
 
 	if(istype(W, /obj/item/mecha_ammo))
@@ -195,9 +195,9 @@
 					id_card = pda.id
 				output_maintenance_dialog(id_card, user)
 				return
-			to_chat(user, "<span class='warning'>Invalid ID: Access denied.</span>")
+			to_chat(user, span_warning("Invalid ID: Access denied."))
 			return
-		to_chat(user, "<span class='warning'>Maintenance protocols disabled by operator.</span>")
+		to_chat(user, span_warning("Maintenance protocols disabled by operator."))
 		return
 
 	if(istype(W, /obj/item/stock_parts/cell))
@@ -206,12 +206,12 @@
 				if(!user.transferItemToLoc(W, src, silent = FALSE))
 					return
 				var/obj/item/stock_parts/cell/C = W
-				to_chat(user, "<span class='notice'>You install the power cell.</span>")
+				to_chat(user, span_notice("You install the power cell."))
 				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
 				cell = C
 				log_message("Powercell installed", LOG_MECHA)
 			else
-				to_chat(user, "<span class='warning'>There's already a power cell installed!</span>")
+				to_chat(user, span_warning("There's already a power cell installed!"))
 		return
 
 	if(istype(W, /obj/item/stock_parts/scanning_module))
@@ -219,13 +219,13 @@
 			if(!scanmod)
 				if(!user.transferItemToLoc(W, src))
 					return
-				to_chat(user, "<span class='notice'>You install the scanning module.</span>")
+				to_chat(user, span_notice("You install the scanning module."))
 				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
 				scanmod = W
 				log_message("[W] installed", LOG_MECHA)
 				update_part_values()
 			else
-				to_chat(user, "<span class='warning'>There's already a scanning module installed!</span>")
+				to_chat(user, span_warning("There's already a scanning module installed!"))
 		return
 
 	if(istype(W, /obj/item/stock_parts/capacitor))
@@ -233,13 +233,13 @@
 			if(!capacitor)
 				if(!user.transferItemToLoc(W, src))
 					return
-				to_chat(user, "<span class='notice'>You install the capacitor.</span>")
+				to_chat(user, span_notice("You install the capacitor."))
 				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
 				capacitor = W
 				log_message("[W] installed", LOG_MECHA)
 				update_part_values()
 			else
-				to_chat(user, "<span class='warning'>There's already a capacitor installed!</span>")
+				to_chat(user, span_warning("There's already a capacitor installed!"))
 		return
 
 	if(istype(W, /obj/item/stack/cable_coil))
@@ -247,9 +247,9 @@
 			var/obj/item/stack/cable_coil/CC = W
 			if(CC.use(2))
 				clearInternalDamage(MECHA_INT_SHORT_CIRCUIT)
-				to_chat(user, "<span class='notice'>You replace the fused wires.</span>")
+				to_chat(user, span_notice("You replace the fused wires."))
 			else
-				to_chat(user, "<span class='warning'>You need two lengths of cable to fix this exosuit!</span>")
+				to_chat(user, span_warning("You need two lengths of cable to fix this exosuit!"))
 		return
 
 	if(istype(W, /obj/item/mecha_parts))
@@ -264,29 +264,29 @@
 	. = TRUE
 	if(construction_state == MECHA_SECURE_BOLTS)
 		construction_state = MECHA_LOOSE_BOLTS
-		to_chat(user, "<span class='notice'>You undo the securing bolts.</span>")
+		to_chat(user, span_notice("You undo the securing bolts."))
 		return
 	if(construction_state == MECHA_LOOSE_BOLTS)
 		construction_state = MECHA_SECURE_BOLTS
-		to_chat(user, "<span class='notice'>You tighten the securing bolts.</span>")
+		to_chat(user, span_notice("You tighten the securing bolts."))
 
 /obj/mecha/crowbar_act(mob/living/user, obj/item/I)
 	..()
 	. = TRUE
 	if(construction_state == MECHA_LOOSE_BOLTS)
 		construction_state = MECHA_OPEN_HATCH
-		to_chat(user, "<span class='notice'>You open the hatch to the power unit.</span>")
+		to_chat(user, span_notice("You open the hatch to the power unit."))
 		return
 	if(construction_state == MECHA_OPEN_HATCH)
 		construction_state = MECHA_LOOSE_BOLTS
-		to_chat(user, "<span class='notice'>You close the hatch to the power unit.</span>")
+		to_chat(user, span_notice("You close the hatch to the power unit."))
 
 /obj/mecha/screwdriver_act(mob/living/user, obj/item/I)
 	..()
 	. = TRUE
 	if(internal_damage & MECHA_INT_TEMP_CONTROL)
 		clearInternalDamage(MECHA_INT_TEMP_CONTROL)
-		to_chat(user, "<span class='notice'>You repair the damaged temperature controller.</span>")
+		to_chat(user, span_notice("You repair the damaged temperature controller."))
 		return
 
 /obj/mecha/welder_act(mob/living/user, obj/item/W)

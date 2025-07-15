@@ -211,12 +211,12 @@
 	l += "<div class='statusDisplay'><b>[linked_techweb.organization] [department_tag] Department Lathe</b>"
 	l += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]"
 	if (materials.mat_container)
-		l += "<A href='?src=[REF(src)];switch_screen=[RESEARCH_FABRICATOR_SCREEN_MATERIALS]'><B>Material Amount:</B> [materials.format_amount()]</A>"
+		l += "<A href='byond://?src=[REF(src)];switch_screen=[RESEARCH_FABRICATOR_SCREEN_MATERIALS]'><B>Material Amount:</B> [materials.format_amount()]</A>"
 	else
 		l += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
-	l += "<A href='?src=[REF(src)];switch_screen=[RESEARCH_FABRICATOR_SCREEN_CHEMICALS]'><B>Chemical volume:</B> [reagents.total_volume] / [reagents.maximum_volume]</A>"
-	l += "<a href='?src=[REF(src)];sync_research=1'>Synchronize Research</a>"
-	l += "<a href='?src=[REF(src)];switch_screen=[RESEARCH_FABRICATOR_SCREEN_MAIN]'>Main Screen</a></div>[RDSCREEN_NOBREAK]"
+	l += "<A href='byond://?src=[REF(src)];switch_screen=[RESEARCH_FABRICATOR_SCREEN_CHEMICALS]'><B>Chemical volume:</B> [reagents.total_volume] / [reagents.maximum_volume]</A>"
+	l += "<a href='byond://?src=[REF(src)];sync_research=1'>Synchronize Research</a>"
+	l += "<a href='byond://?src=[REF(src)];switch_screen=[RESEARCH_FABRICATOR_SCREEN_MAIN]'>Main Screen</a></div>[RDSCREEN_NOBREAK]"
 	return l
 
 /obj/machinery/rnd/production/proc/ui_screen_materials()
@@ -230,20 +230,20 @@
 		var/amount = materials.mat_container.materials[mat_id]
 		var/ref = REF(M)
 		l += "* [amount] of [M.name]: "
-		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
-		if(amount >= MINERAL_MATERIAL_AMOUNT*5) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
-		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='?src=[REF(src)];ejectsheet=[ref];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='byond://?src=[REF(src)];ejectsheet=[ref];eject_amt=1'>Eject</A> [RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT*5) l += "<A href='byond://?src=[REF(src)];ejectsheet=[ref];eject_amt=5'>5x</A> [RDSCREEN_NOBREAK]"
+		if(amount >= MINERAL_MATERIAL_AMOUNT) l += "<A href='byond://?src=[REF(src)];ejectsheet=[ref];eject_amt=50'>All</A>[RDSCREEN_NOBREAK]"
 		l += ""
 	l += "</div>[RDSCREEN_NOBREAK]"
 	return l
 
 /obj/machinery/rnd/production/proc/ui_screen_chemicals()
 	var/list/l = list()
-	l += "<div class='statusDisplay'><A href='?src=[REF(src)];disposeall=1'>Disposal All Chemicals in Storage</A>"
+	l += "<div class='statusDisplay'><A href='byond://?src=[REF(src)];disposeall=1'>Disposal All Chemicals in Storage</A>"
 	l += "<h3>Chemical Storage:</h3>"
 	for(var/datum/reagent/R in reagents.reagent_list)
 		l += "[R.name]: [R.volume]"
-		l += "<A href='?src=[REF(src)];dispose=[R.type]'>Purge</A>"
+		l += "<A href='byond://?src=[REF(src)];dispose=[R.type]'>Purge</A>"
 	l += "</div>"
 	return l
 
@@ -278,20 +278,20 @@
 		t = check_mat(D, M)
 		temp_material += " | "
 		if (t < 1)
-			temp_material += "<span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+			temp_material += span_bad("[all_materials[M]/coeff] [CallMaterialName(M)]")
 		else
 			temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 		c = min(c,t)
 
 	if (c >= 1)
-		l += "<A href='?src=[REF(src)];build=[D.id];amount=1'>[D.name]</A>[RDSCREEN_NOBREAK]"
+		l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=1'>[D.name]</A>[RDSCREEN_NOBREAK]"
 		if(c >= 5)
-			l += "<A href='?src=[REF(src)];build=[D.id];amount=5'>x5</A>[RDSCREEN_NOBREAK]"
+			l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=5'>x5</A>[RDSCREEN_NOBREAK]"
 		if(c >= 10)
-			l += "<A href='?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
+			l += "<A href='byond://?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
 		l += "[temp_material][RDSCREEN_NOBREAK]"
 	else
-		l += "<span class='linkOff'>[D.name]</span>[temp_material][RDSCREEN_NOBREAK]"
+		l += "[span_linkoff("[D.name]")][temp_material][RDSCREEN_NOBREAK]"
 	l += ""
 	return l
 
@@ -380,7 +380,7 @@
 			l += "</tr><tr>"
 			line_length = 1
 
-		l += "<td><A href='?src=[REF(src)];category=[C];switch_screen=[menu_num]'>[C]</A></td>"
+		l += "<td><A href='byond://?src=[REF(src)];category=[C];switch_screen=[menu_num]'>[C]</A></td>"
 		line_length++
 
 	l += "</tr></table></div>"
