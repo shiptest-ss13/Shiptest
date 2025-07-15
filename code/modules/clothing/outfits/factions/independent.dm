@@ -109,6 +109,30 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
+/datum/outfit/job/independent/captain/empty
+	name = "Independent - Captain (Naked)"
+	job_icon = "captain"
+	jobtype = /datum/job/captain
+
+	id = /obj/item/card/id/gold
+	gloves = null
+	ears = /obj/item/radio/headset/headset_com
+	uniform = /obj/item/clothing/under/rank/command/captain
+	suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
+	shoes = /obj/item/clothing/shoes/laceup
+	head = null
+	backpack_contents = null
+
+	backpack = /obj/item/storage/backpack/captain
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com
+
+	accessory = /obj/item/clothing/accessory/medal/gold/captain
+
+	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
+
 /datum/outfit/job/independent/captain/cheap //for Miskilamo ships
 	name = "Independent - Captain (Low Budget)"
 	gloves = /obj/item/clothing/gloves/color/white //poverty gloves
