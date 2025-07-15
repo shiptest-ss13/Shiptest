@@ -134,11 +134,6 @@
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
 		/obj/effect/spawner/random/anomaly/waste = 1,
-		/obj/structure/vein/waste = 4,
-		/obj/structure/vein/waste/classtwo = 6,
-		/obj/structure/vein/waste/classtwo/rare = 2,
-		/obj/structure/vein/waste/classthree = 2,
-		/obj/structure/vein/waste/classthree/rare = 1,
 	)
 
 	mob_spawn_list = list(
@@ -332,9 +327,6 @@
 		/obj/effect/radiation/waste/intense = 10,
 		/obj/structure/geyser/random = 1,
 		/obj/effect/spawner/random/anomaly/waste/cave = 1,
-		/obj/structure/vein/waste = 8,
-		/obj/structure/vein/waste/classtwo = 4,
-		/obj/structure/vein/waste/classthree = 1,
 	)
 	mob_spawn_list = list(
 		/mob/living/basic/hivebot = 50,
