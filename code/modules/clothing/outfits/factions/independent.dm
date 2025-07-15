@@ -94,6 +94,7 @@
 	gloves = /obj/item/clothing/gloves/color/captain
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/command/captain
+	suit = /obj/item/clothing/suit/armor/captaincoat
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat
