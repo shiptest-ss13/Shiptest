@@ -206,14 +206,12 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
 	},
-/obj/structure/closet/crate/bin{
-	pixel_x = -7
-	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
 	pixel_y = 13
 	},
+/obj/structure/chair/bench/blue/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm/commad)
 "bh" = (
@@ -585,9 +583,9 @@
 	pixel_y = 6;
 	pixel_x = 8
 	},
-/obj/item/pen/sleepy{
-	pixel_y = 9;
-	pixel_x = 8
+/obj/item/pen{
+	pixel_y = 8;
+	pixel_x = 6
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
@@ -1235,9 +1233,6 @@
 /obj/item/bedsheet/double/blue{
 	dir = 4
 	},
-/obj/structure/curtain/cloth/fancy{
-	dir = 4
-	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
 "gR" = (
@@ -1316,6 +1311,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
+"ii" = (
+/obj/structure/chair/bench/blue/directional/west{
+	pixel_x = 6;
+	pixel_y = 1
+	},
+/turf/open/floor/suns/hatch/bamboo,
+/area/ship/crew/dorm/commad)
 "il" = (
 /obj/structure/closet/secure_closet/engineering_electrical{
 	populate = 0
@@ -1460,11 +1462,26 @@
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "iL" = (
-/obj/structure/chair/bench/blue/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
+/obj/structure/filingcabinet/double{
+	pixel_y = 10;
+	pixel_x = -6
+	},
+/obj/structure/filingcabinet{
+	pixel_x = 11;
+	pixel_y = 10
+	},
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
+/obj/item/folder/syndicate,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
 "iO" = (
@@ -1642,9 +1659,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/sign/poster/solgov/recyle{
-	pixel_x = 27
-	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/commad)
 "jO" = (
@@ -1932,8 +1946,19 @@
 	color = "#E6D2BA";
 	dir = 6
 	},
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/airalarm/directional/west{
+	pixel_y = 8
+	},
 /obj/machinery/fax/syndicate,
+/obj/machinery/button/door{
+	pixel_x = -22;
+	pixel_y = -10;
+	name = "door lock";
+	id = "cbd";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "md" = (
@@ -1973,7 +1998,8 @@
 	pixel_x = 4
 	},
 /obj/item/toy/plush/blahaj{
-	pixel_x = 6
+	pixel_x = 6;
+	layer = 4
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
@@ -2354,6 +2380,15 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
+/obj/item/folder/syndicate{
+	pixel_y = 4;
+	pixel_x = 3
+	},
+/obj/item/toy/cards/deck{
+	pixel_x = -5;
+	pixel_y = 2;
+	desc = "Fancy a game of solitare?"
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
 "pR" = (
@@ -2455,9 +2490,6 @@
 	},
 /area/ship/medical)
 "qW" = (
-/obj/structure/sign/poster/official/fruit_bowl{
-	pixel_y = -28
-	},
 /obj/structure/chair/sofa/purple/corner/directional/west,
 /obj/structure/platform/wood_two{
 	dir = 6
@@ -2800,6 +2832,9 @@
 /obj/item/pen{
 	pixel_y = 7;
 	pixel_x = 5
+	},
+/obj/structure/sign/poster/contraband/engis_unite{
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
@@ -4035,6 +4070,15 @@
 /obj/structure/sign/painting{
 	pixel_y = 32
 	},
+/obj/item/storage/backpack/satchel/leather{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/storage/briefcase/lawyer{
+	pixel_x = 5;
+	pixel_y = -10
+	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
 "HD" = (
@@ -4075,6 +4119,10 @@
 	},
 /obj/structure/railing/thin{
 	layer = 4.12
+	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_y = -26;
+	pixel_x = 30
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
@@ -4945,6 +4993,10 @@
 /obj/effect/turf_decal/siding/black/end,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light/small/directional/north,
+/obj/structure/sign/warning/electricshock{
+	pixel_x = 24;
+	pixel_y = 5
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "OH" = (
@@ -5053,9 +5105,6 @@
 	dir = 4;
 	name = "regal bedsheet"
 	},
-/obj/structure/curtain/cloth/fancy{
-	dir = 4
-	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
 "PL" = (
@@ -5110,6 +5159,9 @@
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2,
+/obj/structure/sign/poster/contraband/tools{
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/starboard)
 "PO" = (
@@ -5252,7 +5304,12 @@
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/light/small/directional/north,
 /obj/item/towel{
-	pixel_y = 9
+	pixel_y = 9;
+	pixel_x = -3
+	},
+/obj/item/towel{
+	pixel_y = 9;
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm)
@@ -5353,6 +5410,10 @@
 	pixel_x = 11;
 	pixel_y = 20
 	},
+/obj/item/storage/backpack/satchel/med{
+	pixel_x = 5;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
 "SD" = (
@@ -5424,8 +5485,20 @@
 	dir = 8
 	},
 /obj/item/reagent_containers/food/drinks/bottle/faraseta{
-	pixel_y = 12;
-	pixel_x = -5
+	pixel_y = 14;
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 6;
+	pixel_x = -9
+	},
+/obj/item/storage/pill_bottle/dice{
+	pixel_y = 4;
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 4;
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm)
@@ -5490,15 +5563,19 @@
 	pixel_y = 6;
 	pixel_x = 8
 	},
-/obj/item/pen/sleepy{
-	pixel_y = 9;
-	pixel_x = 8
-	},
 /obj/item/reagent_containers/food/drinks/mug/tea{
 	pixel_x = -7;
 	pixel_y = 7
 	},
 /obj/item/desk_flag/trans,
+/obj/item/pen{
+	pixel_y = 8;
+	pixel_x = 6
+	},
+/obj/item/pen/fountain/captain{
+	pixel_y = -2;
+	pixel_x = 8
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
 "TV" = (
@@ -5606,7 +5683,8 @@
 /obj/machinery/door/airlock/command{
 	dir = 8;
 	name = "Bridge";
-	close_speed = 100
+	close_speed = 100;
+	id_tag = "cbd"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -5818,6 +5896,14 @@
 /obj/structure/closet/wall/directional/east,
 /obj/effect/turf_decal/siding/black/end,
 /obj/machinery/light/small/directional/west,
+/obj/item/towel{
+	pixel_x = 11;
+	pixel_y = -5
+	},
+/obj/item/towel{
+	pixel_x = 11;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/commad)
 "VH" = (
@@ -5876,6 +5962,10 @@
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
+	},
+/obj/item/storage/backpack/satchel/med{
+	pixel_x = -6;
+	pixel_y = -3
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/commad)
@@ -6097,6 +6187,17 @@
 	pixel_x = 6
 	},
 /obj/machinery/light/small/directional/west,
+/obj/item/storage/backpack/satchel/leather{
+	pixel_x = 10;
+	pixel_y = -10
+	},
+/obj/item/storage/backpack/satchel/leather{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/storage/backpack/satchel/leather{
+	pixel_x = 10
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "Xw" = (
@@ -6169,6 +6270,14 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/button/door{
+	pixel_y = 22;
+	pixel_x = -9;
+	id = "homf";
+	name = "door lock";
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/dorm/commad)
 "XX" = (
@@ -6258,6 +6367,13 @@
 	pixel_y = 20;
 	pixel_x = -4
 	},
+/obj/item/storage/backpack/duffelbag/syndie{
+	pixel_y = 3;
+	name = "Mr. Duffel"
+	},
+/obj/structure/sign/poster/contraband/shamblers_juice{
+	pixel_x = -28
+	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm)
 "YC" = (
@@ -6340,6 +6456,10 @@
 /obj/item/flashlight/lamp/green{
 	pixel_y = 17;
 	pixel_x = -3
+	},
+/obj/item/toy/plush/hornet/gay{
+	pixel_y = 9;
+	pixel_x = 4
 	},
 /turf/open/floor/suns/hatch/bamboo,
 /area/ship/crew/dorm/commad)
@@ -7185,7 +7305,7 @@ ry
 uV
 Lm
 Lm
-Lm
+ry
 ZJ
 PG
 Lm
@@ -7214,7 +7334,7 @@ be
 Lm
 iL
 VV
-VV
+ii
 EY
 fR
 fR
