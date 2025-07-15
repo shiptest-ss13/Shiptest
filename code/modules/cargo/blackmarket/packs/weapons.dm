@@ -528,3 +528,14 @@
 	cost_max = 3000
 	stock_max = 2
 	availability_prob = 25
+
+/datum/blackmarket_item/weapon/spikeshield
+	name = "Spiked Ballistic Shield"
+	desc = "Be the ancient warrior you always wanted to be. Block bullets and impale your enemies."
+	item = /obj/item/shield/riot/spike
+
+	cost_min = 1000
+	cost_max = 1500
+	stock_max = 2
+	availability_prob = 50
+
