@@ -50,7 +50,7 @@
 	say("HAAAAHAAAHAAAAA!!")
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/brawler
-	name = "Hermit Brawler""
+	name = "Hermit Brawler"
 	desc = "A stanced figure sheltered behind a shoddy, makeshift wooden buckler. A jagged machete is held within their clutch."
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/melee/sword/mass
