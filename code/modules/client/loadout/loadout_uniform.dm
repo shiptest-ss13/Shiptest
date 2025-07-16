@@ -295,10 +295,10 @@
 	display_name = "overalls, black"
 	path = /obj/item/clothing/under/overalls/black
 
-/datum/gear/uniform/overalls/denim
+/datum/gear/uniform/overalls/olive
 	display_name = "overalls, olive"
 	path = /obj/item/clothing/under/overalls/olive
 
-/datum/gear/uniform/overalls/denim
+/datum/gear/uniform/overalls/brown
 	display_name = "overalls, brown"
 	path = /obj/item/clothing/under/overalls/brown
