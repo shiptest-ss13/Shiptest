@@ -117,10 +117,10 @@
 	return ..()
 
 /datum/component/embedded/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(jostleCheck))
-	RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, PROC_REF(ripOut))
-	RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, PROC_REF(safeRemove))
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(checkTweeze))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(jostle_check))
+	RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, PROC_REF(rip_out))
+	RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, PROC_REF(safe_remove))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(check_tweeze))
 
 /datum/component/embedded/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL, COMSIG_PARENT_ATTACKBY))
@@ -161,7 +161,7 @@
 
 
 /// Called every time a carbon with a harmful embed moves, rolling a chance for the item to cause pain. The chance is halved if the carbon is crawling or walking.
-/datum/component/embedded/proc/jostleCheck()
+/datum/component/embedded/proc/jostle_check()
 	SIGNAL_HANDLER
 
 	var/mob/living/carbon/victim = parent
@@ -187,11 +187,11 @@
 		span_danger("[weapon] falls [harmful ? "out" : "off"] of [victim.name]'s [limb.name]!"),
 		span_userdanger("[weapon] falls [harmful ? "out" : "off"] of your [limb.name]!"),
 	)
-	safeRemove()
+	safe_remove()
 
 
 /// Called when a carbon with an object embedded/stuck to them inspects themselves and clicks the appropriate link to begin ripping the item out. This handles the ripping attempt, descriptors, and dealing damage, then calls safe_remove()
-/datum/component/embedded/proc/ripOut(datum/source, obj/item/I, obj/item/bodypart/limb)
+/datum/component/embedded/proc/rip_out(datum/source, obj/item/I, obj/item/bodypart/limb)
 	SIGNAL_HANDLER
 
 	if(I != weapon || src.limb != limb)
@@ -201,7 +201,7 @@
 	var/time_taken = rip_time * weapon.w_class
 	INVOKE_ASYNC(src, PROC_REF(complete_rip_out), victim, I, limb, time_taken)
 
-/// everything async that ripOut used to do
+/// everything async that rip_out used to do
 /datum/component/embedded/proc/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, time_taken)
 	victim.visible_message(
 		span_warning("[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name]."),
@@ -225,11 +225,11 @@
 		span_notice("[victim] successfully rips [weapon] [harmful ? "out" : "off"] of [victim.p_their()] [limb.name]!"),
 		span_notice("You successfully remove [weapon] from your [limb.name]."),
 	)
-	safeRemove(victim)
+	safe_remove(victim)
 
 /// This proc handles the final step and actual removal of an embedded/stuck item from a carbon, whether or not it was actually removed safely.
 /// If you want the thing to go into someone's hands rather than the floor, pass them in to_hands
-/datum/component/embedded/proc/safeRemove(mob/to_hands)
+/datum/component/embedded/proc/safe_remove(mob/to_hands)
 	SIGNAL_HANDLER
 
 	var/mob/living/carbon/victim = parent
@@ -258,7 +258,7 @@
 	qdel(src)
 
 /// The signal for listening to see if someone is using a hemostat on us to pluck out this object
-/datum/component/embedded/proc/checkTweeze(mob/living/carbon/victim, obj/item/possible_tweezers, mob/user)
+/datum/component/embedded/proc/check_tweeze(mob/living/carbon/victim, obj/item/possible_tweezers, mob/user)
 	SIGNAL_HANDLER
 
 	if(!istype(victim) || possible_tweezers.tool_behaviour != TOOL_HEMOSTAT || user.zone_selected != limb.body_zone)
@@ -308,4 +308,4 @@
 
 	to_chat(user, span_notice("You successfully pluck [weapon] from [victim]'s [limb.name]."))
 	to_chat(victim, span_notice("[user] plucks [weapon] from your [limb.name]."))
-	safeRemove(user)
+	safe_remove(user)

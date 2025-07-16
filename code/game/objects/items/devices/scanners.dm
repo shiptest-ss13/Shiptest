@@ -101,7 +101,7 @@ GENE SCANNER
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
-	scanmode = (scanmode + 1) % 3
+	scanmode = (scanmode + 1) % 2
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
 			to_chat(user, span_notice("You switch the health analyzer to check physical health."))
@@ -118,8 +118,11 @@ GENE SCANNER
 
 	// Clumsiness/brain damage check
 	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
-		user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
-							span_notice("You stupidly try to analyze the floor's vitals!"))
+		user.visible_message(
+			span_warning("[user] analyzes the floor's vitals!"),
+			span_notice("You stupidly try to analyze the floor's vitals!"),
+		)
+
 		to_chat(user, "[span_info("Analyzing results for The floor:\n\tOverall status: <b>Healthy</b>")]\
 					\n[span_info("Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font>")]\
 					\n[span_info("\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font>")]\
@@ -133,8 +136,6 @@ GENE SCANNER
 		healthscan(user, M, mode, advanced)
 	else if(scanmode == SCANMODE_CHEMICAL)
 		chemscan(user, M)
-	// else
-	// 	woundscan(user, M, src)
 
 	add_fingerprint(user)
 
@@ -371,7 +372,7 @@ GENE SCANNER
 		for(var/obj/item/bodypart/wounded_part as anything in wounded_parts)
 			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
 			for(var/datum/wound/W as anything in wounded_part.wounds)
-				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
+				render_list += "<div class='ml-2'>Type: [W.name]\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n"
 			render_list += "</span>"
 
 	for(var/thing in M.diseases)

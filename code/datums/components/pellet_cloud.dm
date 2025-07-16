@@ -152,13 +152,14 @@
 
 	if(isgrenade(parent)) // handle_martyrs can reduce the radius and thus the number of pellets we produce if someone dives on top of a frag grenade
 		INVOKE_ASYNC(src, PROC_REF(handle_martyrs), punishable_triggerer) // note that we can modify radius in this proc
+
 	else if(istype(parent, /obj/item/mine/pressure/explosive))
 		var/obj/item/mine/pressure/explosive/triggered_mine = parent
 		if(triggered_mine.shred_triggerer && istype(punishable_triggerer)) // free shrapnel for the idiot who stepped on it if we're a mine that shreds the triggerer
 			pellet_delta += radius // so they don't count against the later total
 			if(punishable_triggerer.loc == triggered_mine.loc)//only trigger this if they're actually on the tile
 				for(var/i in 1 to radius)
-				INVOKE_ASYNC(src, PROC_REF(pew), punishable_triggerer, TRUE)
+					INVOKE_ASYNC(src, PROC_REF(pew), punishable_triggerer, TRUE)
 
 	if(radius < 1)
 		return
@@ -180,7 +181,7 @@
 // Note we track anyone who's alive and client'd when they get shredded in var/list/purple_hearts, for achievement checking later
 
 /datum/component/pellet_cloud/proc/handle_martyrs(mob/living/punishable_triggerer)
-	// SIGNAL_HANDLER
+	SIGNAL_HANDLER
 
 	var/magnitude_absorbed
 	var/list/martyrs = list()

@@ -226,7 +226,7 @@
 
 /mob/living/proc/send_item_attack_message(obj/item/attacking_item, mob/living/user, hit_area, obj/item/bodypart/hit_bodypart)
 	var/message_verb = "attacked"
-	if(length(attacking_item.attack_verb.len))
+	if(length(attacking_item.attack_verb))
 		message_verb = "[pick(attacking_item.attack_verb)]"
 	else if(!attacking_item.force)
 		return
@@ -246,5 +246,8 @@
 
 	visible_message(
 		span_danger("[attack_message]"),
-		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE,)
+		span_userdanger("[attack_message_local]"),
+		null,
+		COMBAT_MESSAGE_RANGE,
+	)
 	return 1

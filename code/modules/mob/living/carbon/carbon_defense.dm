@@ -1,14 +1,3 @@
-/mob/living/carbon/attackby(obj/item/W, mob/user, params)
-	var/obj/item/bodypart/BP = get_bodypart(check_zone(user.zone_selected))
-	if(!BP)
-		return ..()
-	// var/painless = (HAS_TRAIT(user, TRAIT_ANALGESIA) || HAS_TRAIT(user, TRAIT_PAIN_RESIST))
-	if(W.tool_behaviour == TOOL_WELDER && IS_ROBOTIC_LIMB(BP) && BP.brute_dam) //prioritize healing if we're synthetic
-		return ..()
-	if(user.a_intent != INTENT_HELP || !W.get_temperature()) //this will also catch low damage synthetic welding
-		return ..()
-	. = TRUE
-
 /mob/living/carbon/get_eye_protection()
 	. = ..()
 	var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)

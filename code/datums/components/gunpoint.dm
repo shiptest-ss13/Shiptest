@@ -8,9 +8,9 @@
 #define GUNPOINT_BASE_WOUND_BONUS 5
 /// How much the damage and wound bonus mod is multiplied when you're on stage 1
 #define GUNPOINT_MULT_STAGE_1 1
-/// As above, for stage 2
+/// How much the damage and wound bonus mod is multiplied when you're on stage 2
 #define GUNPOINT_MULT_STAGE_2 2
-/// As above, for stage 3
+/// How much the damage and wound bonus mod is multiplied when you're on stage 3
 #define GUNPOINT_MULT_STAGE_3 2.5
 
 
@@ -25,7 +25,6 @@
 
 	var/point_of_no_return = FALSE
 
-// *extremely bad russian accent* no!
 /datum/component/gunpoint/Initialize(mob/living/targ, obj/item/gun/wep)
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE

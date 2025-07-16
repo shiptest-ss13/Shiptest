@@ -23,20 +23,25 @@
 			return
 		if(!in_range(usr, bodypart.owner))
 			return
+
 		var/mob/living/carbon/C = usr
 		var/self = (C == bodypart.owner)
 		C.visible_message(
 			span_notice("[C] begins removing [name] from [self ? "[bodypart.owner.p_their(TRUE)]" : "[bodypart.owner]'s" ] [bodypart.name]..."),
 			span_notice("You begin to remove [name] from [self ? "your" : "[bodypart.owner]'s"] [bodypart.name]..."),
 		)
+
 		if(!do_after(C, (self ? SELF_AID_REMOVE_DELAY : OTHER_AID_REMOVE_DELAY), target=bodypart.owner))
 			return
+
 		if(QDELETED(src))
 			return
+
 		C.visible_message(
 			span_notice("[C] removes [name] from [self ? "[bodypart.owner.p_their(TRUE)]" : "[bodypart.owner]'s" ] [bodypart.name].</span>"),
 			span_notice("You remove [name] from [self ? "your" : "[bodypart.owner]'s" ] [bodypart.name]."),
 		)
+
 		var/obj/item/gotten = rip_off()
 		if(gotten && !C.put_in_hands(gotten))
 			gotten.forceMove(get_turf(C))
