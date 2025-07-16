@@ -14,6 +14,9 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/firedoor/window,
+/obj/machinery/door/poddoor/shutters{
+	id = "smaint_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "aE" = (
@@ -182,6 +185,9 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/firedoor/window,
+/obj/machinery/door/poddoor/shutters{
+	id = "pmaint_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "bR" = (
@@ -595,6 +601,7 @@
 "gG" = (
 /obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "gI" = (
@@ -711,6 +718,9 @@
 	},
 /obj/item/storage/toolbox/ammo/a308{
 	pixel_x = -10
+	},
+/obj/item/storage/toolbox/ammo/buck_n_slug{
+	pixel_x = 10
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
@@ -849,6 +859,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "sboard_engine"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "js" = (
@@ -981,6 +995,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "sboard_engine"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "ld" = (
@@ -1025,6 +1043,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -1399,6 +1418,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "pr" = (
@@ -1516,6 +1536,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "qI" = (
@@ -1588,8 +1609,13 @@
 /turf/closed/wall/rust,
 /area/ship/crew)
 "ss" = (
-/obj/machinery/light/directional/south,
 /obj/structure/closet/crate/bin,
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -22;
+	id = "sboard_maint";
+	name = "bridge shutters"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "sA" = (
@@ -1611,6 +1637,7 @@
 /area/ship/maintenance/starboard)
 "tb" = (
 /obj/structure/flippedtable,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "tc" = (
@@ -1741,6 +1768,10 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
+	},
+/obj/machinery/button/door{
+	id = "sboard_engine";
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -1992,6 +2023,7 @@
 /obj/structure/flippedtable{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "xb" = (
@@ -2106,7 +2138,8 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	dir = 4
+	dir = 4;
+	id = "tbridge"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -2148,6 +2181,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "zZ" = (
@@ -2381,6 +2415,7 @@
 	},
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -2451,6 +2486,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "port_engine"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "EN" = (
@@ -2466,6 +2505,9 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/firedoor/window,
+/obj/machinery/door/poddoor/shutters{
+	id = "pmaint_shutter"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Fc" = (
@@ -2554,6 +2596,7 @@
 	pixel_x = -7;
 	pixel_y = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -2841,9 +2884,12 @@
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "JA" = (
-/turf/open/floor/plating{
-	icon_state = "plating_rust"
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
+/obj/structure/cable/yellow,
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "JE" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
@@ -3013,6 +3059,7 @@
 /obj/structure/door_assembly/door_assembly_hatch{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/heavy/closed,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -3021,6 +3068,10 @@
 /obj/structure/table,
 /obj/item/storage/cans/sixbeer,
 /obj/machinery/cell_charger,
+/obj/machinery/button/door{
+	id = "pmaint_shutter";
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "Lz" = (
@@ -3249,6 +3300,12 @@
 	pixel_x = -9;
 	pixel_y = -6
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -22;
+	id = "sboard_maint";
+	name = "bridge shutters"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ol" = (
@@ -3331,6 +3388,7 @@
 	pixel_x = 8;
 	pixel_y = 14
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "OH" = (
@@ -3370,6 +3428,10 @@
 /obj/item/clothing/head/hardhat{
 	pixel_x = 8;
 	pixel_y = -7
+	},
+/obj/machinery/button/door{
+	id = "port_engine";
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
@@ -3422,6 +3484,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "port_engine"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
@@ -3504,6 +3570,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "Rc" = (
@@ -4318,6 +4386,7 @@
 	pixel_x = 5
 	},
 /obj/item/clothing/head/soft,
+/obj/item/storage/firstaid,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "ZC" = (
@@ -4335,6 +4404,7 @@
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "electricdanger"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "ZY" = (
@@ -4945,7 +5015,7 @@ lJ
 QJ
 vr
 qE
-kO
+JA
 wb
 ZH
 II
@@ -4983,7 +5053,7 @@ QJ
 QJ
 wY
 Bk
-Bk
+Hk
 bR
 so
 vl
@@ -5019,7 +5089,7 @@ lJ
 lJ
 QJ
 XC
-JA
+hh
 Ab
 rU
 rU
@@ -5055,7 +5125,7 @@ lJ
 lJ
 lJ
 QJ
-XC
+Lm
 ti
 Ab
 jH
@@ -5129,7 +5199,7 @@ Ek
 lJ
 lJ
 Fh
-XC
+Lm
 rU
 uG
 NI
@@ -5166,7 +5236,7 @@ lJ
 lJ
 lJ
 tb
-XC
+Lm
 Ab
 Ab
 Az
@@ -5239,7 +5309,7 @@ Ek
 lJ
 lJ
 tV
-Bk
+Hk
 Wv
 Ab
 UO
