@@ -200,6 +200,14 @@
 	for (var/i in 1 to 4)
 		new /obj/item/storage/box/ammo/a12g_slug(src)
 
+/obj/item/storage/toolbox/ammo/buck_n_slug/PopulateContents()
+	name = "ammo can (12ga mixed)"
+	icon_state = "ammobox_12ga"
+	current_skin = "12ga Buckshot"
+	for (var/i in 1 to 2)
+		new /obj/item/storage/box/ammo/a12g_buckshot(src)
+		new /obj/item/storage/box/ammo/a12g_slug(src)
+
 /obj/item/storage/toolbox/ammo/c50bmg/PopulateContents()
 	name = "ammo can (.50BMG)"
 	icon_state = "ammobox_50"

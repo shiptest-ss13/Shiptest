@@ -41,6 +41,13 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"aV" = (
+/obj/machinery/chem_press,
+/obj/structure/table/wood,
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
+/area/ship/maintenance)
 "bj" = (
 /obj/machinery/light/directional/north,
 /obj/structure/rack,
@@ -295,6 +302,7 @@
 /obj/structure/chair/sofa/brown/old/right{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "dF" = (
@@ -379,7 +387,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-9"
 	},
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "radiation"
+	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/plasma,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "eA" = (
@@ -597,6 +609,7 @@
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/comfy/grey/old/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
 "gQ" = (
@@ -688,13 +701,16 @@
 /area/ship/security/armory)
 "hU" = (
 /obj/structure/rack,
-/obj/item/storage/toolbox/ammo/a762_40{
-	pixel_x = 5;
-	pixel_y = 6
-	},
 /obj/item/storage/toolbox/ammo/c9mm{
-	pixel_x = -6;
-	pixel_y = 2
+	pixel_x = -10;
+	pixel_y = 10
+	},
+/obj/item/storage/toolbox/ammo/a308{
+	pixel_y = 10;
+	pixel_x = 10
+	},
+/obj/item/storage/toolbox/ammo/a308{
+	pixel_x = -10
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
@@ -715,6 +731,10 @@
 	icon_state = "6-10"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/decoration/glowstick/on,
+/obj/structure/sign/warning/nosmoking/burnt{
+	pixel_y = 27
+	},
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -748,6 +768,9 @@
 	},
 /obj/item/melee/spear/explosive,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/medical/chem_jug,
+/obj/effect/spawner/random/medical/chem_jug,
+/obj/effect/spawner/random/medical/chem_jug,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "iP" = (
@@ -795,6 +818,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
+"jd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/telecomms/server/presets/pirate{
+	network = "frontier_commnet"
+	},
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
+/area/ship/maintenance)
 "jh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -830,7 +862,7 @@
 "jt" = (
 /obj/machinery/door/window/southleft,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/telecomms/allinone,
+/obj/machinery/ltsrbt,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "jA" = (
@@ -988,6 +1020,15 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"lz" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
+/area/ship/maintenance)
 "lE" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-12"
@@ -1056,6 +1097,12 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"mv" = (
+/obj/structure/floodlight_frame,
+/obj/item/light/tube/broken,
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "mw" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/crew/crewtwo)
@@ -1094,23 +1141,7 @@
 	pixel_y = 6;
 	pixel_x = 7
 	},
-/obj/item/clothing/suit/armor/vest/frontier{
-	pixel_y = -4;
-	pixel_x = 8
-	},
 /obj/machinery/light/directional/north,
-/obj/item/clothing/suit/armor/vest/frontier{
-	pixel_y = -4;
-	pixel_x = 8
-	},
-/obj/item/clothing/suit/armor/vest/frontier{
-	pixel_y = -4;
-	pixel_x = 8
-	},
-/obj/item/clothing/suit/armor/vest/frontier{
-	pixel_y = -4;
-	pixel_x = 8
-	},
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier{
 	pixel_y = 6;
 	pixel_x = 7
@@ -1123,26 +1154,46 @@
 	pixel_y = 6;
 	pixel_x = 7
 	},
-/obj/item/storage/belt/military/assault{
-	pixel_x = -4;
-	pixel_y = -11
-	},
-/obj/item/storage/belt/military/assault{
-	pixel_x = -4;
-	pixel_y = -11
-	},
-/obj/item/storage/belt/military/assault{
-	pixel_x = -4;
-	pixel_y = -11
-	},
-/obj/item/storage/belt/military/assault{
-	pixel_x = -4;
-	pixel_y = -11
-	},
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
+/obj/item/storage/belt/security/military/frontiersmen{
+	pixel_x = -4;
+	pixel_y = -10
+	},
+/obj/item/storage/belt/security/military/frontiersmen{
+	pixel_x = -4;
+	pixel_y = -10
+	},
+/obj/item/storage/belt/security/military/frontiersmen{
+	pixel_x = -4;
+	pixel_y = -10
+	},
+/obj/item/storage/belt/security/military/frontiersmen{
+	pixel_x = -4;
+	pixel_y = -10
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof/frontier{
+	pixel_x = 8;
+	pixel_y = -4
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mZ" = (
@@ -1391,8 +1442,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "pE" = (
-/obj/effect/decal/cleanable/chem_pile{
-	pixel_x = 9
+/obj/machinery/telecomms/hub{
+	autolinkers = list("hub","bus","relay","messaging","pirate","broadcasterB","receiverB");
+	id = "Frontiersmen Communications Hub";
+	network = "frontier_commnet"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
@@ -1442,12 +1495,26 @@
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
+"qC" = (
+/obj/machinery/telecomms/processor/preset_six{
+	network = "frontier_commnet"
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "qD" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/security/armory)
 "qE" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 4;
+	pixel_y = 9;
+	layer = 2.79
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
@@ -1615,7 +1682,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/comfy/grey/old/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/crewtwo)
 "tR" = (
@@ -1756,6 +1822,15 @@
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/starboard)
+"uX" = (
+/obj/item/chair/plastic{
+	pixel_x = 1;
+	pixel_y = 10
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ship/maintenance)
 "va" = (
 /obj/structure/railing{
 	dir = 1
@@ -1785,6 +1860,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"vr" = (
+/obj/structure/salvageable/computer,
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "vD" = (
 /obj/structure/cable/yellow{
 	icon_state = "5-10"
@@ -2026,6 +2105,9 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/firedoor/window,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "yV" = (
@@ -2041,6 +2123,9 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/chem_pile{
+	pixel_x = 9
+	},
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -2059,9 +2144,9 @@
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "zJ" = (
-/obj/item/flashlight/glowstick,
-/obj/effect/decal/cleanable/crayon{
-	icon_state = "radiation"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
@@ -2158,10 +2243,12 @@
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
 "BV" = (
-/obj/structure/salvageable/server,
-/turf/open/floor/plating{
-	icon_state = "plating_rust"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
 	},
+/obj/effect/spawner/random/decoration/glowstick/on,
+/turf/open/floor/plating,
 /area/ship/maintenance)
 "Ca" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2229,6 +2316,23 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"Du" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/door_assembly/door_assembly_hatch{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only/closed{
+	dir = 8
+	},
+/obj/structure/firelock_frame/border{
+	dir = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
+/area/ship/maintenance)
 "Dv" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2306,6 +2410,17 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"Eu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/book/manual/wiki/ghetto_chemistry{
+	pixel_y = 11;
+	pixel_x = -7
+	},
+/obj/item/lighter{
+	pixel_x = 5
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "Ev" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -2414,6 +2529,9 @@
 /obj/item/ammo_box/magazine/f4_308/empty,
 /obj/item/ammo_box/magazine/mower_lmg_308,
 /obj/item/ammo_box/magazine/mower_lmg_308,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "FL" = (
@@ -2509,6 +2627,20 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"GP" = (
+/obj/structure/table/wood,
+/obj/item/clothing/mask/surgical,
+/obj/item/reagent_scanner{
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/glass/filter{
+	pixel_y = 4;
+	pixel_x = 11
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/ship/maintenance)
 "GV" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2527,10 +2659,10 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "GY" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
 "Ha" = (
@@ -2545,6 +2677,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
+"Hi" = (
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "Hk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -2576,6 +2712,9 @@
 	icon_state = "6-8"
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/port)
 "HX" = (
@@ -2644,7 +2783,6 @@
 /area/ship/cargo)
 "II" = (
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -2880,7 +3018,6 @@
 	},
 /area/ship/maintenance)
 "Lt" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/table,
 /obj/item/storage/cans/sixbeer,
 /obj/machinery/cell_charger,
@@ -3014,7 +3151,9 @@
 /turf/open/floor/carpet,
 /area/ship/crew)
 "MF" = (
-/obj/structure/floodlight_frame,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "MH" = (
@@ -3036,6 +3175,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "MK" = (
@@ -3119,6 +3261,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"Om" = (
+/obj/machinery/telecomms/bus/preset_six,
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
+/area/ship/maintenance)
 "Oo" = (
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing{
@@ -3297,6 +3445,7 @@
 /obj/item/gun/energy/laser/wasp,
 /obj/item/gun/ballistic/automatic/hmg/mower,
 /obj/item/gun/ballistic/automatic/marksman/f4/indie,
+/obj/item/gun/ballistic/shotgun/brimstone,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "PC" = (
@@ -3349,12 +3498,11 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "QV" = (
-/obj/item/book/manual/wiki/ghetto_chemistry{
-	pixel_y = 11;
-	pixel_x = -7
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
 	},
-/obj/item/lighter{
-	pixel_x = 5
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
@@ -3614,6 +3762,19 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance)
+"Uf" = (
+/obj/machinery/telecomms/broadcaster/preset_left{
+	autolinkers = list("broadcasterA","hub");
+	network = "frontier_commnet"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "Uk" = (
@@ -3662,7 +3823,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "UT" = (
-/obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/hatch,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -3801,11 +3961,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "VQ" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/structure/salvageable/computer,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/salvageable/safe_server,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -3962,11 +4118,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/fluff/paper/stack{
-	dir = 4;
-	pixel_y = 9;
-	layer = 2.79
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
@@ -3979,6 +4130,20 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
+"XN" = (
+/obj/machinery/telecomms/receiver/preset_left{
+	freq_listening = list(1359,1459);
+	autolinkers = list("receiverA","hub");
+	network = "frontier_commnet"
+	},
+/obj/machinery/power/deck_relay{
+	pixel_x = 1;
+	pixel_y = 21
+	},
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
+/area/ship/maintenance)
 "XX" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4198,6 +4363,8 @@ Ek
 Ek
 Ek
 Ek
+Ek
+Ek
 fR
 Ek
 Ek
@@ -4216,6 +4383,8 @@ Ek
 Ek
 "}
 (2,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 Ek
@@ -4262,6 +4431,8 @@ Ek
 Ek
 Ek
 Ek
+Ek
+Ek
 WF
 tq
 Rg
@@ -4286,6 +4457,8 @@ Ek
 Ek
 "}
 (4,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 Ek
@@ -4332,6 +4505,8 @@ Ek
 Ek
 Ek
 Ek
+Ek
+Ek
 tq
 aa
 Uo
@@ -4356,6 +4531,8 @@ Ek
 Ek
 "}
 (6,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 Ek
@@ -4397,6 +4574,8 @@ Ek
 Ek
 Ek
 Ek
+Ek
+Ek
 CG
 Pu
 EI
@@ -4426,6 +4605,8 @@ Ek
 Ek
 "}
 (8,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 Ek
@@ -4467,6 +4648,8 @@ Ek
 Ek
 Ek
 Ek
+Ek
+Ek
 EQ
 DF
 QP
@@ -4500,9 +4683,11 @@ Ek
 Ek
 Ek
 Ek
+lJ
+lJ
 Ek
-Ek
-EQ
+JZ
+aA
 dE
 HS
 mE
@@ -4533,11 +4718,13 @@ Ek
 (11,1,1) = {"
 Ek
 Ek
-lJ
-lJ
 Ek
-JZ
-aA
+Bp
+Bp
+Bp
+Bp
+Bp
+oH
 Lt
 GY
 dX
@@ -4567,11 +4754,13 @@ Ek
 "}
 (12,1,1) = {"
 Ek
-Bp
-Bp
-Bp
-Bp
-Bp
+Ek
+lJ
+lJ
+QJ
+XN
+Uf
+VQ
 oH
 Ha
 uP
@@ -4602,11 +4791,13 @@ Ek
 "}
 (13,1,1) = {"
 Ek
+Ek
 lJ
 lJ
-lJ
-lJ
+QJ
+lz
 BV
+Pb
 CG
 pB
 yl
@@ -4640,8 +4831,10 @@ Ek
 lJ
 lJ
 lJ
+QJ
+pE
 QV
-Pb
+mv
 CG
 CG
 ff
@@ -4671,13 +4864,15 @@ Bp
 Bp
 "}
 (15,1,1) = {"
+Ek
 lJ
 lJ
 lJ
-lJ
+QJ
+Om
 MF
-pE
-ts
+hh
+jd
 CG
 Tq
 dY
@@ -4706,10 +4901,12 @@ lJ
 Ek
 "}
 (16,1,1) = {"
+Ek
 lJ
 lJ
 lJ
-lJ
+QJ
+qC
 zJ
 QJ
 QJ
@@ -4741,10 +4938,12 @@ lJ
 Ek
 "}
 (17,1,1) = {"
+Ek
 lJ
 lJ
-Pb
-Bk
+lJ
+QJ
+vr
 qE
 kO
 wb
@@ -4776,9 +4975,11 @@ lJ
 Ek
 "}
 (18,1,1) = {"
+Ek
 lJ
 lJ
 lJ
+QJ
 QJ
 wY
 Bk
@@ -4811,6 +5012,8 @@ lJ
 Ek
 "}
 (19,1,1) = {"
+Ek
+lJ
 lJ
 lJ
 lJ
@@ -4838,7 +5041,7 @@ zZ
 Vt
 Kn
 bR
-vD
+rW
 hh
 lJ
 lJ
@@ -4846,6 +5049,8 @@ lJ
 Ek
 "}
 (20,1,1) = {"
+Ek
+lJ
 lJ
 lJ
 lJ
@@ -4881,6 +5086,8 @@ Ek
 Ek
 "}
 (21,1,1) = {"
+Ek
+Ek
 QJ
 QJ
 QJ
@@ -4917,6 +5124,8 @@ Ek
 "}
 (22,1,1) = {"
 Ek
+Ek
+Ek
 lJ
 lJ
 Fh
@@ -4951,6 +5160,8 @@ Ek
 Ek
 "}
 (23,1,1) = {"
+Ek
+Ek
 lJ
 lJ
 lJ
@@ -4986,6 +5197,8 @@ Ek
 Ek
 "}
 (24,1,1) = {"
+Ek
+Ek
 lJ
 lJ
 eA
@@ -5021,6 +5234,8 @@ Ek
 Ek
 "}
 (25,1,1) = {"
+Ek
+Ek
 lJ
 lJ
 tV
@@ -5056,6 +5271,8 @@ Ek
 Ek
 "}
 (26,1,1) = {"
+Ek
+Ek
 lJ
 lJ
 Pb
@@ -5091,6 +5308,8 @@ Ek
 Ek
 "}
 (27,1,1) = {"
+Ek
+Ek
 lJ
 lJ
 YJ
@@ -5126,6 +5345,8 @@ QJ
 Ek
 "}
 (28,1,1) = {"
+Ek
+Ek
 lJ
 lJ
 Cx
@@ -5161,6 +5382,8 @@ Ek
 Ek
 "}
 (29,1,1) = {"
+Ek
+Ek
 QJ
 QJ
 QJ
@@ -5186,7 +5409,7 @@ mB
 li
 QJ
 YU
-rW
+vD
 kv
 lJ
 lJ
@@ -5196,6 +5419,8 @@ Ek
 Ek
 "}
 (30,1,1) = {"
+Ek
+Ek
 lJ
 lJ
 lJ
@@ -5222,15 +5447,17 @@ mB
 QJ
 iy
 oK
+Hi
 lJ
 lJ
 lJ
-Ek
 Ek
 Ek
 Ek
 "}
 (31,1,1) = {"
+Ek
+Ek
 Ek
 lJ
 lJ
@@ -5254,18 +5481,20 @@ TO
 fW
 Xu
 mB
-VQ
+ts
 XJ
 et
+uX
 lJ
 lJ
 lJ
-Ek
 Ek
 Ek
 Ek
 "}
 (32,1,1) = {"
+Ek
+Ek
 Ek
 lJ
 lJ
@@ -5291,16 +5520,18 @@ Zf
 mB
 yX
 fn
+GP
+aV
 lJ
 lJ
 lJ
-Ek
-Ek
 Ek
 Ek
 Ek
 "}
 (33,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 lJ
@@ -5325,17 +5556,19 @@ tL
 Ss
 mB
 kp
-Hk
+Eu
 lJ
 lJ
-Ek
-Ek
+lJ
+lJ
 Ek
 Ek
 Ek
 Ek
 "}
 (34,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 Ek
@@ -5359,7 +5592,7 @@ oq
 SJ
 mB
 mw
-Lo
+Du
 QJ
 QJ
 QJ
@@ -5371,6 +5604,8 @@ Ek
 Ek
 "}
 (35,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 Ek
@@ -5412,6 +5647,8 @@ Ek
 Ek
 Ek
 Ek
+Ek
+Ek
 lJ
 lJ
 lJ
@@ -5441,6 +5678,8 @@ Ek
 Ek
 "}
 (37,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 Ek
@@ -5484,6 +5723,8 @@ Ek
 Ek
 Ek
 Ek
+Ek
+Ek
 lJ
 QJ
 lJ
@@ -5511,6 +5752,8 @@ Ek
 Ek
 "}
 (39,1,1) = {"
+Ek
+Ek
 Ek
 Ek
 Ek
