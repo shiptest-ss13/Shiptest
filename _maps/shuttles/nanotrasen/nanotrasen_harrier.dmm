@@ -431,21 +431,25 @@
 "cz" = (
 /obj/machinery/light/directional/west,
 /obj/structure/table,
-/obj/machinery/coffeemaker{
-	pixel_x = 0;
-	pixel_y = 8
+/obj/item/storage/box/coffeepack/robusta{
+	pixel_x = -5;
+	pixel_y = 10
 	},
-/obj/item/coffee_cartridge/bootleg{
-	pixel_x = 0;
-	pixel_y = -3
+/obj/item/storage/box/coffeepack/robusta{
+	pixel_x = -5;
+	pixel_y = 6
 	},
-/obj/item/coffee_cartridge/decaf{
-	pixel_x = -9;
-	pixel_y = -3
+/obj/item/storage/box/coffeepack/robusta{
+	pixel_x = -5;
+	pixel_y = 2
 	},
-/obj/item/coffee_cartridge/fancy{
+/obj/item/reagent_containers/food/drinks/mug{
 	pixel_x = 9;
-	pixel_y = -3
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/maunamug{
+	pixel_x = 10;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -454,10 +458,23 @@
 /area/ship/hallway/starboard)
 "cE" = (
 /obj/structure/table,
-/obj/item/storage/box/cups{
-	pixel_y = 6
-	},
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/coffeemaker/premium{
+	pixel_x = 0;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/glass/bottle/syrup_bottle/vanilla{
+	pixel_x = 11;
+	pixel_y = 17
+	},
+/obj/item/reagent_containers/glass/bottle/syrup_bottle/honey{
+	pixel_x = 11;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/glass/bottle/syrup_bottle/creme_de_cacao{
+	pixel_x = 11;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "cF" = (
@@ -6240,7 +6257,6 @@
 /obj/item/clothing/suit/nanotrasen/vest,
 /obj/item/clothing/shoes/workboots,
 /obj/item/clothing/mask/gas/explorer,
-/obj/item/clothing/glasses/meson/engine,
 /obj/item/melee/knife/survival,
 /obj/item/mining_scanner,
 /obj/item/storage/bag/ore,
@@ -6252,6 +6268,7 @@
 	},
 /obj/machinery/firealarm/directional/south,
 /obj/item/clothing/under/nanotrasen/supply/miner,
+/obj/item/clothing/glasses/meson,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Im" = (
