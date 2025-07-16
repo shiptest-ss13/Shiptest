@@ -677,9 +677,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
-/obj/structure/guncloset{
-	anchored = 1
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "hT" = (
@@ -2413,6 +2410,10 @@
 	icon_state = "sec_wall";
 	name = "ammo closet"
 	},
+/obj/item/ammo_box/magazine/f4_308/empty,
+/obj/item/ammo_box/magazine/f4_308/empty,
+/obj/item/ammo_box/magazine/mower_lmg_308,
+/obj/item/ammo_box/magazine/mower_lmg_308,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "FL" = (
@@ -3293,6 +3294,9 @@
 /obj/structure/guncloset{
 	anchored = 1
 	},
+/obj/item/gun/energy/laser/wasp,
+/obj/item/gun/ballistic/automatic/hmg/mower,
+/obj/item/gun/ballistic/automatic/marksman/f4/indie,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "PC" = (
