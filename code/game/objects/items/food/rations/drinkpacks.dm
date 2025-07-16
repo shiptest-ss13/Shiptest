@@ -100,3 +100,9 @@
 	name = "freeze-dried coffee flavored with hazelnut pack"
 	filling_color = "#553300"
 	food_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
+
+//teceti stuff
+/obj/item/food/ration/pack/dote_juice
+	name = "dote juice powder"
+	filling_color = "#803300"
+	list_reagents = list(/datum/reagent/consumable/dote_juice = 8)

@@ -284,7 +284,7 @@
 	name = "miras eggs"
 	desc = "The eggs of a Miras Lizard are typically extracted from their nest. The individual eggs are small and unfertilized, unless the Miras has mated recently."
 	icon_state = "miras-egg"
-	list_reagents = list(
+	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/eggyolk = 2,
 	)

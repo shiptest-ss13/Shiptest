@@ -356,13 +356,18 @@
 	)
 	foodtypes = DAIRY | SUGAR
 
-/obj/item/reagent_containers/food/snacks/miras_parfait
+/obj/item/food/miras_parfait
 	name = "miras parfait"
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/food/frozen_treats.dmi'
 	icon_state = "miras-parfait"
 	desc = "Miras eggs can be whisked together with milk cream and fruit syrup, making a delightfully flavorful tecetian dessert."
 	tastes = list("sweet berries", "a hint of egg", "heavy cream")
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/eggyolk = 1, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/dote_juice = 4, /datum/reagent/consumable/sugar = 2)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/dote_juice = 4, /datum/reagent/consumable/sugar = 1)
-	foodtype = MEAT | DAIRY | SUGAR
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/eggyolk = 1,
+		/datum/reagent/consumable/cream = 2,
+		/datum/reagent/consumable/dote_juice = 4,
+		/datum/reagent/consumable/sugar = 2,
+	)
+	foodtypes = MEAT | DAIRY | SUGAR

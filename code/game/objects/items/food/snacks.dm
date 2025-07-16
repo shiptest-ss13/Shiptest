@@ -195,7 +195,7 @@
 		/datum/reagent/consumable/nutriment = 5,
 	)
 	tastes = list("crunchy berry" = 5)
-	foodtype = JUNKFOOD | FRUIT
+	foodtypes = JUNKFOOD | FRUIT
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -203,10 +203,10 @@
 	name = "dried dote"
 	icon_state = "dote-natural"
 	desc = "Lightly seasoned, air-dried dote berries. A quick and crunchy snack."
-	trash = null
+	trash_type = null
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("crunchy berry" = 5)
-	foodtype = FRUIT
+	foodtypes = FRUIT

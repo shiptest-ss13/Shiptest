@@ -393,3 +393,60 @@
 		/obj/item/toy/crayon/white = 1
 	)
 	generate_items_inside(items_inside, src)
+
+//teceti stuff
+/obj/item/storage/ration/dofidote
+	name = "dofi-dote combo ration"
+	desc = "Move between the threshold of sweet and savory with this ration pack. Start with a course of dofi-tami, mix it up with dote berries and dore, and coat it all with tiris-sele."
+	emblem_icon_state = "emblem_dofi"
+/obj/item/storage/ration/dofidote/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/food/ration/entree/dofi_tami = 1,
+		/obj/item/food/ration/side/dote_berry = 1,
+		/obj/item/food/ration/side/dore = 1,
+		/obj/item/food/ration/snack/miras_parfait = 1,
+		/obj/item/food/ration/bar/tirila = 1,
+		/obj/item/food/ration/condiment/tiris_sele = 1,
+		/obj/item/food/ration/pack/dote_juice = 1
+		)
+	generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/sososi
+	name = "sososi leaf ration"
+	desc = "Feel fruity with this tecetian ration. The sweet flavor of a Sososi leaf will cut through the rest of the meal, providing a unique centerpiece to assorted cheese and fruits."
+	emblem_icon_state = "emblem_sososi"
+/obj/item/storage/ration/sososi/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/food/ration/entree/sososi = 1,
+		/obj/item/food/ration/side/lifosa = 1,
+		/obj/item/food/ration/side/cactus = 1,
+		/obj/item/food/ration/snack/fara_li = 1,
+		/obj/item/food/ration/bar/dote_on = 1,
+		/obj/item/food/ration/condiment/powdered_dotu = 1,
+		/obj/item/food/drinks/ration/sososi_seta = 1
+		)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/ration/miras
+	name = "miras and tiris ration"
+	desc = "Enjoy a combination of Miras and Tiris. This ration pack is centered along the Tiris Celima, and supported by crackers and a Wanderer Bar"
+	emblem_icon_state = "emblem_mt"
+/obj/item/storage/ration/miras/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/food/ration/entree/tiris_celima = 1,
+		/obj/item/food/ration/side/miras_reti = 1,
+		/obj/item/food/ration/side/tirila = 1,
+		/obj/item/food/ration/snack/seed_crackers = 1,
+		/obj/item/food/ration/bar/wanderer = 1,
+		/obj/item/food/ration/condiment/tiris_cheese = 1,
+		/obj/item/food/ration/refa_li = 1
+		)
+	generate_items_inside(items_inside,src)
+
+/obj/item/reagent_containers/food/drinks/ration/refa_li
+	name = "Refa-Li Juice"
+	desc = "The spicy juice of a Refa-Li fruit."
+	list_reagents = list(
+		/datum/reagent/consumable/refa_li = 10,
+		/datum/reagent/consumable/capsaicin = 3,
+	)

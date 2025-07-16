@@ -142,3 +142,27 @@
 	filling_color = "#ffcc00"
 	tastes = list("cheese" = 1, "pizza" = 1)
 	foodtypes = GRAIN | DAIRY
+
+//teceti stuff
+/obj/item/food/ration/entree/dofi_tami
+	name = "dofi-tami slices"
+	desc = "Thin slices of a dehydrated fatty meat. The best way to eat it is to tear chunks off and let them melt in your mouth."
+	filling_color = "#510d0d"
+	tastes = list("rich meat" = 6, "savory animal fat" = 2)
+	foodtype = MEAT | SUGAR
+	cookable = FALSE
+
+/obj/item/food/ration/entree/sososi
+	name = "whole sososi Leaf"
+	desc = "Thick leaves with an interior made of sweet gel. It's been vacuum-sealed to preserve the flavor, and integrity of the plant"
+	filling_color = "#2a7416"
+	tastes = list("fruity gel" = 4, "watery sugars" = 1, "satisfying crunch" = 2)
+	foodtype = VEGETABLES | SUGAR
+	cookable = FALSE
+
+/obj/item/food/ration/entree/tiris_celima
+	name = "tiris celima"
+	desc = "Dofitis fat is rendered from the animal and used to slow-cook this heavily salted chunk of Tiris steak. Once it's warmed up, it practically melts in the mouth."
+	filling_color = "#2a7416"
+	tastes = list("fatty meat" = 2, "salt" = 3, "crusty herbs" = 1)
+	foodtype = MEAT

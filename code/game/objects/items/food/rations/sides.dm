@@ -214,3 +214,66 @@
 	filling_color = "#ff9900"
 	tastes = list("applesauce" = 1, "powdered mango" = 1, "powdered peach" = 1)
 	foodtypes = FRUIT | SUGAR
+
+//teceti stuff
+/obj/item/food/ration/side/miras_reti
+	name = "miras reti"
+	desc = "Whole unfertiilzed Miras eggs. The shell has already been removed, so some of them are smushed up."
+	filling_color = "#f4f4f4"
+	tastes = list("egg" = 4, "savory yolk" = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/nutriment/protein = 2,
+	)
+	foodtype = BREAKFAST | MEAT
+
+/obj/item/food/ration/side/tirila
+	name = "tirila-li"
+	desc = "An entire stick of Tirili-La, a cured meat sausage made with Refa Fruit and Tiris."
+	filling_color = "#453e3b"
+	tastes = list("spicy-savory meat" = 3, "bitter fruit" = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/capsaicin = 2,
+	)
+	foodtype = MEAT | FRUIT
+
+/obj/item/food/ration/side/lifosa
+	name = "lifosa tiris"
+	desc = "Pearls of Tiris cheese within a salty, air cured crust. The interior of the package is somewhat oily."
+	filling_color = "#cac84e"
+	tastes = list("rock salts" = 1, "cheese" = 2)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+	)
+	foodtype = DAIRY
+
+/obj/item/food/ration/side/cactus
+	name = "cored cactus fruit"
+	desc = "A Tecetian cactus fruit, cored out so that it can be stuffed full of other foods."
+	filling_color = "#e2904d"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/vitfro = 1,
+	)
+	tastes = list("fruity mushroom" = 1)
+	foodtype = FRUIT
+
+/obj/item/food/ration/side/dote_berry
+	name = "dehydrated dote berries"
+	desc = "Small crunchy berries that've been victim to a dusting of seasoning. The seeds tend to cluster at the bottom of the pack."
+	filling_color = "#2359a0"
+	tastes = list("concentrated fruit" = 4, "spice" = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+	)
+	foodtype = FRUIT
+
+/obj/item/food/ration/side/dore
+	name = "ready-to-go Dore"
+	desc = "A Tecetian pastry typically stuffed with meat and fruit. These ones have been left plain for the consumer to alter."
+	filling_color = "#e2904d"
+	tastes = list("seedy bread")
+	foodtype = GRAIN

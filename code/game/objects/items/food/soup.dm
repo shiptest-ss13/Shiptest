@@ -367,23 +367,23 @@
 	name = "miras-dola"
 	desc = "Miras stewed with the juices of a cactus until it has absorbed the flavors. The aroma is very prominent."
 	icon_state = "miras-dola"
-	list_reagents = list(
+	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 		/datum/reagent/consumable/sugar = 1,
 	)
 	bonus_reagents = list(/datum/reagent/consumable/vitfro = 2)
 	tastes = list("sweet meat" = 3, "fruity mushroom" = 2)
-	foodtype = MEAT | SUGAR | FRUIT
+	foodtypes = MEAT | SUGAR | FRUIT
 
 /obj/item/food/soup/dotiri_la
 	name = "dotiri-la"
 	desc = "A soup made by boiling dote berries and dotu-fime together, before adding Tiris and allowing it to soak the flavors up."
 	icon_state = "miras-dola"
-	list_reagents = list(
+	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 		/datum/reagent/consumable/sugar = 1,
 	)
 	tastes = list("sweet berries" = 3, "fruity meat" = 2)
-	foodtype = MEAT | FRUIT
+	foodtypes = MEAT | FRUIT

@@ -27,9 +27,7 @@
 	name = "tiris cheese"
 	desc = "A bold cheese with a salty header. Tradition says to let the cheese age and form a crust before consuming it, but even without being aged, it has a strong, distinctive flavor."
 	icon_state = "tiris-wheel"
-	slice_path = /obj/item/food/tiris_cheese_slice
-	slices_num = 5
-	list_reagents = list(
+	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 15,
 		/datum/reagent/consumable/nutriment/protein = 5,
 		/datum/reagent/consumable/nutriment/vitamin = 5,
