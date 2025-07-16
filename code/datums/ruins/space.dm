@@ -40,7 +40,7 @@
 		/datum/mission/ruin/signaled/kill/foreman
 	)
 */
-/datum/map_template/ruin/space/scrapstation
+/datum/map_template/ruin/space/deepstorage
 	id = "VI deepstorage"
 	suffix = "vi_deepstorage.dmm"
 	name = "Vigilitas Deepstorage"
