@@ -360,6 +360,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Thruster Blast Door"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ch" = (
@@ -5339,11 +5344,6 @@
 /area/ship/medical)
 "CV" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "harrier_thrusters_port";
-	name = "Thruster Blast Door"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "CW" = (
@@ -5986,11 +5986,6 @@
 /area/ship/cargo)
 "GG" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Thruster Blast Door"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "GH" = (
@@ -6194,6 +6189,11 @@
 /area/ship/crew/toilet)
 "HW" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "harrier_thrusters_port";
+	name = "Thruster Blast Door"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "HY" = (
@@ -6694,11 +6694,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "harrier_thrusters_port";
-	name = "Thruster Blast Door"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "KB" = (
@@ -7142,11 +7137,6 @@
 /area/ship/hallway/port)
 "MM" = (
 /obj/machinery/power/shuttle/engine/electric,
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Thruster Blast Door"
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -7465,6 +7455,11 @@
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "harrier_thrusters_port";
+	name = "Thruster Blast Door"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -9149,6 +9144,11 @@
 /area/ship/hallway/central)
 "Wx" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "harrier_thrusters_starboard";
+	name = "Thruster Blast Door"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "WH" = (
