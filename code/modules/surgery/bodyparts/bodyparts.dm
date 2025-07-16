@@ -1024,13 +1024,15 @@
 
 	for(var/datum/wound/iter_wound as anything in wounds)
 		// causes a gauzed wound to naturally bleed less as it clears up.
-		bleed_rate += iter_wound.blood_flow * current_gauze ? current_gauze.bleed_suppress : 1
+		bleed_rate += iter_wound.blood_flow
 
 	if(!ignore_modifiers)
 		if(owner.body_position == LYING_DOWN)
 			bleed_rate *= 0.75
 		if(grasped_by)
 			bleed_rate *= 0.75
+		if(current_gauze)
+			bleed_rate *= current_gauze.bleed_suppress
 
 	if(!bleed_rate)
 		QDEL_NULL(grasped_by)
