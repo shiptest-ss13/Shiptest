@@ -167,6 +167,8 @@
 	updating = FALSE
 
 /obj/item/bodycamera/proc/update_camera_location(oldLoc)
+	SIGNAL_HANDLER
+
 	oldLoc = get_turf(oldLoc)
 	if((!updating && oldLoc != get_turf(src)) || (item_flags & IN_INVENTORY || item_flags & IN_STORAGE)) //...but we check to make sure it's equipped (or moved) before doing the expensive camera updates
 		updating = TRUE
