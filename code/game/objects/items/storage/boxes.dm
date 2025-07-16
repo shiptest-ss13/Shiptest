@@ -522,6 +522,15 @@
 	for(var/i in 1 to 7)
 		new /obj/item/card/id(src)
 
+/obj/item/storage/box/bankcard
+	name = "box of spare bank cards"
+	desc = "Has so many empty bank cards."
+	illustration = "id"
+
+/obj/item/storage/box/bankcard/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card/bank(src)
+
 //Some spare PDAs in a box
 /obj/item/storage/box/PDAs
 	name = "spare PDAs"
