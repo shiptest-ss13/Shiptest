@@ -1224,7 +1224,6 @@
 
 	punish_log(target, punishment)
 
-
 /**
  * firing_squad is a proc for the :B:erforate smite to shoot each individual bullet at them, so that we can add actual delays without sleep() nonsense
  *

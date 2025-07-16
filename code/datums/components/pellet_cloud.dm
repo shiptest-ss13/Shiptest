@@ -181,11 +181,8 @@
 // Note we track anyone who's alive and client'd when they get shredded in var/list/purple_hearts, for achievement checking later
 
 /datum/component/pellet_cloud/proc/handle_martyrs(mob/living/punishable_triggerer)
-	SIGNAL_HANDLER
-
 	var/magnitude_absorbed
 	var/list/martyrs = list()
-
 	var/self_harm_radius_mult = 3
 
 	if(punishable_triggerer && prob(60))
