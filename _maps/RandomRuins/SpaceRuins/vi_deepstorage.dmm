@@ -984,7 +984,6 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hallway)
 "hu" = (
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/transparent/ntblue/border{
 	layer = 2.040
@@ -1110,7 +1109,6 @@
 /obj/effect/turf_decal/corner/transparent/ntblue/border{
 	layer = 2.040
 	},
-/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "ic" = (
@@ -1496,7 +1494,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/canteen)
 "jM" = (
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
@@ -1504,7 +1501,6 @@
 	dir = 1;
 	layer = 2.040
 	},
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -1541,7 +1537,6 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
-/obj/item/ammo_casing/spent/pistol_brass,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "jW" = (
@@ -1971,10 +1966,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/deepstorage/bathroom)
 "nI" = (
-/obj/item/gun/ballistic/automatic/pistol/spitter{
-	pixel_x = 0;
-	pixel_y = 5
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -1982,6 +1973,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/stock_parts/cell/gun,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "nK" = (
@@ -2078,11 +2070,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/security/vault)
 "oF" = (
-/obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/ammo_box/magazine/spitter_9mm{
-	pixel_x = 11;
-	pixel_y = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -2090,6 +2077,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/gun/energy/laser/wasp,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "oP" = (
@@ -2849,11 +2837,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "uj" = (
-/obj/item/ammo_box/magazine/spitter_9mm{
-	pixel_x = -10;
-	pixel_y = 6;
-	start_empty = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
 	},
@@ -2863,6 +2846,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/item/stock_parts/cell/gun/empty,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "ul" = (
@@ -4370,8 +4354,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
 "Fw" = (
-/obj/item/ammo_casing/spent/pistol_brass,
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/turf_decal/borderfloorblack/corner{
 	dir = 4
 	},
@@ -6189,7 +6171,6 @@
 	dir = 1;
 	layer = 2.040
 	},
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -6645,7 +6626,6 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
 "Uq" = (
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
@@ -6688,7 +6668,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "UK" = (
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -6762,7 +6741,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "VO" = (
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/effect/turf_decal/borderfloorblack/corner,
 /obj/effect/turf_decal/corner/transparent/ntblue/bordercorner{
 	layer = 2.040
@@ -7102,7 +7080,6 @@
 	layer = 2.040;
 	dir = 4
 	},
-/obj/item/ammo_casing/spent/pistol_brass,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -7132,17 +7109,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
-"XV" = (
-/obj/item/ammo_casing/spent/pistol_brass,
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/ntblue/border{
-	layer = 2.040;
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/deepstorage/lobby)
 "XY" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -9404,7 +9370,7 @@ Tw
 er
 jM
 VO
-XV
+jH
 jV
 jH
 XO
