@@ -39,7 +39,10 @@
 	desc = "Cured Tiris meat from Teceti, packed to the brim with a savory spice."
 	filling_color = "#453e3b"
 	tastes = list("spicy-savory meat" = 6, "bitter fruit" = 4)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/capsaicin = 1)
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/capsaicin = 1,
+	)
 	foodtype = MEAT | FRUIT
 
 /obj/item/food/ration/bar/dote_on
