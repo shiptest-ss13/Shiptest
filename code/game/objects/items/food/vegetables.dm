@@ -45,11 +45,23 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 10,
 		/datum/reagent/consumable/nutriment/vitamin = 6,
-		/datum/reagent/consumable/nutriment/protein = 4
+		/datum/reagent/consumable/nutriment/protein = 4,
 	)
 	tastes = list("baked potato" = 1, "bacon" = 1, "cheese" = 1, "cabbage" = 1)
 	foodtypes = VEGETABLES | DAIRY | MEAT
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/food/loaded_miras_potato
+	name = "loaded miras potato"
+	desc = "A Lanchester classic, Miras is baked over a potato, and then topped with Luna-Town cheese and sour cream."
+	icon_state = "miras-potato"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 10,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+		/datum/reagent/consumable/nutriment/protein = 4,
+	)
+	tastes = list("potato" = 2, "sweet meat" = 1, "cheese" = 1, "sour cream" = 1)
+	foodtypes = MEAT | SUGAR | VEGETABLES | DAIRY
 
 // Fries
 /obj/item/food/fries

@@ -82,20 +82,6 @@
 	tastes = list("soy" = 1)
 	foodtypes = MEAT
 
-/obj/item/food/soup/clownstears
-	name = "clown's tears"
-	desc = "A bowl of a mix of ingredients that invokes the immediate laughter of the viewer. It's too difficult to visually describe it without being overcome with fits of laughing."
-	icon_state = "clownstears"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 5,
-		/datum/reagent/consumable/banana = 10,
-		/datum/reagent/lube = 5,
-		/datum/reagent/consumable/nutriment/vitamin = 16,
-		/datum/reagent/consumable/clownstears = 10
-	)
-	tastes = list("a bad joke" = 1)
-	foodtypes = FRUIT | SUGAR
-
 /obj/item/food/soup/vegetable
 	name = "vegetable soup"
 	desc = "A bowl of soup, consisting of vegetable broth and cooked vegetables."
@@ -372,7 +358,32 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 11,
 		/datum/reagent/consumable/milk = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 6
+		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("oats" = 1, "milk" = 1)
 	foodtypes = DAIRY | GRAIN | BREAKFAST
+
+/obj/item/food/soup/miras_dola
+	name = "miras-dola"
+	desc = "Miras stewed with the juices of a cactus until it has absorbed the flavors. The aroma is very prominent."
+	icon_state = "miras-dola"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+		/datum/reagent/consumable/sugar = 1,
+	)
+	bonus_reagents = list(/datum/reagent/consumable/vitfro = 2)
+	tastes = list("sweet meat" = 3, "fruity mushroom" = 2)
+	foodtype = MEAT | SUGAR | FRUIT
+
+/obj/item/food/soup/dotiri_la
+	name = "dotiri-la"
+	desc = "A soup made by boiling dote berries and dotu-fime together, before adding Tiris and allowing it to soak the flavors up."
+	icon_state = "miras-dola"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 3,
+		/datum/reagent/consumable/sugar = 1,
+	)
+	tastes = list("sweet berries" = 3, "fruity meat" = 2)
+	foodtype = MEAT | FRUIT

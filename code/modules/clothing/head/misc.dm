@@ -137,11 +137,6 @@
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	dog_fashion = /datum/dog_fashion/head/santa
 
-/obj/item/clothing/head/rice_hat
-	name = "rice hat"
-	desc = "Welcome to the rice fields, motherfucker."
-	icon_state = "rice_hat"
-
 /obj/item/clothing/head/papersack
 	name = "paper sack hat"
 	desc = "A paper sack with crude holes cut out for eyes. Useful for hiding one's identity or ugliness."
@@ -159,41 +154,6 @@
 	desc = "A crown fit for a king, a petty king maybe."
 	icon_state = "crown"
 	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/head/frenchberet
-	name = "french beret"
-	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage in military conflict, for some reason."
-	icon_state = "beret"
-
-/obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
-	. = ..()
-	if (slot == ITEM_SLOT_HEAD)
-		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
-	else
-		UnregisterSignal(M, COMSIG_MOB_SAY)
-
-/obj/item/clothing/head/frenchberet/dropped(mob/M)
-	. = ..()
-	UnregisterSignal(M, COMSIG_MOB_SAY)
-
-/obj/item/clothing/head/frenchberet/proc/handle_speech(datum/source, list/speech_args)
-	var/message = speech_args[SPEECH_MESSAGE]
-	if(message[1] != "*")
-		message = " [message]"
-		var/list/french_words = strings("french_replacement.json", "french")
-
-		for(var/key in french_words)
-			var/value = french_words[key]
-			if(islist(value))
-				value = pick(value)
-
-			message = replacetextEx(message, " [uppertext(key)]", " [uppertext(value)]")
-			message = replacetextEx(message, " [capitalize(key)]", " [capitalize(value)]")
-			message = replacetextEx(message, " [key]", " [value]")
-
-		if(prob(3))
-			message += pick(" Honh honh honh!"," Honh!"," Zut Alors!")
-	speech_args[SPEECH_MESSAGE] = trim(message)
 
 /obj/item/clothing/head/intern
 	name = "\improper CentCom Head Intern beancap"
@@ -220,3 +180,8 @@
 	icon_state = "cowboy"
 	item_state = "cowboy"
 
+/obj/item/clothing/head/sunhat
+	name = "sun hat"
+	desc = "A fashionable straw hat designed for providing shade to your head. An essential of tropical touristry and backbreaking labor alike!"
+	icon_state = "sunhat"
+	item_state = "sunhat"

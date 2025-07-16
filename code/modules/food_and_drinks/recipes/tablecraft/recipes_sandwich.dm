@@ -36,6 +36,24 @@
 	result = /obj/item/food/jellysandwich/cherry
 	subcategory = CAT_SANDWICH
 
+/datum/crafting_recipe/food/butteredtoast
+	name = "Buttered toast"
+	reqs = list(
+		/obj/item/food/breadslice/plain = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1,
+	)
+	result = /obj/item/reagent_containers/food/snacks/butteredtoast
+	subcategory = CAT_SANDWICH
+
+/datum/crafting_recipe/food/jelliedtoast
+	name = "Jellied Toast"
+	reqs = list(
+		/datum/reagent/consumable/cherryjelly = 2,
+		/obj/item/food/breadslice/plain = 1,
+	)
+	result = /obj/item/reagent_containers/food/snacks/jelliedtoast/cherry
+	subcategory = CAT_SANDWICH
+
 /datum/crafting_recipe/food/blt
 	name = "BLT"
 	reqs = list(

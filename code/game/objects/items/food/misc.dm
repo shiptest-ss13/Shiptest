@@ -230,3 +230,63 @@
 	junkiness = 20
 	tastes = list("fried corn" = 1)
 	foodtypes = JUNKFOOD | FRIED
+
+//todo: sort these into correct files
+/obj/item/food/stuffed_refa
+	name = "Stuffed Refa"
+	desc = "Tiris cheese is removed from its crust and added to the fruits of a Refa-Li plant before being baked"
+	icon_state = "stuff-refa"
+	bite_consumption = 2
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	//filling_color = "#ECA735"
+	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
+	foodtypes = FRUIT | DAIRY
+
+/obj/item/food/tiris_fondue
+	name = "Fondue Tiris-Dotu"
+	desc = "Fusion cuisine originating from travelling Solarians. This fondue is made of Tiris Cheese, and filled with small cubes of Dotu-Fime fruit. The flavor profile is reputed to be incredibly rich, especially with crackers."
+	icon_state = "tiris-fondue"
+	bite_consumption = 1
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/dotu_juice = 2)
+	//filling_color = "#ECA735"
+	tastes = list("hint of spice" = 1, "subtle fruitiness" = 1, "rich cheese" = 2)
+	foodtypes = FRUIT | DAIRY
+
+/obj/item/food/remes_roe
+	name = "remes roe"
+	desc = "The roe of a Remes is a topping that rose to prominence due to its serving during talks with Zohilese diplomats. The slight <i>pop</i> of the eggs was hailed as incredibly satisfying."
+	icon_state = "remes-roe"
+	bite_consumption = 1
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	//filling_color = "#ECA735"
+	tastes = list("condensed salt" = 1, "satisfying pop" = 2)
+	foodtypes = MEAT
+
+/obj/item/food/fara_reti
+	name = "fara-reti"
+	desc = "The flesh of a fara-li fruit, once all the seeds have been removed, is quite mellow. Adding Remes roe into the flesh creates an experience filled with salty pops."
+	icon_state = "stuff-refa"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
+	//filling_color = "#ECA735"
+	tastes = list("condensed salt" = 1, "satisfying pop" = 1, "mellow fruitflesh" = 3)
+	foodtypes = MEAT | FRUIT
+
+/obj/item/food/roe_tiris
+	name = "reti-tiris"
+	desc = "Remes roe and Tiris plasma mixed together into a thick drink. Acquired taste is the nicest that can be said of it."
+	icon_state = "sludge"
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2,)
+	//filling_color = "#ECA735"
+	tastes = list("blood and salt" = 3, "umami" = 1, "subdued pops" = 1)
+	foodtypes = MEAT | GROSS | GORE
+
+/obj/item/food/mirasegg
+	name = "miras eggs"
+	desc = "The eggs of a Miras Lizard are typically extracted from their nest. The individual eggs are small and unfertilized, unless the Miras has mated recently."
+	icon_state = "miras-egg"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/eggyolk = 2,
+	)
+	tastes = list("egg" = 1, "hints of spice" = 1)
+	foodtype = MEAT | RAW

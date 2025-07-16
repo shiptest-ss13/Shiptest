@@ -10,6 +10,16 @@
 	result = /obj/item/food/loaded_baked_potato
 	category = CAT_MISCFOOD
 
+/datum/crafting_recipe/food/miras_potato
+	name = "Miras loaded potato"
+	reqs = list(
+		/obj/item/food/meat/steak/miras = 1,
+		/obj/item/food/grown/potato = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
+	)
+	result = /obj/item/food/miras_potato
+	subcategory = CAT_MISCFOOD
+
 /datum/crafting_recipe/food/cheesyfries
 	name = "Cheesy fries"
 	reqs = list(
@@ -96,4 +106,31 @@
 		/obj/item/food/salad/boiledrice = 1
 	)
 	result = /obj/item/food/onigiri
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/stuffed_refa
+	name = "Stuffed refa"
+	reqs = list(
+		/obj/item/food/grown/refa_li = 1,
+		/obj/item/food/tiris_cheese_slice = 1
+	)
+	result = /obj/item/food/stuffed_refa
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/tiris_fondue
+	name = "Tiris fondue"
+	reqs = list(
+		/obj/item/food/grown/dotu_fime = 1,
+		/obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel = 1
+	)
+	result = /obj/item/food/tiris_fondue
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/roe_tiris
+	name = "reti-tiris"
+	reqs = list(
+		/obj/item/food/remes_roe = 1,
+		/datum/reagent/consumable/tiris_sale = 5
+	)
+	result = /obj/item/food/roe_tiris
 	subcategory = CAT_MISCFOOD

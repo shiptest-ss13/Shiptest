@@ -326,7 +326,7 @@
 			to_chat(user, span_warning("[target] is full."))
 			return
 		to_chat(user, "<span class='notice'>You begin to drain something from [src].")
-		if(do_after(user, 25, target = src))
+		if(do_after(user, 2.5 SECONDS, target = src))
 			var/trans = reagents.trans_id_to(target, reagents.get_master_reagent_id(), amount_per_transfer_from_this,)
 			to_chat(user, span_notice("You filter off [trans] unit\s of the solution into [target]."))
 
@@ -352,3 +352,27 @@
 				reagents.expose(target, TOUCH)
 				reagents.clear_reagents()
 				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+
+/obj/item/reagent_containers/glass/filter/attempt_pour(atom/target, mob/user)
+	if(ismob(target) || !reagents.total_volume || !check_allowed_items(target, target_self = FALSE))
+		return
+
+	target.visible_message(span_notice("[user] attempts to pour [src] onto [target]."))
+	if(!do_after(user, 2.5 SECONDS, target=target))
+		return
+	// reagents may have been emptied
+	if(!is_drainable() || !reagents.total_volume)
+		return
+
+	var/datum/reagent/poured_reagent = reagents.get_master_reagent()
+	var/amount = min(poured_reagent.volume, amount_per_transfer_from_this)
+
+	playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
+	target.visible_message(span_notice("[user] pours [src] onto [target]."))
+
+	log_combat(user, target, "poured [amount]u of [poured_reagent.name]", "in [AREACOORD(target)]")
+	log_game("[key_name(user)] poured [amount]u of [poured_reagent.name] on [target] in [AREACOORD(target)].")
+
+	// don't use trans_to, because we're not ADDING it to the object, we're just... pouring it.
+	reagents.expose_single(poured_reagent, target, TOUCH, amount/poured_reagent.volume)
+	reagents.remove_reagent(poured_reagent.type, amount)

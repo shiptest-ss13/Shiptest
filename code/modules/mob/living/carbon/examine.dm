@@ -92,10 +92,13 @@
 	if(HAS_TRAIT(src, TRAIT_DUMB))
 		msg += "[t_He] seem[p_s()] to be clumsy and unable to think.\n"
 
-	if(fire_stacks > 0)
-		msg += "[t_He] [t_is] covered in something flammable.\n"
-	if(fire_stacks < 0)
-		msg += "[t_He] look[p_s()] a little soaked.\n"
+	switch(fire_stacks)
+		if(0 to INFINITY)
+			msg += "[t_He] [t_is] covered in something flammable.\n"
+		if(-15 to 0)
+			msg += "[t_He] look[p_s()] a little soaked.\n"
+		if(-20 to -15)
+			msg += "[t_He] look[p_s()] completely sopping.\n"
 
 	if(pulledby && pulledby.grab_state)
 		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"

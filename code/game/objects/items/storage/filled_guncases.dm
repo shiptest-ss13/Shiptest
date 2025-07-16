@@ -63,6 +63,10 @@
 	gun_type = /obj/item/gun/ballistic/automatic/marksman/vickland
 	mag_type = /obj/item/ammo_box/vickland_a8_50r
 
+/obj/item/storage/guncase/invictus
+	gun_type = /obj/item/gun/ballistic/automatic/assault/invictus
+	mag_type = /obj/item/ammo_box/magazine/invictus_308_mag
+
 /* Scarbourough */
 
 /obj/item/storage/guncase/pistol/a357
@@ -221,6 +225,9 @@
 /obj/item/storage/guncase/vector
 	gun_type = /obj/item/gun/ballistic/automatic/smg/vector
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
+
+/obj/item/storage/guncase/cycler
+	gun_type = /obj/item/gun/ballistic/shotgun/automatic/dual_tube
 
 /* Sharplite */
 

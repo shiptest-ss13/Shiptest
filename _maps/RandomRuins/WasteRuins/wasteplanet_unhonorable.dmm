@@ -92,10 +92,6 @@
 "gr" = (
 /turf/open/floor/plating/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
-"gx" = (
-/mob/living/simple_animal/hostile/hivebot,
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_radiation)
 "gM" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
@@ -241,6 +237,22 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/containment)
+"oi" = (
+/obj/structure/table,
+/obj/item/food/syndicake{
+	pixel_x = 4;
+	pixel_y = 13
+	},
+/obj/item/food/syndicake{
+	pixel_y = 3
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1;
+	pixel_y = 17
+	},
+/turf/open/floor/plastic,
+/area/ruin/wasteplanet/wasteplanet_radiation/main)
 "oA" = (
 /obj/machinery/light/dim{
 	dir = 1;
@@ -286,6 +298,10 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
 "pr" = (
 /obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
+"pP" = (
+/mob/living/basic/hivebot/ranged,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "pZ" = (
@@ -591,6 +607,10 @@
 "Hf" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation)
+"Hl" = (
+/mob/living/basic/hivebot,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_radiation)
 "Hm" = (
 /obj/machinery/door/airlock/maintenance/external{
 	dir = 8
@@ -678,22 +698,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
-"Kp" = (
-/obj/structure/table,
-/obj/item/food/syndicake{
-	pixel_x = 4;
-	pixel_y = 13
-	},
-/obj/item/food/syndicake{
-	pixel_y = 3
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1;
-	pixel_y = 17
-	},
-/turf/open/floor/plastic,
-/area/ruin/wasteplanet/wasteplanet_radiation/main)
 "Ku" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/wasteplanet/wasteplanet_radiation/main)
@@ -727,10 +731,6 @@
 /mob/living/simple_animal/bot/hygienebot{
 	hacked = 1
 	},
-/turf/open/floor/plating/asteroid/wasteplanet,
-/area/ruin/wasteplanet/wasteplanet_radiation)
-"Mh" = (
-/mob/living/simple_animal/hostile/hivebot/ranged,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_radiation)
 "Mq" = (
@@ -1377,7 +1377,7 @@ UR
 Gl
 Hf
 lS
-gx
+Hl
 UR
 UR
 YO
@@ -1419,7 +1419,7 @@ UR
 ZC
 Gl
 Gl
-Mh
+pP
 UR
 Gl
 UR
@@ -1877,7 +1877,7 @@ Yl
 Sf
 Sf
 Ku
-Kp
+oi
 Qz
 Jy
 iQ
