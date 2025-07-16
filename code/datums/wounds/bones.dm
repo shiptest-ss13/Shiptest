@@ -84,11 +84,6 @@
 		if(victim.IsSleeping() && prob(30))
 			regen_ticks_current += 1
 
-	if(!is_bone_creature && DT_PROB(severity * 1.5, delta_time)) //why
-		victim.take_bodypart_damage(rand(1, severity * 2), stamina = rand(2, severity * 2.5), wound_bonus = CANT_WOUND)
-		if(prob(33))
-			to_chat(victim, span_danger("You feel a sharp pain in your body as your bones are reforming!"))
-
 	if(regen_ticks_current > regen_ticks_needed)
 		if(!victim || !limb)
 			qdel(src)

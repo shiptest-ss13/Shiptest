@@ -135,8 +135,8 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	self_delay = 2.5 SECONDS
-	other_delay = 2 SECONDS
+	self_delay = 2 SECONDS
+	other_delay = 1.5 SECONDS
 	heal_brute = 10
 	grind_results = list(/datum/reagent/medicine/c2/libital = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack
@@ -148,8 +148,8 @@
 	singular_name = "medical gauze"
 	icon_state = "gauze"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	self_delay = 2.5 SECONDS
-	other_delay = 2 SECONDS
+	self_delay = 2 SECONDS
+	other_delay = 1.5 SECONDS
 	max_amount = 12
 	amount = 6
 	grind_results = list(/datum/reagent/cellulose = 2)
@@ -240,13 +240,13 @@
 	gender = PLURAL
 	singular_name = "suture"
 	icon_state = "suture"
-	self_delay = 2.5 SECONDS
-	other_delay = 2 SECONDS
+	self_delay = 2 SECONDS
+	other_delay = 1.5 SECONDS
 	amount = 15
 	max_amount = 15
 	repeating = TRUE
 	heal_brute = 10
-	stop_bleeding = 0.2
+	stop_bleeding = 0.8
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
 
@@ -263,8 +263,8 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	amount = 8
 	max_amount = 8
-	self_delay = 2.5 SECONDS
-	other_delay = 2 SECONDS
+	self_delay = 2 SECONDS
+	other_delay = 1.5 SECONDS
 
 	heal_burn = 5
 	flesh_regeneration = 2.5
@@ -278,8 +278,8 @@
 	gender = PLURAL
 	singular_name = "mesh piece"
 	icon_state = "regen_mesh"
-	self_delay = 2.5 SECONDS
-	other_delay = 2 SECONDS
+	self_delay = 2 SECONDS
+	other_delay = 1.5 SECONDS
 	amount = 15
 	heal_burn = 10
 	max_amount = 15
@@ -412,8 +412,8 @@
 	singular_name = "splint"
 	icon_state = "splint"
 	apply_sounds = list('sound/effects/rip1.ogg', 'sound/effects/rip2.ogg')
-	self_delay = 2.5 SECONDS
-	other_delay = 2 SECONDS
+	self_delay = 3 SECONDS
+	other_delay = 2.5 SECONDS
 	max_amount = 12
 	amount = 6
 	grind_results = list(/datum/reagent/carbon = 2)

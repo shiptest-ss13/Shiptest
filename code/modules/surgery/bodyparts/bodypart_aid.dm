@@ -154,13 +154,15 @@
 	overlay_prefix = "gauze"
 	desc_prefix = "bandaged"
 	/// How much more can we absorb
-	var/absorption_capacity = 7
+	var/absorption_capacity = 5
 	/// How fast do we absorb
-	var/absorption_rate = 0.25
+	var/absorption_rate = 0.12
+	/// How effective the gauze is at stopping current blood flow - see [get_part_bleed_rate()]
+	var/bleed_suppress = 0.6
 	/// How much does the gauze help with keeping infections clean, lower = better
-	var/sanitisation_factor = 0.3
+	var/sanitisation_factor = 0.4
 	/// How much sanitisation we've got after we become fairly stained and worn
-	var/sanitisation_factor_stained = 0.7
+	var/sanitisation_factor_stained = 0.8
 	/// Is it blood stained? For description
 	var/blood_stained = FALSE
 	/// Is it pus stained? For description
@@ -169,13 +171,13 @@
 /datum/bodypart_aid/gauze/get_description()
 	var/desc
 	switch(absorption_capacity)
-		if(0 to 2)
+		if(0 to 1.25)
 			desc = "nearly ruined"
-		if(2 to 4)
+		if(1.25 to 2.75)
 			desc = "badly worn"
-		if(4 to 6)
+		if(2.75 to 4)
 			desc = "slightly used"
-		if(6 to INFINITY)
+		if(4 to INFINITY)
 			desc = "clean"
 
 	if(blood_stained)
@@ -238,3 +240,4 @@
 	stack_to_drop = /obj/item/stack/medical/gauze/improvised
 	absorption_rate = 0.15
 	absorption_capacity = 6
+	bleed_suppress = 0.4

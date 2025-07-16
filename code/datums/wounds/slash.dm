@@ -145,11 +145,11 @@
 
 /datum/wound/slash/on_xadone(power) //this is for cryo, check and maybe remove later
 	. = ..()
-	blood_flow -= 0.03 * power // i think it's like a minimum of 3 power, so .09 blood_flow reduction per tick is pretty good for 0 effort
+	blood_flow -= 0.03 * power // i think it's like a minimum of 3 power, so .09 blood_flow reduction per tick
 
 /datum/wound/slash/on_synthflesh(power)
 	. = ..()
-	blood_flow -= 0.075 * power // 20u * 0.075 = -1.5 blood flow, pretty good for how little effort it is
+	blood_flow -= 0.075 * power // 20u * 0.075 = -1.5 blood flow
 
 /// If someone's putting a laser gun up to our cut to cauterize it
 /datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
@@ -188,10 +188,7 @@
 		span_green("[user] cauterizes some of the bleeding on [victim]."),
 		span_green("You cauterize some of the bleeding on [victim]."),
 	)
-	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
-
-	if(prob(15))
-		victim.force_scream()
+	limb.receive_damage(burn = 2 + severity)
 
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
 	blood_flow -= blood_cauterized

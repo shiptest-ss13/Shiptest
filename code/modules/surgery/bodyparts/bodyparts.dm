@@ -163,15 +163,15 @@
 	if(owner)
 		owner.remove_bodypart(src)
 		set_owner(null)
-	// for(var/wound in wounds)
-	// 	qdel(wound) // wounds is a lazylist, and each wound removes itself from it on deletion.
-	// if(length(wounds))
-	// 	stack_trace("[type] qdeleted with [length(wounds)] uncleared wounds")
-	// 	wounds.Cut()
-	// if(current_gauze)
-	// 	qdel(current_gauze)
-	// if(current_splint)
-	// 	qdel(current_splint)
+	for(var/wound in wounds)
+		qdel(wound) // wounds is a lazylist, and each wound removes itself from it on deletion.
+	if(length(wounds))
+		stack_trace("[type] qdeleted with [length(wounds)] uncleared wounds")
+		wounds.Cut()
+	if(current_gauze)
+		qdel(current_gauze)
+	if(current_splint)
+		qdel(current_splint)
 	return ..()
 
 /obj/item/bodypart/examine(mob/user)
@@ -1023,13 +1023,14 @@
 			bleed_rate += 0.25
 
 	for(var/datum/wound/iter_wound as anything in wounds)
-		bleed_rate += iter_wound.blood_flow
+		// causes a gauzed wound to naturally bleed less as it clears up.
+		bleed_rate += iter_wound.blood_flow * current_gauze ? current_gauze.bleed_suppress : 1
 
 	if(!ignore_modifiers)
 		if(owner.body_position == LYING_DOWN)
 			bleed_rate *= 0.75
 		if(grasped_by)
-			bleed_rate *= 0.7
+			bleed_rate *= 0.75
 
 	if(!bleed_rate)
 		QDEL_NULL(grasped_by)
