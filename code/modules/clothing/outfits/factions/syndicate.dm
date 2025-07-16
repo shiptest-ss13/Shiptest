@@ -246,7 +246,6 @@
 	job_icon = "botanist"
 
 	suit = /obj/item/clothing/suit/apron
-	alt_suit = /obj/item/clothing/suit/apron/overalls
 	gloves  =/obj/item/clothing/gloves/botanic_leather
 	suit_store = /obj/item/plant_analyzer
 

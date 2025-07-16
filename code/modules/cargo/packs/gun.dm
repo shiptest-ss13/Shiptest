@@ -710,6 +710,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+/datum/supply_pack/gun/invictus
+	name = "Invictus Automatic Rifle"
+	desc = "Contains a high-powered automattic rifle chambered in .308 and produced by Hunter's Pride. Comes with two magazines with a 20 round capacity."
+	cost = 5500
+	contains = list(/obj/item/storage/guncase/invictus)
+	crate_name = "rifle crate"
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
 /datum/supply_pack/gun/gauss
 	name = "Prototype Gauss Rifle"
 	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For NT employee use only."
