@@ -39,24 +39,23 @@
 	desc = "Cured Tiris meat from Teceti, packed to the brim with a savory spice."
 	filling_color = "#453e3b"
 	tastes = list("spicy-savory meat" = 6, "bitter fruit" = 4)
-	list_reagents = list(
+	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/nutriment/protein = 2,
 		/datum/reagent/consumable/capsaicin = 1,
 	)
-	foodtype = MEAT | FRUIT
+	foodtypes = MEAT | FRUIT
 
 /obj/item/food/ration/bar/dote_on
 	name = "\improper Doting..."
 	desc = "A specialty fruit bar made to mimic \"Dote On It!\". The berries have been compressed down and joined with some seeds "
 	filling_color = "#70829a"
 	tastes = list("crunchy seeds" = 2, "sweet berries" = 4)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	foodtype = FRUIT | GRAIN
+	foodtypes = FRUIT | GRAIN
 
 /obj/item/food/ration/bar/wanderer
 	name = "wanderer bar"
 	desc = "A bar of shredded miras meat, refa-li, and seeds, not too much unlike Tirili-La. Great for a power-up before a trip."
 	filling_color = "#70829a"
 	tastes = list("sweet meat" = 4, "dried out fruit flesh" = 2, "crunchy seeds" = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	foodtype = MEAT | GRAIN | FRUIT
+	foodtypes = MEAT | GRAIN | FRUIT

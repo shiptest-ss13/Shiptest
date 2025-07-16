@@ -145,7 +145,7 @@
 		/datum/reagent/consumable/eggyolk = 2,
 	)
 	tastes = list("egg" = 5, "a slight metallic hint" = 1)
-	foodtype = JUNKFOOD | MEAT
+	foodtypes = JUNKFOOD | MEAT
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -160,7 +160,7 @@
 		/datum/reagent/consumable/nutriment/protein = 2,
 	)
 	tastes = list("egg" = 5)
-	foodtype = MEAT
+	foodtypes = MEAT
 
 /obj/item/food/lifosa
 	name = "\improper Lifosa Tiris"
@@ -172,7 +172,7 @@
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/nutriment/protein = 2,
 	)
-	foodtype = DAIRY
+	foodtypes = DAIRY
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 

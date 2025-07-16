@@ -407,13 +407,13 @@
 		/obj/item/food/ration/snack/miras_parfait = 1,
 		/obj/item/food/ration/bar/tirila = 1,
 		/obj/item/food/ration/condiment/tiris_sele = 1,
-		/obj/item/food/ration/pack/dote_juice = 1
+		/obj/item/food/ration/pack/dote_juice = 1,
 	)
 	generate_items_inside(items_inside, src)
 
 /obj/item/storage/ration/sososi
 	name = "sososi leaf ration"
-	desc = "Feel fruity with this tecetian ration. The sweet flavor of a Sososi leaf will cut through the rest of the meal, providing a unique centerpiece to assorted cheese and fruits."
+	desc = "Feel fruity with this Tecetian ration. The sweet flavor of a Sososi leaf will cut through the rest of the meal, providing a unique centerpiece to assorted cheese and fruits."
 	emblem_icon_state = "emblem_sososi"
 /obj/item/storage/ration/sososi/PopulateContents()
 	var/static/items_inside = list(
@@ -423,7 +423,7 @@
 		/obj/item/food/ration/snack/fara_li = 1,
 		/obj/item/food/ration/bar/dote_on = 1,
 		/obj/item/food/ration/condiment/powdered_dotu = 1,
-		/obj/item/food/drinks/ration/sososi_seta = 1
+		/obj/item/food/drinks/ration/sososi_seta = 1,
 	)
 	generate_items_inside(items_inside,src)
 

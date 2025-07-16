@@ -289,4 +289,4 @@
 		/datum/reagent/consumable/eggyolk = 2,
 	)
 	tastes = list("egg" = 1, "hints of spice" = 1)
-	foodtype = MEAT | RAW
+	foodtypes = MEAT | RAW

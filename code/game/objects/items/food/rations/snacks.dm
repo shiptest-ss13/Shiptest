@@ -211,18 +211,18 @@
 	desc = "A small vacuum-sealed pouch of Miras parfait. The lower sugar-density of the Dotu fruit has kept it from becoming sickly-sweet, and left it average."
 	filling_color = "#00cc66"
 	tastes = list("thick and creamy" = 6, "fruitiness" = 1)
-	foodtype = SUGAR
+	foodtypes = SUGAR
 
 /obj/item/food/ration/snack/fara_li
 	name = "candied fara-li"
 	desc = "Whole fara-li fruit, preserved in a thin, sweet syrup."
 	filling_color = "#ce8c22"
 	tastes = list("spice" = 1, "subtle fruitiness" = 5)
-	foodtype = FRUIT | SUGAR
+	foodtypes = FRUIT | SUGAR
 
 /obj/item/food/ration/snack/seed_crackers
 	name = "seed crackers"
 	desc = "Small crackers made with seed-flour and dusted with a light coat of sugar."
 	filling_color = "#7e5719"
 	tastes = list("crunchy seeds" = 1)
-	foodtype = GRAIN | SUGAR
+	foodtypes = GRAIN | SUGAR
