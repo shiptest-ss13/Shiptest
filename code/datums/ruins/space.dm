@@ -48,6 +48,12 @@
 		/datum/mission/ruin/signaled/kill/foreman
 	)
 */
+/datum/map_template/ruin/space/scrapstation
+	id = "VI deepstorage"
+	suffix = "vi_deepstorage.dmm"
+	name = "Vigilitas Deepstorage"
+	description = "A Vigilitas blacksite for holding important and suspicious cargo."
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
 
 /datum/mission/ruin/pgf_captain
 	name = "MIA Vessel Investigation"
