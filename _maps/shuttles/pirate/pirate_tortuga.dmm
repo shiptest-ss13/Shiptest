@@ -2072,9 +2072,8 @@
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "yc" = (
-/obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/closed/wall/r_wall/rust,
 /area/ship/maintenance)
 "yd" = (
 /obj/structure/table/wood,
@@ -3289,6 +3288,11 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew)
+"NV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/trash/grille_or_waste,
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "Od" = (
 /obj/machinery/computer/helm{
 	dir = 8;
@@ -4965,10 +4969,10 @@ vQ
 YX
 Ko
 QM
-Hk
+NV
 yc
 lJ
-Ek
+lJ
 "}
 (16,1,1) = {"
 Ek
@@ -5003,9 +5007,9 @@ sQ
 Ko
 Hk
 kv
+QJ
 lJ
 lJ
-Ek
 "}
 (17,1,1) = {"
 Ek
@@ -5039,10 +5043,10 @@ GA
 UT
 kK
 Bk
+QJ
+QJ
 lJ
 lJ
-lJ
-Ek
 "}
 (18,1,1) = {"
 Ek
@@ -5076,10 +5080,10 @@ QJ
 QJ
 QJ
 mf
+QJ
 lJ
 lJ
 lJ
-Ek
 "}
 (19,1,1) = {"
 Ek
@@ -5113,10 +5117,10 @@ Kn
 bR
 rW
 hh
+QJ
 lJ
 lJ
 lJ
-Ek
 "}
 (20,1,1) = {"
 Ek
@@ -5149,10 +5153,10 @@ qD
 Pb
 Jv
 Eb
-Hk
+yc
+QJ
 lJ
 lJ
-Ek
 Ek
 "}
 (21,1,1) = {"
@@ -5186,18 +5190,18 @@ qD
 Yo
 Rc
 Hk
+QJ
 lJ
 lJ
-Ek
 Ek
 Ek
 "}
 (22,1,1) = {"
 Ek
 Ek
-Ek
 lJ
 lJ
+QJ
 Fh
 Lm
 rU
@@ -5231,10 +5235,10 @@ Ek
 "}
 (23,1,1) = {"
 Ek
-Ek
 lJ
 lJ
-lJ
+QJ
+QJ
 tb
 Lm
 Ab
@@ -5260,7 +5264,7 @@ hT
 qD
 XX
 AG
-lJ
+QJ
 lJ
 lJ
 Ek
@@ -5268,9 +5272,9 @@ Ek
 "}
 (24,1,1) = {"
 Ek
-Ek
 lJ
 lJ
+QJ
 eA
 OG
 Rs
@@ -5297,17 +5301,17 @@ hz
 qD
 Dv
 fn
+QJ
 lJ
 lJ
-Ek
 Ek
 Ek
 "}
 (25,1,1) = {"
 Ek
-Ek
 lJ
 lJ
+QJ
 tV
 Hk
 Wv
@@ -5334,17 +5338,17 @@ Vb
 qD
 MH
 Eb
+QJ
 lJ
 lJ
-Ek
 Ek
 Ek
 "}
 (26,1,1) = {"
 Ek
-Ek
 lJ
 lJ
+QJ
 Pb
 gG
 js
@@ -5371,7 +5375,7 @@ hT
 qD
 XX
 YU
-lJ
+QJ
 lJ
 lJ
 Ek
@@ -5379,9 +5383,9 @@ Ek
 "}
 (27,1,1) = {"
 Ek
-Ek
 lJ
 lJ
+QJ
 YJ
 DR
 Wd
@@ -5416,9 +5420,9 @@ Ek
 "}
 (28,1,1) = {"
 Ek
-Ek
 lJ
 lJ
+QJ
 Cx
 XC
 eA
@@ -5445,7 +5449,7 @@ kv
 hh
 DU
 Hk
-lJ
+QJ
 lJ
 lJ
 Ek
@@ -5453,7 +5457,7 @@ Ek
 "}
 (29,1,1) = {"
 Ek
-Ek
+QJ
 QJ
 QJ
 QJ
@@ -5481,19 +5485,19 @@ QJ
 YU
 vD
 kv
+QJ
+QJ
 lJ
 lJ
-lJ
-Ek
 Ek
 Ek
 "}
 (30,1,1) = {"
 Ek
-Ek
 lJ
 lJ
 lJ
+QJ
 dF
 kO
 FR
@@ -5518,20 +5522,20 @@ QJ
 iy
 oK
 Hi
+QJ
 lJ
 lJ
 lJ
-Ek
 Ek
 Ek
 "}
 (31,1,1) = {"
 Ek
 Ek
-Ek
 lJ
 lJ
-lJ
+QJ
+QJ
 qM
 bv
 fE
@@ -5553,23 +5557,23 @@ Xu
 mB
 ts
 XJ
-et
-uX
+Bk
+Bk
+QJ
 lJ
 lJ
 lJ
-Ek
 Ek
 Ek
 "}
 (32,1,1) = {"
 Ek
 Ek
-Ek
 lJ
 lJ
 lJ
-lJ
+QJ
+QJ
 cS
 rY
 bR
@@ -5590,9 +5594,9 @@ Zf
 mB
 yX
 fn
-GP
-aV
-lJ
+et
+uX
+QJ
 lJ
 lJ
 Ek
@@ -5603,12 +5607,12 @@ Ek
 Ek
 Ek
 Ek
-Ek
 lJ
 lJ
 lJ
-lJ
-lJ
+QJ
+QJ
+QJ
 vW
 td
 ah
@@ -5627,11 +5631,11 @@ Ss
 mB
 kp
 Eu
+GP
+aV
+QJ
 lJ
 lJ
-lJ
-lJ
-Ek
 Ek
 Ek
 Ek
@@ -5641,12 +5645,12 @@ Ek
 Ek
 Ek
 Ek
-Ek
-Ek
 lJ
 lJ
 lJ
 lJ
+QJ
+QJ
 QJ
 QJ
 Ld
@@ -5667,7 +5671,7 @@ QJ
 QJ
 QJ
 QJ
-Ek
+lJ
 Ek
 Ek
 Ek
@@ -5679,8 +5683,8 @@ Ek
 Ek
 Ek
 Ek
-Ek
-Ek
+lJ
+lJ
 lJ
 lJ
 lJ
@@ -5701,10 +5705,10 @@ mw
 yt
 Lm
 Kn
+QJ
 lJ
 lJ
 lJ
-Ek
 Ek
 Ek
 Ek
@@ -5718,7 +5722,7 @@ Ek
 Ek
 Ek
 Ek
-Ek
+lJ
 lJ
 lJ
 lJ
@@ -5737,10 +5741,10 @@ pW
 hh
 qT
 ml
+QJ
+QJ
 lJ
 lJ
-lJ
-Ek
 Ek
 Ek
 Ek
@@ -5756,7 +5760,7 @@ Ek
 Ek
 Ek
 Ek
-Ek
+lJ
 lJ
 lJ
 QJ
@@ -5770,13 +5774,13 @@ Ek
 Ek
 Ek
 QJ
+QJ
+QJ
+QJ
+QJ
+QJ
 lJ
 lJ
-lJ
-lJ
-lJ
-lJ
-Ek
 Ek
 Ek
 Ek
@@ -5794,7 +5798,7 @@ Ek
 Ek
 Ek
 Ek
-Ek
+lJ
 lJ
 QJ
 lJ
@@ -5812,7 +5816,7 @@ lJ
 lJ
 lJ
 lJ
-Ek
+lJ
 Ek
 Ek
 Ek
