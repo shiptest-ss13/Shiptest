@@ -107,6 +107,7 @@
 	rapid_fire_delay = 5
 	retreat_distance = 0
 	minimum_distance = 1
+	shoot_point_blank = TRUE
 	projectilesound = 'sound/weapons/gun/laser/nt-fire.ogg'
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun/space

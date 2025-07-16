@@ -672,7 +672,7 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/porta_turret/ruin/nt{
 	dir = 4;
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/lobby)
@@ -860,7 +860,6 @@
 /area/ruin/space/has_grav/deepstorage/hallway/east)
 "gz" = (
 /obj/structure/guncloset,
-/obj/item/gun/energy/laser/iot/lethal,
 /obj/effect/turf_decal/siding/white{
 	dir = 5
 	},
@@ -868,6 +867,7 @@
 	dir = 5
 	},
 /obj/item/gun/energy/laser,
+/obj/item/gun/energy/e_gun/iot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/security)
 "gI" = (
@@ -1017,7 +1017,7 @@
 "hC" = (
 /obj/machinery/porta_turret/ruin/nt{
 	dir = 8;
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -2154,6 +2154,10 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/door/airlock/public/glass{
+	dir = 4;
+	name = "Hallway"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/deepstorage/hallway)
 "ph" = (
@@ -2271,7 +2275,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/deepstorage)
 "pQ" = (
-/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/smg/space,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
@@ -2284,6 +2287,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/rifle/space,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
 "pR" = (
@@ -2539,7 +2543,7 @@
 "rK" = (
 /obj/machinery/porta_turret/ruin/nt{
 	dir = 1;
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/floor,
@@ -3647,7 +3651,7 @@
 "zw" = (
 /obj/machinery/porta_turret/ruin/nt{
 	dir = 4;
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/floor,
@@ -3798,7 +3802,7 @@
 "AN" = (
 /obj/machinery/porta_turret/ruin/nt/light{
 	dir = 8;
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -4318,7 +4322,7 @@
 "EL" = (
 /obj/machinery/porta_turret/ruin/nt/light/sniper{
 	id = "fuelingpost";
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -4345,7 +4349,7 @@
 /area/ruin/space/has_grav/deepstorage/canteen)
 "EV" = (
 /obj/machinery/porta_turret/ruin/nt/light{
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -4452,7 +4456,7 @@
 "Gc" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space,
+/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/space,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hallway)
 "Gf" = (
@@ -4917,7 +4921,7 @@
 "IR" = (
 /obj/machinery/porta_turret/ruin/nt/light/sniper{
 	id = "fuelingpost";
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/hatch/yellow,
@@ -5526,7 +5530,7 @@
 "Mk" = (
 /obj/machinery/porta_turret/ruin/nt{
 	dir = 8;
-	faction = list("deathsquad","turret")
+	faction = list("Deathsquad","turret")
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/floor,
@@ -7354,7 +7358,7 @@
 /area/ruin/space/deepstorage)
 "ZK" = (
 /obj/machinery/porta_turret/ruin/nt/light{
-	faction = list("deathsquad","turret");
+	faction = list("Deathsquad","turret");
 	dir = 4
 	},
 /obj/machinery/light/floor,
@@ -8935,7 +8939,7 @@ BU
 Rw
 EH
 Rw
-iy
+EH
 EH
 Rw
 Rw

@@ -59,11 +59,8 @@
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/frontier
 
 /datum/outfit/frontier/trooper/space
-	name = "Frontiersman Armored Corpse"
+	name = "Frontiersman Armored Space Corpse"
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
 	mask = /obj/item/clothing/mask/gas/frontiersmen
 	back = /obj/item/tank/jetpack/carbondioxide
