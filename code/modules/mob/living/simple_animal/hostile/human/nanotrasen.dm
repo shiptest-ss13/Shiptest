@@ -140,6 +140,7 @@
 	desc = "A well-armed member of Vigilitas Interstellar. They stand at the ready with a Hades energy rifle, smirking underneath their gas mask."
 	rapid = 4
 	rapid_fire_delay = 4
+	casingtype = null
 	projectiletype = /obj/projectile/beam/laser/assault/sharplite
 	r_hand = /obj/item/gun/energy/e_gun/hades
 	projectilesound = 'sound/weapons/gun/laser/e40_las.ogg'

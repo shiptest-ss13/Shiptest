@@ -97,6 +97,12 @@
 "aV" = (
 /obj/structure/filingcabinet/chestdrawer/wheeled,
 /obj/machinery/light/small/directional/west,
+/obj/machinery/button/door{
+	pixel_x = 0;
+	pixel_y = 22;
+	name = "lockdown override (WARNING)";
+	id = "vigilockdown"
+	},
 /turf/open/floor/carpet/blue,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
 "bc" = (
@@ -1272,11 +1278,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/canteen)
-"iy" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/ruin/space/deepstorage)
 "iB" = (
 /obj/machinery/photocopier,
 /turf/open/floor/carpet/red,
@@ -1689,7 +1690,9 @@
 /area/ruin/space/has_grav/deepstorage/security/office)
 "lm" = (
 /obj/item/ammo_casing/spent/rifle_brass,
-/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
+	piping_layer = 4
+	},
 /obj/effect/turf_decal/siding/yellow/corner{
 	dir = 8
 	},
@@ -2101,7 +2104,7 @@
 /obj/machinery/button/door{
 	pixel_x = -6;
 	pixel_y = 0;
-	id = "vigiturret1";
+	id = "vigiturret2";
 	dir = 4;
 	name = "turret release"
 	},
@@ -4382,7 +4385,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun/space,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -6660,6 +6662,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/mob/living/simple_animal/hostile/human/nanotrasen/ranged/laser/space,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "Ur" = (
@@ -12085,7 +12088,7 @@ Rw
 pi
 EH
 pP
-iy
+EH
 EH
 pi
 Rw
