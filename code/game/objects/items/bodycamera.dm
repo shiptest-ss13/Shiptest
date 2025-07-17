@@ -16,7 +16,7 @@
 	var/busy = FALSE
 	var/can_transmit_across_z_levels = FALSE
 	var/updating = FALSE //portable camera camerachunk update
-	var/mob/tracked_mob
+	var/mob/tracked_mob //last mob that picked up the bodycamera. needed for cameranet updates
 
 /obj/item/bodycamera/Initialize()
 	. = ..()
@@ -48,7 +48,7 @@
 	if(!user.CanReach(src))
 		return
 	if(do_after(user, 10, src, IGNORE_USER_LOC_CHANGE))
-		status = !status
+		toggle_cam(user)
 		if(status)
 			icon_state = "bodycamera-on"
 			playsound(user, 'sound/items/bodycamera_on.ogg', 23, FALSE)
@@ -99,17 +99,17 @@
 	src.view_range = num
 	GLOB.cameranet.updateVisibility(src, 0)
 
-/obj/item/bodycamera/proc/toggle_cam(mob/user, displaymessage = 1)
+/obj/item/bodycamera/proc/toggle_cam(mob/user)
 	status = !status
 	if(can_use())
 		GLOB.cameranet.addCamera(src)
-		do_camera_update()
 		myarea = null
 	else
 		GLOB.cameranet.removeCamera(src)
 		if (isarea(myarea))
 			LAZYREMOVE(myarea.cameras, src)
 	GLOB.cameranet.updateChunk(x, y, z)
+	do_camera_update()
 	update_appearance() //update Initialize() if you remove this.
 
 	// now disconnect anyone using the camera
@@ -149,8 +149,7 @@
 	if(tracked_mob)
 		UnregisterSignal(tracked_mob, COMSIG_MOVABLE_MOVED)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //just in case
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(update_camera_location)) //this signal does stick around after you drop the item...
-	tracked_mob = user
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(mob_move)) //this signal does stick around after you drop the item, but expensive camera updates are avoided unless the camera moves
 
 /obj/item/bodycamera/Moved(oldLoc, dir) //shamelessly stolen from silicon_movement.dm
 	. = ..()
@@ -162,15 +161,22 @@
 	if(.)
 		update_camera_location(destination)
 
+/obj/item/bodycamera/proc/mob_move() //see code/game/machinery/computer/camera.dm:243
+	SIGNAL_HANDLER
+
+	var/cam_location = src.loc
+	if((istype(cam_location, /obj/item/clothing)) || (istype(cam_location, /obj/item/storage))) //camera isn't equipped to a slot, and is stored in something else
+		cam_location = src.loc.loc
+	update_camera_location(cam_location)
+
 /obj/item/bodycamera/proc/do_camera_update(oldLoc)
-	GLOB.cameranet.updatePortableCamera(src)
+	if(oldLoc != get_turf(src)) //we want to make sure the camera source has actually moved before running expensive camera updates
+		GLOB.cameranet.updatePortableCamera(src)
 	updating = FALSE
 
 /obj/item/bodycamera/proc/update_camera_location(oldLoc)
-	SIGNAL_HANDLER
-
 	oldLoc = get_turf(oldLoc)
-	if((!updating && oldLoc != get_turf(src)) || (item_flags & IN_INVENTORY || item_flags & IN_STORAGE)) //...but we check to make sure it's equipped (or moved) before doing the expensive camera updates
+	if(!updating)
 		updating = TRUE
 		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), BODYCAM_UPDATE_BUFFER)
 
