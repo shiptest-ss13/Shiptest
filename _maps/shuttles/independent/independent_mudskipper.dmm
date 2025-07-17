@@ -175,6 +175,11 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/hostile/asteroid/gutlunch/guthen{
+	name = "Kitty";
+	faction = list("neutral")
+	},
 /turf/open/floor/carpet,
 /area/ship/crew)
 "dT" = (
@@ -1043,8 +1048,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "xo" = (
-/obj/structure/dresser,
 /obj/machinery/light/small/directional/east,
+/obj/structure/closet/cabinet,
+/obj/item/storage/backpack/satchel/explorer,
+/obj/item/storage/backpack/satchel/explorer,
+/obj/item/storage/backpack/satchel/explorer,
+/obj/item/storage/backpack/satchel/explorer,
+/obj/item/clothing/head/soft/utility_olive,
+/obj/item/clothing/head/soft/utility_olive,
+/obj/item/clothing/head/soft/utility_olive,
+/obj/item/clothing/head/soft/utility_olive,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
 	},
@@ -1448,15 +1461,13 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
 "Ft" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/obj/structure/curtain/bounty,
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_y = -21;
 	pixel_x = 3
 	},
 /obj/machinery/light/small/directional/west,
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "FN" = (
@@ -2106,11 +2117,12 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "UZ" = (
-/obj/structure/table,
 /obj/machinery/airalarm/directional/west,
 /obj/item/flashlight/lamp/green{
-	pixel_y = 4
+	pixel_y = 9;
+	pixel_x = 5
 	},
+/obj/structure/dresser,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "Vn" = (
@@ -2139,9 +2151,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Vy" = (
-/obj/structure/bed,
-/obj/item/bedsheet/dorms,
-/obj/structure/curtain/bounty,
+/obj/effect/spawner/bunk_bed,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "VP" = (
