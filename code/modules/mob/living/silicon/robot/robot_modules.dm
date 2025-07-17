@@ -965,7 +965,6 @@
 	name = "Brigador-type Prototype Commando"
 	basic_modules = list(
 		/obj/item/card/emag/borg,
-		/obj/item/pickaxe/drill/jackhammer/brigador,
 		/obj/item/weldingtool/largetank/cyborg,
 		/obj/item/borg/sight/thermal,
 		/obj/item/gun/energy/printer/commando,

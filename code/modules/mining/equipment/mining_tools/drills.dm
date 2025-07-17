@@ -39,3 +39,17 @@
 	toolspeed = 0.8
 	force = 15
 	armour_penetration = 15
+
+/obj/item/pickaxe/drill/cyborg
+	name = "integrated mining drill"
+	desc = "An integrated electric mining drill."
+	flags_1 = NONE
+
+/obj/item/pickaxe/drill/cyborg/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CYBORG_ITEM_TRAIT)
+
+/obj/item/pickaxe/drill/cyborg/diamond //This is the BORG version!
+	name = "diamond-tipped integrated mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.
+	icon_state = "diamonddrill"
+	toolspeed = 0.2
