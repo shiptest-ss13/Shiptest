@@ -885,11 +885,11 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
-/obj/machinery/light/directional/east,
-/obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "th" = (
@@ -981,12 +981,12 @@
 /obj/structure/sign/poster/contraband/punch_shit{
 	pixel_x = 32
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "vI" = (
@@ -1087,9 +1087,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "yg" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/structure/extinguisher_cabinet/directional/west{
 	pixel_y = -5
 	},
@@ -1121,6 +1118,9 @@
 /obj/item/reagent_containers/condiment/enzyme,
 /obj/item/food/meat/slab,
 /obj/item/food/meat/slab,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "yv" = (
@@ -2010,9 +2010,6 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
 "ST" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/condiment/peppermill{
@@ -2025,6 +2022,9 @@
 	},
 /obj/item/cutting_board,
 /obj/item/melee/knife/kitchen,
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "Tn" = (
