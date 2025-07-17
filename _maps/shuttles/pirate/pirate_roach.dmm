@@ -280,6 +280,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/item/megaphone,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dR" = (
@@ -905,6 +906,7 @@
 	dir = 8;
 	layer = 2.040
 	},
+/obj/machinery/computer/helm/viewscreen/directional/west,
 /turf/open/floor/plating/rust,
 /area/ship/hallway/central)
 "mE" = (
@@ -2064,6 +2066,7 @@
 	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/prison)
 "AV" = (
@@ -2194,12 +2197,7 @@
 /obj/item/gun/ballistic/automatic/smg/sidewinder,
 /obj/item/gun/ballistic/automatic/smg/cobra,
 /obj/machinery/light/directional/south,
-/obj/structure/guncloset{
-	anchored = 1;
-	can_be_unanchored = 1;
-	open = 0;
-	req_access_txt = "3"
-	},
+/obj/structure/closet/secure_closet/armorycage,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "De" = (
@@ -3800,6 +3798,7 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/machinery/computer/helm/viewscreen/directional/south,
 /turf/open/floor/wood/walnut{
 	color = "#543c30";
 	icon_state = "wood-broken5"
