@@ -64,6 +64,7 @@
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/laser/space
 	minbodytemp = 0
 	maxbodytemp = 1000
+	icon_state = "nanotrasen_laserspace"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_space
 
@@ -113,6 +114,7 @@
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/shotgun/space
 	name = "\improper Vigilitas Pointman"
 	desc = "A member of Vigilitas Interstellar, clad in white-striped hardsuit. They confidently aim around their shotgun, ready to burn away any trespassers."
+	icon_state = "nanotrasen_shotgun"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/hos
 	minbodytemp = 0
 	maxbodytemp = 1000
@@ -128,6 +130,7 @@
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security
 	minbodytemp = 0
 	maxbodytemp = 1000
+	icon_state = "nanotrasen_etar"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/vigilitas_space
 
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/smg/space/Initialize()
@@ -148,8 +151,8 @@
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/rifle/space
 	name = "Vigilitas Trooper"
 	desc = "A member of Vigilitas Interstellar. White stripes painted red with every shot of their rifle, they aim around cautiously."
-	icon_state = "nanotrasenrangedsmg"
-	icon_living = "nanotrasenrangedsmg"
+	icon_state = "nanotrasen_hades"
+	icon_living = "nanotrasen_hades"
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/hos
 	minbodytemp = 0
 	maxbodytemp = 1000

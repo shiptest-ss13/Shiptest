@@ -167,6 +167,15 @@
 "bx" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/deepstorage/engineering)
+"by" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/deepstorage/cargo)
 "bz" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/borderfloorblack{
@@ -245,8 +254,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
+"bX" = (
+/obj/item/clothing/gloves/combat,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/space/deepstorage)
 "cd" = (
 /obj/machinery/power/smes/shuttle/precharged{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -286,6 +307,9 @@
 "co" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/shuttle1)
@@ -330,6 +354,11 @@
 /obj/item/pen,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/security/office)
+"cH" = (
+/obj/structure/lattice,
+/obj/item/stack/tile/plasteel/dark,
+/turf/open/space/basic,
+/area/ruin/space/deepstorage)
 "cI" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/has_grav/deepstorage/cargo)
@@ -411,9 +440,13 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/security)
 "dl" = (
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/tech/techmaint/airless,
-/area/ruin/space/has_grav/deepstorage/cargo)
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4;
+	id = "frontiepod3"
+	},
+/obj/item/stack/rods,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/space/shuttle3)
 "dm" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
@@ -435,6 +468,19 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
 	dir = 9
+	},
+/obj/item/storage/backpack/duffelbag/sec{
+	pixel_x = -2;
+	pixel_y = 10
+	},
+/obj/structure/noticeboard{
+	dir = 4;
+	pixel_x = -23;
+	pixel_y = 0
+	},
+/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
+	pixel_x = -19;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
@@ -593,6 +639,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/lobby)
+"ev" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/deepstorage)
 "eB" = (
 /obj/machinery/camera/autoname,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -940,6 +992,14 @@
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
 	},
+/obj/item/shard/plastitanium{
+	pixel_x = -14;
+	pixel_y = -8
+	},
+/obj/item/stack/rods{
+	pixel_x = 13;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "hb" = (
@@ -983,6 +1043,11 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hallway)
+"ht" = (
+/obj/item/stack/rods/ten,
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/ruin/space/deepstorage)
 "hu" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/corner/transparent/ntblue/border{
@@ -1017,15 +1082,20 @@
 /area/ruin/space/deepstorage)
 "hB" = (
 /obj/effect/spawner/bunk_bed,
+/obj/item/bedsheet/red,
+/obj/item/bedsheet/red{
+	pixel_x = 0;
+	pixel_y = 12
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
 "hC" = (
-/obj/machinery/porta_turret/ruin/nt{
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/porta_turret/ruin/nt/heavy{
 	dir = 8;
 	faction = list("Deathsquad","turret")
 	},
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
 "hG" = (
@@ -1308,8 +1378,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/shuttle3)
 "iJ" = (
-/obj/item/stack/sheet/mineral/titanium/five,
-/turf/template_noop,
+/obj/item/stack/ore/salvage/scraptitanium/five,
+/turf/open/space/basic,
 /area/ruin/space/deepstorage)
 "iL" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -1350,6 +1420,13 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/overwatch)
+"iV" = (
+/obj/item/stack/ore/salvage/scrapmetal/ten{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/deepstorage)
 "iY" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
@@ -1379,6 +1456,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/shuttle3)
+"jn" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/moon,
+/area/ruin/space/deepstorage)
 "jr" = (
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1549,6 +1632,10 @@
 	dir = 10
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/sign/poster/official/safety_internals{
+	pixel_x = -29;
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
 "jZ" = (
@@ -1650,6 +1737,15 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/engineering)
+"la" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/moon,
+/area/ruin/space/deepstorage)
 "ld" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 6
@@ -2006,6 +2102,15 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_x = 0;
+	pixel_y = -22;
+	id = "Vishitter";
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	name = "privacy lock"
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/bathroom)
 "nT" = (
@@ -2167,6 +2272,11 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/deepstorage)
+"pn" = (
+/obj/structure/lattice,
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/space/basic,
+/area/ruin/space/deepstorage)
 "po" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -2253,6 +2363,7 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
 	},
+/obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/ruin/space/shuttle2)
 "pN" = (
@@ -2505,6 +2616,12 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/deepstorage)
+"rB" = (
+/obj/item/clothing/shoes/jackboots,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/space/deepstorage)
 "rI" = (
 /obj/machinery/power/terminal,
 /obj/structure/railing{
@@ -2559,6 +2676,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/hallway/upper)
+"rW" = (
+/obj/item/gun/energy/e_gun/hos{
+	spawn_no_ammo = 1;
+	pixel_x = 17;
+	pixel_y = 2
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/deepstorage/security/office)
 "rX" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -2585,10 +2710,6 @@
 /area/ruin/space/shuttle3)
 "si" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
-	pixel_x = -12;
-	pixel_y = 5
-	},
 /obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
 	pixel_x = 3;
 	pixel_y = 4
@@ -2827,6 +2948,10 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 2
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/window/reinforced,
 /turf/open/floor/plating/airless,
 /area/ruin/space/shuttle2)
 "uh" = (
@@ -2974,6 +3099,12 @@
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
+/area/ruin/space/deepstorage)
+"uR" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/moon,
 /area/ruin/space/deepstorage)
 "uT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2{
@@ -3151,6 +3282,12 @@
 /obj/effect/turf_decal/trimline/opaque/vired/corner,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
+"wi" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/deepstorage)
 "wk" = (
 /obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
@@ -3195,6 +3332,12 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/space/shuttle1)
+"wr" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg3"
+	},
+/area/ruin/space/deepstorage)
 "wx" = (
 /obj/effect/decal/cleanable/glass/plastitanium,
 /obj/item/shard/plastitanium{
@@ -3294,7 +3437,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "xh" = (
-/obj/item/stack/sheet/mineral/titanium/five,
+/obj/item/stack/tile/plasteel/dark,
 /turf/open/space/basic,
 /area/ruin/space/deepstorage)
 "xj" = (
@@ -3378,6 +3521,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/arrow_cw,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/deepstorage/cargo)
 "xN" = (
@@ -3454,8 +3598,16 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/overwatch)
+"yi" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/power/rtg,
+/turf/open/floor/plating/airless,
+/area/ruin/space/deepstorage)
 "yp" = (
 /obj/structure/chair/office,
 /turf/open/floor/carpet/blue,
@@ -3543,7 +3695,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
 "yP" = (
-/obj/machinery/computer/monitor{
+/obj/machinery/modular_computer/console/preset/engineering{
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
@@ -3695,6 +3847,7 @@
 	dir = 10
 	},
 /obj/effect/mob_spawn/human/corpse/frontier/space,
+/obj/effect/decal/cleanable/glass/plastitanium,
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "Ag" = (
@@ -3784,6 +3937,10 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
+/obj/item/stack/rods{
+	pixel_x = -7;
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/deepstorage/cargo)
 "AN" = (
@@ -3793,6 +3950,9 @@
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/deepstorage)
 "AP" = (
@@ -3921,8 +4081,9 @@
 /area/ruin/space/has_grav/deepstorage/hallway/east)
 "Bv" = (
 /obj/machinery/light/floor,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/deepstorage/cargo)
+/obj/structure/railing/thin,
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/deepstorage)
 "Bx" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gibbl2"
@@ -3941,10 +4102,9 @@
 /area/ruin/space/has_grav/deepstorage/security/office)
 "BG" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/energy/e_gun/hos{
-	spawn_no_ammo = 1;
-	pixel_x = -4;
-	pixel_y = 6
+/obj/item/wallframe/intercom/table{
+	pixel_x = 0;
+	pixel_y = 0
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/security/office)
@@ -4028,7 +4188,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/shuttle2)
 "Ck" = (
-/obj/item/stack/sheet/metal/five,
+/obj/item/stack/ore/salvage/scrapmetal/ten,
 /turf/open/space/basic,
 /area/ruin/space/deepstorage)
 "Cn" = (
@@ -4055,12 +4215,27 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/security/lobby)
+"Cv" = (
+/obj/effect/decal/cleanable/blood/gibs/torso,
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/deepstorage)
 "Cw" = (
 /obj/structure/flippedtable{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
+"CB" = (
+/obj/item/stack/tile/plasteel/dark,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg1"
+	},
+/area/ruin/space/deepstorage)
 "CJ" = (
 /obj/structure/girder,
 /turf/open/space/basic,
@@ -4159,8 +4334,16 @@
 	icon_state = "gibbl2"
 	},
 /obj/machinery/light_switch{
-	pixel_x = -2;
+	pixel_x = -11;
 	pixel_y = 22
+	},
+/obj/structure/noticeboard{
+	pixel_x = 8;
+	pixel_y = 24
+	},
+/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
+	pixel_x = 9;
+	pixel_y = 21
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/overwatch)
@@ -4340,6 +4523,7 @@
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/ruin/space/deepstorage)
 "Fi" = (
@@ -4402,6 +4586,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/lobby)
+"FK" = (
+/obj/item/stack/cable_coil/cut/red,
+/turf/open/floor/plating/airless{
+	icon_state = "platingdmg2"
+	},
+/area/ruin/space/deepstorage)
 "FO" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -4451,12 +4641,13 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 9
+	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/overwatch)
 "Gh" = (
@@ -4524,6 +4715,14 @@
 /obj/effect/turf_decal/trimline/opaque/nsorange/arrow_cw{
 	dir = 10
 	},
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/deepstorage/cargo)
+"Gx" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/opaque/nsorange/arrow_cw{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/deepstorage/cargo)
 "Gy" = (
@@ -4715,6 +4914,10 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
+/obj/item/storage/backpack/satchel/sec,
+/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/shoes/jackboots,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
 "HK" = (
@@ -4737,6 +4940,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/med)
 "HO" = (
+/obj/item/stack/ore/salvage/scrapmetal/ten,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "HQ" = (
@@ -4781,6 +4985,10 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/east,
+/obj/item/storage/backpack/satchel/sec,
+/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/under/nanotrasen/security,
+/obj/item/clothing/shoes/jackboots,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
 "If" = (
@@ -4904,7 +5112,6 @@
 /area/ruin/space/has_grav/deepstorage/hallway/east)
 "IR" = (
 /obj/machinery/porta_turret/ruin/nt/light/sniper{
-	id = "fuelingpost";
 	faction = list("Deathsquad","turret")
 	},
 /obj/machinery/light/floor,
@@ -4997,6 +5204,14 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
+	},
+/obj/structure/noticeboard{
+	pixel_x = 0;
+	pixel_y = 26
+	},
+/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
+	pixel_x = 3;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/security)
@@ -5176,7 +5391,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby)
 "Kz" = (
-/obj/effect/mob_spawn/human/corpse/vigilitas_private,
+/obj/effect/gibspawner/human,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
@@ -5197,6 +5412,12 @@
 "KF" = (
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/deepstorage/bathroom)
+"KH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/deepstorage)
 "KM" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -5498,6 +5719,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
 	},
+/obj/item/stack/ore/salvage/scrapmetal/ten,
 /turf/open/floor/plating,
 /area/ruin/space/shuttle3)
 "LU" = (
@@ -5521,9 +5743,11 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ruin/space/deepstorage)
 "Mq" = (
-/obj/item/stack/sheet/mineral/titanium/five,
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
+/turf/open/floor/plating/asteroid/moon,
+/area/ruin/space/deepstorage)
 "Mv" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/siding/white{
@@ -5672,6 +5896,12 @@
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/shuttle1)
 "Np" = (
@@ -5729,6 +5959,16 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/engineering)
+"NF" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/arrow_cw{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/deepstorage/cargo)
 "NH" = (
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/tech,
@@ -6045,6 +6285,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
+"Qd" = (
+/obj/machinery/light/floor,
+/obj/structure/railing/thin{
+	dir = 8
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ruin/space/deepstorage)
 "Qf" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 9
@@ -6093,12 +6340,19 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
-/obj/machinery/firealarm/directional/north,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 6;
+	pixel_y = 32
+	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/arrow_cw{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/nsorange/filled/warning{
 	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -7;
+	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/deepstorage/cargo)
@@ -6218,10 +6472,19 @@
 /mob/living/simple_animal/hostile/human/nanotrasen/ranged/trooper/rifle/space,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/deepstorage/hallway/east)
+"QQ" = (
+/obj/machinery/power/rtg,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plating/airless,
+/area/ruin/space/deepstorage)
 "QR" = (
 /obj/machinery/door/airlock/public{
 	name = "Toilet";
-	dir = 4
+	dir = 4;
+	id_tag = "Vishitter"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/deepstorage/bathroom)
@@ -6441,6 +6704,11 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/deepstorage/bathroom)
+"Tg" = (
+/obj/effect/decal/cleanable/glass/plastitanium,
+/obj/item/stack/rods,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/deepstorage/engineering)
 "Tm" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line{
 	dir = 1
@@ -6480,6 +6748,14 @@
 /obj/machinery/fax/ruin,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/security/office)
+"TD" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/nsorange/arrow_cw,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/space/has_grav/deepstorage/cargo)
 "TJ" = (
 /obj/structure/chair/bench/blue/directional/north,
 /obj/effect/turf_decal/siding/white{
@@ -6594,6 +6870,19 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/deepstorage/hallway)
+"Ue" = (
+/obj/effect/spawner/bunk_bed,
+/obj/item/bedsheet/red,
+/obj/item/bedsheet/red{
+	pixel_x = 0;
+	pixel_y = 12
+	},
+/obj/structure/sign/poster/clip/lanchester{
+	pixel_x = 28;
+	pixel_y = 0
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/deepstorage/crewquarters)
 "Ug" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -6625,6 +6914,11 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/lobby/med)
+"Un" = (
+/obj/structure/lattice,
+/obj/effect/gibspawner/human,
+/turf/open/space/basic,
+/area/ruin/space/deepstorage)
 "Uq" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -6657,6 +6951,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/transparent/white/filled/warning,
+/obj/item/stack/ore/salvage/scrapmetal/ten{
+	pixel_x = -16;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/space/has_grav/deepstorage/cargo)
 "UH" = (
@@ -6665,6 +6963,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/stack/rods,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "UK" = (
@@ -6696,10 +6995,6 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
-	},
-/obj/item/paper/crumpled/fluff/ruin/space/deepstorage/orders{
-	pixel_x = 3;
-	pixel_y = 4
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/overwatch)
@@ -6738,6 +7033,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/stack/ore/salvage/scrapmetal/ten,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/deepstorage/engineering)
 "VO" = (
@@ -7022,6 +7318,9 @@
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ruin/space/shuttle3)
 "XA" = (
@@ -7183,6 +7482,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
+"Yu" = (
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plating/asteroid/moon,
+/area/ruin/space/deepstorage)
 "Yx" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -7230,6 +7535,10 @@
 /area/ruin/space/has_grav/deepstorage/engineering)
 "YF" = (
 /obj/structure/dresser,
+/obj/structure/sign/poster/official/work_for_a_future{
+	pixel_x = 0;
+	pixel_y = 31
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/crewquarters)
 "YL" = (
@@ -7302,6 +7611,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/deepstorage/med)
+"ZE" = (
+/obj/machinery/power/rtg,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/turf/open/floor/plating/airless,
+/area/ruin/space/deepstorage)
 "ZF" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -7332,6 +7649,9 @@
 	},
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/deepstorage)
 "ZM" = (
@@ -8095,7 +8415,7 @@ Rw
 Rw
 Rw
 Rw
-Rw
+xh
 Rw
 Rw
 Rw
@@ -8247,7 +8567,7 @@ Rw
 Rw
 Rw
 Rw
-xh
+iJ
 Rw
 Rw
 Rw
@@ -8336,7 +8656,7 @@ Rw
 Rw
 Rw
 Rw
-xh
+iJ
 Rw
 Rw
 Rw
@@ -8455,7 +8775,7 @@ Rw
 wy
 wy
 kA
-nT
+rW
 nT
 nX
 Ns
@@ -8638,18 +8958,18 @@ ZR
 ZR
 ZR
 ZR
-RG
+Qd
+AI
+AI
 ZR
 ZR
 ZR
+AI
+AI
+Qd
 ZR
 ZR
-ZR
-ZR
-RG
-ZR
-ZR
-RG
+Bv
 Rw
 Rw
 Rw
@@ -8719,19 +9039,19 @@ ei
 ei
 ei
 ei
-Rw
+EH
 ZR
-Rw
+EH
 ZR
-Rw
-Rw
-Rw
+EH
+EH
+EH
 ZR
-Rw
+EH
 ZR
-Rw
-Rw
-ZR
+EH
+EH
+zx
 Rw
 Rw
 CJ
@@ -8739,8 +9059,8 @@ Rw
 Rw
 bL
 Rw
-ad
-ad
+rB
+FK
 EH
 Ya
 Rw
@@ -8812,7 +9132,7 @@ ZR
 Rw
 ZR
 Rw
-Rw
+EH
 ZR
 Rw
 Rw
@@ -8824,13 +9144,13 @@ Rw
 Rw
 ad
 Rw
-EH
+pn
 Yk
 jP
 EH
 bL
 Rw
-xh
+iJ
 Rw
 Rw
 Rw
@@ -8894,11 +9214,11 @@ qw
 Rw
 ZR
 Rw
-Rw
+EH
 ZR
 Rw
 Rw
-xh
+iJ
 Rw
 Rw
 bL
@@ -8908,7 +9228,7 @@ BU
 Rw
 EH
 Rw
-EH
+Un
 EH
 Rw
 Rw
@@ -8930,7 +9250,7 @@ Rw
 go
 go
 go
-go
+sL
 sL
 sL
 Rw
@@ -8976,7 +9296,7 @@ qw
 Rw
 ZR
 Rw
-Rw
+EH
 ZR
 Rw
 Rw
@@ -8985,7 +9305,7 @@ Rw
 Rw
 bL
 bL
-pA
+wi
 pA
 Kz
 EH
@@ -9012,8 +9332,8 @@ sL
 go
 go
 go
-go
-go
+sL
+sL
 Xn
 Xn
 Xn
@@ -9058,7 +9378,7 @@ qw
 qw
 qw
 qw
-Rw
+EH
 ZR
 Rw
 Rw
@@ -9068,13 +9388,13 @@ Rw
 Rw
 bL
 Rw
-iD
+Cv
 Rw
 uQ
 Rw
 iJ
 Rw
-jP
+bX
 EH
 Rw
 Rw
@@ -9095,8 +9415,8 @@ go
 go
 go
 go
-go
 sL
+Dp
 Dp
 Xa
 Rw
@@ -9140,12 +9460,12 @@ mB
 mB
 Gv
 qw
-IU
-ZR
+ht
+zx
 Rw
 Rw
 Rw
-EH
+cH
 Rw
 Rw
 bL
@@ -9155,7 +9475,7 @@ pA
 EH
 Rw
 Rw
-jP
+wr
 NR
 Wa
 Rw
@@ -9174,11 +9494,11 @@ sL
 sL
 sL
 sL
-go
-go
-go
-sL
-sL
+yi
+la
+uR
+KH
+KH
 EV
 Xa
 Rw
@@ -9214,16 +9534,16 @@ zb
 HT
 Sm
 pU
-dl
+wX
 pU
 wX
 li
-dl
+wX
 pU
 wG
 qw
 ZR
-RG
+Bv
 Rw
 Rw
 Rw
@@ -9257,10 +9577,10 @@ sL
 sL
 sL
 sL
-go
+jn
 go
 sL
-sL
+Dp
 Dp
 Xa
 Rw
@@ -9294,7 +9614,7 @@ UK
 bI
 AH
 HT
-Sm
+Gx
 wX
 JJ
 AT
@@ -9302,7 +9622,7 @@ wX
 wX
 wX
 wX
-wG
+TD
 qw
 Rw
 Rw
@@ -9312,7 +9632,7 @@ Rw
 EH
 EH
 Rw
-Mq
+iJ
 Wa
 Rw
 Rw
@@ -9326,7 +9646,7 @@ EH
 Rw
 Rw
 Rw
-Rw
+xh
 Rw
 Rw
 Rw
@@ -9337,10 +9657,10 @@ Rw
 Rw
 sL
 sL
+Xn
 sL
+ev
 sL
-sL
-go
 sL
 Xn
 Xn
@@ -9378,11 +9698,11 @@ ld
 HT
 Sm
 li
-dl
+wX
 pU
 wX
 xX
-dl
+wX
 Bf
 wG
 qw
@@ -9420,9 +9740,9 @@ Rw
 Rw
 sL
 Xn
-sL
-sL
-sL
+Dp
+ev
+Dp
 Xn
 sL
 sL
@@ -9462,7 +9782,7 @@ XE
 wX
 wX
 dg
-mS
+NF
 mS
 mS
 mS
@@ -9479,7 +9799,7 @@ Rw
 Rw
 Wa
 Lb
-pA
+CB
 Rw
 Wa
 ZR
@@ -9624,7 +9944,7 @@ VI
 HT
 Qp
 Se
-Bv
+Se
 DO
 qw
 ZR
@@ -9652,7 +9972,7 @@ Rw
 Rw
 Rw
 Rw
-Rw
+Ck
 Rw
 Rw
 Rw
@@ -9724,7 +10044,7 @@ Rw
 Rw
 Rw
 Rw
-EH
+cH
 Rw
 Rw
 IU
@@ -9791,7 +10111,7 @@ AJ
 Se
 iH
 xH
-ZR
+iV
 ZR
 ZR
 RM
@@ -9802,7 +10122,7 @@ Rw
 Rw
 Rw
 Rw
-Rw
+Ck
 Rw
 Rw
 Rw
@@ -9846,7 +10166,7 @@ Rw
 Nc
 hB
 JW
-hB
+Ue
 HH
 HY
 Bk
@@ -9952,7 +10272,7 @@ VI
 HT
 Ex
 Se
-Bv
+Se
 hk
 cS
 ZR
@@ -10033,7 +10353,7 @@ SC
 VI
 HT
 TO
-SZ
+by
 SZ
 IH
 qw
@@ -10965,7 +11285,7 @@ sL
 sL
 Xn
 sL
-sL
+ev
 sL
 Xn
 sL
@@ -11045,11 +11365,11 @@ Rw
 Rw
 sL
 sL
-go
-go
-go
-go
-go
+Xn
+sL
+jn
+sL
+Xn
 go
 sL
 go
@@ -11129,7 +11449,7 @@ Rw
 sL
 sL
 sL
-go
+jn
 go
 go
 go
@@ -11211,12 +11531,12 @@ Rw
 Rw
 Rw
 sL
-sL
-sL
-sL
-sL
-sL
+QQ
 go
+go
+sL
+sL
+sL
 "}
 (48,1,1) = {"
 Rw
@@ -11292,11 +11612,11 @@ Rw
 Rw
 Rw
 Rw
-Rw
 sL
 sL
 sL
-Rw
+sL
+sL
 Rw
 Rw
 "}
@@ -12150,7 +12470,7 @@ bx
 bx
 xf
 xf
-Kd
+Tg
 AQ
 bx
 uh
@@ -12348,7 +12668,7 @@ sL
 sL
 go
 go
-go
+Xn
 Xn
 Xn
 Xn
@@ -12390,11 +12710,11 @@ Rw
 Rw
 Rw
 Rw
-Rw
+Ck
 Rw
 Rw
 AA
-zc
+dl
 jh
 zc
 sf
@@ -12404,7 +12724,7 @@ Rw
 Rw
 Rw
 Rw
-Rw
+Ck
 Rw
 Rw
 Rw
@@ -12427,10 +12747,10 @@ Rw
 Rw
 sL
 sL
-sL
-sL
+ZE
+Yu
 go
-go
+sL
 sL
 Dp
 Xa
@@ -12510,10 +12830,10 @@ sL
 sL
 sL
 sL
-sL
 go
-go
-sL
+Mq
+KH
+KH
 EV
 Xa
 Rw
@@ -12646,7 +12966,7 @@ yF
 LI
 AA
 Rw
-Rw
+Ck
 Rw
 Rw
 Rw
@@ -12676,7 +12996,7 @@ go
 go
 go
 go
-sL
+Xn
 Xn
 Xn
 Xn
@@ -12720,7 +13040,7 @@ Rw
 Rw
 Rw
 Rw
-Rw
+Ck
 AA
 AA
 rf
@@ -12814,7 +13134,7 @@ Rw
 Rw
 Rw
 Rw
-Rw
+Ck
 Rw
 Rw
 Rw

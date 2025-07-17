@@ -107,6 +107,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	icon_state = "frontiersmanpounder"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
@@ -154,6 +155,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/mosin/space
 	icon_state = "frontiersmanrangedrifle_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
+	icon_state = "frontiersmanrangedrifle_space"
 	minbodytemp = 0
 	maxbodytemp = 1000
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
@@ -190,6 +192,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space
 	icon_state = "frontiersmanrangedelite_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
+	icon_state = "frontiersmanrangedelite_space"
 	minbodytemp = 0
 	maxbodytemp = 1000
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
@@ -283,6 +286,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	icon_state = "frontiersmanrangedak47_space"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 	armor_base = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
@@ -342,6 +346,7 @@
 	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1000
+	icon_state = "frontiersmanrangedminigun_space"
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
 
 /mob/living/simple_animal/hostile/human/frontier/ranged/space/Initialize()
