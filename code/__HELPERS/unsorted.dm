@@ -1384,7 +1384,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 			/obj/item/food/meat/slab,
 			/obj/item/food/soup,
 			/obj/item/food/grown,
-			/obj/item/food/grown/mushroom,,
+			/obj/item/food/grown/mushroom,
 			/obj/item/food/deepfryholder,
 			/obj/item/food/clothing,
 			/obj/item/food/grown/shell, //base types

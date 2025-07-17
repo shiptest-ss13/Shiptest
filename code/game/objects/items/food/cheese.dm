@@ -13,7 +13,7 @@
 		/datum/reagent/consumable/nutriment = 10,
 		/datum/reagent/consumable/nutriment/protein = 5,
 		/datum/reagent/consumable/nutriment/vitamin = 5,
-	) //Hard cheeses contain about 25% protein
+	)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/food/cheese/wheel/Initialize(mapload)
