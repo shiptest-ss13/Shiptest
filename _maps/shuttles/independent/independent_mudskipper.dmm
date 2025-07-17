@@ -1369,10 +1369,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = -3
-	},
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
@@ -2248,6 +2244,11 @@
 	},
 /obj/structure/chair{
 	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -21;
+	pixel_x = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
