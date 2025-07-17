@@ -192,7 +192,7 @@
 /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/space
 	icon_state = "frontiersmanrangedelite_mask"
 	atmos_requirements = IMMUNE_ATMOS_REQS
-	icon_state = "frontiersmanrangedelite_space"
+	icon_state = "frontiersmenrangedelite_space"
 	minbodytemp = 0
 	maxbodytemp = 1000
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/frontier/space
