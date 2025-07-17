@@ -1370,7 +1370,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(!LAZYLEN(allowed_food)) //it's static so we only ever do this once
 		var/list/blocked = list(
 			/obj/item/food/spaghetti,
-			/obj/item/food/spaghetti,
 			/obj/item/food/bread,
 			/obj/item/food/breadslice,
 			/obj/item/food/cake,
@@ -1387,7 +1386,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 			/obj/item/food/grown/mushroom,
 			/obj/item/food/deepfryholder,
 			/obj/item/food/clothing,
-			/obj/item/food/grown/shell, //base types
+			/obj/item/food/grown/shell,
 			/obj/item/food/bread,
 			/obj/item/food/grown/nettle,
 		)
