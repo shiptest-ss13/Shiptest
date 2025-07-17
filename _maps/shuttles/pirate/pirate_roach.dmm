@@ -113,6 +113,9 @@
 "bf" = (
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "privateroach"
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "bh" = (
@@ -281,6 +284,12 @@
 	dir = 8
 	},
 /obj/item/megaphone,
+/obj/machinery/button/door{
+	pixel_x = -17;
+	pixel_y = 22;
+	id = "privateroach";
+	name = "privacy lock"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dR" = (
@@ -3013,6 +3022,9 @@
 "ML" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "privateroach"
+	},
 /turf/open/floor/plating,
 /area/ship/security)
 "MQ" = (
