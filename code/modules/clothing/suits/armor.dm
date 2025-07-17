@@ -179,6 +179,21 @@
 	item_state = "duster_captain"
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/suit/armor/captaincoat
+	name = "captain's fur coat"
+	desc = "A long, stiff commanding coat, meant for frigid conditions."
+	icon_state = "captain_coat"
+	body_parts_covered = CHEST|GROIN
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS
+	icon_state = "captain_coat"
+	item_state = "captain_coat"
+	blood_overlay_type = "coat"
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	icon = 'icons/obj/clothing/suits/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
+	supports_variations = DIGITIGRADE_VARIATION
+
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
 	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."
