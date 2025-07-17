@@ -1348,6 +1348,20 @@
 /area/ruin/space/has_grav/deepstorage/canteen)
 "iB" = (
 /obj/machinery/photocopier,
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = 8;
+	id = "vigiert1";
+	dir = 8;
+	name = "emergency gear access"
+	},
+/obj/machinery/button/door{
+	pixel_x = 21;
+	pixel_y = -5;
+	id = "vigiturret2";
+	dir = 8;
+	name = "turret release"
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/security)
 "iD" = (
@@ -2187,20 +2201,6 @@
 /area/ruin/space/has_grav/deepstorage/lobby)
 "oP" = (
 /obj/structure/table/reinforced,
-/obj/machinery/button/door{
-	pixel_x = 5;
-	pixel_y = 0;
-	id = "vigiert1";
-	dir = 4;
-	name = "emergency gear access"
-	},
-/obj/machinery/button/door{
-	pixel_x = -6;
-	pixel_y = 0;
-	id = "vigiturret2";
-	dir = 4;
-	name = "turret release"
-	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/deepstorage/security)
 "oT" = (
@@ -6210,7 +6210,10 @@
 /area/ruin/space/shuttle2)
 "Pw" = (
 /obj/structure/filingcabinet/chestdrawer{
-	dir = 8
+	dir = 8;
+	pixel_x = 10;
+	pixel_y = 0;
+	density = 0
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/carpet/red,
