@@ -2827,7 +2827,9 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/storage/equip)
 "tU" = (
-/obj/machinery/washing_machine,
+/obj/machinery/washing_machine{
+	layer = 2.8
+	},
 /obj/structure/platform/ship_two{
 	dir = 1;
 	layer = 2.9
@@ -5265,6 +5267,14 @@
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/pouch/medical,
+/obj/item/reagent_containers/hypospray/medipen/synap{
+	pixel_x = 6;
+	pixel_y = -8
+	},
+/obj/item/reagent_containers/hypospray/medipen/synap{
+	pixel_x = 12;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/equip)
 "Kg" = (
