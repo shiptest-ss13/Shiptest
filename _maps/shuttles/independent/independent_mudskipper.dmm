@@ -69,10 +69,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"bS" = (
-/obj/machinery/power/port_gen/pacman,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/hallway/central)
 "bZ" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -423,16 +419,30 @@
 	color = "#c1b6a5"
 	},
 /obj/item/clipboard{
-	pixel_x = -3;
+	pixel_x = -9;
 	pixel_y = 1
 	},
 /obj/item/reagent_containers/glass/maunamug{
-	pixel_x = 9;
-	pixel_y = 7
+	pixel_x = -7;
+	pixel_y = 12
 	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -22
+	},
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 2;
+	layer = 2.9
+	},
+/obj/item/pen/fountain{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/item/gps/mining{
+	pixel_y = 14;
+	gpstag = "SCAV0";
+	pixel_x = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
@@ -456,6 +466,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "kB" = (
@@ -598,15 +609,11 @@
 "nM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
 /obj/machinery/light/small/directional/north{
 	pixel_x = 6
 	},
-/obj/machinery/computer/helm/viewscreen/computer,
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "nR" = (
@@ -656,8 +663,8 @@
 /area/ship/cargo)
 "ov" = (
 /obj/machinery/airalarm/directional/east,
-/obj/machinery/photocopier,
 /obj/machinery/firealarm/directional/north,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "oC" = (
@@ -781,6 +788,7 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_x = -3
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "rr" = (
@@ -1036,6 +1044,7 @@
 /area/ship/hallway/central)
 "xo" = (
 /obj/structure/dresser,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
 	},
@@ -1255,6 +1264,9 @@
 "Bw" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor4"
+	},
+/obj/structure/chair/handrail{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -1476,6 +1488,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "GW" = (
@@ -1544,7 +1557,6 @@
 	pixel_y = 3;
 	pixel_x = -6
 	},
-/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew)
 "IU" = (
@@ -1899,15 +1911,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance)
 "Rv" = (
-/obj/item/gps/mining{
-	pixel_y = 3;
-	gpstag = "SCAV0";
-	pixel_x = 4
-	},
-/obj/item/pen/fountain{
-	pixel_x = -7;
-	pixel_y = 1
-	},
 /obj/structure/sign/poster/contraband/shamblers_juice{
 	pixel_y = 32
 	},
@@ -1915,11 +1918,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/paper_bin{
-	pixel_x = -7;
-	pixel_y = 2;
-	layer = 2.9
-	},
+/obj/machinery/computer/helm/viewscreen/computer,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "RR" = (
@@ -2143,7 +2142,6 @@
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
 /obj/structure/curtain/bounty,
-/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "VP" = (
@@ -2221,7 +2219,9 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/obj/structure/closet/crate/bin,
+/obj/structure/chair{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Xk" = (
@@ -2368,14 +2368,13 @@
 /turf/open/floor/carpet,
 /area/ship/crew)
 "ZJ" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/south,
+/obj/structure/chair/handrail{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 
@@ -2636,7 +2635,7 @@ Gq
 Gq
 dc
 Pr
-bS
+dc
 oU
 oU
 oU
