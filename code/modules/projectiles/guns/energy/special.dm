@@ -126,7 +126,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	manufacturer = MANUFACTURER_NONE
 
-
 /obj/item/gun/energy/plasmacutter
 	name = "plasma cutter"
 	desc = "An engineering tool capable of expelling concentrated plasma bursts. You could use it to cut limbs off xenos! Or, you know, cut through walls."
@@ -138,14 +137,14 @@
 	force = 12
 	sharpness = IS_SHARP
 	can_charge = FALSE
-
 	heat = 3800
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
 	tool_behaviour = TOOL_DECONSTRUCT
-	wall_decon_damage = 200
+	wall_decon_damage = 150
 	toolspeed = 1 //plasmacutters can be used like angle grinders
-	internal_magazine = TRUE //so you don't cheese through the need for plasma - WS EDIT
-	var/charge_cut = 100 //amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
+	internal_magazine = TRUE //so you don't cheese through the need for plasma
+	/// Amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
+	var/charge_cut = 100
 	var/adv = FALSE
 
 /obj/item/gun/energy/plasmacutter/ComponentInitialize()
@@ -163,8 +162,10 @@
 	var/charge_multiplier = 0 //2 = Refined stack, 1 = Ore
 	if(istype(I, /obj/item/stack/sheet/mineral/plasma))
 		charge_multiplier = 2
+
 	if(istype(I, /obj/item/stack/ore/plasma))
 		charge_multiplier = 1
+
 	if(charge_multiplier)
 		if(cell.charge == cell.maxcharge)
 			to_chat(user, span_notice("You try to insert [I] into [src], but it's fully charged.")) //my cell is round and full
@@ -227,7 +228,7 @@
 	icon_state = "adv_plasmacutter"
 	item_state = "adv_plasmacutter"
 	force = 15
-	wall_decon_damage = 300
+	wall_decon_damage = 150
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/adv)
 
 /obj/item/gun/energy/wormhole_projector

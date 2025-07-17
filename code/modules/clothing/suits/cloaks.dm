@@ -142,12 +142,6 @@
 	icon_state = "healercloak"
 	associated_skill_path = /datum/skill/healing
 
-/obj/item/clothing/neck/cloak/skill_reward/mining
-	name = "legendary miner's cloak"
-	desc = "Worn by the most skilled miners, this legendary cloak is only attainable by achieving true mineral enlightenment. This status symbol represents a being who has forgotten more about rocks than most miners will ever know, a being who has moved mountains and filled valleys."
-	icon_state = "minercloak"
-	associated_skill_path = /datum/skill/mining
-
 /obj/item/clothing/suit/hooded/cloak/bone
 	name = "heavy bone armor"
 	icon_state = "hbonearmor"

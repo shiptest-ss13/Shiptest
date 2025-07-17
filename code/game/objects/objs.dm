@@ -23,7 +23,7 @@
 
 	var/persistence_replacement //have something WAY too amazing to live to the next round? Set a new path here. Overuse of this var will make me upset.
 
-	/// A multiplier to an objecet's force when used against a stucture, vechicle, machine, or robot.
+	/// A multiplier to an object's force when used against a stucture, vechicle, machine, or robot.
 	var/demolition_mod = 1
 
 	// Access levels, used in modules\jobs\access.dm

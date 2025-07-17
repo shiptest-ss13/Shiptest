@@ -114,9 +114,10 @@
 /datum/crafting_recipe/ipickaxe
 	name = "Improvised Pickaxe"
 	reqs = list(
-			/obj/item/crowbar = 1,
-			/obj/item/melee/knife/kitchen = 1,
-			/obj/item/stack/tape = 1)
+		/obj/item/crowbar = 1,
+		/obj/item/melee/knife/kitchen = 1,
+		/obj/item/stack/tape = 1,
+	)
 	result = /obj/item/pickaxe/improvised
 	category = CAT_MISC
 
@@ -127,7 +128,8 @@
 	reqs = list(
 		/obj/item/healthanalyzer = 1,
 		/obj/item/stack/cable_coil = 5,
-		/obj/item/stock_parts/scanning_module = 1)
+		/obj/item/stock_parts/scanning_module = 1,
+	)
 	result = /obj/item/reagent_scanner
 	category = CAT_MISC
 
