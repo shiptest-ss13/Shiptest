@@ -146,6 +146,10 @@
 	name = "Engine Shutters"
 	},
 /obj/machinery/cell_charger,
+/obj/item/analyzer{
+	pixel_y = 11;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "dN" = (
@@ -1608,17 +1612,23 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/paper_bin,
-/obj/item/analyzer{
-	pixel_y = 3;
-	pixel_x = 13
+/obj/item/paper_bin{
+	pixel_x = 7;
+	pixel_y = 5
 	},
-/obj/item/pen,
+/obj/item/pen{
+	pixel_x = 6;
+	pixel_y = 5
+	},
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/item/flashlight/lamp{
+	pixel_x = -8;
+	pixel_y = 1
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
