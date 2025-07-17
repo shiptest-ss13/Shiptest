@@ -649,6 +649,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/item/clothing/suit/armor/captaincoat,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ot" = (
@@ -1042,9 +1043,7 @@
 	pixel_x = 25;
 	pixel_y = 5
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-21"
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "xo" = (
@@ -1053,11 +1052,13 @@
 /obj/item/storage/backpack/satchel/explorer,
 /obj/item/storage/backpack/satchel/explorer,
 /obj/item/storage/backpack/satchel/explorer,
-/obj/item/storage/backpack/satchel/explorer,
 /obj/item/clothing/head/soft/utility_olive,
 /obj/item/clothing/head/soft/utility_olive,
 /obj/item/clothing/head/soft/utility_olive,
-/obj/item/clothing/head/soft/utility_olive,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/under/overalls/brown,
+/obj/item/clothing/under/overalls/brown,
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
 	},
@@ -1245,21 +1246,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/radiation{
-	name = "rad protection crate"
-	},
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/clothing/head/radiation,
-/obj/item/geiger_counter,
-/obj/item/geiger_counter,
-/obj/item/storage/pill_bottle/charcoal/less,
-/obj/item/reagent_containers/hypospray/medipen/penacid,
-/obj/item/reagent_containers/hypospray/medipen/penacid,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/reagent_dispensers/foamtank/antirad,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Bn" = (
@@ -1645,6 +1635,10 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/structure/noticeboard{
+	pixel_x = 0;
+	pixel_y = 28
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Lw" = (
@@ -1745,6 +1739,19 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/closet/crate/radiation{
+	name = "rad protection crate"
+	},
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/geiger_counter,
+/obj/item/geiger_counter,
+/obj/item/reagent_containers/hypospray/medipen/penacid,
+/obj/item/storage/pill_bottle/charcoal/less,
+/obj/item/reagent_containers/hypospray/medipen/penacid,
+/obj/item/watertank/anti_rad,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "NN" = (
@@ -2123,6 +2130,14 @@
 	pixel_x = 5
 	},
 /obj/structure/dresser,
+/obj/item/lipstick{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/lipstick/black{
+	pixel_x = -10;
+	pixel_y = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew)
 "Vn" = (
