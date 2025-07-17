@@ -407,8 +407,8 @@
 	preferred_direction = 4;
 	dheight = 3
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
@@ -508,8 +508,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "kY" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 8
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
@@ -1663,8 +1663,11 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Mf" = (
-/turf/template_noop,
-/area/space)
+/obj/structure/marker_beacon{
+	picked_color = "Bronze"
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "Mi" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -1715,9 +1718,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
 "Nl" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
 /obj/machinery/light/floor,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
@@ -1893,6 +1893,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"Rh" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
 "Rl" = (
 /obj/structure/table,
 /obj/effect/turf_decal/siding/wood{
@@ -2497,7 +2500,7 @@ cs
 "}
 (6,1,1) = {"
 hX
-IU
+Mf
 OB
 OB
 OB
@@ -2510,7 +2513,7 @@ OB
 Qp
 Qp
 Qp
-IU
+Mf
 hX
 cs
 "}
@@ -2649,7 +2652,7 @@ cs
 "}
 (14,1,1) = {"
 hX
-IU
+Mf
 Gq
 Gq
 Gq
@@ -2662,7 +2665,7 @@ oU
 oU
 oU
 oU
-IU
+Mf
 hX
 cs
 "}
@@ -2763,7 +2766,7 @@ cs
 "}
 (20,1,1) = {"
 hX
-IU
+Mf
 Gq
 qN
 IP
@@ -2776,7 +2779,7 @@ MK
 cn
 KT
 MK
-IU
+Mf
 hX
 cs
 "}
@@ -2851,7 +2854,7 @@ BW
 Bw
 Qu
 yv
-Mf
+cs
 hX
 cs
 cs
@@ -2859,7 +2862,7 @@ cs
 (25,1,1) = {"
 cs
 hX
-IU
+cs
 mF
 mF
 uz
@@ -2870,7 +2873,7 @@ NJ
 Bj
 mF
 mF
-IU
+cs
 hX
 cs
 cs
@@ -2879,7 +2882,7 @@ cs
 cs
 hX
 cs
-cs
+hH
 mF
 nj
 cx
@@ -2888,8 +2891,8 @@ ot
 Eg
 EP
 mF
-Mf
-Mf
+hH
+cs
 hX
 cs
 cs
@@ -2897,18 +2900,18 @@ cs
 (27,1,1) = {"
 cs
 hX
-IU
-IU
-mF
+Mf
+hH
+Rh
 po
 gB
 gB
 gB
 gB
 mS
-mF
-IU
-IU
+Rh
+hH
+Mf
 hX
 cs
 cs
@@ -2917,16 +2920,16 @@ cs
 cs
 cs
 cs
-VW
 hH
-Nl
+hH
+kY
 kY
 ib
 kY
 kY
-Nl
+kY
 hH
-VW
+hH
 cs
 cs
 cs
@@ -2938,12 +2941,12 @@ cs
 cs
 hH
 hH
+Nl
 cs
 cs
 cs
 cs
-cs
-cs
+Nl
 hH
 hH
 cs
@@ -2975,14 +2978,14 @@ cs
 cs
 cs
 cs
-cs
-hH
-cs
-cs
+VW
+VW
 cs
 cs
-hH
 cs
+cs
+VW
+VW
 cs
 cs
 cs
