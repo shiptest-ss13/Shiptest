@@ -117,6 +117,17 @@
 	mob_spawner = /obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	r_hand = /obj/item/gun/energy/e_gun/e11
 
+/mob/living/simple_animal/hostile/human/hermit/ranged/tesla_rifle
+	name = "Hermit Guardsman"
+	desc = "Out in the wilderness of the frontier, desperation can easily become innovation. This hermit is wielding the product of such ventures. Electrical crackles and a rifle ready to roar."
+	icon_state = "survivor_gunslinger"
+	icon_living = "survivor_gunslinger"
+	projectilesound = 'sound/weapons/zapbang.ogg'
+	rapid = 2
+	rapid_fire_delay = 2
+	casingtype = /obj/item/ammo_casing/c46x30mm/tesla
+	loot = list()
+
 //survivor corpses
 
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands
