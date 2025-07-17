@@ -314,9 +314,6 @@
 /turf/open/floor/engine,
 /area/ship/cargo)
 "gR" = (
-/obj/effect/turf_decal/box{
-	layer = 2.04
-	},
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor4"
 	},
@@ -363,6 +360,9 @@
 /obj/item/melee/knife/survival,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
+	},
+/obj/effect/turf_decal/box{
+	layer = 2.04
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
@@ -947,9 +947,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "uz" = (
-/obj/effect/turf_decal/industrial/hatch/yellow{
-	layer = 2.04
-	},
 /obj/structure/railing{
 	dir = 8
 	},
@@ -964,6 +961,9 @@
 	dir = 4
 	},
 /obj/structure/reagent_dispensers/watertank,
+/obj/effect/turf_decal/industrial/hatch/yellow{
+	layer = 2.04
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "uW" = (
@@ -1740,9 +1740,6 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "NJ" = (
-/obj/effect/turf_decal/box{
-	layer = 2.04
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
@@ -1762,6 +1759,9 @@
 /obj/item/storage/pill_bottle/charcoal/less,
 /obj/item/reagent_containers/hypospray/medipen/penacid,
 /obj/item/watertank/anti_rad,
+/obj/effect/turf_decal/box{
+	layer = 2.04
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "NN" = (
@@ -2260,9 +2260,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "Xk" = (
-/obj/effect/turf_decal/industrial/outline/red{
-	layer = 2.04
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
@@ -2270,6 +2267,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Xm" = (
