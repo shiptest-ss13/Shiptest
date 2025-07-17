@@ -140,7 +140,7 @@
 	heat = 3800
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
 	tool_behaviour = TOOL_DECONSTRUCT
-	wall_decon_damage = 150
+	wall_decon_damage = 125
 	toolspeed = 1 //plasmacutters can be used like angle grinders
 	internal_magazine = TRUE //so you don't cheese through the need for plasma
 	/// Amount of charge used up to start action (multiplied by amount) and per progress_flash_divisor ticks of cutting
@@ -228,12 +228,12 @@
 	icon_state = "adv_plasmacutter"
 	item_state = "adv_plasmacutter"
 	force = 15
-	wall_decon_damage = 150
+	wall_decon_damage = 175
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/adv)
 
 /obj/item/gun/energy/wormhole_projector
 	name = "bluespace wormhole projector"
-	desc = "A projector that emits high density quantum-coupled bluespace beams." //WS Edit - Any anomaly core for phazons
+	desc = "A projector that emits high density quantum-coupled bluespace beams."
 	ammo_type = list(/obj/item/ammo_casing/energy/wormhole, /obj/item/ammo_casing/energy/wormhole/orange)
 	item_state = null
 	icon_state = "wormhole_projector"
