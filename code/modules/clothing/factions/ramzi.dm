@@ -17,6 +17,7 @@
 	desc = "an aging pair of overalls, formerly worn by the Gorlex Marauders."
 	icon_state = "ramzi_overalls"
 	item_state = "ramzi_overalls"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/ramzi/officer
 	name = "\improper Ramzi officer uniform"
