@@ -1498,7 +1498,7 @@
 /area/ruin/space/pgf_wreck/cargo)
 "it" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/item/clothing/suit/fire/firefighter,
 /obj/item/clothing/head/hardhat/red,
 /turf/open/floor/mineral/plastitanium/red,
@@ -3245,12 +3245,16 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/under/syndicate,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/melee/knife/switchblade,
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/head/ramzi,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "sM" = (
@@ -4455,9 +4459,6 @@
 "yW" = (
 /obj/structure/closet/cabinet,
 /obj/item/storage/box/ammo/a357,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/head/HoS/syndicate,
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 6
 	},
@@ -4465,6 +4466,10 @@
 	dir = 6
 	},
 /obj/item/storage/guncase/pistol/a357,
+/obj/item/clothing/under/syndicate/ramzi/officer,
+/obj/item/clothing/suit/armor/ramzi/captain,
+/obj/item/clothing/suit/armor/ramzi/officer,
+/obj/item/clothing/head/ramzi/beret,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/foreman)
 "yX" = (
@@ -5739,7 +5744,7 @@
 /area/ruin/space/has_grav/powered/ramzi_station/upper)
 "Gz" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/item/tank/jetpack/improvised,
 /obj/item/clothing/head/helmet/space/gezena,
 /obj/item/clothing/suit/space/gezena,
@@ -6546,7 +6551,7 @@
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
 /obj/item/tank/internals/oxygen,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -6683,15 +6688,15 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/space/has_grav/powered/ramzi_station/cargo)
 "LA" = (
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/suit/armor/vest/syndie,
-/obj/item/clothing/head/helmet/syndie,
-/obj/item/clothing/head/helmet/syndie,
 /obj/machinery/light/directional/south,
 /obj/structure/closet{
 	icon_state = "armory";
 	name = "armor closet"
 	},
+/obj/item/clothing/suit/armor/ramzi,
+/obj/item/clothing/suit/armor/ramzi,
+/obj/item/clothing/head/helmet/ramzi,
+/obj/item/clothing/head/helmet/ramzi,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "LC" = (
@@ -7447,6 +7452,8 @@
 /obj/item/attachment/bayonet,
 /obj/item/attachment/rail_light,
 /obj/item/attachment/rail_light,
+/obj/item/storage/belt/security/webbing/ramzi/alt,
+/obj/item/storage/belt/security/webbing/ramzi,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
 "Po" = (
@@ -7631,7 +7638,7 @@
 /obj/item/clothing/head/helmet/space/syndicate/engie,
 /obj/item/clothing/suit/space/syndicate/engie,
 /obj/item/tank/internals/oxygen,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/ramzi_station/engi)
 "Qu" = (
@@ -8520,7 +8527,7 @@
 /area/ruin/space/pgf_wreck/engineering)
 "Uy" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/item/tank/jetpack/improvised,
 /obj/item/clothing/suit/space/syndicate/ramzi,
 /obj/item/clothing/head/helmet/space/syndicate/ramzi,
@@ -8926,7 +8933,7 @@
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
 /obj/item/tank/internals/oxygen,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/ramzi_station/armory)
@@ -9204,13 +9211,17 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate/skirt,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/pill_bottle/lsd,
 /obj/item/storage/box/firecrackers,
 /obj/machinery/light/directional/north,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/head/ramzi,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ruin/space/has_grav/powered/ramzi_station/dorms)
 "XX" = (
