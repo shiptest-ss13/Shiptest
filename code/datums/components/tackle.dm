@@ -1,8 +1,7 @@
-#define MAX_TABLE_MESSES 8 // how many things can we knock off a table at once?
+/// how many things can we knock off a table at once by diving into it?
+#define MAX_TABLE_MESSES 12
 
 /**
- *#tackle.dm
- *
  * For when you want to throw a person at something and have fun stuff happen
  *
  * This component is made for carbon mobs (really, humans), and allows its parent to throw themselves and perform tackles. This is done by enabling throw mode, then clicking on your
@@ -10,7 +9,7 @@
  *	  roll to see how badly you just messed yourself up. If, along your journey, you hit a table, you'll slam onto it and send up to MAX_TABLE_MESSES (8) /obj/items on the table flying,
  *	  and take a bit of extra damage and stun for each thing launched.
  *
- * There are 2 """skill rolls""" involved here, which are handled and explained in sack() and rollTackle() (for roll 1, carbons), and splat() (for roll 2, walls and solid objects)
+ * There are 2 separate """skill rolls""" involved here, which are handled and explained in [rollTackle()][/datum/component/tackler/proc/rollTackle] (for roll 1, carbons), and [splat()][/datum/component/tackler/proc/splat] (for roll 2, walls and solid objects)
 */
 /datum/component/tackler
 	dupe_mode = COMPONENT_DUPE_UNIQUE
@@ -151,6 +150,7 @@
 		tackle = null
 		return
 
+	user.toggle_throw_mode()
 	if(!iscarbon(hit))
 		if(hit.density)
 			INVOKE_ASYNC(src, PROC_REF(splat), user, hit)
@@ -173,7 +173,7 @@
 			user.Paralyze(30)
 			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
 			if(hed)
-				hed.receive_damage(brute=20, updating_health=TRUE)
+				hed.receive_damage(brute=15, updating_health=TRUE, wound_bonus = CANT_WOUND)
 			user.gain_trauma(/datum/brain_trauma/mild/concussion)
 
 		if(-4 to -2) // glancing blow at best
@@ -183,7 +183,7 @@
 			user.Knockdown(30)
 			if(ishuman(target) && !T.has_movespeed_modifier(/datum/movespeed_modifier/shove))
 				T.add_movespeed_modifier(/datum/movespeed_modifier/shove) // maybe define a slightly more severe/longer slowdown for this
-				addtimer(CALLBACK(T, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
+				addtimer(CALLBACK(T, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH * 2)
 
 		if(-1 to 0) // decent hit, both parties are about equally inconvenienced
 			user.visible_message(span_warning("[user] lands a passable tackle on [target], sending them both tumbling!"), span_userdanger("You land a passable tackle on [target], sending you both tumbling!"), target)
@@ -270,6 +270,13 @@
 	if(HAS_TRAIT(target, TRAIT_SCOOPABLE))
 		defense_mod -= 1
 
+	var/leg_wounds = 0 // -1 defense per 2 leg wounds
+	for(var/i in target.all_wounds)
+		var/datum/wound/iterwound = i
+		if((iterwound.limb.body_zone in list(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)))
+			leg_wounds++
+	defense_mod -= round(leg_wounds * 0.5)
+
 	if(ishuman(target))
 		var/mob/living/carbon/human/T = target
 
@@ -333,11 +340,12 @@
  *	* Clumsy: +6
  *
  * Effects: Below are the outcomes based off your roll, in order of increasing severity
- *	* 1-63: Knocked down for a few seconds and a bit of brute and stamina damage
- *	* 64-83: Knocked silly, gain some confusion as well as the above
- *	* 84-93: Cranial trauma, get a concussion and more confusion, plus more damage
- *	* 94-98: Knocked unconscious, significant chance to get a random mild brain trauma, as well as a fair amount of damage
- *	* 99-100: Break your spinal cord, get paralyzed, take a bunch of damage too. Very unlucky!
+ *	* 1-67: Knocked down for a few seconds and a bit of brute and stamina damage
+ *	* 68-85: Knocked silly, gain some confusion as well as the above
+ *	* 86-92: Cranial trauma, get a concussion and more confusion, plus more damage
+ *	* 93-96: Knocked unconscious, get a random mild brain trauma, as well as a fair amount of damage
+ *	* 97-98: Massive head damage, probably crack your skull open, random mild brain trauma
+ *	* 99-Infinity: Break your spinal cord, get paralyzed, take a bunch of damage too. Very unlucky!
 */
 /datum/component/tackler/proc/splat(mob/living/carbon/user, atom/hit)
 	if(istype(hit, /obj/machinery/vending)) // before we do anything else-
@@ -352,7 +360,7 @@
 		return
 
 	var/oopsie_mod = 0
-	var/danger_zone = (speed - 1) * 15 // for every extra speed we have over 1, take away 15 of the safest chance
+	var/danger_zone = (speed - 1) * 13 // for every extra speed we have over 1, take away 13 of the safest chance
 	danger_zone = max(min(danger_zone, 100), 1)
 
 	if(ishuman(user))
@@ -376,28 +384,41 @@
 		if(99 to INFINITY)
 			// can you imagine standing around minding your own business when all of the sudden some guy fucking launches himself into a wall at full speed and irreparably paralyzes himself?
 			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle, severing [user.p_their()] spinal column with a sickening crack! Holy shit!"), span_userdanger("You slam face-first into [hit] at an awkward angle, severing your spinal column with a sickening crack! Holy shit!"))
+
+			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
+			if(hed)
+				hed.receive_damage(brute = 40, updating_health = FALSE, wound_bonus = 40)
+			else
+				user.adjustBruteLoss(40, updating_health = FALSE)
+
 			user.adjustStaminaLoss(30)
-			user.apply_damage(30, BRUTE, BODY_ZONE_HEAD)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
+			playsound(user, 'sound/effects/wounds/crack2.ogg', 70, TRUE)
 			user.force_scream()
 			user.gain_trauma(/datum/brain_trauma/severe/paralysis/paraplegic) // oopsie indeed!
 			shake_camera(user, 7, 7)
 			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 4.5)
 
-		if(94 to 98)
+		if(97 to 98)
 			user.visible_message(span_danger("[user] slams face-first into [hit] with a concerning squish, immediately going limp!"), span_userdanger("You slam face-first into [hit], and immediately lose consciousness!"))
-			user.adjustStaminaLoss(30)
-			user.apply_damage(30, BRUTE, BODY_ZONE_HEAD)
-			user.Unconscious(100)
-			user.gain_trauma_type(BRAIN_TRAUMA_MILD)
-			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8)
-			shake_camera(user, 6, 6)
-			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
-			user.clear_fullscreen("flash", 3.5)
 
-		if(84 to 93)
+			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
+			if(hed)
+				hed.receive_damage(brute=30, updating_health=FALSE, wound_bonus = 25)
+			else
+				user.adjustBruteLoss(40, updating_health=FALSE)
+			user.adjustStaminaLoss(30)
+			user.gain_trauma_type(BRAIN_TRAUMA_MILD)
+			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
+			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
+			user.emote("gurgle")
+			shake_camera(user, 7, 7)
+			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
+			user.clear_fullscreen("flash", 4.5)
+
+		if(93 to 96)
 			user.visible_message(span_danger("[user] slams head-first into [hit], suffering major cranial trauma!"), span_userdanger("You slam head-first into [hit], and the world explodes around you!"))
 			user.adjustStaminaLoss(30)
 			user.apply_damage(30, BRUTE, BODY_ZONE_HEAD)
@@ -410,7 +431,7 @@
 			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 2.5)
 
-		if(64 to 83)
+		if(68 to 85)
 			user.visible_message(span_danger("[user] slams hard into [hit], knocking [user.p_them()] senseless!"), span_userdanger("You slam hard into [hit], knocking yourself senseless!"))
 			user.adjustStaminaLoss(30)
 			user.apply_damage(10, BRUTE, ran_zone(BODY_ZONE_HEAD))
@@ -418,7 +439,7 @@
 			user.Knockdown(30)
 			shake_camera(user, 3, 4)
 
-		if(1 to 63)
+		if(1 to 67)
 			user.visible_message(span_danger("[user] slams into [hit]!"), span_userdanger("You slam into [hit]!"))
 			user.adjustStaminaLoss(20)
 			user.apply_damage(10, BRUTE, ran_zone(BODY_ZONE_HEAD))
@@ -454,8 +475,8 @@
 		user.visible_message(span_danger("[user] slams into [W] like a bug, then slowly slides off it!"), span_userdanger("You slam into [W] like a bug, then slowly slide off it!"))
 		user.Paralyze(10)
 		user.Knockdown(30)
-		W.take_damage(20 * speed)
-		user.adjustStaminaLoss(10 * speed)
+		W.take_damage(30 * speed)
+		user.adjustStaminaLoss(10 * speed, updating_health = FALSE)
 		user.adjustBruteLoss(5 * speed)
 
 /datum/component/tackler/proc/delayedSmash(obj/structure/window/W)

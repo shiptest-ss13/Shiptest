@@ -414,6 +414,10 @@ WS End*/
 
 /******COMBOS******/
 /*Suffix: Combo of healing, prob gonna get wack REAL fast*/
+
+
+
+/* fucking whitesands left this in code while we had the OTHER synthflesh
 /datum/reagent/medicine/c2/instabitaluri
 	name = "Synthflesh (Instabitaluri)"
 	description = "Heals brute and burn damage at the cost of toxicity (66% of damage healed). Touch application only."
@@ -428,6 +432,9 @@ WS End*/
 		if(method in list(PATCH, TOUCH, SMOKE))
 			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
 			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
+			for(var/i in carbies.all_wounds)
+				var/datum/wound/iter_wound = i
+				iter_wound.on_synthflesh(reac_volume)
 			carbies.adjustToxLoss((harmies+burnies)*0.66)
 			if(show_message)
 				to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
@@ -437,6 +444,7 @@ WS End*/
 				carbies.visible_message("<span class='nicegreen'>A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!") //we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or something
 	..()
 	return TRUE
+*/
 
 /******ORGAN HEALING******/
 /*Suffix: -rite*/

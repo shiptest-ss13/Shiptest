@@ -201,6 +201,9 @@
 		return
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	ADD_TRAIT(owner, TRAIT_HANDS_BLOCKED, TRAIT_STATUS_EFFECT(id))
+	if(iscarbon(owner))
+		var/mob/living/carbon/carbon_owner = owner
+		carbon_owner.update_bodypart_bleed_overlays()
 
 /datum/status_effect/grouped/stasis/tick()
 	update_time_of_death()
@@ -209,6 +212,9 @@
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	REMOVE_TRAIT(owner, TRAIT_HANDS_BLOCKED, TRAIT_STATUS_EFFECT(id))
 	update_time_of_death()
+	if(iscarbon(owner))
+		var/mob/living/carbon/carbon_owner = owner
+		carbon_owner.update_bodypart_bleed_overlays()
 	return ..()
 
 /atom/movable/screen/alert/status_effect/stasis
@@ -318,9 +324,18 @@
 
 /datum/status_effect/neck_slice/tick()
 	var/mob/living/carbon/human/H = owner
-	var/obj/item/bodypart/throat_in_question = H.get_bodypart(BODY_ZONE_HEAD)
-	if(H.stat == DEAD || throat_in_question?.bleeding <= 8)
+	var/obj/item/bodypart/throat = H.get_bodypart(BODY_ZONE_HEAD)
+	if(H.stat == DEAD || !throat)
 		H.remove_status_effect(/datum/status_effect/neck_slice)
+
+	var/still_bleeding = FALSE
+	for(var/datum/wound/W as anything in throat.wounds)
+		if(W.wound_type == WOUND_SLASH && W.severity > WOUND_SEVERITY_MODERATE)
+			still_bleeding = TRUE
+			break
+	if(!still_bleeding)
+		H.remove_status_effect(/datum/status_effect/neck_slice)
+
 	if(prob(10))
 		H.emote(pick("gasp", "gag", "choke"))
 
