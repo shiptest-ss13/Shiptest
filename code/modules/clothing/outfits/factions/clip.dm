@@ -290,7 +290,7 @@
 	r_pocket = /obj/item/radio
 	l_pocket = /obj/item/multitool
 
-// Colonial League Minutemen
+// Confederated League Minutemen
 
 /datum/outfit/job/clip/minutemen
 	name = "CLIP Minutemen - Base Outfit"
