@@ -435,6 +435,12 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
+"iq" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "iy" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -747,11 +753,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance)
-"pQ" = (
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/warning/dust,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "pY" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
@@ -1102,33 +1103,33 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
-/obj/item/clothing/head/soft/utility_olive{
+/obj/item/clothing/under/overalls/brown{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/clothing/under/overalls/brown{
+	pixel_x = -10;
+	pixel_y = 10
+	},
+/obj/item/clothing/head/soft/utility_beige{
 	pixel_x = 5;
-	pixel_y = -8
+	pixel_y = -9
 	},
-/obj/item/clothing/head/soft/utility_olive{
-	pixel_x = -2;
-	pixel_y = -8
+/obj/item/clothing/head/soft/utility_beige{
+	pixel_x = -3;
+	pixel_y = -9
 	},
-/obj/item/clothing/head/soft/utility_olive{
+/obj/item/clothing/head/soft/utility_beige{
 	pixel_x = -10;
-	pixel_y = -8
-	},
-/obj/item/clothing/under/overalls/olive{
-	pixel_x = -5;
-	pixel_y = 3
-	},
-/obj/item/clothing/under/overalls/olive{
-	pixel_x = -10;
-	pixel_y = 3
+	pixel_y = -9
 	},
 /obj/item/clothing/under/overalls/brown{
 	pixel_x = -5;
-	pixel_y = 10
+	pixel_y = 6
 	},
 /obj/item/clothing/under/overalls/brown{
-	pixel_x = -10;
-	pixel_y = 10
+	pixel_x = -11;
+	pixel_y = 6
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -1829,9 +1830,7 @@
 /area/ship/hallway/aft)
 "Nl" = (
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 1
-	},
+/obj/effect/turf_decal/industrial/warning/dust,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "NJ" = (
@@ -1948,6 +1947,10 @@
 "Qp" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/aft)
+"Qq" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "Qt" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -2117,12 +2120,6 @@
 /obj/structure/closet/wall/directional/east,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
-"SJ" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "ST" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/structure/table/reinforced,
@@ -2281,8 +2278,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
-"Vq" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner,
+"Vu" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "Vy" = (
@@ -3047,12 +3047,12 @@ cs
 cs
 hH
 hH
-Vq
+Qq
 kY
 ib
 kY
 kY
-SJ
+iq
 hH
 hH
 cs
@@ -3066,12 +3066,12 @@ cs
 cs
 hH
 hH
-pQ
-cs
-cs
-cs
-cs
 Nl
+cs
+cs
+cs
+cs
+Vu
 hH
 hH
 cs
