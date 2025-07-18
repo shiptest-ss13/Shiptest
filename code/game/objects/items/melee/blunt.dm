@@ -19,10 +19,12 @@
 	pickup_sound = 'sound/weapons/melee/heavy_pickup.ogg'
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
+	var/throw_min = 1
+	var/throw_max = 2
 
 /obj/item/melee/sledgehammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30, icon_wielded="[base_icon_state]_w")
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30)
 
 /obj/item/melee/sledgehammer/update_icon_state()
 	icon_state = "[base_icon_state]"
@@ -58,7 +60,7 @@
 		return
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
 	if(!target.anchored)
-		target.throw_at(throw_target, rand(1,2), 2, user, gentle = TRUE)
+		target.throw_at(throw_target, rand(throw_min,throw_max), 2, user, gentle = TRUE)
 
 /obj/item/melee/sledgehammer/gorlex/afterattack(atom/A, mob/user, proximity)
 	. = ..()
