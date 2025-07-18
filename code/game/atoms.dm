@@ -1280,7 +1280,6 @@
 
 	StartProcessingAtom(user, I, choices_to_options[pick])
 
-
 /atom/proc/StartProcessingAtom(mob/living/user, obj/item/process_item, list/chosen_option)
 	var/processing_time = chosen_option[TOOL_PROCESSING_TIME]
 	to_chat(user, span_notice("You start working on [src]"))
