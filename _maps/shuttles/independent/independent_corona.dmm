@@ -2559,10 +2559,6 @@
 "Ut" = (
 /obj/structure/closet/wall/orange/directional/north,
 /obj/item/storage/backpack/industrial,
-/obj/item/clothing/under/rank/engineering/engineer{
-	pixel_y = 10;
-	pixel_x = -5
-	},
 /obj/item/clothing/under/rank/engineering/engineer/hazard{
 	pixel_y = 10;
 	pixel_x = 5
@@ -2580,7 +2576,6 @@
 /obj/item/clothing/head/welding{
 	pixel_y = 8
 	},
-/obj/item/storage/belt/utility,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/decal_painter,
 /obj/item/floor_painter,
@@ -2595,6 +2590,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/clothing/under/overalls/olive,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Uw" = (
