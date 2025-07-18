@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/sling, /obj/item/attachment/ammo_counter)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/gun, /obj/item/attachment/sling, /obj/item/attachment/ammo_counter)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -118,6 +118,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 	show_magazine_on_sprite = TRUE
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(/obj/item/attachment/scope)
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -242,6 +243,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 	show_magazine_on_sprite = TRUE
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(/obj/item/attachment/scope)
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -920,6 +922,7 @@ NO_MAG_GUN_HELPER(automatic/assault/hydra/dmr)
 	wield_delay = 0.65 SECONDS
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(/obj/item/attachment/scope)
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
