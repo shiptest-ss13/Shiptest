@@ -280,18 +280,22 @@
 	head = /obj/item/clothing/head/hooded/survivor_hood
 
 /datum/outfit/hermit/brown
+	name = "Whitesands Survivor Brown"
 	suit = /obj/item/clothing/suit/hooded/survivor/brown
 	head = /obj/item/clothing/head/hooded/survivor_hood/brown
 
 /datum/outfit/hermit/yellow
+	name = "Whitesands Survivor Yellow"
 	suit = /obj/item/clothing/suit/hooded/survivor/yellow
 	head = /obj/item/clothing/head/hooded/survivor_hood/yellow
 
 /datum/outfit/hermit/green
+	name = "Whitesands Survivor Green"
 	suit = /obj/item/clothing/suit/hooded/survivor/green
 	head = /obj/item/clothing/head/hooded/survivor_hood/green
 
 /datum/outfit/hermit/jermit
+	name = "Whitesands Survivor Jermit"
 	suit = /obj/item/clothing/suit/hooded/survivor/jermit
 	head = /obj/item/clothing/head/hooded/survivor_hood/jermit
 
