@@ -58,3 +58,6 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 	)
 	tastes = list("rock salt" = 1, "rich cheese" = 4, "faint mushroom" = 1)
+
+/obj/item/food/cheese/wedge/tiris/make_dryable()
+	AddElement(/datum/element/dryable, /obj/item/food/lifosa/homemade)
