@@ -153,11 +153,8 @@
 /area/ship/engineering/engines/starboard)
 "bK" = (
 /obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
 /obj/structure/curtain/bounty,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/red,
 /area/ship/crew)
 "dh" = (
 /obj/machinery/porta_turret/ship/nt/light{
@@ -263,8 +260,11 @@
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "dS" = (
-/obj/structure/dresser,
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/structure/chair/bench/red/directional/east,
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "dY" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -358,7 +358,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white,
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "fh" = (
 /obj/machinery/porta_turret/ship/nt/heavy{
@@ -394,6 +398,14 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 8
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = 9;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 5;
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/port)
@@ -1031,11 +1043,8 @@
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm/captain)
 "qU" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/red,
 /area/ship/crew)
 "rh" = (
 /obj/structure/cable{
@@ -1776,7 +1785,10 @@
 	pixel_x = -11;
 	pixel_y = 6
 	},
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "zV" = (
 /obj/structure/cable{
@@ -1976,7 +1988,11 @@
 	dir = 4
 	},
 /obj/item/toy/plush/lizardplushie,
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white,
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "Ct" = (
 /obj/machinery/camera/autoname{
@@ -2185,7 +2201,14 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white{
+	dir = 9
+	},
+/obj/structure/dresser,
+/obj/structure/bedsheetbin{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "FC" = (
 /obj/structure/chair/comfy/shuttle{
@@ -2206,6 +2229,10 @@
 	dir = 8
 	},
 /obj/machinery/computer/helm/viewscreen/directional/east,
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -3;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/port)
 "FL" = (
@@ -2468,13 +2495,10 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/dorm)
 "Kb" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/firealarm/directional/west,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/red,
 /area/ship/crew)
 "Km" = (
 /obj/machinery/suit_storage_unit/inherit,
@@ -2587,6 +2611,14 @@
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 34
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = 10;
+	pixel_y = -1
+	},
+/obj/item/food/breadslice/creamcheese{
+	pixel_x = -3;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/port)
@@ -2996,9 +3028,29 @@
 /area/ship/cargo)
 "Pd" = (
 /obj/structure/table/wood,
-/obj/structure/bedsheetbin,
 /obj/item/radio/intercom/directional/east,
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white{
+	dir = 5
+	},
+/obj/item/food/cherrycupcake{
+	pixel_y = 3;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = 10;
+	pixel_y = -1
+	},
+/obj/item/paper/crumpled{
+	default_raw_text = "I miss the warm meals back home...";
+	desc = "A few words are written on the front, hastily writen before being crumpled.";
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/item/pen{
+	pixel_x = -7;
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "Pj" = (
 /obj/machinery/power/shuttle/engine/electric,
@@ -3011,7 +3063,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "PL" = (
 /turf/closed/wall/mineral/titanium,
@@ -3230,6 +3285,26 @@
 /obj/structure/closet/secure_closet/freezer/fridge{
 	populate = 0
 	},
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/reagent_containers/food/snacks/store/cheesewheel,
+/obj/item/storage/box/ingredients/vegetarian,
+/obj/item/storage/box/ingredients/vegetarian,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/condiment/rice,
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/port)
 "RX" = (
@@ -3332,14 +3407,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engines/port)
-"So" = (
-/obj/effect/spawner/bunk_bed,
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/structure/curtain/bounty,
-/turf/open/floor/wood,
-/area/ship/crew)
 "Sv" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -3355,7 +3422,8 @@
 /area/ship/engineering/engines/port)
 "SI" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/turf/open/floor/carpet,
+/obj/structure/chair/bench/red/directional/east,
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "SM" = (
 /obj/docking_port/stationary{
@@ -3408,7 +3476,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/white,
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "Tw" = (
 /obj/structure/closet/secure_closet/wall/directional/west{
@@ -3759,7 +3831,8 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white,
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 "WY" = (
 /obj/effect/turf_decal/siding/white{
@@ -4087,9 +4160,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/cryo)
 "ZW" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4101,7 +4171,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/carpet,
+/obj/effect/turf_decal/siding/white,
+/turf/open/floor/plasteel/mono,
 /area/ship/crew)
 
 (1,1,1) = {"
@@ -4705,7 +4776,7 @@ Si
 Si
 xQ
 NC
-So
+bK
 Kb
 eS
 NC
@@ -4725,8 +4796,8 @@ Sf
 LA
 ym
 La
-La
 jQ
+Si
 Si
 Si
 Si
