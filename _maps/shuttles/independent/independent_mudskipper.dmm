@@ -161,6 +161,9 @@
 /obj/effect/turf_decal/hardline_small{
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "cB" = (
@@ -506,6 +509,12 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
+"jV" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "kB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -544,7 +553,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "kY" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner{
+/obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -621,6 +630,9 @@
 	icon_state = "2-4"
 	},
 /obj/effect/turf_decal/hardline_small/right{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -714,6 +726,9 @@
 	},
 /obj/effect/turf_decal/number/four{
 	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -914,6 +929,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/hardline_small/left{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1140,6 +1158,11 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
+"xu" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/industrial/warning/dust,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "xH" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -1240,6 +1263,10 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
+"zu" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "zx" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
@@ -1405,11 +1432,6 @@
 /obj/item/clothing/head/helmet/space/eva,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
-"Dc" = (
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/warning/dust,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "Dj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1474,6 +1496,9 @@
 /obj/effect/turf_decal/number/eight{
 	dir = 4
 	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Ey" = (
@@ -1515,6 +1540,9 @@
 	},
 /obj/effect/turf_decal/number/six{
 	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -1568,10 +1596,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
-"GJ" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "GW" = (
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -2308,12 +2332,6 @@
 "VW" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
-"Wg" = (
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "Wm" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
@@ -3057,12 +3075,12 @@ cs
 cs
 hH
 hH
-GJ
-Wg
-ib
-Wg
-Wg
+zu
 kY
+ib
+kY
+kY
+jV
 hH
 hH
 cs
@@ -3076,7 +3094,7 @@ cs
 cs
 hH
 hH
-Dc
+xu
 cs
 cs
 cs
