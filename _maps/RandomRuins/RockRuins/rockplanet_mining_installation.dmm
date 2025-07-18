@@ -4586,15 +4586,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/mining_base/canteen)
-"yo" = (
-/obj/structure/table/wood,
-/obj/effect/turf_decal/siding/wood,
-/obj/machinery/light/small/directional/south,
-/obj/item/food/chocolatebar{
-	pixel_y = 5
-	},
-/turf/open/floor/wood,
-/area/ruin/rockplanet/mining_base/office)
 "ys" = (
 /obj/effect/turf_decal/spline/fancy/opaque/grey{
 	dir = 6
@@ -6497,18 +6488,6 @@
 /obj/structure/flora/ash/puce,
 /turf/open/floor/plating/asteroid/rockplanet,
 /area/overmap_encounter/planetoid/cave/explored)
-"IH" = (
-/obj/effect/turf_decal/trimline/opaque/blue/end,
-/obj/item/stack/medical/splint/ghetto{
-	pixel_x = -5;
-	pixel_y = -6
-	},
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8;
-	icon_state = "blood2"
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/rockplanet/mining_base/med)
 "IK" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -6661,6 +6640,18 @@
 /obj/effect/turf_decal/weather/rock/corner,
 /turf/open/floor/mineral/titanium/tiled/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"JB" = (
+/obj/effect/turf_decal/trimline/opaque/blue/end,
+/obj/item/stack/medical/splint/hunter{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 8;
+	icon_state = "blood2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/rockplanet/mining_base/med)
 "JC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -8610,6 +8601,15 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Um" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/light/small/directional/south,
+/obj/item/food/chocolatebar{
+	pixel_y = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/rockplanet/mining_base/office)
 "Un" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 1
@@ -10464,7 +10464,7 @@ uK
 TE
 RK
 HD
-yo
+Um
 Gl
 Ww
 yT
@@ -11693,7 +11693,7 @@ Qd
 gF
 Bv
 eJ
-IH
+JB
 cA
 cA
 Ww
