@@ -2357,7 +2357,9 @@
 	dir = 8
 	},
 /obj/docking_port/mobile{
-	dir = 4;
+	callTime = 250;
+	dir = 2;
+	launch_status = 0;
 	port_direction = 8;
 	preferred_direction = 4
 	},
