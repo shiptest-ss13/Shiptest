@@ -17,6 +17,7 @@
 #define TOOL_SAW "saw"
 #define TOOL_KNIFE "knife"
 #define TOOL_DECONSTRUCT "deconstruct"
+#define TOOL_BLOODFILTER "blood filter"
 #define TOOL_ROLLINGPIN "rollingpin"
 
 

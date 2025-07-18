@@ -303,7 +303,7 @@
 	if(!malignance)
 		malignance = new()
 		malignance.infect(owner, FALSE)
-	if(owner.reagents.has_reagent(/datum/reagent/medicine/synaptizine, needs_metabolizing = TRUE) || owner.reagents.has_reagent(/datum/reagent/medicine/spaceacillin, needs_metabolizing = TRUE))
+	if(owner.has_reagent(/datum/reagent/medicine/synaptizine, needs_metabolizing = TRUE) || owner.reagents.has_reagent(/datum/reagent/medicine/spaceacillin, needs_metabolizing = TRUE))
 		if(isnull(timeleft(malignance_tracker))) //ruhehehehehe
 			malignance_countdown = min(malignance_countdown + 1 SECONDS, initial(malignance_countdown)) //slightly improve our resistance to dying so we don't turn the second a treatment runs out
 			return

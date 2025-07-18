@@ -99,7 +99,7 @@
 /obj/item/scalpel
 	name = "scalpel"
 	desc = "The handle of the scalpel is an awkward ergonomic mold, designed to encourage proper form. A blade release button on the end allows for easy cleaning and replacement."
-	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "scalpel-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
@@ -434,3 +434,56 @@
 	attack_verb = list("corrected", "properly set")
 	tool_behaviour = TOOL_BONESET
 	toolspeed = 1
+
+/obj/item/blood_filter
+	name = "blood filter"
+	desc = "For filtering the blood."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "bloodfilter"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=3000, /datum/material/silver=10000)
+	item_flags = SURGICAL_TOOL
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("pump", "siphon")
+	tool_behaviour = TOOL_BLOODFILTER
+	toolspeed = 1
+	/// Assoc list of chem ids to names, used for deciding which chems to filter when used for surgery
+	var/list/whitelist = list()
+
+/obj/item/blood_filter/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BloodFilter", name)
+		ui.open()
+
+/obj/item/blood_filter/ui_data(mob/user)
+	. = list()
+
+	.["whitelist"] = list()
+	for(var/key in whitelist)
+		.["whitelist"] += whitelist[key]
+
+/obj/item/blood_filter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	. = TRUE
+	switch(action)
+		if("add")
+			var/selected_reagent = tgui_input_list(usr, "Select reagent to filter", "Whitelist reagent", GLOB.name2reagent)
+			if(!selected_reagent)
+				return FALSE
+
+			var/datum/reagent/chem_id = GLOB.name2reagent[selected_reagent]
+			if(!chem_id)
+				return FALSE
+
+			if(!(chem_id in whitelist))
+				whitelist[chem_id] = selected_reagent
+
+		if("remove")
+			var/chem_name = params["reagent"]
+			var/chem_id = get_chem_id(chem_name)
+			whitelist -= chem_id

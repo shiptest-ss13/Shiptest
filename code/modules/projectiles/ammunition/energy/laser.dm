@@ -57,6 +57,12 @@
 	e_cost = 1428
 	delay = 0.3 SECONDS
 
+/obj/item/ammo_casing/energy/lasergun/eoehoma/wasp
+	projectile_type = /obj/projectile/beam/laser/eoehoma/wasp
+	fire_sound = 'sound/weapons/laser4.ogg'
+	e_cost = 799
+	delay = 0.1 SECONDS
+
 /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy
 	projectile_type = /obj/projectile/beam/laser/eoehoma/heavy
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
@@ -102,8 +108,8 @@
 	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/ultima
-	projectile_type = /obj/projectile/beam/weak
-	pellets = 6
+	projectile_type = /obj/projectile/beam/weak/shotgun
+	pellets = 3
 	variance = 25
 	e_cost = 1000
 	select_name = "kill"
