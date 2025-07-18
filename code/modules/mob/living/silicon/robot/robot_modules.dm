@@ -345,7 +345,7 @@
 		/obj/item/borg/cyborghug/medical,
 		/obj/item/stack/medical/gauze/cyborg,
 		/obj/item/organ_storage,
-		/obj/item/borg/lollipop)
+	)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
 	cyborg_base_icon = "medical"
 	moduleselect_icon = "medical"
@@ -758,9 +758,9 @@
 		/obj/item/lighter,
 		/obj/item/storage/bag/tray,
 		/obj/item/reagent_containers/borghypo/borgshaker,
-		/obj/item/borg/lollipop,
 		/obj/item/stack/cable_coil/cyborg,
-		/obj/item/borg/apparatus/beaker/service)
+		/obj/item/borg/apparatus/beaker/service
+	)
 	emag_modules = list(/obj/item/reagent_containers/borghypo/borgshaker/hacked)
 	cyborg_base_icon = "service_m" // display as butlerborg for radial model selection
 	moduleselect_icon = "service"

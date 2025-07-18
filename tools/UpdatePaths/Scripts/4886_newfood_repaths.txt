@@ -2,7 +2,6 @@
 /obj/item/reagent_containers/food/snacks/pizza/@SUBTYPES : /obj/item/food/pizza/@SUBTYPES{@OLD}
 /obj/item/reagent_containers/food/snacks/pizzaslice/@SUBTYPES : /obj/item/food/pizzaslice/@SUBTYPES{@OLD}
 
-
 /obj/item/reagent_containers/food/snacks/dough : /obj/item/food/dough{@OLD}
 /obj/item/reagent_containers/food/snacks/flatdough : /obj/item/food/flatdough{@OLD}
 /obj/item/reagent_containers/food/snacks/doughslice : /obj/item/food/doughslice{@OLD}
@@ -22,10 +21,66 @@
 /obj/item/reagent_containers/food/snacks/enchiladas : /obj/item/food/enchiladas{@OLD}
 /obj/item/reagent_containers/food/snacks/stuffedlegion : /obj/item/food/stuffedlegion{@OLD}
 /obj/item/reagent_containers/food/snacks/hotdog/@SUBTYPES : /obj/item/food/hotdog{@OLD}
+/obj/item/reagent_containers/food/snacks/salad/@SUBTYPES: /obj/item/food/salad{@OLD}
+/obj/item/reagent_containers/food/snacks/soup/@subtypes: /obj/item/food/soup{@OLD}
+/obj/item/reagent_containers/food/snacks/canned/beans : /obj/item/food/canned/beans{@OLD}
+/obj/item/reagent_containers/food/snacks/spacetwinkie : /obj/item/food/spacetwinkie{@OLD}
 
+/obj/item/reagent_containers/food/snacks/cheesewedge : /obj/item/food/cheese/wedge{@OLD}
+
+/obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange : /obj/item/food/popsicle/creamsicle_orange{@OLD}
+
+/obj/item/reagent_containers/food/snacks/spidereggs : /obj/item/food/spidereggs{@OLD}
+/obj/item/reagent_containers/food/snacks/bait/worm : /obj/item/food/bait/worm{@OLD}
+/obj/item/reagent_containers/food/snacks/badrecipe : /obj/item/food/badrecipe{@OLD}
+
+/obj/item/reagent_containers/food/snacks/chips : /obj/item/food/chips{@OLD}
+/obj/item/reagent_containers/food/snacks/energybar : /obj/item/food/energybar{@OLD}
+/obj/item/reagent_containers/food/snacks/sosjerky : /obj/item/food/sosjerky{@OLD}
+
+/obj/item/reagent_containers/food/snacks/canned/peaches : /obj/item/food/canned/peaches
+
+/obj/item/reagent_containers/food/snacks/candy_corn : /obj/item/food/candy_corn{@OLD}
+/obj/item/reagent_containers/food/snacks/candiedapple : /obj/item/food/candiedapple{@OLD}
+/obj/item/reagent_containers/food/snacks/mint : /obj/item/food/mint{@OLD}
+/obj/item/reagent_containers/food/snacks/chocolatebar : /obj/item/food/chocolatebar{@OLD}
+/obj/item/reagent_containers/food/snacks/chococoin : /obj/item/food/chococoin : {@OLD}
+/obj/item/reagent_containers/food/snacks/fudgedice : /obj/item/food/fudgedice{@OLD}
+/obj/item/reagent_containers/food/snacks/chocoorange : /obj/item/food/chocoorange{@OLD}
+/obj/item/reagent_containers/food/snacks/tinychocolate : /obj/item/food/bonbon{@OLD}
+/obj/item/reagent_containers/food/snacks/gumball : /obj/item/food/gumball{@OLD}
+/obj/item/reagent_containers/food/snacks/lollipop : /obj/item/food/lollipop{@OLD}
+/obj/item/reagent_containers/food/snacks/spiderlollipop : /obj/item/food/spiderlollipop{@OLD}
+
+/obj/item/reagent_containers/food/snacks/chocolateegg : /obj/item/food/chocolateegg{@OLD}
+/obj/item/reagent_containers/food/snacks/egg : /obj/item/food/egg{@OLD}
+/obj/item/reagent_containers/food/snacks/friedegg : /obj/item/food/friedegg{@OLD}
+/obj/item/reagent_containers/food/snacks/boiledegg : /obj/item/food/boiledegg{@OLD}
+/obj/item/reagent_containers/food/snacks/omelette : /obj/item/food/omelette{@OLD}
+/obj/item/reagent_containers/food/snacks/benedict : /obj/item/food/benedict{@OLD}
+/obj/item/reagent_containers/food/snacks/eggwrap : /obj/item/food/eggwrap{@OLD}
+/obj/item/reagent_containers/food/snacks/chawanmushi : /obj/item/food/chawanmushi{@OLD}
+
+/obj/item/reagent_containers/food/snacks/canned : /obj/item/food/canned{@OLD}
+
+/obj/item/reagent_containers/food/snacks/icecream : /obj/item/food/icecream{@OLD}
+/obj/item/reagent_containers/food/snacks/snowcones : /obj/item/food/snowcones{@OLD}
+/obj/item/reagent_containers/food/snacks/honkdae : /obj/item/food/honkdae{@OLD}
+/obj/item/reagent_containers/food/snacks/sundae : /obj/item/food/sundae{@OLD}
+/obj/item/reagent_containers/food/snacks/spacefreezy : /obj/item/food/spacefreezy{@OLD}
+/obj/item/reagent_containers/food/snacks/strawberryicecreamsandwich : /obj/item/food/strawberryicecreamsandwich{@OLD}
+/obj/item/reagent_containers/food/snacks/icecreamsandwich : /obj/item/food/icecreamsandwich{@OLD}
+
+/obj/item/reagent_containers/food/snacks/grilledcheese : /obj/item/food/grilled_cheese_sandwich{@OLD)
+/obj/item/reagent_containers/food/snacks/jellysandwich : /obj/item/food/jellysandwich{@OLD)
+/obj/item/reagent_containers/food/snacks/sandwich : /obj/item/food/sandwich{@OLD)
+/obj/item/reagent_containers/food/snacks/grilledcheese : /obj/item/food/grilled_cheese_sandwich{@OLD)
+/obj/item/reagent_containers/food/snacks/jellysandwich : /obj/item/food/jellysandwich{@OLD)
+
+/obj/item/food/grilled_cheese_sandwich : /obj/item/reagent_containers/food/snacks/grilledcheese{@OLD}
+/obj/item/food/jellysandwich : /obj/item/reagent_containers/food/snacks/jellysandwich{@OLD}
 
 /obj/item/reagent_containers/food/snacks/donkpocket/@SUBTYPES : /obj/item/food/donkpocket/@SUBTYPES{@OLD}
-
 /obj/item/reagent_containers/food/snacks/donut/@SUBTYPES : /obj/item/food/donut/@SUBTYPES{@OLD}
 
 /obj/item/reagent_containers/food/snacks/sugarcookie : /obj/item/food/cookie/sugar{@OLD}
@@ -48,7 +103,6 @@
 /obj/item/reagent_containers/food/snacks/cherrycupcake : /obj/item/food/cherrycupcake{@OLD}
 /obj/item/reagent_containers/food/snacks/cherrycupcake/blue : /obj/item/food/cherrycupcake/blue{@OLD}
 /obj/item/reagent_containers/food/snacks/honeybun : /obj/item/food/honeybun{@OLD}
-
 
 /obj/item/reagent_containers/food/snacks/meat/@SUBTYPES : /obj/item/food/meat/@SUBTYPES{@OLD}
 /obj/item/reagent_containers/food/snacks/fishmeat/@SUBTYPES : /obj/item/food/fishmeat/@SUBTYPES{@OLD}
@@ -86,9 +140,7 @@
 /obj/item/reagent_containers/food/snacks/monkeycube : /obj/item/food/monkeycube{@OLD}
 /obj/item/reagent_containers/food/snacks/vegetariansushiroll : /obj/item/food/vegetariansushiroll{@OLD}
 
-
 /obj/item/reagent_containers/food/snacks/pie/@SUBTYPES : /obj/item/food/pie/@SUBTYPES{@OLD}
-
 
 /obj/item/reagent_containers/food/snacks/grown/@SUBTYPES : /obj/item/food/grown/@SUBTYPES{@OLD}
 /obj/item/food/breadslice/moldy : @DELETE
