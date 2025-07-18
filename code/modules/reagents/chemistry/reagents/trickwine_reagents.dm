@@ -170,7 +170,7 @@
 	breakaway_flask_icon_state = "baflaskashwine"
 	buff_effect = /datum/status_effect/trickwine/buff/ash
 	debuff_effect = /datum/status_effect/trickwine/debuff/ash
-	dip_ammo_type = /obj/item/ammo_casing/c38/ashwine
+	dip_ammo_type = list(/obj/item/ammo_casing/c38/ashwine, /obj/item/ammo_casing/a44roum/ashwine)
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
@@ -222,7 +222,7 @@
 	breakaway_flask_icon_state = "baflaskicewine"
 	buff_effect = /datum/status_effect/trickwine/buff/ice
 	debuff_effect = /datum/status_effect/trickwine/debuff/ice
-	dip_ammo_type = /obj/item/ammo_casing/c38/iceblox
+	dip_ammo_type = list(/obj/item/ammo_casing/c38/iceblox, /obj/item/ammo_casing/a44roum/icewine)
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
@@ -332,7 +332,7 @@
 	breakaway_flask_icon_state = "baflaskhearthwine"
 	buff_effect = /datum/status_effect/trickwine/buff/hearth
 	debuff_effect = /datum/status_effect/trickwine/debuff/hearth
-	dip_ammo_type = /obj/item/ammo_casing/c38/hotshot
+	dip_ammo_type = list(/obj/item/ammo_casing/c38/hotshot, /obj/item/ammo_casing/a44roum/hearthwine)
 
 //This needs a buff
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
