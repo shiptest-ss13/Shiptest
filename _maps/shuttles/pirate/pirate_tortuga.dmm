@@ -103,6 +103,14 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
+"bx" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/structure/tank_dispenser/oxygen,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plasteel/mono,
+/area/ship/cargo)
 "bD" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -447,6 +455,10 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"eW" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/space)
 "ff" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -653,6 +665,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
+/area/ship/security/armory)
+"hC" = (
+/turf/open/space/basic,
 /area/ship/security/armory)
 "hD" = (
 /obj/machinery/door/airlock/command{
@@ -1221,9 +1236,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mZ" = (
-/obj/structure/curtain,
 /turf/open/floor/plasteel/white,
-/area/ship/crew/canteen)
+/area/ship/security/armory)
 "nc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1601,7 +1615,7 @@
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
-/area/ship/maintenance)
+/area/space)
 "rY" = (
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "!";
@@ -1708,7 +1722,7 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plating,
-/area/ship/security/armory)
+/area/ship/maintenance)
 "tL" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2032,8 +2046,15 @@
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "xb" = (
-/turf/closed/wall/r_wall/rust,
-/area/ship/cargo)
+/obj/effect/turf_decal/corner/opaque/blue/full,
+/obj/machinery/computer/helm/viewscreen/directional/north,
+/obj/machinery/light/directional/west,
+/obj/structure/bed{
+	dir = 1
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/white,
+/area/ship/crew/canteen)
 "xf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -2220,12 +2241,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"AE" = (
+/turf/open/space/basic,
+/area/space)
 "AG" = (
 /obj/effect/spawner/random/trash/decal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ship/maintenance)
+/area/space)
 "AQ" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt,
@@ -2242,6 +2266,13 @@
 "Bk" = (
 /turf/open/floor/plating,
 /area/ship/maintenance)
+"Bp" = (
+/obj/effect/gibspawner/human/bodypartless,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
+/area/space)
 "Bw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/west,
@@ -2315,6 +2346,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"CD" = (
+/turf/closed/wall/r_wall/rust,
+/area/space)
 "CE" = (
 /obj/structure/table,
 /obj/machinery/jukebox/boombox{
@@ -2434,7 +2468,7 @@
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
-/area/ship/maintenance)
+/area/space)
 "Ek" = (
 /turf/template_noop,
 /area/template_noop)
@@ -2648,7 +2682,7 @@
 "Gx" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
+/area/ship/security/armory)
 "Gy" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -2740,6 +2774,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/cargo)
+"HE" = (
+/turf/closed/wall/r_wall,
+/area/ship/maintenance)
 "HG" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -3042,6 +3079,9 @@
 /obj/item/toy/plush/moth/error,
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
+"Lf" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "Lg" = (
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/decal/cleanable/dirt,
@@ -3471,12 +3511,8 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Po" = (
-/obj/structure/bed{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/blue/full,
-/obj/machinery/computer/helm/viewscreen/directional/north,
-/obj/machinery/light/directional/west,
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Pu" = (
@@ -3546,13 +3582,12 @@
 /turf/closed/wall/r_wall/rust,
 /area/ship/maintenance)
 "QK" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
+/obj/effect/spawner/random/maintenance,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
 	},
-/obj/structure/tank_dispenser/oxygen,
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/plasteel/mono,
-/area/ship/cargo)
+/area/space)
 "QM" = (
 /obj/effect/spawner/random/maintenance/three,
 /obj/structure/closet/cardboard,
@@ -3729,10 +3764,9 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Sy" = (
-/obj/machinery/iv_drip,
 /obj/effect/turf_decal/corner/opaque/blue/full,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/canteen)
+/turf/open/space/basic,
+/area/ship/security/armory)
 "SC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
@@ -4217,6 +4251,9 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
+"XP" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
 "XX" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4258,7 +4295,7 @@
 "Yu" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/plasteel/dark,
-/area/ship/crew/canteen)
+/area/ship/security/armory)
 "YD" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/reagent_containers/glass/bucket{
@@ -4367,10 +4404,6 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Zz" = (
-/obj/structure/closet/secure_closet/wall{
-	pixel_y = -28;
-	req_access = list(5)
-	},
 /obj/item/storage/firstaid/brute{
 	pixel_y = 8;
 	pixel_x = 2
@@ -4393,7 +4426,7 @@
 /obj/item/clothing/head/soft,
 /obj/item/storage/firstaid,
 /turf/open/floor/plasteel/white,
-/area/ship/crew/canteen)
+/area/ship/security/armory)
 "ZC" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -4439,8 +4472,8 @@ Ek
 Ek
 Ek
 Ek
-Ek
 fR
+Ek
 Ek
 Ek
 Ek
@@ -4458,7 +4491,6 @@ Ek
 Ek
 "}
 (2,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4493,9 +4525,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (3,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4530,9 +4562,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (4,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4567,9 +4599,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (5,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4604,9 +4636,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (6,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4641,9 +4673,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (7,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4678,9 +4710,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (8,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4715,9 +4747,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (9,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4752,9 +4784,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (10,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -4789,9 +4821,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (11,1,1) = {"
-Ek
 Ek
 Ek
 QJ
@@ -4826,9 +4858,9 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (12,1,1) = {"
-Ek
 Ek
 lJ
 lJ
@@ -4859,13 +4891,13 @@ Yk
 BA
 ss
 sQ
+AE
 lJ
 lJ
 Ek
 Ek
 "}
 (13,1,1) = {"
-Ek
 Ek
 lJ
 lJ
@@ -4896,13 +4928,13 @@ ja
 TN
 YD
 sQ
+AE
 lJ
 lJ
 lJ
 Ek
 "}
 (14,1,1) = {"
-Ek
 lJ
 lJ
 lJ
@@ -4933,13 +4965,13 @@ jA
 ph
 Ko
 Ko
+AE
 QJ
 QJ
 QJ
 QJ
 "}
 (15,1,1) = {"
-Ek
 lJ
 lJ
 lJ
@@ -4969,6 +5001,7 @@ eE
 vQ
 YX
 Ko
+AE
 QM
 JA
 yc
@@ -4976,7 +5009,6 @@ lJ
 lJ
 "}
 (16,1,1) = {"
-Ek
 lJ
 lJ
 lJ
@@ -5006,6 +5038,7 @@ qy
 AZ
 sQ
 Ko
+AE
 Hk
 kv
 QJ
@@ -5013,7 +5046,6 @@ lJ
 lJ
 "}
 (17,1,1) = {"
-Ek
 lJ
 lJ
 lJ
@@ -5043,6 +5075,7 @@ uQ
 GA
 UT
 kK
+AE
 Bk
 QJ
 QJ
@@ -5050,7 +5083,6 @@ lJ
 lJ
 "}
 (18,1,1) = {"
-Ek
 lJ
 lJ
 lJ
@@ -5073,13 +5105,14 @@ Sv
 Ev
 So
 wL
+hC
 Vt
 Vt
 Vt
-qD
 QJ
 QJ
 QJ
+CD
 mf
 QJ
 lJ
@@ -5087,7 +5120,6 @@ lJ
 lJ
 "}
 (19,1,1) = {"
-Ek
 lJ
 lJ
 lJ
@@ -5107,13 +5139,14 @@ nT
 Xs
 fj
 aT
-QK
+bx
 Su
 wQ
+hC
 Vt
 dV
 zZ
-Vt
+HE
 Kn
 bR
 rW
@@ -5124,7 +5157,6 @@ lJ
 lJ
 "}
 (20,1,1) = {"
-Ek
 lJ
 lJ
 lJ
@@ -5145,12 +5177,13 @@ WF
 WF
 Zp
 rd
-xb
+rd
+qD
 Vt
 Vt
 RV
 qu
-qD
+QJ
 Pb
 Jv
 Eb
@@ -5161,7 +5194,6 @@ lJ
 Ek
 "}
 (21,1,1) = {"
-Ek
 Ek
 QJ
 QJ
@@ -5181,16 +5213,17 @@ SG
 PC
 JE
 MC
+XP
 Gx
 qD
 lY
 Bw
 dm
 FQ
-qD
+QJ
 Yo
 Rc
-Hk
+eW
 QJ
 lJ
 lJ
@@ -5198,7 +5231,6 @@ Ek
 Ek
 "}
 (22,1,1) = {"
-Ek
 Ek
 lJ
 lJ
@@ -5218,6 +5250,7 @@ te
 iw
 Gd
 Iw
+XP
 Yu
 qD
 jV
@@ -5225,9 +5258,9 @@ Lz
 ZY
 mg
 qD
-qD
-MI
 QJ
+MI
+CD
 QJ
 QJ
 QJ
@@ -5235,7 +5268,6 @@ Ek
 Ek
 "}
 (23,1,1) = {"
-Ek
 lJ
 lJ
 QJ
@@ -5256,13 +5288,14 @@ om
 MK
 Gy
 Gr
+Lf
 bJ
 nV
 fM
 hG
 TG
 hT
-qD
+QJ
 XX
 AG
 QJ
@@ -5272,7 +5305,6 @@ Ek
 Ek
 "}
 (24,1,1) = {"
-Ek
 lJ
 lJ
 QJ
@@ -5294,14 +5326,15 @@ ng
 ng
 ng
 Vt
+Vt
 xB
 RH
 hP
 FP
 hz
-qD
+QJ
 Dv
-fn
+Bp
 QJ
 lJ
 lJ
@@ -5309,7 +5342,6 @@ Ek
 Ek
 "}
 (25,1,1) = {"
-Ek
 lJ
 lJ
 QJ
@@ -5328,6 +5360,7 @@ XM
 oU
 GV
 ng
+xb
 Po
 Sy
 Vt
@@ -5336,7 +5369,7 @@ gD
 yH
 FP
 Vb
-qD
+QJ
 MH
 Eb
 QJ
@@ -5346,7 +5379,6 @@ Ek
 Ek
 "}
 (26,1,1) = {"
-Ek
 lJ
 lJ
 QJ
@@ -5365,7 +5397,8 @@ Cy
 cG
 BG
 ng
-mZ
+iW
+iW
 mZ
 Vt
 mG
@@ -5373,9 +5406,9 @@ FB
 Px
 SD
 hT
-qD
+QJ
 XX
-YU
+QK
 QJ
 lJ
 lJ
@@ -5383,7 +5416,6 @@ Ek
 Ek
 "}
 (27,1,1) = {"
-Ek
 lJ
 lJ
 QJ
@@ -5403,6 +5435,7 @@ xX
 nv
 qp
 iW
+iW
 Zz
 Vt
 Vt
@@ -5410,9 +5443,9 @@ qD
 qD
 qD
 qD
-Vt
+HE
 TZ
-QJ
+CD
 QJ
 QJ
 QJ
@@ -5420,7 +5453,6 @@ QJ
 Ek
 "}
 (28,1,1) = {"
-Ek
 lJ
 lJ
 QJ
@@ -5441,6 +5473,7 @@ YI
 ng
 Pa
 ut
+Sy
 tI
 iN
 qi
@@ -5449,7 +5482,7 @@ Hk
 kv
 hh
 DU
-Hk
+eW
 QJ
 lJ
 lJ
@@ -5457,7 +5490,6 @@ Ek
 Ek
 "}
 (29,1,1) = {"
-Ek
 QJ
 QJ
 QJ
@@ -5487,6 +5519,7 @@ YU
 vD
 kv
 QJ
+AE
 QJ
 lJ
 lJ
@@ -5494,7 +5527,6 @@ Ek
 Ek
 "}
 (30,1,1) = {"
-Ek
 lJ
 lJ
 lJ
@@ -5524,6 +5556,7 @@ iy
 oK
 Hi
 QJ
+AE
 lJ
 lJ
 lJ
@@ -5531,7 +5564,6 @@ Ek
 Ek
 "}
 (31,1,1) = {"
-Ek
 Ek
 lJ
 lJ
@@ -5561,6 +5593,7 @@ XJ
 Bk
 Bk
 QJ
+AE
 lJ
 lJ
 lJ
@@ -5568,7 +5601,6 @@ Ek
 Ek
 "}
 (32,1,1) = {"
-Ek
 Ek
 lJ
 lJ
@@ -5598,6 +5630,7 @@ fn
 et
 uX
 QJ
+AE
 lJ
 lJ
 Ek
@@ -5605,7 +5638,6 @@ Ek
 Ek
 "}
 (33,1,1) = {"
-Ek
 Ek
 Ek
 lJ
@@ -5635,6 +5667,7 @@ Eu
 GP
 aV
 QJ
+AE
 lJ
 lJ
 Ek
@@ -5642,7 +5675,6 @@ Ek
 Ek
 "}
 (34,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -5672,6 +5704,7 @@ QJ
 QJ
 QJ
 QJ
+AE
 lJ
 Ek
 Ek
@@ -5679,7 +5712,6 @@ Ek
 Ek
 "}
 (35,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -5709,6 +5741,7 @@ Kn
 QJ
 lJ
 lJ
+AE
 lJ
 Ek
 Ek
@@ -5716,7 +5749,6 @@ Ek
 Ek
 "}
 (36,1,1) = {"
-Ek
 Ek
 Ek
 Ek
@@ -5751,6 +5783,7 @@ Ek
 Ek
 Ek
 Ek
+Ek
 "}
 (37,1,1) = {"
 Ek
@@ -5760,7 +5793,6 @@ Ek
 Ek
 Ek
 Ek
-Ek
 lJ
 lJ
 lJ
@@ -5782,6 +5814,7 @@ QJ
 QJ
 lJ
 lJ
+Ek
 Ek
 Ek
 Ek
@@ -5798,7 +5831,6 @@ Ek
 Ek
 Ek
 Ek
-Ek
 lJ
 lJ
 QJ
@@ -5818,6 +5850,7 @@ lJ
 lJ
 lJ
 lJ
+Ek
 Ek
 Ek
 Ek
@@ -5848,10 +5881,10 @@ Ek
 Ek
 Ek
 Ek
+lJ
+lJ
+lJ
 Ek
-lJ
-lJ
-lJ
 Ek
 Ek
 Ek
