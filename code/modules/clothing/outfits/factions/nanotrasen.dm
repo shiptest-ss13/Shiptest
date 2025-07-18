@@ -134,7 +134,7 @@
 	suit = null
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
-	gloves = /obj/item/clothing/gloves/color/combat
+	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/nanotrasen/beret/security/command
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
