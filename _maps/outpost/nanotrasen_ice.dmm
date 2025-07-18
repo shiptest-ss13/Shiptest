@@ -759,10 +759,18 @@
 	},
 /area/outpost/exterior)
 "eh" = (
-/obj/machinery/camera/autoname{
+/obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/patterned/cargo_one{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
 /area/outpost/exterior)
 "ei" = (
 /obj/effect/decal/cleanable/dirt,
@@ -869,20 +877,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
-"eh" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/cargo_one{
-	light_color = "#1B1D2E";
-	light_range = 2
-	},
-/area/outpost/exterior)
 "eM" = (
 /obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/trimline/opaque/vired/warning,
@@ -1074,30 +1068,6 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
-"fN" = (
-/obj/machinery/door/airlock/maintenance{
-	dir = 4;
-	req_one_access_txt = null;
-	name = "External Access"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/outpost/vacant_rooms/shop)
 "fM" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip{
@@ -1242,18 +1212,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
-"gB" = (
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_x = 12;
-	pixel_y = 5
-	},
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_x = -2;
-	pixel_y = 10
-	},
-/turf/open/floor/plating/asteroid/icerock/temperate/lit,
-/area/outpost/exterior)
 "gD" = (
 /obj/effect/turf_decal/siding/white/end{
 	dir = 4
@@ -1456,22 +1414,6 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/outpost/crew/bar)
-"iv" = (
-/obj/machinery/door/airlock/public{
-	name = "Sauna"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/vacant_rooms/shop)
 "hW" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only,
@@ -4410,27 +4352,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/outpost/medical)
-"zw" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/white{
-	dir = 4
-	},
-/obj/structure/sign/directions/supply{
-	dir = 1;
-	pixel_y = 8;
-	pixel_x = 32
-	},
-/obj/structure/sign/directions/service{
-	dir = 1;
-	pixel_x = 32
-	},
-/turf/open/floor/plasteel/patterned/brushed{
-	light_color = "#1B1D2E";
-	light_range = 2
-	},
-/area/outpost/exterior)
 "zG" = (
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/outpost/exterior)
@@ -5458,7 +5379,7 @@
 	color = "#543C30";
 	dir = 6
 	},
-/obj/item/reagent_containers/food/snacks/icecreamsandwich{
+/obj/item/food/icecreamsandwich{
 	pixel_x = -3;
 	pixel_y = 4
 	},
@@ -6482,7 +6403,7 @@
 	color = "#543C30";
 	dir = 4
 	},
-/obj/item/reagent_containers/food/snacks/icecream{
+/obj/item/food/icecream{
 	pixel_x = -1;
 	pixel_y = 5
 	},
@@ -6590,16 +6511,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
-"Na" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/public{
-	name = "Diner";
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/crew/bar)
 "KW" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -7392,7 +7303,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
 	},
-/obj/item/reagent_containers/food/snacks/icecream{
+/obj/item/food/icecream{
 	pixel_x = -1;
 	pixel_y = 6
 	},
@@ -7533,17 +7444,6 @@
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
-"TH" = (
-/obj/structure/chair/stool/bar{
-	dir = 1;
-	pixel_y = 13
-	},
-/obj/effect/turf_decal/corner/opaque/white/diagonal{
-	dir = 4
-	},
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/plating,
-/area/outpost/maintenance/port)
 "QA" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -7995,10 +7895,6 @@
 	light_range = 2
 	},
 /area/outpost/maintenance/fore)
-"UW" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/floor/plating/asteroid/snow/temperatre/lit,
-/area/outpost/exterior)
 "Te" = (
 /obj/structure/chair/sofa/blue/corpo/left/directional/south,
 /obj/effect/turf_decal/siding/white,
@@ -8342,34 +8238,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/armory)
-"UW" = (
-/obj/machinery/button/door{
-	id = "ice_lounge_window";
-	name = "Window Shutters";
-	pixel_y = 6;
-	pixel_x = -21;
-	dir = 4
-	},
-/obj/machinery/light_switch{
-	pixel_x = -22;
-	pixel_y = -10;
-	dir = 4
-	},
-/obj/structure/table/wood/reinforced,
-/obj/item/storage/fancy/candle_box{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = -2
-	},
-/obj/item/clothing/mask/cigarette/pipe{
-	pixel_x = 7;
-	pixel_y = -3
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/outpost/crew/dorm)
 "UY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13316,7 +13184,7 @@ WZ
 Yh
 Ca
 TF
-gB
+fM
 Pd
 qW
 qW
@@ -14567,7 +14435,7 @@ Lh
 QL
 lJ
 Nc
-UW
+ot
 jw
 ch
 Rh

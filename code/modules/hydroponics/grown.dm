@@ -84,7 +84,8 @@
 				microwaved_type = microwaved_type,\
 				junkiness = junkiness)
 
-/obj/item/food/grown/proc/make_dryable()
+//was just on /grown, but why? this can be added to other food things as well, just not everything like on init here
+/obj/item/food/proc/make_dryable()
 	AddElement(/datum/element/dryable, type)
 
 /obj/item/food/grown/make_leave_trash()
