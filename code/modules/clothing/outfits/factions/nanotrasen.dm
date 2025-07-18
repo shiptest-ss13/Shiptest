@@ -49,11 +49,13 @@
 	id = /obj/item/card/id/gold
 	head = /obj/item/clothing/head/nanotrasen/beret/security/command
 	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	alt_uniform = null
 	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = /obj/item/clothing/glasses/sunglasses
+	neck = null
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
