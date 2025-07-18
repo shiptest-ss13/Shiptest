@@ -24,7 +24,7 @@
 
 /obj/item/melee/sledgehammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30)
+	AddComponent(/datum/component/two_handed, force_unwielded = force, force_wielded = 30, icon_wielded="[base_icon_state]_w")
 
 /obj/item/melee/sledgehammer/update_icon_state()
 	icon_state = "[base_icon_state]"

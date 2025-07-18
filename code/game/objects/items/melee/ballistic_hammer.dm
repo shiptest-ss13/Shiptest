@@ -16,6 +16,11 @@
 	magazine = new /obj/item/ammo_box/magazine/internal/shot/blasting_hammer(src)
 	update_appearance()
 
+/obj/item/melee/sledgehammer/gorlex/blasting/ComponentInitialize()
+	. = ..()
+	var/datum/component/two_handed/two_hand = GetComponent(/datum/component/two_handed)
+	two_hand.icon_wielded = null
+
 /obj/item/melee/sledgehammer/gorlex/blasting/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
 	if(istype(I, /obj/item/ammo_casing) || istype(I, /obj/item/ammo_box/magazine/ammo_stack))
@@ -55,7 +60,10 @@
 	. = ..()
 	var/is_loaded = chambered ? 1 : 0
 	icon_state = "[base_icon_state]-[min((is_loaded + magazine.ammo_count()), 3)]"
-	item_state = "blasting"
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
+		item_state = "[base_icon_state]_w"
+	else
+		item_state = base_icon_state
 
 /obj/item/ammo_box/magazine/internal/shot/blasting_hammer
 	name = "blasting hammer magazine"
