@@ -280,12 +280,12 @@
 
 	var/list/obj/item/bodypart/bleed_check = get_bleeding_parts(TRUE)
 	if(LAZYLEN(bleed_check))
-		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
+		if(has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
 			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
 		else
 			msg += "<B>[t_He] [t_is] bleeding!</B>\n"
 
-	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
+	if(has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
 		msg += "[t_He] [t_is] emitting a gentle blue glow!\n"
 
 	if(islist(stun_absorption))
