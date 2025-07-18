@@ -837,6 +837,14 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
+"jg" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "jh" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -955,6 +963,7 @@
 	pixel_y = 20;
 	pixel_x = 12
 	},
+/obj/item/shield/riot/spike,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "kp" = (
@@ -1073,10 +1082,6 @@
 	pixel_x = 8
 	},
 /obj/machinery/light/directional/north,
-/obj/item/bodycamera/broadcast_camera{
-	pixel_x = 12;
-	pixel_y = 12
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mf" = (
@@ -2237,9 +2242,6 @@
 "Bk" = (
 /turf/open/floor/plating,
 /area/ship/maintenance)
-"Bp" = (
-/turf/closed/wall/rust,
-/area/ship/maintenance)
 "Bw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/west,
@@ -2573,6 +2575,8 @@
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
 /obj/item/stock_parts/cell/gun,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "FL" = (
@@ -2842,10 +2846,14 @@
 	},
 /obj/item/ammo_casing/a357{
 	pixel_x = 6;
-	pixel_y = -1
+	pixel_y = -1;
+	auto_rotate = 0;
+	auto_scatter = 0
 	},
 /obj/item/ammo_casing/a357{
-	pixel_x = 10
+	pixel_x = 10;
+	auto_rotate = 0;
+	auto_scatter = 0
 	},
 /turf/open/floor/wood,
 /area/ship/crew/crewtwo)
@@ -2883,11 +2891,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "JA" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow,
-/obj/structure/grille,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/trash/grille_or_waste,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "JE" = (
@@ -3288,11 +3293,6 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew)
-"NV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/random/trash/grille_or_waste,
-/turf/open/floor/plating,
-/area/ship/maintenance)
 "Od" = (
 /obj/machinery/computer/helm{
 	dir = 8;
@@ -3515,7 +3515,7 @@
 /obj/item/gun/energy/laser/wasp,
 /obj/item/gun/ballistic/automatic/hmg/mower,
 /obj/item/gun/ballistic/automatic/marksman/f4/indie,
-/obj/item/gun/ballistic/shotgun/brimstone,
+/obj/item/gun/ballistic/automatic/pistol/spitter,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "PC" = (
@@ -3550,6 +3550,7 @@
 	dir = 4
 	},
 /obj/structure/tank_dispenser/oxygen,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "QM" = (
@@ -4793,11 +4794,11 @@ Ek
 Ek
 Ek
 Ek
-Bp
-Bp
-Bp
-Bp
-Bp
+QJ
+QJ
+QJ
+QJ
+QJ
 oH
 Lt
 GY
@@ -4932,10 +4933,10 @@ jA
 ph
 Ko
 Ko
-Bp
-Bp
-Bp
-Bp
+QJ
+QJ
+QJ
+QJ
 "}
 (15,1,1) = {"
 Ek
@@ -4969,7 +4970,7 @@ vQ
 YX
 Ko
 QM
-NV
+JA
 yc
 lJ
 lJ
@@ -5019,7 +5020,7 @@ lJ
 QJ
 vr
 qE
-JA
+jg
 wb
 ZH
 II

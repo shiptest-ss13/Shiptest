@@ -231,6 +231,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "y" = (
@@ -303,7 +304,6 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "D" = (
-/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/streak{
 	pixel_x = 5;
@@ -324,6 +324,7 @@
 /obj/structure/chair/handrail{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "E" = (
@@ -442,7 +443,6 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "O" = (
-/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -457,6 +457,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/chair/handrail,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "P" = (
