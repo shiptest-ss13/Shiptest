@@ -443,8 +443,7 @@
 	can_move_docking_ports = 1;
 	dir = 8;
 	launch_status = 0;
-	preferred_direction = 4;
-	dheight = 3
+	preferred_direction = 4
 	},
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
@@ -509,12 +508,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"jV" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "kB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -1158,9 +1151,10 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/toilet)
-"xu" = (
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/warning/dust,
+"xE" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 4
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "xH" = (
@@ -1263,10 +1257,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
-"zu" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "zx" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater,
@@ -1861,9 +1851,7 @@
 /area/ship/hallway/aft)
 "Nl" = (
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 1
-	},
+/obj/effect/turf_decal/industrial/warning/dust,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "NJ" = (
@@ -2040,6 +2028,10 @@
 /area/ship/bridge)
 "Rh" = (
 /turf/closed/wall/mineral/plastitanium,
+/area/ship/cargo)
+"Rk" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner,
+/turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "Rl" = (
 /obj/structure/table,
@@ -2421,6 +2413,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
+"Xy" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 1
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "XK" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 1
@@ -3075,12 +3074,12 @@ cs
 cs
 hH
 hH
-zu
+Rk
 kY
 ib
 kY
 kY
-jV
+xE
 hH
 hH
 cs
@@ -3094,12 +3093,12 @@ cs
 cs
 hH
 hH
-xu
-cs
-cs
-cs
-cs
 Nl
+cs
+cs
+cs
+cs
+Xy
 hH
 hH
 cs
