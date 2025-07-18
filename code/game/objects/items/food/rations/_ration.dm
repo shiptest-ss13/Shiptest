@@ -80,4 +80,4 @@
 /obj/item/food/ration/examine(mob/user)
 	. = ..()
 	if(cookable && !cooked)
-		. += span_notice("It can be cooked in a microwave or warmed using a flameless ration heater.")
+		. += span_notice("It can be cooked in a <b>microwave</b> or warmed using a <b>flameless ration heater</b>.")

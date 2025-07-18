@@ -75,7 +75,7 @@
 /datum/chemical_reaction/tiris_cheese/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/food/cheese/wedge/tiris(location)
+		new /obj/item/food/cheese/wheel/tiris(location)
 
 /datum/chemical_reaction/synthmeat
 	required_reagents = list(/datum/reagent/blood = 5, /datum/reagent/medicine/cryoxadone = 1)

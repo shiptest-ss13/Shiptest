@@ -69,6 +69,10 @@
 /obj/item/food/proc/make_processable()
 	return
 
+///Gives the food item the dryable component set to its own type
+/obj/item/food/proc/make_dryable()
+	AddElement(/datum/element/dryable, type)
+
 ///This proc handles trash components, overwrite this if you want the object to spawn trash
 /obj/item/food/proc/make_leave_trash()
 	if(trash_type)

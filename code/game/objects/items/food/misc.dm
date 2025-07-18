@@ -159,15 +159,15 @@
 
 /obj/item/food/butter/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>If you had a rod you could make <b>butter on a stick</b>.</span>"
+	. += span_notice("If you had a rod you could make <b>butter on a stick</b>.")
 
 /obj/item/food/butter/attackby(obj/item/item, mob/user, params)
 	if(istype(item, /obj/item/stack/rods))
 		var/obj/item/stack/rods/rods = item
 		if(!rods.use(1))//borgs can still fail this if they have no metal
-			to_chat(user, "<span class='warning'>You do not have enough metal to put [src] on a stick!</span>")
+			to_chat(user, span_warning("You do not have enough metal to put [src] on a stick!"))
 			return ..()
-		to_chat(user, "<span class='notice'>You stick the rod into the stick of butter.</span>")
+		to_chat(user, span_notice("You stick the rod into the stick of butter."))
 		var/obj/item/food/butter/on_a_stick/new_item = new(usr.loc)
 		var/replace = (user.get_inactive_held_item() == rods)
 		if(!rods && replace)
@@ -204,7 +204,7 @@
 
 /obj/item/food/crab_rangoon
 	name = "Crab Rangoon"
-	desc = "Has many names, like crab puffs, cheese won'tons, crab dumplings? Whatever you call them, they're a fabulous blast of cream cheesy crab."
+	desc = "A form of fried dumpling, consisting of crab meat and cream cheese in a wonton wrapper."
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "crabrangoon"
 	food_reagents = list(

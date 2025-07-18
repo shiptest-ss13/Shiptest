@@ -110,7 +110,7 @@
 
 /obj/item/food/salad/ricepudding
 	name = "rice pudding"
-	desc = "A bowl of rice mixed with milk into a thick pudding, usually mixed  with nuts and spices."
+	desc = "A bowl of rice mixed with milk into a thick pudding, usually mixed with nuts and spices."
 	icon_state = "ricepudding"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,

@@ -957,7 +957,7 @@
 	color = "#100800" // rgb: 16, 8, 0 , just like cola
 	taste_description = "Pure Beef Essence"
 	glass_icon_state  = "glass_brown"
-	glass_name = "glass of Space Cola?"
+	glass_name = "glass of Master Cola?"
 	glass_desc = "A glass of what appears to be refreshing Space Cola."
 
 /datum/reagent/consumable/prunomix
