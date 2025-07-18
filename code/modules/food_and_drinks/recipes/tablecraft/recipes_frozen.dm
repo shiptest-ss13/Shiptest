@@ -58,12 +58,12 @@
 /datum/crafting_recipe/food/miras_parfait
 	name = "Miras Parfait"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/mirasegg = 1,
+		/obj/item/food/mirasegg = 1,
 		/obj/item/food/grown/ash_flora/cactus_fruit = 1,
 		/datum/reagent/consumable/cream = 4,
 		/datum/reagent/consumable/sugar = 4
 	)
-	result = /obj/item/reagent_containers/food/snacks/miras_parfait
+	result = /obj/item/food/miras_parfait
 	subcategory = CAT_ICE
 
 

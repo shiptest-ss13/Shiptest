@@ -365,7 +365,11 @@
 	desc = "A magnisium based ration heater. It can be used to heat up entrees and other food items. reaches the same temperature as a microwave with half the volume."
 	icon = 'icons/obj/food/ration.dmi'
 	icon_state = "ration_heater"
-	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
+	grind_results = list(
+		/datum/reagent/iron = 10,
+		/datum/reagent/water = 10,
+		/datum/reagent/consumable/sodiumchloride = 5,
+	)
 	heat = 3800
 	w_class = WEIGHT_CLASS_SMALL
 	var/obj/item/tocook = null
@@ -377,8 +381,9 @@
 	ration_overlay = mutable_appearance(icon, icon_state, LOW_ITEM_LAYER)
 
 /obj/item/ration_heater/afterattack(atom/target, mob/user, flag)
-	if(istype(target, /obj/item/reagent_containers/food) || istype(target, /obj/item/grown))
+	if(istype(target, /obj/item/food) || istype(target, /obj/item/grown))
 		to_chat(user, span_notice("You start sliding \the [src] under the [target]..."))
+
 		if(do_after(user, 10))
 			tocook = target
 			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
@@ -387,7 +392,6 @@
 			target.visible_message(span_notice("\The [target] rapidly begins cooking..."))
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
-
 
 /obj/item/ration_heater/get_temperature()
 	if(!uses)
@@ -405,11 +409,13 @@
 		var/cookturf = get_turf(tocook)
 		tocook.visible_message(span_notice("\The [src] lets out a final hiss..."))
 		playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
-		if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
+
+		if(istype(tocook, /obj/item/food) || istype(tocook, /obj/item/grown))
 			tocook.visible_message(span_notice("\The [tocook] is done warming up!"))
 			tocook.microwave_act()
 			if(!QDELETED(tocook))
 				clear_cooking()
+
 		if(uses == 0)
 			qdel()
 		else

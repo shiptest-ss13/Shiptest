@@ -2,7 +2,7 @@
 	name = "powder pack"
 	desc = "Mix into a bottle of water and shake."
 	icon_state = "ration_pack"
-	volume = 10
+	max_volume = 10
 	amount_per_transfer = 10
 
 /obj/item/food/ration/pack/attack(mob/living/M, mob/user, def_zone)
@@ -105,4 +105,4 @@
 /obj/item/food/ration/pack/dote_juice
 	name = "dote juice powder"
 	filling_color = "#803300"
-	list_reagents = list(/datum/reagent/consumable/dote_juice = 8)
+	food_reagents = list(/datum/reagent/consumable/dote_juice = 8)

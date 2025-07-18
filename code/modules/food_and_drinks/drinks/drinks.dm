@@ -746,7 +746,7 @@
 	icon_state = "plasma"
 	list_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 50)
 
-/obj/item/reagent_containers/food/drinks/ration
+/obj/item/reagent_containers/food/drinks/ration //todo refactor/sort
 	name = "empty ration pouch"
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
@@ -782,3 +782,8 @@
 	name = "Pan-Gezenan vodka"
 	desc = "Vodka made from the finest potatoes."
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 15)
+
+/obj/item/reagent_containers/food/drinks/ration/sososi_seta
+	name = "Sososi-Seta pouch"
+	desc = "A bitter spirit made with Tecetian flora. Best used as a digestive."
+	list_reagents = list(/datum/reagent/consumable/ethanol/sososeta = 15)

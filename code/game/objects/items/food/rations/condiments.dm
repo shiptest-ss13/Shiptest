@@ -71,15 +71,15 @@
 	name = "tiris-sele"
 	desc = "An incredibly rich sauce made with the blood of a Tiris"
 	filling_color = "#c3bca0"
-	list_reagents = list(/datum/reagent/consumable/tiris_sele = 8)
+	food_reagents = list(/datum/reagent/consumable/tiris_sele = 8)
 
 /obj/item/food/ration/condiment/powdered_dotu
 	name = "powdered dotu"
 	desc = "Powdered Dotu fruit makes an excellent topping when a more neutral flavor is desired."
 	filling_color = "#c3bca0"
-	list_reagents = list(/datum/reagent/consumable/dotu_juice = 8)
+	food_reagents = list(/datum/reagent/consumable/dotu_juice = 8)
 
 /obj/item/food/ration/condiment/tiris_cheese
 	name = "tiris cheese spread pack"
 	filling_color = "#cac84e"
-	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8) //guh
+	food_reagents = list(/datum/reagent/consumable/cheese_spread = 8) //guh

@@ -281,7 +281,7 @@
 	name = "Tiris Burger"
 	reqs = list(
 			/obj/item/food/meat/steak/tiris = 1,
-			/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+			/obj/item/food/cheese/wedge = 1,
 			/obj/item/food/bun = 1
 	)
 	result = /obj/item/food/burger/tiris

@@ -15,9 +15,9 @@
 	reqs = list(
 		/obj/item/food/meat/steak/miras = 1,
 		/obj/item/food/grown/potato = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
+		/obj/item/food/cheese/wedge = 1
 	)
-	result = /obj/item/food/miras_potato
+	result = /obj/item/food/loaded_miras_potato
 	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/cheesyfries
@@ -112,7 +112,7 @@
 	name = "Stuffed refa"
 	reqs = list(
 		/obj/item/food/grown/refa_li = 1,
-		/obj/item/food/tiris_cheese_slice = 1
+		/obj/item/food/cheese/wedge/tiris = 1
 	)
 	result = /obj/item/food/stuffed_refa
 	subcategory = CAT_MISCFOOD
@@ -121,7 +121,7 @@
 	name = "Tiris fondue"
 	reqs = list(
 		/obj/item/food/grown/dotu_fime = 1,
-		/obj/item/reagent_containers/food/snacks/store/tiris_cheese_wheel = 1
+		/obj/item/food/cheese/wheel/tiris = 1
 	)
 	result = /obj/item/food/tiris_fondue
 	subcategory = CAT_MISCFOOD

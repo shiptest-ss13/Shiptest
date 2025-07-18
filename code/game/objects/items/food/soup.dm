@@ -371,8 +371,8 @@
 		/datum/reagent/consumable/nutriment = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 		/datum/reagent/consumable/sugar = 1,
+		/datum/reagent/consumable/vitfro = 2,
 	)
-	bonus_reagents = list(/datum/reagent/consumable/vitfro = 2)
 	tastes = list("sweet meat" = 3, "fruity mushroom" = 2)
 	foodtypes = MEAT | SUGAR | FRUIT
 

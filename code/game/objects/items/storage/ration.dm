@@ -423,7 +423,7 @@
 		/obj/item/food/ration/snack/fara_li = 1,
 		/obj/item/food/ration/bar/dote_on = 1,
 		/obj/item/food/ration/condiment/powdered_dotu = 1,
-		/obj/item/food/drinks/ration/sososi_seta = 1,
+		/obj/item/reagent_containers/food/drinks/ration/sososi_seta = 1,
 	)
 	generate_items_inside(items_inside,src)
 
@@ -439,7 +439,7 @@
 		/obj/item/food/ration/snack/seed_crackers = 1,
 		/obj/item/food/ration/bar/wanderer = 1,
 		/obj/item/food/ration/condiment/tiris_cheese = 1,
-		/obj/item/food/ration/refa_li = 1,
+		/obj/item/reagent_containers/food/drinks/ration/refa_li = 1,
 	)
 	generate_items_inside(items_inside,src)
 

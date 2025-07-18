@@ -65,7 +65,6 @@
 		microwaved_type = microwaved_type,\
 	)
 
-
 ///This proc handles processable elements, overwrite this if you want to add behavior such as slicing, forking, spooning, whatever, to turn the item into something else
 /obj/item/food/proc/make_processable()
 	return

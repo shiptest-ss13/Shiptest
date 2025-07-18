@@ -285,7 +285,7 @@
 		/obj/item/food/grown/ash_flora/cactus_fruit = 1,
 		/obj/item/food/meat/slab/miras = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/soup/miras_dola
+	result = /obj/item/food/soup/miras_dola
 	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/dotiri_la
@@ -296,5 +296,5 @@
 		/obj/item/food/grown/dotu_fime = 1,
 		/obj/item/food/meat/slab/tiris = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/soup/miras_dola
+	result = /obj/item/food/soup/miras_dola
 	subcategory = CAT_SOUP

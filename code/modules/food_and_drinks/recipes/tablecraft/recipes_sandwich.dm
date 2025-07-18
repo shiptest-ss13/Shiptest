@@ -40,9 +40,9 @@
 	name = "Buttered toast"
 	reqs = list(
 		/obj/item/food/breadslice/plain = 1,
-		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/obj/item/food/butter = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/butteredtoast
+	result = /obj/item/food/butteredtoast
 	subcategory = CAT_SANDWICH
 
 /datum/crafting_recipe/food/jelliedtoast
@@ -51,7 +51,7 @@
 		/datum/reagent/consumable/cherryjelly = 2,
 		/obj/item/food/breadslice/plain = 1,
 	)
-	result = /obj/item/reagent_containers/food/snacks/jelliedtoast/cherry
+	result = /obj/item/food/jelliedtoast/cherry
 	subcategory = CAT_SANDWICH
 
 /datum/crafting_recipe/food/blt
