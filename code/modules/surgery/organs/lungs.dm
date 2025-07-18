@@ -101,7 +101,7 @@
 		return
 
 	if(!breath || (breath.total_moles() == 0))
-		if(H.reagents.has_reagent(crit_stabilizing_reagent))
+		if(H.has_reagent(crit_stabilizing_reagent, needs_metabolizing = TRUE))
 			return
 		if(H.health >= H.crit_threshold)
 			H.adjustOxyLoss(HUMAN_MAX_OXYLOSS)
@@ -318,7 +318,7 @@
 		var/carbon_monoxide_pp = PP(breath,GAS_CO)
 		if (carbon_monoxide_pp > gas_stimulation_min)
 			H.reagents.add_reagent(/datum/reagent/carbon_monoxide, 2)
-			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
+			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent.volume > 10)
 				monoxide_reagent.metabolization_rate = (10 - carbon_monoxide_pp)
 			else
@@ -339,7 +339,7 @@
 					monoxide_reagent.accumulation = max(monoxide_reagent.accumulation, 450)
 					H.reagents.add_reagent(/datum/reagent/carbon_monoxide,16)
 		else
-			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.reagents.has_reagent(/datum/reagent/carbon_monoxide)
+			var/datum/reagent/carbon_monoxide/monoxide_reagent = H.has_reagent(/datum/reagent/carbon_monoxide)
 			if(monoxide_reagent)
 				monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
