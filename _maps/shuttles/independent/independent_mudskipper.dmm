@@ -373,18 +373,6 @@
 /obj/item/gun/energy/plasmacutter,
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
-/obj/item/gps/mining{
-	gpstag = "SCAV1"
-	},
-/obj/item/gps/mining{
-	gpstag = "SCAV1"
-	},
-/obj/item/gps/mining{
-	gpstag = "SCAV1"
-	},
-/obj/item/gps/mining{
-	gpstag = "SCAV1"
-	},
 /obj/item/melee/knife/survival,
 /obj/item/melee/knife/survival,
 /obj/effect/turf_decal/techfloor{
@@ -417,11 +405,6 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/directional/east{
-	bulb_power = 0.2;
-	pixel_x = 28;
-	pixel_y = -13
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "hH" = (
@@ -1140,6 +1123,18 @@
 	pixel_x = -11;
 	pixel_y = 6
 	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 10;
+	pixel_y = 1
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 10;
+	pixel_y = -3
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 10;
+	pixel_y = -7
+	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
 	},
@@ -1177,6 +1172,7 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "yg" = (
@@ -1630,13 +1626,25 @@
 	pixel_x = 6;
 	pixel_y = 8
 	},
-/obj/item/stack/sheet/glass/twenty{
-	pixel_x = -9;
-	pixel_y = -2
+/obj/item/gps/mining{
+	gpstag = "SCAV1";
+	pixel_x = -7;
+	pixel_y = 0
 	},
-/obj/item/stack/sheet/metal/twenty{
-	pixel_x = -9;
-	pixel_y = 2
+/obj/item/gps/mining{
+	gpstag = "SCAV1";
+	pixel_x = -13;
+	pixel_y = 0
+	},
+/obj/item/gps/mining{
+	gpstag = "SCAV1";
+	pixel_x = -7;
+	pixel_y = -7
+	},
+/obj/item/gps/mining{
+	gpstag = "SCAV1";
+	pixel_x = -13;
+	pixel_y = -7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -1979,6 +1987,14 @@
 /area/ship/engineering/engine)
 "Qu" = (
 /obj/machinery/autolathe/hacked,
+/obj/item/stack/sheet/metal/twenty{
+	pixel_x = 0;
+	pixel_y = 2
+	},
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = 0;
+	pixel_y = -3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Qx" = (
