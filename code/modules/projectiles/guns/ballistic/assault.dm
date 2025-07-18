@@ -61,7 +61,6 @@
 	//truly a doohickey for every occasion
 	unique_attachments = list (
 		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
 		/obj/item/attachment/energy_bayonet,
 	)
 

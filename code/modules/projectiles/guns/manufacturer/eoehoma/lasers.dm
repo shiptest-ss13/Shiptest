@@ -72,7 +72,6 @@
 
 	unique_attachments = list(
 		/obj/item/attachment/scope,
-		/obj/item/attachment/long_scope,
 	)
 
 	slot_available = list(
