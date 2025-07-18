@@ -569,6 +569,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
+"jz" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/hallway/starboard)
+"jQ" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/security/armory)
 "jT" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "shrikeportlockdown";
@@ -645,6 +651,9 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"kF" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/dorm/captain)
 "kK" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable{
@@ -1507,6 +1516,10 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
+"wp" = (
+/obj/structure/sign/number/random,
+/turf/closed/wall/mineral/titanium,
+/area/ship/security/armory)
 "wS" = (
 /obj/structure/railing/thin{
 	dir = 8
@@ -1528,7 +1541,7 @@
 	dir = 4;
 	id = "shriketurrets"
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall/mineral/titanium,
 /area/ship/hallway/starboard)
 "xl" = (
 /obj/effect/turf_decal/trimline/opaque/vired/line{
@@ -1597,6 +1610,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"xQ" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew)
 "xW" = (
 /obj/effect/turf_decal/corner/opaque/vired/border{
 	dir = 8
@@ -2074,7 +2090,7 @@
 	dir = 4;
 	id = "shriketurrets"
 	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
+/turf/closed/wall/mineral/titanium,
 /area/ship/hallway/port)
 "DL" = (
 /obj/structure/table/wood,
@@ -2224,6 +2240,9 @@
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
+"FV" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/cryo)
 "FX" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/cryo)
@@ -2885,6 +2904,9 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/starboard)
+"Oo" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/engineering/engines/starboard)
 "Op" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
@@ -2991,6 +3013,9 @@
 	},
 /turf/open/floor/carpet,
 /area/ship/crew)
+"PL" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/hallway/port)
 "PN" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -3721,6 +3746,9 @@
 /obj/effect/turf_decal/trimline/opaque/vired/line,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
+"WP" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/bridge)
 "WV" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3856,6 +3884,9 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
+/area/ship/engineering/engines/port)
+"Ys" = (
+/turf/closed/wall/mineral/titanium,
 /area/ship/engineering/engines/port)
 "Yu" = (
 /obj/effect/turf_decal/trimline/transparent/vired/filled/warning{
@@ -4339,7 +4370,7 @@ Si
 Si
 Si
 Si
-RH
+Ys
 RH
 Ii
 Zp
@@ -4361,7 +4392,7 @@ Se
 bH
 bD
 ng
-ng
+Oo
 Si
 Si
 Si
@@ -4519,7 +4550,7 @@ Si
 "}
 (13,1,1) = {"
 Si
-IW
+PL
 IW
 QD
 sp
@@ -4551,7 +4582,7 @@ Zr
 Qw
 rh
 Qw
-Qw
+kF
 Si
 "}
 (14,1,1) = {"
@@ -4632,7 +4663,7 @@ Si
 Si
 Si
 Si
-IW
+PL
 HJ
 HJ
 IW
@@ -4660,7 +4691,7 @@ vq
 vq
 vq
 vq
-vq
+jz
 Si
 Si
 Si
@@ -4672,7 +4703,7 @@ Si
 Si
 Si
 Si
-NC
+xQ
 NC
 So
 Kb
@@ -4695,7 +4726,7 @@ LA
 ym
 La
 La
-La
+jQ
 Si
 Si
 Si
@@ -4790,7 +4821,7 @@ SI
 WV
 NC
 Si
-by
+WP
 by
 KU
 Nh
@@ -4798,7 +4829,7 @@ uE
 ue
 BJ
 by
-by
+WP
 Si
 La
 Yc
@@ -4865,13 +4896,13 @@ Eo
 FX
 Si
 Si
-by
+WP
 by
 yS
 RD
 yS
 by
-by
+WP
 Si
 Si
 La
@@ -4932,7 +4963,7 @@ Si
 Si
 Si
 Si
-FX
+FV
 FX
 Wt
 BP
@@ -4952,7 +4983,7 @@ La
 AX
 rC
 La
-Bu
+wp
 Si
 Si
 Si
@@ -4970,7 +5001,7 @@ Si
 Si
 Si
 Si
-FX
+FV
 FX
 FX
 VV
@@ -4988,7 +5019,7 @@ Si
 fh
 La
 La
-La
+jQ
 Si
 Si
 Si
