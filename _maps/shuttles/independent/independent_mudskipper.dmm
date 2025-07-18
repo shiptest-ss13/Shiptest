@@ -115,11 +115,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
-"bL" = (
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/warning/dust,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "bZ" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -304,15 +299,16 @@
 "eL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
-/obj/structure/sign/poster/contraband/smoke{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
 	dir = 4
 	},
 /obj/item/toy/cards/deck{
 	pixel_y = 3
+	},
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 31;
+	pixel_y = 2
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/aft)
@@ -405,7 +401,8 @@
 	color = "#543C30";
 	dir = 6
 	},
-/obj/machinery/light/directional/east,
+/obj/machinery/light/directional/south,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/aft)
 "hr" = (
@@ -509,12 +506,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
-"jA" = (
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "kB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -940,11 +931,11 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
-/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/turf_decal/techfloor{
 	dir = 5
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "th" = (
@@ -1414,6 +1405,11 @@
 /obj/item/clothing/head/helmet/space/eva,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
+"Dc" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/industrial/warning/dust,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "Dj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1572,6 +1568,10 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"GJ" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "GW" = (
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -1780,10 +1780,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hallway/central)
-"LZ" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "Mf" = (
 /obj/structure/marker_beacon{
 	picked_color = "Bronze"
@@ -2312,6 +2308,12 @@
 "VW" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/external/dark)
+"Wg" = (
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "Wm" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
@@ -3055,11 +3057,11 @@ cs
 cs
 hH
 hH
-LZ
-jA
+GJ
+Wg
 ib
-jA
-jA
+Wg
+Wg
 kY
 hH
 hH
@@ -3074,7 +3076,7 @@ cs
 cs
 hH
 hH
-bL
+Dc
 cs
 cs
 cs
