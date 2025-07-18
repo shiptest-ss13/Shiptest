@@ -298,14 +298,3 @@
 	name = "Whitesands Survivor Jermit"
 	suit = /obj/item/clothing/suit/hooded/survivor/jermit
 	head = /obj/item/clothing/head/hooded/survivor_hood/jermit
-
-//hold overs for any admin who may want to spawn their own survivor realmobs
-
-/datum/outfit/whitesands
-	name = "Whitesands Survivor"
-	uniform = /obj/item/clothing/under/color/random
-	back = /obj/item/storage/backpack
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/hooded/survivor
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	gloves = /obj/item/clothing/gloves/color/black //randomize a bit
