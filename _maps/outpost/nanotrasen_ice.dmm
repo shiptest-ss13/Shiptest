@@ -111,7 +111,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -260,8 +260,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/white/corner{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bathroom)
@@ -759,18 +759,10 @@
 	},
 /area/outpost/exterior)
 "eh" = (
-/obj/effect/turf_decal/siding/white{
+/obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/patterned/cargo_one{
-	light_color = "#1B1D2E";
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/snow/temperatre/lit,
 /area/outpost/exterior)
 "ei" = (
 /obj/effect/decal/cleanable/dirt,
@@ -872,11 +864,18 @@
 /area/outpost/exterior)
 "eK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
+	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/dark,
-/area/outpost/crew/bar)
+/turf/open/floor/plasteel/patterned/cargo_one{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "eM" = (
 /obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/trimline/opaque/vired/warning,
@@ -1081,7 +1080,24 @@
 /turf/open/floor/plating/asteroid/icerock/temperate/lit,
 /area/outpost/exterior)
 "fN" = (
-/obj/structure/chair/bench/blue{
+/obj/machinery/door/airlock/maintenance{
+	dir = 4;
+	req_one_access_txt = null;
+	name = "External Access"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
@@ -1168,7 +1184,7 @@
 	name = "Smeltery"
 	},
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo/smeltery)
@@ -1411,9 +1427,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel/mono/dark,
-/area/outpost/crew/bar)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/vacant_rooms/shop)
 "hW" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/firedoor/border_only,
@@ -2565,7 +2584,7 @@
 "or" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 10
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
@@ -2636,6 +2655,34 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
+"oP" = (
+/obj/machinery/button/door{
+	id = "ice_lounge_window";
+	name = "Window Shutters";
+	pixel_y = 6;
+	pixel_x = -21;
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = -22;
+	pixel_y = -10;
+	dir = 4
+	},
+/obj/structure/table/wood/reinforced,
+/obj/item/storage/fancy/candle_box{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/item/clothing/mask/cigarette/pipe{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/outpost/crew/dorm)
 "oV" = (
 /obj/structure/sign/nanotrasen/vigilitas{
 	pixel_x = 0;
@@ -2695,7 +2742,7 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one{
 	light_color = "#1B1D2E";
@@ -2961,7 +3008,7 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -3460,8 +3507,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 9
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4350,8 +4397,26 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white,
-/area/outpost/medical)
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/structure/sign/directions/supply{
+	dir = 1;
+	pixel_y = 8;
+	pixel_x = 32
+	},
+/obj/structure/sign/directions/service{
+	dir = 1;
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/patterned/brushed{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/outpost/exterior)
 "zG" = (
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/outpost/exterior)
@@ -4636,9 +4701,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
@@ -5350,7 +5412,7 @@
 	dir = 5
 	},
 /obj/structure/railing/corner{
-	dir = 4;
+	dir = 8;
 	layer = 4.1
 	},
 /turf/open/floor/plasteel/patterned/brushed{
@@ -5867,7 +5929,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 8
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 8
@@ -6292,7 +6354,7 @@
 "JS" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
-	dir = 6
+	dir = 1
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/line{
 	dir = 1
@@ -6509,8 +6571,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned,
-/area/outpost/cargo/smeltery)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/public{
+	name = "Diner";
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/crew/bar)
 "KW" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -6684,10 +6756,7 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+/obj/structure/railing{
 	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed{
@@ -7435,15 +7504,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 8
+	dir = 1
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/trimline/opaque/ntblue/filled/arrow_ccw,
-/obj/effect/turf_decal/siding/white,
-/turf/open/floor/plasteel/patterned,
-/area/outpost/vacant_rooms/shop)
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plating,
+/area/outpost/maintenance/port)
 "QA" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -7894,7 +7962,7 @@
 	light_color = "#1B1D2E";
 	light_range = 2
 	},
-/area/outpost/maintenance/fore)
+/area/outpost/exterior)
 "Te" = (
 /obj/structure/chair/sofa/blue/corpo/left/directional/south,
 /obj/effect/turf_decal/siding/white,
@@ -7987,14 +8055,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/maintenance{
 	dir = 4
@@ -8058,7 +8123,7 @@
 	dir = 9
 	},
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "1-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/ntblue/filled/arrow_ccw,
 /obj/effect/turf_decal/siding/white,
@@ -8863,7 +8928,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/white{
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8914,8 +8979,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
@@ -14435,7 +14501,7 @@ Lh
 QL
 lJ
 Nc
-ot
+oP
 jw
 ch
 Rh
