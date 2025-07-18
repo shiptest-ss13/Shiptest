@@ -1,13 +1,60 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
+/obj/structure/closet/secure_closet/engineering_personal{
+	anchored = 1;
+	populate = 0
+	},
+/obj/item/storage/backpack/industrial{
+	pixel_x = 12;
+	pixel_y = 9
+	},
+/obj/item/clothing/shoes/workboots{
+	pixel_x = 10;
+	pixel_y = -9
+	},
+/obj/item/clothing/under/overalls/brown{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/item/clothing/under/overalls/olive{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/hardhat/orange{
+	pixel_x = 3;
+	pixel_y = 10
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = 12;
+	pixel_y = 6
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -4;
+	pixel_y = -6
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_x = -4;
+	pixel_y = -10
+	},
+/obj/item/storage/belt/utility/full/engi{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/clothing/gloves/color/yellow{
+	pixel_x = 7;
+	pixel_y = -2
+	},
+/obj/item/clothing/head/hardhat/dblue{
+	pixel_x = -7;
+	pixel_y = 10
+	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/power/apc/auto_name/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ag" = (
@@ -51,11 +98,10 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ar" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
@@ -69,6 +115,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/aft)
+"aH" = (
+/obj/effect/turf_decal/industrial/warning/dust/corner,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "bZ" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 4
@@ -385,7 +435,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "ib" = (
 /obj/docking_port/mobile{
@@ -435,12 +485,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
-"iq" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner{
-	dir = 4
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "iy" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -502,7 +546,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "kY" = (
-/obj/effect/turf_decal/industrial/warning/dust{
+/obj/effect/turf_decal/industrial/warning/dust/corner{
 	dir = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
@@ -878,54 +922,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/engineering_personal{
-	anchored = 1;
-	populate = 0
-	},
-/obj/item/storage/backpack/industrial{
-	pixel_x = 12;
-	pixel_y = 9
-	},
-/obj/item/clothing/shoes/workboots{
-	pixel_x = 10;
-	pixel_y = -9
-	},
-/obj/item/clothing/under/overalls/brown{
-	pixel_x = -5;
-	pixel_y = 0
-	},
-/obj/item/clothing/under/overalls/olive{
-	pixel_x = -10;
-	pixel_y = 0
-	},
-/obj/item/clothing/head/hardhat/orange{
-	pixel_x = 3;
-	pixel_y = 10
-	},
-/obj/item/clothing/glasses/welding{
-	pixel_x = 12;
-	pixel_y = 6
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -4;
-	pixel_y = -6
-	},
-/obj/item/storage/toolbox/electrical{
-	pixel_x = -4;
-	pixel_y = -10
-	},
-/obj/item/storage/belt/utility/full/engi{
-	pixel_x = 10;
-	pixel_y = -6
-	},
-/obj/item/clothing/gloves/color/yellow{
-	pixel_x = 7;
-	pixel_y = -2
-	},
-/obj/item/clothing/head/hardhat/dblue{
-	pixel_x = -7;
-	pixel_y = 10
-	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "sT" = (
@@ -1523,6 +1520,11 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/aft)
+"Fr" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/industrial/warning/dust,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "Ft" = (
 /obj/machinery/light_switch{
 	dir = 1;
@@ -1830,7 +1832,9 @@
 /area/ship/hallway/aft)
 "Nl" = (
 /obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/warning/dust,
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/cargo)
 "NJ" = (
@@ -1947,10 +1951,6 @@
 "Qp" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/aft)
-"Qq" = (
-/obj/effect/turf_decal/industrial/warning/dust/corner,
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "Qt" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
@@ -2154,6 +2154,12 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"TE" = (
+/obj/effect/turf_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/cargo)
 "TV" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4;
@@ -2278,13 +2284,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
-"Vu" = (
-/obj/machinery/light/floor,
-/obj/effect/turf_decal/industrial/warning/dust{
-	dir = 1
-	},
-/turf/open/floor/engine/hull/reinforced,
-/area/ship/cargo)
 "Vy" = (
 /obj/effect/spawner/bunk_bed,
 /turf/open/floor/wood/walnut,
@@ -3047,12 +3046,12 @@ cs
 cs
 hH
 hH
-Qq
-kY
+aH
+TE
 ib
+TE
+TE
 kY
-kY
-iq
 hH
 hH
 cs
@@ -3066,12 +3065,12 @@ cs
 cs
 hH
 hH
+Fr
+cs
+cs
+cs
+cs
 Nl
-cs
-cs
-cs
-cs
-Vu
 hH
 hH
 cs
