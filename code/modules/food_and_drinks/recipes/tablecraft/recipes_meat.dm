@@ -404,8 +404,8 @@
 	reqs = list(
 		/obj/item/food/doughslice = 1,
 		/datum/reagent/consumable/cream = 5,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/food/cheese/wedge = 1,
 		/obj/item/food/meat/rawcrab = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/crab_rangoon
+	result = /obj/item/food/crab_rangoon
 	subcategory = CAT_MEAT
