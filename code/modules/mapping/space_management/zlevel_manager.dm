@@ -26,12 +26,12 @@
 	// This proc used to sleep. It caused an infuriating desynchronization: new_z would calculate, the max z would be increased, and then the proc used CHECK_TICK.
 	// As a result, two space_levels could be added to the z_list, each believing itself to reside at the same z-coodinate.
 	// Watch your fucking race conditions.
-	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_Z, args)
 	var/new_z = z_list.len + 1
 	if (world.maxz < new_z)
 		world.incrementMaxZ()
 	var/datum/space_level/S = new z_type(new_z, name, allocation_type)
 	z_list += S
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_Z, S)
 	return S
 
 /datum/controller/subsystem/mapping/proc/get_level(z)

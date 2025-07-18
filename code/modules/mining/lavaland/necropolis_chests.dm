@@ -628,7 +628,7 @@
 			H.dust(TRUE)
 			skeletons.Remove(X)
 			continue
-	listclearnulls(skeletons)
+	list_clear_nulls(skeletons)
 
 //Funny gimmick, skeletons always seem to wear roman/ancient armour
 /obj/item/necromantic_stone/lava/proc/arm_skeleton(mob/living/carbon/human/H)

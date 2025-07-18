@@ -87,7 +87,7 @@
 			if(BP.GetComponent(/datum/component/bandage))
 				continue
 			//We want an accurate reading of .len
-			listclearnulls(BP.embedded_objects)
+			list_clear_nulls(BP.embedded_objects)
 			for(var/obj/item/embeddies in BP.embedded_objects)
 				if(!embeddies.isEmbedHarmless())
 					BP.adjust_bleeding(0.1, BLOOD_LOSS_DAMAGE_MAXIMUM)
