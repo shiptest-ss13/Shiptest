@@ -2279,16 +2279,20 @@
 "UZ" = (
 /obj/machinery/airalarm/directional/west,
 /obj/item/flashlight/lamp/green{
-	pixel_y = 9;
-	pixel_x = 5
+	pixel_y = 10;
+	pixel_x = 2
 	},
-/obj/structure/dresser,
+/obj/structure/dresser{
+	dir = 4;
+	pixel_x = -4;
+	pixel_y = 0
+	},
 /obj/item/lipstick{
-	pixel_x = -7;
-	pixel_y = 6
+	pixel_x = -4;
+	pixel_y = 7
 	},
 /obj/item/lipstick/black{
-	pixel_x = -10;
+	pixel_x = -7;
 	pixel_y = 4
 	},
 /turf/open/floor/wood/walnut,
