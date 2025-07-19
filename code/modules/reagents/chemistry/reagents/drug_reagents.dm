@@ -195,6 +195,7 @@
 
 /datum/reagent/drug/mammoth/on_mob_metabolize(mob/living/L)
 	..()
+	ADD_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
 	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	L.AddComponent(/datum/component/tackler, stamina_cost= 25, base_knockdown= 2 SECONDS, range=6, speed=1, skill_mod=2)
@@ -204,6 +205,7 @@
 		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/reagent/drug/mammoth/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_VERY_HARDLY_WOUNDED, /datum/reagent/drug/mammoth)
 	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	if(L.GetComponent(/datum/component/tackler))
@@ -470,6 +472,7 @@
 /datum/reagent/drug/combat_drug/on_mob_metabolize(mob/living/L)
 	..()
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
+	ADD_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/drug/combat_drug)
 	L.playsound_local(get_turf(L), 'sound/health/fastbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
 	if(!isvox(L))
@@ -483,6 +486,7 @@
 
 /datum/reagent/drug/combat_drug/on_mob_end_metabolize(mob/living/L)
 	..()
+	REMOVE_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/drug/combat_drug)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shoalmix)
 	if(ishuman(L))
 		var/mob/living/carbon/human/drugged = L
@@ -578,7 +582,7 @@
 	reagent_state = LIQUID
 	color = "#df71c7" //yeah its kinda pinkruple
 	overdose_threshold = 30
-	addiction_threshold = 20
+	addiction_threshold = 21
 	metabolization_rate = 0.1
 	taste_description = "a distant earthiness"
 	var/vision_trait = TRAIT_CHEMICAL_NIGHTVISION
@@ -646,7 +650,7 @@
 	color = "#bc329e"
 	overdose_threshold = 17
 	addiction_threshold = 11
-	metabolization_rate = 0.2
+	metabolization_rate = 0.15
 	vision_trait = TRAIT_GOOD_CHEMICAL_NIGHTVISION
 	taste_description = "sulpheric sweetness"
 

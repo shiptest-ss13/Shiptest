@@ -14,6 +14,11 @@
 	name = ".38 match bullet"
 	armour_penetration = -10
 	speed_mod = BULLET_SPEED_AP_MOD
+
+	wound_bonus = -20
+	bare_wound_bonus = 10
+	embedding = list(embed_chance=15, fall_chance=2, jostle_chance=2, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=3, jostle_pain_mult=5, rip_time=10)
+
 	ricochets_max = 4
 	ricochet_chance = 100
 	ricochet_auto_aim_angle = 40
@@ -172,13 +177,13 @@
 
 /obj/projectile/bullet/a44roum
 	name = ".44 roumain bullet"
-	damage =  25
+	damage =  30
 	speed = BULLET_SPEED_REVOLVER
 	bullet_identifier = "small bullet"
 
 /obj/projectile/bullet/a44roum/rubber
 	name = ".44 roumain rubber bullet"
-	damage =  7
+	damage =  10
 	stamina = 40
 	armour_penetration = -10
 	speed_mod = BULLET_SPEED_RUBBER_MOD
@@ -186,7 +191,7 @@
 
 /obj/projectile/bullet/a44roum/hp
 	name = ".44 roumain hollow point bullet"
-	damage =  40
+	damage =  45
 	armour_penetration = -10
 	ricochet_chance = 0
 	speed_mod = BULLET_SPEED_HP_MOD

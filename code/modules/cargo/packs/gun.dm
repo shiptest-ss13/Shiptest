@@ -227,7 +227,7 @@
 /datum/supply_pack/gun/ion
 	name = "Ion Rifle Crate"
 	desc = "Contains a single Mk.I Ion Projector, a special anti-tank rifle designed to disable electronic threats at range."
-	cost = 10000
+	cost = 3500
 	contains = list(/obj/item/storage/guncase/energy/iongun)
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
@@ -702,10 +702,20 @@
 
 /datum/supply_pack/gun/vickland
 	name = "Vickland Battle Rifle"
-	desc = "Contains a high-powered semi-automatic battle rifle chambered in 8x50mmR and produced by Hunter's Pride. Fed via stripper clips with an 8 round capacity."
+	desc = "Contains a high-powered semi-automatic battle rifle chambered in 8x50mmR and produced by Hunter's Pride. Fed via stripper clips with a 10 round capacity."
 	cost = 3500
 	contains = list(/obj/item/storage/guncase/vickland)
 	crate_name = "dmr crate"
+	faction = /datum/faction/srm
+	faction_discount = 0
+	faction_locked = TRUE
+
+/datum/supply_pack/gun/invictus
+	name = "Invictus Automatic Rifle"
+	desc = "Contains a high-powered automattic rifle chambered in .308 and produced by Hunter's Pride. Comes with two magazines with a 20 round capacity."
+	cost = 5500
+	contains = list(/obj/item/storage/guncase/invictus)
+	crate_name = "rifle crate"
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
