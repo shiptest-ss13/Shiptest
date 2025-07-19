@@ -401,6 +401,23 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
+"dZ" = (
+/obj/structure/closet/crate/medical,
+/obj/item/hatchet/wooden,
+/obj/item/melee/knife/survival,
+/obj/item/wirecutters,
+/obj/item/stack/medical/splint/hunter,
+/obj/item/screwdriver,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/structure/lattice/catwalk,
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/rust_base/engine_two)
 "eg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3903,13 +3920,6 @@
 /obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer4,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_two)
-"MA" = (
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/tank/internals/oxygen/yellow,
-/obj/item/clothing/suit/space/syndicate/ramzi,
-/obj/item/clothing/head/helmet/space/syndicate/ramzi,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/rust_base/engine_two)
 "MB" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
@@ -4427,6 +4437,13 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/rockplanet/rust_base/slop)
+"Ru" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/syndicate/ramzi,
+/obj/item/clothing/head/helmet/space/syndicate/ramzi,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/rust_base/engine_two)
 "Rv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4821,23 +4838,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
-"VO" = (
-/obj/structure/closet/crate/medical,
-/obj/item/hatchet/wooden,
-/obj/item/melee/knife/survival,
-/obj/item/wirecutters,
-/obj/item/stack/medical/splint/ghetto,
-/obj/item/screwdriver,
-/obj/item/bodybag,
-/obj/item/bodybag,
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/structure/lattice/catwalk,
-/obj/effect/decal/cleanable/greenglow,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/rust_base/engine_two)
 "VX" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
@@ -5767,7 +5767,7 @@ fj
 gg
 hR
 zX
-MA
+Ru
 fj
 Qg
 aN
@@ -5851,7 +5851,7 @@ fj
 wn
 Sw
 cI
-VO
+dZ
 Cu
 LH
 Qg
