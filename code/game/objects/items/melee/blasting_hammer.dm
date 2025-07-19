@@ -1,6 +1,6 @@
 /obj/item/melee/sledgehammer/gorlex/blasting
 	name = "blasting hammer"
-	icon_state = "blasting"
+	icon_state = "blasting-0"
 	base_icon_state = "blasting"
 	item_state = "blasting"
 
