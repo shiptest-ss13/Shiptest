@@ -4506,18 +4506,15 @@
 /area/ship/hallway/port)
 "ZL" = (
 /obj/structure/railing/thin/corner,
-/obj/item/storage/secure/safe{
-	dir = 1;
-	pixel_y = 31
-	},
-/obj/item/folder/documents,
-/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
-/obj/item/reagent_containers/food/drinks/bottle/champagne,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/vired/half{
 	dir = 1
+	},
+/obj/item/storage/secure/safe/nt{
+	dir = 1;
+	pixel_y = 31
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
