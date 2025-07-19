@@ -223,14 +223,19 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
+	pixel_x = -19 // recenters 70x70 turf sprites for mappers
+	pixel_y = -19
 	layer = HIGH_TURF_LAYER
 	icon_state = "grass-255"
 	base_icon_state = "grass"
+	icon = 'icons/turf/floors/grass.dmi'
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 	baseturfs = /turf/open/floor/ship/dirt
 
 /turf/open/floor/grass/ship/Initialize(mapload, inherited_virtual_z)
 	. = ..()
+	pixel_x = 0 // resets -19 pixel offset
+	pixel_y = 0
 	if(smoothing_flags)
 		var/matrix/translation = new
 		translation.Translate(-19, -19)
@@ -243,6 +248,7 @@
 	icon_state = "grass-255"
 	base_icon_state = "grass"
 	baseturfs = /turf/open/floor/ship/dirt/dark
+	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
 /turf/open/floor/plating/ship/water
