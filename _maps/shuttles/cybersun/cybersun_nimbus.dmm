@@ -811,7 +811,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "qo" = (
-/obj/structure/table/glass,
 /obj/item/cutting_board{
 	pixel_y = 2
 	},
@@ -824,6 +823,11 @@
 /obj/item/food/lifosa/homemade{
 	pixel_y = 4
 	},
+/obj/item/reagent_containers/condiment/soysauce{
+	pixel_x = 10;
+	pixel_y = 8
+	},
+/obj/structure/table,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "rb" = (
@@ -1117,18 +1121,13 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "vd" = (
-/obj/structure/table/glass,
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/item/kirbyplants{
-	icon_state = "plant-15";
-	pixel_y = 12
+/obj/machinery/griddle{
+	pixel_y = 1
 	},
-/obj/item/reagent_containers/condiment/soysauce{
-	pixel_x = 10;
-	pixel_y = 5
-	},
+/obj/structure/table,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "vu" = (
@@ -2107,23 +2106,23 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "La" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 12;
-	pixel_x = -6
+/obj/item/reagent_containers/food/drinks/bottle/sososeta{
+	pixel_x = 4;
+	pixel_y = 10
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_y = 3;
 	pixel_x = -1
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 12;
+	pixel_y = 4;
 	pixel_x = 6
 	},
-/obj/item/reagent_containers/food/drinks/bottle/sososeta{
-	pixel_x = 17;
-	pixel_y = 4
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 5;
+	pixel_x = 13
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "Lq" = (
@@ -2428,6 +2427,15 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"Ss" = (
+/obj/effect/turf_decal/spline/fancy/opaque/white,
+/obj/item/kirbyplants{
+	icon_state = "plant-15";
+	pixel_y = 23;
+	pixel_x = 10
+	},
+/turf/open/floor/suns/hatch/bamboo,
+/area/ship/crew/ccommons)
 "St" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -3167,7 +3175,7 @@ IP
 kB
 fv
 La
-OX
+Ss
 Jo
 jQ
 TM

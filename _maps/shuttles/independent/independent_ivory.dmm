@@ -302,6 +302,41 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ship/crew/dorm/captain)
+"eg" = (
+/obj/structure/table/chem{
+	name = "kitchen counter"
+	},
+/obj/item/cutting_board{
+	pixel_y = 1;
+	anchored = 1;
+	pixel_x = 7
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_y = 2;
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_y = 1;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = -14;
+	pixel_y = 5
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_y = 2;
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = 14;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/crew/ccommons)
 "es" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/light_switch{
@@ -848,31 +883,8 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engines/port)
 "nI" = (
-/obj/structure/table/chem{
-	name = "kitchen counter"
-	},
-/obj/item/cutting_board{
-	pixel_y = 1;
-	anchored = 1;
-	pixel_x = 7
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_y = 2;
-	pixel_x = 4
-	},
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 8;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_y = 1;
-	pixel_x = -7
-	},
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = -14;
-	pixel_y = 5
-	},
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
 "nL" = (
@@ -2168,21 +2180,12 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew)
 "KU" = (
-/obj/structure/table/chem{
-	name = "kitchen counter"
-	},
-/obj/machinery/reagentgrinder{
-	pixel_y = 17;
-	pixel_x = -7;
-	layer = 3.22
-	},
 /obj/effect/turf_decal/corner/opaque/black/diagonal,
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = 10
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_y = 3;
-	pixel_x = 6
+/obj/machinery/oven,
+/obj/machinery/reagentgrinder{
+	pixel_y = 20;
+	pixel_x = -8;
+	layer = 3.22
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/ccommons)
@@ -3008,7 +3011,7 @@ hB
 yg
 xq
 Cl
-HQ
+eg
 HK
 aZ
 as

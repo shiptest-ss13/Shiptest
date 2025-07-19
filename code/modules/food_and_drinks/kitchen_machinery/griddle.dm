@@ -2,7 +2,7 @@
 	name = "griddle"
 	desc = "A heated flat cooktop for all your cooking needs."
 	icon = 'icons/obj/machines/kitchen.dmi'
-	icon_state = "griddle"
+	icon_state = "griddle_off"
 	density = TRUE
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	use_power = IDLE_POWER_USE
