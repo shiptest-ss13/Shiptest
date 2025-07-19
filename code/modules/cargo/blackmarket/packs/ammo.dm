@@ -14,6 +14,17 @@
 	stock_max = 60
 	availability_prob = 40
 
+/datum/blackmarket_item/ammo/blanks
+	name = "Box of 12ga Blanks"
+	desc = "A box of 12ga shotgun blanks. It doesn't have a bullet loaded in the shell, but they can still cause serious injury from a close enough distance. But surely you'd never misuse them like that. Wink wink."
+	item = /obj/item/storage/box/ammo/a12g_blank
+
+	cost_min = 50
+	cost_max = 150
+	stock_min = 2
+	stock_max = 6
+	availability_prob = 0
+
 /datum/blackmarket_item/ammo/himehabu_mag
 	name = "Himehabu Magazines"
 	desc = "Compact 10 round .22 LR magazines for use in the Himehabu pistol."

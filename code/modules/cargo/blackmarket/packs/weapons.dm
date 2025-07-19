@@ -44,8 +44,8 @@
 
 /datum/blackmarket_item/weapon/blastinghammer
 	name = "Blasting Hammer"
-	desc = "Have you ever thought: \"Man, my 20 pound sledgehammer isn't crushing skulls well enough.\" No? Well, our friends in the Ramzi Clique have solved this problem anyways. By strapping a loading mechanism"
-	item = /obj/item/melee/sledgehammer/gorlex/blasting
+	desc = "Have you ever thought: \"Man, my 20 pound sledgehammer isn't crushing skulls well enough.\" No? Well, our friends in the Ramzi Clique have solved this issue anyways and made it everyone else's problem. This baby loads 12g blanks as propollent to really make that swing a home run. Just don't put a live shell in, yeah?"
+	item = /obj/item/storage/backpack/duffelbag/syndie
 
 	cost_min = 5200
 	cost_max = 7000
@@ -53,6 +53,11 @@
 	availability_prob = 20
 	spawn_weighting = FALSE
 
+/datum/blackmarket_item/clothing/coalition_armor/spawn_item(loc)
+	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
+	new /obj/item/melee/sledgehammer/gorlex/blasting(B)
+	new /obj/item/storage/box/ammo/a12g_blank(B)
+	return B
 
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
