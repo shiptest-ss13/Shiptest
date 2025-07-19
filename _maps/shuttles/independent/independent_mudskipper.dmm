@@ -1884,9 +1884,6 @@
 /obj/structure/cable{
 	icon_state = "1-6"
 	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
 /obj/structure/closet/crate/radiation{
 	name = "rad protection crate"
 	},
@@ -1900,6 +1897,9 @@
 /obj/item/storage/pill_bottle/charcoal/less,
 /obj/item/reagent_containers/hypospray/medipen/penacid,
 /obj/item/watertank/anti_rad,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
 /obj/effect/turf_decal/box{
 	layer = 2.04
 	},
