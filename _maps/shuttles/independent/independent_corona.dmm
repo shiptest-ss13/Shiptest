@@ -15,6 +15,45 @@
 "bx" = (
 /obj/effect/decal/cleanable/food/flour,
 /obj/machinery/light/directional/west,
+/obj/structure/filingcabinet/filingcabinet{
+	dir = 4;
+	pixel_x = -11;
+	density = 0;
+	name = "kitchen cabinet"
+	},
+/obj/item/kitchen/fork,
+/obj/item/kitchen/fork,
+/obj/item/melee/knife/kitchen,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
+/obj/item/reagent_containers/food/drinks/modglass/small{
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "by" = (
@@ -1447,15 +1486,8 @@
 /area/ship/crew/dorm)
 "Cz" = (
 /obj/effect/turf_decal/spline/fancy/opaque/white,
-/obj/structure/table/chem,
-/obj/item/cutting_board{
-	anchored = 1;
-	pixel_y = 4
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_y = 4
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "CB" = (
@@ -2021,46 +2053,15 @@
 /turf/open/floor/suns/hatch/maple,
 /area/ship/crew/dorm)
 "Ms" = (
-/obj/structure/filingcabinet/filingcabinet{
-	dir = 8;
-	pixel_x = 10;
-	density = 0;
-	name = "kitchen cabinet"
-	},
-/obj/item/melee/knife/kitchen,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/reagent_containers/food/drinks/modglass/small{
-	pixel_x = 10
-	},
-/obj/item/kitchen/fork,
-/obj/item/kitchen/fork,
 /obj/machinery/light/directional/east,
+/obj/structure/table/chem,
+/obj/item/cutting_board{
+	anchored = 1;
+	pixel_y = 4
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_y = 4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "Mt" = (

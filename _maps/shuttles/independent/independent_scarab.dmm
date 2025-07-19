@@ -79,7 +79,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock{
-	dir = 2;
 	name = "Dormitory"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -200,9 +199,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-4"
 	},
-/obj/structure/cable/green{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/green,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -303,7 +300,6 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "scarab_windows"
 	},
 /obj/machinery/door/firedoor/window,
@@ -442,7 +438,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock{
-	dir = 2;
 	name = "Bathroom"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -675,9 +670,7 @@
 /obj/machinery/firealarm/directional/north{
 	pixel_x = -8
 	},
-/obj/structure/bed/dogbed{
-	name = "Temiti's bed"
-	},
+/obj/machinery/vending/coffee,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "iZ" = (
@@ -860,9 +853,7 @@
 /obj/machinery/power/port_gen/pacman/super{
 	anchored = 1
 	},
-/obj/structure/cable/pink{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/pink,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "kt" = (
@@ -891,8 +882,12 @@
 /area/ship/engineering)
 "kB" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
+/obj/structure/bed/dogbed{
+	name = "Temiti's bed"
+	},
 /obj/item/kirbyplants/random{
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 18
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
@@ -1028,7 +1023,6 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "scarab_windows"
 	},
 /turf/open/floor/plating,
@@ -1239,9 +1233,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "pc" = (
-/obj/structure/bed{
-	dir = 2
-	},
+/obj/structure/bed,
 /obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet,
 /area/ship/crew/dorm)
@@ -1281,7 +1273,7 @@
 /area/ship/cargo)
 "pE" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
-/obj/machinery/vending/coffee,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "pH" = (
@@ -1392,7 +1384,6 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "scarab_windows"
 	},
 /turf/open/floor/plating,
@@ -1441,9 +1432,7 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "rI" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/turf_decal/corner/transparent/black/diagonal{
 	dir = 4
 	},
@@ -1592,9 +1581,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/cable/pink{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/pink,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "sS" = (
@@ -1864,7 +1851,6 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "scarab_bridge"
 	},
 /obj/machinery/door/firedoor/window,
@@ -1881,7 +1867,6 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "scarab_windows"
 	},
 /obj/machinery/door/firedoor/window,
@@ -2085,9 +2070,7 @@
 	name = "cargo door control";
 	pixel_x = -20
 	},
-/obj/structure/closet/firecloset/wall/directional/east{
-	pixel_y = 0
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/mono/dark,
@@ -2219,7 +2202,6 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "scarab_windows"
 	},
 /obj/machinery/door/firedoor/window,
@@ -2471,7 +2453,6 @@
 /obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "scarab_windows"
 	},
 /obj/machinery/door/firedoor/window,
@@ -2625,8 +2606,7 @@
 	pixel_x = -9
 	},
 /obj/structure/chair/office{
-	dir = 8;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
@@ -2848,9 +2828,7 @@
 /area/ship/maintenance/fore)
 "Ia" = (
 /obj/machinery/power/apc/auto_name/directional/south,
-/obj/structure/cable/green{
-	icon_state = "0-1"
-	},
+/obj/structure/cable/green,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
@@ -3419,7 +3397,6 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor{
-	dir = 2;
 	id = "scarab_bridge"
 	},
 /turf/open/floor/plating,
@@ -3460,7 +3437,6 @@
 "OF" = (
 /obj/structure/catwalk/over,
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
 	dir = 2;
 	launch_status = 0;
 	name = "drilling ship";
@@ -3565,8 +3541,7 @@
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
-	pixel_x = 5;
-	pixel_y = 0
+	pixel_x = 5
 	},
 /obj/structure/railing,
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3688,9 +3663,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/pump,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 2
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -3748,9 +3721,7 @@
 /obj/structure/extinguisher_cabinet/directional/east{
 	pixel_y = 7
 	},
-/obj/structure/chair/handrail{
-	dir = 2
-	},
+/obj/structure/chair/handrail,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Tq" = (

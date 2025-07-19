@@ -489,16 +489,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "eK" = (
-/obj/structure/table/reinforced,
-/obj/item/cutting_board{
-	pixel_x = -5;
-	pixel_y = 5;
-	anchored = 1
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_x = -11;
-	pixel_y = 9
-	},
+/obj/machinery/oven,
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "eM" = (
@@ -653,6 +644,11 @@
 /obj/item/pestle{
 	pixel_y = 6;
 	pixel_x = -13
+	},
+/obj/item/cutting_board{
+	pixel_x = -5;
+	pixel_y = 5;
+	anchored = 1
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
@@ -2100,7 +2096,7 @@
 /obj/structure/cable/orange{
 	icon_state = "5-10"
 	},
-/obj/structure/table/reinforced,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "xW" = (
@@ -3329,6 +3325,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
+	},
+/obj/item/melee/knife/kitchen{
+	pixel_x = -11;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
