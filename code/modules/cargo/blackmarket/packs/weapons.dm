@@ -48,10 +48,10 @@
 	item = /obj/item/storage/backpack/duffelbag/syndie
 	pair_item = list(/datum/blackmarket_item/ammo/blanks)
 
-	cost_min = 5200
-	cost_max = 7000
+	cost_min = 6500
+	cost_max = 9000
 	stock = 1
-	availability_prob = 20
+	availability_prob = 15
 	spawn_weighting = FALSE
 
 /datum/blackmarket_item/clothing/coalition_armor/spawn_item(loc)
