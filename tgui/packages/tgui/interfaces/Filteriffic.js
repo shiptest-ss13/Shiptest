@@ -1,7 +1,4 @@
 import { map } from 'common/collections';
-import { toFixed } from 'common/math';
-import { numberOfDecimalDigits } from '../../common/math';
-import { useBackend, useLocalState } from '../backend';
 import {
   Box,
   Button,
@@ -13,12 +10,16 @@ import {
   NoticeBox,
   NumberInput,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+import { numberOfDecimalDigits } from 'tgui-core/math';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 
-const FilterIntegerEntry = (props, context) => {
+const FilterIntegerEntry = (props) => {
   const { value, name, filterName } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   return (
     <NumberInput
       value={value}
@@ -26,7 +27,7 @@ const FilterIntegerEntry = (props, context) => {
       maxValue={500}
       stepPixelSize={5}
       width="39px"
-      onDrag={(e, value) =>
+      onDrag={(value) =>
         act('modify_filter_value', {
           name: filterName,
           new_data: {
@@ -38,10 +39,10 @@ const FilterIntegerEntry = (props, context) => {
   );
 };
 
-const FilterFloatEntry = (props, context) => {
+const FilterFloatEntry = (props) => {
   const { value, name, filterName } = props;
-  const { act } = useBackend(context);
-  const [step, setStep] = useLocalState(context, `${filterName}-${name}`, 0.01);
+  const { act } = useBackend();
+  const [step, setStep] = useLocalState(`${filterName}-${name}`, 0.01);
   return (
     <>
       <NumberInput
@@ -52,7 +53,7 @@ const FilterFloatEntry = (props, context) => {
         step={step}
         format={(value) => toFixed(value, numberOfDecimalDigits(step))}
         width="80px"
-        onDrag={(e, value) =>
+        onDrag={(value) =>
           act('transition_filter_value', {
             name: filterName,
             new_data: {
@@ -69,15 +70,15 @@ const FilterFloatEntry = (props, context) => {
         step={0.001}
         format={(value) => toFixed(value, 4)}
         width="70px"
-        onChange={(e, value) => setStep(value)}
+        onChange={(value) => setStep(value)}
       />
     </>
   );
 };
 
-const FilterTextEntry = (props, context) => {
+const FilterTextEntry = (props) => {
   const { value, name, filterName } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
 
   return (
     <Input
@@ -95,9 +96,9 @@ const FilterTextEntry = (props, context) => {
   );
 };
 
-const FilterColorEntry = (props, context) => {
+const FilterColorEntry = (props) => {
   const { value, filterName, name } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   return (
     <>
       <Button
@@ -125,9 +126,9 @@ const FilterColorEntry = (props, context) => {
   );
 };
 
-const FilterIconEntry = (props, context) => {
+const FilterIconEntry = (props) => {
   const { value, filterName } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   return (
     <>
       <Button
@@ -145,13 +146,13 @@ const FilterIconEntry = (props, context) => {
   );
 };
 
-const FilterFlagsEntry = (props, context) => {
+const FilterFlagsEntry = (props) => {
   const { name, value, filterName, filterType } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
 
   const filterInfo = data.filter_info;
   const flags = filterInfo[filterType]['flags'];
-  return map((bitField, flagName) => (
+  return map(flags, (bitField, flagName) => (
     <Button.Checkbox
       checked={value & bitField}
       content={flagName}
@@ -164,10 +165,10 @@ const FilterFlagsEntry = (props, context) => {
         })
       }
     />
-  ))(flags);
+  ));
 };
 
-const FilterDataEntry = (props, context) => {
+const FilterDataEntry = (props) => {
   const { name, value, hasValue, filterName } = props;
 
   const filterEntryTypes = {
@@ -208,15 +209,15 @@ const FilterDataEntry = (props, context) => {
   );
 };
 
-const FilterEntry = (props, context) => {
-  const { act, data } = useBackend(context);
+const FilterEntry = (props) => {
+  const { act, data } = useBackend();
   const { name, filterDataEntry } = props;
   const { type, priority, ...restOfProps } = filterDataEntry;
 
   const filterDefaults = data['filter_info'];
 
   const targetFilterPossibleKeys = Object.keys(
-    filterDefaults[type]['defaults']
+    filterDefaults[type]['defaults'],
   );
 
   return (
@@ -228,7 +229,7 @@ const FilterEntry = (props, context) => {
             value={priority}
             stepPixelSize={10}
             width="60px"
-            onChange={(e, value) =>
+            onChange={(value) =>
               act('change_priority', {
                 name: name,
                 new_priority: value,
@@ -276,24 +277,16 @@ const FilterEntry = (props, context) => {
   );
 };
 
-export const Filteriffic = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Filteriffic = (props) => {
+  const { act, data } = useBackend();
   const name = data.target_name || 'Unknown Object';
   const filters = data.target_filter_data || {};
   const hasFilters = filters !== {};
   const filterDefaults = data['filter_info'];
-  const [massApplyPath, setMassApplyPath] = useLocalState(
-    context,
-    'massApplyPath',
-    ''
-  );
-  const [hiddenSecret, setHiddenSecret] = useLocalState(
-    context,
-    'hidden',
-    false
-  );
+  const [massApplyPath, setMassApplyPath] = useLocalState('massApplyPath', '');
+  const [hiddenSecret, setHiddenSecret] = useLocalState('hidden', false);
   return (
-    <Window width={500} height={500} title="Filteriffic" resizable>
+    <Window width={500} height={500} title="Filteriffic">
       <Window.Content scrollable>
         <NoticeBox danger>
           DO NOT MESS WITH EXISTING FILTERS IF YOU DO NOT KNOW THE CONSEQUENCES.

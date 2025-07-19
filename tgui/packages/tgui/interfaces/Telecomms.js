@@ -1,20 +1,21 @@
-import { useBackend } from '../backend';
 import {
+  Box,
   Button,
   Input,
+  LabeledControls,
   LabeledList,
-  Section,
-  Table,
   NoticeBox,
   NumberInput,
-  LabeledControls,
-  Box,
-} from '../components';
+  Section,
+  Table,
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
 
-export const Telecomms = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Telecomms = (props) => {
+  const { act, data } = useBackend();
   const {
     type,
     minfreq,
@@ -34,7 +35,7 @@ export const Telecomms = (props, context) => {
   const linked = data.linked || [];
   const frequencies = data.frequencies || [];
   return (
-    <Window resizable title={id} width={400} height={600}>
+    <Window title={id} width={400} height={600}>
       <Window.Content scrollable>
         {!multitool && <NoticeBox>Use a multitool to make changes.</NoticeBox>}
         <Section title="Settings">
@@ -57,7 +58,7 @@ export const Telecomms = (props, context) => {
                 <Input
                   width={13}
                   value={id}
-                  onChange={(e, value) => act('id', { value })}
+                  onChange={(value) => act('id', { value })}
                 />
               }
             />
@@ -68,7 +69,7 @@ export const Telecomms = (props, context) => {
                   width={10}
                   value={network}
                   defaultValue={'tcommsat'}
-                  onChange={(e, value) => act('network', { value })}
+                  onChange={(value) => act('network', { value })}
                 />
               }
             />
@@ -93,13 +94,13 @@ export const Telecomms = (props, context) => {
                     <Table.Cell>Change Frequency:</Table.Cell>
                     <Table.Cell>
                       {RADIO_CHANNELS.find(
-                        (channel) => channel.freq === changefrequency
+                        (channel) => channel.freq === changefrequency,
                       ) && (
                         <Box
                           inline
                           color={
                             RADIO_CHANNELS.find(
-                              (channel) => channel.freq === changefrequency
+                              (channel) => channel.freq === changefrequency,
                             ).color
                           }
                           ml={2}
@@ -107,7 +108,7 @@ export const Telecomms = (props, context) => {
                           [
                           {
                             RADIO_CHANNELS.find(
-                              (channel) => channel.freq === changefrequency
+                              (channel) => channel.freq === changefrequency,
                             ).name
                           }
                           ]
@@ -122,7 +123,7 @@ export const Telecomms = (props, context) => {
                       minValue={minfreq / 10}
                       maxValue={maxfreq / 10}
                       value={changefrequency / 10}
-                      onChange={(e, value) => act('change_freq', { value })}
+                      onChange={(value) => act('change_freq', { value })}
                     />
                     <Button
                       icon={'times'}
@@ -174,13 +175,13 @@ export const Telecomms = (props, context) => {
                     <Table.Cell bold>{entry / 10} GHz</Table.Cell>
                     <Table.Cell>
                       {RADIO_CHANNELS.find(
-                        (channel) => channel.freq === entry
+                        (channel) => channel.freq === entry,
                       ) && (
                         <Box
                           inline
                           color={
                             RADIO_CHANNELS.find(
-                              (channel) => channel.freq === entry
+                              (channel) => channel.freq === entry,
                             ).color
                           }
                           ml={2}
@@ -188,7 +189,7 @@ export const Telecomms = (props, context) => {
                           [
                           {
                             RADIO_CHANNELS.find(
-                              (channel) => channel.freq === entry
+                              (channel) => channel.freq === entry,
                             ).name
                           }{' '}
                           ]
@@ -210,13 +211,13 @@ export const Telecomms = (props, context) => {
                     <Table.Cell>Add Frequency</Table.Cell>
                     <Table.Cell>
                       {RADIO_CHANNELS.find(
-                        (channel) => channel.freq === frequency
+                        (channel) => channel.freq === frequency,
                       ) && (
                         <Box
                           inline
                           color={
                             RADIO_CHANNELS.find(
-                              (channel) => channel.freq === frequency
+                              (channel) => channel.freq === frequency,
                             ).color
                           }
                           ml={2}
@@ -224,7 +225,7 @@ export const Telecomms = (props, context) => {
                           [
                           {
                             RADIO_CHANNELS.find(
-                              (channel) => channel.freq === frequency
+                              (channel) => channel.freq === frequency,
                             ).name
                           }
                           ]
@@ -240,7 +241,7 @@ export const Telecomms = (props, context) => {
                         minValue={minfreq / 10}
                         maxValue={maxfreq / 10}
                         value={frequency / 10}
-                        onChange={(e, value) => act('tempfreq', { value })}
+                        onChange={(value) => act('tempfreq', { value })}
                       />
                     </Table.Cell>
                     <Button

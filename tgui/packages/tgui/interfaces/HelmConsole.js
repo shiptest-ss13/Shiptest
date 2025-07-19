@@ -1,26 +1,27 @@
-import { useBackend } from '../backend';
 import {
+  AnimatedNumber,
   Button,
   ByondUi,
-  LabeledList,
-  Section,
-  ProgressBar,
-  AnimatedNumber,
   Knob,
   LabeledControls,
+  LabeledList,
   NumberInput,
-} from '../components';
-import { Window } from '../layouts';
-import { Table } from '../components/Table';
-import { decodeHtmlEntities } from 'common/string';
+  ProgressBar,
+  Section,
+} from 'tgui-core/components';
+import { Table } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
-export const HelmConsole = (_props, context) => {
-  const { data } = useBackend(context);
+import { useBackend } from '../backend';
+import { Window } from '../layouts';
+
+export const HelmConsole = (_props) => {
+  const { data } = useBackend();
   const { mapRef, isViewer } = data;
   return (
-    <Window width={870} height={708} resizable>
+    <Window width={870} height={708}>
       <div className="CameraConsole__left">
-        <Window.Content>
+        <Window.Content scrollable>
           {!isViewer && <ShipControlContent />}
           <ShipContent />
           <SharedContent />
@@ -44,8 +45,8 @@ export const HelmConsole = (_props, context) => {
   );
 };
 
-const SharedContent = (_props, context) => {
-  const { act, data } = useBackend(context);
+const SharedContent = (_props) => {
+  const { act, data } = useBackend();
   const { isViewer, canRename, shipInfo = [], otherInfo = [] } = data;
   return (
     <>
@@ -150,8 +151,8 @@ const SharedContent = (_props, context) => {
 };
 
 // Content included on helms when they're controlling ships
-const ShipContent = (_props, context) => {
-  const { act, data } = useBackend(context);
+const ShipContent = (_props) => {
+  const { act, data } = useBackend();
   const {
     isViewer,
     engineInfo,
@@ -281,8 +282,8 @@ const ShipContent = (_props, context) => {
 };
 
 // Arrow directional controls
-const ShipControlContent = (_props, context) => {
-  const { act, data } = useBackend(context);
+const ShipControlContent = (_props) => {
+  const { act, data } = useBackend();
   const {
     calibrating,
     aiControls,
@@ -499,7 +500,7 @@ const ShipControlContent = (_props, context) => {
             // 5 times a second, 60 seconds in a minute (5 * 60 = 300)
             maxValue={estThrust * 500}
             unit="Gm/s²"
-            onDrag={(e, value) =>
+            onDrag={(value) =>
               act('change_burn_percentage', {
                 percentage: Math.round((value / (estThrust * 500)) * 100),
               })
