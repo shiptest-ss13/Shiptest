@@ -17,30 +17,42 @@
 
 	var/disgust_metabolism = 1
 
-/obj/item/organ/stomach/on_life()
-	var/mob/living/carbon/human/H = owner
-	var/datum/reagent/Nutri
+/obj/item/organ/stomach/Initialize()
+	. = ..()
+	create_reagents(1000)
 
-	..()
-	if(istype(H))
+/obj/item/organ/stomach/on_life()
+	. = ..()
+	//Manage species digestion
+	if(istype(owner, /mob/living/carbon/human))
+		var/mob/living/carbon/human/humi = owner
 		if(!(organ_flags & ORGAN_FAILING))
-			H.dna.species.handle_digestion(H)
-		handle_disgust(H)
+			humi.dna.species.handle_digestion(humi)
+
+	//digest food
+	var/mob/living/carbon/body = owner
+	var/obj/item/organ/liver/liver = body.getorganslot(ORGAN_SLOT_LIVER)
+	var/liverless = (!liver || (liver.organ_flags & ORGAN_FAILING))
+	reagents.metabolize(body, can_overdose=TRUE, liverless=liverless)
+
+	if(body)
+		handle_disgust(body)
 
 	if(damage < low_threshold)
 		return
 
-	Nutri = locate(/datum/reagent/consumable/nutriment) in H.reagents.reagent_list
+	var/datum/reagent/nutri = locate(/datum/reagent/consumable/nutriment) in reagents.reagent_list
+	if(!nutri)
+		return
 
-	if(Nutri)
-		if(prob((damage/40) * Nutri.volume * Nutri.volume))
-			H.vomit(damage)
-			to_chat(H, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
+	if(prob(damage * 0.025 * nutri.volume * nutri.volume))
+		body.vomit(damage)
+		to_chat(body, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
+		return
 
-	else if(Nutri && damage > high_threshold)
-		if(prob((damage/10) * Nutri.volume * Nutri.volume))
-			H.vomit(damage)
-			to_chat(H, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
+	if(damage > high_threshold && prob(damage * 0.1 * nutri.volume * nutri.volume))
+		body.vomit(damage)
+		to_chat(body, span_warning("Your stomach reels in pain as you're incapable of holding down all that food!"))
 
 /obj/item/organ/stomach/get_availability(datum/species/S)
 	return !(NOSTOMACH in S.species_traits)
