@@ -407,15 +407,14 @@
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
-	belt = /obj/item/storage/belt/utility/full/engi
-	gloves = /obj/item/clothing/gloves/color/yellow
+	belt = null
+	gloves = null
 	ears = /obj/item/radio/headset/headset_eng
-	uniform = /obj/item/clothing/under/rank/engineering/engineer
+	uniform = /obj/item/clothing/under/overalls/olive
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/workboots
-	head = /obj/item/clothing/head/hardhat/dblue
-	l_pocket = /obj/item/t_scanner
+	head = null
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
