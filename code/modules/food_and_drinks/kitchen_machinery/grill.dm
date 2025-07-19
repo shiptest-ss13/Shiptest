@@ -1,14 +1,13 @@
-//I JUST WANNA GRILL FOR GOD'S SAKE
-
 #define GRILL_FUELUSAGE_IDLE 0.5
 #define GRILL_FUELUSAGE_ACTIVE 5
 
 /obj/machinery/grill
 	name = "grill"
 	desc = "Just like the old days."
-	icon = 'icons/obj/kitchen.dmi'
+	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "grill_open"
 	density = TRUE
+	pass_flags_self = LETPASSTHROW // sorta like griddles
 	layer = BELOW_OBJ_LAYER
 	use_power = NO_POWER_USE
 	var/grill_fuel = 0
@@ -20,15 +19,19 @@
 	. = ..()
 	grill_loop = new(list(src), FALSE)
 
+/obj/machinery/grill/Destroy()
+	grilled_item = null
+	QDEL_NULL(grill_loop)
+	return ..()
+
 /obj/machinery/grill/update_icon_state()
 	if(grilled_item)
 		icon_state = "grill"
 		return ..()
-	else if(grill_fuel)
+	if(grill_fuel > 0)
 		icon_state = "grill_on"
 		return ..()
-	else
-		icon_state = "grill_open"
+	icon_state = "grill_open"
 	return ..()
 
 /obj/machinery/grill/examine(mob/user)
@@ -48,27 +51,22 @@
 		S.use(stackamount)
 		update_appearance()
 		return
+
 	if(I.resistance_flags & INDESTRUCTIBLE)
 		to_chat(user, span_warning("You don't feel it would be wise to grill [I]..."))
 		return ..()
 
-	if(istype(I, /obj/item/food))
+	if(IS_EDIBLE(I))
 		var/obj/item/food/food_item = I
 		if(HAS_TRAIT(food_item, TRAIT_NODROP) || (food_item.item_flags & (ABSTRACT | DROPDEL)))
 			return ..()
-		else if(food_item.foodtypes & GRILLED)
-			to_chat(user, span_notice("[food_item] has already been grilled!"))
-			return
-		else if(grill_fuel <= 0)
+		else if(!grill_fuel)
 			to_chat(user, span_warning("There is not enough fuel!"))
 			return
-		else if(grilled_item)
-			to_chat(user,span_warning("\The [src] is already grilling something, take it out first!"))
-			return
-		else if(user.transferItemToLoc(food_item, src))
-			START_PROCESSING(SSmachines, src)
+		else if(!grilled_item && user.transferItemToLoc(food_item, src))
 			grilled_item = food_item
-			to_chat(user, span_notice("You put the [grilled_item] on [src]."))
+			RegisterSignal(grilled_item, COMSIG_GRILL_COMPLETED, PROC_REF(GrillCompleted))
+			to_chat(user, span_notice("You put the [grilled_item] on [src]"))
 			update_appearance()
 			grill_loop.start()
 			return
@@ -76,32 +74,22 @@
 
 /obj/machinery/grill/process(seconds_per_tick)
 	..()
-	if(grill_fuel <= 0)
-		return PROCESS_KILL
 	update_appearance()
 	if(grill_fuel <= 0)
-		grill_fuel = 0
-		visible_message(span_warning("\The [src] is out of fuel!"))
-		if(grilled_item)
-			grilled_item.forceMove(loc)
-			finish_grill()
-		return
-	grill_time += seconds_per_tick
-	grill_fuel -= GRILL_FUELUSAGE_ACTIVE * seconds_per_tick
-	if(prob(1))
-		var/datum/effect_system/smoke_spread/bad/smoke = new
-		smoke.set_up(1, loc)
-		smoke.start()
+		return PROCESS_KILL
+	else
+		grill_fuel -= GRILL_FUELUSAGE_ACTIVE * seconds_per_tick
+
+	if(grilled_item)
+		SEND_SIGNAL(grilled_item, COMSIG_ITEM_GRILLED, src, seconds_per_tick)
+		grill_time += seconds_per_tick
+		grill_fuel -= GRILL_FUELUSAGE_ACTIVE * seconds_per_tick
+		grilled_item.AddComponent(/datum/component/sizzle)
 
 /obj/machinery/grill/Exited(atom/movable/AM)
 	if(AM == grilled_item)
 		finish_grill()
 	. = ..()
-
-/obj/machinery/grill/Destroy()
-	QDEL_NULL(grilled_item)
-	QDEL_NULL(grill_loop)
-	return ..()
 
 /obj/machinery/grill/handle_atom_del(atom/A)
 	if(A == grilled_item)
@@ -132,64 +120,18 @@
 	return ..()
 
 /obj/machinery/grill/proc/finish_grill()
-	if(grill_time >= 10 && grilled_item.microwaved_type)
-		grilled_item = grilled_item.microwave_act()
-	switch(grill_time) //no 0-20 to prevent spam
-		if(20 to 30)
-			grilled_item.name = "lightly-grilled [grilled_item.name]"
-			grilled_item.desc = "[grilled_item.desc] It's been lightly grilled."
-		if(30 to 80)
-			grilled_item.name = "grilled [grilled_item.name]"
-			grilled_item.desc = "[grilled_item.desc] It's been grilled."
-			grilled_item.foodtypes |= FRIED
-		if(80 to 100)
-			grilled_item.name = "heavily grilled [grilled_item.name]"
-			grilled_item.desc = "[grilled_item.desc] It's been heavily grilled."
-			grilled_item.foodtypes |= FRIED
-		if(100 to INFINITY) //grill marks reach max alpha
-			grilled_item.name = "Powerfully Grilled [grilled_item.name]"
-			grilled_item.desc = "A [grilled_item.name]. Reminds you of your wife, wait, no, it's prettier!"
-			grilled_item.foodtypes |= FRIED
-	grilled_item.AddComponent(/datum/component/sizzle, (grill_time * 7.5))
-	grilled_item.foodtypes |= GRILLED
+	SEND_SIGNAL(grilled_item, COMSIG_GRILL_FOOD, grilled_item, grill_time)
 	grill_time = 0
+	UnregisterSignal(grilled_item, COMSIG_GRILL_COMPLETED, PROC_REF(GrillCompleted))
 	grill_loop.stop()
-	grilled_item = null
-	update_appearance()
+
+///Called when a food is transformed by the grillable component
+/obj/machinery/grill/proc/GrillCompleted(obj/item/source, atom/grilled_result)
+	SIGNAL_HANDLER
+	grilled_item = grilled_result //use the new item!!
 
 /obj/machinery/grill/unwrenched
 	anchored = FALSE
-
-//I JUST WANNYA GWIWW FOW GAWD'S SAKE
-
-/obj/machinery/grill/cat
-	name = "catgrill"
-	desc = "Is this what the youngins are into now?"
-	icon = 'icons/obj/kitchen.dmi'
-	icon_state = "catgrill_open"
-	anchored = FALSE
-
-/obj/machinery/grill/cat/update_icon_state()
-	if(grilled_item)
-		icon_state = "catgrill"
-	else if(grill_fuel)
-		icon_state = "catgrill_on"
-	else
-		icon_state = "catgrill_open"
-	return ..()
-
-/obj/machinery/grill/cat/proc/owoify()
-	var/static/regex/owo = new("r|l", "g")
-	var/static/regex/oWo = new("R|L", "g")
-	var/static/regex/Nya = new("N(a|e|i|o|u)", "g")
-	// Forgive me marg for I have sinned
-	grilled_item.name = owo.Replace(grilled_item.name, "w")
-	grilled_item.name = oWo.Replace(grilled_item.name, "w")
-	grilled_item.name = Nya.Replace(grilled_item.name, "Ny$1")
-
-/obj/machinery/grill/cat/finish_grill()
-	..()
-	owoify()
 
 #undef GRILL_FUELUSAGE_IDLE
 #undef GRILL_FUELUSAGE_ACTIVE

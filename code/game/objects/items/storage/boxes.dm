@@ -1062,7 +1062,6 @@
 	new /obj/item/food/spidereggs(src)
 	new /obj/item/food/fishmeat/carp(src)
 	new /obj/item/food/meat/slab/xeno(src)
-	new /obj/item/food/meat/slab/corgi(src)
 	new /obj/item/food/meatball(src)
 
 /obj/item/storage/box/ingredients/exotic

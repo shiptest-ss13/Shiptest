@@ -83,21 +83,18 @@
 	tastes = list("sourness" = 1, "leaves" = 1)
 	foodtypes = FRUIT
 
-/obj/item/food/salad/ricebowl
-	name = "ricebowl"
-	desc = "A bowl of loose, pearled rice grains."
-	icon_state = "ricebowl"
+/obj/item/food/uncooked_rice
+	name = "uncooked rice"
+	desc = "A clump of raw rice."
+	icon_state = "uncooked_rice"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	tastes = list("rice" = 1)
 	foodtypes = GRAIN | RAW
-	microwaved_type = /obj/item/food/salad/boiledrice
 
-/*
-/obj/item/food/salad/ricebowl/make_microwaveable()
-	AddElement(/datum/element/microwavable, /obj/item/food/salad/boiledrice)
-*/
+/obj/item/food/uncooked_rice/make_bakeable()
+	AddComponent(/datum/component/bakeable, /obj/item/food/boiled_rice, rand(15 SECONDS, 20 SECONDS), TRUE, TRUE)
 
-/obj/item/food/salad/boiledrice
+/obj/item/food/boiled_rice
 	name = "boiled rice"
 	desc = "A warm bowl of steamed white rice."
 	icon_state = "boiledrice"

@@ -74,7 +74,6 @@ SUBSYSTEM_DEF(traumas)
 
 		"skeletons" = typecacheof(list(
 			/obj/item/organ/tongue/bone, /obj/item/clothing/suit/armor/bone, /obj/item/stack/sheet/bone,
-			/obj/item/food/meat/slab/human/mutant/skeleton,
 			/obj/effect/decal/remains/human)),
 
 		"conspiracies" = typecacheof(list(
