@@ -42,6 +42,18 @@
 	stock_max = 3
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/blastinghammer
+	name = "Blasting Hammer"
+	desc = "Have you ever thought: \"Man, my 20 pound sledgehammer isn't crushing skulls well enough.\" No? Well, our friends in the Ramzi Clique have solved this problem anyways. By strapping a loading mechanism"
+	item = /obj/item/melee/sledgehammer/gorlex/blasting
+
+	cost_min = 5200
+	cost_max = 7000
+	stock = 1
+	availability_prob = 20
+	spawn_weighting = FALSE
+
+
 /datum/blackmarket_item/weapon/powerfist
 	name = "Powerfist"
 	desc = "Need a bit more... omph in your right hook? This gas operated powerfist will put you in the heavyweight."

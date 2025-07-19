@@ -237,6 +237,7 @@
 		if(BURN)
 			playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 	add_dent(WALL_DENT_HIT)
+	used_item.closed_turf_attack(T,user)
 	alter_integrity(-total_damage, user)
 	return TRUE
 

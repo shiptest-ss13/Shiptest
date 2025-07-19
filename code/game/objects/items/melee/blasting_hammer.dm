@@ -54,7 +54,7 @@
 
 /obj/item/melee/sledgehammer/gorlex/blasting/attack(mob/living/target, mob/living/user)
 	. = ..()
-	if(proccess_chamber(user, TRUE, target))
+	if(proccess_chamber(user, TRUE))
 		target.Knockdown(1)
 		target.flash_act(1,1)
 		target.apply_damage(40, BRUTE, user.zone_selected)
@@ -62,15 +62,15 @@
 
 /obj/item/melee/sledgehammer/gorlex/blasting/attack_obj(obj/O, mob/living/user)
 	. = ..()
-	if(proccess_chamber(user, TRUE, O))
+	if(proccess_chamber(user, TRUE))
 		if(istype(O, /obj/machinery/door/airlock))
 			var/obj/machinery/door/airlock/breaching = O
 			user.visible_message(span_warning("[user] smashes open \the [breaching] with \the [src] like it was made of glass!"), span_warning("You smash open \the [breaching] with a thundering boom!"), span_warning("You hear a defeaning boom."))
 			breaching.Destroy()
 
-// /obj/item/melee/sledgehammer/gorlex/blasting/closed_turf_attack(turf/closed/wall, mob/living/user, param)
-// 	proccess_chamber(user,TRUE)
-// 	return
+/obj/item/melee/sledgehammer/gorlex/blasting/closed_turf_attack(turf/closed/wall, mob/living/user, param)
+	proccess_chamber(user,TRUE)
+	return
 
 /obj/item/melee/sledgehammer/gorlex/blasting/afterattack(atom/A, mob/user, proximity)
 	. = ..()
@@ -85,7 +85,7 @@
 	throw_max = initial(throw_max)
 	demolition_mod = initial(demolition_mod)
 
-/obj/item/melee/sledgehammer/gorlex/blasting/proc/proccess_chamber(mob/living/user, spend_round = FALSE, target)
+/obj/item/melee/sledgehammer/gorlex/blasting/proc/proccess_chamber(mob/living/user, spend_round = FALSE)
 	if(chambered && HAS_TRAIT(src, TRAIT_WIELDED))
 		if(chambered.BB)
 			if(spend_round)
