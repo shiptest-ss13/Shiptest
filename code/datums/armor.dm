@@ -1,9 +1,9 @@
-#define ARMORID "armor-[melee]-[bullet]-[laser]-[energy]-[bomb]-[bio]-[rad]-[fire]-[acid]-[magic]"
+#define ARMORID "armor-[melee]-[bullet]-[laser]-[energy]-[bomb]-[bio]-[rad]-[fire]-[acid]-[magic]-[wound]"
 
-/proc/getArmor(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0)
+/proc/getArmor(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
 	. = locate(ARMORID)
 	if (!.)
-		. = new /datum/armor(melee, bullet, laser, energy, bomb, bio, rad, fire, acid, magic)
+		. = new /datum/armor(melee, bullet, laser, energy, bomb, bio, rad, fire, acid, magic, wound)
 
 /datum/armor
 	datum_flags = DF_USE_TAG
@@ -17,8 +17,9 @@
 	var/fire
 	var/acid
 	var/magic
+	var/wound
 
-/datum/armor/New(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0)
+/datum/armor/New(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
 	src.melee = melee
 	src.bullet = bullet
 	src.laser = laser
@@ -29,9 +30,10 @@
 	src.fire = fire
 	src.acid = acid
 	src.magic = magic
+	src.wound = wound
 	tag = ARMORID
 
-/datum/armor/proc/modifyRating(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0)
+/datum/armor/proc/modifyRating(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
 	return getArmor(
 		src.melee+melee,
 		src.bullet+bullet,
@@ -42,7 +44,8 @@
 		src.rad+rad,
 		src.fire+fire,
 		src.acid+acid,
-		src.magic+magic
+		src.magic+magic,
+		src.wound+wound
 	)
 
 /datum/armor/proc/modifyAllRatings(modifier = 0)
@@ -56,7 +59,8 @@
 		rad+modifier,
 		fire+modifier,
 		acid+modifier,
-		magic+modifier
+		magic+modifier,
+		wound+modifier
 	)
 
 /datum/armor/proc/setRating(melee, bullet, laser, energy, bomb, bio, rad, fire, acid, magic)
@@ -70,7 +74,8 @@
 		(isnull(rad) ? src.rad : rad),
 		(isnull(fire) ? src.fire : fire),
 		(isnull(acid) ? src.acid : acid),
-		(isnull(magic) ? src.magic : magic)
+		(isnull(magic) ? src.magic : magic),
+		(isnull(wound) ? src.wound : wound)
 	)
 
 /datum/armor/proc/getRating(rating)
@@ -87,7 +92,8 @@
 		"rad" = rad,
 		"fire" = fire,
 		"acid" = acid,
-		"magic" = magic
+		"magic" = magic,
+		"wound" = wound
 	)
 
 /datum/armor/proc/attachArmor(datum/armor/AA)
@@ -101,7 +107,8 @@
 		rad+AA.rad,
 		fire+AA.fire,
 		acid+AA.acid,
-		magic+AA.magic
+		magic+AA.magic,
+		wound+AA.wound
 	)
 
 /datum/armor/proc/detachArmor(datum/armor/AA)
@@ -115,7 +122,8 @@
 		rad-AA.rad,
 		fire-AA.fire,
 		acid-AA.acid,
-		magic-AA.magic
+		magic-AA.magic,
+		wound-AA.wound
 	)
 
 /datum/armor/vv_edit_var(var_name, var_value)

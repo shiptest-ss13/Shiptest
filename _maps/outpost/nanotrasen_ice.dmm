@@ -1067,6 +1067,18 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"fM" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = 12;
+	pixel_y = 5
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = -2;
+	pixel_y = 10
+	},
+/turf/open/floor/plating/asteroid/icerock/temperate/lit,
+/area/outpost/exterior)
 "fN" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 4;
@@ -1216,18 +1228,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
-"gB" = (
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_x = 12;
-	pixel_y = 5
-	},
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_x = -2;
-	pixel_y = 10
-	},
-/turf/open/floor/plating/asteroid/icerock/temperate/lit,
-/area/outpost/exterior)
 "gD" = (
 /obj/effect/turf_decal/siding/white/end{
 	dir = 4
@@ -2655,6 +2655,34 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
+"oP" = (
+/obj/machinery/button/door{
+	id = "ice_lounge_window";
+	name = "Window Shutters";
+	pixel_y = 6;
+	pixel_x = -21;
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = -22;
+	pixel_y = -10;
+	dir = 4
+	},
+/obj/structure/table/wood/reinforced,
+/obj/item/storage/fancy/candle_box{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/item/clothing/mask/cigarette/pipe{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/outpost/crew/dorm)
 "oV" = (
 /obj/structure/sign/nanotrasen/vigilitas{
 	pixel_x = 0;
@@ -5413,7 +5441,7 @@
 	color = "#543C30";
 	dir = 6
 	},
-/obj/item/reagent_containers/food/snacks/icecreamsandwich{
+/obj/item/food/icecreamsandwich{
 	pixel_x = -3;
 	pixel_y = 4
 	},
@@ -6437,7 +6465,7 @@
 	color = "#543C30";
 	dir = 4
 	},
-/obj/item/reagent_containers/food/snacks/icecream{
+/obj/item/food/icecream{
 	pixel_x = -1;
 	pixel_y = 5
 	},
@@ -7344,7 +7372,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30"
 	},
-/obj/item/reagent_containers/food/snacks/icecream{
+/obj/item/food/icecream{
 	pixel_x = -1;
 	pixel_y = 6
 	},
@@ -8275,34 +8303,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/armory)
-"UW" = (
-/obj/machinery/button/door{
-	id = "ice_lounge_window";
-	name = "Window Shutters";
-	pixel_y = 6;
-	pixel_x = -21;
-	dir = 4
-	},
-/obj/machinery/light_switch{
-	pixel_x = -22;
-	pixel_y = -10;
-	dir = 4
-	},
-/obj/structure/table/wood/reinforced,
-/obj/item/storage/fancy/candle_box{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = -6;
-	pixel_y = -2
-	},
-/obj/item/clothing/mask/cigarette/pipe{
-	pixel_x = 7;
-	pixel_y = -3
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/outpost/crew/dorm)
 "UY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13250,7 +13250,7 @@ WZ
 Yh
 Ca
 TF
-gB
+fM
 Pd
 qW
 qW
@@ -14501,7 +14501,7 @@ Lh
 QL
 lJ
 Nc
-UW
+oP
 jw
 ch
 Rh

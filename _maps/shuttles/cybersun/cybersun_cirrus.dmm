@@ -122,15 +122,15 @@
 	pixel_y = 4;
 	pixel_x = 4
 	},
-/obj/item/reagent_containers/food/snacks/mirasegg{
+/obj/item/food/mirasegg{
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/mirasegg{
+/obj/item/food/mirasegg{
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/food/snacks/mirasegg{
+/obj/item/food/mirasegg{
 	pixel_x = -6;
 	pixel_y = 4
 	},
@@ -580,7 +580,8 @@
 	},
 /obj/item/storage/secure/safe/cybersun/biodynamics{
 	dir = 8;
-	pixel_x = -32
+	pixel_x = -31;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/trimline/transparent/syndiered/line{
 	dir = 8
@@ -1773,8 +1774,19 @@
 	color = "#E6D2BA";
 	dir = 6
 	},
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/airalarm/directional/west{
+	pixel_y = -2
+	},
 /obj/machinery/fax/syndicate,
+/obj/machinery/button/door{
+	pixel_x = -22;
+	pixel_y = 17;
+	name = "door lock";
+	id = "cbridge";
+	specialfunctions = 4;
+	normaldoorcontrol = 1;
+	dir = 4
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "mx" = (
@@ -4803,7 +4815,8 @@
 /obj/machinery/door/airlock/command{
 	dir = 8;
 	name = "Bridge";
-	close_speed = 100
+	close_speed = 100;
+	id_tag = "cbridge"
 	},
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
