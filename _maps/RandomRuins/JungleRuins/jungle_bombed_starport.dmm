@@ -118,14 +118,6 @@
 /obj/structure/spider/cocoon,
 /turf/open/floor/plasteel,
 /area/ruin/jungle/airbase/dorms)
-"aF" = (
-/obj/item/reagent_containers/food/snacks/spidereggs{
-	pixel_y = 7;
-	pixel_x = -8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "aI" = (
 /obj/structure/platform/military,
 /obj/effect/decal/cleanable/molten_object,
@@ -309,6 +301,13 @@
 /obj/effect/turf_decal/corner/opaque/orange/three_quarters,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/airbase/engineering)
+"bA" = (
+/obj/item/food/spidereggs{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "bC" = (
 /obj/machinery/light/directional/south,
 /obj/structure/spider/stickyweb,
@@ -757,13 +756,6 @@
 	},
 /turf/open/floor/plating/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"dB" = (
-/obj/item/reagent_containers/food/snacks/spidereggs{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "dC" = (
 /obj/effect/gibspawner/generic/animal,
 /obj/structure/spider/stickyweb,
@@ -813,6 +805,14 @@
 	},
 /obj/structure/spacevine/dense,
 /turf/open/water/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"dN" = (
+/obj/item/food/spidereggs{
+	pixel_y = 7;
+	pixel_x = 4
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "dO" = (
 /obj/structure/flora/tree/jungle,
@@ -2124,14 +2124,6 @@
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"jm" = (
-/obj/item/reagent_containers/food/snacks/spidereggs{
-	pixel_y = 7;
-	pixel_x = 4
-	},
-/obj/structure/spider/stickyweb,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "jn" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine/dense,
@@ -2915,6 +2907,19 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/hangar)
+"mO" = (
+/obj/machinery/suit_storage_unit/inherit{
+	state_open = 1
+	},
+/obj/item/clothing/under/syndicate/combat{
+	name = "compression suit";
+	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/airbase/shed)
 "mP" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal{
 	dir = 4
@@ -3427,10 +3432,6 @@
 /obj/structure/floodlight_frame,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
-"oQ" = (
-/obj/item/reagent_containers/food/snacks/spidereggs,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "oR" = (
 /obj/machinery/light/directional/south,
@@ -4214,13 +4215,6 @@
 	},
 /turf/open/floor/plating/jungleplanet/lit,
 /area/ruin/jungle/airbase)
-"rU" = (
-/obj/item/reagent_containers/food/snacks/spidereggs{
-	pixel_y = -6;
-	pixel_x = -4
-	},
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/overmap_encounter/planetoid/jungle/explored)
 "rV" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/techfloor{
@@ -4503,19 +4497,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"sY" = (
-/obj/machinery/suit_storage_unit/inherit{
-	locked = 1
-	},
-/obj/item/clothing/under/syndicate/combat{
-	name = "compression suit";
-	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/head/helmet/space/syndicate/white_red,
-/obj/item/clothing/suit/space/syndicate/white_red,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/airbase/shed)
 "tb" = (
 /obj/structure/salvageable/airbase/missile_launcher{
 	pixel_x = -24;
@@ -4770,6 +4751,14 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/jungle/airbase/hangar)
+"uh" = (
+/obj/item/food/spidereggs{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "uj" = (
 /obj/structure/chair/plastic{
 	dir = 4
@@ -7490,6 +7479,19 @@
 	},
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/jungle/airbase/med)
+"Gj" = (
+/obj/machinery/suit_storage_unit/inherit{
+	locked = 1
+	},
+/obj/item/clothing/under/syndicate/combat{
+	name = "compression suit";
+	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/airbase/shed)
 "Gk" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -8437,6 +8439,13 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
 /turf/open/floor/wood,
 /area/ruin/jungle/airbase/dorms)
+"JW" = (
+/obj/item/food/spidereggs{
+	pixel_y = -6;
+	pixel_x = -4
+	},
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "JY" = (
 /obj/structure/platform/military{
 	dir = 8
@@ -8571,6 +8580,17 @@
 /obj/structure/salvageable/airbase/cannon,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
+/area/ruin/jungle/airbase/shed)
+"Ky" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/under/syndicate/combat{
+	name = "compression suit";
+	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/head/helmet/space/syndicate/white_red,
+/obj/item/clothing/suit/space/syndicate/white_red,
+/turf/open/floor/plasteel/tech,
 /area/ruin/jungle/airbase/shed)
 "KA" = (
 /obj/structure/cable{
@@ -9296,6 +9316,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/jungle/airbase)
+"Ns" = (
+/obj/item/food/spidereggs,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Nu" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
@@ -9520,19 +9544,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"OI" = (
-/obj/machinery/suit_storage_unit/inherit{
-	state_open = 1
-	},
-/obj/item/clothing/under/syndicate/combat{
-	name = "compression suit";
-	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/head/helmet/space/syndicate/white_red,
-/obj/item/clothing/suit/space/syndicate/white_red,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/airbase/shed)
 "OL" = (
 /obj/structure/platform/military{
 	dir = 9
@@ -12155,17 +12166,6 @@
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"ZT" = (
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/under/syndicate/combat{
-	name = "compression suit";
-	desc = "A specialized suit designed to compress the wearer, and prevent blackouts during high gravity manuevers."
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/clothing/head/helmet/space/syndicate/white_red,
-/obj/item/clothing/suit/space/syndicate/white_red,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/airbase/shed)
 "ZU" = (
 /obj/structure/platform/military{
 	dir = 1
@@ -12697,9 +12697,9 @@ KY
 KY
 dP
 dP
-sY
-OI
-ZT
+Gj
+mO
+Ky
 dP
 cr
 DK
@@ -17326,9 +17326,9 @@ os
 CX
 sK
 os
-dB
+bA
 uX
-aF
+uh
 uX
 mK
 uX
@@ -17487,14 +17487,14 @@ ku
 NL
 gu
 os
-rU
+JW
 os
 DR
 Gf
 Gf
 KM
 os
-oQ
+Ns
 os
 uX
 uX
@@ -17573,7 +17573,7 @@ Ub
 Wx
 Wx
 Wx
-jm
+dN
 KM
 sK
 Wx
