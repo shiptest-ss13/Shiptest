@@ -224,7 +224,7 @@
 /turf/open/floor/plating/grass
 	name = "grass"
 	desc = "A patch of grass."
-	icon_state = "grass-0"
+	icon_state = "grass-255"
 	base_icon_state = "grass"
 	icon = 'icons/turf/floors/grass.dmi'
 	bullet_bounce_sound = null

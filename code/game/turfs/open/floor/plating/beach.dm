@@ -3,7 +3,7 @@
 /turf/open/floor/plating/asteroid/sand
 	name = "sand"
 	icon = 'icons/turf/floors/beachsand.dmi'
-	icon_state = "sand-0"
+	icon_state = "sand-255"
 	base_icon_state = "sand"
 	floor_variance = 83
 	max_icon_states = 5

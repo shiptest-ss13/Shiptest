@@ -91,7 +91,7 @@
 	name = "jungle grass"
 	planetary_atmos = TRUE
 	desc = "Greener on the other side."
-	icon_state = "grass-0"
+	icon_state = "grass-255"
 	base_icon_state = "grass"
 	icon = 'icons/turf/floors/forestgrass.dmi'
 	smooth_icon = 'icons/turf/floors/forestgrass.dmi'

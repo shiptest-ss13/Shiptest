@@ -60,7 +60,7 @@
 /turf/open/floor/plating/asteroid/dirt/grass
 	name = "grass"
 	desc = "A patch of grass."
-	icon_state = "grass-0"
+	icon_state = "grass-255"
 	base_icon_state = "grass"
 	bullet_bounce_sound = null
 	smoothing_flags = SMOOTH_BITMASK
@@ -216,19 +216,7 @@
 
 //Artifical sand turfs
 /turf/open/floor/plating/asteroid/sand/ship
-	name = "sand"
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "sand"
-	base_icon_state = "sand"
 	baseturfs = /turf/open/floor/plating
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
 	digResult = null
-
-//artifical water turfs
-/turf/open/water/ship
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "water"
-	base_icon_state = "water"
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	planetary_atmos = FALSE
