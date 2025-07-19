@@ -683,8 +683,7 @@
 	pixel_y = -1
 	},
 /obj/item/paper_bin{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /obj/item/pen/solgov{
 	pixel_x = 9;
@@ -1161,7 +1160,6 @@
 /area/ship/storage/eva)
 "kN" = (
 /obj/structure/sign/solgov_seal{
-	pixel_x = 0;
 	pixel_y = -1
 	},
 /turf/closed/wall/mineral/titanium,
@@ -1421,8 +1419,7 @@
 "nG" = (
 /obj/structure/filingcabinet/double{
 	dir = 4;
-	pixel_x = -10;
-	pixel_y = 0
+	pixel_x = -10
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/royalblue,
@@ -1651,8 +1648,7 @@
 	pixel_y = -1
 	},
 /obj/item/paper_bin{
-	pixel_x = 9;
-	pixel_y = 0
+	pixel_x = 9
 	},
 /obj/item/pen/solgov{
 	pixel_x = 9;
@@ -3173,8 +3169,7 @@
 	pixel_x = -20;
 	pixel_y = 7
 	},
-/obj/structure/table/wood,
-/obj/item/soap,
+/obj/machinery/griddle,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "Eh" = (
@@ -3650,8 +3645,7 @@
 /area/ship/crew/canteen)
 "IP" = (
 /obj/structure/sign/solgov_flag{
-	pixel_x = -1;
-	pixel_y = 0
+	pixel_x = -1
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/security/armory)
@@ -4195,7 +4189,6 @@
 	},
 /obj/structure/table,
 /obj/item/storage/box/bodybags{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/white,
@@ -4851,6 +4844,7 @@
 /obj/item/cutting_board,
 /obj/item/melee/knife/kitchen,
 /obj/item/kitchen/rollingpin,
+/obj/item/reagent_containers/glass/rag,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "Tc" = (
@@ -4914,9 +4908,7 @@
 /area/ship/hallway/port)
 "TD" = (
 /obj/item/radio/intercom/directional/south,
-/obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line{
-	dir = 2
-	},
+/obj/effect/turf_decal/trimline/opaque/solgovblue/filled/line,
 /obj/structure/bed/roller,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/crewtwo)
@@ -5381,8 +5373,7 @@
 /area/ship/medical)
 "XQ" = (
 /obj/structure/mirror{
-	pixel_y = -25;
-	pixel_x = 0
+	pixel_y = -25
 	},
 /obj/structure/cable{
 	icon_state = "1-4"

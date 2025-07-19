@@ -2058,19 +2058,8 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "nP" = (
-/obj/structure/table/wood,
-/obj/item/food/bread/plain{
-	pixel_y = 4
-	},
 /obj/structure/sign/poster/solgov/suns{
 	pixel_x = -27
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_y = 19;
-	pixel_x = -8
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_y = 19
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/ccommons)
@@ -2781,16 +2770,13 @@
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "uA" = (
-/obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4;
 	color = "#543C30"
 	},
-/obj/machinery/microwave{
-	pixel_y = 5
-	},
 /obj/machinery/light/dim/directional/west,
 /obj/item/radio/intercom/directional/north,
+/obj/machinery/oven,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/ccommons)
 "uD" = (
@@ -4205,15 +4191,9 @@
 	color = "#543C30";
 	dir = 1
 	},
-/obj/structure/table/wood,
-/obj/item/cutting_board,
-/obj/item/melee/knife/butcher{
-	pixel_x = -1;
-	pixel_y = 5
-	},
-/obj/item/melee/knife/kitchen{
-	pixel_x = 3;
-	pixel_y = -3
+/obj/machinery/griddle,
+/obj/item/food/bread/plain{
+	pixel_y = 4
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/ccommons)
@@ -4470,6 +4450,24 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 5
+	},
+/obj/structure/table/wood,
+/obj/item/cutting_board,
+/obj/item/melee/knife/kitchen{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/melee/knife/butcher{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_y = 14;
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_y = 14;
+	pixel_x = -3
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/ccommons)
@@ -6011,6 +6009,7 @@
 	color = "#543C30";
 	dir = 4
 	},
+/obj/structure/table/wood,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/ccommons)
 "Rb" = (

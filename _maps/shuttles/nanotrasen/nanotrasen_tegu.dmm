@@ -458,15 +458,22 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/hangar)
 "de" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/machinery/light/small/directional/west{
 	pixel_y = 16
 	},
-/obj/effect/turf_decal/siding/white{
-	dir = 10
+/obj/structure/table,
+/obj/item/cutting_board{
+	pixel_y = 1
 	},
-/turf/open/floor/plasteel,
+/obj/item/melee/knife/kitchen{
+	pixel_y = 3
+	},
+/obj/structure/sink/kitchen{
+	pixel_y = -1;
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "dl" = (
 /obj/structure/cable{
@@ -714,7 +721,9 @@
 /area/ship/engineering/engines/port)
 "fd" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
-/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/siding/white{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "ff" = (
@@ -1610,7 +1619,7 @@
 "nl" = (
 /obj/machinery/holopad/emergency/kitchen,
 /obj/effect/turf_decal/siding/white{
-	dir = 1
+	dir = 9
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/canteen)
@@ -3046,15 +3055,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/communications)
 "zL" = (
-/obj/structure/table,
-/obj/item/cutting_board{
-	pixel_y = 1
-	},
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/melee/knife/kitchen{
-	pixel_y = 3
-	},
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "zN" = (
@@ -3641,13 +3644,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/communications/room)
 "FG" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
-/obj/effect/turf_decal/siding/white{
-	dir = 9
-	},
-/turf/open/floor/plasteel,
+/obj/structure/table,
+/turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "FK" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -5571,9 +5571,6 @@
 /turf/open/floor/engine/hull,
 /area/ship/engineering/engines/port)
 "WI" = (
-/obj/structure/sink/kitchen{
-	dir = 8
-	},
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -22;
@@ -5584,6 +5581,7 @@
 /obj/machinery/light/small/directional/east{
 	pixel_y = 16
 	},
+/obj/machinery/oven,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/canteen)
 "WQ" = (

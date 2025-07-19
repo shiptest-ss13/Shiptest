@@ -1137,7 +1137,7 @@
 "nU" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/effect/spawner/random/vending/snack,
+/obj/machinery/griddle,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "od" = (
@@ -3223,6 +3223,8 @@
 	pixel_x = -5;
 	pixel_y = 22
 	},
+/obj/effect/spawner/random/maintenance/three,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "Kh" = (
@@ -3980,8 +3982,7 @@
 /obj/machinery/firealarm/directional/east,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/structure/closet/crate/bin,
-/obj/effect/spawner/random/maintenance/three,
+/obj/effect/spawner/random/vending/snack,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Ug" = (
@@ -4484,7 +4485,6 @@
 /area/ship/hallway/central)
 "ZI" = (
 /obj/item/storage/case/surgery{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/item/clothing/gloves/color/latex/nitrile,

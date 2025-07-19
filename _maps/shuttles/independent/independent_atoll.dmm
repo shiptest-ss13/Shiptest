@@ -624,41 +624,10 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
 "ff" = (
-/obj/effect/turf_decal/corner/transparent/grey/full,
+/obj/machinery/griddle,
 /obj/effect/turf_decal/corner/transparent/lightgrey/diagonal,
+/obj/effect/turf_decal/corner/transparent/grey/full,
 /obj/effect/turf_decal/siding/thinplating,
-/obj/item/reagent_containers/condiment/sugar,
-/obj/item/reagent_containers/food/drinks/bottle/orangejuice,
-/obj/item/reagent_containers/condiment/rice,
-/obj/item/storage/fancy/egg_box,
-/obj/item/food/pie/applepie,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/item/reagent_containers/food/drinks/waterbottle,
-/obj/structure/closet/secure_closet/freezer{
-	anchored = 1;
-	locked = 0;
-	name = "fridge"
-	},
-/obj/item/reagent_containers/condiment/flour,
-/obj/item/reagent_containers/condiment/flour,
-/obj/item/reagent_containers/condiment/flour,
-/obj/item/food/grown/cabbage,
-/obj/item/food/grown/cabbage,
-/obj/item/food/branrequests,
-/obj/item/reagent_containers/condiment/enzyme,
-/obj/item/food/grown/tomato,
-/obj/item/food/grown/tomato,
-/obj/item/food/grown/potato,
-/obj/item/food/grown/potato,
-/obj/item/food/grown/oat,
-/obj/item/food/grown/cocoapod,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/chicken,
-/obj/item/food/meat/slab/chicken,
-/obj/item/reagent_containers/condiment/milk,
-/obj/item/reagent_containers/condiment/milk,
-/obj/item/reagent_containers/condiment/soymilk,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/ccommons)
 "fj" = (
@@ -1007,8 +976,7 @@
 /area/ship/hallway/aft)
 "in" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/wood/walnut,
@@ -2125,8 +2093,7 @@
 "sv" = (
 /obj/structure/fluff/hedge,
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
@@ -2192,8 +2159,7 @@
 /area/ship/crew/dorm/captain)
 "sX" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -2279,8 +2245,7 @@
 /area/ship/medical)
 "ux" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
@@ -2294,9 +2259,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "uL" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -2718,8 +2681,7 @@
 /area/ship/crew/dorm/captain)
 "yA" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/office)
@@ -2734,9 +2696,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "yF" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
+/obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
@@ -3016,6 +2976,11 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
+	},
+/obj/structure/reagent_dispensers/water_cooler{
+	pixel_x = -13;
+	pixel_y = 3;
+	density = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/ccommons)
@@ -3382,8 +3347,7 @@
 /area/ship/hallway/port)
 "Fv" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/med_data/laptop{
@@ -4120,7 +4084,38 @@
 "LO" = (
 /obj/effect/turf_decal/corner/transparent/grey/full,
 /obj/effect/turf_decal/corner/transparent/lightgrey/diagonal,
-/obj/structure/reagent_dispensers/water_cooler,
+/obj/item/reagent_containers/condiment/sugar,
+/obj/item/reagent_containers/food/drinks/bottle/orangejuice,
+/obj/item/reagent_containers/condiment/rice,
+/obj/item/storage/fancy/egg_box,
+/obj/item/food/pie/applepie,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1;
+	locked = 0;
+	name = "fridge"
+	},
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/reagent_containers/condiment/flour,
+/obj/item/food/grown/cabbage,
+/obj/item/food/grown/cabbage,
+/obj/item/food/branrequests,
+/obj/item/reagent_containers/condiment/enzyme,
+/obj/item/food/grown/tomato,
+/obj/item/food/grown/tomato,
+/obj/item/food/grown/potato,
+/obj/item/food/grown/potato,
+/obj/item/food/grown/oat,
+/obj/item/food/grown/cocoapod,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/soymilk,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 6
 	},
@@ -4832,9 +4827,7 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "Rj" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -5103,9 +5096,7 @@
 /turf/open/floor/carpet,
 /area/ship/crew/ccommons)
 "TZ" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 4
-	},
+/obj/machinery/power/shuttle/engine/electric,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -5744,8 +5735,7 @@
 /area/ship/hallway/aft)
 "ZQ" = (
 /obj/effect/turf_decal/siding/wood{
-	color = "#543C30";
-	dir = 2
+	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,
