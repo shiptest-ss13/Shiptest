@@ -8,7 +8,7 @@
 	products = list(
 		/obj/item/food/tofu/prison = 24,
 		/obj/item/reagent_containers/food/drinks/ice/prison = 12,
-		/obj/item/reagent_containers/food/snacks/candy_corn/prison = 6)
+		/obj/item/food/candy_corn/prison = 6)
 
 	contraband = list(
 		/obj/item/melee/knife/kitchen = 6,

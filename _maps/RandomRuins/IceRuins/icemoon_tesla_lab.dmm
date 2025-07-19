@@ -1605,6 +1605,22 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/engineering)
+"gu" = (
+/obj/structure/table,
+/obj/item/food/soup/mushroom{
+	pixel_y = 11;
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/soda{
+	pixel_y = 7;
+	pixel_x = -7
+	},
+/obj/item/food/bbqribs{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/icemoon/tesla_lab/lobby)
 "gw" = (
 /obj/effect/turf_decal/trimline/transparent/blue/line,
 /obj/effect/turf_decal/industrial/warning{
@@ -1813,6 +1829,23 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/containment)
+"hm" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/food/yakiimo{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/item/food/bbqribs{
+	pixel_x = -3;
+	pixel_y = 21
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/soda{
+	pixel_y = 14;
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/icemoon/tesla_lab/lobby)
 "hs" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/beaglemug{
@@ -2269,16 +2302,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo)
-"jo" = (
-/obj/structure/table,
-/obj/machinery/newscaster/directional/east,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/reagent_containers/food/snacks/soup/vegetable{
-	pixel_y = 7;
-	pixel_x = 3
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/tesla_lab/lobby)
 "jq" = (
 /obj/effect/decal/cleanable/glass/plasma,
 /obj/structure/platform/industrial,
@@ -2311,15 +2334,6 @@
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/icerock/lit,
 /area/overmap_encounter/planetoid/ice/explored)
-"jx" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/soup/vegetable,
-/obj/item/reagent_containers/food/drinks/drinkingglass/filled/soda{
-	pixel_y = 9;
-	pixel_x = -2
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/icemoon/tesla_lab/lobby)
 "jA" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/icerock/lit,
@@ -3478,6 +3492,16 @@
 	},
 /turf/open/floor/plasteel/tech/airless,
 /area/ruin/icemoon/tesla_lab/engineering)
+"oq" = (
+/obj/structure/table,
+/obj/machinery/newscaster/directional/east,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/food/soup/vegetable{
+	pixel_y = 7;
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/tesla_lab/lobby)
 "or" = (
 /obj/effect/turf_decal/industrial,
 /obj/machinery/power/grounding_rod{
@@ -3615,14 +3639,6 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
-"oW" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/soup/mushroom{
-	pixel_y = 4;
-	pixel_x = 4
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/icemoon/tesla_lab/lobby)
 "oX" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/cable{
@@ -5085,6 +5101,14 @@
 /obj/effect/decal/cleanable/blood/squirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
+"uM" = (
+/obj/structure/table,
+/obj/item/food/soup/mushroom{
+	pixel_y = 4;
+	pixel_x = 4
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ruin/icemoon/tesla_lab/lobby)
 "uO" = (
 /obj/effect/turf_decal/industrial/loading{
 	icon_state = "loadingarea_stripes";
@@ -10059,22 +10083,6 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ruin/icemoon/tesla_lab/dorms)
-"OV" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/soup/mushroom{
-	pixel_y = 11;
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/filled/soda{
-	pixel_y = 7;
-	pixel_x = -7
-	},
-/obj/item/food/bbqribs{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/icemoon/tesla_lab/lobby)
 "OX" = (
 /obj/machinery/blackbox_recorder{
 	name = "Backup Blackbox Recorder";
@@ -11714,23 +11722,6 @@
 /obj/effect/anomaly/tvstatic/planetary,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
-"UX" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/reagent_containers/food/snacks/yakiimo{
-	pixel_x = -3;
-	pixel_y = 4
-	},
-/obj/item/food/bbqribs{
-	pixel_x = -3;
-	pixel_y = 21
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/filled/soda{
-	pixel_y = 14;
-	pixel_x = -4
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ruin/icemoon/tesla_lab/lobby)
 "Vd" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -12185,6 +12176,15 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/containment)
+"Xv" = (
+/obj/structure/table,
+/obj/item/food/soup/vegetable,
+/obj/item/reagent_containers/food/drinks/drinkingglass/filled/soda{
+	pixel_y = 9;
+	pixel_x = -2
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/icemoon/tesla_lab/lobby)
 "Xx" = (
 /obj/effect/turf_decal/industrial/warning{
 	layer = 2.456;
@@ -12322,6 +12322,20 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
+"Yd" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/item/spacecash/bundle/mediumrand,
+/obj/item/spacecash/bundle/mediumrand,
+/obj/structure/filingcabinet/double{
+	dir = 8;
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/m9mm_mauler/extended,
+/obj/item/ammo_box/magazine/m9mm_mauler/extended,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/icemoon/tesla_lab/haymaker)
 "Yf" = (
 /obj/effect/decal/cleanable/blood/splatter/over_window{
 	icon_state = "gibbearcore"
@@ -12592,20 +12606,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
-"Zd" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/item/spacecash/bundle/mediumrand,
-/obj/item/spacecash/bundle/mediumrand,
-/obj/structure/filingcabinet/double{
-	dir = 8;
-	pixel_x = 8
-	},
-/obj/item/ammo_box/magazine/m9mm_mauler/extended,
-/obj/item/ammo_box/magazine/m9mm_mauler/extended,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/icemoon/tesla_lab/haymaker)
 "Zi" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14364,7 +14364,7 @@ rM
 xK
 fK
 fK
-jx
+Xv
 nk
 Me
 of
@@ -14427,11 +14427,11 @@ rM
 LF
 xr
 ph
-jo
+oq
 nk
 cA
-oW
-UX
+uM
+hm
 wA
 YA
 SD
@@ -14493,7 +14493,7 @@ rM
 rM
 xW
 Is
-OV
+gu
 PB
 we
 YA
@@ -15501,7 +15501,7 @@ TT
 dm
 He
 gd
-Zd
+Yd
 CB
 Bb
 dm

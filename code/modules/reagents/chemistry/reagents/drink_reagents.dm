@@ -952,6 +952,14 @@
 	glass_name = "glass of bungo juice"
 	glass_desc = "A botanical experiment in creating a new fruit. It smells faintly citrusy, along with a hint of... banana?"
 
+/datum/reagent/consumable/beefbroth
+	name = "Beef Broth"
+	color = "#100800" // rgb: 16, 8, 0 , just like cola
+	taste_description = "Pure Beef Essence"
+	glass_icon_state  = "glass_brown"
+	glass_name = "glass of Master Cola?"
+	glass_desc = "A glass of what appears to be refreshing Space Cola."
+
 /datum/reagent/consumable/prunomix
 	name = "pruno mixture"
 	color = "#E78108"
