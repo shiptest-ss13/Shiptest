@@ -66,7 +66,7 @@
 
 /datum/mission/outpost/research/meteor
 	name = "Asteroid field research mission"
-	desc = " require data on the behavior of asteroid fields in the system for an ongoing study. \
+	desc = "requires data on the behavior of asteroid fields in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
 	value = 1500
@@ -76,7 +76,7 @@
 
 /datum/mission/outpost/research/carp
 	name = "Carp migration research mission"
-	desc = " require data on the migration patterns of space carp for an ongoing study. \
+	desc = "requires data on the migration patterns of space carp for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
 	value = 88
@@ -87,7 +87,7 @@
 
 /datum/mission/outpost/research/dust
 	name = "dust research mission"
-	desc = " require data on the density of space dust for updated navcharts. \
+	desc = "requires data on the density of space dust for updated navcharts. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
 	value = 800
@@ -97,7 +97,7 @@
 
 /datum/mission/outpost/research/radstorm
 	name = "Radiation storm field research mission"
-	desc = "We require data on the behavior of radiation storms in the system for an ongoing study. \
+	desc = "requires data on the behavior of radiation storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
 	value = 1500
@@ -107,7 +107,7 @@
 
 /datum/mission/outpost/research/ion
 	name = "Ion storm research mission"
-	desc = "We require data on the behavior of electromagnetic storms in the system for an ongoing study. \
+	desc = "requires data on the behavior of electromagnetic storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data."
 	value = 2500
@@ -117,7 +117,7 @@
 
 /datum/mission/outpost/research/flare
 	name = "Solar flare field research mission"
-	desc = "We require data on the behavior of solar flares in the system for an ongoing study. \
+	desc = "requires data on the behavior of solar flares in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
 	value = 2000
