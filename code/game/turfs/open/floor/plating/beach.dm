@@ -47,6 +47,7 @@
 	light_power = 0.80
 
 /turf/open/floor/plating/grass/beach
+	icon = 'icons/turf/floors/grass.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/sand
 	initial_gas_mix = BEACHPLANET_DEFAULT_ATMOS
 	light_color = COLOR_BEACHPLANET_LIGHT
@@ -60,6 +61,7 @@
 /turf/open/floor/plating/grass/beach/dark
 	icon_state = "junglegrass"
 	base_icon_state = "junglegrass"
+	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
 /turf/open/floor/plating/grass/beach/dark/lit
