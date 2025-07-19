@@ -59,8 +59,8 @@
 	light_power = 0.80
 
 /turf/open/floor/plating/grass/beach/dark
-	icon_state = "junglegrass"
-	base_icon_state = "junglegrass"
+	icon_state = "grass"
+	base_icon_state = "grass"
 	icon = 'icons/turf/floors/junglegrass.dmi'
 	smooth_icon = 'icons/turf/floors/junglegrass.dmi'
 
