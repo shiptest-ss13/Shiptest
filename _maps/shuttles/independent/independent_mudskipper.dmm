@@ -1189,10 +1189,6 @@
 	anchored = 1;
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
-/obj/item/reagent_containers/food/snacks/canned/beans,
 /obj/effect/spawner/random/food_or_drink/donkpockets,
 /obj/item/reagent_containers/food/drinks/waterbottle,
 /obj/item/reagent_containers/food/drinks/waterbottle,
@@ -1210,6 +1206,10 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
 "yv" = (
@@ -1866,8 +1866,23 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/effect/spawner/random/food_or_drink/ration,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/food/canned/beans,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/item/reagent_containers/food/drinks/waterbottle,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/obj/effect/turf_decal/industrial/warning{
+	>>>>>>>110d238dc218ba94f1608db9503a5e97b791a8b2dir = 4
 	},
 /obj/structure/closet/crate/radiation{
 	name = "rad protection crate"

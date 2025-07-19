@@ -61,7 +61,7 @@
 		if(EXPLODE_DEVASTATE)
 			take_damage(rand(1000, 2000), BRUTE, BOMB, 0)
 		if(EXPLODE_HEAVY)
-			take_damage(rand(100, 250), BRUTE, BOMB, 0)
+			take_damage(rand(100, 150), BRUTE, BOMB, 0)
 		if(EXPLODE_LIGHT)
 			take_damage(rand(10, 90), BRUTE, BOMB, 0)
 
