@@ -19,16 +19,15 @@
 	name = "goopy pancake"
 	desc = "A barely cooked mess that some may mistake for a pancake. It longs for the griddle."
 	icon_state = "rawpancakes_1"
-	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 1,
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+	)
 	tastes = list("milky batter" = 1)
 	stack_name = "rawpancakes"
 
 /obj/item/food/pancakes/raw/make_grillable()
-	AddComponent(/datum/component/grillable,\
-				cook_result = /obj/item/food/pancakes,\
-				required_cook_time = rand(30 SECONDS, 40 SECONDS),\
-				positive_result = TRUE,\
-				use_large_steam_sprite = TRUE)
+	AddComponent(/datum/component/grillable, /obj/item/food/pancakes, rand(30 SECONDS, 40 SECONDS), TRUE, TRUE)
 
 //this is awful. should be modular
 /obj/item/food/pancakes/raw/attackby(obj/item/garnish, mob/living/user, params)
@@ -50,7 +49,6 @@
 		qdel(garnish)
 		to_chat(user, span_notice("You add [garnish] to [src]."))
 		AddComponent(/datum/component/grillable, cook_result = newresult)
-
 
 /obj/item/food/pancakes/raw/examine(mob/user)
 	. = ..()
@@ -123,11 +121,12 @@
 		var/obj/item/food/pancakes/pancake = item
 		if(!user.transferItemToLoc(pancake, src))
 			return
-		to_chat(user, "<span class='notice'>You add the [pancake] to the [src].</span>")
+		to_chat(user, span_notice("You add the [pancake] to the [src]."))
 		pancake.name = initial(pancake.name)
 		contents += pancake
 		update_snack_overlays(pancake)
-		if (pancake.contents.len)
+
+		if(pancake.contents.len)
 			for(var/pancake_content in pancake.contents)
 				pancake = pancake_content
 				pancake.name = initial(pancake.name)

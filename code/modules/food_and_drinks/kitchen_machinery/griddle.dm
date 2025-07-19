@@ -18,8 +18,8 @@
 	var/datum/looping_sound/grill/grill_loop
 	///Whether or not the machine is turned on right now
 	var/on = FALSE
-	///How many shit fits on the griddle?
-	var/max_items = 8
+	///How many items fit on the griddle?
+	var/max_items = 6
 
 /obj/machinery/griddle/Initialize()
 	. = ..()
@@ -37,10 +37,13 @@
 	if(default_deconstruction_crowbar(I, ignore_panel = TRUE))
 		return
 
+//For pouring pancake batter onto griddles
 /obj/machinery/griddle/proc/on_expose_reagent(atom/parent_atom, datum/reagent/exposing_reagent, reac_volume)
 	SIGNAL_HANDLER
+
 	if(griddled_objects.len >= max_items || !istype(exposing_reagent, /datum/reagent/consumable/pancakebatter) || reac_volume < 5)
 		return NONE //make sure you have space... it's actually batter... and a proper amount of it.
+
 	for(var/pancakes in 1 to FLOOR(reac_volume, 5) step 5) //this adds as many pancakes as you possibly could make, with 5u needed per pancake
 		var/obj/item/food/pancakes/raw/new_pancake = new(src)
 		new_pancake.pixel_x = rand(16,-16)
@@ -59,10 +62,12 @@
 	if(griddled_objects.len >= max_items)
 		to_chat(user, span_notice("[src] can't fit more items!"))
 		return
+
 	var/list/modifiers = params2list(params)
 	//Center the icon where the user clicked.
 	if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
 		return
+
 	if(user.transferItemToLoc(I, src, silent = FALSE))
 		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 		I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
@@ -109,7 +114,7 @@
 	AddToGrill(grilled_result)
 
 /obj/machinery/griddle/proc/update_grill_audio()
-	if(on && griddled_objects.len)
+	if(on && length(griddled_objects))
 		grill_loop.start()
 	else
 		grill_loop.stop()
@@ -119,7 +124,7 @@
 	default_unfasten_wrench(user, I, 2 SECONDS)
 	return TRUE
 
-///Override to prevent storage dumping onto the griddle until I figure out how to navigate the mess that is storage code to allow me to nicely move the dumped objects onto the griddle.
+///Override to prevent storage dumping onto the griddle
 /obj/machinery/griddle/get_dumping_location(obj/item/storage/source, mob/user)
 	return
 
@@ -130,6 +135,7 @@
 		if(SEND_SIGNAL(griddled_item, COMSIG_ITEM_GRILLED, src, seconds_per_tick) & COMPONENT_HANDLED_GRILLING)
 			continue
 		griddled_item.fire_act(1000) //Hot hot hot!
+
 		if(prob(10))
 			visible_message(span_danger("[griddled_item] doesn't seem to be doing too great on the [src]!"))
 

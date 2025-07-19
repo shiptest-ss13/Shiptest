@@ -114,6 +114,9 @@
 	foodtypes = MEAT | RAW
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/food/rawegg/make_grillable()
+	AddComponent(/datum/component/grillable, /obj/item/food/friedegg, rand(20 SECONDS, 35 SECONDS), TRUE, FALSE)
+
 /obj/item/food/boiledegg
 	name = "boiled egg"
 	desc = "A hard boiled egg."
