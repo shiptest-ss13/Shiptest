@@ -1,0 +1,53 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Kiwi-class Prospector",
+	"faction": "/datum/faction/nt/ns_logi",
+	"prefix": "NSSV",
+	"manufacturer": "Nanotrasen Spaceworks",
+	"description": "A common sight in N+S's Frontier fleet, the Kiwi-class acts as the company's mainstay prospecting vessel. Outfitted with a heavy-duty mining drill and armed mining team to ensure it's continued operation, these vessels are built to locate and capitalize on valuable near-surface mineral deposits. Boasting moderate cargo capacity, dual ore refineries, and comfortable (if cramped) crew cabins, Kiwis are designed to be self-sufficient for some time and tend to outcompete smaller, independent mining ventures.",
+	"tags": [
+		"Combat",
+		"Mining"
+	],
+	"namelists": [
+		"NANOTRASEN",
+		"SPACE",
+		"MYTHOLOGICAL"
+	],
+	"map_short_name": "Kiwi-class",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_kiwi.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Supply Director": {
+			"outfit": "/datum/outfit/job/nanotrasen/captain/ns/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Lead Miner": {
+			"outfit": "/datum/outfit/job/nanotrasen/quartermaster/leadminer/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"Miner": {
+			"outfit": "/datum/outfit/job/nanotrasen/miner/empty",
+			"slots": 3
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/nanotrasen/paramedic/empty",
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/nanotrasen/engineer/empty",
+			"slots": 1
+		},
+		"Cargo Technician": {
+			"outfit": "/datum/outfit/job/nanotrasen/cargo_tech/empty",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/nanotrasen/assistant/empty",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
