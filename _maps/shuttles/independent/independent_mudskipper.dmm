@@ -199,7 +199,8 @@
 /area/ship/engineering/engine)
 "dN" = (
 /obj/machinery/modular_computer/console/preset/command{
-	dir = 8
+	dir = 8;
+	icon_state = "computer-left"
 	},
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/techfloor{
@@ -382,6 +383,8 @@
 	layer = 2.04
 	},
 /obj/item/radio/headset/alt,
+/obj/item/flashlight/seclite,
+/obj/item/melee/knife/survival,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "gT" = (
@@ -658,7 +661,7 @@
 /area/ship/cargo)
 "nV" = (
 /obj/structure/closet/wall/blue{
-	dir = 4;
+	dir = 8;
 	secure = 1;
 	pixel_x = -28;
 	locked = 1
@@ -879,7 +882,7 @@
 "sf" = (
 /obj/machinery/computer/helm{
 	dir = 8;
-	icon_state = "computer-left"
+	icon_state = "computer-middle"
 	},
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/techfloor{
@@ -1115,14 +1118,6 @@
 	pixel_x = -10;
 	pixel_y = -9
 	},
-/obj/item/clothing/under/overalls/brown{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/item/clothing/under/overalls/brown{
-	pixel_x = -11;
-	pixel_y = 6
-	},
 /obj/item/clothing/shoes/workboots{
 	pixel_x = 10;
 	pixel_y = 1
@@ -1134,6 +1129,14 @@
 /obj/item/clothing/shoes/workboots{
 	pixel_x = 10;
 	pixel_y = -7
+	},
+/obj/item/clothing/under/pants/cargo{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/obj/item/clothing/under/pants/cargo{
+	pixel_x = -11;
+	pixel_y = 6
 	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
@@ -2515,7 +2518,9 @@
 	pixel_y = -5
 	},
 /obj/machinery/light/dim/directional/north,
-/obj/structure/closet/secure_closet/armorycage,
+/obj/structure/closet/secure_closet/armorycage{
+	req_access = null
+	},
 /obj/item/stock_parts/cell/gun{
 	pixel_x = -6;
 	pixel_y = -3
