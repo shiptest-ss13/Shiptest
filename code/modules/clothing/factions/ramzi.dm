@@ -57,14 +57,14 @@
 	icon = 'icons/obj/clothing/faction/ramzi/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/suits.dmi'
 	blood_overlay_type = "armor"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/armor/ramzi/bulletproof
 	name = "Ramzi bulletproof vest"
 	desc = "A heavier Type III armored vest, worn by pirates of the Ramzi Clique. "
 	icon_state = "ramzi_bullet"
 	item_state = "armor"
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/armor/ramzi/officer
 	name = "\improper Ramzi overcoat"
@@ -73,7 +73,7 @@
 	icon_state = "ramzi_lead"
 	item_state = "ramzi_lead"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 /obj/item/clothing/suit/armor/ramzi/captain
 	name = "\improper Armored Ramzi coat"
@@ -82,7 +82,7 @@
 	icon_state = "ramzi_captain"
 	item_state = "ramzi_captain"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 
 ///////////////
 //Spacesuits//
@@ -98,7 +98,7 @@
 	item_state = "hardsuit1-ramzi"
 	hardsuit_type = "ramzi"
 
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	name = "rust-red hardsuit"
@@ -111,7 +111,7 @@
 	hardsuit_type = "ramzi"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 	jetpack = null
-	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
 	slowdown = 0.7
 	jetpack = null
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION | VOX_VARIATION
@@ -126,7 +126,7 @@
 	hardsuit_type = "ramzielite"
 	icon_state = "hardsuit1-ramzielite"
 	item_state = "hardsuit1-ramzielite"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	name = "elite rust-red hardsuit"
@@ -138,7 +138,7 @@
 	item_state = "hardsuit1-ramzielite"
 	hardsuit_type = "ramzielite"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 80, "wound" = 30)
 	slowdown = 1.25
 
 /////////
@@ -186,7 +186,7 @@
 	desc = "A cheaper helmet utilized by the Ramzi Clique, often handed out to less valuable combatants."
 	icon = 'icons/obj/clothing/faction/ramzi/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/head.dmi'
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	icon_state = "ramzi_m10"
 	item_state = "ramzi_m10"
 	can_flashlight = TRUE
@@ -197,7 +197,7 @@
 	desc = "A durable bulletproof helmet, often handed out to more reliable Ramzi assets."
 	icon = 'icons/obj/clothing/faction/ramzi/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/ramzi/head.dmi'
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	icon_state = "ramzi_x11"
 	item_state = "ramzi_x11"
 	can_flashlight = TRUE
