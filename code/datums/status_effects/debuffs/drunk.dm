@@ -56,7 +56,7 @@
 	if(drunk_value <= 0)
 		qdel(src)
 
-/datum/status_effect/inebriated/tick()
+/datum/status_effect/xiated/tick()
 	// Drunk value does not decrease while dead
 	if(owner.stat == DEAD)
 		return
@@ -128,15 +128,11 @@
 		owner.apply_status_effect(/datum/status_effect/inebriated/tipsy, drunk_value)
 
 /datum/status_effect/inebriated/drunk/on_tick_effects()
-	// There's always a 30% chance to gain some drunken slurring
-	if(prob(30))
-		owner.adjust_timed_status_effect(4 SECONDS, /datum/status_effect/speech/slurring/drunk)
-
-	// And drunk people will always lose jitteriness
+	//drunk people will always lose jitteriness
 	owner.adjust_timed_status_effect(-6 SECONDS, /datum/status_effect/jitter)
 
-	// Over 11, we will constantly gain slurring up to 10 seconds of slurring.
-	if(drunk_value >= 11)
+	// Over 31, we will constantly gain slurring up to 10 seconds of slurring.
+	if(drunk_value >= 31)
 		owner.adjust_timed_status_effect(2.4 SECONDS, /datum/status_effect/speech/slurring/drunk, max_duration = 10 SECONDS)
 
 	// Over 41, we have a 30% chance to gain confusion, and we will always have 20 seconds of dizziness.
