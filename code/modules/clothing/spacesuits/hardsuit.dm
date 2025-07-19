@@ -432,7 +432,6 @@
 	kepori_override_icon = 'icons/mob/clothing/suits/spacesuits_kepori.dmi'
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
->>>>>>> upstream/master
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
 	name = "elite syndicate hardsuit helmet"
