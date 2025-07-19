@@ -109,3 +109,11 @@
 	description = "A frontiersman drug stash in the midst of being buried."
 	id = "rockplanet_river_valley_stash"
 	suffix = "rockplanet_river_valley_stash.dmm"
+
+/datum/map_template/ruin/rockplanet/smuggling
+	name = "Ramzi FOB"
+	description = "A N+S mining installation recently fallen prey to a band of Ramzi pirates."
+	id = "rockplanet_event"
+	suffix = "rockplanet_event_map.dmm"
+	ruin_tags = list()
+	placement_weight = 0
