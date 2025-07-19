@@ -61,7 +61,6 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 /// Update the atom's icon
 #define UPDATE_ICON (UPDATE_ICON_STATE|UPDATE_OVERLAYS)
 
-
 //turf-only flags
 #define NOJAUNT_1 (1<<0)
 /// If a turf can be made dirty at roundstart. This is also used in areas.

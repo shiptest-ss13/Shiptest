@@ -24,8 +24,15 @@
 	desc = "A plain dish of noodles, this needs more ingredients."
 	icon_state = "spaghettiboiled"
 	trash_type = /obj/item/trash/plate
-	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/nutriment/vitamin = 1,
+	)
 	microwaved_type = null
+
+/obj/item/food/spaghetti/boiledspaghetti/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/customizable_reagent_holder, null, CUSTOM_INGREDIENT_ICON_SCATTER, max_ingredients = 6)
 
 /obj/item/food/spaghetti/pastatomato
 	name = "spaghetti"
@@ -33,7 +40,11 @@
 	icon_state = "pastatomato"
 	trash_type = /obj/item/trash/plate
 	bite_consumption = 4
-	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/tomatojuice = 10, /datum/reagent/consumable/nutriment/vitamin = 4)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/tomatojuice = 10,
+		/datum/reagent/consumable/nutriment/vitamin = 4,
+	)
 	microwaved_type = null
 	tastes = list("pasta" = 1, "tomato" = 1)
 	foodtypes = GRAIN | FRUIT
@@ -43,7 +54,10 @@
 	desc = "A dish of boiled noodles with hearty meatballs."
 	icon_state = "meatballspaghetti"
 	trash_type = /obj/item/trash/plate
-	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/nutriment/vitamin = 2,
+	)
 	microwaved_type = null
 	tastes = list("pasta" = 1, "meat" = 1)
 	foodtypes = GRAIN | MEAT
@@ -53,7 +67,10 @@
 	desc = "A nice mix of noodles and fried vegetables."
 	icon_state = "chowmein"
 	trash_type = /obj/item/trash/plate
-	food_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 6)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+	)
 	microwaved_type = null
 	tastes = list("noodle" = 1, "tomato" = 1)
 
@@ -62,7 +79,11 @@
 	desc = "Nutritious, beefy and noodly."
 	icon_state = "beefnoodle"
 	trash_type = /obj/item/reagent_containers/glass/bowl
-	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/liquidgibs = 3)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+		/datum/reagent/liquidgibs = 3,
+	)
 	microwaved_type = null
 	tastes = list("noodle" = 1, "meat" = 1)
 	foodtypes = GRAIN | MEAT
@@ -72,7 +93,10 @@
 	desc = "Noodles covered in savory butter. Simple and slippery, but delicious."
 	icon_state = "butternoodles"
 	trash_type = /obj/item/trash/plate
-	food_reagents = list(/datum/reagent/consumable/nutriment = 9, /datum/reagent/consumable/nutriment/vitamin = 2)
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 9,
+		/datum/reagent/consumable/nutriment/vitamin = 2,
+	)
 	microwaved_type = null
 	tastes = list("noodle" = 1, "butter" = 1)
 	foodtypes = GRAIN | DAIRY

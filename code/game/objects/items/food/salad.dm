@@ -142,8 +142,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4
 	)
 	tastes = list("rice" = 1, "egg" = 1)
-	foodtypes = GRAIN | MEAT //EGG = MEAT -NinjaNomNom 2017
-
+	foodtypes = GRAIN | MEAT
 
 /obj/item/reagent_containers/glass/bowl
 	name = "bowl"
@@ -154,7 +153,6 @@
 	custom_materials = list(/datum/material/glass = 500)
 	w_class = WEIGHT_CLASS_NORMAL
 
-/*
 /obj/item/reagent_containers/glass/bowl/Initialize()
 	. = ..()
 	AddComponent(/datum/component/customizable_reagent_holder, /obj/item/food/salad/empty, CUSTOM_INGREDIENT_ICON_FILL, max_ingredients = 6)
@@ -162,8 +160,7 @@
 // empty salad for custom salads
 /obj/item/food/salad/empty
 	name = "salad"
+	desc = "A delicious customized salad."
+	icon_state = "bowl"
 	foodtypes = NONE
 	tastes = list()
-	icon_state = "bowl"
-	desc = "A delicious customized salad."
-*/

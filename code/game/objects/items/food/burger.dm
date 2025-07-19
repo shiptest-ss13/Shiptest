@@ -533,14 +533,10 @@
 	tastes = list("bun" = 2, "fatty meat" = 4, "rich cheese" = 3, "crisp vegetable leaf" = 1)
 	foodtypes = GRAIN | MEAT | DAIRY | VEGETABLES
 
-/* When custom food is supported again
-
 // empty burger you can customize
 /obj/item/food/burger/empty
 	name = "burger"
-	desc = "A crazy, custom burger made by a mad cook."
+	desc = "A burger of sorts."
 	icon_state = "custburg"
 	tastes = list("bun")
 	foodtypes = GRAIN
-
-*/
