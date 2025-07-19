@@ -7,7 +7,7 @@
 	damage = 40
 	damage_type = STAMINA
 	stutter = 5
-	jitter = 20
+	jitter = 20 SECONDS
 	range = 6
 	tracer_type = /obj/effect/projectile/tracer/stun
 	muzzle_type = /obj/effect/projectile/muzzle/stun

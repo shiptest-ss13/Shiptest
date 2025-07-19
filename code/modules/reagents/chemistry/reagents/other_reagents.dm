@@ -880,7 +880,7 @@
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
 		to_chat(M, span_warning("You feel unstable..."))
-		M.adjust_jitter(2)
+		M.adjust_timed_status_effect(2 SECONDS * REM, /datum/status_effect/jitter, max_duration = 40 SECONDS)
 		current_cycle = 1
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
@@ -995,7 +995,7 @@
 	taste_description = "sourness"
 
 /datum/reagent/cryptobiolin/on_mob_life(mob/living/carbon/M)
-	M.Dizzy(1)
+	M.set_timed_status_effect(2 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if(!M.confused)
 		M.confused = 1
 	M.confused = max(M.confused, 20)
@@ -1008,7 +1008,7 @@
 	taste_description = "numbness"
 
 /datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(5)
+	M.set_timed_status_effect(8 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
 	if(prob(80))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
 	if(prob(50))
@@ -1171,7 +1171,7 @@
 		M.losebreath += 2
 		M.confused = min(M.confused + 2, 5)
 	..()
-
+/* commented out till i make carbon monoxide poisoning a status effect)
 /datum/reagent/carbon_monoxide
 	name = "Carbon Monoxide"
 	description = "A highly dangerous gas for sapients."
@@ -1191,11 +1191,11 @@
 			to_chat(src, span_warning("You feel dizzy."))
 		if(50 to 150)
 			to_chat(victim, span_warning("[pick("Your head hurts.", "Your head pounds.")]"))
-			victim.Dizzy(5)
+			victim.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE))
 		if(150 to 250)
 			to_chat(victim, span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"))
 			victim.Stun(10)
-			victim.Dizzy(5)
+			victim.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE))
 			victim.confused = (accumulation/50)
 			victim.gain_trauma(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
 
@@ -1203,7 +1203,7 @@
 			to_chat(victim, span_userdanger("[pick("What were you doing...?", "Where are you...?", "What's going on...?")]"))
 			victim.adjustStaminaLoss(3)
 
-			victim.Dizzy(5)
+			victim.set_timed_status_effect(10 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE))
 			victim.confused = (accumulation/50)
 			victim.drowsyness = (accumulation/50)
 
@@ -1245,6 +1245,8 @@
 	var/mob/living/carbon/living_carbon = living_mob
 	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage1)
 	living_carbon.cure_trauma_type(/datum/brain_trauma/mild/monoxide_poisoning_stage2)
+
+*/
 
 /datum/reagent/stimulum
 	name = "Stimulum"
@@ -2103,8 +2105,7 @@
 /datum/reagent/peaceborg/confuse/on_mob_life(mob/living/carbon/M)
 	if(M.confused < 6)
 		M.confused = clamp(M.confused + 3, 0, 5)
-	if(M.dizziness < 6)
-		M.dizziness = clamp(M.dizziness + 3, 0, 5)
+	M.adjust_timed_status_effect(-6 SECONDS, /datum/status_effect/dizziness)
 	if(prob(20))
 		to_chat(M, "You feel confused and disoriented.")
 	..()
@@ -2413,8 +2414,8 @@
 	for(var/datum/reagent/medicine/mannitol/chem in M.reagents.reagent_list)
 		M.reagents.remove_reagent(chem.type, chem.volume)
 
-	M.adjust_jitter(3)
-	M.Dizzy(3)
+	M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/jitter, only_if_higher = TRUE)
+	M.set_timed_status_effect(6 SECONDS * REM, /datum/status_effect/dizziness, only_if_higher = TRUE)
 	if(prob(0.1) && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.seizure()

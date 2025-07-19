@@ -442,7 +442,7 @@
 		to_chat(victim, span_userdanger("[user] finishes applying [I] to your [limb.name], your bones coursing with pain!"))
 	else
 		var/painkiller_bonus = 0
-		if(victim.drunkenness > 10)
+		if(victim.get_drunk_amount() > 10)
 			painkiller_bonus += 10
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/morphine))
 			painkiller_bonus += 20

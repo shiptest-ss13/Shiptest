@@ -75,7 +75,6 @@
 	var/cpr_time = 1
 	var/damageoverlaytemp = 0
 
-	var/drunkenness = 0 ///Overall drunkenness
 	var/stam_regen_start_time = 0 ///used to halt stamina regen temporarily
 
 	/// Protection (insulation) from the heat, Value 0-1 corresponding to the percentage of protection
