@@ -205,9 +205,9 @@
 	id = "roachboom"
 	},
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/machinery/firealarm/directional/south,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "cU" = (
@@ -268,13 +268,12 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner{
 	dir = 8
 	},
-/obj/structure/closet/wall/red/directional/north,
+/obj/structure/closet/wall/red/directional/north{
+	name = "Captain's closet"
+	},
 /obj/item/storage/guncase/pistol/a357,
 /obj/item/storage/box/ammo/a357,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/head/HoS/syndicate,
 /obj/item/clothing/gloves/combat{
 	pixel_x = 0;
 	pixel_y = -10
@@ -290,6 +289,12 @@
 	id = "privateroach";
 	name = "privacy lock"
 	},
+/obj/item/clothing/under/syndicate/ramzi/officer,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/head/ramzi/beret,
+/obj/item/clothing/head/ramzi/peaked,
+/obj/item/clothing/suit/armor/ramzi/officer,
+/obj/item/clothing/suit/armor/ramzi/captain,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "dR" = (
@@ -329,6 +334,7 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew)
 "ew" = (
@@ -457,11 +463,11 @@
 /turf/open/floor/plasteel/patterned/grid/dark,
 /area/ship/hallway/central)
 "fG" = (
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/clothing/suit/space/syndicate/ramzi,
 /obj/item/clothing/head/helmet/space/syndicate/ramzi,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "fQ" = (
@@ -570,6 +576,16 @@
 /obj/effect/turf_decal/industrial/warning{
 	color = "#912a2a"
 	},
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "Lieutenant's closet";
+	req_access = list(3);
+	icon_state = "sec_wall"
+	},
+/obj/item/clothing/under/syndicate/ramzi/officer,
+/obj/item/clothing/suit/armor/ramzi/officer,
+/obj/item/clothing/head/ramzi/beret,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/shoes/combat,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "hv" = (
@@ -1124,18 +1140,6 @@
 	pixel_x = 6;
 	pixel_y = -2
 	},
-/obj/item/storage/belt/military{
-	pixel_x = -5;
-	pixel_y = 0
-	},
-/obj/item/storage/belt/military{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/storage/belt/military{
-	pixel_x = -5;
-	pixel_y = 11
-	},
 /obj/item/flashlight/seclite{
 	pixel_x = 9;
 	pixel_y = 1
@@ -1156,6 +1160,12 @@
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/radio/headset/syndicate/alt,
 /obj/item/radio/headset/syndicate/alt,
+/obj/item/storage/belt/security/webbing/ramzi/alt,
+/obj/item/storage/belt/security/webbing/ramzi/alt,
+/obj/item/storage/belt/security/webbing/ramzi/alt,
+/obj/item/storage/belt/security/webbing/ramzi,
+/obj/item/storage/belt/security/webbing/ramzi,
+/obj/item/storage/belt/security/webbing/ramzi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "qd" = (
@@ -1754,9 +1764,9 @@
 "xH" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /obj/machinery/airalarm/directional/west,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "xL" = (
@@ -1975,6 +1985,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/item/clothing/head/hardhat/ramzi,
+/obj/item/clothing/mask/gas/ramzi,
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/under/syndicate/ramzi,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engines/starboard)
 "Ah" = (
@@ -2322,6 +2336,11 @@
 	},
 /obj/structure/chair/sofa/grey/old/right/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light_switch{
+	pixel_x = -20;
+	pixel_y = -9;
+	dir = 4
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "EE" = (
@@ -2335,37 +2354,37 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/item/clothing/suit/armor/vest/syndie{
-	pixel_x = -10;
-	pixel_y = -9
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = -11;
+	pixel_y = -5
 	},
-/obj/item/clothing/suit/armor/vest/syndie{
-	pixel_x = -2;
-	pixel_y = -9
+/obj/item/clothing/suit/armor/ramzi{
+	pixel_x = -3;
+	pixel_y = -5
 	},
-/obj/item/clothing/suit/armor/vest/syndie{
-	pixel_x = 6;
-	pixel_y = -9
+/obj/item/clothing/suit/armor/ramzi/bulletproof{
+	pixel_x = 4;
+	pixel_y = -6
 	},
-/obj/item/clothing/suit/armor/vest/syndie{
-	pixel_x = 12;
-	pixel_y = -9
+/obj/item/clothing/suit/armor/ramzi/bulletproof{
+	pixel_x = 10;
+	pixel_y = -7
 	},
-/obj/item/clothing/head/helmet/syndie{
-	pixel_x = -9;
-	pixel_y = 3
+/obj/item/clothing/head/helmet/ramzi{
+	pixel_x = -12;
+	pixel_y = 8
 	},
-/obj/item/clothing/head/helmet/syndie{
-	pixel_x = 0;
-	pixel_y = 3
+/obj/item/clothing/head/helmet/ramzi{
+	pixel_x = -4;
+	pixel_y = 8
 	},
-/obj/item/clothing/head/helmet/syndie{
-	pixel_x = 5;
-	pixel_y = 3
+/obj/item/clothing/head/helmet/ramzi/bulletproof{
+	pixel_x = 4;
+	pixel_y = 6
 	},
-/obj/item/clothing/head/helmet/syndie{
+/obj/item/clothing/head/helmet/ramzi/bulletproof{
 	pixel_x = 11;
-	pixel_y = 4
+	pixel_y = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
@@ -2714,9 +2733,9 @@
 /area/ship/medical)
 "Jt" = (
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "Jx" = (
@@ -3319,11 +3338,11 @@
 /obj/structure/railing/thin/corner{
 	dir = 4
 	},
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/clothing/suit/space/syndicate/ramzi,
 /obj/item/clothing/head/helmet/space/syndicate/ramzi,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "QG" = (
@@ -3463,26 +3482,6 @@
 "RS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/wall/directional/south,
-/obj/item/clothing/under/syndicate/gorlex{
-	pixel_x = 11;
-	pixel_y = -8
-	},
-/obj/item/clothing/under/syndicate/gorlex{
-	pixel_x = 6;
-	pixel_y = -8
-	},
-/obj/item/clothing/under/syndicate/gorlex{
-	pixel_x = 1;
-	pixel_y = -8
-	},
-/obj/item/clothing/under/syndicate/gorlex{
-	pixel_x = -4;
-	pixel_y = -8
-	},
-/obj/item/clothing/under/syndicate/gorlex{
-	pixel_x = -9;
-	pixel_y = -8
-	},
 /obj/item/clothing/shoes/workboots{
 	pixel_x = -4;
 	pixel_y = 7
@@ -3502,6 +3501,30 @@
 /obj/item/clothing/shoes/workboots{
 	pixel_x = -8;
 	pixel_y = 7
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -15;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = -5;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/syndicate/ramzi{
+	pixel_x = 2;
+	pixel_y = -8
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = 10;
+	pixel_y = -9
+	},
+/obj/item/clothing/under/syndicate/ramzi/overalls{
+	pixel_x = 15;
+	pixel_y = -9
 	},
 /turf/open/floor/carpet/green,
 /area/ship/crew)
@@ -3710,10 +3733,63 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 10
 	},
-/obj/machinery/light_switch{
-	pixel_x = -20;
-	pixel_y = 9;
-	dir = 4
+/obj/structure/closet/wall/directional/west,
+/obj/item/clothing/head/ramzi{
+	pixel_x = -10;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/ramzi{
+	pixel_x = 0;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/ramzi{
+	pixel_x = 10;
+	pixel_y = 5
+	},
+/obj/item/clothing/head/ramzi{
+	pixel_x = -10;
+	pixel_y = -5
+	},
+/obj/item/clothing/head/ramzi{
+	pixel_x = 0;
+	pixel_y = -5
+	},
+/obj/item/clothing/head/ramzi{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -10;
+	pixel_y = -6
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = 0;
+	pixel_y = -7
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = 10;
+	pixel_y = -8
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -13;
+	pixel_y = 11
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = -1;
+	pixel_y = 12
+	},
+/obj/item/clothing/neck/shemagh/ramzi{
+	pixel_x = 11;
+	pixel_y = 13
+	},
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = -8;
+	pixel_y = 0
+	},
+/obj/item/clothing/head/ramzi/flap,
+/obj/item/clothing/head/ramzi/flap{
+	pixel_x = 10;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -3856,8 +3932,8 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/machinery/firealarm/directional/east,
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "VD" = (
@@ -3969,6 +4045,8 @@
 	pixel_x = 3;
 	pixel_y = 5
 	},
+/obj/item/clothing/suit/ramzi/smock,
+/obj/item/clothing/head/ramzi/surgical,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "Xj" = (

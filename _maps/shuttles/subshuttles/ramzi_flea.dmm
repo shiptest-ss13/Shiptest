@@ -2,8 +2,8 @@
 "a" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "b" = (
@@ -199,10 +199,6 @@
 	pixel_x = 0;
 	pixel_y = -10
 	},
-/obj/item/clothing/under/syndicate/gorlex{
-	pixel_x = 0;
-	pixel_y = -6
-	},
 /obj/item/clothing/shoes/workboots{
 	pixel_x = 0;
 	pixel_y = -9
@@ -214,6 +210,9 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/radio/headset/syndicate/alt/leader,
 /obj/item/megaphone,
+/obj/item/clothing/under/syndicate/ramzi/officer,
+/obj/item/clothing/head/ramzi/beret,
+/obj/item/storage/belt/security/webbing/ramzi/alt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "t" = (

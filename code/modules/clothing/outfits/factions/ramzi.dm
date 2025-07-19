@@ -1,7 +1,7 @@
 /datum/outfit/job/ramzi
 	name = "Ramzi Clique - Base Outfit"
 
-	uniform = /obj/item/clothing/under/syndicate/gorlex
+	uniform = /obj/item/clothing/under/syndicate/ramzi
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/pirate/alt
@@ -39,11 +39,11 @@
 
 	job_icon = "captain"
 	jobtype = /datum/job/captain
-
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
 
 	ears = /obj/item/radio/headset/pirate/alt/captain
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	head = /obj/item/clothing/head/HoS/syndicate
+	suit = /obj/item/clothing/suit/armor/ramzi/captain
+	head = /obj/item/clothing/head/ramzi/peaked
 
 //Head Of Security
 
@@ -53,11 +53,13 @@
 	id_assignment = "Sweeper Lead"
 	job_icon = "headofsecurity"
 	jobtype = /datum/job/hos
-
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
+	suit = /obj/item/clothing/suit/armor/ramzi/officer
+	head = /obj/item/clothing/head/ramzi/beret
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/syndicate)
+	backpack_contents = list(/obj/item/clothing/mask/gas/ramzi)
 
 //Security Officer
 
@@ -67,11 +69,11 @@
 	id_assignment = "Sweeper"
 	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
-
+	uniform = /obj/item/clothing/under/syndicate/ramzi/overalls
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/syndicate)
+	backpack_contents = list(/obj/item/clothing/mask/gas/ramzi)
 
 //Pilot
 
@@ -80,7 +82,7 @@
 	id_assignment = "Shuttle Chief"
 	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
-
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
 	l_pocket = /obj/item/weldingtool/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
@@ -92,12 +94,12 @@
 	id_assignment = "Sawbones"
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
-
+	uniform = /obj/item/clothing/under/syndicate/ramzi/overalls
 	accessory = /obj/item/clothing/accessory/armband/med
 	glasses = /obj/item/clothing/glasses/hud/health
 	r_pocket = /obj/item/melee/knife/survival
-	suit = /obj/item/clothing/suit/frontiersmen
-	head = /obj/item/clothing/head/frontier
+	suit = /obj/item/clothing/suit/ramzi/smock
+	head = /obj/item/clothing/head/ramzi/surgical
 
 //Engineer
 
@@ -107,9 +109,9 @@
 	id_assignment = "Motorman"
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
-
+	head = /obj/item/clothing/head/hardhat/ramzi
+	suit = /obj/item/clothing/suit/ramzi
 	accessory = /obj/item/clothing/accessory/armband/engine
 	shoes = /obj/item/clothing/shoes/workboots
-	head = /obj/item/clothing/head/hardhat/white
 
 	r_pocket = /obj/item/analyzer
