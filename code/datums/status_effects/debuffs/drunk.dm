@@ -128,6 +128,7 @@
 		owner.apply_status_effect(/datum/status_effect/inebriated/tipsy, drunk_value)
 
 /datum/status_effect/inebriated/drunk/on_tick_effects()
+	// Drunk people will always lose jitteriness
 	owner.adjust_timed_status_effect(-6 SECONDS, /datum/status_effect/jitter)
 
 	// Over 31, we will constantly gain slurring up to 10 seconds of slurring.
