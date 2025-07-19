@@ -177,7 +177,9 @@
 
 	var/list/outfit_override
 
-/obj/effect/mob_spawn/human/Initialize()
+/obj/effect/mob_spawn/human/Initialize(mapload, species)
+	if(species)
+		mob_species = species
 	if(ispath(outfit))
 		outfit = new outfit()
 	if(!outfit)
