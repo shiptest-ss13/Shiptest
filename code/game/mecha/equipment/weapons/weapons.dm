@@ -126,16 +126,14 @@
 	return "[..()] \[<a href='byond://?src=[REF(src)];mode=0'>Laser</a>|<a href='byond://?src=[REF(src)];mode=1'>Disabler</a>\]"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
-	equip_cooldown = 16
+	equip_cooldown = 30
 	name = "\improper CH-LC \"Solaris\" beam sniper"
 	desc = "A weapon for combat exosuits. Shoots long range heavy beam lasers."
 	icon_state = "mecha_laser"
-	energy_drain = 60
+	energy_drain = 1000
 	projectile = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	full_auto = FALSE
-	zoom_mod = 10
-	zoom_out_mod = 3
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
 	equip_cooldown = 20
