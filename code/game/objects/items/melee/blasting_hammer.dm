@@ -90,7 +90,7 @@
 			if(spend_round)
 				if(!istype(chambered, /obj/item/ammo_casing/shotgun/blank)) //loading a live round into your hammer when it has nowhere to go is a bad idea.
 					chambered.fire_casing(user,null, null, null, FALSE, ran_zone(BODY_ZONE_CHEST, 50), 0, src,TRUE)
-					user.visible_message(span_warning("The live [chambered] in \the [src] backfires into \the [user]!"), span_danger("The live [chambered] in \the [src] goes off right at you!"))
+					user.visible_message(span_warning("\The [chambered] in \the [src] backfires into \the [user]!"), span_danger("\The [chambered] in \the [src] goes off right at you!"))
 				chambered.BB = null
 				chambered.update_appearance()
 				playsound(src,'sound/weapons/gun/shotgun/brimstone.ogg',100)
