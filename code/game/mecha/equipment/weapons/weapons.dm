@@ -128,13 +128,12 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 16
 	name = "\improper CH-LC \"Solaris\" beam sniper"
-	desc = "A scoped weapon for combat exosuits. Shoots long range heavy beam lasers."
+	desc = "A weapon for combat exosuits. Shoots long range heavy beam lasers."
 	icon_state = "mecha_laser"
 	energy_drain = 60
 	projectile = /obj/projectile/beam/emitter/hitscan
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	full_auto = FALSE
-	scoped = TRUE
 	zoom_mod = 10
 	zoom_out_mod = 3
 
