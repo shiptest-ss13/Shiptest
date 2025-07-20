@@ -54,7 +54,7 @@
 	availability_prob = 15
 	spawn_weighting = FALSE
 
-/datum/blackmarket_item/clothing/coalition_armor/spawn_item(loc)
+/datum/blackmarket_item/weapon/blastinghammer/spawn_item(loc)
 	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
 	new /obj/item/melee/sledgehammer/gorlex/blasting(B)
 	new /obj/item/storage/box/ammo/a12g_blank(B)
