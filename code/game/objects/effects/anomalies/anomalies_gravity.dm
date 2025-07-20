@@ -50,7 +50,8 @@
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 	for(var/mob/living/carbon/carbon in orange(effectrange/2, src))
-		carbon.apply_damage(15, BRUTE, spread_damage = TRUE, wound_bonus = 20, bare_wound_bonus = 0, sharpness = 0)
+		var/target_armor = carbon.run_armor_check(attack_flag = "melee")
+		carbon.apply_damage(15, BRUTE, spread_damage = TRUE, wound_bonus = target_armor, bare_wound_bonus = 0, sharpness = 0)
 
 /obj/effect/anomaly/grav/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
