@@ -24,6 +24,7 @@
 	content_overlays = FALSE
 	pocket_storage_component_path = null
 	equip_self_flags = null
+	paintable = FALSE
 
 /obj/item/clothing/suit/space
 	name = "space suit"
@@ -51,3 +52,4 @@
 	greyscale_colors = list(list(17, 16), list(9, 17), list(13, 13))
 	greyscale_icon_state = "spacesuit"
 	equip_self_flags = null
+	paintable = FALSE
