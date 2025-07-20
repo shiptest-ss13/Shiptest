@@ -72,7 +72,9 @@
 		boing = 0
 		if(iscarbon(Guy))
 			for(var/mob/living/carbon/carbon in range(0,src))
-				carbon.apply_damage(20, BRUTE, spread_damage = TRUE, wound_bonus = 30, bare_wound_bonus = 0, sharpness = 0)
+				var/target_armor = carbon.run_armor_check(attack_flag = "melee")
+				carbon.apply_damage(15, BRUTE, spread_damage = TRUE, wound_bonus = target_armor, bare_wound_bonus = 0, sharpness = 0)
+
 
 /obj/effect/anomaly/grav/high
 	effectrange = 5
