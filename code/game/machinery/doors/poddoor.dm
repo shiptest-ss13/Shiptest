@@ -63,8 +63,9 @@
 		return TRUE
 	if(!(machine_stat & NOPOWER))
 		do_sparks(5, TRUE, src)
-		electrocute_mob(user, get_area(src), src, 1, TRUE) //zorp
 		close()
+		if(electrocute_mob(user, get_area(src), src, 1, TRUE)) //zorp
+			return FALSE
 	to_chat(user, span_notice("You start to cut [src] apart"))
 	if(tool.use_tool(src, user, 10 SECONDS, volume = 75))
 		deconstruct(TRUE)

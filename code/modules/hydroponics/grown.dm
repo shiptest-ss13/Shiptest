@@ -84,9 +84,6 @@
 				microwaved_type = microwaved_type,\
 				junkiness = junkiness)
 
-/obj/item/food/grown/proc/make_dryable()
-	AddElement(/datum/element/dryable, type)
-
 /obj/item/food/grown/make_leave_trash()
 	if(trash_type)
 		AddElement(/datum/element/food_trash, trash_type, FOOD_TRASH_OPENABLE, TYPE_PROC_REF(/obj/item/food/grown/, generate_trash))
