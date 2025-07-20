@@ -51,6 +51,9 @@
 	icon_state = "plating_rust"
 	},
 /area/ship/maintenance)
+"bd" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/maintenance/port)
 "bj" = (
 /obj/machinery/light/directional/north,
 /obj/structure/rack,
@@ -860,6 +863,11 @@
 /obj/effect/turf_decal/industrial/hatch,
 /turf/open/floor/pod/dark,
 /area/ship/maintenance/port)
+"iT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plating,
+/area/ship/maintenance)
 "iW" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/iv_drip,
@@ -1521,15 +1529,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"pg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	icon_state = "5-8"
-	},
-/turf/open/floor/plating{
-	icon_state = "plating_rust"
-	},
-/area/ship/maintenance)
 "ph" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -1592,9 +1591,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"pS" = (
-/turf/closed/wall/r_wall,
-/area/ship/maintenance/port)
 "pW" = (
 /obj/effect/spawner/random/trash/grille_or_waste,
 /obj/effect/decal/cleanable/dirt,
@@ -1720,6 +1716,12 @@
 	icon_state = "!";
 	pixel_y = 6;
 	pixel_x = -7
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance)
+"se" = (
+/obj/structure/cable/yellow{
+	icon_state = "6-9"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
@@ -1883,13 +1885,6 @@
 /obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
-"uf" = (
-/obj/effect/turf_decal/siding/blue{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ship/crew/canteen)
 "uh" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2125,12 +2120,6 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/cargo)
-"wx" = (
-/obj/structure/cable/yellow{
-	icon_state = "6-9"
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance)
 "wC" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/double/black,
@@ -2527,9 +2516,13 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Cx" = (
-/obj/machinery/portable_atmospherics/pump,
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
+	},
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
 /area/ship/maintenance)
 "Cy" = (
 /obj/structure/chair/stool{
@@ -3259,6 +3252,12 @@
 	icon_state = "wood-broken2"
 	},
 /area/ship/crew/crewtwo)
+"Kh" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ship/crew)
 "Kn" = (
 /obj/structure/frame/machine,
 /obj/effect/decal/cleanable/dirt,
@@ -4163,7 +4162,7 @@
 	},
 /area/ship/crew/crewtwo)
 "TR" = (
-/turf/closed/wall/r_wall/rust,
+/turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
 "TZ" = (
 /obj/machinery/door/airlock/hatch{
@@ -4506,12 +4505,6 @@
 /obj/effect/turf_decal/borderfloorblack/full,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
-"Xo" = (
-/obj/effect/turf_decal/siding/thinplating/dark/corner{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/crew)
 "Xs" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/yellow{
@@ -4588,6 +4581,13 @@
 /area/ship/maintenance)
 "XP" = (
 /turf/open/floor/plasteel/dark,
+/area/ship/crew/canteen)
+"XW" = (
+/obj/effect/turf_decal/siding/blue{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "XX" = (
 /obj/structure/cable/yellow{
@@ -4986,7 +4986,7 @@ Ek
 VO
 jK
 jK
-pS
+TR
 Ek
 rd
 uE
@@ -5020,10 +5020,10 @@ Ek
 Ek
 Ek
 Ek
-pS
+TR
 Pu
 EI
-TR
+bd
 Ek
 rd
 lh
@@ -5057,11 +5057,11 @@ Ek
 Ek
 Ek
 Ek
-TR
+bd
 OP
 HX
+bd
 TR
-pS
 rd
 lh
 VE
@@ -5099,7 +5099,7 @@ DF
 QP
 CG
 EN
-pS
+TR
 VP
 oV
 pA
@@ -5168,7 +5168,7 @@ lJ
 lJ
 Ek
 lJ
-TR
+bd
 Lt
 GY
 dX
@@ -5205,7 +5205,7 @@ QJ
 QJ
 QJ
 QJ
-TR
+bd
 Ha
 uP
 em
@@ -5449,7 +5449,7 @@ wK
 zJ
 QJ
 Hk
-wx
+se
 Bk
 QJ
 QJ
@@ -5464,7 +5464,7 @@ QJ
 QJ
 Rc
 Bk
-Hk
+iT
 QJ
 so
 Wx
@@ -5524,7 +5524,7 @@ BG
 HE
 Kn
 bR
-pg
+Cx
 QJ
 lJ
 lJ
@@ -5687,7 +5687,7 @@ OG
 Rs
 Ab
 DN
-Xo
+Kh
 AE
 Vg
 Ab
@@ -5830,7 +5830,7 @@ Ek
 lJ
 lJ
 QJ
-Cx
+YE
 XC
 eA
 Ab
@@ -5846,7 +5846,7 @@ Te
 jV
 qp
 At
-uf
+XW
 PJ
 Vt
 Vt
