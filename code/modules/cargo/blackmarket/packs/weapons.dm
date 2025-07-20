@@ -42,18 +42,6 @@
 	stock_max = 3
 	availability_prob = 30
 
-/datum/blackmarket_item/weapon/blastinghammer
-	name = "Blasting Hammer"
-	desc = "Have you ever thought: \"Man, my 20 pound sledgehammer isn't crushing skulls well enough.\" No? Well, our friends in the Ramzi Clique have solved this issue anyways and made it everyone else's problem. This baby loads 12g blanks as propollent to really make that swing a home run. Just don't put a live shell in, yeah?"
-	item = /obj/item/storage/backpack/duffelbag/syndie
-	pair_item = list(/datum/blackmarket_item/ammo/blanks)
-
-	cost_min = 6500
-	cost_max = 9000
-	stock = 1
-	availability_prob = 15
-	spawn_weighting = FALSE
-
 /datum/blackmarket_item/weapon/blastinghammer/spawn_item(loc)
 	var/obj/item/storage/backpack/duffelbag/syndie/B = ..()
 	new /obj/item/melee/sledgehammer/gorlex/blasting(B)

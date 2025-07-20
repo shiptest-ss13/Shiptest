@@ -66,7 +66,6 @@
 		if(istype(O, /obj/machinery/door/airlock))
 			var/obj/machinery/door/airlock/breaching = O
 			user.visible_message(span_warning("[user] smashes open \the [breaching] with \the [src] like it was made of glass!"), span_warning("You smash open \the [breaching] with a thundering boom!"), span_warning("You hear a defeaning boom."))
-			breaching.Destroy()
 
 /obj/item/melee/sledgehammer/gorlex/blasting/closed_turf_attack(turf/closed/wall, mob/living/user, param)
 	proccess_chamber(user,TRUE)
