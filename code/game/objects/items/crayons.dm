@@ -651,6 +651,11 @@
 
 		return
 
+	if(istype(target, /obj/item/clothing))
+		var/obj/item/clothing/jorts = target
+		if(!jorts.paintable)
+			return FALSE
+
 	if(isobj(target) && !istype(target, /obj/effect/decal/cleanable/crayon/gang))
 		if(actually_paints)
 			if(color_hex2num(paint_color) < 350 && !istype(target, /obj/structure/window) && !istype(target, /obj/effect/decal/cleanable/crayon)) //Colors too dark are rejected
