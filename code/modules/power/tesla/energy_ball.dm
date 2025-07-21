@@ -166,7 +166,7 @@
 	*/
 	var/atom/closest_atom
 	var/closest_type = 0
-	var/static/things_to_shock = typecacheof(list(/obj/machinery, /turf/closed/wall, /obj/structure, /obj/vehicle/ridden))
+	var/static/things_to_shock = typecacheof(list(/obj/machinery, /turf/closed/wall, /obj/structure, /obj/vehicle/ridden, /mob/living))
 	var/static/blacklisted_tesla_types = typecacheof(list(/obj/machinery/atmospherics,
 										/obj/machinery/power/emitter,
 										/obj/machinery/field/generator,
