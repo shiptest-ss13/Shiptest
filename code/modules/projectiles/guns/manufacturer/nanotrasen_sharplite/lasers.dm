@@ -153,6 +153,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultima)
 	//ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	w_class = WEIGHT_CLASS_BULKY
+	fire_delay = 0.6 SECONDS
+	shaded_charge = TRUE
 
 	wield_slowdown = SHOTGUN_SLOWDOWN
 	aimed_wield_slowdown = SHOTGUN_AIM_SLOWDOWN
