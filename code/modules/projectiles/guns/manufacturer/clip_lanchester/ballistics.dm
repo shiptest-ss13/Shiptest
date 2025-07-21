@@ -404,6 +404,19 @@ NO_MAG_GUN_HELPER(automatic/smg/cm5/compact)
 
 NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
+/obj/item/gun/ballistic/automatic/marksman/f4/indie
+	name = "\improper F3"
+	desc = "An old model of CLIP's F4 rifle, designed very early into the history of the League. Most have been sold off as surplus by this point and tend to suffer from internal wear due to their age. Chambered in .308."
+	icon = 'icons/obj/guns/manufacturer/frontier_import/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/frontier_import/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/frontier_import/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/frontier_import/onmob.dmi'
+
+	icon_state = "f4_indie"
+	item_state = "f4_indie"
+
+	wear_rate = 1.5
+
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
 	desc = "A powerful sniper rifle used by vanishingly rare CLIP specialists, capable of impressive range and penetrating power. Chambered in 6.5mm CLIP."
@@ -773,3 +786,5 @@ NO_MAG_GUN_HELPER(automatic/marksman/f4/inteq)
 
 /obj/item/gun/ballistic/shotgun/cm15/incendiary
 	default_ammo_type = /obj/item/ammo_box/magazine/cm15_12g/incendiary
+
+

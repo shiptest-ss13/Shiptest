@@ -100,7 +100,7 @@
 
 /obj/item/trash/can/food/peaches
 	name = "canned peaches"
-	icon = 'icons/obj/food/food.dmi'
+	icon = 'icons/obj/food/canned.dmi'
 	icon_state = "peachcan_empty"
 
 /obj/item/trash/can/food/peaches/maint
@@ -109,8 +109,13 @@
 
 /obj/item/trash/can/food/beans
 	name = "tin of beans"
-	icon = 'icons/obj/food/food.dmi'
+	icon = 'icons/obj/food/canned.dmi'
 	icon_state = "beans_empty"
+
+/obj/item/trash/can/food/beefbroth
+	name = "canned beef broth"
+	icon = 'icons/obj/food/canned.dmi'
+	icon_state = "beefcan_empty"
 
 /obj/item/trash/can/Initialize()
 	. = ..()

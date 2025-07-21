@@ -77,8 +77,8 @@
 	accelerant_quality = 10
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
-	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
-		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+	if(C.has_reagent(/datum/reagent/medicine/epinephrine))
+		C.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	C.adjustPlasma(20)
 	return ..()
 
@@ -129,8 +129,8 @@
 	material = /datum/material/hot_ice
 
 /datum/reagent/toxin/hot_ice/on_mob_life(mob/living/carbon/M)
-	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
-		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
+	if(M.has_reagent(/datum/reagent/medicine/epinephrine))
+		M.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
 	M.adjustPlasma(20)
 	M.adjust_bodytemperature(-2 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(), FALSE)
 	return ..()
@@ -211,7 +211,7 @@
 /datum/reagent/toxin/zombiepowder/expose_mob(mob/living/L, method=TOUCH, reac_volume)
 	L.adjustOxyLoss(0.5*REM, 0)
 	if(method == INGEST)
-		var/datum/reagent/toxin/zombiepowder/Z = L.reagents.has_reagent(/datum/reagent/toxin/zombiepowder)
+		var/datum/reagent/toxin/zombiepowder/Z = L.has_reagent(/datum/reagent/toxin/zombiepowder)
 		if(istype(Z))
 			Z.fakedeath_active = TRUE
 
@@ -508,7 +508,7 @@
 	. = 1
 	if(prob(15))
 		M.reagents.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
-		M.reagents.remove_reagent(/datum/reagent/toxin/venom, 1.1)
+		M.remove_reagent(/datum/reagent/toxin/venom, 1.1)
 	else
 		..()
 
@@ -585,7 +585,7 @@
 		. = 1
 	if(prob(3))
 		M.reagents.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
-		M.reagents.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
+		M.remove_reagent(/datum/reagent/toxin/itching_powder,1.2)
 		return
 	..()
 
@@ -754,22 +754,20 @@
 
 /datum/reagent/toxin/heparin //Based on a real-life anticoagulant. I'm not a doctor, so this won't be realistic.
 	name = "Heparin"
-	description = "A powerful anticoagulant. Victims will bleed uncontrollably and suffer scaling bruising."
+	description = "A powerful anticoagulant. All open cut wounds on the victim will open up and bleed much faster"
 	silent_toxin = TRUE
 	reagent_state = LIQUID
 	color = "#C8C8C8" //RGB: 200, 200, 200
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	toxpwr = 0
 
-/datum/reagent/toxin/heparin/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		for(var/obj/item/bodypart/BP in H.get_bleeding_parts())
-			BP.adjust_bleeding(BP.bleeding * 0.1)
-		H.adjustBruteLoss(1, 0) //Brute damage increases with the amount they're bleeding
-		. = 1
-	return ..() || .
+/datum/reagent/toxin/heparin/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/toxin/heparin)
+	return ..()
 
+/datum/reagent/toxin/heparin/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/toxin/heparin)
+	return ..()
 
 /datum/reagent/toxin/rotatium //Rotatium. Fucks up your rotation and is hilarious
 	name = "Rotatium"
