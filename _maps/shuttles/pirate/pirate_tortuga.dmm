@@ -627,6 +627,13 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"fT" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/bad,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/port)
 "fU" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -1190,13 +1197,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
-"le" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/shuttle/engine/electric/bad,
-/turf/open/floor/plating/airless,
-/area/ship/maintenance/port)
 "lh" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -1684,13 +1684,6 @@
 /obj/structure/cable,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
-/area/ship/maintenance/starboard)
-"pi" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/shuttle/engine/electric/bad,
-/turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "pr" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -4802,6 +4795,13 @@
 /obj/machinery/power/smes/engineering,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
+"Tv" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/bad,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/starboard)
 "TG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -5705,7 +5705,7 @@ Ek
 Ek
 Ek
 zm
-le
+fT
 jK
 jA
 Ek
@@ -5725,7 +5725,7 @@ fv
 Ek
 wK
 eW
-pi
+Tv
 zJ
 Ek
 Ek
@@ -5894,10 +5894,10 @@ Ek
 Ek
 Ek
 Ek
-Ek
 Px
 Px
-Ek
+Px
+Px
 Px
 TR
 Lt
@@ -5932,7 +5932,7 @@ Ek
 (12,1,1) = {"
 Ek
 Ek
-Ek
+td
 td
 td
 td
@@ -6004,7 +6004,7 @@ lJ
 lJ
 lJ
 lJ
-Ek
+lJ
 Ek
 "}
 (14,1,1) = {"
@@ -6083,7 +6083,7 @@ Tk
 Sy
 mf
 lJ
-Ek
+lJ
 "}
 (16,1,1) = {"
 Ek
@@ -6122,7 +6122,7 @@ Hn
 JA
 mf
 lJ
-Ek
+lJ
 "}
 (17,1,1) = {"
 Ek
@@ -6161,7 +6161,7 @@ FM
 xi
 mf
 lJ
-Ek
+lJ
 "}
 (18,1,1) = {"
 Ek
@@ -6200,7 +6200,7 @@ Hl
 PR
 mf
 lJ
-Ek
+lJ
 "}
 (19,1,1) = {"
 Ek
@@ -6239,7 +6239,7 @@ mf
 mf
 mf
 lJ
-Ek
+lJ
 "}
 (20,1,1) = {"
 Ek
@@ -6278,7 +6278,7 @@ QJ
 lJ
 lJ
 lJ
-Ek
+lJ
 "}
 (21,1,1) = {"
 Ek
@@ -6316,12 +6316,12 @@ jY
 QJ
 lJ
 lJ
-Ek
+lJ
 Ek
 "}
 (22,1,1) = {"
-Ek
-Ek
+td
+td
 td
 td
 td
