@@ -614,7 +614,7 @@
 "jT" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "shrikeportlockdown";
-	name = "Port lockdown shutters"
+	name = "Port Lockdown Shutters"
 	},
 /obj/structure/cable{
 	icon_state = "2-9"
@@ -802,7 +802,7 @@
 "lS" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "shrikestarboardlockdown";
-	name = "Starboard lockdown shutters"
+	name = "Starboard Lockdown Shutters"
 	},
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -999,17 +999,17 @@
 /turf/open/floor/plating,
 /area/ship/cargo)
 "pi" = (
-/obj/machinery/door/poddoor{
-	id = "shrikecargobay";
-	name = "Cargo bay";
-	dir = 4
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "shrikecargofields";
 	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor{
+	id = "shrikecargobay";
+	name = "Cargo Bay";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
@@ -1045,13 +1045,13 @@
 /obj/structure/railing/thin{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "shrikeportlockdown";
-	name = "Port lockdown shutters"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "shrikeportlockdown";
+	name = "Port Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/stairs/mid{
 	dir = 1
@@ -1689,13 +1689,13 @@
 /obj/structure/railing/thin{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "shrikeportlockdown";
-	name = "Port lockdown shutters"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "shrikeportlockdown";
+	name = "Port Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/stairs/mid{
 	dir = 1
@@ -2015,13 +2015,13 @@
 /obj/structure/railing/thin{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "shrikestarboardlockdown";
-	name = "Starboard lockdown shutters"
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "shrikestarboardlockdown";
+	name = "Starboard Lockdown Shutters"
 	},
 /turf/open/floor/plasteel/stairs/mid,
 /area/ship/hallway/central)
@@ -3376,7 +3376,7 @@
 "OY" = (
 /obj/machinery/door/poddoor{
 	id = "shrikecargobay";
-	name = "Cargo bay";
+	name = "Cargo Bay";
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -3460,11 +3460,6 @@
 /turf/open/floor/plasteel/lightgrey,
 /area/ship/hallway/port)
 "Qu" = (
-/obj/machinery/door/poddoor{
-	id = "shrikecargobay";
-	name = "Cargo bay";
-	dir = 4
-	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "shrikecargofields"
 	},
@@ -3472,6 +3467,11 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/door/poddoor{
+	id = "shrikecargobay";
+	name = "Cargo Bay";
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Qw" = (
