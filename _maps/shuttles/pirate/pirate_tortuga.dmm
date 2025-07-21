@@ -15,7 +15,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "smaint_shutter"
+	id = "pmaint_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -249,7 +249,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/firedoor/window,
 /obj/machinery/door/poddoor/shutters{
-	id = "pmaint_shutter"
+	id = "smaint_shutter"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -477,6 +477,9 @@
 /obj/effect/spawner/random/trash/decal,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance)
@@ -725,6 +728,13 @@
 /area/ship/crew/canteen)
 "hh" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -9;
+	pixel_y = -16
+	},
+/obj/structure/cable/yellow,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -1261,6 +1271,13 @@
 	pixel_y = -29
 	},
 /obj/item/storage/firstaid/medical,
+/obj/item/storage/firstaid/toxin{
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/glass/bottle/dimorlin,
+/obj/item/reagent_containers/syringe,
+/obj/item/reagent_containers/glass/bottle/chitosan,
+/obj/item/reagent_containers/glass/bottle/chitosan,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "lY" = (
@@ -1351,7 +1368,7 @@
 /obj/structure/closet/secure_closet{
 	icon_state = "sec";
 	name = "equipment locker";
-	req_access_txt = "1"
+	req_access_txt = "3"
 	},
 /obj/effect/turf_decal/box,
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier{
@@ -1411,6 +1428,10 @@
 	pixel_x = 8;
 	pixel_y = -4
 	},
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mZ" = (
@@ -1835,11 +1856,6 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"rx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ship/maintenance/aft)
 "rM" = (
 /obj/machinery/power/shuttle/engine/liquid/oil{
 	dir = 4
@@ -1884,7 +1900,7 @@
 /obj/machinery/button/door{
 	dir = 1;
 	pixel_y = -22;
-	id = "sboard_maint";
+	id = "smaint_shutter";
 	name = "bridge shutters"
 	},
 /obj/machinery/pipedispenser,
@@ -2012,6 +2028,9 @@
 	pixel_x = 7
 	},
 /obj/structure/table/rolling,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -2095,7 +2114,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/east,
-/turf/open/space/basic,
+/turf/open/floor/plasteel/white,
 /area/ship/medical)
 "ux" = (
 /obj/machinery/power/terminal{
@@ -2478,6 +2497,7 @@
 /obj/item/shield/riot/spike,
 /obj/item/storage/box/smokebombs,
 /obj/item/storage/toolbox/ammo/frag,
+/obj/item/crowbar/power,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "xX" = (
@@ -2687,11 +2707,11 @@
 "AA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/grille/indestructible,
-/obj/structure/window/reinforced/fulltile/unanchored,
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 1;
 	id = "flyboy"
 	},
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating,
 /area/ship/crew/office)
 "AE" = (
@@ -2941,6 +2961,7 @@
 	},
 /obj/item/clothing/head/beret/sec/frontier/officer,
 /obj/item/radio/headset/pirate/alt,
+/obj/item/binoculars,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "DF" = (
@@ -3044,6 +3065,12 @@
 /obj/item/modular_computer/laptop/preset/civilian/rilena,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"Ez" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/decoration/glowstick/on,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "EB" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-12"
@@ -3240,13 +3267,13 @@
 /area/ship/security/armory)
 "FR" = (
 /obj/effect/decal/cleanable/glass,
-/obj/machinery/computer/arcade{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /obj/machinery/light/directional/south,
+/obj/machinery/computer/arcade/orion_trail{
+	dir = 1
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -3270,7 +3297,8 @@
 /area/ship/crew)
 "Gb" = (
 /obj/machinery/door/airlock/security/glass{
-	dir = 4
+	dir = 4;
+	req_one_access = list(1)
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
@@ -3308,11 +3336,6 @@
 /obj/effect/turf_decal/borderfloorblack/full,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
-"Go" = (
-/turf/open/floor/plating{
-	icon_state = "plating_rust"
-	},
-/area/ship/maintenance/aft)
 "Gr" = (
 /obj/structure/toilet{
 	dir = 4;
@@ -3621,6 +3644,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
+/obj/effect/spawner/random/decoration/glowstick/on,
 /turf/open/floor/plating,
 /area/ship/maintenance)
 "Je" = (
@@ -3738,6 +3762,11 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
+"Kc" = (
+/turf/open/floor/plating{
+	icon_state = "plating_rust"
+	},
+/area/ship/maintenance/aft)
 "Ke" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/crew/ccommons)
@@ -3769,7 +3798,8 @@
 "Kr" = (
 /obj/structure/closet/secure_closet/wall/directional/east{
 	icon_state = "sec_wall";
-	name = "ammo closet"
+	name = "ammo closet";
+	req_access_txt = "3"
 	},
 /obj/item/ammo_box/magazine/f4_308/empty,
 /obj/item/ammo_box/magazine/f4_308/empty,
@@ -3954,11 +3984,11 @@
 "Lz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/grille/indestructible,
-/obj/structure/window/reinforced/fulltile/unanchored,
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 1;
 	id = "flyboy"
 	},
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -4087,6 +4117,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -5112,6 +5143,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/ship_gravity,
 /obj/effect/turf_decal/borderfloorblack/full,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "Xq" = (
@@ -6391,7 +6425,7 @@ Px
 Px
 td
 jh
-Go
+Kc
 eA
 OG
 Ab
@@ -6469,7 +6503,7 @@ Px
 Px
 td
 gK
-rx
+Ez
 jp
 gG
 Ab

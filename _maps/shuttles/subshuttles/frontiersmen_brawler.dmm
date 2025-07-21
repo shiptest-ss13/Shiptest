@@ -24,7 +24,14 @@
 /obj/machinery/telecomms/relay/preset/frontiersmen,
 /obj/machinery/light_switch{
 	pixel_y = -22;
-	dir = 1
+	dir = 1;
+	pixel_x = -9
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	pixel_y = -23;
+	id = "brawler_aft";
+	name = "window shutters"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/bridge)
@@ -38,6 +45,10 @@
 "g" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "brawler_aft"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "i" = (
@@ -330,7 +341,7 @@
 "E" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "brawler_aft"
+	id = "brawler_shutter"
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "brawler_aft_holo"
