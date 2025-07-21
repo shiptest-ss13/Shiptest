@@ -9,6 +9,13 @@
 "ah" = (
 /turf/closed/wall/r_wall/rust,
 /area/ship/bridge)
+"ao" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/bad,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/starboard)
 "aA" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -627,13 +634,6 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"fT" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/shuttle/engine/electric/bad,
-/turf/open/floor/plating/airless,
-/area/ship/maintenance/port)
 "fU" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -1572,12 +1572,6 @@
 	},
 /obj/effect/spawner/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/machinery/light_switch{
-	pixel_y = -12;
-	dir = 8;
-	pixel_x = 21
-	},
 /turf/open/floor/plating{
 	icon_state = "plating_rust"
 	},
@@ -1864,6 +1858,13 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"rB" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/bad,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/port)
 "rM" = (
 /obj/machinery/power/shuttle/engine/liquid/oil{
 	dir = 4
@@ -4795,13 +4796,6 @@
 /obj/machinery/power/smes/engineering,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
-"Tv" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/shuttle/engine/electric/bad,
-/turf/open/floor/plating/airless,
-/area/ship/maintenance/starboard)
 "TG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -5705,7 +5699,7 @@ Ek
 Ek
 Ek
 zm
-fT
+rB
 jK
 jA
 Ek
@@ -5725,7 +5719,7 @@ fv
 Ek
 wK
 eW
-Tv
+ao
 zJ
 Ek
 Ek
