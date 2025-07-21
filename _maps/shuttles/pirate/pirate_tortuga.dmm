@@ -997,8 +997,8 @@
 	pixel_x = -1
 	},
 /obj/item/melee/baton/cattleprod/loaded,
-/obj/item/stack/tape{
-	pixel_x = 6
+/obj/item/stack/sticky_tape/surgical{
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -1190,6 +1190,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
+"le" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/bad,
+/turf/open/floor/plating/airless,
+/area/ship/maintenance/port)
 "lh" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
@@ -1278,6 +1285,7 @@
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/glass/bottle/chitosan,
 /obj/item/reagent_containers/glass/bottle/chitosan,
+/obj/item/stack/medical/bone_gel/four,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "lY" = (
@@ -1515,7 +1523,7 @@
 	},
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/glass/twenty,
-/obj/structure/crate_shelf/built,
+/obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "nV" = (
@@ -1676,6 +1684,13 @@
 /obj/structure/cable,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech,
+/area/ship/maintenance/starboard)
+"pi" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/shuttle/engine/electric/bad,
+/turf/open/floor/plating/airless,
 /area/ship/maintenance/starboard)
 "pr" = (
 /obj/structure/catwalk/over/plated_catwalk,
@@ -4032,6 +4047,7 @@
 	dir = 1
 	},
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "Mb" = (
@@ -4325,7 +4341,7 @@
 	},
 /obj/machinery/button/door{
 	id = "port_engine";
-	pixel_y = 24
+	pixel_y = 23
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
@@ -5689,7 +5705,7 @@ Ek
 Ek
 Ek
 zm
-jK
+le
 jK
 jA
 Ek
@@ -5709,7 +5725,7 @@ fv
 Ek
 wK
 eW
-eW
+pi
 zJ
 Ek
 Ek
