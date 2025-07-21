@@ -211,142 +211,10 @@
 
 
 
-/datum/reagent/medicine/salglu_solution
-	name = "Saline-Glucose Solution"
-	description = "Has a 33% chance per metabolism cycle to heal brute and burn damage. Can be used as a temporary blood substitute."
-	reagent_state = LIQUID
-	color = "#DCDCDC"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 60
-	taste_description = "sweetness and salt"
-	var/last_added = 0
-	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
-	var/extra_regen = 0.25 // in addition to acting as temporary blood, also add this much to their actual blood per tick
 
-/datum/reagent/medicine/salglu_solution/on_mob_life(mob/living/carbon/M)
-	if(last_added)
-		M.blood_volume -= last_added
-		last_added = 0
-	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
-		var/amount_to_add = min(M.blood_volume, volume*5)
-		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
-		last_added = new_blood_level - M.blood_volume
-		M.blood_volume = new_blood_level + extra_regen
-	if(prob(33))
-		M.adjustBruteLoss(-0.5*REM, 0)
-		M.adjustFireLoss(-0.5*REM, 0)
-		. = TRUE
-	..()
 
-/datum/reagent/medicine/salglu_solution/overdose_process(mob/living/M)
-	if(prob(3))
-		to_chat(M, span_warning("You feel salty."))
-		holder.add_reagent(/datum/reagent/consumable/sodiumchloride, 1)
-		holder.remove_reagent(/datum/reagent/medicine/salglu_solution, 0.5)
-	else if(prob(3))
-		to_chat(M, span_warning("You feel sweet."))
-		holder.add_reagent(/datum/reagent/consumable/sugar, 1)
-		holder.remove_reagent(/datum/reagent/medicine/salglu_solution, 0.5)
-	if(prob(33))
-		M.adjustBruteLoss(0.5*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
-		M.adjustFireLoss(0.5*REM, FALSE, FALSE, BODYTYPE_ORGANIC)
-		. = TRUE
-	..()
 
-/datum/reagent/medicine/mine_salve
-	name = "Miner's Salve"
-	description = "A powerful painkiller. Restores bruising and burns in addition to making the patient believe they are fully healed."
-	reagent_state = LIQUID
-	color = "#6D6374"
-	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/mine_salve/on_mob_life(mob/living/carbon/C)
-	C.set_screwyhud(SCREWYHUD_HEALTHY)
-	C.adjustBruteLoss(-0.25*REM, 0)
-	C.adjustFireLoss(-0.25*REM, 0)
-	..()
-	return TRUE
-
-/datum/reagent/medicine/mine_salve/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	if(iscarbon(M) && M.stat != DEAD)
-		if(method in list(INGEST, VAPOR, INJECT))
-			M.adjust_nutrition(-5)
-			if(show_message)
-				to_chat(M, span_warning("Your stomach feels empty and cramps!"))
-		else
-			var/mob/living/carbon/C = M
-			for(var/s in C.surgeries)
-				var/datum/surgery/S = s
-				S.speed_modifier = max(0.1, S.speed_modifier)
-
-			if(show_message)
-				to_chat(M, span_danger("You feel your wounds fade away to nothing!") )
-	..()
-
-/datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/L)
-	..()
-	ADD_TRAIT(L, TRAIT_ANALGESIA, type)
-	if(iscarbon(L))
-		var/mob/living/carbon/C = L
-		C.set_screwyhud(SCREWYHUD_HEALTHY)
-
-/datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)
-	if(iscarbon(M))
-		var/mob/living/carbon/N = M
-		REMOVE_TRAIT(N, TRAIT_ANALGESIA, type)
-		N.set_screwyhud(SCREWYHUD_NONE)
-	..()
-
-/datum/reagent/medicine/synthflesh
-	name = "Synthflesh"
-	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal one point of damage. Touch application only."
-	reagent_state = LIQUID
-	color = "#FFEBEB"
-
-/datum/reagent/medicine/synthflesh/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
-	if(iscarbon(M))
-		var/mob/living/carbon/carbies = M
-		if (carbies.stat == DEAD)
-			show_message = 0
-		if(method in list(PATCH, TOUCH, SMOKE))
-			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
-			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
-			for(var/i in carbies.all_wounds)
-				var/datum/wound/iter_wound = i
-				iter_wound.on_synthflesh(reac_volume)
-			carbies.adjustToxLoss((harmies+burnies)*0.66)
-			if(show_message)
-				to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
-			SEND_SIGNAL(carbies, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
-			if(HAS_TRAIT_FROM(M, TRAIT_HUSK, "burn") && carbies.getFireLoss() < THRESHOLD_UNHUSK && (carbies.reagents.get_reagent_amount(/datum/reagent/medicine/synthflesh) + reac_volume >= 100))
-				carbies.cure_husk("burn")
-				carbies.visible_message("<span class='nicegreen'>A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!") //we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or something
-	..()
-	return TRUE
-
-/datum/reagent/medicine/charcoal
-	name = "Charcoal"
-	description = "Heals toxin damage as well as slowly removing any other chemicals the patient has in their bloodstream."
-	reagent_state = LIQUID
-	color = "#000000"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	taste_description = "ash"
-	process_flags = ORGANIC //WS Edit - IPCs
-
-/datum/reagent/medicine/charcoal/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-2*REM, 0)
-	. = 1
-	for(var/datum/reagent/R in M.reagents.reagent_list)
-		if(R != src)
-			M.reagents.remove_reagent(R.type,1)
-	..()
-
-/datum/reagent/medicine/charcoal/on_transfer(atom/A, method=TOUCH, volume)
-	if(method == INGEST || !iscarbon(A)) //the atom not the charcoal
-		return
-	A.reagents.remove_reagent(/datum/reagent/medicine/charcoal, volume) //We really should not be injecting an insoluble granular material.
-	A.reagents.add_reagent(/datum/reagent/carbon, volume) // Its pores would get clogged with gunk anyway.
-	..()
 
 /datum/reagent/medicine/system_cleaner
 	name = "System Cleaner"
@@ -752,35 +620,6 @@
 	if(prob(15))
 		C.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
 	..()
-
-/datum/reagent/medicine/mutadone
-	name = "Mutadone"
-	description = "Removes jitteriness and restores genetic defects."
-	color = "#5096C8"
-	taste_description = "acid"
-
-/datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
-	M.adjust_jitter(-50)
-	if(M.has_dna())
-		M.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
-	if(!QDELETED(M)) //We were a monkey, now a human
-		..()
-
-/datum/reagent/medicine/antihol
-	name = "Antihol"
-	description = "Purges alcoholic substance from the patient's body and eliminates its side effects."
-	color = "#00B4C8"
-	taste_description = "raw egg"
-
-/datum/reagent/medicine/antihol/on_mob_life(mob/living/carbon/M)
-	M.dizziness = 0
-	M.drowsyness = 0
-	M.slurring = 0
-	M.confused = 0
-	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3*REM, 0, 1)
-	M.adjustToxLoss(-0.2*REM, 0)
-	..()
-	. = 1
 
 /datum/reagent/medicine/stimulants
 	name = "Indoril"
