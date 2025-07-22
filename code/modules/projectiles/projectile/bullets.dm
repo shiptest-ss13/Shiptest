@@ -5,6 +5,7 @@
 	speed = BULLET_SPEED_RIFLE
 	damage_type = BRUTE
 	nodamage = FALSE
+	sharpness = SHARP_POINTY
 	flag = "bullet"
 
 	hitsound = "bullet_hit"
@@ -24,3 +25,11 @@
 	ricochets_max = 5 //should be enough to scare the shit out of someone
 	ricochet_chance = 30
 	ricochet_decay_damage = 0.5 //shouldnt being reliable, but deadly enough to be careful if you accidentally hit an ally
+	shrapnel_type = /obj/item/shrapnel/bullet
+	wound_falloff_tile = -2
+	embed_falloff_tile = -2
+	wound_bonus = -10
+
+/obj/projectile/bullet/smite
+	name = "divine retribution"
+	damage = 10

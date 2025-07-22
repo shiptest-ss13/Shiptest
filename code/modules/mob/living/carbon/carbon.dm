@@ -14,6 +14,8 @@
 	internal_organs_slot.Cut()
 	QDEL_LIST(bodyparts)
 	QDEL_LIST(implants)
+	for(var/wound in all_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
+		qdel(wound)
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
 	GLOB.carbon_list -= src
@@ -59,27 +61,46 @@
 	else
 		mode() // Activate held item
 
+/mob/living/carbon/attackby(obj/item/I, mob/user, params)
+	if(!all_wounds || !(user.a_intent == INTENT_HELP || user == src))
+		return ..()
+
+	for(var/i in shuffle(all_wounds))
+		var/datum/wound/W = i
+		if(W.try_treating(I, user))
+			return 1
+
+	return ..()
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	var/hurt = TRUE
+	var/extra_speed = 0
+
+	if(throwingdatum.thrower != src)
+		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
+
 	if(istype(throwingdatum, /datum/thrownthing))
 		hurt = !throwingdatum.gentle
+
 	if(hit_atom.density && isturf(hit_atom))
 		if(hurt)
 			Paralyze(20)
-			take_bodypart_damage(10,check_armor = TRUE)
+			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+
 	if(iscarbon(hit_atom) && hit_atom != src)
 		var/mob/living/carbon/victim = hit_atom
 		if(victim.movement_type & FLYING)
 			return
 		if(hurt)
-			victim.take_bodypart_damage(10,check_armor = TRUE)
-			take_bodypart_damage(10,check_armor = TRUE)
+			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 			victim.Paralyze(20)
 			Paralyze(20)
-			visible_message(span_danger("[src] crashes into [victim], knocking them both over!"),\
-				span_userdanger("You violently crash into [victim]!"))
+			visible_message(
+				span_danger("[src] crashes into [victim] [extra_speed ? "really hard" : ""], knocking them both over!"),
+				span_userdanger("You violently crash into [victim] [extra_speed ? "extra hard" : ""]!"),
+			)
 		playsound(src,'sound/weapons/punch1.ogg',50,TRUE)
 
 
@@ -142,11 +163,17 @@
 				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
 		do_attack_animation(target, no_effect = 1)
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1)
-		visible_message(span_danger("[src] throws [thrown_thing]."), \
-						span_danger("You throw [thrown_thing]."))
-		log_message("has thrown [thrown_thing]", LOG_ATTACK)
+
+		var/power_throw = 0
+		if(pulling && grab_state >= GRAB_NECK)
+			power_throw++
+		visible_message(
+			span_danger("[src] throws [thrown_thing][power_throw ? " really hard!" : "."]"),
+			span_danger("You throw [thrown_thing][power_throw ? " really hard!" : "."]"),
+		)
+		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
 		newtonian_move(get_dir(target, src))
-		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed, src, null, null, null, move_force)
+		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force)
 
 
 /mob/living/carbon/proc/canBeHandcuffed()
@@ -462,23 +489,43 @@
 	if(!blood)
 		adjust_nutrition(-lost_nutrition)
 		adjustToxLoss(-3)
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
 	for(var/i=0 to distance)
 		if(blood)
 			if(T)
 				add_splatter_floor(T)
 			if(harm)
 				adjustBruteLoss(3)
-		else if(src.reagents.has_reagent(/datum/reagent/consumable/ethanol/blazaam, needs_metabolizing = TRUE))
-			if(T)
-				T.add_vomit_floor(src, VOMIT_PURPLE)
 		else
-			if(T)
-				T.add_vomit_floor(src, VOMIT_TOXIC, purge)//toxic barf looks different || call purge when doing detoxicfication to pump more chems out of the stomach.
+			if(belly?.reagents.has_reagent(/datum/reagent/consumable/ethanol/blazaam, needs_metabolizing = TRUE))
+				if(T)
+					T.add_vomit_floor(src, VOMIT_PURPLE)
+			else
+				if(T)
+					T.add_vomit_floor(src, VOMIT_TOXIC, purge) //toxic barf looks different || call purge when doing detoxicfication to pump more chems out of the stomach.
 		T = get_step(T, dir)
 		if (T?.is_blocked_turf())
 			break
 	adjust_disgust(-(lost_nutrition*rand(0.5, 2)))
 	return TRUE
+
+/**
+ * Expel the reagents you just tried to ingest
+ *
+ * When you try to ingest reagents but you do not have a stomach
+ * you will spew the reagents on the floor.
+ *
+ * Vars:
+ * * bite: /atom the reagents to expel
+ * * amount: int The amount of reagent
+ */
+
+/mob/living/carbon/proc/expel_ingested(atom/bite, amount)
+	visible_message(span_userdanger("[src] throws up all over [p_them()]self!"), \
+					span_userdanger("You are unable to keep the [bite] down without a stomach!"))
+	var/turf/floor = get_turf(src)
+	var/obj/effect/decal/cleanable/vomit/spew = new(floor, get_static_viruses())
+	bite.reagents.trans_to(spew, amount, transfered_by = src)
 
 /mob/living/carbon/proc/spew_organ(power = 5, amt = 1)
 	for(var/i in 1 to amt)
@@ -847,6 +894,9 @@
 		var/datum/disease/D = thing
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
+	for(var/thing in all_wounds)
+		var/datum/wound/W = thing
+		W.remove_wound()
 	if(admin_revive)
 		regenerate_limbs()
 		regenerate_organs()
@@ -857,7 +907,6 @@
 		if(reagents)
 			reagents.addiction_list = list()
 	cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
-	mend_fractures()
 	..()
 	// heal ears after healing traits, since ears check TRAIT_DEAF trait
 	// when healing.
@@ -970,11 +1019,14 @@
 			if(SANITY_NEUTRAL to INFINITY)
 				. *= 0.90
 
+	// for(var/i in status_effects)
+	// 	var/datum/status_effect/S = i
+	// 	. *= S.interact_speed_modifier() //todo: fix/remove
+
 /mob/living/carbon/proc/create_internal_organs()
 	for(var/X in internal_organs)
 		var/obj/item/organ/I = X
 		I.Insert(src)
-
 
 /mob/living/carbon/vv_get_dropdown()
 	. = ..()
@@ -1174,6 +1226,22 @@
 		update_inv_gloves()
 		. = TRUE
 
+/// if any of our bodyparts are bleeding
+/mob/living/carbon/proc/is_bleeding()
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		if(BP.get_part_bleed_rate())
+			return TRUE
+
+/// get our total bleedrate
+/mob/living/carbon/proc/get_total_bleed_rate()
+	var/total_bleed_rate = 0
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		total_bleed_rate += BP.get_part_bleed_rate()
+
+	return total_bleed_rate
+
 /mob/living/carbon/proc/update_flavor_text_feature(new_text)
 	if(!dna)
 		return
@@ -1201,6 +1269,14 @@
 
 /mob/living/carbon/is_face_visible()
 	return !(wear_mask?.flags_inv & HIDEFACE) && !(head?.flags_inv & HIDEFACE)
+
+/**
+ * get_biological_state is a helper used to see what kind of wounds we roll for. By default we just assume carbons (read:monkeys) are flesh and bone, but humans rely on their species datums
+ *
+ * go look at the species def for more info [/datum/species/proc/get_biological_state]
+ */
+/mob/living/carbon/proc/get_biological_state() //todo: silicon wounds for ipcs
+	return BIO_FLESH_BONE
 
 /// Modifies the handcuffed value if a different value is passed, returning FALSE otherwise. The variable should only be changed through this proc.
 /mob/living/carbon/proc/set_handcuffed(new_value)

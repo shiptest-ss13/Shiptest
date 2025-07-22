@@ -447,6 +447,12 @@
 /mob/living/proc/setMaxHealth(newMaxHealth)
 	maxHealth = newMaxHealth
 
+/// Returns the health of the mob while ignoring damage of non-organic (prosthetic) limbs
+/// Used by cryo cells to not permanently imprison those with damage from prosthetics,
+/// as they cannot be healed through chemicals.
+/mob/living/proc/get_organic_health()
+	return health
+
 // MOB PROCS //END
 
 /mob/living/proc/mob_sleep()
@@ -708,7 +714,6 @@
 	cure_blind()
 	cure_husk()
 	hallucination = 0
-	heal_overall_integrity(INFINITY, null, TRUE) //heal all limb integrity, so that you can...
 	heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE) //heal brute and burn dmg on both organic and robotic limbs, and update health right away.
 	ExtinguishMob()
 	fire_stacks = 0
@@ -734,8 +739,8 @@
 			O.applyOrganDamage(organ_amt*-1)//1 = 5 organ damage healed
 
 		if(specific_bones)
-			for(var/obj/item/bodypart/B in C.bodyparts)
-				B.fix_bone()
+			for(var/datum/wound/current_wound in C.all_wounds)
+				current_wound.remove_wound()
 
 	if(specific_revive)
 		revive()
@@ -754,6 +759,10 @@
 		return FALSE
 
 /mob/living/proc/update_damage_overlays()
+	return
+
+/// Proc that only really gets called for humans, to handle bleeding overlays.
+/mob/living/proc/update_wound_overlays()
 	return
 
 /mob/living/Move(atom/newloc, direct, glide_size_override)
@@ -798,38 +807,54 @@
 	return
 
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)
-	if(!has_gravity())
+	if(!has_gravity() || !isturf(start) || !blood_volume)
 		return
+
 	var/blood_exists = locate(/obj/effect/decal/cleanable/blood/trail_holder) in start
 
-	if(isturf(start))
-		var/trail_type = getTrail()
-		if(trail_type)
-			var/brute_ratio = round(getBruteLoss() / maxHealth, 0.1)
-			if(blood_volume && blood_volume > max(BLOOD_VOLUME_NORMAL*(1 - brute_ratio * 0.25), 0))//don't leave trail if blood volume below a threshold
-				blood_volume = max(blood_volume - max(1, brute_ratio * 2), 0) 					//that depends on our brute damage.
-				var/newdir = get_dir(target_turf, start)
-				if(newdir != direction)
-					newdir = newdir | direction
-					if(newdir == 3) //N + S
-						newdir = NORTH
-					else if(newdir == 12) //E + W
-						newdir = EAST
-				if((newdir in GLOB.cardinals) && (prob(50)))
-					newdir = turn(get_dir(target_turf, start), 180)
-				if(!blood_exists)
-					new /obj/effect/decal/cleanable/blood/trail_holder(start, get_static_viruses())
+	var/trail_type = getTrail()
+	if(!trail_type)
+		return
 
-				for(var/obj/effect/decal/cleanable/blood/trail_holder/TH in start)
-					if((!(newdir in TH.existing_dirs) || trail_type == "trails_1" || trail_type == "trails_2") && TH.existing_dirs.len <= 16) //maximum amount of overlays is 16 (all light & heavy directions filled)
-						TH.existing_dirs += newdir
-						TH.add_overlay(image('icons/effects/blood.dmi', trail_type, dir = newdir))
-						TH.transfer_mob_blood_dna(src)
+	var/bleed_amount = bleedDragAmount()
+	blood_volume = max(blood_volume - bleed_amount, 0)
+
+	var/newdir = get_dir(target_turf, start)
+	if(newdir != direction)
+		newdir = newdir | direction
+		if(newdir == (NORTH|SOUTH))
+			newdir = NORTH
+		else if(newdir == (EAST|WEST))
+			newdir = EAST
+
+	if((newdir in GLOB.cardinals) && (prob(50)))
+		newdir = turn(get_dir(target_turf, start), 180)
+
+	if(!blood_exists)
+		new /obj/effect/decal/cleanable/blood/trail_holder(start, get_static_viruses())
+
+	for(var/obj/effect/decal/cleanable/blood/trail_holder/TH in start)
+		if((!(newdir in TH.existing_dirs) || trail_type == "trails_1" || trail_type == "trails_2") && TH.existing_dirs.len <= 16) //maximum amount of overlays is 16 (all light & heavy directions filled)
+			TH.existing_dirs += newdir
+			TH.add_overlay(image('icons/effects/blood.dmi', trail_type, dir = newdir))
+			TH.transfer_mob_blood_dna(src)
 
 /mob/living/carbon/human/makeTrail(turf/T)
-	if((NOBLOOD in dna.species.species_traits) || bleedsuppress || !LAZYLEN(get_bleeding_parts(TRUE)))
+	if((NOBLOOD in dna.species.species_traits) || !is_bleeding() || bleedsuppress)
 		return
 	..()
+
+///Returns how much blood we're losing from being dragged a tile, from [mob/living/proc/makeTrail]
+/mob/living/proc/bleedDragAmount()
+	var/brute_ratio = round(getBruteLoss() / maxHealth, 0.1)
+	return max(1, brute_ratio * 2)
+
+/mob/living/carbon/bleedDragAmount()
+	var/bleed_amount = 0
+	for(var/i in all_wounds)
+		var/datum/wound/iter_wound = i
+		bleed_amount += iter_wound.drag_bleed_amount()
+	return bleed_amount
 
 /mob/living/proc/getTrail()
 	if(getBruteLoss() < 300)
@@ -1852,7 +1877,8 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 /// Used for setting typing indicator on/off. Checking the state should be done not on the proc to avoid overhead.
 /mob/living/set_typing_indicator(state)
 	typing_indicator = state
-	var/state_of_bubble = bubble_icon? "[bubble_icon]0" : "default0"
+	var/datum/language/used_language = get_selected_language()
+	var/state_of_bubble = "[initial(used_language?.bubble_override) || bubble_icon || "default"]0"
 	var/mutable_appearance/bubble_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, plane = RUNECHAT_PLANE)
 	bubble_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 	if(typing_indicator)
@@ -1914,3 +1940,57 @@ GLOBAL_VAR_INIT(ssd_indicator_overlay, mutable_appearance('icons/mob/ssd_indicat
 		REMOVE_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
 	else
 		ADD_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
+
+/**
+ * Get the fullness of the mob
+ *
+ * This returns a value form 0 upwards to represent how full the mob is.
+ * The value is a total amount of consumable reagents in the body combined
+ * with the total amount of nutrition they have.
+ * This does not have an upper limit.
+ */
+
+/mob/living/proc/get_fullness()
+	var/fullness = nutrition
+	// we add the nutrition value of what we're currently digesting
+	for(var/bile in reagents.reagent_list)
+		var/datum/reagent/consumable/bits = bile
+		if(bits)
+			fullness += bits.nutriment_factor * bits.volume / bits.metabolization_rate
+	return fullness
+
+/**
+ * Check if the mob contains this reagent.
+ *
+ * This will validate the the reagent holder for the mob and any sub holders contain the requested reagent.
+ * Vars:
+ * * reagent (typepath) takes a PATH to a reagent.
+ * * amount (int) checks for having a specific amount of that chemical.
+ * * needs_metabolizing (bool) takes into consideration if the chemical is matabolizing when it's checked.
+ */
+/mob/living/proc/has_reagent(reagent, amount = -1, needs_metabolizing = FALSE)
+	return reagents.has_reagent(reagent, amount, needs_metabolizing)
+
+/**
+ * Removes reagents from the mob
+ *
+ * This will locate the reagent in the mob and remove it from reagent holders
+ * Vars:
+ * * reagent (typepath) takes a PATH to a reagent.
+ * * custom_amount (int)(optional) checks for having a specific amount of that chemical.
+ * * safety (bool) check for the trans_id_to
+ */
+/mob/living/proc/remove_reagent(reagent, custom_amount, safety)
+	if(!custom_amount)
+		custom_amount = get_reagent_amount(reagent)
+	return reagents.remove_reagent(reagent, custom_amount, safety)
+
+/**
+ * Returns the amount of a reagent from the mob
+ *
+ * This will locate the reagent in the mob and return the total amount from all reagent holders
+ * Vars:
+ * * reagent (typepath) takes a PATH to a reagent.
+ */
+/mob/living/proc/get_reagent_amount(reagent)
+	return reagents.get_reagent_amount(reagent)
