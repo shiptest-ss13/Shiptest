@@ -660,7 +660,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/west,
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "iG" = (
@@ -2454,6 +2454,14 @@
 	id = "veniceprivatesec";
 	dir = 4
 	},
+/obj/item/gun_maint_kit{
+	pixel_x = -8;
+	pixel_y = -13
+	},
+/obj/item/gun_maint_kit{
+	pixel_x = 6;
+	pixel_y = -13
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "Dm" = (
@@ -2767,7 +2775,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/computer/cryopod/directional/south,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Hu" = (
@@ -4775,8 +4783,8 @@ xm
 iz
 VT
 fk
-iB
 Ht
+iB
 eZ
 Qn
 uA
