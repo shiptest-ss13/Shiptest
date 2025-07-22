@@ -2,6 +2,9 @@
 "as" = (
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"aZ" = (
+/turf/open/floor/hangar/plasteel/white,
+/area/space)
 "bQ" = (
 /obj/structure/platform/wood_two{
 	dir = 4
@@ -13,11 +16,6 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement,
-/area/space)
-"dg" = (
-/obj/structure/table/reinforced,
-/obj/item/cutting_board,
-/turf/open/floor/hangar/plasteel/white,
 /area/space)
 "dD" = (
 /obj/item/coin/plastic,
@@ -116,11 +114,6 @@
 "pP" = (
 /obj/item/ammo_box/magazine/m23/empty,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/space)
-"qI" = (
-/obj/structure/table/reinforced,
-/obj/machinery/microwave,
-/turf/open/floor/hangar/plasteel/white,
 /area/space)
 "qY" = (
 /obj/structure/railing/wood{
@@ -288,14 +281,16 @@
 "NU" = (
 /turf/open/floor/wood,
 /area/space)
-"ON" = (
-/turf/open/floor/plasteel/freezer,
-/area/space)
 "Pf" = (
 /obj/structure/railing/wood{
 	dir = 8
 	},
 /turf/open/floor/wood/ebony,
+/area/space)
+"PT" = (
+/obj/structure/table/reinforced,
+/obj/item/cutting_board,
+/turf/open/floor/hangar/plasteel/white,
 /area/space)
 "Qq" = (
 /obj/structure/chair/bench/beige{
@@ -308,6 +303,9 @@
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
+/area/space)
+"Rq" = (
+/turf/open/floor/plasteel/freezer,
 /area/space)
 "Ru" = (
 /obj/structure/chair/bench/beige{
@@ -323,19 +321,24 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood/ebony,
 /area/space)
-"UA" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/hangar/plasteel/white,
-/area/space)
 "US" = (
 /obj/structure/fence/corner{
 	dir = 1
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
+"Wc" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/turf/open/floor/hangar/plasteel/white,
+/area/space)
 "Wj" = (
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
+"Wq" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/hangar/plasteel/white,
 /area/space)
 "Wx" = (
 /obj/machinery/door/poddoor/shutters{
@@ -356,9 +359,6 @@
 /area/space)
 "YQ" = (
 /turf/open/floor/plasteel/stairs/wood,
-/area/space)
-"Zu" = (
-/turf/open/floor/hangar/plasteel/white,
 /area/space)
 "ZZ" = (
 /obj/structure/railing/wood,
@@ -1630,9 +1630,9 @@ Gb
 Gb
 CW
 CW
-ON
-ON
-ON
+Rq
+Rq
+Rq
 CW
 CW
 CW
@@ -1681,9 +1681,9 @@ Gb
 Gb
 Gb
 CW
-ON
-ON
-ON
+Rq
+Rq
+Rq
 CW
 CW
 iA
@@ -1734,7 +1734,7 @@ Gb
 Gb
 CW
 CW
-ON
+Rq
 CW
 CW
 iA
@@ -1783,11 +1783,11 @@ Gb
 Gb
 Gb
 Gb
-Gb
 CW
-Zu
-Zu
-Zu
+CW
+aZ
+aZ
+aZ
 CW
 iA
 iA
@@ -1836,10 +1836,10 @@ Gb
 Gb
 Gb
 CW
-CW
-Zu
-Zu
-Zu
+Wc
+aZ
+aZ
+aZ
 CW
 iA
 iA
@@ -1888,10 +1888,10 @@ Gb
 Gb
 Gb
 CW
-qI
-Zu
-Zu
-Zu
+PT
+aZ
+aZ
+aZ
 CW
 iA
 iA
@@ -1940,10 +1940,10 @@ Gb
 Gb
 Gb
 CW
-dg
-Zu
-Zu
-Zu
+Wq
+aZ
+aZ
+aZ
 CW
 iA
 iA
@@ -1992,10 +1992,10 @@ Gb
 Gb
 Gb
 CW
-UA
-Zu
-Zu
-Zu
+Wq
+aZ
+aZ
+aZ
 CW
 iA
 iA
@@ -2044,10 +2044,10 @@ Gb
 Gb
 Gb
 CW
-UA
-Zu
-Zu
-Zu
+Wq
+aZ
+aZ
+aZ
 yn
 iA
 iA
@@ -2097,9 +2097,9 @@ Gb
 Gb
 CW
 CW
-Zu
-Zu
-Zu
+aZ
+aZ
+aZ
 yn
 iA
 iA
