@@ -54,10 +54,6 @@
 	///sets the icon path of the onmob blood overlay created by this object. syntax is "[var]blood"
 	var/blood_overlay_type = "uniform"
 
-	///can this clothing be recolored via spray paint
-	var/paintable = TRUE
-
-
 	var/vision_flags = 0
 	var/darkness_view = 2//Base human is 2
 	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
