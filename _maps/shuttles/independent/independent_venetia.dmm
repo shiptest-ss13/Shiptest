@@ -242,6 +242,9 @@
 	dir = 1;
 	id = "veniceshield"
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo)
 "dh" = (
@@ -353,6 +356,9 @@
 	dir = 1;
 	id = "veniceshield"
 	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "dZ" = (
@@ -453,6 +459,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "fS" = (
@@ -498,6 +510,9 @@
 "gB" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "6-9"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -639,10 +654,15 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "iB" = (
-/obj/structure/chair,
-/obj/structure/chair,
-/turf/open/floor/carpet,
-/area/ship/crew/canteen/kitchen)
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/cryo)
 "iG" = (
 /obj/effect/turf_decal/corner/opaque/lightgrey/border{
 	dir = 1
@@ -951,6 +971,9 @@
 	},
 /area/ship/bridge)
 "nm" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "ny" = (
@@ -1014,6 +1037,7 @@
 /obj/item/food/fishmeat,
 /obj/item/food/fishmeat,
 /obj/item/food/fishmeat,
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)
 "nL" = (
@@ -1022,6 +1046,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -1208,6 +1235,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
@@ -3151,16 +3181,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
-"Mq" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/cryo)
 "Mv" = (
 /obj/machinery/washing_machine{
 	pixel_x = 0;
@@ -3579,6 +3599,9 @@
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "veniceshield"
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/cargo)
 "QJ" = (
@@ -3904,6 +3927,9 @@
 	},
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
@@ -4361,25 +4387,6 @@
 /obj/effect/turf_decal/siding/black,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"Zd" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "veniceport"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "Ze" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#543C30";
@@ -4644,7 +4651,7 @@ kO
 HW
 nh
 dt
-Zd
+dt
 fk
 IF
 nM
@@ -4768,7 +4775,7 @@ xm
 iz
 VT
 fk
-Mq
+iB
 Ht
 eZ
 Qn
@@ -5233,7 +5240,7 @@ db
 Pf
 Dm
 hz
-iB
+VM
 Ft
 ax
 do
