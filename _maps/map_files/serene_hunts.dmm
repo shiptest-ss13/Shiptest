@@ -20,21 +20,39 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
-"aX" = (
-/obj/machinery/washing_machine{
-	pixel_y = 3;
-	pixel_x = -8
+"aT" = (
+/obj/structure/table/wood,
+/obj/item/modular_computer/laptop/preset/civilian/rilena,
+/turf/open/floor/wood/ebony,
+/area/space)
+"aU" = (
+/obj/item/rack_parts,
+/obj/item/attachment/scope{
+	pixel_y = 5;
+	pixel_x = -5
+	},
+/obj/structure/noticeboard{
+	name = "trophy board";
+	desc = "A board for hanging trophies upon.";
+	pixel_y = 29
+	},
+/obj/item/clothing/mask/rat/fox{
+	pixel_y = 29;
+	desc = "A taxidermied fox head for mounting on a headboard. You swear it's still staring at you.";
+	name = "fox head"
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
 "aZ" = (
 /turf/open/floor/hangar/plasteel/white,
 /area/space)
-"bj" = (
-/obj/structure/railing/wood{
-	dir = 4
+"bf" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/wood/twentyfive,
+/obj/structure/sink/kitchen{
+	dir = 8
 	},
-/turf/closed/wall/mineral/wood,
+/turf/open/floor/wood/mahogany,
 /area/space)
 "bQ" = (
 /obj/structure/platform/wood_two{
@@ -42,8 +60,11 @@
 	},
 /turf/open/floor/wood,
 /area/space)
-"bX" = (
-/obj/structure/janitorialcart,
+"bU" = (
+/obj/structure/toilet{
+	dir = 4;
+	pixel_x = -8
+	},
 /turf/open/floor/wood/ebony,
 /area/space)
 "cc" = (
@@ -54,44 +75,50 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
+"cj" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
 "cn" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
 /turf/open/floor/concrete/pavement,
 /area/space)
-"cH" = (
-/obj/item/storage/box/ammo/c22lr{
-	pixel_x = -9;
-	pixel_y = 3
-	},
-/obj/item/storage/box/ammo/c22lr{
-	pixel_x = 10;
-	pixel_y = 3
-	},
-/obj/item/storage/box/ammo/c22lr{
-	pixel_x = -9;
-	pixel_y = -6
-	},
-/obj/item/storage/box/ammo/c22lr{
-	pixel_x = 10;
-	pixel_y = -6
-	},
-/obj/item/storage/box/ammo/c22lr/hp{
-	pixel_y = 6
+"cA" = (
+/obj/machinery/door/window/southleft{
+	dir = 4
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
-"cI" = (
+"cJ" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/concrete/lava,
+/area/space)
+"cU" = (
+/turf/open/floor/carpet/green,
+/area/space)
+"dc" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
 /obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/wood,
-/area/space)
-"cU" = (
-/turf/open/floor/carpet/green,
 /area/space)
 "dd" = (
 /obj/structure/table/reinforced,
@@ -103,24 +130,25 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"ez" = (
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/carpet,
-/area/space)
-"fl" = (
-/obj/structure/table/wood,
-/obj/item/modular_computer/laptop/preset/civilian/rilena,
-/turf/open/floor/wood/ebony,
+"eZ" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/turf/open/floor/concrete/lava,
 /area/space)
 "fn" = (
 /obj/structure/closet/crate/trashcart,
 /turf/open/floor/concrete/pavement,
 /area/space)
+"fs" = (
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/carpet,
+/area/space)
+"fJ" = (
+/turf/open/floor/engine/hull/interior,
+/area/space)
 "ga" = (
-/obj/structure/platform/wood_two{
-	dir = 1
-	},
-/turf/open/floor/wood/mahogany,
+/turf/open/floor/concrete/lava,
 /area/space)
 "gc" = (
 /obj/structure/platform/ship_four/corner,
@@ -134,21 +162,15 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"gi" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
+"gk" = (
+/obj/machinery/door/airlock/wood{
+	dir = 4
 	},
-/obj/effect/turf_decal/industrial/stand_clear/white,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/wood/ebony,
 /area/space)
 "gx" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/concrete/slab_1,
-/area/space)
-"gP" = (
-/obj/structure/rack,
-/obj/item/storage/toolbox/drone,
-/turf/open/floor/wood/ebony,
 /area/space)
 "gU" = (
 /turf/open/floor/concrete/pavement,
@@ -181,11 +203,9 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"hY" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement,
+"hW" = (
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/concrete/slab_1,
 /area/space)
 "ig" = (
 /obj/structure/railing/wood,
@@ -194,6 +214,10 @@
 /area/space)
 "iq" = (
 /obj/structure/table/wood/reinforced,
+/turf/open/floor/wood/ebony,
+/area/space)
+"iy" = (
+/obj/item/cigbutt/cigarbutt,
 /turf/open/floor/wood/ebony,
 /area/space)
 "iA" = (
@@ -242,14 +266,6 @@
 /obj/item/reagent_containers/glass/coffee_cup,
 /turf/open/floor/wood/ebony,
 /area/space)
-"jN" = (
-/obj/structure/rack,
-/obj/item/stack/sheet/mineral/wood/twentyfive,
-/obj/structure/sink/kitchen{
-	dir = 8
-	},
-/turf/open/floor/wood/mahogany,
-/area/space)
 "jV" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/storage/box/ammo/a8_50r{
@@ -257,23 +273,28 @@
 	},
 /turf/open/floor/carpet/green,
 /area/space)
-"jX" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/turf/open/floor/plasteel/freezer,
-/area/space)
 "kb" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 8
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"kc" = (
-/obj/machinery/door/window/southleft{
-	dir = 4
+"kd" = (
+/obj/structure/sign/plaques/blank{
+	pixel_y = 30;
+	name = "M-23 WOODSMAN";
+	desc = "Become the King of the Woods with our brand  new M-23 Woodsman rifle. It's mag loaded design and powerful cartridge offers excellent pentration in an easy to use package. "
 	},
-/turf/open/floor/wood/ebony,
+/obj/structure/displaycase_chassis{
+	name = "open display case"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/space)
+"kD" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/plasteel/freezer,
 /area/space)
 "kJ" = (
 /obj/structure/railing{
@@ -281,33 +302,10 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"ld" = (
-/obj/structure/sign/departments/restroom{
-	pixel_x = 31
-	},
-/turf/open/floor/wood,
-/area/space)
-"lg" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement,
-/area/space)
 "lo" = (
 /obj/structure/platform/wood_two/corner,
 /obj/structure/curtain/cloth,
 /turf/open/floor/wood,
-/area/space)
-"lH" = (
-/obj/structure/noticeboard{
-	name = "trophy board";
-	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
-	},
-/obj/item/mob_trophy/legion_skull_crystal{
-	pixel_y = 27
-	},
-/turf/open/floor/carpet/green,
 /area/space)
 "lT" = (
 /obj/structure/railing/wood{
@@ -326,9 +324,15 @@
 /obj/structure/healingfountain,
 /turf/open/water/jungle/lit,
 /area/space)
-"mj" = (
-/obj/structure/chair/office{
-	dir = 4
+"mf" = (
+/obj/machinery/vending/snack,
+/obj/structure/noticeboard{
+	name = "trophy board";
+	desc = "A board for hanging trophies upon.";
+	pixel_y = 29
+	},
+/obj/item/stack/sheet/animalhide/xeno{
+	pixel_y = 28
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
@@ -336,11 +340,16 @@
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /turf/open/floor/plasteel/freezer,
 /area/space)
-"ms" = (
-/obj/structure/window/reinforced/tinted{
-	dir = 4
+"mB" = (
+/obj/structure/sign/plaques/blank{
+	pixel_y = 30;
+	name = "M-15 SUPER SPORTER";
+	desc = "The M-15 Super Sporter is the big brother to our famous M-12 Sporter line, and it sure does pack a punch. Chambered in 5.56 CLIP, the standard issue round of the CMM, this rifle is capable of punching through the toughest of hides."
 	},
-/turf/open/floor/wood/ebony,
+/obj/structure/displaycase{
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/m15
+	},
+/turf/open/floor/carpet/royalblack,
 /area/space)
 "mD" = (
 /obj/structure/sign/plaques/blank{
@@ -370,25 +379,25 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
-"mV" = (
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/noslip,
-/area/space)
-"nn" = (
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/wood/ebony,
-/area/space)
-"nw" = (
-/turf/closed/wall/concrete,
-/area/space)
 "nF" = (
 /obj/structure/platform/ship_four/corner,
 /turf/open/water/jungle/lit,
+/area/space)
+"nJ" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/paper/spam{
+	name = "LETTER OF RESIGNATION-PLACEHOLDER"
+	},
+/turf/open/floor/carpet/green,
 /area/space)
 "nU" = (
 /obj/item/gun/ballistic/automatic/marksman/woodsman,
 /obj/item/ammo_casing/spent/rifle_brass,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
+"nV" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/wood/ebony,
 /area/space)
 "od" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -414,13 +423,18 @@
 /turf/open/water/jungle/lit,
 /area/space)
 "ok" = (
-/obj/structure/chair/stool{
-	dir = 8
+/obj/machinery/door/airlock{
+	dir = 4;
+	name = "Groundskeeper's Shed"
 	},
-/turf/open/floor/wood/mahogany,
+/turf/open/floor/wood/ebony,
 /area/space)
 "om" = (
 /turf/closed/wall/concrete/reinforced,
+/area/space)
+"ou" = (
+/obj/machinery/computer/helm,
+/turf/open/floor/plasteel/dark,
 /area/space)
 "oJ" = (
 /obj/structure/table/wood,
@@ -449,41 +463,31 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"oU" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/m17/empty{
-	pixel_y = -2;
-	pixel_x = -12
-	},
-/obj/item/ammo_box/magazine/m17/empty{
-	pixel_y = -2;
-	pixel_x = -6
-	},
-/obj/item/ammo_box/magazine/m17/empty{
-	pixel_y = -2;
-	pixel_x = 1
-	},
-/turf/open/floor/wood/ebony,
-/area/space)
 "pd" = (
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/wood/ebony,
 /area/space)
-"ph" = (
-/obj/structure/toilet{
-	dir = 4;
-	pixel_x = -8
-	},
-/turf/open/floor/wood/ebony,
+"pj" = (
+/obj/effect/turf_decal/industrial/warning,
+/turf/open/floor/concrete/pavement,
 /area/space)
 "pP" = (
 /obj/item/ammo_box/magazine/m23/empty,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
-"qE" = (
-/obj/machinery/vending/cigarette,
+"pT" = (
+/obj/machinery/paystand{
+	desc = "A paystand";
+	name = "pay stand"
+	},
+/turf/open/floor/carpet/green,
+/area/space)
+"qB" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
 /turf/open/floor/wood/ebony,
 /area/space)
 "qY" = (
@@ -508,6 +512,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
+"rn" = (
+/obj/structure/noticeboard{
+	name = "trophy board";
+	desc = "A board for hanging trophies upon.";
+	pixel_y = 29
+	},
+/obj/item/mob_trophy/legion_skull_crystal{
+	pixel_y = 27
+	},
+/turf/open/floor/carpet/green,
+/area/space)
 "rr" = (
 /obj/structure/platform/wood_two{
 	dir = 1
@@ -527,17 +542,21 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
+"rz" = (
+/obj/structure/crate_shelf,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
 "rD" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
-/obj/item/gun/ballistic/automatic/m12_sporter/empty{
-	pixel_y = 9;
-	pixel_x = -2
-	},
+/obj/item/gun/ballistic/automatic/pistol/m17/empty,
 /obj/structure/sign/plaques/blank{
 	pixel_y = 30;
-	name = "M-12 SPORTER";
-	desc = "Affordable, effective, tried and tested. The M-12 Sporter is our most popular hunting rifle, and for good reason. The perfect bang for your buck."
+	name = "M-17 MICROTARGET";
+	desc = "The M-17 "Microtarget" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
 	},
 /turf/open/floor/carpet/royalblack,
 /area/space)
@@ -569,6 +588,18 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
+"sy" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/concrete/lava,
+/area/space)
 "sB" = (
 /obj/structure/table/wood,
 /obj/machinery/coffeemaker{
@@ -580,13 +611,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
-"sT" = (
-/obj/structure/window/reinforced/tinted,
-/obj/structure/closet/wall/white/directional/east,
-/obj/item/soap/deluxe,
-/obj/item/towel,
-/turf/open/floor/plasteel/freezer,
-/area/space)
 "td" = (
 /obj/structure/table/reinforced,
 /obj/item/cutting_board,
@@ -597,16 +621,12 @@
 /obj/structure/chair/bench/orange/directional/east,
 /turf/open/floor/carpet,
 /area/space)
-"to" = (
-/obj/structure/sign/plaques/blank{
-	pixel_y = 30;
-	name = "M-23 WOODSMAN";
-	desc = "Become the King of the Woods with our brand  new M-23 Woodsman rifle. It's mag loaded design and powerful cartridge offers excellent pentration in an easy to use package. "
+"tI" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/turf_decal/industrial/stand_clear/white{
+	dir = 1
 	},
-/obj/structure/displaycase_chassis{
-	name = "open display case"
-	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/concrete/pavement,
 /area/space)
 "tL" = (
 /obj/item/spacecash/bundle/c10{
@@ -618,16 +638,17 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"uw" = (
+"ub" = (
 /obj/structure/sign/departments/custodian{
 	pixel_x = -32
 	},
 /turf/open/floor/wood,
 /area/space)
-"uI" = (
-/obj/item/flashlight/lantern,
-/obj/structure/table/wood,
-/turf/open/floor/wood/ebony,
+"ud" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 29
+	},
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "uL" = (
 /obj/structure/table/reinforced,
@@ -639,27 +660,20 @@
 /turf/open/floor/concrete/pavement,
 /area/space)
 "uZ" = (
-/obj/item/radio/intercom/directional/east,
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/plasteel/patterned,
 /area/space)
-"vv" = (
-/obj/structure/closet/wall/white/directional/east,
-/obj/item/soap/deluxe,
-/obj/item/towel,
-/turf/open/floor/plasteel/freezer,
+"vj" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/stand_clear/white,
+/turf/open/floor/concrete/pavement,
 /area/space)
 "vw" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
-/area/space)
-"vL" = (
-/obj/machinery/paystand{
-	desc = "A paystand";
-	name = "pay stand"
-	},
-/turf/open/floor/carpet/green,
 /area/space)
 "vO" = (
 /obj/structure/platform/ship_four/corner{
@@ -679,21 +693,15 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
-"wr" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/restraints/legcuffs/beartrap{
-	pixel_y = 10;
-	pixel_x = -10
-	},
-/obj/item/restraints/legcuffs/beartrap{
-	pixel_y = 10;
-	pixel_x = 8
-	},
-/turf/open/floor/wood/ebony,
-/area/space)
 "wy" = (
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/wood/ebony,
+/area/space)
+"wG" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
 /area/space)
 "wK" = (
 /obj/structure/chair/wood{
@@ -701,15 +709,42 @@
 	},
 /turf/open/floor/carpet,
 /area/space)
-"wT" = (
-/obj/structure/chair/stool{
+"wU" = (
+/obj/structure/railing/wood{
 	dir = 4
+	},
+/turf/closed/wall/mineral/wood,
+/area/space)
+"xd" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/wideband/table{
+	dir = 8;
+	pixel_x = -6;
+	layer = 2.9
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"xg" = (
+/obj/structure/platform/wood_two{
+	dir = 1
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
-"wU" = (
-/obj/item/reagent_containers/glass/bucket/wooden,
+"xj" = (
 /turf/open/floor/wood/mahogany,
+/area/space)
+"xk" = (
+/obj/structure/noticeboard{
+	name = "trophy board";
+	desc = "A board for hanging trophies upon.";
+	pixel_y = 29
+	},
+/obj/item/clothing/mask/rat/bear{
+	pixel_y = 26;
+	name = "bear head";
+	desc = "A taxidermied bear head for mounting on a headboard. You swear it's still staring at you."
+	},
+/turf/open/floor/carpet/green,
 /area/space)
 "xA" = (
 /obj/structure/table/reinforced,
@@ -751,40 +786,26 @@
 /obj/structure/chair/bench/beige,
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"yA" = (
+/obj/item/radio/intercom/directional/east,
+/turf/open/floor/concrete/pavement,
+/area/space)
 "yP" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
 /turf/open/floor/plasteel/dark,
 /area/space)
-"yX" = (
-/obj/structure/closet/wall/white/directional/west{
-	color = "#50C878";
-	name = "gardening supplies"
+"yW" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
 	},
-/obj/item/cultivator/rake,
-/obj/item/shovel/spade,
-/obj/item/reagent_containers/spray/pestspray,
-/obj/item/reagent_containers/glass/chem_jug/eznutriment,
-/obj/item/seeds/grass,
-/turf/open/floor/wood/ebony,
+/obj/structure/railing/corner/wood,
+/turf/open/floor/wood,
 /area/space)
 "zb" = (
 /obj/structure/table/reinforced,
 /obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/dark,
-/area/space)
-"zj" = (
-/obj/structure/noticeboard{
-	name = "trophy board";
-	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
-	},
-/obj/item/clothing/mask/rat/bear{
-	pixel_y = 26;
-	name = "bear head";
-	desc = "A taxidermied bear head for mounting on a headboard. You swear it's still staring at you."
-	},
-/turf/open/floor/carpet/green,
 /area/space)
 "zw" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -805,12 +826,6 @@
 	},
 /obj/item/spacecash/bundle/c1,
 /turf/open/water/jungle/lit,
-/area/space)
-"zK" = (
-/obj/structure/chair/plastic{
-	dir = 4
-	},
-/turf/open/floor/wood/ebony,
 /area/space)
 "zS" = (
 /obj/structure/railing/wood{
@@ -837,18 +852,17 @@
 "AK" = (
 /turf/closed/mineral/random/jungle,
 /area/space)
+"AZ" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "Be" = (
 /obj/structure/platform/ship_four/corner{
 	dir = 4
 	},
 /turf/open/water/jungle/lit,
-/area/space)
-"Bf" = (
-/obj/structure/table/wood/reinforced,
-/obj/machinery/door/window/eastleft,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/open/floor/wood/ebony,
 /area/space)
 "Bo" = (
 /obj/item/table_bell/brass{
@@ -857,25 +871,15 @@
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/wood/ebony,
 /area/space)
-"BB" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/open/floor/concrete/pavement,
+"Bs" = (
+/obj/machinery/washing_machine{
+	pixel_y = 3;
+	pixel_x = -8
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
-"BM" = (
-/obj/structure/sign/plaques/blank{
-	pixel_y = 30;
-	name = "M-15 SUPER SPORTER";
-	desc = "The M-15 Super Sporter is the big brother to our famous M-12 Sporter line, and it sure does pack a punch. Chambered in 5.56 CLIP, the standard issue round of the CMM, this rifle is capable of punching through the toughest of hides."
-	},
-/obj/structure/displaycase{
-	start_showpiece_type = /obj/item/gun/ballistic/automatic/m15
-	},
-/turf/open/floor/carpet/royalblack,
-/area/space)
-"Cr" = (
-/obj/machinery/door/airlock/wood{
-	dir = 4
-	},
+"BR" = (
+/obj/machinery/door/airlock/wood,
 /turf/open/floor/wood/ebony,
 /area/space)
 "Cy" = (
@@ -895,10 +899,17 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
+"CF" = (
+/turf/open/floor/plasteel/dark,
+/area/space)
 "CS" = (
 /obj/structure/chair/wood{
 	dir = 8
 	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"CT" = (
+/obj/machinery/vending/cigarette,
 /turf/open/floor/wood/ebony,
 /area/space)
 "CW" = (
@@ -911,19 +922,22 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "Dd" = (
-/obj/structure/railing/wood{
-	dir = 4
+/obj/structure/rack,
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = 7
 	},
-/obj/structure/railing/wood{
-	dir = 8
-	},
-/turf/open/floor/plasteel/stairs/wood,
-/area/space)
-"Dk" = (
-/obj/structure/bed{
-	icon_state = "dirty_mattress"
+/obj/item/mop/cyborg,
+/obj/item/storage/bag/trash{
+	pixel_x = -6;
+	pixel_y = 9
 	},
 /turf/open/floor/wood/ebony,
+/area/space)
+"Ef" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
 /area/space)
 "El" = (
 /obj/structure/table/reinforced,
@@ -945,20 +959,36 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/space)
-"EG" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/paper/spam{
-	name = "LETTER OF RESIGNATION-PLACEHOLDER"
-	},
-/turf/open/floor/carpet/green,
-/area/space)
 "EH" = (
 /obj/structure/fence/door{
 	name = "EMPLOYEES ONLY"
 	},
 /turf/open/floor/wood,
 /area/space)
-"EK" = (
+"EL" = (
+/obj/machinery/door/poddoor/shutters,
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/area/space)
+"EQ" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement,
+/area/space)
+"ES" = (
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/space)
+"Fb" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/intercom/table{
+	dir = 8;
+	pixel_y = 17;
+	pixel_x = -6
+	},
+/turf/open/floor/plasteel/dark,
+/area/space)
+"Fg" = (
 /obj/structure/railing/wood,
 /turf/open/floor/wood,
 /area/space)
@@ -971,16 +1001,42 @@
 "Gb" = (
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
+"Gk" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = -12
+	},
+/obj/structure/mirror{
+	pixel_x = -27;
+	pixel_y = 3
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
 "Gn" = (
 /obj/structure/platform/ship_four,
 /turf/open/water/jungle/lit,
+/area/space)
+"Go" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/restraints/legcuffs/beartrap{
+	pixel_y = 10;
+	pixel_x = -10
+	},
+/obj/item/restraints/legcuffs/beartrap{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 "Gs" = (
 /obj/structure/table/wood,
 /turf/open/floor/carpet,
 /area/space)
 "Gz" = (
-/turf/open/floor/wood/mahogany,
+/obj/structure/bed{
+	icon_state = "dirty_mattress"
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 "GH" = (
 /obj/structure/rack,
@@ -997,12 +1053,18 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
-"Hg" = (
-/obj/structure/railing/corner/wood{
-	dir = 8
+"Hn" = (
+/obj/structure/window/reinforced/tinted{
+	dir = 4
 	},
-/obj/structure/railing/corner/wood,
-/turf/open/floor/wood,
+/turf/open/floor/wood/ebony,
+/area/space)
+"HD" = (
+/obj/structure/table/wood/reinforced,
+/obj/machinery/door/window/eastleft,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/wood/ebony,
 /area/space)
 "HE" = (
 /obj/structure/table/wood/reinforced,
@@ -1016,22 +1078,37 @@
 /turf/open/floor/wood,
 /area/space)
 "Ib" = (
-/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/turf/closed/wall/concrete,
+/area/space)
+"Iu" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/space)
 "Jh" = (
 /turf/open/floor/carpet/black,
 /area/space)
 "Jl" = (
-/obj/structure/sign/warning/securearea{
-	pixel_y = 29
-	},
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+/turf/closed/wall/mineral/titanium,
 /area/space)
 "Js" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement,
+/area/space)
+"JH" = (
+/obj/structure/rack,
+/obj/structure/window/reinforced,
+/obj/item/gun/ballistic/automatic/m12_sporter/empty{
+	pixel_y = 9;
+	pixel_x = -2
+	},
+/obj/structure/sign/plaques/blank{
+	pixel_y = 30;
+	name = "M-12 SPORTER";
+	desc = "Affordable, effective, tried and tested. The M-12 Sporter is our most popular hunting rifle, and for good reason. The perfect bang for your buck."
+	},
+/turf/open/floor/carpet/royalblack,
 /area/space)
 "JM" = (
 /obj/structure/platform/ship_four/corner{
@@ -1050,12 +1127,6 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"JQ" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/space)
 "JT" = (
 /obj/item/spacecash/bundle/c10,
 /obj/item/spacecash/bundle/c1{
@@ -1071,13 +1142,6 @@
 	pixel_y = -6
 	},
 /turf/open/water/jungle/lit,
-/area/space)
-"KC" = (
-/obj/structure/toilet{
-	dir = 4;
-	pixel_x = -10
-	},
-/turf/open/floor/wood/ebony,
 /area/space)
 "KJ" = (
 /obj/structure/platform/ship_four{
@@ -1120,6 +1184,10 @@
 /obj/structure/kitchenspike,
 /turf/open/floor/plasteel/freezer,
 /area/space)
+"Lx" = (
+/obj/item/kirbyplants,
+/turf/open/floor/wood/ebony,
+/area/space)
 "Lz" = (
 /obj/structure/platform/ship_four/corner{
 	dir = 1
@@ -1133,7 +1201,37 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"Mx" = (
+"LZ" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/m17/empty{
+	pixel_y = -2;
+	pixel_x = -12
+	},
+/obj/item/ammo_box/magazine/m17/empty{
+	pixel_y = -2;
+	pixel_x = -6
+	},
+/obj/item/ammo_box/magazine/m17/empty{
+	pixel_y = -2;
+	pixel_x = 1
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"MC" = (
+/obj/structure/closet/mob_capture,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"Ng" = (
+/obj/structure/sauna_oven,
+/turf/open/floor/wood/mahogany,
+/area/space)
+"NO" = (
 /obj/item/storage/box/ammo/a44roum{
 	pixel_y = 0;
 	pixel_x = -12
@@ -1146,18 +1244,6 @@
 	pixel_y = 7;
 	pixel_x = -5
 	},
-/turf/open/floor/wood/ebony,
-/area/space)
-"MI" = (
-/obj/structure/table/wood/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/item/melee/classic_baton,
-/turf/open/floor/wood/ebony,
-/area/space)
-"MJ" = (
-/obj/item/cigbutt/cigarbutt,
 /turf/open/floor/wood/ebony,
 /area/space)
 "NU" = (
@@ -1179,6 +1265,9 @@
 /obj/effect/spawner/random/trash/garbage,
 /obj/item/food/meat/slab/human/mutant/skeleton,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"OT" = (
+/turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/space)
 "OV" = (
 /obj/structure/platform/ship_four/corner{
@@ -1224,11 +1313,21 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
+"Pw" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned,
+/area/space)
 "Px" = (
 /obj/structure/platform/ship_four{
 	dir = 10
 	},
 /turf/open/water/jungle/lit,
+/area/space)
+"PC" = (
+/obj/machinery/door/airlock/wood,
+/turf/open/floor/noslip,
 /area/space)
 "PG" = (
 /obj/structure/fluff/hedge/opaque,
@@ -1263,31 +1362,17 @@
 	},
 /turf/open/floor/carpet/green,
 /area/space)
-"QB" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/glass/bucket{
-	pixel_x = 7
-	},
-/obj/item/mop/cyborg,
-/obj/item/storage/bag/trash{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/turf/open/floor/wood/ebony,
-/area/space)
-"QD" = (
-/obj/machinery/door/airlock/wood,
-/turf/open/floor/concrete/slab_1,
-/area/space)
 "QY" = (
 /obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"Rh" = (
-/obj/structure/sauna_oven,
-/turf/open/floor/wood/mahogany,
+"Re" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/space)
 "Rq" = (
 /turf/open/floor/plasteel/freezer,
@@ -1298,8 +1383,34 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"Sb" = (
-/obj/item/kirbyplants,
+"Rw" = (
+/obj/structure/sign/departments/restroom{
+	pixel_x = 31
+	},
+/turf/open/floor/wood,
+/area/space)
+"RV" = (
+/obj/structure/toilet{
+	dir = 4;
+	pixel_x = -10
+	},
+/turf/open/floor/wood/ebony,
+/area/space)
+"Sd" = (
+/obj/structure/closet/wall/white/directional/west{
+	color = "#50C878";
+	name = "gardening supplies"
+	},
+/obj/item/cultivator/rake,
+/obj/item/shovel/spade,
+/obj/item/reagent_containers/spray/pestspray,
+/obj/item/reagent_containers/glass/chem_jug/eznutriment,
+/obj/item/seeds/grass,
+/turf/open/floor/wood/ebony,
+/area/space)
+"Sp" = (
+/obj/item/flashlight/lantern,
+/obj/structure/table/wood,
 /turf/open/floor/wood/ebony,
 /area/space)
 "Sv" = (
@@ -1313,22 +1424,25 @@
 /obj/structure/railing/wood,
 /turf/open/floor/wood/ebony,
 /area/space)
-"SF" = (
-/obj/item/clothing/shoes/galoshes{
-	pixel_x = 8;
-	pixel_y = -8
-	},
-/turf/open/floor/wood/ebony,
+"Sz" = (
+/obj/structure/closet/wall/white/directional/north,
+/obj/item/towel,
+/turf/open/floor/wood,
 /area/space)
-"Tc" = (
-/obj/machinery/door/airlock{
-	dir = 4;
-	name = "Groundskeeper's Shed"
-	},
-/turf/open/floor/wood/ebony,
+"SI" = (
+/obj/structure/closet/wall/white/directional/east,
+/obj/item/soap/deluxe,
+/obj/item/towel,
+/turf/open/floor/plasteel/freezer,
 /area/space)
 "Tf" = (
 /turf/open/floor/carpet,
+/area/space)
+"Tp" = (
+/obj/structure/fence/door{
+	name = "PRIVATE PROPERTY"
+	},
+/turf/open/floor/concrete/pavement,
 /area/space)
 "Tq" = (
 /obj/machinery/processor,
@@ -1348,17 +1462,24 @@
 /obj/item/spacecash/bundle/c1,
 /turf/open/water/jungle/lit,
 /area/space)
-"UD" = (
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/wood/ebony,
-/area/space)
 "UG" = (
-/obj/structure/closet/wall/white/directional/north,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/space)
+"UH" = (
+/obj/structure/window/reinforced/tinted,
+/obj/structure/closet/wall/white/directional/east,
+/obj/item/soap/deluxe,
 /obj/item/towel,
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/freezer,
 /area/space)
 "UL" = (
 /turf/open/space/basic,
+/area/space)
+"UO" = (
+/obj/structure/chair/stool{
+	dir = 4
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "US" = (
 /obj/structure/fence/corner{
@@ -1371,17 +1492,35 @@
 /obj/item/trash/boritos,
 /turf/open/floor/wood/ebony,
 /area/space)
-"VR" = (
-/obj/machinery/vending/snack,
-/obj/structure/noticeboard{
-	name = "trophy board";
-	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
+"VK" = (
+/obj/structure/table/wood/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/item/stack/sheet/animalhide/xeno{
-	pixel_y = 28
+/obj/machinery/computer/secure_data/laptop{
+	dir = 8
 	},
 /turf/open/floor/wood/ebony,
+/area/space)
+"VQ" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/structure/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/plasteel/stairs/wood,
+/area/space)
+"VU" = (
+/obj/structure/closet/mob_capture,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 5
+	},
+/turf/open/floor/plasteel/tech,
+/area/space)
+"VV" = (
+/obj/item/reagent_containers/glass/bucket/wooden,
+/turf/open/floor/wood/mahogany,
 /area/space)
 "VZ" = (
 /obj/structure/rack,
@@ -1411,8 +1550,8 @@
 /turf/open/floor/hangar/plasteel/white,
 /area/space)
 "Wx" = (
-/obj/machinery/door/poddoor/shutters,
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
+/obj/structure/janitorialcart,
+/turf/open/floor/wood/ebony,
 /area/space)
 "WU" = (
 /obj/structure/fence{
@@ -1420,27 +1559,45 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
-"Xn" = (
-/obj/structure/rack,
-/obj/structure/window/reinforced,
-/obj/item/gun/ballistic/automatic/pistol/m17/empty,
-/obj/structure/sign/plaques/blank{
-	pixel_y = 30;
-	name = "M-17 MICROTARGET";
-	desc = "The M-17 "Microtarget" pistol is a fantastic and versatile choice for any purpose, from small game hunting to self defence. The signature detachable barrel for excellent portability without comprimising accuracy."
+"XA" = (
+/obj/structure/table/wood/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/turf/open/floor/carpet/royalblack,
+/obj/item/melee/classic_baton,
+/turf/open/floor/wood/ebony,
 /area/space)
 "XC" = (
 /obj/structure/chair/wood,
 /turf/open/floor/carpet,
 /area/space)
-"XV" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/turf_decal/industrial/stand_clear/white{
-	dir = 1
+"XR" = (
+/obj/structure/chair/stool{
+	dir = 8
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/wood/mahogany,
+/area/space)
+"Yb" = (
+/obj/item/storage/box/ammo/c22lr{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/obj/item/storage/box/ammo/c22lr{
+	pixel_x = 10;
+	pixel_y = 3
+	},
+/obj/item/storage/box/ammo/c22lr{
+	pixel_x = -9;
+	pixel_y = -6
+	},
+/obj/item/storage/box/ammo/c22lr{
+	pixel_x = 10;
+	pixel_y = -6
+	},
+/obj/item/storage/box/ammo/c22lr/hp{
+	pixel_y = 6
+	},
+/turf/open/floor/wood/ebony,
 /area/space)
 "Yc" = (
 /obj/item/ammo_casing/spent/rifle_brass,
@@ -1454,27 +1611,20 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/space)
-"Yu" = (
-/obj/structure/table/wood/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/computer/secure_data/laptop{
-	dir = 8
-	},
-/turf/open/floor/wood/ebony,
-/area/space)
 "YQ" = (
 /turf/open/floor/plasteel/stairs/wood,
 /area/space)
-"Zb" = (
-/turf/open/floor/concrete/reinforced/jungleplanet/lit,
-/area/space)
-"Zq" = (
-/obj/structure/fence/door{
-	name = "PRIVATE PROPERTY"
+"Zh" = (
+/obj/item/clothing/shoes/galoshes{
+	pixel_x = 8;
+	pixel_y = -8
 	},
-/turf/open/floor/concrete/pavement,
+/turf/open/floor/wood/ebony,
+/area/space)
+"Zu" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/drone,
+/turf/open/floor/wood/ebony,
 /area/space)
 "Zw" = (
 /obj/item/spacecash/bundle/c1,
@@ -1488,40 +1638,17 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"ZC" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = -12
+"Zx" = (
+/obj/structure/fence{
+	dir = 4
 	},
-/obj/structure/mirror{
-	pixel_x = -27;
-	pixel_y = 3
-	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood,
 /area/space)
 "ZI" = (
 /obj/structure/platform/ship_four{
 	dir = 9
 	},
 /turf/open/water/jungle/lit,
-/area/space)
-"ZJ" = (
-/obj/item/rack_parts,
-/obj/item/attachment/scope{
-	pixel_y = 5;
-	pixel_x = -5
-	},
-/obj/structure/noticeboard{
-	name = "trophy board";
-	desc = "A board for hanging trophies upon.";
-	pixel_y = 29
-	},
-/obj/item/clothing/mask/rat/fox{
-	pixel_y = 29;
-	desc = "A taxidermied fox head for mounting on a headboard. You swear it's still staring at you.";
-	name = "fox head"
-	},
-/turf/open/floor/wood/ebony,
 /area/space)
 "ZL" = (
 /obj/machinery/door/airlock/freezer{
@@ -1927,7 +2054,7 @@ Gb
 Gb
 CW
 CW
-VR
+mf
 iA
 iA
 mQ
@@ -2030,7 +2157,7 @@ Gb
 Gb
 Gb
 CW
-to
+kd
 iA
 iA
 iA
@@ -2082,7 +2209,7 @@ Gb
 Gb
 Gb
 CW
-BM
+mB
 iA
 iA
 iA
@@ -2135,11 +2262,11 @@ CW
 CW
 CW
 CW
-lH
+rn
 cU
 HE
 iA
-Mx
+NO
 iA
 iA
 CW
@@ -2183,10 +2310,10 @@ Gb
 CW
 CW
 ys
-Dk
+Gz
 iT
 CW
-Xn
+rD
 cU
 cU
 jV
@@ -2216,8 +2343,8 @@ as
 as
 Gb
 as
-nw
-Jl
+Ib
+ud
 Gb
 Gb
 Gb
@@ -2241,13 +2368,13 @@ CW
 VZ
 cU
 cU
-EG
+nJ
 iA
 iA
 Tf
 Tf
 Tf
-ez
+fs
 YQ
 gU
 gU
@@ -2268,7 +2395,7 @@ gU
 gU
 gU
 gU
-lg
+Ef
 gU
 Gb
 Gb
@@ -2290,7 +2417,7 @@ re
 iA
 iA
 CW
-rD
+JH
 cU
 cU
 QA
@@ -2299,7 +2426,7 @@ iA
 Tf
 Tf
 Tf
-ez
+fs
 YQ
 gU
 gU
@@ -2320,7 +2447,7 @@ gU
 gU
 gU
 gU
-Zq
+Tp
 gU
 gU
 gU
@@ -2343,15 +2470,15 @@ iA
 iA
 CW
 CW
-zj
+xk
 cU
-vL
+pT
 iA
 iA
 Tf
 Tf
 Tf
-ez
+fs
 YQ
 gU
 gU
@@ -2372,7 +2499,7 @@ gU
 gU
 gU
 gU
-lg
+Ef
 gU
 gU
 gU
@@ -2424,8 +2551,8 @@ as
 as
 as
 as
-nw
-Jl
+Ib
+ud
 as
 Gb
 as
@@ -2442,16 +2569,16 @@ Gb
 Gb
 CW
 CW
-qE
+CT
 iA
 iA
-nn
+BR
 iA
 iA
 iA
 OZ
 iA
-cH
+Yb
 iA
 iA
 CW
@@ -2498,14 +2625,14 @@ CW
 CW
 CW
 CW
-Sb
+Lx
 cc
 iA
 aN
 iA
 iA
 iA
-wr
+Go
 CW
 Gb
 Gb
@@ -2551,11 +2678,11 @@ Gb
 Gb
 CW
 CW
-ZJ
+aU
 GH
 CW
 iH
-oU
+LZ
 Ao
 CW
 CW
@@ -2679,11 +2806,11 @@ as
 as
 CW
 CW
-aX
-gP
-yX
+Bs
+Zu
+Sd
 iA
-bX
+Wx
 CW
 Gb
 Gb
@@ -2730,12 +2857,12 @@ as
 as
 Gb
 CW
-zK
-MJ
+qB
+iy
 iA
 iA
 iA
-QB
+Dd
 CW
 Gb
 Gb
@@ -2782,12 +2909,12 @@ as
 Gb
 Gb
 CW
-fl
-uI
+aT
+Sp
 iA
 iA
-SF
-UD
+Zh
+nV
 CW
 Gb
 Gb
@@ -2799,11 +2926,11 @@ Gb
 "}
 (25,1,1) = {"
 om
-Zb
-Zb
-Zb
-Zb
-Zb
+OT
+OT
+OT
+OT
+OT
 om
 Gb
 Gb
@@ -2833,11 +2960,11 @@ gU
 as
 Dc
 Dc
-bj
+wU
 CW
 CW
 CW
-Tc
+ok
 CW
 CW
 CW
@@ -2888,10 +3015,10 @@ NU
 NU
 NU
 NU
-uw
+ub
 NU
 NU
-cI
+dc
 HH
 Gb
 Gb
@@ -2935,7 +3062,7 @@ gU
 gU
 gU
 as
-ld
+Rw
 NU
 NU
 NU
@@ -2943,8 +3070,8 @@ NU
 NU
 NU
 NU
-cI
-JQ
+dc
+Zx
 Gb
 Gb
 Gb
@@ -2988,7 +3115,7 @@ gU
 gU
 as
 CW
-Cr
+gk
 CW
 CW
 CW
@@ -3042,14 +3169,14 @@ as
 CW
 iA
 CW
-ph
+bU
 CW
-KC
+RV
 CW
-UG
-EK
-ga
-wT
+Sz
+Fg
+xg
+UO
 CW
 CW
 Gb
@@ -3094,15 +3221,15 @@ as
 CW
 iA
 CW
-Cr
+gk
 CW
-Cr
+gk
 CW
-UG
-EK
-ga
-Gz
-wT
+Sz
+Fg
+xg
+xj
+UO
 CW
 CW
 Gb
@@ -3145,17 +3272,17 @@ gU
 as
 CW
 iA
-ZC
+Gk
 iA
-ZC
+Gk
 iA
 CW
-UG
-EK
-ga
-Gz
-wU
-Rh
+Sz
+Fg
+xg
+xj
+VV
+Ng
 CW
 Gb
 Gb
@@ -3201,13 +3328,13 @@ iA
 iA
 iA
 iA
-mV
+PC
 NU
-Hg
-Dd
-Gz
-Gz
-jN
+yW
+VQ
+xj
+xj
+bf
 CW
 Gb
 Gb
@@ -3249,16 +3376,16 @@ gU
 as
 CW
 CW
-ms
-kc
-ms
-kc
+Hn
+cA
+Hn
+cA
 CW
-UG
-EK
-ga
-Gz
-ok
+Sz
+Fg
+xg
+xj
+XR
 CW
 CW
 Gb
@@ -3301,15 +3428,15 @@ gU
 as
 as
 CW
-jX
-sT
-jX
-vv
+kD
+UH
+kD
+SI
 CW
-UG
-EK
-ga
-ok
+Sz
+Fg
+xg
+XR
 CW
 CW
 Gb
@@ -4293,7 +4420,7 @@ gU
 gU
 gU
 as
-QD
+hW
 iA
 iA
 iA
@@ -4347,7 +4474,7 @@ gU
 as
 CW
 iA
-mj
+AZ
 iA
 CW
 as
@@ -4398,9 +4525,9 @@ gU
 gU
 as
 CW
-MI
-Bf
-Yu
+XA
+HD
+VK
 CW
 as
 Gb
@@ -4439,9 +4566,9 @@ Gb
 gU
 gU
 gU
-XV
-Wx
-gi
+tI
+EL
+vj
 gU
 gU
 gU
@@ -4491,9 +4618,9 @@ gU
 gU
 gU
 gU
-BB
-Wx
-hY
+pj
+EL
+EQ
 gU
 gU
 gU
@@ -4543,9 +4670,9 @@ gU
 gU
 gU
 gU
-BB
-Wx
-hY
+pj
+EL
+EQ
 gU
 gU
 gU
@@ -4575,7 +4702,7 @@ AK
 AK
 Gb
 Gb
-Gb
+Wj
 Gb
 Gb
 Gb
@@ -4595,9 +4722,9 @@ gU
 gU
 gU
 gU
-BB
-Wx
-hY
+pj
+EL
+EQ
 gU
 gU
 gU
@@ -4646,11 +4773,11 @@ Gb
 Gb
 gU
 gU
-uZ
-XV
-Wx
-gi
-uZ
+yA
+tI
+EL
+vj
+yA
 gU
 gU
 gU
@@ -4709,11 +4836,11 @@ gU
 gU
 gU
 as
-Ib
-Ib
-Ib
-Ib
-Ib
+UG
+UG
+UG
+UG
+UG
 as
 Gb
 Gb
@@ -4747,9 +4874,9 @@ Gb
 Gb
 Gb
 Gb
-UL
-UL
-UL
+Gb
+Gb
+Gb
 AK
 AK
 AK
@@ -4761,11 +4888,11 @@ gU
 gU
 gU
 as
-Ib
-Ib
-Ib
-Ib
-Ib
+UG
+UG
+UG
+UG
+UG
 as
 Gb
 Gb
@@ -4813,11 +4940,11 @@ gU
 gU
 gU
 as
-Ib
-Ib
-Ib
-Ib
-Ib
+UG
+UG
+UG
+UG
+UG
 as
 Gb
 Gb
@@ -4865,10 +4992,10 @@ gU
 gU
 gU
 as
-Ib
-Ib
-Ib
-Ib
+UG
+UG
+UG
+UG
 as
 as
 Gb
@@ -4917,9 +5044,9 @@ gU
 gU
 gU
 as
-Ib
-Ib
-Ib
+UG
+UG
+UG
 as
 as
 Gb
@@ -4948,7 +5075,7 @@ Gb
 Gb
 Gb
 Gb
-Wj
+Gb
 Gb
 Gb
 Gb
@@ -4969,8 +5096,8 @@ gU
 gU
 gU
 as
-Ib
-Ib
+UG
+UG
 as
 as
 Gb
@@ -5365,17 +5492,17 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
 Gb
 Gb
 Gb
@@ -5417,17 +5544,17 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
 Gb
 Gb
 Gb
@@ -5469,17 +5596,17 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
 Gb
 Gb
 Gb
@@ -5521,17 +5648,17 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
 Gb
 Gb
 Gb
@@ -5573,17 +5700,17 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
 Gb
 Gb
 Gb
@@ -5625,17 +5752,17 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
 Gb
 Gb
 Gb
@@ -5661,33 +5788,33 @@ Gb
 Gb
 Gb
 Gb
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
+UL
 Gb
 Gb
 as
@@ -5713,21 +5840,21 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+ga
+ga
+ga
+ga
+ga
+Jl
+Jl
+Jl
+Jl
+cJ
+eZ
+ga
+ga
+ga
+ga
 Gb
 Gb
 Gb
@@ -5765,24 +5892,24 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+ga
+ga
+ES
+ES
+Jl
+Jl
+wG
+wG
+VU
+MC
+Jl
+Jl
+fJ
+ga
+ga
+as
+as
+as
 as
 as
 as
@@ -5817,24 +5944,24 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+ga
+ga
+ES
+xd
+Fb
+Jl
+uZ
+uZ
+uZ
+uZ
+uZ
+uZ
+fJ
+ga
+ga
+gU
+gU
+gU
 gU
 gU
 gU
@@ -5869,24 +5996,24 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+ga
+ga
+ES
+ou
+Re
+CF
+Iu
+Iu
+Iu
+Iu
+Iu
+uZ
+fJ
+ga
+ga
+gU
+gU
+gU
 gU
 gU
 gU
@@ -5921,24 +6048,24 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+ga
+ga
+ES
+CF
+CF
+Jl
+uZ
+uZ
+uZ
+uZ
+uZ
+uZ
+fJ
+ga
+ga
+gU
+gU
+gU
 gU
 gU
 gU
@@ -5973,24 +6100,24 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+ga
+ga
+ES
+ES
+Jl
+Jl
+Pw
+Pw
+rz
+cj
+Jl
+Jl
+fJ
+ga
+ga
+as
+as
+as
 as
 as
 as
@@ -6025,21 +6152,21 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+ga
+ga
+ga
+ga
+ga
+Jl
+Jl
+Jl
+Jl
+sy
+eZ
+ga
+ga
+ga
+ga
 Gb
 Gb
 Gb
@@ -6077,21 +6204,21 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
+ga
 Gb
 Gb
 Gb
