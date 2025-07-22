@@ -145,6 +145,7 @@
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack/messenger/inteq,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "bI" = (
@@ -1128,7 +1129,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/starboard)
 "oM" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/layer4,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "oR" = (
@@ -2377,6 +2378,8 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
+/obj/item/storage/backpack/satchel/leather,
+/obj/item/storage/backpack/satchel/leather,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormthree)
 "CP" = (
@@ -2705,6 +2708,8 @@
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/gloves/fingerless,
 /obj/item/clothing/gloves/fingerless,
+/obj/item/storage/backpack/satchel/explorer,
+/obj/item/storage/backpack/satchel/explorer,
 /turf/open/floor/wood/walnut{
 	color = "#543c30";
 	icon_state = "wood-broken4"
@@ -2844,6 +2849,8 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
+/obj/item/storage/backpack/satchel/leather,
+/obj/item/storage/backpack/satchel/leather,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormfour)
 "Iy" = (
@@ -3107,6 +3114,7 @@
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack/messenger/inteq,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
 "Ml" = (
@@ -3430,6 +3438,16 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
+"PO" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/cryo)
 "PQ" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/borderfloorblack{
@@ -4323,6 +4341,7 @@
 	pixel_x = -10;
 	pixel_y = 22
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/cryo)
 "YG" = (
@@ -4746,7 +4765,7 @@ xm
 iz
 VT
 fk
-Ht
+PO
 Ht
 eZ
 Qn
