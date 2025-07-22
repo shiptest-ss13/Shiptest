@@ -2737,6 +2737,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "Hu" = (
@@ -3150,6 +3151,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
+"Mq" = (
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/crew/cryo)
 "Mv" = (
 /obj/machinery/washing_machine{
 	pixel_x = 0;
@@ -3438,16 +3449,6 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/ccommons)
-"PO" = (
-/obj/machinery/cryopod{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/crew/cryo)
 "PQ" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/borderfloorblack{
@@ -4178,6 +4179,8 @@
 /obj/item/reagent_containers/spray/pepper,
 /obj/item/reagent_containers/spray/pepper,
 /obj/item/storage/box/handcuffs,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "WW" = (
@@ -4765,7 +4768,7 @@ xm
 iz
 VT
 fk
-PO
+Mq
 Ht
 eZ
 Qn
