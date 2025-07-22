@@ -108,3 +108,36 @@
   - rscadd: Added organic wounds
   - rscdel: Removed IPC structure
   - rscadd: minor tweaks to tackle numbers
+2025-07-20:
+  Erikafox:
+  - bugfix: minute bar fluff un-regressed
+  - rscdel: random minefields
+  - rscadd: remodels the fore of the cirrus
+  - rscadd: half-stair decal
+  - bugfix: you can now map specific coffee cartridges
+  - bugfix: grass on beaches being invisible sometimes
+  Zevotech:
+  - rscadd: replaces a large amount of planetary turfs on ruins (jungle, lava, space)
+      with their updated overmap 5 counterparts. please report any atmos issues or
+      missing sprites.
+  - bugfix: fixed unset icon files for various planetary turfs
+  - bugfix: fixed large turf offset in mapping software for 70x70 planetary turfs
+      (shouldnt be player facing, needs review)
+  - bugfix: removed some decals inside walls on NT_ice & NGR_rock outposts that were
+      causing warnings
+  - rscdel: removed unused lavaland and wasteplanet grass types
+  - rscdel: removed legacy lavaland grass types
+  thearbiber:
+  - rscadd: resprites the hermit rifle and zip pistol
+  - balance: reworks the zip pistol, removes safeties off the zip pistol and hermit
+      rifle
+2025-07-21:
+  Erikafox:
+  - bugfix: holocalls now report who's calling
+2025-07-22:
+  Erikafox:
+  - balance: thronglers deal more damage but have a wound bonus based on your armor
+      and spread the damage out
+  SapphicOverload:
+  - bugfix: Fixed being able to understand sign language without knowing sign language
+  - code_imp: Refactors sign language into an actual language
