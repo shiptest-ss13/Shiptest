@@ -44,6 +44,27 @@
 	ears.adjustEarDamage(-4 * REM * seconds_per_tick, -4 * REM * seconds_per_tick)
 	return ..()
 
+/datum/reagent/medicine/mannitol
+	name = "Mannitol"
+	description = "Efficiently restores brain damage."
+	color = "#A0A0A0" //mannitol is light grey, neurine is lighter grey
+
+/datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/C)
+	C.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
+	..()
+
+/datum/reagent/medicine/neurine
+	name = "Neurine"
+	description = "Reacts with neural tissue, helping reform damaged connections. Can cure minor traumas."
+	color = "#C0C0C0" //ditto
+
+/datum/reagent/medicine/neurine/on_mob_life(mob/living/carbon/C)
+	if(C.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin))
+		C.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5)
+	if(prob(15))
+		C.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
+	..()
+
 /*
 *How this medicine works:
 *Penthrite if you are not in crit only stabilizes your heart.

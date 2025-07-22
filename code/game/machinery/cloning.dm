@@ -286,7 +286,7 @@
 			connected_message("Clone Ejected: Not enough material.")
 			if(internal_radio)
 				SPEAK("The cloning of [mob_occupant.real_name] has been ended prematurely due to insufficient material.")
-		if(mob_occupant && (mob_occupant.stat == DEAD) ||  mob_occupant.hellbound)  //Autoeject corpses.
+		if(mob_occupant && (mob_occupant.stat == DEAD))  //Autoeject corpses.
 			connected_message("Clone Rejected: Deceased.")
 			if(internal_radio)
 				SPEAK("The cloning of [mob_occupant.real_name] has been \
