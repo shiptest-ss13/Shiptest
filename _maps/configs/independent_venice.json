@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Venetia-class Superyacht",
+	"faction": "/datum/faction/independent",
+	"prefix": "SV",
+	"manufacturer": "Kasagi-Fischer Partnership",
+	"namelists": [
+		"SPACE",
+		"GENERAL",
+		"NATURAL"
+	],
+	"map_short_name": "Venetia-class",
+	"description": "The Venetia-class is one of the upper-ends of Kasagi-Fischer Partnership vessels, often captained by richer frontier residents. Due to the recent scrap-craze of the frontier, many of these Superyachts have been sold with salvaging in mind, and due to the danger of this work, some higher-end mercenaries can be found on these vessels. With the many accommodations inside these ships, it's not uncommon to see a passenger compliment, there for frontier sightseeing or research."
+	,"tags": [
+		"engineering",
+		"scrapper",
+		"RP Focus"
+	],
+	"map_path": "_maps/shuttles/independent/independent_venice.dmm",
+	"limit": 1,
+	"starting_funds": 2000,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/independent/captain/empty",
+			"officer": true,
+			"slots": 1
+		},
+		"First Mate": {
+			"outfit": "/datum/outfit/job/independent/hop/western",
+			"officer": true,
+			"slots": 1
+		},
+		"Salvage Technician": {
+			"outfit": "/datum/outfit/job/independent/engineer/salvage",
+			"slots": 2
+		},
+		"Enforcer": {
+			"outfit": "/datum/outfit/job/inteq/security/empty",
+			"slots": 2
+		},
+		"Passenger": {
+			"outfit": "/datum/outfit/job/independent/assistant",
+			"slots": 4
+		}
+	},
+	"enabled": true
+}
