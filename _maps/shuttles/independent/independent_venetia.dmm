@@ -483,6 +483,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
+"gh" = (
+/obj/effect/turf_decal/trimline/opaque/beige/filled/warning{
+	dir = 4
+	},
+/obj/machinery/light/floor{
+	icon_state = "floor-on"
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/engine/hull/reinforced,
+/area/ship/external/dark)
 "gm" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1007,6 +1017,7 @@
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering)
 "mN" = (
+/obj/machinery/holopad/secure,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormtwo)
 "mU" = (
@@ -1068,6 +1079,7 @@
 /obj/machinery/light/floor{
 	icon_state = "floor-on"
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
 "nH" = (
@@ -1268,6 +1280,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "pg" = (
@@ -2190,6 +2203,13 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"yW" = (
+/obj/structure/chair/handrail{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "yZ" = (
 /obj/structure/chair/sofa/grey/corpo/directional{
 	dir = 8
@@ -2547,6 +2567,7 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/food/meat/steak/tiris,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen/kitchen)
 "CI" = (
@@ -2664,6 +2685,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Eu" = (
@@ -3874,9 +3896,6 @@
 /obj/item/clothing/under/rank/engineering/engineer/hazard,
 /obj/item/clothing/head/hardhat/weldhat/orange,
 /obj/item/clothing/shoes/workboots,
-/obj/structure/railing/thin/corner{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -5423,7 +5442,7 @@ RF
 nL
 vi
 hn
-GD
+yW
 sy
 za
 za
@@ -5569,7 +5588,7 @@ Dm
 Dm
 Dm
 OH
-nF
+gh
 za
 zP
 yZ
