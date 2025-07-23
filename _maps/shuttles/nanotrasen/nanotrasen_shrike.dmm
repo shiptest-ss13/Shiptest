@@ -1065,9 +1065,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "pE" = (
-/obj/structure/closet/crate/radiation,
-/obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engines/port)
 "pG" = (
@@ -3760,9 +3762,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engines/port)
 "SI" = (
@@ -3983,7 +3982,7 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engines/port)
@@ -4452,8 +4451,11 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/plasma/twenty,
 /turf/open/floor/plasteel/patterned,
 /area/ship/engineering/engines/port)
 "Zr" = (
