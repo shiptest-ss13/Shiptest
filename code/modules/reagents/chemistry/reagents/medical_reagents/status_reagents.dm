@@ -8,22 +8,6 @@
 	color = "#E1F2E6"
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/anti_rad
-	name = "Emergency Radiation Purgant" //taking real names
-	description = "Rapidly purges radiation from the body."
-	reagent_state = LIQUID
-	color = "#E6FFF0"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-
-/datum/reagent/medicine/anti_rad/on_mob_metabolize(mob/living/L)
-	to_chat(L, span_warning("Your stomach starts to churn and cramp!"))
-	. = ..()
-
-/datum/reagent/medicine/anti_rad/on_mob_life(mob/living/carbon/M)
-	M.radiation -= M.radiation - rand(50,150)
-	M.adjust_disgust(4*REM)
-	..()
-	. = 1
 
 
 /datum/reagent/medicine/mutadone
@@ -54,6 +38,41 @@
 	M.adjustToxLoss(-0.2*REM, 0)
 	..()
 	. = 1
+
+/datum/reagent/medicine/diphenhydramine
+	name = "Diphenhydramine"
+	description = "Rapidly purges the body of Histamine and reduces jitteriness. Slight chance of causing drowsiness."
+	reagent_state = LIQUID
+	color = "#64FFE6"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M)
+	if(prob(10))
+		M.drowsyness += 1
+	M.adjust_jitter(-6)
+	M.reagents.remove_reagent(/datum/reagent/toxin/histamine,3)
+	..()
+
+
+/datum/reagent/medicine/haloperidol
+	name = "Haloperidol"
+	description = "Increases depletion rates for most stimulating/hallucinogenic drugs. Reduces druggy effects and jitteriness. Severe stamina regeneration penalty, causes drowsiness. Small chance of brain damage."
+	reagent_state = LIQUID
+	color = "#27870a"
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/haloperidol/on_mob_life(mob/living/carbon/M)
+	for(var/datum/reagent/drug/R in M.reagents.reagent_list)
+		M.reagents.remove_reagent(R.type,5)
+	M.drowsyness += 2
+	M.adjust_jitter(-3)
+	if (M.hallucination >= 5)
+		M.hallucination -= 5
+	if(prob(20))
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM, 50)
+	M.adjustStaminaLoss(2.5*REM, 0)
+	..()
+	return TRUE
 
 /datum/reagent/medicine/modafinil
 	name = "Modafinil"

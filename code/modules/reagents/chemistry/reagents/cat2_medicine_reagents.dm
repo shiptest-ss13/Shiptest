@@ -7,43 +7,7 @@
 /******TOXIN******/
 /*Suffix: -iver*/
 
-/datum/reagent/medicine/c2/seiver //a bit of a gray joke
-	name = "Seiver"
-	description = "A medicine that shifts functionality based on temperature. Colder temperatures incurs radiation removal while hotter temperatures promote antitoxicity. Damages the heart." //CHEM HOLDER TEMPS, NOT AIR TEMPS
-	var/radbonustemp = (T0C - 100) //being below this number gives you 10% off rads.
 
-/datum/reagent/medicine/c2/seiver/on_mob_metabolize(mob/living/carbon/human/M)
-	. = ..()
-	radbonustemp = rand(radbonustemp - 50, radbonustemp + 50) // Basically this means 50K and below will always give the percent heal, and upto 150K could. Calculated once.
-
-/datum/reagent/medicine/c2/seiver/on_mob_life(mob/living/carbon/human/M)
-	var/chemtemp = min(holder.chem_temp, 1000)
-	chemtemp = chemtemp ? chemtemp : 273 //why do you have null sweaty
-	var/healypoints = 0 //5 healypoints = 1 heart damage; 5 rads = 1 tox damage healed for the purpose of healypoints
-
-	//you're hot
-	var/toxcalc = min(round((chemtemp-1000)/175+5,0.1),5) //max 5 tox healing a tick
-	if(toxcalc > 0)
-		M.adjustToxLoss(toxcalc*-1)
-		healypoints += toxcalc
-
-	//and you're cold
-	var/radcalc = round((T0C-chemtemp)/6,0.1) //max ~45 rad loss unless you've hit below 0K. if so, wow.
-	if(radcalc > 0)
-		//no cost percent healing if you are SUPER cold (on top of cost healing)
-		if(chemtemp < radbonustemp*0.1) //if you're super chilly, it takes off 25% of your current rads
-			M.radiation = round(M.radiation * 0.75)
-		else if(chemtemp < radbonustemp)//else if you're under the chill-zone, it takes off 10% of your current rads
-			M.radiation = round(M.radiation * 0.9)
-		M.radiation -= radcalc
-		healypoints += (radcalc/5)
-
-
-	//you're yes and... oh no!
-	healypoints = round(healypoints,0.1)
-	M.adjustOrganLoss(ORGAN_SLOT_HEART, healypoints/5)
-	..()
-	return TRUE
 
 /datum/reagent/medicine/c2/multiver //enhanced with MULTIple medicines
 	name = "Multiver"

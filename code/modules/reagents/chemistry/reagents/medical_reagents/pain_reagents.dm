@@ -281,29 +281,91 @@
 		N.set_screwyhud(SCREWYHUD_NONE)
 	..()
 
-/datum/reagent/medicine/synthflesh
-	name = "Synthflesh"
-	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal one point of damage. Touch application only."
-	reagent_state = LIQUID
-	color = "#FFEBEB"
 
-/datum/reagent/medicine/synthflesh/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
-	if(iscarbon(M))
-		var/mob/living/carbon/carbies = M
-		if (carbies.stat == DEAD)
-			show_message = 0
-		if(method in list(PATCH, TOUCH, SMOKE))
-			var/harmies = min(carbies.getBruteLoss(),carbies.adjustBruteLoss(-1.25 * reac_volume)*-1)
-			var/burnies = min(carbies.getFireLoss(),carbies.adjustFireLoss(-1.25 * reac_volume)*-1)
-			for(var/i in carbies.all_wounds)
-				var/datum/wound/iter_wound = i
-				iter_wound.on_synthflesh(reac_volume)
-			carbies.adjustToxLoss((harmies+burnies)*0.66)
-			if(show_message)
-				to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
-			SEND_SIGNAL(carbies, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
-			if(HAS_TRAIT_FROM(M, TRAIT_HUSK, "burn") && carbies.getFireLoss() < THRESHOLD_UNHUSK && (carbies.reagents.get_reagent_amount(/datum/reagent/medicine/synthflesh) + reac_volume >= 100))
-				carbies.cure_husk("burn")
-				carbies.visible_message("<span class='nicegreen'>A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!") //we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or something
+/datum/reagent/medicine/carfencadrizine
+	name = "Carfencadrizine"
+	description = "A highly potent synthetic painkiller held in a suspension of stimulating agents. Allows people to keep moving long beyond when they should stop."
+	color = "#859480"
+	overdose_threshold = 8
+	addiction_threshold = 7
+	metabolization_rate = 0.1
+
+/datum/reagent/medicine/carfencadrizine/on_mob_metabolize(mob/living/L)
+	. = ..()
+	ADD_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/medicine/carfencadrizine)
+	ADD_TRAIT(L, TRAIT_PINPOINT_EYES, type)
+	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
+	ADD_TRAIT(L, TRAIT_NOHARDCRIT, type)
+
+/datum/reagent/medicine/carfencadrizine/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	REMOVE_TRAIT(L, TRAIT_HARDLY_WOUNDED, /datum/reagent/medicine/carfencadrizine)
+	REMOVE_TRAIT(L, TRAIT_PINPOINT_EYES, type)
+	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
+	REMOVE_TRAIT(L, TRAIT_NOHARDCRIT, type)
+
+/datum/reagent/medicine/carfencadrizine/on_mob_life(mob/living/carbon/M)
+	if(current_cycle >= 3)
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_heavy, name)
+
+	if(M.health <= M.crit_threshold)
+		if(prob(20))
+			M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
+		if(prob(40))
+			M.playsound_local(get_turf(M), 'sound/health/slowbeat2.ogg', 40,0, channel = CHANNEL_HEARTBEAT, use_reverb = FALSE)
 	..()
-	return TRUE
+
+/datum/reagent/medicine/carfencadrizine/overdose_process(mob/living/M)
+	if(prob(66))
+		M.losebreath++
+		M.adjustOxyLoss(4, 0)
+	if(prob(40))
+		M.AdjustUnconscious(20)
+	if(prob(10))
+		M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 7)
+	..()
+
+/datum/reagent/medicine/carfencadrizine/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjust_jitter(4)
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
+	..()
+
+/datum/reagent/medicine/carfencadrizine/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+		M.Dizzy(3)
+		M.adjust_jitter(3)
+	if(prob(15))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
+	..()
+
+/datum/reagent/medicine/carfencadrizine/addiction_act_stage3(mob/living/M)
+	if(prob(50))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+		M.Dizzy(4)
+		M.adjust_jitter(4)
+	if(prob(30))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	..()
+
+/datum/reagent/medicine/carfencadrizine/addiction_act_stage4(mob/living/M)
+	if(prob(60))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+		M.Dizzy(4)
+		M.adjust_jitter(4)
+	if(prob(40))
+		M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
+		M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+	..()
+
