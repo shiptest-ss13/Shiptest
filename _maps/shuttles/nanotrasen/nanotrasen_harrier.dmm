@@ -2700,11 +2700,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/poddoor{
-	dir = 4;
-	id = "harrier_thrusters_starboard";
-	name = "Thruster Blast Door"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "pp" = (
@@ -7152,13 +7147,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
-"MM" = (
-/obj/machinery/power/shuttle/engine/electric,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering)
 "MP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8934,9 +8922,9 @@
 	pixel_x = 8;
 	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/jellysandwich{
+/obj/item/food/jellysandwich{
 	pixel_x = 0;
-	pixel_y = 4
+	pixel_y = 3
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/crew/dorm)
@@ -9870,7 +9858,7 @@ Wx
 US
 pe
 US
-MM
+pe
 US
 MZ
 "}
