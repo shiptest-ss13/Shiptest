@@ -105,7 +105,7 @@
 //Survey: we like chemicals
 
 /datum/mission/outpost/survey/geyser
-	name = ""
+	name = "scan chemical geyser"
 	desc = ""
 	value = 2500
 	objective_type = /obj/structure/geyser
@@ -116,8 +116,6 @@
 	num_wanted = 1
 
 /datum/mission/outpost/survey/geyser/New(...)
-	if(!name)
-		name = "scan chemical geyser"
 	if(!desc)
 		desc = "[SSmissions.get_researcher_name()] has requested that we locate and scan planetary geysers for potential investment into pharmacuticals within the system. Utilze the provided scanner to scan and record data on [num_wanted] geyser."
 	. = ..()
