@@ -14,7 +14,7 @@
 	var/max_volume = 500
 	var/start_volume = 50
 	///used for missions
-	var/scanned = FALSE
+	var/mission_scanned = FALSE
 
 /obj/structure/geyser/proc/start_chemming()
 	activated = TRUE

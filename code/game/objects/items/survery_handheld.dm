@@ -19,7 +19,7 @@
 /obj/item/survey_handheld/attack_obj(obj/O, mob/living/user)
 	. = ..()
 	if(istype(O, scan_target) && scan_tally < scans_required)
-		if(O?:scanned == TRUE)
+		if(O?:mission_scanned == TRUE)
 			to_chat(user, span_notice("[O] has already been scanned"))
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
 			return FALSE

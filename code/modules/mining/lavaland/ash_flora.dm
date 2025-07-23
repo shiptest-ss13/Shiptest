@@ -487,7 +487,7 @@
 	light_range = 1
 	needs_sharp_harvest = FALSE
 	///Used for garden scan missions
-	var/scanned = FALSE
+	var/mission_scanned = FALSE
 
 /obj/structure/flora/ash/garden/arid
 	name = "sandy garden"
