@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		wave_tally = 0
 		return TRUE
 	wave_tally += 1
-	if(wave_tally == waves_per_break)
+	if(wave_tally > waves_per_break)
 		wave_tally = 0
 		our_drill.say("Seismic disturbances subsiding. Estimated return in [time2text(wave_downtime, "mm:ss")].")
 		return FALSE
