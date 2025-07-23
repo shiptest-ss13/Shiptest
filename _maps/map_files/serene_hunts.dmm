@@ -1,4 +1,26 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"af" = (
+/obj/structure/closet/wall/white/directional/north,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/helmet{
+	pixel_x = -1;
+	pixel_y = 11
+	},
+/obj/item/clothing/glasses/sunglasses/ballistic{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/rank/security/officer,
+/obj/item/storage/wallet/random,
+/turf/open/floor/wood,
+/area/space)
+"ai" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 10
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/space)
 "ap" = (
 /obj/item/spacecash/bundle/c10{
 	pixel_y = 3;
@@ -18,6 +40,10 @@
 /obj/structure/table_frame/wood,
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
+"aK" = (
+/obj/structure/spacevine,
+/turf/open/floor/wood/ebony,
 /area/space)
 "aN" = (
 /obj/structure/sign/poster/contraband/twelve_gauge{
@@ -70,11 +96,21 @@
 	},
 /turf/open/floor/engine,
 /area/space)
+"bO" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/space)
 "bQ" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange,
 /turf/open/floor/plating,
+/area/space)
+"bU" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "cc" = (
 /obj/item/attachment/rail_light,
@@ -86,12 +122,6 @@
 /area/space)
 "cn" = (
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
-/area/space)
-"cr" = (
-/obj/effect/turf_decal/siding/white/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "cx" = (
 /obj/structure/closet/secure_closet/freezer/fridge{
@@ -114,16 +144,17 @@
 	pixel_y = 2;
 	pixel_x = 7
 	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/spline/fancy/wood/cee{
+	dir = 1
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "cB" = (
 /obj/item/reagent_containers/condiment/milk,
 /turf/open/floor/plasteel/freezer,
 /area/space)
-"cH" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 6
-	},
+"cF" = (
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "cO" = (
@@ -134,6 +165,12 @@
 	id = "cell3"
 	},
 /turf/open/floor/plating,
+/area/space)
+"cR" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 5
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "cU" = (
 /turf/open/floor/carpet/green,
@@ -157,12 +194,6 @@
 "dN" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/wood/ebony,
-/area/space)
-"dP" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 9
-	},
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "dY" = (
 /obj/machinery/computer/helm,
@@ -219,12 +250,6 @@
 /mob/living/simple_animal/hostile/asteroid/brimdemon,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
-"fL" = (
-/obj/effect/turf_decal/siding/white/corner{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/space)
 "fM" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "cargo bay"
@@ -234,6 +259,12 @@
 	id = "cargo"
 	},
 /turf/open/floor/plasteel/patterned,
+/area/space)
+"fO" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 6
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "ga" = (
 /obj/structure/grille,
@@ -256,12 +287,6 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"gg" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 5
-	},
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/space)
 "gn" = (
 /obj/machinery/camera/autoname,
 /turf/open/floor/engine,
@@ -275,9 +300,19 @@
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
+"gy" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 9
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/space)
 "gU" = (
 /obj/structure/chair/bench/orange/directional/west,
 /turf/open/floor/carpet/jungleplanet,
+/area/space)
+"he" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/wood/ebony,
 /area/space)
 "hg" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
@@ -321,6 +356,18 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
+"hL" = (
+/obj/structure/spacevine,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/space)
+"hP" = (
+/obj/structure/bed,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 10
+	},
+/obj/effect/spawner/random/bedsheet,
+/turf/open/floor/wood/mahogany,
+/area/space)
 "hW" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
@@ -334,6 +381,11 @@
 /obj/structure/fence{
 	dir = 8
 	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/space)
+"io" = (
+/obj/effect/turf_decal/siding/white,
+/obj/structure/spacevine,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "iq" = (
@@ -377,6 +429,12 @@
 	pixel_x = 4
 	},
 /turf/open/floor/wood/ebony,
+/area/space)
+"iM" = (
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "iO" = (
 /turf/open/floor/concrete/jungleplanet/lit,
@@ -441,6 +499,11 @@
 	},
 /turf/open/floor/carpet/green,
 /area/space)
+"jY" = (
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
 "kb" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 8
@@ -452,6 +515,13 @@
 	dir = 4
 	},
 /turf/closed/wall/mineral/wood,
+/area/space)
+"ky" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "kJ" = (
 /obj/structure/railing{
@@ -472,6 +542,15 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/space)
+"kN" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "le" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -481,6 +560,14 @@
 "lg" = (
 /obj/machinery/vending/snack,
 /turf/open/floor/wood/ebony,
+/area/space)
+"lh" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 6
+	},
+/obj/item/flashlight/lamp,
+/turf/open/floor/wood/mahogany,
 /area/space)
 "lo" = (
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -552,9 +639,9 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/space)
-"mR" = (
-/obj/item/stack/ore/salvage/scrapmetal,
-/obj/item/stack/ore/salvage/scrapmetal,
+"mY" = (
+/obj/structure/table_frame/wood,
+/obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/carpet/jungleplanet,
 /area/space)
 "mZ" = (
@@ -571,10 +658,6 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
-/area/space)
-"nB" = (
-/obj/effect/turf_decal/siding/white,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "nF" = (
 /obj/structure/platform/ship_four/corner,
@@ -733,6 +816,12 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
 /area/space)
+"qk" = (
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/space)
 "qm" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open{
 	opened = 1
@@ -773,13 +862,6 @@
 	dir = 1
 	},
 /turf/open/floor/wood/ebony,
-/area/space)
-"rf" = (
-/obj/structure/flippedtable{
-	icon_state = "wood_table";
-	dir = 8
-	},
-/turf/open/floor/carpet/jungleplanet,
 /area/space)
 "ri" = (
 /obj/machinery/button/door{
@@ -866,6 +948,10 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/space)
+"rM" = (
+/obj/effect/turf_decal/siding/white/corner,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/space)
 "rO" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -878,10 +964,12 @@
 "rP" = (
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
-"rV" = (
-/obj/structure/table_frame/wood,
-/obj/item/stack/sheet/mineral/wood,
-/turf/open/floor/carpet/jungleplanet,
+"rS" = (
+/obj/structure/closet/wall/white/directional/north,
+/obj/item/clothing/under/overalls/olive,
+/obj/item/clothing/suit/apron,
+/obj/item/storage/wallet/random,
+/turf/open/floor/wood,
 /area/space)
 "rY" = (
 /obj/machinery/button/door{
@@ -897,6 +985,10 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/space)
+"sc" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/space)
 "sk" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -910,18 +1002,18 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
-"sr" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 10
-	},
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/space)
 "sv" = (
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Groundskeeper's Shed"
 	},
+/obj/structure/spacevine,
 /turf/open/floor/wood/ebony,
+/area/space)
+"sx" = (
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
+/turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
 "sy" = (
 /obj/structure/fence/corner{
@@ -981,7 +1073,10 @@
 /obj/structure/toilet{
 	pixel_y = 12
 	},
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/spline/fancy/wood/cee{
+	dir = 1
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "tl" = (
 /obj/structure/table/reinforced,
@@ -1024,6 +1119,13 @@
 /obj/structure/sauna_oven,
 /turf/open/floor/wood/mahogany,
 /area/space)
+"tT" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/wood,
+/turf/open/floor/wood/mahogany,
+/area/space)
 "tU" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
@@ -1050,6 +1152,10 @@
 /area/space)
 "uQ" = (
 /obj/structure/bed/double,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/obj/effect/spawner/random/bedsheet/double,
 /turf/open/floor/wood/mahogany,
 /area/space)
 "uS" = (
@@ -1059,20 +1165,6 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange,
 /turf/open/floor/plating,
-/area/space)
-"va" = (
-/obj/structure/closet/wall/white/directional/north,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/helmet{
-	pixel_x = -1;
-	pixel_y = 11
-	},
-/obj/item/clothing/glasses/sunglasses/ballistic{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/obj/item/clothing/shoes/combat,
-/turf/open/floor/wood,
 /area/space)
 "vb" = (
 /obj/structure/sign/plaques/blank{
@@ -1116,6 +1208,7 @@
 /obj/structure/sign/departments/restroom{
 	pixel_x = 31
 	},
+/obj/structure/spacevine/dense,
 /turf/open/floor/wood/jungleplanet,
 /area/space)
 "wy" = (
@@ -1141,6 +1234,13 @@
 "wU" = (
 /turf/closed/wall/concrete,
 /area/space)
+"xk" = (
+/obj/structure/spider/cocoon{
+	icon_state = "cocoon_large3"
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
 "xo" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
@@ -1151,12 +1251,20 @@
 /obj/item/melee/baton/cattleprod/loaded,
 /turf/open/floor/concrete/reinforced,
 /area/space)
+"xs" = (
+/obj/structure/closet/wall/directional/north,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "xy" = (
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/item/towel,
 /obj/item/towel,
 /obj/item/towel,
-/turf/open/floor/plasteel/dark,
+/obj/effect/turf_decal/spline/fancy/wood/cee,
+/turf/open/floor/wood/mahogany,
 /area/space)
 "xA" = (
 /obj/structure/table/reinforced,
@@ -1188,6 +1296,7 @@
 	pixel_x = 8;
 	pixel_y = -8
 	},
+/obj/structure/spacevine,
 /turf/open/floor/wood/ebony,
 /area/space)
 "xZ" = (
@@ -1198,6 +1307,12 @@
 	dir = 4
 	},
 /turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
+"yc" = (
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "ye" = (
 /mob/living/simple_animal/hostile/asteroid/wolf/alpha,
@@ -1233,6 +1348,9 @@
 /area/space)
 "yJ" = (
 /obj/structure/closet/cabinet,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
+	},
 /turf/open/floor/wood/mahogany,
 /area/space)
 "yP" = (
@@ -1240,10 +1358,23 @@
 /obj/machinery/microwave,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/space)
+"yY" = (
+/mob/living/simple_animal/hostile/jungle/seedling,
+/obj/structure/spacevine,
+/turf/open/floor/wood/jungleplanet,
+/area/space)
 "zb" = (
 /obj/structure/table/reinforced,
 /obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/dark/jungleplanet,
+/area/space)
+"zk" = (
+/obj/structure/bed/double,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 6
+	},
+/obj/effect/spawner/random/bedsheet/double,
+/turf/open/floor/wood/mahogany,
 /area/space)
 "zl" = (
 /obj/effect/turf_decal/industrial/warning{
@@ -1355,6 +1486,12 @@
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
 /area/space)
+"Ba" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "Be" = (
 /obj/structure/platform/ship_four/corner{
 	dir = 4
@@ -1381,11 +1518,23 @@
 /obj/structure/curtain/cloth,
 /turf/open/floor/wood/jungleplanet,
 /area/space)
+"Bq" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
+"Bw" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "By" = (
-/obj/structure/table/wood/reinforced,
-/obj/machinery/door/window/eastleft,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
 "BO" = (
@@ -1405,6 +1554,13 @@
 	},
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/plasteel/patterned,
+/area/space)
+"Cg" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "Cn" = (
 /obj/effect/turf_decal/industrial/warning/corner,
@@ -1450,6 +1606,10 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/jungleplanet/lit,
+/area/space)
+"CT" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
 "CW" = (
 /turf/closed/wall/mineral/wood,
@@ -1519,6 +1679,17 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/space)
+"EY" = (
+/obj/structure/flippedtable{
+	icon_state = "wood_table";
+	dir = 8
+	},
+/turf/open/floor/carpet/jungleplanet,
+/area/space)
+"Fb" = (
+/obj/effect/turf_decal/spline/fancy/wood,
+/turf/open/floor/wood/mahogany,
+/area/space)
 "Fm" = (
 /mob/living/basic/bear/cave,
 /turf/open/floor/wood/ebony/jungleplanet,
@@ -1561,6 +1732,16 @@
 /area/space)
 "FR" = (
 /obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
+"FX" = (
+/obj/structure/closet/cabinet,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 10
+	},
 /turf/open/floor/wood/mahogany,
 /area/space)
 "FZ" = (
@@ -1572,6 +1753,10 @@
 /area/space)
 "Gb" = (
 /turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
+"Ge" = (
+/obj/structure/spacevine,
+/turf/open/floor/wood/jungleplanet,
 /area/space)
 "Gm" = (
 /obj/machinery/paystand{
@@ -1617,6 +1802,12 @@
 /obj/machinery/computer/monitor,
 /turf/open/floor/plasteel/dark,
 /area/space)
+"Hi" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "Hm" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -1651,6 +1842,15 @@
 /obj/structure/sign/warning,
 /turf/open/floor/wood,
 /area/space)
+"HM" = (
+/obj/structure/table/wood/reinforced,
+/obj/structure/noticeboard{
+	name = "trophy board";
+	desc = "A board for hanging trophies upon.";
+	pixel_x = -31
+	},
+/turf/open/floor/carpet/green,
+/area/space)
 "HR" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/stand_clear/white{
@@ -1667,14 +1867,21 @@
 /turf/open/floor/plating,
 /area/space)
 "Iz" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/pen/fountain,
-/obj/item/paper_bin,
-/turf/open/floor/carpet/green,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "IB" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
+"IC" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "IM" = (
 /obj/machinery/door/airlock/wood,
@@ -1685,6 +1892,12 @@
 	dir = 8
 	},
 /turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
+"IZ" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "Jh" = (
 /turf/open/floor/carpet/black,
@@ -1773,6 +1986,7 @@
 	dir = 4
 	},
 /obj/item/melee/classic_baton,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
 "KJ" = (
@@ -1892,28 +2106,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
-"LS" = (
-/obj/structure/table/wood/reinforced,
-/obj/item/reagent_containers/glass/bowl{
-	name = "TAKE ONE"
-	},
-/obj/item/food/candy_corn{
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/obj/item/food/candy_corn{
-	pixel_y = 5;
-	pixel_x = 3
-	},
-/obj/item/food/candy_corn{
-	pixel_y = 5
-	},
-/obj/item/food/candy_corn{
-	pixel_y = 5;
-	pixel_x = -3
-	},
-/turf/open/floor/carpet/green,
-/area/space)
 "LU" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
 /obj/machinery/button/door{
@@ -1923,6 +2115,19 @@
 	id = "cell4"
 	},
 /turf/open/floor/concrete/lava,
+/area/space)
+"Mb" = (
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = -31
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 10
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
+"Mh" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
 "MG" = (
 /obj/structure/chair/office,
@@ -1945,7 +2150,8 @@
 	pixel_x = 24;
 	pixel_y = 6
 	},
-/turf/open/floor/wood/ebony,
+/obj/effect/turf_decal/spline/fancy/wood/cee,
+/turf/open/floor/wood/mahogany,
 /area/space)
 "MZ" = (
 /obj/structure/chair/comfy/shuttle{
@@ -1960,6 +2166,11 @@
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
 /area/space)
+"Nx" = (
+/mob/living/simple_animal/hostile/venus_human_trap,
+/obj/structure/spacevine,
+/turf/open/floor/wood/jungleplanet,
+/area/space)
 "Nz" = (
 /obj/item/stack/tile/wood/ebony,
 /turf/open/floor/wood/ebony,
@@ -1971,6 +2182,9 @@
 "NP" = (
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_x = -31
+	},
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
 	},
 /turf/open/floor/wood/mahogany,
 /area/space)
@@ -1998,6 +2212,12 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
+"Op" = (
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
 "OC" = (
 /obj/machinery/grill,
 /turf/open/floor/plasteel/dark/jungleplanet,
@@ -2018,7 +2238,12 @@
 "OG" = (
 /obj/item/flashlight/lantern,
 /obj/structure/table/wood,
+/obj/structure/spacevine,
 /turf/open/floor/wood/ebony,
+/area/space)
+"OH" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/space)
 "OT" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -2044,6 +2269,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
+/obj/structure/spacevine,
 /turf/open/floor/wood/ebony,
 /area/space)
 "OZ" = (
@@ -2174,6 +2400,10 @@
 	},
 /turf/open/floor/carpet/green,
 /area/space)
+"Rc" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/space)
 "Rg" = (
 /obj/structure/fence{
 	dir = 8
@@ -2193,28 +2423,37 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
-"RA" = (
-/obj/effect/turf_decal/siding/white/corner{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/space)
 "RB" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/wood,
 /area/space)
+"RH" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/mahogany,
+/area/space)
 "RJ" = (
 /obj/structure/sign/departments/custodian{
 	pixel_x = -32
 	},
+/obj/structure/spacevine,
 /turf/open/floor/wood/jungleplanet,
 /area/space)
 "RN" = (
 /obj/machinery/door/airlock/wood{
 	dir = 4
 	},
+/turf/open/floor/wood/mahogany,
+/area/space)
+"RR" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/obj/item/flashlight/lamp,
 /turf/open/floor/wood/mahogany,
 /area/space)
 "Se" = (
@@ -2268,6 +2507,13 @@
 "Tf" = (
 /turf/open/floor/carpet,
 /area/space)
+"Tj" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/space)
 "Tm" = (
 /obj/structure/chair/stool{
 	dir = 4
@@ -2312,6 +2558,18 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/space)
+"Ur" = (
+/obj/structure/closet/wall/white/directional/north,
+/obj/item/clothing/under/suit/charcoal,
+/obj/item/clothing/shoes/winterboots/ice_boots{
+	name = "hiking boots"
+	},
+/obj/item/storage/wallet/random,
+/obj/item/modular_computer/tablet,
+/obj/item/spacecash/bundle/c500,
+/obj/item/spacecash/bundle/smallrand,
+/turf/open/floor/wood,
+/area/space)
 "Uv" = (
 /obj/structure/chair/bench/orange/directional/east,
 /turf/open/floor/carpet/jungleplanet,
@@ -2339,6 +2597,28 @@
 "UG" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
+"UI" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/reagent_containers/glass/bowl{
+	name = "TAKE ONE"
+	},
+/obj/item/food/candy_corn{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/food/candy_corn{
+	pixel_y = 5;
+	pixel_x = 3
+	},
+/obj/item/food/candy_corn{
+	pixel_y = 5
+	},
+/obj/item/food/candy_corn{
+	pixel_y = 5;
+	pixel_x = -3
+	},
+/turf/open/floor/carpet/green,
 /area/space)
 "UL" = (
 /obj/structure/chair/bench/orange,
@@ -2418,12 +2698,6 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
-"Wh" = (
-/obj/effect/turf_decal/siding/white{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
-/area/space)
 "Wj" = (
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
@@ -2452,6 +2726,10 @@
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel/white/jungleplanet,
+/area/space)
+"Wr" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/space)
 "Wt" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2485,6 +2763,7 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
+/obj/structure/spider/stickyweb,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
 "Xd" = (
@@ -2506,15 +2785,6 @@
 "Xj" = (
 /turf/open/floor/engine/hull/interior,
 /area/space)
-"Xq" = (
-/obj/structure/table/wood/reinforced,
-/obj/structure/noticeboard{
-	name = "trophy board";
-	desc = "A board for hanging trophies upon.";
-	pixel_x = -31
-	},
-/turf/open/floor/carpet/green,
-/area/space)
 "XC" = (
 /obj/structure/fluff/hedge/opaque,
 /turf/open/floor/carpet/black/jungleplanet,
@@ -2529,6 +2799,12 @@
 /obj/effect/turf_decal/number/left_two,
 /turf/open/floor/concrete/lava,
 /area/space)
+"Yo" = (
+/obj/structure/table/wood/reinforced,
+/obj/item/pen/fountain,
+/obj/item/paper_bin,
+/turf/open/floor/carpet/green,
+/area/space)
 "Yz" = (
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/wood/ebony,
@@ -2539,8 +2815,16 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
+"YO" = (
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/space)
 "YQ" = (
 /obj/structure/bed,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
+	},
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/wood/mahogany,
 /area/space)
 "YU" = (
@@ -2571,10 +2855,6 @@
 	},
 /obj/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/space)
-"Za" = (
-/obj/effect/turf_decal/siding/white/corner,
-/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "Zb" = (
 /obj/machinery/door/airlock/command,
@@ -2626,11 +2906,21 @@
 	},
 /turf/open/water/jungle/lit,
 /area/space)
+"ZK" = (
+/obj/structure/closet/wall/directional/south,
+/obj/effect/turf_decal/spline/fancy/wood,
+/turf/open/floor/wood/mahogany,
+/area/space)
 "ZL" = (
 /obj/machinery/door/airlock/freezer{
 	dir = 4
 	},
 /turf/open/floor/plasteel/freezer,
+/area/space)
+"ZN" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/carpet/jungleplanet,
 /area/space)
 "ZR" = (
 /obj/structure/closet/crate/trashcart,
@@ -2644,6 +2934,12 @@
 /obj/structure/closet/wall/white/directional/north,
 /obj/item/towel,
 /turf/open/floor/wood,
+/area/space)
+"ZT" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/mahogany,
 /area/space)
 "ZU" = (
 /obj/structure/railing/wood{
@@ -2803,24 +3099,24 @@ Gb
 Gb
 CW
 yJ
-mo
-YQ
+ZT
+hP
 CW
 YQ
-mo
+ZT
+FX
+CW
+CW
+CW
+CW
+CW
 yJ
-CW
-CW
-CW
-CW
-CW
-yJ
-mo
-YQ
+ZT
+hP
 CW
 YQ
-mo
-yJ
+ZT
+FX
 CW
 Gb
 Gb
@@ -2854,25 +3150,25 @@ Gb
 Gb
 Gb
 CW
-Sy
+kN
 mo
-mo
+Fb
 CW
+Bw
 mo
-mo
-Sy
+tT
 CW
-Iz
-Xq
+Yo
+HM
 Qf
 CW
-Sy
+kN
 mo
-mo
+Fb
 CW
+Bw
 mo
-mo
-Sy
+tT
 CW
 Gb
 Gb
@@ -2906,24 +3202,24 @@ Gb
 Gb
 Gb
 CW
-FR
-mo
-mo
+Cg
+bU
+RH
 CW
-mo
-mo
+Hi
+bU
 FR
 CW
 cU
 cU
 cU
 CW
-FR
-mo
-mo
+Cg
+bU
+RH
 CW
-mo
-mo
+Hi
+bU
 FR
 CW
 Gb
@@ -2967,7 +3263,7 @@ CW
 CW
 CW
 AQ
-LS
+UI
 eE
 CW
 CW
@@ -3167,8 +3463,8 @@ Gb
 WU
 CW
 NP
-mo
-mo
+ZT
+Ba
 CW
 tj
 MW
@@ -3182,9 +3478,9 @@ CW
 cx
 xy
 CW
-mo
-mo
-NP
+Iz
+ZT
+Mb
 CW
 AK
 AK
@@ -3218,9 +3514,9 @@ Gb
 Gb
 WU
 CW
-mo
+xs
 Sy
-mo
+Fb
 CW
 CW
 CW
@@ -3234,9 +3530,9 @@ CW
 CW
 CW
 CW
-mo
+Bw
 Sy
-mo
+ZK
 CW
 AK
 AK
@@ -3271,8 +3567,8 @@ Gb
 WU
 CW
 uQ
-FR
-yJ
+Bq
+lh
 CW
 Gb
 Gb
@@ -3286,9 +3582,9 @@ Gb
 Gb
 Gb
 CW
-yJ
-FR
-uQ
+RR
+Bq
+zk
 CW
 AK
 AK
@@ -3382,9 +3678,9 @@ Gb
 Gb
 as
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 as
 Gb
@@ -3433,11 +3729,11 @@ Gb
 Gb
 as
 as
-dP
+gy
 rP
 rP
-cr
-sr
+qk
+ai
 as
 as
 Gb
@@ -3484,13 +3780,13 @@ Gb
 Gb
 as
 as
-dP
-fL
+gy
+iM
 rP
 rP
 rP
-cr
-sr
+qk
+ai
 as
 as
 Gb
@@ -3535,15 +3831,15 @@ Gb
 Gb
 as
 as
-dP
-fL
+gy
+iM
 rP
 rP
 rP
 rP
 rP
-cr
-sr
+qk
+ai
 as
 as
 Gb
@@ -3586,8 +3882,8 @@ Gb
 Gb
 as
 as
-dP
-fL
+gy
+iM
 rP
 as
 Qq
@@ -3595,8 +3891,8 @@ Qq
 Qq
 as
 rP
-cr
-sr
+qk
+ai
 as
 as
 Gb
@@ -3637,8 +3933,8 @@ CW
 Gb
 as
 as
-dP
-fL
+gy
+iM
 rP
 as
 as
@@ -3648,8 +3944,8 @@ Px
 as
 as
 rP
-cr
-sr
+qk
+ai
 as
 as
 Gb
@@ -3688,8 +3984,8 @@ iA
 CW
 QY
 as
-dP
-fL
+gy
+iM
 rP
 as
 as
@@ -3701,8 +3997,8 @@ Px
 as
 as
 rP
-cr
-sr
+qk
+ai
 as
 as
 Gb
@@ -3740,7 +4036,7 @@ Tf
 lX
 nP
 WR
-fL
+iM
 rP
 rP
 yz
@@ -3754,7 +4050,7 @@ Px
 vT
 rP
 rP
-cr
+qk
 WR
 WR
 rP
@@ -3844,7 +4140,7 @@ Tf
 lX
 nP
 jw
-RA
+yc
 rP
 rP
 yz
@@ -3858,7 +4154,7 @@ OW
 vT
 rP
 rP
-Za
+rM
 jw
 jw
 jw
@@ -3896,8 +4192,8 @@ iA
 CW
 kJ
 as
-gg
-RA
+cR
+yc
 rP
 as
 as
@@ -3909,8 +4205,8 @@ OW
 as
 as
 rP
-Za
-cH
+rM
+fO
 as
 as
 as
@@ -3949,8 +4245,8 @@ CW
 Gb
 as
 as
-gg
-RA
+cR
+yc
 rP
 as
 as
@@ -3960,8 +4256,8 @@ OW
 as
 as
 rP
-Za
-cH
+rM
+fO
 as
 as
 Gb
@@ -4002,8 +4298,8 @@ Gb
 Gb
 as
 as
-gg
-RA
+cR
+yc
 rP
 as
 Ru
@@ -4011,8 +4307,8 @@ Ru
 Ru
 as
 rP
-Za
-cH
+rM
+fO
 as
 as
 Gb
@@ -4055,15 +4351,15 @@ Gb
 Gb
 as
 as
-gg
-RA
+cR
+yc
 rP
 rP
 rP
 rP
 rP
-Za
-cH
+rM
+fO
 as
 as
 Gb
@@ -4108,13 +4404,13 @@ Gb
 Gb
 as
 as
-gg
-RA
+cR
+yc
 rP
 rP
 rP
-Za
-cH
+rM
+fO
 as
 as
 CW
@@ -4149,9 +4445,9 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
+Mh
+Mh
+Mh
 Gb
 Gb
 Gb
@@ -4161,19 +4457,19 @@ Gb
 Gb
 as
 as
-gg
-RA
+cR
+yc
 rP
-Za
-cH
-as
-as
+rM
+fO
+bO
+bO
 CW
 CW
 MU
 BO
 Xg
-iA
+he
 Rm
 CW
 Gb
@@ -4202,9 +4498,9 @@ Gb
 Gb
 Gb
 Gb
-Gb
-Gb
-Gb
+Mh
+Mh
+Mh
 Gb
 Gb
 Gb
@@ -4214,18 +4510,18 @@ Gb
 Gb
 as
 as
-Wh
+IZ
 rP
-nB
+cF
+bO
 as
-as
-Gb
+Mh
 CW
 OX
 Gz
+aK
 iA
-iA
-iA
+aK
 KV
 CW
 Gb
@@ -4254,10 +4550,10 @@ CW
 CW
 CW
 CW
+Mh
+Mh
 Gb
-Gb
-Gb
-Gb
+Mh
 Gb
 Gb
 Gb
@@ -4266,17 +4562,17 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
-as
-Gb
+cF
+bO
+Mh
 Gb
 CW
 jB
 OG
-iA
-iA
+he
+aK
 xK
 OT
 CW
@@ -4318,12 +4614,12 @@ Dc
 Dc
 Dc
 as
-Wh
+IZ
 rP
-nB
+cF
 as
-Dc
-Dc
+Tj
+IC
 ks
 CW
 CW
@@ -4370,18 +4666,18 @@ TN
 TN
 TN
 as
-Wh
+IZ
 rP
-nB
-as
+cF
+hL
 TN
-TN
-TN
-TN
-TN
+Ge
+Ge
+Nx
+Ge
 RJ
-TN
-TN
+Ge
+Ge
 ZR
 HH
 Gb
@@ -4422,18 +4718,18 @@ lT
 lT
 lT
 kb
-Wh
+IZ
 rP
-nB
+cF
 as
 wp
 TN
-TN
-TN
-TN
-TN
-TN
-TN
+Ge
+Ge
+Ge
+yY
+Ge
+Nx
 ZR
 RB
 Gb
@@ -4474,9 +4770,9 @@ xZ
 FO
 Om
 rr
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
 sq
@@ -4526,10 +4822,10 @@ UG
 wK
 QL
 rr
-Wh
+IZ
 rP
-nB
-as
+cF
+bO
 CW
 iA
 CW
@@ -4537,7 +4833,7 @@ jL
 CW
 Sx
 CW
-va
+af
 Dd
 lL
 Tm
@@ -4566,10 +4862,10 @@ xA
 aZ
 CW
 zt
-rV
+mY
 wK
-rf
-rf
+EY
+EY
 wK
 Gs
 AX
@@ -4580,7 +4876,7 @@ ed
 rr
 Ho
 rP
-nB
+cF
 as
 CW
 iA
@@ -4589,7 +4885,7 @@ sq
 CW
 sq
 CW
-ZS
+rS
 Dd
 lL
 mo
@@ -4621,7 +4917,7 @@ gU
 gU
 wK
 gU
-mR
+ZN
 wK
 wK
 wy
@@ -4630,9 +4926,9 @@ fF
 wK
 wK
 rr
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
 iA
@@ -4682,9 +4978,9 @@ Lh
 wK
 LG
 rr
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
 iA
@@ -4734,9 +5030,9 @@ au
 wK
 ZD
 rr
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
 CW
@@ -4745,7 +5041,7 @@ je
 AG
 je
 CW
-ZS
+Ur
 Dd
 lL
 mo
@@ -4786,9 +5082,9 @@ sK
 Se
 ZU
 rr
-Wh
+IZ
 rP
-nB
+cF
 as
 as
 CW
@@ -4838,10 +5134,10 @@ wb
 wb
 wb
 vw
-Wh
+IZ
 rP
-cr
-sr
+qk
+ai
 as
 CW
 CW
@@ -4890,20 +5186,20 @@ TJ
 TJ
 sy
 as
-Wh
+IZ
 rP
 rP
-nB
+cF
 as
 as
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -4942,20 +5238,20 @@ rP
 rP
 HH
 as
-Wh
+IZ
 rP
 rP
-cr
-sr
+qk
+ai
 as
 as
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -4994,20 +5290,20 @@ rP
 rP
 EH
 as
-Wh
+IZ
 rP
 rP
 rP
-cr
-sr
+qk
+ai
 as
 as
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5046,20 +5342,20 @@ rP
 rP
 tp
 as
-Wh
+IZ
 rP
 rP
 rP
 rP
-cr
-sr
+qk
+ai
 as
 as
-Gb
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5098,20 +5394,20 @@ AK
 AK
 AK
 as
-gg
-RA
+cR
+yc
 rP
 rP
 rP
 rP
-cr
-sr
+qk
+ai
 as
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5151,19 +5447,19 @@ AK
 AK
 as
 as
-gg
-RA
+cR
+yc
 rP
 rP
 rP
 rP
-cr
-sr
+qk
+ai
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5204,18 +5500,18 @@ AK
 AK
 as
 as
-gg
+cR
 rP
 rP
 rP
 rP
 rP
-nB
+cF
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5257,17 +5553,17 @@ AK
 AK
 as
 as
-gg
-RA
+cR
+yc
 rP
 rP
 rP
-nB
+cF
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5310,16 +5606,16 @@ AK
 AK
 as
 as
-gg
-RA
+cR
+yc
 rP
 rP
-nB
+cF
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5363,15 +5659,15 @@ AK
 AK
 as
 as
-gg
-RA
+cR
+yc
 rP
-nB
+cF
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5416,14 +5712,14 @@ AK
 AK
 as
 as
-Wh
+IZ
 rP
-nB
+cF
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5468,14 +5764,14 @@ AK
 AK
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5520,14 +5816,14 @@ AK
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
-Gb
-Gb
-Gb
-Gb
+cn
+cn
+cn
+cn
 WU
 Gb
 Gb
@@ -5572,9 +5868,9 @@ AK
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 as
 as
@@ -5624,9 +5920,9 @@ AK
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
 CW
@@ -5676,12 +5972,12 @@ AK
 AK
 AK
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
-wK
+xk
 CW
 CW
 iv
@@ -5728,13 +6024,13 @@ AK
 AK
 AK
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
-wK
-wK
+jY
+CT
 CW
 CW
 as
@@ -5780,14 +6076,14 @@ AK
 AK
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Xd
-wK
-wK
-wK
+CT
+sx
+CT
 CW
 as
 Gb
@@ -5832,14 +6128,14 @@ AK
 AK
 AK
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
-wK
+Op
 Xb
-wK
+CT
 CW
 as
 Gb
@@ -5884,9 +6180,9 @@ om
 om
 gx
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 CW
 Kz
@@ -5936,15 +6232,15 @@ zl
 SB
 WR
 WR
-fL
+iM
 rP
-nB
+cF
 as
 as
-as
-as
-as
-as
+Wr
+Wr
+Wr
+Wr
 as
 Gb
 as
@@ -6094,10 +6390,10 @@ rP
 rP
 rP
 rP
-Za
+rM
 jw
 jw
-jw
+ky
 jw
 jw
 Gb
@@ -6144,16 +6440,16 @@ zl
 Oi
 jw
 jw
-RA
+yc
 rP
-nB
+cF
+bO
 as
 as
-as
-as
-as
-as
-as
+bO
+bO
+bO
+bO
 Gb
 as
 as
@@ -6196,14 +6492,14 @@ om
 om
 gx
 as
-Wh
+IZ
 rP
-nB
+cF
 as
+YO
 cn
-cn
-cn
-cn
+YO
+YO
 CW
 as
 Gb
@@ -6248,14 +6544,14 @@ AK
 AK
 AK
 as
-Wh
+IZ
 rP
-nB
-as
+io
+hL
+YO
 cn
-cn
-cn
-cn
+OH
+YO
 cn
 as
 Gb
@@ -6300,15 +6596,15 @@ AK
 AK
 AK
 as
-Wh
+IZ
 rP
-nB
-as
+cF
+hL
 cn
-cn
-cn
-cn
-cn
+sc
+YO
+Rc
+YO
 as
 Gb
 Gb
@@ -6352,14 +6648,14 @@ AK
 AK
 Gb
 as
-Wh
+IZ
 rP
-nB
+io
 as
 cn
+YO
 cn
-cn
-cn
+YO
 cn
 as
 Gb
@@ -6404,14 +6700,14 @@ AK
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
+YO
 cn
 cn
-cn
-cn
+YO
 as
 as
 Gb
@@ -6456,13 +6752,13 @@ AK
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 cn
 cn
-cn
+YO
 as
 as
 Gb
@@ -6508,12 +6804,12 @@ AK
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
-cn
-cn
+YO
+YO
 as
 as
 Gb
@@ -6560,9 +6856,9 @@ AK
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 as
 as
@@ -6612,9 +6908,9 @@ AK
 AK
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -6664,9 +6960,9 @@ AK
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -6716,9 +7012,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -6768,9 +7064,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -6820,9 +7116,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -6872,9 +7168,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -6924,9 +7220,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -6976,9 +7272,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7028,9 +7324,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7080,9 +7376,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7132,9 +7428,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7184,9 +7480,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7236,9 +7532,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7288,9 +7584,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7340,9 +7636,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7380,9 +7676,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7392,9 +7688,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7432,9 +7728,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7444,9 +7740,9 @@ Gb
 Gb
 as
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7484,9 +7780,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7495,10 +7791,10 @@ Gb
 Gb
 as
 as
-dP
-fL
+gy
+iM
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7536,9 +7832,9 @@ Gb
 Gb
 Gb
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7546,11 +7842,11 @@ Gb
 Gb
 as
 as
-dP
-fL
+gy
+iM
 rP
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7588,21 +7884,21 @@ as
 as
 as
 as
-Wh
+IZ
 rP
-nB
+cF
 as
 as
 as
 as
 as
 as
-dP
-fL
+gy
+iM
 rP
 rP
 rP
-nB
+cF
 as
 Gb
 Gb
@@ -7640,21 +7936,21 @@ WR
 WR
 WR
 WR
-fL
+iM
 rP
-cr
+qk
 WR
 WR
 WR
 WR
 WR
 WR
-fL
+iM
 rP
 rP
 rP
-Za
-cH
+rM
+fO
 as
 Gb
 Gb
@@ -7704,8 +8000,8 @@ rP
 rP
 rP
 rP
-Za
-cH
+rM
+fO
 as
 as
 Gb
@@ -7756,7 +8052,7 @@ jw
 jw
 jw
 jw
-cH
+fO
 as
 as
 Gb

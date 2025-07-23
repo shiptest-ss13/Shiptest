@@ -36,6 +36,22 @@
 	/// The shape we're currently in.
 	var/shape = TOWEL_FOLDED
 
+/obj/item/towel/full
+	shape = TOWEL_FULL
+	icon = "towel-chest"
+
+/obj/item/towel/waist
+	shape = TOWEL_WAIST
+	icon = "towel-waist"
+
+/obj/item/towel/waist
+	shape = TOWEL_HEAD
+	icon = "towel-head"
+
+/obj/item/towel/Initialize()
+	. = ..()
+	change_towel_shape(shape)
+
 /obj/item/towel/examine(mob/user)
 	. = ..()
 

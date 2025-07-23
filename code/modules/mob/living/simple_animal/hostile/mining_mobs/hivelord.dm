@@ -125,6 +125,7 @@
 	stat_attack = HARD_CRIT
 	robust_searching = 1
 	var/dwarf_mob = FALSE
+	var/mob_to_spawn //if this legion is suppossed to spawn a specific mob
 	var/mob/living/carbon/human/stored_mob
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
