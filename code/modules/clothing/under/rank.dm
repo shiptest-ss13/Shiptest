@@ -1,7 +1,6 @@
 /obj/item/clothing/accessory/rank
 	name = "blank rank insignia"
 	desc = "Tell a coder."
-//	world_file = 'icons/obj/world/rank.dmi'
 	attachment_slot = null
 
 // clip rank patches
@@ -9,12 +8,14 @@
 /obj/item/clothing/accessory/rank/clip
 	name = "rank patch, C-MM"
 	desc = "A pair of patches that go on your fatigues and indicate your rank. This pair is blank."
+	attachment_slot = ARMS
 	icon = 'icons/obj/clothing/faction/clip/cmm_rank.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/accessory.dmi'
 	mob_overlay_state = "cme"
-	item_state = "kitchenknife"
 	icon_state = "cme0"
-	attachment_slot = ARMS
+//	world_file = 'icons/obj/world/rank.dmi'
+//	world_state = "cmm_rank"
+//	inventory_state = "cme0"
 
 /obj/item/clothing/accessory/rank/clip/cme1
 	name = "rank patch, CME1 Leagueman"
