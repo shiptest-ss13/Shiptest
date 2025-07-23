@@ -14,7 +14,7 @@
 
 /obj/item/clothing/under/syndicate/ramzi/overalls
 	name = "\improper Ramzi overalls"
-	desc = "an aging pair of overalls, formerly worn by the Gorlex Marauders."
+	desc = "An aging pair of overalls, formerly worn by the Gorlex Marauders."
 	icon_state = "ramzi_overalls"
 	item_state = "ramzi_overalls"
 	supports_variations = DIGITIGRADE_VARIATION
@@ -40,7 +40,7 @@
 
 /obj/item/clothing/suit/ramzi/smock
 	name = "maroon smock"
-	desc = "a shabby smock, it's straps barely held on. It's hard to tell if the color due to aging or bloodstains."
+	desc = "A shabby smock, it's straps barely held on. It's hard to tell if the color due to aging or bloodstains."
 	icon_state = "ramzi_smock"
 	item_state = "redcloth"
 	allowed = MEDICAL_SUIT_ALLOWED_ITEMS
