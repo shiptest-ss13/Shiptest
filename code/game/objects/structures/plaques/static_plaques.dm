@@ -50,7 +50,7 @@
 
 /obj/structure/sign/plaques/blank
 	name = "Blank Plaque"
-	icon_state = "kiddie"
+	icon_state = "kiddieplaque"
 
 /obj/structure/plaque/listeningpost
 	name = "Listening Post Commemoration Plaque"

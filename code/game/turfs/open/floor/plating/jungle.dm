@@ -37,7 +37,6 @@
 	icon = 'icons/turf/floors/yellowgrass.dmi'
 	smooth_icon = 'icons/turf/floors/yellowgrass.dmi'
 
-
 ///legacy grass/dirt turfs, do not use
 /turf/open/floor/plating/dirt/jungle
 	name = "mud"
@@ -150,6 +149,27 @@
 	light_range = 2
 	light_power = 1
 
+/turf/open/floor/wood/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/wood/ebony/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/stairs/wood/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/stairs/wood/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
+/turf/open/floor/carpet/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/carpet/black/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
 //cementcrete
 
 /turf/open/floor/concrete/jungleplanet
@@ -178,3 +198,27 @@
 /turf/open/floor/concrete/reinforced/jungleplanet/lit
 	light_range = 2
 	light_power = 1
+
+/turf/open/floor/concrete/pavement/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/pavement/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
+/turf/open/floor/concrete/tiles/jungleplanet
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/concrete/tiles/jungleplanet/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
+
+/turf/open/floor/engine/hull/interior
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/engine/hull/interior/lit
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_JUNGLEPLANET_LIGHT
