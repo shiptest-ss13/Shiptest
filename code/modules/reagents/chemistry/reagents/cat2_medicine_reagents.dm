@@ -4,58 +4,6 @@
 	harmful = TRUE
 	metabolization_rate = 0.2
 
-
-/******OXY******/
-/*Suffix: -mol*/
-#define CONVERMOL_RATIO 5		//# Oxygen damage to result in 1 tox
-
-/datum/reagent/medicine/c2/convermol
-	name = "Convermol"
-	description = "Restores oxygen deprivation while producing a lesser amount of toxic byproducts. Both scale with exposure to the drug and current amount of oxygen deprivation. Overdose causes toxic byproducts regardless of oxygen deprivation."
-	reagent_state = LIQUID
-	color = "#FF6464"
-	overdose_threshold = 35 // at least 2 full syringes +some, this stuff is nasty if left in for long
-
-/datum/reagent/medicine/c2/convermol/on_mob_life(mob/living/carbon/human/M)
-	var/oxycalc = 2.5*REM*current_cycle
-	if(!overdosed)
-		oxycalc = min(oxycalc,M.getOxyLoss()+0.5) //if NOT overdosing, we lower our toxdamage to only the damage we actually healed with a minimum of 0.1*current_cycle. IE if we only heal 10 oxygen damage but we COULD have healed 20, we will only take toxdamage for the 10. We would take the toxdamage for the extra 10 if we were overdosing.
-	M.adjustOxyLoss(-oxycalc, 0)
-	M.adjustToxLoss(oxycalc/CONVERMOL_RATIO, 0)
-	if(prob(current_cycle) && M.losebreath)
-		M.losebreath--
-	..()
-	return TRUE
-
-/datum/reagent/medicine/c2/convermol/overdose_process(mob/living/carbon/human/M)
-	metabolization_rate += 1
-	..()
-	return TRUE
-
-#undef	CONVERMOL_RATIO
-
-/datum/reagent/medicine/c2/tirimol
-	name = "Tirimol"
-	description = "An oxygen deprivation medication that causes fatigue. Prolonged exposure causes the patient to fall asleep once the medicine metabolizes."
-	color = "#FF6464"
-	var/drowsycd = 0
-
-/datum/reagent/medicine/c2/tirimol/on_mob_life(mob/living/carbon/human/M)
-	M.adjustOxyLoss(-3)
-	M.adjustStaminaLoss(2)
-	if(drowsycd && (world.time > drowsycd))
-		M.drowsyness += 10
-		drowsycd = world.time + (45 SECONDS)
-	else if(!drowsycd)
-		drowsycd = world.time + (15 SECONDS)
-	..()
-	return TRUE
-
-/datum/reagent/medicine/c2/tirimol/on_mob_end_metabolize(mob/living/L)
-	if(current_cycle > 20)
-		L.Sleeping(10 SECONDS)
-	..()
-
 /******TOXIN******/
 /*Suffix: -iver*/
 
@@ -122,16 +70,7 @@
 
 /******ORGAN HEALING******/
 /*Suffix: -rite*/
-/*
-*How this medicine works:
-*Penthrite if you are not in crit only stabilizes your heart.
-*As soon as you pass crit threshold it's special effects kick in. Penthrite forces your heart to beat preventing you from entering
-*soft and hard crit, but there is a catch. During this you will be healed and you will sustain
-*heart damage that will not imapct you as long as penthrite is in your system.
-*If you reach the threshold of -60 HP penthrite stops working and you get a heart attack, penthrite is flushed from your system in that very moment,
-*causing you to loose your soft crit, hard crit and heart stabilization effects.
-*Overdosing on penthrite also causes a heart failure.
-*/
+
 
 
 /******NICHE******/

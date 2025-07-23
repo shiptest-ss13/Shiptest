@@ -65,6 +65,47 @@
 		C.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
 	..()
 
+/datum/reagent/medicine/corazone
+	// Heart attack code will not do damage if corazone is present
+	// because it's SPACE MAGIC ASPIRIN
+	name = "Corazone"
+	description = "A medication used to treat pain, fever, and inflammation, along with heart attacks. Can also be used to stabilize livers."
+	color = "#F49797"
+	self_consuming = TRUE
+
+/datum/reagent/medicine/corazone/on_mob_metabolize(mob/living/M)
+	..()
+	ADD_TRAIT(M, TRAIT_PAIN_RESIST, type)
+	ADD_TRAIT(M, TRAIT_STABLEHEART, type)
+	ADD_TRAIT(M, TRAIT_STABLELIVER, type)
+
+/datum/reagent/medicine/corazone/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_PAIN_RESIST, type)
+	REMOVE_TRAIT(M, TRAIT_STABLEHEART, type)
+	REMOVE_TRAIT(M, TRAIT_STABLELIVER, type)
+
+/datum/reagent/medicine/silibinin
+	name = "Silibinin"
+	description = "A thistle derrived hepatoprotective flavolignan mixture that help reverse damage to the liver."
+	reagent_state = SOLID
+	color = "#FFFFD0"
+	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/silibinin/expose_mob(mob/living/carbon/M, method=INJECT, reac_volume)
+	if(method != INJECT)
+		return
+
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -1)  //on injection, will heal the liver. This will (hopefully) fix dead livers.
+
+	..()
+
+/datum/reagent/medicine/silibinin/on_mob_life(mob/living/carbon/M)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2)//Add a chance to cure liver trauma once implemented.
+	..()
+	. = 1
+
+
+
 /*
 *How this medicine works:
 *Penthrite if you are not in crit only stabilizes your heart.

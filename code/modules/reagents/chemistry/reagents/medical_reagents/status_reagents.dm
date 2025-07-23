@@ -8,6 +8,24 @@
 	color = "#E1F2E6"
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 
+/datum/reagent/medicine/anti_rad
+	name = "Emergency Radiation Purgant" //taking real names
+	description = "Rapidly purges radiation from the body."
+	reagent_state = LIQUID
+	color = "#E6FFF0"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/anti_rad/on_mob_metabolize(mob/living/L)
+	to_chat(L, span_warning("Your stomach starts to churn and cramp!"))
+	. = ..()
+
+/datum/reagent/medicine/anti_rad/on_mob_life(mob/living/carbon/M)
+	M.radiation -= M.radiation - rand(50,150)
+	M.adjust_disgust(4*REM)
+	..()
+	. = 1
+
+
 /datum/reagent/medicine/mutadone
 	name = "Mutadone"
 	description = "Removes jitteriness and restores genetic defects."
@@ -34,5 +52,125 @@
 	M.confused = 0
 	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3*REM, 0, 1)
 	M.adjustToxLoss(-0.2*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/modafinil
+	name = "Modafinil"
+	description = "Long-lasting sleep suppressant that very slightly reduces stun and knockdown times. Overdosing has horrendous side effects and deals lethal oxygen damage, will knock you unconscious if not dealt with."
+	reagent_state = LIQUID
+	color = "#BEF7D8" // palish blue white
+	metabolization_rate = 0.1 * REAGENTS_METABOLISM
+	overdose_threshold = 20 // with the random effects this might be awesome or might kill you at less than 10u (extensively tested)
+	taste_description = "salt" // it actually does taste salty
+	var/overdose_progress = 0 // to track overdose progress
+
+/datum/reagent/medicine/modafinil/on_mob_metabolize(mob/living/M)
+	ADD_TRAIT(M, TRAIT_SLEEPIMMUNE, type)
+	..()
+
+/datum/reagent/medicine/modafinil/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_SLEEPIMMUNE, type)
+	..()
+
+/datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/M)
+	if(!overdosed) // We do not want any effects on OD
+		overdose_threshold = overdose_threshold + rand(-10,10)/10 // for extra fun
+		M.AdjustAllImmobility(-5)
+		M.adjustStaminaLoss(-0.5*REM, 0)
+		M.adjust_jitter(1)
+		metabolization_rate = 0.01 * REAGENTS_METABOLISM * rand(5,20) // randomizes metabolism between 0.02 and 0.08 per tick
+		. = TRUE
+	..()
+
+/datum/reagent/medicine/modafinil/overdose_start(mob/living/M)
+	to_chat(M, span_userdanger("You feel awfully out of breath and jittery!"))
+	metabolization_rate = 0.025 * REAGENTS_METABOLISM // sets metabolism to 0.01 per tick on overdose
+
+/datum/reagent/medicine/modafinil/overdose_process(mob/living/M)
+	overdose_progress++
+	switch(overdose_progress)
+		if(1 to 40)
+			M.adjust_jitter(min(M.jitteriness+1, 10))
+			M.stuttering = min(M.stuttering+1, 10)
+			M.Dizzy(5)
+			if(prob(50))
+				M.losebreath++
+		if(41 to 80)
+			M.adjustOxyLoss(0.1*REM, 0)
+			M.adjustStaminaLoss(0.1*REM, 0)
+			M.adjust_jitter(min(M.jitteriness+1, 20))
+			M.stuttering = min(M.stuttering+1, 20)
+			M.Dizzy(10)
+			if(prob(50))
+				M.losebreath++
+			if(prob(20))
+				to_chat(M, span_userdanger("You have a sudden fit!"))
+				M.Paralyze(20) // you should be in a bad spot at this point unless epipen has been used
+		if(81)
+			to_chat(M, span_userdanger("You feel too exhausted to continue!")) // at this point you will eventually die unless you get charcoal
+			M.adjustOxyLoss(0.1*REM, 0)
+			M.adjustStaminaLoss(0.1*REM, 0)
+		if(82 to INFINITY)
+			M.Sleeping(100)
+			M.adjustOxyLoss(1.5*REM, 0)
+			M.adjustStaminaLoss(1.5*REM, 0)
+	..()
+	return TRUE
+
+//"Mood is status" declared Erika
+
+/datum/reagent/medicine/lithium_carbonate
+	name = "Lithium Carbonate"
+	description = "A mood stabilizer discovered by most spacefaring civilizations. Fairly widespread as a result."
+	color = "#b3acaa" //grey. boring.
+	reagent_state = SOLID
+	metabolization_rate = REAGENTS_METABOLISM * 0.5
+	overdose_threshold = 20
+
+/datum/reagent/medicine/lithium_carbonate/on_mob_life(mob/living/carbon/M)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	if(mood.sanity <= SANITY_GREAT)
+		mood.setSanity(min(mood.sanity+5, SANITY_GREAT))
+	..()
+	. = 1
+
+/datum/reagent/medicine/lithium_carbonate/overdose_process(mob/living/M)
+	if(prob(5))
+		M.adjust_jitter(5,100)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+	..()
+	. = 1
+
+/datum/reagent/medicine/psicodine
+	name = "Psicodine"
+	description = "Suppresses anxiety and other various forms of mental distress. Overdose causes hallucinations and minor toxin damage."
+	reagent_state = LIQUID
+	color = "#07E79E"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 30
+
+/datum/reagent/medicine/psicodine/on_mob_metabolize(mob/living/L)
+	..()
+	ADD_TRAIT(L, TRAIT_FEARLESS, type)
+
+/datum/reagent/medicine/psicodine/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_FEARLESS, type)
+	..()
+
+/datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M)
+	M.adjust_jitter(-6)
+	M.dizziness = max(0, M.dizziness-6)
+	M.confused = max(0, M.confused-6)
+	M.disgust = max(0, M.disgust-6)
+	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
+	if(mood.sanity <= SANITY_NEUTRAL) // only take effect if in negative sanity and then...
+		mood.setSanity(min(mood.sanity+5, SANITY_NEUTRAL)) // set minimum to prevent unwanted spiking over neutral
+	..()
+	. = 1
+
+/datum/reagent/medicine/psicodine/overdose_process(mob/living/M)
+	M.hallucination = min(max(0, M.hallucination + 5), 60)
+	M.adjustToxLoss(1, 0)
 	..()
 	. = 1
