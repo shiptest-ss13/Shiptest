@@ -173,7 +173,7 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
 
-/datum/outfit/job/nanotrasen/hos/vi/empty
+/datum/outfit/job/nanotrasen/hos/vi
 	name = "Nanotrasen - Vigilitas Sergeant"
 
 	id = /obj/item/card/id/silver
