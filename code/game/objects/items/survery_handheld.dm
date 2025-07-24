@@ -28,7 +28,7 @@
 			if(increment_scan())
 				to_chat(user, span_notice("You add [O] to the scanner's databank"))
 				playsound(src, 'sound/machines/whirr_beep.ogg', 20)
-				O?:scanned = TRUE
+				O?:mission_scanned = TRUE
 	if(istype(O, /obj/structure/geyser))
 		var/obj/structure/geyser/scan_target = O
 		to_chat(user, "[scan_target] is producing [scan_target.reagent_id.name]!")
