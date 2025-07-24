@@ -166,6 +166,8 @@
 		if(stored_mob)
 			stored_mob.forceMove(get_turf(src))
 			stored_mob = null
+		else if(mob_to_spawn)
+			new mob_to_spawn(T)
 		else if(from_nest)
 			new /obj/effect/mob_spawn/human/corpse/charredskeleton(T)
 		else if(dwarf_mob)

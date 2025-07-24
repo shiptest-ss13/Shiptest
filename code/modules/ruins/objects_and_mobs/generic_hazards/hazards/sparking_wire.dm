@@ -5,3 +5,8 @@
 
 /obj/structure/hazard/fire/wires/alarm
 	alarm_sensitive = TRUE
+	on = FALSE
+
+/obj/structure/hazard/fire/wires/alarm/alarm_act()
+	do_random_effect()
+	return

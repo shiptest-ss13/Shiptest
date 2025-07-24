@@ -86,6 +86,7 @@ evil 'code' that sets off the above procs. mappers beware!
 
 /obj/structure/hazard/proc/alarm()
 	if(alarm_sensitive)
+		turn_on()
 		alarm_act()
 
 /obj/structure/hazard/proc/alarm_act()
@@ -106,6 +107,7 @@ evil 'code' that sets off the above procs. mappers beware!
 			COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
+	update_appearance()
 
 /obj/structure/hazard/update_icon_state()
 	if(disabled)

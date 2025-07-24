@@ -275,8 +275,3 @@
 	desc = "Someone wrapped in silky spider web."
 	icon_state = "cocoon_large3"
 	possible_cocoons = list("cocoon_large1","cocoon_large2","cocoon_large3")
-
-/obj/structure/spider/cocoon/person/Destroy()
-	. = ..()
-	var/turf/T = get_turf(src)
-	new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested(T)
