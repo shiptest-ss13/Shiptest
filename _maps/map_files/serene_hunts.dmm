@@ -51,6 +51,12 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/space)
+"aV" = (
+/obj/effect/turf_decal/stoneborder{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/space)
 "aZ" = (
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/space)
@@ -236,6 +242,13 @@
 	pixel_y = 28
 	},
 /turf/open/floor/wood/ebony,
+/area/space)
+"fh" = (
+/obj/structure/chair/stool{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/sauna,
+/turf/open/floor/wood/mahogany,
 /area/space)
 "fl" = (
 /obj/item/screwdriver,
@@ -490,6 +503,11 @@
 	dir = 4;
 	pixel_x = -8
 	},
+/mob/living/basic/bear/cave,
+/obj/effect/mob_spawn/human/corpse/damaged/sauna,
+/obj/item/spacecash/bundle/smallrand,
+/obj/machinery/light/small/broken/directional/west,
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood/ebony,
 /area/space)
 "jV" = (
@@ -900,6 +918,7 @@
 /obj/machinery/shower{
 	dir = 8
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/freezer,
 /area/space)
 "rx" = (
@@ -1018,6 +1037,9 @@
 "sy" = (
 /obj/structure/fence/corner{
 	dir = 1
+	},
+/obj/effect/turf_decal/stoneborder{
+	dir = 4
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
@@ -1773,6 +1795,15 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
+"Gv" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/effect/turf_decal/stoneborder{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/space)
 "Gz" = (
 /obj/item/cigbutt/cigarbutt,
 /turf/open/floor/wood/ebony,
@@ -1830,6 +1861,10 @@
 	},
 /obj/structure/railing/corner/wood,
 /turf/open/floor/wood,
+/area/space)
+"Hx" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood/ebony,
 /area/space)
 "HE" = (
 /obj/structure/table/wood/reinforced,
@@ -1972,6 +2007,10 @@
 	pixel_y = -6
 	},
 /turf/open/water/jungle/lit,
+/area/space)
+"Kr" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood/ebony,
 /area/space)
 "Kw" = (
 /obj/machinery/vending/coffee,
@@ -2316,6 +2355,14 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/space)
+"PN" = (
+/obj/machinery/door/airlock/wood{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood/ebony,
+/area/space)
 "PP" = (
 /obj/structure/noticeboard{
 	name = "trophy board";
@@ -2474,6 +2521,7 @@
 	dir = 4;
 	pixel_x = -10
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/wood/ebony,
 /area/space)
 "Sy" = (
@@ -2518,6 +2566,7 @@
 /obj/structure/chair/stool{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/sauna,
 /turf/open/floor/wood/mahogany,
 /area/space)
 "Tq" = (
@@ -2537,6 +2586,9 @@
 /area/space)
 "TJ" = (
 /obj/structure/fence,
+/obj/effect/turf_decal/stoneborder{
+	dir = 4
+	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/space)
 "TN" = (
@@ -2736,6 +2788,12 @@
 	dir = 10
 	},
 /turf/open/floor/wood/ebony/jungleplanet,
+/area/space)
+"Wu" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/concrete/lava,
 /area/space)
 "Wx" = (
 /obj/structure/closet/wall/white/directional/east,
@@ -4881,7 +4939,7 @@ as
 CW
 iA
 CW
-sq
+PN
 CW
 sq
 CW
@@ -4933,7 +4991,7 @@ as
 CW
 iA
 ro
-iA
+Kr
 ro
 iA
 CW
@@ -4983,7 +5041,7 @@ rP
 cF
 as
 CW
-iA
+Hx
 iA
 iA
 iA
@@ -5045,7 +5103,7 @@ Ur
 Dd
 lL
 mo
-dq
+fh
 CW
 CW
 Gb
@@ -5324,23 +5382,23 @@ Gb
 Gb
 Gb
 Rg
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-tp
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+Gv
 as
 IZ
 rP
@@ -7300,7 +7358,7 @@ Gb
 Gb
 Gb
 wU
-ut
+Wu
 hg
 Li
 YY
@@ -7352,7 +7410,7 @@ Gb
 Gb
 Gb
 wU
-ut
+Wu
 zs
 uZ
 uZ
@@ -7404,7 +7462,7 @@ Gb
 Gb
 Gb
 wU
-ut
+Wu
 hg
 WK
 ZZ
