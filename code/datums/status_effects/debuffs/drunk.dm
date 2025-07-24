@@ -144,11 +144,13 @@
 	// Over 51, we have a 3% chance to gain a lot of confusion and vomit, and we will always have 50 seconds of dizziness
 	if(drunk_value >= 51)
 		owner.set_timed_status_effect(50 SECONDS, /datum/status_effect/dizziness, only_if_higher = TRUE)
-		if(prob(3))
-			owner.confused += 7
-			if(iscarbon(owner))
-				var/mob/living/carbon/carbon_owner = owner
-				carbon_owner.vomit() // Vomiting clears toxloss - consider this a blessing
+
+	//if our drunkenness is over 61 and we have alcohol tolerance, or over 51 and we *dont*, and also prob(3)
+	if(drunk_value >= (HAS_TRAIT(owner,TRAIT_ALCOHOL_TOLERANCE) ? 51 : 61) && prob(3))
+		owner.confused += 7
+		if(iscarbon(owner))
+			var/mob/living/carbon/carbon_owner = owner
+			carbon_owner.vomit() // Vomiting clears toxloss - consider this a blessing
 
 	// Over 71, we will constantly have blurry eyes
 	if(drunk_value >= 71)
