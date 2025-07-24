@@ -1035,8 +1035,8 @@
 	dir = 8
 	},
 /obj/machinery/computer/security{
-	icon_state = "laptop";
 	dir = 4;
+	icon_state = "laptop";
 	network = list("shrikenetwork")
 	},
 /turf/open/floor/plasteel/dark,
@@ -1281,11 +1281,16 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/emcloset/wall/directional/west,
+/obj/item/clothing/mask/gas/vigilitas,
+/obj/item/clothing/mask/gas/vigilitas,
+/obj/item/clothing/mask/gas/vigilitas,
+/obj/item/clothing/mask/gas/vigilitas,
 /turf/open/floor/plasteel/patterned,
 /area/ship/hallway/central)
 "sn" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/mask/gas,
 /obj/item/clothing/suit/space/eva,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -2638,6 +2643,7 @@
 	pixel_x = -11;
 	pixel_y = 3
 	},
+/obj/item/clothing/mask/gas/vigilitas,
 /obj/item/clothing/under/nanotrasen/security/director,
 /obj/item/clothing/suit/armor/nanotrasen/sec_director{
 	pixel_x = 10
@@ -2795,7 +2801,7 @@
 "Jb" = (
 /obj/docking_port/stationary{
 	dwidth = 15;
-	height = 15;
+	height = 10;
 	width = 30;
 	name = "Cargo";
 	dir = 8
@@ -3585,6 +3591,7 @@
 /obj/structure/railing/thin,
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/shoes/magboots,
+/obj/item/clothing/mask/gas/atmos,
 /obj/item/clothing/suit/space/hardsuit/engine,
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
@@ -3852,7 +3859,7 @@
 "Ud" = (
 /obj/structure/closet/secure_closet/hos{
 	populate = 0;
-	name = "lieutenant's locker"
+	name = "sergeants locker"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -3875,6 +3882,7 @@
 	pixel_x = -11;
 	pixel_y = -2
 	},
+/obj/item/clothing/mask/gas/vigilitas,
 /obj/item/clothing/under/nanotrasen/security/director,
 /obj/item/radio/headset/heads/hos/alt{
 	pixel_x = 10;
@@ -4282,7 +4290,8 @@
 	pixel_x = 6
 	},
 /obj/structure/sign/poster/official/ion_carbine{
-	pixel_y = 32
+	pixel_y = 32;
+	layer = 2.8
 	},
 /turf/open/floor/carpet/red,
 /area/ship/security/armory)
