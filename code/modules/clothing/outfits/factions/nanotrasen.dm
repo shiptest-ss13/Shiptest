@@ -141,32 +141,6 @@
 						)
 
 // Head of Security
-/datum/outfit/job/nanotrasen/hos/vi/empty
-	name = "Nanotrasen - Vigilitas Sergeant"
-	job_icon = "headofsecurity"
-
-	id = /obj/item/card/id/silver
-	ears = /obj/item/radio/headset/nanotrasen/alt
-	uniform = /obj/item/clothing/under/nanotrasen/security/director
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/combat
-	suit = null
-	alt_suit = null
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
-	gloves = /obj/item/clothing/gloves/combat
-	head = /obj/item/clothing/head/nanotrasen/beret/security/command
-	r_pocket = /obj/item/assembly/flash/handheld
-	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/classic_baton=1)
-
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
-	box = /obj/item/storage/box/survival/vi
-
-	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/security
-
 /datum/outfit/job/nanotrasen/hos
 	name = "Nanotrasen - Head of Security"
 	job_icon = "headofsecurity"
@@ -198,6 +172,31 @@
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun/hos, /obj/item/stamp/hos)
+
+/datum/outfit/job/nanotrasen/hos/vi/empty
+	name = "Nanotrasen - Vigilitas Sergeant"
+
+	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/nanotrasen/alt
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/combat
+	suit = null
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+	backpack_contents = list(/obj/item/melee/classic_baton=1)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/vi
+
+	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/security
 
 // Security Officer
 /datum/outfit/job/nanotrasen/security
