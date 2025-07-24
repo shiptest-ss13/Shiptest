@@ -44,13 +44,15 @@
 	select_name = "scatter"
 	fire_sound = 'sound/weapons/taser.ogg'
 
-/obj/item/ammo_casing/energy/disabler/scatter/ultima
+/obj/item/ammo_casing/energy/disabler/scatter/shotgun
 	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap
 	pellets = 4
 	variance = 25
+	select_name = "disable"
 	e_cost = 1000
 
-/obj/item/ammo_casing/energy/disabler/scatter/ultima/alt
+/obj/item/ammo_casing/energy/disabler/scatter/shotgun/sharplite
+	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap/sharplite
 	select_name = "blast"
 
 /obj/item/ammo_casing/energy/disabler/smg

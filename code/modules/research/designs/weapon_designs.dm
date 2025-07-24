@@ -77,16 +77,6 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE//this weapon is an active threat to the user, I think we can safely refile it under "experimental"
 
-/datum/design/nuclear_gun
-	name = "Advanced Energy Gun"
-	desc = "An energy gun with an experimental miniaturized reactor."
-	id = "nuclear_gun"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 3000, /datum/material/titanium = 1000)
-	build_path = /obj/item/gun/energy/e_gun/nuclear
-	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
 /datum/design/tele_shield
 	name = "Telescopic Riot Shield"
 	desc = "An advanced riot shield made of lightweight materials that collapses for easy storage."

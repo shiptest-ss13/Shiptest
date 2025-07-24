@@ -21,7 +21,6 @@
 	value = 1500
 	mission_limit = 1
 	mission_reward = list(
-		/obj/item/gun/energy/e_gun/old,
 		/obj/item/gun/energy/laser/retro,
 	)
 	faction = /datum/faction/nt

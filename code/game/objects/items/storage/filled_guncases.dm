@@ -263,10 +263,6 @@
 	gun_type = /obj/item/gun/ballistic/automatic/smg/wt550
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 
-/obj/item/storage/guncase/gauss
-	gun_type = /obj/item/gun/ballistic/automatic/powered/gauss
-	mag_type = /obj/item/ammo_box/magazine/gauss
-
 /obj/item/storage/guncase/saber
 	gun_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine/saber
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm

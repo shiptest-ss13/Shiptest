@@ -721,6 +721,8 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+//turn into l201
+/*
 /datum/supply_pack/gun/gauss
 	name = "Prototype Gauss Rifle"
 	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For NT employee use only."
@@ -730,6 +732,7 @@
 	faction = /datum/faction/nt
 	faction_discount = 0
 	faction_locked = TRUE
+*/
 
 /datum/supply_pack/gun/claris
 	name = "Claris Gauss Rifle"

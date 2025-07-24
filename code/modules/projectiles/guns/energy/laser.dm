@@ -183,7 +183,7 @@
 	inhand_y_dimension = 64
 	icon_state = "iotshotgun"
 	item_state = "shotgun_combat"
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/shotgun)
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
@@ -203,7 +203,7 @@
 
 /obj/item/gun/energy/laser/iot/lethal
 	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking. This one appears to be modified to fire lethal beams."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultima)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/shotgun)
 
 /obj/item/gun/energy/laser/hitscanpistol
 	name = "experimental laser gun"

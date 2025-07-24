@@ -41,15 +41,49 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
-/obj/projectile/beam/laser/sharplite
-	icon_state = "nt_laser"
-	light_color = COLOR_BLUE_LIGHT
-	speed = 0.25
-
 /obj/projectile/beam/laser/light
 	damage = 15
 
+/obj/projectile/beam/laser/sharplite
+	icon_state = "nt_laser"
+	light_color = COLOR_BLUE_LIGHT
+	damage = 25
+	armour_penetration = -5
+
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+
+	speed = 0.25
+
+/obj/projectile/beam/weak/sharplite
+	icon_state = "nt_laser_light"
+	damage = 15
+	speed = 0.25
+	light_color = COLOR_BLUE_LIGHT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+
+
+/obj/projectile/beam/laser/sharplite/dmr
+	icon_state = "nt_laser_stronger"
+	damage = 30
+	armour_penetration = 0
+
+/obj/projectile/beam/laser/assault/sharplite
+	icon_state = "nt_laser_heavy"
+	damage = 25
+	armour_penetration = 20
+	speed = 0.25
+
+	light_color = COLOR_BLUE_LIGHT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+
+/obj/projectile/beam/laser/sharplite/sniper
+	icon_state = "nt_laser_sniper"
+	damage = 40
+	armour_penetration = 20
+	speed = 0.25
+
 /obj/projectile/beam/laser/light/sharplite
+	icon_state = "nt_laser_light"
 	speed = 0.4
 
 /obj/projectile/beam/laser/eoehoma
@@ -78,12 +112,6 @@
 	icon_state = "heavylaser"
 	damage = 25
 	armour_penetration = 20
-
-/obj/projectile/beam/laser/assault/sharplite
-	icon_state = "heavylaser"
-	damage = 25
-	armour_penetration = 20
-	speed = 0.25
 
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
@@ -128,8 +156,12 @@
 	if(damage < 0 && stamina < 0)
 		qdel(src)
 
-/obj/projectile/beam/weak/sharplite
-	damage = 15
+/obj/projectile/beam/weak/shotgun/sharplite
+	icon_state = "nt_laser_light"
+	light_color = COLOR_BLUE_LIGHT
+
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+
 	speed = 0.25
 
 /obj/projectile/beam/weaker
@@ -225,6 +257,8 @@
 	range = 9
 
 /obj/projectile/beam/disabler/weak/negative_ap/sharplite
+	icon_state = "nt_disabler_light"
+	light_color = COLOR_PALE_ORANGE
 	armour_penetration = -30
 	range = 9
 	speed = 0.25

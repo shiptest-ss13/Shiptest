@@ -189,11 +189,6 @@
 	targetitem = /obj/item/pinpointer
 	difficulty = 10
 
-/datum/objective_item/special/aegun
-	name = "an advanced energy gun."
-	targetitem = /obj/item/gun/energy/e_gun/nuclear
-	difficulty = 10
-
 /datum/objective_item/special/ddrill
 	name = "a diamond drill."
 	targetitem = /obj/item/pickaxe/drill/diamonddrill

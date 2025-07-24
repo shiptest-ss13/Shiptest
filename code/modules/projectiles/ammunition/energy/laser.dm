@@ -51,6 +51,18 @@
 	e_cost = 830
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/lasergun/sharplite/dmr
+	projectile_type = /obj/projectile/beam/laser/sharplite/dmr
+	e_cost = 1000
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/lasergun/sharplite/sniper
+	projectile_type = /obj/projectile/beam/laser/sharplite/sniper
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	delay = 1.3 SECONDS
+	e_cost = 4000
+	select_name = "kill"
+
 /obj/item/ammo_casing/energy/lasergun/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
@@ -81,6 +93,7 @@
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
+	fire_sound = 'sound/weapons/gun/laser/nt-fire_light.ogg'
 
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
@@ -107,15 +120,15 @@
 	e_cost = 1598 //12 shots upgraded cell, 6 with normal cell
 	select_name = "scatter"
 
-/obj/item/ammo_casing/energy/laser/ultima
+/obj/item/ammo_casing/energy/laser/shotgun
 	projectile_type = /obj/projectile/beam/weak/shotgun
 	pellets = 3
 	variance = 25
 	e_cost = 1000
 	select_name = "kill"
 
-/obj/item/ammo_casing/energy/laser/ultima/alt
-	select_name = "scatter"
+/obj/item/ammo_casing/energy/laser/shotgun/sharplite
+	projectile_type = /obj/projectile/beam/weak/shotgun/sharplite
 
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/projectile/beam/laser/heavylaser
