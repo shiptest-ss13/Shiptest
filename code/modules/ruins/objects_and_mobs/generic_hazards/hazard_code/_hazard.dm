@@ -40,6 +40,9 @@
 	//slowdown, which increases the slowdown of the turf the hazard is on. All hazards can use this.
 	var/slowdown = 0
 
+	//whether alarms like from trophy cases can set off this hazard
+	var/alarm_sensitive = FALSE
+
 /*
 procs used to set off effects
 */
@@ -80,6 +83,14 @@ evil 'code' that sets off the above procs. mappers beware!
 /obj/structure/hazard/proc/disable()
 	disabled = TRUE
 	update_appearance()
+
+/obj/structure/hazard/proc/alarm()
+	if(alarm_sensitive)
+		alarm_act()
+
+/obj/structure/hazard/proc/alarm_act()
+	random_effect()
+	return
 
 //real code
 

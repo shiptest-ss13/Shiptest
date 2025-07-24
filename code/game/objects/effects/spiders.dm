@@ -73,6 +73,11 @@
 	else if(istype(mover, /obj/projectile))
 		return prob(30)
 
+/obj/structure/spider/fake_eggcluster // if you dont want them to spawn one million spiders
+	name = "egg cluster"
+	desc = "They seem to pulse slightly with an inner life."
+	icon_state = "eggs"
+
 /obj/structure/spider/eggcluster
 	name = "egg cluster"
 	desc = "They seem to pulse slightly with an inner life."
@@ -264,3 +269,11 @@
 	for(var/atom/movable/A in contents)
 		A.forceMove(T)
 	return ..()
+
+/obj/structure/spider/cocoon/person
+	desc = "Someone wrapped in silky spider web."
+
+/obj/structure/spider/cocoon/person/Destroy()
+	. = ..()
+	var/turf/T = get_turf(src)
+	new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested(T)
