@@ -70,3 +70,21 @@
 	if(quirk_holder)
 		var/mob/living/carbon/human/knower = quirk_holder
 		knower.remove_language(/datum/language/moffic, source = LANGUAGE_MIND)
+
+// Sign Language
+/datum/quirk/signer
+	name = "Signer"
+	desc = "You're fluent in Universal Sign Language."
+	value = 0
+	gain_text = span_notice("You know Universal Sign Language.")
+	lose_text = span_danger("You forget Universal Sign Language.")
+	detectable = FALSE
+
+/datum/quirk/signer/add()
+	var/mob/living/carbon/human/knower = quirk_holder
+	knower.grant_language(/datum/language/sign_language, source = LANGUAGE_MIND)
+
+/datum/quirk/signer/remove()
+	if(quirk_holder)
+		var/mob/living/carbon/human/knower = quirk_holder
+		knower.remove_language(/datum/language/sign_language, source = LANGUAGE_MIND)
