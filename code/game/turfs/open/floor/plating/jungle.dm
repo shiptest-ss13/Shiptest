@@ -153,6 +153,10 @@
 	planetary_atmos = TRUE
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
+/turf/open/floor/wood/maple/jungleplanet
+	planetary_atmos = TRUE
+	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
+
 /turf/open/floor/wood/ebony/jungleplanet
 	initial_gas_mix = JUNGLEPLANET_DEFAULT_ATMOS
 
