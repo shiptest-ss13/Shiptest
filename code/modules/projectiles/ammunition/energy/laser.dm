@@ -5,6 +5,10 @@
 /obj/item/ammo_casing/energy/laser/sharplite
 	projectile_type = /obj/projectile/beam/laser/sharplite
 	select_name = "kill"
+	e_cost = 800  //8 per NT mini cell 12 per regular cell 25 per upgraded cell
+
+/obj/item/ammo_casing/energy/laser/sharplite/efficent
+	e_cost = 700  //9 per NT mini cell
 
 /obj/item/ammo_casing/energy/laser/underbarrel
 	projectile_type = /obj/projectile/beam/laser
@@ -27,13 +31,13 @@
 	projectile_type = /obj/projectile/beam/laser/assault
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 	delay = 2
-	e_cost = 666 //30 per upgraded cell
+	e_cost = 1000 //20 per upgraded cell
 
 /obj/item/ammo_casing/energy/laser/assault/sharplite
 	projectile_type = /obj/projectile/beam/laser/assault/sharplite
 	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
 	delay = 2
-	e_cost = 666 //30 per upgraded cell
+	e_cost = 1000 //20 per upgraded cell
 
 /obj/item/ammo_casing/energy/laser/eoehoma/e50
 	projectile_type = /obj/projectile/beam/emitter/hitscan
@@ -53,14 +57,14 @@
 
 /obj/item/ammo_casing/energy/lasergun/sharplite/dmr
 	projectile_type = /obj/projectile/beam/laser/sharplite/dmr
-	e_cost = 1000
+	e_cost = 1000 // 10 per regular cell  20 per upgraded cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/sharplite/sniper
 	projectile_type = /obj/projectile/beam/laser/sharplite/sniper
 	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	delay = 1.3 SECONDS
-	e_cost = 4000
+	e_cost = 4000 // 5 per upgraded cell
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma
@@ -90,7 +94,7 @@
 
 /obj/item/ammo_casing/energy/laser/sharplite/smg
 	projectile_type = /obj/projectile/beam/weak/sharplite
-	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
+	e_cost = 570 //17 shots with a normal power cell, 35 with an upgraded
 	select_name = "kill"
 	delay = 0.13 SECONDS
 	fire_sound = 'sound/weapons/gun/laser/nt-fire_light.ogg'

@@ -504,7 +504,7 @@
 /obj/item/stock_parts/cell/gun/sharplite/mini
 	name = "Sharplite Compact weapon cell"
 	desc = "A proprietary weapon cell used exclusively by Sharplite weaponry. This is a compact version with less capacity, intended to fit into laser handguns."
-	icon_state = "e_mini-cell"
+	icon_state = "nt_mini-cell"
 	maxcharge = 7000
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 1000

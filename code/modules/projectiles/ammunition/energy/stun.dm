@@ -53,7 +53,7 @@
 
 /obj/item/ammo_casing/energy/disabler/scatter/shotgun/sharplite
 	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap/sharplite
-	select_name = "blast"
+	select_name = "disable"
 
 /obj/item/ammo_casing/energy/disabler/smg
 	projectile_type = /obj/projectile/beam/disabler/weak/negative_ap

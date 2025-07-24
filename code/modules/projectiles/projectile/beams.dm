@@ -50,14 +50,16 @@
 	damage = 25
 	armour_penetration = -5
 
+	pass_flags = PASSTABLE //does not go through glass
+
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
-	speed = 0.25
+	speed = 0.3
 
 /obj/projectile/beam/weak/sharplite
 	icon_state = "nt_laser_light"
 	damage = 15
-	speed = 0.25
+	speed = 0.3
 	light_color = COLOR_BLUE_LIGHT
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
@@ -71,7 +73,9 @@
 	icon_state = "nt_laser_heavy"
 	damage = 25
 	armour_penetration = 20
-	speed = 0.25
+	speed = 0.3
+	wound_bonus = 0
+	bare_wound_bonus = 20
 
 	light_color = COLOR_BLUE_LIGHT
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
@@ -80,7 +84,9 @@
 	icon_state = "nt_laser_sniper"
 	damage = 40
 	armour_penetration = 20
-	speed = 0.25
+	speed = 0.3
+	wound_bonus = 0
+	bare_wound_bonus = 20
 
 /obj/projectile/beam/laser/light/sharplite
 	icon_state = "nt_laser_light"
@@ -162,7 +168,7 @@
 
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 
-	speed = 0.25
+	speed = 0.3
 
 /obj/projectile/beam/weaker
 	damage = 10
@@ -244,7 +250,7 @@
 /obj/projectile/beam/disabler/sharplite
 	icon_state = "nt_disabler"
 	light_color = COLOR_PALE_ORANGE
-	speed = 0.25
+	speed = 0.3
 
 /obj/projectile/beam/disabler/weak
 	damage = 15
@@ -261,7 +267,7 @@
 	light_color = COLOR_PALE_ORANGE
 	armour_penetration = -30
 	range = 9
-	speed = 0.25
+	speed = 0.3
 
 /obj/projectile/beam/disabler/weak/negative_ap/low_range
 	range = 6

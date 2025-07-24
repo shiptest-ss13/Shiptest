@@ -82,7 +82,7 @@
 	)
 
 /obj/item/gun/energy/disabler/e60
-	name = "E-60"
+	name = "E-60 personal defense disabler"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
 	icon = 'icons/obj/guns/manufacturer/eoehoma/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/eoehoma/lefthand.dmi'

@@ -18,7 +18,7 @@
 		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
 	)
 
-	muzzleflash_iconstate = "muzzle_flash_pulse"
+	muzzleflash_iconstate = "muzzle_flash_nt"
 
 	modifystate = TRUE
 	ammo_x_offset = 2
@@ -40,12 +40,12 @@
 	icon_state = "x26"
 	item_state = "x26"
 
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite/mini
 	allowed_ammo_types = list(
 		/obj/item/stock_parts/cell/gun/sharplite/mini,
 	)
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite/efficent)
 
 	shaded_charge = TRUE
 	modifystate = TRUE
@@ -58,6 +58,8 @@
 	spread = 4
 	spread_unwielded = 8
 
+	muzzleflash_iconstate = "muzzle_flash_nt"
+
 // /obj/item/gun/energy/sharplite/x01
 /obj/item/gun/energy/e_gun/hos
 	name = "SL X01 Heavy Variable Pistol"
@@ -69,6 +71,7 @@
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
 
+	w_class = WEIGHT_CLASS_NORMAL
 	icon_state = "x01"
 	item_state = "x26"
 
@@ -108,6 +111,15 @@
 
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/sharplite/smg)
 
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite
+
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/sharplite,
+		/obj/item/stock_parts/cell/gun/sharplite/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
+	)
+
 	shaded_charge = TRUE
 	modifystate = FALSE
 	weapon_weight = WEAPON_LIGHT
@@ -144,7 +156,7 @@
 	spread = 0
 	spread_unwielded = 12
 
-/obj/item/gun/energy/sharplite/l201/carbine
+/obj/item/gun/energy/sharplite/l201/l204
 	name = "SL L204 Plasma Rifle"
 	desc = "Needs Desc. Laser Carbine"
 	icon_state = "l204"
@@ -178,10 +190,9 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite, /obj/item/ammo_casing/energy/laser/sharplite)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
-	modifystate = FALSE
+	modifystate = TRUE
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
-	zoomable = FALSE
 	wield_slowdown = SMG_SLOWDOWN
 	aimed_wield_slowdown = LONG_RIFLE_AIM_SLOWDOWN
 	wield_delay = 0.4 SECONDS
@@ -211,7 +222,17 @@
 	item_state = "x46"
 	shaded_charge = TRUE
 	modifystate = TRUE
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/shotgun, /obj/item/ammo_casing/energy/laser/shotgun/sharplite)
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/shotgun/sharplite, /obj/item/ammo_casing/energy/laser/shotgun/sharplite)
+
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite
+
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/sharplite,
+		/obj/item/stock_parts/cell/gun/sharplite/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
+	)
+
 	w_class = WEIGHT_CLASS_BULKY
 	fire_delay = 0.6 SECONDS
 	shaded_charge = TRUE
@@ -240,7 +261,7 @@
 // /obj/item/gun/energy/sharplite/al655
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL655 Assault Plasma Rifle"
-	desc = "Needs dec. 2 mode laser assault rifle. Add something like; Affectionately nicnamed the 'Hades' by ICW security forces due to the terrible burns it would cause, only possible from 'fire from hades itself.'"
+	desc = "Needs desc. laser assault rifle. Add something like; Affectionately nicnamed the 'Hades' by ICW security forces due to the terrible burns it would cause, only possible from 'fire from hades itself.'"
 	icon_state = "al655"
 	item_state = "al655"
 
@@ -283,7 +304,6 @@
 
 //REMEMBER TO REMOVE /obj/item/gun/energy/e_gun/nuclear FROM rockplanet_mining_installation.dmm
 
-// /obj/item/gun/energy/sharplite/al655
 /obj/item/gun/energy/sharplite/al607
 	name = "SL AL607 Plasma Accelerator"
 	desc = "A heavy electroplasma rifle with an extensive accelerator assembly, with an overall length almost comparable to the average Kepori height. Produces singular electroplasma bolts of impressive power and velocity that strike with enough force and precision to overwhelm most infantry defenses. Rarely used, even by Vigilitas paramilitary units"
@@ -319,7 +339,7 @@
 	zoom_out_amt = 5
 
 
-// /obj/item/gun/energy/sharplite/al655
+// /obj/item/gun/energy/laser/hitscanpistol TO THIS
 /obj/item/gun/energy/sharplite/x11
 	name = "X11 Advanced Stopping Pistol"
 	desc = "An advanced energy revolver with the capacity to shoot both disabler and lethal lasers, as well as futuristic safari nets."
@@ -329,3 +349,46 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/sharplite/hos, /obj/item/ammo_casing/energy/laser/sharplite/hos, /obj/item/ammo_casing/energy/trap)
 	ammo_x_offset = 1
 	shaded_charge = TRUE
+
+/obj/item/gun/energy/laser/retro
+	name ="SL L104"
+	desc = "An antiquated model of the L204, no longer used or sold by Sharplite. Nevertheless, the sheer popularity of this model makes it a somewhat common sight to this day."
+
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+
+	icon_state = "laser"
+	item_state = "laser"
+
+	manufacturer = MANUFACTURER_SHARPLITE
+	default_ammo_type = /obj/item/stock_parts/cell/gun/sharplite
+
+	allowed_ammo_types = list(
+		/obj/item/stock_parts/cell/gun/sharplite,
+		/obj/item/stock_parts/cell/gun/sharplite/plus,
+		/obj/item/stock_parts/cell/gun/sharplite/empty,
+		/obj/item/stock_parts/cell/gun/sharplite/plus/empty,
+	)
+
+/obj/item/gun/energy/laser/captain
+	name = "antique laser gun"
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon_state = "caplaser"
+	item_state = "caplaser"
+	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. All craftsmanship is of the highest quality. It is decorated with ashdrake leather and chrome. The gun menaces with spikes of energy. On the item is an image of a space station. The station is exploding."
+	force = 10
+	ammo_x_offset = 3
+	selfcharge = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	manufacturer = MANUFACTURER_SHARPLITE
+
+/obj/item/gun/energy/laser/captain/brazil
+	icon_state = "capgun_brazil"
+	item_state = "caplaser"
+	desc = "This is the SL X-00, an antique laser gun, out of production for decades and well beyond anyone's capacity to recreate. It seems all the high quality materials it was once made of are now scratched up and torn. The nuclear power cell has been removed, and the gun will no longer automatically recharge."
+	selfcharge = FALSE

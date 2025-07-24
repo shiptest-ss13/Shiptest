@@ -1,7 +1,7 @@
 //repath to /obj/item/gun/ballistic/automatic/pistol/challenger
 /obj/item/gun/ballistic/automatic/pistol/commander
-	name = "NA PS9 Challenger"
-	desc = "One of a custom production run of PS9s ordered by Vigilitas Interstellar, first adopted in FS 408 as VI's new standard sidearm in specific regions. Features the same forgiving performance as the mass-market version, barring some aesthetic and ergonomic modifications. Chambered in 9x18mm."
+	name = "Advantage PS9 Challenger"
+	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers, first adopted in FS 408 as VI's new standard sidearm in specific regions. Popular among new shooters for its low price point, forgiving recoil, and generous magazine capacity for its class. Chambered in 9x18mm."
 	icon_state = "challenger"
 	item_state = "nt_generic"
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
@@ -40,14 +40,8 @@
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/pistol/commander/indie
-	name = "NA PS9"
-	desc = "A lightweight semi-automatic 9mm pistol constructed largely of polymers. Popular among new shooters for its low price point, forgiving recoil, and generous magazine capacity for its class."
-	icon_state = "challenger_indie"
-	item_state = "nt_generic"
-
 /obj/item/gun/ballistic/automatic/pistol/champion
-	name = "NA PHB Champion"
+	name = "Advantage PHB Champion"
 	desc = "A large, burst-fire machine pistol featuring an impressive recoil compensation assembly, making it substantially more stable and accurate than most machine pistols. Produced only for major Advantage clients. Judging by the markings, this PHB was produced specifically for Vigilitas Interstellar. Chambered in 9x18mm."
 	icon_state = "champion"
 	item_state = "champion"
@@ -202,7 +196,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	name = "PS-03 Commissioner"
-	desc = "A modified version of the VI Commander, issued as standard to Inteq Risk Management Group personnel. Features the same excellent handling and high magazine capacity as the original. Chambered in 9x18mm."
+	desc = "A modified version of the PS9 Challenger, issued as standard to Inteq Risk Management Group personnel. Features the same excellent handling and high magazine capacity as the original. Chambered in 9x18mm."
 
 	icon = 'icons/obj/guns/manufacturer/inteq/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/inteq/lefthand.dmi'
@@ -214,10 +208,38 @@ NO_MAG_GUN_HELPER(automatic/pistol/podium)
 
 NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 
+/obj/item/gun/ballistic/revolver/mateba
+	name = "Advantage Rhino"
+	desc = "A very famous high-powered semi-auto revolver. Designed by Nanotrasen Advantage for use in shooting competitions, it has ended up as the de-facto officer weapon of the Nanotrasen aliance. Chambered in .357."
+	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
+	mob_overlay_icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/onmob.dmi'
+	icon_state = "rhino"
+	manufacturer = MANUFACTURER_VIGILITAS
+	semi_auto = TRUE
+	safety_wording = "safety"
+
+	fire_sound = 'sound/weapons/gun/revolver/viper.ogg'
+	rack_sound = 'sound/weapons/gun/revolver/viper_prime.ogg'
+	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
+	eject_sound = 'sound/weapons/gun/revolver/empty.ogg'
+
+	dry_fire_sound = 'sound/weapons/gun/revolver/dry_fire.ogg'
+
+	spread = 0
+	spread_unwielded = 12
+	recoil = 1
+	recoil_unwielded = 3
+
+/obj/item/gun/ballistic/revolver/mateba/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/ammo_hud/revolver)
+
 ///obj/item/gun/ballistic/automatic/smg/expedition
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Advantage SGL9 Expedition"
-	desc = "A lightweight submachinegun, produced as part of a custom order for Vigilitas Interstellar. Its novel recoil compensation system almost eliminates recoil, and its compact size is well-suited for use aboard ships and stations."
+	desc = "A deceptively lightweight submachinegun. Its novel recoil compensation system almost eliminates recoil, and its compact size is well-suited for use aboard ships and stations."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -259,7 +281,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 // /obj/item/gun/ballistic/automatic/smg/resolution
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper Advantage PD46 Resolution"
-	desc = "A compact 4.6mm personal defense weapon, produced as part of a custom run for Vigilitas Interstellar. Modifications are largely cosmetic in nature, preserving its excellent accuracy and handling."
+	desc = "A surprisingly compact 4.6mm personal defense weapon with a very unusual design. Though somewhat awkward to reload, the PD46 has excellent shooting ergonomics and excellent accuracy for its class. This combined with its armor-penetrating cartridge and low price of entry have made it a weapon of choice for many spacers looking to dissuade pirates and other malefactors."
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/righthand.dmi'
@@ -273,6 +295,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 	actions_types = list()
 	show_magazine_on_sprite = TRUE
 	show_magazine_on_sprite_ammo = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
 	empty_indicator = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 	fire_sound = 'sound/weapons/gun/smg/resolution.ogg'
@@ -339,7 +363,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/commander/inteq)
 // /obj/item/gun/ballistic/shotgun/automatic/negotiator
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube
 	name = "Advantage AST12 Negotiator"
-	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition. Introduced alongside the PS9 as Advantage's flagship product, the AST12 has run into pervasive production issues that limit its availability. This example appears to have been made specifically for Vigilitas Interstellar."
+	desc = "A pump-action shotgun with a twin-tube design that allows the user to switch between two ammo types on demand, or simply double their available ammunition. Introduced alongside the PS9 as Advantage's flagship product, the AST12 has run into pervasive production issues that limit its availability."
 
 	icon = 'icons/obj/guns/manufacturer/nanotrasen_sharplite/48x32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
