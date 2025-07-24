@@ -60,6 +60,23 @@
 
 	chameleon_extras = /obj/item/stamp/qm
 
+/datum/outfit/job/nanotrasen/captain/ns/empty
+	name = "Nanotrasen - Captain (N+S Logistics) (Naked)"
+
+	head = null
+	uniform = /obj/item/clothing/under/nanotrasen/supply/qm
+	suit = null
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	glasses = null
+	gloves = null
+	neck = null
+	l_hand = null
+	belt = null
+
+	chameleon_extras = /obj/item/stamp/qm
+
 /datum/outfit/job/nanotrasen/captain/vi
 	name = "Nanotrasen - Captain (Vigilitas Interstellar)"
 
@@ -80,7 +97,7 @@
 	satchel = /obj/item/storage/backpack/satchel/cap
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/vi
 
 	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/captain
 
@@ -124,7 +141,7 @@
 						)
 
 // Head of Security
-/datum/outfit/job/nanotrasen/hos/vi
+/datum/outfit/job/nanotrasen/hos/vi/empty
 	name = "Nanotrasen - Vigilitas Sergeant"
 	job_icon = "headofsecurity"
 
@@ -146,7 +163,7 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/vi
 
 	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/security
 
@@ -227,7 +244,7 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/vi
 
 	chameleon_extras = null
 

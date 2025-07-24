@@ -170,6 +170,10 @@
 	mask_type = null // we spawn in gas masks in frontiersmen bags alongside this, so it isn't nessary
 	internal_type = /obj/item/tank/internals/emergency_oxygen //frontiersmen dont
 
+/obj/item/storage/box/survival/vi
+	mask_type = /obj/item/clothing/mask/gas/vigilitas
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
 	desc = "Contains sterile latex gloves."
