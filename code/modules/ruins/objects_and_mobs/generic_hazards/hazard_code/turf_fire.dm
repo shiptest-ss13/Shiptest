@@ -6,10 +6,10 @@
 	var/fire_power = 100
 	var/fire_color = "red"
 	var/light_fire = TRUE
-	var/random_spares = TRUE
+	var/random_sparks = TRUE
 	disable_text = "cutting the wires."
 
-/obj/structure/hazard/electrical/do_random_effect()
+/obj/structure/hazard/fire/do_random_effect()
 	if(random_sparks)
 		do_sparks(2, TRUE, src)
 	if(light_fire)

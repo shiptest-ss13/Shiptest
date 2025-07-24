@@ -38,15 +38,15 @@
 
 /obj/item/towel/full
 	shape = TOWEL_FULL
-	icon = "towel-chest"
+	icon_state = "towel-chest"
 
 /obj/item/towel/waist
 	shape = TOWEL_WAIST
-	icon = "towel-waist"
+	icon_state = "towel-waist"
 
 /obj/item/towel/waist
 	shape = TOWEL_HEAD
-	icon = "towel-head"
+	icon_state = "towel-head"
 
 /obj/item/towel/Initialize()
 	. = ..()
