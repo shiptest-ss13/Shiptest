@@ -77,6 +77,30 @@
 
 	chameleon_extras = /obj/item/stamp/qm
 
+/datum/outfit/job/nanotrasen/captain/vi
+	name = "Nanotrasen - Captain (Vigilitas Interstellar)"
+
+	id = /obj/item/card/id/gold
+	head = /obj/item/clothing/head/nanotrasen/beret/security/command
+	uniform = /obj/item/clothing/under/nanotrasen/security/director
+	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	neck = null
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/vi
+
+	chameleon_extras = /obj/item/stamp/nanotrasen/vigilitas/captain
+
 /datum/outfit/job/nanotrasen/captain/centcom
 	name = "Nanotrasen - Captain (Central Command)"
 
