@@ -7,3 +7,14 @@
 /datum/outfit/sauna
 	suit = /obj/item/towel/waist
 
+/obj/item/paper/crumpled/bloody/fluff/ruin/jungle/resignation
+	name = "\improper Letter of Resignation"
+	default_raw_text = "Consider this my formal notice of resignation. I've put with a lot of your shit, but this takes the craptacular peak of the asshole turd volcano you've decided to pile yourself onto. A goddamn broodmother?<br><h2>YOU FUCKING MORON.</h2><br> Huntsman. I don't even know why I'm writing this. You're probably dead, or about to be anyways. I can hear the screams outside. Whatever. It's carthartic I guess. Point is. Go fuck yourself up and down a pole you bootlick.<br><br>Yours, hatefully,<br> Alex.<br><br>P.S. I'm taking the money and the Buckmaster. Consider it my severance."
+
+/obj/item/paper/crumpled/bloody/fluff/ruin/jungle/reminder
+	name = "\improper Reminder"
+	desc = "Note to self. Remember to replace containment unit 2 next week. The Broodmother dented it pretty badly, even with all the extra padding and the fact we dosed it up with enough tranquilizer to put ten people to sleep permanently."
+
+/obj/item/paper/crumpled/bloody/fluff/ruin/jungle/missive
+	name = "\improper Notice"
+	desc = "Lance, we've hit it big. We got a famous Frontier celebrity coming in to film a commercial with us. They want something more \"dangerous\" and \"exotic\". Bring in something big for the next haul. We're gonna show them shooting it down on film. This is gonna skyrocket our sales."

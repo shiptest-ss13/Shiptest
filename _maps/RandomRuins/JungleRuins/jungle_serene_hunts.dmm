@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "af" = (
 /mob/living/simple_animal/hostile/asteroid/wolf,
 /turf/open/floor/plasteel/white/jungleplanet,
@@ -16,6 +20,8 @@
 	pixel_x = 10;
 	pixel_y = -6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/hazard/fire/wires/alarm,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
 "ak" = (
@@ -35,6 +41,7 @@
 "aq" = (
 /obj/structure/table/reinforced,
 /obj/item/kitchen/rollingpin,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "as" = (
@@ -42,10 +49,30 @@
 /obj/structure/spider/cocoon/person,
 /turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
+"at" = (
+/obj/structure/spider/fake_eggcluster,
+/turf/open/floor/engine,
+/area/ruin/powered/hunts/barn)
 "au" = (
 /obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"aA" = (
+/obj/effect/turf_decal/siding/white/corner,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"aE" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/pup,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"aG" = (
+/obj/structure/flora/junglebush/b,
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "aK" = (
 /obj/structure/closet/wall/white/directional/north,
 /obj/item/towel,
@@ -74,10 +101,20 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "bc" = (
-/obj/structure/table/wood,
 /obj/machinery/light/broken/directional/east,
+/obj/structure/flippedtable{
+	icon_state = "wood_table";
+	dir = 4
+	},
 /turf/open/floor/carpet/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"bd" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
+"bg" = (
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "bi" = (
 /obj/machinery/power/smes/shuttle/precharged{
 	dir = 1
@@ -113,8 +150,13 @@
 /area/ruin/powered/hunts/sec)
 "bE" = (
 /obj/structure/spider/cocoon/person,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
+"bH" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/wood/maple/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "bI" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/table_bell/brass{
@@ -134,6 +176,10 @@
 /obj/item/towel,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hunts/toilet)
+"bR" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "bU" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/wood/maple,
@@ -144,6 +190,10 @@
 "cc" = (
 /turf/open/floor/carpet/green,
 /area/ruin/powered/hunts/hotel)
+"ci" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "cn" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
@@ -171,6 +221,15 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/ruin/powered/hunts/barn)
+"cJ" = (
+/obj/structure/fluff/hedge/opaque,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/black/jungleplanet,
+/area/ruin/powered/hunts/canteen)
+"cN" = (
+/obj/structure/fence,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "cO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -191,6 +250,11 @@
 /obj/structure/chair/bench/beige,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"cT" = (
+/obj/structure/spacevine/weak,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "cU" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -199,6 +263,7 @@
 /area/ruin/powered/hunts/gun_shop)
 "dd" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
 "dq" = (
@@ -207,10 +272,24 @@
 "dD" = (
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"dH" = (
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "dN" = (
 /obj/item/trash/pistachios,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
+"dR" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "dY" = (
 /obj/machinery/light/floor/hangar,
 /turf/open/floor/concrete/slab_1/jungleplanet,
@@ -224,10 +303,27 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/hunts/gun_shop)
+"eg" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"ep" = (
+/obj/structure/flora/ash/garden,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "eq" = (
 /mob/living/simple_animal/hostile/asteroid/elite/broodmother,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+/turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
+"es" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"eu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet,
+/area/ruin/powered/hunts/gun_shop)
 "ex" = (
 /obj/item/spacecash/bundle/c10,
 /obj/item/spacecash/bundle/c1{
@@ -288,6 +384,7 @@
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/ruin/powered/hunts/shuttle)
 "fg" = (
@@ -331,6 +428,15 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
+"fH" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
+"fL" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "fM" = (
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/ruin/powered/hunts/shuttle)
@@ -339,6 +445,16 @@
 	dir = 10
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"fS" = (
+/obj/structure/spacevine/dense,
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"fX" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "ga" = (
 /obj/structure/grille,
@@ -353,6 +469,11 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/concrete/jungleplanet/lit,
 /area/ruin/powered/hunts/shuttle)
+"gk" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "gn" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange,
@@ -381,6 +502,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 1
 	},
+/obj/item/clothing/under/misc/pj/blue,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "gy" = (
@@ -414,6 +536,18 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"gY" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"gZ" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"hc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/maple,
+/area/ruin/powered/hunts/gun_shop)
 "he" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -431,6 +565,20 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/carpet/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"hm" = (
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"hr" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/tiles/jungleplanet/lit,
+/area/ruin/powered/hunts/shuttle)
 "hw" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 6
@@ -491,6 +639,11 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
+"hU" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "hV" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange{
@@ -542,11 +695,20 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered/hunts/shuttle)
+"ir" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
 "iv" = (
 /obj/item/crowbar/large,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
+"iy" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "iA" = (
 /obj/structure/closet/crate/bin,
 /obj/item/trash/energybar,
@@ -555,6 +717,10 @@
 /obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
+"iB" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "iC" = (
 /obj/machinery/light/directional/west,
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
@@ -623,6 +789,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
 "jm" = (
@@ -678,6 +845,12 @@
 	},
 /turf/open/floor/concrete/reinforced/jungleplanet/lit,
 /area/ruin/powered/hunts/gate)
+"jI" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "jJ" = (
 /obj/structure/rack,
 /obj/item/melee/knife/hunting,
@@ -695,6 +868,9 @@
 /obj/item/reagent_containers/glass/bottle/sodium_thiopental,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/hunts/shuttle)
+"jU" = (
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
 "jV" = (
 /obj/effect/turf_decal/spline/fancy/wood,
 /turf/open/floor/wood/ebony,
@@ -738,6 +914,11 @@
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"kK" = (
+/obj/item/shard,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/engine,
+/area/ruin/powered/hunts/barn)
 "kL" = (
 /obj/structure/table/wood/reinforced,
 /obj/structure/window/reinforced{
@@ -759,6 +940,11 @@
 	},
 /turf/open/floor/plasteel/white/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"lb" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet,
+/area/ruin/powered/hunts/gate)
 "ld" = (
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/light/floor,
@@ -782,18 +968,50 @@
 /obj/structure/spacevine,
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/hotel)
+"lk" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/tiles/jungleplanet/lit,
+/area/ruin/powered/hunts/shuttle)
+"ll" = (
+/obj/item/ammo_casing/spent/rifle_brass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "lo" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
 /area/ruin/powered/hunts/shuttle)
+"lr" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/cave/explored)
+"lA" = (
+/obj/structure/spacevine/weak,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"lJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/maple/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "lL" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/floor/wood,
 /area/overmap_encounter/planetoid/jungle/explored)
+"lO" = (
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"lP" = (
+/obj/structure/spacevine/weak,
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "lR" = (
 /obj/structure/table/wood,
 /obj/item/trash/boritos,
@@ -804,6 +1022,10 @@
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"lW" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "lX" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
 /obj/machinery/button/door{
@@ -824,6 +1046,11 @@
 	},
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"mf" = (
+/obj/structure/flora/stump,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "mo" = (
 /obj/structure/chair/stool{
 	dir = 4
@@ -889,7 +1116,11 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "nc" = (
 /obj/item/ammo_box/magazine/m23/empty,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"ne" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
 "nr" = (
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -953,6 +1184,11 @@
 /obj/machinery/computer/helm,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/hunts/shuttle)
+"nY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/asteroid/brimdemon,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "od" = (
 /obj/item/paper/carbon,
 /turf/open/floor/plasteel/patterned,
@@ -960,6 +1196,12 @@
 "oe" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"of" = (
+/obj/structure/fence/cut/large{
+	dir = 4
+	},
+/turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "og" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/pup,
@@ -979,11 +1221,22 @@
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"oo" = (
+/obj/structure/chair/bench/orange{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet,
+/area/ruin/powered/hunts/hotel)
+"ou" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "ov" = (
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/mob_spawn/human/corpse/indie/manager,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+/turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "oD" = (
 /obj/structure/grille,
@@ -1020,6 +1273,13 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/powered/hunts/gun_shop)
+"oT" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "oY" = (
 /obj/structure/fence{
 	dir = 4
@@ -1039,6 +1299,10 @@
 /obj/effect/mapping_helpers/airlock/welded,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/hunts/shuttle)
+"pi" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "pm" = (
 /obj/structure/platform/wood_two/corner{
 	dir = 4
@@ -1078,18 +1342,43 @@
 /area/ruin/powered/hunts/barn)
 "pG" = (
 /obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
 "pP" = (
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/overmap_encounter/planetoid/cave/explored)
+"pS" = (
+/obj/structure/closet/cabinet,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 10
+	},
+/obj/item/clothing/under/misc/pj/blue,
+/obj/item/clothing/mask/cigarette/rollie/cannabis,
+/obj/item/storage/pill_bottle/aranesp,
+/obj/item/storage/pill_bottle/licarb{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/storage/pill_bottle/finobranc{
+	pixel_x = -3;
+	pixel_y = -8
+	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/hunts/hotel)
 "pV" = (
 /turf/closed/mineral/random/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
+"pW" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/lava,
+/area/ruin/powered/hunts/barn)
 "pY" = (
 /obj/item/stack/sheet/cardboard{
 	pixel_x = 5;
-	pixel_y = 2
+	pixel_y = 2;
+	layer = 2.9
 	},
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot,
 /turf/open/floor/wood/maple,
@@ -1128,6 +1417,10 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/hotel)
+"qs" = (
+/obj/structure/spacevine/dense,
+/turf/open/space/basic,
+/area/overmap_encounter/planetoid/jungle/explored)
 "qB" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -1136,6 +1429,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/powered/hunts/hotel)
+"qO" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "qY" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
@@ -1161,6 +1458,11 @@
 /mob/living/simple_animal/hostile/asteroid/wolf,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hunts/canteen)
+"rn" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "ro" = (
 /obj/machinery/button/door{
 	dir = 8;
@@ -1171,10 +1473,28 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
+"rq" = (
+/obj/structure/chair/bench/orange/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "rr" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"rs" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
+"rt" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
+"ru" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/remains/human,
+/turf/open/floor/wood/maple/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "rw" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1197,6 +1517,7 @@
 /obj/structure/displaycase/broken,
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
+/obj/structure/hazard/fire/wires/alarm,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/powered/hunts/gun_shop)
 "rE" = (
@@ -1211,6 +1532,10 @@
 /obj/item/spacecash/bundle/smallrand,
 /turf/open/floor/wood,
 /area/ruin/powered/hunts/toilet)
+"rI" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "rJ" = (
 /obj/structure/table/reinforced,
 /obj/item/table_bell{
@@ -1221,6 +1546,7 @@
 	pixel_y = 12;
 	pixel_x = -10
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "rM" = (
@@ -1229,6 +1555,10 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"rN" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "rO" = (
 /turf/closed/mineral/random/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
@@ -1239,6 +1569,10 @@
 /mob/living/basic/bear/cave,
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"rV" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "rY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -1270,6 +1604,10 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
+"sr" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "ss" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -1279,6 +1617,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "sv" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/pup,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/green,
 /area/ruin/powered/hunts/hotel)
 "sx" = (
@@ -1318,17 +1657,38 @@
 	},
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/gun_shop)
+"sL" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 6
+	},
+/obj/item/toy/plush/kari,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/hunts/hotel)
 "sO" = (
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/noslip,
 /area/ruin/powered/hunts/toilet)
+"sQ" = (
+/obj/structure/spacevine/weak,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "sR" = (
 /turf/closed/wall/concrete,
 /area/ruin/powered/hunts/barn)
+"sZ" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
 "td" = (
 /obj/item/reagent_containers/condiment/milk,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hunts/canteen)
+"te" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
 "tf" = (
 /obj/structure/spacevine,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
@@ -1368,6 +1728,13 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/sec)
+"tz" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "tD" = (
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/ammo_casing/shotgun/buckshot,
@@ -1381,8 +1748,13 @@
 "tF" = (
 /obj/item/gun/ballistic/automatic/marksman/woodsman,
 /obj/item/ammo_casing/spent/rifle_brass,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
+"tH" = (
+/obj/item/ammo_casing/spent/slug/buck,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "tJ" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "cargo bay"
@@ -1443,6 +1815,7 @@
 /area/ruin/powered/hunts/shuttle)
 "tW" = (
 /obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "tY" = (
@@ -1472,6 +1845,11 @@
 /obj/structure/spacevine,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/shed)
+"uo" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "us" = (
 /obj/effect/turf_decal/number/left_three,
 /obj/structure/spider/stickyweb,
@@ -1490,12 +1868,20 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/powered/hunts/hotel)
+"uw" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "uy" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/effect/turf_decal/siding/white{
 	dir = 1
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"uE" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
 "uH" = (
 /obj/structure/spacevine/dense,
@@ -1527,6 +1913,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 10
 	},
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
 "vj" = (
@@ -1534,14 +1921,32 @@
 	icon_state = "wood_table";
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"vk" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"vr" = (
+/obj/structure/spacevine/dense,
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "vw" = (
 /obj/structure/platform/wood_two{
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"vI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/ebony,
+/area/ruin/powered/hunts/gun_shop)
+"vJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/ebony/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "vO" = (
 /obj/machinery/computer/monitor,
 /turf/open/floor/plasteel/dark,
@@ -1561,6 +1966,21 @@
 	pixel_y = 7
 	},
 /turf/open/water/jungle/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"vV" = (
+/obj/structure/railing/wood{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/asteroid/goliath/pup,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"vW" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "wb" = (
 /obj/structure/table/wood,
@@ -1658,6 +2078,11 @@
 /obj/item/stack/tile/wood/ebony,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
+"xl" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "xo" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -1673,6 +2098,10 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
+"xr" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/jungle/explored)
 "xs" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1738,11 +2167,22 @@
 /obj/structure/spacevine,
 /turf/open/floor/wood/jungleplanet,
 /area/overmap_encounter/planetoid/jungle/explored)
+"yi" = (
+/obj/item/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/jungleplanet,
+/area/ruin/powered/hunts/canteen)
+"yl" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/carpet/black,
+/area/ruin/powered/hunts/gun_shop)
 "yn" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/asteroid/brimdemon,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "yo" = (
@@ -1761,6 +2201,17 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"yC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"yI" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 29
+	},
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "yJ" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
@@ -1774,6 +2225,10 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/sauna,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/toilet)
+"yU" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "yY" = (
 /obj/item/chair/wood{
 	dir = 1
@@ -1787,6 +2242,10 @@
 /obj/machinery/light/floor,
 /turf/open/floor/concrete/tiles/jungleplanet/lit,
 /area/ruin/powered/hunts/shuttle)
+"zd" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "zk" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -1810,10 +2269,12 @@
 "zq" = (
 /obj/machinery/camera/autoname,
 /obj/structure/spider/stickyweb,
+/obj/structure/spider/fake_eggcluster,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
 "zs" = (
 /obj/structure/door_assembly/door_assembly_wood,
+/obj/structure/spacevine/dense,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/hotel)
 "zt" = (
@@ -1831,13 +2292,30 @@
 /obj/item/ammo_casing/shotgun,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
+"zy" = (
+/obj/structure/flora/stump,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"zA" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "zE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
+"zG" = (
+/obj/machinery/camera/autoname,
+/obj/structure/spider/fake_eggcluster,
+/turf/open/floor/engine,
+/area/ruin/powered/hunts/barn)
 "zH" = (
 /obj/structure/sink/kitchen{
 	pixel_y = 25
@@ -1859,6 +2337,10 @@
 /obj/item/shard,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
+"Ah" = (
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ai" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/drinks/coffee,
@@ -1871,11 +2353,17 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
 "Ao" = (
 /turf/open/floor/carpet,
 /area/ruin/powered/hunts/gun_shop)
+"AB" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet,
+/area/ruin/powered/hunts/gate)
 "AF" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark/jungleplanet,
@@ -1953,6 +2441,7 @@
 "Be" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/item/stack/ore/salvage/scrapmetal,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "Bh" = (
@@ -1987,16 +2476,32 @@
 /mob/living/simple_animal/hostile/jungle/seedling,
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/hotel)
+"Br" = (
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Bw" = (
 /turf/open/floor/plasteel/stairs/wood/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "By" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/hunts/sec)
+"BE" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/jungle/explored)
+"BF" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/maple/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "BH" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
 "BO" = (
@@ -2015,6 +2520,9 @@
 /obj/machinery/light/broken/directional/east,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
+"BQ" = (
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "BR" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
@@ -2144,10 +2652,29 @@
 /obj/structure/spacevine,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Dz" = (
+/obj/structure/fence/door,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"DG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/lava,
+/area/ruin/powered/hunts/barn)
 "DJ" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/overmap_encounter/planetoid/jungle/explored)
+"DM" = (
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 5
+	},
+/obj/structure/spacevine,
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/hunts/hotel)
+"DP" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "DV" = (
 /obj/structure/fence{
 	dir = 8
@@ -2158,6 +2685,8 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
 "Eh" = (
@@ -2190,8 +2719,14 @@
 	pixel_x = -2;
 	pixel_y = 18
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"EB" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "EG" = (
 /obj/structure/table/wood,
 /obj/effect/turf_decal/spline/fancy/wood{
@@ -2247,6 +2782,15 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/powered/hunts/hotel)
+"Ff" = (
+/obj/structure/spacevine/weak,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Fg" = (
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Fh" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -2258,6 +2802,14 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/shed)
+"Fo" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Fs" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Fu" = (
 /obj/structure/table/wood,
 /obj/machinery/light/directional/east,
@@ -2322,7 +2874,7 @@
 /area/ruin/powered/hunts/gate)
 "Gb" = (
 /obj/item/ammo_casing/spent/rifle_brass,
-/turf/open/floor/plating/dirt/jungle/dark/lit,
+/turf/open/floor/plating/dirt/jungle/dark,
 /area/overmap_encounter/planetoid/cave/explored)
 "Ge" = (
 /obj/machinery/washing_machine{
@@ -2338,6 +2890,9 @@
 "Gn" = (
 /obj/structure/closet/wall/directional/south,
 /obj/effect/turf_decal/spline/fancy/wood,
+/obj/item/binoculars,
+/obj/item/clothing/under/misc/pj/red,
+/obj/item/melee/knife/hunting,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "Gs" = (
@@ -2361,25 +2916,52 @@
 "Gz" = (
 /obj/item/stack/sheet/cardboard{
 	pixel_x = 13;
-	pixel_y = -11
+	pixel_y = -11;
+	layer = 2.9
 	},
 /obj/item/ammo_box/magazine/ammo_stack/prefilled/shotgun/buckshot,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
+"GF" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"GG" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "GH" = (
 /obj/structure/closet/cabinet,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
+/obj/item/clothing/under/misc/pj/blue,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "GL" = (
 /turf/open/floor/carpet/green,
 /area/ruin/powered/hunts/gun_shop)
+"GV" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ha" = (
 /obj/structure/chair/bench/orange/directional/east,
 /turf/open/floor/carpet/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"Hb" = (
+/obj/structure/fence,
+/obj/effect/turf_decal/stoneborder{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/asteroid/goliath/pup,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Hc" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange{
@@ -2397,6 +2979,11 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
+"He" = (
+/obj/structure/spacevine/weak,
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Hh" = (
 /obj/structure/fence{
 	dir = 4
@@ -2439,6 +3026,10 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/powered/hunts/gun_shop)
+"Hs" = (
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Hx" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -2453,11 +3044,13 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
 "HH" = (
 /obj/structure/railing/wood,
 /obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "HM" = (
@@ -2465,6 +3058,13 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"HP" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "HR" = (
 /obj/effect/turf_decal/industrial/warning,
@@ -2483,6 +3083,10 @@
 /mob/living/simple_animal/hostile/asteroid/brimdemon,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"Iw" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/carpet/green,
+/area/ruin/powered/hunts/hotel)
 "Iz" = (
 /obj/machinery/door/airlock/wood{
 	dir = 4
@@ -2502,6 +3106,11 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
+"II" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "IM" = (
 /turf/open/floor/wood,
 /area/ruin/powered/hunts/toilet)
@@ -2531,17 +3140,34 @@
 /mob/living/simple_animal/hostile/asteroid/goliath,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/hotel)
+"Jj" = (
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "Jl" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange,
 /turf/open/floor/plating,
 /area/ruin/powered/hunts/barn)
+"Jp" = (
+/obj/structure/spacevine,
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Js" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating,
+/area/ruin/powered/hunts/barn)
+"Jt" = (
+/obj/structure/chair/office,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
 "Ju" = (
 /obj/structure/railing{
@@ -2553,6 +3179,10 @@
 /obj/structure/reagent_dispensers/cooking_oil,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hunts/canteen)
+"JC" = (
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
 "JF" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 /obj/machinery/atmospherics/components/unary/portables_connector{
@@ -2596,12 +3226,20 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Ke" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Kr" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/concrete/slab_1/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Kw" = (
 /obj/item/screwdriver,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
 "Kx" = (
@@ -2655,6 +3293,7 @@
 /area/overmap_encounter/planetoid/jungle/explored)
 "KQ" = (
 /obj/item/ammo_casing/spent/slug/buck,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/ruin/powered/hunts/gun_shop)
 "KV" = (
@@ -2662,6 +3301,15 @@
 	dir = 4
 	},
 /obj/item/ammo_casing/spent/slug/buck,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Lb" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Lh" = (
@@ -2678,6 +3326,10 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
+"Lj" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ll" = (
 /obj/item/rack_parts,
 /obj/item/attachment/scope{
@@ -2696,10 +3348,16 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
+"Lo" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"Lq" = (
+/obj/structure/spacevine/dense,
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "Lv" = (
-/obj/machinery/door/window/brigdoor/security/holding/southleft{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8
 	},
@@ -2710,6 +3368,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
 "Lz" = (
@@ -2738,6 +3397,12 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
+"LK" = (
+/obj/item/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/jungleplanet,
+/area/ruin/powered/hunts/canteen)
 "LL" = (
 /obj/structure/noticeboard{
 	name = "trophy board";
@@ -2751,6 +3416,15 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/powered/hunts/gun_shop)
+"LN" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "LU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2763,18 +3437,32 @@
 /obj/structure/sign/plaques/blank{
 	pixel_y = 30;
 	name = "M-20 AUTO ELITE";
-	desc = "The perfect union of power and portability, the M-20 Auto Elite was once the standard issue pistol of Star City police forms. Chambered in .44 Roumain for excellent stopping power in a compact package."
+	desc = "The perfect union of power and portability, the M-20 Auto Elite was once the standard issue pistol of Star City police forms. Chambered in .44 Roumain for excellent stopping power in a compact package. A large sticker has been pasted onto the bottom: \"SORRY OUT OF STOCK\""
 	},
-/obj/item/gun/ballistic/automatic/pistol/m20_auto_elite,
+/obj/structure/hazard/fire/wires/alarm,
+/obj/machinery/light/floor,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/powered/hunts/gun_shop)
 "Mb" = (
 /turf/open/floor/engine/hull/interior,
 /area/ruin/powered/hunts/shuttle)
+"Mf" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Mh" = (
 /obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Mi" = (
+/obj/structure/spacevine,
+/obj/vehicle/ridden/lawnmower,
+/turf/open/floor/wood/jungleplanet,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Mj" = (
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "Mx" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light/directional/south,
@@ -2784,6 +3472,10 @@
 /obj/structure/chair/office,
 /turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
+"MI" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
 "MU" = (
 /obj/structure/chair/bench/beige{
 	dir = 1
@@ -2805,6 +3497,11 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
+"Nc" = (
+/obj/effect/turf_decal/siding/white/corner,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "No" = (
 /obj/item/spacecash/bundle/c10{
 	pixel_y = 10
@@ -2837,6 +3534,9 @@
 /obj/effect/turf_decal/spline/fancy/wood/cee,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
+"NB" = (
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "ND" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
@@ -2848,6 +3548,14 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/powered/hunts/gun_shop)
+"NH" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"NK" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/jungle/explored)
 "NL" = (
 /obj/structure/chair/bench/orange/directional/west,
 /turf/open/floor/carpet/jungleplanet,
@@ -2866,6 +3574,15 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/powered/hunts/shuttle)
+"NQ" = (
+/obj/item/shard,
+/turf/open/floor/engine,
+/area/ruin/powered/hunts/barn)
+"NS" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "NU" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4
@@ -2882,6 +3599,11 @@
 /obj/structure/spacevine,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
+"NX" = (
+/obj/effect/turf_decal/industrial/stand_clear,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/jungleplanet/lit,
+/area/ruin/powered/hunts/shuttle)
 "Og" = (
 /obj/structure/closet/mob_capture{
 	opened = 1;
@@ -2917,6 +3639,18 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 10
 	},
+/obj/item/clothing/under/misc/pj/red,
+/obj/item/toy/plush/sharai{
+	pixel_x = -6
+	},
+/obj/item/toy/plush/rilena{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/toy/plush/tali{
+	pixel_x = 11;
+	pixel_y = 8
+	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "Ov" = (
@@ -2926,11 +3660,8 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Oz" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector{
-	dir = 4
-	},
-/turf/open/floor/engine,
-/area/ruin/powered/hunts/barn)
+/turf/template_noop,
+/area/overmap_encounter/planetoid/jungle/explored)
 "OC" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 4
@@ -2968,8 +3699,13 @@
 /obj/item/storage/box/ammo/c22lr/hp{
 	pixel_y = 6
 	},
+/obj/structure/hazard/fire/wires/alarm,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
+"OO" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/cave/explored)
 "OT" = (
 /obj/item/ammo_casing/spent/slug/buck,
 /obj/item/ammo_casing/spent/slug/buck,
@@ -3008,6 +3744,14 @@
 /obj/structure/spacevine,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
+"Pn" = (
+/obj/structure/spacevine/dense,
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"Ps" = (
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Px" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
@@ -3087,6 +3831,11 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/powered/hunts/hotel)
+"Qc" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/fake_eggcluster,
+/turf/open/floor/engine,
+/area/ruin/powered/hunts/barn)
 "Qf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -3096,16 +3845,22 @@
 "Qh" = (
 /obj/structure/rack,
 /obj/item/ammo_box/magazine/m20_auto_elite/empty{
-	pixel_x = 11
-	},
-/obj/item/ammo_box/magazine/m20_auto_elite/empty{
-	pixel_x = 1
-	},
-/obj/item/ammo_box/magazine/m20_auto_elite/empty{
 	pixel_x = -7
 	},
+/obj/structure/hazard/fire/wires/alarm,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/gun_shop)
+"Qm" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Qo" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/tiles/jungleplanet/lit,
+/area/ruin/powered/hunts/shuttle)
 "Qq" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -3133,6 +3888,15 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"QR" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"QS" = (
+/obj/structure/spacevine/dense,
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "QY" = (
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/wood/ebony,
@@ -3148,6 +3912,15 @@
 	},
 /turf/open/floor/carpet/green,
 /area/ruin/powered/hunts/gun_shop)
+"Ra" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet,
+/area/ruin/powered/hunts/gate)
+"Rb" = (
+/obj/structure/spacevine/dense,
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Rc" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -3167,9 +3940,25 @@
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/powered/hunts/hotel)
+"Rp" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Rq" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
+"Rt" = (
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Ru" = (
 /obj/structure/healingfountain,
@@ -3230,16 +4019,34 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"RW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/jungleplanet/lit,
+/area/ruin/powered/hunts/shuttle)
 "Se" = (
 /obj/item/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/canteen)
+"Sf" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/maple,
+/area/ruin/powered/hunts/gun_shop)
+"Sh" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"So" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "Sv" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
 "Sx" = (
@@ -3251,6 +4058,17 @@
 	},
 /obj/structure/spacevine/dense,
 /turf/open/floor/wood/maple/jungleplanet,
+/area/ruin/powered/hunts/hotel)
+"Sz" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 4
+	},
+/obj/item/reagent_containers/food/drinks/bottle/champagne{
+	pixel_x = 4;
+	pixel_y = 18
+	},
+/turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "SB" = (
 /obj/structure/chair/wood{
@@ -3270,6 +4088,10 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
+"Tc" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Tf" = (
 /obj/structure/windoor_assembly{
 	dir = 4
@@ -3282,6 +4104,14 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 6
 	},
+/turf/open/floor/wood/mahogany,
+/area/ruin/powered/hunts/hotel)
+"Tk" = (
+/obj/structure/closet/cabinet,
+/obj/effect/turf_decal/spline/fancy/wood{
+	dir = 9
+	},
+/obj/item/clothing/under/misc/pj/red,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "Tm" = (
@@ -3298,6 +4128,11 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/wood/ebony/jungleplanet,
 /area/ruin/powered/hunts/sec)
+"Tu" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/wood/maple,
+/area/ruin/powered/hunts/gun_shop)
 "Tx" = (
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
@@ -3351,6 +4186,9 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/under/rank/security/officer,
 /obj/item/storage/wallet/random,
+/obj/item/gun/ballistic/automatic/pistol/m20_auto_elite,
+/obj/item/ammo_box/magazine/m20_auto_elite/empty,
+/obj/item/ammo_box/magazine/m20_auto_elite/empty,
 /turf/open/floor/wood,
 /area/ruin/powered/hunts/toilet)
 "Us" = (
@@ -3434,6 +4272,11 @@
 /area/ruin/powered/hunts/toilet)
 "Vv" = (
 /obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
+/obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Vy" = (
@@ -3443,6 +4286,14 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
+"VB" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/jungle/explored)
+"VC" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "VN" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange,
@@ -3482,6 +4333,7 @@
 /turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
 "Wi" = (
+/obj/structure/spacevine/dense,
 /turf/open/floor/wood/jungleplanet,
 /area/overmap_encounter/planetoid/jungle/explored)
 "Wj" = (
@@ -3525,6 +4377,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
 	},
+/obj/structure/spacevine,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
 "WK" = (
@@ -3565,6 +4418,10 @@
 	},
 /turf/open/floor/concrete/pavement/jungleplanet/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"WY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Xa" = (
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 4
@@ -3597,6 +4454,10 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
+"Xc" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
 "Xd" = (
 /obj/structure/fence,
 /obj/effect/turf_decal/stoneborder{
@@ -3626,6 +4487,15 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ruin/powered/hunts/shuttle)
+"Xr" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
+"Xu" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/tiles/jungleplanet/lit,
+/area/ruin/powered/hunts/shuttle)
 "Xw" = (
 /obj/structure/closet/secure_closet/freezer/fridge/open{
 	opened = 1
@@ -3635,6 +4505,13 @@
 /obj/item/storage/fancy/egg_box,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hunts/canteen)
+"Xy" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement/jungleplanet/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "XA" = (
 /obj/machinery/grill,
 /turf/open/floor/plasteel/dark/jungleplanet,
@@ -3649,6 +4526,18 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/hunts/toilet)
+"XJ" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"XN" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"XP" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "XU" = (
 /obj/structure/platform/wood_two{
 	dir = 1
@@ -3656,24 +4545,34 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/toilet)
+"Yb" = (
+/obj/structure/spacevine/weak,
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Yc" = (
 /obj/item/storage/box/ammo/a44roum{
-	pixel_y = 0;
-	pixel_x = -12
+	pixel_y = -2;
+	pixel_x = -7
 	},
 /obj/item/storage/box/ammo/a44roum{
-	pixel_y = 0;
-	pixel_x = 3
+	pixel_y = -2;
+	pixel_x = 7
 	},
 /obj/item/storage/box/ammo/a44roum{
-	pixel_y = 7;
-	pixel_x = -5
+	pixel_y = 7
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/hazard/fire/wires/alarm,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
+"Yg" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow,
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ym" = (
-/mob/living/simple_animal/hostile/asteroid/wolf/alpha,
 /obj/machinery/light/directional/west,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
 "Yo" = (
@@ -3690,13 +4589,30 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/engine,
 /area/ruin/powered/hunts/barn)
+"Yp" = (
+/obj/structure/chair/bench/orange,
+/obj/machinery/light/directional/north,
+/turf/open/floor/carpet,
+/area/ruin/powered/hunts/hotel)
 "Yz" = (
 /turf/closed/wall/mineral/wood,
 /area/ruin/powered/hunts/gun_shop)
+"YA" = (
+/obj/structure/flora/ash/garden,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "YC" = (
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/hunts/hotel)
+"YL" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/overmap_encounter/planetoid/cave/explored)
+"YM" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "YO" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -3707,12 +4623,24 @@
 	},
 /turf/open/floor/concrete/lava,
 /area/ruin/powered/hunts/barn)
+"YR" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
+"YT" = (
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/jungle/explored)
 "YU" = (
 /obj/effect/turf_decal/spline/fancy/wood/cee{
 	dir = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
+"YX" = (
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/dirt/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "YY" = (
 /obj/structure/platform/wood_two{
 	dir = 1
@@ -3738,6 +4666,10 @@
 	},
 /turf/open/water/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Zc" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle/dark,
+/area/overmap_encounter/planetoid/cave/explored)
 "Zd" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/wood/ebony,
@@ -3754,6 +4686,10 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/hunts/toilet)
+"Zp" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "Zw" = (
 /obj/item/flashlight/lantern,
 /obj/structure/table/wood,
@@ -3770,7 +4706,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/hazard/fire/wires/alarm,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/hunts/gun_shop)
 "Zz" = (
@@ -3806,6 +4744,7 @@
 /area/ruin/powered/hunts/gate)
 "ZN" = (
 /obj/structure/table/wood/reinforced,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/maple/jungleplanet,
 /area/ruin/powered/hunts/canteen)
 "ZR" = (
@@ -3847,230 +4786,230 @@
 /area/ruin/powered/hunts/hotel)
 
 (1,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+rO
+Oz
+Oz
+Oz
+rO
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 "}
 (2,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+YT
+YT
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
+rO
+rO
+rO
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+rO
+rO
+Oz
+Oz
 "}
 (3,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Qm
+uw
+rt
+YT
+bg
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
+Oz
+rO
+rO
+rO
+rO
+rO
+Oz
 "}
 (4,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+YT
+bg
+bg
+MI
+Mf
+Fo
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
+Oz
 "}
 (5,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+bg
+VB
+bg
+Fo
 Ey
 Ey
 Ey
@@ -4080,9 +5019,9 @@ Ey
 Ey
 Ey
 Ey
-Va
-Va
-Va
+rO
+rO
+rO
 Ey
 Ey
 Ey
@@ -4092,35 +5031,35 @@ Ey
 Ey
 Ey
 Ey
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
 "}
 (6,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+aG
+MI
+MI
 Va
 Ey
 GH
@@ -4129,13 +5068,13 @@ eE
 Ey
 Cy
 Wx
-Op
+pS
 Ey
 Ey
 Ey
 Ey
 Ey
-GH
+Tk
 LI
 eE
 Ey
@@ -4143,35 +5082,35 @@ Cy
 LI
 Op
 Ey
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
 "}
 (7,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+MI
+bg
+MI
+Fo
 po
 Ey
 cQ
@@ -4194,34 +5133,34 @@ cn
 OZ
 sk
 Ey
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
 "}
 (8,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+bg
+VB
+bg
 Va
 po
 Ey
@@ -4229,11 +5168,11 @@ iM
 Xa
 SP
 Ey
-sq
+DM
 Xa
 Tj
 Ey
-cc
+Iw
 cc
 sv
 Ey
@@ -4243,35 +5182,35 @@ SP
 Ey
 sq
 Xa
-Tj
+sL
 Ey
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+rO
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
 "}
 (9,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+YT
+YT
 Tx
 po
 Ey
@@ -4297,32 +5236,32 @@ Ey
 Ey
 Ey
 Ey
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
 "}
 (10,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+YT
+YA
+YT
 Va
 po
 Rm
@@ -4348,33 +5287,33 @@ ZK
 ZK
 eO
 Ey
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
 "}
 (11,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+fL
+YT
+Qm
 po
 Ey
 Nu
@@ -4399,31 +5338,31 @@ zk
 zk
 qm
 Ey
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+rO
+rO
+rO
+rO
+rO
+rO
+Oz
 "}
 (12,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+fL
+TN
+YT
 Va
 po
 po
@@ -4454,29 +5393,29 @@ rO
 rO
 rO
 Va
-Va
-Va
-Va
+rO
+rO
+Oz
 "}
 (13,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Fo
+Fo
+Fo
+YM
+fX
+TN
 po
 Ov
 Ey
@@ -4487,11 +5426,11 @@ Ey
 mr
 jq
 Ey
-EJ
+Yp
 FM
 FM
 FM
-uv
+oo
 Ey
 Xb
 Nz
@@ -4504,28 +5443,28 @@ rO
 rO
 rO
 rO
-Va
-Va
-Va
-Va
+Fo
+rO
+rO
+Oz
 "}
 (14,1,1) = {"
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+DJ
+DJ
+gk
+nP
+nP
 Va
 Va
 Va
@@ -4556,30 +5495,30 @@ rO
 rO
 Va
 Va
+yU
 Va
-Va
-Va
+Oz
 "}
 (15,1,1) = {"
+Oz
+Oz
+Oz
+Oz
 Va
 Va
+YA
+YT
+YT
+TN
+Fo
+DJ
+DJ
+nP
+nP
+DJ
+TN
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+YT
 Ov
 Ey
 Us
@@ -4599,38 +5538,38 @@ nP
 nP
 Ey
 tL
-EG
+Sz
 ZX
 Ey
 rO
 rO
 rO
-Va
-Va
-Va
-Va
-Va
+TN
+YA
+Fo
+Qm
+Oz
 "}
 (16,1,1) = {"
+Oz
+Oz
+Oz
+Va
+YT
+YT
+nP
+es
+nP
+nP
+YT
+YM
 Va
 Va
+nP
+nP
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+YT
+YR
 Ov
 Ey
 qB
@@ -4656,24 +5595,24 @@ Ey
 nP
 Ov
 Va
-Va
-Va
-Va
-Va
-Va
+yU
+es
+sQ
+es
+Oz
 "}
 (17,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+es
+es
+nP
+nP
+fL
+YT
+YT
 Yz
 Yz
 Yz
@@ -4691,11 +5630,11 @@ YO
 nP
 nP
 dD
-dD
+yC
 Qq
 rP
 qk
-dD
+yC
 dD
 nP
 nP
@@ -4706,24 +5645,24 @@ nP
 nP
 nP
 Ov
+Fo
 Va
-Va
-Va
-Va
-Va
-Va
+nP
+es
+es
+Oz
 "}
 (18,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+Fo
+Fo
+nP
+nP
+nP
+gk
+DJ
+fL
 Yz
 Yz
 PP
@@ -4757,31 +5696,31 @@ nP
 nP
 nP
 Ov
+TN
 Va
-Va
-Va
-Va
-Va
-Va
+Ah
+es
+YT
+Oz
 "}
 (19,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+TN
+TN
+xr
+TN
 Va
 Yz
 rD
 iv
-iH
-iH
+hc
+hc
 Wl
-Wl
+yl
 Wl
 ER
 Yz
@@ -4809,30 +5748,30 @@ nP
 nP
 Ov
 Va
+es
+nP
+ad
 Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (20,1,1) = {"
+Oz
+Oz
 Va
+Qm
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+xr
+xr
+TN
+Ps
 Yz
 VZ
-iH
-iH
-iH
+hc
+hc
+hc
 Wl
-Wl
+yl
 Wl
 oR
 Yz
@@ -4851,7 +5790,7 @@ rP
 rP
 Px
 fO
-dD
+yC
 dD
 nP
 nP
@@ -4860,27 +5799,27 @@ nP
 nP
 Ov
 Va
-Va
-Va
-Va
-Va
-Va
+Ps
+Ps
+YT
+fL
+Oz
 "}
 (21,1,1) = {"
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Qm
+Ps
+xr
+TN
+xr
+Ps
 Va
 Yz
 qb
 cU
-iH
+hc
 iH
 iH
 iH
@@ -4891,7 +5830,7 @@ nP
 nP
 nP
 dD
-dD
+yC
 yz
 yc
 rP
@@ -4910,20 +5849,20 @@ nP
 nP
 nP
 Ov
+fL
 Va
-Va
-Va
-Va
-Va
-Va
+xr
+xr
+TN
+Oz
 "}
 (22,1,1) = {"
+Oz
+Oz
 Va
+TN
 Va
-Va
-Va
-Va
-Va
+YM
 Yz
 Yz
 Yz
@@ -4935,14 +5874,14 @@ GL
 Gm
 iH
 Yc
-iH
-iT
+hc
+Sf
 Yz
 Yz
 nP
 dD
 dD
-yz
+oT
 yc
 rP
 dD
@@ -4962,17 +5901,17 @@ nP
 nP
 Ov
 Va
+Ps
 Va
-Va
-Va
-Va
-Va
+xr
+fL
+Oz
 "}
 (23,1,1) = {"
+Oz
+Oz
 Va
-Va
-Va
-Va
+TN
 Va
 Yz
 Yz
@@ -4985,8 +5924,8 @@ GL
 GL
 wC
 iH
-iH
-iH
+hc
+hc
 Ef
 Zy
 Yz
@@ -5006,25 +5945,25 @@ dD
 dD
 rP
 Px
-fO
-dD
-dD
+Xy
+yC
+yC
 DJ
 dD
 bW
 Ue
 Va
 Va
-Va
-Va
-Va
+xr
+Hs
+Oz
 "}
 (24,1,1) = {"
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
+TN
+YT
 Yz
 Bd
 dN
@@ -5035,10 +5974,10 @@ LY
 GL
 GL
 oO
-iH
+hc
 iH
 Ao
-Ao
+eu
 KQ
 PT
 Bw
@@ -5057,45 +5996,45 @@ rx
 MU
 rP
 rP
-Px
-jw
-jw
+dH
+Ke
+Ke
 xZ
 jw
 WU
 rP
 TN
-Va
+Fo
 rP
-Va
-Va
+TN
+Oz
 "}
 (25,1,1) = {"
+Oz
+Oz
+YT
 Va
-Va
-Va
-Va
-Va
+YT
 Yz
 lR
 CW
-fh
-fh
+vI
+vI
 Yz
 BR
 GL
 GL
 bI
-iH
-iH
+Tu
+hc
 OT
-Ao
-Ao
+eu
+eu
 PT
 Bw
 rP
 rP
-rP
+NH
 rP
 cR
 Ba
@@ -5107,8 +6046,8 @@ RT
 zO
 MU
 rP
-rP
-rP
+NH
+NH
 qY
 rP
 rP
@@ -5117,21 +6056,21 @@ mH
 rP
 rP
 Wt
+Fo
 Va
-Va
-Va
+Oz
 "}
 (26,1,1) = {"
-Va
-Va
-Va
-Va
+Oz
+Oz
+YT
+YA
 Va
 Yz
 bz
-fh
-fh
-fh
+vI
+vI
+vI
 Yz
 Yz
 LL
@@ -5139,7 +6078,7 @@ GL
 le
 iH
 iH
-Ao
+eu
 Ao
 Ao
 PT
@@ -5169,20 +6108,20 @@ rP
 Rc
 Rc
 Va
-Va
-Va
+YM
+Oz
 "}
 (27,1,1) = {"
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
+YT
 Yz
 wb
 fh
 fh
-fh
+vI
 Yz
 jj
 BH
@@ -5190,7 +6129,7 @@ pY
 tD
 bU
 iH
-iH
+hc
 NO
 Vy
 Yz
@@ -5213,30 +6152,30 @@ Mh
 hL
 dD
 dD
-dD
-dD
+yC
+yC
 bW
-Ue
+yI
 dD
-Va
+TN
 dD
-Va
-Va
+YR
+Oz
 "}
 (28,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
+YT
 Yz
 Yz
 Xf
-fh
-fh
+vI
+vI
 QY
 Sv
-iH
+hc
 Gz
 ai
 OG
@@ -5259,7 +6198,7 @@ rM
 dD
 dD
 rP
-Mh
+aA
 hw
 dD
 dD
@@ -5269,18 +6208,18 @@ nP
 Ov
 Va
 Va
+Hs
+Fo
 Va
-Va
-Va
-Va
+Oz
 "}
 (29,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
+YT
+YT
 Yz
 Yz
 Yz
@@ -5297,9 +6236,9 @@ sK
 Yz
 nP
 nP
-nP
-dD
-dD
+WY
+yC
+yC
 Dc
 KV
 rP
@@ -5318,24 +6257,24 @@ nP
 nP
 nP
 Ov
+YM
+Fo
+GG
 Va
-Va
-Va
-Va
-Va
-Va
+Hs
+Oz
 "}
 (30,1,1) = {"
+Oz
+Oz
+YT
+YT
+YT
 Va
+xr
+xr
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+fL
 Yz
 Yz
 Ll
@@ -5354,9 +6293,9 @@ dD
 dD
 Dc
 OC
-qY
-og
-rP
+tH
+aE
+NH
 rP
 rP
 Mh
@@ -5369,24 +6308,24 @@ nP
 nP
 nP
 Ov
-Va
-Va
-Va
-Va
-Va
-Va
+nP
+nP
+TN
+Ps
+Ps
+Oz
 "}
 (31,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+YT
+YT
+Br
+NK
+xr
+xr
+Ps
+YR
 Va
 Yz
 Yz
@@ -5405,9 +6344,9 @@ nP
 dD
 dD
 Dc
-OC
-rP
-rP
+hm
+NH
+NH
 oe
 Mh
 hL
@@ -5421,24 +6360,24 @@ Sx
 Sx
 Sx
 Va
+TN
+qs
+TN
 Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (32,1,1) = {"
+Oz
+Oz
 Va
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ps
+Ps
+Ps
+GG
+TN
+TN
 CB
 nP
 nP
@@ -5455,7 +6394,7 @@ nP
 nP
 nP
 dD
-dD
+yC
 Dc
 OC
 rP
@@ -5472,25 +6411,25 @@ Fm
 ZR
 Sx
 Va
-Va
-Va
-Va
-Va
-Va
+TN
+TN
+Ps
+Yg
+Oz
 "}
 (33,1,1) = {"
+Oz
+Oz
+Oz
+Va
+TN
+Ps
+xr
+Ps
+Fo
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Ov
+of
 nP
 nP
 nP
@@ -5508,8 +6447,8 @@ nP
 nP
 dD
 dD
-Qq
-rP
+HP
+NH
 qk
 Kr
 dD
@@ -5525,21 +6464,21 @@ Sx
 Va
 Va
 Va
-Va
-Va
-Va
+Yb
+YT
+Oz
 "}
 (34,1,1) = {"
+Oz
+Oz
+Oz
 Va
 Va
+Qm
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+TN
+YM
 eS
 eS
 eS
@@ -5559,12 +6498,12 @@ nP
 nP
 nP
 dD
-Qq
-rP
+HP
+NH
 qk
 Kr
 TN
-Va
+TN
 Sx
 LB
 Zw
@@ -5573,24 +6512,24 @@ Nx
 un
 Zd
 Sx
-Va
-Va
-Va
-Va
-Va
-Va
+bg
+bg
+YT
+nP
+es
+Oz
 "}
 (35,1,1) = {"
+Oz
+Oz
 Va
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Fo
+GG
+TN
+DJ
+nP
 eS
 Xw
 rl
@@ -5608,7 +6547,7 @@ eS
 UG
 UG
 UG
-UG
+vV
 dD
 Qq
 rP
@@ -5624,24 +6563,24 @@ Ka
 Sx
 Sx
 Sx
+TN
+YT
 Va
 Va
-Va
-Va
-Va
-Va
+es
+Oz
 "}
 (36,1,1) = {"
+Oz
+Oz
 Va
 Va
+Qm
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+uE
+nP
+nP
 eS
 bx
 td
@@ -5650,7 +6589,7 @@ ak
 re
 eS
 mY
-fg
+BF
 fg
 EY
 fg
@@ -5666,7 +6605,7 @@ rP
 qk
 tf
 Wi
-hM
+Wi
 hM
 ZS
 hM
@@ -5675,24 +6614,24 @@ hM
 hM
 Dd
 oY
+MI
+bg
+fL
+GG
 Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (37,1,1) = {"
+Oz
+Oz
+Oz
+Fo
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+nP
+nP
+uE
+nP
 eS
 pn
 eS
@@ -5724,30 +6663,30 @@ hM
 ye
 hM
 ZS
-Dd
+Mi
 lL
+TN
 Va
-Va
-Va
-Va
-Va
-Va
+yU
+es
+nP
+Oz
 "}
 (38,1,1) = {"
+Oz
+Oz
 Va
 Va
 Va
 Va
-Va
-Va
-Va
-Va
-Va
+nP
+DJ
+nP
 eS
 eS
 Wq
-Wq
-Wq
+ou
+ou
 Wq
 eS
 XC
@@ -5779,24 +6718,24 @@ Hp
 Hp
 Hp
 Hp
-Va
-Va
-Va
-Va
+Hs
+Fo
+Hs
+Oz
 "}
 (39,1,1) = {"
+Oz
+Oz
+Oz
 Va
+Qm
+YT
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+DJ
+nP
 eS
 XA
-Wq
+ou
 KH
 EA
 Wq
@@ -5811,7 +6750,7 @@ Uy
 jg
 TJ
 au
-TJ
+vJ
 ZD
 vw
 Qq
@@ -5832,19 +6771,19 @@ mo
 Hp
 Hp
 Va
-Va
-Va
+fL
+Oz
 "}
 (40,1,1) = {"
+Oz
+Oz
+Oz
+Oz
 Va
 Va
+Fo
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+nP
 eS
 gX
 Wq
@@ -5858,17 +6797,17 @@ jn
 vj
 vj
 jn
-xH
+ru
 Ib
 Se
-TJ
-TJ
+vJ
+vJ
 ZU
 vw
 uy
 rP
 qk
-dD
+yC
 Hp
 uL
 Hp
@@ -5884,17 +6823,17 @@ mo
 Hp
 Hp
 Va
-Va
+Oz
 "}
 (41,1,1) = {"
+Oz
+Oz
+YT
 Va
+TN
+TN
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+Br
 Va
 eS
 nK
@@ -5906,7 +6845,7 @@ eS
 NL
 NL
 jn
-NL
+rq
 Be
 jn
 xH
@@ -5934,31 +6873,31 @@ dq
 gD
 Eh
 Hp
-Va
-Va
+Fo
+Oz
 "}
 (42,1,1) = {"
+Oz
+Oz
 Va
+YT
+TN
+TN
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+fL
 Va
 eS
 ig
 af
 aq
 rJ
-Wq
+ou
 eS
 XC
 XC
 jn
-XC
-XC
+cJ
+cJ
 rS
 xH
 jg
@@ -5986,27 +6925,27 @@ dq
 ti
 Hp
 Va
-Va
+Oz
 "}
 (43,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+YT
+YT
+rt
+TN
+TN
 eS
 eS
 zH
-Wq
-Wq
-Wq
+iy
+ou
+ou
 JM
 Qf
-jn
+bH
 jn
 jn
 jn
@@ -6015,7 +6954,7 @@ xH
 jg
 TJ
 je
-TJ
+vJ
 HH
 vw
 Qq
@@ -6037,31 +6976,31 @@ yP
 Hp
 Hp
 Va
-Va
+Oz
 "}
 (44,1,1) = {"
+Oz
+Oz
 Va
+cT
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+qO
+bg
+rt
+TN
+YT
 eS
 PJ
-Wq
-Wq
-Wq
+ou
+ou
+ou
 JM
 Qf
 jn
 rS
 jn
-jn
-jn
+lJ
+lJ
 xH
 eS
 he
@@ -6070,9 +7009,9 @@ he
 EH
 vw
 Qq
-rP
-qk
-dD
+NH
+NS
+yC
 dD
 Hp
 ZT
@@ -6086,20 +7025,20 @@ YY
 hy
 Hp
 Hp
-Va
-Va
-Va
+YA
+YM
+Oz
 "}
 (45,1,1) = {"
+Oz
+Oz
 Va
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+MI
+MI
+rt
+YT
 Va
 eS
 eS
@@ -6111,9 +7050,9 @@ UI
 Fu
 SB
 XC
-UI
+yi
 bc
-SB
+LK
 eS
 aV
 Gv
@@ -6121,9 +7060,9 @@ Gv
 Gv
 pm
 Qq
-rP
-Px
-fO
+NH
+dH
+Xy
 dD
 Hp
 Hp
@@ -6136,26 +7075,26 @@ Hp
 Hp
 Hp
 Hp
+Fo
 Va
-Va
-Va
-Va
+Ff
+Oz
 "}
 (46,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+Oz
+YT
+YT
+MI
+MI
+qO
+YT
 Va
 fl
 rP
 rP
-rP
+NH
 Vv
 eS
 eS
@@ -6166,15 +7105,15 @@ eS
 eS
 eS
 eS
-Xd
+Hb
 Xd
 Xd
 CS
 dD
 Qq
-rP
-rP
-qk
+NH
+NH
+NS
 dD
 dD
 nP
@@ -6186,25 +7125,27 @@ nP
 nP
 nP
 Ov
-Va
-Va
-Va
-Va
-Va
+nP
+YM
+YT
+Ff
+Oz
 "}
 (47,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+Oz
+YT
+YT
+bg
+bg
+MI
+MI
+bg
 fl
 rP
+NH
+NH
 rP
 rP
 rP
@@ -6213,18 +7154,16 @@ rP
 rP
 rP
 rP
-rP
-rP
-rP
-rP
-rP
+NH
+eg
+NH
 rP
 rP
 oY
 dD
 Qq
-rP
-rP
+NH
+NH
 yn
 fO
 dD
@@ -6238,35 +7177,35 @@ nP
 nP
 Ov
 Va
+rV
+ad
 Va
-Va
-Va
-Va
+Oz
 "}
 (48,1,1) = {"
+Oz
+Oz
+Oz
+Oz
 Va
+bg
+Fo
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+bg
 Va
 fl
 rP
 rP
 rP
+NH
+NH
+NH
+nY
+NH
 rP
 rP
 rP
-rP
-rP
-rP
-rP
-rP
-rP
+og
 rP
 rP
 rP
@@ -6288,23 +7227,23 @@ nP
 nP
 nP
 Ov
-Va
-Va
-Va
-Va
-Va
+nP
+rV
+nP
+nP
+Oz
 "}
 (49,1,1) = {"
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
+TN
+TN
 Va
 Va
 pV
 Va
-Va
+YT
 DV
 wg
 wg
@@ -6332,30 +7271,30 @@ rP
 Px
 fO
 dD
-dD
+yC
 nP
 nP
 nP
 nP
 nP
 Ov
-Va
-Va
-Va
-Va
-Va
+GG
+DJ
+DJ
+Qm
+Oz
 "}
 (50,1,1) = {"
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
+TN
+TN
+YT
 pV
 pV
-Va
-Va
+YT
+YT
 pV
 pV
 pV
@@ -6390,16 +7329,16 @@ nP
 nP
 nP
 Ov
+fL
+TN
+TN
 Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (51,1,1) = {"
-Va
-Va
-Va
+Oz
+Oz
+YT
 Va
 Va
 Va
@@ -6441,16 +7380,16 @@ nP
 nP
 nP
 Ov
-Va
-Va
-Va
-Va
-Va
+Fo
+yU
+MI
+bg
+Oz
 "}
 (52,1,1) = {"
-Va
+Oz
 pV
-Va
+YT
 Va
 pV
 pV
@@ -6493,10 +7432,10 @@ nP
 nP
 Ov
 Va
-Va
-Va
-Va
-Va
+vr
+Mf
+Qm
+Oz
 "}
 (53,1,1) = {"
 pV
@@ -6543,14 +7482,14 @@ nP
 nP
 nP
 Ov
+Hs
+bg
+bg
 Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (54,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
@@ -6565,13 +7504,13 @@ pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+lW
+gZ
+rI
+NB
+rI
+XP
 pV
 pV
 pV
@@ -6594,11 +7533,11 @@ nP
 nP
 nP
 Ov
-Va
-Va
-Va
-Va
-Va
+YT
+TN
+VB
+MI
+Oz
 "}
 (55,1,1) = {"
 pV
@@ -6615,17 +7554,17 @@ pV
 pV
 pV
 pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+Zp
+rI
+XJ
+BQ
+BQ
+NB
+XP
+gZ
+NB
+rI
+NB
 pV
 pV
 pV
@@ -6637,23 +7576,23 @@ dD
 dD
 Dc
 OC
-rP
-qk
+NH
+NS
 dD
 nP
 nP
 nP
 nP
 Ov
-Va
-Va
-Va
-Va
-Va
+YT
+YA
+YT
+YT
+Oz
 "}
 (56,1,1) = {"
-Va
-Va
+Oz
+Oz
 pV
 pV
 pV
@@ -6664,19 +7603,19 @@ pV
 pV
 pV
 pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+lr
+lr
+pi
+DP
+BQ
+BQ
+BQ
+rI
+rI
+NB
+Lq
+NB
+ci
 pV
 pV
 pV
@@ -6688,46 +7627,46 @@ pV
 dD
 dD
 Qq
-rP
-qk
+NH
+NS
 dD
 nP
 nP
 nP
 nP
 Ov
+YT
+YT
+YT
 Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (57,1,1) = {"
-Va
-Va
+Oz
+Oz
 pV
 pV
 pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+OO
+jU
+jU
+te
+ci
+NB
+iB
+lO
+lW
+NB
+rI
+rI
+BQ
+DP
+VC
+NB
 pV
 pV
 pV
@@ -6739,22 +7678,22 @@ pV
 Va
 dD
 Qq
-rP
-qk
+NH
+NS
 dD
 nP
 nP
 nP
 nP
 Ov
-Va
-Va
-Va
-Va
-Va
+YT
+fL
+nP
+DJ
+Oz
 "}
 (58,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
@@ -6762,24 +7701,24 @@ pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+rI
+jU
+jU
+jU
+ir
+NB
+YX
+YX
+YX
+NB
+BQ
+BQ
+BQ
+NB
+So
+gZ
+So
+NB
 pV
 pV
 pV
@@ -6790,8 +7729,8 @@ Va
 Va
 dD
 Qq
-rP
-qk
+NH
+NS
 dD
 nP
 nP
@@ -6799,13 +7738,13 @@ nP
 nP
 Ov
 Va
-Va
-Va
-Va
-Va
+DJ
+nP
+DJ
+Oz
 "}
 (59,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
@@ -6813,24 +7752,24 @@ pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+rs
+fH
+BQ
+BQ
+VC
+YX
+YX
+NB
+XN
+So
+NB
+DP
+rn
+YL
+YX
+YL
+BQ
 pV
 pV
 pV
@@ -6844,45 +7783,45 @@ Qq
 rP
 qk
 dD
-dD
-dD
+yC
+yC
 dD
 dD
 Ov
-Va
-Va
-Va
-Va
-Va
+nP
+DJ
+nP
+DJ
+Oz
 "}
 (60,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pV
+NB
+NB
+NB
+lW
+YL
+BQ
+BQ
+YL
+BQ
+te
+jU
+JC
+jU
+Lo
+Lo
+lO
+lO
+NB
+lO
+BQ
+BQ
+NB
 pV
 pV
 pV
@@ -6892,50 +7831,50 @@ Va
 Va
 dD
 Qq
-rP
-qk
+NH
+NS
 dD
 By
 By
 By
 dD
 Hh
-Va
-Va
-Va
-Va
-Va
+YR
+Qm
+DJ
+DJ
+nP
 "}
 (61,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+rI
+So
+YX
+QS
+BQ
+bd
+BQ
+BQ
+NB
+lO
+lO
+lO
+Mj
+Lo
+Lo
+sr
+lO
+NB
+Zc
+YX
+YX
+NB
+gZ
+NB
 pV
 pV
 pV
@@ -6943,201 +7882,201 @@ pV
 pV
 dD
 Qq
-rP
-qk
-dD
+NH
+NS
+yC
 By
 Kz
 By
 By
 Hh
-dD
+Kr
 Va
-Va
-Va
-Va
+DJ
+nP
+Oz
 "}
 (62,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+lP
+jU
+NB
+ci
+jU
+NB
+YX
+YX
+lO
+iB
+iB
+BQ
+BQ
+BQ
+NB
+BQ
+XJ
+NB
+YX
+YX
+gY
+NB
+NB
 pV
 pV
 pV
 pV
 pV
 dD
-Qq
-rP
-qk
-dD
+HP
+II
+NS
+yC
 By
 Wr
 WR
 By
 By
 dD
+GG
+TN
 Va
-Va
-Va
-Va
+Oz
 "}
 (63,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+NB
+jU
+sZ
+YX
+jU
+BQ
+BQ
+Lo
+YX
+So
+ci
+lO
+lO
+NB
+Mj
+gZ
+BQ
+BQ
+NB
+gY
+NB
+lW
+Lo
+NB
 pV
 pV
 pV
 pV
 Va
 dD
-Qq
-rP
+HP
+NH
 qk
-dD
+yC
 Xg
 WR
 bD
 WR
 By
 dD
-Va
-Va
-Va
-Va
+TN
+YT
+YT
+Oz
 "}
 (64,1,1) = {"
-Va
-Va
+Oz
+Oz
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+pV
+XP
+bd
+bd
+ci
+NB
+Sh
+Xc
+Xr
+NB
+zd
+DP
+XP
+So
+ci
+rI
+lO
+So
+rI
+rI
+NB
+rI
+NB
+NB
+NB
 pV
 pV
 pV
 pV
 pV
 dD
-Qq
-rP
+HP
+NH
 qk
-dD
+yC
 By
 Fv
 Tq
 WR
 By
 dD
+yU
+TN
 Va
-Va
-Va
-Va
+Oz
 "}
 (65,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+DP
+bd
+bd
+NB
+jU
+BQ
+BQ
+NB
+YX
+YL
+YL
+ne
+XJ
+NB
+NB
+Mj
+Xr
+NB
+rI
+rI
+NB
+NB
 dY
 eD
 eD
@@ -7146,8 +8085,8 @@ eD
 eD
 FZ
 dD
-Qq
-rP
+HP
+NH
 qk
 dD
 By
@@ -7158,36 +8097,36 @@ By
 dD
 Va
 Va
-Va
-Va
+TN
+Oz
 "}
 (66,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
 pV
-pP
-pP
-pP
+NB
+YX
+QS
 Gb
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+nc
+BQ
+BQ
+rI
+YX
+BQ
+BQ
+Xc
+BQ
+NB
+rI
+BQ
+BQ
+So
+rI
+rI
+YX
 vQ
 vQ
 UE
@@ -7197,8 +8136,8 @@ zl
 Oi
 ZL
 jw
-yc
-rP
+Rt
+NH
 qk
 dD
 dD
@@ -7209,7 +8148,7 @@ bO
 dD
 Va
 dD
-Va
+Hs
 Va
 "}
 (67,1,1) = {"
@@ -7217,39 +8156,39 @@ pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
+NB
+NB
+DP
+NB
+NB
 ov
 Gb
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+So
+Xr
+BQ
+BQ
+BQ
+BQ
+gZ
+EB
+NB
+BQ
+Lj
 pP
 pP
 vQ
-vQ
-vQ
-vQ
-QG
+Ra
+Ra
+Ra
+lb
 jF
 om
 AK
 AK
 rP
-rP
-rP
+NH
+NH
 Px
 jw
 jw
@@ -7260,39 +8199,39 @@ jw
 Va
 jw
 Va
-Va
-Va
+Hs
+fL
 "}
 (68,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
 pV
-pP
-pP
-pP
+NB
+NB
+NB
 Gb
 Gb
 Gb
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+gZ
+NB
+Mj
+NB
+lO
+iB
+lO
+sr
+NB
+BQ
+NB
+jU
+jU
 vQ
-vQ
-vQ
-vQ
+Ra
+AB
+Ra
 QG
 jF
 om
@@ -7300,8 +8239,8 @@ AK
 AK
 rP
 rP
-rP
-rP
+NH
+NH
 rP
 rP
 rP
@@ -7315,31 +8254,31 @@ rP
 Va
 "}
 (69,1,1) = {"
-Va
-Va
+Oz
+Oz
 pV
 pV
-pP
-pP
+pV
+NB
 eq
-pP
-Gb
+ci
+ll
 tF
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+nc
+YX
+BQ
+lP
+rI
+lO
+lO
+lO
+lO
+NB
+Xr
+NB
+jU
+jU
 vQ
 vQ
 vQ
@@ -7351,8 +8290,8 @@ AK
 AK
 rP
 rP
-rP
-Mh
+NH
+aA
 Rc
 Rc
 sc
@@ -7361,37 +8300,37 @@ Rc
 Va
 Va
 Rc
-Va
+fL
 Rc
 Va
 "}
 (70,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
+NB
+NB
+NB
+BQ
+BQ
 nc
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+NB
+BQ
+EB
+NB
+rI
+BQ
+NB
+YX
+Sh
+BQ
+NB
+jU
+jU
+NB
 vQ
 vQ
 ys
@@ -7417,33 +8356,33 @@ dD
 dD
 "}
 (71,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+XP
+NB
+So
+rI
+BQ
+XJ
+BQ
+BQ
+DP
+gZ
+lW
+lO
+lO
+BQ
+rI
+NB
+BQ
+BQ
+rI
+lr
+lr
+NB
+lO
 dY
 eD
 eD
@@ -7453,7 +8392,7 @@ eD
 FZ
 dD
 Qq
-rP
+NH
 qk
 dD
 YO
@@ -7462,40 +8401,40 @@ YO
 YO
 Bo
 dD
+Qm
+fL
 Va
-Va
-Va
-Va
+Oz
 "}
 (72,1,1) = {"
-Va
+Oz
 pV
 pV
 pV
+NB
+lW
+NB
+NB
+BQ
+BQ
+rI
+rI
+NB
+Lo
+NB
+YX
+NB
+NB
+iB
+YX
+XP
+rI
+Mj
+jU
 pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+NB
+NB
 pV
 pV
 pV
@@ -7504,108 +8443,108 @@ pV
 pV
 dD
 Qq
-rP
+NH
 Dy
 tf
 YO
 nP
 DJ
 YO
-nP
+jI
 dD
-Va
-Va
-Va
-Va
+yU
+fL
+GG
+Oz
 "}
 (73,1,1) = {"
-Va
-Va
+Oz
+Oz
 pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+YX
+XP
+NB
+rI
+NB
+rI
+Xr
+gZ
+rI
+rI
+Mj
+Xr
+YX
+rI
+NB
+NB
+Lj
+Lo
+lO
+XP
+NB
 pV
 pV
 pV
 pV
 pV
 pV
-dD
-Qq
-rP
+yC
+HP
+NH
 qk
 tf
 nP
 Rq
 YO
 am
-YO
+Jp
 dD
 Va
-Va
-Va
-Va
+YT
+YT
+Oz
 "}
 (74,1,1) = {"
+Oz
+Oz
+pV
+pV
+pV
+pV
+NB
+Jj
+NB
+BQ
+BQ
+XJ
+lA
+XJ
+XN
+BQ
+jU
+YX
+NB
+XP
+lO
+QR
+jU
+bd
+Lj
+pP
+lO
+NB
+pV
+pV
+pV
+pV
+pV
 Va
-Va
-pV
-pV
-pV
-pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pV
-pV
-pV
-pV
-pV
-Va
-dD
-Qq
+yC
+HP
 rP
 Dy
 dD
@@ -7613,41 +8552,41 @@ nP
 YO
 nP
 YO
-nP
+jI
 dD
-Va
-Va
-Va
-Va
+nP
+es
+YT
+Oz
 "}
 (75,1,1) = {"
-Va
-Va
+Oz
+Oz
 pV
 pV
 pV
 pV
+NB
+jU
+jU
+Xr
+NB
+rI
+rI
+BQ
+YL
+YL
+ci
+gZ
+BQ
+Pn
+lO
+lO
+jU
+jU
 pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pV
+GF
+NB
 pV
 pV
 pV
@@ -7664,40 +8603,40 @@ YO
 nP
 nP
 YO
+Bo
 dD
-dD
-Va
-Va
-Va
-Va
+YA
+es
+YT
+Oz
 "}
 (76,1,1) = {"
-Va
-Va
+Oz
+Oz
 pV
 pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pV
-pP
+gZ
+rI
+NB
+YX
+NB
+DP
+BQ
+BQ
+BQ
+ci
+So
+NB
+NB
+YX
+lO
+YX
+rN
+NB
+NB
 pV
 pV
 pV
@@ -7708,75 +8647,75 @@ Va
 Va
 dD
 Fh
-rP
-qk
+NH
+NS
 dD
 nP
 nP
 YO
 dD
-dD
-Va
-Va
-Va
-Va
-Va
+Hh
+nP
+nP
+es
+YT
+Oz
 "}
 (77,1,1) = {"
+Oz
+Oz
+Oz
+pV
+pV
+pV
+pV
+NB
+NB
+rI
+XP
+ci
+jU
+jU
+jU
+jU
+jU
+jU
+YX
+So
+rI
+lO
+NB
+NB
+pV
+pV
+pV
+pV
+pV
+pV
+pV
+pV
 Va
-Va
-Va
-pV
-pV
-pV
-pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-pV
-Va
-Va
+zy
 dD
 Qq
-rP
-qk
+NH
+NS
 dD
 YO
 YO
 dD
 dD
+Ov
 Va
+nP
+ad
 Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (78,1,1) = {"
-Va
-Va
-Va
+Oz
+Oz
+Oz
 pV
 pV
 pV
@@ -7784,20 +8723,20 @@ pV
 pV
 pV
 pV
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
-pP
+NB
+DP
+jU
+OO
+OO
+rI
+NB
+XP
+YX
+YX
+Mj
+NB
+rI
+NB
 pV
 pV
 pV
@@ -7813,21 +8752,21 @@ Qq
 ZI
 qk
 dD
+yC
+yC
 dD
-dD
-dD
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+nP
+nP
+nP
+yU
+Oz
 "}
 (79,1,1) = {"
-Va
-Va
-Va
+Oz
+Oz
+Oz
 pV
 pV
 pV
@@ -7866,21 +8805,21 @@ qk
 dD
 Va
 Va
+Qm
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+nP
+ad
+nP
+Qm
+Oz
 "}
 (80,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
+YT
 pV
 pV
 pV
@@ -7912,27 +8851,27 @@ Va
 Va
 dD
 Qq
-rP
-qk
+NH
+NS
 dD
 Va
+Fo
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+YT
+es
+DJ
+YT
+Oz
 "}
 (81,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+Qm
+fS
+YT
+YT
 pV
 pV
 pV
@@ -7959,31 +8898,31 @@ zS
 zS
 zS
 Va
-Va
+Qm
 Va
 dD
 Qq
-rP
-qk
+NH
+NS
 dD
 Va
+zy
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Fo
+Ov
+YT
+nP
+es
+YT
+Oz
 "}
 (82,1,1) = {"
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
+Fo
+YM
+TN
 pV
 pV
 pV
@@ -8014,31 +8953,31 @@ Va
 Va
 dD
 Qq
-rP
-qk
+II
+NS
 dD
 Va
 Va
 Va
 Va
+Ov
+YT
+TN
+YR
 Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (83,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+nP
+nP
+nP
+YT
+nP
+YT
 Va
 sR
 sR
@@ -8064,44 +9003,44 @@ Va
 Va
 Va
 dD
-Qq
-rP
+HP
+II
 qk
 dD
 Va
 Va
+fL
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+YT
+YT
+YT
+rt
+Oz
 "}
 (84,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+Oz
+es
+nP
+Rb
+nP
+bR
+nP
+TN
 sR
 sR
 Li
-Bh
+at
 sR
 nQ
 Ym
-Bh
+NQ
 sR
 zq
 iC
-uZ
+Qc
 sR
 JF
 Gy
@@ -8111,43 +9050,43 @@ sR
 sR
 zS
 zS
-Va
+YA
 Va
 Va
 dD
-Qq
-rP
+HP
+II
 qk
 dD
+Fo
 Va
+Hs
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+YT
+YT
+rt
+rt
+Oz
 "}
 (85,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-sR
-Bh
 Oz
-Bh
-sR
-Bh
 Oz
+Oz
+Va
+nP
+nP
+uE
+nP
+YT
+YT
+sR
+at
+Wp
+uZ
+sR
+kK
+Wp
 Bh
 sR
 uZ
@@ -8168,29 +9107,29 @@ Va
 dD
 Qq
 rP
-qk
+NS
 dD
 Va
 Va
+Fo
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+YR
+MI
+rt
+bg
+Oz
 "}
 (86,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
+Oz
+YT
+YT
+nP
+nP
+DJ
+nP
+YR
 Va
 sR
 Vg
@@ -8206,43 +9145,43 @@ pt
 wI
 sR
 jm
-uS
-uS
-MG
+DG
+DG
+Jt
 Zx
 sR
 zS
 zS
 Va
 Va
-Va
+Hs
 dD
 Qq
 rP
 qk
 dD
 Va
+Qm
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+YT
+bg
+bg
+bg
+Oz
 "}
 (87,1,1) = {"
+Oz
+Oz
+YT
+YT
+TN
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Fo
+YT
+fL
+YT
 sR
 nR
 hV
@@ -8257,7 +9196,7 @@ hV
 Cc
 cB
 Zz
-uS
+DG
 dd
 bE
 tl
@@ -8269,30 +9208,30 @@ Va
 Va
 dD
 Qq
-rP
+NH
 qk
 dD
 Va
 Va
 Va
 Va
+Ov
 Va
-Va
-Va
-Va
-Va
-Va
+YT
+rt
+He
+Oz
 "}
 (88,1,1) = {"
+Oz
+Oz
+Oz
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+YT
+TN
+TN
+YA
 Va
 sR
 xg
@@ -8308,8 +9247,8 @@ si
 Jl
 Jl
 iW
-TY
-uS
+pW
+DG
 pG
 sR
 sR
@@ -8320,31 +9259,31 @@ Va
 Va
 dD
 Qq
-rP
+NH
 qk
 dD
+Hs
 Va
 Va
+Qm
+Ov
+TN
+TN
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+YA
+Oz
 "}
 (89,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+Ps
+xr
+xr
+Ps
+yU
 sR
 YQ
 Hc
@@ -8360,41 +9299,41 @@ xV
 lX
 TY
 TY
-uS
+DG
 TY
 jJ
 sR
 Va
 Va
-Va
+zy
 Va
 Va
 dD
 Qq
 rP
-qk
+NS
 dD
 Va
+fL
+Fo
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+TN
+TN
+Yb
+Fo
+Oz
 "}
 (90,1,1) = {"
+Oz
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Qm
+Ps
+Ps
+Fo
 Va
 sR
 RH
@@ -8410,43 +9349,43 @@ Yo
 RH
 sR
 TY
-TY
-TY
+pW
+pW
 MG
 aN
 sR
 Va
-Va
+Tc
 Va
 Va
 Va
 dD
 Qq
 rP
-qk
+NS
 dD
 Va
+fL
 Va
 Va
+Ov
 Va
+xr
+YT
 Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (91,1,1) = {"
+Oz
+Oz
 Va
+TN
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ps
+Ps
+Fg
+BE
+YT
 sR
 Pf
 oJ
@@ -8461,7 +9400,7 @@ zW
 Bh
 sR
 IZ
-TY
+pW
 TY
 as
 Ai
@@ -8469,34 +9408,34 @@ sR
 Va
 Va
 Va
-Va
-Va
+Hs
+YA
 dD
 Qq
 rP
-qk
+NS
 dD
+Fo
 Va
+Fo
 Va
+Ov
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ps
+Yg
+TN
+Oz
 "}
 (92,1,1) = {"
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Fo
+Ps
+Ps
+Qm
+fS
 Va
 sR
 sR
@@ -8507,19 +9446,19 @@ nQ
 wL
 AZ
 sR
-nQ
+zG
 CT
-Bh
+at
 sR
 Wc
 uS
-uS
+DG
 TY
 sR
 sR
 Va
-Va
-Va
+Tc
+fL
 Va
 Va
 dD
@@ -8531,20 +9470,20 @@ Va
 Va
 Va
 Va
+Ov
+Ps
+Yg
+Ps
 Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (93,1,1) = {"
+Oz
+Oz
+Oz
 Va
 Va
-Va
-Va
-Va
-Va
+TN
 Va
 Va
 Va
@@ -8580,122 +9519,124 @@ qk
 dD
 Va
 Va
+Qm
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+YM
+Yg
+Ps
+Ps
+Oz
 "}
 (94,1,1) = {"
+Oz
+Oz
+Va
+bg
+bg
+bg
+fS
+TN
+TN
+Va
+YT
+Va
+Va
+fL
+Hs
+YA
+Va
+YM
+Ov
+Va
+Va
+Va
+dD
+HP
+NH
+qk
+yC
 Va
 Va
 Va
 Va
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+zy
 dD
 Qq
 rP
 qk
 dD
 Va
+Fo
 Va
 Va
+Ov
 Va
+uo
+YT
 Va
-Va
-Va
-dD
-Qq
-rP
-qk
-dD
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (95,1,1) = {"
+Oz
+bg
+MI
+bg
+bg
+bg
+Qm
 Va
 Va
+YT
+Va
+yU
+Va
+YR
+Va
+YM
 Va
 Va
+Ov
+zy
+Va
+Qm
+dD
+HP
+NH
+qk
+yC
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+fL
+Qm
 Va
 Va
 dD
+dD
 Qq
-rP
+NH
 qk
 dD
 Va
 Va
 Va
 Va
+Ov
+Fo
 Va
-Va
-dD
-dD
-Qq
-rP
-qk
-dD
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+YT
+yU
+Oz
 "}
 (96,1,1) = {"
-Va
-Va
-Va
+Oz
+bg
+bg
 ld
+Qo
+Qo
 xo
 xo
 xo
@@ -8705,21 +9646,19 @@ xo
 xo
 xo
 xo
-xo
-xo
-xo
-xo
+Qo
+Qo
 nr
+bW
 Va
-Va
-Va
+Qm
 Va
 dD
 Qq
 rP
-qk
-dD
-Va
+NS
+yC
+Hs
 Va
 Va
 Va
@@ -8728,24 +9667,24 @@ dD
 dD
 yz
 yc
-rP
+NH
 qk
 dD
+QL
 Va
 Va
 Va
+Ov
 Va
+rV
+YR
 Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (97,1,1) = {"
-Va
-Va
-Va
+Oz
+TN
+MI
 qj
 eX
 fM
@@ -8758,17 +9697,17 @@ Kx
 QA
 yJ
 fM
-fM
-gc
-lo
+RW
+NX
+lk
+Ov
 Va
 Va
-Va
-Va
-dD
-Qq
-rP
-qk
+Hs
+yC
+HP
+NH
+NS
 dD
 Va
 Va
@@ -8779,26 +9718,26 @@ dD
 yz
 yc
 rP
-rP
+NH
 qk
 dD
+Qm
 Va
 Va
+fL
+Ov
+nP
+DJ
+DJ
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (98,1,1) = {"
+Oz
 Va
-Va
-Va
+MI
 qj
-fM
+RW
 ga
 ga
 Kx
@@ -8812,14 +9751,14 @@ Kx
 Xj
 fM
 lo
+Hh
 dD
 dD
 dD
-dD
-dD
+yC
 Qq
 rP
-qk
+NS
 dD
 dD
 dD
@@ -8829,23 +9768,23 @@ dD
 yz
 yc
 rP
-rP
+NH
 rP
 qk
 dD
 Va
 Va
+Qm
 Va
+Ov
+nP
+DJ
+TN
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (99,1,1) = {"
-Va
+Oz
 Va
 Va
 qj
@@ -8863,42 +9802,42 @@ tJ
 Mb
 fM
 lo
+Rp
 jw
-jw
-jw
-jw
-jw
-yc
+Ke
+Ke
+Lb
+Rt
 rP
 Px
 jw
 jw
+Ke
+Ke
+GV
 jw
-jw
-jw
-jw
-yc
+Rt
 rP
 rP
-rP
+NH
 Mh
 hL
 dD
 Va
 Va
+Qm
 Va
+Ov
+nP
+nP
+nP
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (100,1,1) = {"
+Oz
 Va
-Va
-Va
+TN
 qj
 fM
 iO
@@ -8912,46 +9851,46 @@ JI
 lg
 iq
 Mb
-fM
-lo
+RW
+lk
+Dz
+rP
+NH
+NH
+II
+II
+NH
 rP
 rP
 rP
+NH
+NH
 rP
 rP
+hU
+Fs
 rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-rP
-Mh
+Nc
 hL
 dD
 dD
 Va
+Hs
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+Hs
+DJ
+DJ
+TN
+Oz
 "}
 (101,1,1) = {"
+Oz
 Va
-Va
-Va
-qj
-fM
+YT
+Xu
+RW
 iO
 vO
 jL
@@ -8963,8 +9902,9 @@ YZ
 YZ
 NP
 Mb
-fM
-lo
+RW
+lk
+LN
 Rc
 Rc
 Rc
@@ -8973,11 +9913,10 @@ Rc
 Rc
 Rc
 Rc
-Rc
-Rc
-Rc
-Rc
-Rc
+dR
+vW
+tz
+zA
 Rc
 Rc
 Rc
@@ -8987,22 +9926,22 @@ dD
 dD
 Va
 Va
+Qm
 Va
 Va
+Ov
+GG
+DJ
+DJ
 Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (102,1,1) = {"
+Oz
+YT
 Va
-Va
-Va
-qj
-fM
+Xu
+RW
 ga
 ga
 Kx
@@ -9016,43 +9955,43 @@ Kx
 Mb
 fM
 lo
+Hh
+dD
+yC
+yC
+yC
 dD
 dD
 dD
+bO
+bO
+bO
+bO
+bO
 dD
 dD
 dD
+bO
 dD
 dD
-dD
-dD
-dD
-dD
-dD
-dD
-dD
-dD
-dD
-dD
-dD
+Va
+fL
 Va
 Va
 Va
 Va
+Ov
+nP
+nP
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+TN
+Oz
 "}
 (103,1,1) = {"
+Oz
+YT
 Va
-Va
-Va
-qj
+Xu
 eX
 fM
 fM
@@ -9066,44 +10005,46 @@ yJ
 fM
 fM
 gc
-lo
+lk
+Ov
+Va
+Va
+Hs
 Va
 Va
 Va
+fL
+zS
+zS
+zS
+mf
+zS
+Va
+fL
+Va
+Hs
 Va
 Va
+Qm
 Va
+zy
 Va
+Fo
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Ov
+TN
+es
+YT
+YR
+Oz
 "}
 (104,1,1) = {"
+Oz
 Va
-Va
-Va
+YT
 zb
+hr
+hr
 nC
 nC
 nC
@@ -9112,245 +10053,192 @@ nC
 nC
 nC
 nC
-nC
-nC
-nC
-nC
-nC
+hr
+hr
+hr
 MW
+bW
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+cN
+bW
 Va
+YT
+He
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (105,1,1) = {"
+Oz
 Va
 Va
+YT
 Va
+TN
+Qm
+TN
 Va
+YT
+YT
+YR
+YT
 Va
+Fo
+YT
+YT
+YT
+TN
+TN
+Fo
+TN
 Va
+fS
+Qm
+rV
+YR
+nP
+es
+nP
+DJ
+nP
+ep
+Ps
+NK
+Ps
+TN
+TN
+xl
+bR
+yU
+nP
+TN
+Fo
+TN
+YM
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+yU
+Oz
 "}
 (106,1,1) = {"
+Oz
+Oz
 Va
+TN
+TN
+TN
+fX
 Va
+TN
+Ff
 Va
+Fo
 Va
+Qm
+YT
+YT
+TN
+Qm
+GG
+YT
+YT
+TN
+YM
+Qm
+nP
+rV
+nP
+nP
+DJ
+nP
+es
+Yg
+Yg
+Ps
+TN
 Va
+fS
+TN
+vk
+bR
+DJ
+DJ
+DJ
+yU
+YT
 Va
+YT
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
 (107,1,1) = {"
+Oz
+Oz
+Oz
 Va
 Va
+Oz
 Va
 Va
+Oz
 Va
+TN
+GG
 Va
+Oz
 Va
 Va
+Fo
 Va
+Oz
+YT
+YT
+Oz
+Oz
+YR
+YA
+YT
+YT
 Va
+fL
+TN
 Va
+Yg
+Ps
 Va
 Va
+yU
 Va
+nP
+nP
 Va
+TN
+TN
 Va
+YM
 Va
+Fo
 Va
 Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-"}
-(108,1,1) = {"
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
-Va
+Oz
 "}
