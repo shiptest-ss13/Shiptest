@@ -7,6 +7,7 @@ import {
   Stack,
   Tabs,
 } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend, useSharedState } from '../../backend';
 import { Window } from '../../layouts';
@@ -55,8 +56,8 @@ export const OutpostCommunications = (props) => {
               <Stack.Item>
                 <Button.Input
                   content="Withdraw Cash"
-                  currentValue={100}
-                  defaultValue={100}
+                  currentValue={'100'}
+                  defaultValue={'100'}
                   onCommit={(e, value) =>
                     act('withdrawCash', {
                       value: value,
@@ -119,14 +120,18 @@ const OutpostMissionsContent = (props) => {
 };
 
 const MissionsList = (props) => {
-  const showButton = props.showButton as Boolean;
-  const disabled = props.disabled as Boolean;
+  const showButton = props.showButton as BooleanLike;
+  const disabled = props.disabled as BooleanLike;
   const tooltip = props.tooltip as string;
   const missionsArray = props.missions as Array<Mission>;
   const { act } = useBackend();
   //   const { numMissions, maxMissions } = data;
 
-  const buttonJSX = (mission: Mission, tooltip: string, disabled: Boolean) => {
+  const buttonJSX = (
+    mission: Mission,
+    tooltip: string,
+    disabled: BooleanLike,
+  ) => {
     return (
       <Button
         disabled={disabled}
