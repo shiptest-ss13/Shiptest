@@ -25,6 +25,8 @@
 	var/self_recharge = 0 //does it self recharge, over time, or not?
 	var/ratingdesc = TRUE
 	var/grown_battery = FALSE // If it's a grown that acts as a battery, add a wire overlay to it.
+	//fuck ass blinky light toggle (turn off for weapon cells)
+	var/blinky_light = TRUE
 
 /obj/item/stock_parts/cell/get_cell()
 	return src
@@ -65,12 +67,13 @@
 	. = ..()
 	if(grown_battery)
 		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
-	if(charge < 0.01)
-		return
-	else if(charge/maxcharge >=0.995)
-		. += "cell-o2"
-	else
-		. += "cell-o1"
+	if(blinky_light)
+		if(charge < 0.01)
+			return
+		else if(charge/maxcharge >=0.995)
+			. += "cell-o2"
+		else
+			. += "cell-o1"
 
 /obj/item/stock_parts/cell/proc/percent()		// return % charge of cell
 	return 100*charge/maxcharge
@@ -399,6 +402,7 @@
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
+	blinky_light = FALSE
 
 /obj/item/stock_parts/cell/gun/empty
 
@@ -410,8 +414,6 @@
 /obj/item/stock_parts/cell/gun/update_overlays()
 	. = ..()
 	cut_overlays()
-	if(grown_battery)
-		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
 	if(charge < 0.1)
 		return
 	else if(charge/maxcharge >=0.995)
