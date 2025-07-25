@@ -307,7 +307,7 @@
 
 /obj/effect/mob_spawn/animal_corpse
 	name = "animal corpse spawner"
-	mob_type = /obj/effect/mob_spawn/mouse
+	mob_type = /mob/living/basic/mouse
 	death = TRUE
 	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "goliath_dead_helper"
