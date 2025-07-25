@@ -407,21 +407,22 @@
 	charge = 0
 	update_appearance()
 
-/obj/item/stock_parts/cell/gun/update_appearance()
+/obj/item/stock_parts/cell/gun/update_overlays()
+	. = ..()
 	cut_overlays()
 	if(grown_battery)
 		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
 	if(charge < 0.1)
 		return
 	else if(charge/maxcharge >=0.995)
-		add_overlay("[initial(icon_state)]-o4")
+		. += "[initial(icon_state)]-o4"
 	else if(charge/maxcharge >=0.745)
-		add_overlay("[initial(icon_state)]-o3")
+		. += "[initial(icon_state)]-o3"
 	else if(charge/maxcharge >=0.495)
-		add_overlay("[initial(icon_state)]-o2")
-	else
-		add_overlay("[initial(icon_state)]-o1")
-	return ..()
+		. += "[initial(icon_state)]-o2"
+	else if(charge/maxcharge >=0.145)
+		. += "[initial(icon_state)]-o1"
+	return .
 
 /obj/item/stock_parts/cell/gun/upgraded
 	name = "upgraded weapon power cell"
