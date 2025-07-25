@@ -9,6 +9,8 @@
 	butcher_results = list()
 	childtype = list()
 
+	minbodytemp = 100
+
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "bops"
@@ -56,3 +58,13 @@
 /mob/living/simple_animal/pet/dog/corgi/capybara/orange
 	desc = "What a happy capy!"
 	wear_hat = /obj/item/food/grown/citrus/orange
+
+/obj/effect/spawner/random/sauna_capy
+	name = "random capybara spawner"
+	icon = 'icons/mob/pets.dmi'
+	icon_state = "capybara"
+	loot = list(
+		/mob/living/simple_animal/pet/dog/corgi/capybara,
+		/mob/living/simple_animal/pet/dog/corgi/capybara/orange
+	)
+	spawn_loot_chance = 25

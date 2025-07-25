@@ -2,12 +2,6 @@
 "a" = (
 /turf/closed/mineral/random/snow,
 /area/overmap_encounter/planetoid/ice/explored)
-"c" = (
-/mob/living/simple_animal/pet/dog/corgi/capybara{
-	dir = 4
-	},
-/turf/open/water,
-/area/overmap_encounter/planetoid/ice/explored)
 "g" = (
 /turf/open/water,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -22,9 +16,7 @@
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/ice/explored)
 "E" = (
-/mob/living/simple_animal/pet/dog/corgi/capybara/orange{
-	dir = 8
-	},
+/obj/effect/spawner/random/sauna_capy,
 /turf/open/water,
 /area/overmap_encounter/planetoid/ice/explored)
 "Z" = (
@@ -55,9 +47,9 @@ a
 (3,1,1) = {"
 m
 n
+E
 g
-g
-g
+E
 g
 g
 a
@@ -66,7 +58,7 @@ a
 a
 n
 g
-g
+E
 g
 E
 g
@@ -75,7 +67,7 @@ a
 (5,1,1) = {"
 a
 g
-g
+E
 h
 Z
 g
@@ -86,7 +78,7 @@ a
 m
 a
 g
-c
+E
 g
 g
 a
