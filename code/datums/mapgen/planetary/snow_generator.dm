@@ -167,13 +167,13 @@
 	#warn remember to adjust weighting
 	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/spawner/random/greeble/ice_planet = 10,
 		/obj/structure/spawner/burrow/ice_planet = 4,
 		/obj/structure/statue/snow/snowman = 3,
 		/obj/structure/statue/snow/snowlegion = 1,
 		/obj/structure/vein/ice = 3,
 		/obj/structure/vein/ice/classtwo = 4,
 		/obj/structure/vein/ice/classthree = 1,
+		/obj/effect/spawner/random/greeble/ice_planet = 2,
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
