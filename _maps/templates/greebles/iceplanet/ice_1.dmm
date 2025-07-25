@@ -5,17 +5,17 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "c" = (
 /obj/structure/table/wood,
-/obj/item/gun/ballistic/rifle/illestren{
-	pixel_x = -4;
-	pixel_y = -7
-	},
 /obj/item/radio/old{
 	pixel_y = 12;
 	pixel_x = -7
 	},
-/obj/item/reagent_containers/food/snacks/chips{
-	pixel_y = 8;
-	pixel_x = 8
+/obj/item/melee/knife/survival{
+	pixel_y = -2;
+	pixel_x = -4
+	},
+/obj/item/food/chips{
+	pixel_y = 9;
+	pixel_x = 9
 	},
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/ice/explored)
@@ -32,7 +32,7 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "B" = (
 /obj/structure/chair/wood,
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals,
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/ice/explored)
 "D" = (
