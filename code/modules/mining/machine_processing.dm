@@ -71,10 +71,11 @@
 	var/obj/machinery/mineral/processing_unit/machine
 	/// Direction for which console looks for stacking machine to connect to
 	var/machinedir = EAST
+	var/dist = 1
 
 /obj/machinery/mineral/processing_unit_console/Initialize()
 	. = ..()
-	machine = locate(/obj/machinery/mineral/processing_unit, get_step(src, machinedir))
+	machine = locate(/obj/machinery/mineral/processing_unit, get_ranged_target_turf(src, machinedir, dist))
 	if (machine)
 		machine.CONSOLE = src
 
