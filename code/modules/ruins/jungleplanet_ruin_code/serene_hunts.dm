@@ -9,7 +9,7 @@
 
 /obj/structure/fountain
 	name = "fountain"
-	desc = "A lucky fountain. You can see dozens of twinkling coins under the water.."
+	desc = "A lucky fountain. You can see dozens of twinkling coins under the water."
 	icon = 'icons/obj/hand_of_god_structures.dmi'
 	icon_state = "fountain-blue"
 	anchored = TRUE
