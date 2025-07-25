@@ -15,13 +15,13 @@
 
 /datum/outfit/ramzi
 	name = "Ramzi Clique Corpse"
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	suit = /obj/item/clothing/suit/armor/vest/syndie
+	uniform = /obj/item/clothing/under/syndicate/ramzi/overalls
+	suit = /obj/item/clothing/suit/armor/ramzi
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/alt
-	mask = /obj/item/clothing/mask/gas/syndicate
-	head = /obj/item/clothing/head/helmet/syndie
+	mask = /obj/item/clothing/mask/gas/ramzi
+	head = /obj/item/clothing/head/helmet/ramzi
 	back = /obj/item/storage/backpack
 	neck = /obj/item/clothing/neck/dogtag/ramzi
 	id = /obj/item/card/id/syndicate
@@ -32,10 +32,34 @@
 
 /datum/outfit/ramzi/commando
 	name = "Ramzi Clique Space Corpse"
-	uniform = /obj/item/clothing/under/syndicate/combat
+	uniform = /obj/item/clothing/under/syndicate/ramzi
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
 	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft
+	name = "Ramzi Softsuit"
+	outfit = /datum/outfit/ramzi/soft
+
+/datum/outfit/ramzi/soft
+	name = "Ramzi Clique Softsuit"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/syndicate/ramzi
+	suit = /obj/item/clothing/suit/space/syndicate/ramzi
+	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+
+/obj/effect/mob_spawn/human/corpse/ramzi/space/soft/surplus
+	name = "Ramzi Softsuit Surplus"
+	outfit = /datum/outfit/ramzi/soft/surplus
+
+/datum/outfit/ramzi/soft/surplus
+	name = "Ramzi Clique Softsuit Surplus"
+	uniform = /obj/item/clothing/under/syndicate/ramzi
+	head = /obj/item/clothing/head/helmet/space/syndicate/ramzi/surplus
+	suit = /obj/item/clothing/suit/space/syndicate/ramzi/surplus
+	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 
 /obj/effect/mob_spawn/human/corpse/ramzi/stormtrooper
@@ -45,10 +69,10 @@
 
 /datum/outfit/ramzi/stormtrooper
 	name = "Ramzi Clique Trooper Corpse"
-	uniform = /obj/item/clothing/under/syndicate/combat
+	uniform = /obj/item/clothing/under/syndicate/ramzi/officer
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi/elite
 	head = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi/elite
-	mask = /obj/item/clothing/mask/gas/syndicate
+	mask = /obj/item/clothing/mask/gas/ramzi
 	back = /obj/item/tank/jetpack/oxygen/harness
 
 /datum/outfit/syndicatecaptaincorpse
