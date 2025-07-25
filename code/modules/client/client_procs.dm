@@ -238,11 +238,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	GLOB.requests.client_login(src)
 	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
 	//Admin Authorisation
-	holder = GLOB.admin_datums[ckey]
-	if(holder)
-		GLOB.admins |= src
-		holder.owner = src
-		connecting_admin = TRUE
+	var/datum/admins/admin_datum = GLOB.admin_datums[ckey]
+	if (!isnull(admin_datum))
+		admin_datum.associate(src)
 	else if(GLOB.deadmins[ckey])
 		add_verb(src, /client/proc/readmin)
 		connecting_admin = TRUE
