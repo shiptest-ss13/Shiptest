@@ -358,3 +358,6 @@
 
 /datum/map_template/greeble/ice/ice_7
 	mappath = "_maps/templates/greebles/iceplanet/ice_7.dmm"
+
+/datum/map_template/greeble/ice/ice_capy
+	mappath = "_maps/templates/greebles/iceplanet/ice_capy.dmm"
