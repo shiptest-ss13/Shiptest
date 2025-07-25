@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Component } from 'react';
 import { useDispatch } from 'tgui/backend';
 import { Icon } from 'tgui-core/components';

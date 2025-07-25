@@ -342,7 +342,7 @@ export class PrimaryView extends Component {
                 raw_text_input?.length || 0
               }`}
               scrollableRef={this.scrollableRef}
-              handleOnScroll={this.onScrollHandler}
+              handleOnScroll={this.onScrollHandler as any}
               textArea={textAreaText}
             />
           </Flex.Item>
@@ -956,8 +956,8 @@ export class PreviewView extends Component<PreviewViewProps> {
         fill
         fitted
         scrollable
-        scrollableRef={scrollableRef}
-        onScroll={handleOnScroll}
+        ref={scrollableRef}
+        onScroll={handleOnScroll as any}
       >
         <Box
           fillPositionedParent

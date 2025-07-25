@@ -53,7 +53,6 @@ export const Guestbook = (props) => {
                     )) || <Box>{name.given_name}</Box>}
                   </Button>
                   <Button
-                    fill
                     icon="trash"
                     onClick={() => {
                       act('delete_guest', {

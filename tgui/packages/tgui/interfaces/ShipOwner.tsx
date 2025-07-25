@@ -213,7 +213,6 @@ const ShipOwnerContent = (_) => {
           <LabeledList>
             <LabeledList.Item label="Crew Profit Share">
               <NumberInput
-                animate
                 unit="%"
                 step={1}
                 stepPixelSize={15}

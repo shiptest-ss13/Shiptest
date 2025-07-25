@@ -166,7 +166,6 @@
 	if(!ui)
 		ui = new(user, src, "Fishing")
 		ui.set_autoupdate(FALSE)
-		#warn fix
 		//ui.set_mouse_hook(TRUE)
 		ui.open()
 

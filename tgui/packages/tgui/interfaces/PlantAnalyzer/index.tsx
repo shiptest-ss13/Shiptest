@@ -163,7 +163,7 @@ const SeedContent = (props) => {
             <Section title="Mutations">
               {seed.mutatelist?.map((mutation, index) => (
                 <Tooltip key={index} content={mutation.desc}>
-                  <Box index={index}>
+                  <Box key={index}>
                     {mutation.name}
                     <Button
                       icon="magnifying-glass"

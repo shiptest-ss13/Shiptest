@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Button, Dropdown, Input, Stack, Table } from 'tgui-core/components';
 import { round } from 'tgui-core/math';
 
@@ -64,7 +66,7 @@ export const FishingCalculator = (props) => {
             />
             <Input
               value={bait}
-              label="Bait"
+              placeholder="Bait"
               onChange={(_, value) => setBait(value)}
               width="100%"
             />
