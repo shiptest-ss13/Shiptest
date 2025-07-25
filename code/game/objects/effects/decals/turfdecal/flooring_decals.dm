@@ -714,6 +714,14 @@ TURF_DECAL_COLOR_HELPER(transparent/cybersunteal, "#4C9C9C", 140)
 	name = "hole right"
 	icon_state = "techfloor_hole_right"
 
+/obj/effect/turf_decal/stairs
+	name = "partial staircase"
+	icon_state = "half-stair"
+
+/obj/effect/turf_decal/stairs_wood
+	name = "partial wood staircase"
+	icon_state = "half-stair-wood"
+
 /obj/effect/turf_decal/stoneborder
 	name = "stone border"
 	icon_state = "stoneborder"

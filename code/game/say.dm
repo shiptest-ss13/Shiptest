@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 		return
 	spans |= speech_span
 	language ||= get_selected_language()
-	message_mods[SAY_MOD_VERB] = say_mod(message, message_mods)
+	message_mods[SAY_MOD_VERB] = say_mod(message, language, message_mods)
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mods)
 
 /atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
@@ -89,7 +89,7 @@ GLOBAL_LIST_INIT(freqcolor, list())
 		if(!hearing_movable)//theoretically this should use as anything because it shouldnt be able to get nulls but there are reports that it does.
 			stack_trace("somehow theres a null returned from get_hearers_in_view() in send_speech!")
 			continue
-		hearing_movable.Hear(rendered, src, message_language, message, , spans, message_mods)
+		hearing_movable.Hear(rendered, src, message_language, message, , spans, message_mods.Copy())
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), face_name = FALSE)
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
@@ -148,24 +148,26 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	var/speakerJob = speaker.GetJob()
 	return "[ speakerJob ? " (" +  speakerJob + ")" : ""]"
 
-/atom/movable/proc/say_mod(input, list/message_mods = list())
+/atom/movable/proc/say_mod(input, datum/language/message_language, list/message_mods = list())
 	var/ending = copytext_char(input, -1)
+	if(!message_language)
+		message_language = get_selected_language()
 	if(copytext_char(input, -2) == "!!")
-		return verb_yell
+		return initial(message_language?.yell_verb) || initial(message_language?.exclaim_verb) || verb_yell
 	else if(message_mods[MODE_SING])
-		. = verb_sing
+		. = initial(message_language?.sing_verb) || verb_sing
 	else if(ending == "?")
-		return verb_ask
+		return initial(message_language?.ask_verb) || verb_ask
 	else if(ending == "!")
-		return verb_exclaim
+		return initial(message_language?.exclaim_verb) || verb_exclaim
 	else
-		return verb_say
+		return initial(message_language?.speech_verb) || verb_say
 
 /atom/movable/proc/say_quote(input, list/spans=list(speech_span), list/message_mods = list())
 	if(!input)
 		input = "..."
 
-	var/say_mod = message_mods[MODE_CUSTOM_SAY_EMOTE] || message_mods[SAY_MOD_VERB] || say_mod(input, message_mods)
+	var/say_mod = message_mods[MODE_CUSTOM_SAY_EMOTE] || message_mods[SAY_MOD_VERB] || say_mod(input, get_selected_language(), message_mods)
 
 	if(copytext_char(input, -2) == "!!")
 		spans |= SPAN_YELL
@@ -198,7 +200,9 @@ GLOBAL_LIST_INIT(freqcolor, list())
 /atom/movable/proc/lang_treat(atom/movable/speaker, datum/language/language, raw_message, list/spans, list/message_mods = list(), no_quote = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_TREAT_MESSAGE, args)
 	if(!language)
-		return "makes a strange sound."
+		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+		message_mods[MODE_CUSTOM_SAY_EMOTE] = "makes a strange sound."
+		return message_mods[MODE_CUSTOM_SAY_EMOTE]
 
 	if(!has_language(language))
 		var/list/mutual_languages
@@ -208,6 +212,10 @@ GLOBAL_LIST_INIT(freqcolor, list())
 			mutual_languages = partially_understood_languages.Copy()
 			for(var/bonus_language in message_mods[LANGUAGE_MUTUAL_BONUS])
 				mutual_languages[bonus_language] = max(message_mods[LANGUAGE_MUTUAL_BONUS][bonus_language], mutual_languages[bonus_language])
+		if((initial(language?.flags) & SIGNED_LANGUAGE) && !mutual_languages[language])
+			message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+			message_mods[MODE_CUSTOM_SAY_EMOTE] = "signs something."
+			return message_mods[MODE_CUSTOM_SAY_EMOTE]
 
 		var/datum/language/dialect = GLOB.language_datum_instances[language]
 		raw_message = dialect.scramble_paragraph(raw_message, mutual_languages)

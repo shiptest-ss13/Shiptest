@@ -32,7 +32,7 @@
 			else
 				new /obj/item/disk/design_disk/modkit_disc/rapid_repeater(src)
 		if(9)
-			new /obj/item/rod_of_asclepius(src)
+			new /obj/item/gem/bloodstone(src)
 		if(10)
 			new /obj/item/organ/heart/cursed/wizard(src)
 		if(11)
@@ -100,7 +100,7 @@
 				else
 					new /obj/item/disk/design_disk/modkit_disc/rapid_repeater(src)
 			if(9)
-				new /obj/item/rod_of_asclepius(src)
+				new /obj/item/gem/bloodstone(src)
 			if(10)
 				new /obj/item/organ/heart/cursed/wizard(src)
 			if(11)
@@ -177,60 +177,6 @@
 	build_path = /obj/item/borg/upgrade/modkit/bounty
 
 //Spooky special loot
-
-//Rod of Asclepius
-/obj/item/rod_of_asclepius
-	name = "\improper Rod of Asclepius"
-	desc = "A wooden rod about the size of your forearm with a snake carved around it, winding its way up the sides of the rod. Something about it seems to inspire in you the responsibilty and duty to help others."
-	icon = 'icons/obj/lavaland/artefacts.dmi'
-	icon_state = "asclepius_dormant"
-	var/activated = FALSE
-	var/usedHand
-
-/obj/item/rod_of_asclepius/attack_self(mob/user)
-	if(activated)
-		return
-	if(!iscarbon(user))
-		to_chat(user, span_warning("The snake carving seems to come alive, if only for a moment, before returning to its dormant state, almost as if it finds you incapable of holding its oath."))
-		return
-	var/mob/living/carbon/itemUser = user
-	usedHand = itemUser.get_held_index_of_item(src)
-	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
-		to_chat(user, span_warning("You can't possibly handle the responsibility of more than one rod!"))
-		return
-	var/failText = span_warning("The snake seems unsatisfied with your incomplete oath and returns to its previous place on the rod, returning to its dormant, wooden state. You must stand still while completing your oath!")
-	to_chat(itemUser, span_notice("The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong..."))
-	if(do_after(itemUser, 40, target = itemUser))
-		itemUser.say("I swear to fulfill, to the best of my ability and judgment, this covenant:", forced = "hippocratic oath")
-	else
-		to_chat(itemUser, failText)
-		return
-	if(do_after(itemUser, 20, target = itemUser))
-		itemUser.say("I will apply, for the benefit of the sick, all measures that are required, avoiding those twin traps of overtreatment and therapeutic nihilism.", forced = "hippocratic oath")
-	else
-		to_chat(itemUser, failText)
-		return
-	if(do_after(itemUser, 30, target = itemUser))
-		itemUser.say("I will remember that I remain a member of society, with special obligations to all my fellow human beings, those sound of mind and body as well as the infirm.", forced = "hippocratic oath")
-	else
-		to_chat(itemUser, failText)
-		return
-	if(do_after(itemUser, 30, target = itemUser))
-		itemUser.say("If I do not violate this oath, may I enjoy life and art, respected while I live and remembered with affection thereafter. May I always act so as to preserve the finest traditions of my calling and may I long experience the joy of healing those who seek my help.", forced = "hippocratic oath")
-	else
-		to_chat(itemUser, failText)
-		return
-	to_chat(itemUser, span_notice("The snake, satisfied with your oath, attaches itself and the rod to your forearm with an inseparable grip. Your thoughts seem to only revolve around the core idea of helping others, and harm is nothing more than a distant, wicked memory..."))
-	var/datum/status_effect/hippocraticOath/effect = itemUser.apply_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH)
-	effect.hand = usedHand
-	activated()
-
-/obj/item/rod_of_asclepius/proc/activated()
-	item_flags = DROPDEL
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
-	desc = "A short wooden rod with a mystical snake inseparably gripping itself and the rod to your forearm. It flows with a healing energy that disperses amongst yourself and those around you. "
-	icon_state = "asclepius_active"
-	activated = TRUE
 
 //Memento Mori
 /obj/item/clothing/neck/memento_mori
