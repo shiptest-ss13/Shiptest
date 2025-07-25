@@ -145,7 +145,7 @@
 	if(staminaloss > 0)
 		adjustStaminaLoss(-stamina_recovery * seconds_per_tick, FALSE, TRUE)
 
-/mob/living/basic/say_mod(input, list/message_mods = list())
+/mob/living/basic/say_mod(input, datum/language/message_language, list/message_mods = list())
 	if(length(speak_emote))
 		verb_say = pick(speak_emote)
 	return ..()

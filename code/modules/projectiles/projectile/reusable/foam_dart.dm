@@ -9,6 +9,7 @@
 	base_icon_state = "foamdart_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	range = 10
+	embedding = null //these should not be embedding, unlike normal bullets
 	var/modified = FALSE
 	var/obj/item/pen/pen = null
 
@@ -29,7 +30,6 @@
 		pen.forceMove(newdart)
 		pen = null
 	newdart.update_appearance()
-
 
 /obj/projectile/bullet/reusable/foam_dart/Destroy()
 	pen = null

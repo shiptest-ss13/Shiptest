@@ -8,6 +8,9 @@
 	block_cooldown_time = 0 SECONDS
 	slot_flags = ITEM_SLOT_BACK
 	force = 10
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.5
+	drag_slowdown = 0.5
 	block_chance = 50
 	throwforce = 5
 	throw_speed = 2
@@ -19,10 +22,6 @@
 	var/transparent = FALSE
 	/// if the shield will break by sustaining damage
 	var/breakable_by_damage = TRUE
-	/// what the shield leaves behind when it breaks
-	var/shield_break_leftover = /obj/item/stack/sheet/mineral/wood
-	/// sound the shield makes when it breaks
-	var/shield_break_sound = 'sound/effects/bang.ogg'
 	/// baton bash cooldown
 	COOLDOWN_DECLARE(baton_bash)
 	/// is shield bashable?
@@ -30,11 +29,29 @@
 	/// sound when a shield is bashed
 	var/shield_bash_sound = 'sound/effects/shieldbash.ogg'
 	var/recoil_bonus = -2
+	var/broken = FALSE
+
+/obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	. = ..()
+	if(.)
+		on_block(owner, hitby, attack_text, damage, attack_type)
+
+/obj/item/shield/proc/on_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
+	take_damage(damage)
+
+/obj/item/shield/obj_break(damage_flag)
+	. = ..()
+	if(!broken)
+		if(isliving(loc))
+			loc.balloon_alert(loc, "[src] cracks!")
+		name = "broken [src::name]"
+		block_chance = 0
+		slowdown = 0
+		drag_slowdown = 0
+		broken = TRUE
 
 /obj/item/shield/examine(mob/user)
 	. = ..()
-	if(recoil_bonus)
-		. += span_info("Firing a gun while holding this will brace against it, reducing the impact of recoil.")
 	var/healthpercent = round((atom_integrity/max_integrity) * 100, 1)
 	switch(healthpercent)
 		if(50 to 99)
@@ -53,32 +70,19 @@
 		final_block_chance = 100
 	. = ..()
 	if(.)
-		on_shield_block(owner, hitby, attack_text, damage, attack_type, damage_type)
-
-/obj/item/shield/proc/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
-	if(!breakable_by_damage || (damage_type != BRUTE && damage_type != BURN))
-		return TRUE
-	take_damage(damage)
-
-/obj/item/shield/atom_destruction(damage_flag)
-	playsound(src, shield_break_sound, 50)
-	new shield_break_leftover(get_turf(src))
-	if(isliving(loc))
-		loc.balloon_alert(loc, "shield broken!")
-	return ..()
+		on_block(owner, hitby, attack_text, damage, attack_type, damage_type)
 
 /obj/item/shield/riot
-	name = "riot shield"
-	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
-	icon_state = "riot"
-	custom_materials = list(/datum/material/glass=7500, /datum/material/iron=1000)
+	name = "ballistic shield"
+	desc = "A shield adept at blocking blunt objects and bullets from connecting with the torso of the shield wielder. Use metal to repair."
+	icon_state = "ballistic"
+	custom_materials = list(/datum/material/iron=8500)
 
-	transparent = TRUE
-	max_integrity = 75
+	force = 15
+	max_integrity = 900
+	block_chance = 70
+	integrity_failure = 0.1
 	material_flags = MATERIAL_NO_EFFECTS
-
-	shield_break_sound = 'sound/effects/glassbr3.ogg'
-	shield_break_leftover = /obj/item/shard
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/melee/baton))
@@ -86,16 +90,27 @@
 			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
 			playsound(src, shield_bash_sound, 50, TRUE)
 			COOLDOWN_START(src, baton_bash, BATON_BASH_COOLDOWN)
-	else if(istype(W, /obj/item/stack/sheet/mineral/titanium))
+	else if(istype(W, /obj/item/stack/sheet/metal))
 		if (atom_integrity >= max_integrity)
 			to_chat(user, span_warning("[src] is already in perfect condition."))
 		else
-			var/obj/item/stack/sheet/mineral/titanium/T = W
+			var/obj/item/stack/sheet/metal/T = W
 			T.use(1)
 			atom_integrity = max_integrity
 			to_chat(user, span_notice("You repair [src] with [T]."))
-	else
-		return ..()
+			name = src::name
+			broken = FALSE
+			block_chance = 70
+			slowdown = 0.5
+			drag_slowdown = 0.5
+
+/obj/item/shield/riot/spike
+	name = "spike shield"
+	desc = "A ballistic shield adept at blocking blunt objects and bullets, adorned with a vicious spike. Use metal to repair"
+	icon_state = "spike"
+	force = 24
+	attack_verb = list("stabbed", "gashed")
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/shield/riot/roman
 	name = "\improper Roman shield"
@@ -107,8 +122,6 @@
 	transparent = FALSE
 	custom_materials = list(/datum/material/iron=8500)
 	max_integrity = 65
-	shield_break_leftover = /obj/item/stack/sheet/metal
-	shield_break_sound = 'sound/effects/grillehit.ogg'
 
 /obj/item/shield/riot/roman/fake
 	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>. It appears to be a bit flimsy."
@@ -122,6 +135,8 @@
 	desc = "A medieval wooden buckler."
 	icon_state = "buckler"
 	item_state = "buckler"
+	slowdown = 0
+	drag_slowdown = 0
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 10)
@@ -129,13 +144,21 @@
 	block_chance = 25
 	transparent = FALSE
 	max_integrity = 55
+	integrity_failure = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	shield_break_leftover = /obj/item/stack/sheet/mineral/wood
-	shield_break_sound = 'sound/effects/bang.ogg'
+	var/shield_break_leftover = /obj/item/stack/sheet/mineral/wood
+	var/shield_break_sound = 'sound/effects/bang.ogg'
+
+/obj/item/shield/riot/buckler/obj_destruction(damage_flag)
+	playsound(src, shield_break_sound, 50)
+	new shield_break_leftover(get_turf(src))
+	if(isliving(loc))
+		loc.balloon_alert(loc, "shield broken!")
+	return ..()
 
 /obj/item/shield/riot/flash
 	name = "strobe shield"
-	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs."
+	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs. Use metal to repair."
 	icon_state = "flashshield"
 	item_state = "flashshield"
 	var/obj/item/assembly/flash/handheld/embedded_flash
@@ -188,8 +211,8 @@
 
 /obj/item/shield/riot/flash/update_icon_state()
 	if(!embedded_flash || embedded_flash.burnt_out)
-		icon_state = "riot"
-		item_state = "riot"
+		icon_state = "ballistic"
+		item_state = "ballistic"
 	else
 		icon_state = "flashshield"
 		item_state = "flashshield"
@@ -306,12 +329,5 @@
 	block_chance = 25
 	max_integrity = 70
 	w_class = WEIGHT_CLASS_BULKY
-	shield_break_leftover = /obj/item/stack/sheet/animalhide/goliath_hide
-	shield_break_sound = 'sound/effects/bang.ogg'
-
-/obj/item/shield/riot/goliath/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
-	if(isliving(hitby)) // If attacker is a simple mob.
-		damage *= 0.5
-	. = ..()
 
 #undef BATON_BASH_COOLDOWN

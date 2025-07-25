@@ -230,7 +230,7 @@
 			qdel_on_open = TRUE
 		if(95)
 			for(var/i in 1 to 15)
-				new /obj/item/reagent_containers/food/snacks/energybar(src)
+				new /obj/item/food/energybar(src)
 		if(96)
 			for(var/i in 1 to 3)
 				new /obj/item/mine/pressure/sound(src)

@@ -195,9 +195,9 @@
 /obj/machinery/porta_turret/ship/ramzi/super_heavy
 	name = "Rebellion Turret"
 	desc = "A durable anti-vehicle turret system manufactured by the Gorlex Marauders during the ICW. Most users are unable to get more parts for the turret, leading to a slow reduction in the amount of redundant, working parts."
-	stun_projectile = /obj/item/ammo_casing/p50/soporific
+	stun_projectile = /obj/projectile/bullet/p50/soporific
 	stun_projectile_sound = 'sound/weapons/gun/sniper/shot.ogg'
-	lethal_projectile = /obj/item/ammo_casing/p50
+	lethal_projectile = /obj/projectile/bullet/p50
 	lethal_projectile_sound = 'sound/weapons/gun/sniper/shot.ogg'
 	scan_range = 14
 	shot_delay = 30

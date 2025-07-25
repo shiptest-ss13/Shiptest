@@ -10,7 +10,7 @@
 	throwforce = 15
 	armour_penetration = 40
 	demolition_mod = 2
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_cooldown = 12
@@ -68,7 +68,3 @@
 		if(istype(A, /obj/structure/window) || istype(A, /obj/structure/grille))
 			var/obj/structure/W = A
 			W.atom_destruction("axe")
-
-// its for dynamic gen mobs okay
-/obj/item/melee/sledgehammer/gorlex/pre_wielded
-	icon_state = "gorlex_sledgehammer_w"
