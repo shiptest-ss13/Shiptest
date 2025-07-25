@@ -668,7 +668,12 @@
 "jt" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/tech,
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/clothing/suit/space/engineer,
+/obj/item/clothing/head/helmet/space/light/engineer,
+/obj/item/clothing/mask/gas,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "jC" = (
 /obj/machinery/computer/cargo{
@@ -2387,7 +2392,12 @@
 	dir = 10
 	},
 /obj/machinery/suit_storage_unit/inherit/industrial,
-/turf/open/floor/plasteel/tech,
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/clothing/suit/space/engineer,
+/obj/item/clothing/head/helmet/space/light/engineer,
+/obj/item/clothing/mask/gas,
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "zN" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
